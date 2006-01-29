@@ -1,0 +1,18 @@
+Source: quake3
+Section: contrib/games
+Priority: optional
+Maintainer: Marc Leeman <marc.leeman@gmail.com>, Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Build-Depends: debhelper (>> 4.0.0), libsdl1.2-dev, docbook-to-man, libopenal-dev
+Standards-Version: 3.6.2
+
+Package: quake3
+Architecture: any
+Depends: ${shlibs:Depends}, debconf (>= 0.5.00)
+Suggests: xqf, qstat
+Description: improved version of id Software's Quake III engine
+ Quake III is a 3D action game engine in first-person perspective, commonly
+ known as a ``first person shooter''.
+ .
+ This package contains no data files.  You will need to either install the
+ commercial data from the Quake III CD-ROM with the ``quake3-data'' package,
+ or install some free data files.

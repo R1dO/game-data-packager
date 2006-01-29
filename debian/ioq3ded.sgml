@@ -1,0 +1,376 @@
+<!doctype refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN" [
+
+  <!ENTITY dhfirstname "<firstname>Marc</firstname>">
+  <!ENTITY dhsurname   "<surname>Leeman</surname>">
+  <!ENTITY dhdate      "<date>Fri Dec 30 19:47:26 CET 2005</date>">
+  <!ENTITY dhsection   "<manvolnum>6</manvolnum>">
+  <!ENTITY dhemail     "<email>marc.leeman@gmail.com</email>">
+  <!ENTITY dhusername  "Marc Leeman">
+  <!ENTITY dhucpackage "<refentrytitle>ioq3ded</refentrytitle>">
+  <!ENTITY dhpackage   "ioq3ded">
+
+  <!ENTITY debian      "<productname>Debian</productname>">
+  <!ENTITY gnu         "<acronym>GNU</acronym>">
+  <!ENTITY gpl         "&gnu; <acronym>GPL</acronym>">
+]>
+
+<refentry>
+  <refentryinfo>
+    <address>
+      &dhemail;
+    </address>
+    <author>
+      &dhfirstname;
+      &dhsurname;
+    </author>
+    <copyright>
+      <year>2003</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    &dhdate;
+  </refentryinfo>
+  <refmeta>
+    &dhucpackage;
+
+    &dhsection;
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+
+    <refpurpose>Quake III Arena dedicated server</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+
+      <arg><option>+set <replaceable>option</replaceable> <replaceable>value</replaceable></option></arg>
+
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+
+    <para>This manual page documents briefly the
+      <command>&dhpackage;</command> and <command>ioquake3</command>
+      programs.</para>
+
+    <para>This manual page was written for the &debian; distribution
+      because the original program does not have a manual page.</para>
+
+    <para><command>&dhpackage;</command> launches the dedicated server for the First Person Shooter Quake III Arena.</para>
+    <para><command>ioquake3</command> launches the client for the Quake III Arena game.</para>
+    <para><command>ioquake3</command> or <command>&dhpackage;</command> can be used to start a server, but <command>&dhpackage;</command> does not require X11 or GL. <command>&dhpackage;</command> will start in dedicated mode.</para>
+
+  </refsect1>
+  <refsect1>
+    <title>OPTIONS</title>
+    <para>Command line options must be set on the command line and will not work if executed in a config file.</para>
+    <variablelist>
+      <varlistentry>
+        <term><option>+set com_hunkmegs <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+          <para>allocates a certain amount of memory for map and item loading.  The default of 56 is required for the client but is overkill for a dedicated server, and thus wasting precious server memory.  For general use free for all, tournament maps, and team deathmatch, a com_hunkmegs setting of 16 is sufficient.  Using the included tournament maps only, a com_hunkmegs setting of 12 may be used to conserve more memory.  Capture The Flag requires a minimum com_hunkmegs setting of 26 with the included maps.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>+set net_ip <replaceable>ip address</replaceable></option>
+        </term>
+        <listitem>
+          <para>If you are on a multi-homed server and the default IP is not what you want to use for your Quake III Arena server, the net_ip command will need to be used.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>+set net_port <replaceable>port</replaceable></option>
+        </term>
+        <listitem>
+          <para>Changing the default server port requires the net_port command be run on the command line.  It is useful for running multiple servers on the same computer or making the server somewhat more private.  The default port is 27960 and is incremented automatically by 1 if another server is started without a specified port.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>+exec <replaceable>config.cfg</replaceable></option>
+        </term>
+        <listitem>
+          <para>
+	  To simplify setting up a dedicated server, a several server configurations file have been created for different game types.  You can modify each configuration file to your liking if the default settings are not sufficient.  If you wish, you may run these config files from the console, assuming com_hunkmegs is sufficient for each game type.  
+	  </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  
+  <refsect1>
+    <title>SERVER ONLY OPTIONS</title>
+    <para>Server settings are only used only on the server and may be used at the console or command line.  Command line usage requires a <option>+set </option> before each command; for usage in a configuration file, this is not needed.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>sv_maxclients <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the maximum amount of clients that can connect to the server.  The default setting is 8.  Setting should be increased for large free for all, team deathmatch, or CTF maps.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>sv_privatePassword <replaceable>password</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets a password on the server so only clients that know the password can connect to the server.  Clients use the \password command.  The default is for no password required.  Set to "" for no password.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>sv_hostname <replaceable>servername</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the server name that will show up in the master server list.  The name must be enclosed in quotes if a space is in the name.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>sv_master1 <replaceable>master.domain.com</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the primary master server to which your server reports.  The default is master3.idsoftware.com and it is not recommended that this be changed.  Additional master servers can be added with the sv_master2 through 5 command.  The maximum number of masters that can be reported to is 5.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>v_maxRate <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the maximum allowable rate a client may have set when connected to the server.  The default is 0, which is no limit.  A suggested setting is 8000 or 10000 so server bandwidth is not used up by high speed clients, thus allowing modem players to have a smoother game.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>sv_pure <replaceable>N</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	controls crc/zip check of client pk3 files to make sure the pk3 file has not been modified for cheating or other purposes.  Client pk3 files must match that of the server to connect.  The default is set to 1, or on. Set to 0 to turn off the check.
+	</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  
+  <refsect1>
+    <title>SERVER CONSOLE COMMANDS</title>
+    <para>
+    Server console commands are used from the server console or the remote console.
+    </para>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>status</option>
+        </term>
+        <listitem>
+	<para>
+	shows the client number (num), score, ping, player name (name), client IP address (address), and port connected through (qport).  Client number is used in conjunction with the kick command.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>kick <replaceable>player</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	removes a player from the server. Particularly useful for removing disruptive players.  To kick a player, first find the number (num) associated with the player name via the <command>status</command> command.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>capturelimit <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the number of flag captures that must be reached before the level ends and the next level starts in CTF.  Setting capturelimit only has an effect if the server is in CTF mode.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>fraglimit <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the amount of frags that much be reached before the level ends and the next level starts.  Setting fraglimit to 0 results in no fraglimit.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>timelimit <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the number of minutes that must be reached before the level ends and the next level starts.  Setting timelimit to 0 results in no timelimit.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>rconpassword <replaceable>password</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets remote console password so clients may change server settings without direct access to the server console.  The default is set to none.  Client can control the server by entering commands on the console with the format of <command>rconpassword</command> <replaceable>mypass</replaceable> and then adding server commands after the <command>rcon</command> command.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>killserver</option>
+        </term>
+        <listitem>
+	<para>
+	will stop all server services from running but leaves the Quake III Arena executable running on the server.
+	</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1>
+    <title>GAME COMMANDS</title>
+    <para>
+    Generally, all game commands must be entered after the level loads either in the config file or on the command line/console.  Exceptions include the <option>g_gametype</option> and <option>g_motd</option> command.  The following are the most useful game commands for a dedicated server.
+    </para>
+
+    <variablelist>
+      <varlistentry>
+        <term><option>g_warmup  <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the amount of time in seconds that players may practice before the actual tournament match starts.  The default is 20 seconds.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_friendlyFire <replaceable>N</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	determines if players can damage their own teammates.  Set to 1 to allow players to damage their own teammates.  Set to 0 so players can not damage their own teammates.  Setting has no effect for free-for-all or tournament modes.  A setting of 1 is suggested for team deathmatch, while a setting of 0 is suggested for Capture The Flag.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_gametype <replaceable>N</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	controls the type of gameplay (free for all, tournament, team deathmatch, CTF). 0: Free For All, 1: Tournament, 2: Single Player Free For All, 3: Team Deathmatch, 4: Capture The Flag, 5: One Flag, 6: Overload and 7: Harverster (modes 5-7 are only available with the Quake III Team Arena expension pak installed).
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_motd <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the message that clients will see when they first connect to your server.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_log <replaceable>file.log</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sets the name of the server log file.  The default is games.log and does not need to be modified unless running multiple dedicated servers on the same computer.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_quadfactor <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	sed to set multiples of damage caused by the quad damage powerup.  The default is 3 times damage, with 1 being equal to no quad damage powerup.  Decimals may be used (e.g. 0.25).
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_syncronousclients <replaceable>NN</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	syncs all clients up to allow demo recording. The default is the more desired 0 which allows smoother net play.  Set to 1 to allow client demo recording.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_weaponsrespawn <replaceable>N</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	used to set the number of seconds between the time a weapon is picked up and the time it respawns.  The default is 5 seconds in free for all and should only be modified if a free for all server has a large number of players on it, in which case lower it slightly.  It is not recommend that it be set to 0 or modified for other game types.
+	</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>g_allowvote <replaceable>N</replaceable></option>
+        </term>
+        <listitem>
+	<para>
+	enable players connected to the server to call for and vote on changes including: map, map restart, kick, and g_gametype.  The default is 1, which is on.  Set to 0 to turn off voting.
+	</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1>
+    <title>EXAMPLES</title>
+
+    <para>To start a server that does not report to the master server, use the command line below. This is also the default for the dedicated server binary.</para>
+    <para><command>ioquake3 +set dedicated 1</command></param>
+
+    <para>To start a server (either binary) that notifies the master server of its presence, please use the following command line:</para>
+    <para><command>ioquake3 +set dedicated 2</command></para>
+
+    <para>Start a dedicated server and read further options from a configuration file.</para>
+    <para><command>ioq3ded +set com_hunkmegs 16 +exec ffa.config</command></para>
+
+  </refsect1>
+  
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <para>This manual page was written by &dhusername; &dhemail; for
+      the &debian; system (but may be used by others).  Permission is
+      granted to copy, distribute and/or modify this document under
+      the terms of the &gnu; General Public License, Version 2 any 
+	  later version published by the Free Software Foundation.
+    </para>
+	<para>
+	  On Debian systems, the complete text of the GNU General Public
+	  License can be found in /usr/share/common-licenses/GPL.
+	</para>
+
+  </refsect1>
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+

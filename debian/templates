@@ -1,0 +1,23 @@
+Template: quake3/datafiles
+Type: note
+Description: Quake III Data Files
+ This package only provides the Quake III Engine (GPL) that is being
+ improved by volunteers. In order to play, you need some (currently)
+ non GPL data-files. Since they are non-free, they cannot be distributed
+ by GNU/Debian.
+ .
+ You can choose to manually copy the data files into the
+ right location or use the quake3-data package available from
+ .
+ http://scorpius.homelinux.org/~marc/debian/
+ .
+ This installer will give you the choice to play with the Demo files or
+ install from a Quake III Arena CD.  In any case, you will need to
+ install the point release in order to be able to play the game. Note
+ that the shareware version does not allow you to play on full servers
+ (or the other way around).
+ .
+ This package is not distributed in GNU/Debian because we are working on
+ a better, more general and more flexible solution instead of limiting
+ users to only Quake III Arena since this engine supports more Q3 based
+ games and (total) conversions.

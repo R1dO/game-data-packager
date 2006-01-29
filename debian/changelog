@@ -1,0 +1,63 @@
+quake3 (1.33+svn530-1) unstable; urgency=low
+
+  * further feedback Moritz, cleanup of copies, fix of q3a to ioquake3
+  * Added preinst menu message
+  * synced to SVN release 530 and changed naming: svn releases instead of
+    timestamps.
+  * Debian-Games maintenance
+  * Close ITP Closes:#337937
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sat, 28 Jan 2006 01:02:56 +0100
+
+quake3 (1.33-svn20051231-2) unstable; urgency=low
+
+  * after discussion, default pure back enabled
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Tue,  3 Jan 2006 19:44:49 +0100
+
+quake3 (1.33-svn20051231-1) unstable; urgency=low
+
+  * new sync with icculus SVN
+  * build depend on libopenal-dev
+  * new documentation files in upstream
+  * adjusted to renamed upstream scripts and binaries (ioquake3.sh,
+    quake3.i386)
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sat, 31 Dec 2005 14:19:38 +0100
+
+quake3 (1.33-svn20051104-5) unstable; urgency=low
+
+  * added q3ded and q3a manpage
+  * noname changed to GNU/Debian Server
+  * pure server default disabled
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Fri, 30 Dec 2005 19:48:22 +0100
+
+quake3 (1.33-svn20051104-4) unstable; urgency=low
+
+  * depend on quake3-data
+  * resolve authorize.quake3arena.com to localhost
+  * install in /usr/lib, since quake3 binaries and libs are platform
+    dependent.
+  * add wrapper script for q3ded
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sun,  6 Nov 2005 20:22:58 +0100
+
+quake3 (1.33-svn20051104-3) unstable; urgency=low
+
+  * The new and proper release
+  * added credit to Jamie Wilkinson for the quake2 packages
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sat,  5 Nov 2005 13:19:07 +0100
+
+quake3 (1.33-svn20051104-2) unstable; urgency=low
+
+  * checked build dependencies (libsdl1.2-dev)
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Sat,  5 Nov 2005 11:26:30 +0100
+
+quake3 (1.33-svn20051104-1) unstable; urgency=low
+
+  * Initial testing release based on the quake3-20051104 snapshot
+
+ -- Marc Leeman <marc.leeman@gmail.com>  Fri,  4 Nov 2005 19:49:28 +0100

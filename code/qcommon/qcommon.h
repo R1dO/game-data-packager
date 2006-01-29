@@ -239,7 +239,10 @@ extern int demo_protocols[];
 #define MASTER_SERVER_NAME	"master.quake3arena.com"
 #endif
 #ifndef AUTHORIZE_SERVER_NAME
-#define	AUTHORIZE_SERVER_NAME	"authorize.quake3arena.com"
+//  we set the authorize server to localhost. it will challenge twice
+// and let the clients in anyway.
+// #define	AUTHORIZE_SERVER_NAME	"authorize.quake3arena.com"
+#define	AUTHORIZE_SERVER_NAME	"localhost"
 #endif
 
 #define	PORT_MASTER			27950
