@@ -19,23 +19,24 @@ ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	INSTALL_PROGRAM += -s
 endif
 
+# Not using dpkg-architecture to keep in sync with ioq3's Makefile
+Q3ARCH=$(shell uname -m | sed -e s/i.86/i386/)
+
+# push default optimization a bit down, as they *might* lead to problems
+BUILD_FLAGS=
+ifeq ($(Q3ARCH),i386)
+	BUILD_FLAGS="OPTIMIZE=-O2 -march=i486 -fomit-frame-pointer -ffast-math -funroll-loops -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fstrength-reduce"
+endif
+
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
-#	./configure \
-		--prefix=/usr \
-		--bindir=\$${prefix}/games \
-		--libdir=\$${prefix}/lib/games \
-		--datadir=\$${prefix}/share/games \
-		--mandir=\$${prefix}/share/man \
-		--infodir=\$${prefix}/share/info \
-		--disable-static
 	touch configure-stamp
 
 build: build-stamp
 build-stamp: configure-stamp
 	dh_testdir
-	$(MAKE)
+	$(MAKE) $(BUILD_FLAGS)
 	/usr/bin/docbook-to-man debian/ioq3ded.sgml > ioq3ded.6
 	/usr/bin/docbook-to-man debian/ioquake3.sgml > ioquake3.6
 	touch build-stamp
@@ -45,6 +46,7 @@ clean:
 	dh_testroot
 	rm -f build-stamp configure-stamp ioq3ded.6 ioquake3.6
 	-$(MAKE) distclean
+	-rm -f ioquake3.xpm # clean up our own stuff
 	dh_clean
 
 install: DH_OPTIONS=
@@ -53,47 +55,47 @@ install: build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	$(MAKE) copyfiles COPYDIR=$(CURDIR)/debian/quake3/usr/lib/games/quake3/
-	install -p -m 644 code/unix/quake3.xpm $(CURDIR)/debian/quake3/usr/share/pixmaps/
-	install -p -m 755 debian/ioquake3 $(CURDIR)/debian/quake3/usr/games/
-	install -p -m 755 debian/ioq3ded $(CURDIR)/debian/quake3/usr/games/
-	# install -p -m 755 code/unix/setup/ioquake3.sh $(CURDIR)/debian/quake3/usr/lib/games/quake3/
-	install -p -m 644 debian/ioquake3.desktop $(CURDIR)/debian/quake3/usr/share/applications/
+	
+	### prepare some things we like better in our own style
+	cp build/release-linux-$(Q3ARCH)/ioquake3.$(Q3ARCH) build/release-linux-$(Q3ARCH)/ioquake3
+	cp build/release-linux-$(Q3ARCH)/ioquake3-smp.$(Q3ARCH) build/release-linux-$(Q3ARCH)/ioquake3-smp
+	cp build/release-linux-$(Q3ARCH)/ioq3ded.$(Q3ARCH) build/release-linux-$(Q3ARCH)/ioq3ded
+	cp code/unix/quake3.xpm ioquake3.xpm
+	
+	### client files
+	dh_install -pquake3 debian/scripts/ioquake3 usr/games
+	dh_install -pquake3 ioquake3.xpm usr/share/pixmaps
+	dh_install -pquake3 debian/ioquake3.desktop usr/share/applications # TODO waiting for dh_desktop to do this job...
+	dh_install -pquake3 build/release-linux-$(Q3ARCH)/ioquake3 \
+		   build/release-linux-$(Q3ARCH)/ioquake3-smp \
+		   usr/lib/games/ioquake3
+	dh_install -pquake3 build/release-linux-$(Q3ARCH)/baseq3/cgame$(Q3ARCH).so \
+		   build/release-linux-$(Q3ARCH)/baseq3/qagame$(Q3ARCH).so \
+		   build/release-linux-$(Q3ARCH)/baseq3/ui$(Q3ARCH).so \
+		   usr/lib/games/ioquake3/baseq3
+	dh_install -pquake3 build/release-linux-$(Q3ARCH)/missionpack/cgame$(Q3ARCH).so \
+		   build/release-linux-$(Q3ARCH)/missionpack/qagame$(Q3ARCH).so \
+		   build/release-linux-$(Q3ARCH)/missionpack/ui$(Q3ARCH).so \
+		   usr/lib/games/ioquake3/missionpack
+	
+	### server files
+	dh_install -pquake3-server debian/scripts/ioq3ded usr/games
+	dh_install -pquake3-server build/release-linux-$(Q3ARCH)/ioq3ded usr/lib/games/ioquake3
+
+	#$(MAKE) copyfiles COPYDIR=$(CURDIR)/debian/quake3/usr/lib/games/quake3/
+	#install -p -m 644 code/unix/quake3.xpm $(CURDIR)/debian/quake3/usr/share/pixmaps/
+	#install -p -m 755 debian/ioquake3 $(CURDIR)/debian/quake3/usr/games/
+	#install -p -m 755 debian/ioq3ded $(CURDIR)/debian/quake3/usr/games/
+	## install -p -m 755 code/unix/setup/ioquake3.sh $(CURDIR)/debian/quake3/usr/lib/games/quake3/
+	#install -p -m 644 debian/ioquake3.desktop $(CURDIR)/debian/quake3/usr/share/applications/
 	install -p -m 644 debian/ioquake3ta.xpm $(CURDIR)/debian/quake3/usr/share/pixmaps/
 	install -p -m 644 debian/ioquake3ta.desktop $(CURDIR)/debian/quake3/usr/share/applications/
 
-# Build architecture-independent files here.
-# Pass -i to all debhelper commands in this target to reduce clutter.
 binary-indep: build install
-	dh_testdir -i
-	dh_testroot -i
-	dh_installdebconf -i
-	dh_installdocs -i
-	dh_installexamples -i
-	dh_installmenu -i
-#	dh_installlogrotate -i
-#	dh_installemacsen -i
-#	dh_installpam -i
-#	dh_installmime -i
-#	dh_installinit -i
-	dh_installcron -i
-	dh_installinfo -i
-#	dh_undocumented -i
-	dh_installchangelogs ChangeLog -i
-	dh_link -i
-	dh_compress -i
-	dh_fixperms -i
-	dh_installdeb -i
-#	dh_perl -i
-	dh_gencontrol -i
-	dh_md5sums -i
-	dh_builddeb -i
-
-# Build architecture-dependent files here.
 binary-arch: build install
-	dh_testdir -a
-	dh_testroot -a
-	dh_installdebconf -a
+	dh_testdir
+	dh_testroot
+	dh_installdebconf
 	dh_installdocs -a
 	dh_installexamples -a
 	dh_installmenu -a
@@ -104,23 +106,32 @@ binary-arch: build install
 #	dh_installinit -a
 	dh_installcron -a
 #	dh_installman -a debian/quake3.6
-	dh_installman -a ioq3ded.6 ioquake3.6
-	dh_installinfo -a
+	dh_installman -pquake3-server ioq3ded.6
+	dh_installman -pquake3 ioquake3.6
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak0.pk3 usr/lib/games/ioquake3/baseq3/pak0.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak1.pk3 usr/lib/games/ioquake3/baseq3/pak1.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak2.pk3 usr/lib/games/ioquake3/baseq3/pak2.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak3.pk3 usr/lib/games/ioquake3/baseq3/pak3.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak4.pk3 usr/lib/games/ioquake3/baseq3/pak4.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak5.pk3 usr/lib/games/ioquake3/baseq3/pak5.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak6.pk3 usr/lib/games/ioquake3/baseq3/pak6.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak7.pk3 usr/lib/games/ioquake3/baseq3/pak7.pk3
+	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak8.pk3 usr/lib/games/ioquake3/baseq3/pak8.pk3
+	dh_installinfo
 #	dh_undocumented -a
-	dh_installchangelogs ChangeLog -a
+	dh_installchangelogs -pquake3 ChangeLog
+	dh_installchangelogs -pquake3-server ChangeLog
 	dh_strip -a
-	dh_link -a
-	dh_compress -a
-	dh_fixperms -a
+	dh_compress
+	dh_fixperms
 #	dh_makeshlibs -a
-	dh_installdeb -a
+	dh_installdeb
 #	dh_perl -a
-	dh_shlibdeps -a
-	dh_gencontrol -a
-	dh_md5sums -a
-	dh_builddeb -a
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
 
-#binary: binary-indep binary-arch
-binary: binary-arch
+binary: binary-indep binary-arch
 
 .PHONY: build clean binary-indep binary-arch binary install 

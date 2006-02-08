@@ -7,8 +7,8 @@ Build-Depends: debhelper (>> 4.0.0), libsdl1.2-dev, docbook-to-man, libopenal-de
 Standards-Version: 3.6.2
 
 Package: quake3
-Architecture: any
-Depends: ${shlibs:Depends}, debconf (>= 0.5.00)
+Architecture: i386 amd64 powerpc sparc
+Depends: ${shlibs:Depends}, debconf (>= 0.5.00), quake3-common
 Suggests: xqf, qstat
 Description: improved version of id Software's Quake III engine
  Quake III is a 3D action game engine in first-person perspective, commonly
@@ -17,3 +17,20 @@ Description: improved version of id Software's Quake III engine
  This package contains no data files.  You will need to either install the
  commercial data from the Quake III CD-ROM with the ``quake3-data'' package,
  or install some free data files.
+
+Package: quake3-server
+Architecture: amd64 i386 powerpc sparc
+Depends: ${shlibs:Depends}, quake3-common
+Description: Icculus.Org Quake III Arena dedicated server
+ Icculus.Org Quake III Arena is a 3D action game in first-person perspective, 
+ commonly known as a "first person shooter".
+ You will also have to install the quake3-data package to run the server.
+ .
+ This package contains the architecture dependend server files.
+
+Package: quake3-common
+Architecture: all
+Depends: quake3-data
+Description: Icculus.Org Quake III Arena binary common files
+ This package provides files which are common among the packages quake3 and 
+ quake3-server.
