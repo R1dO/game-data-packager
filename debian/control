@@ -1,26 +1,28 @@
-Source: quake3
+Source: ioquake3
 Section: contrib/games
 Priority: optional
 Maintainer: Debian Games Group <pkg-games-devel@lists.alioth.debian.org>
-Uploaders: Moritz Muehlenhoff <jmm@debian.org>
+Uploaders: Moritz Muehlenhoff <jmm@debian.org>, Bruno "Fuddl" Kleinert <fuddl@gmx.de>
 Build-Depends: debhelper (>> 4.0.0), libsdl1.2-dev, docbook-to-man, libopenal-dev
 Standards-Version: 3.6.2
 
-Package: quake3
+Package: ioquake3
 Architecture: i386 amd64 powerpc sparc
-Depends: ${shlibs:Depends}, debconf (>= 0.5.00), quake3-common
+Depends: ${shlibs:Depends}, debconf (>= 0.5.00), ioquake3-common
 Suggests: xqf, qstat
-Description: improved version of id Software's Quake III engine
- Quake III is a 3D action game engine in first-person perspective, commonly
- known as a ``first person shooter''.
+Description: Improved version of id Software Inc.'s Quake III engine
+ Icculus.Org Quake III is a 3D action game engine in first-person perspective, 
+ commonly known as a "first person shooter".
  .
- This package contains no data files.  You will need to either install the
- commercial data from the Quake III CD-ROM with the ``quake3-data'' package,
+ This package contains no data files. You will need to either install the 
+ commercial data from the Quake III Arena CD-ROM with the "quake3-data" package,
  or install some free data files.
+ .
+ This package contains the architecture dependend client files.
 
-Package: quake3-server
+Package: ioquake3-server
 Architecture: amd64 i386 powerpc sparc
-Depends: ${shlibs:Depends}, quake3-common
+Depends: ${shlibs:Depends}, ioquake3-common
 Description: Icculus.Org Quake III Arena dedicated server
  Icculus.Org Quake III Arena is a 3D action game in first-person perspective, 
  commonly known as a "first person shooter".
@@ -28,9 +30,14 @@ Description: Icculus.Org Quake III Arena dedicated server
  .
  This package contains the architecture dependend server files.
 
-Package: quake3-common
+Package: ioquake3-common
 Architecture: all
 Depends: quake3-data
 Description: Icculus.Org Quake III Arena binary common files
- This package provides files which are common among the packages quake3 and 
- quake3-server.
+ This package provides files which are common among the packages ioquake3 and 
+ ioquake3-server. It builds the "glue" to files, installed by the quake3-data 
+ package.
+ .
+ Note that this package depends on quake3-data, which will install the data 
+ files from the commercial Quake III Arena CD-ROM. This will take up to 500 MB 
+ of disk space!

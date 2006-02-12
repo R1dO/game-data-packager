@@ -1,9 +1,14 @@
-quake3 (1.33+svn530-2) unstable; urgency=low
+ioquake3 (1.33+svn530-1) unstable; urgency=low
 
-  * Split package to binary packages: quake3, quake3-server and quake3-common
-  * Added some more licensing stuff to debian/copyright
+  * Split package to binary packages: quake3, quake3-server and quake3-common.
+  * Added some more licensing stuff to debian/copyright.
+  * Renamed the whole thing to ioquake3.
+  * Removed the Team Arena shortcuts, as they should be more likely part of a 
+    Team Arena installer package.
+  * Cleaned up debian/rules.
+  * Added Fuddl to Uploaders.
 
- -- Bruno "Fuddl" Kleinert <fuddl@gmx.de>  Wed, 08 Feb 2006 10:05:58 +0100
+ -- Bruno "Fuddl" Kleinert <fuddl@gmx.de>  Sun, 12 Feb 2006 00:44:42 +0100
 
 quake3 (1.33+svn530-1) unstable; urgency=low
 

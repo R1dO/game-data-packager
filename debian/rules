@@ -44,9 +44,10 @@ build-stamp: configure-stamp
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp configure-stamp ioq3ded.6 ioquake3.6
 	-$(MAKE) distclean
-	-rm -f ioquake3.xpm # clean up our own stuff
+	
+	# Clean up files we generated on our own
+	-rm -f build-stamp configure-stamp ioq3ded.6 ioquake3.6 ioquake3.xpm
 	dh_clean
 
 install: DH_OPTIONS=
@@ -63,75 +64,54 @@ install: build
 	cp code/unix/quake3.xpm ioquake3.xpm
 	
 	### client files
-	dh_install -pquake3 debian/scripts/ioquake3 usr/games
-	dh_install -pquake3 ioquake3.xpm usr/share/pixmaps
-	dh_install -pquake3 debian/ioquake3.desktop usr/share/applications # TODO waiting for dh_desktop to do this job...
-	dh_install -pquake3 build/release-linux-$(Q3ARCH)/ioquake3 \
+	dh_install -pioquake3 debian/scripts/ioquake3 usr/games
+	dh_install -pioquake3 ioquake3.xpm usr/share/pixmaps
+	dh_install -pioquake3 debian/ioquake3.desktop usr/share/applications # TODO waiting for dh_desktop to do that job! :(
+	dh_install -pioquake3 build/release-linux-$(Q3ARCH)/ioquake3 \
 		   build/release-linux-$(Q3ARCH)/ioquake3-smp \
 		   usr/lib/games/ioquake3
-	dh_install -pquake3 build/release-linux-$(Q3ARCH)/baseq3/cgame$(Q3ARCH).so \
+	dh_install -pioquake3 build/release-linux-$(Q3ARCH)/baseq3/cgame$(Q3ARCH).so \
 		   build/release-linux-$(Q3ARCH)/baseq3/qagame$(Q3ARCH).so \
 		   build/release-linux-$(Q3ARCH)/baseq3/ui$(Q3ARCH).so \
 		   usr/lib/games/ioquake3/baseq3
-	dh_install -pquake3 build/release-linux-$(Q3ARCH)/missionpack/cgame$(Q3ARCH).so \
+	dh_install -pioquake3 build/release-linux-$(Q3ARCH)/missionpack/cgame$(Q3ARCH).so \
 		   build/release-linux-$(Q3ARCH)/missionpack/qagame$(Q3ARCH).so \
 		   build/release-linux-$(Q3ARCH)/missionpack/ui$(Q3ARCH).so \
 		   usr/lib/games/ioquake3/missionpack
 	
 	### server files
-	dh_install -pquake3-server debian/scripts/ioq3ded usr/games
-	dh_install -pquake3-server build/release-linux-$(Q3ARCH)/ioq3ded usr/lib/games/ioquake3
-
-	#$(MAKE) copyfiles COPYDIR=$(CURDIR)/debian/quake3/usr/lib/games/quake3/
-	#install -p -m 644 code/unix/quake3.xpm $(CURDIR)/debian/quake3/usr/share/pixmaps/
-	#install -p -m 755 debian/ioquake3 $(CURDIR)/debian/quake3/usr/games/
-	#install -p -m 755 debian/ioq3ded $(CURDIR)/debian/quake3/usr/games/
-	## install -p -m 755 code/unix/setup/ioquake3.sh $(CURDIR)/debian/quake3/usr/lib/games/quake3/
-	#install -p -m 644 debian/ioquake3.desktop $(CURDIR)/debian/quake3/usr/share/applications/
-	install -p -m 644 debian/ioquake3ta.xpm $(CURDIR)/debian/quake3/usr/share/pixmaps/
-	install -p -m 644 debian/ioquake3ta.desktop $(CURDIR)/debian/quake3/usr/share/applications/
+	dh_install -pioquake3-server debian/scripts/ioq3ded usr/games
+	dh_install -pioquake3-server build/release-linux-$(Q3ARCH)/ioq3ded usr/lib/games/ioquake3
 
 binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdebconf
-	dh_installdocs -a
-	dh_installexamples -a
-	dh_installmenu -a
-#	dh_installlogrotate -a
-#	dh_installemacsen -a
-#	dh_installpam -a
-#	dh_installmime -a
-#	dh_installinit -a
-	dh_installcron -a
-#	dh_installman -a debian/quake3.6
-	dh_installman -pquake3-server ioq3ded.6
-	dh_installman -pquake3 ioquake3.6
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak0.pk3 usr/lib/games/ioquake3/baseq3/pak0.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak1.pk3 usr/lib/games/ioquake3/baseq3/pak1.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak2.pk3 usr/lib/games/ioquake3/baseq3/pak2.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak3.pk3 usr/lib/games/ioquake3/baseq3/pak3.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak4.pk3 usr/lib/games/ioquake3/baseq3/pak4.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak5.pk3 usr/lib/games/ioquake3/baseq3/pak5.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak6.pk3 usr/lib/games/ioquake3/baseq3/pak6.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak7.pk3 usr/lib/games/ioquake3/baseq3/pak7.pk3
-	dh_link -pquake3-common usr/share/games/quake3/baseq3/pak8.pk3 usr/lib/games/ioquake3/baseq3/pak8.pk3
+	dh_installdocs
+	dh_installmenu
+	dh_installman -pioquake3-server ioq3ded.6
+	dh_installman -pioquake3 ioquake3.6
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak0.pk3 usr/lib/games/ioquake3/baseq3/pak0.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak1.pk3 usr/lib/games/ioquake3/baseq3/pak1.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak2.pk3 usr/lib/games/ioquake3/baseq3/pak2.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak3.pk3 usr/lib/games/ioquake3/baseq3/pak3.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak4.pk3 usr/lib/games/ioquake3/baseq3/pak4.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak5.pk3 usr/lib/games/ioquake3/baseq3/pak5.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak6.pk3 usr/lib/games/ioquake3/baseq3/pak6.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak7.pk3 usr/lib/games/ioquake3/baseq3/pak7.pk3
+	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak8.pk3 usr/lib/games/ioquake3/baseq3/pak8.pk3
 	dh_installinfo
-#	dh_undocumented -a
-	dh_installchangelogs -pquake3 ChangeLog
-	dh_installchangelogs -pquake3-server ChangeLog
-	dh_strip -a
+	dh_installchangelogs -pioquake3 ChangeLog
+	dh_installchangelogs -pioquake3-server ChangeLog
+	dh_strip
 	dh_compress
 	dh_fixperms
-#	dh_makeshlibs -a
 	dh_installdeb
-#	dh_perl -a
 	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
 
 binary: binary-indep binary-arch
-
 .PHONY: build clean binary-indep binary-arch binary install 
