@@ -106,7 +106,9 @@ binary-arch: build install
 	dh_installchangelogs -pioquake3-server ChangeLog
 	dh_strip
 	dh_compress
-	dh_fixperms
+	dh_fixperms -pioquake3
+	dh_fixperms -pioquake3-server
+	dh_fixperms -pioquake3-common
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol

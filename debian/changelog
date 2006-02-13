@@ -6,10 +6,10 @@ ioquake3 (1.33+svn530-1) unstable; urgency=low
   * Removed the Team Arena shortcuts, as they should be more likely part of a 
     Team Arena installer package.
   * Cleaned up debian/rules.
-  * Added Fuddl to Uploaders.
   * Updated ioquake3-common template
+  * debian/control "Replaces: quake3"
 
- -- Bruno "Fuddl" Kleinert <fuddl@gmx.de>  Sun, 12 Feb 2006 10:49:25 +0100
+ -- Bruno "Fuddl" Kleinert <fuddl@gmx.de>  Mon, 13 Feb 2006 14:03:50 +0100
 
 quake3 (1.33+svn530-1) unstable; urgency=low
 
