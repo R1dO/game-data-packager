@@ -1,0 +1,24 @@
+diff -rup ioquake3-1.33+svn544.orig/code/qcommon/q_shared.h ioquake3-1.33+svn544/code/qcommon/q_shared.h
+--- ioquake3-1.33+svn544.orig/code/qcommon/q_shared.h	2006-02-16 12:34:38.502322964 +0100
++++ ioquake3-1.33+svn544/code/qcommon/q_shared.h	2006-02-16 12:33:48.189910862 +0100
+@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth 
+ // q_shared.h -- included first by ALL program modules.
+ // A user mod should never modify this file
+ 
+-#define	Q3_VERSION		"ioQ3 1.33"
++#define	Q3_VERSION		"GNU/Debian ioQ3 1.33"
+ // 1.32 released 7-10-2002
+ 
+ #define MAX_TEAMNAME 32
+diff -rup ioquake3-1.33+svn544.orig/code/server/sv_init.c ioquake3-1.33+svn544/code/server/sv_init.c
+--- ioquake3-1.33+svn544.orig/code/server/sv_init.c	2006-02-16 12:34:33.806284648 +0100
++++ ioquake3-1.33+svn544/code/server/sv_init.c	2006-02-16 12:33:48.193910895 +0100
+@@ -579,7 +579,7 @@ void SV_Init (void) {
+ 	Cvar_Get ("protocol", va("%i", PROTOCOL_VERSION), CVAR_SERVERINFO | CVAR_ROM);
+ 	sv_mapname = Cvar_Get ("mapname", "nomap", CVAR_SERVERINFO | CVAR_ROM);
+ 	sv_privateClients = Cvar_Get ("sv_privateClients", "0", CVAR_SERVERINFO);
+-	sv_hostname = Cvar_Get ("sv_hostname", "noname", CVAR_SERVERINFO | CVAR_ARCHIVE );
++	sv_hostname = Cvar_Get ("sv_hostname", "GNU/Debian server", CVAR_SERVERINFO | CVAR_ARCHIVE );
+ 	sv_maxclients = Cvar_Get ("sv_maxclients", "8", CVAR_SERVERINFO | CVAR_LATCH);
+ 
+ 	sv_maxRate = Cvar_Get ("sv_maxRate", "0", CVAR_ARCHIVE | CVAR_SERVERINFO );
