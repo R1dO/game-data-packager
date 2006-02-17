@@ -29,11 +29,11 @@ ifeq ($(Q3ARCH),i386)
 endif
 
 configure: configure-stamp
-configure-stamp:
+configure-stamp: patch-stamp
 	dh_testdir
 	touch configure-stamp
 
-build: build-stamp
+build: unpack build-stamp
 build-stamp: configure-stamp
 	dh_testdir
 	$(MAKE) $(BUILD_FLAGS)
@@ -41,13 +41,13 @@ build-stamp: configure-stamp
 	/usr/bin/docbook-to-man debian/ioquake3.sgml > ioquake3.6
 	touch build-stamp
 
-clean:
+clean: unpatch
 	dh_testdir
 	dh_testroot
 	-$(MAKE) distclean
 	
 	# Clean up files we generated on our own
-	-rm -f build-stamp configure-stamp ioq3ded.6 ioquake3.6 ioquake3.xpm
+	-rm -f build-stamp configure-stamp unpack-stamp ioq3ded.6 ioquake3.6 ioquake3.xpm
 	dh_clean
 
 install: DH_OPTIONS=
@@ -115,5 +115,19 @@ binary-arch: build install
 	dh_md5sums
 	dh_builddeb
 
+unpack: unpack-stamp
+
+unpack-stamp:
+	touch unpack-stamp
+
+patch: patch-stamp
+
+patch-stamp:
+	quilt --quiltrc debian/quiltrc -a push || true
+
+unpatch:
+	quilt --quiltrc debian/quiltrc -a pop  || true
+	rm -rf patch-stamp .pc
+
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install 
+.PHONY: build clean binary-indep binary-arch binary install patch unpatch
