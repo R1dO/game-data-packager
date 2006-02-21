@@ -47,7 +47,7 @@ clean: unpatch
 	-$(MAKE) distclean
 	
 	# Clean up files we generated on our own
-	-rm -f build-stamp configure-stamp unpack-stamp ioq3ded.6 ioquake3.6 ioquake3.xpm
+	-rm -f build-stamp configure-stamp unpack-stamp ioq3ded.6 ioquake3.6 ioquake3.xpm ioquake3.svg
 	dh_clean
 
 install: DH_OPTIONS=
@@ -62,10 +62,12 @@ install: build
 	cp build/release-linux-$(Q3ARCH)/ioquake3-smp.$(Q3ARCH) build/release-linux-$(Q3ARCH)/ioquake3-smp
 	cp build/release-linux-$(Q3ARCH)/ioq3ded.$(Q3ARCH) build/release-linux-$(Q3ARCH)/ioq3ded
 	cp code/unix/quake3.xpm ioquake3.xpm
+	cp code/unix/quake3.svg ioquake3.svg
 	
 	### client files
 	dh_install -pioquake3 debian/scripts/ioquake3 usr/games
 	dh_install -pioquake3 ioquake3.xpm usr/share/pixmaps
+	dh_install -pioquake3 ioquake3.svg usr/share/pixmaps
 	dh_install -pioquake3 debian/ioquake3.desktop usr/share/applications # TODO waiting for dh_desktop to do that job! :(
 	dh_install -pioquake3 build/release-linux-$(Q3ARCH)/ioquake3 \
 		   build/release-linux-$(Q3ARCH)/ioquake3-smp \
