@@ -1,19 +1,21 @@
-diff -rup ioquake3-1.33+svn544.orig/code/qcommon/q_shared.h ioquake3-1.33+svn544/code/qcommon/q_shared.h
---- ioquake3-1.33+svn544.orig/code/qcommon/q_shared.h	2006-02-16 12:34:38.502322964 +0100
-+++ ioquake3-1.33+svn544/code/qcommon/q_shared.h	2006-02-16 12:33:48.189910862 +0100
-@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth 
+Index: ioquake3-1.33+svn592/code/qcommon/q_shared.h
+===================================================================
+--- ioquake3-1.33+svn592.orig/code/qcommon/q_shared.h	2006-02-28 22:06:10.977391589 +0100
++++ ioquake3-1.33+svn592/code/qcommon/q_shared.h	2006-02-28 22:10:25.839138772 +0100
+@@ -26,7 +26,7 @@
  // q_shared.h -- included first by ALL program modules.
  // A user mod should never modify this file
  
--#define	Q3_VERSION		"ioQ3 1.33"
-+#define	Q3_VERSION		"GNU/Debian ioQ3 1.33"
+-#define	Q3_VERSION		"ioQ3 1.34-rc1"
++#define Q3_VERSION              "GNU/Debian ioQ3 1.34-rc1"
  // 1.32 released 7-10-2002
  
  #define MAX_TEAMNAME 32
-diff -rup ioquake3-1.33+svn544.orig/code/server/sv_init.c ioquake3-1.33+svn544/code/server/sv_init.c
---- ioquake3-1.33+svn544.orig/code/server/sv_init.c	2006-02-16 12:34:33.806284648 +0100
-+++ ioquake3-1.33+svn544/code/server/sv_init.c	2006-02-16 12:33:48.193910895 +0100
-@@ -579,7 +579,7 @@ void SV_Init (void) {
+Index: ioquake3-1.33+svn592/code/server/sv_init.c
+===================================================================
+--- ioquake3-1.33+svn592.orig/code/server/sv_init.c	2006-02-28 22:06:08.405375241 +0100
++++ ioquake3-1.33+svn592/code/server/sv_init.c	2006-02-28 22:09:46.090849996 +0100
+@@ -579,7 +579,7 @@
  	Cvar_Get ("protocol", va("%i", PROTOCOL_VERSION), CVAR_SERVERINFO | CVAR_ROM);
  	sv_mapname = Cvar_Get ("mapname", "nomap", CVAR_SERVERINFO | CVAR_ROM);
  	sv_privateClients = Cvar_Get ("sv_privateClients", "0", CVAR_SERVERINFO);

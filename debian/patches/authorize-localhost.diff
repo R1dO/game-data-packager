@@ -1,7 +1,8 @@
-diff -rup ioquake3-1.33+svn544.orig/code/qcommon/qcommon.h ioquake3-1.33+svn544/code/qcommon/qcommon.h
---- ioquake3-1.33+svn544.orig/code/qcommon/qcommon.h	2006-02-16 12:34:38.574323552 +0100
-+++ ioquake3-1.33+svn544/code/qcommon/qcommon.h	2006-02-16 12:33:48.193910895 +0100
-@@ -239,7 +239,10 @@ extern int demo_protocols[];
+Index: ioquake3-1.33+svn592/code/qcommon/qcommon.h
+===================================================================
+--- ioquake3-1.33+svn592.orig/code/qcommon/qcommon.h	2006-02-28 22:09:05.750562985 +0100
++++ ioquake3-1.33+svn592/code/qcommon/qcommon.h	2006-02-28 22:09:29.450730863 +0100
+@@ -239,7 +239,10 @@
  #define MASTER_SERVER_NAME	"master.quake3arena.com"
  #endif
  #ifndef AUTHORIZE_SERVER_NAME
