@@ -22,7 +22,7 @@ BINARY=ioquake3
 # catch them here, to avoid accidently launching the binary.
 
 while [ "$1" != "" ]; do {
-	if [ "$1" == "+set" ]; then
+	if [ "$1" == "+set" ] || [ "$1" == "+exec" ]; then
 		break;
 	fi
 	case "$1" in
