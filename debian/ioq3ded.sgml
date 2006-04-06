@@ -62,6 +62,53 @@
     <para><command>ioquake3</command> or <command>&dhpackage;</command> can be used to start a server, but <command>&dhpackage;</command> does not require X11 or GL. <command>&dhpackage;</command> will start in dedicated mode.</para>
 
   </refsect1>
+  
+  <refsect1>
+    <title>WRAPPER SCRIPT OPTIONS</title>
+    <para>These options are processed by calling the wrapper script <command>ioquake3</command> or <command>ioq3ded</command>.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>
+	<option>-h</option>
+	<option>--help</option>
+        </term>
+        <listitem>
+	<para>
+	 Display a short help summary.
+	</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+	<option>-q</option>
+	<option>--quiet</option>
+        </term>
+        <listitem>
+	<para>
+	 Disable all console output.
+	</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+	<option>-s</option>
+	<option>--smp</option>
+        </term>
+        <listitem>
+	<para>
+	Use  the  SMP  capable	Icculus.Org Quake III Arena binary. Most
+	people won't need this, it's only for multiprocessor system with
+	CPU's below about 500MHz. On modern CPU's this option results
+	in a performance loss!
+	</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
   <refsect1>
     <title>OPTIONS</title>
     <para>Command line options must be set on the command line and will not work if executed in a config file.</para>
@@ -246,6 +293,7 @@
         </term>
         <listitem>
 	<para>
+	No explanation.
 	sets the amount of time in seconds that players may practice before the actual tournament match starts.  The default is 20 seconds.
 	</para>
         </listitem>
@@ -329,7 +377,7 @@
     <title>EXAMPLES</title>
 
     <para>To start a server that does not report to the master server, use the command line below. This is also the default for the dedicated server binary.</para>
-    <para><command>ioquake3 +set dedicated 1</command></param>
+    <para><command>ioquake3 +set dedicated 1</command></para>
 
     <para>To start a server (either binary) that notifies the master server of its presence, please use the following command line:</para>
     <para><command>ioquake3 +set dedicated 2</command></para>
