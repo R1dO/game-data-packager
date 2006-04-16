@@ -48,6 +48,7 @@ clean: unpatch
 	
 	# Clean up files we generated on our own
 	-rm -f build-stamp configure-stamp unpack-stamp ioq3ded.6 ioquake3.6 ioquake3.svg
+	-rm -rf .pc
 	dh_clean
 
 install: DH_OPTIONS=
