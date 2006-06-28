@@ -7,7 +7,7 @@ Build-Depends: debhelper (>> 4.0.0), libsdl1.2-dev, docbook-to-man, libopenal-de
 Standards-Version: 3.7.2
 
 Package: ioquake3
-Architecture: i386 amd64 powerpc sparc
+Architecture: all
 Depends: ${shlibs:Depends}, ioquake3-common
 Suggests: xqf, qstat
 Description: Improved version of id Software Inc.'s Quake III engine
@@ -21,7 +21,7 @@ Description: Improved version of id Software Inc.'s Quake III engine
  This package contains the architecture dependent client files.
 
 Package: ioquake3-server
-Architecture: amd64 i386 powerpc sparc
+Architecture: all
 Depends: ${shlibs:Depends}, ioquake3-common
 Description: Icculus.Org Quake III Arena dedicated server
  Icculus.Org Quake III Arena is a 3D action game in first-person perspective, 
@@ -31,8 +31,9 @@ Description: Icculus.Org Quake III Arena dedicated server
  This package contains the architecture dependent server files.
 
 Package: ioquake3-common
-Architecture: all
-Depends: quake3-data, debconf (>= 0.5.00)
+Architecture: any
+Depends: debconf (>= 0.5.00)
+Recommends: quake3-data
 Description: Icculus.Org Quake III Arena binary common files
  This package provides files which are common among the packages ioquake3 and 
  ioquake3-server. It builds the "glue" to files, installed by the quake3-data 
