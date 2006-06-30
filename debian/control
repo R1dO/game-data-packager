@@ -18,7 +18,9 @@ Description: Improved version of id Software Inc.'s Quake III engine
  commercial data from the Quake III Arena CD-ROM with the "quake3-data" package,
  or install some free data files.
  .
- This package contains the architecture dependent client files.
+ This package contains the game client.
+ .
+  Homepage: http://www.icculus.org/quake3
 
 Package: ioquake3-server
 Architecture: any
@@ -28,17 +30,17 @@ Description: Icculus.Org Quake III Arena dedicated server
  commonly known as a "first person shooter".
  You will also have to install the quake3-data package to run the server.
  .
- This package contains the architecture dependent server files.
+ This package contains the game server.
+ .
+  Homepage: http://www.icculus.org/quake3
 
 Package: ioquake3-common
 Architecture: all
 Depends: debconf (>= 0.5.00)
 Recommends: quake3-data
-Description: Icculus.Org Quake III Arena binary common files
+Description: Icculus.Org Quake III Arena common files
  This package provides files which are common among the packages ioquake3 and 
- ioquake3-server. It builds the "glue" to files, installed by the quake3-data 
- package.
+ ioquake3-server.
  .
- Note that this package depends on quake3-data, which will install the data 
- files from the commercial Quake III Arena CD-ROM. This will take up to 500 MB 
- of disk space!
+ If you own a copy of id Software Inc.'s Quake III Arena, you can install the 
+ package "quake3-data" to install the proprietary game data.

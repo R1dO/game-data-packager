@@ -104,6 +104,7 @@ binary-arch: build install
 	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak6.pk3 usr/lib/games/ioquake3/baseq3/pak6.pk3
 	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak7.pk3 usr/lib/games/ioquake3/baseq3/pak7.pk3
 	dh_link -pioquake3-common usr/share/games/quake3/baseq3/pak8.pk3 usr/lib/games/ioquake3/baseq3/pak8.pk3
+	dh_link -pioquake3-server usr/games/ioq3ded usr/games/ioquake3-server
 	dh_installinfo
 	dh_installchangelogs -pioquake3 ChangeLog
 	dh_installchangelogs -pioquake3-server ChangeLog
