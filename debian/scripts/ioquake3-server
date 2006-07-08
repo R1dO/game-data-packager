@@ -21,13 +21,5 @@ case "$1" in
 		;;
 esac
 
-# Is quake3-data configured?
-for i in `seq -w 0 1 8`; do
-	if [ ! -e /usr/share/games/ioquake3/baseq3/pak$i.pk3 ]; then
-		echo -e ${MISSING_FILES}
-		exit 1;
-	fi
-done
-
 # Ready to rumble!
-/usr/games/ioq3ded.bin -basepath /usr/share/games/quake3-data $*
+/usr/games/ioq3ded.bin +set fs_basepath /usr/share/games/quake3-data $*
