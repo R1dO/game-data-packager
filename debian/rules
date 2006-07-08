@@ -66,9 +66,9 @@ install: build
 	dh_install -pioquake3 build/release-linux-$(Q3ARCH)/ioquake3.bin usr/games
 	
 	### server files
+	dh_install -pioquake3-server build/release-linux-$(Q3ARCH)/ioq3ded.bin usr/games
 	dh_install -pioquake3-server debian/scripts/ioquake3-server usr/games
 	dh_link -pioquake3-server usr/games/ioquake3-server usr/games/ioq3ded
-	dh_install -pioquake3-server build/release-linux-$(Q3ARCH)/ioq3ded.bin usr/games
 
 binary-indep: build install
 binary-arch: build install
@@ -79,7 +79,6 @@ binary-arch: build install
 	dh_installmenu
 	dh_installman -pioquake3-server ioq3ded.6
 	dh_installman -pioquake3 ioquake3.6
-	dh_link -pioquake3-server usr/games/ioq3ded usr/games/ioquake3-server
 	dh_installinfo
 	dh_installchangelogs -pioquake3 ChangeLog
 	dh_installchangelogs -pioquake3-server ChangeLog
