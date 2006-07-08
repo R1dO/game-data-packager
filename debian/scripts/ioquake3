@@ -5,22 +5,18 @@ Icculus.Org Quake III Arena client wrapper\n\
 This script is Debian specific, it is *NOT* part of the source distribution!\n\
 Usage: ioquake3 [OPTION]...\n\
 \n\
- -h, --help\t\tDisplay this help\n\
- -q, --quiet\t\tDisable console output\n\
- -s, --smp\t\tUse the SMP capable Icculus.Org Quake III Arena binary.\n\
-\t\t\tREAD THE MANPAGE!\n\
- +set option value\tPass options to the Icculus.Org Quake III Arena binary\n"
+ -h, --help         Display this help\n\
+ -q, --quiet        Disable console output\n\
+ +<engine_command>  Pass options to the Icculus.Org Quake III Arena binary\n"
 
 MISSING_FILES="\
 Required Quake III data files are not installed.\n\
 As root, run 'dpkg-reconfigure ioquake3-data'.\n"
 
 QUIET=0
-BINARY=ioquake3
 
 # Quake 3 binaries don't understand "regular" command line parameters. Let's
 # catch them here, to avoid accidently launching the binary.
-
 while [ "$1" != "" ]; do {
 	if [ "$1" == "+set" ] || [ "$1" == "+exec" ]; then
 		break;
@@ -33,28 +29,21 @@ while [ "$1" != "" ]; do {
 		-q|--quiet)
 			QUIET=1
 			;;
-		-s|--smp)
-			BINARY=ioquake3-smp
-			;;
 	esac
 	shift
 }; done
 
 # Is ioquake3-data configured?
 for i in `seq -w 0 1 8`; do
-	if [ ! -e /usr/lib/games/ioquake3/baseq3/pak$i.pk3 ]; then
+	if [ ! -e /usr/share/games/ioquake3/baseq3/pak$i.pk3 ]; then
 		echo -e ${MISSING_FILES}
 		exit 1;
 	fi
 done
 
 # Ready to rumble!
-cd /usr/lib/games/ioquake3
-
 if [ ${QUIET} == 1 ]; then
-	exec ./${BINARY} +set ttycon 0 $* >/dev/null 2>&1
+	/usr/games/ioquake3.bin -basepath /usr/share/games/quake3 +set ttycon 0 $* >/dev/null 2>&1
 else
-	exec ./${BINARY} $*
+	/usr/games/ioquake3.bin -basepath /usr/share/games/quake3 $*
 fi
-
-exit $?

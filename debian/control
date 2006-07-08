@@ -8,7 +8,8 @@ Standards-Version: 3.7.2
 
 Package: ioquake3
 Architecture: any
-Depends: ${shlibs:Depends}, ioquake3-common
+Depends: ${shlibs:Depends}
+Recommends: quake3-data
 Suggests: xqf, qstat
 Description: Improved version of id Software Inc.'s Quake III engine
  Icculus.Org Quake III is a 3D action game engine in first-person perspective, 
@@ -24,7 +25,8 @@ Description: Improved version of id Software Inc.'s Quake III engine
 
 Package: ioquake3-server
 Architecture: any
-Depends: ${shlibs:Depends}, ioquake3-common
+Depends: ${shlibs:Depends}
+Recommends: quake3-data
 Description: Icculus.Org Quake III Arena dedicated server
  Icculus.Org Quake III Arena is a 3D action game in first-person perspective, 
  commonly known as a "first person shooter".
@@ -33,14 +35,3 @@ Description: Icculus.Org Quake III Arena dedicated server
  This package contains the game server.
  .
   Homepage: http://www.icculus.org/quake3
-
-Package: ioquake3-common
-Architecture: all
-Depends: debconf (>= 0.5.00)
-Recommends: quake3-data
-Description: Icculus.Org Quake III Arena common files
- This package provides files which are common among the packages ioquake3 and 
- ioquake3-server.
- .
- If you own a copy of id Software Inc.'s Quake III Arena, you can install the 
- package "quake3-data" to install the proprietary game data.
