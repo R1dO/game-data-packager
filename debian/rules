@@ -1,0 +1,98 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PLATFORM=$(shell uname|sed -e s/_.*//|tr '[:upper:]' '[:lower:]')
+ARCH=$(shell uname -m | sed -e s/i.86/i386/)
+BR=build/release-$(PLATFORM)-$(ARCH)
+
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+build: build-arch
+build-arch: build-arch-stamp
+build-arch-stamp:
+	dh_testdir
+	$(MAKE) $(BUILD_FLAGS)
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f ioquake3 ioq3ded
+	$(MAKE) clean
+	
+	rm -rf build configure-stamp
+	
+	dh_clean 
+
+install: install-indep install-arch
+
+
+install-indep:
+	dh_testdir
+	dh_testroot
+	dh_clean -k -a
+	dh_installdirs -a
+	dh_install -a
+	dh_icons -a
+
+install-arch: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k -s
+	dh_installdirs -s
+	dh_icons -s
+
+	cp $(BR)/ioquake3.$(ARCH) ioquake3
+	cp $(BR)/ioq3ded.$(ARCH) ioq3ded
+
+	dh_desktop -pquake3 debian/quake3.desktop
+	dh_installman -pquake3 debian/quake3.6
+	dh_installchangelogs -pquake3 ChangeLog
+
+	dh_installman -pquake3-server debian/quake3-server.6
+	dh_installchangelogs -pquake3-server ChangeLog
+
+	dh_install -s
+
+
+# Build architecture-independent files here.
+binary-indep: install-indep
+	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common
+
+# Build architecture-dependent files here.
+binary-arch: build-arch install-arch
+	$(MAKE) -f debian/rules DH_OPTIONS=-a binary-common
+
+# Build architecture-dependent files here.
+binary-common:
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_installmenu
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+
+binary: binary-arch binary-indep
+.PHONY: build clean binary-indep binary-arch binary install install-indep install-arch

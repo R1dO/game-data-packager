@@ -1,0 +1,29 @@
+Source: quake3
+Section: contrib/games
+Priority: optional
+Maintainer: Jack Coulter <jscinoz@gmail.com>
+Build-Depends: debhelper (>= 5.0.51~), libopenal-dev
+Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/quake3
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/quake3/?op=log
+Homepage: http://www.ioquake3.org/
+Standards-Version: 3.8.0
+
+Package: quake3
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, quake3-data, libcurl3
+Description: ioQuake3 with baseq3 specific scripts. Game client.
+ This package contains the latest SVN build of ioquake3, with a dependency on
+ quake3-data, launcher scripts, and menu entries. The user must still provide
+ their own legal copy of quake3 to install data from via the use of quake3-data
+ .
+ This package contains the game client.
+
+Package: quake3-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, quake3-data
+Description: ioQuake3 with baseq3 specific scripts. Dedicated server
+ This package contains the latest SVN build of ioquake3, with a dependency on
+ quake3-data, launcher scripts, and menu entries. The user must still provide
+ their own legal copy of quake3 to install data from via the use of quake3-data
+ .
+ This package contains the dedicated server.
