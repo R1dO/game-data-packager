@@ -31,10 +31,10 @@ build-arch-stamp:
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f ioquake3 ioq3ded
-	$(MAKE) clean
+	rm -f ioquake3 ioq3ded configure-stamp
+	rm -rf build 
 	
-	rm -rf build configure-stamp
+	$(MAKE) clean
 	
 	dh_clean 
 
