@@ -2,6 +2,7 @@
 # Adapted from Tremulous and Nexuiz launch scripts
 BINARY=/usr/lib/games/quake3/ioq3ded
 BASE_PATH=/usr/share/games/quake3
+GAME=baseq3
 QUIET=0
 EXCUSE="\
 Quake 3 server wrapper\n\
@@ -34,9 +35,9 @@ while [ "$1" != "" ]; do {
 # Ready to rumble!
 
 if [ ${QUIET} -eq 1 ]; then
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set ttycon 0 $* >/dev/null 2>&1
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} +set ttycon 0 $* >/dev/null 2>&1
 else
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} $*
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} $*
 fi
 
 exit $?
