@@ -52,8 +52,8 @@ install-arch: build
 	dh_installdirs -s
 	dh_icons -s
 
-	cp build/*/ioquake3.* ioquake3
-	cp build/*/ioq3ded.* ioq3ded
+	cp build/release*/ioquake3.* ioquake3
+	cp build/release*/ioq3ded.* ioq3ded
 
 	dh_desktop -pquake3 debian/quake3.desktop
 	dh_installman -pquake3 debian/quake3.6
