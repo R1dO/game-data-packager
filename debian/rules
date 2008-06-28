@@ -9,10 +9,6 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-PLATFORM=$(shell uname|sed -e s/_.*//|tr '[:upper:]' '[:lower:]')
-ARCH=$(shell uname -m | sed -e s/i.86/i386/)
-BR=build/release-$(PLATFORM)-$(ARCH)
-
 
 CFLAGS = -Wall -g
 
@@ -56,8 +52,8 @@ install-arch: build
 	dh_installdirs -s
 	dh_icons -s
 
-	cp $(BR)/ioquake3.$(ARCH) ioquake3
-	cp $(BR)/ioq3ded.$(ARCH) ioq3ded
+	cp build/*/ioquake3.* ioquake3
+	cp build/*/ioq3ded.* ioq3ded
 
 	dh_desktop -pquake3 debian/quake3.desktop
 	dh_installman -pquake3 debian/quake3.6
