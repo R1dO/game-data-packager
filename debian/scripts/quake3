@@ -44,9 +44,9 @@ fi
 # Ready to rumble!
 
 if [ ${QUIET} -eq 1 ]; then
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} +set ttycon 0 $* >/dev/null 2>&1
-else
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} $*
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} +set ttycon 0 +set vm_ui 2 $* >/dev/null 2>&1
+else # We don't include ioquake3 qvm and so, so we have to set vm_ui 2
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} +set vm_ui 2 $*
 fi
 
 exit $?
