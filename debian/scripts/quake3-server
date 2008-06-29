@@ -34,8 +34,7 @@ while [ "$1" != "" ]; do {
 
 # baseq3 creates botlib.log in cwd rather than ~/.q3a/baseq3
 # this is a dirty hack to work around this issue
-[ -d $HOME/.q3a/baseq3 ] || mkdir -p $HOME/.q3a/baseq3
-cd $HOME/.q3a/baseq3
+[ -d $HOME/.q3a/baseq3 ] || mkdir -p $HOME/.q3a/baseq3; cd $HOME/.q3a/baseq3
 
 # Ready to rumble!
 
