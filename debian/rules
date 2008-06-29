@@ -22,7 +22,7 @@ build: build-arch
 build-arch: build-arch-stamp
 build-arch-stamp:
 	dh_testdir
-	$(MAKE) $(BUILD_FLAGS)
+	BUILD_GAME_SO=0 BUILD_GAME_QVM=0 $(MAKE) $(BUILD_FLAGS) # We dont need so/qvm
 
 clean:
 	dh_testdir
@@ -53,7 +53,7 @@ install-arch: build
 	dh_icons -s
 
 	cp build/release*/ioquake3.* ioquake3
-	cp build/release*/ioq3ded.* ioq3ded
+	cp build/releasee*/ioq3ded.* ioq3ded
 
 	dh_desktop -pquake3 debian/quake3.desktop
 	dh_installman -pquake3 debian/quake3.6
