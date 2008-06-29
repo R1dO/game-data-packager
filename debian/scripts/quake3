@@ -2,7 +2,6 @@
 # Adapted from Tremulous and Nexuiz launch scripts
 BINARY=/usr/lib/games/quake3/ioquake3
 BASE_PATH=/usr/share/games/quake3
-GAME=baseq3
 QUIET=0
 EXCUSE="\
 Quake 3 client wrapper\n\
@@ -39,9 +38,9 @@ while [ "$1" != "" ]; do {
 # Ready to rumble!
 
 if [ ${QUIET} -eq 1 ]; then
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} +set ttycon 0 +set vm_ui 2 $* >/dev/null 2>&1
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set ttycon 0 +set vm_ui 2 $* >/dev/null 2>&1
 else # We don't include ioquake3 qvm and so, so we have to set vm_ui 2
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set fs_game ${GAME} +set vm_ui 2 $*
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set vm_ui 2 $*
 fi
 
 exit $?
