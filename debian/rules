@@ -22,7 +22,7 @@ build: build-arch
 build-arch: build-arch-stamp
 build-arch-stamp:
 	dh_testdir
-	USE_INTERNAL_SPEEX=0 BUILD_GAME_QVM=0 BUILD_GAME_SO=0 $(MAKE) $(BUILD_FLAGS) # so/qvm unneeded
+	BUILD_GAME_QVM=0 BUILD_GAME_SO=0 $(MAKE) $(BUILD_FLAGS) # so/qvm unneeded
 
 clean:
 	dh_testdir
@@ -40,10 +40,10 @@ install: install-indep install-arch
 install-indep:
 	dh_testdir
 	dh_testroot
-	dh_clean -k -a
-	dh_installdirs -a
-	dh_install -a
-	dh_icons -a
+	dh_clean -k -i
+	dh_installdirs -i
+	dh_install -i
+	dh_icons -i
 
 install-arch: build
 	dh_testdir
@@ -71,7 +71,7 @@ binary-indep: install-indep
 
 # Build architecture-dependent files here.
 binary-arch: build-arch install-arch
-	$(MAKE) -f debian/rules DH_OPTIONS=-a binary-common
+	$(MAKE) -f debian/rules DH_OPTIONS=-s binary-common
 
 # Build architecture-dependent files here.
 binary-common:
