@@ -9,21 +9,15 @@ Homepage: http://www.ioquake3.org/
 Standards-Version: 3.8.0
 
 Package: quake3
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, quake3-data, libcurl3
-Description: ioQuake3 with baseq3 specific scripts - Game client
- This package contains the latest SVN build of ioquake3, with a dependency on
- quake3-data, launcher scripts, and menu entries. The user must still provide
- their own legal copy of quake3 to install data from via the use of quake3-data
- .
- This package contains the game client.
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ioquake3, quake3-data
+Description: baseq3 game client specific menu entry and launcher scripts
+ This package contains man pages documenting, and a launcher script to play
+ Quake III Arena with the ioQuake3 engine.
 
 Package: quake3-server
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, quake3-data
-Description: ioQuake3 with baseq3 specific scripts - Dedicated server
- This package contains the latest SVN build of ioquake3, with a dependency on
- quake3-data, launcher scripts, and menu entries. The user must still provide
- their own legal copy of quake3 to install data from via the use of quake3-data
- .
- This package contains the dedicated server.
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ioquake3-server, quake3-data
+Description: baseq3 dedicated server specific launcher scripts
+ This package contains man pages documenting, and a launcher script to run a
+ Quake III Arena dedicated server with the ioQuake3 engine.
