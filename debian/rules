@@ -22,17 +22,17 @@ build: build-arch
 build-arch: build-arch-stamp
 build-arch-stamp:
 	dh_testdir
-	BUILD_GAME_SO=0 BUILD_GAME_QVM=0 $(MAKE) $(BUILD_FLAGS) # so/qvm unneeded
+	BUILD_GAME_QVM=0 BUILD_GAME_SO=0 $(MAKE) $(BUILD_FLAGS) # so/qvm unneeded
 
 clean:
 	dh_testdir
 	dh_testroot
 	rm -f ioquake3 ioq3ded configure-stamp
-	rm -rf build 
+	rm -rf build
 	
 	$(MAKE) clean
 	
-	dh_clean 
+	dh_clean
 
 install: install-indep install-arch
 
@@ -55,6 +55,7 @@ install-arch: build
 	cp build/release*/ioquake3.* ioquake3
 	cp build/release*/ioq3ded.* ioq3ded
 
+
 	dh_desktop -pquake3 debian/quake3.desktop
 	dh_installman -pquake3 debian/quake3.6
 	dh_installchangelogs -pquake3 ChangeLog
@@ -63,8 +64,7 @@ install-arch: build
 	dh_installchangelogs -pquake3-server ChangeLog
 
 	dh_install -s
-
-
+	
 # Build architecture-independent files here.
 binary-indep: install-indep
 	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common

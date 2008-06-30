@@ -13,7 +13,7 @@ Usage: quake3 [OPTION]...\n\
  +<internal command>\tPass commands to the engine\n"
 
 # ioQuake3 binaries don't understand "regular" command line parameters. Let's
-# catch them here, to avoid accidently launching the binary.
+# catch them here, to avoid accidentally launching the binary.
 
 while [ "$1" != "" ]; do {
 	if [ "$1" = "+set" -o "$1" = "+connect" ]; then
@@ -38,9 +38,9 @@ while [ "$1" != "" ]; do {
 # Ready to rumble!
 
 if [ ${QUIET} -eq 1 ]; then
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set ttycon 0 +set vm_ui 2 $* >/dev/null 2>&1
-else # We don't include ioquake3 qvm and so, so we have to set vm_ui 2
-	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set vm_ui 2 $*
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set ttycon 0 $* >/dev/null 2>&1
+else
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} $*
 fi
 
 exit $?
