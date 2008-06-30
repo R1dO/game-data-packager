@@ -9,63 +9,34 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-
-CFLAGS = -Wall -g
-
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
-
-build: build-arch
-build-arch: build-arch-stamp
-build-arch-stamp:
-	dh_testdir
+build:
 	# Nothing to do
 
 clean:
 	dh_testdir
 	dh_testroot
+	dh_clean
+	rm -rf tmp.*
 
-
-install: install-indep install-arch
-
-
+install: install-indep
 install-indep:
 	dh_testdir
 	dh_testroot
 	dh_clean -k -i
 	dh_installdirs -i
-	dh_install -i
 	dh_icons -i
-
-install-arch: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k -s
-	dh_installdirs -s
-	dh_icons -s
-
-	dh_install 
+	
 	dh_desktop -pquake3 debian/quake3.desktop
 	dh_installman -pquake3 debian/quake3.6
 
 	dh_installman -pquake3-server debian/quake3-server.6
 	dh_install -pquake3-server debian/scripts/quake3-server usr/games
 
-	dh_install -s
+	dh_install -i
+
 	
 # Build architecture-independent files here.
 binary-indep: install-indep
-	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common
-
-# Build architecture-dependent files here.
-binary-arch: build-arch install-arch
-	$(MAKE) -f debian/rules DH_OPTIONS=-s binary-common
-
-# Build architecture-dependent files here.
-binary-common:
 	dh_testdir
 	dh_testroot
 	dh_installdocs
@@ -75,11 +46,14 @@ binary-common:
 	dh_compress
 	dh_fixperms
 	dh_installdeb
-	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+	
+# Build architecture dependant packages using the common target.
+binary-arch:
+	# Nothing to do
 
 
-binary: binary-arch binary-indep
-.PHONY: build clean binary-indep binary-arch binary install install-indep install-arch
+binary: binary-indep
+.PHONY: build clean binary-indep binary-arch binary install install-indep
