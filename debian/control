@@ -2,7 +2,8 @@ Source: quake3
 Section: contrib/games
 Priority: optional
 Maintainer: Jack Coulter <jscinoz@gmail.com>
-Build-Depends: debhelper (>= 5.0.51~), libopenal-dev, libsdl1.2-dev
+Build-Depends: debhelper (>= 5.0.51~), libopenal-dev, libsdl1.2-dev,
+ libspeexdsp-dev, speex
 Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/quake3
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/quake3/?op=log
 Homepage: http://www.ioquake3.org/

@@ -22,7 +22,7 @@ build: build-arch
 build-arch: build-arch-stamp
 build-arch-stamp:
 	dh_testdir
-	BUILD_GAME_QVM=0 BUILD_GAME_SO=0 $(MAKE) $(BUILD_FLAGS) # so/qvm unneeded
+	USE_INTERNAL_SPEEX=0 BUILD_GAME_QVM=0 BUILD_GAME_SO=0 $(MAKE) $(BUILD_FLAGS) # so/qvm unneeded
 
 clean:
 	dh_testdir
