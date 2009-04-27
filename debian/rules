@@ -26,7 +26,6 @@ install-indep:
 	dh_installdirs -i
 	dh_icons -i
 	
-	dh_desktop -pquake3 debian/quake3.desktop
 	dh_installman -pquake3 debian/quake3.6
 
 	dh_installman -pquake3-server debian/quake3-server.6
