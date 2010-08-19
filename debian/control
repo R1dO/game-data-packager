@@ -15,6 +15,10 @@ Depends: ioquake3, quake3-data
 Description: Quake III Arena menu entry and launcher scripts
  This package contains man pages documenting, and a launcher script to play
  Quake III Arena with the ioQuake3 engine.
+ .
+ Before installing this package you will need to create and install the
+ non-distributable quake3-data package, by using the game-data-packager
+ package. This requires pak0.pk3 from a Quake III installation or CD-ROM.
 
 Package: quake3-server
 Architecture: all
@@ -22,3 +26,7 @@ Depends: ioquake3-server, quake3-data
 Description: Quake III Arena dedicated server launcher scripts
  This package contains man pages documenting, and a launcher script to run, a
  Quake III Arena dedicated server with the ioQuake3 engine.
+ .
+ Before installing this package you will need to create and install the
+ non-distributable quake3-data package, by using the game-data-packager
+ package. This requires pak0.pk3 from a Quake III installation or CD-ROM.
