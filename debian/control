@@ -2,17 +2,17 @@ Source: quake3
 Section: contrib/games
 Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Uploaders: Simon Mcvittie <smcv@debian.org>, Jack Coulter <jscinoz@gmail.com>
+Uploaders: Simon McVittie <smcv@debian.org>, Jack Coulter <jscinoz@gmail.com>
 Build-Depends: debhelper (>= 7)
 Build-Depends-Indep: xcftools, imagemagick
 Vcs-Git: git://git.debian.org/git/pkg-games/quake3.git
 Vcs-Browser: http://git.debian.org/?p=pkg-games/quake3.git
 Homepage: http://www.ioquake3.org/
-Standards-Version: 3.8.0
+Standards-Version: 3.9.1
 
 Package: quake3
 Architecture: all
-Depends: ioquake3, quake3-data
+Depends: ioquake3, quake3-data, ${misc:Depends}
 Description: Quake III Arena menu entry and launcher scripts
  This package contains man pages documenting, and a launcher script to play
  Quake III Arena with the ioQuake3 engine.
@@ -23,7 +23,7 @@ Description: Quake III Arena menu entry and launcher scripts
 
 Package: quake3-server
 Architecture: all
-Depends: ioquake3-server, quake3-data
+Depends: ioquake3-server, quake3-data, ${misc:Depends}
 Description: Quake III Arena dedicated server launcher scripts
  This package contains man pages documenting, and a launcher script to run, a
  Quake III Arena dedicated server with the ioQuake3 engine.
