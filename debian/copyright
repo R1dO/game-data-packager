@@ -1,10 +1,13 @@
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
 Comment:
   This package contains launcher scripts, man pages, etc. originating
-  in Debian, so there is no upstream project. See the ioquake3 package for the
-  actual engine.
+  in Debian, so there is no upstream project.
+  .
+  See the ioquake3 package for the actual engine, whose upstream is
+  <http://www.ioquake3.org/>. The icon used in this package is also from
+  ioquake3.
 
-Files: debian/*
+Files: debian/*, Makefile, .gitignore
 Copyright:
   © 2008 Jack Coulter
   © 2010 Simon McVittie
@@ -15,3 +18,25 @@ License: GPL-2+
   .
   On Debian systems, the complete text of the GNU General Public License can
   be found in /usr/share/common-licenses/GPL-2.
+
+Files: quake3-tango.png, debian/quake3*.xpm
+Copyright:
+  © 2007 mister fork <f0rqu3 at gmail.com>
+License: GPL-2+
+Comment:
+  Relevant snippets of ioquake3 mailing list thread:
+  .
+  <http://icculus.org/pipermail/quake3/2007-September/001979.html>:
+    http://f0rqu3.deviantart.com/art/quake3-icon-64264660
+    this is the one I made from the original logo
+    and there is another in ioquake3 svn
+  <http://icculus.org/pipermail/quake3/2007-September/001980.html>:
+    This is awesome, can I use it?
+  <http://icculus.org/pipermail/quake3/2007-September/001981.html>:
+    I think he ment to use it under the GPL in ioq3 :)
+    For normal use there is no need to ask...
+    http://creativecommons.org/licenses/by-nc-sa/2.5/
+  <http://icculus.org/pipermail/quake3/2007-September/001984.html>:
+    yes. I cant choose GPL as license in DA so I use CC :/
+  .
+  The XPM versions in debian/ appear to be derived from this.
