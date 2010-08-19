@@ -6,5 +6,9 @@ quake3 (1.0) UNRELEASED; urgency=low
 
   [ Simon McVittie ]
   * Adapt for the current version of ioquake3
+  * Upgrade to source format 3.0 (native), debhelper v8, machine-readable
+    copyright, and Policy version 3.9.1
+  * Include the GIMP source file for the logo (from ioquake3), and produce
+    lower-quality versions from it at build time
 
  -- Simon McVittie <smcv@debian.org>  Thu, 19 Aug 2010 16:25:19 +0100
