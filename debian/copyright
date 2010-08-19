@@ -1,17 +1,17 @@
-This package was debianized by Jack Coulter <jack@jscinoz> on
-Wed, 25 Jun 2008 14:09:27 +1000.
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+Comment:
+  This package contains launcher scripts, man pages, etc. originating
+  in Debian, so there is no upstream project. See the ioquake3 package for the
+  actual engine.
 
-It was downloaded from http://www.ioquake3.org
-
-Upstream Authors:
-
-   Id Software, Inc.
-
-Copyright: 
-
-    Copyright (C) 1999-2005 Id Software, Inc.
-
-License: GPL2
-
-The Debian packaging is (C) 2008, Jack Coulter <jack@jscinoz> and
-is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+Files: debian/*
+Copyright:
+  © 2008 Jack Coulter
+  © 2010 Simon McVittie
+License: GPL-2+
+  Permission is granted to copy, distribute and/or modify this work under the
+  terms of the GNU General Public License, Version 2, or any later version
+  published by the Free Software Foundation.
+  .
+  On Debian systems, the complete text of the GNU General Public License can
+  be found in /usr/share/common-licenses/GPL-2.
