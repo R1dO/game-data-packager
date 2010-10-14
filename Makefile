@@ -8,6 +8,7 @@ ALL = \
 all: $(ALL)
 
 build/quake3: quake3.in Makefile
+	install -d build
 	sed \
 		-e 's!@IOQ3BINARY@!ioquake3!' \
 		-e 's!@IOQ3SELF@!quake3!' \
@@ -16,6 +17,7 @@ build/quake3: quake3.in Makefile
 	chmod +x $@
 
 build/quake3-server: quake3.in Makefile
+	install -d build
 	sed \
 		-e 's!@IOQ3BINARY@!ioq3ded!' \
 		-e 's!@IOQ3SELF@!quake3!' \
