@@ -53,4 +53,4 @@ if test "z$QUIET" = z1; then
   exec >/dev/null 2>&1;
 fi
 
-exec ${ENGINE} ${CVARS} "$@"
+exec ${DEBUGGER} ${ENGINE} ${CVARS} "$@"
