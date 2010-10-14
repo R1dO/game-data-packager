@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# quake3 or quake3-server or whatever
+IOQ3SELF=@IOQ3SELF@
+# "server" or "client"
+IOQ3ROLE=@IOQ3ROLE@
+# ioquake3 or ioq3ded
+IOQ3BINARY=@IOQ3BINARY@
+# q3a or openarena
+IOQ3DOTDIR=q3a
+
+ENGINE="/usr/lib/ioquake3/${IOQ3BINARY}"
+
+DEBUGGER="$QUAKE3_DEBUGGER"
+
+if test -n "$QUAKE3_BACKTRACE"; then
+  DEBUGGER="gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args"
+fi
+
+# the defaults mostly apply
+CVARS="+set com_standalone 0"
+CVARS="$CVARS +set fs_basepath /usr/share/games/quake3"
+
+QUIET=0
+
+EXCUSE="\
+Quake III Arena ${IOQ3ROLE} wrapper for Debian\n\
+\n\
+Usage: ${IOQ3SELF} [OPTION]...\n\
+\n\
+ -h, --help\t\tDisplay this help\n\
+ -q, --quiet\t\tDisable console output\n\
+  +<internal command>\tPass commands to the engine\n"
+
+while [ "$1" != "" ]; do
+  case "$1" in
+    -h|--help)
+      echo ${EXCUSE}
+      exit 0
+      ;;
+    -q|--quiet)
+      CVARS="$CVARS +set ttycon 0"
+      QUIET=1
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+if test "z$QUIET" = z1; then
+  exec >/dev/null 2>&1;
+fi
+
+exec ${ENGINE} ${CVARS} "$@"
