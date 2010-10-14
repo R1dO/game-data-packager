@@ -86,6 +86,15 @@ Configuration and state for Quake III Arena
 .TP
 \fI~/.q3a/missionpack\fR
 Configuration and state for Quake III: Team Arena, if installed
+.SH ENVIRONMENT
+.TP
+\fBQUAKE3_DEBUGGER=\fIcommand\fR
+A debugger or other prefix to prepend to the Quake III command line, such
+as \fBstrace\fR; overridden by \fBQUAKE3_BACKTRACE\fR
+.TP
+\fBQUAKE3_BACKTRACE=1\fR
+Use \fBgdb\fR(1) to get a backtrace if Quake III crashes (the \fBgdb\fR
+package must be installed)
 .SH SEE ALSO
 .BR quake3-server (6)
 .br
