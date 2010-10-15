@@ -1,18 +1,21 @@
-.TH QUAKE3 6 "June 25 , 2008"
+.TH QUAKE3 6 2010-10-15
+
 .SH NAME
-quake3 \- Quake III Arena
+quake3 \- Quake III Arena client
+
 .SH SYNOPSIS
 .B quake3
-[\-h|\-\-help] [\-q|\-\-quiet] [+set \fIoption\fP \fIvalue\fP]...
+.BR "" [ \-h | \-\-help ]
+.BR "" [ \-q | \-\-quiet ]
+.BR "" [ +set
+.IR option " " value ]...
+
 .SH DESCRIPTION
-.PP
-This manual page documents briefly the
 .B quake3
-command.
-.PP
-\fBquake3\fP is the Quake III Arena client. It is a multiplayer network game.
+is the client for Quake III Arena, a multiplayer network game.
+
 .SH OPTIONS
-Options passed to the wrapper script:
+The wrapper script used for Quake III Arena in Debian accepts these options:
 .TP
 \fB\-h\fR, \fB\-\-help\fR
 Display a short help summary
@@ -20,7 +23,16 @@ Display a short help summary
 \fB\-q\fR, \fB\-\-quiet\fR
 Disable all console output
 .PP
-Options that can be passed to the Quake III binary by the +set parameter
+Any console command can also be prefixed with \fB+\fR and used as a
+command-line option (press Shift+Esc to access the in-game console), including:
+.TP
+\fB+set\fR \fIoption\fR \fIvalue\fR
+Set an option (see below for some options)
+.TP
+\fB+connect\fR \fIserver\fR[\fB:\fIport\fR]
+Connect to a server
+.PP
+Options that can be set with \fB+set\fR
 (note that this is not a full list!) include:
 .PP
 \fBcg_drawFPS\fR <bool>
@@ -78,7 +90,7 @@ Options that can be passed to the Quake III binary by the +set parameter
 \fBr_ignoreGLErrors\fR <bool>
 .PP
 \fBr_mode\fR <value>
-.BR
+
 .SH FILES
 .TP
 \fI~/.q3a/baseq3\fR
@@ -86,7 +98,10 @@ Configuration and state for Quake III Arena
 .TP
 \fI~/.q3a/missionpack\fR
 Configuration and state for Quake III: Team Arena, if installed
+
 .SH ENVIRONMENT
+The wrapper script used to launch Quake III Arena allows it to be debugged
+by setting environment variables.
 .TP
 \fBQUAKE3_DEBUGGER=\fIcommand\fR
 A debugger or other prefix to prepend to the Quake III command line, such
@@ -95,13 +110,21 @@ as \fBstrace\fR; overridden by \fBQUAKE3_BACKTRACE\fR
 \fBQUAKE3_BACKTRACE=1\fR
 Use \fBgdb\fR(1) to get a backtrace if Quake III crashes (the \fBgdb\fR
 package must be installed)
+
 .SH SEE ALSO
-.BR quake3-server (6)
-.br
+.BR quake3-server (6),
+.BR ioquake3 (6)
+
 .SH AUTHOR
 The Quake III Arena binary used is a modified ioQuake3; originally created by
 Id Software, now maintained by the ioQuake3 community.
 .PP
-This manual page was written by Jack "jscinoz" Coulter <jscinoz@gmail.com> for the Debian project (but may be used by others). It is largely based off the manual page written by Bruno "Fuddl" Kleinert <fuddl@gmx.de> for the Debian project. Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 2 any later version published by the Free Software Foundation.
+This manual page was written by Jack "jscinoz" Coulter <jscinoz@gmail.com>,
+Bruno "Fuddl" Kleinert <fuddl@gmx.de> and Simon McVittie <smcv@debian.org>
+for the Debian project (but may be used by others).
+Permission is granted to copy, distribute and/or
+modify this document under the terms of the GNU General Public License,
+Version 2 any later version published by the Free Software Foundation.
 .PP
-On Debian systems, the complete text of the GNU General Public License can be found in /usr/share/common-licenses/GPL-2.
+On Debian systems, the complete text of the GNU General Public License
+can be found in /usr/share/common-licenses/GPL-2.
