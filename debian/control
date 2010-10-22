@@ -13,6 +13,7 @@ Standards-Version: 3.9.1
 Package: quake3
 Architecture: all
 Depends: ioquake3, quake3-data, ${misc:Depends}
+Recommends: game-data-packager (>= 23)
 Description: Quake III Arena menu entry and launcher scripts
  This package contains man pages documenting, and a launcher script to play
  Quake III Arena with the ioQuake3 engine.
@@ -24,6 +25,7 @@ Description: Quake III Arena menu entry and launcher scripts
 Package: quake3-server
 Architecture: all
 Depends: ioquake3-server, quake3-data, ${misc:Depends}
+Recommends: game-data-packager (>= 23)
 Description: Quake III Arena dedicated server launcher scripts
  This package contains man pages documenting, and a launcher script to run, a
  Quake III Arena dedicated server with the ioQuake3 engine.
