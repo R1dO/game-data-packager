@@ -1,4 +1,4 @@
-quake3 (1.0) UNRELEASED; urgency=low
+quake3 (1.0) experimental; urgency=low
 
   [ Jack Coulter ]
   * Initial packaging (Closes: #487933), based on work by Marc Leeman and
@@ -10,5 +10,7 @@ quake3 (1.0) UNRELEASED; urgency=low
     copyright, and Policy version 3.9.1
   * Include the GIMP source file for the logo (from ioquake3), and produce
     lower-quality versions from it at build time
+  * Upload to experimental for now, until a version of game-data-packager
+    that can produce quake3-data reaches unstable
 
- -- Simon McVittie <smcv@debian.org>  Thu, 19 Aug 2010 16:25:19 +0100
+ -- Simon McVittie <smcv@debian.org>  Fri, 22 Oct 2010 23:29:21 +0100
