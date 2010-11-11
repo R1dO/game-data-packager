@@ -9,6 +9,6 @@ START_DAEMON=0
 # Add "+set dedicated 2" here, or "set dedicated 2" in server.cfg, if you want
 # your server advertised on the public server list.
 #
-# debian_server.cfg is a symlink to /etc/quake3/server.cfg, so you can
+# debian_server.cfg is a symlink to /etc/quake3-server/server.cfg, so you can
 # use that file for system-wide configuration.
 DAEMON_OPTS="+exec debian_server.cfg"
