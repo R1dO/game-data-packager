@@ -3,7 +3,8 @@ ALL = \
 	build/quake3-server \
 	build/quake3.png \
 	build/quake3.xpm \
-	build/quake332.xpm
+	build/quake332.xpm \
+	build/quake3-server.README.Debian
 
 all: $(ALL)
 
@@ -34,6 +35,9 @@ build/quake3.xpm: build/quake3.png
 
 build/quake332.xpm: build/quake3.png
 	convert -resize 32x32 $< $@
+
+build/quake3-server.README.Debian: need-data.txt
+	install -m644 $< $@
 
 clean:
 	rm -rf build

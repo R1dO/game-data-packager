@@ -9,6 +9,7 @@ IOQ3BINARY=@IOQ3BINARY@
 # q3a or openarena
 IOQ3DOTDIR=q3a
 
+BASEPATH="/usr/share/games/quake3"
 ENGINE="/usr/lib/ioquake3/${IOQ3BINARY}"
 
 DEBUGGER="$QUAKE3_DEBUGGER"
@@ -19,7 +20,7 @@ fi
 
 # the defaults mostly apply
 CVARS="+set com_standalone 0"
-CVARS="$CVARS +set fs_basepath /usr/share/games/quake3"
+CVARS="$CVARS +set fs_basepath $BASEPATH"
 
 QUIET=0
 
@@ -47,6 +48,20 @@ while [ "$1" != "" ]; do
       ;;
   esac
   shift
+done
+
+# sanity check: the engine doesn't cope well with missing data
+for i in 0 1 2 3 4 5 6 7 8; do
+  if test -f $BASEPATH/baseq3/pak$i.pk3; then
+    :
+  else
+    if test "$IOQ3ROLE" = client; then
+      $BASEPATH/need-data.sh $BASEPATH/need-data.txt
+    else
+      echo "Quake III Arena data missing, see /usr/share/doc/quake3-server/README.Debian"
+    fi
+    exit 72     # EX_OSFILE
+  fi
 done
 
 if test "z$QUIET" = z1; then

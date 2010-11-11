@@ -1,3 +1,14 @@
+quake3 (1.1) UNRELEASED; urgency=low
+
+  * Allow game-data-packager to satisfy the quake3-data dependency
+  * If quake3-data is missing from quake3, don't allow the game to run (the
+    engine doesn't cope well with it); instead, use zenity, kdialog, xmessage
+    or (as a last resort) terminal output to tell the user about
+    game-data-packager
+  * If quake3-data is missing from quake3-server, just output to the console
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 10 Nov 2010 21:35:01 +0000
+
 quake3 (1.0) experimental; urgency=low
 
   [ Jack Coulter ]

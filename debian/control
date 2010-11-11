@@ -12,24 +12,27 @@ Standards-Version: 3.9.1
 
 Package: quake3
 Architecture: all
-Depends: ioquake3, quake3-data, ${misc:Depends}
-Recommends: game-data-packager (>= 23)
+Depends: ioquake3,
+         quake3-data | game-data-packager (>= 23),
+         ${misc:Depends}
+Recommends: x11-utils | zenity | kdebase-bin
 Description: Quake III Arena menu entry and launcher scripts
  This package contains a launcher script and menu entry to play
  Quake III Arena with the ioQuake3 engine.
  .
- Before installing this package you will need to create and install the
+ To make this package useful, you will need to create and install the
  non-distributable quake3-data package, by using the game-data-packager
  package. This requires pak0.pk3 from a Quake III installation or CD-ROM.
 
 Package: quake3-server
 Architecture: all
-Depends: ioquake3-server, quake3-data, ${misc:Depends}
-Recommends: game-data-packager (>= 23)
+Depends: ioquake3-server,
+         quake3-data | game-data-packager (>= 23),
+         ${misc:Depends}
 Description: Quake III Arena dedicated server launcher scripts
  This package contains a launcher script to run a Quake III Arena dedicated
  server with the ioQuake3 engine.
  .
- Before installing this package you will need to create and install the
+ To make this package useful, you will need to create and install the
  non-distributable quake3-data package, by using the game-data-packager
  package. This requires pak0.pk3 from a Quake III installation or CD-ROM.
