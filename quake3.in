@@ -56,9 +56,9 @@ for i in 0 1 2 3 4 5 6 7 8; do
     :
   else
     if test "$IOQ3ROLE" = client; then
-      $BASEPATH/need-data.sh $BASEPATH/need-data.txt
+      $BASEPATH/need-data.sh $BASEPATH/README.quake3-data
     else
-      echo "Quake III Arena data missing, see /usr/share/doc/quake3-server/README.Debian"
+      echo "Quake III Arena data missing, see /usr/share/doc/quake3-server/README.quake3-data"
     fi
     exit 72     # EX_OSFILE
   fi
