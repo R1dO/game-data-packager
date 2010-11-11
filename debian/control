@@ -26,7 +26,8 @@ Description: Quake III Arena menu entry and launcher scripts
 
 Package: quake3-server
 Architecture: all
-Depends: ioquake3-server,
+Depends: adduser,
+         ioquake3-server,
          quake3-data | game-data-packager (>= 23),
          ${misc:Depends}
 Description: Quake III Arena dedicated server launcher scripts

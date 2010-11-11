@@ -6,6 +6,9 @@ quake3 (1.1) UNRELEASED; urgency=low
     or (as a last resort) terminal output to tell the user about
     game-data-packager
   * If quake3-data is missing from quake3-server, just output to the console
+  * Add a simple init script (disabled by default, so you don't have to use
+    it if you prefer to run the server under screen or something), based on
+    the one in tremulous-server
 
  -- Simon McVittie <smcv@debian.org>  Wed, 10 Nov 2010 21:35:01 +0000
 
