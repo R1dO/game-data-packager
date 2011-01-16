@@ -14,10 +14,6 @@ ENGINE="/usr/lib/ioquake3/${IOQ3BINARY}"
 
 DEBUGGER="$QUAKE3_DEBUGGER"
 
-if test -n "$QUAKE3_BACKTRACE"; then
-  DEBUGGER="gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args"
-fi
-
 # the defaults mostly apply
 CVARS="+set com_standalone 0"
 CVARS="$CVARS +set fs_basepath $BASEPATH"
@@ -68,4 +64,8 @@ if test "z$QUIET" = z1; then
   exec >/dev/null 2>&1;
 fi
 
-exec ${DEBUGGER} ${ENGINE} ${CVARS} "$@"
+if test -n "$QUAKE3_BACKTRACE"; then
+  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args ${ENGINE} ${CVARS} "$@"
+else
+  exec ${DEBUGGER} ${ENGINE} ${CVARS} "$@"
+fi
