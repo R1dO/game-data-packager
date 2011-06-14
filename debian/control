@@ -1,0 +1,18 @@
+Source: quake
+Maintainer: David Banks <amoebae@gmail.com>
+Section: games
+Priority: optional
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.2.0
+
+Package: quake
+Architecture: all
+Depends: ${misc:Depends}, quakespasm, quake-data
+Description: engine for iD software's Quake
+ This package contains a launcher script and menu entry to play
+ Quake 1 with the Quakespasm engine.
+ .
+ To make this package useful, you will need to create and install the
+ non-distributable quake-data package, by using the game-data-packager
+ package. This requires data files from a Quake installation or CD-ROM.
+

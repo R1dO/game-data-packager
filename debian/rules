@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	cp quake.sh quake
+	chmod +x quake
+
+override_dh_auto_clean:
+	rm -f quake
