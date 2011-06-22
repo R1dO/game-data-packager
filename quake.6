@@ -1,0 +1,69 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH QUAKE 6 "2011-06-22"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+quake \- classic first person shooter
+.SH SYNOPSIS
+.B quake
+.RI [ WRAPPER-OPTIONS ]
+.RI [ ENGINE-OPTIONS ]
+.RI [ ENGINE-COMMANDS ] ...
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B quake
+command.
+.PP
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics,
+.\" respectively.
+\fBQuake\fP is a popular first-person shooter game that appeared in 1996,
+released by iD Software.  This wrapper script will launch the Quake engine.  The
+game data needs to be installed independently using the 'game-data-packager'
+program, and by default it will be looked for at \fI/usr/share/games/quake\fR.
+.PP
+This wrapper script accepts the two common GNU-style options to get information
+on the program.  Any further arguments are passed to the engine unmodified.
+Consult the engine documentation for full details, but most engines support a
+syntax whereby engine switches are prefixed with a minus sign, and you can
+give console commands by prefixing with a plus sign.  See the examples section
+for some common cases.
+.SH OPTIONS
+These options are accepted for \fBWRAPPER-OPTIONS\fR in the
+synopsis.
+.TP
+.B \-h, \-\-help
+Show summary of options.
+.TP
+.B \-v, \-\-version
+Show version of program.
+.SH EXAMPLES
+These are all engine dependent.
+.PP
+Play the Zerstoerer mod:
+.B quake -game mod
+Play a specific map using the Drake expansion:
+.B quake -game drake +map sludge1
+Connect to a server for multiplayer:
+.B quake +connect dm.quakeone.net:27000
+.SH SEE ALSO
+.BR quakespasm (6),
+.BR game-data-packager (6).
+.SH AUTHOR
+This manual page, and the Quake wrapper script, were written by David Banks
+<amoebae@gmail.com>, for the Debian project (and may be used by others).  The
+package was based on the \fBquake3\fR package by Simon McVittie.
