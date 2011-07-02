@@ -14,6 +14,10 @@ Description: classic first person shooter
  Quake 1 with the Quakespasm engine.
  .
  To make this package useful, you will need to create and install the
- non-distributable quake-data package, by using the game-data-packager
- package. This requires data files from a Quake installation or CD-ROM.
-
+ non-distributable quake-registered or quake-shareware package, by using the
+ game-data-packager package.
+ .
+ Creating quake-registered requires data files from a Quake installation or
+ CD-ROM.
+ .
+ Creating quake-shareware requires the shareware version of Quake.
