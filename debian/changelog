@@ -5,5 +5,8 @@ quake (1) UNRELEASED; urgency=low
 
   [ Simon McVittie ]
   * Move to contrib/games due to dependency on non-distributable data
+  * Allow game-data-packager to satisfy the quake-data dependency: if a
+    user installs this package before data, we want g-d-p to get installed,
+    and the launcher copes gracefully with being run with no data
 
  -- David Banks <amoebae@gmail.com>  Wed, 01 Jun 2011 17:02:39 +0100
