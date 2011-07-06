@@ -17,6 +17,14 @@ main() {
                 show_version
                 exit 2
                 ;;
+            --engine)
+                engine_path="$2"
+                shift
+                ;;
+            --engine=*)
+                engine_path="$1"
+                engine_path="${engine_path#--engine=}"
+                ;;
             *)
                 break
                 ;;
@@ -39,6 +47,8 @@ show_help() {
     echo "This script supports these options:"
     echo "  -h, --help       show this help information"
     echo "  -v, --version    show version information"
+    echo "  --engine BINARY  use BINARY as the Quake engine, e.g."
+    echo "                   quake --engine=/usr/bin/darkplaces"
     echo
     echo "Any further arguments will be passed directly to the Quake engine."
 }
