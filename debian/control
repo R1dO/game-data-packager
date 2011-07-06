@@ -8,11 +8,13 @@ Standards-Version: 3.9.2.0
 
 Package: quake
 Architecture: all
-Depends: ${misc:Depends}, quakespasm, quake-data | game-data-packager
+Depends: ${misc:Depends},
+         quakespasm | quake-engine,
+         quake-registered | quake-shareware | game-data-packager
 Recommends: x11-utils | zenity | kdebase-bin
 Description: classic first person shooter
  This package contains a launcher script and menu entry to play
- Quake 1 with the Quakespasm engine.
+ Quake 1 with any suitable engine.
  .
  To make this package useful, you will need to create and install the
  non-distributable quake-registered or quake-shareware package, by using the

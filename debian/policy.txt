@@ -1,0 +1,49 @@
+Debian Quake mini-policy, version 1
+===================================
+
+Alternatives
+------------
+
+quake-engine is any Quake engine that, when run with -basedir DIR
+and optionally -hipnotic or -rogue (where DIR contains at least id1/pak0.pak),
+acts as a Quake client.
+
+quake-engine-server is any Quake engine that, when run with the command-line
+option -dedicated and the options above, acts as a Quake server. (By this
+definition, almost every quake-engine could also be a quake-engine-server, but
+engines where there is a separate server build with reduced dependencies
+do not need to register their client as a potential server.)
+
+Neither quake-engine nor quake-engine-server is really meant to be run
+directly, so the alternatives go in /usr/lib/quake:
+
+update-alternatives --quiet --install /usr/lib/quake/quake-engine \
+    quake-engine /usr/bin/MYENGINE 0
+update-alternatives --quiet --install /usr/lib/quake/quake-engine-server \
+    quake-engine-server /usr/bin/MYSERVER 0
+
+Quake engines do not generally share a dot-directory, so installing a "better"
+engine would hide user configuration and save-games. Accordingly, every
+implementation of the alternatives should register with priority 0, so that
+the first engine that the user installs is considered "best" by
+update-alternatives.
+
+Virtual packages
+----------------
+
+Packages providing quake-engine must implement the quake-engine alternative.
+
+Packages providing quake-engine-server must implement the quake-engine-server
+alternative.
+
+Non-Quake games
+---------------
+
+Games that use the Quake engine (like Nexuiz or OpenQuartz) should only depend
+on quake-engine or quake-engine-server, or use the corresponding alternatives,
+if they would run acceptably well on an unmodified id Quake engine with no
+community patches or extra features (so no JPEG textures, for instance).
+
+(For instance, Nexuiz relies on features from DarkPlaces, which is its
+"official" engine, so it should depend on darkplaces directly and not rely
+on quake-engine.)
