@@ -1,9 +1,41 @@
 Quake 1 for Debian
 ==================
 
+Game data
+---------
+
 The Quake engine requires game data to run.  The data is not freely
 redistributable.  You should use the 'game-data-packager' tool to install it.
 'game-data-packager' supports many different versions of Quake.
 
 If you just want to use data you already have unpacked on your disk, you can
-copy the data to /usr/share/games/quake.
+copy the .pak files to /usr/share/games/quake/id1/ (pak0.pak for shareware
+Quake, pak0.pak and pak1.pak for the full game).
+
+Switching engines
+-----------------
+
+There is no canonical upstream developer for the Quake engine, but several
+forks are packaged in Debian. This package can use any compatible engine.
+
+quakespasm (based on GLQuake and FitzQuake) focuses on correctness,
+bug-fixing and 64-bit support, and is relatively faithful to the original
+Quake engine.
+
+darkplaces (based on GLQuake) is a graphically-intensive engine with
+improved visual effects and lighting.
+
+To select a particular Quake engine once, you can use the --engine option:
+
+    quake --engine=/usr/games/darkplaces
+
+To change the preferred engine system-wide, reconfigure the quake-engine
+alternative:
+
+    sudo update-alternatives --config quake-engine
+
+Each Quake engine has its own dot-directory, with its own configuration and
+potentially its own savegame format. If you switch between two engines
+using update-alternatives (or by installing a second and uninstalling the
+first), you will have to configure the new engine separately, and any
+single-player savegames will not be visible to the new engine.
