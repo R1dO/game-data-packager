@@ -8,8 +8,14 @@ quake (1) UNRELEASED; urgency=low
   * Allow game-data-packager to satisfy the quake-data dependency: if a
     user installs this package before data, we want g-d-p to get installed,
     and the launcher copes gracefully with being run with no data
-  * Re-word package description to talk about quake-registered and
-    quake-shareware specifically, since they're the core packages
+  * Change dependencies and re-word package description to talk about
+    quake-registered and quake-shareware specifically, since they're the
+    core packages
   * Recommend something that can display the "need data" message
+  * Replace bitmapped icon with an independently-created SVG and scripts
+    to generate various sizes
+  * Add a Quake mini-policy in debian/policy.txt, describing a quake-engine
+    alternative, and use that
+  * Give the script a --engine switch to force a particular engine
 
  -- David Banks <amoebae@gmail.com>  Wed, 01 Jun 2011 17:02:39 +0100
