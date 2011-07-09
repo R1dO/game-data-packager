@@ -8,7 +8,8 @@ obj = \
 	24/quake.png \
 	32/quake.png \
 	48/quake.png \
-	256/quake.png
+	256/quake.png \
+	quake.svg
 
 all: $(obj)
 
@@ -35,5 +36,13 @@ quake.xpm: 32/quake.png
 	convert $< $@
 
 clean: 
-	rm -f $(obj)
+	rm -f $(obj) tmp.svg
 	rm -rf 16 22 24 32 48 256
+
+quake.svg: quake1+2.svg Makefile
+	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake-256']" < $< > tmp.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		tmp.svg
+	rm -f tmp.svg
