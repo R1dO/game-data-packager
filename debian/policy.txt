@@ -1,6 +1,14 @@
 Debian Quake mini-policy, version 1
 ===================================
 
+Configuration files
+-------------------
+
+Quake engines add many configuration options, and their savegames aren't
+necessarily compatible, so they should not share a dot-directory. Use a
+different dot-directory per engine (the engines initially packaged for Debian,
+QuakeSpasm and DarkPlaces, use ~/.quakespasm and ~/.darkplaces).
+
 Alternatives
 ------------
 
@@ -22,11 +30,10 @@ update-alternatives --quiet --install /usr/lib/quake/quake-engine \
 update-alternatives --quiet --install /usr/lib/quake/quake-engine-server \
     quake-engine-server /usr/bin/MYSERVER 0
 
-Quake engines do not generally share a dot-directory, so installing a "better"
-engine would hide user configuration and save-games. Accordingly, every
-implementation of the alternatives should register with priority 0, so that
-the first engine that the user installs is considered "best" by
-update-alternatives.
+Every implementation of the alternatives should register with priority 0, so
+that the first engine that the user installs is considered "best" by
+update-alternatives, and installing another engine never causes the user
+to "lose" their configuration and savegames.
 
 Virtual packages
 ----------------
