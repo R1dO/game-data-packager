@@ -5,7 +5,9 @@ Uploaders: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>,
 Section: contrib/games
 Priority: optional
 Build-Depends: debhelper (>= 8)
-Build-Depends-Indep: imagemagick
+Build-Depends-Indep: imagemagick,
+                     inkscape,
+                     xmlstarlet
 Standards-Version: 3.9.2.0
 
 Package: quake
