@@ -27,3 +27,17 @@ Description: classic first person shooter
  CD-ROM.
  .
  Creating quake-shareware requires the shareware version of Quake.
+
+Package: quake-server
+Architecture: all
+Depends: adduser,
+         quakespasm | quake-engine-server,
+         quake-registered | quake-shareware | game-data-packager,
+         ${misc:Depends}
+Description: classic first person shooter - server and init script
+ This package contains a launcher script and init script to run a
+ Quake 1 server automatically, with any suitable engine.
+ .
+ To make this package useful, you will need to create and install the
+ non-distributable quake-registered or quake-shareware package, by using the
+ game-data-packager package.

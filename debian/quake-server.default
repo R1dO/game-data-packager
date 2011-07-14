@@ -1,0 +1,9 @@
+# Defaults for Quake init script
+# sourced by /etc/init.d/quake-server
+# installed at /etc/default/quake-server by the maintainer scripts
+
+# set to 1 to enable
+START_DAEMON=1
+
+# Additional options that are passed to the daemon.
+DAEMON_OPTS="+exec debian_server.cfg"

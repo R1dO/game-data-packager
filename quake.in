@@ -2,9 +2,12 @@
 
 # quake.sh - launcher script for quake 1
 
+self="@self@"
+role="@role@"
+options="@options@"
 data_location=/usr/share/games/quake
-engine_path=/usr/lib/quake/quake-engine
-no_data_msg="Missing data; see /usr/share/doc/quake/README.Debian"
+engine_path=/usr/lib/quake/@alternative@
+no_data_msg="Missing data; see /usr/share/doc/${self}/README.Debian"
 
 main() {
     while [ $# -gt 0 ]; do
@@ -34,15 +37,19 @@ main() {
     done
 
     if ! [ -f "${data_location}/id1/pak0.pak" ]; then
-        exec "$data_location"/need-data.sh "$no_data_msg"
+        if test "${role}" = server; then
+            echo "$no_data_msg"
+        else
+            exec "$data_location"/need-data.sh "$no_data_msg"
+        fi
     fi
     
-    exec ${engine_path} -basedir ${data_location} "$@"
+    exec ${engine_path} -basedir ${data_location} ${options} "$@"
 }
 
 show_help() {
-    echo "Usage: quake [-h|--help] [-v|--version] [ARG1] [ARG2] ..."
-    echo "Launch Quake."
+    echo "Usage: ${self} [-h|--help] [-v|--version] [ARG1] [ARG2] ..."
+    echo "Launch Quake ${role}."
     echo
     echo "This script supports these options:"
     echo "  -h, --help       show this help information"
@@ -61,4 +68,3 @@ show_version() {
 }
 
 main "$@"
-

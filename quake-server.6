@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH QUAKE 6 "2011-06-22"
+.TH QUAKE\-SERVER 6 "2011-06-22"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -16,24 +16,26 @@
 .\" .sp <n>    insert n+1 empty lines
 .\" for manpage-specific macros, see man(7)
 .SH NAME
-quake \- classic first person shooter
+quake\-server \- dedicated server for Quake
 .SH SYNOPSIS
-.B quake
+.B quake\-server
 .RI [ WRAPPER-OPTIONS ]
 .RI [ ENGINE-OPTIONS ]
 .RI [ ENGINE-COMMANDS ] ...
 .br
 .SH DESCRIPTION
 This manual page documents briefly the
-.B quake
+.B quake\-server
 command.
 .PP
 .\" TeX users may be more comfortable with the \fB<whatever>\fP and
 .\" \fI<whatever>\fP escape sequences to invode bold face and italics,
 .\" respectively.
 \fBQuake\fP is a popular first-person shooter game that appeared in 1996,
-released by iD Software.  This wrapper script will launch the Quake engine.  The
-game data needs to be installed independently using the 'game-data-packager'
+released by iD Software.  This wrapper script will launch the Quake
+dedicated server.
+.PP
+The game data needs to be installed independently using the 'game-data-packager'
 program, and by default it will be looked for at \fI/usr/share/games/quake\fR.
 .PP
 This wrapper script accepts the two common GNU-style options to get information
@@ -51,22 +53,10 @@ Show summary of options.
 .TP
 .B \-v, \-\-version
 Show version of program.
-.SH EXAMPLES
-These are all engine dependent.
-.TP
-Play the Zerstoerer mod:
-.B quake -game zer
-.TP
-Play a specific map using the Drake expansion:
-.B quake -game drake +map sludge1
-.TP
-Connect to a server for multiplayer:
-.B quake +connect dm.quakeone.net:27000
 .SH SEE ALSO
-.BR quake-server (6),
+.BR quake (6),
 .BR quakespasm (6),
 .BR game-data-packager (6).
 .SH AUTHOR
 This manual page, and the Quake wrapper script, were written by David Banks
-<amoebae@gmail.com>, for the Debian project (and may be used by others).  The
-package was based on the \fBquake3\fR package by Simon McVittie.
+and Simon McVittie for the Debian project (and may be used by others).

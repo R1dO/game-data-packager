@@ -2,6 +2,7 @@
 
 obj = \
 	quake \
+	quake-server \
 	quake.xpm \
 	16/quake.png \
 	22/quake.png \
@@ -13,8 +14,20 @@ obj = \
 
 all: $(obj)
 
-quake: quake.sh
-	cp $< $@
+quake: quake.in
+	sed -e 's/@self@/quake/g' \
+		-e 's/@role@/client/g' \
+		-e 's/@options@//g' \
+		-e 's/@alternative@/quake-engine/g' \
+		< $< > $@
+	chmod +x $@
+
+quake-server: quake.in
+	sed -e 's/@self@/quake-server/g' \
+		-e 's/@role@/server/g' \
+		-e 's/@options@/-dedicated/g' \
+		-e 's/@alternative@/quake-engine-server/g' \
+		< $< > $@
 	chmod +x $@
 
 24/quake.png: 22/quake.png

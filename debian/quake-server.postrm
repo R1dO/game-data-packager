@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+if [ "$1" = "purge" ] ; then
+    # Lock account on purge
+    usermod -L -e 1 quake-server
+    rm -r /var/games/quake-server
+    rmdir --ignore-fail-on-non-empty /var/games
+fi
