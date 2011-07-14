@@ -1,2 +1,8 @@
 ?package(quake):needs="X11" section="Games/Action" title="Quake" \
   icon="/usr/share/pixmaps/quake.xpm" command="quake"
+?package(quake,quake-armagon):needs="X11" section="Games/Action" \
+  title="Quake: Scourge of Armagon" \
+  icon="/usr/share/pixmaps/quake.xpm" command="quake -hipnotic"
+?package(quake,quake-dissolution):needs="X11" section="Games/Action" \
+  title="Quake: Dissolution of Eternity" \
+  icon="/usr/share/pixmaps/quake.xpm" command="quake -rogue"

@@ -14,6 +14,7 @@ Depends: ${misc:Depends},
          quakespasm | quake-engine,
          quake-registered | quake-shareware | game-data-packager
 Recommends: x11-utils | zenity | kdebase-bin
+Suggests: quake-armagon (>= 29), quake-dissolution (>= 29)
 Description: classic first person shooter
  This package contains a launcher script and menu entry to play
  Quake 1 with any suitable engine.
