@@ -30,10 +30,11 @@ update-alternatives --quiet --install /usr/lib/quake/quake-engine \
 update-alternatives --quiet --install /usr/lib/quake/quake-engine-server \
     quake-engine-server /usr/bin/MYSERVER 0
 
-Every implementation of the alternatives should register with priority 0, so
-that the first engine that the user installs is considered "best" by
-update-alternatives, and installing another engine never causes the user
-to "lose" their configuration and savegames.
+Every implementation of the alternatives should register with priority 0,
+and the prerm maintainer script should not remove the alternative when invoked
+with $1 = "upgrade", so that the first engine that the user installs is
+considered "best" by update-alternatives, and installing another engine
+never causes the user to "lose" their configuration and savegames.
 
 Virtual packages
 ----------------
