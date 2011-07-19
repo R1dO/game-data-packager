@@ -55,7 +55,7 @@ show_help() {
     echo "  -h, --help       show this help information"
     echo "  -v, --version    show version information"
     echo "  --engine BINARY  use BINARY as the Quake engine, e.g."
-    echo "                   quake --engine=/usr/bin/darkplaces"
+    echo "                   quake --engine=/usr/games/darkplaces"
     echo
     echo "Any further arguments will be passed directly to the Quake engine."
 }
