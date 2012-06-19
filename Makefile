@@ -12,7 +12,7 @@ default: $(DIRS)
 		LONG="Final Doom: The Plutonia Experiment" VERSION=$(VERSION)
 	make -f doom-common.mk IWAD=heretic VERSION=$(VERSION) \
 		CONTROLIN=heretic/DEBIAN/control.in \
-		LONG="Heretic: Shadow of the Serpent Riders" GAME=heretic
+		LONG="Heretic: Shadow of the Serpent Riders"
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1
 	make -f quake.mk LONG="Quake shareware" VERSION=$(VERSION) \
