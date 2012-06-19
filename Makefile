@@ -41,7 +41,10 @@ clean:
 		LONG="Final Doom: The Plutonia Experiment" VERSION=$(VERSION) clean
 	make -f doom-common.mk IWAD=heretic VERSION=$(VERSION) \
 		CONTROLIN=heretic/DEBIAN/control.in \
-		LONG="Heretic: Shadow of the Serpent Riders" GAME=heretic clean
+		LONG="Heretic: Shadow of the Serpent Riders" clean
+	make -f doom-common.mk IWAD=hexen VERSION=$(VERSION) \
+		CONTROLIN=hexen/DEBIAN/control.in \
+		LONG="Hexen: Beyond Heretic" clean
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1 clean
 	make -f quake.mk LONG="Quake shareware" VERSION=$(VERSION) \
