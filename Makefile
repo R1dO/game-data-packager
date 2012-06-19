@@ -13,6 +13,9 @@ default: $(DIRS)
 	make -f doom-common.mk IWAD=heretic VERSION=$(VERSION) \
 		CONTROLIN=heretic/DEBIAN/control.in \
 		LONG="Heretic: Shadow of the Serpent Riders"
+	make -f doom-common.mk IWAD=hexen VERSION=$(VERSION) \
+		CONTROLIN=hexen/DEBIAN/control.in \
+		LONG="Hexen: Beyond Heretic"
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1
 	make -f quake.mk LONG="Quake shareware" VERSION=$(VERSION) \
