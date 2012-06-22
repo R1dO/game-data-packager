@@ -26,9 +26,6 @@ if [ -f /etc/default/$NAME ] ; then
 fi
 
 q3_start() {
-    if [ -f $PIDFILE ]; then
-        return 2
-    fi
     if [ "$START_DAEMON" != 1 ]; then
         echo -n " (not starting - disabled in /etc/default/$NAME)"
         return 0

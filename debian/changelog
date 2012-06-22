@@ -1,6 +1,8 @@
 quake3 (1.4) UNRELEASED; urgency=low
 
   * Add status action to init script
+  * Don't refuse to start a new quake3-server if there's a stale pid file
+    (similar to #678543)
 
  -- Simon McVittie <smcv@debian.org>  Sat, 23 Jun 2012 00:34:40 +0100
 
