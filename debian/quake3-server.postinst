@@ -11,7 +11,8 @@ case "$1" in
 	--ingroup games --force-badname Debian-quake3
     fi
     install -d /var/games
-    install -d -o Debian-quake3 -g games /var/games/quake3-server
+    install -d /var/games/quake3-server
+    chown Debian-quake3:games /var/games/quake3-server
   ;;
   abort-upgrade|abort-remove|abort-deconfigure)
   ;;

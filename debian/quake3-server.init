@@ -28,8 +28,13 @@ if [ -f /etc/default/$NAME ] ; then
 fi
 
 q3_start() {
-    if [ "$START_DAEMON" != 1 ]; then
-        echo -n " (not starting - disabled in /etc/default/$NAME)"
+    if [ "$START_DAEMON" = "unless-disabled-by-upgrade" ]; then
+        if [ -e /var/games/quake3-server/init-script-disabled-by-upgrade ]; then
+            echo -n " (disabled during upgrade, not starting - see /usr/share/doc/quake3-server/NEWS.Debian.gz)"
+            return 0
+        fi
+    elif [ "$START_DAEMON" != 1 ]; then
+        echo -n " (disabled in /etc/default/quake3-server - deprecated, see /usr/share/doc/quake3-server/README.Debian.gz)"
         return 0
     fi
     start-stop-daemon --start --quiet --pidfile $PIDFILE --oknodo \

@@ -7,6 +7,8 @@ quake3 (1.4) UNRELEASED; urgency=low
   * Standards-Version: 3.9.3 (no changes)
   * Update copyright dates
   * Add a Description to the init script
+  * Run a server from the quake3-server package by default (as per Policy),
+    unless this is an upgrade from 1.3 or older
 
  -- Simon McVittie <smcv@debian.org>  Sat, 23 Jun 2012 00:34:40 +0100
 
