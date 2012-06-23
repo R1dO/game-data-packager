@@ -9,6 +9,8 @@ quake3 (1.4) UNRELEASED; urgency=low
   * Add a Description to the init script
   * Run a server from the quake3-server package by default (as per Policy),
     unless this is an upgrade from 1.3 or older
+  * During purge of quake3-server, delete files owned by Debian-quake3 before
+    deleting the user itself
 
  -- Simon McVittie <smcv@debian.org>  Sat, 23 Jun 2012 00:34:40 +0100
 
