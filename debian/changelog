@@ -1,4 +1,4 @@
-quake3 (1.4) UNRELEASED; urgency=low
+quake3 (1.4) unstable; urgency=low
 
   * Add status action to init script
   * Don't refuse to start a new quake3-server if there's a stale pid file
@@ -12,7 +12,7 @@ quake3 (1.4) UNRELEASED; urgency=low
   * During purge of quake3-server, delete files owned by Debian-quake3 before
     deleting the user itself
 
- -- Simon McVittie <smcv@debian.org>  Sat, 23 Jun 2012 00:34:40 +0100
+ -- Simon McVittie <smcv@debian.org>  Sat, 23 Jun 2012 14:08:41 +0100
 
 quake3 (1.3) unstable; urgency=low
 
