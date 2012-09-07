@@ -82,7 +82,11 @@ go() {
 }
 
 guess_method() {
-    if ifind "$mountpoint" "id1/pak0.pak" >/dev/null; then
+    if [ -f "$mountpoint" ]; then
+        debug "treating $mountpoint like a shareware ZIP"
+        method="swzip"
+        swzip_method
+    elif ifind "$mountpoint" "id1/pak0.pak" >/dev/null; then
         debug "treating $mountpoint like an installed directory"
         method="dir"
         dir_method
@@ -90,11 +94,7 @@ guess_method() {
         debug "treating $mountpoint like a CD-ROM"
         method="cdrom"
         cdrom_method
-    elif [ -f "$mountpoint" ]; then
-        debug "treating $mountpoint like a shareware ZIP"
-        method="swzip"
-        swzip_method
-    elif [ -f "$mountpoint/hipnotic/pak0.pak" ]; then
+   elif [ -f "$mountpoint/hipnotic/pak0.pak" ]; then
         debug "treating $mountpoint like a Scourge of Armagon directory or CD"
         method="mp1"
         mp1_method
