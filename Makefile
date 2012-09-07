@@ -31,6 +31,9 @@ default: $(DIRS)
 $(DIRS):
 	mkdir -p $@
 
+tests/empty.deb:
+	dpkg-deb -b tests/empty tests/empty.deb
+
 clean:
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION) clean
 	make -f doom-common.mk IWAD=doom2 \
@@ -57,6 +60,7 @@ clean:
 	make -f rott.mk VERSION=$(VERSION) clean
 	make -f wolf3d.mk VERSION=$(VERSION) clean
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
+	rm -f tests/empty.deb
 
 check:
 	./t/verify-md5sum-alternatives.sh
