@@ -73,7 +73,7 @@ test_slipstream() {
     cp -p "$debsrc" "$deb"
     WORKDIR="$wd"
     slipstream "$deb" "foo/bar/baz" "$file"
-    dpkg-deb -c "$deb" | grep "/foo/bar/baz$" >/dev/null
+    dpkg-deb -c "$deb" | grep "/foo/bar/baz/testfile$" >/dev/null
     assertEquals $? 0
 
     rm "$deb"

@@ -121,14 +121,13 @@ slipstream() {
 	slipstream_permcheck "$DEB"
 	slipstream_unpack "$DEB"
 
+	if [ ! -d "$RELPATH" ]; then
+		mkdir -p "./slipstream.unpacked/$RELPATH"
+	fi
+
 	while [ "$#" -gt 0 ]; do
 		file="$1"
-		destpath="$RELPATH"
-		if [ "x${RELPATH%/}" != "x${RELPATH}" ]; then
-			# RELPATH ends with /; append the basename of the
-			# file (e.g. pak0.pk3)
-			destpath="${RELPATH}${file##*/}"
-		fi
+		destpath="${RELPATH}/${file##*/}"
 		slipstream_file "$file" "$destpath"
 		shift
 	done

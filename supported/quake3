@@ -111,8 +111,7 @@ go() {
     check_sums
     unpack_point
 
-    # the trailing / tells slipstream to treat it as a directory
-    DEST="${BASEQ3#/}"/
+    DEST="${BASEQ3#/}"
 
     # smcv FIXME: copied from lib/doom-common
     if [ "" = "$OUTDIR" ]; then

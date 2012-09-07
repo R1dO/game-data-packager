@@ -29,7 +29,7 @@ go() {
 	debug "WADFILE=$WADFILE"
 	check_for_v19
 
-	DEST=`echo $WADDIR | sed 's,^/,,'`/$SHORTNAME.wad
+	DEST=`echo $WADDIR | sed 's,^/,,'`
 
 	OUTFILE=`unravel "$OUTDIR"`"/$DEBBASE"
 	cp -p "$DEB" "$OUTFILE"

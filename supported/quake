@@ -227,10 +227,10 @@ common_method() {
     [ "$pak1" = "" ] || ln -s "$pak1" "$WORKDIR/pak1.pak"
 
     if [ "$pak1" = "" ]; then
-        slipstream "$OUTFILE" "usr/share/games/quake/${folder}/" \
+        slipstream "$OUTFILE" "usr/share/games/quake/${folder}" \
             "$WORKDIR/pak0.pak"
     else
-        slipstream "$OUTFILE" "usr/share/games/quake/${folder}/" \
+        slipstream "$OUTFILE" "usr/share/games/quake/${folder}" \
             "$WORKDIR/pak0.pak" "$WORKDIR/pak1.pak"
     fi
     [ -d "$WORKDIR/${folder}" ] && rm -rf "$WORKDIR/${folder}"
