@@ -111,6 +111,24 @@ require_lha() {
     which lha >/dev/null|| die "package 'lha' is required for this installation method."
 }
 
+# check that the pak0/pak1 for original Quake are recognised.
+# detect and warn about older versions.
+verify_quake() {
+    pak0sum=5906e5998fc3d896ddaf5e6a62e03abb          # 1.06
+    pak0sum=$pak0sum,85fc9cee2035b66290da1e33be2ac86b # 1.01
+    pak1sum=d76b3e5678f0b64ac74ce5e340e6a685          # 1.06
+    pak1sum=$pak1sum,d76b3e5678f0b64ac74ce5e340e6a685 # 1.01
+
+    verify_file "$pak0"
+    [ "$pak1" = "" ] || verify_file "$pak1"
+
+    # XXX: we should support patching/upgrading
+    verify_md5sum_alternatives "$pak0" "$pak0sum" \
+      "Warning: your files are from an old version of quake, more recent mods\n\
+may not work correctly."
+    [ "$pak1" = "" ] || verify_md5sum_alternatives "$pak1" "$pak1sum"
+}
+
 cdrom_method() {
     bit1="$mountpoint/q101_int.1"
     bit2="$mountpoint/q101_int.2"
@@ -138,22 +156,18 @@ cdrom_method() {
     if ! test -f "$pak1"; then
         pak1="$WORKDIR/ID1/PAK1.PAK"
     fi
-    # This CD contains version 1.01
-    pak0sum=85fc9cee2035b66290da1e33be2ac86b
-    pak1sum=d76b3e5678f0b64ac74ce5e340e6a685
     suffix=registered
     folder=id1
+    verify_quake
     common_method
 }
 
 dir_method() {
     pak0=$(ifind "$mountpoint" "id1/pak0.pak" | head -1)
     pak1=$(ifind "$mountpoint" "id1/pak1.pak" | head -1)
-    # Presume the directory contains version 1.06
-    pak0sum=5906e5998fc3d896ddaf5e6a62e03abb
-    pak1sum=d76b3e5678f0b64ac74ce5e340e6a685
     suffix=registered
     folder=id1
+    verify_quake
     common_method
 }
 
@@ -168,12 +182,15 @@ swzip_method() {
         rm resource.exe
     )
     pak0="$WORKDIR/id1/pak0.pak"
+    pak0sum=5906e5998fc3d896ddaf5e6a62e03abb          # 1.06
+    pak0sum=$pak0sum,85fc9cee2035b66290da1e33be2ac86b # 1.01
     pak1=""
 
-    # Presume the shareware version is 1.06
-    pak0sum=5906e5998fc3d896ddaf5e6a62e03abb
     suffix=shareware
     folder=id1
+
+    verify_file "$pak0"
+    verify_md5sum_alternatives "$pak0" "$pak0sum"
     common_method
 }
 
@@ -188,6 +205,9 @@ mp1_method() {
     pak1=""
     suffix=armagon
     folder=hipnotic
+
+    verify_file "$pak0"
+    verify_md5sum_alternatives "$pak0" "$pak0sum"
     common_method
 }
 
@@ -202,22 +222,18 @@ mp2_method() {
     pak1=""
     suffix=dissolution
     folder=rogue
+
+    verify_file "$pak0"
+    verify_md5sum_alternatives "$pak0" "$pak0sum"
     common_method
 }
 
 # Requires the following variables on entry:
 # pak0 - full path of the pak0.pak file to include
-# pak0sum - expected MD5 sums (comma-separated)
 # pak1 - full path of the pak1.pak file to include (optional)
-# pak1sum - expected MD5 sums (comma-separated)
 # suffix - package suffix to use
 # folder - base folder for the PAK files
 common_method() {
-    verify_file "$pak0"
-    verify_md5sum_alternatives "$pak0" "$pak0sum"
-    [ "$pak1" = "" ] || verify_file "$pak1"
-    [ "$pak1" = "" ] || verify_md5sum_alternatives "$pak1" "$pak1sum"
-
     DEBBASE="quake-${suffix}_${GAME_PACKAGE_VERSION}_all.deb"
     OUTFILE=`unravel "$OUTDIR"`"/$DEBBASE"
     cp -p "$DATADIR/$DEBBASE" "$OUTFILE"

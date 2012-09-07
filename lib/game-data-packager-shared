@@ -67,16 +67,22 @@ verify_md5sum() {
 	[ "$SUM" = "$GOODSUM" ] || die "$FILE's md5 checksum is unknown"
 }
 
-## verify_md5sum_alternatives(file,sums)
+## verify_md5sum_alternatives(file,sums,warn)
 ##      calculates the md5sum of file and compares it to sums (comma-separated).
 ##      if the sum doesn't match any of them, complains on stderr and causes
 ##      the program to exit.
+##	If warn is supplied, warn the user if the first sum doesn't match.
 verify_md5sum_alternatives() {
 	FILE=$1
 	GOODSUMS=$2
 	SUM=`md5sum $FILE|cut -d' ' -f1`
 	case ",$GOODSUMS," in
+		(,$SUM,*)
+			;;
 		(*,$SUM,*)
+			if [ $# -gt 2 ]; then
+				warn "$3"
+			fi
 			;;
 		(*)
 			die "$FILE's md5 checksum $SUM is unknown"
