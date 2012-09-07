@@ -278,5 +278,5 @@ gdp_unzip() {
 ifind() {
   base="$1"
   file="$2"
-  find "$base" -iwholename "$base/$file"
+  [ -d "$base" ] && find "$base" -iwholename "$base/$file"
 }
