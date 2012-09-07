@@ -25,6 +25,7 @@ default: $(DIRS)
 	make -f quake.mk LONG="Quake mission pack 2: Dissolution of Eternity" \
 		VERSION=$(VERSION) PACKAGE=quake-dissolution FOLDER=rogue
 	make -f quake3.mk LONG="Quake III Arena" VERSION=$(VERSION)
+	make -f hexen2.mk VERSION=$(VERSION)
 	make -f rott.mk VERSION=$(VERSION)
 	make -f wolf3d.mk VERSION=$(VERSION)
 
@@ -56,6 +57,7 @@ clean:
 		VERSION=$(VERSION) PACKAGE=quake-armagon FOLDER=hipnotic clean
 	make -f quake.mk LONG="Quake mission pack 2: Dissolution of Eternity" \
 		VERSION=$(VERSION) PACKAGE=quake-dissolution FOLDER=rogue clean
+	make -f hexen2.mk VERSION=$(VERSION) clean
 	make -f quake3.mk LONG="Quake III Arena" VERSION=$(VERSION) clean
 	make -f rott.mk VERSION=$(VERSION) clean
 	make -f wolf3d.mk VERSION=$(VERSION) clean

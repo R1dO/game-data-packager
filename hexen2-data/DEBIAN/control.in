@@ -1,0 +1,16 @@
+Package: hexen2-data
+Version: VERSION
+Section: non-free/games
+Priority: optional
+Architecture: all
+Recommends: hexen2-engine
+Installed-Size: 500000
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Description: Hexen 2 commercial data files
+ Hexen 2 requires an engine and game data to play. This package contains
+ the commercial data from Raven Software's game "LONG",
+ and was generated using the "game-data-packager" program from the Debian
+ package of the same name.
+ .
+ To play Hexen using this data, install a package providing the
+ "hexen2-engine" virtual package.
