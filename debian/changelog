@@ -1,3 +1,15 @@
+game-data-packager (31) experimental; urgency=low
+
+  * Initial Hexen 2 support.
+  * An initial regression test suite in the source.
+  * Fixup 'slipstream' and adjust callers in Doom, Quake and
+    Quake 3.
+  * Some Quake tweaks to make e.g. building a 1.01 package from
+    a directory or a 1.06 shareware package possible.
+  * Re-Add myself to uploaders.
+
+ -- Jon Dowland <jmtd@debian.org>  Tue, 11 Sep 2012 22:00:44 +0100
+
 game-data-packager (30) unstable; urgency=low
 
   * Add support for ID Anthology's Final Doom (different
