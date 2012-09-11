@@ -1,14 +1,15 @@
-game-data-packager (30) UNRELEASED; urgency=low
+game-data-packager (30) unstable; urgency=low
 
   * Add support for ID Anthology's Final Doom (different
     sums).  Thanks to Simon Howard.
   * Remove myself from uploaders.
   * Fixed 'clean' target in Makefile
-  * Rewrote debian/rules to use new style debhelper
-  * Bump standards version.
-  * Update debhelper Build-Depends
-  * Changed GAME for Heretic to 'doom' (Closes: #640372)
-  * Add Hexen support
+  * Thanks to Joey Schmit:
+    * Rewrote debian/rules to use new style debhelper
+    * Bump standards version.
+    * Update debhelper Build-Depends
+    * Changed GAME for Heretic to 'doom' (Closes: #640372)
+    * Add Hexen support
   * Support using 'lhasa' as an lha implementation.
 
  -- Jon Dowland <jmtd@debian.org>  Tue, 19 Jun 2012 08:59:11 +0100
