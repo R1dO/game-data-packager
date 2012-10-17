@@ -28,6 +28,7 @@ default: $(DIRS)
 	make -f hexen2.mk VERSION=$(VERSION)
 	make -f rott.mk VERSION=$(VERSION)
 	make -f wolf3d.mk VERSION=$(VERSION)
+	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION)
 
 $(DIRS):
 	mkdir -p $@
@@ -61,8 +62,8 @@ clean:
 	make -f quake3.mk LONG="Quake III Arena" VERSION=$(VERSION) clean
 	make -f rott.mk VERSION=$(VERSION) clean
 	make -f wolf3d.mk VERSION=$(VERSION) clean
+	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION) clean
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
-	rm -f tests/empty.deb
 
 check:
 	./t/verify-md5sum-alternatives.sh

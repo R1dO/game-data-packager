@@ -145,6 +145,41 @@ slipstream() {
 	cd "$OLDWD"
 }
 
+## slipstream_dir(deb,relpath,directory)
+## insert a directory with game data instead of single files 
+slipstream_dir() { 
+        DEB="$1"     # the .deb file we are going to mangle 
+        RELPATH="$2" # relative path in the unpacked .deb 
+        DIR="$3"     # directory with game data 
+         
+        FILES=`find $DIR -type f` 
+ 
+        OLDWD=`pwd` 
+        cd "$WORKDIR" 
+ 
+        slipstream_permcheck "$DEB" 
+        slipstream_unpack "$DEB" 
+        for f in $FILES; do      
+                destpath="$RELPATH$f" 
+                targetdir=`dirname "$destpath"` 
+                mkdir -p "./slipstream.unpacked/$targetdir" 
+                cp -p "$f" "./slipstream.unpacked/$targetdir" 
+                chmod 644 "./slipstream.unpacked/$destpath" 
+ 
+                # add a line to md5sums 
+                cd slipstream.unpacked 
+                md5sum "$destpath" >> "../DEBIAN/md5sums" 
+                cd .. 
+        done 
+ 
+        slipstream_instsize 
+        slipstream_repack "$DEB" 
+        slipstream_cleanup 
+ 
+        cd "$OLDWD" 
+}
+
+
 ## slipstream_permcheck(deb)
 ##      ensures that the file deb can be written to and
 ##      that the current working directory is writeable
