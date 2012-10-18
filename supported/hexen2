@@ -14,7 +14,7 @@ go() {
   dir="$1"
   verify_directory "$dir"
   verify_directory "$dir/data1"
-  for f in pak0.pak pak1.pak progs.dat progs2.dat strings.txt; do
+  for f in pak0.pak pak1.pak; do
     verify_file "$dir/data1/$f"
   done
 
@@ -27,8 +27,5 @@ go() {
   cp -p "$DEB" "$OUTFILE"
   slipstream "$OUTFILE" "usr/share/games/hexen2/data1" \
     "$dir/data1/pak0.pak" \
-    "$dir/data1/pak1.pak" \
-    "$dir/data1/progs.dat" \
-    "$dir/data1/progs2.dat" \
-    "$dir/data1/strings.txt"
+    "$dir/data1/pak1.pak"
 }

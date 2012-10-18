@@ -1,3 +1,10 @@
+game-data-packager (32) experimental; urgency=low
+
+  * hexen2: don't install strings.txt, progs.dat or progs2.dat;
+    they're carried by the uhexen2 package. Thanks Gustavo Panizzo.
+
+ -- Jon Dowland <jmtd@debian.org>  Wed, 26 Sep 2012 22:04:45 +0100
+
 game-data-packager (31) experimental; urgency=low
 
   * Initial Hexen 2 support.
