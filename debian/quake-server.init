@@ -81,9 +81,12 @@ case "$1" in
 	do_stop && sleep 1 && do_start
         log_end_msg $?
 	;;
+    status)
+        status_of_proc -p "$PIDFILE" "$DAEMON" "$NAME" && exit 0 || exit $?
+        ;;
+
     *)
-	# echo "Usage: $0 {start|stop|restart|reload|force-reload}" >&2
-	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	echo "Usage: $0 {start|stop|restart|force-reload|status}" >&2
 	exit 1
 	;;
 esac
