@@ -64,6 +64,11 @@ DEB="$DATADIR/$DEBBASE"
 
 go() {
     verify_args "$@"
+
+    if ! which lgc-pg >/dev/null; then
+        die "Please install the lgc-pg package and try again."
+    fi
+
     TGZFILE=`unravel "$lgeneraltgz"`
 
     verify_file "$TGZFILE"
