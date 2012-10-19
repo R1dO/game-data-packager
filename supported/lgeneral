@@ -59,11 +59,6 @@ downloadtgz() {
     die "error: could not find pg-data.tar.gz at our chosen mirror"
 }
 
-checksum() {
-	CHECKSUM=`md5sum "$1" | cut -d' ' -f1`
-	debug "checksum = $CHECKSUM"
-}
-
 DEBBASE="lgeneral-data-nonfree_${GAME_PACKAGE_VERSION}_all.deb"
 DEB="$DATADIR/$DEBBASE"
 
@@ -71,15 +66,11 @@ go() {
 	verify_args "$@"
 	TGZFILE=`unravel "$lgeneraltgz"`
 
-	[ -e "$TGZFILE" ] || die "ERROR: '$TGZFILE' does not exist."
-    	[ -f "$TGZFILE" ] || die "ERROR: '$TGZFILE' is not a file."
+	verify_file "$TGZFILE"
     	[ -r "$TGZFILE" ] || die "ERROR: '$TGZFILE' cannot be read."
 
-	checksum "$TGZFILE"
-
-	if [ "$CHECKSUM" != "$TGZSUM" ]; then
-		echo "warning: checksum is not what we expected" >&2
-	fi
+	verify_md5sum_alternatives "$TGZFILE" "$TGZSUM" \
+		"warning: checksum is not what we expected"
 
     	OUTFILE=`unravel "$OUTDIR"`"/$DEBBASE"
 
@@ -90,14 +81,14 @@ go() {
 	cd "$WORKDIR"
 
 	# create directory structure required by lgc-pg
-	mkdir -p lgeneral/gfx/flags
-	mkdir -p lgeneral/gfx/terrain
-	mkdir -p lgeneral/gfx/units
-	mkdir -p lgeneral/maps/pg
-	mkdir -p lgeneral/nations
-	mkdir -p lgeneral/scenarios/pg
-	mkdir -p lgeneral/sounds/pg
-	mkdir -p lgeneral/units
+	mkdir -p lgeneral/gfx/flags \
+	         lgeneral/gfx/terrain \
+	         lgeneral/gfx/units \
+	         lgeneral/maps/pg \
+	         lgeneral/nations \
+	         lgeneral/scenarios/pg \
+	         lgeneral/sounds/pg \
+	         lgeneral/units
 
 	# extract pg-data and convert to lgeneral's native file format
     	tar xfz "$TGZFILE"
