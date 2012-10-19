@@ -104,6 +104,7 @@ verify_directory() {
 verify_file() {
 	FILE=$1
 	[ -f "$FILE" ] || die "$FILE is not a file"
+	[ -r "$FILE" ] || die "$FILE is not readable"
 }
 
 ## slipstream(deb,relpath,file1,file2...)

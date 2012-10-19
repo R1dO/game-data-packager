@@ -72,7 +72,6 @@ go() {
     TGZFILE=`unravel "$lgeneraltgz"`
 
     verify_file "$TGZFILE"
-    [ -r "$TGZFILE" ] || die "ERROR: '$TGZFILE' cannot be read."
 
     verify_md5sum_alternatives "$TGZFILE" "$TGZSUM" \
         "warning: checksum is not what we expected"
