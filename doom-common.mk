@@ -52,7 +52,7 @@ build/$(IWAD)-wad/DEBIAN/preinst:
 
 build/$(IWAD)-wad/DEBIAN/control: $(CONTROLIN)
 	m4 -DPACKAGE=$(IWAD)-wad -DGAME=$(IWAD) -DVERSION=$(VERSION) \
-		-DENGINE=$(GAME) $(CONTROLIN) > $@
+		-DLONG="$(LONG)" -DENGINE=$(GAME) $(CONTROLIN) > $@
 
 build/$(IWAD)-wad/usr/share/doc/$(IWAD)-wad/changelog.gz:
 	gzip -c9 debian/changelog > $@

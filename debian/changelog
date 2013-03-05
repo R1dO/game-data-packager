@@ -1,6 +1,11 @@
 game-data-packager (33) UNRELEASED; urgency=low
 
+  [ Jon Dowland ]
   * Remove deprecated dm-upload-allowed field from control file.
+
+  [ Fabian Greffrath ]
+  * Correctly substitute the LONG name in debian/control
+    for the Doom games family.
 
  -- Jon Dowland <jmtd@debian.org>  Mon, 26 Nov 2012 10:18:39 +0000
 
