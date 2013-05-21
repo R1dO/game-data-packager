@@ -1,0 +1,19 @@
+Why put your packaging needs into game-data-packager?
+
+1. game-data-packager (gdp) runs as a normal user. postinst scripts run
+   as root. This reduces the impact of a security flaw in the scripts.
+2. the .deb packages that gdp generates can be archived by the end user
+   and installed on multiple machines, or re-installed (rather than
+   regenerated) after a clean install.
+3. postinst scripts need to run in a non-interactive context which makes
+   prompting the user difficult (or requires you to abuse debconf). gdp
+   scripts can expect an interactive terminal for prompting.
+4. download requirements in gdp can be much more complex than you may be
+   comfortable implementing in a postinst script: multiple mirrors, mirror
+   selection, parallel downloads, retries, user-supplied local copies of
+   files to download, proxy specification, etc.
+5. common needs between packages (e.g. download logic, patch logic, etc.)
+   can be in shared routines.
+6. other non-live stuff can be shared (icons, package descriptions, etc.)
+   in some cases (e.g. variants of the same game such as the Doom family)
+7. the .deb files that gdp generates have a correct Installed-Size.
