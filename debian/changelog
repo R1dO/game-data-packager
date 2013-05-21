@@ -1,8 +1,9 @@
-game-data-packager (33) UNRELEASED; urgency=low
+game-data-packager (33) experimental; urgency=low
 
   [ Jonathan Dowland ]
   * Remove deprecated dm-upload-allowed field from control file.
   * add doc/why.mdwn: why add your game/thing to game-data-packager?
+  * new support for lgeneral
 
   [ Fabian Greffrath ]
   * Correctly substitute the LONG name in debian/control
