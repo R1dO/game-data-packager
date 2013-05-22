@@ -1,15 +1,15 @@
-game-data-packager (33) experimental; urgency=low
+game-data-packager (33) unstable; urgency=low
 
   [ Jonathan Dowland ]
   * Remove deprecated dm-upload-allowed field from control file.
   * add doc/why.mdwn: why add your game/thing to game-data-packager?
-  * new support for lgeneral
+  * new support for lgeneral. Closes: #693930.
 
   [ Fabian Greffrath ]
   * Correctly substitute the LONG name in debian/control
     for the Doom games family.
 
- -- Jonathan Dowland <jmtd@debian.org>  Tue, 21 May 2013 18:09:37 +0100
+ -- Jonathan Dowland <jmtd@debian.org>  Wed, 22 May 2013 17:03:19 +0100
 
 game-data-packager (32) experimental; urgency=low
 
