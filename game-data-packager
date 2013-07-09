@@ -2,6 +2,9 @@
 set -e
 set -u
 
+# reset grep options that could affect output
+GREP_OPTIONS=""
+
 # defaults
 INSTALL="no"
 PRESERVE="yes"
