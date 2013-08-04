@@ -144,7 +144,7 @@ guess_method() {
         debug "treating $mountpoint like an installed directory"
         method="dir"
         dir_method
-    elif [ -f "$mountpoint/q101_int.1" ]; then
+    elif [ -f "$mountpoint/q101_int.1" ] || [ -f "$mountpoint/resource.1" ]; then
         debug "treating $mountpoint like a CD-ROM"
         method="cdrom"
         cdrom_method
@@ -245,24 +245,41 @@ verify_quake() {
 }
 
 cdrom_method() {
-    bit1="$mountpoint/q101_int.1"
-    bit2="$mountpoint/q101_int.2"
-    bit1sum=752f49131bb3ba832346e873c1bcfdc6
-    bit2sum=9ed67b39020575771e29645d977c9216
-    
-    require_program lha lhasa
-    verify_file "$bit1"
-    verify_file "$bit2"
-    verify_md5sum "$bit1" "$bit1sum"
-    verify_md5sum "$bit2" "$bit2sum"
-    
-    cat "$bit1" "$bit2" > "$WORKDIR/unpackme.exe"
-    (
-      cd "$WORKDIR"
-      lha xq unpackme.exe
-      rm unpackme.exe
-    )
-    
+    if [ -f "$mountpoint/q101_int.1" ] ; then
+        # Quake 1.01 CD
+        bit1="$mountpoint/q101_int.1"
+        bit2="$mountpoint/q101_int.2"
+        bit1sum=752f49131bb3ba832346e873c1bcfdc6
+        bit2sum=9ed67b39020575771e29645d977c9216
+
+        require_program lha lhasa
+        verify_file "$bit1"
+        verify_file "$bit2"
+        verify_md5sum "$bit1" "$bit1sum"
+        verify_md5sum "$bit2" "$bit2sum"
+
+        cat "$bit1" "$bit2" > "$WORKDIR/unpackme.exe"
+        (
+          cd "$WORKDIR"
+          lha xq unpackme.exe
+          rm unpackme.exe
+        )
+    elif [ -f "$mountpoint/resource.1" ] ; then
+        # Quake 1.06 registered retail cdrom
+        resource1="$mountpoint/resource.1"
+        resource1sum=959e4bd69d817ee0cbea6ddbf4f3af37
+
+        require_program lha lhasa
+        verify_file "$resource1"
+        verify_md5sum "$resource1" "$resource1sum"
+        (
+          cd "$WORKDIR"
+          lha xq "$resource1" "ID1/PAK0.PAK" "ID1/PAK1.PAK"
+        )
+    else
+        die "BUG: cdrom_method called with missing archive"
+    fi
+
     pak0="$WORKDIR/id1/pak0.pak"
     if ! test -f "$pak0"; then
         pak0="$WORKDIR/ID1/PAK0.PAK"
