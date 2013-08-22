@@ -2,8 +2,8 @@
 set -e
 set -u
 
-# reset grep options that could affect output
-GREP_OPTIONS=""
+# unset grep options that could affect output
+unset GREP_OPTIONS
 
 # defaults
 INSTALL="no"
