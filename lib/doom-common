@@ -35,7 +35,7 @@ go() {
 	cp -p "$DEB" "$OUTFILE"
 	# Force lower case for *.wad files
 	WADFILENAME=`basename "$WADFILE" | tr '[:upper:]' '[:lower:]'`
-	cp -pf "$WADFILE" "$WORKDIR/$WADFILENAME"
+	ln -sf "$WADFILE" "$WORKDIR/$WADFILENAME"
 	slipstream "$OUTFILE" "$DEST" "$WORKDIR/$WADFILENAME"
 	rm -f "$WORKDIR/$WADFILENAME"
 }
