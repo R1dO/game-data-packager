@@ -103,7 +103,7 @@ trap cleanup EXIT
 go "$@"
 
 if [ "$PRESERVE" = "yes" ]; then
-	echo "generated $OUTFILE."
+	echo "generated \"$OUTFILE\"."
 fi
 
 if [ "$INSTALL" = "yes" ]; then
