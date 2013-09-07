@@ -286,7 +286,7 @@ unravel() {
 	echo $FILE
 }
 
-if [ -f ./debian/changelog ]; then
+if [ -f ./debian/changelog -a -x ./game-data-packager ]; then
     GAME_PACKAGE_VERSION=`dpkg-parsechangelog -ldebian/changelog --format \
         rfc822 | grep Version | cut -d' ' -f2`
 else
