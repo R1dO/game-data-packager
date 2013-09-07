@@ -33,5 +33,9 @@ go() {
 
 	OUTFILE=`unravel "$OUTDIR"`"/$DEBBASE"
 	cp -p "$DEB" "$OUTFILE"
-	slipstream "$OUTFILE" "$DEST" "$WADFILE"
+	# Force lower case for *.wad files
+	WADFILENAME=`basename "$WADFILE" | tr '[:upper:]' '[:lower:]'`
+	cp -pf "$WADFILE" "$WORKDIR/$WADFILENAME"
+	slipstream "$OUTFILE" "$DEST" "$WORKDIR/$WADFILENAME"
+	rm -f "$WORKDIR/$WADFILENAME"
 }
