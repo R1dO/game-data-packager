@@ -5,6 +5,7 @@ game-data-packager (34) UNRELEASED; urgency=low
   * Only parse dpkg-parsechangelog in g-d-p's own source directory.
   * Make the generated package file name better double-click-selectable [tm].
   * Force lower case for *.wad files in doom-common.
+  * In quake, link pak[01].pak to absolute paths.
 
  -- Fabian Greffrath <fabian+debian@greffrath.com>  Tue, 09 Jul 2013 10:24:48 +0200
 

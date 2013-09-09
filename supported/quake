@@ -239,8 +239,8 @@ common_method() {
     cp -p "$DATADIR/$DEBBASE" "$OUTFILE"
 
     # force lower case for our copy of the files
-    ln -s "$pak0" "$WORKDIR/pak0.pak"
-    [ "$pak1" = "" ] || ln -s "$pak1" "$WORKDIR/pak1.pak"
+    ln -s `unravel "$pak0"` "$WORKDIR/pak0.pak"
+    [ "$pak1" = "" ] || ln -s `unravel "$pak1"` "$WORKDIR/pak1.pak"
 
     if [ "$pak1" = "" ]; then
         slipstream "$OUTFILE" "usr/share/games/quake/${folder}" \
