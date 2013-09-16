@@ -6,6 +6,7 @@
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: Start Quake game server
+# Description:       Dedicated server for Quake, a 3D first-person shooter game
 ### END INIT INFO
 
 PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
@@ -80,9 +81,12 @@ case "$1" in
 	do_stop && sleep 1 && do_start
         log_end_msg $?
 	;;
+    status)
+        status_of_proc -p "$PIDFILE" "$DAEMON" "$NAME" && exit 0 || exit $?
+        ;;
+
     *)
-	# echo "Usage: $0 {start|stop|restart|reload|force-reload}" >&2
-	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	echo "Usage: $0 {start|stop|restart|force-reload|status}" >&2
 	exit 1
 	;;
 esac
