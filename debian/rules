@@ -14,7 +14,15 @@ override_dh_auto_build:
 
 override_dh_auto_clean:
 	$(MAKE) clean VERSION=$(VERSION)
-	#rm -f *.deb
+	@if [ "`echo *.deb`" != "*.deb" ]; then \
+		echo; \
+		echo "*************************************************"; \
+		echo "Cannot create source package with these here:"; \
+		ls *.deb; \
+		echo "*************************************************"; \
+		echo; \
+		exit 1; \
+	fi
 
 override_dh_installdocs:
 	dh_installdocs -XTODO
