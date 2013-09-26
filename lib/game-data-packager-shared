@@ -153,14 +153,14 @@ slipstream_dir() {
         RELPATH="$2" # relative path in the unpacked .deb 
         DIR="$3"     # directory with game data 
          
-        FILES=`find $DIR -type f` 
+        find $DIR -type f | (
  
         OLDWD=`pwd` 
         cd "$WORKDIR" 
  
         slipstream_permcheck "$DEB" 
         slipstream_unpack "$DEB" 
-        for f in $FILES; do      
+        while read f; do
                 destpath="$RELPATH$f" 
                 targetdir=`dirname "$destpath"` 
                 mkdir -p "./slipstream.unpacked/$targetdir" 
@@ -171,13 +171,14 @@ slipstream_dir() {
                 cd slipstream.unpacked 
                 md5sum "$destpath" >> "../DEBIAN/md5sums" 
                 cd .. 
-        done 
+        done
  
         slipstream_instsize 
         slipstream_repack "$DEB" 
         slipstream_cleanup 
  
         cd "$OLDWD" 
+        )
 }
 
 
