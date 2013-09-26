@@ -1,5 +1,5 @@
-Debian Quake mini-policy, version 1
-===================================
+Debian Quake/Quake II mini-policy, version 2
+============================================
 
 Configuration files
 -------------------
@@ -22,6 +22,13 @@ definition, almost every quake-engine could also be a quake-engine-server, but
 engines where there is a separate server build with reduced dependencies
 do not need to register their client as a potential server.)
 
+quake2-engine is any Quake II engine that, when run with +set basedir DIR,
+acts as a Quake II client.
+
+quake2-engine-server is any Quake II engine that, when run with the
+command-line options "+set dedicated 1" in addition to the options above,
+acts as a Quake II server.
+
 Neither quake-engine nor quake-engine-server is really meant to be run
 directly, so the alternatives go in /usr/lib/quake:
 
@@ -39,10 +46,8 @@ never causes the user to "lose" their configuration and savegames.
 Virtual packages
 ----------------
 
-Packages providing quake-engine must implement the quake-engine alternative.
-
-Packages providing quake-engine-server must implement the quake-engine-server
-alternative.
+Packages providing quake-engine must implement the quake-engine alternative,
+and so on.
 
 Non-Quake games
 ---------------
@@ -55,3 +60,8 @@ community patches or extra features (so no JPEG textures, for instance).
 (For instance, Nexuiz relies on features from DarkPlaces, which is its
 "official" engine, so it should depend on darkplaces directly and not rely
 on quake-engine.)
+
+Changes
+-------
+
+* version 2: added Quake II alternatives and virtual packages

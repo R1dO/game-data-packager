@@ -1,14 +1,16 @@
 #! /bin/sh
 
-# quake.sh - launcher script for quake 1
+# @self@ - launcher script for Quake II @role@
 
 self="@self@"
 role="@role@"
 options="@options@"
-data_location=/usr/share/games/quake
-engine_path=/usr/lib/quake/@alternative@
-no_data_title="Quake"
+data_location=/usr/share/games/quake2
+engine_path=/usr/lib/quake2/@alternative@
+no_data_title="Quake II"
 no_data_msg="Missing data; see /usr/share/doc/${self}/README.Debian"
+
+use_data_location="$data_location"
 
 main() {
     while [ $# -gt 0 ]; do
@@ -29,6 +31,9 @@ main() {
                 engine_path="$1"
                 engine_path="${engine_path#--engine=}"
                 ;;
+            --demo)
+                use_data_location="$data_location-demo"
+                ;;
             *)
                 break
                 ;;
@@ -37,32 +42,39 @@ main() {
         shift
     done
 
-    if ! [ -f "${data_location}/id1/pak0.pak" ]; then
+    if ! [ -f "${use_data_location}/baseq2/pak0.pak" ]; then
+        # try to fall back to the demo data - might work?
+        use_data_location="$data_location-demo"
+    fi
+
+    if ! [ -f "${use_data_location}/baseq2/pak0.pak" ]; then
         if test "${role}" = server; then
             echo "$no_data_msg"
         else
             exec "$data_location"/need-data.sh "$no_data_title" "$no_data_msg"
         fi
     fi
-    
-    exec ${engine_path} -basedir ${data_location} ${options} "$@"
+
+    exec ${engine_path} ${options} +set basedir "$use_data_location" "$@"
 }
 
 show_help() {
     echo "Usage: ${self} [-h|--help] [-v|--version] [ARG1] [ARG2] ..."
-    echo "Launch Quake ${role}."
+    echo "Launch Quake II ${role}."
     echo
     echo "This script supports these options:"
     echo "  -h, --help       show this help information"
     echo "  -v, --version    show version information"
-    echo "  --engine BINARY  use BINARY as the Quake engine, e.g."
-    echo "                   quake --engine=/usr/games/darkplaces"
+    echo "  --engine BINARY  use BINARY as the Quake II engine, e.g."
+    echo "                   quake2 --engine=/usr/lib/yagami-quake2/quake2"
+    echo "  --demo           use the demo data, even if the full game is"
+    echo "                   also installed"
     echo
-    echo "Any further arguments will be passed directly to the Quake engine."
+    echo "Any further arguments will be passed directly to the engine."
 }
 
 show_version() {
-    echo "Debian Quake 1 wrapper script"
+    echo "Debian Quake II wrapper script"
     echo "Please consult your apt database for the version number of this script."
     echo "Looking for data at: '$data_location'"
     echo "Using engine: '$engine_path'"

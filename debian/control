@@ -17,9 +17,10 @@ Depends: ${misc:Depends},
          quake-registered | quake-shareware | game-data-packager
 Recommends: x11-utils | zenity | kdebase-bin
 Suggests: quake-armagon (>= 29), quake-dissolution (>= 29)
-Description: classic first person shooter
- This package contains a launcher script and menu entry to play
- Quake 1 with any suitable engine.
+Description: classic gothic/horror-themed first person shooter
+ Quake is a classic first-person shooter game by id Software,
+ released in 1996. This package contains a launcher script and menu
+ entry to play Quake with any suitable engine.
  .
  To make this package useful, you will need to create and install the
  non-distributable quake-registered or quake-shareware package, by using the
@@ -29,6 +30,23 @@ Description: classic first person shooter
  CD-ROM.
  .
  Creating quake-shareware requires the shareware version of Quake.
+
+Package: quake2
+Architecture: all
+Depends: ${misc:Depends},
+         yamagi-quake2 | quake-engine,
+         quake2-retail | quake2-demo | game-data-packager,
+         quake2-patch | quake2-demo | game-data-packager
+Recommends: x11-utils | zenity | kdebase-bin
+Description: classic science-fiction-themed first person shooter
+ Quake II is a classic first-person shooter game by id Software,
+ released in 1997. This package contains a launcher script and menu
+ entry to play Quake II with any suitable engine.
+ .
+ To make this package useful, you will need to create and install some
+ non-distributable packages by using the game-data-packager package:
+ either quake2-full-data or quake2-demo-data. Creating quake2-full-data
+ requires data files from a Quake II installation or CD-ROM.
 
 Package: quake-server
 Architecture: all
@@ -43,3 +61,23 @@ Description: classic first person shooter - server and init script
  To make this package useful, you will need to create and install the
  non-distributable quake-registered or quake-shareware package, by using the
  game-data-packager package.
+
+Package: quake2-server
+Architecture: all
+Depends: adduser,
+         yamagi-quake2-server | quake2-engine-server,
+         quake2-full-data | quake2-demo-data | game-data-packager,
+         ${misc:Depends}
+Recommends: x11-utils | zenity | kdebase-bin
+Description: dedicated server for Quake II
+ This package contains a launcher script and init script to run a
+ Quake II server automatically, with any suitable engine.
+ .
+ To make this package useful, you will need to create and install some
+ non-distributable packages by using the game-data-packager package:
+ either quake2-full-data or quake2-demo-data. Creating quake2-full-data
+ requires data files from a Quake II installation or CD-ROM.
+ .
+ The configuration file provided by this package is intended
+ for the full version of Quake II - some reconfiguration will be
+ needed for the demo.

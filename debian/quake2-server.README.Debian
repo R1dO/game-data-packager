@@ -1,0 +1,64 @@
+Quake II dedicated server for Debian
+====================================
+
+Running the server via sysvinit
+-------------------------------
+
+By default, quake2-server adds a user under which to run the dedicated server
+(quake2-server) and sets it up to be run by an init script in the conventional
+Debian way. This is a simple setup suitable for running one server on a
+machine; by default it will run a deathmatch game.
+
+The quake2-server user's home directory is /var/games/quake2-server, so you
+can find Quake files in /var/games/quake2-server/.yq2 or similar.
+
+By default, the init script will use
+/usr/share/games/quake2/baseq2/debian_server.cfg, which is a symlink to
+/etc/quake2-server/debian_server.cfg. You can edit this file, or put an
+alternative configuration in /var/games/quake2-server/.yq2/baseq2 (or
+whatever is the appropriate directory for your selected engine) and change
+/etc/default/quake2-server to exec that.
+
+If you only have the demo data, the init script will use
+/usr/share/games/quake2-demo/baseq2/debian_server.cfg,
+which is a similar symlink to /etc/quake2-server/demo/debian_server.cfg.
+
+There are various alternative ways you can run the server if this doesn't
+meet your requirements.
+
+Disabling the init script
+-------------------------
+
+To stop the server:
+
+    /etc/init.d/quake2-server stop
+
+To prevent it from running again, use update-rc.d:
+
+    update-rc.d quake2-server disable
+
+Running the server with cron and screen
+---------------------------------------
+
+One alternative way to run the server is to run it in a screen(1) session
+from a cron @reboot action. This can be used to run multiple instances
+of the server; you'll need to set a different port number on each server after
+the first, and it's safest to give each server a unique home directory so they
+don't overwrite each other's configuration files.
+
+To do this, you could put something like this in the quake2-server user's
+crontab (don't break the long lines!):
+
+    @reboot screen -d -m -S ffa env HOME=/var/games/quake2-server/ffa /usr/games/quake2-server +exec ffa.config
+    @reboot screen -d -m -S ctf env HOME=/var/games/quake2-server/ctf /usr/games/quake2-server +set port 54321 +exec ctf.config
+
+or in /etc/crontab or a file in /etc/cron.d:
+
+    @reboot quake2-server screen -d -m -S ffa env HOME=/var/games/quake2-server/ffa /usr/games/quake2-server +exec ffa.config
+    @reboot quake2-server screen -d -m -S ctf env HOME=/var/games/quake2-server/ctf /usr/games/quake2-server +set port 54321 +exec ctf.config
+
+If you do that, you can access the servers' consoles by attaching a screen
+session to them:
+
+    sudo -u quake2-server screen -r ffa
+    sudo -u quake2-server screen -r ctf

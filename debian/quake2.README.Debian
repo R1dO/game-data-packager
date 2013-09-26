@@ -1,0 +1,32 @@
+Quake II for Debian
+===================
+
+Game data
+---------
+
+The Quake II engine requires game data to run.  The data is not freely
+redistributable.  You should use the 'game-data-packager' tool to install it.
+
+Switching engines
+-----------------
+
+There is no canonical upstream developer for the Quake engine, but several
+forks might be packaged in Debian in future. This package can use any
+compatible engine.
+
+Currently, the recommended engine is yamagi-quake2.
+
+To select a particular Quake engine once, you can use the --engine option:
+
+    quake --engine=/usr/lib/yamagi-quake2/quake2
+
+To change the preferred engine system-wide, reconfigure the quake2-engine
+alternative:
+
+    sudo update-alternatives --config quake2-engine
+
+Each Quake engine has its own dot-directory, with its own configuration and
+potentially its own savegame format. If you switch between two engines
+using update-alternatives (or by installing a second and uninstalling the
+first), you will have to configure the new engine separately, and any
+single-player savegames will not be visible to the new engine.

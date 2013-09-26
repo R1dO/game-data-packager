@@ -1,7 +1,7 @@
 #!/bin/sh
 
-TITLE="Quake"
-TEXT="$1"
+TITLE="$1"
+TEXT="$2"
 
 try_zenity () {
   if command -v zenity >/dev/null; then
