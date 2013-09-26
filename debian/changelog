@@ -1,9 +1,14 @@
 quake (3) UNRELEASED; urgency=low
 
+  [ David Banks ]
   * Add LSB description field to init script.
   * Add status action to init script (ported from quake3 package).
   * Bump debhelper compat version to 9 to avoid python warning.
   * Bump standards version to the latest version, 3.9.3.
+
+  [ Simon McVittie ]
+  * Apply patch from Stephan Springl to install successfully with
+    non-shadow passwords (Closes: #679642)
 
  -- David Banks <amoebae@gmail.com>  Thu, 18 Oct 2012 12:23:51 +0100
 

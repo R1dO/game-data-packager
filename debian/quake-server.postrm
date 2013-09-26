@@ -6,7 +6,11 @@ set -e
 
 if [ "$1" = "purge" ] ; then
     # Lock account on purge
-    usermod -L -e 1 quake-server
+    if [ -f /etc/shadow ]; then
+        usermod -L -e 1 quake-server
+    else
+        usermod -L quake-server
+    fi
     rm -r /var/games/quake-server
     rmdir --ignore-fail-on-non-empty /var/games
 fi

@@ -11,7 +11,11 @@ case "$1" in
 	--ingroup games --force-badname quake-server
     fi
     # Unlock account, if it was locked by our postrm
-    usermod -U -e '' quake-server
+    if [ -f /etc/shadow ]; then
+      usermod -U -e '' quake-server
+    else
+      usermod -U quake-server
+    fi
     install -d /var/games
     install -d -o quake-server -g games /var/games/quake-server
   ;;
