@@ -57,6 +57,8 @@ go () {
     cdpath=
     filepath=
     mirror=
+    # slipstream_instsize, slipstream_repack assume this naming
+    DESTDIR="$WORKDIR/slipstream.unpacked"
 
     for arg in "$@"; do
         case "$arg" in
@@ -75,7 +77,7 @@ go () {
                 ;;
             (*)
                 if [ -d "$arg" ]; then
-                    echo "using $cdpath as the location of the full Quake II" \
+                    echo "using $arg as the location of the full Quake II" \
                         "CD or installation"
                     cdpath="$arg"
                     mode=full
@@ -129,7 +131,7 @@ go () {
 
                 if [ "x$exp" = "x$real" ]; then
                     debug "... correct md5sum"
-                    copyin "/$file" "$WORKDIR/$file"
+                    copyin "/$file" "$DESTDIR/$file"
                     continue
                 else
                     warn "unexpected file contents:"
@@ -164,7 +166,7 @@ go () {
 
                     if [ "x$exp" = "x$real" ]; then
                         debug "... correct md5sum"
-                        copyin "$found" "$WORKDIR/$file"
+                        copyin "$found" "$DESTDIR/$file"
                         continue
                     else
                         warn "unexpected file contents:"
@@ -218,7 +220,7 @@ go () {
                 real=`md5sum "/$file" | cut -d ' ' -f1`
 
                 if [ "x$exp" = "x$real" ]; then
-                    copyin "/$file" "$WORKDIR/$file"
+                    copyin "/$file" "$DESTDIR/$file"
                 else
                     warn "unexpected file contents:"
                     warn "    /$file"
@@ -280,7 +282,7 @@ go () {
                     warn "     got: $real"
                     die "this shouldn't have happened"
                 fi
-                copyin "$WORKDIR/$src" "$WORKDIR/$file"
+                copyin "$WORKDIR/$src" "$DESTDIR/$file"
             done < "$DATADIR/quake2/patch.md5sums"
         fi
     else # ${mode} = demo
@@ -305,7 +307,7 @@ go () {
                 real=`md5sum "/$file" | cut -d ' ' -f1`
 
                 if [ "x$exp" = "x$real" ]; then
-                    copyin "/$file" "$WORKDIR/$file"
+                    copyin "/$file" "$DESTDIR/$file"
                 else
                     warn "unexpected file contents:"
                     warn "    /$file"
@@ -366,7 +368,7 @@ go () {
                     warn "     got: $real"
                     die "this shouldn't happen"
                 fi
-                copyin "$WORKDIR/$src" "$WORKDIR/$file"
+                copyin "$WORKDIR/$src" "$DESTDIR/$file"
             done < "$DATADIR/quake2/demo.md5sums"
         fi
     fi
@@ -377,10 +379,24 @@ go () {
         OUTFILE=`unravel "$OUTDIR"`"/$deb"
     fi
 
+    copyin "$DATADIR/quake2/changelog.gz" \
+        "$DESTDIR/usr/share/doc/quake2-$mode-data/changelog.gz"
+    copyin "$DATADIR/quake2/quake2-$mode-data.copyright" \
+        "$DESTDIR/usr/share/doc/quake2-$mode-data/copyright"
+
+    # slipstream_instsize, slipstream_repack assume that slipstream.unpacked
+    # and DEBIAN are in the same place
+    copyin "$DATADIR/quake2/quake2-$mode-data.control" \
+        "$WORKDIR/DEBIAN/control"
+    copyin "$DATADIR/quake2/quake2-$mode-data.md5sums" \
+        "$WORKDIR/DEBIAN/md5sums"
+
+    # sanity check
+    ( cd "$DESTDIR" && md5sum --check --quiet ../DEBIAN/md5sums )
+
     debug "building .deb: $OUTFILE"
-    install -m644 "$DATADIR/$deb" "$OUTFILE"
-    cd "$WORKDIR"
-    slipstream_dir "$OUTFILE" "" "usr"
+    ( cd "$WORKDIR" && slipstream_instsize )
+    ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
 
     rm -fr "$WORKDIR/$demofile"
     rm -fr "$WORKDIR/$patchfile"
@@ -389,5 +405,5 @@ go () {
     rm -fr "$WORKDIR/DOCS"
     rm -fr "$WORKDIR/Install"
     rm -fr "$WORKDIR/repack"
-    rm -fr "$WORKDIR/usr"
+    rm -fr "$DESTDIR"
 }

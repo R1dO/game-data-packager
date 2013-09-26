@@ -4,50 +4,39 @@ srcdir = ${CURDIR}
 builddir = ${CURDIR}/build
 outdir = ${CURDIR}/out
 
-deb = ${outdir}/${PACKAGE}_${VERSION}_all.deb
+all: do-${PACKAGE}
 
-all:
-	install -d ${outdir}/quake2
-	install -m644 quake2/cd.md5sums ${outdir}/quake2/
+do-quake2-demo-data: do-common
 	install -m644 quake2/demo.md5sums ${outdir}/quake2/
+	( \
+		cat quake2/demo.md5sums; \
+		md5sum ${outdir}/quake2/changelog.gz | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
+		md5sum ${outdir}/quake2/${PACKAGE}.copyright | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
+	) > ${outdir}/quake2/${PACKAGE}.md5sums
+	chmod 0644 ${outdir}/quake2/${PACKAGE}.md5sums
+
+do-quake2-full-data: do-common
+	install -m644 quake2/cd.md5sums ${outdir}/quake2/
 	install -m644 quake2/patch.md5sums ${outdir}/quake2/
-all: ${deb}
+	( \
+		cat quake2/cd.md5sums; \
+		cat quake2/patch.md5sums; \
+		md5sum ${outdir}/quake2/changelog.gz | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
+		md5sum ${outdir}/quake2/${PACKAGE}.copyright | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
+	) > ${outdir}/quake2/${PACKAGE}.md5sums
+	chmod 0644 ${outdir}/quake2/${PACKAGE}.md5sums
 
-${deb}: \
-		${builddir}/${PACKAGE}/DEBIAN/md5sums \
-		${builddir}/${PACKAGE}/DEBIAN/control
-	cd ${builddir} && \
-	if [ `id -u` -eq 0 ]; then \
-		dpkg-deb -b ${PACKAGE} $@ ; \
-	else \
-		fakeroot dpkg-deb -b ${PACKAGE} $@ ; \
-	fi
-
-${builddir}/${PACKAGE}/DEBIAN/md5sums: \
-		${builddir}/${PACKAGE}/usr/share/doc/${PACKAGE}/changelog.gz \
-		${builddir}/${PACKAGE}/usr/share/doc/${PACKAGE}/copyright
-	install -d `dirname $@`
-	cd ${builddir}/${PACKAGE} && find usr/ -type f  -print0 |\
-		xargs -0 md5sum > DEBIAN/md5sums
-	chmod 0644 $@
-
-${builddir}/${PACKAGE}/usr/share/doc/${PACKAGE}/changelog.gz: \
-		debian/changelog
-	install -d `dirname $@`
-	gzip -c9 $< > $@
-	chmod 0644 $@
-
-${builddir}/${PACKAGE}/usr/share/doc/${PACKAGE}/copyright: \
-		quake2/${PACKAGE}.copyright
-	install -d `dirname $@`
-	install -m644 $< $@
-
-${builddir}/${PACKAGE}/DEBIAN/control: \
-		quake2/${PACKAGE}.control
-	install -d `dirname $@`
-	m4 -DVERSION=${VERSION} < $< > $@
-	chmod 0644 $@
+do-common:
+	install -d ${outdir}/quake2
+	install -m644 quake2/${PACKAGE}.copyright ${outdir}/quake2/
+	m4 -DVERSION=${VERSION} < quake2/${PACKAGE}.control > ${outdir}/quake2/${PACKAGE}.control
+	chmod 0644 ${outdir}/quake2/${PACKAGE}.control
+	gzip -c9 debian/changelog > ${outdir}/quake2/changelog.gz
+	chmod 0644 ${outdir}/quake2/changelog.gz
 
 clean:
-	rm -rf ${deb} ${builddir}/${PACKAGE}
 	rm -rf ${outdir}/quake2
