@@ -270,7 +270,7 @@ go () {
                 esac
 
                 debug "extracting $src"
-                unzip -q "$WORKDIR/$patchfile" -d "$WORKDIR" "$src"
+                gdp_unzip_paths "$WORKDIR/$patchfile" "$WORKDIR" "$src"
                 exp="${line%% *}"
                 real=`md5sum "$WORKDIR/$src" | cut -d ' ' -f1`
 
@@ -356,7 +356,7 @@ go () {
                 esac
 
                 debug "extracting $src"
-                unzip -q "$WORKDIR/$demofile" -d "$WORKDIR" "$src"
+                gdp_unzip_paths "$WORKDIR/$demofile" "$WORKDIR" "$src"
                 exp="${line%% *}"
                 real=`md5sum "$WORKDIR/$src" | cut -d ' ' -f1`
 

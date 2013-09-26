@@ -299,6 +299,35 @@ else
         --show game-data-packager`
 fi
 
+## gdp_unzip_into (zipfile, extraction directory, [files...])
+##      Unpack files (or everything if not given) from zipfile, with hierarchy
+##      preserved.
+##
+##      e.g. gdp_unzip_into q2-3.20-x86-full-ctf.exe ~/tmp baseq2/pak1.pak
+##      will extract the zip file member "baseq2/pak1.pak" to
+##      ~/tmp/baseq2/pak1.pak
+gdp_unzip_paths () {
+    zipfile="$1"
+    shift
+    target="$1"
+    shift
+    if which 7za >/dev/null; then
+        debug "using 7za"
+        7za x -o"$target" -y "$zipfile" "$@" >/dev/null
+    elif which 7z >/dev/null; then
+        debug "using 7z"
+        7z x -o"$target" -y "$zipfile" "$@" >/dev/null
+    else
+        debug "using unzip"
+        unzip -d "$target" -qqo "$zipfile" "$@"
+    fi
+}
+
+## Deprecated version of gdp_unzip_paths with ambiguous behaviour.
+## If the zip file does not contain subdirectories,
+## "gdp_unzip x.zip y" is equivalent to "gdp_unzip_paths x.zip . y".
+## If the zip file contains a/b/c, it might unpack to either ./a/b/c
+## or ./c, depending on the tool used.
 gdp_unzip() {
     zipfile="$1"
     shift
