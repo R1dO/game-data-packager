@@ -3,17 +3,34 @@
 SHORTNAME=quake
 LONGNAME=Quake
 
+IDMIRRORFILE=/etc/game-data-packager/idstuff-mirrors
+
+if [ "$0" = "./game-data-packager" ]; then
+    IDMIRRORFILE="./etc/idstuff-mirrors"
+fi
+
+quake106_zip_sha256=ec6c9d34b1ae0252ac0066045b6611a7919c2a0d78a3a66d9387a8f597553239
+quake_pak0sum_106=5906e5998fc3d896ddaf5e6a62e03abb
+quake_pak0sum_101=85fc9cee2035b66290da1e33be2ac86b
+
 quake_usage() {
        echo "game-data-packager ${SHORTNAME} arguments:"
         printf "\tgame-data-packager ${SHORTNAME} path
 \t\t-m path\t\tpath to a mounted Quake CD-ROM\n\
 \t\t-d path\t\tpath to an unpacked Quake directory\n\
+\t\t-s\t\tdownload Quake shareware, version 1.06\n\
 \t\t-s path\t\tpath to a Quake shareware ZIP\n\
 \t\t-mp1 path\tpath to an unpacked Scourge of Armagon directory\n\
 \t\t\t\tor a mounted Scourge of Armagon CD\n\
 \t\t-mp2 path\tpath to an unpacked Dissolution of Eternity directory\n\
 \t\t\t\tor a mounted Dissolution of Eternity CD\n\
 \t\tpath\t\tpath to any of the above (game-data-packager will guess)\n"
+}
+
+get_mirror () {
+    (
+        grep -v '^#' "${IDMIRRORFILE}" | sed 's#$#/quake#'
+    ) | sort -R | head -n1
 }
 
 mountpoint=""
@@ -25,7 +42,20 @@ verify_args() {
             exit 0
             ;;
         1)
-            mountpoint="$1"
+            case "$1" in
+                (-s|--shareware)
+                    mountpoint=""
+                    method="swzip"
+                    ;;
+                (-*)
+                    usage >&2
+                    quake_usage >&2
+                    exit 1
+                    ;;
+                (*)
+                    mountpoint="$1"
+                    ;;
+            esac
             ;;
         2)
             mountpoint="$2"
@@ -111,21 +141,76 @@ require_lha() {
     which lha >/dev/null|| die "package 'lha' is required for this installation method."
 }
 
+unpack_quake106_pak0 () {
+    require_lha
+    mirror=
+
+    set +u
+    zipfile="$1"
+    set -u
+
+    if [ -n "$zipfile" ]; then
+        :
+    elif [ -f "$WORKDIR/quake106.zip" ]; then
+        zipfile="$WORKDIR/quake106.zip"
+    else
+        zipfile="$WORKDIR/quake106.zip"
+        echo "downloading quake106.zip..." >&2
+        mirror=`get_mirror`
+        wget -O "$zipfile" "$mirror/quake106.zip" >&2
+    fi
+
+    exp=$quake106_zip_sha256
+    real=`sha256sum -b "$zipfile" | cut -d ' ' -f1`
+
+    if [ "x$real" != "x$exp" ]; then
+        warn "$zipfile sha256sum does not match expected value"
+        [ -z "$mirror" ] || warn "downloaded: $mirror/quake106.zip"
+        warn "expected: $exp"
+        warn "     got: $real"
+        die "please obtain a correct copy of quake106.zip" 1
+    fi
+
+    (
+        cd "$WORKDIR"
+        gdp_unzip_paths "$zipfile" . resource.1
+        mv resource.1 resource.exe
+        lha xq resource.exe id1/pak0.pak
+        rm resource.exe
+    )
+
+    pak0="$WORKDIR/id1/pak0.pak"
+}
+
 # check that the pak0/pak1 for original Quake are recognised.
-# detect and warn about older versions.
+# detect older versions and automatically replace with 1.06
 verify_quake() {
-    pak0sum=5906e5998fc3d896ddaf5e6a62e03abb          # 1.06
-    pak0sum=$pak0sum,85fc9cee2035b66290da1e33be2ac86b # 1.01
     pak1sum=d76b3e5678f0b64ac74ce5e340e6a685          # 1.06
     pak1sum=$pak1sum,d76b3e5678f0b64ac74ce5e340e6a685 # 1.01
 
     verify_file "$pak0"
     [ "$pak1" = "" ] || verify_file "$pak1"
 
-    # XXX: we should support patching/upgrading
-    verify_md5sum_alternatives "$pak0" "$pak0sum" \
-      "Warning: your files are from an old version of quake, more recent mods\n\
-may not work correctly."
+    # pak0 for shareware or registered Quake 1.06 is identical, and the
+    # 1.01 to 1.06 patch only upgrades pak0 anyway, so if we find
+    # that we have a 1.01 pak0, we can quietly upgrade it to 1.06
+    # by downloading the shareware version.
+
+    sum=`md5sum "$pak0" | cut -d' ' -f1`
+
+    case "$sum" in
+        ($quake_pak0sum_106)
+            # OK
+            ;;
+        (*)
+            # Not 1.06. Upgrade it using the shareware version.
+            echo "Your copy of Quake is not 1.06. Upgrading it by" \
+                "downloading quake106.zip" >&2
+            require_lha
+            unpack_quake106_pak0
+            ;;
+    esac
+
     [ "$pak1" = "" ] || verify_md5sum_alternatives "$pak1" "$pak1sum"
 }
 
@@ -167,30 +252,34 @@ dir_method() {
     pak1=$(ifind "$mountpoint" "id1/pak1.pak" | head -1)
     suffix=registered
     folder=id1
+
+    if [ -z "$pak0" ]; then
+        die "id1/pak0.pak not found in $mountpoint" 1
+    fi
+
+    if [ -z "$pak1" ]; then
+        die "id1/pak1.pak not found in $mountpoint" 1
+    fi
+
     verify_quake
     common_method
 }
 
 swzip_method() {
-    require_lha
-    zipfile=$(unravel "$mountpoint")
-    (
-        cd "$WORKDIR"
-        gdp_unzip "$zipfile" resource.1
-        mv resource.1 resource.exe
-        lha xq resource.exe id1/pak0.pak
-        rm resource.exe
-    )
-    pak0="$WORKDIR/id1/pak0.pak"
-    pak0sum=5906e5998fc3d896ddaf5e6a62e03abb          # 1.06
-    pak0sum=$pak0sum,85fc9cee2035b66290da1e33be2ac86b # 1.01
+    if [ -n "$mountpoint" ]; then
+        zipfile=$(unravel "$mountpoint")
+    else
+        zipfile=""
+    fi
+
+    unpack_quake106_pak0 "$zipfile"
     pak1=""
 
     suffix=shareware
     folder=id1
 
     verify_file "$pak0"
-    verify_md5sum_alternatives "$pak0" "$pak0sum"
+    verify_md5sum_alternatives "$pak0" "$quake_pak0sum_106"
     common_method
 }
 
@@ -252,4 +341,5 @@ common_method() {
     [ -d "$WORKDIR/${folder}" ] && rm -rf "$WORKDIR/${folder}"
     [ ! -f "$WORKDIR/pak1.pak" ] || rm "$WORKDIR/pak1.pak"
     rm "$WORKDIR/pak0.pak"
+    rm -f "$WORKDIR/quake106.zip"
 }
