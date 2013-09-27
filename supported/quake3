@@ -4,10 +4,12 @@ SHORTNAME=quake3
 LONGNAME="Quake III Arena"
 
 POINTFILE=linuxq3apoint-1.32b-3.x86.run
-MIRRORFILE=/etc/game-data-packager/quake3-mirrors
+Q3MIRRORFILE=/etc/game-data-packager/quake3-mirrors
+IDMIRRORFILE=/etc/game-data-packager/idstuff-mirrors
 
-if [ -f ./etc/quake3-mirrors ]; then
-    MIRRORFILE=./etc/quake3-mirrors
+if [ "$0" = "./game-data-packager" ]; then
+    Q3MIRRORFILE="./etc/quake3-mirrors"
+    IDMIRRORFILE="./etc/idstuff-mirrors"
 fi
 
 quake3_usage() {
@@ -16,8 +18,17 @@ printf "\tmountpoint - Quake III Arena CD mount-point or baseq3/pak0.pk3 filenam
 printf "\tpoint release - ${POINTFILE}\n"
 }
 
+get_mirror () {
+    (
+        if [ -s "${Q3MIRRORFILE}" ]; then
+            grep -v '^#' "${Q3MIRRORFILE}"
+        fi
+        grep -v '^#' "${IDMIRRORFILE}" | sed 's#$#/quake3/linux#'
+    ) | sort -R | head -n1
+}
+
 parse_args() {
-    if   [ $# -eq 1 ] && [ -f ${MIRRORFILE} ]; then
+    if   [ $# -eq 1 ] && [ -f ${IDMIRRORFILE} ]; then
         CDROM="$1"
         POINT="false"
     elif [ $# -eq 2 ]; then
@@ -37,15 +48,10 @@ fetch_point_release() {
 	return
     fi
 
-    if [ ! -s ${MIRRORFILE} ]; then
-        echo "${POINTFILE} or a download mirror is required" >&2
+    if ! mirror=`get_mirror`; then
+        echo "${POINTFILE} or a download mirror in $Q3MIRRORFILE or $IDMIRRORFILE is required" >&2
         exit 1
     fi
-
-    # XXX: take the bottom mirror. In future, have some generic
-    # mirror-handling code in game-package, and pick a random one
-    # (or offer up a choice)
-    mirror=`tail -n1 "$MIRRORFILE"`
 
     wget -O $WORKDIR/$POINTFILE $mirror/$POINTFILE
 }
