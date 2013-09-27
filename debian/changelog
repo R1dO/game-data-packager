@@ -8,6 +8,9 @@ game-data-packager (34) UNRELEASED; urgency=low
   * Force lower case for *.wad files in doom-common.
   * In quake, link pak[01].pak to absolute paths.
 
+  [ Stephen Kitt ]
+  * quake: Fix ifind usage in guess_method in cases where the file is absent
+
   [ Simon McVittie ]
   * Canonicalize Vcs-Git, Vcs-Browser
   * Add a check that we don't try to build a source package containing *.deb
