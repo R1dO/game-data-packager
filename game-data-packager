@@ -8,6 +8,7 @@ unset GREP_OPTIONS
 # defaults
 INSTALL="no"
 PRESERVE="yes"
+COMPRESS="maybe"
 
 # test to see whether we are running in 'development mode'
 if [ "$0" = "./game-data-packager" ]; then
@@ -50,6 +51,12 @@ while [ $# -gt 1 ]; do
 		'-i')
 			INSTALL="yes"
 			;;
+		'-z'|'--compress')
+			COMPRESS="yes"
+			;;
+		'--no-compress')
+			COMPRESS="no"
+			;;
 		'--')
 			shift
 			break;
@@ -60,6 +67,12 @@ while [ $# -gt 1 ]; do
 	esac
 	shift
 done
+
+# If we're not going to keep the .deb, there's no point in having
+# a good compression ratio.
+if [ "$COMPRESS" = "maybe" ]; then
+    COMPRESS="$PRESERVE"
+fi
 
 if [ "$INSTALL" = "no" -a "$PRESERVE" = "no" ]; then
 	echo "if you specify -n, you must also specify -d." >&2

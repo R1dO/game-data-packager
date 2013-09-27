@@ -12,6 +12,8 @@ game-data-packager (34) UNRELEASED; urgency=low
   * Canonicalize Vcs-Git, Vcs-Browser
   * Add a check that we don't try to build a source package containing *.deb
   * slipstream_dir: cope with files whose names contain spaces
+  * Add support for not compressing the .deb, and by default don't compress
+    it if we're just going to install and delete it (this is much faster)
 
  -- Fabian Greffrath <fabian+debian@greffrath.com>  Tue, 09 Jul 2013 10:24:48 +0200
 

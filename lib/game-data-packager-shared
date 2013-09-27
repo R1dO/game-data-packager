@@ -250,7 +250,11 @@ slipstream_repack() {
 	# XXX: store output in a temporary file, then cat the file if
 	# dpkg-deb fails for some reason. (this is all to hide a non-
 	# suppressable "building package foo in ..." message)
-	fakeroot dpkg-deb -b slipstream.unpacked "$DEB" >/dev/null
+	if [ "$COMPRESS" = "no" ]; then
+		fakeroot dpkg-deb -Znone -b slipstream.unpacked "$DEB" >/dev/null
+	else
+		fakeroot dpkg-deb -b slipstream.unpacked "$DEB" >/dev/null
+	fi
 
 }
 
