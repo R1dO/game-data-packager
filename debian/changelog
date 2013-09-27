@@ -14,6 +14,7 @@ game-data-packager (34) UNRELEASED; urgency=low
   * slipstream_dir: cope with files whose names contain spaces
   * Add support for not compressing the .deb, and by default don't compress
     it if we're just going to install and delete it (this is much faster)
+  * Add support for Quake II (demo and full version) data
 
  -- Fabian Greffrath <fabian+debian@greffrath.com>  Tue, 09 Jul 2013 10:24:48 +0200
 

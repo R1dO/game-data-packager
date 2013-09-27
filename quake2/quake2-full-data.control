@@ -1,0 +1,18 @@
+Package: quake2-full-data
+Version: VERSION
+Section: non-free/games
+Priority: optional
+Architecture: all
+Recommends: quake2 | quake2-server
+Provides: quake2-data
+Conflicts: quake2-data
+Replaces: quake2-data
+Installed-Size: 500000
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Description: Quake II data files
+ Quake II requires an engine and game data to play. This package contains
+ the data from the full version of id Software's game "Quake II", and was
+ generated using the "game-data-packager" program from the Debian package of
+ the same name.
+ .
+ To play Quake II using this data, install the quake2 package.
