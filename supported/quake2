@@ -21,18 +21,25 @@ patchfilesha256=f82197c8c8089202a4b3a85d8833b0c2e827a709d205c760369407c212488baa
 fulldeb="quake2-full-data_${GAME_PACKAGE_VERSION}_all.deb"
 
 quake2_usage() {
-       echo "game-data-packager ${SHORTNAME} arguments:"
-       echo ""
-       echo "game-data-packager ${SHORTNAME} --demo [/path/to/${demofile}]"
-       echo "game-data-packager ${SHORTNAME} /path/to/${demofile}"
-       echo ""
-       echo "game-data-packager ${SHORTNAME} --full [/path/to/cdrom] [/path/to/${patchfile}]"
-       echo "game-data-packager ${SHORTNAME} /path/to/cdrom [/path/to/${patchfile}]"
-       echo "game-data-packager ${SHORTNAME} --full [/path/to/baseq2] [/path/to/${patchfile}]"
-       echo "game-data-packager ${SHORTNAME} /path/to/baseq2 [/path/to/${patchfile}]"
-       echo ""
-       echo "to repackage the full game (if installed), or the demo:"
-       echo "game-data-packager ${SHORTNAME} --auto"
+       printf "\
+game-data-packager ${SHORTNAME} arguments:\n\
+\n\
+to make quake2-demo-data:\n\
+game-data-packager ${SHORTNAME} [--demo] [<demo file>]\n\
+\t<demo file>: path to ${demofile}\n\
+\n\
+to make quake2-full-data:\n\
+game-data-packager ${SHORTNAME} [--full] [<full game>] [<patch>]\n\
+\t<full game>: path to CD-ROM mount point or baseq2 directory\n\
+\t<patch>: path to ${patchfile}\n\
+\n\
+to make quake2-music:\n\
+game-data-packager ${SHORTNAME} --music [<device>]\n\
+\t<device>: Quake II CD-ROM to rip, default is /dev/cdrom\n\
+\n\
+to re-package installed data (full game or demo):\n\
+game-data-packager ${SHORTNAME} --auto\n\
+"
 }
 
 get_mirror () {
