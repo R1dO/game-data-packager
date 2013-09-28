@@ -6,6 +6,32 @@ outdir = $(CURDIR)/out
 
 QUAKEDEB = $(outdir)/$(PACKAGE)_$(VERSION)_all.deb
 
+ifeq ($(filter-out quake-music quake-%-music,$(PACKAGE)),)
+
+all: do-$(PACKAGE)
+
+do-${PACKAGE}: do-common
+	install -m644 quake/quake-music.copyright ${outdir}/quake/${PACKAGE}.copyright
+	( \
+		md5sum ${outdir}/quake/changelog.gz | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
+		md5sum ${outdir}/quake/${PACKAGE}.copyright | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
+	) > ${outdir}/quake/${PACKAGE}.md5sums
+	chmod 0644 ${outdir}/quake/${PACKAGE}.md5sums
+
+do-common:
+	install -d ${outdir}/quake
+	m4 -DVERSION=${VERSION} < quake/${PACKAGE}.control > ${outdir}/quake/${PACKAGE}.control
+	chmod 0644 ${outdir}/quake/${PACKAGE}.control
+	gzip -c9 debian/changelog > ${outdir}/quake/changelog.gz
+	chmod 0644 ${outdir}/quake/changelog.gz
+
+clean:
+	rm -rf $(outdir)/quake/
+
+else
+
 $(QUAKEDEB): \
 	$(builddir)/$(PACKAGE)/DEBIAN/md5sums \
 	$(builddir)/$(PACKAGE)/DEBIAN/control \
@@ -57,3 +83,5 @@ fixperms:
 
 clean:
 	rm -rf $(QUAKEDEB) $(builddir)/$(PACKAGE)
+
+endif

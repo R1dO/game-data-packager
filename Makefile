@@ -18,14 +18,21 @@ default: $(DIRS)
 		LONG="Hexen: Beyond Heretic"
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1
+	make -f quake.mk LONG="Quake music" VERSION=$(VERSION) \
+		PACKAGE=quake-music FOLDER=id1
 	make -f quake.mk LONG="Quake shareware" VERSION=$(VERSION) \
 		PACKAGE=quake-shareware FOLDER=id1
 	make -f quake.mk LONG="Quake mission pack 1: Scourge of Armagon" \
 		VERSION=$(VERSION) PACKAGE=quake-armagon FOLDER=hipnotic
+	make -f quake.mk LONG="Quake MP1 music" VERSION=$(VERSION) \
+		PACKAGE=quake-armagon-music FOLDER=hipnotic
 	make -f quake.mk LONG="Quake mission pack 2: Dissolution of Eternity" \
 		VERSION=$(VERSION) PACKAGE=quake-dissolution FOLDER=rogue
+	make -f quake.mk LONG="Quake MP2 music" VERSION=$(VERSION) \
+		PACKAGE=quake-dissolution-music FOLDER=rogue
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-demo-data
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-full-data
+	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music
 	make -f quake3.mk LONG="Quake III Arena" VERSION=$(VERSION)
 	make -f hexen2.mk VERSION=$(VERSION)
 	make -f rott.mk VERSION=$(VERSION)
@@ -54,14 +61,21 @@ clean:
 		LONG="Hexen: Beyond Heretic" clean
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1 clean
+	make -f quake.mk LONG="Quake music" VERSION=$(VERSION) \
+		PACKAGE=quake-music FOLDER=id1 clean
 	make -f quake.mk LONG="Quake shareware" VERSION=$(VERSION) \
 		PACKAGE=quake-shareware FOLDER=id1 clean
 	make -f quake.mk LONG="Quake mission pack 1: Scourge of Armagon" \
 		VERSION=$(VERSION) PACKAGE=quake-armagon FOLDER=hipnotic clean
+	make -f quake.mk LONG="Quake MP1 music" VERSION=$(VERSION) \
+		PACKAGE=quake-armagon-music FOLDER=hipnotic clean
 	make -f quake.mk LONG="Quake mission pack 2: Dissolution of Eternity" \
 		VERSION=$(VERSION) PACKAGE=quake-dissolution FOLDER=rogue clean
+	make -f quake.mk LONG="Quake MP2 music" VERSION=$(VERSION) \
+		PACKAGE=quake-dissolution-music FOLDER=rogue clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-demo-data clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-full-data clean
+	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music clean
 	make -f hexen2.mk VERSION=$(VERSION) clean
 	make -f quake3.mk LONG="Quake III Arena" VERSION=$(VERSION) clean
 	make -f rott.mk VERSION=$(VERSION) clean

@@ -18,6 +18,9 @@ do-quake2-full-data: do-common
 		quake2/patch.md5sums \
 		>> ${outdir}/quake2/${PACKAGE}.md5sums
 
+do-quake2-music: do-common
+	:
+
 do-common:
 	install -d ${outdir}/quake2
 	install -m644 quake2/${PACKAGE}.copyright ${outdir}/quake2/
