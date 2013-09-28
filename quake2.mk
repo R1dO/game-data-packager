@@ -8,27 +8,15 @@ all: do-${PACKAGE}
 
 do-quake2-demo-data: do-common
 	install -m644 quake2/demo.md5sums ${outdir}/quake2/
-	( \
-		cat quake2/demo.md5sums; \
-		md5sum ${outdir}/quake2/changelog.gz | \
-			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
-		md5sum ${outdir}/quake2/${PACKAGE}.copyright | \
-			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
-	) > ${outdir}/quake2/${PACKAGE}.md5sums
-	chmod 0644 ${outdir}/quake2/${PACKAGE}.md5sums
+	cat quake2/demo.md5sums >> ${outdir}/quake2/${PACKAGE}.md5sums
 
 do-quake2-full-data: do-common
 	install -m644 quake2/cd.md5sums ${outdir}/quake2/
 	install -m644 quake2/patch.md5sums ${outdir}/quake2/
-	( \
-		cat quake2/cd.md5sums; \
-		cat quake2/patch.md5sums; \
-		md5sum ${outdir}/quake2/changelog.gz | \
-			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
-		md5sum ${outdir}/quake2/${PACKAGE}.copyright | \
-			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
-	) > ${outdir}/quake2/${PACKAGE}.md5sums
-	chmod 0644 ${outdir}/quake2/${PACKAGE}.md5sums
+	cat \
+		quake2/cd.md5sums \
+		quake2/patch.md5sums \
+		>> ${outdir}/quake2/${PACKAGE}.md5sums
 
 do-common:
 	install -d ${outdir}/quake2
@@ -37,6 +25,13 @@ do-common:
 	chmod 0644 ${outdir}/quake2/${PACKAGE}.control
 	gzip -c9 debian/changelog > ${outdir}/quake2/changelog.gz
 	chmod 0644 ${outdir}/quake2/changelog.gz
+	( \
+		md5sum ${outdir}/quake2/changelog.gz | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
+		md5sum ${outdir}/quake2/${PACKAGE}.copyright | \
+			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
+	) > ${outdir}/quake2/${PACKAGE}.md5sums
+	chmod 0644 ${outdir}/quake2/${PACKAGE}.md5sums
 
 clean:
 	rm -rf ${outdir}/quake2
