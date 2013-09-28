@@ -3,6 +3,8 @@ DIRS := ./out ./build
 LDLIBS = -ldynamite
 
 default: $(DIRS)
+	gzip -c9 debian/changelog > ./out/changelog.gz
+	chmod 0644 ./out/changelog.gz
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION)
 	make -f doom-common.mk IWAD=doom2 \
 		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION)
@@ -46,6 +48,7 @@ tests/empty.deb:
 	dpkg-deb -b tests/empty tests/empty.deb
 
 clean:
+	rm -f ./out/changelog.gz
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION) clean
 	make -f doom-common.mk IWAD=doom2 \
 		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION) clean

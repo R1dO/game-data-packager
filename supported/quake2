@@ -386,7 +386,7 @@ go () {
         OUTFILE=`unravel "$OUTDIR"`"/$deb"
     fi
 
-    copyin "$DATADIR/quake2/changelog.gz" \
+    copyin "$DATADIR/changelog.gz" \
         "$DESTDIR/usr/share/doc/quake2-$mode-data/changelog.gz"
     copyin "$DATADIR/quake2/quake2-$mode-data.copyright" \
         "$DESTDIR/usr/share/doc/quake2-$mode-data/copyright"

@@ -26,10 +26,8 @@ do-common:
 	install -m644 quake2/${PACKAGE}.copyright ${outdir}/quake2/
 	m4 -DVERSION=${VERSION} < quake2/${PACKAGE}.control > ${outdir}/quake2/${PACKAGE}.control
 	chmod 0644 ${outdir}/quake2/${PACKAGE}.control
-	gzip -c9 debian/changelog > ${outdir}/quake2/changelog.gz
-	chmod 0644 ${outdir}/quake2/changelog.gz
 	( \
-		md5sum ${outdir}/quake2/changelog.gz | \
+		md5sum ${outdir}/changelog.gz | \
 			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
 		md5sum ${outdir}/quake2/${PACKAGE}.copyright | \
 			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
