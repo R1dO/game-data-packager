@@ -23,6 +23,8 @@ else
 	. "/etc/game-data-packager.conf"
 fi
 . $LIBDIR/game-data-packager-shared
+LIBDIR="`unravel "$LIBDIR"`"
+DATADIR="`unravel "$DATADIR"`"
 
 if [ $# -lt 1 ]; then
 	usage >&2
