@@ -12,7 +12,7 @@ machine; by default it will run a deathmatch game.
 The quake2-server user's home directory is /var/games/quake2-server, so you
 can find Quake files in /var/games/quake2-server/.yq2 or similar.
 
-By default, the init script will use
+By default, if you have the full Quake II data, the init script will use
 /usr/share/games/quake2/baseq2/debian_server.cfg, which is a symlink to
 /etc/quake2-server/debian_server.cfg. You can edit this file, or put an
 alternative configuration in /var/games/quake2-server/.yq2/baseq2 (or
