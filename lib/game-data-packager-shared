@@ -350,3 +350,11 @@ ifind() {
   file="$2"
   [ -d "$base" ] && find "$base" -iwholename "$base/$file"
 }
+
+require_cdparanoia() {
+    which cdparanoia >/dev/null|| die "package 'cdparanoia' is required for this installation method."
+}
+
+require_oggenc() {
+    which oggenc >/dev/null|| die "package 'vorbis-tools' is required for this installation method."
+}

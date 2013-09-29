@@ -27,7 +27,10 @@ game-data-packager ${SHORTNAME} -c [<device>]\n\
 -mp2 <path>\tpath to an unpacked Dissolution of Eternity directory\n\
 \t\tor a mounted Dissolution of Eternity CD\n\
 <path>\t\tpath to any of the above (game-data-packager will guess)\n\
--c [<device>]\trip CD audio from <device>, default /dev/cdrom\n\
+--music [<cd>]\trip CD audio from block device <cd>, default /dev/cdrom\n\
+--music <path>\tcopy pre-ripped 02*.ogg, ..., 11*.ogg from <path>\n\
+--mp1-music [<cd>|<path>] same as --music but for Scourge of Armagon\n\
+--mp2-music [<cd>|<path>] same as --music but for Dissolution of Eternity\n\
 "
 }
 
@@ -35,6 +38,11 @@ get_mirror () {
     (
         grep -v '^#' "${IDMIRRORFILE}" | sed 's#$#/quake#'
     ) | sort -R | head -n1
+}
+
+copyin () {
+    install -d `dirname "$2"`
+    install -m644 "$1" "$2"
 }
 
 mountpoint=""
@@ -50,6 +58,11 @@ verify_args() {
                 (-s|--shareware)
                     mountpoint=""
                     method="swzip"
+                    ;;
+                (--music|--mp1-music|--mp2-music)
+                    mountpoint="/dev/cdrom"
+                    method="$1"
+                    method="${method#--}"
                     ;;
                 (-*)
                     usage >&2
@@ -73,6 +86,10 @@ verify_args() {
                 method="mp1"
             elif [ "$1" = "-mp2" ]; then
                 method="mp2"
+            elif [ "$1" = "--music" ] || [ "$1" = "--mp1-music" ] || \
+                [ "$1" = "--mp2-music" ]; then
+                method="$1"
+                method="${method#--}"
             else
                 usage >&2
                 quake_usage >&2
@@ -109,6 +126,9 @@ go() {
         "mp2")
             mp2_method
             ;;
+        "music"|"mp1-music"|"mp2-music")
+            music_method "$method" "$mountpoint"
+            ;;
         *)
             die "internal error"
             ;;
@@ -136,6 +156,16 @@ guess_method() {
         debug "treating $mountpoint like a Dissolution of Eternity directory or CD"
         method="mp2"
         mp2_method
+    elif [ -b "$mountpoint" ]; then
+        printf "Unable to determine which CD-ROM is at $mountpoint.\n\
+For Quake 1 please use:\n\
+\t$0 $SHORTNAME --music $mountpoint\n\
+For Mission Pack 1, Scourge of Armagon please use:\n\
+\t$0 $SHORTNAME --mp1-music $mountpoint\n\
+For Mission Pack 2, Dissolution of Eternity please use:\n\
+\t$0 $SHORTNAME --mp2-music $mountpoint\n\
+" >&2
+        die "Please specify --music, --mp1-music or --mp2-music."
     else
         die "couldn't figure out what method to use for mountpoint $mountpoint"
     fi
@@ -346,4 +376,105 @@ common_method() {
     [ ! -f "$WORKDIR/pak1.pak" ] || rm "$WORKDIR/pak1.pak"
     rm "$WORKDIR/pak0.pak"
     rm -f "$WORKDIR/quake106.zip"
+}
+
+music_method () {
+    case "$1" in
+        (mp1-music)
+            suffix="armagon-music"
+            folder="hipnotic"
+            # this is just for error messages, we will actually copy
+            # whatever we find
+            max=09
+            ;;
+        (mp2-music)
+            suffix="dissolution-music"
+            folder="rogue"
+            max=09
+            ;;
+        (*)
+            suffix="music"
+            folder="id1"
+            max=11
+            ;;
+    esac
+
+    audio="$2"
+
+    deb="quake-${suffix}"
+    DESTDIR="$WORKDIR/slipstream.unpacked"
+
+    if [ -z "$OUTDIR" ]; then
+        OUTFILE="$WORKDIR/out.deb"
+    else
+        OUTFILE=`unravel "$OUTDIR"`"/${deb}_${GAME_PACKAGE_VERSION}_all.deb"
+    fi
+
+    install -d "$DESTDIR/usr/share/games/quake/$folder"
+
+    # DarkPlaces wants one of
+    # {sound/cdtracks,music,music/cdtracks}/track{02,002}.ogg
+    # QuakeSpasm specifically wants music/track02.ogg
+    # => we use music/track02.ogg
+    if [ -d "$audio" ]; then
+        if ! ( [ -f "$audio"/02*.ogg ] || [ -f "$audio"/track02*.ogg ] ); then
+            die "expected a directory containing [track]02*.ogg, ..., [track]${max}*.ogg" 1
+        fi
+
+        t=02
+        while [ -f "$audio/$t"*.ogg ]; do
+            copyin "$audio/$t"*.ogg \
+                "$DESTDIR/usr/share/games/quake/${folder}/music/track${t}.ogg"
+            t=$(( ${t#0} + 1 ))
+            if [ $t -lt 10 ]; then
+                t=0$t
+            fi
+        done
+        t=02
+        while [ -f "$audio/track$t"*.ogg ]; do
+            copyin "$audio/track$t"*.ogg \
+                "$DESTDIR/usr/share/games/quake/${folder}/music/track${t}.ogg"
+            t=$(( ${t#0} + 1 ))
+            if [ $t -lt 10 ]; then
+                t=0$t
+            fi
+        done
+    else
+        require_cdparanoia
+        require_oggenc
+
+        t=02
+        while cdparanoia -d "$audio" $t "${WORKDIR}/tmp.wav"; do
+            oggenc -o "$DESTDIR/usr/share/games/quake/$folder/music/track${t}.ogg" "${WORKDIR}/tmp.wav"
+            rm -f "${WORKDIR}/tmp.wav"
+            t=$(( ${t#0} + 1 ))
+            if [ $t -lt 10 ]; then
+                t=0$t
+            fi
+        done
+    fi
+
+    copyin "$DATADIR/changelog.gz" \
+        "$DESTDIR/usr/share/doc/${deb}/changelog.gz"
+    copyin "$DATADIR/quake/${deb}.copyright" \
+        "$DESTDIR/usr/share/doc/${deb}/copyright"
+
+    # slipstream_instsize, slipstream_repack assume that slipstream.unpacked
+    # and DEBIAN are in the same place
+    copyin "$DATADIR/quake/${deb}.control" \
+        "$WORKDIR/DEBIAN/control"
+    copyin "$DATADIR/quake/${deb}.md5sums" \
+        "$WORKDIR/DEBIAN/md5sums"
+
+    # we still need to md5sum the actual tracks - their contents
+    # depend on the user's copy of oggenc
+    ( cd "$DESTDIR" && md5sum usr/share/games/quake/*/music/*.ogg \
+            >> ../DEBIAN/md5sums )
+
+    debug "building .deb: $OUTFILE"
+    ( cd "$WORKDIR" && slipstream_instsize )
+    ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
+
+    rm -fr "$WORKDIR/DEBIAN"
+    rm -fr "$DESTDIR"
 }

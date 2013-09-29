@@ -20,7 +20,10 @@ game-data-packager (34) UNRELEASED; urgency=low
   * Add support for auto-downloading the Quake 1 1.06 shareware zip file,
     either for quake-shareware or as a way to upgrade quake-registered
     to version 1.06 (pak0.pak is identical in either case)
+  * Add support for packaging Quake 1 music from the CD audio tracks,
+    based on patches by Stephen Kitt
   * Add support for Quake II (demo and full version) data
+  * Add support for packaging Quake II music from the CD audio tracks
   * Add support for auto-downloading the Quake III Arena patch
   * Ensure that LIBDIR, DATADIR are absolute
 

@@ -13,12 +13,14 @@ fi
 
 demofile=q2-314-demo-x86.exe
 demofilesha256=7ace5a43983f10d6bdc9d9b6e17a1032ba6223118d389bd170df89b945a04a1e
-demodeb="quake2-demo-data_${GAME_PACKAGE_VERSION}_all.deb"
+demodeb="quake2-demo-data"
 
 patchfile=q2-3.20-x86-full-ctf.exe
 patchfilesha256=f82197c8c8089202a4b3a85d8833b0c2e827a709d205c760369407c212488baa
 
-fulldeb="quake2-full-data_${GAME_PACKAGE_VERSION}_all.deb"
+fulldeb="quake2-full-data"
+
+musicdeb="quake2-music"
 
 quake2_usage() {
        printf "\
@@ -34,8 +36,10 @@ game-data-packager ${SHORTNAME} [--full] [<full game>] [<patch>]\n\
 \t<patch>: path to ${patchfile}\n\
 \n\
 to make quake2-music:\n\
-game-data-packager ${SHORTNAME} --music [<device>]\n\
-\t<device>: Quake II CD-ROM to rip, default is /dev/cdrom\n\
+game-data-packager ${SHORTNAME} [--music] [<device>]\n\
+game-data-packager ${SHORTNAME} [--music] [<oggpath>]\n\
+\t<device>: block device for Quake II CD-ROM, default is /dev/cdrom\n\
+\t<oggpath>: directory containing [track]02*.ogg, ..., [track]11*.ogg\n\
 \n\
 to re-package installed data (full game or demo):\n\
 game-data-packager ${SHORTNAME} --auto\n\
@@ -64,6 +68,8 @@ go () {
     cdpath=
     filepath=
     mirror=
+    audiocd=/dev/cdrom
+    oggs=
     # slipstream_instsize, slipstream_repack assume this naming
     DESTDIR="$WORKDIR/slipstream.unpacked"
 
@@ -78,16 +84,42 @@ go () {
             (--demo)
                 mode=demo
                 ;;
+            (--music)
+                mode=music
+                ;;
             (-*)
                 quake2_usage
                 die "unsupported option: $arg" 2
                 ;;
             (*)
                 if [ -d "$arg" ]; then
-                    echo "using $arg as the location of the full Quake II" \
-                        "CD or installation"
-                    cdpath="$arg"
-                    mode=full
+                    for candidate in "$arg/pak0.pak" \
+                            "$arg/baseq2/pak0.pak" \
+                            "$arg/install/data/baseq2/pak0.pak" \
+                            "$arg/Install/Data/baseq2/pak0.pak" \
+                            "$arg/setup/Data/baseq2/pak0.pak" \
+                    ; do
+                        if [ -f "$candidate" ]; then
+                            echo "using $arg as the location of the full Quake II" \
+                                "CD or installation"
+                            cdpath="$arg"
+                            mode=full
+                        fi
+                    done
+
+                    if [ $mode = auto ] || [ $mode = music ]; then
+                        if [ -f "$arg"/02*.ogg ]; then
+                            echo "using $arg as the location of a" \
+                                "Quake II soundtrack"
+                            oggs="$arg"
+                            mode=music
+                            break
+                        fi
+                    fi
+
+                    if [ $mode = auto ]; then
+                        die "unable to work out what to do with directory $arg"
+                    fi
                 elif [ -f "$arg" ]; then
                     real=`sha256sum -b "$arg" | cut -d ' ' -f1`
                     case "$real" in
@@ -105,8 +137,12 @@ go () {
                             die "$arg does not match the SHA256 of known Quake II files" 2
                             ;;
                     esac
+                elif [ -b "$arg" ]; then
+                    echo "using $arg as CD-ROM block device to rip music"
+                    audiocd="$arg"
+                    mode=music
                 else
-                    die "no such file or directory: $arg" 2
+                    die "unable to work out what to do with $arg"
                 fi
                 ;;
         esac
@@ -119,7 +155,7 @@ go () {
 
     debug "running in mode: $mode"
 
-    if [ $mode != demo ]; then
+    if [ $mode != demo ] && [ $mode != music ]; then
         # Try to construct the full version. We process the files that
         # can only come from a full installation or retail CD first
         # (pak0.pak and the videos): if we can't find them, we must give up.
@@ -292,7 +328,7 @@ go () {
                 copyin "$WORKDIR/$src" "$DESTDIR/$file"
             done < "$DATADIR/quake2/patch.md5sums"
         fi
-    else # ${mode} = demo
+    elif [ ${mode} = demo ]; then
         deb="$demodeb"
 
         if [ -e /usr/share/games/quake2-demo/baseq2/pak0.pak ]; then
@@ -378,28 +414,66 @@ go () {
                 copyin "$WORKDIR/$src" "$DESTDIR/$file"
             done < "$DATADIR/quake2/demo.md5sums"
         fi
+    elif [ $mode = music ]; then
+        deb="$musicdeb"
+
+        install -d "$DESTDIR/usr/share/games/quake2/baseq2/music"
+
+        if [ -n "$oggs" ]; then
+            t=02
+            while [ -f "$oggs/$t"*.ogg ]; do
+                copyin "$oggs/$t"*.ogg \
+                    "$DESTDIR/usr/share/games/quake2/baseq2/music/${t}.ogg"
+                t=$(( ${t#0} + 1 ))
+                if [ $t -lt 10 ]; then
+                    t=0$t
+                fi
+            done
+        else
+            require_cdparanoia
+            require_oggenc
+
+            t=02
+            while cdparanoia -d "$audiocd" $t "${WORKDIR}/tmp.wav"; do
+                oggenc -o "$DESTDIR/usr/share/games/quake2/baseq2/music/${t}.ogg" "${WORKDIR}/tmp.wav"
+                rm -f "${WORKDIR}/tmp.wav"
+                t=$(( ${t#0} + 1 ))
+                if [ $t -lt 10 ]; then
+                    t=0$t
+                fi
+            done
+        fi
+    else
+        die "internal error: impossible mode $mode" 1
     fi
 
     if [ "" = "$OUTDIR" ]; then
         OUTFILE="$WORKDIR/out.deb"
     else
-        OUTFILE=`unravel "$OUTDIR"`"/$deb"
+        OUTFILE=`unravel "$OUTDIR"`"/${deb}_${GAME_PACKAGE_VERSION}_all.deb"
     fi
 
     copyin "$DATADIR/changelog.gz" \
-        "$DESTDIR/usr/share/doc/quake2-$mode-data/changelog.gz"
-    copyin "$DATADIR/quake2/quake2-$mode-data.copyright" \
-        "$DESTDIR/usr/share/doc/quake2-$mode-data/copyright"
+        "$DESTDIR/usr/share/doc/$deb/changelog.gz"
+    copyin "$DATADIR/quake2/${deb}.copyright" \
+        "$DESTDIR/usr/share/doc/${deb}/copyright"
 
     # slipstream_instsize, slipstream_repack assume that slipstream.unpacked
     # and DEBIAN are in the same place
-    copyin "$DATADIR/quake2/quake2-$mode-data.control" \
+    copyin "$DATADIR/quake2/${deb}.control" \
         "$WORKDIR/DEBIAN/control"
-    copyin "$DATADIR/quake2/quake2-$mode-data.md5sums" \
+    copyin "$DATADIR/quake2/${deb}.md5sums" \
         "$WORKDIR/DEBIAN/md5sums"
 
-    # sanity check
-    ( cd "$DESTDIR" && md5sum --check --quiet ../DEBIAN/md5sums )
+    if [ $mode = music ]; then
+        # we still need to md5sum the actual tracks - their contents
+        # depend on the user's copy of oggenc
+        ( cd "$DESTDIR" && md5sum usr/share/games/quake2/baseq2/music/*.ogg \
+            >> ../DEBIAN/md5sums )
+    else
+        # sanity check
+        ( cd "$DESTDIR" && md5sum --check --quiet ../DEBIAN/md5sums )
+    fi
 
     debug "building .deb: $OUTFILE"
     ( cd "$WORKDIR" && slipstream_instsize )
