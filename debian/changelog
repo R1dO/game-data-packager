@@ -1,7 +1,6 @@
-game-data-packager (34) UNRELEASED; urgency=low
+game-data-packager (34) experimental; urgency=low
 
   [ Fabian Greffrath ]
-  * Team upload.
   * Reset grep options that could affect output.
   * Only parse dpkg-parsechangelog in g-d-p's own source directory.
   * Make the generated package file name better double-click-selectable [tm].
@@ -26,8 +25,9 @@ game-data-packager (34) UNRELEASED; urgency=low
   * Add support for packaging Quake II music from the CD audio tracks
   * Add support for auto-downloading the Quake III Arena patch
   * Ensure that LIBDIR, DATADIR are absolute
+  * Upload to experimental
 
- -- Fabian Greffrath <fabian+debian@greffrath.com>  Tue, 09 Jul 2013 10:24:48 +0200
+ -- Simon McVittie <smcv@debian.org>  Sun, 29 Sep 2013 14:51:01 +0100
 
 game-data-packager (33) unstable; urgency=low
 
