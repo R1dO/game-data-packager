@@ -53,13 +53,15 @@ go() {
     cp -p "$root/xatrix/video/$i.cin" "$DESTDIR/usr/share/games/quake2/xatrix/video"
   done
 
-  cp -p "$DATADIR/quake2/quake2-xatrix.control"   "$WORKDIR/DEBIAN/control"
+  ARCH=`dpkg-architecture -qDEB_BUILD_ARCH`
+  echo "Architecture: $ARCH" > "$WORKDIR/DEBIAN/control"
+  cat "$DATADIR/quake2/quake2-xatrix.control" >> "$WORKDIR/DEBIAN/control"
   cp -p "$DATADIR/quake2/quake2-xatrix.copyright" "$DESTDIR/usr/share/doc/quake2-xatrix/copyright"
   
   if [ "" = "$OUTDIR" ]; then
       OUTFILE="$WORKDIR/out.deb"
   else
-      OUTFILE=`unravel "$OUTDIR"`"/quake2-xatrix_${GAME_PACKAGE_VERSION}_all.deb"
+      OUTFILE=`unravel "$OUTDIR"`"/quake2-xatrix_${GAME_PACKAGE_VERSION}_${ARCH}.deb"
   fi
 
   debug "building .deb: $OUTFILE"
