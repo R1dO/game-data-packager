@@ -10,9 +10,18 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/game-data-packager.gi
 Homepage: http://wiki.debian.org/Games/GameDataPackager
 
 Package: game-data-packager
-Depends: fakeroot, unzip | p7zip-full, ${misc:Depends}, ${shlib:Depends},
- dynamite (>= 0.1.1-2)
-Suggests: cdparanoia, lhasa | jlha-utils | lhz-archiver, lgc-pg, vorbis-tools
+Depends: fakeroot, ${misc:Depends}, ${shlib:Depends},
+# for quake, quake2, rott, wolf3d
+	unzip | p7zip-full,
+# for wolf3d
+	dynamite (>= 0.1.1-2)
+Suggests:
+# for quake music and quake2 music
+	cdparanoia, vorbis-tools,
+# for quake CD-ROM methods
+	lhasa | jlha-utils | lhz-archiver,
+# for lgeneral
+	lgc-pg
 Conflicts: doom-package
 Replaces: doom-package
 Provides: doom-package
