@@ -12,9 +12,11 @@ supported() {
 }
 options() {
 	echo "game-data-packager arguments:"
-	echo "        -i            install the generated package"
-	echo "        -n            do not install the generated package (requires -d, default)"
-	echo "        -d OUTDIR     write the generated .deb(s) to OUTDIR"
+	echo "     -i               install the generated package"
+	echo "     -n               do not install the generated package (requires -d, default)"
+	echo "     -d OUTDIR        write the generated .deb(s) to OUTDIR"
+	echo "     -z | --compress  compress generated .deb (default unless -i is used)"
+	echo "     --no-compress    do not compress generated .deb (default with -i)"
 }
 
 usage() {
