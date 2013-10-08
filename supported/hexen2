@@ -11,7 +11,7 @@ go() {
     hexen2_usage
     die "wrong number of arguments"
   fi
-  dir="$1"
+  dir=`unravel "$1"`
   verify_directory "$dir"
   verify_directory "$dir/data1"
   for f in pak0.pak pak1.pak; do
