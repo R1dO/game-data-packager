@@ -13,6 +13,7 @@ do_xatrix_thing() {
   tar --strip-components=1 -xf "$xatrix"
   make -s -j5 >/dev/null # XXX: parameterize
   verify_file "release/game.so"
+  strip "release/game.so"
 }
 
 go() {
@@ -21,6 +22,7 @@ go() {
     echo
     echo "xatrix: path to quake2-xatrix source tarball"
     echo "q2path: path to an unpacked Quake 2 directory"
+    exit 1
   fi
 
   root=`unravel "$2"`
