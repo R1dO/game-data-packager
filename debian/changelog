@@ -1,3 +1,17 @@
+game-data-packager (35) unstable; urgency=low
+
+  * Stop conflict/providing/replacing "doom-package": the old one
+    is pre-oldstable now.
+  * fix test_slipstream
+  * document why we suggest/recommend various packages (which targets
+    they are for)
+  * Mention quake mission pack support in the quake long-name
+  * mention the compress/nocompress options in --help
+  * start tracking our TODOs
+  * fix a bug with hexen2 and paths
+
+ -- Jonathan Dowland <jmtd@debian.org>  Sun, 13 Oct 2013 22:17:02 +0100
+
 game-data-packager (34) experimental; urgency=low
 
   [ Fabian Greffrath ]
