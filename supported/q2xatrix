@@ -3,6 +3,7 @@ SHORTNAME="q2xatrix"
 LONGNAME="Quake 2 Mission Pack: The Reckoning"
 
 pak0sum=5e2ecbe9287152a1e6e0d77b3f47dcb2 # steam as of ~Oct 2013
+url=http://deponie.yamagi.org/quake2/quake2-xatrix-2.00.tar.xz
 
 do_xatrix_thing() {
   xatrix=`unravel "$1"`
@@ -16,18 +17,30 @@ do_xatrix_thing() {
   strip "release/game.so"
 }
 
+xatrixusage() {
+  echo "q2xatrix arguments: [ -t xatrix.tar.xz ] q2path"
+  echo
+  echo "\t-t xatrix        use user-supplied xatrix.tar.xz (default is to download)"
+  echo "\tq2path           path to an unpacked Quake 2 directory containing 'xatrix'"
+  exit 1
+}
+
 go() {
-  if [ $# -ne 2 ]; then
-    echo "q2xatrix arguments: xatrix q2path"
-    echo
-    echo "xatrix: path to quake2-xatrix source tarball"
-    echo "q2path: path to an unpacked Quake 2 directory"
-    exit 1
+  if [ $# -eq 3 ]; then
+    if [ "$1" = "-t" ]; then
+      xpath="$2"
+      shift 2
+    fi
+  elif [ $# -ne 1 ]; then
+    xatrixusage
+  else
+    xpath="$WORKDIR/xatrix.tar.xz"
+    wget -O "$xpath" "$url"
   fi
 
-  root=`unravel "$2"`
+  root=`unravel "$1"`
 
-  do_xatrix_thing "$1"
+  do_xatrix_thing "$xpath"
 
   verify_directory "$root"
   verify_directory "$root/xatrix"
