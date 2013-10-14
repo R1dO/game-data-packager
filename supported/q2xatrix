@@ -72,6 +72,7 @@ go() {
 
   # the source code component
   mv "$WORKDIR/xatrix/release/game.so" "$DESTDIR/usr/share/games/quake2/xatrix"
+  mv "$WORKDIR/xatrix/LICENSE" "$DESTDIR/usr/share/doc/quake2-xatrix/LICENSE"
   rm -rf "$WORKDIR/xatrix"
 
   # the data components
