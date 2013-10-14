@@ -23,25 +23,38 @@ xatrixusage() {
   echo "q2xatrix arguments: [ -t xatrix.tar.xz ] q2path"
   echo
   echo "\t-t xatrix        use user-supplied xatrix.tar.xz (default is to download)"
+  echo "\t-f               force installation when MD5 sum of xatrix.tar.xz is unknown"
   echo "\tq2path           path to an unpacked Quake 2 directory containing 'xatrix'"
   exit 1
 }
 
 go() {
-  if [ $# -eq 3 ]; then
-    if [ "$1" = "-t" ]; then
-      xpath="$2"
-      shift 2
-    fi
-  elif [ $# -ne 1 ]; then
-    xatrixusage
-  else
+  checksum="true"
+  xpath=""
+  while [ $# -gt 1 ]; do
+    case "$1" in
+      "-t")
+        [ $# -ge 3 ] || xatrixusage
+        xpath="$2"
+        shift 2
+        ;;
+      "-f")
+        checksum="false"
+        shift
+        ;;
+      *)
+        xatrixusage
+        ;;
+    esac
+  done
+  if [ -z "$xpath" ]; then
     xpath="$WORKDIR/xatrix.tar.xz"
     wget -O "$xpath" "$url"
   fi
-
+  if [ "$checksum" = "true" ]; then
+    verify_md5sum "$xpath" "$sum"
+  fi
   root=`unravel "$1"`
-  verify_md5sum "$xpath" "$sum"
   do_xatrix_thing "$xpath"
 
   verify_directory "$root"
