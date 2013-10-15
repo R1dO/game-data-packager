@@ -29,6 +29,12 @@ xatrixusage() {
 }
 
 go() {
+
+  packages="make gcc binutils"
+  require_program make  $packages
+  require_program cc    $packages
+  require_program strip $packages
+
   checksum="true"
   xpath=""
   while [ $# -gt 1 ]; do

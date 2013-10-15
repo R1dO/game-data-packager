@@ -377,3 +377,28 @@ require_program() {
     die "${diestr}Please install the package '$1' and try again."
   }
 }
+
+package_installed() {
+  dpkg-query -W "$1" >/dev/null 2>&1
+}
+
+## require_program(program,package,..)
+## make sure 'program' exists and can be executed, if not, instruct
+## the user to install package (or packages) and quit gdp.
+require_program() {
+  program="$1"
+  shift
+
+  which "$program" >/dev/null || {
+    diestr="'$program' is required for this target.\n"
+    if [ $# -gt 1 ]; then
+      diestr="${diestr}Please install the following packages:\n"
+      while [ $# -gt 0 ]; do
+        package_installed "$1" || diestr="${diestr} • $1\n"
+        shift
+      done
+      die "${diestr}and try again."
+    fi
+    die "${diestr}Please install the package '$1' and try again."
+  }
+}
