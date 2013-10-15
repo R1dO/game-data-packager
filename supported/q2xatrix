@@ -53,6 +53,8 @@ go() {
         ;;
     esac
   done
+  [ $# -eq 1 ] || xatrixusage
+
   if [ -z "$xpath" ]; then
     xpath="$WORKDIR/xatrix.tar.xz"
     wget -O "$xpath" "$url"
