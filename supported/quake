@@ -171,12 +171,8 @@ For Mission Pack 2, Dissolution of Eternity please use:\n\
     fi
 }
 
-require_lha() {
-    which lha >/dev/null|| die "package 'lha' is required for this installation method."
-}
-
 unpack_quake106_pak0 () {
-    require_lha
+    require_program lha lhasa
     mirror=
 
     set +u
@@ -240,7 +236,7 @@ verify_quake() {
             # Not 1.06. Upgrade it using the shareware version.
             echo "Your copy of Quake is not 1.06. Upgrading it by" \
                 "downloading quake106.zip" >&2
-            require_lha
+            require_program lha lhasa
             unpack_quake106_pak0
             ;;
     esac
@@ -254,7 +250,7 @@ cdrom_method() {
     bit1sum=752f49131bb3ba832346e873c1bcfdc6
     bit2sum=9ed67b39020575771e29645d977c9216
     
-    require_lha
+    require_program lha lhasa
     verify_file "$bit1"
     verify_file "$bit2"
     verify_md5sum "$bit1" "$bit1sum"
@@ -440,8 +436,9 @@ music_method () {
             fi
         done
     else
-        require_cdparanoia
-        require_oggenc
+        packages="cdparanoia vorbis-tools"
+        require_program cdparanoia $packages
+        require_program oggenc $packages
 
         t=02
         while cdparanoia -d "$audio" $t "${WORKDIR}/tmp.wav"; do
