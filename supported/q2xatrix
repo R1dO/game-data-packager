@@ -3,67 +3,27 @@ SHORTNAME="q2xatrix"
 LONGNAME="Quake II Mission Pack: The Reckoning"
 
 pak0sum=5e2ecbe9287152a1e6e0d77b3f47dcb2 # steam as of ~Oct 2013
-
 url=http://deponie.yamagi.org/quake2/quake2-xatrix-2.00.tar.xz
 sum=728199ad0038024dd8e20750bc9eb55d
 
-do_xatrix_thing() {
-  xatrix=`unravel "$1"`
-  verify_file "$xatrix"
-  cd "$WORKDIR"
-  mkdir xatrix
-  cd xatrix
-  tar --strip-components=1 -xf "$xatrix"
-  make -s -j5 >/dev/null # XXX: parameterize
-  verify_file "release/game.so"
-  strip "release/game.so"
-}
-
-xatrixusage() {
-  echo "q2xatrix arguments: [ -t xatrix.tar.xz ] q2path"
-  echo
-  echo "\t-t xatrix        use user-supplied xatrix.tar.xz (default is to download)"
-  echo "\t-f               force installation when MD5 sum of xatrix.tar.xz is unknown"
-  echo "\tq2path           path to an unpacked Quake 2 directory containing 'xatrix'"
-  exit 1
-}
+. $LIBDIR/q2mp-common
 
 go() {
 
-  packages="make gcc binutils"
-  require_program make  $packages
-  require_program cc    $packages
-  require_program strip $packages
+  q2mp_prereqs
 
   checksum="true"
   xpath=""
-  while [ $# -gt 1 ]; do
-    case "$1" in
-      "-t")
-        [ $# -ge 3 ] || xatrixusage
-        xpath="$2"
-        shift 2
-        ;;
-      "-f")
-        checksum="false"
-        shift
-        ;;
-      *)
-        xatrixusage
-        ;;
-    esac
-  done
-  [ $# -eq 1 ] || xatrixusage
+  q2mp_process_opts "$@"
 
   if [ -z "$xpath" ]; then
-    xpath="$WORKDIR/xatrix.tar.xz"
+    xpath="$WORKDIR/$SHORTNAME.tar.xz"
     wget -O "$xpath" "$url"
   fi
   if [ "$checksum" = "true" ]; then
     verify_md5sum "$xpath" "$sum"
   fi
-  root=`unravel "$1"`
-  do_xatrix_thing "$xpath"
+  q2mp_build_gameso "$xpath"
 
   verify_directory "$root"
   verify_directory "$root/xatrix"
@@ -79,9 +39,9 @@ go() {
     "$DESTDIR/usr/share/games/quake2/xatrix/video"
 
   # the source code component
-  mv "$WORKDIR/xatrix/release/game.so" "$DESTDIR/usr/share/games/quake2/xatrix"
-  mv "$WORKDIR/xatrix/LICENSE" "$DESTDIR/usr/share/doc/quake2-xatrix/LICENSE"
-  rm -rf "$WORKDIR/xatrix"
+  mv "$WORKDIR/$SHORTNAME/release/game.so" "$DESTDIR/usr/share/games/quake2/xatrix"
+  mv "$WORKDIR/$SHORTNAME/LICENSE" "$DESTDIR/usr/share/doc/quake2-xatrix/LICENSE"
+  rm -rf "$WORKDIR/$SHORTNAME"
 
   # the data components
   cp -p "$root/xatrix/pak0.pak" "$DESTDIR/usr/share/games/quake2/xatrix"
