@@ -1,0 +1,67 @@
+# vim: set ft=sh:
+SHORTNAME="q2xatrix"
+LONGNAME="Quake 2 Mission Pack: The Reckoning"
+
+pak0sum=5e2ecbe9287152a1e6e0d77b3f47dcb2 # steam as of ~Oct 2013
+
+do_xatrix_thing() {
+  xatrix=`unravel "$1"`
+  verify_file "$xatrix"
+  cd "$WORKDIR"
+  mkdir xatrix
+  cd xatrix
+  tar --strip-components=1 -xf "$xatrix"
+  make -s -j5 >/dev/null # XXX: parameterize
+  verify_file "release/game.so"
+}
+
+go() {
+  if [ $# -ne 2 ]; then
+    echo "q2xatrix arguments: xatrix q2path"
+    echo
+    echo "xatrix: path to quake2-xatrix source tarball"
+    echo "q2path: path to an unpacked Quake 2 directory"
+  fi
+
+  root=`unravel "$2"`
+
+  do_xatrix_thing "$1"
+
+  verify_directory "$root"
+  verify_directory "$root/xatrix"
+  verify_file      "$root/xatrix/pak0.pak"
+  for i in idlog logo xin xout xu1 xu2 xu3 xu4; do
+    verify_file "$root/xatrix/video/$i.cin"
+  done
+
+  # slipstream_instsize, slipstream_repack assume this naming
+  DESTDIR="$WORKDIR/slipstream.unpacked"
+
+  mkdir -p "$WORKDIR/DEBIAN" "$DESTDIR/usr/share/doc/quake2-xatrix" \
+    "$DESTDIR/usr/share/games/quake2/xatrix/video"
+
+  # the source code component
+  mv "$WORKDIR/xatrix/release/game.so" "$DESTDIR/usr/share/games/quake2/xatrix"
+  rm -rf "$WORKDIR/xatrix"
+
+  # the data components
+  cp -p "$root/xatrix/pak0.pak" "$DESTDIR/usr/share/games/quake2/xatrix"
+
+  for i in idlog logo xin xout xu1 xu2 xu3 xu4; do
+    cp -p "$root/xatrix/video/$i.cin" "$DESTDIR/usr/share/games/quake2/xatrix/video"
+  done
+
+  cp -p "$DATADIR/quake2/quake2-xatrix.control"   "$WORKDIR/DEBIAN/control"
+  cp -p "$DATADIR/quake2/quake2-xatrix.copyright" "$DESTDIR/usr/share/doc/quake2-xatrix/copyright"
+  
+  if [ "" = "$OUTDIR" ]; then
+      OUTFILE="$WORKDIR/out.deb"
+  else
+      OUTFILE=`unravel "$OUTDIR"`"/quake2-xatrix_${GAME_PACKAGE_VERSION}_all.deb"
+  fi
+
+  debug "building .deb: $OUTFILE"
+  ( cd "$WORKDIR" && slipstream_instsize )
+  ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
+  rm -rf "$DESTDIR"
+}
