@@ -38,7 +38,7 @@ Description: classic gothic/horror-themed first person shooter
 Package: quake2
 Architecture: all
 Depends: ${misc:Depends},
-         yamagi-quake2 | quake-engine,
+         yamagi-quake2 | quake2-engine,
          quake2-full-data | quake2-demo-data | game-data-packager (>= 34)
 Suggests: quake2-music
 Recommends: x11-utils | zenity | kdebase-bin
