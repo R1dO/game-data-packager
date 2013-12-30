@@ -2,8 +2,9 @@ game-data-packager (35+nmu1) UNRELEASED; urgency=low
 
   * Team upload.
   * Add Multi-Arch: foreign fields to all Architecture: all packages.
-  * Prefer chocolate-doom (>= 2) over other engines providing doom-engine,
-    heretic engine or hexen-engine, respectively.
+  * Prefer chocolate-doom over other engines providing doom-engine,
+    heretic engine or hexen-engine, respectively. Add Breaks against
+    versions of chocolate-doom not providing hertic-engine or hexen-engine.
   * Start heretic and hexen by calling the binaries of the same names in the
     respective desktop files.
 

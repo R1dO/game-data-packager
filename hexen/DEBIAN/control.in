@@ -3,7 +3,8 @@ Section: non-free/games
 Priority: optional
 Architecture: all
 Multi-Arch: foreign
-Recommends: chocolate-doom (>= 2) | hexen-engine
+Recommends: chocolate-doom | hexen-engine
+Breaks: chocolate-doom (<< 2)
 Provides: hexen-wad
 Installed-Size: 56
 Version: VERSION

@@ -3,7 +3,8 @@ Section: non-free/games
 Priority: optional
 Architecture: all
 Multi-Arch: foreign
-Recommends: chocolate-doom (>= 2) | heretic-engine
+Recommends: chocolate-doom | heretic-engine
+Breaks: chocolate-doom (<< 2)
 Provides: heretic-wad
 Installed-Size: 56
 Version: VERSION
