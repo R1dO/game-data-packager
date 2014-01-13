@@ -16,9 +16,9 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/quake.git
 
 Package: quake
 Architecture: all
-Depends: ${misc:Depends},
+Depends: quake-registered | quake-shareware | game-data-packager,
          quakespasm | quake-engine,
-         quake-registered | quake-shareware | game-data-packager
+         ${misc:Depends}
 Recommends: x11-utils | zenity | kdebase-bin
 Suggests: quake-armagon (>= 29),
           quake-armagon-music,
@@ -39,11 +39,25 @@ Description: classic gothic/horror-themed first person shooter
  .
  Creating quake-shareware requires the shareware version of Quake.
 
+Package: quake-server
+Architecture: all
+Depends: adduser,
+         quake-registered | quake-shareware | game-data-packager,
+         quakespasm | quake-engine-server,
+         ${misc:Depends}
+Description: classic first person shooter - server and init script
+ This package contains a launcher script and init script to run a
+ Quake 1 server automatically, with any suitable engine.
+ .
+ To make this package useful, you will need to create and install the
+ non-distributable quake-registered or quake-shareware package, by using the
+ game-data-packager package.
+
 Package: quake2
 Architecture: all
-Depends: ${misc:Depends},
+Depends: quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
          yamagi-quake2 | quake2-engine,
-         quake2-full-data | quake2-demo-data | game-data-packager (>= 34)
+         ${misc:Depends}
 Suggests: quake2-music
 Recommends: x11-utils | zenity | kdebase-bin
 Description: classic science-fiction-themed first person shooter
@@ -56,25 +70,11 @@ Description: classic science-fiction-themed first person shooter
  either quake2-full-data or quake2-demo-data. Creating quake2-full-data
  requires data files from a Quake II installation or CD-ROM.
 
-Package: quake-server
-Architecture: all
-Depends: adduser,
-         quakespasm | quake-engine-server,
-         quake-registered | quake-shareware | game-data-packager,
-         ${misc:Depends}
-Description: classic first person shooter - server and init script
- This package contains a launcher script and init script to run a
- Quake 1 server automatically, with any suitable engine.
- .
- To make this package useful, you will need to create and install the
- non-distributable quake-registered or quake-shareware package, by using the
- game-data-packager package.
-
 Package: quake2-server
 Architecture: all
 Depends: adduser,
-         yamagi-quake2-core | quake2-engine-server,
          quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
+         yamagi-quake2-core | quake2-engine-server,
          ${misc:Depends}
 Recommends: x11-utils | zenity | kdebase-bin
 Description: dedicated server for Quake II
