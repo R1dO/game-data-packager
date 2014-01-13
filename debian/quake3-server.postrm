@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+if [ "$1" = "purge" ] ; then
+    rm -r /var/games/quake3-server
+    rmdir --ignore-fail-on-non-empty /var/games
+    deluser --quiet --system Debian-quake3 > /dev/null || true
+fi

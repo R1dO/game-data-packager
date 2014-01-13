@@ -3,8 +3,10 @@
 obj = \
 	build/quake \
 	build/quake2 \
+	build/quake3 \
 	build/quake-server \
 	build/quake2-server \
+	build/quake3-server \
 	build/quake.xpm \
 	build/quake2.xpm \
 	build/16/quake.png \
@@ -34,7 +36,13 @@ obj = \
 	build/quake.svg \
 	build/quake-armagon.svg \
 	build/quake-dissolution.svg \
-	build/quake2.svg
+	build/quake2.svg \
+	build/quake3.png \
+	build/quake3.xpm \
+	build/quake332.xpm \
+	build/quake3-teamarena.png \
+	build/quake3-teamarena.xpm \
+	build/quake3-teamarena32.xpm
 
 all: $(obj)
 
@@ -56,6 +64,15 @@ build/quake2: quake2.in
 		< $< > $@
 	chmod +x $@
 
+build/quake3: quake3.in Makefile
+	install -d build
+	sed \
+		-e 's!@IOQ3BINARY@!ioquake3!' \
+		-e 's!@IOQ3SELF@!quake3!' \
+		-e 's!@IOQ3ROLE@!client!' \
+		< $< > $@
+	chmod +x $@
+
 build/quake2-server: quake2.in
 	install -d build
 	sed -e 's/@self@/quake2-server/g' \
@@ -71,6 +88,15 @@ build/quake-server: quake.in
 		-e 's/@role@/server/g' \
 		-e 's/@options@/-dedicated/g' \
 		-e 's/@alternative@/quake-engine-server/g' \
+		< $< > $@
+	chmod +x $@
+
+build/quake3-server: quake3.in Makefile
+	install -d build
+	sed \
+		-e 's!@IOQ3BINARY@!ioq3ded!' \
+		-e 's!@IOQ3SELF@!quake3!' \
+		-e 's!@IOQ3ROLE@!server!' \
 		< $< > $@
 	chmod +x $@
 
@@ -179,3 +205,17 @@ build/quake2.svg: quake1+2.svg Makefile
 		--export-plain-svg=$@ \
 		tmp.svg
 	rm -f tmp.svg
+
+build/quake3.png: quake3-tango.xcf
+	install -d build
+	xcf2png -o $@ $<
+
+build/quake3-teamarena.png: quake3-teamarena-tango.xcf
+	install -d build
+	xcf2png -o $@ $<
+
+build/%.xpm: build/%.png
+	convert $< $@
+
+build/%32.xpm: build/%.png
+	convert -resize 32x32 $< $@

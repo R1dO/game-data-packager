@@ -1,0 +1,16 @@
+# Defaults for Quake III Arena init script
+# sourced by /etc/init.d/quake3-server
+# installed at /etc/default/quake3-server by the maintainer scripts
+
+# To disable the server, please use the normal mechanisms provided by init:
+# see /usr/share/doc/quake3-server/README.Debian.gz. Changing the value
+# of this variable is deprecated.
+START_DAEMON=unless-disabled-by-upgrade
+
+# Additional options that are passed to the daemon.
+# Add "+set dedicated 2" here, or "set dedicated 2" in server.cfg, if you want
+# your server advertised on the public server list.
+#
+# debian_server.cfg is a symlink to /etc/quake3-server/server.cfg, so you can
+# use that file for system-wide configuration.
+DAEMON_OPTS="+exec debian_server.cfg"

@@ -6,8 +6,71 @@ quake (6) UNRELEASED; urgency=low
   * Add some keywords to the .desktop files
   * Add VCS fields to debian/control
   * Standards-Version: 3.9.5 (no changes needed)
+  * Take over the quake3 and quake3-server binary packages from src:quake3
+  * Add a recoloured Team Arena icon
 
  -- Simon McVittie <smcv@debian.org>  Mon, 02 Dec 2013 09:39:48 +0000
+
+quake3 (1.4) unstable; urgency=low
+
+  * Add status action to init script
+  * Don't refuse to start a new quake3-server if there's a stale pid file
+    (similar to #678543)
+  * Report ioquake3, ioquake3-server information in quake3, quake3-server bugs
+  * Standards-Version: 3.9.3 (no changes)
+  * Update copyright dates
+  * Add a Description to the init script
+  * Run a server from the quake3-server package by default (as per Policy),
+    unless this is an upgrade from 1.3 or older
+  * During purge of quake3-server, delete files owned by Debian-quake3 before
+    deleting the user itself
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 23 Jun 2012 14:08:41 +0100
+
+quake3 (1.3) unstable; urgency=low
+
+  * Make the desktop file definitely run /usr/games/quake3, and not some
+    other quake3 on the user's $PATH
+  * Upload to unstable/contrib now that I've done the same with g-d-p 25
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 16 Mar 2011 15:49:39 +0000
+
+quake3 (1.2) experimental; urgency=low
+
+  * Make the QUAKE3_BACKTRACE option work properly
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 16 Jan 2011 22:27:07 +0000
+
+quake3 (1.1) experimental; urgency=low
+
+  * Allow game-data-packager to satisfy the quake3-data dependency
+  * If quake3-data is missing from quake3, don't allow the game to run (the
+    engine doesn't cope well with it); instead, use zenity, kdialog, xmessage
+    or (as a last resort) terminal output to tell the user about
+    game-data-packager
+  * If quake3-data is missing from quake3-server, just output to the console
+  * Add a simple init script (disabled by default, so you don't have to use
+    it if you prefer to run the server under screen or something), based on
+    the one in tremulous-server
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 12 Nov 2010 23:12:28 +0000
+
+quake3 (1.0) experimental; urgency=low
+
+  [ Jack Coulter ]
+  * Initial packaging (Closes: #487933), based on work by Marc Leeman and
+    Bruno Kleinert
+
+  [ Simon McVittie ]
+  * Adapt for the current version of ioquake3
+  * Upgrade to source format 3.0 (native), debhelper v8, machine-readable
+    copyright, and Policy version 3.9.1
+  * Include the GIMP source file for the logo (from ioquake3), and produce
+    lower-quality versions from it at build time
+  * Upload to experimental for now, until a version of game-data-packager
+    that can produce quake3-data reaches unstable
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 22 Oct 2010 23:29:21 +0100
 
 quake (5) experimental; urgency=low
 

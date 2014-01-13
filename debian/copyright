@@ -1,10 +1,20 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Quake
+Upstream-Name: Quake, Quake II, Quake III Arena
 License: GPL-2+
+Comment:
+  This package contains launcher scripts, man pages, etc. originating
+  in Debian, so there is no upstream project.
+  .
+  See the quakespasm, darkplaces, yquake2 and ioquake3 packages for the
+  actual game engines.
 
 Files: *
-Copyright: © 2011-2013 David Banks
-           © 2011-2013 Simon McVittie
+Copyright:
+  © 2006 Damien Laniel
+  © 2008 Jack Coulter
+  © 2008 Peter Eisentraut
+  © 2010-2013 Simon McVittie
+  © 2011-2013 David Banks
 License: GPL-2+
 
 Files: quake1+2.svg
@@ -13,13 +23,25 @@ License: ikiwiki-basewiki
   Redistribution and use in source and compiled forms, with or without
   modification, are permitted under any circumstances. No warranty.
 
-Files: need-data.sh
+Files: quake3-tango.png
 Copyright:
-  © 2006 Damien Laniel
-  © 2008 Jack Coulter
-  © 2008 Peter Eisentraut
-  © 2010 Simon McVittie
+  © 2007 mister fork <f0rqu3 at gmail.com>
 License: GPL-2+
+Comment:
+  Relevant snippets of ioquake3 mailing list thread:
+  .
+  <http://icculus.org/pipermail/quake3/2007-September/001979.html>:
+    http://f0rqu3.deviantart.com/art/quake3-icon-64264660
+    this is the one I made from the original logo
+    and there is another in ioquake3 svn
+  <http://icculus.org/pipermail/quake3/2007-September/001980.html>:
+    This is awesome, can I use it?
+  <http://icculus.org/pipermail/quake3/2007-September/001981.html>:
+    I think he ment to use it under the GPL in ioq3 :)
+    For normal use there is no need to ask...
+    http://creativecommons.org/licenses/by-nc-sa/2.5/
+  <http://icculus.org/pipermail/quake3/2007-September/001984.html>:
+    yes. I cant choose GPL as license in DA so I use CC :/
 
 License: GPL-2+
   Permission is granted to copy, distribute and/or modify this work under the

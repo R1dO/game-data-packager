@@ -1,0 +1,61 @@
+Quake III Arena dedicated server for Debian
+===========================================
+
+Running the server via the init script
+--------------------------------------
+
+The quake3-server init script runs a dedicated server as the user
+"Debian-quake3". This is a simple setup suitable for running one server
+on a machine; by default it will cycle through the standard
+Quake III Arena deathmatch maps.
+
+The Debian-quake3 user's home directory is /var/games/quake3-server, so you
+can find Quake III files in the /var/games/quake3-server/.q3a directory.
+
+By default, the init script will use
+/usr/share/games/quake3/baseq3/debian_server.cfg, which is a symlink to
+/etc/quake3-server/server.cfg. You can edit this file, or put an alternative
+configuration in /var/games/quake3-server/.q3a/baseq3 and change
+/etc/default/quake3-server to exec that.
+
+Disabling the init script
+-------------------------
+
+To disable the init script, use the facilities provided by your init system.
+For instance, under sysvinit, use
+
+    update-rc.d quake3-server disable
+
+or under systemd, use
+
+    ln -s /dev/null /etc/systemd/system/quake3-server.service
+
+Changing the value of the START_DAEMON variable in
+/etc/default/quake3-server is deprecated. Please leave it set to
+"unless-disabled-by-upgrade".
+
+Running the server with cron and screen
+---------------------------------------
+
+One alternative way to run the server is to run it in a screen(1) session
+from a cron @reboot action. This can be used to run multiple instances
+of the server; you'll need to set a different net_port on each server after
+the first, and it's safest to give each server a unique fs_homepath so they
+don't overwrite each other's configuration files.
+
+To do this, you could put something like this in the Debian-quake3 user's
+crontab (don't break the long lines!):
+
+    @reboot screen -d -m -S ffa /usr/games/quake3-server +set fs_homepath /var/games/quake3-server/ffa +exec ffa.config
+    @reboot screen -d -m -S ctf /usr/games/quake3-server +set fs_homepath /var/games/quake3-server/ctf +set net_port 54321 +exec ctf.config
+
+or in /etc/crontab or a file in /etc/cron.d:
+
+    @reboot Debian-quake3 screen -d -m -S ffa /usr/games/quake3-server +set fs_homepath /var/games/quake3-server/ffa +exec ffa.config
+    @reboot Debian-quake3 screen -d -m -S ctf /usr/games/quake3-server +set fs_homepath /var/games/quake3-server/ctf +set net_port 54321 +exec ctf.config
+
+If you do that, you can access the servers' consoles by attaching a screen
+session to them:
+
+    sudo -u Debian-quake3 screen -r ffa
+    sudo -u Debian-quake3 screen -r ctf

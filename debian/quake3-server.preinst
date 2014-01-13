@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  (upgrade)
+    if dpkg --compare-versions "$2" lt 1.4; then
+      def=/etc/default/quake3-server
+      home=/var/games/quake3-server
+      inhibit=$home/init-script-disabled-by-upgrade
+
+      if test -e $def && grep '^START_DAEMON=1$' $def; then
+        echo "Not disabling quake3-server init script (previously enabled in $def)" >&2
+      else
+        echo "Disabling quake3-server init script (previously disabled in $def)" >&2
+        echo "Remove $inhibit to restore normal behaviour."
+	install -d $home
+	touch $inhibit
+      fi
+    fi
+  ;;
+  (install|abort-upgrade)
+  ;;
+  *)
+    echo "preinst called with unknown argument '$1'" >&2
+    exit 1
+  ;;
+esac
+
+#DEBHELPER#
