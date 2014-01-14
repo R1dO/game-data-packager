@@ -19,7 +19,7 @@ Architecture: all
 Depends: quake-registered | quake-shareware | game-data-packager,
          quakespasm | quake-engine,
          ${misc:Depends}
-Recommends: x11-utils | zenity | kdebase-bin
+Recommends: x11-utils | zenity | kde-baseapps-bin
 Suggests: quake-armagon (>= 29),
           quake-armagon-music,
           quake-dissolution (>= 29),
@@ -59,7 +59,7 @@ Depends: quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
          yamagi-quake2 | quake2-engine,
          ${misc:Depends}
 Suggests: quake2-music
-Recommends: x11-utils | zenity | kdebase-bin
+Recommends: x11-utils | zenity | kde-baseapps-bin
 Description: classic science-fiction-themed first person shooter
  Quake II is a classic first-person shooter game by id Software,
  released in 1997. This package contains a launcher script and menu
@@ -90,7 +90,7 @@ Architecture: all
 Depends: ioquake3,
          quake3-data | game-data-packager (>= 23),
          ${misc:Depends}
-Recommends: x11-utils | zenity | kdebase-bin
+Recommends: x11-utils | zenity | kde-baseapps-bin
 Description: Quake III Arena menu entry and launcher scripts
  This package contains a launcher script and menu entry to play
  Quake III Arena with the ioQuake3 engine.
