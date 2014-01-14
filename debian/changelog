@@ -1,7 +1,11 @@
 quake (7) UNRELEASED; urgency=medium
 
-  * Team upload.
+  [ Fabian Greffrath ]
   * Sort Debian control files via "wrap-and-sort -ab".
+
+  [ Simon McVittie ]
+  * quake2-server: don't recommend x11-utils | etc., they are only used
+    in the clients
 
  -- Fabian Greffrath <fabian+debian@greffrath.com>  Mon, 13 Jan 2014 12:28:29 +0100
 

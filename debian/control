@@ -76,7 +76,6 @@ Depends: adduser,
          quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
          yamagi-quake2-core | quake2-engine-server,
          ${misc:Depends}
-Recommends: x11-utils | zenity | kdebase-bin
 Description: dedicated server for Quake II
  This package contains a launcher script and init script to run a
  Quake II server automatically, with any suitable engine.
