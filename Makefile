@@ -1,5 +1,7 @@
 # Makefile - used for building icon
 
+layer_sizes = 16 22 32 48 256
+
 obj = \
 	build/quake \
 	build/quake2 \
@@ -9,30 +11,10 @@ obj = \
 	build/quake3-server \
 	build/quake.xpm \
 	build/quake2.xpm \
-	build/16/quake.png \
-	build/16/quake-armagon.png \
-	build/16/quake-dissolution.png \
-	build/16/quake2.png \
-	build/22/quake.png \
-	build/22/quake-armagon.png \
-	build/22/quake-dissolution.png \
-	build/22/quake2.png \
 	build/24/quake.png \
 	build/24/quake-armagon.png \
 	build/24/quake-dissolution.png \
 	build/24/quake2.png \
-	build/32/quake.png \
-	build/32/quake-armagon.png \
-	build/32/quake-dissolution.png \
-	build/32/quake2.png \
-	build/48/quake.png \
-	build/48/quake-armagon.png \
-	build/48/quake-dissolution.png \
-	build/48/quake2.png \
-	build/256/quake.png \
-	build/256/quake-armagon.png \
-	build/256/quake-dissolution.png \
-	build/256/quake2.png \
 	build/quake.svg \
 	build/quake-armagon.svg \
 	build/quake-dissolution.svg \
@@ -42,7 +24,12 @@ obj = \
 	build/quake332.xpm \
 	build/quake3-teamarena.png \
 	build/quake3-teamarena.xpm \
-	build/quake3-teamarena32.xpm
+	build/quake3-teamarena32.xpm \
+	$(patsubst %,build/%/quake.png,$(layer_sizes)) \
+	$(patsubst %,build/%/quake-armagon.png,$(layer_sizes)) \
+	$(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)) \
+	$(patsubst %,build/%/quake2.png,$(layer_sizes)) \
+	$(NULL)
 
 all: $(obj)
 
@@ -128,7 +115,7 @@ build/24/quake2.png: build/22/quake2.png
 	install -d build/24
 	convert -bordercolor Transparent -border 1x1 $< $@
 
-build/%/quake.png: quake1+2.svg
+$(patsubst %,build/%/quake.png,$(layer_sizes)): build/%/quake.png: quake1+2.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -139,7 +126,7 @@ build/%/quake.png: quake1+2.svg
 		--export-png=$@ \
 		$<
 
-build/%/quake-armagon.png: build/tmp-armagon.svg
+$(patsubst %,build/%/quake-armagon.png,$(layer_sizes)): build/%/quake-armagon.png: build/tmp-armagon.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -150,7 +137,7 @@ build/%/quake-armagon.png: build/tmp-armagon.svg
 		--export-png=$@ \
 		$<
 
-build/%/quake-dissolution.png: build/tmp-dissolution.svg
+$(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)): build/%/quake-dissolution.png: build/tmp-dissolution.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -161,7 +148,7 @@ build/%/quake-dissolution.png: build/tmp-dissolution.svg
 		--export-png=$@ \
 		$<
 
-build/%/quake2.png: quake1+2.svg
+$(patsubst %,build/%/quake2.png,$(layer_sizes)): build/%/quake2.png: quake1+2.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \

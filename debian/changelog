@@ -1,3 +1,10 @@
+quake (8) unstable; urgency=medium
+
+  * Avoid ambiguous precedence of Makefile rules for 24px icons,
+    fixing FTBFS with recent make (Closes: #751039)
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 10 Jun 2014 22:56:23 +0100
+
 quake (7) unstable; urgency=low
 
   [ Fabian Greffrath ]
