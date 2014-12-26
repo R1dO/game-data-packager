@@ -38,6 +38,9 @@ go() {
   mv "$WORKDIR/$SHORTNAME/release/game.so" "$DESTDIR/usr/share/games/quake2/rogue"
   mv "$WORKDIR/$SHORTNAME/LICENSE" "$DESTDIR/usr/share/doc/quake2-rogue/LICENSE"
   rm -rf "$WORKDIR/$SHORTNAME"
+  if [ -f "$WORKDIR/$SHORTNAME.tar.xz" ]; then
+    rm -f "$WORKDIR/$SHORTNAME.tar.xz"
+  fi
 
   # the data components
   cp -p "$root/rogue/pak0.pak" "$DESTDIR/usr/share/games/quake2/rogue"
