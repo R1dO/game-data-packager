@@ -55,6 +55,13 @@ test_die() {
   assertEquals $? 42
 }
 
+test_require_program() {
+  ./tests/lib/require_program "sh" dash
+  assertEquals $? 0
+  ./tests/lib/require_program "does-not-exist" nopackage
+  assertEquals $? 2
+}
+
 ## slipstream(deb,relpath,file1,file2...)
 ##      insert file1,file2... into the deb, under the
 ##      path 'relpath', relative to the package root, e.g.:

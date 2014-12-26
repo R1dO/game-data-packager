@@ -1,0 +1,14 @@
+Package: quake2-xatrix
+Version: VERSION
+Section: non-free/games
+Priority: optional
+Recommends: quake2 | quake2-server
+Installed-Size: 500000
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Description: Quake II: The Reckoning data files
+ Quake II: The Reckoning is a Mission Pack for Quake II created by Xatrix
+ Entertainment. This package was generated using the "game-data-packager"
+ program from the Debian package of the same name.
+ .
+ To play Quake II using this data, install the quake2 package and pass
+ "+set game xatrix" as arguments.

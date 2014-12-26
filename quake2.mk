@@ -21,6 +21,12 @@ do-quake2-full-data: do-common
 do-quake2-music: do-common
 	:
 
+do-quake2-xatrix: do-common
+	:
+
+do-quake2-rogue: do-common
+	:
+
 do-common:
 	install -d ${outdir}/quake2
 	install -m644 quake2/${PACKAGE}.copyright ${outdir}/quake2/
