@@ -1,5 +1,5 @@
 Package: jedi-outcast-data
-Version: VERSION
+Version: 1.04+VERSION
 Section: non-free/games
 Priority: optional
 Architecture: all

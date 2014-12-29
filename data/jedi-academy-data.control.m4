@@ -1,5 +1,5 @@
 Package: jedi-academy-data
-Version: VERSION
+Version: 1.01+VERSION
 Section: non-free/games
 Priority: optional
 Architecture: all

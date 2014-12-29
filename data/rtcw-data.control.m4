@@ -1,5 +1,5 @@
 Package: rtcw-data
-Version: VERSION
+Version: 1.42b+VERSION
 Section: non-free/games
 Priority: optional
 Architecture: all
