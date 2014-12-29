@@ -504,6 +504,8 @@ class GameDataPackage(object):
                 f = open(os.path.join(self.etcdir, mirror_list))
                 for line in f:
                     url = line.strip()
+                    if not url:
+                        continue
                     if url.startswith('#'):
                         continue
                     if details.get('path', '.') != '.':
