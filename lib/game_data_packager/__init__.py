@@ -570,6 +570,8 @@ class GameDataPackage(object):
 
     def choose_mirror(self, wanted):
         mirrors = []
+        if type(wanted.download) is str:
+            return [wanted.download]
         for mirror_list, details in wanted.download.items():
             try:
                 f = open(os.path.join(self.etcdir, mirror_list))

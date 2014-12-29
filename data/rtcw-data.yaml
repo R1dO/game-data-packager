@@ -29,6 +29,12 @@ install_files_from_cksums: |
   136047737 11026123 main/sp_pak2.pk3
   868477447 152544 main/sp_pak3.pk3
   3497089350 15532040 main/sp_pak4.pk3
+  # From iortcw
+  898436086 381 main/hiquality.cfg
+  1537788466 635388 main/mp_bin0.pk3
+  2312958064 3257 main/mp_rend2_shaders0.pk3
+  3497089350 15532040 main/sp_pak4.pk3
+  1069457584 22225 main/sp_rend2_shaders0.pk3
 
 # Files listed under install_files are assumed to have install: true
 install_files:
@@ -67,6 +73,18 @@ sources:
       C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein
 
 files:
+  iortcw-1.42b-linux-x86.zip:
+    download: https://docs.google.com/uc?export=download&id=0ByCRmO4G6HOoRWNjaS04VTlMbWc
+    size: 21860031
+    provides:
+    - main/hiquality.cfg
+    - main/mp_bin0.pk3
+    - main/mp_rend2_shaders0.pk3
+    - main/sp_pak4.pk3
+    - main/sp_rend2_shaders0.pk3
+    unpack:
+      format: zip
+
   wolf-linux-1.4-full.x86.run:
     download:
       rtcw-mirrors:
@@ -150,7 +168,11 @@ md5sums: |
   4223cc6588594ec0ceee186f0e73a6e9  main/sp_pak4.pk3
   87c3ebf106b107b60b472863aeec20c4  wolf-linux-1.4-full.x86.run
   2aa37968aff19d665ed6c001773b2de3  wolf-linux-1.41b.x86.run
-
+  71ad166c7997513fe2b6cc364bc5a63e  iortcw-1.42b-linux-x86.zip
+  73326c394df3d2d944c7bff13b34412b  main/hiquality.cfg
+  a0cb6cc6874e33399983e6831dd78b64  main/mp_bin0.pk3
+  5f43f510586392fb99241e94ec7729b0  main/mp_rend2_shaders0.pk3
+  51f3ff74eeb6d7c8a88a8ed660857bcd  main/sp_rend2_shaders0.pk3
 
 sha1sums: |
   e0422b4730daf306b428d419883d9147c6e2a946  main/autoexec.cfg
@@ -175,6 +197,11 @@ sha1sums: |
   76b1074a350616bd8942005c4eabda06199e81f2  main/sp_pak4.pk3
   576e749167ae310a65443e4215401030d6e87685  wolf-linux-1.4-full.x86.run
   176da1567107eeec3ec3dc14a6b389c47e1303b5  wolf-linux-1.41b.x86.run
+  2261e73933ae46c574d4268116b361e0293b377d  iortcw-1.42b-linux-x86.zip
+  7d275767926edf18bbd88cec8b465b9d03714a4c  main/hiquality.cfg
+  3bc3710b4adbc305feba5f142ec756a83618a545  main/mp_bin0.pk3
+  ce9423820422146a052fd7b72cc2064682a40f83  main/mp_rend2_shaders0.pk3
+  25416e72326367b75b228b5d96c6bd2af6fa7dd8  main/sp_rend2_shaders0.pk3
 
 sha256sums: |
   ca3ca09d79a755262cb8c9766d457a2c72ab0258e8f8cec469fddd686ea488ef  main/autoexec.cfg
@@ -199,6 +226,11 @@ sha256sums: |
   5532801005eaf2d74fe9098dc638abdb8284225c293cee3573ffa9b6c2edd8fc  main/sp_pak4.pk3
   de2b0728ef9286eefb69a65c0badb260319d8bd806ecd3903e915b0580eb2f12  wolf-linux-1.4-full.x86.run
   2921425c1b429147c1bc6f0c6a8664bec502ae86a2d6bccfaa1162f75dce89f3  wolf-linux-1.41b.x86.run
+  f38f83233a0bf6e34123ac78f853f42cc5ecfe89fd4b8be63d38e5b87bfc6f1a  iortcw-1.42b-linux-x86.zip
+  5fc8302d5693d64d3463fcd271484b0290235fe92f0e5066a6d5e2ea9c92dcf9  main/hiquality.cfg
+  135722ca744259ccba8864173bf70439897065e001e127bbb57279343fd74f50  main/mp_bin0.pk3
+  b4719cd0866d4286f7022001e35b5b213a565b28e9481b9564e14a10928b3ec9  main/mp_rend2_shaders0.pk3
+  29cb03e27a04393f91a19614fc215e5299bc7b047217385beedb831a9bb9513c  main/sp_rend2_shaders0.pk3
 
 ...
 # vim:set sw=2 sts=2 et:
