@@ -30,6 +30,7 @@ import sys
 import tarfile
 import tempfile
 import urllib.request
+import zipfile
 
 import yaml
 
@@ -465,6 +466,57 @@ class GameDataPackage(object):
 
         return possible
 
+    def consider_zip(self, name, zf, provider):
+        should_provide = set(provider.provides)
+
+        for entry in zf.infolist():
+            if not entry.file_size:
+                continue
+
+            for filename in provider.provides:
+                wanted = self.files.get(filename)
+
+                if wanted is None:
+                    continue
+
+                if wanted.size is not None and wanted.size != entry.file_size:
+                    continue
+
+                match_path = '/' + entry.filename
+
+                for lf in wanted.look_for:
+                    if match_path.endswith('/' + lf):
+                        should_provide.discard(filename)
+
+                        if filename in self.found:
+                            continue
+
+                        entryfile = zf.open(entry)
+
+                        tmp = os.path.join(self.get_workdir(),
+                                'tmp', wanted.name)
+                        tmpdir = os.path.dirname(tmp)
+                        mkdir_p(tmpdir)
+
+                        wf = open(tmp, 'wb')
+                        if entry.file_size > QUITE_LARGE:
+                            logger.info('extracting %s from %s', entry.filename, name)
+                        else:
+                            logger.debug('extracting %s from %s', entry.filename, name)
+                        hf = HashedFile.from_file(
+                                name + '//' + entry.filename, entryfile, wf,
+                                size=entry.file_size,
+                                progress=(entry.file_size > QUITE_LARGE))
+                        wf.close()
+
+                        if not self.use_file(wanted, tmp, hf):
+                            os.remove(tmp)
+
+        if should_provide:
+            for missing in sorted(should_provide):
+                logger.error('%s should have provided %s but did not',
+                        name, missing)
+
     def consider_tar_stream(self, name, tar, provider):
         should_provide = set(provider.provides)
 
@@ -620,6 +672,9 @@ class GameDataPackage(object):
                             mode='r|' + fmt[4:],
                             fileobj=rf) as tar:
                         self.consider_tar_stream(found_name, tar, provider)
+                elif fmt == 'zip':
+                    with zipfile.ZipFile(found_name, 'r') as zf:
+                        self.consider_zip(found_name, zf, provider)
 
         if not possible:
             if log:
