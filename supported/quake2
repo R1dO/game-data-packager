@@ -430,8 +430,9 @@ go () {
                 fi
             done
         else
-            require_cdparanoia
-            require_oggenc
+            packages="cdparanoia vorbis-tools"
+            require_program "cdparanoia" $packages
+            require_program "oggenc" $packages
 
             t=02
             while cdparanoia -d "$audiocd" $t "${WORKDIR}/tmp.wav"; do

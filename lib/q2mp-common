@@ -1,0 +1,53 @@
+q2mp_prereqs() {
+  packages="make gcc binutils"
+  require_program make  $packages
+  require_program cc    $packages
+  require_program strip $packages
+}
+
+q2mp_usage() {
+  echo "$SHORTNAME arguments: [ -t tarball ] q2path"
+  echo
+  echo "\t-t tarball       use user-supplied source tarball (default is to"
+  echo "\t                 download)"
+  echo "\t-f               force installation when MD5 sum of tarball is unknown"
+  echo "\tq2path           path to an unpacked Quake 2 directory containing"
+  echo "\t                 mission pack data"
+  exit 1
+}
+
+q2mp_process_opts() {
+  while [ $# -gt 1 ]; do
+    case "$1" in
+      "-t")
+        [ $# -ge 2 ] || q2mp_usage
+        xpath="$2"
+        shift 2
+        ;;
+      "-f")
+        checksum="false"
+        shift
+        ;;
+      *)
+        q2mp_usage
+        ;;
+    esac
+  done
+  [ $# -eq 1 ] || q2mp_usage
+  root=`unravel "$1"`
+  debug "xpath = '$xpath'"
+  debug "checksum = '$checksum'"
+  debug "root = '$root'"
+}
+
+q2mp_build_gameso() {
+  srcball=`unravel "$1"`
+  verify_file "$srcball"
+  cd "$WORKDIR"
+  mkdir "$SHORTNAME"
+  cd "$SHORTNAME"
+  tar --strip-components=1 -xf "$srcball"
+  make -s -j5 >/dev/null # XXX: parameterize
+  verify_file "release/game.so"
+  strip "release/game.so"
+}

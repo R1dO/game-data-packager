@@ -1,0 +1,71 @@
+# vim: set ft=sh:
+SHORTNAME="q2xatrix"
+LONGNAME="Quake II Mission Pack: The Reckoning"
+
+pak0sum=5e2ecbe9287152a1e6e0d77b3f47dcb2 # steam as of ~Oct 2013
+url=http://deponie.yamagi.org/quake2/quake2-xatrix-2.00.tar.xz
+sum=728199ad0038024dd8e20750bc9eb55d
+
+. $LIBDIR/q2mp-common
+
+go() {
+
+  q2mp_prereqs
+
+  checksum="true"
+  xpath=""
+  q2mp_process_opts "$@"
+
+  if [ -z "$xpath" ]; then
+    xpath="$WORKDIR/$SHORTNAME.tar.xz"
+    wget -O "$xpath" "$url"
+  fi
+  if [ "$checksum" = "true" ]; then
+    verify_md5sum "$xpath" "$sum"
+  fi
+  q2mp_build_gameso "$xpath"
+
+  verify_directory "$root"
+  verify_directory "$root/xatrix"
+  verify_file      "$root/xatrix/pak0.pak"
+  for i in idlog logo xin xout xu1 xu2 xu3 xu4; do
+    verify_file "$root/xatrix/video/$i.cin"
+  done
+
+  # slipstream_instsize, slipstream_repack assume this naming
+  DESTDIR="$WORKDIR/slipstream.unpacked"
+
+  mkdir -p "$WORKDIR/DEBIAN" "$DESTDIR/usr/share/doc/quake2-xatrix" \
+    "$DESTDIR/usr/share/games/quake2/xatrix/video"
+
+  # the source code component
+  mv "$WORKDIR/$SHORTNAME/release/game.so" "$DESTDIR/usr/share/games/quake2/xatrix"
+  mv "$WORKDIR/$SHORTNAME/LICENSE" "$DESTDIR/usr/share/doc/quake2-xatrix/LICENSE"
+  rm -rf "$WORKDIR/$SHORTNAME"
+  if [ -f "$WORKDIR/$SHORTNAME.tar.xz" ]; then
+    rm -f "$WORKDIR/$SHORTNAME.tar.xz"
+  fi
+
+  # the data components
+  cp -p "$root/xatrix/pak0.pak" "$DESTDIR/usr/share/games/quake2/xatrix"
+
+  for i in idlog logo xin xout xu1 xu2 xu3 xu4; do
+    cp -p "$root/xatrix/video/$i.cin" "$DESTDIR/usr/share/games/quake2/xatrix/video"
+  done
+
+  ARCH=`dpkg-architecture -qDEB_BUILD_ARCH`
+  echo "Architecture: $ARCH" > "$WORKDIR/DEBIAN/control"
+  cat "$DATADIR/quake2/quake2-xatrix.control" >> "$WORKDIR/DEBIAN/control"
+  cp -p "$DATADIR/quake2/quake2-xatrix.copyright" "$DESTDIR/usr/share/doc/quake2-xatrix/copyright"
+  
+  if [ "" = "$OUTDIR" ]; then
+      OUTFILE="$WORKDIR/out.deb"
+  else
+      OUTFILE=`unravel "$OUTDIR"`"/quake2-xatrix_${GAME_PACKAGE_VERSION}_${ARCH}.deb"
+  fi
+
+  debug "building .deb: $OUTFILE"
+  ( cd "$WORKDIR" && slipstream_instsize )
+  ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
+  rm -rf "$DESTDIR"
+}

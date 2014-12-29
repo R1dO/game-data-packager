@@ -67,6 +67,7 @@ DEBBASE="wolf3d-data-${SUFFIX}_${GAME_PACKAGE_VERSION}_all.deb"
 DEB="$DATADIR/$DEBBASE"
 
 go() {
+	require_program id-shr-extract dynamite
 	verify_args "$@"
 	ZIPFILE=`unravel "$wolf3dzip"`
     [ -e "$ZIPFILE" ] || die "ERROR: '$ZIPFILE' does not exist."
