@@ -1,0 +1,122 @@
+%YAML 1.2
+---
+# This file is not used yet: the YAML-driven code does not support
+# everything it needs. It's just a sketch of how this could look later.
+
+package: quake-registered
+demo_package: quake-shareware
+install_to: usr/share/games/quake
+
+files:
+  id1/pak0.pak_106:
+    install_as: id1/pak0.pak
+    in_demo: true
+    md5: 5906e5998fc3d896ddaf5e6a62e03abb
+
+  # FIXME: is this actually any use?
+  id1/pak0.pak_101:
+    md5: 85fc9cee2035b66290da1e33be2ac86b
+
+  id1/pak1.pak:
+    install: true
+    # the same in 1.06 and 1.01
+    md5: d76b3e5678f0b64ac74ce5e340e6a685
+
+files:
+  q101_int.1:
+    provides:
+    # FIXME: which one is in here?
+    - id1/pak0.pak_FIXME
+    - id1/pak1.pak
+    requires: q101_int.2
+    md5: 752f49131bb3ba832346e873c1bcfdc6
+    unpack:
+      format: cat
+      recurse: q101_int_1+2.exe
+
+  q101_int_1+2.exe:
+    provides:
+    # FIXME: which one is in here?
+    - id1/pak0.pak_FIXME
+    - id1/pak1.pak
+    unpack:
+      format: lha
+
+  q101_int.2:
+    md5: 9ed67b39020575771e29645d977c9216
+
+  quake106.zip:
+    provides:
+    - id1/pak0.pak_106
+    download:
+      idstuff-mirrors:
+        path: quake
+    sha256: ec6c9d34b1ae0252ac0066045b6611a7919c2a0d78a3a66d9387a8f597553239
+    unpack:
+      format: zip
+      recurse: resource.1
+
+  resource.1:
+    provides:
+    - id1/pak0.pak_106
+    unpack:
+      format: lha
+
+addons:
+  quake-music:
+    install_to: usr/share/games/quake/id1/music
+    rip_cd:
+      encoding: vorbis
+      filename_format: track%02d.ogg
+      first_track: 2
+      last_track: 9
+
+  quake-armagon-music:
+    install_to: usr/share/games/quake/hipnotic/music
+    rip_cd:
+      encoding: vorbis
+      filename_format: track%02d.ogg
+      first_track: 2
+      last_track: 9
+
+  quake-dissolution-music:
+    install_to: usr/share/games/quake/rogue/music
+    rip_cd:
+      encoding: vorbis
+      filename_format: track%02d.ogg
+      first_track: 2
+      last_track: 9
+
+  quake-armagon:
+    files:
+      hipnotic/pak0.pak:
+        alternatives:
+        - hipnotic/pak0.pak_cd
+        - hipnotic/pak0.pak_glquake_compatible
+
+      hipnotic/pak0.pak_cd:
+        md5: 0ab83681aaf841c4320269e02941a14a
+
+      hipnotic/pak0.pak_glquake_compatible:
+        # http://speeddemosarchive.com/quake/qdq/movies/sds.html
+        md5: f05b7452ae725e060fb3d14f7731fb00
+
+  quake-dissolution:
+    files:
+      rogue/pak0.pak:
+        alternatives:
+        - rogue/pak0.pak_cd
+        - rogue/pak0.pak_steam
+        - rogue/pak0.pak_both_packs_cd
+
+      rogue/pak0.pak_cd:
+        md5: f8898a483b131de21581656c94f3c1a4
+
+      rogue/pak0.pak_steam:
+        md5: f71428763229bdb373f00a547296efe3
+
+      rogue/pak0.pak_both_packs_cd:
+        md5: c38a4e04219c317cd1b02f386bdfe11f
+
+...
+# vim:set sw=2 sts=2 et:
