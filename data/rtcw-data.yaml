@@ -69,8 +69,6 @@ sources:
 
 files:
   wolf-linux-1.4-full.x86.run:
-    download_manually:
-    - http://returntocastlewolfenstein.filefront.com/file/RTCW_Patch_14_Linux;7450
     size: 73536309
     provides:
     - main/mp_bin.pk3
@@ -93,6 +91,11 @@ files:
       skip: 6135
 
   wolf-linux-1.41b.x86.run:
+    download:
+      idstuff-mirrors:
+        path: wolf/linux
+      freebsd-ports-distfiles-mirrors:
+        path: .
     size: 73940068
     provides:
     - main/mp_bin.pk3
