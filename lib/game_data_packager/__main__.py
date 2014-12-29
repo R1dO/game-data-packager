@@ -41,7 +41,10 @@ def go(argv):
         for arg in args.paths:
             package.consider_file_or_dir(arg)
 
-        package.fill_gaps()
+        if not package.fill_gaps(log=True):
+            # cannot possibly continue
+            sys.exit(1)
+
         package.fill_gaps(download=True)
 
         if not package.fill_dest_dir(os.environ['DESTDIR']):

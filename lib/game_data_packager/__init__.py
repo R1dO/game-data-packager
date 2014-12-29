@@ -455,18 +455,27 @@ class GameDataPackage(object):
             logger.warning('file "%s" does not exist or is not a file or ' +
                     'directory', path)
 
-    def fill_gaps(self, download=False):
+    def fill_gaps(self, download=False, log=True):
+        possible = True
+
         for (filename, wanted) in self.files.items():
             if wanted.install and filename not in self.found:
-                self.fill_gap(wanted, download=download)
+                if not self.fill_gap(wanted, download=download):
+                    possible = False
 
-    def consider_tar_stream(self, name, tar):
+        return possible
+
+    def consider_tar_stream(self, name, tar, provider):
+        should_provide = set(provider.provides)
+
         for entry in tar:
             if not entry.isfile():
                 continue
 
-            for (filename, wanted) in self.files.items():
-                if filename in self.found:
+            for filename in provider.provides:
+                wanted = self.files.get(filename)
+
+                if wanted is None:
                     continue
 
                 if wanted.size is not None and wanted.size != entry.size:
@@ -476,6 +485,11 @@ class GameDataPackage(object):
 
                 for lf in wanted.look_for:
                     if match_path.endswith('/' + lf):
+                        should_provide.discard(filename)
+
+                        if filename in self.found:
+                            continue
+
                         entryfile = tar.extractfile(entry)
 
                         tmp = os.path.join(self.get_workdir(),
@@ -496,6 +510,11 @@ class GameDataPackage(object):
 
                         if not self.use_file(wanted, tmp, hf):
                             os.remove(tmp)
+
+        if should_provide:
+            for missing in sorted(should_provide):
+                logger.error('%s should have provided %s but did not',
+                        name, missing)
 
     def choose_mirror(self, wanted):
         mirrors = []
@@ -525,10 +544,15 @@ class GameDataPackage(object):
         random.shuffle(mirrors)
         return mirrors
 
-    def fill_gap(self, wanted, download=False):
+    def fill_gap(self, wanted, download=False, log=True):
         logger.debug('could not find %s, trying to derive it...', wanted.name)
+        possible = False
+
         for provider_name in self.providers.get(wanted.name, ()):
             provider = self.files[provider_name]
+
+            if provider.download or provider_name in self.found:
+                possible = True
 
             if (download and provider_name not in self.found and
                     provider.download):
@@ -595,7 +619,24 @@ class GameDataPackage(object):
                             found_name,
                             mode='r|' + fmt[4:],
                             fileobj=rf) as tar:
-                        self.consider_tar_stream(found_name, tar)
+                        self.consider_tar_stream(found_name, tar, provider)
+
+        if not possible:
+            if log:
+                logger.error('could not find %s:\n' +
+                        '  expected:\n' +
+                        '    size:   %d bytes\n' +
+                        '    md5:    %s\n' +
+                        '    sha1:   %s\n' +
+                        '    sha256: %s',
+                        wanted.name,
+                        wanted.size,
+                        wanted.md5,
+                        wanted.sha1,
+                        wanted.sha256)
+            return False
+
+        return True
 
     def check_complete(self, log=False):
         # Got everything?
