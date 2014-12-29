@@ -560,7 +560,7 @@ class GameDataPackage(object):
                             break
                         else:
                             os.remove(tmp)
-                    except (Exception, KeyboardInterrupt) as e:
+                    except Exception as e:
                         logger.warning('Failed to download "%s": %s', url,
                                 e)
                         self.download_failed.add(url)
