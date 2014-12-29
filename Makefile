@@ -52,6 +52,7 @@ tests/empty.deb:
 
 clean:
 	rm -f ./out/changelog.gz
+	rm -f ./out/foo ./out/bar ./out/baz
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION) clean
 	make -f doom-common.mk IWAD=doom2 \
 		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION) clean
@@ -59,10 +60,10 @@ clean:
 		LONG="Final Doom: TNT: Evilution" VERSION=$(VERSION) clean
 	make -f doom-common.mk IWAD=plutonia \
 		LONG="Final Doom: The Plutonia Experiment" VERSION=$(VERSION) clean
-	make -f doom-common.mk IWAD=heretic VERSION=$(VERSION) \
+	make -f doom-common.mk IWAD=heretic GAME=heretic VERSION=$(VERSION) \
 		CONTROLIN=heretic/DEBIAN/control.in \
 		LONG="Heretic: Shadow of the Serpent Riders" clean
-	make -f doom-common.mk IWAD=hexen VERSION=$(VERSION) \
+	make -f doom-common.mk IWAD=hexen GAME=hexen VERSION=$(VERSION) \
 		CONTROLIN=hexen/DEBIAN/control.in \
 		LONG="Hexen: Beyond Heretic" clean
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
