@@ -35,3 +35,8 @@ class TemporaryUmask(object):
 
     def __exit__(self, et, ev, tb):
         os.umask(self.saved_mask)
+
+def mkdir_p(path):
+    if not os.path.isdir(path):
+        with TemporaryUmask(0o022):
+            os.makedirs(path)

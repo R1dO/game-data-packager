@@ -29,8 +29,11 @@ def go(argv):
             metavar='DIRECTORY|FILE')
     args = parser.parse_args(argv[1:])
 
-    with GameDataPackage(argv[0], datadir=os.environ['DATADIR'],
-            workdir=os.environ['WORKDIR']) as package:
+    with GameDataPackage(argv[0],
+            datadir=os.environ['DATADIR'],
+            workdir=os.environ['WORKDIR'],
+            etcdir=os.environ['ETCDIR'],
+            ) as package:
 
         if args.repack:
             args.paths.insert(0, '/' + package.install_to)
@@ -39,8 +42,7 @@ def go(argv):
             package.consider_file_or_dir(arg)
 
         package.fill_gaps()
-
-        # FIXME: try to download any missing files and do another extract pass
+        package.fill_gaps(download=True)
 
         if not package.fill_dest_dir(os.environ['DESTDIR']):
             sys.exit(1)

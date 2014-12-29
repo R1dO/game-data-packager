@@ -21,7 +21,14 @@ gdp_data_driven () {
         shift
     fi
 
+    ETCDIR=/etc/game-data-packager
+
+    if [ "$0" = "./game-data-packager" ]; then
+        ETCDIR="./etc"
+    fi
+
     (
+    export ETCDIR
     export SHORTNAME
     export DATADIR
     export DESTDIR
@@ -64,5 +71,6 @@ gdp_data_driven () {
     ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
 
     rm -f "$WORKDIR/DO-NOT-COMPRESS"
+    rm -fr "$WORKDIR/tmp"
     rm -fr "$DESTDIR"
 }

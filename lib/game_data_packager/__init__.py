@@ -22,15 +22,17 @@ import hashlib
 import io
 import logging
 import os
+import random
 import re
 import shutil
 import subprocess
 import tarfile
 import tempfile
+import urllib.request
 
 import yaml
 
-from .util import TemporaryUmask
+from .util import TemporaryUmask, mkdir_p
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
@@ -115,7 +117,7 @@ class WantedFile(HashedFile):
         super(WantedFile, self).__init__(name)
         self.distinctive_name = True
         self.distinctive_size = False
-        self.downloadable = False
+        self.download = None
         self.install = False
         self._install_as = None
         self._look_for = []
@@ -161,7 +163,7 @@ class WantedFile(HashedFile):
         return {
             'distinctive_name': self.distinctive_name,
             'distinctive_size': self.distinctive_size,
-            'downloadable': self.downloadable,
+            'download': self.download,
             'install': self.install,
             'install_as': self.install_as,
             'look_for': list(self.look_for),
@@ -173,10 +175,16 @@ class WantedFile(HashedFile):
         }
 
 class GameDataPackage(object):
-    def __init__(self, name, datadir='/usr/share/games/game-data-packager',
+    def __init__(self,
+            name,
+            datadir='/usr/share/games/game-data-packager',
+            etcdir='/etc/game-data-packager',
             workdir=None):
         # The name of the binary package
         self.name = name
+
+        # game-data-packager's configuration directory
+        self.etcdir = etcdir
 
         # game-data-packager's data directory.
         self.datadir = datadir
@@ -206,6 +214,9 @@ class GameDataPackage(object):
         # a matching file on disk.
         # { 'baseq3/pak1.pk3' => '/usr/share/games/quake3/baseq3/pak1.pk3' }
         self.found = {}
+
+        # Failed downloads
+        self.download_failed = set()
 
         # Where we install files.
         # For instance, if this is 'usr/share/games/quake3' and we have
@@ -272,6 +283,7 @@ class GameDataPackage(object):
         if self.workdir is None:
             self.workdir = tempfile.mkdtemp(prefix='gdptmp.')
             self._cleanup_dirs.add(self.workdir)
+        return self.workdir
 
     def to_yaml(self):
         files = {}
@@ -303,7 +315,7 @@ class GameDataPackage(object):
             for k in (
                     'distinctive_name',
                     'distinctive_size',
-                    'downloadable',
+                    'download',
                     'install',
                     'install_as',
                     'look_for',
@@ -372,21 +384,25 @@ class GameDataPackage(object):
     def consider_file(self, path, really_should_match_something):
         match_path = '/' + path.lower()
 
+        if really_should_match_something:
+            logger.debug('considering %s', path)
+            hashes = HashedFile.from_file(path, open(path, 'rb'))
+        else:
+            hashes = None
+
         for wanted in self.files.values():
             for lf in wanted.look_for:
                 if match_path.endswith('/' + lf):
-                    self.use_file(wanted, path, None)
+                    self.use_file(wanted, path, hashes)
                     if wanted.distinctive_name:
                         return
 
             if wanted.distinctive_size:
                 size = os.path.getsize(path)
                 if wanted.size == size:
-                    self.use_file(wanted, path, None)
+                    self.use_file(wanted, path, hashes)
 
-            if really_should_match_something:
-                hashes = HashedFile.from_file(path, open(path, 'rb'))
-
+            if hashes is not None:
                 if hashes.matches(wanted):
                     self.use_file(wanted, path, hashes)
                     return
@@ -402,11 +418,14 @@ class GameDataPackage(object):
                 for fn in filenames:
                     path = os.path.join(dirpath, fn)
                     self.consider_file(path, False)
+        else:
+            logger.warning('file "%s" does not exist or is not a file or ' +
+                    'directory', path)
 
-    def fill_gaps(self):
+    def fill_gaps(self, download=False):
         for (filename, wanted) in self.files.items():
             if wanted.install and filename not in self.found:
-                self.fill_gap(wanted)
+                self.fill_gap(wanted, download=download)
 
     def consider_tar_stream(self, name, tar):
         for entry in tar:
@@ -429,7 +448,7 @@ class GameDataPackage(object):
                         tmp = os.path.join(self.get_workdir(),
                                 'tmp', wanted.name)
                         tmpdir = os.path.dirname(tmp)
-                        os.makedirs(tmpdir)
+                        mkdir_p(tmpdir)
 
                         wf = open(tmp, 'wb')
                         hf = HashedFile.from_file(
@@ -439,11 +458,75 @@ class GameDataPackage(object):
                         if not self.use_file(wanted, tmp, hf):
                             os.remove(tmp)
 
-    def fill_gap(self, wanted):
+    def choose_mirror(self, wanted):
+        mirrors = []
+        for mirror_list, details in wanted.download.items():
+            try:
+                f = open(os.path.join(self.etcdir, mirror_list))
+                for line in f:
+                    url = line.strip()
+                    if url.startswith('#'):
+                        continue
+                    if details.get('path', '.') != '.':
+                        if not url.endswith('/'):
+                            url = url + '/'
+                        url = url + details['path']
+                    if not url.endswith('/'):
+                        url = url + '/'
+                    url = url + details.get('name', wanted.name)
+                    mirrors.append(url)
+            except:
+                logger.warning('Could not open mirror list "%s"', mirror_list,
+                        exc_info=True)
+        if not mirrors:
+            logger.error('Could not select a mirror for "%s"', wanted.name)
+            return []
+        random.shuffle(mirrors)
+        return mirrors
+
+    def fill_gap(self, wanted, download=False):
         logger.debug('could not find %s, trying to derive it...', wanted.name)
         for provider_name in self.providers.get(wanted.name, ()):
+            provider = self.files[provider_name]
+
+            if (download and provider_name not in self.found and
+                    provider.download):
+                logger.debug('trying to download %s to provide %s...',
+                        provider.name, wanted.name)
+                urls = self.choose_mirror(provider)
+                for url in urls:
+                    if url in self.download_failed:
+                        logger.debug('... no, it already failed')
+                        continue
+
+                    logger.debug('... %s', url)
+                    tmp = None
+
+                    try:
+                        rf = urllib.request.urlopen(url)
+                        if rf is None:
+                            continue
+
+                        tmp = os.path.join(self.get_workdir(),
+                                'tmp', provider.name)
+                        tmpdir = os.path.dirname(tmp)
+                        mkdir_p(tmpdir)
+                        wf = open(tmp, 'wb')
+                        hf = HashedFile.from_file(url, rf, wf)
+                        wf.close()
+
+                        if self.use_file(provider, tmp, hf):
+                            break
+                        else:
+                            os.remove(tmp)
+                    except Exception as e:
+                        logger.warning('Failed to download "%s": %s', url,
+                                e)
+                        self.download_failed.add(url)
+                        if tmp is not None:
+                            os.remove(tmp)
+
             if provider_name in self.found:
-                provider = self.files[provider_name]
                 found_name = self.found[provider_name]
                 logger.debug('trying provider %s found at %s',
                         provider_name, found_name)
@@ -453,7 +536,7 @@ class GameDataPackage(object):
                     tmp = os.path.join(self.get_workdir(),
                             'tmp', wanted.name)
                     tmpdir = os.path.dirname(tmp)
-                    os.makedirs(tmpdir)
+                    mkdir_p(tmpdir)
 
                     rf = open(found_name, 'rb')
                     contents = rf.read()
@@ -502,7 +585,7 @@ class GameDataPackage(object):
             return False
 
         docdir = os.path.join(destdir, 'usr/share/doc', self.name)
-        os.makedirs(docdir)
+        mkdir_p(docdir)
         shutil.copyfile(os.path.join(self.datadir, self.name + '.copyright'),
                 os.path.join(docdir, 'copyright'))
         shutil.copyfile(os.path.join(self.datadir, 'changelog.gz'),
@@ -513,7 +596,7 @@ class GameDataPackage(object):
         # The shell script code puts slipstream.unpacked in workdir.
         assert destdir == self.workdir + '/slipstream.unpacked'
         debdir = os.path.join(self.workdir, 'DEBIAN')
-        os.makedirs(debdir)
+        mkdir_p(debdir)
         shutil.copyfile(os.path.join(self.datadir, self.name + '.control'),
                 os.path.join(debdir, 'control'))
 
@@ -532,7 +615,7 @@ class GameDataPackage(object):
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)
                 if not os.path.isdir(copy_to_dir):
-                    os.makedirs(copy_to_dir)
+                    mkdir_p(copy_to_dir)
                 # Use cp(1) so we can make a reflink if source and
                 # destination happen to be the same btrfs volume
                 subprocess.check_call(['cp', '--reflink=auto', copy_from,
