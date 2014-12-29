@@ -1,0 +1,65 @@
+%YAML 1.2
+---
+package: jedi-academy-data
+
+install_files_from_cksums: |
+  # Jedi Academy CD1 GameData/GameData or installation
+  3585517488 561806019 base/assets0.pk3
+  # Jedi Academy CD2 GameData/GameData or installation
+  2879468840 652804510 base/assets1.pk3
+  1436095349 1116384 base/assets2.pk3
+  # Jedi Academy patch 1.04 (self-extracting patch, no known way to extract
+  # programatically)
+  3247293709 9282026 base/assets3.pk3
+
+md5sums: |
+  e17ee714ce9632f401960abb1b22fa4a  base/assets0.pk3
+  3f47006dde61f171769666f31065a34c  base/assets1.pk3
+  961ad372c3cd73075d70ba71a497b89e  base/assets2.pk3
+  71c2edf5a30135d4aa921bf6259946ee  base/assets3.pk3
+
+sha1sums: |
+  d2f73d9c53b20f1d7c8e2b778c3c5255272223b6  base/assets0.pk3
+  6163b1139750209a9afd5c7ad71086a759acc286  base/assets1.pk3
+  d1d140b1559b6e3982ce6cacac9cbf3eea5af518  base/assets2.pk3
+  e5766e676f466c5db9d8ec4c92fae1bb4098d000  base/assets3.pk3
+
+sha256sums: |
+  ffea9e7489bad7175411d122e0652b4272efb67c0e71805d1f4d8058084b5939  base/assets0.pk3
+  5f196826e226b1115bd46f54697334ca970c8261dd76864c1600179ff38e4c4f  base/assets1.pk3
+  8f21cdd89afe78fdf916d103117f4b2621c6f4781dee003716057dc705ef98af  base/assets2.pk3
+  0f542dccb6858fc10a8083ca71f581c9eba93173386e03a9e5e05d3a56118f78  base/assets3.pk3
+
+# Not used yet
+sha512sums: |
+  557091ce0afefe15eadacb55320b863ea509bf36b73e1e3ab740107dc7536a3fd74613c40b9df63f2bee153fbcfe6cddf3d32e62f4375d6d22d56d2d688182fd  base/assets0.pk3
+  26247582cdd31d2d6db913ab772b4b3d3c87b7030a6bcad31734e7337cddd49432d1d8d605df016ac8cdaa8fb23fc3de9c4bb536c966dd298d6554b5f0029e06  base/assets1.pk3
+  0a1fe567b03f8c5bbf046aab9efa6e89ab8e491a9a07fbfbf8e9c6ba0b1e4a990dd4102cdbeef6c20b14579a82b5a62876f76cf7380eebaae7903032f9c81beb  base/assets2.pk3
+  69733cf79508243ae9bd99b09e0dc059ad67c28d3abeb77a2f02233ddb476f0eaaa683750649cdf82bcd59b92dcfc87b8e170361257ad71c9521e7b9d825235a  base/assets3.pk3
+
+# Not used; notes for future expansion
+todo: |
+  # Bonus maps (extract as zip file)
+  3332178963 14191104 jabonusmaps.exe
+  b58bd4b6ee9ecf32bf36c06468627675  jabonusmaps.exe
+  0551652ccec96782bf01bbb269ab671133c45f1e  jabonusmaps.exe
+  46efce45525104a3bb12746fe81386570c2ee10bd004d92ab89d8e64007cd149  jabonusmaps.exe
+  2890259980 14328834 base/bonus.pk3
+  85b76849fea33bea2f37727e8a33e373  base/bonus.pk3
+  a39274d4b7303dd38775be53266eca499a4532ec  base/bonus.pk3
+  3df3566aa1f29e71c64f5a67924ea8bd2b6dd03d5b6006e1807e6a80bc6113c5  base/bonus.pk3
+  561f4e6b44fb95da3b9b2571ad293d18a0c041824474ec78ed4da1d63207aea78f0fd61354ab0814ac54e31795866c7e5af9180c18a64dc933e8bd6382a037c6  base/bonus.pk3
+
+  # Siege Destroyer (extract as zip file)
+  3864413627 5945344 jasiegedestroyer.exe
+  ea334db95f4436ceab5c6670d1695f67  jasiegedestroyer.exe
+  b422049effcda42633b953628dd342187ca0a4f1  jasiegedestroyer.exe
+  1479d82f2664e5bead9e0a17ebbab9ed3b8f04d5c93ea18cf2cc7786ddf21d43  jasiegedestroyer.exe
+  4222768269 5948070 base/siege_destroyer.pk3
+  31d6b95740930ce4b8f1da7d7326c7aa  base/siege_destroyer.pk3
+  9d70ccb1cae8e920bce7184fbf457f072074c95b  base/siege_destroyer.pk3
+  0083d99038e015240119ffbf2c22a0205f52524ac44d0a56478db5c2c3452c60  base/siege_destroyer.pk3
+  f29138ded6ae48c20fe24ace7f92a2e203e9c69a83804ddad8b40373fb195eb8b99a4155d805a644a65394e436dab19a97040a8ebd970bf016a7e7b4f546485f  base/siege_destroyer.pk3
+
+...
+# vim:set sw=2 sts=2 et:

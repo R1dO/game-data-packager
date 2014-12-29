@@ -1,0 +1,204 @@
+%YAML 1.2
+---
+package: rtcw-data
+
+# cksums(1) is pretty useless as a checksumming tool, but it's a convenient
+# way to get exact file sizes in bytes (second column), which are a nice
+# heuristic for identifying files
+install_files_from_cksums: |
+  3201065489 12 main/autoexec.cfg
+  1738795795 760207 main/mp_bin.pk3
+  4046220680 63211149 main/mp_pak0.pk3
+  980150272 4449596 main/mp_pak1.pk3
+  1142316069 1118 main/mp_pak2.pk3
+  1777286697 159762 main/mp_pak3.pk3
+  2440657300 7799 main/mp_pak4.pk3
+  160211286 167075 main/mp_pak5.pk3
+  3845249867 3485134 main/mp_pakmaps0.pk3
+  3484376457 3765933 main/mp_pakmaps1.pk3
+  27684852 7408542 main/mp_pakmaps2.pk3
+  1630043139 10780146 main/mp_pakmaps3.pk3
+  74045012 24171802 main/mp_pakmaps4.pk3
+  26592339 20024689 main/mp_pakmaps5.pk3
+  3620415895 10080181 main/mp_pakmaps6.pk3
+  3545821488 315823656 main/pak0.pk3
+  1842064398 164376 main/scripts/translation.cfg
+  2543414594 293887431 main/sp_pak1.pk3
+  136047737 11026123 main/sp_pak2.pk3
+  868477447 152544 main/sp_pak3.pk3
+  3497089350 15532040 main/sp_pak4.pk3
+
+# Files listed under install_files are assumed to have install: true
+install_files:
+  main/scripts/translation.cfg_141_unix:
+    distinctive_name: false
+    look_for:
+    - main/scripts/translation.cfg
+    install_as: main/scripts/translation.cfg
+    size: 159375
+    sha256: 301670fbd41eb6797b02cc5ba8ae5e221eeaef5de3280e6e2db390c7a29ddc8f
+    sha1: 7994040e61a234e284c730287ea6d098878cbfea
+    md5: f7b2003ef7499f2a6e750c2925c870ad
+
+  # optional files aren't supported yet
+  #main/rotate.cfg:
+  #  size: 9559
+  #  optional: true
+
+# Not used yet. FIXME: use this to make help text?
+sources:
+  "a Return to Castle Wolfenstein installation":
+    provides:
+    - main/autoexec.cfg
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/pak0.pk3
+    - main/sp_pak1.pk3
+    - main/sp_pak2.pk3
+    help: |
+    Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
+    or install it from Steam <http://store.steampowered.com/app/9010/>,
+    and tell game-data-packager the installation directory.
+
+    Steam installations would typically be in:
+    C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein
+
+files:
+  wolf-linux-1.4-full.x86.run:
+    download_manually:
+    - http://returntocastlewolfenstein.filefront.com/file/RTCW_Patch_14_Linux;7450
+    size: 73536309
+    provides:
+    - main/mp_bin.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/rotate.cfg
+    - main/scripts/translation.cfg_141_unix
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    unpack:
+      format: tar.gz
+      skip: 6135
+
+  wolf-linux-1.41b.x86.run:
+    size: 73940068
+    provides:
+    - main/mp_bin.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/rotate.cfg
+    - main/scripts/translation.cfg_141_unix
+    - main/sp_pak2.pk3
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    unpack:
+      format: tar.gz
+      skip: 8796
+
+  main/scripts/translation.cfg_141_windows:
+    look_for:
+    - main/scripts/translation.cfg
+    distinctive_name: false
+    size: 164376
+    md5: ff148e1367d0459d7855d37e7b8d80bc
+    sha1: a823b49cb474b507d7461e9500ffa769d2b87a53
+    sha256: 12653cad709eee7d1015060723b4f7da295c9ea4d570e295237dabec2bc3a752
+    provides:
+    - main/scripts/translation.cfg_141_unix
+    unpack:
+      format: dos2unix
+
+md5sums: |
+  d0c13dcf44a7baa7741af50e09844371  main/autoexec.cfg
+  7651d02fe51fc8a949536f3e0cfa8dd6  main/mp_bin.pk3
+  62641cffd9a8ad0f62cc1cca867d51f8  main/mp_pak0.pk3
+  22b972974f499a237c96a2200b0d019e  main/mp_pak1.pk3
+  30f29ffa81748a957e0441af8c14cb56  main/mp_pak2.pk3
+  fdc00dfd72b888e92a4387e1933826e4  main/mp_pak3.pk3
+  c5f76bbde262eba577a00bebe9cd4f8f  main/mp_pak4.pk3
+  d17df62d6c71078ed137aefc69d80f30  main/mp_pak5.pk3
+  f2d361a0082ed9bc1e26d2327b4f22db  main/mp_pakmaps0.pk3
+  d1856aa9bc62f719a400428b9ec27ebb  main/mp_pakmaps1.pk3
+  a0ee8714c6f7ee72680293778c22d6ee  main/mp_pakmaps2.pk3
+  01bb7c4fb3b11273d75ae658fb4de0cc  main/mp_pakmaps3.pk3
+  a39525809f7a0780f5546063dad1e5d1  main/mp_pakmaps4.pk3
+  bb24fb011b0f4b84335c66a869d1ab1c  main/mp_pakmaps5.pk3
+  397e0b48673a1a8e0ec25eb0f3ccae9d  main/mp_pakmaps6.pk3
+  ce92b11df889cb0a045762bb5fd7cde5  main/pak0.pk3
+  a0d3fe956f85f40c8efd6babe0d09832  main/sp_pak1.pk3
+  330b272d5261fe19fcf3c3fbc943c7f3  main/sp_pak2.pk3
+  cf25d6731ed29c80303febbb177aa585  main/sp_pak3.pk3
+  4223cc6588594ec0ceee186f0e73a6e9  main/sp_pak4.pk3
+  87c3ebf106b107b60b472863aeec20c4  wolf-linux-1.4-full.x86.run
+  2aa37968aff19d665ed6c001773b2de3  wolf-linux-1.41b.x86.run
+
+
+sha1sums: |
+  e0422b4730daf306b428d419883d9147c6e2a946  main/autoexec.cfg
+  cadb71b3f28479a9a38d6380fe9479eb0c4192ff  main/mp_bin.pk3
+  6438fc8bb0987917513b2b210471db33fb80ff0d  main/mp_pak0.pk3
+  b55ea48bee2653ca89743380083d9a330908575e  main/mp_pak1.pk3
+  08c17a1ad1316f4992185781c2b434310d7641a0  main/mp_pak2.pk3
+  bc2b6aa3a992259f2af056c0fc942d9453713e95  main/mp_pak3.pk3
+  08c197f2d676cbdbd5a43583875ef5cc659d637d  main/mp_pak4.pk3
+  f490d7a8cbdbbe6385d26c7ded1355f8df907666  main/mp_pak5.pk3
+  33bba665ad19deca5259c74686c4b340b14be70a  main/mp_pakmaps0.pk3
+  1841abc899b68efe700f03218dc7c83f0c38c014  main/mp_pakmaps1.pk3
+  5b0dc5ed60aefabe887334974032a1857c51efdc  main/mp_pakmaps2.pk3
+  17923226a10e2fdd75ef97537e1d47f2fca2dd00  main/mp_pakmaps3.pk3
+  078188abfe06e301e582586ca888134dd97b9b85  main/mp_pakmaps4.pk3
+  c118c02922f8fd7d281f3fcfd94778317839fed1  main/mp_pakmaps5.pk3
+  abf1ff047a1cc6f92c9d24164991e5a49c98d0f8  main/mp_pakmaps6.pk3
+  917685b93cd3430ec9aa41dcbabb7063c6b2a785  main/pak0.pk3
+  4fe77f53b7effd54a1576212983b9bb9b36e50ed  main/sp_pak1.pk3
+  feee8ecadb551a769dfb1ee97eff4c7ed7f93495  main/sp_pak2.pk3
+  94539eded69eb99a86d752808c5e029d5915fde7  main/sp_pak3.pk3
+  76b1074a350616bd8942005c4eabda06199e81f2  main/sp_pak4.pk3
+  576e749167ae310a65443e4215401030d6e87685  wolf-linux-1.4-full.x86.run
+  176da1567107eeec3ec3dc14a6b389c47e1303b5  wolf-linux-1.41b.x86.run
+
+sha256sums: |
+  ca3ca09d79a755262cb8c9766d457a2c72ab0258e8f8cec469fddd686ea488ef  main/autoexec.cfg
+  bb6ee2302de55cd35a3145b790e43958fa92a98d3494b9fa96b457d030b0c05d  main/mp_bin.pk3
+  c0e090e7b4245313bea64b5fb20b24d69786e593716cfe6bf85ee9b4f3c794b3  main/mp_pak0.pk3
+  248ff7c6a4c12f3fc08e0bb73a0602ffdb2e31c4a4c50929d76fa5f814cbf974  main/mp_pak1.pk3
+  0a9142be2539427189cc9b31d5af188298ce3e4c8f06d752e1809d22046b7b03  main/mp_pak2.pk3
+  ad7705f8c05154f6e009f29d1a7e3eb5bf9cb26cb9035d9c55640ec02cb14692  main/mp_pak3.pk3
+  61bf3e778d2777895ce7c0c7afe6df97f2521a3e5ed054c04346ea5ccdcac0aa  main/mp_pak4.pk3
+  8defe8227bd345c485bac98f8c1191c2360d0c784953e9c38a81d245eb1901b9  main/mp_pak5.pk3
+  2e9cfdc505587dc7e7059e3188b9a1b4ceba75decfa7578c3b2a73dbb0d94a93  main/mp_pakmaps0.pk3
+  a907dc0caf8ab4284dc8ba8de04a11ec8472a50f861998994c834ff1a4781d9a  main/mp_pakmaps1.pk3
+  d2cc0a7a762ad5f1ec3523ff79798cd7d732ffe8f29e6ac7df66f74319e85eb6  main/mp_pakmaps2.pk3
+  524ecd9053d4c8f8e27d4bc4c04504fc1a1f3a29dd8299c8b38909db3c51e6ac  main/mp_pakmaps3.pk3
+  1357a12e57634dac59cbe70a5984af85a43e7db5aff930d05c8ee42dfcefded8  main/mp_pakmaps4.pk3
+  85cc0e8358a26601211625a9600ca47c126e4a38cca0bac60d7465ffb5ccadfe  main/mp_pakmaps5.pk3
+  fcdb3754ca4e9f60b3086c8461b26160dd8de7f5e94c04100a2eb6f9519abca2  main/mp_pakmaps6.pk3
+  1dfcfc3187ba09fe32cd8a7921a09cd15dd789816186c89b11e5e0d954c55e6c  main/pak0.pk3
+  66785d612f88a19c3bb5fd24f84d89b240375a28550a79039dfb6afae865ec9a  main/sp_pak1.pk3
+  eca64ea0fda6edd653865e2eb768f152d38abc8b89941aa954ed74fa36928796  main/sp_pak2.pk3
+  936437413956f88b9e5d548ccab9b51b8c8b9754f8f8e13ee7b910813a24d0f9  main/sp_pak3.pk3
+  5532801005eaf2d74fe9098dc638abdb8284225c293cee3573ffa9b6c2edd8fc  main/sp_pak4.pk3
+  de2b0728ef9286eefb69a65c0badb260319d8bd806ecd3903e915b0580eb2f12  wolf-linux-1.4-full.x86.run
+  2921425c1b429147c1bc6f0c6a8664bec502ae86a2d6bccfaa1162f75dce89f3  wolf-linux-1.41b.x86.run
+
+...
+# vim:set sw=2 sts=2 et:

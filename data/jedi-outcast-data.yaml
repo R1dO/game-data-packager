@@ -1,0 +1,43 @@
+%YAML 1.2
+---
+package: jedi-outcast-data
+
+# cksums(1) is pretty useless as a checksumming tool, but it's a convenient
+# way to get exact file sizes in bytes (second column), which are a nice
+# heuristic for identifying files
+install_files_from_cksums: |
+  # Jedi Outcast CD-ROM or installation
+  3463813793 534984353 base/assets0.pk3
+  3343752168 86950705 base/assets1.pk3
+  # Jedi Outcast patch 1.01 (self-extracting patch, no known way to extract
+  # programatically)
+  571340734 3764210 base/assets2.pk3
+  2217997310 550829 base/assets5.pk3
+
+md5sums: |
+  bbd8243669d551c910cfe60ccb4e5edd  base/assets0.pk3
+  e91efd51a8883b1c2590e8be7705877f  base/assets1.pk3
+  88369ad9f959cbe64a6d948f08305d20  base/assets2.pk3
+  b7c34a06029798e178c075216ea37a9d  base/assets5.pk3
+
+sha1sums: |
+  a8729608364c0ef9fa54173c947f070ecb1fae61  base/assets0.pk3
+  a424a76549379a118a1ecb6ea28c111abb1dc351  base/assets1.pk3
+  34925afdfddd1c69763ba5ccc404c9cfeb2d224c  base/assets2.pk3
+  17d9233a04201ca3edb4afd7f50a6a77e48910f3  base/assets5.pk3
+
+sha256sums: |
+  e8e466f219bb2faed536021bb0d10aa6b7f5cd687302aa43080da2debdae307c  base/assets0.pk3
+  c3a9aeaf09c93e57847290e7e5cd6c1a071a560045fa8c5e8c6df3688df841c1  base/assets1.pk3
+  aa5bf361f7623f0210473021d73fa1e6c6997f7a5cceb6af19fce951edd43368  base/assets2.pk3
+  7dc6bc7e599a32cc882fb2a9b741065f792ef39a129302fbd04d72ef77ee7a07  base/assets5.pk3
+
+# Not used yet
+sha512sums: |
+  8b35c3b81ef42bf1bff80512146e5fbc2eb78fffcf824ba0355d165a382569bb9c3ec83114136c0ee1a7d4430c763c4cbb62ee5eba7e7fbe01ba33ad8d1aaad2  base/assets0.pk3
+  9d122b3b08a26a2697c761a1060189c946afefd027033e71f17cf5ef4dee8e7f73533a220626431a27af551bfac7d35fbb0af47b670cd917e050f9639fa17f21  base/assets1.pk3
+  bb67a18587f090a456582902dae3e5eab346bba4bbba44d38b19ab4b03aca6f9d625e0b15280e0b5d08bfec7ca7239b99b99fd76b8ddef5394f104342e9b204a  base/assets2.pk3
+  fd37d9e3de35fb29e539276db890186bd14d4975d1e19c23ec0f73ff2a3a1e5c65639b58633889f35442f67e4a54a8df5e5052333af5c2b7dcdee6f36fe1260f  base/assets5.pk3
+
+...
+# vim:set sw=2 sts=2 et:

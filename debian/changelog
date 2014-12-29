@@ -12,6 +12,17 @@ game-data-packager (38) UNRELEASED; urgency=low
   [ Alexandre Detiste ]
   * Add support for the shareware version of Tyrian
 
+  [ Simon McVittie ]
+  * Add a prototype of data-driven packaging using Python 3 and YAML.
+  * Add support for gathering PK3 files for Star Wars Jedi Knight II:
+    Jedi Outcast and its sequel Star Wars Jedi Knight: Jedi Academy,
+    for use with the OpenJK engine. A fully patched installation using
+    Windows or Wine is required: we do not know how to extract files
+    from the patches or the JK2 installer.
+  * Add support for gathering PK3 and related files from Return to
+    Castle Wolfenstein. Automatically downloading the patch is not
+    yet implemented.
+
  -- Fabian Greffrath <fabian+debian@greffrath.com>  Mon, 25 Nov 2013 11:24:57 +0100
 
 game-data-packager (37) unstable; urgency=low

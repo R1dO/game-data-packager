@@ -3,7 +3,14 @@ Section: contrib/games
 Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Uploaders: Simon McVittie <smcv@debian.org>, Jonathan Dowland <jmtd@debian.org>
-Build-Depends: debhelper (>= 8.0.0), fakeroot, m4, libdynamite-dev
+Build-Depends:
+ debhelper (>= 8.0.0),
+ fakeroot,
+ libdynamite-dev,
+ m4,
+ pyflakes,
+ python3,
+ python3-yaml,
 Standards-Version: 3.9.4
 Vcs-Git: git://anonscm.debian.org/pkg-games/game-data-packager
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/game-data-packager.git
@@ -11,6 +18,9 @@ Homepage: http://wiki.debian.org/Games/GameDataPackager
 
 Package: game-data-packager
 Depends: fakeroot, ${misc:Depends}, ${shlib:Depends},
+# for jedi-*, rtcw, and hopefully more soon
+	python3,
+	python3-yaml,
 # for quake, quake2, rott, wolf3d
 	unzip | p7zip-full,
 # for wolf3d

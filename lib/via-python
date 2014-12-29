@@ -1,0 +1,68 @@
+# vim:set ft=sh sw=4 sts=4 et:
+
+# Data-driven game-data-packager code for Jedi Outcast, Jedi Academy,
+# Return to Castle Wolfenstein; hopefully generalizable to others.
+#
+# Must define SHORTNAME, LONGNAME, deb first.
+
+sum="sha256"
+
+copyin () {
+    install -d `dirname "$2"`
+    install -m644 "$1" "$2"
+}
+
+gdp_data_driven () {
+    # slipstream_instsize, slipstream_repack assume this naming
+    DESTDIR="$WORKDIR/slipstream.unpacked"
+
+    if [ "$*" = "" ]; then
+        set _ --help
+        shift
+    fi
+
+    (
+    export SHORTNAME
+    export DATADIR
+    export DESTDIR
+    export WORKDIR
+    PYTHONPATH="$LIBDIR"
+    export PYTHONPATH
+    if [ -n "${DEBUG:-}" ]; then
+        export DEBUG
+    fi
+    python3 -m game_data_packager "$deb" "$@"
+    exit $?
+    )
+
+    if [ "$?" != 0 ]; then
+        exit $?
+    fi
+
+    # It had better have a /usr
+    if ! [ -e "$DESTDIR/usr" ]; then
+        exit 1
+    fi
+
+    # We still do this bit in shell script, for now
+
+    if [ "" = "$OUTDIR" ]; then
+        OUTFILE="$WORKDIR/out.deb"
+    else
+        OUTFILE="$(unravel "$OUTDIR")/${deb}_${GAME_PACKAGE_VERSION}_all.deb"
+    fi
+
+    ( cd "$DESTDIR" && find usr -type f -print0 | xargs -0 md5sum ) > \
+        "$WORKDIR/DEBIAN/md5sums"
+
+    if [ -e "$WORKDIR/DO-NOT-COMPRESS" ]; then
+        COMPRESS=no
+    fi
+
+    debug "building .deb: $OUTFILE"
+    ( cd "$WORKDIR" && slipstream_instsize )
+    ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
+
+    rm -f "$WORKDIR/DO-NOT-COMPRESS"
+    rm -fr "$DESTDIR"
+}

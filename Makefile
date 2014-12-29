@@ -5,6 +5,13 @@ LDLIBS = -ldynamite
 default: $(DIRS)
 	gzip -c9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
+	install -m644 data/*.yaml out/
+	install -m644 data/*.copyright out/
+	set -e; for x in data/*.control.m4; do \
+		o="out/$${x#data/}"; \
+		o="$${o%.m4}"; \
+		m4 -DVERSION=${VERSION} < $$x > $$o; \
+	done
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION)
 	make -f doom-common.mk IWAD=doom2 \
 		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION)
@@ -53,6 +60,9 @@ tests/empty.deb:
 clean:
 	rm -f ./out/changelog.gz
 	rm -f ./out/foo ./out/bar ./out/baz
+	rm -f ./out/*.control
+	rm -f ./out/*.copyright
+	rm -f ./out/*.yaml
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION) clean
 	make -f doom-common.mk IWAD=doom2 \
 		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION) clean
@@ -95,5 +105,6 @@ clean:
 
 check:
 	./t/verify-md5sum-alternatives.sh
+	pyflakes3 lib/game_data_packager/*.py || :
 
 .PHONY: default clean check

@@ -1,0 +1,39 @@
+# vim:set ft=sh sw=4 sts=4 et:
+
+SHORTNAME=rtcw
+LONGNAME="Return to Castle Wolfenstein"
+deb=rtcw-data
+basedir="/usr/share/games/rtcw"
+
+. $LIBDIR/via-python
+
+usage() {
+       printf "\
+Usage:\n\
+\n\
+game-data-packager ${SHORTNAME} [DIRECTORY|PATCH ...]\n\
+\n\
+   DIRECTORY should be any of these:\n\
+\n\
+    * an installation of Return to Castle Wolfenstein from Windows or Wine\n\
+\n\
+    * an installation of Return to Castle Wolfenstein from Steam
+      (<http://store.steampowered.com/app/9010/>)\n\
+      via Windows or Wine, typically found in \n\
+      C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein\n\
+\n\
+    PATCH is wolf-linux-1.4-full.x86.run (71 MiB) and is not required if a\n\
+    Steam installation is provided). It will be downloaded automatically\n\
+    if necessary. sha256:\n\
+    de2b0728ef9286eefb69a65c0badb260319d8bd806ecd3903e915b0580eb2f12\n\
+\n\
+game-data-packager ${SHORTNAME} --repack\n\
+\n\
+  Re-package installed data. This is a short cut for\n\
+  'game-data-packager ${SHORTNAME} ${basedir}'.\n\
+"
+}
+
+go () {
+    gdp_data_driven "$@"
+}

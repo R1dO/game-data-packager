@@ -1,0 +1,37 @@
+# vim:set ft=sh sw=4 sts=4 et:
+
+SHORTNAME=jk2
+LONGNAME="Star Wars Jedi Knight II: Jedi Outcast"
+deb=jedi-outcast-data
+basedir="/usr/share/games/jedi-outcast"
+
+. $LIBDIR/via-python
+
+usage() {
+       printf "\
+Usage:\n\
+\n\
+game-data-packager ${SHORTNAME} [DIRECTORY [DIRECTORY...]]\n\
+\n\
+   earch for PK3 files in DIRECTORY, which should be one of these:\n\
+\n\
+    * an installation of Jedi Outcast retail CD-ROM, patched to\n\
+      version 1.04 using Windows or Wine (download\n\
+      jkiiup104.exe, sha256:\n\
+      de80f478a48f91d6237b8efc7048e4803a198e9ac02f11d64980eddcd818fad7)\n\
+\n\
+    * an installation of Jedi Outcast installed from Steam
+      (<http://store.steampowered.com/app/6030/>)\n\
+      via Windows or Wine, typically found in \n\
+      C:/Program Files/Steam/steamapps/common/Jedi Outcast\n\
+\n\
+game-data-packager ${SHORTNAME} --repack\n\
+\n\
+  Re-package installed data. This is a short cut for\n\
+  'game-data-packager ${SHORTNAME} ${basedir}'.\n\
+"
+}
+
+go () {
+    gdp_data_driven "$@"
+}
