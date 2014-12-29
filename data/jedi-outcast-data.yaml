@@ -2,6 +2,9 @@
 ---
 package: jedi-outcast-data
 
+# Like Jedi Academy, there isn't much point in compressing this .deb.
+compress_deb: false
+
 # cksums(1) is pretty useless as a checksumming tool, but it's a convenient
 # way to get exact file sizes in bytes (second column), which are a nice
 # heuristic for identifying files

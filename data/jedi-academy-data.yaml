@@ -2,6 +2,12 @@
 ---
 package: jedi-academy-data
 
+# There's really no point in compressing the .deb; the only compressible
+# things in it are the control files and copyright information,
+# alongside ~ 1.2 GiB of compressed zip files. xz can save 20 MiB,
+# but that's less than 2% of the total size and takes 10 times as long.
+compress_deb: false
+
 install_files_from_cksums: |
   # Jedi Academy CD1 GameData/GameData or installation
   3585517488 561806019 base/assets0.pk3
