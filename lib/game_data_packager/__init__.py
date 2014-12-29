@@ -26,13 +26,14 @@ import random
 import re
 import shutil
 import subprocess
+import sys
 import tarfile
 import tempfile
 import urllib.request
 
 import yaml
 
-from .util import TemporaryUmask, mkdir_p
+from .util import TemporaryUmask, mkdir_p, human_size, MEBIBYTE
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
@@ -41,6 +42,11 @@ logger = logging.getLogger('game-data-packager')
 DATADIR = os.environ['DATADIR']
 if os.environ.get('DEBUG'):
     logging.getLogger().setLevel(logging.DEBUG)
+else:
+    logging.getLogger().setLevel(logging.INFO)
+
+# arbitrary cutoff for providing progress bars
+QUITE_LARGE = 50 * MEBIBYTE
 
 MD5SUM_DIVIDER = re.compile(r' [ *]?')
 
@@ -52,15 +58,37 @@ class HashedFile(object):
         self.sha256 = None
 
     @classmethod
-    def from_file(cls, name, f, write_to=None):
+    def from_file(cls, name, f, write_to=None, size=None, progress=False):
         md5 = hashlib.new('md5')
         sha1 = hashlib.new('sha1')
         sha256 = hashlib.new('sha256')
+        done = 0
+
+        if progress and sys.stderr.isatty():
+            pad = [' ']
+            def update_progress(s):
+                if len(pad[0]) <= len(s):
+                    pad[0] = ' ' * len(s)
+                print(' %s \r %s\r' % (pad[0], s), end='', file=sys.stderr)
+        else:
+            update_progress = lambda s: None
 
         while True:
+            if size is None:
+                update_progress(human_size(done))
+            else:
+                update_progress('%.0f%% %s/%s' % (
+                            100 * done / size,
+                            human_size(done),
+                            human_size(size)))
+
             blob = f.read(io.DEFAULT_BUFFER_SIZE)
             if not blob:
+                update_progress('')
                 break
+
+            done += len(blob)
+
             md5.update(blob)
             sha1.update(blob)
             sha256.update(blob)
@@ -353,7 +381,10 @@ class GameDataPackage(object):
             return False
 
         if hashes is None:
-            hashes = HashedFile.from_file(path, open(path, 'rb'))
+            if size > QUITE_LARGE:
+                logger.info('checking %s', path)
+            hashes = HashedFile.from_file(path, open(path, 'rb'), size=size,
+                    progress=(size > QUITE_LARGE))
 
         if not hashes.matches(wanted):
             logger.warning('found possible %s\n' +
@@ -383,10 +414,13 @@ class GameDataPackage(object):
 
     def consider_file(self, path, really_should_match_something):
         match_path = '/' + path.lower()
+        size = os.path.getsize(path)
 
         if really_should_match_something:
-            logger.debug('considering %s', path)
-            hashes = HashedFile.from_file(path, open(path, 'rb'))
+            if size > QUITE_LARGE:
+                logger.info('identifying %s', path)
+            hashes = HashedFile.from_file(path, open(path, 'rb'), size=size,
+                    progress=(size > QUITE_LARGE))
         else:
             hashes = None
 
@@ -398,7 +432,6 @@ class GameDataPackage(object):
                         return
 
             if wanted.distinctive_size:
-                size = os.path.getsize(path)
                 if wanted.size == size:
                     self.use_file(wanted, path, hashes)
 
@@ -451,8 +484,14 @@ class GameDataPackage(object):
                         mkdir_p(tmpdir)
 
                         wf = open(tmp, 'wb')
+                        if entry.size > QUITE_LARGE:
+                            logger.info('extracting %s from %s', entry.name, name)
+                        else:
+                            logger.debug('extracting %s from %s', entry.name, name)
                         hf = HashedFile.from_file(
-                                name + '//' + entry.name, entryfile, wf)
+                                name + '//' + entry.name, entryfile, wf,
+                                size=entry.size,
+                                progress=(entry.size > QUITE_LARGE))
                         wf.close()
 
                         if not self.use_file(wanted, tmp, hf):
@@ -512,14 +551,16 @@ class GameDataPackage(object):
                         tmpdir = os.path.dirname(tmp)
                         mkdir_p(tmpdir)
                         wf = open(tmp, 'wb')
-                        hf = HashedFile.from_file(url, rf, wf)
+                        logger.info('downloading %s', url)
+                        hf = HashedFile.from_file(url, rf, wf,
+                                size=provider.size, progress=True)
                         wf.close()
 
                         if self.use_file(provider, tmp, hf):
                             break
                         else:
                             os.remove(tmp)
-                    except Exception as e:
+                    except (Exception, KeyboardInterrupt) as e:
                         logger.warning('Failed to download "%s": %s', url,
                                 e)
                         self.download_failed.add(url)

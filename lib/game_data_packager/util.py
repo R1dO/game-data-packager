@@ -17,6 +17,9 @@
 
 import os
 
+KIBIBYTE = 1024
+MEBIBYTE = KIBIBYTE * KIBIBYTE
+
 class TemporaryUmask(object):
     """Context manager to set the umask. Not thread-safe.
 
@@ -40,3 +43,11 @@ def mkdir_p(path):
     if not os.path.isdir(path):
         with TemporaryUmask(0o022):
             os.makedirs(path)
+
+def human_size(size):
+    # 0.0 KiB up to 1024.0 KiB
+    if size < MEBIBYTE:
+        return '%.1f KiB' % (size / KIBIBYTE)
+
+    # 1.0 MiB or more
+    return '%.1f MiB' % (size / (MEBIBYTE))
