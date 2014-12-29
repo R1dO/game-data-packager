@@ -1,0 +1,89 @@
+%YAML 1.2
+---
+package: quake3-data
+install_to: usr/share/games/quake3
+compress_deb: false
+
+install_files_from_cksums: |
+  # Retail
+  1131927141 479493658 baseq3/pak0.pk3
+  # Patch
+  3518406034 374405 baseq3/pak1.pk3
+  243530540 7511182 baseq3/pak2.pk3
+  987913107 276305 baseq3/pak3.pk3
+  1445361719 9600350 baseq3/pak4.pk3
+  3989134593 191872 baseq3/pak5.pk3
+  1938352652 7346884 baseq3/pak6.pk3
+  241293937 320873 baseq3/pak7.pk3
+  1541013579 454478 baseq3/pak8.pk3
+
+files:
+  linuxq3apoint-1.32b-3.x86.run:
+    download:
+      quake3-mirrors:
+        path: .
+      idstuff-mirrors:
+        path: quake3/linux
+    provides:
+    - baseq3/pak1.pk3
+    - baseq3/pak2.pk3
+    - baseq3/pak3.pk3
+    - baseq3/pak4.pk3
+    - baseq3/pak5.pk3
+    - baseq3/pak6.pk3
+    - baseq3/pak7.pk3
+    - baseq3/pak8.pk3
+    md5: c71fdddccb20e8fc393d846e9c61d685
+    sha1: 802d84af0d515db50a496c4c55d1f1c4f40a9239
+    sha256: c36132c5556b35e01950f1e9c646235033a5130f87ad776ba2bc7becf4f4f186
+    unpack:
+      format: tar.gz
+      skip: 8251
+
+md5sums: |
+  1197ca3df1e65f3c380f8abc10ca43bf  baseq3/pak0.pk3
+  48911719d91be25adb957f2d325db4a0  baseq3/pak1.pk3
+  d550ce896130c47166ca44b53f8a670a  baseq3/pak2.pk3
+  968dfd0f30dad67056115c8e92344ddc  baseq3/pak3.pk3
+  24bb1f4fcabd95f6e320c0e2f62f19ca  baseq3/pak4.pk3
+  734dcd06d2cbc7a16432ff6697f1c5ba  baseq3/pak5.pk3
+  873888a73055c023f6c38b8ca3f2ce05  baseq3/pak6.pk3
+  8fd38c53ed814b64f6ab03b5290965e4  baseq3/pak7.pk3
+  d8b96d429ca4a9c289071cb7e77e14d2  baseq3/pak8.pk3
+
+sha1sums: |
+  9d588ea65e92944d3e23eeb6ec08f1dd666f4658  baseq3/pak0.pk3
+  0be8c392b0237304fd823206d7b6ef72e0f656d5  baseq3/pak1.pk3
+  507a86bdf8e3a8315f66a6b638fe1cabefd44425  baseq3/pak2.pk3
+  8a8719837537b511f39c616e50918f2d1da4686b  baseq3/pak3.pk3
+  d9b27a8e573dcda5dcb286a0e12e82af769c9d8b  baseq3/pak4.pk3
+  a6ba9930c5cec6ba7431f6d8750426c221d7522c  baseq3/pak5.pk3
+  5716d9b9099067549f46ca77cf2cc7f8c0f498da  baseq3/pak6.pk3
+  c20d9301aa833baaffed2194be46c89c42b5b4d1  baseq3/pak7.pk3
+  657e2d95041ca37f7cfb23fa23850d0aad09e26c  baseq3/pak8.pk3
+
+sha256sums: |
+  7ce8b3910620cd50a09e4f1100f426e8c6180f68895d589f80e6bd95af54bcae  baseq3/pak0.pk3
+  d4ffd60b4b414c3419499e321b6f5c2e933cf082df85823ad2d6ae2f803e1682  baseq3/pak1.pk3
+  ccae938a2f13a03b24902d675181d516a431699701ed88023a307f34b5bcd58c  baseq3/pak2.pk3
+  d03c0a0e06b99f9ecca2be7389f57faed406e85f7c09b9c56afdfa53ba25e312  baseq3/pak3.pk3
+  af5f6d5c82fe4440ae0bb660f0648d1fa1731a9e8305a9eb652aa243428697f1  baseq3/pak4.pk3
+  69f87070ca7719e252a3ba97e6483f6663939c987ede550d1268d4d9a07b45bc  baseq3/pak5.pk3
+  bb4f0ae2bf603b050fb665436d3178ce7c1c20360e67bacf7c14d93daff38daf  baseq3/pak6.pk3
+  de6283ce23e3486a2622c5dbf73d3721a59f24debd380e90f43a97d952fea283  baseq3/pak7.pk3
+  812c9e97f231e89cefede3848c6110b7bd34245093af6f22c2cacde3e6b15663  baseq3/pak8.pk3
+
+# Not used yet
+sha512sums: |
+  ac7b8a6c4a5e9a90d44ae3d4fb854473c5b80b7bf448c6ceaf5b48b69abc6be7a2a83eb4cc6b7dfa54e75d8273841786db14f4c6e8a2b0ecf5ffe27d6f657622  baseq3/pak0.pk3
+  635196a76ac3374a37726b6e474e2cbda6a57cef7d1d97ce53732deee7fd9c446b10c4ce84ec3836587ca85e3100d0573eb2cc598615f6391c5e9a315da00b2f  baseq3/pak1.pk3
+  de515c32ded0d7e05162dd5b6b55d4054ee946cfe917ffe12488d120307d7b764a46a02f39b0af63456de8f702b4bef4f7606ac5217882453dc65baa0a9be688  baseq3/pak2.pk3
+  a67428948436feaeb92aeca0fb7c4a6476ea6cd49ec2a15eeac22cc011d4d043b06c18d0126e03c8d37edec9816fe1f3d3ff087f9bb89cee15ca5cdb1a61fcc3  baseq3/pak3.pk3
+  027c398249bba2e025a6621f9234900a1365b0a67fa85fa25bca0843eda0fc32d127450e6909bc9f3058bfa450817fc6bff5ee697bc088dec9be4dfd527b1f48  baseq3/pak4.pk3
+  a9889a31008476fe543384ffdba63da824ebba882c87ddd3b2d723184020a3ded8d9c74dd8721088947383bcfd96e354dbeee8bc959638a4e910ce633e9062df  baseq3/pak5.pk3
+  7a229cebaa262716aa80bfd59ba1f5207c988e48580e2a801de644f3f1c0ac82d64e0cc83b8cc780400f5a0bb1e09a98b1f640edace30101b517eec73a514f06  baseq3/pak6.pk3
+  f9442fa0dfa6391056a082fa552014e27ad2620cb291302655c16265afd5c8bdb304ef3b06ae1255d57d50c00ecae030d4337708d01bd67af252fc006be87244  baseq3/pak7.pk3
+  dcae254ac87a1d8453d5fb301105d9f1e55234e8044d6631f07f645f56c37b3b11aa168df1fe4ce9838f9f7c5e5ae4d6837286aef6297cae44094f750692ab5f  baseq3/pak8.pk3
+
+...
+# vim:set sw=2 sts=2 et:

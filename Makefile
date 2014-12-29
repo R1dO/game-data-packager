@@ -7,7 +7,7 @@ default: $(DIRS)
 	chmod 0644 ./out/changelog.gz
 	install -m644 data/*.yaml out/
 	install -m644 data/*.copyright out/
-	set -e; for x in data/*.control.m4; do \
+	set -e; for x in data/*.*.m4; do \
 		o="out/$${x#data/}"; \
 		o="$${o%.m4}"; \
 		m4 -DVERSION=${VERSION} < $$x > $$o; \
@@ -44,7 +44,6 @@ default: $(DIRS)
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue
-	make -f quake3.mk LONG="Quake III Arena" VERSION=$(VERSION)
 	make -f hexen2.mk VERSION=$(VERSION)
 	make -f rott.mk VERSION=$(VERSION)
 	make -f wolf3d.mk VERSION=$(VERSION)
@@ -96,7 +95,6 @@ clean:
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue clean
 	make -f hexen2.mk VERSION=$(VERSION) clean
-	make -f quake3.mk LONG="Quake III Arena" VERSION=$(VERSION) clean
 	make -f rott.mk VERSION=$(VERSION) clean
 	make -f wolf3d.mk VERSION=$(VERSION) clean
 	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION) clean
