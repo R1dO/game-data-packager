@@ -62,6 +62,7 @@ clean:
 	rm -f ./out/*.control
 	rm -f ./out/*.copyright
 	rm -f ./out/*.yaml
+	rm -rf lib/game_data_packager/__pycache__
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION) clean
 	make -f doom-common.mk IWAD=doom2 \
 		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION) clean

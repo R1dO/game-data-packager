@@ -1,4 +1,4 @@
-game-data-packager (38) UNRELEASED; urgency=low
+game-data-packager (38) UNRELEASED-experimental; urgency=low
 
   [ Fabian Greffrath ]
   * Team upload.
@@ -14,16 +14,19 @@ game-data-packager (38) UNRELEASED; urgency=low
 
   [ Simon McVittie ]
   * Add a prototype of data-driven packaging using Python 3 and YAML.
+    Use it for Quake III Arena.
   * Add support for gathering PK3 files for Star Wars Jedi Knight II:
     Jedi Outcast and its sequel Star Wars Jedi Knight: Jedi Academy,
     for use with the OpenJK engine. A fully patched installation using
     Windows or Wine is required: we do not know how to extract files
-    from the patches or the JK2 installer.
+    from the patches.
   * Add support for gathering PK3 and related files from Return to
-    Castle Wolfenstein. Automatically downloading the patch is not
-    yet implemented.
+    Castle Wolfenstein. An installation using Windows or Wine is required,
+    but it does not have to be fully patched.
+  * Standards-Version: 3.9.6
+  * Bump debhelper compat to 9 for better Python 3 handling
 
- -- Fabian Greffrath <fabian+debian@greffrath.com>  Mon, 25 Nov 2013 11:24:57 +0100
+ -- Simon McVittie <smcv@debian.org>  Tue, 30 Dec 2014 00:48:30 +0000
 
 game-data-packager (37) unstable; urgency=low
 
