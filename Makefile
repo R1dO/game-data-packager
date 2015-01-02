@@ -104,6 +104,7 @@ clean:
 
 check:
 	./t/verify-md5sum-alternatives.sh
+	DATADIR=data PYTHONPATH=lib python3 -m game_data_packager.check_syntax
 	pyflakes3 lib/game_data_packager/*.py || :
 
 .PHONY: default clean check
