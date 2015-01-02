@@ -22,6 +22,7 @@ Depends: fakeroot, ${misc:Depends}, ${shlib:Depends},
 # for jedi-*, rtcw, and hopefully more soon
 	python3,
 	python3-yaml,
+	${python3:Depends},
 # for quake, quake2, rott, wolf3d
 	unzip | p7zip-full,
 # for wolf3d
