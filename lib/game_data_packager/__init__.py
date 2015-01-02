@@ -149,6 +149,7 @@ class WantedFile(HashedFile):
         self.distinctive_size = False
         self.download = None
         self._install_as = None
+        self.install_to = None
         self._look_for = []
         self.optional = False
         self._provides = set()
@@ -206,6 +207,7 @@ class WantedFile(HashedFile):
             'download': self.download,
             'install': self.install,
             'install_as': self.install_as,
+            'install_to': self.install_to,
             'look_for': list(self.look_for),
             'name': self.name,
             'optional': self.optional,
@@ -373,6 +375,7 @@ class GameDataPackage(object):
                     'download',
                     'install',
                     'install_as',
+                    'install_to',
                     'look_for',
                     'md5',
                     'optional',
@@ -867,7 +870,8 @@ class GameDataPackage(object):
             with TemporaryUmask(0o22):
                 logger.debug('Found %s at %s', wanted.name, copy_from)
                 copy_to = os.path.join(destdir,
-                        self.install_to,
+                        (wanted.install_to if wanted.install_to is not None
+                            else self.install_to),
                         wanted.install_as)
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)

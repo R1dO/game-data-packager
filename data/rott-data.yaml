@@ -1,8 +1,5 @@
 %YAML 1.2
 ---
-# This file is not used yet: the YAML-driven code does not support
-# everything it needs. It's just a sketch of how this could look later.
-
 package: rott-data
 install_to: usr/share/games/rott
 
@@ -18,6 +15,9 @@ install_files_from_cksums: |
   4153237746 7752    VENDOR.DOC
 
 files:
+  VENDOR.DOC:
+    install_to: usr/share/doc/rott-data
+
   1rott13.zip:
     size: 3668139
     download:
