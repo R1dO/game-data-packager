@@ -484,7 +484,7 @@ addons:
     install_to: usr/share/games/quake2/baseq2/music
     rip_cd:
       encoding: vorbis
-      filename_format: %02d.ogg
+      filename_format: "%02d.ogg"
       first_track: 2
 
   quake2-rogue:
