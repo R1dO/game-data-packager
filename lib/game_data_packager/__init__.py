@@ -656,20 +656,25 @@ class GameDataPackage(object):
         return mirrors
 
     def fill_gap(self, wanted, download=False, log=True):
+        """Try to unpack, download or otherwise obtain wanted.
+
+        If download is true, we may attempt to download wanted or a
+        file that will provide it.
+
+        Return True if either we have the wanted file, or download is False
+        but we think we can get it by downloading.
+        """
+        if wanted.name in self.found:
+            return True
+
         logger.debug('could not find %s, trying to derive it...', wanted.name)
+
         possible = False
 
-        for provider_name in self.providers.get(wanted.name, ()):
-            provider = self.files[provider_name]
-
-            if provider.download or provider_name in self.found:
-                possible = True
-
-            if (download and provider_name not in self.found and
-                    provider.download):
-                logger.debug('trying to download %s to provide %s...',
-                        provider.name, wanted.name)
-                urls = self.choose_mirror(provider)
+        if wanted.download:
+            if download:
+                logger.debug('trying to download %s...', wanted.name)
+                urls = self.choose_mirror(wanted)
                 for url in urls:
                     if url in self.download_failed:
                         logger.debug('... no, it already failed')
@@ -684,17 +689,18 @@ class GameDataPackage(object):
                             continue
 
                         tmp = os.path.join(self.get_workdir(),
-                                'tmp', provider.name)
+                                'tmp', wanted.name)
                         tmpdir = os.path.dirname(tmp)
                         mkdir_p(tmpdir)
                         wf = open(tmp, 'wb')
                         logger.info('downloading %s', url)
                         hf = HashedFile.from_file(url, rf, wf,
-                                size=provider.size, progress=True)
+                                size=wanted.size, progress=True)
                         wf.close()
 
-                        if self.use_file(provider, tmp, hf):
-                            break
+                        if self.use_file(wanted, tmp, hf):
+                            assert self.found[wanted.name] == tmp
+                            return True
                         else:
                             os.remove(tmp)
                     except Exception as e:
@@ -703,8 +709,16 @@ class GameDataPackage(object):
                         self.download_failed.add(url)
                         if tmp is not None:
                             os.remove(tmp)
+            else:
+                # We can easily get it, but see whether we can unpack it
+                # from files available locally
+                possible = True
+
+        for provider_name in self.providers.get(wanted.name, ()):
+            provider = self.files[provider_name]
 
             if provider_name in self.found:
+                possible = True
                 found_name = self.found[provider_name]
                 logger.debug('trying provider %s found at %s',
                         provider_name, found_name)
@@ -734,6 +748,10 @@ class GameDataPackage(object):
                 elif fmt == 'zip':
                     with zipfile.ZipFile(found_name, 'r') as zf:
                         self.consider_zip(found_name, zf, provider)
+            elif providable:
+                # we don't have it, but we can get it
+                possible = True
+            # else impossible, but try next provider
 
         if not possible:
             if log:
