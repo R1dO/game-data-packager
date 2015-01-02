@@ -23,6 +23,7 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
     patched.
   * Standards-Version: 3.9.6
   * Bump debhelper compat to 9 for better Python 3 handling
+  * Avoid including a timestamp in generated packages' changelog.gz
 
   [ Alexandre Detiste ]
   * Add support for Tyrian, closes: #739486.

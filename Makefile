@@ -3,7 +3,7 @@ DIRS := ./out ./build
 LDLIBS = -ldynamite
 
 default: $(DIRS)
-	gzip -c9 debian/changelog > ./out/changelog.gz
+	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
 	install -m644 data/*.yaml out/
 	install -m644 data/*.copyright out/
