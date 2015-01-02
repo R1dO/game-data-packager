@@ -144,10 +144,10 @@ class HashedFile(object):
 class WantedFile(HashedFile):
     def __init__(self, name):
         super(WantedFile, self).__init__(name)
+        self.alternatives = []
         self.distinctive_name = True
         self.distinctive_size = False
         self.download = None
-        self.install = False
         self._install_as = None
         self._look_for = []
         self.optional = False
@@ -157,6 +157,8 @@ class WantedFile(HashedFile):
 
     @property
     def look_for(self):
+        if self.alternatives:
+            return set([])
         if not self._look_for:
             self._look_for = set([self.name.lower()])
         return self._look_for
@@ -165,13 +167,21 @@ class WantedFile(HashedFile):
         self._look_for = set(x.lower() for x in value)
 
     @property
+    def install(self):
+        return (self._install_as is not None)
+    @install.setter
+    def install(self, value):
+        if value:
+            if self._install_as is None:
+                self._install_as = self.name
+        else:
+            self._install_as = None
+
+    @property
     def install_as(self):
-        if self._install_as is None:
-            return self.name
         return self._install_as
     @install_as.setter
     def install_as(self, value):
-        self.install = (value is not None)
         self._install_as = value
 
     @property
@@ -190,6 +200,7 @@ class WantedFile(HashedFile):
 
     def to_yaml(self):
         return {
+            'alternatives': self.alternatives,
             'distinctive_name': self.distinctive_name,
             'distinctive_size': self.distinctive_size,
             'download': self.download,
@@ -296,6 +307,20 @@ class GameDataPackage(object):
         logger.debug('loaded package description:\n%s',
                 yaml.safe_dump(self.to_yaml()))
 
+        # consistency check
+        for filename, wanted in self.files.items():
+            if wanted.alternatives:
+                for alt in wanted.alternatives:
+                    assert alt in self.files, alt
+
+                # if this is a placeholder for a bunch of alternatives, then
+                # it doesn't make sense for it to have a defined checksum
+                # or size
+                assert wanted.md5 is None
+                assert wanted.sha1 is None
+                assert wanted.sha256 is None
+                assert wanted.size is None
+
     def __enter__(self):
         return self
 
@@ -342,6 +367,7 @@ class GameDataPackage(object):
                 setattr(f, k, kwargs[k])
 
             for k in (
+                    'alternatives',
                     'distinctive_name',
                     'distinctive_size',
                     'download',
@@ -426,6 +452,9 @@ class GameDataPackage(object):
             hashes = None
 
         for wanted in self.files.values():
+            if wanted.alternatives:
+                continue
+
             for lf in wanted.look_for:
                 if match_path.endswith('/' + lf):
                     self.use_file(wanted, path, hashes)
@@ -434,10 +463,12 @@ class GameDataPackage(object):
 
             if wanted.distinctive_size:
                 if wanted.size == size:
+                    logger.debug('... matched by distinctive size %d', size)
                     self.use_file(wanted, path, hashes)
 
             if hashes is not None:
                 if hashes.matches(wanted):
+                    logger.debug('... matched hashes of %s', wanted.name)
                     self.use_file(wanted, path, hashes)
                     return
         else:
@@ -461,7 +492,27 @@ class GameDataPackage(object):
 
         for (filename, wanted) in self.files.items():
             if wanted.install and filename not in self.found:
-                if not self.fill_gap(wanted, download=download):
+                for alt in wanted.alternatives:
+                    if alt in self.found:
+                        break
+                else:
+                    logger.debug('gap needs to be filled: %s', filename)
+
+        for (filename, wanted) in self.files.items():
+            if wanted.install and filename not in self.found:
+                alt_possible = False
+
+                for alt in wanted.alternatives:
+                    logger.debug('trying alternative: %s', alt)
+                    if alt in self.found:
+                        alt_possible = True
+                        break
+                    elif self.fill_gap(self.files[alt], download=download):
+                        alt_possible = True
+
+                if alt_possible:
+                    pass
+                elif not self.fill_gap(wanted, download=download):
                     possible = False
 
         return possible
@@ -477,6 +528,9 @@ class GameDataPackage(object):
                 wanted = self.files.get(filename)
 
                 if wanted is None:
+                    continue
+
+                if wanted.alternatives:
                     continue
 
                 if wanted.size is not None and wanted.size != entry.file_size:
@@ -528,6 +582,9 @@ class GameDataPackage(object):
                 wanted = self.files.get(filename)
 
                 if wanted is None:
+                    continue
+
+                if wanted.alternatives:
                     continue
 
                 if wanted.size is not None and wanted.size != entry.size:
@@ -680,17 +737,40 @@ class GameDataPackage(object):
 
         if not possible:
             if log:
-                logger.error('could not find %s:\n' +
-                        '  expected:\n' +
-                        '    size:   %d bytes\n' +
-                        '    md5:    %s\n' +
-                        '    sha1:   %s\n' +
-                        '    sha256: %s',
-                        wanted.name,
-                        wanted.size,
-                        wanted.md5,
-                        wanted.sha1,
-                        wanted.sha256)
+                if wanted.alternatives:
+                    logger.error('could not find any version of %s:',
+                            wanted.name)
+
+                    for alt in wanted.alternatives:
+                        alt = self.files[alt]
+                        logger.error('%s:\n' +
+                                '  expected:\n' +
+                                '    size:   ' + (
+                                    '%s' if alt.size is None else '%d bytes') +
+                                '\n' +
+                                '    md5:    %s\n' +
+                                '    sha1:   %s\n' +
+                                '    sha256: %s',
+                                alt.name,
+                                alt.size,
+                                alt.md5,
+                                alt.sha1,
+                                alt.sha256)
+                else:
+                    logger.error('could not find %s:\n' +
+                            '  expected:\n' +
+                            '    size:   ' + (
+                                '%s' if wanted.size is None else '%d bytes') +
+                            '\n' +
+                            '    md5:    %s\n' +
+                            '    sha1:   %s\n' +
+                            '    sha256: %s',
+                            wanted.name,
+                            wanted.size,
+                            wanted.md5,
+                            wanted.sha1,
+                            wanted.sha256)
+
             return False
 
         return True
@@ -705,19 +785,25 @@ class GameDataPackage(object):
             if filename in self.found:
                 continue
 
-            complete = False
-            if log:
-                logger.error('could not find %s:\n' +
-                        '  expected:\n' +
-                        '    size:   %d bytes\n' +
-                        '    md5:    %s\n' +
-                        '    sha1:   %s\n' +
-                        '    sha256: %s',
-                        wanted.name,
-                        wanted.size,
-                        wanted.md5,
-                        wanted.sha1,
-                        wanted.sha256)
+            for alt in wanted.alternatives:
+                if alt in self.found:
+                    break
+            else:
+                complete = False
+                if log:
+                    logger.error('could not find %s:\n' +
+                            '  expected:\n' +
+                            '    size:   ' + (
+                                '%s' if wanted.size is None else '%d bytes') +
+                            '\n' +
+                            '    md5:    %s\n' +
+                            '    sha1:   %s\n' +
+                            '    sha256: %s',
+                            wanted.name,
+                            wanted.size,
+                            wanted.md5,
+                            wanted.sha1,
+                            wanted.sha256)
 
         return complete
 
@@ -745,7 +831,16 @@ class GameDataPackage(object):
             if not wanted.install:
                 continue
 
-            copy_from = self.found[filename]
+            if filename in self.found:
+                copy_from = self.found[filename]
+            else:
+                for alt in wanted.alternatives:
+                    if alt in self.found:
+                        copy_from = self.found[alt]
+                        break
+                else:
+                    raise AssertionError('we already checked that %s exists' %
+                            (filename))
 
             # cp it into place
             with TemporaryUmask(0o22):

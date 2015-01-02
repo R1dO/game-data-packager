@@ -25,7 +25,6 @@ install_files_from_cksums: |
   26592339 20024689 main/mp_pakmaps5.pk3
   3620415895 10080181 main/mp_pakmaps6.pk3
   3545821488 315823656 main/pak0.pk3
-  2543414594 293887431 main/sp_pak1.pk3
   136047737 11026123 main/sp_pak2.pk3
   868477447 152544 main/sp_pak3.pk3
   3497089350 15532040 main/sp_pak4.pk3
@@ -62,7 +61,7 @@ sources:
     - main/mp_pak1.pk3
     - main/mp_pak2.pk3
     - main/pak0.pk3
-    - main/sp_pak1.pk3
+    - "FIXME: main/sp_pak1.pk3_en or main/sp_pak1.pk3_fr"
     - main/sp_pak2.pk3
     help: |
       Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
@@ -73,6 +72,24 @@ sources:
       C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein
 
 files:
+  main/sp_pak1.pk3:
+    install: true
+    alternatives:
+    - main/sp_pak1.pk3_en
+    - main/sp_pak1.pk3_fr
+
+  main/sp_pak1.pk3_en:
+    distinctive_name: false
+    look_for:
+    - main/sp_pak1.pk3
+    size: 293887431
+
+  main/sp_pak1.pk3_fr:
+    distinctive_name: false
+    look_for:
+    - main/sp_pak1.pk3
+    size: 256811934
+
   iortcw-1.42b-linux-x86.zip:
     download: https://docs.google.com/uc?export=download&id=0ByCRmO4G6HOoRWNjaS04VTlMbWc
     size: 21860031
@@ -162,7 +179,8 @@ md5sums: |
   bb24fb011b0f4b84335c66a869d1ab1c  main/mp_pakmaps5.pk3
   397e0b48673a1a8e0ec25eb0f3ccae9d  main/mp_pakmaps6.pk3
   ce92b11df889cb0a045762bb5fd7cde5  main/pak0.pk3
-  a0d3fe956f85f40c8efd6babe0d09832  main/sp_pak1.pk3
+  a0d3fe956f85f40c8efd6babe0d09832  main/sp_pak1.pk3_en
+  f19c389fe6310c24e664bc0fc84fdd95  main/sp_pak1.pk3_fr
   330b272d5261fe19fcf3c3fbc943c7f3  main/sp_pak2.pk3
   cf25d6731ed29c80303febbb177aa585  main/sp_pak3.pk3
   4223cc6588594ec0ceee186f0e73a6e9  main/sp_pak4.pk3
@@ -191,7 +209,8 @@ sha1sums: |
   c118c02922f8fd7d281f3fcfd94778317839fed1  main/mp_pakmaps5.pk3
   abf1ff047a1cc6f92c9d24164991e5a49c98d0f8  main/mp_pakmaps6.pk3
   917685b93cd3430ec9aa41dcbabb7063c6b2a785  main/pak0.pk3
-  4fe77f53b7effd54a1576212983b9bb9b36e50ed  main/sp_pak1.pk3
+  4fe77f53b7effd54a1576212983b9bb9b36e50ed  main/sp_pak1.pk3_en
+  0867395305426cc9374aa1d6e49b091f9b281cce  main/sp_pak1.pk3_fr
   feee8ecadb551a769dfb1ee97eff4c7ed7f93495  main/sp_pak2.pk3
   94539eded69eb99a86d752808c5e029d5915fde7  main/sp_pak3.pk3
   76b1074a350616bd8942005c4eabda06199e81f2  main/sp_pak4.pk3
@@ -220,7 +239,8 @@ sha256sums: |
   85cc0e8358a26601211625a9600ca47c126e4a38cca0bac60d7465ffb5ccadfe  main/mp_pakmaps5.pk3
   fcdb3754ca4e9f60b3086c8461b26160dd8de7f5e94c04100a2eb6f9519abca2  main/mp_pakmaps6.pk3
   1dfcfc3187ba09fe32cd8a7921a09cd15dd789816186c89b11e5e0d954c55e6c  main/pak0.pk3
-  66785d612f88a19c3bb5fd24f84d89b240375a28550a79039dfb6afae865ec9a  main/sp_pak1.pk3
+  66785d612f88a19c3bb5fd24f84d89b240375a28550a79039dfb6afae865ec9a  main/sp_pak1.pk3_en
+  d8825aa5b7fb0b03f6956da4e6bf822db5dd50153a8e2f87dfedefb434b78e54  main/sp_pak1.pk3_fr
   eca64ea0fda6edd653865e2eb768f152d38abc8b89941aa954ed74fa36928796  main/sp_pak2.pk3
   936437413956f88b9e5d548ccab9b51b8c8b9754f8f8e13ee7b910813a24d0f9  main/sp_pak3.pk3
   5532801005eaf2d74fe9098dc638abdb8284225c293cee3573ffa9b6c2edd8fc  main/sp_pak4.pk3
