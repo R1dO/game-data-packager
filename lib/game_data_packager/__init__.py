@@ -536,7 +536,7 @@ class GameDataPackage(object):
                 if wanted.size is not None and wanted.size != entry.file_size:
                     continue
 
-                match_path = '/' + entry.filename
+                match_path = '/' + entry.filename.lower()
 
                 for lf in wanted.look_for:
                     if match_path.endswith('/' + lf):
@@ -590,7 +590,7 @@ class GameDataPackage(object):
                 if wanted.size is not None and wanted.size != entry.size:
                     continue
 
-                match_path = '/' + entry.name
+                match_path = '/' + entry.name.lower()
 
                 for lf in wanted.look_for:
                     if match_path.endswith('/' + lf):
