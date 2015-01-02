@@ -9,9 +9,6 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
   * Start heretic and hexen by calling the binaries of the same names in the
     respective desktop files.
 
-  [ Alexandre Detiste ]
-  * Add support for Tyrian, closes: #739486.
-
   [ Simon McVittie ]
   * Add a prototype of data-driven packaging using Python 3 and YAML.
     Use it for Quake III Arena.
@@ -26,6 +23,11 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
     patched.
   * Standards-Version: 3.9.6
   * Bump debhelper compat to 9 for better Python 3 handling
+
+  [ Alexandre Detiste ]
+  * Add support for Tyrian, closes: #739486.
+  * Fix missing ${python3:Depends}
+  * Start converting rott-data to YAML style
 
  -- Simon McVittie <smcv@debian.org>  Tue, 30 Dec 2014 00:48:30 +0000
 
