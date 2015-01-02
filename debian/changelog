@@ -10,8 +10,8 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
     respective desktop files.
 
   [ Simon McVittie ]
-  * Add a prototype of data-driven packaging using Python 3 and YAML.
-    Use it for Quake III Arena.
+  * Add a prototype of data-driven packaging using Python 3 and YAML
+  * Convert quake3-data to YAML style
   * Add support for gathering PK3 files for Star Wars Jedi Knight II:
     Jedi Outcast and its sequel Star Wars Jedi Knight: Jedi Academy,
     for use with the OpenJK engine. A fully patched installation using
@@ -27,7 +27,7 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
   [ Alexandre Detiste ]
   * Add support for Tyrian, closes: #739486.
   * Fix missing ${python3:Depends}
-  * Start converting rott-data to YAML style
+  * Convert rott-data to YAML style
 
  -- Simon McVittie <smcv@debian.org>  Tue, 30 Dec 2014 00:48:30 +0000
 
