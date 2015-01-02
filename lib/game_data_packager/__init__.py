@@ -717,6 +717,9 @@ class GameDataPackage(object):
         for provider_name in self.providers.get(wanted.name, ()):
             provider = self.files[provider_name]
 
+            # recurse to unpack or (see whether we can) download the provider
+            providable = self.fill_gap(provider, download=download, log=log)
+
             if provider_name in self.found:
                 possible = True
                 found_name = self.found[provider_name]
