@@ -14,10 +14,12 @@ install_files_from_cksums: |
   3228256652 110484  REMOTE1.RTS
   4153237746 7752    VENDOR.DOC
 
-files:
-  VENDOR.DOC:
-    install_to: usr/share/doc/rott-data
+# format: {'symlink': 'real file'}
+symlinks:
+  usr/share/doc/rott-data/VENDOR.DOC:
+    usr/share/games/rott/VENDOR.DOC
 
+files:
   1rott13.zip:
     size: 3668139
     download:

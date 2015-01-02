@@ -270,8 +270,16 @@ class GameDataPackage(object):
         if 'install_to' in self.yaml:
             self.install_to = self.yaml['install_to']
 
+        # symlink => real file (the opposite way round that debhelper does it,
+        # because the links must be unique but the real files are not
+        # necessarily)
+        self.symlinks = {}
+
         self._populate_files(self.yaml.get('files'))
         self._populate_files(self.yaml.get('install_files'), install=True)
+
+        if 'symlinks' in self.yaml:
+            self.symlinks = self.yaml['symlinks']
 
         if 'install_files_from_cksums' in self.yaml:
             for line in self.yaml['install_files_from_cksums'].splitlines():
@@ -881,6 +889,30 @@ class GameDataPackage(object):
                 # destination happen to be the same btrfs volume
                 subprocess.check_call(['cp', '--reflink=auto', copy_from,
                     copy_to])
+
+        for symlink, real_file in self.symlinks.items():
+            symlink = symlink.lstrip('/')
+            real_file = real_file.lstrip('/')
+
+            toplevel, rest = symlink.split('/', 1)
+            if real_file.startswith(toplevel + '/'):
+                symlink_dirs = symlink.split('/')
+                real_file_dirs = real_file.split('/')
+
+                while (len(symlink_dirs) > 0 and len(real_file_dirs) > 0 and
+                        symlink_dirs[0] == real_file_dirs[0]):
+                    symlink_dirs.pop(0)
+                    real_file_dirs.pop(0)
+
+                if len(symlink_dirs) == 0:
+                    raise ValueError('Cannot create a symlink to itself')
+
+                target = ('../' * (len(symlink_dirs) - 1)) + '/'.join(real_file_dirs)
+            else:
+                target = '/' + real_file
+
+            mkdir_p(os.path.dirname(os.path.join(destdir, symlink)))
+            os.symlink(target, os.path.join(destdir, symlink))
 
         # FIXME: eventually we should build the .deb in Python, but for now
         # we let the shell script do it
