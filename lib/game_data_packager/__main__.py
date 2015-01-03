@@ -73,6 +73,8 @@ def go(argv):
             if game.fill_gaps(package, log=False):
                 logger.debug('%s is possible', package.name)
                 possible.add(package)
+            else:
+                logger.debug('%s is impossible', package.name)
 
         if not possible:
             logger.debug('No packages were possible')
