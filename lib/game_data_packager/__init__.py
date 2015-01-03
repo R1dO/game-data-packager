@@ -850,8 +850,9 @@ class GameData(object):
                     self.use_file(wanted, tmp, None)
                 elif fmt in ('tar.gz', 'tar.bz2', 'tar.xz'):
                     rf = open(found_name, 'rb')
-                    skipped = rf.read(provider.unpack['skip'])
-                    assert len(skipped) == provider.unpack['skip']
+                    if 'skip' in provider.unpack:
+                        skipped = rf.read(provider.unpack['skip'])
+                        assert len(skipped) == provider.unpack['skip']
                     with tarfile.open(
                             found_name,
                             mode='r|' + fmt[4:],
