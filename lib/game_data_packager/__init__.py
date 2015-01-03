@@ -354,6 +354,8 @@ class GameData(object):
 
         # consistency check
         for package in self.packages.values():
+            # there had better be something it wants to install
+            assert package.install, package.name
             for installable in package.install:
                 assert installable in self.files, installable
 
