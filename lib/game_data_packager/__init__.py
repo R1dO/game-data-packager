@@ -492,8 +492,7 @@ class GameDataPackage(object):
         elif os.path.isdir(path):
             for dirpath, dirnames, filenames in os.walk(path):
                 for fn in filenames:
-                    path = os.path.join(dirpath, fn)
-                    self.consider_file(path, False)
+                    self.consider_file(os.path.join(dirpath, fn), False)
         else:
             logger.warning('file "%s" does not exist or is not a file or ' +
                     'directory', path)
