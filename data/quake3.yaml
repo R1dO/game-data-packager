@@ -1,25 +1,55 @@
 %YAML 1.2
 ---
-package: quake3-data
-install_to: usr/share/games/quake3
+shortname: quake3
 compress_deb: false
 
-install_files_from_cksums: |
-  # Retail
-  1131927141 479493658 baseq3/pak0.pk3
-  # Patch
-  3518406034 374405 baseq3/pak1.pk3
-  243530540 7511182 baseq3/pak2.pk3
-  987913107 276305 baseq3/pak3.pk3
-  1445361719 9600350 baseq3/pak4.pk3
-  3989134593 191872 baseq3/pak5.pk3
-  1938352652 7346884 baseq3/pak6.pk3
-  241293937 320873 baseq3/pak7.pk3
-  1541013579 454478 baseq3/pak8.pk3
+packages:
+  quake3-data:
+    type: full
+    # We deliberately only put baseq3 in the search path, not
+    # missionpack, so that the engine doesn't think missionpack
+    # is installed unless its pak0.pk3 is present.
+    symlinks:
+      usr/share/games/quake3/baseq3:
+        usr/share/games/quake3-data/baseq3
+    install_to: usr/share/games/quake3-data
+    install_files_from_cksums: |
+      # Retail
+      1131927141 479493658 baseq3/pak0.pk3
+      # Patch
+      3518406034 374405 baseq3/pak1.pk3
+      243530540 7511182 baseq3/pak2.pk3
+      987913107 276305 baseq3/pak3.pk3
+      1445361719 9600350 baseq3/pak4.pk3
+      3989134593 191872 baseq3/pak5.pk3
+      1938352652 7346884 baseq3/pak6.pk3
+      241293937 320873 baseq3/pak7.pk3
+      1541013579 454478 baseq3/pak8.pk3
+      _ 383888 missionpack/pak1.pk3
+      _ 376234 missionpack/pak2.pk3
+      _ 384282 missionpack/pak3.pk3
+
+  quake3-team-arena-data:
+    type: expansion
+    symlinks:
+      usr/share/games/quake3/missionpack/pak0.pk3:
+        usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3
+      usr/share/games/quake3/missionpack/pak1.pk3:
+        usr/share/games/quake3-data/missionpack/pak1.pk3
+      usr/share/games/quake3/missionpack/pak2.pk3:
+        usr/share/games/quake3-data/missionpack/pak2.pk3
+      usr/share/games/quake3/missionpack/pak3.pk3:
+        usr/share/games/quake3-data/missionpack/pak3.pk3
+    install_to: usr/share/games/quake3-team-arena-data
+    install_files:
+      missionpack/pak0.pk3:
+        size: 351623691
+        distinctive_size: true
 
 files:
   linuxq3apoint-1.32b-3.x86.run:
     size: 30923961
+    distinctive_size: true
     download:
       quake3-mirrors:
         path: .
@@ -38,6 +68,9 @@ files:
     - baseq3/pak6.pk3
     - baseq3/pak7.pk3
     - baseq3/pak8.pk3
+    - missionpack/pak1.pk3
+    - missionpack/pak2.pk3
+    - missionpack/pak3.pk3
     md5: c71fdddccb20e8fc393d846e9c61d685
     sha1: 802d84af0d515db50a496c4c55d1f1c4f40a9239
     sha256: c36132c5556b35e01950f1e9c646235033a5130f87ad776ba2bc7becf4f4f186
@@ -55,6 +88,10 @@ md5sums: |
   873888a73055c023f6c38b8ca3f2ce05  baseq3/pak6.pk3
   8fd38c53ed814b64f6ab03b5290965e4  baseq3/pak7.pk3
   d8b96d429ca4a9c289071cb7e77e14d2  baseq3/pak8.pk3
+  e8ba9e3bf06210930bc0e7fdbcdd01c2  missionpack/pak0.pk3
+  8b8a51f9edf2671dfeb53e0405bac3c6  missionpack/pak1.pk3
+  4e02be54614ca7dbed81b5c44a19302d  missionpack/pak2.pk3
+  e7f91f4eb6e3d28d978b8cca54631695  missionpack/pak3.pk3
 
 sha1sums: |
   9d588ea65e92944d3e23eeb6ec08f1dd666f4658  baseq3/pak0.pk3
@@ -66,6 +103,10 @@ sha1sums: |
   5716d9b9099067549f46ca77cf2cc7f8c0f498da  baseq3/pak6.pk3
   c20d9301aa833baaffed2194be46c89c42b5b4d1  baseq3/pak7.pk3
   657e2d95041ca37f7cfb23fa23850d0aad09e26c  baseq3/pak8.pk3
+  f34711efdc2de9ce9283f7b0eb4cd6fd40926fb0  missionpack/pak0.pk3
+  ce4b4cbee92a84479e620c2ca178aae7358576e5  missionpack/pak1.pk3
+  ed74b17a12ed8627ce9b15aa80487e90c65cf01d  missionpack/pak2.pk3
+  50adbfade3d9342a6ab75004e0013557243a30a5  missionpack/pak3.pk3
 
 sha256sums: |
   7ce8b3910620cd50a09e4f1100f426e8c6180f68895d589f80e6bd95af54bcae  baseq3/pak0.pk3
@@ -77,6 +118,10 @@ sha256sums: |
   bb4f0ae2bf603b050fb665436d3178ce7c1c20360e67bacf7c14d93daff38daf  baseq3/pak6.pk3
   de6283ce23e3486a2622c5dbf73d3721a59f24debd380e90f43a97d952fea283  baseq3/pak7.pk3
   812c9e97f231e89cefede3848c6110b7bd34245093af6f22c2cacde3e6b15663  baseq3/pak8.pk3
+  fdb5fe4f15f22bd270628d9b3153b733ca4548207722e768051c08c9dbff9135  missionpack/pak0.pk3
+  9818e99ba58d91f231a650a3c42559d1c5661cb3c0dfd033ef4225ba8ecdfd60  missionpack/pak1.pk3
+  6cc56de0bf7b58e30164ab487c51deb0fa7c62dbd7d0a5421a5d5aa58f31a3f4  missionpack/pak2.pk3
+  77c0bcbb61be81a389d8959b76969a801a5e589d97ab8aeb2cb7ced54f187fc7  missionpack/pak3.pk3
 
 # Not used yet
 sha512sums: |
@@ -89,6 +134,7 @@ sha512sums: |
   7a229cebaa262716aa80bfd59ba1f5207c988e48580e2a801de644f3f1c0ac82d64e0cc83b8cc780400f5a0bb1e09a98b1f640edace30101b517eec73a514f06  baseq3/pak6.pk3
   f9442fa0dfa6391056a082fa552014e27ad2620cb291302655c16265afd5c8bdb304ef3b06ae1255d57d50c00ecae030d4337708d01bd67af252fc006be87244  baseq3/pak7.pk3
   dcae254ac87a1d8453d5fb301105d9f1e55234e8044d6631f07f645f56c37b3b11aa168df1fe4ce9838f9f7c5e5ae4d6837286aef6297cae44094f750692ab5f  baseq3/pak8.pk3
+  16b36521c2d659f314d7380245f36e587ac7ebbea30cb323db4b84c2c63e4f947f28afb6fd17cbe86fe4b2ad2cccb8de3c809da7eba22f7f644c619d1be07bf8  missionpack/pak0.pk3
 
 ...
 # vim:set sw=2 sts=2 et:

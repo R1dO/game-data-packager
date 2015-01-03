@@ -36,5 +36,5 @@ game-data-packager ${SHORTNAME} --repack\n\
 }
 
 go () {
-    gdp_data_driven "$@"
+    gdp_data_driven rtcw "$@"
 }

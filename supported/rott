@@ -23,7 +23,7 @@ go() {
                     rott_usage >&2
                     exit 1
             fi
-            gdp_data_driven --
+            gdp_data_driven rott --
             ;;
         2)
             if [ "$1" != "-f" ]; then
@@ -31,7 +31,7 @@ go() {
                 rott_usage >&2
                 exit 1
             fi
-            gdp_data_driven "$2"
+            gdp_data_driven rott "$2"
             ;;
         *)
             usage >&2

@@ -148,7 +148,7 @@ class WantedFile(HashedFile):
         self.distinctive_name = True
         self.distinctive_size = False
         self.download = None
-        self._install_as = None
+        self.install_as = name
         self.install_to = None
         self._look_for = []
         self.optional = False
@@ -166,24 +166,6 @@ class WantedFile(HashedFile):
     @look_for.setter
     def look_for(self, value):
         self._look_for = set(x.lower() for x in value)
-
-    @property
-    def install(self):
-        return (self._install_as is not None)
-    @install.setter
-    def install(self, value):
-        if value:
-            if self._install_as is None:
-                self._install_as = self.name
-        else:
-            self._install_as = None
-
-    @property
-    def install_as(self):
-        return self._install_as
-    @install_as.setter
-    def install_as(self, value):
-        self._install_as = value
 
     @property
     def size(self):
@@ -205,7 +187,6 @@ class WantedFile(HashedFile):
             'distinctive_name': self.distinctive_name,
             'distinctive_size': self.distinctive_size,
             'download': self.download,
-            'install': self.install,
             'install_as': self.install_as,
             'install_to': self.install_to,
             'look_for': list(self.look_for),
@@ -217,13 +198,62 @@ class WantedFile(HashedFile):
         }
 
 class GameDataPackage(object):
+    def __init__(self, name):
+        # The name of the binary package
+        self.name = name
+
+        # Where we install files.
+        # For instance, if this is 'usr/share/games/quake3' and we have
+        # a WantedFile with install_as='baseq3/pak1.pk3' then we would
+        # put 'usr/share/games/quake3/baseq3/pak1.pk3' in the .deb.
+        # The default is 'usr/share/games/' plus the binary package's name.
+        self.install_to = 'usr/share/games/' + name
+
+        # symlink => real file (the opposite way round that debhelper does it,
+        # because the links must be unique but the real files are not
+        # necessarily)
+        self.symlinks = {}
+
+        # set of names of WantedFile instances to be installed
+        self._install = set()
+
+        # type of package: full, demo or expansion
+        # full packages include quake-registered, quake2-full-data, quake3-data
+        # demo packages include quake-shareware, quake2-demo-data
+        # expansion packages include quake-armagon, quake-music, quake2-rogue
+        self._type = 'full'
+
+    @property
+    def install(self):
+        return self._install
+    @install.setter
+    def install(self, value):
+        self._install = set(value)
+
+    @property
+    def type(self):
+        return self._type
+    @type.setter
+    def type(self, value):
+        assert value in ('full', 'demo', 'expansion'), value
+        self._type = value
+
+    def to_yaml(self):
+        return {
+            'install': sorted(self.install),
+            'install_to': self.install_to,
+            'name': self.name,
+            'symlinks': self.symlinks,
+        }
+
+class GameData(object):
     def __init__(self,
-            name,
+            shortname,
             datadir='/usr/share/games/game-data-packager',
             etcdir='/etc/game-data-packager',
             workdir=None):
-        # The name of the binary package
-        self.name = name
+        # The name of the game
+        self.shortname = shortname
 
         # game-data-packager's configuration directory
         self.etcdir = etcdir
@@ -237,11 +267,27 @@ class GameDataPackage(object):
         # Clean up these directories on exit.
         self._cleanup_dirs = set()
 
+        # binary package name => GameDataPackage
+        self.packages = {}
+
         # If true, we may compress the .deb. If false, don't.
         self.compress_deb = True
 
-        self.yaml = yaml.load(open(os.path.join(self.datadir, name + '.yaml')))
-        assert self.yaml['package'] == name
+        self.yaml = yaml.load(open(os.path.join(self.datadir,
+            shortname + '.yaml')))
+
+        if 'package' in self.yaml:
+            package = GameDataPackage(self.yaml['package'])
+            self.packages[self.yaml['package']] = package
+            assert 'packages' not in self.yaml
+        else:
+            assert self.yaml['packages']
+            assert 'install_files' not in self.yaml
+
+            # these do not make sense at top level if there is more than
+            # one package
+            assert 'symlinks' not in self.yaml
+            assert 'install_files_from_cksums' not in self.yaml
 
         # Map from WantedFile name to instance.
         # { 'baseq3/pak1.pk3' => WantedFile instance }
@@ -260,39 +306,23 @@ class GameDataPackage(object):
         # Failed downloads
         self.download_failed = set()
 
-        # Where we install files.
-        # For instance, if this is 'usr/share/games/quake3' and we have
-        # a WantedFile with install_as='baseq3/pak1.pk3' then we would
-        # put 'usr/share/games/quake3/baseq3/pak1.pk3' in the .deb.
-        # The default is 'usr/share/games/' plus the binary package's name.
-        self.install_to = 'usr/share/games/' + name
-
-        if 'install_to' in self.yaml:
-            self.install_to = self.yaml['install_to']
-
-        # symlink => real file (the opposite way round that debhelper does it,
-        # because the links must be unique but the real files are not
-        # necessarily)
-        self.symlinks = {}
-
         self._populate_files(self.yaml.get('files'))
         self._populate_files(self.yaml.get('install_files'), install=True)
 
-        if 'symlinks' in self.yaml:
-            self.symlinks = self.yaml['symlinks']
+        if 'package' in self.yaml:
+            self._populate_package(next(iter(self.packages.values())),
+                    self.yaml)
 
-        if 'install_files_from_cksums' in self.yaml:
-            for line in self.yaml['install_files_from_cksums'].splitlines():
-                stripped = line.strip()
-                if stripped == '' or stripped.startswith('#'):
-                    continue
+        if 'packages' in self.yaml:
+            for binary, data in self.yaml['packages'].items():
+                # these should only be at top level, since they are global
+                assert 'md5sums' not in data, binary
+                assert 'sha1sums' not in data, binary
+                assert 'sha256sums' not in data, binary
 
-                _, size, filename = line.split(None, 2)
-                f = self._ensure_file(filename)
-                size = int(size)
-                assert (f.size == size or f.size is None), (f.size, size)
-                f.size = size
-                f.install = True
+                package = GameDataPackage(binary)
+                self.packages[binary] = package
+                self._populate_package(package, data)
 
         for alg in ('md5', 'sha1', 'sha256'):
             if alg + 'sums' in self.yaml:
@@ -318,6 +348,10 @@ class GameDataPackage(object):
                 yaml.safe_dump(self.to_yaml()))
 
         # consistency check
+        for package in self.packages.values():
+            for installable in package.install:
+                assert installable in self.files, installable
+
         for filename, wanted in self.files.items():
             if wanted.alternatives:
                 for alt in wanted.alternatives:
@@ -352,6 +386,7 @@ class GameDataPackage(object):
     def to_yaml(self):
         files = {}
         providers = {}
+        packages = {}
 
         for filename, f in self.files.items():
             files[filename] = f.to_yaml()
@@ -359,18 +394,57 @@ class GameDataPackage(object):
         for provided, by in self.providers.items():
             providers[provided] = list(by)
 
+        for name, package in self.packages.items():
+            packages[name] = package.to_yaml()
+
         return {
-            'package': self.name,
+            'packages': packages,
             'providers': providers,
             'files': files,
-            'install_to': self.install_to,
         }
 
-    def _populate_files(self, d, **kwargs):
+    def _populate_package(self, package, d):
+        if 'type' in d:
+            package.type = d['type']
+
+        if 'symlinks' in d:
+            package.symlinks = d['symlinks']
+
+        if 'install_to' in d:
+            package.install_to = d['install_to']
+
+        if 'install_files_from_cksums' in d:
+            for line in d['install_files_from_cksums'].splitlines():
+                stripped = line.strip()
+                if stripped == '' or stripped.startswith('#'):
+                    continue
+
+                _, size, filename = line.split(None, 2)
+                f = self._ensure_file(filename)
+                size = int(size)
+                assert (f.size == size or f.size is None), (f.size, size)
+                f.size = size
+                package.install.add(filename)
+
+        self._populate_files(d.get('install_files'), install=True,
+                install_package=package)
+
+    def _populate_files(self, d, install=False, install_package=None,
+            **kwargs):
         if d is None:
             return
 
+        if install and install_package is None:
+            assert len(self.packages) == 1
+            install_package = next(iter(self.packages.values()))
+
         for filename, data in d.items():
+            if data.get('install', install):
+                if install_package is None:
+                    assert len(self.packages) == 1
+                    install_package = next(iter(self.packages.values()))
+                install_package.install.add(filename)
+
             f = self._ensure_file(filename)
 
             for k in kwargs:
@@ -381,7 +455,6 @@ class GameDataPackage(object):
                     'distinctive_name',
                     'distinctive_size',
                     'download',
-                    'install',
                     'install_as',
                     'install_to',
                     'look_for',
@@ -451,6 +524,10 @@ class GameDataPackage(object):
         return True
 
     def consider_file(self, path, really_should_match_something):
+        if not os.path.exists(path):
+            # dangling symlink
+            return
+
         match_path = '/' + path.lower()
         size = os.path.getsize(path)
 
@@ -497,19 +574,27 @@ class GameDataPackage(object):
             logger.warning('file "%s" does not exist or is not a file or ' +
                     'directory', path)
 
-    def fill_gaps(self, download=False, log=True):
+    def fill_gaps(self, package, download=False, log=True):
+        assert package is not None
+
+        logger.debug('trying to fill any gaps for %s', package.name)
+
         possible = True
 
-        for (filename, wanted) in self.files.items():
-            if wanted.install and filename not in self.found:
+        for filename in package.install:
+            if filename not in self.found:
+                wanted = self.files[filename]
+
                 for alt in wanted.alternatives:
                     if alt in self.found:
                         break
                 else:
-                    logger.debug('gap needs to be filled: %s', filename)
+                    logger.debug('gap needs to be filled for %s: %s',
+                            package.name, filename)
 
-        for (filename, wanted) in self.files.items():
-            if wanted.install and filename not in self.found:
+        for filename in package.install:
+            if filename not in self.found:
+                wanted = self.files[filename]
                 alt_possible = False
 
                 for alt in wanted.alternatives:
@@ -517,12 +602,13 @@ class GameDataPackage(object):
                     if alt in self.found:
                         alt_possible = True
                         break
-                    elif self.fill_gap(self.files[alt], download=download):
+                    elif self.fill_gap(self.files[alt], download=download,
+                            log=log):
                         alt_possible = True
 
                 if alt_possible:
                     pass
-                elif not self.fill_gap(wanted, download=download):
+                elif not self.fill_gap(wanted, download=download, log=log):
                     possible = False
 
         return possible
@@ -806,15 +892,14 @@ class GameDataPackage(object):
 
         return True
 
-    def check_complete(self, log=False):
+    def check_complete(self, package, log=False):
         # Got everything?
         complete = True
-        for (filename, wanted) in self.files.items():
-            if not wanted.install:
-                continue
-
+        for filename in package.install:
             if filename in self.found:
                 continue
+
+            wanted = self.files[filename]
 
             for alt in wanted.alternatives:
                 if alt in self.found:
@@ -838,13 +923,13 @@ class GameDataPackage(object):
 
         return complete
 
-    def fill_dest_dir(self, destdir):
-        if not self.check_complete(log=True):
+    def fill_dest_dir(self, package, destdir):
+        if not self.check_complete(package, log=True):
             return False
 
-        docdir = os.path.join(destdir, 'usr/share/doc', self.name)
+        docdir = os.path.join(destdir, 'usr/share/doc', package.name)
         mkdir_p(docdir)
-        shutil.copyfile(os.path.join(self.datadir, self.name + '.copyright'),
+        shutil.copyfile(os.path.join(self.datadir, package.name + '.copyright'),
                 os.path.join(docdir, 'copyright'))
         shutil.copyfile(os.path.join(self.datadir, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
@@ -855,12 +940,16 @@ class GameDataPackage(object):
         assert destdir == self.workdir + '/slipstream.unpacked'
         debdir = os.path.join(self.workdir, 'DEBIAN')
         mkdir_p(debdir)
-        shutil.copyfile(os.path.join(self.datadir, self.name + '.control'),
+        shutil.copyfile(os.path.join(self.datadir, package.name + '.control'),
                 os.path.join(debdir, 'control'))
 
-        for (filename, wanted) in self.files.items():
-            if not wanted.install:
-                continue
+        for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
+            maintscript = os.path.join(self.datadir, package.name + '.' + ms)
+            if os.path.isfile(maintscript):
+                shutil.copy(maintscript, os.path.join(debdir, ms))
+
+        for filename in package.install:
+            wanted = self.files[filename]
 
             if filename in self.found:
                 copy_from = self.found[filename]
@@ -878,7 +967,7 @@ class GameDataPackage(object):
                 logger.debug('Found %s at %s', wanted.name, copy_from)
                 copy_to = os.path.join(destdir,
                         (wanted.install_to if wanted.install_to is not None
-                            else self.install_to),
+                            else package.install_to),
                         wanted.install_as)
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)
@@ -889,7 +978,7 @@ class GameDataPackage(object):
                 subprocess.check_call(['cp', '--reflink=auto', copy_from,
                     copy_to])
 
-        for symlink, real_file in self.symlinks.items():
+        for symlink, real_file in package.symlinks.items():
             symlink = symlink.lstrip('/')
             real_file = real_file.lstrip('/')
 

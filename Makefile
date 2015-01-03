@@ -7,6 +7,10 @@ default: $(DIRS)
 	chmod 0644 ./out/changelog.gz
 	install -m644 data/*.yaml out/
 	install -m644 data/*.copyright out/
+	install -m755 data/*.preinst out/
+	install -m755 data/*.postinst out/
+	install -m755 data/*.prerm out/
+	install -m755 data/*.postrm out/
 	set -e; for x in data/*.*.m4; do \
 		o="out/$${x#data/}"; \
 		o="$${o%.m4}"; \

@@ -2,17 +2,9 @@
 
 SHORTNAME=quake3
 LONGNAME="Quake III Arena"
-deb=quake3-data
-basedir='/usr/share/games/quake3'
 
 . $LIBDIR/via-python
 
-usage() {
-echo "quake3 game arguments:"
-printf "\tmountpoint - Quake III Arena CD mount-point or baseq3/pak0.pk3 filename\n"
-printf "\tpoint release - ${POINTFILE}\n"
-}
-
 go () {
-    gdp_data_driven "$@"
+    gdp_data_driven quake3 "$@"
 }
