@@ -456,22 +456,19 @@ music_method () {
     copyin "$DATADIR/quake/${deb}.copyright" \
         "$DESTDIR/usr/share/doc/${deb}/copyright"
 
-    # slipstream_instsize, slipstream_repack assume that slipstream.unpacked
-    # and DEBIAN are in the same place
     copyin "$DATADIR/quake/${deb}.control" \
-        "$WORKDIR/DEBIAN/control"
+        "$DESTDIR/DEBIAN/control"
     copyin "$DATADIR/quake/${deb}.md5sums" \
-        "$WORKDIR/DEBIAN/md5sums"
+        "$DESTDIR/DEBIAN/md5sums"
 
     # we still need to md5sum the actual tracks - their contents
     # depend on the user's copy of oggenc
     ( cd "$DESTDIR" && md5sum usr/share/games/quake/*/music/*.ogg \
-            >> ../DEBIAN/md5sums )
+            >> DEBIAN/md5sums )
 
     debug "building .deb: $OUTFILE"
     ( cd "$WORKDIR" && slipstream_instsize )
     ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
 
-    rm -fr "$WORKDIR/DEBIAN"
     rm -fr "$DESTDIR"
 }

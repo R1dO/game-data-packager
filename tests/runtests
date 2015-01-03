@@ -95,7 +95,7 @@ test_slipstream() {
 ##      that the current working directory is writeable
 ## slipstream_unpack(deb)
 ##      unpacks the deb file into "./slipstream_unpacked"
-##      and the control data into "./DEBIAN"
+##      and the control data into "./slipstream_unpacked/DEBIAN"
 ## slipstream_file(file,destpath)
 ##      copies the file into "./slipstream_unpacked/$destpath",
 ##      calculates the files md5sum and adds it to the md5sums
@@ -108,7 +108,7 @@ test_slipstream() {
 ## slipstream_repack(deb)
 ##      writes a new debian package over deb, packing
 ##      the files from ./slipstream_unpacked inside,
-##      using the control area in ./DEBIAN
+##      using the control area in ./slipstream_unpacked/DEBIAN
 ## slipstream_cleanup()
 ##      removes the ./slipstream_unpacked directory.
 ## install_deb(deb)

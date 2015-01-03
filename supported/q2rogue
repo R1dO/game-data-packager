@@ -31,7 +31,7 @@ go() {
   # slipstream_instsize, slipstream_repack assume this naming
   DESTDIR="$WORKDIR/slipstream.unpacked"
 
-  mkdir -p "$WORKDIR/DEBIAN" "$DESTDIR/usr/share/doc/quake2-rogue" \
+  mkdir -p "$DESTDIR/DEBIAN" "$DESTDIR/usr/share/doc/quake2-rogue" \
     "$DESTDIR/usr/share/games/quake2/rogue/video"
 
   # the source code component
@@ -50,8 +50,8 @@ go() {
   done
 
   ARCH=`dpkg-architecture -qDEB_BUILD_ARCH`
-  echo "Architecture: $ARCH" > "$WORKDIR/DEBIAN/control"
-  cat "$DATADIR/quake2/quake2-rogue.control" >> "$WORKDIR/DEBIAN/control"
+  echo "Architecture: $ARCH" > "$DESTDIR/DEBIAN/control"
+  cat "$DATADIR/quake2/quake2-rogue.control" >> "$DESTDIR/DEBIAN/control"
   cp -p "$DATADIR/quake2/quake2-rogue.copyright" "$DESTDIR/usr/share/doc/quake2-rogue/copyright"
   
   if [ "" = "$OUTDIR" ]; then
