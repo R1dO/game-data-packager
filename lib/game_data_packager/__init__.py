@@ -420,6 +420,11 @@ class GameData(object):
         if 'install_to' in d:
             package.install_to = d['install_to']
 
+        if 'install' in d:
+            for filename in d['install']:
+                f = self._ensure_file(filename)
+                package.install.add(filename)
+
         if 'install_files_from_cksums' in d:
             for line in d['install_files_from_cksums'].splitlines():
                 stripped = line.strip()
