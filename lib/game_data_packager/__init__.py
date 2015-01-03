@@ -490,7 +490,7 @@ class GameData(object):
 
     def use_file(self, wanted, path, hashes=None):
         logger.debug('found possible %s at %s', wanted.name, path)
-        size = os.path.getsize(path)
+        size = os.stat(path).st_size
         if wanted.size is not None and wanted.size != size:
             if wanted.distinctive_name:
                 logger.warning('found possible %s\n' +
@@ -542,7 +542,7 @@ class GameData(object):
             return
 
         match_path = '/' + path.lower()
-        size = os.path.getsize(path)
+        size = os.stat(path).st_size
 
         if really_should_match_something:
             if size > QUITE_LARGE:
