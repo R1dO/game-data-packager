@@ -15,13 +15,14 @@ if [ "$0" = "./game-data-packager" ]; then
 	SUPPORTED=./supported
 	LIBDIR=./lib
 	DATADIR="./out"
-	. "./etc/game-data-packager.conf"
+	ETCDIR="./etc"
 else
 	SUPPORTED=/usr/share/games/game-data-packager/supported
 	LIBDIR=/usr/lib/game-data-packager
 	DATADIR="/usr/share/games/game-data-packager"
-	. "/etc/game-data-packager.conf"
+	ETCDIR=/etc/game-data-packager
 fi
+. "$ETCDIR/game-data-packager.conf"
 . $LIBDIR/game-data-packager-shared
 LIBDIR="`unravel "$LIBDIR"`"
 DATADIR="`unravel "$DATADIR"`"

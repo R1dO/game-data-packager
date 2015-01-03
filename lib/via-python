@@ -21,12 +21,6 @@ gdp_data_driven () {
         shift
     fi
 
-    ETCDIR=/etc/game-data-packager
-
-    if [ "$0" = "./game-data-packager" ]; then
-        ETCDIR="./etc"
-    fi
-
     (
     export ETCDIR
     export SHORTNAME
