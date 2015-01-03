@@ -91,6 +91,19 @@ debug "PRESERVE=$PRESERVE"
 GAME="$1"
 shift
 
+# Handle non-game modes
+case "$GAME" in
+	(make-template)
+		PYTHONPATH="$LIBDIR"
+		export PYTHONPATH
+		export DATADIR
+		export ETCDIR
+		export LIBDIR
+		python3 -m game_data_packager.make_template "$@"
+		exit $?
+		;;
+esac
+
 if [ ! -f "$SUPPORTED/$GAME" ]; then
 	echo "unknown option or game '$GAME'" >&2
 	usage >&2
