@@ -360,6 +360,12 @@ class GameData(object):
                 assert installable in self.files, installable
 
         for filename, wanted in self.files.items():
+            if wanted.unpack:
+                assert 'format' in wanted.unpack, filename
+                if wanted.unpack['format'] == 'lha':
+                    # for this unpacker we have to know what to pull out
+                    assert wanted.unpack['unpack'], filename
+
             if wanted.alternatives:
                 for alt in wanted.alternatives:
                     assert alt in self.files, alt
@@ -861,6 +867,19 @@ class GameData(object):
                 elif fmt == 'zip':
                     with zipfile.ZipFile(found_name, 'r') as zf:
                         self.consider_zip(found_name, zf, provider)
+                elif fmt == 'lha':
+                    logger.debug('Extracting %r from %s',
+                            provider.unpack['unpack'], found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['lha', 'xq',
+                                os.path.abspath(found_name)] +
+                            provider.unpack['unpack'],
+                            cwd=tmpdir)
+                    for f in provider.unpack['unpack']:
+                        self.consider_file(os.path.join(tmpdir, f), True)
+
             elif providable:
                 # we don't have it, but we can get it
                 possible = True
