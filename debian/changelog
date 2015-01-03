@@ -12,6 +12,8 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
   [ Simon McVittie ]
   * Add a prototype of data-driven packaging using Python 3 and YAML
   * Convert quake3-data to YAML style
+  * quake3: add Team Arena patch files to quake3-data, and add support
+    for generating quake3-team-arena-data
   * Add support for gathering PK3 files for Star Wars Jedi Knight II:
     Jedi Outcast and its sequel Star Wars Jedi Knight: Jedi Academy,
     for use with the OpenJK engine. A fully patched installation using
