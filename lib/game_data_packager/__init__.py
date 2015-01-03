@@ -57,6 +57,7 @@ class HashedFile(object):
         self.md5 = None
         self.sha1 = None
         self.sha256 = None
+        self.skip_hash_matching = False
 
     @classmethod
     def from_file(cls, name, f, write_to=None, size=None, progress=False):
@@ -104,6 +105,9 @@ class HashedFile(object):
 
     def matches(self, other):
         matched = False
+
+        if self.skip_hash_matching or other.skip_hash_matching:
+            return False
 
         if None not in (self.md5, other.md5):
             matched = True
@@ -194,6 +198,7 @@ class WantedFile(HashedFile):
             'optional': self.optional,
             'provides': list(self.provides),
             'size': self.size,
+            'skip_hash_matching': self.skip_hash_matching,
             'unpack': self.unpack,
         }
 
@@ -464,6 +469,7 @@ class GameData(object):
                     'sha1',
                     'sha256',
                     'size',
+                    'skip_hash_matching',
                     'unpack',
                     ):
                 if k in data:
@@ -497,7 +503,7 @@ class GameData(object):
             hashes = HashedFile.from_file(path, open(path, 'rb'), size=size,
                     progress=(size > QUITE_LARGE))
 
-        if not hashes.matches(wanted):
+        if not wanted.skip_hash_matching and not hashes.matches(wanted):
             logger.warning('found possible %s\n' +
                     'but its checksums do not match:\n' +
                     '  file: %s\n' +
@@ -555,7 +561,7 @@ class GameData(object):
                     self.use_file(wanted, path, hashes)
 
             if hashes is not None:
-                if hashes.matches(wanted):
+                if not wanted.skip_hash_matching and hashes.matches(wanted):
                     logger.debug('... matched hashes of %s', wanted.name)
                     self.use_file(wanted, path, hashes)
                     return
