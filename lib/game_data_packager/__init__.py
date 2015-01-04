@@ -967,11 +967,7 @@ class GameData(object):
         shutil.copyfile(os.path.join(self.datadir, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
 
-        # slipstream_instsize, slipstream_repack assume that
-        # slipstream.unpacked and DEBIAN are in the same place.
-        # The shell script code puts slipstream.unpacked in workdir.
-        assert destdir == self.workdir + '/slipstream.unpacked'
-        debdir = os.path.join(self.workdir, 'DEBIAN')
+        debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
         shutil.copyfile(os.path.join(self.datadir, package.name + '.control'),
                 os.path.join(debdir, 'control'))
