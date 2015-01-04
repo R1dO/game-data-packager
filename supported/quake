@@ -387,12 +387,9 @@ common_method() {
     fi
 
     # clean up
-    if [ -d "$WORKDIR/${folder}" ] ; then
-        rm -rf "$WORKDIR/${folder}"
-    elif [ -d "$WORKDIR/`echo "${folder}" | tr a-z A-Z`" ] ; then
-        # Remove uppercase version of our directory
-        rm -rf "$WORKDIR/`echo "${folder}" | tr a-z A-Z`"
-    fi
+    rm -rf "$WORKDIR/${folder}"
+    # Remove uppercase version of our directory
+    rm -rf "$WORKDIR/`echo "${folder}" | tr a-z A-Z`"
     rm -f "$WORKDIR/pak0.pak"
     rm -f "$WORKDIR/pak1.pak"
     rm -f "$WORKDIR/quake106.zip"
