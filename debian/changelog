@@ -28,6 +28,7 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
   * Avoid including a timestamp in generated packages' changelog.gz
   * Apply patches from Dwayne Litzenberger for a different
     edition of the Quake CD-ROM (Closes: #718688)
+  * Fix non-existent suggested package (Closes: #742383)
 
   [ Alexandre Detiste ]
   * Add support for Tyrian, closes: #739486.
