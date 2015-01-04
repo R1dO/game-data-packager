@@ -1,7 +1,6 @@
-game-data-packager (38) UNRELEASED-experimental; urgency=low
+game-data-packager (38) experimental; urgency=low
 
   [ Fabian Greffrath ]
-  * Team upload.
   * Add Multi-Arch: foreign fields to all Architecture: all packages.
   * Prefer chocolate-doom over other engines providing doom-engine,
     heretic engine or hexen-engine, respectively. Add Breaks against
@@ -29,13 +28,17 @@ game-data-packager (38) UNRELEASED-experimental; urgency=low
   * Apply patches from Dwayne Litzenberger for a different
     edition of the Quake CD-ROM (Closes: #718688)
   * Fix non-existent suggested package (Closes: #742383)
+  * Add the ability for a game to produce and install more than one .deb
+    at a time, and use it for Quake III Arena to produce quake3-data.deb
+    and quake3-team-arena.deb simultaneously if it finds both (e.g. in
+    an installation on Windows)
 
   [ Alexandre Detiste ]
   * Add support for Tyrian, closes: #739486.
   * Fix missing ${python3:Depends}
   * Convert rott-data to YAML style
 
- -- Simon McVittie <smcv@debian.org>  Tue, 30 Dec 2014 00:48:30 +0000
+ -- Simon McVittie <smcv@debian.org>  Sun, 04 Jan 2015 22:13:31 +0000
 
 game-data-packager (37) unstable; urgency=low
 
