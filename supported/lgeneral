@@ -89,7 +89,7 @@ go() {
              lgeneral/units
 
     # extract pg-data and convert to lgeneral's native file format
-    tar xfz "$TGZFILE"
+    tar xfz "$TGZFILE" pg-data
     lgc-pg -s pg-data/ -d lgeneral/
     
     slipstream_dir "$OUTFILE" "usr/share/games/" "lgeneral/"
