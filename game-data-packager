@@ -160,7 +160,6 @@ fi
 
 if [ "$INSTALL" = "yes" ]; then
 	debug "invoking dpkg to install the package"
-	install_deb "$OUTFILE"
 
 	if [ "$OUTFILE" = "*.deb" ]; then
 		install_debs "$WORKDIR"/*.deb
