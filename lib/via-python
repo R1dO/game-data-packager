@@ -58,7 +58,7 @@ gdp_data_driven () {
     fi
 
     ( cd "$DESTDIR" && find usr -type f -print0 | xargs -0 md5sum ) > \
-        "$WORKDIR/DEBIAN/md5sums"
+        "$WORKDIR/slipstream.unpacked/DEBIAN/md5sums"
 
     if [ -e "$WORKDIR/DO-NOT-COMPRESS" ]; then
         COMPRESS=no
