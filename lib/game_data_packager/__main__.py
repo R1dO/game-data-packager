@@ -105,43 +105,38 @@ def go(argv):
                     raise SystemExit('Unable to complete any packages. ' +
                             'Please provide more files or directories.')
 
-        package = None
+        ready = set()
 
-        # We can only build one package for now, because the shell script
-        # wrapper can only do one. Pick the "best": full if we have the
-        # right stuff, or expansion if we have the right stuff, or demo.
-        if len(possible) == 1:
-            for p in possible:
-                package = p
-        else:
-            for p in possible:
-                if p.type == 'full':
-                    package = p
-                    break
+        have_full = False
+        for package in possible:
+            if package.type == 'full':
+                have_full = True
+
+        for package in possible:
+            if have_full and package.type == 'demo':
+                # no point in packaging the demo if we have the full
+                # version
+                logger.debug('will not produce %s because we have a full ' +
+                        'version', package.name)
+                continue
+
+            logger.debug('will produce %s', package.name)
+            if game.fill_gaps(package=package, download=True, log=True):
+                ready.add(package)
             else:
-                for p in possible:
-                    if p.type == 'expansion':
-                        package = p
-                        break
-                else:
-                    # just pick the first one
-                    for p in possible:
-                        package = p
+                logger.error('Failed to download necessary files for %s',
+                        package.name)
 
-        logger.debug('chose to produce %s', package.name)
-
-        if not game.fill_gaps(package=package, download=True, log=True):
-            raise SystemExit('Failed to download necessary files for %s',
-                    package.name)
-
-        if not game.fill_dest_dir(package, os.environ['DESTDIR']):
+        if not ready:
             sys.exit(1)
 
-    # FIXME: make the .deb (currently done in shell script by the wrapper)
+        for package in ready:
+            destdir = os.path.join(os.environ['WORKDIR'],
+                    '%s.deb.d' % package.name)
+            if not game.fill_dest_dir(package, destdir):
+                sys.exit(1)
 
-    # This is a hack to communicate the name of the .deb to the shell
-    # script...
-    open(os.environ['WORKDIR'] + '/DEB_NAME', 'w').write(package.name)
+    # FIXME: make the .deb (currently done in shell script by the wrapper)
 
 if __name__ == '__main__':
     go(sys.argv[1:])
