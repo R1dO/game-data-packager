@@ -119,12 +119,28 @@ debug "long: $LONGNAME"
 WORKDIR=`mktemp -t -d game-data-packager.XXXXXX`
 debug "WORKDIR=$WORKDIR"
 cleanup() {
-    if [ "$PRESERVE" != "yes" ] && [ -f "$OUTFILE" ]; then
-        rm "$OUTFILE"
-    fi
-    if [ -d "$WORKDIR" ]; then
-        rmdir "$WORKDIR"
-    fi
+	# some magic so that methods can produce multiple debs
+	if [ "$OUTFILE" = "*.deb" ]; then
+		for deb in "$WORKDIR"/*.deb; do
+			rm -f "$deb"
+		done
+	else
+		if [ "$PRESERVE" != "yes" ] && [ -f "$OUTFILE" ]; then
+			rm "$OUTFILE"
+		fi
+	fi
+
+	if [ -d "$WORKDIR" ]; then
+		e=0
+		rmdir "$WORKDIR" || e=$?
+
+		if [ "$e" != 0 ]; then
+			echo "Files remaining in $WORKDIR:" >&2
+			( cd "$WORKDIR" && find ) >&2
+		fi
+
+		return "$e"
+	fi
 }
 trap cleanup EXIT
 
@@ -132,12 +148,25 @@ trap cleanup EXIT
 go "$@"
 
 if [ "$PRESERVE" = "yes" ]; then
-	echo "generated \"$OUTFILE\"."
+	if [ "$OUTFILE" = "*.deb" ]; then
+		for deb in "$WORKDIR"/*.deb; do
+			realdeb="$(realpath "$deb")"
+			echo "generated \"$realdeb\"."
+		done
+	else
+		echo "generated \"$OUTFILE\"."
+	fi
 fi
 
 if [ "$INSTALL" = "yes" ]; then
 	debug "invoking dpkg to install the package"
 	install_deb "$OUTFILE"
+
+	if [ "$OUTFILE" = "*.deb" ]; then
+		install_debs "$WORKDIR"/*.deb
+	else
+		install_deb "$OUTFILE"
+	fi
 fi
 
 cleanup

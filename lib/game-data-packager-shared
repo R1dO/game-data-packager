@@ -268,13 +268,28 @@ slipstream_cleanup() {
 
 # stuff relating to installing the generated packages ########################
 
+## install_debs(deb ...)
+##      uses su and dpkg to install the supplied .deb files
+# TODO: configurable priviledge escalation method (not hardcoded su)
+# TODO: configurable package installation method (not hardcoded dpkg)
+# TODO: if using sudo or pkexec, use multiple arguments rather than doing
+#       silly things with shell-quoting
+install_deb() {
+	echo "using su(1) to obtain root privileges and install the package(s)"
+	cmd="dpkg -i "
+	for deb in "$@"; do
+		cmd="$cmd \"$deb\""
+	done
+	su -c $cmd
+}
+
 ## install_deb(deb)
-##      uses sudo and dpkg to install the supplied .deb file
-# TODO: configurable priviledge escalation method (not hardcoded sudo)
+##      uses su and dpkg to install the supplied .deb file
+# TODO: configurable priviledge escalation method (not hardcoded su)
 # TODO: configurable package installation method (not hardcoded dpkg)
 install_deb() {
 	DEB="$1"
-    echo "using su(1) to obtain root privileges and install the package"
+	echo "using su(1) to obtain root privileges and install the package"
 	su -c "dpkg -i \"$DEB\""
 }
 
