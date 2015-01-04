@@ -1,9 +1,0 @@
-#!/bin/sh
-
-dpkg-maintscript-helper dir_to_symlink \
-	/usr/share/games/quake3/baseq3 \
-	../quake3-data/baseq3 \
-	37 \
-	quake3-data \
-	-- \
-	"$@"
