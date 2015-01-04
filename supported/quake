@@ -385,9 +385,16 @@ common_method() {
         slipstream "$OUTFILE" "usr/share/games/quake/${folder}" \
             "$WORKDIR/pak0.pak" "$WORKDIR/pak1.pak"
     fi
-    [ -d "$WORKDIR/${folder}" ] && rm -rf "$WORKDIR/${folder}"
-    [ ! -f "$WORKDIR/pak1.pak" ] || rm "$WORKDIR/pak1.pak"
-    rm "$WORKDIR/pak0.pak"
+
+    # clean up
+    if [ -d "$WORKDIR/${folder}" ] ; then
+        rm -rf "$WORKDIR/${folder}"
+    elif [ -d "$WORKDIR/`echo "${folder}" | tr a-z A-Z`" ] ; then
+        # Remove uppercase version of our directory
+        rm -rf "$WORKDIR/`echo "${folder}" | tr a-z A-Z`"
+    fi
+    rm -f "$WORKDIR/pak0.pak"
+    rm -f "$WORKDIR/pak1.pak"
     rm -f "$WORKDIR/quake106.zip"
 }
 
