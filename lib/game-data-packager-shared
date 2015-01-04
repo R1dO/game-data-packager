@@ -274,13 +274,13 @@ slipstream_cleanup() {
 # TODO: configurable package installation method (not hardcoded dpkg)
 # TODO: if using sudo or pkexec, use multiple arguments rather than doing
 #       silly things with shell-quoting
-install_deb() {
+install_debs() {
 	echo "using su(1) to obtain root privileges and install the package(s)"
 	cmd="dpkg -i "
 	for deb in "$@"; do
 		cmd="$cmd \"$deb\""
 	done
-	su -c $cmd
+	su -c "$cmd"
 }
 
 ## install_deb(deb)
