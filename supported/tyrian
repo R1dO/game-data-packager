@@ -1,7 +1,8 @@
 SHORTNAME=tyrian
 LONGNAME="Tyrian"
+deb=tyrian-data
 
-ZIPSUM=2a3b206a6de25ed4b771af073f8ca904
+. $LIBDIR/via-python
 
 tyrian_usage() {
 	echo "game-data-packager ${SHORTNAME} arguments:"
@@ -10,7 +11,7 @@ tyrian_usage() {
 \t\t-w\t\tfetch tyrian21.zip from the World Wide Web\n"
 }
 
-verify_args() {
+go() {
     case $# in
         0)
             tyrian_usage
@@ -22,7 +23,7 @@ verify_args() {
                     tyrian_usage >&2
                     exit 1
             fi
-            downloadzip
+            gdp_data_driven tyrian --
             ;;
         2)
             if [ "$1" != "-f" ]; then
@@ -30,8 +31,7 @@ verify_args() {
                 tyrian_usage >&2
                 exit 1
             fi
-            downloaded=false
-            tyrianzip="$2"
+            gdp_data_driven tyrian "$2"
             ;;
         *)
             usage >&2
@@ -39,89 +39,4 @@ verify_args() {
             exit 1
             ;;
     esac
-}
-
-tyrianmirrors=$LIBDIR/tyrian-mirrors
-
-downloadzip() {
-    dest="$WORKDIR/tyrian21.zip"
-    mirror=$(grep -v ^# "$tyrianmirrors" | sort -R | head -n1)
-    for try in $mirror; do
-        if wget --progress=dot --directory-prefix "$WORKDIR" -c "$try"
-        then
-            tyrianzip="$dest"
-            downloaded=true
-            return
-        fi
-    done
-    die "error: could not find tyrian21.zip at our chosen mirror"
-}
-
-checksum() {
-	CHECKSUM=`md5sum "$1" | cut -d' ' -f1`
-	debug "checksum = $CHECKSUM"
-}
-
-DEBBASE="tyrian-data_${GAME_PACKAGE_VERSION}_all.deb"
-DEB="$DATADIR/$DEBBASE"
-
-go() {
-	verify_args "$@"
-	ZIPFILE=`unravel "$tyrianzip"`
-    [ -e "$ZIPFILE" ] || die "ERROR: '$ZIPFILE' does not exist."
-    [ -f "$ZIPFILE" ] || die "ERROR: '$ZIPFILE' is not a file."
-    [ -r "$ZIPFILE" ] || die "ERROR: '$ZIPFILE' cannot be read."
-	checksum "$ZIPFILE"
-	if [ "$CHECKSUM" != "$ZIPSUM" ]; then
-		echo "warning: checksum is not what we expected" >&2
-	fi
-
-    OUTFILE=`unravel "$OUTDIR"`"/$DEBBASE"
-	cp -p "$DEB" "$OUTFILE"
-
-	oldpwd=`pwd`
-	cd "$WORKDIR"
-
-files='cubetxt1.dat cubetxt2.dat cubetxt3.dat cubetxt4.dat
-demo.1 demo.2 demo.3 demo.4 demo.5 
-estsc.shp exitmsg.bin file_id.diz helpme.doc
-levels1.dat levels2.dat levels3.dat levels4.dat
-license.doc loudness.awe
-manual.doc modems.txt music.mus
-netarena.pcx netfont1.pcx netfont2.pcx netmega.pcx netset.pcx netterm.int
-newsh0.shp newsh1.shp newsh2.shp newsh3.shp newsh4.shp newsh5.shp 
-newsh6.shp newsh7.shp newsh8.shp newsh9.shp newsha.shp newshb.shp newshc.shp
-newshd.shp newshe.shp newshf.shp newshg.shp newshh.shp newshi.shp newshj.shp 
-newshk.shp newshl.shp newshm.shp newshn.shp newsho.shp newshp.shp newshr.shp
-newsh^.shp newsh~.shp newsh#.shp newshs.shp newsht.shp newshu.shp newshv.shp
-order.doc order.tfp palette.dat
-setup.box setup.ini setup.int
-shapes).dat shapesw.dat shapesx.dat shapesy.dat shapesz.dat 
-shipedit.doc shipedit.pcx
-tshp2.pcx tyrend.anm tyrian1.lvl tyrian2.lvl tyrian3.lvl tyrian4.lvl 
-tyrian.cdt tyrianc.shp tyrian.hdt tyrian.ico tyrian.pic tyrian.shp tyrian.snd tyrset.pcx
-user1.shp user2.shp voicesc.snd voices.snd'
-
-    gdp_unzip_paths "$ZIPFILE" .
-    cd tyrian21
-    rm *.exe
-    rm *.ovl
-    slipstream_permcheck "$OUTFILE"
-    slipstream_unpack "$OUTFILE"
-    for file in $files; do
-        slipstream_file "$file" "usr/share/games/tyrian/$file"
-    done
-    slipstream_instsize
-    slipstream_repack "$OUTFILE"
-    slipstream_cleanup
-
-    rm $files
-    cd ..
-    rmdir tyrian21
-
-    if [ "$downloaded" = "true" ]; then
-        rm "$ZIPFILE"
-    fi
-
-	cd "$oldpwd"
 }

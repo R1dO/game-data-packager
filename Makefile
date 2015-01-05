@@ -48,7 +48,6 @@ default: $(DIRS)
 	make -f rott.mk VERSION=$(VERSION)
 	make -f wolf3d.mk VERSION=$(VERSION)
 	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION)
-	make -f tyrian.mk VERSION=$(VERSION)
 
 $(DIRS):
 	mkdir -p $@
@@ -99,7 +98,6 @@ clean:
 	make -f rott.mk VERSION=$(VERSION) clean
 	make -f wolf3d.mk VERSION=$(VERSION) clean
 	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION) clean
-	make -f tyrian.mk VERSION=$(VERSION) clean
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:

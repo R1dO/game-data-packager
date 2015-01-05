@@ -1,0 +1,496 @@
+%YAML 1.2
+---
+#shortname: tyrian
+
+package: tyrian-data
+type: full
+install_to: usr/share/games/tyrian
+install_files_from_cksums: |
+  2480546301 36169   cubetxt1.dat
+  1486908798 8108    cubetxt2.dat
+  3017842492 12294   cubetxt3.dat
+  3571436954 62424   cubetxt4.dat
+  625760848  2745    demo.1
+  3214433957 2193    demo.2
+  623644273  1974    demo.3
+  1914765014 699     demo.4
+  2152709229 1122    demo.5
+  1085736327 115338  estsc.shp
+  706605114  4000    exitmsg.bin
+  643886897  304     file_id.diz
+  319033702  13083   helpme.doc
+  1229240386 9359    levels1.dat
+  2051714898 5534    levels2.dat
+  1789566389 6052    levels3.dat
+  751667919  11103   levels4.dat
+  746610149  7869    license.doc
+  3141647588 34382   loudness.awe
+  587043468  32318   manual.doc
+  3406684284 3082    modems.txt
+  842346037  153482  music.mus
+  3131400850 22826   netarena.pcx
+  2603740650 8692    netfont1.pcx
+  1031752906 10327   netfont2.pcx
+  3588679628 33221   netmega.pcx
+  3396037561 53766   netset.pcx
+  1343273142 633     netterm.int
+  3328586459 14096   newsh0.shp
+  2874864033 29941   newsh1.shp
+  1993929893 35236   newsh2.shp
+  2811399401 37130   newsh3.shp
+  775120250  29449   newsh4.shp
+  3028498759 35813   newsh5.shp
+  1425774316 17578   newsh6.shp
+  2593278867 44079   newsh7.shp
+  975069015  35152   newsh8.shp
+  3600755471 38831   newsh9.shp
+  2511252582 25622   newsha.shp
+  2458773564 39025   newshb.shp
+  117528338  40714   newshc.shp
+  1017427299 42012   newshd.shp
+  2198986029 28945   newshe.shp
+  3376643067 33543   newshf.shp
+  3829556607 36643   newshg.shp
+  4102196915 46639   newshh.shp
+  2722307320 30860   newshi.shp
+  3409272313 43999   newshj.shp
+  3155847538 22913   newshk.shp
+  94364419   14846   newshl.shp
+  3700412744 22378   newshm.shp
+  1292696811 41201   newshn.shp
+  3002203261 24478   newsho.shp
+  1454869397 46204   newshp.shp
+  3612603756 28249   newshr.shp
+  711303051  34888   newsh^.shp
+  816752063  16219   newsh~.shp
+  2070673289 17750   newsh#.shp
+  2487630938 46566   newshs.shp
+  4159994826 14187   newsht.shp
+  1233745291 35657   newshu.shp
+  3701837396 23343   newshv.shp
+  248595799  6334    order.doc
+  1283428962 272703  order.tfp
+  3159896514 17664   palette.dat
+  2352752715 24      setup.box
+  3163297135 77      setup.ini
+  1004598843 7451    setup.int
+  2833035873 118720  shapes).dat
+  1648817559 172480  shapesw.dat
+  767763841  217504  shapesx.dat
+  1515070427 152992  shapesy.dat
+  128550460  243712  shapesz.dat
+  2429026412 17174   shipedit.doc
+  3305516961 13450   shipedit.pcx
+  3173813103 62168   tshp2.pcx
+  3988034873 3315848 tyrend.anm
+  978033593  538262  tyrian1.lvl
+  3753347598 381242  tyrian2.lvl
+  1963724006 393398  tyrian3.lvl
+  1347595571 800006  tyrian4.lvl
+  2071563779 1125    tyrian.cdt
+  3057356980 444862  tyrianc.shp
+  2391449990 153657  tyrian.hdt
+  2905899694 766     tyrian.ico
+  3931527424 365969  tyrian.pic
+  2976180454 443871  tyrian.shp
+  3245533034 264512  tyrian.snd
+  3396037561 53766   tyrset.pcx
+  491299863  27674   user1.shp
+  84075211   27674   user2.shp
+  2600234191 188275  voicesc.snd
+  1661905447 132767  voices.snd
+
+#symlinks:
+#  usr/share/doc/tyrian-data/vendor.doc:
+#    usr/share/games/tyrian/vendor.doc
+
+files:
+  tyrian21.zip:
+    size: 4754048
+    distinctive_size: true
+    download:
+      tyrian-mirrors:
+        path: .
+    provides:
+    - cubetxt1.dat
+    - cubetxt2.dat
+    - cubetxt3.dat
+    - cubetxt4.dat
+    - demo.1
+    - demo.2
+    - demo.3
+    - demo.4
+    - demo.5
+    - estsc.shp
+    - exitmsg.bin
+    - file_id.diz
+    - helpme.doc
+    - levels1.dat
+    - levels2.dat
+    - levels3.dat
+    - levels4.dat
+    - license.doc
+    - loudness.awe
+    - manual.doc
+    - modems.txt
+    - music.mus
+    - netarena.pcx
+    - netfont1.pcx
+    - netfont2.pcx
+    - netmega.pcx
+    - netset.pcx
+    - netterm.int
+    - newsh0.shp
+    - newsh1.shp
+    - newsh2.shp
+    - newsh3.shp
+    - newsh4.shp
+    - newsh5.shp
+    - newsh6.shp
+    - newsh7.shp
+    - newsh8.shp
+    - newsh9.shp
+    - newsha.shp
+    - newshb.shp
+    - newshc.shp
+    - newshd.shp
+    - newshe.shp
+    - newshf.shp
+    - newshg.shp
+    - newshh.shp
+    - newshi.shp
+    - newshj.shp
+    - newshk.shp
+    - newshl.shp
+    - newshm.shp
+    - newshn.shp
+    - newsho.shp
+    - newshp.shp
+    - newshr.shp
+    - newsh^.shp
+    - newsh~.shp
+    - newsh#.shp
+    - newshs.shp
+    - newsht.shp
+    - newshu.shp
+    - newshv.shp
+    - order.doc
+    - order.tfp
+    - palette.dat
+    - setup.box
+    - setup.ini
+    - setup.int
+    - shapes).dat
+    - shapesw.dat
+    - shapesx.dat
+    - shapesy.dat
+    - shapesz.dat
+    - shipedit.doc
+    - shipedit.pcx
+    - tshp2.pcx
+    - tyrend.anm
+    - tyrian1.lvl
+    - tyrian2.lvl
+    - tyrian3.lvl
+    - tyrian4.lvl
+    - tyrian.cdt
+    - tyrianc.shp
+    - tyrian.hdt
+    - tyrian.ico
+    - tyrian.pic
+    - tyrian.shp
+    - tyrian.snd
+    - tyrset.pcx
+    - user1.shp
+    - user2.shp
+    - voicesc.snd
+    - voices.snd
+    md5: 2a3b206a6de25ed4b771af073f8ca904
+    sha1: 29827de99c92cdba7ac8d8b1307776c8f473cd44
+    sha256: 7790d09a2a3addcd33c66ef063d5900eb81cc9c342f4807eb8356364dd1d9277
+    unpack:
+      format: zip
+      
+md5sums: |
+  3f2476d9ff29a06cf9fb85d52302222a  cubetxt1.dat
+  2b199deeccab1042fb02b46c47c2a8d0  cubetxt2.dat
+  4229d5532a206aabe7e1fa11a7d8447e  cubetxt3.dat
+  f50884bc600f99605ce6115c215e357d  cubetxt4.dat
+  1b75b72353e9900c1292d8548066011f  demo.1
+  a706a53da854539670506c7084df44d8  demo.2
+  30833dce8dbdd8569d20df80e140498c  demo.3
+  6b01a9da5ac4454caa697251939a488d  demo.4
+  a5356a2630854f7c3e882231e84bf1a7  demo.5
+  78f0cffcf5b6285429d8587f6bf3843c  estsc.shp
+  f3292627d3a01812f685b8bcff55e1fa  exitmsg.bin
+  a50638f1ebd9f5ee8c2bff61c03f689b  file_id.diz
+  c060d7fd2aa25525929821ae515bc833  helpme.doc
+  013776dd1c00c1718906fac14493b69f  levels1.dat
+  1fb204ffc76ddfa2346f92027c7da63c  levels2.dat
+  b3bec107c0e3db45ef3c3cc933ed6944  levels3.dat
+  bbf7aaa5cf9114f4fa2de51a693c7e28  levels4.dat
+  5f8c6fa6397eca6fcfa5b94fc3eb987d  license.doc
+  34a6a2ad926ea40674b325c55044cfbc  loudness.awe
+  5441cc0baf11d944b333f1d283776511  manual.doc
+  3677e817e4b030379afd939bd66ab7f6  modems.txt
+  bdb982d1ee185f1f713eadcd80931a66  music.mus
+  d68eeb3050380ddafe69bb1aa772d3df  netarena.pcx
+  b1f6e2416ff65ecc65906d09a59bd6be  netfont1.pcx
+  2c56d642d41dfe0b0d77e7dd3aca1a72  netfont2.pcx
+  b62d77eba5768413bca5d22cb27d4903  netmega.pcx
+  c0df9fe82ccffa70c069800304614100  netset.pcx
+  ae3a495baf1d628294da5fc9fb5affb0  netterm.int
+  a15a912c59b845e3b21e9d70bbeb213f  newsh#.shp
+  71e299a984b261bb86b724cd8f84d43f  newsh0.shp
+  14a694d3b9cb2254a6ade23a7984ccdf  newsh1.shp
+  97371bdf38332c2621bf7954d967ebfe  newsh2.shp
+  e6587898b8b3dabda6bccd6acea739ff  newsh3.shp
+  bf3a281c254910afaedc649e1351a332  newsh4.shp
+  2b8becea765397e8af43cad42a38d85d  newsh5.shp
+  ada115e193ffeb7cb2ef27b1a85452dc  newsh6.shp
+  667ac2ef6b7ad320369560c5c503b009  newsh7.shp
+  10fdce60379c172d38622e4dcba93e43  newsh8.shp
+  44a71b2e40e9d00a0f52dd7e7fe1b633  newsh9.shp
+  241f78397712ea5e8cf90e06343bb43a  newsh^.shp
+  f71b7f996e1a8aea600452742dee017e  newsha.shp
+  02baeda4bc658eb1bfb172326ca508bc  newshb.shp
+  fc2c4501b5f7c977a2c24854b216e87e  newshc.shp
+  fc86314734e7f00a34e7cc01f993286f  newshd.shp
+  c277aa8d8c40d8b029746b803e5baa58  newshe.shp
+  1885561dae22d611a2cd848ae11debb8  newshf.shp
+  07a0d666da939d5af73816f69ac1f3cd  newshg.shp
+  904a7e0c26209e3ad7cab6ca5e274d9f  newshh.shp
+  20cad98ec81470a2dadc77a57bd2d927  newshi.shp
+  c6feda4ed05794234aeeef29541b738f  newshj.shp
+  2dbd9fd8eb3ab864a8dee9fe884c0231  newshk.shp
+  533596271e83f092a4bfcd3c51cd20c9  newshl.shp
+  0ea42895128c45430d7563be3bb578a8  newshm.shp
+  dac352f9a396743e62356274c070927b  newshn.shp
+  1c657e5934c3d2b3617ecf91c5a254a2  newsho.shp
+  1f32ef233620c2b13b60eb654f42ca38  newshp.shp
+  63715985f6c11bb8a95e43789f101bc8  newshr.shp
+  b569d981cbecb4dd2e2f0ae2ec478dcd  newshs.shp
+  bebf775c982a16ec0fcdff4810588972  newsht.shp
+  ad0ffce00676cc087cda3e4b840a4421  newshu.shp
+  885bd4e4f1e769410a3308d1be8f9b53  newshv.shp
+  7c5154d4d2977f0975c4e9adba99c5ef  newsh~.shp
+  75f055ae3b2a0ebb5b85ec5b842d2e7e  order.doc
+  e908c7cdd7f211e7c2fba68e70d8179e  order.tfp
+  847d6c6bf3d856422b7b27067049ed85  palette.dat
+  cb333a9a8ddf99e09a339754345ead88  setup.box
+  747300166df2f923e9f0fcb604b74a79  setup.ini
+  68086a05c717f0e57040a15d17661335  setup.int
+  9c9db30866f194285cd528cb6082fcb3  shapes).dat
+  e828cea98c17aff84348367fa15674fa  shapesw.dat
+  7ccff10cd4b8c818e01628992a171ddc  shapesx.dat
+  e1f62026fcbb91fa8faced748b2f0978  shapesy.dat
+  d853b53ac66e5409650e97fb3bbf2671  shapesz.dat
+  85bde37e0ba21d06313b1083c37d447f  shipedit.doc
+  7257a225afac10ea6ab49025ae80abca  shipedit.pcx
+  d4f64be18e1c4cbfb4a36b9159f712cd  tshp2.pcx
+  2a228071c3a226a7ece9f5f4c2d5b776  tyrend.anm
+  4490010ccebf217b86bb4337ac494773  tyrian.cdt
+  0547aa08a6cfcdefa16f5b9813664ec6  tyrian.hdt
+  a6fa1d2ba8e6d9c15a33ac82fa441ddc  tyrian.ico
+  a16de4ee30a67e2727c162dcd97ba25f  tyrian.pic
+  b79281a3c801b48af96cc57f510e2d83  tyrian.shp
+  07fe095d8cc120b8293e7f776dfee90e  tyrian.snd
+  a1e73e0586ce715ab7daaedfe9b98595  tyrian1.lvl
+  1d58c20d0b177f6d45716f1142fcc438  tyrian2.lvl
+  a8b246091b7dfe230b4cbedafe04714f  tyrian3.lvl
+  c4e8395ba82c15dd275bf092ad18761b  tyrian4.lvl
+  d445d57154b282eeeb1a9273157efc12  tyrianc.shp
+  c0df9fe82ccffa70c069800304614100  tyrset.pcx
+  9d9de779f988bdd383b19bedc1de2989  user1.shp
+  059b820eb219f38545365a173ae81b85  user2.shp
+  bdfeb89707fac1dd319a17e43328de2b  voices.snd
+  c00534446f089c940e649dc75a28e8a4  voicesc.snd
+sha1sums: |
+  58807f32c413a0c9db6deb0365f2fac9518e7c86  cubetxt1.dat
+  ee7dc2eb87e5a75564382efcd95d13554d3835ba  cubetxt2.dat
+  1ee93623406dc61b50ccb41a97bae769ea15cef2  cubetxt3.dat
+  9288839cca5440d370aff5525edc37022144d8a9  cubetxt4.dat
+  6ca76f8205c990e33339c5b5953e925c5cd18973  demo.1
+  af2ac371b00529fe9b13ecd9c005649918103682  demo.2
+  499c50accd42898ad2e5bbd8de00661f608d6499  demo.3
+  e37f3a32e6d6128dcc1a13d575cfb9aa8288574a  demo.4
+  cb8c542e9d9bffc6b07dc1e48833dde33a3b91e4  demo.5
+  ddbb3d3eef0c199093dd297fbccda8f3d856288c  estsc.shp
+  95558197db8e614bf409898dcb964b54bc64663b  exitmsg.bin
+  16aa571122f0522f90432b7abbc875988e5753c9  file_id.diz
+  9fc5918f3e81b42328b2c506511cb6057388ca3b  helpme.doc
+  e2b158dbf0c1a547e05f6e087f0ecc573a6c4f9a  levels1.dat
+  fb0a4427b19d669c6b3783a7589ac22bb29dd5e2  levels2.dat
+  dd6c6c74a7e8c3aa0f3943ba77f764ccd981e3d6  levels3.dat
+  5a7112e1c579bdcc935fe747e159a62a1a516943  levels4.dat
+  1614ef43f2d55cfad298fbef48560da1480c2a33  license.doc
+  bf46dff901e1e151f6bda16fefaa77906974c5b5  loudness.awe
+  40832c37c4f7cdafe1936cb8765d4c68167d09e5  manual.doc
+  58b64a9d7d5b1ef62589ae3a096739241dad0460  modems.txt
+  b77313a9f92bc67f5c577699dcb95ca613e6948f  music.mus
+  022b7de612f8b5aec5d56ed702832e494515bf22  netarena.pcx
+  20d8cb1d75a0b6db64a8e3a5276a00410c8ab2e1  netfont1.pcx
+  c6853d9306b8f8daec72e25ab33340856121d1b3  netfont2.pcx
+  be6345e7b990998ee81c27da337f45e765c096b4  netmega.pcx
+  50ef0cd9eaa2ae0c0c628c141400b76101223385  netset.pcx
+  c7ebdd17aba1661f33a033d318ce5ff95e21dd31  netterm.int
+  031bdfc2f280e4ae3e9574c2151559fb752eb441  newsh#.shp
+  1da408b9177ffba057189eff64b6096615a8d767  newsh0.shp
+  2c858ec1c02d65df0a00bea02474bb9ad365b202  newsh1.shp
+  445d2e49862304431525bcedbe7838fa5fd16f1e  newsh2.shp
+  f8f9c6f3c1fe9972c75d0c9958c4eee555a57e96  newsh3.shp
+  81747e837d40194431a018764013efc060391590  newsh4.shp
+  c961da96994deb81cf71d0d8e6495cc05bb9888f  newsh5.shp
+  be7ff3250f8712848c550b913731b60b8c945f6a  newsh6.shp
+  9c59e7f83e01afbef951f56d7a1a88cd0ac615d8  newsh7.shp
+  a3efbcc672fe772b8761c47230c1cdac2c70cd1c  newsh8.shp
+  51d07d3b1003931249a0938cca84d36b9e0e1c1e  newsh9.shp
+  3a380dc88b030d8359ce76100b516ccc4400b186  newsh^.shp
+  651f90cc86784b6ba4d60a70dfe54d6b2a18d8d3  newsha.shp
+  66144493e3cfe3185956ba911c8c4249a9494f0e  newshb.shp
+  9acf9a67965ec94b2d2efbb772a83320c54791ec  newshc.shp
+  3e222af4b6d36a4394d16c6b7a3064662cfdad5e  newshd.shp
+  77af84b88b9b6adfc69a2e60ade0f00e4f577e64  newshe.shp
+  f454dcec5ef1fa701e48c6dc5c5e0dfd3c52b3f6  newshf.shp
+  00c730755761a3f1e70883361a03d6a72c5606c2  newshg.shp
+  b940e28e61e38390073bc85b56a43639aaa459b0  newshh.shp
+  bec6f69b0d09bc26e2376b09acecc42e5f73affa  newshi.shp
+  ef90569f294d58d92bfdcb46b766cadcc6356cd7  newshj.shp
+  6988b3c87c3d34d3e32dc3691c39357302a5b62b  newshk.shp
+  633192dde1be2d6d9d5767cb40cb121db28bb84c  newshl.shp
+  ade7cbc0ad0bbc861e16d85f0c84dfb85244ae5b  newshm.shp
+  f1b5f21ad0f591e9e58e0204f1cfb46ac5d3c463  newshn.shp
+  ad2c76ce5bf704a91f79fd197a814653c4c397ff  newsho.shp
+  895952a22061a7461526f9eef08f96ce444a0ceb  newshp.shp
+  787f128c51ef1ff316162db2506c4d30695adb76  newshr.shp
+  dc332a6ea28b6b2feead48982dde5afc8a984e95  newshs.shp
+  869a8d46fcf62c6eefcefb171a7b396b63d44707  newsht.shp
+  6827b9c067fe25f065bb88f42957f13899dc4ee9  newshu.shp
+  e26f95d57cf6d40f214a5b985ba760b82c666205  newshv.shp
+  34557bb003bacb454d98533a1b91fb7119774e09  newsh~.shp
+  057269344b7f6897850dea812a2b9be295e87bc8  order.doc
+  cbad5ffb246810bff3c752f168b53ae517fbad03  order.tfp
+  29af4cd642e0b29dc8120b5d92f130eaf4e860c9  palette.dat
+  c5b67283ac176399356470b388da622e53723a8a  setup.box
+  9bdf6bbc992c867444029701d19c7f93bc41d74f  setup.ini
+  fe030b1652a97e51b9b4219957d9959215acf653  setup.int
+  861552d4f7fcad129bc919136c413263154499aa  shapes).dat
+  2852644fac807eceddaf609ad5f5763499991feb  shapesw.dat
+  4a0b3f475dcd3c2e9fc2dbb108a0b8fd763b1f95  shapesx.dat
+  0a95f692ce57c4e338cf48016953c10bc1a2f697  shapesy.dat
+  5d809fc471f638c697de937f84a5c216b8a79424  shapesz.dat
+  cd203a94ba80a8bc7e731d95c4989f99cfba9070  shipedit.doc
+  1781a9677345ca990a80177bc839cae76474a809  shipedit.pcx
+  04cc3cdc73ec23d092cfd7618d9ae5e34e82b791  tshp2.pcx
+  88bb0176e7b7125714c2bad72d18b93ca5882c1c  tyrend.anm
+  bd63566da5c24d1f50ffdcba99c654463f129d5c  tyrian.cdt
+  f935e494b090b8bd2e86be06624a84946a5a947d  tyrian.hdt
+  04c77d6249cde152bbd6dbef27ddaee81b36b5d5  tyrian.ico
+  0b216d9712f23e8faec041880b81773d93f646a2  tyrian.pic
+  9978439cd9a52fde3d65c3b223dfe96ca437fef8  tyrian.shp
+  af896c25e6efeeb6dfd4cc7345362b4b29a85324  tyrian.snd
+  39825b5d69a07232d91886da68d217465a74695c  tyrian1.lvl
+  54267181a913ea074e61db6d1528690c7337f793  tyrian2.lvl
+  dcde93152fc724213cd4b32da7b7dadf50da774b  tyrian3.lvl
+  d72726741665181786cbd3d9c635946905fb983d  tyrian4.lvl
+  a5655b805e7fc13c6d1bb0a4f66f00ef93466ca9  tyrianc.shp
+  50ef0cd9eaa2ae0c0c628c141400b76101223385  tyrset.pcx
+  7f010b007408638d4153832edf1dc9d424b4cfcd  user1.shp
+  9af50c68098a3469fc44c3ad2777e345787f2bf6  user2.shp
+  63ff6b55caeda529f69983a342618c84cba5addf  voices.snd
+  a2d5730a7ddf4da0a0b8338efd65a28fa482c731  voicesc.snd
+sha256sums: |
+  2a0bc26ac4a8cdcbe7a145c9b1868a87ecb4335e9787f2f1e5713c965372df2b  cubetxt1.dat
+  6604a1dcc264e8b8e98f036a8bc35579e9b90b92eccbc4d7c1effee9785d1580  cubetxt2.dat
+  fcfc9762cd4cfad42feb12d975929de86851b216d4491252c701527e22b55539  cubetxt3.dat
+  f77ac5509d7d644515bccb8e3733d5ea047e22bd03465c75526fb199e91b1b46  cubetxt4.dat
+  9128c9276325191acd617d7ff9c520524fb55a286cb25a1c39c78bb6cadc5ecf  demo.1
+  516be02853d416e8719f7a895343c055ea079f793fcc97e4d678975dce616f7d  demo.2
+  b742a1acf9b64d9d55ee824cf94a335d62495ee4b0a1dafbe5adcadce5c40f29  demo.3
+  68acfd9f1078cbc5798472ce5168b111cca1b5a8384f0386c572ca878e402aa2  demo.4
+  0c708cc80abdf8bd0a62bf1d41e3e96af29e79458be4426c259b84c0b6000f5d  demo.5
+  d4368490c9191442c1255b4feb447bc0265236126bed11c9442cef5338a146df  estsc.shp
+  5e09eccbdc6eef0a20715db1eb59dc336401642ed4afa8f4d506e5a1934557a3  exitmsg.bin
+  b7a987e1c335c3130e08cae2e98f85fde4b759f7e48ac1d6ac9bdd97a3ef9062  file_id.diz
+  bfa40668e083cb44ead8e0c6176b8ec382f9291c489efdcba8d474d3bf79035b  helpme.doc
+  e82164c96abb994450d416a3ab0e5fe6479fd4db831cd0f203a60dfe4aa78dcb  levels1.dat
+  9aa94b70aae2b24b16c295ed86e392ac16873306012bdd89e0cf995d605178ea  levels2.dat
+  0d935cd7bb3c84451d9f57dbcd31a8d515205b18fb050070a416e9b7411dfbd3  levels3.dat
+  891b9ecbdd223df291077fd95626f37ac03b527ca6fd50f76198067a5edebdb4  levels4.dat
+  a81955ec129cac3b2a52300e1352be142d12cdd919789d6dda41a211caa8e162  license.doc
+  fae838f0dad4894b41b4f1f094203152f5a1cf9a74b9fe24024b12f494d92c6b  loudness.awe
+  6d61e5b4ddb5af6a510c0b2bd408680134d8a9eaa272dbb5e367b20aa8e6a92e  manual.doc
+  9544cb45be8b5d6907431e4496e56ccb0c2b9b7d2e621f89316761de81106e68  modems.txt
+  b06a509bd8576f63c61859e3a2c59482c4035d79f21725f9ec10479377044a74  music.mus
+  1b8dffbb1d17af08d9e4dd265c7146b6a5f1dfb49bee1462ebd80ad63cba2fac  netarena.pcx
+  13cecff9b2bb01c472ca42a6d4081bfb54ef182e086130fc1d82530ea2ed5cda  netfont1.pcx
+  9d99299c4b224b6489d252c63cca08850f525c7ac4548cfb55241fc36902dc42  netfont2.pcx
+  275291eaf4666aba50869adefbf21b3314bc72b951a38b962f26713ef159b8eb  netmega.pcx
+  bcb12dff1a6b845fdf26d3eb1f347c5d9d90248365f5113a67a371883f4c2a4a  netset.pcx
+  58fec99ab9512c588e8f4375e1d17ea9c052f9be8cd74fd1ea411ca00519f300  netterm.int
+  45c9e26a7742ce3e9340638349ab6b1b4c834c1ed6dd5d69cc32dd4e481a706d  newsh#.shp
+  c443ec4e268205e6a843c1ba783e84cce9d710e3226ddd03b8bfc869bcafbf10  newsh0.shp
+  77827c137462ebaa53ad9c6d190224a6e0e1d00bf36cff2c7c66f82b00b7026a  newsh1.shp
+  8773ebcae4be992ecfbb476c0797b0bef4d43faa4c99449890bfaa28c8d9cbcc  newsh2.shp
+  f5ac183f489079505908f3cb431b516a54b24fdf312f2702725abf83732e9c6d  newsh3.shp
+  05fd4174fa1041dbccccf16fffc18b574b9c3c3ca3e2678ba0ba977c9b288fca  newsh4.shp
+  1e6854ccde0e6b0e0789afadd52f6d8b7d264a61f59185635c5ed119f29d4bad  newsh5.shp
+  79098b156a9a1cc1af16a3a03156d58cf45b9a830217d362c3c9935798afe62d  newsh6.shp
+  52c40a2438373f9fc9a7cd2d338ec149f4e81dda56d9c05061ee2264408f0b1a  newsh7.shp
+  1fb3f52d36bf3d05c4e5867f8fa34035fc8eace8fd27b55b41df1abba7ef41ee  newsh8.shp
+  371650303f8b93ae17b76d7c27df202bf6a3f6bb482ffabb7b6b1e16e2774d30  newsh9.shp
+  e9884ec4debe73f00c51cca5112dd2e2b0d2c57d1d5953d2902947df36471f23  newsh^.shp
+  6fee07e22d028831ee0c54a21982a1e6c8ec8efba94e7576670ea0dfc617c6b9  newsha.shp
+  9bae3eccd4e8793d42553c9798581f0ef77d829fe30d16afa29cf45261ed3c08  newshb.shp
+  16db0d5faa13c935da700f3bd25ce539bdd37336fa164d23f5fa3405a315f31a  newshc.shp
+  08c7c81b4ed590609f97347b1a4ec60aba56925ecc7193a6718c34cb8d698adf  newshd.shp
+  4be2df495007fc211eeeedf3fe07a0d3eb4fdca4174e1adccb2918967c3f7c7b  newshe.shp
+  852c2fb552c9077a198be7902d8f58699ed070dabcd36c6e3acfe80dd3804cce  newshf.shp
+  3d4cb3d7e3b6547b637ecf02e8d284abc1e240809cc648d836dfa99afd45f416  newshg.shp
+  d5bc9e5a6f8a2098f95284a9e675cf6d5b15a29baf8ff8a0fa72943801f351db  newshh.shp
+  226da9b33b9b16f7a4212b9cc785fbd82c9517172b3a15a7f58798a38b0a12e4  newshi.shp
+  013fbc96bfba79bec9b07d37ec477e7d3ea9d22aab3f9efd392c6253ae5721dd  newshj.shp
+  cc61abb548a4015d71bac98bc0091217660c1146adcac8b15e3d2bc7e5598d73  newshk.shp
+  9c8ee60bc111a9eb4fb33c7b2528a2f6217c57dc77ec8ee1f2104e8c1f20a34d  newshl.shp
+  ba6998cb74ba122812bacb714c81b8c309af073b5464645eee2856233f37e7c2  newshm.shp
+  612c38b9d93220d9fb0228594d9597a0637f52fcdf789e9ffc15b0a362a70341  newshn.shp
+  47dbee09f4c94660c42503d721e82ec50627faa241f458f7bfe3835d88cd250a  newsho.shp
+  4bd9a72339e30440c172e385f258c8895b516ff84026a9a6b5a65ada4cf0ab90  newshp.shp
+  7869a88236e46deaf6e051d4d7d38830865bc0047f09879fc8afd68ab7f30d94  newshr.shp
+  f0bccf154a436ba46834a00b934e7cb8a77d8585b175a39c1270ad7888411c88  newshs.shp
+  133fe424165eacbe3f05a8be838c5b962791855e3afff184123209e8f1cc118f  newsht.shp
+  762c328b99a824942005e66a4567d3c1d45a680527584367a962eeb4bf4e8c45  newshu.shp
+  b23f634db62c1db5efe6766368b76ec1700f7b96ecfe054cac308f9742c60075  newshv.shp
+  17519efb2aec555a83f0c1406e7d513641440e0b1c12e0832ad4c70ee54023f0  newsh~.shp
+  283347e26fc1b760e82994863005845631c4d438ecca99453c011a6fd4a2476e  order.doc
+  26f5f3d8e403676f5f2080fe45285c5a5118780e90b37cfee891c0ee385ccc18  order.tfp
+  6f0be74cb1b0026e46029d98d9ade41b8283bad849208543330b717fe5c365fc  palette.dat
+  f87854991cd8ba82d9b99c86f07932fe079089a4d49fd7aeb85b44b409107bf2  setup.box
+  06b9345543385b2b7249b45e50236dcb5f718ba688992038bbabafee92b6839d  setup.ini
+  a972a5253a3c3ce56b00f72e04f77f3bd2b38f946793370f144b3b5b6ff66262  setup.int
+  36173a95248ed1f60c499122b4b17450af2bc9ddcb958215ed9c400429ae37eb  shapes).dat
+  d06514348982ad364c4b77c4ed4f2f3dbccd8a390e180435a82484bdca5d9c7a  shapesw.dat
+  53530149c27573244fead5f8325f5a4c9f5108c95a666998140656436aaa8f2a  shapesx.dat
+  cff7f670d85ea73594092966b23b9ec697500ece148cbf65a8131e4e92412990  shapesy.dat
+  26aa6ab954391714255f368368261d991025e97d852a7403289bab6ded47da4d  shapesz.dat
+  31d1bb057ccb7a20c4a5175c3e2ff40c37d6d1d3391b162ed700ad502b74ad93  shipedit.doc
+  29caa6ad955f63819dd06ded886a991208a590ee68b88e2b8beb2f55e2e31bb5  shipedit.pcx
+  1a7b841ce799fac196e136c8dd90e6a0e9184bfdd05fa036cbb5e97d651e6327  tshp2.pcx
+  0477bb711d2373c3889da0a792505fff158a0fb9817932c3fb78976424a1c752  tyrend.anm
+  deb2c35297d89a1b2801ae21132d242121d9dee2a794a84b58dbd212f11f04fe  tyrian.cdt
+  c816055863eb91d28ac10b4acc1e312f433deff553f08926e698c9a9ba68daa7  tyrian.hdt
+  5aa58773ef65ac7503f102aa65e8e6f34ccf52d59ffbde84fe93e69b6bafdf12  tyrian.ico
+  5bda2ba46511f835e402188f1608b4398ae36303edfaef14304ad08b55bb5684  tyrian.pic
+  b9602b6dd42c1bf4716bdccbe5ab40495fcd064fcc55fd0f8d4436d640c4b450  tyrian.shp
+  0f5c37f97f0992026f1736f178bccc64746bc931daf23adbdc82553c140c80b8  tyrian.snd
+  b41e532214fa8cea36e37fed6512b357c6ac9c8c3267899ceb4a258fcb1bf0b9  tyrian1.lvl
+  3e18b124cd4ff5f766e5bf2e833eb79d3118010a253a30dc4c0ae6f483ae50e9  tyrian2.lvl
+  0995c7e2279995485576e02b21ac8599b4924c35af5afffdede69c01994b9937  tyrian3.lvl
+  181fde04387ba47e6b49a7f27010ac92fe00566a5f9fef075d74e4c4b2ebef75  tyrian4.lvl
+  7c1666a748f7b8f7662eff342529c453253cce5c11cbd667de912a9f41bbc02b  tyrianc.shp
+  bcb12dff1a6b845fdf26d3eb1f347c5d9d90248365f5113a67a371883f4c2a4a  tyrset.pcx
+  d78f5d084f3a2a087c48810476743434b5eddd144038164deee284a51b9d1913  user1.shp
+  7ac900995a588386ffc70d66ed67bd501e15bf3a8847ad33363bb67cbbc00d1d  user2.shp
+  c709ca1e74be6bd4b7917d258d81824d33c38a1a9a0287ec693b6459f58fc27a  voices.snd
+  949d2a2131d230c345397d8f1f6953115166271aeeccb28d8c6009c81a744dbe  voicesc.snd
+...
