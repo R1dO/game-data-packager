@@ -184,7 +184,7 @@ def main():
 
     for arg in args.args:
         if os.path.isdir(arg):
-            do_one_dir(arg)
+            do_one_dir(arg.rstrip('/'))
         else:
             do_one_deb(arg)
 

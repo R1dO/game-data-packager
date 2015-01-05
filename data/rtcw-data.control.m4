@@ -4,7 +4,7 @@ Section: non-free/games
 Priority: optional
 Architecture: all
 Multi-Arch: foreign
-Recommends: rtcw-sp
+Recommends: rtcw
 Installed-Size: 500000
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Description: Return to Castle Wolfenstein data files
@@ -14,4 +14,4 @@ Description: Return to Castle Wolfenstein data files
  the Debian package of the same name.
  .
  To play Return to Castle Wolfenstein using this data, install the
- rtcw-sp package.
+ rtcw package.
