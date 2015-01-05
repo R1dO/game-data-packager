@@ -1,3 +1,12 @@
+game-data-packager (39) UNRELEASED; urgency=medium
+
+  [ Alexandre Detiste ]
+  * rtcw-data should recommend rtcw (ITP #773742), not rtcw-sp
+  * make_template: strip trailing '/' from directories to be searched
+  * convert tyrian-data to YAML style
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
+
 game-data-packager (38) experimental; urgency=low
 
   [ Fabian Greffrath ]
