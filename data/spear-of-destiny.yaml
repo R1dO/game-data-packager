@@ -1,0 +1,189 @@
+%YAML 1.2
+---
+shortname: spear-of-destiny
+
+packages:
+  spear-of-destiny-demo-data:
+    type: demo
+    install_to: usr/share/games/wolf3d
+    install_files_from_cksums: |
+      1612205268 1072    audiohed.sdm
+      4176839452 93412   audiot.sdm
+      506033861  5534    gamemaps.sdm
+      345767126  402     maphead.sdm
+      3551665821 1024    vgadict.sdm
+      2382785751 305891  vgagraph.sdm
+      3240931844 402     vgahead.sdm
+      3002732200 730624  vswap.sdm
+      2532954622 6852    sod.doc
+    symlinks:
+      usr/share/doc/spear-of-destiny-demo-data/sod.doc:
+        usr/share/games/wolf3d/sod.doc
+
+  spear-of-destiny-data:
+    type: full
+    install_to: usr/share/games/wolf3d
+    install_files_from_cksums: |
+      3311987448 1072    audiohed.sod
+      2143942565 328620  audiot.sod
+      3842239033 1024    vgadict.sod
+      1710998175 947979  vgagraph.sod
+      2581315576 510     vgahead.sod
+      1623432876 68290   gamemaps.sd1
+      2833983920 402     maphead.sd1
+      2374872835 1616544 vswap.sd1
+    symlinks:
+      usr/share/games/wolf3d/gamemaps.sod:
+        usr/share/games/wolf3d/gamemaps.sd1
+      usr/share/games/wolf3d/maphead.sod:
+        usr/share/games/wolf3d/maphead.sd1
+      usr/share/games/wolf3d/vswap.sod:
+        usr/share/games/wolf3d/vswap.sd1
+
+  spear-of-destiny-mission2-data:
+    type: expansion
+    install_to: usr/share/games/wolf3d
+    install_files_from_cksums: |
+      38338034   135024  gamemaps.sd2
+      1413511892 86      maphead.sd2
+      2555517412 1879712 vswap.sd2
+
+  spear-of-destiny-mission3-data:
+    type: expansion
+    install_to: usr/share/games/wolf3d
+    install_files_from_cksums: |
+      1656044045 148534  gamemaps.sd3
+      2416058489 86      maphead.sd3
+      2009956332 1881760 vswap.sd3
+
+files:
+  sodemo.zip:
+    size: 702564
+    distinctive_size: false
+    download:
+      spear-of-destiny-mirrors:
+        path: .
+    provides:
+    - SODEMO.EXE
+    md5: e103c21eeea20329db10a9cb8f4db1db
+    sha1: e32d61f2d7eeb41f431ff09e8b12fd898e49203d
+    sha256: 28be8071e9eea2ebee31964699f16b2d67f267460df385248afd814a4efe2127
+    unpack:
+      format: zip
+
+  destiny.zip:
+    size: 702564
+    distinctive_size: false
+    provides:
+    - SODEMO.EXE
+    md5: 76cbe1e58a7b208f361db8b1413ba9f2
+    sha1: d581a3e68ad6d978263cb61e09477561314003a5
+    sha256: 7fa5f574ec05ec6057c1f018680fce420d60c12b9884635c9ab01e6c78fff2f7
+    unpack:
+      format: zip
+
+  SODEMO.EXE:
+    size: 691765
+    distinctive_size: true
+    provides:
+    - audiohed.sdm
+    - audiot.sdm
+    - gamemaps.sdm
+    - maphead.sdm
+    - vgadict.sdm
+    - vgagraph.sdm
+    - vgahead.sdm
+    - vswap.sdm
+    - sod.doc
+    md5: 6e9cfb8bcd2ab018aa53b7681408f14e
+    sha1: 82d5a9f84d1107b5c7721e3a8121fa109916d7f0
+    sha256: 3d15590a5debf6e853bbcfb90358f6b7a3e5a71b3d0f3758ccc5d8ce7bf9eec3
+    unpack:
+      format: lha
+      unpack:
+      - audiohed.sdm
+      - audiot.sdm
+      - gamemaps.sdm
+      - maphead.sdm
+      - vgadict.sdm
+      - vgagraph.sdm
+      - vgahead.sdm
+      - vswap.sdm
+      - sod.doc
+
+md5sums: |
+  f0022742f86c214872bd72f03aaf1529  audiohed.sdm
+  fcde1333c941229f4dd6ca099fcfe616  audiot.sdm
+  4eb2f538aab6e4061dadbc3b73837762  gamemaps.sdm
+  40fa03caf7a1a4dbd22da4321c6e10d4  maphead.sdm
+  2f85b6763a582df19e6a35dd9634c736  vgadict.sdm
+  1cc5ceb8e43c0c0030cf552fc8ae9d0d  vgagraph.sdm
+  18c03cb401ed274bc0b659e951140e64  vgahead.sdm
+  35afda760bea840b547d686a930322dc  vswap.sdm
+  ab85e05be214c9ac7a9ed35eb7b08058  sod.doc
+  6e914d15335125872737718470061ad8  audiohed.sod
+  10020fce0f04d21bd07b1b5b951c360a  audiot.sod
+  30b11372b9ec6bc06289eb3e9b2ef0b9  vgadict.sod
+  3b85f170098fb48d91d8bedd0cac4e0d  vgagraph.sod
+  fb75007a1167bba05c4acadf90bc30d8  vgahead.sod
+  04f16534235b4b57fc379d5709f88f4a  gamemaps.sd1
+  276c79a4a6419db6b23e7699e41cb9fa  maphead.sd1
+  b1dac0a8786c7cdbb09331a4eba00652  vswap.sd1
+  fa5752c5b1e25ee5c4a9ec0e9d4013a9  gamemaps.sd2
+  d55508cd58e2e61076ac81b98aeb9269  maphead.sd2
+  25d92ac0ba012a1e9335c747eb4ab177  vswap.sd2
+  29860b87c31348e163e10f8aa6f19295  gamemaps.sd3
+  a8b24dd3d3271e0b7fc6f2f995915f27  maphead.sd3
+  94aeef7980ef640c448087f92be16d83  vswap.sd3
+
+sha1sums: |
+  a6519b58bcaac5e8a866cebaf268e74afe2f1778  audiohed.sdm
+  0ce47169695698cd41580b4e3f9dfec393b4886b  audiot.sdm
+  66a3e2c12dfc374c414543885a213073c72772bb  gamemaps.sdm
+  f6271baf01c3fb88b4979fd0e124a8b2c66d4e34  maphead.sdm
+  c28f04668180386f42009eb3a3910437c893c8c0  vgadict.sdm
+  9da7d00d1d68c0b24bf120f9927df53ff663a64f  vgagraph.sdm
+  5765612af995804854d34696d152a7ee6f20dd18  vgahead.sdm
+  90158daca3d629b388b96f688e6084c11762f680  vswap.sdm
+  c3d1ed661b74038c329b2cf495b25d6bd1ba110b  sod.doc
+  112c82fcc5eb575003853d6d3aa77e0fd8aeca14  audiohed.sod
+  5ac8fb7a0a05f1351dfadd5eaa4473d5ccc2f96e  audiot.sod
+  e688cc0d44d97f059b0c998f75a8c620fdd8c4e9  vgadict.sod
+  51ff6f2a5754af4b849c854653772d241c01f56b  vgagraph.sod
+  889c3312b323ec7cf3e6e602e6a99261e2970817  vgahead.sod
+  eec367f635026ed2ecb7677ed75dddabcf24b29c  gamemaps.sd1
+  ac9e66fdf6564438d8a33573503ad201dd35bb94  maphead.sd1
+  a80d902aa9ce745b239d295290f96d88c0a7b915  vswap.sd1
+  a1c411725c027dfa0ba9e063f654abc6a3fcdf78  gamemaps.sd2
+  18e3538dcb7c5cdaad5fad835207510c5e99bee0  maphead.sd2
+  1ea21468b6c48007c1524918c7c7b4fc34939560  vswap.sd2
+  8e358dd0cbd6ffa942f14f013f3f7e5c4eecfca4  gamemaps.sd3
+  a80bdd3d87b54517040347c452962b53a8a5e225  maphead.sd3
+  97197d0effbe61fbe204c3d8e870888460de4353  vswap.sd3
+
+sha256sums: |
+  47f3236be1544f51d1dd993a168eeaa22da672fdfa30fb6a57947167afec7d25  audiohed.sdm
+  410cfca99bd4b17a229031134c5436fce2daeeed3708fc2d13aad3dc05d26d36  audiot.sdm
+  93d6ae6ce7c9b9cbadee12003877f206432a197702dd63ef0fa8e27dafed2d77  gamemaps.sdm
+  4df9b8f9999a7542ba1172ba91c153e42b345bd4fe3466f659c5613451d2ec87  maphead.sdm
+  a80aa6ad4052114209db3961c81864a692172d9d86db4af1901e4b5178aa8ef3  vgadict.sdm
+  718d69c4ff992b37bd1647cf7c16111023e69674a06e999d12847d0536ec434b  vgagraph.sdm
+  776252326c47d82356d170ee7f03b8e96edbbc059fdd8167f21a21d2e8aa5148  vgahead.sdm
+  2312bcadc05bbcbfce24514ab3000a15a2979fa62db9075271b762823588074e  vswap.sdm
+  bee5e8c7f81129fa4303d74279d77f67d1d328d5699aab767f60b1fb57900ce1  sod.doc
+  74f038a0d17e3075a8ed8be58b58a6f4ce590cd5371a140be49f8312de0415a5  audiohed.sod
+  531b33871d4503f6f5e9131225d0739a6a24b07b0d02de62723bba813719e909  audiot.sod
+  80713ce71576626acf5f83701ae163bc15511ce6a22416748d47d80bf406ce3d  vgadict.sod
+  80f96fbaf7fa91c1eb5a8aa1d4bffdebce8a9b508aa60a1354bdcc50fa537d97  vgagraph.sod
+  79950407f8948fa09479d8ba738aaeadc146e115a9d23e289e1a2105361e5909  vgahead.sod
+  772d834d97d429388be3cd7caa517e49a7e82e06367bd6f16d46c6b96e25ae1d  gamemaps.sd1
+  3093aa7b0c88a3dfac9f5cc16d9f1b2fee338a9c4f43e1063ce15ca109498736  maphead.sd1
+  6d9e54808a4738f11c37964d032c9a1c68a8ca98fcb18e6ccba286502967a568  vswap.sd1
+  29c6c1c3dbd2fe21e2e642615a0f6943952c1d7aff70e148d1b3b54e254899ba  gamemaps.sd2
+  b3749cd2175284ed8b3ae4dbbd3704f5ef116b30ea49a373fed5538170bc0bbe  maphead.sd2
+  97112755b1a07ab9ef5031f76ff04288de7e5bf910020e965f4bde9bcb7a96a6  vswap.sd2
+  4f4a9d0a9cda58eb6dfc6663b8e63090a7f4e941b71b01261964c242b9bc7470  gamemaps.sd3
+  3d7f82e2d578f9081da6887119c6324e19137dae5bee11cdf6a8e8147fc5d503  maphead.sd3
+  d3e357682f5ff5e54c7406a191d207e8e25bfd2d42c80206a2e378fb658c4c5d  vswap.sd3
+
+...
