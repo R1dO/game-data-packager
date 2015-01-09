@@ -150,6 +150,9 @@ go "$@"
 if [ "$PRESERVE" = "yes" ]; then
 	if [ "$OUTFILE" = "*.deb" ]; then
 		for deb in "$WORKDIR"/*.deb; do
+			if [ ${deb} = "$WORKDIR/*.deb" ]; then
+				break
+			fi
 			realdeb="$(realpath "$deb")"
 			echo "generated \"$realdeb\"."
 		done
