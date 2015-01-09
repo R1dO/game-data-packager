@@ -1078,7 +1078,7 @@ class GameData(object):
                         os.path.isdir('/usr/share/games/quake3')):
                     # FIXME: this is a hack, it would be better to
                     # have alternative locations defined in the YAML
-                    args.paths.insert(0, path)
+                    args.paths.insert(0, '/usr/share/games/quake3')
                     can_repack = True
                 else:
                     absent.add(path)
