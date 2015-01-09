@@ -6,12 +6,8 @@ default: $(DIRS)
 	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
 	install -m644 data/*.yaml out/
+	install -m644 data/*.control.in out/
 	install -m644 data/*.copyright out/
-	set -e; for x in data/*.*.m4; do \
-		o="out/$${x#data/}"; \
-		o="$${o%.m4}"; \
-		m4 -DVERSION=${VERSION} < $$x > $$o; \
-	done
 	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION)
 	make -f doom-common.mk IWAD=doom2 \
 		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION)

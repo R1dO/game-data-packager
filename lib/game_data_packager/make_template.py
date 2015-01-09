@@ -22,13 +22,8 @@ import subprocess
 import sys
 import tarfile
 
+from debian.deb822 import Deb822
 import yaml
-
-try:
-    from debian.deb822 import Deb822
-except ImportError:
-    raise SystemExit('"game-data-packager make-template" requires ' +
-            'python3-debian')
 
 from . import HashedFile
 
@@ -90,7 +85,7 @@ def do_one_deb(deb):
                 if name == 'control':
                     reader = ctrl_tarfile.extractfile(entry)
                     control = Deb822(reader)
-                    print('# data/%s.control.m4' % control['package'])
+                    print('# data/%s.control.in' % control['package'])
                     control['version'] = 'VERSION'
                     control.dump(fd=sys.stdout, text_mode=True)
                     print('')

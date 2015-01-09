@@ -21,6 +21,7 @@ gdp_data_driven () {
     (
     export ETCDIR
     export DATADIR
+    export OUTDIR
     export WORKDIR
     PYTHONPATH="$LIBDIR"
     export PYTHONPATH
@@ -35,59 +36,7 @@ gdp_data_driven () {
         exit $?
     fi
 
-    # We still do the actual .deb creation in shell, for now
-
-    if [ -e "$WORKDIR/DO-NOT-COMPRESS" ]; then
-        COMPRESS=no
-    fi
-
-    for DESTDIR in "$WORKDIR"/*.deb.d; do
-        deb="${DESTDIR%.deb.d}"
-        deb="${deb##*/}"
-
-        # it had better have a /usr and a DEBIAN directory or something has
-        # gone very wrong
-        if ! [ -e "$DESTDIR/usr" ]; then
-            echo "internal error: $DESTDIR/usr not found" >&2
-            exit 1
-        fi
-        if ! [ -e "$DESTDIR/DEBIAN" ]; then
-            echo "internal error: $DESTDIR/DEBIAN not found" >&2
-            exit 1
-        fi
-
-        output="${deb}_${VERSION_PREFIX:-}${GAME_PACKAGE_VERSION}_all.deb"
-
-        if [ "" = "$OUTDIR" ]; then
-            OUTFILE="$WORKDIR/$output"
-        else
-            OUTFILE="$(unravel "$OUTDIR")/$output"
-            ln -s "$OUTFILE" "$WORKDIR/$output"
-        fi
-
-        ( cd "$DESTDIR" && find usr -type f -print0 | xargs -0 md5sum ) > \
-            "$DESTDIR/DEBIAN/md5sums"
-
-        # slipstream_* assume this naming
-        if [ -e "$WORKDIR/slipstream.unpacked" ]; then
-            echo "internal error: $WORKDIR/slipstream.unpacked exists" >&2
-            exit 1
-        fi
-        mv "$DESTDIR" "$WORKDIR/slipstream.unpacked"
-
-        debug "building .deb: $OUTFILE"
-        ( cd "$WORKDIR" && slipstream_instsize )
-        ( cd "$WORKDIR" && slipstream_repack "$OUTFILE" )
-
-        rm -fr "$WORKDIR/slipstream.unpacked"
-    done
-
     # Special value to signal that gdp should just install every .deb
     # in $WORKDIR
     OUTFILE="*.deb"
-
-    rm -f "$WORKDIR/DO-NOT-COMPRESS"
-
-    # The Python code does all its work in this directory
-    rm -fr "$WORKDIR/tmp"
 }

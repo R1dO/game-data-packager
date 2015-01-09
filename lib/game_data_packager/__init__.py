@@ -33,9 +33,10 @@ import tempfile
 import urllib.request
 import zipfile
 
+from debian.deb822 import Deb822
 import yaml
 
-from .util import TemporaryUmask, mkdir_p, human_size, MEBIBYTE
+from .util import TemporaryUmask, mkdir_p, rm_rf, human_size, MEBIBYTE
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
@@ -46,6 +47,8 @@ if os.environ.get('DEBUG'):
     logging.getLogger().setLevel(logging.DEBUG)
 else:
     logging.getLogger().setLevel(logging.INFO)
+
+from .version import GAME_PACKAGE_VERSION
 
 # arbitrary cutoff for providing progress bars
 QUITE_LARGE = 50 * MEBIBYTE
@@ -228,6 +231,8 @@ class GameDataPackage(object):
         # demo packages include quake-shareware, quake2-demo-data
         # expansion packages include quake-armagon, quake-music, quake2-rogue
         self._type = 'full'
+
+        self.version = GAME_PACKAGE_VERSION
 
     @property
     def install(self):
@@ -970,8 +975,6 @@ class GameData(object):
 
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
-        shutil.copyfile(os.path.join(self.datadir, package.name + '.control'),
-                os.path.join(debdir, 'control'))
 
         for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
             maintscript = os.path.join(self.datadir, package.name + '.' + ms)
@@ -1032,17 +1035,29 @@ class GameData(object):
             mkdir_p(os.path.dirname(os.path.join(destdir, symlink)))
             os.symlink(target, os.path.join(destdir, symlink))
 
-        # FIXME: eventually we should build the .deb in Python, but for now
-        # we let the shell script do it
+        # adapted from dh_md5sums
+        subprocess.check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
+                "-printf '%P\\0' | LC_ALL=C sort -z | " +
+                "xargs -r0 md5sum > DEBIAN/md5sums",
+                shell=True, cwd=destdir)
+        os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
 
-        # Hackish way to communicate to shell script that we don't want
-        # compression
-        if not self.compress_deb:
-            open(os.path.join(self.workdir, 'DO-NOT-COMPRESS'), 'w').close()
+        control_in = open(os.path.join(self.datadir,
+            package.name + '.control.in'))
+        control = Deb822(control_in)
+        size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
+            '.'], cwd=destdir).decode('utf-8').rstrip('\n')
+        control['Installed-Size'] = size
+        package.version = control['Version'].replace('VERSION',
+                GAME_PACKAGE_VERSION)
+        control['Version'] = package.version
+        control.dump(fd=open(os.path.join(debdir, 'control'), 'wb'),
+                encoding='utf-8')
+        os.chmod(os.path.join(debdir, 'control'), 0o644)
 
         return True
 
-    def run_command_line(self, argv):
+    def run_command_line(self, argv, outdir=''):
         parser = argparse.ArgumentParser(description='Package game files.',
                 prog='game-data-packager ' + self.shortname)
         parser.add_argument('--repack', action='store_true')
@@ -1147,4 +1162,34 @@ class GameData(object):
             if not self.fill_dest_dir(package, destdir):
                 raise SystemExit(1)
 
-        # FIXME: make the .deb (currently done in shell script by the wrapper)
+            # it had better have a /usr and a DEBIAN directory or
+            # something has gone very wrong
+            assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
+            assert os.path.isdir(os.path.join(destdir, 'DEBIAN')), destdir
+
+            deb_basename = '%s_%s_all.deb' % (package.name, package.version)
+
+            if outdir:
+                outfile = os.path.join(os.path.abspath(outdir), deb_basename)
+                os.symlink(outfile, os.path.join(self.get_workdir(),
+                    deb_basename))
+            else:
+                outfile = os.path.join(self.get_workdir(), deb_basename)
+
+            if self.compress_deb:
+                dpkg_deb_args = []
+            else:
+                dpkg_deb_args = ['-Znone']
+
+            try:
+                subprocess.check_output(['fakeroot', 'dpkg-deb'] +
+                        dpkg_deb_args +
+                        ['-b', '%s.deb.d' % package.name, outfile],
+                        cwd=self.get_workdir())
+            except subprocess.CalledProcessError as cpe:
+                print(cpe.output)
+                raise
+
+            rm_rf(destdir)
+
+        rm_rf(os.path.join(self.get_workdir(), 'tmp'))

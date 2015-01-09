@@ -26,4 +26,4 @@ if __name__ == '__main__':
             workdir=os.environ['WORKDIR'],
             etcdir=os.environ['ETCDIR'],
             ) as game:
-        game.run_command_line(sys.argv[2:])
+        game.run_command_line(sys.argv[2:], outdir=os.environ['OUTDIR'])
