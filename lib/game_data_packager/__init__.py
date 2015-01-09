@@ -1078,7 +1078,7 @@ class GameData(object):
         possible = set()
 
         for package in self.packages.values():
-            if argv[0] in self.packages and package.name != argv[0]:
+            if argv and argv[0] in self.packages and package.name != argv[0]:
                 continue
 
             if self.fill_gaps(package, log=False):
