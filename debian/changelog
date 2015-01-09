@@ -5,6 +5,11 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * make_template: strip trailing '/' from directories to be searched
   * convert tyrian-data to YAML style
 
+  [ Simon McVittie ]
+  * For games in YAML style, do the .deb-building in Python, not in shell
+    - depend on python3-debian
+  * Search /usr/share/games/quake3 for Quake III Arena data
+
  -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
 
 game-data-packager (38) experimental; urgency=low
