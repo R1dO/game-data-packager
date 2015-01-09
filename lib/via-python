@@ -3,7 +3,7 @@
 # Data-driven game-data-packager code for Jedi Outcast, Jedi Academy,
 # Return to Castle Wolfenstein; hopefully generalizable to others.
 #
-# Must define SHORTNAME, LONGNAME, deb first.
+# Must define LONGNAME, deb first.
 
 sum="sha256"
 
@@ -20,7 +20,6 @@ gdp_data_driven () {
 
     (
     export ETCDIR
-    export SHORTNAME
     export DATADIR
     export WORKDIR
     PYTHONPATH="$LIBDIR"
