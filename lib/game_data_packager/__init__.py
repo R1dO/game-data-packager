@@ -18,6 +18,7 @@
 """Prototype for a more data-driven game-data-packager implementation.
 """
 
+import argparse
 import hashlib
 import io
 import logging
@@ -1040,3 +1041,110 @@ class GameData(object):
             open(os.path.join(self.workdir, 'DO-NOT-COMPRESS'), 'w').close()
 
         return True
+
+    def run_command_line(self, argv):
+        parser = argparse.ArgumentParser(description='Package game files.',
+                prog='game-data-packager ' + self.shortname)
+        parser.add_argument('--repack', action='store_true')
+        parser.add_argument('paths', nargs='*',
+                metavar='DIRECTORY|FILE')
+        args = parser.parse_args(argv)
+
+        if args.repack:
+            can_repack = False
+            absent = set()
+
+            for package in self.packages.values():
+                path = '/' + package.install_to
+                if os.path.isdir(path):
+                    args.paths.insert(0, path)
+                    can_repack = True
+                elif (package.name == 'quake3-data' and
+                        os.path.isdir('/usr/share/games/quake3')):
+                    # FIXME: this is a hack, it would be better to
+                    # have alternative locations defined in the YAML
+                    args.paths.insert(0, path)
+                    can_repack = True
+                else:
+                    absent.add(path)
+
+            if not can_repack:
+                raise SystemExit('cannot repack %s: could not open %r' %
+                        (package, sorted(absent)))
+
+        for arg in args.paths:
+            self.consider_file_or_dir(arg)
+
+        possible = set()
+
+        for package in self.packages.values():
+            if argv[0] in self.packages and package.name != argv[0]:
+                continue
+
+            if self.fill_gaps(package, log=False):
+                logger.debug('%s is possible', package.name)
+                possible.add(package)
+            else:
+                logger.debug('%s is impossible', package.name)
+
+        if not possible:
+            logger.debug('No packages were possible')
+            # Repeat the process for the first (hopefully only)
+            # demo/shareware package, so we can log its errors.
+            for package in self.packages.values():
+                if package.type == 'demo':
+                    if self.fill_gaps(package=package, log=True):
+                        logger.error('%s unexpectedly succeeded on second ' +
+                                'attempt. Please report this as a bug',
+                                package.name)
+                        possible.add(package)
+                    else:
+                        raise SystemExit(1)
+            else:
+                # If no demo, repeat the process for the first
+                # (hopefully only) full package, so we can log *its* errors.
+                for package in self.packages.values():
+                    if package.type == 'full':
+                        if self.fill_gaps(package=package, log=True):
+                            logger.error('%s unexpectedly succeeded on ' +
+                                    'second attempt. Please report this as '
+                                    'a bug', package.name)
+                            possible.add(package)
+                        else:
+                            sys.exit(1)
+                else:
+                    raise SystemExit('Unable to complete any packages. ' +
+                            'Please provide more files or directories.')
+
+        ready = set()
+
+        have_full = False
+        for package in possible:
+            if package.type == 'full':
+                have_full = True
+
+        for package in possible:
+            if have_full and package.type == 'demo':
+                # no point in packaging the demo if we have the full
+                # version
+                logger.debug('will not produce %s because we have a full ' +
+                        'version', package.name)
+                continue
+
+            logger.debug('will produce %s', package.name)
+            if self.fill_gaps(package=package, download=True, log=True):
+                ready.add(package)
+            else:
+                logger.error('Failed to download necessary files for %s',
+                        package.name)
+
+        if not ready:
+            raise SystemExit(1)
+
+        for package in ready:
+            destdir = os.path.join(os.environ['WORKDIR'],
+                    '%s.deb.d' % package.name)
+            if not self.fill_dest_dir(package, destdir):
+                raise SystemExit(1)
+
+        # FIXME: make the .deb (currently done in shell script by the wrapper)
