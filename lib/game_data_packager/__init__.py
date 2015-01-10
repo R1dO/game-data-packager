@@ -27,6 +27,7 @@ import logging
 import os
 import random
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -1074,6 +1075,11 @@ class GameData(object):
                 metavar='DIRECTORY|FILE')
 
     def run_command_line(self, args, outdir=''):
+        self.preserve_debs = getattr(args, 'preserve', False)
+        self.install_debs = getattr(args, 'install', True)
+        self.compress_deb = (self.compress_deb and
+                getattr(args, 'compress', True))
+
         if args.repack:
             can_repack = False
             absent = set()
@@ -1166,6 +1172,8 @@ class GameData(object):
         if not ready:
             raise SystemExit(1)
 
+        debs = set()
+
         for package in ready:
             destdir = os.path.join(self.get_workdir(),
                     '%s.deb.d' % package.name)
@@ -1200,14 +1208,31 @@ class GameData(object):
                 print(cpe.output)
                 raise
 
+            debs.add(outfile)
+
             rm_rf(destdir)
 
         rm_rf(os.path.join(self.get_workdir(), 'tmp'))
+
+        if self.preserve_debs:
+            for deb in debs:
+                print('generated "%s"' % os.path.abspath(deb))
+
+        if self.install_debs:
+            print('using su(1) to obtain root privileges and install the package(s)')
+            cmd = 'dpkg -i'
+            for deb in debs:
+                cmd = cmd + ' ' + shlex.quote(deb)
+
+            subprocess.call(['su', '-c', cmd])
 
 def run_command_line():
     datadir = os.environ['DATADIR']
     etcdir = os.environ['ETCDIR']
     workdir = os.environ['WORKDIR']
+    logger.debug('Running with DATADIR=%s ETCDIR=%s WORKDIR=%s',
+            datadir, etcdir, workdir)
+    logger.debug('Arguments: %r', sys.argv)
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.')

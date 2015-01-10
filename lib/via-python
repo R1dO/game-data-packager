@@ -28,6 +28,23 @@ gdp_data_driven () {
     if [ -n "${DEBUG:-}" ]; then
         export DEBUG
     fi
+    if [ "$INSTALL" = "yes" ]; then
+        set _ --no-install "$@"
+    else
+        set _ --install "$@"
+    fi
+    shift
+    if [ "$COMPRESS" = "yes" ]; then
+        set _ --compress "$@"
+    else
+        set _ --no-compress "$@"
+    fi
+    shift
+    if [ "$PRESERVE" = "yes" ]; then
+        set _ -d "$OUTDIR" "$@"
+        shift
+    fi
+    debug "Will run: python3 -m game_data_packager $*"
     python3 -m game_data_packager "$@"
     exit $?
     )
@@ -39,4 +56,8 @@ gdp_data_driven () {
     # Special value to signal that gdp should just install every .deb
     # in $WORKDIR
     OUTFILE="*.deb"
+
+    # The Python code does the installation if necessary, so we don't
+    # need to deal with this in shell script any more
+    INSTALL=no
 }
