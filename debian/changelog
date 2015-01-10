@@ -21,6 +21,8 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Allow YAML games to have a Python subclass of GameData to customize
     their behaviour, and use that to implement rott and tyrian's
     historical command-line options
+  * Add --demo option to all YAML games with a demo/shareware version,
+    which will download/create the demo even if the full game is available
 
  -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
 

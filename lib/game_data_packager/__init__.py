@@ -1103,6 +1103,17 @@ class GameData(object):
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE',
                 help='Files to use in constructing the .deb')
+
+        # There is only a --demo option if at least one package is a demo
+        parser.set_defaults(demo=False)
+        for package in self.packages.values():
+            if package.type == 'demo':
+                parser.add_argument('--demo', action='store_true',
+                        default=False,
+                        help='Build demo package even if files for full '
+                            + 'version are available')
+                break
+
         return parser
 
     def run_command_line(self, args, outdir=''):
@@ -1180,7 +1191,7 @@ class GameData(object):
                 have_full = True
 
         for package in possible:
-            if have_full and package.type == 'demo':
+            if have_full and package.type == 'demo' and not args.demo:
                 # no point in packaging the demo if we have the full
                 # version
                 logger.debug('will not produce %s because we have a full ' +
