@@ -364,9 +364,6 @@ class GameData(object):
         if 'compress_deb' in self.yaml:
             self.compress_deb = self.yaml['compress_deb']
 
-        logger.debug('loaded package description:\n%s',
-                yaml.safe_dump(self.to_yaml()))
-
         # consistency check
         for package in self.packages.values():
             # there had better be something it wants to install
@@ -1075,6 +1072,9 @@ class GameData(object):
                 metavar='DIRECTORY|FILE')
 
     def run_command_line(self, args, outdir=''):
+        logger.debug('package description:\n%s',
+                yaml.safe_dump(self.to_yaml()))
+
         self.preserve_debs = getattr(args, 'preserve', False)
         self.install_debs = getattr(args, 'install', True)
         self.compress_deb = (self.compress_deb and
