@@ -1060,7 +1060,8 @@ class GameData(object):
     def run_command_line(self, argv, outdir=''):
         parser = argparse.ArgumentParser(description='Package game files.',
                 prog='game-data-packager ' + self.shortname)
-        parser.add_argument('--repack', action='store_true')
+        parser.add_argument('--repack', action='store_true',
+                help='Locate installed game files automatically')
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE')
         args = parser.parse_args(argv)
