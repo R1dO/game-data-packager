@@ -29,6 +29,8 @@ help_text: |
 
 packages:
   quake3-data:
+    steam:
+      id: 2200
     type: full
     # We deliberately only put baseq3 in the search path, not
     # missionpack, so that the engine doesn't think missionpack
@@ -70,6 +72,8 @@ packages:
       _ 384282 missionpack/pak3.pk3
 
   quake3-team-arena-data:
+    steam:
+      id: 2350
     type: expansion
     symlinks:
       usr/share/games/quake3/missionpack/pak0.pk3:
