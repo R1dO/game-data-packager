@@ -1080,7 +1080,7 @@ class GameData(object):
         self.compress_deb = (self.compress_deb and
                 getattr(args, 'compress', True))
 
-        if args.repack:
+        if getattr(args, 'repack', False):
             can_repack = False
             absent = set()
 
@@ -1243,7 +1243,14 @@ def run_command_line():
         g = os.path.basename(yamlfile)
         g = g[:len(g) - 5]
 
-        games[g] = GameData(g, datadir=datadir, etcdir=etcdir,
+        try:
+            plugin = importlib.import_module('game_data_packager.games.%s' % g)
+            game_data_constructor = plugin.GAME_DATA_SUBCLASS
+        except (ImportError, AttributeError) as e:
+            logger.debug('No special code for %s: %s', g, e)
+            game_data_constructor = GameData
+
+        games[g] = game_data_constructor(g, datadir=datadir, etcdir=etcdir,
                 workdir=workdir)
 
     game_parsers = parser.add_subparsers(dest='shortname',
