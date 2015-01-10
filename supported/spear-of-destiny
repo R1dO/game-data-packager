@@ -1,44 +1,8 @@
 SHORTNAME=spear-of-destiny
-LONGNAME="Spear Of Destiny"
-deb="xxx"
-
-sod_usage() {
-	echo "game-data-packager ${SHORTNAME} arguments:"
-	printf "\tgame-data-packager ${SHORTNAME} [ -f path ] | [ -w ]
-\t\t-f path\t\tpath to your existing copy of sodemo.zip, destiny.zip\n\
-\t\t\t\tor unpacked files, either demo or full version
-\t\t-w\t\tfetch sodemo.zip from the World Wide Web\n"
-}
+LONGNAME="Spear of Destiny (Wolfenstein 3D prequel)"
 
 . "$LIBDIR/via-python"
 
 go() {
-    case $# in
-        0)
-            sod_usage
-            exit 0
-            ;;
-        1)
-            if [ "$1" != "-w" ]; then
-                    usage >&2
-                    sod_usage >&2
-                    exit 1
-            fi
-            gdp_data_driven spear-of-destiny --
-            ;;
-        2)
-            if [ "$1" != "-f" ]; then
-                usage >&2
-                sod_usage >&2
-                exit 1
-            fi
-            downloaded=false
-            gdp_data_driven spear-of-destiny "$2"
-            ;;
-        *)
-            usage >&2
-            sod_usage >&2
-            exit 1
-            ;;
-    esac
+    gdp_data_driven spear-of-destiny "$@"
 }
