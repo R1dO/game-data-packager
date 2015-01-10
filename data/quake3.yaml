@@ -4,6 +4,27 @@ shortname: quake3
 longname: Quake III Arena (including Team Arena)
 compress_deb: false
 
+help_text: |
+  For quake3-data, you must provide baseq3/pak0.pk3 or a directory
+  containing it. It can be found in installed copies of Quake III Arena
+  for any platform, or on the CD-ROM.
+
+  The 1.32 patch will be downloaded if necessary, but you can avoid the
+  download by providing linuxq3apoint-1.32b-3.x86.run or the individual
+  PK3 files (including missionpack/*.pk3).
+
+  For the quake3-team-arena-data addon pack, you must provide
+  missionpack/pak0.pk3 or a directory containing it. It can be found in
+  installed copies of Quake III Team Arena for any platform, or on the CD-ROM.
+
+  Available on Steam as <http://store.steampowered.com/app/2200/> (Q3A) and
+  <http://store.steampowered.com/app/2350/> (Q3TA).
+
+# FIXME:
+# Steam installations would typically be in:
+# C:/Program Files/Steam/steamapps/common/<what?>
+
+
 packages:
   quake3-data:
     type: full

@@ -6,6 +6,18 @@ longname: "Star Wars Jedi Knight II: Jedi Outcast"
 # Like Jedi Academy, there isn't much point in compressing this .deb.
 compress_deb: false
 
+help_text: |
+  The directories provided should be one of these:
+
+  * an installation of Jedi Outcast retail CD-ROM, patched to
+    version 1.04 using Windows or Wine (download jkiiup104.exe, sha256:
+    de80f478a48f91d6237b8efc7048e4803a198e9ac02f11d64980eddcd818fad7)
+
+  * an installation of Jedi Outcast 1.04 from Steam
+    (<http://store.steampowered.com/app/6030/>)
+    via Windows or Wine, typically found in
+    C:/Program Files/Steam/steamapps/common/Jedi Outcast
+
 packages:
   jedi-outcast-data:
     type: full

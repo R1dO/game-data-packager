@@ -15,6 +15,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
+import argparse
 import logging
 
 from .. import GameData
@@ -23,15 +24,11 @@ logger = logging.getLogger('game-data-packager.games.tyrian')
 
 class TyrianGameData(GameData):
     def add_parser(self, parsers):
-        parser = parsers.add_parser(self.shortname,
-                help=self.longname, aliases=self.packages.keys())
+        parser = super(TyrianGameData, self).add_parser(parsers)
         parser.add_argument('-f', action='append', dest='paths',
-                help='Path to tyrian21.zip')
+                metavar='tyrian21.zip', help='Path to tyrian21.zip')
         parser.add_argument('-w', dest='download', action='store_true',
                 help='Download tyrian21.zip (done automatically if necessary)')
-        parser.add_argument('--repack', action='store_true',
-                help='Locate installed game files automatically')
-        parser.add_argument('paths', nargs='*',
-                metavar='DIRECTORY|FILE')
+        return parser
 
 GAME_DATA_SUBCLASS = TyrianGameData

@@ -8,6 +8,23 @@ longname: "Star Wars Jedi Knight: Jedi Academy"
 # but that's less than 2% of the total size and takes 10 times as long.
 compress_deb: false
 
+help_text: |
+  For jedi-academy-data, directories provided should be one
+  of these:
+
+  * an installation of Jedi Academy retail CD-ROM, patched to version 1.01
+    using Windows or Wine (download jkacademy1_01.exe, sha256:
+    2bb34035ed65f4855e2e17e1b56076543947e426bac794b098b58c039ec253dc)
+
+  * an installation of Jedi Academy 1.01 from Steam
+    (<http://store.steampowered.com/app/6020/>)
+    via Windows or Wine, typically found in
+    C:/Program Files/Steam/steamapps/common/Jedi Academy
+
+  For jedi-academy-bonus-data, provide the optional free addons
+  jabonusmaps.exe and jasiegedestroyer.exe, or the PK3 files base/bonus.pk3
+  and base/siege_destroyer.pk3, or a directory containing them.
+
 packages:
   jedi-academy-data:
     type: full

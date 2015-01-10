@@ -59,24 +59,13 @@ packages:
       #  size: 9559
       #  optional: true
 
-# Not used yet. FIXME: use this to make help text?
-sources:
-  "a Return to Castle Wolfenstein installation":
-    provides:
-    - main/autoexec.cfg
-    - main/mp_pak0.pk3
-    - main/mp_pak1.pk3
-    - main/mp_pak2.pk3
-    - main/pak0.pk3
-    - "FIXME: main/sp_pak1.pk3_en or main/sp_pak1.pk3_fr"
-    - main/sp_pak2.pk3
-    help: |
-      Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
-      or install it from Steam <http://store.steampowered.com/app/9010/>,
-      and tell game-data-packager the installation directory.
+help_text: |
+  Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
+  or install it from Steam <http://store.steampowered.com/app/9010/>,
+  and tell game-data-packager the installation directory.
 
-      Steam installations would typically be in:
-      C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein
+  Steam installations would typically be in:
+  C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein
 
 files:
   main/sp_pak1.pk3:

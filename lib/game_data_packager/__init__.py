@@ -290,6 +290,8 @@ class GameData(object):
         # If true, we may compress the .deb. If false, don't.
         self.compress_deb = True
 
+        self.help_text = ''
+
         self.yaml = yaml.load(open(os.path.join(self.datadir,
             shortname + '.yaml')))
 
@@ -364,6 +366,9 @@ class GameData(object):
         if 'compress_deb' in self.yaml:
             self.compress_deb = self.yaml['compress_deb']
 
+        if 'help_text' in self.yaml:
+            self.help_text = self.yaml['help_text']
+
         # consistency check
         for package in self.packages.values():
             # there had better be something it wants to install
@@ -423,6 +428,7 @@ class GameData(object):
             packages[name] = package.to_yaml()
 
         return {
+            'help_text': self.help_text,
             'packages': packages,
             'providers': providers,
             'files': files,
@@ -1065,11 +1071,15 @@ class GameData(object):
 
     def add_parser(self, parsers):
         parser = parsers.add_parser(self.shortname,
-                help=self.longname, aliases=self.packages.keys())
+                help=self.longname, aliases=self.packages.keys(),
+                description=self.help_text,
+                formatter_class=argparse.RawDescriptionHelpFormatter)
         parser.add_argument('--repack', action='store_true',
                 help='Locate installed game files automatically')
         parser.add_argument('paths', nargs='*',
-                metavar='DIRECTORY|FILE')
+                metavar='DIRECTORY|FILE',
+                help='Files to use in constructing the .deb')
+        return parser
 
     def run_command_line(self, args, outdir=''):
         logger.debug('package description:\n%s',
