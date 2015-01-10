@@ -19,15 +19,15 @@ import logging
 
 from .. import GameData
 
-logger = logging.getLogger('game-data-packager.games.tyrian')
+logger = logging.getLogger('game-data-packager.games.rott')
 
-class TyrianGameData(GameData):
+class ROTTGameData(GameData):
     def add_parser(self, parsers):
-        parser = super(TyrianGameData, self).add_parser(parsers)
+        parser = super(ROTTGameData, self).add_parser(parsers)
         parser.add_argument('-f', action='append', dest='paths',
-                metavar='tyrian21.zip', help='Path to tyrian21.zip')
+                metavar='1rott13.zip', help='Path to 1rott13.zip')
         parser.add_argument('-w', dest='download', action='store_true',
-                help='Download tyrian21.zip (done automatically if necessary)')
+                help='Download 1rott13.zip (done automatically if necessary)')
         return parser
 
-GAME_DATA_SUBCLASS = TyrianGameData
+GAME_DATA_SUBCLASS = ROTTGameData

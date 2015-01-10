@@ -1,42 +1,4 @@
 SHORTNAME=rott
 LONGNAME="Rise of the Triad"
-deb=rott-data
-
-rott_usage() {
-	echo "game-data-packager ${SHORTNAME} arguments:"
-	printf "\tgame-data-packager ${SHORTNAME} [ -f path ] | [ -w ]
-\t\t-f path\t\tpath to your existing copy of 1rott13.zip\n\
-\t\t-w\t\tfetch 1rott13.zip from the World Wide Web\n"
-}
 
 . "$LIBDIR/via-python"
-
-go() {
-    case $# in
-        0)
-            rott_usage
-            exit 0
-            ;;
-        1)
-            if [ "$1" != "-w" ]; then
-                    usage >&2
-                    rott_usage >&2
-                    exit 1
-            fi
-            gdp_data_driven rott --
-            ;;
-        2)
-            if [ "$1" != "-f" ]; then
-                usage >&2
-                rott_usage >&2
-                exit 1
-            fi
-            gdp_data_driven rott "$2"
-            ;;
-        *)
-            usage >&2
-            rott_usage >&2
-            exit 1
-            ;;
-    esac
-}

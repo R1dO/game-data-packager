@@ -17,6 +17,10 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * For YAML games distributed via Steam, search various likely locations
     for Steam files: Wine, winetricks, PlayOnLinux or native Linux
   * Automatically exclude __pycache__ from tarball
+  * Use a common go() method to wrap all YAML games
+  * Allow YAML games to have a Python subclass of GameData to customize
+    their behaviour, and use that to implement rott and tyrian's
+    historical command-line options
 
  -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
 
