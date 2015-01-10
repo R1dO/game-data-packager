@@ -24,7 +24,7 @@ logger = logging.getLogger('game-data-packager.games.tyrian')
 class TyrianGameData(GameData):
     def add_parser(self, parsers):
         parser = parsers.add_parser(self.shortname,
-                help=self.longname)
+                help=self.longname, aliases=self.packages.keys())
         parser.add_argument('-f', action='append', dest='paths',
                 help='Path to tyrian21.zip')
         parser.add_argument('-w', dest='download', action='store_true',

@@ -1068,7 +1068,7 @@ class GameData(object):
 
     def add_parser(self, parsers):
         parser = parsers.add_parser(self.shortname,
-                help=self.longname)
+                help=self.longname, aliases=self.packages.keys())
         parser.add_argument('--repack', action='store_true',
                 help='Locate installed game files automatically')
         parser.add_argument('paths', nargs='*',
