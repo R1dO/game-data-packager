@@ -5,6 +5,7 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * make_template: strip trailing '/' from directories to be searched
   * convert tyrian-data to YAML style
   * Add game Spear Of Destiny, demo & full version
+  * Add bash completion
 
   [ Simon McVittie ]
   * For games in YAML style, do the .deb building and installation in
@@ -12,6 +13,10 @@ game-data-packager (39) UNRELEASED; urgency=medium
     - depend on python3-debian
   * Improve help text
   * Search /usr/share/games/quake3 for Quake III Arena data
+  * For YAML games, always search the installed directory for game files
+  * For YAML games distributed via Steam, search various likely locations
+    for Steam files: Wine, winetricks, PlayOnLinux or native Linux
+  * Automatically exclude __pycache__ from tarball
 
  -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
 
