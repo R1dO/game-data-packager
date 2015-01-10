@@ -55,6 +55,7 @@ clean:
 	rm -f ./out/changelog.gz
 	rm -f ./out/foo ./out/bar ./out/baz
 	rm -f ./out/*.control
+	rm -f ./out/*.control.in
 	rm -f ./out/*.copyright
 	rm -f ./out/*.yaml
 	rm -rf lib/game_data_packager/__pycache__
