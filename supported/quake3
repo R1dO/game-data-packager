@@ -4,7 +4,3 @@ SHORTNAME=quake3
 LONGNAME="Quake III Arena"
 
 . $LIBDIR/via-python
-
-go () {
-    gdp_data_driven quake3 "$@"
-}

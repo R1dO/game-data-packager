@@ -1,9 +1,4 @@
 SHORTNAME=tyrian
 LONGNAME="Tyrian"
-deb=tyrian-data
 
 . $LIBDIR/via-python
-
-go() {
-    gdp_data_driven tyrian "$@"
-}

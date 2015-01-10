@@ -2,7 +2,3 @@ SHORTNAME=spear-of-destiny
 LONGNAME="Spear of Destiny (Wolfenstein 3D prequel)"
 
 . "$LIBDIR/via-python"
-
-go() {
-    gdp_data_driven spear-of-destiny "$@"
-}

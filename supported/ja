@@ -2,37 +2,5 @@
 
 SHORTNAME=ja
 LONGNAME="Star Wars Jedi Knight: Jedi Academy"
-deb=jedi-academy-data
-basedir="/usr/share/games/jedi-academy"
-version_prefix=1.01+
 
 . $LIBDIR/via-python
-
-usage() {
-       printf "\
-Usage:\n\
-\n\
-game-data-packager ${SHORTNAME} [DIRECTORY [DIRECTORY...]]\n\
-\n\
-  Search for PK3 files in DIRECTORY, which should be one of these:\n\
-\n\
-    * an installation of Jedi Academy retail CD-ROM, patched to\n\
-      version 1.01 using Windows or Wine (download\n\
-      jkacademy1_01.exe, sha256:\n\
-      2bb34035ed65f4855e2e17e1b56076543947e426bac794b098b58c039ec253dc)\n\
-\n\
-    * an installation of Jedi Academy installed from Steam
-      (<http://store.steampowered.com/app/6020/>)\n\
-      via Windows or Wine, typically found in \n\
-      C:/Program Files/Steam/steamapps/common/Jedi Academy\n\
-\n\
-game-data-packager ${SHORTNAME} --repack\n\
-\n\
-  Re-package installed data. This is a short cut for\n\
-  'game-data-packager ${SHORTNAME} ${basedir}'.\n\
-"
-}
-
-go () {
-    gdp_data_driven ja "$@"
-}

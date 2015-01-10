@@ -3,14 +3,7 @@
 # Data-driven game-data-packager code for Jedi Outcast, Jedi Academy,
 # Return to Castle Wolfenstein; hopefully generalizable to others.
 #
-# Must define LONGNAME, deb first.
-
-sum="sha256"
-
-copyin () {
-    install -d `dirname "$2"`
-    install -m644 "$1" "$2"
-}
+# Must define SHORTNAME, LONGNAME first.
 
 gdp_data_driven () {
     if [ "$*" = "" ]; then
@@ -44,7 +37,8 @@ gdp_data_driven () {
         set _ -d "$OUTDIR" "$@"
         shift
     fi
-    debug "Will run: python3 -m game_data_packager $*"
+    debug "Packaging $LONGNAME via Python code"
+    debug "Will run: python3 -m game_data_packager $SHORTNAME $*"
     python3 -m game_data_packager "$@"
     exit $?
     )
@@ -60,4 +54,8 @@ gdp_data_driven () {
     # The Python code does the installation if necessary, so we don't
     # need to deal with this in shell script any more
     INSTALL=no
+}
+
+go () {
+    gdp_data_driven "$SHORTNAME" "$@"
 }
