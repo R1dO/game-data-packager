@@ -1,6 +1,22 @@
 %YAML 1.2
 ---
 shortname: spear-of-destiny
+longname: "Spear of Destiny (Wolfenstein 3D prequel)"
+
+help_text: |
+  If you do not provide any files to be packaged, game-data-packager will
+  automatically download the demo version of Spear of Destiny
+  and create the spear-of-destiny-demo-data package.
+
+  For the full first episode, provide a directory containing vswap.sd1 and the
+  other game files.
+
+  For the optional second and third episodes (Return to Danger and
+  Ultimate Challenge), provide a directory containing vswap.sd2 or vswap.sd3
+  and the other game files.
+
+  Later re-releases (CD, DVD, Steam) contain all three episodes.
+  See <http://store.steampowered.com/app/9000/> for the Steam version.
 
 packages:
   spear-of-destiny-demo-data:
