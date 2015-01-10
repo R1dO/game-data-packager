@@ -1,0 +1,14 @@
+_game_data_packager()
+{
+    if [ $COMP_CWORD -eq 1 ]
+    then
+      local cur supported
+      cur=${COMP_WORDS[COMP_CWORD]}
+      supported=$(ls -1 /usr/share/games/game-data-packager/supported/)
+      COMPREPLY=( $( compgen -W "$supported" -- $cur ) )
+    else
+      COMPREPLY=()
+    fi
+}
+
+complete -o default -F _game_data_packager game-data-packager

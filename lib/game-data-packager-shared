@@ -3,13 +3,13 @@
 supported() {
 	echo "the following games are supported:"
 	echo
-	printf "\t    name\tdescription\n"
-	printf "\t    ----\t-----------\n"
+	printf "\t\t    name\tdescription\n"
+	printf "\t\t    ----\t-----------\n"
 
 	find $SUPPORTED -type f | grep -v '\.svn' | grep -v 'swp$' | sort |
 	while read file; do
 		. $file
-		printf "\t%8s\t%s\n" "$SHORTNAME" "$LONGNAME"
+		printf "\t%16s\t%s\n" "$SHORTNAME" "$LONGNAME"
 	done
 }
 options() {
