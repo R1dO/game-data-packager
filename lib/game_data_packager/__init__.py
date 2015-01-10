@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # vim:set fenc=utf-8:
 #
-# Copyright © 2014 Simon McVittie <smcv@debian.org>
+# Copyright © 2014-2015 Simon McVittie <smcv@debian.org>
+# Copyright © 2015 Alexandre Detiste <alexandre@detiste.be>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -226,6 +227,9 @@ class GameDataPackage(object):
         # necessarily)
         self.symlinks = {}
 
+        # Steam ID and path
+        self.steam = {}
+
         # set of names of WantedFile instances to be installed
         self._install = set()
 
@@ -257,6 +261,7 @@ class GameDataPackage(object):
             'install': sorted(self.install),
             'install_to': self.install_to,
             'name': self.name,
+            'steam': self.steam,
             'symlinks': self.symlinks,
         }
 
@@ -294,6 +299,9 @@ class GameData(object):
 
         # Extra directories where we might find game files
         self.try_repack_from = []
+
+        # Steam ID and path
+        self.steam = {}
 
         self.yaml = yaml.load(open(os.path.join(self.datadir,
             shortname + '.yaml')))
@@ -381,6 +389,9 @@ class GameData(object):
         if 'help_text' in self.yaml:
             self.help_text = self.yaml['help_text']
 
+        if 'steam' in self.yaml:
+            self.steam = self.yaml['steam']
+
         # consistency check
         for package in self.packages.values():
             # there had better be something it wants to install
@@ -455,6 +466,9 @@ class GameData(object):
 
         if 'install_to' in d:
             package.install_to = d['install_to']
+
+        if 'steam' in d:
+            package.steam = d['steam']
 
         if 'install' in d:
             for filename in d['install']:
@@ -1109,7 +1123,11 @@ class GameData(object):
             if os.path.isdir(path):
                 args.paths.append(path)
 
+        for path in self.iter_steam_paths():
+            args.paths.append(path)
+
         for arg in args.paths:
+            logger.debug('%s...', arg)
             self.consider_file_or_dir(arg)
 
         possible = set()
@@ -1232,6 +1250,35 @@ class GameData(object):
                 cmd = cmd + ' ' + shlex.quote(deb)
 
             subprocess.call(['su', '-c', cmd])
+
+    def iter_steam_paths(self):
+        for prefix in (
+                os.path.expanduser('~/.steam'),
+                os.path.join(os.environ.get('XDG_DATA_DIR', os.path.expanduser('~/.local/share')),
+                    'wineprefixes/steam/drive_c/Program Files/Steam'),
+                os.path.expanduser('~/.wine/drive_c/Program Files/Steam'),
+                os.path.expanduser('~/.PlayOnLinux/wineprefix/Steam/drive_c/Program_Files/Steam'),
+                ):
+            if not os.path.isdir(prefix):
+                continue
+
+            path = self.steam.get('path')
+            if path is not None:
+                for middle in ('steamapps', 'SteamApps'):
+                    path = os.path.join(prefix, middle, path)
+                    if os.path.isdir(path):
+                        logger.debug('possible Steam installation at %s', path)
+                        yield path
+
+            for package in self.packages.values():
+                path = package.steam.get('path')
+
+                if path is not None:
+                    for middle in ('steamapps', 'SteamApps'):
+                        path = os.path.join(prefix, middle, path)
+                        if os.path.isdir(path):
+                            logger.debug('possible Steam installation at %s', path)
+                            yield path
 
 def run_command_line():
     datadir = os.environ['DATADIR']
