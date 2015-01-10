@@ -3,107 +3,108 @@
 shortname: tyrian
 longname: Tyrian
 
-package: tyrian-data
-type: full
-install_to: usr/share/games/tyrian
-install_files_from_cksums: |
-  2480546301 36169   cubetxt1.dat
-  1486908798 8108    cubetxt2.dat
-  3017842492 12294   cubetxt3.dat
-  3571436954 62424   cubetxt4.dat
-  625760848  2745    demo.1
-  3214433957 2193    demo.2
-  623644273  1974    demo.3
-  1914765014 699     demo.4
-  2152709229 1122    demo.5
-  1085736327 115338  estsc.shp
-  706605114  4000    exitmsg.bin
-  643886897  304     file_id.diz
-  319033702  13083   helpme.doc
-  1229240386 9359    levels1.dat
-  2051714898 5534    levels2.dat
-  1789566389 6052    levels3.dat
-  751667919  11103   levels4.dat
-  746610149  7869    license.doc
-  3141647588 34382   loudness.awe
-  587043468  32318   manual.doc
-  3406684284 3082    modems.txt
-  842346037  153482  music.mus
-  3131400850 22826   netarena.pcx
-  2603740650 8692    netfont1.pcx
-  1031752906 10327   netfont2.pcx
-  3588679628 33221   netmega.pcx
-  3396037561 53766   netset.pcx
-  1343273142 633     netterm.int
-  3328586459 14096   newsh0.shp
-  2874864033 29941   newsh1.shp
-  1993929893 35236   newsh2.shp
-  2811399401 37130   newsh3.shp
-  775120250  29449   newsh4.shp
-  3028498759 35813   newsh5.shp
-  1425774316 17578   newsh6.shp
-  2593278867 44079   newsh7.shp
-  975069015  35152   newsh8.shp
-  3600755471 38831   newsh9.shp
-  2511252582 25622   newsha.shp
-  2458773564 39025   newshb.shp
-  117528338  40714   newshc.shp
-  1017427299 42012   newshd.shp
-  2198986029 28945   newshe.shp
-  3376643067 33543   newshf.shp
-  3829556607 36643   newshg.shp
-  4102196915 46639   newshh.shp
-  2722307320 30860   newshi.shp
-  3409272313 43999   newshj.shp
-  3155847538 22913   newshk.shp
-  94364419   14846   newshl.shp
-  3700412744 22378   newshm.shp
-  1292696811 41201   newshn.shp
-  3002203261 24478   newsho.shp
-  1454869397 46204   newshp.shp
-  3612603756 28249   newshr.shp
-  711303051  34888   newsh^.shp
-  816752063  16219   newsh~.shp
-  2070673289 17750   newsh#.shp
-  2487630938 46566   newshs.shp
-  4159994826 14187   newsht.shp
-  1233745291 35657   newshu.shp
-  3701837396 23343   newshv.shp
-  248595799  6334    order.doc
-  1283428962 272703  order.tfp
-  3159896514 17664   palette.dat
-  2352752715 24      setup.box
-  3163297135 77      setup.ini
-  1004598843 7451    setup.int
-  2833035873 118720  shapes).dat
-  1648817559 172480  shapesw.dat
-  767763841  217504  shapesx.dat
-  1515070427 152992  shapesy.dat
-  128550460  243712  shapesz.dat
-  2429026412 17174   shipedit.doc
-  3305516961 13450   shipedit.pcx
-  3173813103 62168   tshp2.pcx
-  3988034873 3315848 tyrend.anm
-  978033593  538262  tyrian1.lvl
-  3753347598 381242  tyrian2.lvl
-  1963724006 393398  tyrian3.lvl
-  1347595571 800006  tyrian4.lvl
-  2071563779 1125    tyrian.cdt
-  3057356980 444862  tyrianc.shp
-  2391449990 153657  tyrian.hdt
-  2905899694 766     tyrian.ico
-  3931527424 365969  tyrian.pic
-  2976180454 443871  tyrian.shp
-  3245533034 264512  tyrian.snd
-  3396037561 53766   tyrset.pcx
-  491299863  27674   user1.shp
-  84075211   27674   user2.shp
-  2600234191 188275  voicesc.snd
-  1661905447 132767  voices.snd
+packages:
+  tyrian-data:
+    type: full
+    install_to: usr/share/games/tyrian
+    install_files_from_cksums: |
+      2480546301 36169   cubetxt1.dat
+      1486908798 8108    cubetxt2.dat
+      3017842492 12294   cubetxt3.dat
+      3571436954 62424   cubetxt4.dat
+      625760848  2745    demo.1
+      3214433957 2193    demo.2
+      623644273  1974    demo.3
+      1914765014 699     demo.4
+      2152709229 1122    demo.5
+      1085736327 115338  estsc.shp
+      706605114  4000    exitmsg.bin
+      643886897  304     file_id.diz
+      319033702  13083   helpme.doc
+      1229240386 9359    levels1.dat
+      2051714898 5534    levels2.dat
+      1789566389 6052    levels3.dat
+      751667919  11103   levels4.dat
+      746610149  7869    license.doc
+      3141647588 34382   loudness.awe
+      587043468  32318   manual.doc
+      3406684284 3082    modems.txt
+      842346037  153482  music.mus
+      3131400850 22826   netarena.pcx
+      2603740650 8692    netfont1.pcx
+      1031752906 10327   netfont2.pcx
+      3588679628 33221   netmega.pcx
+      3396037561 53766   netset.pcx
+      1343273142 633     netterm.int
+      3328586459 14096   newsh0.shp
+      2874864033 29941   newsh1.shp
+      1993929893 35236   newsh2.shp
+      2811399401 37130   newsh3.shp
+      775120250  29449   newsh4.shp
+      3028498759 35813   newsh5.shp
+      1425774316 17578   newsh6.shp
+      2593278867 44079   newsh7.shp
+      975069015  35152   newsh8.shp
+      3600755471 38831   newsh9.shp
+      2511252582 25622   newsha.shp
+      2458773564 39025   newshb.shp
+      117528338  40714   newshc.shp
+      1017427299 42012   newshd.shp
+      2198986029 28945   newshe.shp
+      3376643067 33543   newshf.shp
+      3829556607 36643   newshg.shp
+      4102196915 46639   newshh.shp
+      2722307320 30860   newshi.shp
+      3409272313 43999   newshj.shp
+      3155847538 22913   newshk.shp
+      94364419   14846   newshl.shp
+      3700412744 22378   newshm.shp
+      1292696811 41201   newshn.shp
+      3002203261 24478   newsho.shp
+      1454869397 46204   newshp.shp
+      3612603756 28249   newshr.shp
+      711303051  34888   newsh^.shp
+      816752063  16219   newsh~.shp
+      2070673289 17750   newsh#.shp
+      2487630938 46566   newshs.shp
+      4159994826 14187   newsht.shp
+      1233745291 35657   newshu.shp
+      3701837396 23343   newshv.shp
+      248595799  6334    order.doc
+      1283428962 272703  order.tfp
+      3159896514 17664   palette.dat
+      2352752715 24      setup.box
+      3163297135 77      setup.ini
+      1004598843 7451    setup.int
+      2833035873 118720  shapes).dat
+      1648817559 172480  shapesw.dat
+      767763841  217504  shapesx.dat
+      1515070427 152992  shapesy.dat
+      128550460  243712  shapesz.dat
+      2429026412 17174   shipedit.doc
+      3305516961 13450   shipedit.pcx
+      3173813103 62168   tshp2.pcx
+      3988034873 3315848 tyrend.anm
+      978033593  538262  tyrian1.lvl
+      3753347598 381242  tyrian2.lvl
+      1963724006 393398  tyrian3.lvl
+      1347595571 800006  tyrian4.lvl
+      2071563779 1125    tyrian.cdt
+      3057356980 444862  tyrianc.shp
+      2391449990 153657  tyrian.hdt
+      2905899694 766     tyrian.ico
+      3931527424 365969  tyrian.pic
+      2976180454 443871  tyrian.shp
+      3245533034 264512  tyrian.snd
+      3396037561 53766   tyrset.pcx
+      491299863  27674   user1.shp
+      84075211   27674   user2.shp
+      2600234191 188275  voicesc.snd
+      1661905447 132767  voices.snd
 
-#symlinks:
-#  usr/share/doc/tyrian-data/vendor.doc:
-#    usr/share/games/tyrian/vendor.doc
+    #symlinks:
+    #  usr/share/doc/tyrian-data/vendor.doc:
+    #    usr/share/games/tyrian/vendor.doc
 
 files:
   tyrian21.zip:

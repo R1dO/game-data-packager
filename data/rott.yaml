@@ -2,25 +2,27 @@
 ---
 shortname: rott
 longname: Rise of the Triad
-package: rott-data
-install_to: usr/share/games/rott
-type: demo
 
-install_files_from_cksums: |
-  742977862  27028   DEMO1_3.DMO
-  2546107232 34360   DEMO2_3.DMO
-  1805302629 47704   DEMO3_3.DMO
-  1175016822 36412   DEMO4_3.DMO
-  2739574572 54258   HUNTBGIN.RTC
-  2540183019 103316  HUNTBGIN.RTL
-  498832626  6436871 HUNTBGIN.WAD
-  3228256652 110484  REMOTE1.RTS
-  4153237746 7752    VENDOR.DOC
+packages:
+  rott-data:
+    install_to: usr/share/games/rott
+    type: demo
 
-# format: {'symlink': 'real file'}
-symlinks:
-  usr/share/doc/rott-data/VENDOR.DOC:
-    usr/share/games/rott/VENDOR.DOC
+    install_files_from_cksums: |
+      742977862  27028   DEMO1_3.DMO
+      2546107232 34360   DEMO2_3.DMO
+      1805302629 47704   DEMO3_3.DMO
+      1175016822 36412   DEMO4_3.DMO
+      2739574572 54258   HUNTBGIN.RTC
+      2540183019 103316  HUNTBGIN.RTL
+      498832626  6436871 HUNTBGIN.WAD
+      3228256652 110484  REMOTE1.RTS
+      4153237746 7752    VENDOR.DOC
+
+    # format: {'symlink': 'real file'}
+    symlinks:
+      usr/share/doc/rott-data/VENDOR.DOC:
+        usr/share/games/rott/VENDOR.DOC
 
 files:
   1rott13.zip:

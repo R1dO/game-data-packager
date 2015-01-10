@@ -2,58 +2,62 @@
 ---
 shortname: rtcw
 longname: Return to Castle Wolfenstein
-package: rtcw-data
-type: full
 
 # Like Jedi Academy, there isn't much point in compressing this .deb.
 compress_deb: false
 
-# cksums(1) is pretty useless as a checksumming tool, but it's a convenient
-# way to get exact file sizes in bytes (second column), which are a nice
-# heuristic for identifying files
-install_files_from_cksums: |
-  3201065489 12 main/autoexec.cfg
-  1738795795 760207 main/mp_bin.pk3
-  4046220680 63211149 main/mp_pak0.pk3
-  980150272 4449596 main/mp_pak1.pk3
-  1142316069 1118 main/mp_pak2.pk3
-  1777286697 159762 main/mp_pak3.pk3
-  2440657300 7799 main/mp_pak4.pk3
-  160211286 167075 main/mp_pak5.pk3
-  3845249867 3485134 main/mp_pakmaps0.pk3
-  3484376457 3765933 main/mp_pakmaps1.pk3
-  27684852 7408542 main/mp_pakmaps2.pk3
-  1630043139 10780146 main/mp_pakmaps3.pk3
-  74045012 24171802 main/mp_pakmaps4.pk3
-  26592339 20024689 main/mp_pakmaps5.pk3
-  3620415895 10080181 main/mp_pakmaps6.pk3
-  3545821488 315823656 main/pak0.pk3
-  136047737 11026123 main/sp_pak2.pk3
-  868477447 152544 main/sp_pak3.pk3
-  3497089350 15532040 main/sp_pak4.pk3
-  # From iortcw
-  898436086 381 main/hiquality.cfg
-  1537788466 635388 main/mp_bin0.pk3
-  2312958064 3257 main/mp_rend2_shaders0.pk3
-  3497089350 15532040 main/sp_pak4.pk3
-  1069457584 22225 main/sp_rend2_shaders0.pk3
+packages:
+  rtcw-data:
+    type: full
 
-# Files listed under install_files are assumed to have install: true
-install_files:
-  main/scripts/translation.cfg_141_unix:
-    distinctive_name: false
-    look_for:
-    - main/scripts/translation.cfg
-    install_as: main/scripts/translation.cfg
-    size: 159375
-    sha256: 301670fbd41eb6797b02cc5ba8ae5e221eeaef5de3280e6e2db390c7a29ddc8f
-    sha1: 7994040e61a234e284c730287ea6d098878cbfea
-    md5: f7b2003ef7499f2a6e750c2925c870ad
+    # cksums(1) is pretty useless as a checksumming tool, but it's a convenient
+    # way to get exact file sizes in bytes (second column), which are a nice
+    # heuristic for identifying files
+    install_files_from_cksums: |
+      3201065489 12 main/autoexec.cfg
+      1738795795 760207 main/mp_bin.pk3
+      4046220680 63211149 main/mp_pak0.pk3
+      980150272 4449596 main/mp_pak1.pk3
+      1142316069 1118 main/mp_pak2.pk3
+      1777286697 159762 main/mp_pak3.pk3
+      2440657300 7799 main/mp_pak4.pk3
+      160211286 167075 main/mp_pak5.pk3
+      3845249867 3485134 main/mp_pakmaps0.pk3
+      3484376457 3765933 main/mp_pakmaps1.pk3
+      27684852 7408542 main/mp_pakmaps2.pk3
+      1630043139 10780146 main/mp_pakmaps3.pk3
+      74045012 24171802 main/mp_pakmaps4.pk3
+      26592339 20024689 main/mp_pakmaps5.pk3
+      3620415895 10080181 main/mp_pakmaps6.pk3
+      3545821488 315823656 main/pak0.pk3
+      136047737 11026123 main/sp_pak2.pk3
+      868477447 152544 main/sp_pak3.pk3
+      3497089350 15532040 main/sp_pak4.pk3
+      # From iortcw
+      898436086 381 main/hiquality.cfg
+      1537788466 635388 main/mp_bin0.pk3
+      2312958064 3257 main/mp_rend2_shaders0.pk3
+      3497089350 15532040 main/sp_pak4.pk3
+      1069457584 22225 main/sp_rend2_shaders0.pk3
 
-  # optional files aren't supported yet
-  #main/rotate.cfg:
-  #  size: 9559
-  #  optional: true
+    install:
+    - main/sp_pak1.pk3
+
+    install_files:
+      main/scripts/translation.cfg_141_unix:
+        distinctive_name: false
+        look_for:
+        - main/scripts/translation.cfg
+        install_as: main/scripts/translation.cfg
+        size: 159375
+        sha256: 301670fbd41eb6797b02cc5ba8ae5e221eeaef5de3280e6e2db390c7a29ddc8f
+        sha1: 7994040e61a234e284c730287ea6d098878cbfea
+        md5: f7b2003ef7499f2a6e750c2925c870ad
+
+      # optional files aren't supported yet
+      #main/rotate.cfg:
+      #  size: 9559
+      #  optional: true
 
 # Not used yet. FIXME: use this to make help text?
 sources:
@@ -76,7 +80,6 @@ sources:
 
 files:
   main/sp_pak1.pk3:
-    install: true
     alternatives:
     - main/sp_pak1.pk3_en
     - main/sp_pak1.pk3_fr
