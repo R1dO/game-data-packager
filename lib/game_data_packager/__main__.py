@@ -15,15 +15,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-import os
-import sys
-
-from . import GameData
+from . import run_command_line
 
 if __name__ == '__main__':
-    with GameData(sys.argv[1],
-            datadir=os.environ['DATADIR'],
-            workdir=os.environ['WORKDIR'],
-            etcdir=os.environ['ETCDIR'],
-            ) as game:
-        game.run_command_line(sys.argv[2:], outdir=os.environ['OUTDIR'])
+    run_command_line()

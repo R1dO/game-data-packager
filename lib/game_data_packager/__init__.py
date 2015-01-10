@@ -19,7 +19,9 @@
 """
 
 import argparse
+import glob
 import hashlib
+import importlib
 import io
 import logging
 import os
@@ -1063,15 +1065,15 @@ class GameData(object):
 
         return True
 
-    def run_command_line(self, argv, outdir=''):
-        parser = argparse.ArgumentParser(description='Package game files.',
-                prog='game-data-packager ' + self.shortname)
+    def add_parser(self, parsers):
+        parser = parsers.add_parser(self.shortname,
+                help=self.longname)
         parser.add_argument('--repack', action='store_true',
                 help='Locate installed game files automatically')
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE')
-        args = parser.parse_args(argv)
 
+    def run_command_line(self, args, outdir=''):
         if args.repack:
             can_repack = False
             absent = set()
@@ -1100,7 +1102,8 @@ class GameData(object):
         possible = set()
 
         for package in self.packages.values():
-            if argv and argv[0] in self.packages and package.name != argv[0]:
+            if (args.shortname in self.packages and
+                    package.name != args.shortname):
                 continue
 
             if self.fill_gaps(package, log=False):
@@ -1164,7 +1167,7 @@ class GameData(object):
             raise SystemExit(1)
 
         for package in ready:
-            destdir = os.path.join(os.environ['WORKDIR'],
+            destdir = os.path.join(self.get_workdir(),
                     '%s.deb.d' % package.name)
             if not self.fill_dest_dir(package, destdir):
                 raise SystemExit(1)
@@ -1200,3 +1203,51 @@ class GameData(object):
             rm_rf(destdir)
 
         rm_rf(os.path.join(self.get_workdir(), 'tmp'))
+
+def run_command_line():
+    datadir = os.environ['DATADIR']
+    etcdir = os.environ['ETCDIR']
+    workdir = os.environ['WORKDIR']
+
+    parser = argparse.ArgumentParser(prog='game-data-packager',
+            description='Package game files.')
+
+    games = {}
+
+    for yamlfile in glob.glob(os.path.join(datadir, '*.yaml')):
+        g = os.path.basename(yamlfile)
+        g = g[:len(g) - 5]
+
+        games[g] = GameData(g, datadir=datadir, etcdir=etcdir,
+                workdir=workdir)
+
+    game_parsers = parser.add_subparsers(dest='shortname',
+            title='supported games', metavar='GAME')
+
+    for g in sorted(games.keys()):
+        games[g].add_parser(game_parsers)
+
+    # Misc options
+    parser.add_argument('-i', '--install', action='store_true',
+            help='install the generated package')
+    parser.add_argument('-n', '--no-install', action='store_false',
+            dest='install',
+            help='do not install the generated package (requires -d, default)')
+    parser.add_argument('-d', '--destination', metavar='OUTDIR',
+            help='write the generated .deb(s) to OUTDIR')
+    parser.add_argument('-z', '--compress', action='store_true',
+            default=None,
+            help='compress generated .deb (default unless -i is used)')
+    parser.add_argument('--no-compress', action='store_false',
+            dest='compress',
+            help='do not compress generated .deb (default with -i)')
+
+    parsed = parser.parse_args()
+
+    if parsed.shortname is None:
+        parser.print_help()
+        sys.exit(0)
+
+    with games[parsed.shortname] as game:
+        parsed = parser.parse_args()
+        game.run_command_line(parsed)
