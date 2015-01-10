@@ -292,11 +292,23 @@ class GameData(object):
 
         self.help_text = ''
 
+        # Extra directories where we might find game files
+        self.try_repack_from = []
+
         self.yaml = yaml.load(open(os.path.join(self.datadir,
             shortname + '.yaml')))
 
         if 'longname' in self.yaml:
             self.longname = self.yaml['longname']
+
+        if 'try_repack_from' in self.yaml:
+            paths = self.yaml['try_repack_from']
+            if isinstance(paths, list):
+                self.try_repack_from = paths
+            elif isinstance(paths, str):
+                self.try_repack_from = [paths]
+            else:
+                raise AssertionError('try_repack_from should be str or list')
 
         if 'package' in self.yaml:
             package = GameDataPackage(self.yaml['package'])
@@ -1074,8 +1086,6 @@ class GameData(object):
                 help=self.longname, aliases=self.packages.keys(),
                 description=self.help_text,
                 formatter_class=argparse.RawDescriptionHelpFormatter)
-        parser.add_argument('--repack', action='store_true',
-                help='Locate installed game files automatically')
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE',
                 help='Files to use in constructing the .deb')
@@ -1090,27 +1100,14 @@ class GameData(object):
         self.compress_deb = (self.compress_deb and
                 getattr(args, 'compress', True))
 
-        if getattr(args, 'repack', False):
-            can_repack = False
-            absent = set()
+        for path in self.try_repack_from:
+            if os.path.isdir(path):
+                args.paths.append(path)
 
-            for package in self.packages.values():
-                path = '/' + package.install_to
-                if os.path.isdir(path):
-                    args.paths.insert(0, path)
-                    can_repack = True
-                elif (package.name == 'quake3-data' and
-                        os.path.isdir('/usr/share/games/quake3')):
-                    # FIXME: this is a hack, it would be better to
-                    # have alternative locations defined in the YAML
-                    args.paths.insert(0, '/usr/share/games/quake3')
-                    can_repack = True
-                else:
-                    absent.add(path)
-
-            if not can_repack:
-                raise SystemExit('cannot repack %s: could not open %r' %
-                        (package, sorted(absent)))
+        for package in self.packages.values():
+            path = '/' + package.install_to
+            if os.path.isdir(path):
+                args.paths.append(path)
 
         for arg in args.paths:
             self.consider_file_or_dir(arg)

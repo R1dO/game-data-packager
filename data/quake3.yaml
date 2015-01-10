@@ -3,6 +3,8 @@
 shortname: quake3
 longname: Quake III Arena (including Team Arena)
 compress_deb: false
+# Older versions of g-d-p used this directory
+try_repack_from: /usr/share/games/quake3
 
 help_text: |
   For quake3-data, you must provide baseq3/pak0.pk3 or a directory
