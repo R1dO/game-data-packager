@@ -29,9 +29,9 @@ gdp_data_driven () {
         export DEBUG
     fi
     if [ "$INSTALL" = "yes" ]; then
-        set _ --no-install "$@"
-    else
         set _ --install "$@"
+    else
+        set _ --no-install "$@"
     fi
     shift
     if [ "$COMPRESS" = "yes" ]; then
