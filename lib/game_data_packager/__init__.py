@@ -263,8 +263,11 @@ class GameData(object):
             datadir='/usr/share/games/game-data-packager',
             etcdir='/etc/game-data-packager',
             workdir=None):
-        # The name of the game
+        # The name of the game for command-line purposes, e.g. quake3
         self.shortname = shortname
+
+        # The formal name of the game, e.g. Quake III Arena
+        self.longname = shortname
 
         # game-data-packager's configuration directory
         self.etcdir = etcdir
@@ -286,6 +289,9 @@ class GameData(object):
 
         self.yaml = yaml.load(open(os.path.join(self.datadir,
             shortname + '.yaml')))
+
+        if 'longname' in self.yaml:
+            self.longname = self.yaml['longname']
 
         if 'package' in self.yaml:
             package = GameDataPackage(self.yaml['package'])
