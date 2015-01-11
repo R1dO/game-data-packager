@@ -119,12 +119,7 @@ debug "long: $LONGNAME"
 WORKDIR=`mktemp -t -d game-data-packager.XXXXXX`
 debug "WORKDIR=$WORKDIR"
 cleanup() {
-	# some magic so that methods can produce multiple debs
-	if [ "$OUTFILE" = "*.deb" ]; then
-		for deb in "$WORKDIR"/*.deb; do
-			rm -f "$deb"
-		done
-	else
+	if [ "$OUTFILE" != "" ]; then
 		if [ "$PRESERVE" != "yes" ] && [ -f "$OUTFILE" ]; then
 			rm "$OUTFILE"
 		fi
@@ -148,15 +143,7 @@ trap cleanup EXIT
 go "$@"
 
 if [ "$PRESERVE" = "yes" ]; then
-	if [ "$OUTFILE" = "*.deb" ]; then
-		for deb in "$WORKDIR"/*.deb; do
-			if [ ${deb} = "$WORKDIR/*.deb" ]; then
-				break
-			fi
-			realdeb="$(realpath "$deb")"
-			echo "generated \"$realdeb\"."
-		done
-	else
+	if [ "$OUTFILE" != "" ]; then
 		echo "generated \"$OUTFILE\"."
 	fi
 fi

@@ -14,7 +14,6 @@ gdp_data_driven () {
     (
     export ETCDIR
     export DATADIR
-    export OUTDIR
     export WORKDIR
     PYTHONPATH="$LIBDIR"
     export PYTHONPATH
@@ -47,9 +46,8 @@ gdp_data_driven () {
         exit $?
     fi
 
-    # Special value to signal that gdp should just install every .deb
-    # in $WORKDIR
-    OUTFILE="*.deb"
+    # Special value to signal that we did our own installation
+    OUTFILE=""
 
     # The Python code does the installation if necessary, so we don't
     # need to deal with this in shell script any more
