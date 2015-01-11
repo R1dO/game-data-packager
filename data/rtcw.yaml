@@ -9,6 +9,9 @@ compress_deb: false
 packages:
   rtcw-data:
     type: full
+    steam:
+      id: 9010
+      path: "common/Return to Castle Wolfenstein"
 
     # cksums(1) is pretty useless as a checksumming tool, but it's a convenient
     # way to get exact file sizes in bytes (second column), which are a nice
