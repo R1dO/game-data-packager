@@ -7,7 +7,8 @@ help_text: |
   For hexen2-data, you must provide the version 1.11 patched versions
   of data1/pak0.pak and data1/pak1.pak, or a directory containing them.
 
-  For the hexen2-praevus addon pack, you must also provide portals/pak3.pak.
+  For the mission pack, Portal of Praevus, you must also provide
+  portals/pak3.pak.
 
   Hexen II is available on Steam, <http://store.steampowered.com/app/9060/>.
   Steam installations would typically be found in:
@@ -15,6 +16,7 @@ help_text: |
 
 packages:
   hexen2-data:
+    longname: Hexen II
     steam:
       id: 9060
       path: "common/Hexen 2"
@@ -25,11 +27,13 @@ packages:
       4210700438 75601170 data1/pak1.pak
 
   hexen2-portals-data:
+    longname: "Hexen II Mission Pack: Portal of Praevus"
     type: expansion
     install_files_from_cksums: |
       1873146513 49089114 portals/pak3.pak
 
   hexen2-hexenworld-data:
+    longname: "Hexen II: HexenWorld"
     type: expansion
     install_files_from_cksums: |
       _ 10780245 hw/pak4.pak
