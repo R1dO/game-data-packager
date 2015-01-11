@@ -37,7 +37,7 @@ gdp_data_driven () {
         shift
     fi
     debug "Packaging $LONGNAME via Python code"
-    debug "Will run: python3 -m game_data_packager $SHORTNAME $*"
+    debug "Will run: python3 -m game_data_packager $*"
     python3 -m game_data_packager "$@"
     exit $?
     )
