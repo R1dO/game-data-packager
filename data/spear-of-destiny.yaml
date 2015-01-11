@@ -24,6 +24,7 @@ help_text: |
 
 packages:
   spear-of-destiny-demo-data:
+    longname: "Spear of Destiny (shareware)"
     type: demo
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
@@ -41,6 +42,7 @@ packages:
         usr/share/games/wolf3d/sod.doc
 
   spear-of-destiny-data:
+    longname: "Spear of Destiny (registered version, mission 1)"
     type: full
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
