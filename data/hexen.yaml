@@ -6,14 +6,19 @@ shortname: hexen
 longname: "Hexen: Beyond Heretic"
 
 help_text: |
-  Please provide HEXEN.WAD from Hexen 1.1.
-
-  The shareware version is not yet supported.
-
-  The expansion "Deathkings of the Dark Citadel" is not yet supported.
+  hexen-wad requires HEXEN.WAD from Hexen v1.1.
 
   Patching older versions is not currently supported. If you have
   an older version, it might be possible to patch it manually using dosbox.
+
+  hexen-deathkings-data requires HEXDD.WAD from the Deathkings of the
+  Dark Citadel expansion.
+
+  The demo version of hexen is not currently supported.
+
+# hexen-demo-data requires HEXEN.WAD from the Hexen demo v1.2, which
+# will be downloaded automatically if necessary. It will be renamed to
+# hexen-demo.wad to avoid colliding with the full version of Hexen.
 
 plugin: doom_common
 doom_engine: hexen
@@ -25,19 +30,20 @@ packages:
     install:
     - hexen.wad
 
-  # not supported yet
-  #hexen-deathkings-data:
-  #  install_to: usr/share/games/hexen
-  #  type: expansion
-  #  install:
-  #  - hexdd.wad
+  hexen-deathkings-data:
+    longname: "Hexen: Deathkings of the Dark Citadel"
+    install_to: usr/share/games/hexen
+    type: expansion
+    install:
+    - hexdd.wad
 
-  # not supported yet
+  # Disabled, doesn't seem to work
   #hexen-demo-data:
+  #  longname: "Hexen: Beyond Heretic (demo)"
   #  install_to: usr/share/games/hexen
-  #  type: demo
+  #   type: demo
   #  install:
-  #  - hexen.wad_demo
+  #  - hexen-demo.wad
 
 files:
 
