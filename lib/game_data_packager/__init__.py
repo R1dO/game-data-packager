@@ -271,6 +271,7 @@ class GameDataPackage(object):
 class GameData(object):
     def __init__(self,
             shortname,
+            yaml_data,
             workdir=None):
         # The name of the game for command-line purposes, e.g. quake3
         self.shortname = shortname
@@ -298,8 +299,7 @@ class GameData(object):
         # Steam ID and path
         self.steam = {}
 
-        self.yaml = yaml.load(open(os.path.join(DATADIR,
-            shortname + '.yaml')))
+        self.yaml = yaml_data
 
         self.argument_parser = None
 
@@ -316,7 +316,7 @@ class GameData(object):
                 raise AssertionError('try_repack_from should be str or list')
 
         if 'package' in self.yaml:
-            package = GameDataPackage(self.yaml['package'])
+            package = self.construct_package(self.yaml['package'])
             self.packages[self.yaml['package']] = package
             assert 'packages' not in self.yaml
         else:
@@ -359,7 +359,7 @@ class GameData(object):
                 assert 'sha1sums' not in data, binary
                 assert 'sha256sums' not in data, binary
 
-                package = GameDataPackage(binary)
+                package = self.construct_package(binary)
                 self.packages[binary] = package
                 self._populate_package(package, data)
 
@@ -1000,19 +1000,28 @@ class GameData(object):
 
         return complete
 
+    def fill_docs(self, package, docdir):
+        shutil.copyfile(os.path.join(DATADIR, package.name + '.copyright'),
+                os.path.join(docdir, 'copyright'))
+
+    def fill_extra_files(self, package, destdir):
+        pass
+
     def fill_dest_dir(self, package, destdir):
         if not self.check_complete(package, log=True):
             return False
 
         docdir = os.path.join(destdir, 'usr/share/doc', package.name)
         mkdir_p(docdir)
-        shutil.copyfile(os.path.join(DATADIR, package.name + '.copyright'),
-                os.path.join(docdir, 'copyright'))
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
 
+        self.fill_docs(package, docdir)
+
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
+
+        self.fill_extra_files(package, destdir)
 
         for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
             maintscript = os.path.join(DATADIR, package.name + '.' + ms)
@@ -1080,20 +1089,27 @@ class GameData(object):
                 shell=True, cwd=destdir)
         os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
 
-        control_in = open(os.path.join(DATADIR,
-            package.name + '.control.in'))
+        control_in = open(self.get_control_template(package))
         control = Deb822(control_in)
-        size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
-            '.'], cwd=destdir).decode('utf-8').rstrip('\n')
-        control['Installed-Size'] = size
-        package.version = control['Version'].replace('VERSION',
-                GAME_PACKAGE_VERSION)
-        control['Version'] = package.version
+        self.modify_control_template(control, package, destdir)
         control.dump(fd=open(os.path.join(debdir, 'control'), 'wb'),
                 encoding='utf-8')
         os.chmod(os.path.join(debdir, 'control'), 0o644)
 
         return True
+
+    def modify_control_template(self, control, package, destdir):
+        size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
+            '.'], cwd=destdir).decode('utf-8').rstrip('\n')
+        assert control['Package'] in ('PACKAGE', package.name)
+        control['Package'] = package.name
+        control['Installed-Size'] = size
+        package.version = control['Version'].replace('VERSION',
+                GAME_PACKAGE_VERSION)
+        control['Version'] = package.version
+
+    def get_control_template(self, package):
+        return os.path.join(DATADIR, package.name + '.control.in')
 
     def add_parser(self, parsers):
         parser = parsers.add_parser(self.shortname,
@@ -1303,6 +1319,36 @@ class GameData(object):
                             logger.debug('possible Steam installation at %s', path)
                             yield path
 
+    def construct_package(self, binary):
+        return GameDataPackage(binary)
+
+def load_yaml_games(workdir=None):
+    games = {}
+
+    for yamlfile in glob.glob(os.path.join(DATADIR, '*.yaml')):
+        try:
+            g = os.path.basename(yamlfile)
+            g = g[:len(g) - 5]
+
+            yaml_data = yaml.load(open(yamlfile))
+
+            plugin = yaml_data.get('plugin', g)
+
+            try:
+                plugin = importlib.import_module('game_data_packager.games.%s' %
+                        plugin)
+                game_data_constructor = plugin.GAME_DATA_SUBCLASS
+            except (ImportError, AttributeError) as e:
+                logger.debug('No special code for %s: %s', g, e)
+                game_data_constructor = GameData
+
+            games[g] = game_data_constructor(g, yaml_data, workdir=workdir)
+        except:
+            print('Error loading %s:\n' % yaml)
+            raise
+
+    return games
+
 def run_command_line():
     workdir = os.environ['WORKDIR']
     logger.debug('Arguments: %r', sys.argv)
@@ -1310,23 +1356,10 @@ def run_command_line():
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.')
 
-    games = {}
-
-    for yamlfile in glob.glob(os.path.join(DATADIR, '*.yaml')):
-        g = os.path.basename(yamlfile)
-        g = g[:len(g) - 5]
-
-        try:
-            plugin = importlib.import_module('game_data_packager.games.%s' % g)
-            game_data_constructor = plugin.GAME_DATA_SUBCLASS
-        except (ImportError, AttributeError) as e:
-            logger.debug('No special code for %s: %s', g, e)
-            game_data_constructor = GameData
-
-        games[g] = game_data_constructor(g, workdir=workdir)
-
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
+
+    games = load_yaml_games(workdir)
 
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers)

@@ -15,17 +15,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-import glob
-import os
-import os.path
-
-from . import GameData
-from .paths import DATADIR
+from . import load_yaml_games
 
 if __name__ == '__main__':
-    for yaml in glob.glob(DATADIR + '/*.yaml'):
-        try:
-            GameData(os.path.splitext(os.path.basename(yaml))[0])
-        except:
-            print('Error loading %s:\n' % yaml)
-            raise
+    load_yaml_games()

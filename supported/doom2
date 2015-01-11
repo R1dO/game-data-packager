@@ -1,18 +1,4 @@
-
 SHORTNAME=doom2
 LONGNAME="Doom II: Hell on Earth"
 
-check_for_v19() {
-	case "$CHECKSUM" in
-		"25e1459ca71d321525f84628f45ca8cd")
-			debug "doom2.wad is a v1.9 IWAD"
-			;;
-		*)
-			warn "the doom2.wad file is not version 1.9"
-			warn "you may have some problems with PWADs and demos"
-			;;
-	esac
-
-}
-
-. $LIBDIR/doom-common
+. $LIBDIR/via-python

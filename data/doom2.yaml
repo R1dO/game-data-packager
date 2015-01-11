@@ -1,0 +1,108 @@
+%YAML 1.2
+---
+# Version reference:
+# http://doom.wikia.com/wiki/DOOM2.WAD
+# http://doomwiki.org/wiki/DOOM2.WAD
+shortname: doom2
+longname: "Doom 2: Hell on Earth"
+
+plugin: doom_common
+
+help_text: |
+  Please provide the DOOM2.WAD from Doom 2 version 1.9.
+
+  Patching older versions is not currently supported. If you have
+  an older version, it might be possible to patch it manually using dosbox.
+
+packages:
+  doom2-wad:
+    install_to: usr/share/games/doom
+    type: full
+    install:
+    - doom2.wad
+
+files:
+  doom2.wad:
+    alternatives:
+    - doom2.wad_1.9
+    # FIXME: do older wads work?
+
+  doom2.wad_1.9:
+    size: 14604584
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_bfg:
+    size: 14691821
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_1.666g:
+    size: 14824716
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_1.666:
+    size: 14943400
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_1.7:
+    size: 14612688
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_1.7a:
+    size: 14612688
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_1.8:
+    size: 14612688
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_xbox360_bfg:
+    size: 14677988
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_xbla:
+    size: 14685034
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_xbox_roe:
+    size: 14683458
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_psn:
+    size: 14599800
+    look_for: [doom2.wad]
+    distinctive_name: false
+  doom2.wad_tapwave_zodiac:
+    size: 14639397
+    look_for: [doom2.wad]
+    distinctive_name: false
+
+md5sums: |
+  25e1459ca71d321525f84628f45ca8cd  doom2.wad_1.9
+  c3bea40570c23e511a7ed3ebcd9865f7  doom2.wad_bfg
+  d9153ced9fd5b898b36cc5844e35b520  doom2.wad_1.666g
+  30e3c2d0350b67bfbf47271970b74b2f  doom2.wad_1.666
+  ea74a47a791fdef2e9f2ea8b8a9da13b  doom2.wad_1.7
+  d7a07e5d3f4625074312bc299d7ed33f  doom2.wad_1.7a
+  c236745bb01d89bbb866c8fed81b6f8c  doom2.wad_1.8
+  f617591a6c5d07037eb716dc4863e26b  doom2.wad_xbox360_bfg
+  43c2df32dc6c740cb11f34dc5ab693fa  doom2.wad_xbla
+  a793ebcdd790afad4a1f39cc39a893bd  doom2.wad_xbox_roe
+  4c3db5f23b145fccd24c9b84aba3b7dd  doom2.wad_psn
+  9640fc4b2c8447bbd28f2080725d5c51  doom2.wad_tapwave_zodiac
+
+sha1sums: |
+  7ec7652fcfce8ddc6e801839291f0e28ef1d5ae7  doom2.wad_1.9
+  79c283b18e61b9a989cfd3e0f19a42ea98fda551  doom2.wad_1.8
+  70192b8d5aba65c7e633a7c7bcfe7e3e90640c97  doom2.wad_1.7a
+  78009057420b792eacff482021db6fe13b370dcc  doom2.wad_1.7
+  6d559b7ceece4f5ad457415049711992370d520a  doom2.wad_1.666
+  a4ce5128d57cb129fdd1441c12b58245be55c8ce  doom2.wad_1.666g
+  a59548125f59f6aa1a41c22f615557d3dd2e85a9  doom2.wad_bfg
+  b7ba1c68631023ea1aab1d7b9f7f6e9afc508f39  doom2.wad_xbox360_bfg
+  55e445badd63d8841ebea887910c26c62c7f525e  doom2.wad_xbla
+  1c91d86cd8a2f3817227986503a6672a5e1613f0  doom2.wad_xbox_roe
+  ca8db908a7c9fbac764f34c148f0bcc78d18553e  doom2.wad_psn
+  2cda310805397ae44059bbcaed3cd602f4864a82  doom2.wad_tapwave_zodiac
+
+...
+# vim:set sw=2 sts=2 et:
