@@ -1264,7 +1264,7 @@ class GameData(object):
     def iter_steam_paths(self):
         for prefix in (
                 os.path.expanduser('~/.steam'),
-                os.path.join(os.environ.get('XDG_DATA_DIR', os.path.expanduser('~/.local/share')),
+                os.path.join(os.environ.get('XDG_DATA_HOME', os.path.expanduser('~/.local/share')),
                     'wineprefixes/steam/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.wine/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.PlayOnLinux/wineprefix/Steam/drive_c/Program_Files/Steam'),
