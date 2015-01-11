@@ -215,6 +215,9 @@ class GameDataPackage(object):
         # The name of the binary package
         self.name = name
 
+        # The optional marketing name of this version
+        self.longname = None
+
         # Where we install files.
         # For instance, if this is 'usr/share/games/quake3' and we have
         # a WantedFile with install_as='baseq3/pak1.pk3' then we would
@@ -460,6 +463,9 @@ class GameData(object):
     def _populate_package(self, package, d):
         if 'type' in d:
             package.type = d['type']
+
+        if 'longname' in d:
+            package.longname = d['longname']
 
         if 'symlinks' in d:
             package.symlinks = d['symlinks']
