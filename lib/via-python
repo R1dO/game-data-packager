@@ -12,8 +12,6 @@ gdp_data_driven () {
     fi
 
     (
-    export ETCDIR
-    export DATADIR
     export WORKDIR
     PYTHONPATH="$LIBDIR"
     export PYTHONPATH

@@ -40,19 +40,19 @@ import zipfile
 from debian.deb822 import Deb822
 import yaml
 
+from .paths import DATADIR, ETCDIR, LIBDIR
 from .util import TemporaryUmask, mkdir_p, rm_rf, human_size, MEBIBYTE
+from .version import GAME_PACKAGE_VERSION
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
 
 # For now, we're given these by the shell script wrapper.
-DATADIR = os.environ['DATADIR']
+
 if os.environ.get('DEBUG'):
     logging.getLogger().setLevel(logging.DEBUG)
 else:
     logging.getLogger().setLevel(logging.INFO)
-
-from .version import GAME_PACKAGE_VERSION
 
 # arbitrary cutoff for providing progress bars
 QUITE_LARGE = 50 * MEBIBYTE
@@ -271,20 +271,12 @@ class GameDataPackage(object):
 class GameData(object):
     def __init__(self,
             shortname,
-            datadir='/usr/share/games/game-data-packager',
-            etcdir='/etc/game-data-packager',
             workdir=None):
         # The name of the game for command-line purposes, e.g. quake3
         self.shortname = shortname
 
         # The formal name of the game, e.g. Quake III Arena
         self.longname = shortname
-
-        # game-data-packager's configuration directory
-        self.etcdir = etcdir
-
-        # game-data-packager's data directory.
-        self.datadir = datadir
 
         # A temporary directory.
         self.workdir = workdir
@@ -306,7 +298,7 @@ class GameData(object):
         # Steam ID and path
         self.steam = {}
 
-        self.yaml = yaml.load(open(os.path.join(self.datadir,
+        self.yaml = yaml.load(open(os.path.join(DATADIR,
             shortname + '.yaml')))
 
         if 'longname' in self.yaml:
@@ -796,7 +788,7 @@ class GameData(object):
             return [wanted.download]
         for mirror_list, details in wanted.download.items():
             try:
-                f = open(os.path.join(self.etcdir, mirror_list))
+                f = open(os.path.join(ETCDIR, mirror_list))
                 for line in f:
                     url = line.strip()
                     if not url:
@@ -1012,16 +1004,16 @@ class GameData(object):
 
         docdir = os.path.join(destdir, 'usr/share/doc', package.name)
         mkdir_p(docdir)
-        shutil.copyfile(os.path.join(self.datadir, package.name + '.copyright'),
+        shutil.copyfile(os.path.join(DATADIR, package.name + '.copyright'),
                 os.path.join(docdir, 'copyright'))
-        shutil.copyfile(os.path.join(self.datadir, 'changelog.gz'),
+        shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
 
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
 
         for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
-            maintscript = os.path.join(self.datadir, package.name + '.' + ms)
+            maintscript = os.path.join(DATADIR, package.name + '.' + ms)
             if os.path.isfile(maintscript):
                 shutil.copy(maintscript, os.path.join(debdir, ms))
 
@@ -1086,7 +1078,7 @@ class GameData(object):
                 shell=True, cwd=destdir)
         os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
 
-        control_in = open(os.path.join(self.datadir,
+        control_in = open(os.path.join(DATADIR,
             package.name + '.control.in'))
         control = Deb822(control_in)
         size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
@@ -1297,11 +1289,7 @@ class GameData(object):
                             yield path
 
 def run_command_line():
-    datadir = os.environ['DATADIR']
-    etcdir = os.environ['ETCDIR']
     workdir = os.environ['WORKDIR']
-    logger.debug('Running with DATADIR=%s ETCDIR=%s WORKDIR=%s',
-            datadir, etcdir, workdir)
     logger.debug('Arguments: %r', sys.argv)
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
@@ -1309,7 +1297,7 @@ def run_command_line():
 
     games = {}
 
-    for yamlfile in glob.glob(os.path.join(datadir, '*.yaml')):
+    for yamlfile in glob.glob(os.path.join(DATADIR, '*.yaml')):
         g = os.path.basename(yamlfile)
         g = g[:len(g) - 5]
 
@@ -1320,8 +1308,7 @@ def run_command_line():
             logger.debug('No special code for %s: %s', g, e)
             game_data_constructor = GameData
 
-        games[g] = game_data_constructor(g, datadir=datadir, etcdir=etcdir,
-                workdir=workdir)
+        games[g] = game_data_constructor(g, workdir=workdir)
 
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')

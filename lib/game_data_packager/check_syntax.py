@@ -20,14 +20,12 @@ import os
 import os.path
 
 from . import GameData
+from .paths import DATADIR
 
 if __name__ == '__main__':
-    datadir=os.environ['DATADIR']
-
-    for yaml in glob.glob(datadir + '/*.yaml'):
+    for yaml in glob.glob(DATADIR + '/*.yaml'):
         try:
-            GameData(os.path.splitext(os.path.basename(yaml))[0],
-                    datadir=datadir)
+            GameData(os.path.splitext(os.path.basename(yaml))[0])
         except:
             print('Error loading %s:\n' % yaml)
             raise

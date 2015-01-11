@@ -12,6 +12,8 @@ COMPRESS="maybe"
 
 # test to see whether we are running in 'development mode'
 if [ "$0" = "./game-data-packager" ]; then
+	GDP_UNINSTALLED=1
+	export GDP_UNINSTALLED
 	SUPPORTED=./supported
 	LIBDIR=./lib
 	DATADIR="./out"
