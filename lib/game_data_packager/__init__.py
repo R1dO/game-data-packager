@@ -1120,6 +1120,14 @@ class GameData(object):
 
         self.preserve_debs = (getattr(args, 'destination', None) is not None)
         self.install_debs = getattr(args, 'install', True)
+
+        if getattr(args, 'compress', None) is None:
+            # default to not compressing if we aren't going to install it
+            # anyway
+            args.compress = self.preserve_debs
+
+        # only compress if the command-line says we should and the YAML
+        # says it's worthwhile
         self.compress_deb = (self.compress_deb and
                 getattr(args, 'compress', True))
 
