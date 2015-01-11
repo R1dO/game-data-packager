@@ -40,7 +40,6 @@ default: $(DIRS)
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue
-	make -f hexen2.mk VERSION=$(VERSION)
 	make -f rott.mk VERSION=$(VERSION)
 	make -f wolf3d.mk VERSION=$(VERSION)
 	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION)
@@ -91,7 +90,6 @@ clean:
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue clean
-	make -f hexen2.mk VERSION=$(VERSION) clean
 	make -f rott.mk VERSION=$(VERSION) clean
 	make -f wolf3d.mk VERSION=$(VERSION) clean
 	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION) clean

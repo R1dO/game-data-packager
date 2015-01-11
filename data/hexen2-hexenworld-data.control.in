@@ -1,0 +1,18 @@
+Package: hexen2-hexenworld-data
+Version: VERSION
+Section: non-free/games
+Priority: optional
+Architecture: all
+Multi-Arch: foreign
+Depends: hexen2-data
+Recommends: hexen2-engine
+Installed-Size: 500000
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Description: Hexen II: HexenWorld
+ Hexen II requires an engine and game data to play. This package contains
+ the commercial data from HexenWorld, the multiplayer module for Hexen II,
+ and was generated using the "game-data-packager" program from
+ the Debian package of the same name.
+ .
+ To play Hexen II using this data, install a package providing the
+ "hexen2-engine" virtual package.

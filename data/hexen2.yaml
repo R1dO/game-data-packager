@@ -1,0 +1,71 @@
+%YAML 1.2
+---
+shortname: hexen2
+longname: Hexen II
+
+help_text: |
+  For hexen2-data, you must provide the version 1.11 patched versions
+  of data1/pak0.pak and data1/pak1.pak, or a directory containing them.
+
+  For the hexen2-praevus addon pack, you must also provide portals/pak3.pak.
+
+  Hexen II is available on Steam, <http://store.steampowered.com/app/9060/>.
+  Steam installations would typically be found in:
+  C:/Program Files/Steam/steamapps/common/Hexen 2
+
+packages:
+  hexen2-data:
+    steam:
+      id: 9060
+      path: "common/Hexen 2"
+    type: full
+    install_to: usr/share/games/hexen2-data
+    install_files_from_cksums: |
+      2912412704 22704056 data1/pak0.pak
+      4210700438 75601170 data1/pak1.pak
+
+  hexen2-portals-data:
+    type: expansion
+    install_files_from_cksums: |
+      1873146513 49089114 portals/pak3.pak
+
+  hexen2-hexenworld-data:
+    type: expansion
+    install_files_from_cksums: |
+      _ 10780245 hw/pak4.pak
+
+files:
+  hexenworld-pakfiles-0.15.tgz:
+    size: 4948641
+    provides:
+    - hw/pak4.pak
+    # FIXME: if we list this as downloadable, then g-d-p will download it
+    # every time we try to package something else. Downloadable expansions
+    # should be a little less enthusiastic
+    #download: http://downloads.sourceforge.net/project/uhexen2/Hexen2%20GameData/hexenworld-pakfiles/hexenworld-pakfiles-0.15.tgz?r=http%3A%2F%2Fuhexen2.sourceforge.net%2Fdownload.html
+    unpack:
+      format: tar.gz
+
+md5sums: |
+  c9675191e75dd25a3b9ed81ee7e05eff  data1/pak0.pak
+  c2ac5b0640773eed9ebe1cda2eca2ad0  data1/pak1.pak
+  77ae298dd0dcd16ab12f4a68067ff2c3  portals/pak3.pak
+  88109ee385d9723ac5f1015e034a44dd  hw/pak4.pak
+  9ac598a80765daa0862893bd0aac765a  hexenworld-pakfiles-0.15.tgz
+
+sha1sums: |
+  7c6b19d76ce85771026ea8dbdc397cd1109355b7  data1/pak0.pak
+  34c17f508bb6cd9ae4401307d0930a6f00761826  data1/pak1.pak
+  84aaba667060e1f9c50fb4d140fb301ac7e81cb7  portals/pak3.pak
+  b21ecc51b15785b7d468dd353bce67cc13e7615a  hw/pak4.pak
+  a7600b80b4205788b64fb57191e194c28b55b522  hexenworld-pakfiles-0.15.tgz
+
+sha256sums: |
+  57936acc4cd9abed7acb480dd9c6d59c7c98e96e4eca4e2d04f390d2dfa5ffde  data1/pak0.pak
+  6940cc03dc731f9c19f4e8a21259d7f191bd60a7487b50ceed3f8268e0d32a56  data1/pak1.pak
+  f5f53e360d49af9d7f8bd3b136a0ebab70e9ddcace13cf8aa5e182d986a0a48c  portals/pak3.pak
+  140664a9a1c0b38d1dd9fc7cd1b9b051e0132d33ed5bf17117c1fc831eea0741  hw/pak4.pak
+  49462cdf984deee7350d03c7d192d1c34d682647ffc9d06de4308e0a7c71c4d9  hexenworld-pakfiles-0.15.tgz
+
+...
+# vim:set sw=2 sts=2 et:

@@ -1,0 +1,18 @@
+Package: hexen2-portals-data
+Version: VERSION
+Section: non-free/games
+Priority: optional
+Architecture: all
+Multi-Arch: foreign
+Depends: hexen2-data
+Recommends: hexen2-engine
+Installed-Size: 500000
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Description: Hexen II Mission Pack: Portal of Praevus
+ Hexen II requires an engine and game data to play. This package contains
+ the commercial data from Raven Software's Hexen II Mission Pack: Portal
+ of Praevus, and was generated using the "game-data-packager" program from
+ the Debian package of the same name.
+ .
+ To play Hexen II using this data, install a package providing the
+ "hexen2-engine" virtual package.

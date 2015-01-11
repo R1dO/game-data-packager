@@ -1,31 +1,4 @@
 SHORTNAME=hexen2
 LONGNAME="Hexen II"
 
-hexen2_usage() {
-  echo "game-data-packager ${SHORTNAME} arguments:"
-  printf "\tgame-data-packager ${SHORTNAME} path \t\tpath\t\tpath to a hexen2 directory\n"
-}
-
-go() {
-  if [ $# -lt 1 ]; then
-    hexen2_usage
-    die "wrong number of arguments"
-  fi
-  dir=`unravel "$1"`
-  verify_directory "$dir"
-  verify_directory "$dir/data1"
-  for f in pak0.pak pak1.pak; do
-    verify_file "$dir/data1/$f"
-  done
-
-  verify_md5sum "$dir/data1/pak0.pak" c9675191e75dd25a3b9ed81ee7e05eff
-  verify_md5sum "$dir/data1/pak1.pak" c2ac5b0640773eed9ebe1cda2eca2ad0
-
-  DEBBASE="${SHORTNAME}-data_${GAME_PACKAGE_VERSION}_all.deb"
-  DEB="$DATADIR/$DEBBASE"
-  OUTFILE=`unravel "$OUTDIR"`"/$DEBBASE"
-  cp -p "$DEB" "$OUTFILE"
-  slipstream "$OUTFILE" "usr/share/games/hexen2/data1" \
-    "$dir/data1/pak0.pak" \
-    "$dir/data1/pak1.pak"
-}
+. $LIBDIR/via-python
