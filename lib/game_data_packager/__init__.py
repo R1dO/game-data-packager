@@ -40,7 +40,7 @@ import zipfile
 from debian.deb822 import Deb822
 import yaml
 
-from .paths import DATADIR, ETCDIR, LIBDIR
+from .paths import DATADIR, ETCDIR
 from .util import TemporaryUmask, mkdir_p, rm_rf, human_size, MEBIBYTE
 from .version import GAME_PACKAGE_VERSION
 
