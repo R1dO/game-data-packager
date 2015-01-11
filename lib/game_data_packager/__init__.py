@@ -301,6 +301,8 @@ class GameData(object):
         self.yaml = yaml.load(open(os.path.join(DATADIR,
             shortname + '.yaml')))
 
+        self.argument_parser = None
+
         if 'longname' in self.yaml:
             self.longname = self.yaml['longname']
 
@@ -1112,6 +1114,7 @@ class GameData(object):
                             + 'version are available')
                 break
 
+        self.argument_parser = parser
         return parser
 
     def run_command_line(self, args):
@@ -1172,6 +1175,7 @@ class GameData(object):
                                 package.name)
                         possible.add(package)
                     else:
+                        self.argument_parser.print_help()
                         raise SystemExit(1)
             else:
                 # If no demo, repeat the process for the first
@@ -1184,8 +1188,10 @@ class GameData(object):
                                     'a bug', package.name)
                             possible.add(package)
                         else:
+                            self.argument_parser.print_help()
                             sys.exit(1)
                 else:
+                    self.argument_parser.print_help()
                     raise SystemExit('Unable to complete any packages. ' +
                             'Please provide more files or directories.')
 
@@ -1212,6 +1218,7 @@ class GameData(object):
                         package.name)
 
         if not ready:
+            self.argument_parser.print_help()
             raise SystemExit(1)
 
         debs = set()
