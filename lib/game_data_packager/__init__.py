@@ -1120,7 +1120,7 @@ class GameData(object):
         logger.debug('package description:\n%s',
                 yaml.safe_dump(self.to_yaml()))
 
-        self.preserve_debs = getattr(args, 'preserve', False)
+        self.preserve_debs = (getattr(args, 'destination', None) is not None)
         self.install_debs = getattr(args, 'install', True)
         self.compress_deb = (self.compress_deb and
                 getattr(args, 'compress', True))
@@ -1225,8 +1225,6 @@ class GameData(object):
 
             if outdir:
                 outfile = os.path.join(os.path.abspath(outdir), deb_basename)
-                os.symlink(outfile, os.path.join(self.get_workdir(),
-                    deb_basename))
             else:
                 outfile = os.path.join(self.get_workdir(), deb_basename)
 
