@@ -10,7 +10,10 @@ steam:
 packages:
   rott-data:
     install_to: usr/share/games/rott
-    type: demo
+    type: full
+    longname: "Rise of the Triad: The HUNT begins"
+    # this shareware data are considered a as full game because
+    # it includes the HUNT Begin levels not present in the commercial game
 
     install_files_from_cksums: |
       742977862  27028   DEMO1_3.DMO
