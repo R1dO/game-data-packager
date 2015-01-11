@@ -1116,7 +1116,7 @@ class GameData(object):
 
         return parser
 
-    def run_command_line(self, args, outdir=''):
+    def run_command_line(self, args):
         logger.debug('package description:\n%s',
                 yaml.safe_dump(self.to_yaml()))
 
@@ -1223,8 +1223,9 @@ class GameData(object):
 
             deb_basename = '%s_%s_all.deb' % (package.name, package.version)
 
-            if outdir:
-                outfile = os.path.join(os.path.abspath(outdir), deb_basename)
+            if args.destination is not None:
+                outfile = os.path.join(os.path.abspath(args.destination),
+                        deb_basename)
             else:
                 outfile = os.path.join(self.get_workdir(), deb_basename)
 
