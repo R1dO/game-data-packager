@@ -19,14 +19,14 @@ help_text: |
 
 packages:
   heretic-wad:
-    install_to: usr/share/games/heretic
+    install_to: usr/share/games/doom
     type: full
     install:
     - heretic.wad
 
   # Not supported yet
   #heretic-shareware-wad:
-  #  install_to: usr/share/games/heretic
+  #  install_to: usr/share/games/doom
   #  type: demo
 
 files:
