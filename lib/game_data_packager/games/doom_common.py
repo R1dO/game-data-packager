@@ -113,13 +113,18 @@ class DoomGameData(GameData):
 
             appdir = os.path.join(destdir, 'usr/share/applications')
             mkdir_p(appdir)
-            subst(
-                    open(os.path.join(DATADIR, 'doom-common.desktop.in')),
-                    open(os.path.join(appdir, '%s.desktop' % package.name),
-                        'w'),
-                    GAME=wad_base,
-                    LONG=(package.longname or self.longname),
-                    ENGINE=self.engine)
+            for basename in (package.name, 'doom-common'):
+                from_ = os.path.join(DATADIR, basename + '.desktop.in')
+                if os.path.exists(from_):
+                    subst(open(from_),
+                            open(os.path.join(appdir, '%s.desktop' % package.name),
+                                'w'),
+                            GAME=wad_base,
+                            LONG=(package.longname or self.longname),
+                            ENGINE=self.engine)
+                    break
+            else:
+                raise AssertionError('doom-common.desktop.in should have existed')
 
             debdir = os.path.join(destdir, 'DEBIAN')
             mkdir_p(debdir)
