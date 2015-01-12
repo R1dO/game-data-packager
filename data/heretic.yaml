@@ -50,13 +50,10 @@ files:
   #    format: zip
 
   heretic.wad:
-    distinctive_name: false
     alternatives:
     - heretic.wad_1.3
-    # FIXME: do older wads work?
 
   heretic.wad_1.3:
-    distinctive_name: false
     size: 14189976
     look_for: [heretic.wad]
 
@@ -71,7 +68,6 @@ files:
     look_for: [heretic.wad]
 
   heretic1.wad_1.2:
-    distinctive_name: false
     size: 5120920
     look_for: [heretic1.wad]
 

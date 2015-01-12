@@ -34,11 +34,13 @@ files:
     alternatives:
     - doom.wad_1.9ud
     - doom.wad_1.9
-    # presumably some of the other alternatives would be OK too
+    - doom.wad_xbox
+    - doom.wad_psn
+    - doom.wad_bfg
+    - doom1.wad_pocketpc
 
   # Best available full version: The Ultimate Doom
   doom.wad_1.9ud:
-    distinctive_name: false
     size: 12408292
     sha1: 9b07b02ab3c275a6a7570c3f73cc20d63a0e3833
     md5: c4fe9fd920207691a9f493668e0a2083
@@ -47,28 +49,24 @@ files:
 
   # Other 1.9 variants
   doom.wad_1.9:
-    distinctive_name: false
     size: 11159840
     sha1: 7742089b4468a736cadb659a7deca3320fe6dcbd
     md5: 1cd63c5ddff1bf8ce844237f580e9cf3
     look_for:
     - doom.wad
   doom.wad_xbox:
-    distinctive_name: false
     size: 12538385
     md5: 0c8758f102ccafe26a3040bee8ba5021
     sha1: 1d1d4f69fe14fa255228d8243470678b1b4efdc5
     look_for:
     - doom.wad
   doom.wad_psn:
-    distinctive_name: false
     size: 12474561
     md5: e4f120eab6fb410a5b6e11c947832357
     sha1: 117015379c529573510be08cf59810aa10bb934e
     look_for:
     - doom.wad
   doom.wad_bfg:
-    distinctive_name: false
     size: 12487824
     md5: fb35c4a5a9fd49ec29ab6e900572c524
     sha1: e5ec79505530e151ff0e6f517f3ce1fd65969c46

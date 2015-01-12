@@ -112,6 +112,12 @@ class HashedFile(object):
         self.sha256 = sha256.hexdigest()
         return self
 
+    @property
+    def have_hashes(self):
+        return ((self.md5 is not None) or
+                (self.sha1 is not None) or
+                (self.sha256 is not None))
+
     def matches(self, other):
         matched = False
 
@@ -330,18 +336,35 @@ class GameData(object):
             assert 'install_files_from_cksums' not in self.yaml
 
         # Map from WantedFile name to instance.
-        # { 'baseq3/pak1.pk3' => WantedFile instance }
+        # { 'baseq3/pak1.pk3': WantedFile instance }
         self.files = {}
 
         # Map from WantedFile name to a set of names of WantedFile instances
         # from which the file named in the key can be extracted or generated.
-        # { 'baseq3/pak1.pk3' => set(['linuxq3apoint-1.32b-3.x86.run']) }
+        # { 'baseq3/pak1.pk3': set(['linuxq3apoint-1.32b-3.x86.run']) }
         self.providers = {}
 
         # Map from WantedFile name to the absolute or relative path of
         # a matching file on disk.
-        # { 'baseq3/pak1.pk3' => '/usr/share/games/quake3/baseq3/pak1.pk3' }
+        # { 'baseq3/pak1.pk3': '/usr/share/games/quake3/baseq3/pak1.pk3' }
         self.found = {}
+
+        # Map from WantedFile look_for name to a set of names of WantedFile
+        # instances which might be it
+        # { 'doom2.wad': set(['doom2.wad_1.9', 'doom2.wad_bfg', ...]) }
+        self.known_filenames = {}
+
+        # Map from WantedFile size to a set of names of WantedFile
+        # instances which might be it
+        # { 14604584: set(['doom2.wad_1.9']) }
+        self.known_sizes = {}
+
+        # Maps from md5, sha1, sha256 to the name of a unique
+        # WantedFile instance
+        # { '25e1459...': 'doom2.wad_1.9' }
+        self.known_md5s = {}
+        self.known_sha1s = {}
+        self.known_sha256s = {}
 
         # Failed downloads
         self.download_failed = set()
@@ -380,6 +403,34 @@ class GameData(object):
         for filename, f in self.files.items():
             for provided in f.provides:
                 self.providers.setdefault(provided, set()).add(filename)
+
+            if f.alternatives:
+                continue
+
+            if f.distinctive_size and f.size is not None:
+                self.known_sizes.setdefault(f.size, set()).add(filename)
+
+            if f.distinctive_name:
+                for lf in f.look_for:
+                    self.known_filenames.setdefault(lf, set()).add(filename)
+
+            if f.md5 is not None:
+                if self.known_md5s.get(f.md5):
+                    logger.warning('md5 %s matches %s and also %s' %
+                            (f.md5, self.known_md5s[f.md5], filename))
+                self.known_md5s[f.md5] = filename
+
+            if f.sha1 is not None:
+                if self.known_sha1s.get(f.sha1):
+                    logger.warning('sha1 %s matches %s and also %s' %
+                            (f.sha1, self.known_sha1s[f.sha1], filename))
+                self.known_sha1s[f.sha1] = filename
+
+            if f.sha256 is not None:
+                if self.known_sha256s.get(f.sha256):
+                    logger.warning('sha256 %s matches %s and also %s' %
+                            (f.sha256, self.known_sha256s[f.sha256], filename))
+                self.known_sha256s[f.sha256] = filename
 
         if 'compress_deb' in self.yaml:
             self.compress_deb = self.yaml['compress_deb']
@@ -438,6 +489,8 @@ class GameData(object):
         files = {}
         providers = {}
         packages = {}
+        known_filenames = {}
+        known_sizes = {}
 
         for filename, f in self.files.items():
             files[filename] = f.to_yaml()
@@ -445,11 +498,22 @@ class GameData(object):
         for provided, by in self.providers.items():
             providers[provided] = list(by)
 
+        for size, known in self.known_sizes.items():
+            known_sizes[size] = list(known)
+
+        for filename, known in self.known_filenames.items():
+            known_filenames[filename] = list(known)
+
         for name, package in self.packages.items():
             packages[name] = package.to_yaml()
 
         return {
             'help_text': self.help_text,
+            'known_filenames': known_filenames,
+            'known_md5s': self.known_md5s,
+            'known_sha1s': self.known_sha1s,
+            'known_sha256s': self.known_sha256s,
+            'known_sizes': known_sizes,
             'packages': packages,
             'providers': providers,
             'files': files,
@@ -539,11 +603,11 @@ class GameData(object):
 
         return self.files[name]
 
-    def use_file(self, wanted, path, hashes=None):
+    def use_file(self, wanted, path, hashes=None, log=True):
         logger.debug('found possible %s at %s', wanted.name, path)
         size = os.stat(path).st_size
         if wanted.size is not None and wanted.size != size:
-            if wanted.distinctive_name:
+            if log:
                 logger.warning('found possible %s\n' +
                         'but its size does not match:\n' +
                         '  file: %s\n' +
@@ -562,7 +626,8 @@ class GameData(object):
                     progress=(size > QUITE_LARGE))
 
         if not wanted.skip_hash_matching and not hashes.matches(wanted):
-            logger.warning('found possible %s\n' +
+            if log:
+                logger.warning('found possible %s\n' +
                     'but its checksums do not match:\n' +
                     '  file: %s\n' +
                     '  expected:\n' +
@@ -587,45 +652,100 @@ class GameData(object):
         self.found[wanted.name] = path
         return True
 
+    def _ensure_hashes(self, hashes, path, size):
+        if hashes is not None:
+            return hashes
+
+        if size > QUITE_LARGE:
+            logger.info('identifying %s', path)
+        return HashedFile.from_file(path, open(path, 'rb'), size=size,
+                progress=(size > QUITE_LARGE))
+
     def consider_file(self, path, really_should_match_something):
         if not os.path.exists(path):
             # dangling symlink
             return
 
+        tried = set()
+
         match_path = '/' + path.lower()
         size = os.stat(path).st_size
 
+        # if a file (as opposed to a directory) is specified on the
+        # command-line, try harder to match it to something
         if really_should_match_something:
-            if size > QUITE_LARGE:
-                logger.info('identifying %s', path)
-            hashes = HashedFile.from_file(path, open(path, 'rb'), size=size,
-                    progress=(size > QUITE_LARGE))
+            hashes = self._ensure_hashes(None, path, size)
         else:
             hashes = None
 
-        for wanted in self.files.values():
-            if wanted.alternatives:
-                continue
+        for look_for, candidates in self.known_filenames.items():
+            if match_path.endswith('/' + look_for):
+                hashes = self._ensure_hashes(hashes, path, size)
+                for wanted_name in candidates:
+                    if wanted_name in tried:
+                        continue
+                    tried.add(wanted_name)
+                    if self.use_file(self.files[wanted_name], path, hashes,
+                            log=(len(candidates) == 1)):
+                        return
+                else:
+                    if len(candidates) > 1:
+                        self._log_not_any_of(path, size, hashes,
+                                'possible "%s"' % look_for,
+                                [self.files[c] for c in candidates])
 
-            for lf in wanted.look_for:
-                if match_path.endswith('/' + lf):
-                    self.use_file(wanted, path, hashes)
-                    if wanted.distinctive_name:
+        if size in self.known_sizes:
+            hashes = self._ensure_hashes(hashes, path, size)
+            candidates = self.known_sizes[size]
+            for wanted_name in candidates:
+                if wanted_name in tried:
+                    continue
+                tried.add(wanted_name)
+                if self.use_file(self.files[wanted_name], path, hashes,
+                        log=(len(candidates) == 1)):
+                    return
+                else:
+                    if len(candidates) > 1:
+                        self._log_not_any_of(path, size, hashes,
+                                'file of size %d' % size,
+                                [self.files[c] for c in candidates])
+
+        if hashes is not None:
+            for wanted_name in (self.known_md5s.get(hashes.md5),
+                    self.known_sha1s.get(hashes.sha1),
+                    self.known_sha256s.get(hashes.sha256)):
+                if wanted_name is not None and wanted_name not in tried:
+                    tried.add(wanted_name)
+                    if self.use_file(self.files[wanted_name], path, hashes):
                         return
 
-            if wanted.distinctive_size:
-                if wanted.size == size:
-                    logger.debug('... matched by distinctive size %d', size)
-                    self.use_file(wanted, path, hashes)
+        if really_should_match_something:
+            logger.warning('file "%s" does not match any known file', path)
 
-            if hashes is not None:
-                if not wanted.skip_hash_matching and hashes.matches(wanted):
-                    logger.debug('... matched hashes of %s', wanted.name)
-                    self.use_file(wanted, path, hashes)
-                    return
-        else:
-            if really_should_match_something:
-                logger.warning('file "%s" does not match any known file', path)
+    def _log_not_any_of(self, path, size, hashes, why, candidates):
+        message = ('found %s but it is not one of the expected ' +
+                'versions:\n' +
+                '    file:   %s\n' +
+                '    size:   %d bytes\n' +
+                '    md5:    %s\n' +
+                '    sha1:   %s\n' +
+                '    sha256: %s\n' +
+                'expected one of:\n')
+        args = (why, path, size, hashes.md5, hashes.sha1, hashes.sha256)
+
+        for candidate in candidates:
+            message = message + ('  %s:\n' +
+                    '    size:   ' + (
+                        '%s' if candidate.size is None else '%d bytes') +
+                    '\n' +
+                    '    md5:    %s\n' +
+                    '    sha1:   %s\n' +
+                    '    sha256: %s\n')
+            args = args + (candidate.name, candidate.size, candidate.md5,
+                    candidate.sha1, candidate.sha256)
+
+        logger.warning(message, *args)
+
 
     def consider_file_or_dir(self, path):
         if os.path.isfile(path):
@@ -659,21 +779,13 @@ class GameData(object):
         for filename in package.install:
             if filename not in self.found:
                 wanted = self.files[filename]
-                alt_possible = False
 
                 for alt in wanted.alternatives:
-                    logger.debug('trying alternative: %s', alt)
                     if alt in self.found:
-                        alt_possible = True
                         break
-                    elif self.fill_gap(self.files[alt], download=download,
-                            log=log):
-                        alt_possible = True
-
-                if alt_possible:
-                    pass
-                elif not self.fill_gap(wanted, download=download, log=log):
-                    possible = False
+                else:
+                    if not self.fill_gap(wanted, download=download, log=log):
+                        possible = False
 
         return possible
 
@@ -829,6 +941,38 @@ class GameData(object):
 
         logger.debug('could not find %s, trying to derive it...', wanted.name)
 
+        if wanted.alternatives:
+            for alt in wanted.alternatives:
+                if alt in self.found:
+                    return True
+                elif self.fill_gap(self.files[alt], download=download,
+                        log=False):
+                    return True
+
+            if log:
+                logger.error('could not find a suitable version of %s:',
+                        wanted.name)
+
+                for alt in wanted.alternatives:
+                    alt = self.files[alt]
+                    logger.error('%s:\n' +
+                            '  expected:\n' +
+                            '    size:   ' + (
+                                '%s' if alt.size is None else '%d bytes') +
+                            '\n' +
+                            '    md5:    %s\n' +
+                            '    sha1:   %s\n' +
+                            '    sha256: %s',
+                            alt.name,
+                            alt.size,
+                            alt.md5,
+                            alt.sha1,
+                            alt.sha256)
+
+            return False
+
+        # no alternatives: try getting the file itself
+
         possible = False
 
         if wanted.download:
@@ -932,39 +1076,19 @@ class GameData(object):
 
         if not possible:
             if log:
-                if wanted.alternatives:
-                    logger.error('could not find any version of %s:',
-                            wanted.name)
-
-                    for alt in wanted.alternatives:
-                        alt = self.files[alt]
-                        logger.error('%s:\n' +
-                                '  expected:\n' +
-                                '    size:   ' + (
-                                    '%s' if alt.size is None else '%d bytes') +
-                                '\n' +
-                                '    md5:    %s\n' +
-                                '    sha1:   %s\n' +
-                                '    sha256: %s',
-                                alt.name,
-                                alt.size,
-                                alt.md5,
-                                alt.sha1,
-                                alt.sha256)
-                else:
-                    logger.error('could not find %s:\n' +
-                            '  expected:\n' +
-                            '    size:   ' + (
-                                '%s' if wanted.size is None else '%d bytes') +
-                            '\n' +
-                            '    md5:    %s\n' +
-                            '    sha1:   %s\n' +
-                            '    sha256: %s',
-                            wanted.name,
-                            wanted.size,
-                            wanted.md5,
-                            wanted.sha1,
-                            wanted.sha256)
+                logger.error('could not find %s:\n' +
+                        '  expected:\n' +
+                        '    size:   ' + (
+                            '%s' if wanted.size is None else '%d bytes') +
+                        '\n' +
+                        '    md5:    %s\n' +
+                        '    sha1:   %s\n' +
+                        '    sha256: %s',
+                        wanted.name,
+                        wanted.size,
+                        wanted.md5,
+                        wanted.sha1,
+                        wanted.sha256)
 
             return False
 

@@ -25,16 +25,19 @@ files:
   doom2.wad:
     alternatives:
     - doom2.wad_1.9
-    # FIXME: do older wads work?
+    - doom2.wad_bfg
+    - doom2.wad_xbox360_bfg
+    - doom2.wad_xbla
+    - doom2.wad_xbox_roe
+    - doom2.wad_psn
+    - doom2.wad_tapwave_zodiac
 
   doom2.wad_1.9:
     size: 14604584
     look_for: [doom2.wad]
-    distinctive_name: false
   doom2.wad_bfg:
     size: 14691821
     look_for: [doom2.wad]
-    distinctive_name: false
   doom2.wad_1.666g:
     size: 14824716
     look_for: [doom2.wad]
@@ -58,23 +61,18 @@ files:
   doom2.wad_xbox360_bfg:
     size: 14677988
     look_for: [doom2.wad]
-    distinctive_name: false
   doom2.wad_xbla:
     size: 14685034
     look_for: [doom2.wad]
-    distinctive_name: false
   doom2.wad_xbox_roe:
     size: 14683458
     look_for: [doom2.wad]
-    distinctive_name: false
   doom2.wad_psn:
     size: 14599800
     look_for: [doom2.wad]
-    distinctive_name: false
   doom2.wad_tapwave_zodiac:
     size: 14639397
     look_for: [doom2.wad]
-    distinctive_name: false
 
 md5sums: |
   25e1459ca71d321525f84628f45ca8cd  doom2.wad_1.9

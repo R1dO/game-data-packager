@@ -34,6 +34,8 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Add support for Hexen: Deathkings of the Dark Citadel,
     loosely based on patches by Johey Shmit (partially addresses #737137)
   * Switch Doom packages' icons to .png, GNOME Shell doesn't like .xpm
+  * Redo logic for files with alternatives to avoid unnecessary warnings
+    (Closes: #775152)
 
  -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
 

@@ -48,7 +48,6 @@ packages:
 
     install_files:
       main/scripts/translation.cfg_141_unix:
-        distinctive_name: false
         look_for:
         - main/scripts/translation.cfg
         install_as: main/scripts/translation.cfg
@@ -77,13 +76,11 @@ files:
     - main/sp_pak1.pk3_fr
 
   main/sp_pak1.pk3_en:
-    distinctive_name: false
     look_for:
     - main/sp_pak1.pk3
     size: 293887431
 
   main/sp_pak1.pk3_fr:
-    distinctive_name: false
     look_for:
     - main/sp_pak1.pk3
     size: 256811934
