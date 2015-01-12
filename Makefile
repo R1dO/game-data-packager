@@ -12,7 +12,10 @@ default: $(DIRS)
 	install -m644 data/*.desktop.in out/
 	install -m644 data/*.preinst.in out/
 	install -m644 data/*.README.Debian.in out/
-	install -m644 data/*.xpm out/
+	for x in data/*.xpm; do \
+		o=out/$${x#data/}; \
+		convert $$x $${o%.xpm}.png || exit $$?; \
+	done
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1
 	make -f quake.mk LONG="Quake music" VERSION=$(VERSION) \
@@ -52,7 +55,7 @@ clean:
 	rm -f ./out/*.desktop.in
 	rm -f ./out/*.preinst.in
 	rm -f ./out/*.README.Debian.in
-	rm -f ./out/*.xpm
+	rm -f ./out/*.png
 	rm -f ./out/*.yaml
 	rm -rf lib/game_data_packager/__pycache__
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \

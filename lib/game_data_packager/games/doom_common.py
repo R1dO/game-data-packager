@@ -105,8 +105,8 @@ class DoomGameData(GameData):
             mkdir_p(pixdir)
             # FIXME: would be nice if non-Doom games could replace this
             # Cacodemon with something appropriate
-            install_data(os.path.join(DATADIR, 'doom2.xpm'),
-                    os.path.join(pixdir, '%s.xpm' % wad_base))
+            install_data(os.path.join(DATADIR, 'doom2.png'),
+                    os.path.join(pixdir, '%s.png' % wad_base))
 
             docdir = os.path.join(destdir, 'usr/share/doc/%s' % package.name)
             mkdir_p(docdir)
