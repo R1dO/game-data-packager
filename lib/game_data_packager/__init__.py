@@ -1329,18 +1329,17 @@ class GameData(object):
         logger.debug('package description:\n%s',
                 yaml.safe_dump(self.to_yaml()))
 
-        self.preserve_debs = (getattr(args, 'destination', None) is not None)
-        self.install_debs = getattr(args, 'install', True)
+        preserve_debs = (getattr(args, 'destination', None) is not None)
+        install_debs = getattr(args, 'install', True)
 
         if getattr(args, 'compress', None) is None:
             # default to not compressing if we aren't going to install it
             # anyway
-            args.compress = self.preserve_debs
+            args.compress = preserve_debs
 
         # only compress if the command-line says we should and the YAML
         # says it's worthwhile
-        self.compress_deb = (self.compress_deb and
-                getattr(args, 'compress', True))
+        compress_deb = (self.compress_deb and getattr(args, 'compress', True))
 
         for path in self.try_repack_from:
             if os.path.isdir(path):
@@ -1450,7 +1449,7 @@ class GameData(object):
             else:
                 outfile = os.path.join(self.get_workdir(), deb_basename)
 
-            if self.compress_deb:
+            if compress_deb:
                 dpkg_deb_args = []
             else:
                 dpkg_deb_args = ['-Znone']
@@ -1470,11 +1469,11 @@ class GameData(object):
 
         rm_rf(os.path.join(self.get_workdir(), 'tmp'))
 
-        if self.preserve_debs:
+        if preserve_debs:
             for deb in debs:
                 print('generated "%s"' % os.path.abspath(deb))
 
-        if self.install_debs:
+        if install_debs:
             print('using su(1) to obtain root privileges and install the package(s)')
             cmd = 'dpkg -i'
             for deb in debs:
