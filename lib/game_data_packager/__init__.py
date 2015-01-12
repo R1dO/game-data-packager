@@ -30,6 +30,7 @@ import random
 import re
 import shlex
 import shutil
+import stat
 import subprocess
 import sys
 import tarfile
@@ -40,19 +41,19 @@ import zipfile
 from debian.deb822 import Deb822
 import yaml
 
+from .paths import DATADIR, ETCDIR
 from .util import TemporaryUmask, mkdir_p, rm_rf, human_size, MEBIBYTE
+from .version import GAME_PACKAGE_VERSION
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
 
 # For now, we're given these by the shell script wrapper.
-DATADIR = os.environ['DATADIR']
+
 if os.environ.get('DEBUG'):
     logging.getLogger().setLevel(logging.DEBUG)
 else:
     logging.getLogger().setLevel(logging.INFO)
-
-from .version import GAME_PACKAGE_VERSION
 
 # arbitrary cutoff for providing progress bars
 QUITE_LARGE = 50 * MEBIBYTE
@@ -215,6 +216,9 @@ class GameDataPackage(object):
         # The name of the binary package
         self.name = name
 
+        # The optional marketing name of this version
+        self.longname = None
+
         # Where we install files.
         # For instance, if this is 'usr/share/games/quake3' and we have
         # a WantedFile with install_as='baseq3/pak1.pk3' then we would
@@ -268,20 +272,13 @@ class GameDataPackage(object):
 class GameData(object):
     def __init__(self,
             shortname,
-            datadir='/usr/share/games/game-data-packager',
-            etcdir='/etc/game-data-packager',
+            yaml_data,
             workdir=None):
         # The name of the game for command-line purposes, e.g. quake3
         self.shortname = shortname
 
         # The formal name of the game, e.g. Quake III Arena
         self.longname = shortname
-
-        # game-data-packager's configuration directory
-        self.etcdir = etcdir
-
-        # game-data-packager's data directory.
-        self.datadir = datadir
 
         # A temporary directory.
         self.workdir = workdir
@@ -303,8 +300,9 @@ class GameData(object):
         # Steam ID and path
         self.steam = {}
 
-        self.yaml = yaml.load(open(os.path.join(self.datadir,
-            shortname + '.yaml')))
+        self.yaml = yaml_data
+
+        self.argument_parser = None
 
         if 'longname' in self.yaml:
             self.longname = self.yaml['longname']
@@ -319,7 +317,7 @@ class GameData(object):
                 raise AssertionError('try_repack_from should be str or list')
 
         if 'package' in self.yaml:
-            package = GameDataPackage(self.yaml['package'])
+            package = self.construct_package(self.yaml['package'])
             self.packages[self.yaml['package']] = package
             assert 'packages' not in self.yaml
         else:
@@ -362,7 +360,7 @@ class GameData(object):
                 assert 'sha1sums' not in data, binary
                 assert 'sha256sums' not in data, binary
 
-                package = GameDataPackage(binary)
+                package = self.construct_package(binary)
                 self.packages[binary] = package
                 self._populate_package(package, data)
 
@@ -460,6 +458,9 @@ class GameData(object):
     def _populate_package(self, package, d):
         if 'type' in d:
             package.type = d['type']
+
+        if 'longname' in d:
+            package.longname = d['longname']
 
         if 'symlinks' in d:
             package.symlinks = d['symlinks']
@@ -790,7 +791,7 @@ class GameData(object):
             return [wanted.download]
         for mirror_list, details in wanted.download.items():
             try:
-                f = open(os.path.join(self.etcdir, mirror_list))
+                f = open(os.path.join(ETCDIR, mirror_list))
                 for line in f:
                     url = line.strip()
                     if not url:
@@ -1000,22 +1001,31 @@ class GameData(object):
 
         return complete
 
+    def fill_docs(self, package, docdir):
+        shutil.copyfile(os.path.join(DATADIR, package.name + '.copyright'),
+                os.path.join(docdir, 'copyright'))
+
+    def fill_extra_files(self, package, destdir):
+        pass
+
     def fill_dest_dir(self, package, destdir):
         if not self.check_complete(package, log=True):
             return False
 
         docdir = os.path.join(destdir, 'usr/share/doc', package.name)
         mkdir_p(docdir)
-        shutil.copyfile(os.path.join(self.datadir, package.name + '.copyright'),
-                os.path.join(docdir, 'copyright'))
-        shutil.copyfile(os.path.join(self.datadir, 'changelog.gz'),
+        shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
+
+        self.fill_docs(package, docdir)
 
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
 
+        self.fill_extra_files(package, destdir)
+
         for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
-            maintscript = os.path.join(self.datadir, package.name + '.' + ms)
+            maintscript = os.path.join(DATADIR, package.name + '.' + ms)
             if os.path.isfile(maintscript):
                 shutil.copy(maintscript, os.path.join(debdir, ms))
 
@@ -1080,20 +1090,41 @@ class GameData(object):
                 shell=True, cwd=destdir)
         os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
 
-        control_in = open(os.path.join(self.datadir,
-            package.name + '.control.in'))
+        control_in = open(self.get_control_template(package))
         control = Deb822(control_in)
-        size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
-            '.'], cwd=destdir).decode('utf-8').rstrip('\n')
-        control['Installed-Size'] = size
-        package.version = control['Version'].replace('VERSION',
-                GAME_PACKAGE_VERSION)
-        control['Version'] = package.version
+        self.modify_control_template(control, package, destdir)
         control.dump(fd=open(os.path.join(debdir, 'control'), 'wb'),
                 encoding='utf-8')
         os.chmod(os.path.join(debdir, 'control'), 0o644)
 
+        for dirpath, dirnames, filenames in os.walk(destdir):
+            for fn in filenames + dirnames:
+                full = os.path.join(dirpath, fn)
+                stat_res = os.lstat(full)
+                if stat.S_ISLNK(stat_res.st_mode):
+                    continue
+                elif (stat.S_ISDIR(stat_res.st_mode) or
+                        (stat.S_IMODE(stat_res.st_mode) & 0o111) != 0):
+                    # make directories and executable files rwxr-xr-x
+                    os.chmod(full, 0o755)
+                else:
+                    # make other files rw-r--r--
+                    os.chmod(full, 0o644)
+
         return True
+
+    def modify_control_template(self, control, package, destdir):
+        size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
+            '.'], cwd=destdir).decode('utf-8').rstrip('\n')
+        assert control['Package'] in ('PACKAGE', package.name)
+        control['Package'] = package.name
+        control['Installed-Size'] = size
+        package.version = control['Version'].replace('VERSION',
+                GAME_PACKAGE_VERSION)
+        control['Version'] = package.version
+
+    def get_control_template(self, package):
+        return os.path.join(DATADIR, package.name + '.control.in')
 
     def add_parser(self, parsers):
         parser = parsers.add_parser(self.shortname,
@@ -1114,6 +1145,7 @@ class GameData(object):
                             + 'version are available')
                 break
 
+        self.argument_parser = parser
         return parser
 
     def run_command_line(self, args):
@@ -1122,6 +1154,14 @@ class GameData(object):
 
         self.preserve_debs = (getattr(args, 'destination', None) is not None)
         self.install_debs = getattr(args, 'install', True)
+
+        if getattr(args, 'compress', None) is None:
+            # default to not compressing if we aren't going to install it
+            # anyway
+            args.compress = self.preserve_debs
+
+        # only compress if the command-line says we should and the YAML
+        # says it's worthwhile
         self.compress_deb = (self.compress_deb and
                 getattr(args, 'compress', True))
 
@@ -1166,6 +1206,7 @@ class GameData(object):
                                 package.name)
                         possible.add(package)
                     else:
+                        self.argument_parser.print_help()
                         raise SystemExit(1)
             else:
                 # If no demo, repeat the process for the first
@@ -1178,8 +1219,10 @@ class GameData(object):
                                     'a bug', package.name)
                             possible.add(package)
                         else:
+                            self.argument_parser.print_help()
                             sys.exit(1)
                 else:
+                    self.argument_parser.print_help()
                     raise SystemExit('Unable to complete any packages. ' +
                             'Please provide more files or directories.')
 
@@ -1206,6 +1249,7 @@ class GameData(object):
                         package.name)
 
         if not ready:
+            self.argument_parser.print_help()
             raise SystemExit(1)
 
         debs = set()
@@ -1264,7 +1308,7 @@ class GameData(object):
     def iter_steam_paths(self):
         for prefix in (
                 os.path.expanduser('~/.steam'),
-                os.path.join(os.environ.get('XDG_DATA_DIR', os.path.expanduser('~/.local/share')),
+                os.path.join(os.environ.get('XDG_DATA_HOME', os.path.expanduser('~/.local/share')),
                     'wineprefixes/steam/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.wine/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.PlayOnLinux/wineprefix/Steam/drive_c/Program_Files/Steam'),
@@ -1290,35 +1334,47 @@ class GameData(object):
                             logger.debug('possible Steam installation at %s', path)
                             yield path
 
+    def construct_package(self, binary):
+        return GameDataPackage(binary)
+
+def load_yaml_games(workdir=None):
+    games = {}
+
+    for yamlfile in glob.glob(os.path.join(DATADIR, '*.yaml')):
+        try:
+            g = os.path.basename(yamlfile)
+            g = g[:len(g) - 5]
+
+            yaml_data = yaml.load(open(yamlfile))
+
+            plugin = yaml_data.get('plugin', g)
+
+            try:
+                plugin = importlib.import_module('game_data_packager.games.%s' %
+                        plugin)
+                game_data_constructor = plugin.GAME_DATA_SUBCLASS
+            except (ImportError, AttributeError) as e:
+                logger.debug('No special code for %s: %s', g, e)
+                game_data_constructor = GameData
+
+            games[g] = game_data_constructor(g, yaml_data, workdir=workdir)
+        except:
+            print('Error loading %s:\n' % yaml)
+            raise
+
+    return games
+
 def run_command_line():
-    datadir = os.environ['DATADIR']
-    etcdir = os.environ['ETCDIR']
     workdir = os.environ['WORKDIR']
-    logger.debug('Running with DATADIR=%s ETCDIR=%s WORKDIR=%s',
-            datadir, etcdir, workdir)
     logger.debug('Arguments: %r', sys.argv)
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.')
 
-    games = {}
-
-    for yamlfile in glob.glob(os.path.join(datadir, '*.yaml')):
-        g = os.path.basename(yamlfile)
-        g = g[:len(g) - 5]
-
-        try:
-            plugin = importlib.import_module('game_data_packager.games.%s' % g)
-            game_data_constructor = plugin.GAME_DATA_SUBCLASS
-        except (ImportError, AttributeError) as e:
-            logger.debug('No special code for %s: %s', g, e)
-            game_data_constructor = GameData
-
-        games[g] = game_data_constructor(g, datadir=datadir, etcdir=etcdir,
-                workdir=workdir)
-
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
+
+    games = load_yaml_games(workdir)
 
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers)

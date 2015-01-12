@@ -8,19 +8,14 @@ default: $(DIRS)
 	install -m644 data/*.yaml out/
 	install -m644 data/*.control.in out/
 	install -m644 data/*.copyright out/
-	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION)
-	make -f doom-common.mk IWAD=doom2 \
-		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION)
-	make -f doom-common.mk IWAD=tnt   \
-		LONG="Final Doom: TNT: Evilution" VERSION=$(VERSION)
-	make -f doom-common.mk IWAD=plutonia \
-		LONG="Final Doom: The Plutonia Experiment" VERSION=$(VERSION)
-	make -f doom-common.mk IWAD=heretic GAME=heretic VERSION=$(VERSION) \
-		CONTROLIN=heretic/DEBIAN/control.in \
-		LONG="Heretic: Shadow of the Serpent Riders"
-	make -f doom-common.mk IWAD=hexen GAME=hexen VERSION=$(VERSION) \
-		CONTROLIN=hexen/DEBIAN/control.in \
-		LONG="Hexen: Beyond Heretic"
+	install -m644 data/*.copyright.in out/
+	install -m644 data/*.desktop.in out/
+	install -m644 data/*.preinst.in out/
+	install -m644 data/*.README.Debian.in out/
+	for x in data/*.xpm; do \
+		o=out/$${x#data/}; \
+		convert $$x $${o%.xpm}.png || exit $$?; \
+	done
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1
 	make -f quake.mk LONG="Quake music" VERSION=$(VERSION) \
@@ -55,21 +50,13 @@ clean:
 	rm -f ./out/*.control
 	rm -f ./out/*.control.in
 	rm -f ./out/*.copyright
+	rm -f ./out/*.copyright.in
+	rm -f ./out/*.desktop.in
+	rm -f ./out/*.preinst.in
+	rm -f ./out/*.README.Debian.in
+	rm -f ./out/*.png
 	rm -f ./out/*.yaml
 	rm -rf lib/game_data_packager/__pycache__
-	make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION) clean
-	make -f doom-common.mk IWAD=doom2 \
-		LONG="Doom 2: Hell on Earth" VERSION=$(VERSION) clean
-	make -f doom-common.mk IWAD=tnt   \
-		LONG="Final Doom: TNT: Evilution" VERSION=$(VERSION) clean
-	make -f doom-common.mk IWAD=plutonia \
-		LONG="Final Doom: The Plutonia Experiment" VERSION=$(VERSION) clean
-	make -f doom-common.mk IWAD=heretic GAME=heretic VERSION=$(VERSION) \
-		CONTROLIN=heretic/DEBIAN/control.in \
-		LONG="Heretic: Shadow of the Serpent Riders" clean
-	make -f doom-common.mk IWAD=hexen GAME=hexen VERSION=$(VERSION) \
-		CONTROLIN=hexen/DEBIAN/control.in \
-		LONG="Hexen: Beyond Heretic" clean
 	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
 		FOLDER=id1 clean
 	make -f quake.mk LONG="Quake music" VERSION=$(VERSION) \

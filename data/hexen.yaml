@@ -1,0 +1,126 @@
+%YAML 1.2
+---
+# Version reference:
+# http://doomwiki.org/wiki/HEXEN.WAD
+shortname: hexen
+longname: "Hexen: Beyond Heretic"
+
+help_text: |
+  hexen-wad requires HEXEN.WAD from Hexen v1.1.
+
+  Patching older versions is not currently supported. If you have
+  an older version, it might be possible to patch it manually using dosbox.
+
+  hexen-deathkings-data requires HEXDD.WAD from the Deathkings of the
+  Dark Citadel expansion.
+
+  The demo version of hexen is not currently supported.
+
+# hexen-demo-data requires HEXEN.WAD from the Hexen demo v1.2, which
+# will be downloaded automatically if necessary. It will be renamed to
+# hexen-demo.wad to avoid colliding with the full version of Hexen.
+
+plugin: doom_common
+doom_engine: hexen
+
+packages:
+  hexen-wad:
+    install_to: usr/share/games/hexen
+    type: full
+    install:
+    - hexen.wad
+
+  hexen-deathkings-data:
+    longname: "Hexen: Deathkings of the Dark Citadel"
+    install_to: usr/share/games/hexen
+    type: expansion
+    install:
+    - hexdd.wad
+
+  # Disabled, doesn't seem to work
+  #hexen-demo-data:
+  #  longname: "Hexen: Beyond Heretic (demo)"
+  #  install_to: usr/share/games/hexen
+  #   type: demo
+  #  install:
+  #  - hexen-demo.wad
+
+files:
+
+  hexen.wad:
+    alternatives:
+    - hexen.wad_1.1
+
+  hexdd.wad:
+    alternatives:
+    - hexdd.wad_1.1
+    - hexdd.wad_1.0
+
+  hexen-demo.wad:
+    alternatives:
+    - hexen.wad_demo_1.0
+
+  hexen.wad_demo_1.0:
+    distinctive_name: false
+    size: 10644136
+    look_for: [hexen.wad]
+
+  hexen.wad_demo_beta:
+    distinctive_name: false
+    size:  10615976
+    look_for: [hexen.wad]
+
+  hexdd.wad_1.1:
+    distinctive_name: false
+    size: 4440584
+    look_for: [hexdd.wad]
+
+  hexdd.wad_1.0:
+    distinctive_name: false
+    size: 4429700
+    look_for: [hexdd.wad]
+
+  hexen.wad_1.1:
+    distinctive_name: false
+    size: 20083672
+    look_for: [hexen.wad]
+
+  hexen.wad_1.0:
+    distinctive_name: false
+    size:  20128392
+    look_for: [hexen.wad]
+
+  hexen.wad_beta:
+    distinctive_name: false
+    size: 20428208
+    look_for: [hexen.wad]
+
+  hexndemo.zip:
+    download:
+      idstuff-mirrors:
+        path: hexen
+    md5: b30672df8b41fd35fafe40ce0c3855c3
+    sha1: 02c3a8ac4417e17a3519524d96696111fe1c278c
+    sha256: 469ee3a254959d2fca624aec7391292fbd1ac3ebd9074b65f05cbc74de3c4572
+    size: 5664734
+    provides: [hexen.wad_demo_1.0]
+    unpack:
+      format: zip
+
+md5sums: |
+  9178a32a496ff5befebfe6c47dac106c  hexen.wad_demo_beta
+  876a5a44c7b68f04b3bb9bc7a5bd69d6  hexen.wad_demo_1.0
+  c88a2bb3d783e2ad7b599a8e301e099e  hexen.wad_beta
+  b2543a03521365261d0a0f74d5dd90f0  hexen.wad_1.0
+  abb033caf81e26f12a2103e1fa25453f  hexen.wad_1.1
+  1077432e2690d390c256ac908b5f4efa  hexdd.wad_1.0
+  78d5898e99e220e4de64edaa0e479593  hexdd.wad_1.1
+
+sha1sums: |
+  fa89a2475855e43c7f7e3198d6e4c4bee23bfab9  hexen.wad_demo_1.0
+  4b53832f0733c1e29e5f1de2428e5475e891af29  hexen.wad_1.1
+  c3065527d62b05a930fe75fe8181a64fb1982976  hexdd.wad_1.0
+  081f6a2024643b54ef4a436a85508539b6d20a1e  hexdd.wad_1.1
+
+...
+# vim:set sw=2 sts=2 et:
