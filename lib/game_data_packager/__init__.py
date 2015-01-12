@@ -181,7 +181,7 @@ class WantedFile(HashedFile):
         if self.alternatives:
             return set([])
         if not self._look_for:
-            self._look_for = set([self.name.lower()])
+            self._look_for = set([self.name.lower(), self.install_as.lower()])
         return self._look_for
     @look_for.setter
     def look_for(self, value):
