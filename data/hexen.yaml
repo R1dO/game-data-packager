@@ -18,7 +18,7 @@ help_text: |
 
 # hexen-demo-data requires HEXEN.WAD from the Hexen demo v1.2, which
 # will be downloaded automatically if necessary. It will be renamed to
-# hexen-demo.wad to avoid colliding with the full version of Hexen.
+# hexendemo.wad to avoid colliding with the full version of Hexen.
 
 plugin: doom_common
 doom_engine: hexen
@@ -43,7 +43,7 @@ packages:
   #  install_to: usr/share/games/hexen
   #   type: demo
   #  install:
-  #  - hexen-demo.wad
+  #  - hexendemo.wad
 
 files:
 
@@ -56,19 +56,19 @@ files:
     - hexdd.wad_1.1
     - hexdd.wad_1.0
 
-  hexen-demo.wad:
+  hexendemo.wad:
     alternatives:
     - hexen.wad_demo_1.0
 
   hexen.wad_demo_1.0:
-    distinctive_name: false
     size: 10644136
     look_for: [hexen.wad]
+    unsuitable: Hexen 1.1 (registered) is required
 
   hexen.wad_demo_beta:
-    distinctive_name: false
     size:  10615976
     look_for: [hexen.wad]
+    unsuitable: Hexen 1.1 (registered) is required
 
   hexdd.wad_1.1:
     size: 4440584
@@ -83,14 +83,14 @@ files:
     look_for: [hexen.wad]
 
   hexen.wad_1.0:
-    distinctive_name: false
     size:  20128392
     look_for: [hexen.wad]
+    unsuitable: Hexen 1.1 (registered) is required
 
   hexen.wad_beta:
-    distinctive_name: false
     size: 20428208
     look_for: [hexen.wad]
+    unsuitable: Hexen 1.1 (registered) is required
 
   hexndemo.zip:
     download:

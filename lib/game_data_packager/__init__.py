@@ -174,6 +174,7 @@ class WantedFile(HashedFile):
         self._provides = set()
         self._size = None
         self.unpack = None
+        self.unsuitable = None
 
     @property
     def look_for(self):
@@ -593,6 +594,7 @@ class GameData(object):
                     'size',
                     'skip_hash_matching',
                     'unpack',
+                    'unsuitable',
                     ):
                 if k in data:
                     setattr(f, k, data[k])
@@ -647,6 +649,12 @@ class GameData(object):
                     hashes.sha1,
                     hashes.sha256)
             return False
+
+        if wanted.unsuitable:
+            logger.warning('"%s" matches known file "%s" but cannot '
+                    'be used:\n%s', path, wanted.name, wanted.unsuitable)
+            # ... but do not continue processing
+            return True
 
         logger.debug('... yes, looks good')
         self.found[wanted.name] = path
@@ -734,6 +742,9 @@ class GameData(object):
         args = (why, path, size, hashes.md5, hashes.sha1, hashes.sha256)
 
         for candidate in candidates:
+            if candidate.unsuitable:
+                continue
+
             message = message + ('  %s:\n' +
                     '    size:   ' + (
                         '%s' if candidate.size is None else '%d bytes') +
