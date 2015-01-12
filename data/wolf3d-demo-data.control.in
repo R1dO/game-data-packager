@@ -1,5 +1,7 @@
-Package: wolf3d-data-SUFFIX
+Package: wolf3d-demo-data
 Provides: wolf3d-data
+Conflicts: wolf3d-data-wl1
+Replaces: wolf3d-data-wl1
 Section: non-free/games
 Priority: optional
 Architecture: all

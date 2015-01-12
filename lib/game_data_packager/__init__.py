@@ -1079,6 +1079,18 @@ class GameData(object):
                             cwd=tmpdir)
                     for f in provider.unpack['unpack']:
                         self.consider_file(os.path.join(tmpdir, f), True)
+                elif fmt == 'id-shr-extract':
+                    logger.debug('Extracting %r from %s',
+                            provider.unpack['unpack'], found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['id-shr-extract',
+                                os.path.abspath(found_name)],
+                            cwd=tmpdir)
+                    for f in provider.unpack['unpack']:
+                        self.consider_file(os.path.join(tmpdir, f), True)
+
 
             elif providable:
                 # we don't have it, but we can get it

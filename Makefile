@@ -35,7 +35,6 @@ default: $(DIRS)
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue
-	make -f wolf3d.mk VERSION=$(VERSION)
 	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION)
 
 $(DIRS):
@@ -76,7 +75,6 @@ clean:
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue clean
-	make -f wolf3d.mk VERSION=$(VERSION) clean
 	make -f lgeneral.mk LONG="LGeneral" VERSION=$(VERSION) clean
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 

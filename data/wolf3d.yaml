@@ -1,0 +1,96 @@
+%YAML 1.2
+---
+
+packages:
+  wolf3d-demo-data:
+    type: full
+    longname: Wolfenstein 3D
+    steam_path: Wolfenstein 3D
+    install_to: usr/share/games/wolf3d
+    install_files_from_cksums: |
+      2707522358 1156   audiohed.wl1
+      3282605936 132613 audiot.wl1
+      1349328142 27425  gamemaps.wl1
+      3655120917 402    maphead.wl1
+      202991744  7641   vendor.doc
+      3984709669 1024   vgadict.wl1
+      1729266021 326568 vgagraph.wl1
+      3936285452 471    vgahead.wl1
+      4022822569 742912 vswap.wl1
+    symlinks:
+      usr/share/doc/wolf3d-demo-data/vendor.doc:
+        usr/share/games/wolf3d/vendor.doc
+
+files:
+  1wolf14.zip:
+    size: 856401
+    download:
+      alioth-mirrors:
+        path: .
+    provides:
+    - W3DSW14.SHR
+    md5: a29432cd4a5184d552d8e5da8f80a531
+    sha1: a4553d7ec4216061b9486c40be90b066862ea8e0
+    sha256: cb2a2ef7ecef14152c65ff93cc3b84fbd3e8eb0c5c1de41a6fc8cdef559451a8
+    unpack:
+      format: zip
+
+  W3DSW14.SHR:
+    size: 790409
+    provides:
+    - audiohed.wl1
+    - audiot.wl1
+    - gamemaps.wl1
+    - maphead.wl1
+    - vendor.doc
+    - vgadict.wl1
+    - vgagraph.wl1
+    - vgahead.wl1
+    - vswap.wl1
+    md5: 229402f7d893b91beb15c8794f2d6fdf
+    sha1: 6ef108e303bfb8c12b4c5b924a118b54d26cf922
+    sha256: 77ed56ae06ef28c01cf2f26e1199d63ee9dd5852087086d02198319c369aadb1
+    unpack:
+      format: id-shr-extract
+      unpack:
+      - audiohed.wl1
+      - audiot.wl1
+      - gamemaps.wl1
+      - maphead.wl1
+      - vendor.doc
+      - vgadict.wl1
+      - vgagraph.wl1
+      - vgahead.wl1
+      - vswap.wl1
+
+md5sums: |
+  58aa1b9892d5adfa725fab343d9446f8  audiohed.wl1
+  4b6109e957b584e4ad7f376961f3887e  audiot.wl1
+  30fecd7cce6bc70402651ec922d2da3d  gamemaps.wl1
+  7b6dd4e55c33c33a41d1600be5df3228  maphead.wl1
+  eccc7fc421f3d1f00e6eabd6848637f6  vendor.doc
+  76a6128f3c0dd9b77939ce8313992746  vgadict.wl1
+  74decb641b1a4faed173e10ab744bff0  vgagraph.wl1
+  61bf1616e78367853c91f2c04e2c1cb7  vgahead.wl1
+  6efa079414b817c97db779cecfb081c9  vswap.wl1
+sha1sums: |
+  732460795d77cab19c8018d879f5c27a3cbd5f84  audiohed.wl1
+  0254cc09b7a8ab0b884766b5dcd0e8555c424937  audiot.wl1
+  d49fc8a7887d7e73be7c813177307b68206f8147  gamemaps.wl1
+  b3942ddb4f6bb671b026a3f85611bf314acefce7  maphead.wl1
+  6b066ff8a8ae6537f97b4b0af7e11c8c326ca995  vendor.doc
+  10ae325f5ce124d2536a63805023c56a4e438ea1  vgadict.wl1
+  3ad077aca0e775bd6a241515c8b2874d4fa4099a  vgagraph.wl1
+  a9ba5551f54f88d810b9aa82a15caae623509a4c  vgahead.wl1
+  63134a2e3165b5291ece7b8a4145d2bd67d4f787  vswap.wl1
+sha256sums: |
+  39351624ae6f8eef4b873e060c1a6f3e5ee7e81c4939c485275a89b145336338  audiohed.wl1
+  1e2c9ae30398a14c61a4ddd39aabaa0dbcc984cc4924a3e51df75574c259cfb9  audiot.wl1
+  a6a6654b342f2c027bcb22bfce0a41f9fc0063b775e9e4da0c771970e53e11aa  gamemaps.wl1
+  3458f661c9b875bca99ea22a7267771fad8f2a33c699ea732cf7c3322909bf8c  maphead.wl1
+  fc1f4c23122702198eaa0df09a12af135801bdc835317638f2b895e948a33710  vendor.doc
+  59878fec65f033b00dbb1240317d1793f5858213dc8013b4d68f9ac8b45b0c80  vgadict.wl1
+  d5176f843c53415132db199c19f38591eaf3cedd35a4f7eb2698c1865d83030d  vgagraph.wl1
+  f4cc800dc8444373092d4eaa5d6ab59d63d23a510a9d38b73ca9b3dbb700d18b  vgahead.wl1
+  698f217257e2cbb951a4d110ba09140291f38d0121b3784d1d6be59c03a6b47b  vswap.wl1
+...
