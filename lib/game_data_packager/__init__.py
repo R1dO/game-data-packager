@@ -70,6 +70,11 @@ class HashedFile(object):
 
     @classmethod
     def from_file(cls, name, f, write_to=None, size=None, progress=False):
+        return cls.from_concatenated_files(name, [f], write_to, size, progress)
+
+    @classmethod
+    def from_concatenated_files(cls, name, fs, write_to=None, size=None,
+            progress=False):
         md5 = hashlib.new('md5')
         sha1 = hashlib.new('sha1')
         sha256 = hashlib.new('sha256')
@@ -84,27 +89,28 @@ class HashedFile(object):
         else:
             update_progress = lambda s: None
 
-        while True:
-            if size is None:
-                update_progress(human_size(done))
-            else:
-                update_progress('%.0f%% %s/%s' % (
-                            100 * done / size,
-                            human_size(done),
-                            human_size(size)))
+        for f in fs:
+            while True:
+                if size is None:
+                    update_progress(human_size(done))
+                else:
+                    update_progress('%.0f%% %s/%s' % (
+                                100 * done / size,
+                                human_size(done),
+                                human_size(size)))
 
-            blob = f.read(io.DEFAULT_BUFFER_SIZE)
-            if not blob:
-                update_progress('')
-                break
+                blob = f.read(io.DEFAULT_BUFFER_SIZE)
+                if not blob:
+                    update_progress('')
+                    break
 
-            done += len(blob)
+                done += len(blob)
 
-            md5.update(blob)
-            sha1.update(blob)
-            sha256.update(blob)
-            if write_to is not None:
-                write_to.write(blob)
+                md5.update(blob)
+                sha1.update(blob)
+                sha256.update(blob)
+                if write_to is not None:
+                    write_to.write(blob)
 
         self = cls(name)
         self.md5 = md5.hexdigest()
@@ -452,6 +458,10 @@ class GameData(object):
         for filename, wanted in self.files.items():
             if wanted.unpack:
                 assert 'format' in wanted.unpack, filename
+                if wanted.unpack['format'] == 'cat':
+                    assert len(wanted.provides) == 1, filename
+                    assert isinstance(wanted.unpack['other_parts'],
+                            list), filename
 
             if wanted.alternatives:
                 for alt in wanted.alternatives:
@@ -935,6 +945,27 @@ class GameData(object):
         random.shuffle(mirrors)
         return mirrors
 
+    def cat_files(self, provider, wanted):
+        other_parts = provider.unpack['other_parts']
+        for p in other_parts:
+            self.fill_gap(self.files[p], download=False, log=True)
+            if p not in self.found:
+                # can't concatenate: one of the bits is missing
+                break
+        else:
+            # we didn't break, so we have all the bits
+            path = os.path.join(self.get_workdir(), 'tmp',
+                    wanted.name)
+            with open(path, 'wb') as writer:
+                def open_files():
+                    yield open(self.found[provider.name], 'rb')
+                    for p in other_parts:
+                        yield open(self.found[p], 'rb')
+                hasher = HashedFile.from_concatenated_files(wanted.name,
+                        open_files(), writer, size=wanted.size,
+                        progress=(wanted.size > QUITE_LARGE))
+            self.use_file(wanted, path, hasher)
+
     def fill_gap(self, wanted, download=False, log=True):
         """Try to unpack, download or otherwise obtain wanted.
 
@@ -1088,7 +1119,8 @@ class GameData(object):
                             cwd=tmpdir)
                     for f in to_unpack:
                         self.consider_file(os.path.join(tmpdir, f), True)
-
+                elif fmt == 'cat':
+                    self.cat_files(provider, wanted)
 
             elif providable:
                 # we don't have it, but we can get it

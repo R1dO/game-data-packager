@@ -10,12 +10,14 @@ plugin: doom_common
 doom_engine: heretic
 
 help_text: |
-  Please provide HERETIC.WAD from Heretic 1.3.
+  Please provide HERETIC.WAD from Heretic v1.3, and/or HERETIC1.WAD
+  from Heretic (shareware) v1.2.
 
-  The shareware version is not yet supported.
+  HERETIC1.WAD will be downloaded if necessary.
 
-  Patching older versions is not currently supported. If you have
-  an older version, it might be possible to patch it manually using dosbox.
+  Patching older versions of HERETIC.WAD is not currently supported. If
+  you have an older version, it might be possible to patch it manually
+  using dosbox.
 
 packages:
   heretic-wad:
@@ -24,34 +26,45 @@ packages:
     install:
     - heretic.wad
 
-  # Not supported yet
-  #heretic-shareware-wad:
-  #  install_to: usr/share/games/doom
-  #  type: demo
+  heretic-shareware-data:
+    longname: "Heretic (shareware)"
+    install_to: usr/share/games/doom
+    type: demo
+    install:
+    - heretic1.wad
 
 files:
-  # FIXME: this needs the 'cat' unpack format
-  #htic_v12.zip:
-  #  download:
-  #    idstuff-mirrors:
-  #      path: heretic/htic_v12.zip
-  #  provides: [htic_v12.1, htic_v12.2]
-  #  unpack:
-  #    format: zip
-  #
-  #htic_v12.1:
-  #  provides: [htic_v12.1, htic_v12.2]
-  #  unpack:
-  #    format: zip
-  #
-  #htic_v12_1_2.zip:
-  #  provides: [heretic1.wad_1.2]
-  #  unpack:
-  #    format: zip
+  htic_v12.zip:
+    download:
+      idstuff-mirrors:
+        path: heretic
+    provides: [HTIC_V12.1, HTIC_V12.2]
+    unpack:
+      format: zip
+
+  HTIC_V12.1:
+    size: 1439232
+    provides: [htic_v12.exe]
+    unpack:
+      format: cat
+      other_parts: [HTIC_V12.2]
+
+  HTIC_V12.2:
+    size: 1442874
+
+  htic_v12.exe:
+    size: 2882106
+    provides: [heretic1.wad_1.2]
+    unpack:
+      format: zip
 
   heretic.wad:
     alternatives:
     - heretic.wad_1.3
+
+  heretic1.wad:
+    alternatives:
+    - heretic1.wad_1.2
 
   heretic.wad_1.3:
     size: 14189976
@@ -83,12 +96,27 @@ md5sums: |
   66d686b1ed6d35ff103f15dbd30e0341  heretic.wad_1.3
   ae779722390ec32fa37b0d361f7d82f8  heretic1.wad_1.2
   023b52175d2f260c3bdc5528df5d0a8c  heretic1.wad_1.0
+  211253fb961aa944385db1927d3c43c5  HTIC_V12.1
+  f9d17f6f4f7d26efc1015dfd90c0f721  HTIC_V12.2
+  e51a426ff89094599263f1484ed98967  htic_v12.exe
+
 
 sha1sums: |
+  dcb0c3be73fff3affd58ead2f85c1cb22872513f  htic_v12.zip
   b5a6cc79cde48d97905b44282e82c4c966a23a87  heretic.wad_1.0
   a54c5d30629976a649119c5ce8babae2ddfb1a60  heretic.wad_1.2
   f489d479371df32f6d280a0cb23b59a35ba2b833  heretic.wad_1.3
   b4c50ca9bea07f7c35250a1a11906091971c05ae  heretic1.wad_1.2
+  15e536e2af20fb6e3cf21e35eb40d17df2276ee6  HTIC_V12.1
+  ba5e52bffc34a9e16f1c20d3ce3465cc58fc9968  HTIC_V12.2
+  4643f3bfcc5c2d0bdf304025f618e5cd1e32e2e0  htic_v12.exe
+
+sha256sums: |
+  5ffbb47e4a5750fef144c312973ee5782266b4a63474b77478103b6c1aaed39d  htic_v12.zip
+  3ab2f21828877e49e5eb3220785aaf8798050b7c4132003b5db7b8f3678bede4  heretic1.wad_1.2
+  5ae52ee961636418e10f5fd71e4c44d56b4adf8116a299350ab3cae15a4a10a8  HTIC_V12.1
+  62c9c88adc3e97dc301f155ab1651083c2e6a9b0dde44e817b2d4e39fbbc0176  HTIC_V12.2
+  34c44e1153a636278daadcaa5904c9a02ab14cee58518f59bb88af6f481a2d5d  htic_v12.exe
 
 ...
 # vim:set sw=2 sts=2 et:
