@@ -1,26 +1,6 @@
 ## Adding a game to `game-data-packager`
 
-### Step 1: the template `.deb` file
-
-#### overview
-
-`game-data-packager` works by injecting user-supplied files into a
-template debian package.  The first step towards adding support for
-a new game is to prepare the files for the template debian package.
-
-The template packages that are distributed within gdp are built using the
-`Makefile` in the root of the source package.  You need to add commands
-necessary to build your package to the `default` target, and any clean up
-instructions to the `clean` target.
-
-In practice, most supported games delegate the work required for building
-and cleaning up the template packages to a second makefile, and call
-make from within the master makefile.
-
-The files for the template package are generated and assembled within the
-subdirectory `build/`.  The final template package is saved into the
-subdirectory `out/`.   These packages are invariably built using `dpkg-deb`
-and the `-b` argument.
+### Step 1: required files for the `.deb`
 
 #### things to include in the template package
 
@@ -30,10 +10,15 @@ section of a binary package
  * the control file
  * a copyright file, in `/usr/share/doc/package/copyright`
 
+For new games in `game-data-packager` these are normally
+`data/*.control.in` and `data/*.copyright`.
+
 Policy dictates the following fields within the control file:
 
- * `Version` field.  We recommend
+ * `Version` field. `VERSION` will automatically be replaced with
    using the version of gdp which generated the template package.
+   We recommend using either `VERSION` or, if the generated package
+   is guaranteed to contain the vendor's version 1.23 data, `1.23+VERSION`.
  * `Maintainer`.  We recommend using the same maintainer as for gdp,
    which is the Debian Games Team.
  * `Description`. Both the single line synopsis and the extended
@@ -42,21 +27,14 @@ Policy dictates the following fields within the control file:
    `Recommends` to recommend a corresponding engine package, where
    appropriate.
 
-We also suggest including the following
+`game-data-packager` automatically adds:
 
  * `md5sums` file, so that the user can check whether a package's installed
-   files have been modified if they so desire.
- * a `changelog`.  We suggest copying the gdp `changelog` into the
-   template package.
- * a `README.Debian` file, explaining that the package was auto-generated
-   by gdp.
+   files have been modified if they so desire
+ * a copy of gdp's own `changelog`
 
 Finally, it might be worth considering the following
 
- * do you need to register any alternatives?  For example, the open source
-   `freedoom` package provides a Doom 2 IWAD file, and registers an
-   alternative for the name `doom2.wad`.  Therefore, the generated `doom2-wad`
-   package does the same.
  * Should the data package register any menus, or carry a `.desktop` file?
    In some cases, it makes sense to do this from the data package, rather
    than from the engine package.
@@ -65,46 +43,98 @@ Finally, it might be worth considering the following
      the DFSG.  gdp could generate the icon file at run-time in some
      cases.
 
-#### simple example
+### Step 2: locate and describe the necessary files
 
-The simplest template package for a supported game is currently 
-quake3.  The source files for the quake 3 template package are in the
-`quake3-data` directory.  They are:
+Write a YAML document that describes the files needed and how to get them.
 
-    quake3-data/copyright.in
-    quake3-data/DEBIAN/control
+There are three main constructs in the YAML document: *top-level metadata*,
+*known files* and *packages*.
 
-The default target in the quake3 makefile, `quake3.mk`, uses the `m4`
-pre-processor tool to substitute in some values to these files.
+#### Top-level metadata
 
-The `copyright` file from gdp's own source is also copied into the
-package build directory. The makefile also generates an `md5sums` file
-for the package.
+* `shortname`: string: the short name of the game, such as `quake3`.
+* `longname`: string: the "marketing name" of the game, such as Quake
+  III Arena.
+* `compress_deb`: boolean, default true: If false, the `.deb` will never be
+  compressed. Use this if it contains non-compressible files (e.g. `*.pk3`
+  which are zip files) for which `xz` will waste a lot of time and
+  produce poor results.
+* `try_repack_from`: string or list of strings: extra locations to search
+  for data files, in addition to the installed location of the .deb
+  and likely Steam directories.
+* `help_text`: multi-line hard-wrapped string: extra text for `--help`,
+  explaining which files are needed and where to get them.
 
-#### complex example
+#### Known files
 
-A more complex example is for the suite of doom engine games.  There
-are currently four supported doom engine games: Doom, Doom 2 and the
-two Final Dooms.  Rather than maintain separate makefiles and template
-files, a common makefile (`doom-common.mk`) and common template files
-(`doom-common`) are used.   Where the resulting templates differ,
-makefile variables are used.  For example, the commands in the master
-`Makefile` for Doom and Doom 2 are
+Known files are identified by a unique name. It is usually the canonical
+filename, but if there are several variants of a file (e.g. `doom.wad`)
+you must use a distinct name for each variant (e.g. `doom.wad_1.666`).
 
-        make -f doom-common.mk IWAD=doom  LONG="Doom"   VERSION=$(VERSION)
-        make -f doom-common.mk IWAD=doom2 \
-                LONG="Doom 2: Hell on Earth" VERSION=$(VERSION)
+Known files are described in the `files` top-level item, which is
+a mapping from unique name to a mapping:
 
-The exact same sub-makefiles are used in both cases, with different
-variables substituted in.
+* `size`: integer: size in bytes
+* `distinctive_size`: boolean, default false: if true, files of size `size`
+  are assumed to be this file. Use this for large files with a characteristic
+  size.
+* `distinctive_name`: boolean, default true: if false, files whose name
+  matches this file's `look_for` names, but which do not match this file
+  by size or hashes, do not provoke a warning. Use this for files with
+  generic names like `README.TXT`.
+* `download`: string or mapping: where to download this file. FIXME: explain
+* `provides`: list of strings: unique names of some known files that can be
+  unpacked or extracted from this one
+* `md5`: string: md5sum of this file
+* `sha1`: string: sha1sum of this file
+* `sha256`: string: sha256sum of this file
+* `unpack`: mapping: how to unpack this file. The mapping must have at least
+  one key, `format`, with possible values currently `tar.gz`, `zip`, `lha`
+  or `dos2unix`.
+* `alternatives`: list of strings: if given, this known file entry
+  is actually an abstraction representing a list of possible known files
+  identified by their unique names. Use this if more than one version is
+  acceptable, and it is not easy to obtain the most preferred version.
+  Alternative sets may not have sizes or checksums, but they may be
+  installed in packages, which will result in the first available option
+  being installed under the name of the alternative set.
+* `install_as`: string: when installing this file in a package, use this name
+  instead of its own.
+* `look_for`: list of strings: when searching for this file, look for
+  these names (case-insensitively). The default is a list containing only
+  the unique name.
 
-### Step 2: the gdp "supported" file
+`md5sums`, `sha1sums`, `sha256sums` items at top level can be used to provide
+the hashes for a bunch of files at the same time.
 
-Once you have a template package file, you then need to write a gdp "supported"
-file.  This is a shell script that gdp calls into when the user invokes gdp
-with your game as an argument.
+The `install_files` item in a package (see below) can be used to flag
+several files for installation and also provide their metadata
+in the same format as `files`.
 
-#### minimum requirements for a "supported" file
+The `install_files_from_cksums` item in a package can be used to flag
+several files for installation and also provide their sizes, using
+cksums(1) syntax.
+
+#### Packages
+
+The `packages` top-level item is a mapping from Debian binary package name
+to mapping:
+
+* `longname`: string: the "marketing name" of the game or expansion
+  in this package, if it differs from the top-level `longname`
+* `type`: string: either `full`, `demo` or `expansion`. Full games
+  are what you expect. Demos are cut-down versions of a full game,
+  typically advertised as demo or shareware, which can be installed
+  if the full game is not available. Expansions are add-ons or mission
+  packs which require the corresponding full game, such as
+  Quake III Team Arena for Quake III Arena.
+* `install`: list of strings: unique names of known files or alternative
+  sets to install
+
+### Step 3: the gdp "supported" file
+
+Until gdp is completely ported to Python you will need a `supported` file.
+Use `supported/quake3` as an example.
 
 A "supported" file must define the following variables:
 
@@ -114,54 +144,10 @@ A "supported" file must define the following variables:
    used to disambiguate or expand upon the short name, which might not be
    enough to explain what it is.
 
-You must define a `go` shell subroutine.  This is the main routine which gdp
-will invoke from your code.  This routine is explained in the next section.
+It can chain to `$LIBDIR/via-python` for the rest.
 
-#### the `go` subroutine
+### Step 4: advanced
 
-You must define a `go` shell subroutine.  This is the main routine which gdp
-will invoke from your code.  You can rely on the following to have happened
-when `go` is called:
-
- * gdp will have sanity-checked any command-line arguments supplied to
-   it and set variables accordingly (more on these later)
- * gdp will have created a temporary working directory and stored its
-   name in the `WORKDIR` variable
- * gdp will have been invoked with your `SHORTNAME` as an argument
- * gdp will have sourced the shared library of routines
-   `game-data-package-shared`
-
-Your `go` routine is expected to perform the following work:
-
- * inspect any remaining command line arguments (passed in the `$@` variable)
-   and verify that they are correct
- * write a complete template package into the file `$WORKDIR/out.deb`,
-   or into the directory `$OUTDIR`, if `$OUTDIR` is defined, to a filename
-   of your choice
-   * (this is sub-optimal.  a future patch to gdp should tidy this up)
-
-In order to achieve this work, your `go` routine can call on the functions
-defined in `lib/game-data-package-shared`, which will already have been
-sourced.  These are documented within the file.  A brief overview:
-
- * a selection of perl-esque helper routines for argument verification, 
-   noisy reporting and quitting: `debug`, `warn`, `die`, 
- * some verify/assertion routines: `verify_md5sum`, `verify_directory`,
-   etc.
- * a family of `slipstream` routines, which insert new files into an existing
-   `.deb` file 
- * routines for unpacking files (abstracting the exact backend used to do so):
-   `gdp_unzip`
-
-Future patches to gdp will add more common routines for handling the
-downloading of files from the Internet,  including handling mirror lists,
-verification, resuming, etc.
-
-### Step 3: installing the new files into the package
-
-The final step is quite small and easy :-)
-
-Add the files which you need to distribute in the gdp binary package to the
-`debian/game-data-packager.install` file.  At a minimum, this will be your
-"supported" file, but also most likely a template debian package and possibly
-other supporting files.
+You can write a Python plugin in `lib/game_data_packager/games/SHORTNAME.py`
+if you need to implement different command-line parsing or behaviour.
+Please don't do this unless you really need to.

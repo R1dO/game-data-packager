@@ -48,6 +48,30 @@ class WadPackage(GameDataPackage):
             raise AssertionError('Wad packages must install one .wad file')
 
 class DoomGameData(GameData):
+    """Special subclass of GameData for games descended from Doom.
+    These games install their own icon and .desktop file, and share a
+    considerable amount of other data.
+
+    Please do not follow this example for newly-supported games other than
+    the Doom family (Doom, Heretic, Hexen, Strife, Hacx, Chex Quest).
+
+    For new games it is probably better to use game-data-packager to ship only
+    the non-distributable files, and ship DFSG files (such as icons
+    and .desktop files) somewhere else.
+
+    One way is to have the engine package contain the wrapper scripts,
+    .desktop files etc. (e.g. src:openjk, src:iortcw). This is the simplest
+    thing if the engine is unlikely to be used for other games and alternative
+    engine versions are unlikely to be packaged.
+
+    Another approach is to have a package for the engine (like src:ioquake3)
+    and a package for the user-visible game (like src:quake, containing
+    wrapper scripts, .desktop files etc.). This is more flexible if the engine
+    can be used for other user-visible games (e.g. OpenArena, Nexuiz Classic)
+    or there could reasonably be multiple packaged engines (e.g. Quakespasm,
+    Darkplaces).
+    """
+
     def __init__(self, shortname, yaml_data, workdir=None):
         super(DoomGameData, self).__init__(shortname, yaml_data,
                 workdir=workdir)
