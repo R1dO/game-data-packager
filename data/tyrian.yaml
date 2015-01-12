@@ -11,6 +11,9 @@ help_text: |
 packages:
   tyrian-data:
     type: full
+    # there are two identical files in the zip
+    symlinks:
+      usr/share/games/tyrian/netset.pcx: usr/share/games/tyrian/tyrset.pcx
     install_to: usr/share/games/tyrian
     install_files_from_cksums: |
       2480546301 36169   cubetxt1.dat
@@ -39,7 +42,6 @@ packages:
       2603740650 8692    netfont1.pcx
       1031752906 10327   netfont2.pcx
       3588679628 33221   netmega.pcx
-      3396037561 53766   netset.pcx
       1343273142 633     netterm.int
       3328586459 14096   newsh0.shp
       2874864033 29941   newsh1.shp
@@ -145,7 +147,6 @@ files:
     - netfont1.pcx
     - netfont2.pcx
     - netmega.pcx
-    - netset.pcx
     - netterm.int
     - newsh0.shp
     - newsh1.shp
@@ -245,7 +246,6 @@ md5sums: |
   b1f6e2416ff65ecc65906d09a59bd6be  netfont1.pcx
   2c56d642d41dfe0b0d77e7dd3aca1a72  netfont2.pcx
   b62d77eba5768413bca5d22cb27d4903  netmega.pcx
-  c0df9fe82ccffa70c069800304614100  netset.pcx
   ae3a495baf1d628294da5fc9fb5affb0  netterm.int
   a15a912c59b845e3b21e9d70bbeb213f  newsh#.shp
   71e299a984b261bb86b724cd8f84d43f  newsh0.shp
@@ -339,7 +339,6 @@ sha1sums: |
   20d8cb1d75a0b6db64a8e3a5276a00410c8ab2e1  netfont1.pcx
   c6853d9306b8f8daec72e25ab33340856121d1b3  netfont2.pcx
   be6345e7b990998ee81c27da337f45e765c096b4  netmega.pcx
-  50ef0cd9eaa2ae0c0c628c141400b76101223385  netset.pcx
   c7ebdd17aba1661f33a033d318ce5ff95e21dd31  netterm.int
   031bdfc2f280e4ae3e9574c2151559fb752eb441  newsh#.shp
   1da408b9177ffba057189eff64b6096615a8d767  newsh0.shp
@@ -433,7 +432,6 @@ sha256sums: |
   13cecff9b2bb01c472ca42a6d4081bfb54ef182e086130fc1d82530ea2ed5cda  netfont1.pcx
   9d99299c4b224b6489d252c63cca08850f525c7ac4548cfb55241fc36902dc42  netfont2.pcx
   275291eaf4666aba50869adefbf21b3314bc72b951a38b962f26713ef159b8eb  netmega.pcx
-  bcb12dff1a6b845fdf26d3eb1f347c5d9d90248365f5113a67a371883f4c2a4a  netset.pcx
   58fec99ab9512c588e8f4375e1d17ea9c052f9be8cd74fd1ea411ca00519f300  netterm.int
   45c9e26a7742ce3e9340638349ab6b1b4c834c1ed6dd5d69cc32dd4e481a706d  newsh#.shp
   c443ec4e268205e6a843c1ba783e84cce9d710e3226ddd03b8bfc869bcafbf10  newsh0.shp
