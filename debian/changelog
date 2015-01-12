@@ -1,13 +1,47 @@
 game-data-packager (39) UNRELEASED; urgency=medium
 
+  Game support and other features:
+
+  [ Alexandre Detiste ]
+  * Add game Spear Of Destiny, demo & full version
+  * Add game Rise of the Triad: Dark War (rott-registered-data)
+  * Add bash completion
+
+  [ Simon McVittie ]
+  * Add support for Hexen II's Portal of Praevus expansion and
+    HexenWorld addon (Closes: #733751)
+  * Add support for Hexen: Deathkings of the Dark Citadel,
+    loosely based on patches by Johey Shmit (partially addresses #737137)
+  * Add support for Heretic shareware
+  * For YAML games, always search the installed directory for game files
+    (like the --repack argument in version 38)
+  * For YAML games distributed via Steam, search various likely locations
+    for Steam files: Wine, winetricks, PlayOnLinux or native Linux
+  * Add --demo option to all YAML games with a demo/shareware version,
+    which will download/create the demo even if the full game is available
+  * Show help after failing to build a package, since it often has
+    hints on the data files that are required
+
+  Bug fixes:
+
   [ Alexandre Detiste ]
   * rtcw-data should recommend rtcw (ITP #773742), not rtcw-sp
   * make_template: strip trailing '/' from directories to be searched
+
+  [ Simon McVittie ]
+  * Search /usr/share/games/quake3 for Quake III Arena data
+  * Normalize permissions on packaged files to 0644, 0755
+  * Switch Doom packages' icons to .png, GNOME Shell doesn't like .xpm
+  * Redo logic for files with alternatives to avoid unnecessary warnings
+    (Closes: #775152)
+  * Install Heretic and Hexen to /usr/share/games/doom again
+  * Automatically exclude __pycache__ from tarball
+
+  Internal changes:
+
+  [ Alexandre Detiste ]
   * convert tyrian-data to YAML style
-  * Add game Spear Of Destiny, demo & full version
-  * Add bash completion
-  * Convert Rise of the Triad to YAML style, and add support for
-    the registered episode, Dark War (rott-registered-data)
+  * Convert Rise of the Triad to YAML style
   * Convert Wolfenstein 3D to YAML style
 
   [ Simon McVittie ]
@@ -15,34 +49,16 @@ game-data-packager (39) UNRELEASED; urgency=medium
     Python, not shell
     - depend on python3-debian
   * Improve help text
-  * Search /usr/share/games/quake3 for Quake III Arena data
-  * For YAML games, always search the installed directory for game files
-  * For YAML games distributed via Steam, search various likely locations
-    for Steam files: Wine, winetricks, PlayOnLinux or native Linux
-  * Automatically exclude __pycache__ from tarball
   * Use a common go() method to wrap all YAML games
   * Allow YAML games to have a Python subclass of GameData to customize
     their behaviour, and use that to implement rott and tyrian's
     historical command-line options
-  * Add --demo option to all YAML games with a demo/shareware version,
-    which will download/create the demo even if the full game is available
-  * Switch Hexen II to YAML style, and add support for the
-    Portal of Praevus expansion and the HexenWorld addon (Closes: #733751)
+  * Switch Hexen II to YAML style
   * Convert Doom games to YAML style, with the help of extra Python code
     in game_data_packager.games.doom_common (Closes: #775081)
-  * Show help after failing to build a package
-  * Normalize permissions on packaged files to 0644, 0755
-  * Add support for Hexen: Deathkings of the Dark Citadel,
-    loosely based on patches by Johey Shmit (partially addresses #737137)
-  * Switch Doom packages' icons to .png, GNOME Shell doesn't like .xpm
-  * Redo logic for files with alternatives to avoid unnecessary warnings
-    (Closes: #775152)
   * Add support for flagging files in YAML as known-but-unsuitable,
     and use it for older versions of various .wad files
-  * Install Heretic and Hexen to /usr/share/games/doom again
-  * Add support for Heretic shareware
-    - in the process, add support for concatenating files,
-      needed for Quake 1
+  * Add support for concatenating files, needed for Quake 1
 
  -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
 
