@@ -291,12 +291,23 @@ class GameDataPackage(object):
 
         self.version = GAME_PACKAGE_VERSION
 
+        # if not None, install every file provided by the files with
+        # these names
+        self._install_contents_of = set()
+
     @property
     def install(self):
         return self._install
     @install.setter
     def install(self, value):
         self._install = set(value)
+
+    @property
+    def install_contents_of(self):
+        return self._install_contents_of
+    @install_contents_of.setter
+    def install_contents_of(self, value):
+        self._install_contents_of = set(value)
 
     @property
     def type(self):
@@ -483,6 +494,14 @@ class GameData(object):
         if 'steam' in self.yaml:
             self.steam = self.yaml['steam']
 
+        for package in self.packages.values():
+            for provider in package.install_contents_of:
+                assert provider in self.files, (package.name, provider)
+                for filename in self.files[provider].provides:
+                    assert filename in self.files, (package.name, provider,
+                            filename)
+                    package.install.add(filename)
+
         # consistency check
         for package in self.packages.values():
             # there had better be something it wants to install
@@ -574,6 +593,9 @@ class GameData(object):
 
         if 'install_to' in d:
             package.install_to = d['install_to']
+
+        if 'install_contents_of' in d:
+            package.install_contents_of = d['install_contents_of']
 
         if 'steam' in d:
             package.steam = d['steam']
