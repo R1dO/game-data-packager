@@ -1286,9 +1286,17 @@ class GameData(object):
             # cp it into place
             with TemporaryUmask(0o22):
                 logger.debug('Found %s at %s', wanted.name, copy_from)
-                copy_to = os.path.join(destdir,
-                        (wanted.install_to if wanted.install_to is not None
-                            else package.install_to),
+
+                install_to = wanted.install_to
+
+                if install_to is None:
+                    install_to = package.install_to
+
+                if install_to.startswith('$docdir'):
+                    install_to = 'usr/share/doc/%s%s' % (package.name,
+                            install_to[7:])
+
+                copy_to = os.path.join(destdir, install_to,
                         wanted.install_as)
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)
