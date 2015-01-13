@@ -1369,7 +1369,7 @@ class GameData(object):
 
     def modify_control_template(self, control, package, destdir):
         size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
-            '.'], cwd=destdir).decode('utf-8').rstrip('\n')
+            '.'], cwd=destdir).decode('utf-8').split(None, 1)[0]
         assert control['Package'] in ('PACKAGE', package.name)
         control['Package'] = package.name
         control['Installed-Size'] = size
