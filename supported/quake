@@ -474,7 +474,7 @@ music_method () {
 
     copyin "$DATADIR/changelog.gz" \
         "$DESTDIR/usr/share/doc/${deb}/changelog.gz"
-    copyin "$DATADIR/quake/${deb}.copyright" \
+    copyin "$DATADIR/${deb}.copyright" \
         "$DESTDIR/usr/share/doc/${deb}/copyright"
 
     copyin "$DATADIR/quake/${deb}.control" \
