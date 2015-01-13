@@ -1661,6 +1661,10 @@ def run_command_line():
 
     parsed = parser.parse_args()
 
+    if parsed.destination is None and not parsed.install:
+        logger.error('At least one of --install or --destination is required')
+        sys.exit(2)
+
     if parsed.shortname is None:
         parser.print_help()
         sys.exit(0)
