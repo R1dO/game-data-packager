@@ -463,9 +463,8 @@ class GameData(object):
             if f.distinctive_size and f.size is not None:
                 self.known_sizes.setdefault(f.size, set()).add(filename)
 
-            if f.distinctive_name:
-                for lf in f.look_for:
-                    self.known_filenames.setdefault(lf, set()).add(filename)
+            for lf in f.look_for:
+                self.known_filenames.setdefault(lf, set()).add(filename)
 
             if f.md5 is not None:
                 if self.known_md5s.get(f.md5):
@@ -748,13 +747,18 @@ class GameData(object):
                         continue
                     tried.add(wanted_name)
                     if self.use_file(self.files[wanted_name], path, hashes,
-                            log=(len(candidates) == 1)):
+                            log=(self.files[wanted_name].distinctive_name
+                                and len(candidates) == 1)):
                         return
                 else:
                     if len(candidates) > 1:
-                        self._log_not_any_of(path, size, hashes,
-                                'possible "%s"' % look_for,
-                                [self.files[c] for c in candidates])
+                        candidates = [self.files[c] for c in candidates]
+                        for candidate in candidates:
+                            if not candidate.distinctive_name:
+                                break
+                            else:
+                                self._log_not_any_of(path, size, hashes,
+                                        'possible "%s"' % look_for, candidates)
 
         if size in self.known_sizes:
             hashes = self._ensure_hashes(hashes, path, size)
