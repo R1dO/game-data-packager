@@ -17,12 +17,14 @@ packages:
 
   quake-armagon:
     # FIXME: also needs to create executable hipnotic-tryexec.sh
+    longname: "Quake Mission Pack 1: Scourge of Armagon"
     install:
     - hipnotic/pak0.pak
     install_to: usr/share/games/quake
 
   quake-dissolution:
     # FIXME: also needs to create executable rogue-tryexec.sh
+    longname: "Quake Mission Pack 2: Dissolution of Eternity"
     install:
     - rogue/pak0.pak
     install_to: usr/share/games/quake
