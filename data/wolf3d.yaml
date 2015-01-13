@@ -53,6 +53,16 @@ files:
     unpack:
       format: id-shr-extract
 
+  MAPHEAD.WL6_1.2:
+    unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.2
+  GAMEMAPS.WL6_1.2:
+    unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.2
+
+  MAPHEAD.WL6_1.1:
+    unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
+  GAMEMAPS.WL6_1.1:
+    unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
+
 cksums: |
   583668161  1156    audiohed.wl6
   1281390593 320209  audiot.wl6
@@ -72,7 +82,11 @@ cksums: |
   3356851916 1024    vgadict.wl6_anthology
   3380985220 334506  vgagraph.wl6_anthology
   3071614724 486     vgahead.wl6_anthology
-  #4156874368 1545400 vswap.wl6_anthology
+  #4156874368 1545400 vswap.wl6_anthology - same as alt
+  2597251681 402 MAPHEAD.WL6_1.2
+  1031424741 150758 GAMEMAPS.WL6_1.2
+  96628160 402 MAPHEAD.WL6_1.1
+  4125294541 150746 GAMEMAPS.WL6_1.1
 
 md5sums: |
   58aa1b9892d5adfa725fab343d9446f8  audiohed.wl1
@@ -99,7 +113,11 @@ md5sums: |
   adb10b0d6fdddba9fcc3d1a7c16937e7  vgadict.wl6_anthology
   4e96d7b4e89a5b3a4beeebf5d7d87eb7  vgagraph.wl6_anthology
   a08905e2b0d299b3fad259f90c0efb1a  vgahead.wl6_anthology
-  #a6d901dfb455dfac96db5e4705837cdb  vswap.wl6_anthology
+  #a6d901dfb455dfac96db5e4705837cdb  vswap.wl6_anthology - same as alt
+  42c7b607a33be82143e6525d481b8beb  MAPHEAD.WL6_1.2
+  a15b04941937b7e136419a1e74e57e2f  GAMEMAPS.WL6_1.2
+  accc0231d871a4350da4374d87b57d88  MAPHEAD.WL6_1.1
+  05ee51e9bc7d60f01a05334b1cfab1a5  GAMEMAPS.WL6_1.1
 
 sha1sums: |
   732460795d77cab19c8018d879f5c27a3cbd5f84  audiohed.wl1
@@ -126,7 +144,11 @@ sha1sums: |
   45f17d1a8e43dcf3411e41f1da7e452dc1fb72b9  vgadict.wl6_anthology
   7ea4ccb7c446628a528c8f68ebd1fbcb8b5366e6  vgagraph.wl6_anthology
   c5100bcbaaf2a78fc831f6780089bd3fa46bd9a5  vgahead.wl6_anthology
-  #e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_anthology
+  #e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_anthology - same as alt
+  e6cbd8f9c43921f4418f4150573a47e26e71cb6f  MAPHEAD.WL6_1.2
+  0f8956bf9185abfac16666f8bcbf1d316bb68ff6  GAMEMAPS.WL6_1.2
+  855ab6c71bc6a4a6b808e948a1ca115918855af0  MAPHEAD.WL6_1.1
+  0fe31241ecb994ab31797cf146ccfdb8623d826d  GAMEMAPS.WL6_1.1
 
 sha256sums: |
   39351624ae6f8eef4b873e060c1a6f3e5ee7e81c4939c485275a89b145336338  audiohed.wl1
@@ -153,6 +175,10 @@ sha256sums: |
   e4ca6e61a1da1de5b4b59b75fbd702f173238577b2f870e679fd499cfe78bf00  vgadict.wl6_anthology
   84adea791e3ab1251312ee159414e48d5114622dc84348cebbac8a1dacb4b41f  vgagraph.wl6_anthology
   386b56a62ce79cdfa502542b0c9a9bad0d29fab4250edf17e05ee4ac51aa37a8  vgahead.wl6_anthology
-  #49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_anthology
+  #49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_anthology - same as alt
+  13f125200d944fc83a28705e8fbc29024a6f2dbbb05e4a382846c18a6f80aca3  MAPHEAD.WL6_1.2
+  9c9e7feecc0b9804f5201b38e17311db2dbda7d956d7cab076cc9367f03789af  GAMEMAPS.WL6_1.2
+  b1ccea3648c5737afdcc9966ee2e99d9189c48958b61d8ff7b4a8a4fc8e962c7  MAPHEAD.WL6_1.1
+  5f3ce493027bf2ddd29ca0f112e4ceb09df8736fc22719bc5575689847c0c645  GAMEMAPS.WL6_1.1
 
 ...
