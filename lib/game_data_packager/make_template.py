@@ -31,7 +31,10 @@ logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
 
 def do_one_dir(destdir):
-    data = dict(package='FIXME', install_to=destdir, files={})
+    data = dict(files={})
+    package = data.setdefault('packages', {}).setdefault('FIXME', {})
+    package['install'] = []
+    package['install_to'] = destdir
     sums = dict(sha1={}, md5={}, sha256={})
 
     for dirpath, dirnames, filenames in os.walk(destdir):
@@ -44,10 +47,10 @@ def do_one_dir(destdir):
             if os.path.isdir(path):
                 continue
             elif os.path.islink(path):
-                data.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
+                package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
             elif os.path.isfile(path):
-                data['files'][name] = dict(size=os.path.getsize(path),
-                        install=True)
+                package['install'].append(name)
+                data['files'][name] = dict(size=os.path.getsize(path))
 
                 hf = HashedFile.from_file(name, open(path, 'rb'))
                 sums['md5'][name] = hf.md5
@@ -99,7 +102,10 @@ def do_one_deb(deb):
     if control is None:
         logger.error('Could not find DEBIAN/control')
 
-    data = dict(package=control['package'], install_to=None, files={})
+    data = dict(packages={ control['package']: {} }, files={})
+    package = data['packages'][control['package']]
+    package['install'] = []
+    package['install_to'] = None
     sums = dict(sha1={}, md5={}, sha256={})
 
     with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', deb],
@@ -124,25 +130,25 @@ def do_one_deb(deb):
                     continue
 
                 if (name.startswith('usr/share/games/') and
-                        data['install_to'] is None):
+                        package['install_to'] is None):
                     # assume this is the place
                     there = name[len('usr/share/games/'):]
                     there = there.split('/', 1)[0]
-                    data['install_to'] = ('usr/share/games/' + there)
+                    package['install_to'] = ('usr/share/games/' + there)
 
                 if entry.isfile():
                     hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
                             fsys_tarfile.extractfile(entry))
 
-                    if (data['install_to'] is not None and
-                            name.startswith(data['install_to'] + '/')):
-                        name = name[len(data['install_to']) + 1:]
+                    if (package['install_to'] is not None and
+                            name.startswith(package['install_to'] + '/')):
+                        name = name[len(package['install_to']) + 1:]
                         data['files'][name] = {}
                     else:
                         data['files'][name] = dict(install_to='.')
 
                     data['files'][name]['size'] = entry.size
-                    data['files'][name]['install'] = True
+                    package['install'].append(name)
                     sums['md5'][name] = hf.md5
                     sums['sha1'][name] = hf.sha1
                     sums['sha256'][name] = hf.sha256
@@ -150,7 +156,7 @@ def do_one_deb(deb):
                 elif entry.isdir():
                     pass
                 elif entry.issym():
-                    data.setdefault('symlinks', {})[name] = os.path.join(
+                    package.setdefault('symlinks', {})[name] = os.path.join(
                             os.path.dirname(name), entry.linkname)
                 else:
                     logger.warning('unhandled data.tar entry type: %s: %s',
