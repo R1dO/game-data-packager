@@ -1337,9 +1337,7 @@ class GameData(object):
             # anyway
             args.compress = preserve_debs
 
-        # only compress if the command-line says we should and the YAML
-        # says it's worthwhile
-        compress_deb = (self.compress_deb and getattr(args, 'compress', True))
+        compress = getattr(args, 'compress', True)
 
         for path in self.try_repack_from:
             if os.path.isdir(path):
@@ -1431,41 +1429,17 @@ class GameData(object):
         debs = set()
 
         for package in ready:
-            destdir = os.path.join(self.get_workdir(),
-                    '%s.deb.d' % package.name)
-            if not self.fill_dest_dir(package, destdir):
+            if args.destination is None:
+                destination = self.get_workdir()
+            else:
+                destination = args.destination
+
+            deb = self.build_deb(package, destination, compress=compress)
+
+            if deb is None:
                 raise SystemExit(1)
 
-            # it had better have a /usr and a DEBIAN directory or
-            # something has gone very wrong
-            assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
-            assert os.path.isdir(os.path.join(destdir, 'DEBIAN')), destdir
-
-            deb_basename = '%s_%s_all.deb' % (package.name, package.version)
-
-            if args.destination is not None:
-                outfile = os.path.join(os.path.abspath(args.destination),
-                        deb_basename)
-            else:
-                outfile = os.path.join(self.get_workdir(), deb_basename)
-
-            if compress_deb:
-                dpkg_deb_args = []
-            else:
-                dpkg_deb_args = ['-Znone']
-
-            try:
-                subprocess.check_output(['fakeroot', 'dpkg-deb'] +
-                        dpkg_deb_args +
-                        ['-b', '%s.deb.d' % package.name, outfile],
-                        cwd=self.get_workdir())
-            except subprocess.CalledProcessError as cpe:
-                print(cpe.output)
-                raise
-
-            debs.add(outfile)
-
-            rm_rf(destdir)
+            debs.add(deb)
 
         rm_rf(os.path.join(self.get_workdir(), 'tmp'))
 
@@ -1512,6 +1486,44 @@ class GameData(object):
 
     def construct_package(self, binary):
         return GameDataPackage(binary)
+
+    def build_deb(self, package, destination, compress=True):
+        """
+        If we have all the necessary files for package, build the .deb
+        and return the output filename in destination. Otherwise return None.
+        """
+        destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
+        if not self.fill_dest_dir(package, destdir):
+            # FIXME: probably better as an exception?
+            return None
+
+        # it had better have a /usr and a DEBIAN directory or
+        # something has gone very wrong
+        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
+        assert os.path.isdir(os.path.join(destdir, 'DEBIAN')), destdir
+
+        deb_basename = '%s_%s_all.deb' % (package.name, package.version)
+
+        outfile = os.path.join(os.path.abspath(destination), deb_basename)
+
+        # only compress if the caller says we should and the YAML
+        # says it's worthwhile
+        if compress and self.compress_deb:
+            dpkg_deb_args = []
+        else:
+            dpkg_deb_args = ['-Znone']
+
+        try:
+            subprocess.check_output(['fakeroot', 'dpkg-deb'] +
+                    dpkg_deb_args +
+                    ['-b', '%s.deb.d' % package.name, outfile],
+                    cwd=self.get_workdir())
+        except subprocess.CalledProcessError as cpe:
+            print(cpe.output)
+            raise
+
+        rm_rf(destdir)
+        return outfile
 
 def load_yaml_games(workdir=None):
     games = {}
