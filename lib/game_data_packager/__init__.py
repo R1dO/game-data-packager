@@ -272,6 +272,10 @@ class GameDataPackage(object):
         # The default is 'usr/share/games/' plus the binary package's name.
         self.install_to = 'usr/share/games/' + name
 
+        # Prefixes of files that get installed to /usr/share/doc/PACKAGE
+        # instead
+        self.install_to_docdir = []
+
         # symlink => real file (the opposite way round that debhelper does it,
         # because the links must be unique but the real files are not
         # necessarily)
@@ -321,6 +325,7 @@ class GameDataPackage(object):
         return {
             'install': sorted(self.install),
             'install_to': self.install_to,
+            'install_to_docdir': self.install_to_docdir,
             'name': self.name,
             'steam': self.steam,
             'symlinks': self.symlinks,
@@ -582,6 +587,9 @@ class GameData(object):
 
         if 'install_to' in d:
             package.install_to = d['install_to']
+
+        if 'install_to_docdir' in d:
+            package.install_to_docdir = d['install_to_docdir']
 
         if 'install_contents_of' in d:
             package.install_contents_of = d['install_contents_of']
@@ -1289,6 +1297,10 @@ class GameData(object):
                 if install_to.startswith('$docdir'):
                     install_to = 'usr/share/doc/%s%s' % (package.name,
                             install_to[7:])
+
+                for prefix in package.install_to_docdir:
+                    if wanted.name.startswith(prefix + '/'):
+                        install_to = 'usr/share/doc/%s' % package.name
 
                 copy_to = os.path.join(destdir, install_to,
                         wanted.install_as)

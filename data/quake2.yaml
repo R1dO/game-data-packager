@@ -24,6 +24,8 @@ packages:
   quake2-demo-data:
     type: demo
     install_to: usr/share/games/quake2-demo
+    install_to_docdir:
+      - quake2_manual
     install_contents_of:
     - q2-314-demo-x86.exe
 
