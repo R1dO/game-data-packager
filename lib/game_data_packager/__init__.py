@@ -1631,7 +1631,6 @@ def load_yaml_games(workdir=None):
     return games
 
 def run_command_line():
-    workdir = os.environ['WORKDIR']
     logger.debug('Arguments: %r', sys.argv)
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
@@ -1640,7 +1639,7 @@ def run_command_line():
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
 
-    games = load_yaml_games(workdir)
+    games = load_yaml_games(os.environ.get('WORKDIR', None))
 
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers)
