@@ -408,17 +408,18 @@ class GameData(object):
             self._populate_package(next(iter(self.packages.values())),
                     self.yaml)
 
-        if 'packages' in self.yaml:
-            for binary, data in self.yaml['packages'].items():
-                # these should only be at top level, since they are global
-                assert 'cksums' not in data, binary
-                assert 'md5sums' not in data, binary
-                assert 'sha1sums' not in data, binary
-                assert 'sha256sums' not in data, binary
+        assert 'packages' in self.yaml
 
-                package = self.construct_package(binary)
-                self.packages[binary] = package
-                self._populate_package(package, data)
+        for binary, data in self.yaml['packages'].items():
+            # these should only be at top level, since they are global
+            assert 'cksums' not in data, binary
+            assert 'md5sums' not in data, binary
+            assert 'sha1sums' not in data, binary
+            assert 'sha256sums' not in data, binary
+
+            package = self.construct_package(binary)
+            self.packages[binary] = package
+            self._populate_package(package, data)
 
         if 'cksums' in self.yaml:
             for line in self.yaml['cksums'].splitlines():
