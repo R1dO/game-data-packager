@@ -20,64 +20,12 @@ packages:
     - baseq2/video/eou8_.cin
     - baseq2/video/idlog.cin
     - baseq2/video/ntro.cin
-    symlinks:
-      usr/share/games/quake2/baseq2/players/cyborg/a_grenades.md2:
-        usr/share/games/quake2/baseq2/players/male/a_grenades.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_blaster.md2:
-        usr/share/games/quake2/baseq2/players/male/w_blaster.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_bfg.md2:
-        usr/share/games/quake2/baseq2/players/male/w_bfg.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_chainfist.md2:
-        usr/share/games/quake2/baseq2/players/male/w_chainfist.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_chaingun.md2:
-        usr/share/games/quake2/baseq2/players/male/w_chaingun.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_disrupt.md2:
-        usr/share/games/quake2/baseq2/players/male/w_disrupt.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_etfrifle.md2:
-        usr/share/games/quake2/baseq2/players/male/w_etfrifle.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_glauncher.md2:
-        usr/share/games/quake2/baseq2/players/male/w_glauncher.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_grapple.md2:
-        usr/share/games/quake2/baseq2/players/male/w_grapple.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_hyperblaster.md2:
-        usr/share/games/quake2/baseq2/players/male/w_hyperblaster.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_machinegun.md2:
-        usr/share/games/quake2/baseq2/players/male/w_machinegun.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_phalanx.md2:
-        usr/share/games/quake2/baseq2/players/male/w_phalanx.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_plasma.md2:
-        usr/share/games/quake2/baseq2/players/male/w_plasma.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_plauncher.md2:
-        usr/share/games/quake2/baseq2/players/male/w_plauncher.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_railgun.md2:
-        usr/share/games/quake2/baseq2/players/male/w_railgun.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_ripper.md2:
-        usr/share/games/quake2/baseq2/players/male/w_ripper.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_rlauncher.md2:
-        usr/share/games/quake2/baseq2/players/male/w_rlauncher.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_shotgun.md2:
-        usr/share/games/quake2/baseq2/players/male/weapon.md2
-      usr/share/games/quake2/baseq2/players/cyborg/w_sshotgun.md2:
-        usr/share/games/quake2/baseq2/players/male/w_sshotgun.md2
-      usr/share/games/quake2/baseq2/players/cyborg/weapon.pcx:
-        usr/share/games/quake2/baseq2/players/male/weapon.pcx
-      usr/share/games/quake2/baseq2/players/cyborg/weapon.pcx.pcx:
-        usr/share/games/quake2/baseq2/players/male/weapon.pcx
-      usr/share/games/quake2/baseq2/players/female/weapon.pcx:
-        usr/share/games/quake2/baseq2/players/male/weapon.pcx
-      usr/share/games/quake2/baseq2/players/female/w_shotgun.md2:
-        usr/share/games/quake2/baseq2/players/female/weapon.md2
-      usr/share/games/quake2/baseq2/players/male/w_shotgun.md2:
-        usr/share/games/quake2/baseq2/players/male/weapon.md2
 
   quake2-demo-data:
     type: demo
     install_to: usr/share/games/quake2-demo
     install_contents_of:
     - q2-314-demo-x86.exe
-    symlinks:
-      usr/share/games/quake2-demo/baseq2/players/female/weapon.pcx:
-        usr/share/games/quake2-demo/baseq2/players/male/weapon.pcx
 
 files:
   q2-314-demo-x86.exe:
@@ -238,6 +186,7 @@ files:
     - baseq2/players/female/voodoo.pcx
     - baseq2/players/female/voodoo_i.pcx
     - baseq2/players/female/weapon.md2
+    - baseq2/players/female/weapon.pcx
     - baseq2/players/male/cipher.pcx
     - baseq2/players/male/cipher_i.pcx
     - baseq2/players/male/claymore.pcx
@@ -316,6 +265,7 @@ files:
     - baseq2/players/crakhor/w_rlauncher.md2
     - baseq2/players/crakhor/w_shotgun.md2
     - baseq2/players/crakhor/w_sshotgun.md2
+    - baseq2/players/cyborg/a_grenades.md2
     - baseq2/players/cyborg/bump1.wav
     - baseq2/players/cyborg/death1.wav
     - baseq2/players/cyborg/death2.wav
@@ -342,7 +292,27 @@ files:
     - baseq2/players/cyborg/tris.md2
     - baseq2/players/cyborg/tyr574.pcx
     - baseq2/players/cyborg/tyr574_i.pcx
+    - baseq2/players/cyborg/w_bfg.md2
+    - baseq2/players/cyborg/w_blaster.md2
+    - baseq2/players/cyborg/w_chainfist.md2
+    - baseq2/players/cyborg/w_chaingun.md2
+    - baseq2/players/cyborg/w_disrupt.md2
+    - baseq2/players/cyborg/w_etfrifle.md2
+    - baseq2/players/cyborg/w_glauncher.md2
+    - baseq2/players/cyborg/w_grapple.md2
+    - baseq2/players/cyborg/w_hyperblaster.md2
+    - baseq2/players/cyborg/w_machinegun.md2
+    - baseq2/players/cyborg/w_phalanx.md2
+    - baseq2/players/cyborg/w_plasma.md2
+    - baseq2/players/cyborg/w_plauncher.md2
+    - baseq2/players/cyborg/w_railgun.md2
+    - baseq2/players/cyborg/w_ripper.md2
+    - baseq2/players/cyborg/w_rlauncher.md2
+    - baseq2/players/cyborg/w_shotgun.md2
+    - baseq2/players/cyborg/w_sshotgun.md2
     - baseq2/players/cyborg/weapon.md2
+    - baseq2/players/cyborg/weapon.pcx
+    - baseq2/players/cyborg/weapon.pcx.pcx
     - baseq2/players/female/a_grenades.md2
     - baseq2/players/female/athena.pcx
     - baseq2/players/female/athena_i.pcx
@@ -399,7 +369,10 @@ files:
     - baseq2/players/female/w_railgun.md2
     - baseq2/players/female/w_ripper.md2
     - baseq2/players/female/w_rlauncher.md2
+    - baseq2/players/female/w_shotgun.md2
     - baseq2/players/female/w_sshotgun.md2
+    - baseq2/players/female/weapon.md2
+    - baseq2/players/female/weapon.pcx
     - baseq2/players/male/a_grenades.md2
     - baseq2/players/male/bump1.wav
     - baseq2/players/male/cipher.pcx
@@ -467,6 +440,7 @@ files:
     - baseq2/players/male/w_railgun.md2
     - baseq2/players/male/w_ripper.md2
     - baseq2/players/male/w_rlauncher.md2
+    - baseq2/players/male/w_shotgun.md2
     - baseq2/players/male/w_sshotgun.md2
     - baseq2/players/male/weapon.md2
     - baseq2/players/male/weapon.pcx
@@ -581,6 +555,7 @@ md5sums: |
   61bbf8e9a1fed45ef6c9eda9b2831f4c  baseq2/players/crakhor/w_rlauncher.md2
   ef962916f8286a8ac41a789691e7301d  baseq2/players/crakhor/w_shotgun.md2
   3b33ccd6743b80073f4876f10f4f777a  baseq2/players/crakhor/w_sshotgun.md2
+  8b26b6a4863b7e2c30b4dcd7867a6d10  baseq2/players/cyborg/a_grenades.md2
   b2f11bdabf2b09eb66075a18315dc1cf  baseq2/players/cyborg/bump1.wav
   3cbdf3527ca1bd4ae8ede5e2d7d08dd1  baseq2/players/cyborg/death1.wav
   5d45198b91768b300eb812cd13c9e8ea  baseq2/players/cyborg/death2.wav
@@ -607,7 +582,27 @@ md5sums: |
   43298b5020639a55db7d1e15d006495e  baseq2/players/cyborg/tris.md2
   992145603059a94688f36200e131d5eb  baseq2/players/cyborg/tyr574.pcx
   bb75a77e28a1ab81d518680bd7ebc86c  baseq2/players/cyborg/tyr574_i.pcx
+  234b1c49e4cc1dc86e9e46e4ab105479  baseq2/players/cyborg/w_bfg.md2
+  68a19777b8a25f1657e321d78b949347  baseq2/players/cyborg/w_blaster.md2
+  48890c7dae7053a8e9089abcaaa95cf9  baseq2/players/cyborg/w_chainfist.md2
+  fb92d87e2255d767e692dd4d5dda490b  baseq2/players/cyborg/w_chaingun.md2
+  a471b38d21d586da0a1064bfdeca9d04  baseq2/players/cyborg/w_disrupt.md2
+  48747d1bc3d81e698cf1fa6ee05607ea  baseq2/players/cyborg/w_etfrifle.md2
+  3c22c7dcfc75ce786bd7e5d5c61defb4  baseq2/players/cyborg/w_glauncher.md2
+  6081b82197fa8105e8380445a6422904  baseq2/players/cyborg/w_grapple.md2
+  eaa308d4893857646dba28cba84b35f9  baseq2/players/cyborg/w_hyperblaster.md2
+  f0db74b83301a5b6d5414abc115f268b  baseq2/players/cyborg/w_machinegun.md2
+  f99b7aa61adbfc59038a414e81b9af53  baseq2/players/cyborg/w_phalanx.md2
+  b70e91170b6923f83e089a865b26591e  baseq2/players/cyborg/w_plasma.md2
+  80caf9d707d2e681e0c54dda1f4fabf9  baseq2/players/cyborg/w_plauncher.md2
+  b5a6a8e1235e0129ba6474983aef9989  baseq2/players/cyborg/w_railgun.md2
+  b00cd4cce1cb9fdd9a6eeb1837f79778  baseq2/players/cyborg/w_ripper.md2
+  9656c56907b8284bbbf30fe60443b211  baseq2/players/cyborg/w_rlauncher.md2
+  e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/cyborg/w_shotgun.md2
+  46967dbfad628470a7bc344b20086d53  baseq2/players/cyborg/w_sshotgun.md2
   7a1e0e90a91338c5fa3f3733e6f0691c  baseq2/players/cyborg/weapon.md2
+  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/cyborg/weapon.pcx
+  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/cyborg/weapon.pcx.pcx
   3caf27fabfc11a5ee6c4b1c29ce12a9d  baseq2/players/female/a_grenades.md2
   55a4e452af3d421ab4f6b3497706cae2  baseq2/players/female/athena.pcx
   7245940c17b3afd002e65afbe79d218c  baseq2/players/female/athena_i.pcx
@@ -664,8 +659,10 @@ md5sums: |
   ec79193998da672c5f17aec8a781ceac  baseq2/players/female/w_railgun.md2
   bfcac9f7d7e9a69e45355faae9364589  baseq2/players/female/w_ripper.md2
   877ab9be5145d030cd5f682e61695007  baseq2/players/female/w_rlauncher.md2
+  3b9968c41e9fef1c8ce34305cc38d6f1  baseq2/players/female/w_shotgun.md2
   fbc4b51287c4b006b5a4d52a422db229  baseq2/players/female/w_sshotgun.md2
   3b9968c41e9fef1c8ce34305cc38d6f1  baseq2/players/female/weapon.md2
+  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/female/weapon.pcx
   8b26b6a4863b7e2c30b4dcd7867a6d10  baseq2/players/male/a_grenades.md2
   998f5a453be87f1301823ad4f2e3c818  baseq2/players/male/bump1.wav
   8b27adf487714b21c900af1474cecf9e  baseq2/players/male/cipher.pcx
@@ -733,6 +730,7 @@ md5sums: |
   b5a6a8e1235e0129ba6474983aef9989  baseq2/players/male/w_railgun.md2
   b00cd4cce1cb9fdd9a6eeb1837f79778  baseq2/players/male/w_ripper.md2
   9656c56907b8284bbbf30fe60443b211  baseq2/players/male/w_rlauncher.md2
+  e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/male/w_shotgun.md2
   46967dbfad628470a7bc344b20086d53  baseq2/players/male/w_sshotgun.md2
   e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/male/weapon.md2
   0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/male/weapon.pcx
@@ -891,6 +889,8 @@ md5sums: |
   d12db2c18be1206bd53eb64d486ce655  baseq2/players/female/venus_i.pcx
   c2ca5827551749ea7959d3326be7154d  baseq2/players/female/voodoo.pcx
   7d199b6f0f36655fbea4338ee85a7c89  baseq2/players/female/voodoo_i.pcx
+  3b9968c41e9fef1c8ce34305cc38d6f1  baseq2/players/female/weapon.md2
+  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/female/weapon.pcx
   8b27adf487714b21c900af1474cecf9e  baseq2/players/male/cipher.pcx
   d0c3e03850569d223a9705cd5aba608e  baseq2/players/male/cipher_i.pcx
   f192147481f31b16524d0bd4f9a7db5d  baseq2/players/male/claymore.pcx
@@ -923,6 +923,7 @@ md5sums: |
   930dd7b37f9a40dc0ed02aaa86039710  baseq2/players/male/tris.md2
   bfbba21b67600e4e7a02ce4cb92dd0b9  baseq2/players/male/viper.pcx
   05cc280cee4ce1cb61bed6fa87eae5f1  baseq2/players/male/viper_i.pcx
+  e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/male/weapon.md2
   0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/male/weapon.pcx
 
 # FIXME: below this point is unimplemented

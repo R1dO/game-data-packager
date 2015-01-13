@@ -403,9 +403,8 @@ class GameData(object):
         # { 14604584: set(['doom2.wad_1.9']) }
         self.known_sizes = {}
 
-        # Maps from md5, sha1, sha256 to the name of a unique
-        # WantedFile instance
-        # { '25e1459...': 'doom2.wad_1.9' }
+        # Maps from md5, sha1, sha256 to a set of names of WantedFile instances
+        # { '25e1459...': set(['doom2.wad_1.9']) }
         self.known_md5s = {}
         self.known_sha1s = {}
         self.known_sha256s = {}
@@ -467,22 +466,13 @@ class GameData(object):
                 self.known_filenames.setdefault(lf, set()).add(filename)
 
             if f.md5 is not None:
-                if self.known_md5s.get(f.md5):
-                    logger.warning('md5 %s matches %s and also %s' %
-                            (f.md5, self.known_md5s[f.md5], filename))
-                self.known_md5s[f.md5] = filename
+                self.known_md5s.setdefault(f.md5, set()).add(filename)
 
             if f.sha1 is not None:
-                if self.known_sha1s.get(f.sha1):
-                    logger.warning('sha1 %s matches %s and also %s' %
-                            (f.sha1, self.known_sha1s[f.sha1], filename))
-                self.known_sha1s[f.sha1] = filename
+                self.known_sha1s.setdefault(f.sha1, set()).add(filename)
 
             if f.sha256 is not None:
-                if self.known_sha256s.get(f.sha256):
-                    logger.warning('sha256 %s matches %s and also %s' %
-                            (f.sha256, self.known_sha256s[f.sha256], filename))
-                self.known_sha256s[f.sha256] = filename
+                self.known_sha256s.setdefault(f.sha256, set()).add(filename)
 
         if 'compress_deb' in self.yaml:
             self.compress_deb = self.yaml['compress_deb']
@@ -777,9 +767,9 @@ class GameData(object):
                                 [self.files[c] for c in candidates])
 
         if hashes is not None:
-            for wanted_name in (self.known_md5s.get(hashes.md5),
-                    self.known_sha1s.get(hashes.sha1),
-                    self.known_sha256s.get(hashes.sha256)):
+            for wanted_name in (self.known_md5s.get(hashes.md5, set()) |
+                    self.known_sha1s.get(hashes.sha1, set()) |
+                    self.known_sha256s.get(hashes.sha256, set())):
                 if wanted_name is not None and wanted_name not in tried:
                     tried.add(wanted_name)
                     if self.use_file(self.files[wanted_name], path, hashes):
