@@ -849,7 +849,8 @@ class GameData(object):
                     if alt in self.found:
                         break
                 else:
-                    if not self.fill_gap(wanted, download=download, log=log):
+                    if not self.fill_gap(package, wanted,
+                            download=download, log=log):
                         possible = False
 
         return possible
@@ -992,10 +993,10 @@ class GameData(object):
         random.shuffle(mirrors)
         return mirrors
 
-    def cat_files(self, provider, wanted):
+    def cat_files(self, package, provider, wanted):
         other_parts = provider.unpack['other_parts']
         for p in other_parts:
-            self.fill_gap(self.files[p], download=False, log=True)
+            self.fill_gap(package, self.files[p], download=False, log=True)
             if p not in self.found:
                 # can't concatenate: one of the bits is missing
                 break
@@ -1013,7 +1014,7 @@ class GameData(object):
                         progress=(wanted.size > QUITE_LARGE))
             self.use_file(wanted, path, hasher)
 
-    def fill_gap(self, wanted, download=False, log=True):
+    def fill_gap(self, package, wanted, download=False, log=True):
         """Try to unpack, download or otherwise obtain wanted.
 
         If download is true, we may attempt to download wanted or a
@@ -1031,7 +1032,7 @@ class GameData(object):
             for alt in wanted.alternatives:
                 if alt in self.found:
                     return True
-                elif self.fill_gap(self.files[alt], download=download,
+                elif self.fill_gap(package, self.files[alt], download=download,
                         log=False):
                     return True
 
@@ -1104,11 +1105,26 @@ class GameData(object):
                 # from files available locally
                 possible = True
 
-        for provider_name in self.providers.get(wanted.name, ()):
+        providers = list(self.providers.get(wanted.name, ()))
+
+        # if we are installing everything from a downloadable file,
+        # prefer to fill any gaps from that one, not some other
+        # (e.g. don't download the Quake II demo if we're building
+        # a .deb for the full game, just because their files happen to
+        # overlap)
+        for provider_name in package.install_contents_of:
+            if provider_name in providers:
+                logger.debug('preferring "%s" to provide files for %s',
+                        provider_name, package.name)
+                providers = [provider_name] + [p for p in providers if
+                        p != provider_name]
+
+        for provider_name in providers:
             provider = self.files[provider_name]
 
             # recurse to unpack or (see whether we can) download the provider
-            providable = self.fill_gap(provider, download=download, log=log)
+            providable = self.fill_gap(package, provider,
+                    download=download, log=log)
 
             if provider_name in self.found:
                 possible = True
@@ -1167,7 +1183,7 @@ class GameData(object):
                     for f in to_unpack:
                         self.consider_file(os.path.join(tmpdir, f), True)
                 elif fmt == 'cat':
-                    self.cat_files(provider, wanted)
+                    self.cat_files(package, provider, wanted)
 
             elif providable:
                 # we don't have it, but we can get it
