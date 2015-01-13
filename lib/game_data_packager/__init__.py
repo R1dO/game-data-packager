@@ -362,18 +362,11 @@ class GameData(object):
             else:
                 raise AssertionError('try_repack_from should be str or list')
 
-        if 'package' in self.yaml:
-            package = self.construct_package(self.yaml['package'])
-            self.packages[self.yaml['package']] = package
-            assert 'packages' not in self.yaml
-        else:
-            assert self.yaml['packages']
-            assert 'install_files' not in self.yaml
-
-            # these do not make sense at top level if there is more than
-            # one package
-            assert 'symlinks' not in self.yaml
-            assert 'install_files_from_cksums' not in self.yaml
+        # these should be per-package
+        assert 'install_files' not in self.yaml
+        assert 'package' not in self.yaml
+        assert 'symlinks' not in self.yaml
+        assert 'install_files_from_cksums' not in self.yaml
 
         # Map from WantedFile name to instance.
         # { 'baseq3/pak1.pk3': WantedFile instance }
@@ -410,7 +403,6 @@ class GameData(object):
         self.download_failed = set()
 
         self._populate_files(self.yaml.get('files'))
-        self._populate_files(self.yaml.get('install_files'), install=True)
 
         if 'package' in self.yaml:
             self._populate_package(next(iter(self.packages.values())),
@@ -419,6 +411,7 @@ class GameData(object):
         if 'packages' in self.yaml:
             for binary, data in self.yaml['packages'].items():
                 # these should only be at top level, since they are global
+                assert 'cksums' not in data, binary
                 assert 'md5sums' not in data, binary
                 assert 'sha1sums' not in data, binary
                 assert 'sha256sums' not in data, binary
@@ -426,6 +419,16 @@ class GameData(object):
                 package = self.construct_package(binary)
                 self.packages[binary] = package
                 self._populate_package(package, data)
+
+        if 'cksums' in self.yaml:
+            for line in self.yaml['cksums'].splitlines():
+                stripped = line.strip()
+                if stripped == '' or stripped.startswith('#'):
+                    continue
+
+                _, size, filename = line.split(None, 2)
+                f = self._ensure_file(filename)
+                f.size = int(size)
 
         for alg in ('md5', 'sha1', 'sha256'):
             if alg + 'sums' in self.yaml:
@@ -590,23 +593,15 @@ class GameData(object):
                 f.size = int(size)
                 package.install.add(filename)
 
-        self._populate_files(d.get('install_files'), install=True,
-                install_package=package)
+        self._populate_files(d.get('install_files'), install_package=package)
 
-    def _populate_files(self, d, install=False, install_package=None,
+    def _populate_files(self, d, install_package=None,
             **kwargs):
         if d is None:
             return
 
-        if install and install_package is None:
-            assert len(self.packages) == 1
-            install_package = next(iter(self.packages.values()))
-
         for filename, data in d.items():
-            if data.get('install', install):
-                if install_package is None:
-                    assert len(self.packages) == 1
-                    install_package = next(iter(self.packages.values()))
+            if install_package is not None:
                 install_package.install.add(filename)
 
             f = self._ensure_file(filename)
