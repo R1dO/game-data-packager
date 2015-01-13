@@ -1422,6 +1422,9 @@ class GameData(object):
             path = '/' + package.install_to
             if os.path.isdir(path):
                 args.paths.append(path)
+            path = '/usr/share/doc/' + package.name
+            if os.path.isdir(path):
+                args.paths.append(path)
 
         for path in self.iter_steam_paths():
             args.paths.append(path)
