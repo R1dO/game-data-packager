@@ -42,6 +42,16 @@ packages:
       usr/share/doc/rott-registered-data/LICENSE.TXT:
         usr/share/games/rott/LICENSE.TXT
 
+  rott-extreme-data:
+    type: expansion
+    longname: "Extreme Rise of the Triad"
+    install_to: usr/share/games/rott
+    install_files_from_cksums: |
+      30163438   282646   EXTREME.RTL
+    symlinks:
+      usr/share/doc/rott-extreme-data/LICENSE.TXT:
+        usr/share/games/rott/LICENSE.TXT
+
 files:
   1rott13.zip:
     size: 3668139
@@ -83,7 +93,6 @@ cksums: |
   530889864  29612  DEMO4_3.DMO_darkwar
   163316606  207174 ROTTCD.RTC
   1168858976 296840 ROTTSITE.RTC
-  30163438   282646 EXTREME.RTL
 
 md5sums: |
   001a2aafefe4f5394655f735ee60c326  DEMO1_3.DMO
