@@ -63,9 +63,9 @@ MD5SUM_DIVIDER = re.compile(r' [ *]?')
 class HashedFile(object):
     def __init__(self, name):
         self.name = name
-        self.md5 = None
-        self.sha1 = None
-        self.sha256 = None
+        self._md5 = None
+        self._sha1 = None
+        self._sha256 = None
         self.skip_hash_matching = False
 
     @classmethod
@@ -166,6 +166,36 @@ class HashedFile(object):
 
         return True
 
+    @property
+    def md5(self):
+        return self._md5
+    @md5.setter
+    def md5(self, value):
+        if self._md5 is not None and value != self._md5:
+            raise AssertionError('trying to set md5 of "%s" to both %s '
+                    + 'and %s', self.name, self._md5, value)
+        self._md5 = value
+
+    @property
+    def sha1(self):
+        return self._sha1
+    @sha1.setter
+    def sha1(self, value):
+        if self._sha1 is not None and value != self._sha1:
+            raise AssertionError('trying to set sha1 of "%s" to both %s '
+                    + 'and %s', self.name, self._sha1, value)
+        self._sha1 = value
+
+    @property
+    def sha256(self):
+        return self._sha256
+    @sha256.setter
+    def sha256(self, value):
+        if self._sha256 is not None and value != self._sha256:
+            raise AssertionError('trying to set sha256 of "%s" to both %s '
+                    + 'and %s', self.name, self._sha256, value)
+        self._sha256 = value
+
 class WantedFile(HashedFile):
     def __init__(self, name):
         super(WantedFile, self).__init__(name)
@@ -198,6 +228,9 @@ class WantedFile(HashedFile):
         return self._size
     @size.setter
     def size(self, value):
+        if self._size is not None and value != self._size:
+            raise AssertionError('trying to set size of "%s" to both %d '
+                    + 'and %d', self.name, self._size, value)
         self._size = int(value)
 
     @property
@@ -403,8 +436,6 @@ class GameData(object):
 
                     hexdigest, filename = MD5SUM_DIVIDER.split(line, 1)
                     f = self._ensure_file(filename)
-                    already = getattr(f, alg)
-                    assert (already == hexdigest or already is None), (alg, already, hexdigest)
                     setattr(f, alg, hexdigest)
 
         for filename, f in self.files.items():
@@ -556,9 +587,7 @@ class GameData(object):
 
                 _, size, filename = line.split(None, 2)
                 f = self._ensure_file(filename)
-                size = int(size)
-                assert (f.size == size or f.size is None), (f.size, size)
-                f.size = size
+                f.size = int(size)
                 package.install.add(filename)
 
         self._populate_files(d.get('install_files'), install=True,
