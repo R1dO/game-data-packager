@@ -29,7 +29,7 @@ do-quake2-rogue: do-common
 
 do-common:
 	install -d ${outdir}/quake2
-	m4 -DVERSION=${VERSION} < quake2/${PACKAGE}.control > ${outdir}/quake2/${PACKAGE}.control
+	m4 -DVERSION=${VERSION} < data/${PACKAGE}.control.in > ${outdir}/quake2/${PACKAGE}.control
 	chmod 0644 ${outdir}/quake2/${PACKAGE}.control
 	( \
 		md5sum ${outdir}/changelog.gz | \
