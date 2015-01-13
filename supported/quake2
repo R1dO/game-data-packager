@@ -456,7 +456,7 @@ go () {
 
     copyin "$DATADIR/changelog.gz" \
         "$DESTDIR/usr/share/doc/$deb/changelog.gz"
-    copyin "$DATADIR/quake2/${deb}.copyright" \
+    copyin "$DATADIR/${deb}.copyright" \
         "$DESTDIR/usr/share/doc/${deb}/copyright"
 
     copyin "$DATADIR/quake2/${deb}.control" \

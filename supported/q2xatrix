@@ -56,7 +56,7 @@ go() {
   ARCH=`dpkg-architecture -qDEB_BUILD_ARCH`
   echo "Architecture: $ARCH" > "$DESTDIR/DEBIAN/control"
   cat "$DATADIR/quake2/quake2-xatrix.control" >> "$DESTDIR/DEBIAN/control"
-  cp -p "$DATADIR/quake2/quake2-xatrix.copyright" "$DESTDIR/usr/share/doc/quake2-xatrix/copyright"
+  cp -p "$DATADIR/quake2-xatrix.copyright" "$DESTDIR/usr/share/doc/quake2-xatrix/copyright"
   
   if [ "" = "$OUTDIR" ]; then
       OUTFILE="$WORKDIR/out.deb"

@@ -29,13 +29,12 @@ do-quake2-rogue: do-common
 
 do-common:
 	install -d ${outdir}/quake2
-	install -m644 quake2/${PACKAGE}.copyright ${outdir}/quake2/
 	m4 -DVERSION=${VERSION} < quake2/${PACKAGE}.control > ${outdir}/quake2/${PACKAGE}.control
 	chmod 0644 ${outdir}/quake2/${PACKAGE}.control
 	( \
 		md5sum ${outdir}/changelog.gz | \
 			sed 's# .*#  usr/share/doc/${PACKAGE}/changelog.gz#'; \
-		md5sum ${outdir}/quake2/${PACKAGE}.copyright | \
+		md5sum data/${PACKAGE}.copyright | \
 			sed 's# .*#  usr/share/doc/${PACKAGE}/copyright#'; \
 	) > ${outdir}/quake2/${PACKAGE}.md5sums
 	chmod 0644 ${outdir}/quake2/${PACKAGE}.md5sums
