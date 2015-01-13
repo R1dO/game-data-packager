@@ -1,0 +1,84 @@
+%YAML 1.2
+---
+longname: Quake
+
+packages:
+  quake-shareware:
+    longname: Quake (shareware)
+    install:
+    - id1/pak0.pak
+    install_to: usr/share/games/quake
+
+  quake-registered:
+    install:
+    - id1/pak0.pak
+    - id1/pak1.pak
+    install_to: usr/share/games/quake
+
+  quake-armagon:
+    # FIXME: also needs to create executable hipnotic-tryexec.sh
+    install:
+    - hipnotic/pak0.pak
+    install_to: usr/share/games/quake
+
+  quake-dissolution:
+    # FIXME: also needs to create executable rogue-tryexec.sh
+    install:
+    - rogue/pak0.pak
+    install_to: usr/share/games/quake
+
+files:
+  id1/pak0.pak:
+    size: 18689235
+
+  id1/pak1.pak:
+    size: 34257856
+
+  hipnotic/pak0.pak:
+    size: 35527205
+
+  rogue/pak0.pak:
+    size: 37875279
+
+md5sums: |
+  5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak
+  d76b3e5678f0b64ac74ce5e340e6a685  id1/pak1.pak
+  0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak
+  c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak
+
+sha1sums: |
+  36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak
+  6fd0d1643047612f41afb2001b972d830c792921  id1/pak1.pak
+  1b089a41dd0cf9268668a5072acfb858a7fb8cc2  hipnotic/pak0.pak
+  78df8ce771d1bef5eb9da3d51c7628b11b4ae2c8  rogue/pak0.pak
+
+sha256sums: |
+  35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak
+  94e355836ec42bc464e4cbe794cfb7b5163c6efa1bcc575622bb36475bf1cf30  id1/pak1.pak
+  62b83569ba975015535be73407796ce0829ebcfa75a68fb29c67514649dc655f  hipnotic/pak0.pak
+  c3c40408f953e2de99f241dd85bf7854b69f1ae264b4e55a5657ef2ab12201a7  rogue/pak0.pak
+
+unimplemented:
+  quake-music:
+    install_to: usr/share/games/quake/id1/music
+    rip_cd:
+      encoding: vorbis
+      filename_format: "track%02d.ogg"
+      first_track: 2
+
+  quake2-armagon-music:
+    install_to: usr/share/games/quake/hipnotic/music
+    rip_cd:
+      encoding: vorbis
+      filename_format: "track%02d.ogg"
+      first_track: 2
+
+  quake2-dissolution-music:
+    install_to: usr/share/games/quake/rogue/music
+    rip_cd:
+      encoding: vorbis
+      filename_format: "track%02d.ogg"
+      first_track: 2
+
+...
+# vim:set sw=2 sts=2 et:
