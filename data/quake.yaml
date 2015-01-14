@@ -8,8 +8,6 @@ packages:
     longname: Quake (shareware)
     install:
     - id1/pak0.pak_106
-    # FIXME: feature not implemented yet
-    optional:
     - licinfo.txt_shareware
     - slicnse.txt
     install_to: usr/share/games/quake
@@ -21,10 +19,10 @@ packages:
     - id1/pak1.pak
     # FIXME: feature not implemented yet
     optional:
-    - comexp.txt_registered
-    - licinfo.txt_registered
-    - manual.txt_registered
-    - rlicnse.txt
+    - comexp.txt_101_cd
+    - licinfo.txt_101_cd
+    - manual.txt_101_cd
+    - rlicnse.txt_101_cd
     install_to: usr/share/games/quake
 
   quake-armagon:
@@ -65,15 +63,14 @@ files:
     install_as: licinfo.txt
     install_to: $docdir
 
-  licinfo.txt_registered:
+  licinfo.txt_101_cd:
     distinctive_name: false
     install_as: licinfo.txt
     install_to: $docdir
 
-  slicnse.txt_101_cd:
+  slicnse.txt:
     distinctive_name: false
     install_to: $docdir
-    install_as: slicnse.txt
 
   manual.txt_101_cd:
     distinctive_name: false
@@ -151,6 +148,16 @@ files:
     distinctive_name: false
     look_for:
     - resource.1
+    unpack:
+      format: lha
+      unpack:
+        - id1/pak0.pak
+        - licinfo.txt
+        - slicnse.txt
+    provides:
+    - id1/pak0.pak_106
+    - licinfo.txt_shareware
+    - slicnse.txt
 
   # found on retail Quake v1.06 CDROM according to #718688
   resource.1_106_cd:
