@@ -4,17 +4,22 @@ longname: Quake
 
 packages:
   quake-shareware:
+    type: demo
     longname: Quake (shareware)
     install:
     - id1/pak0.pak_106
+    # FIXME: feature not implemented yet
+    optional:
     - licinfo.txt_shareware
     - slicnse.txt
     install_to: usr/share/games/quake
 
   quake-registered:
+    type: full
     install:
     - id1/pak0.pak_106
     - id1/pak1.pak
+    # FIXME: feature not implemented yet
     optional:
     - comexp.txt_registered
     - licinfo.txt_registered
@@ -23,18 +28,22 @@ packages:
     install_to: usr/share/games/quake
 
   quake-armagon:
+    type: expansion
     longname: "Quake Mission Pack 1: Scourge of Armagon"
     install:
     - hipnotic/pak0.pak
+    # FIXME: feature not implemented yet
     optional:
     - manual.htm_mp1
     - manual.txt_mp1
     install_to: usr/share/games/quake
 
   quake-dissolution:
+    type: expansion
     longname: "Quake Mission Pack 2: Dissolution of Eternity"
     install:
     - rogue/pak0.pak
+    # FIXME: feature not implemented yet
     optional:
     - manual.htm_mp2
     - manual.txt_mp2
