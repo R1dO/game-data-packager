@@ -1383,6 +1383,29 @@ class GameData(object):
         self.argument_parser = parser
         return parser
 
+    def look_for_files(self, paths=(), search=True):
+        paths = list(paths)
+
+        if search:
+            for path in self.try_repack_from:
+                if os.path.isdir(path):
+                    paths.append(path)
+
+            for package in self.packages.values():
+                path = '/' + package.install_to
+                if os.path.isdir(path):
+                    paths.append(path)
+                path = '/usr/share/doc/' + package.name
+                if os.path.isdir(path):
+                    paths.append(path)
+
+            for path in self.iter_steam_paths():
+                paths.append(path)
+
+        for arg in paths:
+            logger.debug('%s...', arg)
+            self.consider_file_or_dir(arg)
+
     def run_command_line(self, args):
         logger.debug('package description:\n%s',
                 yaml.safe_dump(self.to_yaml()))
@@ -1397,24 +1420,7 @@ class GameData(object):
 
         compress = getattr(args, 'compress', True)
 
-        for path in self.try_repack_from:
-            if os.path.isdir(path):
-                args.paths.append(path)
-
-        for package in self.packages.values():
-            path = '/' + package.install_to
-            if os.path.isdir(path):
-                args.paths.append(path)
-            path = '/usr/share/doc/' + package.name
-            if os.path.isdir(path):
-                args.paths.append(path)
-
-        for path in self.iter_steam_paths():
-            args.paths.append(path)
-
-        for arg in args.paths:
-            logger.debug('%s...', arg)
-            self.consider_file_or_dir(arg)
+        self.look_for_files(paths=args.paths, search=args.search)
 
         possible = set()
 
@@ -1637,6 +1643,15 @@ def run_command_line():
     group.add_argument('--no-compress', action='store_false',
             dest='compress',
             help='do not compress generated .deb (default without -d)')
+
+    group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('--search', action='store_true',
+            default=True,
+            help='look for installed files in Steam and other likely places ' +
+                '(default)')
+    group.add_argument('--no-search', action='store_false',
+            dest='search',
+            help='only look in paths provided on the command line')
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.', parents=(base_parser,))
