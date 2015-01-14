@@ -572,26 +572,10 @@ class GameData(object):
         }
 
     def _populate_package(self, package, d):
-        if 'type' in d:
-            package.type = d['type']
-
-        if 'longname' in d:
-            package.longname = d['longname']
-
-        if 'symlinks' in d:
-            package.symlinks = d['symlinks']
-
-        if 'install_to' in d:
-            package.install_to = d['install_to']
-
-        if 'install_to_docdir' in d:
-            package.install_to_docdir = d['install_to_docdir']
-
-        if 'install_contents_of' in d:
-            package.install_contents_of = d['install_contents_of']
-
-        if 'steam' in d:
-            package.steam = d['steam']
+        for k in ('type', 'longname', 'symlinks', 'install_to',
+                'install_to_docdir', 'install_contents_of', 'steam'):
+            if k in d:
+                setattr(package, k, d[k])
 
         if 'install' in d:
             for filename in d['install']:
