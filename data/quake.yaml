@@ -6,57 +6,297 @@ packages:
   quake-shareware:
     longname: Quake (shareware)
     install:
-    - id1/pak0.pak
+    - id1/pak0.pak_106
+    - licinfo.txt_shareware
+    - slicnse.txt
     install_to: usr/share/games/quake
 
   quake-registered:
     install:
-    - id1/pak0.pak
+    - id1/pak0.pak_106
     - id1/pak1.pak
+    optional:
+    - comexp.txt_registered
+    - licinfo.txt_registered
+    - manual.txt_registered
+    - rlicnse.txt
     install_to: usr/share/games/quake
 
   quake-armagon:
     longname: "Quake Mission Pack 1: Scourge of Armagon"
     install:
     - hipnotic/pak0.pak
+    optional:
+    - manual.htm_mp1
+    - manual.txt_mp1
     install_to: usr/share/games/quake
 
   quake-dissolution:
     longname: "Quake Mission Pack 2: Dissolution of Eternity"
     install:
     - rogue/pak0.pak
+    optional:
+    - manual.htm_mp2
+    - manual.txt_mp2
     install_to: usr/share/games/quake
 
 files:
-  id1/pak0.pak:
+  id1/pak0.pak_101:
+    unsuitable: version 1.01, should be replaced by v1.06 automatically
+
+  id1/pak0.pak_106:
     size: 18689235
+    install_as: id1/pak0.pak
 
   id1/pak1.pak:
     size: 34257856
 
+  licinfo.txt_shareware:
+    distinctive_name: false
+    install_as: licinfo.txt
+    install_to: $docdir
+
+  licinfo.txt_registered:
+    distinctive_name: false
+    install_as: licinfo.txt
+    install_to: $docdir
+
+  slicnse.txt_101_cd:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: slicnse.txt
+
+  manual.txt_101_cd:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: manual.txt
+
+  comexp.txt_101_cd:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: comexp.txt
+
+  rlicnse.txt_101_cd:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: rlicnse.txt
+
+  manual.htm_mp1:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: manual.html
+    look_for:
+    - manual.html
+    - manual.htm
+
+  manual.txt_mp1:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: manual.txt
+
+  manual.htm_mp2:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: manual.html
+    look_for:
+    - manual.html
+    - manual.htm
+
+  manual.txt_mp2:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: manual.txt
+
   hipnotic/pak0.pak:
-    size: 35527205
+    alternatives:
+    - hipnotic/pak0.pak_orig
+    - hipnotic/pak0.pak_qdq_glquake_compat
+  hipnotic/pak0.pak_orig:
+    look_for: [hipnotic/pak0.pak]
+  hipnotic/pak0.pak_qdq_glquake_compat:
+    look_for: [hipnotic/pak0.pak]
 
   rogue/pak0.pak:
+    alternatives:
+    - rogue/pak0.pak_mp12_cd
+    - rogue/pak0.pak_mp2_cd
+    - rogue/pak0.pak_steam
+  rogue/pak0.pak_mp2_cd:
+    look_for: [rogue/pak0.pak]
+  rogue/pak0.pak_steam:
+    look_for: [rogue/pak0.pak]
+  rogue/pak0.pak_mp12_cd:
     size: 37875279
+    look_for: [rogue/pak0.pak]
+
+  quake106.zip:
+    download:
+      idstuff-mirrors:
+        path: quake
+    unpack:
+      format: zip
+    provides:
+    - resource.1_106_demo
+
+  resource.1_106_demo:
+    distinctive_name: false
+    look_for:
+    - resource.1
+
+  # found on retail Quake v1.06 CDROM according to #718688
+  resource.1_106_cd:
+    distinctive_name: false
+    look_for:
+    - resource.1
+    unpack:
+      format: lha
+      unpack:
+      - ID1/PAK0.PAK
+      - ID1/PAK1.PAK
+    provides:
+    - id1/pak0.pak_106
+    - id1/pak1.pak
+
+  q101_int.1:
+    provides:
+    - q101_int.exe
+    unpack:
+      format: cat
+      other_parts: [q101_int.2]
+
+  q101_int.exe:
+    provides:
+    - comexp.txt_101_cd
+    - licinfo.txt_101_cd
+    - manual.txt_101_cd
+    - rlicnse.txt_101_cd
+    - id1/pak1.pak
+    # also id1/pak0.pak_101 but that's of little use to us
+    unpack:
+      format: lha
+
+cksums: |
+  # demo, free to download
+  263390945 9094045 quake106.zip
+  # unpacks into:
+  3503147729 9086574 resource.1_106_demo
+  # unpacks into:
+  22264292 10036 slicnse.txt
+  3091285839 9311 licinfo.txt_shareware
+  _ 18689235 id1/pak0.pak_106
+
+  # Quake 1.01 CD (skitt@)
+  326782693 15323555 q101_int.1
+  1346095307 9228516 q101_int.2
+  # q101_int.[12] concatenate to...
+  3769782044 24552071 q101_int.exe
+  # which contains:
+  3351025396 25462 comexp.txt_101_cd
+  3946223549 4031 licinfo.txt_101_cd
+  1339070913 44326 manual.txt_101_cd
+  3769057337 10862 rlicnse.txt_101_cd
+  4232016217 18276119 id1/pak0.pak_101
+  3683309993 34257856 id1/pak1.pak
+
+  # Scourge of Armagon CD (skitt@)
+  345401104 40564 manual.htm_mp1_cd
+  2684027732 29551 manual.txt_mp1_cd
+  415120192 35527205 hipnotic/pak0.pak_orig
+  # The CD has eight audio tracks (2 to 9) with the following lengths:
+  # track 2: 3m:10.840s
+  # track 3: 3m:11.173s
+  # track 4: 3m:03.706s
+  # track 5: 3m:12.293s
+  # track 6: 3m:13.066s
+  # track 7: 3m:06.653s
+  # track 8: 3m:03.240s
+  # track 9: 3m:03.400s
+
+  # Dissolution of Eternity CD (skitt@)
+  1111051062 43702 manual.htm_mp2_cd
+  27864436 30664 manual.txt_mp2_cd
+  4033998175 37875279 rogue/pak0.pak_mp2_cd
+  # The CD has eight audio tracks as follows:
+  # track 2: 3m:12.000s
+  # track 3: 3m:09.680s
+  # track 4: 3m:06.813s
+  # track 5: 3m:09.213s
+  # track 6: 3m:17.346s
+  # track 7: 3m:04.013s
+  # track 8: 3m:06.573s
+  # track 9: 3m:09.466s
 
 md5sums: |
-  5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak
+  5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak_106
+  85fc9cee2035b66290da1e33be2ac86b  id1/pak0.pak_101
   d76b3e5678f0b64ac74ce5e340e6a685  id1/pak1.pak
-  0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak
-  c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak
+  0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak_orig
+  # "MD5 sum for glQuake-compatible version (see
+  # http://speeddemosarchive.com/quake/qdq/movies/sds.html for more info)"
+  f05b7452ae725e060fb3d14f7731fb00  hipnotic/pak0.pak_qdq_glquake_compat
+  c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak_mp12_cd
+  f8898a483b131de21581656c94f3c1a4  rogue/pak0.pak_mp2_cd
+  f71428763229bdb373f00a547296efe3  rogue/pak0.pak_steam
+  8cee4d03ee092909fdb6a4f84f0c1357  quake106.zip
+  994d127ea51ba4bae1030cb7242806aa  resource.1_106_demo
+  959e4bd69d817ee0cbea6ddbf4f3af37  resource.1_106_cd
+  752f49131bb3ba832346e873c1bcfdc6  q101_int.1
+  9ed67b39020575771e29645d977c9216  q101_int.2
+  00ec83fe931371ddae30f9b7c83d414c  q101_int.exe
+  0575bbd0df753f6e44b7a0f67ffc1413  comexp.txt_101_cd
+  f1a3b7c5c163059345d7507ad1324e3d  licinfo.txt_101_cd
+  beaa9e3a9a8ef071d876d59fe35817ce  manual.txt_101_cd
+  c19fec3ec138ee39868a021acaa34d65  rlicnse.txt_101_cd
+  d571f4e25c39a6ee1aa5e71dd7219838  manual.htm_mp1_cd
+  9e5a6f56047e1b586be108c0598cbe5e  manual.txt_mp1_cd
+  6d258cb6d042c10b0f638b4dbf7b242d  manual.htm_mp2_cd
+  7d9d3fad75c0ee581a8265e59151ee2c  manual.txt_mp2_cd
+  5450cdeca31e270a64fc64e1b52a25a6  slicnse.txt
+  2b63fd0623b86b22ef915c7c0fca8ff2  licinfo.txt_shareware
 
 sha1sums: |
-  36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak
+  36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak_106
   6fd0d1643047612f41afb2001b972d830c792921  id1/pak1.pak
-  1b089a41dd0cf9268668a5072acfb858a7fb8cc2  hipnotic/pak0.pak
-  78df8ce771d1bef5eb9da3d51c7628b11b4ae2c8  rogue/pak0.pak
+  1b089a41dd0cf9268668a5072acfb858a7fb8cc2  hipnotic/pak0.pak_orig
+  78df8ce771d1bef5eb9da3d51c7628b11b4ae2c8  rogue/pak0.pak_mp12_cd
+  f8a1a509b094ccdbed3c54b96f7d9b351c0898f5  quake106.zip
+  5301abe61da5876aac74f8a112e0e66ff1ce1aea  resource.1_106_demo
+  cb4c93b3b3715d228628452700aa5210319819b1  q101_int.1
+  0635481600468265453eb1f22e7ac12303cdab94  q101_int.2
+  05c914478ac19e19561916c18b2327343b825dbb  q101_int.exe
+  606c21d258d58823a605fc20f5c45600d9b0ffb0  comexp.txt_101_cd
+  1ee3fef4440431a26235f7375632a523c1776466  licinfo.txt_101_cd
+  1296dc25be9412b7a09eb7fbf6883638895fa402  manual.txt_101_cd
+  26767c3ee16d16c36031789f851644afa79fbca4  rlicnse.txt_101_cd
+  f856211bbd001fdd45ef6723471bb821b39271f9  manual.htm_mp1_cd
+  d843e899db57630c612ff71207cd1c52f7415850  manual.txt_mp1_cd
+  25b37eb5a420ffef67ce23b52a086464e4d6b18e  manual.htm_mp2_cd
+  fa3365bc72459409f87b370a5ccf3b0a143bb7ff  manual.txt_mp2_cd
+  cc81b8f6acde6dde148a91f2f34ef172192c2036  rogue/pak0.pak_mp2_cd
+  202c682a486bbfe1f0d8f2526d64a4974fcbce5e  slicnse.txt
+  af53bc70e4d1a2ae9fa7921744292aa9d8590e4a  licinfo.txt_shareware
 
 sha256sums: |
-  35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak
+  35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak_106
   94e355836ec42bc464e4cbe794cfb7b5163c6efa1bcc575622bb36475bf1cf30  id1/pak1.pak
-  62b83569ba975015535be73407796ce0829ebcfa75a68fb29c67514649dc655f  hipnotic/pak0.pak
-  c3c40408f953e2de99f241dd85bf7854b69f1ae264b4e55a5657ef2ab12201a7  rogue/pak0.pak
+  62b83569ba975015535be73407796ce0829ebcfa75a68fb29c67514649dc655f  hipnotic/pak0.pak_orig
+  c3c40408f953e2de99f241dd85bf7854b69f1ae264b4e55a5657ef2ab12201a7  rogue/pak0.pak_mp12_cd
+  ec6c9d34b1ae0252ac0066045b6611a7919c2a0d78a3a66d9387a8f597553239  quake106.zip
+  c192c9c71bee41750dd7d14c99378766d61e077977b9d13d1a457b8d9eabe34a  resource.1_106_demo
+  9069aa9e6e421520419621df06ee2464d912d37f456544e01b99dce95e96d603  q101_int.1
+  7386c8dfc0479b96a509b8f910923482a460812dc286bff1027745b2342cbad2  q101_int.2
+  49754ddfe94e186ce8f9d6ecdf0bcfcda1d9f77f8b661622ee6a1d056a174862  q101_int.exe
+  82e2d4eefc220d3b595a74317155c3159d758d5fda288f039a9371ed13e5a11a  comexp.txt_101_cd
+  52952e005f5bcd9bca0813eb8d3b2b4ce860ff6b48ee17e30bd8be872c3268ae  licinfo.txt_101_cd
+  aaec528149360af828c499b3e3a53b0bccf31778876f159b532888bf33df54ad  manual.txt_101_cd
+  c16e5944f9fa873444458923622654b49f51b8064e081d01c0894ebf22fe3abe  rlicnse.txt_101_cd
+  ee1ac8bd99e3e8a3dbf4692b5563d24300f6041bcbb59944bd834084631b07b8  manual.htm_mp1_cd
+  2cc953802c9b6d5ac680438b4f88213a8657ece4f2ab7b67b51a590b125d4d88  manual.txt_mp1_cd
+  e1a0117c8f97305b72da97fd34873669836eb48702f7272abe42bd53c129024a  manual.htm_mp2_cd
+  ffdb37e124bf1f35d149a63a2b5cdc8ddd31c3b571c39003d986111450c91584  manual.txt_mp2_cd
+  51b861f617f280cf02b78b7f867f5e9522f82d12d9b28d5bfad6b554834f40e3  rogue/pak0.pak_mp2_cd
+  070cdf6a6410adef8fb5f83a4e5ccdb9e2301d2e48d460bb3a67a0f5ba9d70a8  slicnse.txt
+  8d654834d085c088d603fb6879a874799e8b4cc6ae9317bbf826afd83bc72e31  licinfo.txt_shareware
 
 unimplemented:
   quake-music:
