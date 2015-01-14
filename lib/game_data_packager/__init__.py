@@ -19,6 +19,8 @@
 """Prototype for a more data-driven game-data-packager implementation.
 """
 
+from collections import defaultdict
+from enum import Enum
 import argparse
 import glob
 import hashlib
@@ -59,6 +61,27 @@ else:
 QUITE_LARGE = 50 * MEBIBYTE
 
 MD5SUM_DIVIDER = re.compile(r' [ *]?')
+
+class FillResult(Enum):
+    UNDETERMINED = 0
+    IMPOSSIBLE = 1
+    DOWNLOAD_NEEDED = 2
+    COMPLETE = 3
+
+    def __and__(self, other):
+        if other is FillResult.UNDETERMINED:
+            return self
+
+        if self is FillResult.UNDETERMINED:
+            return other
+
+        if other is FillResult.IMPOSSIBLE or self is FillResult.IMPOSSIBLE:
+            return FillResult.IMPOSSIBLE
+
+        if other is FillResult.DOWNLOAD_NEEDED or self is FillResult.DOWNLOAD_NEEDED:
+            return FillResult.DOWNLOAD_NEEDED
+
+        return FillResult.COMPLETE
 
 class HashedFile(object):
     def __init__(self, name):
@@ -416,6 +439,9 @@ class GameData(object):
 
         # Failed downloads
         self.download_failed = set()
+
+        # Map from GameDataPackage name to whether we can do it
+        self.package_status = defaultdict(lambda: FillResult.UNDETERMINED)
 
         self._populate_files(self.yaml.get('files'))
 
@@ -806,11 +832,11 @@ class GameData(object):
                     'directory', path)
 
     def fill_gaps(self, package, download=False, log=True):
+        """Return a FillResult.
+        """
         assert package is not None
 
         logger.debug('trying to fill any gaps for %s', package.name)
-
-        possible = True
 
         for filename in package.install:
             if filename not in self.found:
@@ -823,6 +849,8 @@ class GameData(object):
                     logger.debug('gap needs to be filled for %s: %s',
                             package.name, filename)
 
+        result = FillResult.COMPLETE
+
         for filename in package.install:
             if filename not in self.found:
                 wanted = self.files[filename]
@@ -831,11 +859,15 @@ class GameData(object):
                     if alt in self.found:
                         break
                 else:
-                    if not self.fill_gap(package, wanted,
+                    if self.fill_gap(package, wanted,
                             download=download, log=log):
-                        possible = False
+                        if filename not in self.found:
+                            result &= FillResult.DOWNLOAD_NEEDED
+                    else:
+                        result = FillResult.IMPOSSIBLE
 
-        return possible
+        self.package_status[package.name] = result
+        return result
 
     def consider_zip(self, name, zf, provider):
         should_provide = set(provider.provides)
@@ -1429,7 +1461,7 @@ class GameData(object):
                     package.name != args.shortname):
                 continue
 
-            if self.fill_gaps(package, log=False):
+            if self.fill_gaps(package, log=False) is not FillResult.IMPOSSIBLE:
                 logger.debug('%s is possible', package.name)
                 possible.add(package)
             else:
@@ -1441,7 +1473,8 @@ class GameData(object):
             # demo/shareware package, so we can log its errors.
             for package in self.packages.values():
                 if package.type == 'demo':
-                    if self.fill_gaps(package=package, log=True):
+                    if self.fill_gaps(package=package,
+                            log=True) is not FillResult.IMPOSSIBLE:
                         logger.error('%s unexpectedly succeeded on second ' +
                                 'attempt. Please report this as a bug',
                                 package.name)
@@ -1454,7 +1487,8 @@ class GameData(object):
                 # (hopefully only) full package, so we can log *its* errors.
                 for package in self.packages.values():
                     if package.type == 'full':
-                        if self.fill_gaps(package=package, log=True):
+                        if self.fill_gaps(package=package,
+                                log=True) is not FillResult.IMPOSSIBLE:
                             logger.error('%s unexpectedly succeeded on ' +
                                     'second attempt. Please report this as '
                                     'a bug', package.name)
@@ -1483,7 +1517,8 @@ class GameData(object):
                 continue
 
             logger.debug('will produce %s', package.name)
-            if self.fill_gaps(package=package, download=True, log=True):
+            if self.fill_gaps(package=package, download=True,
+                    log=True) is FillResult.COMPLETE:
                 ready.add(package)
             else:
                 logger.error('Failed to download necessary files for %s',
