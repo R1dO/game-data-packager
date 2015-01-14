@@ -30,6 +30,8 @@ clean:
 
 else
 
+do-${PACKAGE}: ${outdir}/${PACKAGE}.copyright
+
 $(QUAKEDEB): \
 	$(builddir)/$(PACKAGE)/DEBIAN/md5sums \
 	$(builddir)/$(PACKAGE)/DEBIAN/control \
@@ -57,6 +59,9 @@ $(builddir)/$(PACKAGE)/DEBIAN/md5sums: \
 $(builddir)/$(PACKAGE)/usr/share/doc/$(PACKAGE)/changelog.gz: debian/changelog
 	install -d `dirname $@`
 	gzip -c9 debian/changelog > $@
+
+${outdir}/${PACKAGE}.copyright:
+	m4 -DPACKAGE=$(PACKAGE) quake-common/copyright.in > $@
 
 $(builddir)/$(PACKAGE)/usr/share/doc/$(PACKAGE)/copyright: quake-common/copyright.in
 	install -d `dirname $@`
