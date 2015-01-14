@@ -16,8 +16,10 @@
 # /usr/share/common-licenses/GPL-2.
 
 import logging
+import os
 
 from .. import GameData
+from ..util import TemporaryUmask, mkdir_p
 
 logger = logging.getLogger('game-data-packager.games.quake')
 
