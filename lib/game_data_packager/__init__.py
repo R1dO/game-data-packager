@@ -419,10 +419,6 @@ class GameData(object):
 
         self._populate_files(self.yaml.get('files'))
 
-        if 'package' in self.yaml:
-            self._populate_package(next(iter(self.packages.values())),
-                    self.yaml)
-
         assert 'packages' in self.yaml
 
         for binary, data in self.yaml['packages'].items():
