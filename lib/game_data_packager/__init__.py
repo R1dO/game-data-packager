@@ -1149,7 +1149,7 @@ class GameData(object):
                     mkdir_p(tmpdir)
                     subprocess.check_call(['lha', 'xq',
                                 os.path.abspath(found_name)] +
-                            to_unpack, cwd=tmpdir)
+                            list(to_unpack), cwd=tmpdir)
                     for f in to_unpack:
                         self.consider_file(os.path.join(tmpdir, f), True)
                 elif fmt == 'id-shr-extract':
