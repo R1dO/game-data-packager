@@ -4,11 +4,11 @@ srcdir = $(CURDIR)
 builddir = $(CURDIR)/build
 outdir = $(CURDIR)/out
 
+all: do-$(PACKAGE)
+
 QUAKEDEB = $(outdir)/$(PACKAGE)_$(VERSION)_all.deb
 
 ifeq ($(filter-out quake-music quake-%-music,$(PACKAGE)),)
-
-all: do-$(PACKAGE)
 
 do-${PACKAGE}: do-common
 	install -m644 data/quake-music.copyright ${outdir}/${PACKAGE}.copyright
@@ -30,7 +30,7 @@ clean:
 
 else
 
-do-${PACKAGE}: ${outdir}/${PACKAGE}.copyright
+do-${PACKAGE}: ${outdir}/${PACKAGE}.copyright $(QUAKEDEB)
 
 $(QUAKEDEB): \
 	$(builddir)/$(PACKAGE)/DEBIAN/md5sums \
@@ -67,10 +67,10 @@ $(builddir)/$(PACKAGE)/usr/share/doc/$(PACKAGE)/copyright: quake-common/copyrigh
 	install -d `dirname $@`
 	m4 -DPACKAGE=$(PACKAGE) quake-common/copyright.in > $@
 
-$(builddir)/$(PACKAGE)/DEBIAN/control: quake-common/DEBIAN/control.in
+$(builddir)/$(PACKAGE)/DEBIAN/control: data/quake-common.control.in
 	install -d `dirname $@`
 	m4 -DVERSION=$(VERSION) -DPACKAGE=$(PACKAGE) -DLONG="$(LONG)" \
-	     < quake-common/DEBIAN/control.in > $@
+	     < $< > $@
 	if [ "$(PACKAGE)" = "quake-registered" ]; then \
 	  echo Conflicts: quake-shareware >> $@; \
 	  echo Replaces: quake-shareware >> $@; \

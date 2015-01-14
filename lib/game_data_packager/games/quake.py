@@ -19,6 +19,7 @@ import logging
 import os
 
 from .. import GameData
+from ..paths import DATADIR
 from ..util import TemporaryUmask, mkdir_p
 
 logger = logging.getLogger('game-data-packager.games.quake')
@@ -29,6 +30,30 @@ class QuakeGameData(GameData):
     but with a name like hipnotic-tryexec.sh it would seem silly for it
     not to be a shell script.
     """
+
+    def get_control_template(self, package):
+        for name in (package.name, 'quake-common'):
+            path = os.path.join(DATADIR, '%s.control.in' % name)
+            if os.path.exists(path):
+                return path
+        else:
+            raise AssertionError('quake-common.control.in should exist')
+
+    def modify_control_template(self, control, package, destdir):
+        super(QuakeGameData, self).modify_control_template(control, package,
+                destdir)
+
+        desc = control['Description']
+        desc = desc.replace('LONG', (package.longname or self.longname))
+        control['Description'] = desc
+
+        if package.name == 'quake-registered':
+            control['Conflicts'] = 'quake-shareware'
+            control['Replaces'] = 'quake-shareware'
+        elif package.name == 'quake-shareware':
+            control['Conflicts'] = 'quake-registered'
+        else:
+            control['Depends'] = 'quake-registered'
 
     def fill_extra_files(self, package, destdir):
         super(QuakeGameData, self).fill_extra_files(package, destdir)
