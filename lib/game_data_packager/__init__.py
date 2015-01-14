@@ -518,10 +518,10 @@ class GameData(object):
                 # if this is a placeholder for a bunch of alternatives, then
                 # it doesn't make sense for it to have a defined checksum
                 # or size
-                assert wanted.md5 is None
-                assert wanted.sha1 is None
-                assert wanted.sha256 is None
-                assert wanted.size is None
+                assert wanted.md5 is None, wanted.name
+                assert wanted.sha1 is None, wanted.name
+                assert wanted.sha256 is None, wanted.name
+                assert wanted.size is None, wanted.name
 
     def __enter__(self):
         return self
