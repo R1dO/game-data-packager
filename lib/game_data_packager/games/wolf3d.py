@@ -22,8 +22,8 @@ from .. import GameData
 logger = logging.getLogger('game-data-packager.games.wolf3d')
 
 class Wolf3DGameData(GameData):
-    def add_parser(self, parsers):
-        parser = super(Wolf3DGameData, self).add_parser(parsers)
+    def add_parser(self, parsers, base_parser):
+        parser = super(Wolf3DGameData, self).add_parser(parsers, base_parser)
         parser.add_argument('-f', action='append', dest='paths',
                 metavar='1wolf14.zip', help='Path to 1wolf14.zip')
         parser.add_argument('-w', dest='download', action='store_true',

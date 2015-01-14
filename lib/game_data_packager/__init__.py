@@ -1360,11 +1360,12 @@ class GameData(object):
     def get_control_template(self, package):
         return os.path.join(DATADIR, package.name + '.control.in')
 
-    def add_parser(self, parsers):
+    def add_parser(self, parsers, base_parser):
         parser = parsers.add_parser(self.shortname,
                 help=self.longname, aliases=self.packages.keys(),
                 description=self.help_text,
-                formatter_class=argparse.RawDescriptionHelpFormatter)
+                formatter_class=argparse.RawDescriptionHelpFormatter,
+                parents=(base_parser,))
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE',
                 help='Files to use in constructing the .deb')
@@ -1615,8 +1616,30 @@ def load_yaml_games(workdir=None):
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
 
+    base_parser = argparse.ArgumentParser(prog='game-data-packager',
+            description='Package game files.',
+            add_help=False)
+
+    # Misc options
+    group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('-i', '--install', action='store_true',
+            help='install the generated package')
+    group.add_argument('-n', '--no-install', action='store_false',
+            dest='install',
+            help='do not install the generated package (requires -d, default)')
+    base_parser.add_argument('-d', '--destination', metavar='OUTDIR',
+            help='write the generated .deb(s) to OUTDIR')
+
+    group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('-z', '--compress', action='store_true',
+            default=None,
+            help='compress generated .deb (default if -d is used)')
+    group.add_argument('--no-compress', action='store_false',
+            dest='compress',
+            help='do not compress generated .deb (default without -d)')
+
     parser = argparse.ArgumentParser(prog='game-data-packager',
-            description='Package game files.')
+            description='Package game files.', parents=(base_parser,))
 
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
@@ -1624,22 +1647,7 @@ def run_command_line():
     games = load_yaml_games(os.environ.get('WORKDIR', None))
 
     for g in sorted(games.keys()):
-        games[g].add_parser(game_parsers)
-
-    # Misc options
-    parser.add_argument('-i', '--install', action='store_true',
-            help='install the generated package')
-    parser.add_argument('-n', '--no-install', action='store_false',
-            dest='install',
-            help='do not install the generated package (requires -d, default)')
-    parser.add_argument('-d', '--destination', metavar='OUTDIR',
-            help='write the generated .deb(s) to OUTDIR')
-    parser.add_argument('-z', '--compress', action='store_true',
-            default=None,
-            help='compress generated .deb (default unless -i is used)')
-    parser.add_argument('--no-compress', action='store_false',
-            dest='compress',
-            help='do not compress generated .deb (default with -i)')
+        games[g].add_parser(game_parsers, base_parser)
 
     parsed = parser.parse_args()
 
