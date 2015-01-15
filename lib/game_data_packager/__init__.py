@@ -881,8 +881,8 @@ class GameData(object):
                     for alt in wanted.alternatives:
                         self.file_status[filename] |= self.file_status[alt]
                 else:
-                    self.file_status[filename] &= self.fill_gap(package,
-                            wanted, download=download, log=log)
+                    # updates file_status as a side-effect
+                    self.fill_gap(package, wanted, download=download, log=log)
 
             result &= self.file_status[filename]
 
