@@ -3,6 +3,10 @@
 packages:
   quake2-full-data:
     type: full
+    longname: Quake II
+    steam:
+      id: 2320
+      path: "common/Quake 2"
     install_to: usr/share/games/quake2
     install_contents_of:
     - q2-3.20-x86-full-ctf.exe
