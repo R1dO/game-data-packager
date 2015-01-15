@@ -1745,5 +1745,4 @@ def run_command_line():
         sys.exit(0)
 
     with games[parsed.shortname] as game:
-        parsed = parser.parse_args()
         game.run_command_line(parsed)
