@@ -1684,9 +1684,13 @@ def load_yaml_games(workdir=None):
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
 
+    # Don't set any defaults on this base parser, because it interferes
+    # with the ability to recognise the same argument either before or
+    # after the game name. Set them on the Namespace instead.
     base_parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.',
-            add_help=False)
+            add_help=False,
+            argument_default=argparse.SUPPRESS)
 
     # Misc options
     group = base_parser.add_mutually_exclusive_group()
@@ -1700,7 +1704,6 @@ def run_command_line():
 
     group = base_parser.add_mutually_exclusive_group()
     group.add_argument('-z', '--compress', action='store_true',
-            default=None,
             help='compress generated .deb (default if -d is used)')
     group.add_argument('--no-compress', action='store_false',
             dest='compress',
@@ -1708,7 +1711,6 @@ def run_command_line():
 
     group = base_parser.add_mutually_exclusive_group()
     group.add_argument('--search', action='store_true',
-            default=True,
             help='look for installed files in Steam and other likely places ' +
                 '(default)')
     group.add_argument('--no-search', action='store_false',
@@ -1726,7 +1728,13 @@ def run_command_line():
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers, base_parser)
 
-    parsed = parser.parse_args()
+    parsed = argparse.Namespace(
+            compress=None,
+            destination=None,
+            install=False,
+            search=True,
+    )
+    parser.parse_args(namespace=parsed)
 
     if parsed.destination is None and not parsed.install:
         logger.error('At least one of --install or --destination is required')
