@@ -15,16 +15,16 @@ packages:
     # this shareware data are considered a as full game because
     # it includes the HUNT Begin levels not present in the commercial game
 
-    install_files_from_cksums: |
-      742977862  27028   DEMO1_3.DMO
-      2546107232 34360   DEMO2_3.DMO
-      1805302629 47704   DEMO3_3.DMO
-      1175016822 36412   DEMO4_3.DMO
-      2739574572 54258   HUNTBGIN.RTC
-      2540183019 103316  HUNTBGIN.RTL
-      498832626  6436871 HUNTBGIN.WAD
-      3228256652 110484  REMOTE1.RTS
-      4153237746 7752    VENDOR.DOC
+    install:
+    - DEMO1_3.DMO
+    - DEMO2_3.DMO
+    - DEMO3_3.DMO
+    - DEMO4_3.DMO
+    - HUNTBGIN.RTC
+    - HUNTBGIN.RTL
+    - HUNTBGIN.WAD
+    - REMOTE1.RTS
+    - VENDOR.DOC
     symlinks:
       usr/share/doc/rott-data/VENDOR.DOC:
         usr/share/games/rott/VENDOR.DOC
@@ -33,11 +33,11 @@ packages:
     type: full
     longname: "Rise of the Triad: Dark War"
     install_to: usr/share/games/rott
-    install_files_from_cksums: |
-      2270167158 162646   DARKWAR.RTC
-      2187295173 408096   DARKWAR.RTL
-      3057779008 14610149 DARKWAR.WAD
-      2680866599 2628     LICENSE.TXT
+    install:
+    - any_registered_rtc
+    - DARKWAR.RTL
+    - DARKWAR.WAD
+    - LICENSE.TXT
     symlinks:
       usr/share/doc/rott-registered-data/LICENSE.TXT:
         usr/share/games/rott/LICENSE.TXT
@@ -53,6 +53,13 @@ packages:
         usr/share/games/rott/LICENSE.TXT
 
 files:
+  any_registered_rtc:
+    alternatives:
+    - ROTTCD.RTC
+    - ROTTSITE.RTC
+    - DARKWAR.RTC
+    install_as: $alternative
+
   1rott13.zip:
     size: 3668139
     download:
@@ -87,12 +94,25 @@ files:
       format: zip
 
 cksums: |
-  1102508826 12548  DEMO1_3.DMO_darkwar
-  2113068632 17468  DEMO2_3.DMO_darkwar
-  1131557042 28508  DEMO3_3.DMO_darkwar
-  530889864  29612  DEMO4_3.DMO_darkwar
-  163316606  207174 ROTTCD.RTC
-  1168858976 296840 ROTTSITE.RTC
+  2270167158 162646   DARKWAR.RTC
+  2187295173 408096   DARKWAR.RTL
+  3057779008 14610149 DARKWAR.WAD
+  742977862  27028    DEMO1_3.DMO
+  1102508826 12548    DEMO1_3.DMO_darkwar
+  2546107232 34360    DEMO2_3.DMO
+  2113068632 17468    DEMO2_3.DMO_darkwar
+  1805302629 47704    DEMO3_3.DMO
+  1131557042 28508    DEMO3_3.DMO_darkwar
+  1175016822 36412    DEMO4_3.DMO
+  530889864  29612    DEMO4_3.DMO_darkwar
+  2739574572 54258    HUNTBGIN.RTC
+  2540183019 103316   HUNTBGIN.RTL
+  498832626  6436871  HUNTBGIN.WAD
+  2680866599 2628     LICENSE.TXT
+  3228256652 110484   REMOTE1.RTS
+  163316606  207174   ROTTCD.RTC
+  1168858976 296840   ROTTSITE.RTC
+  4153237746 7752     VENDOR.DOC
 
 md5sums: |
   001a2aafefe4f5394655f735ee60c326  DEMO1_3.DMO

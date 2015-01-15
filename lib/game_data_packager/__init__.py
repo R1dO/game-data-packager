@@ -1310,6 +1310,7 @@ class GameData(object):
 
         for filename in package.install:
             wanted = self.files[filename]
+            install_as = wanted.install_as
 
             if filename in self.found:
                 copy_from = self.found[filename]
@@ -1317,6 +1318,8 @@ class GameData(object):
                 for alt in wanted.alternatives:
                     if alt in self.found:
                         copy_from = self.found[alt]
+                        if wanted.install_as == '$alternative':
+                            install_as = self.files[alt].install_as
                         break
                 else:
                     raise AssertionError('we already checked that %s exists' %
@@ -1339,8 +1342,7 @@ class GameData(object):
                     if wanted.name.startswith(prefix + '/'):
                         install_to = 'usr/share/doc/%s' % package.name
 
-                copy_to = os.path.join(destdir, install_to,
-                        wanted.install_as)
+                copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)
                 if not os.path.isdir(copy_to_dir):
