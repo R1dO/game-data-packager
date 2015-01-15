@@ -12,14 +12,12 @@ packages:
       3282605936 132613 audiot.wl1
       1349328142 27425  gamemaps.wl1
       3655120917 402    maphead.wl1
-      202991744  7641   vendor.doc
       3984709669 1024   vgadict.wl1
       1729266021 326568 vgagraph.wl1
       3936285452 471    vgahead.wl1
       4022822569 742912 vswap.wl1
-    symlinks:
-      usr/share/doc/wolf3d-demo-data/vendor.doc:
-        usr/share/games/wolf3d/vendor.doc
+    install:
+    - vendor.doc
 
   wolf3d-full-data:
     type: full
@@ -198,6 +196,9 @@ files:
     install_as: LICENSE.DOC
     install_to: $docdir
 
+  vendor.doc:
+    install_to: $docdir
+
 cksums: |
   # the same in all supported (1.4) versions
   583668161  1156    audiohed.wl6
@@ -260,6 +261,9 @@ cksums: |
   3864766286 296826 VGAGRAPH.WL1_1.1
   3035731623 462 VGAHEAD.WL1_1.1
   1050182045 742912 VSWAP.WL1_1.1
+
+  # v1.4 shareware
+  202991744  7641   vendor.doc
 
 md5sums: |
   58aa1b9892d5adfa725fab343d9446f8  audiohed.wl1
