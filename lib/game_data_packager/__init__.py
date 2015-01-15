@@ -83,6 +83,21 @@ class FillResult(Enum):
 
         return FillResult.COMPLETE
 
+    def __or__(self, other):
+        if other is FillResult.UNDETERMINED:
+            return self
+
+        if self is FillResult.UNDETERMINED:
+            return other
+
+        if other is FillResult.COMPLETE or self is FillResult.COMPLETE:
+            return FillResult.COMPLETE
+
+        if other is FillResult.DOWNLOAD_NEEDED or self is FillResult.DOWNLOAD_NEEDED:
+            return FillResult.DOWNLOAD_NEEDED
+
+        return FillResult.IMPOSSIBLE
+
 class HashedFile(object):
     def __init__(self, name):
         self.name = name
@@ -421,6 +436,11 @@ class GameData(object):
         # { 'baseq3/pak1.pk3': '/usr/share/games/quake3/baseq3/pak1.pk3' }
         self.found = {}
 
+        # Map from WantedFile name to whether we can get it.
+        # file_status[x] is COMPLETE if and only if either
+        # found[x] exists, or x has alternative y and found[y] exists.
+        self.file_status = defaultdict(lambda: FillResult.UNDETERMINED)
+
         # Map from WantedFile look_for name to a set of names of WantedFile
         # instances which might be it
         # { 'doom2.wad': set(['doom2.wad_1.9', 'doom2.wad_bfg', ...]) }
@@ -715,6 +735,7 @@ class GameData(object):
 
         logger.debug('... yes, looks good')
         self.found[wanted.name] = path
+        self.file_status[wanted.name] = FillResult.COMPLETE
         return True
 
     def _ensure_hashes(self, hashes, path, size):
@@ -838,6 +859,7 @@ class GameData(object):
 
         logger.debug('trying to fill any gaps for %s', package.name)
 
+        # this is redundant, it's only done to get the debug messages first
         for filename in package.install:
             if filename not in self.found:
                 wanted = self.files[filename]
@@ -855,16 +877,14 @@ class GameData(object):
             if filename not in self.found:
                 wanted = self.files[filename]
 
-                for alt in wanted.alternatives:
-                    if alt in self.found:
-                        break
+                if wanted.alternatives:
+                    for alt in wanted.alternatives:
+                        self.file_status[filename] |= self.file_status[alt]
                 else:
-                    if self.fill_gap(package, wanted,
-                            download=download, log=log):
-                        if filename not in self.found:
-                            result &= FillResult.DOWNLOAD_NEEDED
-                    else:
-                        result = FillResult.IMPOSSIBLE
+                    self.file_status[filename] &= self.fill_gap(package,
+                            wanted, download=download, log=log)
+
+            result &= self.file_status[filename]
 
         self.package_status[package.name] = result
         return result
@@ -1034,23 +1054,29 @@ class GameData(object):
         If download is true, we may attempt to download wanted or a
         file that will provide it.
 
-        Return True if either we have the wanted file, or download is False
-        but we think we can get it by downloading.
+        Return a FillResult.
         """
         if wanted.name in self.found:
-            return True
+            assert self.file_status[wanted.name] is FillResult.COMPLETE
+            return FillResult.COMPLETE
+
+        if self.file_status[wanted.name] is FillResult.IMPOSSIBLE:
+            return FillResult.IMPOSSIBLE
+
+        if (self.file_status[wanted.name] is FillResult.DOWNLOAD_NEEDED and
+                not download):
+            return FillResult.DOWNLOAD_NEEDED
 
         logger.debug('could not find %s, trying to derive it...', wanted.name)
 
+        self.file_status[wanted.name] = FillResult.IMPOSSIBLE
+
         if wanted.alternatives:
             for alt in wanted.alternatives:
-                if alt in self.found:
-                    return True
-                elif self.fill_gap(package, self.files[alt], download=download,
-                        log=False):
-                    return True
+                self.file_status[wanted.name] |= self.fill_gap(package,
+                        self.files[alt], download=download, log=False)
 
-            if log:
+            if self.file_status[wanted.name] is FillResult.IMPOSSIBLE and log:
                 logger.error('could not find a suitable version of %s:',
                         wanted.name)
 
@@ -1070,13 +1096,14 @@ class GameData(object):
                             alt.sha1,
                             alt.sha256)
 
-            return False
+            return self.file_status[wanted.name]
 
         # no alternatives: try getting the file itself
 
-        possible = False
-
         if wanted.download:
+            # we think we can get it
+            self.file_status[wanted.name] = FillResult.DOWNLOAD_NEEDED
+
             if download:
                 logger.debug('trying to download %s...', wanted.name)
                 urls = self.choose_mirror(wanted)
@@ -1105,7 +1132,9 @@ class GameData(object):
 
                         if self.use_file(wanted, tmp, hf):
                             assert self.found[wanted.name] == tmp
-                            return True
+                            assert (self.file_status[wanted.name] ==
+                                    FillResult.COMPLETE)
+                            return FillResult.COMPLETE
                         else:
                             os.remove(tmp)
                     except Exception as e:
@@ -1114,10 +1143,6 @@ class GameData(object):
                         self.download_failed.add(url)
                         if tmp is not None:
                             os.remove(tmp)
-            else:
-                # We can easily get it, but see whether we can unpack it
-                # from files available locally
-                possible = True
 
         providers = list(self.providers.get(wanted.name, ()))
 
@@ -1137,11 +1162,10 @@ class GameData(object):
             provider = self.files[provider_name]
 
             # recurse to unpack or (see whether we can) download the provider
-            providable = self.fill_gap(package, provider,
+            provider_status = self.fill_gap(package, provider,
                     download=download, log=log)
 
-            if provider_name in self.found:
-                possible = True
+            if provider_status is FillResult.COMPLETE:
                 found_name = self.found[provider_name]
                 logger.debug('trying provider %s found at %s',
                         provider_name, found_name)
@@ -1199,30 +1223,31 @@ class GameData(object):
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
 
-            elif providable:
+                if wanted.name in self.found:
+                    assert (self.file_status[wanted.name] ==
+                            FillResult.COMPLETE)
+                    return FillResult.COMPLETE
+            elif self.file_status[provider_name] is FillResult.DOWNLOAD_NEEDED:
                 # we don't have it, but we can get it
-                possible = True
+                self.file_status[wanted.name] |= FillResult.DOWNLOAD_NEEDED
             # else impossible, but try next provider
 
-        if not possible:
-            if log:
-                logger.error('could not find %s:\n' +
-                        '  expected:\n' +
-                        '    size:   ' + (
-                            '%s' if wanted.size is None else '%d bytes') +
-                        '\n' +
-                        '    md5:    %s\n' +
-                        '    sha1:   %s\n' +
-                        '    sha256: %s',
-                        wanted.name,
-                        wanted.size,
-                        wanted.md5,
-                        wanted.sha1,
-                        wanted.sha256)
+        if self.file_status[wanted.name] is FillResult.IMPOSSIBLE and log:
+            logger.error('could not find %s:\n' +
+                    '  expected:\n' +
+                    '    size:   ' + (
+                        '%s' if wanted.size is None else '%d bytes') +
+                    '\n' +
+                    '    md5:    %s\n' +
+                    '    sha1:   %s\n' +
+                    '    sha256: %s',
+                    wanted.name,
+                    wanted.size,
+                    wanted.md5,
+                    wanted.sha1,
+                    wanted.sha256)
 
-            return False
-
-        return True
+        return self.file_status[wanted.name]
 
     def check_complete(self, package, log=False):
         # Got everything?
