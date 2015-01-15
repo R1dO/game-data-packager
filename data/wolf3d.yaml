@@ -75,7 +75,7 @@ files:
     alternatives:
     - vgadict.wl6_steam
     - vgadict.wl6_alt
-    - vgadict.wl6_anthology
+    - vgadict.wl6_wl6a
 
   vgadict.wl6_steam:
     look_for:
@@ -85,7 +85,7 @@ files:
     look_for:
     - vgadict.wl6
 
-  vgadict.wl6_anthology:
+  vgadict.wl6_wl6a:
     look_for:
     - vgadict.wl6
 
@@ -93,7 +93,7 @@ files:
     alternatives:
     - vgagraph.wl6_steam
     - vgagraph.wl6_alt
-    - vgagraph.wl6_anthology
+    - vgagraph.wl6_wl6a
 
   vgagraph.wl6_steam:
     look_for:
@@ -103,7 +103,7 @@ files:
     look_for:
     - vgagraph.wl6
 
-  vgagraph.wl6_anthology:
+  vgagraph.wl6_wl6a:
     look_for:
     - vgagraph.wl6
 
@@ -111,7 +111,7 @@ files:
     alternatives:
     - vgahead.wl6_steam
     - vgahead.wl6_alt
-    - vgahead.wl6_anthology
+    - vgahead.wl6_wl6a
 
   vgahead.wl6_steam:
     look_for:
@@ -121,7 +121,7 @@ files:
     look_for:
     - vgahead.wl6
 
-  vgahead.wl6_anthology:
+  vgahead.wl6_wl6a:
     look_for:
     - vgahead.wl6
 
@@ -161,25 +161,37 @@ files:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
 
 cksums: |
+  # the same in all supported (1.4) versions
   583668161  1156    audiohed.wl6
   1281390593 320209  audiot.wl6
   3277084604 150652  gamemaps.wl6
   3907041798 402     maphead.wl6
+
+  # "Wolfenstein 3D v1.4 full GT/ID/Activision" (esp on #745081)
+  # also matches the Steam version, and the id Anthology on CD
   # run with wolf4sdl-wl6
   3355526976 1024    vgadict.wl6_steam
   1297016696 275774  vgagraph.wl6_steam
   2823695967 450     vgahead.wl6_steam
   1092035446 1544376 vswap.wl6_steam
+
+  # some alternative edition (Fabian on #745081)
   # run with wolf4sdl-wl6
   4076084707 1024    vgadict.wl6_alt
   1025625630 276096  vgagraph.wl6_alt
   3433524788 450     vgahead.wl6_alt
   4156874368 1545400 vswap.wl6_alt
+
+  # "the new 3D Realms Anthology" (skitt on #745081)
+  # "Wolf3d Full v1.4 Apogee (with ReadThis)" according to wolf4sdl man page
   # run with wolf4sdl-wl6a
-  3356851916 1024    vgadict.wl6_anthology
-  3380985220 334506  vgagraph.wl6_anthology
-  3071614724 486     vgahead.wl6_anthology
-  #4156874368 1545400 vswap.wl6_anthology - same as alt
+  3721027769 522     config.wl6_wl6a
+  3356851916 1024    vgadict.wl6_wl6a
+  3380985220 334506  vgagraph.wl6_wl6a
+  3071614724 486     vgahead.wl6_wl6a
+  #4156874368 1545400 vswap.wl6_wl6a - same as alt
+
+  # older, unsupported versions
   3950584694 1156    audiohed.wl6_1.1
   298007493  317049  audiot.wl6_1.1
   2743905647 1024    vgadict.wl6_1.1
@@ -213,10 +225,11 @@ md5sums: |
   f18b07d6ba988b8505415f7446235366  vgagraph.wl6_alt
   9059afb104a51140bd0c127b73717197  vgahead.wl6_alt
   a6d901dfb455dfac96db5e4705837cdb  vswap.wl6_alt
-  adb10b0d6fdddba9fcc3d1a7c16937e7  vgadict.wl6_anthology
-  4e96d7b4e89a5b3a4beeebf5d7d87eb7  vgagraph.wl6_anthology
-  a08905e2b0d299b3fad259f90c0efb1a  vgahead.wl6_anthology
-  #a6d901dfb455dfac96db5e4705837cdb  vswap.wl6_anthology - same as alt
+  3e676d1c1350de03d1bd58e7b8dda498  config.wl6_wl6a
+  adb10b0d6fdddba9fcc3d1a7c16937e7  vgadict.wl6_wl6a
+  4e96d7b4e89a5b3a4beeebf5d7d87eb7  vgagraph.wl6_wl6a
+  a08905e2b0d299b3fad259f90c0efb1a  vgahead.wl6_wl6a
+  #a6d901dfb455dfac96db5e4705837cdb  vswap.wl6_wl6a - same as alt
   3bfac1f5de61d8a1a7df949fbde873fc  audiohed.wl6_1.1
   bb228b96fc12f2a658fc8033637ec051  audiot.wl6_1.1
   d159e885f32e2355c6a31eaef350b902  vgadict.wl6_1.1
@@ -250,10 +263,11 @@ sha1sums: |
   2b4edd39f016460b2c02864c5b2268c4204f32dd  vgagraph.wl6_alt
   5a040087758a01189b57a1840a9064b38502f90e  vgahead.wl6_alt
   e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_alt
-  45f17d1a8e43dcf3411e41f1da7e452dc1fb72b9  vgadict.wl6_anthology
-  7ea4ccb7c446628a528c8f68ebd1fbcb8b5366e6  vgagraph.wl6_anthology
-  c5100bcbaaf2a78fc831f6780089bd3fa46bd9a5  vgahead.wl6_anthology
-  #e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_anthology - same as alt
+  7ba5c91c46ff27b0ee5a70dc3c0d2edcd733b0a6  config.wl6_wl6a
+  45f17d1a8e43dcf3411e41f1da7e452dc1fb72b9  vgadict.wl6_wl6a
+  7ea4ccb7c446628a528c8f68ebd1fbcb8b5366e6  vgagraph.wl6_wl6a
+  c5100bcbaaf2a78fc831f6780089bd3fa46bd9a5  vgahead.wl6_wl6a
+  #e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_wl6a - same as alt
   660a3effb265442f770040aee1d9f2447300767a  audiohed.wl6_1.1
   d2d97546f37d177478c1c8ec10deaebac1e9b534  audiot.wl6_1.1
   33ef9c6082376763eed32484240c3bce128f38f2  vgadict.wl6_1.1
@@ -287,10 +301,11 @@ sha256sums: |
   0f7a038b8523d729eb98fe0bc50a858c47a41569e07cbbbf5d8aca8ff4e9863e  vgagraph.wl6_alt
   a9823004be77b68813f0e4d9ac35947e2e2586271fbc2fb0685ff8ecb1deb3d5  vgahead.wl6_alt
   49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_alt
-  e4ca6e61a1da1de5b4b59b75fbd702f173238577b2f870e679fd499cfe78bf00  vgadict.wl6_anthology
-  84adea791e3ab1251312ee159414e48d5114622dc84348cebbac8a1dacb4b41f  vgagraph.wl6_anthology
-  386b56a62ce79cdfa502542b0c9a9bad0d29fab4250edf17e05ee4ac51aa37a8  vgahead.wl6_anthology
-  #49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_anthology - same as alt
+  50122e269bd891a5d0828b9abc323482a13348128138f957bfe74f324472d939  config.wl6_wl6a
+  e4ca6e61a1da1de5b4b59b75fbd702f173238577b2f870e679fd499cfe78bf00  vgadict.wl6_wl6a
+  84adea791e3ab1251312ee159414e48d5114622dc84348cebbac8a1dacb4b41f  vgagraph.wl6_wl6a
+  386b56a62ce79cdfa502542b0c9a9bad0d29fab4250edf17e05ee4ac51aa37a8  vgahead.wl6_wl6a
+  #49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_wl6a - same as alt
   45991892e1a0fabdfecf1d52a3d7b31096e455372f5bb4116789b914f9f3b96f  audiohed.wl6_1.1
   f43f345c8ec5515e97c7782c6e032090a7e8942174b157fd0c8af47cf1d1e834  audiot.wl6_1.1
   ee387050e4d0e894f14c0e06a9174dd7ef28ddd375f3e1102bd83106642641b8  vgadict.wl6_1.1
