@@ -25,7 +25,11 @@ Policy dictates the following fields within the control file:
    description that follows.
  * Any required dependencies.  For game data packages, we use
    `Recommends` to recommend a corresponding engine package, where
-   appropriate.
+   appropriate.  
+   If your game is split in several packages, the package with
+   the full game should `Suggests` all the avaible expansions;
+   to avoid that those are recognised as useless
+   and then removed by aptitude or deborphan.
 
 `game-data-packager` automatically adds:
 

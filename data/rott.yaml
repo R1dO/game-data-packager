@@ -25,9 +25,6 @@ packages:
     - HUNTBGIN.WAD
     - REMOTE1.RTS
     - VENDOR.DOC
-    symlinks:
-      usr/share/doc/rott-data/VENDOR.DOC:
-        usr/share/games/rott/VENDOR.DOC
 
   rott-registered-data:
     type: full
@@ -38,9 +35,6 @@ packages:
     - DARKWAR.RTL
     - DARKWAR.WAD
     - LICENSE.TXT
-    symlinks:
-      usr/share/doc/rott-registered-data/LICENSE.TXT:
-        usr/share/games/rott/LICENSE.TXT
 
   rott-extreme-data:
     type: expansion
@@ -50,7 +44,7 @@ packages:
       30163438   282646   EXTREME.RTL
     symlinks:
       usr/share/doc/rott-extreme-data/LICENSE.TXT:
-        usr/share/games/rott/LICENSE.TXT
+        usr/share/doc/rott-registered-data/LICENSE.TXT
 
 files:
   any_registered_rtc:
@@ -59,6 +53,9 @@ files:
     - ROTTSITE.RTC
     - DARKWAR.RTC
     install_as: $alternative
+
+  LICENSE.TXT:
+    install_to: $docdir
 
   1rott13.zip:
     size: 3668139
@@ -92,6 +89,9 @@ files:
     sha256: e49b53722410d2e11a78c5715652cca3fbfdbaac2c27956f4a8e7739200a563c
     unpack:
       format: zip
+
+  VENDOR.DOC:
+    install_to: $docdir
 
 cksums: |
   2270167158 162646   DARKWAR.RTC
