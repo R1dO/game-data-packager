@@ -1040,8 +1040,8 @@ class GameData(object):
                 logger.warning('Could not open mirror list "%s"', mirror_list,
                         exc_info=True)
         random.shuffle(mirrors)
-        if 'MIRROR' in os.environ:
-            url = os.environ.get('MIRROR')
+        if 'GDP_MIRROR' in os.environ:
+            url = os.environ.get('GDP_MIRROR')
             if url.split(':')[0] not in ('http', 'https', 'ftp'):
                 url = 'http://' + url
             if not url.endswith('/'):
