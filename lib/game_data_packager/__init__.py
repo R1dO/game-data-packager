@@ -1042,7 +1042,9 @@ class GameData(object):
         random.shuffle(mirrors)
         if 'GDP_MIRROR' in os.environ:
             url = os.environ.get('GDP_MIRROR')
-            if url.split(':')[0] not in ('http', 'https', 'ftp'):
+            if url.startswith('/'):
+                url = 'file://' + url
+            elif url.split(':')[0] not in ('http', 'https', 'ftp', 'file'):
                 url = 'http://' + url
             if not url.endswith('/'):
                 url = url + '/'
