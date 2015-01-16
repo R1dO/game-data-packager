@@ -54,10 +54,9 @@ packages:
         sha1: 7994040e61a234e284c730287ea6d098878cbfea
         md5: f7b2003ef7499f2a6e750c2925c870ad
 
-      # optional files aren't supported yet
-      #main/rotate.cfg:
-      #  size: 9559
-      #  optional: true
+    optional:
+    - main/autoexec.cfg
+    - main/rotate.cfg
 
 help_text: |
   Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
@@ -72,6 +71,10 @@ files:
     alternatives:
     - main/sp_pak1.pk3_en
     - main/sp_pak1.pk3_fr
+
+  main/rotate.cfg:
+    size: 9559
+    optional: true
 
   main/sp_pak1.pk3_en:
     look_for:
@@ -172,6 +175,7 @@ md5sums: |
   bb24fb011b0f4b84335c66a869d1ab1c  main/mp_pakmaps5.pk3
   397e0b48673a1a8e0ec25eb0f3ccae9d  main/mp_pakmaps6.pk3
   ce92b11df889cb0a045762bb5fd7cde5  main/pak0.pk3
+  f97ff15e4248a72567aaddfa15443d1e  main/rotate.cfg
   a0d3fe956f85f40c8efd6babe0d09832  main/sp_pak1.pk3_en
   f19c389fe6310c24e664bc0fc84fdd95  main/sp_pak1.pk3_fr
   330b272d5261fe19fcf3c3fbc943c7f3  main/sp_pak2.pk3
@@ -202,6 +206,7 @@ sha1sums: |
   c118c02922f8fd7d281f3fcfd94778317839fed1  main/mp_pakmaps5.pk3
   abf1ff047a1cc6f92c9d24164991e5a49c98d0f8  main/mp_pakmaps6.pk3
   917685b93cd3430ec9aa41dcbabb7063c6b2a785  main/pak0.pk3
+  6a700396ae789cbf7ba592d0e1ce7de6fe6616a9  main/rotate.cfg
   4fe77f53b7effd54a1576212983b9bb9b36e50ed  main/sp_pak1.pk3_en
   0867395305426cc9374aa1d6e49b091f9b281cce  main/sp_pak1.pk3_fr
   feee8ecadb551a769dfb1ee97eff4c7ed7f93495  main/sp_pak2.pk3
@@ -232,6 +237,7 @@ sha256sums: |
   85cc0e8358a26601211625a9600ca47c126e4a38cca0bac60d7465ffb5ccadfe  main/mp_pakmaps5.pk3
   fcdb3754ca4e9f60b3086c8461b26160dd8de7f5e94c04100a2eb6f9519abca2  main/mp_pakmaps6.pk3
   1dfcfc3187ba09fe32cd8a7921a09cd15dd789816186c89b11e5e0d954c55e6c  main/pak0.pk3
+  b0d5fa3f029167d73eddabec562938e6ee8d97b2a7f5215dde66525a574b40d5  main/rotate.cfg
   66785d612f88a19c3bb5fd24f84d89b240375a28550a79039dfb6afae865ec9a  main/sp_pak1.pk3_en
   d8825aa5b7fb0b03f6956da4e6bf822db5dd50153a8e2f87dfedefb434b78e54  main/sp_pak1.pk3_fr
   eca64ea0fda6edd653865e2eb768f152d38abc8b89941aa954ed74fa36928796  main/sp_pak2.pk3

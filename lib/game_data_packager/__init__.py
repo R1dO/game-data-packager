@@ -244,7 +244,6 @@ class WantedFile(HashedFile):
         self.install_as = name
         self.install_to = None
         self._look_for = []
-        self.optional = False
         self._provides = set()
         self._size = None
         self.unpack = None
@@ -288,7 +287,6 @@ class WantedFile(HashedFile):
             'install_to': self.install_to,
             'look_for': list(self.look_for),
             'name': self.name,
-            'optional': self.optional,
             'provides': list(self.provides),
             'size': self.size,
             'skip_hash_matching': self.skip_hash_matching,
@@ -325,6 +323,9 @@ class GameDataPackage(object):
         # set of names of WantedFile instances to be installed
         self._install = set()
 
+        # set of names of WantedFile instances to be optionally installed
+        self._optional = set()
+
         # type of package: full, demo or expansion
         # full packages include quake-registered, quake2-full-data, quake3-data
         # demo packages include quake-shareware, quake2-demo-data
@@ -352,6 +353,13 @@ class GameDataPackage(object):
         self._install_contents_of = set(value)
 
     @property
+    def optional(self):
+        return self._optional
+    @optional.setter
+    def optional(self, value):
+        self._optional = set(value)
+
+    @property
     def type(self):
         return self._type
     @type.setter
@@ -365,6 +373,7 @@ class GameDataPackage(object):
             'install_to': self.install_to,
             'install_to_docdir': self.install_to_docdir,
             'name': self.name,
+            'optional': sorted(self.optional),
             'steam': self.steam,
             'symlinks': self.symlinks,
         }
@@ -544,6 +553,8 @@ class GameData(object):
             assert package.install, package.name
             for installable in package.install:
                 assert installable in self.files, installable
+            for installable in package.optional:
+                assert installable in self.files, installable
 
         for filename, wanted in self.files.items():
             if wanted.unpack:
@@ -628,6 +639,12 @@ class GameData(object):
                 f = self._ensure_file(filename)
                 package.install.add(filename)
 
+        if 'optional' in d:
+            assert isinstance(d['optional'], list), package.name
+            for filename in d['optional']:
+                f = self._ensure_file(filename)
+                package.optional.add(filename)
+
         if 'install_files_from_cksums' in d:
             for line in d['install_files_from_cksums'].splitlines():
                 stripped = line.strip()
@@ -664,7 +681,6 @@ class GameData(object):
                     'install_to',
                     'look_for',
                     'md5',
-                    'optional',
                     'provides',
                     'sha1',
                     'sha256',
@@ -873,7 +889,7 @@ class GameData(object):
 
         result = FillResult.COMPLETE
 
-        for filename in package.install:
+        for filename in (package.install | package.optional):
             if filename not in self.found:
                 wanted = self.files[filename]
 
@@ -884,7 +900,9 @@ class GameData(object):
                     # updates file_status as a side-effect
                     self.fill_gap(package, wanted, download=download, log=log)
 
-            result &= self.file_status[filename]
+            if filename in package.install:
+                # it is mandatory
+                result &= self.file_status[filename]
 
         self.package_status[package.name] = result
         return result
@@ -1308,7 +1326,7 @@ class GameData(object):
             if os.path.isfile(maintscript):
                 shutil.copy(maintscript, os.path.join(debdir, ms))
 
-        for filename in package.install:
+        for filename in (package.install | package.optional):
             wanted = self.files[filename]
             install_as = wanted.install_as
 
@@ -1322,6 +1340,11 @@ class GameData(object):
                             install_as = self.files[alt].install_as
                         break
                 else:
+                    if filename not in package.install:
+                        logger.debug('optional file %r is missing, ignoring',
+                                filename)
+                        continue
+
                     raise AssertionError('we already checked that %s exists' %
                             (filename))
 
