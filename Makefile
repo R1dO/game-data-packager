@@ -1,6 +1,16 @@
 VERSION := $(shell dpkg-parsechangelog | grep ^Version | cut -d' ' -f2-)
 DIRS := ./out ./build
-LDLIBS = -ldynamite
+GDP_MIRROR ?= localhost
+
+# some cherry picked games that:
+# - are freely downloadable (either demo or full version)
+# - test various codepaths:
+#   - alternatives
+#   - archive recursion (zip in zip)
+#   - lha
+#   - id-shr-extract
+# - are not too big
+TEST_SUITE += rott spear-of-destiny wolf3d
 
 default: $(DIRS)
 	gzip -nc9 debian/changelog > ./out/changelog.gz
@@ -83,4 +93,10 @@ check:
 	GDP_UNINSTALLED=1 PYTHONPATH=lib python3 -m game_data_packager.check_syntax
 	pyflakes3 lib/game_data_packager/*.py lib/game_data_packager/*/*.py || :
 
-.PHONY: default clean check
+testsuite:
+	for game in $(TEST_SUITE); do \
+	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=lib \
+		python3 -m game_data_packager -d /tmp --no-search --no-compress $$game || exit $$?; \
+	done
+
+.PHONY: default clean check testsuite
