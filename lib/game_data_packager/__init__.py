@@ -1476,14 +1476,25 @@ class GameData(object):
         control['Package'] = package.name
         control['Installed-Size'] = size
 
+        depends = set()
         suggests = set()
+        if 'Depends' in control:
+            for depend in control['Depends'].split(','):
+                depend = depend.strip()
+                depends.add(depend)
         if 'Suggests' in control:
             for suggest in control['Suggests'].split(','):
                 suggest = suggest.strip()
                 suggests.add(suggest)
+
+        if package.expansion_for:
+            depends.add(package.expansion_for)
         for other_package in self.packages.values():
             if other_package.expansion_for == package.name:
                 suggests.add(other_package.name)
+
+        if depends:
+            control['Depends'] = ', '.join(depends)
         if suggests:
             control['Suggests'] = ', '.join(suggests)
 
