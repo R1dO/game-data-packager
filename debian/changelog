@@ -67,7 +67,7 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Switch Hexen II to YAML style
   * Convert Doom games to YAML style, with the help of extra Python code
     in game_data_packager.games.doom_common (Closes: #775081)
-  * Switch lgeneral to YAML style
+  * Switch lgeneral to YAML style (Closes: #775083)
   * Add support for flagging files in YAML as known-but-unsuitable,
     and use it for older versions of various .wad files
   * Add support for concatenating files, needed for Quake 1
