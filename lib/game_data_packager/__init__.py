@@ -1985,5 +1985,14 @@ def run_command_line():
                 parsed.save_downloads)
         sys.exit(2)
 
-    with games[parsed.shortname] as game:
+    if parsed.shortname in games:
+        game = games[parsed.shortname]
+    else:
+        for game in games.values():
+            if parsed.shortname in game.packages:
+                break
+        else:
+            raise AssertionError('could not find %s' % parsed.shortname)
+
+    with game:
         game.run_command_line(parsed)
