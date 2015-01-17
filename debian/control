@@ -8,7 +8,6 @@ Build-Depends:
  dh-python,
  fakeroot,
  imagemagick,
- libdynamite-dev,
  m4,
  pyflakes,
  python3,
@@ -20,7 +19,7 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/game-data-packager.gi
 Homepage: http://wiki.debian.org/Games/GameDataPackager
 
 Package: game-data-packager
-Depends: fakeroot, ${misc:Depends}, ${shlib:Depends},
+Depends: fakeroot, ${misc:Depends},
 # for jedi-*, rtcw, and hopefully more soon
 	python3,
 	python3-debian,
@@ -33,7 +32,7 @@ Depends: fakeroot, ${misc:Depends}, ${shlib:Depends},
 Suggests:
 # for quake music and quake2 music
 	cdparanoia, vorbis-tools,
-# for quake CD-ROM methods
+# for quake CD-ROM methods & Spear Of Destiny demo
 	lhasa | jlha-utils | lzh-archiver,
 # for quake2 mission packs
 	binutils, make, gcc,
