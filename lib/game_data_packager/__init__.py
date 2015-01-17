@@ -1510,17 +1510,38 @@ class GameData(object):
             # anyway
             args.compress = preserve_debs
 
-        compress = getattr(args, 'compress', True)
-
         self.look_for_files(paths=args.paths, search=args.search)
 
+        if args.shortname in self.packages:
+            packages = set([self.packages[args.shortname]])
+        else:
+            packages = set(self.packages.values())
+
+        ready = self.prepare_packages(packages,
+                build_demos=args.demo)
+
+        if args.destination is None:
+            destination = self.get_workdir()
+        else:
+            destination = args.destination
+
+        debs = self.build_packages(ready,
+                compress=getattr(args, 'compress', True),
+                destination=destination)
+
+        rm_rf(os.path.join(self.get_workdir(), 'tmp'))
+
+        if preserve_debs:
+            for deb in debs:
+                print('generated "%s"' % os.path.abspath(deb))
+
+        if install_debs:
+            self.install_packages(debs)
+
+    def prepare_packages(self, packages, build_demos=False):
         possible = set()
 
-        for package in self.packages.values():
-            if (args.shortname in self.packages and
-                    package.name != args.shortname):
-                continue
-
+        for package in packages:
             if self.fill_gaps(package, log=False) is not FillResult.IMPOSSIBLE:
                 logger.debug('%s is possible', package.name)
                 possible.add(package)
@@ -1569,7 +1590,7 @@ class GameData(object):
                 have_full = True
 
         for package in possible:
-            if have_full and package.type == 'demo' and not args.demo:
+            if have_full and package.type == 'demo' and not build_demos:
                 # no point in packaging the demo if we have the full
                 # version
                 logger.debug('will not produce %s because we have a full ' +
@@ -1588,14 +1609,12 @@ class GameData(object):
             self.argument_parser.print_help()
             raise SystemExit(1)
 
+        return ready
+
+    def build_packages(self, ready, destination, compress):
         debs = set()
 
         for package in ready:
-            if args.destination is None:
-                destination = self.get_workdir()
-            else:
-                destination = args.destination
-
             deb = self.build_deb(package, destination, compress=compress)
 
             if deb is None:
@@ -1603,19 +1622,15 @@ class GameData(object):
 
             debs.add(deb)
 
-        rm_rf(os.path.join(self.get_workdir(), 'tmp'))
+        return debs
 
-        if preserve_debs:
-            for deb in debs:
-                print('generated "%s"' % os.path.abspath(deb))
+    def install_packages(self, debs):
+        print('using su(1) to obtain root privileges and install the package(s)')
+        cmd = 'dpkg -i'
+        for deb in debs:
+            cmd = cmd + ' ' + shlex.quote(deb)
 
-        if install_debs:
-            print('using su(1) to obtain root privileges and install the package(s)')
-            cmd = 'dpkg -i'
-            for deb in debs:
-                cmd = cmd + ' ' + shlex.quote(deb)
-
-            subprocess.call(['su', '-c', cmd])
+        subprocess.call(['su', '-c', cmd])
 
     def iter_steam_paths(self):
         for prefix in (
