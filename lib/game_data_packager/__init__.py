@@ -44,7 +44,12 @@ from debian.deb822 import Deb822
 import yaml
 
 from .paths import DATADIR, ETCDIR
-from .util import TemporaryUmask, mkdir_p, rm_rf, human_size, MEBIBYTE
+from .util import (MEBIBYTE,
+        TemporaryUmask,
+        mkdir_p,
+        rm_rf,
+        human_size,
+        which)
 from .version import GAME_PACKAGE_VERSION
 
 logging.basicConfig()
@@ -477,6 +482,12 @@ class GameData(object):
 
         # Map from GameDataPackage name to whether we can do it
         self.package_status = defaultdict(lambda: FillResult.UNDETERMINED)
+
+        # Set of executables we wanted but don't have
+        self.missing_tools = set()
+
+        # Set of filenames we couldn't unpack
+        self.unpack_failed = set()
 
         self._populate_files(self.yaml.get('files'))
 
@@ -1195,6 +1206,10 @@ class GameData(object):
         for provider_name in providers:
             provider = self.files[provider_name]
 
+            # don't bother if we wouldn't be able to unpack it anyway
+            if not self.check_unpacker(provider):
+                continue
+
             # recurse to unpack or (see whether we can) download the provider
             provider_status = self.fill_gap(package, provider,
                     download=download, log=log)
@@ -1528,6 +1543,11 @@ class GameData(object):
                     build_demos=args.demo)
         except NoPackagesPossible:
             logger.error('Unable to complete any packages.')
+            if self.unpack_failed and self.missing_tools:
+                # we already logged warnings about the files as they came up
+                self.log_missing_tools()
+                raise SystemExit(1)
+
             # probably not enough files supplied?
             # print the help text, maybe that helps the user to determine
             # what they should have added
@@ -1714,6 +1734,44 @@ class GameData(object):
 
         rm_rf(destdir)
         return outfile
+
+    def check_unpacker(self, wanted):
+        if not wanted.unpack:
+            return True
+
+        if wanted.name in self.unpack_failed:
+            return False
+
+        fmt = wanted.unpack['format']
+
+        if fmt in ('id-shr-extract', 'lha'):
+            if which(fmt) is None:
+                logger.warning('cannot unpack "%s": tool "%s" is not ' +
+                        'installed', wanted.name, fmt)
+                self.missing_tools.add(fmt)
+                self.unpack_failed.add(wanted.name)
+                return False
+
+        return True
+
+    def log_missing_tools(self):
+        if not self.missing_tools:
+            return False
+
+        package_map = {
+                'id-shr-extract': 'dynamite',
+                'lha': 'lhasa',
+        }
+        packages = set()
+
+        for t in self.missing_tools:
+            p = package_map.get(t)
+            if p is not None:
+                packages.add(p)
+
+        logger.warning('installing these packages might help:\n' +
+                'apt-get install %s',
+                ' '.join(sorted(packages)))
 
 def load_yaml_games(workdir=None):
     games = {}

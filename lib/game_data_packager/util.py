@@ -17,6 +17,7 @@
 
 import os
 import shutil
+import stat
 
 KIBIBYTE = 1024
 MEBIBYTE = KIBIBYTE * KIBIBYTE
@@ -48,6 +49,18 @@ def mkdir_p(path):
 def rm_rf(path):
     if os.path.exists(path):
         shutil.rmtree(path)
+
+def which(exe):
+    for path in os.environ.get('PATH', '/usr/bin:/bin').split(os.pathsep):
+        try:
+            abspath = os.path.join(path, exe)
+            statbuf = os.stat(abspath)
+        except:
+            continue
+        if stat.S_IMODE(statbuf.st_mode) & 0o111:
+            return abspath
+
+    return None
 
 def human_size(size):
     # 0.0 KiB up to 1024.0 KiB
