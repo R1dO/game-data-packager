@@ -10,7 +10,6 @@ steam:
 packages:
   rott-data:
     install_to: usr/share/games/rott
-    type: full
     longname: "Rise of the Triad: The HUNT begins"
     # this shareware data are considered a as full game because
     # it includes the HUNT Begin levels not present in the commercial game
@@ -27,7 +26,6 @@ packages:
     - VENDOR.DOC
 
   rott-registered-data:
-    type: full
     longname: "Rise of the Triad: Dark War"
     install_to: usr/share/games/rott
     install:
@@ -37,7 +35,7 @@ packages:
     - LICENSE.TXT
 
   rott-extreme-data:
-    type: expansion
+    expansion_for: rott-registered-data
     longname: "Extreme Rise of the Triad"
     install_to: usr/share/games/rott
     install_files_from_cksums: |

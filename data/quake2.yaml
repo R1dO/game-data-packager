@@ -2,7 +2,6 @@
 ---
 packages:
   quake2-full-data:
-    type: full
     longname: Quake II
     steam:
       id: 2320
@@ -26,7 +25,7 @@ packages:
     - baseq2/video/ntro.cin
 
   quake2-demo-data:
-    type: demo
+    demo_for: quake2-full-data
     install_to: usr/share/games/quake2-demo
     install_to_docdir:
       - quake2_manual

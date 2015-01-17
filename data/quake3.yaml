@@ -32,7 +32,6 @@ packages:
     longname: Quake III Arena
     steam:
       id: 2200
-    type: full
     # We deliberately only put baseq3 in the search path, not
     # missionpack, so that the engine doesn't think missionpack
     # is installed unless its pak0.pk3 is present.
@@ -76,7 +75,7 @@ packages:
     longname: Quake III Team Arena
     steam:
       id: 2350
-    type: expansion
+    expansion_for: quake3-data
     symlinks:
       usr/share/games/quake3/missionpack/pak0.pk3:
         usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3

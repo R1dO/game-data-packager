@@ -31,8 +31,6 @@ help_text: |
 
 packages:
   jedi-academy-data:
-    type: full
-
     install_files_from_cksums: |
       # Jedi Academy CD1 GameData/GameData or installation
       3585517488 561806019 base/assets0.pk3
@@ -45,7 +43,7 @@ packages:
 
   jedi-academy-bonus-data:
     longname: "Bonus maps for Jedi Academy"
-    type: expansion
+    expansion_for: jedi-academy-data
     install_files_from_cksums: |
       2890259980 14328834 base/bonus.pk3
       4222768269 5948070 base/siege_destroyer.pk3

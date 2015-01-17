@@ -4,7 +4,7 @@ longname: Wolfenstein 3D
 
 packages:
   wolf3d-demo-data:
-    type: demo
+    demo_for: wolf3d-full-data
     longname: Wolfenstein 3D (demo)
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
@@ -20,7 +20,6 @@ packages:
     - vendor.doc
 
   wolf3d-full-data:
-    type: full
     longname: Wolfenstein 3D
     steam:
       id: 2270

@@ -25,7 +25,7 @@ help_text: |
 packages:
   spear-of-destiny-demo-data:
     longname: "Spear of Destiny (shareware)"
-    type: demo
+    demo_for: spear-of-destiny-data
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
       1612205268 1072    audiohed.sdm
@@ -41,7 +41,6 @@ packages:
 
   spear-of-destiny-data:
     longname: "Spear of Destiny (registered version, mission 1)"
-    type: full
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
       3311987448 1072    audiohed.sod
@@ -61,7 +60,7 @@ packages:
         usr/share/games/wolf3d/vswap.sd1
 
   spear-of-destiny-mission2-data:
-    type: expansion
+    expansion_for: spear-of-destiny-data
     longname: "Spear of Destiny - Mission 2: Return to Danger"
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
@@ -70,7 +69,7 @@ packages:
       2555517412 1879712 vswap.sd2
 
   spear-of-destiny-mission3-data:
-    type: expansion
+    expansion_for: spear-of-destiny-data
     longname: "Spear of Destiny - Mission 3: Ultimate Challenge"
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |

@@ -309,6 +309,10 @@ class GameDataPackage(object):
         # The name of the binary package
         self.name = name
 
+        # Names of relative packages
+        self.demo_for = None
+        self.expansion_for = None
+
         # The optional marketing name of this version
         self.longname = None
 
@@ -646,10 +650,15 @@ class GameData(object):
         }
 
     def _populate_package(self, package, d):
-        for k in ('type', 'longname', 'symlinks', 'install_to',
+        for k in ('demo_for', 'expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam'):
             if k in d:
                 setattr(package, k, d[k])
+
+        if 'demo_for' in d:
+            setattr(package, 'type', 'demo')
+        if 'expansion_for' in d:
+            setattr(package, 'type', 'expansion')
 
         if 'install' in d:
             for filename in d['install']:
