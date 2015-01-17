@@ -70,6 +70,8 @@ packages:
       _ 383888 missionpack/pak1.pk3
       _ 376234 missionpack/pak2.pk3
       _ 384282 missionpack/pak3.pk3
+    debian:
+      engine: quake3
 
   quake3-team-arena-data:
     longname: Quake III Team Arena
@@ -90,6 +92,8 @@ packages:
       missionpack/pak0.pk3:
         size: 351623691
         distinctive_size: true
+    debian:
+      engine: quake3
 
 files:
   linuxq3apoint-1.32b-3.x86.run:
