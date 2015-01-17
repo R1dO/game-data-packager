@@ -24,6 +24,8 @@ packages:
     install_files_from_cksums: |
       2912412704 22704056 data1/pak0.pak
       4210700438 75601170 data1/pak1.pak
+      debian:
+        engine: "uhexen2 | hexen2-engine"
 
   hexen2-portals-data:
     longname: "Hexen II Mission Pack: Portal of Praevus"
@@ -31,6 +33,8 @@ packages:
     install_to: usr/share/games/hexen2
     install_files_from_cksums: |
       1873146513 49089114 portals/pak3.pak
+      debian:
+        engine: "uhexen2 | hexen2-engine"
 
   hexen2-hexenworld-data:
     longname: "Hexen II: HexenWorld"
@@ -38,6 +42,8 @@ packages:
     install_to: usr/share/games/hexen2
     install_files_from_cksums: |
       _ 10780245 hw/pak4.pak
+      debian:
+        engine: "uhexen2 | hexen2-engine"
 
 files:
   hexenworld-pakfiles-0.15.tgz:
