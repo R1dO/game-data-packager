@@ -1522,8 +1522,15 @@ class GameData(object):
         if suggests:
             control['Suggests'] = ', '.join(suggests)
 
-        package.version = control['Version'].replace('VERSION',
-                GAME_PACKAGE_VERSION)
+        version = package.debian.get('version')
+        if 'Version' in control:
+            package.version = control['Version'].replace('VERSION',
+                    GAME_PACKAGE_VERSION)
+        elif version:
+            package.version = version + '+' + GAME_PACKAGE_VERSION
+        else:
+            package.version = GAME_PACKAGE_VERSION
+
         control['Version'] = package.version
 
     def get_control_template(self, package):
