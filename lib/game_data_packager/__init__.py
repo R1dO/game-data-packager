@@ -1899,7 +1899,7 @@ def load_yaml_games(workdir=None):
 
             games[g] = game_data_constructor(g, yaml_data, workdir=workdir)
         except:
-            print('Error loading %s:\n' % yaml)
+            print('Error loading %s:\n' % yamlfile)
             raise
 
     return games
