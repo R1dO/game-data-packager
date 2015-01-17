@@ -1543,7 +1543,7 @@ class GameData(object):
                     build_demos=args.demo)
         except NoPackagesPossible:
             logger.error('Unable to complete any packages.')
-            if self.unpack_failed and self.missing_tools:
+            if self.missing_tools:
                 # we already logged warnings about the files as they came up
                 self.log_missing_tools()
                 raise SystemExit(1)
