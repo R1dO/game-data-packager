@@ -312,6 +312,10 @@ class GameDataPackage(object):
         # The name of the binary package
         self.name = name
 
+        # Names of relative packages
+        self.demo_for = None
+        self.expansion_for = None
+
         # The optional marketing name of this version
         self.longname = None
 
@@ -333,6 +337,9 @@ class GameDataPackage(object):
 
         # Steam ID and path
         self.steam = {}
+
+        # depedency information needed to build the debian/control file
+        self.debian = {}
 
         # set of names of WantedFile instances to be installed
         self._install = set()
@@ -652,10 +659,15 @@ class GameData(object):
         }
 
     def _populate_package(self, package, d):
-        for k in ('type', 'longname', 'symlinks', 'install_to',
-                'install_to_docdir', 'install_contents_of', 'steam'):
+        for k in ('demo_for', 'expansion_for', 'longname', 'symlinks', 'install_to',
+                'install_to_docdir', 'install_contents_of', 'steam', 'debian'):
             if k in d:
                 setattr(package, k, d[k])
+
+        if 'demo_for' in d:
+            setattr(package, 'type', 'demo')
+        if 'expansion_for' in d:
+            setattr(package, 'type', 'expansion')
 
         if 'install' in d:
             for filename in d['install']:
@@ -1473,13 +1485,64 @@ class GameData(object):
         return True
 
     def modify_control_template(self, control, package, destdir):
+        if 'Package' in control:
+            assert control['Package'] in ('PACKAGE', package.name)
+        control['Package'] = package.name
+
         size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
             '.'], cwd=destdir).decode('utf-8').split(None, 1)[0]
-        assert control['Package'] in ('PACKAGE', package.name)
-        control['Package'] = package.name
         control['Installed-Size'] = size
-        package.version = control['Version'].replace('VERSION',
-                GAME_PACKAGE_VERSION)
+
+        default_values = {
+            'Section' : 'non-free/games',
+            'Priority' : 'optional',
+            'Architecture' : 'all',
+            'Maintainer' : 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>',
+        }
+        for field in default_values:
+            if field not in control:
+                control[field] = default_values[field]
+        if control['Architecture'] == 'all' and 'Multi-Arch' not in control:
+            control['Multi-Arch'] = 'foreign'
+
+        depends = set()
+        recommends = set()
+        suggests = set()
+        if 'Depends' in control:
+            for depend in control['Depends'].split(','):
+                depends.add(depend.strip())
+        if 'Recommends' in control:
+            for recommend in control['Recommends'].split(','):
+                recommends.add(recommend.strip())
+        if 'Suggests' in control:
+            for suggest in control['Suggests'].split(','):
+                suggests.add(suggest.strip())
+
+        if package.expansion_for:
+            depends.add(package.expansion_for)
+        engine = package.debian.get('engine')
+        if engine:
+            recommends.add(engine)
+        for other_package in self.packages.values():
+            if other_package.expansion_for == package.name:
+                suggests.add(other_package.name)
+
+        if depends:
+            control['Depends'] = ', '.join(depends)
+        if recommends:
+            control['Recommends'] = ', '.join(recommends)
+        if suggests:
+            control['Suggests'] = ', '.join(suggests)
+
+        version = package.debian.get('version')
+        if 'Version' in control:
+            package.version = control['Version'].replace('VERSION',
+                    GAME_PACKAGE_VERSION)
+        elif version:
+            package.version = version + '+' + GAME_PACKAGE_VERSION
+        else:
+            package.version = GAME_PACKAGE_VERSION
+
         control['Version'] = package.version
 
     def get_control_template(self, package):

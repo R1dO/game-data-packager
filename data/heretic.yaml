@@ -22,14 +22,13 @@ help_text: |
 packages:
   heretic-wad:
     install_to: usr/share/games/doom
-    type: full
     install:
     - heretic.wad
 
   heretic-shareware-data:
     longname: "Heretic (shareware)"
     install_to: usr/share/games/doom
-    type: demo
+    demo_for: heretic-wad
     install:
     - heretic1.wad
 

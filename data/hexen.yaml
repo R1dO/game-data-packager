@@ -26,14 +26,13 @@ doom_engine: hexen
 packages:
   hexen-wad:
     install_to: usr/share/games/doom
-    type: full
     install:
     - hexen.wad
 
   hexen-deathkings-data:
     longname: "Hexen: Deathkings of the Dark Citadel"
     install_to: usr/share/games/doom
-    type: expansion
+    expansion_for: hexen-wad
     install:
     - hexdd.wad
 
@@ -41,7 +40,7 @@ packages:
   #hexen-demo-data:
   #  longname: "Hexen: Beyond Heretic (demo)"
   #  install_to: usr/share/games/doom
-  #   type: demo
+  #   demo_for: hexen-wad
   #  install:
   #  - hexendemo.wad
 

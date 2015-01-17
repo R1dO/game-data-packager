@@ -16,14 +16,12 @@ packages:
     # these are IWADs so technically they behave like full games:
     # you don't need Doom or Doom II to play them
     longname: "Final Doom: TNT: Evilution"
-    type: full
     install:
     - tnt.wad
     install_to: usr/share/games/doom
 
   plutonia-wad:
     longname: "Final Doom: The Plutonia Experiment"
-    type: full
     install:
     - plutonia.wad
     install_to: usr/share/games/doom
