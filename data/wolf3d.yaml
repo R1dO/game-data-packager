@@ -9,6 +9,7 @@ packages:
     debian:
       engine: wolf4sdl
       provides: wolf3d-data
+      replaces: wolf3d-data-wl1
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
       2707522358 1156   audiohed.wl1
