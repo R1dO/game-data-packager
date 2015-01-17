@@ -19,6 +19,8 @@ packages:
     install_to: usr/share/games/doom
     install:
     - doom2.wad
+    debian:
+      engine: "chocolate-doom | doom-engine"
 
 files:
   doom2.wad:

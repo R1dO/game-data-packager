@@ -1,14 +1,5 @@
-Package: PACKAGE
-Section: non-free/games
-Priority: optional
-Architecture: all
-Multi-Arch: foreign
-Recommends: chocolate-doom | heretic-engine
 Breaks: chocolate-doom (<< 2)
 Provides: heretic-wad
-Installed-Size: 56
-Version: VERSION
-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Description: IWAD from Raven Software's heretic computer game
  Heretic requires both a heretic-engine and a heretic-wad to play. This package
  contains the IWAD from Raven Software's game "GAME"

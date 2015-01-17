@@ -24,6 +24,8 @@ packages:
     install_to: usr/share/games/doom
     install:
     - heretic.wad
+    debian:
+      engine: "chocolate-doom | heretic-engine"
 
   heretic-shareware-data:
     longname: "Heretic (shareware)"
@@ -31,6 +33,8 @@ packages:
     demo_for: heretic-wad
     install:
     - heretic1.wad
+    debian:
+      engine: "chocolate-doom | heretic-engine"
 
 files:
   htic_v12.zip:

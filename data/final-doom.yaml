@@ -19,12 +19,16 @@ packages:
     install:
     - tnt.wad
     install_to: usr/share/games/doom
+    debian:
+      engine: "chocolate-doom | doom-engine"
 
   plutonia-wad:
     longname: "Final Doom: The Plutonia Experiment"
     install:
     - plutonia.wad
     install_to: usr/share/games/doom
+    debian:
+      engine: "chocolate-doom | doom-engine"
 
 files:
   tnt.wad:
