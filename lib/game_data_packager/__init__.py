@@ -1569,15 +1569,20 @@ class GameData(object):
         control['Version'] = package.version
 
         if 'Description' not in control:
+            if package.longname:
+                longname = package.longname
+            else:
+                longname = self.longname
+
             long_desc =  ' This package was built using game-data-packager. It contains\n'
             long_desc += ' proprietary game data and must not be redistributed.\n'
             long_desc += ' .\n'
-            long_desc += ' Game: ' + package.longname
+            long_desc += ' Game: ' + longname
             if engine:
                 long_desc += '\n .\n'
                 long_desc += ' Intended for use with: ' + engine
 
-            control['Description'] = 'data for ' + package.longname + '\n' + long_desc
+            control['Description'] = 'data for ' + longname + '\n' + long_desc
 
     def get_control_template(self, package):
         return os.path.join(DATADIR, package.name + '.control.in')
