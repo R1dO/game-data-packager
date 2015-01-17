@@ -27,8 +27,8 @@ logger = logging.getLogger('game-data-packager.games.lgeneral')
 class LGeneralGameData(GameData):
     def add_parser(self, parsers, base_parser):
         parser = super(LGeneralGameData, self).add_parser(parsers, base_parser)
-        parser.add_argument('-f', action='append', dest='paths',
-                metavar='pg-data.tar.gz', help='Path to pg-data.tar.gz')
+        parser.add_argument('-f', dest='download', action='store_false',
+                help='Require pg-data.tar.gz on the command line')
         parser.add_argument('-w', dest='download', action='store_true',
                 help='Download pg-data.tar.gz (done automatically ' +
                     'if necessary)')

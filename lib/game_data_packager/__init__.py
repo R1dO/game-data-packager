@@ -1875,6 +1875,7 @@ def run_command_line():
             search=True,
     )
     parser.parse_args(namespace=parsed)
+    logger.debug('parsed command-line arguments into: %r', parsed)
 
     if parsed.destination is None and not parsed.install:
         logger.error('At least one of --install or --destination is required')
