@@ -24,6 +24,8 @@ packages:
     - HUNTBGIN.WAD
     - REMOTE1.RTS
     - VENDOR.DOC
+    debian:
+      engine: rott
 
   rott-registered-data:
     longname: "Rise of the Triad: Dark War"
@@ -33,6 +35,8 @@ packages:
     - DARKWAR.RTL
     - DARKWAR.WAD
     - LICENSE.TXT
+    debian:
+      engine: rott
 
   rott-extreme-data:
     expansion_for: rott-registered-data
@@ -43,6 +47,8 @@ packages:
     symlinks:
       usr/share/doc/rott-extreme-data/LICENSE.TXT:
         usr/share/doc/rott-registered-data/LICENSE.TXT
+    debian:
+      engine: rott
 
 files:
   any_registered_rtc:
