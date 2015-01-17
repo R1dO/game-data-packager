@@ -23,12 +23,18 @@ game-data-packager (39) UNRELEASED; urgency=medium
     which will download/create the demo even if the full game is available
   * Show help after failing to build a package, since it often has
     hints on the data files that are required
+  * New command-line options for all YAML games:
+    - --download, --no-download
+    - --save-downloads
 
   Bug fixes:
 
   [ Alexandre Detiste ]
   * rtcw-data should recommend rtcw (ITP #773742), not rtcw-sp
   * make_template: strip trailing '/' from directories to be searched
+  * Give hexen2-data and quake3-data a Suggests on their expansions, to
+    keep deborphan happy; add that policy to the documentation
+  * Install documentation to $docdir now the code supports that
 
   [ Simon McVittie ]
   * Search /usr/share/games/quake3 for Quake III Arena data
@@ -38,12 +44,16 @@ game-data-packager (39) UNRELEASED; urgency=medium
     (Closes: #775152)
   * Install Heretic and Hexen to /usr/share/games/doom again
   * Automatically exclude __pycache__ from tarball
+  * Make the -f option for rott, tyrian, wolf3d do approximately what it used
+    to do before their YAML conversions
 
   Internal changes:
 
   [ Alexandre Detiste ]
   * convert tyrian-data to YAML style
   * Convert Wolfenstein 3D to YAML style
+  * Add 'make manual-check' which tests some common code paths using
+    a local mirror of some freely downloadable games
 
   [ Simon McVittie ]
   * For games in YAML style, do the .deb building and installation in
@@ -57,12 +67,14 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Switch Hexen II to YAML style
   * Convert Doom games to YAML style, with the help of extra Python code
     in game_data_packager.games.doom_common (Closes: #775081)
+  * Switch lgeneral to YAML style
   * Add support for flagging files in YAML as known-but-unsuitable,
     and use it for older versions of various .wad files
   * Add support for concatenating files, needed for Quake 1
   * Add support for optional files, used for Wolfenstein 3D, Quake 1
     and Return to Castle Wolfenstein
   * Add myself and Alexandre to debian/copyright
+  * Check for id-shr-extract, lgc-pg, lha tools before use
 
  -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
 
