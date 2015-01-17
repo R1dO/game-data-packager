@@ -23,6 +23,8 @@ packages:
     - baseq2/video/eou8_.cin
     - baseq2/video/idlog.cin
     - baseq2/video/ntro.cin
+    debian:
+      engine: quake2 | quake2-server
 
   quake2-demo-data:
     demo_for: quake2-full-data
@@ -31,6 +33,8 @@ packages:
       - quake2_manual
     install_contents_of:
     - q2-314-demo-x86.exe
+    debian:
+      engine: quake2 | quake2-server
 
 files:
   q2-314-demo-x86.exe:

@@ -11,6 +11,8 @@ packages:
     - licinfo.txt_shareware
     - slicnse.txt
     install_to: usr/share/games/quake
+    debian:
+      engine: quake | quake-server
 
   quake-registered:
     install:
@@ -22,6 +24,8 @@ packages:
     - manual.txt_101_cd
     - rlicnse.txt_101_cd
     install_to: usr/share/games/quake
+    debian:
+      engine: quake | quake-server
 
   quake-armagon:
     expansion_for: quake-registered
@@ -32,6 +36,8 @@ packages:
     - manual.htm_mp1
     - manual.txt_mp1
     install_to: usr/share/games/quake
+    debian:
+      engine: quake | quake-server
 
   quake-dissolution:
     expansion_for: quake-registered
@@ -42,6 +48,8 @@ packages:
     - manual.htm_mp2
     - manual.txt_mp2
     install_to: usr/share/games/quake
+    debian:
+      engine: quake | quake-server
 
 files:
   id1/pak0.pak_101:
