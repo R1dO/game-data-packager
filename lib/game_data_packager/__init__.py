@@ -937,11 +937,14 @@ class GameData(object):
                     # updates file_status as a side-effect
                     self.fill_gap(package, wanted, download=download, log=log)
 
+            logger.debug('%s: %s', filename, self.file_status[filename])
+
             if filename in package.install:
                 # it is mandatory
                 result &= self.file_status[filename]
 
         self.package_status[package.name] = result
+        logger.debug('%s: %s', package.name, result)
         return result
 
     def consider_zip(self, name, zf, provider):
@@ -1702,6 +1705,8 @@ class GameData(object):
                 else:
                     raise NoPackagesPossible()
 
+        logger.debug('possible packages: %r', possible)
+
         ready = set()
 
         have_full = False
@@ -1734,6 +1739,7 @@ class GameData(object):
                 raise DownloadNotAllowed()
             raise DownloadsFailed()
 
+        logger.debug('packages ready for building: %r', ready)
         return ready
 
     def build_packages(self, ready, destination, compress):
