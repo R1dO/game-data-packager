@@ -1,14 +1,4 @@
-Package: PACKAGE
-Section: non-free/games
-Priority: optional
-Architecture: all
-Multi-Arch: foreign
-Recommends: chocolate-doom | hexen-engine
-Depends: hexen-wad
 Breaks: chocolate-doom (<< 2)
-Installed-Size: 56
-Version: VERSION
-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Description: Hexen: Deathkings of the Dark Citadel PWAD
  Hexen requires both a hexen-engine and data files to play. This package
  contains the data files from the Hexen expansion "Deathkings of the

@@ -35,6 +35,11 @@ def subst(from_, to, **kwargs):
         to.write(line)
 
 class WadPackage(GameDataPackage):
+    def __init__(self, name):
+        super(WadPackage, self).__init__(name)
+
+        self.engine = None
+
     @property
     def main_wad(self):
         for f in self.install:
@@ -81,6 +86,9 @@ class DoomGameData(GameData):
         for package in self.packages.values():
             assert package.main_wad is not None
 
+            package.engine = self.yaml['packages'][package.name].get(
+                    'doom_engine')
+
     def construct_package(self, binary):
         return WadPackage(binary)
 
@@ -99,7 +107,7 @@ class DoomGameData(GameData):
         wad_base = os.path.splitext(package.main_wad)[0]
 
         desc = control['Description']
-        desc = desc.replace('ENGINE', self.engine)
+        desc = desc.replace('ENGINE', (package.engine or self.engine))
         desc = desc.replace('GAME', wad_base)
         desc = desc.replace('LONG', (package.longname or self.longname))
         control['Description'] = desc
@@ -145,7 +153,7 @@ class DoomGameData(GameData):
                                 'w'),
                             GAME=wad_base,
                             LONG=(package.longname or self.longname),
-                            ENGINE=self.engine)
+                            ENGINE=(package.engine or self.engine))
                     break
             else:
                 raise AssertionError('doom-common.desktop.in should have existed')
