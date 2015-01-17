@@ -1766,22 +1766,28 @@ class GameData(object):
             if not os.path.isdir(prefix):
                 continue
 
-            path = self.steam.get('path')
-            if path is not None:
-                for middle in ('steamapps', 'SteamApps'):
-                    path = os.path.join(prefix, middle, path)
+            logger.debug('possible Steam root directory at %s', prefix)
+
+            suffix = self.steam.get('path')
+            if suffix is not None:
+                for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
+                        'steam/SteamApps'):
+                    path = os.path.join(prefix, middle, suffix)
                     if os.path.isdir(path):
-                        logger.debug('possible Steam installation at %s', path)
+                        logger.debug('possible %s found in Steam at %s',
+                                self.shortname, path)
                         yield path
 
             for package in self.packages.values():
-                path = package.steam.get('path')
+                suffix = package.steam.get('path')
 
-                if path is not None:
-                    for middle in ('steamapps', 'SteamApps'):
-                        path = os.path.join(prefix, middle, path)
+                if suffix is not None:
+                    for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
+                            'steam/SteamApps'):
+                        path = os.path.join(prefix, middle, suffix)
                         if os.path.isdir(path):
-                            logger.debug('possible Steam installation at %s', path)
+                            logger.debug('possible %s found in Steam at %s',
+                                    package.name, path)
                             yield path
 
     def construct_package(self, binary):
