@@ -94,9 +94,11 @@ check:
 	pyflakes3 lib/game_data_packager/*.py lib/game_data_packager/*/*.py || :
 
 testsuite:
+	install -d tmp/
 	for game in $(TEST_SUITE); do \
 	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=lib \
-		python3 -m game_data_packager -d /tmp --no-search --no-compress $$game || exit $$?; \
+		python3 -m game_data_packager -d ./tmp --no-search --no-compress $$game || exit $$?; \
 	done
+	rm -fr tmp/
 
 .PHONY: default clean check testsuite
