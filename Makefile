@@ -93,7 +93,8 @@ check:
 	GDP_UNINSTALLED=1 PYTHONPATH=lib python3 -m game_data_packager.check_syntax
 	pyflakes3 lib/game_data_packager/*.py lib/game_data_packager/*/*.py || :
 
-testsuite:
+# Requires additional setup, so not part of "make check"
+manual-check:
 	install -d tmp/
 	for game in $(TEST_SUITE); do \
 	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=lib \
@@ -101,4 +102,4 @@ testsuite:
 	done
 	rm -fr tmp/
 
-.PHONY: default clean check testsuite
+.PHONY: default clean check manual-check
