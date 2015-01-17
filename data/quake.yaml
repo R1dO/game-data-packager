@@ -8,6 +8,7 @@ packages:
     longname: Quake (shareware)
     debian:
       engine: quake-engine
+      provides: quake-data
     install:
     - id1/pak0.pak_106
     - licinfo.txt_shareware
@@ -17,6 +18,7 @@ packages:
   quake-registered:
     debian:
       engine: quake-engine
+      provides: quake-data
     install:
     - id1/pak0.pak_106
     - id1/pak1.pak

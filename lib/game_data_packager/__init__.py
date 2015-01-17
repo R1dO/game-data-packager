@@ -1499,6 +1499,7 @@ class GameData(object):
         depends = set()
         recommends = set()
         suggests = set()
+        provides = set()
         if 'Depends' in control:
             for depend in control['Depends'].split(','):
                 depends.add(depend.strip())
@@ -1508,6 +1509,9 @@ class GameData(object):
         if 'Suggests' in control:
             for suggest in control['Suggests'].split(','):
                 suggests.add(suggest.strip())
+        if 'Provides' in control:
+            for provide in control['Provides'].split(','):
+                provides.add(provide.strip())
 
         if package.expansion_for:
             depends.add(package.expansion_for)
@@ -1519,6 +1523,11 @@ class GameData(object):
         for other_package in self.packages.values():
             if other_package.expansion_for == package.name:
                 suggests.add(other_package.name)
+        provide = package.debian.get('provides')
+        assert provide != package.name, \
+               "A package shouldn't extraneously provide itself"
+        if provide:
+            provides.add(provide)
 
         if depends:
             control['Depends'] = ', '.join(depends)
@@ -1526,6 +1535,8 @@ class GameData(object):
             control['Recommends'] = ', '.join(recommends)
         if suggests:
             control['Suggests'] = ', '.join(suggests)
+        if provides:
+            control['Provides'] = ', '.join(provides)
 
         version = package.debian.get('version')
         if 'Version' in control:

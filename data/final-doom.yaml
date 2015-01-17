@@ -18,6 +18,7 @@ packages:
     longname: "Final Doom: TNT: Evilution"
     debian:
       engine: chocolate-doom | doom-engine
+      provides: doom-wad
     install:
     - tnt.wad
     install_to: usr/share/games/doom
@@ -26,6 +27,7 @@ packages:
     longname: "Final Doom: The Plutonia Experiment"
     debian:
       engine: chocolate-doom | doom-engine
+      provides: doom-wad
     install:
     - plutonia.wad
     install_to: usr/share/games/doom
