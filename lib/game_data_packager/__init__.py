@@ -492,6 +492,9 @@ class GameData(object):
         # Set of filenames we couldn't unpack
         self.unpack_failed = set()
 
+        # None or an existing directory in which to save downloaded files.
+        self.save_downloads = None
+
         self._populate_files(self.yaml.get('files'))
 
         assert 'packages' in self.yaml
@@ -1168,10 +1171,15 @@ class GameData(object):
                         if rf is None:
                             continue
 
-                        tmp = os.path.join(self.get_workdir(),
-                                'tmp', wanted.name)
-                        tmpdir = os.path.dirname(tmp)
-                        mkdir_p(tmpdir)
+                        if self.save_downloads is not None:
+                            tmp = os.path.join(self.save_downloads,
+                                    wanted.name)
+                        else:
+                            tmp = os.path.join(self.get_workdir(),
+                                    'tmp', wanted.name)
+                            tmpdir = os.path.dirname(tmp)
+                            mkdir_p(tmpdir)
+
                         wf = open(tmp, 'wb')
                         logger.info('downloading %s', url)
                         hf = HashedFile.from_file(url, rf, wf,
@@ -1184,6 +1192,7 @@ class GameData(object):
                                     FillResult.COMPLETE)
                             return FillResult.COMPLETE
                         else:
+                            # file corrupted or something
                             os.remove(tmp)
                     except Exception as e:
                         logger.warning('Failed to download "%s": %s', url,
@@ -1502,6 +1511,9 @@ class GameData(object):
     def look_for_files(self, paths=(), search=True):
         paths = list(paths)
 
+        if self.save_downloads is not None:
+            paths.append(self.save_downloads)
+
         if search:
             for path in self.try_repack_from:
                 if os.path.isdir(path):
@@ -1533,6 +1545,8 @@ class GameData(object):
             # default to not compressing if we aren't going to install it
             # anyway
             args.compress = preserve_debs
+
+        self.save_downloads = args.save_downloads
 
         self.look_for_files(paths=args.paths, search=args.search)
 
@@ -1855,6 +1869,8 @@ def run_command_line():
                 '(default)')
     group.add_argument('--no-download', action='store_false',
             dest='download', help='do not download anything')
+    base_parser.add_argument('--save-downloads', metavar='DIR',
+            help='save downloaded files to DIR, and look for files there')
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.', parents=(base_parser,))
@@ -1872,6 +1888,7 @@ def run_command_line():
             destination=None,
             download=True,
             install=False,
+            save_downloads=None,
             search=True,
     )
     parser.parse_args(namespace=parsed)
@@ -1884,6 +1901,12 @@ def run_command_line():
     if parsed.shortname is None:
         parser.print_help()
         sys.exit(0)
+
+    if (parsed.save_downloads is not None and
+            not os.path.isdir(parsed.save_downloads)):
+        logger.error('argument "%s" to --save-downloads does not exist',
+                parsed.save_downloads)
+        sys.exit(2)
 
     with games[parsed.shortname] as game:
         game.run_command_line(parsed)
