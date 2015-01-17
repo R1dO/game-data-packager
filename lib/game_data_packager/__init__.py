@@ -98,6 +98,12 @@ class FillResult(Enum):
 
         return FillResult.IMPOSSIBLE
 
+class NoPackagesPossible(Exception):
+    pass
+
+class DownloadsFailed(Exception):
+    pass
+
 class HashedFile(object):
     def __init__(self, name):
         self.name = name
@@ -1517,8 +1523,20 @@ class GameData(object):
         else:
             packages = set(self.packages.values())
 
-        ready = self.prepare_packages(packages,
-                build_demos=args.demo)
+        try:
+            ready = self.prepare_packages(packages,
+                    build_demos=args.demo)
+        except NoPackagesPossible:
+            logger.error('Unable to complete any packages.')
+            # probably not enough files supplied?
+            # print the help text, maybe that helps the user to determine
+            # what they should have added
+            self.argument_parser.print_help()
+            raise SystemExit(1)
+        except DownloadsFailed:
+            # we already logged an error
+            logger.error('Unable to complete any packages because downloads failed.')
+            raise SystemExit(1)
 
         if args.destination is None:
             destination = self.get_workdir()
@@ -1561,8 +1579,7 @@ class GameData(object):
                                 package.name)
                         possible.add(package)
                     else:
-                        self.argument_parser.print_help()
-                        raise SystemExit(1)
+                        raise NoPackagesPossible()
             else:
                 # If no demo, repeat the process for the first
                 # (hopefully only) full package, so we can log *its* errors.
@@ -1575,12 +1592,9 @@ class GameData(object):
                                     'a bug', package.name)
                             possible.add(package)
                         else:
-                            self.argument_parser.print_help()
-                            sys.exit(1)
+                            raise NoPackagesPossible()
                 else:
-                    self.argument_parser.print_help()
-                    raise SystemExit('Unable to complete any packages. ' +
-                            'Please provide more files or directories.')
+                    raise NoPackagesPossible()
 
         ready = set()
 
@@ -1606,8 +1620,7 @@ class GameData(object):
                         package.name)
 
         if not ready:
-            self.argument_parser.print_help()
-            raise SystemExit(1)
+            raise DownloadsFailed()
 
         return ready
 
