@@ -1470,11 +1470,25 @@ class GameData(object):
         return True
 
     def modify_control_template(self, control, package, destdir):
+        if 'Package' in control:
+            assert control['Package'] in ('PACKAGE', package.name)
+        control['Package'] = package.name
+
         size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
             '.'], cwd=destdir).decode('utf-8').split(None, 1)[0]
-        assert control['Package'] in ('PACKAGE', package.name)
-        control['Package'] = package.name
         control['Installed-Size'] = size
+
+        default_values = {
+            'Section' : 'non-free/games',
+            'Priority' : 'optional',
+            'Architecture' : 'all',
+            'Maintainer' : 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>',
+        }
+        for field in default_values:
+            if field not in control:
+                control[field] = default_values[field]
+        if control['Architecture'] == 'all' and 'Multi-Arch' not in control:
+            control['Multi-Arch'] = 'foreign'
 
         depends = set()
         suggests = set()
