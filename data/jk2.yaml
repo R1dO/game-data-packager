@@ -24,6 +24,9 @@ help_text: |
 
 packages:
   jedi-outcast-data:
+    debian:
+      version: 1.04
+      engine: openjk-outcast
     # cksums(1) is pretty useless as a checksumming tool, but it's a convenient
     # way to get exact file sizes in bytes (second column), which are a nice
     # heuristic for identifying files

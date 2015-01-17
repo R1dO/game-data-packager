@@ -6,6 +6,8 @@ packages:
   wolf3d-demo-data:
     demo_for: wolf3d-full-data
     longname: Wolfenstein 3D (demo)
+    debian:
+      engine: wolf4sdl
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
       2707522358 1156   audiohed.wl1
@@ -21,6 +23,8 @@ packages:
 
   wolf3d-full-data:
     longname: Wolfenstein 3D
+    debian:
+      engine: wolf4sdl
     steam:
       id: 2270
       path: common/Wolfenstein 3D

@@ -22,6 +22,8 @@ help_text: |
 
 packages:
   doom-wad:
+    debian:
+      engine: chocolate-doom | doom-engine
     install_to: usr/share/games/doom
     longname: Doom
     install:

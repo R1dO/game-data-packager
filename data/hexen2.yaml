@@ -17,6 +17,8 @@ help_text: |
 packages:
   hexen2-data:
     longname: Hexen II
+    debian:
+      engine: hexen2-engine
     steam:
       id: 9060
       path: "common/Hexen 2"

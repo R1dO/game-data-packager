@@ -25,6 +25,8 @@ doom_engine: hexen
 
 packages:
   hexen-wad:
+    debian:
+      engine: chocolate-doom | hexen-engine
     install_to: usr/share/games/doom
     install:
     - hexen.wad

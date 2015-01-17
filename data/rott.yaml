@@ -11,6 +11,8 @@ packages:
   rott-data:
     install_to: usr/share/games/rott
     longname: "Rise of the Triad: The HUNT begins"
+    debian:
+      engine: rott
     # this shareware data are considered a as full game because
     # it includes the HUNT Begin levels not present in the commercial game
 
@@ -27,6 +29,8 @@ packages:
 
   rott-registered-data:
     longname: "Rise of the Triad: Dark War"
+    debian:
+      engine: rott
     install_to: usr/share/games/rott
     install:
     - any_registered_rtc

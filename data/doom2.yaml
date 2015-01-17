@@ -16,6 +16,8 @@ help_text: |
 
 packages:
   doom2-wad:
+    debian:
+      engine: chocolate-doom | doom-engine
     install_to: usr/share/games/doom
     install:
     - doom2.wad

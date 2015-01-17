@@ -1512,6 +1512,8 @@ class GameData(object):
         if package.expansion_for:
             depends.add(package.expansion_for)
         engine = package.debian.get('engine')
+        assert engine is None or package.type != 'expansion', \
+               'An expansion will inherit the engine of the full game'
         if engine:
             recommends.add(engine)
         for other_package in self.packages.values():

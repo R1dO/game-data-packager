@@ -6,6 +6,8 @@ packages:
   quake-shareware:
     demo_for: quake-registered
     longname: Quake (shareware)
+    debian:
+      engine: quake-engine
     install:
     - id1/pak0.pak_106
     - licinfo.txt_shareware
@@ -13,6 +15,8 @@ packages:
     install_to: usr/share/games/quake
 
   quake-registered:
+    debian:
+      engine: quake-engine
     install:
     - id1/pak0.pak_106
     - id1/pak1.pak

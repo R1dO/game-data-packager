@@ -30,6 +30,8 @@ help_text: |
 packages:
   quake3-data:
     longname: Quake III Arena
+    debian:
+      engine: quake3 | quake3-server
     steam:
       id: 2200
     # We deliberately only put baseq3 in the search path, not
