@@ -109,6 +109,9 @@ class NoPackagesPossible(Exception):
 class DownloadsFailed(Exception):
     pass
 
+class DownloadNotAllowed(Exception):
+    pass
+
 class HashedFile(object):
     def __init__(self, name):
         self.name = name
@@ -1540,7 +1543,7 @@ class GameData(object):
 
         try:
             ready = self.prepare_packages(packages,
-                    build_demos=args.demo)
+                    build_demos=args.demo, download=args.download)
         except NoPackagesPossible:
             logger.error('Unable to complete any packages.')
             if self.missing_tools:
@@ -1552,6 +1555,10 @@ class GameData(object):
             # print the help text, maybe that helps the user to determine
             # what they should have added
             self.argument_parser.print_help()
+            raise SystemExit(1)
+        except DownloadNotAllowed:
+            logger.error('Unable to complete any packages because ' +
+                    'downloading missing files was not allowed.')
             raise SystemExit(1)
         except DownloadsFailed:
             # we already logged an error
@@ -1576,7 +1583,7 @@ class GameData(object):
         if install_debs:
             self.install_packages(debs)
 
-    def prepare_packages(self, packages, build_demos=False):
+    def prepare_packages(self, packages, build_demos=False, download=True):
         possible = set()
 
         for package in packages:
@@ -1632,14 +1639,20 @@ class GameData(object):
                 continue
 
             logger.debug('will produce %s', package.name)
-            if self.fill_gaps(package=package, download=True,
-                    log=True) is FillResult.COMPLETE:
+            result = self.fill_gaps(package=package, download=download,
+                    log=True)
+            if result is FillResult.COMPLETE:
                 ready.add(package)
+            elif result is FillResult.DOWNLOAD_NEEDED and not download:
+                logger.warning('As requested, not downloading necessary ' +
+                        'files for %s', package.name)
             else:
                 logger.error('Failed to download necessary files for %s',
                         package.name)
 
         if not ready:
+            if not download:
+                raise DownloadNotAllowed()
             raise DownloadsFailed()
 
         return ready
@@ -1836,6 +1849,13 @@ def run_command_line():
             dest='search',
             help='only look in paths provided on the command line')
 
+    group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('--download', action='store_true',
+            help='automatically download necessary files if possible ' +
+                '(default)')
+    group.add_argument('--no-download', action='store_false',
+            dest='download', help='do not download anything')
+
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.', parents=(base_parser,))
 
@@ -1850,6 +1870,7 @@ def run_command_line():
     parsed = argparse.Namespace(
             compress=None,
             destination=None,
+            download=True,
             install=False,
             search=True,
     )

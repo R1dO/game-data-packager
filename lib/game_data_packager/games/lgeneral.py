@@ -34,14 +34,14 @@ class LGeneralGameData(GameData):
                     'if necessary)')
         return parser
 
-    def prepare_packages(self, packages, build_demos=False):
+    def prepare_packages(self, packages, build_demos=False, download=True):
         # don't bother even trying if it isn't going to work
         if which('lgc-pg') is None:
             logger.error('The "lgc-pg" tool is required for this package.')
             raise NoPackagesPossible()
 
         ready = super(LGeneralGameData, self).prepare_packages(packages,
-                build_demos=build_demos)
+                build_demos=build_demos, download=download)
 
         # would have raised an exception if not
         assert self.packages['lgeneral-data-nonfree'] in ready
