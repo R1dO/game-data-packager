@@ -335,6 +335,9 @@ class GameDataPackage(object):
         # Steam ID and path
         self.steam = {}
 
+        # depedency information needed to build the debian/control file
+        self.debian = {}
+
         # set of names of WantedFile instances to be installed
         self._install = set()
 
@@ -651,7 +654,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('demo_for', 'expansion_for', 'longname', 'symlinks', 'install_to',
-                'install_to_docdir', 'install_contents_of', 'steam'):
+                'install_to_docdir', 'install_contents_of', 'steam', 'debian'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -1491,24 +1494,31 @@ class GameData(object):
             control['Multi-Arch'] = 'foreign'
 
         depends = set()
+        recommends = set()
         suggests = set()
         if 'Depends' in control:
             for depend in control['Depends'].split(','):
-                depend = depend.strip()
-                depends.add(depend)
+                depends.add(depend.strip())
+        if 'Recommends' in control:
+            for recommend in control['Recommends'].split(','):
+                recommends.add(recommend.strip())
         if 'Suggests' in control:
             for suggest in control['Suggests'].split(','):
-                suggest = suggest.strip()
-                suggests.add(suggest)
+                suggests.add(suggest.strip())
 
         if package.expansion_for:
             depends.add(package.expansion_for)
+        engine = package.debian.get('engine')
+        if engine:
+            recommends.add(engine)
         for other_package in self.packages.values():
             if other_package.expansion_for == package.name:
                 suggests.add(other_package.name)
 
         if depends:
             control['Depends'] = ', '.join(depends)
+        if recommends:
+            control['Recommends'] = ', '.join(recommends)
         if suggests:
             control['Suggests'] = ', '.join(suggests)
 

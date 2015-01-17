@@ -26,6 +26,8 @@ packages:
   spear-of-destiny-demo-data:
     longname: "Spear of Destiny (shareware)"
     demo_for: spear-of-destiny-data
+    debian:
+      engine: wolf4sdl
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
       1612205268 1072    audiohed.sdm
@@ -41,6 +43,8 @@ packages:
 
   spear-of-destiny-data:
     longname: "Spear of Destiny (registered version, mission 1)"
+    debian:
+      engine: wolf4sdl
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
       3311987448 1072    audiohed.sod
