@@ -930,6 +930,8 @@ class GameData(object):
 
                 if wanted.alternatives:
                     for alt in wanted.alternatives:
+                        self.fill_gap(package, self.files[alt],
+                                download=download, log=log)
                         self.file_status[filename] |= self.file_status[alt]
                 else:
                     # updates file_status as a side-effect
