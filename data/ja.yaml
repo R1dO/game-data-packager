@@ -40,6 +40,9 @@ packages:
       # Jedi Academy patch 1.04 (self-extracting patch, no known way to extract
       # programatically)
       3247293709 9282026 base/assets3.pk3
+    debian:
+      engine: openjk-academy | openjk-academy-server
+      version: '1.01'
 
   jedi-academy-bonus-data:
     longname: "Bonus maps for Jedi Academy"
@@ -47,6 +50,8 @@ packages:
     install_files_from_cksums: |
       2890259980 14328834 base/bonus.pk3
       4222768269 5948070 base/siege_destroyer.pk3
+    debian:
+      engine: openjk-academy | openjk-academy-server
 
 files:
   jabonusmaps.exe:
