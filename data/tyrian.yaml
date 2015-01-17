@@ -10,6 +10,8 @@ help_text: |
 
 packages:
   tyrian-data:
+    debian:
+      engine: opentyrian
     # there are two identical files in the zip
     symlinks:
       usr/share/games/tyrian/netset.pcx: usr/share/games/tyrian/tyrset.pcx
