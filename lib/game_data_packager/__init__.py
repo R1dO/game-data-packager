@@ -1449,8 +1449,11 @@ class GameData(object):
                 shell=True, cwd=destdir)
         os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
 
-        control_in = open(self.get_control_template(package))
-        control = Deb822(control_in)
+        try:
+            control_in = open(self.get_control_template(package))
+            control = Deb822(control_in)
+        except FileNotFoundError:
+            control = Deb822()
         self.modify_control_template(control, package, destdir)
         control.dump(fd=open(os.path.join(debdir, 'control'), 'wb'),
                 encoding='utf-8')
@@ -1532,6 +1535,17 @@ class GameData(object):
             package.version = GAME_PACKAGE_VERSION
 
         control['Version'] = package.version
+
+        if 'Description' not in control:
+            long_desc =  ' This package was built using game-data-packager. It contains\n'
+            long_desc += ' proprietary game data and must not be redistributed.\n'
+            long_desc += ' .\n'
+            long_desc += ' Game: ' + package.longname
+            if engine:
+                long_desc += '\n .\n'
+                long_desc += ' Intended for use with: ' + engine
+
+            control['Description'] = 'data for ' + package.longname + '\n' + long_desc
 
     def get_control_template(self, package):
         return os.path.join(DATADIR, package.name + '.control.in')
