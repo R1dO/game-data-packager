@@ -109,6 +109,9 @@ class NoPackagesPossible(Exception):
 class DownloadsFailed(Exception):
     pass
 
+class DownloadNotAllowed(Exception):
+    pass
+
 class HashedFile(object):
     def __init__(self, name):
         self.name = name
@@ -495,6 +498,9 @@ class GameData(object):
 
         # Set of filenames we couldn't unpack
         self.unpack_failed = set()
+
+        # None or an existing directory in which to save downloaded files.
+        self.save_downloads = None
 
         self._populate_files(self.yaml.get('files'))
 
@@ -924,16 +930,21 @@ class GameData(object):
 
                 if wanted.alternatives:
                     for alt in wanted.alternatives:
+                        self.fill_gap(package, self.files[alt],
+                                download=download, log=log)
                         self.file_status[filename] |= self.file_status[alt]
                 else:
                     # updates file_status as a side-effect
                     self.fill_gap(package, wanted, download=download, log=log)
+
+            logger.debug('%s: %s', filename, self.file_status[filename])
 
             if filename in package.install:
                 # it is mandatory
                 result &= self.file_status[filename]
 
         self.package_status[package.name] = result
+        logger.debug('%s: %s', package.name, result)
         return result
 
     def consider_zip(self, name, zf, provider):
@@ -1177,10 +1188,15 @@ class GameData(object):
                         if rf is None:
                             continue
 
-                        tmp = os.path.join(self.get_workdir(),
-                                'tmp', wanted.name)
-                        tmpdir = os.path.dirname(tmp)
-                        mkdir_p(tmpdir)
+                        if self.save_downloads is not None:
+                            tmp = os.path.join(self.save_downloads,
+                                    wanted.name)
+                        else:
+                            tmp = os.path.join(self.get_workdir(),
+                                    'tmp', wanted.name)
+                            tmpdir = os.path.dirname(tmp)
+                            mkdir_p(tmpdir)
+
                         wf = open(tmp, 'wb')
                         logger.info('downloading %s', url)
                         hf = HashedFile.from_file(url, rf, wf,
@@ -1193,6 +1209,7 @@ class GameData(object):
                                     FillResult.COMPLETE)
                             return FillResult.COMPLETE
                         else:
+                            # file corrupted or something
                             os.remove(tmp)
                     except Exception as e:
                         logger.warning('Failed to download "%s": %s', url,
@@ -1613,6 +1630,9 @@ class GameData(object):
     def look_for_files(self, paths=(), search=True):
         paths = list(paths)
 
+        if self.save_downloads is not None:
+            paths.append(self.save_downloads)
+
         if search:
             for path in self.try_repack_from:
                 if os.path.isdir(path):
@@ -1645,6 +1665,8 @@ class GameData(object):
             # anyway
             args.compress = preserve_debs
 
+        self.save_downloads = args.save_downloads
+
         self.look_for_files(paths=args.paths, search=args.search)
 
         if args.shortname in self.packages:
@@ -1654,10 +1676,10 @@ class GameData(object):
 
         try:
             ready = self.prepare_packages(packages,
-                    build_demos=args.demo)
+                    build_demos=args.demo, download=args.download)
         except NoPackagesPossible:
             logger.error('Unable to complete any packages.')
-            if self.unpack_failed and self.missing_tools:
+            if self.missing_tools:
                 # we already logged warnings about the files as they came up
                 self.log_missing_tools()
                 raise SystemExit(1)
@@ -1666,6 +1688,10 @@ class GameData(object):
             # print the help text, maybe that helps the user to determine
             # what they should have added
             self.argument_parser.print_help()
+            raise SystemExit(1)
+        except DownloadNotAllowed:
+            logger.error('Unable to complete any packages because ' +
+                    'downloading missing files was not allowed.')
             raise SystemExit(1)
         except DownloadsFailed:
             # we already logged an error
@@ -1690,7 +1716,7 @@ class GameData(object):
         if install_debs:
             self.install_packages(debs)
 
-    def prepare_packages(self, packages, build_demos=False):
+    def prepare_packages(self, packages, build_demos=False, download=True):
         possible = set()
 
         for package in packages:
@@ -1730,6 +1756,8 @@ class GameData(object):
                 else:
                     raise NoPackagesPossible()
 
+        logger.debug('possible packages: %r', possible)
+
         ready = set()
 
         have_full = False
@@ -1746,16 +1774,23 @@ class GameData(object):
                 continue
 
             logger.debug('will produce %s', package.name)
-            if self.fill_gaps(package=package, download=True,
-                    log=True) is FillResult.COMPLETE:
+            result = self.fill_gaps(package=package, download=download,
+                    log=True)
+            if result is FillResult.COMPLETE:
                 ready.add(package)
+            elif result is FillResult.DOWNLOAD_NEEDED and not download:
+                logger.warning('As requested, not downloading necessary ' +
+                        'files for %s', package.name)
             else:
                 logger.error('Failed to download necessary files for %s',
                         package.name)
 
         if not ready:
+            if not download:
+                raise DownloadNotAllowed()
             raise DownloadsFailed()
 
+        logger.debug('packages ready for building: %r', ready)
         return ready
 
     def build_packages(self, ready, destination, compress):
@@ -1790,22 +1825,28 @@ class GameData(object):
             if not os.path.isdir(prefix):
                 continue
 
-            path = self.steam.get('path')
-            if path is not None:
-                for middle in ('steamapps', 'SteamApps'):
-                    path = os.path.join(prefix, middle, path)
+            logger.debug('possible Steam root directory at %s', prefix)
+
+            suffix = self.steam.get('path')
+            if suffix is not None:
+                for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
+                        'steam/SteamApps'):
+                    path = os.path.join(prefix, middle, suffix)
                     if os.path.isdir(path):
-                        logger.debug('possible Steam installation at %s', path)
+                        logger.debug('possible %s found in Steam at %s',
+                                self.shortname, path)
                         yield path
 
             for package in self.packages.values():
-                path = package.steam.get('path')
+                suffix = package.steam.get('path')
 
-                if path is not None:
-                    for middle in ('steamapps', 'SteamApps'):
-                        path = os.path.join(prefix, middle, path)
+                if suffix is not None:
+                    for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
+                            'steam/SteamApps'):
+                        path = os.path.join(prefix, middle, suffix)
                         if os.path.isdir(path):
-                            logger.debug('possible Steam installation at %s', path)
+                            logger.debug('possible %s found in Steam at %s',
+                                    package.name, path)
                             yield path
 
     def construct_package(self, binary):
@@ -1909,7 +1950,7 @@ def load_yaml_games(workdir=None):
 
             games[g] = game_data_constructor(g, yaml_data, workdir=workdir)
         except:
-            print('Error loading %s:\n' % yaml)
+            print('Error loading %s:\n' % yamlfile)
             raise
 
     return games
@@ -1950,6 +1991,15 @@ def run_command_line():
             dest='search',
             help='only look in paths provided on the command line')
 
+    group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('--download', action='store_true',
+            help='automatically download necessary files if possible ' +
+                '(default)')
+    group.add_argument('--no-download', action='store_false',
+            dest='download', help='do not download anything')
+    base_parser.add_argument('--save-downloads', metavar='DIR',
+            help='save downloaded files to DIR, and look for files there')
+
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.', parents=(base_parser,))
 
@@ -1964,10 +2014,13 @@ def run_command_line():
     parsed = argparse.Namespace(
             compress=None,
             destination=None,
+            download=True,
             install=False,
+            save_downloads=None,
             search=True,
     )
     parser.parse_args(namespace=parsed)
+    logger.debug('parsed command-line arguments into: %r', parsed)
 
     if parsed.destination is None and not parsed.install:
         logger.error('At least one of --install or --destination is required')
@@ -1977,5 +2030,20 @@ def run_command_line():
         parser.print_help()
         sys.exit(0)
 
-    with games[parsed.shortname] as game:
+    if (parsed.save_downloads is not None and
+            not os.path.isdir(parsed.save_downloads)):
+        logger.error('argument "%s" to --save-downloads does not exist',
+                parsed.save_downloads)
+        sys.exit(2)
+
+    if parsed.shortname in games:
+        game = games[parsed.shortname]
+    else:
+        for game in games.values():
+            if parsed.shortname in game.packages:
+                break
+        else:
+            raise AssertionError('could not find %s' % parsed.shortname)
+
+    with game:
         game.run_command_line(parsed)

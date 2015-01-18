@@ -16,9 +16,9 @@ help_text: |
 
   The demo version of hexen is not currently supported.
 
-# hexen-demo-data requires HEXEN.WAD from the Hexen demo v1.2, which
-# will be downloaded automatically if necessary. It will be renamed to
-# hexendemo.wad to avoid colliding with the full version of Hexen.
+  hexen-demo-data requires HEXEN.WAD from the Hexen demo v1.0, which
+  will be downloaded automatically if necessary. It will be renamed to
+  hexendemo.wad to avoid colliding with the full version of Hexen.
 
 plugin: doom_common
 doom_engine: hexen
@@ -26,7 +26,7 @@ doom_engine: hexen
 packages:
   hexen-wad:
     debian:
-      engine: chocolate-doom | hexen-engine
+      engine: "chocolate-doom | hexen-engine"
     install_to: usr/share/games/doom
     install:
     - hexen.wad
@@ -38,13 +38,13 @@ packages:
     install:
     - hexdd.wad
 
-  # Disabled, doesn't seem to work
-  #hexen-demo-data:
-  #  longname: "Hexen: Beyond Heretic (demo)"
-  #  install_to: usr/share/games/doom
-  #   demo_for: hexen-wad
-  #  install:
-  #  - hexendemo.wad
+  hexen-demo-data:
+    longname: "Hexen: Beyond Heretic (demo)"
+    install_to: usr/share/games/doom
+    demo_for: hexen-wad
+    install:
+    - hexendemo.wad
+    doom_engine: doomsday-compat
 
 files:
 
@@ -58,18 +58,13 @@ files:
     - hexdd.wad_1.0
 
   hexendemo.wad:
-    alternatives:
-    - hexen.wad_demo_1.0
-
-  hexen.wad_demo_1.0:
     size: 10644136
-    look_for: [hexen.wad]
-    unsuitable: Hexen 1.1 (registered) is required
+    look_for: [hexen.wad, hexendemo.wad]
 
   hexen.wad_demo_beta:
     size:  10615976
-    look_for: [hexen.wad]
-    unsuitable: Hexen 1.1 (registered) is required
+    look_for: [hexen.wad, hexendemo.wad]
+    unsuitable: Hexen 1.0 (demo) is required
 
   hexdd.wad_1.1:
     size: 4440584
@@ -101,13 +96,13 @@ files:
     sha1: 02c3a8ac4417e17a3519524d96696111fe1c278c
     sha256: 469ee3a254959d2fca624aec7391292fbd1ac3ebd9074b65f05cbc74de3c4572
     size: 5664734
-    provides: [hexen.wad_demo_1.0]
+    provides: [hexendemo.wad]
     unpack:
       format: zip
 
 md5sums: |
   9178a32a496ff5befebfe6c47dac106c  hexen.wad_demo_beta
-  876a5a44c7b68f04b3bb9bc7a5bd69d6  hexen.wad_demo_1.0
+  876a5a44c7b68f04b3bb9bc7a5bd69d6  hexendemo.wad
   c88a2bb3d783e2ad7b599a8e301e099e  hexen.wad_beta
   b2543a03521365261d0a0f74d5dd90f0  hexen.wad_1.0
   abb033caf81e26f12a2103e1fa25453f  hexen.wad_1.1
@@ -115,7 +110,7 @@ md5sums: |
   78d5898e99e220e4de64edaa0e479593  hexdd.wad_1.1
 
 sha1sums: |
-  fa89a2475855e43c7f7e3198d6e4c4bee23bfab9  hexen.wad_demo_1.0
+  fa89a2475855e43c7f7e3198d6e4c4bee23bfab9  hexendemo.wad
   4b53832f0733c1e29e5f1de2428e5475e891af29  hexen.wad_1.1
   c3065527d62b05a930fe75fe8181a64fb1982976  hexdd.wad_1.0
   081f6a2024643b54ef4a436a85508539b6d20a1e  hexdd.wad_1.1

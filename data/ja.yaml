@@ -32,8 +32,8 @@ help_text: |
 packages:
   jedi-academy-data:
     debian:
-      version: 1.01
-      engine: openjk-academy
+      version: '1.01'
+      engine: openjk-academy | openjk-academy-server
     install_files_from_cksums: |
       # Jedi Academy CD1 GameData/GameData or installation
       3585517488 561806019 base/assets0.pk3

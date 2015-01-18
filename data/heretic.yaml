@@ -22,7 +22,7 @@ help_text: |
 packages:
   heretic-wad:
     debian:
-      engine: chocolate-doom | heretic-engine
+      engine: "chocolate-doom | heretic-engine"
     install_to: usr/share/games/doom
     install:
     - heretic.wad
@@ -30,7 +30,7 @@ packages:
   heretic-shareware-data:
     longname: "Heretic (shareware)"
     debian:
-      engine: chocolate-doom | heretic-engine
+      engine: "chocolate-doom | heretic-engine"
     install_to: usr/share/games/doom
     demo_for: heretic-wad
     install:

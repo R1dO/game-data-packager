@@ -1,0 +1,35 @@
+%YAML 1.2
+---
+shortname: lgeneral
+longname: LGeneral
+
+help_text: |
+  Data from Panzer General can be downloaded automatically.
+  You can skip the download by providing pg-data.tar.gz.
+
+packages:
+  lgeneral-data-nonfree:
+    longname: Panzer General data for LGeneral
+    type: full
+    install_to: usr/share/games/lgeneral
+    # pg-data.tar.gz is not actually needed, but it's small, and putting it
+    # in the .deb means we can easily repack it if lgc-pg changes
+    #
+    # The actual game files are converted by lgc-pg, in Python code.
+    install:
+    - pg-data.tar.gz
+    debian:
+      engine: lgeneral
+
+files:
+  pg-data.tar.gz:
+    size: 410476
+    md5: 40c4be23f60d1dc732aabe13b58fc5e3
+    sha1: 2f7a63f0a8efc3215e5e61ec6b513b7d8ee3c32b
+    sha256: cc6fa5d263d1d5824d706517958b1bb09b405ba0ed21e63e4a4d38e2727d7a04
+    download:
+      lgeneral-mirrors:
+        path: .
+
+...
+# vim:set sw=2 sts=2 et:

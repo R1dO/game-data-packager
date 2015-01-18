@@ -24,8 +24,8 @@ logger = logging.getLogger('game-data-packager.games.rott')
 class ROTTGameData(GameData):
     def add_parser(self, parsers, base_parser):
         parser = super(ROTTGameData, self).add_parser(parsers, base_parser)
-        parser.add_argument('-f', action='append', dest='paths',
-                metavar='1rott13.zip', help='Path to 1rott13.zip')
+        parser.add_argument('-f', dest='download', action='store_false',
+                help='Require 1rott13.zip on the command line')
         parser.add_argument('-w', dest='download', action='store_true',
                 help='Download 1rott13.zip (done automatically if necessary)')
         return parser
