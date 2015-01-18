@@ -44,7 +44,13 @@ packages:
     demo_for: hexen-wad
     install:
     - hexendemo.wad
+    # this goes in the .desktop file...
     doom_engine: doomsday-compat
+    # ... so we must have Recommends: doomsday. The other provider
+    # of hexen-engine, chocolate-doom, can play the full game but not
+    # the demo.
+    debian:
+      engine: doomsday
 
 files:
 
