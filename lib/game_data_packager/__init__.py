@@ -1726,6 +1726,17 @@ class GameData(object):
         if install_debs:
             self.install_packages(debs)
 
+        engines = set()
+        for package in ready:
+            engine = package.debian.get('engine')
+            if not engine:
+                continue
+            engine = engine.split('|')[0].strip()
+            if not os.path.isdir(os.path.join('/usr/share/doc/', engine)):
+                engines.add(engine)
+        if engines:
+            print('it is recommended to also install this game engine: %s' % ', '.join(engines))
+
     def prepare_packages(self, packages, build_demos=False, download=True):
         possible = set()
 
