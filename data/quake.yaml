@@ -7,7 +7,7 @@ packages:
     demo_for: quake-registered
     longname: Quake (shareware)
     debian:
-      engine: quake-engine
+      engine: quake | quake-server
       provides: quake-data
     install:
     - id1/pak0.pak_106
@@ -17,7 +17,7 @@ packages:
 
   quake-registered:
     debian:
-      engine: quake-engine
+      engine: quake | quake-server
       provides: quake-data
     install:
     - id1/pak0.pak_106
