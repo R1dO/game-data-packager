@@ -17,13 +17,11 @@ help_text: |
 packages:
   doom2-wad:
     debian:
-      engine: chocolate-doom | doom-engine
+      engine: "chocolate-doom | doom-engine"
       provides: doom-wad
     install_to: usr/share/games/doom
     install:
     - doom2.wad
-    debian:
-      engine: "chocolate-doom | doom-engine"
 
 files:
   doom2.wad:
