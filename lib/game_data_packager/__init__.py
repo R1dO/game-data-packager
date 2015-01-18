@@ -665,8 +665,11 @@ class GameData(object):
                 setattr(package, k, d[k])
 
         if 'demo_for' in d:
+            assert package.name != d['demo_for'], "a game can't be a demo for itself"
             setattr(package, 'type', 'demo')
         if 'expansion_for' in d:
+            assert package.name != d['expansion_for'], \
+                   "a game can't be an expansion for itself"
             setattr(package, 'type', 'expansion')
 
         if 'install' in d:
