@@ -408,7 +408,7 @@ class GameData(object):
         self.shortname = shortname
 
         # The formal name of the game, e.g. Quake III Arena
-        self.longname = shortname
+        self.longname = shortname.title()
 
         # A temporary directory.
         self.workdir = workdir
