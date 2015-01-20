@@ -21,6 +21,9 @@ help_text: |
 
 packages:
   heretic-wad:
+    steam:
+      id: 2390
+      path: "common/Heretic Shadow of the Serpent Riders"
     debian:
       engine: "chocolate-doom | heretic-engine"
     install_to: usr/share/games/doom

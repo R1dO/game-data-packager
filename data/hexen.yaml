@@ -27,12 +27,18 @@ packages:
   hexen-wad:
     debian:
       engine: "chocolate-doom | hexen-engine"
+    steam:
+      id: 2360
+      path: "common/Hexen"
     install_to: usr/share/games/doom
     install:
     - hexen.wad
 
   hexen-deathkings-data:
     longname: "Hexen: Deathkings of the Dark Citadel"
+    steam:
+      id: 2370
+      path: "common/Hexen"
     install_to: usr/share/games/doom
     expansion_for: hexen-wad
     install:
