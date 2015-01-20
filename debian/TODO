@@ -5,6 +5,9 @@ TODO:
   -> reconsider: why do this?
 
 * provide configurable methods for elevating privs
+  - su
+  - sudo
+  - pkexec
 * provide configurable methods for installing packages
   - dpkg
   - gdebi, this handle Depends: , but doesn't install 'Recommends:' (=game-engine)
