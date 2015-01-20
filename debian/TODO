@@ -1,10 +1,15 @@
 TODO:
 
-	* do away with ./Makefile and build entirely from debian/rules
-		* reconsider: why do this?
-	* re-add quake3 support (currently in a branch)
-    * provide configurable methods for elevating privs
-	* provide configurable methods for elevating privs
+* do away with ./Makefile and build entirely from debian/rules
+  -> unless some other distro finds GDP usefull and start packaging it
+
+* reconsider: why do this?
+* provide configurable methods for elevating privs
+* provide configurable methods for installing packages
+  - dpkg
+  - gdebi, this handle Depends: , but doesn't install 'Recommends:' (=game-engine)
+  - apt-get, but this needs that #47379 from 1999 to be fixed
+  - integrate with graphical package managers ?
 
 	nicer -i behaviour
 		support (somehow) installing a generated .deb and throwing
@@ -12,4 +17,4 @@ TODO:
 		$(pwd) if otherwise unspecified; impossible not to preserve
 		generated file)
 
-See also: <http://wiki.debian.org/Games/Development/DataLoader>
+See also: <http://wiki.debian.org/Games/GameDataPackager>
