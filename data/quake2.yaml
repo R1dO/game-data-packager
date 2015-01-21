@@ -437,7 +437,6 @@ files:
     - licinfo.txt
     - readme.doc
     - readme.txt_3.20
-    - release.txt_3.20
     - baseq2/maps.lst
     - baseq2/pak1.pak
     - baseq2/pak2.pak
@@ -674,10 +673,6 @@ files:
     install_as: readme.txt
     install_to: $docdir
 
-  release.txt_3.20:
-    install_as: release.txt
-    install_to: $docdir
-
   Commercial Exploitation.doc:
     install_to: $docdir
 
@@ -726,7 +721,6 @@ md5sums: |
   09bfc1ee52836250d5a7071d5cca6179  licinfo.txt
   664db6482beaa2c129fb2fdaa024b27c  readme.doc
   9e6ed9910b11d4dbb7d0527f1ff140a1  readme.txt_3.20
-  cf55adc0ff845a4c1298457d18a32c21  release.txt_3.20
   # Alternate files shipped by Steam
   1487b416e073bcd79f25423a9365091e  license.txt_steam
   7278eb0a731a984b119787c5dda1be13  readme.txt_steam
