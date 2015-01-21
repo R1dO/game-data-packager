@@ -49,6 +49,30 @@ packages:
     - manual.txt_mp2
     install_to: usr/share/games/quake
 
+  quake-music:
+    expansion_for: quake-registered
+    install_to: usr/share/games/quake
+    rip_cd:
+      encoding: vorbis
+      filename_format: "id1/music/track%02d.ogg"
+      first_track: 2
+
+  quake-armagon-music:
+    expansion_for: quake-armagon
+    install_to: usr/share/games/quake
+    rip_cd:
+      encoding: vorbis
+      filename_format: "hipnotic/music/track%02d.ogg"
+      first_track: 2
+
+  quake-dissolution-music:
+    expansion_for: quake-dissolution
+    install_to: usr/share/games/quake
+    rip_cd:
+      encoding: vorbis
+      filename_format: "rogue/music/track%02d.ogg"
+      first_track: 2
+
 files:
   id1/pak0.pak_101:
     unsuitable: version 1.01, should be replaced by v1.06 automatically
@@ -204,6 +228,7 @@ cksums: |
   _ 18689235 id1/pak0.pak_106
 
   # Quake 1.01 CD (skitt@)
+  # http://musicbrainz.org/release-group/ece43805-d8d4-4052-9cc7-806036633e32
   326782693 15323555 q101_int.1
   1346095307 9228516 q101_int.2
   # q101_int.[12] concatenate to...
@@ -217,6 +242,7 @@ cksums: |
   3683309993 34257856 id1/pak1.pak
 
   # Scourge of Armagon CD (skitt@)
+  # http://musicbrainz.org/release/318a45be-5d92-4397-a157-7d052bf73824
   345401104 40564 manual.htm_mp1_cd
   2684027732 29551 manual.txt_mp1_cd
   415120192 35527205 hipnotic/pak0.pak_orig
@@ -231,6 +257,7 @@ cksums: |
   # track 9: 3m:03.400s
 
   # Dissolution of Eternity CD (skitt@)
+  # http://musicbrainz.org/release/7a7647e8-6eee-4f2e-9061-832cb5a64bd6
   1111051062 43702 manual.htm_mp2_cd
   27864436 30664 manual.txt_mp2_cd
   4033998175 37875279 rogue/pak0.pak_mp2_cd
@@ -315,28 +342,6 @@ sha256sums: |
   51b861f617f280cf02b78b7f867f5e9522f82d12d9b28d5bfad6b554834f40e3  rogue/pak0.pak_mp2_cd
   070cdf6a6410adef8fb5f83a4e5ccdb9e2301d2e48d460bb3a67a0f5ba9d70a8  slicnse.txt
   8d654834d085c088d603fb6879a874799e8b4cc6ae9317bbf826afd83bc72e31  licinfo.txt_shareware
-
-unimplemented:
-  quake-music:
-    install_to: usr/share/games/quake/id1/music
-    rip_cd:
-      encoding: vorbis
-      filename_format: "track%02d.ogg"
-      first_track: 2
-
-  quake2-armagon-music:
-    install_to: usr/share/games/quake/hipnotic/music
-    rip_cd:
-      encoding: vorbis
-      filename_format: "track%02d.ogg"
-      first_track: 2
-
-  quake2-dissolution-music:
-    install_to: usr/share/games/quake/rogue/music
-    rip_cd:
-      encoding: vorbis
-      filename_format: "track%02d.ogg"
-      first_track: 2
 
 ...
 # vim:set sw=2 sts=2 et:
