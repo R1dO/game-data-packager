@@ -21,18 +21,12 @@ import subprocess
 
 from .. import GameData, GameDataPackage
 from ..paths import DATADIR
-from ..util import TemporaryUmask, mkdir_p
+from ..util import (TemporaryUmask, copy_with_substitutions, mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.doom-common')
 
 def install_data(from_, to):
     subprocess.check_call(['cp', '--reflink=auto', from_, to])
-
-def subst(from_, to, **kwargs):
-    for line in from_:
-        for k, v in kwargs.items():
-            line = line.replace(k, v)
-        to.write(line)
 
 class WadPackage(GameDataPackage):
     def __init__(self, name):
@@ -115,12 +109,12 @@ class DoomGameData(GameData):
     def fill_docs(self, package, docdir):
         main_wad = package.main_wad
 
-        subst(
+        copy_with_substitutions(
                 open(os.path.join(DATADIR, 'doom-common.README.Debian.in')),
                 open(os.path.join(docdir, 'README.Debian'), 'w'),
                 PACKAGE=package.name,
                 GAME=(package.longname or self.longname))
-        subst(
+        copy_with_substitutions(
                 open(os.path.join(DATADIR, 'doom-common.copyright.in')),
                 open(os.path.join(docdir, 'copyright'), 'w'),
                 PACKAGE=package.name,
@@ -148,7 +142,7 @@ class DoomGameData(GameData):
             for basename in (package.name, 'doom-common'):
                 from_ = os.path.join(DATADIR, basename + '.desktop.in')
                 if os.path.exists(from_):
-                    subst(open(from_),
+                    copy_with_substitutions(open(from_),
                             open(os.path.join(appdir, '%s.desktop' % package.name),
                                 'w'),
                             GAME=wad_base,
@@ -160,7 +154,7 @@ class DoomGameData(GameData):
 
             debdir = os.path.join(destdir, 'DEBIAN')
             mkdir_p(debdir)
-            subst(
+            copy_with_substitutions(
                     open(os.path.join(DATADIR, 'doom-common.preinst.in')),
                     open(os.path.join(debdir, 'preinst'), 'w'),
                     IWAD=main_wad)

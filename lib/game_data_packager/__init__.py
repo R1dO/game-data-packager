@@ -46,6 +46,7 @@ import yaml
 from .paths import DATADIR, ETCDIR
 from .util import (MEBIBYTE,
         TemporaryUmask,
+        copy_with_substitutions,
         mkdir_p,
         rm_rf,
         human_size,
@@ -1440,8 +1441,22 @@ class GameData(object):
         return complete
 
     def fill_docs(self, package, docdir):
-        shutil.copyfile(os.path.join(DATADIR, package.name + '.copyright'),
-                os.path.join(docdir, 'copyright'))
+        for n in (package.name, self.shortname):
+            copy_from = os.path.join(DATADIR, n + '.copyright')
+            copy_to = os.path.join(docdir, 'copyright')
+
+            if os.path.exists(copy_from):
+                shutil.copyfile(copy_from, copy_to)
+                return
+
+            if os.path.exists(copy_from + '.in'):
+                copy_with_substitutions(open(copy_from + '.in'),
+                        open(copy_to, 'w'),
+                        PACKAGE=package.name)
+                return
+
+        raise AssertionError('should have found a copyright file for %s' %
+                package.name)
 
     def fill_extra_files(self, package, destdir):
         pass

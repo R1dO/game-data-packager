@@ -69,3 +69,9 @@ def human_size(size):
 
     # 1.0 MiB or more
     return '%.1f MiB' % (size / (MEBIBYTE))
+
+def copy_with_substitutions(from_, to, **kwargs):
+    for line in from_:
+        for k, v in kwargs.items():
+            line = line.replace(k, v)
+        to.write(line)
