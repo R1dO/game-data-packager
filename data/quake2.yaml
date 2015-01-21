@@ -1,6 +1,27 @@
 %YAML 1.2
 ---
 longname: Quake II
+
+help_text: |
+  For quake2-full-data, you must provide baseq2/pak0.pak and the baseq2/video
+  directory, or a directory containing them, such as an installed copy
+  of Quake II or the mount point for its CD-ROM. The 3.20 patch
+  will be downloaded if necessary, but you can avoid the download by
+  providing q2-3.20-x86-full-ctf.exe or a fully patched installed copy
+  (e.g. the version from Steam).
+
+  For quake2-demo-data, all necessary files can be downloaded automatically.
+
+  The mission packs quake2-xatrix and quake2-rogue are currently treated
+  as separate games: use "game-data-packager q2xatrix" or
+  "game-data-packager q2rogue".
+
+  For quake2-music, quake2-reckoning-music and quake2-groundzero-music, either
+  provide a directory containing pre-ripped audio named like
+  baseq2/music/02.ogg, xatrix/music/02.ogg or rogue/music/02.ogg, or use
+  syntax like "game-data-packager quake2 --package=quake2-music /dev/cdrom"
+  to rip and encode CD audio tracks.
+
 packages:
   quake2-full-data:
     longname: Quake II
@@ -37,6 +58,30 @@ packages:
       - quake2_manual
     install_contents_of:
     - q2-314-demo-x86.exe
+
+  quake2-music:
+    # http://musicbrainz.org/release/06727a29-435d-423e-90a8-1a4fed5edb54
+    install_to: usr/share/games/quake2
+    rip_cd:
+      encoding: vorbis
+      filename_format: "baseq2/music/%02d.ogg"
+      first_track: 2
+
+  quake2-reckoning-music:
+    # http://musicbrainz.org/release/a1eb0af4-6348-4aa6-a586-4f41a33c5dea
+    install_to: usr/share/games/quake2
+    rip_cd:
+      encoding: vorbis
+      filename_format: "xatrix/music/%02d.ogg"
+      first_track: 2
+
+  quake2-groundzero-music:
+    # http://musicbrainz.org/release/7590e38c-f203-425a-b726-37a55b6d2937
+    install_to: usr/share/games/quake2
+    rip_cd:
+      encoding: vorbis
+      filename_format: "rogue/music/%02d.ogg"
+      first_track: 2
 
 files:
   q2-314-demo-x86.exe:
@@ -939,12 +984,6 @@ md5sums: |
 
 # FIXME: below this point is unimplemented
 unimplemented:
-  quake2-music:
-    install_to: usr/share/games/quake2/baseq2/music
-    rip_cd:
-      encoding: vorbis
-      filename_format: "%02d.ogg"
-      first_track: 2
 
   quake2-rogue:
     architecture: any
