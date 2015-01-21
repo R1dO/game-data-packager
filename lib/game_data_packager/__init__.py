@@ -994,15 +994,9 @@ class GameData(object):
         for filename in (package.install | package.optional):
             if filename not in self.found:
                 wanted = self.files[filename]
-
-                if wanted.alternatives:
-                    for alt in wanted.alternatives:
-                        self.fill_gap(package, self.files[alt],
-                                download=download, log=log)
-                        self.file_status[filename] |= self.file_status[alt]
-                else:
-                    # updates file_status as a side-effect
-                    self.fill_gap(package, wanted, download=download, log=log)
+                # updates file_status as a side-effect
+                self.fill_gap(package, wanted, download=download,
+                        log=(filename in package.install))
 
             logger.debug('%s: %s', filename, self.file_status[filename])
 
