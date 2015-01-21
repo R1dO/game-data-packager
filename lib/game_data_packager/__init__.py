@@ -318,7 +318,7 @@ class GameDataPackage(object):
         self.name = name
 
         # Names of relative packages
-        self.demo_for = None
+        self.demo_for = set()
         self.expansion_for = None
 
         # The optional marketing name of this version
@@ -398,7 +398,7 @@ class GameDataPackage(object):
 
     def to_yaml(self):
         return {
-            'demo_for': self.demo_for,
+            'demo_for': sorted(self.demo_for),
             'expansion_for': self.expansion_for,
             'install': sorted(self.install),
             'install_to': self.install_to,
@@ -686,13 +686,17 @@ class GameData(object):
         }
 
     def _populate_package(self, package, d):
-        for k in ('demo_for', 'expansion_for', 'longname', 'symlinks', 'install_to',
+        for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd'):
             if k in d:
                 setattr(package, k, d[k])
 
         if 'demo_for' in d:
+            if type(d['demo_for']) is str:
+                package.demo_for.add(d['demo_for'])
+            else:
+                package.demo_for |= set(d['demo_for'])
             assert package.name != d['demo_for'], "a game can't be a demo for itself"
         if 'expansion_for' in d:
             assert package.name != d['expansion_for'], \
@@ -1672,6 +1676,9 @@ class GameData(object):
         if replace:
             replaces.add(replace)
             conflicts.add(replace)
+        conflict = package.debian.get('conflicts')
+        if conflict:
+            conflicts.add(conflict)
 
         if depends:
             control['Depends'] = ', '.join(depends)
@@ -1977,12 +1984,23 @@ class GameData(object):
         ready = set()
 
         for package in possible:
-            if (not build_demos and package.demo_for and
-                    self.packages[package.demo_for] in possible):
-                # no point in packaging the demo if we have the full
-                # version
-                logger.debug('will not produce "%s" because we have the '
-                        'full version "%s"', package.name, package.demo_for)
+            abort = False
+            if not build_demos:
+                for demo_for in package.demo_for:
+                    if self.packages[demo_for] in possible:
+                        # no point in packaging the demo if we have the full
+                        # version
+                        logger.debug('will not produce "%s" because we have '
+                            'the full version "%s"', package.name, demo_for)
+                        abort = True
+
+            for previous in ready:
+                if previous.debian.get('conflicts') == package.name:
+                    logger.error('will not produce "%s" because it '
+                       'conflicts with "%s"', package.name, previous.name)
+                    abort = True
+
+            if abort:
                 continue
 
             logger.debug('will produce %s', package.name)
