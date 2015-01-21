@@ -347,12 +347,6 @@ class GameDataPackage(object):
         # set of names of WantedFile instances to be optionally installed
         self._optional = set()
 
-        # type of package: full, demo or expansion
-        # full packages include quake-registered, quake2-full-data, quake3-data
-        # demo packages include quake-shareware, quake2-demo-data
-        # expansion packages include quake-armagon, quake-music, quake2-rogue
-        self._type = 'full'
-
         self.version = GAME_PACKAGE_VERSION
 
         # if not None, install every file provided by the files with
@@ -382,14 +376,22 @@ class GameDataPackage(object):
 
     @property
     def type(self):
-        return self._type
-    @type.setter
-    def type(self, value):
-        assert value in ('full', 'demo', 'expansion'), value
-        self._type = value
+        """type of package: full, demo or expansion
+
+        full packages include quake-registered, quake2-full-data, quake3-data
+        demo packages include quake-shareware, quake2-demo-data
+        expansion packages include quake-armagon, quake-music, quake2-rogue
+        """
+        if self.demo_for:
+            return 'demo'
+        if self.expansion_for:
+            return 'expansion'
+        return 'full'
 
     def to_yaml(self):
         return {
+            'demo_for': self.demo_for,
+            'expansion_for': self.expansion_for,
             'install': sorted(self.install),
             'install_to': self.install_to,
             'install_to_docdir': self.install_to_docdir,
@@ -397,6 +399,7 @@ class GameDataPackage(object):
             'optional': sorted(self.optional),
             'steam': self.steam,
             'symlinks': self.symlinks,
+            'type': self.type,
         }
 
 class GameData(object):
@@ -666,11 +669,13 @@ class GameData(object):
 
         if 'demo_for' in d:
             assert package.name != d['demo_for'], "a game can't be a demo for itself"
-            setattr(package, 'type', 'demo')
         if 'expansion_for' in d:
             assert package.name != d['expansion_for'], \
                    "a game can't be an expansion for itself"
-            setattr(package, 'type', 'expansion')
+            if 'demo_for' in d:
+                raise AssertionError("%r can't be both a demo of %r and an " +
+                        "expansion for %r" % (package.name, d.demo_for,
+                            d.expansion_for))
 
         if 'install' in d:
             for filename in d['install']:
@@ -1559,7 +1564,7 @@ class GameData(object):
         if package.expansion_for:
             depends.add(package.expansion_for)
         engine = package.debian.get('engine')
-        assert engine is None or package.type != 'expansion', \
+        assert engine is None or not package.expansion_for, \
                'An expansion will inherit the engine of the full game'
         if engine:
             recommends.add(engine)
@@ -1642,7 +1647,7 @@ class GameData(object):
         # There is only a --demo option if at least one package is a demo
         parser.set_defaults(demo=False)
         for package in self.packages.values():
-            if package.type == 'demo':
+            if package.demo_for:
                 parser.add_argument('--demo', action='store_true',
                         default=False,
                         help='Build demo package even if files for full '
@@ -1767,7 +1772,7 @@ class GameData(object):
             # Repeat the process for the first (hopefully only)
             # demo/shareware package, so we can log its errors.
             for package in self.packages.values():
-                if package.type == 'demo':
+                if package.demo_for:
                     if self.fill_gaps(package=package,
                             log=True) is not FillResult.IMPOSSIBLE:
                         logger.error('%s unexpectedly succeeded on second ' +
@@ -1796,17 +1801,12 @@ class GameData(object):
 
         ready = set()
 
-        have_full = False
         for package in possible:
-            if package.type == 'full':
-                have_full = True
-
-        for package in possible:
-            if have_full and package.type == 'demo' and not build_demos:
+            if package.demo_for and self.packages[package.demo_for] in possible:
                 # no point in packaging the demo if we have the full
                 # version
-                logger.debug('will not produce %s because we have a full ' +
-                        'version', package.name)
+                logger.debug('will not produce "%s" because we have the '
+                        'full version "%s"', package.name, package.demo_for)
                 continue
 
             logger.debug('will produce %s', package.name)
