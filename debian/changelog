@@ -26,6 +26,7 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * New command-line options for all YAML games:
     - --download, --no-download
     - --save-downloads
+    - --package=PACKAGE (repeatable)
 
   Bug fixes:
 
@@ -35,6 +36,7 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Give hexen2-data and quake3-data a Suggests on their expansions, to
     keep deborphan happy; add that policy to the documentation
   * Install documentation to $docdir now the code supports that
+  * Recommend installation of an engine if necessary
 
   [ Simon McVittie ]
   * Search /usr/share/games/quake3 for Quake III Arena data
@@ -55,6 +57,8 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Add 'make manual-check' which tests some common code paths using
     a local mirror of some freely downloadable games
   * generate control files automaticaly
+  * Add 'unzip' compression method, for old zip files using the 'implode'
+    encoding, which can be decompressed by unzip(1) but not by Python
 
   [ Simon McVittie ]
   * For games in YAML style, do the .deb building and installation in
@@ -69,6 +73,8 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Convert Doom games to YAML style, with the help of extra Python code
     in game_data_packager.games.doom_common (Closes: #775081)
   * Switch lgeneral to YAML style (Closes: #775083)
+  * Add support for ripping CD audio (Closes: #775078)
+  * Switch Quake 1 and 2 to YAML style, except for the Quake II mission packs
   * Add support for flagging files in YAML as known-but-unsuitable,
     and use it for older versions of various .wad files
   * Add support for concatenating files, needed for Quake 1
