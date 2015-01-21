@@ -76,4 +76,30 @@ class QuakeGameData(GameData):
                 f.write('#!/bin/sh\nexit 0\n')
             os.chmod(path, 0o755)
 
+    def add_parser(self, parsers, base_parser):
+        parser = super(QuakeGameData, self).add_parser(parsers, base_parser,
+                conflict_handler='resolve')
+        parser.add_argument('-m', '-d', dest='packages', action='append_const',
+                const='quake-registered',
+                help='Equivalent to --package=quake-registered')
+        parser.add_argument('-s', dest='packages', action='append_const',
+                const='quake-shareware',
+                help='Equivalent to --package=quake-shareware')
+        parser.add_argument('--mp1', '-mp1', dest='packages',
+                action='append_const', const='quake-armagon',
+                help='Equivalent to --package=quake-armagon')
+        parser.add_argument('--mp2', '-mp2', dest='packages',
+                action='append_const', const='quake-dissolution',
+                help='Equivalent to --package=quake-dissolution')
+        parser.add_argument('--music', dest='packages',
+                action='append_const', const='quake-music',
+                help='Equivalent to --package=quake-music')
+        parser.add_argument('--mp1-music', dest='packages',
+                action='append_const', const='quake-armagon-music',
+                help='Equivalent to --package=quake-armagon-music')
+        parser.add_argument('--mp2-music', dest='packages',
+                action='append_const', const='quake-dissolution-music',
+                help='Equivalent to --package=quake-dissolution-music')
+        return parser
+
 GAME_DATA_SUBCLASS = QuakeGameData

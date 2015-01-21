@@ -2,6 +2,26 @@
 ---
 longname: Quake
 
+help_text: |
+  For quake-registered, you must provide id1/pak1.pak or a directory
+  containing it, or the mount point for a Quake CD-ROM. The Quake 1.06
+  shareware version will be downloaded if necessary to provide the equivalent
+  of the 1.06 patch, but you can avoid the download by providing version
+  1.06 of id1/pak0.pak
+
+  For quake-shareware, all necessary files can be downloaded automatically.
+
+  For the mission packs quake-armagon and quake-dissolution, you must
+  provide hipnotic/pak0.pak or rogue/pak0.pak or a directory containing it,
+  such as a Quake installation with the mission pack installed or the mount
+  point for one of these mission packs' CD-ROMs.
+
+  For quake-music, quake-armagon and quake-dissolution, either provide
+  a directory containing pre-ripped audio named like id1/music/track02.ogg,
+  hipnotic/music/track02.ogg or rogue/music/track02.ogg, or use syntax
+  like "game-data-packager quake --package=quake-music /dev/cdrom"
+  to rip and encode CD audio tracks.
+
 packages:
   quake-shareware:
     demo_for: quake-registered

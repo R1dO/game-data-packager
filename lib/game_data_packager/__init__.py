@@ -1704,12 +1704,13 @@ class GameData(object):
     def get_control_template(self, package):
         return os.path.join(DATADIR, package.name + '.control.in')
 
-    def add_parser(self, parsers, base_parser):
+    def add_parser(self, parsers, base_parser, **kwargs):
         parser = parsers.add_parser(self.shortname,
                 help=self.longname, aliases=self.packages.keys(),
                 description=self.help_text,
                 formatter_class=argparse.RawDescriptionHelpFormatter,
-                parents=(base_parser,))
+                parents=(base_parser,),
+                **kwargs)
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE',
                 help='Files to use in constructing the .deb')
