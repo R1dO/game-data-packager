@@ -1729,7 +1729,8 @@ class GameData(object):
 
         try:
             ready = self.prepare_packages(packages,
-                    build_demos=args.demo, download=args.download)
+                    build_demos=args.demo, download=args.download,
+                    log_immediately=bool(args.packages))
         except NoPackagesPossible:
             logger.error('Unable to complete any packages.')
             if self.missing_tools:
@@ -1780,11 +1781,13 @@ class GameData(object):
         if engines:
             print('it is recommended to also install this game engine: %s' % ', '.join(engines))
 
-    def prepare_packages(self, packages, build_demos=False, download=True):
+    def prepare_packages(self, packages, build_demos=False, download=True,
+            log_immediately=True):
         possible = set()
 
         for package in packages:
-            if self.fill_gaps(package, log=False) is not FillResult.IMPOSSIBLE:
+            if self.fill_gaps(package,
+                    log=log_immediately) is not FillResult.IMPOSSIBLE:
                 logger.debug('%s is possible', package.name)
                 possible.add(package)
             else:
@@ -1792,6 +1795,11 @@ class GameData(object):
 
         if not possible:
             logger.debug('No packages were possible')
+
+            if log_immediately:
+                # we already logged the errors so just give up
+                raise NoPackagesPossible()
+
             # Repeat the process for the first (hopefully only)
             # demo/shareware package, so we can log its errors.
             for package in self.packages.values():
