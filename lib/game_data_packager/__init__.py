@@ -112,6 +112,9 @@ class DownloadsFailed(Exception):
 class DownloadNotAllowed(Exception):
     pass
 
+class CDRipFailed(Exception):
+    pass
+
 class HashedFile(object):
     def __init__(self, name):
         self.name = name
@@ -353,6 +356,9 @@ class GameDataPackage(object):
         # these names
         self._install_contents_of = set()
 
+        # CD audio stuff from YAML
+        self.rip_cd = {}
+
     @property
     def install(self):
         return self._install
@@ -397,6 +403,7 @@ class GameDataPackage(object):
             'install_to_docdir': self.install_to_docdir,
             'name': self.name,
             'optional': sorted(self.optional),
+            'rip_cd': self.rip_cd,
             'steam': self.steam,
             'symlinks': self.symlinks,
             'type': self.type,
@@ -421,6 +428,9 @@ class GameData(object):
 
         # binary package name => GameDataPackage
         self.packages = {}
+
+        # Subset of packages.values() with nonempty rip_cd
+        self.rip_cd_packages = set()
 
         # If true, we may compress the .deb. If false, don't.
         self.compress_deb = True
@@ -505,6 +515,13 @@ class GameData(object):
         # None or an existing directory in which to save downloaded files.
         self.save_downloads = None
 
+        # Block device from which to rip audio
+        self.cd_device = None
+
+        # Found CD tracks
+        # e.g. { 'quake-music': { 2: '/usr/.../id1/music/track02.ogg' } }
+        self.cd_tracks = {}
+
         self._populate_files(self.yaml.get('files'))
 
         assert 'packages' in self.yaml
@@ -580,10 +597,15 @@ class GameData(object):
                             filename)
                     package.install.add(filename)
 
+            if package.rip_cd:
+                # we only support Ogg Vorbis for now
+                assert package.rip_cd['encoding'] == 'vorbis', package.name
+                self.rip_cd_packages.add(package)
+
         # consistency check
         for package in self.packages.values():
             # there had better be something it wants to install
-            assert package.install, package.name
+            assert package.install or package.rip_cd, package.name
             for installable in package.install:
                 assert installable in self.files, installable
             for installable in package.optional:
@@ -663,7 +685,8 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('demo_for', 'expansion_for', 'longname', 'symlinks', 'install_to',
-                'install_to_docdir', 'install_contents_of', 'steam', 'debian'):
+                'install_to_docdir', 'install_contents_of', 'steam', 'debian',
+                'rip_cd'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -816,6 +839,32 @@ class GameData(object):
         match_path = '/' + path.lower()
         size = os.stat(path).st_size
 
+        for p in self.rip_cd_packages:
+            assert p.rip_cd
+
+            # We use whatever the first track is (usually 2, because track
+            # 1 is data) to locate the rest of the tracks.
+            # We assume tracks in the middle are not missing.
+            look_for = '/' + (p.rip_cd['filename_format'] %
+                    p.rip_cd.get('first_track', 2))
+            if match_path.endswith(look_for):
+                self.cd_tracks[p.name] = {}
+                # make sure it is at least as long as look_for
+                # (corner-case: g-d-p quake id1/music)
+                audio = path
+                if not audio.startswith('/'):
+                    audio = './' + audio
+                basedir = audio[:len(audio) - len(look_for)]
+
+                # The CD audio spec says we can't go beyond track 99.
+                for i in range(p.rip_cd.get('first_track', 2), 100):
+                    audio = os.path.join(basedir,
+                            p.rip_cd['filename_format'] % i)
+                    if not os.path.isfile(audio):
+                        break
+                    self.cd_tracks[p.name][i] = audio
+                return
+
         # if a file (as opposed to a directory) is specified on the
         # command-line, try harder to match it to something
         if really_should_match_something:
@@ -901,15 +950,24 @@ class GameData(object):
 
 
     def consider_file_or_dir(self, path):
-        if os.path.isfile(path):
+        st = os.stat(path)
+
+        if stat.S_ISREG(st.st_mode):
             self.consider_file(path, True)
-        elif os.path.isdir(path):
+        elif stat.S_ISDIR(st.st_mode):
             for dirpath, dirnames, filenames in os.walk(path):
                 for fn in filenames:
                     self.consider_file(os.path.join(dirpath, fn), False)
+        elif stat.S_ISBLK(st.st_mode):
+            if self.rip_cd_packages:
+                self.cd_device = path
+            else:
+                logger.warning('"%s" does not have a package containing CD '
+                        'audio, ignoring block device "%s"',
+                        self.shortname, path)
         else:
-            logger.warning('file "%s" does not exist or is not a file or ' +
-                    'directory', path)
+            logger.warning('file "%s" does not exist or is not a file, ' +
+                    'directory or CD block device', path)
 
     def fill_gaps(self, package, download=False, log=True):
         """Return a FillResult.
@@ -1482,6 +1540,18 @@ class GameData(object):
             mkdir_p(os.path.dirname(os.path.join(destdir, symlink)))
             os.symlink(target, os.path.join(destdir, symlink))
 
+        if package.rip_cd and self.cd_tracks.get(package.name):
+            for i, copy_from in self.cd_tracks[package.name].items():
+                logger.debug('Found CD track %d at %s', i, copy_from)
+                install_to = package.install_to
+                install_as = package.rip_cd['filename_format'] % i
+                copy_to = os.path.join(destdir, install_to, install_as)
+                copy_to_dir = os.path.dirname(copy_to)
+                if not os.path.isdir(copy_to_dir):
+                    mkdir_p(copy_to_dir)
+                subprocess.check_call(['cp', '--reflink=auto', copy_from,
+                    copy_to])
+
         # adapted from dh_md5sums
         subprocess.check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
                 "-printf '%P\\0' | LC_ALL=C sort -z | " +
@@ -1751,6 +1821,9 @@ class GameData(object):
             # we already logged an error
             logger.error('Unable to complete any packages because downloads failed.')
             raise SystemExit(1)
+        except CDRipFailed:
+            logger.error('Unable to rip CD audio')
+            raise SystemExit(1)
 
         if args.destination is None:
             destination = self.get_workdir()
@@ -1781,9 +1854,57 @@ class GameData(object):
         if engines:
             print('it is recommended to also install this game engine: %s' % ', '.join(engines))
 
+    def rip_cd(self, package):
+        cd_device = self.cd_device
+        if cd_device is None:
+            cd_device = '/dev/cdrom'
+
+        logger.info('Ripping CD tracks %d+ from %s for %s',
+                package.rip_cd.get('first_track', 2), cd_device, package.name)
+
+        assert package.rip_cd['encoding'] == 'vorbis', package.name
+        for tool in ('cdparanoia', 'oggenc'):
+            if which(tool) is None:
+                logger.error('cannot rip CD "%s" for package "%s": ' +
+                        '%s is not installed', cd_device, package.name,
+                        tool)
+                raise CDRipFailed()
+
+        mkdir_p(os.path.join(self.get_workdir(), 'tmp'))
+        tmp_wav = os.path.join(self.get_workdir(), 'tmp', 'rip.wav')
+
+        self.cd_tracks[package.name] = {}
+
+        for i in range(package.rip_cd.get('first_track', 2), 100):
+            track = os.path.join(self.get_workdir(), 'tmp', '%d.ogg' % i)
+            if subprocess.call(['cdparanoia', '-d', cd_device, str(i),
+                    tmp_wav]) != 0:
+                break
+            subprocess.check_call(['oggenc', '-o', track, tmp_wav])
+            self.cd_tracks[package.name][i] = track
+            if os.path.exists(tmp_wav):
+                os.remove(tmp_wav)
+
+        if not self.cd_tracks[package.name]:
+            logger.error('Did not rip any CD tracks successfully for "%s"',
+                    package.name)
+            raise CDRipFailed()
+
     def prepare_packages(self, packages, build_demos=False, download=True,
             log_immediately=True):
         possible = set()
+
+        if self.cd_device is not None:
+            rip_cd_packages = self.rip_cd_packages & packages
+            if rip_cd_packages:
+                if len(rip_cd_packages) > 1:
+                    logger.error('cannot rip the same CD for more than one ' +
+                            'music package, please specify one with ' +
+                            '--package: %s',
+                            ', '.join(sorted([p.name
+                                for p in rip_cd_packages])))
+                    raise CDRipFailed()
+                self.rip_cd(rip_cd_packages.pop())
 
         for package in packages:
             if self.fill_gaps(package,
