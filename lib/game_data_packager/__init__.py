@@ -1301,6 +1301,21 @@ class GameData(object):
                             cwd=tmpdir)
                     for f in to_unpack:
                         self.consider_file(os.path.join(tmpdir, f), True)
+                elif fmt == 'unzip':
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s',
+                            to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['unzip', '-j', '-C', '-LL',
+                                os.path.abspath(found_name)] +
+                            list(to_unpack), cwd=tmpdir)
+                    # -j junk paths
+                    # -C use case-insensitive matching
+                    # -LL forces conversion to lowercase
+                    for f in to_unpack:
+                        self.consider_file(os.path.join(tmpdir, f), True)
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
 
@@ -1920,7 +1935,7 @@ class GameData(object):
 
         fmt = wanted.unpack['format']
 
-        if fmt in ('id-shr-extract', 'lha'):
+        if fmt in ('id-shr-extract', 'lha', 'unzip'):
             if which(fmt) is None:
                 logger.warning('cannot unpack "%s": tool "%s" is not ' +
                         'installed', wanted.name, fmt)
@@ -1941,7 +1956,7 @@ class GameData(object):
         packages = set()
 
         for t in self.missing_tools:
-            p = package_map.get(t)
+            p = package_map.get(t, t)
             if p is not None:
                 packages.add(p)
 
