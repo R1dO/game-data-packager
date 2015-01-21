@@ -597,7 +597,8 @@ class GameData(object):
                 for filename in self.files[provider].provides:
                     assert filename in self.files, (package.name, provider,
                             filename)
-                    package.install.add(filename)
+                    if filename not in package.optional:
+                        package.install.add(filename)
 
             if package.rip_cd:
                 # we only support Ogg Vorbis for now
