@@ -1629,30 +1629,19 @@ class GameData(object):
         if control['Architecture'] == 'all' and 'Multi-Arch' not in control:
             control['Multi-Arch'] = 'foreign'
 
-        depends = set()
-        recommends = set()
-        suggests = set()
-        provides = set()
-        replaces = set()
-        conflicts = set()
-        if 'Depends' in control:
-            for depend in control['Depends'].split(','):
-                depends.add(depend.strip())
-        if 'Recommends' in control:
-            for recommend in control['Recommends'].split(','):
-                recommends.add(recommend.strip())
-        if 'Suggests' in control:
-            for suggest in control['Suggests'].split(','):
-                suggests.add(suggest.strip())
-        if 'Provides' in control:
-            for provide in control['Provides'].split(','):
-                provides.add(provide.strip())
-        if 'Replaces' in control:
-            for replace in control['Replaces'].split(','):
-                replaces.add(replace.strip())
-        if 'Conflicts' in control:
-            for conflict in control['Conflicts'].split(','):
-                conflicts.add(conflict.strip())
+        def read_control_set(control, field):
+            result = set()
+            if field in control:
+                for value in control[field].split(','):
+                    result.add(value.strip())
+            return result
+
+        depends = read_control_set(control, 'Depends')
+        recommends = read_control_set(control, 'Recommends')
+        suggests = read_control_set(control, 'Suggests')
+        provides = read_control_set(control, 'Provides')
+        replaces = read_control_set(control, 'Replaces')
+        conflicts = read_control_set(control, 'Conflicts')
 
         if package.expansion_for:
             depends.add(package.expansion_for)
