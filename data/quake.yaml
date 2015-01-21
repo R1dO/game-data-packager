@@ -39,6 +39,9 @@ packages:
     debian:
       engine: quake | quake-server
       provides: quake-data
+    steam:
+      id: 2310
+      path: common/Quake
     install:
     - id1/pak0.pak_106
     - id1/pak1.pak
@@ -52,6 +55,9 @@ packages:
   quake-armagon:
     expansion_for: quake-registered
     longname: "Quake Mission Pack 1: Scourge of Armagon"
+    steam:
+      id: 9040
+      path: "common/Quake/hipnotic"
     install:
     - hipnotic/pak0.pak
     optional:
@@ -63,6 +69,9 @@ packages:
   quake-dissolution:
     expansion_for: quake-registered
     longname: "Quake Mission Pack 2: Dissolution of Eternity"
+    steam:
+      id: 9030
+      path: "common/Quake/rogue"
     install:
     - rogue/pak0.pak
     optional:
