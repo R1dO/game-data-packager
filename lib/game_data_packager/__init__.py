@@ -1918,7 +1918,9 @@ class GameData(object):
                 self.rip_cd(rip_cd_packages.pop())
 
         for package in packages:
-            if self.fill_gaps(package,
+            if package.rip_cd and not self.cd_tracks.get(package.name):
+                logger.debug('no CD tracks found for %s', package.name)
+            elif self.fill_gaps(package,
                     log=log_immediately) is not FillResult.IMPOSSIBLE:
                 logger.debug('%s is possible', package.name)
                 possible.add(package)
