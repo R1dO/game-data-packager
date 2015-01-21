@@ -35,8 +35,9 @@ packages:
     install:
     - hipnotic/pak0.pak
     optional:
-    - manual.htm_mp1
-    - manual.txt_mp1
+    - license.txt_mp12_cd
+    - armagon/manual.htm
+    - armagon/manual.txt
     install_to: usr/share/games/quake
 
   quake-dissolution:
@@ -45,8 +46,11 @@ packages:
     install:
     - rogue/pak0.pak
     optional:
-    - manual.htm_mp2
-    - manual.txt_mp2
+    - license.txt_mp12_cd
+    - eternity/ctf.htm
+    - eternity/ctf.txt
+    - eternity/manual.htm
+    - eternity/manual.txt
     install_to: usr/share/games/quake
 
   quake-music:
@@ -94,6 +98,11 @@ files:
     install_as: licinfo.txt
     install_to: $docdir
 
+  license.txt_mp12_cd:
+    distinctive_name: false
+    install_as: license.txt
+    install_to: $docdir
+
   slicnse.txt:
     distinctive_name: false
     install_to: $docdir
@@ -113,31 +122,85 @@ files:
     install_to: $docdir
     install_as: rlicnse.txt
 
-  manual.htm_mp1:
-    distinctive_name: false
+  armagon/manual.htm:
     install_to: $docdir
     install_as: manual.html
+    alternatives:
+    - manual.htm_mp1_cd
+    - armagon/manual.htm_mp12_cd
+
+  manual.htm_mp1_cd:
+    distinctive_name: false
     look_for:
     - manual.html
     - manual.htm
 
-  manual.txt_mp1:
-    distinctive_name: false
+  armagon/manual.txt:
     install_to: $docdir
     install_as: manual.txt
+    alternatives:
+    - manual.txt_mp1_cd
+    - armagon/manual.txt_mp12_cd
 
-  manual.htm_mp2:
+  manual.txt_mp1_cd:
     distinctive_name: false
+    look_for: [manual.txt]
+
+  eternity/manual.htm:
     install_to: $docdir
     install_as: manual.html
+    alternatives:
+    - manual.htm_mp2_cd
+    - eternity/manual.htm_mp12_cd
+
+  eternity/ctf.htm:
+    install_to: $docdir
+    install_as: ctf.html
+    alternatives:
+    - eternity/ctf.htm_mp12_cd
+
+  eternity/manual.htm_mp12_cd:
+    distinctive_name: false
+    look_for:
+    - manual.htm
+    - manual.html
+
+  eternity/ctf.htm_mp12_cd:
+    distinctive_name: false
+    look_for:
+    - ctf.htm
+    - ctf.html
+
+  manual.htm_mp2_cd:
+    distinctive_name: false
     look_for:
     - manual.html
     - manual.htm
 
-  manual.txt_mp2:
-    distinctive_name: false
+  eternity/manual.txt:
     install_to: $docdir
     install_as: manual.txt
+    alternatives:
+    - manual.txt_mp2_cd
+    - eternity/manual.txt_mp12_cd
+
+  eternity/ctf.txt:
+    install_to: $docdir
+    install_as: ctf.txt
+    alternatives:
+    - eternity/ctf.txt_mp12_cd
+
+  eternity/manual.txt_mp12_cd:
+    distinctive_name: false
+    look_for: [manual.txt]
+
+  eternity/ctf.txt_mp12_cd:
+    distinctive_name: false
+    look_for: [ctf.txt]
+
+  manual.txt_mp2_cd:
+    distinctive_name: false
+    look_for: [manual.txt]
 
   hipnotic/pak0.pak:
     alternatives:
@@ -271,6 +334,31 @@ cksums: |
   # track 8: 3m:06.573s
   # track 9: 3m:09.466s
 
+  # combined SoA/DoE CD (smcv@)
+  # http://musicbrainz.org/release/eca51545-8548-4324-ac0b-2f8a7f8c8b7c
+  # /dev/cdrom: UUID="1998-09-21-19-14-40-00" LABEL="QPACKS" TYPE="iso9660"
+  46825283 14554 license.txt_mp12_cd
+  415120192 35527205 hipnotic/pak0.pak_orig
+  3993845759 54994 armagon/manual.htm_mp12_cd
+  1659950884 44547 armagon/manual.txt_mp12_cd
+  434394072 21077 armagon/readme.htm_mp12_cd
+  1850939051 6089 eternity/ctf.htm_mp12_cd
+  2425680595 5951 eternity/ctf.txt_mp12_cd
+  1120740306 58113 eternity/manual.htm_mp12_cd
+  3929125575 44840 eternity/manual.txt_mp12_cd
+  1366046711 37875279 rogue/pak0.pak_mp12_cd
+  # Track listing (MM:SS:FF where FF is a 1/75s CD audio frame):
+  #  1      DATA    4      00:00:00(     0)     14:35:19( 65644)
+  #  2      AUDIO   0      14:35:19( 65644)     03:10:63( 14313)
+  #  3      AUDIO   0      17:46:07( 79957)     03:03:53( 13778)
+  #  4      AUDIO   0      20:49:60( 93735)     03:13:05( 14480)
+  #  5      AUDIO   0      24:02:65(108215)     03:03:18( 13743)
+  #  6      AUDIO   0      27:06:08(121958)     03:05:27( 13902)
+  #  7      AUDIO   0      30:11:35(135860)     03:06:61( 14011)
+  #  8      AUDIO   0      33:18:21(149871)     03:09:16( 14191)
+  #  9      AUDIO   0      36:27:37(164062)     03:02:01( 13651)
+  # Leadout AUDIO   0      39:29:38(177713)
+
 md5sums: |
   5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak_106
   85fc9cee2035b66290da1e33be2ac86b  id1/pak0.pak_101
@@ -298,6 +386,13 @@ md5sums: |
   7d9d3fad75c0ee581a8265e59151ee2c  manual.txt_mp2_cd
   5450cdeca31e270a64fc64e1b52a25a6  slicnse.txt
   2b63fd0623b86b22ef915c7c0fca8ff2  licinfo.txt_shareware
+  be58e6beab67da309eabc3a4048e943f  license.txt_mp12_cd
+  4cbb8fd26b83631eaa79f4e8e5161293  armagon/manual.htm_mp12_cd
+  f0e5b60a8af31b40603faca2d831a5a2  armagon/manual.txt_mp12_cd
+  a82c063881a57f3ddeaccb2da285da19  eternity/ctf.htm_mp12_cd
+  4b041f0feaa269e8c056e55673351a77  eternity/ctf.txt_mp12_cd
+  29500c8bd2b0359eb258a4987319fadd  eternity/manual.htm_mp12_cd
+  9f9e2f2f14093d25f116a8a68c139251  eternity/manual.txt_mp12_cd
 
 sha1sums: |
   36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak_106
@@ -320,6 +415,13 @@ sha1sums: |
   cc81b8f6acde6dde148a91f2f34ef172192c2036  rogue/pak0.pak_mp2_cd
   202c682a486bbfe1f0d8f2526d64a4974fcbce5e  slicnse.txt
   af53bc70e4d1a2ae9fa7921744292aa9d8590e4a  licinfo.txt_shareware
+  5154fe8f92a174b273152bfbe24aad6668ffb980  license.txt_mp12_cd
+  0e8e91db4b334dd9a35e2ccbae5d46d3ceb9852a  armagon/manual.htm_mp12_cd
+  7e1788170c2c8f3c7d9d3518e82528c631b87114  armagon/manual.txt_mp12_cd
+  f888bd69b315515284c84ec8e805c798abe1393a  eternity/ctf.htm_mp12_cd
+  09f5bd9d54985afce030ece22aa020786aab6110  eternity/ctf.txt_mp12_cd
+  03c040d7a296b726a5b088784c4fc0db608fd635  eternity/manual.htm_mp12_cd
+  083f5c4e1dbdb8cc7c105aa9e2d145cd42f9b86c  eternity/manual.txt_mp12_cd
 
 sha256sums: |
   35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak_106
@@ -342,6 +444,13 @@ sha256sums: |
   51b861f617f280cf02b78b7f867f5e9522f82d12d9b28d5bfad6b554834f40e3  rogue/pak0.pak_mp2_cd
   070cdf6a6410adef8fb5f83a4e5ccdb9e2301d2e48d460bb3a67a0f5ba9d70a8  slicnse.txt
   8d654834d085c088d603fb6879a874799e8b4cc6ae9317bbf826afd83bc72e31  licinfo.txt_shareware
+  876fb4cda48e3a02e53045ba8a3bf1a6dd2cdbff66702ccf22c1d6eacd5d1dcb  license.txt_mp12_cd
+  56b9e84c70f204349baa822e24986796e43e33ffbaa3f70b873c60976c0697cf  armagon/manual.htm_mp12_cd
+  e2f41d9e6cc3f47e89051b66141204d3282615074e247d779cd427b51dc0f1af  armagon/manual.txt_mp12_cd
+  5dca3811a0b7885b205220a5bff30fa404329a4832c45cc05189465a998e843e  eternity/ctf.htm_mp12_cd
+  06166db2b6eaacdb9757b922f8480a151873ccdc3a4cc80508d733708f4ba681  eternity/ctf.txt_mp12_cd
+  439059faedded5a970ae30f4791a2939225f7934bb5c1a5e1ffbd7d273a4628d  eternity/manual.htm_mp12_cd
+  4975e10d0088078aff29770f19499e657e9e71d15b4a36c4018cf02167605feb  eternity/manual.txt_mp12_cd
 
 ...
 # vim:set sw=2 sts=2 et:
