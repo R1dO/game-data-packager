@@ -15,20 +15,19 @@ TEST_SUITE += rott spear-of-destiny wolf3d
 default: $(DIRS)
 	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
-	install -m644 data/*.yaml out/
-	install -m644 data/*.control.in out/
-	install -m644 data/*.copyright out/
-	install -m644 data/*.copyright.in out/
-	install -m644 data/*.desktop.in out/
-	install -m644 data/*.preinst.in out/
-	install -m644 data/*.README.Debian.in out/
+	for f in data/*.yaml data/*.control.in data/*.copyright \
+			data/*.copyright.in data/*.desktop.in \
+			data/*.preinst.in data/*.README.Debian.in; do \
+		if [ -L $$f ]; then \
+			cp -a $$f out/ || exit $$?; \
+		else \
+			install -m644 $$f out/ || exit $$?; \
+		fi; \
+	done
 	for x in data/*.xpm; do \
 		o=out/$${x#data/}; \
 		convert $$x $${o%.xpm}.png || exit $$?; \
 	done
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-demo-data
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-full-data
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue
 
@@ -51,9 +50,6 @@ clean:
 	rm -f ./out/*.png
 	rm -f ./out/*.yaml
 	rm -rf lib/game_data_packager/__pycache__
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-demo-data clean
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-full-data clean
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue clean
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
