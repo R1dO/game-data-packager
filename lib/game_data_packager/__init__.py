@@ -1740,7 +1740,7 @@ class GameData(object):
     def look_for_files(self, paths=(), search=True, packages=None):
         paths = list(paths)
 
-        if self.save_downloads is not None:
+        if self.save_downloads is not None and self.save_downloads not in paths:
             paths.append(self.save_downloads)
 
         if packages is None:
@@ -1748,19 +1748,20 @@ class GameData(object):
 
         if search:
             for path in self.try_repack_from:
-                if os.path.isdir(path):
+                if os.path.isdir(path) and path not in paths:
                     paths.append(path)
 
             for package in packages:
                 path = '/' + package.install_to
-                if os.path.isdir(path):
+                if os.path.isdir(path) and path not in paths:
                     paths.append(path)
                 path = '/usr/share/doc/' + package.name
-                if os.path.isdir(path):
+                if os.path.isdir(path) and path not in paths:
                     paths.append(path)
 
             for path in self.iter_steam_paths():
-                paths.append(path)
+                if path not in paths:
+                    paths.append(path)
 
         for arg in paths:
             logger.debug('%s...', arg)
