@@ -37,6 +37,7 @@ import subprocess
 import sys
 import tarfile
 import tempfile
+import time
 import urllib.request
 import zipfile
 
@@ -1053,6 +1054,8 @@ class GameData(object):
                                 size=entry.file_size,
                                 progress=(entry.file_size > QUITE_LARGE))
                         wf.close()
+                        orig_time = time.mktime(entry.date_time + (0, 0, -1))
+                        os.utime(tmp, (orig_time, orig_time))
 
                         if not self.use_file(wanted, tmp, hf):
                             os.remove(tmp)
@@ -1107,6 +1110,8 @@ class GameData(object):
                                 size=entry.size,
                                 progress=(entry.size > QUITE_LARGE))
                         wf.close()
+                        orig_time = time.mktime(entry.date_time + (0, 0, -1))
+                        os.utime(tmp, (orig_time, orig_time))
 
                         if not self.use_file(wanted, tmp, hf):
                             os.remove(tmp)
@@ -1522,8 +1527,8 @@ class GameData(object):
                     mkdir_p(copy_to_dir)
                 # Use cp(1) so we can make a reflink if source and
                 # destination happen to be the same btrfs volume
-                subprocess.check_call(['cp', '--reflink=auto', copy_from,
-                    copy_to])
+                subprocess.check_call(['cp', '--reflink=auto',
+                    '--preserve=timestamps', copy_from, copy_to])
 
         for symlink, real_file in package.symlinks.items():
             symlink = symlink.lstrip('/')
@@ -1558,8 +1563,8 @@ class GameData(object):
                 copy_to_dir = os.path.dirname(copy_to)
                 if not os.path.isdir(copy_to_dir):
                     mkdir_p(copy_to_dir)
-                subprocess.check_call(['cp', '--reflink=auto', copy_from,
-                    copy_to])
+                subprocess.check_call(['cp', '--reflink=auto',
+                    '--preserve=timestamps', copy_from, copy_to])
 
         # adapted from dh_md5sums
         subprocess.check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
