@@ -1700,8 +1700,27 @@ class GameData(object):
         self.look_for_files(paths=args.paths, search=args.search)
 
         if args.shortname in self.packages:
+            if args.packages and args.packages != [args.shortname]:
+                not_the_one = [p for p in args.packages if p != args.shortname]
+                logger.error('--package="%s" is not consistent with '
+                        'selecting "%s"', not_the_one, args.shortname)
+                raise SystemExit(1)
+
+            args.demo = True
+            args.packages = [args.shortname]
             packages = set([self.packages[args.shortname]])
+        elif args.packages:
+            args.demo = True
+            packages = set()
+            for p in args.packages:
+                if p not in self.packages:
+                    logger.error('--package="%s" is not part of game '
+                            '"%s"', not_the_one, args.shortname)
+                    raise SystemExit(1)
+                packages.add(self.packages[p])
         else:
+            # if no packages were specified, we require --demo to build
+            # a demo if we have its corresponding full game
             packages = set(self.packages.values())
 
         try:
@@ -2002,6 +2021,10 @@ def run_command_line():
             add_help=False,
             argument_default=argparse.SUPPRESS)
 
+    base_parser.add_argument('--package', '-p', action='append',
+            dest='packages',
+            help='Produce this data package (may be repeated)')
+
     # Misc options
     group = base_parser.add_mutually_exclusive_group()
     group.add_argument('-i', '--install', action='store_true',
@@ -2052,8 +2075,10 @@ def run_command_line():
             destination=None,
             download=True,
             install=False,
+            packages=[],
             save_downloads=None,
             search=True,
+            shortname=None,
     )
     parser.parse_args(namespace=parsed)
     logger.debug('parsed command-line arguments into: %r', parsed)
@@ -2075,6 +2100,7 @@ def run_command_line():
     if parsed.shortname in games:
         game = games[parsed.shortname]
     else:
+        parsed.package = parsed.shortname
         for game in games.values():
             if parsed.shortname in game.packages:
                 break
