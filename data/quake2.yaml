@@ -697,6 +697,13 @@ files:
   readme.doc:
     install_to: $docdir
 
+  ctf/readme.txt:
+    install_to: $docdir
+    install_as: ctf.txt
+    look_for:
+    - ctf.txt
+    - ctf/readme.txt
+
 md5sums: |
   1ec55a724dc3109fd50dde71ab581d70  baseq2/pak0.pak_cd
   36fdaddd1c1b56ba10472466e4486ff8  baseq2/video/end.cin
