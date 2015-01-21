@@ -61,10 +61,12 @@ class QuakeGameData(GameData):
         for path in package.install:
             if path.startswith('hipnotic'):
                 detector = 'hipnotic-tryexec.sh'
+                break
             elif path.startswith('rogue'):
                 detector = 'rogue-tryexec.sh'
-            else:
-                return
+                break
+        else:
+            return
 
         with TemporaryUmask(0o022):
             quakedir = os.path.join(destdir, 'usr/share/games/quake')
