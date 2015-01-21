@@ -1362,8 +1362,13 @@ class GameData(object):
                     subprocess.check_call(['id-shr-extract',
                                 os.path.abspath(found_name)],
                             cwd=tmpdir)
+                    # this format doesn't store a timestamp, so the extracted
+                    # files will instead inherit the archive's timestamp
+                    orig_time = os.stat(found_name).st_mtime
                     for f in to_unpack:
-                        self.consider_file(os.path.join(tmpdir, f), True)
+                        tmp = os.path.join(tmpdir, f)
+                        os.utime(tmp, (orig_time, orig_time))
+                        self.consider_file(tmp, True)
                 elif fmt == 'unzip':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
