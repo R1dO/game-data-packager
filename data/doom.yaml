@@ -24,6 +24,7 @@ packages:
   doom-wad:
     debian:
       engine: "chocolate-doom | doom-engine"
+      conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install_to: usr/share/games/doom
     longname: Doom
     install:

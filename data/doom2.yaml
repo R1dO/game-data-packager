@@ -19,6 +19,7 @@ packages:
     debian:
       engine: "chocolate-doom | doom-engine"
       provides: doom-wad
+      conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install_to: usr/share/games/doom
     install:
     - doom2.wad

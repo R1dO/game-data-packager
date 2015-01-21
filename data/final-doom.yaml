@@ -19,6 +19,7 @@ packages:
     debian:
       engine: "chocolate-doom | doom-engine"
       provides: doom-wad
+      conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install:
     - tnt.wad
     install_to: usr/share/games/doom
@@ -28,6 +29,7 @@ packages:
     debian:
       engine: "chocolate-doom | doom-engine"
       provides: doom-wad
+      conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install:
     - plutonia.wad
     install_to: usr/share/games/doom
