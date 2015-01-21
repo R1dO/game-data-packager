@@ -26,20 +26,6 @@ default: $(DIRS)
 		o=out/$${x#data/}; \
 		convert $$x $${o%.xpm}.png || exit $$?; \
 	done
-	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
-		FOLDER=id1
-	make -f quake.mk LONG="Quake music" VERSION=$(VERSION) \
-		PACKAGE=quake-music FOLDER=id1
-	make -f quake.mk LONG="Quake shareware" VERSION=$(VERSION) \
-		PACKAGE=quake-shareware FOLDER=id1
-	make -f quake.mk LONG="Quake mission pack 1: Scourge of Armagon" \
-		VERSION=$(VERSION) PACKAGE=quake-armagon FOLDER=hipnotic
-	make -f quake.mk LONG="Quake MP1 music" VERSION=$(VERSION) \
-		PACKAGE=quake-armagon-music FOLDER=hipnotic
-	make -f quake.mk LONG="Quake mission pack 2: Dissolution of Eternity" \
-		VERSION=$(VERSION) PACKAGE=quake-dissolution FOLDER=rogue
-	make -f quake.mk LONG="Quake MP2 music" VERSION=$(VERSION) \
-		PACKAGE=quake-dissolution-music FOLDER=rogue
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-demo-data
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-full-data
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music
@@ -65,20 +51,6 @@ clean:
 	rm -f ./out/*.png
 	rm -f ./out/*.yaml
 	rm -rf lib/game_data_packager/__pycache__
-	make -f quake.mk LONG="Quake" VERSION=$(VERSION) PACKAGE=quake-registered \
-		FOLDER=id1 clean
-	make -f quake.mk LONG="Quake music" VERSION=$(VERSION) \
-		PACKAGE=quake-music FOLDER=id1 clean
-	make -f quake.mk LONG="Quake shareware" VERSION=$(VERSION) \
-		PACKAGE=quake-shareware FOLDER=id1 clean
-	make -f quake.mk LONG="Quake mission pack 1: Scourge of Armagon" \
-		VERSION=$(VERSION) PACKAGE=quake-armagon FOLDER=hipnotic clean
-	make -f quake.mk LONG="Quake MP1 music" VERSION=$(VERSION) \
-		PACKAGE=quake-armagon-music FOLDER=hipnotic clean
-	make -f quake.mk LONG="Quake mission pack 2: Dissolution of Eternity" \
-		VERSION=$(VERSION) PACKAGE=quake-dissolution FOLDER=rogue clean
-	make -f quake.mk LONG="Quake MP2 music" VERSION=$(VERSION) \
-		PACKAGE=quake-dissolution-music FOLDER=rogue clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-demo-data clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-full-data clean
 	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-music clean
