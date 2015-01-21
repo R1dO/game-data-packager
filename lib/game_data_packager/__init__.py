@@ -1977,7 +1977,8 @@ class GameData(object):
         ready = set()
 
         for package in possible:
-            if package.demo_for and self.packages[package.demo_for] in possible:
+            if (not build_demos and package.demo_for and
+                    self.packages[package.demo_for] in possible):
                 # no point in packaging the demo if we have the full
                 # version
                 logger.debug('will not produce "%s" because we have the '
