@@ -1657,18 +1657,21 @@ class GameData(object):
         self.argument_parser = parser
         return parser
 
-    def look_for_files(self, paths=(), search=True):
+    def look_for_files(self, paths=(), search=True, packages=None):
         paths = list(paths)
 
         if self.save_downloads is not None:
             paths.append(self.save_downloads)
+
+        if packages is None:
+            packages = self.packages.values()
 
         if search:
             for path in self.try_repack_from:
                 if os.path.isdir(path):
                     paths.append(path)
 
-            for package in self.packages.values():
+            for package in packages:
                 path = '/' + package.install_to
                 if os.path.isdir(path):
                     paths.append(path)
@@ -1697,8 +1700,6 @@ class GameData(object):
 
         self.save_downloads = args.save_downloads
 
-        self.look_for_files(paths=args.paths, search=args.search)
-
         if args.shortname in self.packages:
             if args.packages and args.packages != [args.shortname]:
                 not_the_one = [p for p in args.packages if p != args.shortname]
@@ -1722,6 +1723,9 @@ class GameData(object):
             # if no packages were specified, we require --demo to build
             # a demo if we have its corresponding full game
             packages = set(self.packages.values())
+
+        self.look_for_files(paths=args.paths, search=args.search,
+                packages=packages)
 
         try:
             ready = self.prepare_packages(packages,
@@ -1869,7 +1873,10 @@ class GameData(object):
 
         subprocess.call(['su', '-c', cmd])
 
-    def iter_steam_paths(self):
+    def iter_steam_paths(self, packages=None):
+        if packages is None:
+            packages = self.packages.values()
+
         for prefix in (
                 os.path.expanduser('~/.steam'),
                 os.path.join(os.environ.get('XDG_DATA_HOME', os.path.expanduser('~/.local/share')),
@@ -1892,7 +1899,7 @@ class GameData(object):
                                 self.shortname, path)
                         yield path
 
-            for package in self.packages.values():
+            for package in packages:
                 suffix = package.steam.get('path')
 
                 if suffix is not None:
