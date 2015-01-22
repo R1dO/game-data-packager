@@ -2037,6 +2037,12 @@ class GameData(object):
         ready = set()
 
         for package in possible:
+            if (package.better_version
+                and self.packages[package.better_version] in possible):
+                  logger.debug('will not produce "%s" because better version '
+                     '"%s" is also avaible', package.name, package.better_version)
+                  continue
+
             abort = False
             if not build_demos:
                 for demo_for in package.demo_for:
@@ -2052,12 +2058,6 @@ class GameData(object):
                     logger.error('will not produce "%s" because it '
                        'conflicts with "%s"', package.name, previous.name)
                     abort = True
-
-            if (package.better_version
-                and self.packages[package.better_version] in possible):
-                  logger.debug('will not produce "%s" because better version '
-                     '"%s" is also avaible', package.name, package.better_version)
-                  abort = True
 
             if abort:
                 continue
