@@ -1753,7 +1753,8 @@ class GameData(object):
 
         parser = parsers.add_parser(self.shortname,
                 help=self.longname, aliases=aliases,
-                description=self.help_text,
+                description='Package data files for %s.' % self.longname,
+                epilog=self.help_text,
                 formatter_class=argparse.RawDescriptionHelpFormatter,
                 parents=(base_parser,),
                 **kwargs)
@@ -2248,7 +2249,7 @@ def run_command_line():
             argument_default=argparse.SUPPRESS)
 
     base_parser.add_argument('--package', '-p', action='append',
-            dest='packages',
+            dest='packages', metavar='PACKAGE',
             help='Produce this data package (may be repeated)')
 
     # Misc options
@@ -2286,7 +2287,9 @@ def run_command_line():
             help='save downloaded files to DIR, and look for files there')
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
-            description='Package game files.', parents=(base_parser,))
+            description='Package game files.', parents=(base_parser,),
+            epilog='Run "game-data-packager GAME --help" to see ' +
+                'game-specific arguments.')
 
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
