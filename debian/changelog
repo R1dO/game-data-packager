@@ -14,7 +14,8 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Add support for Hexen II's Portal of Praevus expansion and
     HexenWorld addon (Closes: #733751)
   * Add support for Hexen: Deathkings of the Dark Citadel,
-    loosely based on patches by Johey Shmit (partially addresses #737137)
+    loosely based on patches by Johey Shmit (Closes: #737137)
+  * Add support for Hexen demo (Closes: #775483)
   * Add support for Heretic shareware
   * For YAML games, always search the installed directory for game files
     (like the --repack argument in version 38)
@@ -49,6 +50,8 @@ game-data-packager (39) UNRELEASED; urgency=medium
   * Automatically exclude __pycache__ from tarball
   * Make the -f option for rott, tyrian, wolf3d do approximately what it used
     to do before their YAML conversions
+  * All games are now done in Python/YAML so all $@ vs. $* issues
+    should have gone away (Closes: #742849)
 
   Internal changes:
 
@@ -75,7 +78,7 @@ game-data-packager (39) UNRELEASED; urgency=medium
     in game_data_packager.games.doom_common (Closes: #775081)
   * Switch lgeneral to YAML style (Closes: #775083)
   * Add support for ripping CD audio (Closes: #775078)
-  * Switch Quake 1 and 2 to YAML style, except for the Quake II mission packs
+  * Switch Quake 1 and 2 to YAML style (Closes: #775082)
   * Add support for flagging files in YAML as known-but-unsuitable,
     and use it for older versions of various .wad files
   * Add support for concatenating files, needed for Quake 1
