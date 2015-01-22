@@ -58,8 +58,13 @@ Architecture: all
 Depends: quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
          yamagi-quake2 | quake2-engine,
          ${misc:Depends}
-Suggests: quake2-music
-Recommends: x11-utils | zenity | kde-baseapps-bin
+Suggests:
+ quake2-music,
+ quake2-reckoning,
+ quake2-groundzero,
+Recommends:
+ game-data-packager (>= 39),
+ x11-utils | zenity | kde-baseapps-bin,
 Description: classic science-fiction-themed first person shooter
  Quake II is a classic first-person shooter game by id Software,
  released in 1997. This package contains a launcher script and menu
@@ -69,6 +74,11 @@ Description: classic science-fiction-themed first person shooter
  non-distributable packages by using the game-data-packager package:
  either quake2-full-data or quake2-demo-data. Creating quake2-full-data
  requires data files from a Quake II installation or CD-ROM.
+ .
+ game-data-packager (>= 39) can also produce packages for the offical mission
+ packs The Reckoning (developed by Xatrix Entertainment) and Ground Zero
+ (developed by Rogue Entertainment). Additional menu entries should
+ appear automatically if those expansions are installed.
 
 Package: quake2-server
 Architecture: all
@@ -76,6 +86,9 @@ Depends: adduser,
          quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
          yamagi-quake2-core | quake2-engine-server,
          ${misc:Depends}
+Suggests:
+ quake2-reckoning,
+ quake2-groundzero,
 Description: dedicated server for Quake II
  This package contains a launcher script and init script to run a
  Quake II server automatically, with any suitable engine.

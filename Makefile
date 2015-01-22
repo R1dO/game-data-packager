@@ -15,10 +15,14 @@ obj = \
 	build/24/quake-armagon.png \
 	build/24/quake-dissolution.png \
 	build/24/quake2.png \
+	build/24/quake2-reckoning.png \
+	build/24/quake2-groundzero.png \
 	build/quake.svg \
 	build/quake-armagon.svg \
 	build/quake-dissolution.svg \
 	build/quake2.svg \
+	build/quake2-reckoning.svg \
+	build/quake2-groundzero.svg \
 	build/quake3.png \
 	build/quake3.xpm \
 	build/quake332.xpm \
@@ -29,6 +33,8 @@ obj = \
 	$(patsubst %,build/%/quake-armagon.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake2.png,$(layer_sizes)) \
+	$(patsubst %,build/%/quake2-reckoning.png,$(layer_sizes)) \
+	$(patsubst %,build/%/quake2-groundzero.png,$(layer_sizes)) \
 	$(NULL)
 
 all: $(obj)
@@ -103,6 +109,22 @@ build/tmp-armagon.svg: quake1+2.svg Makefile
 		-e 's/#e9b96e/#aba390/' \
 		< $< > $@
 
+build/tmp-reckoning.svg: quake1+2.svg Makefile
+	install -d build
+	sed -e 's/#3a5a1e/#999984/' \
+		-e 's/#73ae3a/#eeeeec/' \
+		-e 's/#8ae234/#eeeeec/' \
+		-e 's/#132601/#233436/' \
+		< $< > $@
+
+build/tmp-groundzero.svg: quake1+2.svg Makefile
+	install -d build
+	sed -e 's/#3a5a1e/#ce5c00/' \
+		-e 's/#73ae3a/#fce94f/' \
+		-e 's/#8ae234/#fce94f/' \
+		-e 's/#132601/#cc0000/' \
+		< $< > $@
+
 build/24/quake.png: build/22/quake.png
 	install -d build/24
 	convert -bordercolor Transparent -border 1x1 $< $@
@@ -112,6 +134,10 @@ build/24/quake-%.png: build/22/quake-%.png
 	convert -bordercolor Transparent -border 1x1 $< $@
 
 build/24/quake2.png: build/22/quake2.png
+	install -d build/24
+	convert -bordercolor Transparent -border 1x1 $< $@
+
+build/24/quake2-%.png: build/22/quake2-%.png
 	install -d build/24
 	convert -bordercolor Transparent -border 1x1 $< $@
 
@@ -159,6 +185,28 @@ $(patsubst %,build/%/quake2.png,$(layer_sizes)): build/%/quake2.png: quake1+2.sv
 		--export-png=$@ \
 		$<
 
+$(patsubst %,build/%/quake2-reckoning.png,$(layer_sizes)): build/%/quake2-reckoning.png: build/tmp-reckoning.svg
+	install -d build/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake2-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,build/%/quake2-groundzero.png,$(layer_sizes)): build/%/quake2-groundzero.png: build/tmp-groundzero.svg
+	install -d build/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake2-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
 build/%.xpm: build/32/%.png
 	install -d build
 	convert $< $@
@@ -185,6 +233,15 @@ build/quake-%.svg: build/tmp-%.svg Makefile
 	rm -f tmp.svg
 
 build/quake2.svg: quake1+2.svg Makefile
+	install -d build
+	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > tmp.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		tmp.svg
+	rm -f tmp.svg
+
+build/quake2-%.svg: build/tmp-%.svg Makefile
 	install -d build
 	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > tmp.svg
 	inkscape \
