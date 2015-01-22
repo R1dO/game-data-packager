@@ -12,6 +12,9 @@ quake (9) UNRELEASED; urgency=medium
     - make /etc/quake*-server available as etc/quake*-server in the game
       engine's search path so it's more obvious what is being exec'd (leave
       the debian_server.cfg symlink in for compatibility)
+  * quake3-server: use a non-hidden home path,
+    /var/games/quake3-server/server.q3a, in preparation for multiple-instance
+    support
 
  -- Simon McVittie <smcv@debian.org>  Tue, 20 Jan 2015 08:57:12 +0000
 

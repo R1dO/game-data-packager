@@ -13,6 +13,11 @@ case "$1" in
     install -d /var/games
     install -d /var/games/quake3-server
     chown Debian-quake3:games /var/games/quake3-server
+    if [ -d /var/games/quake3-server/.q3a ] && ! [ -e /var/games/quake3-server/server.q3a ]; then
+        # we use com_homepath to redirect server stuff to a non-hidden
+        # directory and be ready for multi-instance; migrate old configuration
+        ln -s .q3a /var/games/quake3-server/server.q3a
+    fi
   ;;
   abort-upgrade|abort-remove|abort-deconfigure)
   ;;
