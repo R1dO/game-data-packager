@@ -1,3 +1,5 @@
+# encoding=utf-8
+
 # This version of this file is only used when run uninstalled. It is replaced
 # with a generated version during installation.
 

@@ -1,3 +1,5 @@
+# encoding=utf-8
+
 import os
 
 if os.environ.get('GDP_UNINSTALLED'):

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# vim:set fenc=utf-8:
+# encoding=utf-8
 #
 # Copyright © 2015 Simon McVittie <smcv@debian.org>
 #

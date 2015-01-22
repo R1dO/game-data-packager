@@ -52,8 +52,8 @@ clean:
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
-	GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m game_data_packager.check_syntax
-	pyflakes3 game_data_packager/*.py game_data_packager/*/*.py || :
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m game_data_packager.check_syntax
+	LC_ALL=C pyflakes3 game_data_packager/*.py game_data_packager/*/*.py || :
 
 # Requires additional setup, so not part of "make check"
 manual-check:
