@@ -1188,6 +1188,8 @@ class GameData(object):
                 hasher = HashedFile.from_concatenated_files(wanted.name,
                         open_files(), writer, size=wanted.size,
                         progress=(wanted.size > QUITE_LARGE))
+            orig_time = os.stat(self.found[provider.name]).st_mtime
+            os.utime(path, (orig_time, orig_time))
             self.use_file(wanted, path, hasher)
 
     def fill_gap(self, package, wanted, download=False, log=True):
@@ -1334,6 +1336,8 @@ class GameData(object):
                     wf = open(tmp, 'wb')
                     wf.write(contents.replace(b'\r\n', b'\n'))
 
+                    orig_time = os.stat(found_name).st_mtime
+                    os.utime(tmp, (orig_time, orig_time))
                     self.use_file(wanted, tmp, None)
                 elif fmt in ('tar.gz', 'tar.bz2', 'tar.xz'):
                     rf = open(found_name, 'rb')
