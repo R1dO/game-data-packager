@@ -32,6 +32,8 @@ packages:
       id: 2320
       path: "common/Quake 2"
     install_to: usr/share/games/quake2
+    install_to_docdir:
+      - quake2_manual
     install_contents_of:
     - q2-3.20-x86-full-ctf.exe
     install:
@@ -62,6 +64,127 @@ packages:
     - licinfo.txt
     - readme.doc
     - readme.txt_3.20
+    - quake2_manual/bottom.html
+    - quake2_manual/credits.html_steam
+    - quake2_manual/customer_support.html_steam
+    - quake2_manual/enemy_barracuda_shark.html
+    - quake2_manual/enemy_berserker.html
+    - quake2_manual/enemy_brains.html
+    - quake2_manual/enemy_enforcer.html
+    - quake2_manual/enemy_flyer.html
+    - quake2_manual/enemy_gladiator.html
+    - quake2_manual/enemy_gunner.html
+    - quake2_manual/enemy_icarus.html
+    - quake2_manual/enemy_iron_maiden.html
+    - quake2_manual/enemy_light_guard.html
+    - quake2_manual/enemy_machinegun_guard.html
+    - quake2_manual/enemy_medic.html
+    - quake2_manual/enemy_mutant.html
+    - quake2_manual/enemy_parasite.html
+    - quake2_manual/enemy_shotgun_guard.html
+    - quake2_manual/enemy_tank.html
+    - quake2_manual/enemy_tank_commander.html
+    - quake2_manual/enemy_technician.html
+    - quake2_manual/images/adrenaline.gif
+    - quake2_manual/images/amor_body.gif
+    - quake2_manual/images/armor_combat.gif
+    - quake2_manual/images/armor_jacket.gif
+    - quake2_manual/images/armor_shard.gif
+    - quake2_manual/images/bandoleer.gif
+    - quake2_manual/images/barracuda_shark.gif
+    - quake2_manual/images/berserker.gif
+    - quake2_manual/images/bfg.gif
+    - quake2_manual/images/blaster.gif
+    - quake2_manual/images/bluekey.gif
+    - quake2_manual/images/bottom_id_link_transparent.gif
+    - quake2_manual/images/brains.gif
+    - quake2_manual/images/breather.gif
+    - quake2_manual/images/bullets.gif
+    - quake2_manual/images/buttons.jpg
+    - quake2_manual/images/cells.gif
+    - quake2_manual/images/chaingun.gif
+    - quake2_manual/images/commandant_james.gif
+    - quake2_manual/images/credits_main.gif
+    - quake2_manual/images/door.jpg
+    - quake2_manual/images/elevator_base_exit_sign.jpg
+    - quake2_manual/images/enemy_groupshot.gif
+    - quake2_manual/images/energy_armour.gif
+    - quake2_manual/images/enforcer.gif
+    - quake2_manual/images/envirosuit.gif
+    - quake2_manual/images/explosive_barrels.jpg
+    - quake2_manual/images/first_aid.gif
+    - quake2_manual/images/flyer.gif
+    - quake2_manual/images/gladiator.gif
+    - quake2_manual/images/grenade_launcher.gif
+    - quake2_manual/images/grenades.gif
+    - quake2_manual/images/gunner.gif
+    - quake2_manual/images/hand_grenade.gif
+    - quake2_manual/images/heavy_pack.gif
+    - quake2_manual/images/hyper_blaster.gif
+    - quake2_manual/images/icarus.gif
+    - quake2_manual/images/invulnerability.gif
+    - quake2_manual/images/iron_maiden.gif
+    - quake2_manual/images/lava.jpg
+    - quake2_manual/images/lever.jpg
+    - quake2_manual/images/light_guard.gif
+    - quake2_manual/images/machinegun.gif
+    - quake2_manual/images/machinegun_guard.gif
+    - quake2_manual/images/main_cover_image.gif
+    - quake2_manual/images/manual_back.jpg
+    - quake2_manual/images/manual_bottom.jpg
+    - quake2_manual/images/manual_cover_image.jpg
+    - quake2_manual/images/manual_top.jpg
+    - quake2_manual/images/medic.gif
+    - quake2_manual/images/medkit.gif
+    - quake2_manual/images/mega_health.gif
+    - quake2_manual/images/menu.gif
+    - quake2_manual/images/multiplayer_main.jpg
+    - quake2_manual/images/multiplayer_menu1.gif
+    - quake2_manual/images/multiplayer_screen1.gif
+    - quake2_manual/images/mutant.gif
+    - quake2_manual/images/no_data.jpg
+    - quake2_manual/images/options_menu.gif
+    - quake2_manual/images/parasite.gif
+    - quake2_manual/images/player_properties_screen1.gif
+    - quake2_manual/images/quad_damage.gif
+    - quake2_manual/images/rail_gun.gif
+    - quake2_manual/images/rocket_launcher.gif
+    - quake2_manual/images/rockets.gif
+    - quake2_manual/images/secret_door.jpg
+    - quake2_manual/images/shells.gif
+    - quake2_manual/images/shotgun.gif
+    - quake2_manual/images/shotgun_guard.gif
+    - quake2_manual/images/silencer.gif
+    - quake2_manual/images/slime.jpg
+    - quake2_manual/images/start_network_server_screen1.gif
+    - quake2_manual/images/stimpack.gif
+    - quake2_manual/images/story_main.jpg
+    - quake2_manual/images/strogg_environ_1.jpg
+    - quake2_manual/images/strogg_environ_2.jpg
+    - quake2_manual/images/strogg_environ_3.jpg
+    - quake2_manual/images/supershotgun.gif
+    - quake2_manual/images/tank.gif
+    - quake2_manual/images/tank_commander.gif
+    - quake2_manual/images/technician.gif
+    - quake2_manual/images/top_nav_imagemap.gif
+    - quake2_manual/images/unit_exit_door.jpg
+    - quake2_manual/images/water.jpg
+    - quake2_manual/intel_brief.html
+    - quake2_manual/intel_brief2.html
+    - quake2_manual/intel_brief3.html
+    - quake2_manual/intel_brief4.html
+    - quake2_manual/intel_brief5.html
+    - quake2_manual/intel_brief6.html
+    - quake2_manual/intel_brief7.html
+    - quake2_manual/intel_brief8.html
+    - quake2_manual/intel_brief_enemy.html
+    - quake2_manual/main.html
+    - quake2_manual/multiplayer.html
+    - quake2_manual/page_index.html
+    - quake2_manual/setup_controls_screenmenus.html
+    - quake2_manual/story.html
+    - quake2_manual/technical_information.html_steam
+    - quake2_manual/top_nav.html
 
   quake2-demo-data:
     demo_for: quake2-full-data
@@ -781,6 +904,9 @@ files:
     look_for:
     - ctf.txt
     - ctf/readme.txt
+
+  3.20_changes.txt:
+    install_to: $docdir
 
   quake2-xatrix-2.01/CHANGELOG:
     distinctive_name: false
