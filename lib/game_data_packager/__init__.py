@@ -1001,7 +1001,7 @@ class GameData(object):
                 wanted = self.files[filename]
                 # updates file_status as a side-effect
                 self.fill_gap(package, wanted, download=download,
-                        log=(filename in package.install))
+                        log=(log and filename in package.install))
 
             logger.debug('%s: %s', filename, self.file_status[filename])
 
