@@ -1,3 +1,20 @@
+game-data-packager (40) UNRELEASED; urgency=medium
+
+  [ Alexandre Detiste ]
+  * wolf3d: if both v1.0-v1.2 and v1.4 are available, always build v1.4
+    - add "better_version" package field to implement this
+
+  [ Simon McVittie ]
+  * quake3: install symlinks in /usr/lib/quake3 too, so src:quake can use
+    updated native-code game modules
+  * quake3: experimental support for packaging the demo, with bits of
+    the full game's patch thrown in to make it work on
+    ioquake3 (Closes: #775485)
+  * quake3: look in /usr/local/games/quake3
+  * quake3: list Steam installation path in help text
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:54:12 +0000
+
 game-data-packager (39) experimental; urgency=low
 
   Game support and other features:
