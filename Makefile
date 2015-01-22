@@ -33,9 +33,6 @@ default: $(DIRS)
 $(DIRS):
 	mkdir -p $@
 
-tests/empty.deb:
-	dpkg-deb -b tests/empty tests/empty.deb
-
 clean:
 	rm -f ./out/changelog.gz
 	rm -f ./out/foo ./out/bar ./out/baz
