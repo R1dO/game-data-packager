@@ -1114,8 +1114,7 @@ class GameData(object):
                                 size=entry.size,
                                 progress=(entry.size > QUITE_LARGE))
                         wf.close()
-                        orig_time = time.mktime(entry.date_time + (0, 0, -1))
-                        os.utime(tmp, (orig_time, orig_time))
+                        os.utime(tmp, (entry.mtime, entry.mtime))
 
                         if not self.use_file(wanted, tmp, hf):
                             os.remove(tmp)
