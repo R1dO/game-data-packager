@@ -332,6 +332,8 @@ packages:
       first_track: 2
 
   quake2-reckoning-data:
+    symlinks:
+      usr/share/games/quake2/quake2-reckoning: usr/games/quake2
     longname: "Quake II Mission Pack 1: The Reckoning"
     steam:
       id: 2330
@@ -378,6 +380,8 @@ packages:
       first_track: 2
 
   quake2-groundzero-data:
+    symlinks:
+      usr/share/games/quake2/quake2-groundzero: usr/games/quake2
     longname: "Quake II Mission Pack 2: Ground Zero"
     steam:
       id: 2340
