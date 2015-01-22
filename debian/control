@@ -20,15 +20,10 @@ Homepage: http://wiki.debian.org/Games/GameDataPackager
 
 Package: game-data-packager
 Depends: fakeroot, ${misc:Depends},
-# for jedi-*, rtcw, and hopefully more soon
 	python3,
 	python3-debian,
 	python3-yaml,
 	${python3:Depends},
-# for quake, quake2, rott, wolf3d
-	unzip | p7zip-full,
-# for wolf3d
-	dynamite (>= 0.1.1-2)
 Suggests:
 # for quake music and quake2 music
 	cdparanoia, vorbis-tools,
@@ -37,7 +32,11 @@ Suggests:
 # for quake2 mission packs
 	binutils, make, gcc,
 # for lgeneral
-	lgc-pg
+	lgc-pg,
+# for wolf3d demo
+	dynamite (>= 0.1.1-2),
+# for wolf3d v1.2
+	unzip,
 Architecture: all
 Multi-Arch: foreign
 Description: Installer for game data files
