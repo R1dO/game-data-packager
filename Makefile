@@ -24,6 +24,7 @@ default: $(DIRS)
 			install -m644 $$f out/ || exit $$?; \
 		fi; \
 	done
+	install -m644 run out/game-data-packager
 	for x in data/*.xpm; do \
 		o=out/$${x#data/}; \
 		convert $$x $${o%.xpm}.png || exit $$?; \

@@ -3,7 +3,7 @@ set -e
 set -u
 
 # test to see whether we are running in 'development mode'
-if [ "$0" = "./game-data-packager" ]; then
+if [ "$0" = "./run" ]; then
 	GDP_UNINSTALLED=1
 	export GDP_UNINSTALLED
 	PYTHONPATH="$(pwd)"
