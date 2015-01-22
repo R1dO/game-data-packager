@@ -186,6 +186,7 @@ packages:
     - quake2_manual/top_nav.html
 
   quake2-demo-data:
+    longname: "Quake II (demo)"
     demo_for: quake2-full-data
     debian:
       engine: quake2 | quake2-server
@@ -331,6 +332,10 @@ packages:
       first_track: 2
 
   quake2-reckoning-data:
+    longname: "Quake II Mission Pack 1: The Reckoning"
+    steam:
+      id: 2330
+      path: "common/Quake 2"
     debian:
       provides: quake2-xatrix
       conflicts: quake2-xatrix
@@ -373,6 +378,10 @@ packages:
       first_track: 2
 
   quake2-groundzero-data:
+    longname: "Quake II Mission Pack 2: Ground Zero"
+    steam:
+      id: 2340
+      path: "common/Quake 2"
     debian:
       provides: quake2-rogue
       conflicts: quake2-rogue
