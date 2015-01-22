@@ -1921,8 +1921,8 @@ class GameData(object):
 
     def get_architecture(self):
         if self._architecture is None:
-            self._architecture = subprocess.check_output(['dpkg-architecture',
-                '-qDEB_BUILD_ARCH']).strip().decode('ascii')
+            self._architecture = subprocess.check_output(['dpkg',
+                '--print-architecture']).strip().decode('ascii')
 
         return self._architecture
 
