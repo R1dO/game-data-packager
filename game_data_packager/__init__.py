@@ -320,6 +320,7 @@ class GameDataPackage(object):
 
         # Names of relative packages
         self.demo_for = set()
+        self.better_version = None
         self.expansion_for = None
 
         # The optional marketing name of this version
@@ -411,6 +412,7 @@ class GameDataPackage(object):
         return {
             'architecture': self.architecture,
             'demo_for': sorted(self.demo_for),
+            'better_version': self.better_version,
             'expansion_for': self.expansion_for,
             'install': sorted(self.install),
             'install_to': self.install_to,
@@ -710,7 +712,7 @@ class GameData(object):
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
-                'rip_cd', 'architecture', 'aliases'):
+                'rip_cd', 'architecture', 'aliases', 'better_version'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -2050,6 +2052,12 @@ class GameData(object):
                     logger.error('will not produce "%s" because it '
                        'conflicts with "%s"', package.name, previous.name)
                     abort = True
+
+            if (package.better_version
+                and self.packages[package.better_version] in possible):
+                  logger.debug('will not produce "%s" because better version '
+                     '"%s" is also avaible', package.name, package.better_version)
+                  abort = True
 
             if abort:
                 continue
