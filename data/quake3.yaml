@@ -145,7 +145,118 @@ packages:
         size: 351623691
         distinctive_size: true
 
+  quake3-demo-data:
+    longname: Quake III Arena (demo)
+    debian:
+      # deliberately no quake3-server alternative, I'm pretty sure it isn't
+      # network-compatible with anything
+      engine: quake3 (>= 10)
+    demo_for: quake3-data
+    install_to: usr/share/games/quake3-demo-data/demoq3
+    install:
+    - demoq3/pak0.pk3
+    # The demo is pretty old and is not entirely compatible with ioquake3,
+    # so we use some files from the downloadable patch to get it more or less
+    # compatible.
+    - botfiles/fw_items.c
+    - botfiles/fw_weap.c
+    - botfiles/game.h
+    - botfiles/ichat.h
+    - botfiles/inv.h
+    - botfiles/items.c
+    - botfiles/match.c
+    - botfiles/match.h
+    - botfiles/script.c
+    - botfiles/teamplay.h
+    - botfiles/weapons.c
+    - gfx/misc/lightning3new.jpg
+    - gfx/misc/lightning3newnpm.jpg
+    - scripts/lightningnew.shader
+    - vm/ui.qvm
+    - vm/cgame.qvm
+    - vm/qagame.qvm
+    symlinks:
+      usr/lib/quake3/demo/demoq3/pak0.pk3:
+        usr/share/games/quake3-demo-data/demoq3/pak0.pk3
+      usr/lib/quake3/demo/demoq3/botfiles:
+        usr/share/games/quake3-demo-data/demoq3/botfiles
+      usr/lib/quake3/demo/demoq3/gfx:
+        usr/share/games/quake3-demo-data/demoq3/gfx
+      usr/lib/quake3/demo/demoq3/scripts:
+        usr/share/games/quake3-demo-data/demoq3/scripts
+      usr/lib/quake3/demo/demoq3/vm:
+        usr/share/games/quake3-demo-data/demoq3/vm
+
 files:
+  baseq3/pak4.pk3:
+    provides:
+    # botfiles/bots/...
+    # botfiles/chars.h
+    - botfiles/fw_items.c
+    - botfiles/fw_weap.c
+    - botfiles/game.h
+    - botfiles/ichat.h
+    - botfiles/inv.h
+    - botfiles/items.c
+    - botfiles/match.c
+    - botfiles/match.h
+    # botfiles/mssccprj.scc
+    # botfiles/new_chars.h
+    # botfiles/rchat.c
+    # botfiles/rnd.c
+    - botfiles/script.c
+    # botfiles/syn.c
+    # botfiles/syn.h
+    - botfiles/teamplay.h
+    # botfiles/vssver.scc
+    - botfiles/weapons.c
+    # demos/demo000.dm_48
+    # demos/demo001.dm_48
+    # maps/...
+    # menu/art/gr/grlogo.tga
+    # menu/medals/medal_assist.tga
+    # menu/medals/medal_defend.tga
+    # menu/tab/rating.tga
+    # scripts/gfx.shader
+    # sound/...
+    # vm/cgame.qvm
+    # vm/qagame.qvm
+    # vm/ui.qvm
+    unpack:
+      format: zip
+
+  baseq3/pak6.pk3:
+    provides:
+    # demos/four.dm_66
+    # fredo2.cfg
+    - gfx/misc/lightning3newnpm.jpg
+    - gfx/misc/lightning3new.jpg
+    # levelshots/...
+    # maps/...
+    # scripts/explode1.shader
+    - scripts/lightningnew.shader
+    # scripts/promaps.arena
+    # sprites/explode1/...
+    # textures/base_floor/clangdarkspot.tga
+    # vm/cgame.qvm
+    # vm/qagame.qvm
+    # vm/ui.qvm
+    unpack:
+      format: zip
+
+  baseq3/pak8.pk3:
+    provides:
+      # demos/four.dm_68
+      # menu/art/pblogo.tga
+      - vm/cgame.qvm
+      - vm/qagame.qvm
+      - vm/ui.qvm
+    unpack:
+      format: zip
+
+  demoq3/pak0.pk3:
+    install_to: usr/share/games/quake3-demo-data
+
   linuxq3apoint-1.32b-3.x86.run:
     size: 30923961
     distinctive_size: true
@@ -177,6 +288,32 @@ files:
       format: tar.gz
       skip: 8251
 
+cksums: |
+  3701968173 6122 botfiles/chars.h
+  77819661 27221 botfiles/fw_items.c
+  1575505436 4207 botfiles/fw_weap.c
+  1446489064 1429 botfiles/game.h
+  3124636947 27676 botfiles/ichat.h
+  2633792932 4148 botfiles/inv.h
+  3422773198 16182 botfiles/items.c
+  2443548185 25277 botfiles/match.c
+  3218367450 4195 botfiles/match.h
+  2215028996 4139 botfiles/new_chars.h
+  536839140 163898 botfiles/rchat.c
+  1307670377 66593 botfiles/rnd.c
+  2718414823 1556 botfiles/script.c
+  639129023 12465 botfiles/syn.c
+  3488941661 679 botfiles/syn.h
+  2417253140 13922 botfiles/teamplay.h
+  1651633986 6525 botfiles/weapons.c
+  3987591858 7857 gfx/misc/lightning3new.jpg
+  3987591858 7857 gfx/misc/lightning3newnpm.jpg
+  404739088 674 scripts/lightningnew.shader
+  4054939124 278308 vm/ui.qvm
+  1299490972 325220 vm/cgame.qvm
+  3759967701 469796 vm/qagame.qvm
+  2449702656 46853694 demoq3/pak0.pk3
+
 md5sums: |
   1197ca3df1e65f3c380f8abc10ca43bf  baseq3/pak0.pk3
   48911719d91be25adb957f2d325db4a0  baseq3/pak1.pk3
@@ -191,6 +328,31 @@ md5sums: |
   8b8a51f9edf2671dfeb53e0405bac3c6  missionpack/pak1.pk3
   4e02be54614ca7dbed81b5c44a19302d  missionpack/pak2.pk3
   e7f91f4eb6e3d28d978b8cca54631695  missionpack/pak3.pk3
+  339f23a769e70b29a244aa10618e889c  botfiles/chars.h
+  60b36bc6cb6924e8963002ea5bbfd8f5  botfiles/fw_items.c
+  1c9a146b79288dfbfefc162290709afc  botfiles/fw_weap.c
+  f74f2e334cc0a45b251e8330ffc87546  botfiles/game.h
+  c2007396d271397b0a575c1f4137a991  botfiles/ichat.h
+  3dcdc0aa65738b4fa039545c29c56e82  botfiles/inv.h
+  8edb11f53ea777ccfd3f627fdba27e9c  botfiles/items.c
+  5db8ace07e0a13389a602dcb3150740a  botfiles/match.c
+  1b553e4af60108cd1c87128f207adf15  botfiles/match.h
+  384ff030d7882aa5a41a0cdff4662ded  botfiles/new_chars.h
+  8dbf08282762415dba70479db5fb1fdd  botfiles/rchat.c
+  0cd2b6e4d7a645757e90c44eb509c9f4  botfiles/rnd.c
+  11dd24b09ff833d8bd0a0096b42d31ad  botfiles/script.c
+  00f39f59ab03d11852581fe6e916fdb3  botfiles/syn.c
+  0df5d10d96e1ff66c45933082a3f6053  botfiles/syn.h
+  603ed3b5785d50d09316f5ad8576cf9b  botfiles/teamplay.h
+  440cf0529a0d2620fde1e6e18e9727eb  botfiles/weapons.c
+  8b9f7018bd80bb765a875f9b4915157d  gfx/misc/lightning3new.jpg
+  8b9f7018bd80bb765a875f9b4915157d  gfx/misc/lightning3newnpm.jpg
+  3cb626c0ac4ec569a363afd33c36e2a7  scripts/lightningnew.shader
+  3e6b8fadb2a970c2b754e48e63a054d7  vm/ui.qvm
+  5895c042ab6cbb1bac95cca4b0b168fc  vm/cgame.qvm
+  940ca9429d4bf46c5a7114c6ce34e69f  vm/qagame.qvm
+  0613b3d4ef05e613a2b470571498690f  demoq3/pak0.pk3
+
 
 sha1sums: |
   9d588ea65e92944d3e23eeb6ec08f1dd666f4658  baseq3/pak0.pk3
@@ -206,6 +368,30 @@ sha1sums: |
   ce4b4cbee92a84479e620c2ca178aae7358576e5  missionpack/pak1.pk3
   ed74b17a12ed8627ce9b15aa80487e90c65cf01d  missionpack/pak2.pk3
   50adbfade3d9342a6ab75004e0013557243a30a5  missionpack/pak3.pk3
+  023d6c4ea6255de57cc28661c1b5a4708ec8c0e9  botfiles/chars.h
+  88adb5bc39b8c549ee63238411056f1fea285208  botfiles/fw_items.c
+  0591e9303ed6c4aace82c42193501afd66e2000b  botfiles/fw_weap.c
+  e73b4da56f22e13e70882e82cf7583bdb027390d  botfiles/game.h
+  8d18da5a771348c701f28924dc692d35575cbe14  botfiles/ichat.h
+  815d31f408bd2f0c0f38a8e5b14016b3a5b01762  botfiles/inv.h
+  a517901ee09e6e351c0eacf6559671fe4565395f  botfiles/items.c
+  e3752557828972a8b96761d27a3b88e69c6a4fba  botfiles/match.c
+  d1c7501697d51d25054515ff072ecb1b65b46aaf  botfiles/match.h
+  f0327563522af25cb2a8dc508e51fe883682f5fe  botfiles/new_chars.h
+  2211731c5279782958fd512de2c78d0b76a6ff2a  botfiles/rchat.c
+  c6a350708af3f3dda4c619f027c0699fc60769e4  botfiles/rnd.c
+  68b6d169ad86566aec4983f6785ee8df5b0db535  botfiles/script.c
+  3f4c89b5d9fcbf41bd627636d67f0968156a6de3  botfiles/syn.c
+  c5e691953d8c199c5e0ea60513527336b9399e48  botfiles/syn.h
+  18907b89315a4fed8dfeeda5c0fa2d8aefb7e146  botfiles/teamplay.h
+  9ace4754e101c089e3e0c5ff129218b0be2a77ce  botfiles/weapons.c
+  17db27de25f6342603fdd93d9f2de4344db00800  gfx/misc/lightning3new.jpg
+  17db27de25f6342603fdd93d9f2de4344db00800  gfx/misc/lightning3newnpm.jpg
+  a9ac566474132775f989fc73cd3c5b98ec285db3  scripts/lightningnew.shader
+  4f0bba76b422e2f4541d2ee1958c6e071115acfe  vm/ui.qvm
+  21fa029bd1b115e510c2ca1bdf89977e4a04265b  vm/cgame.qvm
+  4637d68985c838385919523101d575f173ee1ad8  vm/qagame.qvm
+  1976ee8b604f928a1ed38f5646d04a62355f3e8e  demoq3/pak0.pk3
 
 sha256sums: |
   7ce8b3910620cd50a09e4f1100f426e8c6180f68895d589f80e6bd95af54bcae  baseq3/pak0.pk3
@@ -221,6 +407,31 @@ sha256sums: |
   9818e99ba58d91f231a650a3c42559d1c5661cb3c0dfd033ef4225ba8ecdfd60  missionpack/pak1.pk3
   6cc56de0bf7b58e30164ab487c51deb0fa7c62dbd7d0a5421a5d5aa58f31a3f4  missionpack/pak2.pk3
   77c0bcbb61be81a389d8959b76969a801a5e589d97ab8aeb2cb7ced54f187fc7  missionpack/pak3.pk3
+  5b5106e8e46c4ae9a9177d463780f0327bdb5232cf809543983b78112ac4f71d  botfiles/chars.h
+  4c4d33a80822ee0d3051642c7e7d71767733723184329da7dcd5adca11148ba1  botfiles/fw_items.c
+  5338036392955948e45b00d0f1edd85b6237ffa89f377e66abac2d3782e64495  botfiles/fw_weap.c
+  b90a07ddbf0b48046a86592cdac7859db6eb7cf0c9ec96f5a2d73c45c678c0e2  botfiles/game.h
+  5d6b42cab7dd2dc5ef2a75d3d483328104565564119b76ce67ca5abd78fc46e5  botfiles/ichat.h
+  ef1950abea5c3aa5c03aace8f1b61c8c2cd5523c18f97989aef49885eed0aee2  botfiles/inv.h
+  37a79356b5d1d555e0a7c0c52570153f083178b26ca07dfe0f61f0180a259ec8  botfiles/items.c
+  6b37db4aeb1097988d3202960231397bac6cd41bcaa3e537ceb270d1fdec03e1  botfiles/match.c
+  e4aef98b91adf35d5f666b36809216734c633c66dc9f6bd6e5962ad11d665a34  botfiles/match.h
+  9d20317836d722dd2b46929cf99d5b5236dc7684455e904e9a7bb089abe3eb08  botfiles/new_chars.h
+  464020168afe9be2c61042056693c61f68a6910f7aa0237ac6a64c8e65709b6f  botfiles/rchat.c
+  efe4636f535587e074f1b8c288b5f1ccdbdc8c780610dcf9eb9b2531bf103ac5  botfiles/rnd.c
+  3780118cc704cf7837af7ca02678e369e92f8532b9257c4ae02a753a1d9bb63b  botfiles/script.c
+  04a35f51008ca8909cdaf8b04e3c54c7da044b6dbb669bc7657bd036d899aa92  botfiles/syn.c
+  983451448129b013e84a14cdaad0cb78fa26f65d0bdf5e4b34d59b4989996c57  botfiles/syn.h
+  31902b85473f5fb96f6959ee4e68589a7e65dba6d8fc5d90d9b91fcdc0b920d4  botfiles/teamplay.h
+  7bcda4f488426390e89d7dd01acf34f3dcb0e14aa8cfd3889dc58630b51952c0  botfiles/weapons.c
+  2c30bd09e644082677a9525fc36a29aa20ae7da888747eedb6ff6421f9e5aed8  gfx/misc/lightning3new.jpg
+  2c30bd09e644082677a9525fc36a29aa20ae7da888747eedb6ff6421f9e5aed8  gfx/misc/lightning3newnpm.jpg
+  0ec089edb5ba86edcf58708369d8d5cd6f0b3e3dc5b750331b139e5903f74755  scripts/lightningnew.shader
+  3a6fd12b889f5d35df20a09b51bf8eca46966d014be55ffad38ddc2ffb38c807  vm/ui.qvm
+  4ea18569bf56a282d26dc89eb9efcc5eedbe0b69c10182fc38446174c1e55b49  vm/cgame.qvm
+  57c52bf22e4f528c064f8af1553a7103723bab0a02276bb11eed944bf829b219  vm/qagame.qvm
+  e77abad2466f45a0a7ea018445528f9b95a0fe7789fa1abc1a7718bbf0754b08  demoq3/pak0.pk3
+
 
 # Not used yet
 sha512sums: |
@@ -234,6 +445,30 @@ sha512sums: |
   f9442fa0dfa6391056a082fa552014e27ad2620cb291302655c16265afd5c8bdb304ef3b06ae1255d57d50c00ecae030d4337708d01bd67af252fc006be87244  baseq3/pak7.pk3
   dcae254ac87a1d8453d5fb301105d9f1e55234e8044d6631f07f645f56c37b3b11aa168df1fe4ce9838f9f7c5e5ae4d6837286aef6297cae44094f750692ab5f  baseq3/pak8.pk3
   16b36521c2d659f314d7380245f36e587ac7ebbea30cb323db4b84c2c63e4f947f28afb6fd17cbe86fe4b2ad2cccb8de3c809da7eba22f7f644c619d1be07bf8  missionpack/pak0.pk3
+  2b0705aebdc834276b8e45b64cc7b395ad1e02d99486b158c3c9419c6311ce49a180544e4df4b53857b9d9bb2e7a52b86e7cff1d408e0cdbc74e0a8b741eb8fb  botfiles/chars.h
+  d02acce87f033e528c6942deabdffd9793d019cd417c58f99e8c06a1db2019e319655fbcd5f1ed0c398e89c81cef5c389013b692a99d7f78badb9aff4112961c  botfiles/fw_items.c
+  51b263148f93b5e077e5bb77c368493124588a039a555de3b371ed218900620d4da233063f7c410c64582f7daa5f9706a34d5553f04e6bf084db9f43b7bd7670  botfiles/fw_weap.c
+  cc842f830df710fc8cb946927e6fe71b18a605758785476bdb1ac0a2dcc6f75b833e9edc5b972a9523eae24128efc924e1140159a77f217dc7623035d94c0ac3  botfiles/game.h
+  a3de4db0db43a9b785dfcb625672b4750ef5e8c014fd076aa7d34eb4325a7d829337cd218344dadf9e6c6ee196a9aae12b2943284f556a6c5c9ce714ca6e1f5d  botfiles/ichat.h
+  fd9b0ef1d28d94562ee5345f1594b6ba9ca3a57ac07cd48e54419b9fbc7209504d1e9466e41777f0f580954ed8f4fbabcdb21c1f2ca3914600fb8e4a6b8c344b  botfiles/inv.h
+  b451503b9af0c0261d37e3f626c7c892aec02b7f5440db3f74e14fea58c97223cb91ab613f62f18179ee78dbfc6467a57804ee2a3b245287ff7c64eb577dc7c1  botfiles/items.c
+  f89c112b7c0ba68c83e0811f2a1c0acded5e032d819a9f0d4f48060cab552b1c8162601c30074e0fdbcf6677a48bfec458e3ad49b04f450d8526a6d5f05be8e8  botfiles/match.c
+  4fccbbb8705d916d23b30eb7729c408dd4d3ece9227d84c99c2ce3e9afb4602085a721d8bbd986d215af02f048d9adcb845158d6aaf1d2967cd2872bea5e37e5  botfiles/match.h
+  7077663f95f8cd9292e5f585eb7e4541c71ea29063475d8b8e8d14cce1d9f2f7e27a23fa2621dd6655dd1e49b0eebbe66fe360b48385623658d7ce7f037ccbc5  botfiles/new_chars.h
+  d8eee88b263fb93570553f2b2741f896ce2d82837257c2fbed5f92122c794e40847c4d8c59a9036013473cc4c3e7c3b46d539e8ca135cd9b9d920ab2aef98172  botfiles/rchat.c
+  efb1a31a43e15088774d3e327d478224dc91f9bfef73eea90a3f032ddd65eb68bb30461626908f01e822985f788a9c5d7bad6daa1173c934eade3ec9e4445301  botfiles/rnd.c
+  f114bc0a287f86e28c5d8e54fcc7e556a8e96b8e23bb9e6442b177a0e4319edbb38e0a59b5dc0fb01417d3c15de5a4208ae0f01b959d7da8158cf6e2e861142e  botfiles/script.c
+  4445d14b6175e3ca268e8795508bb33320a6d644c1578af033745eed3375f9eb86a0b4a59f1d7703d1b86146abd56f46fda1a3cc285c5ba4b427506e458340fd  botfiles/syn.c
+  621b65195123089ea326f190379f92d3861e09cc14e3bc7cdb87d2fca8179f092e5a6f19c6b89191e31ee38abe4187154c1a76155b7419b2b9da5c5289072722  botfiles/syn.h
+  09e06dfb8366250a4c693741bdf881fbf946a1b754fe324a7d1f85a4fd52497f3967d0e26ccedaa8719ba577bc013e48c83e2d33377e132d75eb16722224b490  botfiles/teamplay.h
+  9f93aefb93764fca515be4d2db27832ab2eb5b1d79df28c7fe1add52dbd94bb5c7491908295b96d2b4bff723aa6047bebd5680969e371796fabcf57f51558169  botfiles/weapons.c
+  263baa5f453b30d52c0a19c454157909f9b2f77c4409614808552902918c25a76b57ddcde6e0800b419197de9b42cdf98d1e29ccafb17f686e2e68e94a0a2bec  gfx/misc/lightning3new.jpg
+  263baa5f453b30d52c0a19c454157909f9b2f77c4409614808552902918c25a76b57ddcde6e0800b419197de9b42cdf98d1e29ccafb17f686e2e68e94a0a2bec  gfx/misc/lightning3newnpm.jpg
+  d36afa60189d2a46cf1db83161cb2a69817f23bfb3dad098ee9500517d09ddab1a04bb8bdb0e3285a9f8e7376bed38720b06d6ff667c2f18211c4c82035432bd  scripts/lightningnew.shader
+  08c09098daaa55cc57cedf1c03f0b08fe39cf593243bbe99c6b76383cc13a4b22891bf87e802b62e532d39fb42c5be962a8f6974d83d62715ef4e9911f08526d  vm/ui.qvm
+  3ecf97d759250e31494e680b5faee5728f9a2ab5f6bdd0d6d39f9961c63d178da6a7da248c842e0d5d2876d7659864ae76d4e526d43809180f73889ffb3ba187  vm/cgame.qvm
+  12aa6957a86a569f682119179b5796437096dd3c75eb7eac01ff12fc1307c15b3e93a67445c17254b8fcd0df9885e9ef2512d277d1e5ee211e0b1237131102d2  vm/qagame.qvm
+  3b20d54d1fbdbcdd10a6d6e5bdfdeff40a25db6c761e1b4dc6a60431dbf420109f3ea3a691beee3107c28422e9d2d250cfdf3b1323325ba9575c11a729812456  demoq3/pak0.pk3
 
 ...
 # vim:set sw=2 sts=2 et:
