@@ -1750,11 +1750,6 @@ class GameData(object):
     def add_parser(self, parsers, base_parser, **kwargs):
         aliases = self.aliases
 
-        for package in self.packages.values():
-            aliases.add(package.name)
-            # do not add all the package's aliases: they can be things
-            # that collide with other games, like mp1
-
         parser = parsers.add_parser(self.shortname,
                 help=self.longname, aliases=aliases,
                 description=self.help_text,
