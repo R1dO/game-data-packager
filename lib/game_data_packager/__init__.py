@@ -361,6 +361,9 @@ class GameDataPackage(object):
         # CD audio stuff from YAML
         self.rip_cd = {}
 
+        # Debian architecture(s)
+        self.architecture = 'all'
+
     @property
     def install(self):
         return self._install
@@ -398,6 +401,7 @@ class GameDataPackage(object):
 
     def to_yaml(self):
         return {
+            'architecture': self.architecture,
             'demo_for': sorted(self.demo_for),
             'expansion_for': self.expansion_for,
             'install': sorted(self.install),
@@ -523,6 +527,9 @@ class GameData(object):
         # Found CD tracks
         # e.g. { 'quake-music': { 2: '/usr/.../id1/music/track02.ogg' } }
         self.cd_tracks = {}
+
+        # Debian architecture
+        self._architecture = None
 
         self._populate_files(self.yaml.get('files'))
 
@@ -689,7 +696,7 @@ class GameData(object):
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
-                'rip_cd'):
+                'rip_cd', 'architecture'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -1626,6 +1633,10 @@ class GameData(object):
         for field in default_values:
             if field not in control:
                 control[field] = default_values[field]
+
+        if package.architecture != 'all':
+            control['Architecture'] = self.get_architecture()
+
         if control['Architecture'] == 'all' and 'Multi-Arch' not in control:
             control['Multi-Arch'] = 'foreign'
 
@@ -1907,6 +1918,13 @@ class GameData(object):
                     package.name)
             raise CDRipFailed()
 
+    def get_architecture(self):
+        if self._architecture is None:
+            self._architecture = subprocess.check_output(['dpkg-architecture',
+                '-qDEB_BUILD_ARCH']).strip().decode('ascii')
+
+        return self._architecture
+
     def prepare_packages(self, packages, build_demos=False, download=True,
             log_immediately=True):
         possible = set()
@@ -1968,7 +1986,23 @@ class GameData(object):
                 else:
                     raise NoPackagesPossible()
 
+        # copy the set so we can alter the original while iterating
+        for package in set(possible):
+            if package.architecture == 'all':
+                continue
+            elif package.architecture == 'any':
+                # we'll need this later, cache it
+                self.get_architecture()
+            else:
+                archs = package.architecture.split()
+                if self.get_architecture() not in archs:
+                    logger.warning('cannot produce "%s" on architecture %s',
+                            package.name, self.get_architecture())
+                    possible.discard(package)
+
         logger.debug('possible packages: %r', possible)
+        if not possible:
+            raise NoPackagesPossible()
 
         ready = set()
 
