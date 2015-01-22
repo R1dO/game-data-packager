@@ -1811,7 +1811,7 @@ class GameData(object):
             for p in args.packages:
                 if p not in self.packages:
                     logger.error('--package="%s" is not part of game '
-                            '"%s"', not_the_one, args.shortname)
+                            '"%s"', p, args.shortname)
                     raise SystemExit(1)
                 packages.add(self.packages[p])
         else:
