@@ -5,5 +5,5 @@
 
 from debian.changelog import Changelog
 
-cl = Changelog(open('debian/changelog'), strict=False)
+cl = Changelog(open('debian/changelog', encoding='utf-8'), strict=False)
 GAME_PACKAGE_VERSION = str(cl.full_version)

@@ -110,13 +110,17 @@ class DoomGameData(GameData):
         main_wad = package.main_wad
 
         copy_with_substitutions(
-                open(os.path.join(DATADIR, 'doom-common.README.Debian.in')),
-                open(os.path.join(docdir, 'README.Debian'), 'w'),
+                open(os.path.join(DATADIR, 'doom-common.README.Debian.in'),
+                    encoding='utf-8'),
+                open(os.path.join(docdir, 'README.Debian'), 'w',
+                    encoding='utf-8'),
                 PACKAGE=package.name,
                 GAME=(package.longname or self.longname))
         copy_with_substitutions(
-                open(os.path.join(DATADIR, 'doom-common.copyright.in')),
-                open(os.path.join(docdir, 'copyright'), 'w'),
+                open(os.path.join(DATADIR, 'doom-common.copyright.in'),
+                    encoding='utf-8'),
+                open(os.path.join(docdir, 'copyright'), 'w',
+                    encoding='utf-8'),
                 PACKAGE=package.name,
                 IWAD=main_wad)
 
@@ -142,9 +146,10 @@ class DoomGameData(GameData):
             for basename in (package.name, 'doom-common'):
                 from_ = os.path.join(DATADIR, basename + '.desktop.in')
                 if os.path.exists(from_):
-                    copy_with_substitutions(open(from_),
+                    copy_with_substitutions(open(from_,
+                        encoding='utf-8'),
                             open(os.path.join(appdir, '%s.desktop' % package.name),
-                                'w'),
+                                'w', encoding='utf-8'),
                             GAME=wad_base,
                             LONG=(package.longname or self.longname),
                             ENGINE=(package.engine or self.engine))
@@ -155,8 +160,10 @@ class DoomGameData(GameData):
             debdir = os.path.join(destdir, 'DEBIAN')
             mkdir_p(debdir)
             copy_with_substitutions(
-                    open(os.path.join(DATADIR, 'doom-common.preinst.in')),
-                    open(os.path.join(debdir, 'preinst'), 'w'),
+                    open(os.path.join(DATADIR, 'doom-common.preinst.in'),
+                        encoding='utf-8'),
+                    open(os.path.join(debdir, 'preinst'), 'w',
+                        encoding='utf-8'),
                     IWAD=main_wad)
             os.chmod(os.path.join(debdir, 'preinst'), 0o755)
 

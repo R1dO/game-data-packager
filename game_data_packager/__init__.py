@@ -1152,7 +1152,7 @@ class GameData(object):
             return [wanted.download]
         for mirror_list, details in wanted.download.items():
             try:
-                f = open(os.path.join(ETCDIR, mirror_list))
+                f = open(os.path.join(ETCDIR, mirror_list), encoding='utf-8')
                 for line in f:
                     url = line.strip()
                     if not url:
@@ -1483,8 +1483,9 @@ class GameData(object):
                 return
 
             if os.path.exists(copy_from + '.in'):
-                copy_with_substitutions(open(copy_from + '.in'),
-                        open(copy_to, 'w'),
+                copy_with_substitutions(open(copy_from + '.in',
+                            encoding='utf-8'),
+                        open(copy_to, 'w', encoding='utf-8'),
                         PACKAGE=package.name)
                 return
 
@@ -1608,7 +1609,8 @@ class GameData(object):
         os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
 
         try:
-            control_in = open(self.get_control_template(package))
+            control_in = open(self.get_control_template(package),
+                    encoding='utf-8')
             control = Deb822(control_in)
         except FileNotFoundError:
             control = Deb822()
@@ -2218,7 +2220,7 @@ def load_yaml_games(workdir=None):
             g = os.path.basename(yamlfile)
             g = g[:len(g) - 5]
 
-            yaml_data = yaml.load(open(yamlfile))
+            yaml_data = yaml.load(open(yamlfile, encoding='utf-8'))
 
             plugin = yaml_data.get('plugin', g)
 

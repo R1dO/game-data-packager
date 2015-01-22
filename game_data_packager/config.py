@@ -32,7 +32,7 @@ def read_config():
     config = { 'install': False, 'preserve': True }
 
     try:
-        with open(CONFIG) as conffile:
+        with open(CONFIG, encoding='utf-8') as conffile:
             lineno = 0
             for line in conffile:
                 lineno += 1
