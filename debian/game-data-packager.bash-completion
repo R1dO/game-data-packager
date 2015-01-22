@@ -4,7 +4,7 @@ _game_data_packager()
     then
       local cur supported
       cur=${COMP_WORDS[COMP_CWORD]}
-      supported=$(ls -1 /usr/share/games/game-data-packager/supported/)
+      supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.yaml |cut -d'.' -f1)
       COMPREPLY=( $( compgen -W "$supported" -- $cur ) )
     else
       COMPREPLY=()
