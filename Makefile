@@ -28,8 +28,6 @@ default: $(DIRS)
 		o=out/$${x#data/}; \
 		convert $$x $${o%.xpm}.png || exit $$?; \
 	done
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue
 
 $(DIRS):
 	mkdir -p $@
@@ -50,8 +48,6 @@ clean:
 	rm -f ./out/*.png
 	rm -f ./out/*.yaml
 	rm -rf lib/game_data_packager/__pycache__
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-xatrix clean
-	make -f quake2.mk VERSION=$(VERSION) PACKAGE=quake2-rogue clean
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
