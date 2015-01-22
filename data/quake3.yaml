@@ -40,6 +40,7 @@ packages:
     # missionpack, so that the engine doesn't think missionpack
     # is installed unless its pak0.pk3 is present.
     symlinks:
+      # src:quake < 10
       usr/share/games/quake3/baseq3/pak0.pk3:
         usr/share/games/quake3-data/baseq3/pak0.pk3
       usr/share/games/quake3/baseq3/pak1.pk3:
@@ -58,6 +59,49 @@ packages:
         usr/share/games/quake3-data/baseq3/pak7.pk3
       usr/share/games/quake3/baseq3/pak8.pk3:
         usr/share/games/quake3-data/baseq3/pak8.pk3
+      # src:quake >= 10
+      usr/lib/quake3/base/baseq3/pak0.pk3:
+        usr/share/games/quake3-data/baseq3/pak0.pk3
+      usr/lib/quake3/base/baseq3/pak1.pk3:
+        usr/share/games/quake3-data/baseq3/pak1.pk3
+      usr/lib/quake3/base/baseq3/pak2.pk3:
+        usr/share/games/quake3-data/baseq3/pak2.pk3
+      usr/lib/quake3/base/baseq3/pak3.pk3:
+        usr/share/games/quake3-data/baseq3/pak3.pk3
+      usr/lib/quake3/base/baseq3/pak4.pk3:
+        usr/share/games/quake3-data/baseq3/pak4.pk3
+      usr/lib/quake3/base/baseq3/pak5.pk3:
+        usr/share/games/quake3-data/baseq3/pak5.pk3
+      usr/lib/quake3/base/baseq3/pak6.pk3:
+        usr/share/games/quake3-data/baseq3/pak6.pk3
+      usr/lib/quake3/base/baseq3/pak7.pk3:
+        usr/share/games/quake3-data/baseq3/pak7.pk3
+      usr/lib/quake3/base/baseq3/pak8.pk3:
+        usr/share/games/quake3-data/baseq3/pak8.pk3
+      usr/lib/quake3/ta/baseq3/pak0.pk3:
+        usr/share/games/quake3-data/baseq3/pak0.pk3
+      usr/lib/quake3/ta/baseq3/pak1.pk3:
+        usr/share/games/quake3-data/baseq3/pak1.pk3
+      usr/lib/quake3/ta/baseq3/pak2.pk3:
+        usr/share/games/quake3-data/baseq3/pak2.pk3
+      usr/lib/quake3/ta/baseq3/pak3.pk3:
+        usr/share/games/quake3-data/baseq3/pak3.pk3
+      usr/lib/quake3/ta/baseq3/pak4.pk3:
+        usr/share/games/quake3-data/baseq3/pak4.pk3
+      usr/lib/quake3/ta/baseq3/pak5.pk3:
+        usr/share/games/quake3-data/baseq3/pak5.pk3
+      usr/lib/quake3/ta/baseq3/pak6.pk3:
+        usr/share/games/quake3-data/baseq3/pak6.pk3
+      usr/lib/quake3/ta/baseq3/pak7.pk3:
+        usr/share/games/quake3-data/baseq3/pak7.pk3
+      usr/lib/quake3/ta/baseq3/pak8.pk3:
+        usr/share/games/quake3-data/baseq3/pak8.pk3
+      usr/lib/quake3/ta/missionpack/pak1.pk3:
+        usr/share/games/quake3-data/missionpack/pak1.pk3
+      usr/lib/quake3/ta/missionpack/pak2.pk3:
+        usr/share/games/quake3-data/missionpack/pak2.pk3
+      usr/lib/quake3/ta/missionpack/pak3.pk3:
+        usr/share/games/quake3-data/missionpack/pak3.pk3
     install_to: usr/share/games/quake3-data
     install_files_from_cksums: |
       # Retail
@@ -83,6 +127,7 @@ packages:
     expansion_for: quake3-data
     symlinks:
       usr/share/games/quake3-team-arena-data/quake3-team-arena: usr/games/quake3
+      # quake < 10
       usr/share/games/quake3/missionpack/pak0.pk3:
         usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3
       usr/share/games/quake3/missionpack/pak1.pk3:
@@ -91,6 +136,9 @@ packages:
         usr/share/games/quake3-data/missionpack/pak2.pk3
       usr/share/games/quake3/missionpack/pak3.pk3:
         usr/share/games/quake3-data/missionpack/pak3.pk3
+      # quake >= 10
+      usr/lib/quake3/ta/missionpack/pak0.pk3:
+        usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3
     install_to: usr/share/games/quake3-team-arena-data
     install_files:
       missionpack/pak0.pk3:
