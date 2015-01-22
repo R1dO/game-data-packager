@@ -76,8 +76,8 @@ packages:
     - Manual.html
     - license.txt_3.14_demo
     - quake2_manual/bottom.html
-    - quake2_manual/credits.html
-    - quake2_manual/customer_support.html
+    - quake2_manual/credits.html_3.14_demo
+    - quake2_manual/customer_support.html_3.14_demo
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
     - quake2_manual/enemy_brains.html
@@ -194,7 +194,7 @@ packages:
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
-    - quake2_manual/technical_information.html
+    - quake2_manual/technical_information.html_3.14_demo
     - quake2_manual/top_nav.html
     - readme.txt_3.14_demo
     - release.txt_3.14_demo
@@ -293,8 +293,8 @@ files:
     - Manual.html
     - license.txt_3.14_demo
     - quake2_manual/bottom.html
-    - quake2_manual/credits.html
-    - quake2_manual/customer_support.html
+    - quake2_manual/credits.html_3.14_demo
+    - quake2_manual/customer_support.html_3.14_demo
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
     - quake2_manual/enemy_brains.html
@@ -411,7 +411,7 @@ files:
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
-    - quake2_manual/technical_information.html
+    - quake2_manual/technical_information.html_3.14_demo
     - quake2_manual/top_nav.html
     - readme.txt_3.14_demo
     - release.txt_3.14_demo
@@ -709,6 +709,20 @@ files:
 
   baseq2/pak0.pak_demo:
     install_as: baseq2/pak0.pak
+
+  quake2_manual/credits.html_steam:
+    install_as: quake2_manual/credits.html
+  quake2_manual/customer_support.html_steam:
+    install_as: quake2_manual/customer_support.html
+  quake2_manual/technical_information.html_steam:
+    install_as: quake2_manual/technical_information.html
+
+  quake2_manual/credits.html_3.14_demo:
+    install_as: quake2_manual/credits.html
+  quake2_manual/customer_support.html_3.14_demo:
+    install_as: quake2_manual/customer_support.html
+  quake2_manual/technical_information.html_3.14_demo:
+    install_as: quake2_manual/technical_information.html
 
   license.txt_3.14_demo:
     distinctive_name: false
@@ -1188,8 +1202,8 @@ cksums: |
   2703370497 13350 license.txt_3.20
   3683639649 5579 licinfo.txt
   2885980878 794 quake2_manual/bottom.html
-  3452009646 21929 quake2_manual/credits.html
-  3002114669 10085 quake2_manual/customer_support.html
+  3452009646 21929 quake2_manual/credits.html_steam
+  3002114669 10085 quake2_manual/customer_support.html_steam
   3430176163 4045 quake2_manual/enemy_barracuda_shark.html
   2928827935 3923 quake2_manual/enemy_berserker.html
   1691117906 3883 quake2_manual/enemy_brains.html
@@ -1306,7 +1320,7 @@ cksums: |
   4059658519 8349 quake2_manual/page_index.html
   2495263545 29911 quake2_manual/setup_controls_screenmenus.html
   1484426841 8480 quake2_manual/story.html
-  2769467748 13089 quake2_manual/technical_information.html
+  2769467748 13089 quake2_manual/technical_information.html_steam
   1664165556 1626 quake2_manual/top_nav.html
   1411804084 79360 readme.doc
   1172450215 61630 readme.txt_3.20
@@ -1584,8 +1598,8 @@ md5sums: |
   af91bb4178e223adaa258d50ce2541b0  Manual.html
   0fff07160047d23e53b68c490ea1bbbc  license.txt_3.14_demo
   b443713f8ad0b1c8825554f346850f9e  quake2_manual/bottom.html
-  13cae63eea980606ffa9766b388e05ae  quake2_manual/credits.html
-  525c98cd717fc7e6ea18b5fd758a2f97  quake2_manual/customer_support.html
+  13cae63eea980606ffa9766b388e05ae  quake2_manual/credits.html_3.14_demo
+  525c98cd717fc7e6ea18b5fd758a2f97  quake2_manual/customer_support.html_3.14_demo
   488755080b3e7c45cd3b03ecf4e2409c  quake2_manual/enemy_barracuda_shark.html
   9454f9e5b2f74a79c0e2efcbf91ca950  quake2_manual/enemy_berserker.html
   c65aa12bd5f0c0bd7644274d78e31537  quake2_manual/enemy_brains.html
@@ -1702,7 +1716,7 @@ md5sums: |
   49f1cb26ce4bd2a2f8c65e50cea8a7cd  quake2_manual/page_index.html
   e5164543d1d90c04b4ba430ed805b63e  quake2_manual/setup_controls_screenmenus.html
   1b4895f3b8311e41df116ffd4194ab73  quake2_manual/story.html
-  43ed8b9aab50fe9cd02c142dcceb030d  quake2_manual/technical_information.html
+  43ed8b9aab50fe9cd02c142dcceb030d  quake2_manual/technical_information.html_3.14_demo
   4c08bae1efd913cda8c52cae2c05330f  quake2_manual/top_nav.html
   c3ff4ac8608dc4f5891214b8f6d1f0ad  readme.txt_3.14_demo
   5aab43e52b123e88b8b5b62952e5ac2a  release.txt_3.14_demo
@@ -1792,6 +1806,9 @@ md5sums: |
   4c732d8661c8a863db477782350a5fa4  xatrix/docs/readme.txt
   7d07f8ed0c94a453cb4a4289ab0c01c5  xatrix/docs/release.htm
   5c69df5d4b0a96d9ba75951ce9117b36  xatrix/docs/release.txt
+  fd17c7aee49974f31e0de2ad0e49c3a1  quake2_manual/customer_support.html_steam
+  41cc66a0e64f34a07234089eee953158  quake2_manual/technical_information.html_steam
+  9a28f86e8c5654b4381c9336e868c6f1  quake2_manual/credits.html_steam
 
   # expansions on Steam
   5e2ecbe9287152a1e6e0d77b3f47dcb2  rogue/pak0.pak
@@ -2042,8 +2059,8 @@ sha1sums: |
   22d5f1884141ae88d710d49d5fff8fd0ac248556  license.txt_3.20
   148c8de785aa7bde1171ac89252867f47fc5f5a8  licinfo.txt
   7652267b333f9cac1b37997078f945f3dcb33528  quake2_manual/bottom.html
-  2a1bc968ce975f2ed4fb73bb5d114958364b7058  quake2_manual/credits.html
-  9df137e944c86ba3d0803e0a1304c76f70114206  quake2_manual/customer_support.html
+  2a1bc968ce975f2ed4fb73bb5d114958364b7058  quake2_manual/credits.html_steam
+  9df137e944c86ba3d0803e0a1304c76f70114206  quake2_manual/customer_support.html_steam
   2ef974853e1a992f35eee9ec0b3e054481f81a33  quake2_manual/enemy_barracuda_shark.html
   bbb42bf580e4402647b16f6f327a57e08bd8005e  quake2_manual/enemy_berserker.html
   019086a02b34d6208fc8b538de60a295d25bf136  quake2_manual/enemy_brains.html
@@ -2160,7 +2177,7 @@ sha1sums: |
   0d408ba43ade6ed7b92fc4642e18eed27be1ad42  quake2_manual/page_index.html
   38bd8e7bd7869c670d439d5f04fb1eb85822e262  quake2_manual/setup_controls_screenmenus.html
   12091356fac45268a39336fb64106f004ca57e70  quake2_manual/story.html
-  eaa38abb35e3700489196e6ca2b424e58451fb51  quake2_manual/technical_information.html
+  eaa38abb35e3700489196e6ca2b424e58451fb51  quake2_manual/technical_information.html_steam
   1e85cb879e6f89cdc808896b01743b61132df595  quake2_manual/top_nav.html
   039f8542c5e968d1b9a2d6c2a2a441ec87e1b38b  readme.doc
   8039588eafadb9a5eb8bd227776ba5ef3fd5c141  readme.txt_3.20
@@ -2411,8 +2428,8 @@ sha256sums: |
   4e550f681863c5d2cfd376d0bae855fccd557aacab5dfc7f5efec673f1e1438b  license.txt_3.20
   0d1ce5265753ab2998480742d7ef02ab34fbf42f19ce81e18e621614e4e3afa9  licinfo.txt
   1c1ecdebbd917cd61285a08ecd65d10f45663cb314232902f935a787b27507b3  quake2_manual/bottom.html
-  2600ae0c84eb53af401eb02a32efc8207ba0fbac26381207fd39cb1a9d29a2af  quake2_manual/credits.html
-  a97f099b2cfce020dff4e9bc5913c1f4061d7ec6af97b502b00649f23f361a90  quake2_manual/customer_support.html
+  2600ae0c84eb53af401eb02a32efc8207ba0fbac26381207fd39cb1a9d29a2af  quake2_manual/credits.html_steam
+  a97f099b2cfce020dff4e9bc5913c1f4061d7ec6af97b502b00649f23f361a90  quake2_manual/customer_support.html_steam
   dfcfa9fbc6c4aa09f56b7dd08759444b02ec33b9599ff0562e6a629fa6f37e01  quake2_manual/enemy_barracuda_shark.html
   6cbd92796027ec29cb98de33723e3a3c9114da80ec33ba6040304325fe9668a2  quake2_manual/enemy_berserker.html
   e2ce09da4931b18010e9aa0b6fead0d593269e001d2764f4bc47aadd5efbc393  quake2_manual/enemy_brains.html
@@ -2529,7 +2546,7 @@ sha256sums: |
   c821ca4701289151f5d95a86e21e0b0f6a96db70d9d264d2ea5f8b2434b2b9c8  quake2_manual/page_index.html
   3aeda329e052a951bcd93b0990912a5f5fafcf4945ab4bdd1f443742f239f3b7  quake2_manual/setup_controls_screenmenus.html
   75d4c5e8fdd2c0359221aae2fbc2b28ce4f4867f8864fc5aa2f10d0c2cda1fe8  quake2_manual/story.html
-  a904c3369f5ec22cc19b63a4668550c4fc5201dbb28a194c097ee8a0452cc98a  quake2_manual/technical_information.html
+  a904c3369f5ec22cc19b63a4668550c4fc5201dbb28a194c097ee8a0452cc98a  quake2_manual/technical_information.html_steam
   2019714b8dec3924018a4730e4908531507e02a170a66bfb58e9716be3da58b6  quake2_manual/top_nav.html
   a6fbe78e4c97e5b585d99607fbc2f3182f85ff0201d3f8728d0733b721823473  readme.doc
   b3ec0876f693a3c8791b93ea194d57ac7deea3d058197c7ab74b8252fd2a2bf8  readme.txt_3.20
