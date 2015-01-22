@@ -1073,6 +1073,7 @@ files:
     - data_release.txt
 
   quake2-xatrix-2.01.tar.xz:
+    download: http://deponie.yamagi.org/quake2/quake2-xatrix-2.01.tar.xz
     unpack:
       format: tar.xz
     provides:
@@ -1081,6 +1082,7 @@ files:
     - quake2-xatrix-2.01/README
 
   quake2-rogue-2.00.tar.xz:
+    download: http://deponie.yamagi.org/quake2/quake2-rogue-2.00.tar.xz
     unpack:
       format: tar.xz
     provides:
