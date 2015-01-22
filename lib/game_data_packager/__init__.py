@@ -314,6 +314,9 @@ class GameDataPackage(object):
         # The name of the binary package
         self.name = name
 
+        # Other names for this binary package
+        self._aliases = set()
+
         # Names of relative packages
         self.demo_for = set()
         self.expansion_for = None
@@ -360,6 +363,13 @@ class GameDataPackage(object):
 
         # Debian architecture(s)
         self.architecture = 'all'
+
+    @property
+    def aliases(self):
+        return self._aliases
+    @aliases.setter
+    def aliases(self, value):
+        self._aliases = set(value)
 
     @property
     def install(self):
@@ -420,6 +430,9 @@ class GameData(object):
         # The name of the game for command-line purposes, e.g. quake3
         self.shortname = shortname
 
+        # Other command-line names for this game
+        self.aliases = set()
+
         # The formal name of the game, e.g. Quake III Arena
         self.longname = shortname.title()
 
@@ -452,6 +465,9 @@ class GameData(object):
 
         if 'longname' in self.yaml:
             self.longname = self.yaml['longname']
+
+        if 'aliases' in self.yaml:
+            self.aliases = set(self.yaml['aliases'])
 
         if 'try_repack_from' in self.yaml:
             paths = self.yaml['try_repack_from']
@@ -693,7 +709,7 @@ class GameData(object):
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
-                'rip_cd', 'architecture'):
+                'rip_cd', 'architecture', 'aliases'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -1732,8 +1748,15 @@ class GameData(object):
         return os.path.join(DATADIR, package.name + '.control.in')
 
     def add_parser(self, parsers, base_parser, **kwargs):
+        aliases = self.aliases
+
+        for package in self.packages.values():
+            aliases.add(package.name)
+            # do not add all the package's aliases: they can be things
+            # that collide with other games, like mp1
+
         parser = parsers.add_parser(self.shortname,
-                help=self.longname, aliases=self.packages.keys(),
+                help=self.longname, aliases=aliases,
                 description=self.help_text,
                 formatter_class=argparse.RawDescriptionHelpFormatter,
                 parents=(base_parser,),
@@ -1798,6 +1821,11 @@ class GameData(object):
             args.compress = preserve_debs
 
         self.save_downloads = args.save_downloads
+
+        for package in self.packages.values():
+            if args.shortname in package.aliases:
+                args.shortname = package.name
+                break
 
         if args.shortname in self.packages:
             if args.packages and args.packages != [args.shortname]:
@@ -2305,6 +2333,8 @@ def run_command_line():
         parsed.package = parsed.shortname
         for game in games.values():
             if parsed.shortname in game.packages:
+                break
+            if parsed.shortname in game.aliases:
                 break
         else:
             raise AssertionError('could not find %s' % parsed.shortname)

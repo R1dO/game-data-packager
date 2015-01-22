@@ -5,6 +5,7 @@
 # http://doomwiki.org/wiki/PLUTONIA.WAD
 shortname: final-doom
 longname: Final Doom
+aliases: [tnt, plutonia]
 
 plugin: doom_common
 
@@ -16,6 +17,7 @@ packages:
     # these are IWADs so technically they behave like full games:
     # you don't need Doom or Doom II to play them
     longname: "Final Doom: TNT: Evilution"
+    aliases: [tnt, t]
     debian:
       engine: "chocolate-doom | doom-engine"
       provides: doom-wad
@@ -26,6 +28,7 @@ packages:
 
   plutonia-wad:
     longname: "Final Doom: The Plutonia Experiment"
+    aliases: [plutonia, p]
     debian:
       engine: "chocolate-doom | doom-engine"
       provides: doom-wad

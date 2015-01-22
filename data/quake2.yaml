@@ -1,6 +1,7 @@
 %YAML 1.2
 ---
 longname: Quake II
+aliases: [q2rogue, q2xatrix]
 
 help_text: |
   For quake2-full-data, you must provide baseq2/pak0.pak and the baseq2/video
@@ -323,6 +324,7 @@ packages:
     - release.txt_3.14_demo
 
   quake2-music:
+    aliases: [music]
     expansion_for: quake2-full-data
     # http://musicbrainz.org/release/06727a29-435d-423e-90a8-1a4fed5edb54
     install_to: usr/share/games/quake2
@@ -332,6 +334,7 @@ packages:
       first_track: 2
 
   quake2-reckoning-data:
+    aliases: [xatrix, q2xatrix, reckoning, mp1, 1]
     symlinks:
       usr/share/games/quake2/quake2-reckoning: usr/games/quake2
     longname: "Quake II Mission Pack 1: The Reckoning"
@@ -371,6 +374,7 @@ packages:
     - xatrix/docs/release.txt
 
   quake2-reckoning-music:
+    aliases: [mp1music]
     expansion_for: quake2-reckoning-data
     # http://musicbrainz.org/release/a1eb0af4-6348-4aa6-a586-4f41a33c5dea
     install_to: usr/share/games/quake2
@@ -382,6 +386,7 @@ packages:
   quake2-groundzero-data:
     symlinks:
       usr/share/games/quake2/quake2-groundzero: usr/games/quake2
+    aliases: [rogue, q2rogue, groundzero, mp2, 2]
     longname: "Quake II Mission Pack 2: Ground Zero"
     steam:
       id: 2340
@@ -417,6 +422,7 @@ packages:
 
   quake2-groundzero-music:
     expansion_for: quake2-groundzero-data
+    aliases: [mp2music]
     # http://musicbrainz.org/release/7590e38c-f203-425a-b726-37a55b6d2937
     install_to: usr/share/games/quake2
     rip_cd:

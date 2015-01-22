@@ -53,6 +53,7 @@ packages:
     install_to: usr/share/games/quake
 
   quake-armagon:
+    aliases: [armagon, hipnotic, mp1, 1]
     expansion_for: quake-registered
     longname: "Quake Mission Pack 1: Scourge of Armagon"
     steam:
@@ -67,6 +68,7 @@ packages:
     install_to: usr/share/games/quake
 
   quake-dissolution:
+    aliases: [dissolution, eternity, rogue, mp2, 2]
     expansion_for: quake-registered
     longname: "Quake Mission Pack 2: Dissolution of Eternity"
     steam:
@@ -83,6 +85,7 @@ packages:
     install_to: usr/share/games/quake
 
   quake-music:
+    aliases: [music]
     expansion_for: quake-registered
     install_to: usr/share/games/quake
     rip_cd:
@@ -91,6 +94,7 @@ packages:
       first_track: 2
 
   quake-armagon-music:
+    aliases: [mp1-music]
     expansion_for: quake-armagon
     install_to: usr/share/games/quake
     rip_cd:
@@ -99,6 +103,7 @@ packages:
       first_track: 2
 
   quake-dissolution-music:
+    aliases: [mp2-music]
     expansion_for: quake-dissolution
     install_to: usr/share/games/quake
     rip_cd:
