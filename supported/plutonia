@@ -1,8 +1,0 @@
-SHORTNAME=plutonia
-LONGNAME="Final Doom: The Plutonia Experiment"
-
-. $LIBDIR/via-python
-
-go () {
-    gdp_data_driven final-doom "$@"
-}

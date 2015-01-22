@@ -1,9 +1,0 @@
-# vim: set ft=sh:
-SHORTNAME="q2xatrix"
-LONGNAME="Quake II Mission Pack: The Reckoning"
-
-. $LIBDIR/via-python
-
-go () {
-    gdp_data_driven quake2 -pquake2-xatrix "$@"
-}

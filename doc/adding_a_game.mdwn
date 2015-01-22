@@ -135,22 +135,7 @@ to mapping:
 * `install`: list of strings: unique names of known files or alternative
   sets to install
 
-### Step 3: the gdp "supported" file
-
-Until gdp is completely ported to Python you will need a `supported` file.
-Use `supported/quake3` as an example.
-
-A "supported" file must define the following variables:
-
- * `SHORTNAME`: this is the name which a user must provide as an argument
-   to gdp in order to invoke your code.
- * `LONGNAME`: this is used by gdp when printing a usage message.  It can be
-   used to disambiguate or expand upon the short name, which might not be
-   enough to explain what it is.
-
-It can chain to `$LIBDIR/via-python` for the rest.
-
-### Step 4: advanced
+### Step 3: advanced
 
 You can write a Python plugin in `lib/game_data_packager/games/SHORTNAME.py`
 if you need to implement different command-line parsing or behaviour.

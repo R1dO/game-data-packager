@@ -2291,7 +2291,7 @@ def run_command_line():
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
 
-    games = load_yaml_games(os.environ.get('WORKDIR', None))
+    games = load_yaml_games(None)
 
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers, base_parser)

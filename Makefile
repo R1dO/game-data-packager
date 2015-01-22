@@ -51,7 +51,6 @@ clean:
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
-	./t/verify-md5sum-alternatives.sh
 	GDP_UNINSTALLED=1 PYTHONPATH=lib python3 -m game_data_packager.check_syntax
 	pyflakes3 lib/game_data_packager/*.py lib/game_data_packager/*/*.py || :
 

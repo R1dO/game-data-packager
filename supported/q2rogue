@@ -1,9 +1,0 @@
-# vim: set ft=sh:
-SHORTNAME=q2rogue
-LONGNAME="Quake II Mission Pack: Ground Zero"
-
-. $LIBDIR/via-python
-
-go () {
-    gdp_data_driven quake2 -pquake2-rogue "$@"
-}

@@ -1,8 +1,0 @@
-SHORTNAME=tnt
-LONGNAME="Final Doom: TNT: Evilution"
-
-. $LIBDIR/via-python
-
-go () {
-    gdp_data_driven final-doom "$@"
-}

@@ -2,162 +2,17 @@
 set -e
 set -u
 
-# unset grep options that could affect output
-unset GREP_OPTIONS
-
-# defaults
-INSTALL="no"
-PRESERVE="yes"
-COMPRESS="maybe"
-
 # test to see whether we are running in 'development mode'
 if [ "$0" = "./game-data-packager" ]; then
 	GDP_UNINSTALLED=1
 	export GDP_UNINSTALLED
-	SUPPORTED=./supported
-	LIBDIR=./lib
-	DATADIR="./out"
-	ETCDIR="./etc"
-	. "./etc/game-data-packager.conf"
+	PYTHONPATH="$(pwd)/lib"
 else
-	SUPPORTED=/usr/share/games/game-data-packager/supported
-	LIBDIR=/usr/lib/game-data-packager
-	DATADIR="/usr/share/games/game-data-packager"
-	ETCDIR=/etc/game-data-packager
-	. "/etc/game-data-packager.conf"
+	PYTHONPATH=/usr/lib/game-data-packager
 fi
-. $LIBDIR/game-data-packager-shared
-LIBDIR="`unravel "$LIBDIR"`"
-DATADIR="`unravel "$DATADIR"`"
+export PYTHONPATH
 
-if [ $# -lt 1 ]; then
-	usage >&2
-	exit 1
-fi
+# FIXME: undocumented feature currently disabled:
+# python3 -m game_data_packager.make_template "$@"
 
-OUTDIR="$(pwd)"
-OUTFILE=""
-
-# process command line arguments
-while [ $# -gt 1 ]; do
-	case "$1" in 
-		'-n')
-			INSTALL="no"
-			;;
-		'-d')
-			PRESERVE="yes"
-			shift
-			if [ $# -lt 2 ]; then
-				echo "missing directory or game argument" >&2
-				usage >&2
-				exit 1
-			fi
-			OUTDIR="$1"
-			;;
-		'-i')
-			INSTALL="yes"
-			;;
-		'-z'|'--compress')
-			COMPRESS="yes"
-			;;
-		'--no-compress')
-			COMPRESS="no"
-			;;
-		'--')
-			shift
-			break;
-			;;
-		*) # possibly the game name
-			break;
-			;;
-	esac
-	shift
-done
-
-# If we're not going to keep the .deb, there's no point in having
-# a good compression ratio.
-if [ "$COMPRESS" = "maybe" ]; then
-    COMPRESS="$PRESERVE"
-fi
-
-if [ "$INSTALL" = "no" -a "$PRESERVE" = "no" ]; then
-	echo "if you specify -n, you must also specify -d." >&2
-	exit 1
-fi
-
-debug "INSTALL=$INSTALL"
-debug "PRESERVE=$PRESERVE"
-
-# ensure we can write to OUTDIR
-[ -w "$OUTDIR" ] || die "cannot write generated file to '$OUTDIR'"
-
-GAME="$1"
-shift
-
-# Handle non-game modes
-case "$GAME" in
-	(make-template)
-		PYTHONPATH="$LIBDIR"
-		export PYTHONPATH
-		export DATADIR
-		export ETCDIR
-		export LIBDIR
-		python3 -m game_data_packager.make_template "$@"
-		exit $?
-		;;
-esac
-
-if [ ! -f "$SUPPORTED/$GAME" ]; then
-	echo "unknown option or game '$GAME'" >&2
-	usage >&2
-	exit 1
-fi
-. "$SUPPORTED/$GAME"
-
-debug "short: $SHORTNAME"
-debug "long: $LONGNAME"
-
-# setup a working directory
-WORKDIR=`mktemp -t -d game-data-packager.XXXXXX`
-debug "WORKDIR=$WORKDIR"
-cleanup() {
-	if [ "$OUTFILE" != "" ]; then
-		if [ "$PRESERVE" != "yes" ] && [ -f "$OUTFILE" ]; then
-			rm "$OUTFILE"
-		fi
-	fi
-
-	if [ -d "$WORKDIR" ]; then
-		e=0
-		rmdir "$WORKDIR" || e=$?
-
-		if [ "$e" != 0 ]; then
-			echo "Files remaining in $WORKDIR:" >&2
-			( cd "$WORKDIR" && find ) >&2
-		fi
-
-		return "$e"
-	fi
-}
-trap cleanup EXIT
-
-# now the game's handler needs to be executed
-go "$@"
-
-if [ "$PRESERVE" = "yes" ]; then
-	if [ "$OUTFILE" != "" ]; then
-		echo "generated \"$OUTFILE\"."
-	fi
-fi
-
-if [ "$INSTALL" = "yes" ]; then
-	debug "invoking dpkg to install the package"
-
-	if [ "$OUTFILE" = "*.deb" ]; then
-		install_debs "$WORKDIR"/*.deb
-	else
-		install_deb "$OUTFILE"
-	fi
-fi
-
-cleanup
+exec python3 -m game_data_packager "$@"
