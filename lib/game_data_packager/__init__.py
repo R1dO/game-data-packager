@@ -16,9 +16,6 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-"""Prototype for a more data-driven game-data-packager implementation.
-"""
-
 from collections import defaultdict
 from enum import Enum
 import argparse
