@@ -8,9 +8,5 @@
 START_DAEMON=unless-disabled-by-upgrade
 
 # Additional options that are passed to the daemon.
-# Add "+set dedicated 2" here, or "set dedicated 2" in server.cfg, if you want
-# your server advertised on the public server list.
-#
-# debian_server.cfg is a symlink to /etc/quake3-server/server.cfg, so you can
-# use that file for system-wide configuration.
-DAEMON_OPTS="+exec debian_server.cfg"
+# For most options it's better to edit server.cfg instead.
+DAEMON_OPTS="+exec etc/quake3-server/server.cfg"

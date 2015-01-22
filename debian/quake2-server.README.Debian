@@ -1,8 +1,8 @@
 Quake II dedicated server for Debian
 ====================================
 
-Running the server via sysvinit
--------------------------------
+Running the server via the init script
+--------------------------------------
 
 By default, quake2-server adds a user under which to run the dedicated server
 (quake2-server) and sets it up to be run by an init script in the conventional
@@ -12,30 +12,24 @@ machine; by default it will run a deathmatch game.
 The quake2-server user's home directory is /var/games/quake2-server, so you
 can find Quake files in /var/games/quake2-server/.yq2 or similar.
 
-By default, if you have the full Quake II data, the init script will use
-/usr/share/games/quake2/baseq2/debian_server.cfg, which is a symlink to
-/etc/quake2-server/debian_server.cfg. You can edit this file, or put an
-alternative configuration in /var/games/quake2-server/.yq2/baseq2 (or
-whatever is the appropriate directory for your selected engine) and change
-/etc/default/quake2-server to exec that.
+The /etc/quake2-server directory is symlinked into the game engine's
+search path as etc/quake2-server, so you can place files there and execute
+them with commands like "exec etc/quake2-server/ctf.cfg".
+By default, the init script will use etc/quake2-server/server.cfg.
 
-If you only have the demo data, the init script will use
-/usr/share/games/quake2-demo/baseq2/debian_server.cfg,
-which is a similar symlink to /etc/quake2-server/demo/debian_server.cfg.
+For compatibility with older versions of the quake-server package,
+debian_server.cfg in the engine's search path is also a symlink to
+etc/quake2-server/server.cfg.
 
-There are various alternative ways you can run the server if this doesn't
-meet your requirements.
+The server can be managed in the usual way, e.g. via service(8)
+and update-rc.d(8) commands like
 
-Disabling the init script
--------------------------
-
-To stop the server:
-
-    /etc/init.d/quake2-server stop
-
-To prevent it from running again, use update-rc.d:
-
+    service quake2-server stop
+    service quake2-server start
     update-rc.d quake2-server disable
+    update-rc.d quake2-server enable
+
+which should work for all of Debian's supported init systems.
 
 Running the server with cron and screen
 ---------------------------------------

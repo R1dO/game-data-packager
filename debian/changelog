@@ -7,6 +7,11 @@ quake (9) UNRELEASED; urgency=medium
     game-data-packager 39)
   * Add desktop file for Quake III: Team Arena (requires quake3-team-arena
     from game-data-packager 39) and install its icon
+  * Partially sync server configuration from openjk and iortcw:
+    - deprecate START_DAEMON
+    - make /etc/quake*-server available as etc/quake*-server in the game
+      engine's search path so it's more obvious what is being exec'd (leave
+      the debian_server.cfg symlink in for compatibility)
 
  -- Simon McVittie <smcv@debian.org>  Tue, 20 Jan 2015 08:57:12 +0000
 

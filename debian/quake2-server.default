@@ -3,4 +3,5 @@
 # installed at /etc/default/quake2-server by the maintainer scripts
 
 # Additional options that are passed to the daemon.
-DAEMON_OPTS="+exec debian_server.cfg"
+# For most options it's better to edit server.cfg instead.
+DAEMON_OPTS="+exec etc/quake2-server/server.cfg"

@@ -26,6 +26,11 @@ if [ -f /etc/default/$NAME ] ; then
 	. /etc/default/$NAME
 fi
 
+if [ "x$START_DAEMON" != x1 ]; then
+    echo "Disabling $NAME via START_DAEMON in /etc/default/$NAME is deprecated." >&2
+    echo "Please use \"update-rc.d $NAME disable\" instead" >&2
+fi
+
 do_start() {
     if [ -f $PIDFILE ]; then
         return 2

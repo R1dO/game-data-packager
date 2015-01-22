@@ -1,8 +1,8 @@
 Quake dedicated server for Debian
 =================================
 
-Running the server via sysvinit
--------------------------------
+Running the server via the init script
+--------------------------------------
 
 By default, quake-server adds a user under which to run the dedicated server
 (quake-server) and sets it up to be run by an init script in the conventional
@@ -13,27 +13,31 @@ The quake-server user's home directory is /var/games/quake-server, so you
 can find Quake files in /var/games/quake-server/.quakespasm,
 /var/games/quake-server/.darkplaces or whatever.
 
-By default, the init script will use
-/usr/share/games/quake/id1/debian_server.cfg, which is a symlink to
-/etc/quake-server/server.cfg. You can edit this file, or put an alternative
-configuration in /var/games/quake-server/.quakespasm/id1 (or whatever is the
-appropriate directory for your selected engine) and change
-/etc/default/quake-server to exec that.
+The /etc/quake-server directory is symlinked into the game engine's
+search path as etc/quake-server, so you can place files there and execute
+them with commands like "exec etc/quake-server/ctf.cfg".
+By default, the init script will use etc/quake-server/server.cfg.
 
-There are various alternative ways you can run the server if this doesn't
-meet your requirements.
+For compatibility with older versions of the quake-server package,
+debian_server.cfg in the engine's search path is also a symlink to
+etc/quake-server/server.cfg.
+
+The server can be managed in the usual way, e.g. via service(8)
+and update-rc.d(8) commands like
+
+    service quake-server stop
+    service quake-server start
+    update-rc.d quake-server disable
+    update-rc.d quake-server enable
+
+which should work for all of Debian's supported init systems.
 
 Disabling the init script
 -------------------------
 
-To stop the server:
-
-    /etc/init.d/quake-server stop
-
-To prevent it from running again, either edit /etc/default/quake-server
-and set START_DAEMON to 0, or use update-rc.d:
-
-    update-rc.d quake-server disable
+To disable the init script, use update-rc.d as described above.
+Changing the value of the START_DAEMON variable in
+/etc/default/quake-server is deprecated and should not be used.
 
 Running the server with cron and screen
 ---------------------------------------

@@ -12,24 +12,29 @@ Quake III Arena deathmatch maps.
 The Debian-quake3 user's home directory is /var/games/quake3-server, so you
 can find Quake III files in the /var/games/quake3-server/.q3a directory.
 
-By default, the init script will use
-/usr/share/games/quake3/baseq3/debian_server.cfg, which is a symlink to
-/etc/quake3-server/server.cfg. You can edit this file, or put an alternative
-configuration in /var/games/quake3-server/.q3a/baseq3 and change
-/etc/default/quake3-server to exec that.
+The /etc/quake3-server directory is symlinked into the game engine's
+search path as etc/quake3-server, so you can place files there and execute
+them with commands like "exec etc/quake3-server/ctf.cfg".
+By default, the init script will use etc/quake3-server/server.cfg.
+
+For compatibility with older versions of the quake-server package,
+debian_server.cfg in the engine's search path is also a symlink to
+etc/quake3-server/server.cfg.
+
+The server can be managed in the usual way, e.g. via service(8)
+and update-rc.d(8) commands like
+
+    service quake3-server stop
+    service quake3-server start
+    update-rc.d quake3-server disable
+    update-rc.d quake3-server enable
+
+which should work for all of Debian's supported init systems.
 
 Disabling the init script
 -------------------------
 
-To disable the init script, use the facilities provided by your init system.
-For instance, under sysvinit, use
-
-    update-rc.d quake3-server disable
-
-or under systemd, use
-
-    ln -s /dev/null /etc/systemd/system/quake3-server.service
-
+To disable the init script, use update-rc.d as described above.
 Changing the value of the START_DAEMON variable in
 /etc/default/quake3-server is deprecated. Please leave it set to
 "unless-disabled-by-upgrade".

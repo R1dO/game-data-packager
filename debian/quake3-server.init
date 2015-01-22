@@ -27,6 +27,11 @@ if [ -f /etc/default/$NAME ] ; then
 	. /etc/default/$NAME
 fi
 
+if [ "x$START_DAEMON" != xunless-disabled-by-upgrade ] && [ "x$START_DAEMON" != x1 ]; then
+    echo "Disabling $NAME via START_DAEMON in /etc/default/$NAME is deprecated." >&2
+    echo "Please use \"update-rc.d $NAME disable\" instead" >&2
+fi
+
 q3_start() {
     if [ "$START_DAEMON" = "unless-disabled-by-upgrade" ]; then
         if [ -e /var/games/quake3-server/init-script-disabled-by-upgrade ]; then
