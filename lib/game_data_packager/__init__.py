@@ -41,6 +41,7 @@ import zipfile
 from debian.deb822 import Deb822
 import yaml
 
+from .config import read_config
 from .paths import DATADIR, ETCDIR
 from .util import (MEBIBYTE,
         TemporaryUmask,
@@ -2295,6 +2296,7 @@ def run_command_line():
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers, base_parser)
 
+    config = read_config()
     parsed = argparse.Namespace(
             compress=None,
             destination=None,
@@ -2305,6 +2307,13 @@ def run_command_line():
             search=True,
             shortname=None,
     )
+    if config['install']:
+        logger.debug('obeying INSTALL=yes in configuration')
+        parsed.install = True
+    if config['preserve']:
+        logger.debug('obeying PRESERVE=yes in configuration')
+        parsed.destination = '.'
+
     parser.parse_args(namespace=parsed)
     logger.debug('parsed command-line arguments into: %r', parsed)
 
