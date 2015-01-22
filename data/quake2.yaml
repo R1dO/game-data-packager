@@ -10,11 +10,10 @@ help_text: |
   providing q2-3.20-x86-full-ctf.exe or a fully patched installed copy
   (e.g. the version from Steam).
 
-  For quake2-demo-data, all necessary files can be downloaded automatically.
+  For the expansion packs quake2-reckoning (xatrix) and quake2-groundzero
+  (rogue), provide the appropriate pak0.pak and video directory.
 
-  The mission packs quake2-xatrix and quake2-rogue are currently treated
-  as separate games: use "game-data-packager q2xatrix" or
-  "game-data-packager q2rogue".
+  For quake2-demo-data, all necessary files can be downloaded automatically.
 
   For quake2-music, quake2-reckoning-music and quake2-groundzero-music, either
   provide a directory containing pre-ripped audio named like
@@ -331,7 +330,11 @@ packages:
       filename_format: "baseq2/music/%02d.ogg"
       first_track: 2
 
-  quake2-xatrix:
+  quake2-reckoning-data:
+    debian:
+      provides: quake2-xatrix
+      conflicts: quake2-xatrix
+      replaces: quake2-xatrix
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64
@@ -361,7 +364,7 @@ packages:
     - xatrix/docs/release.txt
 
   quake2-reckoning-music:
-    expansion_for: quake2-xatrix
+    expansion_for: quake2-reckoning-data
     # http://musicbrainz.org/release/a1eb0af4-6348-4aa6-a586-4f41a33c5dea
     install_to: usr/share/games/quake2
     rip_cd:
@@ -369,7 +372,11 @@ packages:
       filename_format: "xatrix/music/%02d.ogg"
       first_track: 2
 
-  quake2-rogue:
+  quake2-groundzero-data:
+    debian:
+      provides: quake2-rogue
+      conflicts: quake2-rogue
+      replaces: quake2-rogue
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64
@@ -396,7 +403,7 @@ packages:
     - rogue/docs/release.txt
 
   quake2-groundzero-music:
-    expansion_for: quake2-rogue
+    expansion_for: quake2-groundzero-data
     # http://musicbrainz.org/release/7590e38c-f203-425a-b726-37a55b6d2937
     install_to: usr/share/games/quake2
     rip_cd:
