@@ -47,18 +47,18 @@ clean:
 	rm -f ./out/*.README.Debian.in
 	rm -f ./out/*.png
 	rm -f ./out/*.yaml
-	rm -rf lib/game_data_packager/__pycache__
+	rm -rf game_data_packager/__pycache__
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
-	GDP_UNINSTALLED=1 PYTHONPATH=lib python3 -m game_data_packager.check_syntax
-	pyflakes3 lib/game_data_packager/*.py lib/game_data_packager/*/*.py || :
+	GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m game_data_packager.check_syntax
+	pyflakes3 game_data_packager/*.py game_data_packager/*/*.py || :
 
 # Requires additional setup, so not part of "make check"
 manual-check:
 	install -d tmp/
 	for game in $(TEST_SUITE); do \
-	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=lib \
+	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=. \
 		python3 -m game_data_packager -d ./tmp --no-search --no-compress $$game || exit $$?; \
 	done
 	rm -fr tmp/

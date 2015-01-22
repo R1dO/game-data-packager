@@ -26,7 +26,7 @@ override_dh_auto_clean:
 
 override_dh_install:
 	dh_install
-	echo 'GAME_PACKAGE_VERSION = """$(DEB_VERSION)"""' > debian/game-data-packager/usr/lib/game-data-packager/game_data_packager/version.py
+	echo 'GAME_PACKAGE_VERSION = """$(DEB_VERSION)"""' > debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/version.py
 
 override_dh_installdocs:
 	dh_installdocs -XTODO

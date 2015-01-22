@@ -6,9 +6,9 @@ set -u
 if [ "$0" = "./game-data-packager" ]; then
 	GDP_UNINSTALLED=1
 	export GDP_UNINSTALLED
-	PYTHONPATH="$(pwd)/lib"
+	PYTHONPATH="$(pwd)"
 else
-	PYTHONPATH=/usr/lib/game-data-packager
+	PYTHONPATH=/usr/share/games/game-data-packager
 fi
 export PYTHONPATH
 
