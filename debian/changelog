@@ -1,4 +1,4 @@
-game-data-packager (39) UNRELEASED; urgency=medium
+game-data-packager (39) experimental; urgency=low
 
   Game support and other features:
 
@@ -17,15 +17,17 @@ game-data-packager (39) UNRELEASED; urgency=medium
     loosely based on patches by Johey Shmit (Closes: #737137)
   * Add support for Hexen demo (Closes: #775483)
   * Add support for Heretic shareware
-  * For YAML games, always search the installed directory for game files
-    (like the --repack argument in version 38)
-  * For YAML games distributed via Steam, search various likely locations
-    for Steam files: Wine, winetricks, PlayOnLinux or native Linux
-  * Add --demo option to all YAML games with a demo/shareware version,
+  * Always search the installed directory for game files (like the
+    --repack argument in version 38) unless disabled with --no-search
+  * For games distributed via Steam, search various likely locations
+    for Steam files (Wine, winetricks, PlayOnLinux or native Linux)
+    unless disabled with --no-search
+  * Add --demo option to all games with a demo/shareware version,
     which will download/create the demo even if the full game is available
   * Show help after failing to build a package, since it often has
     hints on the data files that are required
-  * New command-line options for all YAML games:
+  * New command-line options for all games:
+    - --search, --no-search
     - --download, --no-download
     - --save-downloads
     - --package=PACKAGE (repeatable)
@@ -48,16 +50,14 @@ game-data-packager (39) UNRELEASED; urgency=medium
     (Closes: #775152)
   * Install Heretic and Hexen to /usr/share/games/doom again
   * Automatically exclude __pycache__ from tarball
-  * Make the -f option for rott, tyrian, wolf3d do approximately what it used
-    to do before their YAML conversions
   * All games are now done in Python/YAML so all $@ vs. $* issues
     should have gone away (Closes: #742849)
+  * Upgrade game code for Quake II mission packs to latest version
 
   Internal changes:
 
   [ Alexandre Detiste ]
-  * convert tyrian-data to YAML style
-  * Convert Wolfenstein 3D to YAML style
+  * Convert tyrian, wolf3d to YAML style
   * Add 'make manual-check' which tests some common code paths using
     a local mirror of some freely downloadable games
   * generate control files automatically
@@ -65,29 +65,20 @@ game-data-packager (39) UNRELEASED; urgency=medium
     encoding, which can be decompressed by unzip(1) but not by Python
 
   [ Simon McVittie ]
-  * For games in YAML style, do the .deb building and installation in
-    Python, not shell
+  * Do all .deb building and installation in Python, not shell
     - depend on python3-debian
   * Improve help text
-  * Use a common go() method to wrap all YAML games
-  * Allow YAML games to have a Python subclass of GameData to customize
-    their behaviour, and use that to implement rott and tyrian's
-    historical command-line options
-  * Switch Hexen II to YAML style
-  * Convert Doom games to YAML style, with the help of extra Python code
-    in game_data_packager.games.doom_common (Closes: #775081)
-  * Switch lgeneral to YAML style (Closes: #775083)
-  * Add support for ripping CD audio (Closes: #775078)
-  * Switch Quake 1 and 2 to YAML style (Closes: #775082)
-  * Add support for flagging files in YAML as known-but-unsuitable,
-    and use it for older versions of various .wad files
-  * Add support for concatenating files, needed for Quake 1
-  * Add support for optional files, used for Wolfenstein 3D, Quake 1
-    and Return to Castle Wolfenstein
+  * Switch all remaining games to YAML style (Closes: #775081, #775082, #775083)
+    - add support for ripping CD audio (Closes: #775078)
+    - allow games to have a Python subclass of GameData to customize
+      their behaviour, and use that to implement some games'
+      historical command-line options
+    - add support for flagging files in YAML as known-but-unsuitable,
+      and use it for older versions of various .wad files
   * Add myself and Alexandre to debian/copyright
   * Check for id-shr-extract, lgc-pg, lha tools before use
 
- -- Simon McVittie <smcv@debian.org>  Mon, 05 Jan 2015 19:38:04 +0000
+ -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 12:25:21 +0000
 
 game-data-packager (38) experimental; urgency=low
 
