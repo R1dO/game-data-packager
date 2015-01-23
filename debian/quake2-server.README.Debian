@@ -1,6 +1,21 @@
 Quake II dedicated server for Debian
 ====================================
 
+Game data
+---------
+
+The Quake II engine requires game data to run.  The data is not freely
+redistributable.  You should use the 'game-data-packager' tool to install it.
+
+For the full game, you will need at least baseq2/pak0.pak and
+baseq2/videos/ from a Quake II installation or CD-ROM; everything
+else can be downloaded by game-data-packager. See
+/usr/share/games/game-data-packager/quake2.yaml for full details,
+including the sizes and checksums of the required files.
+
+Demo files are freely downloadable and can also be packaged using
+game-data-packager.
+
 Running the server via the init script
 --------------------------------------
 

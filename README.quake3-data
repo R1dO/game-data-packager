@@ -1,21 +1,8 @@
-Use game-data-packager to build and install the quake3-data package.
-You will need these two files:
+Use game-data-packager to build and install the quake3-data
+or quake3-demo-data package.
 
---------------- baseq3/pak0.pk3
+For quake3-data you will need at least baseq3/pak0.pk3 (479493658 bytes)
+from a Quake III Arena CD or installation.
+game-data-packager can download all other necessary files.
 
-From a Quake III Arena CD-ROM or installation
-
-size: 479493658 bytes
-md5sum: 1197ca3df1e65f3c380f8abc10ca43bf
-sha1sum: 9d588ea65e92944d3e23eeb6ec08f1dd666f4658
-sha256sum: 7ce8b3910620cd50a09e4f1100f426e8c6180f68895d589f80e6bd95af54bcae
-
---------------- linuxq3apoint-1.32b-3.x86.run
-
-From any mirror of ftp.idsoftware.com, Gentoo or FreeBSD: for instance try
-http://www.filewatcher.com/m/linuxq3apoint-1.32b-3.x86.run.30923961.0.0.html
-
-size: 30923961 bytes
-md5sum: c71fdddccb20e8fc393d846e9c61d685
-sha1sum: 802d84af0d515db50a496c4c55d1f1c4f40a9239
-sha256sum: c36132c5556b35e01950f1e9c646235033a5130f87ad776ba2bc7becf4f4f186
+For quake3-demo-data (experimental) only downloadable files are required.

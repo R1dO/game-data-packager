@@ -6,11 +6,14 @@ Game data
 
 The Quake engine requires game data to run.  The data is not freely
 redistributable.  You should use the 'game-data-packager' tool to install it.
-'game-data-packager' supports many different versions of Quake.
 
-If you just want to use data you already have unpacked on your disk, you can
-copy the .pak files to /usr/share/games/quake/id1/ (pak0.pak for shareware
-Quake, pak0.pak and pak1.pak for the full game).
+For the full game, you will need at least id1/pak1.pak
+from a Quake II installation or CD-ROM; game-data-packager can download
+the rest. See /usr/share/games/game-data-packager/quake.yaml for full details,
+including the sizes and checksums of the required files.
+
+The shareware episode of Quake is freely downloadable and can also be
+packaged using game-data-packager.
 
 Switching engines
 -----------------
