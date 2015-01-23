@@ -1,3 +1,14 @@
+quake (10) UNRELEASED; urgency=medium
+
+  * quake3: prefer to load game data from /usr/lib/quake3/base
+    or /usr/lib/quake3/ta, where ioquake3 can provide native-code game modules
+    - this requires ioquake3 (>= 1.36+u20150114+dfsg1-1~) and
+      quake3*-data built by game-data-packager (>= 40)
+  * quake3: experimental support for loading the demo data
+    - the same requirements apply
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:48:36 +0000
+
 quake (9) experimental; urgency=low
 
   * quake3.desktop: describe Q3 as an ActionGame, not an ArcadeGame

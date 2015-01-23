@@ -9,16 +9,14 @@ IOQ3BINARY=@IOQ3BINARY@
 # q3a or openarena
 IOQ3DOTDIR=q3a
 
-BASEPATH="/usr/share/games/quake3"
 ENGINE="/usr/lib/ioquake3/${IOQ3BINARY}"
 
+BASEGAME="baseq3"
+BASEPATH="/usr/share/games/quake3"
 DEBUGGER="$QUAKE3_DEBUGGER"
-
-# the defaults mostly apply
-CVARS="+set com_standalone 0"
-CVARS="$CVARS +set fs_basepath $BASEPATH"
-
-QUIET=0
+DEMO=
+PAKS="0 1 2 3 4 5 6 7 8"
+QUIET=
 
 EXCUSE="\
 Quake III Arena ${IOQ3ROLE} wrapper for Debian\n\
@@ -28,6 +26,8 @@ Usage: ${IOQ3SELF} [OPTION]...\n\
  -h, --help\t\tDisplay this help\n\
  -q, --quiet\t\tDisable console output\n\
   +<internal command>\tPass commands to the engine\n"
+
+CVARS="+set com_standalone 0"
 
 while [ "$1" != "" ]; do
   case "$1" in
@@ -39,6 +39,10 @@ while [ "$1" != "" ]; do
       CVARS="$CVARS +set ttycon 0"
       QUIET=1
       ;;
+    --demo)
+      BASEPATH="/usr/lib/quake3/demo"
+      DEMO=1
+      ;;
     *)
       break
       ;;
@@ -46,9 +50,31 @@ while [ "$1" != "" ]; do
   shift
 done
 
+if [ -n "$DEMO" ]; then
+  BASEPATH="/usr/lib/quake3/demo"
+elif [ -e "/usr/lib/quake3/ta/missionpack/pak0.pak" ]; then
+  BASEPATH="/usr/lib/quake3/ta"
+elif [ -e "/usr/lib/quake3/base/baseq3/pak0.pak" ]; then
+  BASEPATH="/usr/lib/quake3/base"
+elif [ -e "$BASEPATH/baseq3/pak0.pak" ]; then
+  :
+elif [ -e "/usr/lib/quake3/demo/demoq3/pak0.pak" ]; then
+  BASEPATH="/usr/lib/quake3/demo"
+  DEMO=1
+fi
+
+if [ -n "$DEMO" ]; then
+  CVARS="$CVARS +set com_homepath .q3ademo +set com_basegame demoq3"
+  CVARS="$CVARS +set sv_pure 0 +set vm_ui 0 +set vm_cgame 0 +set vm_game 0"
+  require="0"
+  basegame=demoq3
+fi
+
+CVARS="$CVARS +set fs_basepath $BASEPATH"
+
 # sanity check: the engine doesn't cope well with missing data
-for i in 0 1 2 3 4 5 6 7 8; do
-  if test -f $BASEPATH/baseq3/pak$i.pk3; then
+for i in $paks; do
+  if test -f $BASEPATH/$basegame/pak$i.pk3; then
     :
   else
     if test "$IOQ3ROLE" = client; then
