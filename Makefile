@@ -35,6 +35,7 @@ $(DIRS):
 
 clean:
 	rm -f ./out/changelog.gz
+	rm -f ./out/game-data-packager
 	rm -f ./out/foo ./out/bar ./out/baz
 	rm -f ./out/*.control
 	rm -f ./out/*.control.in
