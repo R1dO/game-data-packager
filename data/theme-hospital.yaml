@@ -3,6 +3,7 @@
 packages:
   theme-hospital-full-data:
     longname: Theme Hospital
+    install_to: usr/share/games/theme-hospital
     debian:
       conflicts: theme-hospital-demo-data
       engine: corsix-th
@@ -465,6 +466,388 @@ packages:
     - data/watch01v.dat
     - data/watch01v.tab
 
+  theme-hospital-demo-data:
+    longname: Theme Hospital (Demo)
+    install_to: usr/share/games/theme-hospital
+    demo_for: theme-hospital-full-data
+    debian:
+      engine: corsix-th
+      conflicts: theme-hospital-full-data
+    install:
+    - anims/winlevel.smk_demo
+    - data/award03v.dat
+    - data/award03v.tab
+    - data/bank02v.dat
+    - data/bank02v.tab
+    - data/bid02v.dat
+    - data/bid02v.tab
+    - data/border01.dat
+    - data/border01.tab
+    - data/button01.dat
+    - data/button01.tab
+    - data/drugn02v.dat
+    - data/drugn02v.tab
+    - data/face01v.dat
+    - data/face01v.tab
+    - data/face02v.dat
+    - data/face02v.tab
+    - data/fame02v.dat
+    - data/fame02v.tab
+    - data/fax02v.dat
+    - data/fax02v.tab
+    - data/graph02v.dat
+    - data/graph02v.tab
+    - data/ham01v.dat
+    - data/ham01v.tab
+    - data/lang-0.dat_demo
+    - data/lang-1.dat_demo
+    - data/lang-2.dat_demo
+    - data/lang-3.dat_demo
+    - data/lang-4.dat_demo
+    - data/lang-5.dat_demo
+    - data/lettr02v.dat
+    - data/lettr02v.tab
+    - data/liq01v.dat
+    - data/liq01v.tab
+    - data/load02v.dat
+    - data/load02v.tab
+    - data/main02m.dat
+    - data/main02m.tab
+    - data/money01v.dat_demo
+    - data/money01v.tab_demo
+    - data/mpalette.dat_demo
+    - data/mpointer.dat_demo
+    - data/mpointer.tab_demo
+    - data/panel02v.dat_demo
+    - data/panel02v.tab_demo
+    - data/panel03v.dat
+    - data/panel03v.tab
+    - data/panel04v.dat_demo
+    - data/panel04v.tab_demo
+    - data/p_comp.lex
+    - data/pol02v.dat
+    - data/pol02v.tab
+    - data/pref02v.dat
+    - data/pref02v.tab
+    - data/pulldv.dat_demo
+    - data/pulldv.tab_demo
+    - data/pulldx.dat
+    - data/pulldx.tab
+    - data/rep02v.dat
+    - data/rep02v.tab
+    - data/res02v.dat
+    - data/res02v.tab
+    - data/s_comp.lex
+    - data/staff02v.dat
+    - data/staff02v.tab
+    - data/stat02v.dat
+    - data/stat02v.tab
+    - data/town02v.dat
+    - data/town02v.tab
+    - data/vblk-0.dat_demo
+    - data/vblk-0.tab_demo
+    - data/vele-1.ani_demo
+    - data/vfra-1.ani_demo
+    - data/vlist-1.ani_demo
+    - data/vspr-0.dat
+    - data/vspr-0.tab
+    - data/vstart-1.ani_demo
+    - data/watch01v.dat_demo
+    - data/watch01v.tab_demo
+    - datam/demo.dat
+    - levels/level.l1_demo
+    - qdata/area01v.dat_demo
+    - qdata/area01v.pal_demo
+    - qdata/award01v.dat
+    - qdata/award01v.pal
+    - qdata/award02v.dat_demo
+    - qdata/award02v.pal
+    - qdata/award03v.dat_demo
+    - qdata/award03v.tab_demo
+    - qdata/awardx3v.dat
+    - qdata/awardx3v.tab
+    - qdata/bank02v.dat
+    - qdata/bank02v.tab
+    - qdata/bankx2v.dat
+    - qdata/bankx2v.tab
+    - qdata/bid01v.dat
+    - qdata/bid01v.pal
+    - qdata/bid02v.dat
+    - qdata/bid02v.tab
+    - qdata/brief01v.dat
+    - qdata/brief01v.pal
+    - qdata/cred01v.dat
+    - qdata/cred01v.pal
+    - qdata/drugn02v.dat
+    - qdata/drugn02v.tab
+    - qdata/drugnx2v.dat
+    - qdata/drugnx2v.tab
+    - qdata/face01v.dat
+    - qdata/fame01v.dat
+    - qdata/fame01v.pal
+    - qdata/fame02v.dat
+    - qdata/fame02v.tab
+    - qdata/famex2v.dat
+    - qdata/famex2v.tab
+    - qdata/fax01v.dat
+    - qdata/fax01v.pal
+    - qdata/fax02v.dat
+    - qdata/fax02v.tab
+    - qdata/faxx2v.dat
+    - qdata/faxx2v.tab
+    - qdata/font00v.dat_demo
+    - qdata/font00v.tab_demo
+    - qdata/font01v.dat_demo
+    - qdata/font01v.tab_demo
+    - qdata/font02v.dat_demo
+    # - qdata/font02v.tab_demo = qdata/font01v.tab_demo
+    - qdata/font04v.dat_demo
+    - qdata/font04v.tab_demo
+    - qdata/font05v.dat_demo
+    - qdata/font05v.tab_demo
+    - qdata/font09v.dat_demo
+    - qdata/font09v.tab_demo
+    - qdata/font100v.dat_demo
+    - qdata/font100v.tab_demo
+    - qdata/font101v.dat_demo
+    - qdata/font101v.tab_demo
+    - qdata/font102v.dat_demo
+    - qdata/font102v.tab_demo
+    - qdata/font105v.dat_demo
+    - qdata/font105v.tab_demo
+    - qdata/font106v.dat_demo
+    - qdata/font106v.tab_demo
+    - qdata/font110v.dat_demo
+    - qdata/font110v.tab_demo
+    - qdata/font111v.dat_demo
+    - qdata/font111v.tab_demo
+    - qdata/font112v.dat_demo
+    - qdata/font112v.tab_demo
+    - qdata/font113v.dat_demo
+    - qdata/font113v.tab_demo
+    - qdata/font115v.dat_demo
+    - qdata/font115v.tab_demo
+    - qdata/font120v.dat_demo
+    - qdata/font120v.tab_demo
+    - qdata/font121v.dat_demo
+    - qdata/font121v.tab_demo
+    - qdata/font122v.dat_demo
+    - qdata/font122v.tab_demo
+    - qdata/font123v.dat
+    - qdata/font123v.tab
+    - qdata/font124v.dat_demo
+    - qdata/font124v.tab_demo
+    - qdata/font125v.dat
+    - qdata/font125v.tab
+    - qdata/font126v.dat
+    - qdata/font126v.tab
+    - qdata/font16v.dat_demo
+    - qdata/font16v.tab_demo
+    - qdata/font18v.dat_demo
+    - qdata/font18v.tab_demo
+    - qdata/font19v.dat_demo
+    - qdata/font19v.tab_demo
+    - qdata/font24v.dat_demo
+    - qdata/font24v.tab_demo
+    - qdata/font25v.dat_demo
+    - qdata/font25v.tab_demo
+    - qdata/font26v.dat_demo
+    - qdata/font26v.tab_demo
+    - qdata/font31v.dat_demo
+    - qdata/font31v.tab_demo
+    - qdata/font34v.dat_demo
+    - qdata/font34v.tab_demo
+    - qdata/font35v.dat_demo
+    - qdata/font35v.tab_demo
+    - qdata/font36v.dat_demo
+    - qdata/font36v.tab_demo
+    - qdata/font37v.dat_demo
+    - qdata/font37v.tab_demo
+    - qdata/font38v.dat_demo
+    # - qdata/font38v.tab_demo = qdata/font05v.tab_demo
+    - qdata/font39v.dat_demo
+    - qdata/font39v.tab_demo
+    - qdata/font40v.dat_demo
+    - qdata/font40v.tab_demo
+    - qdata/font43v.dat_demo
+    - qdata/font43v.tab_demo
+    - qdata/font44v.dat_demo
+    - qdata/font44v.tab_demo
+    - qdata/font45v.dat_demo
+    - qdata/font45v.tab_demo
+    - qdata/font46v.dat_demo
+    - qdata/font46v.tab_demo
+    - qdata/font47v.dat_demo
+    - qdata/font47v.tab_demo
+    - qdata/font50v.dat_demo
+    - qdata/font50v.tab_demo
+    - qdata/font51v.dat_demo
+    - qdata/font51v.tab_demo
+    - qdata/font60v.dat_demo
+    - qdata/font60v.tab_demo
+    - qdata/font74v.dat_demo
+    - qdata/font74v.tab_demo
+    - qdata/gbank.dat
+    - qdata/gbank.pal
+    - qdata/gcasebk.dat
+    - qdata/gcasebk.pal
+    - qdata/ggraph.dat
+    - qdata/ggraph.pal
+    - qdata/ghost1.dat
+    - qdata/ghost2.dat
+    - qdata/ghost66.dat
+    - qdata/gpolicy.dat
+    - qdata/gpolicy.pal
+    - qdata/graph02v.dat
+    - qdata/graph02v.tab
+    - qdata/gres.dat
+    - qdata/gres.pal
+    - qdata/gstaff.dat
+    - qdata/gstaff.pal
+    - qdata/gstat.dat
+    - qdata/gstat.pal
+    - qdata/gstatus.dat
+    - qdata/gstatus.pal
+    - qdata/gtitle.dat
+    - qdata/gtitle.pal
+    - qdata/gtown.dat
+    - qdata/gtown.pal
+    - qdata/lettr02v.dat
+    - qdata/lettr02v.tab
+    - qdata/lettrx2v.dat
+    - qdata/lettrx2v.tab
+    - qdata/load01v.dat
+    - qdata/load01v.pal
+    - qdata/load02v.dat
+    - qdata/load02v.tab
+    - qdata/loadx2v.dat
+    - qdata/loadx2v.tab
+    - qdata/main01m.dat_demo
+    - qdata/main01m.pal_demo
+    - qdata/main02m.dat_demo
+    - qdata/main02m.tab_demo
+    - qdata/mainx2m.dat
+    - qdata/mainx2m.tab
+    - qdatam/demo.dat
+    - qdata/pol02v.dat
+    - qdata/pol02v.tab
+    - qdata/polx2v.dat
+    - qdata/polx2v.tab
+    - qdata/pref01v.dat
+    - qdata/pref01v.pal
+    - qdata/pref02v.dat
+    - qdata/pref02v.tab
+    - qdata/prefx2v.tab
+    - qdata/rep02v.dat_demo
+    - qdata/rep02v.tab_demo
+    - qdata/repx2v.dat
+    - qdata/repx2v.tab
+    - qdata/req00v.dat_demo
+    - qdata/req00v.tab_demo
+    - qdata/req01v.dat_demo
+    - qdata/req01v.tab
+    - qdata/req02v.dat_demo
+    - qdata/req02v.tab
+    - qdata/req03v.dat
+    - qdata/req03v.tab
+    - qdata/req04v.dat
+    - qdata/req04v.tab
+    - qdata/req05v.dat
+    - qdata/req05v.tab
+    - qdata/req06v.dat
+    - qdata/req06v.tab
+    - qdata/req09v.dat
+    - qdata/req09v.tab
+    - qdata/req10v.dat
+    - qdata/req10v.tab
+    - qdata/req11v.dat
+    - qdata/req11v.tab
+    - qdata/req12v.dat
+    - qdata/req12v.tab
+    - qdata/req13v.dat
+    - qdata/req13v.tab
+    - qdata/res02v.dat
+    - qdata/res02v.tab
+    - qdata/score01v.dat
+    - qdata/score01v.pal
+    - qdata/sfont39v.dat
+    - qdata/sfont39v.tab
+    - qdata/shot1.dat
+    - qdata/shot2.dat
+    - qdata/shot3.dat
+    - qdata/shot4.dat
+    - qdata/spointer.dat_demo
+    - qdata/spointer.tab_demo
+    - qdata/staff02v.dat
+    - qdata/staff02v.tab
+    - qdata/staffx2v.dat
+    - qdata/staffx2v.tab
+    - qdata/stat02v.dat
+    - qdata/stat02v.tab
+    - qdata/statx2v.dat
+    - qdata/statx2v.tab
+    - qdata/town02v.dat
+    - qdata/town02v.tab
+    - qdata/town.dat
+    - qdata/townx2v.dat
+    - qdata/townx2v.tab
+    - sound/adlibg.mdi
+    - sound/adlib.mdi
+    - sound/adrv688.dig
+    - sound/audiodrv.dig
+    - sound/data/minheap.dat
+    - sound/data/sound-0.dat_demo
+    - sound/esfm.mdi
+    - sound/iwav.dig
+    - sound/iwav.mdi
+    - sound/jammer.dig
+    - sound/midi/atlantis.xmi_demo
+    - sound/midi/mididem.txt
+    - sound/midi/nightsh.xmi
+    - sound/midi/steady.xmi
+    - sound/minheap.dat
+    - sound/mpu401.mdi
+    - sound/mssdrvr.lst
+    - sound/mt32mpu.mdi
+    - sound/null.mdi
+    - sound/nvdig.dig
+    - sound/nvmpu.mdi
+    - sound/opl3.mdi
+    - sound/pas.mdi
+    - sound/pasplus.mdi
+    - sound/pcspkr.mdi
+    - sound/proaudio.dig
+    - sound/rap10.dig
+    - sound/sample.ad
+    - sound/sample.opl
+    - sound/sb16.dig
+    - sound/sbawe32.mdi
+    - sound/sblaster.dig
+    - sound/sblaster.mdi
+    - sound/sbpro1.mdi
+    - sound/sbpro2.mdi
+    - sound/sbpro.dig
+    - sound/sndscape.dig
+    - sound/sndscape.mdi
+    - sound/sndsys.dig
+    - sound/sound.dat
+    - sound/tandy.mdi
+    - sound/ultra.dig
+    - sound/ultra.mdi
+    symlinks:
+      usr/share/games/theme-hospital/qdata/font02v.tab:
+        usr/share/games/theme-hospital/qdata/font01v.tab
+      usr/share/games/theme-hospital/qdata/font38v.tab:
+        usr/share/games/theme-hospital/qdata/font05v.tab
+      usr/share/games/theme-hospital/qdata/shot1.pal:
+        usr/share/games/theme-hospital/data/mpalette.dat
+      usr/share/games/theme-hospital/qdata/shot2.pal:
+        usr/share/games/theme-hospital/data/mpalette.dat
+      usr/share/games/theme-hospital/qdata/shot3.pal:
+        usr/share/games/theme-hospital/data/mpalette.dat
+      usr/share/games/theme-hospital/qdata/shot4.pal:
+        usr/share/games/theme-hospital/data/mpalette.dat
+
 files:
   EN.pdf:
     size: 4514818
@@ -482,6 +865,268 @@ files:
     size: 1028644
     md5: 0a8b2534c4c6cfa31815ec75b3877996
     install_to: $docdir
+  anims/winlevel.smk_demo:
+    install_as: anims/winlevel.smk
+  anims/winlevel.smk_demo:
+    install_as: anims/winlevel.smk
+  data/lang-0.dat_demo:
+    install_as: data/lang-0.dat
+  data/lang-1.dat_demo:
+    install_as: data/lang-1.dat
+  data/lang-2.dat_demo:
+    install_as: data/lang-2.dat
+  data/lang-3.dat_demo:
+    install_as: data/lang-3.dat
+  data/lang-4.dat_demo:
+    install_as: data/lang-4.dat
+  data/lang-5.dat_demo:
+    install_as: data/lang-5.dat
+  data/money01v.dat_demo:
+    install_as: data/money01v.dat
+  data/money01v.tab_demo:
+    install_as: data/money01v.tab
+  data/mpalette.dat_demo:
+    install_as: data/mpalette.dat
+  data/mpointer.dat_demo:
+    install_as: data/mpointer.dat
+  data/mpointer.tab_demo:
+    install_as: data/mpointer.tab
+  data/panel02v.dat_demo:
+    install_as: data/panel02v.dat
+  data/panel02v.tab_demo:
+    install_as: data/panel02v.tab
+  data/panel04v.dat_demo:
+    install_as: data/panel04v.dat
+  data/panel04v.tab_demo:
+    install_as: data/panel04v.tab
+  data/pulldv.dat_demo:
+    install_as: data/pulldv.dat
+  data/pulldv.tab_demo:
+    install_as: data/pulldv.tab
+  data/vblk-0.dat_demo:
+    install_as: data/vblk-0.dat
+  data/vblk-0.tab_demo:
+    install_as: data/vblk-0.tab
+  data/vele-1.ani_demo:
+    install_as: data/vele-1.ani
+  data/vfra-1.ani_demo:
+    install_as: data/vfra-1.ani
+  data/vlist-1.ani_demo:
+    install_as: data/vlist-1.ani
+  data/vstart-1.ani_demo:
+    install_as: data/vstart-1.ani
+  data/watch01v.dat_demo:
+    install_as: data/watch01v.dat
+  data/watch01v.tab_demo:
+    install_as: data/watch01v.tab
+  levels/level.l1_demo:
+    install_as: levels/level.l1
+  qdata/area01v.dat_demo:
+    install_as: qdata/area01v.dat
+  qdata/area01v.pal_demo:
+    install_as: qdata/area01v.pal
+  qdata/award02v.dat_demo:
+    install_as: qdata/award02v.dat
+  qdata/award03v.dat_demo:
+    install_as: qdata/award03v.dat
+  qdata/award03v.tab_demo:
+    install_as: qdata/award03v.tab
+  qdata/font00v.dat_demo:
+    install_as: qdata/font00v.dat
+  qdata/font00v.tab_demo:
+    install_as: qdata/font00v.tab
+  qdata/font01v.dat_demo:
+    install_as: qdata/font01v.dat
+  qdata/font01v.tab_demo:
+    install_as: qdata/font01v.tab
+  qdata/font02v.dat_demo:
+    install_as: qdata/font02v.dat
+  qdata/font04v.dat_demo:
+    install_as: qdata/font04v.dat
+  qdata/font04v.tab_demo:
+    install_as: qdata/font04v.tab
+  qdata/font05v.dat_demo:
+    install_as: qdata/font05v.dat
+  qdata/font05v.tab_demo:
+    install_as: qdata/font05v.tab
+  qdata/font09v.dat_demo:
+    install_as: qdata/font09v.dat
+  qdata/font09v.tab_demo:
+    install_as: qdata/font09v.tab
+  qdata/font100v.dat_demo:
+    install_as: qdata/font100v.dat
+  qdata/font100v.tab_demo:
+    install_as: qdata/font100v.tab
+  qdata/font101v.dat_demo:
+    install_as: qdata/font101v.dat
+  qdata/font101v.tab_demo:
+    install_as: qdata/font101v.tab
+  qdata/font102v.dat_demo:
+    install_as: qdata/font102v.dat
+  qdata/font102v.tab_demo:
+    install_as: qdata/font102v.tab
+  qdata/font105v.dat_demo:
+    install_as: qdata/font105v.dat
+  qdata/font105v.tab_demo:
+    install_as: qdata/font105v.tab
+  qdata/font106v.dat_demo:
+    install_as: qdata/font106v.dat
+  qdata/font106v.tab_demo:
+    install_as: qdata/font106v.tab
+  qdata/font110v.dat_demo:
+    install_as: qdata/font110v.dat
+  qdata/font110v.tab_demo:
+    install_as: qdata/font110v.tab
+  qdata/font111v.dat_demo:
+    install_as: qdata/font111v.dat
+  qdata/font111v.tab_demo:
+    install_as: qdata/font111v.tab
+  qdata/font112v.dat_demo:
+    install_as: qdata/font112v.dat
+  qdata/font112v.tab_demo:
+    install_as: qdata/font112v.tab
+  qdata/font113v.dat_demo:
+    install_as: qdata/font113v.dat
+  qdata/font113v.tab_demo:
+    install_as: qdata/font113v.tab
+  qdata/font115v.dat_demo:
+    install_as: qdata/font115v.dat
+  qdata/font115v.tab_demo:
+    install_as: qdata/font115v.tab
+  qdata/font120v.dat_demo:
+    install_as: qdata/font120v.dat
+  qdata/font120v.tab_demo:
+    install_as: qdata/font120v.tab
+  qdata/font121v.dat_demo:
+    install_as: qdata/font121v.dat
+  qdata/font121v.tab_demo:
+    install_as: qdata/font121v.tab
+  qdata/font122v.dat_demo:
+    install_as: qdata/font122v.dat
+  qdata/font122v.tab_demo:
+    install_as: qdata/font122v.tab
+  qdata/font124v.dat_demo:
+    install_as: qdata/font124v.dat
+  qdata/font124v.tab_demo:
+    install_as: qdata/font124v.tab
+  qdata/font16v.dat_demo:
+    install_as: qdata/font16v.dat
+  qdata/font16v.tab_demo:
+    install_as: qdata/font16v.tab
+  qdata/font18v.dat_demo:
+    install_as: qdata/font18v.dat
+  qdata/font18v.tab_demo:
+    install_as: qdata/font18v.tab
+  qdata/font19v.dat_demo:
+    install_as: qdata/font19v.dat
+  qdata/font19v.tab_demo:
+    install_as: qdata/font19v.tab
+  qdata/font24v.dat_demo:
+    install_as: qdata/font24v.dat
+  qdata/font24v.tab_demo:
+    install_as: qdata/font24v.tab
+  qdata/font25v.dat_demo:
+    install_as: qdata/font25v.dat
+  qdata/font25v.tab_demo:
+    install_as: qdata/font25v.tab
+  qdata/font26v.dat_demo:
+    install_as: qdata/font26v.dat
+  qdata/font26v.tab_demo:
+    install_as: qdata/font26v.tab
+  qdata/font31v.dat_demo:
+    install_as: qdata/font31v.dat
+  qdata/font31v.tab_demo:
+    install_as: qdata/font31v.tab
+  qdata/font34v.dat_demo:
+    install_as: qdata/font34v.dat
+  qdata/font34v.tab_demo:
+    install_as: qdata/font34v.tab
+  qdata/font35v.dat_demo:
+    install_as: qdata/font35v.dat
+  qdata/font35v.tab_demo:
+    install_as: qdata/font35v.tab
+  qdata/font36v.dat_demo:
+    install_as: qdata/font36v.dat
+  qdata/font36v.tab_demo:
+    install_as: qdata/font36v.tab
+  qdata/font37v.dat_demo:
+    install_as: qdata/font37v.dat
+  qdata/font37v.tab_demo:
+    install_as: qdata/font37v.tab
+  qdata/font38v.dat_demo:
+    install_as: qdata/font38v.dat
+  qdata/font39v.dat_demo:
+    install_as: qdata/font39v.dat
+  qdata/font39v.tab_demo:
+    install_as: qdata/font39v.tab
+  qdata/font40v.dat_demo:
+    install_as: qdata/font40v.dat
+  qdata/font40v.tab_demo:
+    install_as: qdata/font40v.tab
+  qdata/font43v.dat_demo:
+    install_as: qdata/font43v.dat
+  qdata/font43v.tab_demo:
+    install_as: qdata/font43v.tab
+  qdata/font44v.dat_demo:
+    install_as: qdata/font44v.dat
+  qdata/font44v.tab_demo:
+    install_as: qdata/font44v.tab
+  qdata/font45v.dat_demo:
+    install_as: qdata/font45v.dat
+  qdata/font45v.tab_demo:
+    install_as: qdata/font45v.tab
+  qdata/font46v.dat_demo:
+    install_as: qdata/font46v.dat
+  qdata/font46v.tab_demo:
+    install_as: qdata/font46v.tab
+  qdata/font47v.dat_demo:
+    install_as: qdata/font47v.dat
+  qdata/font47v.tab_demo:
+    install_as: qdata/font47v.tab
+  qdata/font50v.dat_demo:
+    install_as: qdata/font50v.dat
+  qdata/font50v.tab_demo:
+    install_as: qdata/font50v.tab
+  qdata/font51v.dat_demo:
+    install_as: qdata/font51v.dat
+  qdata/font51v.tab_demo:
+    install_as: qdata/font51v.tab
+  qdata/font60v.dat_demo:
+    install_as: qdata/font60v.dat
+  qdata/font60v.tab_demo:
+    install_as: qdata/font60v.tab
+  qdata/font74v.dat_demo:
+    install_as: qdata/font74v.dat
+  qdata/font74v.tab_demo:
+    install_as: qdata/font74v.tab
+  qdata/main01m.dat_demo:
+    install_as: qdata/main01m.dat
+  qdata/main01m.pal_demo:
+    install_as: qdata/main01m.pal
+  qdata/main02m.dat_demo:
+    install_as: qdata/main02m.dat
+  qdata/main02m.tab_demo:
+    install_as: qdata/main02m.tab
+  qdata/rep02v.dat_demo:
+    install_as: qdata/rep02v.dat
+  qdata/rep02v.tab_demo:
+    install_as: qdata/rep02v.tab
+  qdata/req00v.dat_demo:
+    install_as: qdata/req00v.dat
+  qdata/req00v.tab_demo:
+    install_as: qdata/req00v.tab
+  qdata/req01v.dat_demo:
+    install_as: qdata/req01v.dat
+  qdata/req02v.dat_demo:
+    install_as: qdata/req02v.dat
+  qdata/spointer.dat_demo:
+    install_as: qdata/spointer.dat
+  qdata/spointer.tab_demo:
+    install_as: qdata/spointer.tab
+  sound/data/sound-0.dat_demo:
+    install_as: sound/data/sound-0.dat
+  sound/midi/atlantis.xmi_demo:
+    install_as: sound/midi/atlantis.xmi
 
 cksums: |
   _ 872896    anims/320x2401.smk
@@ -516,36 +1161,63 @@ cksums: |
   _ 898052    anims/mmenu2-0.smk
   _ 2066656   anims/wingame.smk
   _ 335220    anims/winlevel.smk
+  _ 243188    anims/winlevel.smk_demo
   _ 95149     data/lang-0.dat
+  _ 98406     data/lang-0.dat_demo
   _ 95576     data/lang-1.dat
+  _ 98742     data/lang-1.dat_demo
   _ 111690    data/lang-2.dat
+  _ 115490    data/lang-2.dat_demo
   _ 98933     data/lang-3.dat
+  _ 102489    data/lang-3.dat_demo
   _ 100080    data/lang-4.dat
+  _ 103737    data/lang-4.dat_demo
   _ 95518     data/lang-5.dat
+  _ 98610     data/lang-5.dat_demo
   _ 212       data/money01v.dat
+  _ 974       data/money01v.dat_demo
   _ 57        data/money01v.tab
+  _ 72        data/money01v.tab_demo
   _ 746       data/mpalette.dat
+  _ 768       data/mpalette.dat_demo
   _ 1886      data/mpointer.dat
+  _ 4748      data/mpointer.dat_demo
   _ 113       data/mpointer.tab
+  _ 132       data/mpointer.tab_demo
   _ 311       data/p_comp.lex
   _ 11268     data/panel02v.dat
+  _ 39862     data/panel02v.dat_demo
   _ 234       data/panel02v.tab
+  _ 366       data/panel02v.tab_demo
   _ 5327      data/panel04v.dat
+  _ 14941     data/panel04v.dat_demo
   _ 131       data/panel04v.tab
+  _ 168       data/panel04v.tab_demo
   _ 462       data/pulldv.dat
+  _ 126       data/pulldv.tab_demo
   _ 78        data/pulldv.tab
+  _ 976       data/pulldv.dat_demo
   _ 672       data/s_comp.lex
   _ 68214     data/vblk-0.dat
+  _ 266978    data/vblk-0.dat_demo
   _ 696       data/vblk-0.tab
+  _ 1356      data/vblk-0.tab_demo
   _ 104696    data/vele-1.ani
+  _ 104300    data/vele-1.ani_demo
   _ 51849     data/vfra-1.ani
+  _ 51819     data/vfra-1.ani_demo
   _ 90850     data/vlist-1.ani
+  _ 90583     data/vlist-1.ani_demo
   _ 941398    data/vspr-0.dat
   _ 17897     data/vspr-0.tab
   _ 2243      data/vsta-0.ani
   _ 6049      data/vstart-1.ani
+  _ 6048      data/vstart-1.ani_demo
   _ 2316      data/watch01v.dat
+  _ 5284      data/watch01v.dat_demo
   _ 81        data/watch01v.tab
+  _ 108       data/watch01v.tab_demo
+  _ 3         datam/demo.dat_demo
   _ 79261     datam/mblk-0.dat
   _ 1356      datam/mblk-0.tab
   _ 149898    datam/mele-1.ani
@@ -611,6 +1283,7 @@ cksums: |
   _ 12407     levels/hard11.sam
   _ 12722     levels/hard12.sam
   _ 2875      levels/level.l1
+  _ 163948    levels/level.l1_demo
   _ 3606      levels/level.l10
   _ 3906      levels/level.l11
   _ 5045      levels/level.l12
@@ -674,13 +1347,18 @@ cksums: |
   _ 4569      levels/net44.bak
   _ 4637      levels/net44.sam
   _ 132344    qdata/area01v.dat
+  _ 149635    qdata/area01v.dat_demo
   _ 749       qdata/area01v.pal
+  _ 757       qdata/area01v.pal_demo
   _ 158527    qdata/award01v.dat
   _ 745       qdata/award01v.pal
   _ 147659    qdata/award02v.dat
+  _ 150017    qdata/award02v.dat_demo
   _ 745       qdata/award02v.pal
   _ 85036     qdata/award03v.dat
+  _ 157694    qdata/award03v.dat_demo
   _ 140       qdata/award03v.tab
+  _ 140       qdata/award03v.tab_demo
   _ 125482    qdata/bank01v.dat
   _ 760       qdata/bank01v.pal
   _ 13573     qdata/bank02v.dat
@@ -707,19 +1385,33 @@ cksums: |
   _ 8213      qdata/fax02v.dat
   _ 110       qdata/fax02v.tab
   _ 1024      qdata/font00v.dat
+  _ 6776      qdata/font00v.dat_demo
   _ 531       qdata/font00v.tab
+  _ 1170      qdata/font00v.tab_demo
   _ 1331      qdata/font01v.dat
+  _ 7830      qdata/font01v.dat_demo
   _ 524       qdata/font01v.tab
+  _ 1170      qdata/font01v.tab_demo
   _ 1331      qdata/font02v.dat
+  _ 7830      qdata/font02v.dat_demo
   _ 524       qdata/font02v.tab
+  #_ 1170      qdata/font02v.tab_demo
   _ 1489      qdata/font04v.dat
+  _ 9732      qdata/font04v.dat_demo
   _ 540       qdata/font04v.tab
+  _ 1170      qdata/font04v.tab_demo
   _ 596       qdata/font05v.dat
+  _ 2559      qdata/font05v.dat_demo
   _ 289       qdata/font05v.tab
+  _ 582       qdata/font05v.tab_demo
   _ 1094      qdata/font09v.dat
+  _ 7286      qdata/font09v.dat_demo
   _ 481       qdata/font09v.tab
+  _ 1170      qdata/font09v.tab_demo
   _ 3429      qdata/font100v.dat
+  _ 11071     qdata/font100v.dat_demo
   _ 547       qdata/font100v.tab
+  _ 1170      qdata/font100v.tab_demo
   _ 3214      qdata/font101v.dat
   _ 551       qdata/font101v.tab
   _ 3597      qdata/font102v.dat
@@ -771,7 +1463,9 @@ cksums: |
   _ 3067      qdata/font37v.dat
   _ 515       qdata/font37v.tab
   _ 597       qdata/font38v.dat
+  _ 2559      qdata/font38v.dat_demo
   _ 289       qdata/font38v.tab
+  #_ 582       qdata/font38v.tab_demo
   _ 32385     qdata/font39v.dat
   _ 638       qdata/font39v.tab
   _ 30780     qdata/font40v.dat
@@ -800,6 +1494,76 @@ cksums: |
   _ 598       qdata/font60v.tab
   _ 3332      qdata/font74v.dat
   _ 1170      qdata/font74v.tab
+  _ 11062     qdata/font101v.dat_demo
+  _ 1170      qdata/font101v.tab_demo
+  _ 3607      qdata/font102v.dat_demo
+  _ 1176      qdata/font102v.tab_demo
+  _ 14315     qdata/font105v.dat_demo
+  _ 1170      qdata/font105v.tab_demo
+  _ 3021      qdata/font106v.dat_demo
+  _ 1170      qdata/font106v.tab_demo
+  _ 3393      qdata/font110v.dat_demo
+  _ 204       qdata/font110v.tab_demo
+  _ 2475      qdata/font111v.dat_demo
+  _ 204       qdata/font111v.tab_demo
+  _ 21044     qdata/font112v.dat_demo
+  _ 1170      qdata/font112v.tab_demo
+  _ 21048     qdata/font113v.dat_demo
+  _ 1170      qdata/font113v.tab_demo
+  _ 18194     qdata/font115v.dat_demo
+  _ 1170      qdata/font115v.tab_demo
+  _ 14183     qdata/font120v.dat_demo
+  _ 1170      qdata/font120v.tab_demo
+  _ 40205     qdata/font121v.dat_demo
+  _ 1170      qdata/font121v.tab_demo
+  _ 84664     qdata/font122v.dat_demo
+  _ 1170      qdata/font122v.tab_demo
+  _ 11777     qdata/font124v.dat_demo
+  _ 1170      qdata/font124v.tab_demo
+  _ 11202     qdata/font16v.dat_demo
+  _ 1170      qdata/font16v.tab_demo
+  _ 13556     qdata/font18v.dat_demo
+  _ 1170      qdata/font18v.tab_demo
+  _ 13484     qdata/font19v.dat_demo
+  _ 1170      qdata/font19v.tab_demo
+  _ 1524      qdata/font24v.dat_demo
+  _ 582       qdata/font24v.tab_demo
+  _ 11776     qdata/font25v.dat_demo
+  _ 1170      qdata/font25v.tab_demo
+  _ 10844     qdata/font26v.dat_demo
+  _ 1170      qdata/font26v.tab_demo
+  _ 8081      qdata/font31v.dat_demo
+  _ 1170      qdata/font31v.tab_demo
+  _ 2676      qdata/font34v.dat_demo
+  _ 582       qdata/font34v.tab_demo
+  _ 7896      qdata/font35v.dat_demo
+  _ 1170      qdata/font35v.tab_demo
+  _ 9105      qdata/font36v.dat_demo
+  _ 1170      qdata/font36v.tab_demo
+  _ 8101      qdata/font37v.dat_demo
+  _ 1170      qdata/font37v.tab_demo
+  _ 70391     qdata/font39v.dat_demo
+  _ 1170      qdata/font39v.tab_demo
+  _ 64366     qdata/font40v.dat_demo
+  _ 1164      qdata/font40v.tab_demo
+  _ 15539     qdata/font43v.dat_demo
+  _ 1170      qdata/font43v.tab_demo
+  _ 5731      qdata/font44v.dat_demo
+  _ 1170      qdata/font44v.tab_demo
+  _ 8277      qdata/font45v.dat_demo
+  _ 1170      qdata/font45v.tab_demo
+  _ 16105     qdata/font46v.dat_demo
+  _ 1170      qdata/font46v.tab_demo
+  _ 12983     qdata/font47v.dat_demo
+  _ 1170      qdata/font47v.tab_demo
+  _ 7299      qdata/font50v.dat_demo
+  _ 1170      qdata/font50v.tab_demo
+  _ 9835      qdata/font51v.dat_demo
+  _ 1170      qdata/font51v.tab_demo
+  _ 17799     qdata/font60v.dat_demo
+  _ 1170      qdata/font60v.tab_demo
+  _ 3342      qdata/font74v.dat_demo
+  _ 1176      qdata/font74v.tab_demo
   _ 27047     qdata/ghost1.dat
   _ 26873     qdata/ghost2.dat
   _ 37180     qdata/ghost66.dat
@@ -814,9 +1578,13 @@ cksums: |
   _ 113       qdata/load02v.dat
   _ 36        qdata/load02v.tab
   _ 24415     qdata/main01m.dat
+  _ 64000     qdata/main01m.dat_demo
   _ 711       qdata/main01m.pal
+  _ 768       qdata/main01m.pal_demo
   _ 30711     qdata/main02m.dat
+  _ 49160     qdata/main02m.dat_demo
   _ 67        qdata/main02m.tab
+  _ 72        qdata/main02m.tab_demo
   _ 168222    qdata/pol01v.dat
   _ 653       qdata/pol01v.pal
   _ 1870      qdata/pol02v.dat
@@ -828,12 +1596,18 @@ cksums: |
   _ 100447    qdata/rep01v.dat
   _ 686       qdata/rep01v.pal
   _ 2438      qdata/rep02v.dat
+  _ 2461      qdata/rep02v.dat_demo
   _ 81        qdata/rep02v.tab
+  _ 84        qdata/rep02v.tab_demo
   _ 8088      qdata/req00v.dat
+  _ 26382     qdata/req00v.dat_demo
   _ 828       qdata/req00v.tab
+  _ 2490      qdata/req00v.tab_demo
   _ 10765     qdata/req01v.dat
+  _ 35873     qdata/req01v.dat_demo
   _ 846       qdata/req01v.tab
   _ 9348      qdata/req02v.dat
+  _ 9348      qdata/req02v.dat_demo
   _ 821       qdata/req02v.tab
   _ 3972      qdata/req03v.dat
   _ 800       qdata/req03v.tab
@@ -860,7 +1634,9 @@ cksums: |
   _ 30015     qdata/score01v.dat
   _ 768       qdata/score01v.pal
   _ 2506      qdata/spointer.dat
+  _ 6555      qdata/spointer.dat_demo
   _ 152       qdata/spointer.tab
+  _ 216       qdata/spointer.tab_demo
   _ 9559      qdata/staff01v.dat
   _ 746       qdata/staff01v.pal
   _ 4952      qdata/staff02v.dat
@@ -894,6 +1670,7 @@ cksums: |
   _ 11372     sound/audiodrv.dig
   _ 446       sound/data/minheap.dat
   _ 16634862  sound/data/sound-0.dat
+  _ 4647422   sound/data/sound-0.dat_demo
   _ 13205518  sound/data/sound-1.dat
   _ 13601374  sound/data/sound-2.dat
   _ 13665998  sound/data/sound-3.dat
@@ -904,6 +1681,7 @@ cksums: |
   _ 2149      sound/iwav.mdi
   _ 3219      sound/jammer.dig
   _ 24784     sound/midi/atlantis.xmi
+  _ 24784     sound/midi/atlantis.xmi_demo
   _ 8094      sound/midi/candy.xmi
   _ 3066      sound/midi/doctor.xmi
   _ 7728      sound/midi/fortune.xmi
@@ -936,6 +1714,128 @@ cksums: |
   _ 3419      sound/sndsys.dig
   _ 9478      sound/ultra.dig
   _ 49672     sound/ultra.mdi
+
+
+  # only in demo
+  _ 203890    data/award03v.dat
+  _ 144       data/award03v.tab
+  _ 37833     data/bank02v.dat
+  _ 90        data/bank02v.tab
+  _ 23471     data/bid02v.dat
+  _ 66        data/bid02v.tab
+  _ 7707      data/border01.dat
+  _ 108       data/border01.tab
+  _ 252811    data/button01.dat
+  _ 2490      data/button01.tab
+  _ 15201     data/drugn02v.dat
+  _ 78        data/drugn02v.tab
+  _ 73143     data/face01v.dat
+  _ 330       data/face01v.tab
+  _ 116569    data/face02v.dat
+  _ 372       data/face02v.tab
+  _ 1060      data/fame02v.dat
+  _ 18        data/fame02v.tab
+  _ 17393     data/fax02v.dat
+  _ 126       data/fax02v.tab
+  _ 3988      data/graph02v.dat
+  _ 24        data/graph02v.tab
+  _ 85598     data/ham01v.dat
+  _ 54        data/ham01v.tab
+  _ 5734      data/lettr02v.dat
+  _ 30        data/lettr02v.tab
+  _ 91726     data/liq01v.dat
+  _ 54        data/liq01v.tab
+  _ 455       data/load02v.dat
+  _ 36        data/load02v.tab
+  _ 58432     data/main02m.dat
+  _ 72        data/main02m.tab
+  _ 52678     data/panel03v.dat
+  _ 126       data/panel03v.tab
+  _ 7223      data/pol02v.dat
+  _ 42        data/pol02v.tab
+  _ 1460      data/pref02v.dat
+  _ 18        data/pref02v.tab
+  _ 634       data/pulldx.dat
+  _ 66        data/pulldx.tab
+  _ 7030      data/rep02v.dat
+  _ 90        data/rep02v.tab
+  _ 158263    data/res02v.dat
+  _ 114       data/res02v.tab
+  _ 18289     data/staff02v.dat
+  _ 138       data/staff02v.tab
+  _ 731       data/stat02v.dat
+  _ 12        data/stat02v.tab
+  _ 15828     data/town02v.dat
+  _ 120       data/town02v.tab
+  _ 203890    qdata/awardx3v.dat
+  _ 144       qdata/awardx3v.tab
+  _ 37833     qdata/bankx2v.dat
+  _ 90        qdata/bankx2v.tab
+  _ 15201     qdata/drugnx2v.dat
+  _ 78        qdata/drugnx2v.tab
+  _ 1060      qdata/famex2v.dat
+  _ 18        qdata/famex2v.tab
+  _ 17393     qdata/faxx2v.dat
+  _ 126       qdata/faxx2v.tab
+  _ 18656     qdata/font123v.dat
+  _ 1170      qdata/font123v.tab
+  _ 41698     qdata/font125v.dat
+  _ 1170      qdata/font125v.tab
+  _ 41698     qdata/font126v.dat
+  _ 1170      qdata/font126v.tab
+  _ 307200    qdata/gbank.dat
+  _ 768       qdata/gbank.pal
+  _ 307200    qdata/gcasebk.dat
+  _ 768       qdata/gcasebk.pal
+  _ 307200    qdata/ggraph.dat
+  _ 768       qdata/ggraph.pal
+  _ 307200    qdata/gpolicy.dat
+  _ 768       qdata/gpolicy.pal
+  _ 307200    qdata/gres.dat
+  _ 768       qdata/gres.pal
+  _ 307200    qdata/gstaff.dat
+  _ 768       qdata/gstaff.pal
+  _ 307200    qdata/gstat.dat
+  _ 768       qdata/gstat.pal
+  _ 307200    qdata/gstatus.dat
+  _ 768       qdata/gstatus.pal
+  _ 307200    qdata/gtitle.dat
+  _ 768       qdata/gtitle.pal
+  _ 307200    qdata/gtown.dat
+  _ 768       qdata/gtown.pal
+  _ 5734      qdata/lettrx2v.dat
+  _ 30        qdata/lettrx2v.tab
+  _ 455       qdata/loadx2v.dat
+  _ 36        qdata/loadx2v.tab
+  _ 58432     qdata/mainx2m.dat
+  _ 72        qdata/mainx2m.tab
+  _ 7223      qdata/polx2v.dat
+  _ 42        qdata/polx2v.tab
+  _ 18        qdata/prefx2v.tab
+  _ 7030      qdata/repx2v.dat
+  _ 90        qdata/repx2v.tab
+  _ 32164     qdata/sfont39v.dat
+  _ 636       qdata/sfont39v.tab
+  _ 307200    qdata/shot1.dat
+  _ 307200    qdata/shot2.dat
+  _ 307200    qdata/shot3.dat
+  _ 307200    qdata/shot4.dat
+  _ 39829     qdata/staffx2v.dat
+  _ 138       qdata/staffx2v.tab
+  _ 731       qdata/statx2v.dat
+  _ 12        qdata/statx2v.tab
+  _ 15828     qdata/townx2v.dat
+  _ 120       qdata/townx2v.tab
+  _ 3         qdatam/demo.dat
+  _ 11278     sound/adrv688.dig
+  _ 78        sound/midi/mididem.txt
+  _ 4722      sound/pcspkr.mdi
+  _ 446       sound/minheap.dat
+  _ 6948      sound/mt32mpu.mdi
+  _ 1626      sound/null.mdi
+  _ 1546910   sound/sound.dat
+  _ 5027      sound/tandy.mdi
+
 md5sums: |
   4d0c496b10b1b451e91775b11d836f75  anims/320x2401.smk
   2482104ac9d185994dc31ac4eecb1fb1  anims/320x2402.smk
@@ -969,36 +1869,62 @@ md5sums: |
   7594c2c37bec795e4f89f19fb415fe98  anims/mmenu2-0.smk
   8fd881cf9f39cbf4923e4d331ef1b2ef  anims/wingame.smk
   ad06e8010536d1776bf83e1b7d5a8a13  anims/winlevel.smk
+  0e7459b5c4b4792234aef5c4acf25327  anims/winlevel.smk_demo
   e1b04c90ea072c768bdb648e7c75231e  data/lang-0.dat
+  6d111187822271e81b4a734795679494  data/lang-0.dat_demo
   a148d6403794d86c3bc45db5763fef7f  data/lang-1.dat
+  2692c5a0ac6eb308284b1b016409df5d  data/lang-1.dat_demo
   a62db7842fb5c69b8656a2dbb37b5747  data/lang-2.dat
+  5d57bfc4ada67b02ce2cd14427dc135d  data/lang-2.dat_demo
   6d8aaa1b2e4c1d321bdc11d44c084511  data/lang-3.dat
+  ea3fd75651d4d2db2c47a5913c74ea4d  data/lang-3.dat_demo
   af7192b738eb0464e021b782085e2407  data/lang-4.dat
+  24d55bad078d4138765eea9a91faa64e  data/lang-4.dat_demo
   a8835fa97141de8c77bb8711c2c879d6  data/lang-5.dat
+  245198de4dc871dafabfa1d4c4af0519  data/lang-5.dat_demo
   b4e03651694c7ea26e9b97abb99b15ad  data/money01v.dat
+  961725e2ee5014f4658852c962bb5dd0  data/money01v.dat_demo
   904f99f403f303d848a55a971edc10a8  data/money01v.tab
+  5b92d44e4775fc5573b031044685b47f  data/money01v.tab_demo
   31f3128f5b353063af1287af7941a677  data/mpalette.dat
+  7dcd97c3ace710b07bfe58508393b2ae  data/mpalette.dat_demo
   6fbf1b6bc1e98d5e13f35b000db55635  data/mpointer.dat
+  4acf34b03eaa7cb84150a188ab8dcf92  data/mpointer.dat_demo
   bcf33ced656f0dbd9828cbb482478e0d  data/mpointer.tab
+  005824605e9314ec5469fc987949da9d  data/mpointer.tab_demo
   e2a8c9767c2538cc1db5a05d5c26051a  data/p_comp.lex
   991073052f933cb672341317d640b5b0  data/panel02v.dat
+  4eb4409d2a11b7b17707e07277fc3394  data/panel02v.dat_demo
   a23debd4e0bad44397910fdab8857e6d  data/panel02v.tab
+  68e17c770496766a72591e8d456eb3ca  data/panel02v.tab_demo
   4c15322a6202197cb31db9d6d1f1b253  data/panel04v.dat
+  5c4ac86b1c9b87a95bcb3727e3b115b7  data/panel04v.dat_demo
   cf8fc8a7a2a6fd939db5c039af4d166e  data/panel04v.tab
+  1d951a05a4c78a5ebe3854e55e0fcdb6  data/panel04v.tab_demo
   4b5a73d7ae77e7d1bcad8a8acceab7a4  data/pulldv.dat
+  9d977a8e9aeda7f74e27b5827e2f2470  data/pulldv.dat_demo
   b1154a2cb69d2db9ed6e258a51763ae7  data/pulldv.tab
+  d730056338837282f5a6453a89302469  data/pulldv.tab_demo
   39998f4fed528333aa17d5d6925a12cb  data/s_comp.lex
   ee846ad07b04255df493640779bfe28b  data/vblk-0.dat
+  163c3b13a30031282ee09cb3c9825d46  data/vblk-0.dat_demo
   d2e5b1a4bed91f378b204f39c4657537  data/vblk-0.tab
+  fddd902bf626d602bf5a7b4a88b7d96b  data/vblk-0.tab_demo
   94850b3e9488c241237e570d422a50a3  data/vele-1.ani
+  b1ffc5428d8eb17c3726ea73f0c9cbb7  data/vele-1.ani_demo
   d73b64c0a068d36b38ddfb6e1d187c7f  data/vfra-1.ani
+  3011b3869a8240bed72bb216e40602b0  data/vfra-1.ani_demo
   9e0c2a70b327d003e1f9a6c690f9bd81  data/vlist-1.ani
+  ab1cec28671deb140ad5e414b4663b6d  data/vlist-1.ani_demo
   78b6d11e78f12b7ffa4aaeac05618d94  data/vspr-0.dat
   900752d24c1830c7e2bee8cfbb7935e3  data/vspr-0.tab
   b721a25b1c5b354c60d8d8aeb050b174  data/vsta-0.ani
   909edeb6597d0bfceddc610f48febc87  data/vstart-1.ani
+  ab1fc606b90e73cc392b8c48fd894750  data/vstart-1.ani_demo
   e239f965c0c1cba1eea80b577d6f3b27  data/watch01v.dat
+  a8b33f6e0f5be3014d99c85848d8f1c2  data/watch01v.dat_demo
   18ed5ee75e9232c459c6eb4b457a42e4  data/watch01v.tab
+  14c15d82ab1d053c77e015953b45c106  data/watch01v.tab_demo
   7117f43351671959a2c87c7e1a5c6974  datam/mblk-0.dat
   cd49595f435305b109b5d13bac795d7d  datam/mblk-0.tab
   1e421f5d913c90379d85eaa7a93bc931  datam/mele-1.ani
@@ -1064,6 +1990,7 @@ md5sums: |
   6b4c4f48176ddc22a957c06d38e4a2ad  levels/hard11.sam
   915dccd9a2c300040b2e59adaee6a021  levels/hard12.sam
   dcfa87d1dd192a661f6223fbb862e637  levels/level.l1
+  7d63fd3651a16a353b6dde818294b44b  levels/level.l1_demo
   f55ee4611d6a39c512f6ebce5d643fa6  levels/level.l10
   ba29eb37a54d590f8ed4ee08e189ebc6  levels/level.l11
   d715fcb405f106954032447f07c647ae  levels/level.l12
@@ -1127,13 +2054,18 @@ md5sums: |
   cb824088cc5ee34bcd32b6fd0304c016  levels/net44.bak
   8e31590086370abc070a9cf26faff8f7  levels/net44.sam
   3ffd2c0dac1d87e08e822fa7d48d0452  qdata/area01v.dat
+  a873f26e2462133e99d9bb14372c991c  qdata/area01v.dat_demo
   c1514c17f2fdbaa088d377c76d41b7a5  qdata/area01v.pal
+  6bf34242449536f1fbc7b71fec47a1d9  qdata/area01v.pal_demo
   c3ded29011134b38b52a00762971b637  qdata/award01v.dat
   9aebe688c1827409b7d340864ac0c73e  qdata/award01v.pal
   bd678ffff71ce57f8da592fa27b47d2f  qdata/award02v.dat
+  db25af2f1dd00ee2a27975349a493370  qdata/award02v.dat_demo
   9aebe688c1827409b7d340864ac0c73e  qdata/award02v.pal
   a8640c81f8f359824e8f4842b2b93d2a  qdata/award03v.dat
+  86fb970032efeef08cafdf3ee0cfbd97  qdata/award03v.dat_demo
   dbbbca3ec199eeafea29398fbe675cda  qdata/award03v.tab
+  c9b0e7d06122d9040733c2a8c546f13a  qdata/award03v.tab_demo
   9f7a29643706cd0ae77cf6b94fb7267f  qdata/bank01v.dat
   a0db31e12403a6548ed32bef4293e6bd  qdata/bank01v.pal
   d88d92b1218b154a0e6a7e62e70fb901  qdata/bank02v.dat
@@ -1160,85 +2092,163 @@ md5sums: |
   da4279b508b37dd60a7ed91f8d2a62b9  qdata/fax02v.dat
   a0e8b14c4b8dd536502dbf98ec578b63  qdata/fax02v.tab
   c549b73cb5f2989d41f5b0bbf00f32f1  qdata/font00v.dat
+  602452d92715ea323b3b2d4955ac3ce3  qdata/font00v.dat_demo
   1f927bb40de6254b08051e3de8ce894f  qdata/font00v.tab
+  b95396d10543075a03882589dd90482c  qdata/font00v.tab_demo
   22fa30a58c68c565a38c88f8568d86fd  qdata/font01v.dat
+  09f681a41b5331885bafa7d31c2aa179  qdata/font01v.dat_demo
   8785ff51dbf8ccf2c91cf700eb827bf8  qdata/font01v.tab
+  015c91e00b2c9320d69531a0fcbffb24  qdata/font01v.tab_demo
   e25b409b8ff348e0fd44033ee4ab778d  qdata/font02v.dat
+  398b8b76229c3a3dd3af26cac0378b6f  qdata/font02v.dat_demo
   8785ff51dbf8ccf2c91cf700eb827bf8  qdata/font02v.tab
+  #015c91e00b2c9320d69531a0fcbffb24  qdata/font02v.tab_demo
   2545efeb25820506a1564d1b758edbd5  qdata/font04v.dat
+  9bd3b800aba4b63717932e654582e3cf  qdata/font04v.dat_demo
   e1d26d5719c40dbc08452b5f70fcb3d9  qdata/font04v.tab
+  3c0e2c54e5bed8e831e028e93c1c747d  qdata/font04v.tab_demo
   82830e1a76b6d39734f5798a58bcc4ab  qdata/font05v.dat
+  af2e732e8890be409b41586d6ca60084  qdata/font05v.dat_demo
   c3969eae5b050823446955ae32a11fde  qdata/font05v.tab
+  dac1c863261d5a75920e297b4de2118f  qdata/font05v.tab_demo
   8996fe2beddc6b094bb86ace68031c3f  qdata/font09v.dat
+  314e2ef76c618dd23cfebe6e4cd08f40  qdata/font09v.dat_demo
   cfdd3ad7760f09a77ae3332e57fb195a  qdata/font09v.tab
+  a30cab61419e9430799226fb382a5859  qdata/font09v.tab_demo
   59fda34d47185a2ec9baa868aa991618  qdata/font100v.dat
+  80fb7e14bbc68de3a591406fefcd4ae5  qdata/font100v.dat_demo
   f7e5c2e00d0007bffb8d6e62da60658f  qdata/font100v.tab
+  d21f2c25561131106892ec5561c638fd  qdata/font100v.tab_demo
   8eaeb2d4bd5fee13342119a3716dccf9  qdata/font101v.dat
+  df547942fedec78eb6c944a69036577b  qdata/font101v.dat_demo
   59ac12f1f782ba5fe8e8ca80247086f6  qdata/font101v.tab
+  2c2116a3fa7d527986aa0b9de03b704d  qdata/font101v.tab_demo
   c0453fb9e303c113ca347fb746914c42  qdata/font102v.dat
+  4327045fe252176dc4e14bbfa07ce8a7  qdata/font102v.dat_demo
   b0d9d011b1c065cbfe327ab88440507b  qdata/font102v.tab
+  7d646513327f2ea61d09dc61adb415aa  qdata/font102v.tab_demo
   cf8b65c7666c57bcf22e0e75194ce876  qdata/font105v.dat
+  c9b3955d88586dffcec2438121d7020b  qdata/font105v.dat_demo
   3d5649a40ec98af02c694ea975fb8c0d  qdata/font105v.tab
+  de7b1adfc97a945fc537a883ec37e3cc  qdata/font105v.tab_demo
   ef2c7cae4fd5d7af17788c89b7d40dde  qdata/font106v.dat
+  f1ccf873fe880cae26d54ad0d2edefbc  qdata/font106v.dat_demo
   4929184d50ff420f758231508992eca0  qdata/font106v.tab
+  ae4b31d29d8b4b1493b5fbe922058f1d  qdata/font106v.tab_demo
   fa724d6de582ab0afc2f8147c5870739  qdata/font110v.dat
+  d1c372c88f873692c71a1c6344c0b254  qdata/font110v.dat_demo
   058f3417c95fb4eb10de238be68e839c  qdata/font110v.tab
+  0acde65fd0abc9ea22a1373012f5482f  qdata/font110v.tab_demo
   30da24b495ad4b6cd0d872f68cce9c69  qdata/font111v.dat
+  e9c3518c0af9771b87b776036f2b7dee  qdata/font111v.dat_demo
   7aad62ff1219873830c5303ee723a0ef  qdata/font111v.tab
+  b7df0088cdd136636ea71c28b4a2ff41  qdata/font111v.tab_demo
   f2356345a4d8c31ddb3508dac8631c5a  qdata/font112v.dat
+  aefc5f330a59d28bb4adfa5803746652  qdata/font112v.dat_demo
   da1350e1a47bfe2e53693c2507b5ea62  qdata/font112v.tab
+  efd9dc468af7ce353a4d78e5b5129c4c  qdata/font112v.tab_demo
   8c05654ac35faab8bdeecd0b6c9f3991  qdata/font113v.dat
+  5ef558497fe87d3cc7ae46c7da27e221  qdata/font113v.dat_demo
   36f72ed7b788056f769c58490200e820  qdata/font113v.tab
+  35578c573ebe736110e133053b589dab  qdata/font113v.tab_demo
   d76a98c9765856fb8f8fcd2554cdf37e  qdata/font115v.dat
+  65555461719cceaeb6a12fcf46c01a93  qdata/font115v.dat_demo
   5e7bab53c675d9a3ee805a1ee6e74b5f  qdata/font115v.tab
+  f8c249de6c83755ebb9264e707977da0  qdata/font115v.tab_demo
   8548599583a55933a8e717df0aeae173  qdata/font120v.dat
+  c15e21e38af027218786b2e24ecb5ad2  qdata/font120v.dat_demo
   85f830e348563315113f3ddd00487121  qdata/font120v.tab
+  4b3b44c59654152aff3407a47a3bb3bd  qdata/font120v.tab_demo
   5dfe0e7ab4937bc06946700be6dcbc99  qdata/font121v.dat
+  5cb312e3faf07c237486caf9614b24c1  qdata/font121v.dat_demo
   2dfbcc9b92111f5c940f65b30e22c49d  qdata/font121v.tab
+  c1154779832a4727c97f12b85fc9027b  qdata/font121v.tab_demo
   4268e456e0fbbdc09538476e68d914b2  qdata/font122v.dat
+  77758625c01c56bb374184324f131236  qdata/font122v.dat_demo
   916a398ebbb909b83910a45cfcb4ec92  qdata/font122v.tab
+  ccaa7b509feba89711f44566b08901fc  qdata/font122v.tab_demo
   956071f917057674251e5e4ca28fab93  qdata/font124v.dat
+  e32977ebd3c26928da26a4f550b1600b  qdata/font124v.dat_demo
   767a078a2c49f8d879d9f180d43d1536  qdata/font124v.tab
+  e98b0c75d0dc724a2a3a052fc409b463  qdata/font124v.tab_demo
   8e2aa67481c9be7f6cf6e8b05c5d6592  qdata/font16v.dat
+  a9b4f52e6f855f29bdb7f21358781d70  qdata/font16v.dat_demo
   d365efb992da491211e02272a6e720a5  qdata/font16v.tab
+  c825f503e20fe221d89120b7da6820d3  qdata/font16v.tab_demo
   c6e4e74c651a469d5a9f7187b5b18883  qdata/font18v.dat
+  480b2546d1bd5ff5933dbcdac57b2f3d  qdata/font18v.dat_demo
   256d2964236e2f45abad3181b41886be  qdata/font18v.tab
+  d48e57a125a0235eb988ab7e02c60deb  qdata/font18v.tab_demo
   fd43557d13965e12eb4fa981ca937211  qdata/font19v.dat
+  901deb97884b2b5142ff67f501e26822  qdata/font19v.dat_demo
   86cdb567e00e1d1fd6cd63d59bf64b81  qdata/font19v.tab
+  c9967f8fed62b8039e49f92a4e8ba923  qdata/font19v.tab_demo
   c5b02b392ddee461d544a03527cc65b7  qdata/font24v.dat
+  baa2b0f608b3e3b0015389793835fbd7  qdata/font24v.dat_demo
   704bc086d8d4c65f72a00b077d390913  qdata/font24v.tab
+  f6cb25b8acdce7f59c4e218ad13d827c  qdata/font24v.tab_demo
   25a50a9c0a4399a6d4065206e703a5ee  qdata/font250v.dat
   d6f721e7f9c7c98ed3d1211a9ecf29bf  qdata/font250v.tab
   64f521766953878d33d99586232f483d  qdata/font25v.dat
+  cbceed7f463e80d434a856cf2678a2eb  qdata/font25v.dat_demo
   030c6746d3133c605e9cad11bfd514f2  qdata/font25v.tab
+  37171509cccd14f963d7cf1b1f1d5318  qdata/font25v.tab_demo
   6e6202b6fa8ea8e6175acbd84ef6dd0b  qdata/font26v.dat
+  3d5f2f3994cc5d167ea8e8f5c0e5c233  qdata/font26v.dat_demo
   9dce7d0b1e5812ce9180e72939d4057e  qdata/font26v.tab
+  019d2f90e66113a6be4e0f5ca3a2bc5e  qdata/font26v.tab_demo
   7ac7d24f04310bdf4da619ec7023c816  qdata/font31v.dat
+  bc6b15db27ea44beb6d79066b5ebb758  qdata/font31v.dat_demo
   fad2ae06a9dc8fb096c62b2937e8a4a6  qdata/font31v.tab
+  cba702a4455820f06fb1e03058f7cdad  qdata/font31v.tab_demo
   13aae752f920e8fb61e2234a335b17c0  qdata/font34v.dat
+  339b3f511b2b51851ef6fd7aeef05eff  qdata/font34v.dat_demo
   3734198b4b2b3db5ddf66a9fa731bc18  qdata/font34v.tab
+  a71ccf135befd0993e92034a0d19bbd5  qdata/font34v.tab_demo
   8a1409fad87026292dec582d28afe322  qdata/font35v.dat
+  210e7bdb2503b72cd209a2495e82e330  qdata/font35v.dat_demo
   57799435fcc0429b5c11c9f751a814b9  qdata/font35v.tab
+  fd6e1409ac8e52974a2da3d8457bb276  qdata/font35v.tab_demo
   7e0d7aced57073a24490542cb9e88098  qdata/font36v.dat
+  1f98f067b3a07a09ceddce89ab232ebf  qdata/font36v.dat_demo
   30dc1d010f7a7ec01419e11a6ae432eb  qdata/font36v.tab
+  b1cadc7ae6ef591b07f8da9722cb966f  qdata/font36v.tab_demo
   451672af08b004dc60e37b3b8742f551  qdata/font37v.dat
+  1b3ea1887d681318e65faab82e35ef69  qdata/font37v.dat_demo
   e45bed3e34eafd272673efce4bfbc4fc  qdata/font37v.tab
+  85e833cb6421f1405ae70a5c0d615f59  qdata/font37v.tab_demo
   007e78b4051d5f18b9b479098694951c  qdata/font38v.dat
+  2a4a04703f93fb39f48e82f7c845144b  qdata/font38v.dat_demo
   c3969eae5b050823446955ae32a11fde  qdata/font38v.tab
+  #dac1c863261d5a75920e297b4de2118f  qdata/font38v.tab_demo = font05v.tab_demo
   cf9c34b6e76dd6a1fad3ec4a0854cb6a  qdata/font39v.dat
+  7b5921e056ac1ce87cba58f3b0c33c36  qdata/font39v.dat_demo
   9102c16c7a1ad595281dbc2fba93a727  qdata/font39v.tab
+  ee4bdffc4a413c8b16e771312fd1a481  qdata/font39v.tab_demo
   7d875be40634df56b51d6be21a54103e  qdata/font40v.dat
+  1adc35b620511002676990392c997e37  qdata/font40v.dat_demo
   f2a93f9b37284e1ad7f227b8887e98dd  qdata/font40v.tab
+  c6eb57494a2251c570740a4724a316d2  qdata/font40v.tab_demo
   3519e44b3ff2a46f432b008b1b60173e  qdata/font43v.dat
+  ad1e0513aed7ba6ffdfc6d8c9c6e5686  qdata/font43v.dat_demo
   378f9583bd075d95b5c3cbe5030beb78  qdata/font43v.tab
+  c5efc9f26d6702572070dd2aafdf8a3a  qdata/font43v.tab_demo
   6d6b16efc1606e1296481f359043ae3e  qdata/font44v.dat
+  63ee7794658bb5a92dd984097656a9a0  qdata/font44v.dat_demo
   7112432946b7369102b4a68109dbed8e  qdata/font44v.tab
+  06eda6e7d9f14f7a06d63375c0f8c367  qdata/font44v.tab_demo
   39bb279338d0347e0eb049a1b4e50fb6  qdata/font45v.dat
+  0e34939242efa7872ba2d97997e5f6fa  qdata/font45v.dat_demo
   5c67862e336d808059dc22fc79a382e2  qdata/font45v.tab
+  d54f36bf37c05dd5a2dca4f97c420736  qdata/font45v.tab_demo
   1167380a8f0d78957d6f5889259c1f94  qdata/font46v.dat
+  383dc7a2ebb749b2f764abd000cb8001  qdata/font46v.dat_demo
   9b0894abb72a902f64f71c6dd1dc8275  qdata/font46v.tab
+  460752b72d7da8cd867087537a19f548  qdata/font46v.tab_demo
   c94434f69bb3448a7228ec1bd0768973  qdata/font47v.dat
+  a442123055316463251a175b4429f808  qdata/font47v.dat_demo
   c95cd63e403637010470192a00bc5b5e  qdata/font47v.tab
+  74a55f07f7c0ac9ea071907302720418  qdata/font47v.tab_demo
   218fb08713b9a9b5247c8b214faa599e  qdata/font500v.dat
   9102c16c7a1ad595281dbc2fba93a727  qdata/font500v.tab
   edbc68da5131d933ebadfe9e20823c33  qdata/font501v.dat
@@ -1246,13 +2256,21 @@ md5sums: |
   11b5c23577a27543b7d07ab4846f1ef3  qdata/font502v.dat
   ef3d595f0b3899f8347d956e60296940  qdata/font502v.tab
   e19a397d6676775b020bf0bd09edcf5c  qdata/font50v.dat
+  eea1b2d5c6c7e210adad698b6294f935  qdata/font50v.dat_demo
   be6c2c911bb1f314bd9915b14d1bdcd4  qdata/font50v.tab
+  aae06cb47b301585a78d6a238fd7b161  qdata/font50v.tab_demo
   033dd7db16083a6bbde9b31ea35f3c2c  qdata/font51v.dat
+  4e0bc05136f67facea40346d583cd0c8  qdata/font51v.dat_demo
   5a338f0f64dfafee19e2ceb43a7715fb  qdata/font51v.tab
+  709ac096d4da09b38a2313735e821a9f  qdata/font51v.tab_demo
   e79bafccadb1924ef9bc96c290b09f2a  qdata/font60v.dat
+  58b0983b047485eee7f4e4e6be969182  qdata/font60v.dat_demo
   66728bc5dd00f8c9e4b58a6958f6675d  qdata/font60v.tab
+  ae162a7e0a57b0dbf5f7822eff15ca20  qdata/font60v.tab_demo
   80b410ba3b181950b0836618bf8ef4ca  qdata/font74v.dat
+  8de147ac841bd5bbab71a4d9b506289e  qdata/font74v.dat_demo
   7c85d5c6df6b9f84993517356c334273  qdata/font74v.tab
+  06b3b964691750e68ab166863e182d60  qdata/font74v.tab_demo
   9567525210c6aaee79d0ad5eaeb90135  qdata/ghost1.dat
   85da384d02ec6b4d12fa95575afe39c4  qdata/ghost2.dat
   f5235b346a019695f096d82041bad2a3  qdata/ghost66.dat
@@ -1267,9 +2285,13 @@ md5sums: |
   052cf3f6b0e9296789ed6521611326ed  qdata/load02v.dat
   8c6434cf2b6e1ce5b6002a77bd9e4dff  qdata/load02v.tab
   19bc1c7730cb5970212f73d709dcfebd  qdata/main01m.dat
+  7b13f8309c26c2d2fafcc3dec08e496c  qdata/main01m.dat_demo
   034f0ebf8ea537b6233e77a1e92aece2  qdata/main01m.pal
+  ef75f07c3479bf7313e351daca46bf1a  qdata/main01m.pal_demo
   e4dc8946dbb1c05a2d0a333c69356674  qdata/main02m.dat
+  5daeb1b9ca923192b19265e9b5ff5a51  qdata/main02m.dat_demo
   429932219b286eacb28b3cec1c7b3cbf  qdata/main02m.tab
+  68b0d2899b1d1f1fc16a8c1ae52be7b0  qdata/main02m.tab_demo
   2a938992b33dffcac1dc87f505d233c9  qdata/pol01v.dat
   ad237413dc9a136d9a54344cc8e6d6a1  qdata/pol01v.pal
   3b5752e472de16cfd003222af87bcd75  qdata/pol02v.dat
@@ -1282,11 +2304,17 @@ md5sums: |
   702cd5d7d65791890977c160a8d76c7c  qdata/rep01v.pal
   97b9e1a179640e6d2706c2b86a05a2aa  qdata/rep02v.dat
   8be7660487e3eca3d170862e964413a1  qdata/rep02v.tab
+  c16312443352534c4f6f0061a7d3648c  qdata/rep02v.dat_demo
+  6fb917c9dcfe2cb1016d04620112bbd5  qdata/rep02v.tab_demo
   d545710335cd519b8768ff2f6d6212e5  qdata/req00v.dat
+  d450662d4bb2bb45572f31a023116388  qdata/req00v.dat_demo
   1d3346ff53946635d5e07cc66fe0586b  qdata/req00v.tab
+  e2935bebb3455e4684deb2cbc3d31471  qdata/req00v.tab_demo
   f97a18e9b9f7091f7b6308b40a1672db  qdata/req01v.dat
+  f121d8b016a60db36b60e41c4e0405da  qdata/req01v.dat_demo
   9d022dfd64f046fa2068a9fdab962be9  qdata/req01v.tab
   d058c496f9a4bd11e023d382a479f203  qdata/req02v.dat
+  a63914f1236fb2b52772cf64e732c4e2  qdata/req02v.dat_demo
   986ab5e5fceb9cf483f8c0a51e631933  qdata/req02v.tab
   3a80296bcba8c3baf0d2f46fe11b6a88  qdata/req03v.dat
   38556edb3c568e1e382cf9db4d1953bf  qdata/req03v.tab
@@ -1313,7 +2341,9 @@ md5sums: |
   08b8ba1c8feb0f0b245119f9ed489c97  qdata/score01v.dat
   447fc20471245010ea274f106b1af28c  qdata/score01v.pal
   7789c6d78fcf1886721dc6b39e1b783f  qdata/spointer.dat
+  36fcf40d0138abd68216e1ddc439a091  qdata/spointer.dat_demo
   cfeb0596cf5e7f0d77c8d9769cafe3b7  qdata/spointer.tab
+  88f3748cefcaf9573960d322ee926431  qdata/spointer.tab_demo
   2363a96fae76bc109ba2f28ccb78e1f6  qdata/staff01v.dat
   31f3128f5b353063af1287af7941a677  qdata/staff01v.pal
   e2d8c461dec2efc4ae787880e610e3d2  qdata/staff02v.dat
@@ -1347,6 +2377,7 @@ md5sums: |
   593c549bdc6cae6cd9520344c4f9a32e  sound/audiodrv.dig
   186eef69c73dd3412e9b1eac740d74d9  sound/data/minheap.dat
   58bfe6434a194b8b34c612a890c376e4  sound/data/sound-0.dat
+  e1d100e2ad1e405661334b6735cc7097  sound/data/sound-0.dat_demo
   d05a46fcb73e55751b54734290f65247  sound/data/sound-1.dat
   eac6ae01dda24c16c56494b40b4b4637  sound/data/sound-2.dat
   551d2d229ab546f4dbd5f0fb69d66f99  sound/data/sound-3.dat
@@ -1357,6 +2388,7 @@ md5sums: |
   97a886f2cc1a06d857de2e2a3bbb3805  sound/iwav.mdi
   4922c729c5e7b347089a2be44f296859  sound/jammer.dig
   721d2335497252560be9a3f338562e7c  sound/midi/atlantis.xmi
+  87a0b53d2419364b9a47c0eddecbea59  sound/midi/atlantis.xmi_demo
   f6c9d9f6fd75510210f66ea807dcefc5  sound/midi/candy.xmi
   d14136d6b242452f0811eca1554208eb  sound/midi/doctor.xmi
   da94d098fcc4a9a906c5646c5be9f9aa  sound/midi/fortune.xmi
@@ -1389,6 +2421,126 @@ md5sums: |
   605073be24c73d794c0417a58cf262fa  sound/sndsys.dig
   000e584a06712d2f2b58eb2e17b65248  sound/ultra.dig
   9a1b881ab9e8f6d827f6c27c5df40d85  sound/ultra.mdi
+  # only in demo
+  300fad279101d2f395f198d5eab29a7b  data/award03v.dat
+  cc977b1678382ec17ae260b8998fc659  data/award03v.tab
+  4ef1cd7f44f525a61db499b083d6bf16  data/bank02v.dat
+  90a6896601998ed59e57a7abd8ba5c20  data/bank02v.tab
+  fd12c24fbd85673987a630c2ae76528c  data/bid02v.dat
+  28fc09de9f4a66419b7b98f41e55a597  data/bid02v.tab
+  6b187c2a689879a82da2dc6971825082  data/border01.dat
+  c12d52fc2c6c102262b2925af9cf0d67  data/border01.tab
+  c89037c833b55765a1b0fe32334a21df  data/button01.dat
+  4606e82307868d0090a3aec25f7584d1  data/button01.tab
+  9d5b79fb1775c39128e7283e8ff538a3  data/drugn02v.dat
+  25bbf8ae790a16fe47e718f85dd4f2e1  data/drugn02v.tab
+  5e79c672f552ee7a8acb39d71584b3b7  data/face01v.dat
+  55668efde786b76ce62e737c3aaa94b2  data/face01v.tab
+  6b4b42b48024db06c7876c13bd5b89b2  data/face02v.dat
+  1dbca0f358dee2308f6b2a00614d5e3c  data/face02v.tab
+  c5785a7e143f644e5f6d6b39b163e291  data/fame02v.dat
+  ef6cb23abda54f0abf627533d6b9322a  data/fame02v.tab
+  f4f97536701da34e83904133be469bf8  data/fax02v.dat
+  990027a17cf17762464501f280299f22  data/fax02v.tab
+  4d2503bb1b68cc3dfc720dd73705979e  data/graph02v.dat
+  62e4ec9391eb4dca0645956547463e34  data/graph02v.tab
+  c7e05a3dfa77efddbec592a46097006f  data/ham01v.dat
+  5162a5e417f44ba7441c20355e348024  data/ham01v.tab
+  9071c8a5d0210a632b22af3b5b74486f  data/lettr02v.dat
+  d1d84312c426a48b7010f9a477f6d9a0  data/lettr02v.tab
+  c948d0f702437b31e72ebb7d68c417fb  data/liq01v.dat
+  255490b25d2c4603f6b37ac22502896c  data/liq01v.tab
+  9a9043a9e389c35c7f5ba62fa35cf1a0  data/load02v.dat
+  f12c74f632478b0ec9e7fe70fbe83f72  data/load02v.tab
+  a68538eefc27247a8eaf7a0921c55f92  data/main02m.dat
+  403aa3d0f0c89294c16144512a5e29be  data/main02m.tab
+  06e92de469fdfd1c8a24269d7b71abf7  data/panel03v.dat
+  af2b9eb3c6483898fb6a4bd9baf0b583  data/panel03v.tab
+  4925000ce1895c7fc84e84668a8f585d  data/pol02v.dat
+  2456b46c3eb09ab27787704b436dd508  data/pol02v.tab
+  80b879d7b71f76f5e4027b47e0c70c7c  data/pref02v.dat
+  75a3c5d0fa993423006055d89fa5b7a1  data/pref02v.tab
+  12eee3b17dab6233552e060a328d0eed  data/pulldx.dat
+  25be6b3cd7fadb40b45784713f97af78  data/pulldx.tab
+  0d0ceb80844c16f804945793b7b8e69c  data/rep02v.dat
+  9eeeaadc025c735b9e6cd7a4ce3f94d9  data/rep02v.tab
+  cbf07a33ba9ed9e9ecc1ebc5b6029400  data/res02v.dat
+  babb34bde91093e3c66b29553e9d0bc8  data/res02v.tab
+  afb2dd5fab7068a4efe381cd00171e65  data/staff02v.dat
+  ea0fc1a225060e7cf1bb98f6f8d525e4  data/staff02v.tab
+  5afd88ea1aaf17460ec6f48d16228e11  data/stat02v.dat
+  218169fcb8a5ed6a8da59fee723c047b  data/stat02v.tab
+  9451b3f63209359c38f5d881eb94fab9  data/town02v.dat
+  09a2b13ee7b7ddbd32315dc2aa741040  data/town02v.tab
+  bc949ea893a9384070c31f083ccefd26  datam/demo.dat
+  300fad279101d2f395f198d5eab29a7b  qdata/awardx3v.dat
+  cc977b1678382ec17ae260b8998fc659  qdata/awardx3v.tab
+  4ef1cd7f44f525a61db499b083d6bf16  qdata/bankx2v.dat
+  90a6896601998ed59e57a7abd8ba5c20  qdata/bankx2v.tab
+  9d5b79fb1775c39128e7283e8ff538a3  qdata/drugnx2v.dat
+  25bbf8ae790a16fe47e718f85dd4f2e1  qdata/drugnx2v.tab
+  c5785a7e143f644e5f6d6b39b163e291  qdata/famex2v.dat
+  ef6cb23abda54f0abf627533d6b9322a  qdata/famex2v.tab
+  f4f97536701da34e83904133be469bf8  qdata/faxx2v.dat
+  990027a17cf17762464501f280299f22  qdata/faxx2v.tab
+  e7a20e43bc245926d1a53d8d78348e78  qdata/font123v.dat
+  21ddd246831cc72cbb8ca1b68756738d  qdata/font123v.tab
+  f45fa50a9b4393bb1d8d9590204ce5b3  qdata/font125v.dat
+  05f3a78f9d942e1b54c3ddde90726468  qdata/font125v.tab
+  bcf0151c3143a43513a1e7a6445b54f2  qdata/font126v.dat
+  aa164101352f033736984cc083e3a590  qdata/font126v.tab
+  f973e5f158d87ed087a3633fc662eb63  qdata/gbank.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gbank.pal
+  dd5dc3e8195637dc8e19e1c2e810364c  qdata/gcasebk.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gcasebk.pal
+  308a7e65e90773b34dc1c2ce2dec1e71  qdata/ggraph.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/ggraph.pal
+  ecd34d6aaf96c0987ce5a8b8d615d612  qdata/gpolicy.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gpolicy.pal
+  21846cd934624cd8863737f70ab83692  qdata/gres.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gres.pal
+  ba922f65761579c975e156250f2c1583  qdata/gstaff.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gstaff.pal
+  498941800dff7b6cb542e1885a92f864  qdata/gstat.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gstat.pal
+  761d26ce94fc1ad3240a0ad978d40cf5  qdata/gstatus.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gstatus.pal
+  f96d3470664b88a4d46e0573dcbc1eaf  qdata/gtitle.dat
+  ecbfb590b7573b58d349ac84d07f21dd  qdata/gtitle.pal
+  f589f8ba0457a4855f7421e2d25b19c5  qdata/gtown.dat
+  a157347895d51a6c7712bca53ad6010e  qdata/gtown.pal
+  9071c8a5d0210a632b22af3b5b74486f  qdata/lettrx2v.dat
+  d1d84312c426a48b7010f9a477f6d9a0  qdata/lettrx2v.tab
+  9a9043a9e389c35c7f5ba62fa35cf1a0  qdata/loadx2v.dat
+  f12c74f632478b0ec9e7fe70fbe83f72  qdata/loadx2v.tab
+  a68538eefc27247a8eaf7a0921c55f92  qdata/mainx2m.dat
+  403aa3d0f0c89294c16144512a5e29be  qdata/mainx2m.tab
+  4925000ce1895c7fc84e84668a8f585d  qdata/polx2v.dat
+  2456b46c3eb09ab27787704b436dd508  qdata/polx2v.tab
+  75a3c5d0fa993423006055d89fa5b7a1  qdata/prefx2v.tab
+  0d0ceb80844c16f804945793b7b8e69c  qdata/repx2v.dat
+  9eeeaadc025c735b9e6cd7a4ce3f94d9  qdata/repx2v.tab
+  ebecf290e31e2b4766e32e7f569b7294  qdata/sfont39v.dat
+  2c75edd66ae4b478eaf928ac6c315625  qdata/sfont39v.tab
+  587a779c02b7da79348fa6bc7e156592  qdata/shot1.dat
+  784c2beabfc2d8b7243721e9a7eb0cc4  qdata/shot2.dat
+  2e3f53e38022dfea6c2c9c9b230f8e78  qdata/shot3.dat
+  82117b7e2902175bc7cf9abe68e1ce52  qdata/shot4.dat
+  654efcc8b99fd7a62c5b843426344c8f  qdata/staffx2v.dat
+  402daf7efcb422bfef59bc7c71a2e56d  qdata/staffx2v.tab
+  5afd88ea1aaf17460ec6f48d16228e11  qdata/statx2v.dat
+  218169fcb8a5ed6a8da59fee723c047b  qdata/statx2v.tab
+  9451b3f63209359c38f5d881eb94fab9  qdata/townx2v.dat
+  09a2b13ee7b7ddbd32315dc2aa741040  qdata/townx2v.tab
+  bc949ea893a9384070c31f083ccefd26  qdatam/demo.dat
+  feabc78729e3a458ae2f6ab40146f0d9  sound/adrv688.dig
+  b1861bc38ea5f8849420e4eb517eca67  sound/midi/mididem.txt
+  186eef69c73dd3412e9b1eac740d74d9  sound/minheap.dat
+  cc7dab1625ba97d8305787e9d0f062b6  sound/mt32mpu.mdi
+  ebc5b16eacf390cd6cc1b557a1519320  sound/null.mdi
+  f0dc098f0315b2e9a075d4a65bdcd97f  sound/pcspkr.mdi
+  4313a6fbd5b3af4d757c23263babbb2f  sound/sound.dat
+  4c2e1cf51fea7674ee3c6250ea96e0d4  sound/tandy.mdi
 sha1sums: |
   cdc8d8db5f52c95ba19efd04b3e5e28a40b53967  anims/320x2401.smk
   959bd1438315ae34ffd32c8cdf139a6adc46d1ba  anims/320x2402.smk
@@ -1422,6 +2574,7 @@ sha1sums: |
   3abe05e7b6a4918cd313d9611c90a4b8ebf0c435  anims/mmenu2-0.smk
   bf4cfe87bc77ba7c1589a85e7247763a6ebd200e  anims/wingame.smk
   623a9b36385fadc048930cd55e69a4d1eaf02600  anims/winlevel.smk
+  a82974b2acb924ebe21f66705266440c6d066047  anims/winlevel.smk_demo
   269b57de66148554de4b26597aa742e53b41b72b  data/lang-0.dat
   7fb94050d383d73c0b13acf2a0b7d0c1546f719a  data/lang-1.dat
   773d236fb95e80bcd9d4b464ff1d6f5186988e42  data/lang-2.dat
