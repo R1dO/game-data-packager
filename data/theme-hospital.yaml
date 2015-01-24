@@ -2,14 +2,15 @@
 ---
 
 help_text: |
-  A demo can be manually downloaded here:
-  http://www.fileplanet.com/11380/download/Theme-Hospital-Demo
-  or there (click 'Télécharger'):
-  http://www.jeuxvideo.com/telecharger/jeux-et-demos/00002576-theme-hospital-pc.htm
+  For the full version, provide a Theme Hospital installation,
+  or the gog.com installer setup_theme_hospital_2.0.0.5.exe.
 
-  Then you just need to run
-  # game-data-pakcager theme-hospital <directory>
-  where directory is the location where you have downloaded the archive.
+  game-data-packager can download the demo version automatically.
+
+  A different demo version can be manually downloaded here:
+  http://www.fileplanet.com/11380/download/Theme-Hospital-Demo
+  or here (click 'Télécharger'):
+  http://www.jeuxvideo.com/telecharger/jeux-et-demos/00002576-theme-hospital-pc.htm
 
 packages:
   theme-hospital-full-data:
@@ -19,10 +20,33 @@ packages:
       conflicts: theme-hospital-demo-data
       engine: corsix-th
     optional:
+    # documentation
     - EN.pdf
     - FR.pdf
     - GE.pdf
     - IT.pdf
+    - manual.pdf
+    - gog_eula.txt
+    - eula.txt
+    # not present in the gog.com copy; judging by their names, they're
+    # probably unnecessary?
+    - levels/easy00.bak
+    - levels/hard00.bak
+    - levels/net20.bak
+    - levels/net21.bak
+    - levels/net22.bak
+    - levels/net23.bak
+    - levels/net24.bak
+    - levels/net30.bak
+    - levels/net31.bak
+    - levels/net32.bak
+    - levels/net33.bak
+    - levels/net34.bak
+    - levels/net40.bak
+    - levels/net41.bak
+    - levels/net42.bak
+    - levels/net43.bak
+    - levels/net44.bak
     install:
     - intro/attract.smk
     - intro/intro.sm2
@@ -322,7 +346,6 @@ packages:
     - qdata/town02v.tab
     - qdata/ver00v.dat
     - qdata/ver00v.tab
-    - levels/easy00.bak
     - levels/easy00.sam
     - levels/easy01.sam
     - levels/easy02.sam
@@ -349,7 +372,6 @@ packages:
     - levels/full10.sam
     - levels/full11.sam
     - levels/full12.sam
-    - levels/hard00.bak
     - levels/hard00.sam
     - levels/hard01.sam
     - levels/hard02.sam
@@ -394,37 +416,22 @@ packages:
     - levels/level.l9
     - levels/net00.sam
     - levels/net2.dat
-    - levels/net20.bak
     - levels/net20.sam
-    - levels/net21.bak
     - levels/net21.sam
-    - levels/net22.bak
     - levels/net22.sam
-    - levels/net23.bak
     - levels/net23.sam
-    - levels/net24.bak
     - levels/net24.sam
     - levels/net3.dat
-    - levels/net30.bak
     - levels/net30.sam
-    - levels/net31.bak
     - levels/net31.sam
-    - levels/net32.bak
     - levels/net32.sam
-    - levels/net33.bak
     - levels/net33.sam
-    - levels/net34.bak
     - levels/net34.sam
     - levels/net4.dat
-    - levels/net40.bak
     - levels/net40.sam
-    - levels/net41.bak
     - levels/net41.sam
-    - levels/net42.bak
     - levels/net42.sam
-    - levels/net43.bak
     - levels/net43.sam
-    - levels/net44.bak
     - levels/net44.sam
     - datam/mblk-0.dat
     - datam/mblk-0.tab
@@ -860,6 +867,14 @@ packages:
         usr/share/games/theme-hospital/data/mpalette.dat
 
 files:
+  levels/full00.sam:
+    alternatives:
+      - levels/full00.sam_cd
+      - levels/full00.sam_gog
+  levels/full00.sam_cd:
+    look_for: [levels/full00.sam]
+  levels/full00.sam_gog:
+    look_for: [levels/full00.sam]
   EN.pdf:
     size: 4514818
     md5: 61c5337dd5d371b57bdf9ccdc95b4960
@@ -875,6 +890,12 @@ files:
   IT.pdf:
     size: 1028644
     md5: 0a8b2534c4c6cfa31815ec75b3877996
+    install_to: $docdir
+  manual.pdf:
+    install_to: $docdir
+  eula.txt:
+    install_to: $docdir
+  gog_eula.txt:
     install_to: $docdir
   anims/winlevel.smk_demo:
     install_as: anims/winlevel.smk
@@ -1876,6 +1897,454 @@ files:
     - sound/ultra.dig
     - sound/ultra.mdi
 
+  setup_theme_hospital_2.0.0.5.exe:
+    provides:
+    - anims/320x2401.smk
+    - anims/320x2402.smk
+    - anims/320x2403.smk
+    - anims/320x2404.smk
+    - anims/320x2405.smk
+    - anims/320x2406.smk
+    - anims/area01v.smk
+    - anims/area02v.smk
+    - anims/area03v.smk
+    - anims/area04v.smk
+    - anims/area05v.smk
+    - anims/area06v.smk
+    - anims/area07v.smk
+    - anims/area08v.smk
+    - anims/area09v.smk
+    - anims/area10v.smk
+    - anims/area11v.smk
+    - anims/area12v.smk
+    - anims/area13v.smk
+    - anims/area14v.smk
+    - anims/attract.smk
+    - anims/lopaper.smk
+    - anims/lose1.smk
+    - anims/lose2.smk
+    - anims/lose3.smk
+    - anims/lose4.smk
+    - anims/lose5.smk
+    - anims/lose6.smk
+    - anims/mmenu1-0.smk
+    - anims/mmenu2-0.smk
+    - anims/wingame.smk
+    - anims/winlevel.smk
+    - data/lang-0.dat
+    - data/lang-1.dat
+    - data/lang-2.dat
+    - data/lang-3.dat
+    - data/lang-4.dat
+    - data/lang-5.dat
+    - data/money01v.dat
+    - data/money01v.tab
+    - data/mpalette.dat
+    - data/mpointer.dat
+    - data/mpointer.tab
+    - data/p_comp.lex
+    - data/panel02v.dat
+    - data/panel02v.tab
+    - data/panel04v.dat
+    - data/panel04v.tab
+    - data/pulldv.dat
+    - data/pulldv.tab
+    - data/s_comp.lex
+    - data/vblk-0.dat
+    - data/vblk-0.tab
+    - data/vele-1.ani
+    - data/vfra-1.ani
+    - data/vlist-1.ani
+    - data/vspr-0.dat
+    - data/vspr-0.tab
+    - data/vsta-0.ani
+    - data/vstart-1.ani
+    - data/watch01v.dat
+    - data/watch01v.tab
+    - datam/mblk-0.dat
+    - datam/mblk-0.tab
+    - datam/mele-1.ani
+    - datam/mfra-1.ani
+    - datam/mlist-1.ani
+    - datam/money01m.dat
+    - datam/money01m.tab
+    - datam/mpointer.dat
+    - datam/mpointer.tab
+    - datam/mspr-0.dat
+    - datam/mspr-0.tab
+    - datam/mstart-1.ani
+    - datam/mutton01.dat
+    - datam/mutton01.tab
+    - datam/panel02m.dat
+    - datam/panel02m.tab
+    - datam/pulldm.dat
+    - datam/pulldm.tab
+    - datam/watch01m.dat
+    - datam/watch01m.tab
+    - intro/attract.smk
+    - intro/intro.sm2
+    - intro/intro.sm4
+    - levels/easy00.sam
+    - levels/easy01.sam
+    - levels/easy02.sam
+    - levels/easy03.sam
+    - levels/easy04.sam
+    - levels/easy05.sam
+    - levels/easy06.sam
+    - levels/easy07.sam
+    - levels/easy08.sam
+    - levels/easy09.sam
+    - levels/easy10.sam
+    - levels/easy11.sam
+    - levels/easy12.sam
+    - levels/full00.sam_gog
+    - levels/full01.sam
+    - levels/full02.sam
+    - levels/full03.sam
+    - levels/full04.sam
+    - levels/full05.sam
+    - levels/full06.sam
+    - levels/full07.sam
+    - levels/full08.sam
+    - levels/full09.sam
+    - levels/full10.sam
+    - levels/full11.sam
+    - levels/full12.sam
+    - levels/hard00.sam
+    - levels/hard01.sam
+    - levels/hard02.sam
+    - levels/hard03.sam
+    - levels/hard04.sam
+    - levels/hard05.sam
+    - levels/hard06.sam
+    - levels/hard07.sam
+    - levels/hard08.sam
+    - levels/hard09.sam
+    - levels/hard10.sam
+    - levels/hard11.sam
+    - levels/hard12.sam
+    - levels/level.l1
+    - levels/level.l10
+    - levels/level.l11
+    - levels/level.l12
+    - levels/level.l13
+    - levels/level.l14
+    - levels/level.l2
+    - levels/level.l20
+    - levels/level.l21
+    - levels/level.l22
+    - levels/level.l23
+    - levels/level.l24
+    - levels/level.l3
+    - levels/level.l30
+    - levels/level.l31
+    - levels/level.l32
+    - levels/level.l33
+    - levels/level.l34
+    - levels/level.l4
+    - levels/level.l40
+    - levels/level.l41
+    - levels/level.l42
+    - levels/level.l43
+    - levels/level.l44
+    - levels/level.l5
+    - levels/level.l6
+    - levels/level.l7
+    - levels/level.l8
+    - levels/level.l9
+    - levels/net00.sam
+    - levels/net2.dat
+    - levels/net20.sam
+    - levels/net21.sam
+    - levels/net22.sam
+    - levels/net23.sam
+    - levels/net24.sam
+    - levels/net3.dat
+    - levels/net30.sam
+    - levels/net31.sam
+    - levels/net32.sam
+    - levels/net33.sam
+    - levels/net34.sam
+    - levels/net4.dat
+    - levels/net40.sam
+    - levels/net41.sam
+    - levels/net42.sam
+    - levels/net43.sam
+    - levels/net44.sam
+    - manual.pdf
+    - qdata/area01v.dat
+    - qdata/area01v.pal
+    - qdata/award01v.dat
+    - qdata/award01v.pal
+    - qdata/award02v.dat
+    - qdata/award02v.pal
+    - qdata/award03v.dat
+    - qdata/award03v.tab
+    - qdata/bank01v.dat
+    - qdata/bank01v.pal
+    - qdata/bank02v.dat
+    - qdata/bank02v.tab
+    - qdata/bid01v.dat
+    - qdata/bid01v.pal
+    - qdata/bid02v.dat
+    - qdata/bid02v.tab
+    - qdata/brief01v.dat
+    - qdata/brief01v.pal
+    - qdata/cred01v.dat
+    - qdata/cred01v.pal
+    - qdata/drugn01v.dat
+    - qdata/drugn01v.pal
+    - qdata/drugn02v.dat
+    - qdata/drugn02v.tab
+    - qdata/face01v.dat
+    - qdata/fame01v.dat
+    - qdata/fame01v.pal
+    - qdata/fame02v.dat
+    - qdata/fame02v.tab
+    - qdata/fax01v.dat
+    - qdata/fax01v.pal
+    - qdata/fax02v.dat
+    - qdata/fax02v.tab
+    - qdata/font00v.dat
+    - qdata/font00v.tab
+    - qdata/font01v.dat
+    - qdata/font01v.tab
+    - qdata/font02v.dat
+    - qdata/font02v.tab
+    - qdata/font04v.dat
+    - qdata/font04v.tab
+    - qdata/font05v.dat
+    - qdata/font05v.tab
+    - qdata/font09v.dat
+    - qdata/font09v.tab
+    - qdata/font100v.dat
+    - qdata/font100v.tab
+    - qdata/font101v.dat
+    - qdata/font101v.tab
+    - qdata/font102v.dat
+    - qdata/font102v.tab
+    - qdata/font105v.dat
+    - qdata/font105v.tab
+    - qdata/font106v.dat
+    - qdata/font106v.tab
+    - qdata/font110v.dat
+    - qdata/font110v.tab
+    - qdata/font111v.dat
+    - qdata/font111v.tab
+    - qdata/font112v.dat
+    - qdata/font112v.tab
+    - qdata/font113v.dat
+    - qdata/font113v.tab
+    - qdata/font115v.dat
+    - qdata/font115v.tab
+    - qdata/font120v.dat
+    - qdata/font120v.tab
+    - qdata/font121v.dat
+    - qdata/font121v.tab
+    - qdata/font122v.dat
+    - qdata/font122v.tab
+    - qdata/font124v.dat
+    - qdata/font124v.tab
+    - qdata/font16v.dat
+    - qdata/font16v.tab
+    - qdata/font18v.dat
+    - qdata/font18v.tab
+    - qdata/font19v.dat
+    - qdata/font19v.tab
+    - qdata/font24v.dat
+    - qdata/font24v.tab
+    - qdata/font250v.dat
+    - qdata/font250v.tab
+    - qdata/font25v.dat
+    - qdata/font25v.tab
+    - qdata/font26v.dat
+    - qdata/font26v.tab
+    - qdata/font31v.dat
+    - qdata/font31v.tab
+    - qdata/font34v.dat
+    - qdata/font34v.tab
+    - qdata/font35v.dat
+    - qdata/font35v.tab
+    - qdata/font36v.dat
+    - qdata/font36v.tab
+    - qdata/font37v.dat
+    - qdata/font37v.tab
+    - qdata/font38v.dat
+    - qdata/font38v.tab
+    - qdata/font39v.dat
+    - qdata/font39v.tab
+    - qdata/font40v.dat
+    - qdata/font40v.tab
+    - qdata/font43v.dat
+    - qdata/font43v.tab
+    - qdata/font44v.dat
+    - qdata/font44v.tab
+    - qdata/font45v.dat
+    - qdata/font45v.tab
+    - qdata/font46v.dat
+    - qdata/font46v.tab
+    - qdata/font47v.dat
+    - qdata/font47v.tab
+    - qdata/font500v.dat
+    - qdata/font500v.tab
+    - qdata/font501v.dat
+    - qdata/font501v.tab
+    - qdata/font502v.dat
+    - qdata/font502v.tab
+    - qdata/font50v.dat
+    - qdata/font50v.tab
+    - qdata/font51v.dat
+    - qdata/font51v.tab
+    - qdata/font60v.dat
+    - qdata/font60v.tab
+    - qdata/font74v.dat
+    - qdata/font74v.tab
+    - qdata/ghost1.dat
+    - qdata/ghost2.dat
+    - qdata/ghost66.dat
+    - qdata/graph01v.dat
+    - qdata/graph01v.pal
+    - qdata/graph02v.dat
+    - qdata/graph02v.tab
+    - qdata/lettr02v.dat
+    - qdata/lettr02v.tab
+    - qdata/load01v.dat
+    - qdata/load01v.pal
+    - qdata/load02v.dat
+    - qdata/load02v.tab
+    - qdata/main01m.dat
+    - qdata/main01m.pal
+    - qdata/main02m.dat
+    - qdata/main02m.tab
+    - qdata/pol01v.dat
+    - qdata/pol01v.pal
+    - qdata/pol02v.dat
+    - qdata/pol02v.tab
+    - qdata/pref01v.dat
+    - qdata/pref01v.pal
+    - qdata/pref02v.dat
+    - qdata/pref02v.tab
+    - qdata/rep01v.dat
+    - qdata/rep01v.pal
+    - qdata/rep02v.dat
+    - qdata/rep02v.tab
+    - qdata/req00v.dat
+    - qdata/req00v.tab
+    - qdata/req01v.dat
+    - qdata/req01v.tab
+    - qdata/req02v.dat
+    - qdata/req02v.tab
+    - qdata/req03v.dat
+    - qdata/req03v.tab
+    - qdata/req04v.dat
+    - qdata/req04v.tab
+    - qdata/req05v.dat
+    - qdata/req05v.tab
+    - qdata/req06v.dat
+    - qdata/req06v.tab
+    - qdata/req09v.dat
+    - qdata/req09v.tab
+    - qdata/req10v.dat
+    - qdata/req10v.tab
+    - qdata/req11v.dat
+    - qdata/req11v.tab
+    - qdata/req12v.dat
+    - qdata/req12v.tab
+    - qdata/req13v.dat
+    - qdata/req13v.tab
+    - qdata/res01v.dat
+    - qdata/res01v.pal
+    - qdata/res02v.dat
+    - qdata/res02v.tab
+    - qdata/score01v.dat
+    - qdata/score01v.pal
+    - qdata/spointer.dat
+    - qdata/spointer.tab
+    - qdata/staff01v.dat
+    - qdata/staff01v.pal
+    - qdata/staff02v.dat
+    - qdata/staff02v.tab
+    - qdata/stat01v.dat
+    - qdata/stat01v.pal
+    - qdata/stat02v.dat
+    - qdata/stat02v.tab
+    - qdata/title01v.dat
+    - qdata/title01v.pal
+    - qdata/town.dat
+    - qdata/town01v.dat
+    - qdata/town01v.pal
+    - qdata/town02v.dat
+    - qdata/town02v.tab
+    - qdata/ver00v.dat
+    - qdata/ver00v.tab
+    - qdatam/face01m.dat
+    - qdatam/font100m.dat
+    - qdatam/font100m.tab
+    - qdatam/font101m.dat
+    - qdatam/font101m.tab
+    - qdatam/font130m.dat
+    - qdatam/font130m.tab
+    - qdatam/font131m.dat
+    - qdatam/font131m.tab
+    - qdatam/font132m.dat
+    - qdatam/font132m.tab
+    - sound/adlib.mdi
+    - sound/adlibg.mdi
+    - sound/audiodrv.dig
+    - sound/data/minheap.dat
+    - sound/data/sound-0.dat
+    - sound/data/sound-1.dat
+    - sound/data/sound-2.dat
+    - sound/data/sound-3.dat
+    - sound/data/sound-4.dat
+    - sound/data/sound-5.dat
+    - sound/dig.ini
+    - sound/dos4gw.exe
+    - sound/esfm.mdi
+    - sound/iwav.dig
+    - sound/iwav.mdi
+    - sound/jammer.dig
+    - sound/mdi.ini
+    - sound/midi/atlantis.xmi
+    - sound/midi/candy.xmi
+    - sound/midi/doctor.xmi
+    - sound/midi/fortune.xmi
+    - sound/midi/hospmidi.bat
+    - sound/midi/mend.xmi
+    - sound/midi/midi.txt
+    - sound/midi/midiform.exe
+    - sound/midi/nightsh.xmi
+    - sound/midi/readme.txt
+    - sound/midi/sixseven.xmi
+    - sound/midi/steady.xmi
+    - sound/mpu401.mdi
+    - sound/mssdrvr.lst
+    - sound/mssw95.exe
+    - sound/nvdig.dig
+    - sound/nvmpu.mdi
+    - sound/opl3.mdi
+    - sound/pas.mdi
+    - sound/pasplus.mdi
+    - sound/proaudio.dig
+    - sound/rap10.dig
+    - sound/sample.ad
+    - sound/sample.opl
+    - sound/sb16.dig
+    - sound/sbawe32.mdi
+    - sound/sblaster.dig
+    - sound/sblaster.mdi
+    - sound/sbpro.dig
+    - sound/sbpro1.mdi
+    - sound/sbpro2.mdi
+    - sound/setsound.exe
+    - sound/sndscape.dig
+    - sound/sndscape.mdi
+    - sound/sndsys.dig
+    - sound/ultra.dig
+    - sound/ultra.mdi
+    unpack:
+      format: innoextract
+
 cksums: |
   _ 872896    anims/320x2401.smk
   _ 1122228   anims/320x2402.smk
@@ -2003,7 +2472,7 @@ cksums: |
   _ 11235     levels/easy10.sam
   _ 12415     levels/easy11.sam
   _ 12726     levels/easy12.sam
-  _ 31802     levels/full00.sam
+  _ 31802     levels/full00.sam_cd
   _ 3517      levels/full01.sam
   _ 5024      levels/full02.sam
   _ 7296      levels/full03.sam
@@ -2584,6 +3053,13 @@ cksums: |
   _ 1546910   sound/sound.dat
   _ 5027      sound/tandy.mdi
 
+  # gog.com
+  2045673524 167653008 setup_theme_hospital_2.0.0.5.exe
+  2696051171 23897 eula.txt
+  2094702119 7505 gog_eula.txt
+  1541739238 1123270 manual.pdf
+  2051011456 31801 levels/full00.sam_gog
+
 md5sums: |
   4d0c496b10b1b451e91775b11d836f75  anims/320x2401.smk
   2482104ac9d185994dc31ac4eecb1fb1  anims/320x2402.smk
@@ -2710,7 +3186,7 @@ md5sums: |
   047ee39a6c6b6342648c047e815a3166  levels/easy10.sam
   35c1a8073403d057a912a2b9564bff2b  levels/easy11.sam
   2d8caa87a6af7fe248c3f1a5f494869e  levels/easy12.sam
-  6b5085e24a0edfc74e05ce461dd32848  levels/full00.sam
+  6b5085e24a0edfc74e05ce461dd32848  levels/full00.sam_cd
   6225e4953597aa92772da2be1eacdc33  levels/full01.sam
   bc241898707921e9903f1bd766181a4f  levels/full02.sam
   366dc05c3e3251a9eb78077c91cccbc2  levels/full03.sam
@@ -3289,6 +3765,12 @@ md5sums: |
   f0dc098f0315b2e9a075d4a65bdcd97f  sound/pcspkr.mdi
   4313a6fbd5b3af4d757c23263babbb2f  sound/sound.dat
   4c2e1cf51fea7674ee3c6250ea96e0d4  sound/tandy.mdi
+  a9aa90b9e9af4685a668f143f6462692  eula.txt
+  3ca819220a3269e314c601a2333501f7  gog_eula.txt
+  88806c2c2f9376b696dc282939afd8cf  setup_theme_hospital_2.0.0.5.exe
+  115f65922bb0e845a9f585b424bab45b  manual.pdf
+  9b2e0ebc8a38340e8717968db40504ac  levels/full00.sam_gog
+
 sha1sums: |
   cdc8d8db5f52c95ba19efd04b3e5e28a40b53967  anims/320x2401.smk
   959bd1438315ae34ffd32c8cdf139a6adc46d1ba  anims/320x2402.smk
@@ -3390,7 +3872,7 @@ sha1sums: |
   e983f37434a536819d743146055492917898a77c  levels/easy10.sam
   3cbcf802832f09282f064192b3ff0e75f8b43c20  levels/easy11.sam
   ed6e428f36fcbf21322a66897d696cef8e3d4609  levels/easy12.sam
-  102053fafea0e9920e3021b7cbd65cc93611770c  levels/full00.sam
+  102053fafea0e9920e3021b7cbd65cc93611770c  levels/full00.sam_cd
   4189eead6b3dac31fb19ca445710273ab4854f86  levels/full01.sam
   a4ef413f916ce97624978c78b943422f2e9ef79f  levels/full02.sam
   24012e6a192f7172b2f0b2dc97216077b9b32538  levels/full03.sam
@@ -3743,6 +4225,12 @@ sha1sums: |
   0f14df1913a670e7b14fb7856ac72d457401dc1d  sound/sndsys.dig
   4327d6bb924b4e40fa7ff035bdfb73a879c31836  sound/ultra.dig
   8337ada0962de33ee3eb8ebbf9d5d0c898f41fd2  sound/ultra.mdi
+  ce7b2e51aa99aad66736732d35966db2f36a9ea4  eula.txt
+  2acb1ec04139af2cc39d4253ca557c9571a4d15c  gog_eula.txt
+  9860016a76883c9a15dee8fac5b810c0eea601c9  setup_theme_hospital_2.0.0.5.exe
+  c96d0b7a79dd4a2dde61f595f4d2fd5d238f28de  manual.pdf
+  98e886f214951b3ba5cebe43621532325044d534  levels/full00.sam_gog
+
 sha256sums: |
   f89a16e589e92cdb0340b391e8b7ed0901d0b009479895d2770dd69208c4b361  anims/320x2401.smk
   e0b391c08ec14454cc4261b40133affed8ddc78ad9ead57671b48aac6478a3de  anims/320x2402.smk
@@ -3843,7 +4331,7 @@ sha256sums: |
   5e8494f2cdcef2c54cda6b96e05ec506be1b34363300e54007625a22e999f830  levels/easy10.sam
   b2fcf6839cac63fcd9bc3b1bd14d427248f72075d15cc7cbafa69e1ec3039da0  levels/easy11.sam
   c17e8fd6afb3133b509f8ba439e09b89889dc9b051e95b790304c654de5412bf  levels/easy12.sam
-  29b4575c425002c02413b93ddb9ec05cd1a1599c1bee593439f04f4e673bae66  levels/full00.sam
+  29b4575c425002c02413b93ddb9ec05cd1a1599c1bee593439f04f4e673bae66  levels/full00.sam_cd
   202cd582171f0f2ed06863275a965f115bc726cce037e3ee0983b6bf19c7beae  levels/full01.sam
   3d337b72c8b48ff06d2af33bde84851b4cebf03a31354d40fa5b3e5fa7268d35  levels/full02.sam
   70193dcd5ec18a6d77cd18b4b8feefa67175010689b5aec6b5e49a395c3408f3  levels/full03.sam
@@ -4196,5 +4684,11 @@ sha256sums: |
   46ea416974c918dc18e4310b70ac4bbb3647b2d75cc954510d303b7308273907  sound/sndsys.dig
   4e63a94e272f37907910cc2a73120d2d21f3651a66bd06fcac7e80c93af55478  sound/ultra.dig
   e7034fb38cd05821bb0960537745db75348c193c7a9889373bbcc86eb1cac17f  sound/ultra.mdi
-...
+  91216efce09b12a101149d6689c00a4c2afad8fd3c4c38bd8d70d2cf0ba29c6b  eula.txt
+  17314b556b82b7b0378223324f53a94af343fe731ce93fc67ad750ff656cbcb7  gog_eula.txt
+  c41a77632ca1c33389b57d7210936eb5151ceb6d540707420a4de2d55bd47497  setup_theme_hospital_2.0.0.5.exe
+  fdf943a36ec066a8f0dcdd2f3a2d3f9573a0a367dbefabc18c28536dc41ecfde  manual.pdf
+  03ef32ce27867196ac5991025de59d658254e3287cf4c9dd73a7c3824bddfd2b  levels/full00.sam_gog
 
+...
+# vim:set sw=2 sts=2 et:
