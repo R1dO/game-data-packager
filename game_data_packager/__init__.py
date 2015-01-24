@@ -1400,6 +1400,17 @@ class GameData(object):
                         tmp = os.path.join(tmpdir, f)
                         os.utime(tmp, (orig_time, orig_time))
                         self.consider_file(tmp, True)
+                elif fmt == 'innoextract':
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['innoextract', '--silent',
+                        '--lowercase', '-T', 'local', '-d', '.',
+                        os.path.abspath(found_name)], cwd=tmpdir)
+                    # for at least Theme Hospital the files we want are
+                    # actually in subdirectories, so we search recursively
+                    self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unzip':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
