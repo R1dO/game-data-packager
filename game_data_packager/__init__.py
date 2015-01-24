@@ -1869,7 +1869,8 @@ class GameData(object):
             # probably not enough files supplied?
             # print the help text, maybe that helps the user to determine
             # what they should have added
-            self.argument_parser.print_help()
+            if not os.environ.get('DEBUG'):
+                self.argument_parser.print_help()
             raise SystemExit(1)
         except DownloadNotAllowed:
             logger.error('Unable to complete any packages because ' +
