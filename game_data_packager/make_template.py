@@ -35,7 +35,7 @@ def do_one_dir(destdir):
     package = data.setdefault('packages', {}).setdefault('FIXME', {})
     package['install'] = []
     package['install_to'] = destdir
-    sums = dict(sha1={}, md5={}, sha256={})
+    sums = dict(sha1={}, md5={}, sha256={}, ck={})
 
     for dirpath, dirnames, filenames in os.walk(destdir):
         for fn in filenames:
@@ -53,6 +53,7 @@ def do_one_dir(destdir):
                 data['files'][name] = dict(size=os.path.getsize(path))
 
                 hf = HashedFile.from_file(name, open(path, 'rb'))
+                sums['ck'][name] = os.path.getsize(path)
                 sums['md5'][name] = hf.md5
                 sums['sha1'][name] = hf.sha1
                 sums['sha256'][name] = hf.sha256
@@ -66,7 +67,10 @@ def do_one_dir(destdir):
     for alg, files in sorted(sums.items()):
         print('%ssums: |' % alg)
         for filename, sum_ in sorted(files.items()):
-            print('  %s  %s' % (sum_, filename))
+            if alg == 'ck':
+                print('  _ %-9s %s' % (sum_, filename))
+            else:
+                print('  %s  %s' % (sum_, filename))
 
     print('...')
     print('')
