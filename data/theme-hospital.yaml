@@ -4,6 +4,7 @@ packages:
   theme-hospital-full-data:
     longname: Theme Hospital
     debian:
+      conflicts: theme-hospital-demo-data
       engine: corsix-th
     optional:
     - EN.pdf
@@ -87,7 +88,6 @@ packages:
     - sound/midi/candy.xmi
     - sound/midi/doctor.xmi
     - sound/midi/fortune.xmi
-    - sound/midi/hospmidi.bat
     - sound/midi/mend.xmi
     - sound/midi/midi.txt
     - sound/midi/nightsh.xmi
@@ -907,7 +907,6 @@ cksums: |
   _ 8094      sound/midi/candy.xmi
   _ 3066      sound/midi/doctor.xmi
   _ 7728      sound/midi/fortune.xmi
-  _ 385       sound/midi/hospmidi.bat
   _ 11936     sound/midi/mend.xmi
   _ 204       sound/midi/midi.txt
   _ 14402     sound/midi/nightsh.xmi
@@ -1361,7 +1360,6 @@ md5sums: |
   f6c9d9f6fd75510210f66ea807dcefc5  sound/midi/candy.xmi
   d14136d6b242452f0811eca1554208eb  sound/midi/doctor.xmi
   da94d098fcc4a9a906c5646c5be9f9aa  sound/midi/fortune.xmi
-  2c4f7f921b158345ec836984f1e8972a  sound/midi/hospmidi.bat
   8b2fe7f5772be2cdd5778c4f4278fad9  sound/midi/mend.xmi
   c8f7d6def34d1aa0c3c43b22cd7ea855  sound/midi/midi.txt
   4d927f3195922ca016a93574ab9350fc  sound/midi/nightsh.xmi
@@ -1815,7 +1813,6 @@ sha1sums: |
   3ddfb4a0cb5ebcd62b16a4f503bed8c4f1259b56  sound/midi/candy.xmi
   a53cfae33d6f15a40f7110e670b478550df8ff17  sound/midi/doctor.xmi
   23c9f13f65853d45063e0820b845d9e15c108d92  sound/midi/fortune.xmi
-  ffc90fdd82dc88521e6221d970516804971cc3b6  sound/midi/hospmidi.bat
   f8580cca701b64634110867105fb6c4d68b9e60e  sound/midi/mend.xmi
   20446b46f86fdebce9c054f3bcf18d239a30ed59  sound/midi/midi.txt
   c29fff2865bc0be93fda315d5251a7ef3702936d  sound/midi/nightsh.xmi
@@ -2269,7 +2266,6 @@ sha256sums: |
   ee2b06f5bd80f5e1a149bb01869276458216ffd29c568b4bdbc51bb2b10357d1  sound/midi/candy.xmi
   6ef9bb09c95b865b6e89033520c94d280bd5078530538e3e50ffcf49b25d9fe3  sound/midi/doctor.xmi
   be8929411ea8e03583998e222a6f4a69acd6aaecfb7840703a92736cc269adb0  sound/midi/fortune.xmi
-  6e00a7f6f81e76fd98eb2844b9e529ff55c88d54800b666cc50a366200398c25  sound/midi/hospmidi.bat
   313c86cddee0df71f5bf6abaa4f96b94feec1d81334f2c4e48f9ed7f9777e968  sound/midi/mend.xmi
   55d2214c1d9a2b958accc8d61c9457eba76c9ea46d971cb3a1104354e53fe90d  sound/midi/midi.txt
   96454e0e8683d7a805074c96c363c75acad890bbd8c584f5350989f8eadaa56d  sound/midi/nightsh.xmi
