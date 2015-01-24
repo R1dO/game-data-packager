@@ -3,6 +3,8 @@ game-data-packager (40) UNRELEASED; urgency=medium
   [ Alexandre Detiste ]
   * wolf3d: if both v1.0-v1.2 and v1.4 are available, always build v1.4
     - add "better_version" package field to implement this
+  * add support for Theme Hospital, matching engine corsix-th
+    still needs to be packaged, see RFP 610087
 
   [ Simon McVittie ]
   * quake3: install symlinks in /usr/lib/quake3 too, so src:quake can use

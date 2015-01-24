@@ -1,0 +1,2303 @@
+%YAML 1.2
+---
+packages:
+  theme-hospital-full-data:
+    longname: Theme Hospital
+    debian:
+      engine: corsix-th
+    optional:
+    - EN.pdf
+    - FR.pdf
+    - GE.pdf
+    - IT.pdf
+    install:
+    - intro/attract.smk
+    - intro/intro.sm2
+    - intro/intro.sm4
+    - anims/320x2401.smk
+    - anims/320x2402.smk
+    - anims/320x2403.smk
+    - anims/320x2404.smk
+    - anims/320x2405.smk
+    - anims/320x2406.smk
+    - anims/area01v.smk
+    - anims/area02v.smk
+    - anims/area03v.smk
+    - anims/area04v.smk
+    - anims/area05v.smk
+    - anims/area06v.smk
+    - anims/area07v.smk
+    - anims/area08v.smk
+    - anims/area09v.smk
+    - anims/area10v.smk
+    - anims/area11v.smk
+    - anims/area12v.smk
+    - anims/area13v.smk
+    - anims/area14v.smk
+    - anims/attract.smk
+    - anims/lopaper.smk
+    - anims/lose1.smk
+    - anims/lose2.smk
+    - anims/lose3.smk
+    - anims/lose4.smk
+    - anims/lose5.smk
+    - anims/lose6.smk
+    - anims/mmenu1-0.smk
+    - anims/mmenu2-0.smk
+    - anims/wingame.smk
+    - anims/winlevel.smk
+    - sound/adlib.mdi
+    - sound/adlibg.mdi
+    - sound/audiodrv.dig
+    - sound/esfm.mdi
+    - sound/iwav.dig
+    - sound/iwav.mdi
+    - sound/jammer.dig
+    - sound/mpu401.mdi
+    - sound/mssdrvr.lst
+    - sound/nvdig.dig
+    - sound/nvmpu.mdi
+    - sound/opl3.mdi
+    - sound/pas.mdi
+    - sound/pasplus.mdi
+    - sound/proaudio.dig
+    - sound/rap10.dig
+    - sound/sample.ad
+    - sound/sample.opl
+    - sound/sb16.dig
+    - sound/sbawe32.mdi
+    - sound/sblaster.dig
+    - sound/sblaster.mdi
+    - sound/sbpro.dig
+    - sound/sbpro1.mdi
+    - sound/sbpro2.mdi
+    - sound/sndscape.dig
+    - sound/sndscape.mdi
+    - sound/sndsys.dig
+    - sound/ultra.dig
+    - sound/ultra.mdi
+    - sound/data/minheap.dat
+    - sound/data/sound-0.dat
+    - sound/data/sound-1.dat
+    - sound/data/sound-2.dat
+    - sound/data/sound-3.dat
+    - sound/data/sound-4.dat
+    - sound/data/sound-5.dat
+    - sound/midi/atlantis.xmi
+    - sound/midi/candy.xmi
+    - sound/midi/doctor.xmi
+    - sound/midi/fortune.xmi
+    - sound/midi/hospmidi.bat
+    - sound/midi/mend.xmi
+    - sound/midi/midi.txt
+    - sound/midi/nightsh.xmi
+    - sound/midi/readme.txt
+    - sound/midi/sixseven.xmi
+    - sound/midi/steady.xmi
+    - qdatam/face01m.dat
+    - qdatam/font100m.dat
+    - qdatam/font100m.tab
+    - qdatam/font101m.dat
+    - qdatam/font101m.tab
+    - qdatam/font130m.dat
+    - qdatam/font130m.tab
+    - qdatam/font131m.dat
+    - qdatam/font131m.tab
+    - qdatam/font132m.dat
+    - qdatam/font132m.tab
+    - qdata/area01v.dat
+    - qdata/area01v.pal
+    - qdata/award01v.dat
+    - qdata/award01v.pal
+    - qdata/award02v.dat
+    - qdata/award02v.pal
+    - qdata/award03v.dat
+    - qdata/award03v.tab
+    - qdata/bank01v.dat
+    - qdata/bank01v.pal
+    - qdata/bank02v.dat
+    - qdata/bank02v.tab
+    - qdata/bid01v.dat
+    - qdata/bid01v.pal
+    - qdata/bid02v.dat
+    - qdata/bid02v.tab
+    - qdata/brief01v.dat
+    - qdata/brief01v.pal
+    - qdata/cred01v.dat
+    - qdata/cred01v.pal
+    - qdata/drugn01v.dat
+    - qdata/drugn01v.pal
+    - qdata/drugn02v.dat
+    - qdata/drugn02v.tab
+    - qdata/face01v.dat
+    - qdata/fame01v.dat
+    - qdata/fame01v.pal
+    - qdata/fame02v.dat
+    - qdata/fame02v.tab
+    - qdata/fax01v.dat
+    - qdata/fax01v.pal
+    - qdata/fax02v.dat
+    - qdata/fax02v.tab
+    - qdata/font00v.dat
+    - qdata/font00v.tab
+    - qdata/font01v.dat
+    - qdata/font01v.tab
+    - qdata/font02v.dat
+    - qdata/font02v.tab
+    - qdata/font04v.dat
+    - qdata/font04v.tab
+    - qdata/font05v.dat
+    - qdata/font05v.tab
+    - qdata/font09v.dat
+    - qdata/font09v.tab
+    - qdata/font100v.dat
+    - qdata/font100v.tab
+    - qdata/font101v.dat
+    - qdata/font101v.tab
+    - qdata/font102v.dat
+    - qdata/font102v.tab
+    - qdata/font105v.dat
+    - qdata/font105v.tab
+    - qdata/font106v.dat
+    - qdata/font106v.tab
+    - qdata/font110v.dat
+    - qdata/font110v.tab
+    - qdata/font111v.dat
+    - qdata/font111v.tab
+    - qdata/font112v.dat
+    - qdata/font112v.tab
+    - qdata/font113v.dat
+    - qdata/font113v.tab
+    - qdata/font115v.dat
+    - qdata/font115v.tab
+    - qdata/font120v.dat
+    - qdata/font120v.tab
+    - qdata/font121v.dat
+    - qdata/font121v.tab
+    - qdata/font122v.dat
+    - qdata/font122v.tab
+    - qdata/font124v.dat
+    - qdata/font124v.tab
+    - qdata/font16v.dat
+    - qdata/font16v.tab
+    - qdata/font18v.dat
+    - qdata/font18v.tab
+    - qdata/font19v.dat
+    - qdata/font19v.tab
+    - qdata/font24v.dat
+    - qdata/font24v.tab
+    - qdata/font250v.dat
+    - qdata/font250v.tab
+    - qdata/font25v.dat
+    - qdata/font25v.tab
+    - qdata/font26v.dat
+    - qdata/font26v.tab
+    - qdata/font31v.dat
+    - qdata/font31v.tab
+    - qdata/font34v.dat
+    - qdata/font34v.tab
+    - qdata/font35v.dat
+    - qdata/font35v.tab
+    - qdata/font36v.dat
+    - qdata/font36v.tab
+    - qdata/font37v.dat
+    - qdata/font37v.tab
+    - qdata/font38v.dat
+    - qdata/font38v.tab
+    - qdata/font39v.dat
+    - qdata/font39v.tab
+    - qdata/font40v.dat
+    - qdata/font40v.tab
+    - qdata/font43v.dat
+    - qdata/font43v.tab
+    - qdata/font44v.dat
+    - qdata/font44v.tab
+    - qdata/font45v.dat
+    - qdata/font45v.tab
+    - qdata/font46v.dat
+    - qdata/font46v.tab
+    - qdata/font47v.dat
+    - qdata/font47v.tab
+    - qdata/font500v.dat
+    - qdata/font500v.tab
+    - qdata/font501v.dat
+    - qdata/font501v.tab
+    - qdata/font502v.dat
+    - qdata/font502v.tab
+    - qdata/font50v.dat
+    - qdata/font50v.tab
+    - qdata/font51v.dat
+    - qdata/font51v.tab
+    - qdata/font60v.dat
+    - qdata/font60v.tab
+    - qdata/font74v.dat
+    - qdata/font74v.tab
+    - qdata/ghost1.dat
+    - qdata/ghost2.dat
+    - qdata/ghost66.dat
+    - qdata/graph01v.dat
+    - qdata/graph01v.pal
+    - qdata/graph02v.dat
+    - qdata/graph02v.tab
+    - qdata/lettr02v.dat
+    - qdata/lettr02v.tab
+    - qdata/load01v.dat
+    - qdata/load01v.pal
+    - qdata/load02v.dat
+    - qdata/load02v.tab
+    - qdata/main01m.dat
+    - qdata/main01m.pal
+    - qdata/main02m.dat
+    - qdata/main02m.tab
+    - qdata/pol01v.dat
+    - qdata/pol01v.pal
+    - qdata/pol02v.dat
+    - qdata/pol02v.tab
+    - qdata/pref01v.dat
+    - qdata/pref01v.pal
+    - qdata/pref02v.dat
+    - qdata/pref02v.tab
+    - qdata/rep01v.dat
+    - qdata/rep01v.pal
+    - qdata/rep02v.dat
+    - qdata/rep02v.tab
+    - qdata/req00v.dat
+    - qdata/req00v.tab
+    - qdata/req01v.dat
+    - qdata/req01v.tab
+    - qdata/req02v.dat
+    - qdata/req02v.tab
+    - qdata/req03v.dat
+    - qdata/req03v.tab
+    - qdata/req04v.dat
+    - qdata/req04v.tab
+    - qdata/req05v.dat
+    - qdata/req05v.tab
+    - qdata/req06v.dat
+    - qdata/req06v.tab
+    - qdata/req09v.dat
+    - qdata/req09v.tab
+    - qdata/req10v.dat
+    - qdata/req10v.tab
+    - qdata/req11v.dat
+    - qdata/req11v.tab
+    - qdata/req12v.dat
+    - qdata/req12v.tab
+    - qdata/req13v.dat
+    - qdata/req13v.tab
+    - qdata/res01v.dat
+    - qdata/res01v.pal
+    - qdata/res02v.dat
+    - qdata/res02v.tab
+    - qdata/score01v.dat
+    - qdata/score01v.pal
+    - qdata/spointer.dat
+    - qdata/spointer.tab
+    - qdata/staff01v.dat
+    - qdata/staff01v.pal
+    - qdata/staff02v.dat
+    - qdata/staff02v.tab
+    - qdata/stat01v.dat
+    - qdata/stat01v.pal
+    - qdata/stat02v.dat
+    - qdata/stat02v.tab
+    - qdata/title01v.dat
+    - qdata/title01v.pal
+    - qdata/town.dat
+    - qdata/town01v.dat
+    - qdata/town01v.pal
+    - qdata/town02v.dat
+    - qdata/town02v.tab
+    - qdata/ver00v.dat
+    - qdata/ver00v.tab
+    - levels/easy00.bak
+    - levels/easy00.sam
+    - levels/easy01.sam
+    - levels/easy02.sam
+    - levels/easy03.sam
+    - levels/easy04.sam
+    - levels/easy05.sam
+    - levels/easy06.sam
+    - levels/easy07.sam
+    - levels/easy08.sam
+    - levels/easy09.sam
+    - levels/easy10.sam
+    - levels/easy11.sam
+    - levels/easy12.sam
+    - levels/full00.sam
+    - levels/full01.sam
+    - levels/full02.sam
+    - levels/full03.sam
+    - levels/full04.sam
+    - levels/full05.sam
+    - levels/full06.sam
+    - levels/full07.sam
+    - levels/full08.sam
+    - levels/full09.sam
+    - levels/full10.sam
+    - levels/full11.sam
+    - levels/full12.sam
+    - levels/hard00.bak
+    - levels/hard00.sam
+    - levels/hard01.sam
+    - levels/hard02.sam
+    - levels/hard03.sam
+    - levels/hard04.sam
+    - levels/hard05.sam
+    - levels/hard06.sam
+    - levels/hard07.sam
+    - levels/hard08.sam
+    - levels/hard09.sam
+    - levels/hard10.sam
+    - levels/hard11.sam
+    - levels/hard12.sam
+    - levels/level.l1
+    - levels/level.l10
+    - levels/level.l11
+    - levels/level.l12
+    - levels/level.l13
+    - levels/level.l14
+    - levels/level.l2
+    - levels/level.l20
+    - levels/level.l21
+    - levels/level.l22
+    - levels/level.l23
+    - levels/level.l24
+    - levels/level.l3
+    - levels/level.l30
+    - levels/level.l31
+    - levels/level.l32
+    - levels/level.l33
+    - levels/level.l34
+    - levels/level.l4
+    - levels/level.l40
+    - levels/level.l41
+    - levels/level.l42
+    - levels/level.l43
+    - levels/level.l44
+    - levels/level.l5
+    - levels/level.l6
+    - levels/level.l7
+    - levels/level.l8
+    - levels/level.l9
+    - levels/net00.sam
+    - levels/net2.dat
+    - levels/net20.bak
+    - levels/net20.sam
+    - levels/net21.bak
+    - levels/net21.sam
+    - levels/net22.bak
+    - levels/net22.sam
+    - levels/net23.bak
+    - levels/net23.sam
+    - levels/net24.bak
+    - levels/net24.sam
+    - levels/net3.dat
+    - levels/net30.bak
+    - levels/net30.sam
+    - levels/net31.bak
+    - levels/net31.sam
+    - levels/net32.bak
+    - levels/net32.sam
+    - levels/net33.bak
+    - levels/net33.sam
+    - levels/net34.bak
+    - levels/net34.sam
+    - levels/net4.dat
+    - levels/net40.bak
+    - levels/net40.sam
+    - levels/net41.bak
+    - levels/net41.sam
+    - levels/net42.bak
+    - levels/net42.sam
+    - levels/net43.bak
+    - levels/net43.sam
+    - levels/net44.bak
+    - levels/net44.sam
+    - datam/mblk-0.dat
+    - datam/mblk-0.tab
+    - datam/mele-1.ani
+    - datam/mfra-1.ani
+    - datam/mlist-1.ani
+    - datam/money01m.dat
+    - datam/money01m.tab
+    - datam/mpointer.dat
+    - datam/mpointer.tab
+    - datam/mspr-0.dat
+    - datam/mspr-0.tab
+    - datam/mstart-1.ani
+    - datam/mutton01.dat
+    - datam/mutton01.tab
+    - datam/panel02m.dat
+    - datam/panel02m.tab
+    - datam/pulldm.dat
+    - datam/pulldm.tab
+    - datam/watch01m.dat
+    - datam/watch01m.tab
+    - data/lang-0.dat
+    - data/lang-1.dat
+    - data/lang-2.dat
+    - data/lang-3.dat
+    - data/lang-4.dat
+    - data/lang-5.dat
+    - data/money01v.dat
+    - data/money01v.tab
+    - data/mpalette.dat
+    - data/mpointer.dat
+    - data/mpointer.tab
+    - data/panel02v.dat
+    - data/panel02v.tab
+    - data/panel04v.dat
+    - data/panel04v.tab
+    - data/pulldv.dat
+    - data/pulldv.tab
+    - data/p_comp.lex
+    - data/s_comp.lex
+    - data/vblk-0.dat
+    - data/vblk-0.tab
+    - data/vele-1.ani
+    - data/vfra-1.ani
+    - data/vlist-1.ani
+    - data/vspr-0.dat
+    - data/vspr-0.tab
+    - data/vsta-0.ani
+    - data/vstart-1.ani
+    - data/watch01v.dat
+    - data/watch01v.tab
+
+files:
+  EN.pdf:
+    size: 4514818
+    md5: 61c5337dd5d371b57bdf9ccdc95b4960
+    install_to: $docdir
+  FR.pdf:
+    size: 3192246
+    md5: 2df86ca7026808d8ddc0cf349796d0c3
+    install_to: $docdir
+  GE.pdf:
+    size: 7656323
+    md5: 5c9ea61edc4334264f2f1aa52e28f3d7
+    install_to: $docdir
+  IT.pdf:
+    size: 1028644
+    md5: 0a8b2534c4c6cfa31815ec75b3877996
+    install_to: $docdir
+
+cksums: |
+  _ 872896    anims/320x2401.smk
+  _ 1122228   anims/320x2402.smk
+  _ 1447988   anims/320x2403.smk
+  _ 1652564   anims/320x2404.smk
+  _ 2370144   anims/320x2405.smk
+  _ 2118136   anims/320x2406.smk
+  _ 251572    anims/area01v.smk
+  _ 250832    anims/area02v.smk
+  _ 254060    anims/area03v.smk
+  _ 242564    anims/area04v.smk
+  _ 252496    anims/area05v.smk
+  _ 240456    anims/area06v.smk
+  _ 242760    anims/area07v.smk
+  _ 249620    anims/area08v.smk
+  _ 244604    anims/area09v.smk
+  _ 248996    anims/area10v.smk
+  _ 243736    anims/area11v.smk
+  _ 284220    anims/area12v.smk
+  _ 327336    anims/area13v.smk
+  _ 368080    anims/area14v.smk
+  _ 5046768   anims/attract.smk
+  _ 150344    anims/lopaper.smk
+  _ 1009728   anims/lose1.smk
+  _ 1165724   anims/lose2.smk
+  _ 1674096   anims/lose3.smk
+  _ 1411008   anims/lose4.smk
+  _ 2429792   anims/lose5.smk
+  _ 2093180   anims/lose6.smk
+  _ 1784340   anims/mmenu1-0.smk
+  _ 898052    anims/mmenu2-0.smk
+  _ 2066656   anims/wingame.smk
+  _ 335220    anims/winlevel.smk
+  _ 95149     data/lang-0.dat
+  _ 95576     data/lang-1.dat
+  _ 111690    data/lang-2.dat
+  _ 98933     data/lang-3.dat
+  _ 100080    data/lang-4.dat
+  _ 95518     data/lang-5.dat
+  _ 212       data/money01v.dat
+  _ 57        data/money01v.tab
+  _ 746       data/mpalette.dat
+  _ 1886      data/mpointer.dat
+  _ 113       data/mpointer.tab
+  _ 311       data/p_comp.lex
+  _ 11268     data/panel02v.dat
+  _ 234       data/panel02v.tab
+  _ 5327      data/panel04v.dat
+  _ 131       data/panel04v.tab
+  _ 462       data/pulldv.dat
+  _ 78        data/pulldv.tab
+  _ 672       data/s_comp.lex
+  _ 68214     data/vblk-0.dat
+  _ 696       data/vblk-0.tab
+  _ 104696    data/vele-1.ani
+  _ 51849     data/vfra-1.ani
+  _ 90850     data/vlist-1.ani
+  _ 941398    data/vspr-0.dat
+  _ 17897     data/vspr-0.tab
+  _ 2243      data/vsta-0.ani
+  _ 6049      data/vstart-1.ani
+  _ 2316      data/watch01v.dat
+  _ 81        data/watch01v.tab
+  _ 79261     datam/mblk-0.dat
+  _ 1356      datam/mblk-0.tab
+  _ 149898    datam/mele-1.ani
+  _ 116430    datam/mfra-1.ani
+  _ 217212    datam/mlist-1.ani
+  _ 298       datam/money01m.dat
+  _ 72        datam/money01m.tab
+  _ 1753      datam/mpointer.dat
+  _ 120       datam/mpointer.tab
+  _ 763663    datam/mspr-0.dat
+  _ 26382     datam/mspr-0.tab
+  _ 20744     datam/mstart-1.ani
+  _ 102724    datam/mutton01.dat
+  _ 2472      datam/mutton01.tab
+  _ 12518     datam/panel02m.dat
+  _ 378       datam/panel02m.tab
+  _ 478       datam/pulldm.dat
+  _ 126       datam/pulldm.tab
+  _ 2719      datam/watch01m.dat
+  _ 108       datam/watch01m.tab
+  _ 6301936   intro/attract.smk
+  _ 16354880  intro/intro.sm2
+  _ 33616520  intro/intro.sm4
+  _ 31797     levels/easy00.bak
+  _ 31804     levels/easy00.sam
+  _ 3517      levels/easy01.sam
+  _ 5025      levels/easy02.sam
+  _ 7294      levels/easy03.sam
+  _ 7538      levels/easy04.sam
+  _ 8050      levels/easy05.sam
+  _ 8827      levels/easy06.sam
+  _ 9191      levels/easy07.sam
+  _ 10456     levels/easy08.sam
+  _ 11124     levels/easy09.sam
+  _ 11235     levels/easy10.sam
+  _ 12415     levels/easy11.sam
+  _ 12726     levels/easy12.sam
+  _ 31802     levels/full00.sam
+  _ 3517      levels/full01.sam
+  _ 5024      levels/full02.sam
+  _ 7296      levels/full03.sam
+  _ 7539      levels/full04.sam
+  _ 8283      levels/full05.sam
+  _ 8826      levels/full06.sam
+  _ 9191      levels/full07.sam
+  _ 10452     levels/full08.sam
+  _ 11122     levels/full09.sam
+  _ 11228     levels/full10.sam
+  _ 12407     levels/full11.sam
+  _ 12722     levels/full12.sam
+  _ 31807     levels/hard00.bak
+  _ 31836     levels/hard00.sam
+  _ 3517      levels/hard01.sam
+  _ 5025      levels/hard02.sam
+  _ 7296      levels/hard03.sam
+  _ 7540      levels/hard04.sam
+  _ 8283      levels/hard05.sam
+  _ 8826      levels/hard06.sam
+  _ 9191      levels/hard07.sam
+  _ 10452     levels/hard08.sam
+  _ 11122     levels/hard09.sam
+  _ 11228     levels/hard10.sam
+  _ 12407     levels/hard11.sam
+  _ 12722     levels/hard12.sam
+  _ 2875      levels/level.l1
+  _ 3606      levels/level.l10
+  _ 3906      levels/level.l11
+  _ 5045      levels/level.l12
+  _ 2321      levels/level.l13
+  _ 2425      levels/level.l14
+  _ 2487      levels/level.l2
+  _ 4371      levels/level.l20
+  _ 3619      levels/level.l21
+  _ 3046      levels/level.l22
+  _ 3349      levels/level.l23
+  _ 3460      levels/level.l24
+  _ 3055      levels/level.l3
+  _ 4141      levels/level.l30
+  _ 5402      levels/level.l31
+  _ 4525      levels/level.l32
+  _ 4429      levels/level.l33
+  _ 3735      levels/level.l34
+  _ 3375      levels/level.l4
+  _ 5473      levels/level.l40
+  _ 5924      levels/level.l41
+  _ 5635      levels/level.l42
+  _ 8027      levels/level.l43
+  _ 5826      levels/level.l44
+  _ 3436      levels/level.l5
+  _ 3426      levels/level.l6
+  _ 3681      levels/level.l7
+  _ 3068      levels/level.l8
+  _ 3940      levels/level.l9
+  _ 33979     levels/net00.sam
+  _ 617       levels/net2.dat
+  _ 11152     levels/net20.bak
+  _ 11210     levels/net20.sam
+  _ 6592      levels/net21.bak
+  _ 6658      levels/net21.sam
+  _ 7435      levels/net22.bak
+  _ 7492      levels/net22.sam
+  _ 6214      levels/net23.bak
+  _ 6281      levels/net23.sam
+  _ 3854      levels/net24.bak
+  _ 3922      levels/net24.sam
+  _ 617       levels/net3.dat
+  _ 11493     levels/net30.bak
+  _ 11551     levels/net30.sam
+  _ 6653      levels/net31.bak
+  _ 6719      levels/net31.sam
+  _ 7515      levels/net32.bak
+  _ 7572      levels/net32.sam
+  _ 6728      levels/net33.bak
+  _ 6795      levels/net33.sam
+  _ 4380      levels/net34.bak
+  _ 4448      levels/net34.sam
+  _ 619       levels/net4.dat
+  _ 11473     levels/net40.bak
+  _ 11531     levels/net40.sam
+  _ 6648      levels/net41.bak
+  _ 6714      levels/net41.sam
+  _ 7515      levels/net42.bak
+  _ 7572      levels/net42.sam
+  _ 7178      levels/net43.bak
+  _ 7245      levels/net43.sam
+  _ 4569      levels/net44.bak
+  _ 4637      levels/net44.sam
+  _ 132344    qdata/area01v.dat
+  _ 749       qdata/area01v.pal
+  _ 158527    qdata/award01v.dat
+  _ 745       qdata/award01v.pal
+  _ 147659    qdata/award02v.dat
+  _ 745       qdata/award02v.pal
+  _ 85036     qdata/award03v.dat
+  _ 140       qdata/award03v.tab
+  _ 125482    qdata/bank01v.dat
+  _ 760       qdata/bank01v.pal
+  _ 13573     qdata/bank02v.dat
+  _ 84        qdata/bank02v.tab
+  _ 120623    qdata/bid01v.dat
+  _ 634       qdata/bid01v.pal
+  _ 11195     qdata/bid02v.dat
+  _ 66        qdata/bid02v.tab
+  _ 143819    qdata/brief01v.dat
+  _ 749       qdata/brief01v.pal
+  _ 71540     qdata/cred01v.dat
+  _ 724       qdata/cred01v.pal
+  _ 110836    qdata/drugn01v.dat
+  _ 673       qdata/drugn01v.pal
+  _ 6055      qdata/drugn02v.dat
+  _ 74        qdata/drugn02v.tab
+  _ 87750     qdata/face01v.dat
+  _ 158477    qdata/fame01v.dat
+  _ 745       qdata/fame01v.pal
+  _ 206       qdata/fame02v.dat
+  _ 18        qdata/fame02v.tab
+  _ 64285     qdata/fax01v.dat
+  _ 659       qdata/fax01v.pal
+  _ 8213      qdata/fax02v.dat
+  _ 110       qdata/fax02v.tab
+  _ 1024      qdata/font00v.dat
+  _ 531       qdata/font00v.tab
+  _ 1331      qdata/font01v.dat
+  _ 524       qdata/font01v.tab
+  _ 1331      qdata/font02v.dat
+  _ 524       qdata/font02v.tab
+  _ 1489      qdata/font04v.dat
+  _ 540       qdata/font04v.tab
+  _ 596       qdata/font05v.dat
+  _ 289       qdata/font05v.tab
+  _ 1094      qdata/font09v.dat
+  _ 481       qdata/font09v.tab
+  _ 3429      qdata/font100v.dat
+  _ 547       qdata/font100v.tab
+  _ 3214      qdata/font101v.dat
+  _ 551       qdata/font101v.tab
+  _ 3597      qdata/font102v.dat
+  _ 1170      qdata/font102v.tab
+  _ 4546      qdata/font105v.dat
+  _ 539       qdata/font105v.tab
+  _ 392       qdata/font106v.dat
+  _ 415       qdata/font106v.tab
+  _ 323       qdata/font110v.dat
+  _ 111       qdata/font110v.tab
+  _ 191       qdata/font111v.dat
+  _ 106       qdata/font111v.tab
+  _ 6510      qdata/font112v.dat
+  _ 600       qdata/font112v.tab
+  _ 6730      qdata/font113v.dat
+  _ 600       qdata/font113v.tab
+  _ 5658      qdata/font115v.dat
+  _ 586       qdata/font115v.tab
+  _ 4565      qdata/font120v.dat
+  _ 569       qdata/font120v.tab
+  _ 12177     qdata/font121v.dat
+  _ 614       qdata/font121v.tab
+  _ 21475     qdata/font122v.dat
+  _ 653       qdata/font122v.tab
+  _ 3473      qdata/font124v.dat
+  _ 552       qdata/font124v.tab
+  _ 3322      qdata/font16v.dat
+  _ 529       qdata/font16v.tab
+  _ 4119      qdata/font18v.dat
+  _ 568       qdata/font18v.tab
+  _ 4073      qdata/font19v.dat
+  _ 576       qdata/font19v.tab
+  _ 121       qdata/font24v.dat
+  _ 272       qdata/font24v.tab
+  _ 4917      qdata/font250v.dat
+  _ 591       qdata/font250v.tab
+  _ 4200      qdata/font25v.dat
+  _ 537       qdata/font25v.tab
+  _ 3657      qdata/font26v.dat
+  _ 541       qdata/font26v.tab
+  _ 2543      qdata/font31v.dat
+  _ 540       qdata/font31v.tab
+  _ 763       qdata/font34v.dat
+  _ 292       qdata/font34v.tab
+  _ 2771      qdata/font35v.dat
+  _ 514       qdata/font35v.tab
+  _ 3134      qdata/font36v.dat
+  _ 554       qdata/font36v.tab
+  _ 3067      qdata/font37v.dat
+  _ 515       qdata/font37v.tab
+  _ 597       qdata/font38v.dat
+  _ 289       qdata/font38v.tab
+  _ 32385     qdata/font39v.dat
+  _ 638       qdata/font39v.tab
+  _ 30780     qdata/font40v.dat
+  _ 639       qdata/font40v.tab
+  _ 5901      qdata/font43v.dat
+  _ 577       qdata/font43v.tab
+  _ 820       qdata/font44v.dat
+  _ 494       qdata/font44v.tab
+  _ 3553      qdata/font45v.dat
+  _ 514       qdata/font45v.tab
+  _ 6279      qdata/font46v.dat
+  _ 586       qdata/font46v.tab
+  _ 4821      qdata/font47v.dat
+  _ 565       qdata/font47v.tab
+  _ 32384     qdata/font500v.dat
+  _ 638       qdata/font500v.tab
+  _ 30782     qdata/font501v.dat
+  _ 639       qdata/font501v.tab
+  _ 217       qdata/font502v.dat
+  _ 487       qdata/font502v.tab
+  _ 1138      qdata/font50v.dat
+  _ 518       qdata/font50v.tab
+  _ 4273      qdata/font51v.dat
+  _ 510       qdata/font51v.tab
+  _ 5476      qdata/font60v.dat
+  _ 598       qdata/font60v.tab
+  _ 3332      qdata/font74v.dat
+  _ 1170      qdata/font74v.tab
+  _ 27047     qdata/ghost1.dat
+  _ 26873     qdata/ghost2.dat
+  _ 37180     qdata/ghost66.dat
+  _ 31930     qdata/graph01v.dat
+  _ 750       qdata/graph01v.pal
+  _ 1138      qdata/graph02v.dat
+  _ 24        qdata/graph02v.tab
+  _ 1602      qdata/lettr02v.dat
+  _ 30        qdata/lettr02v.tab
+  _ 38228     qdata/load01v.dat
+  _ 768       qdata/load01v.pal
+  _ 113       qdata/load02v.dat
+  _ 36        qdata/load02v.tab
+  _ 24415     qdata/main01m.dat
+  _ 711       qdata/main01m.pal
+  _ 30711     qdata/main02m.dat
+  _ 67        qdata/main02m.tab
+  _ 168222    qdata/pol01v.dat
+  _ 653       qdata/pol01v.pal
+  _ 1870      qdata/pol02v.dat
+  _ 42        qdata/pol02v.tab
+  _ 114939    qdata/pref01v.dat
+  _ 759       qdata/pref01v.pal
+  _ 304       qdata/pref02v.dat
+  _ 18        qdata/pref02v.tab
+  _ 100447    qdata/rep01v.dat
+  _ 686       qdata/rep01v.pal
+  _ 2438      qdata/rep02v.dat
+  _ 81        qdata/rep02v.tab
+  _ 8088      qdata/req00v.dat
+  _ 828       qdata/req00v.tab
+  _ 10765     qdata/req01v.dat
+  _ 846       qdata/req01v.tab
+  _ 9348      qdata/req02v.dat
+  _ 821       qdata/req02v.tab
+  _ 3972      qdata/req03v.dat
+  _ 800       qdata/req03v.tab
+  _ 2086      qdata/req04v.dat
+  _ 792       qdata/req04v.tab
+  _ 4632      qdata/req05v.dat
+  _ 820       qdata/req05v.tab
+  _ 6719      qdata/req06v.dat
+  _ 820       qdata/req06v.tab
+  _ 3528      qdata/req09v.dat
+  _ 808       qdata/req09v.tab
+  _ 4486      qdata/req10v.dat
+  _ 822       qdata/req10v.tab
+  _ 9657      qdata/req11v.dat
+  _ 854       qdata/req11v.tab
+  _ 6124      qdata/req12v.dat
+  _ 819       qdata/req12v.tab
+  _ 2602      qdata/req13v.dat
+  _ 831       qdata/req13v.tab
+  _ 76929     qdata/res01v.dat
+  _ 737       qdata/res01v.pal
+  _ 74434     qdata/res02v.dat
+  _ 98        qdata/res02v.tab
+  _ 30015     qdata/score01v.dat
+  _ 768       qdata/score01v.pal
+  _ 2506      qdata/spointer.dat
+  _ 152       qdata/spointer.tab
+  _ 9559      qdata/staff01v.dat
+  _ 746       qdata/staff01v.pal
+  _ 4952      qdata/staff02v.dat
+  _ 111       qdata/staff02v.tab
+  _ 85877     qdata/stat01v.dat
+  _ 747       qdata/stat01v.pal
+  _ 163       qdata/stat02v.dat
+  _ 12        qdata/stat02v.tab
+  _ 72988     qdata/title01v.dat
+  _ 724       qdata/title01v.pal
+  _ 48552     qdata/town.dat
+  _ 127878    qdata/town01v.dat
+  _ 759       qdata/town01v.pal
+  _ 6504      qdata/town02v.dat
+  _ 110       qdata/town02v.tab
+  _ 771       qdata/ver00v.dat
+  _ 12        qdata/ver00v.tab
+  _ 21280     qdatam/face01m.dat
+  _ 2134      qdatam/font100m.dat
+  _ 162       qdatam/font100m.tab
+  _ 4324      qdatam/font101m.dat
+  _ 1170      qdatam/font101m.tab
+  _ 4545      qdatam/font130m.dat
+  _ 1170      qdatam/font130m.tab
+  _ 4545      qdatam/font131m.dat
+  _ 1170      qdatam/font131m.tab
+  _ 4545      qdatam/font132m.dat
+  _ 1170      qdatam/font132m.tab
+  _ 15073     sound/adlib.mdi
+  _ 16464     sound/adlibg.mdi
+  _ 11372     sound/audiodrv.dig
+  _ 446       sound/data/minheap.dat
+  _ 16634862  sound/data/sound-0.dat
+  _ 13205518  sound/data/sound-1.dat
+  _ 13601374  sound/data/sound-2.dat
+  _ 13665998  sound/data/sound-3.dat
+  _ 14453406  sound/data/sound-4.dat
+  _ 13797662  sound/data/sound-5.dat
+  _ 15896     sound/esfm.mdi
+  _ 2585      sound/iwav.dig
+  _ 2149      sound/iwav.mdi
+  _ 3219      sound/jammer.dig
+  _ 24784     sound/midi/atlantis.xmi
+  _ 8094      sound/midi/candy.xmi
+  _ 3066      sound/midi/doctor.xmi
+  _ 7728      sound/midi/fortune.xmi
+  _ 385       sound/midi/hospmidi.bat
+  _ 11936     sound/midi/mend.xmi
+  _ 204       sound/midi/midi.txt
+  _ 14402     sound/midi/nightsh.xmi
+  _ 461       sound/midi/readme.txt
+  _ 22156     sound/midi/sixseven.xmi
+  _ 12490     sound/midi/steady.xmi
+  _ 2002      sound/mpu401.mdi
+  _ 20408     sound/mssdrvr.lst
+  _ 1877      sound/nvdig.dig
+  _ 2044      sound/nvmpu.mdi
+  _ 16474     sound/opl3.mdi
+  _ 15512     sound/pas.mdi
+  _ 16545     sound/pasplus.mdi
+  _ 2214      sound/proaudio.dig
+  _ 2936      sound/rap10.dig
+  _ 3802      sound/sample.ad
+  _ 3802      sound/sample.opl
+  _ 2923      sound/sb16.dig
+  _ 31396     sound/sbawe32.mdi
+  _ 3212      sound/sblaster.dig
+  _ 15205     sound/sblaster.mdi
+  _ 2871      sound/sbpro.dig
+  _ 15558     sound/sbpro1.mdi
+  _ 16628     sound/sbpro2.mdi
+  _ 4171      sound/sndscape.dig
+  _ 2971      sound/sndscape.mdi
+  _ 3419      sound/sndsys.dig
+  _ 9478      sound/ultra.dig
+  _ 49672     sound/ultra.mdi
+md5sums: |
+  4d0c496b10b1b451e91775b11d836f75  anims/320x2401.smk
+  2482104ac9d185994dc31ac4eecb1fb1  anims/320x2402.smk
+  241a38b84de945e52af66acfceeeb4ea  anims/320x2403.smk
+  cac991cb86962b70401a3c6722911c10  anims/320x2404.smk
+  3abafe170e38df1328b46de6d8b5557a  anims/320x2405.smk
+  dc28d06cc94511eb60e2991dce8055c3  anims/320x2406.smk
+  418c37b21abb838da7ed177dc58cfc45  anims/area01v.smk
+  cd37e94f786a8e93c55be2f8ae0d7b0c  anims/area02v.smk
+  703f95bd357c7def52fd685248a1b1fb  anims/area03v.smk
+  369b93f872b7be880160fd5441580058  anims/area04v.smk
+  1ef9f28b07a2f328aba7cee63b5e872d  anims/area05v.smk
+  234ea556ba5f3a683233dedaa3ef497b  anims/area06v.smk
+  dd0b8e9b3cfd545c9dade86973f7e232  anims/area07v.smk
+  582ed9b17ddeea60e0f537f89a552185  anims/area08v.smk
+  a7869a354753214290a0ac1d1b62f442  anims/area09v.smk
+  2a5a9406a3594d3c30cb95a3be88e378  anims/area10v.smk
+  b8e7d45a3b0173444d259177e10ec130  anims/area11v.smk
+  ed46f581d2aca167dafe2caa114baae0  anims/area12v.smk
+  fd49324840bcf4e0bb24bff094cee059  anims/area13v.smk
+  625ade4e866efdaeb9d8a1e169fcc46c  anims/area14v.smk
+  f5012250aab9844ca41346a8651dcf94  anims/attract.smk
+  48cb59596caed2e4a309686f6bc53394  anims/lopaper.smk
+  844be5d66f842101d96726f1a69e10c3  anims/lose1.smk
+  fe3010b2a74822d1fca46be00d4db307  anims/lose2.smk
+  92dd1273563847e2d8345f406a1e0fd2  anims/lose3.smk
+  35653bec56aac35006ea50ea7e143218  anims/lose4.smk
+  8976d0f82938281498e9d1eab50a33d2  anims/lose5.smk
+  b30fcad0a7ca654e74d5825bdd5d449a  anims/lose6.smk
+  e6923850b74703c48a056fbc9c52431f  anims/mmenu1-0.smk
+  7594c2c37bec795e4f89f19fb415fe98  anims/mmenu2-0.smk
+  8fd881cf9f39cbf4923e4d331ef1b2ef  anims/wingame.smk
+  ad06e8010536d1776bf83e1b7d5a8a13  anims/winlevel.smk
+  e1b04c90ea072c768bdb648e7c75231e  data/lang-0.dat
+  a148d6403794d86c3bc45db5763fef7f  data/lang-1.dat
+  a62db7842fb5c69b8656a2dbb37b5747  data/lang-2.dat
+  6d8aaa1b2e4c1d321bdc11d44c084511  data/lang-3.dat
+  af7192b738eb0464e021b782085e2407  data/lang-4.dat
+  a8835fa97141de8c77bb8711c2c879d6  data/lang-5.dat
+  b4e03651694c7ea26e9b97abb99b15ad  data/money01v.dat
+  904f99f403f303d848a55a971edc10a8  data/money01v.tab
+  31f3128f5b353063af1287af7941a677  data/mpalette.dat
+  6fbf1b6bc1e98d5e13f35b000db55635  data/mpointer.dat
+  bcf33ced656f0dbd9828cbb482478e0d  data/mpointer.tab
+  e2a8c9767c2538cc1db5a05d5c26051a  data/p_comp.lex
+  991073052f933cb672341317d640b5b0  data/panel02v.dat
+  a23debd4e0bad44397910fdab8857e6d  data/panel02v.tab
+  4c15322a6202197cb31db9d6d1f1b253  data/panel04v.dat
+  cf8fc8a7a2a6fd939db5c039af4d166e  data/panel04v.tab
+  4b5a73d7ae77e7d1bcad8a8acceab7a4  data/pulldv.dat
+  b1154a2cb69d2db9ed6e258a51763ae7  data/pulldv.tab
+  39998f4fed528333aa17d5d6925a12cb  data/s_comp.lex
+  ee846ad07b04255df493640779bfe28b  data/vblk-0.dat
+  d2e5b1a4bed91f378b204f39c4657537  data/vblk-0.tab
+  94850b3e9488c241237e570d422a50a3  data/vele-1.ani
+  d73b64c0a068d36b38ddfb6e1d187c7f  data/vfra-1.ani
+  9e0c2a70b327d003e1f9a6c690f9bd81  data/vlist-1.ani
+  78b6d11e78f12b7ffa4aaeac05618d94  data/vspr-0.dat
+  900752d24c1830c7e2bee8cfbb7935e3  data/vspr-0.tab
+  b721a25b1c5b354c60d8d8aeb050b174  data/vsta-0.ani
+  909edeb6597d0bfceddc610f48febc87  data/vstart-1.ani
+  e239f965c0c1cba1eea80b577d6f3b27  data/watch01v.dat
+  18ed5ee75e9232c459c6eb4b457a42e4  data/watch01v.tab
+  7117f43351671959a2c87c7e1a5c6974  datam/mblk-0.dat
+  cd49595f435305b109b5d13bac795d7d  datam/mblk-0.tab
+  1e421f5d913c90379d85eaa7a93bc931  datam/mele-1.ani
+  cc697f06f76e607148ed06bf65364fca  datam/mfra-1.ani
+  a90aa5d56dadc3dfee1ad0c52b71fe8c  datam/mlist-1.ani
+  05241c021d32d95637278400852b4df2  datam/money01m.dat
+  9d7e4f885993297f09107dde705b2fab  datam/money01m.tab
+  3e6c8733825ff944e37fbc86b31298c8  datam/mpointer.dat
+  8fa46d7beb7fb18a3884f3f3d1b8108e  datam/mpointer.tab
+  d4f7ab9800ad54e89d6f780f137d528e  datam/mspr-0.dat
+  503178a94612bfae23c120a2a829d03a  datam/mspr-0.tab
+  2110e662a5af0d11ad01eeae95a482c1  datam/mstart-1.ani
+  9fd1a7e4ddf83c8886365e889cb8f48b  datam/mutton01.dat
+  795d355a70cc03c317a7e5f174144a1e  datam/mutton01.tab
+  77d285410ce11b9c392a32f359cbbac9  datam/panel02m.dat
+  cec4cba6ed84aee16ff8ad67e179cfa6  datam/panel02m.tab
+  582ec1657f8b2c1803ba49136b03ba23  datam/pulldm.dat
+  701c4f1a56b07876532f77883501d34f  datam/pulldm.tab
+  0d6fb81f8927757041b2ba4b76d9df0c  datam/watch01m.dat
+  5af60d73d8fae836ba2b04df552085ce  datam/watch01m.tab
+  ad4bff04dfb64bc4216d821b4cf3d303  intro/attract.smk
+  ad5a79ad8df98292220b16e6a29422c1  intro/intro.sm2
+  93eeb6c1bb704b976268e87d2a72067d  intro/intro.sm4
+  7ca899f1db04c1ebd1ebc42783da6608  levels/easy00.bak
+  210eccc40d0e1eb9bebf2d44ee9b2871  levels/easy00.sam
+  726fe6c07e1a83de8198f09c9535ccd4  levels/easy01.sam
+  4512962ea57cbb08648d2224c580d988  levels/easy02.sam
+  a249fec37fbe74dec8ad0d89988250da  levels/easy03.sam
+  70490478dbabda4968d18a25a4511016  levels/easy04.sam
+  a5242d700ce4e2ce007294254bf8c411  levels/easy05.sam
+  f07dbdd0a22e78a864f1a1e3b2aa1a0e  levels/easy06.sam
+  da7b2c01cf3513445edf663930d6d755  levels/easy07.sam
+  76b1b9217a9fa4392df6f66a34a20af5  levels/easy08.sam
+  78eb59f2e7938b326511e64c0aa2c3f4  levels/easy09.sam
+  047ee39a6c6b6342648c047e815a3166  levels/easy10.sam
+  35c1a8073403d057a912a2b9564bff2b  levels/easy11.sam
+  2d8caa87a6af7fe248c3f1a5f494869e  levels/easy12.sam
+  6b5085e24a0edfc74e05ce461dd32848  levels/full00.sam
+  6225e4953597aa92772da2be1eacdc33  levels/full01.sam
+  bc241898707921e9903f1bd766181a4f  levels/full02.sam
+  366dc05c3e3251a9eb78077c91cccbc2  levels/full03.sam
+  ed4b99ce88bc069e6d8b908f00d5b3d3  levels/full04.sam
+  c231651ed76c7834a02c11c08b7b8c94  levels/full05.sam
+  11467cdef349b7ead0f15c1550413800  levels/full06.sam
+  fbdd8d1c878964dcbc830a24c197216c  levels/full07.sam
+  4a6903dd23853add101a363bb532906e  levels/full08.sam
+  a73f0500ebbe391e4d8db382b48fb694  levels/full09.sam
+  163187da4431503fde2f3e712147620d  levels/full10.sam
+  424691d8acc95c6dfb742f9bf57ff23d  levels/full11.sam
+  502005685e47e5ade1eb8ed2576ec58b  levels/full12.sam
+  d0a63bdc77827993fc8cc5f5fdd2e686  levels/hard00.bak
+  8806034f9468bb6ba370562e8ed08ded  levels/hard00.sam
+  6225e4953597aa92772da2be1eacdc33  levels/hard01.sam
+  78b2cd674f8ec4ad7967a6e384ae640f  levels/hard02.sam
+  b25fb0a5fd515b97b27640ecdd503e26  levels/hard03.sam
+  dd5ec31e8d0dcd325e85fc98f03a9701  levels/hard04.sam
+  49883c42f2cad6fd67dc5dbf778fda04  levels/hard05.sam
+  37df072c66bd4dae02b036dcd1b77ed1  levels/hard06.sam
+  b2d6d5a8145161631d28a2a0f1d30d8c  levels/hard07.sam
+  1015bfa4037f8cc4aa91593e88f6fdea  levels/hard08.sam
+  4b788207e9a2a7d4067c7308344d6e0a  levels/hard09.sam
+  4a373a37996bdc15405338716a90a2b6  levels/hard10.sam
+  6b4c4f48176ddc22a957c06d38e4a2ad  levels/hard11.sam
+  915dccd9a2c300040b2e59adaee6a021  levels/hard12.sam
+  dcfa87d1dd192a661f6223fbb862e637  levels/level.l1
+  f55ee4611d6a39c512f6ebce5d643fa6  levels/level.l10
+  ba29eb37a54d590f8ed4ee08e189ebc6  levels/level.l11
+  d715fcb405f106954032447f07c647ae  levels/level.l12
+  020fc3d3272a4127b35ef109fa828320  levels/level.l13
+  9d5754993d85241a8ebe6f4916645e0a  levels/level.l14
+  086c3ba4fe082e72c302fab9bbd27164  levels/level.l2
+  aae50bf25dc54bc462794f5de42050b0  levels/level.l20
+  e50a2e5145700cea35ad0179c3190f3b  levels/level.l21
+  27973add04f1d26167813de143b2ca12  levels/level.l22
+  112a8a05a5922b4d0526ca1986e357ed  levels/level.l23
+  ebc5bb66af863c234562ebc76dc11743  levels/level.l24
+  6146fdeaaaa73a416867352db2651b09  levels/level.l3
+  e701a7ce7cbd6d0e851c7cc01566933b  levels/level.l30
+  3678c1bf7a2f3af8ec2f853a12284175  levels/level.l31
+  793f2b978ef106d1bd8bab7c5f28738a  levels/level.l32
+  18425d74dcf5e0b784967008e5161cdf  levels/level.l33
+  a27975193ded3e1cd7f570ec35bcc5ba  levels/level.l34
+  011a3d9b26e4d04a5e811041c5861e6a  levels/level.l4
+  a3ba3e619676556380cb7d9df8d3ea59  levels/level.l40
+  25761a9d170e178662abb195c3fe8ed3  levels/level.l41
+  04b8b80429d3a652362db0a51bddac18  levels/level.l42
+  e42659bdc4850f311876d32b0b321a13  levels/level.l43
+  ffe12cabf68ff152be166ce7fdf53499  levels/level.l44
+  0181bb817b877c04ecfecfb6948296da  levels/level.l5
+  86eae6e2f8b5b707abf44e157d80583c  levels/level.l6
+  130f14ebe22c22e342ba6eca00ad19ad  levels/level.l7
+  9294d8e57489d5e9b24ef51d9e80094a  levels/level.l8
+  8a757a46aa31bde5bc8d51288d5d4a5c  levels/level.l9
+  3b68e623449e08fb15650e95a1d9ee94  levels/net00.sam
+  2b12ce71416553b6619c5668cb7f1fc8  levels/net2.dat
+  16358401fb7b69c7216506b8406b1a9a  levels/net20.bak
+  197986941df787f3afed56cff4fc005c  levels/net20.sam
+  89b872c0822c7cb2377a30ab6dcfde9f  levels/net21.bak
+  8f6a0f798d4584711c4fcf9dc63e6bf2  levels/net21.sam
+  82d771d41e397343e502101ff5174c8b  levels/net22.bak
+  346a74c0f3db0c3d604cfc4fe91ffc05  levels/net22.sam
+  37713d4ddad45a979cde7fccc7722295  levels/net23.bak
+  8b6fa784e4aa82e27d851e155e67e2c2  levels/net23.sam
+  5112129cfded09d5d988ea8057224fb6  levels/net24.bak
+  0f7b49428a891a83ef418a12fb4d656e  levels/net24.sam
+  d1b4bc8ff79ae5fb200d5dbac8a019d6  levels/net3.dat
+  cfe3d2b4f429c0d0b3e3ba74f89baac8  levels/net30.bak
+  750a2b0cf26b5a5de84e32866712144e  levels/net30.sam
+  adb6f9e5c25f1aa3b6f60032b199a9ec  levels/net31.bak
+  a5752ae4fd5de44f4a30be6c3546cf61  levels/net31.sam
+  ac451ae47714805cce36c90b18ad0992  levels/net32.bak
+  c767ae1c9ec3b9b3547129d35b23a8d2  levels/net32.sam
+  b06b51b58aa7b9000c4760aa28e105aa  levels/net33.bak
+  b83b9641808d75414ac614f9daed4c6e  levels/net33.sam
+  62541379d5cd73921e191eec1be5eaa1  levels/net34.bak
+  a107d304188113312dd079e5bfd1b3d6  levels/net34.sam
+  5e3ecfa66bb25185c2e0bd12aea0eaa2  levels/net4.dat
+  668cb7e61b058ff26742a56bc86b3088  levels/net40.bak
+  0bf1c76f9b885ed49852b20bc553c251  levels/net40.sam
+  edab37049226826c36f50f04bed28eda  levels/net41.bak
+  f5a8db7e5b605231165c3c03bdbc87dd  levels/net41.sam
+  335ce3259b2a7c80f35b58706a2a5031  levels/net42.bak
+  c9930e2b5183877cdeec24341c24d569  levels/net42.sam
+  be417ec54f997571d718d6121cb0e107  levels/net43.bak
+  6e4cb1f0dbef8f257cdb9e4a86110523  levels/net43.sam
+  cb824088cc5ee34bcd32b6fd0304c016  levels/net44.bak
+  8e31590086370abc070a9cf26faff8f7  levels/net44.sam
+  3ffd2c0dac1d87e08e822fa7d48d0452  qdata/area01v.dat
+  c1514c17f2fdbaa088d377c76d41b7a5  qdata/area01v.pal
+  c3ded29011134b38b52a00762971b637  qdata/award01v.dat
+  9aebe688c1827409b7d340864ac0c73e  qdata/award01v.pal
+  bd678ffff71ce57f8da592fa27b47d2f  qdata/award02v.dat
+  9aebe688c1827409b7d340864ac0c73e  qdata/award02v.pal
+  a8640c81f8f359824e8f4842b2b93d2a  qdata/award03v.dat
+  dbbbca3ec199eeafea29398fbe675cda  qdata/award03v.tab
+  9f7a29643706cd0ae77cf6b94fb7267f  qdata/bank01v.dat
+  a0db31e12403a6548ed32bef4293e6bd  qdata/bank01v.pal
+  d88d92b1218b154a0e6a7e62e70fb901  qdata/bank02v.dat
+  ca3f9251a4aeb1cf68a2ce7b824b47f0  qdata/bank02v.tab
+  c891aca4aa7fff63e7fdf50260cdfe3a  qdata/bid01v.dat
+  61e4141c8c2c16b734b8e94a4254d88c  qdata/bid01v.pal
+  71c539f38e5afbd30dc262ea5c8af0af  qdata/bid02v.dat
+  c16a5d80b43214a9bb4dd50362996d59  qdata/bid02v.tab
+  55d7ed2c1fcc55e3ab4fb3a1cb23d995  qdata/brief01v.dat
+  c1514c17f2fdbaa088d377c76d41b7a5  qdata/brief01v.pal
+  a3eb0fed2cccd029e2f8c621a6334046  qdata/cred01v.dat
+  f54604e176313eb3bf4bab2e1f5fa848  qdata/cred01v.pal
+  44242621e3febaf0758705d76b2f19a6  qdata/drugn01v.dat
+  bd36e68ae5e29554b1bdf67d7ca944d5  qdata/drugn01v.pal
+  ad3c95d3527f949ed94ec6d4676ff4a6  qdata/drugn02v.dat
+  0348f5687b91a839f5839e1add1b2247  qdata/drugn02v.tab
+  83aae4808861d19671acb29fcc8f6b68  qdata/face01v.dat
+  efcd19fbfa361547302a9b0b6bc852fe  qdata/fame01v.dat
+  9aebe688c1827409b7d340864ac0c73e  qdata/fame01v.pal
+  c00104618ac9fd5b4cef95e5ff22138e  qdata/fame02v.dat
+  ee605e50cfaaaeeadb364e39faaa4813  qdata/fame02v.tab
+  5844ad75dedd5a750d5781a7ef95aca5  qdata/fax01v.dat
+  ba301983a58d537458e87043ba63b729  qdata/fax01v.pal
+  da4279b508b37dd60a7ed91f8d2a62b9  qdata/fax02v.dat
+  a0e8b14c4b8dd536502dbf98ec578b63  qdata/fax02v.tab
+  c549b73cb5f2989d41f5b0bbf00f32f1  qdata/font00v.dat
+  1f927bb40de6254b08051e3de8ce894f  qdata/font00v.tab
+  22fa30a58c68c565a38c88f8568d86fd  qdata/font01v.dat
+  8785ff51dbf8ccf2c91cf700eb827bf8  qdata/font01v.tab
+  e25b409b8ff348e0fd44033ee4ab778d  qdata/font02v.dat
+  8785ff51dbf8ccf2c91cf700eb827bf8  qdata/font02v.tab
+  2545efeb25820506a1564d1b758edbd5  qdata/font04v.dat
+  e1d26d5719c40dbc08452b5f70fcb3d9  qdata/font04v.tab
+  82830e1a76b6d39734f5798a58bcc4ab  qdata/font05v.dat
+  c3969eae5b050823446955ae32a11fde  qdata/font05v.tab
+  8996fe2beddc6b094bb86ace68031c3f  qdata/font09v.dat
+  cfdd3ad7760f09a77ae3332e57fb195a  qdata/font09v.tab
+  59fda34d47185a2ec9baa868aa991618  qdata/font100v.dat
+  f7e5c2e00d0007bffb8d6e62da60658f  qdata/font100v.tab
+  8eaeb2d4bd5fee13342119a3716dccf9  qdata/font101v.dat
+  59ac12f1f782ba5fe8e8ca80247086f6  qdata/font101v.tab
+  c0453fb9e303c113ca347fb746914c42  qdata/font102v.dat
+  b0d9d011b1c065cbfe327ab88440507b  qdata/font102v.tab
+  cf8b65c7666c57bcf22e0e75194ce876  qdata/font105v.dat
+  3d5649a40ec98af02c694ea975fb8c0d  qdata/font105v.tab
+  ef2c7cae4fd5d7af17788c89b7d40dde  qdata/font106v.dat
+  4929184d50ff420f758231508992eca0  qdata/font106v.tab
+  fa724d6de582ab0afc2f8147c5870739  qdata/font110v.dat
+  058f3417c95fb4eb10de238be68e839c  qdata/font110v.tab
+  30da24b495ad4b6cd0d872f68cce9c69  qdata/font111v.dat
+  7aad62ff1219873830c5303ee723a0ef  qdata/font111v.tab
+  f2356345a4d8c31ddb3508dac8631c5a  qdata/font112v.dat
+  da1350e1a47bfe2e53693c2507b5ea62  qdata/font112v.tab
+  8c05654ac35faab8bdeecd0b6c9f3991  qdata/font113v.dat
+  36f72ed7b788056f769c58490200e820  qdata/font113v.tab
+  d76a98c9765856fb8f8fcd2554cdf37e  qdata/font115v.dat
+  5e7bab53c675d9a3ee805a1ee6e74b5f  qdata/font115v.tab
+  8548599583a55933a8e717df0aeae173  qdata/font120v.dat
+  85f830e348563315113f3ddd00487121  qdata/font120v.tab
+  5dfe0e7ab4937bc06946700be6dcbc99  qdata/font121v.dat
+  2dfbcc9b92111f5c940f65b30e22c49d  qdata/font121v.tab
+  4268e456e0fbbdc09538476e68d914b2  qdata/font122v.dat
+  916a398ebbb909b83910a45cfcb4ec92  qdata/font122v.tab
+  956071f917057674251e5e4ca28fab93  qdata/font124v.dat
+  767a078a2c49f8d879d9f180d43d1536  qdata/font124v.tab
+  8e2aa67481c9be7f6cf6e8b05c5d6592  qdata/font16v.dat
+  d365efb992da491211e02272a6e720a5  qdata/font16v.tab
+  c6e4e74c651a469d5a9f7187b5b18883  qdata/font18v.dat
+  256d2964236e2f45abad3181b41886be  qdata/font18v.tab
+  fd43557d13965e12eb4fa981ca937211  qdata/font19v.dat
+  86cdb567e00e1d1fd6cd63d59bf64b81  qdata/font19v.tab
+  c5b02b392ddee461d544a03527cc65b7  qdata/font24v.dat
+  704bc086d8d4c65f72a00b077d390913  qdata/font24v.tab
+  25a50a9c0a4399a6d4065206e703a5ee  qdata/font250v.dat
+  d6f721e7f9c7c98ed3d1211a9ecf29bf  qdata/font250v.tab
+  64f521766953878d33d99586232f483d  qdata/font25v.dat
+  030c6746d3133c605e9cad11bfd514f2  qdata/font25v.tab
+  6e6202b6fa8ea8e6175acbd84ef6dd0b  qdata/font26v.dat
+  9dce7d0b1e5812ce9180e72939d4057e  qdata/font26v.tab
+  7ac7d24f04310bdf4da619ec7023c816  qdata/font31v.dat
+  fad2ae06a9dc8fb096c62b2937e8a4a6  qdata/font31v.tab
+  13aae752f920e8fb61e2234a335b17c0  qdata/font34v.dat
+  3734198b4b2b3db5ddf66a9fa731bc18  qdata/font34v.tab
+  8a1409fad87026292dec582d28afe322  qdata/font35v.dat
+  57799435fcc0429b5c11c9f751a814b9  qdata/font35v.tab
+  7e0d7aced57073a24490542cb9e88098  qdata/font36v.dat
+  30dc1d010f7a7ec01419e11a6ae432eb  qdata/font36v.tab
+  451672af08b004dc60e37b3b8742f551  qdata/font37v.dat
+  e45bed3e34eafd272673efce4bfbc4fc  qdata/font37v.tab
+  007e78b4051d5f18b9b479098694951c  qdata/font38v.dat
+  c3969eae5b050823446955ae32a11fde  qdata/font38v.tab
+  cf9c34b6e76dd6a1fad3ec4a0854cb6a  qdata/font39v.dat
+  9102c16c7a1ad595281dbc2fba93a727  qdata/font39v.tab
+  7d875be40634df56b51d6be21a54103e  qdata/font40v.dat
+  f2a93f9b37284e1ad7f227b8887e98dd  qdata/font40v.tab
+  3519e44b3ff2a46f432b008b1b60173e  qdata/font43v.dat
+  378f9583bd075d95b5c3cbe5030beb78  qdata/font43v.tab
+  6d6b16efc1606e1296481f359043ae3e  qdata/font44v.dat
+  7112432946b7369102b4a68109dbed8e  qdata/font44v.tab
+  39bb279338d0347e0eb049a1b4e50fb6  qdata/font45v.dat
+  5c67862e336d808059dc22fc79a382e2  qdata/font45v.tab
+  1167380a8f0d78957d6f5889259c1f94  qdata/font46v.dat
+  9b0894abb72a902f64f71c6dd1dc8275  qdata/font46v.tab
+  c94434f69bb3448a7228ec1bd0768973  qdata/font47v.dat
+  c95cd63e403637010470192a00bc5b5e  qdata/font47v.tab
+  218fb08713b9a9b5247c8b214faa599e  qdata/font500v.dat
+  9102c16c7a1ad595281dbc2fba93a727  qdata/font500v.tab
+  edbc68da5131d933ebadfe9e20823c33  qdata/font501v.dat
+  f2a93f9b37284e1ad7f227b8887e98dd  qdata/font501v.tab
+  11b5c23577a27543b7d07ab4846f1ef3  qdata/font502v.dat
+  ef3d595f0b3899f8347d956e60296940  qdata/font502v.tab
+  e19a397d6676775b020bf0bd09edcf5c  qdata/font50v.dat
+  be6c2c911bb1f314bd9915b14d1bdcd4  qdata/font50v.tab
+  033dd7db16083a6bbde9b31ea35f3c2c  qdata/font51v.dat
+  5a338f0f64dfafee19e2ceb43a7715fb  qdata/font51v.tab
+  e79bafccadb1924ef9bc96c290b09f2a  qdata/font60v.dat
+  66728bc5dd00f8c9e4b58a6958f6675d  qdata/font60v.tab
+  80b410ba3b181950b0836618bf8ef4ca  qdata/font74v.dat
+  7c85d5c6df6b9f84993517356c334273  qdata/font74v.tab
+  9567525210c6aaee79d0ad5eaeb90135  qdata/ghost1.dat
+  85da384d02ec6b4d12fa95575afe39c4  qdata/ghost2.dat
+  f5235b346a019695f096d82041bad2a3  qdata/ghost66.dat
+  8f27bec415b06db10a0ead5a69e2cca5  qdata/graph01v.dat
+  808cb4006cd5639fe17c0383d4ce526a  qdata/graph01v.pal
+  5e1b1c5ccf71bbc4d31b07f02a02c308  qdata/graph02v.dat
+  545339ef4af39a51fca2497f6a144b34  qdata/graph02v.tab
+  9708c95b9977a7572d598e6032694efe  qdata/lettr02v.dat
+  a2c040117d0f21fdb2e48628e7054c21  qdata/lettr02v.tab
+  3640221fb4b28563408032ac5cde2587  qdata/load01v.dat
+  9575b52c4303489d97dcaacab778beff  qdata/load01v.pal
+  052cf3f6b0e9296789ed6521611326ed  qdata/load02v.dat
+  8c6434cf2b6e1ce5b6002a77bd9e4dff  qdata/load02v.tab
+  19bc1c7730cb5970212f73d709dcfebd  qdata/main01m.dat
+  034f0ebf8ea537b6233e77a1e92aece2  qdata/main01m.pal
+  e4dc8946dbb1c05a2d0a333c69356674  qdata/main02m.dat
+  429932219b286eacb28b3cec1c7b3cbf  qdata/main02m.tab
+  2a938992b33dffcac1dc87f505d233c9  qdata/pol01v.dat
+  ad237413dc9a136d9a54344cc8e6d6a1  qdata/pol01v.pal
+  3b5752e472de16cfd003222af87bcd75  qdata/pol02v.dat
+  2b6487a29ec0d34dc6c8ef2032c10073  qdata/pol02v.tab
+  bcae8e5afc654181b03ff27c2ccc14e2  qdata/pref01v.dat
+  54b755cbc1b91cacdd0edcf8254809a4  qdata/pref01v.pal
+  e878e7cedb76d1b406d6e2b9edab9cf3  qdata/pref02v.dat
+  1e7c7c1161588f74b0f118ae3a6f2ddb  qdata/pref02v.tab
+  62e06ef04f241db7ddc72a7ae74824cd  qdata/rep01v.dat
+  702cd5d7d65791890977c160a8d76c7c  qdata/rep01v.pal
+  97b9e1a179640e6d2706c2b86a05a2aa  qdata/rep02v.dat
+  8be7660487e3eca3d170862e964413a1  qdata/rep02v.tab
+  d545710335cd519b8768ff2f6d6212e5  qdata/req00v.dat
+  1d3346ff53946635d5e07cc66fe0586b  qdata/req00v.tab
+  f97a18e9b9f7091f7b6308b40a1672db  qdata/req01v.dat
+  9d022dfd64f046fa2068a9fdab962be9  qdata/req01v.tab
+  d058c496f9a4bd11e023d382a479f203  qdata/req02v.dat
+  986ab5e5fceb9cf483f8c0a51e631933  qdata/req02v.tab
+  3a80296bcba8c3baf0d2f46fe11b6a88  qdata/req03v.dat
+  38556edb3c568e1e382cf9db4d1953bf  qdata/req03v.tab
+  6a045c0686a3eb89d6482e6125e81fd5  qdata/req04v.dat
+  f27dc815f679c2acaf7a2e7d71c3ec62  qdata/req04v.tab
+  7e0e884cf7da3a713293066b9f0fc429  qdata/req05v.dat
+  acf1dfab5772a2148d57df0647bbd578  qdata/req05v.tab
+  d983284baf6ca76752f48809df4c114e  qdata/req06v.dat
+  3bda826b803bb2838c39defb082ea577  qdata/req06v.tab
+  f7cdd21fd17f4cc5b9b91ae609557a7d  qdata/req09v.dat
+  c9fd62ef8ef13f416754a8043e632d28  qdata/req09v.tab
+  780944f7d988d69f2bf19a91b334a261  qdata/req10v.dat
+  a55719ae7b8b872b1734fac6ddb7acb3  qdata/req10v.tab
+  d0e98809739645e397f2bee933162bbb  qdata/req11v.dat
+  6be9f7d0c764af1d059e12505db5ae7f  qdata/req11v.tab
+  db4d2fb77f149faa937967b57f5de721  qdata/req12v.dat
+  25f05625b0bf0bfbd5973adf178fb354  qdata/req12v.tab
+  5c1296da1dd8e460b9a77ea88e0e93ef  qdata/req13v.dat
+  4d2cd0b39b05d807264235da1225e85d  qdata/req13v.tab
+  6ff592a707a432a7a506b1690aa67b50  qdata/res01v.dat
+  14b50dbd1a82918ffd680877af3fec2d  qdata/res01v.pal
+  ff6dbde64231806286c85a8c1db47c9c  qdata/res02v.dat
+  ed33388b53f2a1cee294e83052c9aea9  qdata/res02v.tab
+  08b8ba1c8feb0f0b245119f9ed489c97  qdata/score01v.dat
+  447fc20471245010ea274f106b1af28c  qdata/score01v.pal
+  7789c6d78fcf1886721dc6b39e1b783f  qdata/spointer.dat
+  cfeb0596cf5e7f0d77c8d9769cafe3b7  qdata/spointer.tab
+  2363a96fae76bc109ba2f28ccb78e1f6  qdata/staff01v.dat
+  31f3128f5b353063af1287af7941a677  qdata/staff01v.pal
+  e2d8c461dec2efc4ae787880e610e3d2  qdata/staff02v.dat
+  7bff7374d9b4a4880f60f579b5f652f3  qdata/staff02v.tab
+  6b511258c33ee759dd13d9fe58b2b166  qdata/stat01v.dat
+  fe61735557d950d1993e89897b26d05d  qdata/stat01v.pal
+  34db9cec265d35251846f504c524e549  qdata/stat02v.dat
+  9599d88d8b01471e05afe7cab1f348cf  qdata/stat02v.tab
+  ab05ba8a415195bb6a9dbf96650e7e5a  qdata/title01v.dat
+  f54604e176313eb3bf4bab2e1f5fa848  qdata/title01v.pal
+  84a25104a26c480acc2fc86ea986e789  qdata/town.dat
+  c179061fa4dfc0cd04ee0a882a4033e4  qdata/town01v.dat
+  c758a3252fd7c6bf953dd38599d38e9a  qdata/town01v.pal
+  e1319e493f4fdc77694896c61bdb90f1  qdata/town02v.dat
+  434e3cb090aa8604aca15a2422230285  qdata/town02v.tab
+  d1b01a9cd9540f637281a63c4509b4f0  qdata/ver00v.dat
+  72faa0c4cb7be637d2ae44fc010a0b21  qdata/ver00v.tab
+  7e1981f98982604a322fda7f834160cf  qdatam/face01m.dat
+  9479f69b9e48beecf72b56ec7ce8002e  qdatam/font100m.dat
+  0a55e8c9e850284c5597e0be1d831e29  qdatam/font100m.tab
+  9d272dff16c22e5b544c777e4f679f96  qdatam/font101m.dat
+  842ec2a333222b60c99acc31c89f46ad  qdatam/font101m.tab
+  164e846c11d81286383f5a88a306fb1b  qdatam/font130m.dat
+  82acd51326313b36441d84d3b33bfb54  qdatam/font130m.tab
+  f862fd2fe161c83ea622c04ea87752c0  qdatam/font131m.dat
+  82acd51326313b36441d84d3b33bfb54  qdatam/font131m.tab
+  65aca70b3b6c20e21e54b8cbe23a37da  qdatam/font132m.dat
+  82acd51326313b36441d84d3b33bfb54  qdatam/font132m.tab
+  6af25a001366d3bee601807e9590410f  sound/adlib.mdi
+  179c9381f7bf9feae07f06e26c5ba758  sound/adlibg.mdi
+  593c549bdc6cae6cd9520344c4f9a32e  sound/audiodrv.dig
+  186eef69c73dd3412e9b1eac740d74d9  sound/data/minheap.dat
+  58bfe6434a194b8b34c612a890c376e4  sound/data/sound-0.dat
+  d05a46fcb73e55751b54734290f65247  sound/data/sound-1.dat
+  eac6ae01dda24c16c56494b40b4b4637  sound/data/sound-2.dat
+  551d2d229ab546f4dbd5f0fb69d66f99  sound/data/sound-3.dat
+  4723d5c3b04fcfd5ba5b41a23643ba37  sound/data/sound-4.dat
+  efe0b5b707af8aaf30f3c476ca75460e  sound/data/sound-5.dat
+  6d0ab12338dd4acf62cf07dc1ec78239  sound/esfm.mdi
+  20bb8743d82ddbb6b79cc3b02a65d59f  sound/iwav.dig
+  97a886f2cc1a06d857de2e2a3bbb3805  sound/iwav.mdi
+  4922c729c5e7b347089a2be44f296859  sound/jammer.dig
+  721d2335497252560be9a3f338562e7c  sound/midi/atlantis.xmi
+  f6c9d9f6fd75510210f66ea807dcefc5  sound/midi/candy.xmi
+  d14136d6b242452f0811eca1554208eb  sound/midi/doctor.xmi
+  da94d098fcc4a9a906c5646c5be9f9aa  sound/midi/fortune.xmi
+  2c4f7f921b158345ec836984f1e8972a  sound/midi/hospmidi.bat
+  8b2fe7f5772be2cdd5778c4f4278fad9  sound/midi/mend.xmi
+  c8f7d6def34d1aa0c3c43b22cd7ea855  sound/midi/midi.txt
+  4d927f3195922ca016a93574ab9350fc  sound/midi/nightsh.xmi
+  446753de20c7dc346a192318886dc4a9  sound/midi/readme.txt
+  70a117fe26cb17ff34658adf1bd4d048  sound/midi/sixseven.xmi
+  676f960b27fe8030f86db863fc936da8  sound/midi/steady.xmi
+  c69e47cf1ef0866609a8024f3017e56b  sound/mpu401.mdi
+  f69255e50d728010e4374963b6d3706c  sound/mssdrvr.lst
+  57cec94828e14d3174ec0a4908156fa2  sound/nvdig.dig
+  2b2e16f932c6e9b6ce928ed36fdd11d6  sound/nvmpu.mdi
+  9ff93102f44502e272a60ebcde06b52e  sound/opl3.mdi
+  06c2c0ac95ee07ec00dbee15352f66d5  sound/pas.mdi
+  ae83ee59e0f7395e2254459e44635d90  sound/pasplus.mdi
+  2beb8ab182ac3ef59d77495f9e7cfd00  sound/proaudio.dig
+  ee926e3cc0ea286ff4e2e068ee28fb9d  sound/rap10.dig
+  baa5832f803add2793dedf4f2cad21f2  sound/sample.ad
+  baa5832f803add2793dedf4f2cad21f2  sound/sample.opl
+  14ff00f5caa1d4c141c860ae174c3a38  sound/sb16.dig
+  7c157048a9c35124e2dcbda80fb42a27  sound/sbawe32.mdi
+  f6f10593b9216f229f5b7a058bddfe7b  sound/sblaster.dig
+  1808ca9952b79cc7625de2510a16bb75  sound/sblaster.mdi
+  f5307d21a1b2009ed72821b23a8e0c6b  sound/sbpro.dig
+  c49a03dab9303c6235213a65d509b075  sound/sbpro1.mdi
+  e65fff3a16763c2d233ac0cd368a8e59  sound/sbpro2.mdi
+  9d7a052a680f45d244e0ee4735b7b55f  sound/sndscape.dig
+  31ec7e6e06a3eb9e0bebff3e52ef1b0f  sound/sndscape.mdi
+  605073be24c73d794c0417a58cf262fa  sound/sndsys.dig
+  000e584a06712d2f2b58eb2e17b65248  sound/ultra.dig
+  9a1b881ab9e8f6d827f6c27c5df40d85  sound/ultra.mdi
+sha1sums: |
+  cdc8d8db5f52c95ba19efd04b3e5e28a40b53967  anims/320x2401.smk
+  959bd1438315ae34ffd32c8cdf139a6adc46d1ba  anims/320x2402.smk
+  f4077b0a0a24d2efe0c3fdb9c2841fd4c472125b  anims/320x2403.smk
+  9a6f0c115834e4bd477d4f50f76059c5748f8ca2  anims/320x2404.smk
+  5e347b7e1596ab5f0577f27f6bb8a759d9e22351  anims/320x2405.smk
+  0f787044f20078d77c7cb264c78163ffd620f980  anims/320x2406.smk
+  aaf7c67209329e71e1461a284d659d575ef9b64e  anims/area01v.smk
+  867d73df3aee4d353f1daec40bc7f27d507841f6  anims/area02v.smk
+  250d9e8a64c75885cdab2aa2f90f921cc030e3b5  anims/area03v.smk
+  220b4a6c849e771f338e31921e1892671123908f  anims/area04v.smk
+  d9e54415c59f398198068fdbe09d12e6706c0569  anims/area05v.smk
+  c8b249a631df2f53f07956d6725e9ebc6b0c1b30  anims/area06v.smk
+  e9baa2ca0bb58f7725dd3eb5eff9531a60d2db20  anims/area07v.smk
+  c81914e6d665e72517279e08d899ccf723a360fb  anims/area08v.smk
+  ff2ecb257dbd6dc86d5eb85b8ccf1aa29f779e7a  anims/area09v.smk
+  7410694e2b7dd0296ded2a00a621d71a17deba2d  anims/area10v.smk
+  8a3458e8f5dd56f2a88672d39e2c735add8e1883  anims/area11v.smk
+  4c3fec72d115c71c274d3a16a0621e80a21c2897  anims/area12v.smk
+  32dd8d205fcbb8b1d4894fe07073890df5770976  anims/area13v.smk
+  390ee5c5c2ce3c5e508200129acff6cdd66d0119  anims/area14v.smk
+  356c124d981b86689737cbb28c4250d050dd3070  anims/attract.smk
+  0398756eb988708b962bb0b2fce77fec55856ae9  anims/lopaper.smk
+  8f4d01983ab9a15dff42763118bf5f432faec2d0  anims/lose1.smk
+  b1faf256866eb5162f414e1826af2cee61c9b497  anims/lose2.smk
+  ff03355efbc788ac3078b933178cd575a31ffff6  anims/lose3.smk
+  410bc7667f21e3fa5372e38b8dab27a896ca2bf2  anims/lose4.smk
+  778b38ad5ff84c8c797c702334e51d85bf7c1fc7  anims/lose5.smk
+  ccb18d31a582b3d3e348e33a2f0c299df38d1235  anims/lose6.smk
+  b678796ba88725ab64e2a7bd2e4adcf74f45911e  anims/mmenu1-0.smk
+  3abe05e7b6a4918cd313d9611c90a4b8ebf0c435  anims/mmenu2-0.smk
+  bf4cfe87bc77ba7c1589a85e7247763a6ebd200e  anims/wingame.smk
+  623a9b36385fadc048930cd55e69a4d1eaf02600  anims/winlevel.smk
+  269b57de66148554de4b26597aa742e53b41b72b  data/lang-0.dat
+  7fb94050d383d73c0b13acf2a0b7d0c1546f719a  data/lang-1.dat
+  773d236fb95e80bcd9d4b464ff1d6f5186988e42  data/lang-2.dat
+  7310852d2d512ff48a8a051abab041232d8a1493  data/lang-3.dat
+  6b0d7d0de4c291a82fb6d3cd467bc967e413c8a6  data/lang-4.dat
+  ba5747f4e58b08b6ae7b57b82aa170d43fae0383  data/lang-5.dat
+  976241ffa2b37ca9bae0c398402548d4db449dcd  data/money01v.dat
+  612d3cdebfd3e0c07601f5d79a11983f2ca15a37  data/money01v.tab
+  6c258ee38a1b878c0800d402228c3856329f3cff  data/mpalette.dat
+  5f19c24582815a56d85f2e5c2253d3e353da2dac  data/mpointer.dat
+  4721d9dde2f8f6b789d40d6f37117216d12618cd  data/mpointer.tab
+  5900e1d23afeeedb836e7881a1f7536c6b2a905b  data/p_comp.lex
+  65f28c0abbe866ad08d140be90186d5430939982  data/panel02v.dat
+  8e40f5e524c5f9d1ade7fdfcd64e97cc6cef881e  data/panel02v.tab
+  0287ed082ab86c1bca5413635ec8d4b7d835807c  data/panel04v.dat
+  c00aa0d55aa78181deac21e9e98bc66c9db1b62b  data/panel04v.tab
+  677c7c089ed29bfa5317f78c5b215881781fe83d  data/pulldv.dat
+  ccc8f68cbb1dccdc62db5314fa46537942dfb9fd  data/pulldv.tab
+  49e78e97c4f1a8f5b3fdaa0e56bc560e7c9f84e7  data/s_comp.lex
+  a940541cd7ebb696048a51e40dcef22e861c81d3  data/vblk-0.dat
+  2adff45e11c92e4b70b4eb1ac4d4604c55046b76  data/vblk-0.tab
+  90ab4448eb7c1bd492174efce8bf6e577b345d11  data/vele-1.ani
+  f6017d68b753ba2e13b2101bdde4fa926c474c19  data/vfra-1.ani
+  64f6c86bf3e8d2f4279f697491bbc2cd735b58e2  data/vlist-1.ani
+  ab9900afc174f7ea774713ae2080c0e85487cfcc  data/vspr-0.dat
+  883091aab74368e5eaeb488d7e8630e0c3df4197  data/vspr-0.tab
+  e5f3e44c9e7c4c6e82546c22a5f298fb73436db3  data/vsta-0.ani
+  cbf8b9ab5269732bcd94ca472b5df04605e2525a  data/vstart-1.ani
+  0b79889fe293fef349dd7e4e2094a66ce9ea008e  data/watch01v.dat
+  9a641fc19c72b6e0254bc8cc621dfcda780f5f67  data/watch01v.tab
+  cd110ea7f3653992bf0e469be32cb2d119adf2f1  datam/mblk-0.dat
+  5ca6c289d1c838dc2284902a817ca182b0d1cfcf  datam/mblk-0.tab
+  1fe976878ff7797bb156811cdcd9dfda219f92e5  datam/mele-1.ani
+  ce291458d2c2f0e01daa8bab0ed35225953e9d95  datam/mfra-1.ani
+  63ba6329cb3421a0dc42d8b886faed22b37386c7  datam/mlist-1.ani
+  d0b52f5fc9cf00fa7e76f50f92c0b2987c90db4d  datam/money01m.dat
+  2bd40b07c5ae54559bf6a583f3487b8b680883b0  datam/money01m.tab
+  8b4ab507f210a6089400494f1be5cccedb7980e9  datam/mpointer.dat
+  0f80d71d5ac8a75c6631aae8ba58da77100f22d5  datam/mpointer.tab
+  c33150baecb2ab22d46a0b38eab024bc15c5075b  datam/mspr-0.dat
+  b218d486d6ffa3ba4099f96fb4306f44d7a6c209  datam/mspr-0.tab
+  3044824d92c782c68ce7a4742ad723aef1864ace  datam/mstart-1.ani
+  dac213e92ece6acc11fad964cc85bb15f013db2b  datam/mutton01.dat
+  360c36c049d32f57ff01d63bf5cd96041a5667a3  datam/mutton01.tab
+  d9f4c8ca079f650397c8e95344686a4b8ffa55cf  datam/panel02m.dat
+  9a99e64c7da1249fb7b7d982ce0d74ffe90e3ce8  datam/panel02m.tab
+  ec84a409825ec95599614a7cb5c494942fb01383  datam/pulldm.dat
+  a4ceb7c5eb01a5754d31a76401a809a5de814f35  datam/pulldm.tab
+  807a3ca105ebdc6e1c6a30ef63f1f40d1b549622  datam/watch01m.dat
+  6788ceabe63020c34acf912a785a2021398006ab  datam/watch01m.tab
+  bd9206cd72a3b27525fc290816d3819bdda55d27  intro/attract.smk
+  68722a9189bd85f9453a09ac9b6ecc34b5bd096e  intro/intro.sm2
+  5b2f7186c2e0588150abfa739db90cf8c3d8ccb7  intro/intro.sm4
+  3b8a4cffbc6d20b6a7f6cd66875054b15316c86e  levels/easy00.bak
+  bcf7b3e035c485705aceb42e920445b6f26def4b  levels/easy00.sam
+  81682c06ebdfc0414ba69544b4dd8c67b3879650  levels/easy01.sam
+  36a81ded26f68b70f939cc2c9999ac623bd617e2  levels/easy02.sam
+  9214bc865c9735664da256ab03285c86fb9c0079  levels/easy03.sam
+  00e6ed6179f23e66c83f27363624c3d71233446a  levels/easy04.sam
+  99fb9f0d57a47b71f3661226d280308bb90365c6  levels/easy05.sam
+  8358bfda787a30be94670041f51ec3b587e66866  levels/easy06.sam
+  ac4d29566f403ac3d7f471bdc76ab975524ce78f  levels/easy07.sam
+  f2acced195adf249a4e1b68d815bda089c97cf0b  levels/easy08.sam
+  00d1089c8423bcfb15b250c5be8d26795c7c1f67  levels/easy09.sam
+  e983f37434a536819d743146055492917898a77c  levels/easy10.sam
+  3cbcf802832f09282f064192b3ff0e75f8b43c20  levels/easy11.sam
+  ed6e428f36fcbf21322a66897d696cef8e3d4609  levels/easy12.sam
+  102053fafea0e9920e3021b7cbd65cc93611770c  levels/full00.sam
+  4189eead6b3dac31fb19ca445710273ab4854f86  levels/full01.sam
+  a4ef413f916ce97624978c78b943422f2e9ef79f  levels/full02.sam
+  24012e6a192f7172b2f0b2dc97216077b9b32538  levels/full03.sam
+  08c09b25bf870acfc60c9077d8168715122b2c20  levels/full04.sam
+  9d9ecca986006b4e8d1bc8f330299ae1b6db78bf  levels/full05.sam
+  4329d7e7519bb989e650983ac71e20a3b68aaf2c  levels/full06.sam
+  0db6a7ed7638180a1d5bece0a59cd8b5cb627088  levels/full07.sam
+  c79124b6bf6b694220c468fc4301c5533d31b2fd  levels/full08.sam
+  8ee352c27d7614c7e7aac6106c64b2c41ad0f2be  levels/full09.sam
+  a33811c1ac19141db0a9bc8963f67c4845fade9d  levels/full10.sam
+  ffdf768b653bead4bf91f1b6e4c4b7adc26168f6  levels/full11.sam
+  6b8e9f81e9a43a5e7448dc451908de0b267a6b23  levels/full12.sam
+  1ec361295ce9e9579cf06e8281072b12dcbb9714  levels/hard00.bak
+  df0ec6264265a4e427e84ff398164097f55548c3  levels/hard00.sam
+  4189eead6b3dac31fb19ca445710273ab4854f86  levels/hard01.sam
+  68a3474cc9ae80d5d5a87cc18cf27dc900e12bd4  levels/hard02.sam
+  eb86a26b2b1ff696664b356323f397ac0d2c7b9b  levels/hard03.sam
+  c309299407c94e4ced99b91d30ba76f23921a974  levels/hard04.sam
+  850dcfef95fe7aa43dd180b21681222a140ddb7e  levels/hard05.sam
+  41523cd21b9ce08f7f27c78d482d6161784dca57  levels/hard06.sam
+  22ad0d8390cd8242c554b2f037e0e88e9f5a9ab4  levels/hard07.sam
+  9741c80baf670c523763f69d61cd6bba8ed5f779  levels/hard08.sam
+  02deab02ad272ddfffc01aa0b2c37cba60886e5e  levels/hard09.sam
+  4c0744b225a38e6a98bae87188ff4ba13ab801d2  levels/hard10.sam
+  a884df4ae7efce938943d92c84cc49ed7cc24f73  levels/hard11.sam
+  8b401c45224e68980d765406bc695f7bb0bdc4cb  levels/hard12.sam
+  e7c303083a50987cf9ab77d32c81d120cc03e1b4  levels/level.l1
+  6767915725b509e4ea799c9a85bce5f0afe0247a  levels/level.l10
+  e6a0f28b10d60fa8bf7d42fd1857fbc7b945b77a  levels/level.l11
+  27a7e8569fe32096cf77b3e9a1de4e379a43dbd7  levels/level.l12
+  c501782e50824a006cac59c82176872a41178022  levels/level.l13
+  0be5d8eaecd502bdb53211363961f51cb2082f61  levels/level.l14
+  b25769fba0499cfc95f4704ee9d060b85d6f36db  levels/level.l2
+  6efa87daacbe4e0b2925ca547b6e305781c1f0ed  levels/level.l20
+  8a1d224328fe3843701b3b5a4f1a6dcb79552217  levels/level.l21
+  57909c33e8f43aa44e71ab63f06627bad9658f1a  levels/level.l22
+  3fcabdbe8f3ae3b95d91d8c5b116ce9ebaf33d4e  levels/level.l23
+  d175a7efd1dced594be1be65f3a475b56f7ad3c0  levels/level.l24
+  1ae7b9d8800a69a291e75248271fe577ea492ffa  levels/level.l3
+  fae7d16224a94bd6e8e9827f7bf32f25038f1e47  levels/level.l30
+  94f46c2ae3a53f1189988ad3cc658169451e4a5c  levels/level.l31
+  bd08777f6192ef20bd5c6aa54c43a562adc37c94  levels/level.l32
+  24d53e398deec9bc038ea02aec49092ad02f2f02  levels/level.l33
+  33a27b727717082856307a1b6ef7f62c6e2ed734  levels/level.l34
+  cb16b86685819d0aa30f30ad76200f97082215cc  levels/level.l4
+  35984dac8cbf12fed1516084886204d7cfc74a3b  levels/level.l40
+  e9082cd8e98da0d2188f01fd5c301552de767ca9  levels/level.l41
+  46fa2ad27a46593ebd34ae039383c663a08a4e95  levels/level.l42
+  6be078e73e4c9fad5e069d9c0b2f90e6da4edf49  levels/level.l43
+  7bce978d9f9da6d778b65a43a047b9563e46ff85  levels/level.l44
+  3df1f037c231c6b4c05dc2a7abadf2ec37afe3a3  levels/level.l5
+  87b6ed0559e994aab7da89b131014f9027f374a8  levels/level.l6
+  18b29f2e71f98fb35d96309139a6a8b2361c6228  levels/level.l7
+  1ae75eec052ef0b6920aa12b366a58c3d33e7581  levels/level.l8
+  9ff38d85b9942d1f7893e36250cdd422453224b6  levels/level.l9
+  0b71e33bcf24f3413bfa4ea2a2344fc328ef16e8  levels/net00.sam
+  6bef7d8cf4bda5869c8d83d182f0fab61aaa19b8  levels/net2.dat
+  7939a7204b03c83d63d3a8d8c658f045e62ac78b  levels/net20.bak
+  7a20384c2011b1c349fb67fbf5b1c1646adcd5f0  levels/net20.sam
+  ece01b8d85579a10fcd468c734ebc7b7eb6373f0  levels/net21.bak
+  b4bdfdb9931eb2925407769a2c80c8db2c1fb42b  levels/net21.sam
+  491df8b0cf1ae645a5139f628168902b1847035a  levels/net22.bak
+  bb7e62d43b625b436bd51a38bfa0782545b5fdbb  levels/net22.sam
+  fba3ce22424600305532f8c846d7c4cdbb71af8e  levels/net23.bak
+  9eb4594d6770709b874bfc4775fd74a6414ea439  levels/net23.sam
+  058299dfa5b3c3970b3ac236cbb68b736d5dce39  levels/net24.bak
+  f755b004ed07271cb7ff43b0b7eb30f94b426aec  levels/net24.sam
+  30e8516a821919abc031c2315d1f7cc927f705dd  levels/net3.dat
+  f79ec2bc9a0a65bc9bd47a6b70031c2da397b032  levels/net30.bak
+  4d35ea4ca4b442a3703ac367cccaa1518426a1fb  levels/net30.sam
+  5bb905bf7111cc9e4f362757e45a8096e9d4ace0  levels/net31.bak
+  8d7dd959c444a5b1e22fc66bc6264f29448423b9  levels/net31.sam
+  c5dff841f5896ff1e26da29167ace255bbb4ea6b  levels/net32.bak
+  78061120330ef2cecf82670d60ca66b9bbb34ca4  levels/net32.sam
+  a14a2a13bc70dc57ae44bc1022148999cf2b9f11  levels/net33.bak
+  96a33a1cff23512a51d94cf4f61add0c2a9620e5  levels/net33.sam
+  82d42575602a886aa3da3c6cd7ae6d5d2f121911  levels/net34.bak
+  ecb835d68f5ba35e974080c024e4b64c6ba0777f  levels/net34.sam
+  e8621f01c810127c2da73b527faf5e414f323f8b  levels/net4.dat
+  c5190855dddd72fce64d53df0acc5501a7996fc8  levels/net40.bak
+  a115d11cfe47491705f1fda0dd0f034b7bdfae3c  levels/net40.sam
+  673353ddc7adf9ebd8fc41453cf887374b1869c0  levels/net41.bak
+  83734676cc4de2259e6d121e72944a34cde4d337  levels/net41.sam
+  19b7fc248c011b90336a2d22df6f3c716938af00  levels/net42.bak
+  ef3d7f27f1043dea73620e13639116acf19c9ed7  levels/net42.sam
+  1adee70c7d794d147e77382efcbd1e843a6240f3  levels/net43.bak
+  9a6472694405737262c9b47c7b8c08e1d423bea7  levels/net43.sam
+  020dcf206214f8b507175135f60115e3ca7ad55b  levels/net44.bak
+  445a41ec024865c1e997d1d6a4075085218e5ed2  levels/net44.sam
+  d4c6967aa34fcf3bf38426c87a73e5acacaef8a9  qdata/area01v.dat
+  47805cb2f8bcc3fe30172f71f9356fe7292959b1  qdata/area01v.pal
+  c6bade4a7685f98f4a967ecd92c58712f2dc7b40  qdata/award01v.dat
+  bee13ef1cb9689730674db0707f538a505ba4189  qdata/award01v.pal
+  06cd7280dd8db0dc3c82e1434b82cb3ca778e816  qdata/award02v.dat
+  bee13ef1cb9689730674db0707f538a505ba4189  qdata/award02v.pal
+  d15f8b7d64ce877e53fe14d73ff8ca77e5a5b6f8  qdata/award03v.dat
+  39d793ed91e4f5c64adf9b303b4eb59c4025dbcd  qdata/award03v.tab
+  beaa46024931a74fe944185696d9953a64e5712f  qdata/bank01v.dat
+  58132da13ba8aa6d40627cd30b14866c7552641a  qdata/bank01v.pal
+  a7dbf83eb22381b7ffafbeefdaae34158bbf4851  qdata/bank02v.dat
+  e27c3aff21c1d5004f763e282e5aa23ac6e06baa  qdata/bank02v.tab
+  d7c7698259fa1bdf11ee7e49fac5530c98170f53  qdata/bid01v.dat
+  68a8e0b9d881dfa62882409d9887b9374e958cae  qdata/bid01v.pal
+  8e991fb4804683c54df42dd0a3f0711f8165b1d2  qdata/bid02v.dat
+  caaf96c230e1078c70a8e7ce6f67d8f8a338d488  qdata/bid02v.tab
+  33e7f54f9505b28d2d558debbaf96e672fab1aad  qdata/brief01v.dat
+  47805cb2f8bcc3fe30172f71f9356fe7292959b1  qdata/brief01v.pal
+  317fef8e2af416e3af882308b0b0adbb8d88caf5  qdata/cred01v.dat
+  7ebf4e15317794cda361ddbf39478686a9747f08  qdata/cred01v.pal
+  c1cf905c6457294f8c6dda7c5ef76c059cfbc530  qdata/drugn01v.dat
+  42259e0fb9b16417054efb4a5e0b272abea180b2  qdata/drugn01v.pal
+  a50036a15431d2569f9a448a6842f71e67b87dc6  qdata/drugn02v.dat
+  ee116e7968a889b066abebf348aa10f42b91fb2e  qdata/drugn02v.tab
+  84d160cbb801e492c83a2d6b99a44596f773300b  qdata/face01v.dat
+  7336b6fa3921b925eb0615f2144c9d8f9ae37714  qdata/fame01v.dat
+  bee13ef1cb9689730674db0707f538a505ba4189  qdata/fame01v.pal
+  9c2d7f2786f7f4c035b932e80e7dbacbc94dc5f0  qdata/fame02v.dat
+  123eba5f38daa6909a3afc231bf33e1831bd906f  qdata/fame02v.tab
+  7b478c2656a30ad74fab24a6e66bd815809e86a5  qdata/fax01v.dat
+  d799b6cf1cb82d763663ac71f90d92044bd36083  qdata/fax01v.pal
+  9f0b44cf659bb70531a45cd0acfedc5e27bf1a16  qdata/fax02v.dat
+  878acf08cf411bba5c1ff4708b72892de12be899  qdata/fax02v.tab
+  635dfe69dca52ee56aee68830e6abdec47d18126  qdata/font00v.dat
+  bab60543d691b69ff7a8c953d9a5ff11785b6df3  qdata/font00v.tab
+  3775969928ddb029a9e322cd38825194f89e5ac5  qdata/font01v.dat
+  fe86ba44b916ea08d3089e310025dad34202f2e1  qdata/font01v.tab
+  1b2f621174cbf984164a69ab2364702af0eaadb3  qdata/font02v.dat
+  fe86ba44b916ea08d3089e310025dad34202f2e1  qdata/font02v.tab
+  50b6935ef9e6c3d1659f3ac9aadf9614ccf3c591  qdata/font04v.dat
+  19ff8f59c892d43e5d516e7a7f486596eb8cae1e  qdata/font04v.tab
+  953ec220d6ee842af8d0d391deb2de4f4a52100a  qdata/font05v.dat
+  4429a2d9570f7fed7144c15cf73efd896c843268  qdata/font05v.tab
+  67bee67a958f963a367c83575e0bf9c25e4e95b7  qdata/font09v.dat
+  2930e36d294c018863e019cbbc8ea50affbd03f9  qdata/font09v.tab
+  24c4960fc1f7892c29f540115dcb0331165b56b8  qdata/font100v.dat
+  77276a4fb6db15118eeed4fb97f2529bbfdf25da  qdata/font100v.tab
+  6859bfd276eb2bced8dfa95d49cacf5c6abdb5cb  qdata/font101v.dat
+  acfa0d1e32d984c24c1d533c3695fabdcbc999da  qdata/font101v.tab
+  3ee9d7cd1583922a88065d4661aecb101f10ec62  qdata/font102v.dat
+  496b5c3f75bc446a46ec06f17d3c85874ee1a266  qdata/font102v.tab
+  9e0d3a02a1ba4afa994960363284b0d957de50a7  qdata/font105v.dat
+  9f2394e4fbae62457f485f0ecfbb510a936079dd  qdata/font105v.tab
+  f4982cc77d48a4b11b81bb40a522a65768956088  qdata/font106v.dat
+  df805bdcd4740dc74ac30fd4a58a9ec812953f12  qdata/font106v.tab
+  95ec6d0d58b8312cf898a138ceb494eacd8a5acf  qdata/font110v.dat
+  93e6277f8aa9c92f86ddd7b347da8661a8a3f52f  qdata/font110v.tab
+  f149ecd3780f16fe12f4f3c9142ab5816011ed96  qdata/font111v.dat
+  e3bf87e18f496cb3859aaf961a24b3c97e23017c  qdata/font111v.tab
+  04f0b4728de7613634b40446ae05455b3e8b030c  qdata/font112v.dat
+  b63c5df8efc5a689458afd46010de738152c1ceb  qdata/font112v.tab
+  34873341f7391612c6622bf33a0bc988beb69f72  qdata/font113v.dat
+  ac76b8801643f10cc2192d66bfabd4e19c9c830b  qdata/font113v.tab
+  46b2d038188d850fd64aad6035d1906266e9987b  qdata/font115v.dat
+  77eebe98bcf035134e651fcd4760ffa1a307d7cb  qdata/font115v.tab
+  e85b3dc53179b0b947ebbc540bd53b4eb123c357  qdata/font120v.dat
+  ffa640fc9021d47412a4ab19f9dc775b650b9342  qdata/font120v.tab
+  54f70e9cec2e0d8fe824a207e43c8de76d50df41  qdata/font121v.dat
+  ffa964ba2caa18bbc6d6d47b347a04867333a30a  qdata/font121v.tab
+  1881a88b49e37b0f630df49ab01af10c62aa5dd5  qdata/font122v.dat
+  25ec96087015939cf7b7d9f2c0bfcdae5bab179d  qdata/font122v.tab
+  0ef49da9fe9b7b53ec517bc64b52a3ea51bbfbf4  qdata/font124v.dat
+  ca5292b73b88e3fe69ff051d10d870de76cfe7bc  qdata/font124v.tab
+  3b4cf3158b0fcf7a0473b3d66ac6e654b3aa0b80  qdata/font16v.dat
+  10399b6b9627b5a6935b9605efdce4f8a7afd1c3  qdata/font16v.tab
+  f7954cdda697667bdb5814ae994d4b706346c52a  qdata/font18v.dat
+  e2d67c3688893fd4d6f4325a9981b0a4332fe830  qdata/font18v.tab
+  b726d8da8f462f27326d0527cc231237142d775c  qdata/font19v.dat
+  b9346c1b64f3a0acf48adb0123b4ed4956173da4  qdata/font19v.tab
+  cecfb573cf774c68d90473009ca2df2cc5628d2e  qdata/font24v.dat
+  56fd85fd8703811d01fa7a0769518fc454ce30c5  qdata/font24v.tab
+  9d0b8f0853561163c735b0c1847abf135d33fe75  qdata/font250v.dat
+  b828f975bd65bfa4d378b7b5d6c0ca5f71b85360  qdata/font250v.tab
+  b93fa416360c05219cd2860b79a97a8257a5cebd  qdata/font25v.dat
+  087558591940649d3ec22fb73db0cff328735c44  qdata/font25v.tab
+  10cb3812fa7a711a759635f45ee16243b10c0c65  qdata/font26v.dat
+  11f65443f1873b97d405d08558b2ba5456680e04  qdata/font26v.tab
+  a090062aea519119c5bacdeae4ea2a0edc7a38f5  qdata/font31v.dat
+  be87e45f5f29378bd55828d82f8367db4a64ada0  qdata/font31v.tab
+  ce21073f00ac42c52c56a35d1425e136e65aaf72  qdata/font34v.dat
+  1044aadb4c3cc3746f7a9c5d87f56683b2fcc2c5  qdata/font34v.tab
+  8eadaf27ff881803d9a784decc2f5e4e4b3bb7d5  qdata/font35v.dat
+  b12962785edff6174331f2ca7c6a668d694e042d  qdata/font35v.tab
+  516b44555f752772ac912d32072c881ba380fa43  qdata/font36v.dat
+  56389cc9104dd978d7c340f8d82aa15d4bfb3680  qdata/font36v.tab
+  2e44bd7e942b8e54503463f68c4da2a0132e19fa  qdata/font37v.dat
+  c46cd568d4595e3e902df267eee3eead313921dd  qdata/font37v.tab
+  c7cbe3a91d13ee996f484d660d4d8e244ce83b03  qdata/font38v.dat
+  4429a2d9570f7fed7144c15cf73efd896c843268  qdata/font38v.tab
+  fca02bf962ead8c803580ae59569cda012db5fba  qdata/font39v.dat
+  af8527711e03f308624c5c6d6589f2996007d6fc  qdata/font39v.tab
+  556c8a254163af4a702d0e7c968b7d558d7646ad  qdata/font40v.dat
+  e350633466b675544b9462ef59ff6b2d51cda1e5  qdata/font40v.tab
+  ec8420fd3806c4febe2267935c83efef22203e87  qdata/font43v.dat
+  06ecda154dd5c3285ddc29d5ad3ca1a67778a587  qdata/font43v.tab
+  25d34a505877519dfce1501752ca9e5f5f12670a  qdata/font44v.dat
+  705820e226154862de90fdec44789226ad92fb3b  qdata/font44v.tab
+  8b014df93ea934eddb65dd86ba7645ef684f221a  qdata/font45v.dat
+  69bfb5f58ee6bf8ba8c663d474bbfdbc5bcc1bf8  qdata/font45v.tab
+  49af16f74b1713abd0706fa56d80324d1f43e95f  qdata/font46v.dat
+  c6541e419cca0dc65568940049c4b8892375d86d  qdata/font46v.tab
+  45ae435e722f024846fec65dcc1a8e20416b93ec  qdata/font47v.dat
+  f61a14cf3fa6bbf9d15c222f64043a9ec86b3033  qdata/font47v.tab
+  2f15cab2d2a389a399f1baa482f94f98f0fa2b46  qdata/font500v.dat
+  af8527711e03f308624c5c6d6589f2996007d6fc  qdata/font500v.tab
+  6a2951766753cd04b53d7cb7345efc5df9e96c63  qdata/font501v.dat
+  e350633466b675544b9462ef59ff6b2d51cda1e5  qdata/font501v.tab
+  7421c49436ce92da275a2c7ecb612e5c16940525  qdata/font502v.dat
+  9646d63d489ad362e482c0cd8a9a5b3bd6046099  qdata/font502v.tab
+  037f6c915c019ce456cb007307dff1d67b9e4799  qdata/font50v.dat
+  957591cc12bd4598cb9cbde68671a74fb2ce53e7  qdata/font50v.tab
+  7b6347846d3471b86f1dfc5cb9425444ae942fc1  qdata/font51v.dat
+  e2de79b8cc2bd9f50852ce82de64446b0f493622  qdata/font51v.tab
+  f7bb76ada58f2b01875d1dac6f90970ed3afa696  qdata/font60v.dat
+  acd62b5c5003562cb7d5e9d5743aec693eaa5d97  qdata/font60v.tab
+  a24ac79f458d63eae2629ef36c039f64d5f1eb6b  qdata/font74v.dat
+  8a26832ed301f5260fbed087b06a4d4a5e4e1cc0  qdata/font74v.tab
+  89cdb7f2d3de4d638b053135fecb9243e05953f2  qdata/ghost1.dat
+  7eddbd624b6efbb5cde823703c0518252c3e71bf  qdata/ghost2.dat
+  d6d23522a135ffd1a4a255358e3b96943828a983  qdata/ghost66.dat
+  9d4cdc4890d0e9972272618da5f4d51632802456  qdata/graph01v.dat
+  1c93186c295085a305f8e3761a6d4a457ff33690  qdata/graph01v.pal
+  5084163b20e43acfa175a294c4faf576adfed66e  qdata/graph02v.dat
+  4839f6eecec7b80fe54bb70b71dccd7c47c97c32  qdata/graph02v.tab
+  44dd4c33ab3bb3e7cf67023ecbe6f7f292c758dc  qdata/lettr02v.dat
+  ec8e6d98df985a9f0d84c078c362c987838c05e3  qdata/lettr02v.tab
+  630e1765e95e91c2983c0d10034874e9b88bb96e  qdata/load01v.dat
+  12c2bcbf49c52df7410e36cb5367b8c7743cb0dc  qdata/load01v.pal
+  d46c8415c93c4a3f01dcc422e381fb0c22d1be6f  qdata/load02v.dat
+  6709810e2cc1779dace6eb76b1744c15ba7b7217  qdata/load02v.tab
+  ecf6fede24dbb46832e6575d81974a4469a8e75e  qdata/main01m.dat
+  175695d9d8a03e30478872c96feeccb0772f7e97  qdata/main01m.pal
+  72d5a77fd442dbcd45d24d93d3df74dc39bb40ce  qdata/main02m.dat
+  81b915557bc43305a57d4c0d7dcf8b328d1dcd36  qdata/main02m.tab
+  103a26c0f1e0099c4ed3d7809db92ea0c3a826f6  qdata/pol01v.dat
+  5b5cda5bd1108c1d4fe931336df42b78d5491dc8  qdata/pol01v.pal
+  fd86bf0d2e1f8075a5f421ee38bdcc92535a1c8c  qdata/pol02v.dat
+  9b4fac8311e0bf851e7f09c7fdda9d7835af2936  qdata/pol02v.tab
+  6fa10e4b713d3f2be580937ef34be29beb7ea361  qdata/pref01v.dat
+  87cd91e1cb6e4adbd125d6b95a0c9ed56859c13b  qdata/pref01v.pal
+  417dd35d9feef4e9b6d67b5e5c51d34ca8ae3664  qdata/pref02v.dat
+  7ef8e930c74567c3ddbee6909a5b25d3028751fb  qdata/pref02v.tab
+  067bd8276ebf2d149280110b422f1adc6d077a18  qdata/rep01v.dat
+  45f65a62f1de84397959b8cc5e0c16c60e125e44  qdata/rep01v.pal
+  ef54723ebef0ba935d93aecba7b525043c570a62  qdata/rep02v.dat
+  2e754690364291922be318b2b813b779c669832b  qdata/rep02v.tab
+  d32a9277ebbf76e0df913a6c5d209924449b2f5a  qdata/req00v.dat
+  fe2c7cae906b6dba8d0d79ff458a21be80089979  qdata/req00v.tab
+  1b2c936847c6b7df969178153e60699f0382ea43  qdata/req01v.dat
+  7063f9c8c27e2b8e9f0d958db2bf12d5e94574dd  qdata/req01v.tab
+  c2796d1836db6a0a8ed60eda2ca4b84c5ca501d2  qdata/req02v.dat
+  7e570277303612bf35feabdfbe9658de47d30523  qdata/req02v.tab
+  ca27e1d1c0ff14e482dedd6c543575a241d19e32  qdata/req03v.dat
+  82a41ce8ed74549f464e1066b107a4191ff68b1a  qdata/req03v.tab
+  cb0dbc4e4d0475091ccd56d9d5daab63804d571a  qdata/req04v.dat
+  6b01553e38cb65997d3f2f651e3912d34c3d6b10  qdata/req04v.tab
+  8c7fe4f0f76d9aced8a0abea0d0388e7a73d2399  qdata/req05v.dat
+  ad5bd3d7f519d45443d81e87a9a41c0496cfda8e  qdata/req05v.tab
+  bc543f01a38cfd4cc62bf467afcdfeb0420eb565  qdata/req06v.dat
+  7f18182d0effda14bc8dbbf435f1865c5c1d6367  qdata/req06v.tab
+  e47b5eacdadb181dd3b1e469f0c4f51a17647b60  qdata/req09v.dat
+  76b1aa3a918b21ce75924c593aa6bc50b95cb425  qdata/req09v.tab
+  3812f172e8328681436070eb0a01549560518d26  qdata/req10v.dat
+  f27d05c9825a3844dc7b6f3426d71019b164ee9a  qdata/req10v.tab
+  4f223e5c24a5dc857bab153cd04faf4afc9f9c37  qdata/req11v.dat
+  df885cf9e2420bd75cc6bc1fed62bf6d555f3f5f  qdata/req11v.tab
+  78d5d6689c55e8bf881f2b612897791b784b4454  qdata/req12v.dat
+  29c6df6586a97adf2b6475aa3d47a6a6dc023156  qdata/req12v.tab
+  350abe46178f82e24a8056464f2d30044e6ea673  qdata/req13v.dat
+  c3d3b0a4b8db296b3ca4a4fb3425b4e7b6e5ecb7  qdata/req13v.tab
+  217a4f1c945b154a99d7ad448671afd7cc4624b3  qdata/res01v.dat
+  d36b24adeb91105cb9bb0eae9f929a8e144a342f  qdata/res01v.pal
+  f0d136fcb942cfba77a8c69a4bc8cc3c6ad7de28  qdata/res02v.dat
+  0794bc0fb29c369b7cfbfbbdf0bf3c800630aacc  qdata/res02v.tab
+  f185f902e8b40a8e6c8e138691f0b22a0eccbdca  qdata/score01v.dat
+  e093a64326e6a77ece0ed533cfdd5eb344e73ae8  qdata/score01v.pal
+  4ba8e4c52928c5eeddd226f097f277f65926d6a0  qdata/spointer.dat
+  0a4bbf9e91d8f64f85152e44ad081ff0028bb777  qdata/spointer.tab
+  ca95b1f449287d5f38f798595c4c5e9af2c41f83  qdata/staff01v.dat
+  6c258ee38a1b878c0800d402228c3856329f3cff  qdata/staff01v.pal
+  61e9dca330d2cdf1ca6cf0db6e5b2035a502bb5b  qdata/staff02v.dat
+  520883d3e030ab09977134b01f16eda57a47ccb3  qdata/staff02v.tab
+  652bb795ad3075d49275cc065d1e2a57da163730  qdata/stat01v.dat
+  e189d4121dd49778d58a6571b38a260fee83f469  qdata/stat01v.pal
+  79adb78903236f39cf9cc2e29972aafec338255c  qdata/stat02v.dat
+  5cfc6520071515ed777ac95d6cc11bad149c9319  qdata/stat02v.tab
+  f7fce6523b21cdf48c5f75038a1bd55282208185  qdata/title01v.dat
+  7ebf4e15317794cda361ddbf39478686a9747f08  qdata/title01v.pal
+  60d50554d73ab67614b7cdc25aa861fc3a387545  qdata/town.dat
+  946feb416d77e2eab2a027a7dcbe44649d7771bd  qdata/town01v.dat
+  0467743a872c929322b78bd5da1aee8a888c9ec1  qdata/town01v.pal
+  09ef0237fe5694c053651600560f45d54b08a4dd  qdata/town02v.dat
+  ad05a25fcf40793cc3779bfb2b2788ae1e7c8fc5  qdata/town02v.tab
+  9933f9bb97180cd6487cccd1fc0ffaf93037e9f7  qdata/ver00v.dat
+  1159a3c33182046ee65f86a4a2e98b2bbd758e5c  qdata/ver00v.tab
+  124cf1c4b4fb08a7490d06724738b975a79e6bf4  qdatam/face01m.dat
+  403ec3fb67727f7e490e0eed5c6731c95a2f6967  qdatam/font100m.dat
+  64c68c839b4ee75a6f03f8eebcab7bf20a7b1075  qdatam/font100m.tab
+  e652afe4b266f8530312fa9958c4f3f0392de15c  qdatam/font101m.dat
+  85b9702153625ba5bef8668c84dab341160ec6b1  qdatam/font101m.tab
+  301c9da546a7261652a2effa84775e27d619baa2  qdatam/font130m.dat
+  b4ec5b310f67f839ce49c0ab9de6895d57c00d0d  qdatam/font130m.tab
+  832b3b57b7fb4b9923dca729a338c115af4d8041  qdatam/font131m.dat
+  b4ec5b310f67f839ce49c0ab9de6895d57c00d0d  qdatam/font131m.tab
+  f8b4d93c80c8cece5f429a8e8c1b5693035bbd57  qdatam/font132m.dat
+  b4ec5b310f67f839ce49c0ab9de6895d57c00d0d  qdatam/font132m.tab
+  0bfcb449735691a7c08ce5e9460f43516c3bd44b  sound/adlib.mdi
+  ff817c17e60f458c413c61186a3392b572e07e2d  sound/adlibg.mdi
+  b099389bdcecf7ebb1f23a1a06898cdf569e5bf8  sound/audiodrv.dig
+  0442cc88eb88fcc16b0fcb2dc633f07d38240f32  sound/data/minheap.dat
+  00a65d3a3e24262b6438e101c90d81e0e6dd0bf7  sound/data/sound-0.dat
+  5688a595515bc69186a2f64b9bb95182bb480267  sound/data/sound-1.dat
+  2f00c86016391b539267f2b64dede5c56b963206  sound/data/sound-2.dat
+  d4a0a42248b0f3d95c011356bd4fdf90382c7314  sound/data/sound-3.dat
+  10622af0a1f032514e03ea4d1a12c511b10a3328  sound/data/sound-4.dat
+  13df71335f63f8e992329c9b75e5689a0afa0df0  sound/data/sound-5.dat
+  cb3f3af40fb3069917ea2a1b7a57860f5d14f295  sound/esfm.mdi
+  efd99ed5c598648567df82dd6a0236f8584cc38f  sound/iwav.dig
+  b72d4299dab151ef38491445b6c3ddef79071e78  sound/iwav.mdi
+  103e0bf92c6fd1c9fc925fd57bdc22e56170b395  sound/jammer.dig
+  0123d48c80befd7acb48bde4e64d4149aa82501a  sound/midi/atlantis.xmi
+  3ddfb4a0cb5ebcd62b16a4f503bed8c4f1259b56  sound/midi/candy.xmi
+  a53cfae33d6f15a40f7110e670b478550df8ff17  sound/midi/doctor.xmi
+  23c9f13f65853d45063e0820b845d9e15c108d92  sound/midi/fortune.xmi
+  ffc90fdd82dc88521e6221d970516804971cc3b6  sound/midi/hospmidi.bat
+  f8580cca701b64634110867105fb6c4d68b9e60e  sound/midi/mend.xmi
+  20446b46f86fdebce9c054f3bcf18d239a30ed59  sound/midi/midi.txt
+  c29fff2865bc0be93fda315d5251a7ef3702936d  sound/midi/nightsh.xmi
+  aa9e33005a7a738b6de7483c20acd9d060c07bdf  sound/midi/readme.txt
+  53027a040e8d9be18d581e7da8cd33700e7d3c90  sound/midi/sixseven.xmi
+  580169ab5ec1a8e356ca16ce4f21f7ddff4c5805  sound/midi/steady.xmi
+  a44394494f94040dfd4c0a268a1012c2f99390d9  sound/mpu401.mdi
+  e1af9cfe7ba64493a07ed2913564386777266a88  sound/mssdrvr.lst
+  822f20d70297cd414189f54035b5a0bcf84947d6  sound/nvdig.dig
+  0f7474eb29e558096377a2c153e14829f94ca627  sound/nvmpu.mdi
+  deaa0743c32bf87abe3f777867cabedc5568156d  sound/opl3.mdi
+  abdd9443604d1d4f013a24d506cf830f75988ce9  sound/pas.mdi
+  4ab57eb4e9e025661d658d988cbbe67690e1dbf8  sound/pasplus.mdi
+  9bd209517dfd8988dc3f13dfc85c6cfc5c61f535  sound/proaudio.dig
+  485d392f2575a2f609bb1b96562f8c464740874e  sound/rap10.dig
+  08a4ee14fc9a42b9f93a6309ca44808f3fa2243d  sound/sample.ad
+  08a4ee14fc9a42b9f93a6309ca44808f3fa2243d  sound/sample.opl
+  e3379544a4e975c2dc82f1a9194d2980d8ff745a  sound/sb16.dig
+  ac89d710988e67940ab895cdddf79f384afc42e9  sound/sbawe32.mdi
+  78d3cfa378a9ba84eacdd165cb3487c17db606b7  sound/sblaster.dig
+  16e30446db69ed2e8304d9ea3697c7b617ed4fcc  sound/sblaster.mdi
+  95f9e577b06a88eac532bdd5db346aabdf0a9161  sound/sbpro.dig
+  26d97308487075dafcc5e2fecb5165c13b174b05  sound/sbpro1.mdi
+  2da34127d34fd57364512224c2034f7547df94af  sound/sbpro2.mdi
+  f9902b74d545813315194f5a1791c4ea0a9a1e0d  sound/sndscape.dig
+  01e3ffef3aa6e9d312f190a9403ff8d167743aed  sound/sndscape.mdi
+  0f14df1913a670e7b14fb7856ac72d457401dc1d  sound/sndsys.dig
+  4327d6bb924b4e40fa7ff035bdfb73a879c31836  sound/ultra.dig
+  8337ada0962de33ee3eb8ebbf9d5d0c898f41fd2  sound/ultra.mdi
+sha256sums: |
+  f89a16e589e92cdb0340b391e8b7ed0901d0b009479895d2770dd69208c4b361  anims/320x2401.smk
+  e0b391c08ec14454cc4261b40133affed8ddc78ad9ead57671b48aac6478a3de  anims/320x2402.smk
+  dc93cc290a838034c56d5f993dc95b4f1f0b22248b7429a326c59d41513f99a2  anims/320x2403.smk
+  d65edd2ee11120e91abb112e93be533e44dc645ddaea7567edd5fe9059a39166  anims/320x2404.smk
+  21844f429f0b08d3dc438da0e1cb4557da22dc735f55a7559e398c187e25b2ed  anims/320x2405.smk
+  082f0e29936c183a67e73ed8a592af5dea702dd675d692d97dfcda5b93fcaba6  anims/320x2406.smk
+  9386ffe2662068780abaef239f3576bbb7607f6c7206017ec9eb78a7f5f11e4b  anims/area01v.smk
+  0638562d0478142e2643be4b329a0d8f5666ef6492a7feecfda4d1ff0f4e61db  anims/area02v.smk
+  c931ced5d689eb062778956a32870382939c84dad07b28709738e1710b4ac15a  anims/area03v.smk
+  31d7ba5099627c05fbc5b3f19cb95aa7de4e64cc423306fb6e1e5ea18dd6eb6a  anims/area04v.smk
+  d741206043eae4451f296a88d5059fa88d1aea56434c0003a863696831290b4a  anims/area05v.smk
+  9bd5b7cf789aed3bd5fdaff9354d963e54d9df29b4eb590af7e7e68c836f5111  anims/area06v.smk
+  ff50e13e8acbe40249fcc7f2b44de06958d182c24cfcb7c3f539a0ed07144f95  anims/area07v.smk
+  69ec923bfcbee1f359e9b4371b6b57001441879f324a9e38975175b498876c0f  anims/area08v.smk
+  63b6c02ea64825528b62557b5001293095127db2c7a9720d3631934a678da926  anims/area09v.smk
+  90d0988ec20a5289050171d63d3d1469eebbbfb8ceeb84fd8bf41de802a231fa  anims/area10v.smk
+  25cac63f6954a7ad19c4e0202a8fb87050c216f4017b3c2d3eff6b4b5342c288  anims/area11v.smk
+  a9ee4a2a626db4d275885d483f04b8a90b2b51bda23d74683f6a049e34f7f67f  anims/area12v.smk
+  0f0c0c9ed80536eb9881a8a21b3a1a7d90abbb90d6963aeebace6ae98658c95f  anims/area13v.smk
+  a4a9e4332084a93e31e7d930422692ba5145aa43dbf22b2a4fa2ebc6ee820983  anims/area14v.smk
+  badc4c80e76b3ccdd27cd92cf9a6a7cefa4c02f5a94068ac4b5211ec13c9a219  anims/attract.smk
+  8bf559d9e43623a02f47956de4e3e03ce4ebab04c3ed3485532a6dba9af36179  anims/lopaper.smk
+  60d31d3d14ce56c86aaecd9017a7824cf62d49a3aa33423d3908cdadba6c84d2  anims/lose1.smk
+  3b84a0ed883d23917d067aea2a3d79253d1d39df4030caf59a22fddb33668a04  anims/lose2.smk
+  324b862db58d28ae296e2fa138cf6639d26bfa93de3550783007310c306c24d1  anims/lose3.smk
+  16abd72b41bfa0d4449d71dadaffb7e5239cba219ff0f661e4318cd0dbfae4c6  anims/lose4.smk
+  60143b3f3420f2310abc7db90b7971a3cc950f3fd527a184ed29fb55297d2b53  anims/lose5.smk
+  c046408aa7818fbb1a8fefb7164659550d5feb062ca0a2ce1db498938f31ed09  anims/lose6.smk
+  64197456f816ae61eb30a7dfd54c0d7afad7f0efcb08e58a7e059c1759d48bb2  anims/mmenu1-0.smk
+  4c3927f879f7915ae325ac2311bb43e80de346edf0e9113b121b8b976048e0e3  anims/mmenu2-0.smk
+  bf5b9a29c5c1adc92e7909fe784682d247c333f2720769f7c9971e89efd40906  anims/wingame.smk
+  927261ee30477ecd5dd4cebc649f4487c10dbc38ac8c68513f55b2ded923e95e  anims/winlevel.smk
+  911a8ff6cbd930e6179d1fcb0ecc2a96878bc06f46b17d9e58e2875c60752c88  data/lang-0.dat
+  44e066e8818d5ce7cd5d90a02cef00ee3ecdd6ea7c2da5774b91966935ebe390  data/lang-1.dat
+  58c583e8fb829a86a1a8f2002a1b34b83125bc8112834d446b66a45bc9529626  data/lang-2.dat
+  afa62bb2ca5d85f7df4c0256e6a92816bb9dd933fc0670920780b35c1604d590  data/lang-3.dat
+  b98e834cd62cd3a2f4fd14377aff098ceb29b2c9c7e7d933bda99b8fcf345b2a  data/lang-4.dat
+  dd6a59f8830782319f4a2a24067e7729512b87dba938e41bb1f68714cee2ce3b  data/lang-5.dat
+  b52ab61fa8fcffdf5fc7964697b22b474c08fb0f0a19001e5427365900eb758d  data/money01v.dat
+  756e3056341225afe768f4d071f52afb812c14c1c4ccc7bd69e2d6d9995cb2e8  data/money01v.tab
+  40294c68332060961f894c0df9b690893358308621177243a7c4c5af8069d9ae  data/mpalette.dat
+  91e76e31d1f6e53671302b26333cf0ab0c604a134be4b8a1ec3dbb68bf04af45  data/mpointer.dat
+  f7d5e304b40ba760d540c7512aa6aca1adb35816e77cd8376bb9dcc06fc13dcb  data/mpointer.tab
+  0fa48d835d3f7fc6d09b9681df322a90b9bda2c9e0081173802c1839470046c1  data/p_comp.lex
+  c2d0dcf16e8d83d035252e6976bfc5ce0b2a8f251693fb47549bac6782d55adb  data/panel02v.dat
+  873bd6877db5ab62136488c81161ce1b82c7c194ea134b3b9a82bd849e21f572  data/panel02v.tab
+  f1d19458d2b55e4156fc29474f3410893860a9917f5a51f40b1ba7b80122526b  data/panel04v.dat
+  fe2804693def462b4e22d0068b0c78f7478908c2a6ad1c1d44585632f6f396af  data/panel04v.tab
+  ba4d9a78847ab337e79e14d98b6bcf715dfac7cab472841c6b04ef004f413d4a  data/pulldv.dat
+  7451bd0b6548089f11af323cf970407b2c8f0c54faeee236c59e494c41ddc913  data/pulldv.tab
+  ddfc4540086ada4bdeb5437f45e2c9e4413721e6ea09091753f522908da515c2  data/s_comp.lex
+  88bbe33ca296a439c0650b4b4ca7784cfcf0b59770065ea9ac8d3ca87334a92b  data/vblk-0.dat
+  713787f4ca89eb19635d6c45b9ea115548b5e20c8d2f66471bc1306836d122f1  data/vblk-0.tab
+  8bb4ebbe8839bf49caca3ce5ec2cf22996b1714eef289015a4c5708ac8858e96  data/vele-1.ani
+  c39f6984da5d21e0fc4ed7820a8e0a3afef61c9cb9b9fe402a55a3456880f59b  data/vfra-1.ani
+  0f643fe9a56fa488528da16b79abc02efd15b8d6268db1b109f94d9cadef0c0b  data/vlist-1.ani
+  b4b7bc790d17c1642318209e8199e271356c4b9ec8e14660e7a4c0b05f5e8bba  data/vspr-0.dat
+  7e54edae5fb2887b8a9844f5594bb140635259786fa3a775b0d5b073bc7e24ac  data/vspr-0.tab
+  5d7489727da85699704d59862edd3f84459b1dbf7f7ec8e71a896272c5002fc0  data/vsta-0.ani
+  ff8f6770d4c2e5ad3d5a737fc791106dba6c09eff1243ac7bb4105b5b6e24234  data/vstart-1.ani
+  ab17521bf53920ee55a929dfebd7328c138fd06cd4ee6fc63a0bac4cc11f75fd  data/watch01v.dat
+  31b80c6ae9ab3a6759192db4e79c76d75e94098eabb957dc4cf951f687388501  data/watch01v.tab
+  2c129c8895ddb50155f64c009ff7292cb60eec44363330027dea991d80cef899  datam/mblk-0.dat
+  cda21e71201306a3f55f7aef1475830e5dac91c8d8f2da5001030a46999e225f  datam/mblk-0.tab
+  cc51c4a2fdb52c79fa4a4408322c1c9a940ec4a7e0568dc00d49294dd0465acb  datam/mele-1.ani
+  7b75fe27f7feb8cb88fc042c64505d3260b94432c30b407c4e1d597b416ef12e  datam/mfra-1.ani
+  98aeda45320a7fc88a3d7ea1f4a84392a2851b4342daebd371fd9d74716beadf  datam/mlist-1.ani
+  cd8a1a2ec625d318089d465b2c6836d411216603d5ed56ec4c50d9444fcb014f  datam/money01m.dat
+  f094fc02f4cfa81ef202de6cf7dbf8b4b027071b507fcf25a74a5a7343797f09  datam/money01m.tab
+  c42854e4fe2a3d620eba98422ee60e6d998ea56a924bf06bfa12b6a83fb90c62  datam/mpointer.dat
+  7a96588b0f96c2860524dac0453466247e3cc03d0bf8ba9dcdcf40bad9bb2c38  datam/mpointer.tab
+  386731b51e2532b07f6331d1a16e31dab52c9821894132b1807fbbcf302919f5  datam/mspr-0.dat
+  30037c973293e1d4466cc55177a925509c409cf9a0d62ab0f16918f37d9c9624  datam/mspr-0.tab
+  ef02680b601bf57847051e299f5e5e177f5088b20648c3eba4330a2b35f7d585  datam/mstart-1.ani
+  875bf97573e03896b75c013dba7619b30142797c829ea10610423df49130527b  datam/mutton01.dat
+  82f72c677db3046015ac3208f99000b1f0f9db4fe3a0072a1ea3878f38ad1fed  datam/mutton01.tab
+  4d4affd1ad932fcffdbcda711f4d8649710761dd324dcb0b161a90d9de898767  datam/panel02m.dat
+  a56141ca93d7bec815bf5831ee31c40f3d0b2acd0a771602f78136dd4a39933a  datam/panel02m.tab
+  8a2562b5caf302ad0e139c396bb06c15c09b84cf9112264f374bd84aa11f70ee  datam/pulldm.dat
+  07cc1028525e363fdcf3dbb952d6fb8d8fda4fbe92595b0a7de1aa11f9ba1db4  datam/pulldm.tab
+  5b14a0ba924aa3ae09eb00fca50eb72baf98c850eec202236c9726b69821966c  datam/watch01m.dat
+  b3cfaf10fef608c56b4e05abf6ee1f4b201831e9f9acf8bc1271144a3299388c  datam/watch01m.tab
+  a81a2f3d37e4c444b8379fa2f3db6a9e4d30fde22ab72ff5c9f91e7112012ad5  intro/attract.smk
+  e22c4851d3321ef3bd679f918549dde69fb83b094952d91e9ce88e3b2e2c1b6d  intro/intro.sm2
+  1c1d3ecae9d2af5fd8dc2656b96a8d8ad73369fe2aafbfa2a07ec05efb5fa839  intro/intro.sm4
+  7a98b912b04e9e32980cb0e354d6b1184f19531eb1f0b236b6d1ffc1d317704f  levels/easy00.bak
+  c699f1b51435e18c0253667d35219f56b179dfff3121fa8695d5f7fe1dfa0c87  levels/easy00.sam
+  91ee759e2c5439496d8f93bb2238fc486c52ae1ee3b08138d386299f9102c5b7  levels/easy01.sam
+  a0d45a62f13887f8c3c61e8db8aa3cefcddb66a16ec71fa19e3d5eb8b32e6152  levels/easy02.sam
+  dbf4832a647567402cec24fba674732a32b1b9d5a0182b1ee6fd0bd8544a30a4  levels/easy03.sam
+  05a81b807384c162f7bccb684ebf38f1ce1207b0b3071562a8368e6e8fd6e774  levels/easy04.sam
+  249e676143cf3db5a18830608b5ba8c798e956a69ac66b62634f1273425b7cef  levels/easy05.sam
+  fb01b8f4867644411858c5203517c54194254180a9a4b29ca975d3375d052909  levels/easy06.sam
+  bf62843f5caf93aef062662cc26ddb73f1c28c907f65740149eb00bb47021913  levels/easy07.sam
+  604682be10fc189c34f31dcb4e4f0c7e0900fabe3f7691a35a08d77796b92142  levels/easy08.sam
+  64b6513949085a154236d53e3c291ecec96a108624078e6b4c7dd93ba413526f  levels/easy09.sam
+  5e8494f2cdcef2c54cda6b96e05ec506be1b34363300e54007625a22e999f830  levels/easy10.sam
+  b2fcf6839cac63fcd9bc3b1bd14d427248f72075d15cc7cbafa69e1ec3039da0  levels/easy11.sam
+  c17e8fd6afb3133b509f8ba439e09b89889dc9b051e95b790304c654de5412bf  levels/easy12.sam
+  29b4575c425002c02413b93ddb9ec05cd1a1599c1bee593439f04f4e673bae66  levels/full00.sam
+  202cd582171f0f2ed06863275a965f115bc726cce037e3ee0983b6bf19c7beae  levels/full01.sam
+  3d337b72c8b48ff06d2af33bde84851b4cebf03a31354d40fa5b3e5fa7268d35  levels/full02.sam
+  70193dcd5ec18a6d77cd18b4b8feefa67175010689b5aec6b5e49a395c3408f3  levels/full03.sam
+  eb6350dd0dfbd7382b33b1716b0fbd3cacfd74e5f153308b7bea3f07df64690b  levels/full04.sam
+  496ddab137cb279d5d72a7a5544bfd1d14e9aafd272ee398b9c40799896e1b91  levels/full05.sam
+  21f6cd192371eec1d93af2f888f9354692f13eeda53d2e837f2098b352161546  levels/full06.sam
+  11b9d152edd5aa625ad5203910ec873887c1208a3d5c8af61bccd5596d342d07  levels/full07.sam
+  307a52ba9130bc48309f07aeb46e5a6e4e1307a1d577f59ad553bed881df0de5  levels/full08.sam
+  7e564b283fd17299a26494fdf2dabda86e85312fc0dcf4ac76f8e1c09e59c578  levels/full09.sam
+  f25440ed1e0cde42debffda6c996574fdb451bb33e79e35650bd37ead9cc0502  levels/full10.sam
+  ad5d7f18ab4dfdb542bb2cae2e710fca2963e5b4c9e670d819d049fec7cb8a6d  levels/full11.sam
+  38beafde190313e57034bc8295a07660921c4d7c67568850a57a3f6c4cc27f0b  levels/full12.sam
+  215e94a8ee50e2502d33bfea9e036fbf67c2fcac6e4e67135198dc889f5e52cd  levels/hard00.bak
+  ee4dfc17365e5faf563cf4a0305bb420e26962273516ef09d486838165d583c5  levels/hard00.sam
+  202cd582171f0f2ed06863275a965f115bc726cce037e3ee0983b6bf19c7beae  levels/hard01.sam
+  6e3570807e59db42390a82d9f0be3611eae0755b2580cbfe8070ad5bcfd6d0b7  levels/hard02.sam
+  e72d31927ac644482893c2b60743d8cbfc009f04b49f50c687cc2c70703e5a78  levels/hard03.sam
+  b531dfdaada7b26fce96819d80ecb74f2b94ec5ea973ee3a2069634f994e1ef0  levels/hard04.sam
+  e2372a57730d437d574f8eb186cfb3975fa4707ad699617f8763504b4740907f  levels/hard05.sam
+  a7f14fdad0efd8aed7547a4a90c903ce773d1dd089709823105489f9bf651899  levels/hard06.sam
+  c546471582d0dfbb5ed24d8bc7322bcf82676bd9ffedca2b79bb87cf42557ff4  levels/hard07.sam
+  685a47fbac68641629fd5b556eb95045b859c697868b8aedebb34113dbf6fcc2  levels/hard08.sam
+  bcbb8aa11c4e5b2a43726251b5ad1a168162002d1e54e565b1413d9b92c21ac2  levels/hard09.sam
+  2ca5b99aa534d8b2d0578e36f49574ca19133516ce6a68d8f91558ba2dd4f5cb  levels/hard10.sam
+  214b25f3ea35fecb2357162708ba5c6259fc8f00d7a71772fb1358069f1ec27f  levels/hard11.sam
+  37adc8a040ebeeb0afc0e270fcb9245bca3a05cd3ba061c3b75e9b03a14f199a  levels/hard12.sam
+  c792571dfaeee2b44fca9f3d5100e3baf878580657d471c10f24ba23ff032253  levels/level.l1
+  a612fb090d6b844aa47348e7f4c7d4ef214908edb0864a9220072bd0055f3cdc  levels/level.l10
+  4de62f0be122be4bedabcf01e61f1782871c122e52ab027c1adee231f5c503ea  levels/level.l11
+  e0c70a7c5d7034b63063901487b94c7b2924b6cf972c7a773f70175e89b407d8  levels/level.l12
+  cec2f75dbc162737115cdceaeef3c9f03e51af249f06b584a99fb8cb831894fd  levels/level.l13
+  ca3ee73fc2b2796f7296c0157e3aa47efeb0b57d391b743f253e7cdbd35aae45  levels/level.l14
+  8af22d602187b5e6eea881f3bda1e5d7c422c0757c18ca3e9033d9c7d51576a1  levels/level.l2
+  94dfa81ea68a77ccaf13754abff1c95153bf942664cb657fe00dcf548661023f  levels/level.l20
+  6d0b26484e9a80905de75c396b253f7b19b8fb8a966016c5e737c5af716213ba  levels/level.l21
+  c6b5ff5a7590a8fdbbd4c695184ead8ac7dde3d67fd168ddefbd706b1f4a2b4e  levels/level.l22
+  b584008dd9194b87dcc3a8c74c98b5861a1e1e53e130e28622e1d84b030e70b1  levels/level.l23
+  7c10797f898ca3f7b746612c3346568a50aec1862dfb13c2729535fd554c9148  levels/level.l24
+  404df684631be745b4bbea290bf4b55994c9beef0506a4dfd8d6cb450edc31f7  levels/level.l3
+  e004d6e04c7433efb4e3928a6a3881fae7b7659b5bfc7c05c2915d3af7e10f24  levels/level.l30
+  3c97cccaa535e548389128303e2ed9d8612ee4f94b4f98c7d05baf281bc87907  levels/level.l31
+  600c4e5f23ce77ca37cac397b77dec9955e81a707c71e2501ed02ae7f1feff49  levels/level.l32
+  87f5f68e9111e7bdd5ab2912062c49b5d97cd2df249d54ec6dc0e232b5e305a5  levels/level.l33
+  ced11bf059146f38d6230ea99de30fd9583b3e8b988499e4991be29a45dac833  levels/level.l34
+  ea1d5f7cf76f0865b6bb8050b108b44f10d33177fff9d23b28f81722699c9fb5  levels/level.l4
+  cdf7558090b421c8dff01f25220d386d0e7a04d1b223c652a6e027f135fc2aa1  levels/level.l40
+  29c32f03c408af0e47780d9a75c7520097b6704531cc5c2258371e709c311b79  levels/level.l41
+  f14cba7609b9a25a90b139465f324739da48c4c13775dd16f430702b2e295831  levels/level.l42
+  348e0892d95c8e0854d6d337873c2d467a25f01815ab9545a2782ea02b2658d8  levels/level.l43
+  cc23d6e3e5c215517789ea4e7ed96ab4e83157b7f59e4e74b3950cad3bba70d5  levels/level.l44
+  cee722ddb4a82b407fdff516cdb6cc449c5a4cf7567a6280fea8a6bc91b64f27  levels/level.l5
+  462c08694f4a8f42144444d2592772d69373de39cae2ed0c61fc31ddac9f90c1  levels/level.l6
+  de7e4e0cc0d71bcefade208654ddc7e3ec34e663784c032e0ce01121e4795735  levels/level.l7
+  55b285323761f3a5749761582e55a5c50295d6de2e2149bc1aa9a328ea032c9d  levels/level.l8
+  e8e68db953072ad41e20794c013d48e76ab8a0aac5aab0a8877b9369613f9f00  levels/level.l9
+  5062d1a9692bf391cf7faf01eea36026e3b047a8a3bb4f1d3ff5724ecfbc8e50  levels/net00.sam
+  d702ef78b9149eea80d664029f6978b88450c6809404bb12d0187a59a0922671  levels/net2.dat
+  82e76b9eb3f47b6b20749050fe36debc02cb842a9f1b72c7558ae7d38f31d891  levels/net20.bak
+  4b215a2f2d63672fc7719369e61ee332041fdc305d3cb974bfc222c573aee0ff  levels/net20.sam
+  da3f20cf7898538df2a558ccfb44edd34560cedeea04b623f0451e937478647c  levels/net21.bak
+  bf471093fb1a12854b105339914c351572dc237a2e3bf8a5af8e7431af0b6a2e  levels/net21.sam
+  1af4e24ef95fa163a54cb4fd90a9b76810886c5ac32a70af6d58645672dca48b  levels/net22.bak
+  c95f1eb3adaaf394d30794131ef47d1d82648b6a363a9253f333343254a1e152  levels/net22.sam
+  3f6bebf672fe9525c4ba050c42b833dd2cc97d41815cf407a09688a0e339789b  levels/net23.bak
+  37b6817d37ba6d803b22f4085c44934d001ab09cceb5e7bd070714a3d554cc8d  levels/net23.sam
+  87eceee9dcdc2fa6b5908f4588c17beacf7f1bea4bf8ff07b58e3ababafec493  levels/net24.bak
+  425fda672d44a22a9148d92d4d1aaa1eacbb8b50aa558b99b8294b1aeff39200  levels/net24.sam
+  10a3e1c2e990373cc387b3aae5d716a92799b1fd10fa3d2ace059df807f46a74  levels/net3.dat
+  439c718ef8a7680c3e0ef2129b71135cf7aa02aa028016ecd0c635a83284ed82  levels/net30.bak
+  49f261faaf738be64c62f0bd441cd445944a1d12dd4b7461edf32098ff069402  levels/net30.sam
+  eeebd551214477ef62d76d5a063179c16e079699349e9f162d9882f3626b00ba  levels/net31.bak
+  bfa97de7df4bc9dc71f8d5eafa0463e8540c8afc63cc5e41ca4f62d240bd5127  levels/net31.sam
+  5f75d88abdade40394f14dd3ca33195d7d73d83fdd8c52ec1e91e8a82cebd844  levels/net32.bak
+  3d6f4fa196351f321833af14988a905e2a95ad2648521508045046cb65c8cfc2  levels/net32.sam
+  8d505ae448b76473a12f942fb5c592be636f2b5494c2ea623906f502525c55d1  levels/net33.bak
+  e93422c221ea831c5ebead76f0295a29e6975e9521587a0799a9cb201a20c5d4  levels/net33.sam
+  9cdf0d3253553e78ebd1c245b55f9353bcf120a2921d3cc8868479ab396b7da4  levels/net34.bak
+  44bbda88123f9c6d4171f2906edb8748b2dd197bf6a5fca2483789f28b43c5f9  levels/net34.sam
+  9a794b500efb76d015d957823f02efa3ffce2fec91282ee9b3c631e3f1be36bf  levels/net4.dat
+  0dc7b857ababe965964ba83d333b97b4b5dee1e278dcdf4bb1e7b05e9a93d511  levels/net40.bak
+  715f62c3895e0abc0143020bf31641a71316bd6cfb5a32e6cdfe328f2587e89d  levels/net40.sam
+  a296f75101ae41ff53346d72a28843545440bc8c349f4b90c0c42aefddce7ff5  levels/net41.bak
+  7db1151785873d06881f5376c84fd48614343e8d846b7e20c1f5b6fcc581a6eb  levels/net41.sam
+  2c60c2c8a5eb875029ff6334c45d66590b84495e666c639d347e4d1e9922a4b7  levels/net42.bak
+  f0c2ee852ff7b56f83f8b19e5d22dbaa63d346c203d0918461459fd7a1e2f667  levels/net42.sam
+  f9f7ae521a7638559cf5098e17d9e7b250a10f437bb04419c2553cd6335653a3  levels/net43.bak
+  e17ef4efdfa8154d3f04ff716240092d6c457d6526ee057b7c27aba3fb8954cf  levels/net43.sam
+  c09a6281617ad46689444e57a6b2bc92ae7cc98d95bf24807e70434cd3f932dc  levels/net44.bak
+  254ec72d2de6dd858a0c834ac13ab0e4085c214f8902b375e63f6c737a825c1a  levels/net44.sam
+  3dce68735802f56651ef346973303dce95a99c16760740f34bbea2963307a60c  qdata/area01v.dat
+  33c4c88baf5ed39fc0a088d1bdee94cba5648367c25b26bc350cf2d7efa489f7  qdata/area01v.pal
+  a96a2b5aa00779af3be7bcfb7dde65de8587a3dfa47b8648fef3c469b4c12333  qdata/award01v.dat
+  8f519ca33070e4b00f77a190899f3284bbacc9f7c3c9e4b58b810e4e05f76180  qdata/award01v.pal
+  853f07fd231814018b27cba455f3cfad4cc8b001e003e998384212fee05317f0  qdata/award02v.dat
+  8f519ca33070e4b00f77a190899f3284bbacc9f7c3c9e4b58b810e4e05f76180  qdata/award02v.pal
+  bc0c36e3f5360cc63785380870764974fe689475142df30068fcf281353b77a4  qdata/award03v.dat
+  34c80e07e4a1ca3b11bd6b47d021c94473cce1569cc6543b6fd6a9c5a8d089a2  qdata/award03v.tab
+  38c3f725d78163dddc525a7fa3d7876ed9ecd2d559e1a87662a4781c0df70228  qdata/bank01v.dat
+  3d2ee31636e3617af11fc9c2132b3131669e25bcdeed6c3f8a12c12e995249d5  qdata/bank01v.pal
+  62a30d178fd8926f1e54aea5b3bc1ccdca2d07acdff5470c65123da1665b717c  qdata/bank02v.dat
+  f48c39f46afc069cccb2f81d327caac609609d8e0e376f8974794ce4168ffec8  qdata/bank02v.tab
+  a91baaccbe53fc621fd5ddfbdd50b610edd7fa66efbd2a3539ccf50bb60132c1  qdata/bid01v.dat
+  f691ce0daba375a4219081741d3f0e769f3085d7320e74df870888fa4b2ef8ec  qdata/bid01v.pal
+  27bc53c1783809106b4b44028a50ed4a83b35202eda4df0b496dfda8ba0cbe7f  qdata/bid02v.dat
+  3cdbf96e666350796079566022201495195aa459bde434cd297c3173c2d00c1f  qdata/bid02v.tab
+  73bacfcf4b84309334decdc6d2763bb6e0a12ce9191f00ae3672c6c7056d7357  qdata/brief01v.dat
+  33c4c88baf5ed39fc0a088d1bdee94cba5648367c25b26bc350cf2d7efa489f7  qdata/brief01v.pal
+  c3175e120674df68416deab95a91383ae91125eae8762e6833ec335950813608  qdata/cred01v.dat
+  30f234aa098fba44212993c856f343ada7afe55b033e6a4490db36226b5cb7c7  qdata/cred01v.pal
+  6da65ce9a5a9d1666ebd1f56b36f205ee71346b74d48c2cc7d7048943de58077  qdata/drugn01v.dat
+  cd8e5439ffc8bf5c320add552c323303b017c5ff2ec5100f1720964f6019ce59  qdata/drugn01v.pal
+  bfa1c66625a8f7c1d7322fbbaae6d40cad0144eb57873ef4dedf296788145c7f  qdata/drugn02v.dat
+  d6703d10ea3a828353294cfd26efb7ddddca5dde585d116eb37bc11d8e8ab9ab  qdata/drugn02v.tab
+  3e9f76973785ba0435ae7bd3ac409a39507bd9eed7fd8ebd0c9d6692a1ffa944  qdata/face01v.dat
+  98c8d693cd2fe630e9544fc86ca48f2ff702f2fc0d5e047c4eb1e22af2f4ae98  qdata/fame01v.dat
+  8f519ca33070e4b00f77a190899f3284bbacc9f7c3c9e4b58b810e4e05f76180  qdata/fame01v.pal
+  6d6567e9f5d7cbc567e6c6e373cc0a72e585f69d948d62c9b85f9e983d3c244e  qdata/fame02v.dat
+  04f69a9ddf0191c5b9a0a3550f6136546de05797ad5d25426057cb7541070d98  qdata/fame02v.tab
+  b2b0b6a9f491dff1fc91b081f0b3f00997049ae9d4c4186db9acb183fb53d02b  qdata/fax01v.dat
+  40c7e11b25fbabcee1d7be48badff91ae0f821dd37e2fb9fa1e2433a35b6fa11  qdata/fax01v.pal
+  2ae8b2df38f7899c728edb520a173afc6dd363d99e67f6c20b647db9ba88ffd5  qdata/fax02v.dat
+  02baa16f5c778a41002714e8c1459d67147dea873de34d234aa6b405da88473b  qdata/fax02v.tab
+  98be5867fe039498e6e8588275d2f6cafa0210de30cb3923b2e68f0182715b42  qdata/font00v.dat
+  ed1275666b14ecd8a0283034ba004cee832cff8eab5f5d32beed8ae5acd847d7  qdata/font00v.tab
+  bd1daddb44cf2c63ea5f8b824ac473ce33e5afc7e81f8251cbba24ae2e2ba122  qdata/font01v.dat
+  bde01975eaa85f831a5611692661e7e16c8a595a615f980462e0eb909a7a0b36  qdata/font01v.tab
+  99094a55d5f7ac922840f228bb5c714917eea188dec56685236a8ca1a1fe8e46  qdata/font02v.dat
+  bde01975eaa85f831a5611692661e7e16c8a595a615f980462e0eb909a7a0b36  qdata/font02v.tab
+  91d373d1d8019d5483f65bb385235221c9a44c53f583ceef60a3e7eb78362121  qdata/font04v.dat
+  6ca7d83ee6149945134ecd7f09a0bbae14ece04e63245d0f2df37265a1100ac2  qdata/font04v.tab
+  1db2c52ea1f19fc572b1a49ab93fc5bfd54028b1b00cfd4cbec60c7b17bc299c  qdata/font05v.dat
+  6b6eec3262ece566c902ac7efd69c6835fd8724da1572c7302e629af81bc688d  qdata/font05v.tab
+  d7f41f6ba686deba726b4c58310d8db49141077615b325e72156849b7876a842  qdata/font09v.dat
+  d290d041fb99de5b969386195c02179f5a5650a12ea3e270b2d926f4012f81ed  qdata/font09v.tab
+  2abeae7ce55a36435a1042898574e8cec2275167bc77dbc402ebcefb6b9c6750  qdata/font100v.dat
+  3365409dcf6bf382b234891a1d8d8b8a0deec5980baab1c45cbc8d9db3517ee2  qdata/font100v.tab
+  506cffe2b5ee8dfd79be38ed7450ca13b38360b72d6be7f7fb803f43932ebee4  qdata/font101v.dat
+  b5b6d9995a8e397b73d9119cd5aa418dd983498476238eaf58fa1156ae6e2b26  qdata/font101v.tab
+  bd722bb5a1defe633b6095bfcacf6b0da07f8562ea04874317f47ba7bd8535f7  qdata/font102v.dat
+  b71660904d8427ca32ccb78392d4f5f5d30a2519d781d552b41e1cd9710b3124  qdata/font102v.tab
+  7e9b9076e3b0f3aa7e461697f89a6dbb48f60eca6d91e56266b478fbb5fcf68d  qdata/font105v.dat
+  0d0b0b65fd693713cf994bb9d5d1e529747294709b9bd5836cce30754ec208a8  qdata/font105v.tab
+  a456b7aa9b08a0630d1f36613e1a3fdecb08ca88b6d673fa4a59a91b8f05a67f  qdata/font106v.dat
+  cdc7a46da830b2f6843283ade923f1b3c4716bf9e25ce5777db17eb583e7f0ab  qdata/font106v.tab
+  a874ffa062e73fd6e604613753c7551918b409a792199f8661ab5cc34e10541b  qdata/font110v.dat
+  071339389e088afb7a58d40d062df0a5b0c5bc379c719c732c72cd8379f6e16f  qdata/font110v.tab
+  73d7b2595081018512bf4e5fc9547f42d6dcfe7281a7f6b301be66eac4a2722f  qdata/font111v.dat
+  c370e555866d8892fd85e15665e6edc815d36f1609ed283a185785c5691dce4f  qdata/font111v.tab
+  eb1d3aeb57123f67d56707f4aefe34232edf4f88b862c845152a6009c91d3b3e  qdata/font112v.dat
+  b3dbefeddee1f19f7313322657547b68539cfa54ba2c5f5246fabe57ba28a6df  qdata/font112v.tab
+  3331a8338dcacc77f1f18bbc20b6c91774b3538daf4e48b3ba9048844667ca8d  qdata/font113v.dat
+  a7b8f351151cfedd30278081d81f6b7933b3ed9ce299a748800daab1bd19b4ed  qdata/font113v.tab
+  d854c12682fed232487354e096ede0418c720d8ff2319c683655c293c2b32f67  qdata/font115v.dat
+  c8c826fe2058cf584b9572a48730da4266f1a8d56b827af00ac8daae650e391a  qdata/font115v.tab
+  1c4cbcd6f6806e0b789e5a2d4e81ecaa97e1733af0c624f36a4a722b794a2bef  qdata/font120v.dat
+  d54348e8f8f5b6559cf2d14bf3b076077fc446006ae827209b9e5f743bf0231b  qdata/font120v.tab
+  a9e6cad4564aacf8eeb3cb4f51ce278af25198cfdf6ff02d0bdf82d15601c79d  qdata/font121v.dat
+  544ae25b9c1a64855c918dcc84edba16a61d234bfb70987bf8d1798f99cf1197  qdata/font121v.tab
+  7adbf73824a720d7ce99f254c3a764f5e74be2ae5004f27dc8eab749600fa960  qdata/font122v.dat
+  165bff8ba83bdb7ef661e14abfb08c3197c1a8f0daa585d4816152303d01920b  qdata/font122v.tab
+  dfad6db33e42f18a3de135ae88ef24dac2f58c2012016700645747432fd190e0  qdata/font124v.dat
+  65f7af39ae20f5275f1a2817b991e07a897ad6182008c2bedbf58e72fa33e444  qdata/font124v.tab
+  a8d054c7f2c4526222b3d84aeb2a717c3a2314f883cd16fa0c2fb9b7183aec8d  qdata/font16v.dat
+  2bd853b9ff14995bd049fab788a09388cb54effb0c6f6cf89af2e18d28505aee  qdata/font16v.tab
+  b39eed8726bd27cc0aff4fe143c3a7e4b7a6a3d79c965d067016087f65ab72bb  qdata/font18v.dat
+  787eb00d252c5150158f6964837883ee936d1128b0ab732dcf3044e3522d8dfa  qdata/font18v.tab
+  92599d31714e76488ec202446b90315dd973d3ddd6e82559c5dd285851ed1e7c  qdata/font19v.dat
+  df7aea777cd3f00d43f49ac618a771113b2ad181f4ad43d7c47fb8643664cf63  qdata/font19v.tab
+  3419b7c2b305306a6113d856310d929b89fb837dcf7e5195de6c6f259585acfd  qdata/font24v.dat
+  12ffec7668d245acf65a2282065861b5621b77bcd39a9324c1f98a03d92d1e52  qdata/font24v.tab
+  1edec99fce974668840d53c9b9a82979e2bf9bcb51fa3aa5d39999322c420880  qdata/font250v.dat
+  e46fae3d4800dcaca5343554f9fcd836fc8efae475c7a5eefe0148f33e766e8b  qdata/font250v.tab
+  eb0a6b9d49d48b3f6a47272442211afe54e290118ba69fd5cfd64776f29d451b  qdata/font25v.dat
+  ec1ead8eedc855561578271f39d79be173b5071f546b49ccf36875643339a072  qdata/font25v.tab
+  37bc19e0f5cf1744be7cb1a2dc543fc94024d0c1fe6fa7625adb7b8dc4fb5d78  qdata/font26v.dat
+  ed901c48f92d09598fd59b2a7c296ff2896f47db127259fca77942f15f92a3c0  qdata/font26v.tab
+  024ecfc3c0b6eaed8266f3b21fa3379144a23fb442e7be0a833ccf7cccb9335d  qdata/font31v.dat
+  a493d285f7453b86ea151cc40e26b9a32a2de9e44a7a14a1d438acaa82dd2751  qdata/font31v.tab
+  b64cbf2a058012d7c4d6f24dc0ea44da20f5d2d59edeac14388d87849fd9decb  qdata/font34v.dat
+  da079c0c7de8e4a9b313253e98128969de61f2738d4671fa88985ca3d7fc7f22  qdata/font34v.tab
+  7fb59ab412b2b5a0b3d889f961b7feba170f1ee268977a7b109af545ec127f2c  qdata/font35v.dat
+  524955de80211a94ed144e3b3c0028084120cd9557a00583d8c0d1ac20c549af  qdata/font35v.tab
+  0183e58386e074e4a1e3d20e92c157952474251a383ad1dbb36ea188db97f195  qdata/font36v.dat
+  f3028d556808a8f435cfb33cb677f60ed47de96a885b7a452006157c98879daa  qdata/font36v.tab
+  02f212c9976c0c5f70f78ee86765d4075c23a5f898b72a886f77565fe24450ea  qdata/font37v.dat
+  ea5e3a64b04f3c75d8f25df342b20927e2515b9ea2f2c9c853adf786230bf407  qdata/font37v.tab
+  439611469cd60b239a6f4efaff14afb79f9226412f8ca704b802a4c3395029eb  qdata/font38v.dat
+  6b6eec3262ece566c902ac7efd69c6835fd8724da1572c7302e629af81bc688d  qdata/font38v.tab
+  9bfb9f61b58d28ba2a1c03de684dded567302c015eac94980a3adbec4c869335  qdata/font39v.dat
+  1b3c935310658244f7e2c47d38f01b75e1d92856fc2b4b037fcd50ce4d17c990  qdata/font39v.tab
+  cf2bc2f5b0569a3bc089dc2b5914268386fc48b299a6c372222dec089faea2aa  qdata/font40v.dat
+  1c7d5831f0ff0c57aef7671688c275bcd31357915cf43627dacd0bd509bfbecf  qdata/font40v.tab
+  48431470a81e7dc1a6ebbba9ff082b4fb06262a22fcb69cbcb0a1bafa0d6e16b  qdata/font43v.dat
+  151671194323fe8fa63d1b226c3451c6cc492b8f0d62ad7939389b36a81f32ff  qdata/font43v.tab
+  f46ffa8fe7e654d5ddb4a18ba22419584ab9292c1145149914bd7cc192aacd5a  qdata/font44v.dat
+  06d53ebe29a22ed7bac7f66def35116bd4c234468fdc8c605e70e3beb33eb325  qdata/font44v.tab
+  c2efaaf787c2ff2c62877242331d90f8ea531a2f36f6921d1713b052445c19f5  qdata/font45v.dat
+  9327255be1df040079b9a4e4b2d4a707da9c09fd99e6fba9808de5981c1daf88  qdata/font45v.tab
+  748f32712300b61cb26bd1d19560b0e03d68dfc9655f82fb2c1a09526a7c2629  qdata/font46v.dat
+  4f96d8b0e1c970e48acc3876e3140323a61bd5a825223d9e560cc338855d576a  qdata/font46v.tab
+  776f60a51cd47c8894db2781fc268d2d19eca438f3aed3f3ce040aaefa965732  qdata/font47v.dat
+  b26c0f08bdc18725253c3330d4cfa735a3cb35facbd9bec00be139f0adb87b43  qdata/font47v.tab
+  3decc429cc218ffec6ec75ff943eab6f44fbc907155b3f2687b75c33961723ae  qdata/font500v.dat
+  1b3c935310658244f7e2c47d38f01b75e1d92856fc2b4b037fcd50ce4d17c990  qdata/font500v.tab
+  27321b7ab10d992e417ec3c1170ea05246f7288fa12d1f6cd6be38374e866996  qdata/font501v.dat
+  1c7d5831f0ff0c57aef7671688c275bcd31357915cf43627dacd0bd509bfbecf  qdata/font501v.tab
+  43c69f76e3741e86f89b9551f215f7cd70f174521c68710acab7d5ceb9495e37  qdata/font502v.dat
+  4260fdf9ac89ece8fd005a7193fb7d44121407deeefb98741c3f1903fc626483  qdata/font502v.tab
+  ee19687d56d272221db4634236c9d26667005cc43f8bb3375eb1872460b61f1f  qdata/font50v.dat
+  ca95702f078c9ffa4ed68afa5a6a36d6ad3c43c294a8c27982bda7d0f6a9e2e9  qdata/font50v.tab
+  8282a81310ea0750c28c53833b9ec9e739428671b7ef5390b2bf09011a19d6ca  qdata/font51v.dat
+  454871a1d872d94c404e8eb9650e0f89783a179e9cec7211497c28e5f1e13b0d  qdata/font51v.tab
+  7a987752f784565875f3844a31d61a10e497745777667ede2c24b95a94f302d3  qdata/font60v.dat
+  2455866a2f654edba4bb0800688a652524e9d9a1bb2d6a2b782295d04b1ec04c  qdata/font60v.tab
+  1a17c68833540bd03ce171a2dcc225c29f240a94ea390f9303cd864f9c85002a  qdata/font74v.dat
+  bb085c096b55b8160141f864802eee0e7de66bfd89b41a36ae7e2a6730de2d2a  qdata/font74v.tab
+  788511d281a00f09259c27345266ae1b39a94d6e288a71871ae672d2cb18ec7c  qdata/ghost1.dat
+  5361105077df7db4fdaa1ea067f512c5565bbedf5ce7f624297fca5fd4dfc8d3  qdata/ghost2.dat
+  3c687d92de8dee6c875ea94f79acef15e48698ba6265651715c010050a316ae4  qdata/ghost66.dat
+  7d75331943252cc0dd91a035c433962b9a2eb51c9f35736c5878526b6cf070b1  qdata/graph01v.dat
+  3a61ea9b53f40d65d2510761c01f3c180fce9abc2de56a6e739cf6dc3180b680  qdata/graph01v.pal
+  805d46500f3029626af65073bf056b50979f6389fc0cb0e8e76274b6463aef01  qdata/graph02v.dat
+  7f6837f84420ba6e805644cdc6e55d8403eb7f4987c271d0b8074a7847364b0b  qdata/graph02v.tab
+  ec2a0371e1708c07e3872869dfb1bbc37dfcf3130ac8e74d94877bfded887d3f  qdata/lettr02v.dat
+  d8f69ca38c64182ea984356e7681fdb581f1069274cde008269e9e69998bdf45  qdata/lettr02v.tab
+  9bf7b2b7cae16f9fdf1edaaf54d0c907586c41ab191305db154667cf6bf111be  qdata/load01v.dat
+  eaa52cf2041edd98ba3ca2874d36ebc6aec508dabfdfcc2e75503f1c6401d481  qdata/load01v.pal
+  befd16e2baa636b9c2d38398b64d38e60009b9b537decc86714dabf049ff80b8  qdata/load02v.dat
+  96f5f53023b4d1783d2c605db18641466bda0ad84dcfa01f5b345f6c32c577c3  qdata/load02v.tab
+  d55b81127f923f5b2926529dcb8b7f6f9736369d4a0f4834f27b3249ac44a772  qdata/main01m.dat
+  6a0a186a7325b36dafb1290dcd77d334b851f75d94a6f834a3d9d1a45313aa21  qdata/main01m.pal
+  9fe89f01f319a3aae0fbf890b04a622a7cbca6723b45344547d8b5d80afb52e5  qdata/main02m.dat
+  ee9b125e3b55690701ee8b60a0839273eadd9f93efbcee398d86b53bb6db7a8d  qdata/main02m.tab
+  7924579d39d51849b669c88d4a51163cd6d6b06d75503a6f80689c449d8b373d  qdata/pol01v.dat
+  ba12e9ce2b6213927decef90b2445eb2061deb0f4044afa9ae2e64f43105c311  qdata/pol01v.pal
+  46598feaed68e8ed36645157916d19ef68d6c5bb0b500a6fd3e9f1454a646d79  qdata/pol02v.dat
+  21843bbd1245f02921d0f7e49688c9f0677291798bf7c25e811276245b0fe941  qdata/pol02v.tab
+  8a6b2b8f150a3ac87984a43408b73a7eb994429ecc6d556b72a48335d3a98ab3  qdata/pref01v.dat
+  d8379f3b4217efbbed4a91f8af90a1d8a7117fb4e3bca89ff1ebaa18f636a898  qdata/pref01v.pal
+  4a53060ed0d988abd4e86f1e7ef7668751b608af02af4f0ad40eaf4a03f12edb  qdata/pref02v.dat
+  48fd2ef2f4d9fb84a584d33f6da721a269020dfb29227c6ee48724b1a0972eef  qdata/pref02v.tab
+  a09015c97cd079da42534d9d50b017ca462f658d4f8204a702222031f0dec8c7  qdata/rep01v.dat
+  524387bb70bbbe57a96c34e8053339cdcbf8885e0b111540beca61f221bd477f  qdata/rep01v.pal
+  7c5dce8639656c6702e274abe67cef68cb8046260c0067c687478f07f7a6664f  qdata/rep02v.dat
+  99f7bba449b18e26d89827060cc0add198bfe27b342b71af2714d67781e15e36  qdata/rep02v.tab
+  ae77f132aba737fa2fe217056b678354966690cfadb68db629d83d4849ccb7da  qdata/req00v.dat
+  f962fde1044325df75af7a54bf20cd94457f1058c16ef6cab332af495e9ab1d8  qdata/req00v.tab
+  0362be983dff872c84f146aa2f54784e0feba960f23c5d5d2c05f864a31a650f  qdata/req01v.dat
+  22af0b5698496869a32b261ac3d5b04d5aa9b008e8b0c37cdc7100990d67490b  qdata/req01v.tab
+  e1db89a265398472b8ff4e3f893a1fa2d74f96b9c5722ccbc4cb81b255074ecf  qdata/req02v.dat
+  07a9e9f9b05ed571c05c6af9904941fa27b1df23930ef5eaf5fe0ea5966046e2  qdata/req02v.tab
+  eeef6c89490160be897f33363c7305122719541fd3b768b618427319bb1f27da  qdata/req03v.dat
+  fed0ce64806adeab7da3fdb531a0e6a5b37fa38f0046890ed03e840dccb682ab  qdata/req03v.tab
+  6b1e017e52e29951060da2d4fc3cb7a5ec6d5317a170570a130ce7a9c60141e8  qdata/req04v.dat
+  67cabe3d6ccbc6eaa8cf3a4053cdb290332706ca2eddc1896c10a2450d508bd0  qdata/req04v.tab
+  46f3e310251a558eb75872a8851a1530d9ba71a2667cd3891b166e1f5b6f8f19  qdata/req05v.dat
+  e491e345c86493213a9c2b9066ef904e4aec942ca82914bd6105dbe616119619  qdata/req05v.tab
+  4707c00ecaa30600b373e9bb5223d7b6a3669b9ff6ef8ffee4eb0a8dddec45d7  qdata/req06v.dat
+  ee939ebb08a43e5febb348fddd1f0fab8fd93dc38fb3d5470902d2440ef401b3  qdata/req06v.tab
+  935dbca69f494591c1c7ccb8555901d72cb6795a54162a471188aff65f7eed9f  qdata/req09v.dat
+  c150960df8637419c3286910b13f2d3206870c21c9f8e3f3a3b6161c2eb2f5d9  qdata/req09v.tab
+  a9c734dce1311797a80b7c8a3a940c77f2956e1891fe5948294adc6ab7125ecb  qdata/req10v.dat
+  bc02472c9df476713495c9c2007649341e820c1cc2feeb1a0a86c3edbe37e245  qdata/req10v.tab
+  b071b28c536b9b06da231e75d19e26cc6b1cad7aa46f08072a47ccf1c655c3e8  qdata/req11v.dat
+  0822e034c939edf380d12fd54802368774d266a1204942c2dad7b44928ae3c74  qdata/req11v.tab
+  d8cdea8edbbddf0174b4565f4981382817f0a0103aa50c1b98d31d70321ab50e  qdata/req12v.dat
+  f956a345749dfc4a165716519d01bf95bb41490052c8ad135d95a9162a8adf7f  qdata/req12v.tab
+  16545dbf4566e35ddef581e9be87529c4925012cbd8775abe8ac62fc0f51269a  qdata/req13v.dat
+  504d2c6d9dc8d5ade3d4ee22ec65e2de9212fbe861bddbff410ac75465ca0e58  qdata/req13v.tab
+  02a83d299557643dd8af6e78457e5c29a89fb12ff0447ee594f32a5acb1777a3  qdata/res01v.dat
+  74cce07d7907934c4b9b6d7f538f6df8d0c27bfa3e05a1a7574e4a7967bf652b  qdata/res01v.pal
+  e387c3b50e3a30ded2210f81ba8f1e3c32f6c934e52f0b7cf238e97cd42de739  qdata/res02v.dat
+  cf135986c7b029b423994853c3a021774d83fe02574b652cf41b3813beea5d4c  qdata/res02v.tab
+  2f058a87a8361b860788d4d158cff58c26f4878a33cd2f4d6ad2bb90b525d042  qdata/score01v.dat
+  8843cf6a61f075edf1837b34f815e781420b7716c9f82eadd1ac0d027aa1a332  qdata/score01v.pal
+  867d256f3e26625553cfe22785721ee7264891023058d7fa3f7208ddf4033882  qdata/spointer.dat
+  63cc0bd936bb39d54244e366b0db1c4f0cb9c247e63fb79169e8fca0e10a95b2  qdata/spointer.tab
+  d9ae8f86f04b617a810aa36ceb396d979929b37b27a87b1a703cb6dff53e0983  qdata/staff01v.dat
+  40294c68332060961f894c0df9b690893358308621177243a7c4c5af8069d9ae  qdata/staff01v.pal
+  deca86c512a074aa050330a579d9570a09895b3f53e49a4aae1bf9a587b73478  qdata/staff02v.dat
+  87b111419704b4e3e216884462101c190e98076c8e72989019483f614fc05e3c  qdata/staff02v.tab
+  f4116ab93cc74903f41cc24eea5d86b10432bc9f8dcd5c870fd08f026cd0d799  qdata/stat01v.dat
+  5902897fc65efb18876364a5c530d6ad2f6bc2e29d12f19277eafde4894e8495  qdata/stat01v.pal
+  3fb2c8d0ee4a673b6b9673735c4c443bc34f9421aad3afd04bfbff82df42044d  qdata/stat02v.dat
+  8ec9c9a3d8b339525db8de9e1c32221cc8c38b8c7b8ddc91b206169195ec8ce7  qdata/stat02v.tab
+  ff681ef5ff245a99e4bcb22043898a7c15af5c2a5cf134d7f31d3c647912c254  qdata/title01v.dat
+  30f234aa098fba44212993c856f343ada7afe55b033e6a4490db36226b5cb7c7  qdata/title01v.pal
+  253a4503933ed7728cbd651afddb3b55061a20790eca9cd25e10c78ac10ef6a8  qdata/town.dat
+  fa4c933805cc86ed2d53cb627fafa06cf3e475ebcd2c0a2904f867695825d839  qdata/town01v.dat
+  76c39068bf84466e7ed56258e62a90a5b98d690cd8da5b8e3bf0bab42f057440  qdata/town01v.pal
+  8cc5ef0e2f9433d9f50bbe0756c0c0d7a9c137748e502241e581b5072cab3430  qdata/town02v.dat
+  d0b74aedfa5d1b93bc2bb33592377213219186491632be2ab5649657ebcf90ae  qdata/town02v.tab
+  3d1614e8346d76b50a432cdb3dadf6564b4917b1f772d642add43c940a30bb9c  qdata/ver00v.dat
+  38fff5ba8385ecc4814eb5b3a3466c01a5c0671f0d25f7a15326cdcfaea1048b  qdata/ver00v.tab
+  3d0723a56f76ec15a08fc097d68c404a4f9e7c59fb8b526f05793650411a2913  qdatam/face01m.dat
+  ca646be2465ca3153e4279c2dd75821e3016fe5086d4fc2953d38c72b73d45b8  qdatam/font100m.dat
+  f7549424f480f12f112052088e80daa3971c39d5f296c519ad795e6e5f8f0ab0  qdatam/font100m.tab
+  f78e35538c0a4dbcf29c2e44a59c19ad7fe1bda620a917185592efcfc6b0858b  qdatam/font101m.dat
+  da9600fe77c6e7506413a3efa1ac052f787aa727bebf75b035763df8aaa2941a  qdatam/font101m.tab
+  b54177d866592a4a2bf2fbeba01f004c15e2d46a803df8275da8ace584b94d6e  qdatam/font130m.dat
+  a9ea441a9a89a3d264255a6fc1b74e6991acc7417aaceae5cbbd816a3afb4d59  qdatam/font130m.tab
+  31a86cf7feb21dee0ddf75b45e26a03527bc349114bea5628682d999d1724e10  qdatam/font131m.dat
+  a9ea441a9a89a3d264255a6fc1b74e6991acc7417aaceae5cbbd816a3afb4d59  qdatam/font131m.tab
+  c33162cfa9e9846cfd018193ebca085a40bd2bd2892d8f107445f4b0c5d1c138  qdatam/font132m.dat
+  a9ea441a9a89a3d264255a6fc1b74e6991acc7417aaceae5cbbd816a3afb4d59  qdatam/font132m.tab
+  ec095bec621a264e17e1bf80e5426a5bdca2327cdbcde32c067e3a81239d8db7  sound/adlib.mdi
+  717a6debfe0de829ec83f7fd8ee056e5c4caf23f6e94984694001fb0360b596b  sound/adlibg.mdi
+  26cb72a971883c7dfddfd74c4a5c85f0a5d4e55a34ab8aa9b2893df9abfa6ca3  sound/audiodrv.dig
+  25c0a4aac8b08b59050908b8f85ee96e4ae4c337f511f04bda42bb803cb9ec3c  sound/data/minheap.dat
+  ed93e9310fd83a7e71837c50f22c63c05605c118ffd84e74b91c4a928bd8c051  sound/data/sound-0.dat
+  a8c3bdaaa741911ee8d4a43bd6e5892fefa683e3673eedaddc1f5102e389e4be  sound/data/sound-1.dat
+  c4e750c8adf6ee06614ff29b549d3aa04edd7f408bc7d16d349de55f770859e5  sound/data/sound-2.dat
+  3b4e243373bf3fc0a30d4b9351cd513dc832a2c00bab12ac7be8ceef61e2508e  sound/data/sound-3.dat
+  4fcfbe9fc41856c2aea7c3f7d228215f1998097fde85816621e3c201a81378f0  sound/data/sound-4.dat
+  336ed5db62a2694242249aafa3142c3f933aca084e9851f2bf7d38a7e2c4f4d0  sound/data/sound-5.dat
+  4da7be521dd048f7f82c2c178496463353fe373c2eedde5ee38a252fe3225a43  sound/esfm.mdi
+  428f537c47b82c09ae17d6de0c02dbb913aaee0c12c5c17b62b2ffc991b92524  sound/iwav.dig
+  5b82cbec55215695cf58358ce0c0f37f3b00a74229dd8beb868a12646cc00275  sound/iwav.mdi
+  cca38c28eabe00b88e4bddd627fa68a68b2559029098b777129ca00201831a9c  sound/jammer.dig
+  f54976dde3f40c5e865ab0ecca59719646d6d8c7b64cca829115adef3ccdacaf  sound/midi/atlantis.xmi
+  ee2b06f5bd80f5e1a149bb01869276458216ffd29c568b4bdbc51bb2b10357d1  sound/midi/candy.xmi
+  6ef9bb09c95b865b6e89033520c94d280bd5078530538e3e50ffcf49b25d9fe3  sound/midi/doctor.xmi
+  be8929411ea8e03583998e222a6f4a69acd6aaecfb7840703a92736cc269adb0  sound/midi/fortune.xmi
+  6e00a7f6f81e76fd98eb2844b9e529ff55c88d54800b666cc50a366200398c25  sound/midi/hospmidi.bat
+  313c86cddee0df71f5bf6abaa4f96b94feec1d81334f2c4e48f9ed7f9777e968  sound/midi/mend.xmi
+  55d2214c1d9a2b958accc8d61c9457eba76c9ea46d971cb3a1104354e53fe90d  sound/midi/midi.txt
+  96454e0e8683d7a805074c96c363c75acad890bbd8c584f5350989f8eadaa56d  sound/midi/nightsh.xmi
+  0df6026eec2dbecaafa69b956a59cf77a482311b5c9888ace6429b2e509cbada  sound/midi/readme.txt
+  3c7131dd1b707b24f4a5b26bf969d0d365c40b6f9e689c3d7b6c0cf8d6eb2ed1  sound/midi/sixseven.xmi
+  dd78cdf4ec2a80930d419376a03e805234fc2ec1eb13ee928293261072104c8e  sound/midi/steady.xmi
+  5810b3708844f76b69e1e9bd69420fb9096496cf5f3ee4b86eeeddd139394b0c  sound/mpu401.mdi
+  c9f2fb89c254e4c29363c552f63f80bd414941a1ac1d1dbe13f11ad443efdc62  sound/mssdrvr.lst
+  0a83f41fe6d3f6131181690c80fe4855f2d197224475227ff3a4a89481b0e233  sound/nvdig.dig
+  1aa9edc550ed5d5c539a1dc72256baa29aa7b192be9da94b102b292d0aa5e343  sound/nvmpu.mdi
+  ca7f5be3fca9a76a936dbb1f2f1de6980678705979fc39479b419f24cee72429  sound/opl3.mdi
+  028cbdb132c09eb5ae1b595cf9eab5df1d6bf59291b157ac378a82e6233da4a7  sound/pas.mdi
+  79de0abdb6c7a31ca7309321b70dd19d848c8110d89dc6ea9df13e982d523714  sound/pasplus.mdi
+  6e1e4ad2244447adc9eee9a97369f942095e5299579b72dd955a33bf9e594da5  sound/proaudio.dig
+  21d841b53be1bef17c86906e9943c160f0811fd614c14df614e217042c978145  sound/rap10.dig
+  02d4f5d47f40442260f26804863cb2bd7f53ac13921f31a95db9449c6a6896c5  sound/sample.ad
+  02d4f5d47f40442260f26804863cb2bd7f53ac13921f31a95db9449c6a6896c5  sound/sample.opl
+  267d6dc348ecb7c6357b6421e693fc2222ac0ee276938af8b3e98fc545f8ca70  sound/sb16.dig
+  945b4b3f0b722a347c2a025dda872426f47a289e03ef3bd0aa1c02809c94e4e4  sound/sbawe32.mdi
+  19df1f9fc10505b555aec51f692f7fdaaa10322a7e9ed2070dd56112f6f75a8d  sound/sblaster.dig
+  41da5bf5a1f720bf43070b8293fc8d763696aa87b1db463881a6171e9884d2f3  sound/sblaster.mdi
+  189d65d14569770184cba66cbeeea9c4307b4eefa8dd9d21e3d2d2819403429a  sound/sbpro.dig
+  88cf684d5c9f4825747154505ee6060644c4f686ddc8774da648c77d4c8b70d0  sound/sbpro1.mdi
+  4a4279e89094b64276a1a44297c0cc4c44753b3ff25a5cbac30d71f3fea03860  sound/sbpro2.mdi
+  a1459763f2fdcb1ada4f9fc6d28c9ea33077c00dad91b5809ee899f5a1b6c05c  sound/sndscape.dig
+  f541a45fc4f5c4c9a5f68c6addcd451a261b0b4b20a00239d4c8e47320ff31c0  sound/sndscape.mdi
+  46ea416974c918dc18e4310b70ac4bbb3647b2d75cc954510d303b7308273907  sound/sndsys.dig
+  4e63a94e272f37907910cc2a73120d2d21f3651a66bd06fcac7e80c93af55478  sound/ultra.dig
+  e7034fb38cd05821bb0960537745db75348c193c7a9889373bbcc86eb1cac17f  sound/ultra.mdi
+...
+
