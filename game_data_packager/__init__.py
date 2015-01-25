@@ -1653,9 +1653,25 @@ class GameData(object):
             assert control['Package'] in ('PACKAGE', package.name)
         control['Package'] = package.name
 
-        size = subprocess.check_output(['du', '-sk', '--exclude=./DEBIAN',
-            '.'], cwd=destdir).decode('utf-8').split(None, 1)[0]
-        control['Installed-Size'] = size
+        installed_size = 0
+        # algorithm from https://bugs.debian.org/650077 designed to be
+        # filesystem-independent
+        for dirpath, dirnames, filenames in os.walk(destdir):
+            if dirpath == destdir and 'DEBIAN' in dirnames:
+                dirnames.remove('DEBIAN')
+            # estimate 1 KiB per directory
+            installed_size += len(dirnames)
+            for f in filenames:
+                stat_res = os.lstat(os.path.join(dirpath, f))
+                if (stat.S_ISLNK(stat_res.st_mode) or
+                        stat.S_ISREG(stat_res.st_mode)):
+                    # take the real size and round up to next 1 KiB
+                    installed_size += ((stat_res.st_size + 1023) // 1024)
+                else:
+                    # this will probably never happen in gdp, but assume
+                    # 1 KiB per non-regular, non-directory, non-symlink file
+                    installed_size += 1
+        control['Installed-Size'] = str(installed_size)
 
         default_values = {
             'Section' : 'non-free/games',

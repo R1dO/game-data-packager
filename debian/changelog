@@ -25,6 +25,8 @@ game-data-packager (40) UNRELEASED; urgency=medium
     which we have never actually shipped. In versions < 39 it was silently
     ignored, in versions >= 39 it prints an error message.
     /etc/game-data-packager/idstuff-mirrors is sufficient.
+  * Estimate Installed-Size with the algorithm planned for dpkg 1.18,
+    rather than using du which is filesystem-dependent
 
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:54:12 +0000
 
