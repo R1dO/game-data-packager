@@ -18,6 +18,8 @@ game-data-packager (40) UNRELEASED; urgency=medium
     - add support for unpacking InnoSetup installers with innoextract
   * quake2: support an alternative version of pak0.pk3 (Closes: #776059)
   * quake2: make videos optional (also part of #776059)
+  * quake2: add optional DM maps match1, base64, city64 and sewer64,
+    and CTF map q2ctf4a (also part of #776059)
   * quake2: remove reference to /etc/game-data-packager/quake2-mirrors
     which we have never actually shipped. In versions < 39 it was silently
     ignored, in versions >= 39 it prints an error message.

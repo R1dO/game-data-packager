@@ -52,6 +52,13 @@ packages:
     - baseq2/video/eou8_.cin
     - baseq2/video/idlog.cin
     - baseq2/video/ntro.cin
+    # semi-official bonus content
+    - baseq2/base64.bsp
+    - baseq2/city64.bsp
+    - baseq2/pak3.pak
+    - ctf/q2ctf4a.bsp
+    - baseq2/sewer64.bsp
+    - readme-dm64.txt
     # documentation
     - 3.20_changes.txt
     - ctf/readme.txt
@@ -851,6 +858,56 @@ files:
     unpack:
       format: zip
 
+  match1.tar.gz:
+    download:
+      idstuff-mirrors:
+        path: quake2/maps
+    provides:
+    - baseq2/pak3.pak
+    unpack:
+      format: tar.gz
+
+  baseq2/pak3.pak:
+    look_for: [pak3.pak]
+
+  dm_64.tar.gz:
+    unpack:
+      format: tar.gz
+    provides:
+    - baseq2/base64.bsp
+    - baseq2/city64.bsp
+    - baseq2/sewer64.bsp
+    download:
+      idstuff-mirrors:
+        path: quake2/maps
+
+  baseq2/base64.bsp:
+    look_for: [base64.bsp]
+
+  baseq2/city64.bsp:
+    look_for: [city64.bsp]
+
+  baseq2/sewer64.bsp:
+    look_for: [sewer64.bsp]
+
+  readme-dm64.txt:
+    install_to: $docdir
+    download:
+      idstuff-mirrors:
+        path: quake2/maps
+
+  q2ctf4a.tar.gz:
+    unpack:
+      format: tar.gz
+    provides:
+    - ctf/q2ctf4a.bsp
+    download:
+      idstuff-mirrors:
+        path: quake2/maps
+
+  ctf/q2ctf4a.bsp:
+    look_for: [q2ctf4a.bsp]
+
   baseq2/pak0.pak:
     alternatives:
     - baseq2/pak0.pak_1dd586a
@@ -1524,6 +1581,17 @@ cksums: |
   4207811315 9192461 xatrix/video/xu3.cin
   810492254 14874670 xatrix/video/xu4.cin
 
+  # semi-official addons
+  87321840 5836832 baseq2/base64.bsp
+  3764986335 4851184 baseq2/city64.bsp
+  33054229 7325053 dm_64.tar.gz
+  4131251154 337884 match1.tar.gz
+  3675579124 789684 baseq2/pak3.pak
+  3082650925 2176180 ctf/q2ctf4a.bsp
+  3815719920 994080 q2ctf4a.tar.gz
+  1083749212 787 readme-dm64.txt
+  3695062650 6635508 baseq2/sewer64.bsp
+
 md5sums: |
   1ec55a724dc3109fd50dde71ab581d70  baseq2/pak0.pak_1dd586a
   36fdaddd1c1b56ba10472466e4486ff8  baseq2/video/end.cin
@@ -1998,6 +2066,16 @@ md5sums: |
   9ad6f4cbc9834784420a3b6bd6d2c76b  xatrix/video/xu3.cin
   441e0e33ef48aa028896dfcee3613f74  xatrix/video/xu4.cin
 
+  77baabfd18e5cf4a242df7931129247c  baseq2/base64.bsp
+  959e8450b5c7817c9ac7a9edcaf0dca5  baseq2/city64.bsp
+  0c393439252e16942a4b1093c8fa6c4d  dm_64.tar.gz
+  03ab8b183d8f6be62fce6fda5d71f93f  match1.tar.gz
+  43a31cf52b7281ea263d1020a9aedca6  baseq2/pak3.pak
+  1def0b241d56a435017843fadc2d86ef  ctf/q2ctf4a.bsp
+  37ad48301e5ffc1b3de7d0bd84fba154  q2ctf4a.tar.gz
+  917611eec2f2f699b1b0ca149ac66244  readme-dm64.txt
+  19a07f706332c48a83164d13d77b6729  baseq2/sewer64.bsp
+
 sha1sums: |
   452fbe9a1175c38fbd76042a3e43a6d2c2da6a1d  quake2-rogue-2.00.tar.xz
   d23b281d29247d5e1c4a059233b16cda840d35c1  quake2-xatrix-2.01.tar.xz
@@ -2371,6 +2449,16 @@ sha1sums: |
   420e0463f44337dcea84d0340dfd504b8289b9c3  xatrix/video/xu3.cin
   b4de86dc16c59ca93c9f2953d8e273dbe4272e87  xatrix/video/xu4.cin
 
+  a5490206ff2949e89f986fa9b0aeb078ddcf84b4  baseq2/base64.bsp
+  80eb7dff6957f3090ee9e6c70e3908b4f343b9c7  baseq2/city64.bsp
+  2c5fb8e424eab9477daba921fa86b2ccfd74fc1d  dm_64.tar.gz
+  06018ad9403e9a02d0ff2d261abbfd391c549788  match1.tar.gz
+  95ad9cfd50813a9a57beb96ba53413b0ad27b7fe  baseq2/pak3.pak
+  78566d010f1225dc68acda4c8219a0816a3aba7d  ctf/q2ctf4a.bsp
+  d4ece293055f595d7b810546d6420e3e64be1b9c  q2ctf4a.tar.gz
+  2c5832c6256592504502b6f5d0999612abeb779e  readme-dm64.txt
+  6d9a210bde080e7c5a27146c2323b7a6c72f44cb  baseq2/sewer64.bsp
+
 sha256sums: |
   fa3f4ad38a73b6007cf8bd2992318952555ee7d91734bc0a7d1af6016186eac5  quake2-rogue-2.00.tar.xz
   973adbb3665d23c30a5e2117cc7227042c15db1b7bc8d375c5c6b8d98893e958  quake2-xatrix-2.01.tar.xz
@@ -2742,6 +2830,16 @@ sha256sums: |
   c09da7ff5ca6fe1b180ac08fd355e2a2d85fb794f0967d3a7e9ebf3847f2c684  xatrix/video/xu2.cin
   cd3468ed2b625dcf0f77fe870e51129d23c9e9de5bd6b860579572f677de7234  xatrix/video/xu3.cin
   c8fe12339d0e22e4177b2ffc42efdd0228fd1adf174f8ad5670d2f388f9fcd5e  xatrix/video/xu4.cin
+
+  bb201ec5bb8f429ea0e999f4d588f967d91457dd27286af284e6332c18c13fc6  baseq2/base64.bsp
+  9b79cbdf50113c14422e524ae9d5d6456e354df6b16715837c2e4e70ea470fc3  baseq2/city64.bsp
+  ecbf62f7838a61f77d3e0e60a70b2eb4fb85250f259e9ab4191e89211a08f2c6  dm_64.tar.gz
+  17ea08c4c40bc08fa25a0fb1b1934b35c85f5e2e95bfecdc0be9938419c03579  match1.tar.gz
+  510bb2be69be7db572e41f6c662159d9714758d0d8d9a5573e97783f23b8b2dc  baseq2/pak3.pak
+  962e6f6352f8fde291828d2a835312360f30effbdfd20ec266999398884b1684  ctf/q2ctf4a.bsp
+  c2cc0e375d68e6a8e05af5279ba80a4e0085b1698601523e74b7797b5be4c986  q2ctf4a.tar.gz
+  88abca6ad0ee1fd19a503f3fd957f98b9274a81ad9cb0bd8fef3ea4ec77c4d45  readme-dm64.txt
+  66e3278bfe4b16983ea9a22d7300af813f05747db6d9941caa1fea38bb14d435  baseq2/sewer64.bsp
 
 ...
 # vim:set sw=2 sts=2 et:
