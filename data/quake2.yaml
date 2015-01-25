@@ -74,7 +74,7 @@ packages:
     - readme.doc
     - readme.txt_3.20
     - quake2_manual/bottom.html
-    - quake2_manual/credits.html_steam
+    - quake2_manual/credits.html
     - quake2_manual/customer_support.html_steam
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
@@ -300,7 +300,7 @@ packages:
     - quake2_manual/images/shotgun_guard.gif
     - quake2_manual/images/silencer.gif
     - quake2_manual/images/slime.jpg
-    - quake2_manual/images/start_network_server_screen1.gif
+    - quake2_manual/images/start_network_server_screen1.gif_3.20
     - quake2_manual/images/stimpack.gif
     - quake2_manual/images/story_main.jpg
     - quake2_manual/images/strogg_environ_1.jpg
@@ -540,7 +540,7 @@ files:
     - quake2_manual/images/shotgun_guard.gif
     - quake2_manual/images/silencer.gif
     - quake2_manual/images/slime.jpg
-    - quake2_manual/images/start_network_server_screen1.gif
+    - quake2_manual/images/start_network_server_screen1.gif_3.20
     - quake2_manual/images/stimpack.gif
     - quake2_manual/images/story_main.jpg
     - quake2_manual/images/strogg_environ_1.jpg
@@ -920,12 +920,46 @@ files:
   baseq2/pak0.pak_demo:
     install_as: baseq2/pak0.pak
 
+  quake2_manual/credits.html:
+    alternatives:
+    - quake2_manual/credits.html_steam
+    - quake2_manual/credits.html_3.05
   quake2_manual/credits.html_steam:
-    install_as: quake2_manual/credits.html
+    look_for: [quake2_manual/credits.html]
+  quake2_manual/credits.html_3.05:
+    look_for: [quake2_manual/credits.html]
+    size:   18873
+    md5:    71a8fc7089eddda402ab11d3443aaae2
+    sha1:   40974c7cb195dc1c3e43a011a7efef8fdc10a971
+    sha256: ddddd338256ee5b8cafbdd1e0a023aa96a917e79ff4acca1afd5a16b78329cea
   quake2_manual/customer_support.html_steam:
     install_as: quake2_manual/customer_support.html
   quake2_manual/technical_information.html_steam:
     install_as: quake2_manual/technical_information.html
+
+  quake2_manual/multiplayer.html:
+    alternatives:
+    - quake2_manual/multiplayer.html_3.20
+    - quake2_manual/multiplayer.html_3.05
+  quake2_manual/multiplayer.html_3.20:
+    # also in the 3.14 demo
+    look_for: [quake2_manual/multiplayer.html]
+  quake2_manual/multiplayer.html_3.05:
+    look_for: [quake2_manual/multiplayer.html]
+    size: 9826
+    md5: 0ef979e71bb0f1decfef7638bfaaca95
+
+  quake2_manual/images/start_network_server_screen1.gif:
+    alternatives:
+    - quake2_manual/images/start_network_server_screen1.gif_3.20
+    - quake2_manual/images/start_network_server_screen1.gif_3.05
+  quake2_manual/images/start_network_server_screen1.gif_3.20:
+    # also in the 3.14 demo
+    look_for: [quake2_manual/images/start_network_server_screen1.gif]
+  quake2_manual/images/start_network_server_screen1.gif_3.05:
+    look_for: [quake2_manual/images/start_network_server_screen1.gif]
+    size: 4058
+    md5: 0de34a0bd6b888a31417b78cc265bfbe
 
   quake2_manual/credits.html_3.14_demo:
     install_as: quake2_manual/credits.html
@@ -973,6 +1007,7 @@ files:
     install_to: $docdir
 
   Release Notes.doc:
+    distinctive_name: false
     install_to: $docdir
 
   commexp.txt:
@@ -1509,7 +1544,7 @@ cksums: |
   344828072 7239 quake2_manual/images/shotgun_guard.gif
   3222611639 2583 quake2_manual/images/silencer.gif
   995674657 2251 quake2_manual/images/slime.jpg
-  4209313998 7488 quake2_manual/images/start_network_server_screen1.gif
+  4209313998 7488 quake2_manual/images/start_network_server_screen1.gif_3.20
   2303584412 3027 quake2_manual/images/stimpack.gif
   3488021964 16067 quake2_manual/images/story_main.jpg
   1385610756 5755 quake2_manual/images/strogg_environ_1.jpg
@@ -1532,7 +1567,7 @@ cksums: |
   169357677 14239 quake2_manual/intel_brief8.html
   2521420864 3724 quake2_manual/intel_brief_enemy.html
   1037819561 695 quake2_manual/main.html
-  2604308855 10121 quake2_manual/multiplayer.html
+  2604308855 10121 quake2_manual/multiplayer.html_3.20
   4059658519 8349 quake2_manual/page_index.html
   2495263545 29911 quake2_manual/setup_controls_screenmenus.html
   1484426841 8480 quake2_manual/story.html
@@ -1923,7 +1958,7 @@ md5sums: |
   6064616bad96220615e110dd664f111f  quake2_manual/images/shotgun_guard.gif
   164bc256f4f8617fd61b4c36d0429d7c  quake2_manual/images/silencer.gif
   06dc2b46cae94542e3e4140615d85064  quake2_manual/images/slime.jpg
-  f122ab7eeab31b4da0c2baffceb5cf11  quake2_manual/images/start_network_server_screen1.gif
+  f122ab7eeab31b4da0c2baffceb5cf11  quake2_manual/images/start_network_server_screen1.gif_3.20
   a189c129ad4c299009eac1178815ba3a  quake2_manual/images/stimpack.gif
   2b8ae1a4e1d3123db66a76a08323e6b7  quake2_manual/images/story_main.jpg
   347cc3b0fe0aa4bd04f4ce40252af4cf  quake2_manual/images/strogg_environ_1.jpg
@@ -1946,7 +1981,7 @@ md5sums: |
   3d79ac1d55e1b721ad99dd3182277512  quake2_manual/intel_brief8.html
   bccace2d488b98b6ef28d3c635fce54c  quake2_manual/intel_brief_enemy.html
   6ab83a71a2ef04113ea7822c0d4107a3  quake2_manual/main.html
-  40adc537d74bffd613fbbe364eb17b7d  quake2_manual/multiplayer.html
+  40adc537d74bffd613fbbe364eb17b7d  quake2_manual/multiplayer.html_3.20
   49f1cb26ce4bd2a2f8c65e50cea8a7cd  quake2_manual/page_index.html
   e5164543d1d90c04b4ba430ed805b63e  quake2_manual/setup_controls_screenmenus.html
   1b4895f3b8311e41df116ffd4194ab73  quake2_manual/story.html
@@ -2397,7 +2432,7 @@ sha1sums: |
   3953f8fb902ae5aefa2f420572277d3fcdc6e867  quake2_manual/images/shotgun_guard.gif
   c608f059d359a82ce3eaed414bb64ac04493cfdb  quake2_manual/images/silencer.gif
   5b2fcafb08d1874ea8bad245ffe095db8ad49bab  quake2_manual/images/slime.jpg
-  5f1dd53fb2f79dd830ac2d268f5684701ff48741  quake2_manual/images/start_network_server_screen1.gif
+  5f1dd53fb2f79dd830ac2d268f5684701ff48741  quake2_manual/images/start_network_server_screen1.gif_3.20
   dd7a1deeb70657553b8ae82f959ae56d329ba2c0  quake2_manual/images/stimpack.gif
   6c9acd88b7140c73026ef6043e358e55ebcf6bcf  quake2_manual/images/story_main.jpg
   1fe89e52aa6805395b6a00554c648f7dd6971fc0  quake2_manual/images/strogg_environ_1.jpg
@@ -2420,7 +2455,7 @@ sha1sums: |
   9d8a54089cf65d45dd15b89c31a413107d384efa  quake2_manual/intel_brief8.html
   bde6844124e0570e3f6b21672e3f79dd406a280c  quake2_manual/intel_brief_enemy.html
   27d4f422deb6bf3a91d44980a162fed36c098174  quake2_manual/main.html
-  83b2e1a66c6658b39f324755d79c0f73b118c1e9  quake2_manual/multiplayer.html
+  83b2e1a66c6658b39f324755d79c0f73b118c1e9  quake2_manual/multiplayer.html_3.20
   0d408ba43ade6ed7b92fc4642e18eed27be1ad42  quake2_manual/page_index.html
   38bd8e7bd7869c670d439d5f04fb1eb85822e262  quake2_manual/setup_controls_screenmenus.html
   12091356fac45268a39336fb64106f004ca57e70  quake2_manual/story.html
@@ -2779,7 +2814,7 @@ sha256sums: |
   5f0963230c8d5a799179793901cdb304166562463fa6f1dced41b4d803c30291  quake2_manual/images/shotgun_guard.gif
   b3390e30508d676283ee3a5c5a6e7c35b6ba9ac8a44d5e5624b2be8a67f54e22  quake2_manual/images/silencer.gif
   85ab649aaea04d07ececd99c8b838dbd589e368894678db293f36f9d1beff890  quake2_manual/images/slime.jpg
-  1130ebe21c53151b519d39bb39ab7ce16b910eb7bb61b8ed64ef7f7942d0e677  quake2_manual/images/start_network_server_screen1.gif
+  1130ebe21c53151b519d39bb39ab7ce16b910eb7bb61b8ed64ef7f7942d0e677  quake2_manual/images/start_network_server_screen1.gif_3.20
   cf68ed5c5194582a1ca0bb9847344c4997b32861daa993e29b96116885bb1f31  quake2_manual/images/stimpack.gif
   d79cd535681ab1ef5c1e5750e5e4f41227853c5993f98841c5787b4328eaf6d5  quake2_manual/images/story_main.jpg
   bd871006862f2e88e0a754e193e26e3a58df8fbe50ce17faa3d9e0a96727d081  quake2_manual/images/strogg_environ_1.jpg
@@ -2802,7 +2837,7 @@ sha256sums: |
   ccc4a3f3f3c9877c007e8aca8c1553280c16a3dc8bdf333c531324d97d2040fd  quake2_manual/intel_brief8.html
   4cca0c7814a2bf5fd9bbdba66b6a0de7f47120dbdcef596f0d4d50fbad32bded  quake2_manual/intel_brief_enemy.html
   2aa56f80a933adb659cc2db905fb91bb5deb65fd2d05af54f2150619e4e81fdc  quake2_manual/main.html
-  8e2dd4970685f2723c2cafcedb5547f8c2b11f1ca43d296938798e3035db5b44  quake2_manual/multiplayer.html
+  8e2dd4970685f2723c2cafcedb5547f8c2b11f1ca43d296938798e3035db5b44  quake2_manual/multiplayer.html_3.20
   c821ca4701289151f5d95a86e21e0b0f6a96db70d9d264d2ea5f8b2434b2b9c8  quake2_manual/page_index.html
   3aeda329e052a951bcd93b0990912a5f5fafcf4945ab4bdd1f443742f239f3b7  quake2_manual/setup_controls_screenmenus.html
   75d4c5e8fdd2c0359221aae2fbc2b28ce4f4867f8864fc5aa2f10d0c2cda1fe8  quake2_manual/story.html
