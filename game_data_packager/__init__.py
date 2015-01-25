@@ -2203,7 +2203,7 @@ class GameData(object):
 
         fmt = wanted.unpack['format']
 
-        if fmt in ('id-shr-extract', 'lha', 'unzip'):
+        if fmt in ('id-shr-extract', 'lha', 'unzip', 'innoextract'):
             if which(fmt) is None:
                 logger.warning('cannot unpack "%s": tool "%s" is not ' +
                         'installed', wanted.name, fmt)
