@@ -38,6 +38,9 @@ packages:
     - q2-3.20-x86-full-ctf.exe
     install:
     - baseq2/pak0.pak
+    optional:
+    # videos present in Steam and on smcv's Xplosiv-branded CD-ROM, but
+    # apparently not strictly necessary (#776059)
     - baseq2/video/end.cin
     - baseq2/video/eou1_.cin
     - baseq2/video/eou2_.cin
@@ -49,7 +52,7 @@ packages:
     - baseq2/video/eou8_.cin
     - baseq2/video/idlog.cin
     - baseq2/video/ntro.cin
-    optional:
+    # documentation
     - 3.20_changes.txt
     - ctf/readme.txt
     - ctf/server.cfg
