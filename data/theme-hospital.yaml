@@ -28,6 +28,7 @@ packages:
     - manual.pdf
     - gog_eula.txt
     - eula.txt
+    - en_US_eula.rtf
     # not present in the gog.com copy; judging by their names, they're
     # probably unnecessary?
     - levels/easy00.bak
@@ -896,6 +897,8 @@ files:
   eula.txt:
     install_to: $docdir
   gog_eula.txt:
+    install_to: $docdir
+  en_US_eula.rtf:
     install_to: $docdir
   anims/winlevel.smk_demo:
     install_as: anims/winlevel.smk
@@ -3060,6 +3063,9 @@ cksums: |
   1541739238 1123270 manual.pdf
   2051011456 31801 levels/full00.sam_gog
 
+  # Origin
+  1616675884 224382 en_US_eula.rtf
+
 md5sums: |
   4d0c496b10b1b451e91775b11d836f75  anims/320x2401.smk
   2482104ac9d185994dc31ac4eecb1fb1  anims/320x2402.smk
@@ -3765,11 +3771,14 @@ md5sums: |
   f0dc098f0315b2e9a075d4a65bdcd97f  sound/pcspkr.mdi
   4313a6fbd5b3af4d757c23263babbb2f  sound/sound.dat
   4c2e1cf51fea7674ee3c6250ea96e0d4  sound/tandy.mdi
+  # gog.com
   a9aa90b9e9af4685a668f143f6462692  eula.txt
   3ca819220a3269e314c601a2333501f7  gog_eula.txt
   88806c2c2f9376b696dc282939afd8cf  setup_theme_hospital_2.0.0.5.exe
   115f65922bb0e845a9f585b424bab45b  manual.pdf
   9b2e0ebc8a38340e8717968db40504ac  levels/full00.sam_gog
+  # Origin
+  6f02a3dbdfed6e1938d4708ec046de38  en_US_eula.rtf
 
 sha1sums: |
   cdc8d8db5f52c95ba19efd04b3e5e28a40b53967  anims/320x2401.smk
@@ -4225,11 +4234,14 @@ sha1sums: |
   0f14df1913a670e7b14fb7856ac72d457401dc1d  sound/sndsys.dig
   4327d6bb924b4e40fa7ff035bdfb73a879c31836  sound/ultra.dig
   8337ada0962de33ee3eb8ebbf9d5d0c898f41fd2  sound/ultra.mdi
+  # gog.com
   ce7b2e51aa99aad66736732d35966db2f36a9ea4  eula.txt
   2acb1ec04139af2cc39d4253ca557c9571a4d15c  gog_eula.txt
   9860016a76883c9a15dee8fac5b810c0eea601c9  setup_theme_hospital_2.0.0.5.exe
   c96d0b7a79dd4a2dde61f595f4d2fd5d238f28de  manual.pdf
   98e886f214951b3ba5cebe43621532325044d534  levels/full00.sam_gog
+  # Origin
+  72928584b845a43a920e09c7a0838a63af4ee248  en_US_eula.rtf
 
 sha256sums: |
   f89a16e589e92cdb0340b391e8b7ed0901d0b009479895d2770dd69208c4b361  anims/320x2401.smk
