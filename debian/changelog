@@ -16,6 +16,10 @@ game-data-packager (40) UNRELEASED; urgency=medium
   * quake3: list Steam installation path in help text
   * theme-hospital: add support for the gog.com version
     - add support for unpacking InnoSetup installers with innoextract
+  * quake2: remove reference to /etc/game-data-packager/quake2-mirrors
+    which we have never actually shipped. In versions < 39 it was silently
+    ignored, in versions >= 39 it prints an error message.
+    /etc/game-data-packager/idstuff-mirrors is sufficient.
 
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:54:12 +0000
 
