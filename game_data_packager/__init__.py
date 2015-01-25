@@ -1714,17 +1714,17 @@ class GameData(object):
             conflicts.add(conflict)
 
         if depends:
-            control['Depends'] = ', '.join(depends)
+            control['Depends'] = ', '.join(sorted(depends))
         if recommends:
-            control['Recommends'] = ', '.join(recommends)
+            control['Recommends'] = ', '.join(sorted(recommends))
         if suggests:
-            control['Suggests'] = ', '.join(suggests)
+            control['Suggests'] = ', '.join(sorted(suggests))
         if provides:
-            control['Provides'] = ', '.join(provides)
+            control['Provides'] = ', '.join(sorted(provides))
         if replaces:
-            control['Replaces'] = ', '.join(replaces)
+            control['Replaces'] = ', '.join(sorted(replaces))
         if conflicts:
-            control['Conflicts'] = ', '.join(conflicts)
+            control['Conflicts'] = ', '.join(sorted(conflicts))
 
         version = package.debian.get('version')
         if 'Version' in control:
