@@ -30,6 +30,15 @@ from . import HashedFile
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
 
+def is_doc(file):
+    name, ext = os.path.splitext(file.lower())
+    if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
+        return False
+    for word in ('changes', 'eula', 'license', 'manual', 'quickstart', 'readme'):
+        if word in name:
+            return True
+    return False
+
 def do_one_dir(destdir):
     data = dict(files={})
     package = data.setdefault('packages', {}).setdefault('FIXME', {})
@@ -52,7 +61,9 @@ def do_one_dir(destdir):
                 package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
             elif os.path.isfile(path):
                 package['install'].append(name)
-                data['files'][name] = dict(size=os.path.getsize(path))
+                #data['files'][name] = dict(size=os.path.getsize(path))
+                if is_doc(fn):
+                     data['files'][name] = dict(install_to='$docdir')
 
                 hf = HashedFile.from_file(name, open(path, 'rb'))
                 sums['ck'][name] = os.path.getsize(path)
