@@ -75,7 +75,7 @@ packages:
     - readme.txt_3.20
     - quake2_manual/bottom.html
     - quake2_manual/credits.html
-    - quake2_manual/customer_support.html_steam
+    - quake2_manual/customer_support.html
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
     - quake2_manual/enemy_brains.html
@@ -932,8 +932,20 @@ files:
     md5:    71a8fc7089eddda402ab11d3443aaae2
     sha1:   40974c7cb195dc1c3e43a011a7efef8fdc10a971
     sha256: ddddd338256ee5b8cafbdd1e0a023aa96a917e79ff4acca1afd5a16b78329cea
+
+  quake2_manual/customer_support.html:
+    alternatives:
+    - quake2_manual/customer_support.html_steam
+    - quake2_manual/customer_support.html_3.05
   quake2_manual/customer_support.html_steam:
-    install_as: quake2_manual/customer_support.html
+    look_for: [quake2_manual/customer_support.html]
+  quake2_manual/customer_support.html_3.05:
+    look_for: [quake2_manual/customer_support.html]
+    size:   5073
+    md5:    525c98cd717fc7e6ea18b5fd758a2f97
+    sha1:   1b5569bbe7abf42b5113401dd2b84a0a3b3d814c
+    sha256: b90985c9c5a201ce42ef80ebb489110f0df8767862aa77a107c43dc618cce7d7
+
   quake2_manual/technical_information.html_steam:
     install_as: quake2_manual/technical_information.html
 
