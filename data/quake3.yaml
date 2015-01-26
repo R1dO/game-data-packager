@@ -118,6 +118,11 @@ packages:
       _ 383888 missionpack/pak1.pk3
       _ 376234 missionpack/pak2.pk3
       _ 384282 missionpack/pak3.pk3
+    install_to_docdir:
+      - Help
+    optional:
+      - Help/Q3A_CELA.txt
+      - Help/Q3A_EULA.txt_loki
 
   quake3-team-arena-data:
     longname: Quake III Team Arena
@@ -760,6 +765,10 @@ files:
     - Help/DedicatedServer.html
     - Help/BotCommands.html
 
+  Help/Q3A_EULA.txt_loki:
+    look_for: [Help/Q3A_EULA.txt]
+    install_as: Help/Q3A_EULA.txt
+
 cksums: |
   2320976398 49289300 linuxq3ademo-1.11-6.x86.gz.sh
   3701968173 6122 botfiles/chars.h
@@ -1004,8 +1013,10 @@ cksums: |
   728666811 7341 Help/Manual/navart/weapons/shotguna.jpg
   2701614114 7194 Help/Manual/navart/weapons/shotgunh.jpg
   453620289 7327 Help/Manual/navart/weapons/teleport.jpg
+  2022830651 21415 Help/Q3A_CELA.txt
   3837091335 30480 Help/Q3A_EULA.html
   2895569138 9958 Help/Q3A_EULA.txt
+  3210348088 14411 Help/Q3A_EULA.txt_loki
   3350442675 1119 Help/Quake3World.html
   13572043 13845 Help/Readme.html
   868039883 2684 Help/Support/CustomerSupport/Customer_Support.htm
@@ -1270,8 +1281,10 @@ md5sums: |
   5fa082bfcca6552e51cae94e42da1835  Help/Manual/navart/weapons/shotguna.jpg
   302c03eb5bce2a55f249aa31c6639a9e  Help/Manual/navart/weapons/shotgunh.jpg
   5abeb8ff2aa01ace0189315c839df443  Help/Manual/navart/weapons/teleport.jpg
+  aa4d3ac8f85cd202eadf9de0c07af67d  Help/Q3A_CELA.txt
   e74300fd0f5d4766d3d8cbd57774b7de  Help/Q3A_EULA.html
   124cd297370aa2cc9b42be239d19756c  Help/Q3A_EULA.txt
+  7382ad04f3fd168a344a45926fd3bd24  Help/Q3A_EULA.txt_loki
   5df9a70f7a694ae37d8e502d90c9cfee  Help/Quake3World.html
   e7306d73bb92768e5d76697894134dca  Help/Readme.html
   5100e0920972e2e60114a098fcbbe6b8  Help/Support/CustomerSupport/Customer_Support.htm
@@ -1536,8 +1549,10 @@ sha1sums: |
   3546c6d7cdcd2850d8140286049d311d8ea3a9f2  Help/Manual/navart/weapons/shotguna.jpg
   730f3ff7a815280f9d030754aa935432a892263d  Help/Manual/navart/weapons/shotgunh.jpg
   4baa623cef246fe1fe17276bc4bb3ad08f3c2a90  Help/Manual/navart/weapons/teleport.jpg
+  0252513e9aeb0b4eda200c299e00636412a07c56  Help/Q3A_CELA.txt
   fcae69b619846459049a05e67833424df63786a2  Help/Q3A_EULA.html
   d82469cc8b90d38623f1a153cdac121271c650cd  Help/Q3A_EULA.txt
+  8593879d72aee066e28cff56a978a84faa031cb6  Help/Q3A_EULA.txt_loki
   09fb42cccb8086c7feb138d4851e0ad6479a51ab  Help/Quake3World.html
   23ad420bb65a42a10a5a9657b7746856ef71461a  Help/Readme.html
   f7a4ba51849bfda94414d6d2b36e837e6bad7471  Help/Support/CustomerSupport/Customer_Support.htm
@@ -1802,8 +1817,10 @@ sha256sums: |
   e6f3d2998aa80a63cc60487d4027d5a9c68807eca66fee10ea654b938b4f5358  Help/Manual/navart/weapons/shotguna.jpg
   567533db76b91e0f5a43352d51e3df1dd782e99efe579854d8208bcd6b9d1f80  Help/Manual/navart/weapons/shotgunh.jpg
   09c02f084b5471e9841af146d1462afcc8cd63022ed520c0e4c8468e1ce663aa  Help/Manual/navart/weapons/teleport.jpg
+  1d199e5d0ceaafb90db5d8236c441519dcb32cb9e62187d67fb869a907f1085a  Help/Q3A_CELA.txt
   2d473a168d9a19df17cb64362cd6e08d2e48a4d8c0f4846b0221f775705cdb3b  Help/Q3A_EULA.html
   23ed30a9ea5875261791549f16875576e7428365ff82dd943cc07339f1173673  Help/Q3A_EULA.txt
+  b5fb337e43b03729e7062ce6ef92d2e920d51ac0df0822369805713acd644578  Help/Q3A_EULA.txt_loki
   0e51b4ce2e13e8cca2865e1c6b995636467a2e56e6fef759b388d10fd2bd1da5  Help/Quake3World.html
   99aedc13cc99c86e4f199846a2b1433ab042d159ba3d52fb3d1b997b29e3cfd1  Help/Readme.html
   b279932005296d0b67cd3ef718e925ac7a30fdf30b8d295118ca601414027543  Help/Support/CustomerSupport/Customer_Support.htm
