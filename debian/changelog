@@ -20,6 +20,7 @@ quake (10) UNRELEASED; urgency=medium
   * Simplify advice on obtaining game data, and point to
     game-data-packager's new declarative data files for checksums and
     exact sizes (Closes: #762823)
+  * quake-server, quake2-server: if no data, exit 72 like quake3-server does
 
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:48:36 +0000
 

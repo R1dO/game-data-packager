@@ -39,7 +39,8 @@ main() {
 
     if ! [ -f "${data_location}/id1/pak0.pak" ]; then
         if test "${role}" = server; then
-            echo "$no_data_msg"
+            echo "$no_data_msg" >&2
+            exit 72    # EX_OSFILE
         else
             exec "$data_location"/need-data.sh "$no_data_title" "$no_data_msg"
         fi
