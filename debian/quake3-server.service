@@ -1,0 +1,21 @@
+[Unit]
+Description=Quake III Arena game server
+After=network.target
+
+[Service]
+Type=simple
+User=Debian-quake3
+Environment=DAEMON_OPTS=
+EnvironmentFile=-/etc/default/quake3-server
+ExecStart=/usr/games/quake3-server +set com_homepath server.q3a $DAEMON_OPTS +exec etc/quake3-server/server.cfg
+Restart=on-failure
+RestartPreventExitStatus=72
+# hardening
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

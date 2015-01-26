@@ -5,7 +5,9 @@ Uploaders: David Banks <amoebae@gmail.com>,
            Jack Coulter <jscinoz@gmail.com>
 Section: contrib/games
 Priority: optional
-Build-Depends: debhelper (>= 9)
+Build-Depends:
+ debhelper (>= 9),
+ dh-systemd,
 Build-Depends-Indep: imagemagick,
                      inkscape,
                      xcftools,
