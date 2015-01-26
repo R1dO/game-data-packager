@@ -16,8 +16,8 @@ including the sizes and checksums of the required files.
 Demo files are freely downloadable and can also be packaged using
 game-data-packager.
 
-Running the server via the init script
---------------------------------------
+Running one server instance
+---------------------------
 
 By default, quake2-server adds a user under which to run the dedicated server
 (quake2-server) and sets it up to be run by an init script in the conventional
@@ -37,7 +37,9 @@ to either /etc/quake2-server/debian_server.cfg or
 are using the demo data or the full game. By default, the init script will
 execute debian_server.cfg.
 
-For compatibility with older versions of the quake-server package,
+To set options that can only be configured via the command-line,
+such as game and port, set the variable DAEMON_OPTS
+in /etc/default/quake2-server.
 
 The server can be managed in the usual way, e.g. via service(8)
 and update-rc.d(8) commands like
@@ -49,28 +51,55 @@ and update-rc.d(8) commands like
 
 which should work for all of Debian's supported init systems.
 
-Running the server with cron and screen
----------------------------------------
+Running multiple server instances with systemd
+----------------------------------------------
 
-One alternative way to run the server is to run it in a screen(1) session
-from a cron @reboot action. This can be used to run multiple instances
-of the server; you'll need to set a different port number on each server after
-the first, and it's safest to give each server a unique home directory so they
-don't overwrite each other's configuration files.
+Under systemd, quake2-server supports additional instances of the server,
+so you can run a deathmatch server and a cooperative server,
+or servers with different mods or mission packs, such as a Quake II server
+and a Capture the Flag server.
 
-To do this, you could put something like this in the quake2-server user's
-crontab (don't break the long lines!):
+Each instance quake2-server@INSTANCE.service has configuration and state in
+/var/games/quake2-server/INSTANCE.home/.yq2 (or similar), and will execute
+/etc/quake2-server/INSTANCE.cfg on startup.
 
-    @reboot screen -d -m -S ffa env HOME=/var/games/quake2-server/ffa /usr/games/quake2-server +exec ffa.config
-    @reboot screen -d -m -S ctf env HOME=/var/games/quake2-server/ctf /usr/games/quake2-server +set port 54321 +exec ctf.config
+To set a parameter that can only be given on the command line, such as
+game or port, you can create /etc/default/quake2-server@INSTANCE
+or a systemd "drop-in" file, and set DAEMON_OPTS there. Setting a
+unique port for each server is recommended: if you do not, each
+server will try ports above its configured port until it finds one
+that is not in use, so the mapping between servers and ports will be arbitrary.
 
-or in /etc/crontab or a file in /etc/cron.d:
+The instance name "debian_server" cannot be used without disabling and
+stopping quake2-server.service, since it shares its configuration with that
+service.
 
-    @reboot quake2-server screen -d -m -S ffa env HOME=/var/games/quake2-server/ffa /usr/games/quake2-server +exec ffa.config
-    @reboot quake2-server screen -d -m -S ctf env HOME=/var/games/quake2-server/ctf /usr/games/quake2-server +set port 54321 +exec ctf.config
+For instance, these shell commands (as root) would set up a cooperative
+server on port 27920 and a Capture the Flag server on port 27930:
 
-If you do that, you can access the servers' consoles by attaching a screen
-session to them:
+    cat > /etc/default/quake2-server@coop
+    DAEMON_OPTS="+set port 27920"
+    EOF
+    cat > /etc/quake2-server/coop.cfg <<EOF
+    set hostname "My Co-op Server"
+    set coop 1
+    set deathmatch 0
+    set skill 2
+    // no friendly fire if you use the same model as other players
+    set dmflags 5520
+    map base1
+    EOF
+    systemctl daemon-reload
+    systemctl enable quake2-server@coop.service
+    systemctl start quake2-server@coop.service
 
-    sudo -u quake2-server screen -r ffa
-    sudo -u quake2-server screen -r ctf
+    cat > /etc/default/quake2-server@ctf
+    DAEMON_OPTS="+set port 27930 +set game ctf"
+    EOF
+    cat > /etc/quake2-server/ctf.cfg <<EOF
+    set hostname "My CTF Server"
+    exec server.cfg
+    EOF
+    systemctl daemon-reload
+    systemctl enable quake2-server@ctf.service
+    systemctl start quake2-server@ctf.service

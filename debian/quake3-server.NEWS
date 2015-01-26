@@ -1,3 +1,24 @@
+quake3-server (10) experimental; urgency=medium
+
+  quake3-server configuration has changed significantly in this version.
+
+  The DAEMON_OPTS variable in /etc/default/quake3-server no longer
+  contains a configurable "+exec" command. /etc/quake3-server/server.cfg
+  will always be executed in addition to whatever is specified in
+  DAEMON_OPTS, and the default DAEMON_OPTS is now empty.
+
+  The START_DAEMON variable in /etc/default/quake3-server is no longer
+  supported. If quake3-server was previously disabled via START_DAEMON,
+  upgrading to this version will run "update-rc.d quake3-server disable"
+  to disable it in the correct way.
+
+  systemd users can now enable additional instances of the server,
+  quake3-server@INSTANCE.service, which use /etc/default/quake3-server@INSTANCE
+  and /etc/quake3-server/INSTANCE.cfg instead.
+  See /usr/share/doc/quake3-server/README.Debian for details.
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 23 Jan 2015 09:42:55 +0000
+
 quake3-server (1.4) unstable; urgency=low
 
   In earlier Debian packaging for Quake III Arena, the quake3-server
