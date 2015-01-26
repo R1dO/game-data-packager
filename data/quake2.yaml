@@ -192,7 +192,7 @@ packages:
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
-    - quake2_manual/technical_information.html_steam
+    - quake2_manual/technical_information.html
     - quake2_manual/top_nav.html
 
   quake2-demo-data:
@@ -946,8 +946,18 @@ files:
     sha1:   1b5569bbe7abf42b5113401dd2b84a0a3b3d814c
     sha256: b90985c9c5a201ce42ef80ebb489110f0df8767862aa77a107c43dc618cce7d7
 
+  quake2_manual/technical_information.html:
+    alternatives:
+    - quake2_manual/technical_information.html_steam
+    - quake2_manual/technical_information.html_3.05
   quake2_manual/technical_information.html_steam:
-    install_as: quake2_manual/technical_information.html
+    look_for: [quake2_manual/technical_information.html]
+  quake2_manual/technical_information.html_3.05:
+    look_for: [quake2_manual/technical_information.html]
+    size:   13079
+    md5:    43ed8b9aab50fe9cd02c142dcceb030d
+    sha1:   ef3f246b3d75d3d447f7d404beaf89c2e8e3fda5
+    sha256: 426277295a0a857805fbd7df60bf05a2af61973aa4b1f4cf8096cb43dfca795d
 
   quake2_manual/multiplayer.html:
     alternatives:
