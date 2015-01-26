@@ -11,6 +11,7 @@ ExecStart=/usr/games/quake3-server +set com_homepath %i.q3a $DAEMON_OPTS +exec e
 Restart=on-failure
 RestartPreventExitStatus=72
 # hardening
+CapabilityBoundingSet=
 NoNewPrivileges=true
 PrivateDevices=true
 PrivateTmp=true

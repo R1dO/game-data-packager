@@ -12,6 +12,7 @@ ExecStart=/usr/games/quake-server $DAEMON_OPTS +exec etc/quake-server/%i.cfg
 Restart=on-failure
 RestartPreventExitStatus=72
 # hardening
+CapabilityBoundingSet=
 NoNewPrivileges=true
 PrivateDevices=true
 PrivateTmp=true
