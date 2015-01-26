@@ -112,6 +112,7 @@ packages:
     - quake2_manual/images/buttons.jpg
     - quake2_manual/images/cells.gif
     - quake2_manual/images/chaingun.gif
+    - quake2_manual/images/cloaker.gif
     - quake2_manual/images/commandant_james.gif
     - quake2_manual/images/credits_main.gif
     - quake2_manual/images/door.jpg
@@ -124,6 +125,7 @@ packages:
     - quake2_manual/images/first_aid.gif
     - quake2_manual/images/flyer.gif
     - quake2_manual/images/gladiator.gif
+    - quake2_manual/images/goggles.gif
     - quake2_manual/images/grenade_launcher.gif
     - quake2_manual/images/grenades.gif
     - quake2_manual/images/gunner.gif
@@ -131,6 +133,7 @@ packages:
     - quake2_manual/images/heavy_pack.gif
     - quake2_manual/images/hyper_blaster.gif
     - quake2_manual/images/icarus.gif
+    - quake2_manual/images/invisibility.gif
     - quake2_manual/images/invulnerability.gif
     - quake2_manual/images/iron_maiden.gif
     - quake2_manual/images/lava.jpg
@@ -159,10 +162,12 @@ packages:
     - quake2_manual/images/rail_gun.gif
     - quake2_manual/images/rocket_launcher.gif
     - quake2_manual/images/rockets.gif
+    - quake2_manual/images/scope.gif
     - quake2_manual/images/secret_door.jpg
     - quake2_manual/images/shells.gif
     - quake2_manual/images/shotgun.gif
     - quake2_manual/images/shotgun_guard.gif
+    - quake2_manual/images/sights.gif
     - quake2_manual/images/silencer.gif
     - quake2_manual/images/slime.jpg
     - quake2_manual/images/start_network_server_screen1.gif
@@ -1649,6 +1654,13 @@ cksums: |
   1083749212 787 readme-dm64.txt
   3695062650 6635508 baseq2/sewer64.bsp
 
+  # extra images found in 3.05
+  _ 3148      quake2_manual/images/cloaker.gif
+  _ 2771      quake2_manual/images/goggles.gif
+  _ 4118      quake2_manual/images/invisibility.gif
+  _ 2795      quake2_manual/images/scope.gif
+  _ 2795      quake2_manual/images/sights.gif
+
 md5sums: |
   1ec55a724dc3109fd50dde71ab581d70  baseq2/pak0.pak_1dd586a
   36fdaddd1c1b56ba10472466e4486ff8  baseq2/video/end.cin
@@ -2133,6 +2145,12 @@ md5sums: |
   917611eec2f2f699b1b0ca149ac66244  readme-dm64.txt
   19a07f706332c48a83164d13d77b6729  baseq2/sewer64.bsp
 
+  d67f1ff8c52ef8994b57f7d7f00a4734  quake2_manual/images/cloaker.gif
+  3dd7372f74c44d28e3e6cd4c46d33253  quake2_manual/images/goggles.gif
+  6e1ae4235e32c624b2d7218f29c9634f  quake2_manual/images/invisibility.gif
+  1a3af7e6b381b11cc4c80782ad156500  quake2_manual/images/scope.gif
+  3b964fb8caf8f97debc0e1f2cbcc6374  quake2_manual/images/sights.gif
+
 sha1sums: |
   452fbe9a1175c38fbd76042a3e43a6d2c2da6a1d  quake2-rogue-2.00.tar.xz
   d23b281d29247d5e1c4a059233b16cda840d35c1  quake2-xatrix-2.01.tar.xz
@@ -2516,6 +2534,12 @@ sha1sums: |
   2c5832c6256592504502b6f5d0999612abeb779e  readme-dm64.txt
   6d9a210bde080e7c5a27146c2323b7a6c72f44cb  baseq2/sewer64.bsp
 
+  fa3bab0b06bb97c55ade27a01d7612ebf01c8f42  quake2_manual/images/cloaker.gif
+  ca9e4578781565acc817836693211dff80b5d05e  quake2_manual/images/goggles.gif
+  b004a7e5b0626c4f3d47c3a4ae7f97a174d0e5a9  quake2_manual/images/invisibility.gif
+  64e3890c56cbd6cd6478172adc9c0e929f1e449d  quake2_manual/images/scope.gif
+  4a4e5445e3038f549e5a086c87e4fd12a7fd79a7  quake2_manual/images/sights.gif
+
 sha256sums: |
   fa3f4ad38a73b6007cf8bd2992318952555ee7d91734bc0a7d1af6016186eac5  quake2-rogue-2.00.tar.xz
   973adbb3665d23c30a5e2117cc7227042c15db1b7bc8d375c5c6b8d98893e958  quake2-xatrix-2.01.tar.xz
@@ -2898,5 +2922,10 @@ sha256sums: |
   88abca6ad0ee1fd19a503f3fd957f98b9274a81ad9cb0bd8fef3ea4ec77c4d45  readme-dm64.txt
   66e3278bfe4b16983ea9a22d7300af813f05747db6d9941caa1fea38bb14d435  baseq2/sewer64.bsp
 
+  bef5d74e19f312076432abbff26b8cb7cdf2e534dc2af7f08b76441a6043bea3  quake2_manual/images/cloaker.gif
+  b00ceb46e9f4087ac2aa3b30749ab69a3b601396470f17f2046ef97d040c3326  quake2_manual/images/goggles.gif
+  e48de92a79a1bc1fe8a49a698ffb0349b99b6ca76c0c5937e8f5d46a99596246  quake2_manual/images/invisibility.gif
+  49b0b5cca0e8bb1a60ad421e7350ec9240c61725b9cb0304e70a7ee7060275cd  quake2_manual/images/scope.gif
+  591268000b5f50f4b06c22f119720580371bad0b932f269aec6cd732335802dd  quake2_manual/images/sights.gif
 ...
 # vim:set sw=2 sts=2 et:
