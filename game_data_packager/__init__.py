@@ -1638,9 +1638,12 @@ class GameData(object):
                 stat_res = os.lstat(full)
                 if stat.S_ISLNK(stat_res.st_mode):
                     continue
-                elif (stat.S_ISDIR(stat_res.st_mode) or
-                        (stat.S_IMODE(stat_res.st_mode) & 0o111) != 0):
-                    # make directories and executable files rwxr-xr-x
+                elif stat.S_ISDIR(stat_res.st_mode):
+                    # make directories rwxr-xr-x
+                    os.chmod(full, 0o755)
+                elif ((stat.S_IMODE(stat_res.st_mode) & 0o111) != 0
+                       and fn.endswith('.sh')):
+                    # make executable files rwxr-xr-x
                     os.chmod(full, 0o755)
                 else:
                     # make other files rw-r--r--
