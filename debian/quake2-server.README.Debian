@@ -30,11 +30,14 @@ can find Quake files in /var/games/quake2-server/.yq2 or similar.
 The /etc/quake2-server directory is symlinked into the game engine's
 search path as etc/quake2-server, so you can place files there and execute
 them with commands like "exec etc/quake2-server/ctf.cfg".
-By default, the init script will use etc/quake2-server/server.cfg.
+
+In addition, debian_server.cfg in the engine's search path is also a symlink
+to either /etc/quake2-server/debian_server.cfg or
+/etc/quake2-server/demo/debian_server.cfg, depending whether you
+are using the demo data or the full game. By default, the init script will
+execute debian_server.cfg.
 
 For compatibility with older versions of the quake-server package,
-debian_server.cfg in the engine's search path is also a symlink to
-etc/quake2-server/server.cfg.
 
 The server can be managed in the usual way, e.g. via service(8)
 and update-rc.d(8) commands like

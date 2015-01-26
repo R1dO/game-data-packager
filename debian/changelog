@@ -1,5 +1,8 @@
 quake (10) UNRELEASED; urgency=medium
 
+  * quake2: execute debian_server.cfg again, reverting a change from v9.
+    Unlike quake and quake3, quake2's default configuration file is named
+    debian_server.cfg, and the demo and full game have different versions.
   * quake3: prefer to load game data from /usr/lib/quake3/base
     or /usr/lib/quake3/ta, where ioquake3 can provide native-code game modules
     - this requires ioquake3 (>= 1.36+u20150114+dfsg1-1~) and
