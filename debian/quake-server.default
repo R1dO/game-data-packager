@@ -2,10 +2,10 @@
 # sourced by /etc/init.d/quake-server
 # installed at /etc/default/quake-server by the maintainer scripts
 
-# Setting this to any value other than 1 is deprecated. If you want to
-# disable the server, please use "update-rc.d quake-server disable" instead.
-START_DAEMON=1
-
 # Additional options that are passed to the daemon.
 # For most options it's better to edit server.cfg instead.
 DAEMON_OPTS="+exec etc/quake-server/server.cfg"
+
+# To disable the server, please use the normal mechanisms provided by init:
+# "update-rc.d quake-server disable". The START_DAEMON variable is no
+# longer supported.

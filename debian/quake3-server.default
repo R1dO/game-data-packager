@@ -7,5 +7,5 @@
 DAEMON_OPTS="+exec etc/quake3-server/server.cfg"
 
 # To disable the server, please use the normal mechanisms provided by init:
-# see /usr/share/doc/quake3-server/README.Debian.gz. The START_DAEMON
-# variable is deprecated and should not be used.
+# "update-rc.d quake3-server disable". The START_DAEMON variable is no
+# longer supported.

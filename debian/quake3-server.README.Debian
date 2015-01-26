@@ -31,14 +31,6 @@ and update-rc.d(8) commands like
 
 which should work for all of Debian's supported init systems.
 
-Disabling the init script
--------------------------
-
-To disable the init script, use update-rc.d as described above.
-Changing the value of the START_DAEMON variable in
-/etc/default/quake3-server is deprecated. Please leave it set to
-"unless-disabled-by-upgrade".
-
 Running the server with cron and screen
 ---------------------------------------
 
