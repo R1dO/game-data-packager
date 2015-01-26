@@ -2,11 +2,10 @@
 # sourced by /etc/init.d/quake3-server
 # installed at /etc/default/quake3-server by the maintainer scripts
 
-# To disable the server, please use the normal mechanisms provided by init:
-# see /usr/share/doc/quake3-server/README.Debian.gz. Changing the value
-# of this variable is deprecated.
-START_DAEMON=unless-disabled-by-upgrade
-
 # Additional options that are passed to the daemon.
 # For most options it's better to edit server.cfg instead.
 DAEMON_OPTS="+exec etc/quake3-server/server.cfg"
+
+# To disable the server, please use the normal mechanisms provided by init:
+# see /usr/share/doc/quake3-server/README.Debian.gz. The START_DAEMON
+# variable is deprecated and should not be used.

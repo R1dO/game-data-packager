@@ -17,6 +17,8 @@ DESC="Quake III Arena dedicated server"
 PIDFILE="/var/run/$NAME.pid"
 BINARY="/usr/lib/ioquake3/ioq3ded"
 USER="Debian-quake3"
+START_DAEMON=unless-disabled-by-upgrade
+DAEMON_OPTS="+exec etc/quake3-server/server.cfg"
 
 test -x $DAEMON || exit 0
 
