@@ -2,9 +2,12 @@
 # sourced by /etc/init.d/quake3-server
 # installed at /etc/default/quake3-server by the maintainer scripts
 
-# Additional options that are passed to the daemon.
+# Options that are passed to the daemon.
+#
+# In addition to these options, the server will execute commands from
+# /etc/quake3-server/server.cfg using "+exec etc/quake3-server/server.cfg".
 # For most options it's better to edit server.cfg instead.
-DAEMON_OPTS="+exec etc/quake3-server/server.cfg"
+DAEMON_OPTS=""
 
 # To disable the server, please use the normal mechanisms provided by init:
 # "update-rc.d quake3-server disable". The START_DAEMON variable is no

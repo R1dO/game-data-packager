@@ -6,9 +6,10 @@ quake (10) UNRELEASED; urgency=medium
   * quake, quake3: remove support for START_DAEMON
     - if the server was previously disabled via START_DAEMON,
       do a one-time migration to "update-rc.d $SERVICE disable"
-  * quake3: modify quake3-server configuration
-    - put default for DAEMON_OPTS in /etc/init.d/quake3-server so it can
-      operate without /e/d/q3-s
+  * Modify quake*-server configuration
+    - put default for DAEMON_OPTS in /etc/init.d/quake*-server so it can
+      operate without /etc/default/quake*-server
+    - "+exec etc/quake*-server/server.cfg" is no longer part of DAEMON_OPTS
   * quake3: prefer to load game data from /usr/lib/quake3/base
     or /usr/lib/quake3/ta, where ioquake3 can provide native-code game modules
     - this requires ioquake3 (>= 1.36+u20150114+dfsg1-1~) and
