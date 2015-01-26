@@ -1,16 +1,14 @@
 [Unit]
-Description=Quake II game server
+Description=Quake II game server (instance: "%i")
 After=network.target
-# This server and the @debian_server instance would try to use the same
-# configuration
-Conflicts=quake2-server@debian_server.service
 
 [Service]
 Type=simple
 User=quake2-server
 Environment=DAEMON_OPTS=
+Environment=HOME=/var/games/quake2-server/%i.home
 EnvironmentFile=-/etc/default/quake2-server
-ExecStart=/usr/games/quake2-server $DAEMON_OPTS +exec debian_server.cfg
+ExecStart=/usr/games/quake2-server $DAEMON_OPTS +exec etc/quake2-server/%i.cfg
 Restart=on-failure
 RestartPreventExitStatus=72
 # hardening

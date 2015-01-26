@@ -11,6 +11,7 @@ quake (10) UNRELEASED; urgency=medium
       operate without /etc/default/quake*-server
     - "+exec etc/quake*-server/server.cfg" is no longer part of DAEMON_OPTS
     - add native systemd units
+    - add optional instanced systemd units for multiple servers per machine
   * quake3: prefer to load game data from /usr/lib/quake3/base
     or /usr/lib/quake3/ta, where ioquake3 can provide native-code game modules
     - this requires ioquake3 (>= 1.36+u20150114+dfsg1-1~) and

@@ -1,6 +1,9 @@
 [Unit]
 Description=Quake III Arena game server
 After=network.target
+# This server and the @server instance would try to use the same
+# configuration, and fight over their home directory
+Conflicts=quake3-server@server.service
 
 [Service]
 Type=simple
