@@ -2061,7 +2061,7 @@ class GameData(object):
                             package.name, self.get_architecture())
                     possible.discard(package)
 
-        logger.debug('possible packages: %r', possible)
+        logger.debug('possible packages: %r', set(p.name for p in possible))
         if not possible:
             raise NoPackagesPossible()
 
@@ -2110,7 +2110,7 @@ class GameData(object):
                 raise DownloadNotAllowed()
             raise DownloadsFailed()
 
-        logger.debug('packages ready for building: %r', ready)
+        logger.debug('packages ready for building: %r', set(p.name for p in ready))
         return ready
 
     def build_packages(self, ready, destination, compress):
