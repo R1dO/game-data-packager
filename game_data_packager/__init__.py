@@ -2074,6 +2074,13 @@ class GameData(object):
                      '"%s" is also avaible', package.name, package.better_version)
                   continue
 
+            if (package.expansion_for
+              and self.packages[package.expansion_for] not in possible
+              and not os.path.exists('/usr/share/doc/' + package.expansion_for)):
+                  logger.warning('will generate "%s" expansion, but full game '
+                     '"%s" is not avaible nor already installed.',
+                     package.name, package.expansion_for)
+
             abort = False
             if not build_demos:
                 for demo_for in package.demo_for:
