@@ -91,6 +91,16 @@ def do_one_dir(destdir,lower):
     print('...')
     print('')
 
+def do_one_file(name,lower):
+    hf = HashedFile.from_file(name, open(name, 'rb'))
+    out_name = os.path.basename(name)
+    if lower:
+        out_name = out_name.lower()
+    print('  _ %-9s %s' % (os.path.getsize(name), out_name))
+    print('  %s  %s' % (hf.md5, out_name))
+    print('  %s  %s' % (hf.sha1, out_name))
+    print('  %s  %s' % (hf.sha256, out_name))
+
 def do_one_deb(deb):
     control = None
 
@@ -208,8 +218,10 @@ def main():
     for arg in args.args:
         if os.path.isdir(arg):
             do_one_dir(arg.rstrip('/'),args.lower)
-        else:
+        elif arg.endswith('.deb'):
             do_one_deb(arg)
+        else:
+            do_one_file(arg,args.lower)
 
 if __name__ == '__main__':
     main()
