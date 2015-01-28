@@ -55,7 +55,7 @@ def do_one_dir(destdir):
 
             if os.path.isdir(path):
                 continue
-            elif os.path.splitext(fn.lower())[1] in ('.exe', '.ovl', '.dll', '.bat'):
+            elif os.path.splitext(fn.lower())[1] in ('.exe', '.ovl', '.dll', '.bat', '.386'):
                 logger.warning('ignoring dos/windows binary at %s' % path)
             elif os.path.islink(path):
                 package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
