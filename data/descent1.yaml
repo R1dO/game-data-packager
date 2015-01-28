@@ -1,0 +1,124 @@
+%YAML 1.2
+---
+longname: "Descent: First Strike"
+
+packages:
+  descent1-demo-data:
+    longname: "Descent: First Strike (demo)"
+    demo_for: descent1-full-data
+    debian:
+      engine: d1x-rebirth
+      conflicts: descent1-full-data
+    install:
+    - descent.hog
+    - descent.pig
+    optional: 
+    - readme.txt
+    - refcard.txt
+    install_to: usr/share/games/d1x-rebirth/
+
+  descent1-full-data:
+    longname: "Descent: First Strike"
+    debian:
+      engine: d1x-rebirth
+      conflicts: descent1-demo-data
+    install:
+    - descent.hog_full
+    - descent.pig_full
+    install_to: usr/share/games/d1x-rebirth/
+
+files:
+  readme.txt:
+    install_to: $docdir
+  refcard.txt:
+    install_to: $docdir  
+
+  desc14sw.tar.gz:
+    download: http://icculus.org/d2x/data/desc14sw.tar.gz
+    unpack:
+      format: tar.gz
+      unpack:
+      - desc14sw/descent.hog
+      - desc14sw/descent.pig
+      - desc14sw/readme.txt
+      - desc14sw/refcard.txt
+    prodives:
+    - descent.hog
+    - descent.pig
+    - readme.txt
+    - refcard.txt
+    
+  descent.hog_full:
+    install_as: descent.hog
+
+  descent.pig_full:
+    install_as: descent.pig
+
+  #desc14sw.exe:
+  #  provides:
+  #  - descent1.sow
+  #  - descent2.sow
+  #  format: zip
+  #descent1.sow:
+  #  prodives:
+  #  - descent.hog
+  #  - readme.txt
+  #  - refcard.txt
+  #  - descent.pig_part1
+  #  format: arj
+  #descent2.sow:
+  #  # needs to be unpacked after descent1.sow in the same working folder
+  #  # in order to add data to existing descent.pig
+  #  # without that, we get a descent.pig with 1416672 NULL at the start
+  #  prodives:
+  #  - descent.pig_part2
+  #  format: arj
+
+cksums: |
+  _ 2339773   descent.hog
+  _ 5092871   descent.pig
+  # optional doc
+  _ 53079     readme.txt
+  _ 2991      refcard.txt
+
+  _ 2893467   desc14sw.tar.gz
+
+  # multipart arj archives, not implemented
+  _ 2892216   desc14sw.exe
+  _ 1411591   descent1.sow
+  _ 1449231   descent2.sow
+  _ 1416672   descent.pig_part1
+  # part 2 size include part1
+  _ 5092871   descent.pig_part2
+
+md5sums: |
+  cf1caf9c7a0681de80fac8cb593b33eb  descent.hog
+  f8dc0f2b3ee8baa2c622f57b470fe147  descent.pig
+  # stub, md5sum of /dev/null
+  d41d8cd98f00b204e9800998ecf8427e  descent.hog_full
+  d41d8cd98f00b204e9800998ecf8427e  descent.pig_full
+  b647aded11632d44943e01a53e660320  readme.txt
+  f531aea2b8cdf805815d0c84ae1353a2  refcard.txt
+  4aa5ea2fb66f893e195304cc6efae542  desc14sw.tar.gz
+  c36ccd1f35841403a68a8359eb2a01d5  desc14sw.exe
+  c60e75c7f1f4fa5f9000710a501dcb76  descent1.sow
+  90d2cd03b8b6b2ec44ad3390416ee1cc  descent2.sow
+sha1sums: |
+  6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog
+  c1be2e728c8cdfb03e3fcaab870b7a6b01e016ba  descent.pig
+  e242a53584f1fea6359f5562e8c72dfbd8460b15  readme.txt
+  763e322433bb0873b3497384c64c2762be25f8cd  refcard.txt
+  a79c32c8fcdbf10968476e47881aad4ade613dbe  desc14sw.tar.gz
+  0364a8280b8c10ccab009cf7ab8bb64ab6c27d90  desc14sw.exe
+  3913a034ff4a2c98ab6564788d05c7532a1488a5  descent1.sow
+  08a259fdd27acc8c2be9943dee619479aa767369  descent2.sow
+sha256sums: |
+  26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog
+  b67865e513452a35887a20270d17fdfb5af1a2edaaae247bc523489f1d84f9ac  descent.pig
+  28bc52300f6144b114ea0d5afde5139fc0a5ac7090e44eed49e22c3bcd719a5c  readme.txt
+  46bd7a21fb48228590918a7883735bfce86cfb924caed6b387b0dbf76ee924e3  refcard.txt
+  8b65eda01d03401d7a2dc71976528fbb7e0b07a93ce8ee0a9f1d9103623ae249  desc14sw.tar.gz
+  3dadb7fbc01efce2904d0908c55d9a9cf1f402e83bf771970552efaca15efcb0  desc14sw.exe
+  cee9ee57fbd1af8e08d3cd0b409cc1fa4a9d44c7bbced3f28669be98ae45721c  descent1.sow
+  669dc44c9f5b4b4061f698488341fb9540e409b35f6da7ce6b9eeba53c1c001f  descent2.sow
+...
