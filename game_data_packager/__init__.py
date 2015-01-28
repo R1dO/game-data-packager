@@ -614,6 +614,7 @@ class GameData(object):
         if 'steam' in self.yaml:
             self.steam = self.yaml['steam']
 
+        # consistency check
         for package in self.packages.values():
             for provider in package.install_contents_of:
                 assert provider in self.files, (package.name, provider)
@@ -628,8 +629,6 @@ class GameData(object):
                 assert package.rip_cd['encoding'] == 'vorbis', package.name
                 self.rip_cd_packages.add(package)
 
-        # consistency check
-        for package in self.packages.values():
             # there had better be something it wants to install
             assert package.install or package.rip_cd, package.name
             for installable in package.install:
