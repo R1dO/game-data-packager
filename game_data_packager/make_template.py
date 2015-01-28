@@ -43,7 +43,7 @@ def do_one_dir(destdir,lower):
     data = dict(files={})
     package = data.setdefault('packages', {}).setdefault('FIXME', {})
     package['install'] = []
-    package['install_to'] = destdir
+    package['install_to'] = destdir.lstrip('/')
     sums = dict(sha1={}, md5={}, sha256={}, ck={})
 
     for dirpath, dirnames, filenames in os.walk(destdir):
