@@ -637,6 +637,14 @@ class GameData(object):
             for installable in package.optional:
                 assert installable in self.files, installable
 
+            # check internal depedencies
+            for demo_for_item in package.demo_for:
+                assert demo_for_item in self.packages, demo_for_item
+            assert (not package.expansion_for or
+              package.expansion_for in self.packages), package.expansion_for
+            assert (not package.better_version or
+              package.better_version in self.packages), package.better_version
+
         for filename, wanted in self.files.items():
             if wanted.unpack:
                 assert 'format' in wanted.unpack, filename
