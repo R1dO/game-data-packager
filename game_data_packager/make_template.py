@@ -39,7 +39,7 @@ def is_doc(file):
             return True
     return False
 
-def do_one_dir(destdir):
+def do_one_dir(destdir,lower):
     data = dict(files={})
     package = data.setdefault('packages', {}).setdefault('FIXME', {})
     package['install'] = []
@@ -52,6 +52,9 @@ def do_one_dir(destdir):
 
             assert path.startswith(destdir + '/')
             name = path[len(destdir) + 1:]
+            out_name = name
+            if lower:
+                out_name = out_name.lower()
 
             if os.path.isdir(path):
                 continue
@@ -60,16 +63,16 @@ def do_one_dir(destdir):
             elif os.path.islink(path):
                 package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
             elif os.path.isfile(path):
-                package['install'].append(name)
+                package['install'].append(out_name)
                 #data['files'][name] = dict(size=os.path.getsize(path))
                 if is_doc(fn):
-                     data['files'][name] = dict(install_to='$docdir')
+                     data['files'][out_name] = dict(install_to='$docdir')
 
                 hf = HashedFile.from_file(name, open(path, 'rb'))
-                sums['ck'][name] = os.path.getsize(path)
-                sums['md5'][name] = hf.md5
-                sums['sha1'][name] = hf.sha1
-                sums['sha256'][name] = hf.sha256
+                sums['ck'][out_name] = os.path.getsize(path)
+                sums['md5'][out_name] = hf.md5
+                sums['sha1'][out_name] = hf.sha1
+                sums['sha256'][out_name] = hf.sha256
             else:
                 logger.warning('ignoring unknown file type at %s' % path)
 
@@ -198,11 +201,13 @@ def main():
                 'based on an existing .deb file or installed directory',
             prog='game-data-packager guess-contents')
     parser.add_argument('args', nargs='+', metavar='DEB|DIRECTORY')
+    parser.add_argument('-l', '--lower', action='store_true', dest='lower',
+            help='make all files lowercase')
     args = parser.parse_args()
 
     for arg in args.args:
         if os.path.isdir(arg):
-            do_one_dir(arg.rstrip('/'))
+            do_one_dir(arg.rstrip('/'),args.lower)
         else:
             do_one_deb(arg)
 
