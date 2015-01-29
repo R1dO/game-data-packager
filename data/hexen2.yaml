@@ -14,7 +14,23 @@ help_text: |
   Steam installations would typically be found in:
   C:/Program Files/Steam/steamapps/common/Hexen 2
 
+  A demo is avaible here:
+  http://www.fileplanet.com/10770/download/Hexen-II---Demo
+
 packages:
+  hexen2-demo-data:
+    longname: Hexen II (demo)
+    demo_for: hexen2-data
+    debian:
+      engine: "uhexen2 | hexen2-engine"
+      conflicts: hexen2-data
+    install_to: usr/share/games/hexen2
+    install:
+    - data1/pak0.pak_demo
+    optional:
+    - HEXEN II SUBLICENSE.doc
+    # Word 6 .doc, can be translated with antiword
+
   hexen2-data:
     longname: Hexen II
     debian:
@@ -53,12 +69,35 @@ files:
     unpack:
       format: tar.gz
 
+  h2demoupd.exe:
+    unpack:
+      format: zip
+    provides:
+    - data1/pak0.pak_demo
+    - HEXEN II SUBLICENSE.doc
+
+  data1/pak0.pak_demo:
+    look_for: [data1/pak0.pak]
+    install_as: data1/pak0.pak
+
+  HEXEN II SUBLICENSE.doc:
+    install_to: $docdir
+    install_as: hexen_II_sublicense.doc
+
+cksums: |
+  1099843119 27750257 data1/pak0.pak_demo
+  _          30208    HEXEN II SUBLICENSE.doc
+  _          15334912 h2demoupd.exe
+
 md5sums: |
   c9675191e75dd25a3b9ed81ee7e05eff  data1/pak0.pak
   c2ac5b0640773eed9ebe1cda2eca2ad0  data1/pak1.pak
   77ae298dd0dcd16ab12f4a68067ff2c3  portals/pak3.pak
   88109ee385d9723ac5f1015e034a44dd  hw/pak4.pak
   9ac598a80765daa0862893bd0aac765a  hexenworld-pakfiles-0.15.tgz
+  8e598d82bf53436ed7a0e133aa4b9f09  data1/pak0.pak_demo
+  f610eb93304c4cd2cdce97bdb9140e4e  HEXEN II SUBLICENSE.doc
+  d058ecd35e419a5b8bdf17003a006843  h2demoupd.exe
 
 sha1sums: |
   7c6b19d76ce85771026ea8dbdc397cd1109355b7  data1/pak0.pak
@@ -66,6 +105,9 @@ sha1sums: |
   84aaba667060e1f9c50fb4d140fb301ac7e81cb7  portals/pak3.pak
   b21ecc51b15785b7d468dd353bce67cc13e7615a  hw/pak4.pak
   a7600b80b4205788b64fb57191e194c28b55b522  hexenworld-pakfiles-0.15.tgz
+  a8cfd8790819c47998141adb97c14d1680cf8738  data1/pak0.pak_demo
+  1aadeaf00dc72726e03bcfeb2fa0af93107852a7  HEXEN II SUBLICENSE.doc
+  dcb5ab7c92352a8af4975151bd089354723d9417  h2demoupd.exe
 
 sha256sums: |
   57936acc4cd9abed7acb480dd9c6d59c7c98e96e4eca4e2d04f390d2dfa5ffde  data1/pak0.pak
@@ -73,6 +115,9 @@ sha256sums: |
   f5f53e360d49af9d7f8bd3b136a0ebab70e9ddcace13cf8aa5e182d986a0a48c  portals/pak3.pak
   140664a9a1c0b38d1dd9fc7cd1b9b051e0132d33ed5bf17117c1fc831eea0741  hw/pak4.pak
   49462cdf984deee7350d03c7d192d1c34d682647ffc9d06de4308e0a7c71c4d9  hexenworld-pakfiles-0.15.tgz
+  0d4aa01a9909771dfa8e5be27db5d6628dc92f1406998c1a89c27d4748aaf151  data1/pak0.pak_demo
+  b9841c4b9c2de220d393ab06650779782cdb905f4721367607abf1dd56316da4  HEXEN II SUBLICENSE.doc
+  b349824ba09ddf0e95ca8a0f1783640d745c560b67da20a9cc31d1e816e63ab8  h2demoupd.exe
 
 ...
 # vim:set sw=2 sts=2 et:
