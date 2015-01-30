@@ -1649,7 +1649,9 @@ class GameData(object):
                     # make directories rwxr-xr-x
                     os.chmod(full, 0o755)
                 elif ((stat.S_IMODE(stat_res.st_mode) & 0o111) != 0
-                       and fn.endswith('.sh')):
+                       and (fn.endswith('.sh')
+                            or dirpath.endswith('/usr/games')
+                            or dirpath.endswith('/DEBIAN'))):
                     # make executable files rwxr-xr-x
                     os.chmod(full, 0o755)
                 else:
