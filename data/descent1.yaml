@@ -15,6 +15,7 @@ packages:
     optional: 
     - readme.txt
     - refcard.txt
+    - d1xr-hires.dxa
     install_to: usr/share/games/d1x-rebirth/
 
   descent1-full-data:
@@ -25,6 +26,8 @@ packages:
     install:
     - descent.hog_full
     - descent.pig_full
+    optional:
+    - d1xr-hires.dxa
     install_to: usr/share/games/d1x-rebirth/
 
 files:
@@ -47,6 +50,11 @@ files:
     - descent.pig
     - readme.txt
     - refcard.txt
+
+  d1xr-hires.dxa:
+    download: http://www.dxx-rebirth.com/download/dxx/res/d1xr-hires.dxa
+    provides:
+    - d1xr-hires.dxa
     
   descent.hog_full:
     install_as: descent.hog
@@ -90,6 +98,8 @@ cksums: |
   _ 1416672   descent.pig_part1
   # part 2 size include part1
   _ 5092871   descent.pig_part2
+  # extensions
+  _ 1426884   d1xr-hires.dxa
 
 md5sums: |
   cf1caf9c7a0681de80fac8cb593b33eb  descent.hog
@@ -103,6 +113,7 @@ md5sums: |
   c36ccd1f35841403a68a8359eb2a01d5  desc14sw.exe
   c60e75c7f1f4fa5f9000710a501dcb76  descent1.sow
   90d2cd03b8b6b2ec44ad3390416ee1cc  descent2.sow
+  7d978ce3875995e54cbf426167e88b94  d1xr-hires.dxa
 sha1sums: |
   6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog
   c1be2e728c8cdfb03e3fcaab870b7a6b01e016ba  descent.pig
@@ -112,6 +123,7 @@ sha1sums: |
   0364a8280b8c10ccab009cf7ab8bb64ab6c27d90  desc14sw.exe
   3913a034ff4a2c98ab6564788d05c7532a1488a5  descent1.sow
   08a259fdd27acc8c2be9943dee619479aa767369  descent2.sow
+  0a86f9d74caf8f5ea419a5764f0af976e8d57e09  d1xr-hires.dxa
 sha256sums: |
   26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog
   b67865e513452a35887a20270d17fdfb5af1a2edaaae247bc523489f1d84f9ac  descent.pig
@@ -121,4 +133,5 @@ sha256sums: |
   3dadb7fbc01efce2904d0908c55d9a9cf1f402e83bf771970552efaca15efcb0  desc14sw.exe
   cee9ee57fbd1af8e08d3cd0b409cc1fa4a9d44c7bbced3f28669be98ae45721c  descent1.sow
   669dc44c9f5b4b4061f698488341fb9540e409b35f6da7ce6b9eeba53c1c001f  descent2.sow
+  b30a164fa9c6dff05eda6d50f777777df843968d32053f5cc9453fe89d5bed19  d1xr-hires.dxa
 ...
