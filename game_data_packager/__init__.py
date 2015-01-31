@@ -2212,7 +2212,7 @@ class GameData(object):
 
         # only compress if the caller says we should and the YAML
         # says it's worthwhile
-        if compress and self.compress_deb:
+        if compress and self.compress_deb and not package.rip_cd:
             dpkg_deb_args = []
         else:
             dpkg_deb_args = ['-Znone']
