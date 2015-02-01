@@ -25,6 +25,9 @@ packages:
     debian:
       engine: "chocolate-doom | doom-engine"
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
+    steam:
+      id: 2290
+      path: "common/Final Doom"
     install_to: usr/share/games/doom
     longname: Doom
     install:
