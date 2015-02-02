@@ -83,6 +83,9 @@ class DoomGameData(GameData):
             package.engine = self.yaml['packages'][package.name].get(
                     'doom_engine')
 
+            package.create_desktop_file = self.yaml['packages'][package.name].get(
+                    'create_desktop_file', True)
+
     def construct_package(self, binary):
         return WadPackage(binary)
 
@@ -126,6 +129,8 @@ class DoomGameData(GameData):
 
     def fill_extra_files(self, package, destdir):
         super(DoomGameData, self).fill_extra_files(package, destdir)
+        if not package.create_desktop_file:
+            return
 
         main_wad = package.main_wad
         wad_base = os.path.splitext(main_wad)[0]
