@@ -1,4 +1,4 @@
-quake (10) UNRELEASED; urgency=medium
+quake (10) experimental; urgency=low
 
   * quake2: execute debian_server.cfg again, reverting a change from v9.
     Unlike quake and quake3, quake2's default configuration file is named
@@ -24,7 +24,7 @@ quake (10) UNRELEASED; urgency=medium
     exact sizes (Closes: #762823)
   * quake-server, quake2-server: if no data, exit 72 like quake3-server does
 
- -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:48:36 +0000
+ -- Simon McVittie <smcv@debian.org>  Wed, 04 Feb 2015 10:18:27 +0000
 
 quake (9) experimental; urgency=low
 
