@@ -52,13 +52,13 @@ done
 
 if [ -n "$DEMO" ]; then
   BASEPATH="/usr/lib/quake3/demo"
-elif [ -e "/usr/lib/quake3/ta/missionpack/pak0.pak" ]; then
+elif [ -e "/usr/lib/quake3/ta/missionpack/pak0.pk3" ]; then
   BASEPATH="/usr/lib/quake3/ta"
-elif [ -e "/usr/lib/quake3/base/baseq3/pak0.pak" ]; then
+elif [ -e "/usr/lib/quake3/base/baseq3/pak0.pk3" ]; then
   BASEPATH="/usr/lib/quake3/base"
-elif [ -e "$BASEPATH/baseq3/pak0.pak" ]; then
+elif [ -e "$BASEPATH/baseq3/pak0.pk3" ]; then
   :
-elif [ -e "/usr/lib/quake3/demo/demoq3/pak0.pak" ]; then
+elif [ -e "/usr/lib/quake3/demo/demoq3/pak0.pk3" ]; then
   BASEPATH="/usr/lib/quake3/demo"
   DEMO=1
 fi

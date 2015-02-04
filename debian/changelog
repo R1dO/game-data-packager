@@ -1,3 +1,10 @@
+quake (11) experimental; urgency=low
+
+  * quake3: fix installed-location detection by looking for pak0.pk3,
+    not pak0.pak
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 04 Feb 2015 11:17:00 +0000
+
 quake (10) experimental; urgency=low
 
   * quake2: execute debian_server.cfg again, reverting a change from v9.
