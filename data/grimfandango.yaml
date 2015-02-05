@@ -1,0 +1,126 @@
+%YAML 1.2
+---
+
+plugin: residualvm_common
+gameid: grim
+
+packages:
+  grimfandango-demo-data:
+    longname: "Grim Fandango (demo)"
+    debian:
+      engine: residualvm
+    install:
+    - gfdemo01.lab
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san
+    - Movies/demo_frontend.san
+    optional:
+    - grim.doc
+    - license.txt
+    - readme.txt
+    install_to: usr/share/games/grimfandango
+
+files:
+  grim.doc:
+    install_to: $docdir
+  license.txt:
+    install_to: $docdir
+  readme.txt:
+    install_to: $docdir
+
+  GrimFandangoDemo.zip:
+    download: https://archive.org/download/GrimFandangoDemo/GrimFandangoDemo.zip
+    provides:
+    - gffulldemo.exe
+    unpack:
+      format: zip
+
+  gffulldemo.exe:
+    provides:
+    - gfdemo01.lab
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san
+    - Movies/demo_frontend.san
+    - grim.doc
+    - license.txt
+    - readme.txt
+    unpack:
+      format: zip
+
+cksums: |
+  _ 29489930  gfdemo01.lab
+  _ 247808    grim.doc
+  _ 20366437  grimdemo.mus
+  _ 3570      license.txt
+  _ 11998     readme.txt
+  _ 3405950   sound001.lab
+  _ 13722714  voice001.lab
+  _ 1614692   Movies/al_close.san
+  _ 1200420   Movies/al_open.san
+  _ 64382     Movies/demo_backend.san
+  _ 399622    Movies/demo_frontend.san
+  _ 706118    Movies/hq_close.san
+  _ 721192    Movies/hq_open.san
+  _ 56955092  GrimFandangoDemo.zip
+  _ 57009152  gffulldemo.exe
+md5sums: |
+  25d831d57a93eb3ab8edbb07b7b63943  gfdemo01.lab
+  72b4fdd4c5c9cb13d939a6350ee93fc0  grim.doc
+  3ba28e7e36a49b5fd01ba98e3c772fe8  grimdemo.mus
+  31115996e024ec1c8c0625fd8f1de52a  license.txt
+  257d9e1631e9642bd57a9ae231db3f79  readme.txt
+  c91a7d405d15fb198a9cb31f89637026  sound001.lab
+  f24a45079394fee296a0f7fad07c7fad  voice001.lab
+  b63b58537803e3c7d108bf24fb769be0  Movies/al_close.san
+  0cbd82d4f58b08500c61cf5ca69ae2ac  Movies/al_open.san
+  2c653237460e74e6bdcdca7aeb5961cf  Movies/demo_backend.san
+  f3b0fa334021401a7d235d0b9a579ff5  Movies/demo_frontend.san
+  ca02511e8360cade1679a1d3305633b4  Movies/hq_close.san
+  abe0e89f0b1786cb8db3277cec13700f  Movies/hq_open.san
+  a47954de13578cebbcb4e151f4d0fd2d  GrimFandangoDemo.zip
+  7ad1a9fd005214a3bb426f3f796b7bce  gffulldemo.exe
+sha1sums: |
+  3c1dc57de81be733451ab2f81a2fec6bc23388ad  gfdemo01.lab
+  a9c3958cc2d6904a402ffbfe34a3c22472948df1  grim.doc
+  9d79a5c44291713c0fa8174b296b9e569941ba38  grimdemo.mus
+  9753cc809c0385b0f8f4b084a0c6cecb7b3f86fa  license.txt
+  1147558a5e402bab50db44b256b01bbfd05e6418  readme.txt
+  c88690928218234b11a0ed154c27266772353d3d  sound001.lab
+  fc2d5aed4f7389e9aaa25bd0007861452e449124  voice001.lab
+  73cd3837d424a47c0285d293b5efe9da19693e26  Movies/al_close.san
+  9d731fdbeb70609b690198b82071a8f72ff35b23  Movies/al_open.san
+  74ef767739899515e8991745f3e62bfb2c6e9355  Movies/demo_backend.san
+  48f5d65d320c1fcdcc1a0de6cf7ed9ac27280f3a  Movies/demo_frontend.san
+  1a07ca502fd3cb140a93527a2a5f8443ddf31e04  Movies/hq_close.san
+  b6dcfdcb7c88330b920e56d311353d9aecf121bb  Movies/hq_open.san
+  63ee2e378b4b1d8e770e12eae1ffdc6557c08458  GrimFandangoDemo.zip
+  632bbb6b8e8907a280de6ef54fa82ff2a2df2e54  gffulldemo.exe
+sha256sums: |
+  3abe7ea4607ea4b8e01d5320bd4cd7ba4e5dd7a44f4b6bb9c87940789de46109  gfdemo01.lab
+  9d40e8d44b55f3ec8572a68d18c218cebed25b22ac5a8a885f35a00351a22292  grim.doc
+  4de6ca4fa176af64e2c8744d885519993c9b82b77067e2fab1907bf5701a23e2  grimdemo.mus
+  3b6d903709d0e8c5233f2b06ab40d19ff821791f4dfdb5cc33f998ac321a291d  license.txt
+  98616a17e26990eeaf21efa13c2c489cbca7f456b4d8309896c02f4a3a4a9843  readme.txt
+  4b4879ee424cf8a1abe8e0f7ba6bc41c383e5946d54ee4be0c4c5e4eab4a23df  sound001.lab
+  46474b1e0c82836cf09e2d65866eb5e0c13b8afd0becece98b04945fde57ee02  voice001.lab
+  77e142104383e2478edacf19e7bb14f6662b2293e0ec7229b6eb1bf26a1d237d  Movies/al_close.san
+  495af162818222531b3d3b689e3e94ab8492de0748e58e2b77773fe352cdda5b  Movies/al_open.san
+  0c35b50c5abd21878a7c9b13431900238cc8a9a4560f5de253d4cf2d6f849524  Movies/demo_backend.san
+  ee5ff913dbc5a0c972105fe7fd8369ab4b4f489c430bb92d26a73e5763ce0f36  Movies/demo_frontend.san
+  d0572b226e4698db21a8ec192cf18b1a3d112e2def4cbdb756205e744e55f4a4  Movies/hq_close.san
+  f604b1275195857e4e1168467d53a2b6d394a54f4fb48b65b01b5a119dea474d  Movies/hq_open.san
+  290193a7542efa2609c8a562ee0724a5148f79a1657d65df0e00399f9c9dea9b  GrimFandangoDemo.zip
+  dda6a1b60004acf0f07340beb6e582d360e90f8758be1a5bec1fd6b0f5aee548  gffulldemo.exe
+...
