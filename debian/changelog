@@ -1,4 +1,4 @@
-quake (12) UNRELEASED; urgency=low
+quake (12) experimental; urgency=low
 
   * quake3-server.init: set correct com_homepath for sysvinit servers
     (server.q3a, not /var/games/.../server.q3a - it is meant to be relative
@@ -6,7 +6,7 @@ quake (12) UNRELEASED; urgency=low
   * quake3-server: install extra symlinks so that server.cfg can be found
     when using quake3*-data (>= 40)
 
- -- Simon McVittie <smcv@debian.org>  Thu, 05 Feb 2015 10:47:52 +0000
+ -- Simon McVittie <smcv@debian.org>  Thu, 05 Feb 2015 11:02:50 +0000
 
 quake (11) experimental; urgency=low
 
