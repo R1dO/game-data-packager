@@ -1,2 +1,11 @@
 etc/quake3-server                       usr/share/games/quake3/baseq3/etc/quake3-server
 etc/quake3-server/server.cfg            usr/share/games/quake3/baseq3/debian_server.cfg
+
+etc/quake3-server                       usr/lib/quake3/base/baseq3/etc/quake3-server
+etc/quake3-server/server.cfg            usr/lib/quake3/base/baseq3/debian_server.cfg
+
+etc/quake3-server                       usr/lib/quake3/ta/baseq3/etc/quake3-server
+etc/quake3-server/server.cfg            usr/lib/quake3/ta/baseq3/debian_server.cfg
+
+# deliberately no symlink into usr/lib/quake3/demo, it probably isn't
+# network-compatible with anything
