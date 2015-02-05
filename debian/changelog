@@ -1,3 +1,11 @@
+quake (12) UNRELEASED; urgency=low
+
+  * quake3-server.init: set correct com_homepath for sysvinit servers
+    (server.q3a, not /var/games/.../server.q3a - it is meant to be relative
+    to $HOME)
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 05 Feb 2015 10:47:52 +0000
+
 quake (11) experimental; urgency=low
 
   * quake3: fix installed-location detection by looking for pak0.pk3,

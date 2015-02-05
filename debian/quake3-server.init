@@ -33,7 +33,7 @@ q3_start() {
 	--background --exec $BINARY --startas $DAEMON \
 	--make-pidfile --chuid $USER \
 	-- \
-	+set com_homepath /var/games/quake3-server/server.q3a \
+	+set com_homepath server.q3a \
 	$DAEMON_OPTS \
 	+exec etc/quake3-server/server.cfg \
 	> /dev/null 2>&1 || return 1
