@@ -30,6 +30,7 @@ game-data-packager (40) UNRELEASED; urgency=medium
     /etc/game-data-packager/idstuff-mirrors is sufficient.
   * Estimate Installed-Size with the algorithm planned for dpkg 1.18,
     rather than using du which is filesystem-dependent
+  * Add support for non-default compression algorithms
 
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:54:12 +0000
 

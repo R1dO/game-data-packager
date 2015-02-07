@@ -451,7 +451,11 @@ class GameData(object):
         # Subset of packages.values() with nonempty rip_cd
         self.rip_cd_packages = set()
 
-        # If true, we may compress the .deb. If false, don't.
+        # How to compress the .deb:
+        # True: dpkg-deb's default
+        # False: -Znone
+        # str: -Zstr (gzip, xz or none)
+        # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
         self.compress_deb = True
 
         self.help_text = ''
@@ -2210,12 +2214,17 @@ class GameData(object):
 
         outfile = os.path.join(os.path.abspath(destination), deb_basename)
 
-        # only compress if the caller says we should and the YAML
-        # says it's worthwhile
-        if compress and self.compress_deb and not package.rip_cd:
-            dpkg_deb_args = []
-        else:
+        # only compress if the caller says we should, the YAML
+        # says it's worthwhile, and this isn't a ripped CD (Vorbis
+        # is already compressed)
+        if not compress or not self.compress_deb or package.rip_cd:
             dpkg_deb_args = ['-Znone']
+        elif self.compress_deb is True:
+            dpkg_deb_args = []
+        elif isinstance(self.compress_deb, str):
+            dpkg_deb_args = ['-Z' + self.compress_deb]
+        elif isinstance(self.compress_deb, list):
+            dpkg_deb_args = self.compress_deb
 
         try:
             subprocess.check_output(['fakeroot', 'dpkg-deb'] +
