@@ -1,14 +1,54 @@
 %YAML 1.2
 ---
 
+longname: Grim Fandango
 plugin: residualvm_common
 gameid: grim
+# xz compression reduces the full game from 1.3GB to 1.1GB, or the demo
+# from 71MB to 51MB... but it takes 10 minutes to do it (on a Core i7),
+# which is going to make people think game-data-packager has crashed.
+# gzip compression is only fractionally smaller than uncompressed.
+compress_deb: false
 
 packages:
+  grimfandango-data:
+    debian:
+      engine: residualvm
+    install:
+    - gfupd101.exe
+    - credits.lab
+    - data000.lab
+    - data001.lab
+    - data003.lab
+    - movie00.lab
+    - movie01.lab
+    - movie03.lab
+    - vox0000.lab
+    - vox0001.lab
+    - vox0003.lab
+    - year0mus.lab
+    - year1mus.lab
+    - year3mus.lab
+    - data002.lab
+    - data004.lab
+    - movie02.lab
+    - movie04.lab
+    - vox0002.lab
+    - vox0004.lab
+    - year2mus.lab
+    - year4mus.lab
+    optional:
+    - flower.ico
+    - gf.ico
+    - grim fandango - manual.pdf
+    - install/license.txt
+    - install/readme.txt
+
   grimfandango-demo-data:
     longname: "Grim Fandango (demo)"
     debian:
       engine: residualvm
+    demo_for: grimfandango-data
     install:
     - gfdemo01.lab
     - grimdemo.mus
@@ -24,15 +64,27 @@ packages:
     - grim.doc
     - license.txt
     - readme.txt
-    install_to: usr/share/games/grimfandango
 
 files:
   grim.doc:
     install_to: $docdir
   license.txt:
+    distinctive_name: false
     install_to: $docdir
   readme.txt:
+    distinctive_name: false
     install_to: $docdir
+
+  "grim fandango - manual.pdf":
+    install_to: $docdir
+  install/license.txt:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: license.txt
+  install/readme.txt:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: readme.txt
 
   GrimFandangoDemo.zip:
     download: https://archive.org/download/GrimFandangoDemo/GrimFandangoDemo.zip
@@ -40,6 +92,9 @@ files:
     - gffulldemo.exe
     unpack:
       format: zip
+
+  gfupd101.exe:
+    download: http://demos.residualvm.org/patches/gfupd101.exe
 
   gffulldemo.exe:
     provides:
@@ -75,6 +130,40 @@ cksums: |
   _ 721192    Movies/hq_open.san
   _ 56955092  GrimFandangoDemo.zip
   _ 57009152  gffulldemo.exe
+
+  758611505 2272959 gfupd101.exe
+
+  3128267555 10366 flower.ico
+  3840831663 15886 gf.ico
+  1194600026 3566656 grim fandango - manual.pdf
+  4131435608 5849 install/license.txt
+  101128800 19523 install/readme.txt
+  3956085757 19399 credits.lab
+  1500263723 115377732 data002.lab
+  3201905571 81392084 data004.lab
+  3945391808 70712720 movie02.lab
+  1220327368 107184933 movie04.lab
+  1686939753 4333790 vox0000.lab
+  316602907 93358525 vox0002.lab
+  1288617324 38561440 vox0004.lab
+  1023837167 6995569 year0mus.lab
+  199361821 81147716 year2mus.lab
+  2664605500 63489389 year4mus.lab
+
+  3956085757 19399 credits.lab
+  2257171813 29197049 data000.lab
+  2927090823 116140627 data001.lab
+  4100562588 65997693 data003.lab
+  4100447272 7121597 movie00.lab
+  2359759575 119199457 movie01.lab
+  297402648 88576747 movie03.lab
+  1686939753 4333790 vox0000.lab
+  725411884 57993159 vox0001.lab
+  3900751858 38906667 vox0003.lab
+  1023837167 6995569 year0mus.lab
+  3984262986 61363647 year1mus.lab
+  1591819570 43866360 year3mus.lab
+
 md5sums: |
   25d831d57a93eb3ab8edbb07b7b63943  gfdemo01.lab
   72b4fdd4c5c9cb13d939a6350ee93fc0  grim.doc
@@ -91,6 +180,41 @@ md5sums: |
   abe0e89f0b1786cb8db3277cec13700f  Movies/hq_open.san
   a47954de13578cebbcb4e151f4d0fd2d  GrimFandangoDemo.zip
   7ad1a9fd005214a3bb426f3f796b7bce  gffulldemo.exe
+
+  bc57c4db2ab814f3bb115ec5702b62f4  gfupd101.exe
+
+  # Disc A
+  51c58777a2a8ee5011a3d8e00176e5ba  flower.ico
+  c706804922ef0913a4e5bfa651057125  gf.ico
+  00d4aa4161d81f939e268ef368d53ff5  grim fandango - manual.pdf
+  2ba3a23bad66e675fc48e5f0de86bda2  install/license.txt
+  5e6d32b8061e3af60aa10b3200c84a6b  install/readme.txt
+  6dcecad8f01657184f8576aab8fb3f00  credits.lab
+  d236403c0d860961963db0134380001f  data002.lab
+  2cdb79d3606965a9a0a3378507488dd7  data004.lab
+  24a8704a331a03097d195f3597fe21e1  movie02.lab
+  605d6f2cc4d21fbe702d8e637b5bcfa1  movie04.lab
+  c7900f32d48d7e265629bd355a21c795  vox0000.lab
+  70419878e32377d9d2906fbcb2cb59b5  vox0002.lab
+  ae53a36f77eb0d42a28653b28c345439  vox0004.lab
+  fea10f11abe3ac32d53e4798f80d5ba0  year0mus.lab
+  775376fccf0415258be6b33e7e6e4985  year2mus.lab
+  939e041887c1b14f99ad951ac8e3cb25  year4mus.lab
+  # Disc B (some of these are duplicates of files on disc A)
+  6dcecad8f01657184f8576aab8fb3f00  credits.lab
+  2069b8bf113119910df8219e787e7e94  data000.lab
+  84cf3072586fe2840ae16774adb6f5cb  data001.lab
+  76dcfc2c21f3412415674c65611fb76d  data003.lab
+  0c6b8e4fa74024c4afdf7758f8d8b1a0  movie00.lab
+  548a19a0a4d4ccb8660966d646210820  movie01.lab
+  113a768e7206016df72f9d2f5c1851b7  movie03.lab
+  c7900f32d48d7e265629bd355a21c795  vox0000.lab
+  40beb2e0a6572dc89fddb21f282bc237  vox0001.lab
+  7c88ad7c949a516793b584299f33ed23  vox0003.lab
+  fea10f11abe3ac32d53e4798f80d5ba0  year0mus.lab
+  c555c95b0f7557617da364091589d6ea  year1mus.lab
+  df556a8fc151f6f48bb68a8cef855e7d  year3mus.lab
+
 sha1sums: |
   3c1dc57de81be733451ab2f81a2fec6bc23388ad  gfdemo01.lab
   a9c3958cc2d6904a402ffbfe34a3c22472948df1  grim.doc
@@ -107,6 +231,40 @@ sha1sums: |
   b6dcfdcb7c88330b920e56d311353d9aecf121bb  Movies/hq_open.san
   63ee2e378b4b1d8e770e12eae1ffdc6557c08458  GrimFandangoDemo.zip
   632bbb6b8e8907a280de6ef54fa82ff2a2df2e54  gffulldemo.exe
+
+  c947fa95f1a32905e14202e0ad2de6bd907abb37  gfupd101.exe
+
+  54f8eeb0ec431a3306855834f7823e2d90ff07b7  flower.ico
+  f3cbd2ead606f8fed352916466c72c2b819d5842  gf.ico
+  d37cc728d09b9c74466808a7bb36b62acc5e074b  grim fandango - manual.pdf
+  0ff3234463cca277d565ded814639dd32fda023f  install/license.txt
+  9eb6a7caa3c882864444ab8ca7cff765153bde4d  install/readme.txt
+  94b10f4489dc95e48b30e7a4e98c4f77c159a41e  credits.lab
+  e561fb70b0d94a9b958f95dc8cae8ea63729c0e6  data002.lab
+  fa5ac6d75b6ba22c23d014cb7ab505a18a98c32e  data004.lab
+  397d8124cf589fde7d22594d41aafd9e2728f4eb  movie02.lab
+  63393814641a7faa19992a44ac914fdb95046046  movie04.lab
+  b63de15607bf584ebf3aaa720ec2b016ecad57c0  vox0000.lab
+  146f40f6cd2da1cb864b6c0af9b7239ab6980464  vox0002.lab
+  e8ae79ae78218af317f2d38a53d1a5cb58ad7771  vox0004.lab
+  5487825561b2405c96ff5aee2de9198572b97cc3  year0mus.lab
+  3220b26916bf71645d9d6d97e3eb4414c855cf63  year2mus.lab
+  79861426998371a67ee9180db0d8f2ec8611a5c2  year4mus.lab
+
+  94b10f4489dc95e48b30e7a4e98c4f77c159a41e  credits.lab
+  f62d752f72b2c4d71440940ef52331d2211effbb  data000.lab
+  4d6202132a01a939ebf39d49f2c99d311dd0753d  data001.lab
+  43a4e8cf91449433678e02f93af5bb846556f593  data003.lab
+  846f790323d16e46aaa8bd33b6f2a90096efa7d8  movie00.lab
+  3dfaaf37f2b29763cca24e7785a1d32f7d097a7a  movie01.lab
+  6cb663caa8aeb259c2902021cf8a96f708f3b85c  movie03.lab
+  b63de15607bf584ebf3aaa720ec2b016ecad57c0  vox0000.lab
+  3062ada7bd0e15e527eab2af175d6ad15f697e2f  vox0001.lab
+  1f239713f11d60617d795317241859619a41c40c  vox0003.lab
+  5487825561b2405c96ff5aee2de9198572b97cc3  year0mus.lab
+  2cbc7b92372d9c697f1e8b179dee1f88a3ee9b5f  year1mus.lab
+  14ab6da736518afc30599e20e5e1d898ac55565b  year3mus.lab
+
 sha256sums: |
   3abe7ea4607ea4b8e01d5320bd4cd7ba4e5dd7a44f4b6bb9c87940789de46109  gfdemo01.lab
   9d40e8d44b55f3ec8572a68d18c218cebed25b22ac5a8a885f35a00351a22292  grim.doc
@@ -123,4 +281,39 @@ sha256sums: |
   f604b1275195857e4e1168467d53a2b6d394a54f4fb48b65b01b5a119dea474d  Movies/hq_open.san
   290193a7542efa2609c8a562ee0724a5148f79a1657d65df0e00399f9c9dea9b  GrimFandangoDemo.zip
   dda6a1b60004acf0f07340beb6e582d360e90f8758be1a5bec1fd6b0f5aee548  gffulldemo.exe
+
+  2cab5718b4787aad0633e217d550c8501a1d272764ec9a004ecd6d612dca9ec5  gfupd101.exe
+
+  b054fb45d261fe85ab19b1d4f46abda21b214fccfce61a7fe1a6f374dd3d3371  flower.ico
+  55e7fec355c1435d0a6832eb34d00ad854993f1ba70c535323632ef3638a4b32  gf.ico
+  48b16fef842bdc73cce755afc01de638d84734b26fbd4d17db6a1d9442fcf7d3  grim fandango - manual.pdf
+  117b0fb913bafe346ee456c4e9971b5dd45144290a47c3103b2ee4821e3aefa7  install/license.txt
+  ccc086e012f4ec7f844de68c7b80240e2201a8baecd32d9d6fce8419bddac79f  install/readme.txt
+  30b68b6fa83a375e320e26d3f34bc5d676f0d89253426177441fa9342afc8070  credits.lab
+  559f93854e21b28a26d4c0d9cffb515845585cc8611526b1851c0f3498e1eca3  data002.lab
+  192f817dc7e71267f4044fffb32ac1a0fab8648a82fa779e04702081bfbd6a39  data004.lab
+  7c1fe7a67c864e8939d7560091dc811807cf6de411410537253188cfa7949635  movie02.lab
+  689e48deb4e9bb7f3650195bd98197ee2e078f167243bcd5a0819d8303c8d7ac  movie04.lab
+  4df5c6f09f7a578f4b3e880d1adc0ddf9ddf4b8d4dc54cc25d20a875fa94e051  vox0000.lab
+  76111ca8825dd7be9738dad70f200761430deb2407f2466a601657a68fbce85a  vox0002.lab
+  dbd53b581dbd5ffd17f25d56a81eb58f096000a9f62bf39998e73917332e1cc5  vox0004.lab
+  76638df2a7090f612c973cf336b63a7b9d63a9d7d35f2b7d7c23eb16a4d589ee  year0mus.lab
+  19a56cbaa5d521e5f698b68f3c6c07cfada9b04639f03902576877d67dfcc5f4  year2mus.lab
+  989b0468c54a35569e79cbf3fb82e3733b7e99e0ab2b1659c87fb69b74f6a04c  year4mus.lab
+
+  30b68b6fa83a375e320e26d3f34bc5d676f0d89253426177441fa9342afc8070  credits.lab
+  893a26c7480374188562ae9032ab616b09b781e0e2e6c6fccf613c5f3e5dd738  data000.lab
+  cb40cd50d2677b175ca05008f9c789ddec1d5d5e4ead798109d64da9a4000b54  data001.lab
+  e1f36889ab4c133c924b038d838658aa6ef9dce20930e25ee22795c0ef9f8c01  data003.lab
+  0a452538c2279d8e935671ed46d7c7b858a352897aebb6dd7d6ba6f75f2fb3d8  movie00.lab
+  536e450b9d6b33cdbadb973abd45b99a728da077a3047e3e23e045502b54dd91  movie01.lab
+  4af21664df7525c432f4095b9a76f6a2b25734626492aa27acbfa498c297876f  movie03.lab
+  4df5c6f09f7a578f4b3e880d1adc0ddf9ddf4b8d4dc54cc25d20a875fa94e051  vox0000.lab
+  43c085f36c5fa0343eb0711f781180c8074015a38b07d0e1d0795c3ea2eee54a  vox0001.lab
+  faae43db0a15dbe7b12848cff63ca25fa7f9ad4f754c98a2eae8a2a818995817  vox0003.lab
+  76638df2a7090f612c973cf336b63a7b9d63a9d7d35f2b7d7c23eb16a4d589ee  year0mus.lab
+  1f9defe5ce01cc4edfa33cf94ee51f6741e6356b65f212bba6a5cee511470938  year1mus.lab
+  85df32cba7955620964de1ddeb0abb145972558b08d3187a7bc1c2908544ea86  year3mus.lab
+
 ...
+# vim:set sw=2 sts=2 et:
