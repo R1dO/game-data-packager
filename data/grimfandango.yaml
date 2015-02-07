@@ -14,6 +14,10 @@ packages:
   grimfandango-data:
     debian:
       engine: residualvm
+    # Yes, the right way to use gfupd101.exe is really to just put it in
+    # the data directory: residualvm can load files from there without a
+    # separate unpacking step.
+    # See http://wiki.residualvm.org/index.php/Grim_Fandango_Patch
     install:
     - gfupd101.exe
     - credits.lab
