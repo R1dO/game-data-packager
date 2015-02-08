@@ -1,14 +1,40 @@
 %YAML 1.2
 ---
-longname: 'Doom 3: BFG Edition'
 compress-deb: false
-
-steam:
-  id: 208200
-  path: "common/DOOM 3 BFG Edition"
+longname: 'Doom 3'
 
 packages:
+  doom3-data:
+    steam:
+      id: 9050
+    install_to: usr/share/games/dhewm3
+    install:
+    - base/pak000.pk4
+    - base/pak001.pk4
+    - base/pak002.pk4
+    - base/pak003.pk4
+    - base/pak004.pk4
+    - base/pak005.pk4
+    - base/pak006.pk4
+    - base/pak007.pk4
+    - base/pak008.pk4
+
+  doom3-resurrection-data:
+    longname: 'Doom 3: Resurrection of Evil'
+    expansion_for: doom3-data
+    steam:
+      id: 9070
+    install_to: usr/share/games/dhewm3
+    install:
+    - d3xp/pak000.pk4
+    - d3xp/pak001.pk4
+
   doom3-bfg-data:
+    longname: 'Doom 3: BFG Edition'
+    steam:
+      id: 208200
+      path: "common/DOOM 3 BFG Edition"
+    install_to: usr/share/games/doom3bfg
     install:
     - base/D3BFGConfig.cfg
     - base/_common.crc
@@ -690,7 +716,6 @@ packages:
     - base/video/radar.bik
     - base/video/recycling2/cs_bert01_composite.bik
     - base/video/recycling2/cs_bert02_composite.bik
-    install_to: usr/share/games/doom3bfg
 cksums: |
   _ 4587      base/D3BFGConfig.cfg
   _ 9064      base/_common.crc
@@ -1373,6 +1398,18 @@ cksums: |
   _ 4665364   base/video/recycling2/cs_bert01_composite.bik
   _ 3811088   base/video/recycling2/cs_bert02_composite.bik
 md5sums: |
+  71b8d37b2444d3d86a36fd61783844fe  base/pak000.pk4
+  4bc4f3ba04ec2b4f4837be40e840a3c1  base/pak001.pk4
+  fa84069e9642ad9aa4b49624150cc345  base/pak002.pk4
+  f22d8464997924e4913e467e7d62d5fe  base/pak003.pk4
+  38561a3c73f93f2e6fd31abf1d4e9102  base/pak004.pk4
+  2afd4ece27d36393b7538d55a345b90d  base/pak005.pk4
+  a6e7003fa9dcc75073dc02b56399b370  base/pak006.pk4
+  6319f086f930ec1618ab09b4c20c268c  base/pak007.pk4
+  28750b7841de9453eb335bad6841a2a5  base/pak008.pk4
+  a883fef0fd10aadeb73d34c462ff865d  d3xp/pak000.pk4
+  06fc9be965e345587064056bf22236d2  d3xp/pak001.pk4
+
   74730e3ed58d1a50bff218095d9dd8e7  base/D3BFGConfig.cfg
   00f89dc77d79f015d834019114f5fe74  base/_common.crc
   6eea23da08930c4f91415ee005d417ff  base/_common.resources
