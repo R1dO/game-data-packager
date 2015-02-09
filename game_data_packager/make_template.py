@@ -43,11 +43,9 @@ def is_doc(file):
 def do_one_dir(destdir,lower):
     data = dict()
     files = dict(files={})
-    game = os.path.basename(destdir).replace(' ','').lower()
+    game = os.path.basename(destdir)
     if game.endswith('-data'):
         game = game[:len(game) - 5]
-    package = data.setdefault('packages', {}).setdefault(game + '-data', {})
-    package['install_to'] = 'usr/share/games/' + game
 
     steam = max(destdir.find('/SteamApps/common/'),
                 destdir.find('/steamapps/common/'))
@@ -57,10 +55,18 @@ def do_one_dir(destdir,lower):
           for acf in parse_acf(destdir[:steam+11]):
               if '/common/' + acf['installdir'] in destdir:
                    steam_id = acf['appid']
+                   game = acf['name']
                    break
           steam_dict['id'] = steam_id
           steam_dict['path'] = destdir[steam+11:]
+
+    game = game.replace(' ','').replace(':','').replace('-','').lower()
+    package = data.setdefault('packages', {}).setdefault(game + '-data', {})
+
+    if steam > 0:
           package['steam'] = steam_dict
+
+    package['install_to'] = 'usr/share/games/' + game
 
     install = set()
     optional = set()
