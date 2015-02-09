@@ -5,6 +5,8 @@ longname: 'Doom 3'
 
 packages:
   doom3-data:
+    debian:
+      engine: doom3-dhewm3
     steam:
       id: 9050
     install_to: usr/share/games/dhewm3
@@ -31,6 +33,8 @@ packages:
 
   doom3-bfg-data:
     longname: 'Doom 3: BFG Edition'
+    debian:
+      engine: rbdoom3bfg
     steam:
       id: 208200
       path: "common/DOOM 3 BFG Edition"
