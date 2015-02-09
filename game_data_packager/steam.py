@@ -18,7 +18,6 @@
 import glob
 
 def parse_acf(path):
-    acf = []
     for manifest in glob.glob(path + '/*.acf'):
         with open(manifest) as data:
             # the .acf files are not really JSON files
@@ -39,7 +38,4 @@ def parse_acf(path):
                        acf_struct[key] = value
             if 'name' not in acf_struct:
                 acf_struct['name'] = acf_struct['installdir']
-            acf.append(acf_struct)
-
-    acf = sorted(acf, key=lambda k: (k['name']))
-    return acf
+            yield acf_struct
