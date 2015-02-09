@@ -42,8 +42,20 @@ def is_doc(file):
 def do_one_dir(destdir,lower):
     data = dict()
     files = dict(files={})
-    package = data.setdefault('packages', {}).setdefault('FIXME', {})
-    package['install_to'] = destdir.lstrip('/')
+    game = os.path.basename(destdir).replace(' ','').lower()
+    if game.endswith('-data'):
+        game = game[:len(game) - 5]
+    package = data.setdefault('packages', {}).setdefault(game + '-data', {})
+    package['install_to'] = 'usr/share/games/' + game
+
+    steam = max(destdir.find('/SteamApps/common/'),
+                destdir.find('/steamapps/common/'))
+    if steam > 0:
+          steam_dict = dict()
+          steam_dict['id'] = 'FIXME'
+          steam_dict['path'] = destdir[steam+11:]
+          package['steam'] = steam_dict
+
     install = set()
     optional = set()
     sums = dict(sha1={}, md5={}, sha256={}, ck={})
@@ -81,6 +93,8 @@ def do_one_dir(destdir,lower):
 
     print('%YAML 1.2')
     print('---')
+    if destdir.startswith('/usr/local'):
+        print('try_repack_from:\n- %s\n' % destdir)
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
 
     print('    install:')
@@ -92,7 +106,8 @@ def do_one_dir(destdir,lower):
         for file in sorted(optional):
             print('    - %s' % file)
 
-    yaml.safe_dump(files, stream=sys.stdout, default_flow_style=False)
+    if files['files']:
+        yaml.safe_dump(files, stream=sys.stdout, default_flow_style=False)
 
     for alg, files in sorted(sums.items()):
         print('%ssums: |' % alg)
