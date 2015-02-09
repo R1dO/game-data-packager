@@ -730,6 +730,10 @@ class GameData(object):
             if k in d:
                 setattr(package, k, d[k])
 
+        if 'install_to' in d:
+            assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
+                "install_to %s is extraneous" % package.name
+
         if 'demo_for' in d:
             if type(d['demo_for']) is str:
                 package.demo_for.add(d['demo_for'])
