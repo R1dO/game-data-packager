@@ -47,6 +47,7 @@ def do_one_dir(destdir,lower):
     if game.endswith('-data'):
         game = game[:len(game) - 5]
 
+    longname = None
     steam = max(destdir.find('/SteamApps/common/'),
                 destdir.find('/steamapps/common/'))
     if steam > 0:
@@ -55,7 +56,7 @@ def do_one_dir(destdir,lower):
           for acf in parse_acf(destdir[:steam+11]):
               if '/common/' + acf['installdir'] in destdir:
                    steam_id = acf['appid']
-                   game = acf['name']
+                   longname = game = acf['name']
                    break
           steam_dict['id'] = steam_id
           steam_dict['path'] = destdir[steam+11:]
@@ -105,6 +106,8 @@ def do_one_dir(destdir,lower):
 
     print('%YAML 1.2')
     print('---')
+    if longname:
+        print('longname: %s\n' % longname)
     if destdir.startswith('/usr/local'):
         print('try_repack_from:\n- %s\n' % destdir)
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
