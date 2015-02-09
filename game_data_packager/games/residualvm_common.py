@@ -18,9 +18,8 @@
 
 import logging
 import os
-import subprocess
 
-from .. import GameData, GameDataPackage
+from .. import GameData
 from ..paths import DATADIR
 from ..util import (TemporaryUmask, copy_with_substitutions, mkdir_p)
 
