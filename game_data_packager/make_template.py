@@ -40,6 +40,18 @@ def is_doc(file):
             return True
     return False
 
+def is_dosbox(file):
+    basename = os.path.basename(file)
+    if basename in ('dosbox.conf', 'dosbox-0.71.tar.gz', 'dosbox.exe',
+                    'SDL_net.dll', 'SDL.dll', 'zmbv.dll', 'zmbv.inf'):
+         return True
+    # to check: COPYING.txt INSTALL.txt NEWS.txt THANKS.txt *.conf
+    if basename not in ('AUTHORS.txt', 'README.txt'):
+         return False
+    with open(file, 'r', encoding='latin1') as txt:
+         line = txt.readline()
+         return 'dosbox' in line.lower()
+
 def do_one_dir(destdir,lower):
     data = dict()
     files = dict(files={})
@@ -72,6 +84,7 @@ def do_one_dir(destdir,lower):
     install = set()
     optional = set()
     sums = dict(sha1={}, md5={}, sha256={}, ck={})
+    has_dosbox = False
 
     for dirpath, dirnames, filenames in os.walk(destdir):
         for fn in filenames:
@@ -85,8 +98,10 @@ def do_one_dir(destdir,lower):
 
             if os.path.isdir(path):
                 continue
+            elif is_dosbox(path):
+                has_dosbox = True
             elif os.path.splitext(fn.lower())[1] in ('.exe', '.ovl', '.dll', '.bat', '.386'):
-                logger.warning('ignoring dos/windows binary at %s' % path)
+                logger.warning('ignoring dos/windows binary %s' % fn)
             elif os.path.islink(path):
                 package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
             elif os.path.isfile(path):
@@ -103,6 +118,9 @@ def do_one_dir(destdir,lower):
                 sums['sha256'][out_name] = hf.sha256
             else:
                 logger.warning('ignoring unknown file type at %s' % path)
+
+    if has_dosbox:
+        logger.warning('DOSBOX files detected, make sure not to include those in your package')
 
     print('%YAML 1.2')
     print('---')
