@@ -34,16 +34,18 @@ def is_doc(file):
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
-    for word in ('changes', 'eula', 'license', 'manual', 'quickstart', 'readme'):
+    for word in ('changes', 'eula', 'license', 'manual', 'quickstart', 'readme', 'vendor'):
         if word in name:
             return True
     return False
 
 def do_one_dir(destdir,lower):
-    data = dict(files={})
+    data = dict()
+    files = dict(files={})
     package = data.setdefault('packages', {}).setdefault('FIXME', {})
-    package['install'] = []
     package['install_to'] = destdir.lstrip('/')
+    install = set()
+    optional = set()
     sums = dict(sha1={}, md5={}, sha256={}, ck={})
 
     for dirpath, dirnames, filenames in os.walk(destdir):
@@ -63,10 +65,11 @@ def do_one_dir(destdir,lower):
             elif os.path.islink(path):
                 package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
             elif os.path.isfile(path):
-                package['install'].append(out_name)
-                #data['files'][name] = dict(size=os.path.getsize(path))
                 if is_doc(fn):
-                     data['files'][out_name] = dict(install_to='$docdir')
+                     optional.add(fn)
+                     files['files'][out_name] = dict(install_to='$docdir')
+                else:
+                     install.add(fn)
 
                 hf = HashedFile.from_file(name, open(path, 'rb'))
                 sums['ck'][out_name] = os.path.getsize(path)
@@ -79,6 +82,17 @@ def do_one_dir(destdir,lower):
     print('%YAML 1.2')
     print('---')
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
+
+    print('    install:')
+    for file in sorted(install):
+        print('    - %s' % file)
+
+    if optional:
+        print('    optional:')
+        for file in sorted(optional):
+            print('    - %s' % file)
+
+    yaml.safe_dump(files, stream=sys.stdout, default_flow_style=False)
 
     for alg, files in sorted(sums.items()):
         print('%ssums: |' % alg)
