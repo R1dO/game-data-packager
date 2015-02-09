@@ -26,6 +26,7 @@ from debian.deb822 import Deb822
 import yaml
 
 from . import HashedFile
+from .steam import parse_acf
 
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
@@ -52,7 +53,12 @@ def do_one_dir(destdir,lower):
                 destdir.find('/steamapps/common/'))
     if steam > 0:
           steam_dict = dict()
-          steam_dict['id'] = 'FIXME'
+          steam_id = 'FIXME'
+          for acf in parse_acf(destdir[:steam+11]):
+              if '/common/' + acf['installdir'] in destdir:
+                   steam_id = acf['appid']
+                   break
+          steam_dict['id'] = steam_id
           steam_dict['path'] = destdir[steam+11:]
           package['steam'] = steam_dict
 
@@ -78,10 +84,10 @@ def do_one_dir(destdir,lower):
                 package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
             elif os.path.isfile(path):
                 if is_doc(fn):
-                     optional.add(fn)
+                     optional.add(out_name)
                      files['files'][out_name] = dict(install_to='$docdir')
                 else:
-                     install.add(fn)
+                     install.add(out_name)
 
                 hf = HashedFile.from_file(name, open(path, 'rb'))
                 sums['ck'][out_name] = os.path.getsize(path)
