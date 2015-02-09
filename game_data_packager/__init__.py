@@ -331,7 +331,10 @@ class GameDataPackage(object):
         # a WantedFile with install_as='baseq3/pak1.pk3' then we would
         # put 'usr/share/games/quake3/baseq3/pak1.pk3' in the .deb.
         # The default is 'usr/share/games/' plus the binary package's name.
-        self.install_to = 'usr/share/games/' + name
+        if name.endswith('-data'):
+            self.install_to = 'usr/share/games/' + name[:len(name) - 5]
+        else:
+            self.install_to = 'usr/share/games/' + name
 
         # Prefixes of files that get installed to /usr/share/doc/PACKAGE
         # instead
