@@ -1,58 +1,14 @@
 ## Adding a game to `game-data-packager`
 
-### Step 1: required files for the `.deb`
-
-#### things to include in the template package
-
-Debian policy requires the following to be present within the metadata
-section of a binary package
-
- * the control file
- * a copyright file, in `/usr/share/doc/package/copyright`
-
-For new games in `game-data-packager` these are normally
-`data/*.control.in` and `data/*.copyright`.
-
-Policy dictates the following fields within the control file:
-
- * `Version` field. `VERSION` will automatically be replaced with
-   using the version of gdp which generated the template package.
-   We recommend using either `VERSION` or, if the generated package
-   is guaranteed to contain the vendor's version 1.23 data, `1.23+VERSION`.
- * `Maintainer`.  We recommend using the same maintainer as for gdp,
-   which is the Debian Games Team.
- * `Description`. Both the single line synopsis and the extended
-   description that follows.
- * Any required dependencies.  For game data packages, we use
-   `Recommends` to recommend a corresponding engine package, where
-   appropriate.  
-   If your game is split in several packages, the package with
-   the full game should `Suggests` all the avaible expansions;
-   to avoid that those are recognised as useless
-   and then removed by aptitude or deborphan.
-
-`game-data-packager` automatically adds:
-
- * `md5sums` file, so that the user can check whether a package's installed
-   files have been modified if they so desire
- * a copy of gdp's own `changelog`
-
-Finally, it might be worth considering the following
-
- * Should the data package register any menus, or carry a `.desktop` file?
-   In some cases, it makes sense to do this from the data package, rather
-   than from the engine package.
-   * you may also wish to provide an icon file, but bear in mind that if
-     you distribute the icon file inside gdp's source, it needs to meet
-     the DFSG.  gdp could generate the icon file at run-time in some
-     cases.
-
-### Step 2: locate and describe the necessary files
+### Step 1: locate and describe the necessary files
 
 Write a YAML document that describes the files needed and how to get them.
 
 There are three main constructs in the YAML document: *top-level metadata*,
 *known files* and *packages*.
+
+Alternatively, you can try `game-data-packager make-template <directory>`
+which should get you easily started.
 
 #### Top-level metadata
 
@@ -126,14 +82,72 @@ to mapping:
 
 * `longname`: string: the "marketing name" of the game or expansion
   in this package, if it differs from the top-level `longname`
-* `type`: string: either `full`, `demo` or `expansion`. Full games
-  are what you expect. Demos are cut-down versions of a full game,
+* `demo_for`: this reference the full game included in same YAML file  
+  `expansion_for`: this reference the matching full game included
+  in the same YAML file.  
+  Full games are what you expect.
+  Demos are cut-down versions of a full game,
   typically advertised as demo or shareware, which can be installed
   if the full game is not available. Expansions are add-ons or mission
   packs which require the corresponding full game, such as
   Quake III Team Arena for Quake III Arena.
 * `install`: list of strings: unique names of known files or alternative
   sets to install
+
+### Step 2: required files for the `.deb`
+
+#### things to include in the template package
+
+Debian policy requires the following to be present within the metadata
+section of a binary package
+
+ * the control file
+ * a copyright file, in `/usr/share/doc/package/copyright`
+
+For new games in `game-data-packager` these are normally
+`data/*.control.in` and `data/*.copyright`.
+
+`game-data-packager` will automatically provide the control file
+with default values if missing. It will also ensure that
+all the field required by policy are present:
+
+ * `Version` field. This will automatically be filled with
+   the version of gdp which generated the template package.
+   If the generated package is guaranteed to contain the vendor's
+   version 1.23 data, you may set it in the 'debian: version:'
+   of the YAML file.
+ * `Maintainer`.  We recommend using the same maintainer as for gdp,
+   which is the Debian Games Team. This is also the default value that
+   will be provided if this field is missing.
+ * `Description`. Both the single line synopsis and the extended
+   description that follows.
+ * Any required dependencies.  For game data packages, we use
+   `Recommends` to recommend a corresponding engine package, where
+   appropriate. To document an engine, you should add
+   a 'debian: engine:' key in the YAML file; the other
+   depedencies 'debian: depends:/recommends:/suggests:' are also
+   supported.  
+   If your game is split in several packages, the package with
+   the full game should `Suggests` all the avaible expansions;
+   to avoid that those are recognised as useless
+   and then removed by aptitude or deborphan. This is done
+   automatically if you set the correct 'expansion_for:'.
+
+`game-data-packager` also automatically adds:
+
+ * `md5sums` file, so that the user can check whether a package's installed
+   files have been modified if they so desire
+ * a copy of gdp's own `changelog`
+
+Finally, it might be worth considering the following
+
+ * Should the data package register any menus, or carry a `.desktop` file?
+   In some cases, it makes sense to do this from the data package, rather
+   than from the engine package.
+   * you may also wish to provide an icon file, but bear in mind that if
+     you distribute the icon file inside gdp's source, it needs to meet
+     the DFSG.  gdp could generate the icon file at run-time in some
+     cases.
 
 ### Step 3: advanced
 
