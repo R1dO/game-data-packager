@@ -114,7 +114,7 @@ all the field required by policy are present:
  * `Version` field. This will automatically be filled with
    the version of gdp which generated the template package.
    If the generated package is guaranteed to contain the vendor's
-   version 1.23 data, you may set it in the 'debian: version:'
+   version 1.23 data, you may set it in the `debian: version:`
    of the YAML file.
  * `Maintainer`.  We recommend using the same maintainer as for gdp,
    which is the Debian Games Team. This is also the default value that
@@ -124,14 +124,14 @@ all the field required by policy are present:
  * Any required dependencies.  For game data packages, we use
    `Recommends` to recommend a corresponding engine package, where
    appropriate. To document an engine, you should add
-   a 'debian: engine:' key in the YAML file; the other
-   depedencies 'debian: depends:/recommends:/suggests:' are also
+   a `debian: engine:` key in the YAML file; the other
+   depedencies `debian: depends:/recommends:/suggests:` are also
    supported.  
    If your game is split in several packages, the package with
    the full game should `Suggests` all the avaible expansions;
    to avoid that those are recognised as useless
    and then removed by aptitude or deborphan. This is done
-   automatically if you set the correct 'expansion_for:'.
+   automatically if you set the correct `expansion_for:`.
 
 `game-data-packager` also automatically adds:
 
