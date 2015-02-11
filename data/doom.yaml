@@ -7,6 +7,8 @@
 # http://doomwiki.org/wiki/DOOM.WAD
 shortname: doom
 longname: Doom (including Ultimate Doom)
+try_repack_from:
+- /usr/share/games/doom3bfg
 
 plugin: doom_common
 
@@ -28,6 +30,7 @@ packages:
     steam:
       id: 2280
       path: "common/Ultimate Doom"
+    # FIXME: also look in 208200, common/DOOM 3 BFG Edition
     install_to: usr/share/games/doom
     longname: Doom
     install:
