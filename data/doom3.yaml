@@ -1,10 +1,11 @@
 %YAML 1.2
 ---
 compress-deb: false
-longname: 'Doom 3'
+longname: 'Doom 3 (original or BFG Edition)'
 
 packages:
   doom3-data:
+    longname: 'Doom 3'
     debian:
       engine: doom3-dhewm3
     steam:
@@ -775,6 +776,7 @@ packages:
     - base/wads/NERVE.WAD
     - base/wads/DOOM2.WAD
     - base/wads/DOOM.WAD
+
 files:
   cdoom/docs/License.txt:
     install_to: $docdir
@@ -2323,6 +2325,7 @@ md5sums: |
   fb35c4a5a9fd49ec29ab6e900572c524  base/wads/DOOM.WAD
   c3bea40570c23e511a7ed3ebcd9865f7  base/wads/DOOM2.WAD
   967d5ae23daf45196212ae1b605da3b0  base/wads/NERVE.WAD
+
 sha1sums: |
   3b3cdd19ec394fb5c1ae271993f181097e5c6085  base/pak000.pk4
   76e477e61b0248ce5181fef582212a5332c34c20  base/pak001.pk4
@@ -3058,6 +3061,7 @@ sha1sums: |
   e5ec79505530e151ff0e6f517f3ce1fd65969c46  base/wads/DOOM.WAD
   a59548125f59f6aa1a41c22f615557d3dd2e85a9  base/wads/DOOM2.WAD
   3451288383fb16e196f273d9f85d58c1fda97bf4  base/wads/NERVE.WAD
+
 sha256sums: |
   220513bba8cc51191738b52b4ea320cd3376736e13147e240aa503622aa926ce  base/pak000.pk4
   dc85da3d731793f2973ffb7ef31be17057e88dee0b1157531c7f26a7b33c8fc0  base/pak001.pk4
@@ -3790,4 +3794,5 @@ sha256sums: |
   972c175424aced26878c0c865a32c014081286668e1b97376d32d04e94d9d1d0  base/wads/DOOM.WAD
   cbb87f5285cf04293927489d8f0d41dfda809b28196652a3c73c2fdece9a5e4a  base/wads/DOOM2.WAD
   2d234de8700ee403375fda278e50ea17739b36703b3316e0429b05aca4458fa9  base/wads/NERVE.WAD
+
 ...

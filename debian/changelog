@@ -8,7 +8,14 @@ game-data-packager (40) UNRELEASED; urgency=medium
   * add Descent 1 demo & Descent 2 demo (part of #775442)
   * add support for Hexen II demo (Closes: #775484)
   * add support for "Doom 2 : No Rest for the Living" (Closes: #776280)
-  * add support for the Grim Fandango demo (part of #776545)
+  * add support for the Grim Fandango demo, and ResidualVM games in general
+    (Closes: #776545)
+  * add support for a rare French version of Doom II
+  * add support for Maniac Mansion, English and French versions,
+    and ScummVM games in general (Closes: #776544)
+  * improve documentation
+  * improve make_template mode
+  * change default install_to to omit trailing -data if any
 
   [ Simon McVittie ]
   * quake3: install symlinks in /usr/lib/quake3 too, so src:quake can use
@@ -32,9 +39,13 @@ game-data-packager (40) UNRELEASED; urgency=medium
   * Estimate Installed-Size with the algorithm planned for dpkg 1.18,
     rather than using du which is filesystem-dependent
   * Add support for non-default compression algorithms
-  * Add support for the Grim Fandango full version (part of #776545)
+  * Add support for the Grim Fandango full version
     - put the full and demo versions in /u/s/g/grimfandango{,-demo}-data
       so they can coexist
+  * Add more ScummVM games:
+    - Full Throttle
+    - The Curse of Monkey Island
+  * Use the nicer scalable icon for ScummVM and ResidualVM games
 
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:54:12 +0000
 

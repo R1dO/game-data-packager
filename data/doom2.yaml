@@ -5,6 +5,8 @@
 # http://doomwiki.org/wiki/DOOM2.WAD
 shortname: doom2
 longname: "Doom 2: Hell on Earth"
+try_repack_from:
+- /usr/share/games/doom3bfg
 
 plugin: doom_common
 
@@ -23,6 +25,7 @@ packages:
     steam:
       id: 2300
       path: "common/Doom 2"
+    # FIXME: also look in 208200, common/DOOM 3 BFG Edition
     install_to: usr/share/games/doom
     install:
     - doom2.wad
