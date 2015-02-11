@@ -1,10 +1,11 @@
 %YAML 1.2
 ---
 compress-deb: false
-longname: 'Doom 3'
+longname: 'Doom 3 (original or BFG Edition)'
 
 packages:
   doom3-data:
+    longname: 'Doom 3'
     debian:
       engine: doom3-dhewm3
     steam:
