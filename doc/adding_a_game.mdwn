@@ -15,6 +15,8 @@ which should get you easily started.
 * `shortname`: string: the short name of the game, such as `quake3`.
 * `longname`: string: the "marketing name" of the game, such as Quake
   III Arena.
+* `copyright`: string: © <year_of_first_release> <developper/publisher>
+  This should match the title screen of the game, if any.
 * `compress_deb`: boolean, default true: If false, the `.deb` will never be
   compressed. Use this if it contains non-compressible files (e.g. `*.pk3`
   which are zip files) for which `xz` will waste a lot of time and
@@ -82,6 +84,7 @@ to mapping:
 
 * `longname`: string: the "marketing name" of the game or expansion
   in this package, if it differs from the top-level `longname`
+* `copyright`: string: the copyright string, if it differs from top-level
 * `demo_for`: this reference the full game included in same YAML file  
   `expansion_for`: this reference the matching full game included
   in the same YAML file.  
@@ -106,6 +109,12 @@ section of a binary package
 
 For new games in `game-data-packager` these are normally
 `data/*.control.in` and `data/*.copyright`.
+
+`game-data-packager` will automatically build the copyright file
+using the contents of the `copyright:` tags in the yaml file;
+you only need to provide one if the default generated
+copyright file isn't suitable; see for example
+`data/descent1-demo-data.copyright`.
 
 `game-data-packager` will automatically provide the control file
 with default values if missing. It will also ensure that

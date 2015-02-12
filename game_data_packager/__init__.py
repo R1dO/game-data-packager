@@ -1521,10 +1521,10 @@ class GameData(object):
         return complete
 
     def fill_docs(self, package, docdir):
+        copy_to = os.path.join(docdir, 'copyright')
         for n in (package.name, self.shortname):
             copy_from = os.path.join(DATADIR, n + '.copyright')
-            copy_to = os.path.join(docdir, 'copyright')
-
+            continue
             if os.path.exists(copy_from):
                 shutil.copyfile(copy_from, copy_to)
                 return
@@ -1536,8 +1536,32 @@ class GameData(object):
                         PACKAGE=package.name)
                 return
 
-        raise AssertionError('should have found a copyright file for %s' %
-                package.name)
+        copy_from = os.path.join(DATADIR, 'copyright')
+        with open(copy_from, encoding='utf-8') as i, \
+             open(copy_to, 'w', encoding='utf-8') as o:
+            o.write('The package %s was generated using '
+                    'game-data-packager.\n\n' % package.name)
+            o.write('The files under "%s"\n' % package.install_to)
+            for f in package.install | package.optional:
+                 if self.file_status[f] is FillResult.IMPOSSIBLE:
+                     continue
+                 install_to = self.files[f].install_to
+                 if install_to and install_to.startswith('$docdir'):
+                     o.write('and "/usr/share/doc/%s/"' % package.name)
+                     o.write(' (except for this copyright file)\n')
+                     break
+            o.write('are user-supplied files with copyright\n')
+            o.write(package.copyright or self.copyright)
+            o.write(', with all rights reserved.\n')
+            # this may either be a real file or a symlink (rott-extreme-data)
+            #
+            #The full license appears in /usr/share/doc/PACKAGE/<somefile>,
+            #/usr/share/doc/PACKAGE/<some-other-file>
+            for line in i.readlines():
+                if line.startswith('#'):
+                    continue
+                o.write(line)
+
 
     def fill_extra_files(self, package, destdir):
         pass

@@ -126,6 +126,7 @@ def do_one_dir(destdir,lower):
     print('---')
     if longname:
         print('longname: %s\n' % longname)
+    print('copyright: © 1970 FIXME')
     if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
         print('try_repack_from:\n- %s\n' % destdir)
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
@@ -257,6 +258,7 @@ def do_one_deb(deb):
     print('# data/%s.yaml' % control['package'])
     print('%YAML 1.2')
     print('---')
+    print('copyright: © 1970 FIXME')
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
 
     for alg, files in sorted(sums.items()):
