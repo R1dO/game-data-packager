@@ -326,6 +326,9 @@ class GameDataPackage(object):
         # The optional marketing name of this version
         self.longname = None
 
+        # This optional value will overide the game global copyright
+        self.copyright = None
+
         # Where we install files.
         # For instance, if this is 'usr/share/games/quake3' and we have
         # a WantedFile with install_as='baseq3/pak1.pk3' then we would
@@ -442,6 +445,9 @@ class GameData(object):
         # The formal name of the game, e.g. Quake III Arena
         self.longname = shortname.title()
 
+        # The one-line copyright notice used to build debian/copyright
+        self.copyright = None
+
         # A temporary directory.
         self.workdir = workdir
 
@@ -475,6 +481,9 @@ class GameData(object):
 
         if 'longname' in self.yaml:
             self.longname = self.yaml['longname']
+
+        if 'copyright' in self.yaml:
+            self.copyright = self.yaml['copyright']
 
         if 'aliases' in self.yaml:
             self.aliases = set(self.yaml['aliases'])
@@ -726,9 +735,12 @@ class GameData(object):
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
-                'rip_cd', 'architecture', 'aliases', 'better_version'):
+                'rip_cd', 'architecture', 'aliases', 'better_version',
+                'copyright'):
             if k in d:
                 setattr(package, k, d[k])
+
+        assert self.copyright or package.copyright, package.name
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
