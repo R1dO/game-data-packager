@@ -2,6 +2,7 @@
 ---
 shortname: ja
 longname: "Star Wars Jedi Knight: Jedi Academy"
+copyright: © 2003 Activision, Inc. / LucasArts, a division of Lucasfilm Entertainment Company Ltd.
 # There's really no point in compressing the .deb; the only compressible
 # things in it are the control files and copyright information,
 # alongside ~ 1.2 GiB of compressed zip files. xz can save 20 MiB,
@@ -47,6 +48,10 @@ packages:
   jedi-academy-bonus-data:
     aliases: [bonus]
     longname: "Bonus maps for Jedi Academy"
+    copyright: |
+       © 2003-2004 Activision, Inc. / LucasArts,
+       a division of Lucasfilm Entertainment Company Ltd. and/or Raven Software
+
     expansion_for: jedi-academy-data
     install_to: usr/share/games/jedi-academy
     symlinks:

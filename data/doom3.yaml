@@ -6,6 +6,7 @@ longname: 'Doom 3 (original or BFG Edition)'
 packages:
   doom3-data:
     longname: 'Doom 3'
+    copyright: © 2004 id Software
     debian:
       engine: doom3-dhewm3
     steam:
@@ -23,6 +24,7 @@ packages:
 
   doom3-resurrection-data:
     longname: 'Doom 3: Resurrection of Evil'
+    copyright: © 2005 id Software
     expansion_for: doom3-data
     steam:
       id: 9070
@@ -33,6 +35,7 @@ packages:
 
   doom3-classic-data:
     longname: 'Classic Doom 3 (mod)'
+    copyright: © id Software
     expansion_for: doom3-data
     install_to: usr/share/games/doom3
     install:
@@ -60,6 +63,7 @@ packages:
 
   doom3-classic-dev:
     longname: 'Classic Doom 3 (devkit)'
+    copyright: © id Software
     expansion_for: doom3-classic-data
     install_to: usr/share/games/doom3
     install:
@@ -87,6 +91,7 @@ packages:
 
   doom3bfg-data:
     longname: 'Doom 3: BFG Edition'
+    copyright: © 2012 id Software
     debian:
       engine: rbdoom3bfg
     steam:
