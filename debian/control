@@ -40,6 +40,8 @@ Suggests:
 	unzip,
 # for Theme Hospital and probably other gog.com games
 	innoextract,
+# for Doom3
+        p7zip-full,
 Architecture: all
 Multi-Arch: foreign
 Description: Installer for game data files
@@ -54,7 +56,7 @@ Description: Installer for game data files
  .
  At the moment, game-data-packager has support for building .deb
  files for:
-  * Doom games: Doom, Doom II and Final Doom
+  * Doom games: Doom, Doom II, Final Doom & Doom III
   * LGeneral (Panzer General)
   * Heretic: Shadow of the Serpent Riders
   * Hexen: Beyond Heretic
