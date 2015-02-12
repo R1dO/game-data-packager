@@ -479,11 +479,10 @@ class GameData(object):
 
         self.argument_parser = None
 
-        if 'longname' in self.yaml:
-            self.longname = self.yaml['longname']
-
-        if 'copyright' in self.yaml:
-            self.copyright = self.yaml['copyright']
+        for k in ('longname', 'copyright', 'compress_deb', 'help_text',
+                 'steam'):
+            if k in self.yaml:
+                setattr(self, k, self.yaml[k])
 
         if 'aliases' in self.yaml:
             self.aliases = set(self.yaml['aliases'])
@@ -620,15 +619,6 @@ class GameData(object):
 
             if f.sha256 is not None:
                 self.known_sha256s.setdefault(f.sha256, set()).add(filename)
-
-        if 'compress_deb' in self.yaml:
-            self.compress_deb = self.yaml['compress_deb']
-
-        if 'help_text' in self.yaml:
-            self.help_text = self.yaml['help_text']
-
-        if 'steam' in self.yaml:
-            self.steam = self.yaml['steam']
 
         # consistency check
         for package in self.packages.values():
