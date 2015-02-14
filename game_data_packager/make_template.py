@@ -282,7 +282,7 @@ def do_one_exec(pgm,lower):
                 continue
             file = line.split('"')[1]
             if (not file.startswith('/usr/share/games')
-              and not file.startswith('/usr/local/games')):
+              and not file.startswith('/usr/local/')):
                 continue
             if 'ENOENT' in line:
                missing.add(file)
