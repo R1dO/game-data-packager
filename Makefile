@@ -16,6 +16,7 @@ default: $(DIRS)
 	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
 	for f in data/*.yaml data/*.control.in data/*.copyright \
+                        data/copyright \
 			data/*.copyright.in data/*.desktop.in \
 			data/*.preinst.in data/*.README.Debian.in; do \
 		if [ -L $$f ]; then \
@@ -35,6 +36,7 @@ $(DIRS):
 
 clean:
 	rm -f ./out/changelog.gz
+	rm -f ./out/copyright
 	rm -f ./out/game-data-packager
 	rm -f ./out/foo ./out/bar ./out/baz
 	rm -f ./out/*.control

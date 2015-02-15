@@ -1,5 +1,7 @@
 %YAML 1.2
 ---
+longname: Theme Hospital
+copyright: © 1997 Bullfrog Productions
 
 help_text: |
   For the full version, provide a Theme Hospital installation,
@@ -14,7 +16,6 @@ help_text: |
 
 packages:
   theme-hospital-full-data:
-    longname: Theme Hospital
     install_to: usr/share/games/theme-hospital
     debian:
       conflicts: theme-hospital-demo-data

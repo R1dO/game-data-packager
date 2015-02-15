@@ -2,6 +2,7 @@
 ---
 shortname: rott
 longname: Rise of the Triad
+copyright: © 1995 Apogee Software
 
 steam:
   id: 238050
@@ -10,6 +11,8 @@ steam:
 packages:
   rott-data:
     longname: "Rise of the Triad: The HUNT begins"
+    # December 21, 1994
+    copyright: © 1994 Apogee Software
     debian:
       engine: rott
       replaces: rott (<< 1.1.1-4)
@@ -25,6 +28,7 @@ packages:
     - HUNTBGIN.RTL
     - HUNTBGIN.WAD
     - REMOTE1.RTS
+    optional:
     - VENDOR.DOC
 
   rott-registered-data:
@@ -37,6 +41,7 @@ packages:
     - any_registered_rtc
     - DARKWAR.RTL
     - DARKWAR.WAD
+    optional:
     - LICENSE.TXT
 
   rott-extreme-data:

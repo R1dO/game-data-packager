@@ -126,6 +126,7 @@ def do_one_dir(destdir,lower):
     print('---')
     if longname:
         print('longname: %s\n' % longname)
+    print('copyright: © 1970 FIXME')
     if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
         print('try_repack_from:\n- %s\n' % destdir)
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
@@ -257,6 +258,7 @@ def do_one_deb(deb):
     print('# data/%s.yaml' % control['package'])
     print('%YAML 1.2')
     print('---')
+    print('copyright: © 1970 FIXME')
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
 
     for alg, files in sorted(sums.items()):
@@ -267,14 +269,60 @@ def do_one_deb(deb):
     print('...')
     print('')
 
+def do_one_exec(pgm,lower):
+    with subprocess.Popen(['strace', '-e', 'open',
+                           '-s', '100', pgm],
+           stderr=subprocess.PIPE, stdout=subprocess.DEVNULL,
+           universal_newlines=True) as proc:
+        used = set()
+        missing = set()
+        while proc.poll() == None:
+            line = proc.stderr.readline().strip()
+            if not line.startswith('open('):
+                continue
+            file = line.split('"')[1]
+            if (not file.startswith('/usr/share/games')
+              and not file.startswith('/usr/local/')):
+                continue
+            if 'ENOENT' in line:
+               missing.add(file)
+            else:
+               used.add(file)
+
+        dirs = set()
+        print('# used')
+        for file in sorted(used):
+            dirs.add(os.path.dirname(file))
+            print("    - %s" % file)
+        if missing:
+            print('# missing ?')
+            for file in sorted(missing):
+                print("    - %s" % file)
+
+        present = set()
+        for dir in dirs:
+            for dirpath, dirnames, filenames in os.walk(dir):
+                for fn in filenames:
+                    present.add(os.path.join(dirpath, fn))
+
+        unused = present - used
+        if unused:
+            print('# not used')
+            for file in sorted(unused):
+                print("    - %s" % file)
+
+
 def main():
     parser = argparse.ArgumentParser(
             description='Produce a template for game-data-packager YAML ' +
                 'based on an existing .deb file or installed directory',
             prog='game-data-packager guess-contents')
-    parser.add_argument('args', nargs='+', metavar='DEB|DIRECTORY')
+    parser.add_argument('args', nargs='+', metavar='DEB|DIRECTORY|FILE')
     parser.add_argument('-l', '--lower', action='store_true', dest='lower',
             help='make all files lowercase')
+    parser.add_argument('-e', '--execute', action='store_true', dest='execute',
+            help='run this game through strace and see which files from '
+                 '/usr/share/games or /usr/local/games are needed')
     args = parser.parse_args()
 
     for arg in args.args:
@@ -282,6 +330,8 @@ def main():
             do_one_dir(arg.rstrip('/'),args.lower)
         elif arg.endswith('.deb'):
             do_one_deb(arg)
+        elif args.execute:
+            do_one_exec(arg,args.lower)
         else:
             do_one_file(arg,args.lower)
 

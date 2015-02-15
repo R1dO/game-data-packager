@@ -326,6 +326,9 @@ class GameDataPackage(object):
         # The optional marketing name of this version
         self.longname = None
 
+        # This optional value will overide the game global copyright
+        self.copyright = None
+
         # Where we install files.
         # For instance, if this is 'usr/share/games/quake3' and we have
         # a WantedFile with install_as='baseq3/pak1.pk3' then we would
@@ -442,6 +445,9 @@ class GameData(object):
         # The formal name of the game, e.g. Quake III Arena
         self.longname = shortname.title()
 
+        # The one-line copyright notice used to build debian/copyright
+        self.copyright = None
+
         # A temporary directory.
         self.workdir = workdir
 
@@ -473,8 +479,10 @@ class GameData(object):
 
         self.argument_parser = None
 
-        if 'longname' in self.yaml:
-            self.longname = self.yaml['longname']
+        for k in ('longname', 'copyright', 'compress_deb', 'help_text',
+                 'steam'):
+            if k in self.yaml:
+                setattr(self, k, self.yaml[k])
 
         if 'aliases' in self.yaml:
             self.aliases = set(self.yaml['aliases'])
@@ -612,15 +620,6 @@ class GameData(object):
             if f.sha256 is not None:
                 self.known_sha256s.setdefault(f.sha256, set()).add(filename)
 
-        if 'compress_deb' in self.yaml:
-            self.compress_deb = self.yaml['compress_deb']
-
-        if 'help_text' in self.yaml:
-            self.help_text = self.yaml['help_text']
-
-        if 'steam' in self.yaml:
-            self.steam = self.yaml['steam']
-
         # consistency check
         for package in self.packages.values():
             for provider in package.install_contents_of:
@@ -726,9 +725,12 @@ class GameData(object):
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
-                'rip_cd', 'architecture', 'aliases', 'better_version'):
+                'rip_cd', 'architecture', 'aliases', 'better_version',
+                'copyright'):
             if k in d:
                 setattr(package, k, d[k])
+
+        assert self.copyright or package.copyright, package.name
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
@@ -1420,6 +1422,8 @@ class GameData(object):
                         self.consider_file(tmp, True)
                 elif fmt == 'innoextract':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s',
+                            to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
@@ -1442,6 +1446,18 @@ class GameData(object):
                     # -j junk paths
                     # -C use case-insensitive matching
                     # -LL forces conversion to lowercase
+                    for f in to_unpack:
+                        self.consider_file(os.path.join(tmpdir, f), True)
+                elif fmt == '7z':
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s',
+                            to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['7z', 'x', '-bd',
+                                os.path.abspath(found_name)] +
+                            list(to_unpack), cwd=tmpdir)
                     for f in to_unpack:
                         self.consider_file(os.path.join(tmpdir, f), True)
                 elif fmt == 'cat':
@@ -1505,10 +1521,10 @@ class GameData(object):
         return complete
 
     def fill_docs(self, package, docdir):
+        copy_to = os.path.join(docdir, 'copyright')
         for n in (package.name, self.shortname):
             copy_from = os.path.join(DATADIR, n + '.copyright')
-            copy_to = os.path.join(docdir, 'copyright')
-
+            continue
             if os.path.exists(copy_from):
                 shutil.copyfile(copy_from, copy_to)
                 return
@@ -1520,8 +1536,32 @@ class GameData(object):
                         PACKAGE=package.name)
                 return
 
-        raise AssertionError('should have found a copyright file for %s' %
-                package.name)
+        copy_from = os.path.join(DATADIR, 'copyright')
+        with open(copy_from, encoding='utf-8') as i, \
+             open(copy_to, 'w', encoding='utf-8') as o:
+            o.write('The package %s was generated using '
+                    'game-data-packager.\n\n' % package.name)
+            o.write('The files under "%s"\n' % package.install_to)
+            for f in package.install | package.optional:
+                 if self.file_status[f] is FillResult.IMPOSSIBLE:
+                     continue
+                 install_to = self.files[f].install_to
+                 if install_to and install_to.startswith('$docdir'):
+                     o.write('and "/usr/share/doc/%s/"' % package.name)
+                     o.write(' (except for this copyright file)\n')
+                     break
+            o.write('are user-supplied files with copyright\n')
+            o.write(package.copyright or self.copyright)
+            o.write(', with all rights reserved.\n')
+            # this may either be a real file or a symlink (rott-extreme-data)
+            #
+            #The full license appears in /usr/share/doc/PACKAGE/<somefile>,
+            #/usr/share/doc/PACKAGE/<some-other-file>
+            for line in i.readlines():
+                if line.startswith('#'):
+                    continue
+                o.write(line)
+
 
     def fill_extra_files(self, package, destdir):
         pass
@@ -2094,14 +2134,24 @@ class GameData(object):
                      '"%s" is also avaible', package.name, package.better_version)
                   continue
 
+            abort = False
+
             if (package.expansion_for
               and self.packages[package.expansion_for] not in possible
               and not os.path.exists('/usr/share/doc/' + package.expansion_for)):
+                for fullgame in possible:
+                    if fullgame.type == 'full':
+                        logger.warning("won't generate '%s' expansion, because "
+                          'full game "%s" is not avaible nor already installed;'
+                          ' and we are packaging "%s" instead.',
+                          package.name, package.expansion_for, fullgame.name)
+                        abort = True
+                        break
+                else:
                   logger.warning('will generate "%s" expansion, but full game '
                      '"%s" is not avaible nor already installed.',
                      package.name, package.expansion_for)
 
-            abort = False
             if not build_demos:
                 for demo_for in package.demo_for:
                     if self.packages[demo_for] in possible:
@@ -2254,7 +2304,7 @@ class GameData(object):
 
         fmt = wanted.unpack['format']
 
-        if fmt in ('id-shr-extract', 'lha', 'unzip', 'innoextract'):
+        if fmt in ('id-shr-extract', 'lha', 'unzip', 'innoextract', '7z'):
             if which(fmt) is None:
                 logger.warning('cannot unpack "%s": tool "%s" is not ' +
                         'installed', wanted.name, fmt)
@@ -2271,6 +2321,7 @@ class GameData(object):
         package_map = {
                 'id-shr-extract': 'dynamite',
                 'lha': 'lhasa',
+                '7z': 'p7zip-full',
         }
         packages = set()
 

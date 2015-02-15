@@ -2,15 +2,21 @@
 ---
 compress-deb: false
 longname: 'Doom 3 (original or BFG Edition)'
+try_repack_from: [/usr/local/share/dhewm3]
 
 packages:
   doom3-data:
     longname: 'Doom 3'
+    copyright: © 2004 id Software
     debian:
       engine: dhewm3-doom3
     steam:
       id: 9050
     install:
+    - base/game00.pk4
+    - base/game01.pk4
+    - base/game02.pk4
+    - base/game03.pk4
     - base/pak000.pk4
     - base/pak001.pk4
     - base/pak002.pk4
@@ -20,25 +26,87 @@ packages:
     - base/pak006.pk4
     - base/pak007.pk4
     - base/pak008.pk4
+    optional:
+    - License.txt
 
   doom3-resurrection-data:
     longname: 'Doom 3: Resurrection of Evil'
+    copyright: © 2005 id Software
     expansion_for: doom3-data
     steam:
       id: 9070
     install_to: usr/share/games/doom3
     install:
+    - d3xp/game01.pk4
+    - d3xp/game02.pk4
+    - d3xp/game03.pk4
     - d3xp/pak000.pk4
     - d3xp/pak001.pk4
 
-  doom3-bfg-data:
+  doom3-classic-data:
+    longname: 'Classic Doom 3 (mod)'
+    copyright: © id Software
+    expansion_for: doom3-data
+    install_to: usr/share/games/doom3
+    install:
+    - cdoom/autoexec.cfg
+    - cdoom/cdoom_main.pk4
+    - cdoom/cdoom_maps.pk4
+    - cdoom/cdoom_models.pk4
+    - cdoom/cdoom_sounds.pk4
+    - cdoom/cdoom_textures.pk4
+    - cdoom/cdoom_linux.pk4
+    # TODO: check if those two are needed
+    - cdoom/cdoom_dll.pk4
+    - cdoom/cdoom_mac.pk4
+    optional:
+    - cdoom/cdoom.ico
+    - cdoom/Classic Doom 3.url
+    - cdoom/description.txt
+    - cdoom/docs/shot00002.jpg
+    - cdoom/docs/License.txt
+    - cdoom/docs/Readme.txt
+    - cdoom/fan_extras/classicdoom_001_1280x1024.jpg
+    - cdoom/fan_extras/wallpaper1.jpg
+    - cdoom/fan_extras/wallpaper2.jpg
+    - cdoom/fan_extras/wallpaper3.jpg
+
+  doom3-classic-dev:
+    longname: 'Classic Doom 3 (devkit)'
+    copyright: © id Software
+    expansion_for: doom3-classic-data
+    install_to: usr/share/games/doom3
+    install:
+    - cdoom/fan_extras/cdoomsource_131/readme.txt
+    - cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
+    - cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Entity.h
+    - cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Game_local.h
+    - cdoom/fan_extras/cdoomsource_131/game/Item.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Item.h
+    - cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Misc.h
+    - cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Player.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Player.h
+    - cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Target.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Target.h
+    - cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
+
+  doom3bfg-data:
     longname: 'Doom 3: BFG Edition'
+    copyright: © 2012 id Software
     debian:
       engine: rbdoom3bfg
     steam:
       id: 208200
       path: "common/DOOM 3 BFG Edition"
-    install_to: usr/share/games/doom3bfg
     install:
     - base/D3BFGConfig.cfg
     - base/_common.crc
@@ -744,18 +812,144 @@ files:
       format: tar.gz
       skip: 8736
 
+  License.txt:
+    install_to: $docdir
+    install_as: license.txt
+    distinctive_name: false
+
+  cdoom/docs/License.txt:
+    install_to: $docdir
+    install_as: license.txt
+    distinctive_name: false
+  cdoom/docs/Readme.txt:
+    install_to: $docdir
+    install_as: readme.txt
+    distinctive_name: false
+  cdoom/Classic Doom 3.url:
+    install_to: $docdir
+    install_as: classic_doom3.url
+  cdoom/fan_extras/cdoomsource_131/readme.txt:
+    distinctive_name: false
+
+  DOOM3-1.3.1.exe:
+    size: 19653399
+    md5: 48330b83d08298826992da9a348c1620
+    sha1sum: a619eb0c6dd2cc384e5ba2c8b444ab56db43897d
+    sha256sum: a3215349ecfbb6d6b4d3411d1ed5c60394a8c072c74c6214609c78e556f1fb5b
+    unpack:
+      format: 7z
+    provides:
+    - base/game01.pk4
+    - base/game02.pk4
+    - base/game03.pk4
+    - base/pak005.pk4
+    - base/pak006.pk4
+    - base/pak007.pk4
+    - base/pak008.pk4
+    - d3xp/game01.pk4
+    - d3xp/game02.pk4
+    - d3xp/game03.pk4
+    - d3xp/pak001.pk4
+
+  classic_doom_3_1.3.1.exe:
+    size: 212439198
+    md5: 2cea594e8e0638e94bcada63b977d02e
+    sha1sum: 5402b4edf1dbff8fff242d999325fc2be51e4b72
+    sha256sum: 2eacb9fce4447c22b8f7a24741534df952116b6efa9e6cdc807651b184432935
+    unpack:
+      format: 7z
+    provides:
+    - cdoom/Classic Doom 3.url
+    - cdoom/autoexec.cfg
+    - cdoom/cdoom.ico
+    - cdoom/cdoom_dll.pk4
+    - cdoom/cdoom_linux.pk4
+    - cdoom/cdoom_mac.pk4
+    - cdoom/cdoom_main.pk4
+    - cdoom/cdoom_maps.pk4
+    - cdoom/cdoom_models.pk4
+    - cdoom/cdoom_sounds.pk4
+    - cdoom/cdoom_textures.pk4
+    - cdoom/description.txt
+    - cdoom/docs/License.txt
+    - cdoom/docs/Readme.txt
+    - cdoom/docs/shot00002.jpg
+    - cdoom/fan_extras/cdoomsource_131/readme.txt
+    - cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
+    - cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Entity.h
+    - cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Game_local.h
+    - cdoom/fan_extras/cdoomsource_131/game/Item.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Item.h
+    - cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Misc.h
+    - cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Player.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Player.h
+    - cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Target.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/Target.h
+    - cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
+    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
+    - cdoom/fan_extras/classicdoom_001_1280x1024.jpg
+    - cdoom/fan_extras/wallpaper1.jpg
+    - cdoom/fan_extras/wallpaper2.jpg
+    - cdoom/fan_extras/wallpaper3.jpg
+
 cksums: |
   3705538269 21145838 doom3-linux-1.3.1.1304.x86.run
+  698551627  963485    base/game00.pk4
+  1740423552 1542504   base/game01.pk4
+  143642192  1789687   base/game02.pk4
+  3855177723 965775    base/game03.pk4
   3020409499 353159257 base/pak000.pk4
   1437100813 229649726 base/pak001.pk4
   2513550240 416937674 base/pak002.pk4
   1287221965 317590154 base/pak003.pk4
   1029570683 237752384 base/pak004.pk4
-  3302722352 552334 base/pak005.pk4
-  2130247405 218751 base/pak006.pk4
-  1446435975 192031 base/pak007.pk4
-  3955608439 12243 base/pak008.pk4
-  1892025358 99336 d3xp/pak001.pk4
+  3302722352 552334    base/pak005.pk4
+  2130247405 218751    base/pak006.pk4
+  1446435975 192031    base/pak007.pk4
+  3955608439 12243     base/pak008.pk4
+  _          17811     License.txt
+  691409431  1645741   d3xp/game01.pk4
+  2777755066 1888500   d3xp/game02.pk4
+  1141627363 1035335   d3xp/game03.pk4
+  1892025358 99336     d3xp/pak001.pk4
+
+  _ 50        cdoom/Classic Doom 3.url
+  _ 89        cdoom/autoexec.cfg
+  _ 22486     cdoom/cdoom.ico
+  _ 1037189   cdoom/cdoom_dll.pk4
+  _ 15435202  cdoom/cdoom_linux.pk4
+  _ 3703491   cdoom/cdoom_mac.pk4
+  _ 20610219  cdoom/cdoom_main.pk4
+  _ 29532860  cdoom/cdoom_maps.pk4
+  _ 72481549  cdoom/cdoom_models.pk4
+  _ 52829162  cdoom/cdoom_sounds.pk4
+  _ 15633643  cdoom/cdoom_textures.pk4
+  _ 23        cdoom/description.txt
+  _ 954       cdoom/docs/License.txt
+  _ 13502     cdoom/docs/Readme.txt
+  _ 45969     cdoom/docs/shot00002.jpg
+  _ 4938      cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
+  _ 137567    cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
+  _ 22440     cdoom/fan_extras/cdoomsource_131/game/Entity.h
+  _ 116116    cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
+  _ 28038     cdoom/fan_extras/cdoomsource_131/game/Game_local.h
+  _ 32962     cdoom/fan_extras/cdoomsource_131/game/Item.cpp
+  _ 5033      cdoom/fan_extras/cdoomsource_131/game/Item.h
+  _ 77425     cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
+  _ 17302     cdoom/fan_extras/cdoomsource_131/game/Misc.h
+  _ 104346    cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
+  _ 238594    cdoom/fan_extras/cdoomsource_131/game/Player.cpp
+  _ 24420     cdoom/fan_extras/cdoomsource_131/game/Player.h
+  _ 19831     cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
+
   _ 4587      base/D3BFGConfig.cfg
   _ 9064      base/_common.crc
   _ 80383351  base/_common.resources
@@ -1442,6 +1636,10 @@ cksums: |
 
 md5sums: |
   6325f0936f59420d33668754032141cb  doom3-linux-1.3.1.1304.x86.run
+  0a2843d900347a0bf8c2b556ff8652b2  base/game00.pk4
+  197f85d31672a7fb5a145e88e0ab3519  base/game01.pk4
+  425173e95a5a4115127662077e4e877b  base/game02.pk4
+  882c1b0aaad0bf62dde6df43048a9999  base/game03.pk4
   71b8d37b2444d3d86a36fd61783844fe  base/pak000.pk4
   4bc4f3ba04ec2b4f4837be40e840a3c1  base/pak001.pk4
   fa84069e9642ad9aa4b49624150cc345  base/pak002.pk4
@@ -1451,8 +1649,53 @@ md5sums: |
   a6e7003fa9dcc75073dc02b56399b370  base/pak006.pk4
   6319f086f930ec1618ab09b4c20c268c  base/pak007.pk4
   28750b7841de9453eb335bad6841a2a5  base/pak008.pk4
+  0e6dea0e5505da10e8fdf6c98a76271a  License.txt
+  5a83710af3530b4fb4ed86c19b9a1b2a  d3xp/game01.pk4
+  4ecfcd51e4b45534fc1968b1b69619d4  d3xp/game02.pk4
+  eb9b5260b8695a764832a30e32ded796  d3xp/game03.pk4
   a883fef0fd10aadeb73d34c462ff865d  d3xp/pak000.pk4
   06fc9be965e345587064056bf22236d2  d3xp/pak001.pk4
+
+  50f7eea4e35dc518cda28c54c7b3316c  cdoom/Classic Doom 3.url
+  8e4117000ed0d0c288be3f38a1f07cb1  cdoom/autoexec.cfg
+  f9a08966390b10bc234adb7202e40d27  cdoom/cdoom.ico
+  ebf2d22046d0c1e968c10d4e2fd61fc4  cdoom/cdoom_dll.pk4
+  8eccfaad75ac3554b01918bb0bfdb01d  cdoom/cdoom_linux.pk4
+  877c8d6428b492ac2e002f2d94a12d8e  cdoom/cdoom_mac.pk4
+  204b9f7ffe12073f8458f7b12728bb36  cdoom/cdoom_main.pk4
+  59025199c33249925657602ce7f1bac9  cdoom/cdoom_maps.pk4
+  4946368d3060001909dd2107c6f863c8  cdoom/cdoom_models.pk4
+  3c513546626c58321363130269e04077  cdoom/cdoom_sounds.pk4
+  b83d1225b8cdcf38a428f4cf24335fc4  cdoom/cdoom_textures.pk4
+  84c7bdf8a7210b617fe77497d5db6164  cdoom/description.txt
+  9db62a73aea3db208194bb4a2c1944b1  cdoom/docs/License.txt
+  d727b20e4a99c3855f34455c133671b1  cdoom/docs/Readme.txt
+  c39a3658c4d4addd7e04154843bc083d  cdoom/docs/shot00002.jpg
+  509b22ad5b18bbb04d6d5fb7bcd426b7  cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
+  61faa696fa033aa23e3b29e4500c70be  cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
+  ea5d2ab9438dd564725d76742f01d8bc  cdoom/fan_extras/cdoomsource_131/game/Entity.h
+  75e196b09da3d4fbe8f937c3df703a32  cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
+  17672596922cfc8b791293fbfc64da21  cdoom/fan_extras/cdoomsource_131/game/Game_local.h
+  a72d5273bd485011087b836aae5d456c  cdoom/fan_extras/cdoomsource_131/game/Item.cpp
+  ae6761508628b436b5604ea5d43a6333  cdoom/fan_extras/cdoomsource_131/game/Item.h
+  5ce340cde019bc17a269165a595aa858  cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
+  1555bbf2d03198d5c7253d59aa7bb7c3  cdoom/fan_extras/cdoomsource_131/game/Misc.h
+  46d0d22c607d941841cd84d2ad22a431  cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
+  8fccfffae00a720cfdba73850bf99fc9  cdoom/fan_extras/cdoomsource_131/game/Player.cpp
+  a74ffcebc8081be2d914c7517cd79194  cdoom/fan_extras/cdoomsource_131/game/Player.h
+  4122bccf922b9ae0d8873cba4ae583be  cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
+  9728bf226b15d1c97d4f911eb88bdc00  cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
+  69ecf2b841c7d0583b30f2c91bd9043c  cdoom/fan_extras/cdoomsource_131/game/Target.cpp
+  e4e045c0288d684283f76a1eb6ae0e47  cdoom/fan_extras/cdoomsource_131/game/Target.h
+  24d05f54b4b8a30e2ef06122a66cd7ba  cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
+  ce926e087af0187d94be7ea223b2e411  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
+  f216a04b5451826a7f2be58ca3e7dc5c  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
+  d4a799d5949e6e15236a3c71d408e7b5  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
+  4575ebd83cfd178caed42d433ae84698  cdoom/fan_extras/cdoomsource_131/readme.txt
+  834b5ad600a9e6a8e88276a186cae9f9  cdoom/fan_extras/classicdoom_001_1280x1024.jpg
+  6ea13fe278a85ae4a1a92b4f61ab9eb3  cdoom/fan_extras/wallpaper1.jpg
+  36879001ab7ebeb08221a5254f789e22  cdoom/fan_extras/wallpaper2.jpg
+  6954ef3418f244bf35f2f00a9d65d95a  cdoom/fan_extras/wallpaper3.jpg
 
   74730e3ed58d1a50bff218095d9dd8e7  base/D3BFGConfig.cfg
   00f89dc77d79f015d834019114f5fe74  base/_common.crc
@@ -2149,7 +2392,57 @@ sha1sums: |
   de543a0369dbae3d4181f2c727085adb89ef3531  base/pak006.pk4
   662a4014dabe26bcdd988877fadaff7d6a09725c  base/pak007.pk4
   c50bf2c97e989aa19ad27fe62e67c5cfc6ae2a8b  base/pak008.pk4
+  8514ef18e32b157e07a45400d6283ef5f555bc80  base/game00.pk4
+  711948baf6fa62aa8325ddfee4370282911977dd  base/game01.pk4
+  4b5e447c1fe0b9f87865e6b638a93e055e3c5e16  base/game02.pk4
+  5efc59540da641f58b17a1d410cee37ef95d3d46  base/game03.pk4
+  846b7e0d931d48d08ee45cf226a5dbe7dba59861  License.txt
+  97d21648b424f1f6f8c11456166fd6e38e24abe0  d3xp/game01.pk4
+  22c7f6117043b2ddd10d9076336cce67bfd15a90  d3xp/game02.pk4
+  46230705a87cf88f1fa4a6094abc3c7cdf1ab428  d3xp/game03.pk4
   0d9ca3d4532c0d412fbb64ab2885f52ef8852594  d3xp/pak001.pk4
+
+  7fdba41af0521cdb815cad272499b888a348acfd  cdoom/Classic Doom 3.url
+  c4b63b17223ba9ec77408eac0d2bad1370ce47c2  cdoom/autoexec.cfg
+  295abe683546900bdea4b73a2760545e03f6ad55  cdoom/cdoom.ico
+  a2e4d30f06fa64868c59aa8805c1644c4199371b  cdoom/cdoom_dll.pk4
+  05619f728c50e563c8daf1aea6b915a2a4fcc46d  cdoom/cdoom_linux.pk4
+  bd9f8e158604c937b99cd02fc7dca2022745b5e2  cdoom/cdoom_mac.pk4
+  e0158ab23856803b8999d16418f4bc8ba8a0274f  cdoom/cdoom_main.pk4
+  6ed75bbaad262d2ce263aefe0252e68f51ee50ce  cdoom/cdoom_maps.pk4
+  7c95dc757ec1dd9c8b2558efa7fede3f731cd463  cdoom/cdoom_models.pk4
+  e8f650c96c58b23cca4c747fb1ef9d1fc68bceb8  cdoom/cdoom_sounds.pk4
+  5d328e7dea28283515eabb6eb32f8b33d1192d07  cdoom/cdoom_textures.pk4
+  5bf5c1759793319b369fc259cd556b580ad989be  cdoom/description.txt
+  ff922feefc9aebd9e5acd680c18d52eeb2ec70e4  cdoom/docs/License.txt
+  a0e1a98224a1e153e7de55365ebeafffbb175c2a  cdoom/docs/Readme.txt
+  aad0d136bf69d16c0b4e7b286df6406c329b5d96  cdoom/docs/shot00002.jpg
+  60a340ad7e8b971db61b17c4a40af227355a6469  cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
+  e2bbe141340597cb5d5768a72ef940cce26a0d89  cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
+  29d84c56ad11eb394e6662e4b583c99add0420e9  cdoom/fan_extras/cdoomsource_131/game/Entity.h
+  41739b7c6a8ad05cdccaa7226d1f7065c3b5f201  cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
+  cfb4d297ba170c0607b5d78c59246f4eb93afea5  cdoom/fan_extras/cdoomsource_131/game/Game_local.h
+  64b11793192755c8123b066b550f8efb668c064d  cdoom/fan_extras/cdoomsource_131/game/Item.cpp
+  7fdc71059af7138ae102c85b821406352f398dce  cdoom/fan_extras/cdoomsource_131/game/Item.h
+  5261e4e0651d4909608eaaad175b392a7ee6d0b9  cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
+  168b15242a08f39414c4b83b3132d0b5bb89e410  cdoom/fan_extras/cdoomsource_131/game/Misc.h
+  6b74cf43cf3a24137ae6c071a4f52a2303c2ec1d  cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
+  6ca1608f483385484c0f696e8c35d3dd69cbcf79  cdoom/fan_extras/cdoomsource_131/game/Player.cpp
+  7756dce4a0e9b88743bda630d9c24dadee2d657b  cdoom/fan_extras/cdoomsource_131/game/Player.h
+  9c66a7777725eb01f60fea95162c5b8c3f981f1c  cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
+  ab4b0e5e23eb3c7124b894567d9bd1806e5be1a3  cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
+  596db8c732b24012738d807a6118aec7be550487  cdoom/fan_extras/cdoomsource_131/game/Target.cpp
+  6d75beaa41a9fe11590cc6e741e593f3804de576  cdoom/fan_extras/cdoomsource_131/game/Target.h
+  1882ebf04e2fdc029c9dd44d83115b83f58a9f96  cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
+  76b490b874cb644ff4d29cb39c13281d628eefd9  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
+  8aefcab7b3e48e14db9f1108525173dba985f24c  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
+  423bd84e968250ff66732c714f1c508e9f4f2779  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
+  15e8e9e223d5a1d84b0bb2b42ea0fa9d620c95bf  cdoom/fan_extras/cdoomsource_131/readme.txt
+  dff9e44df79295b8ac837a7d8f247e66da0e5388  cdoom/fan_extras/classicdoom_001_1280x1024.jpg
+  fe8cfebbb329f90f51c08829b9491e04e5eadf13  cdoom/fan_extras/wallpaper1.jpg
+  75107cead28f79d2519f007ad077fd7d56548932  cdoom/fan_extras/wallpaper2.jpg
+  cf248c648914d35e0adc47e5cae9a2dbce3276ed  cdoom/fan_extras/wallpaper3.jpg
+
   0a9d9a9baff7eb1760214cefdb76a506c41e9f39  base/D3BFGConfig.cfg
   183b4f08dba658cd07c2ba5ef9e2ba8e1c319d2f  base/_common.crc
   d90263e4dbdb2d2efcc2ff0d25c500b3d2d5657b  base/_common.resources
@@ -2836,6 +3129,10 @@ sha1sums: |
 
 sha256sums: |
   2f90dff20f2d3c0c47f17b3d6d45c4f0e7d27b986bf6084f21b85180cd1e03b4  doom3-linux-1.3.1.1304.x86.run
+  637985b519a35afb20bb4fa93e31fd3d4789bfaf75135b1ac3b15120cb4acc11  base/game00.pk4
+  510ed64ea6866f6c75d9d72a5e2735b863e4dfb559ac390b5b24a37f8ddd7813  base/game01.pk4
+  69ab195967817b0e22dbf8ab126ff073cfb56332c327da6789736e3074b73cc4  base/game02.pk4
+  25454a2d05204f09795ade93aac849cb119daf27395516704eb7bb9ea36cf9f6  base/game03.pk4
   220513bba8cc51191738b52b4ea320cd3376736e13147e240aa503622aa926ce  base/pak000.pk4
   dc85da3d731793f2973ffb7ef31be17057e88dee0b1157531c7f26a7b33c8fc0  base/pak001.pk4
   52d50dc300c87c484a0d7bc28c64777cafd7d581a91b5eeb6222991e328b7f1c  base/pak002.pk4
@@ -2845,7 +3142,50 @@ sha256sums: |
   a0d28ebada2697f5a8d4d1f06a705d2335044bab9aee805679a2bd0c3b7d59b1  base/pak006.pk4
   e5d57ede9def75c7cbb0542ceef6ad56147c9a2162c8517f716410b9092965a0  base/pak007.pk4
   57be0712bb180943ad51757b48486bc590e9242fd885704771c0a7102953d4b7  base/pak008.pk4
+  651ec98b9af25504b65bab41c7a8957b57d9adcb0fba73525bd5e79610c8b222  License.txt
+  915c2a7cbfce211069415bc83e64de617e8accf4643dc023931fb1317b175104  d3xp/game01.pk4
+  2bd0eab08bada630c9322789cbca844a335da4c7dd6ea7cfd836dee72b047252  d3xp/game02.pk4
+  f07871570b18617d1b2692360102e0509a1e7aaeca755e879fb2ca9f1cc54018  d3xp/game03.pk4
   2ba245254b8ed3440e252f6e2e24af2c6343d7c312f9a9a7e73509abdaf13e49  d3xp/pak001.pk4
+
+  43561eabe56575aa74ba89a0650158bbf11bb42f91d1d11d9d77fa04fc7d2ed3  cdoom/Classic Doom 3.url
+  79918fe28d234e47124c5118117d8b341e133a1c09f06377112ae401217740e5  cdoom/autoexec.cfg
+  cb42810ea29d1e0b775fde33f9973cc1d08b6350c11bf24693c200810af7e089  cdoom/cdoom.ico
+  52ce6551669118c1182d1b016ae914acd863ec1060f05528d60c62be592dbe67  cdoom/cdoom_dll.pk4
+  0802d6a3b9fb0975b8fba775a0227c8878de83d04f2fb9344609cf81cf257335  cdoom/cdoom_linux.pk4
+  746ccc61f35cfe1a6dfef2c401ba05e842d3eef4cbd73c85122c0f1be85c2a23  cdoom/cdoom_mac.pk4
+  400142d466ffd39b9fd38c66be38a57d39563b067bdbedc05380d65748de6ffc  cdoom/cdoom_main.pk4
+  3128bc1deb1ef70bf7732a82315b45844022933c83fe362b0e51d2eb24d113f3  cdoom/cdoom_maps.pk4
+  0a66779d26bcf1534eadfd24146f74f4ecb69de1cbbb9a4cd502029c6e46b15b  cdoom/cdoom_models.pk4
+  a3e947329cc27bfaceded74470bfa9064a518ab422ba19b8e4909cfb681e1443  cdoom/cdoom_sounds.pk4
+  92153ad62f1f1d213995f4bc6cc3209f7da65cebbcee8d6b5c4bcff7c9290536  cdoom/cdoom_textures.pk4
+  656b8cec2b95c967174d35eede80bd5365877f0552cd66dec5063cf63a0194fa  cdoom/description.txt
+  1f27d4fd0004c8c5135f143c744bb740ae07584bb01ab5cfd0455f017608840b  cdoom/docs/License.txt
+  ae5c8c79a0820b3f7b714df942d4d0907d3758183dc065e84fb7a33712b46ee5  cdoom/docs/Readme.txt
+  6b215d4b462dad10a8bee47126fd84b8cb20c020f3857ee28f834af8b3c10ade  cdoom/docs/shot00002.jpg
+  45d23583d5bf1edc0cea6ce368b75ea39d0c624db41c8eb2baaf2dd04b937890  cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
+  9d8c4486e10f5a0372c21874b469760c6fbbe867c248cb2ebe38201530176aee  cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
+  cffe16b32f89dfad5d78da547d552877f9700cb1779fa84adc1f4c11e47a4aad  cdoom/fan_extras/cdoomsource_131/game/Entity.h
+  3b6613e7b8e3c91d453beca27a59a258244015a010f8d27b8587261f690c1efa  cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
+  cad2ccf33a6325962c24b8564a53027a84743d6a16a39f258f9e128ceae74973  cdoom/fan_extras/cdoomsource_131/game/Game_local.h
+  64bbb0f87969adbcec7f4236da69c2cd2c79b3c92759cdfe83d132776db3c1cc  cdoom/fan_extras/cdoomsource_131/game/Item.cpp
+  f1e652be1279ffd99f559b1a51c77bc88d6d67cf06a806a54bc92faa1ef0f21f  cdoom/fan_extras/cdoomsource_131/game/Item.h
+  2d79e918be8b57dc41c9b7b71d4fcbc2298b452eae202d1e285c88b246c9d5a8  cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
+  baf11d0b6fd0284f680468b834821e3f95eef8c0d333a8f3909e16323e4a7d76  cdoom/fan_extras/cdoomsource_131/game/Misc.h
+  943eebeb49d009f78b4b4125bee673a257de546e49ccf669cfd3388ca407a73d  cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
+  effcfb55612691f115346fe28a26c35acfc27a3ef976e34ebd97acf3255f73d4  cdoom/fan_extras/cdoomsource_131/game/Player.cpp
+  04867b9b3c0faf46c6ad505d6054e3d16f97bd160a6a53bb3ac274e2904aee9b  cdoom/fan_extras/cdoomsource_131/game/Player.h
+  627faa3ab9498291f147191226031d35383e7bde75e0e3e88683b810317858fd  cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
+  8ce9a640adf65cf3c9d438ee999d7eb66343406f74ff1094a003862047dc9734  cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
+  456c4ad15a503b38eb51588980a6f9a93c8ae417ff812c8316c1eb50d978700f  cdoom/fan_extras/cdoomsource_131/game/Target.cpp
+  0322647c44148c3fd6053bd8a1222c68724f5d5b20ba7d8e286be06aa4e8a07c  cdoom/fan_extras/cdoomsource_131/game/Target.h
+  c1ca1ce2352272b8ad0a8719209893eab6af0e700b4635f7f2a7a7a64ac51a51  cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
+  860d3b652f194df3e4101046f267c7dd03525134bfaf311c0b5439393bae9e03  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
+  eedacabcef911efea22ccdf3a5b3e0017ae400730e71bded961bad3f81668840  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
+  dbfe72b2e473d63eb63f80f498a9263fdae8db6c9e6accbe4b6676f1717360d3  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
+  4092a0be828f7002673bcf985d1b0ca975f71edd2eda701f648ed4fa5b638c28  cdoom/fan_extras/cdoomsource_131/readme.txt
+  ab946b66ef97d736b9e7045f89e2bbc1b400b0c5b93f20a03307747164751a50  cdoom/fan_extras/classicdoom_001_1280x1024.jpg
+
   358600c024093d3bf16065160329903e8c75caf47c57ca62b6110b19c0e49002  base/D3BFGConfig.cfg
   653f3aa478e1a179e6b307ba0077c402d4e9af3c6ffd441487f4678d7ea35a4f  base/_common.crc
   b683ac1b1d3f0ca6b92111db85fc77ece9d5c034ce5461eb8a7c4add8e239a22  base/_common.resources
