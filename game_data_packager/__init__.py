@@ -1819,16 +1819,15 @@ class GameData(object):
         if 'Description' not in control:
             longname = package.longname or self.longname
 
-            if package.expansion_for:
-                short_desc = 'extra data for ' + self.longname
-            else:
-                short_desc = 'data for ' + longname
+            short_desc = 'data for ' + longname
 
             long_desc =  ' This package was built using game-data-packager. It contains\n'
             long_desc += ' proprietary game data and must not be redistributed.\n'
             long_desc += ' .\n'
 
             if package.expansion_for:
+                game_name = self.packages[package.expansion_for].longname or self.longname
+                long_desc += ' Game: ' + game_name + '\n'
                 long_desc += ' Expansion: ' + longname
             else:
                 long_desc += ' Game: ' + longname
