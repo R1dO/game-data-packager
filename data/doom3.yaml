@@ -2,16 +2,21 @@
 ---
 compress-deb: false
 longname: 'Doom 3 (original or BFG Edition)'
+try_repack_from: [/usr/local/share/dhewm3]
 
 packages:
   doom3-data:
     longname: 'Doom 3'
     copyright: © 2004 id Software
     debian:
-      engine: doom3-dhewm3
+      engine: dhewm3
     steam:
       id: 9050
     install:
+    - base/game00.pk4
+    - base/game01.pk4
+    - base/game02.pk4
+    - base/game03.pk4
     - base/pak000.pk4
     - base/pak001.pk4
     - base/pak002.pk4
@@ -21,6 +26,8 @@ packages:
     - base/pak006.pk4
     - base/pak007.pk4
     - base/pak008.pk4
+    optional:
+    - License.txt
 
   doom3-resurrection-data:
     longname: 'Doom 3: Resurrection of Evil'
@@ -30,6 +37,9 @@ packages:
       id: 9070
     install_to: usr/share/games/doom3
     install:
+    - d3xp/game01.pk4
+    - d3xp/game02.pk4
+    - d3xp/game03.pk4
     - d3xp/pak000.pk4
     - d3xp/pak001.pk4
 
@@ -783,6 +793,11 @@ packages:
     - base/wads/DOOM.WAD
 
 files:
+  License.txt:
+    install_to: $docdir
+    install_as: license.txt
+    distinctive_name: false
+
   cdoom/docs/License.txt:
     install_to: $docdir
     install_as: license.txt
@@ -805,20 +820,17 @@ files:
     unpack:
       format: 7z
     provides:
+    - base/game01.pk4
+    - base/game02.pk4
+    - base/game03.pk4
     - base/pak005.pk4
     - base/pak006.pk4
     - base/pak007.pk4
     - base/pak008.pk4
-    - d3xp/pak001.pk4
-    # ???
-    - base/game01.pk4
-    - base/game02.pk4
-    - base/game03.pk4
     - d3xp/game01.pk4
     - d3xp/game02.pk4
     - d3xp/game03.pk4
-    - base/zpak003.pk4
-    - d3xp/zpak101.pk4
+    - d3xp/pak001.pk4
 
   classic_doom_3_1.3.1.exe:
     size: 212439198
@@ -870,6 +882,10 @@ files:
     - cdoom/fan_extras/wallpaper3.jpg
 
 cksums: |
+  698551627  963485    base/game00.pk4
+  1740423552 1542504   base/game01.pk4
+  143642192  1789687   base/game02.pk4
+  3855177723 965775    base/game03.pk4
   3020409499 353159257 base/pak000.pk4
   1437100813 229649726 base/pak001.pk4
   2513550240 416937674 base/pak002.pk4
@@ -879,6 +895,11 @@ cksums: |
   2130247405 218751    base/pak006.pk4
   1446435975 192031    base/pak007.pk4
   3955608439 12243     base/pak008.pk4
+  _          17811     License.txt
+  691409431  1645741   d3xp/game01.pk4
+  2777755066 1888500   d3xp/game02.pk4
+  1141627363 1035335   d3xp/game03.pk4
+  1892025358 99336     d3xp/pak001.pk4
 
   _ 50        cdoom/Classic Doom 3.url
   _ 89        cdoom/autoexec.cfg
@@ -1594,6 +1615,10 @@ cksums: |
   _ 3819855   base/wads/NERVE.WAD
 
 md5sums: |
+  0a2843d900347a0bf8c2b556ff8652b2  base/game00.pk4
+  197f85d31672a7fb5a145e88e0ab3519  base/game01.pk4
+  425173e95a5a4115127662077e4e877b  base/game02.pk4
+  882c1b0aaad0bf62dde6df43048a9999  base/game03.pk4
   71b8d37b2444d3d86a36fd61783844fe  base/pak000.pk4
   4bc4f3ba04ec2b4f4837be40e840a3c1  base/pak001.pk4
   fa84069e9642ad9aa4b49624150cc345  base/pak002.pk4
@@ -1603,6 +1628,10 @@ md5sums: |
   a6e7003fa9dcc75073dc02b56399b370  base/pak006.pk4
   6319f086f930ec1618ab09b4c20c268c  base/pak007.pk4
   28750b7841de9453eb335bad6841a2a5  base/pak008.pk4
+  0e6dea0e5505da10e8fdf6c98a76271a  License.txt
+  5a83710af3530b4fb4ed86c19b9a1b2a  d3xp/game01.pk4
+  4ecfcd51e4b45534fc1968b1b69619d4  d3xp/game02.pk4
+  eb9b5260b8695a764832a30e32ded796  d3xp/game03.pk4
   a883fef0fd10aadeb73d34c462ff865d  d3xp/pak000.pk4
   06fc9be965e345587064056bf22236d2  d3xp/pak001.pk4
 
@@ -2332,6 +2361,10 @@ md5sums: |
   967d5ae23daf45196212ae1b605da3b0  base/wads/NERVE.WAD
 
 sha1sums: |
+  8514ef18e32b157e07a45400d6283ef5f555bc80  base/game00.pk4
+  711948baf6fa62aa8325ddfee4370282911977dd  base/game01.pk4
+  4b5e447c1fe0b9f87865e6b638a93e055e3c5e16  base/game02.pk4
+  5efc59540da641f58b17a1d410cee37ef95d3d46  base/game03.pk4
   3b3cdd19ec394fb5c1ae271993f181097e5c6085  base/pak000.pk4
   76e477e61b0248ce5181fef582212a5332c34c20  base/pak001.pk4
   cfa56ff89255f9bd56b9e40b24f4d54b76f9caee  base/pak002.pk4
@@ -2341,6 +2374,11 @@ sha1sums: |
   de543a0369dbae3d4181f2c727085adb89ef3531  base/pak006.pk4
   662a4014dabe26bcdd988877fadaff7d6a09725c  base/pak007.pk4
   c50bf2c97e989aa19ad27fe62e67c5cfc6ae2a8b  base/pak008.pk4
+  846b7e0d931d48d08ee45cf226a5dbe7dba59861  License.txt
+  97d21648b424f1f6f8c11456166fd6e38e24abe0  d3xp/game01.pk4
+  22c7f6117043b2ddd10d9076336cce67bfd15a90  d3xp/game02.pk4
+  46230705a87cf88f1fa4a6094abc3c7cdf1ab428  d3xp/game03.pk4
+  0d9ca3d4532c0d412fbb64ab2885f52ef8852594  d3xp/pak001.pk4
 
   7fdba41af0521cdb815cad272499b888a348acfd  cdoom/Classic Doom 3.url
   c4b63b17223ba9ec77408eac0d2bad1370ce47c2  cdoom/autoexec.cfg
@@ -3068,6 +3106,10 @@ sha1sums: |
   3451288383fb16e196f273d9f85d58c1fda97bf4  base/wads/NERVE.WAD
 
 sha256sums: |
+  637985b519a35afb20bb4fa93e31fd3d4789bfaf75135b1ac3b15120cb4acc11  base/game00.pk4
+  510ed64ea6866f6c75d9d72a5e2735b863e4dfb559ac390b5b24a37f8ddd7813  base/game01.pk4
+  69ab195967817b0e22dbf8ab126ff073cfb56332c327da6789736e3074b73cc4  base/game02.pk4
+  25454a2d05204f09795ade93aac849cb119daf27395516704eb7bb9ea36cf9f6  base/game03.pk4
   220513bba8cc51191738b52b4ea320cd3376736e13147e240aa503622aa926ce  base/pak000.pk4
   dc85da3d731793f2973ffb7ef31be17057e88dee0b1157531c7f26a7b33c8fc0  base/pak001.pk4
   52d50dc300c87c484a0d7bc28c64777cafd7d581a91b5eeb6222991e328b7f1c  base/pak002.pk4
@@ -3077,6 +3119,11 @@ sha256sums: |
   a0d28ebada2697f5a8d4d1f06a705d2335044bab9aee805679a2bd0c3b7d59b1  base/pak006.pk4
   e5d57ede9def75c7cbb0542ceef6ad56147c9a2162c8517f716410b9092965a0  base/pak007.pk4
   57be0712bb180943ad51757b48486bc590e9242fd885704771c0a7102953d4b7  base/pak008.pk4
+  651ec98b9af25504b65bab41c7a8957b57d9adcb0fba73525bd5e79610c8b222  License.txt
+  915c2a7cbfce211069415bc83e64de617e8accf4643dc023931fb1317b175104  d3xp/game01.pk4
+  2bd0eab08bada630c9322789cbca844a335da4c7dd6ea7cfd836dee72b047252  d3xp/game02.pk4
+  f07871570b18617d1b2692360102e0509a1e7aaeca755e879fb2ca9f1cc54018  d3xp/game03.pk4
+  2ba245254b8ed3440e252f6e2e24af2c6343d7c312f9a9a7e73509abdaf13e49  d3xp/pak001.pk4
 
   43561eabe56575aa74ba89a0650158bbf11bb42f91d1d11d9d77fa04fc7d2ed3  cdoom/Classic Doom 3.url
   79918fe28d234e47124c5118117d8b341e133a1c09f06377112ae401217740e5  cdoom/autoexec.cfg
