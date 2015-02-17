@@ -188,7 +188,7 @@ md5sums: |
 
   bc57c4db2ab814f3bb115ec5702b62f4  gfupd101.exe
 
-  # Disc A
+  # Disc A - english version
   51c58777a2a8ee5011a3d8e00176e5ba  flower.ico
   c706804922ef0913a4e5bfa651057125  gf.ico
   00d4aa4161d81f939e268ef368d53ff5  grim fandango - manual.pdf
@@ -219,6 +219,11 @@ md5sums: |
   fea10f11abe3ac32d53e4798f80d5ba0  year0mus.lab
   c555c95b0f7557617da364091589d6ea  year1mus.lab
   df556a8fc151f6f48bb68a8cef855e7d  year3mus.lab
+
+  # https://github.com/residualvm/residualvm/blob/master/engines/grim/md5check.cpp
+  # documents many more md5sums for other versions supported by residualvm:
+  # - english/italian/german/french/spanish
+  # - patched or unpatch
 
 sha1sums: |
   3c1dc57de81be733451ab2f81a2fec6bc23388ad  gfdemo01.lab
