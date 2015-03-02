@@ -9,6 +9,8 @@ gameid: tentacle
 packages:
   dayofthetentacle-data:
     install_to: usr/share/games/day-of-the-tentacle
+    debian:
+      engine: scummvm
     install:
     - monster.sof
     - tentacle.000
