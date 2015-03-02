@@ -9,8 +9,6 @@ plugin: scummvm_common
 gameid: ft
 packages:
   full-throttle-data:
-    debian:
-      engine: scummvm
     install:
     - DATA/BENCUT.NUT
     - DATA/BENFLIP.SAN

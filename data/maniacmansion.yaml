@@ -7,8 +7,6 @@ plugin: scummvm_common
 gameid: maniac
 packages:
   maniacmansion-en-data:
-    debian:
-      engine: scummvm
     install:
     - 00.lfl
     - 01.lfl
@@ -67,8 +65,6 @@ packages:
 
   maniacmansion-fr-data:
     longname: Maniac Mansion (Fr)
-    debian:
-      engine: scummvm
     install:
     - 00.lfl_fr
     - 01.lfl_fr
