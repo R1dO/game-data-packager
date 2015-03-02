@@ -260,6 +260,7 @@ class WantedFile(HashedFile):
         self.download = None
         self.install_as = name
         self.install_to = None
+        self.license = False
         self._look_for = []
         self._provides = set()
         self._size = None
@@ -302,6 +303,7 @@ class WantedFile(HashedFile):
             'download': self.download,
             'install_as': self.install_as,
             'install_to': self.install_to,
+            'license': self.license,
             'look_for': list(self.look_for),
             'name': self.name,
             'provides': list(self.provides),
@@ -795,6 +797,7 @@ class GameData(object):
                     'download',
                     'install_as',
                     'install_to',
+                    'license',
                     'look_for',
                     'md5',
                     'provides',
@@ -1553,10 +1556,18 @@ class GameData(object):
             o.write('are user-supplied files with copyright\n')
             o.write(package.copyright or self.copyright)
             o.write(', with all rights reserved.\n')
-            # this may either be a real file or a symlink (rott-extreme-data)
-            #
-            #The full license appears in /usr/share/doc/PACKAGE/<somefile>,
-            #/usr/share/doc/PACKAGE/<some-other-file>
+
+            licenses = set()
+            for f in package.install | package.optional:
+                 if self.file_status[f] is FillResult.IMPOSSIBLE:
+                     continue
+                 if self.files[f].license:
+                     licenses.add("/usr/share/doc/%s/%s" % (package.name, self.files[f].name))
+            if licenses:
+                o.write('\nThe full license appears in ')
+                o.write(',\n'.join(licenses))
+                o.write('\n')
+
             for line in i.readlines():
                 if line.startswith('#'):
                     continue
