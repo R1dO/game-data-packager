@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+longname: Day Of The Tentacle
+copyright: © 1993 LucasArts
+
+plugin: scummvm_common
+gameid: tentacle
+
+packages:
+  dayofthetentacle-data:
+    install_to: usr/share/games/day-of-the-tentacle
+    install:
+    - monster.sof
+    - tentacle.000
+    - tentacle.001
+
+cksums: |
+  _ 94948005  monster.sof
+  _ 7932      tentacle.000
+  _ 11358470  tentacle.001
+md5sums: |
+  7eb02d6c9a428da90ee6ca1b7cb1de49  monster.sof
+  4167a92a1d46baa4f4127d918d561f88  tentacle.000
+  c5d451e659e0915ac02f5807de3a0bc0  tentacle.001
+sha1sums: |
+  dbbd92bc075b0197503cf3817a867312ff14047e  monster.sof
+  c536e34f3a1ff638ead416be3359a264fd5aac3b  tentacle.000
+  f84f3ca1a13c4059c86e253dbfe654c748b79567  tentacle.001
+sha256sums: |
+  19ac155219688aabc98ad5f00b212ef0e75ef48e2bf85ee8bebf53aaf8cfefa6  monster.sof
+  c89a825fcb2c4ea4d9678feab9c23e924ba578293d25a5d098cb3cb39ac86cb9  tentacle.000
+  5bc34e98fd0c76e895ef9c7c39477da71cb012992d2b53152daaf17df188a863  tentacle.001
+...
+
