@@ -767,9 +767,16 @@ files:
     - Help/DedicatedServer.html
     - Help/BotCommands.html
 
+  Help/Q3A_EULA.txt:
+    license: true
+
   Help/Q3A_EULA.txt_loki:
     look_for: [Help/Q3A_EULA.txt]
     install_as: Help/Q3A_EULA.txt
+    license: true
+
+  Help/Q3A_CELA.txt:
+    license: true
 
 cksums: |
   2320976398 49289300 linuxq3ademo-1.11-6.x86.gz.sh

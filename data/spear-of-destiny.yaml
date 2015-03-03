@@ -41,7 +41,7 @@ packages:
       2382785751 305891  vgagraph.sdm
       3240931844 402     vgahead.sdm
       3002732200 730624  vswap.sdm
-    install:
+    optional:
     - sod.doc
 
   spear-of-destiny-data:
@@ -135,6 +135,7 @@ files:
 
   sod.doc:
     install_to: $docdir
+    license: true
 
 cksums: |
   2532954622 6852    sod.doc

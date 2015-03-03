@@ -132,20 +132,24 @@ files:
     distinctive_name: false
     install_as: licinfo.txt
     install_to: $docdir
+    license: true
 
   licinfo.txt_101_cd:
     distinctive_name: false
     install_as: licinfo.txt
     install_to: $docdir
+    license: true
 
   license.txt_mp12_cd:
     distinctive_name: false
     install_as: license.txt
     install_to: $docdir
+    license: true
 
   slicnse.txt:
     distinctive_name: false
     install_to: $docdir
+    license: true
 
   manual.txt_101_cd:
     distinctive_name: false
@@ -161,6 +165,7 @@ files:
     distinctive_name: false
     install_to: $docdir
     install_as: rlicnse.txt
+    license: true
 
   armagon/manual.htm:
     install_to: $docdir

@@ -1003,6 +1003,7 @@ files:
     distinctive_name: false
     install_as: license.txt
     install_to: $docdir
+    license: true
 
   readme.txt_3.14_demo:
     distinctive_name: false
@@ -1018,6 +1019,7 @@ files:
     distinctive_name: false
     install_as: license.txt
     install_to: $docdir
+    license: true
 
   readme.txt_3.20:
     distinctive_name: false
@@ -1026,6 +1028,7 @@ files:
 
   Commercial Exploitation.doc:
     install_to: $docdir
+    license: true
 
   Manual.html:
     distinctive_name: false
@@ -1033,9 +1036,11 @@ files:
 
   QII License Information.doc:
     install_to: $docdir
+    license: true
 
   Quake II License.doc:
     install_to: $docdir
+    license: true
 
   Release Notes.doc:
     distinctive_name: false
@@ -1043,9 +1048,11 @@ files:
 
   commexp.txt:
     install_to: $docdir
+    license: true
 
   licinfo.txt:
     install_to: $docdir
+    license: true
 
   readme.doc:
     distinctive_name: false
@@ -1101,6 +1108,7 @@ files:
     distinctive_name: false
     install_to: $docdir
     install_as: game_code_license.txt
+    license: true
     look_for:
     - LICENSE
     - game_code_license.txt
@@ -1173,6 +1181,7 @@ files:
     distinctive_name: false
     install_to: $docdir
     install_as: data_license.txt
+    license: true
     look_for:
     - xatrix/docs/license.txt
     - data_license.txt
@@ -1181,6 +1190,7 @@ files:
     distinctive_name: false
     install_to: $docdir
     install_as: data_license.doc
+    license: true
     look_for:
     - rogue/docs/license.doc
     - data_license.doc
