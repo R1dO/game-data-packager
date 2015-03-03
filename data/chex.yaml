@@ -1,0 +1,41 @@
+%YAML 1.2
+---
+# Version reference:
+# http://doomwiki.org/wiki/CHEX.WAD
+# http://doomwiki.org/wiki/CHEX2.WAD
+
+longname: Chex Quest (including Chex Quest 2)
+copyright: © 1996 Digital Café
+plugin: doom_common
+
+packages:
+  chexquest-data:
+    longname: Chex Quest
+    overide_fill_docs: false
+    debian:
+      engine: "chocolate-doom | doom-engine"
+    install_to: usr/share/games/doom
+    install:
+    - chex.wad
+
+  chexquest2-data:
+    longname: "Chex Quest 2: Flemoids Take Chextropolis"
+    overide_fill_docs: false
+    copyright: © 1997 Digital Café
+    expansion_for: chexquest-data
+    install_to: usr/share/games/doom
+    install:
+    - chex2.wad
+
+cksums: |
+  _ 12361532  chex.wad
+  _  7585664  chex2.wad
+
+md5sums: |
+  25485721882b050afa96a56e5758dd52  chex.wad
+  fdc4ffa57e1983e30912c006284a3e01  chex2.wad
+sha1sums: |
+  eca9cff1014ce5081804e193588d96c6ddb35432  chex.wad
+  d5b970834b8ff364d377ef04eb7d12fa6035e10a  chex2.wad
+sha256sums: |
+  d8eb5277918883f490fb1a4be3c9a8588df2dbaee6dc4beb8df4929148bbffb1  chex.wad

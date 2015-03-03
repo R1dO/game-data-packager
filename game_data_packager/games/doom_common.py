@@ -82,9 +82,10 @@ class DoomGameData(GameData):
 
             package.engine = self.yaml['packages'][package.name].get(
                     'doom_engine')
-
             package.create_desktop_file = self.yaml['packages'][package.name].get(
                     'create_desktop_file', True)
+            package.overide_fill_docs = self.yaml['packages'][package.name].get(
+                    'overide_fill_docs', True)
 
     def construct_package(self, binary):
         return WadPackage(binary)
@@ -110,6 +111,10 @@ class DoomGameData(GameData):
         control['Description'] = desc
 
     def fill_docs(self, package, docdir):
+        if not package.overide_fill_docs:
+            super(DoomGameData, self).fill_docs(package, docdir)
+            return
+
         main_wad = package.main_wad
 
         copy_with_substitutions(
