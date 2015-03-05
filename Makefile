@@ -30,6 +30,10 @@ default: $(DIRS)
 		o=out/$${x#data/}; \
 		convert $$x $${o%.xpm}.png || exit $$?; \
 	done
+	for x in data/*.svg; do \
+		o=out/$${x#data/}; \
+		gzip -c $$x > $${o%.svg}.svgz || exit $$?; \
+	done
 
 $(DIRS):
 	mkdir -p $@
@@ -47,6 +51,7 @@ clean:
 	rm -f ./out/*.preinst.in
 	rm -f ./out/*.README.Debian.in
 	rm -f ./out/*.png
+	rm -f ./out/*.svgz
 	rm -f ./out/*.yaml
 	rm -rf game_data_packager/__pycache__
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
