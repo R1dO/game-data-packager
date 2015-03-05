@@ -1544,16 +1544,38 @@ class GameData(object):
              open(copy_to, 'w', encoding='utf-8') as o:
             o.write('The package %s was generated using '
                     'game-data-packager.\n\n' % package.name)
-            o.write('The files under "%s"\n' % package.install_to)
+
+            count_usr = 0
+            count_doc = 0
             for f in package.install | package.optional:
                  if self.file_status[f] is FillResult.IMPOSSIBLE:
                      continue
                  install_to = self.files[f].install_to
                  if install_to and install_to.startswith('$docdir'):
-                     o.write('and "/usr/share/doc/%s/"' % package.name)
-                     o.write(' (except for this copyright file)\n')
-                     break
-            o.write('are user-supplied files with copyright\n')
+                     count_doc +=1
+                 else:
+                     count_usr +=1
+                     # doesn't have to be a .wad, ROTT's EXTREME.RTL
+                     # or any other one-datafile .deb would qualify too
+                     main_wad = self.files[f].install_as
+
+            if count_usr == 1:
+                o.write('"/%s/%s"\n' % (package.install_to, main_wad))
+            else:
+                o.write('The files under "/%s/"\n' % package.install_to)
+
+            if count_doc:
+                if count_usr == 1:
+                    o.write('and the files under "/usr/share/doc/%s/"\n' % package.name)
+                else:
+                    o.write('and "/usr/share/doc/%s/"\n' % package.name)
+                o.write('(except for this copyright file & changelog.gz)\n')
+
+            if count_usr == 1 and count_doc == 0:
+                o.write('is a user-supplied file with copyright\n')
+            else:
+                o.write('are user-supplied files with copyright\n')
+
             o.write(package.copyright or self.copyright)
             o.write(', with all rights reserved.\n')
 
@@ -1562,7 +1584,7 @@ class GameData(object):
                  if self.file_status[f] is FillResult.IMPOSSIBLE:
                      continue
                  if self.files[f].license:
-                     licenses.add("/usr/share/doc/%s/%s" % (package.name, self.files[f].name))
+                     licenses.add("/usr/share/doc/%s/%s" % (package.name, self.files[f].install_as))
             if licenses:
                 o.write('\nThe full license appears in ')
                 o.write(',\n'.join(licenses))
