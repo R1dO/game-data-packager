@@ -145,8 +145,14 @@ class DoomGameData(GameData):
             mkdir_p(pixdir)
             # FIXME: would be nice if non-Doom games could replace this
             # Cacodemon with something appropriate
-            install_data(os.path.join(DATADIR, 'doom2.png'),
-                    os.path.join(pixdir, '%s.png' % wad_base))
+            for basename in (package.name, self.shortname, 'doom-common'):
+                from_ = os.path.join(DATADIR, basename + '.png')
+                if os.path.exists(from_):
+                    install_data(from_,
+                        os.path.join(pixdir, '%s.png' % wad_base))
+                    break
+            else:
+                raise AssertionError('doom-common.png should have existed')
 
             docdir = os.path.join(destdir, 'usr/share/doc/%s' % package.name)
             mkdir_p(docdir)
