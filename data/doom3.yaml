@@ -37,8 +37,9 @@ packages:
     - d3xp/pak001.pk4
 
   doom3-classic-data:
+    DISABLED:
     longname: 'Classic Doom 3 (mod)'
-    copyright: © id Software
+    copyright: © 2007 id Software
     expansion_for: doom3-data
     install_to: usr/share/games/doom3
     install:
@@ -48,10 +49,6 @@ packages:
     - cdoom/cdoom_models.pk4
     - cdoom/cdoom_sounds.pk4
     - cdoom/cdoom_textures.pk4
-    - cdoom/cdoom_linux.pk4
-    # TODO: check if those two are needed
-    - cdoom/cdoom_dll.pk4
-    - cdoom/cdoom_mac.pk4
     optional:
     - cdoom/cdoom.ico
     - cdoom/Classic Doom 3.url
@@ -65,8 +62,9 @@ packages:
     - cdoom/fan_extras/wallpaper3.jpg
 
   doom3-classic-dev:
+    DISABLED:
     longname: 'Classic Doom 3 (devkit)'
-    copyright: © id Software
+    copyright: © 2007 id Software
     expansion_for: doom3-classic-data
     install_to: usr/share/games/doom3
     install:
@@ -851,9 +849,6 @@ files:
     - cdoom/Classic Doom 3.url
     - cdoom/autoexec.cfg
     - cdoom/cdoom.ico
-    - cdoom/cdoom_dll.pk4
-    - cdoom/cdoom_linux.pk4
-    - cdoom/cdoom_mac.pk4
     - cdoom/cdoom_main.pk4
     - cdoom/cdoom_maps.pk4
     - cdoom/cdoom_models.pk4
@@ -907,9 +902,6 @@ cksums: |
   _ 50        cdoom/Classic Doom 3.url
   _ 89        cdoom/autoexec.cfg
   _ 22486     cdoom/cdoom.ico
-  _ 1037189   cdoom/cdoom_dll.pk4
-  _ 15435202  cdoom/cdoom_linux.pk4
-  _ 3703491   cdoom/cdoom_mac.pk4
   _ 20610219  cdoom/cdoom_main.pk4
   _ 29532860  cdoom/cdoom_maps.pk4
   _ 72481549  cdoom/cdoom_models.pk4
@@ -1635,9 +1627,6 @@ md5sums: |
   50f7eea4e35dc518cda28c54c7b3316c  cdoom/Classic Doom 3.url
   8e4117000ed0d0c288be3f38a1f07cb1  cdoom/autoexec.cfg
   f9a08966390b10bc234adb7202e40d27  cdoom/cdoom.ico
-  ebf2d22046d0c1e968c10d4e2fd61fc4  cdoom/cdoom_dll.pk4
-  8eccfaad75ac3554b01918bb0bfdb01d  cdoom/cdoom_linux.pk4
-  877c8d6428b492ac2e002f2d94a12d8e  cdoom/cdoom_mac.pk4
   204b9f7ffe12073f8458f7b12728bb36  cdoom/cdoom_main.pk4
   59025199c33249925657602ce7f1bac9  cdoom/cdoom_maps.pk4
   4946368d3060001909dd2107c6f863c8  cdoom/cdoom_models.pk4
@@ -2375,9 +2364,6 @@ sha1sums: |
   7fdba41af0521cdb815cad272499b888a348acfd  cdoom/Classic Doom 3.url
   c4b63b17223ba9ec77408eac0d2bad1370ce47c2  cdoom/autoexec.cfg
   295abe683546900bdea4b73a2760545e03f6ad55  cdoom/cdoom.ico
-  a2e4d30f06fa64868c59aa8805c1644c4199371b  cdoom/cdoom_dll.pk4
-  05619f728c50e563c8daf1aea6b915a2a4fcc46d  cdoom/cdoom_linux.pk4
-  bd9f8e158604c937b99cd02fc7dca2022745b5e2  cdoom/cdoom_mac.pk4
   e0158ab23856803b8999d16418f4bc8ba8a0274f  cdoom/cdoom_main.pk4
   6ed75bbaad262d2ce263aefe0252e68f51ee50ce  cdoom/cdoom_maps.pk4
   7c95dc757ec1dd9c8b2558efa7fede3f731cd463  cdoom/cdoom_models.pk4
@@ -3115,9 +3101,6 @@ sha256sums: |
   43561eabe56575aa74ba89a0650158bbf11bb42f91d1d11d9d77fa04fc7d2ed3  cdoom/Classic Doom 3.url
   79918fe28d234e47124c5118117d8b341e133a1c09f06377112ae401217740e5  cdoom/autoexec.cfg
   cb42810ea29d1e0b775fde33f9973cc1d08b6350c11bf24693c200810af7e089  cdoom/cdoom.ico
-  52ce6551669118c1182d1b016ae914acd863ec1060f05528d60c62be592dbe67  cdoom/cdoom_dll.pk4
-  0802d6a3b9fb0975b8fba775a0227c8878de83d04f2fb9344609cf81cf257335  cdoom/cdoom_linux.pk4
-  746ccc61f35cfe1a6dfef2c401ba05e842d3eef4cbd73c85122c0f1be85c2a23  cdoom/cdoom_mac.pk4
   400142d466ffd39b9fd38c66be38a57d39563b067bdbedc05380d65748de6ffc  cdoom/cdoom_main.pk4
   3128bc1deb1ef70bf7732a82315b45844022933c83fe362b0e51d2eb24d113f3  cdoom/cdoom_maps.pk4
   0a66779d26bcf1534eadfd24146f74f4ecb69de1cbbb9a4cd502029c6e46b15b  cdoom/cdoom_models.pk4
