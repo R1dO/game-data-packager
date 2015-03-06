@@ -1,0 +1,68 @@
+%YAML 1.2
+---
+# Version reference:
+# http://doomwiki.org/wiki/HACX.WAD
+
+longname: "HacX: Twitch 'n Kill"
+copyright: © 1997 Banjo Software
+plugin: doom_common
+
+help_text: |
+  Please provide HACX.WAD from
+  version 1.2.
+
+  It is freely distributed here by original
+  game author Nostromo:
+  http://drnostromo.com/hacx/page.php?content=download
+
+packages:
+  hacx-data:
+    overide_fill_docs: false
+    debian:
+      engine: "chocolate-doom | doom-engine"
+    install_to: usr/share/games/doom
+    install:
+    - hacx.wad
+    optional:
+    - hacx.txt
+
+files:
+  hacx12.zip:
+    download:
+      hacx-mirrors:
+        path: .
+    unpack:
+      format: zip
+    provides:
+    - hacx.wad
+    - hacx.txt
+  
+  hacx.txt:
+    install_to: $docdir
+    license: true
+  hacx.wad_1.1:
+    look_for: [hacx.wad]
+    unsuitable: HacX 1.2 is required
+  hacx.wad_1.0:
+    look_for: [hacx.wad]
+    unsuitable: HacX 1.2 is required
+
+cksums: |
+  _  7731658 hacx12.zip
+  _     4192 hack.txt
+  _ 19321722 hacx.wad
+  _ 22102200 hacx.wad_1.1
+  _ 21951805 hacx.wad_1.0
+md5sums: |
+  38cdd2baa912e771da562b44448206ec  hacx12.zip
+  3adaecc5fae89dda24ba17193d0d0b17  hacx.txt
+  65ed74d522bdf6649c2831b13b9e02b4  hacx.wad
+  b7fd2f43f3382cf012dc6b097a3cb182  hacx.wad_1.1
+  1511a7032ebc834a3884cf390d7f186e  hacx.wad_1.0
+sha1sums: |
+  c840add80e04b255d92387f008c65b150bce1e70  hacx12.zip
+  12963d33e2c81a91d038e984be6742a7b1dda15c  hacx.txt
+  9fd331b9d53006af1884e89eaeb97b17b8572b71  hacx.wad
+  1125a16243d1e1d5259e0f387d955382432f1424  hacx.wad_1.1
+  dc6df745e342eaea325677a40184e10cbc6629d7  hacx.wad_1.0
+...
