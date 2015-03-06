@@ -15,6 +15,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
+import configparser
 import logging
 import os
 import subprocess
@@ -156,7 +157,8 @@ class DoomGameData(GameData):
 
             from_ = os.path.splitext(from_)[0] + '.svgz'
             if os.path.exists(from_):
-                svgdir = os.path.join(destdir, 'usr/share/icons/hicolor/scalable/apps')
+                svgdir = os.path.join(destdir,
+                                      'usr/share/icons/hicolor/scalable/apps')
                 mkdir_p(svgdir)
                 install_data(from_,
                     os.path.join(svgdir, '%s.svgz' % wad_base))
@@ -166,19 +168,34 @@ class DoomGameData(GameData):
 
             appdir = os.path.join(destdir, 'usr/share/applications')
             mkdir_p(appdir)
-            for basename in (package.name, 'doom-common'):
-                from_ = os.path.join(DATADIR, basename + '.desktop.in')
-                if os.path.exists(from_):
-                    copy_with_substitutions(open(from_,
-                        encoding='utf-8'),
-                            open(os.path.join(appdir, '%s.desktop' % package.name),
-                                'w', encoding='utf-8'),
-                            GAME=wad_base,
-                            LONG=(package.longname or self.longname),
-                            ENGINE=(package.engine or self.engine))
-                    break
+
+            desktop = configparser.RawConfigParser()
+            desktop.optionxform = lambda option: option
+            desktop['Desktop Entry'] = {}
+            entry = desktop['Desktop Entry']
+            entry['Name'] = package.longname or self.longname
+            entry['GenericName'] = 'First Person Shooter Game'
+            entry['TryExec'] = engine = package.engine or self.engine
+            if package.expansion_for:
+                for f in self.packages[package.expansion_for].install:
+                    if f.endswith('.wad'):
+                        iwad = f
+                        break
+                else:
+                    raise AssertionError("Couldn't find %s's IWAD" % main_wad)
+                args = (  '-iwad /usr/share/games/doom/' + iwad
+                       + ' -file /usr/share/games/doom/' + main_wad)
             else:
-                raise AssertionError('doom-common.desktop.in should have existed')
+                args = '-iwad /usr/share/games/doom/' + main_wad
+            entry['Exec'] = engine + ' ' + args
+            entry['Icon'] = wad_base
+            entry['Terminal'] = 'false'
+            entry['Type'] = 'Application'
+            entry['Categories'] = 'Game'
+
+            with open(os.path.join(appdir, '%s.desktop' % package.name),
+                      'w', encoding='utf-8') as output:
+                 desktop.write(output, space_around_delimiters=False)
 
             debdir = os.path.join(destdir, 'DEBIAN')
             mkdir_p(debdir)
