@@ -194,8 +194,18 @@ files:
   virgil.txt:
     install_to: $docdir
 
+  nerve.wad:
+    alternatives:
+    - nerve.wad_pc
+    - nerve.wad_xbox360_bfg
+  nerve.wad_pc:
+    look_for: [nerve.wad]
+  nerve.wad_xbox360_bfg:
+    look_for: [nerve.wad]
+
 cksums: |
-  _ 3819855   nerve.wad
+  _ 3819855   nerve.wad_pc
+  _ 3786293   nerve.wad_xbox360_bfg
   _ 14824716  nerve.wad_xboxla
   _ 1581      attack.txt
   _ 185135    attack.wad
@@ -252,7 +262,8 @@ md5sums: |
   4c3db5f23b145fccd24c9b84aba3b7dd  doom2.wad_psn
   9640fc4b2c8447bbd28f2080725d5c51  doom2.wad_tapwave_zodiac
   3cb02349b3df649c86290907eed64e7b  doom2f.wad
-  967d5ae23daf45196212ae1b605da3b0  nerve.wad
+  967d5ae23daf45196212ae1b605da3b0  nerve.wad_pc
+  4f47bb32bf5fd06bc1cc0b4a2e8e3910  nerve.wad_xbox360_bfg
   d4c3cb51899e8c399d0ea48cfcc87c53  nerve.wad_xboxla
   b5d81e4014b0e41a977ad837be62015a  attack.txt
   cb03fd0cd84b10579c2b2b313199d4c1  attack.wad
@@ -309,7 +320,8 @@ sha1sums: |
   ca8db908a7c9fbac764f34c148f0bcc78d18553e  doom2.wad_psn
   2cda310805397ae44059bbcaed3cd602f4864a82  doom2.wad_tapwave_zodiac
   d510c877031bbd5f3d198581a2c8651e09b9861f  doom2f.wad
-  3451288383fb16e196f273d9f85d58c1fda97bf4  nerve.wad
+  3451288383fb16e196f273d9f85d58c1fda97bf4  nerve.wad_pc
+  bb78b34dba684cc1ef1eea21f37092c6784d3b6f  nerve.wad_xbox360_bfg
   139095fcf78349ad570be721d21dd1fa809fb3c8  attack.txt
   e0b93dcb87875544cc57306088983cb21ca45165  attack.wad
   c64e724dda69bd7318b63b9192434edc1bd9dcf7  blacktwr.txt
