@@ -1,0 +1,1931 @@
+%YAML 1.2
+---
+# reference: /usr/share/games/freesynd/data/ref/original_data.crc
+try_repack_from: [/usr/share/games/freesynd/data]
+
+copyright: © 1993 Bullfrog Productions
+packages:
+  syndicate-data:
+    install_to: usr/share/games/freesynd/data
+    # this should be engine-agnostic:
+    #  usr/share/games/syndicate
+    debian:
+      engine: freesynd
+    install:
+    - col01.dat
+    - game01.dat
+    - game02.dat
+    - game03.dat
+    - game04.dat
+    - game05.dat
+    - game06.dat
+    - game07.dat
+    - game08.dat
+    - game09.dat
+    - game10.dat
+    - game11.dat
+    - game12.dat
+    - game13.dat
+    - game14.dat
+    - game15.dat
+    - game16.dat
+    - game17.dat
+    - game18.dat
+    - game19.dat
+    - game20.dat
+    - game21.dat
+    - game22.dat
+    - game23.dat
+    - game24.dat
+    - game25.dat
+    - game26.dat
+    - game27.dat
+    - game28.dat
+    - game29.dat
+    - game30.dat
+    - game31.dat
+    - game32.dat
+    - game33.dat
+    - game34.dat
+    - game35.dat
+    - game36.dat
+    - game37.dat
+    - game38.dat
+    - game39.dat
+    - game40.dat
+    - game41.dat
+    - game42.dat
+    - game43.dat
+    - game44.dat
+    - game45.dat
+    - game46.dat
+    - game47.dat
+    - game48.dat
+    - game49.dat
+    - game50.dat
+    - game90.dat
+    - game91.dat
+    - game92.dat
+    - game93.dat
+    - game94.dat
+    - game95.dat
+    - game96.dat
+    - game97.dat
+    - game98.dat
+    - game99.dat
+    - hblk01.dat
+    - hele-0.ani
+    - hfnt01.dat
+    - hfra-0.ani
+    - hpal01.dat
+    - hpal02.dat
+    - hpal03.dat
+    - hpal04.dat
+    - hpal05.dat
+    - hpalette.dat
+    - hpointer.dat
+    - hpointer.tab
+    - hreq.dat
+    - hspr-0.dat
+    - hspr-0.tab
+    - hsta-0.ani
+    - intro.dat
+    - intro.xmi
+    - isnds-0.dat
+    - isnds-0.tab
+    - isnds-1.dat
+    - isnds-1.tab
+    - map01.dat
+    - map02.dat
+    - map03.dat
+    - map04.dat
+    - map05.dat
+    - map06.dat
+    - map07.dat
+    - map08.dat
+    - map09.dat
+    - map10.dat
+    - map11.dat
+    - map12.dat
+    - map13.dat
+    - map15.dat
+    - map16.dat
+    - map17.dat
+    - map18.dat
+    - map19.dat
+    - map20.dat
+    - map21.dat
+    - map31.dat
+    - map32.dat
+    - map34.dat
+    - map35.dat
+    - map37.dat
+    - map38.dat
+    - map39.dat
+    - map40.dat
+    - map41.dat
+    - map43.dat
+    - map50.dat
+    - map51.dat
+    - map52.dat
+    - map53.dat
+    - map54.dat
+    - map55.dat
+    - map56.dat
+    - map57.dat
+    - map58.dat
+    - map60.dat
+    - map61.dat
+    - map62.dat
+    - map63.dat
+    - map64.dat
+    - map65.dat
+    - map66.dat
+    - map67.dat
+    - map70.dat
+    - map71.dat
+    - map72.dat
+    - map73.dat
+    - map80.dat
+    - map81.dat
+    - map82.dat
+    - map90.dat
+    - map91.dat
+    - map92.dat
+    - map93.dat
+    - map94.dat
+    - mbrief.dat
+    - mbrieout.dat
+    - mconfout.dat
+    - mconfup.dat
+    - mconscr.dat
+    - mdebrief.dat
+    - mdeout.dat
+    - mendlose.dat
+    - mendwin.dat
+    - mfnt-0.dat
+    - mfnt-0.tab
+    - mgamewin.dat
+    - miss01.dat
+    - miss02.dat
+    - miss03.dat
+    - miss04.dat
+    - miss05.dat
+    - miss06.dat
+    - miss07.dat
+    - miss08.dat
+    - miss09.dat
+    - miss10.dat
+    - miss101.dat
+    - miss102.dat
+    - miss103.dat
+    - miss104.dat
+    - miss105.dat
+    - miss106.dat
+    - miss107.dat
+    - miss108.dat
+    - miss109.dat
+    - miss11.dat
+    - miss110.dat
+    - miss111.dat
+    - miss112.dat
+    - miss113.dat
+    - miss114.dat
+    - miss115.dat
+    - miss116.dat
+    - miss117.dat
+    - miss118.dat
+    - miss119.dat
+    - miss12.dat
+    - miss120.dat
+    - miss121.dat
+    - miss122.dat
+    - miss123.dat
+    - miss124.dat
+    - miss125.dat
+    - miss126.dat
+    - miss127.dat
+    - miss128.dat
+    - miss129.dat
+    - miss13.dat
+    - miss130.dat
+    - miss131.dat
+    - miss132.dat
+    - miss133.dat
+    - miss134.dat
+    - miss135.dat
+    - miss136.dat
+    - miss137.dat
+    - miss138.dat
+    - miss139.dat
+    - miss14.dat
+    - miss140.dat
+    - miss141.dat
+    - miss142.dat
+    - miss143.dat
+    - miss144.dat
+    - miss145.dat
+    - miss146.dat
+    - miss147.dat
+    - miss148.dat
+    - miss149.dat
+    - miss15.dat
+    - miss150.dat
+    - miss16.dat
+    - miss17.dat
+    - miss18.dat
+    - miss19.dat
+    - miss20.dat
+    - miss201.dat
+    - miss202.dat
+    - miss203.dat
+    - miss204.dat
+    - miss205.dat
+    - miss206.dat
+    - miss207.dat
+    - miss208.dat
+    - miss209.dat
+    - miss21.dat
+    - miss210.dat
+    - miss211.dat
+    - miss212.dat
+    - miss213.dat
+    - miss214.dat
+    - miss215.dat
+    - miss216.dat
+    - miss217.dat
+    - miss218.dat
+    - miss219.dat
+    - miss22.dat
+    - miss220.dat
+    - miss221.dat
+    - miss222.dat
+    - miss223.dat
+    - miss224.dat
+    - miss225.dat
+    - miss226.dat
+    - miss227.dat
+    - miss228.dat
+    - miss229.dat
+    - miss23.dat
+    - miss230.dat
+    - miss231.dat
+    - miss232.dat
+    - miss233.dat
+    - miss234.dat
+    - miss235.dat
+    - miss236.dat
+    - miss237.dat
+    - miss238.dat
+    - miss239.dat
+    - miss24.dat
+    - miss240.dat
+    - miss241.dat
+    - miss242.dat
+    - miss243.dat
+    - miss244.dat
+    - miss245.dat
+    - miss246.dat
+    - miss247.dat
+    - miss248.dat
+    - miss249.dat
+    - miss25.dat
+    - miss250.dat
+    - miss26.dat
+    - miss27.dat
+    - miss28.dat
+    - miss29.dat
+    - miss30.dat
+    - miss301.dat
+    - miss302.dat
+    - miss303.dat
+    - miss304.dat
+    - miss305.dat
+    - miss306.dat
+    - miss307.dat
+    - miss308.dat
+    - miss309.dat
+    - miss31.dat
+    - miss310.dat
+    - miss311.dat
+    - miss312.dat
+    - miss313.dat
+    - miss314.dat
+    - miss315.dat
+    - miss316.dat
+    - miss317.dat
+    - miss318.dat
+    - miss319.dat
+    - miss32.dat
+    - miss320.dat
+    - miss321.dat
+    - miss322.dat
+    - miss323.dat
+    - miss324.dat
+    - miss325.dat
+    - miss326.dat
+    - miss327.dat
+    - miss328.dat
+    - miss329.dat
+    - miss33.dat
+    - miss330.dat
+    - miss331.dat
+    - miss332.dat
+    - miss333.dat
+    - miss334.dat
+    - miss335.dat
+    - miss336.dat
+    - miss337.dat
+    - miss338.dat
+    - miss339.dat
+    - miss34.dat
+    - miss340.dat
+    - miss341.dat
+    - miss342.dat
+    - miss343.dat
+    - miss344.dat
+    - miss345.dat
+    - miss346.dat
+    - miss347.dat
+    - miss348.dat
+    - miss349.dat
+    - miss35.dat
+    - miss350.dat
+    - miss36.dat
+    - miss37.dat
+    - miss38.dat
+    - miss39.dat
+    - miss40.dat
+    - miss41.dat
+    - miss42.dat
+    - miss43.dat
+    - miss44.dat
+    - miss45.dat
+    - miss46.dat
+    - miss47.dat
+    - miss48.dat
+    - miss49.dat
+    - miss50.dat
+    - mlogos.dat
+    - mlosa.dat
+    - mlosaout.dat
+    - mlosegam.dat
+    - mmap.dat
+    - mmapblk.dat
+    - mmapout.dat
+    - mminlogo.dat
+    - mmulti.dat
+    - mmultout.dat
+    - moption.dat
+    - moptout.dat
+    - mresout.dat
+    - mresrch.dat
+    - mscrenup.dat
+    - mselect.dat
+    - mselect.pal
+    - mselout.dat
+    - mspr-0.dat
+    - mspr-0.tab
+    - mtitle.dat
+    - sample.ad
+    - sample.opl
+    - sound-0.dat
+    - sound-0.tab
+    - sound-1.dat
+    - sound-1.tab
+    - syngame.xmi
+cksums: |
+  _ 127       col01.dat
+  _ 1417      game01.dat
+  _ 7733      game02.dat
+  _ 7753      game03.dat
+  _ 6133      game04.dat
+  _ 8063      game05.dat
+  _ 8991      game06.dat
+  _ 5609      game07.dat
+  _ 5493      game08.dat
+  _ 7187      game09.dat
+  _ 5768      game10.dat
+  _ 8573      game11.dat
+  _ 3323      game12.dat
+  _ 3322      game13.dat
+  _ 4245      game14.dat
+  _ 3007      game15.dat
+  _ 4767      game16.dat
+  _ 1537      game17.dat
+  _ 2247      game18.dat
+  _ 5403      game19.dat
+  _ 2544      game20.dat
+  _ 3898      game21.dat
+  _ 7749      game22.dat
+  _ 3748      game23.dat
+  _ 6180      game24.dat
+  _ 4546      game25.dat
+  _ 2488      game26.dat
+  _ 5609      game27.dat
+  _ 8279      game28.dat
+  _ 4655      game29.dat
+  _ 6614      game30.dat
+  _ 6319      game31.dat
+  _ 6622      game32.dat
+  _ 7546      game33.dat
+  _ 9175      game34.dat
+  _ 8737      game35.dat
+  _ 8486      game36.dat
+  _ 2945      game37.dat
+  _ 4545      game38.dat
+  _ 9514      game39.dat
+  _ 6746      game40.dat
+  _ 6174      game41.dat
+  _ 5187      game42.dat
+  _ 8656      game43.dat
+  _ 8419      game44.dat
+  _ 7045      game45.dat
+  _ 6900      game46.dat
+  _ 6449      game47.dat
+  _ 7708      game48.dat
+  _ 6792      game49.dat
+  _ 7186      game50.dat
+  _ 5526      game90.dat
+  _ 4353      game91.dat
+  _ 4296      game92.dat
+  _ 2656      game93.dat
+  _ 4396      game94.dat
+  _ 1693      game95.dat
+  _ 2754      game96.dat
+  _ 1642      game97.dat
+  _ 1107      game98.dat
+  _ 3196      game99.dat
+  _ 117484    hblk01.dat
+  _ 38453     hele-0.ani
+  _ 1047      hfnt01.dat
+  _ 17583     hfra-0.ani
+  _ 90        hpal01.dat
+  _ 88        hpal02.dat
+  _ 90        hpal03.dat
+  _ 577       hpal04.dat
+  _ 576       hpal05.dat
+  _ 90        hpalette.dat
+  _ 524       hpointer.dat
+  _ 42        hpointer.tab
+  _ 2719      hreq.dat
+  _ 121817    hspr-0.dat
+  _ 4641      hspr-0.tab
+  _ 1937      hsta-0.ani
+  _ 3611522   intro.dat
+  _ 12170     intro.xmi
+  _ 359136    isnds-0.dat
+  _ 608       isnds-0.tab
+  _ 257440    isnds-1.dat
+  _ 576       isnds-1.tab
+  _ 5406      map01.dat
+  _ 11015     map02.dat
+  _ 13895     map03.dat
+  _ 11218     map04.dat
+  _ 15729     map05.dat
+  _ 26168     map06.dat
+  _ 13860     map07.dat
+  _ 9139      map08.dat
+  _ 154       map09.dat
+  _ 8079      map10.dat
+  _ 8843      map11.dat
+  _ 8215      map12.dat
+  _ 14798     map13.dat
+  _ 115       map15.dat
+  _ 12671     map16.dat
+  _ 1778      map17.dat
+  _ 11660     map18.dat
+  _ 12363     map19.dat
+  _ 15601     map20.dat
+  _ 10235     map21.dat
+  _ 16733     map31.dat
+  _ 8124      map32.dat
+  _ 10927     map34.dat
+  _ 10111     map35.dat
+  _ 10896     map37.dat
+  _ 5515      map38.dat
+  _ 7515      map39.dat
+  _ 14045     map40.dat
+  _ 11482     map41.dat
+  _ 13421     map43.dat
+  _ 11557     map50.dat
+  _ 10998     map51.dat
+  _ 7335      map52.dat
+  _ 5903      map53.dat
+  _ 12672     map54.dat
+  _ 13291     map55.dat
+  _ 7486      map56.dat
+  _ 5802      map57.dat
+  _ 5939      map58.dat
+  _ 11871     map60.dat
+  _ 9333      map61.dat
+  _ 10833     map62.dat
+  _ 11808     map63.dat
+  _ 9882      map64.dat
+  _ 13569     map65.dat
+  _ 10748     map66.dat
+  _ 11342     map67.dat
+  _ 13269     map70.dat
+  _ 16819     map71.dat
+  _ 15729     map72.dat
+  _ 11707     map73.dat
+  _ 8734      map80.dat
+  _ 13743     map81.dat
+  _ 13653     map82.dat
+  _ 21077     map90.dat
+  _ 17588     map91.dat
+  _ 16471     map92.dat
+  _ 11103     map93.dat
+  _ 6942      map94.dat
+  _ 140606    mbrief.dat
+  _ 71986     mbrieout.dat
+  _ 36608     mconfout.dat
+  _ 83822     mconfup.dat
+  _ 64000     mconscr.dat
+  _ 46526     mdebrief.dat
+  _ 34454     mdeout.dat
+  _ 603564    mendlose.dat
+  _ 946798    mendwin.dat
+  _ 5962      mfnt-0.dat
+  _ 1230      mfnt-0.tab
+  _ 359220    mgamewin.dat
+  _ 732       miss01.dat
+  _ 597       miss02.dat
+  _ 784       miss03.dat
+  _ 617       miss04.dat
+  _ 721       miss05.dat
+  _ 821       miss06.dat
+  _ 650       miss07.dat
+  _ 708       miss08.dat
+  _ 678       miss09.dat
+  _ 642       miss10.dat
+  _ 769       miss101.dat
+  _ 697       miss102.dat
+  _ 895       miss103.dat
+  _ 678       miss104.dat
+  _ 740       miss105.dat
+  _ 777       miss106.dat
+  _ 708       miss107.dat
+  _ 789       miss108.dat
+  _ 727       miss109.dat
+  _ 877       miss11.dat
+  _ 761       miss110.dat
+  _ 916       miss111.dat
+  _ 979       miss112.dat
+  _ 937       miss113.dat
+  _ 774       miss114.dat
+  _ 707       miss115.dat
+  _ 1045      miss116.dat
+  _ 965       miss117.dat
+  _ 681       miss118.dat
+  _ 604       miss119.dat
+  _ 889       miss12.dat
+  _ 711       miss120.dat
+  _ 823       miss121.dat
+  _ 831       miss122.dat
+  _ 1029      miss123.dat
+  _ 834       miss124.dat
+  _ 1152      miss125.dat
+  _ 791       miss126.dat
+  _ 877       miss127.dat
+  _ 641       miss128.dat
+  _ 837       miss129.dat
+  _ 851       miss13.dat
+  _ 722       miss130.dat
+  _ 977       miss131.dat
+  _ 727       miss132.dat
+  _ 768       miss133.dat
+  _ 758       miss134.dat
+  _ 862       miss135.dat
+  _ 1163      miss136.dat
+  _ 1704      miss137.dat
+  _ 623       miss138.dat
+  _ 707       miss139.dat
+  _ 771       miss14.dat
+  _ 792       miss140.dat
+  _ 903       miss141.dat
+  _ 602       miss142.dat
+  _ 685       miss143.dat
+  _ 558       miss144.dat
+  _ 514       miss145.dat
+  _ 677       miss146.dat
+  _ 581       miss147.dat
+  _ 422       miss148.dat
+  _ 663       miss149.dat
+  _ 625       miss15.dat
+  _ 352       miss150.dat
+  _ 964       miss16.dat
+  _ 937       miss17.dat
+  _ 689       miss18.dat
+  _ 600       miss19.dat
+  _ 713       miss20.dat
+  _ 778       miss201.dat
+  _ 674       miss202.dat
+  _ 844       miss203.dat
+  _ 700       miss204.dat
+  _ 738       miss205.dat
+  _ 851       miss206.dat
+  _ 734       miss207.dat
+  _ 812       miss208.dat
+  _ 756       miss209.dat
+  _ 757       miss21.dat
+  _ 705       miss210.dat
+  _ 976       miss211.dat
+  _ 853       miss212.dat
+  _ 962       miss213.dat
+  _ 822       miss214.dat
+  _ 668       miss215.dat
+  _ 1026      miss216.dat
+  _ 1030      miss217.dat
+  _ 753       miss218.dat
+  _ 658       miss219.dat
+  _ 773       miss22.dat
+  _ 794       miss220.dat
+  _ 833       miss221.dat
+  _ 858       miss222.dat
+  _ 1062      miss223.dat
+  _ 903       miss224.dat
+  _ 1156      miss225.dat
+  _ 809       miss226.dat
+  _ 900       miss227.dat
+  _ 648       miss228.dat
+  _ 820       miss229.dat
+  _ 976       miss23.dat
+  _ 746       miss230.dat
+  _ 939       miss231.dat
+  _ 742       miss232.dat
+  _ 820       miss233.dat
+  _ 842       miss234.dat
+  _ 875       miss235.dat
+  _ 1182      miss236.dat
+  _ 1704      miss237.dat
+  _ 658       miss238.dat
+  _ 716       miss239.dat
+  _ 818       miss24.dat
+  _ 769       miss240.dat
+  _ 952       miss241.dat
+  _ 637       miss242.dat
+  _ 691       miss243.dat
+  _ 588       miss244.dat
+  _ 530       miss245.dat
+  _ 663       miss246.dat
+  _ 625       miss247.dat
+  _ 445       miss248.dat
+  _ 716       miss249.dat
+  _ 1045      miss25.dat
+  _ 334       miss250.dat
+  _ 745       miss26.dat
+  _ 783       miss27.dat
+  _ 611       miss28.dat
+  _ 777       miss29.dat
+  _ 680       miss30.dat
+  _ 803       miss301.dat
+  _ 671       miss302.dat
+  _ 941       miss303.dat
+  _ 765       miss304.dat
+  _ 795       miss305.dat
+  _ 910       miss306.dat
+  _ 723       miss307.dat
+  _ 868       miss308.dat
+  _ 786       miss309.dat
+  _ 918       miss31.dat
+  _ 825       miss310.dat
+  _ 1025      miss311.dat
+  _ 1017      miss312.dat
+  _ 993       miss313.dat
+  _ 980       miss314.dat
+  _ 820       miss315.dat
+  _ 1129      miss316.dat
+  _ 1150      miss317.dat
+  _ 754       miss318.dat
+  _ 685       miss319.dat
+  _ 668       miss32.dat
+  _ 868       miss320.dat
+  _ 870       miss321.dat
+  _ 810       miss322.dat
+  _ 1182      miss323.dat
+  _ 976       miss324.dat
+  _ 1261      miss325.dat
+  _ 933       miss326.dat
+  _ 899       miss327.dat
+  _ 628       miss328.dat
+  _ 870       miss329.dat
+  _ 742       miss33.dat
+  _ 735       miss330.dat
+  _ 1196      miss331.dat
+  _ 896       miss332.dat
+  _ 756       miss333.dat
+  _ 918       miss334.dat
+  _ 981       miss335.dat
+  _ 1186      miss336.dat
+  _ 1816      miss337.dat
+  _ 746       miss338.dat
+  _ 723       miss339.dat
+  _ 784       miss34.dat
+  _ 779       miss340.dat
+  _ 999       miss341.dat
+  _ 578       miss342.dat
+  _ 937       miss343.dat
+  _ 705       miss344.dat
+  _ 651       miss345.dat
+  _ 767       miss346.dat
+  _ 641       miss347.dat
+  _ 493       miss348.dat
+  _ 851       miss349.dat
+  _ 788       miss35.dat
+  _ 435       miss350.dat
+  _ 1065      miss36.dat
+  _ 1587      miss37.dat
+  _ 598       miss38.dat
+  _ 659       miss39.dat
+  _ 701       miss40.dat
+  _ 860       miss41.dat
+  _ 562       miss42.dat
+  _ 639       miss43.dat
+  _ 520       miss44.dat
+  _ 498       miss45.dat
+  _ 632       miss46.dat
+  _ 579       miss47.dat
+  _ 400       miss48.dat
+  _ 640       miss49.dat
+  _ 298       miss50.dat
+  _ 4393      mlogos.dat
+  _ 87484     mlosa.dat
+  _ 69084     mlosaout.dat
+  _ 142426    mlosegam.dat
+  _ 155430    mmap.dat
+  _ 2613      mmapblk.dat
+  _ 89706     mmapout.dat
+  _ 1533      mminlogo.dat
+  _ 91454     mmulti.dat
+  _ 72756     mmultout.dat
+  _ 53158     moption.dat
+  _ 49728     moptout.dat
+  _ 84726     mresout.dat
+  _ 167044    mresrch.dat
+  _ 141968    mscrenup.dat
+  _ 164860    mselect.dat
+  _ 679       mselect.pal
+  _ 78184     mselout.dat
+  _ 28707     mspr-0.dat
+  _ 3273      mspr-0.tab
+  _ 79964     mtitle.dat
+  _ 3242      sample.ad
+  _ 3242      sample.opl
+  _ 160636    sound-0.dat
+  _ 236       sound-0.tab
+  _ 357566    sound-1.dat
+  _ 129       sound-1.tab
+  _ 14566     syngame.xmi
+md5sums: |
+  4153b886d16c2e051c3a6a1deca8186b  col01.dat
+  2dfdea3c3b6f022349e41845b2c84334  game01.dat
+  955e6d511f76429d3570b1988f71eb91  game02.dat
+  c01a895dcc7d63712737540f27ddecd9  game03.dat
+  fea681626a28a5855c42e2730107a6ae  game04.dat
+  1d2e4efe663f71bc1aa80abac8a54615  game05.dat
+  6dce4c6466ae1510c507fadfb1d2def2  game06.dat
+  c8bc0cd6b923cfb562e43d581972aa6a  game07.dat
+  25fd7cf15b3283a211d903179b1e63d9  game08.dat
+  2206359c07356a62044f27dabf50fc6c  game09.dat
+  0ce816340fe04c975df4db1006bc9da1  game10.dat
+  4cd6e8e227382913ac454fb0f7273465  game11.dat
+  1d80c8b341a2a6d36d1a7aefbd2a7a73  game12.dat
+  c209c7d0bffe3d7c41bbd3f85ec5efba  game13.dat
+  915c03a274a94e36cd0e97c69c7acee8  game14.dat
+  e444bf05646281a0e3f962639250932e  game15.dat
+  c545392476cde9ce88de33fe98469a31  game16.dat
+  cffee15e1b12018ba9d9eb37aa3a16d9  game17.dat
+  78b07f23291a19a65c69a72157675e41  game18.dat
+  48b4abda26151d67385b9c47e97f2b2e  game19.dat
+  da3cf9b31554883f952a3030df183c6a  game20.dat
+  98fb92f082bad6eafc5752bcf6851f38  game21.dat
+  e79d50c81c8bd62d17595742befdf27a  game22.dat
+  8645100b79164b07c9cdbd88946cc3c1  game23.dat
+  58835cd57d89d6c69e034e2e6af92aa9  game24.dat
+  4e1856988978d1f161b3a89fdff7831b  game25.dat
+  bf18612033b09c077258f6bd7b9cecfb  game26.dat
+  b0750ffbb3318bb091bf6d51f2df9dad  game27.dat
+  e71710b96363c9541bd955325abf97e6  game28.dat
+  2c973506d7ef147c8994b7f6824819d6  game29.dat
+  4dc501ec4798d2d75e90d244e1ca38d6  game30.dat
+  7414cd81aa3518e354962e37bdaa267f  game31.dat
+  d573bfd63954fde4883748521bfaabc1  game32.dat
+  58e3c73b3709cc70bb176c88f7071917  game33.dat
+  442732e90819114c76842aebe76aa5c3  game34.dat
+  2600696fb8444ec58e3c330c616b0b1c  game35.dat
+  6e20e29a9b0b16eeede1b5539d718dcf  game36.dat
+  0219fde227b84639ef28a847b6be6cf4  game37.dat
+  a501218a3dd3f888dbdb9cb1cbaa2b5c  game38.dat
+  dbf5bc2f66bdb2e4b0feb81c0f6c6b0b  game39.dat
+  f057f274b0392b1e3a10b2321a307bb1  game40.dat
+  1af68a9386699596ee0c4123ee6888e9  game41.dat
+  d1ade8f250c64d65c972acb8b93b0b97  game42.dat
+  f0ac2e9e54ac720fe0dcfa08146a0bd1  game43.dat
+  253cf83139922a3ecd69161c69c2d725  game44.dat
+  758d53ce7f693e576e88e345c25be627  game45.dat
+  92d1b892b55b0901e58c46b195e01421  game46.dat
+  9a01c2e05442709fd0fff6d203e981ab  game47.dat
+  75b58a7d4b265cf92d9367c13d35a300  game48.dat
+  822bc1a145192867310b3073ec3704b5  game49.dat
+  b19ebc0196fa157454b1fe4c692c8fe7  game50.dat
+  2994a62c37922effcd04d4e8ebcdcd88  game90.dat
+  70c94dcbc103b0da00fe0462437c03e4  game91.dat
+  86f7eba079f6491d95f29b78c0a96ea9  game92.dat
+  f7999f63573e0e28366f6a7cf3fdd104  game93.dat
+  0208e379acc5436a0755af511d03eae3  game94.dat
+  ae2de1381b3cf13b0057e62d0e7f41be  game95.dat
+  a88072053260155ba267acab228aa090  game96.dat
+  8da5b4e1bc3b3c667329be648f90a922  game97.dat
+  988e5aea79c4a5ab28cf43cc887c9e45  game98.dat
+  106a092fd0ffd822c814bd2e52e1ede9  game99.dat
+  728d1e85659f38e37cda6a7bfc944988  hblk01.dat
+  3d148a062b3bf15772edad77a0b6564d  hele-0.ani
+  d869c3842678bc9610206ed578f877a1  hfnt01.dat
+  6fd599074b8ab7a42eaa9a26d3b63529  hfra-0.ani
+  cd70ad367843772ea88c5cd875c192ac  hpal01.dat
+  86f2ebf31e2f376b8613f7002b13eb51  hpal02.dat
+  650a3bcb16e563753a344b8fe43369bc  hpal03.dat
+  5b2b6990a0d80af13bda0ef25e3b9695  hpal04.dat
+  3232af2fbaa7a1d53b6db9be19148cd3  hpal05.dat
+  9420c6e7e4cfe7e527b7798902a5f38a  hpalette.dat
+  fa1d90d55aa36a7afbed3542539db338  hpointer.dat
+  d940bed05ecfc1220d72aea878952dc6  hpointer.tab
+  e8ba6f807ee7bf7cc717321b8032bc6f  hreq.dat
+  44cde9d1540a60827c1e9d1abee4de7f  hspr-0.dat
+  717f118828192f3f8d3db7c63ac3cdcf  hspr-0.tab
+  33bc27c486eacb70c9ac7afbf2490874  hsta-0.ani
+  c0656c0e631271a7f46d410deb9f1c2f  intro.dat
+  c669c71dc4c3d263b1e6dddf971a628c  intro.xmi
+  a22cfe8ec5f09eece32c90ae9ee761de  isnds-0.dat
+  b557336f977cb5e35be9d94c34c283f9  isnds-0.tab
+  bd677806606ee33774736e2c183fb9ab  isnds-1.dat
+  ff751267992a03d13a21818ac40f0377  isnds-1.tab
+  26bacb8e9f3bda950c3ae89862e31649  map01.dat
+  4a939391613853d4c6cb0cc4d175f86a  map02.dat
+  0f1969db089d949444983547ff6ed4a5  map03.dat
+  e9f4871ef44c624dccb532c3887caeda  map04.dat
+  3ce5fe74e07b9b1f2dd5121691a2289d  map05.dat
+  1ad407b8579e02f508703ed46010ce40  map06.dat
+  d5dde0276ed7b1deaf0c74866e2fbac8  map07.dat
+  6b3164f0308099ddb2b211af558e560d  map08.dat
+  64d7766c0d8924401db4efc0522a4cdf  map09.dat
+  61f2163141d796c7088e0228ab3f31d5  map10.dat
+  fcc2b8d7a76bba2024eba63b2bfc895e  map11.dat
+  358d8310aba49121427c61de70f82c81  map12.dat
+  4cccb8a558b150f9bf81d4a2a66289f7  map13.dat
+  3a13c769f8ca33c306287d0de56e00f6  map15.dat
+  f22b0584ba16852797ec623999602695  map16.dat
+  4195ea68ab1c09c3d9c3ff4602163de6  map17.dat
+  374e2e1048779257ac001b48532d37c7  map18.dat
+  1ccd8f475b702ea6950f46aeab06cd14  map19.dat
+  3322f37b461fcf49ee5b65276b169c3d  map20.dat
+  4902a8235091706e325fe30c4917e870  map21.dat
+  13489177d8258b5224d702e97e724da7  map31.dat
+  51eb8639af96116eebbafddaf39ba8b4  map32.dat
+  132db3868a5844a856da293594be6306  map34.dat
+  96ee959a6f9c9156caa2e268086636e9  map35.dat
+  1833508c1c548a34d2ea762d9f8da41a  map37.dat
+  e33982f6bbdb6e7e14f66fb689ea1a38  map38.dat
+  2c08f1b8d23fbcdf3285d54c0f9dc48e  map39.dat
+  e85e519ae94f88f00806fe43b98706a2  map40.dat
+  5ed62ef1585da194bc455223c4432837  map41.dat
+  8085982b296661f2b36764906acdd63c  map43.dat
+  02e31fb353a7016941c2669e9cdf369e  map50.dat
+  beb714d13f91a9d566e83cfe04aa46b1  map51.dat
+  ba147f1bc804aca3fb0452777be3451a  map52.dat
+  01b0d9e95f9b13e7022318549bda396f  map53.dat
+  f1e6f7babb459d18d012871bdc295bb4  map54.dat
+  cab8435072a493d180a710885e4501e3  map55.dat
+  e1d93ad494b4974599d8a0e29978f3dc  map56.dat
+  6b0eb3331ffa8e4f00b26fbfc2d0dae4  map57.dat
+  54f99417681be5f879dbba91b88498e9  map58.dat
+  0ffe23abfecf08b67c9d084302f2db74  map60.dat
+  1cbb92efce483266314710bd7f583e85  map61.dat
+  0e245ca514d6147e00cc0806cb96e205  map62.dat
+  4cd7605f689fdc557a2cee0178e98bde  map63.dat
+  7a9cebd51aa88fa2daafb9638105469f  map64.dat
+  23b21ea9bcad1bb2536ed32e3df882aa  map65.dat
+  89a1ed4b1c84934499dce871c617483d  map66.dat
+  b53066c6091d6229beca5724895fdf76  map67.dat
+  4e3cc9a317f277c2404676ef2b37abe5  map70.dat
+  f33361125e3a9a43c766da2e3746387f  map71.dat
+  103751ae733a5ac44b1b41cf6711838c  map72.dat
+  8d2b36c5651c459080b45d7d29fcbe3d  map73.dat
+  b39859084e12b5b487b471691461e465  map80.dat
+  f882586524a9b44633009cf5b54fcb71  map81.dat
+  ea5af0f2658efd1c81288a8e78700994  map82.dat
+  5a75d21be9695955715322fd2618ff43  map90.dat
+  98636c06ba64906b67fd70877fb02831  map91.dat
+  7cfa5807f9b46c1688f1be350331170a  map92.dat
+  1a11a5844c5235cccb0574a590fe0da0  map93.dat
+  a63e8138c91227cb7cb4c7ea3284f936  map94.dat
+  fde091baebb8199d6778d472a0096f26  mbrief.dat
+  10829d01e29732be9b8e57b4d22fe3a2  mbrieout.dat
+  16e6c5eb39177f843bbb1c65c6a9ffa7  mconfout.dat
+  6ca67d2596ac73302fbf987f491f249b  mconfup.dat
+  96333f509b0c9075383e01e2df72cdd1  mconscr.dat
+  2c9e9e5de6bfd5f282b9e4162c399e98  mdebrief.dat
+  71cc714ed2790101cdc570fb0ef016c8  mdeout.dat
+  0c6f7139d723255bb0fc72036aea78ca  mendlose.dat
+  10168d59ad0c2a1bc4c2aa11e791fda5  mendwin.dat
+  b728c5252677071ef098ed118d1c1cb3  mfnt-0.dat
+  d55c4cbb48acdef751a0adacce8493a6  mfnt-0.tab
+  4a60217d9b94a24a5853caf9761e8736  mgamewin.dat
+  260d84cc0343564c158ec8b254971d32  miss01.dat
+  f404925dd39709e411d8b8ac786d6f0d  miss02.dat
+  b3074052191c67ebcd5f801736fc4756  miss03.dat
+  cb4ccfdffd129c97b2db045424f6e04c  miss04.dat
+  1e44d8d4458c95f82c5fb353c3771cb6  miss05.dat
+  882b77b15acd784be4cd93b92362d835  miss06.dat
+  acb04eb4897a6ba3443c4ec13483d3b2  miss07.dat
+  e89ce9e203764ee5d56ace2762549a35  miss08.dat
+  2b62a6002768aeddca5683e12ad0413a  miss09.dat
+  af778a5aac6f50b0dccc09a616348344  miss10.dat
+  9b8de189692bddf1e4d139c44d255d52  miss101.dat
+  4d5e858d07ff233453b3de3166f68f47  miss102.dat
+  21da5411a1d89a60f36e6c8e530bbb99  miss103.dat
+  ab9a0c46cff18619f42c4ae886bbc485  miss104.dat
+  d011baa5dfaa16e00a432aa02f3f14ff  miss105.dat
+  16bc4ea9d6e7f4783b43b8b51f5b2a04  miss106.dat
+  1cae20b5fa5f6fec9f7feb93f4e14114  miss107.dat
+  27b97dfe8e2e9949c412136686887151  miss108.dat
+  00482e8cbbce22f7e7b416e185ef419f  miss109.dat
+  9887c91b477b48c94ecb9accc9b6e3f3  miss11.dat
+  3e4cbddc5d4f4d7203980fe9f0a5be07  miss110.dat
+  b38e98bff81329c7b7db3cb21555570e  miss111.dat
+  1a2ac546e0c01885fedba486f5bf9c76  miss112.dat
+  1eca7946e22220d03d492c5b23fe5bfc  miss113.dat
+  50f9bec50cb7f3545f8141fe119948c3  miss114.dat
+  89e7b8af414adc2183846311f77470d0  miss115.dat
+  54159f8e4d20cba860dd99a69f464cc0  miss116.dat
+  3abe7ec6b091ad9c48685f91bdfae929  miss117.dat
+  d936f89b81184db58e3d1950ccdfe110  miss118.dat
+  ed53e7a2d757611956d6dd3541b4f4f2  miss119.dat
+  8bf308b5cdebaac12b21012649fc52c5  miss12.dat
+  8f0a50d2dade66676a85268e00b3cc1e  miss120.dat
+  d858a71bb416f0058a3a7f222e12c136  miss121.dat
+  509f319b0129dcf75318e67dfc6ab990  miss122.dat
+  f3a58668bb93d974f5710c9efabea634  miss123.dat
+  7e6f4fc7f44156cf59fba9f94a0d4210  miss124.dat
+  81b0b915dff67a5018fad7c897815b65  miss125.dat
+  3b14bc605c068bab8b0fb948d30aa835  miss126.dat
+  246678cc2df271688c59f29b5e645457  miss127.dat
+  5da59e526431dc9cd1374d8ae92423e1  miss128.dat
+  441816f8e628e037a90957ef890d484c  miss129.dat
+  f2c5e5d33b4bed529a687bfc6da14083  miss13.dat
+  86c037430f8ecadfaeff48259d331915  miss130.dat
+  066ea5281b5b3cc23732b92017d37195  miss131.dat
+  152b8b4ff674adb569721b71768358d7  miss132.dat
+  9a5bd6c0990ced34660645f7f2b1ee03  miss133.dat
+  9c731ffab3684e9ebf83126503a36b10  miss134.dat
+  51ea09d1dc83cd77d292efad4ab11225  miss135.dat
+  9f2a675dcf3b5bc655ba1656001382e5  miss136.dat
+  3d50816d198ac6c950da010894439159  miss137.dat
+  e47bd573b7702fbe6df974400bb2e00b  miss138.dat
+  38b666c9e7d83e6f1beddb69aa82ee5a  miss139.dat
+  5c9e2b04f9da3586e7b849011aec290e  miss14.dat
+  8778a1497155dedcebb4714c85c7a04c  miss140.dat
+  41b4e7c43afe1b6f88b83c5ba253e779  miss141.dat
+  5fa3c21b9682db50648f93f02a892d27  miss142.dat
+  078b1bd9a3241971a906797146c1e9b0  miss143.dat
+  0ad26534d48d429af1a395babbe9d2d7  miss144.dat
+  153a98855f01f08375b672eb827e6d66  miss145.dat
+  a1c0b5bad2142aaf7385a9963d459faf  miss146.dat
+  f195e7b5319a87e4c46b308ee4706008  miss147.dat
+  1873b5c489c3ef2a5bd6af0510b3e8ed  miss148.dat
+  b1ef412007babbfeed014bddc3cf4e9f  miss149.dat
+  9e800e06d609e7b0269c8a0400c7c703  miss15.dat
+  10f15f0dee33506498077452d3ceaef2  miss150.dat
+  009adeafe776905f79d071cfad85ba4f  miss16.dat
+  5b1cf0bca5ca143e6e9928bebba3d77e  miss17.dat
+  2729d8cc6324a7dd05f50fa7f0fd7e5b  miss18.dat
+  2386d1f701f698da696f2e042485f8bc  miss19.dat
+  0508ef9e9ec156669e14545ebf112ad1  miss20.dat
+  1634001cc5831b173c73a405263b5d61  miss201.dat
+  14e4964d740ec748027b8000dc14f68f  miss202.dat
+  9ce08746ad21a44ea7d8796fd7d092db  miss203.dat
+  6fedea8912af4b712fb9e0773abf03d2  miss204.dat
+  4fafe8a0333c86aa374a7887dcf371d8  miss205.dat
+  5141bfa407f924fa45b9e2c5bfdf9d10  miss206.dat
+  237c547e4598315ef28091b9af3629b9  miss207.dat
+  858f0b05d565ec52dc0448ddcd1097d8  miss208.dat
+  15bb2958ce62cbb487e374d3f5d12990  miss209.dat
+  6d2a5f8082843655b6a1f13d4c0b5ee1  miss21.dat
+  2496fea6ab1505cc51cb79781a361216  miss210.dat
+  4b86090bac8958bf83d1ad4f97a290e3  miss211.dat
+  b09f46e423dd42aa7398281063dfaec6  miss212.dat
+  cf543c5ef22538fa77843482cd6157fb  miss213.dat
+  ad782b6496f7974d71e810a06fbd8992  miss214.dat
+  f934945272e11301a101d92e9a753b8f  miss215.dat
+  7953f5f586c57c139f0c7f185a7fd774  miss216.dat
+  139b96e83e8f1d687e1ca0a8b60fd291  miss217.dat
+  3930b2f0eaf5b12f93c37c636823b6cb  miss218.dat
+  6088ea02fe33af59f3a2911374cc8276  miss219.dat
+  5a0d389c5e94407e103787937c427bd1  miss22.dat
+  6d29da743f3f14ad45fa211c409b188d  miss220.dat
+  cea886f2619f3df33a6211bc540d4b39  miss221.dat
+  d075977827292ca8efba8bdcfa74bee4  miss222.dat
+  c164c0262830508e7546128a216e98ae  miss223.dat
+  f36a426efc16bf2da2cfdf8d98e3b259  miss224.dat
+  010ee0996bc43ad3a98f756dc5ec8571  miss225.dat
+  15466ae4f7b50bb792844b920e581a27  miss226.dat
+  5231222fd589ad0dae3978c920052ded  miss227.dat
+  3a834bddd57017586e75394870160676  miss228.dat
+  89e2ceae139791fd8c813a7b5ceda8cf  miss229.dat
+  462ffcaf54d255a1c4a13043665422c3  miss23.dat
+  609a92277d7572bf5e33347c82fba9a4  miss230.dat
+  4eff5a61026836c24d660a42b16ba981  miss231.dat
+  1dcbbaf9d7d8f086f21e54d5710e454c  miss232.dat
+  d1937d18a010daad5ca9813e93d15615  miss233.dat
+  0e886a668735677f566712d9d2823a12  miss234.dat
+  a41175a776a7f055ca3553b0875cbd10  miss235.dat
+  c32abdef5079244789ac635d383b0793  miss236.dat
+  dbb83d81c8fdad01380408aba983554b  miss237.dat
+  c72a0ce6a6b447742531e79f4b34e224  miss238.dat
+  51cfbd26cf4c98426bb7debf649f0441  miss239.dat
+  5afca7412c6ee624906bd854111e8f89  miss24.dat
+  4413932d4a0419c1e648a2b784487ffa  miss240.dat
+  9d8d960020d3bb0969c6c631f64935bf  miss241.dat
+  3cc3d2c6e46c44cbcde1e69505fa24b9  miss242.dat
+  15b770120390a8ef746f83f79f9ab2db  miss243.dat
+  30feda2e91cca14443629e7e52822511  miss244.dat
+  f908523286d2d1e54f857417d77a23a3  miss245.dat
+  df24b18927459aa8483195bb3c041250  miss246.dat
+  3a31af71a83bf34b914ec198f6c3de36  miss247.dat
+  33e403fffdbb03849a16f4d502cd2121  miss248.dat
+  2c8fdf37dca6dfdc943393f1c79b5870  miss249.dat
+  c4ce1f35d304fed0c0c132363ec51b68  miss25.dat
+  387c365f5aa7130ab6b6440a4545ba67  miss250.dat
+  498d1dc5e3b8cd6fd294f2d057faa543  miss26.dat
+  6d2a6d4f3e2b18afbaefb646fe700028  miss27.dat
+  9e57a5ef6277fdc4c409c27b27935f03  miss28.dat
+  e145c09092cbe4ec6f9400bc4bdec5a5  miss29.dat
+  126fe3f8338a41010a272db5828d32b2  miss30.dat
+  305bb1cfd43f3f61bdb3b08d2c680306  miss301.dat
+  7d17629c230ce142678e981fdfc429d2  miss302.dat
+  5349b44a0101ea387a7d8e33631954f1  miss303.dat
+  e67a1a70258a7ae927bbf1812589edfc  miss304.dat
+  a57d9d827640c8840e7f18bd683ceb6c  miss305.dat
+  309f9ddd169bacbdc200dc307c1443ed  miss306.dat
+  1302cee0f315123e3d7135019ef1a081  miss307.dat
+  5660b53bd90e9a3a6f2a94526c4d7ab4  miss308.dat
+  7f1c2d9ff9b759e099588e87eebfa4a9  miss309.dat
+  e9d91ac16a49e25a1cd50d88946e2175  miss31.dat
+  23cdcaaa3f63521b9e3c6ed019cc2578  miss310.dat
+  43f555792386b9246d8363439c416186  miss311.dat
+  a91858d4f11134f12e7ead3e59e5ff0b  miss312.dat
+  513a1206fce481242de765143ba5b995  miss313.dat
+  1c5822712007be7b24051a3aec68f123  miss314.dat
+  fc4e3cba9710288f9d1665f6fd708f05  miss315.dat
+  1aa686841e16f25bb6880cb39da195b8  miss316.dat
+  40b2afa6c5ba2965f2e877e55cf22c54  miss317.dat
+  65adc03e7859a782f3808c91c9e2403f  miss318.dat
+  22da97ecffbd8c87b51bc548ca77f650  miss319.dat
+  0d1ac24a2439d9fc24e0b52b0a0ed9f8  miss32.dat
+  61e3f9f3b39ce60db137e0cc95fe226d  miss320.dat
+  0d39706a0637d541b4cdba862608b7a3  miss321.dat
+  b4506c2fe96e7b0da9135c41b0c6f39b  miss322.dat
+  2d5d2d8e5fbdcc87f79ff8d16c92ccc6  miss323.dat
+  0e833adb4c1399d9638959d35ade150b  miss324.dat
+  45d350184a171eb32ded2c9a4e257533  miss325.dat
+  8783da14ee8cc207446eb14ee1359eaa  miss326.dat
+  7735d9360139392597408bc8e3019b61  miss327.dat
+  2df97a396e9e5141caf947881313ec9b  miss328.dat
+  154e51b020e890fdcfbbac419f4106b4  miss329.dat
+  82569fea3d68af4f8102d521eb1c1d8e  miss33.dat
+  76bb87a3ce8ced1393f4bee3e3a298ab  miss330.dat
+  f57cde18ce80a2c3e984c49bb575a3a1  miss331.dat
+  36b1a8f0e465a5ac8b8a342b19a666b8  miss332.dat
+  20a8c55ea8aca61ee274575f5a7d1714  miss333.dat
+  be11a8ed924eda4886468c588e042105  miss334.dat
+  6b8788571c5dc527aec56f79480decea  miss335.dat
+  04c421c7864ae2fd25cc7873f26f4f5c  miss336.dat
+  e25da52047b0c497ef3970529acacf19  miss337.dat
+  1e6a618b93122bf6e3bdc0bdfc279dd1  miss338.dat
+  4d6edaa656b27c10b5466c17095f2b01  miss339.dat
+  cac3db176ffc16edfe71dee579618d20  miss34.dat
+  ea9f54f75728057cdcaf8285d58642e6  miss340.dat
+  7193f6b5588553c8863904c2574272b2  miss341.dat
+  ada26ff111be8bc181576bd2d2a3a351  miss342.dat
+  9157c6950fab35f78766e3ec062cc915  miss343.dat
+  469e63e7d8205d8f03531f4f66c77be1  miss344.dat
+  e020ef2e6c74e9cf2ff2693c8532b9c1  miss345.dat
+  f3e9d22d3b2b4a9a02a7ccc33d776ec7  miss346.dat
+  e22012d5ab9210cfddc3c98416bf2dfc  miss347.dat
+  9cc69eb28cd8c1d3eb6d7161cb7b3f86  miss348.dat
+  030a6e13f3ad0a9a0db4b55ae9a0bc75  miss349.dat
+  80a43d049dc5b264118d10d0eb25b0c9  miss35.dat
+  397aeafe0b20390e781f02569e39d300  miss350.dat
+  8d0aa09f3458636754777e3268895dff  miss36.dat
+  48851b5c5f543bacdeb18414d0ec970a  miss37.dat
+  8b7f525121578ca8d21bb685aa7a1940  miss38.dat
+  ae04ab0e7cd530bf33c2f709386fe47f  miss39.dat
+  e4ff6386f59f7788ac5badf9ee7f29a0  miss40.dat
+  5e8fd5946aa9a30ae8e8a327545b4198  miss41.dat
+  da48a8715de74732e02a681dffe8a25f  miss42.dat
+  cfe584b7fa0b9c57d074d0835e1f368a  miss43.dat
+  cdb48561fc4209289f73bece4c16f69a  miss44.dat
+  b7c7bc487f83ac8e493eda60477443f6  miss45.dat
+  434f720e2757908dccf9eecf8ab68c9b  miss46.dat
+  10fad4e4df5bb3c57eec4e98e4af2d9a  miss47.dat
+  ef6fc89b002b235d9c7de106c11d7936  miss48.dat
+  0dead413b6804f7dcb3e134932a21c4b  miss49.dat
+  77bb6e4d748df470480105377d803bf5  miss50.dat
+  895c96b94920195633139529f782f5da  mlogos.dat
+  7b095828bcba4da5b6c4e3ce0bb48c11  mlosa.dat
+  d58f747ff783990e2274adcccb35b162  mlosaout.dat
+  cb91dd01548c78195725d97ebc08930b  mlosegam.dat
+  ccfb0b33be85ffcbbd621f03f89f7b5c  mmap.dat
+  d8eac3d8899c9b408ca3fc220ffc8695  mmapblk.dat
+  f43d9d75472681d743d6c08110766807  mmapout.dat
+  d23892add43160dff7f68480f1e03cd0  mminlogo.dat
+  e437b430c0d75e4e342e72d4e3f9e008  mmulti.dat
+  47027cc3d9ee3e2784d006ebf46f361c  mmultout.dat
+  5885816cabe8decc4a2f7b8e119b9069  moption.dat
+  4410686afb86546bf67682b80c994209  moptout.dat
+  369ce3624d36cbe96d7bb75fd740260e  mresout.dat
+  2210f844ceb0b9b773948df7d4c68631  mresrch.dat
+  fcf23bce5de67c7d79dc3ce5e321ca08  mscrenup.dat
+  8e30e851732c6d461b2866c7ac094a5d  mselect.dat
+  de667e827991327b9abd8971c6dd1bde  mselect.pal
+  20ad6f25d6b99b34dda256214b474b4c  mselout.dat
+  6423a9e4ae9326220334be731798a5d8  mspr-0.dat
+  a7e214b6be28f020c0fdd441df396e0b  mspr-0.tab
+  144e466fb8431c4e35770733a5573f0a  mtitle.dat
+  fe78bbd869150b42cc439f670a956a71  sample.ad
+  fe78bbd869150b42cc439f670a956a71  sample.opl
+  ce73cc7470378c716bddc5310a79f95f  sound-0.dat
+  00e7e07ff3bfd3d8e8721541b7ef22b8  sound-0.tab
+  a1b9b6e2e41297cb915cc99b6ea25c3d  sound-1.dat
+  7370fef08e8c490e10d0446595376526  sound-1.tab
+  b0ee8ce42f322984923e61e98552b863  syngame.xmi
+sha1sums: |
+  f9720895cd59692d22c6a4362d81397218ead80f  col01.dat
+  ae1f1f3a9c9b594170536f997703a67e6da2cda5  cursors/cursors.png
+  c4859bba0ddc854a37179e48c5ce809600f6c132  game01.dat
+  6aaddc0fee1382844d191bc77a0083f186107436  game02.dat
+  7b094cebd11cc6b7391a4b35f47ef376e2a7998c  game03.dat
+  e6fc6d5ee03be287748265a43765738c701bed06  game04.dat
+  3c542bbdb1c5cb8d742b4dc6e2c652b0082b1013  game05.dat
+  bcafae1f6150357f3160de28cb8cd098bc7a68e6  game06.dat
+  158f4eaf6e34035d26bdf98c21c607eaec1637c6  game07.dat
+  a2f34eee9179d9d7663b5867dc4f7e1cfb4cc3ae  game08.dat
+  cd3fa2a788ea6a5c3029093ecb91f8f91b827bc0  game09.dat
+  0ff22c988c43c28711566726bda50a6872852b2f  game10.dat
+  572d2df59a587145649efb30507512a043c5af5c  game11.dat
+  bd8c46214fcff803e32b210bb12954bdb0124937  game12.dat
+  29245305cf230796f3e03b2fd0fe75a4525f988d  game13.dat
+  5ef472df16c8d7e7a7f00457b1a9c3f86912d7c2  game14.dat
+  b44541e57dbf8f4c3710572a24abeffc90020e63  game15.dat
+  2f2aaab234bd9149599649c7ebf11f57c17f513e  game16.dat
+  1d38b0fe4d54672f6aa7811c346caedcd28878cb  game17.dat
+  3c08e8bf0fcc11148c0f71fe1c6848e56f940696  game18.dat
+  599cfaad81ee61cfd733720b9aa6fc3206ac2f15  game19.dat
+  934ab993878408403592185aaea831673b0e0884  game20.dat
+  86c1a2ec96e62654bf167d9d23e5a694b0c3d8cd  game21.dat
+  1a5bb39a439d97e4c1def106eff9278d1e7c4721  game22.dat
+  7f0f4da6675fe96ef176f26960fe42628cb72af7  game23.dat
+  cca246ace6c43bfa0d01a144dd7d4f4a71f8ce76  game24.dat
+  82a60301a0a3a24adac84555b85ab71e941e4d51  game25.dat
+  62481ddac5c94929601520efb4c3888b3c341f18  game26.dat
+  ab8eed478683d62708a7824bfecf89221b428991  game27.dat
+  ad699d939ea520d1e444791de12b2c407bc4b85d  game28.dat
+  ced9e05fc4d9ebc41a4370ed6b9e240eaf273608  game29.dat
+  72352fb553623410a5292838848f2733734c0c79  game30.dat
+  d980da6f6ca06721faf3bb9b7cffc9a903946389  game31.dat
+  a8935cd9f194437159b9908d00db9ce5f645a39e  game32.dat
+  6c88f35d69ca76abdd0174ac6b4f2ab70a90e2ae  game33.dat
+  91a65937934f8ce1a02a28cf5229889e8dec7468  game34.dat
+  eb486d3fc4a59c10a41d7b9050083335824406ff  game35.dat
+  c1815cfe0ccbce27ea13e62033472f5ad19cb1f4  game36.dat
+  77732575c04da4d32598c9626c19ac8a3451d59a  game37.dat
+  abeb68966102856798f62f5b657a34ff908681a4  game38.dat
+  ee511556f449b292b5609fb9e2488172529e1b6e  game39.dat
+  5e3c367f3ef8af53fd2ccd97f1c79eca4dcdc0d9  game40.dat
+  2411cf7c488ffe49df9d9cbbd411dba821daab0e  game41.dat
+  d2d36b05d7c5bd5c58ea48f89c2c53c30fa842d6  game42.dat
+  bf94fb2d7fa48dc44d994630bea7760eeecd23b2  game43.dat
+  a9000e6d1422185ab3ebc76a074a2d30d0589558  game44.dat
+  c9518e78e0e9fe5c74c06c706c8699a89776fe55  game45.dat
+  de726b63c1653d46f397529436f5447688021000  game46.dat
+  f449bea332b35256b984826c87a4d56ac2eae27b  game47.dat
+  ae520ee8082e81b89080ffb933d6747e04206220  game48.dat
+  67634605f96087759eda892fcf09d59a122e9b1a  game49.dat
+  a07c047fbf827622cead1dbd24602bbd546a0d85  game50.dat
+  dbaf974aa7ab0682df77d6a85d3f38f54bdab6b5  game90.dat
+  65904b1862e82b2a3161d37514670b50c7f34e78  game91.dat
+  2f60ca809f869e28588207a0f8a6925f8b735888  game92.dat
+  1fdfc9682d58bf631bb3857af4cdd88c1c93aa93  game93.dat
+  bc195f773806e3d39fbeffcf70ec9e3670f3cf7c  game94.dat
+  a5c74f60c3966baa3a0154e482a7c94b9c24086c  game95.dat
+  27c9072f8a0a404c7d49d37a375b85126bd1bb8d  game96.dat
+  2d16609d279b1f63400582ff85c8be483a2be2b2  game97.dat
+  db1635d4b2e46ab3045839f4b24a6e70b4161112  game98.dat
+  2d3fe328a6a19f5a3a47c85feb631431a2f6d8bf  game99.dat
+  d3d904a24d6caf7e576c893444a280c6b95332bb  hblk01.dat
+  91c13184991834713dc70db558eade1e79af2e5a  hele-0.ani
+  f0fbb97f02340e32e9b7144420aaae256b9d395b  hfnt01.dat
+  687a0d4a8aa6d5ef71e334ec1b3a85d75cf785fc  hfra-0.ani
+  6f41a91193e47812d2b66fcb3ea00f58b09829b7  hpal01.dat
+  7642b896e51a0d780914ca73dc2872ccc02db13f  hpal02.dat
+  2937478c5189837903a7d78c749ed79513b895a2  hpal03.dat
+  c3c8aefce39787c900427f3c82a095ef5a95d202  hpal04.dat
+  aa566071a42404950023d2293b28c59228eab2b0  hpal05.dat
+  4479a3f592bf7cb9adc12b47d86f60cf2c96ad35  hpalette.dat
+  60e5c1f7b2b888aabb2af593edd3e064e97c925a  hpointer.dat
+  e003789aa421d549ba12eb82d7931efaf6916849  hpointer.tab
+  c33841f18794db780bd4d9295af5010c22312b3e  hreq.dat
+  0ba8fe1696bf10556a74b40a6989797252c90e3a  hspr-0.dat
+  04422d504db53589b2b7fe51b22cc4937324a3eb  hspr-0.tab
+  fc1c99b95803b2f7e8ef2e69261d8ad51f1307fa  hsta-0.ani
+  010e11e0da26b6b6c7aefda02043d8d6809ecbc8  intro.dat
+  99ab97fc4c9e747d29ba4c9a7bc7616f93275bc3  intro.xmi
+  e8d350fcb64d687a70fdbb1b06b98c0ced9dfbba  isnds-0.dat
+  065fbe28d2adb993e15fa780c6e71eb6f3a9051c  isnds-0.tab
+  e1c2f750f51f39ec3e94be7c0f2c6ee3d6e112d4  isnds-1.dat
+  4a2e2f75f0304d1788c719b2b66a1ee681bbb333  isnds-1.tab
+  8c32e1e5e79ba296a96e2a0ae68555e885e97209  map01.dat
+  5ca47b487c608a6965a6ed51e507400cf6f2cf0a  map02.dat
+  b0f3b36a64a3c3631938230408c64a3acb50faa8  map03.dat
+  9577c14c44765fc30aba7197f73128e386af1332  map04.dat
+  ff628ea147facbe860b2a83ba0a29dedcb7e44de  map05.dat
+  b669dd58c602c9265e18304d654ec3b2ea9d36a0  map06.dat
+  69b36312eafc01de5aac452e787046f151966583  map07.dat
+  551ed91b8e5861bbde573b5aac45fbdea8342a5a  map08.dat
+  dc172f99db34649e74a0e239eb8f680877174247  map09.dat
+  072d54153536c377b2ee1c0f1aa48aa87b5557a9  map10.dat
+  c2f2eaf2c7009cac18403ff6165271a18f89aef1  map11.dat
+  0fe085942ec59657876688677d30e84747ef6b98  map12.dat
+  aede943c3ae165044d8030c4c69c4d6a1708b961  map13.dat
+  b9521107b224230699f1e257da7ebc3b3461fb76  map15.dat
+  4ace2a7bc7add79f7497bc8ff40a124d08782d58  map16.dat
+  6fc418924efac73225f78aba8a314b7a108068e6  map17.dat
+  8c6c66a65c7bd359a9a9cf90d10036d6bee45a3e  map18.dat
+  4a9e98b621d3a970050c93ea2a36d6a0a78e01ed  map19.dat
+  e70fade939f759609c70510dc35420b7d82ef016  map20.dat
+  eec5b5115e64bebc406b541d381e8f3307b5c622  map21.dat
+  9c601246bb7ca6e79b8bda410c7a3a4a99f7118f  map31.dat
+  0ad2712e830c7405c3e28f6281f2390335275883  map32.dat
+  88045fdafe6e0e461c606cfb997f80f1299dc4a9  map34.dat
+  e659bfbe8da991eaad75f7f003ab1bd4d4eb3462  map35.dat
+  03bd7403b9dfbb09616150a3fc39968e69ec4545  map37.dat
+  477361a7bc90f7261da24dcdad3d49a1ba15731c  map38.dat
+  264a858af1ae811da39b6940b4fe2920c232c058  map39.dat
+  f448c7f47b5732fb8f232340c4b762eff633fe5b  map40.dat
+  9c7eee465c4679a9eb6fc33775c16528bcc8847b  map41.dat
+  e9bd98d5d764c515bcc0c71b48d857a58d856635  map43.dat
+  628094a015dc351b9a1f36cbe927e93713e32d2d  map50.dat
+  16c4df6550a2a03e6824ad6867809602495eef4c  map51.dat
+  f6ea831b9c7ab82d843926336d1ce6b32ec90faa  map52.dat
+  e2a55166423e8dc595646a51b00a71c903fea1a5  map53.dat
+  4319c8794bede22a94cc12b40151d64fa127bb14  map54.dat
+  1eabc85473e9958378f1153c5c9241a8b8a51a7c  map55.dat
+  a984ecf721f72a6df2fed4927423be952e65d5c3  map56.dat
+  0a38ef73fb68a9dd4de846a981a0c61b11a1c9aa  map57.dat
+  f02d73df75c79b223c6bec4d1d1650537b3f408a  map58.dat
+  a574dc25547833cf077f09262bc403ffcfad5d8b  map60.dat
+  0e5b51f3e9b9139a1ea57afba9aba47f7be6c542  map61.dat
+  be1038876dd84a14e11a7ccf4b45f9760d272a0b  map62.dat
+  bf5ec8c434acb765162a491b5857fb02ad87ba9f  map63.dat
+  b40d34eb70a64869fb25633b8737bcbf13effa0e  map64.dat
+  c89dc28c3d99ebd157be348cd2ad79691b1b15e0  map65.dat
+  f142facf19995e16aba89b241d32b49797e59f55  map66.dat
+  c5a98e6c40afa25c7439a33bc72e1e1641e21d6d  map67.dat
+  a56b67e985eb4aa5d683e022db6e79af6b6c8c9f  map70.dat
+  a8df2e001a99ec9dbcf3a6f417ead15428f9955a  map71.dat
+  098ae18b10afe589647cf590fd3585ab520acad3  map72.dat
+  6e42d15d5d0e38ac38d9a09edbe024f2122965ff  map73.dat
+  9aaf7ecc5aed74493aa3da66a44e2691d2b94669  map80.dat
+  ec1faf512fa066a69ad7aa012e8bee8157d673bf  map81.dat
+  a5a87077c13686f872c75a0026bb33e38d6fedba  map82.dat
+  4d8562cb133492f513a3e9669c104e035d88b5a2  map90.dat
+  0185663eea39190187716a647585ef272922c9a8  map91.dat
+  035fbc70a07ba99ab3761a98127e5a14cf4614f6  map92.dat
+  35499b61d36ab755da66b2974e65cfd7615b2ce7  map93.dat
+  9a72954ab096150cd16f324e3e7e1c51c88ee8dd  map94.dat
+  f041da004e5479092ee6f09eb3da239967ff89d4  mbrief.dat
+  44ee78a4a133ad3592afa65fdc7bff965ae1d734  mbrieout.dat
+  08962d7d9048d6ff43c7f293f31b0b99cee3d99b  mconfout.dat
+  6a6f16e345bc9de627c7d99bd42e5b98fadc4781  mconfup.dat
+  181bcbe396f1470b4731b3bc5b589b43f3bae9d4  mconscr.dat
+  c69111e5044029e24d4cb50fc0a07c44dddfad0b  mdebrief.dat
+  5d64e2032bcf7be07db2c6b1bf9994db99f915a0  mdeout.dat
+  e30b3376a6a87286b5745a699727241858ce171c  mendlose.dat
+  c59cf0153ac47be796350bbab4ae550be0bcbbb9  mendwin.dat
+  010414d73f67bf86d4838faff39110d452ccaa56  mfnt-0.dat
+  bfb70ca72e9e9cd4e9b2baca6bea8385e2e2d74f  mfnt-0.tab
+  fccd4a72589fd648b674f8ba018b92fdf5a69992  mgamewin.dat
+  2b59040cfb14615c49e9bb70e0ca41a1346d0af1  miss01.dat
+  8d8ce0fd3260dac8cef13712583cc901adadf433  miss02.dat
+  9a8cb9d9454fdef8cc0c67da0966df75225047dd  miss03.dat
+  e68744151407e2c6c42db8490a65eb21f2dc5b66  miss04.dat
+  19a189c0ba314d7e1bb144e5a8e1cf3ccb8577b4  miss05.dat
+  9e07c9402773280cc5cfcf57b68b2610c80aa4a7  miss06.dat
+  3d53904dba207a7e8d40d7bac37c6dcce2cdda1f  miss07.dat
+  881559f77e6c6ade378057276affcaa206b1570b  miss08.dat
+  5989ff56242f8a6ccbdd5c4c1378c36a7cc3ddaa  miss09.dat
+  a9e9027a065a10bcf365cda2d67df2b7e6d0eadd  miss10.dat
+  3c290a7431babe0ce880f6afb247c2db3dba027f  miss101.dat
+  6e230112ac45dc5c2689870835122ceb6a6bb421  miss102.dat
+  2d79148c2ba9986adbe40893627f95a1774f5299  miss103.dat
+  f9fec48d95f71107d5c5e50bfc188cd9eefafb9e  miss104.dat
+  087cc7484b3ee268899404ba2d28a36817fce672  miss105.dat
+  f0d23cc3168074a33b3932031b7aac2aee349df6  miss106.dat
+  50d384573a3f47aff990205d6ed5f4fb7fd3b19c  miss107.dat
+  2b462e5c8b4876afcb202bc5d84061d80d89435a  miss108.dat
+  25d68e23a7de8c84ca20b6174c09d3f1fa74cd20  miss109.dat
+  04c78c6e2ed7d7ddc164f8995eb1062dae9ecccb  miss11.dat
+  c1258d7ea8d19a4104ba5667dfae077ea9c501ff  miss110.dat
+  672fdb7690591538a531e92539e0b1207c28e7c4  miss111.dat
+  59dd1847f06929ec3b57c48c6652177cc68907fd  miss112.dat
+  eb7b4072306ddd5b611b29144786f04de088a989  miss113.dat
+  d36b3b102a70827a41ada96fbfbe136678f79be2  miss114.dat
+  964e3abd229a182f166ad41a80d89824e244b808  miss115.dat
+  e3fb0d83ef5cdce5d0ef497fc3afe86afa99f5d6  miss116.dat
+  743612a15f184c166f3fae1c419d6298c872c217  miss117.dat
+  5152c6536dbd7868e4ffac783dc26fc202b08811  miss118.dat
+  e9401eec0f889e1cba4fcaaa5f6bbd0276965d7e  miss119.dat
+  76369d844759be250442705187ce45e87468d2f2  miss12.dat
+  0219754497d03bab3f996a2a169026e342f55c19  miss120.dat
+  2eeaf9d16b65de3357c83b4a8ae4be370410689b  miss121.dat
+  9aafba100819186062bdcec325d646bbddfe030f  miss122.dat
+  be62a3579dc914a072abf328a576a805a682e60a  miss123.dat
+  4f01c68026e78d324c81b4228c8ee792d6b846d4  miss124.dat
+  7643e2eef17cd9a78ce8606da556617608a8ef85  miss125.dat
+  c73df2192cd50d9afa237ad4e8036f994d80daff  miss126.dat
+  e11f519d5f40569312b5176d0accac21c5fca979  miss127.dat
+  a93ef3ffbe8f6f6561ca51c4c92666322363daad  miss128.dat
+  7f9bf80fcc8a10e92bd9b723b622f38380becde8  miss129.dat
+  ed9e74ad35af77b0990c0e9134567420ca5d4ebb  miss13.dat
+  f67ff300fa422f955f61d9450f0548a86d265bcd  miss130.dat
+  f736e4171289038c4cd53d6b361422612255d5a2  miss131.dat
+  dddf865f63c7a39ffdf4ac434d9cf47cdff3532a  miss132.dat
+  c6d0bde7c46002c2748b19f65eb9b1254ac6a448  miss133.dat
+  c33b57b8cce2aeb953ede3505328fcec32841c3b  miss134.dat
+  05c66dc30355c76f9f60987d29e99a3217088125  miss135.dat
+  1e003c0cc1b1b2309b74e97453769a3d47cf418e  miss136.dat
+  879a99c4e3509db79c098d57860bd5e86e8fc214  miss137.dat
+  2ae49754b613e03bfec1d3c056fa5181de1b547a  miss138.dat
+  c0468d2307bb62a404c87dd8d115b9eebf1122b1  miss139.dat
+  f5b9a856681f8a4fd6fa86ad573419e5909ad7fb  miss14.dat
+  a12ab1ead357c55103e8d6365dc9439e211e1b64  miss140.dat
+  83464836267d2834df43e78102c3c2b852d92324  miss141.dat
+  b2820f57ef4b751645516623728adac4ad9f028f  miss142.dat
+  0f0ef137f4da4f0762c838d9c1db7cfdfa1167ec  miss143.dat
+  b9e10289fc4e0112812e29ae30727bd387d9444e  miss144.dat
+  b9bf8048b0b52d9be5fae098b9096fd9855d48f2  miss145.dat
+  6382d199eef5f046e1f461cc66e1ca7e89077acb  miss146.dat
+  b441c80f9efda4c2a95b0b35fc00896227c3f114  miss147.dat
+  32dab10de6f39f94c9a8371249e9318ea0821dd7  miss148.dat
+  2e20bfb7d505a21a0d5586d66590029e15766cfd  miss149.dat
+  6cd3313c795eb57e0764c2e89bbb8596ef7d931d  miss15.dat
+  4798794828c760df3c181fb8d18f2a124b78bb2a  miss150.dat
+  8044141964c67ab4327a72cc041d218f7d64bdd7  miss16.dat
+  cda75331c4b5df9483355b266dfe4591f432235f  miss17.dat
+  b33a7285eb9f1b0152988b806b80c387ad0f5cfe  miss18.dat
+  79518df4c4f088f033198b9772e92446dfbca0f5  miss19.dat
+  55328e3abbadda2b4111ed0372b262570ca71490  miss20.dat
+  c7c40e5a84e223190837aaf961ec5cdeffc46386  miss201.dat
+  f76766877de6c51697df9aeaad6b85ef6d1db48c  miss202.dat
+  e3041380f00659d477ab3c42865f7e9d4031fbe8  miss203.dat
+  4e2bb4ee89c706a565471552c170a236a4f0f09d  miss204.dat
+  791a9599507ee7804e72239cc00b2874ee273948  miss205.dat
+  b153e4fc9ab18073c115688018eeb8d726a204f1  miss206.dat
+  8f02ba49dfd28e200414eeccb069455c40cb6e68  miss207.dat
+  fedea5d706ef0d67ff3ef3cb8ac3cd3b50834b1d  miss208.dat
+  934e86011f1ee72b509d8ab12aa4b00976cd54f2  miss209.dat
+  4a89acd2a339626a5691e2ae4ea3f0e45cb07446  miss21.dat
+  0a7b47c8de15e8ed4b6c3cb9205f79043a3ed119  miss210.dat
+  b093cdffe79d28f70e6f1842349b5ec1f6d61f76  miss211.dat
+  9c9684f9c85c87e58cf5f8416574f057ba4cf978  miss212.dat
+  24670b109566ef1e7c438855135b2f2328406ca7  miss213.dat
+  ac66fe279ab21408ac4ae0745a02e367a622a1c0  miss214.dat
+  6dbfda0fee126382282e3a68f6e5b0ed9286d572  miss215.dat
+  9213d6011c07be41dc2b2582f7e913f4a50d4f49  miss216.dat
+  6c99ca7126cb9983cbd2c9287197951b6c63704b  miss217.dat
+  570faa9bb4035f727db70da940a5c1dbc3ee25b3  miss218.dat
+  cc1f8bd7d1eca6968769e3a9af7d9b549c4d2d96  miss219.dat
+  ba022a40b86c35397b62dca5e10c7d8b33e16d35  miss22.dat
+  0daa33b0e3f4d8c203ff10caf017f92c0601ae84  miss220.dat
+  f51f5fb5c3a4334502df88e58ee36223b8ef4955  miss221.dat
+  be222da0862b36ead93f2d2e62cce1265648e828  miss222.dat
+  35fa4c3bcedf1492a26fd58830c1df3b9dd63b10  miss223.dat
+  56ed67b2a851f6802136995d16e7d05ea9294755  miss224.dat
+  758791534d7278a997fca28933f243f1a36f3faf  miss225.dat
+  f7ee44b8310be8757b1e84b96a936c4eff0d989a  miss226.dat
+  d661353f25177b3a3b2a9bb711b23906a4ed6af9  miss227.dat
+  0ef7c4780adc560decfcb2e8896cdf2f347bc7aa  miss228.dat
+  b3ca915ef5574b52807588c50c3999786c5bb464  miss229.dat
+  a5c4a8d30db13c68d3cb710e87afc776a49441f2  miss23.dat
+  cf0faa20eb128b13f5f02f5c70397f4a8a475339  miss230.dat
+  f41081d6ac77db5fb66f486f7eaedd0b6e47fe4a  miss231.dat
+  6be1ecb401e8b5713204dc2eb02a6450e0ddc229  miss232.dat
+  ec72ee5b9ab02e5796c708c4ee2d1f60f2b95d21  miss233.dat
+  f35746040c33fa61b09df94ea2fd553cdea290c2  miss234.dat
+  2d91d213e0d7b2c6fa0425c52f3c6b3ca1793509  miss235.dat
+  f04c60bd152f8bde7c8b1f0afec005eca3d45455  miss236.dat
+  4624eebefa538dacb9b22cebd7e707709e33530f  miss237.dat
+  abb6d395e5f495572f1983f3c8ec5dffc77fa3a1  miss238.dat
+  4ca592ac22664be2340390f39b7f6199803585df  miss239.dat
+  00d13cb4c6e8564b4538ce7dbdd4fb26f8fc6295  miss24.dat
+  a3bb83c24364d70f506651dc74906dc02f6ec447  miss240.dat
+  68167c6bf84ae630cf987b4678f9002f95709477  miss241.dat
+  020ff1ca149c9c1be550219e27575d228dc38a29  miss242.dat
+  82164103f4514a248d33d2b04f5114837b0cd2ec  miss243.dat
+  5b0354775387affc1a65670716f290b7b79a83b6  miss244.dat
+  e5af2fe4907df37f44e6bdbbfc557ac7aecae01e  miss245.dat
+  3ff04d5975601be3a2954e70911a48784e8d2c96  miss246.dat
+  510ac164c71ab21991aca4cb548f2f993fb65ff7  miss247.dat
+  9af97408ee1595f946137eee1aca4c3db2d92fd2  miss248.dat
+  29073e86b584ceded18df8999afed2bb61c28e38  miss249.dat
+  cfb6e541a08b5f3f1cd5419dbb941a510dc51584  miss25.dat
+  2e9da4cb8b974b967831124b2b583c57056e9f6f  miss250.dat
+  835022c9e91436b5bcd3eed941449a8b076c5520  miss26.dat
+  685cff791c088cf2f51d43462b7154b4bba4e39f  miss27.dat
+  50fc695cc7151a22a717ec9e20c65418d229d83a  miss28.dat
+  fda7210db4fc3e1e93dc7c1fce7dd40ea7273971  miss29.dat
+  860134f569c93f31a9bc0b6ef768ea503f2f0670  miss30.dat
+  4f881d50c4ec388f14d40a742e1f2ad9a84d7426  miss301.dat
+  46c33bf5504816b20cf8e7c1afc195f82cadd564  miss302.dat
+  3ac9ad94104a7048004457ba02c4ad479879a5d8  miss303.dat
+  9c056dad9985f7c48d508f0addabad7b97c992a8  miss304.dat
+  6bde0b8b6128f64df9b379eb8a1de145fdfa266a  miss305.dat
+  df656abdd6bbf68f021f9d02e107db0676c627a0  miss306.dat
+  f5c5508768d6afb74247df4d23c18292c71df610  miss307.dat
+  f9aea2c7deda128e5e98ceab7a284073acfda2b3  miss308.dat
+  ffb632a37b36bf5765390ccfe125f96ed6a6e45e  miss309.dat
+  d4410258349b2c8fb18d92405e22b0a1e32c818f  miss31.dat
+  01f0bf7ca480fd65ef4e429c52804b5a869b9569  miss310.dat
+  bb9ed50d32a8ecb455da029f0f71acf07c39cf12  miss311.dat
+  aeee50bf9b473e90b2e2394d6964f69ded5a3ad0  miss312.dat
+  e6762cc5d215228d8b7bcdd9c138400b46b5482e  miss313.dat
+  a4637b13f081495932517016cc76f9bcd151576d  miss314.dat
+  1f1ebbaf438b81482f75b8374871f918483a3d80  miss315.dat
+  6f1bf91f0f6b32e33424a1a6f8e71aba1807a78f  miss316.dat
+  1a585f5e75c03c8e0fe9869928f0ccaa4e385e55  miss317.dat
+  961492f7547f8a53470f9eed1633ceabf32deda2  miss318.dat
+  c40aa375b7e0d5dc27a377e638d40c2f0a1fccbc  miss319.dat
+  9a71c9b4284e3a09cabdc128db6d596fd0b60663  miss32.dat
+  52fa67296a50af944dca3b06edf8e21e0759bb1d  miss320.dat
+  2a8ebbba5457eb95bdb5afe7e9fdae1d7ca454aa  miss321.dat
+  33b280000f971d7dec7d83e3b37226b3e427c464  miss322.dat
+  62970676991169afa1795affc312903d766d8104  miss323.dat
+  6892320b2b91dd582da308eff358ccbade8cec9c  miss324.dat
+  cc33ef97800c342cb9f0267cdc27245802e80f31  miss325.dat
+  510c34bb43067527c0822d6ed364ac5acd1e80df  miss326.dat
+  da7d2824cac70990a7288f9fe4518403dcb67093  miss327.dat
+  4760cdd7efc4146ee01ca4bb666d575b92fe8407  miss328.dat
+  0c5e4c5fa3a7f1a9c339525804a87a3eb5c4af75  miss329.dat
+  0e13e84cdd1f5af6d4c576a3536ee2f27284cf72  miss33.dat
+  f52961dff50433357229316850257fc272163e59  miss330.dat
+  b85a2fcc1ec23d21ec117f3c73d473ab01d94749  miss331.dat
+  7c426ca3e1fc8da32b265b94c2ac3e970786527a  miss332.dat
+  c37def63c2f72df930b2963af363b19d7b869ef7  miss333.dat
+  002317958c6f7a4930ed2b827b5bc0d9408fb194  miss334.dat
+  d0803f9f5e8df2a66241dc36f533f453b4bc000b  miss335.dat
+  6de2bc477080ae93854a9a544cded8fc4a71b0e3  miss336.dat
+  f569477a84b57c47314807a5787567c27b864635  miss337.dat
+  3cb4a2928a10bf609f48ab843f4023705578a5ee  miss338.dat
+  579ea8687d21f0ced33c455cfb84a10c068d6c19  miss339.dat
+  da02e903156a261c3306a5fa7eedada6314e6065  miss34.dat
+  08a5778ebb8081dca44c44d24733d11eb02fa5fe  miss340.dat
+  4bbe7a5a00a4f19a63f5bc9e16cda48d03022c49  miss341.dat
+  ec3a78226c24e5f4079708d5d14e30368e001be2  miss342.dat
+  69c4009ccf5cd4ef6c68418de461b0696d4df4d2  miss343.dat
+  33ac8aac7079442690bc5a4b2266c4e33e34060f  miss344.dat
+  521a16e7992b22c90713c4671d5743e0b63241ad  miss345.dat
+  5b3ec003751abb4b3674b1e7305707e81ab10c62  miss346.dat
+  2686596a3eb0046954e5cdd49c5f72d9c663ce07  miss347.dat
+  28f0a263fcfb05b6db5d50fd9512e638b6cd3b5a  miss348.dat
+  c84e92f0f18df4643ded075f0da65f43bac8640d  miss349.dat
+  6cb03d2649af17b420011483651abe4c6c0cd535  miss35.dat
+  86afa95ec26acc5ed2d11f1d2a03be2207f67332  miss350.dat
+  2f3b019145e96d9e9f2470b2959dbb4ddc748edd  miss36.dat
+  adc60384acef6b725bac13526306b91298d8ce09  miss37.dat
+  52ab6ebcea5ae969f509bb06e42977a1e66c8e4b  miss38.dat
+  4bc538b776fd47ac73d295a4b3814a1f821ea855  miss39.dat
+  0d40c43b981eb7e7643795475200be6ec538acdf  miss40.dat
+  62c66ce077726320d00195e630172ba0914ca1fc  miss41.dat
+  391239d71a44bcf89e4698994c77be0421adc9c3  miss42.dat
+  9373c299a7b36d7ffa630a9e71b4a5711361649b  miss43.dat
+  c7ae4418515855bee17481dd5544fc016c7112f8  miss44.dat
+  5f982fb4f751ee0f99b155f860db386ae7604004  miss45.dat
+  e71b62c95aa9099c72ba980dc4bc0cfaf9b8b447  miss46.dat
+  5c5041381a3dcd19871f1528e3e431227279da78  miss47.dat
+  b3bc0a5694c0af256b58d2e3ec04846bbffe43b3  miss48.dat
+  aacfa9f84c0fd13f576b7f598953de6884c9d421  miss49.dat
+  9726666110deafc6953d3b307fca2b870bc63825  miss50.dat
+  596ab5d13c9546ce7db80e5bd1749ce2b2b7de03  mlogos.dat
+  5cbbd9ae19af9be7358e344be8c199f1e20e571c  mlosa.dat
+  82fabc93ff0f22b386796ed9e2d62005fd6ad13f  mlosaout.dat
+  b9d8f3b3a4f4468740469096f86d3ca8d4d7af84  mlosegam.dat
+  766edd6039ecadb0215529143ca7da181ecfeba2  mmap.dat
+  43793e1ee5ca6f03d759258d1fce8a59a4bd02d9  mmapblk.dat
+  8c3d8bf6175e1eb52fbcf1d3bd30505e9eef1abb  mmapout.dat
+  79e0fb154257d0e191c8a4c65ee88fc596ee4743  mminlogo.dat
+  97b8866d2b3b472406e475c6f6b12797c270736e  mmulti.dat
+  f8a5de7b6b81aeede264c046948912cff43b31c8  mmultout.dat
+  e20fc9b5deee7bab63163c8ed94fe1753494bcd9  moption.dat
+  01a220197a622e98a055ceedd78e558e5adc2a68  moptout.dat
+  14cf2a09951f97c5e5112bd5d2e8cdc0f455ad53  mresout.dat
+  37376f7725e8c9b08d06fd05f3b048c0f9f952fa  mresrch.dat
+  be12e176ab22e7e601aac7161b1282e0c096a0e3  mscrenup.dat
+  2c26ba1478a3f9177e5e2dce6c608fe05610c6ea  mselect.dat
+  0b76105e9a94ac5756e2d31c466e48b290fc0ab7  mselect.pal
+  f36c093bb36e968fe1a3fcef0e7e40c409a83753  mselout.dat
+  defe13b1f3dfc8ddd7efbc25dbf45d6e00e1204d  mspr-0.dat
+  00c93b56fb8d6e9b6ee44700d5344b7744dfee12  mspr-0.tab
+  bebabefc74daa1327255345400f0b9378a9469c5  mtitle.dat
+  c74278f993a7178aca3224a3a174106f0a93a3ff  sample.ad
+  c74278f993a7178aca3224a3a174106f0a93a3ff  sample.opl
+  d73f720a0391f179313039c39f0ccdae39bdac88  sound-0.dat
+  4f776b4b5b0a7ea2f5ce88dccae9b9b73ae69445  sound-0.tab
+  9c499a0d65628f7b4e0cab7084995d7a443a355a  sound-1.dat
+  e495e0c5a19e406451c83ee6c13cb60fbe8a803b  sound-1.tab
+  227dc2474de1b262c924b93f51a89defb3b09c8a  syngame.xmi
+sha256sums: |
+  07aaefe68af4789133208bab35e63b5a07d827bee09070682021635615d2a01f  col01.dat
+  959119f7b26efa2674516c386293a5fcf6923138521041ec34a18892932c1fbf  game01.dat
+  41de6b1410f8e211d5eeade7974e620048f3b391bd5bba1f7e83e318f083d502  game02.dat
+  dfadd84e1f40079ed14069bdf383890ce619fb3bc2e45cfabb69bceefe3ef581  game03.dat
+  c6c70b63fe6915b6be1d78282624c07b74dea4571adcc70f76fff14348ce48d2  game04.dat
+  46e01ba5e75e9e229847c0e470d9f73646e302692f747f92f34068c64a82e8a9  game05.dat
+  ff7712e67fe32e32b8eaa2f25d712dec17d96d46fe0ae29820f3b69fccbd6c0f  game06.dat
+  15e759c767e367dd783b437fcec98f43be60610c866e5357276a608242311140  game07.dat
+  4341f9eda703835ec0212c2e13403658b434cb197ad369210ec6ab0c99e2752b  game08.dat
+  1e6017383cca64def885d532e5a81cb4f706f69c712180ddb048ab49f54edb08  game09.dat
+  893c414db57e2a750a18f9e6bc535115ded575c4521baa3bb8168bd701754ebf  game10.dat
+  ae18218a9c164d40fa686bd8598acb2f8f08e2b08ea622563871b90db02c9d8b  game11.dat
+  c67469a072fc8a452cab5edaa21d5c6bc2869885c78621a793691ddd9f893662  game12.dat
+  14b1af856373afd40ed8deaa71468a5d695ebdeb6d643d9b4be575a4c4a33eb8  game13.dat
+  673c90672a47d15b26bc277d9d0c259393f66c7f7f7dbc6607b9d041ed0a19c8  game14.dat
+  b373462719ce3c832b67fcdb8f3da0b53243d83a401cf29677f88b5b3becaf0e  game15.dat
+  8c54ed8c7e30d9ab03ef4d58083697048abbab391191ecfdcc15944243d4fd15  game16.dat
+  d49d8640fab61614c3b434a8a403f52f5b796b8787cc4f3743f2c5b518a2bdb1  game17.dat
+  4e5207d2d9579f19a6ee94179b512c222486e0159f05daa55701fe4793c8d5f7  game18.dat
+  e223cb19fe1faef981d5b8d0cc9a0829869edf64fee81a74ce68b8222a8b6625  game19.dat
+  6011ffe79262e577925b6dc649c018cf16f639f41edc8ce841320c94d43f657d  game20.dat
+  4987ee3f8d6f7a72fcbe44238d65d22a4fdfae2548ea42980b5a8b984cbacc20  game21.dat
+  9c93fe8d0438e75de27a889db30b6135f873a88572d036c90c5136e078030574  game22.dat
+  0516e3a9d394a0594a3a72dd13b2f7bd9a92fa78a4158b8b3d442487a3a9ca73  game23.dat
+  ef0e36983e852ef328557b9eb8e55ffa60108e638e82e631d6ab891a8abbcf72  game24.dat
+  64e15bd8b957fbce08b07c16bf7bace34ec1af2837a69b9f31aec6bfb68b013d  game25.dat
+  d64eea8bb6231d344e12e5edb0efee6ce5bca12251ce9a3c57f0abc10265da15  game26.dat
+  5e5cc4cc9338ddf5ecc8ca7943c3b2deb3ed235e4ef6f68b21fa48c6b7ae035a  game27.dat
+  ad904e4ff1c783a45b4a1a801064d6d741a9e270f46c9714bc7c517e13a52aed  game28.dat
+  a962eaac4c6d575f5d6a4d5f46a7075691f43830c9be05d459fcff9ec0832a09  game29.dat
+  4e0823ec4a13029f616dc1c3e1ed03b6073a1600adbc8d11dbbb7e31aa08b227  game30.dat
+  16ed258a40cfcdc03adc488e957de3e1fb28c245babda0aa89aa0c21f464d2e3  game31.dat
+  9aac9e0bdb56f4e3f9423faf94bdf002ad237532e8d91ec36430c295479fc252  game32.dat
+  310027880563dabb30e8565efed4ad6e06b59914be3884e01d68098fb768229f  game33.dat
+  9dbcbb59d67ed8966d9374d79611ca951eb2d8ab9f6f69e66a828185cd338d34  game34.dat
+  1f3b98ac15888770a8e1dd774490a02e3142939824effb55fadb3e18da0a3b58  game35.dat
+  fab21dd02fe4f66afab7dc314d99b0dadf404233ddba77d20ff41503477a04f6  game36.dat
+  b655657ffc5a64d42c4ac68344b00fd5cba9e9cec842414cd77ea2eba2682fd6  game37.dat
+  c9671006cadaa82ed77ac75d4be6cb9ef6bd7ab76609fc09c66cd13369c8a8de  game38.dat
+  ce2222eb7db7dab9ffa8be668719a419e6b58a394503b462c1280e957e68133f  game39.dat
+  3d5a47fec12f798d705c0642f1a8a1fb65e1436a0f2b21217d661eb29b9a53e3  game40.dat
+  9f25b39ac96cc40c6461818798261d75dc1cc988bea2201a2015e59ef9881e43  game41.dat
+  86be8e306d580c817148747d601b6eaa335cc6b91ec8a6571632080ec59a4f0a  game42.dat
+  3acf160199fb0fe32bd8191233c0ba33f941aa05eb9bccfb167cb6265741a035  game43.dat
+  ebe7d9fa669c93a16470eeebe7f3645c8a957b3073c4dd0f07daba286c34ca2c  game44.dat
+  02aec8eaf04604a4d236d7e93ca8e3eb9a14e813bd3512cf481d844f30de2ef3  game45.dat
+  316ba9ce540f609946e8c6b73b0ced9961348cb12d04c60e9315cbd84042e0ef  game46.dat
+  4c488b65b58406d4cf439f28b79fbe35eb7a88a5ddcf8353994654b305d567b4  game47.dat
+  b1f27c76d4acb808cb6c8453d63e7ac506f8d3b3611631b4b0cb3c3d5d63d3ae  game48.dat
+  c89be65648b4ccd53c00dbec19ca86ed4d79178c2e6ed566a4864dc63ad86916  game49.dat
+  c1ad84abcf6584a255f063fe2b87f5bdc08fd5b3ed6f72b52957b19c668a465b  game50.dat
+  f358a738c7ee16ba954c8c0d5906f98edfb40ba763c41af62207a93413b7b36c  game90.dat
+  f00f3e76bee61db75e24952c812391bcb93f92592c31f55397a8fc9b70bfd27c  game91.dat
+  0be7eb81f2d5909780fdd5afb84cf8debc372c56e9f296be8442eaadac059e16  game92.dat
+  5c4bb6b20a9767dcf7ec2077f340d1d5b20695287f59eb0a464193c6d67e5f4e  game93.dat
+  545f324d3be734d4cbc8980dabd9dc5c9dab0018af0f40ff5c1f1c55ad3384b3  game94.dat
+  d794cf7f5d216ee72155e526a08b410bc05893e124148325a8e4fb7b2392fe72  game95.dat
+  df3c6f3265f835984595f2d9e91bc4a1703e3cf251b50ee9e8742a756b07721d  game96.dat
+  3d1c10a729566cca030291c8737fe192e131a9c4f309e00941156501b7f1b103  game97.dat
+  a07f631deb24e263d10231fb0d4c192e60b8b196c6642c4dc20593d057435b01  game98.dat
+  d4a48a7bb3649a616feae17a5a0a02b36e3c3bd3db20e7d05110e30e3675de31  game99.dat
+  e23244cfdc83d8736b8c120e4f573ef77a75dd4307c5fd63f1273fcde82278fd  hblk01.dat
+  25463962a6db7b0902098194c018bc591c4a0c6b7ff922600dbe83f850547a7c  hele-0.ani
+  4904dc534dc03a8050eedb4fd1b2e1035c478a2e659e7d5a5e22af1d6c4a47da  hfnt01.dat
+  41912e956103884256e921aebb5c725a58c838ea33c1554ddc26a2effc010207  hfra-0.ani
+  b2a857daf7255a45777ec979f72af3b330dd8ef52c1a9e7d6314362704f71f89  hpal01.dat
+  ff7e5f374e5203116fead047894f63dc1233bdd95005f68fa074519c366a4ccf  hpal02.dat
+  602d324b716617b1bdf6bc891de27a1ef44cc39cb544f1c15b4aff826fa581e3  hpal03.dat
+  54b60a2002ba5c14a3f34d4da9276dcd486bd107b89308cf5f4b99fa70154325  hpal04.dat
+  7727a002b7f297c76f3be43c1f635ad9bbfb5d13f7113ca511b628506263f7c5  hpal05.dat
+  d97012a433c92b53aa975051a5523bd67e5b6176e91105a8c05a0de8c2d246bc  hpalette.dat
+  cbba6cf5a597caaa6143302e57e85e1264611462809aba1f5dc1f0ac1b46bd57  hpointer.dat
+  8252d937699786aa909bb4cb13d2b9af69fb9370c79260543ee2279888c7bdad  hpointer.tab
+  18cacc787a9a34d1000cb1bdb1e77672a52d5791bfc20df86bdd53af3193b2f1  hreq.dat
+  76491311e87ad08033b45630d989eacb2495856b911edc29cb0def88118ba545  hspr-0.dat
+  1086c676fed24c87ecadcf9198bb1027147ba16af57aa88fb01e852685e99148  hspr-0.tab
+  7f662322d060542069a8954a467a9efbfedc32d18b1a69ddbc3c0e2e9913c2c8  hsta-0.ani
+  d8f2d535d9bff0707f45053c306497039c92b752a95789d5064cbede150ebefb  intro.dat
+  570bb41f9cbfceabed47fdb8828fb8bdaf512a23445946624a2dced171672940  intro.xmi
+  cd888d6ed68efc51c4d5b58d77b47932d273b9b5bfe1f7ec8b0fde06df834449  isnds-0.dat
+  d507638eb9b6367b7ff980e7d46810a6ea9a6aa7df6a442120a957687736fbdd  isnds-0.tab
+  bfdfafea4451422f650a1536137ee5600ec8b116bfb486e9d335a995a7187792  isnds-1.dat
+  75772b18819440b46a69fa71c14d3a37eb5c5554a4f59060ce04e8b8db968065  isnds-1.tab
+  6b12d40b65cde1d6d3451eea2c71014ee36898dfd13a0b111033eff517cbdc53  map01.dat
+  c140bc4043a850b18523a19eeba336eb2aa31ab55f75b6bd574e8da7a8d78926  map02.dat
+  826558b1586bc177f6f9860f09fe2ddc184bf944da3bcc7cd1a35eb3f63b1c4a  map03.dat
+  3b90170315d5c3ac0a35e9574ba38b572aa70853a7f8df6dfd0bd13211d47863  map04.dat
+  c535bf285e99f3538cd11c4dde3475272459adcf88b690fc75ba06ab00267d71  map05.dat
+  716916a27d6e888859779fb178edb81f831f06de6e2d2894f47e0b2d1b59fcab  map06.dat
+  ff4f7b6745bf8120ef931c30241979bdb70bdcbf57beb42835aeeaacd83172d5  map07.dat
+  8879d0bce12267328619b43699ea92aac6af4084257766a63980a27a60cb8894  map08.dat
+  2cbc85d5d1b5ff579d4038afb6f4f517252cce94978a8d4e6c95b1468df42b17  map09.dat
+  c44b22f81470d3c9835230a98b275ceff0fd5e5bcf4aeacfe806a75e1de1c80d  map10.dat
+  f57c9b68e5f698557b020b9674623be618cf5adc9878b1db0fd97c6dfd2b4211  map11.dat
+  787a9dbc16891648eb589ff75a7b95c6853e7a19c486ce1a8a84a536cefcf5e2  map12.dat
+  eb98aac0bcbecbb2df619c9bb4cad3d3d7b742d89744962f02a8b6d528a976fd  map13.dat
+  6b07d8f3fd4bbd86247a47d1431f2e91eb3020d7ba9954b3cf7bdfc5395f4739  map15.dat
+  56e7e76c34e6a4503e47645148b2ee4b835553085980da9f076d564061a37efe  map16.dat
+  9a1662b8b2c5ae96b6f3fd7c767cc1d93f7860a131fbf79755906e16a1834ac4  map17.dat
+  88b394b9e45cad4232fe7689bc5f39ff34a3e06e6a2dd028fdcc8c22d0d5ff90  map18.dat
+  3f7185f6f329a03b83d896fb7ee0ecedf1267285dfb282b301b6e71fbadd00e1  map19.dat
+  efaac831d25ab9b389052143162f9c5b37da4210f42eecf78a9bf98788e52498  map20.dat
+  dd88037b42ade700803169ed203e9c139f91623249b2b7e4a7be0b696337e205  map21.dat
+  de33b060aed0479e636cf11b09868576ee22b3694f19abffc39c5ec6d109a587  map31.dat
+  1f79ab1606369367ae05bec49e68321a988dd53ce2edb02b71a2d68d956426f0  map32.dat
+  716bda86185f90a0212bfc42eb66c624f86660317eee2cb2025fe657550a24be  map34.dat
+  6af53dab861f1a485e0ce240583539982a8b6c546bd1a300622a1f1b8192f0dd  map35.dat
+  0bf4ec12ef8923cb0dd1c66f5bfb8c4726191d4b00808cc9d6a07fadb9d89112  map37.dat
+  7945c5715e26b7f146e58b48fd825fe3beb0e92c2f33bff857933afe8e80c940  map38.dat
+  ea528766f69a54a9fc1e5e149a33c8be647b23049d9659790a7bed26808fa7cb  map39.dat
+  cb998ce8440a992f59b7cc71c179a13190f15d5cebef23676a8105f0d6c0ba63  map40.dat
+  4c449a4fd5a665a29937d6116563cddc3bcf60283f8a86f1c1bace6a7b43d342  map41.dat
+  7ff022da49b0c3df52fca8fd34d02d6dc5c706e304bfd376bbd995475af44a23  map43.dat
+  335beaf7cb74f439d5586a12564e88fc5e9b5537fa60a7f3c1f7d427d5f716ce  map50.dat
+  4975248fe3e87818c801250debf1947f15047fc7436c94f073d464721eb01533  map51.dat
+  656227d685374dc610db631d07711199fc90320673b79690ee71f7cbb448b7a0  map52.dat
+  3d712bfc746c537d0e97fbcbcb9f7423d0db9f4515c5dc76f79f05cd8166ad90  map53.dat
+  7df4a4252560a136f722a1973292f2c6c02e2324ede33b4df2382e143ef28d33  map54.dat
+  0d631ccc30a30891956e93b3d27cadeefe3422fdd2ed3e81e2452cad8a10002c  map55.dat
+  df04dfb3b1f38a49ee215578e97c7880c74e7de018ff699d0be6eaefb0549194  map56.dat
+  abe86a7d90e4cf8545296d90a749cda7f191b6eef5a1566b30ddd44c61a54f54  map57.dat
+  a8ed27edb195afa28a313bc512e4ff8ad28c885314af66d138539ff7731209ce  map58.dat
+  efd851fb3a5cd0b3d715cc7e635aef14f89a27b4bd0857431a114e8791162b94  map60.dat
+  80c09b0d801590a138e396995f5c1bceec2910e5d33dde8813ff9a7421b3e64d  map61.dat
+  dd63b343ccb542095ae8e7719da2306715c2f4ab4178f6430de25b4da0ca38c9  map62.dat
+  f72dfe5cd2593f533318a9b62201c7e0e9f253f643503d2f5b0b99bbd5a9f016  map63.dat
+  4d70e7daf022ab0cf063521fd8e355183ce938b1dac1e4b9141db11852e1306a  map64.dat
+  41ac5b7ad8144051e1aab612ba22f8dbd4e061528af2d31a9130df1fd080d4b4  map65.dat
+  8dc5ed526baf84b1c02189bdbf7dcd191baf60e3c958cde6cb4f5ac1ad098fc8  map66.dat
+  61aef6b0b3866d2c5c19af0ed2b445f32585b8ed4f225fb5c9aa17c2427b7052  map67.dat
+  eceb4a27ab0e6714e16766719e5ffc76dec72d17ff465fc0739430426000f9a8  map70.dat
+  e221aeda94fbc6fd8cc5ee20561b54ed790e9e11fe015c341106a03058e5face  map71.dat
+  c0357cd9d7515ac50e55016fcfe2661c94a8e19689d8f4644f1e29dd4dc28edc  map72.dat
+  cbd3ccfbf3b8a8afdb24b51aa5b03cd55a6447c77a5cbcf7eb8954733bad44e8  map73.dat
+  3bc17888141fe02db4c0488d8a25b9bac044206390fba0bf1df3acf8131f905d  map80.dat
+  586ed1e560a0811b247c40501a71b8b5e308884aace2f436f68d2b66c56f8475  map81.dat
+  ef16f0b821fe1b30ea6c4b1557f0cd87325e718d4adbb7510cf4fbf3e846390c  map82.dat
+  9d8c566aeed3e230a8afeea2132fd67a74138486be2d29bcff4a8aa09fd1c1f9  map90.dat
+  6d638a62524feded5dc245654afa9c19248d1e371ad2b5544e0e45a21d37bbec  map91.dat
+  f72531289f96cd02be71498a4d0ae9e0bd9e67dbaf055e61feb881dce1d65249  map92.dat
+  f747efdc918c06b66c3411132eccf8a2a537212948dd7d0f809e268f16622de7  map93.dat
+  b1ddd78dcc224305977546c96c022e56c6639f1617661888109f4fe4fe7adaa9  map94.dat
+  c435aceac30dd6cc46ddf014f8a1f7c23bed672a52da1f7904e2578391cb6748  mbrief.dat
+  0622f031626168a2afa2ee4d179baf01fc6fe3d37cafe6b0ff4f82bd723d65fb  mbrieout.dat
+  df1c4dc0cacb3a09a075222a6ac6d957b060c4f627954cc9a9b4ddcb6865c2cc  mconfout.dat
+  f9285874354e00c012a67919225ca4ac24f6cb3ac23448f8b570734bf9bb2074  mconfup.dat
+  d0b9eeed477eba9a46c37278e064d063395df6d9230b54a37ed818a7fb8f631e  mconscr.dat
+  b209c1a8974ff6385435063a89a1c33f4fe190f8429d77c59467fbff5f3f102d  mdebrief.dat
+  becf58b854564e006e0832b0c103f6ade9c1ecef171bcc91e37319f03668a28a  mdeout.dat
+  7150d6408b719fd3aea5dc8465d260a5409c56bf1ca8bae560aaed0ec85e9270  mendlose.dat
+  b4af5b842f99012a601fb7eed0a7a277fb1e82a4bbd4496e90660d2d5c65a533  mendwin.dat
+  d0203466a2e8396739f742ce9f79a45f97dd93c3c230a38daa773bbeebd4297f  mfnt-0.dat
+  6967494a15fad3c9627c47f39bb8be6f40f168f79b632ba2d0460f52e5456199  mfnt-0.tab
+  a120d69f8f99c364cea227657b5963ef4038f13296d4f23f79711d7c843b7264  mgamewin.dat
+  7168466e7b22ec1f66385e6d7436b37870239ef2236bf6ad7a7f9c581a7a6664  miss01.dat
+  ed9834cfe9cb863e0f1f6304fb2614ef279815bb57043288f387a22816d88c4c  miss02.dat
+  46d083c7f0b3876ab06134a24b36ea5f3485a14d0f74b8180a64e01f18564f4f  miss03.dat
+  6a3e510c8e499703a9536ce7a0f62a2fe0caa7bc5a5ade84eb23e23b995987a5  miss04.dat
+  7731a69a9618c2af8bfde9a05a65122a0be24f622bb8786a884fcdcfbd79420d  miss05.dat
+  2a17adcb2850455fc60975496dec4b105717c4a7d1ff69df65d0958fc32a0b9a  miss06.dat
+  4d6baaaf4b2d401399827762a3035273759d1f8f9d6f08da868d3e41d7cbf841  miss07.dat
+  be8b0265e2b8e8ef2f8abd6941e70299f09d261f35b22a67ea5bbd56218176c0  miss08.dat
+  0cede0a71f29d6deeae50e4675deec411af3a8e20ce7afc5d03e99474ccfd267  miss09.dat
+  cadeb823adbee04f937afb41024a2539c7b6e19c8268282b124bb57f4c2234a7  miss10.dat
+  e946497285f5a1d155a1d8be2f0e5d9fb95d801278aa2ad3574b05af1ff4e4fe  miss101.dat
+  2f5532acea0d65dd8ca0a7a13058c6a24a736e0a73b87695110556c2850b613f  miss102.dat
+  c34673f91cf15fc9d546975cd95190f3f293ac0b28c9039ebd94bd7f3f5b5e50  miss103.dat
+  9270e8cf39aa16bf8ef9a509ce60ef556a7d8fba85b8a2eaeff23a4f7fcc0591  miss104.dat
+  dbbffdf0724302edbf677181f29ad9e5d457a74767186e9e643db4abd9a5e4e4  miss105.dat
+  5e0e6e57dd1d8ff6ac356c3f6bb4fde1554869261025b374b58ada841bd94fa3  miss106.dat
+  23460cfc0946d7f1ef6a44849359334433a6eef65b9d7a2db8c2d2c9b0fb7824  miss107.dat
+  be8abd014bc123386801ac29a9c4bf0d6ffdb794209292af78ad7ed893e08639  miss108.dat
+  b0aa7a007f34f302a2a4eb87d57024434df9fe0073b431810db17d90cb753580  miss109.dat
+  6a301cd618a4ea710482094de1a0be17a965e6af7c01f74e7ff1bdb2b26f118a  miss11.dat
+  b469f010b6f5f3328f5065dddd60cbc6ddc36f1b95a4fe12309bc5482bcd682c  miss110.dat
+  9f1a3a09321bebb9cf9a911a7888ba676dc4eee47873fcf5b2ffb1281b810581  miss111.dat
+  5dc363f653039b1effd5bc0d80484d63db7ad97eae92c5045e26f3624962aa96  miss112.dat
+  d8727a21041bf87d14daf43a1b2b1fdf492c0bd75bdd91e736137a403f33206b  miss113.dat
+  ff5dc88c3246022f4c71d74d228b09cdfad5f2a9c1a1c835ad43cd0d47c19d90  miss114.dat
+  06ee4c96f5157f70b166f0b7e9d3dd39d0b66eb98d1672fb79a27de6b3859f21  miss115.dat
+  ae719a5d4599544c724f98c7aae94f216f2b619e9d20983a86e4bae3cdbfd80e  miss116.dat
+  67caf21745ce7af93ffc03b3e02cfbaca316d349472ad8151bed9c404e59f654  miss117.dat
+  c2baa11439e8049c72a7d8c014b22eb91575c6fbab072325cafe058e4ce04f07  miss118.dat
+  278db0d982dc0b7cd2616794895e7216c184d96c6a5b2eaf920ada1920b3b3e9  miss119.dat
+  ea9ff43fd4623a9cee9f619b0a5c9be490f1394e72c20b32903720cbddd3f517  miss12.dat
+  98bf9e4bd447b10fc7eeae32e70faeaf8e3037da1d157764f62b1a84a018bb58  miss120.dat
+  ed5491ee845386d72689fe1582d42e362bef6f030c97e49f87d362bbf832fa98  miss121.dat
+  c0317e100ab68df135832c596e3ea6746c0a07800132f4a788786e61172ef2ab  miss122.dat
+  b0b04c23b0026fb3ee6d65b810e22e7f8e74ce2e262fbb761295d891345115ce  miss123.dat
+  25c49a392e0b2483e580359e1a9fb86de33ea16114d46b039f784750858e59e0  miss124.dat
+  21e86882d5e838fb950e7b389002cf971041bbdec184c257032c1ed745f0431d  miss125.dat
+  8b7754e531ae7fb5d5c76e122225c5249740b954d75d2828f80113b9312bc975  miss126.dat
+  5fea0110a98a5e5790acfee7883d788c3a6dc9f1526cfd5e8ca3e8e127d15dfd  miss127.dat
+  33c0a525de421c7ee970380130a5499f7f9145c42e4fd1a4fcaa359a5bdd5f31  miss128.dat
+  b85633a407e2e7b089b7fa77c9d786cbc2c16fa58e762ae8473f94b4f392de66  miss129.dat
+  4502c1fbc34c0966ba48826aadfb0fe64aecb6e62fa706209b35c3d1a022d27e  miss13.dat
+  bf77362361425688795a8dcd7d5743a4b10a87f911172788440804eff96106bc  miss130.dat
+  dac0d3e998741750edee1d3fcc5d7ebe7d3e13277d39c27e5fd21088c3ffd749  miss131.dat
+  54a0d44369e9941eda668b9eb08b6a50a67c857c29d0a4c9346ef46927b5051f  miss132.dat
+  66382f02ae818f388916abe6f068ae543ea30903bf15551c0ea694e0994a736d  miss133.dat
+  dc1104625dd404a005605f43f30361c66365851f7b223e5d5ec79f9af0dc8cc3  miss134.dat
+  2cc87c7a6734bd84d764b0f742cb0554a54d3961ae4eae95af37189321f8d45f  miss135.dat
+  b7642388d14d195b0bea22ac0d805bd6d8d025def2380b0433d620bbeed490b8  miss136.dat
+  9748f154058d08f2ac4987a44410c213f19ecd4d0ac9733cd0eabe8645a65788  miss137.dat
+  1d19d63a0980fbc88a8c084efafb273f50017e5a98ad649d39e1cd29f20ab26f  miss138.dat
+  ff034adf1774586dd9194518143f5187be6d5a76c9e0cb6ab77e0a7f6bf41212  miss139.dat
+  3028f5d783907e284623acba1982bd208a04f19e508a274171652049a3fc518c  miss14.dat
+  1dbee9da03b51f7e95a237ac8f663fa8b9e330e5964a172150a619c19c85f2b2  miss140.dat
+  c8cd7958733f8c7fdff3583a8d15cf6de7372c089c4560190fe2861b927172c6  miss141.dat
+  286a8e572c9e700559adafb6354b75c84eda03d9cb12cd886aba2c8fc30594cf  miss142.dat
+  46ba989c3578b84f65fde6310a6a2b32cadaff0a9d2b605062c355f866f67b53  miss143.dat
+  d46c96deaa86ef23f7ad9429891d673816e40747ae50e4646da7121602b50e57  miss144.dat
+  81f07cda173a629f7c2370655f42b119fe45ab90f8b6e0ee47d7a37e94e202fa  miss145.dat
+  f0e5bd7fb33fae26643fc8bdaee156cb395b9afbc3371f0fb4dae634f6e1108b  miss146.dat
+  59c7eaa0a0d385d329846e65e91caed82b30510b14d5fe676a5c0e1dba7b11a2  miss147.dat
+  4c5833531eb69b23702bc285480e34dee3a2f655a1eed60a7bf49510a578def6  miss148.dat
+  023c584bbeff35b69a3e6325b1a4ea51f1bbb1ef107325b0597dfc975ba81d15  miss149.dat
+  16ff4dfc9a0cbfe75b371c767471d2236240c969fb2357a789d2a2fc84ee8c3d  miss15.dat
+  cfef8c2152b2eb4df75590df1728cca6b331c8112570f3d962bb5d57422d4d6e  miss150.dat
+  644409ac3c3f52608639c4699520b3f0cf42e8107cba54ac8c26d0afdeb33b16  miss16.dat
+  4df067dd1a9119532cc69dedc8da4840a9ac9d8111cd4a6cb352a3d0ffaa254f  miss17.dat
+  d45c3b469f25f8845e25548ce6e96f4655ea5458fc2c43723bff355ca750d059  miss18.dat
+  4537f89576bcc4b0f7f5cb0be618c31bf504759190c8064bf284728ffe16a31b  miss19.dat
+  ac7c13493113f00de901a5eb9164864190d0dbb59de3a94e04daedab10a3e9a9  miss20.dat
+  cf5e5eef01a978bb472ccee5c7256981c7265e6c32fcf18e51a201ab68089b4c  miss201.dat
+  2ce9b2513b60dd08e8e16cead1113bb860ca78520d6848ae86578483900157d5  miss202.dat
+  4446a15fc7f3ba875e3b29aff13d51cbb354eb20c8af748a449093d4db2e88b3  miss203.dat
+  babef83afebf832c06d0f75516d980cbc104e1a1940e2058c3cc30faaef207dd  miss204.dat
+  0f0ade623824fdb5526cf8e2ee2e736684eca35217173a8f135f81919c04d5d9  miss205.dat
+  df4a4b51b94ce84f9cedcab6687bed2b6f5490eaf03bed469f72ddc620425275  miss206.dat
+  deada900907ea88f0a64832855bb037fcb026f9564425e31f188768e4ca4563b  miss207.dat
+  a9176788353e6d76413b97238be9a14a8801f907fce4fd7961c19fdcab72a59c  miss208.dat
+  21ea42181c01c39a7b8616828fe470b4930e24b75257a40e0ac75aa1350aa717  miss209.dat
+  1a40574b1fbbfaf3bec55ef19f9506e78c24d408c7bb48dcb68b34deccdf362d  miss21.dat
+  f6c1a477a197c433f6dbbe903020ebfb48845f660c79a9eb6dc635bbf80fab75  miss210.dat
+  d924ab614756cba249ca26b5f86ed9904eaadab79e0bf1945fd8181265e6b9a0  miss211.dat
+  d25b5e647336228909f16aead02842c77890100e1d07751e0cbe0070d316b58e  miss212.dat
+  f257058cb9b1703958f232ab735f4c84b1a8a2c6709997deb8f9e387d258cec7  miss213.dat
+  3993f6db6f97414c9ed9221e3d79692032195be61f0562d73956e359de8e5318  miss214.dat
+  d91738ec3bc71632a98548ffd639b095a9bbd1587a9d95327ce95036e3133b28  miss215.dat
+  cdbf255f6b754d664f08a620bff97fec7cdd29a899e988034e08174916d7e072  miss216.dat
+  3070daa14a92f2fc7d79843dda09e268b90e13f119b9f97980d27affa67564a5  miss217.dat
+  212118406ac0c291352821d22c3045009ba2371620e0d7c7e1bfb13d2491f86f  miss218.dat
+  2d96744887d4708163145ab445c9d49e4020fa3c05321494a22f1d68d243d10c  miss219.dat
+  1c8a7c46dcf5db673f7be20ea641d6282fc4480e1d6af201504a40b5537bd68e  miss22.dat
+  1f48614677f83da88d830e17132ce955a5d82729e9ca787f30b0927a7b99ddb7  miss220.dat
+  d1c9c1935ab22abb1b58862eb80e5df40c7289bc5cee33da1a12ddeba24e371a  miss221.dat
+  1d08c05e973d522e3b510db99f627871431e50e6e966c09d5ff90f87ac5a58e6  miss222.dat
+  c69e2033f7c64ed810cb3e216dc88400ed5a6a7c4b4da0937eae817ada6c6bdb  miss223.dat
+  8fe2bcfeb622096f8dcc00dbc4d57a9b4bc6e7a77549f55c823b999ae603c173  miss224.dat
+  ade7d9af3118282686fa8a180196d4e163b511606a9fc4e0cfdc8e0ce159b2e4  miss225.dat
+  cafb252acfd677605a7db8817aeb307f87bb89b4f7408ff369181729ab480542  miss226.dat
+  58f4913837e931d91ca3c0d3f9992d75b6f56019042560e9d77d3ff5d49d8732  miss227.dat
+  aa2661c26b70addc40b200127e9f66c3b997e3729e3c108ec4c87992512be786  miss228.dat
+  f3946af7669fabb6f57d83b4688d251b572bfb72de86fa17817ce7d1597c1f82  miss229.dat
+  8093e104fc5721ab70aa8b51d164c69d33b4762b9ac40a4ea5189362464e546b  miss23.dat
+  4c4e1ff59759c032bf02650b7bbb84e4a3a0cb460b6a7fde628e539dc57139b6  miss230.dat
+  196fa85c6d133ffc90a1a07cab9bc1ea9a9498cc357eb0e6d811ac65b84b2033  miss231.dat
+  468e35e72d1ecf45508b8bd7793866f66439f993201227e7a9f9db4b78690117  miss232.dat
+  d6c4fef3bf06379afaed8c3a59c86199bdbf216ecd52d85d08d582308306cd67  miss233.dat
+  9c7b81781b117990990c2e3b6caaad83dbbedc008a723af80bf7324067d7d492  miss234.dat
+  c18fb9dd0eee711416c4cd3a944db158733032224387fd6b676112ad3909c429  miss235.dat
+  94edfd137bbb00d654280ec8bdf91064ad4dcc7ba59dda93f9689aa82f0f877b  miss236.dat
+  c87d79a208bd37098f60d9ea9cf3164c932316bbc42a4d10915dc426cfc3748e  miss237.dat
+  fa4c2a8621ff6c927228c0522c2c1feb9d061543a5344441e912bd8f4543d087  miss238.dat
+  7d1af5d0e9aa064bd068cdb79c0ef404f52f61b4230bcfbcf48986e638d6f4bc  miss239.dat
+  144ef51cc0e5166f8cd1575d8a7c4920a9760f277c11d23e771b55965f8d00e5  miss24.dat
+  f67f0e7874bf634515113d3bccd351083b878d1df32c9042e528802b9914d291  miss240.dat
+  03505117f20c817d422168361140fc321a89a5a6d7fefef78ff3cbc6fef19a3a  miss241.dat
+  42506df0aa7092588ae7d295e407e789182d7da3bbe93034b6456d59b351ece7  miss242.dat
+  48c8f742a759b19e55a4858ceffcc8e599b18ce938807a9c4e44b1ad6d15aed1  miss243.dat
+  7407750f305d0f779a32f6196e9333e4d6e7dfbee0f35b94a111ddf4fc81682a  miss244.dat
+  95f43f610fc81126909bb394cdd4e250c5a31337c7895c67009900e9a1fd0ae3  miss245.dat
+  cf03005f6f30272593e70de28e7bcbfc7825d311403d1f49c0077a1b344b229d  miss246.dat
+  ec31fdf8f8fb2e161451e707ef8aa3a4b2a6007017ae910e4615d43e4731ac22  miss247.dat
+  583f113f4013ae7f61d350d79f2cf81f6e9e92f058fea3b822fb0e432d6d0c17  miss248.dat
+  6a40025abfae0a3d4331c87640fc94fa87470acccdb20a2ff114093f83b9fa64  miss249.dat
+  8d0e25ba4c00af7594e0b2c8cacb9ca914247d468ff1631e1e5ea126a34140b0  miss25.dat
+  bedacc11b03a7aea04b4528d8672ccb2ff523dc84e05332312e3a4e0fcfdf2f7  miss250.dat
+  8eb91a9f865e58b83fd2d9c449947fab9da4f2f85111bf21e7d7bbc56aaf8401  miss26.dat
+  b05ebd836cfc035331db338c7e7264a2c9d20983c2aa373e681cff93a6c6082f  miss27.dat
+  86b823615b66c5a6a1966e41c0ddbd77fce296ee6d2af1159a6b3ec0a2e741b3  miss28.dat
+  f6f86c18381f1c01c2f40da199e17877bb3418fea9be1857bdefe99fd45f7327  miss29.dat
+  b734823d6d27588d768223b0e72ce6d3d8c7a8efe4e0db6a6243bc5fe349e126  miss30.dat
+  6b9a39f9b9ddf2c4c528fb9bd139918844032a097b31adf63faa9b146f1487e2  miss301.dat
+  e761dd2bb9830aa8b331d3c00a8249d03298580cc2f0fc9960f86254032ab7b9  miss302.dat
+  a4a4023ae6fca666965e341aa2fb0d9761396993fb229c6062b40db267fac2fe  miss303.dat
+  cd60f697f8a985d476c80b54357d0a1c4beeef71e964c6aa31787e30fd812677  miss304.dat
+  4fdd8c7816f4711a8ce13771d3652cde10e682185974ab1040c427e6dcda7263  miss305.dat
+  0a48f419a1b46af5b313e791a7a6af7c55137ebe36c52935c3b37dbe2632d61e  miss306.dat
+  31a3f6aba3262b8b072eee3bcf53870bf47ded88792a4048bcf9dacfcae93bda  miss307.dat
+  ce98e9b9c13a52bffda26adb0eba556716fbba4b4a4af5015fdbce58db8b9f7c  miss308.dat
+  d7acacb675ffd73a5fb9650cc1a90d93dd60c4bbaa32470f79b0407c97ba2865  miss309.dat
+  ac3fb5f8c4d98c5d6954279be1559a8fa87a5255a265fc9ceb7979bdd8b3df42  miss31.dat
+  ddee0ee3e78daf8fd76da197bb3efb8b58bc1154df8ddd5e217d66cdc1d169f0  miss310.dat
+  1045765f26c744a2ecafcb9c55817063f03e665d0689079f8eedb69d83400743  miss311.dat
+  9350019079bb2e442fc29c8b82ea35987318a15b2170e7358f0b3492a7f90b33  miss312.dat
+  b84e74805f95d1cfc0f1660a7f065648795e2bc102213188dad4af15cd361304  miss313.dat
+  82de1dd4880c4ff4c5f0148b9fc29abd975cbafc1e2a4777c66f9c390bc23783  miss314.dat
+  2191c846ee5fdd65bde57003a287fb5f7c2ef76c5be95d3304b6e5cfac12cca2  miss315.dat
+  a0bf76e1822a5ad13c487bdabf5258606dfce8762d54a1bbfce273928c36fbb5  miss316.dat
+  857d507a68595f5529cd0d80c9b0be7eb0947c12f31426a6be9d4da30c49f0b4  miss317.dat
+  b6ad66124e58d2585195b950e264d13ae7563c9e722b8449e565cc660770a938  miss318.dat
+  3d690b8e6fe637072ff38f415319cc180f3fd05ca86b28880501186f5029248c  miss319.dat
+  e2473c678dce57b0658c4c94dbab5d1bb282708180d545f1359c92a61dd09dc0  miss32.dat
+  6cc32c80b3459dcbf79e44e1a705494ea55a0fec7114f9555c5e5ca405e33e33  miss320.dat
+  c43bb61839ff025f093ecb33ffa601212329e2c2c7426747b12945cce8c4af59  miss321.dat
+  c099c71b62285e863234b0d4d1a36bfe7c5306d0482e827f8a4c439f9528c7b6  miss322.dat
+  9d4f18552a709f87e39229df8831a87449fec8319e013b1c76417a5c508f2b24  miss323.dat
+  a81be1bbc563a7bbe149270d4508729689de83b0966c100f34d28b6aea2b2c17  miss324.dat
+  ad6e3ea07ec13d7b8cb5c1d265bc9954119035d0819e6e4a580c3e6a37ab2875  miss325.dat
+  b43cd650b2743c65c520431064117f21b6b00b9c2f1b4494f134c2364ffda6b5  miss326.dat
+  c0333bcd4389f41040bb1411b179142dd4fa08cd5eaddfee1ecde9ade4663094  miss327.dat
+  a57a687f165e336bf6eafee77c4614d24c33d1d6c45753f37869858e6d743505  miss328.dat
+  0e922ae009231ecdc82df7999ba1ab983aba8e28b966b67f6ab21c22d4ee9ab4  miss329.dat
+  e2382c734e16388636a973868aaba25b7d7731b70a710ccc5c831c8a462804b0  miss33.dat
+  3a7b571bbaeab5175fc8964695a5953eb0a9c5da8cdb7adcec2ee65f11de82af  miss330.dat
+  c70ebb2914a3d7258b1ad1c8d1836a4eaad9436ad583fd192a6a02d211cb1e12  miss331.dat
+  0f6ed85c6d9e7568a11af55d4060a3ce13fb4ad9fd9bbc49434206bd39980e35  miss332.dat
+  a7c5dcdd67c22b01dcb6a34bc138a23bf5a0813eed7966527beb8324deba428f  miss333.dat
+  7138c7eea4e571257e95f421c40e1fd03420b303f5f2fa7f05e469f75b338e1b  miss334.dat
+  a30c29dda3c4fba9123a589d5acd643138ca46816c3cc23d39a3b73f71b873cb  miss335.dat
+  72d7fa810e6362c3877e38ea474c69769b0e2519550234d5406fb3078cde6bad  miss336.dat
+  ce1731caa222e821823902daa7390eb5d42a7fa554b5863c05b3b014077d24b7  miss337.dat
+  edf70360f32a6303264c3fdb8262ac5265fe0761ca97d67359fa2ea03cfc3973  miss338.dat
+  949d21a7c27bf2b29740a9bac639db2b4f0abe0ab2b27808fc29b81e434f34e0  miss339.dat
+  896a3ff713d23b6845baa24ea65c82d72cd9468a84ec5d5f07404b01ae14b01c  miss34.dat
+  e656044f6afd3da1959112ce72f1d575618d07d7404fa117acf1f47b0238e090  miss340.dat
+  9d7f27c78dc62893ffb30a28dc4dad42d8ca959eea2b476e9220f3ccdb82c3f3  miss341.dat
+  6b719fe126934d0f8fff4546b7a0752f0ff36f0514fd020b311a729704675fb9  miss342.dat
+  8fd7bd9e3b6191809249fa40efc6c4227de276083298193c67f433b329c47972  miss343.dat
+  b3600dea72fca13a4be5b24816cd9ead8f7e3b53ff1e5eec22488346a497537f  miss344.dat
+  9d426097c6bcf075d58e6c4630a23e3fb39c8e9501b27137856598e96ba4cf94  miss345.dat
+  2e20f853524c7a3bcea3ad5ac61e90000b0e00c1bb93a6678831376c45597911  miss346.dat
+  2a91dc86d64ddfa5c2096c6391d51bbea6d6af4586c1d20b88da9f9523b699e0  miss347.dat
+  04e2993faac641d18d18d7ba4d6b22d121e402a6d4a0a017cf5672a779a311ae  miss348.dat
+  c82ff64f575c0117fdf764ee2b7399ce52499d5fd0101461c04448b02103150a  miss349.dat
+  3ecf14157f0f097f354125f3f7366ca74ba664ffa6aa72c100f4de4b04ac1b4a  miss35.dat
+  6b630a66493df0b2f2026baaa1231ea6ca4ca82b9b73167ae6741b63f5f0f190  miss350.dat
+  8229666f16246535df7f0a5956630d0bab94c2d3c7a3f88d7189e78eef40dd5c  miss36.dat
+  5b8c21a94d8478005c2888740de4b4d0a35cafe6e41c38e729894eb24b0f02a0  miss37.dat
+  86406a92c460c75bd13cb5229c4288994065219aade51b1518c84f519d1f213a  miss38.dat
+  921db22db228ec487805e5956656fa93fc115d3f0940eb553106cb95d61abb64  miss39.dat
+  e71d419b6711562e90340b7f432f17ab36df871bee6d3c9742e2bd91a5f31d9f  miss40.dat
+  7a5f65aa2f67a2dcaf14ac921ead4544b784d6b52d9966600a24a5690aeaae79  miss41.dat
+  ea99950aeb719c09f0657524eb87385781a19e1f0e852326c61db241e31566ca  miss42.dat
+  41c341cbbe319402ec94cd28b3f63a1b34eff49b26a47ebc0cba01d44b5a7bd9  miss43.dat
+  75d52f8ad5b4bb5899252b1f3ee20c0669d3d4935b33ca47156f70cae0cdaf42  miss44.dat
+  316a6ccb5bb50be16dbb96cddfbe992dfe689194dc946efe1ca11a20ec0b3a42  miss45.dat
+  7a1d0464cbe48bf71d5367fe4b094405d23698d79ed5fb04950f2bd347ec4981  miss46.dat
+  09c17682fda8da68cb967963d836b4f7c32710cee941a0476ee3a95273505e17  miss47.dat
+  c7441ab06dc594435e93df9211caf61c93a351a9b65b75452b654fb6d4749f5b  miss48.dat
+  48ec1fa688d60319111ccb24fb9a70df1be017520f2db9ba3ca21549c9a627a7  miss49.dat
+  0f0e21ad59526720d7a07ffce2d667bd7318b4052b5895e98bcc7797f4f89b7c  miss50.dat
+  9d6bc9a375a56ef23791c4c2b1866d20d231918490903b3edecb0eb9498d2f23  mlogos.dat
+  91dea744cfe4fb9565d85504f98ac536356a43eab32fc946bf358bb83dbf0f97  mlosa.dat
+  cfc6df4f043e80a2c3be830791557ab6f7129b53291d2b0d1cc4fc0f6be36515  mlosaout.dat
+  a60a3d8b6f578e29b028d033f7e9b441bdf01ca0c4c55114b3d2af79871b56e1  mlosegam.dat
+  5430a23167cb59eff58abf032e4da5bfc6c567797a3702be4e12832452f1a12e  mmap.dat
+  358316f949aa0c922f6c690724356555588362208cddc6afec5930a2e565433d  mmapblk.dat
+  afab1ebe21d9d1964bed90b5c82be9b565e5eef4b56180210debf10eb19ad69f  mmapout.dat
+  cde23f9b730b865ea05a0c8626ad80a599ca61efd660539349f6400a18caae2a  mminlogo.dat
+  adc3431c9348055946aa76b119b39dce42f5e4a3fe0d773bda2476f63cec19c3  mmulti.dat
+  6791fec5d600965c7e222dd14b6bfa576a3a32e2b922e975afdeaa69f4865cb1  mmultout.dat
+  4f97e746050d685693725ceefe054b90955d77c4d18479b5deea7a8d3b717795  moption.dat
+  88dde8e997f2c82f332f011627465b815929bce850e4dcb95600fb3f2252d8c3  moptout.dat
+  2fc16ce262b8893455bf0c4060d327048b2ac42716babf0cf1b67582d3b21cf3  mresout.dat
+  77df8767df7f1cb2ffcb30ff9fbca7ec4074765bba54eb5c1b1fc8228e6d1b72  mresrch.dat
+  e132a9894b735825e222ae5961f4af730845d48853c1943a278e67b9e6f0cbe5  mscrenup.dat
+  f54ddcfa65012c78cf482f6877f3860ef7673dfa15058e9a4e772e7fe298afe6  mselect.dat
+  2bc3eea0a463da234ccd4dc03d5d5b40e290e6c8d639d63135fed499817675f1  mselect.pal
+  5528d373213886a6aff95989fe7db2311699d2cbfdc0b35b7003f3dc2d499756  mselout.dat
+  0afce017fb86d45cc48f053a15842b29b16f4029dcde093f90a9ad2df7d19c9b  mspr-0.dat
+  54ce6802d0e64a87bf975e8ea0a7560df4a9242835d7424b82ef3563f4f376a8  mspr-0.tab
+  970314ebda50d50126514d31662b6edceff0d2488635789fb38bc54d595b1083  mtitle.dat
+  475980d49cda4d94512716fbc9981d74be93af3c0aa80a8bdc767db55a5b4ce6  sample.ad
+  475980d49cda4d94512716fbc9981d74be93af3c0aa80a8bdc767db55a5b4ce6  sample.opl
+  60fcf06db67a85f0c90172dc1f3e86feecef3c339b7eb99fabe7d7eae6bda3e1  sound-0.dat
+  e0e30bc10db54b7e599bd659825ff140bdc65a7039224510fab8012881824f7e  sound-0.tab
+  42577df1761cb3bbc77aaadd8e0497dfd8f4367e08df8b49188302a316d1b0d2  sound-1.dat
+  e73b8a3737cc65348994c44dfd796714dfe1c087377a99f100ba4e89d29d6852  sound-1.tab
+  21088107f3d65af9a10a733fd21b5b9640144e4f53a4eb6908d4e95207be0d9c  syngame.xmi
+...
+
