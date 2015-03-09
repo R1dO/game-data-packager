@@ -47,14 +47,6 @@ class QuakeGameData(GameData):
         desc = desc.replace('LONG', (package.longname or self.longname))
         control['Description'] = desc
 
-        if package.name == 'quake-registered':
-            control['Conflicts'] = 'quake-shareware'
-            control['Replaces'] = 'quake-shareware'
-        elif package.name == 'quake-shareware':
-            control['Conflicts'] = 'quake-registered'
-        else:
-            control['Depends'] = 'quake-registered'
-
     def fill_extra_files(self, package, destdir):
         super(QuakeGameData, self).fill_extra_files(package, destdir)
 

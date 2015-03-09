@@ -30,6 +30,7 @@ packages:
     longname: Quake (shareware)
     debian:
       provides: quake-data
+      conflicts: quake-registered
     install:
     - id1/pak0.pak_106
     - licinfo.txt_shareware
@@ -39,6 +40,9 @@ packages:
   quake-registered:
     debian:
       provides: quake-data
+      # when a replaces: is set,
+      # a conflicts: is implied too
+      replaces: quake-shareware
     steam:
       id: 2310
       path: common/Quake
