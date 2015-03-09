@@ -1551,7 +1551,9 @@ class GameData(object):
         with open(copy_from, encoding='utf-8') as i, \
              open(copy_to, 'w', encoding='utf-8') as o:
             o.write('The package %s was generated using '
-                    'game-data-packager.\n\n' % package.name)
+                    'game-data-packager.\n' % package.name)
+            o.write('It contains proprietary game data '
+                    'and must not be redistributed.\n\n')
 
             count_usr = 0
             count_doc = 0
