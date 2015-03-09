@@ -34,6 +34,8 @@ class ResidualvmGameData(GameData):
 
         if self.engine is None:
             self.engine = 'residualvm'
+        if self.genre is None:
+            self.genre = 'Adventure'
 
     def fill_extra_files(self, package, destdir):
         super(ResidualvmGameData, self).fill_extra_files(package, destdir)

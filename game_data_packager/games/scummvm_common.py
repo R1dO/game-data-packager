@@ -34,6 +34,8 @@ class ScummvmGameData(GameData):
 
         if self.engine is None:
             self.engine = 'scummvm'
+        if self.genre is None:
+            self.genre = 'Adventure'
 
     def fill_extra_files(self, package, destdir):
         super(ScummvmGameData, self).fill_extra_files(package, destdir)

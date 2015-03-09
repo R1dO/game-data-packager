@@ -76,6 +76,8 @@ class DoomGameData(GameData):
                 workdir=workdir)
         if self.engine is None:
             self.engine = "chocolate-doom | doom-engine"
+        if self.genre is None:
+            self.genre = 'First-person shooter'
 
         package_map = {
                 'doom-engine': 'doom',

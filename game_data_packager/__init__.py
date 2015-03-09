@@ -456,6 +456,10 @@ class GameData(object):
         # The game engine used to run the game (package name)
         self.engine = None
 
+        # The game genre
+        # http://en.wikipedia.org/wiki/List_of_video_game_genres
+        self.genre = None
+
         # A temporary directory.
         self.workdir = workdir
 
@@ -488,7 +492,7 @@ class GameData(object):
         self.argument_parser = None
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text',
-                 'steam','engine'):
+                 'steam','engine', 'genre'):
             if k in self.yaml:
                 setattr(self, k, self.yaml[k])
 
@@ -1859,6 +1863,9 @@ class GameData(object):
             long_desc =  ' This package was built using game-data-packager. It contains\n'
             long_desc += ' proprietary game data and must not be redistributed.\n'
             long_desc += ' .\n'
+
+            if self.genre:
+                long_desc += ' Genre: ' + self.genre + '\n'
 
             if package.expansion_for:
                 game_name = self.packages[package.expansion_for].longname or self.longname
