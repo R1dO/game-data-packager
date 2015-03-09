@@ -17,6 +17,7 @@ which should get you easily started.
   III Arena.
 * `copyright`: string: © <year_of_first_release> <developper/publisher>
   This should match the title screen of the game, if any.
+* `engine`: string: package name that contain the program needed to run the game.
 * `compress_deb`: boolean, default true: If false, the `.deb` will never be
   compressed. Use this if it contains non-compressible files (e.g. `*.pk3`
   which are zip files) for which `xz` will waste a lot of time and
@@ -101,6 +102,7 @@ to mapping:
   Quake III Team Arena for Quake III Arena.
 * `install`: list of strings: unique names of known files or alternative
   sets to install
+* `engine`: let you overide the engine in special cases
 
 ### Step 2: required files for the `.deb`
 

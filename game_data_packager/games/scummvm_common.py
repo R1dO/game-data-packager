@@ -32,10 +32,8 @@ class ScummvmGameData(GameData):
 
         self.gameid = self.yaml['gameid']
 
-    def modify_control_template(self, control, package, destdir):
-        if 'engine' not in package.debian:
-            package.debian['engine'] = 'scummvm'
-        super(ScummvmGameData, self).modify_control_template(control, package, destdir)
+        if self.engine is None:
+            self.engine = 'scummvm'
 
     def fill_extra_files(self, package, destdir):
         super(ScummvmGameData, self).fill_extra_files(package, destdir)

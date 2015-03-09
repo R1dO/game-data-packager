@@ -8,7 +8,7 @@ longname: "Heretic: Shadow of the Serpent Riders"
 copyright: © 1994 Raven Software
 
 plugin: doom_common
-doom_engine: heretic
+engine: "chocolate-doom | heretic-engine"
 
 help_text: |
   Please provide HERETIC.WAD from Heretic v1.3, and/or HERETIC1.WAD
@@ -25,16 +25,12 @@ packages:
     steam:
       id: 2390
       path: "common/Heretic Shadow of the Serpent Riders"
-    debian:
-      engine: "chocolate-doom | heretic-engine"
     install_to: usr/share/games/doom
     install:
     - heretic.wad
 
   heretic-shareware-data:
     longname: "Heretic (shareware)"
-    debian:
-      engine: "chocolate-doom | heretic-engine"
     install_to: usr/share/games/doom
     demo_for: heretic-wad
     install:

@@ -2,6 +2,7 @@
 ---
 longname: Quake
 copyright: © 1996 id Software
+engine: quake | quake-server
 
 help_text: |
   For quake-registered, you must provide id1/pak1.pak or a directory
@@ -28,7 +29,6 @@ packages:
     demo_for: quake-registered
     longname: Quake (shareware)
     debian:
-      engine: quake | quake-server
       provides: quake-data
     install:
     - id1/pak0.pak_106
@@ -38,7 +38,6 @@ packages:
 
   quake-registered:
     debian:
-      engine: quake | quake-server
       provides: quake-data
     steam:
       id: 2310

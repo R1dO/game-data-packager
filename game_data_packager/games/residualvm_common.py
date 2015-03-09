@@ -32,10 +32,8 @@ class ResidualvmGameData(GameData):
 
         self.gameid = self.yaml['gameid']
 
-    def modify_control_template(self, control, package, destdir):
-        if 'engine' not in package.debian:
-            package.debian['engine'] = 'residualvm'
-        super(ResidualvmGameData, self).modify_control_template(control, package, destdir)
+        if self.engine is None:
+            self.engine = 'residualvm'
 
     def fill_extra_files(self, package, destdir):
         super(ResidualvmGameData, self).fill_extra_files(package, destdir)

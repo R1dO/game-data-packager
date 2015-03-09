@@ -2,6 +2,7 @@
 ---
 longname: Theme Hospital
 copyright: © 1997 Bullfrog Productions
+engine: corsix-th
 
 help_text: |
   For the full version, provide a Theme Hospital installation,
@@ -19,7 +20,6 @@ packages:
     install_to: usr/share/games/theme-hospital
     debian:
       conflicts: theme-hospital-demo-data
-      engine: corsix-th
     optional:
     # documentation
     - EN.pdf
@@ -491,7 +491,6 @@ packages:
     install_to: usr/share/games/theme-hospital
     demo_for: theme-hospital-full-data
     debian:
-      engine: corsix-th
       conflicts: theme-hospital-full-data
     install:
     - anims/winlevel.smk_demo

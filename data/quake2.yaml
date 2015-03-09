@@ -3,6 +3,7 @@
 longname: Quake II
 copyright: © 1997 id Software
 aliases: [q2rogue, q2xatrix]
+engine: quake2 | quake2-server
 
 help_text: |
   For quake2-full-data, you must provide baseq2/pak0.pak and the baseq2/video
@@ -27,7 +28,6 @@ packages:
   quake2-full-data:
     longname: Quake II
     debian:
-      engine: quake2 | quake2-server
       replaces: quake2-data
     steam:
       id: 2320
@@ -204,8 +204,6 @@ packages:
   quake2-demo-data:
     longname: "Quake II (demo)"
     demo_for: quake2-full-data
-    debian:
-      engine: quake2 | quake2-server
     install_to_docdir:
       - quake2_manual
     install_contents_of:

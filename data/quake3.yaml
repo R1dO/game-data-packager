@@ -3,6 +3,7 @@
 shortname: quake3
 longname: Quake III Arena
 copyright: © 1999 id Software
+engine: quake3 | quake3-server
 compress_deb: false
 try_repack_from:
 # Older versions of g-d-p used this directory
@@ -32,8 +33,6 @@ help_text: |
 packages:
   quake3-data:
     longname: Quake III Arena
-    debian:
-      engine: quake3 | quake3-server
     steam:
       id: 2200
       path: "common/Quake 3 Arena"
@@ -154,10 +153,9 @@ packages:
 
   quake3-demo-data:
     longname: Quake III Arena (demo)
-    debian:
-      # deliberately no quake3-server alternative, I'm pretty sure it isn't
-      # network-compatible with anything
-      engine: quake3 (>= 10)
+    # deliberately no quake3-server alternative, I'm pretty sure it isn't
+    # network-compatible with anything
+    engine: quake3 (>= 10)
     demo_for: quake3-data
     install_to: usr/share/games/quake3-demo-data/demoq3
     install:

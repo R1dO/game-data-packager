@@ -3,13 +3,12 @@
 compress-deb: false
 longname: 'Doom 3 (original or BFG Edition)'
 try_repack_from: [/usr/local/share/dhewm3]
+engine: dhewm3-doom3
 
 packages:
   doom3-data:
     longname: 'Doom 3'
     copyright: © 2004 id Software
-    debian:
-      engine: dhewm3-doom3
     steam:
       id: 9050
     install:
@@ -93,8 +92,7 @@ packages:
   doom3bfg-data:
     longname: 'Doom 3: BFG Edition'
     copyright: © 2012 id Software
-    debian:
-      engine: rbdoom3bfg
+    engine: rbdoom3bfg
     steam:
       id: 208200
       path: "common/DOOM 3 BFG Edition"

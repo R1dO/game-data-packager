@@ -23,7 +23,6 @@ packages:
     longname: "Final Doom: TNT: Evilution"
     aliases: [tnt, t]
     debian:
-      engine: "chocolate-doom | doom-engine"
       provides: doom-wad
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install:
@@ -34,7 +33,6 @@ packages:
     longname: "Final Doom: The Plutonia Experiment"
     aliases: [plutonia, p]
     debian:
-      engine: "chocolate-doom | doom-engine"
       provides: doom-wad
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install:

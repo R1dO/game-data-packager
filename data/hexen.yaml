@@ -20,12 +20,10 @@ help_text: |
   hexendemo.wad to avoid colliding with the full version of Hexen.
 
 plugin: doom_common
-doom_engine: hexen
+engine: "chocolate-doom | hexen-engine"
 
 packages:
   hexen-wad:
-    debian:
-      engine: "chocolate-doom | hexen-engine"
     steam:
       id: 2360
       path: "common/Hexen"
@@ -49,13 +47,9 @@ packages:
     demo_for: hexen-wad
     install:
     - hexendemo.wad
-    # this goes in the .desktop file...
-    doom_engine: doomsday-compat
-    # ... so we must have Recommends: doomsday. The other provider
-    # of hexen-engine, chocolate-doom, can play the full game but not
-    # the demo.
-    debian:
-      engine: doomsday
+    # The other provider of hexen-engine, chocolate-doom,
+    # can play the full game but not the demo.
+    engine: doomsday
 
 files:
 

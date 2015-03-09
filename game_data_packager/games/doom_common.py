@@ -2,6 +2,7 @@
 # encoding=utf-8
 #
 # Copyright © 2015 Simon McVittie <smcv@debian.org>
+#             2015 Alexandre Detiste <alexandre@detiste.be>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -32,8 +33,6 @@ def install_data(from_, to):
 class WadPackage(GameDataPackage):
     def __init__(self, name):
         super(WadPackage, self).__init__(name)
-
-        self.engine = None
 
     @property
     def main_wad(self):
@@ -75,14 +74,21 @@ class DoomGameData(GameData):
     def __init__(self, shortname, yaml_data, workdir=None):
         super(DoomGameData, self).__init__(shortname, yaml_data,
                 workdir=workdir)
+        if self.engine is None:
+            self.engine = "chocolate-doom | doom-engine"
 
-        self.engine = self.yaml.get('doom_engine', 'doom')
+        package_map = {
+                'doom-engine': 'doom',
+                'heretic-engine': 'heretic',
+                'hexen-engine': 'hexen',
+                'doomsday': 'doomsday-compat',
+        }
 
         for package in self.packages.values():
             assert package.main_wad is not None
-
-            package.engine = self.yaml['packages'][package.name].get(
-                    'doom_engine')
+            engine = package.engine or self.engine
+            engine = engine.split('|')[-1].strip()
+            package.program = package_map.get(engine, engine)
             package.create_desktop_file = self.yaml['packages'][package.name].get(
                     'create_desktop_file', True)
             package.overide_fill_docs = self.yaml['packages'][package.name].get(
@@ -106,7 +112,7 @@ class DoomGameData(GameData):
         wad_base = os.path.splitext(package.main_wad)[0]
 
         desc = control['Description']
-        desc = desc.replace('ENGINE', (package.engine or self.engine))
+        desc = desc.replace('ENGINE', package.program)
         desc = desc.replace('GAME', wad_base)
         desc = desc.replace('LONG', (package.longname or self.longname))
         control['Description'] = desc
@@ -175,7 +181,7 @@ class DoomGameData(GameData):
             entry = desktop['Desktop Entry']
             entry['Name'] = package.longname or self.longname
             entry['GenericName'] = 'First Person Shooter Game'
-            entry['TryExec'] = engine = package.engine or self.engine
+            entry['TryExec'] = package.program
             if package.expansion_for:
                 for f in self.packages[package.expansion_for].install:
                     if f.endswith('.wad'):
@@ -187,7 +193,7 @@ class DoomGameData(GameData):
                        + ' -file /usr/share/games/doom/' + main_wad)
             else:
                 args = '-iwad /usr/share/games/doom/' + main_wad
-            entry['Exec'] = engine + ' ' + args
+            entry['Exec'] = package.program + ' ' + args
             entry['Icon'] = wad_base
             entry['Terminal'] = 'false'
             entry['Type'] = 'Application'

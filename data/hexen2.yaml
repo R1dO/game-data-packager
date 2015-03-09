@@ -3,6 +3,7 @@
 shortname: hexen2
 longname: Hexen II
 copyright: © 1997 Raven Software
+engine: "uhexen2 | hexen2-engine"
 
 help_text: |
   For hexen2-data, you must provide the version 1.11 patched versions
@@ -23,7 +24,6 @@ packages:
     longname: Hexen II (demo)
     demo_for: hexen2-data
     debian:
-      engine: "uhexen2 | hexen2-engine"
       conflicts: hexen2-data
     install_to: usr/share/games/hexen2
     install:
@@ -34,8 +34,6 @@ packages:
 
   hexen2-data:
     longname: Hexen II
-    debian:
-      engine: "uhexen2 | hexen2-engine"
     steam:
       id: 9060
       path: "common/Hexen 2"

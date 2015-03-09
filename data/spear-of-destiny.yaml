@@ -4,6 +4,7 @@ shortname: spear-of-destiny
 aliases: [spear]
 longname: "Spear of Destiny (Wolfenstein 3D prequel)"
 copyright: © 1992 id Software
+engine: wolf4sdl
 
 steam:
   id: 9000
@@ -29,7 +30,6 @@ packages:
     longname: "Spear of Destiny (shareware)"
     demo_for: spear-of-destiny-data
     debian:
-      engine: wolf4sdl
       provides: wolf3d-data
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
@@ -47,7 +47,6 @@ packages:
   spear-of-destiny-data:
     longname: "Spear of Destiny (registered version, mission 1)"
     debian:
-      engine: wolf4sdl
       provides: wolf3d-data
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |

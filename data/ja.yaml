@@ -8,6 +8,7 @@ copyright: © 2003 Activision, Inc. / LucasArts, a division of Lucasfilm Enterta
 # alongside ~ 1.2 GiB of compressed zip files. xz can save 20 MiB,
 # but that's less than 2% of the total size and takes 10 times as long.
 compress_deb: false
+engine: openjk-academy | openjk-academy-server
 
 steam:
   id: 6020
@@ -34,7 +35,6 @@ packages:
   jedi-academy-data:
     debian:
       version: '1.01'
-      engine: openjk-academy | openjk-academy-server
     install_files_from_cksums: |
       # Jedi Academy CD1 GameData/GameData or installation
       3585517488 561806019 base/assets0.pk3

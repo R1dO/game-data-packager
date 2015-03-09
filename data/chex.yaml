@@ -12,8 +12,6 @@ packages:
   chexquest-data:
     longname: Chex Quest
     overide_fill_docs: false
-    debian:
-      engine: "chocolate-doom | doom-engine"
     install_to: usr/share/games/doom
     install:
     - chex.wad

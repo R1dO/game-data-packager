@@ -3,6 +3,7 @@
 shortname: rtcw
 longname: Return to Castle Wolfenstein
 copyright: © 2001 id Software, Inc. and Activision Publishing, Inc.
+engine: rtcw
 
 # Like Jedi Academy, there isn't much point in compressing this .deb.
 compress_deb: false
@@ -13,7 +14,6 @@ packages:
       id: 9010
       path: "common/Return to Castle Wolfenstein"
     debian:
-      engine: rtcw
       # GDP version will be suffixed to this, e.g. : 1.42b+39
       version: 1.42b
 

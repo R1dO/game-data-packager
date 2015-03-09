@@ -4,13 +4,13 @@
 try_repack_from: [/usr/share/games/freesynd/data]
 
 copyright: © 1993 Bullfrog Productions
+engine: freesynd
+
 packages:
   syndicate-data:
     install_to: usr/share/games/freesynd/data
     # this should be engine-agnostic:
     #  usr/share/games/syndicate
-    debian:
-      engine: freesynd
     install:
     - col01.dat
     - game01.dat

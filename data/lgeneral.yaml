@@ -3,6 +3,7 @@
 shortname: lgeneral
 longname: LGeneral
 copyright: © 1994 SSI Inc.
+engine: lgeneral
 
 help_text: |
   Data from Panzer General can be downloaded automatically.
@@ -19,8 +20,6 @@ packages:
     # The actual game files are converted by lgc-pg, in Python code.
     install:
     - pg-data.tar.gz
-    debian:
-      engine: lgeneral
 
 files:
   pg-data.tar.gz:

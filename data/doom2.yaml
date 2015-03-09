@@ -20,7 +20,6 @@ help_text: |
 packages:
   doom2-wad:
     debian:
-      engine: "chocolate-doom | doom-engine"
       provides: doom-wad
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     steam:
@@ -34,9 +33,7 @@ packages:
   doom2-nerve-wad:
     longname: "No Rest for the Living"
     expansion_for: doom2-wad
-    doom_engine: prboom-plus
-    debian:
-      recommends: prboom-plus
+    engine: prboom-plus
     steam:
       id: 208200
       path: "common/DOOM 3 BFG Edition"

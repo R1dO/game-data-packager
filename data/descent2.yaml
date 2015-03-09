@@ -2,12 +2,11 @@
 ---
 longname: Descent II
 copyright: © 1995 Parallax Software Corporation
+engine: d2x-rebirth
 
 packages:
   descent2-demo-data:
     longname: Descent II
-    debian:
-      engine: d2x-rebirth
     install:
     - d2demo.pig
     - d2demo.ham

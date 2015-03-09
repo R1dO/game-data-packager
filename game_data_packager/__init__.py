@@ -353,6 +353,9 @@ class GameDataPackage(object):
         # Steam ID and path
         self.steam = {}
 
+        # overide the game engine when needed
+        self.engine = None
+
         # depedency information needed to build the debian/control file
         self.debian = {}
 
@@ -450,6 +453,9 @@ class GameData(object):
         # The one-line copyright notice used to build debian/copyright
         self.copyright = None
 
+        # The game engine used to run the game (package name)
+        self.engine = None
+
         # A temporary directory.
         self.workdir = workdir
 
@@ -482,7 +488,7 @@ class GameData(object):
         self.argument_parser = None
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text',
-                 'steam'):
+                 'steam','engine'):
             if k in self.yaml:
                 setattr(self, k, self.yaml[k])
 
@@ -730,7 +736,7 @@ class GameData(object):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version',
-                'copyright'):
+                'copyright', 'engine'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -1803,11 +1809,11 @@ class GameData(object):
 
         if package.expansion_for:
             depends.add(package.expansion_for)
-        engine = package.debian.get('engine')
-        assert engine is None or not package.expansion_for, \
-               'An expansion will inherit the engine of the full game'
-        if engine:
-            recommends.add(engine)
+
+        if package.engine:
+            recommends.add(package.engine)
+        elif not package.expansion_for and self.engine:
+            recommends.add(self.engine)
         for other_package in self.packages.values():
             if other_package.expansion_for == package.name:
                 suggests.add(other_package.name)
@@ -1867,6 +1873,8 @@ class GameData(object):
             else:
                 long_desc += ' Game: ' + longname
 
+            engine = package.engine or self.engine
+            engine = engine.split('|')[0].strip()
             if engine:
                 long_desc += '\n .\n'
                 long_desc += ' Intended for use with: ' + engine
@@ -2028,7 +2036,7 @@ class GameData(object):
 
         engines = set()
         for package in ready:
-            engine = package.debian.get('engine')
+            engine = package.engine or self.engine
             if not engine:
                 continue
             engine = engine.split('|')[0].strip()

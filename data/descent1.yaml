@@ -2,13 +2,13 @@
 ---
 longname: "Descent: First Strike"
 copyright: © 1994 Parallax Software Corporation
+engine: d1x-rebirth
 
 packages:
   descent1-demo-data:
     longname: "Descent: First Strike (demo)"
     demo_for: descent1-full-data
     debian:
-      engine: d1x-rebirth
       conflicts: descent1-full-data
     install:
     - descent.hog
@@ -22,7 +22,6 @@ packages:
   descent1-full-data:
     longname: "Descent: First Strike"
     debian:
-      engine: d1x-rebirth
       conflicts: descent1-demo-data
     install:
     - descent.hog_full

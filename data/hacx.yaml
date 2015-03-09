@@ -18,8 +18,6 @@ help_text: |
 packages:
   hacx-data:
     overide_fill_docs: false
-    debian:
-      engine: "chocolate-doom | doom-engine"
     install_to: usr/share/games/doom
     install:
     - hacx.wad

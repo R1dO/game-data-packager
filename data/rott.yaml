@@ -3,6 +3,7 @@
 shortname: rott
 longname: Rise of the Triad
 copyright: © 1995 Apogee Software
+engine: rott
 
 steam:
   id: 238050
@@ -14,7 +15,6 @@ packages:
     # December 21, 1994
     copyright: © 1994 Apogee Software
     debian:
-      engine: rott
       replaces: rott (<< 1.1.1-4)
     # this shareware data are considered a as full game because
     # it includes the HUNT Begin levels not present in the commercial game
@@ -35,7 +35,6 @@ packages:
     longname: "Rise of the Triad: Dark War"
     debian:
       depends: rott-data
-      engine: rott
     install_to: usr/share/games/rott
     install:
     - any_registered_rtc
