@@ -1,5 +1,5 @@
 VERSION := $(shell dpkg-parsechangelog | grep ^Version | cut -d' ' -f2-)
-DIRS := ./out ./build
+DIRS := ./out
 GDP_MIRROR ?= localhost
 
 # some cherry picked games that:
@@ -12,28 +12,30 @@ GDP_MIRROR ?= localhost
 # - are not too big
 TEST_SUITE += rott spear-of-destiny wolf3d
 
-default: $(DIRS)
+png       := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
+svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(wildcard ./data/*.svg))
+yaml      := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.yaml))
+copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright))
+dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
+
+default: $(DIRS) $(png) $(svgz) $(yaml) $(copyright) $(dot_in) \
+         out/changelog.gz out/copyright out/game-data-packager
+
+out/%: data/%
+	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
+
+out/changelog.gz: debian/changelog
 	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
-	for f in data/*.yaml data/*.control.in data/*.copyright \
-                        data/copyright \
-			data/*.copyright.in data/*.desktop.in \
-			data/*.preinst.in data/*.README.Debian.in; do \
-		if [ -L $$f ]; then \
-			cp -a $$f out/ || exit $$?; \
-		else \
-			install -m644 $$f out/ || exit $$?; \
-		fi; \
-	done
+
+out/game-data-packager: run
 	install -m644 run out/game-data-packager
-	for x in data/*.xpm; do \
-		o=out/$${x#data/}; \
-		convert $$x $${o%.xpm}.png || exit $$?; \
-	done
-	for x in data/*.svg; do \
-		o=out/$${x#data/}; \
-		gzip -c $$x > $${o%.svg}.svgz || exit $$?; \
-	done
+
+out/%.png: data/%.xpm
+	convert $< $@
+
+out/%.svgz: data/%.svg
+	gzip -nc $< > $@
 
 $(DIRS):
 	mkdir -p $@
@@ -42,8 +44,6 @@ clean:
 	rm -f ./out/changelog.gz
 	rm -f ./out/copyright
 	rm -f ./out/game-data-packager
-	rm -f ./out/foo ./out/bar ./out/baz
-	rm -f ./out/*.control
 	rm -f ./out/*.control.in
 	rm -f ./out/*.copyright
 	rm -f ./out/*.copyright.in
