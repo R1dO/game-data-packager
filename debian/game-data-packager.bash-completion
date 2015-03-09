@@ -1,9 +1,32 @@
 _game_data_packager()
 {
-    if [ $COMP_CWORD -eq 1 ]
+    # FIXME: currently only works 100% correctly when
+    #        GAME is the first argument
+
+    local cur prev
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    if [ "${cur:0:1}" == "-" ]
     then
-      local cur supported
-      cur=${COMP_WORDS[COMP_CWORD]}
+      local longopts
+      longopts='--compress --destination --help --install --no-compress --no-download --no-search --package --save-downloads'
+      COMPREPLY=( $( compgen -W "$longopts" -- $cur ) )
+    elif [ "$prev" == '--package' ]
+    then
+      local line packages
+      while read line
+      do
+          if [ "${COMP_WORDS[1]}" == "$line" ]
+          then
+              read packages
+              break
+          fi
+      done < /usr/share/games/game-data-packager/bash_completion
+      COMPREPLY=( $( compgen -W "$packages" -- $cur ) )
+    elif [ $COMP_CWORD -eq 1 ]
+    then
+      local supported
       supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.yaml |cut -d'.' -f1)
       COMPREPLY=( $( compgen -W "$supported" -- $cur ) )
     else
