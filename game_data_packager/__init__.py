@@ -1793,23 +1793,25 @@ class GameData(object):
         if control['Architecture'] == 'all' and 'Multi-Arch' not in control:
             control['Multi-Arch'] = 'foreign'
 
-        def read_control_set(control, field):
+        def read_control_set(package, control, field):
             result = set()
             if field in control:
                 for value in control[field].split(','):
                     result.add(value.strip())
+            value = package.debian.get(field.lower())
+            if value:
+                result.add(value)
             return result
 
-        depends = read_control_set(control, 'Depends')
-        recommends = read_control_set(control, 'Recommends')
-        suggests = read_control_set(control, 'Suggests')
-        provides = read_control_set(control, 'Provides')
-        replaces = read_control_set(control, 'Replaces')
-        conflicts = read_control_set(control, 'Conflicts')
+        depends = read_control_set(package, control, 'Depends')
+        recommends = read_control_set(package, control, 'Recommends')
+        suggests = read_control_set(package, control, 'Suggests')
+        provides = read_control_set(package, control, 'Provides')
+        replaces = read_control_set(package, control, 'Replaces')
+        conflicts = read_control_set(package, control, 'Conflicts')
 
         if package.expansion_for:
             depends.add(package.expansion_for)
-
         if package.engine:
             recommends.add(package.engine)
         elif not package.expansion_for and self.engine:
@@ -1817,21 +1819,11 @@ class GameData(object):
         for other_package in self.packages.values():
             if other_package.expansion_for == package.name:
                 suggests.add(other_package.name)
-        depend = package.debian.get('depends')
-        if depend:
-            depends.add(depend)
-        provide = package.debian.get('provides')
-        assert provide != package.name, \
+        assert package.name not in provides, \
                "A package shouldn't extraneously provide itself"
-        if provide:
-            provides.add(provide)
         replace = package.debian.get('replaces')
         if replace:
-            replaces.add(replace)
             conflicts.add(replace)
-        conflict = package.debian.get('conflicts')
-        if conflict:
-            conflicts.add(conflict)
 
         if depends:
             control['Depends'] = ', '.join(sorted(depends))
