@@ -14,6 +14,7 @@ _game_data_packager()
       COMPREPLY=( $( compgen -W "$longopts" -- $cur ) )
     elif [ "$prev" == '--package' ]
     then
+      [ -e /usr/share/games/game-data-packager/bash_completion ] || return
       local line packages
       while read line
       do
@@ -27,7 +28,7 @@ _game_data_packager()
     elif [ $COMP_CWORD -eq 1 ]
     then
       local supported
-      supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.yaml |cut -d'.' -f1)
+      supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.yaml 2>/dev/null |cut -d'.' -f1)
       COMPREPLY=( $( compgen -W "$supported" -- $cur ) )
     else
       COMPREPLY=()
