@@ -52,4 +52,12 @@ class ScummvmGameData(GameData):
                         PATH=package.install_to,
                         LONG=(package.longname or self.longname))
 
+            lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+            mkdir_p(lintiandir)
+            with open(os.path.join(lintiandir, package.name),
+                      'a', encoding='utf-8') as o:
+                 o.write('%s: desktop-command-not-in-package '
+                         'usr/share/applications/%s.desktop scummvm\n'
+                         % (package.name, package.name))
+
 GAME_DATA_SUBCLASS = ScummvmGameData

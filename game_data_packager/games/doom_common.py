@@ -182,7 +182,7 @@ class DoomGameData(GameData):
             desktop['Desktop Entry'] = {}
             entry = desktop['Desktop Entry']
             entry['Name'] = package.longname or self.longname
-            entry['GenericName'] = 'First Person Shooter Game'
+            entry['GenericName'] = self.genre + ' game'
             entry['TryExec'] = package.program
             if package.expansion_for:
                 for f in self.packages[package.expansion_for].install:
@@ -204,6 +204,14 @@ class DoomGameData(GameData):
             with open(os.path.join(appdir, '%s.desktop' % package.name),
                       'w', encoding='utf-8') as output:
                  desktop.write(output, space_around_delimiters=False)
+
+            lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+            mkdir_p(lintiandir)
+            with open(os.path.join(lintiandir, package.name),
+                      'a', encoding='utf-8') as o:
+                 o.write('%s: desktop-command-not-in-package '
+                         'usr/share/applications/%s.desktop %s\n'
+                         % (package.name, package.name, package.program))
 
             debdir = os.path.join(destdir, 'DEBIAN')
             mkdir_p(debdir)
