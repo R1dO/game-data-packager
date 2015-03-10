@@ -93,8 +93,6 @@ class DoomGameData(GameData):
             package.program = package_map.get(engine, engine)
             package.create_desktop_file = self.yaml['packages'][package.name].get(
                     'create_desktop_file', True)
-            package.overide_fill_docs = self.yaml['packages'][package.name].get(
-                    'overide_fill_docs', True)
 
     def construct_package(self, binary):
         return WadPackage(binary)
@@ -118,28 +116,6 @@ class DoomGameData(GameData):
         desc = desc.replace('GAME', wad_base)
         desc = desc.replace('LONG', (package.longname or self.longname))
         control['Description'] = desc
-
-    def fill_docs(self, package, docdir):
-        if not package.overide_fill_docs:
-            super(DoomGameData, self).fill_docs(package, docdir)
-            return
-
-        main_wad = package.main_wad
-
-        copy_with_substitutions(
-                open(os.path.join(DATADIR, 'doom-common.README.Debian.in'),
-                    encoding='utf-8'),
-                open(os.path.join(docdir, 'README.Debian'), 'w',
-                    encoding='utf-8'),
-                PACKAGE=package.name,
-                GAME=(package.longname or self.longname))
-        copy_with_substitutions(
-                open(os.path.join(DATADIR, 'doom-common.copyright.in'),
-                    encoding='utf-8'),
-                open(os.path.join(docdir, 'copyright'), 'w',
-                    encoding='utf-8'),
-                PACKAGE=package.name,
-                IWAD=main_wad)
 
     def fill_extra_files(self, package, destdir):
         super(DoomGameData, self).fill_extra_files(package, destdir)

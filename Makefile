@@ -56,7 +56,6 @@ clean:
 	rm -f ./out/*.copyright.in
 	rm -f ./out/*.desktop.in
 	rm -f ./out/*.preinst.in
-	rm -f ./out/*.README.Debian.in
 	rm -f ./out/*.png
 	rm -f ./out/*.svgz
 	rm -f ./out/*.yaml

@@ -11,14 +11,12 @@ plugin: doom_common
 packages:
   chexquest-data:
     longname: Chex Quest
-    overide_fill_docs: false
     install_to: usr/share/games/doom
     install:
     - chex.wad
 
   chexquest2-data:
     longname: "Chex Quest 2: Flemoids Take Chextropolis"
-    overide_fill_docs: false
     copyright: © 1997 Digital Café
     expansion_for: chexquest-data
     install_to: usr/share/games/doom
