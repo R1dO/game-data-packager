@@ -1535,11 +1535,10 @@ class GameData(object):
 
         return complete
 
-    def fill_docs(self, package, docdir):
+    def fill_docs(self, package, destdir, docdir):
         copy_to = os.path.join(docdir, 'copyright')
         for n in (package.name, self.shortname):
             copy_from = os.path.join(DATADIR, n + '.copyright')
-            continue
             if os.path.exists(copy_from):
                 shutil.copyfile(copy_from, copy_to)
                 return
@@ -1598,7 +1597,16 @@ class GameData(object):
                  if self.file_status[f] is FillResult.IMPOSSIBLE:
                      continue
                  if self.files[f].license:
-                     licenses.add("/usr/share/doc/%s/%s" % (package.name, self.files[f].install_as))
+                     license_file = self.files[f].install_as
+                     licenses.add("/usr/share/doc/%s/%s" % (package.name, license_file))
+                     if os.path.splitext(license_file)[0].lower() == 'license':
+                         lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+                         mkdir_p(lintiandir)
+                         with open(os.path.join(lintiandir, package.name),
+                                  'a', encoding='utf-8') as l:
+                             l.write('%s: extra-license-file usr/share/doc/%s/%s\n'
+                                     % (package.name, package.name, license_file))
+
             if licenses:
                 o.write('\nThe full license appears in ')
                 o.write(',\n'.join(licenses))
@@ -1622,7 +1630,7 @@ class GameData(object):
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
 
-        self.fill_docs(package, docdir)
+        self.fill_docs(package, destdir, docdir)
 
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
