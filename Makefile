@@ -9,8 +9,9 @@ GDP_MIRROR ?= localhost
 #   - archive recursion (zip in zip)
 #   - lha
 #   - id-shr-extract
+#   - doom_commo.py plugin
 # - are not too big
-TEST_SUITE += rott spear-of-destiny wolf3d
+TEST_SUITE += rott spear-of-destiny wolf3d heretic
 
 png       := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
 svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(wildcard ./data/*.svg))
