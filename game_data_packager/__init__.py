@@ -1559,6 +1559,7 @@ class GameData(object):
                     'and must not be redistributed.\n\n')
 
             count_usr = 0
+            exts = set()
             count_doc = 0
             for f in package.install | package.optional:
                  if self.file_status[f] is FillResult.IMPOSSIBLE:
@@ -1571,9 +1572,13 @@ class GameData(object):
                      # doesn't have to be a .wad, ROTT's EXTREME.RTL
                      # or any other one-datafile .deb would qualify too
                      main_wad = self.files[f].install_as
+                     exts.add(os.path.splitext(main_wad.lower())[1])
 
             if count_usr == 1:
                 o.write('"/%s/%s"\n' % (package.install_to, main_wad))
+            elif len(exts) == 1:
+                o.write('The %s files under "/%s/"\n' %
+                        (list(exts)[0] ,package.install_to))
             else:
                 o.write('The files under "/%s/"\n' % package.install_to)
 
