@@ -2267,6 +2267,13 @@ class GameData(object):
 
         subprocess.call(['su', '-c', cmd])
 
+    def iter_fat_mounts(self):
+        with open('/proc/mounts', 'r', encoding='utf8') as mounts:
+            for line in mounts.readlines():
+                mount, type = line.split(' ')[1:3]
+                if type in ('fat','vfat', 'ntfs'):
+                    yield os.path.join(mount, 'Program Files/Steam')
+
     def iter_steam_paths(self, packages=None):
         if packages is None:
             packages = self.packages.values()
@@ -2283,15 +2290,15 @@ class GameData(object):
                     'wineprefixes/steam/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.wine/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.PlayOnLinux/wineprefix/Steam/drive_c/Program Files/Steam'),
-                ):
+                ) + tuple(self.iter_fat_mounts()):
             if not os.path.isdir(prefix):
                 continue
 
             logger.debug('possible Steam root directory at %s', prefix)
 
-            for suffix in suffixes:
-                for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
-                        'steam/SteamApps'):
+            for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
+                    'steam/SteamApps'):
+                for suffix in suffixes:
                     path = os.path.join(prefix, middle, suffix)
                     if os.path.isdir(path):
                         logger.debug('possible %s found in Steam at %s',
