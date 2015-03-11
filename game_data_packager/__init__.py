@@ -2271,6 +2271,12 @@ class GameData(object):
         if packages is None:
             packages = self.packages.values()
 
+        suffixes = set(p.steam.get('path') for p in packages)
+        suffixes.add(self.steam.get('path'))
+        suffixes.discard(None)
+        if not suffixes:
+            return
+
         for prefix in (
                 os.path.expanduser('~/.steam'),
                 os.path.join(os.environ.get('XDG_DATA_HOME', os.path.expanduser('~/.local/share')),
@@ -2283,8 +2289,7 @@ class GameData(object):
 
             logger.debug('possible Steam root directory at %s', prefix)
 
-            suffix = self.steam.get('path')
-            if suffix is not None:
+            for suffix in suffixes:
                 for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
                         'steam/SteamApps'):
                     path = os.path.join(prefix, middle, suffix)
@@ -2292,18 +2297,6 @@ class GameData(object):
                         logger.debug('possible %s found in Steam at %s',
                                 self.shortname, path)
                         yield path
-
-            for package in packages:
-                suffix = package.steam.get('path')
-
-                if suffix is not None:
-                    for middle in ('steamapps', 'steam/steamapps', 'SteamApps',
-                            'steam/SteamApps'):
-                        path = os.path.join(prefix, middle, suffix)
-                        if os.path.isdir(path):
-                            logger.debug('possible %s found in Steam at %s',
-                                    package.name, path)
-                            yield path
 
     def construct_package(self, binary):
         return GameDataPackage(binary)
