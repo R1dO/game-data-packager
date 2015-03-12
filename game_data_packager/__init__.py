@@ -23,6 +23,7 @@ import glob
 import hashlib
 import importlib
 import io
+import json
 import logging
 import os
 import random
@@ -2393,14 +2394,13 @@ class GameData(object):
 def load_games(workdir=None):
     games = {}
 
-    for yamlfile in glob.glob(os.path.join(DATADIR, '*.yaml')):
+    for jsonfile in glob.glob(os.path.join(DATADIR, '*.json')):
         try:
-            g = os.path.basename(yamlfile)
+            g = os.path.basename(jsonfile)
             g = g[:len(g) - 5]
 
-            yaml_data = yaml.load(open(yamlfile, encoding='utf-8'))
-
-            plugin = yaml_data.get('plugin', g)
+            data = json.load(open(jsonfile, encoding='utf-8'))
+            plugin = data.get('plugin', g)
 
             try:
                 plugin = importlib.import_module('game_data_packager.games.%s' %
@@ -2410,9 +2410,9 @@ def load_games(workdir=None):
                 logger.debug('No special code for %s: %s', g, e)
                 game_data_constructor = GameData
 
-            games[g] = game_data_constructor(g, yaml_data, workdir=workdir)
+            games[g] = game_data_constructor(g, data, workdir=workdir)
         except:
-            print('Error loading %s:\n' % yamlfile)
+            print('Error loading %s:\n' % jsonfile)
             raise
 
     return games
