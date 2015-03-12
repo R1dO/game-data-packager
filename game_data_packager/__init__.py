@@ -1888,7 +1888,7 @@ class GameData(object):
                 long_desc += ' Game: ' + longname
 
             engine = package.engine or self.engine
-            engine = engine.split('|')[0].strip()
+            engine = engine.split('|')[0].split('(')[0].strip()
             if engine:
                 long_desc += '\n .\n'
                 long_desc += ' Intended for use with: ' + engine
@@ -2053,7 +2053,7 @@ class GameData(object):
             engine = package.engine or self.engine
             if not engine:
                 continue
-            engine = engine.split('|')[0].strip()
+            engine = engine.split('|')[0].split('(')[0].strip()
             if not os.path.isdir(os.path.join('/usr/share/doc/', engine)):
                 engines.add(engine)
         if engines:
