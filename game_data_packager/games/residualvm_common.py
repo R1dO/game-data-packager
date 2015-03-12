@@ -26,11 +26,11 @@ from ..util import (TemporaryUmask, copy_with_substitutions, mkdir_p)
 logger = logging.getLogger('game-data-packager.games.residualvm-common')
 
 class ResidualvmGameData(GameData):
-    def __init__(self, shortname, yaml_data, workdir=None):
-        super(ResidualvmGameData, self).__init__(shortname, yaml_data,
+    def __init__(self, shortname, data, workdir=None):
+        super(ResidualvmGameData, self).__init__(shortname, data,
                 workdir=workdir)
 
-        self.gameid = self.yaml['gameid']
+        self.gameid = self.data['gameid']
 
         if self.engine is None:
             self.engine = 'residualvm'

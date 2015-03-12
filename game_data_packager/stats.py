@@ -15,13 +15,10 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-import os
-import yaml
-
-from . import load_yaml_games
+from . import load_games
 
 games = []
-for name, game in load_yaml_games().items():
+for name, game in load_games().items():
     game_struct = {
              'genre': game.genre or 'Unknown',
              'shortname': name,

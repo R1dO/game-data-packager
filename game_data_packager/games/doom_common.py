@@ -71,8 +71,8 @@ class DoomGameData(GameData):
     Darkplaces).
     """
 
-    def __init__(self, shortname, yaml_data, workdir=None):
-        super(DoomGameData, self).__init__(shortname, yaml_data,
+    def __init__(self, shortname, data, workdir=None):
+        super(DoomGameData, self).__init__(shortname, data,
                 workdir=workdir)
         if self.engine is None:
             self.engine = "chocolate-doom | doom-engine"
@@ -91,7 +91,7 @@ class DoomGameData(GameData):
             engine = package.engine or self.engine
             engine = engine.split('|')[-1].strip()
             package.program = package_map.get(engine, engine)
-            package.create_desktop_file = self.yaml['packages'][package.name].get(
+            package.create_desktop_file = self.data['packages'][package.name].get(
                     'create_desktop_file', True)
 
     def construct_package(self, binary):

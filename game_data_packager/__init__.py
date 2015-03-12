@@ -439,7 +439,7 @@ class GameDataPackage(object):
 class GameData(object):
     def __init__(self,
             shortname,
-            yaml_data,
+            data,
             workdir=None):
         # The name of the game for command-line purposes, e.g. quake3
         self.shortname = shortname
@@ -487,20 +487,20 @@ class GameData(object):
         # Steam ID and path
         self.steam = {}
 
-        self.yaml = yaml_data
+        self.data = data
 
         self.argument_parser = None
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text',
                  'steam','engine', 'genre'):
-            if k in self.yaml:
-                setattr(self, k, self.yaml[k])
+            if k in self.data:
+                setattr(self, k, self.data[k])
 
-        if 'aliases' in self.yaml:
-            self.aliases = set(self.yaml['aliases'])
+        if 'aliases' in self.data:
+            self.aliases = set(self.data['aliases'])
 
-        if 'try_repack_from' in self.yaml:
-            paths = self.yaml['try_repack_from']
+        if 'try_repack_from' in self.data:
+            paths = self.data['try_repack_from']
             if isinstance(paths, list):
                 self.try_repack_from = paths
             elif isinstance(paths, str):
@@ -509,10 +509,10 @@ class GameData(object):
                 raise AssertionError('try_repack_from should be str or list')
 
         # these should be per-package
-        assert 'install_files' not in self.yaml
-        assert 'package' not in self.yaml
-        assert 'symlinks' not in self.yaml
-        assert 'install_files_from_cksums' not in self.yaml
+        assert 'install_files' not in self.data
+        assert 'package' not in self.data
+        assert 'symlinks' not in self.data
+        assert 'install_files_from_cksums' not in self.data
 
         # Map from WantedFile name to instance.
         # { 'baseq3/pak1.pk3': WantedFile instance }
@@ -574,11 +574,11 @@ class GameData(object):
         # Debian architecture
         self._architecture = None
 
-        self._populate_files(self.yaml.get('files'))
+        self._populate_files(self.data.get('files'))
 
-        assert 'packages' in self.yaml
+        assert 'packages' in self.data
 
-        for binary, data in self.yaml['packages'].items():
+        for binary, data in self.data['packages'].items():
             # these should only be at top level, since they are global
             assert 'cksums' not in data, binary
             assert 'md5sums' not in data, binary
@@ -591,8 +591,8 @@ class GameData(object):
             self.packages[binary] = package
             self._populate_package(package, data)
 
-        if 'cksums' in self.yaml:
-            for line in self.yaml['cksums'].splitlines():
+        if 'cksums' in self.data:
+            for line in self.data['cksums'].splitlines():
                 stripped = line.strip()
                 if stripped == '' or stripped.startswith('#'):
                     continue
@@ -602,8 +602,8 @@ class GameData(object):
                 f.size = int(size)
 
         for alg in ('md5', 'sha1', 'sha256'):
-            if alg + 'sums' in self.yaml:
-                for line in self.yaml[alg + 'sums'].splitlines():
+            if alg + 'sums' in self.data:
+                for line in self.data[alg + 'sums'].splitlines():
                     stripped = line.strip()
                     if stripped == '' or stripped.startswith('#'):
                         continue
@@ -2390,7 +2390,7 @@ class GameData(object):
                 'apt-get install %s',
                 ' '.join(sorted(packages)))
 
-def load_yaml_games(workdir=None):
+def load_games(workdir=None):
     games = {}
 
     for yamlfile in glob.glob(os.path.join(DATADIR, '*.yaml')):
@@ -2474,7 +2474,7 @@ def run_command_line():
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
 
-    games = load_yaml_games(None)
+    games = load_games(None)
 
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers, base_parser)

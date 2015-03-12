@@ -18,10 +18,10 @@
 import os
 import yaml
 
-from . import load_yaml_games
+from . import load_games
 
 if __name__ == '__main__':
-    for name, game in load_yaml_games().items():
+    for name, game in load_games().items():
         if 'DEBUG' in os.environ:
             print('# %s -----------------------------------------' % name)
             print(yaml.safe_dump(game.to_yaml()))
