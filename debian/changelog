@@ -57,6 +57,10 @@ game-data-packager (40) UNRELEASED; urgency=medium
     (Doom 3 and its expansion pack Resurrection of Evil)
   * Add game support for Doom3 BFG Edition (Closes: #777338)
 
+  [ Simon McVittie ]
+  * Translate source YAML files into JSON during build, for a significant
+    startup performance increase (mitigates: #779937)
+
  -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 23:54:12 +0000
 
 game-data-packager (39) experimental; urgency=low
