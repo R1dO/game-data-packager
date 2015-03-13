@@ -1,5 +1,7 @@
 _game_data_packager()
 {
+    [ -e /usr/share/games/game-data-packager ] || return
+
     # FIXME: currently only works 100% correctly when
     #        GAME is the first argument
 
@@ -28,8 +30,8 @@ _game_data_packager()
     elif [ $COMP_CWORD -eq 1 ]
     then
       local supported
-      supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.yaml 2>/dev/null |cut -d'.' -f1)
-      COMPREPLY=( $( compgen -W "$supported" -- $cur ) )
+      supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.json 2>/dev/null |cut -d'.' -f1)
+      COMPREPLY=( $( compgen -W "make-template $supported" -- $cur ) )
     else
       COMPREPLY=()
     fi
