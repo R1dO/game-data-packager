@@ -122,7 +122,6 @@ def do_one_dir(destdir,lower):
     if has_dosbox:
         logger.warning('DOSBOX files detected, make sure not to include those in your package')
 
-    print('%YAML 1.2')
     print('---')
     if longname:
         print('longname: %s\n' % longname)
