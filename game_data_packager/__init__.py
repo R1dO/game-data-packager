@@ -2395,6 +2395,7 @@ def load_games(workdir=None):
     games = {}
 
     for jsonfile in glob.glob(os.path.join(DATADIR, '*.json')):
+        print('.', end='', flush=True)
         try:
             g = os.path.basename(jsonfile)
             g = g[:len(g) - 5]
@@ -2415,6 +2416,7 @@ def load_games(workdir=None):
             print('Error loading %s:\n' % jsonfile)
             raise
 
+    print('\r', end='', flush=True)
     return games
 
 def run_command_line():
