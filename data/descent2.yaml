@@ -6,7 +6,8 @@ genre: Flight simulator
 
 packages:
   descent2-demo-data:
-    longname: Descent II
+    longname: Descent II (demo)
+    demo_for: descent2-full-data
     install:
     - d2demo.pig
     - d2demo.ham
@@ -15,9 +16,38 @@ packages:
     - d2demo.dem
     install_to: usr/share/games/d2x-rebirth
 
+  descent2-full-data:
+    install:
+    - alien1.pig
+    - alien2.pig
+    - demos/descent2.dem
+    - descent2.ham
+    - descent2.hog
+    - descent2.s11
+    - descent2.s22
+    - fire.pig
+    - groupa.pig
+    - ice.pig
+    - water.pig
+    optional:
+    # movies
+    - intro-h.mvl
+    - other-h.mvl
+    - robots-h.mvl
+    - robots-l.mvl
+    - missions/d2-2plyr.hog
+    - missions/d2-2plyr.mn2
+    - missions/d2chaos.hog
+    - missions/d2chaos.mn2
+    - manual.pdf
+    - readme.txt_full
+    - refcard.pdf
+    install_to: usr/share/games/d2x-rebirth
+
 files:
   readme.txt:
     install_to: $docdir
+    distinctive_name: false
   d2shar10.tar.gz:
     download: http://icculus.org/d2x/data/d2shar10.tar.gz
     unpack:
@@ -29,6 +59,15 @@ files:
     - readme.txt
     - d2demo.dem
 
+  manual.pdf:
+    install_to: $docdir
+  readme.txt_full:
+    distinctive_name: false
+    install_to: $docdir
+    install_as: readme.txt
+  refcard.pdf:
+    install_to: $docdir
+
 cksums: |
   _ 355173    d2demo.dem
   _ 1961015   d2demo.ham
@@ -37,6 +76,29 @@ cksums: |
   _ 88065     readme.txt
   _ 4311406   d2shar10.tar.gz
 
+  _ 5016232   alien1.pig
+  _ 4912053   alien2.pig
+  _ 1168217   demos/descent2.dem
+  _ 1307598   descent2.ham
+  _ 7595079   descent2.hog
+  _ 2602492   descent2.s11
+  _ 5160905   descent2.s22
+  _ 4973944   fire.pig
+  _ 4931752   groupa.pig
+  _ 4926111   ice.pig
+  _ 99782888  intro-h.mvl
+  _ 1723326   manual.pdf
+  _ 194870    missions/d2-2plyr.hog
+  _ 93        missions/d2-2plyr.mn2
+  _ 331847    missions/d2chaos.hog
+  _ 119       missions/d2chaos.mn2
+  _ 104199780 other-h.mvl
+  _ 39179     readme.txt_full
+  _ 51219     refcard.pdf
+  _ 16766970  robots-h.mvl
+  _ 5087804   robots-l.mvl
+  _ 4833463   water.pig
+
 md5sums: |
   221f42d8896ccef096bb32eccb295d36  d2demo.dem
   2584a96d33ed6e78e2522001e71257a3  d2demo.ham
@@ -44,6 +106,28 @@ md5sums: |
   a68ed63e074468f38bfad88382741a5a  d2demo.pig
   ab80e41750af684992cb2e066bb67856  readme.txt
   1b952cc4a4419e24d230589027d73490  d2shar10.tar.gz
+  b0619642eeb50ac4d5198499a26b7355  alien1.pig
+  a242d46dfd0f16454f6f5377cbb424a5  alien2.pig
+  6c0d51cd4ff04030e66423895f74be72  demos/descent2.dem
+  7f30c3d7d4087b8584b49012a53ce022  descent2.ham
+  1d4cd6418dd7adfc5d312c04c265e5e6  descent2.hog
+  cc802a0558775498748d301b86257e92  descent2.s11
+  9a96c651e3e68b5c4febae6e1f492897  descent2.s22
+  b40c8690c6a9467d76ef5732b9e10663  fire.pig
+  b18a27d1ef0dd04aebbbf818c430a578  groupa.pig
+  d2a2f49892935395592bb56ae1a0f21e  ice.pig
+  7853a531b3c2f0e20b3996f4cac14ae4  intro-h.mvl
+  d3d117ee6bd92f45d38622f66f6d9528  manual.pdf
+  de49d2cef498e744270a8fd48290cb44  missions/d2-2plyr.hog
+  02e864529ee9ea0d5003ca46c3766149  missions/d2-2plyr.mn2
+  e096dfef3276ba575309501f85f15f06  missions/d2chaos.hog
+  70624a8ef81f7278a7fef8be38aa2732  missions/d2chaos.mn2
+  1a366be61a37311b051ff1e38bc9156f  other-h.mvl
+  31dbbc0a3c7641036ee4d2adc2ed6f60  readme.txt_full
+  a4904596b63b147e74b302a913b5c4ad  refcard.pdf
+  2e10f1d66cf7ab69db05673a32a9ca72  robots-h.mvl
+  f4164b1db5b417aefa9558a0ccb4f6e1  robots-l.mvl
+  4722f02a4c5bfb3b17fe8da8d4141191  water.pig
 sha1sums: |
   6274ebf0b9a6d8d5983fc094b75e4128fc1a349f  d2demo.dem
   d2c9b1b9050b4b40d3fe8895c4a45188c11e42c6  d2demo.ham
@@ -51,6 +135,28 @@ sha1sums: |
   553132d3273d55c3fb76ee6d1de94b1c5068ae3b  d2demo.pig
   75eca5ea764a7deebe26f617354b56b322aeba04  readme.txt
   fc1740e21858244d33e840d85949084407e2e2fb  d2shar10.tar.gz
+  80e040199b347f8f17f31afb32d551113cf40956  alien1.pig
+  2bbb8d941f8b06b56d5ddc7f723a206907a95548  alien2.pig
+  26ab4ceb00ef1cbd1dfd29a6f7bdd9f6bb28de07  demos/descent2.dem
+  9f621706cbd601bd6938a44f5fb7e5cc55d4b61f  descent2.ham
+  8e73beb4b64a7222fa2b5214282d5e671b313992  descent2.hog
+  72372b2fc9f88553fae6e26aba34a7c433322051  descent2.s11
+  f67d22b5aa2e06b286719e063b4e054169a765b1  descent2.s22
+  6365ed9256411e883189e7c2149671f9de24526b  fire.pig
+  fc3dd5059ff445986d05c143c54284bd7ec2ee68  groupa.pig
+  f3df0545359e9f2a7f58a4dd07615bd87cce10bf  ice.pig
+  9614aac967aa9f2efe10af553e506e27bb91e5ba  intro-h.mvl
+  a96f3dcb8b0915c686430ff9c3def05d506ad9ff  manual.pdf
+  15767e36f12ed8667249e19e948686c13dd5d90b  missions/d2-2plyr.hog
+  db13b038e5b3b8ccbc6f2418bbe49dc0bac87235  missions/d2-2plyr.mn2
+  156f66ae7ae48fff582116bdf0e91e0f3386b3af  missions/d2chaos.hog
+  bf266256dc726852bad4896861a1dfad4022f8b1  missions/d2chaos.mn2
+  e8f1a2d643feb2731fc05974ab202c4cd3aea0fd  other-h.mvl
+  9be0238736785b59a5d7ef6077d5aca865df1135  readme.txt_full
+  f986911bca2d2667ef179f1f8b73fc8162f8304b  refcard.pdf
+  c130ecda730b5ce111947308a33b7911759fb3a5  robots-h.mvl
+  42be364b135bb2c3497ca39839533bde49c08644  robots-l.mvl
+  1874f70353680a803811a5ff2cce949e3f5d5076  water.pig
 sha256sums: |
   8c6e2d43ba88166d17759d90e3817edd0c3ef0a33861ef35a51a8cd4db89c892  d2demo.dem
   747ccf2494916892061e13601cd8695c35e46f2a99062fff3e3f298da94b9be6  d2demo.ham
@@ -58,4 +164,26 @@ sha256sums: |
   368f9ea56fe8eb8b6e4636ab5eba60bfffdf692fe10100d604fedf654d7d8989  d2demo.pig
   478620d7ea4bddd439ce880ddd5bfa5d2bc1abc83c788f57a334f7d1ae4de622  readme.txt
   65e8dc58dc7fdc09696f9a06c814ef81f8026b330976a2dced3347895814a4af  d2shar10.tar.gz
+  811fc58caa3e2a72cdfa07d7530b2bb0ca71836a6a2d8a3cb401e4284949c233  alien1.pig
+  75ef8fa0cba03410c61ad1b58f57dcb1481f1f302985828aab0af90639926055  alien2.pig
+  e2fe2989350f14e270b954cbeae63d612493006778b29e2b66e318b679ae9e34  demos/descent2.dem
+  5233242206c677d65db7f075dd61f2b0a1b7bbe8cd65f56d769efaee1cc38b4d  descent2.ham
+  f1abf516512739c97b43e2e93611a2398fc9f8bc7a014095ebc2b6b2fd21b703  descent2.hog
+  d444c6f93476f8941936164d2981387a26b0a25e3f9d5e930ef96bfbb86c1e68  descent2.s11
+  4f10632dd4efcbffe532c35b6763edd22817135442bbcc4171381706f3893728  descent2.s22
+  26a5a5f4e91456abf31f79578d0922e7bc3348b6aa92489a84033de83f358156  fire.pig
+  facdde6cf8a2cab99ea39ba06931872a1fe5636fe211e61fb58c57d706bf627b  groupa.pig
+  ae6152ef69502b00e51a98d8f04b21f2855a332cd2988ecceb3b909a49fa26a1  ice.pig
+  b40a60bccbb4e2eea5dad222f85fd63abd29f36a48b5bd60174e10820c174b84  intro-h.mvl
+  8802bc9b977c80d20c0f0e76b8191f6c2e7137a19468091479326e44bab5ddf4  manual.pdf
+  f56f833e1026a35e8a8755987a93d5a0eb5bb12b40b8f190b9e7621ff24cead8  missions/d2-2plyr.hog
+  cea8e7885330b09fadafc25c28c22149cf6403c0d687239ddf33d90c75e6f3e5  missions/d2-2plyr.mn2
+  98acbdbc5d0180160337bac1ce28f3a30688378715fe89a45297b0ed6341b4cf  missions/d2chaos.hog
+  9f1166d1f0635f62a21b4bd3109b58e290566a9c907b63039e01f227b8e4aa57  missions/d2chaos.mn2
+  e00a016f6064cbb96b791597d9bd1fe70b3cf2e573778cc3136e3814634fddd0  other-h.mvl
+  0f357bed4ebc8977b8ba952148fac3447c4cff9eab8705d30b0bda639e706acd  readme.txt_full
+  89e424847f0d07e7cf9bd07cd68736a6de5670458fc699bc4dc4a240b6fc430b  refcard.pdf
+  f491f078308a310b53bb46477b916f9de4cce9358a77b733e31b1bce86135b0a  robots-h.mvl
+  601c0374f3f2c86c77621315bdd371c0c86abf956b5e50bf6673747df71990f1  robots-l.mvl
+  de88ead87dcb32f16936b3e2a08b81a2248440f29e6f8be0c4c3a5f9fe4b63c1  water.pig
 ...
