@@ -17,6 +17,8 @@ packages:
     install_to: usr/share/games/d2x-rebirth
 
   descent2-full-data:
+    gog:
+      url: descent_1_descent_2
     install:
     - alien1.pig
     - alien2.pig
@@ -61,12 +63,42 @@ files:
 
   manual.pdf:
     install_to: $docdir
+    distinctive_name: false
   readme.txt_full:
     distinctive_name: false
     install_to: $docdir
     install_as: readme.txt
   refcard.pdf:
     install_to: $docdir
+    distinctive_name: false
+  setup_descent_1_2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - alien1.pig
+    - alien2.pig
+    - demos/descent2.dem
+    - descent2.ham
+    - descent2.hog
+    - descent2.s11
+    - descent2.s22
+    - fire.pig
+    - groupa.pig
+    - ice.pig
+    - water.pig
+    optional:
+    # movies
+    - intro-h.mvl
+    - other-h.mvl
+    - robots-h.mvl
+    - robots-l.mvl
+    - missions/d2-2plyr.hog
+    - missions/d2-2plyr.mn2
+    - missions/d2chaos.hog
+    - missions/d2chaos.mn2
+    - manual.pdf
+    - readme.txt_full
+    - refcard.pdf
 
 cksums: |
   _ 355173    d2demo.dem
@@ -98,6 +130,7 @@ cksums: |
   _ 16766970  robots-h.mvl
   _ 5087804   robots-l.mvl
   _ 4833463   water.pig
+  _ 578313965 setup_descent_1_2.exe
 
 md5sums: |
   221f42d8896ccef096bb32eccb295d36  d2demo.dem
@@ -128,6 +161,7 @@ md5sums: |
   2e10f1d66cf7ab69db05673a32a9ca72  robots-h.mvl
   f4164b1db5b417aefa9558a0ccb4f6e1  robots-l.mvl
   4722f02a4c5bfb3b17fe8da8d4141191  water.pig
+  a16f246783339962eb5bc0d6e630952b  setup_descent_1_2.exe
 sha1sums: |
   6274ebf0b9a6d8d5983fc094b75e4128fc1a349f  d2demo.dem
   d2c9b1b9050b4b40d3fe8895c4a45188c11e42c6  d2demo.ham
@@ -157,6 +191,7 @@ sha1sums: |
   c130ecda730b5ce111947308a33b7911759fb3a5  robots-h.mvl
   42be364b135bb2c3497ca39839533bde49c08644  robots-l.mvl
   1874f70353680a803811a5ff2cce949e3f5d5076  water.pig
+  d33934e3034091073828f74859f39a71b118532c  setup_descent_1_2.exe
 sha256sums: |
   8c6e2d43ba88166d17759d90e3817edd0c3ef0a33861ef35a51a8cd4db89c892  d2demo.dem
   747ccf2494916892061e13601cd8695c35e46f2a99062fff3e3f298da94b9be6  d2demo.ham
@@ -186,4 +221,5 @@ sha256sums: |
   f491f078308a310b53bb46477b916f9de4cce9358a77b733e31b1bce86135b0a  robots-h.mvl
   601c0374f3f2c86c77621315bdd371c0c86abf956b5e50bf6673747df71990f1  robots-l.mvl
   de88ead87dcb32f16936b3e2a08b81a2248440f29e6f8be0c4c3a5f9fe4b63c1  water.pig
+  622e130554a0442332071b0f866c4bf4e769b0cc8ed96419140f956d83291864  setup_descent_1_2.exe
 ...

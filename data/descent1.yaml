@@ -23,6 +23,9 @@ packages:
     longname: "Descent: First Strike"
     debian:
       conflicts: descent1-demo-data
+    gog:
+      # http://www.gog.com/game/${url}
+      url: descent_1_descent_2
     install:
     - descent.hog_full
     - descent.pig_full
@@ -42,6 +45,7 @@ packages:
 files:
   readme.txt:
     install_to: $docdir
+    distinctive_name: false
   refcard.txt:
     install_to: $docdir  
 
@@ -95,9 +99,28 @@ files:
     install_to: $docdir
   manual.pdf:
     install_to: $docdir
+    distinctive_name: false
+  refcard.pdf:
+    install_to: $docdir
+    distinctive_name: false
   readme.txt_full:
     install_to: $docdir
     install_as: readme.txt
+  setup_descent_1_2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - descent.hog_full
+    - descent.pig_full
+    - chaos.hog
+    - chaos.msn
+    - descent.dem
+    - level18.dem
+    - miniboss.dem
+    - descent.faq
+    - manual.pdf
+    - readme.txt_full
+    - refcard.pdf
 
 cksums: |
   _ 2339773   descent.hog
@@ -130,6 +153,7 @@ cksums: |
   _ 403783    miniboss.dem
   _ 11283     readme.txt_full
   _ 44849     refcard.pdf
+  _ 578313965 setup_descent_1_2.exe
 
 md5sums: |
   cf1caf9c7a0681de80fac8cb593b33eb  descent.hog
@@ -152,6 +176,7 @@ md5sums: |
   b020ebe178c244786b310cf2739511b6  miniboss.dem
   e05c81f46044a60bf8f21761e71d7260  readme.txt_full
   2ab2049a1533f3da1b6b9d1353173f98  refcard.pdf
+  a16f246783339962eb5bc0d6e630952b  setup_descent_1_2.exe
 
 sha1sums: |
   6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog
@@ -174,6 +199,7 @@ sha1sums: |
   cc468111d9e12c152d2eeb9fdcfb191dd4517c04  miniboss.dem
   dc69e5e85cea469263cef7e62c81ba2119a88b35  readme.txt_full
   88a4f0dc9957ee4fee8cbe3ed9baae730e7192c7  refcard.pdf
+  d33934e3034091073828f74859f39a71b118532c  setup_descent_1_2.exe
 
 sha256sums: |
   26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog
@@ -196,4 +222,5 @@ sha256sums: |
   78284a7cf9fd894b401bfdb95e12b2d0564a5b8e563762ea034f7dac9a2a517a  miniboss.dem
   588e13d82ddc7641bc59b14407381e4bd43d52aedb2e33372fef7e61f4f46cbc  readme.txt_full
   edc7126f5d9486d31aa80a13fce7449bcbc4a62303201d48fed139fa8378fdb6  refcard.pdf
+  622e130554a0442332071b0f866c4bf4e769b0cc8ed96419140f956d83291864  setup_descent_1_2.exe
 ...
