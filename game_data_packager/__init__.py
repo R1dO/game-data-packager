@@ -353,6 +353,8 @@ class GameDataPackage(object):
 
         # Steam ID and path
         self.steam = {}
+        self.gog = {}
+        self.origin = {}
 
         # overide the game engine when needed
         self.engine = None
@@ -433,6 +435,8 @@ class GameDataPackage(object):
             'optional': sorted(self.optional),
             'rip_cd': self.rip_cd,
             'steam': self.steam,
+            'gog': self.gog,
+            'origin': self.origin,
             'symlinks': self.symlinks,
             'type': self.type,
         }
@@ -487,13 +491,15 @@ class GameData(object):
 
         # Steam ID and path
         self.steam = {}
+        self.gog = {}
+        self.origin = {}
 
         self.data = data
 
         self.argument_parser = None
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text',
-                 'steam','engine', 'genre'):
+                 'steam', 'gog', 'origin', 'engine', 'genre'):
             if k in self.data:
                 setattr(self, k, self.data[k])
 
@@ -741,7 +747,7 @@ class GameData(object):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version',
-                'copyright', 'engine'):
+                'copyright', 'engine', 'gog', 'origin'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -1952,6 +1958,10 @@ class GameData(object):
                 if path not in paths:
                     paths.append(path)
 
+            for path in self.iter_origin_paths():
+                if path not in paths:
+                    paths.append(path)
+
         for arg in paths:
             logger.debug('%s...', arg)
             self.consider_file_or_dir(arg)
@@ -2268,13 +2278,6 @@ class GameData(object):
 
         subprocess.call(['su', '-c', cmd])
 
-    def iter_fat_mounts(self):
-        with open('/proc/mounts', 'r', encoding='utf8') as mounts:
-            for line in mounts.readlines():
-                mount, type = line.split(' ')[1:3]
-                if type in ('fat','vfat', 'ntfs'):
-                    yield os.path.join(mount, 'Program Files/Steam')
-
     def iter_steam_paths(self, packages=None):
         if packages is None:
             packages = self.packages.values()
@@ -2291,7 +2294,7 @@ class GameData(object):
                     'wineprefixes/steam/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.wine/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.PlayOnLinux/wineprefix/Steam/drive_c/Program Files/Steam'),
-                ) + tuple(self.iter_fat_mounts()):
+                ) + tuple(iter_fat_mounts('Steam')):
             if not os.path.isdir(prefix):
                 continue
 
@@ -2305,6 +2308,32 @@ class GameData(object):
                         logger.debug('possible %s found in Steam at %s',
                                 self.shortname, path)
                         yield path
+
+    def iter_origin_paths(self, packages=None):
+        if packages is None:
+            packages = self.packages.values()
+
+        suffixes = set(p.origin.get('path') for p in packages)
+        suffixes.add(self.origin.get('path'))
+        suffixes.discard(None)
+        if not suffixes:
+            return
+
+        for prefix in (
+                os.path.expanduser('~/.wine/drive_c/Program Files/Origin Games'),
+                ) + tuple(iter_fat_mounts('Origin Games')):
+            if not os.path.isdir(prefix):
+                continue
+
+            logger.debug('possible Origin root directory at %s', prefix)
+
+            for suffix in suffixes:
+                path = os.path.join(prefix, suffix)
+                if os.path.isdir(path):
+                    logger.debug('possible %s found in Origin at %s',
+                            self.shortname, path)
+                    yield path
+
 
     def construct_package(self, binary):
         return GameDataPackage(binary)
@@ -2390,6 +2419,13 @@ class GameData(object):
         logger.warning('installing these packages might help:\n' +
                 'apt-get install %s',
                 ' '.join(sorted(packages)))
+
+def iter_fat_mounts(folder):
+    with open('/proc/mounts', 'r', encoding='utf8') as mounts:
+        for line in mounts.readlines():
+            mount, type = line.split(' ')[1:3]
+            if type in ('fat','vfat', 'ntfs'):
+                yield os.path.join(mount, 'Program Files', folder)
 
 def load_games(workdir=None):
     games = {}

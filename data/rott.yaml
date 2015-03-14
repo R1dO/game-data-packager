@@ -35,6 +35,8 @@ packages:
     longname: "Rise of the Triad: Dark War"
     debian:
       depends: rott-data
+    gog:
+      url: rise_of_the_triad__dark_war
     install_to: usr/share/games/rott
     install:
     - any_registered_rtc
