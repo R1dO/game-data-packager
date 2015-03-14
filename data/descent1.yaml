@@ -27,6 +27,15 @@ packages:
     - descent.hog_full
     - descent.pig_full
     optional:
+    - chaos.hog
+    - chaos.msn
+    - descent.dem
+    - level18.dem
+    - miniboss.dem
+    - descent.faq
+    - manual.pdf
+    - readme.txt_full
+    - refcard.pdf
     - d1xr-hires.dxa
     install_to: usr/share/games/d1x-rebirth/
 
@@ -82,6 +91,14 @@ files:
   #  - descent.pig_part2
   #  format: arj
 
+  descent.faq:
+    install_to: $docdir
+  manual.pdf:
+    install_to: $docdir
+  readme.txt_full:
+    install_to: $docdir
+    install_as: readme.txt
+
 cksums: |
   _ 2339773   descent.hog
   _ 5092871   descent.pig
@@ -101,12 +118,22 @@ cksums: |
   # extensions
   _ 1426884   d1xr-hires.dxa
 
+  #full game
+  _ 6856701   descent.hog_full
+  _ 4920305   descent.pig_full
+  _ 174751    chaos.hog
+  _ 309       chaos.msn
+  _ 2211582   descent.dem
+  _ 48362     descent.faq
+  _ 273939    level18.dem
+  _ 6509102   manual.pdf
+  _ 403783    miniboss.dem
+  _ 11283     readme.txt_full
+  _ 44849     refcard.pdf
+
 md5sums: |
   cf1caf9c7a0681de80fac8cb593b33eb  descent.hog
   f8dc0f2b3ee8baa2c622f57b470fe147  descent.pig
-  # stub, md5sum of /dev/null
-  d41d8cd98f00b204e9800998ecf8427e  descent.hog_full
-  d41d8cd98f00b204e9800998ecf8427e  descent.pig_full
   b647aded11632d44943e01a53e660320  readme.txt
   f531aea2b8cdf805815d0c84ae1353a2  refcard.txt
   4aa5ea2fb66f893e195304cc6efae542  desc14sw.tar.gz
@@ -114,6 +141,18 @@ md5sums: |
   c60e75c7f1f4fa5f9000710a501dcb76  descent1.sow
   90d2cd03b8b6b2ec44ad3390416ee1cc  descent2.sow
   7d978ce3875995e54cbf426167e88b94  d1xr-hires.dxa
+  c792a21a30b869b1ec6d31ad64e9557e  descent.hog_full
+  fa7e48b7b1495399af838e31ac13b7da  descent.pig_full
+  42dd3b986ed1dfc89b88caafafd7f0e9  chaos.hog
+  b426bdb95acdf7dddde503ad079e3a94  chaos.msn
+  94ae727846dcc3edc67ee2b2386d8d82  descent.dem
+  29a016f9db69df8deaaf6bf93ba101e1  descent.faq
+  3b7f279dd98516fed4fc4fb7e3a1ad92  level18.dem
+  73e84e14b76984a44d9f8be958180632  manual.pdf
+  b020ebe178c244786b310cf2739511b6  miniboss.dem
+  e05c81f46044a60bf8f21761e71d7260  readme.txt_full
+  2ab2049a1533f3da1b6b9d1353173f98  refcard.pdf
+
 sha1sums: |
   6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog
   c1be2e728c8cdfb03e3fcaab870b7a6b01e016ba  descent.pig
@@ -124,6 +163,18 @@ sha1sums: |
   3913a034ff4a2c98ab6564788d05c7532a1488a5  descent1.sow
   08a259fdd27acc8c2be9943dee619479aa767369  descent2.sow
   0a86f9d74caf8f5ea419a5764f0af976e8d57e09  d1xr-hires.dxa
+  4d6fb40e943f92574aba2c9fc1574330de89905b  descent.hog_full
+  53f6453d5a836cf660c6dcca0f636d46a28ee20c  descent.pig_full
+  85d6ffca86b3458b9349e4ece4615bf825baf7e9  chaos.hog
+  20cf5157d021e456551478d40fa9cdea725c2a21  chaos.msn
+  66fe4488eef250d3cd8a834f58e32fba023d4be7  descent.dem
+  ade0bd59bd1126db35ce58c5802cd5c502893490  descent.faq
+  812d0639f7a258737f7760c1f6f8dad2d76d52f7  level18.dem
+  f316870973120ec84d0ffa1bdd116eaf72367b81  manual.pdf
+  cc468111d9e12c152d2eeb9fdcfb191dd4517c04  miniboss.dem
+  dc69e5e85cea469263cef7e62c81ba2119a88b35  readme.txt_full
+  88a4f0dc9957ee4fee8cbe3ed9baae730e7192c7  refcard.pdf
+
 sha256sums: |
   26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog
   b67865e513452a35887a20270d17fdfb5af1a2edaaae247bc523489f1d84f9ac  descent.pig
@@ -134,4 +185,15 @@ sha256sums: |
   cee9ee57fbd1af8e08d3cd0b409cc1fa4a9d44c7bbced3f28669be98ae45721c  descent1.sow
   669dc44c9f5b4b4061f698488341fb9540e409b35f6da7ce6b9eeba53c1c001f  descent2.sow
   b30a164fa9c6dff05eda6d50f777777df843968d32053f5cc9453fe89d5bed19  d1xr-hires.dxa
+  83d76ff0c46bb2e7348a49bdd287ad764abeda0d851bfb16b42c1ede93b21052  descent.hog_full
+  093f9cc029200e9d71d5e14f2f06e5e876a658dd64dc664d6911c5d24d7b64fe  descent.pig_full
+  0c5fb0684443c0b9c4dbb2769db65b8460bdad4ca80d58a943396fd07c001ba4  chaos.hog
+  9f6ed0de3b9c5aea3f609598fc8cd3ae959594a1399d38714b5fd3d9522de819  chaos.msn
+  3ed575389e80953bcd0953f71344f036398ceb1f12aef044188d4f8ccb8aaaed  descent.dem
+  f553659a1f2641da527697e79c0c3ae38845eab2c9103245d2c0f12d9751099b  descent.faq
+  54d475393390f5a9e8170fff0527a713cac76e8ab8152507c7ee1c5e57bc1bee  level18.dem
+  3fc0c9f25b83782e22d80519f74aa005866415f6263f9236f6243f5214f5dfe0  manual.pdf
+  78284a7cf9fd894b401bfdb95e12b2d0564a5b8e563762ea034f7dac9a2a517a  miniboss.dem
+  588e13d82ddc7641bc59b14407381e4bd43d52aedb2e33372fef7e61f4f46cbc  readme.txt_full
+  edc7126f5d9486d31aa80a13fce7449bcbc4a62303201d48fed139fa8378fdb6  refcard.pdf
 ...
