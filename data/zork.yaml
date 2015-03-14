@@ -1,0 +1,113 @@
+---
+longname: Zork I , II & III
+plugin: z_code
+
+packages:
+  zork1-data:
+    longname: "Zork I: The Great Underground Empire"
+    copyright: © 1980 Infocom
+    install_to: usr/share/games/zork
+    install:
+    - zork1.dat
+    optional:
+    - readme_zork1.txt
+
+  zork2-data:
+    longname: "Zork II: The Wizard of Frobozz"
+    copyright: © 1981 Infocom
+    install_to: usr/share/games/zork
+    install:
+    - zork2.dat
+    optional:
+    - readme_zork2.txt
+
+  zork3-data:
+    longname: "Zork III: The Dungeon Master"
+    copyright: © 1982 Infocom
+    install_to: usr/share/games/zork
+    install:
+    - zork3.dat
+    optional:
+    - readme_zork3.txt
+
+files:
+  zork1.zip:
+    download: http://www.infocom-if.org/downloads/zork1.zip
+    unpack:
+      format: zip
+    provides:
+    - zork1.dat
+    - readme_zork1.txt
+  readme_zork1.txt:
+    distinctive_name: false
+    look_for: [readme.txt]
+    install_to: $docdir
+    install_as: readme.txt
+
+  zork2.zip:
+    download: http://www.infocom-if.org/downloads/zork2.zip
+    unpack:
+      format: zip
+    provides:
+    - zork2.dat
+    - readme_zork2.txt
+  readme_zork2.txt:
+    distinctive_name: false
+    look_for: [readme.txt]
+    install_to: $docdir
+    install_as: readme.txt
+
+  zork3.zip:
+    download: http://www.infocom-if.org/downloads/zork3.zip
+    unpack:
+      format: zip
+    provides:
+    - zork3.dat
+    - readme_zork3.txt
+  readme_zork3.txt:
+    distinctive_name: false
+    look_for: [readme.txt]
+    install_to: $docdir
+    install_as: readme.txt
+
+cksums: |
+  _ 4711      readme_zork1.txt
+  _ 4604      readme_zork2.txt
+  _ 4607      readme_zork3.txt
+  _ 92160     zork1.dat
+  _ 82160     zork1.zip
+  _ 92160     zork2.dat
+  _ 85755     zork2.zip
+  _ 92160     zork3.dat
+  _ 77155     zork3.zip
+md5sums: |
+  cbe6b6895418efffd7889b3f8152c1da  readme_zork1.txt
+  59266a444e892d2849a280790c5227cd  readme_zork2.txt
+  31272558b05259802ad1a72dd13c7fde  readme_zork3.txt
+  b732a93a6244ddd92a9b9a3e3a46c687  zork1.dat
+  f6dd915ea7315985536efb39154f3433  zork1.zip
+  5bcd91ee055e9bd42812617571be227b  zork2.dat
+  ab521209656948516351996263a8ad34  zork2.zip
+  ffda9ee2d428fa2fa8e75a1914ff6959  zork3.dat
+  c1a15e9c56267366fa54476baa6fb7d4  zork3.zip
+sha1sums: |
+  531c483f975941beb2c2ba067b9765ce4751a1c3  readme_zork1.txt
+  6639decd524acbaeae95c0367ba13d6167a3a9e0  readme_zork2.txt
+  18fa069ec0944f2b93bb20502dbf8efd08f92a3e  readme_zork3.txt
+  70b9e127569a66ac8dc005395e9deccc52e84056  zork1.dat
+  c0792003a0f4f9ae5f7d058c95142ad2cb052e16  zork1.zip
+  ca4667b30f5c50474da707d276cbbb4be35ee90b  zork2.dat
+  d4c4be791e6bbb97f486b317a6631c9e92a93b79  zork2.zip
+  008441c48b8ffa0c64d78cba5e9735a2045f359d  zork3.dat
+  66fe2ac86b5b53406a272b75be3bb0e34c894fff  zork3.zip
+sha256sums: |
+  180bb87dc0524c5f7b1ba29ac08cd3e12f75e1c6b5b211b309ce1f01709b2545  readme_zork1.txt
+  589dbf8446c0c813aa25c4f10777a2cfd56561d9b27a6af9e53f4cc0fe79c95d  readme_zork2.txt
+  5f8334feaa5e98aa4308f262a7ae820bd3d6537ae9be428df2cb9704d3de05f8  readme_zork3.txt
+  0ae5ac229e79094ff368b6669356444af0f35e21d862a1baaa546989085c15fd  zork1.dat
+  645027fb189ba8fd30daecca609e68e2bf2337b76e7b4f925ccf58778f3eac40  zork1.zip
+  abf145d22371f825f13388587d92632bcde90582698f774b896b123a90e1fb1e  zork2.dat
+  7c360a14ec61d8e8f265e1aa99a13487c5e0f016a752e4b32314405a0e9ffea0  zork2.zip
+  dce7e6f757fb8379dea9da9c13cdda5412ba03fa9b70d79fb6b8c7faf5970692  zork3.dat
+  ef4a3b2bb7d3ae65de54a54520b550f13b3a2e964985550ffd401c8925bd0b10  zork3.zip
+...
