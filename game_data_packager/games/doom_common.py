@@ -81,6 +81,7 @@ class DoomGameData(GameData):
 
         package_map = {
                 'doom-engine': 'doom',
+                'boom-engine': 'boom',
                 'heretic-engine': 'heretic',
                 'hexen-engine': 'hexen',
                 'doomsday': 'doomsday-compat',
