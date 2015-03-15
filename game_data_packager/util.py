@@ -75,3 +75,6 @@ def copy_with_substitutions(from_, to, **kwargs):
         for k, v in kwargs.items():
             line = line.replace(k, v)
         to.write(line)
+
+def is_installed(package):
+    return os.path.isdir(os.path.join('/usr/share/doc', package))

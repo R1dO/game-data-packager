@@ -50,6 +50,7 @@ from .util import (MEBIBYTE,
         mkdir_p,
         rm_rf,
         human_size,
+        is_installed,
         which)
 from .version import GAME_PACKAGE_VERSION
 
@@ -2065,7 +2066,7 @@ class GameData(object):
             if not engine:
                 continue
             engine = engine.split('|')[0].split('(')[0].strip()
-            if not os.path.isdir(os.path.join('/usr/share/doc/', engine)):
+            if not is_installed(engine):
                 engines.add(engine)
         if engines:
             print('it is recommended to also install this game engine: %s' % ', '.join(engines))
@@ -2205,7 +2206,7 @@ class GameData(object):
 
             if (package.expansion_for
               and self.packages[package.expansion_for] not in possible
-              and not os.path.exists('/usr/share/doc/' + package.expansion_for)):
+              and not is_installed(package.expansion_for)):
                 for fullgame in possible:
                     if fullgame.type == 'full':
                         logger.warning("won't generate '%s' expansion, because "
