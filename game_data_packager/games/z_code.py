@@ -16,12 +16,13 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
+import configparser
 import logging
 import os
 
 from .. import GameData
 from ..paths import DATADIR
-from ..util import (TemporaryUmask, copy_with_substitutions, mkdir_p)
+from ..util import (TemporaryUmask, is_installed, mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
 
@@ -31,7 +32,7 @@ class ZCodeGameData(GameData):
                 workdir=workdir)
 
         if self.engine is None:
-            self.engine = 'frotz'
+            self.engine = 'gargoyle-free | frotz'
         if self.genre is None:
             self.genre = 'Adventure'
 
@@ -42,12 +43,25 @@ class ZCodeGameData(GameData):
             appdir = os.path.join(destdir, 'usr/share/applications')
             mkdir_p(appdir)
             from_ = os.path.join(DATADIR, 'z_code.desktop.in')
-            copy_with_substitutions(open(from_,
-                    encoding='utf-8'),
-                        open(os.path.join(appdir, '%s.desktop' % package.name),
-                            'w', encoding='utf-8'),
-                        PATH=package.install_to + '/' + list(package.install)[0],
-                        LONG=(package.longname or self.longname))
+            desktop = configparser.RawConfigParser()
+            desktop.optionxform = lambda option: option
+            desktop.read(from_, encoding='utf-8')
+
+            entry = desktop['Desktop Entry']
+            entry['Name'] = package.longname or self.longname
+            if is_installed('frotz') and not is_installed('gargoyle-free'):
+                engine = 'frotz'
+                entry['Terminal'] = 'true'
+            else:
+                engine = 'gargoyle-free'
+                entry['Terminal'] = 'false'
+            entry['TryExec'] = engine
+            arg = '/' + package.install_to + '/' + list(package.install)[0]
+            entry['Exec'] = engine + ' ' + arg
+
+            with open(os.path.join(appdir, '%s.desktop' % package.name),
+                      'w', encoding='utf-8') as output:
+                 desktop.write(output, space_around_delimiters=False)
 
             lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
             mkdir_p(lintiandir)
