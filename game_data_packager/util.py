@@ -77,4 +77,16 @@ def copy_with_substitutions(from_, to, **kwargs):
         to.write(line)
 
 def is_installed(package):
+    # FIXME: this shouldn't be hard-coded
+    if package == 'doom-engine':
+        return (is_installed('chocolate-doom')
+             or is_installed('prboom-plus')
+             or is_installed('doomsday'))
+    if package == 'boom-engine':
+        return (is_installed('prboom-plus')
+             or is_installed('doomsday'))
+    if package in ('heretic-engine', 'hexen-engine'):
+        return (is_installed('chocolate-doom')
+             or is_installed('doomsday'))
+
     return os.path.isdir(os.path.join('/usr/share/doc', package))

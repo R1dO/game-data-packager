@@ -2065,8 +2065,11 @@ class GameData(object):
             engine = package.engine or self.engine
             if not engine:
                 continue
-            engine = engine.split('|')[0].split('(')[0].strip()
-            if not is_installed(engine):
+            for e in engine.split('|'):
+                if is_installed(e.split('(')[0].strip()):
+                    break
+            else:
+                engine = engine.split('|')[0].split('(')[0].strip()
                 engines.add(engine)
         if engines:
             print('it is recommended to also install this game engine: %s' % ', '.join(engines))
