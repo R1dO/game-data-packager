@@ -58,6 +58,8 @@ class ZCodeGameData(GameData):
             entry['TryExec'] = engine
             arg = '/' + package.install_to + '/' + list(package.install)[0]
             entry['Exec'] = engine + ' ' + arg
+            if package.aliases:
+                entry['Keywords'] = ';'.join(package.aliases)
 
             with open(os.path.join(appdir, '%s.desktop' % package.name),
                       'w', encoding='utf-8') as output:
@@ -69,6 +71,6 @@ class ZCodeGameData(GameData):
                       'a', encoding='utf-8') as o:
                  o.write('%s: desktop-command-not-in-package '
                          'usr/share/applications/%s.desktop %s\n'
-                         % (package.name, package.name, self.engine))
+                         % (package.name, package.name, engine))
 
 GAME_DATA_SUBCLASS = ZCodeGameData
