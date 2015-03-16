@@ -9,14 +9,27 @@ packages:
     install:
     - hhgg.z3
     # no tea
+    optional:
+    - hhgg.png
+
+files:
+  hhgg.z3:
+    download: http://www.douglasadams.com/creations/hhgg.z3
+  hhgg.png:
+    download: http://icons.iconarchive.com/icons/iconshock/hitchhikers-guide/128/Arthur-Dent-icon.png
+    install_to: usr/share/pixmaps
 
 cksums: |
   _ 113664    hhgg.z3
+  _ 17846     hhgg.png
 md5sums: |
   6666389f60e0c8e4ceb08242a263bb52  hhgg.z3
+  3e7520116fa4624b1ff9660c1b8895f8  hhgg.png
 sha1sums: |
   fe6f5606a7c3976cdd251cf9db57a7dbc2d0e7b7  hhgg.z3
+  70d5d1cda4d3e0d5169f5baa6370687f48dbb01e  hhgg.png
 sha256sums: |
   88b968cb0ab1f564fa40183e4e5fe93c41157fe7883a802ca31ae3095769acf6  hhgg.z3
+  67c937b2189b90fbf9e8a9a4e0e9e76816638bed83ca22c39ddeeac7b3ada99f  hhgg.png
 ...
 

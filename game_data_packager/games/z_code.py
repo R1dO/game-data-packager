@@ -58,6 +58,11 @@ class ZCodeGameData(GameData):
             entry['TryExec'] = engine
             arg = '/' + package.install_to + '/' + list(package.install)[0]
             entry['Exec'] = engine + ' ' + arg
+
+            pixdir = os.path.join(destdir, 'usr/share/pixmaps')
+            if os.path.exists(os.path.join(pixdir, '%s.png' % self.shortname)):
+                entry['Icon'] = self.shortname
+
             if package.aliases:
                 entry['Keywords'] = ';'.join(package.aliases)
 

@@ -1648,8 +1648,6 @@ class GameData(object):
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
 
-        self.fill_extra_files(package, destdir)
-
         for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
             maintscript = os.path.join(DATADIR, package.name + '.' + ms)
             if os.path.isfile(maintscript):
@@ -1739,6 +1737,8 @@ class GameData(object):
                     mkdir_p(copy_to_dir)
                 subprocess.check_call(['cp', '--reflink=auto',
                     '--preserve=timestamps', copy_from, copy_to])
+
+        self.fill_extra_files(package, destdir)
 
         # adapted from dh_md5sums
         subprocess.check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
