@@ -53,12 +53,7 @@ files:
     download: http://icculus.org/d2x/data/desc14sw.tar.gz
     unpack:
       format: tar.gz
-      unpack:
-      - desc14sw/descent.hog
-      - desc14sw/descent.pig
-      - desc14sw/readme.txt
-      - desc14sw/refcard.txt
-    prodives:
+    provides:
     - descent.hog
     - descent.pig
     - readme.txt
