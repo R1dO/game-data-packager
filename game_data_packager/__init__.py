@@ -2061,16 +2061,15 @@ class GameData(object):
         if install_debs:
             self.install_packages(debs)
 
+        engines_alt = set((p.engine or self.engine) for p in ready)
+        engines_alt.discard(None)
         engines = set()
-        for package in ready:
-            engine = package.engine or self.engine
-            if not engine:
-                continue
-            for e in engine.split('|'):
-                if is_installed(e.split('(')[0].strip()):
+        for engine_alt in engines_alt:
+            for engine in reversed(engine_alt.split('|')):
+                engine = engine.split('(')[0].strip()
+                if is_installed(engine):
                     break
             else:
-                engine = engine.split('|')[0].split('(')[0].strip()
                 engines.add(engine)
         if engines:
             print('it is recommended to also install this game engine: %s' % ', '.join(engines))
