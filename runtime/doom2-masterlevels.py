@@ -104,7 +104,7 @@ label.set_markup("<span size='xx-large'>Doom II Master Levels</span>")
 grid.attach(label, 1, 0, 1, 1)
 
 logo = Gtk.Image()
-logo.set_from_file('/usr/share/pixmaps/doom2-masterlevels.png')
+logo.set_from_file('/usr/share/pixmaps/doom2.png')
 grid.attach(logo, 2, 0, 1, 1)
 
 # description
