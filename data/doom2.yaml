@@ -192,6 +192,51 @@ files:
   virgil.txt:
     install_to: $docdir
 
+  master.exe:
+    unpack:
+      format: lha
+    provides:
+    - attack.wad
+    - blacktwr.wad
+    - bloodsea.wad
+    - canyon.wad
+    - catwalk.wad
+    - combine.wad
+    - fistula.wad
+    - garrison.wad
+    - geryon.wad
+    - manor.wad
+    - mephisto.wad
+    - minos.wad
+    - nessus.wad
+    - paradox.wad
+    - subspace.wad
+    - subterra.wad
+    - teeth.wad
+    - ttrap.wad
+    - vesperas.wad
+    - virgil.wad
+    - attack.txt
+    - blacktwr.txt
+    - bloodsea.txt
+    - canyon.txt
+    - catwalk.txt
+    - combine.txt
+    - fistula.txt
+    - garrison.txt
+    - geryon.txt
+    - manor.txt
+    - mephisto.txt
+    - minos.txt
+    - nessus.txt
+    - paradox.txt
+    - subspace.txt
+    - subterra.txt
+    - teeth.txt
+    - ttrap.txt
+    - vesperas.txt
+    - virgil.txt
+
   nerve.wad:
     alternatives:
     - nerve.wad_pc
@@ -245,6 +290,7 @@ cksums: |
   _ 235353    vesperas.wad
   _ 2813      virgil.txt
   _ 171232    virgil.wad
+  _ 1436188   master.exe
 
 md5sums: |
   25e1459ca71d321525f84628f45ca8cd  doom2.wad_1.9
@@ -303,6 +349,7 @@ md5sums: |
   a49dccebb5f32307246b7f32da121cf7  vesperas.wad
   e767d645de816a9d5411075d0d002a78  virgil.txt
   3c0874f2df3c06a002ee2a18aba0f0e8  virgil.wad
+  7c203b03cf052b6b731baec7c42d7ea9  master.exe
 
 sha1sums: |
   7ec7652fcfce8ddc6e801839291f0e28ef1d5ae7  doom2.wad_1.9
@@ -360,6 +407,7 @@ sha1sums: |
   8341faf0e8469e43178b0be3fe7ebb40d5a33b03  vesperas.wad
   c8315f125088644b3b666cc9b227ced6226ca7d9  virgil.txt
   e3de77406aff3b6e5f06c3d450d70b8e6c6a34f9  virgil.wad
+  b7806fd4bed5ab1b34ecb46380679a7b5cc488df  master.exe
 
 ...
 # vim:set sw=2 sts=2 et:
