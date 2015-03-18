@@ -8,7 +8,6 @@ Build-Depends:
  dh-python,
  fakeroot,
  imagemagick,
- m4,
  pyflakes,
  python3,
  python3-debian,
@@ -76,3 +75,21 @@ Description: Installer for game data files
   * Theme Hospital
   * Tyrian
   * Wolfenstein 3D, Spear of Destiny and Return to Castle Wolfenstein
+
+Package: doom2-masterlevels
+Depends: chocolate-doom | doom-engine,
+	doom2-masterlevels-wad,
+	python3,
+	python3-gi,
+	gir1.2-gtk-3.0,
+	${python3:Depends},
+	${misc:Depends},
+Architecture: all
+Multi-Arch: foreign
+Description: graphical launcher for DOOM II Master Levels
+ This tool is graphical interface that let you
+ choose one of DOOM II's Master Levels, read it's description
+ and start it with the engine of your choice.
+ .
+ This replicates doomit.exe functionality
+ that was shipped with the game.

@@ -62,13 +62,12 @@ clean:
 	rm -f ./out/*.png
 	rm -f ./out/*.svgz
 	rm -f ./out/*.json
-	rm -f ./out/*.yaml
 	rm -rf game_data_packager/__pycache__
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m game_data_packager.check_syntax
-	LC_ALL=C pyflakes3 game_data_packager/*.py game_data_packager/*/*.py || :
+	LC_ALL=C pyflakes3 game_data_packager/*.py game_data_packager/*/*.py runtime/*.py || :
 
 # Requires additional setup, so not part of "make check"
 manual-check:
