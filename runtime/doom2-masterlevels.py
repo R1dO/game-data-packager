@@ -71,7 +71,7 @@ for wad in sorted(levels.keys()):
          description[game] = "failed to read " + txt
 
 treeview = Gtk.TreeView(model=games)
-grid.attach(treeview, 0, 0, 1, 6)
+grid.attach(treeview, 0, 0, 1, 8)
 
 treeviewcolumn = Gtk.TreeViewColumn("Wad")
 treeview.append_column(treeviewcolumn)
@@ -122,9 +122,13 @@ textview.set_property('editable', False)
 textview.modify_font(Pango.FontDescription('Monospace 11'))
 scrolledwindow.add(textview)
 
+doomwiki = Gtk.LinkButton("http://doomwiki.org/wiki/Master_Levels_for_Doom_II",
+                          label="http://doomwiki.org/wiki/Master_Levels_for_Doom_II")
+grid.attach(doomwiki, 1, 2, 2, 1)
+
 # difficulty
 difflabel = Gtk.Label("Choose your difficulty")
-grid.attach(difflabel, 1, 2, 2, 1)
+grid.attach(difflabel, 1, 3, 2, 1)
 
 diffgrid = Gtk.Grid()
 diffradio = Gtk.RadioButton(group=None, label="1)  I'm too young to die")
@@ -137,7 +141,7 @@ for diff in ["2)  Hey, Not too Rough",
     if diff[0] == '3':
         radiobutton.set_active(True)
     diffgrid.attach(radiobutton, 0, int(diff[0]), 1, 1)
-grid.attach(diffgrid, 1, 3, 2, 1)
+grid.attach(diffgrid, 1, 4, 2, 1)
 
 # engine
 label = Gtk.Label("Choose your engine")
@@ -173,6 +177,9 @@ def select_game(event):
         game = model.get_value(tree_iter,0)
         map = model.get_value(tree_iter,1)
         textbuffer.set_text(description[game])
+        url = 'http://doomwiki.org/wiki/' + levels[game + '.wad'][2]
+        doomwiki.set_uri(url)
+        doomwiki.set_label(url)
 
 def run_game(event):
     for button in diffradio.get_group():
