@@ -22,7 +22,7 @@ import subprocess
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Pango
 
-map = None
+warp = None
 # wad : (warp, longname,  'http://doomwiki.org/wiki/' + url)
 levels = {
     'attack.wad':   ( 1, 'Attack'                                 , 'MAP01:_Attack_(Master_Levels)'),
@@ -91,7 +91,10 @@ def tooltip_query(treeview, x, y, mode, tooltip):
        treepath, column = path[:2]
        model = treeview.get_model()
        iter = model.get_iter(treepath)
-       tooltip.set_text(levels[ model[iter][0] + '.wad' ][1])
+       game, warp = model[iter]
+       wad = game + '.wad'
+       if game == 'teeth' and warp == 32: wad += '*'
+       tooltip.set_text(levels[wad][1])
     return True
 
 treeview.connect("query-tooltip", tooltip_query)
@@ -170,14 +173,15 @@ button2 = Gtk.Button(label="Exit")
 grid.attach(button2, 2, 6, 1, 1)
 
 def select_game(event):
-    global game, map
+    global game, warp
     (model, pathlist) = treeview.get_selection().get_selected_rows()
     for path in pathlist:
         tree_iter = model.get_iter(path)
-        game = model.get_value(tree_iter,0)
-        map = model.get_value(tree_iter,1)
+        game, warp = model[tree_iter]
         textbuffer.set_text(description[game])
-        url = 'http://doomwiki.org/wiki/' + levels[game + '.wad'][2]
+        wad = game + '.wad'
+        if game == 'teeth' and warp == 32: wad += '*'
+        url = 'http://doomwiki.org/wiki/' + levels[wad][2]
         doomwiki.set_uri(url)
         doomwiki.set_label(url)
 
@@ -192,8 +196,8 @@ def run_game(event):
             break
     if 'doomsday' in engine:
         engine = 'doomsday -game doom2'
-    if map:
-        os.system('%s -file /usr/share/games/doom/%s.wad -warp %s -skill %s' % (engine, game, map, difficulty))
+    if warp:
+        os.system('%s -file /usr/share/games/doom/%s.wad -warp %s -skill %s' % (engine, game, warp, difficulty))
 
 treeview.connect("cursor-changed", select_game)
 button1.connect("clicked", run_game)
