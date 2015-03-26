@@ -23,6 +23,8 @@ engine: "chocolate-doom | hexen-engine"
 
 packages:
   hexen-wad:
+    debian:
+      breaks: chocolate-doom (<< 2)
     steam:
       id: 2360
       path: "common/Hexen"
@@ -32,6 +34,8 @@ packages:
 
   hexen-deathkings-data:
     longname: "Hexen: Deathkings of the Dark Citadel"
+    debian:
+      breaks: chocolate-doom (<< 2)
     steam:
       id: 2370
       path: "common/Hexen Deathkings of the Dark Citadel"

@@ -94,29 +94,10 @@ class DoomGameData(GameData):
             package.program = package_map.get(engine, engine)
             package.create_desktop_file = self.data['packages'][package.name].get(
                     'create_desktop_file', True)
+            package.data_type = 'PWAD' if package.expansion_for else 'IWAD'
 
     def construct_package(self, binary):
         return WadPackage(binary)
-
-    def get_control_template(self, package):
-        for name in (package.name, self.shortname, 'doom-common'):
-            path = os.path.join(DATADIR, '%s.control.in' % name)
-            if os.path.exists(path):
-                return path
-        else:
-            raise AssertionError('doom-common.control.in should exist')
-
-    def modify_control_template(self, control, package, destdir):
-        super(DoomGameData, self).modify_control_template(control, package,
-                destdir)
-
-        wad_base = os.path.splitext(package.main_wad)[0]
-
-        desc = control['Description']
-        desc = desc.replace('ENGINE', package.program)
-        desc = desc.replace('GAME', wad_base)
-        desc = desc.replace('LONG', (package.longname or self.longname))
-        control['Description'] = desc
 
     def fill_extra_files(self, package, destdir):
         super(DoomGameData, self).fill_extra_files(package, destdir)

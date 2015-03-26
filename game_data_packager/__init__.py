@@ -330,6 +330,10 @@ class GameDataPackage(object):
         # The optional marketing name of this version
         self.longname = None
 
+        # This word is used to build package description
+        # 'data' / 'PWAD' / 'IWAD'
+        self.data_type = 'data'
+
         # This optional value will overide the game global copyright
         self.copyright = None
 
@@ -1837,6 +1841,7 @@ class GameData(object):
         provides = read_control_set(package, control, 'Provides')
         replaces = read_control_set(package, control, 'Replaces')
         conflicts = read_control_set(package, control, 'Conflicts')
+        breaks = read_control_set(package, control, 'Breaks')
 
         if package.expansion_for:
             depends.add(package.expansion_for)
@@ -1865,6 +1870,8 @@ class GameData(object):
             control['Replaces'] = ', '.join(sorted(replaces))
         if conflicts:
             control['Conflicts'] = ', '.join(sorted(conflicts))
+        if breaks:
+            control['Breaks'] = ', '.join(sorted(breaks))
 
         version = package.debian.get('version')
         if 'Version' in control:
@@ -1880,7 +1887,7 @@ class GameData(object):
         if 'Description' not in control:
             longname = package.longname or self.longname
 
-            short_desc = 'data for ' + longname
+            short_desc = package.data_type + ' for "' + longname + '" game'
 
             long_desc =  ' This package was built using game-data-packager. It contains\n'
             long_desc += ' proprietary game data and must not be redistributed.\n'
@@ -1892,15 +1899,26 @@ class GameData(object):
             if package.expansion_for:
                 game_name = self.packages[package.expansion_for].longname or self.longname
                 long_desc += ' Game: ' + game_name + '\n'
-                long_desc += ' Expansion: ' + longname
+                long_desc += ' Expansion: ' + longname + '\n'
             else:
-                long_desc += ' Game: ' + longname
+                long_desc += ' Game: ' + longname + '\n'
+
+            copyright = package.copyright or self.copyright
+            long_desc += ' Published by: ' + copyright[7:] + '\n .\n'
 
             engine = package.engine or self.engine
             if engine:
+                if '|' in engine:
+                    virtual = engine.split('|')[-1].strip()
+                    has_virtual = (virtual.split('-')[-1] == 'engine')
+                else:
+                    has_virtual = False
                 engine = engine.split('|')[0].split('(')[0].strip()
-                long_desc += '\n .\n'
-                long_desc += ' Intended for use with: ' + engine
+                if has_virtual:
+                    long_desc += ' Intended for use with some ' + virtual + ',\n'
+                    long_desc += ' such as for example: ' + engine
+                else:
+                    long_desc += ' Intended for use with: ' + engine
 
             control['Description'] = short_desc + '\n' + long_desc
 

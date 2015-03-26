@@ -21,6 +21,8 @@ help_text: |
 
 packages:
   heretic-wad:
+    debian:
+      breaks: chocolate-doom (<< 2)
     steam:
       id: 2390
       path: "common/Heretic Shadow of the Serpent Riders"
