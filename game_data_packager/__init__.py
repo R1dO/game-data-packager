@@ -815,6 +815,7 @@ class GameData(object):
             for k in kwargs:
                 setattr(f, k, kwargs[k])
 
+            assert 'optional' not in data, filename
             for k in (
                     'alternatives',
                     'distinctive_name',
