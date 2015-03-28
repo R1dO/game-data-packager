@@ -1,12 +1,34 @@
 ---
 longname: The Curse of Monkey Island
-copyright: © 1999 Lucasfilm Games
+copyright: © 1997 Lucasfilm Games
 # gzip -1 saves significant size; gzip -6 only saves an extra 10M and
 # takes 1.5x time; xz is really slow
 compress_deb: [-Zgzip, -z1]
 plugin: scummvm_common
 gameid: comi
+help_text: |
+  A demo can be downloaded here:
+  http://download.cnet.com/The-Curse-of-Monkey-Island-demo/3000-2097_4-10010614.html
+
 packages:
+  curse-of-monkey-island-demo-data:
+    longname: The Curse of Monkey Island (demo)
+    install:
+    - comi.la0_demo
+    - comi.la1_demo
+    - resource/font0.nut_demo
+    - resource/voice.bun
+    optional:
+    - monkeytg.txt
+    - readme.txt
+    symlinks:
+      usr/share/games/curse-of-monkey-island-demo/resource/font1.nut:
+        usr/share/games/curse-of-monkey-island-demo/resource/font0.nut
+      usr/share/games/curse-of-monkey-island-demo/resource/font2.nut:
+        usr/share/games/curse-of-monkey-island-demo/resource/font0.nut
+      usr/share/games/curse-of-monkey-island-demo/resource/font3.nut:
+        usr/share/games/curse-of-monkey-island-demo/resource/font0.nut
+
   curse-of-monkey-island-data:
     install:
     - comi.la0
@@ -37,6 +59,31 @@ packages:
     - resource/voxdisk2.bun
     - resource/wrecksan.san
     - resource/zap010.san
+
+files:
+  comi.la0_demo:
+    install_as: comi.la0
+  comi.la1_demo:
+    install_as: comi.la1
+  resource/font0.nut_demo:
+    install_as: resource/font0.nut
+  resource/font1.nut:
+    distinctive_name: false
+  resource/font2.nut:
+    distinctive_name: false
+  resource/font3.nut:
+    distinctive_name: false
+  cursmon1.zip:
+    unpack:
+      format: zip
+    provides:
+    - comi.la0_demo
+    - comi.la1_demo
+    - resource/font0.nut_demo
+    - resource/voice.bun
+    - monkeytg.txt
+    - readme.txt
+
 cksums: |
   _ 76791     comi.la0
   _ 69340645  comi.la1
@@ -66,6 +113,13 @@ cksums: |
   _ 189733340 resource/voxdisk2.bun
   _ 15003404  resource/wrecksan.san
   _ 768114    resource/zap010.san
+  _ 18041     comi.la0_demo
+  _ 10579949  comi.la1_demo
+  _ 74740     resource/font0.nut_demo
+  _ 14412203  resource/voice.bun
+  _ 24466     monkeytg.txt
+  _ 8197      readme.txt
+  _ 18985347  cursmon1.zip
 md5sums: |
   fe60d6b5ff51b0553ac59963123b5777  comi.la0
   09ae3abb98c43df89119466ae3557c0f  comi.la1
@@ -95,6 +149,13 @@ md5sums: |
   ee1e9b7f1b2a91548cdc36d6137ab883  resource/voxdisk2.bun
   28fb6dbe5963aa28daf18584332ea0e9  resource/wrecksan.san
   711bd2711eefe4e3aec2a48021b81351  resource/zap010.san
+  8fec68383202d38c0d25e9e3b757c5df  comi.la0_demo
+  ac56f66940257da4fef5aeedc3c08e07  comi.la1_demo
+  c473ee4ba7b3099119ed1fc5c942541c  resource/font0.nut_demo
+  21f9af16fcfd1a81b41e880128700e25  resource/voice.bun
+  6bf57731ee20c60c2737047fed67fc50  monkeytg.txt
+  78d9cdb8f246b750e5bf238c0fb06013  readme.txt
+  50acfa584331104174a1261bfcae6fc6  cursmon1.zip
 sha1sums: |
   b0160a63bffa951a4ef23ca57a35162cf6f87803  comi.la0
   94dc72c98d4e0ea0b6fa2bbd7469cd186dd9ff1b  comi.la1
@@ -124,6 +185,13 @@ sha1sums: |
   2eb09d244299e7e2d470c8c6abf75f3fbd37760f  resource/voxdisk2.bun
   f2a05d415cb59762113b94ca6e7bda60b9f7dd5a  resource/wrecksan.san
   68c1ee91505b74ed51b1cfb1aa9c5498a1608525  resource/zap010.san
+  4cdb56205e3d42893cefce1764a9aab20c534953  comi.la0_demo
+  24eaf871620bc60fde87cd964024b163fb949b98  comi.la1_demo
+  07e998ceb4ba41748f0c96c7a15502378f05c735  resource/font0.nut_demo
+  b50e7ce7190e8c613db6721b560a255c4dc86849  resource/voice.bun
+  cc1b2f69b660475927a09593065bce8735965a47  monkeytg.txt
+  a736dc503a1873816fbd7b82b3883396a811a71f  readme.txt
+  49b065528ec889985705d77e7326c14bdebed61e  cursmon1.zip
 sha256sums: |
   22cf910b853db0615b6e86b4fb320144bd807c99b5e93619bfaefa8a9d06d3b9  comi.la0
   fd71129d567c788555fdd55b870f52eb609582f12520b4474e7fb7c3827ca9e1  comi.la1
@@ -153,5 +221,10 @@ sha256sums: |
   0732e0871ebe9c4e16ad4a684436dd64e2c89e06f97170f3b811461c5f0345b2  resource/voxdisk2.bun
   17d726cd91ee53a0b721c7a046428e2f5a316b9ae7503f4d0b3d60acb2ad5712  resource/wrecksan.san
   c63209370af4fad35e04d6e8b5a64c0e3bec31ccbdd68e59e085664f30d9c44a  resource/zap010.san
+  d2a675f55a880c948d78c9c769373fb6ab03526bfbaa84a9c7ecf19edfff35f6  comi.la0_demo
+  9541656fd9739abe923a2de2161bc7ae6570f826e56487ff8edce0769d4eb44b  comi.la1_demo
+  8a76ececcf91f51b183e09132bf358326fa9c64302bc0bc2e4dfdb6f305635ff  resource/font0.nut_demo
+  ded135d00d972dec096542ab8c5b5fdb6016fedc79075616660d8f2a9d16d025  resource/voice.bun
+  acc851ed86956be5671ae492d3c6650605cf40813c970a0f7904dae3a84bfab9  cursmon1.zip
 ...
 
