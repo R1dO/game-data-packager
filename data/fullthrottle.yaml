@@ -6,6 +6,13 @@ copyright: © 1995 Lucasfilm Games
 compress_deb: [-Zgzip, -z1]
 plugin: scummvm_common
 gameid: ft
+
+help_text: |
+  A demo can be found at these locations:
+  http://www.gamershell.com/download_4748.shtml
+  http://www.dosgamesarchive.com/download/full-throttle/
+  http://www.moddb.com/games/full-throttle/downloads/full-throttle-demo-dos
+
 packages:
   full-throttle-data:
     install:
@@ -173,6 +180,283 @@ packages:
     - VIDEO/WEREINIT.TRS
     - VIDEO/WHIP_PAN.SAN
     - VIDEO/WHIP_PAN.TRS
+  full-throttle-demo-data:
+    longname: Full Throttle (demo)
+    install:
+    - data/benbike.nut
+    - data/bencrshe.san
+    - data/endcrshr.san
+    - data/harlrev.sad
+    - data/icons.nut
+    - data/icons2.nut
+    - data/laser2.sad
+    - data/liftbord.san
+    - data/liftchay.san
+    - data/liftgog.san
+    - data/liftmace.san
+    - data/liftsaw.san
+    - data/minedriv.san
+    - data/mineexit.san
+    - data/minefite.san
+    - data/roadrash.nut
+    - data/roadrsh2.nut
+    - data/scummfnt.nut
+    - data/smushcut.txt
+    - data/tomine.san
+    - data/toranch.san
+    - data/tovista.san
+    - ft.000
+    - ft.001
+    - monster.sou
+    - video/barkdog.nut
+    - video/barkdog.san
+    - video/bed.nut
+    - video/big-limo.nut
+    - video/bigfoot.nut
+    - video/bikeswar.nut
+    - video/blackfrm.nut
+    - video/blink.nut
+    - video/blink2.nut
+    - video/blink3.nut
+    - video/burstdog.nut
+    - video/burstdog.san
+    - video/catchup.nut
+    - video/cavechas.san
+    - video/cavecrsh.san
+    - video/cavetunl.san
+    - video/crash.nut
+    - video/cvramp.san
+    - video/demo-pta.san
+    - video/demo-ptb.san
+    - video/demogogg.san
+    - video/dodge.nut
+    - video/face-6.nut
+    - video/fanstop.nut
+    - video/finsushi.san
+    - video/fire.nut
+    - video/fishgogg.nut
+    - video/focus.nut
+    - video/freakfir.nut
+    - video/freakout.nut
+    - video/ftdemo.nut
+    - video/fucus-5.nut
+    - video/goggles.nut
+    - video/hi-sign.nut
+    - video/into-fan.nut
+    - video/introlip.san
+    - video/jumpgorg.san
+    - video/kick-it.nut
+    - video/kick-off.nut
+    - video/limoby.san
+    - video/limopan.nut
+    - video/limoroar.nut
+    - video/mo-toast.nut
+    - video/moreach.nut
+    - video/om-sushi.san
+    - video/peelout.nut
+    - video/reachfal.san
+    - video/rev.nut
+    - video/rideaway.nut
+    - video/rideout.san
+    - video/riding.nut
+    - video/ripshift.nut
+    - video/squint.nut
+    - video/struggle.nut
+    - video/takeoff.san
+    - video/test.san
+    - video/trukdust.nut
+    - video/vision.nut
+    - video/vision.san
+    - video/whammo.nut
+    optional:
+    - ftreadme.txt
+
+files:
+  ftreadme.txt:
+    install_to: $docdir
+  fulthrot.zip:
+    download: http://image.dosgamesarchive.com/games/fulthrot.zip
+    unpack:
+      format: zip
+    provides:
+    - data/benbike.nut
+    - data/bencrshe.san
+    - data/endcrshr.san
+    - data/harlrev.sad
+    - data/icons.nut
+    - data/icons2.nut
+    - data/laser2.sad
+    - data/liftbord.san
+    - data/liftchay.san
+    - data/liftgog.san
+    - data/liftmace.san
+    - data/liftsaw.san
+    - data/minedriv.san
+    - data/mineexit.san
+    - data/minefite.san
+    - data/roadrash.nut
+    - data/roadrsh2.nut
+    - data/scummfnt.nut
+    - data/smushcut.txt
+    - data/tomine.san
+    - data/toranch.san
+    - data/tovista.san
+    - ft.000
+    - ft.001
+    - monster.sou
+    - video/barkdog.nut
+    - video/barkdog.san
+    - video/bed.nut
+    - video/big-limo.nut
+    - video/bigfoot.nut
+    - video/bikeswar.nut
+    - video/blackfrm.nut
+    - video/blink.nut
+    - video/blink2.nut
+    - video/blink3.nut
+    - video/burstdog.nut
+    - video/burstdog.san
+    - video/catchup.nut
+    - video/cavechas.san
+    - video/cavecrsh.san
+    - video/cavetunl.san
+    - video/crash.nut
+    - video/cvramp.san
+    - video/demo-pta.san
+    - video/demo-ptb.san
+    - video/demogogg.san
+    - video/dodge.nut
+    - video/face-6.nut
+    - video/fanstop.nut
+    - video/finsushi.san
+    - video/fire.nut
+    - video/fishgogg.nut
+    - video/focus.nut
+    - video/freakfir.nut
+    - video/freakout.nut
+    - video/ftdemo.nut
+    - video/fucus-5.nut
+    - video/goggles.nut
+    - video/hi-sign.nut
+    - video/into-fan.nut
+    - video/introlip.san
+    - video/jumpgorg.san
+    - video/kick-it.nut
+    - video/kick-off.nut
+    - video/limoby.san
+    - video/limopan.nut
+    - video/limoroar.nut
+    - video/mo-toast.nut
+    - video/moreach.nut
+    - video/om-sushi.san
+    - video/peelout.nut
+    - video/reachfal.san
+    - video/rev.nut
+    - video/rideaway.nut
+    - video/rideout.san
+    - video/riding.nut
+    - video/ripshift.nut
+    - video/squint.nut
+    - video/struggle.nut
+    - video/takeoff.san
+    - video/test.san
+    - video/trukdust.nut
+    - video/vision.nut
+    - video/vision.san
+    - video/whammo.nut
+    - ftreadme.txt
+
+  ftdemo.zip:
+    unpack:
+      format: zip
+    provides:
+    - data/benbike.nut
+    - data/bencrshe.san
+    - data/endcrshr.san
+    - data/harlrev.sad
+    - data/icons.nut
+    - data/icons2.nut
+    - data/laser2.sad
+    - data/liftbord.san
+    - data/liftchay.san
+    - data/liftgog.san
+    - data/liftmace.san
+    - data/liftsaw.san
+    - data/minedriv.san
+    - data/mineexit.san
+    - data/minefite.san
+    - data/roadrash.nut
+    - data/roadrsh2.nut
+    - data/scummfnt.nut
+    - data/smushcut.txt
+    - data/tomine.san
+    - data/toranch.san
+    - data/tovista.san
+    - ft.000
+    - ft.001
+    - monster.sou
+    - video/barkdog.nut
+    - video/barkdog.san
+    - video/bed.nut
+    - video/big-limo.nut
+    - video/bigfoot.nut
+    - video/bikeswar.nut
+    - video/blackfrm.nut
+    - video/blink.nut
+    - video/blink2.nut
+    - video/blink3.nut
+    - video/burstdog.nut
+    - video/burstdog.san
+    - video/catchup.nut
+    - video/cavechas.san
+    - video/cavecrsh.san
+    - video/cavetunl.san
+    - video/crash.nut
+    - video/cvramp.san
+    - video/demo-pta.san
+    - video/demo-ptb.san
+    - video/demogogg.san
+    - video/dodge.nut
+    - video/face-6.nut
+    - video/fanstop.nut
+    - video/finsushi.san
+    - video/fire.nut
+    - video/fishgogg.nut
+    - video/focus.nut
+    - video/freakfir.nut
+    - video/freakout.nut
+    - video/ftdemo.nut
+    - video/fucus-5.nut
+    - video/goggles.nut
+    - video/hi-sign.nut
+    - video/into-fan.nut
+    - video/introlip.san
+    - video/jumpgorg.san
+    - video/kick-it.nut
+    - video/kick-off.nut
+    - video/limoby.san
+    - video/limopan.nut
+    - video/limoroar.nut
+    - video/mo-toast.nut
+    - video/moreach.nut
+    - video/om-sushi.san
+    - video/peelout.nut
+    - video/reachfal.san
+    - video/rev.nut
+    - video/rideaway.nut
+    - video/rideout.san
+    - video/riding.nut
+    - video/ripshift.nut
+    - video/squint.nut
+    - video/struggle.nut
+    - video/takeoff.san
+    - video/test.san
+    - video/trukdust.nut
+    - video/vision.nut
+    - video/vision.san
+    - video/whammo.nut
+    - ftreadme.txt
+
 cksums: |
   _ 6922      DATA/BENCUT.NUT
   _ 660794    DATA/BENFLIP.SAN
@@ -338,6 +622,94 @@ cksums: |
   _ 480       VIDEO/WEREINIT.TRS
   _ 744156    VIDEO/WHIP_PAN.SAN
   _ 194       VIDEO/WHIP_PAN.TRS
+  _ 98955174  fulthrot.zip
+  _ 99178788  ftdemo.zip
+  _ 160544    data/benbike.nut
+  _ 432530    data/bencrshe.san
+  _ 386766    data/endcrshr.san
+  _ 10410     data/harlrev.sad
+  _ 9410      data/icons.nut
+  _ 4496      data/icons2.nut
+  _ 11048     data/laser2.sad
+  _ 162786    data/liftbord.san
+  _ 222506    data/liftchay.san
+  _ 195038    data/liftgog.san
+  _ 433898    data/liftmace.san
+  _ 179366    data/liftsaw.san
+  _ 12740472  data/minedriv.san
+  _ 218250    data/mineexit.san
+  _ 14163978  data/minefite.san
+  _ 824       data/roadrash.nut
+  _ 824       data/roadrsh2.nut
+  _ 20180     data/scummfnt.nut
+  _ 384       data/smushcut.txt
+  _ 655320    data/tomine.san
+  _ 4308686   data/toranch.san
+  _ 4310962   data/tovista.san
+  _ 7885      ft.000
+  _ 50371781  ft.001
+  _ 6064      ftreadme.txt
+  _ 15814987  monster.sou
+  _ 355286    video/barkdog.nut
+  _ 227510    video/barkdog.san
+  _ 85822     video/bed.nut
+  _ 345420    video/big-limo.nut
+  _ 102096    video/bigfoot.nut
+  _ 2707494   video/bikeswar.nut
+  _ 798       video/blackfrm.nut
+  _ 36904     video/blink.nut
+  _ 38266     video/blink2.nut
+  _ 41946     video/blink3.nut
+  _ 580526    video/burstdog.nut
+  _ 580526    video/burstdog.san
+  _ 4426602   video/catchup.nut
+  _ 2469700   video/cavechas.san
+  _ 1576602   video/cavecrsh.san
+  _ 574730    video/cavetunl.san
+  _ 98600     video/crash.nut
+  _ 583454    video/cvramp.san
+  _ 12136642  video/demo-pta.san
+  _ 5899348   video/demo-ptb.san
+  _ 572394    video/demogogg.san
+  _ 80946     video/dodge.nut
+  _ 298490    video/face-6.nut
+  _ 238448    video/fanstop.nut
+  _ 3368626   video/finsushi.san
+  _ 210464    video/fire.nut
+  _ 58252     video/fishgogg.nut
+  _ 293020    video/focus.nut
+  _ 483572    video/freakfir.nut
+  _ 91376     video/freakout.nut
+  _ 3479486   video/ftdemo.nut
+  _ 175436    video/fucus-5.nut
+  _ 12634     video/goggles.nut
+  _ 34454     video/hi-sign.nut
+  _ 109680    video/into-fan.nut
+  _ 4101350   video/introlip.san
+  _ 4324612   video/jumpgorg.san
+  _ 359348    video/kick-it.nut
+  _ 95862     video/kick-off.nut
+  _ 473986    video/limoby.san
+  _ 1032028   video/limopan.nut
+  _ 443248    video/limoroar.nut
+  _ 9500      video/mo-toast.nut
+  _ 297992    video/moreach.nut
+  _ 4765708   video/om-sushi.san
+  _ 76522     video/peelout.nut
+  _ 929958    video/reachfal.san
+  _ 53042     video/rev.nut
+  _ 67980     video/rideaway.nut
+  _ 2273010   video/rideout.san
+  _ 2243250   video/riding.nut
+  _ 270760    video/ripshift.nut
+  _ 29874     video/squint.nut
+  _ 108500    video/struggle.nut
+  _ 1298506   video/takeoff.san
+  _ 78342     video/test.san
+  _ 267614    video/trukdust.nut
+  _ 1368278   video/vision.nut
+  _ 1193632   video/vision.san
+  _ 115248    video/whammo.nut
 md5sums: |
   99a1d536be91419835766b8da0f0e2fa  DATA/BENCUT.NUT
   f7ac2642fc381e82b24e144d49dda9a8  DATA/BENFLIP.SAN
@@ -503,6 +875,94 @@ md5sums: |
   29086c7f9beaf5efba800019db315250  VIDEO/WEREINIT.TRS
   cd12da9e81b029d84e2d31269c199fa0  VIDEO/WHIP_PAN.SAN
   d4d876136219def2c5085b368ca91b63  VIDEO/WHIP_PAN.TRS
+  3610f6c2496e16a1c19039e754a9e88f  fulthrot.zip
+  db732a69c478532457b5dda54fde89cd  ftdemo.zip
+  f67ef4b2fc8f543f86419ac66eb10596  data/benbike.nut
+  2c770f8077d219122e747940b52d16a1  data/bencrshe.san
+  684c331ced15cc31e4b16dd8e5ec4e3a  data/endcrshr.san
+  4f1ef337140f9f7cf62ecb6eaa79a7f3  data/harlrev.sad
+  fcef9d6daf27be2f2ff9f709b3869d2e  data/icons.nut
+  7a9992b45ceedfb0fa0de00a6042f29b  data/icons2.nut
+  03e7a1cbd7b1865957067f891f9e67a3  data/laser2.sad
+  4e352cb40a4b47edd3dd58034bb09d0e  data/liftbord.san
+  e1f19661523657bb0de517b1c4b16805  data/liftchay.san
+  b2bd0bcb7343d2ba87bc09a9aa50f389  data/liftgog.san
+  cebe8a6e4eeca07f5f87cbdc30832c7f  data/liftmace.san
+  ece82dc536c6af5c287cb5fc3f3adb28  data/liftsaw.san
+  9ae8d94500dae53c2c29a362188223fc  data/minedriv.san
+  bb71b07142e38fae4c823654909b9e18  data/mineexit.san
+  3b1d65818f9dee40955379bfdc45171a  data/minefite.san
+  c9f93a75b63c29fc0c4c29a47e630358  data/roadrash.nut
+  34e773764019f5238b6c03666df9303b  data/roadrsh2.nut
+  17f53404011f9c4d1247582ee6a7f792  data/scummfnt.nut
+  ef9d1ea28682fad0a34782d955b2bcfc  data/smushcut.txt
+  2f0e2a9d74c21d10a9b8e13c3efe3cda  data/tomine.san
+  48e5c40021cb719e194564ca2ff7120d  data/toranch.san
+  c715c3faf631f3e55d0ef00cda33df80  data/tovista.san
+  32a433dea56b86a55b59e4ff7d755711  ft.000
+  2162ebf4f8756107c48cc21cdaffacba  ft.001
+  8529ed10cf3bf919f655944f97169ccf  ftreadme.txt
+  9ce1e821b1ca64aab4ebf4defee28fad  monster.sou
+  e7aa71e1e8ad6350a1b7bbf1b6940ce6  video/barkdog.nut
+  de64a5c6bb02723f66b8bf835c2dda9c  video/barkdog.san
+  4e78e9bc62671b80245002fa965ff31f  video/bed.nut
+  404660c1bcd1ee9a089dcc034ff1c0dd  video/big-limo.nut
+  ca37b0eeb435f13d5b34d67300678d1f  video/bigfoot.nut
+  e9f065edfc254eb43ede7c079e9172c6  video/bikeswar.nut
+  5f84991b128aa61e60bc4bac54f4ac54  video/blackfrm.nut
+  83e7ef5f1d9b6d23519a3854d305badb  video/blink.nut
+  e181d4322a14bf436ab037b539951c84  video/blink2.nut
+  28e811e82ca3a73785e7ce3995b28c40  video/blink3.nut
+  6340b0ea1c05e5199ed430086865de11  video/burstdog.nut
+  15b2dfe3a7e9a5abadc1dee556e98900  video/burstdog.san
+  ff13492ab95ed97beaf0a700de7026b2  video/catchup.nut
+  be95f9a1c522e53c97069ea9cb53c891  video/cavechas.san
+  28cd94f8bea13736f9f0b6edef9bb5da  video/cavecrsh.san
+  29f05ab2284c1c5f48077107f2070ac8  video/cavetunl.san
+  efae702223f5e567bde3559dd24502ee  video/crash.nut
+  afd1247347eed9e7e59a10bdd430feff  video/cvramp.san
+  99e47b6c25ff7a97bebcca5c35661821  video/demo-pta.san
+  8b7706a4a1a7466308df7b7164de6f0e  video/demo-ptb.san
+  c5b93b74f1364cd684923e32bf9bcde3  video/demogogg.san
+  a46cfaf1d8cd391bf3e6bb546f75d7ac  video/dodge.nut
+  e7c6eedcc6402724e0484c2fa12f0343  video/face-6.nut
+  c9c95404998cf1504a18b082df3cc2e1  video/fanstop.nut
+  ab7d0ad586dda45a0233d09c9a4d0b37  video/finsushi.san
+  a69a688a8b5a669b3903ba8fd802e2ae  video/fire.nut
+  4c702528328e01c56def3f9728e290d8  video/fishgogg.nut
+  9132b19bc4584880d11bdcf71d04c673  video/focus.nut
+  aa3bdf73f5ecc15d790bd40dc46dd0fb  video/freakfir.nut
+  d1ccd5ad32904b20ae177b37e1141856  video/freakout.nut
+  4f731dadfd4456dc229fdeac9f49452d  video/ftdemo.nut
+  c16d1ecbc8fce03e90579d74e5b21ea3  video/fucus-5.nut
+  f7221a2b56687d6dbf702dbd587ddb43  video/goggles.nut
+  7f3065b1dd74f37fc8971106f4813fcb  video/hi-sign.nut
+  58c70f7349ef0422f4ee7872d1e6fa3d  video/into-fan.nut
+  327dd525816c6ca82bb928bf84629d4c  video/introlip.san
+  1972fb357e901386eec73e507ef978cf  video/jumpgorg.san
+  203cf6a3391b19b5fdfb9f321786e6da  video/kick-it.nut
+  2fbaf87b89714568d6da16dba9ceba45  video/kick-off.nut
+  1f3da003730ba4c2ecf2aeada601e2a7  video/limoby.san
+  a669abfd22d1b0cc148797490e6d5a0a  video/limopan.nut
+  0a47d15b3c3e7f2227cecb060597f6eb  video/limoroar.nut
+  c16bdfe81c6811ac08492482b345e346  video/mo-toast.nut
+  cc8efe5d62b5c3f35b43b14a447726b2  video/moreach.nut
+  4a483cb20959ee67ce93d4727378bc8e  video/om-sushi.san
+  1e1b23cb56c8112df23b14f9e984b560  video/peelout.nut
+  7f7e47c8639c8a1701f4471e7a105910  video/reachfal.san
+  e331b6d1fe83cf3b6deda1bd607ac9f1  video/rev.nut
+  69a37aa9ec46f6748935f108d22bbef0  video/rideaway.nut
+  d7b1d9e26aaadcebf544ca9fc0f3238e  video/rideout.san
+  a205c96a99eab1b705615d4cff918130  video/riding.nut
+  4ecaf9e354b3c591be45e10ef9513adc  video/ripshift.nut
+  e8dec4fc76eccdb3e94f04f1000bfdaf  video/squint.nut
+  5922ac474b93a18e68eaa6f83bf64ffb  video/struggle.nut
+  e50acaf05dca56206d83ac5e027216d5  video/takeoff.san
+  f0ad5033ebaa46befe622b71e99528d2  video/test.san
+  88204640fd5ecb5636289c116a35c5a2  video/trukdust.nut
+  0f9cd28a63b0bfffeb4759d8ccb67637  video/vision.nut
+  2bc08a0735fc8728888fc381ad06c204  video/vision.san
+  61ccb8db67ee6869a287e66cbb18bec6  video/whammo.nut
 sha1sums: |
   0583e3644961d767d7d9405b44ac476e09d98fdb  DATA/BENCUT.NUT
   ac928b7175fa42d6d86ec6078644d84fa83660bd  DATA/BENFLIP.SAN
@@ -668,6 +1128,94 @@ sha1sums: |
   124847638e47a8dd2c249f451929baf4bddb0769  VIDEO/WEREINIT.TRS
   fb88b5234ca20d5efa30d3e46db47e3359830b3f  VIDEO/WHIP_PAN.SAN
   fd1b8d7ca6b3993c38c8278a978c9bf418016f44  VIDEO/WHIP_PAN.TRS
+  6cc1fdaec66dc107904ee329f58611aeb6d114b3  fulthrot.zip
+  dbcc1efe673852f70f02325404efd90412cb4f3e  ftdemo.zip
+  170b964a7806836ff4c84edc02eb9bacb582ad5b  data/benbike.nut
+  a6ba2906a5191113665e22dab1938c0b3b69a788  data/bencrshe.san
+  3dbef2eeeb672e07fcba3cb25edc272b5451c94b  data/endcrshr.san
+  0f0d14db66116c6d0e6688d6d1734c09401c1a6a  data/harlrev.sad
+  9f40c62cefcf0ff5e2a7fd5423ffcd44defc0e0c  data/icons.nut
+  01a53ddd4aa9e4fe8ab4723849ba5987aceaee58  data/icons2.nut
+  f98397986175efddeb8e642f5ad8a0b06b156c1e  data/laser2.sad
+  3ef3b7fe9ac3acfea715be2876bf6ce4891c10cc  data/liftbord.san
+  e7267f7aa522feaad88fb727d052e81bd0743710  data/liftchay.san
+  2e55e0239263865bc645b36cc03d847f0ad47b08  data/liftgog.san
+  c534476d9ba1a831b361359bfca1b492d9cf47e5  data/liftmace.san
+  a00df3870bb1b0c38dfe2288db8e1e5568b6ebc4  data/liftsaw.san
+  806db7cacb8c24fa01489191b498f1bb9f87742e  data/minedriv.san
+  870ea1b7d5861dfe4a29e60102da886076be7fae  data/mineexit.san
+  31a5fa7038b4dcd44766027aeca0017b9c0e09e8  data/minefite.san
+  202fa1fe17bad778fd72a3a1297216b65c8a5cf2  data/roadrash.nut
+  4b719cc2ad2a2f3a3492a4a0406acd674d4363c4  data/roadrsh2.nut
+  fad3d74087f2cca8d6c7391c7aa818ca589f9520  data/scummfnt.nut
+  38bb65f05cf85d87f12795c9078e47a2f706bc6d  data/smushcut.txt
+  1ed38ded5c3fdd3e0f4e20645dc1d3f7157819b2  data/tomine.san
+  6a20195a3a8dd5ddbf2b82094abcbc2c25328352  data/toranch.san
+  015b64989472bf413632bc88f5eaff975aef7989  data/tovista.san
+  c44bcd1a2783503399a581a2ddf2c43b893da8a2  ft.000
+  bff946efa04d9cfdb1f5f63c92901dde67f50d75  ft.001
+  1c5b62e63741f91ff21a072fbf01600c90a06ed5  ftreadme.txt
+  314e849122bd032cc99d965cdbabda9fbd3f163d  monster.sou
+  c9518d0243268131883afd4b90837e7021d50998  video/barkdog.nut
+  f815c1560518020c0a2f75b6ee595bf6bfeeb833  video/barkdog.san
+  ef8b724cc1f80e27e07ed9e4a5f2ac3620884ffe  video/bed.nut
+  d1443c0d1ae5e1b01f81c3efe097051c74f43ef3  video/big-limo.nut
+  cf7e7bc1057fa49de363d0875a695602bf954de4  video/bigfoot.nut
+  388fdbbbb5c270fec5ddde23eaf2e94835fcc545  video/bikeswar.nut
+  7c644b4ba7aea67727fd10023adc3cf05504106a  video/blackfrm.nut
+  a3d920914ca7eb5b5d114f4ba72b77b75e462694  video/blink.nut
+  95004ca6856e612e96fed41027489673a85c5d2e  video/blink2.nut
+  f71fb21b5179c391863787b1896ffb58b2a02243  video/blink3.nut
+  b0378847ccfb1418e372522fb941f126e1138903  video/burstdog.nut
+  5c544b26c544cdf6aff287f826956afef189ee39  video/burstdog.san
+  9359174864e64b7f7ed4f80e6f62a36f22a8b501  video/catchup.nut
+  c37ef28352c918f861292a9b6632f45e9ae149b5  video/cavechas.san
+  2f6b490ebded905a243fcaefacba66199af7c240  video/cavecrsh.san
+  5589bf80627311437bdf21ba2717f1dad643a723  video/cavetunl.san
+  615d9fef2d8697660ad8bc382bfd4f079bfd4560  video/crash.nut
+  9dad2ae70ee21e89c9e1ac880e3d763e80912e03  video/cvramp.san
+  f2bac549d3ee1faa78ab037bf81674a35d1968d7  video/demo-pta.san
+  e046a8b9416f599c9fb2be3c0857ad6ed8264972  video/demo-ptb.san
+  9b0d2eebdd716fe56ca5b7c1d5ab71aed129d3de  video/demogogg.san
+  da6584e79e75766a0723ac64654a2efaf0214823  video/dodge.nut
+  ee31b36373f42afcea2b66a66be71aea69f664f0  video/face-6.nut
+  f721ee02b81ff7191073603babd5bf5f031bf490  video/fanstop.nut
+  1ae632e4dd702141034a5723844ded26bf9655ad  video/finsushi.san
+  b99d46dc6cc99e73f9fa3d7b08ea916e78e07ab9  video/fire.nut
+  6444fd97424c866f495020a54b243132dab4163e  video/fishgogg.nut
+  167f4334d744715f0a9bc4e7c2ba22da0ccda22d  video/focus.nut
+  3e4569e526826d3a6f2230875e3c1b57204640b7  video/freakfir.nut
+  37a708e22877863e3a5639e74393347b71e62e02  video/freakout.nut
+  cfc7f4c6e4f57cdb31a76a4aaaacc7069a2e9247  video/ftdemo.nut
+  957025fc897e355c1e3f33a8c2f1f5b0c104a59e  video/fucus-5.nut
+  2b1cc30505318d32b254d48ba444b0a21d9c14d3  video/goggles.nut
+  1fed8caa77a710e00c98d799838927d5064d2119  video/hi-sign.nut
+  f6b23737a4b8de0af6447a28d5cfebdf38e946e2  video/into-fan.nut
+  d281e3cf20f473575d7b7b4730370e8f79e6985f  video/introlip.san
+  c74ea7f4cade84e78d78528fb33f52da1a05f6d6  video/jumpgorg.san
+  78e383e29f824f9e9909a1a155d2bd007c77bf94  video/kick-it.nut
+  acbe4ff8df5ba901af18da623e11ffca2774387a  video/kick-off.nut
+  9f60dee4f8f096f2c4f521e5aa9ea192b1069ba0  video/limoby.san
+  5ce95f894706f541e5f3a62749173e728e293c83  video/limopan.nut
+  aee7b74203011e0b66cf2673f5c3862dc979ae7b  video/limoroar.nut
+  db56f168f6b3fa588ffa371a2a2b54f5fd55cf1d  video/mo-toast.nut
+  de63fa245154024f08ff8c5df908549ce91adf6c  video/moreach.nut
+  95cc2f9305a7ecc56998b9755c76a646ee191996  video/om-sushi.san
+  8713eab74da9bb4e96124fef508a106e61029d64  video/peelout.nut
+  d08f4ac821826a87a01b878ba20f30e32de8eca7  video/reachfal.san
+  c779ee35b8f25e4b95b026865c55c2e33ebf7857  video/rev.nut
+  0ae88214a06a6743518728072d32f97ecb121f7f  video/rideaway.nut
+  20f9788c7e2d2d19d013e0fa9a97f5b7c8db26b4  video/rideout.san
+  cea313ee3357af1966bcb186d571cf475b539200  video/riding.nut
+  b0301975be4eb199cf156166d1289d1164dab63d  video/ripshift.nut
+  449207ee513e65fdd90014d43036d71b6ba237d8  video/squint.nut
+  c919f9a85329841d0eece6e482c95720cba786b4  video/struggle.nut
+  dcc901884c8f7fdd8fb05f2169884c68eeb868fd  video/takeoff.san
+  3b9dd4d33dd1cfce15aa3b76a2c27921071b05ec  video/test.san
+  f379e5c40582f693b7b43154e55e71d05a3d7dbf  video/trukdust.nut
+  f281d75c8e979bf7254f733121f9b92fc23ab69e  video/vision.nut
+  05e6f237fc3193788cbd62e680ce6fa5a8538a73  video/vision.san
+  52d7dbc4d33779381039dd64465229be1070c2f1  video/whammo.nut
 sha256sums: |
   d6d359c8aa33a3338d858e2ba35e69d29e33cb91a0a2726fcf7a8ced5c59bebd  DATA/BENCUT.NUT
   5d28b151ec147598056b322bb293a02330995f41499fe0e923b9cea4d1dd08ba  DATA/BENFLIP.SAN
@@ -833,5 +1381,93 @@ sha256sums: |
   297c85c5a10284f5bb3fb9534f3e6309ff8ff4f92808f19e51d4d10ef7890147  VIDEO/WEREINIT.TRS
   2e762241d9f33b5ca27bfc4dd8a9ac6a3958df83437b40ae6b222a318f080a00  VIDEO/WHIP_PAN.SAN
   a8ef2eff6c36b919f0b8eb590668f1553e79e1ff39c4330b5e42262a1df39d65  VIDEO/WHIP_PAN.TRS
+  3666c4d380177796a84333f33fc3fe5eeb075d3632946569b5bcc465bd96175d  fulthrot.zip
+  4591bcbb62201b6bf62f1abc3fd5d9d9411ec31e4706c7f9e129133544e8a16d  ftdemo.zip
+  f867ad33d11d5a21fb05d10a8bb0adb2f0cad611a207880b8d85522e581350be  data/benbike.nut
+  c96bc69cfd1e9a3bb27e40cc5aaec352eceba95dd0e85ba4ac4805d2dd88890a  data/bencrshe.san
+  836ac81e8ff9f70b0a6b9946b9f7635722a09f8370a7dab72bce5f02a004150c  data/endcrshr.san
+  359506e9c75b99c0fb13c39457916883563fdfe87c7570a3ab9ace7b53a1357b  data/harlrev.sad
+  e3857b668fe61ef52e62e58757cdc01968c528298b77b1f44c2318b6f6bec608  data/icons.nut
+  0df4846f534493d37a6dabdfaf1a83c1a9437cb2f2ce282ebc99962d319a3483  data/icons2.nut
+  e4a580e46c6d56e72be29b6e16418521e49a0b34e6b021dc296122cdab45ef4e  data/laser2.sad
+  51cb64948c647ba1e9fd3efdb2eb0b36fdbd1ffdcd7cfc6d630e990006ffb530  data/liftbord.san
+  f780e086b097f6ce9161b70cc985e517b21ac0d4e28aa6aecbf495f9a0e317e7  data/liftchay.san
+  6ce7c80c7a6e2ab437d048535dcd63c810d76eec5b923d574e3d6c70a991ee01  data/liftgog.san
+  96b33948875fdd6a6a0b17fd680728d3a4ff9cd6aab80d55cf9e4363c8f1d599  data/liftmace.san
+  8f8111f857abcb564fa8a993a1f34bddbefd391c017eb0fd5aac2f93ff8209ef  data/liftsaw.san
+  8e7e13a81b0f25069b76dd863c3c039272cbd01692f98c1dd794e0815c97be51  data/minedriv.san
+  6786d9ad02b6db538bc32e9d8024f2021e3dc82fa97ea9d0f32455696c4b2c42  data/mineexit.san
+  3e0f546629622f1ca81ac10d913b391b639913a17da3b7d43ddfe55ab3746e68  data/minefite.san
+  992daf85cd4957700edb1e7072f45a2377bf630c9147fb85db1917735eb94101  data/roadrash.nut
+  7b5261067a48ea4b637813d5a3e356330bbc961aa9df04f93681fd0417ad61ab  data/roadrsh2.nut
+  3efcabf62fe56601272abbdeac7115395d874610518866d21138a6dc5367ea7e  data/scummfnt.nut
+  28de49a012bdac416c57b51b3be9c47bfddc71fd1f95681306d7f33a215ad177  data/smushcut.txt
+  b47517cd1e37c388e9db1614e774994d8df6b5c753bbe6110602a1b18cd4e44f  data/tomine.san
+  fffa9fcdc8634d86490b9d15d342676bb9e78a33b95ce0ef5fad2c175023adb0  data/toranch.san
+  81fcd22d88f68bbeacd2c96bfe00084ca81e2ceb3af3a5ca84b55f1b3e26548c  data/tovista.san
+  bd2fc2608970be3768049996a3a3c50c1b5e79d39d968b68e49de0d34fd5ffa8  ft.000
+  bc36220e8ebae2aa03236a939c00f70f529e03c4bcded6a8642bf5ac327a3b07  ft.001
+  30c2fabdcbb70674f841637d8ea30381185c13e7594b52c1d6348e59308377f4  ftreadme.txt
+  e80d9e97972fdc13584cb618a57907a8df403141c50b2b84b3db6cf260850c45  monster.sou
+  07d512bb9032a33de28febd990e56f8122269a1ef4c6a24e7b85397683429b4a  video/barkdog.nut
+  8d5a6a7e6ea52dc7798a17c012474909b8035c646e1f15d9194efb587613bfec  video/barkdog.san
+  483d1baae88a4a2fb5bbf87d5546fff2a4a4d9600e47d19f8fe97f3eae50b294  video/bed.nut
+  80763f29d0121a6a4291e165021bf8a0c356472bd5f127d919d04f6d31bb47c9  video/big-limo.nut
+  671fb65b3ab59dad7ca985cc2fdb3c178ce462ce3f41c019c88635fd8b10d3e4  video/bigfoot.nut
+  3266c4f6a337d4278c2b1b79c70965b4c7694bf84513d563c5b9f45c569cef9e  video/bikeswar.nut
+  44cd4de5f8a3cef6fe57bc84d7ad080686c92fd1509f2500b4b890b1007bff1a  video/blackfrm.nut
+  9724c5a62fb89cf312c5ffb0bcc260de658e8a6ab5426d13ac4cb9be80669009  video/blink.nut
+  3fa0dfcde165f7fac282b36b6a8731f102363c4bf799bceb033bd2617613ece6  video/blink2.nut
+  4f1a2413ddf44330289548aadb94daa3575264294e3ed198410e50c348d5e7d5  video/blink3.nut
+  9eac9466b94ddf7e13a1f52306bf9a620aba967435ada76202503dac988774ba  video/burstdog.nut
+  ae371b72b812c4d554bae5bb8301ce728569feb20ee473b2b1e332f714ce72d9  video/burstdog.san
+  1f456c2d8840f073308154f40e634b26f01017476588c96a410b2f2957397d51  video/catchup.nut
+  f0116db11dfdd5658b329b00332155b63551b3b08e29c2f9bc8fbd52109d930f  video/cavechas.san
+  8581f786aaf55ce1a8af81902cf7980299a47011f0ab16c37a533d4ef32f9434  video/cavecrsh.san
+  11cbc97882760b24155b9137657426a9759d8521eeb83711ee91808f6384d9df  video/cavetunl.san
+  b64d44f57a6884366e8ef63fde41eab86a7ff93e2320a4125dbed171e550eee5  video/crash.nut
+  74877bf35dc7baa62031e431fb58f8f4b7a8c443b7d475b7f5726352b2b28a6a  video/cvramp.san
+  1904b504a703110f0bd67763c680e834750f71a899e1b86708c337769cd8b532  video/demo-pta.san
+  b04922d0057437a79d2ecd4533b965fe2a41d092060eb3e2c0093c4ec80284fb  video/demo-ptb.san
+  17b686ede4d0eb267cecdf331064b6d79a371d92dd002bf6d79f735ff647acbd  video/demogogg.san
+  7e9797e472881b25db3bd9ff9c478cee4209c1d939178e71b830ad0bc33086d2  video/dodge.nut
+  2a4e5a63da88703e041cbdf276697e48428415f1d7fe53fbf0ff51b7029978e4  video/face-6.nut
+  ff46ddbc92bb8ad16e73f1d1a6e8c393bafc327dc318d15bbc4a7419bbb9eef7  video/fanstop.nut
+  6e27d7b309d02a81156b98b8e13da7c85c6afc1360483585af0db62200112994  video/finsushi.san
+  a3c3890075f5ae5cf7fba81a817d15c7c07b87713ca6949be8ecffc82aff16f5  video/fire.nut
+  2f73e63fbacfff150347d7da163ae22eb068af3aed2e2a959e1f060d46105a0d  video/fishgogg.nut
+  5e7d105256b9078bd7268550e371df4fd62968bd79351183f879a4dabfc9564b  video/focus.nut
+  ccf7696864b43226c8e8fe39fdfd7c59350ef2f290e86810bf396acb52210fb0  video/freakfir.nut
+  66dcdc99f440a424017ba13968be2a9c566380f584b8e96e96beafc45dbca860  video/freakout.nut
+  8bd1752ec807c6b4fb4859aa16970b36e6bea077abe49630ed29479283627141  video/ftdemo.nut
+  a132b304b57da478768b2e7e3a2c9594f9a543799c8f1c8b0914beb434e43e8a  video/fucus-5.nut
+  c4520c8060135f654fc879d23ca37fccb55d7fc0d60612be300f46e558d200e6  video/goggles.nut
+  e66320250c36ff942cbbf50d35e108837833d1ff89b880329aaf3655cc7d1946  video/hi-sign.nut
+  03abd70b5a892300d03827fd1ca2ea8f06080efefaca97f7c97d1363fd886b20  video/into-fan.nut
+  6bdc266adc940bbf49c0866d2b38f2be04baa2737dc8101b8616ad2947492df5  video/introlip.san
+  2832b08fdecc658f4bb8b7602327f39c134baf4609784fdc1031a75b86e49c72  video/jumpgorg.san
+  c1ebc1951ddf111b30ae64eae98be66e650747845c0af8c814dcf9fcaca455b1  video/kick-it.nut
+  0cf300eed5b231f78865912921b35ccd9a62e44ce6f6f1cb3691875219a4fd2d  video/kick-off.nut
+  5f231f325afd99e7f3024ce3b8368b3963337a2796fb822a2815e057fea3d9da  video/limoby.san
+  d4153d72678c38c5918cedb286989ce7b5488a095ee08d2d46bdcaa897ca53ce  video/limopan.nut
+  4434b50892c194ff513f8a566437ea0d00c70b9a01f7ab99dc6aba9cd730199d  video/limoroar.nut
+  b5d89aa1ca557f917d33dcb13a4841b257d4360369f5b75112d9fc50b7857c8f  video/mo-toast.nut
+  64153ccc3068037338515c1ca4a8f6027af018826de7ff2936484eaee679334d  video/moreach.nut
+  284c1f649dc082b4eb6883d30467d987dc7a228682e856c7e7abd20b362c10c2  video/om-sushi.san
+  f108a3936f2c9ed712d5918d11d6776c7e698cb2112d06494fa1b399698e0048  video/peelout.nut
+  c3603cbc44ff4d3ecd9a9346e747e7f3035773cb14980d460755705f3e727309  video/reachfal.san
+  61b58643ecb4871f327a2091e6d15aaeec080d79b6878560c9fedd391e800a43  video/rev.nut
+  6d8548e6172fd923f3b7641fb3d808a8a7819a2e4e56b0447d54dd079d1e11d4  video/rideaway.nut
+  4b0a36e5bc0826ba599e808ff0e63ebf5e531618a4d916cd4902154a9f2e1ceb  video/rideout.san
+  ade938bb6ed1e504787e17fcaaeaebef77484b4f120f6185780d36ea2f25d0f1  video/riding.nut
+  fed56807d98fb3ade47963e0ce9630d2ef477fb5c125a1cd34c277ed737a1f8a  video/ripshift.nut
+  f0d90c6c0e3abc4cbe78e5f3981cf77df67f1c47625c434ada3a52dd5c43ca5a  video/squint.nut
+  a7fb3fbc7f20735938ccedffa138294bb64b85beea139a5201f4b73f3977e529  video/struggle.nut
+  16424292e16b31b18e07f46a9b794f0db4e377a3037098502cb0b4ece49ddeaf  video/takeoff.san
+  f5c4fc6fbd12e96f9fade28a5f8e820a02a5798f8e0b126799ec547eb2e22fa7  video/test.san
+  9c2ae5357390c97496b8071d9ea4e4b83a072d3840a1fd5bc813a479df9131b1  video/trukdust.nut
+  855f93ce82d9dffc3581314e86b6d1d0860841ec4ebc583258b25d8b4d97b815  video/vision.nut
+  168742e1a5a0aea7d92f328be8e9736feb4b93ffb12ccc8fb90e1b4afe4b60a7  video/vision.san
+  aedcba92f2f9d7317e482e3547b771b9bc594b2ef6c2b4a3783a8b1683b47e44  video/whammo.nut
 ...
 
