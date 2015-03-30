@@ -21,7 +21,6 @@ help_text: |
 
 packages:
   hexen2-demo-data:
-    longname: Hexen II (demo)
     demo_for: hexen2-data
     debian:
       conflicts: hexen2-data
@@ -33,7 +32,6 @@ packages:
     # Word 6 .doc, can be translated with antiword
 
   hexen2-data:
-    longname: Hexen II
     steam:
       id: 9060
       path: "common/Hexen 2"

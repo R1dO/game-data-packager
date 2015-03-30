@@ -6,7 +6,6 @@ genre: Flight simulator
 
 packages:
   descent1-demo-data:
-    longname: "Descent: First Strike (demo)"
     demo_for: descent1-full-data
     debian:
       conflicts: descent1-full-data
@@ -20,7 +19,6 @@ packages:
     install_to: usr/share/games/d1x-rebirth/
 
   descent1-full-data:
-    longname: "Descent: First Strike"
     debian:
       conflicts: descent1-demo-data
     gog:

@@ -90,7 +90,9 @@ The `packages` top-level item is a mapping from Debian binary package name
 to mapping:
 
 * `longname`: string: the "marketing name" of the game or expansion
-  in this package, if it differs from the top-level `longname`
+  in this package, if it differs from the top-level `longname`.  
+  Unless otherly specified, `' (demo)'` will automatically
+  be appended to packages with a `demo_for` tag.
 * `copyright`: string: the copyright string, if it differs from top-level
 * `demo_for`: this reference the full game included in same YAML file  
   `expansion_for`: this reference the matching full game included

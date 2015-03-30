@@ -769,6 +769,11 @@ class GameData(object):
             else:
                 package.demo_for |= set(d['demo_for'])
             assert package.name != d['demo_for'], "a game can't be a demo for itself"
+            if not package.longname:
+                package.longname = self.longname + ' (demo)'
+        else:
+            assert 'demo' not in package.name, package.name + ' miss a demo_for tag.'
+
         if 'expansion_for' in d:
             assert package.name != d['expansion_for'], \
                    "a game can't be an expansion for itself"
