@@ -1501,7 +1501,6 @@ class GameData(object):
                         self.consider_file(os.path.join(tmpdir, f.lstrip('/')), True)
                 elif fmt == 'unshield':
                     other_parts = provider.unpack['other_parts']
-                    print(other_parts)
                     for p in other_parts:
                         self.fill_gap(package, self.files[p], download=False, log=True)
                         if p not in self.found:
@@ -1523,7 +1522,31 @@ class GameData(object):
                             tmp = os.path.join(tmpdir, f)
                             os.utime(tmp, (orig_time, orig_time))
                             self.consider_file(tmp, True)
-
+                elif fmt == 'arj':
+                    other_parts = set(provider.unpack.get('other_parts'))
+                    other_parts.discard(None)
+                    for p in other_parts:
+                        self.fill_gap(package, self.files[p], download=False, log=True)
+                        if p not in self.found:
+                            # can't concatenate: one of the bits is missing
+                            break
+                    else:
+                        to_unpack = provider.unpack.get('unpack', provider.provides)
+                        logger.debug('Extracting %r from %s',
+                                to_unpack, found_name)
+                        tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                                provider_name + '.d')
+                        mkdir_p(tmpdir)
+                        subprocess.check_call(['arj', 'e',
+                                  os.path.abspath(found_name)] +
+                                  list(to_unpack), cwd=tmpdir)
+                        for p in other_parts:
+                            subprocess.check_call(['arj', 'e', '-jya',
+                                  os.path.join(os.path.dirname(found_name),p)] +
+                                  list(to_unpack), cwd=tmpdir)
+                        for f in to_unpack:
+                            tmp = os.path.join(tmpdir, f)
+                            self.consider_file(tmp, True)
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
 

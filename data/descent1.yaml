@@ -68,25 +68,26 @@ files:
   descent.pig_full:
     install_as: descent.pig
 
-  #desc14sw.exe:
-  #  provides:
-  #  - descent1.sow
-  #  - descent2.sow
-  #  format: zip
-  #descent1.sow:
-  #  prodives:
-  #  - descent.hog
-  #  - readme.txt
-  #  - refcard.txt
-  #  - descent.pig_part1
-  #  format: arj
-  #descent2.sow:
-  #  # needs to be unpacked after descent1.sow in the same working folder
-  #  # in order to add data to existing descent.pig
-  #  # without that, we get a descent.pig with 1416672 NULL at the start
-  #  prodives:
-  #  - descent.pig_part2
-  #  format: arj
+  desc14sw.exe:
+    provides:
+    - descent1.sow
+    - descent2.sow
+    unpack:
+      format: zip
+  descent1.sow:
+    provides:
+    - descent.hog
+    - descent.pig
+    - readme.txt
+    - refcard.txt
+    unpack:
+      format: arj
+      other_parts: [descent2.sow]
+      unpack:
+      - DESCENT.HOG
+      - DESCENT.PIG
+      - README.TXT
+      - REFCARD.TXT
 
   descent.faq:
     install_to: $docdir
