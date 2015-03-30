@@ -32,6 +32,17 @@ help_text: |
   and base/siege_destroyer.pk3, or a directory containing them.
 
 packages:
+  jedi-academy-demo-data:
+    engine: openjk-academy
+    demo_for: jedi-academy-data
+    debian:
+      conflicts: jedi-academy-data
+    install_to: usr/share/games/jedi-academy-data/base
+    install:
+    - assets0.pk3_demo
+    optional:
+    - license.txt
+
   jedi-academy-data:
     debian:
       version: '1.01'
@@ -76,6 +87,51 @@ files:
     unpack:
       format: zip
 
+  JediAcademyDemo.exe:
+    download: http://download.fileplanet.com/ftp1/092003/JediAcademyDemo.exe
+    unpack:
+      format: 7z
+      unpack:
+      - /Disk1/data1.cab
+      - /Disk1/data1.hdr
+      - /Disk1/data2.cab
+    provides:
+    - data1.cab
+    - data1.hdr
+    - data2.cab
+
+  data1.cab:
+    unpack:
+      format: unshield
+      other_parts: [data1.hdr, data2.cab]
+      #strace -e open unshield x Disk1/data1.cab 2>&1 >/dev/null | grep Disk1 | sort -u
+      #open("Disk1/data1.cab", O_RDONLY)       = 4
+      #open("Disk1/data1.hdr", O_RDONLY)       = 4
+      #open("Disk1/data2.cab", O_RDONLY)       = 4
+      unpack:
+      - Game_Files/assets0.pk3
+      - English_Files/license.txt
+    provides:
+    - assets0.pk3_demo
+    - license.txt
+
+  assets0.pk3_demo:
+    install_as: assets0.pk3
+    look_for: assets0.pk3
+
+  license.txt:
+    install_to: $docdir
+    license: true
+    distinctive_name: false
+
+cksums: |
+  _ 195892094 JediAcademyDemo.exe
+  _ 2883388   data1.cab
+  _ 22740     data1.hdr
+  _ 191976107 data2.cab
+  _ 188127360 assets0.pk3_demo
+  _ 6242      license.txt
+
 md5sums: |
   e17ee714ce9632f401960abb1b22fa4a  base/assets0.pk3
   3f47006dde61f171769666f31065a34c  base/assets1.pk3
@@ -85,6 +141,12 @@ md5sums: |
   85b76849fea33bea2f37727e8a33e373  base/bonus.pk3
   ea334db95f4436ceab5c6670d1695f67  jasiegedestroyer.exe
   31d6b95740930ce4b8f1da7d7326c7aa  base/siege_destroyer.pk3
+  cae3213d54df238f611f4b630f4d4743  JediAcademyDemo.exe
+  8ad81b71336465f0e77432ffacacfdf2  data1.cab
+  e5d1e819214ee6ce4e3d001b6c2e0689  data1.hdr
+  149bb051007547ff8aae15fec6305a32  data2.cab
+  6f8a641f2ac6415359d988578a58d973  assets0.pk3_demo
+  e006adc9086c848c16f1f4309d5773b2  license.txt
 
 sha1sums: |
   d2f73d9c53b20f1d7c8e2b778c3c5255272223b6  base/assets0.pk3
@@ -95,6 +157,12 @@ sha1sums: |
   a39274d4b7303dd38775be53266eca499a4532ec  base/bonus.pk3
   b422049effcda42633b953628dd342187ca0a4f1  jasiegedestroyer.exe
   9d70ccb1cae8e920bce7184fbf457f072074c95b  base/siege_destroyer.pk3
+  942ad7edbe9716fa9dfd043e4bdfe17dd582934a  JediAcademyDemo.exe
+  964b879b3121bed38475a5503282910d55c3e6b2  data1.cab
+  2b3f83dc4dcf5323f74eaecae5a2b6faa82e5a02  data1.hdr
+  ce92ea7e92c77da09d7a21245699ce56b1923d4e  data2.cab
+  93c5a678fc250dacb17be8f09b3a8253d2ec8048  assets0.pk3_demo
+  85d35354ac49f102baed51ff67d5f7abe892785b  license.txt
 
 sha256sums: |
   ffea9e7489bad7175411d122e0652b4272efb67c0e71805d1f4d8058084b5939  base/assets0.pk3
@@ -105,6 +173,12 @@ sha256sums: |
   3df3566aa1f29e71c64f5a67924ea8bd2b6dd03d5b6006e1807e6a80bc6113c5  base/bonus.pk3
   1479d82f2664e5bead9e0a17ebbab9ed3b8f04d5c93ea18cf2cc7786ddf21d43  jasiegedestroyer.exe
   0083d99038e015240119ffbf2c22a0205f52524ac44d0a56478db5c2c3452c60  base/siege_destroyer.pk3
+  133e10900229e6f8691f883b03c7e88e9e7f1e7c136d8ee934208846af534df1  JediAcademyDemo.exe
+  7598d076b4694d614cf3543cb8888941fb50d5d18294494a9cfe570cb09f806b  data1.cab
+  c0a70499f27f2b8d9061933b568a27f2645216bf409e12d6884e4bdd5295db73  data1.hdr
+  9fe56ac86286847ab5a1dfebc1dd1c6d9001ca9d986da0b223ae53b80815fa5a  data2.cab
+  d7d015ef905f7df092eb5b9d011013a80b3eca414aca3e8de50d89a2e8e299ed  assets0.pk3_demo
+  60b35b90f168939db20c3e9ab7b72d657f576e56adba65b01bf2ea6d88f1f6f5  license.txt
 
 # Not used yet
 sha512sums: |

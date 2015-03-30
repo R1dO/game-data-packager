@@ -1489,11 +1489,41 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['7z', 'x', '-bd',
+                    # "Cannot use absolute pathnames for this command"
+                    if to_unpack[0][0] == '/':
+                        subprocess.check_call(['7z', 'x', '-bd',
+                                os.path.abspath(found_name)], cwd=tmpdir)
+                    else:
+                        subprocess.check_call(['7z', 'x', '-bd',
                                 os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
                     for f in to_unpack:
-                        self.consider_file(os.path.join(tmpdir, f), True)
+                        self.consider_file(os.path.join(tmpdir, f.lstrip('/')), True)
+                elif fmt == 'unshield':
+                    other_parts = provider.unpack['other_parts']
+                    print(other_parts)
+                    for p in other_parts:
+                        self.fill_gap(package, self.files[p], download=False, log=True)
+                        if p not in self.found:
+                            # can't concatenate: one of the bits is missing
+                            break
+                    else:
+                        to_unpack = provider.unpack.get('unpack', provider.provides)
+                        logger.debug('Extracting %r from %s',
+                                to_unpack, found_name)
+                        tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                                provider_name + '.d')
+                        mkdir_p(tmpdir)
+                        subprocess.check_call(['unshield', '-j', 'x',
+                                    os.path.abspath(found_name)], cwd=tmpdir)
+                        # this format doesn't store a timestamp, so the extracted
+                        # files will instead inherit the archive's timestamp
+                        orig_time = os.stat(found_name).st_mtime
+                        for f in to_unpack:
+                            tmp = os.path.join(tmpdir, f)
+                            os.utime(tmp, (orig_time, orig_time))
+                            self.consider_file(tmp, True)
+
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
 
