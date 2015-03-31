@@ -98,6 +98,27 @@ files:
     unpack:
       format: zip
 
+  # GamersHell/Filefront version
+  Jedi_Knight_jediacademydemo.exe:
+    unpack:
+      format: 7z
+      unpack:
+      - /Disk1/data1.cab
+      - /Disk1/data1.hdr
+      - /Disk1/data2.cab
+    provides:
+    - data1.cab
+    - data1.hdr
+    - data2.cab
+
+  # GamersHell adds extra cruft and wraps it in a zip file
+  GHJediAcademy.zip:
+    unpack:
+      format: zip
+    provides:
+    - Jedi_Knight_jediacademydemo.exe
+
+  # FilePlanet version, which is different for some reason
   JediAcademyDemo.exe:
     unpack:
       format: 7z
@@ -146,6 +167,8 @@ cksums: |
   _ 191976107 data2.cab
   _ 188127360 assets0.pk3_demo
   _ 6242      license.txt
+  2369534339 196079221 Jedi_Knight_jediacademydemo.exe
+  1245905322 196080485 GHJediAcademy.zip
 
 md5sums: |
   e17ee714ce9632f401960abb1b22fa4a  base/assets0.pk3
@@ -157,6 +180,8 @@ md5sums: |
   ea334db95f4436ceab5c6670d1695f67  jasiegedestroyer.exe
   31d6b95740930ce4b8f1da7d7326c7aa  base/siege_destroyer.pk3
   cae3213d54df238f611f4b630f4d4743  JediAcademyDemo.exe
+  15524eb3a7a778803592b967584fc34f  Jedi_Knight_jediacademydemo.exe
+  93f4f42338f1479eeb6ef8b6ca2f8e13  GHJediAcademy.zip
   8ad81b71336465f0e77432ffacacfdf2  data1.cab
   e5d1e819214ee6ce4e3d001b6c2e0689  data1.hdr
   149bb051007547ff8aae15fec6305a32  data2.cab
@@ -175,6 +200,8 @@ sha1sums: |
   b422049effcda42633b953628dd342187ca0a4f1  jasiegedestroyer.exe
   9d70ccb1cae8e920bce7184fbf457f072074c95b  base/siege_destroyer.pk3
   942ad7edbe9716fa9dfd043e4bdfe17dd582934a  JediAcademyDemo.exe
+  a2e6779998f5e07b94154c57500f0837a188aafb  Jedi_Knight_jediacademydemo.exe
+  3c16848c122c208091636bf9a9272c2ceaa61e5d  GHJediAcademy.zip
   964b879b3121bed38475a5503282910d55c3e6b2  data1.cab
   2b3f83dc4dcf5323f74eaecae5a2b6faa82e5a02  data1.hdr
   ce92ea7e92c77da09d7a21245699ce56b1923d4e  data2.cab
@@ -191,6 +218,8 @@ sha256sums: |
   1479d82f2664e5bead9e0a17ebbab9ed3b8f04d5c93ea18cf2cc7786ddf21d43  jasiegedestroyer.exe
   0083d99038e015240119ffbf2c22a0205f52524ac44d0a56478db5c2c3452c60  base/siege_destroyer.pk3
   133e10900229e6f8691f883b03c7e88e9e7f1e7c136d8ee934208846af534df1  JediAcademyDemo.exe
+  b8d6ecc26e28c2358aae32b77b4837c8900175786fa5531507d86c421d4f910a  Jedi_Knight_jediacademydemo.exe
+  d90fc62d080b806dba57939ea09a36a7fb80a61e340a8beb22365d68d55d2041  GHJediAcademy.zip
   7598d076b4694d614cf3543cb8888941fb50d5d18294494a9cfe570cb09f806b  data1.cab
   c0a70499f27f2b8d9061933b568a27f2645216bf409e12d6884e4bdd5295db73  data1.hdr
   9fe56ac86286847ab5a1dfebc1dd1c6d9001ca9d986da0b223ae53b80815fa5a  data2.cab
