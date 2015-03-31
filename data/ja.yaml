@@ -31,6 +31,13 @@ help_text: |
   jabonusmaps.exe and jasiegedestroyer.exe, or the PK3 files base/bonus.pk3
   and base/siege_destroyer.pk3, or a directory containing them.
 
+  A single-player-only demo version can be downloaded from various sites,
+  including:
+
+  * http://www.fileplanet.com/129982/120000/fileinfo/Jedi-Knight:-Jedi-Academy-Single-Player-Demo
+  * http://jediknight3.filefront.com/file/Star_Wars_Jedi_Knight_Jedi_Academy_SinglePlayer_Demo;18502
+  * http://www.gamershell.com/download_3298.shtml
+
 packages:
   jedi-academy-demo-data:
     engine: openjk-academy
@@ -88,7 +95,6 @@ files:
       format: zip
 
   JediAcademyDemo.exe:
-    download: http://download.fileplanet.com/ftp1/092003/JediAcademyDemo.exe
     unpack:
       format: 7z
       unpack:
