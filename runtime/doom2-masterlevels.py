@@ -197,8 +197,9 @@ def run_game(event):
     if 'doomsday' in engine:
         engine = 'doomsday -game doom2'
 
-    subprocess.call([engine, '-file', '/usr/share/games/doom/%s.wad' % game,
-        '-warp', '%d' % warp, '-skill', difficulty])
+    if warp:
+        subprocess.call([engine, '-file', '/usr/share/games/doom/%s.wad' % game,
+            '-warp', '%d' % warp, '-skill', difficulty])
 
 treeview.connect("cursor-changed", select_game)
 button1.connect("clicked", run_game)
