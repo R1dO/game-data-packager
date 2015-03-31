@@ -42,9 +42,7 @@ packages:
   jedi-academy-demo-data:
     engine: openjk-academy
     demo_for: jedi-academy-data
-    debian:
-      conflicts: jedi-academy-data
-    install_to: usr/share/games/jedi-academy-data/base
+    install_to: usr/share/games/jedi-academy-demo/base
     install:
     - assets0.pk3_demo
     optional:
