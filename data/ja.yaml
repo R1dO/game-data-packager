@@ -31,6 +31,7 @@ help_text: |
   jabonusmaps.exe and jasiegedestroyer.exe, or the PK3 files base/bonus.pk3
   and base/siege_destroyer.pk3, or a directory containing them.
 
+disabled_help_text: |
   A single-player-only demo version can be downloaded from various sites,
   including:
 
@@ -40,6 +41,7 @@ help_text: |
 
 packages:
   jedi-academy-demo-data:
+    DISABLED: https://github.com/JACoders/OpenJK/issues/618
     engine: openjk-academy
     demo_for: jedi-academy-data
     install_to: usr/share/games/jedi-academy-demo/base
