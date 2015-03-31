@@ -27,7 +27,7 @@ Depends: fakeroot, ${misc:Depends},
 Suggests:
 # for quake music and quake2 music
 	cdparanoia, vorbis-tools,
-# for quake CD-ROM methods & Spear Of Destiny demo
+# Doom 2 Master Levels, Quake, Spear Of Destiny demo
 	lhasa | jlha-utils | lzh-archiver,
 # for quake2 mission packs
 	binutils, make, gcc,
@@ -37,7 +37,7 @@ Suggests:
 	dynamite (>= 0.1.1-2),
 # for wolf3d v1.2
 	unzip,
-# for Theme Hospital and probably other gog.com games
+# gog.com games: Descent 1/2, Theme Hospital
 	innoextract,
 # for Doom3
 	p7zip-full,
