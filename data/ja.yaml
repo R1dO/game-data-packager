@@ -45,8 +45,14 @@ packages:
     install_to: usr/share/games/jedi-academy-demo/base
     install:
     - assets0.pk3_demo
+    - ui/demo_ingame.txt
+    - ui/demo_menus.txt
     optional:
     - license.txt
+    symlinks:
+      usr/lib/openjk-academy-demo/base/assets0.pk3: usr/share/games/jedi-academy-demo/base/assets0.pk3
+      usr/lib/openjk-academy-demo/base/ui/ingame.txt: usr/share/games/jedi-academy-demo/base/ui/demo_ingame.txt
+      usr/lib/openjk-academy-demo/base/ui/menus.txt: usr/share/games/jedi-academy-demo/base/ui/demo_menus.txt
 
   jedi-academy-data:
     debian:
@@ -122,6 +128,11 @@ files:
   assets0.pk3_demo:
     install_as: assets0.pk3
     look_for: assets0.pk3
+    unpack:
+      format: zip
+    provides:
+    - ui/demo_ingame.txt
+    - ui/demo_menus.txt
 
   license.txt:
     install_to: $docdir
@@ -151,6 +162,8 @@ md5sums: |
   149bb051007547ff8aae15fec6305a32  data2.cab
   6f8a641f2ac6415359d988578a58d973  assets0.pk3_demo
   e006adc9086c848c16f1f4309d5773b2  license.txt
+  fdfa73db069a7483655d36382e6ca5c2  ui/demo_ingame.txt
+  424ced91603a58e353b5e458df93c412  ui/demo_menus.txt
 
 sha1sums: |
   d2f73d9c53b20f1d7c8e2b778c3c5255272223b6  base/assets0.pk3
