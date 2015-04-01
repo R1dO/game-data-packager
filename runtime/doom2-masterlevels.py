@@ -167,13 +167,15 @@ grid.attach(radiogrid, 1, 5, 2, 1)
 
 
 # Run !
-button1 = Gtk.Button(label="Run")
-grid.attach(button1, 1, 6, 1, 1)
-button2 = Gtk.Button(label="Exit")
-grid.attach(button2, 2, 6, 1, 1)
+button_exec = Gtk.Button(label="Run")
+button_exec.set_sensitive(False)
+grid.attach(button_exec, 1, 6, 1, 1)
+button_quit = Gtk.Button(label="Exit")
+grid.attach(button_quit, 2, 6, 1, 1)
 
 def select_game(event):
-    global game, warp
+    global game, warp, button_exec
+    button_exec.set_sensitive(True)
     (model, pathlist) = treeview.get_selection().get_selected_rows()
     for path in pathlist:
         tree_iter = model.get_iter(path)
@@ -202,8 +204,8 @@ def run_game(event):
             '-warp', '%d' % warp, '-skill', difficulty])
 
 treeview.connect("cursor-changed", select_game)
-button1.connect("clicked", run_game)
-button2.connect("clicked", Gtk.main_quit)
+button_exec.connect("clicked", run_game)
+button_quit.connect("clicked", Gtk.main_quit)
 
 window.show_all()
 
