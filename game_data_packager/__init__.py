@@ -2471,7 +2471,7 @@ class GameData(object):
 
         fmt = wanted.unpack['format']
 
-        if fmt in ('id-shr-extract', 'lha', 'unzip', 'innoextract', '7z'):
+        if fmt not in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'zip'):
             if which(fmt) is None:
                 logger.warning('cannot unpack "%s": tool "%s" is not ' +
                         'installed', wanted.name, fmt)
