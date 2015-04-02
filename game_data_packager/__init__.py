@@ -1004,6 +1004,11 @@ class GameData(object):
 
         if really_should_match_something:
             logger.warning('file "%s" does not match any known file', path)
+            # ... still G-D-P should try to process any random .zip
+            # file thrown at it, like the .zip provided by GamersHell
+            if os.path.splitext(path)[1].lower() == '.zip':
+                with zipfile.ZipFile(path, 'r') as zf:
+                    self.consider_zip(path, zf)
 
     def _log_not_any_of(self, path, size, hashes, why, candidates):
         message = ('found %s but it is not one of the expected ' +
@@ -1091,14 +1096,20 @@ class GameData(object):
         logger.debug('%s: %s', package.name, result)
         return result
 
-    def consider_zip(self, name, zf, provider):
-        should_provide = set(provider.provides)
+    def consider_zip(self, name, zf, provider=None):
+        if provider is None:
+            filenames = self.files
+            should_provide = set()
+        else:
+            filenames = provider.provides
+            should_provide = set(filenames)
+
 
         for entry in zf.infolist():
             if not entry.file_size:
                 continue
 
-            for filename in provider.provides:
+            for filename in filenames:
                 wanted = self.files.get(filename)
 
                 if wanted is None:
