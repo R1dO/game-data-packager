@@ -1215,8 +1215,22 @@ class GameData(object):
 
     def choose_mirror(self, wanted):
         mirrors = []
+        mirror = os.environ.get('GDP_MIRROR')
+        if mirror:
+            if mirror.startswith('/'):
+                mirror = 'file://' + mirror
+            elif mirror.split(':')[0] not in ('http', 'https', 'ftp', 'file'):
+                mirror = 'http://' + mirror
+            if not mirror.endswith('/'):
+                mirror = mirror + '/'
+
         if type(wanted.download) is str:
-            return [wanted.download]
+            if mirror:
+                return list(set([mirror + wanted.name,
+                   mirror + os.path.basename(wanted.download)])) + [wanted.download]
+            else:
+                return [wanted.download]
+
         for mirror_list, details in wanted.download.items():
             try:
                 f = open(os.path.join(ETCDIR, mirror_list), encoding='utf-8')
@@ -1238,16 +1252,8 @@ class GameData(object):
                 logger.warning('Could not open mirror list "%s"', mirror_list,
                         exc_info=True)
         random.shuffle(mirrors)
-        if 'GDP_MIRROR' in os.environ:
-            url = os.environ.get('GDP_MIRROR')
-            if url.startswith('/'):
-                url = 'file://' + url
-            elif url.split(':')[0] not in ('http', 'https', 'ftp', 'file'):
-                url = 'http://' + url
-            if not url.endswith('/'):
-                url = url + '/'
-            url = url + details.get('name', wanted.name)
-            mirrors.insert(0, url)
+        if mirror:
+            mirrors.insert(0, mirror + wanted.name)
         if not mirrors:
             logger.error('Could not select a mirror for "%s"', wanted.name)
             return []
