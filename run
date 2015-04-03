@@ -17,6 +17,10 @@ if [ $# -eq 0 ]; then
 fi
 
 case "$1" in
+	'steam')
+		shift
+		exec python3 -m game_data_packager.steam_wip "$@"
+		;;
 	'make-template')
 		shift
 		exec python3 -m game_data_packager.make_template "$@"
