@@ -42,8 +42,8 @@ def parse_acf(path):
                 acf_struct['name'] = acf_struct['installdir']
             yield acf_struct
 
-def owned_steam_games(id):
-    url = "http://steamcommunity.com/id/" + id + "/games?xml=1"
+def owned_steam_games(steam_id):
+    url = "http://steamcommunity.com/id/" + steam_id + "/games?xml=1"
     html = urllib.request.urlopen(url)
     tree = xml.etree.ElementTree.ElementTree()
     tree.parse(html)
