@@ -44,6 +44,8 @@ for shortname, gamedata in games_obj.items():
     logger.debug('G: %s: %s' % (shortname, str(gamedata.steam)))
     for package in gamedata.packages.values():
         logger.debug('P: %s: %s' % (package.name, str(package.steam)))
+        if package.type == 'demo':
+            continue
         if 'path' in package.steam:
             steam_suffix = package.steam['path']
             steam_id     = package.steam['id']
@@ -58,16 +60,19 @@ for shortname, gamedata in games_obj.items():
                        'demo' : 3
                      }.get(package.type)
 
-        steam_path = None
-        steam_date = 0
+        # FIXME: can't get it to work with iter_steam_paths()
+        # TypeError: 'GameDataPackage' object is not iterable
         for dir in STEAMDIRS:
             check_path = os.path.expanduser(dir) + '/SteamApps/' + steam_suffix
             if os.path.isdir(check_path):
                 steam_path = check_path
                 steam_date = os.stat(steam_path).st_mtime
-                continue
+                break
+        else:
+            steam_path = None
+            steam_date = 0
 
-        game_struct = {
+        games.append({
                       'shortname' : shortname,
                       'type' : package.type,
                       'type_order' : type_order,
@@ -77,9 +82,7 @@ for shortname, gamedata in games_obj.items():
                       'steam_path': steam_path,
                       'steam_id': steam_id,
                       'steam_date': steam_date,
-                      }
-        if package.type != 'demo':
-            games.append(game_struct)
+                      })
 
 games = sorted(games, key=lambda k: (k['shortname'], k['type_order'], k['longname']))
 
@@ -164,9 +167,9 @@ def owned(games,args):
     owned = {}
     for appid, name in owned_steam_games(os.environ.get('STEAM_ID', 'sir_dregan')):
         for supported in games:
-             if supported['steam_id'] == appid:
+             if int(supported['steam_id']) == int(appid):
                  owned[appid] = name
-    for k in owned:
+    for k in sorted(owned):
         print("%-9s %s" % (k, owned[k]))
 
 args_parser = argparse.ArgumentParser(description='manage your Steam collection with game-data-packager')
