@@ -16,6 +16,8 @@
 # /usr/share/common-licenses/GPL-2.
 
 import glob
+import xml.etree.ElementTree
+import urllib.request
 
 def parse_acf(path):
     for manifest in glob.glob(path + '/*.acf'):
@@ -39,3 +41,15 @@ def parse_acf(path):
             if 'name' not in acf_struct:
                 acf_struct['name'] = acf_struct['installdir']
             yield acf_struct
+
+def owned_steam_games(steam_id):
+    url = "http://steamcommunity.com/id/" + steam_id + "/games?xml=1"
+    html = urllib.request.urlopen(url)
+    tree = xml.etree.ElementTree.ElementTree()
+    tree.parse(html)
+    games_xml = tree.getiterator('game')
+    for game in games_xml:
+        appid = int(game.find('appID').text)
+        name = game.find('name').text
+        #print(appid, name)
+        yield {appid, name}
