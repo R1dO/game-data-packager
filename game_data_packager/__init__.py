@@ -696,6 +696,12 @@ class GameData(object):
                 assert wanted.sha1 is None, wanted.name
                 assert wanted.sha256 is None, wanted.name
                 assert wanted.size is None, wanted.name
+            # FIXME: find out file size and add to yaml
+            else:
+                assert wanted.size or filename in (
+                   'hipnotic/pak0.pak_qdq_glquake_compat'
+                   'resource.1_106_cd'
+                   ), (self.shortname, wanted.name)
 
     def __enter__(self):
         return self
