@@ -52,4 +52,4 @@ def owned_steam_games(steam_id):
         appid = int(game.find('appID').text)
         name = game.find('name').text
         #print(appid, name)
-        yield {appid, name}
+        yield [appid, name]
