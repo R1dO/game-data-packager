@@ -16,15 +16,11 @@
 # /usr/share/common-licenses/GPL-2.
 
 import os
-import glob
 import argparse
 import logging
-import urllib.request
-import xml.etree.ElementTree
 
 from . import GameData,load_games,rm_rf
-from .paths import DATADIR
-from .steam import parse_acf
+from .steam import parse_acf,owned_steam_games
 from .util import is_installed
 
 logging.basicConfig()
@@ -165,15 +161,8 @@ def parse(games,args):
         print(record)
 
 def owned(games,args):
-    url = "http://steamcommunity.com/id/" + os.environ.get('STEAM_ID', 'sir_dregan') + "/games?xml=1"
-    html = urllib.request.urlopen(url)
-    tree = xml.etree.ElementTree.ElementTree()
-    tree.parse(html)
-    games_xml = tree.getiterator('game')
     owned = {}
-    for game in games_xml:
-        appid = int(game.find('appID').text)
-        name = game.find('name').text
+    for appid, name in owned_steam_games(os.environ.get('STEAM_ID', 'sir_dregan')):
         for supported in games:
              if supported['steam_id'] == appid:
                  owned[appid] = name
