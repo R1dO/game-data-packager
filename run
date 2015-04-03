@@ -21,6 +21,10 @@ case "$1" in
 		shift
 		exec python3 -m game_data_packager.make_template "$@"
 		;;
+	'stash')
+		shift
+		exec python3 -m game_data_packager.stash "$@"
+		;;
 	*)
 		exec python3 -m game_data_packager "$@"
 		;;
