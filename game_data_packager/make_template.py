@@ -194,11 +194,13 @@ def do_one_deb(deb):
     if control is None:
         logger.error('Could not find DEBIAN/control')
 
-    data = dict(packages={ control['package']: {} }, files={})
+    data = dict(packages={ control['package']: {} })
+    files = dict(files={})
     package = data['packages'][control['package']]
-    package['install'] = []
     package['install_to'] = None
-    sums = dict(sha1={}, md5={}, sha256={})
+    install = set()
+    optional = set()
+    sums = dict(sha1={}, md5={}, sha256={}, ck={})
 
     with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', deb],
             stdout=subprocess.PIPE) as fsys_process:
@@ -211,6 +213,10 @@ def do_one_deb(deb):
 
                 if (name.startswith('usr/share/doc/') and
                         name.endswith('changelog.gz')):
+                    continue
+
+                if (name.startswith('usr/share/doc/') and
+                        name.endswith('changelog.Debian.gz')):
                     continue
 
                 if (name.startswith('usr/share/doc/') and
@@ -235,12 +241,12 @@ def do_one_deb(deb):
                     if (package['install_to'] is not None and
                             name.startswith(package['install_to'] + '/')):
                         name = name[len(package['install_to']) + 1:]
-                        data['files'][name] = {}
+                        install.add(name)
                     else:
-                        data['files'][name] = dict(install_to='.')
+                        optional.add(name)
+                        files['files'][name] = dict(install_to='.')
 
-                    data['files'][name]['size'] = entry.size
-                    package['install'].append(name)
+                    sums['ck'][name] = entry.size
                     sums['md5'][name] = hf.md5
                     sums['sha1'][name] = hf.sha1
                     sums['sha256'][name] = hf.sha256
@@ -260,10 +266,25 @@ def do_one_deb(deb):
     print('copyright: © 1970 FIXME')
     yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
 
+    print('    install:')
+    for file in sorted(install):
+        print('    - %s' % file)
+
+    if optional:
+        print('    optional:')
+        for file in sorted(optional):
+             print('    - %s' % file)
+
+    if files['files']:
+        yaml.safe_dump(files, stream=sys.stdout, default_flow_style=False)
+
     for alg, files in sorted(sums.items()):
         print('%ssums: |' % alg)
         for filename, sum_ in sorted(files.items()):
-            print('  %s  %s' % (sum_, filename))
+            if alg == 'ck':
+                print('  _ %-9s %s' % (sum_, filename))
+            else:
+                print('  %s  %s' % (sum_, filename))
 
     print('...')
     print('')
