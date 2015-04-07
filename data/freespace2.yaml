@@ -487,7 +487,8 @@ files:
     install_to: $docdir
     license: true
   MANUAL.PDF:
-    install_to: $docdir/manual.pdf
+    install_to: $docdir
+    install_as: manual.pdf
     distinctive_name: false
   ReadMe.txt:
     install_to: $docdir
