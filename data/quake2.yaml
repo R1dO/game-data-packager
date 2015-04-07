@@ -450,6 +450,7 @@ files:
     download:
       idstuff-mirrors:
         path: quake2
+    size: 39015499
     sha256: 7ace5a43983f10d6bdc9d9b6e17a1032ba6223118d389bd170df89b945a04a1e
     provides:
     - Manual.html
@@ -644,6 +645,7 @@ files:
     download:
       idstuff-mirrors:
         path: quake2
+    size: 19267584
     sha256: f82197c8c8089202a4b3a85d8833b0c2e827a709d205c760369407c212488baa
     provides:
     - Commercial Exploitation.doc
@@ -857,7 +859,6 @@ files:
     - baseq2/players/male/w_sshotgun.md2
     - baseq2/players/male/weapon.md2
     - baseq2/players/male/weapon.pcx
-    - ctf/ctf2.ico
     - ctf/pak0.pak
     - ctf/readme.txt
     - ctf/server.cfg
@@ -1619,6 +1620,19 @@ cksums: |
   # pak0.pak as seen in Fabian Greffrath's copy (#776059)
   639175200 194965474 baseq2/pak0.pak_6be3f40
 
+  # files from the demo
+  _ 5073 quake2_manual/customer_support.html_3.14_demo
+  _ 49951322 baseq2/pak0.pak_demo
+  _ 8963 license.txt_3.14_demo
+  _ 20919 quake2_manual/credits.html_3.14_demo
+  _ 13079 quake2_manual/technical_information.html_3.14_demo
+  _ 62410 readme.txt_3.14_demo
+  _ 3675 release.txt_3.14_demo
+
+  _ 36277 baseq2/players/female/doomgal.pcx
+  _ 1803  baseq2/players/female/doomgal_i.pcx
+  _ 64705 baseq2/players/male/skin.pcx
+
   # Mission Pack 2
   1872384946 45736 rogue/docs/readme.htm
   1358637215 25729 rogue/docs/release.htm
@@ -1904,7 +1918,6 @@ md5sums: |
   46967dbfad628470a7bc344b20086d53  baseq2/players/male/w_sshotgun.md2
   e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/male/weapon.md2
   0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/male/weapon.pcx
-  59b0e6e7cd5e8b1eb2c3c5208adebce9  ctf/ctf2.ico
   1f6bd3d4c08f7ed8c037b12fcffd2eb5  ctf/pak0.pak
   9e5a0bc728d8e06a65244f8065d68c09  ctf/readme.txt
   de2e8781bca657e62d4ad5e4b763cc7a  ctf/server.cfg
