@@ -7,6 +7,7 @@ compress_deb: false
 # http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/tree/debian/packages/freespace2-data-gog/debian/install
 # http://homepage.ntlworld.com/karajorma/FAQ/hotu.html
 # http://ubuntuforums.org/archive/index.php/t-2064726.html
+# http://www.herdprotect.com/setup_freespace2_2.0.0.8.exe-f98af31596b7f4ef1c624775e6c37a2eb4f8ffd2.aspx
 
 # http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/tree/debian/packages/freespace2-data-volition/debian/files_sha1.txt
 # 4710fc11af7089bfdf01218da69845eac153e2cd *FS2OGGcutscenepack.vp
@@ -20,6 +21,8 @@ packages:
     steam:
       id: '273620'
       path: common/Freespace 2
+    gog:
+      url: freespace_2
     install_to_docdir:
       - freddocs
     install:
@@ -182,12 +185,290 @@ packages:
     - freddocs/zoom.gif
 
 files:
+  setup_freespace2_2.0.0.8.exe:
+    distinctive_name: false
+    unpack:
+      format: innoextract
+    provides:
+    - smarty_fs2.vp
+    - sparky_hi_fs2.vp
+    - stu_fs2.vp
+    - tango1_fs2.vp
+    - tango2_fs2.vp
+    - tango3_fs2.vp
+    - warble_fs2.vp
+    - root_fs2.vp
+    - sparky_fs2.vp
+    - tangoa_fs2.vp
+    - tangob_fs2.vp
+    - COLOSSUS.MVE
+    - INTRO.MVE
+    - MONO1.MVE
+    - BASTION.MVE
+    - ENDPART1.MVE
+    - ENDPRT2A.MVE
+    - ENDPRT2B.MVE
+    - MONO2.MVE
+    - MONO3.MVE
+    - MONO4.MVE
+    - manual.pdf
+    - readme.txt
+    - refcard.pdf
+    - freddocs/3d-compass.gif
+    - freddocs/FRED2-opening.gif
+    - freddocs/SEXP.html
+    - freddocs/add-variable.gif
+    - freddocs/additional-ship-properties.gif
+    - freddocs/adjust-grid-dialog.gif
+    - freddocs/arrival-and-departure-cues.gif
+    - freddocs/asteroid-field-editor.gif
+    - freddocs/axis-constraints.gif
+    - freddocs/background-editor-bitmaps.gif
+    - freddocs/background-editor-misc.gif
+    - freddocs/background-editor-nebula.gif
+    - freddocs/background-editor-suns.gif
+    - freddocs/briefing-editor.gif
+    - freddocs/briefing-icons.gif
+    - freddocs/campaign-diagram.gif
+    - freddocs/campaign-editor-controls.gif
+    - freddocs/cartesian.gif
+    - freddocs/command-briefing-editor.gif
+    - freddocs/concepts.html
+    - freddocs/cruiser-adjustments.gif
+    - freddocs/debriefing-editor.gif
+    - freddocs/distances-example.gif
+    - freddocs/edit-menu.gif
+    - freddocs/editors.html
+    - freddocs/empty-selection-box.gif
+    - freddocs/emptymsg.wav
+    - freddocs/events-editor-events.gif
+    - freddocs/events-editor-messages.gif
+    - freddocs/file-menu.gif
+    - freddocs/force-1-arrival-true.gif
+    - freddocs/force-1-arrival.gif
+    - freddocs/form-disband-wing.gif
+    - freddocs/fred2.css
+    - freddocs/general.html
+    - freddocs/groups-menu.gif
+    - freddocs/help-menu.gif
+    - freddocs/index-no-really.html
+    - freddocs/index.html
+    - freddocs/initial-orders.gif
+    - freddocs/initial-status-editor.gif
+    - freddocs/internet.html
+    - freddocs/junk.html
+    - freddocs/marking.gif
+    - freddocs/menus.html
+    - freddocs/misc-menu.gif
+    - freddocs/mission-objectives-editor.gif
+    - freddocs/mission-specs-editor.gif
+    - freddocs/mouse-drag-mode.gif
+    - freddocs/msgend.wav
+    - freddocs/msgstart.wav
+    - freddocs/nacbkg1.gif
+    - freddocs/nacmenu1.gif
+    - freddocs/nactitle1.jpg
+    - freddocs/not-incomplete.gif
+    - freddocs/nyarlathotep-after.gif
+    - freddocs/nyarlathotep-before.gif
+    - freddocs/objects-editor.gif
+    - freddocs/pelican-departure.gif
+    - freddocs/player-orders.gif
+    - freddocs/pomotep-initial-status.gif
+    - freddocs/pomotep-intercepting.gif
+    - freddocs/primary-goal.gif
+    - freddocs/quickstart.html
+    - freddocs/quickstart-placement.gif
+    - freddocs/reinforcements-editor.gif
+    - freddocs/relentless-boarded.gif
+    - freddocs/relentless-chained.gif
+    - freddocs/relentless-departure.gif
+    - freddocs/relentless-outcomes.gif
+    - freddocs/relentless-pulling-out.gif
+    - freddocs/ring-trick.gif
+    - freddocs/rotate-around-object.gif
+    - freddocs/rotate-locally-example.gif
+    - freddocs/rotate-locally.gif
+    - freddocs/select-list.gif
+    - freddocs/selection-box.gif
+    - freddocs/selection-lock.gif
+    - freddocs/send-message.gif
+    - freddocs/sexp-compressed.gif
+    - freddocs/sexp-example-2.gif
+    - freddocs/sexp-example.gif
+    - freddocs/sexp-help.gif
+    - freddocs/sexp-right-menu.gif
+    - freddocs/shield-system-editor.gif
+    - freddocs/ship-selection-dialog.gif
+    - freddocs/ships-editor-main-area.gif
+    - freddocs/shipyard-completed.fs2
+    - freddocs/shipyard.gif
+    - freddocs/show-distances.gif
+    - freddocs/sleipner-1-done.gif
+    - freddocs/sleipner-2-going-in.gif
+    - freddocs/sleipner-directives.gif
+    - freddocs/special-explosion.gif
+    - freddocs/speed-menu.gif
+    - freddocs/status-bar.gif
+    - freddocs/team-loadout-editor.gif
+    - freddocs/too-close.gif
+    - freddocs/toolbar-form-wing.gif
+    - freddocs/toolbar.html
+    - freddocs/vasudantalk.wav
+    - freddocs/view-menu.gif
+    - freddocs/vssver.scc
+    - freddocs/walkthrough.html
+    - freddocs/waypoint-paths-editor.gif
+    - freddocs/weapons-editor.gif
+    - freddocs/wing-positions.gif
+    - freddocs/wings-editor.gif
+    - freddocs/zoom.gif
+  setup_freespace2_2.0.0.8.exe_smcv:
+    look_for: setup_freespace2_2.0.0.8.exe
+    unpack:
+      format: innoextract
+    provides:
+    - smarty_fs2.vp
+    - sparky_hi_fs2.vp
+    - stu_fs2.vp
+    - tango1_fs2.vp
+    - tango2_fs2.vp
+    - tango3_fs2.vp
+    - warble_fs2.vp
+    - root_fs2.vp
+    - sparky_fs2.vp
+    - tangoa_fs2.vp
+    - tangob_fs2.vp
+    - COLOSSUS.MVE
+    - INTRO.MVE
+    - MONO1.MVE
+    - BASTION.MVE
+    - ENDPART1.MVE
+    - ENDPRT2A.MVE
+    - ENDPRT2B.MVE
+    - MONO2.MVE
+    - MONO3.MVE
+    - MONO4.MVE
+    - manual.pdf
+    - readme.txt
+    - refcard.pdf
+    - freddocs/3d-compass.gif
+    - freddocs/FRED2-opening.gif
+    - freddocs/SEXP.html
+    - freddocs/add-variable.gif
+    - freddocs/additional-ship-properties.gif
+    - freddocs/adjust-grid-dialog.gif
+    - freddocs/arrival-and-departure-cues.gif
+    - freddocs/asteroid-field-editor.gif
+    - freddocs/axis-constraints.gif
+    - freddocs/background-editor-bitmaps.gif
+    - freddocs/background-editor-misc.gif
+    - freddocs/background-editor-nebula.gif
+    - freddocs/background-editor-suns.gif
+    - freddocs/briefing-editor.gif
+    - freddocs/briefing-icons.gif
+    - freddocs/campaign-diagram.gif
+    - freddocs/campaign-editor-controls.gif
+    - freddocs/cartesian.gif
+    - freddocs/command-briefing-editor.gif
+    - freddocs/concepts.html
+    - freddocs/cruiser-adjustments.gif
+    - freddocs/debriefing-editor.gif
+    - freddocs/distances-example.gif
+    - freddocs/edit-menu.gif
+    - freddocs/editors.html
+    - freddocs/empty-selection-box.gif
+    - freddocs/emptymsg.wav
+    - freddocs/events-editor-events.gif
+    - freddocs/events-editor-messages.gif
+    - freddocs/file-menu.gif
+    - freddocs/force-1-arrival-true.gif
+    - freddocs/force-1-arrival.gif
+    - freddocs/form-disband-wing.gif
+    - freddocs/fred2.css
+    - freddocs/general.html
+    - freddocs/groups-menu.gif
+    - freddocs/help-menu.gif
+    - freddocs/index-no-really.html
+    - freddocs/index.html
+    - freddocs/initial-orders.gif
+    - freddocs/initial-status-editor.gif
+    - freddocs/internet.html
+    - freddocs/junk.html
+    - freddocs/marking.gif
+    - freddocs/menus.html
+    - freddocs/misc-menu.gif
+    - freddocs/mission-objectives-editor.gif
+    - freddocs/mission-specs-editor.gif
+    - freddocs/mouse-drag-mode.gif
+    - freddocs/msgend.wav
+    - freddocs/msgstart.wav
+    - freddocs/nacbkg1.gif
+    - freddocs/nacmenu1.gif
+    - freddocs/nactitle1.jpg
+    - freddocs/not-incomplete.gif
+    - freddocs/nyarlathotep-after.gif
+    - freddocs/nyarlathotep-before.gif
+    - freddocs/objects-editor.gif
+    - freddocs/pelican-departure.gif
+    - freddocs/player-orders.gif
+    - freddocs/pomotep-initial-status.gif
+    - freddocs/pomotep-intercepting.gif
+    - freddocs/primary-goal.gif
+    - freddocs/quickstart.html
+    - freddocs/quickstart-placement.gif
+    - freddocs/reinforcements-editor.gif
+    - freddocs/relentless-boarded.gif
+    - freddocs/relentless-chained.gif
+    - freddocs/relentless-departure.gif
+    - freddocs/relentless-outcomes.gif
+    - freddocs/relentless-pulling-out.gif
+    - freddocs/ring-trick.gif
+    - freddocs/rotate-around-object.gif
+    - freddocs/rotate-locally-example.gif
+    - freddocs/rotate-locally.gif
+    - freddocs/select-list.gif
+    - freddocs/selection-box.gif
+    - freddocs/selection-lock.gif
+    - freddocs/send-message.gif
+    - freddocs/sexp-compressed.gif
+    - freddocs/sexp-example-2.gif
+    - freddocs/sexp-example.gif
+    - freddocs/sexp-help.gif
+    - freddocs/sexp-right-menu.gif
+    - freddocs/shield-system-editor.gif
+    - freddocs/ship-selection-dialog.gif
+    - freddocs/ships-editor-main-area.gif
+    - freddocs/shipyard-completed.fs2
+    - freddocs/shipyard.gif
+    - freddocs/show-distances.gif
+    - freddocs/sleipner-1-done.gif
+    - freddocs/sleipner-2-going-in.gif
+    - freddocs/sleipner-directives.gif
+    - freddocs/special-explosion.gif
+    - freddocs/speed-menu.gif
+    - freddocs/status-bar.gif
+    - freddocs/team-loadout-editor.gif
+    - freddocs/too-close.gif
+    - freddocs/toolbar-form-wing.gif
+    - freddocs/toolbar.html
+    - freddocs/vasudantalk.wav
+    - freddocs/view-menu.gif
+    - freddocs/vssver.scc
+    - freddocs/walkthrough.html
+    - freddocs/waypoint-paths-editor.gif
+    - freddocs/weapons-editor.gif
+    - freddocs/wing-positions.gif
+    - freddocs/wings-editor.gif
+    - freddocs/zoom.gif
+
   # these should be shipped in/handled by freespace2 package
   mod.ini:
     download: http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/plain/debian/packages/freespace2-data-gog/debian/mod.ini
     distinctive_name: false
   FS2.bmp:
     download: http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/tree/debian/packages/freespace2-data-gog/debian/FS2.bmp
+
   tango1_fs2.vp:
     distinctive_name: false
   manual.pdf:
@@ -221,6 +502,8 @@ files:
     install_to: usr/share/games/freespace2-open/data/movies
 
 cksums: |
+  _ 1649820744 setup_freespace2_2.0.0.8.exe
+  _ 1649724616 setup_freespace2_2.0.0.8.exe_smcv
   _ 231       mod.ini
   _ 86070     FS2.bmp
   _ 7371568   manual.pdf
@@ -367,6 +650,8 @@ cksums: |
   _ 22847     freddocs/wings-editor.gif
   _ 1143      freddocs/zoom.gif
 md5sums: |
+  4713c27c02d4de4368c2ebde46e46c9f  setup_freespace2_2.0.0.8.exe
+  2870b98722a1e56a360e3a959019e678  setup_freespace2_2.0.0.8.exe_smcv
   ae38dac595cff5f6a45a92dfe55e90f2  mod.ini
   faa4c82b1aa0d3cf5427207e10150711  FS2.bmp
   788f2d89bfdad762318fe2611f745db1  manual.pdf
@@ -513,6 +798,8 @@ md5sums: |
   d42c20b6ffb4782e431899c211ae55c4  tango3_fs2.vp
   d1f3c39d4fe1bbd56b7b06fe66eef4a6  warble_fs2.vp
 sha1sums: |
+  f98af31596b7f4ef1c624775e6c37a2eb4f8ffd2  setup_freespace2_2.0.0.8.exe
+  c14d18e7adb7c49112820e5e57a17bc5ca7efebc  setup_freespace2_2.0.0.8.exe_smcv
   c146fe02bb04033bce8c297b33fb980ed2e98fc6  manual.pdf
   a407edf5c4595c610dbf3610359416168701ca24  readme.txt
   15fb40bf74ad8850a1c317e2ce85c05ca4172257  root_fs2.vp
@@ -657,6 +944,8 @@ sha1sums: |
   cd442b1f220d01cf36cd2fb73932f05d2d6bbcbb  tango3_fs2.vp
   a85ad8967b5fa445ecc9bd8c6d0bccd47738a870  warble_fs2.vp
 sha256sums: |
+  b6df573dfe01978513d34c06984929f6dc7b341c94554e97a646533371e609cb  setup_freespace2_2.0.0.8.exe
+  4ce5de67ccaa9743fdfa58cc7bc418319095bf8cec07ec160efcea96d67025a1  setup_freespace2_2.0.0.8.exe_smcv
   57b1686c07ab2ceca6e6e0e7a815f1d6b65780a2f7093f143484aaa3615a16d9  manual.pdf
   20a65e8ea7dcc61480fcff8508d6b0b26ce89946d36889829ddfb8009124195a  readme.txt
   a796243434945af28f16331421bf472efbc86de86d47c39c1b399bcf7fe2bd6a  root_fs2.vp
