@@ -185,7 +185,39 @@ packages:
     - freddocs/wings-editor.gif
     - freddocs/zoom.gif
 
+  freespace2-video:
+    expansion_for: freespace2-data
+    longname: "FreeSpace 2 - cutscenes in OGG format"
+    install_to: usr/share/games/freespace2-open/data/movies
+    install:
+    - bastion.ogg
+    - colossus.ogg
+    - endpart1.ogg
+    - endprt2a.ogg
+    - endprt2b.ogg
+    - intro.ogg
+    - mono1.ogg
+    - mono2.ogg
+    - mono3.ogg
+    - mono4.ogg
+
 files:
+  fs2_ogg.zip:
+    download: http://www.freespacemods.net/request.php?128
+    unpack:
+      format: zip
+    provides:
+    - bastion.ogg
+    - colossus.ogg
+    - endpart1.ogg
+    - endprt2a.ogg
+    - endprt2b.ogg
+    - intro.ogg
+    - mono1.ogg
+    - mono2.ogg
+    - mono3.ogg
+    - mono4.ogg
+
   setup_freespace2_2.0.0.8.exe:
     distinctive_name: false
     unpack:
@@ -676,6 +708,17 @@ cksums: |
   _ 10465     freddocs/wing-positions.gif
   _ 22847     freddocs/wings-editor.gif
   _ 1143      freddocs/zoom.gif
+  _ 262803688 fs2_ogg.zip
+  _ 17688477  bastion.ogg
+  _ 42419559  colossus.ogg
+  _ 38604423  endpart1.ogg
+  _ 10558108  endprt2a.ogg
+  _ 8375052   endprt2b.ogg
+  _ 73672930  intro.ogg
+  _ 21421535  mono1.ogg
+  _ 12121759  mono2.ogg
+  _ 15653411  mono3.ogg
+  _ 23125109  mono4.ogg
 md5sums: |
   4713c27c02d4de4368c2ebde46e46c9f  setup_freespace2_2.0.0.8.exe
   2870b98722a1e56a360e3a959019e678  setup_freespace2_2.0.0.8.exe_smcv
@@ -827,6 +870,17 @@ md5sums: |
   6fb6e9a36248980540155a9777c51c47  tango2_fs2.vp
   d42c20b6ffb4782e431899c211ae55c4  tango3_fs2.vp
   d1f3c39d4fe1bbd56b7b06fe66eef4a6  warble_fs2.vp
+  02c4cc4344071e7f7dd1aee6572ed461  fs2_ogg.zip
+  4672d8ade8005c9e1a9e7a0e5f785d27  bastion.ogg
+  d68034754040f7c804ac329ca48be27e  colossus.ogg
+  1af32200c8accbcda39475b84b6702b6  endpart1.ogg
+  1ff146fb13fa0af87777e655baee4903  endprt2a.ogg
+  f61894a3e0af768ee4f60f06bc04841e  endprt2b.ogg
+  7e3f28049a943f8eae8935b031a01548  intro.ogg
+  3757f267d6c7a53b2ef16401bb615931  mono1.ogg
+  dda2607dfaba617c5e69dd660fb098e5  mono2.ogg
+  1b087823769b86492f2d38e7dafc5e03  mono3.ogg
+  8c1370a3501ac7884c6a692d771091e8  mono4.ogg
 sha1sums: |
   f98af31596b7f4ef1c624775e6c37a2eb4f8ffd2  setup_freespace2_2.0.0.8.exe
   c14d18e7adb7c49112820e5e57a17bc5ca7efebc  setup_freespace2_2.0.0.8.exe_smcv
@@ -976,6 +1030,17 @@ sha1sums: |
   bb0e6aa0e8f627da0cd3188b1ad21717c605c692  tango2_fs2.vp
   cd442b1f220d01cf36cd2fb73932f05d2d6bbcbb  tango3_fs2.vp
   a85ad8967b5fa445ecc9bd8c6d0bccd47738a870  warble_fs2.vp
+  940cf5bd68fdb12f764bb741278d5ba622be5419  fs2_ogg.zip
+  bb9080798fce9088b35fa8977885459b8702d887  bastion.ogg
+  ca66b33eb19d7745eea76dc434a25c6cd79e2702  colossus.ogg
+  9b23cbcb8927a937d8a72668689c02cfe868ebb3  endpart1.ogg
+  c865ed19c0279f6e07a789c188911bee53bfbf34  endprt2a.ogg
+  1ac0fc01d4f6f8ca27ce8bd813bb40916e097c9e  endprt2b.ogg
+  a468d02ca4e649594d575f9d8acdd5fdcc4da10f  intro.ogg
+  b18d606f50da585d18c2e33bda6584a1636e8395  mono1.ogg
+  d81c47ecefe4d96aae2ec7f50c92724bd4078684  mono2.ogg
+  4e4ee85e293f95c1fc735cc96f349245f6863ebf  mono3.ogg
+  994c2087d6bb6d913e04a17292573a7a0bc298e9  mono4.ogg
 sha256sums: |
   b6df573dfe01978513d34c06984929f6dc7b341c94554e97a646533371e609cb  setup_freespace2_2.0.0.8.exe
   4ce5de67ccaa9743fdfa58cc7bc418319095bf8cec07ec160efcea96d67025a1  setup_freespace2_2.0.0.8.exe_smcv
@@ -1124,5 +1189,16 @@ sha256sums: |
   3570d261dfdfccf914969ba9365d28559bd28ad13a696c139fd2248324853fdb  tango2_fs2.vp
   36b01ab93ef2c290210d7755a29458bb4606763c8fe7561d47ff431703a2e171  tango3_fs2.vp
   d1a8a8d363b5d612df915ca0610a083ebcec2ade74f4b6343920534b181c1bac  warble_fs2.vp
+  c289c08ce85f973ee51364fbec2a6fe29b86c350e050df509fa1dd89ec241152  fs2_ogg.zip
+  c8772134c6f174e4e8d1ecf7b49b6794544af3f2a5e8925d164297ffb58a89c6  bastion.ogg
+  c6ebd86f4d811f5161c7818486577122d1861e8a05e767f8e7860e9d51b66dc9  colossus.ogg
+  9f80c73435115bc88ed1eed0a6db6edceecacb04a55e166330aa32c96eaac2e0  endpart1.ogg
+  43aaae4f0a682976b8941dbaae76d2af4f2453441aabb5e38cc811fda12183d3  endprt2a.ogg
+  f1292d11d2526b6167ef7a2b64dbcaa064256bf3099d6fdafddc34674ff674cb  endprt2b.ogg
+  009ace240633aa338a3c68f015bd42bb93af1b9293e5de7fd01f6a5eba082c5e  intro.ogg
+  e634a35d2631c37bbc29bf1809ce89a7b81d29ad80c8e29ce407078c158e7ece  mono1.ogg
+  a602ad49fd85a3b521b7089cd9c755fd9e9ca100b6e3f1910374913413084754  mono2.ogg
+  a61fea1a523285fd5ec0b759b5b0f2126b33047162825d6272d44f2d3ae7edae  mono3.ogg
+  f918d2ed5e60af9944ff1642a01c7f2b38005322c818a48ddffec81327696463  mono4.ogg
 ...
 
