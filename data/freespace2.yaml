@@ -21,7 +21,7 @@ packages:
       id: '273620'
       path: common/Freespace 2
     install_to_docdir:
-      - data/freddocs
+      - freddocs
     install:
     # The animations for the tech room. Probably the file you'll miss the least
     - smarty_fs2.vp
@@ -71,118 +71,116 @@ packages:
     - manual.pdf
     - readme.txt
     - refcard.pdf
-    - data/freddocs/3d-compass.gif
-    - data/freddocs/FRED2-opening.gif
-    - data/freddocs/SEXP.html
-    - data/freddocs/add-variable.gif
-    - data/freddocs/additional-ship-properties.gif
-    - data/freddocs/adjust-grid-dialog.gif
-    - data/freddocs/arrival-and-departure-cues.gif
-    - data/freddocs/asteroid-field-editor.gif
-    - data/freddocs/axis-constraints.gif
-    - data/freddocs/background-editor-bitmaps.gif
-    - data/freddocs/background-editor-misc.gif
-    - data/freddocs/background-editor-nebula.gif
-    - data/freddocs/background-editor-suns.gif
-    - data/freddocs/briefing-editor.gif
-    - data/freddocs/briefing-icons.gif
-    - data/freddocs/campaign-diagram.gif
-    - data/freddocs/campaign-editor-controls.gif
-    - data/freddocs/cartesian.gif
-    - data/freddocs/command-briefing-editor.gif
-    - data/freddocs/concepts.html
-    - data/freddocs/cruiser-adjustments.gif
-    - data/freddocs/debriefing-editor.gif
-    - data/freddocs/distances-example.gif
-    - data/freddocs/edit-menu.gif
-    - data/freddocs/editors.html
-    - data/freddocs/empty-selection-box.gif
-    - data/freddocs/emptymsg.wav
-    - data/freddocs/events-editor-events.gif
-    - data/freddocs/events-editor-messages.gif
-    - data/freddocs/file-menu.gif
-    - data/freddocs/force-1-arrival-true.gif
-    - data/freddocs/force-1-arrival.gif
-    - data/freddocs/form-disband-wing.gif
-    - data/freddocs/fred2.css
-    - data/freddocs/general.html
-    - data/freddocs/groups-menu.gif
-    - data/freddocs/help-menu.gif
-    - data/freddocs/index-no-really.html
-    - data/freddocs/index.html
-    - data/freddocs/initial-orders.gif
-    - data/freddocs/initial-status-editor.gif
-    - data/freddocs/internet.html
-    - data/freddocs/junk.html
-    - data/freddocs/marking.gif
-    - data/freddocs/menus.html
-    - data/freddocs/misc-menu.gif
-    - data/freddocs/mission-objectives-editor.gif
-    - data/freddocs/mission-specs-editor.gif
-    - data/freddocs/mouse-drag-mode.gif
-    - data/freddocs/msgend.wav
-    - data/freddocs/msgstart.wav
-    - data/freddocs/nacbkg1.gif
-    - data/freddocs/nacmenu1.gif
-    - data/freddocs/nactitle1.jpg
-    - data/freddocs/not-incomplete.gif
-    - data/freddocs/nyarlathotep-after.gif
-    - data/freddocs/nyarlathotep-before.gif
-    - data/freddocs/objects-editor.gif
-    - data/freddocs/pelican-departure.gif
-    - data/freddocs/player-orders.gif
-    - data/freddocs/pomotep-initial-status.gif
-    - data/freddocs/pomotep-intercepting.gif
-    - data/freddocs/primary-goal.gif
-    - data/freddocs/quickstart.html
-    - data/freddocs/quickstart-placement.gif
-    - data/freddocs/reinforcements-editor.gif
-    - data/freddocs/relentless-boarded.gif
-    - data/freddocs/relentless-chained.gif
-    - data/freddocs/relentless-departure.gif
-    - data/freddocs/relentless-outcomes.gif
-    - data/freddocs/relentless-pulling-out.gif
-    - data/freddocs/ring-trick.gif
-    - data/freddocs/rotate-around-object.gif
-    - data/freddocs/rotate-locally-example.gif
-    - data/freddocs/rotate-locally.gif
-    - data/freddocs/select-list.gif
-    - data/freddocs/selection-box.gif
-    - data/freddocs/selection-lock.gif
-    - data/freddocs/send-message.gif
-    - data/freddocs/sexp-compressed.gif
-    - data/freddocs/sexp-example-2.gif
-    - data/freddocs/sexp-example.gif
-    - data/freddocs/sexp-help.gif
-    - data/freddocs/sexp-right-menu.gif
-    - data/freddocs/shield-system-editor.gif
-    - data/freddocs/ship-selection-dialog.gif
-    - data/freddocs/ships-editor-main-area.gif
-    - data/freddocs/shipyard-completed.fs2
-    - data/freddocs/shipyard.gif
-    - data/freddocs/show-distances.gif
-    - data/freddocs/sleipner-1-done.gif
-    - data/freddocs/sleipner-2-going-in.gif
-    - data/freddocs/sleipner-directives.gif
-    - data/freddocs/special-explosion.gif
-    - data/freddocs/speed-menu.gif
-    - data/freddocs/status-bar.gif
-    - data/freddocs/team-loadout-editor.gif
-    - data/freddocs/too-close.gif
-    - data/freddocs/toolbar-form-wing.gif
-    - data/freddocs/toolbar.html
-    - data/freddocs/vasudantalk.wav
-    - data/freddocs/view-menu.gif
-    - data/freddocs/vssver.scc
-    - data/freddocs/walkthrough.html
-    - data/freddocs/waypoint-paths-editor.gif
-    - data/freddocs/weapons-editor.gif
-    - data/freddocs/wing-positions.gif
-    - data/freddocs/wings-editor.gif
-    - data/freddocs/zoom.gif
-    symlinks:
-      usr/share/doc/freespace2-data/index.html:
-        usr/share/doc/freespace2-data/data/freddocs/index.html
+    - freddocs/3d-compass.gif
+    - freddocs/FRED2-opening.gif
+    - freddocs/SEXP.html
+    - freddocs/add-variable.gif
+    - freddocs/additional-ship-properties.gif
+    - freddocs/adjust-grid-dialog.gif
+    - freddocs/arrival-and-departure-cues.gif
+    - freddocs/asteroid-field-editor.gif
+    - freddocs/axis-constraints.gif
+    - freddocs/background-editor-bitmaps.gif
+    - freddocs/background-editor-misc.gif
+    - freddocs/background-editor-nebula.gif
+    - freddocs/background-editor-suns.gif
+    - freddocs/briefing-editor.gif
+    - freddocs/briefing-icons.gif
+    - freddocs/campaign-diagram.gif
+    - freddocs/campaign-editor-controls.gif
+    - freddocs/cartesian.gif
+    - freddocs/command-briefing-editor.gif
+    - freddocs/concepts.html
+    - freddocs/cruiser-adjustments.gif
+    - freddocs/debriefing-editor.gif
+    - freddocs/distances-example.gif
+    - freddocs/edit-menu.gif
+    - freddocs/editors.html
+    - freddocs/empty-selection-box.gif
+    - freddocs/emptymsg.wav
+    - freddocs/events-editor-events.gif
+    - freddocs/events-editor-messages.gif
+    - freddocs/file-menu.gif
+    - freddocs/force-1-arrival-true.gif
+    - freddocs/force-1-arrival.gif
+    - freddocs/form-disband-wing.gif
+    - freddocs/fred2.css
+    - freddocs/general.html
+    - freddocs/groups-menu.gif
+    - freddocs/help-menu.gif
+    - freddocs/index-no-really.html
+    - freddocs/index.html
+    - freddocs/initial-orders.gif
+    - freddocs/initial-status-editor.gif
+    - freddocs/internet.html
+    - freddocs/junk.html
+    - freddocs/marking.gif
+    - freddocs/menus.html
+    - freddocs/misc-menu.gif
+    - freddocs/mission-objectives-editor.gif
+    - freddocs/mission-specs-editor.gif
+    - freddocs/mouse-drag-mode.gif
+    - freddocs/msgend.wav
+    - freddocs/msgstart.wav
+    - freddocs/nacbkg1.gif
+    - freddocs/nacmenu1.gif
+    - freddocs/nactitle1.jpg
+    - freddocs/not-incomplete.gif
+    - freddocs/nyarlathotep-after.gif
+    - freddocs/nyarlathotep-before.gif
+    - freddocs/objects-editor.gif
+    - freddocs/pelican-departure.gif
+    - freddocs/player-orders.gif
+    - freddocs/pomotep-initial-status.gif
+    - freddocs/pomotep-intercepting.gif
+    - freddocs/primary-goal.gif
+    - freddocs/quickstart.html
+    - freddocs/quickstart-placement.gif
+    - freddocs/reinforcements-editor.gif
+    - freddocs/relentless-boarded.gif
+    - freddocs/relentless-chained.gif
+    - freddocs/relentless-departure.gif
+    - freddocs/relentless-outcomes.gif
+    - freddocs/relentless-pulling-out.gif
+    - freddocs/ring-trick.gif
+    - freddocs/rotate-around-object.gif
+    - freddocs/rotate-locally-example.gif
+    - freddocs/rotate-locally.gif
+    - freddocs/select-list.gif
+    - freddocs/selection-box.gif
+    - freddocs/selection-lock.gif
+    - freddocs/send-message.gif
+    - freddocs/sexp-compressed.gif
+    - freddocs/sexp-example-2.gif
+    - freddocs/sexp-example.gif
+    - freddocs/sexp-help.gif
+    - freddocs/sexp-right-menu.gif
+    - freddocs/shield-system-editor.gif
+    - freddocs/ship-selection-dialog.gif
+    - freddocs/ships-editor-main-area.gif
+    - freddocs/shipyard-completed.fs2
+    - freddocs/shipyard.gif
+    - freddocs/show-distances.gif
+    - freddocs/sleipner-1-done.gif
+    - freddocs/sleipner-2-going-in.gif
+    - freddocs/sleipner-directives.gif
+    - freddocs/special-explosion.gif
+    - freddocs/speed-menu.gif
+    - freddocs/status-bar.gif
+    - freddocs/team-loadout-editor.gif
+    - freddocs/too-close.gif
+    - freddocs/toolbar-form-wing.gif
+    - freddocs/toolbar.html
+    - freddocs/vasudantalk.wav
+    - freddocs/view-menu.gif
+    - freddocs/vssver.scc
+    - freddocs/walkthrough.html
+    - freddocs/waypoint-paths-editor.gif
+    - freddocs/weapons-editor.gif
+    - freddocs/wing-positions.gif
+    - freddocs/wings-editor.gif
+    - freddocs/zoom.gif
+
 files:
   # these should be shipped in/handled by freespace2 package
   mod.ini:
@@ -259,230 +257,230 @@ cksums: |
   _ 1929      data/players/hud_1.hcf
   _ 1951      data/players/hud_2.hcf
   _ 1956      data/players/hud_3.hcf
-  _ 1235      data/freddocs/3d-compass.gif
-  _ 13144     data/freddocs/FRED2-opening.gif
-  _ 21729     data/freddocs/SEXP.html
-  _ 6222      data/freddocs/add-variable.gif
-  _ 7867      data/freddocs/additional-ship-properties.gif
-  _ 5072      data/freddocs/adjust-grid-dialog.gif
-  _ 9811      data/freddocs/arrival-and-departure-cues.gif
-  _ 24050     data/freddocs/asteroid-field-editor.gif
-  _ 1479      data/freddocs/axis-constraints.gif
-  _ 4840      data/freddocs/background-editor-bitmaps.gif
-  _ 2877      data/freddocs/background-editor-misc.gif
-  _ 5341      data/freddocs/background-editor-nebula.gif
-  _ 4158      data/freddocs/background-editor-suns.gif
-  _ 13815     data/freddocs/briefing-editor.gif
-  _ 16221     data/freddocs/briefing-icons.gif
-  _ 3299      data/freddocs/campaign-diagram.gif
-  _ 7546      data/freddocs/campaign-editor-controls.gif
-  _ 12233     data/freddocs/cartesian.gif
-  _ 8796      data/freddocs/command-briefing-editor.gif
-  _ 10880     data/freddocs/concepts.html
-  _ 3049      data/freddocs/cruiser-adjustments.gif
-  _ 21872     data/freddocs/debriefing-editor.gif
-  _ 10465     data/freddocs/distances-example.gif
-  _ 2272      data/freddocs/edit-menu.gif
-  _ 56153     data/freddocs/editors.html
-  _ 1103      data/freddocs/empty-selection-box.gif
-  _ 14754     data/freddocs/emptymsg.wav
-  _ 8897      data/freddocs/events-editor-events.gif
-  _ 5210      data/freddocs/events-editor-messages.gif
-  _ 2928      data/freddocs/file-menu.gif
-  _ 1451      data/freddocs/force-1-arrival-true.gif
-  _ 1820      data/freddocs/force-1-arrival.gif
-  _ 1137      data/freddocs/form-disband-wing.gif
-  _ 793       data/freddocs/fred2.css
-  _ 3104      data/freddocs/general.html
-  _ 2983      data/freddocs/groups-menu.gif
-  _ 1738      data/freddocs/help-menu.gif
-  _ 20254     data/freddocs/index-no-really.html
-  _ 4526      data/freddocs/index.html
-  _ 24181     data/freddocs/initial-orders.gif
-  _ 9343      data/freddocs/initial-status-editor.gif
-  _ 3499      data/freddocs/internet.html
-  _ 251       data/freddocs/junk.html
-  _ 9974      data/freddocs/marking.gif
-  _ 14172     data/freddocs/menus.html
-  _ 3953      data/freddocs/misc-menu.gif
-  _ 32600     data/freddocs/mission-objectives-editor.gif
-  _ 34600     data/freddocs/mission-specs-editor.gif
-  _ 1268      data/freddocs/mouse-drag-mode.gif
-  _ 2522      data/freddocs/msgend.wav
-  _ 2354      data/freddocs/msgstart.wav
-  _ 78        data/freddocs/nacbkg1.gif
-  _ 2315      data/freddocs/nacmenu1.gif
-  _ 29210     data/freddocs/nactitle1.jpg
-  _ 1999      data/freddocs/not-incomplete.gif
-  _ 1835      data/freddocs/nyarlathotep-after.gif
-  _ 1552      data/freddocs/nyarlathotep-before.gif
-  _ 6917      data/freddocs/objects-editor.gif
-  _ 1611      data/freddocs/pelican-departure.gif
-  _ 5934      data/freddocs/player-orders.gif
-  _ 2033      data/freddocs/pomotep-initial-status.gif
-  _ 2905      data/freddocs/pomotep-intercepting.gif
-  _ 11921     data/freddocs/primary-goal.gif
-  _ 6820      data/freddocs/quickstart-placement.gif
-  _ 4662      data/freddocs/quickstart.html
-  _ 5589      data/freddocs/reinforcements-editor.gif
-  _ 3598      data/freddocs/relentless-boarded.gif
-  _ 3456      data/freddocs/relentless-chained.gif
-  _ 1652      data/freddocs/relentless-departure.gif
-  _ 4332      data/freddocs/relentless-outcomes.gif
-  _ 3155      data/freddocs/relentless-pulling-out.gif
-  _ 30238     data/freddocs/ring-trick.gif
-  _ 1002      data/freddocs/rotate-around-object.gif
-  _ 29122     data/freddocs/rotate-locally-example.gif
-  _ 965       data/freddocs/rotate-locally.gif
-  _ 959       data/freddocs/select-list.gif
-  _ 1280      data/freddocs/selection-box.gif
-  _ 957       data/freddocs/selection-lock.gif
-  _ 2218      data/freddocs/send-message.gif
-  _ 1904      data/freddocs/sexp-compressed.gif
-  _ 2176      data/freddocs/sexp-example-2.gif
-  _ 1511      data/freddocs/sexp-example.gif
-  _ 3909      data/freddocs/sexp-help.gif
-  _ 4571      data/freddocs/sexp-right-menu.gif
-  _ 6164      data/freddocs/shield-system-editor.gif
-  _ 9815      data/freddocs/ship-selection-dialog.gif
-  _ 4456      data/freddocs/ships-editor-main-area.gif
-  _ 56313     data/freddocs/shipyard-completed.fs2
-  _ 11037     data/freddocs/shipyard.gif
-  _ 963       data/freddocs/show-distances.gif
-  _ 4276      data/freddocs/sleipner-1-done.gif
-  _ 3448      data/freddocs/sleipner-2-going-in.gif
-  _ 4618      data/freddocs/sleipner-directives.gif
-  _ 6360      data/freddocs/special-explosion.gif
-  _ 1485      data/freddocs/speed-menu.gif
-  _ 1630      data/freddocs/status-bar.gif
-  _ 12311     data/freddocs/team-loadout-editor.gif
-  _ 2434      data/freddocs/too-close.gif
-  _ 990       data/freddocs/toolbar-form-wing.gif
-  _ 17880     data/freddocs/toolbar.html
-  _ 199478    data/freddocs/vasudantalk.wav
-  _ 7285      data/freddocs/view-menu.gif
-  _ 1760      data/freddocs/vssver.scc
-  _ 60344     data/freddocs/walkthrough.html
-  _ 3709      data/freddocs/waypoint-paths-editor.gif
-  _ 14239     data/freddocs/weapons-editor.gif
-  _ 10465     data/freddocs/wing-positions.gif
-  _ 22847     data/freddocs/wings-editor.gif
-  _ 1143      data/freddocs/zoom.gif
+  _ 1235      freddocs/3d-compass.gif
+  _ 13144     freddocs/FRED2-opening.gif
+  _ 21729     freddocs/SEXP.html
+  _ 6222      freddocs/add-variable.gif
+  _ 7867      freddocs/additional-ship-properties.gif
+  _ 5072      freddocs/adjust-grid-dialog.gif
+  _ 9811      freddocs/arrival-and-departure-cues.gif
+  _ 24050     freddocs/asteroid-field-editor.gif
+  _ 1479      freddocs/axis-constraints.gif
+  _ 4840      freddocs/background-editor-bitmaps.gif
+  _ 2877      freddocs/background-editor-misc.gif
+  _ 5341      freddocs/background-editor-nebula.gif
+  _ 4158      freddocs/background-editor-suns.gif
+  _ 13815     freddocs/briefing-editor.gif
+  _ 16221     freddocs/briefing-icons.gif
+  _ 3299      freddocs/campaign-diagram.gif
+  _ 7546      freddocs/campaign-editor-controls.gif
+  _ 12233     freddocs/cartesian.gif
+  _ 8796      freddocs/command-briefing-editor.gif
+  _ 10880     freddocs/concepts.html
+  _ 3049      freddocs/cruiser-adjustments.gif
+  _ 21872     freddocs/debriefing-editor.gif
+  _ 10465     freddocs/distances-example.gif
+  _ 2272      freddocs/edit-menu.gif
+  _ 56153     freddocs/editors.html
+  _ 1103      freddocs/empty-selection-box.gif
+  _ 14754     freddocs/emptymsg.wav
+  _ 8897      freddocs/events-editor-events.gif
+  _ 5210      freddocs/events-editor-messages.gif
+  _ 2928      freddocs/file-menu.gif
+  _ 1451      freddocs/force-1-arrival-true.gif
+  _ 1820      freddocs/force-1-arrival.gif
+  _ 1137      freddocs/form-disband-wing.gif
+  _ 793       freddocs/fred2.css
+  _ 3104      freddocs/general.html
+  _ 2983      freddocs/groups-menu.gif
+  _ 1738      freddocs/help-menu.gif
+  _ 20254     freddocs/index-no-really.html
+  _ 4526      freddocs/index.html
+  _ 24181     freddocs/initial-orders.gif
+  _ 9343      freddocs/initial-status-editor.gif
+  _ 3499      freddocs/internet.html
+  _ 251       freddocs/junk.html
+  _ 9974      freddocs/marking.gif
+  _ 14172     freddocs/menus.html
+  _ 3953      freddocs/misc-menu.gif
+  _ 32600     freddocs/mission-objectives-editor.gif
+  _ 34600     freddocs/mission-specs-editor.gif
+  _ 1268      freddocs/mouse-drag-mode.gif
+  _ 2522      freddocs/msgend.wav
+  _ 2354      freddocs/msgstart.wav
+  _ 78        freddocs/nacbkg1.gif
+  _ 2315      freddocs/nacmenu1.gif
+  _ 29210     freddocs/nactitle1.jpg
+  _ 1999      freddocs/not-incomplete.gif
+  _ 1835      freddocs/nyarlathotep-after.gif
+  _ 1552      freddocs/nyarlathotep-before.gif
+  _ 6917      freddocs/objects-editor.gif
+  _ 1611      freddocs/pelican-departure.gif
+  _ 5934      freddocs/player-orders.gif
+  _ 2033      freddocs/pomotep-initial-status.gif
+  _ 2905      freddocs/pomotep-intercepting.gif
+  _ 11921     freddocs/primary-goal.gif
+  _ 6820      freddocs/quickstart-placement.gif
+  _ 4662      freddocs/quickstart.html
+  _ 5589      freddocs/reinforcements-editor.gif
+  _ 3598      freddocs/relentless-boarded.gif
+  _ 3456      freddocs/relentless-chained.gif
+  _ 1652      freddocs/relentless-departure.gif
+  _ 4332      freddocs/relentless-outcomes.gif
+  _ 3155      freddocs/relentless-pulling-out.gif
+  _ 30238     freddocs/ring-trick.gif
+  _ 1002      freddocs/rotate-around-object.gif
+  _ 29122     freddocs/rotate-locally-example.gif
+  _ 965       freddocs/rotate-locally.gif
+  _ 959       freddocs/select-list.gif
+  _ 1280      freddocs/selection-box.gif
+  _ 957       freddocs/selection-lock.gif
+  _ 2218      freddocs/send-message.gif
+  _ 1904      freddocs/sexp-compressed.gif
+  _ 2176      freddocs/sexp-example-2.gif
+  _ 1511      freddocs/sexp-example.gif
+  _ 3909      freddocs/sexp-help.gif
+  _ 4571      freddocs/sexp-right-menu.gif
+  _ 6164      freddocs/shield-system-editor.gif
+  _ 9815      freddocs/ship-selection-dialog.gif
+  _ 4456      freddocs/ships-editor-main-area.gif
+  _ 56313     freddocs/shipyard-completed.fs2
+  _ 11037     freddocs/shipyard.gif
+  _ 963       freddocs/show-distances.gif
+  _ 4276      freddocs/sleipner-1-done.gif
+  _ 3448      freddocs/sleipner-2-going-in.gif
+  _ 4618      freddocs/sleipner-directives.gif
+  _ 6360      freddocs/special-explosion.gif
+  _ 1485      freddocs/speed-menu.gif
+  _ 1630      freddocs/status-bar.gif
+  _ 12311     freddocs/team-loadout-editor.gif
+  _ 2434      freddocs/too-close.gif
+  _ 990       freddocs/toolbar-form-wing.gif
+  _ 17880     freddocs/toolbar.html
+  _ 199478    freddocs/vasudantalk.wav
+  _ 7285      freddocs/view-menu.gif
+  _ 1760      freddocs/vssver.scc
+  _ 60344     freddocs/walkthrough.html
+  _ 3709      freddocs/waypoint-paths-editor.gif
+  _ 14239     freddocs/weapons-editor.gif
+  _ 10465     freddocs/wing-positions.gif
+  _ 22847     freddocs/wings-editor.gif
+  _ 1143      freddocs/zoom.gif
 md5sums: |
   ae38dac595cff5f6a45a92dfe55e90f2  mod.ini
   faa4c82b1aa0d3cf5427207e10150711  FS2.bmp
   788f2d89bfdad762318fe2611f745db1  manual.pdf
   254d1a6fcfb47faee8e106adfac18784  readme.txt
   0d9fd69acfe8b29d616377b057d2fc04  root_fs2.vp
-  1a6c4197ccf2b3a434b51c31e1a2dcbd  data/freddocs/3d-compass.gif
-  6326906e749e407a18f7cd482404dcb7  data/freddocs/FRED2-opening.gif
-  5bcc7861386ed489c7eeaa3c14f6ca13  data/freddocs/SEXP.html
-  709bbd1757d35c0033789e2e5f5df2ad  data/freddocs/add-variable.gif
-  4f7505dfb7630e4eb8212fafbb879396  data/freddocs/additional-ship-properties.gif
-  a63a89cb80c67367a80d4e4c0de22b8b  data/freddocs/adjust-grid-dialog.gif
-  14ff377960ca0bc54e9724420ff2dac5  data/freddocs/arrival-and-departure-cues.gif
-  0a26f9800d2dcd96a0caab5529724467  data/freddocs/asteroid-field-editor.gif
-  5e04b2c17957f168832cb92dca383770  data/freddocs/axis-constraints.gif
-  2aac297371e0794116ea733069967d3b  data/freddocs/background-editor-bitmaps.gif
-  10fb49129189fc6afafd6c6dcedbb0d5  data/freddocs/background-editor-misc.gif
-  ae2b2f01a70b5b639277855c0136e0e5  data/freddocs/background-editor-nebula.gif
-  83478707789a03a619356611b13a0189  data/freddocs/background-editor-suns.gif
-  fc1f3e0eea8838976aa0e3c2b9db1b92  data/freddocs/briefing-editor.gif
-  6ee3cef9962897da910d75336e32db2b  data/freddocs/briefing-icons.gif
-  0d04ee23ade8fd0c4aa286e103a04ce8  data/freddocs/campaign-diagram.gif
-  852f6431262010c678a16c41b23adfd6  data/freddocs/campaign-editor-controls.gif
-  2d83352ae0d1e56d065010a8e8e8e204  data/freddocs/cartesian.gif
-  7542cd9d6fef6d48843a5cc6db8c462a  data/freddocs/command-briefing-editor.gif
-  9e581065e639a687a6748ba02899f997  data/freddocs/concepts.html
-  ba49ae2e4483085f2423fdb4f3ec8f6e  data/freddocs/cruiser-adjustments.gif
-  a9e7de22377434f195b4f64676c37e07  data/freddocs/debriefing-editor.gif
-  2c9ac9c935ffbaf2a710dec7eff4fec5  data/freddocs/distances-example.gif
-  eb0cc6a262641c0ad6c977e8a7a3c84b  data/freddocs/edit-menu.gif
-  9343147453603938f2bb0efd293ea4af  data/freddocs/editors.html
-  cca2cf7466f7e1be9bace9e051c2b118  data/freddocs/empty-selection-box.gif
-  86a33a9498e2248f0132609cb512fcf5  data/freddocs/emptymsg.wav
-  cdc43aad25610ea388924c56062d9763  data/freddocs/events-editor-events.gif
-  7efd90851034eb26c169f98430415bf1  data/freddocs/events-editor-messages.gif
-  06be60405fef876b0266a286d917eb4a  data/freddocs/file-menu.gif
-  4b1a78de33d87bc9c80aab733c863388  data/freddocs/force-1-arrival-true.gif
-  73f486be0e769c139f4235d845091ad2  data/freddocs/force-1-arrival.gif
-  2f0c290c276d628d504157ce05e2e0b6  data/freddocs/form-disband-wing.gif
-  975e02b54c5f9764c5541a75475b2c34  data/freddocs/fred2.css
-  c2696ee32d9d22c37e45bea096f4cf9d  data/freddocs/general.html
-  7429592c076478e33f26f3f90c25aec9  data/freddocs/groups-menu.gif
-  dda3b28be49943146e5c7064dbd0307f  data/freddocs/help-menu.gif
-  ec730f694d5fd43b94bd1f834dc83f32  data/freddocs/index-no-really.html
-  cd47f421df8edea21047eb48d84ca5e0  data/freddocs/index.html
-  3a85fc6386fd9e7bb79916f18e30f454  data/freddocs/initial-orders.gif
-  ddfbbdc75e0ce886426519a8cb0cf580  data/freddocs/initial-status-editor.gif
-  4c942137ddb552ac8c45230704e85271  data/freddocs/internet.html
-  b2a8d6ebcdc139cb1f8a2f2e4f67f478  data/freddocs/junk.html
-  893ea9d9b6d1461c687b97332fcdffb1  data/freddocs/marking.gif
-  3adf3f663fd6c0c63e90e5bb8d04ab4a  data/freddocs/menus.html
-  142e067f3a9da2fd450eb942632eaad8  data/freddocs/misc-menu.gif
-  54707304ba44782b9268405fbf274097  data/freddocs/mission-objectives-editor.gif
-  c7eb9c4690e2dd22b247b50ccc4cc7c8  data/freddocs/mission-specs-editor.gif
-  d7ec258b8937c156157f66660c0517e7  data/freddocs/mouse-drag-mode.gif
-  5cb49ebf1dd697a9d2d532b03bfbfa6b  data/freddocs/msgend.wav
-  b8b22f46a70d06e218231b16cd8d2444  data/freddocs/msgstart.wav
-  ac45be2d536ff70ae0f207473192739e  data/freddocs/nacbkg1.gif
-  819ab4dfc4fa4d301145809ef2860949  data/freddocs/nacmenu1.gif
-  e44417a6c59224ed0d51c6286ae50263  data/freddocs/nactitle1.jpg
-  a6b58116553486b399653e2af6bc117f  data/freddocs/not-incomplete.gif
-  ab2b944411b5d9ef240554acab291417  data/freddocs/nyarlathotep-after.gif
-  ac46b09a299c957ae82e85d2fcbaa4c7  data/freddocs/nyarlathotep-before.gif
-  077b2cdbaddcf05691e520be85733fd8  data/freddocs/objects-editor.gif
-  4af547e262fbb5428054321ef96bf6e4  data/freddocs/pelican-departure.gif
-  9644026ef266f1238111c0295db925f2  data/freddocs/player-orders.gif
-  f0b69d14ca6d86110df7001d35008275  data/freddocs/pomotep-initial-status.gif
-  5e5298ed55db0ab9058a3d322fe621c2  data/freddocs/pomotep-intercepting.gif
-  98911a3d98c2ea2015fc1510e86b31cd  data/freddocs/primary-goal.gif
-  60f0a00c10b8b533c3abf0386aa1dab4  data/freddocs/quickstart-placement.gif
-  c2972bed2652218b0c08d90cb2fcedb8  data/freddocs/quickstart.html
-  13eece436a03888974edc16064198a94  data/freddocs/reinforcements-editor.gif
-  6cbccf66f15f61096dbfde4f49733131  data/freddocs/relentless-boarded.gif
-  e99bc5613cf2c2d5ae625ccab366ed04  data/freddocs/relentless-chained.gif
-  07244c64278f63a8523650224ae6d708  data/freddocs/relentless-departure.gif
-  8215ea2a390dbe167df16e20c0cc1c59  data/freddocs/relentless-outcomes.gif
-  f5b5805f01a90f74c3f5efbc0d121043  data/freddocs/relentless-pulling-out.gif
-  5b6747d0924166e83b6b5e64b4418351  data/freddocs/ring-trick.gif
-  a61a4a2b0ea196cc64229b1ca88b80b5  data/freddocs/rotate-around-object.gif
-  28affe5d7be79cbf104f0186143cf7ae  data/freddocs/rotate-locally-example.gif
-  b8e5bd5dc049fc90cb01984b5ea83002  data/freddocs/rotate-locally.gif
-  6b6d6df45a0f9a3a31b280c577c1f364  data/freddocs/select-list.gif
-  5502f6c03084ad2f8d3dbe1b4ff73569  data/freddocs/selection-box.gif
-  708a22ebcd208f019eb419df8b2d693e  data/freddocs/selection-lock.gif
-  27479108e9c0c717f74b43e2c0cdd230  data/freddocs/send-message.gif
-  4b852bb0f1b50cf2c2d2a159647e2e33  data/freddocs/sexp-compressed.gif
-  247a5d22280183d48402c2f471ebe2d2  data/freddocs/sexp-example-2.gif
-  3faa1e7e5ae227716c6f46b7206ffba5  data/freddocs/sexp-example.gif
-  4de83f93c67eeeec3415bb96f0a96d37  data/freddocs/sexp-help.gif
-  d5b8677acfe2f6e7f103ef66dd0e30f6  data/freddocs/sexp-right-menu.gif
-  a8d4197e04d8f7b04f3c1093cf176d6b  data/freddocs/shield-system-editor.gif
-  c5a77b230d1dbd502006e0c4301a92cf  data/freddocs/ship-selection-dialog.gif
-  e8e8e717fb5c5d91227f78470d03ff46  data/freddocs/ships-editor-main-area.gif
-  6855ebbd96e620cb836e0874baa5df71  data/freddocs/shipyard-completed.fs2
-  ef4a62e30e2e6fb879309a05d83f5650  data/freddocs/shipyard.gif
-  a0aa7ace759128b888993dcccaf5c505  data/freddocs/show-distances.gif
-  0e59b9265e7b4390ba77699f8daab466  data/freddocs/sleipner-1-done.gif
-  c2f2fd7fdb070a6d1de5eac8d727f6b2  data/freddocs/sleipner-2-going-in.gif
-  3cd5998b2223cdc6288d7a10a75dc02b  data/freddocs/sleipner-directives.gif
-  b51b8702c3cc58421ea89727c687385c  data/freddocs/special-explosion.gif
-  66d7be491a4e4adaacfd99a34df60868  data/freddocs/speed-menu.gif
-  d7bc091795a6d31a4e88237ec9162633  data/freddocs/status-bar.gif
-  8edbfdc7fd6cc7b29c8639991accbaa5  data/freddocs/team-loadout-editor.gif
-  d58a5f41f658cfa1528bb8b88efe8ac1  data/freddocs/too-close.gif
-  baae38c913f8ff6ca0c970ec2ee8aea0  data/freddocs/toolbar-form-wing.gif
-  5f82d545a663e5bc9db3707fb896b978  data/freddocs/toolbar.html
-  2a3fa6a0ff61b8fa5edf3c81dddd3f9f  data/freddocs/vasudantalk.wav
-  b3bc0eee44dcdb72f710c4d7cab6ea11  data/freddocs/view-menu.gif
-  f3a8cf7b8d45d1e67a8dbbbd42cdea26  data/freddocs/vssver.scc
-  4548af19e253bd281c3f03d79e02e45f  data/freddocs/walkthrough.html
-  bb96fade32ff37c41eb5936bd1ab5a4e  data/freddocs/waypoint-paths-editor.gif
-  178a87586f40f5ac508e954ea49d7ebe  data/freddocs/weapons-editor.gif
-  609b27b52dc1b6bb949ac84840814b25  data/freddocs/wing-positions.gif
-  d2a39de47049b00fdfdeaf7c47cf628b  data/freddocs/wings-editor.gif
-  0f874cbdc6a2859520232d5d981327fb  data/freddocs/zoom.gif
+  1a6c4197ccf2b3a434b51c31e1a2dcbd  freddocs/3d-compass.gif
+  6326906e749e407a18f7cd482404dcb7  freddocs/FRED2-opening.gif
+  5bcc7861386ed489c7eeaa3c14f6ca13  freddocs/SEXP.html
+  709bbd1757d35c0033789e2e5f5df2ad  freddocs/add-variable.gif
+  4f7505dfb7630e4eb8212fafbb879396  freddocs/additional-ship-properties.gif
+  a63a89cb80c67367a80d4e4c0de22b8b  freddocs/adjust-grid-dialog.gif
+  14ff377960ca0bc54e9724420ff2dac5  freddocs/arrival-and-departure-cues.gif
+  0a26f9800d2dcd96a0caab5529724467  freddocs/asteroid-field-editor.gif
+  5e04b2c17957f168832cb92dca383770  freddocs/axis-constraints.gif
+  2aac297371e0794116ea733069967d3b  freddocs/background-editor-bitmaps.gif
+  10fb49129189fc6afafd6c6dcedbb0d5  freddocs/background-editor-misc.gif
+  ae2b2f01a70b5b639277855c0136e0e5  freddocs/background-editor-nebula.gif
+  83478707789a03a619356611b13a0189  freddocs/background-editor-suns.gif
+  fc1f3e0eea8838976aa0e3c2b9db1b92  freddocs/briefing-editor.gif
+  6ee3cef9962897da910d75336e32db2b  freddocs/briefing-icons.gif
+  0d04ee23ade8fd0c4aa286e103a04ce8  freddocs/campaign-diagram.gif
+  852f6431262010c678a16c41b23adfd6  freddocs/campaign-editor-controls.gif
+  2d83352ae0d1e56d065010a8e8e8e204  freddocs/cartesian.gif
+  7542cd9d6fef6d48843a5cc6db8c462a  freddocs/command-briefing-editor.gif
+  9e581065e639a687a6748ba02899f997  freddocs/concepts.html
+  ba49ae2e4483085f2423fdb4f3ec8f6e  freddocs/cruiser-adjustments.gif
+  a9e7de22377434f195b4f64676c37e07  freddocs/debriefing-editor.gif
+  2c9ac9c935ffbaf2a710dec7eff4fec5  freddocs/distances-example.gif
+  eb0cc6a262641c0ad6c977e8a7a3c84b  freddocs/edit-menu.gif
+  9343147453603938f2bb0efd293ea4af  freddocs/editors.html
+  cca2cf7466f7e1be9bace9e051c2b118  freddocs/empty-selection-box.gif
+  86a33a9498e2248f0132609cb512fcf5  freddocs/emptymsg.wav
+  cdc43aad25610ea388924c56062d9763  freddocs/events-editor-events.gif
+  7efd90851034eb26c169f98430415bf1  freddocs/events-editor-messages.gif
+  06be60405fef876b0266a286d917eb4a  freddocs/file-menu.gif
+  4b1a78de33d87bc9c80aab733c863388  freddocs/force-1-arrival-true.gif
+  73f486be0e769c139f4235d845091ad2  freddocs/force-1-arrival.gif
+  2f0c290c276d628d504157ce05e2e0b6  freddocs/form-disband-wing.gif
+  975e02b54c5f9764c5541a75475b2c34  freddocs/fred2.css
+  c2696ee32d9d22c37e45bea096f4cf9d  freddocs/general.html
+  7429592c076478e33f26f3f90c25aec9  freddocs/groups-menu.gif
+  dda3b28be49943146e5c7064dbd0307f  freddocs/help-menu.gif
+  ec730f694d5fd43b94bd1f834dc83f32  freddocs/index-no-really.html
+  cd47f421df8edea21047eb48d84ca5e0  freddocs/index.html
+  3a85fc6386fd9e7bb79916f18e30f454  freddocs/initial-orders.gif
+  ddfbbdc75e0ce886426519a8cb0cf580  freddocs/initial-status-editor.gif
+  4c942137ddb552ac8c45230704e85271  freddocs/internet.html
+  b2a8d6ebcdc139cb1f8a2f2e4f67f478  freddocs/junk.html
+  893ea9d9b6d1461c687b97332fcdffb1  freddocs/marking.gif
+  3adf3f663fd6c0c63e90e5bb8d04ab4a  freddocs/menus.html
+  142e067f3a9da2fd450eb942632eaad8  freddocs/misc-menu.gif
+  54707304ba44782b9268405fbf274097  freddocs/mission-objectives-editor.gif
+  c7eb9c4690e2dd22b247b50ccc4cc7c8  freddocs/mission-specs-editor.gif
+  d7ec258b8937c156157f66660c0517e7  freddocs/mouse-drag-mode.gif
+  5cb49ebf1dd697a9d2d532b03bfbfa6b  freddocs/msgend.wav
+  b8b22f46a70d06e218231b16cd8d2444  freddocs/msgstart.wav
+  ac45be2d536ff70ae0f207473192739e  freddocs/nacbkg1.gif
+  819ab4dfc4fa4d301145809ef2860949  freddocs/nacmenu1.gif
+  e44417a6c59224ed0d51c6286ae50263  freddocs/nactitle1.jpg
+  a6b58116553486b399653e2af6bc117f  freddocs/not-incomplete.gif
+  ab2b944411b5d9ef240554acab291417  freddocs/nyarlathotep-after.gif
+  ac46b09a299c957ae82e85d2fcbaa4c7  freddocs/nyarlathotep-before.gif
+  077b2cdbaddcf05691e520be85733fd8  freddocs/objects-editor.gif
+  4af547e262fbb5428054321ef96bf6e4  freddocs/pelican-departure.gif
+  9644026ef266f1238111c0295db925f2  freddocs/player-orders.gif
+  f0b69d14ca6d86110df7001d35008275  freddocs/pomotep-initial-status.gif
+  5e5298ed55db0ab9058a3d322fe621c2  freddocs/pomotep-intercepting.gif
+  98911a3d98c2ea2015fc1510e86b31cd  freddocs/primary-goal.gif
+  60f0a00c10b8b533c3abf0386aa1dab4  freddocs/quickstart-placement.gif
+  c2972bed2652218b0c08d90cb2fcedb8  freddocs/quickstart.html
+  13eece436a03888974edc16064198a94  freddocs/reinforcements-editor.gif
+  6cbccf66f15f61096dbfde4f49733131  freddocs/relentless-boarded.gif
+  e99bc5613cf2c2d5ae625ccab366ed04  freddocs/relentless-chained.gif
+  07244c64278f63a8523650224ae6d708  freddocs/relentless-departure.gif
+  8215ea2a390dbe167df16e20c0cc1c59  freddocs/relentless-outcomes.gif
+  f5b5805f01a90f74c3f5efbc0d121043  freddocs/relentless-pulling-out.gif
+  5b6747d0924166e83b6b5e64b4418351  freddocs/ring-trick.gif
+  a61a4a2b0ea196cc64229b1ca88b80b5  freddocs/rotate-around-object.gif
+  28affe5d7be79cbf104f0186143cf7ae  freddocs/rotate-locally-example.gif
+  b8e5bd5dc049fc90cb01984b5ea83002  freddocs/rotate-locally.gif
+  6b6d6df45a0f9a3a31b280c577c1f364  freddocs/select-list.gif
+  5502f6c03084ad2f8d3dbe1b4ff73569  freddocs/selection-box.gif
+  708a22ebcd208f019eb419df8b2d693e  freddocs/selection-lock.gif
+  27479108e9c0c717f74b43e2c0cdd230  freddocs/send-message.gif
+  4b852bb0f1b50cf2c2d2a159647e2e33  freddocs/sexp-compressed.gif
+  247a5d22280183d48402c2f471ebe2d2  freddocs/sexp-example-2.gif
+  3faa1e7e5ae227716c6f46b7206ffba5  freddocs/sexp-example.gif
+  4de83f93c67eeeec3415bb96f0a96d37  freddocs/sexp-help.gif
+  d5b8677acfe2f6e7f103ef66dd0e30f6  freddocs/sexp-right-menu.gif
+  a8d4197e04d8f7b04f3c1093cf176d6b  freddocs/shield-system-editor.gif
+  c5a77b230d1dbd502006e0c4301a92cf  freddocs/ship-selection-dialog.gif
+  e8e8e717fb5c5d91227f78470d03ff46  freddocs/ships-editor-main-area.gif
+  6855ebbd96e620cb836e0874baa5df71  freddocs/shipyard-completed.fs2
+  ef4a62e30e2e6fb879309a05d83f5650  freddocs/shipyard.gif
+  a0aa7ace759128b888993dcccaf5c505  freddocs/show-distances.gif
+  0e59b9265e7b4390ba77699f8daab466  freddocs/sleipner-1-done.gif
+  c2f2fd7fdb070a6d1de5eac8d727f6b2  freddocs/sleipner-2-going-in.gif
+  3cd5998b2223cdc6288d7a10a75dc02b  freddocs/sleipner-directives.gif
+  b51b8702c3cc58421ea89727c687385c  freddocs/special-explosion.gif
+  66d7be491a4e4adaacfd99a34df60868  freddocs/speed-menu.gif
+  d7bc091795a6d31a4e88237ec9162633  freddocs/status-bar.gif
+  8edbfdc7fd6cc7b29c8639991accbaa5  freddocs/team-loadout-editor.gif
+  d58a5f41f658cfa1528bb8b88efe8ac1  freddocs/too-close.gif
+  baae38c913f8ff6ca0c970ec2ee8aea0  freddocs/toolbar-form-wing.gif
+  5f82d545a663e5bc9db3707fb896b978  freddocs/toolbar.html
+  2a3fa6a0ff61b8fa5edf3c81dddd3f9f  freddocs/vasudantalk.wav
+  b3bc0eee44dcdb72f710c4d7cab6ea11  freddocs/view-menu.gif
+  f3a8cf7b8d45d1e67a8dbbbd42cdea26  freddocs/vssver.scc
+  4548af19e253bd281c3f03d79e02e45f  freddocs/walkthrough.html
+  bb96fade32ff37c41eb5936bd1ab5a4e  freddocs/waypoint-paths-editor.gif
+  178a87586f40f5ac508e954ea49d7ebe  freddocs/weapons-editor.gif
+  609b27b52dc1b6bb949ac84840814b25  freddocs/wing-positions.gif
+  d2a39de47049b00fdfdeaf7c47cf628b  freddocs/wings-editor.gif
+  0f874cbdc6a2859520232d5d981327fb  freddocs/zoom.gif
   df76e4a407fe58f8ac088bc230352320  data/missions/Backup.001
   3852c76836fa805dfc25ae8ac6af5268  data/missions/Backup.002
   0126dd2e3a9ec7c830cfc95325552578  data/multi.cfg
@@ -518,115 +516,115 @@ sha1sums: |
   c146fe02bb04033bce8c297b33fb980ed2e98fc6  manual.pdf
   a407edf5c4595c610dbf3610359416168701ca24  readme.txt
   15fb40bf74ad8850a1c317e2ce85c05ca4172257  root_fs2.vp
-  3195b56bca15732b69facf145ee73ee9b6ddaff4  data/freddocs/3d-compass.gif
-  6e97178390943d03b3691f9b5d9179fd46a44269  data/freddocs/FRED2-opening.gif
-  846d2a55f3ccc90fa9d9cb0947b39850417dbb6e  data/freddocs/SEXP.html
-  b12ed3d164f33e239d2623d91741a87dd6e1b751  data/freddocs/add-variable.gif
-  1fb827c7ca67daeee45b2081fb2d4c1836eac929  data/freddocs/additional-ship-properties.gif
-  d9e8d120964a33725881bfd21e89412a265d4ede  data/freddocs/adjust-grid-dialog.gif
-  23f6251909c387bc460a1a0ef8c509c748fbf350  data/freddocs/arrival-and-departure-cues.gif
-  61887723ee4cea6883502b17148fa8d097287989  data/freddocs/asteroid-field-editor.gif
-  33f01e740ca561d9f41a3c416cc9c85947e00e15  data/freddocs/axis-constraints.gif
-  f4d5a44017ef035d45780d484490af7ea98b9b7b  data/freddocs/background-editor-bitmaps.gif
-  28221055184dc2c264f33d2267c3c407e091c1ee  data/freddocs/background-editor-misc.gif
-  243eb4fb622336a639ccf919d3e0ad5d8af26d01  data/freddocs/background-editor-nebula.gif
-  a784c282f4c49120f03c1c0440cada1ede4602da  data/freddocs/background-editor-suns.gif
-  1f2a97f8d0cc55ccfe70014b93fb02518a32690e  data/freddocs/briefing-editor.gif
-  f2e415763f919b3956483e0fc33368b086fe4eb4  data/freddocs/briefing-icons.gif
-  a86f6a41afa0da97dc7bbced9aa52d91f047289e  data/freddocs/campaign-diagram.gif
-  1911b0ce7f99f1db11ef06452a745058fd07c11f  data/freddocs/campaign-editor-controls.gif
-  38f4bbed38da8989811458621e6b6ef265ab77bb  data/freddocs/cartesian.gif
-  5b8f2959d3becfe3ce801a3f7b1e0a32e2d5fcec  data/freddocs/command-briefing-editor.gif
-  d6a4260f178e153efc41dbf9bc14261875722411  data/freddocs/concepts.html
-  8d61315c41fdc89cd071771e6c4a02a08ac9cc70  data/freddocs/cruiser-adjustments.gif
-  a1b75b7d238c051ff26b03a9a5bf9ae70d7e2c66  data/freddocs/debriefing-editor.gif
-  7cd448bfb5b00ad57194f9f4d54d49cc70fcad3a  data/freddocs/distances-example.gif
-  77b3d2baca1515093f24f3f0bf38de8e91a3ace6  data/freddocs/edit-menu.gif
-  24ea3d5eaef6cced4e278576a800765d05c0f677  data/freddocs/editors.html
-  7797a71af40d725051a2bc58179decc0f0164237  data/freddocs/empty-selection-box.gif
-  9ca73630f25c12c79384145ee66443adaaa516f2  data/freddocs/emptymsg.wav
-  bc1c410935b7c60ab980ab94b966ce3150183fa6  data/freddocs/events-editor-events.gif
-  2723b12f80a8d76d2d5e61820e942a5e744708cd  data/freddocs/events-editor-messages.gif
-  220219bfb675afba4166d7b29382d96cfee850cf  data/freddocs/file-menu.gif
-  566a46c8437ae3387f709364ba727eff173e4658  data/freddocs/force-1-arrival-true.gif
-  746e8f41779897e30491f0fa6788d4e09831d890  data/freddocs/force-1-arrival.gif
-  cea696a98fade7082b59784db8903a3074fd3d37  data/freddocs/form-disband-wing.gif
-  9bd4475665673252f7a58cae337ac3c7698ae641  data/freddocs/fred2.css
-  3640346f008dde7672c138866cd1b38b1fceaa60  data/freddocs/general.html
-  9b17141965cbe9870918c460634aa285b98572ca  data/freddocs/groups-menu.gif
-  91cfb2de0fe368ff1eb43af7abc5ce88f9d33102  data/freddocs/help-menu.gif
-  7b63fb4dc4ac53c6b1925db71a1096e00f95fa1c  data/freddocs/index-no-really.html
-  e3566d149c3ddb549d749b701df27dbcae0bdd48  data/freddocs/index.html
-  af3d66431b4977e4263fde902f6cafc46574588c  data/freddocs/initial-orders.gif
-  a7c191cfb1161db7b127e731dc57add4d1dc51e1  data/freddocs/initial-status-editor.gif
-  6ecef5764a1b519b554463ce60792c07672a7a94  data/freddocs/internet.html
-  f215a9e770ec15ff77ffd0881381ec8f56a064d8  data/freddocs/junk.html
-  fd9a4ff9ab8a07f687ce62f603baa4d76720c88c  data/freddocs/marking.gif
-  582982b7885b6776a6aaf7cc3252f2f43237492f  data/freddocs/menus.html
-  43c662eaef080cfa539593f3af4a53461fc64d38  data/freddocs/misc-menu.gif
-  ddb9ab9d546743cd9fe25b9822e3513f3fbb14cb  data/freddocs/mission-objectives-editor.gif
-  b7e4df2a927f8a60a75971f39dc21fa68035223c  data/freddocs/mission-specs-editor.gif
-  a417849406edab2254f08daa91df7135532f344a  data/freddocs/mouse-drag-mode.gif
-  ea376a45e2cbc20f829d9de73e9d90808ad6d1de  data/freddocs/msgend.wav
-  ed4faf9a1af8630ccb9a36a2d7fc8c5d1e2538b7  data/freddocs/msgstart.wav
-  8f5afc06d0ee65edf765ec0b96f8394136f7b6b6  data/freddocs/nacbkg1.gif
-  eca7150fbc378fd9bb361e475e02d171f47331c9  data/freddocs/nacmenu1.gif
-  f3c9291fc32d8054a362c1759f93e326492f70fa  data/freddocs/nactitle1.jpg
-  5605ed2cf93944a6ee840a37de5ecfa3827bdac0  data/freddocs/not-incomplete.gif
-  463ba769342c1857660bde5655bfffece9616391  data/freddocs/nyarlathotep-after.gif
-  c0438ca57a72c9df9dcc33b4037c331885616f60  data/freddocs/nyarlathotep-before.gif
-  5c42f3cd2dfc374de7e7f94a4b855666c15b832d  data/freddocs/objects-editor.gif
-  56448233c42e0b31e35e6a3c2ce1006f2bd8e946  data/freddocs/pelican-departure.gif
-  0baeabf2439bdaf308085a9aeee82f11bd49f92a  data/freddocs/player-orders.gif
-  6449f88469137d1b63e55bb9c3bbc3a7cb16c5d5  data/freddocs/pomotep-initial-status.gif
-  78d1886e8a57a009b6f7cfb9916b9a9dde885e11  data/freddocs/pomotep-intercepting.gif
-  28de4c4cc9590331553337e012aa434056a952fb  data/freddocs/primary-goal.gif
-  34a8ec219b6ee68b8a946bd3c41e8388ec064ee5  data/freddocs/quickstart-placement.gif
-  58217ae86776b865220475896a9a612123ee844b  data/freddocs/quickstart.html
-  7b78a21ec8cbe11590ec5d4f394c52f59b3c1e8e  data/freddocs/reinforcements-editor.gif
-  72a0654f8139859738cb94ef4a173445b9081ca0  data/freddocs/relentless-boarded.gif
-  a6b8b0ae67c0584df95b048ca2f4bb56fd4b37b9  data/freddocs/relentless-chained.gif
-  36283878b630e98e4eef3c67d62b23bdd2b8b350  data/freddocs/relentless-departure.gif
-  9f31eed76b8b1718d64c706ef14fdfd7f4868f01  data/freddocs/relentless-outcomes.gif
-  aa951ae9f7795fad222fb822b4ab9298decebfd5  data/freddocs/relentless-pulling-out.gif
-  6beee0305d0951e7da05c7e41c863ca4795ed117  data/freddocs/ring-trick.gif
-  bada50f94f669daed89085923b31e51e1be031cf  data/freddocs/rotate-around-object.gif
-  09931dc17bb2dee2ba6790658a84c6c47f85ac51  data/freddocs/rotate-locally-example.gif
-  d854f4593b53f8ff1be6f01f858596bf94a94154  data/freddocs/rotate-locally.gif
-  2db740d5834ab529b579fbc0ff2fe71b279c976a  data/freddocs/select-list.gif
-  74dfecee8089105245c6b8470cc59141aa621acb  data/freddocs/selection-box.gif
-  20c02429fc65e60d2052e960e65967257b546f95  data/freddocs/selection-lock.gif
-  6360084a7963cd51af2c6a11e4085ccb6816fb0b  data/freddocs/send-message.gif
-  fed6c6a35433931bcbf2326057e12ae386f605cb  data/freddocs/sexp-compressed.gif
-  70467cb7e268806fde8ec15d7baed62310c5b046  data/freddocs/sexp-example-2.gif
-  c44ebd04f54d95453274810a929a85c75988a4e4  data/freddocs/sexp-example.gif
-  be76792eaa0a413ee4fc1a8c22fc1d9aaf71197e  data/freddocs/sexp-help.gif
-  b61ea14e6ea70061f5ea5beaacdaee646a8d549f  data/freddocs/sexp-right-menu.gif
-  2fcca523c5bbab867ff214ab64298a4104f6e167  data/freddocs/shield-system-editor.gif
-  7fe3f0d87f9ebf4d674308859da3d0bfc4d2d9e6  data/freddocs/ship-selection-dialog.gif
-  f8d7d5b8dd9ed8b0715e2c0ad07c511508eff71e  data/freddocs/ships-editor-main-area.gif
-  360b452385e2adcd45bfd7e00fd244b546b20cec  data/freddocs/shipyard-completed.fs2
-  c95ad9feffb470786873a6c334794d25db60d439  data/freddocs/shipyard.gif
-  b7adc9f55feeeaa3dae99ae428258b980ce05acf  data/freddocs/show-distances.gif
-  92c5eb62054312c3ab8c4fe14ced1ecd83c5c024  data/freddocs/sleipner-1-done.gif
-  765bfd3434cf10ac350643cd8fbbaa009d0b68e5  data/freddocs/sleipner-2-going-in.gif
-  1b16293a313eee94fc4929fd7453fe874e4b8608  data/freddocs/sleipner-directives.gif
-  d78735fd599b84ce9348d03a5bb292d06658a466  data/freddocs/special-explosion.gif
-  ffb7ae892a63129eea2b7a32bc7180701878670f  data/freddocs/speed-menu.gif
-  f2fae1e96c8be8f70489fb0f859634d7015c6c73  data/freddocs/status-bar.gif
-  efde51703d9dab3d70e22fd09dc20268cf517ec1  data/freddocs/team-loadout-editor.gif
-  fc1ebc8f3687476ee654b1551963487ebcde3a29  data/freddocs/too-close.gif
-  1ef2734f24bd50a60a775fba3212919a78122dd8  data/freddocs/toolbar-form-wing.gif
-  3c76f41640d28ed2cbfc13a06334d01a86ceb328  data/freddocs/toolbar.html
-  3effe42fcc965cbea5b95c820b39bd98f19689ed  data/freddocs/vasudantalk.wav
-  2bf6a425f89c2fbaf68b2c011bceb78cdcd779b1  data/freddocs/view-menu.gif
-  b7e6f11cf63f60dc2e9fd19f4e5823df53bf2e76  data/freddocs/vssver.scc
-  feb4373181b42776b21da7a5b71d6a7887de6844  data/freddocs/walkthrough.html
-  55c8194662f5a546ac7235b80a106e77d55fd6a9  data/freddocs/waypoint-paths-editor.gif
-  cd9f976b7192f8d84385ce3398768870d488f5af  data/freddocs/weapons-editor.gif
-  db08965bc0725c35750edbb0cb7b62577f2e8097  data/freddocs/wing-positions.gif
-  dd0194c853a709cbd9538c54bab40ef47dd4fed1  data/freddocs/wings-editor.gif
-  355fb72435594abae46ecf6e1315cd58c8dccb71  data/freddocs/zoom.gif
+  3195b56bca15732b69facf145ee73ee9b6ddaff4  freddocs/3d-compass.gif
+  6e97178390943d03b3691f9b5d9179fd46a44269  freddocs/FRED2-opening.gif
+  846d2a55f3ccc90fa9d9cb0947b39850417dbb6e  freddocs/SEXP.html
+  b12ed3d164f33e239d2623d91741a87dd6e1b751  freddocs/add-variable.gif
+  1fb827c7ca67daeee45b2081fb2d4c1836eac929  freddocs/additional-ship-properties.gif
+  d9e8d120964a33725881bfd21e89412a265d4ede  freddocs/adjust-grid-dialog.gif
+  23f6251909c387bc460a1a0ef8c509c748fbf350  freddocs/arrival-and-departure-cues.gif
+  61887723ee4cea6883502b17148fa8d097287989  freddocs/asteroid-field-editor.gif
+  33f01e740ca561d9f41a3c416cc9c85947e00e15  freddocs/axis-constraints.gif
+  f4d5a44017ef035d45780d484490af7ea98b9b7b  freddocs/background-editor-bitmaps.gif
+  28221055184dc2c264f33d2267c3c407e091c1ee  freddocs/background-editor-misc.gif
+  243eb4fb622336a639ccf919d3e0ad5d8af26d01  freddocs/background-editor-nebula.gif
+  a784c282f4c49120f03c1c0440cada1ede4602da  freddocs/background-editor-suns.gif
+  1f2a97f8d0cc55ccfe70014b93fb02518a32690e  freddocs/briefing-editor.gif
+  f2e415763f919b3956483e0fc33368b086fe4eb4  freddocs/briefing-icons.gif
+  a86f6a41afa0da97dc7bbced9aa52d91f047289e  freddocs/campaign-diagram.gif
+  1911b0ce7f99f1db11ef06452a745058fd07c11f  freddocs/campaign-editor-controls.gif
+  38f4bbed38da8989811458621e6b6ef265ab77bb  freddocs/cartesian.gif
+  5b8f2959d3becfe3ce801a3f7b1e0a32e2d5fcec  freddocs/command-briefing-editor.gif
+  d6a4260f178e153efc41dbf9bc14261875722411  freddocs/concepts.html
+  8d61315c41fdc89cd071771e6c4a02a08ac9cc70  freddocs/cruiser-adjustments.gif
+  a1b75b7d238c051ff26b03a9a5bf9ae70d7e2c66  freddocs/debriefing-editor.gif
+  7cd448bfb5b00ad57194f9f4d54d49cc70fcad3a  freddocs/distances-example.gif
+  77b3d2baca1515093f24f3f0bf38de8e91a3ace6  freddocs/edit-menu.gif
+  24ea3d5eaef6cced4e278576a800765d05c0f677  freddocs/editors.html
+  7797a71af40d725051a2bc58179decc0f0164237  freddocs/empty-selection-box.gif
+  9ca73630f25c12c79384145ee66443adaaa516f2  freddocs/emptymsg.wav
+  bc1c410935b7c60ab980ab94b966ce3150183fa6  freddocs/events-editor-events.gif
+  2723b12f80a8d76d2d5e61820e942a5e744708cd  freddocs/events-editor-messages.gif
+  220219bfb675afba4166d7b29382d96cfee850cf  freddocs/file-menu.gif
+  566a46c8437ae3387f709364ba727eff173e4658  freddocs/force-1-arrival-true.gif
+  746e8f41779897e30491f0fa6788d4e09831d890  freddocs/force-1-arrival.gif
+  cea696a98fade7082b59784db8903a3074fd3d37  freddocs/form-disband-wing.gif
+  9bd4475665673252f7a58cae337ac3c7698ae641  freddocs/fred2.css
+  3640346f008dde7672c138866cd1b38b1fceaa60  freddocs/general.html
+  9b17141965cbe9870918c460634aa285b98572ca  freddocs/groups-menu.gif
+  91cfb2de0fe368ff1eb43af7abc5ce88f9d33102  freddocs/help-menu.gif
+  7b63fb4dc4ac53c6b1925db71a1096e00f95fa1c  freddocs/index-no-really.html
+  e3566d149c3ddb549d749b701df27dbcae0bdd48  freddocs/index.html
+  af3d66431b4977e4263fde902f6cafc46574588c  freddocs/initial-orders.gif
+  a7c191cfb1161db7b127e731dc57add4d1dc51e1  freddocs/initial-status-editor.gif
+  6ecef5764a1b519b554463ce60792c07672a7a94  freddocs/internet.html
+  f215a9e770ec15ff77ffd0881381ec8f56a064d8  freddocs/junk.html
+  fd9a4ff9ab8a07f687ce62f603baa4d76720c88c  freddocs/marking.gif
+  582982b7885b6776a6aaf7cc3252f2f43237492f  freddocs/menus.html
+  43c662eaef080cfa539593f3af4a53461fc64d38  freddocs/misc-menu.gif
+  ddb9ab9d546743cd9fe25b9822e3513f3fbb14cb  freddocs/mission-objectives-editor.gif
+  b7e4df2a927f8a60a75971f39dc21fa68035223c  freddocs/mission-specs-editor.gif
+  a417849406edab2254f08daa91df7135532f344a  freddocs/mouse-drag-mode.gif
+  ea376a45e2cbc20f829d9de73e9d90808ad6d1de  freddocs/msgend.wav
+  ed4faf9a1af8630ccb9a36a2d7fc8c5d1e2538b7  freddocs/msgstart.wav
+  8f5afc06d0ee65edf765ec0b96f8394136f7b6b6  freddocs/nacbkg1.gif
+  eca7150fbc378fd9bb361e475e02d171f47331c9  freddocs/nacmenu1.gif
+  f3c9291fc32d8054a362c1759f93e326492f70fa  freddocs/nactitle1.jpg
+  5605ed2cf93944a6ee840a37de5ecfa3827bdac0  freddocs/not-incomplete.gif
+  463ba769342c1857660bde5655bfffece9616391  freddocs/nyarlathotep-after.gif
+  c0438ca57a72c9df9dcc33b4037c331885616f60  freddocs/nyarlathotep-before.gif
+  5c42f3cd2dfc374de7e7f94a4b855666c15b832d  freddocs/objects-editor.gif
+  56448233c42e0b31e35e6a3c2ce1006f2bd8e946  freddocs/pelican-departure.gif
+  0baeabf2439bdaf308085a9aeee82f11bd49f92a  freddocs/player-orders.gif
+  6449f88469137d1b63e55bb9c3bbc3a7cb16c5d5  freddocs/pomotep-initial-status.gif
+  78d1886e8a57a009b6f7cfb9916b9a9dde885e11  freddocs/pomotep-intercepting.gif
+  28de4c4cc9590331553337e012aa434056a952fb  freddocs/primary-goal.gif
+  34a8ec219b6ee68b8a946bd3c41e8388ec064ee5  freddocs/quickstart-placement.gif
+  58217ae86776b865220475896a9a612123ee844b  freddocs/quickstart.html
+  7b78a21ec8cbe11590ec5d4f394c52f59b3c1e8e  freddocs/reinforcements-editor.gif
+  72a0654f8139859738cb94ef4a173445b9081ca0  freddocs/relentless-boarded.gif
+  a6b8b0ae67c0584df95b048ca2f4bb56fd4b37b9  freddocs/relentless-chained.gif
+  36283878b630e98e4eef3c67d62b23bdd2b8b350  freddocs/relentless-departure.gif
+  9f31eed76b8b1718d64c706ef14fdfd7f4868f01  freddocs/relentless-outcomes.gif
+  aa951ae9f7795fad222fb822b4ab9298decebfd5  freddocs/relentless-pulling-out.gif
+  6beee0305d0951e7da05c7e41c863ca4795ed117  freddocs/ring-trick.gif
+  bada50f94f669daed89085923b31e51e1be031cf  freddocs/rotate-around-object.gif
+  09931dc17bb2dee2ba6790658a84c6c47f85ac51  freddocs/rotate-locally-example.gif
+  d854f4593b53f8ff1be6f01f858596bf94a94154  freddocs/rotate-locally.gif
+  2db740d5834ab529b579fbc0ff2fe71b279c976a  freddocs/select-list.gif
+  74dfecee8089105245c6b8470cc59141aa621acb  freddocs/selection-box.gif
+  20c02429fc65e60d2052e960e65967257b546f95  freddocs/selection-lock.gif
+  6360084a7963cd51af2c6a11e4085ccb6816fb0b  freddocs/send-message.gif
+  fed6c6a35433931bcbf2326057e12ae386f605cb  freddocs/sexp-compressed.gif
+  70467cb7e268806fde8ec15d7baed62310c5b046  freddocs/sexp-example-2.gif
+  c44ebd04f54d95453274810a929a85c75988a4e4  freddocs/sexp-example.gif
+  be76792eaa0a413ee4fc1a8c22fc1d9aaf71197e  freddocs/sexp-help.gif
+  b61ea14e6ea70061f5ea5beaacdaee646a8d549f  freddocs/sexp-right-menu.gif
+  2fcca523c5bbab867ff214ab64298a4104f6e167  freddocs/shield-system-editor.gif
+  7fe3f0d87f9ebf4d674308859da3d0bfc4d2d9e6  freddocs/ship-selection-dialog.gif
+  f8d7d5b8dd9ed8b0715e2c0ad07c511508eff71e  freddocs/ships-editor-main-area.gif
+  360b452385e2adcd45bfd7e00fd244b546b20cec  freddocs/shipyard-completed.fs2
+  c95ad9feffb470786873a6c334794d25db60d439  freddocs/shipyard.gif
+  b7adc9f55feeeaa3dae99ae428258b980ce05acf  freddocs/show-distances.gif
+  92c5eb62054312c3ab8c4fe14ced1ecd83c5c024  freddocs/sleipner-1-done.gif
+  765bfd3434cf10ac350643cd8fbbaa009d0b68e5  freddocs/sleipner-2-going-in.gif
+  1b16293a313eee94fc4929fd7453fe874e4b8608  freddocs/sleipner-directives.gif
+  d78735fd599b84ce9348d03a5bb292d06658a466  freddocs/special-explosion.gif
+  ffb7ae892a63129eea2b7a32bc7180701878670f  freddocs/speed-menu.gif
+  f2fae1e96c8be8f70489fb0f859634d7015c6c73  freddocs/status-bar.gif
+  efde51703d9dab3d70e22fd09dc20268cf517ec1  freddocs/team-loadout-editor.gif
+  fc1ebc8f3687476ee654b1551963487ebcde3a29  freddocs/too-close.gif
+  1ef2734f24bd50a60a775fba3212919a78122dd8  freddocs/toolbar-form-wing.gif
+  3c76f41640d28ed2cbfc13a06334d01a86ceb328  freddocs/toolbar.html
+  3effe42fcc965cbea5b95c820b39bd98f19689ed  freddocs/vasudantalk.wav
+  2bf6a425f89c2fbaf68b2c011bceb78cdcd779b1  freddocs/view-menu.gif
+  b7e6f11cf63f60dc2e9fd19f4e5823df53bf2e76  freddocs/vssver.scc
+  feb4373181b42776b21da7a5b71d6a7887de6844  freddocs/walkthrough.html
+  55c8194662f5a546ac7235b80a106e77d55fd6a9  freddocs/waypoint-paths-editor.gif
+  cd9f976b7192f8d84385ce3398768870d488f5af  freddocs/weapons-editor.gif
+  db08965bc0725c35750edbb0cb7b62577f2e8097  freddocs/wing-positions.gif
+  dd0194c853a709cbd9538c54bab40ef47dd4fed1  freddocs/wings-editor.gif
+  355fb72435594abae46ecf6e1315cd58c8dccb71  freddocs/zoom.gif
   d6077cc3cc60a20147016cd8e1eeb466a7edcbc7  data/missions/Backup.001
   ab545d723f366b82e06b57a57b6d5a58c2ba3679  data/missions/Backup.002
   72ad793aa84fad05aee0cb27eccde2e948a35b90  data/multi.cfg
@@ -662,115 +660,115 @@ sha256sums: |
   57b1686c07ab2ceca6e6e0e7a815f1d6b65780a2f7093f143484aaa3615a16d9  manual.pdf
   20a65e8ea7dcc61480fcff8508d6b0b26ce89946d36889829ddfb8009124195a  readme.txt
   a796243434945af28f16331421bf472efbc86de86d47c39c1b399bcf7fe2bd6a  root_fs2.vp
-  5d34af28bca958c8fc3c103fcc13d031074c501ca1d7e9eab47cacf952565f76  data/freddocs/3d-compass.gif
-  a6275bfaca0d0ee819ab11d23431e72fb1b78e952260153fa080226991338b5a  data/freddocs/FRED2-opening.gif
-  c715e762b806248f34fab5484dcf56a481357edd0066b465a0036c90473f69ba  data/freddocs/SEXP.html
-  e22e8fa1e9777a64e2068c3d1df0c3425807d1997f659ab8c4ef3da6e74bc93f  data/freddocs/add-variable.gif
-  acddf67eb59cfa6e1473a367ae0e3b726ec8d6b45720776fc1fbef4838629ca3  data/freddocs/additional-ship-properties.gif
-  0bee447921b71a667674ab0a3e7d15c5fd45a7a629a55490b3a63f6bb96a6922  data/freddocs/adjust-grid-dialog.gif
-  fd0a29437c413d9f37d2b78e1d564bdfb733dde456470bd4c7f5424a31e2b70a  data/freddocs/arrival-and-departure-cues.gif
-  57a6159d7296281bf407acb833fb1b89d415848419b0edbc23609e8eb04ce8bc  data/freddocs/asteroid-field-editor.gif
-  0dc2432990b3a2d9abb3344d3b7158e73694e7f1bfafa05a2a21cc2f0f98671b  data/freddocs/axis-constraints.gif
-  f3a90c5a346a10956a7bd11808e102f1fe168f35930267ab19bb2e7905258ba3  data/freddocs/background-editor-bitmaps.gif
-  ea830f2d9ecd2df02050c717a604e3df44c8026f77ee12eccc25082378ea286d  data/freddocs/background-editor-misc.gif
-  ee926d6a3574b50af9359c05f7b1e659a469c33db809ee013f0f7e80be1c09a8  data/freddocs/background-editor-nebula.gif
-  bbcdcdeb7c4836c1de258e5fe7fac510273515e10afac11fe6c391f844e9a96e  data/freddocs/background-editor-suns.gif
-  253e2739c0dbdc1712e88db7a45d4c397512303186cad3ef17487ac005f703a7  data/freddocs/briefing-editor.gif
-  33fc3cf5f427d7e5532b22fbecb7dd5bd83549d4deb4c386341b33d17d459d0f  data/freddocs/briefing-icons.gif
-  aacd16970b0d3b2d34d84979a603bfc590c95d40dd08ba3cba98add276adc447  data/freddocs/campaign-diagram.gif
-  e9010b33c90b3a256156c4106448da1273c49c1fd36f0406f42943aab342bd13  data/freddocs/campaign-editor-controls.gif
-  15e214f864bb7d57fab1b1cd3bb4b4030a15640225402a670b39b9492b508627  data/freddocs/cartesian.gif
-  c3b2597d754b1597e1301f237227bf5d41e9e1da695710862f6f68cf27d9bfbb  data/freddocs/command-briefing-editor.gif
-  08a240cc30a2a03ba86039482a5a3d79ebbc432e47c922f25046dd4a74aaea3c  data/freddocs/concepts.html
-  3941422b63e4fd4e9d3a3ae855b5c3267ca8f348e8fcf6f227e128a57d87384a  data/freddocs/cruiser-adjustments.gif
-  1ab857e6b196d9a0f4e99975a6b5cac72e61b7f282c806d1eaf0fa7f56250fcf  data/freddocs/debriefing-editor.gif
-  262d9fce39315126acedb59a9d0a1cd0fe25617a11350024847e15fe2bab08ce  data/freddocs/distances-example.gif
-  74228cc78da2e4858fe72857cb88e86d5b057eebbae07b4bd2609d3133cf6845  data/freddocs/edit-menu.gif
-  aeae5fe6dcc2e38df1127321e72fee635ef8195d36ae547fa9dac604248a6c6c  data/freddocs/editors.html
-  6c31334c9ff7d0074589a6ab51fe1618f3b0860547c004fcc69b004c18dc3fea  data/freddocs/empty-selection-box.gif
-  c65c68d7345c3309fc842c3935d1abb05969c3f3c3a73d487cf699957a1591ac  data/freddocs/emptymsg.wav
-  30f9bf1d0ec1936ae0032f56a69ac65ef73488cda45d85c27fe1b41c4d591155  data/freddocs/events-editor-events.gif
-  201e2ede9de4af1f745d552e2e00503051a7efc14101ab5f18efe4214c67e886  data/freddocs/events-editor-messages.gif
-  0314d8654a08f5bc3e5ab79932700084ff7d52b690ee4e71cfa814f19ec1ee46  data/freddocs/file-menu.gif
-  db0526696a870b146b4ffcdf863fe01c0fbc175c535a76ac4d0c2f5793b7ba89  data/freddocs/force-1-arrival-true.gif
-  f47e1c07d5a011faa7e2c5bb1d8516e2e697f0c0bf9b974ba10379de90d678a9  data/freddocs/force-1-arrival.gif
-  b8199910281be4dbdee0bbf54c2a780ef65e750a8aacf609946a68a418f61d67  data/freddocs/form-disband-wing.gif
-  3da0f844aafe4b73f08c5fa1ab258261e5c03c3d96734f521bc3c541c11f3846  data/freddocs/fred2.css
-  bc522aeb81e347c36cb33442764d716360160cccff991333392c624d69efb6c1  data/freddocs/general.html
-  261a29e56c94b5308ee4e3f7c58db87fceb2ece66b22eb3952baec070d75dc0e  data/freddocs/groups-menu.gif
-  569e86fdfa6c1f7406cd7b4abe94c213b56d439e7ed3d2643f1609d0ee97d746  data/freddocs/help-menu.gif
-  24b23cd8969cbc572792a0a3a263b75f6e28169d4688af7b41f844087b1638f2  data/freddocs/index-no-really.html
-  f9e2fea1b285f53c9474cef3e58502f530a14526636c6490f90f968395559492  data/freddocs/index.html
-  4c3a675345e82044fc9b41ef59fdf823e31fad590262bd4e02db5cddbda1c1cb  data/freddocs/initial-orders.gif
-  46f37c7f3565ab7a6b7460e1be02cd65caacac5de9568845872f48597c4f3c02  data/freddocs/initial-status-editor.gif
-  3085e8000c863dc437b3cbf475847da77ebc21996d568a18333ceaa488b70e4f  data/freddocs/internet.html
-  236378bfe5192be0a80a19b9c0ca0d13067e8d6f35752f68576e8179aee3f106  data/freddocs/junk.html
-  c52251badbec21c2e565ff6cc2a4074d47e6d9196c99427d6a5709f307a49c19  data/freddocs/marking.gif
-  ed3411127b37d50b94aa985b874fa3a38b37c713778d2cd443146d3120e54160  data/freddocs/menus.html
-  ed210803aa8297d0179dbe012583be67737ef57dd8780fd3b4f9b9332b3fa2a0  data/freddocs/misc-menu.gif
-  ba85c37e7a15ff0d1f3e2f6c2e4b4dbdfe8c8a03e37461647f2c2a1b76d717d7  data/freddocs/mission-objectives-editor.gif
-  7540604f89f700c4b3f73c1770d11ab48c6ee558e5e2ffc9c58e91e218a8e5ee  data/freddocs/mission-specs-editor.gif
-  130b77d1c9dd2b97f889607567ca1aa0768d4353d322eff039eb4accc85ef761  data/freddocs/mouse-drag-mode.gif
-  ef79ed95949fccf33f5de01033b4956c20a915e840dc94c8f42659f8ec9cd9fd  data/freddocs/msgend.wav
-  b6274f868cc29323896b8cd922557d9f1fe1db350e3528354072ddfe93c09d45  data/freddocs/msgstart.wav
-  bd460ff1adeebf562a229779c6d2baacc320d606a92e8c1b6ff2437f1c87fa48  data/freddocs/nacbkg1.gif
-  9f44ad9cd706be24b549b28d35524157ab421b08371c3eb1d043c10772967845  data/freddocs/nacmenu1.gif
-  3cf14e075e8572f8c4616c29adf4716e449a8d8d261d570fecc6560007db6e8e  data/freddocs/nactitle1.jpg
-  e2e6528c62592ba02a7a142392dd0a92f2d850ddcdf01a89a13913da0e56b4f8  data/freddocs/not-incomplete.gif
-  8b3509554ffd3260e68bd5c4881aa7e1180ba8d745d45722511e336a60b4a366  data/freddocs/nyarlathotep-after.gif
-  f2bc5c390dd0dbafe3d309adb17e2ccc0007f82c8c50af4c9e31992dcbec3c8e  data/freddocs/nyarlathotep-before.gif
-  4f09f05cdd7299f85569f0804e103a483b530aa785c2873f99186f2a8ef4b49c  data/freddocs/objects-editor.gif
-  158d1ac276162937fe0e0adf26f06eae07c8a5eb8c581c9a8423420cb9902049  data/freddocs/pelican-departure.gif
-  6871cb8a90ff37bd437449310b8495b0f6141ed563b1effabab251970c1e6fc1  data/freddocs/player-orders.gif
-  7a13532657bc3aeef36ad9cf29023e0eee36ddc67f37017616f995367f595172  data/freddocs/pomotep-initial-status.gif
-  d575ec95bbbb1bb80154234dbef98bd86c32f236d33922ddee01882be733868a  data/freddocs/pomotep-intercepting.gif
-  655de1a2092db05e554362e3a0f200820c395af1694830c00e9e1a89a0688b62  data/freddocs/primary-goal.gif
-  17197ec26107fdf08d96094e047f8491e04cfec2b27ad642a27573158c7e2476  data/freddocs/quickstart-placement.gif
-  21f413821547cc8a5d5b2988b27ede6fb194440747bb732d01363d98ba5c529d  data/freddocs/quickstart.html
-  c846a9777a6645f8df19602fe471e13c0784e620b96d40352ac637605f469b23  data/freddocs/reinforcements-editor.gif
-  ea87937d3ac900c3551733aabb566e69f9566853b8556b47293b4349868666e0  data/freddocs/relentless-boarded.gif
-  4846951bab84f19041f900fd6b3dd14baae1c81fb4464757c1dd75f431a4d228  data/freddocs/relentless-chained.gif
-  133acfffe48f1720a9acb946403e2012af460f8e181a165806dea3c99084ef78  data/freddocs/relentless-departure.gif
-  5114bb5b5d805c6e83fbbf0eeb11eab6cbff8a5df808346dd06c67e2ac014f4b  data/freddocs/relentless-outcomes.gif
-  4c666dbd225cbcb358aa87523ff636de91c32499e2a964217854bb849320ae9d  data/freddocs/relentless-pulling-out.gif
-  40e6c81de9241c42cf06b7f88d0268998f792e2b972e3d264f686d8a1bbb7618  data/freddocs/ring-trick.gif
-  ad2a0672621a07d4dc97a1e8c92f627546fe14a79675f9e8deae4a2168ee7345  data/freddocs/rotate-around-object.gif
-  f3b0e1b109d2423c055b982eb0acd7ffe273a8c58f4d0e55fe63693ce31cbe71  data/freddocs/rotate-locally-example.gif
-  6d190008e7a3872bbbd9e87fd997bc8d256030a24d6e8443e12d722aaea86edb  data/freddocs/rotate-locally.gif
-  e98bce9888a6e93ec192550f29a0a5409395b038834bf023acb203a56072d468  data/freddocs/select-list.gif
-  d87142e995935dfec28bd650ffb512a53426bd2aed725052f39a848323113bc2  data/freddocs/selection-box.gif
-  85b57dda75d443f7f3bd1624bf4f17a182c043cf925cb60611622330540254b8  data/freddocs/selection-lock.gif
-  255141f8506f51370d73000215b9f850aa04a7b9b0161cf5f333e594941f53d6  data/freddocs/send-message.gif
-  ec61988ca1f41a3e38b07aaeb97bd077d00c64ba007fa1445a66483df3df60b7  data/freddocs/sexp-compressed.gif
-  b4e40bbd16e7ed072d41c48689e7b6acfd25a1eedf6617dc5904c68f8c630f58  data/freddocs/sexp-example-2.gif
-  3c4e23ce2d75e1d0895c289578cd2ccb948f1604109eedd1cdcecb162779016f  data/freddocs/sexp-example.gif
-  55c0e662d0ccb4aeadb1338c2f1f9826d862f7bbd19500f012117700ea1694b5  data/freddocs/sexp-help.gif
-  88b600ef6380c1b0df554d571eddfcca86246e36368be1d8f521ca59504f8dae  data/freddocs/sexp-right-menu.gif
-  a141ad8921004eaac8e33a577fafc64fd44e4c530cddff8959662def48d37a82  data/freddocs/shield-system-editor.gif
-  21c3a4e00857dce485440236f6ac42721c14156e51548404f228f3293017f31a  data/freddocs/ship-selection-dialog.gif
-  02675474b118619c83d3dd037f021d0fdff9503c6a49dac54e5cbbe646612ef4  data/freddocs/ships-editor-main-area.gif
-  533359ab5cb9eb01506135ba6c40ad28aa02f248a277ec6995c099df0862da97  data/freddocs/shipyard-completed.fs2
-  c6f9ceaa2548755274840e66efe0b970523bc7116cc72c3cc2dc081c7ac99095  data/freddocs/shipyard.gif
-  0d051629066e25722c3f082dd8bdf959d7a49ecb15762d3693bbcbbf268bae91  data/freddocs/show-distances.gif
-  69a04c500712c0f6e63754facba71696561aa9b1e0fc2074a84c1ee210109ad3  data/freddocs/sleipner-1-done.gif
-  454d87a2f38f2341173d3bb6051898d2942d217c4adf6fcd4184dc4300da2a56  data/freddocs/sleipner-2-going-in.gif
-  382352f211c88380fd5431c2e602c3757869f6c0c83f1e165fcfd368044d6383  data/freddocs/sleipner-directives.gif
-  62b63378bcc42e3e103e3c8f4c77af8c4ec31fd3d37294e127ffd9953aa038bd  data/freddocs/special-explosion.gif
-  ce71daa467dfe2509e48d5d71cc2487c297f1ffa1cc21813257f9900cd1bf7f7  data/freddocs/speed-menu.gif
-  13716c339adfb5a0372a17c80b4afbfadf17d0d4de07467d5e5b2f9fc77adcae  data/freddocs/status-bar.gif
-  241932a41cdbef14d0bffa60aba685dfcb18a6b5b812dc291209e1eaffa0a9ea  data/freddocs/team-loadout-editor.gif
-  068a82cf6533dcd02e6f6588757ba7ab0ea4d273702eeec81535f5b9112d668f  data/freddocs/too-close.gif
-  d0bbbc65e315c67e07a627bd09e6c84fdd1db4cbb9562ee9d5a08acc3f0dd509  data/freddocs/toolbar-form-wing.gif
-  1f75e2af2d3d35f2d5510f41b2607dec1a7c4ce3e053097eada319c4131fb7f3  data/freddocs/toolbar.html
-  2d2ef0784442e11425f6fe8027242bf0521298c675134ef487522a9f5b29df2d  data/freddocs/vasudantalk.wav
-  306e69a8884252c72a6b990788e74651e1e615093be18896fe73a6360fca5962  data/freddocs/view-menu.gif
-  6297e1f6783bb193c3cd606c9e7efed980ffc83da44655b5370f2872fc38956a  data/freddocs/vssver.scc
-  941787b2bbb1304605fd56b717b03d291a1473cc4dd4444f9e78219c9fa1de18  data/freddocs/walkthrough.html
-  5f7566e6efb6cc1336c99c3993d219b3ac46432d4fe4d9311b5efd516101d0e8  data/freddocs/waypoint-paths-editor.gif
-  2c31415c6974ce39feef7bf8ae9713e8bca85eed03a84def88cbecfac09e4f7d  data/freddocs/weapons-editor.gif
-  57856e0cfc1d7e871fef0e6a4cc03bc95a9877b1b742f5255694cd381defb179  data/freddocs/wing-positions.gif
-  ea9c24189c7fbbfa2c95e6138151db3f41394d54c9c61180b893c8dbc38ec0f8  data/freddocs/wings-editor.gif
-  a224c8aa9f8f08c6efa29e189abb7be2433344f71b978c7da9fdb6cd8eff4630  data/freddocs/zoom.gif
+  5d34af28bca958c8fc3c103fcc13d031074c501ca1d7e9eab47cacf952565f76  freddocs/3d-compass.gif
+  a6275bfaca0d0ee819ab11d23431e72fb1b78e952260153fa080226991338b5a  freddocs/FRED2-opening.gif
+  c715e762b806248f34fab5484dcf56a481357edd0066b465a0036c90473f69ba  freddocs/SEXP.html
+  e22e8fa1e9777a64e2068c3d1df0c3425807d1997f659ab8c4ef3da6e74bc93f  freddocs/add-variable.gif
+  acddf67eb59cfa6e1473a367ae0e3b726ec8d6b45720776fc1fbef4838629ca3  freddocs/additional-ship-properties.gif
+  0bee447921b71a667674ab0a3e7d15c5fd45a7a629a55490b3a63f6bb96a6922  freddocs/adjust-grid-dialog.gif
+  fd0a29437c413d9f37d2b78e1d564bdfb733dde456470bd4c7f5424a31e2b70a  freddocs/arrival-and-departure-cues.gif
+  57a6159d7296281bf407acb833fb1b89d415848419b0edbc23609e8eb04ce8bc  freddocs/asteroid-field-editor.gif
+  0dc2432990b3a2d9abb3344d3b7158e73694e7f1bfafa05a2a21cc2f0f98671b  freddocs/axis-constraints.gif
+  f3a90c5a346a10956a7bd11808e102f1fe168f35930267ab19bb2e7905258ba3  freddocs/background-editor-bitmaps.gif
+  ea830f2d9ecd2df02050c717a604e3df44c8026f77ee12eccc25082378ea286d  freddocs/background-editor-misc.gif
+  ee926d6a3574b50af9359c05f7b1e659a469c33db809ee013f0f7e80be1c09a8  freddocs/background-editor-nebula.gif
+  bbcdcdeb7c4836c1de258e5fe7fac510273515e10afac11fe6c391f844e9a96e  freddocs/background-editor-suns.gif
+  253e2739c0dbdc1712e88db7a45d4c397512303186cad3ef17487ac005f703a7  freddocs/briefing-editor.gif
+  33fc3cf5f427d7e5532b22fbecb7dd5bd83549d4deb4c386341b33d17d459d0f  freddocs/briefing-icons.gif
+  aacd16970b0d3b2d34d84979a603bfc590c95d40dd08ba3cba98add276adc447  freddocs/campaign-diagram.gif
+  e9010b33c90b3a256156c4106448da1273c49c1fd36f0406f42943aab342bd13  freddocs/campaign-editor-controls.gif
+  15e214f864bb7d57fab1b1cd3bb4b4030a15640225402a670b39b9492b508627  freddocs/cartesian.gif
+  c3b2597d754b1597e1301f237227bf5d41e9e1da695710862f6f68cf27d9bfbb  freddocs/command-briefing-editor.gif
+  08a240cc30a2a03ba86039482a5a3d79ebbc432e47c922f25046dd4a74aaea3c  freddocs/concepts.html
+  3941422b63e4fd4e9d3a3ae855b5c3267ca8f348e8fcf6f227e128a57d87384a  freddocs/cruiser-adjustments.gif
+  1ab857e6b196d9a0f4e99975a6b5cac72e61b7f282c806d1eaf0fa7f56250fcf  freddocs/debriefing-editor.gif
+  262d9fce39315126acedb59a9d0a1cd0fe25617a11350024847e15fe2bab08ce  freddocs/distances-example.gif
+  74228cc78da2e4858fe72857cb88e86d5b057eebbae07b4bd2609d3133cf6845  freddocs/edit-menu.gif
+  aeae5fe6dcc2e38df1127321e72fee635ef8195d36ae547fa9dac604248a6c6c  freddocs/editors.html
+  6c31334c9ff7d0074589a6ab51fe1618f3b0860547c004fcc69b004c18dc3fea  freddocs/empty-selection-box.gif
+  c65c68d7345c3309fc842c3935d1abb05969c3f3c3a73d487cf699957a1591ac  freddocs/emptymsg.wav
+  30f9bf1d0ec1936ae0032f56a69ac65ef73488cda45d85c27fe1b41c4d591155  freddocs/events-editor-events.gif
+  201e2ede9de4af1f745d552e2e00503051a7efc14101ab5f18efe4214c67e886  freddocs/events-editor-messages.gif
+  0314d8654a08f5bc3e5ab79932700084ff7d52b690ee4e71cfa814f19ec1ee46  freddocs/file-menu.gif
+  db0526696a870b146b4ffcdf863fe01c0fbc175c535a76ac4d0c2f5793b7ba89  freddocs/force-1-arrival-true.gif
+  f47e1c07d5a011faa7e2c5bb1d8516e2e697f0c0bf9b974ba10379de90d678a9  freddocs/force-1-arrival.gif
+  b8199910281be4dbdee0bbf54c2a780ef65e750a8aacf609946a68a418f61d67  freddocs/form-disband-wing.gif
+  3da0f844aafe4b73f08c5fa1ab258261e5c03c3d96734f521bc3c541c11f3846  freddocs/fred2.css
+  bc522aeb81e347c36cb33442764d716360160cccff991333392c624d69efb6c1  freddocs/general.html
+  261a29e56c94b5308ee4e3f7c58db87fceb2ece66b22eb3952baec070d75dc0e  freddocs/groups-menu.gif
+  569e86fdfa6c1f7406cd7b4abe94c213b56d439e7ed3d2643f1609d0ee97d746  freddocs/help-menu.gif
+  24b23cd8969cbc572792a0a3a263b75f6e28169d4688af7b41f844087b1638f2  freddocs/index-no-really.html
+  f9e2fea1b285f53c9474cef3e58502f530a14526636c6490f90f968395559492  freddocs/index.html
+  4c3a675345e82044fc9b41ef59fdf823e31fad590262bd4e02db5cddbda1c1cb  freddocs/initial-orders.gif
+  46f37c7f3565ab7a6b7460e1be02cd65caacac5de9568845872f48597c4f3c02  freddocs/initial-status-editor.gif
+  3085e8000c863dc437b3cbf475847da77ebc21996d568a18333ceaa488b70e4f  freddocs/internet.html
+  236378bfe5192be0a80a19b9c0ca0d13067e8d6f35752f68576e8179aee3f106  freddocs/junk.html
+  c52251badbec21c2e565ff6cc2a4074d47e6d9196c99427d6a5709f307a49c19  freddocs/marking.gif
+  ed3411127b37d50b94aa985b874fa3a38b37c713778d2cd443146d3120e54160  freddocs/menus.html
+  ed210803aa8297d0179dbe012583be67737ef57dd8780fd3b4f9b9332b3fa2a0  freddocs/misc-menu.gif
+  ba85c37e7a15ff0d1f3e2f6c2e4b4dbdfe8c8a03e37461647f2c2a1b76d717d7  freddocs/mission-objectives-editor.gif
+  7540604f89f700c4b3f73c1770d11ab48c6ee558e5e2ffc9c58e91e218a8e5ee  freddocs/mission-specs-editor.gif
+  130b77d1c9dd2b97f889607567ca1aa0768d4353d322eff039eb4accc85ef761  freddocs/mouse-drag-mode.gif
+  ef79ed95949fccf33f5de01033b4956c20a915e840dc94c8f42659f8ec9cd9fd  freddocs/msgend.wav
+  b6274f868cc29323896b8cd922557d9f1fe1db350e3528354072ddfe93c09d45  freddocs/msgstart.wav
+  bd460ff1adeebf562a229779c6d2baacc320d606a92e8c1b6ff2437f1c87fa48  freddocs/nacbkg1.gif
+  9f44ad9cd706be24b549b28d35524157ab421b08371c3eb1d043c10772967845  freddocs/nacmenu1.gif
+  3cf14e075e8572f8c4616c29adf4716e449a8d8d261d570fecc6560007db6e8e  freddocs/nactitle1.jpg
+  e2e6528c62592ba02a7a142392dd0a92f2d850ddcdf01a89a13913da0e56b4f8  freddocs/not-incomplete.gif
+  8b3509554ffd3260e68bd5c4881aa7e1180ba8d745d45722511e336a60b4a366  freddocs/nyarlathotep-after.gif
+  f2bc5c390dd0dbafe3d309adb17e2ccc0007f82c8c50af4c9e31992dcbec3c8e  freddocs/nyarlathotep-before.gif
+  4f09f05cdd7299f85569f0804e103a483b530aa785c2873f99186f2a8ef4b49c  freddocs/objects-editor.gif
+  158d1ac276162937fe0e0adf26f06eae07c8a5eb8c581c9a8423420cb9902049  freddocs/pelican-departure.gif
+  6871cb8a90ff37bd437449310b8495b0f6141ed563b1effabab251970c1e6fc1  freddocs/player-orders.gif
+  7a13532657bc3aeef36ad9cf29023e0eee36ddc67f37017616f995367f595172  freddocs/pomotep-initial-status.gif
+  d575ec95bbbb1bb80154234dbef98bd86c32f236d33922ddee01882be733868a  freddocs/pomotep-intercepting.gif
+  655de1a2092db05e554362e3a0f200820c395af1694830c00e9e1a89a0688b62  freddocs/primary-goal.gif
+  17197ec26107fdf08d96094e047f8491e04cfec2b27ad642a27573158c7e2476  freddocs/quickstart-placement.gif
+  21f413821547cc8a5d5b2988b27ede6fb194440747bb732d01363d98ba5c529d  freddocs/quickstart.html
+  c846a9777a6645f8df19602fe471e13c0784e620b96d40352ac637605f469b23  freddocs/reinforcements-editor.gif
+  ea87937d3ac900c3551733aabb566e69f9566853b8556b47293b4349868666e0  freddocs/relentless-boarded.gif
+  4846951bab84f19041f900fd6b3dd14baae1c81fb4464757c1dd75f431a4d228  freddocs/relentless-chained.gif
+  133acfffe48f1720a9acb946403e2012af460f8e181a165806dea3c99084ef78  freddocs/relentless-departure.gif
+  5114bb5b5d805c6e83fbbf0eeb11eab6cbff8a5df808346dd06c67e2ac014f4b  freddocs/relentless-outcomes.gif
+  4c666dbd225cbcb358aa87523ff636de91c32499e2a964217854bb849320ae9d  freddocs/relentless-pulling-out.gif
+  40e6c81de9241c42cf06b7f88d0268998f792e2b972e3d264f686d8a1bbb7618  freddocs/ring-trick.gif
+  ad2a0672621a07d4dc97a1e8c92f627546fe14a79675f9e8deae4a2168ee7345  freddocs/rotate-around-object.gif
+  f3b0e1b109d2423c055b982eb0acd7ffe273a8c58f4d0e55fe63693ce31cbe71  freddocs/rotate-locally-example.gif
+  6d190008e7a3872bbbd9e87fd997bc8d256030a24d6e8443e12d722aaea86edb  freddocs/rotate-locally.gif
+  e98bce9888a6e93ec192550f29a0a5409395b038834bf023acb203a56072d468  freddocs/select-list.gif
+  d87142e995935dfec28bd650ffb512a53426bd2aed725052f39a848323113bc2  freddocs/selection-box.gif
+  85b57dda75d443f7f3bd1624bf4f17a182c043cf925cb60611622330540254b8  freddocs/selection-lock.gif
+  255141f8506f51370d73000215b9f850aa04a7b9b0161cf5f333e594941f53d6  freddocs/send-message.gif
+  ec61988ca1f41a3e38b07aaeb97bd077d00c64ba007fa1445a66483df3df60b7  freddocs/sexp-compressed.gif
+  b4e40bbd16e7ed072d41c48689e7b6acfd25a1eedf6617dc5904c68f8c630f58  freddocs/sexp-example-2.gif
+  3c4e23ce2d75e1d0895c289578cd2ccb948f1604109eedd1cdcecb162779016f  freddocs/sexp-example.gif
+  55c0e662d0ccb4aeadb1338c2f1f9826d862f7bbd19500f012117700ea1694b5  freddocs/sexp-help.gif
+  88b600ef6380c1b0df554d571eddfcca86246e36368be1d8f521ca59504f8dae  freddocs/sexp-right-menu.gif
+  a141ad8921004eaac8e33a577fafc64fd44e4c530cddff8959662def48d37a82  freddocs/shield-system-editor.gif
+  21c3a4e00857dce485440236f6ac42721c14156e51548404f228f3293017f31a  freddocs/ship-selection-dialog.gif
+  02675474b118619c83d3dd037f021d0fdff9503c6a49dac54e5cbbe646612ef4  freddocs/ships-editor-main-area.gif
+  533359ab5cb9eb01506135ba6c40ad28aa02f248a277ec6995c099df0862da97  freddocs/shipyard-completed.fs2
+  c6f9ceaa2548755274840e66efe0b970523bc7116cc72c3cc2dc081c7ac99095  freddocs/shipyard.gif
+  0d051629066e25722c3f082dd8bdf959d7a49ecb15762d3693bbcbbf268bae91  freddocs/show-distances.gif
+  69a04c500712c0f6e63754facba71696561aa9b1e0fc2074a84c1ee210109ad3  freddocs/sleipner-1-done.gif
+  454d87a2f38f2341173d3bb6051898d2942d217c4adf6fcd4184dc4300da2a56  freddocs/sleipner-2-going-in.gif
+  382352f211c88380fd5431c2e602c3757869f6c0c83f1e165fcfd368044d6383  freddocs/sleipner-directives.gif
+  62b63378bcc42e3e103e3c8f4c77af8c4ec31fd3d37294e127ffd9953aa038bd  freddocs/special-explosion.gif
+  ce71daa467dfe2509e48d5d71cc2487c297f1ffa1cc21813257f9900cd1bf7f7  freddocs/speed-menu.gif
+  13716c339adfb5a0372a17c80b4afbfadf17d0d4de07467d5e5b2f9fc77adcae  freddocs/status-bar.gif
+  241932a41cdbef14d0bffa60aba685dfcb18a6b5b812dc291209e1eaffa0a9ea  freddocs/team-loadout-editor.gif
+  068a82cf6533dcd02e6f6588757ba7ab0ea4d273702eeec81535f5b9112d668f  freddocs/too-close.gif
+  d0bbbc65e315c67e07a627bd09e6c84fdd1db4cbb9562ee9d5a08acc3f0dd509  freddocs/toolbar-form-wing.gif
+  1f75e2af2d3d35f2d5510f41b2607dec1a7c4ce3e053097eada319c4131fb7f3  freddocs/toolbar.html
+  2d2ef0784442e11425f6fe8027242bf0521298c675134ef487522a9f5b29df2d  freddocs/vasudantalk.wav
+  306e69a8884252c72a6b990788e74651e1e615093be18896fe73a6360fca5962  freddocs/view-menu.gif
+  6297e1f6783bb193c3cd606c9e7efed980ffc83da44655b5370f2872fc38956a  freddocs/vssver.scc
+  941787b2bbb1304605fd56b717b03d291a1473cc4dd4444f9e78219c9fa1de18  freddocs/walkthrough.html
+  5f7566e6efb6cc1336c99c3993d219b3ac46432d4fe4d9311b5efd516101d0e8  freddocs/waypoint-paths-editor.gif
+  2c31415c6974ce39feef7bf8ae9713e8bca85eed03a84def88cbecfac09e4f7d  freddocs/weapons-editor.gif
+  57856e0cfc1d7e871fef0e6a4cc03bc95a9877b1b742f5255694cd381defb179  freddocs/wing-positions.gif
+  ea9c24189c7fbbfa2c95e6138151db3f41394d54c9c61180b893c8dbc38ec0f8  freddocs/wings-editor.gif
+  a224c8aa9f8f08c6efa29e189abb7be2433344f71b978c7da9fdb6cd8eff4630  freddocs/zoom.gif
   c17f7d82043f2d8fbcca3d3a462cf41d5315b7bb82fe1c949aaf204b84c42ec0  data/missions/Backup.001
   9728b9d0734b1384ab3933c94dd9a152b8cae6913302f7a43e573cc7400161a0  data/missions/Backup.002
   d2e21709eae2cd3b2ae3cd6915f74e9b7b7ece0850b8bd0c8a9a96b7992b98f4  data/multi.cfg
