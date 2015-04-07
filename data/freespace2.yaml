@@ -71,6 +71,7 @@ packages:
     - data/players/hud_3.hcf
 
     optional:
+    - GOG_EULA.txt
     - MANUAL.PDF
     - ReadMe.txt
     - refcard.pdf
@@ -190,6 +191,7 @@ files:
     unpack:
       format: innoextract
     provides:
+    - GOG_EULA.txt
     - smarty_fs2.vp
     - sparky_hi_fs2.vp
     - stu_fs2.vp_gog
@@ -328,6 +330,7 @@ files:
     unpack:
       format: innoextract
     provides:
+    - GOG_EULA.txt
     - smarty_fs2.vp
     - sparky_hi_fs2.vp
     - stu_fs2.vp_gog
@@ -475,6 +478,10 @@ files:
     alternatives:
     - stu_fs2.vp_steam
     - stu_fs2.vp_gog
+
+  GOG_EULA.txt:
+    install_to: $docdir
+    license: true
   MANUAL.PDF:
     install_to: $docdir/manual.pdf
     distinctive_name: false
@@ -512,6 +519,7 @@ files:
 cksums: |
   _ 1649820744 setup_freespace2_2.0.0.8.exe
   _ 1649724616 setup_freespace2_2.0.0.8.exe_smcv
+  _ 7505      GOG_EULA.txt
   _ 231       mod.ini
   _ 86070     FS2.bmp
   _ 7371568   MANUAL.PDF
@@ -662,6 +670,7 @@ cksums: |
 md5sums: |
   4713c27c02d4de4368c2ebde46e46c9f  setup_freespace2_2.0.0.8.exe
   2870b98722a1e56a360e3a959019e678  setup_freespace2_2.0.0.8.exe_smcv
+  3ca819220a3269e314c601a2333501f7  GOG_EULA.txt
   ae38dac595cff5f6a45a92dfe55e90f2  mod.ini
   faa4c82b1aa0d3cf5427207e10150711  FS2.bmp
   788f2d89bfdad762318fe2611f745db1  MANUAL.PDF
@@ -812,6 +821,7 @@ md5sums: |
 sha1sums: |
   f98af31596b7f4ef1c624775e6c37a2eb4f8ffd2  setup_freespace2_2.0.0.8.exe
   c14d18e7adb7c49112820e5e57a17bc5ca7efebc  setup_freespace2_2.0.0.8.exe_smcv
+  2acb1ec04139af2cc39d4253ca557c9571a4d15c  GOG_EULA.txt
   c146fe02bb04033bce8c297b33fb980ed2e98fc6  MANUAL.PDF
   a407edf5c4595c610dbf3610359416168701ca24  ReadMe.txt
   15fb40bf74ad8850a1c317e2ce85c05ca4172257  root_fs2.vp
