@@ -478,6 +478,10 @@ files:
     alternatives:
     - stu_fs2.vp_steam
     - stu_fs2.vp_gog
+  stu_fs2.vp_steam:
+    look_for: [stu_fs2.vp]
+  stu_fs2.vp_gog:
+    look_for: [stu_fs2.vp]
 
   GOG_EULA.txt:
     install_to: $docdir
@@ -498,6 +502,10 @@ files:
     alternatives:
     - INTRO.MVE_steam
     - INTRO.MVE_gog
+  INTRO.MVE_steam:
+    look_for: [INTRO.MVE]
+  INTRO.MVE_gog:
+    look_for: [INTRO.MVE]
 
   MONO1.MVE:
     install_to: usr/share/games/freespace2-open/data/movies
