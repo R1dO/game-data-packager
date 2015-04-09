@@ -1,0 +1,56 @@
+---
+longname: Duke Nukem 3D
+copyright: © 1996 3D Realms
+engine: eduke32
+genre: First-person shooter
+
+# http://wiki.eduke32.com/wiki/APT_repository
+
+help_text: |
+  To play this game, you need to install the EDuke32
+  engine that is not currently avaible in Debian.
+
+packages:
+  duke3d-data:
+    install_to: usr/share/games/eduke32
+    steam:
+      id: '225140'
+      path: common/Duke Nukem 3D/gameroot/classic
+    gog:
+      url: duke_nukem_3d_atomic_edition
+    debian:
+      replaces: duke3d-shareware
+    install:
+    - duke3d.grp
+    optional:
+    - duke.rts
+    - license.txt
+    - manual.pdf
+    
+files:
+  duke3d.grp:
+    distinctive_name: false
+    # shareware file has same name
+  license.txt:
+    install_to: $docdir
+    license: true
+  manual.pdf:
+    install_to: $docdir
+
+cksums: |
+  _ 44356548  duke3d.grp
+  _ 188954    duke.rts
+  _ 4518      license.txt
+  _ 8536250   manual.pdf
+md5sums: |
+  22b6938fe767e5cc57d1fe13080cd522  duke3d.grp
+  9d29f9673bbdb56068acf7645c13749c  duke.rts
+  98dbbb9fc8b8e6e86e0fb27a4aca599a  license.txt
+  ec892271a409477dae559870f071e09d  manual.pdf
+sha1sums: |
+  4fdef8559e2d35b1727fe92f021df9c148cf696c  duke3d.grp
+  738c7f5fd0c8b57ee2e87ae7a97bf8e21a821d07  duke.rts
+  c74fe90cc174019ac69c2d21b12e76709b2a9ccb  license.txt
+  dc4d12173ed4d58c6b02ceecd42d632a5e1a6ae0  manual.pdf
+...
+
