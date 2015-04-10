@@ -62,6 +62,8 @@ packages:
     optional:
     - main/autoexec.cfg
     - main/rotate.cfg
+    - license_fr.txt
+    - license_en.txt
 
 help_text: |
   Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
@@ -162,6 +164,18 @@ files:
     unpack:
       format: dos2unix
 
+  license_fr.txt:
+    size: 18725
+    look_for: [License.txt]
+    install_to: $docdir
+    license: true
+
+  license_en.txt:
+    size: 15483
+    look_for: [License.txt]
+    install_to: $docdir
+    license: true
+
 md5sums: |
   d0c13dcf44a7baa7741af50e09844371  main/autoexec.cfg
   7651d02fe51fc8a949536f3e0cfa8dd6  main/mp_bin.pk3
@@ -192,6 +206,8 @@ md5sums: |
   a0cb6cc6874e33399983e6831dd78b64  main/mp_bin0.pk3
   5f43f510586392fb99241e94ec7729b0  main/mp_rend2_shaders0.pk3
   51f3ff74eeb6d7c8a88a8ed660857bcd  main/sp_rend2_shaders0.pk3
+  36267835e02f4456ac8f0c120ade5895  license_fr.txt
+  76055f8014127627fd97b93f5ecd91a5  license_en.txt
 
 sha1sums: |
   e0422b4730daf306b428d419883d9147c6e2a946  main/autoexec.cfg
@@ -223,6 +239,8 @@ sha1sums: |
   3bc3710b4adbc305feba5f142ec756a83618a545  main/mp_bin0.pk3
   ce9423820422146a052fd7b72cc2064682a40f83  main/mp_rend2_shaders0.pk3
   25416e72326367b75b228b5d96c6bd2af6fa7dd8  main/sp_rend2_shaders0.pk3
+  9706a1b715afecb0a4197815a2eab40ebac075ee  license_fr.txt
+  7dcb33dea7eb63b8669f950cb48804d437adc4ed  license_en.txt
 
 sha256sums: |
   ca3ca09d79a755262cb8c9766d457a2c72ab0258e8f8cec469fddd686ea488ef  main/autoexec.cfg
@@ -254,6 +272,7 @@ sha256sums: |
   135722ca744259ccba8864173bf70439897065e001e127bbb57279343fd74f50  main/mp_bin0.pk3
   b4719cd0866d4286f7022001e35b5b213a565b28e9481b9564e14a10928b3ec9  main/mp_rend2_shaders0.pk3
   29cb03e27a04393f91a19614fc215e5299bc7b047217385beedb831a9bb9513c  main/sp_rend2_shaders0.pk3
-
+  ab8b3aa11c285a763f239c4a116cf0fbe5039067c3e9b73e01998e58c7712356  license_fr.txt
+  c4bd06fba3e95625b85a3a4b5f3ec11be399a7f040ae2234048937d44436a729  license_en.txt
 ...
 # vim:set sw=2 sts=2 et:
