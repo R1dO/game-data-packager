@@ -783,7 +783,8 @@ class GameData(object):
             if not package.longname:
                 package.longname = self.longname + ' (demo)'
         else:
-            assert 'demo' not in package.name, package.name + ' miss a demo_for tag.'
+            assert 'demo' not in package.name or len(self.packages) == 1, \
+                package.name + ' miss a demo_for tag.'
 
         if 'expansion_for' in d:
             assert package.name != d['expansion_for'], \
