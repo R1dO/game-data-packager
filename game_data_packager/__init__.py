@@ -140,9 +140,14 @@ class HashedFile(object):
         if progress and sys.stderr.isatty():
             pad = [' ']
             def update_progress(s):
+                ts = time.time()
+                if ts < update_progress.ts + 0.2:
+                    return
+                update_progress.ts = ts
                 if len(pad[0]) <= len(s):
                     pad[0] = ' ' * len(s)
                 print(' %s \r %s\r' % (pad[0], s), end='', file=sys.stderr)
+            update_progress.ts = time.time()
         else:
             update_progress = lambda s: None
 
