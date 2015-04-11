@@ -2062,6 +2062,7 @@ class GameData(object):
 
         if search:
             for path in self.try_repack_from:
+                path = os.path.expanduser(path)
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
 
