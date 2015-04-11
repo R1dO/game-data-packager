@@ -1483,6 +1483,16 @@ class GameData(object):
                         tmp = os.path.join(tmpdir, f)
                         os.utime(tmp, (orig_time, orig_time))
                         self.consider_file(tmp, True)
+                elif fmt == 'cabextract':
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s',
+                            to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['cabextract', '-q', '-L',
+                                os.path.abspath(found_name)], cwd=tmpdir)
+                    self.consider_file_or_dir(tmpdir)
                 elif fmt == 'innoextract':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
@@ -1548,6 +1558,7 @@ class GameData(object):
                         # files will instead inherit the archive's timestamp
                         orig_time = os.stat(found_name).st_mtime
                         for f in to_unpack:
+                            logger.debug('Setting timestamp on %s', f)
                             tmp = os.path.join(tmpdir, f)
                             os.utime(tmp, (orig_time, orig_time))
                             self.consider_file(tmp, True)
