@@ -1,0 +1,339 @@
+longname: Arx Fatalis
+copyright: © 2002 Arkane Studios
+engine: arx-libertatis
+try_repack_from: [~/.local/share/arx]
+
+# http://wiki.arx-libertatis.org/Required_data_files_and_checksums
+
+packages:
+   arx-fatalis-demo-data:
+     install_to: usr/share/games/arx
+     debian:
+       conflicts: arx-fatalis-data
+     install:
+     - arx.ttf
+     - data.pak_demo
+     - logo.bmp_demo
+     - sfx.pak_demo
+     - data2.pak_demo
+     - loc.pak_demo
+     - speech.pak_demo
+
+files:
+  # FULL VERSION
+  arx.ttf:
+    alternatives:
+    - arx.ttf_latin
+    - arx.ttf_ja
+    install_as: misc/arx.ttf
+  arx.ttf_latin:
+    look_for: [arx.ttf]
+  arx.ttf_ja:
+    look_for: [arx.ttf]
+
+  # DEMO
+  data.pak_demo:
+    alternatives:
+    - data.pak_demo_latin
+    - data.pak_demo_ja
+    install_as: data.pak
+  data.pak_demo_latin:
+    look_for: [data.pak]
+    distinctive_name: false
+  data.pak_demo_ja:
+    look_for: [data.pak]
+    distinctive_name: false
+  logo.bmp_demo:
+    look_for: [logo.bmp]
+    install_as: misc/logo.bmp
+  sfx.pak_demo:
+    look_for: [sfx.pak]
+    distinctive_name: false
+    install_as: sfx.pak
+  data2.pak_demo:
+    alternatives:
+    - data2.pak_demo_en
+    - data2.pak_demo_fr
+    - data2.pak_demo_de
+    - data2.pak_demo_ja
+    install_as: data2.pak
+  data2.pak_demo_en:
+    look_for: [data2.pak]
+  data2.pak_demo_fr:
+    look_for: [data2.pak]
+  data2.pak_demo_de:
+    look_for: [data2.pak]
+  data2.pak_demo_ja:
+    look_for: [data2.pak]
+  loc.pak_demo:
+    alternatives:
+    - loc.pak_demo_en
+    - loc.pak_demo_fr
+    - loc.pak_demo_de
+    - loc.pak_demo_ja
+    install_as: loc.pak
+  loc.pak_demo_en:
+    look_for: [loc.pak]
+  loc.pak_demo_fr:
+    look_for: [loc.pak]
+  loc.pak_demo_de:
+    look_for: [loc.pak]
+  loc.pak_demo_ja:
+    look_for: [loc.pak]
+  speech.pak_demo:
+    alternatives:
+    - speech.pak_demo_en
+    - speech.pak_demo_fr
+    - speech.pak_demo_de
+    - speech.pak_demo_ja
+    install_as: speech.pak
+  speech.pak_demo_en:
+    look_for: [speech.pak]
+  speech.pak_demo_fr:
+    look_for: [speech.pak]
+  speech.pak_demo_de:
+    look_for: [speech.pak]
+  speech.pak_demo_ja:
+    look_for: [speech.pak]
+
+  Setup1.cab_en:
+    look_for: [Setup1.cab]
+    unpack:
+      format: cabextract
+    provides:
+    - data.pak_demo_latin
+  Setup2.cab:
+    unpack:
+      format: cabextract
+    provides:
+    - sfx.pak_demo
+  Setup3.cab_en:
+    look_for: [Setup3.cab]
+    unpack:
+      format: cabextract
+    provides:
+    - speech.pak_demo_en
+  arx_demo_english.zip:
+    unpack:
+      format: zip
+    provides:
+    - Setup1.cab_en
+    - Setup2.cab
+    - Setup3.cab_en
+    - arx.ttf_latin
+    - logo.bmp_demo
+    - data2.pak_demo_en
+    - loc.pak_demo_en
+  arx_demo_german.exe:
+    unpack:
+      format: unace-nonfree
+    provides:
+    - Setup1.cab_de
+    - Setup2.cab_de
+    - Setup3.cab_de
+    - arx.ttf_latin
+    - logo.bmp_demo
+    - data2.pak_demo_de
+    - loc.pak_demo_de
+
+  Setup1.cab_fr:
+    look_for: [Setup1.cab]
+    unpack:
+      format: cabextract
+    provides:
+    - data.pak_demo_latin
+  Setup3.cab_fr:
+    look_for: [Setup3.cab]
+    unpack:
+      format: cabextract
+    provides:
+    - speech.pak_demo_fr
+  arx_fatalis_demo_fr.zip:
+    unpack:
+      format: zip
+    provides:
+    - Setup1.cab_fr
+    - Setup2.cab
+    - Setup3.cab_fr
+    - arx.ttf_latin
+    - logo.bmp_demo
+    - data2.pak_demo_fr
+    - loc.pak_demo_fr
+
+  Setup1.cab_de:
+    look_for: [Setup1.cab]
+    unpack:
+      format: cabextract
+    provides:
+    - data.pak_demo_latin
+  Setup2.cab_de:
+    look_for: [Setup2.cab]
+    unpack:
+      format: cabextract
+    provides:
+    - sfx.pak_demo
+  Setup3.cab_de:
+    look_for: [Setup3.cab]
+    unpack:
+      format: cabextract
+    provides:
+    - speech.pak_demo_de
+
+  data1.cab:
+    unpack:
+      format: unshield
+      other_parts: [data1.hdr, data2.cab]
+      unpack:
+      - misc/arx.ttf
+      - misc/Logo.bmp
+      - PAK/data.pak
+      - PAK/data2.pak
+      - PAK/LOC.pak
+      - PAK/SFX.pak
+      - PAK/SPEECH.pak
+      - txt/EULA_JPN.txt
+      - txt/readme_japanese_demo.txt
+    provides:
+    - arx.ttf_ja
+    - data.pak_demo_ja
+    - logo.bmp_demo
+    - sfx.pak_demo
+    - data2.pak_demo_ja
+    - loc.pak_demo_ja
+    - speech.pak_demo_ja
+  arx_jpn_demo.exe:
+    # this is exactly the same setup in ja.yaml,
+    # maybe there is a pattern here
+    unpack:
+      format: 7z
+      unpack:
+      - /Disk1/data1.cab
+      - /Disk1/data1.hdr
+      - /Disk1/data2.cab
+    provides:
+    - data1.cab
+    - data1.hdr
+    - data2.cab
+
+cksums: |
+  _ 36992     arx.ttf_latin
+  _ 4077060   arx.ttf_ja
+
+  _ 110965070 data.pak_demo_latin
+  _ 110916288 data.pak_demo_ja
+  _ 921654    logo.bmp_demo
+  _ 31995270  sfx.pak_demo
+
+  _ 1696636   data2.pak_demo_en
+  _ 195248    loc.pak_demo_en
+  _ 39758530  speech.pak_demo_en
+  _ 101581207 Setup1.cab_en
+  _ 23103162  Setup2.cab
+  _ 28787575  Setup3.cab_en
+  _ 160545354 arx_demo_english.zip
+
+  _ 1696259   data2.pak_demo_fr
+  _ 206236    loc.pak_demo_fr
+  _ 38909891  speech.pak_demo_fr
+  _ 101581207 Setup1.cab_fr
+  _ 29021613  Setup3.cab_fr
+  _ 161860761 arx_fatalis_demo_fr.zip
+
+  _ 1634993   data2.pak_demo_de
+  _ 207687    loc.pak_demo_de
+  _ 41487810  speech.pak_demo_de
+  _ 101581207 Setup1.cab_de
+  _ 23103162  Setup2.cab_de
+  _ 31150491  Setup3.cab_de
+  _ 164018721 arx_demo_german.exe
+
+  _ 35627176  speech.pak_demo_ja
+  _ 1696636   data2.pak_demo_ja
+  _ 150956    loc.pak_demo_ja
+  _ 469156    data1.cab
+  _ 13039     data1.hdr
+  _ 168439416 data2.cab
+  _ 167181063 arx_jpn_demo.exe
+
+md5sums: |
+  # FULL VERSION
+  9a95ff96795c034524ba1c2e94ea12c7  arx.ttf_latin
+  58eab00842d8adea8d553ae1f66b0c9b  arx.ttf_ja
+
+  # DEMO
+  5d7ba6e6c79ebf7fbb232eaced9e8ad9  data.pak_demo_latin
+  903dfe1878a0cedff3b941fd3aa22ba9  data.pak_demo_ja
+  aa3dfbd4bc9c863d10a0c5345ae5a4c9  logo.bmp_demo
+  ea1b3e6d6f4906905d4a34f07e9a59ac  sfx.pak_demo
+
+  958b78f8f370b06d769843137138c461  data2.pak_demo_en
+  2ae16d3925c597dca70f960f175def3a  loc.pak_demo_en
+  62ca7b1751c0615ee131a94f0856b389  speech.pak_demo_en
+  3e278f028612139446fd5465b98796a2  Setup1.cab_en
+  addfa902158c46e3510f42f3eea5274a  Setup2.cab
+  63d2e7f1b6b8125175c25bd1474700bd  Setup3.cab_en
+  3c59a5799e1237b1b181c96e8c09155a  arx_demo_english.zip
+
+  8dc1d1b3e85d4a41ae320aa3fa9c649a  data2.pak_demo_fr
+  4a8ac68341d4758a32d9cd04955b115e  loc.pak_demo_fr
+  09038e43508232c44537c162f9e3ecde  speech.pak_demo_fr
+  ffaac792590dac3400561d95d0abcc85  Setup1.cab_fr
+  6b7a1e89020d3ece8c42d0e5e234ebb4  Setup3.cab_fr
+  28338bb5810d4a585b86d947eb6a2b74  arx_fatalis_demo_fr.zip
+
+  143ba491a357263a2dfad9936a66eeb6  data2.pak_demo_de
+  87accec0658aa109a3efa8b41aab61df  loc.pak_demo_de
+  a424fcfc46dd4f11b04030efac15a668  speech.pak_demo_de
+  0c61679ff3315d13e6c300308ad09b2c  Setup1.cab_de
+  8c15a78abcd9e1875fc658615c903c9a  Setup2.cab_de
+  1269eb4a7edb54cbd15dd143fc5749e8  Setup3.cab_de
+  1a666170e1605310ca69204eae80e806  arx_demo_german.exe
+
+  958b78f8f370b06d769843137138c461  data2.pak_demo_ja
+  9d84cede805b13fdf7fce856ecc15b19  loc.pak_demo_ja
+  eeacbd9a845ecc00054934e82e9d7dd3  speech.pak_demo_ja
+  03a13aebc5ceb90ddfcc02e8ec826229  data1.cab
+  f888e19aac2c843adc8e777dacf7a402  data1.hdr
+  c7824fc2c9d63142c29e52f12741b777  data2.cab
+  00aa3aeccb54c885ccc3ef60644d697e  arx_jpn_demo.exe
+
+sha1sums: |
+  3dd15c2c80fdd2b232d401b63dc7e99fbeb4430e  arx.ttf_latin
+  ff41da11066d61c8c0100c6803368ac3f0131af9  arx.ttf_ja
+  d92a62dc9cde1ebd4fe22f6dfb59fcbdacfa5ce4  data.pak_demo_latin
+  6d20f024b9bc3ca39f9c7da8c1b996effd1493fc  data.pak_demo_ja
+  445aa15a9905f9e38bc81b843eca8b6e580944b9  logo.bmp_demo
+  917bbb844728e1c5d6104a97558e26382cced734  sfx.pak_demo
+
+  e1460a06164016624074f61d0cb5ffa1752bba82  data2.pak_demo_en
+  88f8ea2c9c6e15444350084103a1b16f3552df91  loc.pak_demo_en
+  ac4a16365e1a9f690351748168ae85eb2ac1138f  speech.pak_demo_en
+  42076a099b59fffaac64685c5109155dfc3d30a8  Setup1.cab_en
+  2d524d9aa4fe63f6eae6053bf05f9410841e6d51  Setup2.cab
+  7791ab1fc684565fc59eb7cd477eacbd215368f2  Setup3.cab_en
+  16a78e498475eefb46c0db28efc4f211f198cf79  arx_demo_english.zip
+
+  aa1f5d520533ac6230209ed58a9e34de63f0810b  data2.pak_demo_de
+  119f31c502e1c75d2719e7eff80b796a12c401b7  loc.pak_demo_de
+  a7da31632729d5945e4bd3e7f2ae4f554b4edf64  speech.pak_demo_de
+  3ac7fad694ffb1d251ce2dc5613629a91c84a09b  Setup1.cab_de
+  1b516bdeffbcbc64763fe2e1c8e37833e9d16fb2  Setup2.cab_de
+  a9d58e6f8328d3ded5578a27281c16a63508811a  Setup3.cab_de
+  41bcac2ac29239660bd2a16f0502ff9088be8ca3  arx_demo_german.exe
+
+  355c2ebf22fa5fd3918dba97a6d312cb00ad0acf  data2.pak_demo_fr
+  e6736868532cb5d7d3bb107a096084f4c29e29ac  loc.pak_demo_fr
+  4f77b531193fcd2e2d8fb5b485a47218ebe36649  speech.pak_demo_fr
+  ecee06c27923fde8b61880fd94feae60158db51b  Setup1.cab_fr
+  b9fcc1d2596f8781ec4f850a619dd84a3b6b510a  Setup3.cab_fr
+  b3d1b78a626b63a55bcb475a79c8d049159d8b56  arx_fatalis_demo_fr.zip
+
+  c2ee71ff0479e1cd038e22c5c9cf7c12feac925e  speech.pak_demo_ja
+  e1460a06164016624074f61d0cb5ffa1752bba82  data2.pak_demo_ja
+  e6b775b97c7c8cf936d692ba6c8a6297becec924  loc.pak_demo_ja
+  eeb5d5bc560489eb7091f4c122fde2f322e2d8f2  data1.cab
+  140ceac0576550a03ec1bb76ee25e341360b2153  data1.hdr
+  e1358112fa02d64942df1fffcd4db580b1b39af9  data2.cab
+  541facf24d23b075e2cb4e48f1ad5b1cf5fe25a8  arx_jpn_demo.exe
+...
+
