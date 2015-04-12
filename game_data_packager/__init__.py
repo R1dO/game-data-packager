@@ -141,7 +141,7 @@ class HashedFile(object):
             pad = [' ']
             def update_progress(s):
                 ts = time.time()
-                if ts < update_progress.ts + 0.2:
+                if ts < update_progress.ts + 0.2 and not s.startswith('100%'):
                     return
                 update_progress.ts = ts
                 if len(pad[0]) <= len(s):
