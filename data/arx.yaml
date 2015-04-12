@@ -143,17 +143,6 @@ files:
     - logo.bmp_demo
     - data2.pak_demo_en
     - loc.pak_demo_en
-  arx_demo_german.exe:
-    unpack:
-      format: unace-nonfree
-    provides:
-    - Setup1.cab_de
-    - Setup2.cab_de
-    - Setup3.cab_de
-    - arx.ttf_latin
-    - logo.bmp_demo
-    - data2.pak_demo_de
-    - loc.pak_demo_de
 
   Setup1.cab_fr:
     look_for: [Setup1.cab]
@@ -197,6 +186,17 @@ files:
       format: cabextract
     provides:
     - speech.pak_demo_de
+  arx_demo_german.exe:
+    unpack:
+      format: unace-nonfree
+    provides:
+    - Setup1.cab_de
+    - Setup2.cab_de
+    - Setup3.cab_de
+    - arx.ttf_latin
+    - logo.bmp_demo
+    - data2.pak_demo_de
+    - loc.pak_demo_de
 
   data1.cab:
     unpack:
