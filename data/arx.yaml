@@ -5,6 +5,14 @@ try_repack_from: [~/.local/share/arx]
 
 # http://wiki.arx-libertatis.org/Required_data_files_and_checksums
 
+help_text: |
+  To package this demo, please download any of the archives
+  referenced at the bottom of this page:
+  http://wiki.arx-libertatis.org/Getting_the_game_data
+  and then run "game-data-packager arx <archive>".
+
+  The french/german/japanese versions are also supported.
+
 packages:
    arx-fatalis-demo-data:
      install_to: usr/share/games/arx
@@ -124,6 +132,17 @@ files:
     - logo.bmp_demo
     - data2.pak_demo_en
     - loc.pak_demo_en
+  arx_demo_english.exe:
+    unpack:
+      format: unrar-nonfree
+    provides:
+    - Setup1.cab_en
+    - Setup2.cab
+    - Setup3.cab_en
+    - arx.ttf_latin
+    - logo.bmp_demo
+    - data2.pak_demo_en
+    - loc.pak_demo_en
   arx_demo_german.exe:
     unpack:
       format: unace-nonfree
@@ -231,6 +250,7 @@ cksums: |
   _ 23103162  Setup2.cab
   _ 28787575  Setup3.cab_en
   _ 160545354 arx_demo_english.zip
+  _ 161706042 arx_demo_english.exe
 
   _ 1696259   data2.pak_demo_fr
   _ 206236    loc.pak_demo_fr
@@ -273,6 +293,7 @@ md5sums: |
   addfa902158c46e3510f42f3eea5274a  Setup2.cab
   63d2e7f1b6b8125175c25bd1474700bd  Setup3.cab_en
   3c59a5799e1237b1b181c96e8c09155a  arx_demo_english.zip
+  fd03149f402b84d23145b39d12403dc8  arx_demo_english.exe
 
   8dc1d1b3e85d4a41ae320aa3fa9c649a  data2.pak_demo_fr
   4a8ac68341d4758a32d9cd04955b115e  loc.pak_demo_fr
@@ -312,6 +333,7 @@ sha1sums: |
   2d524d9aa4fe63f6eae6053bf05f9410841e6d51  Setup2.cab
   7791ab1fc684565fc59eb7cd477eacbd215368f2  Setup3.cab_en
   16a78e498475eefb46c0db28efc4f211f198cf79  arx_demo_english.zip
+  cc644b9f7b12e8391a61c098df05be8d430752f9  arx_demo_english.exe
 
   aa1f5d520533ac6230209ed58a9e34de63f0810b  data2.pak_demo_de
   119f31c502e1c75d2719e7eff80b796a12c401b7  loc.pak_demo_de
