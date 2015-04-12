@@ -1503,6 +1503,16 @@ class GameData(object):
                     subprocess.check_call(['unace', 'x',
                              os.path.abspath(found_name)], cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
+                elif fmt == 'unrar-nonfree':
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s',
+                            to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['unrar-nonfree', 'x',
+                             os.path.abspath(found_name)], cwd=tmpdir)
+                    self.consider_file_or_dir(tmpdir)
                 elif fmt == 'innoextract':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
@@ -2547,6 +2557,7 @@ class GameData(object):
                 'id-shr-extract': 'dynamite',
                 'lha': 'lhasa',
                 '7z': 'p7zip-full',
+                'unrar-nonfree': 'unrar',
         }
         packages = set()
 
