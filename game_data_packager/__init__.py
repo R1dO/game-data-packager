@@ -1493,6 +1493,16 @@ class GameData(object):
                     subprocess.check_call(['cabextract', '-q', '-L',
                                 os.path.abspath(found_name)], cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
+                elif fmt == 'unace-nonfree':
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s',
+                            to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['unace', 'x',
+                             os.path.abspath(found_name)], cwd=tmpdir)
+                    self.consider_file_or_dir(tmpdir)
                 elif fmt == 'innoextract':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
@@ -2512,15 +2522,22 @@ class GameData(object):
 
         fmt = wanted.unpack['format']
 
-        if fmt not in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'zip'):
-            if which(fmt) is None:
-                logger.warning('cannot unpack "%s": tool "%s" is not ' +
-                        'installed', wanted.name, fmt)
-                self.missing_tools.add(fmt)
-                self.unpack_failed.add(wanted.name)
-                return False
+        # builtins
+        if fmt in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'zip'):
+            return True
 
-        return True
+        if which(fmt) is not None:
+            return True
+
+        # unace-nonfree package diverts /usr/bin/unace from unace package
+        if fmt == 'unace-nonfree' and is_installed('unace-nonfree'):
+            return True
+
+        logger.warning('cannot unpack "%s": tool "%s" is not ' +
+                       'installed', wanted.name, fmt)
+        self.missing_tools.add(fmt)
+        self.unpack_failed.add(wanted.name)
+        return False
 
     def log_missing_tools(self):
         if not self.missing_tools:
