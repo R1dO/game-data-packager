@@ -132,7 +132,7 @@ files:
     - graph/obj3d/textures/npc_worm_body_part1.jpg
     - graph/obj3d/textures/npc_worm_body_part2.bmp
     - graph/obj3d/textures/[wood]_light_door.jpg
-    - arx.ttf
+    - arx.ttf_latin
     - misc/arx_russian.ttf
     - misc/arx_taiwanese.ttf
     - misc/logo.avi
@@ -141,6 +141,48 @@ files:
     - data.pak
     - loc.pak
     - speech.pak
+    - map.pdf
+    - manual.pdf
+  ArxFatalis_1.21_MULTILANG.exe:
+    download: http://arx.vg/ArxFatalis_1.21_MULTILANG.exe
+    unpack:
+      format: innoextract
+    provides:
+    - data2.pak
+    - graph/interface/misc/arkane.bmp
+    - graph/interface/misc/quit1.bmp
+    - graph/obj3d/textures/[wood]_light_door.jpg
+    - graph/obj3d/textures/fixinter_barrel.jpg
+    - graph/obj3d/textures/fixinter_bell.bmp
+    - graph/obj3d/textures/fixinter_metal_door.jpg
+    - graph/obj3d/textures/fixinter_public_notice.bmp
+    - graph/obj3d/textures/item_bread.bmp
+    - graph/obj3d/textures/item_club.jpg
+    - graph/obj3d/textures/item_long_sword.jpg
+    - graph/obj3d/textures/item_mauld_sabre.jpg
+    - graph/obj3d/textures/item_mauldsword.jpg
+    - graph/obj3d/textures/item_mirror.jpg
+    - graph/obj3d/textures/item_ring_casting.bmp
+    - graph/obj3d/textures/item_rope.bmp
+    - graph/obj3d/textures/item_spell_sheet.jpg
+    - graph/obj3d/textures/item_torch.jpg
+    - graph/obj3d/textures/item_torch2.jpg
+    - graph/obj3d/textures/item_zohark.bmp
+    - graph/obj3d/textures/l7_dwarf_[wood]_board08.jpg
+    - graph/obj3d/textures/l7_dwarf_[wood]_board80.jpg
+    - graph/obj3d/textures/npc_dog.bmp
+    - graph/obj3d/textures/npc_pig.bmp
+    - graph/obj3d/textures/npc_pig_dirty.bmp
+    - graph/obj3d/textures/npc_rat_base.bmp
+    - graph/obj3d/textures/npc_rat_base_cm.bmp
+    - graph/obj3d/textures/npc_worm_body_part1.jpg
+    - graph/obj3d/textures/npc_worm_body_part2.bmp
+    - arx.ttf_latin
+    - misc/arx_russian.ttf
+    - misc/arx_taiwanese.ttf
+    - misc/logo.avi
+    - misc/logo.bmp
+    - loc.pak
     - map.pdf
     - manual.pdf
 
@@ -386,6 +428,7 @@ cksums: |
   _ 974519    manual.pdf
   _ 175136    map.pdf
   _ 547521812 setup_arx_fatalis.exe
+  _ 9064611   ArxFatalis_1.21_MULTILANG.exe
 
   # DEMO
   _ 110965070 data.pak_demo_latin
@@ -462,14 +505,15 @@ md5sums: |
   da59198061cef0761c6b2fca113f76f6  misc/arx_taiwanese.ttf
   63ed31a4eb3d226c23e58cfaa974d484  misc/logo.avi
   afff1099c01ffeb03b9a351f7b5966b6  misc/logo.bmp
-
   2efc9a74c517fd1ee9919900cf4091d2  sfx.pak
+
   a91a0b39a046233debbb10b4850e13eb  data.pak
   a47b192493afb5794e2161a62d35b69f  loc.pak
   4e8f962d8204bcfd79ce6f3226d6d6de  speech.pak
   7a6038e0397e2319aea5d8dc408d5da8  manual.pdf
   3502c76227df6bbd8637d5355e270cc2  map.pdf
   0dd8ec13c10146db1a741258b624040a  setup_arx_fatalis.exe
+  364c405b26d3c480d516724010c7ecac  ArxFatalis_1.21_MULTILANG.exe
 
   # DEMO
   5d7ba6e6c79ebf7fbb232eaced9e8ad9  data.pak_demo_latin
@@ -554,6 +598,7 @@ sha1sums: |
   3d8472a7de140ac4b1d74987cf5f187e4e398157  manual.pdf
   37118284cd24aa6d4174e04eec19058aec95d36c  map.pdf
   30f8045b1c12753f9944622134773c74838e1787  setup_arx_fatalis.exe
+  4e3bc57f57068668259c1a23877e0dab608d4fa7  ArxFatalis_1.21_MULTILANG.exe
 
   d92a62dc9cde1ebd4fe22f6dfb59fcbdacfa5ce4  data.pak_demo_latin
   6d20f024b9bc3ca39f9c7da8c1b996effd1493fc  data.pak_demo_ja
