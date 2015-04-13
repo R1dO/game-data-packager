@@ -1521,6 +1521,7 @@ class GameData(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     subprocess.check_call(['innoextract', '--silent',
+                        '--language', 'english',
                         '--lowercase', '-T', 'local', '-d', '.',
                         os.path.abspath(found_name)], cwd=tmpdir)
                     # for at least Theme Hospital the files we want are
