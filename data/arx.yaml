@@ -7,7 +7,7 @@ genre: Role-playing
 # http://wiki.arx-libertatis.org/Required_data_files_and_checksums
 
 help_text: |
-  To package this demo, please download any of the archives
+  To package a demo, please download any of the archives
   referenced at the bottom of this page:
   http://wiki.arx-libertatis.org/Getting_the_game_data
   and then run "game-data-packager arx <archive>".
@@ -15,10 +15,12 @@ help_text: |
   The french/german/japanese versions are also supported.
 
 packages:
-  arx-fatalis-data:
+  arx-fatalis-en-data:
     install_to: usr/share/games/arx
     debian:
       replaces: arx-fatalis-demo-data
+      conflicts: arx-fatalis-data
+      provides: arx-fatalis-data
     steam:
       id: 1700
       path: "common/Arx Fatalis"
@@ -54,12 +56,12 @@ packages:
     - graph/obj3d/textures/npc_worm_body_part1.jpg
     - graph/obj3d/textures/npc_worm_body_part2.bmp
     - graph/obj3d/textures/[wood]_light_door.jpg
-    - arx.ttf
     - misc/arx_russian.ttf
     - misc/arx_taiwanese.ttf
     - misc/logo.avi
     - misc/logo.bmp
-    # FIXME: should be alternatives
+    # localized files
+    - arx.ttf_latin
     - sfx.pak
     - data.pak
     - loc.pak
@@ -68,31 +70,77 @@ packages:
     - map.pdf
     - manual.pdf
 
-  arx-fatalis-demo-data:
+  arx-fatalis-demo-en-data:
      install_to: usr/share/games/arx
      demo_for: arx-fatalis-data
      debian:
-       conflicts: arx-fatalis-data
+       conflicts: arx-fatalis-data, arx-fatalis-demo-data
+       provides: arx-fatalis-demo-data
      install:
-     - arx.ttf
-     - data.pak_demo
+     - arx.ttf_latin
+     - data.pak_demo_latin
      - logo.bmp_demo
      - sfx.pak_demo
-     - data2.pak_demo
-     - loc.pak_demo
-     - speech.pak_demo
+     - data2.pak_demo_en
+     - loc.pak_demo_en
+     - speech.pak_demo_en
+
+  arx-fatalis-demo-fr-data:
+     lang: fr
+     install_to: usr/share/games/arx
+     demo_for: arx-fatalis-data
+     debian:
+       conflicts: arx-fatalis-data, arx-fatalis-demo-data
+       provides: arx-fatalis-demo-data
+     install:
+     - arx.ttf_latin
+     - data.pak_demo_latin
+     - logo.bmp_demo
+     - sfx.pak_demo
+     - data2.pak_demo_fr
+     - loc.pak_demo_fr
+     - speech.pak_demo_fr
+
+  arx-fatalis-demo-de-data:
+     lang: de
+     install_to: usr/share/games/arx
+     demo_for: arx-fatalis-data
+     debian:
+       conflicts: arx-fatalis-data, arx-fatalis-demo-data
+       provides: arx-fatalis-demo-data
+     install:
+     - arx.ttf_latin
+     - data.pak_demo_latin
+     - logo.bmp_demo
+     - sfx.pak_demo
+     - data2.pak_demo_de
+     - loc.pak_demo_de
+     - speech.pak_demo_de
+
+  arx-fatalis-demo-ja-data:
+     lang: ja
+     install_to: usr/share/games/arx
+     demo_for: arx-fatalis-data
+     debian:
+       conflicts: arx-fatalis-data, arx-fatalis-demo-data
+       provides: arx-fatalis-demo-data
+     install:
+     - arx.ttf_ja
+     - data.pak_demo_ja
+     - logo.bmp_demo
+     - sfx.pak_demo
+     - data2.pak_demo_ja
+     - loc.pak_demo_ja
+     - speech.pak_demo_ja
 
 files:
   # FULL VERSION
-  arx.ttf:
-    alternatives:
-    - arx.ttf_latin
-    - arx.ttf_ja
-    install_as: misc/arx.ttf
   arx.ttf_latin:
     look_for: [arx.ttf,arx_default.ttf]
+    install_as: misc/arx.ttf
   arx.ttf_ja:
     look_for: [arx.ttf]
+    install_as: misc/arx.ttf
   misc/logo.bmp:
     distinctive_name: false
   manual.pdf:
@@ -187,17 +235,14 @@ files:
     - manual.pdf
 
   # DEMO
-  data.pak_demo:
-    alternatives:
-    - data.pak_demo_latin
-    - data.pak_demo_ja
-    install_as: data.pak
   data.pak_demo_latin:
     look_for: [data.pak]
     distinctive_name: false
+    install_as: data.pak
   data.pak_demo_ja:
     look_for: [data.pak]
     distinctive_name: false
+    install_as: data.pak
   logo.bmp_demo:
     look_for: [logo.bmp]
     install_as: misc/logo.bmp
@@ -206,51 +251,42 @@ files:
     look_for: [sfx.pak]
     distinctive_name: false
     install_as: sfx.pak
-  data2.pak_demo:
-    alternatives:
-    - data2.pak_demo_en
-    - data2.pak_demo_fr
-    - data2.pak_demo_de
-    - data2.pak_demo_ja
-    install_as: data2.pak
   data2.pak_demo_en:
     look_for: [data2.pak]
+    install_as: data2.pak
   data2.pak_demo_fr:
     look_for: [data2.pak]
+    install_as: data2.pak
   data2.pak_demo_de:
     look_for: [data2.pak]
+    install_as: data2.pak
   data2.pak_demo_ja:
     look_for: [data2.pak]
-  loc.pak_demo:
-    alternatives:
-    - loc.pak_demo_en
-    - loc.pak_demo_fr
-    - loc.pak_demo_de
-    - loc.pak_demo_ja
-    install_as: loc.pak
+    install_as: data2.pak
   loc.pak_demo_en:
     look_for: [loc.pak]
+    install_as: loc.pak
   loc.pak_demo_fr:
     look_for: [loc.pak]
+    install_as: loc.pak
   loc.pak_demo_de:
     look_for: [loc.pak]
+    install_as: loc.pak
   loc.pak_demo_ja:
     look_for: [loc.pak]
-  speech.pak_demo:
-    alternatives:
-    - speech.pak_demo_en
-    - speech.pak_demo_fr
-    - speech.pak_demo_de
-    - speech.pak_demo_ja
-    install_as: speech.pak
+    install_as: loc.pak
   speech.pak_demo_en:
     look_for: [speech.pak]
+    install_as: speech.pak
   speech.pak_demo_fr:
     look_for: [speech.pak]
+    install_as: speech.pak
   speech.pak_demo_de:
     look_for: [speech.pak]
+    install_as: speech.pak
   speech.pak_demo_ja:
     look_for: [speech.pak]
+    install_as: speech.pak
 
   Setup1.cab_en:
     look_for: [Setup1.cab]
