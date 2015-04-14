@@ -51,6 +51,7 @@ from .util import (MEBIBYTE,
         rm_rf,
         human_size,
         is_installed,
+        prefered_lang,
         which)
 from .version import GAME_PACKAGE_VERSION
 
@@ -341,6 +342,9 @@ class GameDataPackage(object):
 
         # This optional value will overide the game global copyright
         self.copyright = None
+
+        # Language, ISO-639 code
+        self.lang = 'en'
 
         # Where we install files.
         # For instance, if this is 'usr/share/games/quake3' and we have
@@ -764,7 +768,7 @@ class GameData(object):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version',
-                'copyright', 'engine', 'gog', 'origin'):
+                'copyright', 'engine', 'gog', 'origin', 'lang'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -2334,6 +2338,27 @@ class GameData(object):
         logger.debug('possible packages: %r', set(p.name for p in possible))
         if not possible:
             raise NoPackagesPossible()
+
+        # keep only prefered language
+        if len(possible) > 1:
+            for lang in prefered_lang():
+                for package in set(possible):
+                    if package.lang == lang:
+                        continue
+                    virtual = package.debian.get('provides')
+                    if not virtual:
+                        continue
+                    for other_package in possible:
+                        if other_package.name == package.name:
+                            continue
+                        other_virtual = other_package.debian.get('provides')
+                        if other_virtual != virtual:
+                            continue
+                        logger.info('discarding %s '
+                                    'because %s is prefered language',
+                                     package.name, lang)
+                        possible.discard(package)
+                        break
 
         ready = set()
 

@@ -90,3 +90,17 @@ def is_installed(package):
              or is_installed('doomsday'))
 
     return os.path.isdir(os.path.join('/usr/share/doc', package))
+
+def prefered_lang():
+    lang_pref = []
+    if 'LANGUAGE' in os.environ:
+        for lang in os.getenv('LANGUAGE').split(':'):
+            if lang and lang not in lang_pref:
+                lang_pref.append(lang.split('_')[0])
+    if 'LANG' in os.environ:
+        lang = os.getenv('LANG').split('_')[0]
+        if lang and lang != 'C' and lang not in lang_pref:
+            lang_pref.append(lang)
+    if 'en' not in lang_pref:
+        lang_pref.append('en')
+    return lang_pref
