@@ -52,6 +52,7 @@ from .util import (MEBIBYTE,
         human_size,
         is_installed,
         prefered_lang,
+        lang_score,
         which)
 from .version import GAME_PACKAGE_VERSION
 
@@ -2339,27 +2340,6 @@ class GameData(object):
         if not possible:
             raise NoPackagesPossible()
 
-        # keep only prefered language
-        if len(possible) > 1:
-            for lang in prefered_lang():
-                for package in set(possible):
-                    if package.lang == lang:
-                        continue
-                    virtual = package.debian.get('provides')
-                    if not virtual:
-                        continue
-                    for other_package in possible:
-                        if other_package.name == package.name:
-                            continue
-                        other_virtual = other_package.debian.get('provides')
-                        if other_virtual != virtual:
-                            continue
-                        logger.info('discarding %s '
-                                    'because %s is prefered language',
-                                     package.name, lang)
-                        possible.discard(package)
-                        break
-
         ready = set()
 
         for package in possible:
@@ -2395,13 +2375,34 @@ class GameData(object):
                         logger.debug('will not produce "%s" because we have '
                             'the full version "%s"', package.name, demo_for)
                         abort = True
+            if abort:
+                continue
 
             for previous in ready:
                 if previous.debian.get('conflicts') == package.name:
                     logger.error('will not produce "%s" because it '
                        'conflicts with "%s"', package.name, previous.name)
                     abort = True
+            if abort:
+                continue
 
+            # keep only prefered language for this virtual package
+            virtual = package.debian.get('provides')
+            if virtual:
+                score = lang_score(package.lang)
+                for other_p in possible:
+                    if other_p.name == package.name:
+                        continue
+                    other_virtual = other_p.debian.get('provides')
+                    if other_virtual != virtual:
+                        continue
+                    other_score = lang_score(other_p.lang)
+                    if score < other_score:
+                        logger.info('will not produce "%s" '
+                                    'because %s is prefered language',
+                                     package.name, other_p.lang)
+                        abort = True
+                        break
             if abort:
                 continue
 

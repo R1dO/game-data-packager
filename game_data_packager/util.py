@@ -104,3 +104,10 @@ def prefered_lang():
     if 'en' not in lang_pref:
         lang_pref.append('en')
     return lang_pref
+
+def lang_score(lang):
+    langs = prefered_lang()
+    if lang not in langs:
+        return 0
+
+    return len(langs) - langs.index(lang)
