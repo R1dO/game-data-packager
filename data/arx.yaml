@@ -72,7 +72,8 @@ packages:
 
   arx-fatalis-demo-en-data:
      install_to: usr/share/games/arx
-     demo_for: arx-fatalis-data
+     demo_for:
+     - arx-fatalis-en-data
      debian:
        conflicts: arx-fatalis-data, arx-fatalis-demo-data
        provides: arx-fatalis-demo-data
@@ -88,7 +89,8 @@ packages:
   arx-fatalis-demo-fr-data:
      lang: fr
      install_to: usr/share/games/arx
-     demo_for: arx-fatalis-data
+     demo_for:
+     - arx-fatalis-en-data
      debian:
        conflicts: arx-fatalis-data, arx-fatalis-demo-data
        provides: arx-fatalis-demo-data
@@ -104,7 +106,8 @@ packages:
   arx-fatalis-demo-de-data:
      lang: de
      install_to: usr/share/games/arx
-     demo_for: arx-fatalis-data
+     demo_for:
+     - arx-fatalis-en-data
      debian:
        conflicts: arx-fatalis-data, arx-fatalis-demo-data
        provides: arx-fatalis-demo-data
@@ -120,7 +123,8 @@ packages:
   arx-fatalis-demo-ja-data:
      lang: ja
      install_to: usr/share/games/arx
-     demo_for: arx-fatalis-data
+     demo_for:
+     - arx-fatalis-en-data
      debian:
        conflicts: arx-fatalis-data, arx-fatalis-demo-data
        provides: arx-fatalis-demo-data

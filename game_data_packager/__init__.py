@@ -51,7 +51,6 @@ from .util import (MEBIBYTE,
         rm_rf,
         human_size,
         is_installed,
-        prefered_lang,
         lang_score,
         which)
 from .version import GAME_PACKAGE_VERSION
