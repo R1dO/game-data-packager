@@ -88,16 +88,12 @@ Description: Installer for game data files
 
 Package: doom2-masterlevels
 Depends: chocolate-doom | doom-engine,
+	doom2-masterlevels-wad | game-data-packager,
 	python3,
 	python3-gi,
 	gir1.2-gtk-3.0,
 	${python3:Depends},
 	${misc:Depends},
-# this package is useless without the .wad files;
-# still we can't "Depends:" on this,
-# to enable migration to testing
-Recommends:
-	doom2-masterlevels-wad,
 Architecture: all
 Multi-Arch: foreign
 Description: graphical launcher for DOOM II Master Levels
