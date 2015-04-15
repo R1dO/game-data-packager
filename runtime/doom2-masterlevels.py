@@ -48,6 +48,25 @@ levels = {
     'virgil.wad':   ( 3, "Virgil's Lead: 3rd Canto of Inferno"    , "MAP03:_Virgil%27s_Lead_(Master_Levels)"),
 }
 
+for level in levels.keys():
+    level = level.strip('*')
+    fullpath = os.path.join('/usr/share/games/doom/', level)
+    if not os.path.isfile(fullpath):
+        print('\n')
+        message = fullpath + " is missing !\n\n" \
+                  "This launcher needs the .wad files from DOOM 2 Master Levels\n" \
+                  "These can be for example bought on Steam:\n" \
+                  "http://store.steampowered.com/app/9160/ ;\n" \
+                  "or found on 'Doom 3: Resurrection of Evil' Xbox game disc\n\n" \
+                  "The data then need to be put at the right location,\n" \
+                  "You can use game-data-packager(6) to automate this task.\n" \
+                  "It will also automatically pick up the data downloaded by a\n" \
+                  "windows Steam instance running through Wine."
+        md = Gtk.MessageDialog(None, 0, Gtk.MessageType.WARNING,
+                               Gtk.ButtonsType.OK, message)
+        md.run()
+        exit(message)
+
 window = Gtk.Window()
 window.set_default_size(1020, 800)
 window.connect("destroy", lambda q: Gtk.main_quit())
