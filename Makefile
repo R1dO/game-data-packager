@@ -27,7 +27,7 @@ out/%: data/%
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
 out/%.json: data/%.yaml
-	python3 game_data_packager/yaml2json.py $< > $@
+	python3 game_data_packager/yaml2json.py $< > $@ || rm -f $@
 
 out/bash_completion: $(in_yaml)
 	python3 game_data_packager/bash_completion.py > ./out/bash_completion
