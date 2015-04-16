@@ -31,6 +31,8 @@ class ResidualvmGameData(GameData):
                 workdir=workdir)
 
         self.gameid = self.data['gameid']
+        if self.gameid != shortname:
+            self.aliases.add(self.gameid)
 
         if self.engine is None:
             self.engine = 'residualvm'
