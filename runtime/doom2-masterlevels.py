@@ -213,13 +213,13 @@ def run_game(event):
             break
     for button in radiobuttonDefault.get_group():
         if button.get_active():
-            engine = button.get_label().split(' ')[0]
+            engine = [button.get_label().split(' ')[0]]
             break
-    if 'doomsday' in engine:
-        engine = 'doomsday -game doom2'
+    if 'doomsday' in engine[0]:
+        engine = ['doomsday', '-game', 'doom2']
 
     if warp:
-        subprocess.call([engine, '-file', '/usr/share/games/doom/%s.wad' % game,
+        subprocess.call(engine + ['-file', '/usr/share/games/doom/%s.wad' % game,
             '-warp', '%d' % warp, '-skill', difficulty])
 
 treeview.connect("cursor-changed", select_game)
