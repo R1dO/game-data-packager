@@ -69,6 +69,8 @@ for level in levels.keys():
 
 window = Gtk.Window()
 window.set_default_size(1020, 800)
+if os.path.isfile('/usr/share/pixmaps/doom2.png'):
+    window.set_icon_from_file('/usr/share/pixmaps/doom2.png')
 window.connect("destroy", lambda q: Gtk.main_quit())
 
 grid = Gtk.Grid()
