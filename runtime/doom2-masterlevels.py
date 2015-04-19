@@ -22,7 +22,6 @@ import subprocess
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Pango
 
-warp = None
 # wad : (warp, longname,  'http://doomwiki.org/wiki/' + url)
 levels = {
     'attack.wad':   ( 1, 'Attack'                                 , 'MAP01:_Attack_(Master_Levels)'),
@@ -67,167 +66,185 @@ for level in levels.keys():
         md.run()
         exit(message)
 
-window = Gtk.Window()
-window.set_default_size(1020, 800)
-if os.path.isfile('/usr/share/pixmaps/doom2.png'):
-    window.set_icon_from_file('/usr/share/pixmaps/doom2.png')
-window.connect("destroy", lambda q: Gtk.main_quit())
+class Launcher:
+    def delete_event(self, widget, event, data=None):
+        return False
 
-grid = Gtk.Grid()
-grid.set_row_spacing(5)
-grid.set_column_spacing(5)
-window.add(grid)
+    def destroy(self, widget, data=None):
+        gtk.main_quit()
 
-# level list
-games = Gtk.ListStore(str, int)
-description = dict()
-for wad in sorted(levels.keys()):
-     game = os.path.splitext(os.path.basename(wad))[0]
-     games.append([game, levels[wad][0] ])
-     txt = '/usr/share/doc/doom2-masterlevels-wad/%s.txt' % game
-     try:
-         with open(txt, 'r', encoding='latin1') as f:
-             description[game] = f.read()
-     except (PermissionError, FileNotFoundError):
-         description[game] = "failed to read " + txt
+    def __init__(self):
+        self.game = None
+        self.warp = None
 
-treeview = Gtk.TreeView(model=games)
-grid.attach(treeview, 0, 0, 1, 8)
+        self.window = Gtk.Window()
+        self.window.set_default_size(1020, 800)
+        if os.path.isfile('/usr/share/pixmaps/doom2.png'):
+            self.window.set_icon_from_file('/usr/share/pixmaps/doom2.png')
 
-treeviewcolumn = Gtk.TreeViewColumn("Wad")
-treeview.append_column(treeviewcolumn)
-cellrenderertext = Gtk.CellRendererText()
-treeviewcolumn.pack_start(cellrenderertext, True)
-treeviewcolumn.add_attribute(cellrenderertext, "text", 0)
+        grid = Gtk.Grid()
+        grid.set_row_spacing(5)
+        grid.set_column_spacing(5)
+        self.window.add(grid)
 
-treeviewcolumn = Gtk.TreeViewColumn("Map")
-treeview.append_column(treeviewcolumn)
-cellrenderertext = Gtk.CellRendererText()
-treeviewcolumn.pack_start(cellrenderertext, True)
-treeviewcolumn.add_attribute(cellrenderertext, "text", 1)
+        # level list
+        games = Gtk.ListStore(str, int)
+        self.description = dict()
+        for wad in sorted(levels.keys()):
+            game = os.path.splitext(os.path.basename(wad))[0]
+            games.append([game, levels[wad][0] ])
+            txt = '/usr/share/doc/doom2-masterlevels-wad/%s.txt' % game
+            try:
+                 with open(txt, 'r', encoding='latin1') as f:
+                   self.description[game] = f.read()
+            except (PermissionError, FileNotFoundError):
+                self.description[game] = "failed to read " + txt
 
-def tooltip_query(treeview, x, y, mode, tooltip):
-    path = treeview.get_path_at_pos(x, y - 30) # FIXME
-    if path:
-       treepath, column = path[:2]
-       model = treeview.get_model()
-       iter = model.get_iter(treepath)
-       game, warp = model[iter]
-       wad = game + '.wad'
-       if game == 'teeth' and warp == 32: wad += '*'
-       tooltip.set_text(levels[wad][1])
-    return True
+        self.treeview = Gtk.TreeView(model=games)
+        grid.attach(self.treeview, 0, 0, 1, 8)
 
-treeview.connect("query-tooltip", tooltip_query)
-treeview.set_tooltip_column(0)
+        treeviewcolumn = Gtk.TreeViewColumn("Wad")
+        self.treeview.append_column(treeviewcolumn)
+        cellrenderertext = Gtk.CellRendererText()
+        treeviewcolumn.pack_start(cellrenderertext, True)
+        treeviewcolumn.add_attribute(cellrenderertext, "text", 0)
 
+        treeviewcolumn = Gtk.TreeViewColumn("Map")
+        self.treeview.append_column(treeviewcolumn)
+        cellrenderertext = Gtk.CellRendererText()
+        treeviewcolumn.pack_start(cellrenderertext, True)
+        treeviewcolumn.add_attribute(cellrenderertext, "text", 1)
 
-# header
-label = Gtk.Label()
-label.set_markup("<span size='xx-large'>Doom II Master Levels</span>")
-grid.attach(label, 1, 0, 1, 1)
+        self.treeview.connect("query-tooltip", self.tooltip_query)
+        self.treeview.set_tooltip_column(0)
+        self.treeview.connect("cursor-changed", self.select_game)
 
-logo = Gtk.Image()
-logo.set_from_file('/usr/share/pixmaps/doom2.png')
-grid.attach(logo, 2, 0, 1, 1)
+        # header
+        label = Gtk.Label()
+        label.set_markup("<span size='xx-large'>Doom II Master Levels</span>")
+        grid.attach(label, 1, 0, 1, 1)
 
-# description
-scrolledwindow = Gtk.ScrolledWindow()
-scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-grid.attach(scrolledwindow, 1, 1, 2, 1)
+        logo = Gtk.Image()
+        logo.set_from_file('/usr/share/pixmaps/doom2.png')
+        grid.attach(logo, 2, 0, 1, 1)
 
-textbuffer = Gtk.TextBuffer()
-textbuffer.set_text('Please select a map from the list on the left')
+        # description
+        scrolledwindow = Gtk.ScrolledWindow()
+        scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        grid.attach(scrolledwindow, 1, 1, 2, 1)
 
-textview = Gtk.TextView(buffer=textbuffer)
-textview.set_vexpand(True)
-textview.set_hexpand(True)
-textview.set_property('editable', False)
-textview.modify_font(Pango.FontDescription('Monospace 11'))
-scrolledwindow.add(textview)
+        self.textbuffer = Gtk.TextBuffer()
+        self.textbuffer.set_text('Please select a map from the list on the left')
 
-doomwiki = Gtk.LinkButton("http://doomwiki.org/wiki/Master_Levels_for_Doom_II",
-                          label="http://doomwiki.org/wiki/Master_Levels_for_Doom_II")
-grid.attach(doomwiki, 1, 2, 2, 1)
+        textview = Gtk.TextView(buffer=self.textbuffer)
+        textview.set_vexpand(True)
+        textview.set_hexpand(True)
+        textview.set_property('editable', False)
+        textview.modify_font(Pango.FontDescription('Monospace 11'))
+        scrolledwindow.add(textview)
 
-# difficulty
-difflabel = Gtk.Label("Choose your difficulty")
-grid.attach(difflabel, 1, 3, 2, 1)
+        self.doomwiki = Gtk.LinkButton("http://doomwiki.org/wiki/Master_Levels_for_Doom_II",
+                                  label="http://doomwiki.org/wiki/Master_Levels_for_Doom_II")
+        grid.attach(self.doomwiki, 1, 2, 2, 1)
 
-diffgrid = Gtk.Grid()
-diffradio = Gtk.RadioButton(group=None, label="1)  I'm too young to die")
-diffgrid.attach(diffradio, 0, 0, 1, 1)
-for diff in ["2)  Hey, Not too Rough",
-             "3)  Hurt me plenty",
-             "4)  Ultra Violence",
-             "5)  Nightmare!"]:
-    radiobutton = Gtk.RadioButton(group=diffradio, label=diff)
-    if diff[0] == '3':
-        radiobutton.set_active(True)
-    diffgrid.attach(radiobutton, 0, int(diff[0]), 1, 1)
-grid.attach(diffgrid, 1, 4, 2, 1)
+        # difficulty
+        difflabel = Gtk.Label("Choose your difficulty")
+        grid.attach(difflabel, 1, 3, 2, 1)
 
-# engine
-label = Gtk.Label("Choose your engine")
-grid.attach(label, 1, 4, 2, 1)
-radiogrid = Gtk.Grid()
-default = os.readlink('/etc/alternatives/doom')
-radiobuttonDefault = Gtk.RadioButton(group=None, label="%s (default)" % default)
-radiogrid.attach(radiobuttonDefault, 0, 0, 1, 1)
-i = 1
-proc = subprocess.Popen(['update-alternatives', '--list', 'doom'], stdout=subprocess.PIPE, universal_newlines=True)
+        diffgrid = Gtk.Grid()
+        self.diffradio = Gtk.RadioButton(group=None, label="1)  I'm too young to die")
+        diffgrid.attach(self.diffradio, 0, 0, 1, 1)
+        for diff in ["2)  Hey, Not too Rough",
+                     "3)  Hurt me plenty",
+                     "4)  Ultra Violence",
+                     "5)  Nightmare!"]:
+            radiobutton = Gtk.RadioButton(group=self.diffradio, label=diff)
+            if diff[0] == '3':
+               radiobutton.set_active(True)
+            diffgrid.attach(radiobutton, 0, int(diff[0]), 1, 1)
+        grid.attach(diffgrid, 1, 4, 2, 1)
 
-for alternative in proc.stdout:
-    alternative = alternative.strip()
-    if alternative == default:
-        continue
-    radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
-    i += 1
-    radiogrid.attach(radiobutton, 0, i, i, 1)
-grid.attach(radiogrid, 1, 5, 2, 1)
+        # engine
+        label = Gtk.Label("Choose your engine")
+        grid.attach(label, 1, 4, 2, 1)
+        radiogrid = Gtk.Grid()
+        default = os.readlink('/etc/alternatives/doom')
+        self.radiobuttonDefault = Gtk.RadioButton(group=None, label="%s (default)" % default)
+        radiogrid.attach(self.radiobuttonDefault, 0, 0, 1, 1)
+        i = 1
+        proc = subprocess.Popen(['update-alternatives', '--list', 'doom'], stdout=subprocess.PIPE, universal_newlines=True)
 
+        for alternative in proc.stdout:
+            alternative = alternative.strip()
+            if alternative == default:
+                continue
+            if alternative == '/usr/games/doomsday-compat':
+                alternative = '/usr/games/doomsday'
+            radiobutton = Gtk.RadioButton(group=self.radiobuttonDefault, label=alternative)
+            i += 1
+            radiogrid.attach(radiobutton, 0, i, i, 1)
+        grid.attach(radiogrid, 1, 5, 2, 1)
 
-# Run !
-button_exec = Gtk.Button(label="Run")
-button_exec.set_sensitive(False)
-grid.attach(button_exec, 1, 6, 1, 1)
-button_quit = Gtk.Button(label="Exit")
-grid.attach(button_quit, 2, 6, 1, 1)
+        # Run !
+        self.button_exec = Gtk.Button(label="Run")
+        self.button_exec.set_sensitive(False)
+        grid.attach(self.button_exec, 1, 6, 1, 1)
+        self.button_exec.connect("clicked", self.run_game)
 
-def select_game(event):
-    global game, warp, button_exec
-    button_exec.set_sensitive(True)
-    (model, pathlist) = treeview.get_selection().get_selected_rows()
-    for path in pathlist:
-        tree_iter = model.get_iter(path)
-        game, warp = model[tree_iter]
-        textbuffer.set_text(description[game])
-        wad = game + '.wad'
-        if game == 'teeth' and warp == 32: wad += '*'
-        url = 'http://doomwiki.org/wiki/' + levels[wad][2]
-        doomwiki.set_uri(url)
-        doomwiki.set_label(url)
+        button_quit = Gtk.Button(label="Exit")
+        grid.attach(button_quit, 2, 6, 1, 1)
+        button_quit.connect("clicked", Gtk.main_quit)
 
-def run_game(event):
-    for button in diffradio.get_group():
-        if button.get_active():
-            difficulty = button.get_label()[0]
-            break
-    for button in radiobuttonDefault.get_group():
-        if button.get_active():
-            engine = [button.get_label().split(' ')[0]]
-            break
-    if 'doomsday' in engine[0]:
-        engine = ['doomsday', '-game', 'doom2']
+        self.window.show_all()
 
-    if warp:
-        subprocess.call(engine + ['-file', '/usr/share/games/doom/%s.wad' % game,
-            '-warp', '%d' % warp, '-skill', difficulty])
+    def tooltip_query(self, treeview, x, y, mode, tooltip):
+        path = treeview.get_path_at_pos(x, y - 30) # FIXME
+        if path:
+            treepath, column = path[:2]
+            model = treeview.get_model()
+            iter = model.get_iter(treepath)
+            game, warp = model[iter]
+            wad = game + '.wad'
+            if game == 'teeth' and warp == 32: wad += '*'
+            tooltip.set_text(levels[wad][1])
+        return True
 
-treeview.connect("cursor-changed", select_game)
-button_exec.connect("clicked", run_game)
-button_quit.connect("clicked", Gtk.main_quit)
+    def select_game(self, event):
+        self.button_exec.set_sensitive(True)
+        (model, pathlist) = self.treeview.get_selection().get_selected_rows()
+        for path in pathlist:
+            tree_iter = model.get_iter(path)
+            self.game, self.warp = model[tree_iter]
+            self.textbuffer.set_text(self.description[self.game])
+            wad = self.game + '.wad'
+            if self.game == 'teeth' and self.warp == 32:
+                wad += '*'
+            url = 'http://doomwiki.org/wiki/' + levels[wad][2]
+            self.doomwiki.set_uri(url)
+            self.doomwiki.set_label(url)
 
-window.show_all()
+    def run_game(self, event):
+        if not self.warp:
+            return
 
-Gtk.main()
+        for button in self.diffradio.get_group():
+            if button.get_active():
+                difficulty = button.get_label()[0]
+                break
+        for button in self.radiobuttonDefault.get_group():
+            if button.get_active():
+                engine = [button.get_label().split(' ')[0]]
+                break
+        if engine == ['/usr/games/doomsday']:
+             engine.append('-game')
+             engine.append('doom2')
+
+        subprocess.call(engine + ['-file', '/usr/share/games/doom/%s.wad' % self.game,
+            '-warp', '%d' % self.warp, '-skill', difficulty])
+
+    def main(self):
+        Gtk.main()
+
+if __name__ == "__main__":
+    launcher = Launcher()
+    launcher.main()
