@@ -76,6 +76,8 @@ class Launcher:
     def __init__(self):
         self.game = None
         self.warp = None
+        self.difficulty = None
+        self.engine = None
 
         self.window = Gtk.Window()
         self.window.set_default_size(1020, 800)
@@ -152,13 +154,15 @@ class Launcher:
         grid.attach(difflabel, 1, 3, 2, 1)
 
         diffgrid = Gtk.Grid()
-        self.diffradio = Gtk.RadioButton(group=None, label="1)  I'm too young to die")
-        diffgrid.attach(self.diffradio, 0, 0, 1, 1)
+        diffradio = Gtk.RadioButton(group=None, label="1)  I'm too young to die")
+        diffgrid.attach(diffradio, 0, 0, 1, 1)
+        diffradio.connect('toggled', self.select_difficulty)
         for diff in ["2)  Hey, Not too Rough",
                      "3)  Hurt me plenty",
                      "4)  Ultra Violence",
                      "5)  Nightmare!"]:
-            radiobutton = Gtk.RadioButton(group=self.diffradio, label=diff)
+            radiobutton = Gtk.RadioButton(group=diffradio, label=diff)
+            radiobutton.connect('toggled', self.select_difficulty)
             if diff[0] == '3':
                radiobutton.set_active(True)
             diffgrid.attach(radiobutton, 0, int(diff[0]), 1, 1)
@@ -169,8 +173,9 @@ class Launcher:
         grid.attach(label, 1, 4, 2, 1)
         radiogrid = Gtk.Grid()
         default = os.readlink('/etc/alternatives/doom')
-        self.radiobuttonDefault = Gtk.RadioButton(group=None, label="%s (default)" % default)
-        radiogrid.attach(self.radiobuttonDefault, 0, 0, 1, 1)
+        radiobuttonDefault = Gtk.RadioButton(group=None, label="%s (default)" % default)
+        radiobuttonDefault.connect('toggled', self.select_engine)
+        radiogrid.attach(radiobuttonDefault, 0, 0, 1, 1)
         i = 1
         proc = subprocess.Popen(['update-alternatives', '--list', 'doom'], stdout=subprocess.PIPE, universal_newlines=True)
 
@@ -180,7 +185,8 @@ class Launcher:
                 continue
             if alternative == '/usr/games/doomsday-compat':
                 alternative = '/usr/games/doomsday'
-            radiobutton = Gtk.RadioButton(group=self.radiobuttonDefault, label=alternative)
+            radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
+            radiobutton.connect('toggled', self.select_engine)
             i += 1
             radiogrid.attach(radiobutton, 0, i, i, 1)
         grid.attach(radiogrid, 1, 5, 2, 1)
@@ -223,24 +229,21 @@ class Launcher:
             self.doomwiki.set_uri(url)
             self.doomwiki.set_label(url)
 
+    def select_difficulty(self, radio):
+        self.difficulty = int(radio.get_label()[0])
+
+    def select_engine(self, radio):
+        self.engine = [radio.get_label().split(' ')[0]]
+        if self.engine == ['/usr/games/doomsday']:
+            self.engine.append('-game')
+            self.engine.append('doom2')
+
     def run_game(self, event):
         if not self.warp:
             return
-
-        for button in self.diffradio.get_group():
-            if button.get_active():
-                difficulty = button.get_label()[0]
-                break
-        for button in self.radiobuttonDefault.get_group():
-            if button.get_active():
-                engine = [button.get_label().split(' ')[0]]
-                break
-        if engine == ['/usr/games/doomsday']:
-             engine.append('-game')
-             engine.append('doom2')
-
-        subprocess.call(engine + ['-file', '/usr/share/games/doom/%s.wad' % self.game,
-            '-warp', '%d' % self.warp, '-skill', difficulty])
+        subprocess.call(self.engine + ['-file', '/usr/share/games/doom/%s.wad' % self.game,
+            '-warp', '%d' % self.warp,
+            '-skill', '%d' % self.difficulty])
 
     def main(self):
         Gtk.main()
