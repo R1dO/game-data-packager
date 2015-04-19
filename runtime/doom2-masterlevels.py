@@ -67,12 +67,6 @@ for level in levels.keys():
         exit(message)
 
 class Launcher:
-    def delete_event(self, widget, event, data=None):
-        return False
-
-    def destroy(self, widget, data=None):
-        gtk.main_quit()
-
     def __init__(self):
         self.game = None
         self.warp = None
@@ -83,6 +77,7 @@ class Launcher:
         self.window.set_default_size(1020, 800)
         if os.path.isfile('/usr/share/pixmaps/doom2.png'):
             self.window.set_icon_from_file('/usr/share/pixmaps/doom2.png')
+        self.window.connect("delete_event", Gtk.main_quit)
 
         grid = Gtk.Grid()
         grid.set_row_spacing(5)
@@ -173,11 +168,13 @@ class Launcher:
         grid.attach(label, 1, 4, 2, 1)
         radiogrid = Gtk.Grid()
         default = os.readlink('/etc/alternatives/doom')
+        self.engine = [default]
         radiobuttonDefault = Gtk.RadioButton(group=None, label="%s (default)" % default)
         radiobuttonDefault.connect('toggled', self.select_engine)
         radiogrid.attach(radiobuttonDefault, 0, 0, 1, 1)
         i = 1
-        proc = subprocess.Popen(['update-alternatives', '--list', 'doom'], stdout=subprocess.PIPE, universal_newlines=True)
+        proc = subprocess.Popen(['update-alternatives', '--list', 'doom'],
+                                stdout=subprocess.PIPE, universal_newlines=True)
 
         for alternative in proc.stdout:
             alternative = alternative.strip()
@@ -241,7 +238,8 @@ class Launcher:
     def run_game(self, event):
         if not self.warp:
             return
-        subprocess.call(self.engine + ['-file', '/usr/share/games/doom/%s.wad' % self.game,
+        subprocess.call(self.engine +
+            ['-file', '/usr/share/games/doom/%s.wad' % self.game,
             '-warp', '%d' % self.warp,
             '-skill', '%d' % self.difficulty])
 
