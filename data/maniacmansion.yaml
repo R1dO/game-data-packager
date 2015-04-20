@@ -8,7 +8,6 @@ packages:
   maniacmansion-en-data:
     debian:
       provides: maniacmansion-data
-      conflicts: maniacmansion-data
     install:
     - 00.lfl
     - 01.lfl
@@ -69,7 +68,6 @@ packages:
     lang: fr
     debian:
       provides: maniacmansion-data
-      conflicts: maniacmansion-data
     longname: Maniac Mansion (Fr)
     install:
     - 00.lfl_fr
