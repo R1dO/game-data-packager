@@ -46,10 +46,11 @@ levels = {
     'vesperas.wad': ( 9, 'Vesperas: 7th Canto of Inferno'         , 'MAP09:_Vesperas_(Master_Levels)'),
     'virgil.wad':   ( 3, "Virgil's Lead: 3rd Canto of Inferno"    , "MAP03:_Virgil%27s_Lead_(Master_Levels)"),
 }
+description = dict()
 
 for level in levels.keys():
-    level = level.strip('*')
-    fullpath = os.path.join('/usr/share/games/doom/', level)
+    level = os.path.splitext(level)[0]
+    fullpath = '/usr/share/games/doom/%s.wad' % level
     if not os.path.isfile(fullpath):
         print('\n')
         message = fullpath + " is missing !\n\n" \
@@ -65,6 +66,13 @@ for level in levels.keys():
                                Gtk.ButtonsType.OK, message)
         md.run()
         exit(message)
+    txt = '/usr/share/doc/doom2-masterlevels-wad/%s.txt' % level
+    try:
+         with open(txt, 'r', encoding='latin1') as f:
+             description[level] = f.read()
+    except (PermissionError, FileNotFoundError):
+        description[level] = "failed to read " + txt
+
 
 class Launcher:
     def __init__(self):
@@ -86,16 +94,9 @@ class Launcher:
 
         # level list
         games = Gtk.ListStore(str, int)
-        self.description = dict()
         for wad in sorted(levels.keys()):
-            game = os.path.splitext(os.path.basename(wad))[0]
+            game = os.path.splitext(wad)[0]
             games.append([game, levels[wad][0] ])
-            txt = '/usr/share/doc/doom2-masterlevels-wad/%s.txt' % game
-            try:
-                 with open(txt, 'r', encoding='latin1') as f:
-                   self.description[game] = f.read()
-            except (PermissionError, FileNotFoundError):
-                self.description[game] = "failed to read " + txt
 
         self.treeview = Gtk.TreeView(model=games)
         grid.attach(self.treeview, 0, 0, 1, 8)
@@ -218,7 +219,7 @@ class Launcher:
         for path in pathlist:
             tree_iter = model.get_iter(path)
             self.game, self.warp = model[tree_iter]
-            self.textbuffer.set_text(self.description[self.game])
+            self.textbuffer.set_text(description[self.game])
             wad = self.game + '.wad'
             if self.game == 'teeth' and self.warp == 32:
                 wad += '*'
