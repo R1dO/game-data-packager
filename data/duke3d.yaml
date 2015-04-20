@@ -11,6 +11,18 @@ help_text: |
   engine that is not currently avaible in Debian.
 
 packages:
+  duke3d-shareware:
+    install_to: usr/share/games/eduke32
+    demo_for: duke3d-data
+    debian:
+      version: '1.3d'
+      conflicts: duke3d-data
+    install:
+    - duke3d.grp_demo
+    optional:
+    - license.txt_demo
+    - duke.rts_demo
+
   duke3d-data:
     install_to: usr/share/games/eduke32
     steam:
@@ -28,9 +40,30 @@ packages:
     - manual.pdf
     
 files:
-  duke3d.grp:
-    distinctive_name: false
-    # shareware file has same name
+  3dduke13.zip:
+    download: ftp://ftp.3drealms.com/share/3dduke13.zip
+    unpack:
+      format: zip
+    provides:
+    - dn3dsw13.shr
+  dn3dsw13.shr:
+    unpack:
+      format: zip
+    provides:
+    - duke3d.grp_demo
+    - duke.rts_demo
+    - license.txt_demo
+  duke3d.grp_demo:
+    look_for: [duke3d.grp]
+    install_as: duke3d.grp
+  duke.rts_demo:
+    look_for: [duke.rts]
+    install_as: duke.rts
+  license.txt_demo:
+    install_to: $docdir
+    install_as: license.txt
+    license: true
+
   license.txt:
     install_to: $docdir
     license: true
@@ -38,16 +71,34 @@ files:
     install_to: $docdir
 
 cksums: |
+  _ 5924374   3dduke13.zip
+  _ 5848108   dn3dsw13.shr
+  _ 11035779  duke3d.grp_demo
+  _ 188954    duke.rts_demo
+  _ 9108      license.txt_demo
+
   _ 44356548  duke3d.grp
   _ 188954    duke.rts
   _ 4518      license.txt
   _ 8536250   manual.pdf
 md5sums: |
+  04e4ca70b8a2d59ed56c451c5c1d5d39  3dduke13.zip
+  e061c3794afbf168698946b26e161d75  dn3dsw13.shr
+  c03558e3a78d1c5356dc69b6134c5b55  duke3d.grp_demo
+  9d29f9673bbdb56068acf7645c13749c  duke.rts_demo
+  583bf2a6cb3d404a21c2205041c45481  license.txt_demo
+
   22b6938fe767e5cc57d1fe13080cd522  duke3d.grp
   9d29f9673bbdb56068acf7645c13749c  duke.rts
   98dbbb9fc8b8e6e86e0fb27a4aca599a  license.txt
   ec892271a409477dae559870f071e09d  manual.pdf
 sha1sums: |
+  72b832734d72c829cecaffd8d8ae0eb38995aeb3  3dduke13.zip
+  4307b7f33c8df15a2338e06d8ac26651b3cf523a  dn3dsw13.shr
+  a58bdbfaf28416528a0d9a4452f896f46774a806  duke3d.grp_demo
+  738c7f5fd0c8b57ee2e87ae7a97bf8e21a821d07  duke.rts_demo
+  efb92cf5a397ec80f1752f0a75590529a5b30fc0  license.txt_demo
+
   4fdef8559e2d35b1727fe92f021df9c148cf696c  duke3d.grp
   738c7f5fd0c8b57ee2e87ae7a97bf8e21a821d07  duke.rts
   c74fe90cc174019ac69c2d21b12e76709b2a9ccb  license.txt
