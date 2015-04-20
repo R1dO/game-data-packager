@@ -228,6 +228,7 @@ def do_one_deb(deb):
                     continue
 
                 if (name.startswith('usr/share/games/') and
+                        entry.isfile() and
                         package['install_to'] is None):
                     # assume this is the place
                     there = name[len('usr/share/games/'):]
