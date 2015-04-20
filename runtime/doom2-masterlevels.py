@@ -98,24 +98,24 @@ class Launcher:
             game = os.path.splitext(wad)[0]
             games.append([game, levels[wad][0] ])
 
-        self.treeview = Gtk.TreeView(model=games)
-        grid.attach(self.treeview, 0, 0, 1, 8)
+        treeview = Gtk.TreeView(model=games)
+        grid.attach(treeview, 0, 0, 1, 8)
 
         treeviewcolumn = Gtk.TreeViewColumn("Wad")
-        self.treeview.append_column(treeviewcolumn)
+        treeview.append_column(treeviewcolumn)
         cellrenderertext = Gtk.CellRendererText()
         treeviewcolumn.pack_start(cellrenderertext, True)
         treeviewcolumn.add_attribute(cellrenderertext, "text", 0)
 
         treeviewcolumn = Gtk.TreeViewColumn("Map")
-        self.treeview.append_column(treeviewcolumn)
+        treeview.append_column(treeviewcolumn)
         cellrenderertext = Gtk.CellRendererText()
         treeviewcolumn.pack_start(cellrenderertext, True)
         treeviewcolumn.add_attribute(cellrenderertext, "text", 1)
 
-        self.treeview.connect("query-tooltip", self.tooltip_query)
-        self.treeview.set_tooltip_column(0)
-        self.treeview.connect("cursor-changed", self.select_game)
+        treeview.connect("query-tooltip", self.tooltip_query)
+        treeview.set_tooltip_column(0)
+        treeview.connect("cursor-changed", self.select_game)
 
         # header
         label = Gtk.Label()
@@ -213,9 +213,9 @@ class Launcher:
             tooltip.set_text(levels[wad][1])
         return True
 
-    def select_game(self, event):
+    def select_game(self, treeview):
         self.button_exec.set_sensitive(True)
-        (model, pathlist) = self.treeview.get_selection().get_selected_rows()
+        (model, pathlist) = treeview.get_selection().get_selected_rows()
         for path in pathlist:
             tree_iter = model.get_iter(path)
             self.game, self.warp = model[tree_iter]
