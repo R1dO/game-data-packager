@@ -1,0 +1,142 @@
+---
+copyright: © 1995 L.K. Avalon
+longname: Sołtys
+plugin: scummvm_common
+gameid: soltys
+
+packages:
+  soltys-en-data:
+    debian:
+      provides: soltys-data
+    install:
+    - vol.cat
+    - vol.dat
+    optional:
+    - license.txt
+
+  soltys-pl-data:
+    lang: pl
+    debian:
+      provides: soltys-data
+    install:
+    - vol.cat_pl
+    - vol.dat_pl
+    optional:
+    - license.txt_pl
+
+  soltys-es-data:
+    lang: es
+    debian:
+      provides: soltys-data
+    install:
+    - vol.cat_es
+    - vol.dat_es
+    optional:
+    - license.txt_es
+    - licencia.txt
+files:
+  soltys-en-v1.0.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/soltys-en-v1.0.zip?download
+    unpack:
+      format: zip
+    provides:
+    - vol.cat
+    - vol.dat
+    - license.txt
+  license.txt:
+    install_to: $docdir
+    license: true
+
+  soltys-pl-v1.0.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/soltys-es-v1.0.zip?download
+    unpack:
+      format: zip
+    provides:
+    - vol.cat_pl
+    - vol.dat_pl
+    - license.txt_pl
+  vol.cat_pl:
+    install_as: vol.cat
+    look_for: [vol.cat]
+  vol.dat_pl:
+    install_as: vol.dat
+    look_for: [vol.dat]
+  license.txt_pl:
+    install_to: $docdir
+    install_as: license.txt
+    license: true
+    look_for: [license.txt]
+
+  soltys-es-v1.0.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/soltys-pl-v1.0.zip?download
+    unpack:
+      format: zip
+    provides:
+    - vol.cat_es
+    - vol.dat_es
+    - licencia.txt
+    - license.txt_es
+  vol.cat_es:
+    install_as: vol.cat
+    look_for: [vol.cat]
+  vol.dat_es:
+    install_as: vol.dat
+    look_for: [vol.dat]
+  licencia.txt:
+    install_to: $docdir
+    license: true
+  license.txt_es:
+    install_to: $docdir
+    install_as: license.txt
+    license: true
+    look_for: [license.txt]
+
+cksums: |
+  _ 3484518   soltys-en-v1.0.zip
+  _ 50176     vol.cat
+  _ 8430868   vol.dat
+  _ 1324      license.txt
+
+  _ 3483638   soltys-pl-v1.0.zip
+  _ 50176     vol.cat_pl
+  _ 8439339   vol.dat_pl
+  _ 1322      license.txt_pl
+
+  _ 3527349   soltys-es-v1.0.zip
+  _ 50176     vol.cat_es
+  _ 8450151   vol.dat_es
+  _ 1511      licencia.txt
+  _ 1324      license.txt_es
+md5sums: |
+  ae71d22e42bc6cdf8b0d489d9f61421b  soltys-en-v1.0.zip
+  de93496e6973d8716f38e4d25b1985f3  vol.cat
+  2f2250df3e6284b3acbda4f8865740fe  vol.dat
+  1334b144cecac51610136bb4fa622ce3  license.txt
+
+  c11a201da89d9363bf9949519808403d  soltys-pl-v1.0.zip
+  43fdf612be3a1c5c4dafb3d3a4e2a2f7  license.txt_pl
+  c49eba3fb2ffd22a43accceab43a2f98  vol.cat_pl
+  02663efe42de5ec13f0a6fd69e27f9bd  vol.dat_pl
+
+  b145eff864386bcf657faa12767ecb42  soltys-es-v1.0.zip
+  570d3330ffc96e2c97c5f40a72e862ac  licencia.txt
+  1334b144cecac51610136bb4fa622ce3  license.txt_es
+  6699114f2c36ba7dfdd0ba6753d456b7  vol.cat_es
+  01e1cc533f1643ddaa1df0f0ad83c4ac  vol.dat_es
+sha1sums: |
+  9944aa91c88eaabdba8f5eef122ad4e6dd20e60b  soltys-en-v1.0.zip
+  78f0493ed6e6dd6916f09be7d7786e38b3f31ad8  vol.cat
+  a9a1b74d7af36b2eae14146cfb5cc2934432c6f4  vol.dat
+  015ef5205cb796b1c5a163044fb46e13b07b6412  license.txt
+
+  767cd03dea569da335451dc2b9b034ed80ba5af9  soltys-pl-v1.0.zip
+  65888ccb8f82806f674629eca8e44df4aae1054e  vol.cat_pl
+  40e5e1c59e6a263214d0f1d81606f5bcdc030eab  vol.dat_pl
+  5c982b97bd948ee0b74faed41e004507a025537f  license.txt_pl
+
+  f0af874c39be137d6dc4c1d4838146478b19c3df  soltys-es-v1.0.zip
+  630415f2a7dab5ec63c97901224e5de559b199ca  vol.cat_es
+  4330dcc79c7ea4b47c9db5482c4a89d9b62019b8  vol.dat_es
+  a8b723db206e484b673ad69de75189d5d41be246  licencia.txt
+  015ef5205cb796b1c5a163044fb46e13b07b6412  license.txt_es
+...
