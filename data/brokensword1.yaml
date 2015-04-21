@@ -4,6 +4,14 @@ copyright: © 1996 Revolution Software
 plugin: scummvm_common
 gameid: sword1
 
+help_text: |
+  As stated in README [1], video cutscenes were not avaible
+  in all release, but replacement video replacement are
+  provided on ScummVM website.
+
+  [1] https://github.com/scummvm/scummvm/blob/master/README § 3.8
+  [2] http://www.scummvm.org/games/#sword1
+
 packages:
   brokensword1-data:
     install:
@@ -275,25 +283,30 @@ packages:
     - syria.clu
     - text.clu
     - train.clu
-    - video/candle.smk
-    - video/credits.smk
-    - video/ferrari.smk
-    - video/finale.smk
-    - video/geodrop.smk
-    - video/grave.smk
-    - video/history.smk
-    - video/intro.smk
-    - video/ireland.smk
-    - video/ladder.smk
-    - video/montfcon.smk
-    - video/river.smk
-    - video/sewer.smk
-    - video/spanish.smk
-    - video/steps.smk
-    - video/tapestry.smk
-    - video/truck.smk
-    - video/vulture.smk
-    - video/well.smk
+  brokensword1-orig-video:
+    expansion_for: brokensword1-data
+    longname: "Broken Sword 1 - original cutscenes"
+    install_to: usr/share/games/brokensword1/video
+    install:
+    - candle.smk
+    - credits.smk
+    - ferrari.smk
+    - finale.smk
+    - geodrop.smk
+    - grave.smk
+    - history.smk
+    - intro.smk
+    - ireland.smk
+    - ladder.smk
+    - montfcon.smk
+    - river.smk
+    - sewer.smk
+    - spanish.smk
+    - steps.smk
+    - tapestry.smk
+    - truck.smk
+    - vulture.smk
+    - well.smk
 cksums: |
   _ 200852    compacts.clu
   _ 6295679   general.clu
@@ -563,25 +576,25 @@ cksums: |
   _ 17354333  syria.clu
   _ 3193159   text.clu
   _ 8247053   train.clu
-  _ 1199032   video/candle.smk
-  _ 16315740  video/credits.smk
-  _ 4191376   video/ferrari.smk
-  _ 3513540   video/finale.smk
-  _ 293244    video/geodrop.smk
-  _ 879560    video/grave.smk
-  _ 3382800   video/history.smk
-  _ 13233268  video/intro.smk
-  _ 1543716   video/ireland.smk
-  _ 1232800   video/ladder.smk
-  _ 1253304   video/montfcon.smk
-  _ 400548    video/river.smk
-  _ 481348    video/sewer.smk
-  _ 614252    video/spanish.smk
-  _ 770568    video/steps.smk
-  _ 1681456   video/tapestry.smk
-  _ 9896516   video/truck.smk
-  _ 556588    video/vulture.smk
-  _ 1881572   video/well.smk
+  _ 1199032   candle.smk
+  _ 16315740  credits.smk
+  _ 4191376   ferrari.smk
+  _ 3513540   finale.smk
+  _ 293244    geodrop.smk
+  _ 879560    grave.smk
+  _ 3382800   history.smk
+  _ 13233268  intro.smk
+  _ 1543716   ireland.smk
+  _ 1232800   ladder.smk
+  _ 1253304   montfcon.smk
+  _ 400548    river.smk
+  _ 481348    sewer.smk
+  _ 614252    spanish.smk
+  _ 770568    steps.smk
+  _ 1681456   tapestry.smk
+  _ 9896516   truck.smk
+  _ 556588    vulture.smk
+  _ 1881572   well.smk
 md5sums: |
   7072952037a5e240c868d441ca4a6da9  compacts.clu
   1990da4bf81a6402884bd72c5fe7a3b2  general.clu
@@ -851,25 +864,25 @@ md5sums: |
   2595fd92d91bbaa604a820b9bf6d20ad  syria.clu
   4edc865fa00933c7d7c9cf761ee3efb1  text.clu
   d3df148f058f4280e6166c8649aa5a1c  train.clu
-  0a82d2a778daecd481c08d3561a68961  video/candle.smk
-  194c0853c1bf17643486eb0b6dd2dfa7  video/credits.smk
-  4667ab2fe6392ace5670c16a197f156d  video/ferrari.smk
-  314720bbf8e53851d5f24e261a1f26ff  video/finale.smk
-  19208187cfd38da7db5d786353374a66  video/geodrop.smk
-  cb488c18ad7275e8b1521296f4cce560  video/grave.smk
-  23f74e7408e45f86978119a1e97947ef  video/history.smk
-  1534a2a18783d7bbefe020bb2a7821a9  video/intro.smk
-  bd7492d06bcf95b6773fdfb8c8d8140b  video/ireland.smk
-  a47ce38bdf4c492a1d7999f8cb6daf09  video/ladder.smk
-  2a02740095838cda16c92b5d8a91096d  video/montfcon.smk
-  2c66b04763476a365f4d2f039d12f204  video/river.smk
-  43f1a44b3604eda3eb79a2de48ccb549  video/sewer.smk
-  e7bd3292cfd7d8010c1f2e13498b6755  video/spanish.smk
-  1e38ad94414de0176b690349dc55daf2  video/steps.smk
-  3880dbc2b39ddd66b412b4c321e0a923  video/tapestry.smk
-  1c2fc402ae89684cabad36319a5542e0  video/truck.smk
-  52326045999a24bf853a86a34c13db6f  video/vulture.smk
-  04862d68f73930528090c44fc267b233  video/well.smk
+  0a82d2a778daecd481c08d3561a68961  candle.smk
+  194c0853c1bf17643486eb0b6dd2dfa7  credits.smk
+  4667ab2fe6392ace5670c16a197f156d  ferrari.smk
+  314720bbf8e53851d5f24e261a1f26ff  finale.smk
+  19208187cfd38da7db5d786353374a66  geodrop.smk
+  cb488c18ad7275e8b1521296f4cce560  grave.smk
+  23f74e7408e45f86978119a1e97947ef  history.smk
+  1534a2a18783d7bbefe020bb2a7821a9  intro.smk
+  bd7492d06bcf95b6773fdfb8c8d8140b  ireland.smk
+  a47ce38bdf4c492a1d7999f8cb6daf09  ladder.smk
+  2a02740095838cda16c92b5d8a91096d  montfcon.smk
+  2c66b04763476a365f4d2f039d12f204  river.smk
+  43f1a44b3604eda3eb79a2de48ccb549  sewer.smk
+  e7bd3292cfd7d8010c1f2e13498b6755  spanish.smk
+  1e38ad94414de0176b690349dc55daf2  steps.smk
+  3880dbc2b39ddd66b412b4c321e0a923  tapestry.smk
+  1c2fc402ae89684cabad36319a5542e0  truck.smk
+  52326045999a24bf853a86a34c13db6f  vulture.smk
+  04862d68f73930528090c44fc267b233  well.smk
 sha1sums: |
   40e00051ccec2a728da2d93bece5bac1a9139abd  compacts.clu
   68be4f0ff45806616d1c5409898695cff75c3790  general.clu
@@ -1139,24 +1152,24 @@ sha1sums: |
   63103b748ca718f80863392253b76811e962dcf6  syria.clu
   055f0512cdb7e004bc747335da3e47e7249207b4  text.clu
   10dfd7a8f02e56778871e33e45e6ab14ad672f7c  train.clu
-  ba753f4fe33f212b26caf8996f2dfbc5cb38b1b3  video/candle.smk
-  1662fe7d3004a99f547e5fefe504de687856e16a  video/credits.smk
-  00836a22c5134c859b14d0990c9c2e43cf173b4e  video/ferrari.smk
-  4039edad567b3773a67932734f7b0abba455f24c  video/finale.smk
-  fb0f67a6ac4a3ea7b75dc2686b62a7bb39b09342  video/geodrop.smk
-  25753fa246f7f3af9401eefeca95b70b23c48bc2  video/grave.smk
-  8e3dd28617c302536960e27b05cd35cfc50bd529  video/history.smk
-  2840087e2353d595d59742f21a21da016c9cb723  video/intro.smk
-  c54c7a3ca1eedad281e2aaed0fb856f650469bb2  video/ireland.smk
-  038f6dad0f3d20218eceb769ac828398c074fcf6  video/ladder.smk
-  c2f55545b0e1d06b004c921064740ead1b9a7770  video/montfcon.smk
-  a346784b2939b7963280da9642776657e36934bf  video/river.smk
-  0760656e1ab17378b9cfef8bfe443d8780f80e46  video/sewer.smk
-  3b2a2de70ff6a595b82218a31f051e3725a11440  video/spanish.smk
-  8d41a412d55f86467d6e7e709f8654fa9c220a16  video/steps.smk
-  41b0e79a4ac872ffa26dcf9ed993a1b4fbaa3c16  video/tapestry.smk
-  40aef992757d8a4bf44319b9955ed0151b60e3ca  video/truck.smk
-  6b9da910d80e9da9e2ffde717f7a2da3c0a9af5e  video/vulture.smk
-  dc656058b6a469f1245783eb3883be33298045a0  video/well.smk
+  ba753f4fe33f212b26caf8996f2dfbc5cb38b1b3  candle.smk
+  1662fe7d3004a99f547e5fefe504de687856e16a  credits.smk
+  00836a22c5134c859b14d0990c9c2e43cf173b4e  ferrari.smk
+  4039edad567b3773a67932734f7b0abba455f24c  finale.smk
+  fb0f67a6ac4a3ea7b75dc2686b62a7bb39b09342  geodrop.smk
+  25753fa246f7f3af9401eefeca95b70b23c48bc2  grave.smk
+  8e3dd28617c302536960e27b05cd35cfc50bd529  history.smk
+  2840087e2353d595d59742f21a21da016c9cb723  intro.smk
+  c54c7a3ca1eedad281e2aaed0fb856f650469bb2  ireland.smk
+  038f6dad0f3d20218eceb769ac828398c074fcf6  ladder.smk
+  c2f55545b0e1d06b004c921064740ead1b9a7770  montfcon.smk
+  a346784b2939b7963280da9642776657e36934bf  river.smk
+  0760656e1ab17378b9cfef8bfe443d8780f80e46  sewer.smk
+  3b2a2de70ff6a595b82218a31f051e3725a11440  spanish.smk
+  8d41a412d55f86467d6e7e709f8654fa9c220a16  steps.smk
+  41b0e79a4ac872ffa26dcf9ed993a1b4fbaa3c16  tapestry.smk
+  40aef992757d8a4bf44319b9955ed0151b60e3ca  truck.smk
+  6b9da910d80e9da9e2ffde717f7a2da3c0a9af5e  vulture.smk
+  dc656058b6a469f1245783eb3883be33298045a0  well.smk
 ...
 
