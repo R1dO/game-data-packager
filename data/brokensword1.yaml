@@ -307,6 +307,13 @@ packages:
     - truck.smk
     - vulture.smk
     - well.smk
+
+files:
+  speech/speech1.clf:
+    look_for: [speech.clf]
+  speech/speech2.clf:
+    look_for: [speech.clf]
+
 cksums: |
   _ 200852    compacts.clu
   _ 6295679   general.clu
