@@ -32,7 +32,7 @@ packages:
     - vol.cat_es
     - vol.dat_es
     optional:
-    - license.txt_es
+    - license.txt
     - licencia.txt
 files:
   soltys-en-v1.0.zip:
@@ -75,7 +75,7 @@ files:
     - vol.cat_es
     - vol.dat_es
     - licencia.txt
-    - license.txt_es
+    - license.txt
   vol.cat_es:
     install_as: vol.cat
     look_for: [vol.cat]
@@ -85,11 +85,6 @@ files:
   licencia.txt:
     install_to: $docdir
     license: true
-  license.txt_es:
-    install_to: $docdir
-    install_as: license.txt
-    license: true
-    look_for: [license.txt]
 
 cksums: |
   _ 3484518   soltys-en-v1.0.zip
@@ -106,7 +101,6 @@ cksums: |
   _ 50176     vol.cat_es
   _ 8450151   vol.dat_es
   _ 1511      licencia.txt
-  _ 1324      license.txt_es
 md5sums: |
   ae71d22e42bc6cdf8b0d489d9f61421b  soltys-en-v1.0.zip
   de93496e6973d8716f38e4d25b1985f3  vol.cat
@@ -120,7 +114,6 @@ md5sums: |
 
   b145eff864386bcf657faa12767ecb42  soltys-es-v1.0.zip
   570d3330ffc96e2c97c5f40a72e862ac  licencia.txt
-  1334b144cecac51610136bb4fa622ce3  license.txt_es
   6699114f2c36ba7dfdd0ba6753d456b7  vol.cat_es
   01e1cc533f1643ddaa1df0f0ad83c4ac  vol.dat_es
 sha1sums: |
@@ -138,5 +131,4 @@ sha1sums: |
   630415f2a7dab5ec63c97901224e5de559b199ca  vol.cat_es
   4330dcc79c7ea4b47c9db5482c4a89d9b62019b8  vol.dat_es
   a8b723db206e484b673ad69de75189d5d41be246  licencia.txt
-  015ef5205cb796b1c5a163044fb46e13b07b6412  license.txt_es
 ...
