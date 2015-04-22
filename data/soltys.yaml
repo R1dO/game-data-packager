@@ -7,6 +7,7 @@ gameid: soltys
 packages:
   soltys-en-data:
     debian:
+      version: '1.0'
       provides: soltys-data
     install:
     - vol.cat
@@ -17,6 +18,7 @@ packages:
   soltys-pl-data:
     lang: pl
     debian:
+      version: '1.0'
       provides: soltys-data
     install:
     - vol.cat_pl
@@ -27,6 +29,7 @@ packages:
   soltys-es-data:
     lang: es
     debian:
+      version: '1.0'
       provides: soltys-data
     install:
     - vol.cat_es
