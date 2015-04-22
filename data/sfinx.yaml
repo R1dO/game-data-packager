@@ -1,0 +1,96 @@
+---
+copyright: © 1997 L.K. Avalon
+plugin: scummvm_common
+gameid: sfinx
+
+help_text: |
+  This requires a recent ScummVM build (December 22, 2014 or more recent),
+  or scummvm => 1.8.
+  Only the subtitles are translated, the spoken dialogs remain in Polish.
+
+packages:
+  sfinx-en-data:
+    debian:
+      version: '1.1'
+      provides: sfinx-data
+    install:
+    - vol.cat
+    - vol.dat
+    optional:
+    - license.txt
+
+  sfinx-pl-data:
+    lang: pl
+    debian:
+      version: '1.0'
+      provides: sfinx-data
+    install:
+    - vol.cat_pl
+    - vol.dat_pl
+    optional:
+    - license.txt_pl
+
+files:
+  sfinx-en-v1.1.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/sfinx-en-v1.1.zip?download
+    unpack:
+      format: zip
+    provides:
+    - vol.cat
+    - vol.dat
+    - license.txt
+  license.txt:
+    install_to: $docdir
+    license: true
+
+  sfinx-pl-v1.0.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/sfinx-pl-v1.0.zip?download
+    unpack:
+      format: zip
+    provides:
+    - vol.cat_pl
+    - vol.dat_pl
+    - license.txt_pl
+  vol.cat_pl:
+    look_for: [vol.cat]
+    install_as: vol.cat
+  vol.dat_pl:
+    look_for: [vol.dat]
+    install_as: vol.dat
+  license.txt_pl:
+    look_for: [license.txt]
+    install_to: $docdir
+    install_as: license.txt
+    license: true
+
+cksums: |
+  _ 16549117  sfinx-en-v1.1.zip
+  _ 129024    vol.cat
+  _ 34182773  vol.dat
+  _ 1322      license.txt
+
+  _ 16459032  sfinx-pl-v1.0.zip
+  _ 129024    vol.cat_pl
+  _ 34180164  vol.dat_pl
+  _ 1320      license.txt_pl
+md5sums: |
+  cabaaef213d1e027d46e453636c28d9a  sfinx-en-v1.1.zip
+  23a8d6c2bc405f7faf47bf777723a70d  vol.cat
+  d47e9a2a66a5e841c3e29916e2845c06  vol.dat
+  41e0872de1e991adac6fcd59b2ef17a0  license.txt
+
+  eed0e1abe9546764d9f7224258afb20c  sfinx-pl-v1.0.zip
+  cf954e62a02911ca1073b905d6678b3a  vol.cat_pl
+  748e046d8285ad11d2d33e03f8cfbd68  vol.dat_pl
+  a71312e568292ed24b5562dd31625fef  license.txt_pl
+sha1sums: |
+  6d3047379f0e71af104f74c494e095db081fad7e  sfinx-en-v1.1.zip
+  9f1b26df27ff63120271a2b49035e28acba3cd7f  vol.cat
+  f784d6a01634c6d9bb4b259dbfe52258226a08da  vol.dat
+  8334f161d4003b74edfba9090c04c711fbaada4c  license.txt
+
+  7dce4d68b94dce0c5048a09a62e5708212d4068d  sfinx-pl-v1.0.zip
+  014cf682533d8070f759a63942b4c118cfad686a  vol.cat_pl
+  51869da13092b90ebb4bdc16bda46fbe59cfac04  vol.dat_pl
+  388a758dd32688d684cebd8258bf916c806b60f1  license.txt_pl
+...
