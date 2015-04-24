@@ -283,6 +283,10 @@ packages:
     - music/spm5.fla
     - music/spm6.fla
     - music/spm6b.fla
+    optional:
+    - manual.pdf
+    - readme.txt
+
   brokensword1-orig-video:
     expansion_for: brokensword1-data
     longname: "Broken Sword 1 - original cutscenes"
@@ -347,7 +351,16 @@ files:
   speech2.clf:
     install_as: speech/speech2.clf
 
+  manual.pdf:
+    disctinctive_name: false
+    install_to: $docdir
+  readme.txt:
+    disctinctive_name: false
+    install_to: $docdir
+
 cksums: |
+  _ 6095439   manual.pdf
+  _ 15751     readme.txt
   _ 200852    compacts.clu
   _ 6295679   general.clu
   _ 14011396  ireland.clu
@@ -638,6 +651,8 @@ cksums: |
   _ 556588    vulture.smk
   _ 1881572   well.smk
 md5sums: |
+  df0ec2b7cde59d71bb2908d12cdc062d  manual.pdf
+  bc9f6b5401ffc288ffb2581238680885  readme.txt
   7072952037a5e240c868d441ca4a6da9  compacts.clu
   1990da4bf81a6402884bd72c5fe7a3b2  general.clu
   62337167c67fada0d0689e0e45584ac5  ireland.clu
@@ -928,6 +943,8 @@ md5sums: |
   52326045999a24bf853a86a34c13db6f  vulture.smk
   04862d68f73930528090c44fc267b233  well.smk
 sha1sums: |
+  1cc60b0ab2dd97edca35d6ff9ab623b649930635  manual.pdf
+  202d48dbad1900e32afb2296e205f1ded771877b  readme.txt
   40e00051ccec2a728da2d93bece5bac1a9139abd  compacts.clu
   68be4f0ff45806616d1c5409898695cff75c3790  general.clu
   72edaabbb95ac93c9c21a3b71ccbdbeb41642ee4  ireland.clu
