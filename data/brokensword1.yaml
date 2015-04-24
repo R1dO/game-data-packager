@@ -309,6 +309,24 @@ packages:
     - well.smk
 
 files:
+  # different versions in smackslo/ and smackshigh/
+  credits.smk:
+    distinctive_name: false
+  ferrari.smk:
+    distinctive_name: false
+  finale.smk:
+    distinctive_name: false
+  intro.smk:
+    distinctive_name: false
+  ireland.smk:
+    distinctive_name: false
+  tapestry.smk:
+    distinctive_name: false
+  truck.smk:
+    distinctive_name: false
+  well.smk:
+    distinctive_name: false
+
   speech/speech1.clf:
     look_for: [speech.clf]
   speech/speech2.clf:
