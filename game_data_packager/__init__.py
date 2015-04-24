@@ -1243,11 +1243,14 @@ class GameData(object):
                 mirror = mirror + '/'
 
         if type(wanted.download) is str:
-            if mirror:
-                return list(set([mirror + wanted.name,
-                   mirror + os.path.basename(wanted.download)])) + [wanted.download]
-            else:
+            if not mirror:
                 return [wanted.download]
+            mirrors = [mirror + wanted.name]
+            url_basename = os.path.basename(wanted.download)
+            if url_basename != wanted.name and '?' not in url_basename:
+                mirrors.append(mirror + url_basename)
+            mirrors.append(wanted.download)
+            return mirrors
 
         for mirror_list, details in wanted.download.items():
             try:
