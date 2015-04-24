@@ -87,6 +87,15 @@ def do_one_dir(destdir,lower):
     has_dosbox = False
 
     for dirpath, dirnames, filenames in os.walk(destdir):
+        if dirpath.endswith('/directx'):
+            logger.warning('ignoring DirectX runtime at %s' % dirpath)
+            continue
+        if dirpath.endswith('/data.now'):
+            logger.warning('ignoring Sold Out runtime at %s' % dirpath)
+            continue
+        if '/directx/' in dirpath or '/data.now/' in dirpath:
+            continue
+
         for fn in filenames:
             path = os.path.join(dirpath, fn)
 
