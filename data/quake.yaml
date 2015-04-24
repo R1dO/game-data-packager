@@ -50,10 +50,11 @@ packages:
     install:
     - id1/pak0.pak_106
     - id1/pak1.pak
+    optional:
+    - manual.txt_101_cd
     license:
     - comexp.txt_101_cd
     - licinfo.txt_101_cd
-    - manual.txt_101_cd
     - rlicnse.txt_101_cd
     install_to: usr/share/games/quake
 
