@@ -2391,6 +2391,11 @@ class GameData(object):
             virtual = package.debian.get('provides')
             if virtual:
                 score = lang_score(package.lang)
+                if score == 0:
+                    logger.info('will not produce "%s" '
+                                'because %s is not in LANGUAGE selection',
+                                package.name, package.lang)
+                    continue
                 for other_p in possible:
                     if other_p.name == package.name:
                         continue
