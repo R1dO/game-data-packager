@@ -30,8 +30,8 @@ packages:
     - text.clu
     - train.clu
     - swordres.rif
-    - speech/speech1.clf
-    - speech/speech2.clf
+    - speech1
+    - speech2
     - music/10m1.fla
     - music/10m2.fla
     - music/10m3.fla
@@ -327,10 +327,25 @@ files:
   well.smk:
     distinctive_name: false
 
-  speech/speech1.clf:
-    look_for: [speech.clf]
-  speech/speech2.clf:
-    look_for: [speech.clf]
+  speech1:
+    alternatives:
+    - speech1.clu
+    - speech1.clf
+  speech1.clu:
+    install_as: speech/speech1.clu
+    look_for: [speech.clu]
+  speech1.clf:
+    install_as: speech/speech1.clf
+
+  speech2:
+    alternatives:
+    - speech2.clu
+    - speech2.clf
+  speech2.clu:
+    install_as: speech/speech2.clu
+    look_for: [speech.clu]
+  speech2.clf:
+    install_as: speech/speech2.clf
 
 cksums: |
   _ 200852    compacts.clu
@@ -348,8 +363,10 @@ cksums: |
   _ 3193159   text.clu
   _ 8247053   train.clu
   _ 59788     swordres.rif
-  _ 239164273 speech/speech1.clf
-  _ 234461479 speech/speech2.clf
+  _ 348216568 speech1.clu
+  _ 239164273 speech1.clf
+  _ 339493006 speech2.clu
+  _ 234461479 speech2.clf
   _ 2213014   music/10m1.fla
   _ 1543190   music/10m2.fla
   _ 3615961   music/10m3.fla
@@ -636,8 +653,10 @@ md5sums: |
   4edc865fa00933c7d7c9cf761ee3efb1  text.clu
   d3df148f058f4280e6166c8649aa5a1c  train.clu
   003f4dc09692592d3a8347bc84ded39f  swordres.rif
-  71786b786e8299e282315ca726cc6faa  speech/speech1.clf
-  d74bbef61c11046cfd9e69b18d2e5e78  speech/speech2.clf
+  2a36888b6b45cbb945dd45b1aecf02a3  speech1.clu
+  71786b786e8299e282315ca726cc6faa  speech1.clf
+  75ad0248c9a0a5aa65c471f459a58c71  speech2.clu
+  d74bbef61c11046cfd9e69b18d2e5e78  speech2.clf
   aaa4b13f4bc3a163ae50d0b6a4bb6a1e  music/10m1.fla
   794da08727c36b34241cfa2cf4166f44  music/10m2.fla
   f3695b4bf61c062cebb5b61cf4760ccc  music/10m3.fla
@@ -924,8 +943,10 @@ sha1sums: |
   055f0512cdb7e004bc747335da3e47e7249207b4  text.clu
   10dfd7a8f02e56778871e33e45e6ab14ad672f7c  train.clu
   baddca4dc1d6e7cfba6dde2ab22a99a2e439ebb3  swordres.rif
-  ee91174587016019242a3df649deddea02ae450e  speech/speech1.clf
-  7812011060f5320adb29d48243b7b516c2d7276a  speech/speech2.clf
+  40921d4ebb4160b4d55f018bff15d96a99bb5c17  speech1.clu
+  ee91174587016019242a3df649deddea02ae450e  speech1.clf
+  accb12d57b5ce5d21c07a09158bca94b63b54ca9  speech2.clu
+  7812011060f5320adb29d48243b7b516c2d7276a  speech2.clf
   48861de8369afaca093b7cdec99aa8a229df794e  music/10m1.fla
   e49626777e2508aad65b24f7b513946e1938f1df  music/10m2.fla
   cad188536f2ae168e1b527b0657aa26a3d597b94  music/10m3.fla
