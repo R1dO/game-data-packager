@@ -366,4 +366,7 @@ def main():
             do_one_file(arg,args.lower)
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except BrokenPipeError:
+        pass
