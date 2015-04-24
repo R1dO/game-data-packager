@@ -55,7 +55,7 @@ def is_dosbox(file):
 def do_one_dir(destdir,lower):
     data = dict()
     files = dict(files={})
-    game = os.path.basename(destdir)
+    game = os.path.basename(os.path.abspath(destdir))
     if game.endswith('-data'):
         game = game[:len(game) - 5]
 
