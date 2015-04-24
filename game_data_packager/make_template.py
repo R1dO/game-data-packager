@@ -31,11 +31,21 @@ from .steam import parse_acf
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
 
+
+def is_license(file):
+    name, ext = os.path.splitext(file.lower())
+    if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
+        return False
+    for word in ('eula', 'license', 'vendor'):
+        if word in name:
+            return True
+    return False
+
 def is_doc(file):
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
-    for word in ('changes', 'eula', 'license', 'manual', 'quickstart', 'readme', 'vendor'):
+    for word in ('changes', 'manual', 'quickstart', 'readme'):
         if word in name:
             return True
     return False
@@ -82,6 +92,7 @@ def do_one_dir(destdir,lower):
     package['install_to'] = 'usr/share/games/' + game
 
     install = set()
+    license = set()
     optional = set()
     sums = dict(sha1={}, md5={}, sha256={}, ck={})
     has_dosbox = False
@@ -115,7 +126,10 @@ def do_one_dir(destdir,lower):
             elif os.path.islink(path):
                 package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
             elif os.path.isfile(path):
-                if is_doc(fn):
+                if is_license(fn):
+                     out_name = os.path.basename(out_name)
+                     license.add(out_name)
+                elif is_doc(fn):
                      optional.add(out_name)
                      files['files'][out_name] = dict(install_to='$docdir')
                 else:
@@ -147,6 +161,10 @@ def do_one_dir(destdir,lower):
     if optional:
         print('    optional:')
         for file in sorted(optional):
+            print('    - %s' % file)
+    if license:
+        print('    license:')
+        for file in sorted(license):
             print('    - %s' % file)
 
     if files['files']:
