@@ -49,7 +49,7 @@ packages:
     - assets0.pk3_demo
     - ui/demo_ingame.txt
     - ui/demo_menus.txt
-    optional:
+    license:
     - license.txt
     symlinks:
       usr/lib/openjk-academy-demo/base/assets0.pk3: usr/share/games/jedi-academy-demo/base/assets0.pk3
@@ -156,11 +156,6 @@ files:
     provides:
     - ui/demo_ingame.txt
     - ui/demo_menus.txt
-
-  license.txt:
-    install_to: $docdir
-    license: true
-    distinctive_name: false
 
 cksums: |
   _ 195892094 JediAcademyDemo.exe

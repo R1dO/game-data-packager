@@ -43,8 +43,9 @@ packages:
     - flower.ico
     - gf.ico
     - grim fandango - manual.pdf
-    - install/license.txt
     - install/readme.txt
+    license:
+    - install/license.txt
 
   grimfandango-demo-data:
     demo_for: grimfandango-data
@@ -61,16 +62,13 @@ packages:
     - Movies/demo_frontend.san
     optional:
     - grim.doc
-    - license.txt
     - readme.txt
+    license:
+    - license.txt
 
 files:
   grim.doc:
     install_to: $docdir
-  license.txt:
-    distinctive_name: false
-    install_to: $docdir
-    license: true
   readme.txt:
     distinctive_name: false
     install_to: $docdir
@@ -78,10 +76,7 @@ files:
   "grim fandango - manual.pdf":
     install_to: $docdir
   install/license.txt:
-    distinctive_name: false
-    install_to: $docdir
     install_as: license.txt
-    license: true
   install/readme.txt:
     distinctive_name: false
     install_to: $docdir

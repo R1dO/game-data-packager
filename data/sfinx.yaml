@@ -16,7 +16,7 @@ packages:
     install:
     - vol.cat
     - vol.dat
-    optional:
+    license:
     - license.txt
 
   sfinx-pl-data:
@@ -27,7 +27,7 @@ packages:
     install:
     - vol.cat_pl
     - vol.dat_pl
-    optional:
+    license:
     - license.txt_pl
 
 files:
@@ -39,9 +39,6 @@ files:
     - vol.cat
     - vol.dat
     - license.txt
-  license.txt:
-    install_to: $docdir
-    license: true
 
   sfinx-pl-v1.0.zip:
     download: http://prdownloads.sourceforge.net/scummvm/sfinx-pl-v1.0.zip?download
@@ -59,9 +56,7 @@ files:
     install_as: vol.dat
   license.txt_pl:
     look_for: [license.txt]
-    install_to: $docdir
     install_as: license.txt
-    license: true
 
 cksums: |
   _ 16549117  sfinx-en-v1.1.zip

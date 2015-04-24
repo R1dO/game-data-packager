@@ -28,7 +28,7 @@ packages:
     - HUNTBGIN.RTL
     - HUNTBGIN.WAD
     - REMOTE1.RTS
-    optional:
+    license:
     - VENDOR.DOC
 
   rott-registered-data:
@@ -42,7 +42,7 @@ packages:
     - any_registered_rtc
     - DARKWAR.RTL
     - DARKWAR.WAD
-    optional:
+    license:
     - LICENSE.TXT
 
   rott-extreme-data:
@@ -62,10 +62,6 @@ files:
     - ROTTSITE.RTC
     - DARKWAR.RTC
     install_as: $alternative
-
-  LICENSE.TXT:
-    install_to: $docdir
-    license: true
 
   1rott13.zip:
     size: 3668139
@@ -99,10 +95,6 @@ files:
     sha256: e49b53722410d2e11a78c5715652cca3fbfdbaac2c27956f4a8e7739200a563c
     unpack:
       format: zip
-
-  VENDOR.DOC:
-    install_to: $docdir
-    license: true
 
   DEMO1_3.DMO:
     distinctive_name: false

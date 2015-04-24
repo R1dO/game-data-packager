@@ -41,7 +41,7 @@ packages:
       2382785751 305891  vgagraph.sdm
       3240931844 402     vgahead.sdm
       3002732200 730624  vswap.sdm
-    optional:
+    license:
     - sod.doc
 
   spear-of-destiny-data:
@@ -131,10 +131,6 @@ files:
     sha256: 3d15590a5debf6e853bbcfb90358f6b7a3e5a71b3d0f3758ccc5d8ce7bf9eec3
     unpack:
       format: lha
-
-  sod.doc:
-    install_to: $docdir
-    license: true
 
 cksums: |
   2532954622 6852    sod.doc

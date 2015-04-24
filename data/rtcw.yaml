@@ -62,6 +62,7 @@ packages:
     optional:
     - main/autoexec.cfg
     - main/rotate.cfg
+    license:
     - license_fr.txt
     - license_en.txt
 
@@ -167,14 +168,10 @@ files:
   license_fr.txt:
     size: 18725
     look_for: [License.txt]
-    install_to: $docdir
-    license: true
 
   license_en.txt:
     size: 15483
     look_for: [License.txt]
-    install_to: $docdir
-    license: true
 
 md5sums: |
   d0c13dcf44a7baa7741af50e09844371  main/autoexec.cfg

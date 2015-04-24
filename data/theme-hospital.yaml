@@ -24,6 +24,10 @@ packages:
       url: theme_hospital
     origin:
       path: Theme Hospital
+    license:
+    - gog_eula.txt
+    - eula.txt
+    - en_US_eula.rtf
     optional:
     # documentation
     - EN.pdf
@@ -31,9 +35,6 @@ packages:
     - GE.pdf
     - IT.pdf
     - manual.pdf
-    - gog_eula.txt
-    - eula.txt
-    - en_US_eula.rtf
     # not present in the gog.com copy; judging by their names, they're
     # probably unnecessary?
     - levels/easy00.bak
@@ -897,15 +898,6 @@ files:
     install_to: $docdir
   manual.pdf:
     install_to: $docdir
-  eula.txt:
-    install_to: $docdir
-    license: true
-  gog_eula.txt:
-    install_to: $docdir
-    license: true
-  en_US_eula.rtf:
-    install_to: $docdir
-    license: true
 
   anims/winlevel.smk_demo:
     install_as: anims/winlevel.smk

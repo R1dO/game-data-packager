@@ -22,7 +22,7 @@ packages:
       1729266021 326568 vgagraph.wl1
       3936285452 471    vgahead.wl1
       4022822569 742912 vswap.wl1
-    install:
+    license:
     - vendor.doc
 
   wolf3d-full-v12-data:
@@ -61,8 +61,8 @@ packages:
     - vgagraph.wl6
     - vgahead.wl6
     - vswap.wl6
-    optional:
-    - LICENSE.DOC_wl6a
+    license:
+    - LICENSE.DOC
 
 files:
   # demo
@@ -96,10 +96,6 @@ files:
     sha256: 77ed56ae06ef28c01cf2f26e1199d63ee9dd5852087086d02198319c369aadb1
     unpack:
       format: id-shr-extract
-
-  vendor.doc:
-    install_to: $docdir
-    license: true
 
   # full version v1.2
   w6patc12.zip:
@@ -208,11 +204,6 @@ files:
     look_for:
     - vswap.wl6
 
-  LICENSE.DOC_wl6a:
-    install_as: LICENSE.DOC
-    install_to: $docdir
-    license: true
-
   # older demos
   AUDIOHED.WL1_1.0:
     look_for: [audiohed.wl1]
@@ -291,7 +282,7 @@ cksums: |
   3380985220 334506  vgagraph.wl6_wl6a
   3071614724 486     vgahead.wl6_wl6a
   #4156874368 1545400 vswap.wl6_wl6a - same as alt
-  1260526910 2606    LICENSE.DOC_wl6a
+  1260526910 2606    LICENSE.DOC
 
   # "Wolfenstein 3D v1.2 full Apogee"
   # run with wolf3sdl-wl6a1
@@ -358,7 +349,7 @@ md5sums: |
   4e96d7b4e89a5b3a4beeebf5d7d87eb7  vgagraph.wl6_wl6a
   a08905e2b0d299b3fad259f90c0efb1a  vgahead.wl6_wl6a
   #a6d901dfb455dfac96db5e4705837cdb  vswap.wl6_wl6a - same as alt
-  8eccd0fe00da18e06227426292f3d863  LICENSE.DOC_wl6a
+  8eccd0fe00da18e06227426292f3d863  LICENSE.DOC
   3bfac1f5de61d8a1a7df949fbde873fc  audiohed.wl6_1.0
   bb228b96fc12f2a658fc8033637ec051  audiot.wl6_1.0
   d159e885f32e2355c6a31eaef350b902  vgadict.wl6_1.0
@@ -411,7 +402,7 @@ sha1sums: |
   7ea4ccb7c446628a528c8f68ebd1fbcb8b5366e6  vgagraph.wl6_wl6a
   c5100bcbaaf2a78fc831f6780089bd3fa46bd9a5  vgahead.wl6_wl6a
   #e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_wl6a - same as alt
-  cd03e6f036764464eeb29705f67ebd356f26cde9  LICENSE.DOC_wl6a
+  cd03e6f036764464eeb29705f67ebd356f26cde9  LICENSE.DOC
   660a3effb265442f770040aee1d9f2447300767a  audiohed.wl6_1.0
   d2d97546f37d177478c1c8ec10deaebac1e9b534  audiot.wl6_1.0
   33ef9c6082376763eed32484240c3bce128f38f2  vgadict.wl6_1.0
@@ -464,7 +455,7 @@ sha256sums: |
   84adea791e3ab1251312ee159414e48d5114622dc84348cebbac8a1dacb4b41f  vgagraph.wl6_wl6a
   386b56a62ce79cdfa502542b0c9a9bad0d29fab4250edf17e05ee4ac51aa37a8  vgahead.wl6_wl6a
   #49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_wl6a - same as alt
-  578ed140d4a0c32109ceba304bc2aa537e4372459afd90acfe2ec3041b9faf44  LICENSE.DOC_wl6a
+  578ed140d4a0c32109ceba304bc2aa537e4372459afd90acfe2ec3041b9faf44  LICENSE.DOC
   45991892e1a0fabdfecf1d52a3d7b31096e455372f5bb4116789b914f9f3b96f  audiohed.wl6_1.0
   f43f345c8ec5515e97c7782c6e032090a7e8942174b157fd0c8af47cf1d1e834  audiot.wl6_1.0
   ee387050e4d0e894f14c0e06a9174dd7ef28ddd375f3e1102bd83106642641b8  vgadict.wl6_1.0

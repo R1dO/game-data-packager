@@ -33,6 +33,7 @@ packages:
       conflicts: quake-registered
     install:
     - id1/pak0.pak_106
+    license:
     - licinfo.txt_shareware
     - slicnse.txt
     install_to: usr/share/games/quake
@@ -49,7 +50,7 @@ packages:
     install:
     - id1/pak0.pak_106
     - id1/pak1.pak
-    optional:
+    license:
     - comexp.txt_101_cd
     - licinfo.txt_101_cd
     - manual.txt_101_cd
@@ -67,9 +68,10 @@ packages:
     install:
     - hipnotic/pak0.pak
     optional:
-    - license.txt_mp12_cd
     - armagon/manual.htm
     - armagon/manual.txt
+    license:
+    - license.txt_mp12_cd
     install_to: usr/share/games/quake
 
   quake-dissolution:
@@ -83,11 +85,12 @@ packages:
     install:
     - rogue/pak0.pak
     optional:
-    - license.txt_mp12_cd
     - eternity/ctf.htm
     - eternity/ctf.txt
     - eternity/manual.htm
     - eternity/manual.txt
+    license:
+    - license.txt_mp12_cd
     install_to: usr/share/games/quake
 
   quake-music:
@@ -132,27 +135,13 @@ files:
     size: 34257856
 
   licinfo.txt_shareware:
-    distinctive_name: false
     install_as: licinfo.txt
-    install_to: $docdir
-    license: true
 
   licinfo.txt_101_cd:
-    distinctive_name: false
     install_as: licinfo.txt
-    install_to: $docdir
-    license: true
 
   license.txt_mp12_cd:
-    distinctive_name: false
     install_as: license.txt
-    install_to: $docdir
-    license: true
-
-  slicnse.txt:
-    distinctive_name: false
-    install_to: $docdir
-    license: true
 
   manual.txt_101_cd:
     distinctive_name: false
@@ -160,15 +149,10 @@ files:
     install_as: manual.txt
 
   comexp.txt_101_cd:
-    distinctive_name: false
-    install_to: $docdir
     install_as: comexp.txt
 
   rlicnse.txt_101_cd:
-    distinctive_name: false
-    install_to: $docdir
     install_as: rlicnse.txt
-    license: true
 
   armagon/manual.htm:
     install_to: $docdir

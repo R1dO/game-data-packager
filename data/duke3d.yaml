@@ -20,8 +20,9 @@ packages:
     install:
     - duke3d.grp_demo
     optional:
-    - license.txt_demo
     - duke.rts_demo
+    license:
+    - license.txt_demo
 
   duke3d-data:
     install_to: usr/share/games/eduke32
@@ -36,8 +37,9 @@ packages:
     - duke3d.grp
     optional:
     - duke.rts
-    - license.txt
     - manual.pdf
+    license:
+    - license.txt
     
 files:
   3dduke13.zip:
@@ -60,13 +62,8 @@ files:
     look_for: [duke.rts]
     install_as: duke.rts
   license.txt_demo:
-    install_to: $docdir
     install_as: license.txt
-    license: true
 
-  license.txt:
-    install_to: $docdir
-    license: true
   manual.pdf:
     install_to: $docdir
 

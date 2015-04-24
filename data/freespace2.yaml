@@ -70,8 +70,10 @@ packages:
     - data/players/hud_2.hcf
     - data/players/hud_3.hcf
 
-    optional:
+    license:
     - GOG_EULA.txt
+
+    optional:
     - MANUAL.PDF
     - ReadMe.txt
     - refcard.pdf
@@ -515,9 +517,6 @@ files:
   stu_fs2.vp_gog:
     look_for: [stu_fs2.vp]
 
-  GOG_EULA.txt:
-    install_to: $docdir
-    license: true
   MANUAL.PDF:
     install_to: $docdir
     install_as: manual.pdf

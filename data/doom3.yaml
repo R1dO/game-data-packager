@@ -21,7 +21,7 @@ packages:
     - base/pak006.pk4
     - base/pak007.pk4
     - base/pak008.pk4
-    optional:
+    license:
     - License.txt
 
   doom3-resurrection-data:
@@ -53,12 +53,13 @@ packages:
     - cdoom/Classic Doom 3.url
     - cdoom/description.txt
     - cdoom/docs/shot00002.jpg
-    - cdoom/docs/License.txt
     - cdoom/docs/Readme.txt
     - cdoom/fan_extras/classicdoom_001_1280x1024.jpg
     - cdoom/fan_extras/wallpaper1.jpg
     - cdoom/fan_extras/wallpaper2.jpg
     - cdoom/fan_extras/wallpaper3.jpg
+    license:
+    - cdoom/docs/License.txt
 
   doom3-classic-dev:
     DISABLED:
@@ -802,16 +803,10 @@ files:
       skip: 8736
 
   License.txt:
-    install_to: $docdir
     install_as: license.txt
-    distinctive_name: false
-    license: true
 
   cdoom/docs/License.txt:
-    install_to: $docdir
     install_as: license.txt
-    distinctive_name: false
-    license: true
   cdoom/docs/Readme.txt:
     install_to: $docdir
     install_as: readme.txt

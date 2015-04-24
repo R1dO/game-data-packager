@@ -811,6 +811,15 @@ class GameData(object):
                 f = self._ensure_file(filename)
                 package.optional.add(filename)
 
+        if 'license' in d:
+            assert isinstance(d['license'], list), package.name
+            for filename in d['license']:
+                f = self._ensure_file(filename)
+                f.license = True
+                f.install_to = '$docdir'
+                f.distinctive_name = False
+                package.optional.add(filename)
+
         if 'install_files_from_cksums' in d:
             for line in d['install_files_from_cksums'].splitlines():
                 stripped = line.strip()

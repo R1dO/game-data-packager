@@ -19,7 +19,7 @@ packages:
     install_to: usr/share/games/doom
     install:
     - hacx.wad
-    optional:
+    license:
     - hacx.txt
 
 files:
@@ -33,9 +33,6 @@ files:
     - hacx.wad
     - hacx.txt
   
-  hacx.txt:
-    install_to: $docdir
-    license: true
   hacx.wad_1.1:
     look_for: [hacx.wad]
     unsuitable: HacX 1.2 is required

@@ -12,7 +12,7 @@ packages:
     install:
     - vol.cat
     - vol.dat
-    optional:
+    license:
     - license.txt
 
   soltys-pl-data:
@@ -23,7 +23,7 @@ packages:
     install:
     - vol.cat_pl
     - vol.dat_pl
-    optional:
+    license:
     - license.txt_pl
 
   soltys-es-data:
@@ -34,7 +34,7 @@ packages:
     install:
     - vol.cat_es
     - vol.dat_es
-    optional:
+    license:
     - license.txt
     - licencia.txt
 files:
@@ -46,9 +46,6 @@ files:
     - vol.cat
     - vol.dat
     - license.txt
-  license.txt:
-    install_to: $docdir
-    license: true
 
   soltys-pl-v1.0.zip:
     download: http://prdownloads.sourceforge.net/scummvm/soltys-pl-v1.0.zip?download
@@ -65,9 +62,7 @@ files:
     install_as: vol.dat
     look_for: [vol.dat]
   license.txt_pl:
-    install_to: $docdir
     install_as: license.txt
-    license: true
     look_for: [license.txt]
 
   soltys-es-v1.0.zip:
@@ -85,9 +80,6 @@ files:
   vol.dat_es:
     install_as: vol.dat
     look_for: [vol.dat]
-  licencia.txt:
-    install_to: $docdir
-    license: true
 
 cksums: |
   _ 3484518   soltys-en-v1.0.zip
