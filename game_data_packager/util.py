@@ -92,17 +92,22 @@ def is_installed(package):
     return os.path.isdir(os.path.join('/usr/share/doc', package))
 
 def prefered_lang():
-    lang_pref = []
+    lang_raw = []
     if 'LANGUAGE' in os.environ:
-        for lang in os.getenv('LANGUAGE').split(':'):
-            if lang and lang not in lang_pref:
-                lang_pref.append(lang.split('_')[0])
+        lang_raw = os.getenv('LANGUAGE').split(':')
     if 'LANG' in os.environ:
-        lang = os.getenv('LANG').split('_')[0]
-        if lang and lang != 'C' and lang not in lang_pref:
+        lang_raw.append(os.getenv('LANG'))
+    lang_raw.append('en')
+
+    lang_pref = []
+    for lang in lang_raw:
+        lang = lang.split('.')[0]
+        if not lang or lang == 'C':
+            continue
+        if lang in ('en_GB', 'pt_BR'):
             lang_pref.append(lang)
-    if 'en' not in lang_pref:
-        lang_pref.append('en')
+        else:
+            lang_pref.append(lang[0:2])
     return lang_pref
 
 def lang_score(lang):
