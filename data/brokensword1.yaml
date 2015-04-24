@@ -34,6 +34,274 @@ packages:
     - swordres.rif
     - speech1
     - speech2
+    optional:
+    - manual.pdf
+    - readme.txt
+
+  brokensword1-orig-music:
+    longname: 'Broken Sword 1 - music'
+    expansion_for: brokensword1-data
+    install_to: usr/share/games/brokensword1
+    better_version: brokensword1-flac-music
+    install:
+    - music/10m1.wav
+    - music/10m2.wav
+    - music/10m3.wav
+    - music/10m4.wav
+    - music/11m1.wav
+    - music/11m2.wav
+    - music/11m3.wav
+    - music/11m4.wav
+    - music/11m7.wav
+    - music/11m8.wav
+    - music/12m1.wav
+    - music/1m10.wav
+    - music/1m11.wav
+    - music/1m12.wav
+    - music/1m13.wav
+    - music/1m14.wav
+    - music/1m15.wav
+    - music/1m16.wav
+    - music/1m17.wav
+    - music/1m18.wav
+    - music/1m19.wav
+    - music/1m20.wav
+    - music/1m21.wav
+    - music/1m22.wav
+    - music/1m23.wav
+    - music/1m24.wav
+    - music/1m25.wav
+    - music/1m26.wav
+    - music/1m27.wav
+    - music/1m28a.wav
+    - music/1m28.wav
+    - music/1m29.wav
+    - music/1m2.wav
+    - music/1m30.wav
+    - music/1m31.wav
+    - music/1m32.wav
+    - music/1m34.wav
+    - music/1m35.wav
+    - music/1m3.wav
+    - music/1m4.wav
+    - music/1m6.wav
+    - music/1m7.wav
+    - music/1m8.wav
+    - music/1m9.wav
+    - music/2m10.wav
+    - music/2m11.wav
+    - music/2m12.wav
+    - music/2m13.wav
+    - music/2m14.wav
+    - music/2m15.wav
+    - music/2m16.wav
+    - music/2m17.wav
+    - music/2m18.wav
+    - music/2m19.wav
+    - music/2m1.wav
+    - music/2m20.wav
+    - music/2m21.wav
+    - music/2m22.wav
+    - music/2m23.wav
+    - music/2m24.wav
+    - music/2m25.wav
+    - music/2m26.wav
+    - music/2m27.wav
+    - music/2m28.wav
+    - music/2m29.wav
+    - music/2m2.wav
+    - music/2m30.wav
+    - music/2m31.wav
+    - music/2m32.wav
+    - music/2m33.wav
+    - music/2m38.wav
+    - music/2m39.wav
+    - music/2m3.wav
+    - music/2m40.wav
+    - music/2m4.wav
+    - music/2m5.wav
+    - music/2m6.wav
+    - music/2m7.wav
+    - music/2m8.wav
+    - music/2m9.wav
+    - music/3m10.wav
+    - music/3m12.wav
+    - music/3m13.wav
+    - music/3m14.wav
+    - music/3m17.wav
+    - music/3m18.wav
+    - music/3m19.wav
+    - music/3m1.wav
+    - music/3m20.wav
+    - music/3m21.wav
+    - music/3m22.wav
+    - music/3m24.wav
+    - music/3m26.wav
+    - music/3m27.wav
+    - music/3m29.wav
+    - music/3m2.wav
+    - music/3m30.wav
+    - music/3m32.wav
+    - music/3m33.wav
+    - music/3m3.wav
+    - music/3m4.wav
+    - music/3m7.wav
+    - music/3m8.wav
+    - music/4m10.wav
+    - music/4m11.wav
+    - music/4m12.wav
+    - music/4m13.wav
+    - music/4m14.wav
+    - music/4m15.wav
+    - music/4m17.wav
+    - music/4m18.wav
+    - music/4m19.wav
+    - music/4m20.wav
+    - music/4m21.wav
+    - music/4m22.wav
+    - music/4m24.wav
+    - music/4m25.wav
+    - music/4m28.wav
+    - music/4m29.wav
+    - music/4m31.wav
+    - music/4m32.wav
+    - music/4m3.wav
+    - music/4m4.wav
+    - music/4m5.wav
+    - music/4m6.wav
+    - music/4m8.wav
+    - music/4m9.wav
+    - music/5m10.wav
+    - music/5m11.wav
+    - music/5m12.wav
+    - music/5m13.wav
+    - music/5m14.wav
+    - music/5m17.wav
+    - music/5m18.wav
+    - music/5m1.wav
+    - music/5m23.wav
+    - music/5m24.wav
+    - music/5m3.wav
+    - music/5m4.wav
+    - music/5m5.wav
+    - music/5m6.wav
+    - music/5m8.wav
+    - music/5m9.wav
+    - music/6m11.wav
+    - music/6m13.wav
+    - music/6m15.wav
+    - music/6m1.wav
+    - music/6m2.wav
+    - music/6m3.wav
+    - music/6m4.wav
+    - music/6m5.wav
+    - music/6m6.wav
+    - music/6m7.wav
+    - music/6m8.wav
+    - music/7m11.wav
+    - music/7m14.wav
+    - music/7m15.wav
+    - music/7m17.wav
+    - music/7m18.wav
+    - music/7m19.wav
+    - music/7m1.wav
+    - music/7m20.wav
+    - music/7m21.wav
+    - music/7m22.wav
+    - music/7m23.wav
+    - music/7m28.wav
+    - music/7m2.wav
+    - music/7m30.wav
+    - music/7m31.wav
+    - music/7m32.wav
+    - music/7m33.wav
+    - music/7m34.wav
+    - music/7m4.wav
+    - music/7m5.wav
+    - music/7m6.wav
+    - music/7m7.wav
+    - music/7m8.wav
+    - music/8m10.wav
+    - music/8m11.wav
+    - music/8m12.wav
+    - music/8m13.wav
+    - music/8m14.wav
+    - music/8m15.wav
+    - music/8m16.wav
+    - music/8m18.wav
+    - music/8m19.wav
+    - music/8m1.wav
+    - music/8m20.wav
+    - music/8m21.wav
+    - music/8m22.wav
+    - music/8m24.wav
+    - music/8m26.wav
+    - music/8m28.wav
+    - music/8m29.wav
+    - music/8m2.wav
+    - music/8m30.wav
+    - music/8m31.wav
+    - music/8m38.wav
+    - music/8m39.wav
+    - music/8m40.wav
+    - music/8m41.wav
+    - music/8m4.wav
+    - music/8m7.wav
+    - music/9m10.wav
+    - music/9m11.wav
+    - music/9m13.wav
+    - music/9m14.wav
+    - music/9m15.wav
+    - music/9m17.wav
+    - music/9m18.wav
+    - music/9m19.wav
+    - music/9m1.wav
+    - music/9m20.wav
+    - music/9m21.wav
+    - music/9m22.wav
+    - music/9m23.wav
+    - music/9m24.wav
+    - music/9m25.wav
+    - music/9m2.wav
+    - music/9m3.wav
+    - music/9m5.wav
+    - music/9m6.wav
+    - music/9m7.wav
+    - music/9m8.wav
+    - music/9m9.wav
+    - music/marquet.wav
+    - music/rm3a.wav
+    - music/rm3b.wav
+    - music/rm3c.wav
+    - music/rm3d.wav
+    - music/rm4.wav
+    - music/rm5.wav
+    - music/rm6.wav
+    - music/rm7.wav
+    - music/rm8.wav
+    - music/scm11.wav
+    - music/scm16.wav
+    - music/scm1b.wav
+    - music/scm1.wav
+    - music/scm2.wav
+    - music/scm3.wav
+    - music/scm4.wav
+    - music/scm5.wav
+    - music/scm6.wav
+    - music/scm7.wav
+    - music/scm8.wav
+    - music/spm2.wav
+    - music/spm3.wav
+    - music/spm4.wav
+    - music/spm5.wav
+    - music/spm6b.wav
+    - music/spm6.wav
+
+  brokensword1-flac-music:
+    longname: 'Broken Sword 1 - music compressed with FLAC'
+    expansion_for: brokensword1-data
+    install_to: usr/share/games/brokensword1
+    install:
     - music/10m1.fla
     - music/10m2.fla
     - music/10m3.fla
@@ -285,9 +553,6 @@ packages:
     - music/spm5.fla
     - music/spm6.fla
     - music/spm6b.fla
-    optional:
-    - manual.pdf
-    - readme.txt
 
   brokensword1-orig-video:
     expansion_for: brokensword1-data
@@ -352,6 +617,20 @@ files:
     look_for: [speech.clu]
   speech2.clf:
     install_as: speech/speech2.clf
+
+  # http://forums.scummvm.org/viewtopic.php?t=9088&highlight=2m29
+  #
+  # ... but even though they're not identical, it's the same piece of music.
+  # The one on disc one is about twice the size of the one on disc two
+  # becauses it uses a higher sample rate
+  music/2m29.wav:
+    alternatives:
+    - music/2m29.wav_cd1
+    - music/2m29.wav_cd2
+  music/2m29.wav_cd1:
+    look_for: [music/2m29.wav]
+  music/2m29.wav_cd2:
+    look_for: [music/2m29.wav]
 
   manual.pdf:
     distinctive_name: false
