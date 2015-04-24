@@ -4,6 +4,8 @@ copyright: © 1996 Revolution Software
 plugin: scummvm_common
 gameid: sword1
 
+# http://wiki.scummvm.org/index.php/Datafiles#Broken_Sword:_The_Shadow_of_the_Templars
+
 help_text: |
   As stated in README [1], video cutscenes were not avaible
   in all release, but replacement video replacement are
@@ -352,10 +354,10 @@ files:
     install_as: speech/speech2.clf
 
   manual.pdf:
-    disctinctive_name: false
+    distinctive_name: false
     install_to: $docdir
   readme.txt:
-    disctinctive_name: false
+    distinctive_name: false
     install_to: $docdir
 
 cksums: |
@@ -380,6 +382,259 @@ cksums: |
   _ 239164273 speech1.clf
   _ 339493006 speech2.clu
   _ 234461479 speech2.clf
+  _ 3191114   music/10m1.wav
+  _ 2364450   music/10m2.wav
+  _ 5920692   music/10m3.wav
+  _ 1337188   music/10m4.wav
+  _ 753324    music/11m1.wav
+  _ 1524336   music/11m2.wav
+  _ 1660480   music/11m3.wav
+  _ 1690406   music/11m4.wav
+  _ 463682    music/11m7.wav
+  _ 823724    music/11m8.wav
+  _ 1716960   music/12m1.wav
+  _ 1511724   music/1m10.wav
+  _ 239492    music/1m11.wav
+  _ 379712    music/1m12.wav
+  _ 973932    music/1m13.wav
+  _ 658844    music/1m14.wav
+  _ 625208    music/1m15.wav
+  _ 604024    music/1m16.wav
+  _ 342620    music/1m17.wav
+  _ 402278    music/1m18.wav
+  _ 457194    music/1m19.wav
+  _ 846792    music/1m2.wav
+  _ 1070092   music/1m20.wav
+  _ 1286974   music/1m21.wav
+  _ 938478    music/1m22.wav
+  _ 424164    music/1m23.wav
+  _ 2449724   music/1m24.wav
+  _ 1247624   music/1m25.wav
+  _ 674820    music/1m26.wav
+  _ 332384    music/1m27.wav
+  _ 599368    music/1m28.wav
+  _ 530034    music/1m28a.wav
+  _ 1001328   music/1m29.wav
+  _ 1458060   music/1m3.wav
+  _ 617444    music/1m30.wav
+  _ 830738    music/1m31.wav
+  _ 353722    music/1m32.wav
+  _ 650498    music/1m34.wav
+  _ 535472    music/1m35.wav
+  _ 543796    music/1m4.wav
+  _ 355854    music/1m6.wav
+  _ 363248    music/1m7.wav
+  _ 453098    music/1m8.wav
+  _ 869066    music/1m9.wav
+  _ 336556    music/2m1.wav
+  _ 585944    music/2m10.wav
+  _ 589934    music/2m11.wav
+  _ 517680    music/2m12.wav
+  _ 231062    music/2m13.wav
+  _ 461250    music/2m14.wav
+  _ 513452    music/2m15.wav
+  _ 438884    music/2m16.wav
+  _ 1096476   music/2m17.wav
+  _ 294744    music/2m18.wav
+  _ 2119020   music/2m19.wav
+  _ 420716    music/2m2.wav
+  _ 608372    music/2m20.wav
+  _ 134092    music/2m21.wav
+  _ 1596760   music/2m22.wav
+  _ 422984    music/2m23.wav
+  _ 422642    music/2m24.wav
+  _ 1274716   music/2m25.wav
+  _ 1532644   music/2m26.wav
+  _ 193084    music/2m27.wav
+  _ 485448    music/2m28.wav
+  _ 2313548   music/2m29.wav_cd1
+  _ 1108450   music/2m29.wav_cd2
+  _ 2180508   music/2m3.wav
+  _ 144616    music/2m30.wav
+  _ 703130    music/2m31.wav
+  _ 536430    music/2m32.wav
+  _ 789790    music/2m33.wav
+  _ 859240    music/2m38.wav
+  _ 835488    music/2m39.wav
+  _ 428890    music/2m4.wav
+  _ 660374    music/2m40.wav
+  _ 970856    music/2m5.wav
+  _ 205058    music/2m6.wav
+  _ 300992    music/2m7.wav
+  _ 902288    music/2m8.wav
+  _ 450324    music/2m9.wav
+  _ 782688    music/3m1.wav
+  _ 406268    music/3m10.wav
+  _ 859580    music/3m12.wav
+  _ 958640    music/3m13.wav
+  _ 1014566   music/3m14.wav
+  _ 749532    music/3m17.wav
+  _ 488604    music/3m18.wav
+  _ 765708    music/3m19.wav
+  _ 1163908   music/3m2.wav
+  _ 242594    music/3m20.wav
+  _ 460918    music/3m21.wav
+  _ 595394    music/3m22.wav
+  _ 754226    music/3m24.wav
+  _ 569394    music/3m26.wav
+  _ 570348    music/3m27.wav
+  _ 628184    music/3m29.wav
+  _ 341540    music/3m3.wav
+  _ 518284    music/3m30.wav
+  _ 3770594   music/3m32.wav
+  _ 1631338   music/3m33.wav
+  _ 694892    music/3m4.wav
+  _ 530980    music/3m7.wav
+  _ 856532    music/3m8.wav
+  _ 1063964   music/4m10.wav
+  _ 533874    music/4m11.wav
+  _ 548436    music/4m12.wav
+  _ 1029236   music/4m13.wav
+  _ 1067264   music/4m14.wav
+  _ 1382696   music/4m15.wav
+  _ 778316    music/4m17.wav
+  _ 963230    music/4m18.wav
+  _ 649420    music/4m19.wav
+  _ 638276    music/4m20.wav
+  _ 475028    music/4m21.wav
+  _ 289214    music/4m22.wav
+  _ 1514588   music/4m24.wav
+  _ 1181324   music/4m25.wav
+  _ 794624    music/4m28.wav
+  _ 1184772   music/4m29.wav
+  _ 465108    music/4m3.wav
+  _ 740708    music/4m31.wav
+  _ 805744    music/4m32.wav
+  _ 1622724   music/4m4.wav
+  _ 242748    music/4m5.wav
+  _ 1251068   music/4m6.wav
+  _ 477196    music/4m8.wav
+  _ 1380204   music/4m9.wav
+  _ 550790    music/5m1.wav
+  _ 1193794   music/5m10.wav
+  _ 515138    music/5m11.wav
+  _ 770506    music/5m12.wav
+  _ 350666    music/5m13.wav
+  _ 543800    music/5m14.wav
+  _ 203978    music/5m17.wav
+  _ 680500    music/5m18.wav
+  _ 1518334   music/5m23.wav
+  _ 295020    music/5m24.wav
+  _ 1080152   music/5m3.wav
+  _ 1058444   music/5m4.wav
+  _ 318308    music/5m5.wav
+  _ 445310    music/5m6.wav
+  _ 477056    music/5m8.wav
+  _ 308744    music/5m9.wav
+  _ 346084    music/6m1.wav
+  _ 450956    music/6m11.wav
+  _ 353874    music/6m13.wav
+  _ 457412    music/6m15.wav
+  _ 693836    music/6m2.wav
+  _ 743128    music/6m3.wav
+  _ 277190    music/6m4.wav
+  _ 1580228   music/6m5.wav
+  _ 1863952   music/6m6.wav
+  _ 1937474   music/6m7.wav
+  _ 2574722   music/6m8.wav
+  _ 358556    music/7m1.wav
+  _ 139600    music/7m11.wav
+  _ 538732    music/7m14.wav
+  _ 459104    music/7m15.wav
+  _ 593766    music/7m17.wav
+  _ 678512    music/7m18.wav
+  _ 651548    music/7m19.wav
+  _ 311450    music/7m2.wav
+  _ 1168828   music/7m20.wav
+  _ 503036    music/7m21.wav
+  _ 366796    music/7m22.wav
+  _ 154394    music/7m23.wav
+  _ 374264    music/7m28.wav
+  _ 376928    music/7m30.wav
+  _ 992294    music/7m31.wav
+  _ 181708    music/7m32.wav
+  _ 677774    music/7m33.wav
+  _ 1818784   music/7m34.wav
+  _ 961034    music/7m4.wav
+  _ 1341254   music/7m5.wav
+  _ 598124    music/7m6.wav
+  _ 1079878   music/7m7.wav
+  _ 352844    music/7m8.wav
+  _ 1954264   music/8m1.wav
+  _ 907636    music/8m10.wav
+  _ 606524    music/8m11.wav
+  _ 238940    music/8m12.wav
+  _ 110294    music/8m13.wav
+  _ 249120    music/8m14.wav
+  _ 275542    music/8m15.wav
+  _ 272294    music/8m16.wav
+  _ 2144312   music/8m18.wav
+  _ 333372    music/8m19.wav
+  _ 1286350   music/8m2.wav
+  _ 354842    music/8m20.wav
+  _ 348146    music/8m21.wav
+  _ 1169944   music/8m22.wav
+  _ 279568    music/8m24.wav
+  _ 596948    music/8m26.wav
+  _ 500656    music/8m28.wav
+  _ 463094    music/8m29.wav
+  _ 365164    music/8m30.wav
+  _ 1190764   music/8m31.wav
+  _ 762092    music/8m38.wav
+  _ 1252982   music/8m39.wav
+  _ 164162    music/8m4.wav
+  _ 434756    music/8m40.wav
+  _ 518744    music/8m41.wav
+  _ 418748    music/8m7.wav
+  _ 759740    music/9m1.wav
+  _ 353874    music/9m10.wav
+  _ 906668    music/9m11.wav
+  _ 531134    music/9m13.wav
+  _ 469084    music/9m14.wav
+  _ 356404    music/9m15.wav
+  _ 1028204   music/9m17.wav
+  _ 1023544   music/9m18.wav
+  _ 1150348   music/9m19.wav
+  _ 931532    music/9m2.wav
+  _ 1155392   music/9m20.wav
+  _ 655944    music/9m21.wav
+  _ 671652    music/9m22.wav
+  _ 715912    music/9m23.wav
+  _ 626494    music/9m24.wav
+  _ 730642    music/9m25.wav
+  _ 549484    music/9m3.wav
+  _ 605516    music/9m5.wav
+  _ 1063700   music/9m6.wav
+  _ 297894    music/9m7.wav
+  _ 810732    music/9m8.wav
+  _ 555452    music/9m9.wav
+  _ 1884274   music/marquet.wav
+  _ 304236    music/rm4.wav
+  _ 714902    music/rm5.wav
+  _ 753684    music/rm6.wav
+  _ 1623592   music/rm3a.wav
+  _ 2844312   music/rm3b.wav
+  _ 1170920   music/rm3c.wav
+  _ 3058632   music/rm3d.wav
+  _ 2223700   music/rm7.wav
+  _ 2291556   music/rm8.wav
+  _ 1268696   music/scm1.wav
+  _ 654164    music/scm11.wav
+  _ 1726018   music/scm16.wav
+  _ 1534990   music/scm1b.wav
+  _ 1015144   music/scm2.wav
+  _ 853756    music/scm3.wav
+  _ 1080494   music/scm4.wav
+  _ 1068272   music/scm5.wav
+  _ 1109988   music/scm6.wav
+  _ 690152    music/scm7.wav
+  _ 769752    music/scm8.wav
+  _ 2571308   music/spm2.wav
+  _ 2645428   music/spm3.wav
+  _ 1809736   music/spm4.wav
+  _ 2372836   music/spm5.wav
+  _ 1441990   music/spm6.wav
+  _ 264822    music/spm6b.wav
   _ 2213014   music/10m1.fla
   _ 1543190   music/10m2.fla
   _ 3615961   music/10m3.fla
@@ -672,6 +927,259 @@ md5sums: |
   71786b786e8299e282315ca726cc6faa  speech1.clf
   75ad0248c9a0a5aa65c471f459a58c71  speech2.clu
   d74bbef61c11046cfd9e69b18d2e5e78  speech2.clf
+  066d0c9048a74b55b3d5b85ad5f5e5bd  music/10m1.wav
+  aef97dace01833399b1da8f9b81aa161  music/10m2.wav
+  f17b8d805af8adfd144c33c94f572423  music/10m3.wav
+  81035520c4ec5323734ac4eab14d61f8  music/10m4.wav
+  8c02a28d5da528c9c1c07b07d578280a  music/1m10.wav
+  4fb1c93b4615b7e06ca357e06e097202  music/1m11.wav
+  a6c12ff30b6d25ff4ab26663201f1184  music/1m12.wav
+  2b1c9c2514bb69cae360c088b1c20415  music/1m13.wav
+  3e9ae5c42c24ecbd9a8ce2721a14cb76  music/1m14.wav
+  970ee55d1c9028e47d64ab8f4af4a48e  music/1m15.wav
+  91ecee1b43c3dc1bb72d721a1420db5d  music/1m16.wav
+  30221784f1fc5393a73f118630268e14  music/1m17.wav
+  49de3bfc1c4a4b0c0f23af9999c1b2fb  music/1m18.wav
+  8878aa88f75bf990fa40beb3cc5c36c2  music/1m19.wav
+  6b7ec16b0dccd62a08658d9b2af1a9ed  music/1m2.wav
+  e89d1350c8abe245fc005acc4556fd6e  music/1m20.wav
+  8339c687b46fc012d462c177331f4a98  music/1m21.wav
+  7c54a27f10e67cb2b601e98f763d4909  music/1m22.wav
+  9379aeb2f1ce92e3e48d1d04355a0aef  music/1m23.wav
+  76e11eda97cfa7ebfa0733c8b12ede8e  music/1m24.wav
+  626cdcbf69b3a50b2aad80a8423d047e  music/1m25.wav
+  7e0d3d20349b75cbfb52f19b206da4d0  music/1m26.wav
+  e5f1da5383c2af55f4fb2b5406cd7a85  music/1m27.wav
+  76d0c3f3d136dacecbd16de73ab3af10  music/1m28.wav
+  ad431063e9871151176ba07556611ae5  music/1m28a.wav
+  a47e6738ce41313132e28e35d7db3971  music/1m29.wav
+  4cea3e8f8e7ac1a9f217678b9d12ca33  music/1m3.wav
+  91763c113b7d1cbc97c06737148a828f  music/1m30.wav
+  50fac63e6ca5e06a5aa7422a6ada609b  music/1m31.wav
+  08a4930304572606c98142a3ffe9951d  music/1m32.wav
+  3d7818d09bfd1398224ba191bce533dc  music/1m34.wav
+  98feaa3155d7032ec26109813165cb2a  music/1m35.wav
+  2f2428975eb2cd938f14911462d6ee15  music/1m4.wav
+  77bf02e8a72e6bb0d4006d02afd6c3e6  music/1m6.wav
+  13456f33c4130d0319bc253b93f3ace1  music/1m7.wav
+  dc51c32f94bd0af673da847a268bad8a  music/1m8.wav
+  99a9107572871929f21dcbe13a203c88  music/1m9.wav
+  d42e902e28bc36c3c2174951e1825f93  music/2m1.wav
+  8501202bb37dc6e296c6663cc61149fe  music/2m10.wav
+  3afd16115e961c389885da505d6d3e83  music/2m11.wav
+  c4b2d879cebad04ce697b1f191d000f1  music/2m12.wav
+  f0ecc551a6e4d56e69fd68f315c58663  music/2m13.wav
+  60fa711e378819153196050fb92a1df2  music/2m14.wav
+  5563741362919dbc70bd6fac74ebbf73  music/2m15.wav
+  1b9b25d28289042412aedbd4611159b2  music/2m16.wav
+  5affee1f928f46f445b95b1cf3d1cd37  music/2m17.wav
+  a111bfe014975242bc8942c62b84ddb0  music/2m18.wav
+  b2a1ac411201bca7cb8528b25e63368f  music/2m19.wav
+  1893cdb829a516a92e954594e476e4a4  music/2m2.wav
+  23b1d2490bf1114fe3c45f3f0de703e6  music/2m20.wav
+  58c90de589440b405209aa4cf141ff51  music/2m21.wav
+  8d3605920cc3385b5dbff2525223ec62  music/2m22.wav
+  09ff61ae1cc13020ae49947242e0b9f7  music/2m23.wav
+  8f764c356ddb2d24d8a2b71baf3ad267  music/2m24.wav
+  09d5fd7d1ca768b1b728e5e13e7acc3b  music/2m25.wav
+  d7fc994ea60680fedb5f89b918d662aa  music/2m26.wav
+  bf05591354721d4a0afa16f2427f860f  music/2m27.wav
+  e8e7e9fdd9ab8264e3ccacbd70087b50  music/2m28.wav
+  9bef836679250f627de89e2a8f8736d7  music/2m29.wav_cd1
+  0f39c0f113cbf91113b8f19b4dcb0187  music/2m30.wav
+  7e5bb17861d196a5e1f8fe236352d594  music/2m31.wav
+  b40631517d7d03c358ea40f7fd74848b  music/2m32.wav
+  8f630b0eb57abd12e5f8909c748d3367  music/2m33.wav
+  2158d5da53c61e9f117fe231b3aa5b5b  music/2m38.wav
+  0cae716091ec9f634ddd77dc93bffd07  music/2m39.wav
+  d2c2a5dc86a07f9896c67a89cc244107  music/2m4.wav
+  3d932b7f6326dfbc5b7a17d03614bf37  music/2m40.wav
+  203b7979aff19d52c782166144335758  music/2m5.wav
+  2277b2eca3a77c4fec7b76bacf301ffe  music/2m6.wav
+  bb901470d7cad88f4ab696a50402b819  music/2m7.wav
+  42301571c97f66afc9e487c33e17858c  music/2m8.wav
+  e4d9a29c770667b171ed0dea77e8ba22  music/2m9.wav
+  70d91535851e0e1f6486fb21336e60bb  music/3m1.wav
+  faed8adf94506061869b83d46ec271e2  music/3m10.wav
+  846006d7a4461db9f2c72eee6edc6173  music/3m12.wav
+  43de0a89cee893b11b1f04c3c9abc0bc  music/3m13.wav
+  398bc498beb2db882cc04b0645bf6290  music/3m14.wav
+  c3151d473a0569c112bdbc20b667b68c  music/3m17.wav
+  c605af4d79c8a931c0c5590f8b92513a  music/3m18.wav
+  b2de2b82d6ca51fbe159447c6f98f28c  music/3m19.wav
+  6bf90bb40577b2058ca5569a65a5f6f9  music/3m2.wav
+  87f7c91d8e0d6992ad3f9f3606ab4aff  music/3m20.wav
+  05ea4b7230f8f4fc2d1f51e89ff3439c  music/3m21.wav
+  e7ecf6667877670fb4bacff733345d57  music/3m22.wav
+  f0226ba6eab4ccc8a156c2343151b275  music/3m24.wav
+  eeac9092a58218560fd26e85ff460706  music/3m26.wav
+  53f87ee6adfebbe82cace40850e593a4  music/3m27.wav
+  a29a11dd172bb790fb1a6b5f9eb200d1  music/3m29.wav
+  6e29e58241bd9eae4a3dbe9365a89b49  music/3m3.wav
+  5280c3f4c590d5fec5ee839be9e89364  music/3m30.wav
+  97c2360f15aab008c380b5138e63f23e  music/3m32.wav
+  11ee30cea1ccbaf14b0343e9a26d5972  music/3m33.wav
+  fff6dd751dd7a6449c555cd11205c483  music/3m4.wav
+  8d5464be16c2ff79832ecd5a3029bed1  music/3m7.wav
+  0c97a6ab37800b030ff3baf20c1c3b4d  music/3m8.wav
+  588be1e43e40f8f50e6a889f3201e896  music/4m10.wav
+  7d46a42bd8e198de9b376ed8ea885d74  music/4m11.wav
+  40769503f38783a57dceefecac1d9978  music/4m12.wav
+  b41a9c97ad455a929c0eeed72c08808f  music/4m13.wav
+  ecd57afc71782726603785332629241e  music/4m14.wav
+  9e561831c458ea4a0ca98fd892d969f4  music/4m15.wav
+  0ca457940f846018862be229c7a900e6  music/4m17.wav
+  8dab14a11eb1d04dca16a9222725f59d  music/4m18.wav
+  842e5fc7cca1d6b93e996f81c354dfd6  music/4m19.wav
+  452b47a9560e67656737b7cca293cc91  music/4m20.wav
+  18148816769e254da6838767ffc0ea1c  music/4m21.wav
+  6ce22023d6887dc4ccea69302dd32167  music/4m22.wav
+  abf19c4893f8cc90a2086013a6424ac2  music/4m24.wav
+  ca8db8bfaecd31a2642315902ccc3caa  music/4m25.wav
+  0c061187a6d859e915245e785dc566e1  music/4m28.wav
+  dc1267dc730f1cccb5e90f6af1d64382  music/4m29.wav
+  ed994ae02e3dc0a80bd6e017cbc5c43a  music/4m3.wav
+  3c7a895ca0ffe35dd50fb11669796d10  music/4m31.wav
+  33177e638189bf2f7ef1ba773ec8397c  music/4m32.wav
+  9295072e61654a158f526c3bd3e1a9d4  music/4m4.wav
+  65f393ad3512bbbddd7ebbdffd58b9f0  music/4m5.wav
+  0e6233afe3169421b3857a9fbe2b6be8  music/4m6.wav
+  44ae3484d30d8c8038534ff4eed3d659  music/4m8.wav
+  1488ec950730e8eeaa400e6231eef2d1  music/4m9.wav
+  72105e7a87cba3d3b3a60714d85efd5d  music/5m1.wav
+  1bba3c232a758678bbab80f6974a011d  music/5m10.wav
+  8e82e45ade087052dbca21f86fd8854d  music/5m11.wav
+  75974bc105ebb24f120046342f633190  music/5m12.wav
+  95c18a1b0a4cfd25c6e8d6096d6e1acd  music/5m13.wav
+  6facda92c0f95898949ccbf2937f239c  music/5m14.wav
+  1ce7ad08619c0764189e7db596a238e4  music/5m17.wav
+  b0b5cf0ff58a635b30b456a62c54724f  music/5m18.wav
+  d1d6f3b15fedd57ba109dbbfa668e1ca  music/5m3.wav
+  fbe4b6c059de8181fdeac032150206d0  music/5m4.wav
+  4f126e48fdd18b3420c21da90597c053  music/5m5.wav
+  c9127eb04d7418af7a4d93a25058e86f  music/5m6.wav
+  6b8d5e834be9364e424998856953bd5d  music/5m8.wav
+  c0f2f8fbdfbe0ba9aecee352c2d1391e  music/5m9.wav
+  c428b86680793f4b1ce72b46a8e6ddb5  music/8m31.wav
+  223856560dedcd085eb050a2041f503d  music/8m38.wav
+  21424ae2cc267cf6f13fc450741393b1  music/8m39.wav
+  0c7c031ddc7c6ee865ac9a07a3ca42a2  music/8m4.wav
+  0656e032921e23f96ad9b904fef639e9  music/8m40.wav
+  575e49e203f9ab304d25e1713a1524ad  music/8m41.wav
+  047d9ec90f9ba5b5c3e91edd0e064346  music/8m7.wav
+  474034cc95f3b5d4bc6f5a67a6c951ef  music/9m1.wav
+  aae9bcce3a1a086ee033f15276212e5c  music/9m10.wav
+  7ec4c94c6dcf11aedb397846708ca0f3  music/9m11.wav
+  6afe07234b14a439b25eaae3a8f52dac  music/9m13.wav
+  a8e6733d914158deb3ed5fb850ba84e3  music/9m14.wav
+  b36efac60bd62eba8107da7839ba8236  music/9m15.wav
+  970ccda395a1540fde758a77cba70a0a  music/9m17.wav
+  ed96394e02a1d110a8e0ccfe44f7c159  music/9m18.wav
+  1ef3d74caa3ecb0c76367dc7b210e380  music/9m19.wav
+  a5e1c6a053d2593c6f6a13e1359612d6  music/9m2.wav
+  47a4b87c19ff3d15b56d097f61d2aafa  music/9m20.wav
+  8a7c55d9db082197a375e594780fc13c  music/9m21.wav
+  e35b410fe344e1e5b3ba9cd887f5d0cd  music/9m22.wav
+  f1a6ec3980c15aebb952f26f37968b46  music/9m23.wav
+  3fccfc50d42ad96b0157205e4048f70b  music/9m24.wav
+  f3827fb5aa87fca490e41acf4e0ad2a8  music/9m25.wav
+  eb7fa53f284a65b0b319b94d6f4a134d  music/9m3.wav
+  3b744d2d6a3b096c4b3547b344929d95  music/9m5.wav
+  9bc22f1bb68eea42e2b0019c2edee9f1  music/9m6.wav
+  3638749cbef474cea99986efa223cd62  music/9m7.wav
+  c35428fe807f8a67351be066eeef9ea4  music/9m8.wav
+  731213d135cfea95680f49b3755cc662  music/9m9.wav
+  5c0b5297e3e01222a209ff782517845b  music/marquet.wav
+  f9a46f7e442749bc59423eb5ac78078a  music/rm4.wav
+  eabce8e91bb2aef81c48fc4e802076e7  music/rm5.wav
+  56cc835616015b4c3f86ad584d75e85a  music/rm6.wav
+  f417c791e1b8ebb9b5680a1692926caf  music/11m1.wav
+  51bf7cc85f8fc606f35fd08653ac0dd9  music/11m2.wav
+  7f0e6afb1a4e4019c7bc2f20ecb69e0a  music/11m3.wav
+  05e1c6368875264af6b66a82f2d97b39  music/11m4.wav
+  5bc7e95da436abc9ebb901af5f7ee4ab  music/11m7.wav
+  5338aefd7dc23be44bb2cdeb139ab052  music/11m8.wav
+  12666fab95df7f2c527a242bece61125  music/12m1.wav
+  aaabf7e11ef44b2450a7d17b280358af  music/2m29.wav_cd2
+  21ab5e0696b34945340a6dc171c249ba  music/2m3.wav
+  1c84e863d8956f0829555369f2dbc8d8  music/5m23.wav
+  7402d72f792ab2a2cfb330731017a99e  music/5m24.wav
+  c31ddb1bb73be62383599f49c879c1fa  music/6m1.wav
+  43ed04120ba423f2b161c2fe1300d449  music/6m11.wav
+  aae9bcce3a1a086ee033f15276212e5c  music/6m13.wav
+  048bf3697f784e3a4fab3a98965948cf  music/6m15.wav
+  cf852f913ce450b5de392c2af83b349f  music/6m2.wav
+  90f5830498529c74f1f16b08eaed554c  music/6m3.wav
+  87cb9f9708782a86b0259c518b9f9b16  music/6m4.wav
+  74c9b933d4572687faa30bec141d63be  music/6m5.wav
+  6d46382c83b1f75c73ecb09406d06b71  music/6m6.wav
+  101d681109ad723d2e77e8b8bf5e5b9e  music/6m7.wav
+  d72664cdc1da679dc64491a724ce7dad  music/6m8.wav
+  ffeebc879b1b9f1b4787f62f78838d83  music/7m1.wav
+  0d6e2028e8cbb60a72749678afcd43b1  music/7m11.wav
+  3cbfc2a0b0b89f3ecff4cb7efe82b690  music/7m14.wav
+  c48111c1d2c2932a8409d104585e0418  music/7m15.wav
+  7df8b065d9a03ec23801823dce0e1515  music/7m17.wav
+  6f6ddfc755d38233e79eb0b967dc3fbd  music/7m18.wav
+  b88a3eb143e6723f054cc347b61139a7  music/7m19.wav
+  e6d3d19f5506d3c29d08d3807dc1d160  music/7m2.wav
+  95f222474d5ffbb890d83bde3ec05dbb  music/7m20.wav
+  2a4b783d52bdff248c2d0a65008cf007  music/7m21.wav
+  1938cb2783d44e6ddb81a5eb31e3f0f9  music/7m22.wav
+  bbd466b50f970fd3678396c67b29c11d  music/7m23.wav
+  6bfbbe65f92d3e82fc7552c454edc918  music/7m28.wav
+  11a35a5560725e014ed6ea5ded09ae5a  music/7m30.wav
+  c05a1d4fb5feb963215df4a993127b98  music/7m31.wav
+  b4e6b9af0e453e46f9b9ccb87497fc7d  music/7m32.wav
+  a93107884578f6c26b3cc2bf7d4dac27  music/7m33.wav
+  7bc363186a498bdc0de9625a6bd447ed  music/7m34.wav
+  2fa33427d01e9f266d3ce5358d9a6aa4  music/7m4.wav
+  f83bf228d9e3edc8a49326b5d48177ec  music/7m5.wav
+  d2c7073f3975cbda8460a71326570afc  music/7m6.wav
+  530c4f599b5fb91451b892e8a003556f  music/7m7.wav
+  8532be16bbb96fd7a6d922cd264b0e35  music/7m8.wav
+  6df4784956482d58129588b20fc1a6e9  music/8m1.wav
+  fd4c6c6a1e3c2e97e0cb0dae143ae5a6  music/8m10.wav
+  39ecb5595f4244970a5fbf57b7390526  music/8m11.wav
+  46ba76d8357ccc9179386fea13d3b955  music/8m12.wav
+  0fda2417425f79d40695264a57d247e5  music/8m13.wav
+  7347a424bd93ec71991a7dd107b76136  music/8m14.wav
+  ee3ff99a6b8a41c317c4fc8aa9536c26  music/8m15.wav
+  2c5e41bb902507f2d374f5ac77297349  music/8m16.wav
+  becfc51a755f5f20aac33c43233651c9  music/8m18.wav
+  2bc80eec3b04987bf21f038e33144286  music/8m19.wav
+  a9dba94caa5c477c2f80681091d94a84  music/8m2.wav
+  9ad1804daabf521a9f34cd9e33458761  music/8m20.wav
+  01f58dc5f4eef9f0a96eb3dc6a0f6d1e  music/8m21.wav
+  70a828645e8a2c781665019bd55f993a  music/8m22.wav
+  3d2884f66dfdc78cf4c7fa912b4711b9  music/8m24.wav
+  479b686e6e4c22eca1f3f94d3de720ba  music/8m26.wav
+  4e94dc712d05ce4ec905b335246f26eb  music/8m28.wav
+  eac80ba8200a758cd212d4217d1a2bba  music/8m29.wav
+  b3cf07e7f5f47410852fba0bb05c5a8f  music/8m30.wav
+  193a9941a7439746fb19de041496a650  music/rm3a.wav
+  2f313a9efa702005072366853a72c378  music/rm3b.wav
+  e98fa81cd96e09e2f5b7d5f1c5bbe006  music/rm3c.wav
+  38da080ff082168c3e9d587549168c71  music/rm3d.wav
+  0d3d91b6ba336a1c6d5c22257ade2495  music/rm7.wav
+  9ad3e1b19ca6d8b72974b5dd5b6fdec9  music/rm8.wav
+  d60c708b64de5871157cc7f9d10a306d  music/scm1.wav
+  f40663db75265e4ff906f2ad1823f610  music/scm11.wav
+  e058cbcd5811d5854e24d40eaf9d8dc4  music/scm16.wav
+  bef5d6965afe7f1371187ee76e0cf93e  music/scm1b.wav
+  f69e60318cc32d79bbf2de838934584a  music/scm2.wav
+  492dd5df1f952c1efe7f69267ae3f8f5  music/scm3.wav
+  27a93b3bde2eb4e59dcc3bc53be93e93  music/scm4.wav
+  b6303085ec67df8733c3d3c74a5ccc28  music/scm5.wav
+  4e176023f10b340ae66054ada18b6219  music/scm6.wav
+  207ce80a278df93f11034f23b479c3b8  music/scm7.wav
+  0658975581e384262ac6e4d435129b16  music/scm8.wav
+  9f1c1d4999f2b03041cb84cc78ad8ace  music/spm2.wav
+  e216f1a7d1e645860088254ef2d76138  music/spm3.wav
+  7aaf47beb59efab909a9d653d9f07f81  music/spm4.wav
+  42a16bfc2bc9899b58f2e96abb21f8bb  music/spm5.wav
+  ec884819862678747b802739af7d8bcc  music/spm6.wav
+  5cbe5d85af68278b7f463741f1763e8a  music/spm6b.wav
   aaa4b13f4bc3a163ae50d0b6a4bb6a1e  music/10m1.fla
   794da08727c36b34241cfa2cf4166f44  music/10m2.fla
   f3695b4bf61c062cebb5b61cf4760ccc  music/10m3.fla
