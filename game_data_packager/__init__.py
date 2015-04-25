@@ -2045,17 +2045,17 @@ class GameData(object):
                 long_desc += ' .\n'
 
             if self.genre:
-                long_desc += ' Genre: ' + self.genre + '\n'
+                long_desc += '  Genre: ' + self.genre + '\n'
 
             if package.expansion_for:
                 game_name = self.packages[package.expansion_for].longname or self.longname
-                long_desc += ' Game: ' + game_name + '\n'
-                long_desc += ' Expansion: ' + longname + '\n'
+                long_desc += '  Game: ' + game_name + '\n'
+                long_desc += '  Expansion: ' + longname + '\n'
             else:
-                long_desc += ' Game: ' + longname + '\n'
+                long_desc += '  Game: ' + longname + '\n'
 
             copyright = package.copyright or self.copyright
-            long_desc += ' Published by: ' + copyright[7:] + '\n .\n'
+            long_desc += '  Published by: ' + copyright[7:] + '\n .\n'
 
             engine = package.engine or self.engine
             if engine:
