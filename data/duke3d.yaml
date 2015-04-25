@@ -14,8 +14,8 @@ packages:
   duke3d-shareware:
     install_to: usr/share/games/eduke32
     demo_for: duke3d-data
+    version: '1.3d'
     debian:
-      version: '1.3d'
       conflicts: duke3d-data
     install:
     - duke3d.grp_demo

@@ -6,8 +6,8 @@ gameid: soltys
 
 packages:
   soltys-en-data:
+    version: '1.0'
     debian:
-      version: '1.0'
       provides: soltys-data
     # instead of non-free/games
     section: games
@@ -19,8 +19,8 @@ packages:
 
   soltys-pl-data:
     lang: pl
+    version: '1.0'
     debian:
-      version: '1.0'
       provides: soltys-data
     section: games
     install:
@@ -31,8 +31,8 @@ packages:
 
   soltys-es-data:
     lang: es
+    version: '1.0'
     debian:
-      version: '1.0'
       provides: soltys-data
     section: games
     install:

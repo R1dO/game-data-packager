@@ -835,6 +835,9 @@ class GameData(object):
                 f.size = int(size)
                 package.install.add(filename)
 
+        if 'version' in d:
+            package.version = d['version'] + '+' + GAME_PACKAGE_VERSION
+
         self._populate_files(d.get('install_files'), install_package=package)
 
     def _populate_files(self, d, install_package=None,
@@ -2022,14 +2025,9 @@ class GameData(object):
         if breaks:
             control['Breaks'] = ', '.join(sorted(breaks))
 
-        version = package.debian.get('version')
         if 'Version' in control:
             package.version = control['Version'].replace('VERSION',
                     GAME_PACKAGE_VERSION)
-        elif version:
-            package.version = version + '+' + GAME_PACKAGE_VERSION
-        else:
-            package.version = GAME_PACKAGE_VERSION
 
         control['Version'] = package.version
 

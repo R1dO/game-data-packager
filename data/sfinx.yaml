@@ -10,8 +10,8 @@ help_text: |
 
 packages:
   sfinx-en-data:
+    version: '1.1'
     debian:
-      version: '1.1'
       provides: sfinx-data
     section: games
     install:
@@ -22,8 +22,8 @@ packages:
 
   sfinx-pl-data:
     lang: pl
+    version: '1.0'
     debian:
-      version: '1.0'
       provides: sfinx-data
     section: games
     install:
