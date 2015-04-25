@@ -21,12 +21,14 @@ import os
 import subprocess
 import sys
 import tarfile
+import glob
 
 from debian.deb822 import Deb822
 import yaml
 
 from . import HashedFile
 from .steam import parse_acf
+from .util import which
 
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
@@ -360,6 +362,27 @@ def do_one_exec(pgm,lower):
             for file in sorted(unused):
                 print("    - %s" % file)
 
+def do_flacsums(destdir, lower):
+    if which('ffmpeg'): tool = 'ffmpeg'
+    elif which('avconv'): tool = 'avconv'
+    else:
+        exit('Install either ffmpeg or avconv')
+
+    print('flacsums: |')
+    for filename in sorted(glob.glob(os.path.join(destdir, '*.wav')) +
+                           glob.glob(os.path.join(destdir, '*.WAV'))):
+        md5 = subprocess.check_output([tool, '-i', filename, '-f', 'md5', '-'],
+                 stderr=subprocess.DEVNULL,
+		 universal_newlines=True)
+        md5 = md5.rstrip()
+        md5 = md5.split('=')[1]
+        filename = os.path.basename(filename)
+        if lower:
+            filename = filename.lower()
+        file, ext = os.path.splitext(filename)
+        if ext == '.wav': ext = '.flac'
+        if ext == '.WAV': ext = '.FLAC'
+        print('  %s  %s' % (md5, file + ext))
 
 def main():
     parser = argparse.ArgumentParser(
@@ -372,10 +395,14 @@ def main():
     parser.add_argument('-e', '--execute', action='store_true', dest='execute',
             help='run this game through strace and see which files from '
                  '/usr/share/games or /usr/local/games are needed')
+    parser.add_argument('-f', '--flacsums', action='store_true', dest='flacsums',
+            help='compute "flacsums" from .wav files')
     args = parser.parse_args()
 
     for arg in args.args:
-        if os.path.isdir(arg):
+        if args.flacsums:
+            do_flacsums(arg,args.lower)
+        elif os.path.isdir(arg):
             do_one_dir(arg.rstrip('/'),args.lower)
         elif arg.endswith('.deb'):
             do_one_deb(arg)
