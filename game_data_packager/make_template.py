@@ -367,22 +367,44 @@ def do_flacsums(destdir, lower):
     elif which('avconv'): tool = 'avconv'
     else:
         exit('Install either ffmpeg or avconv')
+    if not which('metaflac'):
+        exit('Install metaflac')
+
+    fla_or_flac = '.fla'
+    md5s = dict()
+    done_wav = 0
+    done_flac = 0
+    for filename in glob.glob(os.path.join(destdir, '*')):
+        file = os.path.basename(filename).lower()
+        file, ext = os.path.splitext(file)
+        if ext == '.wav':
+            md5 = subprocess.check_output([tool, '-i', filename, '-f', 'md5', '-'],
+                     stderr=subprocess.DEVNULL,
+                     universal_newlines=True)
+            md5 = md5.rstrip().split('=')[1]
+            assert file not in md5s or md5s[file] == md5, \
+                   "got differents md5's for %s.wav|flac" % file
+            md5s[file] = md5
+            done_wav += 1
+        if ext == '.flac':
+            fla_or_flac = '.flac'
+        if ext in ('.fla','.flac'):
+            md5 = subprocess.check_output(['metaflac', '--show-md5sum', filename],
+                     universal_newlines=True)
+            md5 = md5.rstrip()
+            assert file not in md5s or md5s[file] == md5, \
+                   "got differents md5's for %s.wav|flac" % file
+            md5s[file] = md5
+            done_flac += 1
+
+    if not md5s:
+        exit("Couldn' find any .wav or .flac file")
 
     print('flacsums: |')
-    for filename in sorted(glob.glob(os.path.join(destdir, '*.wav')) +
-                           glob.glob(os.path.join(destdir, '*.WAV'))):
-        md5 = subprocess.check_output([tool, '-i', filename, '-f', 'md5', '-'],
-                 stderr=subprocess.DEVNULL,
-		 universal_newlines=True)
-        md5 = md5.rstrip()
-        md5 = md5.split('=')[1]
-        filename = os.path.basename(filename)
-        if lower:
-            filename = filename.lower()
-        file, ext = os.path.splitext(filename)
-        if ext == '.wav': ext = '.flac'
-        if ext == '.WAV': ext = '.FLAC'
-        print('  %s  %s' % (md5, file + ext))
+    for file in sorted(md5s.keys()):
+        print('  %s  %s' % (md5s[file], file + fla_or_flac))
+
+    print("\n#processed %i .wav and %i .fla[c] files" % (done_wav, done_flac))
 
 def main():
     parser = argparse.ArgumentParser(
