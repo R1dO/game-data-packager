@@ -776,7 +776,7 @@ class GameData(object):
                 setattr(package, k, d[k])
 
         assert self.copyright or package.copyright, package.name
-        assert package.section in ('non-free/games', 'games'), 'unsupported'
+        assert package.section in ('non-free/games', 'contrib/games', 'games'), 'unsupported'
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
@@ -2545,15 +2545,13 @@ class GameData(object):
         # optional license file is present
         if package.section.split('/')[0] == 'non-free':
             return
-        license_missing = False
         for f in package.optional:
              if not self.files[f].license:
                  continue
              if self.file_status[f] is not FillResult.COMPLETE:
-                 license_missing = True
-                 break
-        if license_missing:
-            package.section = 'non-free/' + package.section
+                 package.section = 'non-free/' + package.section.split('/')[-1]
+                 return
+        return
 
     def build_deb(self, package, destination, compress=True):
         """
