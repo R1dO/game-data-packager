@@ -9,6 +9,8 @@ packages:
     debian:
       version: '1.0'
       provides: soltys-data
+    # instead of non-free/games
+    section: games
     install:
     - vol.cat
     - vol.dat
@@ -20,6 +22,7 @@ packages:
     debian:
       version: '1.0'
       provides: soltys-data
+    section: games
     install:
     - vol.cat_pl
     - vol.dat_pl
@@ -31,6 +34,7 @@ packages:
     debian:
       version: '1.0'
       provides: soltys-data
+    section: games
     install:
     - vol.cat_es
     - vol.dat_es

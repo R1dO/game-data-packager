@@ -394,6 +394,9 @@ class GameDataPackage(object):
         # Debian architecture(s)
         self.architecture = 'all'
 
+        # Debian section
+        self.section = 'non-free/games'
+
     @property
     def aliases(self):
         return self._aliases
@@ -768,11 +771,12 @@ class GameData(object):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version',
-                'copyright', 'engine', 'gog', 'origin', 'lang'):
+                'copyright', 'engine', 'gog', 'origin', 'lang', 'section'):
             if k in d:
                 setattr(package, k, d[k])
 
         assert self.copyright or package.copyright, package.name
+        assert package.section in ('non-free/games', 'games'), 'unsupported'
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
@@ -1706,8 +1710,13 @@ class GameData(object):
              open(copy_to, 'w', encoding='utf-8') as o:
             o.write('The package %s was generated using '
                     'game-data-packager.\n' % package.name)
-            o.write('It contains proprietary game data '
-                    'and must not be redistributed.\n\n')
+
+            if package.section.split('/')[0] == 'non-free':
+                o.write('It contains proprietary game data '
+                        'and must not be redistributed.\n\n')
+            else:
+                o.write('It contains free game data '
+                        'and may be redistributed.\n\n')
 
             count_usr = 0
             exts = set()
@@ -1750,7 +1759,7 @@ class GameData(object):
 
             licenses = set()
             for f in package.install | package.optional:
-                 if self.file_status[f] is FillResult.IMPOSSIBLE:
+                 if self.file_status[f] is not FillResult.COMPLETE:
                      continue
                  if self.files[f].license:
                      license_file = self.files[f].install_as
@@ -1948,7 +1957,6 @@ class GameData(object):
         control['Installed-Size'] = str(installed_size)
 
         default_values = {
-            'Section' : 'non-free/games',
             'Priority' : 'optional',
             'Architecture' : 'all',
             'Maintainer' : 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>',
@@ -1956,6 +1964,9 @@ class GameData(object):
         for field in default_values:
             if field not in control:
                 control[field] = default_values[field]
+
+        assert 'Section' not in control, 'please specify only in YAML'
+        control['Section'] = package.section
 
         if package.architecture != 'all':
             control['Architecture'] = self.get_architecture()
@@ -2027,9 +2038,13 @@ class GameData(object):
 
             short_desc = package.data_type + ' for "' + longname + '" game'
 
-            long_desc =  ' This package was built using game-data-packager. It contains\n'
-            long_desc += ' proprietary game data and must not be redistributed.\n'
-            long_desc += ' .\n'
+            long_desc =  ' This package was built using game-data-packager.\n'
+            if package.section == 'non-free/games':
+                long_desc += ' It contains proprietary game data and must not be redistributed.\n'
+                long_desc += ' .\n'
+            elif package.section == 'games':
+                long_desc += ' It contains free game data and may be redistributed.\n'
+                long_desc += ' .\n'
 
             if self.genre:
                 long_desc += ' Genre: ' + self.genre + '\n'
@@ -2525,12 +2540,29 @@ class GameData(object):
     def construct_package(self, binary):
         return GameDataPackage(binary)
 
+    def check_section(self, package):
+        # free packages are free as long as their
+        # optional license file is present
+        if package.section.split('/')[0] == 'non-free':
+            return
+        license_missing = False
+        for f in package.optional:
+             if not self.files[f].license:
+                 continue
+             if self.file_status[f] is not FillResult.COMPLETE:
+                 license_missing = True
+                 break
+        if license_missing:
+            package.section = 'non-free/' + package.section
+
     def build_deb(self, package, destination, compress=True):
         """
         If we have all the necessary files for package, build the .deb
         and return the output filename in destination. Otherwise return None.
         """
         destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
+
+        self.check_section(package)
         if not self.fill_dest_dir(package, destdir):
             # FIXME: probably better as an exception?
             return None
