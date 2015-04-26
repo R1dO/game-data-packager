@@ -30,9 +30,12 @@ class ScummvmGameData(GameData):
         super(ScummvmGameData, self).__init__(shortname, data,
                 workdir=workdir)
 
-        self.gameid = self.data['gameid']
-        if self.gameid != shortname:
+        if 'gameid' in self.data:
+            self.gameid = self.data['gameid']
+            assert self.gameid != shortname, 'extraneous gameid for ' + shortname
             self.aliases.add(self.gameid)
+        else:
+            self.gameid = shortname
 
         if self.engine is None:
             self.engine = 'scummvm'
