@@ -71,71 +71,71 @@ packages:
     - manual.pdf
 
   arx-fatalis-demo-en-data:
-     install_to: usr/share/games/arx
-     demo_for:
-     - arx-fatalis-en-data
-     debian:
-       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-       provides: arx-fatalis-demo-data
-     install:
-     - arx.ttf_latin
-     - data.pak_demo_latin
-     - logo.bmp_demo
-     - sfx.pak_demo
-     - data2.pak_demo_en
-     - loc.pak_demo_en
-     - speech.pak_demo_en
+    install_to: usr/share/games/arx
+    demo_for:
+    - arx-fatalis-en-data
+    debian:
+      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      provides: arx-fatalis-demo-data
+    install:
+    - arx.ttf_latin
+    - data.pak_demo_latin
+    - logo.bmp_demo
+    - sfx.pak_demo
+    - data2.pak_demo_en
+    - loc.pak_demo_en
+    - speech.pak_demo_en
 
   arx-fatalis-demo-fr-data:
-     lang: fr
-     install_to: usr/share/games/arx
-     demo_for:
-     - arx-fatalis-en-data
-     debian:
-       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-       provides: arx-fatalis-demo-data
-     install:
-     - arx.ttf_latin
-     - data.pak_demo_latin
-     - logo.bmp_demo
-     - sfx.pak_demo
-     - data2.pak_demo_fr
-     - loc.pak_demo_fr
-     - speech.pak_demo_fr
+    lang: fr
+    install_to: usr/share/games/arx
+    demo_for:
+    - arx-fatalis-en-data
+    debian:
+      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      provides: arx-fatalis-demo-data
+    install:
+    - arx.ttf_latin
+    - data.pak_demo_latin
+    - logo.bmp_demo
+    - sfx.pak_demo
+    - data2.pak_demo_fr
+    - loc.pak_demo_fr
+    - speech.pak_demo_fr
 
   arx-fatalis-demo-de-data:
-     lang: de
-     install_to: usr/share/games/arx
-     demo_for:
-     - arx-fatalis-en-data
-     debian:
-       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-       provides: arx-fatalis-demo-data
-     install:
-     - arx.ttf_latin
-     - data.pak_demo_latin
-     - logo.bmp_demo
-     - sfx.pak_demo
-     - data2.pak_demo_de
-     - loc.pak_demo_de
-     - speech.pak_demo_de
+    lang: de
+    install_to: usr/share/games/arx
+    demo_for:
+    - arx-fatalis-en-data
+    debian:
+      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      provides: arx-fatalis-demo-data
+    install:
+    - arx.ttf_latin
+    - data.pak_demo_latin
+    - logo.bmp_demo
+    - sfx.pak_demo
+    - data2.pak_demo_de
+    - loc.pak_demo_de
+    - speech.pak_demo_de
 
   arx-fatalis-demo-ja-data:
-     lang: ja
-     install_to: usr/share/games/arx
-     demo_for:
-     - arx-fatalis-en-data
-     debian:
-       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-       provides: arx-fatalis-demo-data
-     install:
-     - arx.ttf_ja
-     - data.pak_demo_ja
-     - logo.bmp_demo
-     - sfx.pak_demo
-     - data2.pak_demo_ja
-     - loc.pak_demo_ja
-     - speech.pak_demo_ja
+    lang: ja
+    install_to: usr/share/games/arx
+    demo_for:
+    - arx-fatalis-en-data
+    debian:
+      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      provides: arx-fatalis-demo-data
+    install:
+    - arx.ttf_ja
+    - data.pak_demo_ja
+    - logo.bmp_demo
+    - sfx.pak_demo
+    - data2.pak_demo_ja
+    - loc.pak_demo_ja
+    - speech.pak_demo_ja
 
 files:
   # FULL VERSION
