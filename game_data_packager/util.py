@@ -106,8 +106,7 @@ def prefered_lang():
             continue
         if lang in ('en_GB', 'pt_BR'):
             lang_pref.append(lang)
-        else:
-            lang_pref.append(lang[0:2])
+        lang_pref.append(lang[0:2])
     return lang_pref
 
 def lang_score(lang):
