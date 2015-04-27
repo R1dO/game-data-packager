@@ -1132,18 +1132,18 @@ class GameData(object):
 
     def consider_zip(self, name, zf, provider=None):
         if provider is None:
-            filenames = self.files
+            try_to_unpack = self.files
             should_provide = set()
         else:
-            filenames = provider.provides
-            should_provide = set(filenames)
+            try_to_unpack = provider.provides
+            should_provide = set(try_to_unpack)
 
 
         for entry in zf.infolist():
             if not entry.file_size:
                 continue
 
-            for filename in filenames:
+            for filename in try_to_unpack:
                 wanted = self.files.get(filename)
 
                 if wanted is None:
