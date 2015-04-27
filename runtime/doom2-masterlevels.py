@@ -82,7 +82,7 @@ class Launcher:
         self.engine = None
 
         self.window = Gtk.Window()
-        self.window.set_default_size(1020, 800)
+        self.window.set_default_size(1020, 650)
         if os.path.isfile('/usr/share/pixmaps/doom2.png'):
             self.window.set_icon_from_file('/usr/share/pixmaps/doom2.png')
         self.window.connect("delete_event", Gtk.main_quit)
@@ -147,7 +147,7 @@ class Launcher:
 
         # difficulty
         difflabel = Gtk.Label("Choose your difficulty")
-        grid.attach(difflabel, 1, 3, 2, 1)
+        grid.attach(difflabel, 1, 3, 1, 1)
 
         diffgrid = Gtk.Grid()
         diffradio = Gtk.RadioButton(group=None, label="1)  I'm too young to die")
@@ -162,11 +162,11 @@ class Launcher:
             if diff[0] == '3':
                radiobutton.set_active(True)
             diffgrid.attach(radiobutton, 0, int(diff[0]), 1, 1)
-        grid.attach(diffgrid, 1, 4, 2, 1)
+        grid.attach(diffgrid, 1, 4, 1, 1)
 
         # engine
         label = Gtk.Label("Choose your engine")
-        grid.attach(label, 1, 4, 2, 1)
+        grid.attach(label, 2, 3, 1, 1)
         radiogrid = Gtk.Grid()
         default = os.readlink('/etc/alternatives/doom')
         self.engine = [default]
@@ -187,7 +187,8 @@ class Launcher:
             radiobutton.connect('toggled', self.select_engine)
             i += 1
             radiogrid.attach(radiobutton, 0, i, i, 1)
-        grid.attach(radiogrid, 1, 5, 2, 1)
+            radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
+        grid.attach(radiogrid, 2, 4, 1, 1)
 
         # Run !
         self.button_exec = Gtk.Button(label="Run")
