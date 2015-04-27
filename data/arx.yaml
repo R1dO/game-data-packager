@@ -323,6 +323,14 @@ files:
   arx_demo_english.exe:
     unpack:
       format: unrar-nonfree
+      unpack:
+      - Setup1.cab
+      - Setup2.cab
+      - Setup3.cab
+      - bin/Arx.ttf
+      - bin/Logo.bmp
+      - bin/data2.pak
+      - bin/LOC.pak
     provides:
     - Setup1.cab_en
     - Setup2.cab
