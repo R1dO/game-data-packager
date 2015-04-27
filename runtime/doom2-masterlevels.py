@@ -48,32 +48,6 @@ levels = {
 }
 description = dict()
 
-for level in levels.keys():
-    level = os.path.splitext(level)[0]
-    fullpath = '/usr/share/games/doom/%s.wad' % level
-    if not os.path.isfile(fullpath):
-        print('\n')
-        message = fullpath + " is missing !\n\n" \
-                  "This launcher needs the .wad files from DOOM 2 Master Levels\n" \
-                  "These can be for example bought on Steam:\n" \
-                  "http://store.steampowered.com/app/9160/ ;\n" \
-                  "or found on 'Doom 3: Resurrection of Evil' Xbox game disc\n\n" \
-                  "The data then need to be put at the right location,\n" \
-                  "You can use game-data-packager(6) to automate this task.\n" \
-                  "It will also automatically pick up the data downloaded by a\n" \
-                  "windows Steam instance running through Wine."
-        md = Gtk.MessageDialog(None, 0, Gtk.MessageType.WARNING,
-                               Gtk.ButtonsType.OK, message)
-        md.run()
-        exit(message)
-    txt = '/usr/share/doc/doom2-masterlevels-wad/%s.txt' % level
-    try:
-         with open(txt, 'r', encoding='latin1') as f:
-             description[level] = f.read()
-    except (PermissionError, FileNotFoundError):
-        description[level] = "failed to read " + txt
-
-
 class Launcher:
     def __init__(self):
         self.game = None
@@ -246,6 +220,31 @@ class Launcher:
             '-skill', '%d' % self.difficulty])
 
     def main(self):
+        for level in levels.keys():
+            level = os.path.splitext(level)[0]
+            fullpath = '/usr/share/games/doom/%s.wad' % level
+            if not os.path.isfile(fullpath):
+                print('\n')
+                message = fullpath + " is missing !\n\n" \
+                          "This launcher needs the .wad files from DOOM 2 Master Levels\n" \
+                          "These can be for example bought on Steam:\n" \
+                          "http://store.steampowered.com/app/9160/ ;\n" \
+                          "or found on 'Doom 3: Resurrection of Evil' Xbox game disc\n\n" \
+                          "The data then need to be put at the right location,\n" \
+                          "You can use game-data-packager(6) to automate this task.\n" \
+                          "It will also automatically pick up the data downloaded by a\n" \
+                          "windows Steam instance running through Wine."
+                md = Gtk.MessageDialog(self.window, 0, Gtk.MessageType.WARNING,
+                                       Gtk.ButtonsType.OK, message)
+                md.run()
+                exit(message)
+            txt = '/usr/share/doc/doom2-masterlevels-wad/%s.txt' % level
+            try:
+                 with open(txt, 'r', encoding='latin1') as f:
+                     description[level] = f.read()
+            except (PermissionError, FileNotFoundError):
+                description[level] = "failed to read " + txt
+
         Gtk.main()
 
 if __name__ == "__main__":
