@@ -1526,7 +1526,8 @@ class GameData(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     subprocess.check_call(['unace', 'x',
-                             os.path.abspath(found_name)], cwd=tmpdir)
+                             os.path.abspath(found_name)] +
+                             list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unrar-nonfree':
                     to_unpack = provider.unpack.get('unpack', provider.provides)

@@ -377,6 +377,14 @@ files:
   arx_demo_german.exe:
     unpack:
       format: unace-nonfree
+      unpack:
+      - Setup1.cab
+      - Setup2.cab
+      - Setup3.cab
+      - arx.ttf
+      - logo.bmp
+      - data2.pak
+      - loc.pak
     provides:
     - Setup1.cab_de
     - Setup2.cab_de
