@@ -406,16 +406,7 @@ files:
     unpack:
       format: unshield
       other_parts: [data1.hdr, data2.cab]
-      unpack:
-      - misc/arx.ttf
-      - misc/Logo.bmp
-      - PAK/data.pak
-      - PAK/data2.pak
-      - PAK/LOC.pak
-      - PAK/SFX.pak
-      - PAK/SPEECH.pak
-      - txt/EULA_JPN.txt
-      - txt/readme_japanese_demo.txt
+      groups: ['PAK', 'misc']
     provides:
     - arx.ttf_ja
     - data.pak_demo_ja

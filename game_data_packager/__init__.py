@@ -1595,16 +1595,26 @@ class GameData(object):
                         tmpdir = os.path.join(self.get_workdir(), 'tmp',
                                 provider_name + '.d')
                         mkdir_p(tmpdir)
-                        subprocess.check_call(['unshield', '-j', 'x',
-                                    os.path.abspath(found_name)], cwd=tmpdir)
+                        # we can't specify individual files to extract
+                        # but we can narrow down to 'groups'
+                        groups = provider.unpack.get('groups')
+                        if groups:
+                            # unshield only take last '-g' into account
+                            for group in groups:
+                                subprocess.check_call(['unshield', '-g', group,
+                                   'x', os.path.abspath(found_name)], cwd=tmpdir)
+                        else:
+                            subprocess.check_call(['unshield', 'x',
+                                     os.path.abspath(found_name)], cwd=tmpdir)
+
                         # this format doesn't store a timestamp, so the extracted
                         # files will instead inherit the archive's timestamp
                         orig_time = os.stat(found_name).st_mtime
-                        for f in to_unpack:
-                            logger.debug('Setting timestamp on %s', f)
-                            tmp = os.path.join(tmpdir, f)
-                            os.utime(tmp, (orig_time, orig_time))
-                            self.consider_file(tmp, True)
+                        for dirpath, dirnames, filenames in os.walk(tmpdir):
+                            for fn in filenames:
+                                full = os.path.join(dirpath, fn)
+                                os.utime(full, (orig_time, orig_time))
+                        self.consider_file_or_dir(tmpdir)
                 elif fmt == 'arj':
                     other_parts = set(provider.unpack.get('other_parts'))
                     other_parts.discard(None)

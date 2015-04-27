@@ -134,9 +134,7 @@ files:
       #open("Disk1/data1.cab", O_RDONLY)       = 4
       #open("Disk1/data1.hdr", O_RDONLY)       = 4
       #open("Disk1/data2.cab", O_RDONLY)       = 4
-      unpack:
-      - Game_Files/assets0.pk3
-      - English_Files/license.txt
+      groups: ['Game Files', 'English Files']
     provides:
     - assets0.pk3_demo
     - license.txt
