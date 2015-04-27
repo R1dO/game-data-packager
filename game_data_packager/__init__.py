@@ -1576,16 +1576,11 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    # "Cannot use absolute pathnames for this command"
-                    if to_unpack[0][0] == '/':
-                        subprocess.check_call(['7z', 'x', '-bd',
-                                os.path.abspath(found_name)], cwd=tmpdir)
-                    else:
-                        subprocess.check_call(['7z', 'x', '-bd',
-                                os.path.abspath(found_name)] +
-                            list(to_unpack), cwd=tmpdir)
-                    for f in to_unpack:
-                        self.consider_file(os.path.join(tmpdir, f.lstrip('/')), True)
+                    flags = provider.unpack.get('flags', [])
+                    subprocess.check_call(['7z', 'x', '-bd'] + flags +
+                                [os.path.abspath(found_name)] +
+                                list(to_unpack), cwd=tmpdir)
+                    self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unshield':
                     other_parts = provider.unpack['other_parts']
                     for p in other_parts:

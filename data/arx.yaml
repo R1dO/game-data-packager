@@ -429,10 +429,7 @@ files:
     # maybe there is a pattern here
     unpack:
       format: 7z
-      unpack:
-      - /Disk1/data1.cab
-      - /Disk1/data1.hdr
-      - /Disk1/data2.cab
+      flags: ['-r']
     provides:
     - data1.cab
     - data1.hdr
