@@ -51,6 +51,9 @@ Suggests:
 	unace-nonfree,
 # for Arx Fatalis
 	unrar-nonfree,
+# for Doom2 Master Levels launcher
+	python3-gi,
+	gir1.2-gtk-3.0,
 Architecture: all
 Multi-Arch: foreign
 Description: Installer for game data files
@@ -86,20 +89,3 @@ Description: Installer for game data files
   * Tyrian
   * Wolfenstein 3D, Spear of Destiny and Return to Castle Wolfenstein
 
-Package: doom2-masterlevels
-Depends: chocolate-doom | doom-engine,
-	doom2-masterlevels-wad | game-data-packager,
-	python3,
-	python3-gi,
-	gir1.2-gtk-3.0,
-	${python3:Depends},
-	${misc:Depends},
-Architecture: all
-Multi-Arch: foreign
-Description: graphical launcher for DOOM II Master Levels
- This tool provides a graphical interface to
- choose one of DOOM II's Master Levels, read its description
- and start it with the engine of your choice.
- .
- This replicates the functionality of the doomit.exe utility
- that was shipped with the game.

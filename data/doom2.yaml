@@ -30,7 +30,7 @@ packages:
     - doom2.wad
 
   doom2-nerve-wad:
-    longname: "No Rest for the Living"
+    longname: "Doom 2: No Rest for the Living"
     expansion_for: doom2-wad
     engine: prboom-plus | boom-engine
     steam:
@@ -48,8 +48,11 @@ packages:
       id: 9160
       path: "common/Master Levels of Doom"
     debian:
-      recommends: doom2-masterlevels
+      recommends: game-data-packager
     install_to: usr/share/games/doom
+    symlinks:
+      usr/share/games/doom/doom2-masterlevels-tryexec:
+        etc/alternatives/doom
     install:
     - attack.wad
     - blacktwr.wad
