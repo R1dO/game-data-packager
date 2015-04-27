@@ -4,15 +4,21 @@ game-data-packager (41) UNRELEASED; urgency=medium
   * fix LGeneral
   * fix Descent 1 Demo download, add assert
   * recommends gargoyle-free | frotz for Z-code text games
-  * generate new binary package 'doom2-masterlevels',
+  * add new 'doom2-masterlevels' utility,
     a GUI launcher for use with doom2-masterlevels-wad (Closes: #776279)
   * add support for demo of Curse Of Monkey Island & Full Throttle
   * add support for Transport Tycoon Deluxe (Closes: #776543)
   * add support for FreeSpace 2 (Closes: #776542)
   * add support for Arx Fatalis (Closes: #782204)
-  * add support for Duke Nukem 3D, for use with eduke32
+  * add support for Duke Nukem 3D (full or shareware), for use with eduke32
   * add support for Heroes of Might & Magic III (Closes: #782202)
   * add support for Broken Sword 1
+  * add support for Dreamweb (freeware)
+  * add support for Sfinx (freeware)
+  * add support for Soltys (freeware)
+  * add abbreviated YAML syntax for license files
+  * improve support for games with multiple language variants, such as Soltys
+    and Broken Sword
 
   [ Simon McVittie ]
   * review & disable non-working Jedi Academy demo
