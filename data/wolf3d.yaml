@@ -7,8 +7,8 @@ genre: First-person shooter
 packages:
   wolf3d-demo-data:
     demo_for:
-    - wolf3d-full-v12-data
-    - wolf3d-full-v14-data
+    - wolf3d-v12-data
+    - wolf3d-v14-data
     debian:
       provides: wolf3d-data
       replaces: wolf3d-data-wl1
@@ -25,12 +25,12 @@ packages:
     license:
     - vendor.doc
 
-  wolf3d-full-v12-data:
+  wolf3d-v12-data:
     longname: Wolfenstein 3D v1.2
-    better_version: wolf3d-full-v14-data
+    better_version: wolf3d-v14-data
     debian:
       provides: wolf3d-data
-      conflicts: wolf3d-full-v14-data
+      conflicts: wolf3d-v14-data
     install_to: usr/share/games/wolf3d
     install:
     - audiohed.wl6_1.0
@@ -42,11 +42,11 @@ packages:
     - vgahead.wl6_1.0
     - vswap.wl6_1.0
 
-  wolf3d-full-v14-data:
+  wolf3d-v14-data:
     longname: Wolfenstein 3D v1.4
     debian:
       provides: wolf3d-data
-      conflicts: wolf3d-full-v12-data
+      conflicts: wolf3d-v12-data
     steam:
       id: 2270
       path: common/Wolfenstein 3D

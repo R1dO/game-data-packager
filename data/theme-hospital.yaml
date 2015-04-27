@@ -16,8 +16,7 @@ help_text: |
   http://www.jeuxvideo.com/telecharger/jeux-et-demos/00002576-theme-hospital-pc.htm
 
 packages:
-  theme-hospital-full-data:
-    install_to: usr/share/games/theme-hospital
+  theme-hospital-data:
     debian:
       conflicts: theme-hospital-demo-data
     gog:
@@ -493,9 +492,9 @@ packages:
 
   theme-hospital-demo-data:
     install_to: usr/share/games/theme-hospital
-    demo_for: theme-hospital-full-data
+    demo_for: theme-hospital-data
     debian:
-      conflicts: theme-hospital-full-data
+      conflicts: theme-hospital-data
     install:
     - anims/winlevel.smk_demo
     - data/award03v.dat

@@ -6,7 +6,7 @@ genre: Flight simulator
 
 packages:
   descent2-demo-data:
-    demo_for: descent2-full-data
+    demo_for: descent2-data
     install:
     - d2demo.pig
     - d2demo.ham
@@ -15,7 +15,7 @@ packages:
     - d2demo.dem
     install_to: usr/share/games/d2x-rebirth
 
-  descent2-full-data:
+  descent2-data:
     gog:
       url: descent_1_descent_2
     install:

@@ -6,9 +6,9 @@ genre: Flight simulator
 
 packages:
   descent1-demo-data:
-    demo_for: descent1-full-data
+    demo_for: descent1-data
     debian:
-      conflicts: descent1-full-data
+      conflicts: descent1-data
     install:
     - descent.hog
     - descent.pig
@@ -18,7 +18,7 @@ packages:
     - d1xr-hires.dxa
     install_to: usr/share/games/d1x-rebirth/
 
-  descent1-full-data:
+  descent1-data:
     debian:
       conflicts: descent1-demo-data
     gog:
