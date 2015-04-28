@@ -193,6 +193,7 @@ def do_one_file(name,lower):
     # sniff Makeself archives
     # http://megastep.org/makeself/
     has_makeself = False
+    trailer = None
     SHEBANG = bytes('/bin/sh', 'ascii')
     HEADER_V1 = bytes('# This script was generated using Makeself 1.', 'ascii')
     HEADER_V2 = bytes('# This script was generated using Makeself 2.', 'ascii')
