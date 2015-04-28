@@ -1,0 +1,54 @@
+---
+longname: Police Quest 1
+copyright: © 1987 Sierra
+plugin: scummvm_common
+gameid: pq1
+
+# https://github.com/scummvm/scummvm/blob/e88d6265d8ea3d1133661073a5484e0ed372458e/engines/agi/detection_tables.h#L502
+#
+# // Police Quest 1 (PC) 2.0G 12/3/87
+# GAME("pq1", "2.0G 1987-12-03", "d194e5d88363095f55d5096b8e32fbbb", 0x2917, GID_PQ1),
+
+packages:
+  policequest1-data:
+    install:
+    - hgc_font
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
+    # FIXME: strace says it was not needed ?
+    optional:
+    - agi
+
+cksums: |
+  _ 39424     agi
+  _ 3072      hgc_font
+  _ 360       logdir
+  _ 369       object
+  _ 351       picdir
+  _ 126       snddir
+  _ 768       viewdir
+  _ 66869     vol.0
+  _ 384591    vol.1
+  _ 250262    vol.2
+  _ 6737      words.tok
+
+md5sums: |
+  08c25b0fad4b6bcd10efd072e5bcf4d8  agi
+  f3d4c66e195491aa759b7c5ef996488b  hgc_font
+  d194e5d88363095f55d5096b8e32fbbb  logdir
+  c444971d4558f102a82b3130868010b4  object
+  60cbfd91b9e77ad0baa22f0b73987838  picdir
+  ed489e4f8647af2b956d08ee78b4ff42  snddir
+  631d6539348d489c2f4f84a6d1c58e08  viewdir
+  4d44bf0e438ba7c0b05c17be4dea36c5  vol.0
+  a4ef57c5cc9542a7b53288f58d600964  vol.1
+  d3b130e92661ab0793b3d9101700c004  vol.2
+  0db29ac32f2cbb1d26c0e29f812f5fd2  words.tok
+...
