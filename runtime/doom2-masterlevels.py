@@ -15,12 +15,36 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2
 
-import gi
 import os
+import stat
 import subprocess
 
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, Pango
+def which(exe):
+    for path in os.environ.get('PATH', '/usr/bin:/bin').split(os.pathsep):
+        try:
+            abspath = os.path.join(path, exe)
+            statbuf = os.stat(abspath)
+        except:
+            continue
+        if stat.S_IMODE(statbuf.st_mode) & 0o111:
+            return abspath
+
+    return None
+
+# ValueError: Namespace Gtk not available
+try:
+    import gi
+    gi.require_version('Gtk', '3.0')
+    from gi.repository import Gtk, Pango
+except (ImportError,ValueError):
+    message = 'You need to install the packages python3-gi and gir1.2-gtk-3.0'
+    if which('zenity'):
+       subprocess.call(['zenity', '--error', '--title=Doom 2 Master Levels', '--text', message])
+    elif which('kdialog'):
+        subprocess.call(['kdialog', '--error', message, '--title=Doom 2 Master Levels'])
+    elif which('xmessage'):
+        subprocess.call(['xmessage', '-center', message])
+    exit(message)
 
 # wad : (warp, longname,  'http://doomwiki.org/wiki/' + url)
 levels = {
