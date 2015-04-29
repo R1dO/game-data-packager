@@ -19,6 +19,7 @@
 import os
 import shutil
 import stat
+import subprocess
 
 KIBIBYTE = 1024
 MEBIBYTE = KIBIBYTE * KIBIBYTE
@@ -91,6 +92,15 @@ def is_installed(package):
              or is_installed('doomsday'))
 
     return os.path.isdir(os.path.join('/usr/share/doc', package))
+
+def is_avaible(package):
+    proc = subprocess.Popen(['apt-cache', 'pkgnames', package],
+                            universal_newlines=True,
+                            stdout=subprocess.PIPE)
+    for line in proc.stdout:
+        if line.rstrip() == package:
+            return True
+    return False
 
 def prefered_lang():
     lang_raw = []
