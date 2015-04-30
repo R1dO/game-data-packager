@@ -2600,6 +2600,7 @@ class GameData(object):
             dpkg_deb_args = self.compress_deb
 
         try:
+            logger.info('generating package %s', package.name)
             subprocess.check_output(['fakeroot', 'dpkg-deb'] +
                     dpkg_deb_args +
                     ['-b', '%s.deb.d' % package.name, outfile],
