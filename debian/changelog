@@ -20,10 +20,18 @@ game-data-packager (41) UNRELEASED; urgency=medium
   * add abbreviated YAML syntax for license files
   * improve support for games with multiple language variants, such as Soltys
     and Broken Sword
+  * rename various generated packages to remove unnecessary -full- infix
+  * add support for more unpackers: cabextract, unace-nonfree, unrar-nonfree,
+    unshield (including multi-part archives), arj (including multi-part
+    archives)
+  * recurse into arbitrary zip files if given
+  * produce progress indicators less frequently to reduce terminal emulator
+    load
 
   [ Simon McVittie ]
   * review & disable non-working Jedi Academy demo
   * adjust Jedi Academy paths for versions >= 0~20150420
+  * add Provides/Conflicts/Replaces for renamed packages
 
  -- Simon McVittie <smcv@debian.org>  Tue, 17 Mar 2015 11:51:58 +0100
 
