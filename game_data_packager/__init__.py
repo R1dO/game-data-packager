@@ -2379,7 +2379,9 @@ class GameData(object):
             if (package.better_version
                 and self.packages[package.better_version] in possible):
                   logger.debug('will not produce "%s" because better version '
-                     '"%s" is also avaible', package.name, package.better_version)
+                     '"%s" is also available',
+                     package.name,
+                     package.better_version)
                   continue
 
             abort = False
@@ -2390,14 +2392,14 @@ class GameData(object):
                 for fullgame in possible:
                     if fullgame.type == 'full':
                         logger.warning("won't generate '%s' expansion, because "
-                          'full game "%s" is not avaible nor already installed;'
+                          'full game "%s" is neither available nor already installed;'
                           ' and we are packaging "%s" instead.',
                           package.name, package.expansion_for, fullgame.name)
                         abort = True
                         break
                 else:
                   logger.warning('will generate "%s" expansion, but full game '
-                     '"%s" is not avaible nor already installed.',
+                     '"%s" is neither available nor already installed.',
                      package.name, package.expansion_for)
 
             if not build_demos:

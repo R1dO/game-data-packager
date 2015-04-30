@@ -144,12 +144,12 @@ all the field required by policy are present:
    appropriate. To document an engine, you should add
    a `engine:` key in the YAML file.
    If your game is split in several packages, the package with
-   the full game should `Suggests` all the avaible expansions;
-   to avoid that those are recognised as useless
+   the full game should have a `Suggests` relationship on all the available
+   expansions; to avoid them being classified as unused
    and then removed by aptitude or deborphan. This is done
-   automatically if you set the correct `expansion_for:`.  
-   An expansion will also automatically `Depends` on
-   the matching full game.  
+   automatically if you set the correct `expansion_for:`.
+   An expansion will also automatically have a `Depends` relationship with
+   the matching full game.
    If ever needed; the standard Debian dependencies are also supported
    using the `debian: depends:/recommends:/suggests:/replaces:/...` keys.
 

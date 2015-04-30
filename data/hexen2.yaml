@@ -16,7 +16,7 @@ help_text: |
   Steam installations would typically be found in:
   C:/Program Files/Steam/steamapps/common/Hexen 2
 
-  A demo is avaible here:
+  A demo is available here, but cannot be downloaded noninteractively:
   http://www.fileplanet.com/10770/download/Hexen-II---Demo
 
 packages:
@@ -60,7 +60,7 @@ files:
     - hw/pak4.pak
     # FIXME: if we list this as downloadable, then g-d-p will download it
     # every time we try to package something else. Downloadable expansions
-    # should be a little less enthusiastic
+    # should be a little less enthusiastic (#775080)
     #download: http://downloads.sourceforge.net/project/uhexen2/Hexen2%20GameData/hexenworld-pakfiles/hexenworld-pakfiles-0.15.tgz?r=http%3A%2F%2Fuhexen2.sourceforge.net%2Fdownload.html
     unpack:
       format: tar.gz

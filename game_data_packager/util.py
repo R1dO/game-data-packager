@@ -93,7 +93,7 @@ def is_installed(package):
 
     return os.path.isdir(os.path.join('/usr/share/doc', package))
 
-def is_avaible(package):
+def is_available(package):
     proc = subprocess.Popen(['apt-cache', 'pkgnames', package],
                             universal_newlines=True,
                             stdout=subprocess.PIPE)

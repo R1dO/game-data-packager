@@ -46,5 +46,5 @@ for game in games:
    last_genre = game['genre']
 
 print('')
-print('($): no freeload (fullgame/demo) avaible')
+print('($): no freeload (fullgame/demo) available')
 print('     remember there is doom-wad-shareware in non-free repository')
