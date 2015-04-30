@@ -18,6 +18,10 @@ packages:
   descent2-data:
     gog:
       url: descent_1_descent_2
+    debian:
+      conflicts: descent2-full-data
+      provides: descent2-full-data
+      replaces: descent2-full-data
     install:
     - alien1.pig
     - alien2.pig

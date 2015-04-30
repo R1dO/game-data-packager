@@ -30,7 +30,7 @@ packages:
     better_version: wolf3d-v14-data
     debian:
       provides: wolf3d-data
-      conflicts: wolf3d-v14-data
+      conflicts: [wolf3d-v14-data, wolf3d-full-v14-data, wolf3d-full-v12-data]
     install_to: usr/share/games/wolf3d
     install:
     - audiohed.wl6_1.0
@@ -45,8 +45,9 @@ packages:
   wolf3d-v14-data:
     longname: Wolfenstein 3D v1.4
     debian:
-      provides: wolf3d-data
-      conflicts: wolf3d-v12-data
+      provides: [wolf3d-data, wolf3d-full-v14-data]
+      conflicts: [wolf3d-v12-data, wolf3d-full-v12-data, wolf3d-full-v14-data]
+      replaces: wolf3d-full-v14-data
     steam:
       id: 2270
       path: common/Wolfenstein 3D

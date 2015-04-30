@@ -18,7 +18,9 @@ help_text: |
 packages:
   theme-hospital-data:
     debian:
-      conflicts: theme-hospital-demo-data
+      conflicts: [theme-hospital-demo-data, theme-hospital-full-data]
+      provides: theme-hospital-full-data
+      replaces: theme-hospital-full-data
     gog:
       url: theme_hospital
     origin:
@@ -494,7 +496,7 @@ packages:
     install_to: usr/share/games/theme-hospital
     demo_for: theme-hospital-data
     debian:
-      conflicts: theme-hospital-data
+      conflicts: [theme-hospital-data, theme-hospital-full-data]
     install:
     - anims/winlevel.smk_demo
     - data/award03v.dat

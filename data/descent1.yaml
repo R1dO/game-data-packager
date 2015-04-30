@@ -8,7 +8,7 @@ packages:
   descent1-demo-data:
     demo_for: descent1-data
     debian:
-      conflicts: descent1-data
+      conflicts: [descent1-full-data, descent1-data]
     install:
     - descent.hog
     - descent.pig
@@ -20,7 +20,9 @@ packages:
 
   descent1-data:
     debian:
-      conflicts: descent1-demo-data
+      conflicts: [descent1-full-data, descent1-demo-data]
+      provides: descent1-full-data
+      replaces: descent1-full-data
     gog:
       # http://www.gog.com/game/${url}
       url: descent_1_descent_2
