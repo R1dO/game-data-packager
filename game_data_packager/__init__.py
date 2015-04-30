@@ -1990,8 +1990,14 @@ class GameData(object):
                 for value in control[field].split(','):
                     result.add(value.strip())
             value = package.debian.get(field.lower())
-            if value:
+            if isinstance(value, str):
                 result.add(value)
+            elif isinstance(value, list):
+                for x in value:
+                    result.add(x)
+            elif value is not None:
+                raise AssertionError('%s: debian.%s should be str or list' %
+                        (package.name, field.lower()))
             return result
 
         depends = read_control_set(package, control, 'Depends')
