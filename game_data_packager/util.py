@@ -78,29 +78,48 @@ def copy_with_substitutions(from_, to, **kwargs):
             line = line.replace(k, v)
         to.write(line)
 
-def is_installed(package):
-    # FIXME: this shouldn't be hard-coded
-    if package == 'doom-engine':
-        return (is_installed('chocolate-doom')
-             or is_installed('prboom-plus')
-             or is_installed('doomsday'))
-    if package == 'boom-engine':
-        return (is_installed('prboom-plus')
-             or is_installed('doomsday'))
-    if package in ('heretic-engine', 'hexen-engine'):
-        return (is_installed('chocolate-doom')
-             or is_installed('doomsday'))
+class PackageCache:
+    installed = None
+    available = None
 
-    return os.path.isdir(os.path.join('/usr/share/doc', package))
+    def is_installed(self, package):
+        if self.installed is None:
+            cache = set()
+            proc = subprocess.Popen(['dpkg-query', '--show',
+                        '--showformat', '${Package}\\n'],
+                    universal_newlines=True,
+                    stdout=subprocess.PIPE)
+            for line in proc.stdout:
+                cache.add(line.rstrip())
+            self.installed = cache
 
-def is_available(package):
-    proc = subprocess.Popen(['apt-cache', 'pkgnames', package],
-                            universal_newlines=True,
-                            stdout=subprocess.PIPE)
-    for line in proc.stdout:
-        if line.rstrip() == package:
-            return True
-    return False
+        # FIXME: this shouldn't be hard-coded
+        if package == 'doom-engine':
+            return (self.is_installed('chocolate-doom')
+                 or self.is_installed('prboom-plus')
+                 or self.is_installed('doomsday'))
+        if package == 'boom-engine':
+            return (self.is_installed('prboom-plus')
+                 or self.is_installed('doomsday'))
+        if package in ('heretic-engine', 'hexen-engine'):
+            return (self.is_installed('chocolate-doom')
+                 or self.is_installed('doomsday'))
+
+        return package in self.installed
+
+    def is_available(self, package):
+        if self.available is None:
+            cache = set()
+            proc = subprocess.Popen(['apt-cache', 'pkgnames'],
+                    universal_newlines=True,
+                    stdout=subprocess.PIPE)
+            for line in proc.stdout:
+                cache.add(line.rstrip())
+            self.available = cache
+
+        return package in self.available
+
+PACKAGE_CACHE = PackageCache()
 
 def prefered_lang():
     lang_raw = []

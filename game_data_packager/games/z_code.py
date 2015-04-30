@@ -22,7 +22,7 @@ import os
 
 from .. import GameData
 from ..paths import DATADIR
-from ..util import (TemporaryUmask, is_installed, mkdir_p)
+from ..util import (TemporaryUmask, PACKAGE_CACHE, mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
 
@@ -49,7 +49,8 @@ class ZCodeGameData(GameData):
 
             entry = desktop['Desktop Entry']
             entry['Name'] = package.longname or self.longname
-            if is_installed('frotz') and not is_installed('gargoyle-free'):
+            if (PACKAGE_CACHE.is_installed('frotz') and
+                    not PACKAGE_CACHE.is_installed('gargoyle-free')):
                 engine = 'frotz'
                 entry['Terminal'] = 'true'
             else:

@@ -50,7 +50,7 @@ from .util import (MEBIBYTE,
         mkdir_p,
         rm_rf,
         human_size,
-        is_installed,
+        PACKAGE_CACHE,
         lang_score,
         which)
 from .version import GAME_PACKAGE_VERSION
@@ -2244,7 +2244,7 @@ class GameData(object):
         for engine_alt in engines_alt:
             for engine in reversed(engine_alt.split('|')):
                 engine = engine.split('(')[0].strip()
-                if is_installed(engine):
+                if PACKAGE_CACHE.is_installed(engine):
                     break
             else:
                 engines.add(engine)
@@ -2388,7 +2388,7 @@ class GameData(object):
 
             if (package.expansion_for
               and self.packages[package.expansion_for] not in possible
-              and not is_installed(package.expansion_for)):
+              and not PACKAGE_CACHE.is_installed(package.expansion_for)):
                 for fullgame in possible:
                     if fullgame.type == 'full':
                         logger.warning("won't generate '%s' expansion, because "
@@ -2622,7 +2622,8 @@ class GameData(object):
             return True
 
         # unace-nonfree package diverts /usr/bin/unace from unace package
-        if fmt == 'unace-nonfree' and is_installed('unace-nonfree'):
+        if (fmt == 'unace-nonfree' and
+                PACKAGE_CACHE.is_installed('unace-nonfree')):
             return True
 
         logger.warning('cannot unpack "%s": tool "%s" is not ' +
