@@ -44,6 +44,8 @@ class ScummvmGameData(GameData):
 
     def fill_extra_files(self, package, destdir):
         super(ScummvmGameData, self).fill_extra_files(package, destdir)
+        if package.type == 'expansion':
+            return
 
         with TemporaryUmask(0o022):
             appdir = os.path.join(destdir, 'usr/share/applications')
