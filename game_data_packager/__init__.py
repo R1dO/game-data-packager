@@ -395,7 +395,7 @@ class GameDataPackage(object):
         self.architecture = 'all'
 
         # Debian section
-        self.section = 'non-free/games'
+        self.section = 'local/games'
 
     @property
     def aliases(self):
@@ -776,7 +776,9 @@ class GameData(object):
                 setattr(package, k, d[k])
 
         assert self.copyright or package.copyright, package.name
-        assert package.section in ('non-free/games', 'contrib/games', 'games'), 'unsupported'
+        assert '/' not in package.section \
+          or package.section.split('/')[0] in ('local', 'non-free', 'contrib'), 'unsupported'
+        assert package.section.split('/')[-1] in ('games'), 'unsupported'
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \

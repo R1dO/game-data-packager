@@ -167,26 +167,31 @@ class Launcher:
         label = Gtk.Label("Choose your engine")
         grid.attach(label, 2, 3, 1, 1)
         radiogrid = Gtk.Grid()
-        default = os.readlink('/etc/alternatives/doom')
-        self.engine = [default]
-        radiobuttonDefault = Gtk.RadioButton(group=None, label="%s (default)" % default)
+        radiobuttonDefault = Gtk.RadioButton(group=None, label="n/a")
         radiobuttonDefault.connect('toggled', self.select_engine)
         radiogrid.attach(radiobuttonDefault, 0, 0, 1, 1)
-        i = 1
-        proc = subprocess.Popen(['update-alternatives', '--list', 'doom'],
-                                stdout=subprocess.PIPE, universal_newlines=True)
 
-        for alternative in proc.stdout:
-            alternative = alternative.strip()
-            if alternative == default:
-                continue
-            if alternative == '/usr/games/doomsday-compat':
-                alternative = '/usr/games/doomsday'
-            radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
-            radiobutton.connect('toggled', self.select_engine)
-            i += 1
-            radiogrid.attach(radiobutton, 0, i, i, 1)
-            radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
+        if os.path.islink('/etc/alternatives/doom'):
+            default = os.readlink('/etc/alternatives/doom')
+            if default == '/usr/games/doomsday-compat':
+                default = '/usr/games/doomsday'
+            radiobuttonDefault.set_label("%s (default)" % default)
+            self.select_engine(radiobuttonDefault)
+            i = 1
+            proc = subprocess.Popen(['update-alternatives', '--list', 'doom'],
+                                stdout=subprocess.PIPE, universal_newlines=True)
+            for alternative in proc.stdout:
+                alternative = alternative.strip()
+                if alternative == '/usr/games/doomsday-compat':
+                    alternative = '/usr/games/doomsday'
+                if alternative == default:
+                   continue
+                radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
+                radiobutton.connect('toggled', self.select_engine)
+                i += 1
+                radiogrid.attach(radiobutton, 0, i, i, 1)
+                radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
+
         grid.attach(radiogrid, 2, 4, 1, 1)
 
         # Run !
@@ -237,14 +242,18 @@ class Launcher:
             self.engine.append('doom2')
 
     def run_game(self, event):
-        if not self.warp:
-            return
         subprocess.call(self.engine +
             ['-file', '/usr/share/games/doom/%s.wad' % self.game,
             '-warp', '%d' % self.warp,
             '-skill', '%d' % self.difficulty])
 
     def main(self):
+        if not self.engine:
+            message = "This launcher needs some DOOM engine to be installed."
+            md = Gtk.MessageDialog(self.window, 0, Gtk.MessageType.WARNING,
+                                       Gtk.ButtonsType.OK, message)
+            md.run()
+            exit(message)
         for level in levels.keys():
             level = os.path.splitext(level)[0]
             fullpath = '/usr/share/games/doom/%s.wad' % level
