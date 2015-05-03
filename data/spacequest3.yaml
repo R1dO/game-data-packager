@@ -1,0 +1,64 @@
+---
+longname: "Space Quest III: The Pirates of Pestulon"
+copyright: © 1989 Sierra
+plugin: scummvm_common
+gameid: sq3
+
+packages:
+  spacequest3-data:
+    gog:
+      url: space_quest_1_2_3
+    install:
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.cfg
+    - resource.map
+    - version
+    optional:
+    - manual.pdf
+files:
+  manual.pdf:
+    install_to: $docdir
+    distinctive_name: false
+  setup_space_quest_1_2_3.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.cfg
+    - resource.map
+    - version
+    - manual.pdf
+
+cksums: |
+  _ 490247    resource.001
+  _ 715777    resource.002
+  _ 703370    resource.003
+  _ 215       resource.cfg
+  _ 5730      resource.map
+  _ 7         version
+  _ 2342019   manual.pdf
+  _ 18505218  setup_space_quest_1_2_3.exe
+md5sums: |
+  60118bdc3e57076dc2d3d909730ff4af  resource.001
+  c1526bd99391b674f0d68347f78b0fd2  resource.002
+  69d74c5056144e09c6fdac85cc357cb3  resource.003
+  634128488166ddb6e799b86bc5cfab00  resource.cfg
+  6509ea8a27cca3503aa2e18672c5d604  resource.map
+  4f1243083efe33a01144eacc94fc84c6  version
+  26afca0edb198da6064106b0c43a38a4  manual.pdf
+  6ab36bf35f920828cdcb3f3b83156572  setup_space_quest_1_2_3.exe
+sha1sums: |
+  6faba27a973bd435e1e59b67f3f126e1b581503f  resource.001
+  fd40d9509467f0c2057ac483e00cd1066fd87f0c  resource.002
+  87d4eed92d3105e505174749964af91f8e96ecb1  resource.003
+  47beb492828827b7e4704ad1048590e9a6957d39  resource.cfg
+  9c5df6512efd713f470781d19a027b6c2011b96f  resource.map
+  cf2b709bec0f426bd36ba6d6dd5819c9cbce22c9  version
+  2cdc09127c57f18887e9f35c9fd986aceb2f60a9  manual.pdf
+  d70598bc1145062b5e6d2d5a844a7959e17e11d3  setup_space_quest_1_2_3.exe
+...
+

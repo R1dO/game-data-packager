@@ -1,0 +1,99 @@
+---
+longname: "Space Quest II: Vohaul's Revenge"
+copyright: © 1987 Sierra
+plugin: scummvm_common
+gameid: sq2
+
+packages:
+  spacequest2-data:
+    gog:
+      url: space_quest_1_2_3
+    install:
+    - object
+    - logdir
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
+    optional:
+    - manual.pdf
+
+files:
+  # generic names for AGI engine games
+  logdir:
+    distinctive_name: false
+  object:
+    distinctive_name: false
+  picdir:
+    distinctive_name: false
+  snddir:
+    distinctive_name: false
+  viewdir:
+    distinctive_name: false
+  vol.0:
+    distinctive_name: false
+  vol.1:
+    distinctive_name: false
+  vol.2:
+    distinctive_name: false
+  words.tok:
+    distinctive_name: false
+
+  manual.pdf:
+    install_to: $docdir
+    distinctive_name: false
+  setup_space_quest_1_2_3.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2    
+    - words.tok 
+    - manual.pdf
+
+cksums: |
+  _ 426       logdir
+  _ 331       object
+  _ 444       picdir
+  _ 210       snddir
+  _ 720       viewdir
+  _ 70313     vol.0
+  _ 161225    vol.1
+  _ 411824    vol.2
+  _ 6828      words.tok
+  _ 5456095   manual.pdf
+  _ 18505218  setup_space_quest_1_2_3.exe
+md5sums: |
+  28add5125484302d213911df60d2aded  logdir
+  5024d50d42801aaea7170a756218a7e6  object
+  514534df82237848dfcd760e476a766e  picdir
+  eab6a5f4cb071c906df674e98891a432  snddir
+  efb1f93513d57eeca9a539e019df7b89  viewdir
+  3e09c8580506212cd3494b5df8ea6cbc  vol.0
+  fa5415f7cbc6e78c69d94ef3c92d000d  vol.1
+  f7015465702a24333a0e799ad0d967bb  vol.2
+  552e2b31bf8825eea5a46e6eebb4cb3e  words.tok
+  91185d0d657338941a177cb5f6a7c2f3  manual.pdf
+  6ab36bf35f920828cdcb3f3b83156572  setup_space_quest_1_2_3.exe
+sha1sums: |
+  698adf61f0d28d02d438536795cf07d75b7dfa7e  logdir
+  0e77603e5ddd16252e67fb5193aa527e04c8efd9  object
+  5c87dfc1ed42f1d081e67a72b77e769ce2465da2  picdir
+  79cc5f5d8690319119007bdaf00c84cf86ffa923  snddir
+  74e6b6fcef76516ea1be1fc8c584fefe66eb97be  viewdir
+  5f9cba6dced32737c5a80f7cf2e805541c9fa422  vol.0
+  79963ad0ce237966e8125a3c0b04bb6840212be4  vol.1
+  1dd02bf49ccf480574984b3e9022cf54d3b0fcb7  vol.2
+  4011fb5b691986f057baeda79c88d225355a59b4  words.tok
+  1fe5b92e25729c60672afba30adc2aef8c0ee836  manual.pdf
+  d70598bc1145062b5e6d2d5a844a7959e17e11d3  setup_space_quest_1_2_3.exe
+...
