@@ -394,8 +394,9 @@ class GameDataPackage(object):
         # Debian architecture(s)
         self.architecture = 'all'
 
-        # Debian section
-        self.section = 'local/games'
+        # Debian archive area/section
+        self.area = 'local'
+        self.section = 'games'
 
     @property
     def aliases(self):
@@ -771,14 +772,14 @@ class GameData(object):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version',
-                'copyright', 'engine', 'gog', 'origin', 'lang', 'section'):
+                'copyright', 'engine', 'gog', 'origin', 'lang', 'area', 'section'):
             if k in d:
                 setattr(package, k, d[k])
 
         assert self.copyright or package.copyright, package.name
-        assert '/' not in package.section \
-          or package.section.split('/')[0] in ('local', 'non-free', 'contrib'), 'unsupported'
-        assert package.section.split('/')[-1] in ('games'), 'unsupported'
+        assert package.area in ('main', 'contrib', 'non-free', 'local')
+        assert package.area == 'local' or 'license' in d
+        assert package.section in ('games'), 'unsupported'
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
@@ -1723,12 +1724,34 @@ class GameData(object):
             o.write('The package %s was generated using '
                     'game-data-packager.\n' % package.name)
 
-            if package.section.split('/')[0] == 'non-free':
+            licenses = set()
+            for f in package.install | package.optional:
+                 if self.file_status[f] is not FillResult.COMPLETE:
+                     continue
+                 if not self.files[f].license:
+                     continue
+                 license_file = self.files[f].install_as
+                 licenses.add("/usr/share/doc/%s/%s" % (package.name, license_file))
+                 if os.path.splitext(license_file)[0].lower() == 'license':
+                     lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+                     mkdir_p(lintiandir)
+                     with open(os.path.join(lintiandir, package.name),
+                              'a', encoding='utf-8') as l:
+                         l.write('%s: extra-license-file usr/share/doc/%s/%s\n'
+                                 % (package.name, package.name, license_file))
+
+            if package.area == 'local':
                 o.write('It contains proprietary game data '
                         'and must not be redistributed.\n\n')
+            elif package.area == 'non-free':
+                o.write('It contains proprietary game data '
+                        'that may be redistributed\nonly under'
+                        'conditions specified in\n')
+                o.write(',\n'.join(licenses) + '.\n\n')
             else:
-                o.write('It contains free game data '
-                        'and may be redistributed.\n\n')
+                o.write('It contains free game data and may be\n'
+                        'redistributed under conditions specified in\n')
+                o.write(',\n'.join(licenses) + '.\n\n')
 
             count_usr = 0
             exts = set()
@@ -1769,22 +1792,7 @@ class GameData(object):
             o.write(package.copyright or self.copyright)
             o.write(', with all rights reserved.\n')
 
-            licenses = set()
-            for f in package.install | package.optional:
-                 if self.file_status[f] is not FillResult.COMPLETE:
-                     continue
-                 if self.files[f].license:
-                     license_file = self.files[f].install_as
-                     licenses.add("/usr/share/doc/%s/%s" % (package.name, license_file))
-                     if os.path.splitext(license_file)[0].lower() == 'license':
-                         lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
-                         mkdir_p(lintiandir)
-                         with open(os.path.join(lintiandir, package.name),
-                                  'a', encoding='utf-8') as l:
-                             l.write('%s: extra-license-file usr/share/doc/%s/%s\n'
-                                     % (package.name, package.name, license_file))
-
-            if licenses:
+            if licenses and package.area == 'local':
                 o.write('\nThe full license appears in ')
                 o.write(',\n'.join(licenses))
                 o.write('\n')
@@ -1978,7 +1986,10 @@ class GameData(object):
                 control[field] = default_values[field]
 
         assert 'Section' not in control, 'please specify only in YAML'
-        control['Section'] = package.section
+        if package.area == 'main':
+            control['Section'] = package.section
+        else:
+            control['Section'] = package.area + '/' + package.section
 
         if package.architecture != 'all':
             control['Architecture'] = self.get_architecture()
@@ -2052,10 +2063,14 @@ class GameData(object):
             short_desc = package.data_type + ' for "' + longname + '" game'
 
             long_desc =  ' This package was built using game-data-packager.\n'
-            if package.section == 'non-free/games':
+            if package.area == 'local':
                 long_desc += ' It contains proprietary game data and must not be redistributed.\n'
                 long_desc += ' .\n'
-            elif package.section == 'games':
+            elif package.area == 'non-free':
+                long_desc += ' It contains proprietary game data that may be redistributed\n'
+                long_desc += ' only under some conditions.\n'
+                long_desc += ' .\n'
+            else:
                 long_desc += ' It contains free game data and may be redistributed.\n'
                 long_desc += ' .\n'
 
@@ -2555,16 +2570,16 @@ class GameData(object):
     def construct_package(self, binary):
         return GameDataPackage(binary)
 
-    def check_section(self, package):
-        # free packages are free as long as their
+    def check_area(self, package):
+        # redistributable packages are redistributable as long as their
         # optional license file is present
-        if package.section.split('/')[0] == 'non-free':
+        if package.area == 'local':
             return
         for f in package.optional:
              if not self.files[f].license:
                  continue
              if self.file_status[f] is not FillResult.COMPLETE:
-                 package.section = 'non-free/' + package.section.split('/')[-1]
+                 package.area = 'local'
                  return
         return
 
@@ -2575,7 +2590,7 @@ class GameData(object):
         """
         destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
 
-        self.check_section(package)
+        self.check_area(package)
         if not self.fill_dest_dir(package, destdir):
             # FIXME: probably better as an exception?
             return None

@@ -8,8 +8,7 @@ packages:
     version: '1.0'
     debian:
       provides: soltys-data
-    # instead of non-free/games
-    section: games
+    area: main
     install:
     - vol.cat
     - vol.dat
@@ -21,7 +20,7 @@ packages:
     version: '1.0'
     debian:
       provides: soltys-data
-    section: games
+    area: main
     install:
     - vol.cat_pl
     - vol.dat_pl
@@ -33,7 +32,7 @@ packages:
     version: '1.0'
     debian:
       provides: soltys-data
-    section: games
+    area: main
     install:
     - vol.cat_es
     - vol.dat_es
