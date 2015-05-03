@@ -357,8 +357,9 @@ def do_one_deb(deb):
     print('')
 
 def do_one_exec(pgm,lower):
+    print('running:', pgm)
     with subprocess.Popen(['strace', '-e', 'open',
-                           '-s', '100', pgm],
+                           '-s', '100'] + pgm,
            stderr=subprocess.PIPE, stdout=subprocess.DEVNULL,
            universal_newlines=True) as proc:
         used = set()
@@ -457,6 +458,11 @@ def main():
             help='compute "flacsums" from .wav files')
     args = parser.parse_args()
 
+    # ./run make-template -e -- scummvm -p /usr/share/games/spacequest1/ sq1
+    if args.execute:
+        do_one_exec(args.args,args.lower)
+        return
+
     for arg in args.args:
         if args.flacsums:
             do_flacsums(arg,args.lower)
@@ -464,8 +470,6 @@ def main():
             do_one_dir(arg.rstrip('/'),args.lower)
         elif arg.endswith('.deb'):
             do_one_deb(arg)
-        elif args.execute:
-            do_one_exec(arg,args.lower)
         else:
             do_one_file(arg,args.lower)
 
