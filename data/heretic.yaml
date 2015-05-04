@@ -30,10 +30,12 @@ packages:
     install:
     - heretic.wad
 
-  heretic-shareware-data:
+  heretic-shareware-wad:
     longname: "Heretic (shareware)"
     install_to: usr/share/games/doom
     demo_for: heretic-wad
+    debian:
+      replaces: heretic-shareware-data
     install:
     - heretic1.wad
 

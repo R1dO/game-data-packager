@@ -11,10 +11,10 @@ help_text: |
   Patching older versions is not currently supported. If you have
   an older version, it might be possible to patch it manually using dosbox.
 
-  hexen-deathkings-data requires HEXDD.WAD from the Deathkings of the
+  hexen-deathkings-wad requires HEXDD.WAD from the Deathkings of the
   Dark Citadel expansion.
 
-  hexen-demo-data requires HEXEN.WAD from the Hexen demo v1.0, which
+  hexen-demo-wad requires HEXEN.WAD from the Hexen demo v1.0, which
   will be downloaded automatically if necessary. It will be renamed to
   hexendemo.wad to avoid colliding with the full version of Hexen.
 
@@ -32,10 +32,11 @@ packages:
     install:
     - hexen.wad
 
-  hexen-deathkings-data:
+  hexen-deathkings-wad:
     longname: "Hexen: Deathkings of the Dark Citadel"
     debian:
       breaks: chocolate-doom (<< 2)
+      replaces: hexen-deathkings-data
     steam:
       id: 2370
       path: "common/Hexen Deathkings of the Dark Citadel"
@@ -44,8 +45,10 @@ packages:
     install:
     - hexdd.wad
 
-  hexen-demo-data:
+  hexen-demo-wad:
     longname: "Hexen: Beyond Heretic (demo)"
+    debian:
+      replaces: hexen-demo-data
     install_to: usr/share/games/doom
     demo_for: hexen-wad
     install:
