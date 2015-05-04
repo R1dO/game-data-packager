@@ -1,0 +1,188 @@
+---
+longname: "Space Quest 6: Roger Wilco in The Spinal Frontier"
+copyright: © 1995 Sierra
+plugin: scummvm_common
+gameid: sq6
+
+# this version is not known by ScummVM
+#
+# https://github.com/scummvm/scummvm/blob/master/engines/sci/detection_tables.h#L4022
+
+packages:
+  spacequest6-data:
+    install:
+    - 102.snd
+    - 120.snd
+    - 217.snd
+    - 250.snd
+    - 251.snd
+    - 280.snd
+    - 370.hep
+    - 370.scr
+    - 390.snd
+    - 455.hep
+    - 455.scr
+    - 620.hep
+    - 620.scr
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.mdt
+    - resource.sfx
+    - resource.win
+    - version
+    - english/language.inf
+    - robots/410.rbt
+    - robots/475.rbt
+    - robots/4751.rbt
+    - robots/4752.rbt
+    - robots/4901.rbt
+    - robots/4902.rbt
+    - robots/4903.rbt
+    - robots/4904.rbt
+    - robots/545.rbt
+    - robots/600.rbt
+    - robots/643.rbt
+    - robots/670.rbt
+    - robots/700.rbt
+    - robots/748.rbt
+    - robots/7480.rbt
+    - robots/7740.rbt
+    - robots/7741.rbt
+    - robots/776.rbt
+    - movies/1075.vmd
+    - movies/1090.vmd
+    - movies/1450.vmd
+    - movies/1490.vmd
+    - movies/1491.vmd
+    - movies/1492.vmd
+    - movies/1500.vmd
+    - movies/1540.vmd
+    - movies/450.vmd
+    - movies/490.vmd
+    - movies/491.vmd
+    - movies/492.vmd
+    - movies/500.vmd
+    - movies/540.vmd
+    - movies/75.vmd
+    - movies/90.vmd
+    - movies/torin.avi
+    - movies/woodruff.avi
+cksums: |
+  _ 42972     102.snd
+  _ 39020     120.snd
+  _ 29990     217.snd
+  _ 9494      250.snd
+  _ 7518      251.snd
+  _ 29132     280.snd
+  _ 5402      370.hep
+  _ 26242     370.scr
+  _ 39868     390.snd
+  _ 2780      455.hep
+  _ 2170      455.scr
+  _ 6118      620.hep
+  _ 21556     620.scr
+  _ 41150806  resource.000
+  _ 435838311 resource.aud
+  _ 10528     resource.map
+  _ 10528     resource.mdt
+  _ 36011811  resource.sfx
+  _ 375       resource.win
+  _ 5         version
+  _ 3536      english/language.inf
+  _ 2196926   movies/1075.vmd
+  _ 7654353   movies/1090.vmd
+  _ 3311244   movies/1450.vmd
+  _ 2078329   movies/1490.vmd
+  _ 894981    movies/1491.vmd
+  _ 889065    movies/1492.vmd
+  _ 2368280   movies/1500.vmd
+  _ 4190829   movies/1540.vmd
+  _ 5045356   movies/450.vmd
+  _ 2970704   movies/490.vmd
+  _ 1145834   movies/491.vmd
+  _ 1151000   movies/492.vmd
+  _ 2742491   movies/500.vmd
+  _ 6882345   movies/540.vmd
+  _ 3730588   movies/75.vmd
+  _ 10022256  movies/90.vmd
+  _ 15572194  movies/torin.avi
+  _ 9249078   movies/woodruff.avi
+  _ 2477394   robots/410.rbt
+  _ 444179    robots/475.rbt
+  _ 295549    robots/4751.rbt
+  _ 774349    robots/4752.rbt
+  _ 2407293   robots/4901.rbt
+  _ 2502731   robots/4902.rbt
+  _ 2372929   robots/4903.rbt
+  _ 792034    robots/4904.rbt
+  _ 2014046   robots/545.rbt
+  _ 1582642   robots/600.rbt
+  _ 626342    robots/643.rbt
+  _ 4194080   robots/670.rbt
+  _ 2608880   robots/700.rbt
+  _ 467722    robots/748.rbt
+  _ 1686526   robots/7480.rbt
+  _ 130001    robots/7740.rbt
+  _ 841872    robots/7741.rbt
+  _ 159298    robots/776.rbt
+md5sums: |
+  3cb4174e2d2b5ac72a7bb507d267c4c0  102.snd
+  c27c2ea653db60e1a9e7bc316cfc45ee  120.snd
+  97d085d9502b56a4976bd008b64d4f46  217.snd
+  5b19e882eb55e108c45aa8c4a4d5780c  250.snd
+  54a840986935f0790522fdcc481bb721  251.snd
+  235b0929a060b7771ff0fefba97cff0b  280.snd
+  2e2562d5c4d6bea0bd7479c9c61eadc3  370.hep
+  a2c01b7a107148af5dca20c7592da31b  370.scr
+  58465e92da271a08e7f058e8881d6a0a  390.snd
+  bfee9664e0e27f345d06bae688ce873a  455.hep
+  26b690a97f598e4188aadbe7faf50b93  455.scr
+  f7a3abed15714f035cceb361c0a1d890  620.hep
+  5f40632c5f89864018889f2085511f2a  620.scr
+  781bf188a1ae3b213a5adeb48f19b710  resource.000
+  e22139511fef18f906cbfb73e15d7601  resource.aud
+  ed5ad1dfcfcae482072634c9a69c6a53  resource.map
+  250e910dd56384990e9e9677f6a1f461  resource.mdt
+  1da3fc522057a06542f0adf351306761  resource.sfx
+  d61113e2ca68ca3b886bdd725c4c632e  resource.win
+  07f863c37a2ce25df345667e0cfaf63a  version
+  34e2bdaed94aaa21c56be307883298f5  english/language.inf
+  461875b563b789a18106e620dc43df40  movies/1075.vmd
+  f521dc41611b0646370302c026f3cff2  movies/1090.vmd
+  bd516532b5a99df977b4b56696e6bfbd  movies/1450.vmd
+  3f8a24682774027bc0b017c8ddc162d7  movies/1490.vmd
+  e0c03141dd9bb055bdaf8f527101f347  movies/1491.vmd
+  55b3e917b6138d68764311174cf7ea4e  movies/1492.vmd
+  5f4cfc149715bb4ff38937cf83eb7e8c  movies/1500.vmd
+  dcf74fcb886398b07fe1c50256ef99cd  movies/1540.vmd
+  75b37779b9170d141426d9c28a10a1b5  movies/450.vmd
+  151add87f5c50954f1008b6fb3e4d473  movies/490.vmd
+  92b263ec9d578d065b64ba3d5427005a  movies/491.vmd
+  7ccbcc943895c76ac6ffbd4c7abb511e  movies/492.vmd
+  af0af2fa122fc6461527659ad62dadbc  movies/500.vmd
+  cddbb1a14df7883dcc8dd09da4724202  movies/540.vmd
+  27458c173c49b3aa406d49d4dbb74d6c  movies/75.vmd
+  ef133d97627532d7a205e4cc6aaf945e  movies/90.vmd
+  4e4703717e1e34cc5b18ad6544407f21  movies/torin.avi
+  a8119849ee196bd8e9cec7fe3210eaae  movies/woodruff.avi
+  f41273420247ab47bcd249c03e6b749a  robots/410.rbt
+  cec4fa1fb035552a47144b6a27076fc4  robots/475.rbt
+  c44cbcf8ab9eba6225d513683e96d1c8  robots/4751.rbt
+  720f2bbd463a2100cb4eede23e6f99af  robots/4752.rbt
+  8352ddf056c7775a89cd472834d98399  robots/4901.rbt
+  810e46f17497379b7fcffff69692a0bc  robots/4902.rbt
+  eb2bf0c77c82286d9abf0702771829e1  robots/4903.rbt
+  bdc86104fd9edc4be3df8fd79eb65bf0  robots/4904.rbt
+  13f7b823d673d532217524499e2716cd  robots/545.rbt
+  dcc2711ffefc428178d5e6ca0841440e  robots/600.rbt
+  f7cd439102222fc0aa1fe0c68dcd1847  robots/643.rbt
+  b35f1e78daec25f29a18a37a52f74263  robots/670.rbt
+  deb9799c048b0259e5954221f5f91078  robots/700.rbt
+  49461571af2a67c08f6bcdbc719c18fc  robots/748.rbt
+  5a7f79ce2b4df98ed3c85b686b2d298b  robots/7480.rbt
+  9ec436ad369d6e823d1fc3b00026e8b9  robots/7740.rbt
+  ae4eec4785d510a0e0cb50c7c25691ce  robots/7741.rbt
+  1d6d0d81175cd046ab11ecd592926461  robots/776.rbt
+...
+
