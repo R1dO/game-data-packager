@@ -31,12 +31,21 @@ packages:
     - readme_zork3.txt
 
 files:
+  zork1.dat:
+    alternatives:
+    - zork1.dat_zip
+    - zork1.dat_alt
+  zork1.dat_zip:
+    look_for: [zork1.dat]
+  zork1.dat_alt:
+    look_for: [zork1.dat]
+
   zork1.zip:
     download: http://www.infocom-if.org/downloads/zork1.zip
     unpack:
       format: zip
     provides:
-    - zork1.dat
+    - zork1.dat_zip
     - readme_zork1.txt
   readme_zork1.txt:
     distinctive_name: false
@@ -74,7 +83,8 @@ cksums: |
   _ 4711      readme_zork1.txt
   _ 4604      readme_zork2.txt
   _ 4607      readme_zork3.txt
-  _ 92160     zork1.dat
+  _ 84992     zork1.dat_alt
+  _ 92160     zork1.dat_zip
   _ 82160     zork1.zip
   _ 92160     zork2.dat
   _ 85755     zork2.zip
@@ -84,7 +94,8 @@ md5sums: |
   cbe6b6895418efffd7889b3f8152c1da  readme_zork1.txt
   59266a444e892d2849a280790c5227cd  readme_zork2.txt
   31272558b05259802ad1a72dd13c7fde  readme_zork3.txt
-  b732a93a6244ddd92a9b9a3e3a46c687  zork1.dat
+  4a0f76b9014a4c407520920710c42588  zork1.dat_alt
+  b732a93a6244ddd92a9b9a3e3a46c687  zork1.dat_zip
   f6dd915ea7315985536efb39154f3433  zork1.zip
   5bcd91ee055e9bd42812617571be227b  zork2.dat
   ab521209656948516351996263a8ad34  zork2.zip
@@ -94,7 +105,8 @@ sha1sums: |
   531c483f975941beb2c2ba067b9765ce4751a1c3  readme_zork1.txt
   6639decd524acbaeae95c0367ba13d6167a3a9e0  readme_zork2.txt
   18fa069ec0944f2b93bb20502dbf8efd08f92a3e  readme_zork3.txt
-  70b9e127569a66ac8dc005395e9deccc52e84056  zork1.dat
+  e05781fc76d87985ceb23a62c0c71843147a3099  zork1.dat_alt
+  70b9e127569a66ac8dc005395e9deccc52e84056  zork1.dat_zip
   c0792003a0f4f9ae5f7d058c95142ad2cb052e16  zork1.zip
   ca4667b30f5c50474da707d276cbbb4be35ee90b  zork2.dat
   d4c4be791e6bbb97f486b317a6631c9e92a93b79  zork2.zip
@@ -104,7 +116,7 @@ sha256sums: |
   180bb87dc0524c5f7b1ba29ac08cd3e12f75e1c6b5b211b309ce1f01709b2545  readme_zork1.txt
   589dbf8446c0c813aa25c4f10777a2cfd56561d9b27a6af9e53f4cc0fe79c95d  readme_zork2.txt
   5f8334feaa5e98aa4308f262a7ae820bd3d6537ae9be428df2cb9704d3de05f8  readme_zork3.txt
-  0ae5ac229e79094ff368b6669356444af0f35e21d862a1baaa546989085c15fd  zork1.dat
+  0ae5ac229e79094ff368b6669356444af0f35e21d862a1baaa546989085c15fd  zork1.dat_zip
   645027fb189ba8fd30daecca609e68e2bf2337b76e7b4f925ccf58778f3eac40  zork1.zip
   abf145d22371f825f13388587d92632bcde90582698f774b896b123a90e1fb1e  zork2.dat
   7c360a14ec61d8e8f265e1aa99a13487c5e0f016a752e4b32314405a0e9ffea0  zork2.zip
