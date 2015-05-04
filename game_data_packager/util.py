@@ -101,8 +101,11 @@ class PackageCache:
         if package == 'boom-engine':
             return (self.is_installed('prboom-plus')
                  or self.is_installed('doomsday'))
-        if package in ('heretic-engine', 'hexen-engine'):
-            return (self.is_installed('chocolate-doom')
+        if package == 'heretic-engine':
+            return (self.is_installed('chocolate-heretic')
+                 or self.is_installed('doomsday'))
+        if package == 'hexen-engine':
+            return (self.is_installed('chocolate-hexen')
                  or self.is_installed('doomsday'))
 
         return package in self.installed
