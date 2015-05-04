@@ -34,12 +34,18 @@ packages:
     longname: "Heretic (shareware)"
     install_to: usr/share/games/doom
     demo_for: heretic-wad
+    section: non-free
     debian:
       replaces: heretic-shareware-data
     install:
     - heretic1.wad
+    license:
+    - license.doc
 
 files:
+  license.doc:
+    size: 7685
+
   htic_v12.zip:
     size: 2898794
     download:
@@ -61,7 +67,7 @@ files:
 
   htic_v12.exe:
     size: 2882106
-    provides: [heretic1.wad_1.2]
+    provides: [heretic1.wad_1.2, license.doc]
     unpack:
       format: zip
 
@@ -97,6 +103,7 @@ files:
     unsuitable: Heretic shareware v1.2 is required
 
 md5sums: |
+  020c9872dbb9832607386251715d89ee  license.doc
   420b23b3d8f2cbd164c121369eaa2b09  htic_v12.zip
   3117e399cdb4298eaa3941625f4b2923  heretic.wad_1.0
   1e4cb4ef075ad344dd63971637307e04  heretic.wad_1.2
@@ -109,6 +116,7 @@ md5sums: |
 
 
 sha1sums: |
+  c97b176fe0458039219eb426ad315dc5ff155324  license.doc
   dcb0c3be73fff3affd58ead2f85c1cb22872513f  htic_v12.zip
   b5a6cc79cde48d97905b44282e82c4c966a23a87  heretic.wad_1.0
   a54c5d30629976a649119c5ce8babae2ddfb1a60  heretic.wad_1.2
