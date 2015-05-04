@@ -5,7 +5,9 @@ plugin: scummvm_common
 gameid: sq4
 
 packages:
-  spacequest4-data:
+  spacequest4-dos-data:
+    debian:
+      provides: spacequest4-data
     install:
     - resource.000
     - resource.001
@@ -26,6 +28,61 @@ packages:
     - view.992
     - view.993
     - view.994
+  spacequest4-win-data:
+    debian:
+      provides: spacequest4-data
+    gog:
+      url: space_quest_4_5_6
+    install:
+    - 335.hep
+    - 335.scr
+    - 390.hep
+    - 390.scr
+    - 410.hep
+    - 410.scr
+    - 555.hep
+    - 555.scr
+    - 610.hep
+    - 610.scr
+    - 701.hep
+    - 701.scr
+    - resource.000_win
+    - resource.aud
+    - resource.map_win
+    - version_win
+
+files:
+  setup_space_quest.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 335.hep
+    - 335.scr
+    - 390.hep
+    - 390.scr
+    - 410.hep
+    - 410.scr
+    - 555.hep
+    - 555.scr
+    - 610.hep
+    - 610.scr
+    - 701.hep
+    - 701.scr
+    - resource.000_win
+    - resource.aud
+    - resource.map_win
+    - version_win
+
+  resource.000_win:
+    look_for: [resource.000]
+    install_as: resource.000
+  resource.map_win:
+    look_for: [resource.map]
+    install_as: resource.map
+  version_win:
+    look_for: [version]
+    install_as: version
+
 cksums: |
   _ 173330    resource.000
   _ 1247215   resource.001
@@ -46,6 +103,24 @@ cksums: |
   _ 5613      view.992
   _ 5482      view.993
   _ 2245      view.994
+
+  _ 536147110 setup_space_quest.exe
+  _ 2846      335.hep
+  _ 3160      335.scr
+  _ 2314      390.hep
+  _ 4858      390.scr
+  _ 2176      410.hep
+  _ 6992      410.scr
+  _ 746       555.hep
+  _ 544       555.scr
+  _ 1936      610.hep
+  _ 5954      610.scr
+  _ 1704      701.hep
+  _ 3884      701.scr
+  _ 5157378   resource.000_win
+  _ 168882321 resource.aud
+  _ 7054      resource.map_win
+  _ 5         version_win
 md5sums: |
   b0fd6032e789321f5c3a60d8bf3d9431  resource.000
   3739053944c2b9f921a86c22275ea3d7  resource.001
@@ -66,6 +141,24 @@ md5sums: |
   de92a199b251f9b9cd261cebbf1e1458  view.992
   2f704aaff9a616347fd4f03befd1ad49  view.993
   0fefac7c1cf28c33b112522c982e5047  view.994
+
+  d1909145d2b4007b25c27c4afbb3feac  setup_space_quest.exe
+  588ebf5e4572bf34d73b111bc39d621e  335.hep
+  94bdbc66efa2e4e25d9842dc3c8e232d  335.scr
+  1df0e5eeea41b23b7920bf5e576ff982  390.hep
+  f3482dd0ab79f52963884e510aa0190e  390.scr
+  032c6e4377f703a7a323c7f5ed3e2c80  410.hep
+  ead88494474f62e04ada0762a7c2ade2  410.scr
+  d60d268238ca1cec8d0214f5ed6d9c02  555.hep
+  5078861110e9c438e59b53dd2e5043f7  555.scr
+  063023bbfb7daf6f0f281df38d52bd20  610.hep
+  1dfb97351c4cb473b4602d067911f30f  610.scr
+  e8a70e1551567f09d7127faf8d2afd3b  701.hep
+  0ae01f449de83438d3553388b25e20ba  701.scr
+  33a9e16a2bbe59ce52504e758e08082f  resource.000_win
+  b983f06438b45297a2c8af534d47a1fa  resource.aud
+  bd29d3fb8ea4a8ee638edaf40aa5f5ed  resource.map_win
+  07f863c37a2ce25df345667e0cfaf63a  version_win
 sha1sums: |
   eb63cfd2f02078ce2b26217e65b2df2eed27310d  resource.000
   950295fa00d84c02b5d327d207dfd30e3aaf7768  resource.001
@@ -86,5 +179,23 @@ sha1sums: |
   a730007962867fe4449aa06a9e1aaf09ffed1790  view.992
   8fbad7e32391993383b2f86ed2522e4b36ff82f1  view.993
   fdd16e054a51a8fda492505074b0ca4ec0b122d0  view.994
+
+  2a2ce2807ad71675dd5c2d2fbcf87def8d54dfee  setup_space_quest.exe
+  55267358d2ac997af65914cafe6f312d19aa46c2  335.hep
+  9996b4296687eb98c2649bfc50a297de100266d8  335.scr
+  d2dfaba29fe3971b8fe2a792ea69f58cfbdb15de  390.hep
+  facf90baee05cc8b80b72a2fb771c82c97212a93  390.scr
+  64896d75e7fcdfbce9baa507969476cb931b7ec1  410.hep
+  36a7cb5b797178a8b723282f5496ad2ff9bf4976  410.scr
+  d3ed0076bb44daf2fe21aa36c682dbfd2c48afed  555.hep
+  c1b3e6b31b76884e2817d84476f07f0b88f8c66a  555.scr
+  03be7231f116492c2826c75af4addad3e4542401  610.hep
+  58907df2c17d0fe5104366d762f556e800433008  610.scr
+  e887be4b66495b866b33ad84ce1d0a4a672f07d8  701.hep
+  2c5b1e07837d8f455c535c596fd8d9e392fb2467  701.scr
+  2caecd07abd928bc9625b6efced020f35b76c6f2  resource.000_win
+  5d688842e8286c79d6aa59401a20cfe4bec0820c  resource.aud
+  5917d566075a5ab634cefb03801e90d3b196508e  resource.map_win
+  79c6f884e081a737ac73179c46a983b890b1a8da  version_win
 ...
 
