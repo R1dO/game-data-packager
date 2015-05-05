@@ -64,7 +64,7 @@ class QuakeGameData(GameData):
             quakedir = os.path.join(destdir, 'usr/share/games/quake')
             mkdir_p(quakedir)
             path = os.path.join(quakedir, detector)
-            with open(os.path.join(quakedir, detector), 'w') as f:
+            with open(path, 'w') as f:
                 f.write('#!/bin/sh\nexit 0\n')
             os.chmod(path, 0o755)
 

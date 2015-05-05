@@ -79,4 +79,16 @@ class ZCodeGameData(GameData):
                          'usr/share/applications/%s.desktop %s\n'
                          % (package.name, package.name, engine))
 
+            if engine == 'frotz':
+                bindir = os.path.join(destdir, 'usr/games')
+                mkdir_p(bindir)
+                pgm = package.name[0:len(package.name)-len('-data')]
+                path = os.path.join(bindir, pgm)
+                with open(path, 'w') as f:
+                     f.write('#!/bin/sh\n')
+                     f.write('test -x /usr/games/frotz && exec frotz $@ %s\n' % arg)
+                     f.write('echo "You need to install some engine '
+                                   'like frotz to play this game"\n')
+                os.chmod(path, 0o755)
+
 GAME_DATA_SUBCLASS = ZCodeGameData
