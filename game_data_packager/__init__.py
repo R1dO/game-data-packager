@@ -394,8 +394,10 @@ class GameDataPackage(object):
         # Debian architecture(s)
         self.architecture = 'all'
 
-        # Debian archive area/section
-        self.area = 'local'
+        # Component (archive area): main, contrib, non-free, local
+        # We use "local" to mean "not distributable"; the others correspond
+        # to components in the Debian archive
+        self.component = 'local'
         self.section = 'games'
 
     @property
@@ -792,13 +794,13 @@ class GameData(object):
         for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version',
-                'copyright', 'engine', 'gog', 'origin', 'lang', 'area', 'section'):
+                'copyright', 'engine', 'gog', 'origin', 'lang', 'component', 'section'):
             if k in d:
                 setattr(package, k, d[k])
 
         assert self.copyright or package.copyright, package.name
-        assert package.area in ('main', 'contrib', 'non-free', 'local')
-        assert package.area == 'local' or 'license' in d
+        assert package.component in ('main', 'contrib', 'non-free', 'local')
+        assert package.component == 'local' or 'license' in d
         assert package.section in ('games'), 'unsupported'
 
         if 'install_to' in d:
@@ -1760,10 +1762,10 @@ class GameData(object):
                          l.write('%s: extra-license-file usr/share/doc/%s/%s\n'
                                  % (package.name, package.name, license_file))
 
-            if package.area == 'local':
+            if package.component == 'local':
                 o.write('It contains proprietary game data '
                         'and must not be redistributed.\n\n')
-            elif package.area == 'non-free':
+            elif package.component == 'non-free':
                 o.write('It contains proprietary game data '
                         'that may be redistributed\nonly under'
                         'conditions specified in\n')
@@ -1812,7 +1814,7 @@ class GameData(object):
             o.write(package.copyright or self.copyright)
             o.write(', with all rights reserved.\n')
 
-            if licenses and package.area == 'local':
+            if licenses and package.component == 'local':
                 o.write('\nThe full license appears in ')
                 o.write(',\n'.join(licenses))
                 o.write('\n')
@@ -2006,10 +2008,10 @@ class GameData(object):
                 control[field] = default_values[field]
 
         assert 'Section' not in control, 'please specify only in YAML'
-        if package.area == 'main':
+        if package.component == 'main':
             control['Section'] = package.section
         else:
-            control['Section'] = package.area + '/' + package.section
+            control['Section'] = package.component + '/' + package.section
 
         if package.architecture != 'all':
             control['Architecture'] = self.get_architecture()
@@ -2083,10 +2085,10 @@ class GameData(object):
             short_desc = package.data_type + ' for "' + longname + '" game'
 
             long_desc =  ' This package was built using game-data-packager.\n'
-            if package.area == 'local':
+            if package.component == 'local':
                 long_desc += ' It contains proprietary game data and must not be redistributed.\n'
                 long_desc += ' .\n'
-            elif package.area == 'non-free':
+            elif package.component == 'non-free':
                 long_desc += ' It contains proprietary game data that may be redistributed\n'
                 long_desc += ' only under some conditions.\n'
                 long_desc += ' .\n'
@@ -2590,16 +2592,16 @@ class GameData(object):
     def construct_package(self, binary):
         return GameDataPackage(binary)
 
-    def check_area(self, package):
+    def check_component(self, package):
         # redistributable packages are redistributable as long as their
         # optional license file is present
-        if package.area == 'local':
+        if package.component == 'local':
             return
         for f in package.optional:
              if not self.files[f].license:
                  continue
              if self.file_status[f] is not FillResult.COMPLETE:
-                 package.area = 'local'
+                 package.component = 'local'
                  return
         return
 
@@ -2610,7 +2612,7 @@ class GameData(object):
         """
         destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
 
-        self.check_area(package)
+        self.check_component(package)
         if not self.fill_dest_dir(package, destdir):
             # FIXME: probably better as an exception?
             return None

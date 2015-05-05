@@ -8,7 +8,7 @@ packages:
     version: '1.0'
     debian:
       provides: soltys-data
-    area: main
+    component: main
     install:
     - vol.cat
     - vol.dat
@@ -20,7 +20,7 @@ packages:
     version: '1.0'
     debian:
       provides: soltys-data
-    area: main
+    component: main
     install:
     - vol.cat_pl
     - vol.dat_pl
@@ -32,7 +32,7 @@ packages:
     version: '1.0'
     debian:
       provides: soltys-data
-    area: main
+    component: main
     install:
     - vol.cat_es
     - vol.dat_es
