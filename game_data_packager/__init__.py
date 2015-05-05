@@ -716,6 +716,26 @@ class GameData(object):
                    'resource.1_106_cd'
                    ), (self.shortname, wanted.name)
 
+        # advertise where to buy games
+        # if it's not already in the help_text
+        gog_url = self.gog.get('url')
+        gog_pp = '22d200f8670dbdb3e253a90eee5098477c95c23d' # ScummVM
+        steam_id = {self.steam.get('id')}
+        for package in self.packages.values():
+            gog_url = package.gog.get('url', gog_url)
+            gog_pp = package.gog.get('pp', gog_pp)
+            steam_id.add(package.steam.get('id'))
+        steam_id.discard(None)
+        www = list()
+        if steam_id and '://store.steampowered.com/' not in self.help_text:
+            www.append('http://store.steampowered.com/app/%s/' % min(steam_id))
+        if gog_url and '://www.gog.com/' not in self.help_text:
+            www.append('http://www.gog.com/game/' + gog_url + '?pp=' + gog_pp)
+        if www:
+            random.shuffle(www)
+            self.help_text += '\nThis game can be bought online here:\n '
+            self.help_text += '\n '.join(www)
+
     def __enter__(self):
         return self
 
