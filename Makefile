@@ -27,10 +27,10 @@ out/%: data/%
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
 out/%.json: data/%.yaml
-	python3 game_data_packager/yaml2json.py $< > $@ || rm -f $@
+	python3 tools/yaml2json.py $< > $@ || rm -f $@
 
 out/bash_completion: $(in_yaml)
-	python3 game_data_packager/bash_completion.py > ./out/bash_completion
+	python3 tools/bash_completion.py > ./out/bash_completion
 	chmod 0644 ./out/bash_completion
 
 out/changelog.gz: debian/changelog
@@ -66,8 +66,8 @@ clean:
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
-	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m game_data_packager.check_syntax
-	LC_ALL=C pyflakes3 game_data_packager/*.py game_data_packager/*/*.py runtime/*.py || :
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_syntax.py
+	LC_ALL=C pyflakes3 game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tools/*.py || :
 
 # Requires additional setup, so not part of "make check"
 manual-check:

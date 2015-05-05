@@ -15,7 +15,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-from . import load_games,GameData,FillResult
+from game_data_packager import (load_games, GameData, FillResult)
 
 games = []
 for name, game in load_games().items():

@@ -18,7 +18,7 @@
 import os
 import yaml
 
-from . import load_games
+from game_data_packager import load_games
 
 if __name__ == '__main__':
     for name, game in load_games().items():
