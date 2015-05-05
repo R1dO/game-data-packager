@@ -24,8 +24,9 @@ packages:
       provides: descent1-full-data
       replaces: descent1-full-data
     gog:
-      # http://www.gog.com/game/${url}
+      # http://www.gog.com/game/${url}?pp=${pp}
       url: descent_1_descent_2
+      pp: fc074d501302eb2b93e2554793fcaf50b3bf7291
     install:
     - descent.hog_full
     - descent.pig_full
