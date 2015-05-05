@@ -1,7 +1,15 @@
 out/game-data-packager        usr/games
 etc/game-data-packager.conf   etc
 etc/*-mirrors                 etc/game-data-packager
-game_data_packager            usr/share/games/game-data-packager
+game_data_packager/games            usr/share/games/game-data-packager/game_data_packager
+game_data_packager/__init__.py      usr/share/games/game-data-packager/game_data_packager
+game_data_packager/__main__.py      usr/share/games/game-data-packager/game_data_packager
+game_data_packager/config.py        usr/share/games/game-data-packager/game_data_packager
+game_data_packager/make_template.py usr/share/games/game-data-packager/game_data_packager
+game_data_packager/paths.py         usr/share/games/game-data-packager/game_data_packager
+game_data_packager/steam.py         usr/share/games/game-data-packager/game_data_packager
+game_data_packager/util.py          usr/share/games/game-data-packager/game_data_packager
+game_data_packager/version.py       usr/share/games/game-data-packager/game_data_packager
 out/*.control.in              usr/share/games/game-data-packager
 out/*.copyright               usr/share/games/game-data-packager
 out/*.copyright.in            usr/share/games/game-data-packager
