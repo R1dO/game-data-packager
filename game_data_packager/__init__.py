@@ -52,6 +52,7 @@ from .util import (MEBIBYTE,
         human_size,
         PACKAGE_CACHE,
         lang_score,
+        ascii_safe,
         which)
 from .version import GAME_PACKAGE_VERSION
 
@@ -2131,9 +2132,11 @@ class GameData(object):
     def add_parser(self, parsers, base_parser, **kwargs):
         aliases = self.aliases
 
+        longname = ascii_safe(self.longname)
+
         parser = parsers.add_parser(self.shortname,
-                help=self.longname, aliases=aliases,
-                description='Package data files for %s.' % self.longname,
+                help=longname, aliases=aliases,
+                description='Package data files for %s.' % longname,
                 epilog=self.help_text,
                 formatter_class=argparse.RawDescriptionHelpFormatter,
                 parents=(base_parser,),

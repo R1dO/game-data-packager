@@ -20,6 +20,7 @@ import os
 import shutil
 import stat
 import subprocess
+import sys
 
 KIBIBYTE = 1024
 MEBIBYTE = KIBIBYTE * KIBIBYTE
@@ -148,3 +149,9 @@ def lang_score(lang):
         return 0
 
     return len(langs) - langs.index(lang)
+
+def ascii_safe(string, force=False):
+    if sys.stdout.encoding != 'UTF-8' or force:
+        string = string.translate(str.maketrans('àäçčéèêëîïíł',
+                                                'aacceeeeiiil'))
+    return string

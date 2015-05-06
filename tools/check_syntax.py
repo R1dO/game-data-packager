@@ -19,9 +19,11 @@ import os
 import yaml
 
 from game_data_packager import load_games
+from game_data_packager.util import ascii_safe
 
 if __name__ == '__main__':
     for name, game in load_games().items():
+        ascii_safe(game.longname, force=True).encode('ascii')
         if 'DEBUG' in os.environ:
             print('# %s -----------------------------------------' % name)
             print(yaml.safe_dump(game.to_yaml()))
