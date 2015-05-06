@@ -92,7 +92,99 @@ packages:
     - resource.map
     - resource.msg
     - version
+files:
+  setup_space_quest.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 0.fon
+    - 10.fon
+    - 100.v56
+    - 1004.v56
+    - 1005.fon
+    - 1006.v56
+    - 1007.fon
+    - 1008.fon
+    - 101.v56
+    - 104.hep
+    - 104.scr
+    - 105.v56
+    - 114.v56
+    - 119.p56
+    - 127.p56
+    - 1307.fon
+    - 133.p56
+    - 137.hep
+    - 137.scr
+    - 142.v56
+    - 160.v56
+    - 1605.fon
+    - 167.v56
+    - 2003.v56
+    - 201.hep
+    - 201.scr
+    - 201.tex
+    - 204.hep
+    - 204.scr
+    - 205.v56
+    - 2099.v56
+    - 2106.fon
+    - 211.v56
+    - 2306.fon
+    - 24.p56
+    - 2407.fon
+    - 2510.fon
+    - 252.v56
+    - 264.v56
+    - 29.v56
+    - 31.p56
+    - 335.hep
+    - 335.scr
+    - 4.fon
+    - 4115.fon
+    - 48.p56
+    - 5.p56
+    - 50.p56
+    - 537.v56
+    - 538.v56
+    - 550.v56
+    - 606.v56
+    - 613.v56
+    - 616.v56
+    - 625.v56
+    - 627.v56
+    - 65535.map
+    - 667.v56
+    - 674.v56
+    - 676.v56
+    - 7.p56
+    - 701.v56
+    - 8.p56
+    - 81.p56
+    - 900.v56
+    - 910.v56
+    - 916.v56
+    - 917.v56
+    - 96.v56
+    - 97.v56
+    - 98.v56
+    - 980.v56
+    - 986.v56
+    - 987.v56
+    - 988.v56
+    - 99.v56
+    - 992.v56
+    - 995.v56
+    - 999.fon
+    - message.map
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.msg
+    - version
+
 cksums: |
+  _ 536147110 setup_space_quest.exe
   _ 1782      0.fon
   _ 1296      10.fon
   _ 52329     100.v56
@@ -135,7 +227,7 @@ cksums: |
   _ 15250     29.v56
   _ 43072     31.p56
   _ 3514      335.hep
-  _ 3050      335.scr
+  _ 3054      335.scr
   _ 1323      4.fon
   _ 3479      4115.fon
   _ 31003     48.p56
@@ -177,8 +269,9 @@ cksums: |
   _ 888406    resource.aud
   _ 6143      resource.map
   _ 125988    resource.msg
-  _ 6         version
+  _ 7         version
 md5sums: |
+  d1909145d2b4007b25c27c4afbb3feac  setup_space_quest.exe
   4ff2dc339352972581da584cc0a8d2f1  0.fon
   33027c81d10c98561510ecca2749cf81  10.fon
   8d6a0376f1bfc5075bf9dcadcc57c159  100.v56
@@ -221,7 +314,7 @@ md5sums: |
   e93c989d283c14b3ba03ff8e25e3db3f  29.v56
   810779c5330dfc6741a277684014dc68  31.p56
   0f18cde9cdface83baa442c4d29f5402  335.hep
-  bdbf393f702e1de9db35667d4154bf80  335.scr
+  09f4b3ad1ce4566d1b09ec5f36a12319  335.scr
   5b0d667b915abab96d23b636cf703b22  4.fon
   ef5f9963c174f9b0201df1920e2d16b5  4115.fon
   017e100468064e8f945b3287a5ea4df1  48.p56
@@ -263,8 +356,9 @@ md5sums: |
   9cd69c7c22ff853d8090f17e1f04da00  resource.aud
   ea937aae231c4acdaeb249dea8f71060  resource.map
   47fec20a4d5d973e4235bab8cea40676  resource.msg
-  f2b0054b79403596c4687dda393ba724  version
+  3dd2fe70870f9ca46d53d5dec17466fc  version
 sha1sums: |
+  2a2ce2807ad71675dd5c2d2fbcf87def8d54dfee  setup_space_quest.exe
   d6ee25304089979ef10658892a5d5d1a58d8a255  0.fon
   efcd7c82cf1b31a8391f34af4cbfc6f291494d63  10.fon
   3b21ba5410e75ddf25042d3873a9f12cfd9470ad  100.v56
@@ -307,7 +401,7 @@ sha1sums: |
   2146d917f6237d018a01160ca6beaaeaeef3852d  29.v56
   7d575f9c1ec0b0eb9148f3cdfee73f932a3cabb2  31.p56
   3f1929e3cc2a233c4194a31a67c0f145afc3971a  335.hep
-  3bab024309dd9eb18245c2a19a581ccc41d46407  335.scr
+  f61cafb21f35291cb42ad9370a07a93a111a61b2  335.scr
   9834736820874245030f854d06e08673aa600922  4.fon
   e3f705b3632b89ae3d02b989f4f17741d106c75f  4115.fon
   47d52abeec080206cd2ee36206fb5ec5f249b602  48.p56
@@ -349,6 +443,6 @@ sha1sums: |
   7affe5977cc225cef61a204c3de9b6b9b92882e2  resource.aud
   694f0971919c592979559cb25c0c37c301f9d895  resource.map
   bc0892ecd7a66d01c2aa33226eb7cdf65713fbb6  resource.msg
-  9afcdb58d4a26f4cd62a9860cd1ca214d51d9698  version
+  c81273a33f221e1fe973dc0b1d1cbd2a0082c422  version
 ...
 
