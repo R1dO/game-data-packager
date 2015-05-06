@@ -152,6 +152,6 @@ def lang_score(lang):
 
 def ascii_safe(string, force=False):
     if sys.stdout.encoding != 'UTF-8' or force:
-        string = string.translate(str.maketrans('àäçčéèêëîïíł',
-                                                'aacceeeeiiil'))
+        string = string.translate(str.maketrans('àäçčéèêëîïíł§',
+                                                'aacceeeeiiil*'))
     return string

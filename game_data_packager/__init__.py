@@ -2137,7 +2137,7 @@ class GameData(object):
         parser = parsers.add_parser(self.shortname,
                 help=longname, aliases=aliases,
                 description='Package data files for %s.' % longname,
-                epilog=self.help_text,
+                epilog=ascii_safe(self.help_text),
                 formatter_class=argparse.RawDescriptionHelpFormatter,
                 parents=(base_parser,),
                 **kwargs)
