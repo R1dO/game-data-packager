@@ -1,6 +1,12 @@
 ---
-longname: "Zork I, II & III"
+longname: "Zork Anthology"
 plugin: z_code
+
+help_text:
+  Zork I,II & III are freely downloadable.
+
+  The "Zork Anthology" also includes "Beyond Zork"
+  and adds "Planetfall" as a bonus.
 
 packages:
   zork1-data:
@@ -29,6 +35,19 @@ packages:
     - zork3.dat
     optional:
     - readme_zork3.txt
+
+  beyondzork-data:
+    longname: "Beyond Zork: The Coconut of Quendor"
+    copyright: © 1987 Infocom
+    install_to: usr/share/games/zork
+    install:
+    - beyondzo.dat
+
+  planetfall-data:
+    longname: Planetfall
+    copyright: © 1983 Infocom
+    install:
+    - planetfa.dat
 
 files:
   zork1.dat:
@@ -79,6 +98,17 @@ files:
     install_to: $docdir
     install_as: readme.txt
 
+  setup_zork_anthology.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - zork1.dat_zip
+    - zork2.dat
+    - zork3.dat
+    - beyondzo.dat
+    - planetfa.dat
+    # Zero Zork
+
 cksums: |
   _ 4711      readme_zork1.txt
   _ 4604      readme_zork2.txt
@@ -90,6 +120,9 @@ cksums: |
   _ 85755     zork2.zip
   _ 92160     zork3.dat
   _ 77155     zork3.zip
+  _ 9752528   setup_zork_anthology.exe
+  _ 276480    beyondzo.dat
+  _ 122880    planetfa.dat
 md5sums: |
   cbe6b6895418efffd7889b3f8152c1da  readme_zork1.txt
   59266a444e892d2849a280790c5227cd  readme_zork2.txt
@@ -101,6 +134,9 @@ md5sums: |
   ab521209656948516351996263a8ad34  zork2.zip
   ffda9ee2d428fa2fa8e75a1914ff6959  zork3.dat
   c1a15e9c56267366fa54476baa6fb7d4  zork3.zip
+  86edb0fefd9c4fbe62f51b869e2a1bec  setup_zork_anthology.exe
+  743c4a97b9c85d89d85d4f1e8e8bfe85  beyondzo.dat
+  d7bbc3de5ad590c3ab641c020a936c41  planetfa.dat
 sha1sums: |
   531c483f975941beb2c2ba067b9765ce4751a1c3  readme_zork1.txt
   6639decd524acbaeae95c0367ba13d6167a3a9e0  readme_zork2.txt
@@ -112,6 +148,9 @@ sha1sums: |
   d4c4be791e6bbb97f486b317a6631c9e92a93b79  zork2.zip
   008441c48b8ffa0c64d78cba5e9735a2045f359d  zork3.dat
   66fe2ac86b5b53406a272b75be3bb0e34c894fff  zork3.zip
+  f51b2c8742817bcd9e7c7c3a208c1b43c06cfadc  setup_zork_anthology.exe
+  835145b092498eba5be24542a0a2aec8e3199557  beyondzo.dat
+  77769447c4c77d100a3ed722f712110e8576bea4  planetfa.dat
 sha256sums: |
   180bb87dc0524c5f7b1ba29ac08cd3e12f75e1c6b5b211b309ce1f01709b2545  readme_zork1.txt
   589dbf8446c0c813aa25c4f10777a2cfd56561d9b27a6af9e53f4cc0fe79c95d  readme_zork2.txt
