@@ -32,13 +32,35 @@ def which(exe):
 
     return None
 
+requirements='''
+--------------------------------------------------------
+
+You need those to make use this launcher:
+* the .wad files from DOOM 2 Master Levels
+* some Doom game engine
+* python3-gi and gir1.2-gtk-3.0
+
+The free parts can be obtained this way:
+  apt-get install doom-engine python3-gi gir1.2-gtk-3.0
+
+The .wad files can be for example bought on Steam:
+http://store.steampowered.com/app/9160/ or found
+on "Doom 3: Resurrection of Evil" Xbox game disc.
+
+The data then need to be put at the right location.
+You can use game-data-packager(6) to automate this.
+
+It will also automatically pick up the data downloaded
+by a windows Steam instance running through Wine.
+'''
+
 # ValueError: Namespace Gtk not available
 try:
     import gi
     gi.require_version('Gtk', '3.0')
     from gi.repository import Gtk, Pango
 except (ImportError,ValueError):
-    message = 'You need to install the packages python3-gi and gir1.2-gtk-3.0'
+    message = 'python3-gi or gir1.2-gtk-3.0 not found!\n' + requirements
     if which('zenity'):
        subprocess.call(['zenity', '--error', '--title=Doom 2 Master Levels', '--text', message])
     elif which('kdialog'):
@@ -249,7 +271,7 @@ class Launcher:
 
     def main(self):
         if not self.engine:
-            message = "This launcher needs some DOOM engine to be installed."
+            message = 'No DOOM engine found!\n' + requirements
             md = Gtk.MessageDialog(self.window, 0, Gtk.MessageType.WARNING,
                                        Gtk.ButtonsType.OK, message)
             md.run()
@@ -259,15 +281,7 @@ class Launcher:
             fullpath = '/usr/share/games/doom/%s.wad' % level
             if not os.path.isfile(fullpath):
                 print('\n')
-                message = fullpath + " is missing !\n\n" \
-                          "This launcher needs the .wad files from DOOM 2 Master Levels\n" \
-                          "These can be for example bought on Steam:\n" \
-                          "http://store.steampowered.com/app/9160/ ;\n" \
-                          "or found on 'Doom 3: Resurrection of Evil' Xbox game disc\n\n" \
-                          "The data then need to be put at the right location,\n" \
-                          "You can use game-data-packager(6) to automate this task.\n" \
-                          "It will also automatically pick up the data downloaded by a\n" \
-                          "windows Steam instance running through Wine."
+                message = fullpath + " is missing !\n" + requirements
                 md = Gtk.MessageDialog(self.window, 0, Gtk.MessageType.WARNING,
                                        Gtk.ButtonsType.OK, message)
                 md.run()
