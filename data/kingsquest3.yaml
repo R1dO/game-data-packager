@@ -1,0 +1,87 @@
+---
+longname: "King's Quest III: To Heir Is Human"
+copyright: © 1986 Sierra On-Line
+plugin: scummvm_common
+gameid: kq3
+
+packages:
+  kingsquest3-data:
+    gog:
+      url: kings_quest_1_2_3
+    install:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - vol.3
+    - words.tok
+    optional:
+    - manual.pdf
+
+files:
+  manual.pdf:
+    install_to: $docdir
+
+  setup_kings_quest_1_2_3.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
+    - manual.pdf
+
+cksums: |
+  _ 390       logdir
+  _ 778       object
+  _ 531       picdir
+  _ 120       snddir
+  _ 756       viewdir
+  _ 78782     vol.0
+  _ 365256    vol.1
+  _ 206032    vol.2
+  _ 13        vol.3
+  _ 5670      words.tok
+
+  _ 16447803  setup_kings_quest_1_2_3.exe
+  _ 2175266   manual.pdf
+md5sums: |
+  d3d17b77b3b3cd13246749231d9473cd  logdir
+  8fc901501e7c92f702bba825e046bd85  object
+  43528321470c1ce3d079452221177fe0  picdir
+  04de53c57fd559be4ba4e8a456428593  snddir
+  c45fa85aafdb15033515dbcf3d8de9f1  viewdir
+  a62df7f089ef95f9e192e2f766e6fd76  vol.0
+  ce8535146099ab43b40438f77ee9b676  vol.1
+  2ed4ada6bdc027c604110c4ee58bb289  vol.2
+  639dd4b81af426c8fc72df6b15d56ba7  vol.3
+  a395c623947245eec25661ff327b601d  words.tok
+
+  df5045d1f5b1b1ed3626bfc9673fab7a  setup_kings_quest_1_2_3.exe
+  02cc410606a44150dc0c168f27c137df  manual.pdf
+sha1sums: |
+  dbcf95fbd09e8c6b9f25f692dd888870863c8c81  logdir
+  88906eb6382077b06d63c56ebb4c26e5c7ba5e83  object
+  4a209a096e076c3abe6deec3dec3fbec954cab83  picdir
+  055297c883a2d32ab3092adbfdd168c4965a66bf  snddir
+  98d62ede1ba37d0e831230b30ea2f9eec445c4d5  viewdir
+  77ea4e5ba6443b94b0f2eb0df10f727d06ae5733  vol.0
+  36179b1c2e1f67a72748ed8b3a47fabf34362cb0  vol.1
+  51094babce11ad1a73e1d82f968d5053062cc76b  vol.2
+  4bc77d2df5cdc866542699e831201598e163c68d  vol.3
+  df90e8eade5738af377f15214a1c66c937ac7925  words.tok
+
+  437c29cf0c21a551a0bdfe6c0be614492096afe0  setup_kings_quest_1_2_3.exe
+  bf86d78a0c794ea30da7180183c0b21367cf13d6  manual.pdf
+...
+
