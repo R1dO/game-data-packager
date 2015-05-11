@@ -2045,7 +2045,12 @@ class GameData(object):
         breaks = read_control_set(package, control, 'Breaks')
 
         if package.expansion_for:
-            depends.add(package.expansion_for)
+            # check if default heuristic has been overriden in yaml
+            for p in depends:
+                if package.expansion_for == p.split()[0]:
+                    break
+            else:
+                depends.add(package.expansion_for)
         if package.engine:
             recommends.add(package.engine)
         elif not package.expansion_for and self.engine:

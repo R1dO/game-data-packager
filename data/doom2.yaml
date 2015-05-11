@@ -48,6 +48,7 @@ packages:
       id: 9160
       path: "common/Master Levels of Doom"
     debian:
+      depends: doom2-wad | freedoom
       recommends: game-data-packager
     install_to: usr/share/games/doom
     symlinks:
