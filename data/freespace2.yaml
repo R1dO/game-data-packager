@@ -4,6 +4,9 @@ genre: Flight simulator
 engine: freespace2
 compress_deb: false
 
+# FS2.bmp & mod.ini
+try_repack_from: [usr/share/games/freespace2-open/packages/freespace2-data-gog/debian]
+
 # http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/tree/debian/packages/freespace2-data-gog/debian/install
 # http://homepage.ntlworld.com/karajorma/FAQ/hotu.html
 # http://ubuntuforums.org/archive/index.php/t-2064726.html
@@ -205,7 +208,7 @@ packages:
 
 files:
   fs2_ogg.zip:
-    download: http://www.freespacemods.net/request.php?128
+    #download: http://www.freespacemods.net/request.php?128
     unpack:
       format: zip
     provides:
@@ -504,7 +507,7 @@ files:
     download: http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/plain/debian/packages/freespace2-data-gog/debian/mod.ini
     distinctive_name: false
   FS2.bmp:
-    download: http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/tree/debian/packages/freespace2-data-gog/debian/FS2.bmp
+    download: http://anonscm.debian.org/cgit/users/onlyjob/freespace2.git/plain/debian/packages/freespace2-data-gog/debian/FS2.bmp
 
   tango1_fs2.vp:
     distinctive_name: false
