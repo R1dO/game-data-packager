@@ -108,6 +108,9 @@ def do_one_dir(destdir,lower):
         if dir_l.endswith('/data.now'):
             logger.warning('ignoring Sold Out runtime at %s' % dirpath)
             continue
+        if dir_l.endswith('/scummvm'):
+            logger.warning('ignoring ScummVM runtime at %s' % dirpath)
+            continue
         if '/directx/' in dir_l or '/data.now/' in dir_l:
             continue
 
