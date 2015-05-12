@@ -10,7 +10,6 @@ packages:
     - wolf3d-v12-data
     - wolf3d-v14-data
     debian:
-      provides: wolf3d-data
       replaces: wolf3d-data-wl1
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
@@ -25,11 +24,14 @@ packages:
     license:
     - vendor.doc
 
+  # virtual package wolf3d-data = any provider of full Wolf3D game
+
   wolf3d-v12-data:
     longname: Wolfenstein 3D v1.2
     better_version: wolf3d-v14-data
     debian:
       provides: wolf3d-data
+      #conflicts: wolf3d-data
       conflicts: [wolf3d-v14-data, wolf3d-full-v14-data, wolf3d-full-v12-data]
     install_to: usr/share/games/wolf3d
     install:
@@ -45,19 +47,19 @@ packages:
   wolf3d-v14-data:
     longname: Wolfenstein 3D v1.4
     debian:
-      provides: [wolf3d-data, wolf3d-full-v14-data]
-      conflicts: [wolf3d-v12-data, wolf3d-full-v12-data, wolf3d-full-v14-data]
+      provides: wolf3d-data
+      #conflicts: wolf3d-data
+      conflicts: [wolf3d-v12-data, wolf3d-full-v12-data]
       replaces: wolf3d-full-v14-data
     steam:
       id: 2270
       path: common/Wolfenstein 3D
     install_to: usr/share/games/wolf3d
-    install_files_from_cksums: |
-      583668161  1156   audiohed.wl6
-      1281390593 320209 audiot.wl6
-      3277084604 150652 gamemaps.wl6
-      3907041798 402    maphead.wl6
     install:
+    - audiohed.wl6
+    - audiot.wl6
+    - gamemaps.wl6
+    - maphead.wl6
     - vgadict.wl6
     - vgagraph.wl6
     - vgahead.wl6
