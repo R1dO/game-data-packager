@@ -1,0 +1,71 @@
+---
+copyright: © 1991 Coktel Vision
+plugin: scummvm_common
+gameid: gob1
+
+packages:
+  gobliiins-data:
+    gog:
+      url: 
+    install:
+    - intro.stk
+    - disk1.stk
+    - disk2.stk
+    - disk3.stk
+    - disk4.stk
+
+  gobliiins-demo-data:
+    demo_for: gobliiins-data
+    gameid: gob
+    install:
+    - intro.stk_demo
+    - disk1.stk_demo
+
+files:
+  gob1-amiga_demo_en.zip:
+    download: http://sourceforge.net/projects/scummvm/files/demos/gob/gob1-amiga_demo_en.zip/download
+    unpack:
+      format: zip
+    provides:
+    - intro.stk_demo
+    - disk1.stk_demo
+  intro.stk_demo:
+    look_for: [intro.stk]
+    install_as: intro.stk
+  disk1.stk_demo:
+    look_for: [disk1.stk]
+    install_as: disk1.stk
+
+cksums: |
+  _ 233466    intro.stk
+  _ 496145    disk1.stk
+  _ 628628    disk2.stk
+  _ 644169    disk3.stk
+  _ 571911    disk4.stk
+
+  _ 397243    gob1-amiga_demo_en.zip
+  _ 201584    intro.stk_demo
+  _ 300871    disk1.stk_demo
+
+md5sums: |
+  a5e232fcd02733c7dffff107d22d36eb  intro.stk
+  604cbe12f143cc841223d0670f6428eb  disk1.stk
+  aefab95365d966d1413d72c57267db38  disk2.stk
+  e8e4151705f87a515a309d225f83a01f  disk3.stk
+  3cde14de82a30dc559e00e7ef7fade88  disk4.stk
+
+  70ceb406fa9b5a93a574423d47e93b8b  gob1-amiga_demo_en.zip
+  26de406cb09228d902274446a6a2eceb  intro.stk_demo
+  295b44ca477e1800a7c482dd85de5f45  disk1.stk_demo
+sha1sums: |
+  d47e61885f54c8fb78522ddac64c187a53eed9bc  intro.stk
+  057f1a87a8ab84e6b57f8232d71fda234f75e5e6  disk1.stk
+  511d38f9fb771523d1f083ee2c988a79848c6e58  disk2.stk
+  63a5a56e8e614a0d5ea412fcffb60d8dc9add257  disk3.stk
+  3ae45a39c953820d439df3afff68ef2605ba9612  disk4.stk
+
+  44dd46a2f149502331d793de692e00fa61a5dce1  gob1-amiga_demo_en.zip
+  01260678d12ea393c32a72bb13e418f7e7cd4322  intro.stk_demo
+  1e339634094ece3dcde8b0b2549edbbd419fd82d  disk1.stk_demo
+...
+
