@@ -42,6 +42,10 @@ class ScummvmGameData(GameData):
         if self.genre is None:
             self.genre = 'Adventure'
 
+    def _populate_package(self, package, d):
+        super(ScummvmGameData, self)._populate_package(package, d)
+        package.gameid = d.get('gameid')
+
     def fill_extra_files(self, package, destdir):
         super(ScummvmGameData, self).fill_extra_files(package, destdir)
         if package.type == 'expansion':
@@ -55,7 +59,7 @@ class ScummvmGameData(GameData):
                     encoding='utf-8'),
                         open(os.path.join(appdir, '%s.desktop' % package.name),
                             'w', encoding='utf-8'),
-                        GAME=self.gameid,
+                        GAME=package.gameid or self.gameid,
                         PATH=package.install_to,
                         LONG=(package.longname or self.longname))
 
