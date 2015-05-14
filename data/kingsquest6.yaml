@@ -84,6 +84,8 @@ files:
   setup_kings_quest_4_5_6.exe:
     unpack:
       format: innoextract
+      include:
+      - "Kings Quest 6"
     provides:
     - 420.hep
     - 420.scr

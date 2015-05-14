@@ -700,6 +700,9 @@ class GameData(object):
                     assert len(wanted.provides) == 1, filename
                     assert isinstance(wanted.unpack['other_parts'],
                             list), filename
+                if 'include' in wanted.unpack:
+                    assert isinstance(wanted.unpack['include'],
+                            list), filename
 
             if wanted.alternatives:
                 for alt in wanted.alternatives:
@@ -1573,10 +1576,19 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['innoextract', '--silent',
-                        '--language', 'english',
-                        '--lowercase', '-T', 'local', '-d', '.',
-                        os.path.abspath(found_name)], cwd=tmpdir)
+                    cmdline = ['innoextract', '--silent',
+                               '--language', 'english',
+                               '-T', 'local',
+                               '-d', tmpdir,
+                               os.path.abspath(found_name)]
+                    version = subprocess.check_output(['innoextract', '-v'],
+                                            universal_newlines=True)[12:15]
+                    if version != '1.4':
+                        include = provider.unpack.get('include')
+                        for i in include:
+                            cmdline.append('-I')
+                            cmdline.append(i)
+                    subprocess.check_call(cmdline)
                     # for at least Theme Hospital the files we want are
                     # actually in subdirectories, so we search recursively
                     self.consider_file_or_dir(tmpdir)

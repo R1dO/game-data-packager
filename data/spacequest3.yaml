@@ -19,10 +19,10 @@ packages:
 files:
   manual.pdf:
     install_to: $docdir
-    distinctive_name: false
   setup_space_quest_1_2_3.exe:
     unpack:
       format: innoextract
+      include: ["Space Quest 3"]
     provides:
     - resource.001
     - resource.002

@@ -24,32 +24,12 @@ packages:
     - manual.pdf
 
 files:
-  # generic names for AGI engine games
-  logdir:
-    distinctive_name: false
-  object:
-    distinctive_name: false
-  picdir:
-    distinctive_name: false
-  snddir:
-    distinctive_name: false
-  viewdir:
-    distinctive_name: false
-  vol.0:
-    distinctive_name: false
-  vol.1:
-    distinctive_name: false
-  vol.2:
-    distinctive_name: false
-  words.tok:
-    distinctive_name: false
-
   manual.pdf:
     install_to: $docdir
-    distinctive_name: false
   setup_space_quest_1_2_3.exe:
     unpack:
       format: innoextract
+      include: ["Space Quest 1"]
     provides:
     - logdir
     - object

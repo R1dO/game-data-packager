@@ -101,6 +101,12 @@ files:
   setup_zork_anthology.exe:
     unpack:
       format: innoextract
+      include:
+      - DATA/ZORK1.DAT
+      - DATA/ZORK2.DAT
+      - DATA/ZORK3.DAT
+      - BEYONDZO.DAT
+      - PLANETFA.DAT
     provides:
     - zork1.dat_zip
     - zork2.dat
