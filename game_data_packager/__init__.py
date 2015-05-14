@@ -1584,7 +1584,7 @@ class GameData(object):
                     version = subprocess.check_output(['innoextract', '-v'],
                                             universal_newlines=True)[12:15]
                     if version != '1.4':
-                        include = provider.unpack.get('include')
+                        include = provider.unpack.get('include', [])
                         for i in include:
                             cmdline.append('-I')
                             cmdline.append(i)
