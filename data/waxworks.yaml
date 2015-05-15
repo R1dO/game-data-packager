@@ -479,6 +479,8 @@ files:
   setup_waxworks.exe:
     unpack:
       format: innoextract
+      include:
+      - /app
     provides:
     - 001.vga
     - 002.vga
