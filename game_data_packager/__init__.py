@@ -1581,8 +1581,8 @@ class GameData(object):
                                '-T', 'local',
                                '-d', tmpdir,
                                os.path.abspath(found_name)]
-                    version = subprocess.check_output(['innoextract', '-v'],
-                                            universal_newlines=True)[12:15]
+                    version = subprocess.check_output(['innoextract', '-v', '-s'],
+                                                      universal_newlines=True)
                     if version != '1.4':
                         include = provider.unpack.get('include', [])
                         for i in include:
