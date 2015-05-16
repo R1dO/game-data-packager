@@ -10,10 +10,10 @@ packages:
     debian:
       conflicts: [descent1-full-data, descent1-data]
     install:
-    - descent.hog
-    - descent.pig
+    - descent.hog_demo
+    - descent.pig_demo
     optional: 
-    - readme.txt
+    - readme.txt_demo
     - refcard.txt
     - d1xr-hires.dxa
     install_to: usr/share/games/d1x-rebirth/
@@ -33,8 +33,8 @@ packages:
       id: 273570
       path: common/Descent
     install:
-    - descent.hog_full
-    - descent.pig_full
+    - descent.hog
+    - descent.pig
     optional:
     - chaos.hog
     - chaos.msn
@@ -43,15 +43,16 @@ packages:
     - miniboss.dem
     - descent.faq
     - manual.pdf
-    - readme.txt_full
+    - readme.txt
     - refcard.pdf
     - d1xr-hires.dxa
     install_to: usr/share/games/d1x-rebirth/
 
 files:
-  readme.txt:
+  readme.txt_demo:
     install_to: $docdir
     distinctive_name: false
+    install_as: readme.txt
   refcard.txt:
     install_to: $docdir  
 
@@ -60,9 +61,9 @@ files:
     unpack:
       format: tar.gz
     provides:
-    - descent.hog
-    - descent.pig
-    - readme.txt
+    - descent.hog_demo
+    - descent.pig_demo
+    - readme.txt_demo
     - refcard.txt
 
   d1xr-hires.dxa:
@@ -70,10 +71,10 @@ files:
     provides:
     - d1xr-hires.dxa
     
-  descent.hog_full:
+  descent.hog_demo:
     install_as: descent.hog
 
-  descent.pig_full:
+  descent.pig_demo:
     install_as: descent.pig
 
   desc14sw.exe:
@@ -84,9 +85,9 @@ files:
       format: zip
   descent1.sow:
     provides:
-    - descent.hog
-    - descent.pig
-    - readme.txt
+    - descent.hog_demo
+    - descent.pig_demo
+    - readme.txt_demo
     - refcard.txt
     unpack:
       format: arj
@@ -105,9 +106,8 @@ files:
   refcard.pdf:
     install_to: $docdir
     distinctive_name: false
-  readme.txt_full:
+  readme.txt:
     install_to: $docdir
-    install_as: readme.txt
 
   setup_descent_1_2.exe:
     unpack:
@@ -120,8 +120,8 @@ files:
       # 25M     descent/setup_descent_2.1.0.8.exe
       # 529M    descent_2/setup_descent2_2.1.0.10.exe
     provides:
-    - descent.hog_full
-    - descent.pig_full
+    - descent.hog
+    - descent.pig
     - chaos.hog
     - chaos.msn
     - descent.dem
@@ -129,7 +129,7 @@ files:
     - miniboss.dem
     - descent.faq
     - manual.pdf
-    - readme.txt_full
+    - readme.txt
     - refcard.pdf
 
   # new unbundled GOG archive as of 2015/05/16
@@ -149,8 +149,8 @@ files:
       - readme.txt
       - RefCard.pdf
     provides:
-    - descent.hog_full
-    - descent.pig_full
+    - descent.hog
+    - descent.pig
     - chaos.hog
     - chaos.msn
     - descent.dem
@@ -158,14 +158,14 @@ files:
     - miniboss.dem
     - descent.faq
     - manual.pdf
-    - readme.txt_full
+    - readme.txt
     - refcard.pdf
 
 cksums: |
-  _ 2339773   descent.hog
-  _ 5092871   descent.pig
+  _ 2339773   descent.hog_demo
+  _ 5092871   descent.pig_demo
   # optional doc
-  _ 53079     readme.txt
+  _ 53079     readme.txt_demo
   _ 2991      refcard.txt
 
   _ 2893467   desc14sw.tar.gz
@@ -178,8 +178,8 @@ cksums: |
   _ 1426884   d1xr-hires.dxa
 
   #full game
-  _ 6856701   descent.hog_full
-  _ 4920305   descent.pig_full
+  _ 6856701   descent.hog
+  _ 4920305   descent.pig
   _ 174751    chaos.hog
   _ 309       chaos.msn
   _ 2211582   descent.dem
@@ -187,23 +187,23 @@ cksums: |
   _ 273939    level18.dem
   _ 6509102   manual.pdf
   _ 403783    miniboss.dem
-  _ 11283     readme.txt_full
+  _ 11283     readme.txt
   _ 44849     refcard.pdf
   _ 578313965 setup_descent_1_2.exe
   _ 25876928  setup_descent_2.1.0.8.exe
 
 md5sums: |
-  cf1caf9c7a0681de80fac8cb593b33eb  descent.hog
-  f8dc0f2b3ee8baa2c622f57b470fe147  descent.pig
-  b647aded11632d44943e01a53e660320  readme.txt
+  cf1caf9c7a0681de80fac8cb593b33eb  descent.hog_demo
+  f8dc0f2b3ee8baa2c622f57b470fe147  descent.pig_demo
+  b647aded11632d44943e01a53e660320  readme.txt_demo
   f531aea2b8cdf805815d0c84ae1353a2  refcard.txt
   4aa5ea2fb66f893e195304cc6efae542  desc14sw.tar.gz
   c36ccd1f35841403a68a8359eb2a01d5  desc14sw.exe
   c60e75c7f1f4fa5f9000710a501dcb76  descent1.sow
   90d2cd03b8b6b2ec44ad3390416ee1cc  descent2.sow
   7d978ce3875995e54cbf426167e88b94  d1xr-hires.dxa
-  c792a21a30b869b1ec6d31ad64e9557e  descent.hog_full
-  fa7e48b7b1495399af838e31ac13b7da  descent.pig_full
+  c792a21a30b869b1ec6d31ad64e9557e  descent.hog
+  fa7e48b7b1495399af838e31ac13b7da  descent.pig
   42dd3b986ed1dfc89b88caafafd7f0e9  chaos.hog
   b426bdb95acdf7dddde503ad079e3a94  chaos.msn
   94ae727846dcc3edc67ee2b2386d8d82  descent.dem
@@ -211,24 +211,24 @@ md5sums: |
   3b7f279dd98516fed4fc4fb7e3a1ad92  level18.dem
   73e84e14b76984a44d9f8be958180632  manual.pdf
   b020ebe178c244786b310cf2739511b6  miniboss.dem
-  e05c81f46044a60bf8f21761e71d7260  readme.txt_full
+  e05c81f46044a60bf8f21761e71d7260  readme.txt
   2ab2049a1533f3da1b6b9d1353173f98  refcard.pdf
   a16f246783339962eb5bc0d6e630952b  setup_descent_1_2.exe
   #61220cf9d83a8ef81e032461c1d02d8b  setup_descent_1_2.exe_old
   c3fe34d48407201d6da65ae85b8e2e6b  setup_descent_2.1.0.8.exe
 
 sha1sums: |
-  6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog
-  c1be2e728c8cdfb03e3fcaab870b7a6b01e016ba  descent.pig
-  e242a53584f1fea6359f5562e8c72dfbd8460b15  readme.txt
+  6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog_demo
+  c1be2e728c8cdfb03e3fcaab870b7a6b01e016ba  descent.pig_demo
+  e242a53584f1fea6359f5562e8c72dfbd8460b15  readme.txt_demo
   763e322433bb0873b3497384c64c2762be25f8cd  refcard.txt
   a79c32c8fcdbf10968476e47881aad4ade613dbe  desc14sw.tar.gz
   0364a8280b8c10ccab009cf7ab8bb64ab6c27d90  desc14sw.exe
   3913a034ff4a2c98ab6564788d05c7532a1488a5  descent1.sow
   08a259fdd27acc8c2be9943dee619479aa767369  descent2.sow
   0a86f9d74caf8f5ea419a5764f0af976e8d57e09  d1xr-hires.dxa
-  4d6fb40e943f92574aba2c9fc1574330de89905b  descent.hog_full
-  53f6453d5a836cf660c6dcca0f636d46a28ee20c  descent.pig_full
+  4d6fb40e943f92574aba2c9fc1574330de89905b  descent.hog
+  53f6453d5a836cf660c6dcca0f636d46a28ee20c  descent.pig
   85d6ffca86b3458b9349e4ece4615bf825baf7e9  chaos.hog
   20cf5157d021e456551478d40fa9cdea725c2a21  chaos.msn
   66fe4488eef250d3cd8a834f58e32fba023d4be7  descent.dem
@@ -236,23 +236,23 @@ sha1sums: |
   812d0639f7a258737f7760c1f6f8dad2d76d52f7  level18.dem
   f316870973120ec84d0ffa1bdd116eaf72367b81  manual.pdf
   cc468111d9e12c152d2eeb9fdcfb191dd4517c04  miniboss.dem
-  dc69e5e85cea469263cef7e62c81ba2119a88b35  readme.txt_full
+  dc69e5e85cea469263cef7e62c81ba2119a88b35  readme.txt
   88a4f0dc9957ee4fee8cbe3ed9baae730e7192c7  refcard.pdf
   d33934e3034091073828f74859f39a71b118532c  setup_descent_1_2.exe
   c0d429158a23528df4c9006d8d06afeb32c91f56  setup_descent_2.1.0.8.exe
 
 sha256sums: |
-  26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog
-  b67865e513452a35887a20270d17fdfb5af1a2edaaae247bc523489f1d84f9ac  descent.pig
-  28bc52300f6144b114ea0d5afde5139fc0a5ac7090e44eed49e22c3bcd719a5c  readme.txt
+  26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog_demo
+  b67865e513452a35887a20270d17fdfb5af1a2edaaae247bc523489f1d84f9ac  descent.pig_demo
+  28bc52300f6144b114ea0d5afde5139fc0a5ac7090e44eed49e22c3bcd719a5c  readme.txt_demo
   46bd7a21fb48228590918a7883735bfce86cfb924caed6b387b0dbf76ee924e3  refcard.txt
   8b65eda01d03401d7a2dc71976528fbb7e0b07a93ce8ee0a9f1d9103623ae249  desc14sw.tar.gz
   3dadb7fbc01efce2904d0908c55d9a9cf1f402e83bf771970552efaca15efcb0  desc14sw.exe
   cee9ee57fbd1af8e08d3cd0b409cc1fa4a9d44c7bbced3f28669be98ae45721c  descent1.sow
   669dc44c9f5b4b4061f698488341fb9540e409b35f6da7ce6b9eeba53c1c001f  descent2.sow
   b30a164fa9c6dff05eda6d50f777777df843968d32053f5cc9453fe89d5bed19  d1xr-hires.dxa
-  83d76ff0c46bb2e7348a49bdd287ad764abeda0d851bfb16b42c1ede93b21052  descent.hog_full
-  093f9cc029200e9d71d5e14f2f06e5e876a658dd64dc664d6911c5d24d7b64fe  descent.pig_full
+  83d76ff0c46bb2e7348a49bdd287ad764abeda0d851bfb16b42c1ede93b21052  descent.hog
+  093f9cc029200e9d71d5e14f2f06e5e876a658dd64dc664d6911c5d24d7b64fe  descent.pig
   0c5fb0684443c0b9c4dbb2769db65b8460bdad4ca80d58a943396fd07c001ba4  chaos.hog
   9f6ed0de3b9c5aea3f609598fc8cd3ae959594a1399d38714b5fd3d9522de819  chaos.msn
   3ed575389e80953bcd0953f71344f036398ceb1f12aef044188d4f8ccb8aaaed  descent.dem
@@ -260,7 +260,7 @@ sha256sums: |
   54d475393390f5a9e8170fff0527a713cac76e8ab8152507c7ee1c5e57bc1bee  level18.dem
   3fc0c9f25b83782e22d80519f74aa005866415f6263f9236f6243f5214f5dfe0  manual.pdf
   78284a7cf9fd894b401bfdb95e12b2d0564a5b8e563762ea034f7dac9a2a517a  miniboss.dem
-  588e13d82ddc7641bc59b14407381e4bd43d52aedb2e33372fef7e61f4f46cbc  readme.txt_full
+  588e13d82ddc7641bc59b14407381e4bd43d52aedb2e33372fef7e61f4f46cbc  readme.txt
   edc7126f5d9486d31aa80a13fce7449bcbc4a62303201d48fed139fa8378fdb6  refcard.pdf
   622e130554a0442332071b0f866c4bf4e769b0cc8ed96419140f956d83291864  setup_descent_1_2.exe
 ...
