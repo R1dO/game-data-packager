@@ -28,7 +28,7 @@ files:
   setup_kings_quest_1_2_3.exe:
     unpack:
       format: innoextract
-      include: ["kings quest 1"]
+      prefix: "Kings Quest 1"
     provides:
     - logdir
     - object

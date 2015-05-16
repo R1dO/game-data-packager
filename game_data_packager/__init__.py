@@ -1584,14 +1584,18 @@ class GameData(object):
                                os.path.abspath(found_name)]
                     version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
-                    if version != '1.4':
-                        include = provider.unpack.get('include', [])
-                        if '$provides' in include:
-                            include.remove('$provides')
-                            include += provider.provides
-                        for i in include:
+                    if version != '1.4' and 'FIXME' not in to_unpack:
+                        prefix = provider.unpack.get('prefix', '')
+                        if prefix and not prefix.endswith('/'):
+                            prefix += '/'
+                        if '$provides' in to_unpack:
+                            to_unpack.remove('$provides')
+                            to_unpack += provider.provides
+                        for i in to_unpack:
                             cmdline.append('-I')
-                            cmdline.append(i)
+                            if i[0] != '/':
+                                i = prefix + i
+                            cmdline.append(i.lower())
                     subprocess.check_call(cmdline)
                     # for at least Theme Hospital the files we want are
                     # actually in subdirectories, so we search recursively

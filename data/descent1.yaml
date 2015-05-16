@@ -112,13 +112,6 @@ files:
   setup_descent_1_2.exe:
     unpack:
       format: innoextract
-      # include:
-      # - FIXME
-      # adding a list of files/paths to extract
-      # would provide a great speed-up and reduce /tmp
-      # usage, as descent2 assests dwarfs descent1 ones
-      # 25M     descent/setup_descent_2.1.0.8.exe
-      # 529M    descent_2/setup_descent2_2.1.0.10.exe
     provides:
     - descent.hog
     - descent.pig
@@ -136,8 +129,6 @@ files:
   setup_descent_2.1.0.8.exe:
     unpack:
       format: innoextract
-      include:
-      - $provides
     provides:
     - descent.hog
     - descent.pig

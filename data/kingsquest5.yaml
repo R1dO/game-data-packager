@@ -43,8 +43,7 @@ files:
   setup_kings_quest_4_5_6.exe:
     unpack:
       format: innoextract
-      include:
-      - "kings quest 5"
+      prefix: "Kings Quest 5"
     provides:
     - 0.scr
     - 0.tex

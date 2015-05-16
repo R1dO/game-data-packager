@@ -24,9 +24,10 @@ files:
   setup_kings_quest_4_5_6.exe:
     unpack:
       format: innoextract
-      include:
-      - "kings quest 4"
-      - manual.pdf
+      prefix: "Kings Quest 4"
+      unpack:
+      - $provides
+      - /app/manual.pdf
     provides:
     - resource.001
     - resource.002

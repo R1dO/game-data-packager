@@ -154,16 +154,9 @@ files:
   setup_arx_fatalis.exe:
     unpack:
       format: innoextract
-      include:
-      - graph
-      - misc
-      - data.pak
-      - data2.pak
-      - loc.pak
-      - sfx.pak
-      - speech.pak
-      - manual.pdf
-      - map.pdf
+      unpack:
+      - $provides
+      - arx.ttf
     provides:
     - data2.pak
     - graph/interface/misc/arkane.bmp
@@ -209,13 +202,9 @@ files:
     download: http://arx.vg/ArxFatalis_1.21_MULTILANG.exe
     unpack:
       format: innoextract
-      include:
-      - graph
-      - misc
-      - data2.pak
-      - loc.pak
-      - manual.pdf
-      - map.pdf
+      unpack:
+      - $provides
+      - arx.ttf
     provides:
     - data2.pak
     - graph/interface/misc/arkane.bmp

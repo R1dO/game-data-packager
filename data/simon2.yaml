@@ -24,8 +24,6 @@ files:
   setup_simon_the_sorcerer_2.exe:
     unpack:
       format: innoextract
-      include:
-      - $provides
     provides:
     - gsptr30
     - icon.dat

@@ -101,8 +101,7 @@ files:
   setup_zork_anthology.exe:
     unpack:
       format: innoextract
-      include:
-      # '$provides' would match save/zork#.dat too
+      unpack:
       - data/zork1.dat
       - data/zork2.dat
       - data/zork3.dat

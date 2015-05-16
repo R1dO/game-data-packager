@@ -27,7 +27,7 @@ files:
   setup_space_quest_1_2_3.exe:
     unpack:
       format: innoextract
-      include: ["space quest 2"]
+      prefix: "Space quest 2"
     provides:
     - logdir
     - object

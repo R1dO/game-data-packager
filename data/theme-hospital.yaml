@@ -1901,6 +1901,9 @@ files:
     - sound/ultra.mdi
 
   setup_theme_hospital_2.0.0.5.exe:
+    unpack:
+      format: innoextract
+      unpack: [FIXME]
     provides:
     - anims/320x2401.smk
     - anims/320x2402.smk
@@ -2345,8 +2348,6 @@ files:
     - sound/sndsys.dig
     - sound/ultra.dig
     - sound/ultra.mdi
-    unpack:
-      format: innoextract
 
 cksums: |
   _ 872896    anims/320x2401.smk
