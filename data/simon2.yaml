@@ -25,13 +25,7 @@ files:
     unpack:
       format: innoextract
       include:
-      - GSPTR30
-      - ICON.DAT
-      - SIMON2.GME
-      - SIMON2.WAV
-      - STRIPPED.TXT
-      - TBLLIST
-      - manual.pdf
+      - $provides
     provides:
     - gsptr30
     - icon.dat

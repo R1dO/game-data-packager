@@ -102,11 +102,12 @@ files:
     unpack:
       format: innoextract
       include:
-      - DATA/ZORK1.DAT
-      - DATA/ZORK2.DAT
-      - DATA/ZORK3.DAT
-      - BEYONDZO.DAT
-      - PLANETFA.DAT
+      # '$provides' would match save/zork#.dat too
+      - data/zork1.dat
+      - data/zork2.dat
+      - data/zork3.dat
+      - beyondzo.dat
+      - planetfa.dat
     provides:
     - zork1.dat_zip
     - zork2.dat

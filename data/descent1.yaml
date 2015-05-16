@@ -137,17 +137,7 @@ files:
     unpack:
       format: innoextract
       include:
-      - DESCENT.HOG
-      - DESCENT.PIG
-      - CHAOS.HOG
-      - CHAOS.MSN
-      - DESCENT.DEM
-      - LEVEL18.DEM
-      - MINIBOSS.DEM
-      - DESCENT.FAQ
-      - Manual.pdf
-      - readme.txt
-      - RefCard.pdf
+      - $provides
     provides:
     - descent.hog
     - descent.pig

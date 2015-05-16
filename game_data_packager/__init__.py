@@ -1579,12 +1579,16 @@ class GameData(object):
                     cmdline = ['innoextract', '--silent',
                                '--language', 'english',
                                '-T', 'local',
+                               '--lowercase',
                                '-d', tmpdir,
                                os.path.abspath(found_name)]
                     version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
                     if version != '1.4':
                         include = provider.unpack.get('include', [])
+                        if '$provides' in include:
+                            include.remove('$provides')
+                            include += provider.provides
                         for i in include:
                             cmdline.append('-I')
                             cmdline.append(i)
