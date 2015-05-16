@@ -19,6 +19,9 @@ packages:
     gog:
       url: descent_1_descent_2
       pp: fc074d501302eb2b93e2554793fcaf50b3bf7291
+    steam:
+      id: 273580
+      path: "common/Descent 2"
     debian:
       conflicts: descent2-full-data
       provides: descent2-full-data
@@ -75,9 +78,64 @@ files:
   refcard.pdf:
     install_to: $docdir
     distinctive_name: false
+
   setup_descent_1_2.exe:
     unpack:
       format: innoextract
+      # include: FIXME
+    provides:
+    - alien1.pig
+    - alien2.pig
+    - demos/descent2.dem
+    - descent2.ham
+    - descent2.hog
+    - descent2.s11
+    - descent2.s22
+    - fire.pig
+    - groupa.pig
+    - ice.pig
+    - water.pig
+    # movies
+    - intro-h.mvl
+    - other-h.mvl
+    - robots-h.mvl
+    - robots-l.mvl
+    - missions/d2-2plyr.hog
+    - missions/d2-2plyr.mn2
+    - missions/d2chaos.hog
+    - missions/d2chaos.mn2
+    - manual.pdf
+    - readme.txt_full
+    - refcard.pdf
+
+  setup_descent2_2.1.0.10.exe:
+    unpack:
+      format: innoextract
+      # must specify all needed files to avoid to extract huge file:
+      # - "app/DESCENT_II.gog" (427 MiB)
+      # described in DESCENT_II.inst as beeing an audio-cd rip,
+      # which is itself used in dosboxDescent2_client.conf
+      # 'imgmount d "..\DESCENT_II.inst" -t iso -fs iso'
+      include:
+      - ALIEN1.PIG
+      - ALIEN2.PIG
+      - descent2.dem
+      - DESCENT2.HAM
+      - DESCENT2.HOG
+      - DESCENT2.S11
+      - DESCENT2.S22
+      - FIRE.PIG
+      - GROUPA.PIG
+      - ICE.PIG
+      - WATER.PIG
+      - INTRO-H.MVL
+      - OTHER-H.MVL
+      - ROBOTS-H.MVL
+      - ROBOTS-L.MVL
+      - MISSIONS
+      - Manual.pdf
+      - readme.txt
+      - RefCard.pdf
     provides:
     - alien1.pig
     - alien2.pig
@@ -134,6 +192,7 @@ cksums: |
   _ 5087804   robots-l.mvl
   _ 4833463   water.pig
   _ 578313965 setup_descent_1_2.exe
+  _ 554371624 setup_descent2_2.1.0.10.exe
 
 md5sums: |
   221f42d8896ccef096bb32eccb295d36  d2demo.dem
@@ -166,6 +225,7 @@ md5sums: |
   4722f02a4c5bfb3b17fe8da8d4141191  water.pig
   a16f246783339962eb5bc0d6e630952b  setup_descent_1_2.exe
   #61220cf9d83a8ef81e032461c1d02d8b  setup_descent_1_2.exe_old
+  a2509588c7ca74b31689aeab19b16173  setup_descent2_2.1.0.10.exe
 
 sha1sums: |
   6274ebf0b9a6d8d5983fc094b75e4128fc1a349f  d2demo.dem
@@ -197,6 +257,8 @@ sha1sums: |
   42be364b135bb2c3497ca39839533bde49c08644  robots-l.mvl
   1874f70353680a803811a5ff2cce949e3f5d5076  water.pig
   d33934e3034091073828f74859f39a71b118532c  setup_descent_1_2.exe
+  eb6eb7d551721f3215ad376509e53701ba2dac94  setup_descent2_2.1.0.10.exe
+
 sha256sums: |
   8c6e2d43ba88166d17759d90e3817edd0c3ef0a33861ef35a51a8cd4db89c892  d2demo.dem
   747ccf2494916892061e13601cd8695c35e46f2a99062fff3e3f298da94b9be6  d2demo.ham
