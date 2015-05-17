@@ -66,6 +66,8 @@ if os.environ.get('DEBUG'):
 else:
     logging.getLogger().setLevel(logging.INFO)
 
+VERBOSE = False
+
 # arbitrary cutoff for providing progress bars
 QUITE_LARGE = 50 * MEBIBYTE
 
@@ -1166,6 +1168,10 @@ class GameData(object):
         else:
             try_to_unpack = provider.provides
             should_provide = set(try_to_unpack)
+            # an unknown file could maybe include
+            # a malicious ANSI escape sequence
+            if VERBOSE and zf.comment:
+                print(zf.comment)
 
 
         for entry in zf.infolist():
@@ -1515,7 +1521,8 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['lha', 'xq',
+                    arg = 'x' if VERBOSE else 'xq'
+                    subprocess.check_call(['lha', arg,
                                 os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
                     for f in to_unpack:
@@ -1544,7 +1551,8 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['cabextract', '-q', '-L',
+                    quiet = [] if VERBOSE else ['-q']
+                    subprocess.check_call(['cabextract'] + quiet + ['-L',
                                 os.path.abspath(found_name)], cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unace-nonfree':
@@ -1565,8 +1573,9 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['unrar-nonfree', 'x',
-                             os.path.abspath(found_name)] +
+                    quiet = [] if VERBOSE else ['-inul']
+                    subprocess.check_call(['unrar-nonfree', 'x'] + quiet +
+                             [os.path.abspath(found_name)] +
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'innoextract':
@@ -1576,12 +1585,14 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    cmdline = ['innoextract', '--silent',
+                    cmdline = ['innoextract',
                                '--language', 'english',
                                '-T', 'local',
                                '--lowercase',
                                '-d', tmpdir,
                                os.path.abspath(found_name)]
+                    if not VERBOSE:
+                        cmdline.append('--silent')
                     version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
                     if version != '1.4' and 'FIXME' not in to_unpack:
@@ -1607,8 +1618,9 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['unzip', '-j', '-C', '-LL',
-                                os.path.abspath(found_name)] +
+                    quiet = [] if VERBOSE else ['-qq']
+                    subprocess.check_call(['unzip', '-j', '-C', '-LL'] +
+                                quiet + [os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
                     # -j junk paths
                     # -C use case-insensitive matching
@@ -1623,7 +1635,9 @@ class GameData(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     flags = provider.unpack.get('flags', [])
-                    subprocess.check_call(['7z', 'x', '-bd'] + flags +
+                    if not VERBOSE:
+                        flags.append('-bd')
+                    subprocess.check_call(['7z', 'x'] + flags +
                                 [os.path.abspath(found_name)] +
                                 list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
@@ -2222,6 +2236,9 @@ class GameData(object):
         logger.debug('package description:\n%s',
                 yaml.safe_dump(self.to_yaml()))
 
+        global VERBOSE
+        VERBOSE = getattr(args, 'verbose', False)
+
         preserve_debs = (getattr(args, 'destination', None) is not None)
         install_debs = getattr(args, 'install', True)
 
@@ -2811,6 +2828,13 @@ def run_command_line():
     base_parser.add_argument('--save-downloads', metavar='DIR',
             help='save downloaded files to DIR, and look for files there')
 
+    group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('--verbose', action='store_true',
+            help='show output from external tools')
+    group.add_argument('--no-verbose', action='store_false',
+            dest='verbose', help='hide output from external '
+             'tools (default)')
+
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.', parents=(base_parser,),
             epilog='Run "game-data-packager GAME --help" to see ' +
@@ -2829,6 +2853,7 @@ def run_command_line():
             compress=None,
             destination=None,
             download=True,
+            verbose=False,
             install=False,
             packages=[],
             save_downloads=None,
@@ -2841,6 +2866,9 @@ def run_command_line():
     if config['preserve']:
         logger.debug('obeying PRESERVE=yes in configuration')
         parsed.destination = '.'
+    if config['verbose']:
+        logger.debug('obeying VERBOSE=yes in configuration')
+        parsed.verbose = True
 
     parser.parse_args(namespace=parsed)
     logger.debug('parsed command-line arguments into: %r', parsed)
