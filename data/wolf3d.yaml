@@ -114,6 +114,7 @@ files:
     sha256: df595db7ded05a7af36f8c7cbbf136366ffb5ab9d765325b104d27ad8fc00924
     unpack:
       format: unzip
+      encoding: cp437
       # 'zip' trigger this: NotImplementedError: compression type 6 (implode)
       unpack:
       - maphead.wl6

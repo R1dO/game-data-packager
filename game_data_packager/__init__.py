@@ -1168,11 +1168,6 @@ class GameData(object):
         else:
             try_to_unpack = provider.provides
             should_provide = set(try_to_unpack)
-            # an unknown file could maybe include
-            # a malicious ANSI escape sequence
-            if VERBOSE and zf.comment:
-                print(zf.comment)
-
 
         for entry in zf.infolist():
             if not entry.file_size:
@@ -1487,6 +1482,14 @@ class GameData(object):
                         provider_name, found_name)
                 fmt = provider.unpack['format']
 
+                if VERBOSE and fmt in ('zip', 'unzip'):
+                    with zipfile.ZipFile(found_name, 'r') as zf:
+                        if zf.comment:
+                            try:
+                                print(zf.comment.decode(provider.unpack.get('encoding', 'utf-8')))
+                            except (UnicodeDecodeError,UnicodeEncodeError):
+                                logger.warning("can't decode zip comment")
+
                 if fmt == 'dos2unix':
                     tmp = os.path.join(self.get_workdir(),
                             'tmp', wanted.name)
@@ -1618,7 +1621,7 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    quiet = [] if VERBOSE else ['-qq']
+                    quiet = ['-q'] if VERBOSE else ['-qq']
                     subprocess.check_call(['unzip', '-j', '-C', '-LL'] +
                                 quiet + [os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
