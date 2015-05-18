@@ -1,5 +1,5 @@
 ---
-compress-deb: false
+compress_deb: false
 longname: 'Doom 3 (original or BFG Edition)'
 try_repack_from: [/usr/local/share/dhewm3]
 engine: dhewm3-doom3
@@ -820,8 +820,8 @@ files:
   DOOM3-1.3.1.exe:
     size: 19653399
     md5: 48330b83d08298826992da9a348c1620
-    sha1sum: a619eb0c6dd2cc384e5ba2c8b444ab56db43897d
-    sha256sum: a3215349ecfbb6d6b4d3411d1ed5c60394a8c072c74c6214609c78e556f1fb5b
+    sha1: a619eb0c6dd2cc384e5ba2c8b444ab56db43897d
+    sha256: a3215349ecfbb6d6b4d3411d1ed5c60394a8c072c74c6214609c78e556f1fb5b
     unpack:
       format: 7z
     provides:
@@ -834,8 +834,8 @@ files:
   classic_doom_3_1.3.1.exe:
     size: 212439198
     md5: 2cea594e8e0638e94bcada63b977d02e
-    sha1sum: 5402b4edf1dbff8fff242d999325fc2be51e4b72
-    sha256sum: 2eacb9fce4447c22b8f7a24741534df952116b6efa9e6cdc807651b184432935
+    sha1: 5402b4edf1dbff8fff242d999325fc2be51e4b72
+    sha256: 2eacb9fce4447c22b8f7a24741534df952116b6efa9e6cdc807651b184432935
     unpack:
       format: 7z
     provides:

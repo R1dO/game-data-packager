@@ -12,7 +12,6 @@ help_text: |
 packages:
   lgeneral-data-nonfree:
     longname: Panzer General data for LGeneral
-    type: full
     install_to: usr/share/games/lgeneral
     # pg-data.tar.gz is not actually needed, but it's small, and putting it
     # in the .deb means we can easily repack it if lgc-pg changes

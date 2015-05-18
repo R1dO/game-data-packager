@@ -1,0 +1,95 @@
+shortname: string (useless, = filename without '.yaml')
+longname: string
+copyright: string
+compress_deb: string/bool
+aliases: list
+engine: string
+plugin: string
+gameid: string (scummvm,residualvm)
+genre: string
+steam:
+  id: int
+  path: string
+try_repack_from: list
+
+help_text: string
+disabled_help_text: string
+
+packages:
+ <package>:
+    longname: string
+    aliases: list
+    engine: string
+    demo_for: list
+    expansion_for: string
+    lang: string
+    debian:
+      breaks:
+      conflicts:
+      depends:
+      provides:
+      recommends:
+      replaces:
+    component: string
+    copyright: string
+    create_desktop_file: bool (doom)
+    gameid: (scummvm)
+    install_to: string
+    install_to_docdir: string (prefix)
+    gog:
+      url: string
+      pp: string (hash)
+    steam:
+      id: int
+      path: string
+    rip_cd:
+      first_track: int
+    symlinks:
+    # methods for listing needed files
+    install: list
+    license: list
+    optional: list
+    install_files:
+      <file>:
+        sha1:
+        sha256:
+        size:
+    install_files_from_cksums: list
+    install_contents_of: list
+
+files:
+  <file>:
+    distinctive_name: bool
+    distinctive_size: bool
+    install_to: string
+    install_as: string
+    download: url
+      <mirror>:
+        path:
+    look_for:
+    size:
+    md5:
+    sha1:
+    sha256:
+    unpack:
+      format: string
+      skip: int (tarballs)
+      encoding: string (zip, unzip)
+      flags: list (7z)
+      groups: list (unshield)
+      prefix: string (innoextract)
+      other_parts: list (cat, unshield, arj)
+      unpack: list
+    provides: list
+
+cksums: list
+
+md5sums: list
+
+sha1sums: list
+
+sha256sums: list
+
+sha512sums: list
+
+flacsums: list
