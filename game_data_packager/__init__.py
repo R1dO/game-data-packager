@@ -1485,9 +1485,10 @@ class GameData(object):
                 if VERBOSE and fmt in ('zip', 'unzip'):
                     with zipfile.ZipFile(found_name, 'r') as zf:
                         if zf.comment:
+                            encoding = provider.unpack.get('encoding', 'utf-8')
                             try:
-                                print(zf.comment.decode(provider.unpack.get('encoding', 'utf-8')))
-                            except (UnicodeDecodeError,UnicodeEncodeError):
+                                print(zf.comment.decode(encoding, 'replace'))
+                            except UnicodeError:
                                 logger.warning("can't decode zip comment")
 
                 if fmt == 'dos2unix':
