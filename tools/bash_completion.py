@@ -37,7 +37,7 @@ for yaml_file in sorted(glob.glob('data/*.yaml')):
                 continue
             if line[0] != ' ':
                 break
-            if line[2] != ' ':
+            if line[2] not in (' ', '#'):
                 print(line.strip(':\n '), end=' ')
 
         print('')
