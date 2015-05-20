@@ -1484,12 +1484,24 @@ class GameData(object):
 
                 if VERBOSE and fmt in ('zip', 'unzip'):
                     with zipfile.ZipFile(found_name, 'r') as zf:
+                        encoding = provider.unpack.get('encoding', 'cp437')
                         if zf.comment:
-                            encoding = provider.unpack.get('encoding', 'utf-8')
+                            comment = zf.comment.decode(encoding, 'replace')
                             try:
-                                print(zf.comment.decode(encoding, 'replace'))
+                                print(comment)
                             except UnicodeError:
-                                logger.warning("can't decode zip comment")
+                                print(comment.encode('ascii', 'replace').decode('ascii'))
+                        if 'FILE_ID.DIZ' in zf.namelist():
+                            try:
+                                entryfile = zf.open('FILE_ID.DIZ')
+                                id_diz = entryfile.read().decode(encoding, 'replace')
+                            except NotImplementedError:
+                                id_diz = subprocess.check_output(['unzip', '-c','-q',
+                                  found_name, 'FILE_ID.DIZ']).decode(encoding, 'replace')
+                            try:
+                                print(id_diz)
+                            except UnicodeError:
+                                print(id_diz.encode('ascii', 'replace').decode('ascii'))
 
                 if fmt == 'dos2unix':
                     tmp = os.path.join(self.get_workdir(),
