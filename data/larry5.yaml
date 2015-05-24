@@ -1,0 +1,188 @@
+---
+longname: "Leisure Suit Larry 5: Passionate Patti Does a Little Undercover Work"
+copyright: © 1991 Sierra On-Line
+plugin: scummvm_common
+gameid: lsl5
+
+packages:
+  larry5-data:
+    gog:
+      url: leisure_suit_larry
+      game: leisure_suit_larry_5_passionate_patti_does_a_little_undercover_work
+    install:
+    - 200.scr
+    - 200.tex
+    - 255.scr
+    - 255.tex
+    - 460.scr
+    - 460.tex
+    - 467.snd
+    - 480.scr
+    - 480.tex
+    - 760.scr
+    - 760.tex
+    - 800.scr
+    - 800.tex
+    - 900.scr
+    - 900.tex
+    - 910.scr
+    - 910.tex
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.005
+    - resource.006
+    - resource.007
+    - resource.map
+    - version
+    optional:
+    - Leisure Suit Larry 5 - Manual.pdf
+
+  larry-doc:
+    longname: "Leisure Suit Larry Hits and Misses booklet"
+    copyright: © 1987-1994 Sierra On-Line
+    expansion_for: larry5-data
+    section: doc
+    debian:
+      depends: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
+    install:
+    - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+files:
+  Leisure Suit Larry 5 - Manual.pdf:
+    install_to: $docdir
+  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf:
+    install_to: $docdir
+  setup_leisure_suit_larry5_2.2.0.20.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 200.scr
+    - 200.tex
+    - 255.scr
+    - 255.tex
+    - 460.scr
+    - 460.tex
+    - 467.snd
+    - 480.scr
+    - 480.tex
+    - 760.scr
+    - 760.tex
+    - 800.scr
+    - 800.tex
+    - 900.scr
+    - 900.tex
+    - 910.scr
+    - 910.tex
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.005
+    - resource.006
+    - resource.007
+    - resource.map
+    - version
+    - Leisure Suit Larry 5 - Manual.pdf
+    - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+cksums: |
+  _ 14270     200.scr
+  _ 7200      200.tex
+  _ 6516      255.scr
+  _ 5         255.tex
+  _ 11532     460.scr
+  _ 6213      460.tex
+  _ 27392     467.snd
+  _ 4330      480.scr
+  _ 2842      480.tex
+  _ 14388     760.scr
+  _ 3886      760.tex
+  _ 4308      800.scr
+  _ 374       800.tex
+  _ 5254      900.scr
+  _ 745       900.tex
+  _ 4820      910.scr
+  _ 1691      910.tex
+  _ 726823    resource.000
+  _ 751296    resource.001
+  _ 1137646   resource.002
+  _ 768599    resource.003
+  _ 1024516   resource.004
+  _ 1011944   resource.005
+  _ 1024810   resource.006
+  _ 1030656   resource.007
+  _ 6417      resource.map
+  _ 45        version
+
+  _ 33177424  setup_leisure_suit_larry5_2.2.0.20.exe
+  _ 3549212   Leisure Suit Larry 5 - Manual.pdf
+  _ 8230209   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+md5sums: |
+  23e9f4ca0e24b2271d3186dee4fd8b12  200.scr
+  c5f660c8b2dfe9f06a63daf1d60dcea7  200.tex
+  7d2319d2279da32c9557a3f7083ec35e  255.scr
+  ac98be2ddf2b7da30f95de3bb80b520d  255.tex
+  b668385901b9475f2171d7b2b928e64c  460.scr
+  cd087cc0d8c280eff8e1df16e7ed7abc  460.tex
+  6b29d1f040b686741c8a5472c37fae3d  467.snd
+  4a69818272fed96203da55e8d7d2ff46  480.scr
+  17eb39757fbbef88a2870a9e58ae0554  480.tex
+  424dc9bb50ccb9fb18dac77d1c1dba75  760.scr
+  f8256e2b432717e57a74c6ddaae5c6e4  760.tex
+  e665745a79ac2ab88c45eb9a2b8a58c9  800.scr
+  4d6cfa6737b342745ee549cca21f7620  800.tex
+  0900c210f639b50aecd7bfc9c7978b86  900.scr
+  3a6a091ffefe7a118ba2a4ce74a0def9  900.tex
+  0f0c16f1a6905717bcfbc8d6da376bf2  910.scr
+  4364867ecd9e83fca4c21b740d854649  910.tex
+  20441886fc2b5602de823f3bc04e7e8d  resource.000
+  af007f1156f4ab2a48f52c21e52ef9f0  resource.001
+  66e9cd2c6b924b13360bfaefe10afef2  resource.002
+  65a86ab826fdb08bc92ab729e3e3dbbe  resource.003
+  624cdd7210af85ca02112850f0b758ca  resource.004
+  5e1b787096d0f8def14ed136f6d7ef91  resource.005
+  04642bae1c80ce3252e42409bbc35032  resource.006
+  09df2d50905c32df6dbab5bdf87d1c49  resource.007
+  30ce4b267d9459b2dd0a7c3e2fb22829  resource.map
+  71f088365ff0e76719d5318fe8e3b456  version
+
+  601f55e4904852acbc0c7292f8969231  setup_leisure_suit_larry5_2.2.0.20.exe
+  a0c5b6ddca5b8a4a1f38cef21d45913c  Leisure Suit Larry 5 - Manual.pdf
+  bcc1974851f3d79ab57358a78d84c13c  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+sha1sums: |
+  28b1fc06cb4cf06159e63adfdd2b286359b6816a  200.scr
+  715d044efa0d0b871ae1abf0022f5d46e256ca3d  200.tex
+  ee2001ee2f9c2ec5b7156ad033bcf349bca08334  255.scr
+  ae2a2f7342e8f411b83cda8537e193c6eac7ffb8  255.tex
+  4cf672f5c063541f2668af48fc75402110d2b577  460.scr
+  fec964d9d98138786a5b03e2391a57d5f01ce370  460.tex
+  9dc0311c9fd5d90735d70edff29eb0afee49dcaf  467.snd
+  69ca8264d7e0717425c24f8ddf9131f682684963  480.scr
+  0bd3bb0c3a680f6a32a77faf1b26469340e88865  480.tex
+  5395c2cbff95e65302b1a34dcc0929207877c3f3  760.scr
+  2c2e3d64851140bd0108a24ebaf66b20269ca19b  760.tex
+  c2ca829f34bf0cacf4227c25d142e91a12d05940  800.scr
+  f12d93a29b7ee269cf175a8de20fe62b27124a29  800.tex
+  3f7002be688386674217a7f3e936b77bc8be8f1f  900.scr
+  e48c5a1438f63d61379e124bfae7e66e0e2e4f70  900.tex
+  23a16bb2a0c55cd896628064265b6324f31c7952  910.scr
+  2f7ca892d43d779470380e5902c83816acf54a47  910.tex
+  be465be5241552fc6dcf20cc21fede2a74f4a435  resource.000
+  74abae8df561ef75b2784b8cc15765fc79be3de1  resource.001
+  a6c9f4f753c0e74631a48b95cb9e281917eeb362  resource.002
+  952f13c6e377a4bf1d5f1ff4f5fee6675bff5159  resource.003
+  05b5273b3326d723129614cfdb826205af25b3e0  resource.004
+  c88bb7e639a00a203f548fb03850c088d62066ab  resource.005
+  836504679b28ba8f55072e3ab772f4866ed48a5e  resource.006
+  25657f54b88d54633ffed3a6241728731eea94eb  resource.007
+  cdd83d9826c37abb2f986727475e34707bd6d950  resource.map
+  0610b81f0dbce0496ff9fcf8edb115a54696f34a  version
+
+  bbeac2d5ca5de991fa90efb8b1d2635b48e048cc  setup_leisure_suit_larry5_2.2.0.20.exe
+  369fc95e873d1ac9edf9e2cf5877b34d932f0d13  Leisure Suit Larry 5 - Manual.pdf
+  f99b52b8f43c6928f9a620e48ced09859221f5ad  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+...

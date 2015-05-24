@@ -1,0 +1,171 @@
+---
+longname: "Leisure Suit Larry in the Land of the Lounge Lizards"
+copyright: © 1987 Sierra On-Line
+plugin: scummvm_common
+gameid: lsl1
+
+help_text: |
+  Here are the answers to the age test at the begin of the game:
+  http://www.allowe.com/games/larry/tips-manuals/lsl1-age-quiz.html
+
+  This can be turned in a pretty .txt file too:
+  w3m http://www.allowe.com/games/larry/tips-manuals/lsl1-age-quiz.html -dump | sed -n -e '/┏/,/┛/p' | tee age_quiz.txt
+
+  Or you can simply press "Alt-X" at ScummVM start to skip the test.
+
+packages:
+  larry1-data:
+    better_version: larry1-vga-data
+    gog:
+      url: leisure_suit_larry
+      # lgogdownloader --game ${game} --download --no-extras --subdir-game ''
+      game: leisure_suit_larry_1_in_the_land_of_the_lounge_lizards
+    install:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
+    optional:
+    - LSL1 Answers.txt
+    - Leisure Suit Larry 1 - Manual.pdf
+
+  larry1-vga-data:
+    longname: "Leisure Suit Larry in the Land of the Lounge Lizards (VGA)"
+    gameid: lsl1sci
+    gog:
+      url: leisure_suit_larry
+      game: leisure_suit_larry_1_vga_in_the_land_of_the_lounge_lizards
+    install:
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.map
+    - version
+    optional:
+    - LSL1 VGA Answers.txt
+    - Leisure Suit Larry 1 - Manual.pdf
+
+  larry-doc:
+    longname: "Leisure Suit Larry Hits and Misses booklet"
+    copyright: © 1987-1994 Sierra On-Line
+    section: doc
+    expansion_for: larry1-data
+    debian:
+      depends: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
+    install:
+    - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+files:
+  setup_leisure_suit_larry_2.2.0.18.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
+    - LSL1 Answers.txt
+    - Leisure Suit Larry 1 - Manual.pdf
+    - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+  Leisure Suit Larry 1 - Manual.pdf:
+    install_to: $docdir
+  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf:
+    install_to: $docdir
+  LSL1 Answers.txt:
+    install_to: $docdir
+
+  setup_leisure_suit_larry_vga_2.2.0.20.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.map
+    - version
+    - LSL1 VGA Answers.txt
+    - Leisure Suit Larry 1 - Manual.pdf
+    - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+  LSL1 VGA Answers.txt:
+    install_to: $docdir
+
+cksums: |
+  _ 177       logdir
+  _ 311       object
+  _ 138       picdir
+  _ 102       snddir
+  _ 573       viewdir
+  _ 66731     vol.0
+  _ 146558    vol.1
+  _ 237821    vol.2
+  _ 6597      words.tok
+  _ 23768496  setup_leisure_suit_larry_2.2.0.18.exe
+  _ 2187      LSL1 Answers.txt
+  _ 1140028   Leisure Suit Larry 1 - Manual.pdf
+  _ 8230209   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+  _ 918242    resource.000
+  _ 1114688   resource.001
+  _ 1078443   resource.002
+  _ 3198      resource.map
+  _ 6         version
+  _ 26725608  setup_leisure_suit_larry_vga_2.2.0.20.exe
+  _ 7211      LSL1 VGA Answers.txt
+
+md5sums: |
+  1fe764e66857e7f305a5f03ca3f4971d  logdir
+  aa7bce1ca83f181c92c1feea2c119eec  object
+  a22e109d14d5cff65be77dd1b12af6f3  picdir
+  8fbdd1377d7110c3a28979d4627fc3e5  snddir
+  8c4edeea3fa5518ab431ee9b0ba7c378  viewdir
+  28dabb6408d2eb4757ee28686308a475  vol.0
+  7ddb49cf212d5fab3c2edf86ee895886  vol.1
+  89103f5b48fa49c00eed42f4b19808e1  vol.2
+  988a1baaf3ee0d9cd678274dc2f219f2  words.tok
+  bd8e0429499febf5dc0bf1df5790c520  setup_leisure_suit_larry_2.2.0.18.exe
+  3b6117888a79a82073ab33f6ecd8cb7d  LSL1 Answers.txt
+  4aea404ebe88f93bc567bd169a8dffb8  Leisure Suit Larry 1 - Manual.pdf
+  bcc1974851f3d79ab57358a78d84c13c  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+  142296b299e3fa2c016fc979a68ed0e7  resource.000
+  0042e959102738fea0df78124ca008b2  resource.001
+  e6d04ac43f58e25c1f3df317af464c5b  resource.002
+  8606b083b011a0cc4a1fbfc2198a0a77  resource.map
+  3fa20af2bc4731fff64a1884ba142940  version
+  22c1089852291ce42af2715c88f53e55  setup_leisure_suit_larry_vga_2.2.0.20.exe
+  9e7eb68fa7836217b2b000f09fa3e1d9  LSL1 VGA Answers.txt
+
+sha1sums: |
+  1e8a5282f477a895ef6c9e8d328a6292926b1000  logdir
+  cda4a0aae589ae40b098865b6e4b964a8663009f  object
+  8ed989dabbd53c922d144f1e9f1b7a650e28b904  picdir
+  2b4a438f22fbeeef8a6fd099a608a78766d6e75e  snddir
+  0194c587f7ef13e31f1011cc72306c1ab972b9ac  viewdir
+  91c56f64c6a6989c27a43f5147751f0650932e1e  vol.0
+  e107999bc7ace17f2dfd53442c331945f3929706  vol.1
+  6d711d5a8e836d46e552e8acdc72f7d44c33bd42  vol.2
+  9fd64e7d57a707afa4f834adc7ee6affd9b7d940  words.tok
+  6c1ac0d49ff1ccc043605c2471534635fda851dc  setup_leisure_suit_larry_2.2.0.18.exe
+  104728bd0cbaba43b4399a0c94c4b0cbe82df0f5  LSL1 Answers.txt
+  addcb935efef34c53b956b0420bbd72256b1722a  Leisure Suit Larry 1 - Manual.pdf
+  f99b52b8f43c6928f9a620e48ced09859221f5ad  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+  4a8386656deceddd4d8fc13cd62dd37f16e34c32  resource.000
+  a3c1611c8ebe6a7e6675068a4c11a11870780443  resource.001
+  c0b45e203e30dacbcbe79ecd9638bd0c64e6026b  resource.002
+  3e7b8ea9694d1abdd07e4f0a650828e8c528bcad  resource.map
+  78c92c927672a09170d668650b6cdba405fd038a  version
+  8221455d825c65df09ec80af0394767a15ae799a  setup_leisure_suit_larry_vga_2.2.0.20.exe
+  b9533fe27cb6e9b8b86ece1287f0e5ec2f0a7ca0  LSL1 VGA Answers.txt
+...
+
