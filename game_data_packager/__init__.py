@@ -807,7 +807,7 @@ class GameData(object):
         assert self.copyright or package.copyright, package.name
         assert package.component in ('main', 'contrib', 'non-free', 'local')
         assert package.component == 'local' or 'license' in d
-        assert package.section in ('games'), 'unsupported'
+        assert package.section in ('games', 'doc'), 'unsupported'
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
@@ -1842,7 +1842,10 @@ class GameData(object):
                      main_wad = self.files[f].install_as
                      exts.add(os.path.splitext(main_wad.lower())[1])
 
-            if count_usr == 1:
+            if count_usr == 0 and count_doc == 1:
+                o.write('"/usr/share/doc/%s/%s"\n' % (package.name,
+                                                      list(package.install)[0]))
+            elif count_usr == 1:
                 o.write('"/%s/%s"\n' % (package.install_to, main_wad))
             elif len(exts) == 1:
                 o.write('The %s files under "/%s/"\n' %
@@ -1850,14 +1853,14 @@ class GameData(object):
             else:
                 o.write('The files under "/%s/"\n' % package.install_to)
 
-            if count_doc:
+            if count_usr and count_doc:
                 if count_usr == 1:
                     o.write('and the files under "/usr/share/doc/%s/"\n' % package.name)
                 else:
                     o.write('and "/usr/share/doc/%s/"\n' % package.name)
                 o.write('(except for this copyright file & changelog.gz)\n')
 
-            if count_usr == 1 and count_doc == 0:
+            if (count_usr + count_doc) == 1:
                 o.write('is a user-supplied file with copyright\n')
             else:
                 o.write('are user-supplied files with copyright\n')
@@ -2138,7 +2141,10 @@ class GameData(object):
         if 'Description' not in control:
             longname = package.longname or self.longname
 
-            short_desc = package.data_type + ' for "' + longname + '" game'
+            if package.section == 'games':
+                short_desc = package.data_type + ' for "' + longname + '" game'
+            else:
+                short_desc = longname
 
             long_desc =  ' This package was built using game-data-packager.\n'
             if package.component == 'local':
@@ -2155,7 +2161,9 @@ class GameData(object):
             if self.genre:
                 long_desc += '  Genre: ' + self.genre + '\n'
 
-            if package.expansion_for:
+            if package.section == 'doc':
+                long_desc += '  Documentation: ' + longname + '\n'
+            elif package.expansion_for:
                 game_name = self.packages[package.expansion_for].longname or self.longname
                 long_desc += '  Game: ' + game_name + '\n'
                 long_desc += '  Expansion: ' + longname + '\n'
@@ -2163,10 +2171,11 @@ class GameData(object):
                 long_desc += '  Game: ' + longname + '\n'
 
             copyright = package.copyright or self.copyright
-            long_desc += '  Published by: ' + copyright[7:] + '\n .\n'
+            long_desc += '  Published by: ' + copyright.split(' ', 2)[2]
 
             engine = package.engine or self.engine
-            if engine:
+            if engine and package.section == 'games':
+                long_desc += '\n .\n'
                 if '|' in engine:
                     virtual = engine.split('|')[-1].strip()
                     has_virtual = (virtual.split('-')[-1] == 'engine')
