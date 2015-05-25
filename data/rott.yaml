@@ -45,7 +45,7 @@ packages:
     license:
     - LICENSE.TXT
     optional:
-    - manual.pdf
+    - any_manual_pdf
 
   rott-extreme-data:
     expansion_for: rott-registered-data
@@ -64,6 +64,23 @@ files:
     - ROTTSITE.RTC
     - DARKWAR.RTC
     install_as: $alternative
+
+  # the same papper booklet scanned twice
+  #
+  # the Steam version is better because
+  # it doesn't have an ugly disclaimer prepended
+  # and it's not missing pages 25 to 27
+  # ("Power Pack order form", "contact Apogee")
+
+  any_manual_pdf:
+    alternatives:
+    - manual.pdf_steam
+    - manual.pdf
+    install_as: manual.pdf
+    install_to: $docdir
+
+  manual.pdf_steam:
+    look_for: [manual.pdf]
 
   1rott13.zip:
     size: 3668139
@@ -110,8 +127,19 @@ files:
   DEMO4_3.DMO:
     distinctive_name: false
 
-  manual.pdf:
-    install_to: $docdir
+  setup_rise_of_the_triad_2.0.0.5.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - DARKWAR.RTL
+    - DARKWAR.WAD
+    - EXTREME.RTL
+    - HUNTBGIN.RTC
+    - HUNTBGIN.RTL
+    - LICENSE.TXT
+    - manual.pdf
+    - REMOTE1.RTS
+    - ROTTCD.RTC
 
 cksums: |
   2270167158 162646   DARKWAR.RTC
@@ -134,7 +162,9 @@ cksums: |
   1168858976 296840   ROTTSITE.RTC
   4153237746 7752     VENDOR.DOC
 
-  _ 8199108   manual.pdf
+  _ 8199108   manual.pdf_steam
+  _ 9521526   manual.pdf
+  _ 31605104  setup_rise_of_the_triad_2.0.0.5.exe
 
 md5sums: |
   001a2aafefe4f5394655f735ee60c326  DEMO1_3.DMO
@@ -158,7 +188,10 @@ md5sums: |
   1230e7ddc462b2154fbbf3f0587aea29  ROTTSITE.RTC
   576acd279638958127caaa4c677007b6  EXTREME.RTL
 
-  37ea1777fb3156634006c96e4be4ea17  manual.pdf
+  37ea1777fb3156634006c96e4be4ea17  manual.pdf_steam
+
+  92a132d4d25d6f96587e406bd9959ae8  setup_rise_of_the_triad_2.0.0.5.exe
+  34c7f39c23482a7ecab464a2dd76ef8f  manual.pdf
 
 sha1sums: |
   9dea7c8e1ae32628ce8ee39750a6fcde73ae29c1  DEMO1_3.DMO
@@ -182,7 +215,10 @@ sha1sums: |
   e28cc5f820db3388284a2aa3a92c6f4cf08a8e9c  ROTTSITE.RTC
   098885bbd9a649d47f0792f563b6ef217e099951  EXTREME.RTL
 
-  78d12446ee71853ea71b648f4852b0f548773648  manual.pdf
+  78d12446ee71853ea71b648f4852b0f548773648  manual.pdf_steam
+
+  53d4a05c474dd13098b9d591ea2eab13310af0bc  setup_rise_of_the_triad_2.0.0.5.exe
+  7ecd289958858af8dfc357fec2499d9bc3e7206b  manual.pdf
 
 sha256sums: |
   b57b2a1d5c72f6a9b2761537340969b297af16b14dbc284794a71163bc6c50a0  DEMO1_3.DMO
