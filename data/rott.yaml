@@ -82,6 +82,9 @@ files:
   manual.pdf_steam:
     look_for: [manual.pdf]
 
+  manual.pdf:
+    look_for: [UserManual.pdf]
+
   1rott13.zip:
     size: 3668139
     download:
@@ -141,6 +144,20 @@ files:
     - REMOTE1.RTS
     - ROTTCD.RTC
 
+  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz:
+    unpack:
+      format: tar.gz
+    provides:
+    - DARKWAR.RTL
+    - DARKWAR.WAD
+    - EXTREME.RTL
+    - HUNTBGIN.RTC
+    - HUNTBGIN.RTL
+    - LICENSE.TXT
+    - manual.pdf
+    - REMOTE1.RTS
+    - ROTTCD.RTC
+
 cksums: |
   2270167158 162646   DARKWAR.RTC
   2187295173 408096   DARKWAR.RTL
@@ -165,6 +182,7 @@ cksums: |
   _ 8199108   manual.pdf_steam
   _ 9521526   manual.pdf
   _ 31605104  setup_rise_of_the_triad_2.0.0.5.exe
+  _ 21337749  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
 
 md5sums: |
   001a2aafefe4f5394655f735ee60c326  DEMO1_3.DMO
@@ -192,6 +210,7 @@ md5sums: |
 
   92a132d4d25d6f96587e406bd9959ae8  setup_rise_of_the_triad_2.0.0.5.exe
   34c7f39c23482a7ecab464a2dd76ef8f  manual.pdf
+  5695390945993b841f1c0b72781d143c  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
 
 sha1sums: |
   9dea7c8e1ae32628ce8ee39750a6fcde73ae29c1  DEMO1_3.DMO
@@ -219,6 +238,7 @@ sha1sums: |
 
   53d4a05c474dd13098b9d591ea2eab13310af0bc  setup_rise_of_the_triad_2.0.0.5.exe
   7ecd289958858af8dfc357fec2499d9bc3e7206b  manual.pdf
+  017a31ee33bdb81882287b497682b12de56b0f50  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
 
 sha256sums: |
   b57b2a1d5c72f6a9b2761537340969b297af16b14dbc284794a71163bc6c50a0  DEMO1_3.DMO
