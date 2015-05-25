@@ -1527,6 +1527,12 @@ class GameData(object):
                             mode='r|' + fmt[4:],
                             fileobj=rf) as tar:
                         self.consider_tar_stream(found_name, tar, provider)
+                elif fmt == 'deb':
+                    with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', found_name],
+                                stdout=subprocess.PIPE) as fsys_process:
+                        with tarfile.open(found_name + '//data.tar.*', mode='r|',
+                               fileobj=fsys_process.stdout) as tar:
+                            self.consider_tar_stream(found_name, tar, provider)
                 elif fmt == 'zip':
                     with zipfile.ZipFile(found_name, 'r') as zf:
                         self.consider_zip(found_name, zf, provider)
@@ -2731,7 +2737,7 @@ class GameData(object):
         fmt = wanted.unpack['format']
 
         # builtins
-        if fmt in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'zip'):
+        if fmt in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'deb', 'zip'):
             return True
 
         if which(fmt) is not None:
