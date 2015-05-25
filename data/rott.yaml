@@ -44,6 +44,8 @@ packages:
     - DARKWAR.WAD
     license:
     - LICENSE.TXT
+    optional:
+    - manual.pdf
 
   rott-extreme-data:
     expansion_for: rott-registered-data
@@ -108,6 +110,9 @@ files:
   DEMO4_3.DMO:
     distinctive_name: false
 
+  manual.pdf:
+    install_to: $docdir
+
 cksums: |
   2270167158 162646   DARKWAR.RTC
   2187295173 408096   DARKWAR.RTL
@@ -128,6 +133,8 @@ cksums: |
   163316606  207174   ROTTCD.RTC
   1168858976 296840   ROTTSITE.RTC
   4153237746 7752     VENDOR.DOC
+
+  _ 8199108   manual.pdf
 
 md5sums: |
   001a2aafefe4f5394655f735ee60c326  DEMO1_3.DMO
@@ -151,6 +158,8 @@ md5sums: |
   1230e7ddc462b2154fbbf3f0587aea29  ROTTSITE.RTC
   576acd279638958127caaa4c677007b6  EXTREME.RTL
 
+  37ea1777fb3156634006c96e4be4ea17  manual.pdf
+
 sha1sums: |
   9dea7c8e1ae32628ce8ee39750a6fcde73ae29c1  DEMO1_3.DMO
   91e28745ef367ae2ef64524575abc094d2dada4a  DEMO2_3.DMO
@@ -172,6 +181,8 @@ sha1sums: |
   b3978add0bad4df10c03b90a07c288e816a7d31e  ROTTCD.RTC
   e28cc5f820db3388284a2aa3a92c6f4cf08a8e9c  ROTTSITE.RTC
   098885bbd9a649d47f0792f563b6ef217e099951  EXTREME.RTL
+
+  78d12446ee71853ea71b648f4852b0f548773648  manual.pdf
 
 sha256sums: |
   b57b2a1d5c72f6a9b2761537340969b297af16b14dbc284794a71163bc6c50a0  DEMO1_3.DMO
