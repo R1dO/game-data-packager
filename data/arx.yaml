@@ -133,7 +133,7 @@ packages:
     - data.pak_demo_ja
     - logo.bmp_demo
     - sfx.pak_demo
-    - data2.pak_demo_ja
+    - data2.pak_demo_en
     - loc.pak_demo_ja
     - speech.pak_demo_ja
 
@@ -268,9 +268,6 @@ files:
     look_for: [data2.pak]
     install_as: data2.pak
   data2.pak_demo_de:
-    look_for: [data2.pak]
-    install_as: data2.pak
-  data2.pak_demo_ja:
     look_for: [data2.pak]
     install_as: data2.pak
   loc.pak_demo_en:
@@ -418,7 +415,7 @@ files:
     - data.pak_demo_ja
     - logo.bmp_demo
     - sfx.pak_demo
-    - data2.pak_demo_ja
+    - data2.pak_demo_en
     - loc.pak_demo_ja
     - speech.pak_demo_ja
   arx_jpn_demo.exe:
@@ -511,7 +508,6 @@ cksums: |
   _ 164018721 arx_demo_german.exe
 
   _ 35627176  speech.pak_demo_ja
-  _ 1696636   data2.pak_demo_ja
   _ 150956    loc.pak_demo_ja
   _ 469156    data1.cab
   _ 13039     data1.hdr
@@ -595,7 +591,6 @@ md5sums: |
   1269eb4a7edb54cbd15dd143fc5749e8  Setup3.cab_de
   1a666170e1605310ca69204eae80e806  arx_demo_german.exe
 
-  958b78f8f370b06d769843137138c461  data2.pak_demo_ja
   9d84cede805b13fdf7fce856ecc15b19  loc.pak_demo_ja
   eeacbd9a845ecc00054934e82e9d7dd3  speech.pak_demo_ja
   03a13aebc5ceb90ddfcc02e8ec826229  data1.cab
@@ -680,7 +675,6 @@ sha1sums: |
   b3d1b78a626b63a55bcb475a79c8d049159d8b56  arx_fatalis_demo_fr.zip
 
   c2ee71ff0479e1cd038e22c5c9cf7c12feac925e  speech.pak_demo_ja
-  e1460a06164016624074f61d0cb5ffa1752bba82  data2.pak_demo_ja
   e6b775b97c7c8cf936d692ba6c8a6297becec924  loc.pak_demo_ja
   eeb5d5bc560489eb7091f4c122fde2f322e2d8f2  data1.cab
   140ceac0576550a03ec1bb76ee25e341360b2153  data1.hdr
