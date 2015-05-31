@@ -20,6 +20,25 @@ packages:
     expansion_for_ext: doom2-wad
     debian:
       recommends: doom2-wad | freedoom, doom-wad | freedoom
+    main_wads:
+      av.wad:
+         name: Alien Vendetta (2nd Ed.)
+         args: av.wad -deh av.deh
+      class_ep.wad:
+         name: The Classic Episode (1st Ed.)
+         args: -iwad doom.wad -warp 2 1
+      hr.wad:
+         name: Hell Revealed
+         args: hrmus.wad
+      mm.wad:
+         name: Memento Mori
+         args: mmmus.wad
+      mm2.wad:
+         name: Memento Mori II
+         args: mm2mus.wad
+      requiem.wad:
+         name: Requiem
+         args: req21fix.wad reqmus.wad
     install_to: usr/share/games/doom
     install:
     - av.deh
@@ -55,11 +74,11 @@ files:
   mm2.txt:
     install_to: $docdir
   mm2info.wad:
-    look_for: [mm2info.dat]
+    look_for: [mm2info.wad,mm2info.dat]
   requiem.txt:
     install_to: $docdir
   req21fix.wad:
-    look_for: [req21_competn.wad]
+    look_for: [req21fix.wad,req21_competn.wad]
 
   av_new.zip:
     download: http://doomedsda.us/lmps/84/av_new.zip

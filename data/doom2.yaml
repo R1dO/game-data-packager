@@ -2,7 +2,6 @@
 # Version reference:
 # http://doom.wikia.com/wiki/DOOM2.WAD
 # http://doomwiki.org/wiki/DOOM2.WAD
-shortname: doom2
 longname: "Doom 2: Hell on Earth"
 copyright: © 1994 id Software
 try_repack_from:
@@ -43,7 +42,7 @@ packages:
   doom2-masterlevels-wad:
     longname: Master Levels for DOOM II
     expansion_for: doom2-wad
-    create_desktop_file: false
+    main_wads: {}
     steam:
       id: 9160
       path: "common/Master Levels of Doom"

@@ -21,30 +21,14 @@ import logging
 import os
 import subprocess
 
-from .. import GameData, GameDataPackage
+from .. import GameData
 from ..paths import DATADIR
-from ..util import (TemporaryUmask, copy_with_substitutions, mkdir_p)
+from ..util import (copy_with_substitutions, mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.doom-common')
 
 def install_data(from_, to):
     subprocess.check_call(['cp', '--reflink=auto', from_, to])
-
-class WadPackage(GameDataPackage):
-    def __init__(self, name):
-        super(WadPackage, self).__init__(name)
-
-    @property
-    def main_wad(self):
-        for f in self.install:
-            if f == 'voices.wad':
-                # ignore Strife voices
-                continue
-
-            if f.endswith('.wad'):
-                return f
-        else:
-            raise AssertionError('Wad packages must install one .wad file')
 
 class DoomGameData(GameData):
     """Special subclass of GameData for games descended from Doom.
@@ -88,36 +72,36 @@ class DoomGameData(GameData):
         }
 
         for package in self.packages.values():
-            assert package.main_wad is not None
             engine = package.engine or self.engine
             engine = engine.split('|')[-1].strip()
             package.program = package_map.get(engine, engine)
-            package.create_desktop_file = self.data['packages'][package.name].get(
-                    'create_desktop_file', True)
+            package.main_wads = self.data['packages'][package.name].get(
+                    'main_wads', {list(package.install)[0]: {}})
+            assert type(package.main_wads) == dict
+            for main_wad in package.main_wads.values():
+                assert type(main_wad) == dict
             package.data_type = 'PWAD' if (package.expansion_for
                                 or package.expansion_for_ext) else 'IWAD'
 
-    def construct_package(self, binary):
-        return WadPackage(binary)
-
     def fill_extra_files(self, package, destdir):
         super(DoomGameData, self).fill_extra_files(package, destdir)
-        if not package.create_desktop_file:
-            return
 
-        main_wad = package.main_wad
-        wad_base = os.path.splitext(main_wad)[0]
+        for main_wad, quirks in package.main_wads.items():
+            wad_base = os.path.splitext(main_wad)[0]
 
-        with TemporaryUmask(0o022):
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')
             mkdir_p(pixdir)
             # FIXME: would be nice if non-Doom games could replace this
             # Cacodemon with something appropriate
-            for basename in (package.name, self.shortname, 'doom-common'):
+            desktop_file = package.name
+            if len(package.main_wads) > 1:
+                desktop_file += '-' + wad_base
+
+            for basename in (wad_base, package.name, self.shortname, 'doom-common'):
                 from_ = os.path.join(DATADIR, basename + '.png')
                 if os.path.exists(from_):
                     install_data(from_,
-                        os.path.join(pixdir, '%s.png' % wad_base))
+                        os.path.join(pixdir, '%s.png' % desktop_file))
                     break
             else:
                 raise AssertionError('doom-common.png should have existed')
@@ -128,7 +112,7 @@ class DoomGameData(GameData):
                                       'usr/share/icons/hicolor/scalable/apps')
                 mkdir_p(svgdir)
                 install_data(from_,
-                    os.path.join(svgdir, '%s.svgz' % wad_base))
+                    os.path.join(svgdir, '%s.svgz' % desktop_file))
 
             docdir = os.path.join(destdir, 'usr/share/doc/%s' % package.name)
             mkdir_p(docdir)
@@ -141,9 +125,13 @@ class DoomGameData(GameData):
             desktop['Desktop Entry'] = {}
             entry = desktop['Desktop Entry']
             entry['Name'] = package.longname or self.longname
+            if 'name' in quirks:
+                entry['Name'] += ' - ' + quirks['name']
             entry['GenericName'] = self.genre + ' game'
             entry['TryExec'] = package.program
-            if package.expansion_for:
+            if 'args' in quirks:
+                args = '-file ' + main_wad + ' ' + quirks['args']
+            elif package.expansion_for:
                 for f in self.packages[package.expansion_for].install:
                     if f.endswith('.wad'):
                         iwad = f
@@ -155,22 +143,24 @@ class DoomGameData(GameData):
             else:
                 args = '-iwad /usr/share/games/doom/' + main_wad
             entry['Exec'] = package.program + ' ' + args
-            entry['Icon'] = wad_base
+            entry['Icon'] = desktop_file
             entry['Terminal'] = 'false'
             entry['Type'] = 'Application'
             entry['Categories'] = 'Game'
+            entry['Keyword'] = wad_base
 
-            with open(os.path.join(appdir, '%s.desktop' % package.name),
+            with open(os.path.join(appdir, '%s.desktop' % desktop_file),
                       'w', encoding='utf-8') as output:
                  desktop.write(output, space_around_delimiters=False)
 
             lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
             mkdir_p(lintiandir)
+
             with open(os.path.join(lintiandir, package.name),
                       'a', encoding='utf-8') as o:
                  o.write('%s: desktop-command-not-in-package '
                          'usr/share/applications/%s.desktop %s\n'
-                         % (package.name, package.name, package.program))
+                         % (package.name, desktop_file, package.program))
 
             debdir = os.path.join(destdir, 'DEBIAN')
             mkdir_p(debdir)
