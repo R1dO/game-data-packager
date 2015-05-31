@@ -2640,7 +2640,7 @@ class GameData(object):
                     if os.path.isdir(path):
                         logger.debug('possible %s found in Steam at %s',
                                 self.shortname, path)
-                        yield path
+                        yield os.path.realpath(path)
 
     def iter_origin_paths(self, packages=None):
         if packages is None:
