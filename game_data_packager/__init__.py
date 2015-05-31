@@ -421,6 +421,13 @@ class GameDataPackage(object):
         self._install = set(value)
 
     @property
+    def only_file(self):
+        if len(self._install) == 1:
+            return list(self._install)[0]
+        else:
+            return None
+
+    @property
     def install_contents_of(self):
         return self._install_contents_of
     @install_contents_of.setter
@@ -1853,7 +1860,7 @@ class GameData(object):
 
             if count_usr == 0 and count_doc == 1:
                 o.write('"/usr/share/doc/%s/%s"\n' % (package.name,
-                                                      list(package.install)[0]))
+                                                      package.only_file))
             elif count_usr == 1:
                 o.write('"/%s/%s"\n' % (package.install_to, main_wad))
             elif len(exts) == 1:

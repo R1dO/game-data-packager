@@ -30,6 +30,8 @@ class ZCodeGameData(GameData):
     def __init__(self, shortname, data, workdir=None):
         super(ZCodeGameData, self).__init__(shortname, data,
                 workdir=workdir)
+        for package in self.packages.values():
+            assert package.only_file
 
         if self.engine is None:
             self.engine = 'gargoyle-free | frotz'
@@ -57,7 +59,7 @@ class ZCodeGameData(GameData):
                 engine = 'gargoyle-free'
                 entry['Terminal'] = 'false'
             entry['TryExec'] = engine
-            arg = '/' + package.install_to + '/' + list(package.install)[0]
+            arg = '/' + package.install_to + '/' + package.only_file
             entry['Exec'] = engine + ' ' + arg
 
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')

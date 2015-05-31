@@ -75,8 +75,11 @@ class DoomGameData(GameData):
             engine = package.engine or self.engine
             engine = engine.split('|')[-1].strip()
             package.program = package_map.get(engine, engine)
-            package.main_wads = self.data['packages'][package.name].get(
-                    'main_wads', {list(package.install)[0]: {}})
+            if 'main_wads' in self.data['packages'][package.name]:
+                package.main_wads = self.data['packages'][package.name]['main_wads']
+            else:
+                assert package.only_file
+                package.main_wads = {package.only_file: {}}
             assert type(package.main_wads) == dict
             for main_wad in package.main_wads.values():
                 assert type(main_wad) == dict
@@ -132,12 +135,8 @@ class DoomGameData(GameData):
             if 'args' in quirks:
                 args = '-file ' + main_wad + ' ' + quirks['args']
             elif package.expansion_for:
-                for f in self.packages[package.expansion_for].install:
-                    if f.endswith('.wad'):
-                        iwad = f
-                        break
-                else:
-                    raise AssertionError("Couldn't find %s's IWAD" % main_wad)
+                iwad = self.packages[package.expansion_for].only_file
+                assert iwad is not None, "Couldn't find %s's IWAD" % main_wad
                 args = (  '-iwad /usr/share/games/doom/' + iwad
                        + ' -file /usr/share/games/doom/' + main_wad)
             else:
