@@ -2,6 +2,10 @@
 copyright: © XXXX Various
 packages:
   doom-compet-n-data:
+    # mostly, for 5 of 6 PWADS
+    expansion_for_ext: doom2-wad
+    debian:
+      recommends: doom2-wad | freedoom, doom-wad | freedoom
     install_to: usr/share/games/doom
     install:
     - av.deh

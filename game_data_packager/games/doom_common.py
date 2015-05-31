@@ -94,7 +94,8 @@ class DoomGameData(GameData):
             package.program = package_map.get(engine, engine)
             package.create_desktop_file = self.data['packages'][package.name].get(
                     'create_desktop_file', True)
-            package.data_type = 'PWAD' if package.expansion_for else 'IWAD'
+            package.data_type = 'PWAD' if (package.expansion_for
+                                or package.expansion_for_ext) else 'IWAD'
 
     def construct_package(self, binary):
         return WadPackage(binary)

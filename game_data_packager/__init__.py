@@ -335,6 +335,9 @@ class GameDataPackage(object):
         self.demo_for = set()
         self.better_version = None
         self.expansion_for = None
+        # expansion for a package outside of this yaml file;
+        # may be another GDP package or a package not made by GDP
+        self.expansion_for_ext = None
 
         # The optional marketing name of this version
         self.longname = None
@@ -441,7 +444,7 @@ class GameDataPackage(object):
         """
         if self.demo_for:
             return 'demo'
-        if self.expansion_for:
+        if self.expansion_for or self.expansion_for_ext:
             return 'expansion'
         return 'full'
 
@@ -797,7 +800,7 @@ class GameData(object):
         }
 
     def _populate_package(self, package, d):
-        for k in ('expansion_for', 'longname', 'symlinks', 'install_to',
+        for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version',
                 'copyright', 'engine', 'gog', 'origin', 'lang', 'component', 'section'):
