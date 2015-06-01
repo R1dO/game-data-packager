@@ -41,6 +41,11 @@ class LGeneralGameData(GameData):
             logger.error('The "lgc-pg" tool is required for this package.')
             raise NoPackagesPossible()
 
+        if 'DISPLAY' not in os.environ and 'WAYLAND_DISPLAY' not in os.environ:
+            logger.error('The "lgc-pg" tool requires '
+                         'to run in some graphical environment.')
+            raise NoPackagesPossible()
+
         ready = super(LGeneralGameData, self).prepare_packages(packages,
                 build_demos=build_demos, download=download)
 
