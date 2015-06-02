@@ -2792,11 +2792,12 @@ def iter_fat_mounts(folder):
             if type in ('fat','vfat', 'ntfs'):
                 yield os.path.join(mount, 'Program Files', folder)
 
-def load_games(workdir=None):
+def load_games(workdir=None,game='*'):
     games = {}
 
-    for jsonfile in glob.glob(os.path.join(DATADIR, '*.json')):
-        if sys.stderr.isatty(): print('.', end='', flush=True, file=sys.stderr)
+    for jsonfile in glob.glob(os.path.join(DATADIR, game + '.json')):
+        if game == '*' and sys.stderr.isatty():
+            print('.', end='', flush=True, file=sys.stderr)
         try:
             g = os.path.basename(jsonfile)
             g = g[:len(g) - 5]
@@ -2876,6 +2877,23 @@ def run_command_line():
             dest='verbose', help='hide output from external '
              'tools (default)')
 
+
+    class DumbParser(argparse.ArgumentParser):
+        def error(self, message):
+            pass
+
+    dumb_parser = DumbParser(parents=(base_parser,),add_help=False)
+    dumb_parser.add_argument('game', type=str, nargs='?')
+    dumb_parser.add_argument('paths', type=str, nargs='*')
+    dumb_parser.add_argument('-h', '--help', action='store_true', dest='h')
+    g = dumb_parser.parse_args().game
+    if g is None:
+        games = load_games(None)
+    elif os.path.isfile(os.path.join(DATADIR, '%s.json' % g)):
+        games = load_games(None, game=g)
+    else:
+        games = load_games(None)
+
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.', parents=(base_parser,),
             epilog='Run "game-data-packager GAME --help" to see ' +
@@ -2883,8 +2901,6 @@ def run_command_line():
 
     game_parsers = parser.add_subparsers(dest='shortname',
             title='supported games', metavar='GAME')
-
-    games = load_games(None)
 
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers, base_parser)
