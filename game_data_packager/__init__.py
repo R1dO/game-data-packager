@@ -734,6 +734,21 @@ class GameData(object):
                    'resource.1_106_cd'
                    ), (self.shortname, wanted.name)
 
+        if len(self.packages) > 1:
+            prepend = '\npackages possible for this game:\n'
+            help = []
+            for package in self.packages.values():
+                type = { 'demo' : 1,
+                         'full' : 2,
+                         'expansion' : 3}.get(package.type)
+                help.append({ 'type' : type,
+                              'year' : package.copyright or self.copyright,
+                              'name' : package.name,
+                              'longname': package.longname or self.longname})
+            for h in sorted(help, key=lambda k: (k['type'], k['year'][2:6], k['name'])):
+                prepend += "  %-40s %s\n" % (h['name'],h['longname'])
+            self.help_text = prepend + '\n' + self.help_text
+
         # advertise where to buy games
         # if it's not already in the help_text
         gog_url = self.gog.get('url')
