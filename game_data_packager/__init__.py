@@ -766,8 +766,8 @@ class GameData(object):
             www.append('http://www.gog.com/game/' + gog_url + '?pp=' + gog_pp)
         if www:
             random.shuffle(www)
-            self.help_text += '\nThis game can be bought online here:\n '
-            self.help_text += '\n '.join(www)
+            self.help_text += '\nThis game can be bought online here:\n  '
+            self.help_text += '\n  '.join(www)
 
     def __enter__(self):
         return self
