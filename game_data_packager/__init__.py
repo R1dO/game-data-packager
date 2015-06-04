@@ -56,6 +56,10 @@ from .util import (MEBIBYTE,
         which)
 from .version import GAME_PACKAGE_VERSION
 
+AGENT = ('Debian Game-Data-Packager/%s (%s %s;'
+         ' +http://wiki.debian.org/Games/GameDataPackager)' %
+        (GAME_PACKAGE_VERSION, os.uname()[0], os.uname()[4]) )
+
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
 
@@ -1442,7 +1446,8 @@ class GameData(object):
                     tmp = None
 
                     try:
-                        rf = urllib.request.urlopen(url)
+                        rf = urllib.request.urlopen(urllib.request.Request(
+                                         url,headers={'User-Agent': AGENT}))
                         if rf is None:
                             continue
 
