@@ -32,10 +32,10 @@ packages:
          args: hrmus.wad
       mm.wad:
          name: Memento Mori
-         args: mmmus.wad
+         args: mm11fix.wad mmmus.wad
       mm2.wad:
          name: Memento Mori II
-         args: mm2mus.wad
+         args: mm2info.wad mm2mus.wad
       requiem.wad:
          name: Requiem
          args: req21fix.wad reqmus.wad
@@ -47,6 +47,7 @@ packages:
     - hr.wad
     - hrmus.wad
     - mm.wad
+    - mm11fix.wad
     - mmmus.wad
     - mm2.wad
     - mm2info.wad
@@ -59,6 +60,7 @@ packages:
     - class_ep.txt
     - hr.txt
     - mm.txt
+    - mm11fix.txt
     - mm2.txt
     - requiem.txt
 
@@ -115,6 +117,14 @@ files:
     - mm2mus.wad
     - mm2.txt
     - mm2info.zip
+  mm11fix.zip:
+    download:  http://doom.com.hr/public/compet-n/pwads/mm/mm11fix.zip
+    unpack:
+      format: zip
+    provides:
+    - mm11fix.wad
+    - mm11fix.txt
+
   mm2info.zip:
     unpack:
       format: zip
@@ -151,6 +161,8 @@ cksums: |
   _ 519357    hrmus.wad
   _ 2893      mm.txt
   _ 7825282   mm.wad
+  _ 170316    mm11fix.wad
+  _ 1802      mm11fix.txt
   _ 42580     mm2.txt
   _ 11453000  mm2.wad
   _ 1202547   mm2info.wad
@@ -167,6 +179,7 @@ cksums: |
   _ 4243405   mm2.zip
   _ 375117    mm2info.zip
   _ 2788343   mm_allup.zip
+  _ 65968     mm11fix.zip
   _ 4187990   requiem.zip
 
 md5sums: |
@@ -180,6 +193,8 @@ md5sums: |
   b80ebf10d3504742faa756ff705375ee  hrmus.wad
   39879bc7be4164590bc697ac4a49778e  mm.txt
   371e532847f2b9ae916db4dce76640d8  mm.wad
+  5328cd7178a98200d6030110b66eaba3  mm11fix.wad
+  002600e8300d4cb04a68077303a93496  mm11fix.txt
   8463b914bcb9263ab0a7d7aa9a577023  mm2.txt
   83414913d5c5c1685d633b7138cda387  mm2.wad
   ed9c1765b9e2d349f178cfaea1851646  mm2info.wad
@@ -196,6 +211,7 @@ md5sums: |
   1bacb1013e2eae3c54fff4de97b90115  mm2.zip
   4c6313dc4b16db3c4feb0f80dcbffc22  mm2info.zip
   7092a6a40dcad2aeb647783b939aba08  mm_allup.zip
+  7d6f1015c2ed11d920f3f7ae35239ba1  mm11fix.zip
   52df3782b73b326a8be480448bf56a45  requiem.zip
 sha1sums: |
   edc231da967edd64780299b930345fcfa79f649a  av.deh
@@ -208,6 +224,8 @@ sha1sums: |
   798173017bd6e6dc2ceb2a0a3bd60b05387c8bea  hrmus.wad
   81114aef64af753f89bc078f680676d4ff0f79d7  mm.txt
   e4be45898b99f4b987110d2db9f5a3284d82dde2  mm.wad
+  6f1dc08b411302392503eda9c91f26b14e6f66f3  mm11fix.wad
+  68c2d9825d5ad141f5a166ba3dba5a53ac1b6fcc  mm11fix.txt
   42fbf3716227be9ef653cefeb8bd1b939eca75f4  mm2.txt
   9a234626593dce411275f1d0cec87d448bcaf77c  mm2.wad
   4a03f1d79019b84f68749dcd485b01708f345fc1  mm2info.wad
@@ -224,5 +242,6 @@ sha1sums: |
   3fbf1dfb7f1c37c61095f96a4ee50273406990d5  mm2.zip
   ebbe578b6c39a2a3e472c8b70dff31ae5b6f09c7  mm2info.zip
   6059195ff4d3c9060860328eae638263ad429674  mm_allup.zip
+  c576525bf15c6ea2b1b189feb4f016f66be936be  mm11fix.zip
   9999480a89f3b573f55cf9780ffeb0fab82b0784  requiem.zip
 ...
