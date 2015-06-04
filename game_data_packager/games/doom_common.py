@@ -133,7 +133,7 @@ class DoomGameData(GameData):
             entry['GenericName'] = self.genre + ' game'
             entry['TryExec'] = package.program
             if 'args' in quirks:
-                args = '-file ' + main_wad + ' ' + quirks['args']
+                args = quirks['args'] % main_wad
             elif package.expansion_for:
                 iwad = self.packages[package.expansion_for].only_file
                 assert iwad is not None, "Couldn't find %s's IWAD" % main_wad

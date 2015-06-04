@@ -25,7 +25,10 @@ packages:
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install:
     - tnt.wad
-    #- tnt31.wad
+    - tnt31.wad
+    main_wads:
+      tnt.wad:
+        args: -iwad %s -file tnt31.wad
     install_to: usr/share/games/doom
 
   plutonia-wad:

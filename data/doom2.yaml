@@ -36,6 +36,9 @@ packages:
       id: 208200
       path: "common/DOOM 3 BFG Edition"
     install_to: usr/share/games/doom
+    main_wads:
+      nerve.wad:
+        args: -file %s
     install:
     - nerve.wad
 

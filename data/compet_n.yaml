@@ -23,22 +23,22 @@ packages:
     main_wads:
       av.wad:
          name: Alien Vendetta (2nd Ed.)
-         args: -deh av.deh
+         args: -file %s -deh av.deh
       class_ep.wad:
          name: The Classic Episode (1st Ed.)
-         args: -iwad doom.wad -warp 2 1
+         args: -iwad doom.wad -file %s -warp 2 1
       hr.wad:
          name: Hell Revealed
-         args: hrmus.wad
+         args: -file %s hrmus.wad
       mm.wad:
          name: Memento Mori
-         args: mm11fix.wad mmmus.wad
+         args: -file %s mm11fix.wad mmmus.wad
       mm2.wad:
          name: Memento Mori II
-         args: mm2mus.wad
+         args: -file %s mm2mus.wad
       requiem.wad:
          name: Requiem
-         args: req21fix.wad reqmus.wad
+         args: -file %s req21fix.wad reqmus.wad
     install_to: usr/share/games/doom
     install:
     - av.wad
