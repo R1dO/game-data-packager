@@ -25,6 +25,7 @@ packages:
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install:
     - tnt.wad
+    #- tnt31.wad
     install_to: usr/share/games/doom
 
   plutonia-wad:
@@ -64,6 +65,30 @@ files:
     md5: be626c12b7c9d94b1dfb9c327566b4ff
     look_for:
     - tnt.wad
+
+  tnt31.wad:
+    size: 282000
+    md5: 7a77ee148fd9ee5bc599356218f6f6b5
+
+  tnt31fix.zip:
+    download: http://www.teamtnt.com/other/tnt31fix.zip
+    size: 119210
+    md5: 8b1dcb47723f41bd2729c9d04e64d1ce
+    sha1: c3e952560074fe47d1ba120f6f26b80cdadb13fe
+    unpack:
+      format: zip
+    provides:
+    - tnt31.wad
+
+  tnt31fix.zip_repack:
+    look_for: [tnt31fix.zip]
+    download: http://doomedsda.us/lmps/944/tnt31fix.zip
+    size: 110428
+    md5: 3c79c8ef45acffca184f84d7b5e74279
+    unpack:
+      format: zip
+    provides:
+    - tnt31.wad
 
   plutonia.wad:
     alternatives:
