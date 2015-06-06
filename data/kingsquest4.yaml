@@ -8,6 +8,7 @@ packages:
   kingsquest4-data:
     gog:
       url: kings_quest_4_5_6
+      game: kings_quest_4_the_perils_of_rosella
     install:
     - resource.001
     - resource.002
@@ -38,6 +39,19 @@ files:
     - view.997
     - manual.pdf
 
+  setup_kings_quest4_2.1.0.18.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.map
+    - view.653
+    - view.997
+    - manual.pdf
+
   manual.pdf:
     install_to: $docdir
 
@@ -51,6 +65,7 @@ cksums: |
   _ 66        view.997
   _ 4841227   manual.pdf
   _ 305459671 setup_kings_quest_4_5_6.exe
+  _ 20631744  setup_kings_quest4_2.1.0.18.exe
 md5sums: |
   68c558be55b4362de8b4f0b89930b00b  resource.001
   0b924fd922de2389fcfd35d747263c61  resource.002
@@ -61,6 +76,7 @@ md5sums: |
   692c4c009d3397a7e41e2558085f47ab  view.997
   bd897ec43bf416ee08a4a8e9b4bd7ff4  manual.pdf
   00c153eb0f99d76b7778daf3cd0045c7  setup_kings_quest_4_5_6.exe
+  ff066aeba1f7fe7ffb78a97d06b7e867  setup_kings_quest4_2.1.0.18.exe
 sha1sums: |
   600dbc40ed731f359c0fddcc90f70d7ecd0e4be3  resource.001
   03693409c9ce776dcd6d4872a1e248f6e8d022c6  resource.002
@@ -70,5 +86,6 @@ sha1sums: |
   5e5df29d15aab836a1ce905df12e42c409d3389b  view.653
   3ea3e6a9b9ba90a4297a8ad0049aa5e5dd2bcbbb  view.997
   c8b7f666c75130c8cb40c2da9161fa6e3849de51  setup_kings_quest_4_5_6.exe
+  213e12ed5709a118586573dbe44388f9bc1ba087  setup_kings_quest4_2.1.0.18.exe
 ...
 

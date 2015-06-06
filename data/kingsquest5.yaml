@@ -8,6 +8,7 @@ packages:
   kingsquest5-data:
     gog:
       url: kings_quest_4_5_6
+      game: kings_quest_5_absence_makes_the_heart_go_yonder
     install:
     - 0.scr
     - 0.tex
@@ -74,6 +75,39 @@ files:
     - resource.map
     - version
 
+  setup_kings_quest5_2.1.0.18.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 0.scr
+    - 0.tex
+    - 1.scr
+    - 10125.syn
+    - 10126.syn
+    - 119.scr
+    - 119.tex
+    - 124.scr
+    - 1699.snd
+    - 1799.snd
+    - 1849.snd
+    - 203.scr
+    - 205.scr
+    - 36.scr
+    - 47.scr
+    - 610.scr
+    - 610.tex
+    - 611.scr
+    - 612.scr
+    - 66.scr
+    - 769.scr
+    - 99.scr
+    - audio001.002
+    - audio001.map
+    - resource.000
+    - resource.001
+    - resource.map
+    - version
+
 cksums: |
   _ 9960      0.scr
   _ 50        0.tex
@@ -105,6 +139,7 @@ cksums: |
   _ 11        version
 
   _ 305459671 setup_kings_quest_4_5_6.exe
+  _ 66756232  setup_kings_quest5_2.1.0.18.exe
 
 md5sums: |
   ea3ef2d5afe9252a6b1f9224c720ad4a  0.scr
@@ -137,6 +172,7 @@ md5sums: |
   8ce08a5279071c36664c670498c1cf8b  version
 
   00c153eb0f99d76b7778daf3cd0045c7  setup_kings_quest_4_5_6.exe
+  8512167c7f4f5bf9b3e76d4ff58f8c57  setup_kings_quest5_2.1.0.18.exe
 
 sha1sums: |
   9941094d4b310dcc74b93f59cd055ed6fe9b9786  0.scr
@@ -169,5 +205,6 @@ sha1sums: |
   2c42ee569efd03208dc15617724ea21c9a644cb2  version
 
   c8b7f666c75130c8cb40c2da9161fa6e3849de51  setup_kings_quest_4_5_6.exe
+  383d04730cb9fbbc168686b04efd6e66dc26b1ce  setup_kings_quest5_2.1.0.18.exe
 ...
 

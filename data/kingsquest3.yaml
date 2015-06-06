@@ -8,6 +8,7 @@ packages:
   kingsquest3-data:
     gog:
       url: kings_quest_1_2_3
+      game: kings_quest_3_to_heir_is_human
     install:
     - logdir
     - object
@@ -43,6 +44,22 @@ files:
     - words.tok
     - manual.pdf
 
+  setup_kings_quest3_2.1.0.16.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - vol.3
+    - words.tok
+    - manual.pdf
+
 cksums: |
   _ 390       logdir
   _ 778       object
@@ -56,6 +73,7 @@ cksums: |
   _ 5670      words.tok
 
   _ 16447803  setup_kings_quest_1_2_3.exe
+  _ 15641688  setup_kings_quest3_2.1.0.16.exe
   _ 2175266   manual.pdf
 md5sums: |
   d3d17b77b3b3cd13246749231d9473cd  logdir
@@ -70,6 +88,7 @@ md5sums: |
   a395c623947245eec25661ff327b601d  words.tok
 
   df5045d1f5b1b1ed3626bfc9673fab7a  setup_kings_quest_1_2_3.exe
+  1787139bab215f27e09aed48b5b9887d  setup_kings_quest3_2.1.0.16.exe
   02cc410606a44150dc0c168f27c137df  manual.pdf
 sha1sums: |
   dbcf95fbd09e8c6b9f25f692dd888870863c8c81  logdir
@@ -84,6 +103,7 @@ sha1sums: |
   df90e8eade5738af377f15214a1c66c937ac7925  words.tok
 
   437c29cf0c21a551a0bdfe6c0be614492096afe0  setup_kings_quest_1_2_3.exe
+  c8a725ed29cdff5d965bf673740e29fd7fa2391c  setup_kings_quest3_2.1.0.16.exe
   bf86d78a0c794ea30da7180183c0b21367cf13d6  manual.pdf
 ...
 

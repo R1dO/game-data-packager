@@ -8,6 +8,7 @@ packages:
   kingsquest6-data:
     gog:
       url: kings_quest_4_5_6
+      game: kings_quest_6_heir_today_gone_tomorrow
     install:
     - 420.hep
     - 420.scr
@@ -158,6 +159,78 @@ files:
 
     - manual.pdf
 
+  setup_kings_quest6_2.1.0.18.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 420.hep
+    - 420.scr
+    - 425.hep
+    - 425.scr
+    - 460.hep
+    - 460.scr
+    - 470.hep
+    - 470.scr
+    - 65535.map
+    - message.map
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.msg
+    - resource.sfx
+    - version
+    - disk2
+    - kq6cd
+    - actors/alex.bin
+    - actors/allaria.bin
+    - actors/allariad.bin
+    - actors/beast.bin
+    - actors/beautess.bin
+    - actors/beautpea.bin
+    - actors/booksh.bin
+    - actors/bookworm.bin
+    - actors/caliphid.bin
+    - actors/caliphim.bin
+    - actors/cassima.bin
+    - actors/celeste.bin
+    - actors/ferrym.bin
+    - actors/gnomes.bin
+    - actors/graham.bin
+    - actors/headdru.bin
+    - actors/jollo.bin
+    - actors/lampsell.bin
+    - actors/pawnshop.bin
+    - actors/prince.bin
+    - actors/rosella.bin
+    - actors/saladin.bin
+    - actors/sight.bin
+    - actors/smell.bin
+    - actors/smellno.bin
+    - actors/sound.bin
+    - actors/soundno.bin
+    - actors/taste.bin
+    - actors/touch.bin
+    - actors/valanice.bin
+    - actors/vizier.bin
+    - actors/wingg.bin
+    - seq/birds.seq
+    - seq/boat.seq
+    - seq/cd1.seq
+    - seq/cd6.seq
+    - seq/close.seq
+    - seq/cloud.seq
+    - seq/fpan.seq
+    - seq/fs1.seq
+    - seq/fs2y.seq
+    - seq/fs2z.seq
+    - seq/land.seq
+    - seq/nshp.seq
+    - seq/open.seq
+    - seq/open2.seq
+    - seq/scan.seq
+    - seq/scop.seq
+    - manual.pdf
+
   manual.pdf:
     install_to: $docdir
 
@@ -232,6 +305,7 @@ cksums: |
   _ 1023651   seq/scop.seq
 
   _ 305459671 setup_kings_quest_4_5_6.exe
+  _ 257288336 setup_kings_quest6_2.1.0.18.exe
   _ 4841227   manual.pdf
 md5sums: |
   dde8709ca90893b3ac55cc7b3d008ef7  420.hep
@@ -306,6 +380,7 @@ md5sums: |
 
   bd897ec43bf416ee08a4a8e9b4bd7ff4  manual.pdf
   00c153eb0f99d76b7778daf3cd0045c7  setup_kings_quest_4_5_6.exe
+  6da5e0cd12fd5f87fa1942c2b5d214ea  setup_kings_quest6_2.1.0.18.exe
 sha1sums: |
   87591b74ec985c21c09da8b0f2773448af07d86b  420.hep
   b207269ffea467eddbc5898edbdcaecebddaaf48  420.scr
@@ -377,5 +452,6 @@ sha1sums: |
   64cddbf29967f37f58b7b565f3df0d1451404d11  seq/scop.seq
 
   c8b7f666c75130c8cb40c2da9161fa6e3849de51  setup_kings_quest_4_5_6.exe
+  93cc1f3778073843c2cdf031ba5cbaeccbf84800  setup_kings_quest6_2.1.0.18.exe
 ...
 

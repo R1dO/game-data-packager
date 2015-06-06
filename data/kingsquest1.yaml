@@ -8,6 +8,7 @@ packages:
   kingsquest1-data:
     gog:
       url: kings_quest_1_2_3
+      game: kings_quest
     install:
     - logdir
     - object
@@ -41,6 +42,21 @@ files:
     - words.tok
     - manual.pdf
 
+  setup_kings_quest_2.1.0.16.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
+    - manual.pdf
+
 cksums: |
   _ 315       logdir
   _ 331       object
@@ -53,7 +69,9 @@ cksums: |
   _ 3144      words.tok
 
   _ 16447803  setup_kings_quest_1_2_3.exe
+  _ 15420944  setup_kings_quest_2.1.0.16.exe
   _ 2038442   manual.pdf
+
 md5sums: |
   10ad66e2ecbd66951534a50aedcd0128  logdir
   6eca02fa540337308529ff13e9e764aa  object
@@ -66,7 +84,9 @@ md5sums: |
   50e00d15fa3e25b512c19608119111cf  words.tok
 
   df5045d1f5b1b1ed3626bfc9673fab7a  setup_kings_quest_1_2_3.exe
+  4985e1041db1b1458ceabf57e6503ff9  setup_kings_quest_2.1.0.16.exe
   cd321dcbaf43a4c2017bcabe3f18fcc8  manual.pdf
+
 sha1sums: |
   8dcdb16fa70c5b5a9a49ee95a57d4e1555ea310f  logdir
   8fc5c6d1f002330e17b98f45781307268ba0b451  object
@@ -79,6 +99,7 @@ sha1sums: |
   e4c1592e4a92d38e646c043614305de6f97482ca  words.tok
 
   437c29cf0c21a551a0bdfe6c0be614492096afe0  setup_kings_quest_1_2_3.exe
+  3faa46361f90ecf240a2154782c417a6d062df91  setup_kings_quest_2.1.0.16.exe
   855aee30c392665060cf8b5ff3f0e81314961f70  manual.pdf
 ...
 
