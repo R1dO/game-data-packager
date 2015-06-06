@@ -1,0 +1,983 @@
+---
+longname: Zak McKracken and the Alien Mindbenders
+copyright: © 1988 Lucasfilm Games
+plugin: scummvm_common
+
+packages:
+  zak-data:
+    install:
+    - 00.lfl
+    - 01.lfl
+    - 02.lfl
+    - 03.lfl
+    - 04.lfl
+    - 05.lfl
+    - 06.lfl
+    - 07.lfl
+    - 08.lfl
+    - 09.lfl
+    - 10.lfl
+    - 11.lfl
+    - 12.lfl
+    - 13.lfl
+    - 14.lfl
+    - 15.lfl
+    - 16.lfl
+    - 17.lfl
+    - 18.lfl
+    - 19.lfl
+    - 20.lfl
+    - 21.lfl
+    - 22.lfl
+    - 23.lfl
+    - 24.lfl
+    - 25.lfl
+    - 26.lfl
+    - 27.lfl
+    - 28.lfl
+    - 29.lfl
+    - 30.lfl
+    - 31.lfl
+    - 32.lfl
+    - 33.lfl
+    - 34.lfl
+    - 35.lfl
+    - 36.lfl
+    - 37.lfl
+    - 38.lfl
+    - 39.lfl
+    - 40.lfl
+    - 41.lfl
+    - 42.lfl
+    - 43.lfl
+    - 44.lfl
+    - 45.lfl
+    - 46.lfl
+    - 47.lfl
+    - 48.lfl
+    - 49.lfl
+    - 50.lfl
+    - 51.lfl
+    - 52.lfl
+    - 53.lfl
+    - 54.lfl
+    - 55.lfl
+    - 56.lfl
+    - 57.lfl
+    - 58.lfl
+    - 59.lfl
+    - 98.lfl
+    - 99.lfl
+    optional:
+    - track1.mp3
+    - track2.mp3
+    - track3.mp3
+    - track4.mp3
+    - track5.mp3
+    - track6.mp3
+    - track7.mp3
+    - track8.mp3
+    - track9.mp3
+    - track10.mp3
+    - track11.mp3
+    - track12.mp3
+    - track13.mp3
+    - track14.mp3
+    - track15.mp3
+    - track16.mp3
+    - track17.mp3
+    - track18.mp3
+    - track19.mp3
+    - track20.mp3
+    - track21.mp3
+    - hintbook.pdf
+    - manual.pdf
+    - newspaper.pdf
+
+  zak-dos-data:
+    better_version: zak-data
+    install:
+    - 00.lfl_floppy
+    - 01.lfl_floppy
+    - 02.lfl_floppy
+    - 03.lfl_floppy
+    - 04.lfl_floppy
+    - 05.lfl_floppy
+    - 06.lfl_floppy
+    - 07.lfl_floppy
+    - 08.lfl_floppy
+    - 09.lfl_floppy
+    - 10.lfl_floppy
+    - 11.lfl_floppy
+    - 12.lfl_floppy
+    - 13.lfl_floppy
+    - 14.lfl_floppy
+    - 15.lfl_floppy
+    - 16.lfl_floppy
+    - 17.lfl_floppy
+    - 18.lfl_floppy
+    - 19.lfl_floppy
+    - 20.lfl_floppy
+    - 21.lfl_floppy
+    - 22.lfl_floppy
+    - 23.lfl_floppy
+    - 24.lfl_floppy
+    - 25.lfl_floppy
+    - 26.lfl_floppy
+    - 27.lfl_floppy
+    - 28.lfl_floppy
+    - 29.lfl_floppy
+    - 30.lfl_floppy
+    - 31.lfl_floppy
+    - 32.lfl_floppy
+    - 33.lfl_floppy
+    - 34.lfl_floppy
+    - 35.lfl_floppy
+    - 36.lfl_floppy
+    - 37.lfl_floppy
+    - 38.lfl_floppy
+    - 39.lfl_floppy
+    - 40.lfl_floppy
+    - 41.lfl_floppy
+    - 42.lfl_floppy
+    - 43.lfl_floppy
+    - 44.lfl_floppy
+    - 45.lfl_floppy
+    - 46.lfl_floppy
+    - 47.lfl_floppy
+    - 48.lfl_floppy
+    - 49.lfl_floppy
+    - 50.lfl_floppy
+    - 51.lfl_floppy
+    - 52.lfl_floppy
+    - 53.lfl_floppy
+    - 54.lfl_floppy
+    - 55.lfl_floppy
+    - 56.lfl_floppy
+    - 57.lfl_floppy
+    - 58.lfl_floppy
+    optional:
+    - hintbook.pdf
+    - manual.pdf
+    - newspaper.pdf
+
+files:
+  hintbook.pdf:
+    install_to: $docdir
+    look_for: [hintbook.pdf,'Zak McKraken and the Alien Mindbenders - Hintbook.pdf']
+  manual.pdf:
+    install_to: $docdir
+    look_for: [manual.pdf,'Zak McKraken and the Alien Mindbenders - Manual.pdf']
+  newspaper.pdf:
+    install_to: $docdir
+    look_for: [newspaper.pdf,'Zak McKracken - The National Inquisitor.pdf']
+
+  00.lfl_floppy:
+    install_as: 00.lfl
+    look_for: [00.lfl]
+  01.lfl_floppy:
+    install_as: 01.lfl
+    look_for: [01.lfl]
+  02.lfl_floppy:
+    install_as: 02.lfl
+    look_for: [02.lfl]
+  03.lfl_floppy:
+    install_as: 03.lfl
+    look_for: [03.lfl]
+  04.lfl_floppy:
+    install_as: 04.lfl
+    look_for: [04.lfl]
+  05.lfl_floppy:
+    install_as: 05.lfl
+    look_for: [05.lfl]
+  06.lfl_floppy:
+    install_as: 06.lfl
+    look_for: [06.lfl]
+  07.lfl_floppy:
+    install_as: 07.lfl
+    look_for: [07.lfl]
+  08.lfl_floppy:
+    install_as: 08.lfl
+    look_for: [08.lfl]
+  09.lfl_floppy:
+    install_as: 09.lfl
+    look_for: [09.lfl]
+  10.lfl_floppy:
+    install_as: 10.lfl
+    look_for: [10.lfl]
+  11.lfl_floppy:
+    install_as: 11.lfl
+    look_for: [11.lfl]
+  12.lfl_floppy:
+    install_as: 12.lfl
+    look_for: [12.lfl]
+  13.lfl_floppy:
+    install_as: 13.lfl
+    look_for: [13.lfl]
+  14.lfl_floppy:
+    install_as: 14.lfl
+    look_for: [14.lfl]
+  15.lfl_floppy:
+    install_as: 15.lfl
+    look_for: [15.lfl]
+  16.lfl_floppy:
+    install_as: 16.lfl
+    look_for: [16.lfl]
+  17.lfl_floppy:
+    install_as: 17.lfl
+    look_for: [17.lfl]
+  18.lfl_floppy:
+    install_as: 18.lfl
+    look_for: [18.lfl]
+  19.lfl_floppy:
+    install_as: 19.lfl
+    look_for: [19.lfl]
+  20.lfl_floppy:
+    install_as: 20.lfl
+    look_for: [20.lfl]
+  21.lfl_floppy:
+    install_as: 21.lfl
+    look_for: [21.lfl]
+  22.lfl_floppy:
+    install_as: 22.lfl
+    look_for: [22.lfl]
+  23.lfl_floppy:
+    install_as: 23.lfl
+    look_for: [23.lfl]
+  24.lfl_floppy:
+    install_as: 24.lfl
+    look_for: [24.lfl]
+  25.lfl_floppy:
+    install_as: 25.lfl
+    look_for: [25.lfl]
+  26.lfl_floppy:
+    install_as: 26.lfl
+    look_for: [26.lfl]
+  27.lfl_floppy:
+    install_as: 27.lfl
+    look_for: [27.lfl]
+  28.lfl_floppy:
+    install_as: 28.lfl
+    look_for: [28.lfl]
+  29.lfl_floppy:
+    install_as: 29.lfl
+    look_for: [29.lfl]
+  30.lfl_floppy:
+    install_as: 30.lfl
+    look_for: [30.lfl]
+  31.lfl_floppy:
+    install_as: 31.lfl
+    look_for: [31.lfl]
+  32.lfl_floppy:
+    install_as: 32.lfl
+    look_for: [32.lfl]
+  33.lfl_floppy:
+    install_as: 33.lfl
+    look_for: [33.lfl]
+  34.lfl_floppy:
+    install_as: 34.lfl
+    look_for: [34.lfl]
+  35.lfl_floppy:
+    install_as: 35.lfl
+    look_for: [35.lfl]
+  36.lfl_floppy:
+    install_as: 36.lfl
+    look_for: [36.lfl]
+  37.lfl_floppy:
+    install_as: 37.lfl
+    look_for: [37.lfl]
+  38.lfl_floppy:
+    install_as: 38.lfl
+    look_for: [38.lfl]
+  39.lfl_floppy:
+    install_as: 39.lfl
+    look_for: [39.lfl]
+  40.lfl_floppy:
+    install_as: 40.lfl
+    look_for: [40.lfl]
+  41.lfl_floppy:
+    install_as: 41.lfl
+    look_for: [41.lfl]
+  42.lfl_floppy:
+    install_as: 42.lfl
+    look_for: [42.lfl]
+  43.lfl_floppy:
+    install_as: 43.lfl
+    look_for: [43.lfl]
+  44.lfl_floppy:
+    install_as: 44.lfl
+    look_for: [44.lfl]
+  45.lfl_floppy:
+    install_as: 45.lfl
+    look_for: [45.lfl]
+  46.lfl_floppy:
+    install_as: 46.lfl
+    look_for: [46.lfl]
+  47.lfl_floppy:
+    install_as: 47.lfl
+    look_for: [47.lfl]
+  48.lfl_floppy:
+    install_as: 48.lfl
+    look_for: [48.lfl]
+  49.lfl_floppy:
+    install_as: 49.lfl
+    look_for: [49.lfl]
+  50.lfl_floppy:
+    install_as: 50.lfl
+    look_for: [50.lfl]
+  51.lfl_floppy:
+    install_as: 51.lfl
+    look_for: [51.lfl]
+  52.lfl_floppy:
+    install_as: 52.lfl
+    look_for: [52.lfl]
+  53.lfl_floppy:
+    install_as: 53.lfl
+    look_for: [53.lfl]
+  54.lfl_floppy:
+    install_as: 54.lfl
+    look_for: [54.lfl]
+  55.lfl_floppy:
+    install_as: 55.lfl
+    look_for: [55.lfl]
+  56.lfl_floppy:
+    install_as: 56.lfl
+    look_for: [56.lfl]
+  57.lfl_floppy:
+    install_as: 57.lfl
+    look_for: [57.lfl]
+  58.lfl_floppy:
+    install_as: 58.lfl
+    look_for: [58.lfl]
+
+  setup_zak_mckracken_and_the_alien_mindbenders_2.0.0.4.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 00.lfl
+    - 01.lfl
+    - 02.lfl
+    - 03.lfl
+    - 04.lfl
+    - 05.lfl
+    - 06.lfl
+    - 07.lfl
+    - 08.lfl
+    - 09.lfl
+    - 10.lfl
+    - 11.lfl
+    - 12.lfl
+    - 13.lfl
+    - 14.lfl
+    - 15.lfl
+    - 16.lfl
+    - 17.lfl
+    - 18.lfl
+    - 19.lfl
+    - 20.lfl
+    - 21.lfl
+    - 22.lfl
+    - 23.lfl
+    - 24.lfl
+    - 25.lfl
+    - 26.lfl
+    - 27.lfl
+    - 28.lfl
+    - 29.lfl
+    - 30.lfl
+    - 31.lfl
+    - 32.lfl
+    - 33.lfl
+    - 34.lfl
+    - 35.lfl
+    - 36.lfl
+    - 37.lfl
+    - 38.lfl
+    - 39.lfl
+    - 40.lfl
+    - 41.lfl
+    - 42.lfl
+    - 43.lfl
+    - 44.lfl
+    - 45.lfl
+    - 46.lfl
+    - 47.lfl
+    - 48.lfl
+    - 49.lfl
+    - 50.lfl
+    - 51.lfl
+    - 52.lfl
+    - 53.lfl
+    - 54.lfl
+    - 55.lfl
+    - 56.lfl
+    - 57.lfl
+    - 58.lfl
+    - 59.lfl
+    - 98.lfl
+    - 99.lfl
+    - track1.mp3
+    - track2.mp3
+    - track3.mp3
+    - track4.mp3
+    - track5.mp3
+    - track6.mp3
+    - track7.mp3
+    - track8.mp3
+    - track9.mp3
+    - track10.mp3
+    - track11.mp3
+    - track12.mp3
+    - track13.mp3
+    - track14.mp3
+    - track15.mp3
+    - track16.mp3
+    - track17.mp3
+    - track18.mp3
+    - track19.mp3
+    - track20.mp3
+    - track21.mp3
+    - hintbook.pdf
+    - manual.pdf
+    - newspaper.pdf
+
+  gog_zak_mckracken_and_the_alien_mindbenders_1.0.0.4.deb:
+    unpack:
+      format: deb
+    provides:
+    - 00.lfl
+    - 01.lfl
+    - 02.lfl
+    - 03.lfl
+    - 04.lfl
+    - 05.lfl
+    - 06.lfl
+    - 07.lfl
+    - 08.lfl
+    - 09.lfl
+    - 10.lfl
+    - 11.lfl
+    - 12.lfl
+    - 13.lfl
+    - 14.lfl
+    - 15.lfl
+    - 16.lfl
+    - 17.lfl
+    - 18.lfl
+    - 19.lfl
+    - 20.lfl
+    - 21.lfl
+    - 22.lfl
+    - 23.lfl
+    - 24.lfl
+    - 25.lfl
+    - 26.lfl
+    - 27.lfl
+    - 28.lfl
+    - 29.lfl
+    - 30.lfl
+    - 31.lfl
+    - 32.lfl
+    - 33.lfl
+    - 34.lfl
+    - 35.lfl
+    - 36.lfl
+    - 37.lfl
+    - 38.lfl
+    - 39.lfl
+    - 40.lfl
+    - 41.lfl
+    - 42.lfl
+    - 43.lfl
+    - 44.lfl
+    - 45.lfl
+    - 46.lfl
+    - 47.lfl
+    - 48.lfl
+    - 49.lfl
+    - 50.lfl
+    - 51.lfl
+    - 52.lfl
+    - 53.lfl
+    - 54.lfl
+    - 55.lfl
+    - 56.lfl
+    - 57.lfl
+    - 58.lfl
+    - 59.lfl
+    - 98.lfl
+    - 99.lfl
+    - track1.mp3
+    - track2.mp3
+    - track3.mp3
+    - track4.mp3
+    - track5.mp3
+    - track6.mp3
+    - track7.mp3
+    - track8.mp3
+    - track9.mp3
+    - track10.mp3
+    - track11.mp3
+    - track12.mp3
+    - track13.mp3
+    - track14.mp3
+    - track15.mp3
+    - track16.mp3
+    - track17.mp3
+    - track18.mp3
+    - track19.mp3
+    - track20.mp3
+    - track21.mp3
+    - hintbook.pdf
+    - manual.pdf
+    - newspaper.pdf
+
+cksums: |
+  _ 7520      00.lfl
+  _ 158125    01.lfl
+  _ 108588    02.lfl
+  _ 142227    03.lfl
+  _ 45788     04.lfl
+  _ 62264     05.lfl
+  _ 38730     06.lfl
+  _ 52295     07.lfl
+  _ 80644     08.lfl
+  _ 39362     09.lfl
+  _ 120647    10.lfl
+  _ 87033     11.lfl
+  _ 47013     12.lfl
+  _ 104477    13.lfl
+  _ 63366     14.lfl
+  _ 82593     15.lfl
+  _ 85325     16.lfl
+  _ 83654     17.lfl
+  _ 47346     18.lfl
+  _ 52242     19.lfl
+  _ 59099     20.lfl
+  _ 43534     21.lfl
+  _ 33228     22.lfl
+  _ 172389    23.lfl
+  _ 43385     24.lfl
+  _ 99324     25.lfl
+  _ 55684     26.lfl
+  _ 108505    27.lfl
+  _ 95998     28.lfl
+  _ 107822    29.lfl
+  _ 63365     30.lfl
+  _ 63759     31.lfl
+  _ 115881    32.lfl
+  _ 32164     33.lfl
+  _ 20725     34.lfl
+  _ 134778    35.lfl
+  _ 133044    36.lfl
+  _ 114723    37.lfl
+  _ 106945    38.lfl
+  _ 82736     39.lfl
+  _ 27869     40.lfl
+  _ 54365     41.lfl
+  _ 68783     42.lfl
+  _ 61612     43.lfl
+  _ 92665     44.lfl
+  _ 21029     45.lfl
+  _ 161808    46.lfl
+  _ 125987    47.lfl
+  _ 16551     48.lfl
+  _ 122135    49.lfl
+  _ 35575     50.lfl
+  _ 27165     51.lfl
+  _ 19261     52.lfl
+  _ 99631     53.lfl
+  _ 19667     54.lfl
+  _ 37523     55.lfl
+  _ 34167     56.lfl
+  _ 44550     57.lfl
+  _ 28583     58.lfl
+  _ 28152     59.lfl
+  _ 2042      98.lfl
+  _ 2042      99.lfl
+  _ 1916      00.lfl_floppy
+  _ 23682     01.lfl_floppy
+  _ 18694     02.lfl_floppy
+  _ 24149     03.lfl_floppy
+  _ 11271     04.lfl_floppy
+  _ 13344     05.lfl_floppy
+  _ 14917     06.lfl_floppy
+  _ 20528     07.lfl_floppy
+  _ 14271     08.lfl_floppy
+  _ 10725     09.lfl_floppy
+  _ 23730     10.lfl_floppy
+  _ 24049     11.lfl_floppy
+  _ 13953     12.lfl_floppy
+  _ 28524     13.lfl_floppy
+  _ 12923     14.lfl_floppy
+  _ 14751     15.lfl_floppy
+  _ 24266     16.lfl_floppy
+  _ 22556     17.lfl_floppy
+  _ 11186     18.lfl_floppy
+  _ 12270     19.lfl_floppy
+  _ 17350     20.lfl_floppy
+  _ 6988      21.lfl_floppy
+  _ 12442     22.lfl_floppy
+  _ 15480     23.lfl_floppy
+  _ 12878     24.lfl_floppy
+  _ 15797     25.lfl_floppy
+  _ 19023     26.lfl_floppy
+  _ 22751     27.lfl_floppy
+  _ 34343     28.lfl_floppy
+  _ 3994      29.lfl_floppy
+  _ 12050     30.lfl_floppy
+  _ 9325      31.lfl_floppy
+  _ 24459     32.lfl_floppy
+  _ 17929     33.lfl_floppy
+  _ 3265      34.lfl_floppy
+  _ 18397     35.lfl_floppy
+  _ 16901     36.lfl_floppy
+  _ 23831     37.lfl_floppy
+  _ 35432     38.lfl_floppy
+  _ 28217     39.lfl_floppy
+  _ 12238     40.lfl_floppy
+  _ 16451     41.lfl_floppy
+  _ 30058     42.lfl_floppy
+  _ 16347     43.lfl_floppy
+  _ 17465     44.lfl_floppy
+  _ 6994      45.lfl_floppy
+  _ 11933     46.lfl_floppy
+  _ 9876      47.lfl_floppy
+  _ 5584      48.lfl_floppy
+  _ 19163     49.lfl_floppy
+  _ 6498      50.lfl_floppy
+  _ 14260     51.lfl_floppy
+  _ 6933      52.lfl_floppy
+  _ 18545     53.lfl_floppy
+  _ 4813      54.lfl_floppy
+  _ 9814      55.lfl_floppy
+  _ 6651      56.lfl_floppy
+  _ 2255      57.lfl_floppy
+  _ 5405      58.lfl_floppy
+
+  _ 115291112 setup_zak_mckracken_and_the_alien_mindbenders_2.0.0.4.exe
+  _ 114791308 gog_zak_mckracken_and_the_alien_mindbenders_1.0.0.4.deb
+  _ 39427797  hintbook.pdf
+  _ 1981322   manual.pdf
+  _ 1435323   newspaper.pdf
+  _ 595199    track1.mp3
+  _ 3888299   track2.mp3
+  _ 3876596   track3.mp3
+  _ 1635499   track4.mp3
+  _ 1289429   track5.mp3
+  _ 3776286   track6.mp3
+  _ 2550830   track7.mp3
+  _ 2961266   track8.mp3
+  _ 3883702   track9.mp3
+  _ 4238967   track10.mp3
+  _ 1112632   track11.mp3
+  _ 1106363   track12.mp3
+  _ 517876    track13.mp3
+  _ 2467656   track14.mp3
+  _ 1843643   track15.mp3
+  _ 3026467   track16.mp3
+  _ 3930095   track17.mp3
+  _ 3925498   track18.mp3
+  _ 2373615   track19.mp3
+  _ 4024554   track20.mp3
+  _ 2229837   track21.mp3
+md5sums: |
+  2d4536a56e01da4b02eb021e7770afa2  00.lfl
+  fb203aadd37a201b26764e5c0d08852d  01.lfl
+  8f57a5c33e8aad6046ddbf9b62690172  02.lfl
+  7600122eb60bee1133edaed083acc1ca  03.lfl
+  48decabd382359a8d89a9a6cf3335e9d  04.lfl
+  c924c8f8552433dab8392aae7fd4a78e  05.lfl
+  b79be99f29e41f1ef9144216a10d81c3  06.lfl
+  f16f743bd978a2c2f97012d9a7a27848  07.lfl
+  9fb3338b187ca8f2f78d9bc94c7ab644  08.lfl
+  56d88f08f360d4c8c5a9b1f7ed3840d7  09.lfl
+  de658b9b742d13209292ee32d7d0f10f  10.lfl
+  d6e936cb614e887959c03d2b64666b14  11.lfl
+  6b1c5fb880542bc4db481795737a76c7  12.lfl
+  01dbe0b545da8735ef7728fc75085b70  13.lfl
+  241c8ede50a150da980428088f1090a4  14.lfl
+  15ab66893b67db8bc076db78fdab248c  15.lfl
+  39e0625f07381414735f5dd005cf6555  16.lfl
+  f6a63ec64eed5b13f56279707bc19c78  17.lfl
+  a4e84918d35d7590d6489b1525f7cbc0  18.lfl
+  d20a1f4accd78eabf1cccad66e1da40e  19.lfl
+  a05bc2389886fee0d53ff58b7f2e1790  20.lfl
+  850918ddb4fcabdbd0ce59a5de88e53f  21.lfl
+  ddea660675e4c836d57b0a9ca3ce2499  22.lfl
+  48e20baf3823cba81be27453c9d0998a  23.lfl
+  f95bdd7e970544d19f63075833bc43e8  24.lfl
+  1ba26e0d711ca2f753cbac7923b68a57  25.lfl
+  a8aacfe4821be894770e027fc2c2beb0  26.lfl
+  27cd2fa4cc60fb2ef5591f2eb4ccf3a6  27.lfl
+  cc0081704f31e8d0668d263461a7e61a  28.lfl
+  72fd5dd4c92e9722d0c0db42182562c4  29.lfl
+  f1ae8fd216639be6f6eaf4f50f67c6b5  30.lfl
+  31f66723d1d9572f00a0bb999d8681a7  31.lfl
+  ca5e14d1a983bcdd24fd8750c612e7a8  32.lfl
+  5c86a0cedfa55c0b40db5c35cf160f07  33.lfl
+  61e55b1a0be253939d7d37431f1e5d35  34.lfl
+  bffaa18cca9848411348df5074a83bca  35.lfl
+  e8e6152295602ef35683f280c4fcbbb6  36.lfl
+  1a9d7bb569aa816cdaba8d9153bf0be5  37.lfl
+  5c88839a59a2210be1680f0031d9505a  38.lfl
+  66ee97d74ccfba09852487ac3b02efef  39.lfl
+  a989d53b1eec42ec38094a0c2e82f202  40.lfl
+  f03d4278f64ed06e3df1512fdd8b9cbf  41.lfl
+  51ee945000d6113101647d62693a7e19  42.lfl
+  c19f359d3c661214310569bd10a9c44a  43.lfl
+  3f0ba6ac700f050153ed983989181ace  44.lfl
+  427e38b66e80804c70ada21778e4a9a0  45.lfl
+  392360bfc2c7e269057ebbf13277652a  46.lfl
+  a01bbe44073137edeb75231c4cad0287  47.lfl
+  83503631734313b9ed4b772b86b9dcd6  48.lfl
+  d6c16d36716d25c42c2eb10fc34b6aee  49.lfl
+  9fac3fd6c726c288b1f5cdfa61bdf340  50.lfl
+  0f22da88ad593f3b3868d25dacf70cca  51.lfl
+  48a4b48f342baec321390a3a7a009bb1  52.lfl
+  ca9b9a5392a87e2ab1c93a6b178cddae  53.lfl
+  fba0e1457719cc374a43743046309c35  54.lfl
+  b02c6b0edf2fb033db50d53187c4f1ef  55.lfl
+  aefc46a9c51f0fdd007fa6d36186c82a  56.lfl
+  e7c4482d8076bb17cf47c4812a6d0255  57.lfl
+  5882d2c0bbc94aff5426c92c1e7f7233  58.lfl
+  24c78c3730be66896324600fd0ce6c0e  59.lfl
+  83182fabe19558e902d50b8014eb49c0  98.lfl
+  a7b984c935c001756a4de1686d22ae8c  99.lfl
+  debe337f73d660e951ece7c1f1c81add  00.lfl_floppy
+  0d62797393b4aab8cf6368bd1b1ddcb8  01.lfl_floppy
+  a6b5ae8fe9eb2632131c605b5e46612f  02.lfl_floppy
+  e7988ce1a80a5e0c22653c1ced9abb3f  03.lfl_floppy
+  c372d0505a134ba1252a1d6c88453f8c  04.lfl_floppy
+  4072c54c2fa463bae4a97a4725a2d68c  05.lfl_floppy
+  fa03523996e2558e16ede11d0e915b0c  06.lfl_floppy
+  870c66e9ad16f63bed809c260e5ca232  07.lfl_floppy
+  d61ef8f1d6cc339c458cb6b099118d0c  08.lfl_floppy
+  dd196f9094f1435d5f2ab03719fc9aab  09.lfl_floppy
+  31655979163bc528e4e52fa78624e66b  10.lfl_floppy
+  bc8076efcb7f84ee38b5db13ef4ee029  11.lfl_floppy
+  6aba3f655ec2f13fbd4b5b60c8c487cf  12.lfl_floppy
+  23f961362809d3fb1ffd7fe1e66bed4b  13.lfl_floppy
+  1ee343a9ac07cbbfadbb14d0f7d05374  14.lfl_floppy
+  bbef9d507dfb18e04f36fd2fcb21173e  15.lfl_floppy
+  1b90ae7172f448a15c71a31a691053f2  16.lfl_floppy
+  180ae82fd9cdfd89ef80981fd4a0a38f  17.lfl_floppy
+  9ecb8cc78274d2dc6d7d4fdb7d08ed60  18.lfl_floppy
+  4807b4637f340e1aa3a57701d119afdb  19.lfl_floppy
+  cb0f081a7fcc8d81559487e31a54b0dc  20.lfl_floppy
+  61efdc65c675a0a0ad9c5f3c42e198a3  21.lfl_floppy
+  6c9505856c965f16b99bd3062183e522  22.lfl_floppy
+  488ddedb04d7acd2b89e813da837e379  23.lfl_floppy
+  b09cc57682b0873ae038f8b8bcb0c94a  24.lfl_floppy
+  57d9e3c605e4894911ebc42443094cb2  25.lfl_floppy
+  b2dbdac0e7342f2ce231331ef7291c32  26.lfl_floppy
+  adb2ef53969bedfe7c1222e1b6ade0d8  27.lfl_floppy
+  889ceb0cd7adcdf4c3eeea4f3d96ae95  28.lfl_floppy
+  9d0ce1dec48f222b34c8d4e67cffca1b  29.lfl_floppy
+  414e558ff7702fe0738ed10f04547840  30.lfl_floppy
+  09e35f1e573c0360b569701b6a29249f  31.lfl_floppy
+  48d4666c093ff522915b965dc1af7814  32.lfl_floppy
+  7025d4506f0015607bd0727d840840dd  33.lfl_floppy
+  f29f71cf04882ddb6b444ee50c04fab1  34.lfl_floppy
+  46bd0ba98c7f9152acfb13bdee5f7bde  35.lfl_floppy
+  442727d2904050d2da8aeeb489c0152b  36.lfl_floppy
+  9bc3cbbf13c60c2e4696af911fce946b  37.lfl_floppy
+  95e82f764d1732680260085408cfd64c  38.lfl_floppy
+  798b21b9cbc8deceef0560aaf2527c1e  39.lfl_floppy
+  e93d259b12d0390cc0f12fa68615e587  40.lfl_floppy
+  0ab8ddc9ce7c880553e5261ebc10a6d8  41.lfl_floppy
+  5de02406e22ec979cdfcd36fc023ba39  42.lfl_floppy
+  03b24a5950470b187bea18214d1a0938  43.lfl_floppy
+  5f337d121f3a1715f672092d75834503  44.lfl_floppy
+  a84a664cb832e2f5b210dad9c5e12214  45.lfl_floppy
+  04a4df8d07b0e12ee950dec31c72fce8  46.lfl_floppy
+  c538c74b28854a6cac779a6b166f2e7f  47.lfl_floppy
+  82366a6c5b8055138a11020385de7e1a  48.lfl_floppy
+  354ec333b1b7470bb03deeb911ff86c6  49.lfl_floppy
+  bcf28c248b821b5ed1de8701762cf13a  50.lfl_floppy
+  2d27a51da6dc054ea0a8366d17bf4bbb  51.lfl_floppy
+  5276e39749d793244458d96f361a6a2b  52.lfl_floppy
+  94557f07825702f5f83d734c37901222  53.lfl_floppy
+  badfed50583d2e888bbcf903cdc10537  54.lfl_floppy
+  9c03a63e5da6a7b8108341828d234836  55.lfl_floppy
+  ae64d3415d241efa5a5d5a6ecb08891f  56.lfl_floppy
+  1e97d9aa721492c513f9384e7787fc49  57.lfl_floppy
+  e33dda68971ce807d10850be28c710d5  58.lfl_floppy
+
+  54d4930d5f323b59a3f5c476aaf562ef  setup_zak_mckracken_and_the_alien_mindbenders_2.0.0.4.exe
+  bb376b6ced8156dd3b5882ee4fe0e278  gog_zak_mckracken_and_the_alien_mindbenders_1.0.0.4.deb
+  14c8db83774a2e7917861785104b19ec  hintbook.pdf
+  950df4519868ff03b5122974f4001a2a  manual.pdf
+  be4cc7f79dd2ae6f9577075e29c91467  newspaper.pdf
+  1145e4265eebbfea282d975772e3eab8  track1.mp3
+  eae8aa1a8716c6cb91aded7f5a12c361  track2.mp3
+  c2ef92ecc870cf3d92f20228a4b1e6e0  track3.mp3
+  7fe68bb78a11f7a2b70e02ad2eb438f8  track4.mp3
+  f690f1b70e2c57dc6bb1be45f6cd65ab  track5.mp3
+  e286767e06006681166ebcdd121118bb  track6.mp3
+  3adab5a983beb5c203170f86f0a1b724  track7.mp3
+  dccc8fb734c7935a2b4c691dbf922f15  track8.mp3
+  d5a5e098e1dedf070778e01258d8eaf4  track9.mp3
+  f78d9d4d3f9f2a46f456f65914fbeb5a  track10.mp3
+  6b511f8691a8fbccccff96fae798a4aa  track11.mp3
+  2c379810048aa6bcbab7b0e6e6cbbc00  track12.mp3
+  b618fe5c7e452f319b7952121d99e84e  track13.mp3
+  4240edfee4af1d5449aa179185b0a76b  track14.mp3
+  2576bd45bf5022369968200f3ba5f620  track15.mp3
+  18de126b85f152857f320fabfd9b4186  track16.mp3
+  2fe2bc0058b30b7787a0b925a46bdbc5  track17.mp3
+  38af582ca14caae7e420a5c59da300ef  track18.mp3
+  8bbea8ef6717604cbef5bf9bb7987991  track19.mp3
+  cd7f34cb34fb935e44939a07fc6f760e  track20.mp3
+  be93527c4ae1e3ee9ac6854d448bee62  track21.mp3
+sha1sums: |
+  3bcfaa4898dc12c0c4196afa5770e39b35e47fe1  00.lfl
+  6e3cbce861bc6b56dfa6c9c7659d4f1fdc7d972b  01.lfl
+  303fc3e78d9a801b115fda24cfc7e05afc7d4a42  02.lfl
+  78e8e8f189f18d67ac7c0768cd1979ed8ae65547  03.lfl
+  ded68a8979883c9ac69c725a34cf00b4a3d7b172  04.lfl
+  74ae17c6df1b1e190f6d57c291db504c6cc40369  05.lfl
+  64720f2bfdec32558c734f48aa4f37399676d6dd  06.lfl
+  81ab210f5eac26ed584bc077b45296929b036895  07.lfl
+  aafb018cb0f19991e5c939214cab377cd2eb7718  08.lfl
+  8a1c91865eea3fe23364b9fe898dced4c5b39a3a  09.lfl
+  4a2d151e039fd3376e6606680cb1193ffec400cf  10.lfl
+  cc213905d29ba70d6d8b291c4b8e43eaba852b0c  11.lfl
+  24cf69050b4953bf200a3d96ec8bbfae3e856f03  12.lfl
+  0163aafde511a72071c2c6bea5472a5d7f984a92  13.lfl
+  5c1c8e7ecdccea78a832c8c172ccaf13d5b0b32f  14.lfl
+  12fd92d2dbaf9033f9864367096768e2c27a016b  15.lfl
+  7e9999c84f55ee7e64a1a2f6c56e421d51b0de2d  16.lfl
+  9e44337d92ea046acda1194cd279229e0ecb58dd  17.lfl
+  bff7aa2a5e89a6dd343eef65dde6b77d9989b8b4  18.lfl
+  bb75354510450ca427a6455233c90994ab630476  19.lfl
+  44e1b16d1dabcad4f62a9d07efcaca623437f15c  20.lfl
+  facea3fb026a5fd7769330dd989386eb4d840260  21.lfl
+  ef0bf5f139258fbb808e2c83bd1383c3787973c1  22.lfl
+  b95f6a668a8e61edf3c1f6b1af0afe429867ad2b  23.lfl
+  6690f20b1323427843b2217a983ad082f1f0e93a  24.lfl
+  9a6a5a7a2ff0b56741649163b85ce6c62e283939  25.lfl
+  ef5cca3beebcc3eb5ebb273e13026b56e76efafa  26.lfl
+  a4d4ce497d1619318f0b764eaa884ac9019b5dd8  27.lfl
+  d49ce1af4816b6303e4ca88a471887636ede304b  28.lfl
+  9596faa2636c55b092426e69a36bbb6778c7a371  29.lfl
+  23c0ab86241a1e0ec04b39eb55d64e14e2182567  30.lfl
+  b48d60025f8a666893b0ce836eb95e6fffa37afa  31.lfl
+  a54abcaf9ac0d3dc16c085be49e071d355cf1eb9  32.lfl
+  079c75512f299e4d228f94120ef3f05367b22467  33.lfl
+  34dfa6a4ebca07b627cce17219783a14db06c417  34.lfl
+  f05459d05920cedfe41783b6216d6a784406ea9c  35.lfl
+  318a830206a9e19f05559cf22296af7bd625bd86  36.lfl
+  dbfa2b63837640cce96547354cf251bf8ab41e74  37.lfl
+  4f0d5bfe05a48e9f3c4c569ee8cdccaad0746e0c  38.lfl
+  168bfc5470cb1298f61efbefa2610408f980bf06  39.lfl
+  f7b61fba90edb25cb2c681131cda927dd4fb487e  40.lfl
+  63e0f28333c771eaff687af1ac50a14e1cbb75cc  41.lfl
+  ab24dcec988a4931ca417b0533488833c69685e0  42.lfl
+  7d6e3a7a2699b640a16f644999c8ed78622d3b1b  43.lfl
+  3c5f3bd0c40814e40134f3f2f06d12ae6045e420  44.lfl
+  3fddaad86a4a7d22f3046fb8b24a54d61165ba7f  45.lfl
+  a0168d0cdc46c075c4bc3446a74dea95173a081a  46.lfl
+  bf8357a6ab1ce47af2dcbc536d4ee85134bb0bb8  47.lfl
+  181c43914c2fc9d07c4940856dec091e967e462a  48.lfl
+  ead14239490d12425226e7eb697fda03ccda038a  49.lfl
+  ccbdc21062134256a5506a79353d8b098330d902  50.lfl
+  7e3032648250d89e12cde23264711389c1c83000  51.lfl
+  b27310968b2beb5ba04c83de7cff1de10e7537c1  52.lfl
+  44964aa3c910db678cc176faaa9eef7dafd79ee3  53.lfl
+  d1b336e807e99d4e3e4dcadbaf75bcd36d874233  54.lfl
+  2678b684303b713391a719a3db4d6f66ac2529f2  55.lfl
+  349f624de4da672bb2b3a8bab6620fe781222980  56.lfl
+  2594f13eb6fbc49489dc192f3739bfd116bd2dfe  57.lfl
+  48cdf82d6a5bceca466a9e7d766dad99d43fe13a  58.lfl
+  d9791c7336e0ba9a18e392ccd764166fb9eda85f  59.lfl
+  6ed1478a40e5bff15a67964552ea1d2423bb7870  98.lfl
+  36e963ece17170076125d6aedc1a546ca756937f  99.lfl
+  4828e3176846bcd224f482bfc06aaf3ed4b7b26b  00.lfl_floppy
+  fd9b942b2563a8bce18d7ab64d4127e7dacd674e  01.lfl_floppy
+  0f43e1584b1daf526e6cc01ad77c56a1d4318c30  02.lfl_floppy
+  d55053754f53dfe1968347ccbeace8743219f425  03.lfl_floppy
+  1c10b4d121971aa86a221b24f6e28424a4827c9d  04.lfl_floppy
+  4cad50ee5fe95125f974a9190155ef4b07310ee1  05.lfl_floppy
+  b7cd2162504b91774e4b1071cfe052d849ad8f30  06.lfl_floppy
+  b45bf213f956d037a80f200bf3b2b6742f0fcbc8  07.lfl_floppy
+  da89cf5dae941a6c10fe4baf3302b3b5289644ca  08.lfl_floppy
+  acec92747b08be463084a8613efa3b022bc38c1a  09.lfl_floppy
+  2a13cf38997f03b981222f5f0652fc2837421cc1  10.lfl_floppy
+  13ebf41939a43d922f5bf1179316e9eae9a8b6fb  11.lfl_floppy
+  850d47ae014df70ffe92e3fa766a1726e58bd95e  12.lfl_floppy
+  ca7bd42c86e3064489f43c6338b48ce38a6f1246  13.lfl_floppy
+  091e6128994e5d14f0c44647fa9ef1fa290586ae  14.lfl_floppy
+  1080a09b9f77e9ca568ae94ac0daaf8047b6f57a  15.lfl_floppy
+  ac9f037526fee166fc437ab4a0398d21e4d643a6  16.lfl_floppy
+  cbb79f650c879e4e76b87da0daf87be3f81f429b  17.lfl_floppy
+  43984f4bd2a8214f70b8d2fc63a609a7788a69f4  18.lfl_floppy
+  2bd906ebba0d41efe80ba3696b00d312b8ab2906  19.lfl_floppy
+  a1b43606d9fdaa3a9e81dcf54b3708deeb674ca5  20.lfl_floppy
+  f227a88ec5cc19e8d97d7c930ff490705e63821d  21.lfl_floppy
+  ae8bd5fd3026f9be86dc09869b0745d27ec5a468  22.lfl_floppy
+  a3b7b1d495d876807e380049288dcef02af66e74  23.lfl_floppy
+  07aa6da8db9c8e3725e6d7862c7e7e82626c4dc1  24.lfl_floppy
+  dfab97d4ca1cdc25122f752cdf4999a9561c12ff  25.lfl_floppy
+  52946bd136f98bf32e0582466f74def773ff7e43  26.lfl_floppy
+  e63e26e49776d39d976cb89cf8fc73882cd03798  27.lfl_floppy
+  f2a8d307ed732534b8e0f75915964c8ed87ea26f  28.lfl_floppy
+  3353a18e02bdb01083cb35d72db4d9a58d8e32f8  29.lfl_floppy
+  52a7ce0958e35013d825ebcc0b4a482b6213d914  30.lfl_floppy
+  ecd78d5905f1c309491746636d10c68a4ac1c6b8  31.lfl_floppy
+  e10435df9da9f2eacbbd59c382737fac36354777  32.lfl_floppy
+  6e213bc2dfbb2f7e73a77e0f8f39532cb13c9e3b  33.lfl_floppy
+  8f581cff4bb7871ef805732008b6a30dc6dc0500  34.lfl_floppy
+  7702db180d36f80c952c08f338615e2d5f6a67e1  35.lfl_floppy
+  8d361e4844a2fc0a1b8630f416534fea078fd6bf  36.lfl_floppy
+  026650d7c73b697aa3836299b81635ca2f43c723  37.lfl_floppy
+  6cfa03edc2fb1118a099db73cd6071690a579bb2  38.lfl_floppy
+  bf651285b2330d3bce6f0faf8ebe4e8183e87399  39.lfl_floppy
+  8983066aa3090e723ec14affc1389fc9b65724a9  40.lfl_floppy
+  4dcc16cededaa9711a4508759a17c682dd4f38ce  41.lfl_floppy
+  8ad98ea1c14806a7817553ba349cb02e8177867d  42.lfl_floppy
+  fc8e59a9f01bb96fd2bb9a25eb1880f7f99b5b01  43.lfl_floppy
+  bae8d1a0dd71871a515fe68ca75bdb06732b99ad  44.lfl_floppy
+  f8759964b75fcaade853ca5f7fd4c24c4b2ee169  45.lfl_floppy
+  161f3c13999086edf9055cb0f6f99c23e034d613  46.lfl_floppy
+  c225ff993b4f0b92c9a179b92cfe934e0b33dc2c  47.lfl_floppy
+  323b03aff8ff4f779d505e81a41300167de4a6e2  48.lfl_floppy
+  412112751d80759309ef7873211367a9f192ff4d  49.lfl_floppy
+  6420b8747e53901e8aae125bfa74f914d94d9704  50.lfl_floppy
+  55e37244e6bc496cd55f87fd67237dd20979dce2  51.lfl_floppy
+  7e5b162f066480c95d78fbb69fdeaab6af91e111  52.lfl_floppy
+  83a458ee6f60f71625db77a28c482c60b3e88ab7  53.lfl_floppy
+  fc0c8e7927d707eb591c1c22a435901eb83a9afb  54.lfl_floppy
+  40e124b629283aee08a0fe61b4017220c4ffcb9c  55.lfl_floppy
+  51617a3369598a39e23c8b2cebea1ad7091ab298  56.lfl_floppy
+  7310ebf1466c37fedaf03eadd1f0d6c7200148fc  57.lfl_floppy
+  1eb656600b174f2f9f9eb48516ac5fb955c938f0  58.lfl_floppy
+
+  9eafbbc21e61746fdeecfb74ca0889e2b955ef7a  setup_zak_mckracken_and_the_alien_mindbenders_2.0.0.4.exe
+  7cf3f8359e5d202a11116bed9757c91b5c64eb4a  gog_zak_mckracken_and_the_alien_mindbenders_1.0.0.4.deb
+  57abbc43aa44575555f8cdc6a7d5a5a13991fe7c  hintbook.pdf
+  227e61a9485eb8339f9e1ad6554754fc8f7467b4  manual.pdf
+  5c0675a5902e20c1f5caae36fc5096f39bebb30a  newspaper.pdf
+  79483ff3994479ccd60e6ad1cdac62e055579cf6  track1.mp3
+  c9fd046bd04a75445f192c7c104d70c26bd9602c  track2.mp3
+  7c5dc4ae37004a841c455abbd2eaa448b2afeb10  track3.mp3
+  9f2035359acbc5c37a3cd90fc74135f309905f39  track4.mp3
+  166f5f3d2f88177204fc1f6f35b9ac49c8a237b2  track5.mp3
+  bdb9fb1a8f6081bb2b8eada0587f12ca00b8c000  track6.mp3
+  b8db3b0466cc9eb9562057377e8c97c313632a3b  track7.mp3
+  d2f6df306f87be1d6a4042eeb70cad8065064d47  track8.mp3
+  9304b4a24792c8d4503e142fe9d20b7932434e3d  track9.mp3
+  e107936818ada82bda41de5486373715ca96d86d  track10.mp3
+  268ef79a2159394ef559deb34e9e04a3e9b41612  track11.mp3
+  0093d7f4cd4592acf60ce540cbfc740c215ebd14  track12.mp3
+  3b231acd2ab995dc831de6bdcdbdf725274db669  track13.mp3
+  0ef2113e01e2646d936704176b00e18b735c19cf  track14.mp3
+  7ebc1fc09607e340734a18be92a70388201cf7a3  track15.mp3
+  dab92aa74738a43f789512196fed5780f0d3d557  track16.mp3
+  c3a82e7a746e358b0884534f92fefa4db3515408  track17.mp3
+  1ff0a07c2db700d6e53340e5115014dfbe16df74  track18.mp3
+  62a1d3289a9a1ce124cce7c060ebc8111653b391  track19.mp3
+  122bee6f9bf39a0f0ca5e891ac6105efb767463c  track20.mp3
+  9d31353ec05a10f43664dbb0cced2fe337aec658  track21.mp3
+...
+
