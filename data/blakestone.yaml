@@ -1,0 +1,277 @@
+---
+longname: Blake Stone Episodes 1&2
+copyright: © 1993 JAM Productions
+engine: ecwolf
+
+packages:
+  blakestone-data:
+    longname: "Blake Stone: Aliens of Gold"
+    gog:
+      url: blake_stone_aliens_of_gold
+    steam:
+      id: 358190
+      path: common/The Apogee Throwback Pack/Blake Stone
+    install:
+    - audiohed.bs6
+    - audiot.bs6
+    - eanim.bs6
+    - ganim.bs6
+    - ianim.bs6
+    - sanim.bs6
+
+    - maphead.bs6
+    - maptemp.bs6
+    - svswap.bs6
+    - vgadict.bs6
+    - vgagraph.bs6
+    - vgahead.bs6
+    - vswap.bs6
+    optional:
+    - manual.pdf
+    license:
+    - license.doc
+
+  blakestone-old-data:
+    longname: "Blake Stone: Aliens of Gold (v ???)"
+    #better_version: blakestone-data
+    install:
+    - audiohed.bs6
+    - audiot.bs6
+    - eanim.bs6
+    - ganim.bs6
+    - ianim.bs6
+    - sanim.bs6
+
+    - maphead.bs6_old
+    - maptemp.bs6_old
+    - svswap.bs6_old
+    - vgadict.bs6_old
+    - vgagraph.bs6_old
+    - vgahead.bs6_old
+    - vswap.bs6_old
+    optional:
+    - manual.pdf
+    license:
+    - license.doc
+
+  planetstrike-data:
+    longname: "Blake Stone: Planet Strike"
+    copyright: © 1994 JAM Productions
+    install_to: usr/share/games/blakestone
+    gog:
+      url: blake_stone_planet_strike
+    steam:
+      id: 358310
+      path: common/The Apogee Throwback Pack/Planet Strike
+    install:
+    - audiohed.vsi
+    - audiot.vsi
+    - eanim.vsi
+    - ianim.vsi
+    - maphead.vsi
+    - maptemp.vsi
+    - vgadict.vsi
+    - vgagraph.vsi
+    - vgahead.vsi
+    - vswap.vsi
+    optional:
+    - manual.pdf_2
+
+files:
+  maphead.bs6_old:
+    install_as: maphead.bs6
+    look_for: [maphead.bs6]
+  maptemp.bs6_old:
+    install_as: maptemp.bs6
+    look_for: [maptemp.bs6]
+  svswap.bs6_old:
+    install_as: svswap.bs6
+    look_for: [svswap.bs6]
+  vgadict.bs6_old:
+    install_as: vgadict.bs6
+    look_for: [vgadict.bs6]
+  vgagraph.bs6_old:
+    install_as: vgagraph.bs6
+    look_for: [vgagraph.bs6]
+  vgahead.bs6_old:
+    install_as: vgahead.bs6
+    look_for: [vgahead.bs6]
+  vswap.bs6_old:
+    install_as: vswap.bs6
+    look_for: [vswap.bs6]
+
+  manual.pdf:
+    install_to: $docdir
+  manual.pdf_2:
+    install_to: $docdir
+    look_for: [manual.pdf]
+    install_as: manual.pdf
+
+  setup_blake_stone_aliens_of_gold_2.0.0.2.exe:
+    unpack:
+       format: innoextract
+    provides:
+    - audiohed.bs6
+    - audiot.bs6
+    - eanim.bs6
+    - ganim.bs6
+    - ianim.bs6
+    - sanim.bs6
+
+    - maphead.bs6
+    - maptemp.bs6
+    - svswap.bs6
+    - vgadict.bs6
+    - vgagraph.bs6
+    - vgahead.bs6
+    - vswap.bs6
+
+    - manual.pdf
+    - license.doc
+
+  setup_blake_stone_planet_strike_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - $provides
+      - manual.pdf
+    provides:
+    - audiohed.vsi
+    - audiot.vsi
+    - eanim.vsi
+    - ianim.vsi
+    - maphead.vsi
+    - maptemp.vsi
+    - vgadict.vsi
+    - vgagraph.vsi
+    - vgahead.vsi
+    - vswap.vsi
+    - manual.pdf_2
+
+cksums: |
+  _ 1280      audiohed.bs6
+  _ 267636    audiot.bs6
+  _ 186221    eanim.bs6
+  _ 219918    ganim.bs6
+  _ 18977     ianim.bs6
+  _ 276784    sanim.bs6
+
+  _ 834       maphead.bs6
+  _ 526196    maptemp.bs6
+  _ 2878696   svswap.bs6
+  _ 1024      vgadict.bs6
+  _ 599397    vgagraph.bs6
+  _ 672       vgahead.bs6
+  _ 2767080   vswap.bs6
+
+  _ 834       maphead.bs6_old
+  _ 520920    maptemp.bs6_old
+  _ 2878696   svswap.bs6_old
+  _ 1024      vgadict.bs6_old
+  _ 596336    vgagraph.bs6_old
+  _ 639       vgahead.bs6_old
+  _ 2767592   vswap.bs6_old
+
+
+  _ 26888888  setup_blake_stone_aliens_of_gold_2.0.0.2.exe
+  _ 2642      license.doc
+  _ 8299535   manual.pdf
+
+  _ 1288      audiohed.vsi
+  _ 304415    audiot.vsi
+  _ 370212    eanim.vsi
+  _ 18977     ianim.vsi
+  _ 834       maphead.vsi
+  _ 167158    maptemp.vsi
+  _ 1024      vgadict.vsi
+  _ 710699    vgagraph.vsi
+  _ 747       vgahead.vsi
+  _ 3195112   vswap.vsi
+
+  _ 21659584  setup_blake_stone_planet_strike_2.0.0.2.exe
+  _ 4082123   manual.pdf_2
+
+md5sums: |
+  52a203285041846c9fd73e8947a64522  audiohed.bs6
+  144a201ef4bd5bd9989dc61d9250eeac  audiot.bs6
+  d4e0c268ec2464b92286bb75b355e5f7  eanim.bs6
+  93dcd6239fff3f454b341108523bca80  ganim.bs6
+  b13edd1c227806dc1bc4874ea1bd606c  ianim.bs6
+  24848d1955e61d7d5d88ece1e9aa1557  sanim.bs6
+
+  028dbaabf4202936209787abb8e9dc18  maphead.bs6
+  9b259747340ffedd37eb5eae898e95c1  maptemp.bs6
+  010795801970218db880fe6904da77d5  svswap.bs6
+  1eae0e4c8a8de62d6acb034f5dbc3f40  vgadict.bs6
+  81b7807e965e72dccb1f812a7d534e65  vgagraph.bs6
+  a4f74495bffc4f8930a29c6cd4e8335f  vgahead.bs6
+  7288f8acec83da317fca3a6d1895dc2a  vswap.bs6
+
+  6cf51fb5cdece6b03c90feb6c94cc7ff  maphead.bs6_old
+  897af42e172bf6d68954c111d1625bd8  maptemp.bs6_old
+  d9dbfb903478cf6c7ede6af9afe3b4d3  svswap.bs6_old
+  b303d9155baaa1c126917053a93f054a  vgadict.bs6_old
+  6089a1cbe454cdf5022b3c115bcd2e9d  vgagraph.bs6_old
+  095d7c737e1c31d7674e1ed2160b676c  vgahead.bs6_old
+  5e7d5862fda72a1b2874301c01491aac  vswap.bs6_old
+
+  b1686e263da9e836e67b64a2946a3222  setup_blake_stone_aliens_of_gold_2.0.0.2.exe
+  360fd990223b6c7d10d6d89517dad4ce  license.doc
+  4e092f5c9f8503f2bab7adbd1f9c6c19  manual.pdf
+
+  47c42494b67c14e93c7f3e90aed41a9a  audiohed.vsi
+  ce0ba53c4c41d0256896b1075653366e  audiot.vsi
+  b9b3a25f54c3fb99fabb247e3713bb9a  eanim.vsi
+  b13edd1c227806dc1bc4874ea1bd606c  ianim.vsi
+  3c073394635250e348f6c1da6330069a  maphead.vsi
+  9dcbeab5d5c123455ae3c24964956b22  maptemp.vsi
+  e20c862256e504194c5a9a68526a1beb  vgadict.vsi
+  ad57bd602ac4e571dd4101fe52b35807  vgagraph.vsi
+  31c0301eb320718029efaa3b275f689c  vgahead.vsi
+  24827f8b2920acc60bab0e57b6e9937e  vswap.vsi
+
+  2230bde51bc598440c14c978669209eb  setup_blake_stone_planet_strike_2.0.0.2.exe
+  fca4caf88fcb2057b1f7ac52a5661087  manual.pdf_2
+
+sha1sums: |
+  e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2  audiohed.bs6
+  b79e7afcb4e4b29e59660ec261f72ff1ab4d3a25  audiot.bs6
+  af5af59ad7ed17517d87b3ece3c0cac23ade535b  eanim.bs6
+  9b2418a1a1f34abdcf6fcd9ed3344a49912c9b5e  ganim.bs6
+  ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd  ianim.bs6
+  22bf818465da0f32eef9611de936cba9966b14aa  sanim.bs6
+
+  028f624e150f84ffc8336336cb0ecea0932cc22d  maphead.bs6
+  8b48e7eb859382a4c84948c5a62899194288e853  maptemp.bs6
+  09005d29336f800c38ca8f4cc6571264abc061d6  svswap.bs6
+  e4ae3ef9a3ac158a832092b7b5487227337c6f13  vgadict.bs6
+  6868e6cc4f8cb9160a218c5bce680a11f64c675a  vgagraph.bs6
+  1a3864cd12de4b8fd6be023b73d2d79e91b9018d  vgahead.bs6
+  6fcc6e007b02b2e55892cfa7acfd42966ef9c9fb  vswap.bs6
+
+  6f19a144d8985e90f096fc1c67ade58e9051235c  maphead.bs6_old
+  4d00c5f5c843f99a266bd938648192a6eff17b5a  maptemp.bs6_old
+  75b54b5ec566ef62a42d22062426e78a79c95ef3  svswap.bs6_old
+  d4f81ace1701a7338d43ce07723c2adaafdc837c  vgadict.bs6_old
+  02dc27d4810e3ffa26540b310eac6091f5e16de0  vgagraph.bs6_old
+  639ec9e7a81ad83fc5b5c557cf4fc5fa28b9676b  vgahead.bs6_old
+  0a700732ccbc72f95318a6226a7e1ad78ac713bb  vswap.bs6_old
+
+  911ca4507713b091767664ef1d10a5850c573ffe  setup_blake_stone_aliens_of_gold_2.0.0.2.exe
+  9065277d9964595fc491b71c6f536cd20b39b524  license.doc
+  3922e1608678dabbdf6b539d6aacb7b1e680ac42  manual.pdf
+
+  2ed9a587926b2b455f8176788f595d03f6359171  audiohed.vsi
+  ecac8a800c5d021c8b68d170066c8859df9bd79a  audiot.vsi
+  b668330e56ceb069c1b972cefddd8a3d618a14af  eanim.vsi
+  ba1fa5b0bc34f148deffb4977a3cd1e718e91bbd  ianim.vsi
+  c3fb0a9b81e0240d12c952fe5b57b78c1108aa48  maphead.vsi
+  acd03031d526eeaee64072518adf6814f96e2a37  maptemp.vsi
+  061692d166f68d7e0b81568725439078cc728f33  vgadict.vsi
+  e619a3e6245f79888da5436df138d63204d2caba  vgagraph.vsi
+  ad5fed9de5d1d82145df3ff2286e4bc62cb80e2a  vgahead.vsi
+  4113ce83c42e69dc5cb20de79f41971a100f876e  vswap.vsi
+
+  5171c5855d0df6ae38893aa80a072045efe5e06c  setup_blake_stone_planet_strike_2.0.0.2.exe
+  58a5199af8cc7ce984d3b133e4174fed4a057218  manual.pdf_2
+...
