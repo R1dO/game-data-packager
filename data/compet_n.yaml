@@ -63,6 +63,7 @@ packages:
     - mm11fix.txt
     - mm2.txt
     - requiem.txt
+    - req21.txt
 
 files:
   av.txt:
@@ -73,11 +74,15 @@ files:
     install_to: $docdir
   mm.txt:
     install_to: $docdir
+  mm11fix.txt:
+    install_to: $docdir
   mm2.txt:
     install_to: $docdir
   mm2info.wad:
     look_for: [mm2info.wad,mm2info.dat]
   requiem.txt:
+    install_to: $docdir
+  req21.txt:
     install_to: $docdir
   req21fix.wad:
     look_for: [req21fix.wad,req21_competn.wad]
@@ -152,6 +157,7 @@ files:
     - req21fix.wad
     - reqmus.wad
     - requiem.txt
+    - req21.txt
 
 cksums: |
   # order:= zips, main wad, patches, music, .txt
@@ -189,6 +195,7 @@ cksums: |
   _ 571446    req21fix.wad
   _ 855889    reqmus.wad
   _ 27324     requiem.txt
+  _ 596       req21.txt
 
 md5sums: |
   605f6ef1a4d509ae530120fe1c9ac1da  av_new.zip
@@ -225,6 +232,7 @@ md5sums: |
   0991dc3c961d2848ce3ecbc79214c7d9  req21fix.wad
   dee390a1a5f38a6d58697de1f27bd6f8  reqmus.wad
   e06f0122fd47e609a03d7eb7f39fbd35  requiem.txt
+  f8bdd24e0fc9037d4b030b3cccf10063  req21.txt
 
 sha1sums: |
   0a5c6df402c8170f20683ec09d8baf4b49812ab8  av_new.zip
@@ -261,4 +269,5 @@ sha1sums: |
   4b15e89295cb70595c4e0e3e2ab52ebb3e927619  req21fix.wad
   b2678ead7b8a9f800d63bb2af5a31a9642c425d5  reqmus.wad
   f4fb04430f203fc8c8bf1267685a354e0b525015  requiem.txt
+  4a6fc7f8623632fff4eecf4eaac1874fab6e547d  req21.txt
 ...
