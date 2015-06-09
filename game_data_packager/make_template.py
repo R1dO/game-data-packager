@@ -111,7 +111,13 @@ def do_one_dir(destdir,lower):
         if dir_l.endswith('/scummvm'):
             logger.warning('ignoring ScummVM runtime at %s' % dirpath)
             continue
-        if '/directx/' in dir_l or '/data.now/' in dir_l:
+        if dir_l.endswith('/dosbox'):
+            logger.warning('ignoring DOSBox runtime at %s' % dirpath)
+            continue
+        if ('/directx/' in dir_l
+          or '/data.now/' in dir_l
+          or '/scummvm/' in dir_l
+          or '/dosbox/' in dir_l):
             continue
 
         for fn in filenames:
@@ -279,6 +285,11 @@ def do_one_deb(deb):
                 name = entry.name
                 if name.startswith('./'):
                     name = name[2:]
+
+                if '/dosbox/' in name.lower():
+                    continue
+                if '/scummvm/' in name.lower():
+                    continue
 
                 if (name.startswith('usr/share/doc/') and
                         name.endswith('changelog.gz')):
