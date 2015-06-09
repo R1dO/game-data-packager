@@ -1,0 +1,100 @@
+---
+longname: "Quest for Glory II: Trial by Fire"
+copyright: © 1990 Sierra
+genre: Role-playing
+plugin: scummvm_common
+
+packages:
+  glory2-data:
+    gameid: qfg2
+    gog:
+      url: quest_for_glory
+      game: quest_for_glory_2
+    install:
+    - font.000
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.map
+    - version
+    - vocab.913
+    - vocab.994
+    - vocab.995
+    - vocab.996
+    - vocab.997
+    - vocab.998
+    - vocab.999
+    optional:
+    - quest for glory 2 - manual.pdf
+
+files:
+  quest for glory 2 - manual.pdf:
+    install_to: $docdir
+    install_as: manual.pdf
+    look_for: [quest for glory 2 - manual.pdf,manual.pdf]
+
+  setup_quest_for_glory2_2.1.0.34.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - font.000
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.map
+    - version
+    - vocab.913
+    - vocab.994
+    - vocab.995
+    - vocab.996
+    - vocab.997
+    - vocab.998
+    - vocab.999
+    - quest for glory 2 - manual.pdf
+
+cksums: |
+  _ 1782      font.000
+  _ 212119    resource.000
+  _ 867866    resource.001
+  _ 790750    resource.002
+  _ 972804    resource.003
+  _ 983617    resource.004
+  _ 6906      resource.map
+  _ 7         version
+  _ 2449      vocab.913
+  _ 112       vocab.994
+  _ 609       vocab.995
+  _ 590       vocab.996
+  _ 8339      vocab.997
+  _ 1229      vocab.998
+  _ 1148      vocab.999
+
+  _ 23483072  setup_quest_for_glory2_2.1.0.34.exe
+  _ 3305493   quest for glory 2 - manual.pdf
+md5sums: |
+  4ff2dc339352972581da584cc0a8d2f1  font.000
+  fe18a816a08c89f245f9143642bf84eb  resource.000
+  733686eea71255794a9762f683ac789f  resource.001
+  3d5223fd488fb04025ba3199485a0756  resource.002
+  f0544e220e3a5b66df2070d9638527b4  resource.003
+  7cb86c2af9399b81a1f796a6b07aeeb3  resource.004
+  06d0cb2c9496d7d4494b0f37f2c6c4c2  resource.map
+  26913b564c71d9fb7f83e0f4f165d999  version
+  5511c133471681cab70295d860be96c4  vocab.913
+  1d3beaac41d0d09790a47c8dc1cadf85  vocab.994
+  b99b2ceac1a672c6e4785b48d6dc11be  vocab.995
+  f230096194cc9791737b634b36ac7980  vocab.996
+  e501f7de3c7a3b68d6d11f0b965b6697  vocab.997
+  0ef7f63b24dfe1bbeea28e2f8ede90d6  vocab.998
+  df638320d85ee4029e6c3d62b86f7043  vocab.999
+
+  7743f9dea17132a664951e09b4ad5139  setup_quest_for_glory2_2.1.0.34.exe
+  ecf29ad0e8d5520bda3b182f1a464340  quest for glory 2 - manual.pdf
+
+sha1sums: |
+  8ce61356a7beefdf79f54fdcd8bb5cc5ddb9e239  setup_quest_for_glory2_2.1.0.34.exe
+...

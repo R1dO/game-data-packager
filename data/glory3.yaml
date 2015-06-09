@@ -1,0 +1,395 @@
+---
+longname: "Quest for Glory III: Wages of War"
+copyright: © 1992 Sierra
+genre: Role-playing
+plugin: scummvm_common
+
+packages:
+  glory3-data:
+    gameid: qfg3
+    gog:
+      url: quest_for_glory
+      game: quest_for_glory_3
+    install:
+    - 28.hep
+    - 28.scr
+    - 29.hep
+    - 29.scr
+    - 32.hep
+    - 32.scr
+    - 33.hep
+    - 33.scr
+    - 51.hep
+    - 51.scr
+    - 54.hep
+    - 54.msg
+    - 54.scr
+    - 100.hep
+    - 100.scr
+    - 140.hep
+    - 140.scr
+    - 200.hep
+    - 200.scr
+    - 250.hep
+    - 250.scr
+    - 280.hep
+    - 280.scr
+    - 285.msg
+    - 330.hep
+    - 330.scr
+    - 350.hep
+    - 350.scr
+    - 380.hep
+    - 380.scr
+    - 400.hep
+    - 400.scr
+    - 420.hep
+    - 420.scr
+    - 440.hep
+    - 440.scr
+    - 450.hep
+    - 450.scr
+    - 460.hep
+    - 460.scr
+    - 470.hep
+    - 470.scr
+    - 471.hep
+    - 471.scr
+    - 480.hep
+    - 480.scr
+    - 550.hep
+    - 550.scr
+    - 620.hep
+    - 620.scr
+    - 630.hep
+    - 630.scr
+    - 640.hep
+    - 640.scr
+    - 650.hep
+    - 650.scr
+    - 700.hep
+    - 700.scr
+    - 740.hep
+    - 740.scr
+    - 770.hep
+    - 770.scr
+    - 780.hep
+    - 780.scr
+    - 830.hep
+    - 830.scr
+    - 840.hep
+    - 840.scr
+    - 850.hep
+    - 850.scr
+    - 851.hep
+    - 851.scr
+    - 852.hep
+    - 852.scr
+    - 853.hep
+    - 853.scr
+    - 854.hep
+    - 854.scr
+    - 855.hep
+    - 855.scr
+    - 860.hep
+    - 860.scr
+    - 65535.map
+    - message.map
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.msg
+    - version
+    optional:
+    - quest for glory 3 - manual.pdf
+
+files:
+  quest for glory 3 - manual.pdf:
+    install_to: $docdir
+    install_as: manual.pdf
+    look_for: [quest for glory 3 - manual.pdf,manual.pdf]
+
+  setup_quest_for_glory3_2.1.0.34.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 28.hep
+    - 28.scr
+    - 29.hep
+    - 29.scr
+    - 32.hep
+    - 32.scr
+    - 33.hep
+    - 33.scr
+    - 51.hep
+    - 51.scr
+    - 54.hep
+    - 54.msg
+    - 54.scr
+    - 100.hep
+    - 100.scr
+    - 140.hep
+    - 140.scr
+    - 200.hep
+    - 200.scr
+    - 250.hep
+    - 250.scr
+    - 280.hep
+    - 280.scr
+    - 285.msg
+    - 330.hep
+    - 330.scr
+    - 350.hep
+    - 350.scr
+    - 380.hep
+    - 380.scr
+    - 400.hep
+    - 400.scr
+    - 420.hep
+    - 420.scr
+    - 440.hep
+    - 440.scr
+    - 450.hep
+    - 450.scr
+    - 460.hep
+    - 460.scr
+    - 470.hep
+    - 470.scr
+    - 471.hep
+    - 471.scr
+    - 480.hep
+    - 480.scr
+    - 550.hep
+    - 550.scr
+    - 620.hep
+    - 620.scr
+    - 630.hep
+    - 630.scr
+    - 640.hep
+    - 640.scr
+    - 650.hep
+    - 650.scr
+    - 700.hep
+    - 700.scr
+    - 740.hep
+    - 740.scr
+    - 770.hep
+    - 770.scr
+    - 780.hep
+    - 780.scr
+    - 830.hep
+    - 830.scr
+    - 840.hep
+    - 840.scr
+    - 850.hep
+    - 850.scr
+    - 851.hep
+    - 851.scr
+    - 852.hep
+    - 852.scr
+    - 853.hep
+    - 853.scr
+    - 854.hep
+    - 854.scr
+    - 855.hep
+    - 855.scr
+    - 860.hep
+    - 860.scr
+    - 65535.map
+    - message.map
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.msg
+    - version
+    - quest for glory 3 - manual.pdf
+
+cksums: |
+  _ 250       28.hep
+  _ 6374      28.scr
+  _ 150       29.hep
+  _ 686       29.scr
+  _ 348       32.hep
+  _ 2016      32.scr
+  _ 62        33.hep
+  _ 260       33.scr
+  _ 200       51.hep
+  _ 802       51.scr
+  _ 2596      54.hep
+  _ 1650      54.msg
+  _ 5066      54.scr
+  _ 1996      100.hep
+  _ 5286      100.scr
+  _ 2390      140.hep
+  _ 7840      140.scr
+  _ 186       200.hep
+  _ 532       200.scr
+  _ 4506      250.hep
+  _ 7726      250.scr
+  _ 3026      280.hep
+  _ 6468      280.scr
+  _ 26599     285.msg
+  _ 1936      330.hep
+  _ 4464      330.scr
+  _ 2734      350.hep
+  _ 4216      350.scr
+  _ 2728      380.hep
+  _ 8402      380.scr
+  _ 1966      400.hep
+  _ 13980     400.scr
+  _ 3140      420.hep
+  _ 8176      420.scr
+  _ 2590      440.hep
+  _ 6198      440.scr
+  _ 2948      450.hep
+  _ 10536     450.scr
+  _ 3026      460.hep
+  _ 10514     460.scr
+  _ 1584      470.hep
+  _ 6754      470.scr
+  _ 2036      471.hep
+  _ 8522      471.scr
+  _ 2416      480.hep
+  _ 7874      480.scr
+  _ 2774      550.hep
+  _ 6682      550.scr
+  _ 2902      620.hep
+  _ 8184      620.scr
+  _ 3826      630.hep
+  _ 10752     630.scr
+  _ 2212      640.hep
+  _ 4888      640.scr
+  _ 3334      650.hep
+  _ 15396     650.scr
+  _ 1884      700.hep
+  _ 16412     700.scr
+  _ 2632      740.hep
+  _ 6774      740.scr
+  _ 1562      770.hep
+  _ 4032      770.scr
+  _ 1572      780.hep
+  _ 2780      780.scr
+  _ 2282      830.hep
+  _ 4354      830.scr
+  _ 916       840.hep
+  _ 1606      840.scr
+  _ 2574      850.hep
+  _ 9016      850.scr
+  _ 370       851.hep
+  _ 1964      851.scr
+  _ 662       852.hep
+  _ 2164      852.scr
+  _ 1170      853.hep
+  _ 5920      853.scr
+  _ 2472      854.hep
+  _ 6196      854.scr
+  _ 260       855.hep
+  _ 540       855.scr
+  _ 648       860.hep
+  _ 1446      860.scr
+  _ 512       65535.map
+  _ 511       message.map
+  _ 5868000   resource.000
+  _ 916832    resource.aud
+  _ 5958      resource.map
+  _ 246888    resource.msg
+  _ 11        version
+
+  _ 25614792  setup_quest_for_glory3_2.1.0.34.exe
+  _ 2487968   quest for glory 3 - manual.pdf
+md5sums: |
+  1b70067861c60a6c3793eb3482c2dc3d  28.hep
+  493fceb033de2c2becbd811c751cec07  28.scr
+  af84a50943e7081389f91c52a31d5593  29.hep
+  1e59542c6e1681a705165518cac66b4d  29.scr
+  6b2a13a3d540765532473d6c93b5fda4  32.hep
+  3ef3bb1695309c2ab4330354fa3750e6  32.scr
+  584e06cf02707529221cebd7829a6e34  33.hep
+  7394a56aff3d18e5fb5523e5a87f726c  33.scr
+  1bb6dc9133669faa7df9484b928ec51b  51.hep
+  e29a53ee480fa111cc7998211fe46429  51.scr
+  29c5f2d31e95a9bdedabf3f9d0a26a1f  54.hep
+  bb829523575b6ee0e117f2921d2a9f45  54.msg
+  539944112f1b82e3c30647a8decc5598  54.scr
+  a1b9577d4f068595963fe49c363e3932  100.hep
+  a19bc34463705b14c2fc3b2d8dfc9d4c  100.scr
+  e09cdb5d1d0168971c6d16f83b25d084  140.hep
+  b7cc33ec482e0b36b1fdd6dc69e9a44d  140.scr
+  ffe8d062aa046a9ce789b58a3787f2fd  200.hep
+  951ff2fe1b5b3e8260bed44a76d26823  200.scr
+  738e2c14afe4068f21219391f8537089  250.hep
+  a2e2f3d1c3927bc4b7ad37c6d263c5a0  250.scr
+  a0082565945694fdeb80aea3e8d36b0c  280.hep
+  5de442b7eae905297ef8ebb13801f9b3  280.scr
+  a4cb75cc5beef1e54312aa3492eb63d6  285.msg
+  114a506bab32bb07f08504ae49141597  330.hep
+  c1f4b1e0600cbea707eca94225fb394f  330.scr
+  baaea281eba02f253b43e8a2eaace176  350.hep
+  7ad5dce719c033be95ce316c5556825e  350.scr
+  48214618848b9b8381125bac4267cffe  380.hep
+  e2d1940943f523ad13afa8189c7eabaa  380.scr
+  853e4ab306ed2f0f20a5d3dcb5451cbf  400.hep
+  0f4a3514637ff45ae0125068f289c5fa  400.scr
+  b10ea74e7b41e662f4a4b26663d67403  420.hep
+  ad833e1310fcdc91fd9930f06e0e0602  420.scr
+  5a2e3e60879ab468c1a321b4b6790749  440.hep
+  7dddf2d18ca44f9f15087ecda4502339  440.scr
+  8ad25583aadabde4dfbb5faca69c972d  450.hep
+  87eb58c3552ab7dd6197fcbd720214cf  450.scr
+  413190b088020064043358671e56b34a  460.hep
+  41b0b3dcfb986e3a2a8bed2428609820  460.scr
+  b8e99a7374a8d4465f4979bcb17be0d2  470.hep
+  a2f77a581be021e868a36d995766dcfe  470.scr
+  abf7e3527edac32a10ee25c07c338d10  471.hep
+  e72920f2cba5cbfc37b61d2f11420ec5  471.scr
+  6908e73c8aaf34a40c78b2dfb0a3c5f6  480.hep
+  d39475c54f6b8a3cabb70e774982e552  480.scr
+  bbbdb5a2a4f085b93f3fd0302402b6ae  550.hep
+  c6fc7cfd152295bfec6ae7e7e50181ec  550.scr
+  dda7af44df0d839eab80094287e829ab  620.hep
+  a9625ba4ad7971be5fdbdaa55f0a80b0  620.scr
+  7cd07fadb0ba441f8bea11d117174ec2  630.hep
+  47ae01ac2943d24ded140e7b8a117583  630.scr
+  eed40f0358a88ebcae7d72c9e06de78e  640.hep
+  3456e731f4cde6388f42cb289e70c013  640.scr
+  5995304dfd4e0413365b167b4369c0bf  650.hep
+  41fd912923b941e3c4ef39abbb4ebfa5  650.scr
+  571c07289c04168a6a9b7b5db013c554  700.hep
+  7e88c789552839f555e0254df9d61124  700.scr
+  c37169f0ccfc0cbaebfadd6d9a84cbd6  740.hep
+  086927e737c8bddbcb0f727bbbcba953  740.scr
+  5d12fc0456c16b6d8f5bcdb310540e8b  770.hep
+  3c2b1d3829e0cf608a7388bf2ec21d37  770.scr
+  78d7561cbe429fce7c9f67faba53d0f8  780.hep
+  07f26866e5df8d301bb994e75ab4d7b7  780.scr
+  8b544038daa091751d994c2e147c0f6d  830.hep
+  a62fca7bbecf82822cf829dc082e8ecc  830.scr
+  a403b7d5aa1a1813f055a3be8f4dc0f1  840.hep
+  c44fb56444cafa406f7516b20e95102a  840.scr
+  1aa5e469f8f45be7a21299468ca7f065  850.hep
+  905f264b289d0c4066b69ca01c8c4f1a  850.scr
+  f18931c9ca4c6dc47c6e27b9a7d10d59  851.hep
+  931212af7dd81110967629d7408ef357  851.scr
+  bba82ab78458bc54e5b87d9a41aef7fa  852.hep
+  8e078363cd5b3ee8b6fa65008c606b61  852.scr
+  704788cbb7d265c3f72a998f7bc75ec3  853.hep
+  fa06143fdc6f98cdea41aa548ed0cbbe  853.scr
+  b7980b9e1a9e2e986e67724c2c1f70df  854.hep
+  25db6f87e1ce2f3c42076becdacccb0d  854.scr
+  4d9a73662e78ba3d6e9a0a45e9e53b11  855.hep
+  b8488ace898519fa573ef62148fcf4f3  855.scr
+  e119c01e035231271dfec0e40da4d9a1  860.hep
+  b9bcaa7306716d5b3580df27d4b52c4e  860.scr
+  48b8e62233426a2475451ae01219b6e3  65535.map
+  d57c5f503706524b82c3d4dee9840983  message.map
+  9524c7872c25ecce7c56860d493ce545  resource.000
+  5220753b076f02ef5ae598ca7f405aba  resource.aud
+  70f7ae052f2a06ae7e94c6943ab59fc0  resource.map
+  055d9a69bf9bacc38e5cff19b309d981  resource.msg
+  f758cb6ad45b0f6ce57d1e03e188452c  version
+
+  672133d913ed3656503d494afd07bffc  setup_quest_for_glory3_2.1.0.34.exe
+  c8ab302b69c3e4a3f298d4c28b82883d  quest for glory 3 - manual.pdf
+sha1sums: |
+  ff22dcad2525bd4ae2c0098dfabb2e6f0ea28e6f  setup_quest_for_glory3_2.1.0.34.exe
+...
