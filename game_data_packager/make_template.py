@@ -22,6 +22,7 @@ import os
 import subprocess
 import sys
 import tarfile
+import tempfile
 import glob
 
 from debian.deb822 import Deb822
@@ -48,150 +49,308 @@ def is_doc(file):
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
-    for word in ('changes', 'manual', 'quickstart', 'readme'):
+    for word in ('changes', 'hintbook', 'manual', 'quickstart', 'readme'):
         if word in name:
             return True
     return False
 
 def is_dosbox(file):
+    '''check if DOSBox assests are just dropped in games assets directory'''
     basename = os.path.basename(file)
-    if basename in ('dosbox.conf', 'dosbox-0.71.tar.gz', 'dosbox.exe',
+    if basename in ('dosbox.conf',  'dosbox.exe',
+                    'dosbox-0.71.tar.gz', 'dosbox-0.74.tar.gz',
                     'SDL_net.dll', 'SDL.dll', 'zmbv.dll', 'zmbv.inf'):
          return True
     # to check: COPYING.txt INSTALL.txt NEWS.txt THANKS.txt *.conf
+    if basename.startswith('dosbox'):
+         return True
     if basename not in ('AUTHORS.txt', 'README.txt'):
          return False
     with open(file, 'r', encoding='latin1') as txt:
          line = txt.readline()
          return 'dosbox' in line.lower()
 
-def do_one_dir(destdir,lower):
-    data = dict()
-    files = dict(files={})
-    game = os.path.basename(os.path.abspath(destdir))
-    if game.endswith('-data'):
-        game = game[:len(game) - 5]
+def is_runtime(path):
+    dir_l = path.lower()
+    for runtime in ('data.now', 'directx', 'dosbox'):
+        if '/%s/' % runtime in dir_l:
+            return True
+        if dir_l.endswith('/' + runtime):
+            logger.warning('ignoring %s runtime at %s' % (runtime, path))
+            return True
+    return False
 
-    longname = None
-    steam = max(destdir.find('/SteamApps/common/'),
-                destdir.find('/steamapps/common/'))
-    if steam > 0:
-          steam_dict = dict()
-          steam_id = 'FIXME'
-          for acf in parse_acf(destdir[:steam+11]):
-              if '/common/' + acf['installdir'] in destdir:
-                   steam_id = acf['appid']
-                   longname = game = acf['name']
-                   break
-          steam_dict['id'] = steam_id
-          steam_dict['path'] = destdir[steam+11:]
+class GameData(object):
+    '''simplified object with only one package per game'''
+    def __init__(self):
+        self.longname = None
+        self.try_repack_from = None
+        self.plugin = None
+        self.gog_url = None
 
-    game = game.replace(' ','').replace(':','').replace('-','').lower()
-    package = data.setdefault('packages', {}).setdefault(game + '-data', {})
+        self.data = dict()
+        self.install = set()
+        self.license = set()
+        self.optional = set()
 
-    if steam > 0:
-          package['steam'] = steam_dict
+        self.files = dict(files={})
+        self.ck = {}
+        self.md5 = {}
+        self.sha1 = {}
 
-    package['install_to'] = 'usr/share/games/' + game
+    def is_scummvm(self,path):
+        dir_l = path.lower()
+        if dir_l.endswith('/scummvm') or '/scummvm/' in dir_l:
+            self.plugin = 'scummvm_common'
+            return True
+        return False
 
-    install = set()
-    license = set()
-    optional = set()
-    sums = dict(sha1={}, md5={}, sha256={}, ck={})
-    has_dosbox = False
+    def add_one_file(self,name,lower):
+        out_name = os.path.basename(name)
+        if lower:
+            out_name = out_name.lower()
 
-    for dirpath, dirnames, filenames in os.walk(destdir):
-        dir_l = dirpath.lower()
-        if dir_l.endswith('/directx'):
-            logger.warning('ignoring DirectX runtime at %s' % dirpath)
-            continue
-        if dir_l.endswith('/data.now'):
-            logger.warning('ignoring Sold Out runtime at %s' % dirpath)
-            continue
-        if dir_l.endswith('/scummvm'):
-            logger.warning('ignoring ScummVM runtime at %s' % dirpath)
-            continue
-        if dir_l.endswith('/dosbox'):
-            logger.warning('ignoring DOSBox runtime at %s' % dirpath)
-            continue
-        if ('/directx/' in dir_l
-          or '/data.now/' in dir_l
-          or '/scummvm/' in dir_l
-          or '/dosbox/' in dir_l):
-            continue
+        if is_license(name):
+            out_name = os.path.basename(out_name)
+            self.license.add(out_name)
+        elif is_doc(name):
+            self.optional.add(out_name)
+            self.files['files'][out_name] = dict(install_to='$docdir')
+        else:
+            self.install.add(out_name)
 
-        for fn in filenames:
-            path = os.path.join(dirpath, fn)
+        hf = HashedFile.from_file(name, open(name, 'rb'))
+        self.ck[out_name] = os.path.getsize(name)
+        self.md5[out_name] = hf.md5
+        self.sha1[out_name] = hf.sha1
 
-            assert path.startswith(destdir + '/')
-            name = path[len(destdir) + 1:]
-            out_name = name
-            if lower:
-                out_name = out_name.lower()
+    def add_one_dir(self,destdir,lower,archive=None):
+        if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
+            self.try_repack_from = destdir
 
-            if os.path.isdir(path):
+        game = os.path.basename(os.path.abspath(destdir))
+        if game.endswith('-data'):
+            game = game[:len(game) - 5]
+
+        steam = max(destdir.find('/SteamApps/common/'),
+                    destdir.find('/steamapps/common/'))
+        if steam > 0:
+            steam_dict = dict()
+            steam_id = 'FIXME'
+            for acf in parse_acf(destdir[:steam+11]):
+                if '/common/' + acf['installdir'] in destdir:
+                     steam_id = acf['appid']
+                     self.longname = game = acf['name']
+                     break
+            steam_dict['id'] = steam_id
+            steam_dict['path'] = destdir[steam+11:]
+
+        game = game.replace(' ','').replace(':','').replace('-','').lower()
+        self.package = self.data.setdefault('packages', {}).setdefault(game + '-data', {})
+
+        if steam > 0:
+            self.package['steam'] = steam_dict
+
+        self.package['install_to'] = 'usr/share/games/' + game
+        has_dosbox = False
+
+        for dirpath, dirnames, filenames in os.walk(destdir):
+            if self.is_scummvm(dirpath) or is_runtime(dirpath):
                 continue
-            elif is_dosbox(path):
-                has_dosbox = True
-            elif os.path.splitext(fn.lower())[1] in ('.exe', '.ovl', '.dll', '.bat', '.386'):
-                logger.warning('ignoring dos/windows binary %s' % fn)
-            elif os.path.islink(path):
-                package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
-            elif os.path.isfile(path):
-                if is_license(fn):
-                     out_name = os.path.basename(out_name)
-                     license.add(out_name)
-                elif is_doc(fn):
-                     optional.add(out_name)
-                     files['files'][out_name] = dict(install_to='$docdir')
+
+            for fn in filenames:
+                path = os.path.join(dirpath, fn)
+
+                assert path.startswith(destdir + '/')
+                name = path[len(destdir) + 1:]
+                out_name = name
+                if lower:
+                    out_name = out_name.lower()
+
+                if os.path.isdir(path):
+                    continue
+                elif is_dosbox(path):
+                    has_dosbox = True
+                elif os.path.splitext(fn.lower())[1] in ('.exe', '.ovl', '.dll', '.bat', '.386'):
+                    logger.warning('ignoring dos/windows binary %s' % fn)
+                elif os.path.islink(path):
+                    self.package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
+                elif os.path.isfile(path):
+                    if is_license(fn):
+                        out_name = os.path.basename(out_name)
+                        self.license.add(out_name)
+                    elif is_doc(fn):
+                        self.optional.add(out_name)
+                        self.files['files'][out_name] = dict(install_to='$docdir')
+                    else:
+                        self.install.add(out_name)
+
+                    hf = HashedFile.from_file(name, open(path, 'rb'))
+                    self.ck[out_name] = os.path.getsize(path)
+                    self.md5[out_name] = hf.md5
+                    self.sha1[out_name] = hf.sha1
                 else:
-                     install.add(out_name)
+                    logger.warning('ignoring unknown file type at %s' % path)
 
-                hf = HashedFile.from_file(name, open(path, 'rb'))
-                sums['ck'][out_name] = os.path.getsize(path)
-                sums['md5'][out_name] = hf.md5
-                sums['sha1'][out_name] = hf.sha1
-                sums['sha256'][out_name] = hf.sha256
-            else:
-                logger.warning('ignoring unknown file type at %s' % path)
+            if has_dosbox:
+                logger.warning('DOSBOX files detected, make sure not to include those in your package')
 
-    if has_dosbox:
-        logger.warning('DOSBOX files detected, make sure not to include those in your package')
+    def add_one_innoextract(self,exe):
+        tmp = tempfile.mkdtemp(prefix='gdptmp.')
+        log = subprocess.check_output(['innoextract', os.path.realpath(exe), '-I', 'app'],
+                 stderr=subprocess.DEVNULL,
+                 universal_newlines=True,
+                 cwd=tmp)
+        self.longname = log.split('\n')[0].split('"')[1]
+        self.add_one_dir(os.path.join(tmp, 'app'),True)
+        os.system('rm -r ' + tmp)
 
-    print('---')
-    if longname:
-        print('longname: %s\n' % longname)
-    print('copyright: © 1970 FIXME')
-    if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
-        print('try_repack_from:\n- %s\n' % destdir)
-    yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
+        self.add_one_file(exe,False)
+        self.files['files'][os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
 
-    print('    install:')
-    for file in sorted(install):
-        print('    - %s' % file)
+    def add_one_deb(self,deb):
+        control = None
 
-    if optional:
-        print('    optional:')
-        for file in sorted(optional):
+        with subprocess.Popen(['dpkg-deb', '--ctrl-tarfile', deb],
+                stdout=subprocess.PIPE) as ctrl_process:
+            with tarfile.open(deb + '//control.tar.*', mode='r|',
+                    fileobj=ctrl_process.stdout) as ctrl_tarfile:
+                for entry in ctrl_tarfile:
+                    name = entry.name
+                    if name == '.':
+                        continue
+
+                    if name.startswith('./'):
+                        name = name[2:]
+                    if name == 'control':
+                        reader = ctrl_tarfile.extractfile(entry)
+                        control = Deb822(reader)
+                        print('# data/%s.control.in' % control['package'])
+                        control['version'] = 'VERSION'
+                        if 'Homepage' in control:
+                            if 'gog.com/' in control['Homepage']:
+                                self.gog_url = control['Homepage'].split('/')[-1]
+
+                        control.dump(fd=sys.stdout, text_mode=True)
+                        print('')
+                    elif name == 'preinst':
+                        logger.warning('ignoring preinst, not supported yet')
+                    elif name == 'md5sums':
+                        pass
+                    else:
+                        logger.warning('unknown control member: %s', name)
+
+        if control is None:
+            logger.error('Could not find DEBIAN/control')
+
+        self.data = dict(packages={ control['package']: {} })
+        self.package = self.data['packages'][control['package']]
+        self.package['install_to'] = None
+
+        with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', deb],
+                stdout=subprocess.PIPE) as fsys_process:
+            with tarfile.open(deb + '//data.tar.*', mode='r|',
+                    fileobj=fsys_process.stdout) as fsys_tarfile:
+                for entry in fsys_tarfile:
+                    name = entry.name
+                    if name.startswith('./'):
+                        name = name[2:]
+
+                    if self.is_scummvm(name) or is_runtime(name):
+                        continue
+                    if (name.startswith('usr/share/doc/') and
+                            name.endswith('changelog.gz')):
+                        continue
+                    if (name.startswith('usr/share/doc/') and
+                            name.endswith('changelog.Debian.gz')):
+                        continue
+
+                    if (name.startswith('usr/share/doc/') and
+                            name.endswith('copyright')):
+                        print('# data/%s.copyright' % control['package'])
+                        for line in fsys_tarfile.extractfile(entry):
+                            print(line.decode('utf-8'), end='')
+                        print('')
+                        continue
+
+                    if (entry.isfile() and self.package['install_to'] is None):
+                        # assume this is the place
+                        if name.startswith('usr/share/games/'):
+                            there = name[len('usr/share/games/'):]
+                            there = there.split('/', 1)[0]
+                            self.package['install_to'] = ('usr/share/games/' + there)
+                        elif name.startswith('opt/GOG Games/'):
+                            there = name[len('opt/GOG Games/'):]
+                            there = there.split('/', 1)[0]
+                            self.package['install_to'] = ('opt/GOG Games/' + there)
+
+                    if entry.isfile():
+                        hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
+                                fsys_tarfile.extractfile(entry))
+
+                        if (self.package['install_to'] is not None and
+                            name.startswith(self.package['install_to'] + '/')):
+                            name = name[len(self.package['install_to']) + 1:]
+                            self.install.add(name)
+                        else:
+                            self.optional.add(name)
+                            self.files['files'][name] = dict(install_to='.')
+
+                        self.ck[name] = entry.size
+                        self.md5[name] = hf.md5
+                        self.sha1[name] = hf.sha1
+                    elif entry.isdir():
+                        pass
+                    elif entry.issym():
+                        self.package.setdefault('symlinks', {})[name] = os.path.join(
+                            os.path.dirname(name), entry.linkname)
+                    else:
+                        logger.warning('unhandled data.tar entry type: %s: %s',
+                            name, entry.type)
+
+    def to_yaml(self):
+        print('---')
+        if self.longname:
+            print('longname: %s' % self.longname)
+        print('copyright: © 1970 FIXME')
+        if self.try_repack_from:
+            print('try_repack_from: [- %s]' % self.try_repack_from)
+        if self.plugin:
+            print('plugin: %s' % self.plugin)
+        if self.gog_url:
+            print('gog:\n  url: %s' % self.gog_url)
+
+        print('')
+        yaml.safe_dump(self.data, stream=sys.stdout, default_flow_style=False)
+
+        print('    install:')
+        for file in sorted(self.install):
             print('    - %s' % file)
-    if license:
-        print('    license:')
-        for file in sorted(license):
-            print('    - %s' % file)
 
-    if files['files']:
-        yaml.safe_dump(files, stream=sys.stdout, default_flow_style=False)
+        if self.optional:
+            print('    optional:')
+            for file in sorted(self.optional):
+                print('    - %s' % file)
+        if self.license:
+            print('    license:')
+            for file in sorted(self.license):
+                print('    - %s' % file)
 
-    for alg, files in sorted(sums.items()):
-        print('%ssums: |' % alg)
-        for filename, sum_ in sorted(files.items()):
-            if alg == 'ck':
-                print('  _ %-9s %s' % (sum_, filename))
-            else:
-                print('  %s  %s' % (sum_, filename))
+        if self.files['files']:
+            yaml.safe_dump(self.files, stream=sys.stdout, default_flow_style=False)
 
-    print('...')
-    print('')
+        print('\ncksums: |')
+        for filename, sum_ in sorted(self.ck.items()):
+            print('  _ %-9s %s' % (sum_, filename))
+        print('\nmd5sums: |')
+        for filename, sum_ in sorted(self.md5.items()):
+            print('  %s  %s' % (sum_, filename))
+        print('\nsha1sums: |')
+        for filename, sum_ in sorted(self.sha1.items()):
+            print('  %s  %s' % (sum_, filename))
+
+        print('...')
+        print('')
 
 def do_one_file(name,lower):
     hf = HashedFile.from_file(name, open(name, 'rb'))
@@ -237,138 +396,6 @@ def do_one_file(name,lower):
     print('  %s  %s' % (hf.md5, out_name))
     print('  %s  %s' % (hf.sha1, out_name))
     print('  %s  %s' % (hf.sha256, out_name))
-
-def do_one_deb(deb):
-    control = None
-
-    with subprocess.Popen(['dpkg-deb', '--ctrl-tarfile', deb],
-            stdout=subprocess.PIPE) as ctrl_process:
-        with tarfile.open(deb + '//control.tar.*', mode='r|',
-                fileobj=ctrl_process.stdout) as ctrl_tarfile:
-            for entry in ctrl_tarfile:
-                name = entry.name
-                if name == '.':
-                    continue
-
-                if name.startswith('./'):
-                    name = name[2:]
-                if name == 'control':
-                    reader = ctrl_tarfile.extractfile(entry)
-                    control = Deb822(reader)
-                    print('# data/%s.control.in' % control['package'])
-                    control['version'] = 'VERSION'
-                    control.dump(fd=sys.stdout, text_mode=True)
-                    print('')
-                elif name == 'preinst':
-                    logger.warning('ignoring preinst, not supported yet')
-                elif name == 'md5sums':
-                    pass
-                else:
-                    logger.warning('unknown control member: %s', name)
-
-    if control is None:
-        logger.error('Could not find DEBIAN/control')
-
-    data = dict(packages={ control['package']: {} })
-    files = dict(files={})
-    package = data['packages'][control['package']]
-    package['install_to'] = None
-    install = set()
-    optional = set()
-    sums = dict(sha1={}, md5={}, sha256={}, ck={})
-
-    with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', deb],
-            stdout=subprocess.PIPE) as fsys_process:
-        with tarfile.open(deb + '//data.tar.*', mode='r|',
-                fileobj=fsys_process.stdout) as fsys_tarfile:
-            for entry in fsys_tarfile:
-                name = entry.name
-                if name.startswith('./'):
-                    name = name[2:]
-
-                if '/dosbox/' in name.lower():
-                    continue
-                if '/scummvm/' in name.lower():
-                    continue
-
-                if (name.startswith('usr/share/doc/') and
-                        name.endswith('changelog.gz')):
-                    continue
-
-                if (name.startswith('usr/share/doc/') and
-                        name.endswith('changelog.Debian.gz')):
-                    continue
-
-                if (name.startswith('usr/share/doc/') and
-                        name.endswith('copyright')):
-                    print('# data/%s.copyright' % control['package'])
-                    for line in fsys_tarfile.extractfile(entry):
-                        print(line.decode('utf-8'), end='')
-                    print('')
-                    continue
-
-                if (name.startswith('usr/share/games/') and
-                        entry.isfile() and
-                        package['install_to'] is None):
-                    # assume this is the place
-                    there = name[len('usr/share/games/'):]
-                    there = there.split('/', 1)[0]
-                    package['install_to'] = ('usr/share/games/' + there)
-
-                if entry.isfile():
-                    hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
-                            fsys_tarfile.extractfile(entry))
-
-                    if (package['install_to'] is not None and
-                            name.startswith(package['install_to'] + '/')):
-                        name = name[len(package['install_to']) + 1:]
-                        install.add(name)
-                    else:
-                        optional.add(name)
-                        files['files'][name] = dict(install_to='.')
-
-                    sums['ck'][name] = entry.size
-                    sums['md5'][name] = hf.md5
-                    sums['sha1'][name] = hf.sha1
-                    sums['sha256'][name] = hf.sha256
-
-                elif entry.isdir():
-                    pass
-                elif entry.issym():
-                    package.setdefault('symlinks', {})[name] = os.path.join(
-                            os.path.dirname(name), entry.linkname)
-                else:
-                    logger.warning('unhandled data.tar entry type: %s: %s',
-                            name, entry.type)
-
-    print('# data/%s.yaml' % control['package'])
-    print('%YAML 1.2')
-    print('---')
-    print('copyright: © 1970 FIXME')
-    yaml.safe_dump(data, stream=sys.stdout, default_flow_style=False)
-
-    print('    install:')
-    for file in sorted(install):
-        print('    - %s' % file)
-
-    if optional:
-        print('    optional:')
-        for file in sorted(optional):
-             print('    - %s' % file)
-
-    if files['files']:
-        yaml.safe_dump(files, stream=sys.stdout, default_flow_style=False)
-
-    for alg, files in sorted(sums.items()):
-        print('%ssums: |' % alg)
-        for filename, sum_ in sorted(files.items()):
-            if alg == 'ck':
-                print('  _ %-9s %s' % (sum_, filename))
-            else:
-                print('  %s  %s' % (sum_, filename))
-
-    print('...')
-    print('')
 
 def do_one_exec(pgm,lower):
     print('running:', pgm)
@@ -476,16 +503,30 @@ def main():
     if args.execute:
         do_one_exec(args.args,args.lower)
         return
+    if args.flacsums:
+        do_flacsums(args.args[0],args.lower)
+        return
 
+    gamedata = GameData()
+
+    # "./run make-template setup_<game>.exe gog_<game>.deb"
+    # will merge files lists
     for arg in args.args:
-        if args.flacsums:
-            do_flacsums(arg,args.lower)
-        elif os.path.isdir(arg):
-            do_one_dir(arg.rstrip('/'),args.lower)
+        if os.path.isdir(arg):
+            gamedata.add_one_dir(arg.rstrip('/'),args.lower)
         elif arg.endswith('.deb'):
-            do_one_deb(arg)
-        else:
+            gamedata.add_one_deb(arg)
+        elif os.path.basename(arg).startswith('setup_') and arg.endswith('.exe'):
+            if not which('innoextract'):
+                exit('Install innoextract')
+            gamedata.add_one_innoextract(arg)
+        elif len(args.args) == 1:
             do_one_file(arg,args.lower)
+            return
+        else:
+            gamedata.add_one_file(arg,args.lower)
+    gamedata.to_yaml()
+
 
 if __name__ == '__main__':
     try:
