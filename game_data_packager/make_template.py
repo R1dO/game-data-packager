@@ -49,7 +49,7 @@ def is_doc(file):
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
-    for word in ('changes', 'hintbook', 'manual', 'quickstart', 'readme'):
+    for word in ('changes', 'hintbook', 'manual', 'quickstart', 'readme', 'support'):
         if word in name:
             return True
     return False
@@ -90,8 +90,8 @@ class GameData(object):
 
         self.data = dict()
         self.install = set()
-        self.license = set()
         self.optional = set()
+        self.license = set()
 
         self.files = dict(files={})
         self.ck = {}
@@ -110,7 +110,9 @@ class GameData(object):
         if lower:
             out_name = out_name.lower()
 
-        if is_license(name):
+        if out_name.startswith('setup_') and name.endswith('.exe'):
+            pass
+        elif is_license(name):
             out_name = os.path.basename(out_name)
             self.license.add(out_name)
         elif is_doc(name):
@@ -339,15 +341,18 @@ class GameData(object):
         if self.files['files']:
             yaml.safe_dump(self.files, stream=sys.stdout, default_flow_style=False)
 
+        print_order = sorted(self.install) + sorted(self.optional) + sorted(self.license)
+        print_order += sorted(set(self.ck.keys()) - set(print_order))
+
         print('\ncksums: |')
-        for filename, sum_ in sorted(self.ck.items()):
-            print('  _ %-9s %s' % (sum_, filename))
+        for filename in print_order:
+            print('  _ %-9s %s' % (self.ck[filename], filename))
         print('\nmd5sums: |')
-        for filename, sum_ in sorted(self.md5.items()):
-            print('  %s  %s' % (sum_, filename))
+        for filename in print_order:
+            print('  %s  %s' % (self.md5[filename], filename))
         print('\nsha1sums: |')
-        for filename, sum_ in sorted(self.sha1.items()):
-            print('  %s  %s' % (sum_, filename))
+        for filename in print_order:
+            print('  %s  %s' % (self.sha1[filename], filename))
 
         print('...')
         print('')
