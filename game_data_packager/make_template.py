@@ -49,7 +49,8 @@ def is_doc(file):
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
-    for word in ('changes', 'hintbook', 'manual', 'quickstart', 'readme', 'support'):
+    for word in ('changes', 'hintbook', 'manual', 'quickstart',
+                 'readme', 'refcard', 'reference', 'support'):
         if word in name:
             return True
     return False
@@ -111,6 +112,8 @@ class GameData(object):
             out_name = out_name.lower()
 
         if out_name.startswith('setup_') and name.endswith('.exe'):
+            pass
+        elif name.endswith('.deb'):
             pass
         elif is_license(name):
             out_name = os.path.basename(out_name)
@@ -175,6 +178,8 @@ class GameData(object):
                     has_dosbox = True
                 elif os.path.splitext(fn.lower())[1] in ('.exe', '.ovl', '.dll', '.bat', '.386'):
                     logger.warning('ignoring dos/windows binary %s' % fn)
+                elif out_name.startswith('goggame-') or out_name == 'webcache.zip':
+                    logger.warning('ignoring GOG stuff %s' % fn)
                 elif os.path.islink(path):
                     self.package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
                 elif os.path.isfile(path):
@@ -210,7 +215,7 @@ class GameData(object):
         self.add_one_file(exe,False)
         self.files['files'][os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
 
-    def add_one_deb(self,deb):
+    def add_one_deb(self,deb,lower):
         control = None
 
         with subprocess.Popen(['dpkg-deb', '--ctrl-tarfile', deb],
@@ -289,10 +294,23 @@ class GameData(object):
                     if entry.isfile():
                         hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
                                 fsys_tarfile.extractfile(entry))
-
-                        if (self.package['install_to'] is not None and
+                        if os.path.splitext(name.lower())[1] in ('.exe', '.bat'):
+                            logger.warning('ignoring dos/windows binary %s' % name)
+                            continue
+                        elif name.startswith('opt/') and is_license(name):
+                            name = os.path.basename(name).lower()
+                            self.license.add(name)
+                        elif name.startswith('opt/') and is_doc(name):
+                            name = os.path.basename(name).lower()
+                            self.optional.add(name)
+                            self.files['files'][name] = dict(install_to='$docdir')
+                        elif (self.package['install_to'] is not None and
                             name.startswith(self.package['install_to'] + '/')):
                             name = name[len(self.package['install_to']) + 1:]
+                            if lower:
+                                name = name.lower()
+                            if self.gog_url and name.startswith('data/'):
+                                name = name[len('data/'):]
                             self.install.add(name)
                         else:
                             self.optional.add(name)
@@ -517,10 +535,15 @@ def main():
     # "./run make-template setup_<game>.exe gog_<game>.deb"
     # will merge files lists
     for arg in args.args:
+        basename = os.path.basename(arg)
         if os.path.isdir(arg):
             gamedata.add_one_dir(arg.rstrip('/'),args.lower)
         elif arg.endswith('.deb'):
-            gamedata.add_one_deb(arg)
+            gamedata.add_one_deb(arg,args.lower)
+            if basename.startswith('gog_'):
+                gamedata.add_one_file(arg,args.lower)
+                gamedata.files['files'][basename] = dict(unpack=dict(format='deb'),
+                                                         provides=['<stuff>'])
         elif os.path.basename(arg).startswith('setup_') and arg.endswith('.exe'):
             if not which('innoextract'):
                 exit('Install innoextract')
