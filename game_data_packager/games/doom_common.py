@@ -83,6 +83,10 @@ class DoomGameData(GameData):
             assert type(package.main_wads) == dict
             for main_wad in package.main_wads.values():
                 assert type(main_wad) == dict
+                if 'args' in main_wad:
+                    main_wad['args'] % 'deadbeef'
+                elif package.expansion_for:
+                    assert self.packages[package.expansion_for].only_file
             package.data_type = 'PWAD' if (package.expansion_for
                                 or package.expansion_for_ext) else 'IWAD'
 
