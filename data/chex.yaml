@@ -24,6 +24,9 @@ packages:
     longname: "Chex Quest 2: Flemoids Take Chextropolis"
     copyright: © 1997 Digital Café
     expansion_for: chexquest-data
+    main_wads:
+      chex2.wad:
+        args: -iwad chex.wad -file %s
     install_to: usr/share/games/doom
     install:
     - chex2.wad
