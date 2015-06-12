@@ -1649,6 +1649,7 @@ class GameData(object):
                                                       universal_newlines=True)
                     if version != '1.4' and 'FIXME' not in to_unpack:
                         prefix = provider.unpack.get('prefix', '')
+                        suffix = provider.unpack.get('suffix', '')
                         if prefix and not prefix.endswith('/'):
                             prefix += '/'
                         if '$provides' in to_unpack:
@@ -1656,8 +1657,10 @@ class GameData(object):
                             to_unpack += provider.provides
                         for i in to_unpack:
                             cmdline.append('-I')
-                            if i[0] != '/':
+                            if prefix and i[0] != '/':
                                 i = prefix + i
+                            if suffix and i.endswith(suffix):
+                                i = i[:len(i)-len(suffix)]
                             cmdline.append(i.lower())
                     subprocess.check_call(cmdline)
                     # for at least Theme Hospital the files we want are

@@ -80,6 +80,85 @@ packages:
     license:
     - end user license agreement.txt
 
+  the-dig-de-data:
+    lang: de
+    debian:
+      provides: the-dig-data
+    gog:
+      url: the_dig
+    install:
+    - dig.la0
+    - dig.la1
+    - digmusic.bun
+    - digvoice.bun_de
+    # file not in english version
+    - language.bnd
+    - video/alcove.san
+    - video/asttun.san
+    - video/darkcave.san
+    - video/digtxt.trs_de
+    - video/font0.nut
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
+    - video/m1.san
+    - video/m2.san
+    - video/nexuspan.san
+    - video/pigout.san
+    - video/rtram1.san
+    - video/rtram2.san
+    - video/rtram3.san
+    - video/rtram4.san
+    - video/rtram5.san
+    - video/sky.san
+    - video/sq1.san_de
+    - video/sq10.san
+    - video/sq11.san
+    - video/sq12a.san
+    - video/sq12b.san
+    - video/sq13.san
+    - video/sq14b.san
+    - video/sq14sc04.san
+    - video/sq14sc07.san
+    - video/sq14sc11.san
+    - video/sq14sc14.san_de
+    - video/sq14sc16.san
+    - video/sq14sc19.san
+    - video/sq14sc22.san_de
+    - video/sq15a.san
+    - video/sq15b.san
+    - video/sq17.san_de
+    - video/sq18a.san
+    - video/sq18b.san_de
+    - video/sq18sc15.san_de
+    - video/sq19a.san
+    - video/sq19b.san
+    - video/sq19c.san
+    - video/sq2.san_de
+    - video/sq3.san_de
+    - video/sq4.san_de
+    - video/sq5.san
+    - video/sq6.san
+    - video/sq6sc3.san
+    - video/sq7.san
+    - video/sq8a.san_de
+    - video/sq8a1.san
+    - video/sq8b.san_de
+    - video/sq8c.san_de
+    - video/sq9.san_de
+    - video/tombdwn1.san
+    - video/tombdwn2.san
+    - video/tram1.san
+    - video/tram2.san
+    - video/tram3.san
+    - video/tram4.san
+    - video/tram5.san
+    optional:
+    - manual.pdf
+    - refcard.pdf
+    license:
+    - end user license agreement.txt
+
 files:
   manual.pdf:
     install_to: $docdir
@@ -234,6 +313,199 @@ files:
     - refcard.pdf
     - end user license agreement.txt
 
+  digvoice.bun_de:
+    install_as: digvoice.bun
+    look_for: [digvoice.bun]
+  video/digtxt.trs_de:
+    install_as: video/digtxt.trs
+    look_for: [video/digtxt.trs]
+  video/sq1.san_de:
+    install_as: video/sq1.san
+    look_for: [video/sq1.san]
+  video/sq14sc14.san_de:
+    install_as: video/sq14sc14.san
+    look_for: [video/sq14sc14.san]
+  video/sq14sc22.san_de:
+    install_as: video/sq14sc22.san
+    look_for: [video/sq14sc22.san]
+  video/sq17.san_de:
+    install_as: video/sq17.san
+    look_for: [video/sq17.san]
+  video/sq18b.san_de:
+    install_as: video/sq18b.san
+    look_for: [video/sq18b.san]
+  video/sq18sc15.san_de:
+    install_as: video/sq18sc15.san
+    look_for: [video/sq18sc15.san]
+  video/sq2.san_de:
+    install_as: video/sq2.san
+    look_for: [video/sq2.san]
+  video/sq3.san_de:
+    install_as: video/sq3.san
+    look_for: [video/sq3.san]
+  video/sq4.san_de:
+    install_as: video/sq4.san
+    look_for: [video/sq4.san]
+  video/sq8a.san_de:
+    install_as: video/sq8a.san
+    look_for: [video/sq8a.san]
+  video/sq8b.san_de:
+    install_as: video/sq8b.san
+    look_for: [video/sq8b.san]
+  video/sq8c.san_de:
+    install_as: video/sq8c.san
+    look_for: [video/sq8c.san]
+  video/sq9.san_de:
+    install_as: video/sq9.san
+    look_for: [video/sq9.san]
+
+  setup_the_dig_german_2.0.0.3.exe:
+    unpack:
+      format: innoextract
+      suffix: _de
+    provides:
+    - dig.la0
+    - dig.la1
+    - digmusic.bun
+    - digvoice.bun_de
+    - language.bnd
+    - video/alcove.san
+    - video/asttun.san
+    - video/darkcave.san
+    - video/digtxt.trs_de
+    - video/font0.nut
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
+    - video/m1.san
+    - video/m2.san
+    - video/nexuspan.san
+    - video/pigout.san
+    - video/rtram1.san
+    - video/rtram2.san
+    - video/rtram3.san
+    - video/rtram4.san
+    - video/rtram5.san
+    - video/sky.san
+    - video/sq1.san_de
+    - video/sq10.san
+    - video/sq11.san
+    - video/sq12a.san
+    - video/sq12b.san
+    - video/sq13.san
+    - video/sq14b.san
+    - video/sq14sc04.san
+    - video/sq14sc07.san
+    - video/sq14sc11.san
+    - video/sq14sc14.san_de
+    - video/sq14sc16.san
+    - video/sq14sc19.san
+    - video/sq14sc22.san_de
+    - video/sq15a.san
+    - video/sq15b.san
+    - video/sq17.san_de
+    - video/sq18a.san
+    - video/sq18b.san_de
+    - video/sq18sc15.san_de
+    - video/sq19a.san
+    - video/sq19b.san
+    - video/sq19c.san
+    - video/sq2.san_de
+    - video/sq3.san_de
+    - video/sq4.san_de
+    - video/sq5.san
+    - video/sq6.san
+    - video/sq6sc3.san
+    - video/sq7.san
+    - video/sq8a.san_de
+    - video/sq8a1.san
+    - video/sq8b.san_de
+    - video/sq8c.san_de
+    - video/sq9.san_de
+    - video/tombdwn1.san
+    - video/tombdwn2.san
+    - video/tram1.san
+    - video/tram2.san
+    - video/tram3.san
+    - video/tram4.san
+    - video/tram5.san
+    - manual.pdf
+    - refcard.pdf
+    - end user license agreement.txt
+
+  gog_the_dig_german_1.0.0.6.deb:
+    unpack:
+      format: deb
+    provides:
+    - dig.la0
+    - dig.la1
+    - digmusic.bun
+    - digvoice.bun_de
+    - language.bnd
+    - video/alcove.san
+    - video/asttun.san
+    - video/darkcave.san
+    - video/digtxt.trs_de
+    - video/font0.nut
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
+    - video/m1.san
+    - video/m2.san
+    - video/nexuspan.san
+    - video/pigout.san
+    - video/rtram1.san
+    - video/rtram2.san
+    - video/rtram3.san
+    - video/rtram4.san
+    - video/rtram5.san
+    - video/sky.san
+    - video/sq1.san_de
+    - video/sq10.san
+    - video/sq11.san
+    - video/sq12a.san
+    - video/sq12b.san
+    - video/sq13.san
+    - video/sq14b.san
+    - video/sq14sc04.san
+    - video/sq14sc07.san
+    - video/sq14sc11.san
+    - video/sq14sc14.san_de
+    - video/sq14sc16.san
+    - video/sq14sc19.san
+    - video/sq14sc22.san_de
+    - video/sq15a.san
+    - video/sq15b.san
+    - video/sq17.san_de
+    - video/sq18a.san
+    - video/sq18b.san_de
+    - video/sq18sc15.san_de
+    - video/sq19a.san
+    - video/sq19b.san
+    - video/sq19c.san
+    - video/sq2.san_de
+    - video/sq3.san_de
+    - video/sq4.san_de
+    - video/sq5.san
+    - video/sq6.san
+    - video/sq6sc3.san
+    - video/sq7.san
+    - video/sq8a.san_de
+    - video/sq8a1.san
+    - video/sq8b.san_de
+    - video/sq8c.san_de
+    - video/sq9.san_de
+    - video/tombdwn1.san
+    - video/tombdwn2.san
+    - video/tram1.san
+    - video/tram2.san
+    - video/tram3.san
+    - video/tram4.san
+    - video/tram5.san
+    - manual.pdf
+    - refcard.pdf
+    - end user license agreement.txt
+
 cksums: |
   _ 16304     dig.la0
   _ 88673344  dig.la1
@@ -306,6 +578,26 @@ cksums: |
 
   _ 485628672 gog_the_dig_1.0.0.5.deb
   _ 489276720 setup_the_dig_2.0.0.3.exe
+
+
+  _ 110794618 digvoice.bun_de
+  _ 248627    language.bnd
+  _ 11511     video/digtxt.trs_de
+  _ 53950122  video/sq1.san_de
+  _ 138252    video/sq14sc14.san_de
+  _ 2622506   video/sq14sc22.san_de
+  _ 10047618  video/sq17.san_de
+  _ 2429722   video/sq18b.san_de
+  _ 587384    video/sq18sc15.san_de
+  _ 17910846  video/sq2.san_de
+  _ 12075504  video/sq3.san_de
+  _ 2319314   video/sq4.san_de
+  _ 2062518   video/sq8a.san_de
+  _ 340072    video/sq8b.san_de
+  _ 737438    video/sq8c.san_de
+  _ 6059438   video/sq9.san_de
+  _ 476657032 gog_the_dig_german_1.0.0.6.deb
+  _ 479717400 setup_the_dig_german_2.0.0.3.exe
 
 md5sums: |
   d8323015ecb8b10bf53474f6e6b0ae33  dig.la0
@@ -380,8 +672,30 @@ md5sums: |
   22aa49f3373c9ed06d1f5ac5be999c61  gog_the_dig_1.0.0.5.deb
   a36bda23af447deb5013780669a04a0c  setup_the_dig_2.0.0.3.exe
 
+  d4ac3de7708c1b58aaf5702cc4fd0685  digvoice.bun_de
+  1fd585ac849d57305878c77b2f6c74ff  language.bnd
+  5d6d398546ac89a300644e92c7acf202  video/digtxt.trs_de
+  9550ea89ca27edcdc06a50f042c1302c  video/sq1.san_de
+  0cde5809fbf425d84b7037d086a084ed  video/sq14sc14.san_de
+  e5db093860ad9331f50bad3afb7ab002  video/sq14sc22.san_de
+  7a583dd5d45e69677cb521d1b1109072  video/sq17.san_de
+  267e5cdb46a8e32b5d511513c840fc4d  video/sq18b.san_de
+  e1a543a579e50c5ac9855d2f8a82f132  video/sq18sc15.san_de
+  602ad90c904822aaa35380c7ac372d0d  video/sq2.san_de
+  f49917408a4a507a158b0fc0b211dad6  video/sq3.san_de
+  0d14d157f1918410e9d3af3b65639659  video/sq4.san_de
+  8a0e50fb95423edb6247e6ec2fcbf50a  video/sq8a.san_de
+  e693f4369fbdf59aeca2a7bc85054375  video/sq8b.san_de
+  6f033c0f7c80a0981f42daff6b47347f  video/sq8c.san_de
+  f2b15303f839ff2bcaafbd529a0c14d4  video/sq9.san_de
+  9ccda57af1f03305a92598fcf59ae9e8  gog_the_dig_german_1.0.0.6.deb
+  b8d70800590ac81e3f985cff1ce01925  setup_the_dig_german_2.0.0.3.exe
+
 sha1sums: |
   29cc9da6aefb3941f21ac2bce9bd3e0f5af18ca8  gog_the_dig_1.0.0.5.deb
   063e4fd5a8a6527f5a7f0586ec5cefb78c160da5  setup_the_dig_2.0.0.3.exe
+
+  57847ffd6cb6b9e6bd9e26754e86a97b28f460e5  gog_the_dig_german_1.0.0.6.deb
+  e6037966f420e2783dcca67b6505ec12eff22ad8  setup_the_dig_german_2.0.0.3.exe
 ...
 
