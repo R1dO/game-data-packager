@@ -296,14 +296,21 @@ class GameData(object):
                     if entry.isfile():
                         hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
                                 fsys_tarfile.extractfile(entry))
-                        if os.path.splitext(name.lower())[1] in ('.exe', '.bat'):
+                        name_l = name.lower()
+                        basename_l = os.path.basename(name_l)
+
+                        if os.path.splitext(name_l)[1] in ('.exe', '.bat'):
                             logger.warning('ignoring dos/windows binary %s' % name)
                             continue
+                        elif 'support/gog' in name_l or os.path.basename(name_l) in (
+                                                        'start.sh', 'uninstall.sh'):
+                            logger.warning('ignoring GOG stuff %s' % name)
+                            continue
                         elif name.startswith('opt/') and is_license(name):
-                            name = os.path.basename(name).lower()
+                            name = basename_l
                             self.license.add(name)
                         elif name.startswith('opt/') and is_doc(name):
-                            name = os.path.basename(name).lower()
+                            name = basename_l
                             self.optional.add(name)
                             self.files['files'][name] = dict(install_to='$docdir')
                         elif (install_to is not None and
