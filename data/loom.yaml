@@ -4,7 +4,9 @@ plugin: scummvm_common
 packages:
   loom-data:
     gog:
-      id: loom
+      url: loom
+    steam:
+      id: 32340
     install:
     - 000.lfl
     - 901.lfl
