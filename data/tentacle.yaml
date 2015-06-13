@@ -4,29 +4,56 @@ copyright: © 1993 LucasArts
 plugin: scummvm_common
 
 packages:
-  dayofthetentacle-data:
-    install_to: usr/share/games/day-of-the-tentacle
+  dayofthetentacle-en-data:
+    debian:
+      provides: dayofthetentacle-data
     install:
     # this is monster.sou re-encoded in FLAC
     - monster.sof
     - tentacle.000
     - tentacle.001
 
+  dayofthetentacle-de-data:
+    lang: de
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - monster.sou_de
+    - tentacle.000_de
+    - tentacle.001_de
+files:
+  monster.sou_de:
+    install_as: monster.sou
+    look_for: [monster.sou]
+  tentacle.000_de:
+    install_as: tentacle.000
+    look_for: [tentacle.000]
+  tentacle.001_de:
+    install_as: tentacle.001
+    look_for: [tentacle.001]
 cksums: |
   _ 94948005  monster.sof
   _ 7932      tentacle.000
   _ 11358470  tentacle.001
+
+  _ 238267139  monster.sou_de
+  _ 7932      tentacle.000_de
+  _ 11373177  tentacle.001_de
 md5sums: |
   7eb02d6c9a428da90ee6ca1b7cb1de49  monster.sof
   4167a92a1d46baa4f4127d918d561f88  tentacle.000
   c5d451e659e0915ac02f5807de3a0bc0  tentacle.001
+
+  8ea07a3e13af00f0a6e594820df1a9af  monster.sou_de
+  6e959d65358eedf9b68b81e304b97fa4  tentacle.000_de
+  0913cd05019c6821c672f1d84a8fc36d  tentacle.001_de
 
   # other version
   # ec46c029ec58596485b221dac0c55d7a  monster.sou
   # 2723fea3dae0cb47768c424b145ae0e7  tentacle.000
   # 415d17122ee8b8415c9b57c1062fb77d  tentacle.001
 
-  # ec46c029ec58596485b221dac0c55d7a  monsteur.sou_fr
+  # ec46c029ec58596485b221dac0c55d7a  monster.sou_fr
   # 94aaedbb8f26d71ed3ad6dd34490e29e  tentacle.000_fr
   # c1bcf3e8370831e966afe8d9fe7753b4  tentacle.001_fr
 
@@ -34,9 +61,17 @@ sha1sums: |
   dbbd92bc075b0197503cf3817a867312ff14047e  monster.sof
   c536e34f3a1ff638ead416be3359a264fd5aac3b  tentacle.000
   f84f3ca1a13c4059c86e253dbfe654c748b79567  tentacle.001
+
+  8ea8934f1ef9e212e26fbd72463c9d0c42af8ee7  monster.sou_de
+  a774de9ad35fdc54f037f8c616862ab8b6638183  tentacle.000_de
+  b5864862a445a9bb7c08af280ae0de2ed6d6140c  tentacle.001_de
 sha256sums: |
   19ac155219688aabc98ad5f00b212ef0e75ef48e2bf85ee8bebf53aaf8cfefa6  monster.sof
   c89a825fcb2c4ea4d9678feab9c23e924ba578293d25a5d098cb3cb39ac86cb9  tentacle.000
   5bc34e98fd0c76e895ef9c7c39477da71cb012992d2b53152daaf17df188a863  tentacle.001
+
+  0ffd3b86bd18de6882e27d433a7977a0b2bce1a7ae0bbea856563b59a86cab8e  monster.sou_de
+  5aa41003d7d7dc2bfd2573d8e78f4f0903c32a89ee5f4bcc95392d2b9de4312c  tentacle.000_de
+  01e6e064ed2b39da01959b076f0f84f64826acb8cd49403a4e5c3d52967bb2aa  tentacle.001_de
 ...
 
