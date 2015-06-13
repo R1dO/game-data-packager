@@ -156,7 +156,6 @@ class GameData(object):
         if steam > 0:
             self.package['steam'] = steam_dict
 
-        self.package['install_to'] = 'usr/share/games/' + game
         has_dosbox = False
 
         for dirpath, dirnames, filenames in os.walk(destdir):
@@ -201,6 +200,9 @@ class GameData(object):
 
             if has_dosbox:
                 logger.warning('DOSBOX files detected, make sure not to include those in your package')
+
+        if self.plugin != 'scummvm_common':
+            self.package['install_to'] = 'usr/share/games/' + game
 
     def add_one_innoextract(self,exe):
         tmp = tempfile.mkdtemp(prefix='gdptmp.')
@@ -252,7 +254,7 @@ class GameData(object):
 
         self.data = dict(packages={ control['package']: {} })
         self.package = self.data['packages'][control['package']]
-        self.package['install_to'] = None
+        install_to = None
 
         with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', deb],
                 stdout=subprocess.PIPE) as fsys_process:
@@ -280,16 +282,16 @@ class GameData(object):
                         print('')
                         continue
 
-                    if (entry.isfile() and self.package['install_to'] is None):
+                    if (entry.isfile() and install_to is None):
                         # assume this is the place
                         if name.startswith('usr/share/games/'):
                             there = name[len('usr/share/games/'):]
                             there = there.split('/', 1)[0]
-                            self.package['install_to'] = ('usr/share/games/' + there)
+                            install_to = ('usr/share/games/' + there)
                         elif name.startswith('opt/GOG Games/'):
                             there = name[len('opt/GOG Games/'):]
                             there = there.split('/', 1)[0]
-                            self.package['install_to'] = ('opt/GOG Games/' + there)
+                            install_to = ('opt/GOG Games/' + there)
 
                     if entry.isfile():
                         hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
@@ -304,9 +306,9 @@ class GameData(object):
                             name = os.path.basename(name).lower()
                             self.optional.add(name)
                             self.files['files'][name] = dict(install_to='$docdir')
-                        elif (self.package['install_to'] is not None and
-                            name.startswith(self.package['install_to'] + '/')):
-                            name = name[len(self.package['install_to']) + 1:]
+                        elif (install_to is not None and
+                            name.startswith(install_to + '/')):
+                            name = name[len(install_to) + 1:]
                             if lower:
                                 name = name.lower()
                             if self.gog_url and name.startswith('data/'):
@@ -327,6 +329,9 @@ class GameData(object):
                     else:
                         logger.warning('unhandled data.tar entry type: %s: %s',
                             name, entry.type)
+
+        if self.plugin != 'scummvm_common':
+            self.package['install_to'] = install_to
 
     def to_yaml(self):
         print('---')
