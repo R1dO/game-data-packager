@@ -1,0 +1,368 @@
+---
+longname: Sam and Max Hit the Road
+copyright: © 1993 LucasArts
+plugin: scummvm_common
+gameid: samnmax
+
+help_text: |
+  Here are the versions available in GOG package:
+
+  Audio and text: Deutsch, English, français, italiano.
+  Text only: español
+
+gog:
+  url: sam_max_hit_the_road
+
+packages:
+  sam-and-max-en-data:
+    debian:
+      provides: sam-and-max-data
+    install:
+    - monster.sou
+    - samnmax.000
+    - samnmax.001
+    optional:
+    - hintbook.pdf
+    - manual.pdf
+    license:
+    - end user license agreement.txt
+
+  sam-and-max-de-data:
+    lang: de
+    debian:
+      provides: sam-and-max-data
+    install:
+    - monster.sou_de
+    - samnmax.000_de
+    - samnmax.001_de
+    optional:
+    - hintbook.pdf
+    - manual.pdf_de
+    license:
+    - end user license agreement.txt
+
+  sam-and-max-es-data:
+    lang: es
+    debian:
+      provides: sam-and-max-data
+    install:
+    - monster.sou_es
+    - samnmax.000_es
+    - samnmax.001_es
+    optional:
+    - hintbook.pdf
+    - manual.pdf_es
+    license:
+    - end user license agreement.txt
+
+  sam-and-max-fr-data:
+    lang: fr
+    debian:
+      provides: sam-and-max-data
+    install:
+    - monster.sog_fr
+    - samnmax.000_fr
+    - samnmax.001_fr
+    optional:
+    - hintbook.pdf
+    - manual.pdf_fr
+    license:
+    - end user license agreement.txt
+
+  sam-and-max-it-data:
+    lang: it
+    debian:
+      provides: sam-and-max-data
+    install:
+    - monster.sou_it
+    - samnmax.000_it
+    - samnmax.001_it
+    optional:
+    - hintbook.pdf
+    - manual.pdf
+    license:
+    - end user license agreement.txt
+
+files:
+  hintbook.pdf:
+    install_to: $docdir
+    look_for: [hintbook.pdf,sam & max hit the road - hintbook.pdf]
+  manual.pdf:
+    install_to: $docdir
+    look_for: [manual.pdf,sam & max hit the road - english manual.pdf]
+
+  gog_sam_and_max_hit_the_road_1.0.0.6.deb:
+    unpack:
+      format: deb
+    provides:
+    - monster.sou
+    - samnmax.000
+    - samnmax.001
+    - hintbook.pdf
+    - manual.pdf
+    - end user license agreement.txt
+
+  setup_sam_and_max_hit_the_road_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - monster.sou
+    - samnmax.000
+    - samnmax.001
+    - hintbook.pdf
+    - manual.pdf
+
+  ##########
+  # GERMAN #
+  ##########
+  monster.sou_de:
+    install_as: monster.sou
+    look_for: [monster.sou]
+
+  samnmax.000_de:
+    install_as: samnmax.000
+    look_for: [samnmax.000]
+
+  samnmax.001_de:
+    install_as: samnmax.001
+    look_for: [samnmax.001]
+
+  manual.pdf_de:
+    install_to: $docdir
+    install_as: manual.pdf
+    look_for: [manual.pdf,sam & max hit the road - german manual.pdf]
+
+  gog_sam_and_max_hit_the_road_german_1.0.0.6.deb:
+    unpack:
+      format: deb
+    provides:
+    - monster.sou_de
+    - samnmax.000_de
+    - samnmax.001_de
+    - hintbook.pdf
+    - manual.pdf_de
+    - end user license agreement.txt
+
+  setup_sam_and_max_hit_the_road_german_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+      suffix: _de
+    provides:
+    - monster.sou_de
+    - samnmax.000_de
+    - samnmax.001_de
+    - hintbook.pdf
+    - manual.pdf_de
+
+  ###########
+  # SPANISH #
+  ###########
+  monster.sou_es:
+    install_as: monster.sou
+    look_for: [monster.sou]
+
+  samnmax.000_es:
+    install_as: samnmax.000
+    look_for: [samnmax.000]
+
+  samnmax.001_es:
+    install_as: samnmax.001
+    look_for: [samnmax.001]
+
+  manual.pdf_es:
+    install_to: $docdir
+    install_as: manual.pdf
+    look_for: [manual.pdf,sam & max hit the road - spanish manual.pdf]
+
+  gog_sam_and_max_hit_the_road_spanish_1.0.0.6.deb:
+    unpack:
+      format: deb
+    provides:
+    - monster.sou_es
+    - samnmax.000_es
+    - samnmax.001_es
+    - hintbook.pdf
+    - manual.pdf_es
+    - end user license agreement.txt
+
+  setup_sam_and_max_hit_the_road_spanish_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+      suffix: _es
+    provides:
+    - monster.sou_es
+    - samnmax.000_es
+    - samnmax.001_es
+    - hintbook.pdf
+    - manual.pdf_es
+
+  ##########
+  # FRENCH #
+  ##########
+  monster.sog_fr:
+    install_as: monster.sog
+    look_for: [monster.sog]
+
+  samnmax.000_fr:
+    install_as: samnmax.000
+    look_for: [samnmax.000]
+
+  samnmax.001_fr:
+    install_as: samnmax.001
+    look_for: [samnmax.001]
+
+  manual.pdf_fr:
+    install_to: $docdir
+    install_as: manual.pdf
+    look_for: [manual.pdf,sam & max hit the road - french manual.pdf]
+
+  gog_sam_and_max_hit_the_road_french_1.0.0.6.deb:
+    unpack:
+      format: deb
+    provides:
+    - monster.sog_fr
+    - samnmax.000_fr
+    - samnmax.001_fr
+    - hintbook.pdf
+    - manual.pdf_fr
+    - end user license agreement.txt
+
+  setup_sam_and_max_hit_the_road_french_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+      suffix: _fr
+    provides:
+    - monster.sog_fr
+    - samnmax.000_fr
+    - samnmax.001_fr
+    - hintbook.pdf
+    - manual.pdf_fr
+
+  ###########
+  # ITALIAN #
+  ###########
+  monster.sou_it:
+    install_as: monster.sou
+    look_for: [monster.sou]
+
+  samnmax.000_it:
+    install_as: samnmax.000
+    look_for: [samnmax.000]
+
+  samnmax.001_it:
+    install_as: samnmax.001
+    look_for: [samnmax.001]
+
+  gog_sam_and_max_hit_the_road_italian_1.0.0.6.deb:
+    unpack:
+      format: deb
+    provides:
+    - monster.sou_it
+    - samnmax.000_it
+    - samnmax.001_it
+    - hintbook.pdf
+    - manual.pdf
+    - end user license agreement.txt
+
+  setup_sam_and_max_hit_the_road_italian_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+      suffix: _it
+    provides:
+    - monster.sou_it
+    - samnmax.000_it
+    - samnmax.001_it
+    - hintbook.pdf
+    - manual.pdf
+
+cksums: |
+  _ 183195967 monster.sou
+  _ 9080      samnmax.000
+  _ 13790685  samnmax.001
+
+  _ 19156919  hintbook.pdf
+  _ 684082    manual.pdf
+  _ 39517     end user license agreement.txt
+  _ 120530380 gog_sam_and_max_hit_the_road_1.0.0.6.deb
+  _ 119837464 setup_sam_and_max_hit_the_road_2.0.0.7.exe
+
+  _ 210881596 monster.sou_de
+  _ 9080      samnmax.000_de
+  _ 13809343  samnmax.001_de
+  _ 5004198   manual.pdf_de
+  _ 158996452 gog_sam_and_max_hit_the_road_german_1.0.0.6.deb
+  _ 158302192 setup_sam_and_max_hit_the_road_german_2.0.0.7.exe
+
+  _ 183195967 monster.sou_es
+  _ 9080      samnmax.000_es
+  _ 13794320  samnmax.001_es
+  _ 3240419   manual.pdf_es
+  _ 123022038 gog_sam_and_max_hit_the_road_spanish_1.0.0.6.deb
+  _ 122330072 setup_sam_and_max_hit_the_road_spanish_2.0.0.7.exe
+
+  _ 65776444  monster.sog_fr
+  _ 9080      samnmax.000_fr
+  _ 13803141  samnmax.001_fr
+  _ 6183093   manual.pdf_fr
+  _ 99195050  gog_sam_and_max_hit_the_road_french_1.0.0.6.deb
+  _ 98516200  setup_sam_and_max_hit_the_road_french_2.0.0.7.exe
+
+  _ 200190289 monster.sou_it
+  _ 9080      samnmax.000_it
+  _ 13789910  samnmax.001_it
+  _ 147708840 gog_sam_and_max_hit_the_road_italian_1.0.0.6.deb
+  _ 147014360 setup_sam_and_max_hit_the_road_italian_2.0.0.7.exe
+
+md5sums: |
+  995205d23d65417890677e8043b4622b  monster.sou
+  d917f311a448e3cc7239c31bddb00dd2  samnmax.000
+  54f9df39a2387638516fac7dc0b44e2f  samnmax.001
+  ee6aec9c6090004d74b18b36c5eb2cd2  hintbook.pdf
+  08a3ba314fae9964e411883c997af776  manual.pdf
+  01dc5c6216071cf48313eb98439c7cd8  end user license agreement.txt
+  f383ac0db144128a3cc8f8215337e2dd  gog_sam_and_max_hit_the_road_1.0.0.6.deb
+  8358505689fc06329cd9775874a57031  setup_sam_and_max_hit_the_road_2.0.0.7.exe
+
+  4b7cd6ba0e8afa3757fa295cbb5fda88  monster.sou_de
+  0fb73eddfcf584c02ba097984df131ba  samnmax.000_de
+  a519c5ace60a6d3e6b7aebb49fa055d0  samnmax.001_de
+  a8e1c53c339fe6512be5d020bafe807d  manual.pdf_de
+  cd9d32adc7f14ea7434ea4491862a906  gog_sam_and_max_hit_the_road_german_1.0.0.6.deb
+  9154ca04ca7dc4398d372d70b90a6579  setup_sam_and_max_hit_the_road_german_2.0.0.7.exe
+
+  995205d23d65417890677e8043b4622b  monster.sou_es
+  4ba7fb331296c283e73d8f5b2096e551  samnmax.000_es
+  d337d7d9be77e5922b9a6e732f19d1e4  samnmax.001_es
+  244c299e1a689c8360ff2552a303ba09  manual.pdf_es
+  59c23caf84be249f62f7a849377d26d1  gog_sam_and_max_hit_the_road_spanish_1.0.0.6.deb
+  5497bce00b214dd483483f1bef9865e0  setup_sam_and_max_hit_the_road_spanish_2.0.0.7.exe
+
+  b5f1e54a3986f20616db692e7ec5e60a  monster.sog_fr
+  7edd665bbede7ea8b7233f8e650be6f8  samnmax.000_fr
+  789a214f2e11bc1c1a43a47f72d6d743  samnmax.001_fr
+  0d0e1069559e292f0d110384d9f62fe5  manual.pdf_fr
+  253a6e724c177b0cbc56544d5365a42a  gog_sam_and_max_hit_the_road_french_1.0.0.6.deb
+  8a185f95db2dee418fc127c2b5ed25e9  setup_sam_and_max_hit_the_road_french_2.0.0.7.exe
+
+  3846c9545422bdde4954e61efcbdd328  monster.sou_it
+  0f6f2e716ba896a44e5059bba1de7ca9  samnmax.000_it
+  c51b71d2a956d989ac35dbbef835347d  samnmax.001_it
+  6a0766ca8ee21ce4157d7ae78b495d4e  gog_sam_and_max_hit_the_road_italian_1.0.0.6.deb
+  fdab4fc5c07a27f6b130557f9aa83f4d  setup_sam_and_max_hit_the_road_italian_2.0.0.7.exe
+
+sha1sums: |
+  4a06a3d374db1eec351bc94724e92cc32ce77342  gog_sam_and_max_hit_the_road_1.0.0.6.deb
+  705d39f72bb49079a33724f627c55b67c38d334d  setup_sam_and_max_hit_the_road_2.0.0.7.exe
+
+  25a81ec292f410a7d07ccc61907947a9a8c8810c  gog_sam_and_max_hit_the_road_german_1.0.0.6.deb
+  eea6f08ce2b4545014b71c7417df7136123ccb28  setup_sam_and_max_hit_the_road_german_2.0.0.7.exe
+
+  890218d8a010929e0a48113294a6f9647fc4d75e  gog_sam_and_max_hit_the_road_spanish_1.0.0.6.deb
+  fb6e85b00b57ccf84c459cc2d742ef01e3e52ca5  setup_sam_and_max_hit_the_road_spanish_2.0.0.7.exe
+
+  cd5571165ae8d12640058acd1a10df3bfd10607c  gog_sam_and_max_hit_the_road_french_1.0.0.6.deb
+  e3f0ec457a6ed01426d007b7c458374dcd0d7692  setup_sam_and_max_hit_the_road_french_2.0.0.7.exe
+
+  f14dc8a96f11fdba494ed058765c16cb50747923  gog_sam_and_max_hit_the_road_italian_1.0.0.6.deb
+  fe828f0e6a914270ca6695d8ac3c3106cc1c578a  setup_sam_and_max_hit_the_road_italian_2.0.0.7.exe
+...
