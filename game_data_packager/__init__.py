@@ -651,7 +651,7 @@ class GameData(object):
                 if stripped == '' or stripped.startswith('#'):
                     continue
 
-                size, md5, filename = line.split(None, 3)
+                size, md5, filename = line.split(None, 2)
                 f = self._ensure_file(filename)
                 f.size = int(size)
                 f.md5 = md5
@@ -1706,6 +1706,17 @@ class GameData(object):
                     subprocess.check_call(['7z', 'x'] + flags +
                                 [os.path.abspath(found_name)] +
                                 list(to_unpack), cwd=tmpdir)
+                    self.consider_file_or_dir(tmpdir)
+                elif fmt == 'unar':
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s', to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    quiet = [] if VERBOSE else ['-q']
+                    subprocess.check_call(['unar', '-D'] +
+                               quiet + [os.path.abspath(found_name)] +
+                               list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unshield':
                     other_parts = provider.unpack['other_parts']
