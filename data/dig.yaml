@@ -13,7 +13,7 @@ packages:
       id: 6040
     install:
     - dig.la0
-    - dig.la1
+    - any_dig_la1
     - digmusic.bun
     - digvoice.bun
     - video/alcove.san
@@ -90,7 +90,7 @@ packages:
       url: the_dig
     install:
     - dig.la0
-    - dig.la1
+    - any_dig_la1
     - digmusic.bun
     - digvoice.bun_de
     # file not in english version
@@ -170,6 +170,13 @@ files:
     install_to: $docdir
     look_for: [refcard.pdf,the dig - quick reference card.pdf]
     install_as: refcard.pdf
+  any_dig_la1:
+    alternatives:
+      - dig.la1
+      - dig.la1_de_alt
+    install_as: dig.la1
+  dig.la1_de_alt:
+    look_for: [dig.la1]
 
   setup_the_dig_2.0.0.3.exe:
     unpack:
@@ -241,7 +248,6 @@ files:
     - video/tram5.san
     - manual.pdf
     - refcard.pdf
-    - end user license agreement.txt
 
   gog_the_dig_1.0.0.5.deb:
     unpack:
@@ -433,7 +439,6 @@ files:
     - video/tram5.san
     - manual.pdf
     - refcard.pdf
-    - end user license agreement.txt
 
   gog_the_dig_german_1.0.0.6.deb:
     unpack:
@@ -581,6 +586,7 @@ cksums: |
   _ 485628672 gog_the_dig_1.0.0.5.deb
   _ 489276720 setup_the_dig_2.0.0.3.exe
 
+  _ 88673344  dig.la1_de_alt
 
   _ 110794618 digvoice.bun_de
   _ 248627    language.bnd
@@ -674,6 +680,8 @@ md5sums: |
   22aa49f3373c9ed06d1f5ac5be999c61  gog_the_dig_1.0.0.5.deb
   a36bda23af447deb5013780669a04a0c  setup_the_dig_2.0.0.3.exe
 
+  24f6e169994be35ce0901eab58b1d1da  dig.la1_de_alt
+
   d4ac3de7708c1b58aaf5702cc4fd0685  digvoice.bun_de
   1fd585ac849d57305878c77b2f6c74ff  language.bnd
   5d6d398546ac89a300644e92c7acf202  video/digtxt.trs_de
@@ -697,7 +705,12 @@ sha1sums: |
   29cc9da6aefb3941f21ac2bce9bd3e0f5af18ca8  gog_the_dig_1.0.0.5.deb
   063e4fd5a8a6527f5a7f0586ec5cefb78c160da5  setup_the_dig_2.0.0.3.exe
 
+  428399138817e7c6bb5bf672f97ad039cb30dee8  dig.la1_de_alt
+
   57847ffd6cb6b9e6bd9e26754e86a97b28f460e5  gog_the_dig_german_1.0.0.6.deb
   e6037966f420e2783dcca67b6505ec12eff22ad8  setup_the_dig_german_2.0.0.3.exe
+
+sha256sums: |
+  ee5c67a5c5e287a66c71d0eae932a75c6f8f5b176495fea56769f054fa6a2f53  dig.la1_de_alt
 ...
 
