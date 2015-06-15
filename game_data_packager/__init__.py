@@ -645,6 +645,17 @@ class GameData(object):
                 f = self._ensure_file(filename)
                 f.size = int(size)
 
+        if 'size_and_md5' in self.data:
+            for line in self.data['size_and_md5'].splitlines():
+                stripped = line.strip()
+                if stripped == '' or stripped.startswith('#'):
+                    continue
+
+                size, md5, filename = line.split(None, 3)
+                f = self._ensure_file(filename)
+                f.size = int(size)
+                f.md5 = md5
+
         for alg in ('md5', 'sha1', 'sha256'):
             if alg + 'sums' in self.data:
                 for line in self.data[alg + 'sums'].splitlines():

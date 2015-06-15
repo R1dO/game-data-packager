@@ -374,12 +374,9 @@ class GameData(object):
         print_order = sorted(self.install) + sorted(self.optional) + sorted(self.license)
         print_order += sorted(set(self.ck.keys()) - set(print_order))
 
-        print('\ncksums: |')
+        print('\nsize_and_md5: |')
         for filename in print_order:
-            print('  _ %-9s %s' % (self.ck[filename], filename))
-        print('\nmd5sums: |')
-        for filename in print_order:
-            print('  %s  %s' % (self.md5[filename], filename))
+            print('  %-9s %s %s' % (self.ck[filename], self.md5[filename], filename))
         print('\nsha1sums: |')
         for filename in print_order:
             print('  %s  %s' % (self.sha1[filename], filename))
