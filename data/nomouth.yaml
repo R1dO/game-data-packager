@@ -4,9 +4,13 @@ copyright: © 1995 The Dreamers Guild
 genre: Horror
 plugin: scummvm_common
 gameid: ihnm
+steam:
+  id: 245390
 
 help_text: |
-  GOG.com only sells the English version.
+  In the French & German versions,
+  Nimdok character has been censored-out;
+  making the game impossible to complete.
 
 # http://www.gogwiki.com/wiki/I_Have_No_Mouth_And_I_Must_Scream
 
@@ -19,8 +23,8 @@ help_text: |
 
 packages:
   i-have-no-mouth-and-i-must-scream-en-data:
-    provides:
-      i-have-no-mouth-and-i-must-scream-data:    
+    debian:
+      provides: i-have-no-mouth-and-i-must-scream-data
     gog:
       url: i_have_no_mouth_and_i_must_scream
     install:
@@ -42,7 +46,86 @@ packages:
     license:
     - end user license agreement.txt
 
+  i-have-no-mouth-and-i-must-scream-de-data:
+    lang: de
+    debian:
+      provides: i-have-no-mouth-and-i-must-scream-data
+    gog:
+      url: i_have_no_mouth_and_i_must_scream
+    install:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_de
+    - scripts.res_de
+    - sfx.res
+    - voices1.res_de
+    - voices2.res_de
+    - voices3.res_de
+    # no "voices4.res": censored
+    - voices5.res_de
+    - voices6.res_de
+    - voicess.res_de
+    optional:
+    - i have no mouth and i must scream - manual.pdf
+    license:
+    - end user license agreement.txt
+
+  i-have-no-mouth-and-i-must-scream-fr-data:
+    lang: fr
+    debian:
+      provides: i-have-no-mouth-and-i-must-scream-data
+    gog:
+      url: i_have_no_mouth_and_i_must_scream
+    install:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_fr
+    - scripts.res_fr
+    - sfx.res
+    - voices1.res_fr
+    - voices2.res_fr
+    - voices3.res_fr
+    # no "voices4.res_fr": censored
+    - voices5.res_fr
+    - voices6.res_fr
+    - voicess.res_fr
+    optional:
+    - i have no mouth and i must scream - manual.pdf
+    license:
+    - end user license agreement.txt
+
+  i-have-no-mouth-and-i-must-scream-es-data:
+    lang: es
+    debian:
+      provides: i-have-no-mouth-and-i-must-scream-data
+    gog:
+      url: i_have_no_mouth_and_i_must_scream
+    install:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_es
+    - scripts.res_es
+    - sfx.res
+    - voices1.res_es
+    - voices2.res_es
+    - voices3.res_es
+    - voices4.res_es
+    - voices5.res_es
+    - voices6.res_es
+    - voicess.res_es
+    optional:
+    - i have no mouth and i must scream - manual.pdf
+    license:
+    - end user license agreement.txt
+
 files:
+  ###########
+  # ENGLISH #
+  ###########
+
   patch.re_:
     look_for: [patch.re_,patch.res]
 
@@ -69,7 +152,7 @@ files:
     - nomouth.dat
     - patch.re_
     - i have no mouth and i must scream - manual.pdf
- 
+
   nomouth.dat:
     unpack:
       format: unar
@@ -87,7 +170,189 @@ files:
     - voices4.res
     - voices5.res
     - voices6.res
-    - voicess.res  
+    - voicess.res
+
+  ###########
+  # GERMAN  #
+  ###########
+  scream.res_de:
+    install_as: scream.res
+  scripts.res_de:
+    install_as: scripts.res
+  voices1.res_de:
+    install_as: voices1.res
+  voices2.res_de:
+    install_as: voices2.res
+  voices3.res_de:
+    install_as: voices3.res
+  voices5.res_de:
+    install_as: voices5.res
+  voices6.res_de:
+    install_as: voices6.res
+  voicess.res_de:
+    install_as: voicess.res
+
+  gog_i_have_no_mouth_and_i_must_scream_german_1.0.0.2.deb:
+    unpack:
+      format: deb
+    provides:
+    - nomouth.dat_de
+    - patch.re_
+    - i have no mouth and i must scream - manual.pdf
+    - end user license agreement.txt
+
+  setup_i_have_no_mouth_and_i_must_scream_german_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - nomouth.dat
+      - patch.res
+      - i have no mouth and i must scream - manual.pdf
+    provides:
+    - nomouth.dat_de
+    - patch.re_
+    - i have no mouth and i must scream - manual.pdf
+
+  nomouth.dat_de:
+    look_for: [nomouth.dat]
+    unpack:
+      format: unar
+      unpack: ['*.RES','PATCH.RE_']
+    provides:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_de
+    - scripts.res_de
+    - sfx.res
+    - voices1.res_de
+    - voices2.res_de
+    - voices3.res_de
+    - voices5.res_de
+    - voices6.res_de
+    - voicess.res_de
+
+  ###########
+  # FRENCH  #
+  ###########
+  scream.res_fr:
+    install_as: scream.res
+  scripts.res_fr:
+    install_as: scripts.res
+  voices1.res_fr:
+    install_as: voices1.res
+  voices2.res_fr:
+    install_as: voices2.res
+  voices3.res_fr:
+    install_as: voices3.res
+  voices5.res_fr:
+    install_as: voices5.res
+  voices6.res_fr:
+    install_as: voices6.res
+  voicess.res_fr:
+    install_as: voicess.res
+
+  gog_i_have_no_mouth_and_i_must_scream_french_1.0.0.2.deb:
+    unpack:
+      format: deb
+    provides:
+    - nomouth.dat_fr
+    - patch.re_
+    - i have no mouth and i must scream - manual.pdf
+    - end user license agreement.txt
+
+  setup_i_have_no_mouth_and_i_must_scream_french_2.1.0.8.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - nomouth.dat
+      - patch.res
+      - i have no mouth and i must scream - manual.pdf
+    provides:
+    - nomouth.dat_fr
+    - patch.re_
+    - i have no mouth and i must scream - manual.pdf
+
+  nomouth.dat_fr:
+    look_for: [nomouth.dat]
+    unpack:
+      format: unar
+      unpack: ['*.RES','PATCH.RE_']
+    provides:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_fr
+    - scripts.res_fr
+    - sfx.res
+    - voices1.res_fr
+    - voices2.res_fr
+    - voices3.res_fr
+    - voices5.res_fr
+    - voices6.res_fr
+    - voicess.res_fr
+
+  ###########
+  # SPANISH #
+  ###########
+  scream.res_es:
+    install_as: scream.res
+  scripts.res_es:
+    install_as: scripts.res
+  voices1.res_es:
+    install_as: voices1.res
+  voices2.res_es:
+    install_as: voices2.res
+  voices3.res_es:
+    install_as: voices3.res
+  voices4.res_es:
+    install_as: voices4.res
+  voices5.res_es:
+    install_as: voices5.res
+  voices6.res_es:
+    install_as: voices6.res
+  voicess.res_es:
+    install_as: voicess.res
+
+  gog_i_have_no_mouth_and_i_must_scream_spanish_1.0.0.2.deb:
+    unpack:
+      format: deb
+    provides:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_es
+    - scripts.res_es
+    - sfx.res
+    - voices1.res_es
+    - voices2.res_es
+    - voices3.res_es
+    - voices4.res_es
+    - voices5.res_es
+    - voices6.res_es
+    - voicess.res_es
+    - end user license agreement.txt
+    - i have no mouth and i must scream - manual.pdf
+
+  setup_i_have_no_mouth_and_i_must_scream_spanish_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+      suffix: _es
+    provides:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_es
+    - scripts.res_es
+    - sfx.res
+    - voices1.res_es
+    - voices2.res_es
+    - voices3.res_es
+    - voices4.res_es
+    - voices5.res_es
+    - voices6.res_es
+    - voicess.res_es
+    - i have no mouth and i must scream - manual.pdf
 
 size_and_md5: |
   302676    fe63a88b8c49baa69a814fc15659b1df musicfm.res
@@ -112,8 +377,55 @@ size_and_md5: |
   #unknown  34579fdea230298f0083f714295e1efc setup_i_have_no_mouth_and_i_must_scream_2.0.0.7.exe
   776063568 ef90fcd1c3878dc8a75dbf9422f0710e nomouth.dat
 
+  78517884  b60c33762572051e6c89ce086d456526 scream.res_de
+  515687    72add0cd703cda7e2b39640dd29a5dc1 scripts.res_de
+  65584028  5f3808d9eba211c927422c8ea88ff3a1 voices1.res_de
+  69486580  f0bc04630f29fc904ca1e30c0f4cfcab voices2.res_de
+  76316993  cfd923bbd1148de651978248f7ce1dfb voices3.res_de
+  102225886 0eea12de5d77ea72c1474fc7f3ca5834 voices5.res_de
+  89012508  8be922b4de3b1db70febde0b11b8c286 voices6.res_de
+  41132025  9317e5e06009c9b773c4516860aeae76 voicess.res_de
+  449285594 446bff58e9c5b53e9fe1915d73067a19 gog_i_have_no_mouth_and_i_must_scream_german_1.0.0.2.deb
+  483413160 10931738d7d1ddc2b5e85a54ece31028 setup_i_have_no_mouth_and_i_must_scream_german_2.0.0.7.exe
+  553099264 0d7d5f50e028b7460e63794ab525bfc7 nomouth.dat_de
+
+  78519324  5ceb5d5a51fc7de6e0c3167373282abc scream.res_fr
+  511220    fa7b81a5655613cf6ec4ca140435155a scripts.res_fr
+  50937100  0161ae44576848b8619c32d8c400c099 voices1.res_fr
+  69325220  c85f13f95ca987046a5a140edb4f99fb voices2.res_fr
+  65270209  0a04ce2dece90dccdf56f363c83e0530 voices3.res_fr
+  84946406  afd0d37cea41ff70a70f7e297687f5f2 voices5.res_fr
+  74553836  e1e8e818ef0ae1fde6623dab7e0abe52 voices6.res_fr
+  33141485  d9f092b4880c7bfc14461696ced4c9cf voicess.res_fr
+  377492902 5ac01b3bbaea733d79dda162be4514eb gog_i_have_no_mouth_and_i_must_scream_french_1.0.0.2.deb
+  387735944 5506b92c3d5f8de850de66e0157809fe setup_i_have_no_mouth_and_i_must_scream_french_2.1.0.8.exe
+  487636992 3470d03b46b6fa2bfd2793580c9da1b0 nomouth.dat_fr
+
+  78560025  b20dd4b2697cbb94ef018bc787049da9 scream.res_es
+  501229    bba9a4ed88df4a355ffb0046f0bcff77 scripts.res_es
+  40809580  c92eea6abb75568a8c4621fea1b2faf7 voices1.res_es
+  33937998  fd40c53e8c6108d3f5ee6aba57a80eb4 voices2.res_es
+  42646938  3b52092f88e0589c9193811b246458eb voices3.res_es
+  37523404  4fe6fdfd31c3f5fd1e55b8952fb4d16a voices4.res_es
+  57399126  3bb39dde5e38191a121b361a2baa5b83 voices5.res_es
+  60199698  c9ca7084e1d811b4d1a73ffd6ae2ad72 voices6.res_es
+  25820890  31457c882d7ed8c7f44c2684d4f6f206 voicess.res_es
+  267414680 3de490d5bef0bde8afa729032614f9e0 gog_i_have_no_mouth_and_i_must_scream_spanish_1.0.0.2.deb
+  304210112 b18cb7ecb4c73129fc42fd7ecb02a820 setup_i_have_no_mouth_and_i_must_scream_spanish_2.0.0.7.exe
+
 sha1sums: |
   6adb8c40f7ffeba490a8d848af5d375cab217385  gog_i_have_no_mouth_and_i_must_scream_1.0.0.2.deb
   3b28b4c3d2e2c298a5cc596b35bcbf2e9ca4af4f  setup_i_have_no_mouth_and_i_must_scream_2.0.0.7.exe
   9dd8b603109e916d8fa48f8711ae1ea6308c3817  nomouth.dat
+
+  b2a7192525bc92f55a18aa37e29529515b57932d  gog_i_have_no_mouth_and_i_must_scream_german_1.0.0.2.deb
+  93fb52591dbabea24745a9a4a2814a1933becd4a  setup_i_have_no_mouth_and_i_must_scream_german_2.0.0.7.exe
+  24a29d3d1738690ed415a34ca9ec494af787c5f5  nomouth.dat_de
+
+  53a5e8f25da571f13c78a0eddc3613f7a12c9729  gog_i_have_no_mouth_and_i_must_scream_french_1.0.0.2.deb
+  797dcfc073f727d1f56547a2c18b8ca798f446e8  setup_i_have_no_mouth_and_i_must_scream_french_2.1.0.8.exe
+  4cb1b4c2211347795de3e52a2d399272744ac37b  nomouth.dat_fr
+
+  d0cf28907819ac07def3d3bb376fbec6403a3d1a  gog_i_have_no_mouth_and_i_must_scream_spanish_1.0.0.2.deb
+  bf9475d20f112375ae730f4a3eb114152ce1b83f  setup_i_have_no_mouth_and_i_must_scream_spanish_2.0.0.7.exe
 ...
