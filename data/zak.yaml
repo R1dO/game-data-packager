@@ -3,8 +3,13 @@ longname: Zak McKracken and the Alien Mindbenders
 copyright: © 1988 Lucasfilm Games
 plugin: scummvm_common
 
+help_text: |
+  GOG.com only sells the English version.
+
 packages:
-  zak-data:
+  zak-en-data:
+    debian:
+      provides: zak-data
     install:
     - 00.lfl
     - 01.lfl
@@ -94,8 +99,8 @@ packages:
     - manual.pdf
     - newspaper.pdf
 
-  zak-dos-data:
-    better_version: zak-data
+  zak-en-dos-data:
+    better_version: zak-en-data
     install:
     - 00.lfl_floppy
     - 01.lfl_floppy
@@ -160,6 +165,71 @@ packages:
     - hintbook.pdf
     - manual.pdf
     - newspaper.pdf
+
+  zak-fr-data:
+    lang: fr
+    debian:
+      provides: zak-data
+    install:
+    - 00.lfl_fr
+    - 01.lfl_fr
+    - 02.lfl_fr
+    - 03.lfl_fr
+    - 04.lfl_fr
+    - 05.lfl_fr
+    - 06.lfl_fr
+    - 07.lfl_fr
+    - 08.lfl_fr
+    - 09.lfl_fr
+    - 10.lfl_fr
+    - 11.lfl_fr
+    - 12.lfl_fr
+    - 13.lfl_fr
+    - 14.lfl_fr
+    - 15.lfl_fr
+    - 16.lfl_fr
+    - 17.lfl_fr
+    - 18.lfl_fr
+    - 19.lfl_fr
+    - 20.lfl_fr
+    - 21.lfl_fr
+    - 22.lfl_fr
+    - 23.lfl_fr
+    - 24.lfl_fr
+    - 25.lfl_fr
+    - 26.lfl_fr
+    - 27.lfl_fr
+    - 28.lfl_fr
+    - 29.lfl_fr
+    - 30.lfl_fr
+    - 31.lfl_fr
+    - 32.lfl_fr
+    - 33.lfl_fr
+    - 34.lfl_fr
+    - 35.lfl_fr
+    - 36.lfl_fr
+    - 37.lfl_fr
+    - 38.lfl_fr
+    - 39.lfl_fr
+    - 40.lfl_fr
+    - 41.lfl_fr
+    - 42.lfl_fr
+    - 43.lfl_fr
+    - 44.lfl_fr
+    - 45.lfl_fr
+    - 46.lfl_fr
+    - 47.lfl_floppy
+    - 48.lfl_fr
+    - 49.lfl_fr
+    - 50.lfl_fr
+    - 51.lfl_floppy
+    - 52.lfl_fr
+    - 53.lfl_fr
+    - 54.lfl_floppy
+    - 55.lfl_floppy
+    - 56.lfl_fr
+    - 57.lfl_floppy
+    - 58.lfl_fr
 
 files:
   hintbook.pdf:
@@ -531,6 +601,225 @@ files:
     - hintbook.pdf
     - manual.pdf
     - newspaper.pdf
+
+  00.lfl_fr:
+    install_as: 00.lfl
+    look_for: [00.lfl]
+  01.lfl_fr:
+    install_as: 01.lfl
+    look_for: [01.lfl]
+  02.lfl_fr:
+    install_as: 02.lfl
+    look_for: [02.lfl]
+  03.lfl_fr:
+    install_as: 03.lfl
+    look_for: [03.lfl]
+  04.lfl_fr:
+    install_as: 04.lfl
+    look_for: [04.lfl]
+  05.lfl_fr:
+    install_as: 05.lfl
+    look_for: [05.lfl]
+  06.lfl_fr:
+    install_as: 06.lfl
+    look_for: [06.lfl]
+  07.lfl_fr:
+    install_as: 07.lfl
+    look_for: [07.lfl]
+  08.lfl_fr:
+    install_as: 08.lfl
+    look_for: [08.lfl]
+  09.lfl_fr:
+    install_as: 09.lfl
+    look_for: [09.lfl]
+  10.lfl_fr:
+    install_as: 10.lfl
+    look_for: [10.lfl]
+  11.lfl_fr:
+    install_as: 11.lfl
+    look_for: [11.lfl]
+  12.lfl_fr:
+    install_as: 12.lfl
+    look_for: [12.lfl]
+  13.lfl_fr:
+    install_as: 13.lfl
+    look_for: [13.lfl]
+  14.lfl_fr:
+    install_as: 14.lfl
+    look_for: [14.lfl]
+  15.lfl_fr:
+    install_as: 15.lfl
+    look_for: [15.lfl]
+  16.lfl_fr:
+    install_as: 16.lfl
+    look_for: [16.lfl]
+  17.lfl_fr:
+    install_as: 17.lfl
+    look_for: [17.lfl]
+  18.lfl_fr:
+    install_as: 18.lfl
+    look_for: [18.lfl]
+  19.lfl_fr:
+    install_as: 19.lfl
+    look_for: [19.lfl]
+  20.lfl_fr:
+    install_as: 20.lfl
+    look_for: [20.lfl]
+  21.lfl_fr:
+    install_as: 21.lfl
+    look_for: [21.lfl]
+  22.lfl_fr:
+    install_as: 22.lfl
+    look_for: [22.lfl]
+  23.lfl_fr:
+    install_as: 23.lfl
+    look_for: [23.lfl]
+  24.lfl_fr:
+    install_as: 24.lfl
+    look_for: [24.lfl]
+  25.lfl_fr:
+    install_as: 25.lfl
+    look_for: [25.lfl]
+  26.lfl_fr:
+    install_as: 26.lfl
+    look_for: [26.lfl]
+  27.lfl_fr:
+    install_as: 27.lfl
+    look_for: [27.lfl]
+  28.lfl_fr:
+    install_as: 28.lfl
+    look_for: [28.lfl]
+  29.lfl_fr:
+    install_as: 29.lfl
+    look_for: [29.lfl]
+  30.lfl_fr:
+    install_as: 30.lfl
+    look_for: [30.lfl]
+  31.lfl_fr:
+    install_as: 31.lfl
+    look_for: [31.lfl]
+  32.lfl_fr:
+    install_as: 32.lfl
+    look_for: [32.lfl]
+  33.lfl_fr:
+    install_as: 33.lfl
+    look_for: [33.lfl]
+  34.lfl_fr:
+    install_as: 34.lfl
+    look_for: [34.lfl]
+  35.lfl_fr:
+    install_as: 35.lfl
+    look_for: [35.lfl]
+  36.lfl_fr:
+    install_as: 36.lfl
+    look_for: [36.lfl]
+  37.lfl_fr:
+    install_as: 37.lfl
+    look_for: [37.lfl]
+  38.lfl_fr:
+    install_as: 38.lfl
+    look_for: [38.lfl]
+  39.lfl_fr:
+    install_as: 39.lfl
+    look_for: [39.lfl]
+  40.lfl_fr:
+    install_as: 40.lfl
+    look_for: [40.lfl]
+  41.lfl_fr:
+    install_as: 41.lfl
+    look_for: [41.lfl]
+  42.lfl_fr:
+    install_as: 42.lfl
+    look_for: [42.lfl]
+  43.lfl_fr:
+    install_as: 43.lfl
+    look_for: [43.lfl]
+  44.lfl_fr:
+    install_as: 44.lfl
+    look_for: [44.lfl]
+  45.lfl_fr:
+    install_as: 45.lfl
+    look_for: [45.lfl]
+  46.lfl_fr:
+    install_as: 46.lfl
+    look_for: [46.lfl]
+  48.lfl_fr:
+    install_as: 48.lfl
+    look_for: [48.lfl]
+  49.lfl_fr:
+    install_as: 49.lfl
+    look_for: [49.lfl]
+  50.lfl_fr:
+    install_as: 50.lfl
+    look_for: [50.lfl]
+  52.lfl_fr:
+    install_as: 52.lfl
+    look_for: [52.lfl]
+  53.lfl_fr:
+    install_as: 53.lfl
+    look_for: [53.lfl]
+  56.lfl_fr:
+    install_as: 56.lfl
+    look_for: [56.lfl]
+  58.lfl_fr:
+    install_as: 58.lfl
+    look_for: [58.lfl]
+
+size_and_md5: |
+  1916      613f64f78ea26c7353b2a5940eb61d6a 00.lfl_fr
+  23991     c28faf667d1b42a67309305a5b8b52d5 01.lfl_fr
+  19008     f096733484be7e15ca49a09ddd21005d 02.lfl_fr
+  24313     ee9809edb9dbb62301d24036ac2c7832 03.lfl_fr
+  11599     f4c52b40168dce9fd6ae9f6fcd0acce4 04.lfl_fr
+  13567     8457e86915c7e6354dbaa4a10bfe922c 05.lfl_fr
+  15010     6fcbd27d4e16f86ec9a84b7ecaf77586 06.lfl_fr
+  20919     6eca01ee0a08176ebd27b73fea138c28 07.lfl_fr
+  14398     3eda7f1504f76cd249d13799e0c442a9 08.lfl_fr
+  10798     4eb035c8e94dcc7fba61dd5751a46968 09.lfl_fr
+  23930     d5513df494208f0ce83bf2c321648b18 10.lfl_fr
+  24320     854261c63450f51e5ffa1514371e5b56 11.lfl_fr
+  14058     e8382c3cd08ac345e412c507d5bccd88 12.lfl_fr
+  28669     7b229ea94ae7855041f58125ad6f99b4 13.lfl_fr
+  13021     289bb58160ab22d5d29c2eb653b0c820 14.lfl_fr
+  14336     f71fc88f18fb780268e371934eda320a 15.lfl_fr
+  24544     308ae7949bd67a55da8dbd5724b3b8be 16.lfl_fr
+  22712     5bc88239e1c0eaf7dedffda4c350ac05 17.lfl_fr
+  11403     d59c12d65f157bbd160d2690ccd6a174 18.lfl_fr
+  12387     eeacb427400f19256ea06cec479909e4 19.lfl_fr
+  17363     24fe0c5d6be4807907bfebe27c4a125b 20.lfl_fr
+  7071      bb3534b7bd742ea891cd8ee836c41fc9 21.lfl_fr
+  12435     29fe78fa43974bbbf29e01cd7bfc927f 22.lfl_fr
+  15497     88be414aed5c13e6cfe87ad2990587ac 23.lfl_fr
+  12914     673d871fe72c963acf80dee300fd046d 24.lfl_fr
+  15910     1a1bacc16b786edbab0e4ce981611e9a 25.lfl_fr
+  19014     eb74df3d1fca4a3ce21336b6eda2e9bb 26.lfl_fr
+  22904     7018e9ccab7c3a6b0c9838520ca2fa3a 27.lfl_fr
+  34595     a454c764de148f608919dae4c7b64252 28.lfl_fr
+  4062      1e981cdd547d96af09afac649a90dfb2 29.lfl_fr
+  12156     1b950649ef9cff708ed949fcd1a91574 30.lfl_fr
+  9437      588ffb17844d5869ec4b12ce40410235 31.lfl_fr
+  24473     753dffce895c6c37fc7fae6a2812bc08 32.lfl_fr
+  17985     b8d18a699e2d5e651a641e7ffd5e9415 33.lfl_fr
+  3274      d4bccb2af989df672b30a649eee58d2a 34.lfl_fr
+  18564     bddaab8bca616634f8f2b2d00291d04e 35.lfl_fr
+  16971     42f714f6fac328891542c04f43d87996 36.lfl_fr
+  23859     fed31e57b461c4da1127f661b8a84021 37.lfl_fr
+  35661     7a4b9e19a7ddb8e691dd401ff25c4afb 38.lfl_fr
+  28220     5578b8acd497f0db56d09591e1ca885c 39.lfl_fr
+  12367     954866fd71095f4d6c7036dd277eff2e 40.lfl_fr
+  16429     6f0860e0b8d30172508a093b877897e1 41.lfl_fr
+  30138     28fcee52fbf68b72c5e2662f265d120c 42.lfl_fr
+  16385     471f05ae81436bcfa7e301f76d8a2ab7 43.lfl_fr
+  17601     d11571dfab74fdee3ddeeb3b95e2a5d2 44.lfl_fr
+  7215      45e0fc13bf5c1a62e0b8ea29debc029f 45.lfl_fr
+  11933     1f6f821492fa8fd39c8ca41a28ee1550 46.lfl_fr
+  5593      df515ae838cf23e070e3b6083cb4f4ca 48.lfl_fr
+  18917     e6dd88aee56647ae4ba32cffba12e465 49.lfl_fr
+  6351      3a689131be404d13ab85d69880120b22 50.lfl_fr
+  6953      beb1165956cd38a6db3faf51193283db 52.lfl_fr
+  18553     66f615634e83277c0fbbcce96bb1c726 53.lfl_fr
+  6687      63cb19e5dbcbf4172ceb37c233da834b 56.lfl_fr
+  5405      0b6c1d36c770d22726affb2fefbb1b34 58.lfl_fr
 
 cksums: |
   _ 7520      00.lfl
