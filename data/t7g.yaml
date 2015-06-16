@@ -39,7 +39,6 @@ packages:
     - fat.opl
     - fh.gjd
     - fh.rl
-    - files.al
     - ga.gjd
     - ga.grv
     - ga.rl
@@ -90,16 +89,35 @@ packages:
     - track1.ogg
     - track2.ogg
     - manual.pdf
+    # either the Ogg or Flac files are supported,
+    # but it's unlikely to have both
+    - track1.flac
+    - track2.flac
 
 files:
+  # two versions of file only differ by a single byte (corrupted data ?)
+  #
+  #$cmp -l at.gjd_gog at.gjd_alt | gawk '{printf "%08X %02X %02X\n", $1, strtonum(0$2), strtonum(0$3)}'
+  #013F8001 E1 21
+
+  at.gjd:
+    alternatives:
+    - at.gjd_gog
+    - at.gjd_alt
+  at.gjd_gog:
+    look_for: [at.gjd]
+  at.gjd_alt:
+    look_for: [at.gjd]
+
   manual.pdf:
     install_to: $docdir
 
   setup_the_7th_guest_2.0.0.17.exe:
     unpack:
       format: innoextract
+      suffix: _orig
     provides:
-    - at.gjd
+    - at.gjd_orig
     - at.grv
     - at.rl
     - b.gjd
@@ -123,7 +141,6 @@ files:
     - fat.opl
     - fh.gjd
     - fh.rl
-    - files.al
     - ga.gjd
     - ga.grv
     - ga.rl
@@ -175,7 +192,8 @@ files:
     - manual.pdf
 
 cksums: |
-  _ 45171574  at.gjd
+  _ 45171574  at.gjd_gog
+  _ 45171574  at.gjd_alt
   _ 6725      at.grv
   _ 760       at.rl
   _ 25672908  b.gjd
@@ -199,7 +217,6 @@ cksums: |
   _ 3622      fat.opl
   _ 94315192  fh.gjd
   _ 3960      fh.rl
-  _ 965       files.al
   _ 26905546  ga.gjd
   _ 2442      ga.grv
   _ 2860      ga.rl
@@ -252,8 +269,16 @@ cksums: |
   _ 745582    track1.ogg
   _ 18458626  track2.ogg
 
+  _ 5892243   track1.flac
+  _ 144008323 track2.flac
+
+flacsums: |
+  5a8d98bb826366ebe10f481b3a879410  track1.flac
+  d7325fb43db73a3e61d23026fd8aec6a  track2.flac
+
 md5sums: |
-  a24e6c5e22cfcf6d7653039e7256012a  at.gjd
+  a24e6c5e22cfcf6d7653039e7256012a  at.gjd_gog
+  6e489e57e3aa06e5425a50956701757b  at.gjd_alt
   1b96fe1e03d1f8014dbfae46d691d02a  at.grv
   c0b257d351b4ad3780afad8797b1119a  at.rl
   da9e17605e5beb385bc7f573f5e2e53d  b.gjd
@@ -277,7 +302,6 @@ md5sums: |
   9504bb5cb3292d29fc67186c01bcfdb4  fat.opl
   2b3ad973e34cd239dfde309f0c08f847  fh.gjd
   9c92b4f455eb62c905b6337a30a2dcf1  fh.rl
-  57395272cfd3630dd77b3f8f814dfb05  files.al
   fb4579f2df810223f095f2a0f4769cf9  ga.gjd
   c796d39a6897fb73ed10261897a78fab  ga.grv
   f40bcfb8509a1ef3f47101aba3b65bf3  ga.rl
@@ -331,8 +355,12 @@ md5sums: |
   0a687a8b0ac69c75fca81a5f93cccc58  track1.ogg
   c63de4441da8b8df8f619ac3d000f11d  track2.ogg
 
+  b8eddaa284726fe490ddfa345e228960  track1.flac
+  a71cccc18669771450b1425dfdb58a32  track2.flac
+
 sha1sums: |
-  f0f5fec37fb4f86eba66b4c91bb1e99c98d80e13  at.gjd
+  f0f5fec37fb4f86eba66b4c91bb1e99c98d80e13  at.gjd_gog
+  1a93a95e91c110697db7412e8d31da9387045b08  at.gjd_alt
   5d35f5df8d287d01bcade11cee132e5b71358d41  at.grv
   8a30909213376f36b225b9f5b94dd9b588d8799b  at.rl
   1bb84ed1dc9a4cf873f52b9778535e35ece2c2e7  b.gjd
@@ -356,7 +384,6 @@ sha1sums: |
   a00a63b4985968c61e3e6c00ecbf52fd49d20344  fat.opl
   a6796cfd803905c30e79d1fc64d2228d27ccb8b3  fh.gjd
   32ab71075e7dcacea070f98c722a7c278001a1c8  fh.rl
-  c9372b0b1dfe1acd7b969e00fd1838678a1b3625  files.al
   02520c4da36075d6ca8576aaba1dc5082040f5c5  ga.gjd
   f2c7f0385953653dcbbcfe8389098b6f2a7bb4f6  ga.grv
   d07aa45d50b99a7a0e80167c292905457768cc6c  ga.rl
