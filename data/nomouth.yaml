@@ -6,11 +6,15 @@ plugin: scummvm_common
 gameid: ihnm
 steam:
   id: 245390
+  path: common/IHNMAIMS
 
 help_text: |
   In the French & German versions,
   Nimdok character has been censored-out;
   making the game impossible to complete.
+
+  The version with Italian subtitles is only
+  sold on Steam.
 
 # http://www.gogwiki.com/wiki/I_Have_No_Mouth_And_I_Must_Scream
 
@@ -42,7 +46,7 @@ packages:
     - voices6.res
     - voicess.res
     optional:
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf
     license:
     - end user license agreement.txt
 
@@ -67,7 +71,7 @@ packages:
     - voices6.res_de
     - voicess.res_de
     optional:
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf
     license:
     - end user license agreement.txt
 
@@ -92,7 +96,7 @@ packages:
     - voices6.res_fr
     - voicess.res_fr
     optional:
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf
     license:
     - end user license agreement.txt
 
@@ -117,7 +121,30 @@ packages:
     - voices6.res_es
     - voicess.res_es
     optional:
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf
+    license:
+    - end user license agreement.txt
+
+  i-have-no-mouth-and-i-must-scream-it-data:
+    lang: it
+    debian:
+      provides: i-have-no-mouth-and-i-must-scream-data
+    install:
+    - musicfm.res
+    - musicgm.res
+    - patch.re_
+    - scream.res_it
+    - scripts.res_it
+    - sfx.res_it
+    - voices1.res
+    - voices2.res
+    - voices3.res
+    - voices4.res
+    - voices5.res
+    - voices6.res
+    - voicess.res
+    optional:
+    - manual.pdf
     license:
     - end user license agreement.txt
 
@@ -129,8 +156,16 @@ files:
   patch.re_:
     look_for: [patch.re_,patch.res]
 
-  i have no mouth and i must scream - manual.pdf:
+  # visually identical
+  manual.pdf:
+    alternatives:
+    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf_steam
     install_to: $docdir
+  i have no mouth and i must scream - manual.pdf:
+    look_for: [manual.pdf,i have no mouth and i must scream - manual.pdf]
+  manual.pdf_steam:
+    look_for: [manual.pdf]
 
   gog_i_have_no_mouth_and_i_must_scream_1.0.0.2.deb:
     unpack:
@@ -354,6 +389,16 @@ files:
     - voicess.res_es
     - i have no mouth and i must scream - manual.pdf
 
+  ###########
+  # ITALIAN #
+  ###########
+  scream.res_it:
+    install_as: scream.res
+  scripts.res_it:
+    install_as: scripts.res
+  sfx.res_it:
+    install_as: sfx.res
+
 size_and_md5: |
   302676    fe63a88b8c49baa69a814fc15659b1df musicfm.res
   314020    df2f4722f720780e3cb4abf330f1db2f musicgm.res
@@ -369,6 +414,7 @@ size_and_md5: |
   108977234 55a951d5ad40227b44a55753f531dc1c voices6.res
   77627568  d4da3081a739400d5894fe23aa0b6fbb voicess.res
 
+  417369    835556a1278fe363a5dbf8dff9cc1430 manual.pdf_steam
   386080    e1440f7af2ea5f208b5198d6affe7dd1 i have no mouth and i must scream - manual.pdf
   19674     8d07b65626904a532bd83c1801b5149f end user license agreement.txt
 
@@ -412,6 +458,10 @@ size_and_md5: |
   25820890  31457c882d7ed8c7f44c2684d4f6f206 voicess.res_es
   267414680 3de490d5bef0bde8afa729032614f9e0 gog_i_have_no_mouth_and_i_must_scream_spanish_1.0.0.2.deb
   304210112 b18cb7ecb4c73129fc42fd7ecb02a820 setup_i_have_no_mouth_and_i_must_scream_spanish_2.0.0.7.exe
+
+  79211498  55e89ac27ea2eac4f21339f4bcf42edf scream.res_it
+  500469    5fc31306c2cb0e50929a80c2022f449a scripts.res_it
+  22561056  8f68885590253f68a0b69ada14f33c37 sfx.res_it
 
 sha1sums: |
   6adb8c40f7ffeba490a8d848af5d375cab217385  gog_i_have_no_mouth_and_i_must_scream_1.0.0.2.deb
