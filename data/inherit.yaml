@@ -1,0 +1,25 @@
+---
+longname: "Inherit the Earth: Quest for the Orb"
+copyright: © 1994 The Dreamers Guild
+plugin: scummvm_common
+gameid: ite
+
+packages:
+  inherit-the-earth-data:
+    gog:
+      url: inherit_the_earth
+    install:
+    - ite.rsc
+    - scripts.rsc
+    - voices.rsc
+
+size_and_md5: |
+  8903828   04f366b46a13c350619b7edb83470949 ite.rsc
+  327162    793bb8ceea2db752e10b3de91e5b1001 scripts.rsc
+  5695569   a533d672e894769d69049311c53eb659 voices.rsc
+
+sha1sums: |
+  9c1e215e50a0bec77079b5fce2106b2f0f8cb27e  ite.rsc
+  4c0ddd504e99eb8daddacfe65f08377b91e9f30d  scripts.rsc
+  ad2366d89a51e9932e519aa469821705b8d40177  voices.rsc
+...
