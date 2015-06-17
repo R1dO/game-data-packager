@@ -1,5 +1,5 @@
 ---
-longname: Police Quest 1
+longname: Police Quest 1 - In Pursuit of The Death Angel
 copyright: © 1987 Sierra
 plugin: scummvm_common
 gameid: pq1
@@ -9,8 +9,29 @@ gameid: pq1
 # // Police Quest 1 (PC) 2.0G 12/3/87
 # GAME("pq1", "2.0G 1987-12-03", "d194e5d88363095f55d5096b8e32fbbb", 0x2917, GID_PQ1),
 
+help_text: |
+  For the VGA/SCI version packaged by GOG.com; ScummVM complains about
+  an unofficial patch and ask to "removes it".
+
+  http://www.sierrahelp.com/Patches-Updates/Patches-Updates-Games/PoliceQuestUpdates.html
+
+  When packaging real original game, this tool will likely complain about:
+  - 30.hep
+  - 30.scr
+  and/or:
+  - 994.hep
+  - 994.scr
+  - 999.hep
+  - 999.scr
+
+  Please file a bug with output of
+  "game-data-packager make-template <directory with game assets>"
+  to get this fixed.
+
 packages:
-  policequest1-data:
+  policequest1-ega-data:
+    longname: "Police Quest 1 (EGA)"
+    better_version: policequest1-data
     install:
     - hgc_font
     - logdir
@@ -22,12 +43,101 @@ packages:
     - vol.1
     - vol.2
     - words.tok
-    # FIXME: strace says it was not needed ?
     optional:
-    - agi
+    - ticketcodes.gif
+
+  policequest1-data:
+    gameid: pq1sci
+    gog:
+      url: police_quest_1_2_3_4
+      game: police_quest_in_pursuit_of_the_death_angel
+    install:
+    - 30.hep
+    - 30.scr
+    - 31.msg
+    - 43.hep
+    - 43.scr
+    - 45.hep
+    - 45.scr
+    - 500.msg
+    - 501.hep
+    - 501.scr
+    - 54.hep
+    - 54.scr
+    - 555.hep
+    - 555.scr
+    - 555.tex
+    - 56.hep
+    - 56.scr
+    - 58.hep
+    - 58.scr
+    - 994.hep
+    - 994.scr
+    - 996.voc
+    - 999.hep
+    - 999.scr
+    - message.map
+    - resource.000
+    - resource.map
+    - resource.msg
+    - resource.pq1
+    - version
+    optional:
+    - ticketcodes.gif
+
+files:
+  ticketcodes.gif:
+    install_to: $docdir
+
+  setup_police_quest_vga_2.1.0.10.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 30.hep
+    - 30.scr
+    - 31.msg
+    - 43.hep
+    - 43.scr
+    - 45.hep
+    - 45.scr
+    - 500.msg
+    - 501.hep
+    - 501.scr
+    - 54.hep
+    - 54.scr
+    - 555.hep
+    - 555.scr
+    - 555.tex
+    - 56.hep
+    - 56.scr
+    - 58.hep
+    - 58.scr
+    - 994.hep
+    - 994.scr
+    - 996.voc
+    - 999.hep
+    - 999.scr
+    - message.map
+    - resource.000
+    - resource.map
+    - resource.msg
+    - resource.pq1
+    - version
+    - ticketcodes.gif
+    # should be extracted only if we are
+    # explicitely going to build EGA package
+    - hgc_font
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
 
 cksums: |
-  _ 39424     agi
   _ 3072      hgc_font
   _ 360       logdir
   _ 369       object
@@ -40,7 +150,6 @@ cksums: |
   _ 6737      words.tok
 
 md5sums: |
-  08c25b0fad4b6bcd10efd072e5bcf4d8  agi
   f3d4c66e195491aa759b7c5ef996488b  hgc_font
   d194e5d88363095f55d5096b8e32fbbb  logdir
   c444971d4558f102a82b3130868010b4  object
@@ -51,4 +160,43 @@ md5sums: |
   a4ef57c5cc9542a7b53288f58d600964  vol.1
   d3b130e92661ab0793b3d9101700c004  vol.2
   0db29ac32f2cbb1d26c0e29f812f5fd2  words.tok
+
+size_and_md5: |
+  2404      4d1e97084423efead07a3f5c80dd67ed 30.hep
+  3436      e47c1ebb1a1c2b1e067ecd0be2ff7d80 30.scr
+  11318     6e37b9e11949043ec40f3107b8190d0a 31.msg
+  4002      c41f7f5a80f5ca74114f176050b4d2fa 43.hep
+  8090      716a6795cb16608a0dadb2c2d4e898f7 43.scr
+  1574      60ba8ab20da68746d8f3b85a97416eeb 45.hep
+  2004      25fd10f594ea2fa00dfbd88dfc02564d 45.scr
+  18904     f882b723f4c98ffe8202a86d83b73704 500.msg
+  450       8f12ad4148ff0fc4eff0fbb98ca91a5d 501.hep
+  1492      e0fbb2c80574f5b693e7a85868994103 501.scr
+  2584      a70ad2d5d5171c210d623c5038c74629 54.hep
+  4758      c45fa01bad8b4465ddf8ac3312b28961 54.scr
+  2892      ed6780d49ffa1b85980b0098d1a166d4 555.hep
+  5074      e33157fc3040bc0f7307a93438944f21 555.scr
+  5         ac98be2ddf2b7da30f95de3bb80b520d 555.tex
+  2642      5e71a607614441442a2128cc7dbe6589 56.hep
+  4104      b1bd8e0369e99871d93d2ea9d36bca67 56.scr
+  3518      b666f0ae6f2fe7a6da5d7f8e014f3e4b 58.hep
+  5550      dcdc8ef7608c73cfff1ba790224835de 58.scr
+  742       98e635fee041cbc0902ad13078621169 994.hep
+  4332      9d2e87f2e28954ce7c181140a2c05af0 994.scr
+  586       e3de45bc6b63c38ef9ed2da3c45e2e7f 996.voc
+  322       ae60cb171a4c1945f5a16145015afe62 999.hep
+  2494      b5d54517df77ad8913b808df692521ff 999.scr
+  390       20b6b194c414fa876fcab9f8f93c082c message.map
+  6401433   08ce840d92cb6ff7cf79573cda410400 resource.000
+  5013      1bddd987b230086a13da172f85908d2c resource.map
+  216140    67962116f678342a81048ee4de6474f5 resource.msg
+  42        04b4021e262491def41f9fd15d1707ae resource.pq1
+  7         01869a900e47bcf330c4c17d5b7e5a4d version
+
+  108869    74ef734d4f82d733cb8a0dbbe5f79cfc ticketcodes.gif
+  19972128  0bd2633d491cc9f9b1078e29975e8973 setup_police_quest_vga_2.1.0.10.exe
+
+sha1sums: |
+  79d8b6fe8f59fb3144ccf2430b67044f79abca70  setup_police_quest_vga_2.1.0.10.exe
+
 ...
