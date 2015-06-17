@@ -1,0 +1,122 @@
+---
+longname: Police Quest 3 - The Kindred
+copyright: © 1991 Sierra On-Line
+plugin: scummvm_common
+gameid: pq3
+
+help_text: |
+  ScummVM complains about un-needed unofficial patches.
+
+  Please provide checksums of original files if you have thoses.
+
+packages:
+  policequest3-data:
+    gog:
+      url: police_quest_1_2_3_4
+      game: police_quest_3_the_kindred
+    install:
+    - 12.scr
+    - 12.tex
+    - 129.scr
+    - 129.tex
+    - 133.scr
+    - 133.tex
+    - 202.scr
+    - 202.tex
+    - 21.scr
+    - 21.tex
+    - 50.scr
+    - 50.tex
+    - 56.scr
+    - 56.tex
+    - 57.scr
+    - 57.tex
+    - 594.v56
+    - 99.scr
+    - 994.scr
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.map
+    - version
+    optional:
+    - pq3_map_color.jpg
+    - pq3pen.bmp
+
+files:
+  pq3_map_color.jpg:
+    install_to: $docdir
+  pq3pen.bmp:
+    install_to: $docdir
+
+  setup_police_quest3_2.1.0.10.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 12.scr
+    - 12.tex
+    - 129.scr
+    - 129.tex
+    - 133.scr
+    - 133.tex
+    - 202.scr
+    - 202.tex
+    - 21.scr
+    - 21.tex
+    - 50.scr
+    - 50.tex
+    - 56.scr
+    - 56.tex
+    - 57.scr
+    - 57.tex
+    - 594.v56
+    - 99.scr
+    - 994.scr
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.map
+    - version
+    - pq3_map_color.jpg
+    - pq3pen.bmp
+
+size_and_md5: |
+  10012     9b5d97d1190d1b0dc0e5b436deb717ab 12.scr
+  1116      5c82b0745604bd5e9b4cb328177ec68e 12.tex
+  5872      5fa7ef67edc5d22c9f64942d37c6069a 129.scr
+  676       23744d9bb3a2ad7be2d5cc3d1afa822f 129.tex
+  5034      ac9212239b62772a64277d80ffdc6843 133.scr
+  3336      5df3c1c5af43f2e3c469e0c47e77a2c8 133.tex
+  5672      23c9e297f32f2ae085cd3c4cd9d1a7f8 202.scr
+  173       a40339aa557b49721b7ef2fab744852c 202.tex
+  16878     fc2b879c44841e0bbaa1bec759431c61 21.scr
+  6520      fa154b6f8000cd5e8e771b546c683d50 21.tex
+  9568      0aef652aba525df874ffd4041e28d120 50.scr
+  3401      aceda24d47f5130b0d84c709b21c9b78 50.tex
+  10970     43afce5029f6f983a923b7d76f099eba 56.scr
+  1026      17b6e7988e62da9287034a95b96b763a 56.tex
+  5330      5e18f5a53a1ea39e7620d7a3a9dc8de8 57.scr
+  632       ca4d01e6e1e41f1971446ca3ceab91e1 57.tex
+  8916      1a20990b4ed9636ad883caf8a9ba14d8 594.v56
+  2028      907005ce02436bfe4fb09b1bfe9e3870 99.scr
+  4686      b0f8183631fd924c72dc67d1cc46ef66 994.scr
+  737253    2d49dff63dd884b09d8a7c21d11252c6 resource.000
+  1196787   d73cec2e75dd28ad08e9637324258ad1 resource.001
+  1153561   2d353893d778e43ee0d2a4e9b31522f3 resource.002
+  1159791   1a5c12654d6feb85df9a4cbc0ae2a8b6 resource.003
+  1143606   4963db70f1236598db3a07a71e751639 resource.004
+  5559      baac9cc6903a7bd6acb4d4d9f9ed6931 resource.map
+  8         c50ac7e6672c5dfbf74b9ca7501d56c7 version
+
+  72862     e6d58c020b4da9da8ddb026b274b95ce pq3_map_color.jpg
+  65078     443726b38bcd15b772a1a5e4358cbe45 pq3pen.bmp
+  18718736  25b5dc1b66999f414740f8fa34c7a30c setup_police_quest3_2.1.0.10.exe
+
+sha1sums: |
+  d29365a858d7bccd1aea3d7582f00f2c9c1f35d1  setup_police_quest3_2.1.0.10.exe
+...
+

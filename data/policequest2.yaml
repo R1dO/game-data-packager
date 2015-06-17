@@ -1,0 +1,69 @@
+---
+longname: Police Quest 2 - Vengeance
+copyright: © 1988 Sierra On-Line
+plugin: scummvm_common
+gameid: pq2
+
+packages:
+  policequest2-data:
+    gog:
+      url: police_quest_1_2_3_4
+      game: police_quest_2_vengeance
+    install:
+    - patch.000
+    - patch.101
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.map
+    optional:
+    - pq2map.txt
+    - readme.txt
+    - wanted.jpg
+
+files:
+  pq2map.txt:
+    install_to: $docdir
+  readme.txt:
+    install_to: $docdir
+  wanted.jpg:
+    install_to: $docdir
+
+  setup_police_quest2_2.1.0.10.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - patch.000
+    - patch.101
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.map
+    - pq2map.txt
+    - readme.txt
+    - wanted.jpg
+
+size_and_md5: |
+  3504      0d497d58027a7960ac24d43c1849ec87 patch.000
+  800       026cc6fb3968224e6c91e3274c49fbdc patch.101
+  509525    0c87664580a815da5e1ab2298cbcaf1d resource.001
+  546000    97d059b05148925766197cb51f68a80f resource.002
+  591851    580bf2e76ddee1a65d9e75de7428af15 resource.003
+  4584      28a6f471c7900c2c92da40eecb615d9d resource.map
+
+  2019      afe18f719b08581caac2f909859ad93c pq2map.txt
+  32731     1e666cf3b4f1ae720d9f39ed40a1f7be readme.txt
+  83287     229e382e0614f11bf5991797c69b1f95 wanted.jpg
+  15090984  43571add6ac69b59bde2af96d7c01fd8 setup_police_quest2_2.1.0.10.exe
+
+sha1sums: |
+  b0f0c4a344b1b1c762758079c35c50d27a3191f4  patch.000
+  0a7606995618c2eec28713f69abffa9021b4e20f  patch.101
+  c987e7efeb7c0451ed5be39fffca273405d7aa8f  resource.001
+  abd8cc565f57e8322007905cdd18fe46ca53b77c  resource.002
+  47e43a5bedbd357d13b43e48c6cb2fa4b5347509  resource.003
+  6156624362d191b6e1d9a1a8bab27c8c4aba8eb5  resource.map
+
+  3d01d554249879b80137c9e4186897a5b8d51c07  setup_police_quest2_2.1.0.10.exe
+...
+
