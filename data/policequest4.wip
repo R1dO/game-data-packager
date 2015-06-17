@@ -1,0 +1,364 @@
+---
+longname: Police Quest 4 - Open Season
+copyright: © 1993 Sierra Entertainment
+plugin: scummvm_common
+gameid: pq4
+
+help_text: |
+  GAME NOT YET SUPPORTED BY SCUMMVM
+
+packages:
+  policequest4-data:
+    gog:
+      url: police_quest_1_2_3_4
+      game: police_quest_4_open_season
+    install:
+    - aud/0.map
+    - aud/100.map
+    - aud/11.map
+    - aud/110.map
+    - aud/115.map
+    - aud/130.map
+    - aud/140.map
+    - aud/150.map
+    - aud/170.map
+    - aud/180.map
+    - aud/190.map
+    - aud/20.map
+    - aud/210.map
+    - aud/220.map
+    - aud/225.map
+    - aud/230.map
+    - aud/240.map
+    - aud/250.map
+    - aud/270.map
+    - aud/275.map
+    - aud/28.map
+    - aud/290.map
+    - aud/31.map
+    - aud/310.map
+    - aud/315.map
+    - aud/335.map
+    - aud/340.map
+    - aud/355.map
+    - aud/360.map
+    - aud/385.map
+    - aud/390.map
+    - aud/395.map
+    - aud/405.map
+    - aud/410.map
+    - aud/415.map
+    - aud/417.map
+    - aud/420.map
+    - aud/440.map
+    - aud/505.map
+    - aud/510.map
+    - aud/512.map
+    - aud/515.map
+    - aud/520.map
+    - aud/525.map
+    - aud/530.map
+    - aud/533.map
+    - aud/534.map
+    - aud/535.map
+    - aud/540.map
+    - aud/545.map
+    - aud/560.map
+    - aud/570.map
+    - aud/580.map
+    - aud/600.map
+    - aud/605.map
+    - aud/610.map
+    - aud/620.map
+    - aud/625.map
+    - aud/640.map
+    - aud/670.map
+    - aud/675.map
+    - aud/680.map
+    - aud/690.map
+    - aud/7.map
+    - aud/700.map
+    - aud/710.map
+    - aud/715.map
+    - aud/725.map
+    - aud/735.map
+    - aud/740.map
+    - aud/745.map
+    - aud/750.map
+    - aud/755.map
+    - aud/775.map
+    - aud/779.map
+    - aud/780.map
+    - aud/785.map
+    - aud/790.map
+    - aud/800.map
+    - aud/810.map
+    - aud/850.map
+    - aud/860.map
+    - aud/880.map
+    - aud/885.map
+    - aud/9.map
+    - aud/905.map
+    - aud/910.map
+    - aud/resource.aud
+    - patches/0.hep
+    - patches/0.scr
+    - patches/170.hep
+    - patches/170.scr
+    - patches/1937.v56
+    - patches/1938.v56
+    - patches/23.msg
+    - patches/230.hep
+    - patches/230.scr
+    - patches/4.hep
+    - patches/4.scr
+    - patches/779.hep
+    - patches/779.scr
+    - patches/8.msg
+    - resource.000
+    - resource.map
+    - sfx/resource.sfx
+    - version
+    optional:
+    - manual.pdf
+
+files:
+  manual.pdf:
+    install_to: $docdir
+
+  setup_police_quest4_2.1.0.10.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - pq4.gog
+    - manual.pdf
+
+  pq4.gog:
+    unpack:
+      format: unar
+    provides:
+    - aud/0.map
+    - aud/100.map
+    - aud/11.map
+    - aud/110.map
+    - aud/115.map
+    - aud/130.map
+    - aud/140.map
+    - aud/150.map
+    - aud/170.map
+    - aud/180.map
+    - aud/190.map
+    - aud/20.map
+    - aud/210.map
+    - aud/220.map
+    - aud/225.map
+    - aud/230.map
+    - aud/240.map
+    - aud/250.map
+    - aud/270.map
+    - aud/275.map
+    - aud/28.map
+    - aud/290.map
+    - aud/31.map
+    - aud/310.map
+    - aud/315.map
+    - aud/335.map
+    - aud/340.map
+    - aud/355.map
+    - aud/360.map
+    - aud/385.map
+    - aud/390.map
+    - aud/395.map
+    - aud/405.map
+    - aud/410.map
+    - aud/415.map
+    - aud/417.map
+    - aud/420.map
+    - aud/440.map
+    - aud/505.map
+    - aud/510.map
+    - aud/512.map
+    - aud/515.map
+    - aud/520.map
+    - aud/525.map
+    - aud/530.map
+    - aud/533.map
+    - aud/534.map
+    - aud/535.map
+    - aud/540.map
+    - aud/545.map
+    - aud/560.map
+    - aud/570.map
+    - aud/580.map
+    - aud/600.map
+    - aud/605.map
+    - aud/610.map
+    - aud/620.map
+    - aud/625.map
+    - aud/640.map
+    - aud/670.map
+    - aud/675.map
+    - aud/680.map
+    - aud/690.map
+    - aud/7.map
+    - aud/700.map
+    - aud/710.map
+    - aud/715.map
+    - aud/725.map
+    - aud/735.map
+    - aud/740.map
+    - aud/745.map
+    - aud/750.map
+    - aud/755.map
+    - aud/775.map
+    - aud/779.map
+    - aud/780.map
+    - aud/785.map
+    - aud/790.map
+    - aud/800.map
+    - aud/810.map
+    - aud/850.map
+    - aud/860.map
+    - aud/880.map
+    - aud/885.map
+    - aud/9.map
+    - aud/905.map
+    - aud/910.map
+    - aud/resource.aud
+    - patches/0.hep
+    - patches/0.scr
+    - patches/170.hep
+    - patches/170.scr
+    - patches/1937.v56
+    - patches/1938.v56
+    - patches/23.msg
+    - patches/230.hep
+    - patches/230.scr
+    - patches/4.hep
+    - patches/4.scr
+    - patches/779.hep
+    - patches/779.scr
+    - patches/8.msg
+    - resource.000
+    - resource.map
+    - sfx/resource.sfx
+    - version
+
+
+size_and_md5: |
+  598       0c670e104ecc4efe79a70d51d8d55ae3 aud/0.map
+  3041      ccb469b3adbfdb777b5e972492e5171c aud/100.map
+  1403      742caca73161ee7d25f8bbd3cacbb696 aud/11.map
+  1235      bdd509bedc55605993d1f6ee894275eb aud/110.map
+  1578      412890ce0fe2debf4762526200939034 aud/115.map
+  696       cc47f4a851ddc58474292d59416dba51 aud/130.map
+  1256      b09db7cf972be68bbe6c91e54251169a aud/140.map
+  1144      71a6f90c7932a5c8226f92a27441e9ab aud/150.map
+  976       fc041cf4da7e5d2bd07461395a282d7c aud/170.map
+  675       e91578ce41d12eeda3c4c27cc7902340 aud/180.map
+  1774      ff5e8e9897bedba23bb14bc5d503f344 aud/190.map
+  451       96b5c5b8973c477456b5241363abcb98 aud/20.map
+  437       488e53d691b2b8ea8cd63aa3bac30dca aud/210.map
+  857       7ff2e7d035025f99b7f7bf74b3693ca9 aud/220.map
+  360       1e15cc4adefee437e113643383913f05 aud/225.map
+  129       6eb6ae47ddad9d818014741a900bc0c4 aud/230.map
+  395       989e4e96f4366cbe531825a6c1dd1394 aud/240.map
+  773       02a3a79b872fd24636bb38e8488f1a2d aud/250.map
+  1333      3123055bd6f38612b8bf0ad7ee265bdb aud/270.map
+  2481      e8f4f1a9fef4f23fa0d3a7b71e0d9cb9 aud/275.map
+  584       c663c7602124198de8deea7cbcad316f aud/28.map
+  66        cb864d30b766d123c20310c06bc0daca aud/290.map
+  234       10bce207e56d003b605a44ff6b8ffc4f aud/31.map
+  773       0b25d43fd1cb27d239e72b25e42f4425 aud/310.map
+  1823      0fbcb200ac71f2ac21149b854fc6f18f aud/315.map
+  1053      893e9962be903e74ae9e71d448c78dc8 aud/335.map
+  983       b9f1a7d6d4710c7a15f07470bd884677 aud/340.map
+  745       6af879a65776f3c9703bffdf0690791b aud/355.map
+  1753      64213c4e26567606bb9f8841f3214632 aud/360.map
+  80        42dd020a85ead587544a723683512025 aud/385.map
+  724       38f69e132c6af14f0d5dcc137e498acb aud/390.map
+  451       f4e2f6cd942a1d425ccfab8210ae1511 aud/395.map
+  150       9ac511a950da5104b0f383169f9266c1 aud/405.map
+  899       ff484efb55fcf5e40fc7be0b87ec5527 aud/410.map
+  325       a53ea3d5bf74a1330b0344918324cb52 aud/415.map
+  486       f24826e04b4474a4ef1f9b7a1440d088 aud/417.map
+  724       3542cffa73cf5f931f7d289b2ad44211 aud/420.map
+  80        99ffeec5acaf42cb18841fd4fbadc4b4 aud/440.map
+  871       a35f0c4842853bc9508f6863954c4600 aud/505.map
+  843       3fca1d4b6c58cb1c2e6c1630933b272f aud/510.map
+  605       c23f4913e3960bd887800a7dffe5efab aud/512.map
+  1277      a9da772cf873a5aa429513c746be0072 aud/515.map
+  668       5a65fa26618eb41a2986911afde25120 aud/520.map
+  178       2348178f5ab7bc7dc395b3ca677b845d aud/525.map
+  1123      b3e0b9cd369f8538433d9bd30b5b0e72 aud/530.map
+  24        22beebbdad7cc0f6afab0ec086ad9b9a aud/533.map
+  24        25837197eb13db3f5229349e62241efa aud/534.map
+  276       1203ab0263026fcebe5cf462ef445150 aud/535.map
+  2768      ac451c14e65186f2ab13991a0153ee27 aud/540.map
+  1655      067ed36b28797b4ff136a58e764feaf4 aud/545.map
+  955       9d1fdf8e0e8f5c6693ed5b0731e4809f aud/560.map
+  248       dd86752ff3a1492ba139a5affed006dd aud/570.map
+  1788      09ff1d701aef0442d691fcc7533d9f30 aud/580.map
+  724       7b9d80aeaca0e4aed893b47e6767377d aud/600.map
+  920       f6742f0e394cc10679b522151e69ca42 aud/605.map
+  913       473b0f0aa9fb5c433bec59a0b25c45ca aud/610.map
+  192       a3ecf06c02a2679df2a01daba24e37ea aud/620.map
+  1305      a648a6eb9b13bbb4d5bee098a118c693 aud/625.map
+  374       7ecbb22bfb4db04b37158665039e71a1 aud/640.map
+  234       184322d1798dfc0790d330bb95482b5d aud/670.map
+  612       8ae4361aa018591f59cd02eaeaba0d43 aud/675.map
+  521       fd22c45333b5369275cbdcc891c48676 aud/680.map
+  227       f3b5aaf154c6e9020873b3e2e1038e04 aud/690.map
+  486       db6b1c722a71817a842a4ddd8f4096bd aud/7.map
+  514       77efd3ef5e0f8a7b75832008cc3a01f9 aud/700.map
+  563       194c00bc5e551c2ac953a1c247dd00a3 aud/710.map
+  332       0c8eeae0dc40b51d989f9cdc65c3ce2e aud/715.map
+  710       a6aefa07cbeee883964b9fd329cee754 aud/725.map
+  577       bb6d3aa899f1efc8134b1544653f0f0b aud/735.map
+  332       ebfdc1b410950dfc82094dab253d642e aud/740.map
+  1221      06a5b6ee940a487f6666609f10c0af9f aud/745.map
+  864       5f935a0dd3a05df65eadd6e161ccc273 aud/750.map
+  1487      8a6804324bcfcb93aa14fce47617877c aud/755.map
+  626       243dafd1ba9330b69552cd4b4bcf3ffb aud/775.map
+  38        2c2abd3c00af959369b92b2dfe629317 aud/779.map
+  1921      bc1132d23eb4e6bdbd9b41c70ee2e30f aud/780.map
+  1249      2166461f5148937447af6419968c7af9 aud/785.map
+  1984      68307f9b5ba3e32fe6b77e68ae090f90 aud/790.map
+  969       98134b0b6a9c21e1a0e257c3e0141e99 aud/800.map
+  1137      7a16d2523b52b817f69161cd737b48c1 aud/810.map
+  1816      33855dcf4308046f5ee5616f5be660af aud/850.map
+  542       b6ad0011a8c04a1ea9d02b03bd121bff aud/860.map
+  479       07a61ade06f07faf799b357eaf726bc2 aud/880.map
+  2033      3ea0e2df9276968d14a2f2c6e037db99 aud/885.map
+  129       5473be295ac89efb384d4991302ac341 aud/9.map
+  52        4cb7696fc331e1a5e028abafec6ede28 aud/905.map
+  4525      50ca56c590f47dfff876dff566c526a0 aud/910.map
+  435170276 76da8b465652a5fc44501d3b1acf53ab aud/resource.aud
+  1498      5a9ec455b19d07f93d2aa8bb4d581826 patches/0.hep
+  6272      81130c4da4fcd3503c2440bcda3a46ef patches/0.scr
+  4688      bc917ca04a0d48cff91ed25242ad40e0 patches/170.hep
+  14438     08fb1220496ac1342899e79b30c9979a patches/170.scr
+  79971     e708350d82e3a1a5a572da4d695880c4 patches/1937.v56
+  45681     ff8f10419f667e86e344661d9f24b1f9 patches/1938.v56
+  6209      43d36d8f7373e4b3abaa72f156193abf patches/23.msg
+  1716      94a7a058351338b9a07018f050bb1716 patches/230.hep
+  7758      81975e18c347b939cc1b9b8104f9afe2 patches/230.scr
+  302       2a963baa72c3723168e69da4ddae0d29 patches/4.hep
+  1094      f5c442e330118afbd7e5f530628935e6 patches/4.scr
+  936       baab5db795eb0949fe9c8c10e52bfe17 patches/779.hep
+  6404      2672bbf9498de1b3ee5f74dd50046e0b patches/779.scr
+  4195      5eafaf80f0a13f7c56f5826cff0940cf patches/8.msg
+  18841068  468f4d4b80cae7c88066a9937046dca7 resource.000
+  11374     069123b257f9e7655f13eb768397c345 resource.map
+  6063964   6df636978de94d6fcf776262c58999c1 sfx/resource.sfx
+  13        f3eebba3721df54ef7144b67d751494c version
+
+  462778368 503a706b6643fdbb606afdf76c637ba9 pq4.gog
+  879188    f50a54d6fe7d5d11868f2eae6e7a11d6 manual.pdf
+  373511920 238ccf106559e2ecc70c6c05348be820 setup_police_quest4_2.1.0.10.exe
+
+sha1sums: |
+  8ba0addc44adbf7c49e8fba8056e8ba63320d8ca  pq4.gog
+  a1458f12a62419e16dff4daf73d7cef938b362fb  manual.pdf
+  39ec43c9d4338b6b2bb5c1ec296989c1ced9ae58  setup_police_quest4_2.1.0.10.exe
+...
