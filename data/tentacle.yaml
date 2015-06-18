@@ -21,32 +21,23 @@ packages:
     - monster.sou_de
     - tentacle.000_de
     - tentacle.001_de
+
 files:
   monster.sou_de:
     install_as: monster.sou
-    look_for: [monster.sou]
   tentacle.000_de:
     install_as: tentacle.000
-    look_for: [tentacle.000]
   tentacle.001_de:
     install_as: tentacle.001
-    look_for: [tentacle.001]
-cksums: |
-  _ 94948005  monster.sof
-  _ 7932      tentacle.000
-  _ 11358470  tentacle.001
 
-  _ 238267139  monster.sou_de
-  _ 7932      tentacle.000_de
-  _ 11373177  tentacle.001_de
-md5sums: |
-  7eb02d6c9a428da90ee6ca1b7cb1de49  monster.sof
-  4167a92a1d46baa4f4127d918d561f88  tentacle.000
-  c5d451e659e0915ac02f5807de3a0bc0  tentacle.001
+size_and_md5: |
+  94948005  7eb02d6c9a428da90ee6ca1b7cb1de49  monster.sof
+  7932      4167a92a1d46baa4f4127d918d561f88  tentacle.000
+  11358470  c5d451e659e0915ac02f5807de3a0bc0  tentacle.001
 
-  8ea07a3e13af00f0a6e594820df1a9af  monster.sou_de
-  6e959d65358eedf9b68b81e304b97fa4  tentacle.000_de
-  0913cd05019c6821c672f1d84a8fc36d  tentacle.001_de
+  238267139 8ea07a3e13af00f0a6e594820df1a9af  monster.sou_de
+  7932      6e959d65358eedf9b68b81e304b97fa4  tentacle.000_de
+  11373177  0913cd05019c6821c672f1d84a8fc36d  tentacle.001_de
 
   # other version
   # ec46c029ec58596485b221dac0c55d7a  monster.sou
