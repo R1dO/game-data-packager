@@ -4,7 +4,52 @@ copyright: © 1993 Adventure Soft
 plugin: scummvm_common
 
 packages:
-  simon1-data:
+  simon1-en-data:
+    debian:
+      provides: simon1-data
+    gog:
+      url: simon_the_sorcerer
+    install:
+    - gamepc
+    - icon.dat
+    - simon.gme
+    - simon.wav
+    - stripped.txt
+    - tbllist
+
+    - sfxxxx02
+    - sfxxxx03
+    - sfxxxx04
+    - sfxxxx05
+    - sfxxxx06
+    - sfxxxx07
+    - sfxxxx08
+    - sfxxxx09
+    - sfxxxx10
+    - sfxxxx11
+    - sfxxxx12
+    - sfxxxx13
+    - sfxxxx14
+    - sfxxxx15
+    - sfxxxx16
+    - sfxxxx17
+    - sfxxxx18
+    - sfxxxx19
+    - sfxxxx20
+    - sfxxxx21
+    - sfxxxx22
+    - sfxxxx23
+    - sfxxxx24
+    - sfxxxx25
+    - sfxxxx26
+    - sfxxxx27
+    - sfxxxx28
+    - sfxxxx29
+    optional:
+    - manual.pdf
+
+  simon1-dos-en-data:
+    better_version: simon1-en-data
     gog:
       url: simon_the_sorcerer
     install:
@@ -333,8 +378,7 @@ packages:
     - 1622.vga
     - 1631.vga
     - 1632.vga
-    - gamepc
-    - icon.dat
+    - gamepc_dos
     - mod0.mus
     - mod1.mus
     - mod10.mus
@@ -371,36 +415,6 @@ packages:
     - mod7.mus
     - mod8.mus
     - mod9.mus
-    - sfxxxx02
-    - sfxxxx03
-    - sfxxxx04
-    - sfxxxx05
-    - sfxxxx06
-    - sfxxxx07
-    - sfxxxx08
-    - sfxxxx09
-    - sfxxxx10
-    - sfxxxx11
-    - sfxxxx12
-    - sfxxxx13
-    - sfxxxx14
-    - sfxxxx15
-    - sfxxxx16
-    - sfxxxx17
-    - sfxxxx18
-    - sfxxxx19
-    - sfxxxx20
-    - sfxxxx21
-    - sfxxxx22
-    - sfxxxx23
-    - sfxxxx24
-    - sfxxxx25
-    - sfxxxx26
-    - sfxxxx27
-    - sfxxxx28
-    - sfxxxx29
-    - simon.gme
-    - simon.wav
     - stings1.mus
     - stings2.mus
     - stings3.mus
@@ -410,7 +424,7 @@ packages:
     - stings7.mus
     - stings8.mus
     - stings9.mus
-    - stripped.txt
+    - stripped.txt_dos
     - tables01
     - tables02
     - tables03
@@ -474,12 +488,96 @@ packages:
     - manual.pdf
 
 files:
+  gamepc_dos:
+    install_as: gamepc
+  stripped.txt_dos:
+    install_as: stripped.txt
+
   manual.pdf:
     install_to: $docdir
+
+  # old archive with some DOS assets
+  # that got overwritten by WIN ones,
+  # making DOS verions unplayable.
   setup_simon_the_sorcerer.exe:
     unpack:
       format: innoextract
     provides:
+    - gamepc
+    - icon.dat
+    - simon.gme
+    - simon.wav
+    - stripped.txt
+    - tbllist
+    - sfxxxx02
+    - sfxxxx03
+    - sfxxxx04
+    - sfxxxx05
+    - sfxxxx06
+    - sfxxxx07
+    - sfxxxx08
+    - sfxxxx09
+    - sfxxxx10
+    - sfxxxx11
+    - sfxxxx12
+    - sfxxxx13
+    - sfxxxx14
+    - sfxxxx15
+    - sfxxxx16
+    - sfxxxx17
+    - sfxxxx18
+    - sfxxxx19
+    - sfxxxx20
+    - sfxxxx21
+    - sfxxxx22
+    - sfxxxx23
+    - sfxxxx24
+    - sfxxxx25
+    - sfxxxx26
+    - sfxxxx27
+    - sfxxxx28
+    - sfxxxx29
+
+  setup_simon_the_sorcerer_2.0.0.18.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - gamepc
+    - icon.dat
+    - simon.gme
+    - simon.wav
+    - stripped.txt
+    - tbllist
+
+    - sfxxxx02
+    - sfxxxx03
+    - sfxxxx04
+    - sfxxxx05
+    - sfxxxx06
+    - sfxxxx07
+    - sfxxxx08
+    - sfxxxx09
+    - sfxxxx10
+    - sfxxxx11
+    - sfxxxx12
+    - sfxxxx13
+    - sfxxxx14
+    - sfxxxx15
+    - sfxxxx16
+    - sfxxxx17
+    - sfxxxx18
+    - sfxxxx19
+    - sfxxxx20
+    - sfxxxx21
+    - sfxxxx22
+    - sfxxxx23
+    - sfxxxx24
+    - sfxxxx25
+    - sfxxxx26
+    - sfxxxx27
+    - sfxxxx28
+    - sfxxxx29
+
     - 0001.vga
     - 0002.vga
     - 0011.vga
@@ -805,8 +903,7 @@ files:
     - 1622.vga
     - 1631.vga
     - 1632.vga
-    - gamepc
-    - icon.dat
+    - gamepc_dos
     - mod0.mus
     - mod1.mus
     - mod10.mus
@@ -843,36 +940,6 @@ files:
     - mod7.mus
     - mod8.mus
     - mod9.mus
-    - sfxxxx02
-    - sfxxxx03
-    - sfxxxx04
-    - sfxxxx05
-    - sfxxxx06
-    - sfxxxx07
-    - sfxxxx08
-    - sfxxxx09
-    - sfxxxx10
-    - sfxxxx11
-    - sfxxxx12
-    - sfxxxx13
-    - sfxxxx14
-    - sfxxxx15
-    - sfxxxx16
-    - sfxxxx17
-    - sfxxxx18
-    - sfxxxx19
-    - sfxxxx20
-    - sfxxxx21
-    - sfxxxx22
-    - sfxxxx23
-    - sfxxxx24
-    - sfxxxx25
-    - sfxxxx26
-    - sfxxxx27
-    - sfxxxx28
-    - sfxxxx29
-    - simon.gme
-    - simon.wav
     - stings1.mus
     - stings2.mus
     - stings3.mus
@@ -882,7 +949,7 @@ files:
     - stings7.mus
     - stings8.mus
     - stings9.mus
-    - stripped.txt
+    - stripped.txt_dos
     - tables01
     - tables02
     - tables03
@@ -913,7 +980,7 @@ files:
     - tables28
     - tables29
     - tables30
-    - tbllist
+    #- tbllist
     - text02
     - text03
     - text04
@@ -943,6 +1010,18 @@ files:
     - text29
     - text30
     - manual.pdf
+
+size_and_md5: |
+  36152     d22302abf44219f95d50f2faa807dd1a gamepc
+  36980     465eed710cc242b2de7dc77edd467c4c gamepc_dos
+  252       a27e87a9ba21212d769804b3df47bfb2 stripped.txt
+  252       c95a0a1ee973e19c2a1c5d12026c139f stripped.txt_dos
+  # identical in DOS floppy & WIN CD versions
+  711       d198a80de2c59e4a0cd24b98814849e8 tbllist
+
+  1377880   fb363ad416e73e8644c6f17bbbe0c4d9 manual.pdf
+  91153476  298f453852f4b057e80e255ad713d32e setup_simon_the_sorcerer.exe
+  103370464 cf6a001535597291a86409446be133bd setup_simon_the_sorcerer_2.0.0.18.exe
 
 cksums: |
   _ 1000      0001.vga
@@ -1270,7 +1349,6 @@ cksums: |
   _ 8872      1622.vga
   _ 3136      1631.vga
   _ 33274     1632.vga
-  _ 36152     gamepc
   _ 14361     icon.dat
   _ 8900      mod0.mus
   _ 12166     mod1.mus
@@ -1347,7 +1425,6 @@ cksums: |
   _ 924       stings7.mus
   _ 997       stings8.mus
   _ 545       stings9.mus
-  _ 252       stripped.txt
   _ 886       tables01
   _ 7360      tables02
   _ 13246     tables03
@@ -1378,7 +1455,6 @@ cksums: |
   _ 8604      tables28
   _ 13479     tables29
   _ 930       tables30
-  _ 711       tbllist
   _ 6280      text02
   _ 1864      text03
   _ 3364      text04
@@ -1407,9 +1483,6 @@ cksums: |
   _ 2714      text28
   _ 6250      text29
   _ 39        text30
-
-  _ 1377880   manual.pdf
-  _ 91153476  setup_simon_the_sorcerer.exe
 
 md5sums: |
   91dc8113a8052dfa5c9f0985579f25e1  0001.vga
@@ -1737,7 +1810,6 @@ md5sums: |
   249fa45846aa1806884cbd0433811993  1622.vga
   4ed436c800a621f0d603374620acf389  1631.vga
   4ef4559b64113ad265c0ea2250900400  1632.vga
-  d22302abf44219f95d50f2faa807dd1a  gamepc
   4184de25c7a3f4cbabf7b7af0691b093  icon.dat
   9f1c0cdbf67cd09e5762ff2f12cdcf89  mod0.mus
   66ae77acfffe042b3cf96008c0f1a951  mod1.mus
@@ -1814,7 +1886,6 @@ md5sums: |
   f19e9c651ad508501618a347821f0759  stings7.mus
   49918ddf1f47bfbcb97fb56a7f5b8bba  stings8.mus
   59812c462fcfc91697bb8fca8d68497f  stings9.mus
-  a27e87a9ba21212d769804b3df47bfb2  stripped.txt
   526a81c4dfe10ddb86125b3f925ebe90  tables01
   56b7995f1705306013fea31e51907b9f  tables02
   5e9767ad7c2a5118a8efdd483b32cdc6  tables03
@@ -1845,7 +1916,6 @@ md5sums: |
   e55a6ce402b9e8beb2b1db50d3ef67f2  tables28
   6f4f4c3849ea4e0980e6a2f0734a2d90  tables29
   f580c23628c06d4042f570095a065b99  tables30
-  d198a80de2c59e4a0cd24b98814849e8  tbllist
   fc502adfb66f6939316a6bfda8541153  text02
   cbef3a70f8ff96d6794811dd3776456e  text03
   e60eab4185aa5eb7f338d87987c86363  text04
@@ -1875,9 +1945,7 @@ md5sums: |
   98e18519ef242e8d6ba7504bdb938d3d  text29
   e7eef415d3e5125d0a40291fb331f568  text30
 
-  fb363ad416e73e8644c6f17bbbe0c4d9  manual.pdf
-  298f453852f4b057e80e255ad713d32e  setup_simon_the_sorcerer.exe
-
 sha1sums: |
   05ef24a6ce88f2ac12d566e1b32e92deac273888  setup_simon_the_sorcerer.exe
+  159d290c6e1ba7a642652eb50fa26fbcd77c48d3  setup_simon_the_sorcerer_2.0.0.18.exe
 ...
