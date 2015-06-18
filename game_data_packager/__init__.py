@@ -926,6 +926,8 @@ class GameData(object):
                 setattr(f, k, kwargs[k])
 
             assert 'optional' not in data, filename
+            if 'look_for' in data and 'install_as' in data:
+                assert data['look_for'] != [data['install_as']], filename
             for k in (
                     'alternatives',
                     'distinctive_name',
