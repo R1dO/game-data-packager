@@ -81,31 +81,23 @@ packages:
 files:
   maphead.bs6_old:
     install_as: maphead.bs6
-    look_for: [maphead.bs6]
   maptemp.bs6_old:
     install_as: maptemp.bs6
-    look_for: [maptemp.bs6]
   svswap.bs6_old:
     install_as: svswap.bs6
-    look_for: [svswap.bs6]
   vgadict.bs6_old:
     install_as: vgadict.bs6
-    look_for: [vgadict.bs6]
   vgagraph.bs6_old:
     install_as: vgagraph.bs6
-    look_for: [vgagraph.bs6]
   vgahead.bs6_old:
     install_as: vgahead.bs6
-    look_for: [vgahead.bs6]
   vswap.bs6_old:
     install_as: vswap.bs6
-    look_for: [vswap.bs6]
 
   manual.pdf:
     install_to: $docdir
   manual.pdf_2:
     install_to: $docdir
-    look_for: [manual.pdf]
     install_as: manual.pdf
 
   setup_blake_stone_aliens_of_gold_2.0.0.2.exe:
