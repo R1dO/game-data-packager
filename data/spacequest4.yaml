@@ -75,13 +75,10 @@ files:
     - version
 
   resource.000_dos:
-    look_for: [resource.000]
     install_as: resource.000
   resource.map_dos:
-    look_for: [resource.map]
     install_as: resource.map
   version_dos:
-    look_for: [version]
     install_as: version
 
 cksums: |
