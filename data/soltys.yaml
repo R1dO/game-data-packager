@@ -59,13 +59,10 @@ files:
     - license.txt_pl
   vol.cat_pl:
     install_as: vol.cat
-    look_for: [vol.cat]
   vol.dat_pl:
     install_as: vol.dat
-    look_for: [vol.dat]
   license.txt_pl:
     install_as: license.txt
-    look_for: [license.txt]
 
   soltys-es-v1.0.zip:
     download: http://prdownloads.sourceforge.net/scummvm/soltys-es-v1.0.zip?download
@@ -78,10 +75,8 @@ files:
     - license.txt
   vol.cat_es:
     install_as: vol.cat
-    look_for: [vol.cat]
   vol.dat_es:
     install_as: vol.dat
-    look_for: [vol.dat]
 
 cksums: |
   _ 3484518   soltys-en-v1.0.zip
