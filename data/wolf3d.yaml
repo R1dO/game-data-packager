@@ -121,28 +121,20 @@ files:
       - gamemaps.wl6
 
   audiohed.wl6_1.0:
-    look_for: [audiohed.wl6]
     install_as: audiohed.wl6
   audiot.wl6_1.0:
-    look_for: [audiot.wl6]
     install_as: audiot.wl6
   vgadict.wl6_1.0:
-    look_for: [vgadict.wl6]
     install_as: vgadict.wl6
   vgagraph.wl6_1.0:
-    look_for: [vgagraph.wl6]
     install_as: vgagraph.wl6
   vgahead.wl6_1.0:
-    look_for: [vgahead.wl6]
     install_as: vgahead.wl6
   vswap.wl6_1.0:
-    look_for: [vswap.wl6]
     install_as: vswap.wl6
   maphead.wl6_1.2:
-    look_for: [maphead.wl6]
     install_as: maphead.wl6
   gamemaps.wl6_1.2:
-    look_for: [gamemaps.wl6]
     install_as: gamemaps.wl6
   maphead.wl6_1.1:
     look_for: [maphead.wl6]
@@ -158,14 +150,11 @@ files:
     - vgadict.wl6_alt
     - vgadict.wl6_wl6a
   vgadict.wl6_steam:
-    look_for:
-    - vgadict.wl6
+    look_for: [vgadict.wl6]
   vgadict.wl6_alt:
-    look_for:
-    - vgadict.wl6
+    look_for: [vgadict.wl6]
   vgadict.wl6_wl6a:
-    look_for:
-    - vgadict.wl6
+    look_for: [vgadict.wl6]
 
   vgagraph.wl6:
     alternatives:
