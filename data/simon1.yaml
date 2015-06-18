@@ -48,6 +48,50 @@ packages:
     optional:
     - manual.pdf
 
+  simon1-de-data:
+    lang: de
+    debian:
+      provides: simon1-data
+    gog:
+      url: simon_the_sorcerer
+    install:
+    - gamepc_de
+    - icon.dat
+    - simon.gme_de
+    - simon.mp3
+    - stripped.txt_de
+    - tbllist
+    - sfxxxx02
+    - sfxxxx03
+    - sfxxxx04
+    - sfxxxx05
+    - sfxxxx06
+    - sfxxxx07
+    - sfxxxx08
+    - sfxxxx09
+    - sfxxxx10
+    - sfxxxx11
+    - sfxxxx12
+    - sfxxxx13
+    - sfxxxx14
+    - sfxxxx15
+    - sfxxxx16
+    - sfxxxx17
+    - sfxxxx18
+    - sfxxxx19
+    - sfxxxx20
+    - sfxxxx21
+    - sfxxxx22
+    - sfxxxx23
+    - sfxxxx24
+    - sfxxxx25
+    - sfxxxx26
+    - sfxxxx27
+    - sfxxxx28
+    - sfxxxx29
+    optional:
+    - manual.pdf
+
   simon1-dos-en-data:
     better_version: simon1-en-data
     gog:
@@ -492,6 +536,16 @@ files:
     install_as: gamepc
   stripped.txt_dos:
     install_as: stripped.txt
+
+  gamepc_de:
+    install_as: gamepc
+  simon.gme_de:
+    install_as: simon.gme
+  stripped.txt_de:
+    install_as: stripped.txt
+
+  gamepc_de_dos:
+    install_as: gamepc
 
   manual.pdf:
     install_to: $docdir
@@ -1011,17 +1065,97 @@ files:
     - text30
     - manual.pdf
 
+  setup_simon_the_sorcerer_german_2.0.0.18.exe:
+    unpack:
+      format: innoextract
+      suffix: _de
+    provides:
+    - gamepc_de
+    - icon.dat
+    - simon.gme_de
+    - simon.mp3
+    - stripped.txt_de
+    - tbllist
+    - sfxxxx02
+    - sfxxxx03
+    - sfxxxx04
+    - sfxxxx05
+    - sfxxxx06
+    - sfxxxx07
+    - sfxxxx08
+    - sfxxxx09
+    - sfxxxx10
+    - sfxxxx11
+    - sfxxxx12
+    - sfxxxx13
+    - sfxxxx14
+    - sfxxxx15
+    - sfxxxx16
+    - sfxxxx17
+    - sfxxxx18
+    - sfxxxx19
+    - sfxxxx20
+    - sfxxxx21
+    - sfxxxx22
+    - sfxxxx23
+    - sfxxxx24
+    - sfxxxx25
+    - sfxxxx26
+    - sfxxxx27
+    - sfxxxx28
+    - sfxxxx29
+    - manual.pdf
+
 size_and_md5: |
   36152     d22302abf44219f95d50f2faa807dd1a gamepc
   36980     465eed710cc242b2de7dc77edd467c4c gamepc_dos
+  29671     ecc01a02c9b97b49d0b4191a346b0940 gamepc_de
+  38484     069a619f3880393441e6d9d968885f11 gamepc_de_dos
+
+  14361     4184de25c7a3f4cbabf7b7af0691b093 icon.dat
+  7030377   3cd1632bb79ad45619c569ff396bccdb simon.gme
+  6947542   0efd05f8f9e41a0a0cbeb038a9403661 simon.gme_de
+  170374592 1cdac8d24b4c8c6c8bde6d86e2649faa simon.wav
+  65045822  1b0a076dc13c8c736a20c01b5e050a40 simon.mp3
   252       a27e87a9ba21212d769804b3df47bfb2 stripped.txt
   252       c95a0a1ee973e19c2a1c5d12026c139f stripped.txt_dos
+  252       40d68bec54042ef930f084ad9a4342a1 stripped.txt_de
   # identical in DOS floppy & WIN CD versions
   711       d198a80de2c59e4a0cd24b98814849e8 tbllist
+
+  213908    64dabb0a8686156fda70255663decd26 sfxxxx02
+  172478    d18ec7f053844d72ca95d4c3a23c5207 sfxxxx03
+  281658    162c367aa3226878c01d51960a10d498 sfxxxx04
+  602632    afe9d018658da8d77c7b09103f88d8d5 sfxxxx05
+  185706    be6fb6c7d0804267a5b2a333927949b6 sfxxxx06
+  144598    af96ec96a59dd5c185f9dbedcbf76eeb sfxxxx07
+  198240    4c679a7424be2fb6efc8dc1aa30afe0b sfxxxx08
+  82836     21251285b7a2caa3e9d7f329903ff95a sfxxxx09
+  137096    c70d7666ae050a9827c851a94e18afec sfxxxx10
+  71358     0d4e74674939164b79ef17e31392bbe7 sfxxxx11
+  254618    63980680c3bf08e3714cb329f2f1a035 sfxxxx12
+  245210    230eb06d40520df50789b2014ae25467 sfxxxx13
+  91162     e44cce87813d18c69e9e3422b4583cdd sfxxxx14
+  441822    facd486734769d1eaa23eb2d8733d8f3 sfxxxx15
+  201114    ff2716d762c58a924d609f0e7726d1bd sfxxxx16
+  337438    e14548ba784c5827686af7ff6fba7bb6 sfxxxx17
+  172478    d18ec7f053844d72ca95d4c3a23c5207 sfxxxx18
+  172478    d18ec7f053844d72ca95d4c3a23c5207 sfxxxx19
+  189804    a23510cdf158fe30972b3a8936840761 sfxxxx20
+  371292    77bb74f72b2f09959ba99ac67406077d sfxxxx21
+  212580    32de4e5e0ea428fd4169872229253129 sfxxxx22
+  256384    dfa9ff7e36ad348141000de3f5e90783 sfxxxx23
+  53136     4fab3df8bdfddc07b965c6b85aab0415 sfxxxx24
+  144830    a04c4f5ab516e8051d9078dcf3736963 sfxxxx25
+  269732    b3f963a9fa41e0808a922f00434c7d51 sfxxxx26
+  184098    56c535c7279c4aedc387be45d36a8780 sfxxxx27
+  155624    a1398bf46a9d598dfde191a1581c646e sfxxxx28
+  644710    bf955acd71814051b508134a1960a2a7 sfxxxx29
 
   1377880   fb363ad416e73e8644c6f17bbbe0c4d9 manual.pdf
   91153476  298f453852f4b057e80e255ad713d32e setup_simon_the_sorcerer.exe
   103370464 cf6a001535597291a86409446be133bd setup_simon_the_sorcerer_2.0.0.18.exe
+  96465664  7c9b52b7523e0c2f9eae9cb5efb1f0ef setup_simon_the_sorcerer_german_2.0.0.18.exe
 
 cksums: |
   _ 1000      0001.vga
@@ -1349,7 +1483,6 @@ cksums: |
   _ 8872      1622.vga
   _ 3136      1631.vga
   _ 33274     1632.vga
-  _ 14361     icon.dat
   _ 8900      mod0.mus
   _ 12166     mod1.mus
   _ 3138      mod10.mus
@@ -1386,36 +1519,6 @@ cksums: |
   _ 9730      mod7.mus
   _ 6014      mod8.mus
   _ 4742      mod9.mus
-  _ 213908    sfxxxx02
-  _ 172478    sfxxxx03
-  _ 281658    sfxxxx04
-  _ 602632    sfxxxx05
-  _ 185706    sfxxxx06
-  _ 144598    sfxxxx07
-  _ 198240    sfxxxx08
-  _ 82836     sfxxxx09
-  _ 137096    sfxxxx10
-  _ 71358     sfxxxx11
-  _ 254618    sfxxxx12
-  _ 245210    sfxxxx13
-  _ 91162     sfxxxx14
-  _ 441822    sfxxxx15
-  _ 201114    sfxxxx16
-  _ 337438    sfxxxx17
-  _ 172478    sfxxxx18
-  _ 172478    sfxxxx19
-  _ 189804    sfxxxx20
-  _ 371292    sfxxxx21
-  _ 212580    sfxxxx22
-  _ 256384    sfxxxx23
-  _ 53136     sfxxxx24
-  _ 144830    sfxxxx25
-  _ 269732    sfxxxx26
-  _ 184098    sfxxxx27
-  _ 155624    sfxxxx28
-  _ 644710    sfxxxx29
-  _ 7030377   simon.gme
-  _ 170374592 simon.wav
   _ 674       stings1.mus
   _ 804       stings2.mus
   _ 656       stings3.mus
@@ -1810,7 +1913,6 @@ md5sums: |
   249fa45846aa1806884cbd0433811993  1622.vga
   4ed436c800a621f0d603374620acf389  1631.vga
   4ef4559b64113ad265c0ea2250900400  1632.vga
-  4184de25c7a3f4cbabf7b7af0691b093  icon.dat
   9f1c0cdbf67cd09e5762ff2f12cdcf89  mod0.mus
   66ae77acfffe042b3cf96008c0f1a951  mod1.mus
   10b3f56da3ec0811b728db2b1e681798  mod10.mus
@@ -1847,36 +1949,6 @@ md5sums: |
   c706b36f0828ef2b4f6bca6560c69c54  mod7.mus
   56fc9152c1f6bed18915d842a9e07c2e  mod8.mus
   3883a23a0b14e3579eacf83347172104  mod9.mus
-  64dabb0a8686156fda70255663decd26  sfxxxx02
-  d18ec7f053844d72ca95d4c3a23c5207  sfxxxx03
-  162c367aa3226878c01d51960a10d498  sfxxxx04
-  afe9d018658da8d77c7b09103f88d8d5  sfxxxx05
-  be6fb6c7d0804267a5b2a333927949b6  sfxxxx06
-  af96ec96a59dd5c185f9dbedcbf76eeb  sfxxxx07
-  4c679a7424be2fb6efc8dc1aa30afe0b  sfxxxx08
-  21251285b7a2caa3e9d7f329903ff95a  sfxxxx09
-  c70d7666ae050a9827c851a94e18afec  sfxxxx10
-  0d4e74674939164b79ef17e31392bbe7  sfxxxx11
-  63980680c3bf08e3714cb329f2f1a035  sfxxxx12
-  230eb06d40520df50789b2014ae25467  sfxxxx13
-  e44cce87813d18c69e9e3422b4583cdd  sfxxxx14
-  facd486734769d1eaa23eb2d8733d8f3  sfxxxx15
-  ff2716d762c58a924d609f0e7726d1bd  sfxxxx16
-  e14548ba784c5827686af7ff6fba7bb6  sfxxxx17
-  d18ec7f053844d72ca95d4c3a23c5207  sfxxxx18
-  d18ec7f053844d72ca95d4c3a23c5207  sfxxxx19
-  a23510cdf158fe30972b3a8936840761  sfxxxx20
-  77bb74f72b2f09959ba99ac67406077d  sfxxxx21
-  32de4e5e0ea428fd4169872229253129  sfxxxx22
-  dfa9ff7e36ad348141000de3f5e90783  sfxxxx23
-  4fab3df8bdfddc07b965c6b85aab0415  sfxxxx24
-  a04c4f5ab516e8051d9078dcf3736963  sfxxxx25
-  b3f963a9fa41e0808a922f00434c7d51  sfxxxx26
-  56c535c7279c4aedc387be45d36a8780  sfxxxx27
-  a1398bf46a9d598dfde191a1581c646e  sfxxxx28
-  bf955acd71814051b508134a1960a2a7  sfxxxx29
-  3cd1632bb79ad45619c569ff396bccdb  simon.gme
-  1cdac8d24b4c8c6c8bde6d86e2649faa  simon.wav
   d0538e241414d53d985a8f19c8dc2168  stings1.mus
   408181434220388241706eee62bc34e6  stings2.mus
   27b50a73436e9a75bae870fa5510ae2c  stings3.mus
@@ -1948,4 +2020,5 @@ md5sums: |
 sha1sums: |
   05ef24a6ce88f2ac12d566e1b32e92deac273888  setup_simon_the_sorcerer.exe
   159d290c6e1ba7a642652eb50fa26fbcd77c48d3  setup_simon_the_sorcerer_2.0.0.18.exe
+  a71e559d251c020da4467717b59bb8addf811c22  setup_simon_the_sorcerer_german_2.0.0.18.exe
 ...
