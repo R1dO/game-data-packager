@@ -44,10 +44,11 @@ games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
 langs_order = sorted(langs, key=langs.get, reverse=True)
 
 html = open('/home/tchet/Utilitaires/Homepage/babel.html', 'w', encoding='latin1')
-html.write('''
+html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>Game-Data-Packager</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
 </head>
 <table border=1 cellspacing=0>
 <tr>
@@ -61,9 +62,10 @@ html.write('</tr>\n')
 # BODY
 last_genre = None
 for game in games:
+    html.write('<tr>\n')
     genre = game['genre']
     if genre != last_genre:
-        html.write('<tr><td rowspan=%i>%s</td>\n' % (genres[genre], genre))
+        html.write('<td rowspan=%i>%s</td>\n' % (genres[genre], genre))
         last_genre = genre
     html.write('  <td>%s</td>\n' % game['longname'])
     for lang in langs_order:
