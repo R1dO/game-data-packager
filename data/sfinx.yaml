@@ -50,13 +50,10 @@ files:
     - vol.dat_pl
     - license.txt_pl
   vol.cat_pl:
-    look_for: [vol.cat]
     install_as: vol.cat
   vol.dat_pl:
-    look_for: [vol.dat]
     install_as: vol.dat
   license.txt_pl:
-    look_for: [license.txt]
     install_as: license.txt
 
 cksums: |
