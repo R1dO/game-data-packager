@@ -15,7 +15,6 @@ packages:
     version: '1.1'
     install_to_docdir:
     - diary
-    - manual
     install:
     - dreamweb.c00
     - dreamweb.c01
@@ -121,7 +120,6 @@ packages:
     - dreamweb.vol
     - dreamweb.wav
     - speech/r01c0000.raw
-    - speech/r01c0000.wav
     - speech/r01c0004.raw
     - speech/r01c0005.raw
     - speech/r01c0006.raw
@@ -581,7 +579,6 @@ packages:
     - speech/t83t0000.raw
     - speech/t83t0001.raw
     - speech/t83t0002.raw
-    - speech/t83t0040.old
     - speech/t83t0040.raw
     - speech/t83t0041.raw
     - speech/t83t0042.raw
@@ -593,6 +590,8 @@ packages:
     - speech/t83t0049.raw
     - track01.flac
     optional:
+    - speech/r01c0000.wav
+    - speech/t83t0040.old
     - diary/coveren.png
     - diary/diary.html
     - diary/diary.txt
@@ -600,11 +599,11 @@ packages:
     - diary/symbol_p23.gif
     - diary/symbol_p25.gif
     - diary/symbol_p27.gif
-    - manual/coveren.png
-    - manual/manual.htm
-    - manual/manual.txt
-    - manual/screenen.gif
-    - manual/symbol.gif
+    - coveren.png
+    - manual.htm
+    - manual.txt
+    - screenen.gif
+    - symbol.gif
     license:
     - license.txt
 
@@ -614,7 +613,6 @@ packages:
     version: '1.1'
     install_to_docdir:
     - diary
-    - manual
     install:
     - dreamweb.c00
     - dreamweb.c01
@@ -1197,13 +1195,603 @@ packages:
     - diary/symbol_p23.gif
     - diary/symbol_p25.gif
     - diary/symbol_p27.gif
-    - manual/coveren.png
-    - manual/manual.htm
-    - manual/manual.txt
-    - manual/screenen.gif
-    - manual/symbol.gif
+    - coveren.png
+    - manual.htm
+    - manual.txt
+    - screenen.gif
+    - symbol.gif
     license:
     - license.txt
+
+  dreamweb-fr-data:
+    lang: fr
+    debian:
+      provides: dreamweb-data
+    version: '1.1'
+    symlinks: 
+      usr/share/games/dreamweb-fr/french:
+        usr/share/games/dreamweb-fr/speech
+    install:
+    - dreamweb.wav
+    - dreamwfr.c00
+    - dreamwfr.c01
+    - dreamwfr.c02
+    - dreamwfr.g00
+    - dreamwfr.g01
+    - dreamwfr.g02
+    - dreamwfr.g03
+    - dreamwfr.g04
+    - dreamwfr.g05
+    - dreamwfr.g06
+    - dreamwfr.g07
+    - dreamwfr.g08
+    - dreamwfr.g09
+    - dreamwfr.g10
+    - dreamwfr.g11
+    - dreamwfr.g12
+    - dreamwfr.g13
+    - dreamwfr.g14
+    - dreamwfr.g15
+    - dreamwfr.i00
+    - dreamwfr.i01
+    - dreamwfr.i02
+    - dreamwfr.i03
+    - dreamwfr.i04
+    - dreamwfr.i05
+    - dreamwfr.i06
+    - dreamwfr.p01
+    - dreamwfr.pal
+    - dreamwfr.r00
+    - dreamwfr.r01
+    - dreamwfr.r02
+    - dreamwfr.r03
+    - dreamwfr.r04
+    - dreamwfr.r05
+    - dreamwfr.r06
+    - dreamwfr.r07
+    - dreamwfr.r08
+    - dreamwfr.r09
+    - dreamwfr.r10
+    - dreamwfr.r11
+    - dreamwfr.r12
+    - dreamwfr.r13
+    - dreamwfr.r14
+    - dreamwfr.r19
+    - dreamwfr.r20
+    - dreamwfr.r21
+    - dreamwfr.r22
+    - dreamwfr.r23
+    - dreamwfr.r24
+    - dreamwfr.r25
+    - dreamwfr.r26
+    - dreamwfr.r27
+    - dreamwfr.r28
+    - dreamwfr.r29
+    - dreamwfr.r45
+    - dreamwfr.r46
+    - dreamwfr.r47
+    - dreamwfr.r50
+    - dreamwfr.r52
+    - dreamwfr.r53
+    - dreamwfr.r54
+    - dreamwfr.r55
+    - dreamwfr.s00
+    - dreamwfr.s02
+    - dreamwfr.t01
+    - dreamwfr.t02
+    - dreamwfr.t10
+    - dreamwfr.t11
+    - dreamwfr.t12
+    - dreamwfr.t13
+    - dreamwfr.t20
+    - dreamwfr.t21
+    - dreamwfr.t22
+    - dreamwfr.t23
+    - dreamwfr.t24
+    - dreamwfr.t50
+    - dreamwfr.t51
+    - dreamwfr.t80
+    - dreamwfr.t81
+    - dreamwfr.t82
+    - dreamwfr.t83
+    - dreamwfr.t84
+    - dreamwfr.v01
+    - dreamwfr.v02
+    - dreamwfr.v05
+    - dreamwfr.v06
+    - dreamwfr.v08
+    - dreamwfr.v09
+    - dreamwfr.v10
+    - dreamwfr.v11
+    - dreamwfr.v12
+    - dreamwfr.v14
+    - dreamwfr.v19
+    - dreamwfr.v22
+    - dreamwfr.v23
+    - dreamwfr.v30
+    - dreamwfr.v33
+    - dreamwfr.v34
+    - dreamwfr.v35
+    - dreamwfr.v99
+    - dreamwfr.vol
+    - speech/r01c0000.raw
+    - speech/r01c0004.raw
+    - speech/r01c0005.raw
+    - speech/r01c0006.raw
+    - speech/r01c0007.raw
+    - speech/r01c0008.raw
+    - speech/r01c0064.raw
+    - speech/r01c0068.raw
+    - speech/r01c0069.raw
+    - speech/r01c0070.raw
+    - speech/r01c0071.raw
+    - speech/r01c0072.raw
+    - speech/r01c0073.raw
+    - speech/r01c0112.raw
+    - speech/r01c0113.raw
+    - speech/r01c0114.raw
+    - speech/r01c0115.raw
+    - speech/r01c0128.raw
+    - speech/r01c0132.raw
+    - speech/r01c0133.raw
+    - speech/r01c0134.raw
+    - speech/r01c0135.raw
+    - speech/r01c0136.raw
+    - speech/r01c0137.raw
+    - speech/r01c0138.raw
+    - speech/r01c0139.raw
+    - speech/r01c0140.raw
+    - speech/r01c0141.raw
+    - speech/r01c0142.raw
+    - speech/r01c0143.raw
+    - speech/r01c0144.raw
+    - speech/r01c0176.raw
+    - speech/r01c0177.raw
+    - speech/r01c0178.raw
+    - speech/r01c0192.raw
+    - speech/r01c0196.raw
+    - speech/r01c0197.raw
+    - speech/r01c0199.raw
+    - speech/r01c0240.raw
+    - speech/r01c0241.raw
+    - speech/r01c0256.raw
+    - speech/r01c0260.raw
+    - speech/r01c0261.raw
+    - speech/r01c0262.raw
+    - speech/r01c0263.raw
+    - speech/r01c0264.raw
+    - speech/r01c0265.raw
+    - speech/r01c0266.raw
+    - speech/r01c0267.raw
+    - speech/r01c0268.raw
+    - speech/r01c0269.raw
+    - speech/r01c0270.raw
+    - speech/r01c0304.raw
+    - speech/r01c0305.raw
+    - speech/r01c0320.raw
+    - speech/r01c0324.raw
+    - speech/r01c0325.raw
+    - speech/r01c0326.raw
+    - speech/r01c0327.raw
+    - speech/r01c0328.raw
+    - speech/r01c0329.raw
+    - speech/r02c0000.raw
+    - speech/r02c0004.raw
+    - speech/r02c0005.raw
+    - speech/r02c0006.raw
+    - speech/r02c0007.raw
+    - speech/r02c0008.raw
+    - speech/r02c0009.raw
+    - speech/r02c0010.raw
+    - speech/r02c0011.raw
+    - speech/r02c0012.raw
+    - speech/r02c0013.raw
+    - speech/r02c0014.raw
+    - speech/r02c0015.raw
+    - speech/r02c0016.raw
+    - speech/r02c0017.raw
+    - speech/r02c0018.raw
+    - speech/r02c0019.raw
+    - speech/r02c0048.raw
+    - speech/r02c0049.raw
+    - speech/r02c0050.raw
+    - speech/r02c0064.raw
+    - speech/r02c0068.raw
+    - speech/r02c0069.raw
+    - speech/r02c0070.raw
+    - speech/r02c0071.raw
+    - speech/r02c0072.raw
+    - speech/r02c0073.raw
+    - speech/r02c0074.raw
+    - speech/r02c0075.raw
+    - speech/r02c0076.raw
+    - speech/r02c0077.raw
+    - speech/r02c0078.raw
+    - speech/r02c0079.raw
+    - speech/r02c0112.raw
+    - speech/r02c0113.raw
+    - speech/r02c0114.raw
+    - speech/r02c0115.raw
+    - speech/r04c0000.raw
+    - speech/r04c0004.raw
+    - speech/r04c0005.raw
+    - speech/r04c0006.raw
+    - speech/r04c0007.raw
+    - speech/r04c0008.raw
+    - speech/r04c0009.raw
+    - speech/r04c0010.raw
+    - speech/r04c0048.raw
+    - speech/r04c0049.raw
+    - speech/r05c0000.raw
+    - speech/r05c0004.raw
+    - speech/r05c0005.raw
+    - speech/r05c0006.raw
+    - speech/r05c0007.raw
+    - speech/r05c0008.raw
+    - speech/r05c0009.raw
+    - speech/r05c0010.raw
+    - speech/r05c0011.raw
+    - speech/r05c0012.raw
+    - speech/r05c0013.raw
+    - speech/r05c0014.raw
+    - speech/r05c0016.raw
+    - speech/r05c0017.raw
+    - speech/r05c0020.raw
+    - speech/r05c0021.raw
+    - speech/r05c0024.raw
+    - speech/r05c0025.raw
+    - speech/r05c0028.raw
+    - speech/r05c0029.raw
+    - speech/r05c0030.raw
+    - speech/r05c0032.raw
+    - speech/r05c0033.raw
+    - speech/r05c0034.raw
+    - speech/r05c0036.raw
+    - speech/r05c0040.raw
+    - speech/r05c0048.raw
+    - speech/r05c0049.raw
+    - speech/r05c0064.raw
+    - speech/r05c0068.raw
+    - speech/r05c0069.raw
+    - speech/r05c0070.raw
+    - speech/r05c0071.raw
+    - speech/r05c0072.raw
+    - speech/r05c0112.raw
+    - speech/r05c0113.raw
+    - speech/r05c0114.raw
+    - speech/r05c0128.raw
+    - speech/r05c0132.raw
+    - speech/r05c0133.raw
+    - speech/r05c0134.raw
+    - speech/r05c0135.raw
+    - speech/r05c0136.raw
+    - speech/r05c0137.raw
+    - speech/r05c0138.raw
+    - speech/r05c0176.raw
+    - speech/r05c0177.raw
+    - speech/r05c0178.raw
+    - speech/r05c0192.raw
+    - speech/r05c0196.raw
+    - speech/r05c0197.raw
+    - speech/r05c0198.raw
+    - speech/r05c0199.raw
+    - speech/r05c0200.raw
+    - speech/r05c0201.raw
+    - speech/r05c0202.raw
+    - speech/r05c0240.raw
+    - speech/r05c0241.raw
+    - speech/r07c0000.raw
+    - speech/r07c0004.raw
+    - speech/r07c0005.raw
+    - speech/r07c0006.raw
+    - speech/r07c0007.raw
+    - speech/r07c0008.raw
+    - speech/r07c0009.raw
+    - speech/r07c0010.raw
+    - speech/r07c0011.raw
+    - speech/r07c0012.raw
+    - speech/r07c0013.raw
+    - speech/r07c0048.raw
+    - speech/r07c0049.raw
+    - speech/r07c0064.raw
+    - speech/r08c0000.raw
+    - speech/r08c0004.raw
+    - speech/r08c0005.raw
+    - speech/r08c0006.raw
+    - speech/r08c0007.raw
+    - speech/r08c0008.raw
+    - speech/r08c0009.raw
+    - speech/r08c0010.raw
+    - speech/r08c0011.raw
+    - speech/r08c0012.raw
+    - speech/r08c0048.raw
+    - speech/r08c0049.raw
+    - speech/r08c0050.raw
+    - speech/r08c0051.raw
+    - speech/r08c0064.raw
+    - speech/r08c0068.raw
+    - speech/r08c0069.raw
+    - speech/r08c0070.raw
+    - speech/r08c0071.raw
+    - speech/r08c0072.raw
+    - speech/r08c0073.raw
+    - speech/r08c0112.raw
+    - speech/r08c0113.raw
+    - speech/r08c0128.raw
+    - speech/r23c0000.raw
+    - speech/r23c0004.raw
+    - speech/r23c0005.raw
+    - speech/r23c0006.raw
+    - speech/r23c0007.raw
+    - speech/r23c0008.raw
+    - speech/r23c0009.raw
+    - speech/r23c0010.raw
+    - speech/r23c0011.raw
+    - speech/r23c0012.raw
+    - speech/r23c0013.raw
+    - speech/r23c0014.raw
+    - speech/r23c0015.raw
+    - speech/r23c0016.raw
+    - speech/r23c0017.raw
+    - speech/r23c0018.raw
+    - speech/r23c0048.raw
+    - speech/r23c0049.raw
+    - speech/r23c0064.raw
+    - speech/r23c0068.raw
+    - speech/r23c0069.raw
+    - speech/r23c0070.raw
+    - speech/r23c0071.raw
+    - speech/r23c0072.raw
+    - speech/r23c0073.raw
+    - speech/r23c0128.raw
+    - speech/r23c0132.raw
+    - speech/r23c0133.raw
+    - speech/r23c0134.raw
+    - speech/r23c0135.raw
+    - speech/r23c0136.raw
+    - speech/r23c0137.raw
+    - speech/r23c0176.raw
+    - speech/r23c0177.raw
+    - speech/r23c0192.raw
+    - speech/r23c0196.raw
+    - speech/r23c0197.raw
+    - speech/r23c0198.raw
+    - speech/r23c0199.raw
+    - speech/r23c0240.raw
+    - speech/r23c0241.raw
+    - speech/r23c0256.raw
+    - speech/r23c0260.raw
+    - speech/r23c0261.raw
+    - speech/r23c0262.raw
+    - speech/r23c0263.raw
+    - speech/r23c0264.raw
+    - speech/r23c0265.raw
+    - speech/r23c0266.raw
+    - speech/r23c0267.raw
+    - speech/r23c0268.raw
+    - speech/r23c0269.raw
+    - speech/r23c0304.raw
+    - speech/r23c0305.raw
+    - speech/r23c0306.raw
+    - speech/r23c0320.raw
+    - speech/r23c0324.raw
+    - speech/r23c0325.raw
+    - speech/r23c0326.raw
+    - speech/r23c0327.raw
+    - speech/r23c0328.raw
+    - speech/r23c0329.raw
+    - speech/r23c0330.raw
+    - speech/r23c0368.raw
+    - speech/r23c0369.raw
+    - speech/r23c0370.raw
+    - speech/r23c0384.raw
+    - speech/r23c0388.raw
+    - speech/r23c0389.raw
+    - speech/r23c0390.raw
+    - speech/r23c0391.raw
+    - speech/r23c0432.raw
+    - speech/r23c0433.raw
+    - speech/r23c0448.raw
+    - speech/r23c0512.raw
+    - speech/r23c0516.raw
+    - speech/r23c0517.raw
+    - speech/r23c0576.raw
+    - speech/r23c0580.raw
+    - speech/r23c0581.raw
+    - speech/r23c0582.raw
+    - speech/r23c0640.raw
+    - speech/r23c0644.raw
+    - speech/r23c0645.raw
+    - speech/r23c0688.raw
+    - speech/r23c0689.raw
+    - speech/r23c0690.raw
+    - speech/r23c0691.raw
+    - speech/r24c0000.raw
+    - speech/r24c0004.raw
+    - speech/r24c0005.raw
+    - speech/r24c0006.raw
+    - speech/r24c0007.raw
+    - speech/r24c0008.raw
+    - speech/r24c0009.raw
+    - speech/r24c0010.raw
+    - speech/r24c0011.raw
+    - speech/r24c0012.raw
+    - speech/r24c0013.raw
+    - speech/r24c0014.raw
+    - speech/r24c0048.raw
+    - speech/r24c0049.raw
+    - speech/r24c0050.raw
+    - speech/r24c0051.raw
+    - speech/r24c0064.raw
+    - speech/r24c0068.raw
+    - speech/r24c0069.raw
+    - speech/r24c0070.raw
+    - speech/r24c0071.raw
+    - speech/r24c0072.raw
+    - speech/r24c0073.raw
+    - speech/r24c0074.raw
+    - speech/r24c0075.raw
+    - speech/r24c0076.raw
+    - speech/r24c0077.raw
+    - speech/r24c0112.raw
+    - speech/r24c0113.raw
+    - speech/r24c0114.raw
+    - speech/r24c0115.raw
+    - speech/r27c0000.raw
+    - speech/r27c0004.raw
+    - speech/r27c0005.raw
+    - speech/r27c0006.raw
+    - speech/r27c0007.raw
+    - speech/r27c0008.raw
+    - speech/r27c0009.raw
+    - speech/r27c0048.raw
+    - speech/r27c0049.raw
+    - speech/r29c0000.raw
+    - speech/r29c0004.raw
+    - speech/r29c0005.raw
+    - speech/r29c0006.raw
+    - speech/r29c0007.raw
+    - speech/r29c0008.raw
+    - speech/r29c0009.raw
+    - speech/r29c0010.raw
+    - speech/r29c0011.raw
+    - speech/r29c0012.raw
+    - speech/r29c0048.raw
+    - speech/r29c0049.raw
+    - speech/r29c0050.raw
+    - speech/r45c0000.raw
+    - speech/r45c0004.raw
+    - speech/r45c0005.raw
+    - speech/r45c0006.raw
+    - speech/r45c0008.raw
+    - speech/r45c0010.raw
+    - speech/r45c0011.raw
+    - speech/r45c0012.raw
+    - speech/r45c0013.raw
+    - speech/r45c0014.raw
+    - speech/r45c0016.raw
+    - speech/r45c0018.raw
+    - speech/r45c0019.raw
+    - speech/r45c0048.raw
+    - speech/r45c0049.raw
+    - speech/r45c0064.raw
+    - speech/r45c0068.raw
+    - speech/r45c0070.raw
+    - speech/r45c0072.raw
+    - speech/r45c0073.raw
+    - speech/r45c0074.raw
+    - speech/r45c0075.raw
+    - speech/r45c0076.raw
+    - speech/r45c0077.raw
+    - speech/r45c0078.raw
+    - speech/r45c0080.raw
+    - speech/r45c0082.raw
+    - speech/r45c0112.raw
+    - speech/r45c0128.raw
+    - speech/r45c0132.raw
+    - speech/r45c0133.raw
+    - speech/r45c0134.raw
+    - speech/r45c0136.raw
+    - speech/r45c0138.raw
+    - speech/r45c0139.raw
+    - speech/r45c0140.raw
+    - speech/r45c0141.raw
+    - speech/r45c0142.raw
+    - speech/r45c0143.raw
+    - speech/r45c0176.raw
+    - speech/r45c0192.raw
+    - speech/r45c0196.raw
+    - speech/r45c0197.raw
+    - speech/r45c0198.raw
+    - speech/r45c0200.raw
+    - speech/r45c0202.raw
+    - speech/r45c0204.raw
+    - speech/r45c0205.raw
+    - speech/r45c0206.raw
+    - speech/r45c0207.raw
+    - speech/r45c0208.raw
+    - speech/r45c0210.raw
+    - speech/r45c0240.raw
+    - speech/r45c0241.raw
+    - speech/t50t0012.raw
+    - speech/t50t0030.raw
+    - speech/t50t0031.raw
+    - speech/t80t0042.raw
+    - speech/t80t0043.raw
+    - speech/t80t0045.raw
+    - speech/t80t0047.raw
+    - speech/t80t0049.raw
+    - speech/t80t0050.raw
+    - speech/t80t0051.raw
+    - speech/t80t0052.raw
+    - speech/t80t0053.raw
+    - speech/t80t0055.raw
+    - speech/t82t0008.raw
+    - speech/t82t0009.raw
+    - speech/t82t0010.raw
+    - speech/t82t0011.raw
+    - speech/t82t0014.raw
+    - speech/t82t0015.raw
+    - speech/t82t0016.raw
+    - speech/t82t0017.raw
+    - speech/t82t0018.raw
+    - speech/t82t0019.raw
+    - speech/t82t0020.raw
+    - speech/t82t0021.raw
+    - speech/t82t0022.raw
+    - speech/t82t0023.raw
+    - speech/t82t0024.raw
+    - speech/t82t0025.raw
+    - speech/t82t0026.raw
+    - speech/t82t0027.raw
+    - speech/t82t0028.raw
+    - speech/t82t0029.raw
+    - speech/t82t0030.raw
+    - speech/t82t0031.raw
+    - speech/t82t0040.raw
+    - speech/t82t0041.raw
+    - speech/t82t0042.raw
+    - speech/t82t0043.raw
+    - speech/t82t0044.raw
+    - speech/t82t0045.raw
+    - speech/t82t0046.raw
+    - speech/t82t0047.raw
+    - speech/t82t0048.raw
+    - speech/t82t0049.raw
+    - speech/t82t0050.raw
+    - speech/t82t0051.raw
+    - speech/t82t0052.raw
+    - speech/t82t0053.raw
+    - speech/t82t0054.raw
+    - speech/t82t0055.raw
+    - speech/t82t0056.raw
+    - speech/t82t0057.raw
+    - speech/t82t0058.raw
+    - speech/t82t0059.raw
+    - speech/t82t0060.raw
+    - speech/t82t0061.raw
+    - speech/t82t0062.raw
+    - speech/t83t0000.raw
+    - speech/t83t0001.raw
+    - speech/t83t0002.raw
+    - speech/t83t0040.raw
+    - speech/t83t0041.raw
+    - speech/t83t0042.raw
+    - speech/t83t0043.raw
+    - speech/t83t0044.raw
+    - speech/t83t0045.raw
+    - speech/t83t0046.raw
+    - speech/t83t0047.raw
+    - speech/t83t0049.raw
+    optional:
+    - track1.flac
+    - coverfr.png
+    - manuel.htm
+    - manuel.txt
+    - screenfr.gif
+    - symbol.gif
+    license:
+    - license.txt_fr
 
 files:
   dreamweb-cd-us-1.1.zip:
@@ -1793,12 +2381,23 @@ files:
     - diary/symbol_p23.gif
     - diary/symbol_p25.gif
     - diary/symbol_p27.gif
-    - manual/coveren.png
-    - manual/manual.htm
-    - manual/manual.txt
-    - manual/screenen.gif
-    - manual/symbol.gif
+    - coveren.png
+    - manual.htm
+    - manual.txt
+    - screenen.gif
+    - symbol.gif
     - license.txt
+
+  coveren.png:
+    install_to: $docdir
+  manual.htm:
+    install_to: $docdir
+  manual.txt:
+    install_to: $docdir
+  screenen.gif:
+    install_to: $docdir
+  symbol.gif:
+    install_to: $docdir
 
   dreamweb.r00_uk:
     install_as: dreamweb.r00
@@ -2557,15 +3156,612 @@ files:
     - diary/symbol_p23.gif
     - diary/symbol_p25.gif
     - diary/symbol_p27.gif
-    - manual/coveren.png
-    - manual/manual.htm
-    - manual/manual.txt
-    - manual/screenen.gif
-    - manual/symbol.gif
+    - coveren.png
+    - manual.htm
+    - manual.txt
+    - screenen.gif
+    - symbol.gif
     - license.txt
 
+  #############################
+  # FRENCH                    #
+  #############################
+  license.txt_fr:
+    install_as: license.txt
+  coverfr.png:
+    install_to: $docdir
+  manuel.htm:
+    install_to: $docdir
+  manuel.txt:
+    install_to: $docdir
+  screenfr.gif:
+    install_to: $docdir
+  dreamweb-cd-fr-1.1.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/dreamweb-cd-fr-1.1.zip?download
+    unpack:
+      format: zip
+      distinctive_dirs: False
+    provides:
+    - dreamweb.wav
+    - dreamwfr.c00
+    - dreamwfr.c01
+    - dreamwfr.c02
+    - dreamwfr.g00
+    - dreamwfr.g01
+    - dreamwfr.g02
+    - dreamwfr.g03
+    - dreamwfr.g04
+    - dreamwfr.g05
+    - dreamwfr.g06
+    - dreamwfr.g07
+    - dreamwfr.g08
+    - dreamwfr.g09
+    - dreamwfr.g10
+    - dreamwfr.g11
+    - dreamwfr.g12
+    - dreamwfr.g13
+    - dreamwfr.g14
+    - dreamwfr.g15
+    - dreamwfr.i00
+    - dreamwfr.i01
+    - dreamwfr.i02
+    - dreamwfr.i03
+    - dreamwfr.i04
+    - dreamwfr.i05
+    - dreamwfr.i06
+    - dreamwfr.p01
+    - dreamwfr.pal
+    - dreamwfr.r00
+    - dreamwfr.r01
+    - dreamwfr.r02
+    - dreamwfr.r03
+    - dreamwfr.r04
+    - dreamwfr.r05
+    - dreamwfr.r06
+    - dreamwfr.r07
+    - dreamwfr.r08
+    - dreamwfr.r09
+    - dreamwfr.r10
+    - dreamwfr.r11
+    - dreamwfr.r12
+    - dreamwfr.r13
+    - dreamwfr.r14
+    - dreamwfr.r19
+    - dreamwfr.r20
+    - dreamwfr.r21
+    - dreamwfr.r22
+    - dreamwfr.r23
+    - dreamwfr.r24
+    - dreamwfr.r25
+    - dreamwfr.r26
+    - dreamwfr.r27
+    - dreamwfr.r28
+    - dreamwfr.r29
+    - dreamwfr.r45
+    - dreamwfr.r46
+    - dreamwfr.r47
+    - dreamwfr.r50
+    - dreamwfr.r52
+    - dreamwfr.r53
+    - dreamwfr.r54
+    - dreamwfr.r55
+    - dreamwfr.s00
+    - dreamwfr.s02
+    - dreamwfr.t01
+    - dreamwfr.t02
+    - dreamwfr.t10
+    - dreamwfr.t11
+    - dreamwfr.t12
+    - dreamwfr.t13
+    - dreamwfr.t20
+    - dreamwfr.t21
+    - dreamwfr.t22
+    - dreamwfr.t23
+    - dreamwfr.t24
+    - dreamwfr.t50
+    - dreamwfr.t51
+    - dreamwfr.t80
+    - dreamwfr.t81
+    - dreamwfr.t82
+    - dreamwfr.t83
+    - dreamwfr.t84
+    - dreamwfr.v01
+    - dreamwfr.v02
+    - dreamwfr.v05
+    - dreamwfr.v06
+    - dreamwfr.v08
+    - dreamwfr.v09
+    - dreamwfr.v10
+    - dreamwfr.v11
+    - dreamwfr.v12
+    - dreamwfr.v14
+    - dreamwfr.v19
+    - dreamwfr.v22
+    - dreamwfr.v23
+    - dreamwfr.v30
+    - dreamwfr.v33
+    - dreamwfr.v34
+    - dreamwfr.v35
+    - dreamwfr.v99
+    - dreamwfr.vol
+    - speech/r01c0000.raw
+    - speech/r01c0004.raw
+    - speech/r01c0005.raw
+    - speech/r01c0006.raw
+    - speech/r01c0007.raw
+    - speech/r01c0008.raw
+    - speech/r01c0064.raw
+    - speech/r01c0068.raw
+    - speech/r01c0069.raw
+    - speech/r01c0070.raw
+    - speech/r01c0071.raw
+    - speech/r01c0072.raw
+    - speech/r01c0073.raw
+    - speech/r01c0112.raw
+    - speech/r01c0113.raw
+    - speech/r01c0114.raw
+    - speech/r01c0115.raw
+    - speech/r01c0128.raw
+    - speech/r01c0132.raw
+    - speech/r01c0133.raw
+    - speech/r01c0134.raw
+    - speech/r01c0135.raw
+    - speech/r01c0136.raw
+    - speech/r01c0137.raw
+    - speech/r01c0138.raw
+    - speech/r01c0139.raw
+    - speech/r01c0140.raw
+    - speech/r01c0141.raw
+    - speech/r01c0142.raw
+    - speech/r01c0143.raw
+    - speech/r01c0144.raw
+    - speech/r01c0176.raw
+    - speech/r01c0177.raw
+    - speech/r01c0178.raw
+    - speech/r01c0192.raw
+    - speech/r01c0196.raw
+    - speech/r01c0197.raw
+    - speech/r01c0199.raw
+    - speech/r01c0240.raw
+    - speech/r01c0241.raw
+    - speech/r01c0256.raw
+    - speech/r01c0260.raw
+    - speech/r01c0261.raw
+    - speech/r01c0262.raw
+    - speech/r01c0263.raw
+    - speech/r01c0264.raw
+    - speech/r01c0265.raw
+    - speech/r01c0266.raw
+    - speech/r01c0267.raw
+    - speech/r01c0268.raw
+    - speech/r01c0269.raw
+    - speech/r01c0270.raw
+    - speech/r01c0304.raw
+    - speech/r01c0305.raw
+    - speech/r01c0320.raw
+    - speech/r01c0324.raw
+    - speech/r01c0325.raw
+    - speech/r01c0326.raw
+    - speech/r01c0327.raw
+    - speech/r01c0328.raw
+    - speech/r01c0329.raw
+    - speech/r02c0000.raw
+    - speech/r02c0004.raw
+    - speech/r02c0005.raw
+    - speech/r02c0006.raw
+    - speech/r02c0007.raw
+    - speech/r02c0008.raw
+    - speech/r02c0009.raw
+    - speech/r02c0010.raw
+    - speech/r02c0011.raw
+    - speech/r02c0012.raw
+    - speech/r02c0013.raw
+    - speech/r02c0014.raw
+    - speech/r02c0015.raw
+    - speech/r02c0016.raw
+    - speech/r02c0017.raw
+    - speech/r02c0018.raw
+    - speech/r02c0019.raw
+    - speech/r02c0048.raw
+    - speech/r02c0049.raw
+    - speech/r02c0050.raw
+    - speech/r02c0064.raw
+    - speech/r02c0068.raw
+    - speech/r02c0069.raw
+    - speech/r02c0070.raw
+    - speech/r02c0071.raw
+    - speech/r02c0072.raw
+    - speech/r02c0073.raw
+    - speech/r02c0074.raw
+    - speech/r02c0075.raw
+    - speech/r02c0076.raw
+    - speech/r02c0077.raw
+    - speech/r02c0078.raw
+    - speech/r02c0079.raw
+    - speech/r02c0112.raw
+    - speech/r02c0113.raw
+    - speech/r02c0114.raw
+    - speech/r02c0115.raw
+    - speech/r04c0000.raw
+    - speech/r04c0004.raw
+    - speech/r04c0005.raw
+    - speech/r04c0006.raw
+    - speech/r04c0007.raw
+    - speech/r04c0008.raw
+    - speech/r04c0009.raw
+    - speech/r04c0010.raw
+    - speech/r04c0048.raw
+    - speech/r04c0049.raw
+    - speech/r05c0000.raw
+    - speech/r05c0004.raw
+    - speech/r05c0005.raw
+    - speech/r05c0006.raw
+    - speech/r05c0007.raw
+    - speech/r05c0008.raw
+    - speech/r05c0009.raw
+    - speech/r05c0010.raw
+    - speech/r05c0011.raw
+    - speech/r05c0012.raw
+    - speech/r05c0013.raw
+    - speech/r05c0014.raw
+    - speech/r05c0016.raw
+    - speech/r05c0017.raw
+    - speech/r05c0020.raw
+    - speech/r05c0021.raw
+    - speech/r05c0024.raw
+    - speech/r05c0025.raw
+    - speech/r05c0028.raw
+    - speech/r05c0029.raw
+    - speech/r05c0030.raw
+    - speech/r05c0032.raw
+    - speech/r05c0033.raw
+    - speech/r05c0034.raw
+    - speech/r05c0036.raw
+    - speech/r05c0040.raw
+    - speech/r05c0048.raw
+    - speech/r05c0049.raw
+    - speech/r05c0064.raw
+    - speech/r05c0068.raw
+    - speech/r05c0069.raw
+    - speech/r05c0070.raw
+    - speech/r05c0071.raw
+    - speech/r05c0072.raw
+    - speech/r05c0112.raw
+    - speech/r05c0113.raw
+    - speech/r05c0114.raw
+    - speech/r05c0128.raw
+    - speech/r05c0132.raw
+    - speech/r05c0133.raw
+    - speech/r05c0134.raw
+    - speech/r05c0135.raw
+    - speech/r05c0136.raw
+    - speech/r05c0137.raw
+    - speech/r05c0138.raw
+    - speech/r05c0176.raw
+    - speech/r05c0177.raw
+    - speech/r05c0178.raw
+    - speech/r05c0192.raw
+    - speech/r05c0196.raw
+    - speech/r05c0197.raw
+    - speech/r05c0198.raw
+    - speech/r05c0199.raw
+    - speech/r05c0200.raw
+    - speech/r05c0201.raw
+    - speech/r05c0202.raw
+    - speech/r05c0240.raw
+    - speech/r05c0241.raw
+    - speech/r07c0000.raw
+    - speech/r07c0004.raw
+    - speech/r07c0005.raw
+    - speech/r07c0006.raw
+    - speech/r07c0007.raw
+    - speech/r07c0008.raw
+    - speech/r07c0009.raw
+    - speech/r07c0010.raw
+    - speech/r07c0011.raw
+    - speech/r07c0012.raw
+    - speech/r07c0013.raw
+    - speech/r07c0048.raw
+    - speech/r07c0049.raw
+    - speech/r07c0064.raw
+    - speech/r08c0000.raw
+    - speech/r08c0004.raw
+    - speech/r08c0005.raw
+    - speech/r08c0006.raw
+    - speech/r08c0007.raw
+    - speech/r08c0008.raw
+    - speech/r08c0009.raw
+    - speech/r08c0010.raw
+    - speech/r08c0011.raw
+    - speech/r08c0012.raw
+    - speech/r08c0048.raw
+    - speech/r08c0049.raw
+    - speech/r08c0050.raw
+    - speech/r08c0051.raw
+    - speech/r08c0064.raw
+    - speech/r08c0068.raw
+    - speech/r08c0069.raw
+    - speech/r08c0070.raw
+    - speech/r08c0071.raw
+    - speech/r08c0072.raw
+    - speech/r08c0073.raw
+    - speech/r08c0112.raw
+    - speech/r08c0113.raw
+    - speech/r08c0128.raw
+    - speech/r23c0000.raw
+    - speech/r23c0004.raw
+    - speech/r23c0005.raw
+    - speech/r23c0006.raw
+    - speech/r23c0007.raw
+    - speech/r23c0008.raw
+    - speech/r23c0009.raw
+    - speech/r23c0010.raw
+    - speech/r23c0011.raw
+    - speech/r23c0012.raw
+    - speech/r23c0013.raw
+    - speech/r23c0014.raw
+    - speech/r23c0015.raw
+    - speech/r23c0016.raw
+    - speech/r23c0017.raw
+    - speech/r23c0018.raw
+    - speech/r23c0048.raw
+    - speech/r23c0049.raw
+    - speech/r23c0064.raw
+    - speech/r23c0068.raw
+    - speech/r23c0069.raw
+    - speech/r23c0070.raw
+    - speech/r23c0071.raw
+    - speech/r23c0072.raw
+    - speech/r23c0073.raw
+    - speech/r23c0128.raw
+    - speech/r23c0132.raw
+    - speech/r23c0133.raw
+    - speech/r23c0134.raw
+    - speech/r23c0135.raw
+    - speech/r23c0136.raw
+    - speech/r23c0137.raw
+    - speech/r23c0176.raw
+    - speech/r23c0177.raw
+    - speech/r23c0192.raw
+    - speech/r23c0196.raw
+    - speech/r23c0197.raw
+    - speech/r23c0198.raw
+    - speech/r23c0199.raw
+    - speech/r23c0240.raw
+    - speech/r23c0241.raw
+    - speech/r23c0256.raw
+    - speech/r23c0260.raw
+    - speech/r23c0261.raw
+    - speech/r23c0262.raw
+    - speech/r23c0263.raw
+    - speech/r23c0264.raw
+    - speech/r23c0265.raw
+    - speech/r23c0266.raw
+    - speech/r23c0267.raw
+    - speech/r23c0268.raw
+    - speech/r23c0269.raw
+    - speech/r23c0304.raw
+    - speech/r23c0305.raw
+    - speech/r23c0306.raw
+    - speech/r23c0320.raw
+    - speech/r23c0324.raw
+    - speech/r23c0325.raw
+    - speech/r23c0326.raw
+    - speech/r23c0327.raw
+    - speech/r23c0328.raw
+    - speech/r23c0329.raw
+    - speech/r23c0330.raw
+    - speech/r23c0368.raw
+    - speech/r23c0369.raw
+    - speech/r23c0370.raw
+    - speech/r23c0384.raw
+    - speech/r23c0388.raw
+    - speech/r23c0389.raw
+    - speech/r23c0390.raw
+    - speech/r23c0391.raw
+    - speech/r23c0432.raw
+    - speech/r23c0433.raw
+    - speech/r23c0448.raw
+    - speech/r23c0512.raw
+    - speech/r23c0516.raw
+    - speech/r23c0517.raw
+    - speech/r23c0576.raw
+    - speech/r23c0580.raw
+    - speech/r23c0581.raw
+    - speech/r23c0582.raw
+    - speech/r23c0640.raw
+    - speech/r23c0644.raw
+    - speech/r23c0645.raw
+    - speech/r23c0688.raw
+    - speech/r23c0689.raw
+    - speech/r23c0690.raw
+    - speech/r23c0691.raw
+    - speech/r24c0000.raw
+    - speech/r24c0004.raw
+    - speech/r24c0005.raw
+    - speech/r24c0006.raw
+    - speech/r24c0007.raw
+    - speech/r24c0008.raw
+    - speech/r24c0009.raw
+    - speech/r24c0010.raw
+    - speech/r24c0011.raw
+    - speech/r24c0012.raw
+    - speech/r24c0013.raw
+    - speech/r24c0014.raw
+    - speech/r24c0048.raw
+    - speech/r24c0049.raw
+    - speech/r24c0050.raw
+    - speech/r24c0051.raw
+    - speech/r24c0064.raw
+    - speech/r24c0068.raw
+    - speech/r24c0069.raw
+    - speech/r24c0070.raw
+    - speech/r24c0071.raw
+    - speech/r24c0072.raw
+    - speech/r24c0073.raw
+    - speech/r24c0074.raw
+    - speech/r24c0075.raw
+    - speech/r24c0076.raw
+    - speech/r24c0077.raw
+    - speech/r24c0112.raw
+    - speech/r24c0113.raw
+    - speech/r24c0114.raw
+    - speech/r24c0115.raw
+    - speech/r27c0000.raw
+    - speech/r27c0004.raw
+    - speech/r27c0005.raw
+    - speech/r27c0006.raw
+    - speech/r27c0007.raw
+    - speech/r27c0008.raw
+    - speech/r27c0009.raw
+    - speech/r27c0048.raw
+    - speech/r27c0049.raw
+    - speech/r29c0000.raw
+    - speech/r29c0004.raw
+    - speech/r29c0005.raw
+    - speech/r29c0006.raw
+    - speech/r29c0007.raw
+    - speech/r29c0008.raw
+    - speech/r29c0009.raw
+    - speech/r29c0010.raw
+    - speech/r29c0011.raw
+    - speech/r29c0012.raw
+    - speech/r29c0048.raw
+    - speech/r29c0049.raw
+    - speech/r29c0050.raw
+    - speech/r45c0000.raw
+    - speech/r45c0004.raw
+    - speech/r45c0005.raw
+    - speech/r45c0006.raw
+    - speech/r45c0008.raw
+    - speech/r45c0010.raw
+    - speech/r45c0011.raw
+    - speech/r45c0012.raw
+    - speech/r45c0013.raw
+    - speech/r45c0014.raw
+    - speech/r45c0016.raw
+    - speech/r45c0018.raw
+    - speech/r45c0019.raw
+    - speech/r45c0048.raw
+    - speech/r45c0049.raw
+    - speech/r45c0064.raw
+    - speech/r45c0068.raw
+    - speech/r45c0070.raw
+    - speech/r45c0072.raw
+    - speech/r45c0073.raw
+    - speech/r45c0074.raw
+    - speech/r45c0075.raw
+    - speech/r45c0076.raw
+    - speech/r45c0077.raw
+    - speech/r45c0078.raw
+    - speech/r45c0080.raw
+    - speech/r45c0082.raw
+    - speech/r45c0112.raw
+    - speech/r45c0128.raw
+    - speech/r45c0132.raw
+    - speech/r45c0133.raw
+    - speech/r45c0134.raw
+    - speech/r45c0136.raw
+    - speech/r45c0138.raw
+    - speech/r45c0139.raw
+    - speech/r45c0140.raw
+    - speech/r45c0141.raw
+    - speech/r45c0142.raw
+    - speech/r45c0143.raw
+    - speech/r45c0176.raw
+    - speech/r45c0192.raw
+    - speech/r45c0196.raw
+    - speech/r45c0197.raw
+    - speech/r45c0198.raw
+    - speech/r45c0200.raw
+    - speech/r45c0202.raw
+    - speech/r45c0204.raw
+    - speech/r45c0205.raw
+    - speech/r45c0206.raw
+    - speech/r45c0207.raw
+    - speech/r45c0208.raw
+    - speech/r45c0210.raw
+    - speech/r45c0240.raw
+    - speech/r45c0241.raw
+    - speech/t50t0012.raw
+    - speech/t50t0030.raw
+    - speech/t50t0031.raw
+    - speech/t80t0042.raw
+    - speech/t80t0043.raw
+    - speech/t80t0045.raw
+    - speech/t80t0047.raw
+    - speech/t80t0049.raw
+    - speech/t80t0050.raw
+    - speech/t80t0051.raw
+    - speech/t80t0052.raw
+    - speech/t80t0053.raw
+    - speech/t80t0055.raw
+    - speech/t82t0008.raw
+    - speech/t82t0009.raw
+    - speech/t82t0010.raw
+    - speech/t82t0011.raw
+    - speech/t82t0014.raw
+    - speech/t82t0015.raw
+    - speech/t82t0016.raw
+    - speech/t82t0017.raw
+    - speech/t82t0018.raw
+    - speech/t82t0019.raw
+    - speech/t82t0020.raw
+    - speech/t82t0021.raw
+    - speech/t82t0022.raw
+    - speech/t82t0023.raw
+    - speech/t82t0024.raw
+    - speech/t82t0025.raw
+    - speech/t82t0026.raw
+    - speech/t82t0027.raw
+    - speech/t82t0028.raw
+    - speech/t82t0029.raw
+    - speech/t82t0030.raw
+    - speech/t82t0031.raw
+    - speech/t82t0040.raw
+    - speech/t82t0041.raw
+    - speech/t82t0042.raw
+    - speech/t82t0043.raw
+    - speech/t82t0044.raw
+    - speech/t82t0045.raw
+    - speech/t82t0046.raw
+    - speech/t82t0047.raw
+    - speech/t82t0048.raw
+    - speech/t82t0049.raw
+    - speech/t82t0050.raw
+    - speech/t82t0051.raw
+    - speech/t82t0052.raw
+    - speech/t82t0053.raw
+    - speech/t82t0054.raw
+    - speech/t82t0055.raw
+    - speech/t82t0056.raw
+    - speech/t82t0057.raw
+    - speech/t82t0058.raw
+    - speech/t82t0059.raw
+    - speech/t82t0060.raw
+    - speech/t82t0061.raw
+    - speech/t82t0062.raw
+    - speech/t83t0000.raw
+    - speech/t83t0001.raw
+    - speech/t83t0002.raw
+    - speech/t83t0040.raw
+    - speech/t83t0041.raw
+    - speech/t83t0042.raw
+    - speech/t83t0043.raw
+    - speech/t83t0044.raw
+    - speech/t83t0045.raw
+    - speech/t83t0046.raw
+    - speech/t83t0047.raw
+    - speech/t83t0049.raw
+    - track1.flac
+    - coverfr.png
+    - manuel.htm
+    - manuel.txt
+    - screenfr.gif
+    - symbol.gif
+    - license.txt_fr
+
 cksums: |
-  _ 226360597 dreamweb-cd-us-1.1.zip
   _ 314193    diary/coveren.png
   _ 36375     diary/diary.html
   _ 38335     diary/diary.txt
@@ -2675,486 +3871,15 @@ cksums: |
   _ 1808540   dreamweb.v35
   _ 702632    dreamweb.v99
   _ 1792      dreamweb.vol
-  _ 52534366  dreamweb.wav
   _ 1291      license.txt
-  _ 307872    manual/coveren.png
-  _ 21630     manual/manual.htm
-  _ 14507     manual/manual.txt
-  _ 52774     manual/screenen.gif
-  _ 23244     manual/symbol.gif
-  _ 315711    speech/r01c0000.raw
+  _ 307872    coveren.png
+  _ 21630     manual.htm
+  _ 14507     manual.txt
+  _ 52774     screenen.gif
   _ 315755    speech/r01c0000.wav
-  _ 49138     speech/r01c0004.raw
-  _ 29854     speech/r01c0005.raw
-  _ 115842    speech/r01c0006.raw
-  _ 18736     speech/r01c0007.raw
-  _ 79498     speech/r01c0008.raw
-  _ 216926    speech/r01c0064.raw
-  _ 115842    speech/r01c0068.raw
-  _ 51106     speech/r01c0069.raw
-  _ 75524     speech/r01c0070.raw
-  _ 48834     speech/r01c0071.raw
-  _ 56784     speech/r01c0072.raw
-  _ 58488     speech/r01c0073.raw
-  _ 151760    speech/r01c0112.raw
-  _ 11604     speech/r01c0113.raw
-  _ 120364    speech/r01c0114.raw
-  _ 61416     speech/r01c0115.raw
-  _ 303688    speech/r01c0128.raw
-  _ 60720     speech/r01c0132.raw
-  _ 88816     speech/r01c0133.raw
-  _ 67970     speech/r01c0134.raw
-  _ 19028     speech/r01c0135.raw
-  _ 111474    speech/r01c0136.raw
-  _ 67970     speech/r01c0137.raw
-  _ 74314     speech/r01c0138.raw
-  _ 173104    speech/r01c0139.raw
-  _ 159510    speech/r01c0140.raw
-  _ 111474    speech/r01c0141.raw
-  _ 187606    speech/r01c0142.raw
-  _ 80496     speech/r01c0143.raw
-  _ 81256     speech/r01c0144.raw
-  _ 116920    speech/r01c0176.raw
-  _ 62282     speech/r01c0177.raw
-  _ 60098     speech/r01c0178.raw
-  _ 277554    speech/r01c0192.raw
-  _ 131126    speech/r01c0196.raw
-  _ 86322     speech/r01c0197.raw
-  _ 79766     speech/r01c0199.raw
-  _ 91786     speech/r01c0240.raw
-  _ 43706     speech/r01c0241.raw
-  _ 214626    speech/r01c0256.raw
-  _ 88216     speech/r01c0260.raw
-  _ 50408     speech/r01c0261.raw
-  _ 64270     speech/r01c0262.raw
-  _ 84600     speech/r01c0263.raw
-  _ 128078    speech/r01c0264.raw
-  _ 32898     speech/r01c0265.raw
-  _ 88126     speech/r01c0266.raw
-  _ 34072     speech/r01c0267.raw
-  _ 139828    speech/r01c0268.raw
-  _ 96350     speech/r01c0269.raw
-  _ 83426     speech/r01c0270.raw
-  _ 84600     speech/r01c0304.raw
-  _ 38774     speech/r01c0305.raw
-  _ 244408    speech/r01c0320.raw
-  _ 46446     speech/r01c0324.raw
-  _ 59718     speech/r01c0325.raw
-  _ 53082     speech/r01c0326.raw
-  _ 73574     speech/r01c0327.raw
-  _ 80264     speech/r01c0328.raw
-  _ 27588     speech/r01c0329.raw
-  _ 311032    speech/r02c0000.raw
-  _ 56016     speech/r02c0004.raw
-  _ 115380    speech/r02c0005.raw
-  _ 73574     speech/r02c0006.raw
-  _ 118936    speech/r02c0007.raw
-  _ 49402     speech/r02c0008.raw
-  _ 112530    speech/r02c0009.raw
-  _ 141808    speech/r02c0010.raw
-  _ 40252     speech/r02c0011.raw
-  _ 93316     speech/r02c0012.raw
-  _ 127564    speech/r02c0013.raw
-  _ 161368    speech/r02c0014.raw
-  _ 44984     speech/r02c0015.raw
-  _ 125182    speech/r02c0016.raw
-  _ 55742     speech/r02c0017.raw
-  _ 71390     speech/r02c0018.raw
-  _ 44984     speech/r02c0019.raw
-  _ 119312    speech/r02c0048.raw
-  _ 117358    speech/r02c0049.raw
-  _ 72368     speech/r02c0050.raw
-  _ 182884    speech/r02c0064.raw
-  _ 77258     speech/r02c0068.raw
-  _ 55742     speech/r02c0069.raw
-  _ 73346     speech/r02c0070.raw
-  _ 13198     speech/r02c0071.raw
-  _ 30432     speech/r02c0072.raw
-  _ 31166     speech/r02c0073.raw
-  _ 50602     speech/r02c0074.raw
-  _ 21632     speech/r02c0075.raw
-  _ 51336     speech/r02c0076.raw
-  _ 93534     speech/r02c0077.raw
-  _ 93532     speech/r02c0078.raw
-  _ 100376    speech/r02c0079.raw
-  _ 75282     speech/r02c0112.raw
-  _ 84406     speech/r02c0113.raw
-  _ 65014     speech/r02c0114.raw
-  _ 84408     speech/r02c0115.raw
-  _ 272622    speech/r04c0000.raw
-  _ 119768    speech/r04c0004.raw
-  _ 76422     speech/r04c0005.raw
-  _ 106080    speech/r04c0006.raw
-  _ 79528     speech/r04c0007.raw
-  _ 124976    speech/r04c0008.raw
-  _ 49500     speech/r04c0009.raw
-  _ 38950     speech/r04c0010.raw
-  _ 82774     speech/r04c0048.raw
-  _ 31860     speech/r04c0049.raw
-  _ 235790    speech/r05c0000.raw
-  _ 89214     speech/r05c0004.raw
-  _ 41420     speech/r05c0005.raw
-  _ 173654    speech/r05c0006.raw
-  _ 77266     speech/r05c0007.raw
-  _ 164096    speech/r05c0008.raw
-  _ 76470     speech/r05c0009.raw
-  _ 140994    speech/r05c0010.raw
-  _ 49386     speech/r05c0011.raw
-  _ 111520    speech/r05c0012.raw
-  _ 27080     speech/r05c0013.raw
-  _ 99188     speech/r05c0014.raw
-  _ 85506     speech/r05c0016.raw
-  _ 26504     speech/r05c0017.raw
-  _ 128264    speech/r05c0020.raw
-  _ 50552     speech/r05c0021.raw
-  _ 70776     speech/r05c0024.raw
-  _ 66984     speech/r05c0025.raw
-  _ 179474    speech/r05c0028.raw
-  _ 58136     speech/r05c0029.raw
-  _ 49288     speech/r05c0030.raw
-  _ 94790     speech/r05c0032.raw
-  _ 44234     speech/r05c0033.raw
-  _ 30330     speech/r05c0034.raw
-  _ 88470     speech/r05c0036.raw
-  _ 99846     speech/r05c0040.raw
-  _ 163042    speech/r05c0048.raw
-  _ 50552     speech/r05c0049.raw
-  _ 176946    speech/r05c0064.raw
-  _ 67950     speech/r05c0068.raw
-  _ 73386     speech/r05c0069.raw
-  _ 94452     speech/r05c0070.raw
-  _ 24460     speech/r05c0071.raw
-  _ 126918    speech/r05c0072.raw
-  _ 76890     speech/r05c0112.raw
-  _ 53730     speech/r05c0113.raw
-  _ 72258     speech/r05c0114.raw
-  _ 212150    speech/r05c0128.raw
-  _ 59288     speech/r05c0132.raw
-  _ 111170    speech/r05c0133.raw
-  _ 106536    speech/r05c0134.raw
-  _ 50024     speech/r05c0135.raw
-  _ 132478    speech/r05c0136.raw
-  _ 41686     speech/r05c0137.raw
-  _ 28716     speech/r05c0138.raw
-  _ 62994     speech/r05c0176.raw
-  _ 72258     speech/r05c0177.raw
-  _ 24082     speech/r05c0178.raw
-  _ 265004    speech/r05c0192.raw
-  _ 98780     speech/r05c0196.raw
-  _ 25916     speech/r05c0197.raw
-  _ 65852     speech/r05c0198.raw
-  _ 22570     speech/r05c0199.raw
-  _ 137220    speech/r05c0200.raw
-  _ 92804     speech/r05c0201.raw
-  _ 78266     speech/r05c0202.raw
-  _ 120720    speech/r05c0240.raw
-  _ 63540     speech/r05c0241.raw
-  _ 147988    speech/r07c0000.raw
-  _ 55180     speech/r07c0004.raw
-  _ 19226     speech/r07c0005.raw
-  _ 72738     speech/r07c0006.raw
-  _ 115380    speech/r07c0007.raw
-  _ 77754     speech/r07c0008.raw
-  _ 28424     speech/r07c0009.raw
-  _ 81564     speech/r07c0010.raw
-  _ 83670     speech/r07c0011.raw
-  _ 98384     speech/r07c0012.raw
-  _ 43212     speech/r07c0013.raw
-  _ 83672     speech/r07c0048.raw
-  _ 73556     speech/r07c0049.raw
-  _ 210564    speech/r07c0064.raw
-  _ 258404    speech/r08c0000.raw
-  _ 57032     speech/r08c0004.raw
-  _ 65180     speech/r08c0005.raw
-  _ 137348    speech/r08c0006.raw
-  _ 15128     speech/r08c0007.raw
-  _ 136184    speech/r08c0008.raw
-  _ 50048     speech/r08c0009.raw
-  _ 130458    speech/r08c0010.raw
-  _ 74454     speech/r08c0011.raw
-  _ 21634     speech/r08c0012.raw
-  _ 84066     speech/r08c0048.raw
-  _ 61296     speech/r08c0049.raw
-  _ 72682     speech/r08c0050.raw
-  _ 40278     speech/r08c0051.raw
-  _ 309128    speech/r08c0064.raw
-  _ 57794     speech/r08c0068.raw
-  _ 63048     speech/r08c0069.raw
-  _ 81438     speech/r08c0070.raw
-  _ 57794     speech/r08c0071.raw
-  _ 63924     speech/r08c0072.raw
-  _ 54292     speech/r08c0073.raw
-  _ 71806     speech/r08c0112.raw
-  _ 38528     speech/r08c0113.raw
-  _ 222432    speech/r08c0128.raw
-  _ 246834    speech/r23c0000.raw
-  _ 72240     speech/r23c0004.raw
-  _ 167596    speech/r23c0005.raw
-  _ 106434    speech/r23c0006.raw
-  _ 82604     speech/r23c0007.raw
-  _ 54804     speech/r23c0008.raw
-  _ 169184    speech/r23c0009.raw
-  _ 139000    speech/r23c0010.raw
-  _ 36534     speech/r23c0011.raw
-  _ 207312    speech/r23c0012.raw
-  _ 69102     speech/r23c0013.raw
-  _ 133440    speech/r23c0014.raw
-  _ 34150     speech/r23c0015.raw
-  _ 100874    speech/r23c0016.raw
-  _ 72278     speech/r23c0017.raw
-  _ 52474     speech/r23c0018.raw
-  _ 88806     speech/r23c0048.raw
-  _ 41698     speech/r23c0049.raw
-  _ 206000    speech/r23c0064.raw
-  _ 43884     speech/r23c0068.raw
-  _ 27066     speech/r23c0069.raw
-  _ 84154     speech/r23c0070.raw
-  _ 51924     speech/r23c0071.raw
-  _ 30436     speech/r23c0072.raw
-  _ 55504     speech/r23c0073.raw
-  _ 274856    speech/r23c0128.raw
-  _ 68038     speech/r23c0132.raw
-  _ 19692     speech/r23c0133.raw
-  _ 83260     speech/r23c0134.raw
-  _ 57296     speech/r23c0135.raw
-  _ 88632     speech/r23c0136.raw
-  _ 67144     speech/r23c0137.raw
-  _ 50132     speech/r23c0176.raw
-  _ 76992     speech/r23c0177.raw
-  _ 228628    speech/r23c0192.raw
-  _ 50024     speech/r23c0196.raw
-  _ 18524     speech/r23c0197.raw
-  _ 34274     speech/r23c0198.raw
-  _ 36126     speech/r23c0199.raw
-  _ 31494     speech/r23c0240.raw
-  _ 113022    speech/r23c0241.raw
-  _ 189916    speech/r23c0256.raw
-  _ 36128     speech/r23c0260.raw
-  _ 58362     speech/r23c0261.raw
-  _ 37054     speech/r23c0262.raw
-  _ 144520    speech/r23c0263.raw
-  _ 151932    speech/r23c0264.raw
-  _ 148226    speech/r23c0265.raw
-  _ 168608    speech/r23c0266.raw
-  _ 34274     speech/r23c0267.raw
-  _ 160270    speech/r23c0268.raw
-  _ 63978     speech/r23c0269.raw
-  _ 87530     speech/r23c0304.raw
-  _ 43008     speech/r23c0305.raw
-  _ 80738     speech/r23c0306.raw
-  _ 245240    speech/r23c0320.raw
-  _ 22634     speech/r23c0324.raw
-  _ 32442     speech/r23c0325.raw
-  _ 100358    speech/r23c0326.raw
-  _ 22634     speech/r23c0327.raw
-  _ 113858    speech/r23c0328.raw
-  _ 49044     speech/r23c0329.raw
-  _ 22634     speech/r23c0330.raw
-  _ 36216     speech/r23c0368.raw
-  _ 63382     speech/r23c0369.raw
-  _ 39990     speech/r23c0370.raw
-  _ 277688    speech/r23c0384.raw
-  _ 36216     speech/r23c0388.raw
-  _ 45272     speech/r23c0389.raw
-  _ 77718     speech/r23c0390.raw
-  _ 40764     speech/r23c0391.raw
-  _ 40306     speech/r23c0432.raw
-  _ 32518     speech/r23c0433.raw
-  _ 198058    speech/r23c0448.raw
-  _ 297840    speech/r23c0512.raw
-  _ 85522     speech/r23c0516.raw
-  _ 31506     speech/r23c0517.raw
-  _ 144042    speech/r23c0576.raw
-  _ 121534    speech/r23c0580.raw
-  _ 62266     speech/r23c0581.raw
-  _ 49238     speech/r23c0582.raw
-  _ 195144    speech/r23c0640.raw
-  _ 129486    speech/r23c0644.raw
-  _ 36472     speech/r23c0645.raw
-  _ 110140    speech/r23c0688.raw
-  _ 19512     speech/r23c0689.raw
-  _ 96240     speech/r23c0690.raw
-  _ 38968     speech/r23c0691.raw
-  _ 220942    speech/r24c0000.raw
-  _ 111922    speech/r24c0004.raw
-  _ 68980     speech/r24c0005.raw
-  _ 181472    speech/r24c0006.raw
-  _ 175940    speech/r24c0007.raw
-  _ 49792     speech/r24c0008.raw
-  _ 134996    speech/r24c0009.raw
-  _ 142742    speech/r24c0010.raw
-  _ 95160     speech/r24c0011.raw
-  _ 151594    speech/r24c0012.raw
-  _ 106226    speech/r24c0013.raw
-  _ 30805     speech/r24c0014.raw
-  _ 31728     speech/r24c0048.raw
-  _ 113272    speech/r24c0049.raw
-  _ 115014    speech/r24c0050.raw
-  _ 32236     speech/r24c0051.raw
-  _ 130956    speech/r24c0064.raw
-  _ 40411     speech/r24c0068.raw
-  _ 71138     speech/r24c0069.raw
-  _ 40374     speech/r24c0070.raw
-  _ 88442     speech/r24c0071.raw
-  _ 39732     speech/r24c0072.raw
-  _ 57678     speech/r24c0073.raw
-  _ 28196     speech/r24c0074.raw
-  _ 74982     speech/r24c0075.raw
-  _ 30760     speech/r24c0076.raw
-  _ 23710     speech/r24c0077.raw
-  _ 72420     speech/r24c0112.raw
-  _ 49346     speech/r24c0113.raw
-  _ 68574     speech/r24c0114.raw
-  _ 46782     speech/r24c0115.raw
-  _ 230588    speech/r27c0000.raw
-  _ 82728     speech/r27c0004.raw
-  _ 42242     speech/r27c0005.raw
-  _ 70406     speech/r27c0006.raw
-  _ 73046     speech/r27c0007.raw
-  _ 55442     speech/r27c0008.raw
-  _ 65124     speech/r27c0009.raw
-  _ 49282     speech/r27c0048.raw
-  _ 54562     speech/r27c0049.raw
-  _ 233228    speech/r29c0000.raw
-  _ 159298    speech/r29c0004.raw
-  _ 21118     speech/r29c0005.raw
-  _ 120572    speech/r29c0006.raw
-  _ 83608     speech/r29c0007.raw
-  _ 112652    speech/r29c0008.raw
-  _ 34192     speech/r29c0009.raw
-  _ 171620    speech/r29c0010.raw
-  _ 90648     speech/r29c0011.raw
-  _ 137296    speech/r29c0012.raw
-  _ 59844     speech/r29c0048.raw
-  _ 28160     speech/r29c0049.raw
-  _ 51042     speech/r29c0050.raw
-  _ 237630    speech/r45c0000.raw
-  _ 61604     speech/r45c0004.raw
-  _ 73046     speech/r45c0005.raw
-  _ 118812    speech/r45c0006.raw
-  _ 178660    speech/r45c0008.raw
-  _ 130254    speech/r45c0010.raw
-  _ 36960     speech/r45c0011.raw
-  _ 119858    speech/r45c0012.raw
-  _ 24648     speech/r45c0013.raw
-  _ 57532     speech/r45c0014.raw
-  _ 84838     speech/r45c0016.raw
-  _ 117020    speech/r45c0018.raw
-  _ 56556     speech/r45c0019.raw
-  _ 127746    speech/r45c0048.raw
-  _ 31202     speech/r45c0049.raw
-  _ 237630    speech/r45c0064.raw
-  _ 56558     speech/r45c0068.raw
-  _ 163830    speech/r45c0070.raw
-  _ 109218    speech/r45c0072.raw
-  _ 35102     speech/r45c0073.raw
-  _ 125798    speech/r45c0074.raw
-  _ 39004     speech/r45c0075.raw
-  _ 166756    speech/r45c0076.raw
-  _ 63356     speech/r45c0077.raw
-  _ 153786    speech/r45c0078.raw
-  _ 71332     speech/r45c0080.raw
-  _ 115802    speech/r45c0082.raw
-  _ 137110    speech/r45c0112.raw
-  _ 237630    speech/r45c0128.raw
-  _ 148226    speech/r45c0132.raw
-  _ 37054     speech/r45c0133.raw
-  _ 136184    speech/r45c0134.raw
-  _ 95420     speech/r45c0136.raw
-  _ 79670     speech/r45c0138.raw
-  _ 53228     speech/r45c0139.raw
-  _ 126334    speech/r45c0140.raw
-  _ 29096     speech/r45c0141.raw
-  _ 190910    speech/r45c0142.raw
-  _ 52062     speech/r45c0143.raw
-  _ 107902    speech/r45c0176.raw
-  _ 237630    speech/r45c0192.raw
-  _ 151670    speech/r45c0196.raw
-  _ 35462     speech/r45c0197.raw
-  _ 173552    speech/r45c0198.raw
-  _ 63382     speech/r45c0200.raw
-  _ 92812     speech/r45c0202.raw
-  _ 87528     speech/r45c0204.raw
-  _ 33952     speech/r45c0205.raw
-  _ 129242    speech/r45c0206.raw
-  _ 54204     speech/r45c0207.raw
-  _ 138418    speech/r45c0208.raw
-  _ 108410    speech/r45c0210.raw
-  _ 124866    speech/r45c0240.raw
-  _ 28068     speech/r45c0241.raw
-  _ 128290    speech/t50t0012.raw
-  _ 137152    speech/t50t0030.raw
-  _ 103184    speech/t50t0031.raw
-  _ 59608     speech/t80t0042.raw
-  _ 64136     speech/t80t0043.raw
-  _ 87530     speech/t80t0045.raw
-  _ 66400     speech/t80t0047.raw
-  _ 24896     speech/t80t0049.raw
-  _ 79984     speech/t80t0050.raw
-  _ 73192     speech/t80t0051.raw
-  _ 26406     speech/t80t0052.raw
-  _ 82248     speech/t80t0053.raw
-  _ 89038     speech/t80t0055.raw
-  _ 97272     speech/t82t0008.raw
-  _ 89860     speech/t82t0009.raw
-  _ 104684    speech/t82t0010.raw
-  _ 78874     speech/t82t0011.raw
-  _ 95210     speech/t82t0014.raw
-  _ 101830    speech/t82t0015.raw
-  _ 47162     speech/t82t0016.raw
-  _ 94328     speech/t82t0017.raw
-  _ 79320     speech/t82t0018.raw
-  _ 40730     speech/t82t0019.raw
-  _ 72888     speech/t82t0020.raw
-  _ 48232     speech/t82t0021.raw
-  _ 37514     speech/t82t0022.raw
-  _ 101830    speech/t82t0023.raw
-  _ 32154     speech/t82t0024.raw
-  _ 15002     speech/t82t0025.raw
-  _ 87896     speech/t82t0026.raw
-  _ 53592     speech/t82t0027.raw
-  _ 49908     speech/t82t0028.raw
-  _ 29942     speech/t82t0029.raw
-  _ 115662    speech/t82t0030.raw
-  _ 62868     speech/t82t0031.raw
-  _ 27504     speech/t82t0040.raw
-  _ 93694     speech/t82t0041.raw
-  _ 37818     speech/t82t0042.raw
-  _ 48134     speech/t82t0043.raw
-  _ 45556     speech/t82t0044.raw
-  _ 62318     speech/t82t0045.raw
-  _ 108738    speech/t82t0046.raw
-  _ 47296     speech/t82t0047.raw
-  _ 91132     speech/t82t0048.raw
-  _ 114544    speech/t82t0049.raw
-  _ 153006    speech/t82t0050.raw
-  _ 121234    speech/t82t0051.raw
-  _ 80264     speech/t82t0052.raw
-  _ 129594    speech/t82t0053.raw
-  _ 98658     speech/t82t0054.raw
-  _ 77754     speech/t82t0055.raw
-  _ 114544    speech/t82t0056.raw
-  _ 177252    speech/t82t0057.raw
-  _ 176416    speech/t82t0058.raw
-  _ 192326    speech/t82t0059.raw
-  _ 160612    speech/t82t0060.raw
-  _ 115640    speech/t82t0061.raw
-  _ 73880     speech/t82t0062.raw
-  _ 67454     speech/t83t0000.raw
-  _ 86730     speech/t83t0001.raw
-  _ 102790    speech/t83t0002.raw
   _ 743846    speech/t83t0040.old
-  _ 80017     speech/t83t0040.raw
-  _ 90160     speech/t83t0041.raw
-  _ 113827    speech/t83t0042.raw
-  _ 98049     speech/t83t0043.raw
-  _ 68747     speech/t83t0044.raw
-  _ 93541     speech/t83t0045.raw
-  _ 122843    speech/t83t0046.raw
-  _ 76662     speech/t83t0047.raw
-  _ 1278102   speech/t83t0049.raw
   _ 29808295  track01.flac
-  _ 226067188 dreamweb-cd-uk-1.1.zip
+
   _ 152918    dreamweb.r00_uk
   _ 158040    dreamweb.r01_uk
   _ 198681    dreamweb.r02_uk
@@ -3200,7 +3925,6 @@ cksums: |
   _ 1067      dreamweb.t84_uk
 
 md5sums: |
-  3ae3a109d6233cf6b5ab7b63e7cc8937  dreamweb-cd-us-1.1.zip
   0b1825dbf048d4a4780af9349db3141c  diary/coveren.png
   4fbd4f996a9873d8b1765a7bd8528cc0  diary/diary.html
   91802eb988a6c9694adaf1395a938c8a  diary/diary.txt
@@ -3310,486 +4034,15 @@ md5sums: |
   c2a2ed499c965ba5e541800d984c229d  dreamweb.v35
   a9c20b10066ebccf65f77af56b579d1e  dreamweb.v99
   44f27ec12293257eee63f1b69db6a883  dreamweb.vol
-  938811bc2418a03fb1549d71318ac334  dreamweb.wav
   775b2f1f55789618ce57a84be6a31919  license.txt
-  67fad4c66b798738624fb5d4286be6ec  manual/coveren.png
-  0689982d27609379ee4aec2b506f51b3  manual/manual.htm
-  481028904e792fb42e14028a6d8a602d  manual/manual.txt
-  2d2ffbe5bca7413f1db05bbc8018568f  manual/screenen.gif
-  3d453065a46ab9ba09ab7f34895609f2  manual/symbol.gif
-  a862e21ef60b6fb528ec75352acf1c22  speech/r01c0000.raw
+  67fad4c66b798738624fb5d4286be6ec  coveren.png
+  0689982d27609379ee4aec2b506f51b3  manual.htm
+  481028904e792fb42e14028a6d8a602d  manual.txt
+  2d2ffbe5bca7413f1db05bbc8018568f  screenen.gif
   7a7852874cad34e70e35b8ef67fe7f61  speech/r01c0000.wav
-  041e5721d2727c7941a5542531659ab8  speech/r01c0004.raw
-  c6de6b81dda7007dcb969595c5b9114e  speech/r01c0005.raw
-  f192ebdac6bc8a6bdcbfc1c44ec74e3a  speech/r01c0006.raw
-  336ce21e7e9e47a4b891a51dad23ef5f  speech/r01c0007.raw
-  89605404a729e4e615bbf83184d35bc4  speech/r01c0008.raw
-  5e9a15fdad820cd86d8bdcb98e5778e5  speech/r01c0064.raw
-  124a2fe9b8b0fc7d49232337ec7ab29c  speech/r01c0068.raw
-  824e4d05f5353a7cd40116f918da0098  speech/r01c0069.raw
-  17fdee89b2ffca348dc0b1948a4a5d1c  speech/r01c0070.raw
-  e4381076b2bc641be7bdc676d53f7614  speech/r01c0071.raw
-  766fa88692891dd25d392c25a96fb02d  speech/r01c0072.raw
-  6324729b383000ab0b43fc32b2a700f3  speech/r01c0073.raw
-  6f892b7d0bccb65289cb8f3a3556a985  speech/r01c0112.raw
-  ee56769b98862fb1f83f664068a70398  speech/r01c0113.raw
-  a8a0afbd6279af613ad1c723a0c3a05a  speech/r01c0114.raw
-  0c319afb0b635107e3d5ec0ffe4930e9  speech/r01c0115.raw
-  243e5d32904be6d968b667ee6c5b4d7d  speech/r01c0128.raw
-  25df5ff60a96786c39932a9b9d97a7b8  speech/r01c0132.raw
-  9bd017d482bb9c7250b56176e4cdcbbe  speech/r01c0133.raw
-  100c3dce09d75c7c53dd5bd3cacc2dc5  speech/r01c0134.raw
-  2bfd9bfa2e02f4b9290081f4fec5e30e  speech/r01c0135.raw
-  de3e46db500f79d81b28dd4cd7dac67b  speech/r01c0136.raw
-  5294ebec40a9ad7cd6e1962646e90161  speech/r01c0137.raw
-  3bf115b9a76b3bfb4759b3b585f0a192  speech/r01c0138.raw
-  532413e6ea44cdf9d455c302b791f520  speech/r01c0139.raw
-  342c339f30ad44c7fc2aa9c58e59d5a9  speech/r01c0140.raw
-  f826d3e5b54d6800156aa32407b3cc6f  speech/r01c0141.raw
-  85865f95c8fe0fb3af308f9fc4987be2  speech/r01c0142.raw
-  925f37036b66a481d4bded49d947d6c1  speech/r01c0143.raw
-  829ede2348773b5742b1a6a680448044  speech/r01c0144.raw
-  d9cead5dbde49700237d0bff9f713fab  speech/r01c0176.raw
-  052b3be38a675569d4b9139ac5d4783b  speech/r01c0177.raw
-  37a7bbb332ffb7d80d95d0960678df6c  speech/r01c0178.raw
-  71241867923f527f9ee75e471c9e7590  speech/r01c0192.raw
-  e1866d9973bf7fcdfe44cb7e531c51f6  speech/r01c0196.raw
-  cc936c229b5284e4922dfe0de3c3d676  speech/r01c0197.raw
-  f122e15b798aacca942a61ed066581e2  speech/r01c0199.raw
-  fb2669393ae3edd9677ac42e517790b2  speech/r01c0240.raw
-  279df04726a3a77d83c9028dc1703fe9  speech/r01c0241.raw
-  ba2eab818b11b8ba6711eabfd222ecc5  speech/r01c0256.raw
-  e8e0824e2a83053bf1d535a97cd6317a  speech/r01c0260.raw
-  f01fbe9621263f826cba41d31d6175ad  speech/r01c0261.raw
-  52ad0837f83d7c644ac4fa2b1629215c  speech/r01c0262.raw
-  c45f0ff26762b7d9dd42626d4ed9ae38  speech/r01c0263.raw
-  795a774f4b028fcb01001d63d9c3b921  speech/r01c0264.raw
-  57e247678129d8873fbb57d5c08acc7c  speech/r01c0265.raw
-  d78147a5e2dfe49f8375fb7cf98338b5  speech/r01c0266.raw
-  d65aea5a053ade89c2b26920eaf1f562  speech/r01c0267.raw
-  c07da6492926da2dfef8635d0162750d  speech/r01c0268.raw
-  0aac601651485fc497fecdd677fe4d9b  speech/r01c0269.raw
-  36eab9477f0c287a0114cfe506d3001d  speech/r01c0270.raw
-  180d34de58267e390be8d7f1fe15a1fc  speech/r01c0304.raw
-  3eb02ce1dbb559c2778ec7cc7cc31608  speech/r01c0305.raw
-  169ac1c778ab7131118d28f783e54b86  speech/r01c0320.raw
-  f8edffffa7783c6ee5215b50e8c305c5  speech/r01c0324.raw
-  9a6b66f4667911dd240ae72c66bdd48c  speech/r01c0325.raw
-  e9c7cb553ad23706ac2fe612e8661e3e  speech/r01c0326.raw
-  ac6e7863260e7a4e54862c6e9cff6ca0  speech/r01c0327.raw
-  94172e91a4ca5c8eff5abf18449ac3e6  speech/r01c0328.raw
-  c2fa39859b4a6844f8c9a765201286ba  speech/r01c0329.raw
-  0567af7cee759d63a464e0408dadf2d2  speech/r02c0000.raw
-  ba61d98f81e39e9b3ac5377c2d80ce95  speech/r02c0004.raw
-  cca19fa10bd264ba0852739d5d68b209  speech/r02c0005.raw
-  46198cb0c57da9be19e5692b731faa59  speech/r02c0006.raw
-  98c79d516798790263fae579c39422f7  speech/r02c0007.raw
-  42d30d8675f32256d82d499d6ae445bf  speech/r02c0008.raw
-  184b8409651c0dd68d2cf7ae7b84deb4  speech/r02c0009.raw
-  94e517ee61e83d2212c6c8560c4d2f22  speech/r02c0010.raw
-  4e10cde0c8f2a00503004a60762d2729  speech/r02c0011.raw
-  9c430e027724937fdc81f72d7fbff8d4  speech/r02c0012.raw
-  ac4c6e56c69ce6eeea05517c5b4ec7d8  speech/r02c0013.raw
-  13a7bb2eb9c6e8f631ead0ea1b91ae14  speech/r02c0014.raw
-  69dbd5eba33a9685183cfccfbab3354e  speech/r02c0015.raw
-  fe811ffea7e96df5a73340e3fad4a814  speech/r02c0016.raw
-  04acf079aa899f8a453f33435dcf0bdd  speech/r02c0017.raw
-  13e7ed3fe5f1a540e16f09f3e9f3c8ad  speech/r02c0018.raw
-  8b68a041cf767af3fd034a35e96a2a98  speech/r02c0019.raw
-  0251f32fd1c6334b09be62d7b7edae1b  speech/r02c0048.raw
-  7dd84a81c51fc54a7aefda9a829c7f13  speech/r02c0049.raw
-  89aff3c8d19f582b42303b6a3d9fd974  speech/r02c0050.raw
-  111cc591b09c8358e04ee50b528f7e85  speech/r02c0064.raw
-  3488352a1cce05d2a5aded341b0899fe  speech/r02c0068.raw
-  3eb94d00896f223bb237f6acb6c5eefa  speech/r02c0069.raw
-  60353d9e2d5fd7400482fa5dc516b47a  speech/r02c0070.raw
-  a34fcd413b89eee354a987d1dae1462d  speech/r02c0071.raw
-  3c4aab34e2c9762e8f39ae0eaa298518  speech/r02c0072.raw
-  8dad4c17a47fb51a9d3715100a37818d  speech/r02c0073.raw
-  e833fb6151d6a59d0e59ac5bcdd5a09f  speech/r02c0074.raw
-  e7fc91c3d175fc8a81f323105f3a0b7e  speech/r02c0075.raw
-  6ed3766bec6de3c239cb1c3f395c5be3  speech/r02c0076.raw
-  659d8a92ac2324aee1dbbb2bc410ce7a  speech/r02c0077.raw
-  a8dd7c40ff3e233d5b94765e8762c9d0  speech/r02c0078.raw
-  7f55ff2219404b402c24f8c7bc565f54  speech/r02c0079.raw
-  f599502f9f1a245d869f600da3b07833  speech/r02c0112.raw
-  da3e63dce437ae0de53df870197f62bb  speech/r02c0113.raw
-  a22839369842a0627fb6afa93336fa31  speech/r02c0114.raw
-  d4242003c33326c1f4dfd51f53f5dedd  speech/r02c0115.raw
-  797ec277b91e8ee01a53537c3220faab  speech/r04c0000.raw
-  e8e9ae50ff1fe94067131680ae645a55  speech/r04c0004.raw
-  1871e50eafa4a2b948cc19c368d6cce1  speech/r04c0005.raw
-  d10a0bdcd818627744aff0d564504a9a  speech/r04c0006.raw
-  2a3f46f507d6477fb38f6afd7a7e9b2d  speech/r04c0007.raw
-  126f1c11c2a0541ff58e70d14e844e46  speech/r04c0008.raw
-  8bbe5bfde34300774bc574df32ff6fb2  speech/r04c0009.raw
-  1c66dc89ac2cc59ed21ff31e77835f34  speech/r04c0010.raw
-  6e772c69b4d9e3d4d63b0f3b1fda3c88  speech/r04c0048.raw
-  4bf4c485298802d226ee9cfd039ccc7b  speech/r04c0049.raw
-  4016d52b462670d235fab52c94baa23c  speech/r05c0000.raw
-  669ef2d202df2dfad40a905135f5ec07  speech/r05c0004.raw
-  bd99f3487b7066f8aebb708ccd9218a1  speech/r05c0005.raw
-  0c78db2de4a289e605fc5b7a792f9b88  speech/r05c0006.raw
-  1f3a68ba9d609cf251bbcc0e57863018  speech/r05c0007.raw
-  51989e3c0236ce17b6fec381e0333eb1  speech/r05c0008.raw
-  774ddf6a11f089dd6c4da528ffd3802a  speech/r05c0009.raw
-  6f90195f85548c8586f14b6fc0633af1  speech/r05c0010.raw
-  af12775001e4e557d11ec1b870e6d40d  speech/r05c0011.raw
-  5d08542e3380d3e8d44ab59baf7014b5  speech/r05c0012.raw
-  391886dcb0e4b91cd8d17175bea782af  speech/r05c0013.raw
-  b09d392a625f37c6d1f54b25a0203f86  speech/r05c0014.raw
-  9a66304f0a57a762a02748eaa5c5c198  speech/r05c0016.raw
-  8d5a255e44ce108f7a3382ba02aac14e  speech/r05c0017.raw
-  db5446a263a6ed29ca6cd63ae2b26ecc  speech/r05c0020.raw
-  f677ce1e80d60a252e5c9acd41b92fc0  speech/r05c0021.raw
-  e9168bb1a2b61c39a438a99eff73590e  speech/r05c0024.raw
-  c327f8eb06200341ca903cef8950364c  speech/r05c0025.raw
-  578ab85cf665cb5a18407a0391e217c7  speech/r05c0028.raw
-  1777826e740b063b4cfffbf44f8e3bb7  speech/r05c0029.raw
-  7bacb1fab1c077e19cd01ccdf5cabc00  speech/r05c0030.raw
-  66ca8e9befe7c1a36783876e428e074b  speech/r05c0032.raw
-  1e1314aa27009ca3fa1ab42903106614  speech/r05c0033.raw
-  99040c193b2fe92d72ab8c2c9d1910be  speech/r05c0034.raw
-  d6db706dc372a25daf460323317c9637  speech/r05c0036.raw
-  44e6151722b70a5d850c18b1f17d2534  speech/r05c0040.raw
-  eec78ec58e65621b48d5c134d71f4ce6  speech/r05c0048.raw
-  8a74cd52ed87075368a50a431efabeeb  speech/r05c0049.raw
-  30afb1cc1d491f004a4903aa455460bc  speech/r05c0064.raw
-  273ef17fc9ec77086f3c0b536d8b1f0d  speech/r05c0068.raw
-  cc66ac27f849c9fc3d1251e8c3476ed1  speech/r05c0069.raw
-  0a5833ef9d25868ff6047ddeccb4033f  speech/r05c0070.raw
-  79386c3555c7081e06d321aac7d0ae89  speech/r05c0071.raw
-  400cd31ab64854d205b83f38607a8f46  speech/r05c0072.raw
-  35ff07e5bdab39fc55a8ba596b3fc59e  speech/r05c0112.raw
-  dfacc8a37130ae7535fbc009ed24fc08  speech/r05c0113.raw
-  4df56326e59b2490b4406beb559b4ef9  speech/r05c0114.raw
-  01d4e9c30efaf826ec9a7b00c23a86f6  speech/r05c0128.raw
-  88b24d92264be1e207fe1f77b58c1451  speech/r05c0132.raw
-  5f0e363f5a77104741e2d3069c9194a1  speech/r05c0133.raw
-  359f2eea4ec363e426b58d1e66d0904b  speech/r05c0134.raw
-  adac945c0a80cc664e757b83720b038f  speech/r05c0135.raw
-  3e794b5a734f87c0ee52f855c0284ed6  speech/r05c0136.raw
-  b93b40eb663c032925ac87ce67042a60  speech/r05c0137.raw
-  bf957fc152dcb4dcb6082340839e6f57  speech/r05c0138.raw
-  ca929b8f87a85bcaea5b8225ab766502  speech/r05c0176.raw
-  d5c2e97c803427b63ad3bcffdb7b372f  speech/r05c0177.raw
-  79eb80c11f1cffe8e4647ea90e56559f  speech/r05c0178.raw
-  6a7fde2efc1dac3fbd599df1be946966  speech/r05c0192.raw
-  8ba7b68d5a1444fcbcb5b570ad1ca473  speech/r05c0196.raw
-  49a33e82f0674f4368e6f72706c461d7  speech/r05c0197.raw
-  6afef319891b4138ef26f747d0b304fb  speech/r05c0198.raw
-  e65a593fa1c7e7deb32b8969eec15230  speech/r05c0199.raw
-  50860f00c15c5a302facd3dd99ad493b  speech/r05c0200.raw
-  6cdecc57276f9fd14429080761d81f4d  speech/r05c0201.raw
-  bd17d742f15c2e60cd2da963a5684814  speech/r05c0202.raw
-  59de44da83c5314f2aa8b6b30c91c51a  speech/r05c0240.raw
-  f3887b425cf3a08b4edad0770ed8eaf4  speech/r05c0241.raw
-  4c3497e2bed1679ce3e6c19e081a20d0  speech/r07c0000.raw
-  1d8882bf72d3232a10ea849d175878f9  speech/r07c0004.raw
-  3ef9cc05b94967113c96cfc85451dde3  speech/r07c0005.raw
-  59fafe340a94bb8f52e195b6ae075102  speech/r07c0006.raw
-  deb5f75d4c2a6ede099ee69080a500cc  speech/r07c0007.raw
-  865b6f63e7d2bdf6636e1ec4e9f6238c  speech/r07c0008.raw
-  5fd6bdc678fdcf85112cfe5433e794da  speech/r07c0009.raw
-  30757e8980dc6d36650b4321f7c8fbd2  speech/r07c0010.raw
-  d78d1ca577cbdb3e56250a86f09b4d2d  speech/r07c0011.raw
-  2cf0fb943f4658f78f25d2040f80909a  speech/r07c0012.raw
-  8f006219a5db0898da38b9ebe98bd8dd  speech/r07c0013.raw
-  11e9dabf9c99bdd97d13404ad9ffe860  speech/r07c0048.raw
-  54ee391e98e8daf2abd5522a1f05a75b  speech/r07c0049.raw
-  340eaf03c7aba31aa7ec8bd026e10290  speech/r07c0064.raw
-  c8f13204b941584503a4fc85fcc6f2dc  speech/r08c0000.raw
-  e1b90aff7121fb77904ce997170749a4  speech/r08c0004.raw
-  625c2427d82d31477e3f8f9d0ec00e1a  speech/r08c0005.raw
-  cb516355937f02a9a77dab49f43e55e3  speech/r08c0006.raw
-  f953e6c2f3d53508889f59dee985eee1  speech/r08c0007.raw
-  70c3d4e0fd3a3f0b0b937ed4cca1c2bd  speech/r08c0008.raw
-  3e43d5b2d27157b6e9a1cf0322e83f61  speech/r08c0009.raw
-  4be3254584d519d7c03773fa3d5999f9  speech/r08c0010.raw
-  38b3653dd249a9b55845f3a290f49ef3  speech/r08c0011.raw
-  81dfb0151724a20f58d1208110b0047e  speech/r08c0012.raw
-  efa1be59b2f27108d6f6e358000ac2be  speech/r08c0048.raw
-  0531fcbdc669ad8754e5abf7ee3c6876  speech/r08c0049.raw
-  142c3ffa6792d9e69d67f29e6749c84f  speech/r08c0050.raw
-  bff1f1952a234c8507d2502dff611bf1  speech/r08c0051.raw
-  e95f62d9be502f1e4b30c5abbb84178d  speech/r08c0064.raw
-  00b04d3fc9d1b09e4f4932be725f6c30  speech/r08c0068.raw
-  7051ab7c312fe9caef7493b5ae3ba173  speech/r08c0069.raw
-  645855dd7de483df3157cdb33abf6bb7  speech/r08c0070.raw
-  32862c04c2c02d9e2ee6be46e06e183f  speech/r08c0071.raw
-  ff97f2e74e259500a4190c89dfc89812  speech/r08c0072.raw
-  a6021e5decce83e23a6c80b3cb6a360d  speech/r08c0073.raw
-  3d303d651d802d7cec6a9bc2de041c54  speech/r08c0112.raw
-  c12cc26c67a2ebb6c74b77581fdebefe  speech/r08c0113.raw
-  9722c6e3c03aee2a276dc434ac067c94  speech/r08c0128.raw
-  c290aacc6d2ba3573dbccc2458ec9810  speech/r23c0000.raw
-  f31c6d343e1322b57a21c7497440a543  speech/r23c0004.raw
-  2d64b2d7674c441639724958f22cc418  speech/r23c0005.raw
-  7d3a804a90a5c6c3a7afeafcae1dd035  speech/r23c0006.raw
-  b543ef9da45dd9642558405094bb401a  speech/r23c0007.raw
-  24ec147ae0a8aba488be331c7dd0aad3  speech/r23c0008.raw
-  4ef2f06db9001f5027dcc0eec86956a2  speech/r23c0009.raw
-  c2557da9440cf2b890d85b8290991fa5  speech/r23c0010.raw
-  94975b849d55c360bcfc0488c1c8584b  speech/r23c0011.raw
-  d8ef88aec48c1b7f39fd47343fcdb0ed  speech/r23c0012.raw
-  3deb36bd3a5f0785088f5d85f29e9dd4  speech/r23c0013.raw
-  b15e9785d2a33fc3beec0a13f1149700  speech/r23c0014.raw
-  9c7617eaddced6b6a942993ae433ba17  speech/r23c0015.raw
-  d83bea2188252636ebcbef0d24a8d87e  speech/r23c0016.raw
-  07c61dfcb09374c6a40a32fc9167cf05  speech/r23c0017.raw
-  72396de9f74a9e4bc9acdad784ab2ad6  speech/r23c0018.raw
-  7a0152435d0ae91caf7a037348c0eb09  speech/r23c0048.raw
-  4725e841df407be208e7e47af47e8c7a  speech/r23c0049.raw
-  eb1501e18262247fff50749c2c6f2a16  speech/r23c0064.raw
-  c8541f8edd096b0e90e966755ff90789  speech/r23c0068.raw
-  6e1ee8858b247ce9a6179e30202e86c7  speech/r23c0069.raw
-  a49497a5729835e7e638a694bcdb8938  speech/r23c0070.raw
-  4f7de2bc773e88d7333fd23517d0d460  speech/r23c0071.raw
-  bfcfeb271a3098b9f5c71c89ca1eb517  speech/r23c0072.raw
-  fc41e9e5dbd9b3f995c97e0372e2ae92  speech/r23c0073.raw
-  9dd7f7b7c7544a3dcd7715f43c756d38  speech/r23c0128.raw
-  44d985181a70c3a9533e0a5f70cc6022  speech/r23c0132.raw
-  ed3200753754056126684f90b206f13e  speech/r23c0133.raw
-  8817a88e855b133bb4309849a5b7de92  speech/r23c0134.raw
-  2c1e26244cd71c3a6fb7da9eee29080c  speech/r23c0135.raw
-  ad19621dcecd21fcefdf2f84939a1db9  speech/r23c0136.raw
-  a6aca2302da0dba1df51c4ec7a6f77a5  speech/r23c0137.raw
-  112f533e943fc49fbfec5670a102d0fe  speech/r23c0176.raw
-  b6399f45e1436d3f9a11749eacf40105  speech/r23c0177.raw
-  10d91c61fc637009c9c12d17b0c619f0  speech/r23c0192.raw
-  f05927ba84cb6f7c95840dbe599f0908  speech/r23c0196.raw
-  8688771d0e669e369c9354d65d1517c5  speech/r23c0197.raw
-  3d3b0b010a4bbc2d67a9e2fb3c1e5158  speech/r23c0198.raw
-  446505396dbbb78caa440d5c3fbfedbd  speech/r23c0199.raw
-  021bb801693d0431ae9ddf1b60fb5f4d  speech/r23c0240.raw
-  318acea73be9a9f2feffea4e8fcb1942  speech/r23c0241.raw
-  b0f6cc8fa2ef1e7d27d2953a49ac64c8  speech/r23c0256.raw
-  0e6ec3f07dc97c7a1965999b9a394215  speech/r23c0260.raw
-  cd08c0dc498bba7f4a4602fe91b602f8  speech/r23c0261.raw
-  0a4e7765b8677bd089a58b45e77283d4  speech/r23c0262.raw
-  0bce3d2609aaff58712fd725061d7d60  speech/r23c0263.raw
-  a3bc9b573678a7b6125c472689e8396e  speech/r23c0264.raw
-  eaa1f4b8822e26fe5bc947ec0d8e659b  speech/r23c0265.raw
-  9d351ebf374fb0ab3ad3da5d4260b4db  speech/r23c0266.raw
-  668399e716f264ba05b05b259799a681  speech/r23c0267.raw
-  2fc8a3fa8047b775faa39cec6f35f338  speech/r23c0268.raw
-  e016876dcdd77c207ca16f0efa4c2dbf  speech/r23c0269.raw
-  0fa63a8b8d4c8762054faacc8a7f40f6  speech/r23c0304.raw
-  d23a7871e1c9a457e6850158b56f2705  speech/r23c0305.raw
-  bf650f9f8433cc95584427e92fb0e277  speech/r23c0306.raw
-  d1cdc5591beff70aefd50a4b32c790e2  speech/r23c0320.raw
-  1fcf72b1814baf824c82554f9d01aa8b  speech/r23c0324.raw
-  2384d649f82944b55ac267b409e221fb  speech/r23c0325.raw
-  4c7be2b062b16767b73f381da051913b  speech/r23c0326.raw
-  14be0a186aea619b7194eb82b5523cb4  speech/r23c0327.raw
-  bfbb49bf02502eaf631d279f7ba7f052  speech/r23c0328.raw
-  31aea1c272702b22ebaa00f709867446  speech/r23c0329.raw
-  4bf21b2b2dbf7b2bf90124793f933437  speech/r23c0330.raw
-  7ad9ebe527c17fcfcacf829f1c858d91  speech/r23c0368.raw
-  c6b6e5b5a37835845670634e5b9a9095  speech/r23c0369.raw
-  7f59e2506e6314d944b9104769ad186a  speech/r23c0370.raw
-  e6f90775add44491d9dcd39cce05576e  speech/r23c0384.raw
-  8659a2bc64be0625fbff913dfc5e4939  speech/r23c0388.raw
-  14e2e58d5a4da50814993461ccc08676  speech/r23c0389.raw
-  f7055e3cf31311de0c38231d10f20ee2  speech/r23c0390.raw
-  3b606584f0b203fc0d7bf8214f0bc068  speech/r23c0391.raw
-  f506e3d978dc0670a6fe1bac87ba2fb6  speech/r23c0432.raw
-  637bcdcbd37f8e8c3df440b2db0fd257  speech/r23c0433.raw
-  e50959c13efe1ddf33c6d935ad84649d  speech/r23c0448.raw
-  0b24dd96aabc0626259cb91a9a9f84e7  speech/r23c0512.raw
-  c960d11736a5697379c881675b6dfb9b  speech/r23c0516.raw
-  367e5df93e67c1afddc7e4196cdb8842  speech/r23c0517.raw
-  16b138abc2d9ad23ee6b7a0990134284  speech/r23c0576.raw
-  4c03af26c135089d834c4dc5b464a3ad  speech/r23c0580.raw
-  72bf9ed8ea2971cf867c2fedebd0f9f9  speech/r23c0581.raw
-  3e2bf6f2123605dfa75c0cfb25d7d7f6  speech/r23c0582.raw
-  ad19e9df788fe0dfb8c35e964cbb5faa  speech/r23c0640.raw
-  4a8f1a1e270dfcd9d911dda093cf5a24  speech/r23c0644.raw
-  d56acbacfa31fb3de3b09ad3f758e858  speech/r23c0645.raw
-  fe7dbd4e4ff6962544add02ed598b062  speech/r23c0688.raw
-  cb2fd0806e48bd436eae2ef9ff823e4b  speech/r23c0689.raw
-  c6a751d4cd61ba8780ed51742dfc0e3b  speech/r23c0690.raw
-  97e7cb5d3270495a007f632cd22c969c  speech/r23c0691.raw
-  47f7be1b36c0e3a398a711f2a3da4ca6  speech/r24c0000.raw
-  eafe7163480251578936597c803ae36b  speech/r24c0004.raw
-  9649a0a73f79b127331a0cd82929edbe  speech/r24c0005.raw
-  a1cf0078005f64f3dba30dddfc25ae61  speech/r24c0006.raw
-  b4fdf5a9c50b26678d75a51cd8dcb5ec  speech/r24c0007.raw
-  85aafaee29baf7cbc1094a7f4e6944c5  speech/r24c0008.raw
-  35d4283a5615cfc64c4a6c0e87b639ab  speech/r24c0009.raw
-  0cb4bc8c0d3ba22d79b8f4406e6e8a4c  speech/r24c0010.raw
-  40f6f4e74f6bb2512c13770e17c4483f  speech/r24c0011.raw
-  59d37c1b646223a9844026328ea22392  speech/r24c0012.raw
-  cffe33b1aaf35b9fc5819933220bf8b7  speech/r24c0013.raw
-  04ae17acf8db647e3966819640be8463  speech/r24c0014.raw
-  e01eff47c07e69002e4682629b19e7c8  speech/r24c0048.raw
-  4ac0f81de0ad97f1c9051adc43fe45a2  speech/r24c0049.raw
-  ed06d64b3f6ee1208ab2d79bdeabe15c  speech/r24c0050.raw
-  9232c8b420af814d0dd577fa8839e0d5  speech/r24c0051.raw
-  a524311cdf363a7b15090d6bf924aa6b  speech/r24c0064.raw
-  a8900d6e39656d5789a0cd89fae43df6  speech/r24c0068.raw
-  3ec50343482431dfcdcac6f01eb0d620  speech/r24c0069.raw
-  a3e83a8060547d2fd60a7c37b0bc70fd  speech/r24c0070.raw
-  49a2ac3fb3e9beaf0fc74b689e5926b5  speech/r24c0071.raw
-  fd20fabc2f5829011c797df208660f65  speech/r24c0072.raw
-  2259aca4b152cb34d6ec6d64ccadf6e9  speech/r24c0073.raw
-  3285e813e87429903a827aecde8b63e1  speech/r24c0074.raw
-  fead060344ce7486a4dd9a8996adedae  speech/r24c0075.raw
-  120086a8d3f39593a8864931e1e919b6  speech/r24c0076.raw
-  267a416c90a8e1687e22d48dbb94e3ef  speech/r24c0077.raw
-  7adbb5f7d66567d945bb1af5c000df1f  speech/r24c0112.raw
-  e91f79c951c930771d9b1e3394e4e56d  speech/r24c0113.raw
-  9e1c2d5f0e08b3a9fb601d561db8590f  speech/r24c0114.raw
-  b4a3acec5903783c647b05aee21bbaac  speech/r24c0115.raw
-  4887c36171a8f4da7838390f0908420b  speech/r27c0000.raw
-  2fe2bdd7d065cd86d326d9af3677d4ce  speech/r27c0004.raw
-  3922bc177ca351c6dcdfab88083644b3  speech/r27c0005.raw
-  a8738e7917205aa2984e0dd4ae9343d6  speech/r27c0006.raw
-  97ae208586820f7affd57f0ca59e68ac  speech/r27c0007.raw
-  16d9866a43a59981297044f17ab91de5  speech/r27c0008.raw
-  a7cec0023d5cadc5246a0b706ecfebf9  speech/r27c0009.raw
-  99672efaabdbeb30baa07a43d331c904  speech/r27c0048.raw
-  81c82a7e361b2fc2c93e2810fb4fb019  speech/r27c0049.raw
-  476ba69a4073272cf40be25285fcdb97  speech/r29c0000.raw
-  464860ade985e44e29705c3ce25f64fb  speech/r29c0004.raw
-  eeb885d42dce2c5e2b611f386476756a  speech/r29c0005.raw
-  cc593b0906c7e39b364eac202ea48289  speech/r29c0006.raw
-  46541a440ca14f8b55d902eabd628e77  speech/r29c0007.raw
-  44f42ab5244c46bca14a1bd2e345c786  speech/r29c0008.raw
-  4cca08789bd545e840e3912afb4c5843  speech/r29c0009.raw
-  2911c2ee36af91e0a39e3576b747021a  speech/r29c0010.raw
-  66699f927da0c4325ba9ce5043ebc23e  speech/r29c0011.raw
-  8a2e5065b18b4656b53cc47a7a20a789  speech/r29c0012.raw
-  a8bc8f818d47eee40071c4fe5746c9a5  speech/r29c0048.raw
-  390500964c2162d5d1deba9c152f8b24  speech/r29c0049.raw
-  b1dce508d6695543e9d719814b65d6bb  speech/r29c0050.raw
-  c5641d2f6206a05c37288f803336aaf9  speech/r45c0000.raw
-  eb7d46e58705625958f0cbbb7b6307ab  speech/r45c0004.raw
-  e9d0921606c6dd940c273de0ed145faa  speech/r45c0005.raw
-  2aba134443f593e863aa2967e3fd5ba3  speech/r45c0006.raw
-  e1ee7a2aeb27ee1148fc76ec906c2113  speech/r45c0008.raw
-  25dd8683fe911c70127ae1809be15d9e  speech/r45c0010.raw
-  47420fd08c69762dd4140bc1e4d162c0  speech/r45c0011.raw
-  92e58802322c6fe51f8cf258da331c75  speech/r45c0012.raw
-  f3b36ede97934d169ac1e8098ca082be  speech/r45c0013.raw
-  5a3ffbd97e080d65c965bc6cb75f7fad  speech/r45c0014.raw
-  818d0d6facb6eb77b5d7f5bc5bfdccb6  speech/r45c0016.raw
-  cef19a9ecf51a6b21919dc2044c6bfd0  speech/r45c0018.raw
-  18f537993ad1dd64d397d30f01bce165  speech/r45c0019.raw
-  51f11ec739a571090b3d9af30421dea4  speech/r45c0048.raw
-  b940512fc066a74aa2ce3e788796bf16  speech/r45c0049.raw
-  c5641d2f6206a05c37288f803336aaf9  speech/r45c0064.raw
-  219de229474b3e689f60078530afcaf1  speech/r45c0068.raw
-  ac1cb6714de20da21ba95fa3f1949182  speech/r45c0070.raw
-  c71651c9ddf13ca4253f037ae99a6765  speech/r45c0072.raw
-  2eaabdb8715a887b3e3f93d7256b099b  speech/r45c0073.raw
-  04d3988f9b4e276551862ccdf3cd9a69  speech/r45c0074.raw
-  7fb7a0778f23a96b8554314ee4a30ce5  speech/r45c0075.raw
-  73744e48cf81ec9b63f189f944c7e747  speech/r45c0076.raw
-  64bea0ffbcae54ca9bc792d517594ba9  speech/r45c0077.raw
-  c84b1f175151c9f87af747f2acc5e08f  speech/r45c0078.raw
-  fdf274af1ef29072db7ff5b52a18402d  speech/r45c0080.raw
-  200f63a4dda128ae3693f191da7d0285  speech/r45c0082.raw
-  141865c932cfadf2884742f6436e65ab  speech/r45c0112.raw
-  c5641d2f6206a05c37288f803336aaf9  speech/r45c0128.raw
-  bf92b41d379c8313f846e9957e0a01c4  speech/r45c0132.raw
-  29af531a96fed3e24112c5a81926f3fc  speech/r45c0133.raw
-  5c309da48fa6a7a1d108cb9b21ee71c5  speech/r45c0134.raw
-  74c2a87ccefef4b7af85f7b933b61d6c  speech/r45c0136.raw
-  fe99192880f1d817b78add8e5dd4e39f  speech/r45c0138.raw
-  d9fa68edc03dedb61ff36c3b9fddd5c3  speech/r45c0139.raw
-  59ce7f3a7ae901fb474800a27cf951b7  speech/r45c0140.raw
-  357c1cf2816d5f2dbdcf1c5528e5830c  speech/r45c0141.raw
-  bed3cfa4d6dc8ebcfce0b4017c4298ac  speech/r45c0142.raw
-  2f7ecab4f1ff8aa729425724a7fdb385  speech/r45c0143.raw
-  f9ee160df94944af738ea1546d455cdb  speech/r45c0176.raw
-  c5641d2f6206a05c37288f803336aaf9  speech/r45c0192.raw
-  6350fca78c7d066cf486e57fe16670c7  speech/r45c0196.raw
-  c6445b4ac3cd97dd7df7c86932b1efcc  speech/r45c0197.raw
-  0e5bbece40f45a9210873a35caefc28a  speech/r45c0198.raw
-  04f55e54a99d1595fcf9a2cb43d6b06e  speech/r45c0200.raw
-  3173b0208da982143e175a627d6b34ed  speech/r45c0202.raw
-  410507f56e9cc94028f38a7c8d9544ac  speech/r45c0204.raw
-  42239980ba3da05efb54c45bd8838d0b  speech/r45c0205.raw
-  59e19492d73921661885837b1acbdb6d  speech/r45c0206.raw
-  72069998ed816966691fcf0dc9d288d1  speech/r45c0207.raw
-  af8335061c21232b1686fc4e9e9d347d  speech/r45c0208.raw
-  36a566f8891b9486b9f3e8de687e6345  speech/r45c0210.raw
-  28b151df969cd691adca1274e80ca5be  speech/r45c0240.raw
-  a57a7e78ea9ac775c604f9b4a55a6477  speech/r45c0241.raw
-  f255fc035f75029809761ab1952db055  speech/t50t0012.raw
-  ff99308ae9fd46d36e89725017f41c2f  speech/t50t0030.raw
-  5de77a7d9cd886ac007b13075b602625  speech/t50t0031.raw
-  b0ded2ed2fa66e760e6a3a9a9eca0138  speech/t80t0042.raw
-  bfa8d96efe39646cf1f4b98754caa4a4  speech/t80t0043.raw
-  ce47cb1fe21962846008986de3fd2d6a  speech/t80t0045.raw
-  39c05ffacf606cdd6b1fdb74fd8cc95d  speech/t80t0047.raw
-  9ef9046a133cc0cc926bb527a768376d  speech/t80t0049.raw
-  adb4242c1c149565f01b71a70f919cdb  speech/t80t0050.raw
-  decd2d989b3592a3768207abf2b6d1dc  speech/t80t0051.raw
-  9a94e291cad608d9e484bed199f9e313  speech/t80t0052.raw
-  aa711d19349ae29f029d4029d8254761  speech/t80t0053.raw
-  9167eb409b09d9d2b08dae7d72342960  speech/t80t0055.raw
-  c4d585cb49ee738f591edc5ef61975e8  speech/t82t0008.raw
-  960113121c7391830fff38a35d7d3f0d  speech/t82t0009.raw
-  52083b1d962f39a69d9a7f01b60c6955  speech/t82t0010.raw
-  20a1d2d8c9d058a4bf79df1767604be6  speech/t82t0011.raw
-  688a6cac77e91212d160a90a060111ab  speech/t82t0014.raw
-  c3c9a64b503ecd2c1b58d644b73c6ced  speech/t82t0015.raw
-  e1df4a24372ee29d99f613fc138ba4a0  speech/t82t0016.raw
-  bf9f20b6f7f36749dcad41c1a2c47fb7  speech/t82t0017.raw
-  90ca761b963f22063c122ccda5878285  speech/t82t0018.raw
-  7323a1666a2fc5d3b575b1e065baa524  speech/t82t0019.raw
-  add164e5a162d015dc0152f7fd1daad0  speech/t82t0020.raw
-  8427ecb849ae9fe8e9e1f2770fd1159c  speech/t82t0021.raw
-  400d2dad63547379cc44a5569416e33f  speech/t82t0022.raw
-  f614adf47c784c4cee5af0160fca2601  speech/t82t0023.raw
-  c5556dd2c8402eb91a871f40e753911a  speech/t82t0024.raw
-  f90b41ec6fc72b97398ff4af32f1da67  speech/t82t0025.raw
-  dfcd40d8c9d588381bd07d7f16cfa3be  speech/t82t0026.raw
-  ffeeda9e47cfa2130b2173eb7e4ce931  speech/t82t0027.raw
-  d80903df0366b7df0a2dd4081d9bc104  speech/t82t0028.raw
-  9307b52bd5700b3f667a789dcd929f03  speech/t82t0029.raw
-  b6ce559c342afa256bb03e0bc1855066  speech/t82t0030.raw
-  9cee2ab5f8bb68cdee9ecbcdfe59ae71  speech/t82t0031.raw
-  628cafed801316006d1f0be2739ee872  speech/t82t0040.raw
-  0a293448fa4e6cc90a42a0860aa01aca  speech/t82t0041.raw
-  4096c97fc2a35c5e78c2e5c254cc2fd8  speech/t82t0042.raw
-  74502bc6693ca8a4c53963fd74fbc6cd  speech/t82t0043.raw
-  7bb43355947c0e50a123f456e56d7e05  speech/t82t0044.raw
-  d3a0c4809cf5775eeb76b2efaf42087f  speech/t82t0045.raw
-  06a8024e528458567dc8c8bc18e87b84  speech/t82t0046.raw
-  4f97b13e003733c3178c6f7c954ec401  speech/t82t0047.raw
-  9661294279b8fb37359a1b3294fa088c  speech/t82t0048.raw
-  107db6ab67edd432d97d3e4dd0ee0311  speech/t82t0049.raw
-  23ec58f30efcda24ae6353e29bcb7e56  speech/t82t0050.raw
-  959f9cdc1058297c5f57f09740bb68e0  speech/t82t0051.raw
-  1d8ce12b9798ff9aebfdd6b026656c0a  speech/t82t0052.raw
-  4387cb5a5f95c6789e9f3fa5a6491d06  speech/t82t0053.raw
-  1a72e6e4aee9c027a751dae35ecb9351  speech/t82t0054.raw
-  d948d692f13fecf85c7605ccb1464566  speech/t82t0055.raw
-  1d5ef2b1b03a53cf30e81ff4554567a2  speech/t82t0056.raw
-  9bf9f9721c748ee1215c3e64efba2def  speech/t82t0057.raw
-  eea5709751e45d2d6324950574168a11  speech/t82t0058.raw
-  5a3778973227635f88e92866f1ff72fb  speech/t82t0059.raw
-  aaeb27dc8184410d900cddc4264cd5b7  speech/t82t0060.raw
-  a8a92a0b4754b4d77381d68c8624686b  speech/t82t0061.raw
-  83f2b340ff889251d5021267845d51bb  speech/t82t0062.raw
-  d762c9b25ae8d527ff279961c61a25b6  speech/t83t0000.raw
-  4705e710d97e2b559bcc25898524226b  speech/t83t0001.raw
-  ff832ebbdab935978bf80195e54f872b  speech/t83t0002.raw
   fbd50ad3c0b4e2d91e7b371560967623  speech/t83t0040.old
-  04873abe8b367c24cc4189e8b33e9ef8  speech/t83t0040.raw
-  fa7fbc88a2bb0b222dfd1386344a3694  speech/t83t0041.raw
-  a7c19aa5a59e9fcd3a7647016eb03dbb  speech/t83t0042.raw
-  dadff6a18065afc1ed05d186940555ae  speech/t83t0043.raw
-  27a9d9a6c521f55735212a6a807e3ccf  speech/t83t0044.raw
-  f2e9f0cc0187dd16ccd2492b13fcefa1  speech/t83t0045.raw
-  2ebfe7b3313cc2e5225e859dfad75059  speech/t83t0046.raw
-  d8fb440b9477172d75fd0f582b32d4d1  speech/t83t0047.raw
-  e64cc10ecdf7ec0a8561da9d65c45f78  speech/t83t0049.raw
   c183de738ec2d04d525adbdd755cd9ba  track01.flac
-  06ae54319977446a895753b226368830  dreamweb-cd-uk-1.1.zip
+
   9a642fb23773ae631f59452b90a13436  dreamweb.r00_uk
   96ae22dc9c590c533a54576c1aa248f7  dreamweb.r01_uk
   fceebe3f1666b2ef3098653d83641ad0  dreamweb.r02_uk
@@ -3837,4 +4090,591 @@ md5sums: |
 sha1sums: |
   994f3475e35b8e83f7854ea31ef8109c03b1fdfd  dreamweb-cd-us-1.1.zip
   5d395bfbd96796046d9fe8207e59b624023f4667  dreamweb-cd-uk-1.1.zip
+  7e4beee728ba195904dcf187f5eb8a685b07aa6c  dreamweb-cd-fr-1.1.zip
+
+size_and_md5: |
+  226360597 3ae3a109d6233cf6b5ab7b63e7cc8937 dreamweb-cd-us-1.1.zip
+  226067188 06ae54319977446a895753b226368830 dreamweb-cd-uk-1.1.zip
+
+  166468360 7d76306395baf219439e5ce1841a4b03 dreamweb-cd-fr-1.1.zip
+  303284    82053d76ce5d5b3378c8bf064e77d468 coverfr.png
+  26126     0d959febac06aa5b36b58e9ac65e0003 manuel.htm
+  17203     140a431bcb5b1b54012e0fc540bc2b90 manuel.txt
+  52775     470fda1af19be71b4fb79b3e446a800a screenfr.gif
+  23244     3d453065a46ab9ba09ab7f34895609f2 symbol.gif
+  29806518  9fff56eed8b4593f92acf92508d6cb7e track1.flac
+  1280      7e37340221ff29f444befa63d4792c42 license.txt_fr
+
+  52534366  938811bc2418a03fb1549d71318ac334 dreamweb.wav
+  20522     d0ca5c2ff2a0e2e8c795a52b844d9727 dreamwfr.c00
+  6046      988819a72541b43b7fadc599a8b54b66 dreamwfr.c01
+  12003     30b8140288d69ee1530f20f868688820 dreamwfr.c02
+  41478     6bd9bae76d5e96adaef28e08df0899a4 dreamwfr.g00
+  26122     c1c5df0b73a0a3384443017856c46a25 dreamwfr.g01
+  28250     1c8fad687016e1e0276133f52bd5855c dreamwfr.g02
+  48247     07c3d4fadd17648f2f244363d49feefa dreamwfr.g03
+  34384     fc80692ec39cabae55ecb680337a3d32 dreamwfr.g04
+  41152     a6c23383c64e0f7a506fd39ad2543aa7 dreamwfr.g05
+  40018     704c25505cc8cf694747c895bb490feb dreamwfr.g06
+  13993     85cfd5e030d88cd19e3f484a76924b2e dreamwfr.g07
+  51121     bb7bb6f4ee599a0f574309d7947a472b dreamwfr.g08
+  62341     b6e0e65ea5a3631ea884c873b99d9736 dreamwfr.g09
+  19076     220168ca0e6dcd82c17a27510a69ee35 dreamwfr.g10
+  40383     7b585e92e0647aa6e4285d07f7b71112 dreamwfr.g11
+  29734     5b1c284d1376db1844a52fcd9f5d38f8 dreamwfr.g12
+  34390     3a404e9e54c1934168ca30cd26756c14 dreamwfr.g13
+  26735     36c70c959592930cb48ada126619ce2a dreamwfr.g14
+  11340     a49ae64ba5aa24b83b17835b4276270e dreamwfr.g15
+  16684     8324052cf13ae821042f1991c4bdc349 dreamwfr.i00
+  15662     abd0e8f5ed3fc9f8cb4a1d4c7c44c232 dreamwfr.i01
+  25736     3d2345ff6917758c3656a0e21e6f1a2d dreamwfr.i02
+  22581     d7ea6adea726d8ab711366c1f50a01e4 dreamwfr.i03
+  20459     2038eaacf2d4b790d32cebe073a47679 dreamwfr.i04
+  24065     14939b43b1198ed19be3d38eaa8c229a dreamwfr.i05
+  9230      cebeefe55335e527534b20007245ae33 dreamwfr.i06
+  62010269  7eed065855188eb400c45d9af7964e76 dreamwfr.p01
+  4200      8535489d90a89bff9d7fe10e7677e657 dreamwfr.pal
+  154657    77e1e3daa6d26c638113aa186c593d34 dreamwfr.r00
+  159563    076d73d014cd4448f79f179054cdcef2 dreamwfr.r01
+  200575    66eb76ebcc5140788e425cf53e0697d6 dreamwfr.r02
+  79745     c5177a279c424e3a978dd4c9cb616736 dreamwfr.r03
+  74809     0c2dde773145f30bfc01dbe936f5433e dreamwfr.r04
+  93609     1f55d36ab37cb210bea682d66ad46b3f dreamwfr.r05
+  106171    73bac34f11b92bf02d10135dcc68a2cb dreamwfr.r06
+  108797    964565f41a3e03140a30ba326e94e947 dreamwfr.r07
+  145267    e30a54cb81c2017cffacf433f46d3cf3 dreamwfr.r08
+  151112    8c26b5ebd9d918660d123b225308fcec dreamwfr.r09
+  91848     1a9529b3d8cf180f4ac5faa920f2e820 dreamwfr.r10
+  98696     0b205f167d1db81da338755db8eb2470 dreamwfr.r11
+  73071     c32564a1f9820efc26f883b30ab93663 dreamwfr.r12
+  186966    4b7f44c1c0a1a2c3dbffb6c59a9795be dreamwfr.r13
+  183662    980925a1926bc2a4c9fdcbb11f4e3b16 dreamwfr.r14
+  91979     66e9700028ac1ad6e3cb2e5f405740c9 dreamwfr.r19
+  200950    edff64e1072e1fd50def5d969e2d26af dreamwfr.r20
+  90719     6adc3c1ddeb0f184e9cf7200e6ccdb47 dreamwfr.r21
+  190771    dc03aa4fe312b5683a66adcfa70b7b57 dreamwfr.r22
+  175531    be45943610f11c9540911afb0cb038ab dreamwfr.r23
+  148149    eb74892355f2658e74ec5b678e1d8d90 dreamwfr.r24
+  192750    3a37d0c07486f6a55da3b6b54e9f8930 dreamwfr.r25
+  122946    c49a1dabe4adf5d3bc3b7810ef197e07 dreamwfr.r26
+  182007    8c6fe7f7b39fee0e81c3e5cd9659df6a dreamwfr.r27
+  168985    2f26f39d92da475850f210be24106457 dreamwfr.r28
+  94912     26d56149c1f5d90a71cedff76607af41 dreamwfr.r29
+  198147    515cf2f4558369a47d8b51e14c5a4578 dreamwfr.r45
+  99934     e7c5e00d13f5ffda78e98f1abebe5c8c dreamwfr.r46
+  147784    36ad158e215ac3de80dc57f9ddf667ff dreamwfr.r47
+  183071    bf0f565fd30c78c1c354066a807db15b dreamwfr.r50
+  199266    f878cc809763c31302efb85ca9838a2f dreamwfr.r52
+  151052    eda75d3cd4ffd884d63b4cf4ce1f40f6 dreamwfr.r53
+  79002     de9b2ebf39dbec10c7d0df1d3439dc01 dreamwfr.r54
+  187758    e553bfc0be0e91a8728f521960b89aa2 dreamwfr.r55
+  24301     6ddd8ebe18109cafc567e53eac4c7e5f dreamwfr.s00
+  45516     829548ba0ccb52b65c8a995291e9876f dreamwfr.s02
+  2961      ff1609afe22b77c0d9fe2d1cbc739692 dreamwfr.t01
+  2400      dbb3133675b3ecb5ff46a94f5bf19c04 dreamwfr.t02
+  2614      dc88822710ab260a0999f6b09389c6ac dreamwfr.t10
+  3982      e82db24f2abb40324733df1e61fabf03 dreamwfr.t11
+  4154      d575f2d01aa9d4bb53564c7a9f3b0f3c dreamwfr.t12
+  4588      6fbb7f60d566b4a0be8677c05d230167 dreamwfr.t13
+  294       71586925bdb0aa954a0d140b948f6bd2 dreamwfr.t20
+  605       ab6115df60b01129c1202ac87f410dac dreamwfr.t21
+  309       06f14a992da8d4aa4c83786ab5e35b6f dreamwfr.t22
+  721       723c3f100e39d45e8330716d7d167b5e dreamwfr.t23
+  908       6688a86f660110bc05b96a4cceffd4ee dreamwfr.t24
+  3764      c1324e122f74fdcf8b124358b37ad0a1 dreamwfr.t50
+  989       0a175d06e1086fc3312ace29d348e2d3 dreamwfr.t51
+  6537      fc258607c51361ac422a0a8ff3427f09 dreamwfr.t80
+  3435      76d9fa4fcd981a1a3992a47fc9463a63 dreamwfr.t81
+  2898      f3866ae859c693b2bd856b04c4eb92bf dreamwfr.t82
+  2840      b72a1659988a3c73c1146f09770102a0 dreamwfr.t83
+  1232      77c37614f5e67fa6e90a33dea7554d91 dreamwfr.t84
+  342142    b4c710822f99d853b7e5d39c56e1f4eb dreamwfr.v01
+  1040570   18fbb58f8621ee93b4045556cad447c6 dreamwfr.v02
+  1435834   eb54fd538ed92366a2b4d3f7d7207152 dreamwfr.v05
+  821362    4f9be19f732d283ebf2607d1dc4a3b75 dreamwfr.v06
+  147576    5c3fa954d72960fa4a3cd4fba123b846 dreamwfr.v08
+  1214596   065f62c44334a4567d4fc2945e599127 dreamwfr.v09
+  145522    3fd8d3f6d987f4adc52c61a5bb0b7f1c dreamwfr.v10
+  252018    d99e57fed7da3d537f0f27cc2dd515dd dreamwfr.v11
+  452746    dbd821aef07424a4fa48824cc4efb6da dreamwfr.v12
+  1755286   616be56aab0dd2c44678f6479568ad59 dreamwfr.v14
+  45158     1025da2c519a98d87a7fc32eaca896e5 dreamwfr.v19
+  1614004   efec0fedbc58806e4f6c6124b25caa1b dreamwfr.v22
+  1611926   98dc74757da8653a708bd469c3350851 dreamwfr.v23
+  1106022   2c846c320657aa255918c67ebe1b2b2e dreamwfr.v30
+  376940    4131f6d4121b0781e99c370467191a25 dreamwfr.v33
+  1075302   80d730a1f044e894ec1d8d3d92ce64a2 dreamwfr.v34
+  1808540   c2a2ed499c965ba5e541800d984c229d dreamwfr.v35
+  702632    a9c20b10066ebccf65f77af56b579d1e dreamwfr.v99
+  1792      44f27ec12293257eee63f1b69db6a883 dreamwfr.vol
+
+  315711    a862e21ef60b6fb528ec75352acf1c22 speech/r01c0000.raw
+  49138     041e5721d2727c7941a5542531659ab8 speech/r01c0004.raw
+  29854     c6de6b81dda7007dcb969595c5b9114e speech/r01c0005.raw
+  115842    f192ebdac6bc8a6bdcbfc1c44ec74e3a speech/r01c0006.raw
+  18736     336ce21e7e9e47a4b891a51dad23ef5f speech/r01c0007.raw
+  79498     89605404a729e4e615bbf83184d35bc4 speech/r01c0008.raw
+  216926    5e9a15fdad820cd86d8bdcb98e5778e5 speech/r01c0064.raw
+  115842    124a2fe9b8b0fc7d49232337ec7ab29c speech/r01c0068.raw
+  51106     824e4d05f5353a7cd40116f918da0098 speech/r01c0069.raw
+  75524     17fdee89b2ffca348dc0b1948a4a5d1c speech/r01c0070.raw
+  48834     e4381076b2bc641be7bdc676d53f7614 speech/r01c0071.raw
+  56784     766fa88692891dd25d392c25a96fb02d speech/r01c0072.raw
+  58488     6324729b383000ab0b43fc32b2a700f3 speech/r01c0073.raw
+  151760    6f892b7d0bccb65289cb8f3a3556a985 speech/r01c0112.raw
+  11604     ee56769b98862fb1f83f664068a70398 speech/r01c0113.raw
+  120364    a8a0afbd6279af613ad1c723a0c3a05a speech/r01c0114.raw
+  61416     0c319afb0b635107e3d5ec0ffe4930e9 speech/r01c0115.raw
+  303688    243e5d32904be6d968b667ee6c5b4d7d speech/r01c0128.raw
+  60720     25df5ff60a96786c39932a9b9d97a7b8 speech/r01c0132.raw
+  88816     9bd017d482bb9c7250b56176e4cdcbbe speech/r01c0133.raw
+  67970     100c3dce09d75c7c53dd5bd3cacc2dc5 speech/r01c0134.raw
+  19028     2bfd9bfa2e02f4b9290081f4fec5e30e speech/r01c0135.raw
+  111474    de3e46db500f79d81b28dd4cd7dac67b speech/r01c0136.raw
+  67970     5294ebec40a9ad7cd6e1962646e90161 speech/r01c0137.raw
+  74314     3bf115b9a76b3bfb4759b3b585f0a192 speech/r01c0138.raw
+  173104    532413e6ea44cdf9d455c302b791f520 speech/r01c0139.raw
+  159510    342c339f30ad44c7fc2aa9c58e59d5a9 speech/r01c0140.raw
+  111474    f826d3e5b54d6800156aa32407b3cc6f speech/r01c0141.raw
+  187606    85865f95c8fe0fb3af308f9fc4987be2 speech/r01c0142.raw
+  80496     925f37036b66a481d4bded49d947d6c1 speech/r01c0143.raw
+  81256     829ede2348773b5742b1a6a680448044 speech/r01c0144.raw
+  116920    d9cead5dbde49700237d0bff9f713fab speech/r01c0176.raw
+  62282     052b3be38a675569d4b9139ac5d4783b speech/r01c0177.raw
+  60098     37a7bbb332ffb7d80d95d0960678df6c speech/r01c0178.raw
+  277554    71241867923f527f9ee75e471c9e7590 speech/r01c0192.raw
+  131126    e1866d9973bf7fcdfe44cb7e531c51f6 speech/r01c0196.raw
+  86322     cc936c229b5284e4922dfe0de3c3d676 speech/r01c0197.raw
+  79766     f122e15b798aacca942a61ed066581e2 speech/r01c0199.raw
+  91786     fb2669393ae3edd9677ac42e517790b2 speech/r01c0240.raw
+  43706     279df04726a3a77d83c9028dc1703fe9 speech/r01c0241.raw
+  214626    ba2eab818b11b8ba6711eabfd222ecc5 speech/r01c0256.raw
+  88216     e8e0824e2a83053bf1d535a97cd6317a speech/r01c0260.raw
+  50408     f01fbe9621263f826cba41d31d6175ad speech/r01c0261.raw
+  64270     52ad0837f83d7c644ac4fa2b1629215c speech/r01c0262.raw
+  84600     c45f0ff26762b7d9dd42626d4ed9ae38 speech/r01c0263.raw
+  128078    795a774f4b028fcb01001d63d9c3b921 speech/r01c0264.raw
+  32898     57e247678129d8873fbb57d5c08acc7c speech/r01c0265.raw
+  88126     d78147a5e2dfe49f8375fb7cf98338b5 speech/r01c0266.raw
+  34072     d65aea5a053ade89c2b26920eaf1f562 speech/r01c0267.raw
+  139828    c07da6492926da2dfef8635d0162750d speech/r01c0268.raw
+  96350     0aac601651485fc497fecdd677fe4d9b speech/r01c0269.raw
+  83426     36eab9477f0c287a0114cfe506d3001d speech/r01c0270.raw
+  84600     180d34de58267e390be8d7f1fe15a1fc speech/r01c0304.raw
+  38774     3eb02ce1dbb559c2778ec7cc7cc31608 speech/r01c0305.raw
+  244408    169ac1c778ab7131118d28f783e54b86 speech/r01c0320.raw
+  46446     f8edffffa7783c6ee5215b50e8c305c5 speech/r01c0324.raw
+  59718     9a6b66f4667911dd240ae72c66bdd48c speech/r01c0325.raw
+  53082     e9c7cb553ad23706ac2fe612e8661e3e speech/r01c0326.raw
+  73574     ac6e7863260e7a4e54862c6e9cff6ca0 speech/r01c0327.raw
+  80264     94172e91a4ca5c8eff5abf18449ac3e6 speech/r01c0328.raw
+  27588     c2fa39859b4a6844f8c9a765201286ba speech/r01c0329.raw
+  311032    0567af7cee759d63a464e0408dadf2d2 speech/r02c0000.raw
+  56016     ba61d98f81e39e9b3ac5377c2d80ce95 speech/r02c0004.raw
+  115380    cca19fa10bd264ba0852739d5d68b209 speech/r02c0005.raw
+  73574     46198cb0c57da9be19e5692b731faa59 speech/r02c0006.raw
+  118936    98c79d516798790263fae579c39422f7 speech/r02c0007.raw
+  49402     42d30d8675f32256d82d499d6ae445bf speech/r02c0008.raw
+  112530    184b8409651c0dd68d2cf7ae7b84deb4 speech/r02c0009.raw
+  141808    94e517ee61e83d2212c6c8560c4d2f22 speech/r02c0010.raw
+  40252     4e10cde0c8f2a00503004a60762d2729 speech/r02c0011.raw
+  93316     9c430e027724937fdc81f72d7fbff8d4 speech/r02c0012.raw
+  127564    ac4c6e56c69ce6eeea05517c5b4ec7d8 speech/r02c0013.raw
+  161368    13a7bb2eb9c6e8f631ead0ea1b91ae14 speech/r02c0014.raw
+  44984     69dbd5eba33a9685183cfccfbab3354e speech/r02c0015.raw
+  125182    fe811ffea7e96df5a73340e3fad4a814 speech/r02c0016.raw
+  55742     04acf079aa899f8a453f33435dcf0bdd speech/r02c0017.raw
+  71390     13e7ed3fe5f1a540e16f09f3e9f3c8ad speech/r02c0018.raw
+  44984     8b68a041cf767af3fd034a35e96a2a98 speech/r02c0019.raw
+  119312    0251f32fd1c6334b09be62d7b7edae1b speech/r02c0048.raw
+  117358    7dd84a81c51fc54a7aefda9a829c7f13 speech/r02c0049.raw
+  72368     89aff3c8d19f582b42303b6a3d9fd974 speech/r02c0050.raw
+  182884    111cc591b09c8358e04ee50b528f7e85 speech/r02c0064.raw
+  77258     3488352a1cce05d2a5aded341b0899fe speech/r02c0068.raw
+  55742     3eb94d00896f223bb237f6acb6c5eefa speech/r02c0069.raw
+  73346     60353d9e2d5fd7400482fa5dc516b47a speech/r02c0070.raw
+  13198     a34fcd413b89eee354a987d1dae1462d speech/r02c0071.raw
+  30432     3c4aab34e2c9762e8f39ae0eaa298518 speech/r02c0072.raw
+  31166     8dad4c17a47fb51a9d3715100a37818d speech/r02c0073.raw
+  50602     e833fb6151d6a59d0e59ac5bcdd5a09f speech/r02c0074.raw
+  21632     e7fc91c3d175fc8a81f323105f3a0b7e speech/r02c0075.raw
+  51336     6ed3766bec6de3c239cb1c3f395c5be3 speech/r02c0076.raw
+  93534     659d8a92ac2324aee1dbbb2bc410ce7a speech/r02c0077.raw
+  93532     a8dd7c40ff3e233d5b94765e8762c9d0 speech/r02c0078.raw
+  100376    7f55ff2219404b402c24f8c7bc565f54 speech/r02c0079.raw
+  75282     f599502f9f1a245d869f600da3b07833 speech/r02c0112.raw
+  84406     da3e63dce437ae0de53df870197f62bb speech/r02c0113.raw
+  65014     a22839369842a0627fb6afa93336fa31 speech/r02c0114.raw
+  84408     d4242003c33326c1f4dfd51f53f5dedd speech/r02c0115.raw
+  272622    797ec277b91e8ee01a53537c3220faab speech/r04c0000.raw
+  119768    e8e9ae50ff1fe94067131680ae645a55 speech/r04c0004.raw
+  76422     1871e50eafa4a2b948cc19c368d6cce1 speech/r04c0005.raw
+  106080    d10a0bdcd818627744aff0d564504a9a speech/r04c0006.raw
+  79528     2a3f46f507d6477fb38f6afd7a7e9b2d speech/r04c0007.raw
+  124976    126f1c11c2a0541ff58e70d14e844e46 speech/r04c0008.raw
+  49500     8bbe5bfde34300774bc574df32ff6fb2 speech/r04c0009.raw
+  38950     1c66dc89ac2cc59ed21ff31e77835f34 speech/r04c0010.raw
+  82774     6e772c69b4d9e3d4d63b0f3b1fda3c88 speech/r04c0048.raw
+  31860     4bf4c485298802d226ee9cfd039ccc7b speech/r04c0049.raw
+  235790    4016d52b462670d235fab52c94baa23c speech/r05c0000.raw
+  89214     669ef2d202df2dfad40a905135f5ec07 speech/r05c0004.raw
+  41420     bd99f3487b7066f8aebb708ccd9218a1 speech/r05c0005.raw
+  173654    0c78db2de4a289e605fc5b7a792f9b88 speech/r05c0006.raw
+  77266     1f3a68ba9d609cf251bbcc0e57863018 speech/r05c0007.raw
+  164096    51989e3c0236ce17b6fec381e0333eb1 speech/r05c0008.raw
+  76470     774ddf6a11f089dd6c4da528ffd3802a speech/r05c0009.raw
+  140994    6f90195f85548c8586f14b6fc0633af1 speech/r05c0010.raw
+  49386     af12775001e4e557d11ec1b870e6d40d speech/r05c0011.raw
+  111520    5d08542e3380d3e8d44ab59baf7014b5 speech/r05c0012.raw
+  27080     391886dcb0e4b91cd8d17175bea782af speech/r05c0013.raw
+  99188     b09d392a625f37c6d1f54b25a0203f86 speech/r05c0014.raw
+  85506     9a66304f0a57a762a02748eaa5c5c198 speech/r05c0016.raw
+  26504     8d5a255e44ce108f7a3382ba02aac14e speech/r05c0017.raw
+  128264    db5446a263a6ed29ca6cd63ae2b26ecc speech/r05c0020.raw
+  50552     f677ce1e80d60a252e5c9acd41b92fc0 speech/r05c0021.raw
+  70776     e9168bb1a2b61c39a438a99eff73590e speech/r05c0024.raw
+  66984     c327f8eb06200341ca903cef8950364c speech/r05c0025.raw
+  179474    578ab85cf665cb5a18407a0391e217c7 speech/r05c0028.raw
+  58136     1777826e740b063b4cfffbf44f8e3bb7 speech/r05c0029.raw
+  49288     7bacb1fab1c077e19cd01ccdf5cabc00 speech/r05c0030.raw
+  94790     66ca8e9befe7c1a36783876e428e074b speech/r05c0032.raw
+  44234     1e1314aa27009ca3fa1ab42903106614 speech/r05c0033.raw
+  30330     99040c193b2fe92d72ab8c2c9d1910be speech/r05c0034.raw
+  88470     d6db706dc372a25daf460323317c9637 speech/r05c0036.raw
+  99846     44e6151722b70a5d850c18b1f17d2534 speech/r05c0040.raw
+  163042    eec78ec58e65621b48d5c134d71f4ce6 speech/r05c0048.raw
+  50552     8a74cd52ed87075368a50a431efabeeb speech/r05c0049.raw
+  176946    30afb1cc1d491f004a4903aa455460bc speech/r05c0064.raw
+  67950     273ef17fc9ec77086f3c0b536d8b1f0d speech/r05c0068.raw
+  73386     cc66ac27f849c9fc3d1251e8c3476ed1 speech/r05c0069.raw
+  94452     0a5833ef9d25868ff6047ddeccb4033f speech/r05c0070.raw
+  24460     79386c3555c7081e06d321aac7d0ae89 speech/r05c0071.raw
+  126918    400cd31ab64854d205b83f38607a8f46 speech/r05c0072.raw
+  76890     35ff07e5bdab39fc55a8ba596b3fc59e speech/r05c0112.raw
+  53730     dfacc8a37130ae7535fbc009ed24fc08 speech/r05c0113.raw
+  72258     4df56326e59b2490b4406beb559b4ef9 speech/r05c0114.raw
+  212150    01d4e9c30efaf826ec9a7b00c23a86f6 speech/r05c0128.raw
+  59288     88b24d92264be1e207fe1f77b58c1451 speech/r05c0132.raw
+  111170    5f0e363f5a77104741e2d3069c9194a1 speech/r05c0133.raw
+  106536    359f2eea4ec363e426b58d1e66d0904b speech/r05c0134.raw
+  50024     adac945c0a80cc664e757b83720b038f speech/r05c0135.raw
+  132478    3e794b5a734f87c0ee52f855c0284ed6 speech/r05c0136.raw
+  41686     b93b40eb663c032925ac87ce67042a60 speech/r05c0137.raw
+  28716     bf957fc152dcb4dcb6082340839e6f57 speech/r05c0138.raw
+  62994     ca929b8f87a85bcaea5b8225ab766502 speech/r05c0176.raw
+  72258     d5c2e97c803427b63ad3bcffdb7b372f speech/r05c0177.raw
+  24082     79eb80c11f1cffe8e4647ea90e56559f speech/r05c0178.raw
+  265004    6a7fde2efc1dac3fbd599df1be946966 speech/r05c0192.raw
+  98780     8ba7b68d5a1444fcbcb5b570ad1ca473 speech/r05c0196.raw
+  25916     49a33e82f0674f4368e6f72706c461d7 speech/r05c0197.raw
+  65852     6afef319891b4138ef26f747d0b304fb speech/r05c0198.raw
+  22570     e65a593fa1c7e7deb32b8969eec15230 speech/r05c0199.raw
+  137220    50860f00c15c5a302facd3dd99ad493b speech/r05c0200.raw
+  92804     6cdecc57276f9fd14429080761d81f4d speech/r05c0201.raw
+  78266     bd17d742f15c2e60cd2da963a5684814 speech/r05c0202.raw
+  120720    59de44da83c5314f2aa8b6b30c91c51a speech/r05c0240.raw
+  63540     f3887b425cf3a08b4edad0770ed8eaf4 speech/r05c0241.raw
+  147988    4c3497e2bed1679ce3e6c19e081a20d0 speech/r07c0000.raw
+  55180     1d8882bf72d3232a10ea849d175878f9 speech/r07c0004.raw
+  19226     3ef9cc05b94967113c96cfc85451dde3 speech/r07c0005.raw
+  72738     59fafe340a94bb8f52e195b6ae075102 speech/r07c0006.raw
+  115380    deb5f75d4c2a6ede099ee69080a500cc speech/r07c0007.raw
+  77754     865b6f63e7d2bdf6636e1ec4e9f6238c speech/r07c0008.raw
+  28424     5fd6bdc678fdcf85112cfe5433e794da speech/r07c0009.raw
+  81564     30757e8980dc6d36650b4321f7c8fbd2 speech/r07c0010.raw
+  83670     d78d1ca577cbdb3e56250a86f09b4d2d speech/r07c0011.raw
+  98384     2cf0fb943f4658f78f25d2040f80909a speech/r07c0012.raw
+  43212     8f006219a5db0898da38b9ebe98bd8dd speech/r07c0013.raw
+  83672     11e9dabf9c99bdd97d13404ad9ffe860 speech/r07c0048.raw
+  73556     54ee391e98e8daf2abd5522a1f05a75b speech/r07c0049.raw
+  210564    340eaf03c7aba31aa7ec8bd026e10290 speech/r07c0064.raw
+  258404    c8f13204b941584503a4fc85fcc6f2dc speech/r08c0000.raw
+  57032     e1b90aff7121fb77904ce997170749a4 speech/r08c0004.raw
+  65180     625c2427d82d31477e3f8f9d0ec00e1a speech/r08c0005.raw
+  137348    cb516355937f02a9a77dab49f43e55e3 speech/r08c0006.raw
+  15128     f953e6c2f3d53508889f59dee985eee1 speech/r08c0007.raw
+  136184    70c3d4e0fd3a3f0b0b937ed4cca1c2bd speech/r08c0008.raw
+  50048     3e43d5b2d27157b6e9a1cf0322e83f61 speech/r08c0009.raw
+  130458    4be3254584d519d7c03773fa3d5999f9 speech/r08c0010.raw
+  74454     38b3653dd249a9b55845f3a290f49ef3 speech/r08c0011.raw
+  21634     81dfb0151724a20f58d1208110b0047e speech/r08c0012.raw
+  84066     efa1be59b2f27108d6f6e358000ac2be speech/r08c0048.raw
+  61296     0531fcbdc669ad8754e5abf7ee3c6876 speech/r08c0049.raw
+  72682     142c3ffa6792d9e69d67f29e6749c84f speech/r08c0050.raw
+  40278     bff1f1952a234c8507d2502dff611bf1 speech/r08c0051.raw
+  309128    e95f62d9be502f1e4b30c5abbb84178d speech/r08c0064.raw
+  57794     00b04d3fc9d1b09e4f4932be725f6c30 speech/r08c0068.raw
+  63048     7051ab7c312fe9caef7493b5ae3ba173 speech/r08c0069.raw
+  81438     645855dd7de483df3157cdb33abf6bb7 speech/r08c0070.raw
+  57794     32862c04c2c02d9e2ee6be46e06e183f speech/r08c0071.raw
+  63924     ff97f2e74e259500a4190c89dfc89812 speech/r08c0072.raw
+  54292     a6021e5decce83e23a6c80b3cb6a360d speech/r08c0073.raw
+  71806     3d303d651d802d7cec6a9bc2de041c54 speech/r08c0112.raw
+  38528     c12cc26c67a2ebb6c74b77581fdebefe speech/r08c0113.raw
+  222432    9722c6e3c03aee2a276dc434ac067c94 speech/r08c0128.raw
+  246834    c290aacc6d2ba3573dbccc2458ec9810 speech/r23c0000.raw
+  72240     f31c6d343e1322b57a21c7497440a543 speech/r23c0004.raw
+  167596    2d64b2d7674c441639724958f22cc418 speech/r23c0005.raw
+  106434    7d3a804a90a5c6c3a7afeafcae1dd035 speech/r23c0006.raw
+  82604     b543ef9da45dd9642558405094bb401a speech/r23c0007.raw
+  54804     24ec147ae0a8aba488be331c7dd0aad3 speech/r23c0008.raw
+  169184    4ef2f06db9001f5027dcc0eec86956a2 speech/r23c0009.raw
+  139000    c2557da9440cf2b890d85b8290991fa5 speech/r23c0010.raw
+  36534     94975b849d55c360bcfc0488c1c8584b speech/r23c0011.raw
+  207312    d8ef88aec48c1b7f39fd47343fcdb0ed speech/r23c0012.raw
+  69102     3deb36bd3a5f0785088f5d85f29e9dd4 speech/r23c0013.raw
+  133440    b15e9785d2a33fc3beec0a13f1149700 speech/r23c0014.raw
+  34150     9c7617eaddced6b6a942993ae433ba17 speech/r23c0015.raw
+  100874    d83bea2188252636ebcbef0d24a8d87e speech/r23c0016.raw
+  72278     07c61dfcb09374c6a40a32fc9167cf05 speech/r23c0017.raw
+  52474     72396de9f74a9e4bc9acdad784ab2ad6 speech/r23c0018.raw
+  88806     7a0152435d0ae91caf7a037348c0eb09 speech/r23c0048.raw
+  41698     4725e841df407be208e7e47af47e8c7a speech/r23c0049.raw
+  206000    eb1501e18262247fff50749c2c6f2a16 speech/r23c0064.raw
+  43884     c8541f8edd096b0e90e966755ff90789 speech/r23c0068.raw
+  27066     6e1ee8858b247ce9a6179e30202e86c7 speech/r23c0069.raw
+  84154     a49497a5729835e7e638a694bcdb8938 speech/r23c0070.raw
+  51924     4f7de2bc773e88d7333fd23517d0d460 speech/r23c0071.raw
+  30436     bfcfeb271a3098b9f5c71c89ca1eb517 speech/r23c0072.raw
+  55504     fc41e9e5dbd9b3f995c97e0372e2ae92 speech/r23c0073.raw
+  274856    9dd7f7b7c7544a3dcd7715f43c756d38 speech/r23c0128.raw
+  68038     44d985181a70c3a9533e0a5f70cc6022 speech/r23c0132.raw
+  19692     ed3200753754056126684f90b206f13e speech/r23c0133.raw
+  83260     8817a88e855b133bb4309849a5b7de92 speech/r23c0134.raw
+  57296     2c1e26244cd71c3a6fb7da9eee29080c speech/r23c0135.raw
+  88632     ad19621dcecd21fcefdf2f84939a1db9 speech/r23c0136.raw
+  67144     a6aca2302da0dba1df51c4ec7a6f77a5 speech/r23c0137.raw
+  50132     112f533e943fc49fbfec5670a102d0fe speech/r23c0176.raw
+  76992     b6399f45e1436d3f9a11749eacf40105 speech/r23c0177.raw
+  228628    10d91c61fc637009c9c12d17b0c619f0 speech/r23c0192.raw
+  50024     f05927ba84cb6f7c95840dbe599f0908 speech/r23c0196.raw
+  18524     8688771d0e669e369c9354d65d1517c5 speech/r23c0197.raw
+  34274     3d3b0b010a4bbc2d67a9e2fb3c1e5158 speech/r23c0198.raw
+  36126     446505396dbbb78caa440d5c3fbfedbd speech/r23c0199.raw
+  31494     021bb801693d0431ae9ddf1b60fb5f4d speech/r23c0240.raw
+  113022    318acea73be9a9f2feffea4e8fcb1942 speech/r23c0241.raw
+  189916    b0f6cc8fa2ef1e7d27d2953a49ac64c8 speech/r23c0256.raw
+  36128     0e6ec3f07dc97c7a1965999b9a394215 speech/r23c0260.raw
+  58362     cd08c0dc498bba7f4a4602fe91b602f8 speech/r23c0261.raw
+  37054     0a4e7765b8677bd089a58b45e77283d4 speech/r23c0262.raw
+  144520    0bce3d2609aaff58712fd725061d7d60 speech/r23c0263.raw
+  151932    a3bc9b573678a7b6125c472689e8396e speech/r23c0264.raw
+  148226    eaa1f4b8822e26fe5bc947ec0d8e659b speech/r23c0265.raw
+  168608    9d351ebf374fb0ab3ad3da5d4260b4db speech/r23c0266.raw
+  34274     668399e716f264ba05b05b259799a681 speech/r23c0267.raw
+  160270    2fc8a3fa8047b775faa39cec6f35f338 speech/r23c0268.raw
+  63978     e016876dcdd77c207ca16f0efa4c2dbf speech/r23c0269.raw
+  87530     0fa63a8b8d4c8762054faacc8a7f40f6 speech/r23c0304.raw
+  43008     d23a7871e1c9a457e6850158b56f2705 speech/r23c0305.raw
+  80738     bf650f9f8433cc95584427e92fb0e277 speech/r23c0306.raw
+  245240    d1cdc5591beff70aefd50a4b32c790e2 speech/r23c0320.raw
+  22634     1fcf72b1814baf824c82554f9d01aa8b speech/r23c0324.raw
+  32442     2384d649f82944b55ac267b409e221fb speech/r23c0325.raw
+  100358    4c7be2b062b16767b73f381da051913b speech/r23c0326.raw
+  22634     14be0a186aea619b7194eb82b5523cb4 speech/r23c0327.raw
+  113858    bfbb49bf02502eaf631d279f7ba7f052 speech/r23c0328.raw
+  49044     31aea1c272702b22ebaa00f709867446 speech/r23c0329.raw
+  22634     4bf21b2b2dbf7b2bf90124793f933437 speech/r23c0330.raw
+  36216     7ad9ebe527c17fcfcacf829f1c858d91 speech/r23c0368.raw
+  63382     c6b6e5b5a37835845670634e5b9a9095 speech/r23c0369.raw
+  39990     7f59e2506e6314d944b9104769ad186a speech/r23c0370.raw
+  277688    e6f90775add44491d9dcd39cce05576e speech/r23c0384.raw
+  36216     8659a2bc64be0625fbff913dfc5e4939 speech/r23c0388.raw
+  45272     14e2e58d5a4da50814993461ccc08676 speech/r23c0389.raw
+  77718     f7055e3cf31311de0c38231d10f20ee2 speech/r23c0390.raw
+  40764     3b606584f0b203fc0d7bf8214f0bc068 speech/r23c0391.raw
+  40306     f506e3d978dc0670a6fe1bac87ba2fb6 speech/r23c0432.raw
+  32518     637bcdcbd37f8e8c3df440b2db0fd257 speech/r23c0433.raw
+  198058    e50959c13efe1ddf33c6d935ad84649d speech/r23c0448.raw
+  297840    0b24dd96aabc0626259cb91a9a9f84e7 speech/r23c0512.raw
+  85522     c960d11736a5697379c881675b6dfb9b speech/r23c0516.raw
+  31506     367e5df93e67c1afddc7e4196cdb8842 speech/r23c0517.raw
+  144042    16b138abc2d9ad23ee6b7a0990134284 speech/r23c0576.raw
+  121534    4c03af26c135089d834c4dc5b464a3ad speech/r23c0580.raw
+  62266     72bf9ed8ea2971cf867c2fedebd0f9f9 speech/r23c0581.raw
+  49238     3e2bf6f2123605dfa75c0cfb25d7d7f6 speech/r23c0582.raw
+  195144    ad19e9df788fe0dfb8c35e964cbb5faa speech/r23c0640.raw
+  129486    4a8f1a1e270dfcd9d911dda093cf5a24 speech/r23c0644.raw
+  36472     d56acbacfa31fb3de3b09ad3f758e858 speech/r23c0645.raw
+  110140    fe7dbd4e4ff6962544add02ed598b062 speech/r23c0688.raw
+  19512     cb2fd0806e48bd436eae2ef9ff823e4b speech/r23c0689.raw
+  96240     c6a751d4cd61ba8780ed51742dfc0e3b speech/r23c0690.raw
+  38968     97e7cb5d3270495a007f632cd22c969c speech/r23c0691.raw
+  220942    47f7be1b36c0e3a398a711f2a3da4ca6 speech/r24c0000.raw
+  111922    eafe7163480251578936597c803ae36b speech/r24c0004.raw
+  68980     9649a0a73f79b127331a0cd82929edbe speech/r24c0005.raw
+  181472    a1cf0078005f64f3dba30dddfc25ae61 speech/r24c0006.raw
+  175940    b4fdf5a9c50b26678d75a51cd8dcb5ec speech/r24c0007.raw
+  49792     85aafaee29baf7cbc1094a7f4e6944c5 speech/r24c0008.raw
+  134996    35d4283a5615cfc64c4a6c0e87b639ab speech/r24c0009.raw
+  142742    0cb4bc8c0d3ba22d79b8f4406e6e8a4c speech/r24c0010.raw
+  95160     40f6f4e74f6bb2512c13770e17c4483f speech/r24c0011.raw
+  151594    59d37c1b646223a9844026328ea22392 speech/r24c0012.raw
+  106226    cffe33b1aaf35b9fc5819933220bf8b7 speech/r24c0013.raw
+  30805     04ae17acf8db647e3966819640be8463 speech/r24c0014.raw
+  31728     e01eff47c07e69002e4682629b19e7c8 speech/r24c0048.raw
+  113272    4ac0f81de0ad97f1c9051adc43fe45a2 speech/r24c0049.raw
+  115014    ed06d64b3f6ee1208ab2d79bdeabe15c speech/r24c0050.raw
+  32236     9232c8b420af814d0dd577fa8839e0d5 speech/r24c0051.raw
+  130956    a524311cdf363a7b15090d6bf924aa6b speech/r24c0064.raw
+  40411     a8900d6e39656d5789a0cd89fae43df6 speech/r24c0068.raw
+  71138     3ec50343482431dfcdcac6f01eb0d620 speech/r24c0069.raw
+  40374     a3e83a8060547d2fd60a7c37b0bc70fd speech/r24c0070.raw
+  88442     49a2ac3fb3e9beaf0fc74b689e5926b5 speech/r24c0071.raw
+  39732     fd20fabc2f5829011c797df208660f65 speech/r24c0072.raw
+  57678     2259aca4b152cb34d6ec6d64ccadf6e9 speech/r24c0073.raw
+  28196     3285e813e87429903a827aecde8b63e1 speech/r24c0074.raw
+  74982     fead060344ce7486a4dd9a8996adedae speech/r24c0075.raw
+  30760     120086a8d3f39593a8864931e1e919b6 speech/r24c0076.raw
+  23710     267a416c90a8e1687e22d48dbb94e3ef speech/r24c0077.raw
+  72420     7adbb5f7d66567d945bb1af5c000df1f speech/r24c0112.raw
+  49346     e91f79c951c930771d9b1e3394e4e56d speech/r24c0113.raw
+  68574     9e1c2d5f0e08b3a9fb601d561db8590f speech/r24c0114.raw
+  46782     b4a3acec5903783c647b05aee21bbaac speech/r24c0115.raw
+  230588    4887c36171a8f4da7838390f0908420b speech/r27c0000.raw
+  82728     2fe2bdd7d065cd86d326d9af3677d4ce speech/r27c0004.raw
+  42242     3922bc177ca351c6dcdfab88083644b3 speech/r27c0005.raw
+  70406     a8738e7917205aa2984e0dd4ae9343d6 speech/r27c0006.raw
+  73046     97ae208586820f7affd57f0ca59e68ac speech/r27c0007.raw
+  55442     16d9866a43a59981297044f17ab91de5 speech/r27c0008.raw
+  65124     a7cec0023d5cadc5246a0b706ecfebf9 speech/r27c0009.raw
+  49282     99672efaabdbeb30baa07a43d331c904 speech/r27c0048.raw
+  54562     81c82a7e361b2fc2c93e2810fb4fb019 speech/r27c0049.raw
+  233228    476ba69a4073272cf40be25285fcdb97 speech/r29c0000.raw
+  159298    464860ade985e44e29705c3ce25f64fb speech/r29c0004.raw
+  21118     eeb885d42dce2c5e2b611f386476756a speech/r29c0005.raw
+  120572    cc593b0906c7e39b364eac202ea48289 speech/r29c0006.raw
+  83608     46541a440ca14f8b55d902eabd628e77 speech/r29c0007.raw
+  112652    44f42ab5244c46bca14a1bd2e345c786 speech/r29c0008.raw
+  34192     4cca08789bd545e840e3912afb4c5843 speech/r29c0009.raw
+  171620    2911c2ee36af91e0a39e3576b747021a speech/r29c0010.raw
+  90648     66699f927da0c4325ba9ce5043ebc23e speech/r29c0011.raw
+  137296    8a2e5065b18b4656b53cc47a7a20a789 speech/r29c0012.raw
+  59844     a8bc8f818d47eee40071c4fe5746c9a5 speech/r29c0048.raw
+  28160     390500964c2162d5d1deba9c152f8b24 speech/r29c0049.raw
+  51042     b1dce508d6695543e9d719814b65d6bb speech/r29c0050.raw
+  237630    c5641d2f6206a05c37288f803336aaf9 speech/r45c0000.raw
+  61604     eb7d46e58705625958f0cbbb7b6307ab speech/r45c0004.raw
+  73046     e9d0921606c6dd940c273de0ed145faa speech/r45c0005.raw
+  118812    2aba134443f593e863aa2967e3fd5ba3 speech/r45c0006.raw
+  178660    e1ee7a2aeb27ee1148fc76ec906c2113 speech/r45c0008.raw
+  130254    25dd8683fe911c70127ae1809be15d9e speech/r45c0010.raw
+  36960     47420fd08c69762dd4140bc1e4d162c0 speech/r45c0011.raw
+  119858    92e58802322c6fe51f8cf258da331c75 speech/r45c0012.raw
+  24648     f3b36ede97934d169ac1e8098ca082be speech/r45c0013.raw
+  57532     5a3ffbd97e080d65c965bc6cb75f7fad speech/r45c0014.raw
+  84838     818d0d6facb6eb77b5d7f5bc5bfdccb6 speech/r45c0016.raw
+  117020    cef19a9ecf51a6b21919dc2044c6bfd0 speech/r45c0018.raw
+  56556     18f537993ad1dd64d397d30f01bce165 speech/r45c0019.raw
+  127746    51f11ec739a571090b3d9af30421dea4 speech/r45c0048.raw
+  31202     b940512fc066a74aa2ce3e788796bf16 speech/r45c0049.raw
+  237630    c5641d2f6206a05c37288f803336aaf9 speech/r45c0064.raw
+  56558     219de229474b3e689f60078530afcaf1 speech/r45c0068.raw
+  163830    ac1cb6714de20da21ba95fa3f1949182 speech/r45c0070.raw
+  109218    c71651c9ddf13ca4253f037ae99a6765 speech/r45c0072.raw
+  35102     2eaabdb8715a887b3e3f93d7256b099b speech/r45c0073.raw
+  125798    04d3988f9b4e276551862ccdf3cd9a69 speech/r45c0074.raw
+  39004     7fb7a0778f23a96b8554314ee4a30ce5 speech/r45c0075.raw
+  166756    73744e48cf81ec9b63f189f944c7e747 speech/r45c0076.raw
+  63356     64bea0ffbcae54ca9bc792d517594ba9 speech/r45c0077.raw
+  153786    c84b1f175151c9f87af747f2acc5e08f speech/r45c0078.raw
+  71332     fdf274af1ef29072db7ff5b52a18402d speech/r45c0080.raw
+  115802    200f63a4dda128ae3693f191da7d0285 speech/r45c0082.raw
+  137110    141865c932cfadf2884742f6436e65ab speech/r45c0112.raw
+  237630    c5641d2f6206a05c37288f803336aaf9 speech/r45c0128.raw
+  148226    bf92b41d379c8313f846e9957e0a01c4 speech/r45c0132.raw
+  37054     29af531a96fed3e24112c5a81926f3fc speech/r45c0133.raw
+  136184    5c309da48fa6a7a1d108cb9b21ee71c5 speech/r45c0134.raw
+  95420     74c2a87ccefef4b7af85f7b933b61d6c speech/r45c0136.raw
+  79670     fe99192880f1d817b78add8e5dd4e39f speech/r45c0138.raw
+  53228     d9fa68edc03dedb61ff36c3b9fddd5c3 speech/r45c0139.raw
+  126334    59ce7f3a7ae901fb474800a27cf951b7 speech/r45c0140.raw
+  29096     357c1cf2816d5f2dbdcf1c5528e5830c speech/r45c0141.raw
+  190910    bed3cfa4d6dc8ebcfce0b4017c4298ac speech/r45c0142.raw
+  52062     2f7ecab4f1ff8aa729425724a7fdb385 speech/r45c0143.raw
+  107902    f9ee160df94944af738ea1546d455cdb speech/r45c0176.raw
+  237630    c5641d2f6206a05c37288f803336aaf9 speech/r45c0192.raw
+  151670    6350fca78c7d066cf486e57fe16670c7 speech/r45c0196.raw
+  35462     c6445b4ac3cd97dd7df7c86932b1efcc speech/r45c0197.raw
+  173552    0e5bbece40f45a9210873a35caefc28a speech/r45c0198.raw
+  63382     04f55e54a99d1595fcf9a2cb43d6b06e speech/r45c0200.raw
+  92812     3173b0208da982143e175a627d6b34ed speech/r45c0202.raw
+  87528     410507f56e9cc94028f38a7c8d9544ac speech/r45c0204.raw
+  33952     42239980ba3da05efb54c45bd8838d0b speech/r45c0205.raw
+  129242    59e19492d73921661885837b1acbdb6d speech/r45c0206.raw
+  54204     72069998ed816966691fcf0dc9d288d1 speech/r45c0207.raw
+  138418    af8335061c21232b1686fc4e9e9d347d speech/r45c0208.raw
+  108410    36a566f8891b9486b9f3e8de687e6345 speech/r45c0210.raw
+  124866    28b151df969cd691adca1274e80ca5be speech/r45c0240.raw
+  28068     a57a7e78ea9ac775c604f9b4a55a6477 speech/r45c0241.raw
+  128290    f255fc035f75029809761ab1952db055 speech/t50t0012.raw
+  137152    ff99308ae9fd46d36e89725017f41c2f speech/t50t0030.raw
+  103184    5de77a7d9cd886ac007b13075b602625 speech/t50t0031.raw
+  59608     b0ded2ed2fa66e760e6a3a9a9eca0138 speech/t80t0042.raw
+  64136     bfa8d96efe39646cf1f4b98754caa4a4 speech/t80t0043.raw
+  87530     ce47cb1fe21962846008986de3fd2d6a speech/t80t0045.raw
+  66400     39c05ffacf606cdd6b1fdb74fd8cc95d speech/t80t0047.raw
+  24896     9ef9046a133cc0cc926bb527a768376d speech/t80t0049.raw
+  79984     adb4242c1c149565f01b71a70f919cdb speech/t80t0050.raw
+  73192     decd2d989b3592a3768207abf2b6d1dc speech/t80t0051.raw
+  26406     9a94e291cad608d9e484bed199f9e313 speech/t80t0052.raw
+  82248     aa711d19349ae29f029d4029d8254761 speech/t80t0053.raw
+  89038     9167eb409b09d9d2b08dae7d72342960 speech/t80t0055.raw
+  97272     c4d585cb49ee738f591edc5ef61975e8 speech/t82t0008.raw
+  89860     960113121c7391830fff38a35d7d3f0d speech/t82t0009.raw
+  104684    52083b1d962f39a69d9a7f01b60c6955 speech/t82t0010.raw
+  78874     20a1d2d8c9d058a4bf79df1767604be6 speech/t82t0011.raw
+  95210     688a6cac77e91212d160a90a060111ab speech/t82t0014.raw
+  101830    c3c9a64b503ecd2c1b58d644b73c6ced speech/t82t0015.raw
+  47162     e1df4a24372ee29d99f613fc138ba4a0 speech/t82t0016.raw
+  94328     bf9f20b6f7f36749dcad41c1a2c47fb7 speech/t82t0017.raw
+  79320     90ca761b963f22063c122ccda5878285 speech/t82t0018.raw
+  40730     7323a1666a2fc5d3b575b1e065baa524 speech/t82t0019.raw
+  72888     add164e5a162d015dc0152f7fd1daad0 speech/t82t0020.raw
+  48232     8427ecb849ae9fe8e9e1f2770fd1159c speech/t82t0021.raw
+  37514     400d2dad63547379cc44a5569416e33f speech/t82t0022.raw
+  101830    f614adf47c784c4cee5af0160fca2601 speech/t82t0023.raw
+  32154     c5556dd2c8402eb91a871f40e753911a speech/t82t0024.raw
+  15002     f90b41ec6fc72b97398ff4af32f1da67 speech/t82t0025.raw
+  87896     dfcd40d8c9d588381bd07d7f16cfa3be speech/t82t0026.raw
+  53592     ffeeda9e47cfa2130b2173eb7e4ce931 speech/t82t0027.raw
+  49908     d80903df0366b7df0a2dd4081d9bc104 speech/t82t0028.raw
+  29942     9307b52bd5700b3f667a789dcd929f03 speech/t82t0029.raw
+  115662    b6ce559c342afa256bb03e0bc1855066 speech/t82t0030.raw
+  62868     9cee2ab5f8bb68cdee9ecbcdfe59ae71 speech/t82t0031.raw
+  27504     628cafed801316006d1f0be2739ee872 speech/t82t0040.raw
+  93694     0a293448fa4e6cc90a42a0860aa01aca speech/t82t0041.raw
+  37818     4096c97fc2a35c5e78c2e5c254cc2fd8 speech/t82t0042.raw
+  48134     74502bc6693ca8a4c53963fd74fbc6cd speech/t82t0043.raw
+  45556     7bb43355947c0e50a123f456e56d7e05 speech/t82t0044.raw
+  62318     d3a0c4809cf5775eeb76b2efaf42087f speech/t82t0045.raw
+  108738    06a8024e528458567dc8c8bc18e87b84 speech/t82t0046.raw
+  47296     4f97b13e003733c3178c6f7c954ec401 speech/t82t0047.raw
+  91132     9661294279b8fb37359a1b3294fa088c speech/t82t0048.raw
+  114544    107db6ab67edd432d97d3e4dd0ee0311 speech/t82t0049.raw
+  153006    23ec58f30efcda24ae6353e29bcb7e56 speech/t82t0050.raw
+  121234    959f9cdc1058297c5f57f09740bb68e0 speech/t82t0051.raw
+  80264     1d8ce12b9798ff9aebfdd6b026656c0a speech/t82t0052.raw
+  129594    4387cb5a5f95c6789e9f3fa5a6491d06 speech/t82t0053.raw
+  98658     1a72e6e4aee9c027a751dae35ecb9351 speech/t82t0054.raw
+  77754     d948d692f13fecf85c7605ccb1464566 speech/t82t0055.raw
+  114544    1d5ef2b1b03a53cf30e81ff4554567a2 speech/t82t0056.raw
+  177252    9bf9f9721c748ee1215c3e64efba2def speech/t82t0057.raw
+  176416    eea5709751e45d2d6324950574168a11 speech/t82t0058.raw
+  192326    5a3778973227635f88e92866f1ff72fb speech/t82t0059.raw
+  160612    aaeb27dc8184410d900cddc4264cd5b7 speech/t82t0060.raw
+  115640    a8a92a0b4754b4d77381d68c8624686b speech/t82t0061.raw
+  73880     83f2b340ff889251d5021267845d51bb speech/t82t0062.raw
+  67454     d762c9b25ae8d527ff279961c61a25b6 speech/t83t0000.raw
+  86730     4705e710d97e2b559bcc25898524226b speech/t83t0001.raw
+  102790    ff832ebbdab935978bf80195e54f872b speech/t83t0002.raw
+  80017     04873abe8b367c24cc4189e8b33e9ef8 speech/t83t0040.raw
+  90160     fa7fbc88a2bb0b222dfd1386344a3694 speech/t83t0041.raw
+  113827    a7c19aa5a59e9fcd3a7647016eb03dbb speech/t83t0042.raw
+  98049     dadff6a18065afc1ed05d186940555ae speech/t83t0043.raw
+  68747     27a9d9a6c521f55735212a6a807e3ccf speech/t83t0044.raw
+  93541     f2e9f0cc0187dd16ccd2492b13fcefa1 speech/t83t0045.raw
+  122843    2ebfe7b3313cc2e5225e859dfad75059 speech/t83t0046.raw
+  76662     d8fb440b9477172d75fd0f582b32d4d1 speech/t83t0047.raw
+  1278102   e64cc10ecdf7ec0a8561da9d65c45f78 speech/t83t0049.raw
 ...
