@@ -1207,9 +1207,11 @@ class GameData(object):
         if provider is None:
             try_to_unpack = self.files
             should_provide = set()
+            distinctive_dirs = False
         else:
             try_to_unpack = provider.provides
             should_provide = set(try_to_unpack)
+            distinctive_dirs = provider.unpack.get('distinctive_dirs', True)
 
         for entry in zf.infolist():
             if not entry.file_size:
@@ -1230,6 +1232,8 @@ class GameData(object):
                 match_path = '/' + entry.filename.lower()
 
                 for lf in wanted.look_for:
+                    if not distinctive_dirs:
+                        lf = os.path.basename(lf)
                     if match_path.endswith('/' + lf):
                         should_provide.discard(filename)
 
