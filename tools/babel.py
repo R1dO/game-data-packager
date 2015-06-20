@@ -37,7 +37,18 @@ for name, game in load_games().items():
     stats['shortname'] = name
     stats['longname'] = ascii_safe(game.longname, force=True)
     stats['total'] = len(game.packages)
+    if name in ('doom2', 'rtcw'):
+        stats['fr'] = '*'
     games.append(stats)
+
+if 'ru' not in langs:
+    langs['ru'] = 0
+
+missing = {
+  'nomouth': ['ru'],
+  'rtcw': ['de','es','it'],
+  'waxworks': ['de','es','fr'],
+}
 
 games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
 
@@ -70,8 +81,11 @@ for game in games:
     html.write('  <td>%s</td>\n' % game['longname'])
     for lang in langs_order:
         count = game.get(lang,None)
-        if lang in ('total', 'en'):
+        if lang in ('total', 'en') or count == '*':
             html.write('  <td bgcolor="lightgreen">%s</td>\n' % count)
+        elif lang in missing.get(game['shortname'],[]):
+            assert not count
+            html.write('  <td bgcolor="orange">!</td>\n')
         elif count:
             html.write('  <td bgcolor="green">%s</td>\n' % count)
         else:
@@ -87,6 +101,10 @@ for lang in langs_order:
 html.write('''
 </tr>
 </table>
+<ul>
+<li>* : provided as an alternative one-file in a 'en'/'C' package</li>
+<li>! : language is missing</li>
+</ul>
 </html>
 '''
 )
