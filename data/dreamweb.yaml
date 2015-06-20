@@ -1862,7 +1862,7 @@ packages:
     - dreamweb.r52
     - dreamweb.r53
     - dreamweb.r54
-    - dreamweb.r55_de
+    - dreamweb.r55
     - dreamweb.s00
     - dreamweb.s02
     - dreamweb.t01_de
@@ -2961,6 +2961,594 @@ packages:
     license:
     - license.txt_nodiary
 
+  dreamweb-it-data:
+    lang: it
+    debian:
+      provides: dreamweb-data
+    version: '1.1'
+    install:
+    - dreamweb.c00_it
+    - dreamweb.c01_it
+    - dreamweb.c02_it
+    - dreamweb.g00
+    - dreamweb.g01
+    - dreamweb.g02
+    - dreamweb.g03
+    - dreamweb.g04
+    - dreamweb.g05
+    - dreamweb.g06
+    - dreamweb.g07
+    - dreamweb.g08
+    - dreamweb.g09
+    - dreamweb.g10
+    - dreamweb.g11
+    - dreamweb.g12
+    - dreamweb.g13
+    - dreamweb.g14
+    - dreamweb.g15
+    - dreamweb.i00
+    - dreamweb.i01
+    - dreamweb.i02
+    - dreamweb.i03
+    - dreamweb.i04
+    - dreamweb.i05
+    - dreamweb.i06
+    - dreamweb.p01
+    - dreamweb.p02
+    - dreamweb.pal
+    - dreamweb.r00_it
+    - dreamweb.r01_it
+    - dreamweb.r02_it
+    - dreamweb.r03_it
+    - dreamweb.r04_it
+    - dreamweb.r05_it
+    - dreamweb.r06_it
+    - dreamweb.r07_it
+    - dreamweb.r08_it
+    - dreamweb.r09_it
+    - dreamweb.r10_it
+    - dreamweb.r11_it
+    - dreamweb.r12_it
+    - dreamweb.r13_it
+    - dreamweb.r14_it
+    - dreamweb.r19_it
+    - dreamweb.r20_it
+    - dreamweb.r21_it
+    - dreamweb.r22_it
+    - dreamweb.r23_it
+    - dreamweb.r24_it
+    - dreamweb.r25_it
+    - dreamweb.r26_it
+    - dreamweb.r27_it
+    - dreamweb.r28_it
+    - dreamweb.r29_it
+    - dreamweb.r45_it
+    - dreamweb.r46_it
+    - dreamweb.r47_it
+    - dreamweb.r50
+    - dreamweb.r52
+    - dreamweb.r53
+    - dreamweb.r54
+    - dreamweb.r55
+    - dreamweb.s00
+    - dreamweb.s02
+    - dreamweb.t01_it
+    - dreamweb.t02_it
+    - dreamweb.t10_it
+    - dreamweb.t11_it
+    - dreamweb.t12_it
+    - dreamweb.t13_it
+    - dreamweb.t20_it
+    - dreamweb.t21_it
+    - dreamweb.t22_it
+    - dreamweb.t23_it
+    - dreamweb.t24_it
+    - dreamweb.t50_it
+    - dreamweb.t51_it
+    - dreamweb.t80_it
+    - dreamweb.t81_it
+    - dreamweb.t82_it
+    - dreamweb.t83_it
+    - dreamweb.t84_it
+    - dreamweb.v01
+    - dreamweb.v02
+    - dreamweb.v05
+    - dreamweb.v06
+    - dreamweb.v08
+    - dreamweb.v09
+    - dreamweb.v10
+    - dreamweb.v11
+    - dreamweb.v12
+    - dreamweb.v14
+    - dreamweb.v19
+    - dreamweb.v22
+    - dreamweb.v23
+    - dreamweb.v30
+    - dreamweb.v33
+    - dreamweb.v34
+    - dreamweb.v35
+    - dreamweb.v99
+    - dreamweb.vol
+    - dreamweb.wav
+    - speech/r01c0000.raw
+    - speech/r01c0004.raw
+    - speech/r01c0005.raw
+    - speech/r01c0006.raw
+    - speech/r01c0007.raw
+    - speech/r01c0008.raw
+    - speech/r01c0064.raw
+    - speech/r01c0068.raw
+    - speech/r01c0069.raw
+    - speech/r01c0070.raw
+    - speech/r01c0071.raw
+    - speech/r01c0072.raw
+    - speech/r01c0073.raw
+    - speech/r01c0112.raw
+    - speech/r01c0113.raw
+    - speech/r01c0114.raw
+    - speech/r01c0115.raw
+    - speech/r01c0128.raw
+    - speech/r01c0132.raw
+    - speech/r01c0133.raw
+    - speech/r01c0134.raw
+    - speech/r01c0135.raw
+    - speech/r01c0136.raw
+    - speech/r01c0137.raw
+    - speech/r01c0138.raw
+    - speech/r01c0139.raw
+    - speech/r01c0140.raw
+    - speech/r01c0141.raw
+    - speech/r01c0142.raw
+    - speech/r01c0143.raw
+    - speech/r01c0144.raw
+    - speech/r01c0176.raw
+    - speech/r01c0177.raw
+    - speech/r01c0178.raw
+    - speech/r01c0192.raw
+    - speech/r01c0196.raw
+    - speech/r01c0197.raw
+    - speech/r01c0199.raw
+    - speech/r01c0240.raw
+    - speech/r01c0241.raw
+    - speech/r01c0256.raw
+    - speech/r01c0260.raw
+    - speech/r01c0261.raw
+    - speech/r01c0262.raw
+    - speech/r01c0263.raw
+    - speech/r01c0264.raw
+    - speech/r01c0265.raw
+    - speech/r01c0266.raw
+    - speech/r01c0267.raw
+    - speech/r01c0268.raw
+    - speech/r01c0269.raw
+    - speech/r01c0270.raw
+    - speech/r01c0304.raw
+    - speech/r01c0305.raw
+    - speech/r01c0320.raw
+    - speech/r01c0324.raw
+    - speech/r01c0325.raw
+    - speech/r01c0326.raw
+    - speech/r01c0327.raw
+    - speech/r01c0328.raw
+    - speech/r01c0329.raw
+    - speech/r02c0000.raw
+    - speech/r02c0004.raw
+    - speech/r02c0005.raw
+    - speech/r02c0006.raw
+    - speech/r02c0007.raw
+    - speech/r02c0008.raw
+    - speech/r02c0009.raw
+    - speech/r02c0010.raw
+    - speech/r02c0011.raw
+    - speech/r02c0012.raw
+    - speech/r02c0013.raw
+    - speech/r02c0014.raw
+    - speech/r02c0015.raw
+    - speech/r02c0016.raw
+    - speech/r02c0017.raw
+    - speech/r02c0018.raw
+    - speech/r02c0019.raw
+    - speech/r02c0048.raw
+    - speech/r02c0049.raw
+    - speech/r02c0050.raw
+    - speech/r02c0064.raw
+    - speech/r02c0068.raw
+    - speech/r02c0069.raw
+    - speech/r02c0070.raw
+    - speech/r02c0071.raw
+    - speech/r02c0072.raw
+    - speech/r02c0073.raw
+    - speech/r02c0074.raw
+    - speech/r02c0075.raw
+    - speech/r02c0076.raw
+    - speech/r02c0077.raw
+    - speech/r02c0078.raw
+    - speech/r02c0079.raw
+    - speech/r02c0112.raw
+    - speech/r02c0113.raw
+    - speech/r02c0114.raw
+    - speech/r02c0115.raw
+    - speech/r04c0000.raw
+    - speech/r04c0004.raw
+    - speech/r04c0005.raw
+    - speech/r04c0006.raw
+    - speech/r04c0007.raw
+    - speech/r04c0008.raw
+    - speech/r04c0009.raw
+    - speech/r04c0010.raw
+    - speech/r04c0048.raw
+    - speech/r04c0049.raw
+    - speech/r05c0000.raw
+    - speech/r05c0004.raw
+    - speech/r05c0005.raw
+    - speech/r05c0006.raw
+    - speech/r05c0007.raw
+    - speech/r05c0008.raw
+    - speech/r05c0009.raw
+    - speech/r05c0010.raw
+    - speech/r05c0011.raw
+    - speech/r05c0012.raw
+    - speech/r05c0013.raw
+    - speech/r05c0014.raw
+    - speech/r05c0016.raw
+    - speech/r05c0017.raw
+    - speech/r05c0020.raw
+    - speech/r05c0021.raw
+    - speech/r05c0024.raw
+    - speech/r05c0025.raw
+    - speech/r05c0028.raw
+    - speech/r05c0029.raw
+    - speech/r05c0030.raw
+    - speech/r05c0032.raw
+    - speech/r05c0033.raw
+    - speech/r05c0034.raw
+    - speech/r05c0036.raw
+    - speech/r05c0040.raw
+    - speech/r05c0048.raw
+    - speech/r05c0049.raw
+    - speech/r05c0064.raw
+    - speech/r05c0068.raw
+    - speech/r05c0069.raw
+    - speech/r05c0070.raw
+    - speech/r05c0071.raw
+    - speech/r05c0072.raw
+    - speech/r05c0112.raw
+    - speech/r05c0113.raw
+    - speech/r05c0114.raw
+    - speech/r05c0128.raw
+    - speech/r05c0132.raw
+    - speech/r05c0133.raw
+    - speech/r05c0134.raw
+    - speech/r05c0135.raw
+    - speech/r05c0136.raw
+    - speech/r05c0137.raw
+    - speech/r05c0138.raw
+    - speech/r05c0176.raw
+    - speech/r05c0177.raw
+    - speech/r05c0178.raw
+    - speech/r05c0192.raw
+    - speech/r05c0196.raw
+    - speech/r05c0197.raw
+    - speech/r05c0198.raw
+    - speech/r05c0199.raw
+    - speech/r05c0200.raw
+    - speech/r05c0201.raw
+    - speech/r05c0202.raw
+    - speech/r05c0240.raw
+    - speech/r05c0241.raw
+    - speech/r07c0000.raw
+    - speech/r07c0004.raw
+    - speech/r07c0005.raw
+    - speech/r07c0006.raw
+    - speech/r07c0007.raw
+    - speech/r07c0008.raw
+    - speech/r07c0009.raw
+    - speech/r07c0010.raw
+    - speech/r07c0011.raw
+    - speech/r07c0012.raw
+    - speech/r07c0013.raw
+    - speech/r07c0048.raw
+    - speech/r07c0049.raw
+    - speech/r07c0064.raw
+    - speech/r08c0000.raw
+    - speech/r08c0004.raw
+    - speech/r08c0005.raw
+    - speech/r08c0006.raw
+    - speech/r08c0007.raw
+    - speech/r08c0008.raw
+    - speech/r08c0009.raw
+    - speech/r08c0010.raw
+    - speech/r08c0011.raw
+    - speech/r08c0012.raw
+    - speech/r08c0048.raw
+    - speech/r08c0049.raw
+    - speech/r08c0050.raw
+    - speech/r08c0051.raw
+    - speech/r08c0064.raw
+    - speech/r08c0068.raw
+    - speech/r08c0069.raw
+    - speech/r08c0070.raw
+    - speech/r08c0071.raw
+    - speech/r08c0072.raw
+    - speech/r08c0073.raw
+    - speech/r08c0112.raw
+    - speech/r08c0113.raw
+    - speech/r08c0128.raw
+    - speech/r23c0000.raw
+    - speech/r23c0004.raw
+    - speech/r23c0005.raw
+    - speech/r23c0006.raw
+    - speech/r23c0007.raw
+    - speech/r23c0008.raw
+    - speech/r23c0009.raw
+    - speech/r23c0010.raw
+    - speech/r23c0011.raw
+    - speech/r23c0012.raw
+    - speech/r23c0013.raw
+    - speech/r23c0014.raw
+    - speech/r23c0015.raw
+    - speech/r23c0016.raw
+    - speech/r23c0017.raw
+    - speech/r23c0018.raw
+    - speech/r23c0048.raw
+    - speech/r23c0049.raw
+    - speech/r23c0064.raw
+    - speech/r23c0068.raw
+    - speech/r23c0069.raw
+    - speech/r23c0070.raw
+    - speech/r23c0071.raw
+    - speech/r23c0072.raw
+    - speech/r23c0073.raw
+    - speech/r23c0128.raw
+    - speech/r23c0132.raw
+    - speech/r23c0133.raw
+    - speech/r23c0134.raw
+    - speech/r23c0135.raw
+    - speech/r23c0136.raw
+    - speech/r23c0137.raw
+    - speech/r23c0176.raw
+    - speech/r23c0177.raw
+    - speech/r23c0192.raw
+    - speech/r23c0196.raw
+    - speech/r23c0197.raw
+    - speech/r23c0198.raw
+    - speech/r23c0199.raw
+    - speech/r23c0240.raw
+    - speech/r23c0241.raw
+    - speech/r23c0256.raw
+    - speech/r23c0260.raw
+    - speech/r23c0261.raw
+    - speech/r23c0262.raw
+    - speech/r23c0263.raw
+    - speech/r23c0264.raw
+    - speech/r23c0265.raw
+    - speech/r23c0266.raw
+    - speech/r23c0267.raw
+    - speech/r23c0268.raw
+    - speech/r23c0269.raw
+    - speech/r23c0304.raw
+    - speech/r23c0305.raw
+    - speech/r23c0306.raw
+    - speech/r23c0320.raw
+    - speech/r23c0324.raw
+    - speech/r23c0325.raw
+    - speech/r23c0326.raw
+    - speech/r23c0327.raw
+    - speech/r23c0328.raw
+    - speech/r23c0329.raw
+    - speech/r23c0330.raw
+    - speech/r23c0368.raw
+    - speech/r23c0369.raw
+    - speech/r23c0370.raw
+    - speech/r23c0384.raw
+    - speech/r23c0388.raw
+    - speech/r23c0389.raw
+    - speech/r23c0390.raw
+    - speech/r23c0391.raw
+    - speech/r23c0432.raw
+    - speech/r23c0433.raw
+    - speech/r23c0448.raw
+    - speech/r23c0512.raw
+    - speech/r23c0516.raw
+    - speech/r23c0517.raw
+    - speech/r23c0576.raw
+    - speech/r23c0580.raw
+    - speech/r23c0581.raw
+    - speech/r23c0582.raw
+    - speech/r23c0640.raw
+    - speech/r23c0644.raw
+    - speech/r23c0645.raw
+    - speech/r23c0688.raw
+    - speech/r23c0689.raw
+    - speech/r23c0690.raw
+    - speech/r23c0691.raw
+    - speech/r24c0000.raw
+    - speech/r24c0004.raw
+    - speech/r24c0005.raw
+    - speech/r24c0006.raw
+    - speech/r24c0007.raw
+    - speech/r24c0008.raw
+    - speech/r24c0009.raw
+    - speech/r24c0010.raw
+    - speech/r24c0011.raw
+    - speech/r24c0012.raw
+    - speech/r24c0013.raw
+    - speech/r24c0014.raw
+    - speech/r24c0048.raw
+    - speech/r24c0049.raw
+    - speech/r24c0050.raw
+    - speech/r24c0051.raw
+    - speech/r24c0064.raw
+    - speech/r24c0068.raw
+    - speech/r24c0069.raw
+    - speech/r24c0070.raw
+    - speech/r24c0071.raw
+    - speech/r24c0072.raw
+    - speech/r24c0073.raw
+    - speech/r24c0074.raw
+    - speech/r24c0075.raw
+    - speech/r24c0076.raw
+    - speech/r24c0077.raw
+    - speech/r24c0112.raw
+    - speech/r24c0113.raw
+    - speech/r24c0114.raw
+    - speech/r24c0115.raw
+    - speech/r27c0000.raw
+    - speech/r27c0004.raw
+    - speech/r27c0005.raw
+    - speech/r27c0006.raw
+    - speech/r27c0007.raw
+    - speech/r27c0008.raw
+    - speech/r27c0009.raw
+    - speech/r27c0048.raw
+    - speech/r27c0049.raw
+    - speech/r29c0000.raw
+    - speech/r29c0004.raw
+    - speech/r29c0005.raw
+    - speech/r29c0006.raw
+    - speech/r29c0007.raw
+    - speech/r29c0008.raw
+    - speech/r29c0009.raw
+    - speech/r29c0010.raw
+    - speech/r29c0011.raw
+    - speech/r29c0012.raw
+    - speech/r29c0048.raw
+    - speech/r29c0049.raw
+    - speech/r29c0050.raw
+    - speech/r45c0000.raw
+    - speech/r45c0004.raw
+    - speech/r45c0005.raw
+    - speech/r45c0006.raw
+    - speech/r45c0008.raw
+    - speech/r45c0010.raw
+    - speech/r45c0011.raw
+    - speech/r45c0012.raw
+    - speech/r45c0013.raw
+    - speech/r45c0014.raw
+    - speech/r45c0016.raw
+    - speech/r45c0018.raw
+    - speech/r45c0019.raw
+    - speech/r45c0048.raw
+    - speech/r45c0049.raw
+    - speech/r45c0064.raw
+    - speech/r45c0068.raw
+    - speech/r45c0070.raw
+    - speech/r45c0072.raw
+    - speech/r45c0073.raw
+    - speech/r45c0074.raw
+    - speech/r45c0075.raw
+    - speech/r45c0076.raw
+    - speech/r45c0077.raw
+    - speech/r45c0078.raw
+    - speech/r45c0080.raw
+    - speech/r45c0082.raw
+    - speech/r45c0112.raw
+    - speech/r45c0128.raw
+    - speech/r45c0132.raw
+    - speech/r45c0133.raw
+    - speech/r45c0134.raw
+    - speech/r45c0136.raw
+    - speech/r45c0138.raw
+    - speech/r45c0139.raw
+    - speech/r45c0140.raw
+    - speech/r45c0141.raw
+    - speech/r45c0142.raw
+    - speech/r45c0143.raw
+    - speech/r45c0176.raw
+    - speech/r45c0192.raw
+    - speech/r45c0196.raw
+    - speech/r45c0197.raw
+    - speech/r45c0198.raw
+    - speech/r45c0200.raw
+    - speech/r45c0202.raw
+    - speech/r45c0204.raw
+    - speech/r45c0205.raw
+    - speech/r45c0206.raw
+    - speech/r45c0207.raw
+    - speech/r45c0208.raw
+    - speech/r45c0210.raw
+    - speech/r45c0240.raw
+    - speech/r45c0241.raw
+    - speech/t50t0012.raw
+    - speech/t50t0030.raw
+    - speech/t50t0031.raw
+    - speech/t80t0042.raw
+    - speech/t80t0043.raw
+    - speech/t80t0045.raw
+    - speech/t80t0047.raw
+    - speech/t80t0049.raw
+    - speech/t80t0050.raw
+    - speech/t80t0051.raw
+    - speech/t80t0052.raw
+    - speech/t80t0053.raw
+    - speech/t80t0055.raw
+    - speech/t82t0008.raw
+    - speech/t82t0009.raw
+    - speech/t82t0010.raw
+    - speech/t82t0011.raw
+    - speech/t82t0014.raw
+    - speech/t82t0015.raw
+    - speech/t82t0016.raw
+    - speech/t82t0017.raw
+    - speech/t82t0018.raw
+    - speech/t82t0019.raw
+    - speech/t82t0020.raw
+    - speech/t82t0021.raw
+    - speech/t82t0022.raw
+    - speech/t82t0023.raw
+    - speech/t82t0024.raw
+    - speech/t82t0025.raw
+    - speech/t82t0026.raw
+    - speech/t82t0027.raw
+    - speech/t82t0028.raw
+    - speech/t82t0029.raw
+    - speech/t82t0030.raw
+    - speech/t82t0031.raw
+    - speech/t82t0040.raw
+    - speech/t82t0041.raw
+    - speech/t82t0042.raw
+    - speech/t82t0043.raw
+    - speech/t82t0044.raw
+    - speech/t82t0045.raw
+    - speech/t82t0046.raw
+    - speech/t82t0047.raw
+    - speech/t82t0048.raw
+    - speech/t82t0049.raw
+    - speech/t82t0050.raw
+    - speech/t82t0051.raw
+    - speech/t82t0052.raw
+    - speech/t82t0053.raw
+    - speech/t82t0054.raw
+    - speech/t82t0055.raw
+    - speech/t82t0056.raw
+    - speech/t82t0057.raw
+    - speech/t82t0058.raw
+    - speech/t82t0059.raw
+    - speech/t82t0060.raw
+    - speech/t82t0061.raw
+    - speech/t82t0062.raw
+    - speech/t83t0000.raw
+    - speech/t83t0001.raw
+    - speech/t83t0002.raw
+    - speech/t83t0040.raw
+    - speech/t83t0041.raw
+    - speech/t83t0042.raw
+    - speech/t83t0043.raw
+    - speech/t83t0044.raw
+    - speech/t83t0045.raw
+    - speech/t83t0046.raw
+    - speech/t83t0047.raw
+    - speech/t83t0049.raw
+    optional:
+    - coverit.png
+    - manuale.htm
+    - manuale.txt
+    - screenit.gif
+    - symbol.gif
+    - track01.flac
+    license:
+    - license.txt_init11
+
 files:
   dreamweb-cd-us-1.1.zip:
     #download: http://prdownloads.sourceforge.net/scummvm/dreamweb-cd-us-1.1.zip?download
@@ -3576,6 +4164,9 @@ files:
     install_to: $docdir/diary
   # for french & spanish versions
   license.txt_nodiary:
+    install_as: license.txt
+  # v1.1 Initial freeware release
+  license.txt_init11:
     install_as: license.txt
 
   dreamweb.r00_uk:
@@ -4329,8 +4920,6 @@ files:
     install_as: dreamweb.r46
   dreamweb.r47_de:
     install_as: dreamweb.r47
-  dreamweb.r55_de:
-    install_as: dreamweb.r55
   dreamweb.t01_de:
     install_as: dreamweb.t01
   dreamweb.t02_de:
@@ -5394,7 +5983,7 @@ files:
     - dreamweb.r52
     - dreamweb.r53
     - dreamweb.r54
-    - dreamweb.r55_de
+    - dreamweb.r55
     - dreamweb.s00
     - dreamweb.s02
     - dreamweb.t01_de
@@ -7098,6 +7687,703 @@ files:
     - symbol.gif
     - license.txt_nodiary
 
+  #############################
+  # ITALIAN                   #
+  #############################
+  coverit.png:
+    install_to: $docdir
+  manuale.htm:
+    install_to: $docdir
+  manuale.txt:
+    install_to: $docdir
+  screenit.gif:
+    install_to: $docdir
+  dreamweb.c00_it:
+    install_as: dreamweb.c00
+  dreamweb.c01_it:
+    install_as: dreamweb.c01
+  dreamweb.c02_it:
+    install_as: dreamweb.c02
+  dreamweb.r00_it:
+    install_as: dreamweb.r00
+  dreamweb.r01_it:
+    install_as: dreamweb.r01
+  dreamweb.r02_it:
+    install_as: dreamweb.r02
+  dreamweb.r03_it:
+    install_as: dreamweb.r03
+  dreamweb.r04_it:
+    install_as: dreamweb.r04
+  dreamweb.r05_it:
+    install_as: dreamweb.r05
+  dreamweb.r06_it:
+    install_as: dreamweb.r06
+  dreamweb.r07_it:
+    install_as: dreamweb.r07
+  dreamweb.r08_it:
+    install_as: dreamweb.r08
+  dreamweb.r09_it:
+    install_as: dreamweb.r09
+  dreamweb.r10_it:
+    install_as: dreamweb.r10
+  dreamweb.r11_it:
+    install_as: dreamweb.r11
+  dreamweb.r12_it:
+    install_as: dreamweb.r12
+  dreamweb.r13_it:
+    install_as: dreamweb.r13
+  dreamweb.r14_it:
+    install_as: dreamweb.r14
+  dreamweb.r19_it:
+    install_as: dreamweb.r19
+  dreamweb.r20_it:
+    install_as: dreamweb.r20
+  dreamweb.r21_it:
+    install_as: dreamweb.r21
+  dreamweb.r22_it:
+    install_as: dreamweb.r22
+  dreamweb.r23_it:
+    install_as: dreamweb.r23
+  dreamweb.r24_it:
+    install_as: dreamweb.r24
+  dreamweb.r25_it:
+    install_as: dreamweb.r25
+  dreamweb.r26_it:
+    install_as: dreamweb.r26
+  dreamweb.r27_it:
+    install_as: dreamweb.r27
+  dreamweb.r28_it:
+    install_as: dreamweb.r28
+  dreamweb.r29_it:
+    install_as: dreamweb.r29
+  dreamweb.r45_it:
+    install_as: dreamweb.r45
+  dreamweb.r46_it:
+    install_as: dreamweb.r46
+  dreamweb.r47_it:
+    install_as: dreamweb.r47
+  dreamweb.t01_it:
+    install_as: dreamweb.t01
+  dreamweb.t02_it:
+    install_as: dreamweb.t02
+  dreamweb.t10_it:
+    install_as: dreamweb.t10
+  dreamweb.t11_it:
+    install_as: dreamweb.t11
+  dreamweb.t12_it:
+    install_as: dreamweb.t12
+  dreamweb.t13_it:
+    install_as: dreamweb.t13
+  dreamweb.t20_it:
+    install_as: dreamweb.t20
+  dreamweb.t21_it:
+    install_as: dreamweb.t21
+  dreamweb.t22_it:
+    install_as: dreamweb.t22
+  dreamweb.t23_it:
+    install_as: dreamweb.t23
+  dreamweb.t24_it:
+    install_as: dreamweb.t24
+  dreamweb.t50_it:
+    install_as: dreamweb.t50
+  dreamweb.t51_it:
+    install_as: dreamweb.t51
+  dreamweb.t80_it:
+    install_as: dreamweb.t80
+  dreamweb.t81_it:
+    install_as: dreamweb.t81
+  dreamweb.t82_it:
+    install_as: dreamweb.t82
+  dreamweb.t83_it:
+    install_as: dreamweb.t83
+  dreamweb.t84_it:
+    install_as: dreamweb.t84
+
+  dreamweb-cd-it-1.1.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/dreamweb-cd-it-1.1.zip?download
+    unpack:
+      format: zip
+    provides:
+    - dreamweb.c00_it
+    - dreamweb.c01_it
+    - dreamweb.c02_it
+    - dreamweb.g00
+    - dreamweb.g01
+    - dreamweb.g02
+    - dreamweb.g03
+    - dreamweb.g04
+    - dreamweb.g05
+    - dreamweb.g06
+    - dreamweb.g07
+    - dreamweb.g08
+    - dreamweb.g09
+    - dreamweb.g10
+    - dreamweb.g11
+    - dreamweb.g12
+    - dreamweb.g13
+    - dreamweb.g14
+    - dreamweb.g15
+    - dreamweb.i00
+    - dreamweb.i01
+    - dreamweb.i02
+    - dreamweb.i03
+    - dreamweb.i04
+    - dreamweb.i05
+    - dreamweb.i06
+    - dreamweb.p01
+    - dreamweb.p02
+    - dreamweb.pal
+    - dreamweb.r00_it
+    - dreamweb.r01_it
+    - dreamweb.r02_it
+    - dreamweb.r03_it
+    - dreamweb.r04_it
+    - dreamweb.r05_it
+    - dreamweb.r06_it
+    - dreamweb.r07_it
+    - dreamweb.r08_it
+    - dreamweb.r09_it
+    - dreamweb.r10_it
+    - dreamweb.r11_it
+    - dreamweb.r12_it
+    - dreamweb.r13_it
+    - dreamweb.r14_it
+    - dreamweb.r19_it
+    - dreamweb.r20_it
+    - dreamweb.r21_it
+    - dreamweb.r22_it
+    - dreamweb.r23_it
+    - dreamweb.r24_it
+    - dreamweb.r25_it
+    - dreamweb.r26_it
+    - dreamweb.r27_it
+    - dreamweb.r28_it
+    - dreamweb.r29_it
+    - dreamweb.r45_it
+    - dreamweb.r46_it
+    - dreamweb.r47_it
+    - dreamweb.r50
+    - dreamweb.r52
+    - dreamweb.r53
+    - dreamweb.r54
+    - dreamweb.r55
+    - dreamweb.s00
+    - dreamweb.s02
+    - dreamweb.t01_it
+    - dreamweb.t02_it
+    - dreamweb.t10_it
+    - dreamweb.t11_it
+    - dreamweb.t12_it
+    - dreamweb.t13_it
+    - dreamweb.t20_it
+    - dreamweb.t21_it
+    - dreamweb.t22_it
+    - dreamweb.t23_it
+    - dreamweb.t24_it
+    - dreamweb.t50_it
+    - dreamweb.t51_it
+    - dreamweb.t80_it
+    - dreamweb.t81_it
+    - dreamweb.t82_it
+    - dreamweb.t83_it
+    - dreamweb.t84_it
+    - dreamweb.v01
+    - dreamweb.v02
+    - dreamweb.v05
+    - dreamweb.v06
+    - dreamweb.v08
+    - dreamweb.v09
+    - dreamweb.v10
+    - dreamweb.v11
+    - dreamweb.v12
+    - dreamweb.v14
+    - dreamweb.v19
+    - dreamweb.v22
+    - dreamweb.v23
+    - dreamweb.v30
+    - dreamweb.v33
+    - dreamweb.v34
+    - dreamweb.v35
+    - dreamweb.v99
+    - dreamweb.vol
+    - dreamweb.wav
+    - speech/r01c0000.raw
+    - speech/r01c0004.raw
+    - speech/r01c0005.raw
+    - speech/r01c0006.raw
+    - speech/r01c0007.raw
+    - speech/r01c0008.raw
+    - speech/r01c0064.raw
+    - speech/r01c0068.raw
+    - speech/r01c0069.raw
+    - speech/r01c0070.raw
+    - speech/r01c0071.raw
+    - speech/r01c0072.raw
+    - speech/r01c0073.raw
+    - speech/r01c0112.raw
+    - speech/r01c0113.raw
+    - speech/r01c0114.raw
+    - speech/r01c0115.raw
+    - speech/r01c0128.raw
+    - speech/r01c0132.raw
+    - speech/r01c0133.raw
+    - speech/r01c0134.raw
+    - speech/r01c0135.raw
+    - speech/r01c0136.raw
+    - speech/r01c0137.raw
+    - speech/r01c0138.raw
+    - speech/r01c0139.raw
+    - speech/r01c0140.raw
+    - speech/r01c0141.raw
+    - speech/r01c0142.raw
+    - speech/r01c0143.raw
+    - speech/r01c0144.raw
+    - speech/r01c0176.raw
+    - speech/r01c0177.raw
+    - speech/r01c0178.raw
+    - speech/r01c0192.raw
+    - speech/r01c0196.raw
+    - speech/r01c0197.raw
+    - speech/r01c0199.raw
+    - speech/r01c0240.raw
+    - speech/r01c0241.raw
+    - speech/r01c0256.raw
+    - speech/r01c0260.raw
+    - speech/r01c0261.raw
+    - speech/r01c0262.raw
+    - speech/r01c0263.raw
+    - speech/r01c0264.raw
+    - speech/r01c0265.raw
+    - speech/r01c0266.raw
+    - speech/r01c0267.raw
+    - speech/r01c0268.raw
+    - speech/r01c0269.raw
+    - speech/r01c0270.raw
+    - speech/r01c0304.raw
+    - speech/r01c0305.raw
+    - speech/r01c0320.raw
+    - speech/r01c0324.raw
+    - speech/r01c0325.raw
+    - speech/r01c0326.raw
+    - speech/r01c0327.raw
+    - speech/r01c0328.raw
+    - speech/r01c0329.raw
+    - speech/r02c0000.raw
+    - speech/r02c0004.raw
+    - speech/r02c0005.raw
+    - speech/r02c0006.raw
+    - speech/r02c0007.raw
+    - speech/r02c0008.raw
+    - speech/r02c0009.raw
+    - speech/r02c0010.raw
+    - speech/r02c0011.raw
+    - speech/r02c0012.raw
+    - speech/r02c0013.raw
+    - speech/r02c0014.raw
+    - speech/r02c0015.raw
+    - speech/r02c0016.raw
+    - speech/r02c0017.raw
+    - speech/r02c0018.raw
+    - speech/r02c0019.raw
+    - speech/r02c0048.raw
+    - speech/r02c0049.raw
+    - speech/r02c0050.raw
+    - speech/r02c0064.raw
+    - speech/r02c0068.raw
+    - speech/r02c0069.raw
+    - speech/r02c0070.raw
+    - speech/r02c0071.raw
+    - speech/r02c0072.raw
+    - speech/r02c0073.raw
+    - speech/r02c0074.raw
+    - speech/r02c0075.raw
+    - speech/r02c0076.raw
+    - speech/r02c0077.raw
+    - speech/r02c0078.raw
+    - speech/r02c0079.raw
+    - speech/r02c0112.raw
+    - speech/r02c0113.raw
+    - speech/r02c0114.raw
+    - speech/r02c0115.raw
+    - speech/r04c0000.raw
+    - speech/r04c0004.raw
+    - speech/r04c0005.raw
+    - speech/r04c0006.raw
+    - speech/r04c0007.raw
+    - speech/r04c0008.raw
+    - speech/r04c0009.raw
+    - speech/r04c0010.raw
+    - speech/r04c0048.raw
+    - speech/r04c0049.raw
+    - speech/r05c0000.raw
+    - speech/r05c0004.raw
+    - speech/r05c0005.raw
+    - speech/r05c0006.raw
+    - speech/r05c0007.raw
+    - speech/r05c0008.raw
+    - speech/r05c0009.raw
+    - speech/r05c0010.raw
+    - speech/r05c0011.raw
+    - speech/r05c0012.raw
+    - speech/r05c0013.raw
+    - speech/r05c0014.raw
+    - speech/r05c0016.raw
+    - speech/r05c0017.raw
+    - speech/r05c0020.raw
+    - speech/r05c0021.raw
+    - speech/r05c0024.raw
+    - speech/r05c0025.raw
+    - speech/r05c0028.raw
+    - speech/r05c0029.raw
+    - speech/r05c0030.raw
+    - speech/r05c0032.raw
+    - speech/r05c0033.raw
+    - speech/r05c0034.raw
+    - speech/r05c0036.raw
+    - speech/r05c0040.raw
+    - speech/r05c0048.raw
+    - speech/r05c0049.raw
+    - speech/r05c0064.raw
+    - speech/r05c0068.raw
+    - speech/r05c0069.raw
+    - speech/r05c0070.raw
+    - speech/r05c0071.raw
+    - speech/r05c0072.raw
+    - speech/r05c0112.raw
+    - speech/r05c0113.raw
+    - speech/r05c0114.raw
+    - speech/r05c0128.raw
+    - speech/r05c0132.raw
+    - speech/r05c0133.raw
+    - speech/r05c0134.raw
+    - speech/r05c0135.raw
+    - speech/r05c0136.raw
+    - speech/r05c0137.raw
+    - speech/r05c0138.raw
+    - speech/r05c0176.raw
+    - speech/r05c0177.raw
+    - speech/r05c0178.raw
+    - speech/r05c0192.raw
+    - speech/r05c0196.raw
+    - speech/r05c0197.raw
+    - speech/r05c0198.raw
+    - speech/r05c0199.raw
+    - speech/r05c0200.raw
+    - speech/r05c0201.raw
+    - speech/r05c0202.raw
+    - speech/r05c0240.raw
+    - speech/r05c0241.raw
+    - speech/r07c0000.raw
+    - speech/r07c0004.raw
+    - speech/r07c0005.raw
+    - speech/r07c0006.raw
+    - speech/r07c0007.raw
+    - speech/r07c0008.raw
+    - speech/r07c0009.raw
+    - speech/r07c0010.raw
+    - speech/r07c0011.raw
+    - speech/r07c0012.raw
+    - speech/r07c0013.raw
+    - speech/r07c0048.raw
+    - speech/r07c0049.raw
+    - speech/r07c0064.raw
+    - speech/r08c0000.raw
+    - speech/r08c0004.raw
+    - speech/r08c0005.raw
+    - speech/r08c0006.raw
+    - speech/r08c0007.raw
+    - speech/r08c0008.raw
+    - speech/r08c0009.raw
+    - speech/r08c0010.raw
+    - speech/r08c0011.raw
+    - speech/r08c0012.raw
+    - speech/r08c0048.raw
+    - speech/r08c0049.raw
+    - speech/r08c0050.raw
+    - speech/r08c0051.raw
+    - speech/r08c0064.raw
+    - speech/r08c0068.raw
+    - speech/r08c0069.raw
+    - speech/r08c0070.raw
+    - speech/r08c0071.raw
+    - speech/r08c0072.raw
+    - speech/r08c0073.raw
+    - speech/r08c0112.raw
+    - speech/r08c0113.raw
+    - speech/r08c0128.raw
+    - speech/r23c0000.raw
+    - speech/r23c0004.raw
+    - speech/r23c0005.raw
+    - speech/r23c0006.raw
+    - speech/r23c0007.raw
+    - speech/r23c0008.raw
+    - speech/r23c0009.raw
+    - speech/r23c0010.raw
+    - speech/r23c0011.raw
+    - speech/r23c0012.raw
+    - speech/r23c0013.raw
+    - speech/r23c0014.raw
+    - speech/r23c0015.raw
+    - speech/r23c0016.raw
+    - speech/r23c0017.raw
+    - speech/r23c0018.raw
+    - speech/r23c0048.raw
+    - speech/r23c0049.raw
+    - speech/r23c0064.raw
+    - speech/r23c0068.raw
+    - speech/r23c0069.raw
+    - speech/r23c0070.raw
+    - speech/r23c0071.raw
+    - speech/r23c0072.raw
+    - speech/r23c0073.raw
+    - speech/r23c0128.raw
+    - speech/r23c0132.raw
+    - speech/r23c0133.raw
+    - speech/r23c0134.raw
+    - speech/r23c0135.raw
+    - speech/r23c0136.raw
+    - speech/r23c0137.raw
+    - speech/r23c0176.raw
+    - speech/r23c0177.raw
+    - speech/r23c0192.raw
+    - speech/r23c0196.raw
+    - speech/r23c0197.raw
+    - speech/r23c0198.raw
+    - speech/r23c0199.raw
+    - speech/r23c0240.raw
+    - speech/r23c0241.raw
+    - speech/r23c0256.raw
+    - speech/r23c0260.raw
+    - speech/r23c0261.raw
+    - speech/r23c0262.raw
+    - speech/r23c0263.raw
+    - speech/r23c0264.raw
+    - speech/r23c0265.raw
+    - speech/r23c0266.raw
+    - speech/r23c0267.raw
+    - speech/r23c0268.raw
+    - speech/r23c0269.raw
+    - speech/r23c0304.raw
+    - speech/r23c0305.raw
+    - speech/r23c0306.raw
+    - speech/r23c0320.raw
+    - speech/r23c0324.raw
+    - speech/r23c0325.raw
+    - speech/r23c0326.raw
+    - speech/r23c0327.raw
+    - speech/r23c0328.raw
+    - speech/r23c0329.raw
+    - speech/r23c0330.raw
+    - speech/r23c0368.raw
+    - speech/r23c0369.raw
+    - speech/r23c0370.raw
+    - speech/r23c0384.raw
+    - speech/r23c0388.raw
+    - speech/r23c0389.raw
+    - speech/r23c0390.raw
+    - speech/r23c0391.raw
+    - speech/r23c0432.raw
+    - speech/r23c0433.raw
+    - speech/r23c0448.raw
+    - speech/r23c0512.raw
+    - speech/r23c0516.raw
+    - speech/r23c0517.raw
+    - speech/r23c0576.raw
+    - speech/r23c0580.raw
+    - speech/r23c0581.raw
+    - speech/r23c0582.raw
+    - speech/r23c0640.raw
+    - speech/r23c0644.raw
+    - speech/r23c0645.raw
+    - speech/r23c0688.raw
+    - speech/r23c0689.raw
+    - speech/r23c0690.raw
+    - speech/r23c0691.raw
+    - speech/r24c0000.raw
+    - speech/r24c0004.raw
+    - speech/r24c0005.raw
+    - speech/r24c0006.raw
+    - speech/r24c0007.raw
+    - speech/r24c0008.raw
+    - speech/r24c0009.raw
+    - speech/r24c0010.raw
+    - speech/r24c0011.raw
+    - speech/r24c0012.raw
+    - speech/r24c0013.raw
+    - speech/r24c0014.raw
+    - speech/r24c0048.raw
+    - speech/r24c0049.raw
+    - speech/r24c0050.raw
+    - speech/r24c0051.raw
+    - speech/r24c0064.raw
+    - speech/r24c0068.raw
+    - speech/r24c0069.raw
+    - speech/r24c0070.raw
+    - speech/r24c0071.raw
+    - speech/r24c0072.raw
+    - speech/r24c0073.raw
+    - speech/r24c0074.raw
+    - speech/r24c0075.raw
+    - speech/r24c0076.raw
+    - speech/r24c0077.raw
+    - speech/r24c0112.raw
+    - speech/r24c0113.raw
+    - speech/r24c0114.raw
+    - speech/r24c0115.raw
+    - speech/r27c0000.raw
+    - speech/r27c0004.raw
+    - speech/r27c0005.raw
+    - speech/r27c0006.raw
+    - speech/r27c0007.raw
+    - speech/r27c0008.raw
+    - speech/r27c0009.raw
+    - speech/r27c0048.raw
+    - speech/r27c0049.raw
+    - speech/r29c0000.raw
+    - speech/r29c0004.raw
+    - speech/r29c0005.raw
+    - speech/r29c0006.raw
+    - speech/r29c0007.raw
+    - speech/r29c0008.raw
+    - speech/r29c0009.raw
+    - speech/r29c0010.raw
+    - speech/r29c0011.raw
+    - speech/r29c0012.raw
+    - speech/r29c0048.raw
+    - speech/r29c0049.raw
+    - speech/r29c0050.raw
+    - speech/r45c0000.raw
+    - speech/r45c0004.raw
+    - speech/r45c0005.raw
+    - speech/r45c0006.raw
+    - speech/r45c0008.raw
+    - speech/r45c0010.raw
+    - speech/r45c0011.raw
+    - speech/r45c0012.raw
+    - speech/r45c0013.raw
+    - speech/r45c0014.raw
+    - speech/r45c0016.raw
+    - speech/r45c0018.raw
+    - speech/r45c0019.raw
+    - speech/r45c0048.raw
+    - speech/r45c0049.raw
+    - speech/r45c0064.raw
+    - speech/r45c0068.raw
+    - speech/r45c0070.raw
+    - speech/r45c0072.raw
+    - speech/r45c0073.raw
+    - speech/r45c0074.raw
+    - speech/r45c0075.raw
+    - speech/r45c0076.raw
+    - speech/r45c0077.raw
+    - speech/r45c0078.raw
+    - speech/r45c0080.raw
+    - speech/r45c0082.raw
+    - speech/r45c0112.raw
+    - speech/r45c0128.raw
+    - speech/r45c0132.raw
+    - speech/r45c0133.raw
+    - speech/r45c0134.raw
+    - speech/r45c0136.raw
+    - speech/r45c0138.raw
+    - speech/r45c0139.raw
+    - speech/r45c0140.raw
+    - speech/r45c0141.raw
+    - speech/r45c0142.raw
+    - speech/r45c0143.raw
+    - speech/r45c0176.raw
+    - speech/r45c0192.raw
+    - speech/r45c0196.raw
+    - speech/r45c0197.raw
+    - speech/r45c0198.raw
+    - speech/r45c0200.raw
+    - speech/r45c0202.raw
+    - speech/r45c0204.raw
+    - speech/r45c0205.raw
+    - speech/r45c0206.raw
+    - speech/r45c0207.raw
+    - speech/r45c0208.raw
+    - speech/r45c0210.raw
+    - speech/r45c0240.raw
+    - speech/r45c0241.raw
+    - speech/t50t0012.raw
+    - speech/t50t0030.raw
+    - speech/t50t0031.raw
+    - speech/t80t0042.raw
+    - speech/t80t0043.raw
+    - speech/t80t0045.raw
+    - speech/t80t0047.raw
+    - speech/t80t0049.raw
+    - speech/t80t0050.raw
+    - speech/t80t0051.raw
+    - speech/t80t0052.raw
+    - speech/t80t0053.raw
+    - speech/t80t0055.raw
+    - speech/t82t0008.raw
+    - speech/t82t0009.raw
+    - speech/t82t0010.raw
+    - speech/t82t0011.raw
+    - speech/t82t0014.raw
+    - speech/t82t0015.raw
+    - speech/t82t0016.raw
+    - speech/t82t0017.raw
+    - speech/t82t0018.raw
+    - speech/t82t0019.raw
+    - speech/t82t0020.raw
+    - speech/t82t0021.raw
+    - speech/t82t0022.raw
+    - speech/t82t0023.raw
+    - speech/t82t0024.raw
+    - speech/t82t0025.raw
+    - speech/t82t0026.raw
+    - speech/t82t0027.raw
+    - speech/t82t0028.raw
+    - speech/t82t0029.raw
+    - speech/t82t0030.raw
+    - speech/t82t0031.raw
+    - speech/t82t0040.raw
+    - speech/t82t0041.raw
+    - speech/t82t0042.raw
+    - speech/t82t0043.raw
+    - speech/t82t0044.raw
+    - speech/t82t0045.raw
+    - speech/t82t0046.raw
+    - speech/t82t0047.raw
+    - speech/t82t0048.raw
+    - speech/t82t0049.raw
+    - speech/t82t0050.raw
+    - speech/t82t0051.raw
+    - speech/t82t0052.raw
+    - speech/t82t0053.raw
+    - speech/t82t0054.raw
+    - speech/t82t0055.raw
+    - speech/t82t0056.raw
+    - speech/t82t0057.raw
+    - speech/t82t0058.raw
+    - speech/t82t0059.raw
+    - speech/t82t0060.raw
+    - speech/t82t0061.raw
+    - speech/t82t0062.raw
+    - speech/t83t0000.raw
+    - speech/t83t0001.raw
+    - speech/t83t0002.raw
+    - speech/t83t0040.raw
+    - speech/t83t0041.raw
+    - speech/t83t0042.raw
+    - speech/t83t0043.raw
+    - speech/t83t0044.raw
+    - speech/t83t0045.raw
+    - speech/t83t0046.raw
+    - speech/t83t0047.raw
+    - speech/t83t0049.raw
+    - coverit.png
+    - manuale.htm
+    - manuale.txt
+    - screenit.gif
+    - symbol.gif
+    - track01.flac
+    - license.txt_init11
+
 cksums: |
   _ 314193    diary/coveren.png
   _ 36375     diary/diary.html
@@ -7136,7 +8422,6 @@ cksums: |
   _ 197405    dreamweb.r45
   _ 99515     dreamweb.r46
   _ 147698    dreamweb.r47
-  _ 187758    dreamweb.r55
   _ 2601      dreamweb.t01
   _ 2157      dreamweb.t02
   _ 2422      dreamweb.t10
@@ -7161,7 +8446,6 @@ cksums: |
   _ 52774     screenen.gif
   _ 315755    speech/r01c0000.wav
   _ 743846    speech/t83t0040.old
-  _ 29808295  track01.flac
 
   _ 152918    dreamweb.r00_uk
   _ 158040    dreamweb.r01_uk
@@ -7245,7 +8529,6 @@ md5sums: |
   4e0b125844b03b1e34a0050cc958add3  dreamweb.r45
   e3dc649be3fdaaed675b70e020e6ea3f  dreamweb.r46
   b80ecc80ab023b3582ba9ab0578dc752  dreamweb.r47
-  e553bfc0be0e91a8728f521960b89aa2  dreamweb.r55
   3ae014261bc0df2a1070c4ad3a8e31aa  dreamweb.t01
   9edca99bb75bfa0422853906add65b44  dreamweb.t02
   4b8124e4c0e0c99ba92750e49ca0fba8  dreamweb.t10
@@ -7270,7 +8553,6 @@ md5sums: |
   2d2ffbe5bca7413f1db05bbc8018568f  screenen.gif
   7a7852874cad34e70e35b8ef67fe7f61  speech/r01c0000.wav
   fbd50ad3c0b4e2d91e7b371560967623  speech/t83t0040.old
-  c183de738ec2d04d525adbdd755cd9ba  track01.flac
 
   9a642fb23773ae631f59452b90a13436  dreamweb.r00_uk
   96ae22dc9c590c533a54576c1aa248f7  dreamweb.r01_uk
@@ -7322,6 +8604,7 @@ sha1sums: |
   7e4beee728ba195904dcf187f5eb8a685b07aa6c  dreamweb-cd-fr-1.1.zip
   f10f97cf6ac88fb811314e37fec5db14dde1a13e  dreamweb-cd-de-1.1.zip
   91d1e5933a82ae3a83c090b084510d7141160a2d  dreamweb-cd-es-1.1.zip
+  86116ba7381de898c434545f4cbaf28b8cecf784  dreamweb-cd-it-1.1.zip
 
 size_and_md5: |
   226360597 3ae3a109d6233cf6b5ab7b63e7cc8937 dreamweb-cd-us-1.1.zip
@@ -7354,6 +8637,7 @@ size_and_md5: |
   199266    f878cc809763c31302efb85ca9838a2f dreamweb.r52
   151052    eda75d3cd4ffd884d63b4cf4ce1f40f6 dreamweb.r53
   79002     de9b2ebf39dbec10c7d0df1d3439dc01 dreamweb.r54
+  187758    e553bfc0be0e91a8728f521960b89aa2 dreamweb.r55
   24301     6ddd8ebe18109cafc567e53eac4c7e5f dreamweb.s00
   45516     829548ba0ccb52b65c8a995291e9876f dreamweb.s02
   342142    b4c710822f99d853b7e5d39c56e1f4eb dreamweb.v01
@@ -7376,6 +8660,7 @@ size_and_md5: |
   702632    a9c20b10066ebccf65f77af56b579d1e dreamweb.v99
   1792      44f27ec12293257eee63f1b69db6a883 dreamweb.vol
   52534366  938811bc2418a03fb1549d71318ac334 dreamweb.wav
+  29808295  c183de738ec2d04d525adbdd755cd9ba track01.flac
 
   # Manual
   23244     3d453065a46ab9ba09ab7f34895609f2 symbol.gif
@@ -7546,7 +8831,6 @@ size_and_md5: |
   197848    f5ab640acc1f41e55d954253ae76eb09 dreamweb.r45_de
   100579    0d860ef67369ed21d3509635289a83fd dreamweb.r46_de
   147744    765a0cf36d80c0c6a45a2b4ee2c43a61 dreamweb.r47_de
-  187758    e553bfc0be0e91a8728f521960b89aa2 dreamweb.r55_de
   3154      56bffe3437a9b3b51aff4c8083099e71 dreamweb.t01_de
   2581      6ec097a8cf9d7da913679cf7df6a8a90 dreamweb.t02_de
   2752      02dfd84e2b40a8b047c7928f88c1214d dreamweb.t10_de
@@ -7674,7 +8958,66 @@ size_and_md5: |
   702632    a9c20b10066ebccf65f77af56b579d1e dreamwsp.v99
   1792      44f27ec12293257eee63f1b69db6a883 dreamwsp.vol
 
-  # speech English/French
+  # Italian
+  225726238 66bb7b112ab9eda05e970b26087e4f94 dreamweb-cd-it-1.1.zip
+  306832    0078604b1ed9db444b3c90f118551f10 coverit.png
+  52943     fc87194aed5e592c1ed155c714bde19c screenit.gif
+  23244     3d453065a46ab9ba09ab7f34895609f2 symbol.gif
+  23678     a55c2389ad43e8622ad9cd89a2996b7e manuale.htm
+  16020     1248677f0c4f0df8b9f065a535ece53e manuale.txt
+  1275      4756fcf366402f092a213f3a241aa738 license.txt_init11
+  20407     64786bc089bbf650a2e5a2a713032f14 dreamweb.c00_it
+  6015      db861d4cde963e6eb65344dcf5f6d39c dreamweb.c01_it
+  11959     e72408f944f07ee6d80e26e79a716e03 dreamweb.c02_it
+  155448    6ac3dab7921f6f3f84d2127590811f8e dreamweb.r00_it
+  159744    47689d03c6edc01f307dd50356959714 dreamweb.r01_it
+  199676    91657a82e3fba3771ae22e4153de3c69 dreamweb.r02_it
+  79086     6b10d314a26d02db8c13ffa70df81509 dreamweb.r03_it
+  74710     a2586e69d02c8e5d0e0db76c084da692 dreamweb.r04_it
+  93308     e184eb3bc67577416963ca2c1227e185 dreamweb.r05_it
+  105978    dd74b678b1b4a0ed0363f7940aa4e751 dreamweb.r06_it
+  108896    76ef93e58f8260a28c252d83899f3f1b dreamweb.r07_it
+  145166    198d5e53beb7449e11cd477de302582c dreamweb.r08_it
+  151250    2f2083c7a6b0dca96da81bc7a98e1610 dreamweb.r09_it
+  92248     4d492de5faf8d60e76d76168e89b7cec dreamweb.r10_it
+  98910     c6bf36d5e888626c6e9081eae0773755 dreamweb.r11_it
+  73208     58115f0718029db5447106f60ec968d1 dreamweb.r12_it
+  187024    beb17c35107ba1bb70462ad337d38b4b dreamweb.r13_it
+  183214    49c168bb45cae8fc78d4a1bbb179db8a dreamweb.r14_it
+  91975     7fcc7557ee239b2bb029e98364500b3b dreamweb.r19_it
+  200554    33f5fbbd4c859ae7079fe208bc5bb326 dreamweb.r20_it
+  90538     6d78401d7d60b1bfc4c175914f7c01f8 dreamweb.r21_it
+  190780    9a7f07c5fc55f45817a9e92c9c951a35 dreamweb.r22_it
+  175352    a3e1b339c3f525554523112fd3d2a972 dreamweb.r23_it
+  147832    d9640d7c15b8e5c52a2a379a57adcd44 dreamweb.r24_it
+  192676    cd5ca291a957fd6a17e85fc9a0c3f58f dreamweb.r25_it
+  122482    2c214816c757b9041adc6687dca0b1a8 dreamweb.r26_it
+  182132    e8c9843bf692d9529cd66dbfdff68171 dreamweb.r27_it
+  169276    7bf2575a9b5b940e18735a834f53001f dreamweb.r28_it
+  95012     bcbdfadee4456a783debde3ae78c51ee dreamweb.r29_it
+  198106    da4a721bc18a6fabc8207e1c5dc8bbc3 dreamweb.r45_it
+  99977     f1d821c80f0286b006d816b4658ecd34 dreamweb.r46_it
+  147867    065e93f528614e7d8432ef080979dbc1 dreamweb.r47_it
+  2806      658c15bf320588d49d5ed2e467b91e2c dreamweb.t01_it
+  2376      9c9b5c63fad4590fba19532f1ca0c7b1 dreamweb.t02_it
+  2582      a85edc9553059a30490ab05143066d0d dreamweb.t10_it
+  3854      81fd42be17e9229237bc0a875daa6c9d dreamweb.t11_it
+  3926      7cc0bbd95009c13bf0d8cbc8ef88b3cf dreamweb.t12_it
+  4362      e57612c29b08e67124d6e161a88b60f3 dreamweb.t13_it
+  294       adbcb83451b64de1a51b022c2be54754 dreamweb.t20_it
+  622       8dc2807108de1b80030f3ba901873f81 dreamweb.t21_it
+  310       5494d46807e41386944f15b4a2d6c3fc dreamweb.t22_it
+  748       0d120004d363379bf43ba08d84905738 dreamweb.t23_it
+  918       d9e8be316e4cfea68e389096758d3b35 dreamweb.t24_it
+  3828      91c3a5e58f8477512903d2b85c32c9bf dreamweb.t50_it
+  976       9a97f7416975b8afa43f3d99c5ca51cd dreamweb.t51_it
+  6354      510d882a5c7f48fd1035eda460af15a9 dreamweb.t80_it
+  3508      e0930144bfd64d6fe7f0586ad5fa6678 dreamweb.t81_it
+  2724      c239306afb6711f978aa5d983a298037 dreamweb.t82_it
+  2818      3fb6ab70332aa478b1e164109f189334 dreamweb.t83_it
+  1220      8e45b4a3ddce8b1de82a3a760dcd033c dreamweb.t84_it
+
+  # speech in English (also used in French & Italian versions)
   315711    a862e21ef60b6fb528ec75352acf1c22 speech/r01c0000.raw
   49138     041e5721d2727c7941a5542531659ab8 speech/r01c0004.raw
   29854     c6de6b81dda7007dcb969595c5b9114e speech/r01c0005.raw
