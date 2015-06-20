@@ -1792,7 +1792,7 @@ packages:
     - screenfr.gif
     - symbol.gif
     license:
-    - license.txt_fr
+    - license.txt_nodiary
 
   dreamweb-de-data:
     lang: de
@@ -2389,6 +2389,577 @@ packages:
     - track01.flac_de
     license:
     - license.txt
+
+  dreamweb-es-data:
+    lang: es
+    debian:
+      provides: dreamweb-data
+    version: '1.1'
+    install:
+    - dreamweb.wav
+    - dreamwsp.c00
+    - dreamwsp.c01
+    - dreamwsp.c02
+    - dreamwsp.g00
+    - dreamwsp.g01
+    - dreamwsp.g02
+    - dreamwsp.g03
+    - dreamwsp.g04
+    - dreamwsp.g05
+    - dreamwsp.g06
+    - dreamwsp.g07
+    - dreamwsp.g08
+    - dreamwsp.g09
+    - dreamwsp.g10
+    - dreamwsp.g11
+    - dreamwsp.g12
+    - dreamwsp.g13
+    - dreamwsp.g14
+    - dreamwsp.g15
+    - dreamwsp.i00
+    - dreamwsp.i01
+    - dreamwsp.i02
+    - dreamwsp.i03
+    - dreamwsp.i04
+    - dreamwsp.i05
+    - dreamwsp.i06
+    - dreamwsp.p01
+    - dreamwsp.pal
+    - dreamwsp.r00
+    - dreamwsp.r01
+    - dreamwsp.r02
+    - dreamwsp.r03
+    - dreamwsp.r04
+    - dreamwsp.r05
+    - dreamwsp.r06
+    - dreamwsp.r07
+    - dreamwsp.r08
+    - dreamwsp.r09
+    - dreamwsp.r10
+    - dreamwsp.r11
+    - dreamwsp.r12
+    - dreamwsp.r13
+    - dreamwsp.r14
+    - dreamwsp.r19
+    - dreamwsp.r20
+    - dreamwsp.r21
+    - dreamwsp.r22
+    - dreamwsp.r23
+    - dreamwsp.r24
+    - dreamwsp.r25
+    - dreamwsp.r26
+    - dreamwsp.r27
+    - dreamwsp.r28
+    - dreamwsp.r29
+    - dreamwsp.r45
+    - dreamwsp.r46
+    - dreamwsp.r47
+    - dreamwsp.r50
+    - dreamwsp.r52
+    - dreamwsp.r53
+    - dreamwsp.r54
+    - dreamwsp.r55
+    - dreamwsp.s00
+    - dreamwsp.s02
+    - dreamwsp.t01
+    - dreamwsp.t02
+    - dreamwsp.t10
+    - dreamwsp.t11
+    - dreamwsp.t12
+    - dreamwsp.t13
+    - dreamwsp.t20
+    - dreamwsp.t21
+    - dreamwsp.t22
+    - dreamwsp.t23
+    - dreamwsp.t24
+    - dreamwsp.t50
+    - dreamwsp.t51
+    - dreamwsp.t80
+    - dreamwsp.t81
+    - dreamwsp.t82
+    - dreamwsp.t83
+    - dreamwsp.t84
+    - dreamwsp.v01
+    - dreamwsp.v02
+    - dreamwsp.v05
+    - dreamwsp.v06
+    - dreamwsp.v08
+    - dreamwsp.v09
+    - dreamwsp.v10
+    - dreamwsp.v11
+    - dreamwsp.v12
+    - dreamwsp.v14
+    - dreamwsp.v19
+    - dreamwsp.v22
+    - dreamwsp.v23
+    - dreamwsp.v30
+    - dreamwsp.v33
+    - dreamwsp.v34
+    - dreamwsp.v35
+    - dreamwsp.v99
+    - dreamwsp.vol
+    - spanish/r01c0000.raw
+    - spanish/r01c0004.raw
+    - spanish/r01c0005.raw
+    - spanish/r01c0006.raw
+    - spanish/r01c0007.raw
+    - spanish/r01c0008.raw
+    - spanish/r01c0064.raw
+    - spanish/r01c0068.raw
+    - spanish/r01c0069.raw
+    - spanish/r01c0070.raw
+    - spanish/r01c0071.raw
+    - spanish/r01c0072.raw
+    - spanish/r01c0073.raw
+    - spanish/r01c0112.raw
+    - spanish/r01c0113.raw
+    - spanish/r01c0114.raw
+    - spanish/r01c0115.raw
+    - spanish/r01c0128.raw
+    - spanish/r01c0132.raw
+    - spanish/r01c0133.raw
+    - spanish/r01c0134.raw
+    - spanish/r01c0135.raw
+    - spanish/r01c0136.raw
+    - spanish/r01c0137.raw
+    - spanish/r01c0138.raw
+    - spanish/r01c0139.raw
+    - spanish/r01c0140.raw
+    - spanish/r01c0141.raw
+    - spanish/r01c0142.raw
+    - spanish/r01c0143.raw
+    - spanish/r01c0144.raw
+    - spanish/r01c0176.raw
+    - spanish/r01c0177.raw
+    - spanish/r01c0178.raw
+    - spanish/r01c0192.raw
+    - spanish/r01c0196.raw
+    - spanish/r01c0197.raw
+    - spanish/r01c0199.raw
+    - spanish/r01c0240.raw
+    - spanish/r01c0241.raw
+    - spanish/r01c0256.raw
+    - spanish/r01c0260.raw
+    - spanish/r01c0261.raw
+    - spanish/r01c0262.raw
+    - spanish/r01c0263.raw
+    - spanish/r01c0264.raw
+    - spanish/r01c0265.raw
+    - spanish/r01c0266.raw
+    - spanish/r01c0267.raw
+    - spanish/r01c0268.raw
+    - spanish/r01c0269.raw
+    - spanish/r01c0270.raw
+    - spanish/r01c0304.raw
+    - spanish/r01c0305.raw
+    - spanish/r01c0320.raw
+    - spanish/r01c0324.raw
+    - spanish/r01c0325.raw
+    - spanish/r01c0326.raw
+    - spanish/r01c0327.raw
+    - spanish/r01c0328.raw
+    - spanish/r01c0329.raw
+    - spanish/r02c0000.raw
+    - spanish/r02c0004.raw
+    - spanish/r02c0005.raw
+    - spanish/r02c0006.raw
+    - spanish/r02c0007.raw
+    - spanish/r02c0008.raw
+    - spanish/r02c0009.raw
+    - spanish/r02c0010.raw
+    - spanish/r02c0011.raw
+    - spanish/r02c0012.raw
+    - spanish/r02c0013.raw
+    - spanish/r02c0014.raw
+    - spanish/r02c0015.raw
+    - spanish/r02c0016.raw
+    - spanish/r02c0017.raw
+    - spanish/r02c0018.raw
+    - spanish/r02c0019.raw
+    - spanish/r02c0048.raw
+    - spanish/r02c0049.raw
+    - spanish/r02c0050.raw
+    - spanish/r02c0064.raw
+    - spanish/r02c0068.raw
+    - spanish/r02c0069.raw
+    - spanish/r02c0070.raw
+    - spanish/r02c0071.raw
+    - spanish/r02c0072.raw
+    - spanish/r02c0073.raw
+    - spanish/r02c0074.raw
+    - spanish/r02c0075.raw
+    - spanish/r02c0076.raw
+    - spanish/r02c0077.raw
+    - spanish/r02c0078.raw
+    - spanish/r02c0079.raw
+    - spanish/r02c0112.raw
+    - spanish/r02c0113.raw
+    - spanish/r02c0114.raw
+    - spanish/r02c0115.raw
+    - spanish/r04c0000.raw
+    - spanish/r04c0004.raw
+    - spanish/r04c0005.raw
+    - spanish/r04c0006.raw
+    - spanish/r04c0007.raw
+    - spanish/r04c0008.raw
+    - spanish/r04c0009.raw
+    - spanish/r04c0010.raw
+    - spanish/r04c0048.raw
+    - spanish/r04c0049.raw
+    - spanish/r05c0000.raw
+    - spanish/r05c0004.raw
+    - spanish/r05c0005.raw
+    - spanish/r05c0006.raw
+    - spanish/r05c0007.raw
+    - spanish/r05c0008.raw
+    - spanish/r05c0009.raw
+    - spanish/r05c0010.raw
+    - spanish/r05c0011.raw
+    - spanish/r05c0012.raw
+    - spanish/r05c0013.raw
+    - spanish/r05c0014.raw
+    - spanish/r05c0016.raw
+    - spanish/r05c0017.raw
+    - spanish/r05c0020.raw
+    - spanish/r05c0021.raw
+    - spanish/r05c0024.raw
+    - spanish/r05c0025.raw
+    - spanish/r05c0028.raw
+    - spanish/r05c0029.raw
+    - spanish/r05c0030.raw
+    - spanish/r05c0032.raw
+    - spanish/r05c0033.raw
+    - spanish/r05c0034.raw
+    - spanish/r05c0036.raw
+    - spanish/r05c0040.raw
+    - spanish/r05c0048.raw
+    - spanish/r05c0049.raw
+    - spanish/r05c0064.raw
+    - spanish/r05c0068.raw
+    - spanish/r05c0069.raw
+    - spanish/r05c0070.raw
+    - spanish/r05c0071.raw
+    - spanish/r05c0072.raw
+    - spanish/r05c0112.raw
+    - spanish/r05c0113.raw
+    - spanish/r05c0114.raw
+    - spanish/r05c0128.raw
+    - spanish/r05c0132.raw
+    - spanish/r05c0133.raw
+    - spanish/r05c0134.raw
+    - spanish/r05c0135.raw
+    - spanish/r05c0136.raw
+    - spanish/r05c0137.raw
+    - spanish/r05c0138.raw
+    - spanish/r05c0176.raw
+    - spanish/r05c0177.raw
+    - spanish/r05c0178.raw
+    - spanish/r05c0192.raw
+    - spanish/r05c0196.raw
+    - spanish/r05c0197.raw
+    - spanish/r05c0198.raw
+    - spanish/r05c0199.raw
+    - spanish/r05c0200.raw
+    - spanish/r05c0201.raw
+    - spanish/r05c0202.raw
+    - spanish/r05c0240.raw
+    - spanish/r05c0241.raw
+    - spanish/r07c0000.raw
+    - spanish/r07c0004.raw
+    - spanish/r07c0005.raw
+    - spanish/r07c0006.raw
+    - spanish/r07c0007.raw
+    - spanish/r07c0008.raw
+    - spanish/r07c0009.raw
+    - spanish/r07c0010.raw
+    - spanish/r07c0011.raw
+    - spanish/r07c0012.raw
+    - spanish/r07c0013.raw
+    - spanish/r07c0048.raw
+    - spanish/r07c0049.raw
+    - spanish/r08c0000.raw
+    - spanish/r08c0004.raw
+    - spanish/r08c0005.raw
+    - spanish/r08c0006.raw
+    - spanish/r08c0007.raw
+    - spanish/r08c0008.raw
+    - spanish/r08c0009.raw
+    - spanish/r08c0010.raw
+    - spanish/r08c0011.raw
+    - spanish/r08c0012.raw
+    - spanish/r08c0048.raw
+    - spanish/r08c0049.raw
+    - spanish/r08c0050.raw
+    - spanish/r08c0051.raw
+    - spanish/r08c0064.raw
+    - spanish/r08c0068.raw
+    - spanish/r08c0069.raw
+    - spanish/r08c0070.raw
+    - spanish/r08c0071.raw
+    - spanish/r08c0072.raw
+    - spanish/r08c0073.raw
+    - spanish/r08c0112.raw
+    - spanish/r08c0113.raw
+    - spanish/r23c0000.raw
+    - spanish/r23c0004.raw
+    - spanish/r23c0005.raw
+    - spanish/r23c0006.raw
+    - spanish/r23c0007.raw
+    - spanish/r23c0008.raw
+    - spanish/r23c0009.raw
+    - spanish/r23c0010.raw
+    - spanish/r23c0011.raw
+    - spanish/r23c0012.raw
+    - spanish/r23c0013.raw
+    - spanish/r23c0014.raw
+    - spanish/r23c0015.raw
+    - spanish/r23c0016.raw
+    - spanish/r23c0017.raw
+    - spanish/r23c0018.raw
+    - spanish/r23c0048.raw
+    - spanish/r23c0049.raw
+    - spanish/r23c0064.raw
+    - spanish/r23c0068.raw
+    - spanish/r23c0069.raw
+    - spanish/r23c0070.raw
+    - spanish/r23c0071.raw
+    - spanish/r23c0072.raw
+    - spanish/r23c0073.raw
+    - spanish/r23c0128.raw
+    - spanish/r23c0132.raw
+    - spanish/r23c0133.raw
+    - spanish/r23c0134.raw
+    - spanish/r23c0135.raw
+    - spanish/r23c0136.raw
+    - spanish/r23c0137.raw
+    - spanish/r23c0176.raw
+    - spanish/r23c0177.raw
+    - spanish/r23c0192.raw
+    - spanish/r23c0196.raw
+    - spanish/r23c0197.raw
+    - spanish/r23c0198.raw
+    - spanish/r23c0199.raw
+    - spanish/r23c0240.raw
+    - spanish/r23c0241.raw
+    - spanish/r23c0256.raw
+    - spanish/r23c0260.raw
+    - spanish/r23c0261.raw
+    - spanish/r23c0262.raw
+    - spanish/r23c0263.raw
+    - spanish/r23c0264.raw
+    - spanish/r23c0265.raw
+    - spanish/r23c0266.raw
+    - spanish/r23c0267.raw
+    - spanish/r23c0268.raw
+    - spanish/r23c0269.raw
+    - spanish/r23c0304.raw
+    - spanish/r23c0305.raw
+    - spanish/r23c0306.raw
+    - spanish/r23c0320.raw
+    - spanish/r23c0324.raw
+    - spanish/r23c0325.raw
+    - spanish/r23c0326.raw
+    - spanish/r23c0327.raw
+    - spanish/r23c0328.raw
+    - spanish/r23c0329.raw
+    - spanish/r23c0330.raw
+    - spanish/r23c0368.raw
+    - spanish/r23c0369.raw
+    - spanish/r23c0370.raw
+    - spanish/r23c0384.raw
+    - spanish/r23c0388.raw
+    - spanish/r23c0389.raw
+    - spanish/r23c0390.raw
+    - spanish/r23c0391.raw
+    - spanish/r23c0432.raw
+    - spanish/r23c0433.raw
+    - spanish/r23c0448.raw
+    - spanish/r23c0512.raw
+    - spanish/r23c0516.raw
+    - spanish/r23c0517.raw
+    - spanish/r23c0576.raw
+    - spanish/r23c0580.raw
+    - spanish/r23c0581.raw
+    - spanish/r23c0582.raw
+    - spanish/r23c0640.raw
+    - spanish/r23c0644.raw
+    - spanish/r23c0645.raw
+    - spanish/r23c0688.raw
+    - spanish/r23c0689.raw
+    - spanish/r23c0690.raw
+    - spanish/r23c0691.raw
+    - spanish/r24c0000.raw
+    - spanish/r24c0004.raw
+    - spanish/r24c0005.raw
+    - spanish/r24c0006.raw
+    - spanish/r24c0007.raw
+    - spanish/r24c0008.raw
+    - spanish/r24c0009.raw
+    - spanish/r24c0010.raw
+    - spanish/r24c0011.raw
+    - spanish/r24c0012.raw
+    - spanish/r24c0013.raw
+    - spanish/r24c0014.raw
+    - spanish/r24c0048.raw
+    - spanish/r24c0049.raw
+    - spanish/r24c0050.raw
+    - spanish/r24c0051.raw
+    - spanish/r24c0064.raw
+    - spanish/r24c0068.raw
+    - spanish/r24c0069.raw
+    - spanish/r24c0070.raw
+    - spanish/r24c0071.raw
+    - spanish/r24c0072.raw
+    - spanish/r24c0073.raw
+    - spanish/r24c0074.raw
+    - spanish/r24c0075.raw
+    - spanish/r24c0076.raw
+    - spanish/r24c0077.raw
+    - spanish/r24c0112.raw
+    - spanish/r24c0113.raw
+    - spanish/r24c0114.raw
+    - spanish/r24c0115.raw
+    - spanish/r27c0000.raw
+    - spanish/r27c0004.raw
+    - spanish/r27c0005.raw
+    - spanish/r27c0006.raw
+    - spanish/r27c0007.raw
+    - spanish/r27c0008.raw
+    - spanish/r27c0009.raw
+    - spanish/r27c0048.raw
+    - spanish/r27c0049.raw
+    - spanish/r29c0000.raw
+    - spanish/r29c0004.raw
+    - spanish/r29c0005.raw
+    - spanish/r29c0006.raw
+    - spanish/r29c0007.raw
+    - spanish/r29c0008.raw
+    - spanish/r29c0009.raw
+    - spanish/r29c0010.raw
+    - spanish/r29c0011.raw
+    - spanish/r29c0012.raw
+    - spanish/r29c0048.raw
+    - spanish/r29c0049.raw
+    - spanish/r29c0050.raw
+    - spanish/r45c0000.raw
+    - spanish/r45c0004.raw
+    - spanish/r45c0005.raw
+    - spanish/r45c0006.raw
+    - spanish/r45c0008.raw
+    - spanish/r45c0010.raw
+    - spanish/r45c0011.raw
+    - spanish/r45c0012.raw
+    - spanish/r45c0013.raw
+    - spanish/r45c0014.raw
+    - spanish/r45c0016.raw
+    - spanish/r45c0018.raw
+    - spanish/r45c0019.raw
+    - spanish/r45c0048.raw
+    - spanish/r45c0049.raw
+    - spanish/r45c0064.raw
+    - spanish/r45c0068.raw
+    - spanish/r45c0070.raw
+    - spanish/r45c0072.raw
+    - spanish/r45c0073.raw
+    - spanish/r45c0074.raw
+    - spanish/r45c0075.raw
+    - spanish/r45c0076.raw
+    - spanish/r45c0077.raw
+    - spanish/r45c0078.raw
+    - spanish/r45c0080.raw
+    - spanish/r45c0082.raw
+    - spanish/r45c0112.raw
+    - spanish/r45c0128.raw
+    - spanish/r45c0132.raw
+    - spanish/r45c0133.raw
+    - spanish/r45c0134.raw
+    - spanish/r45c0136.raw
+    - spanish/r45c0138.raw
+    - spanish/r45c0139.raw
+    - spanish/r45c0140.raw
+    - spanish/r45c0141.raw
+    - spanish/r45c0142.raw
+    - spanish/r45c0143.raw
+    - spanish/r45c0176.raw
+    - spanish/r45c0192.raw
+    - spanish/r45c0196.raw
+    - spanish/r45c0197.raw
+    - spanish/r45c0198.raw
+    - spanish/r45c0200.raw
+    - spanish/r45c0202.raw
+    - spanish/r45c0204.raw
+    - spanish/r45c0205.raw
+    - spanish/r45c0206.raw
+    - spanish/r45c0207.raw
+    - spanish/r45c0208.raw
+    - spanish/r45c0210.raw
+    - spanish/r45c0240.raw
+    - spanish/r45c0241.raw
+    - spanish/t82t0008.raw
+    - spanish/t82t0009.raw
+    - spanish/t82t0010.raw
+    - spanish/t82t0011.raw
+    - spanish/t82t0014.raw
+    - spanish/t82t0015.raw
+    - spanish/t82t0016.raw
+    - spanish/t82t0017.raw
+    - spanish/t82t0018.raw
+    - spanish/t82t0019.raw
+    - spanish/t82t0020.raw
+    - spanish/t82t0021.raw
+    - spanish/t82t0022.raw
+    - spanish/t82t0023.raw
+    - spanish/t82t0024.raw
+    - spanish/t82t0025.raw
+    - spanish/t82t0026.raw
+    - spanish/t82t0027.raw
+    - spanish/t82t0028.raw
+    - spanish/t82t0029.raw
+    - spanish/t82t0030.raw
+    - spanish/t82t0031.raw
+    - spanish/t82t0040.raw
+    - spanish/t82t0041.raw
+    - spanish/t82t0042.raw
+    - spanish/t82t0043.raw
+    - spanish/t82t0044.raw
+    - spanish/t82t0045.raw
+    - spanish/t82t0046.raw
+    - spanish/t82t0047.raw
+    - spanish/t82t0048.raw
+    - spanish/t82t0049.raw
+    - spanish/t82t0050.raw
+    - spanish/t82t0051.raw
+    - spanish/t82t0052.raw
+    - spanish/t82t0053.raw
+    - spanish/t82t0054.raw
+    - spanish/t82t0055.raw
+    - spanish/t82t0056.raw
+    - spanish/t82t0057.raw
+    - spanish/t82t0058.raw
+    - spanish/t82t0059.raw
+    - spanish/t82t0060.raw
+    - spanish/t82t0061.raw
+    - spanish/t82t0062.raw
+    - spanish/t83t0000.raw
+    - spanish/t83t0001.raw
+    - spanish/t83t0002.raw
+    - spanish/t83t0040.raw
+    - spanish/t83t0041.raw
+    - spanish/t83t0042.raw
+    - spanish/t83t0043.raw
+    - spanish/t83t0044.raw
+    - spanish/t83t0045.raw
+    - spanish/t83t0046.raw
+    - spanish/t83t0047.raw
+    optional:
+    - coveres.png
+    - manual.htm_es
+    - manual.txt_es
+    - screenes.gif
+    - symbol.gif
+    - track1.flac
+    license:
+    - license.txt_nodiary
 
 files:
   dreamweb-cd-us-1.1.zip:
@@ -3003,6 +3574,9 @@ files:
     install_to: $docdir/diary
   symbol_p27.gif:
     install_to: $docdir/diary
+  # for french & spanish versions
+  license.txt_nodiary:
+    install_as: license.txt
 
   dreamweb.r00_uk:
     install_as: dreamweb.r00
@@ -5347,10 +5921,590 @@ files:
     - license.txt
 
   #############################
+  # SPANISH                   #
+  #############################
+  coveres.png:
+    install_to: $docdir
+  manual.htm_es:
+    install_to: $docdir
+    install_as: manual.htm
+  manual.txt_es:
+    install_to: $docdir
+    install_as: manual.txt
+  screenes.gif:
+    install_to: $docdir
+
+  dreamweb-cd-es-1.1.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/dreamweb-cd-es-1.1.zip?download
+    unpack:
+      format: zip
+    provides:
+    - dreamweb.wav
+    - dreamwsp.c00
+    - dreamwsp.c01
+    - dreamwsp.c02
+    - dreamwsp.g00
+    - dreamwsp.g01
+    - dreamwsp.g02
+    - dreamwsp.g03
+    - dreamwsp.g04
+    - dreamwsp.g05
+    - dreamwsp.g06
+    - dreamwsp.g07
+    - dreamwsp.g08
+    - dreamwsp.g09
+    - dreamwsp.g10
+    - dreamwsp.g11
+    - dreamwsp.g12
+    - dreamwsp.g13
+    - dreamwsp.g14
+    - dreamwsp.g15
+    - dreamwsp.i00
+    - dreamwsp.i01
+    - dreamwsp.i02
+    - dreamwsp.i03
+    - dreamwsp.i04
+    - dreamwsp.i05
+    - dreamwsp.i06
+    - dreamwsp.p01
+    - dreamwsp.pal
+    - dreamwsp.r00
+    - dreamwsp.r01
+    - dreamwsp.r02
+    - dreamwsp.r03
+    - dreamwsp.r04
+    - dreamwsp.r05
+    - dreamwsp.r06
+    - dreamwsp.r07
+    - dreamwsp.r08
+    - dreamwsp.r09
+    - dreamwsp.r10
+    - dreamwsp.r11
+    - dreamwsp.r12
+    - dreamwsp.r13
+    - dreamwsp.r14
+    - dreamwsp.r19
+    - dreamwsp.r20
+    - dreamwsp.r21
+    - dreamwsp.r22
+    - dreamwsp.r23
+    - dreamwsp.r24
+    - dreamwsp.r25
+    - dreamwsp.r26
+    - dreamwsp.r27
+    - dreamwsp.r28
+    - dreamwsp.r29
+    - dreamwsp.r45
+    - dreamwsp.r46
+    - dreamwsp.r47
+    - dreamwsp.r50
+    - dreamwsp.r52
+    - dreamwsp.r53
+    - dreamwsp.r54
+    - dreamwsp.r55
+    - dreamwsp.s00
+    - dreamwsp.s02
+    - dreamwsp.t01
+    - dreamwsp.t02
+    - dreamwsp.t10
+    - dreamwsp.t11
+    - dreamwsp.t12
+    - dreamwsp.t13
+    - dreamwsp.t20
+    - dreamwsp.t21
+    - dreamwsp.t22
+    - dreamwsp.t23
+    - dreamwsp.t24
+    - dreamwsp.t50
+    - dreamwsp.t51
+    - dreamwsp.t80
+    - dreamwsp.t81
+    - dreamwsp.t82
+    - dreamwsp.t83
+    - dreamwsp.t84
+    - dreamwsp.v01
+    - dreamwsp.v02
+    - dreamwsp.v05
+    - dreamwsp.v06
+    - dreamwsp.v08
+    - dreamwsp.v09
+    - dreamwsp.v10
+    - dreamwsp.v11
+    - dreamwsp.v12
+    - dreamwsp.v14
+    - dreamwsp.v19
+    - dreamwsp.v22
+    - dreamwsp.v23
+    - dreamwsp.v30
+    - dreamwsp.v33
+    - dreamwsp.v34
+    - dreamwsp.v35
+    - dreamwsp.v99
+    - dreamwsp.vol
+    - spanish/r01c0000.raw
+    - spanish/r01c0004.raw
+    - spanish/r01c0005.raw
+    - spanish/r01c0006.raw
+    - spanish/r01c0007.raw
+    - spanish/r01c0008.raw
+    - spanish/r01c0064.raw
+    - spanish/r01c0068.raw
+    - spanish/r01c0069.raw
+    - spanish/r01c0070.raw
+    - spanish/r01c0071.raw
+    - spanish/r01c0072.raw
+    - spanish/r01c0073.raw
+    - spanish/r01c0112.raw
+    - spanish/r01c0113.raw
+    - spanish/r01c0114.raw
+    - spanish/r01c0115.raw
+    - spanish/r01c0128.raw
+    - spanish/r01c0132.raw
+    - spanish/r01c0133.raw
+    - spanish/r01c0134.raw
+    - spanish/r01c0135.raw
+    - spanish/r01c0136.raw
+    - spanish/r01c0137.raw
+    - spanish/r01c0138.raw
+    - spanish/r01c0139.raw
+    - spanish/r01c0140.raw
+    - spanish/r01c0141.raw
+    - spanish/r01c0142.raw
+    - spanish/r01c0143.raw
+    - spanish/r01c0144.raw
+    - spanish/r01c0176.raw
+    - spanish/r01c0177.raw
+    - spanish/r01c0178.raw
+    - spanish/r01c0192.raw
+    - spanish/r01c0196.raw
+    - spanish/r01c0197.raw
+    - spanish/r01c0199.raw
+    - spanish/r01c0240.raw
+    - spanish/r01c0241.raw
+    - spanish/r01c0256.raw
+    - spanish/r01c0260.raw
+    - spanish/r01c0261.raw
+    - spanish/r01c0262.raw
+    - spanish/r01c0263.raw
+    - spanish/r01c0264.raw
+    - spanish/r01c0265.raw
+    - spanish/r01c0266.raw
+    - spanish/r01c0267.raw
+    - spanish/r01c0268.raw
+    - spanish/r01c0269.raw
+    - spanish/r01c0270.raw
+    - spanish/r01c0304.raw
+    - spanish/r01c0305.raw
+    - spanish/r01c0320.raw
+    - spanish/r01c0324.raw
+    - spanish/r01c0325.raw
+    - spanish/r01c0326.raw
+    - spanish/r01c0327.raw
+    - spanish/r01c0328.raw
+    - spanish/r01c0329.raw
+    - spanish/r02c0000.raw
+    - spanish/r02c0004.raw
+    - spanish/r02c0005.raw
+    - spanish/r02c0006.raw
+    - spanish/r02c0007.raw
+    - spanish/r02c0008.raw
+    - spanish/r02c0009.raw
+    - spanish/r02c0010.raw
+    - spanish/r02c0011.raw
+    - spanish/r02c0012.raw
+    - spanish/r02c0013.raw
+    - spanish/r02c0014.raw
+    - spanish/r02c0015.raw
+    - spanish/r02c0016.raw
+    - spanish/r02c0017.raw
+    - spanish/r02c0018.raw
+    - spanish/r02c0019.raw
+    - spanish/r02c0048.raw
+    - spanish/r02c0049.raw
+    - spanish/r02c0050.raw
+    - spanish/r02c0064.raw
+    - spanish/r02c0068.raw
+    - spanish/r02c0069.raw
+    - spanish/r02c0070.raw
+    - spanish/r02c0071.raw
+    - spanish/r02c0072.raw
+    - spanish/r02c0073.raw
+    - spanish/r02c0074.raw
+    - spanish/r02c0075.raw
+    - spanish/r02c0076.raw
+    - spanish/r02c0077.raw
+    - spanish/r02c0078.raw
+    - spanish/r02c0079.raw
+    - spanish/r02c0112.raw
+    - spanish/r02c0113.raw
+    - spanish/r02c0114.raw
+    - spanish/r02c0115.raw
+    - spanish/r04c0000.raw
+    - spanish/r04c0004.raw
+    - spanish/r04c0005.raw
+    - spanish/r04c0006.raw
+    - spanish/r04c0007.raw
+    - spanish/r04c0008.raw
+    - spanish/r04c0009.raw
+    - spanish/r04c0010.raw
+    - spanish/r04c0048.raw
+    - spanish/r04c0049.raw
+    - spanish/r05c0000.raw
+    - spanish/r05c0004.raw
+    - spanish/r05c0005.raw
+    - spanish/r05c0006.raw
+    - spanish/r05c0007.raw
+    - spanish/r05c0008.raw
+    - spanish/r05c0009.raw
+    - spanish/r05c0010.raw
+    - spanish/r05c0011.raw
+    - spanish/r05c0012.raw
+    - spanish/r05c0013.raw
+    - spanish/r05c0014.raw
+    - spanish/r05c0016.raw
+    - spanish/r05c0017.raw
+    - spanish/r05c0020.raw
+    - spanish/r05c0021.raw
+    - spanish/r05c0024.raw
+    - spanish/r05c0025.raw
+    - spanish/r05c0028.raw
+    - spanish/r05c0029.raw
+    - spanish/r05c0030.raw
+    - spanish/r05c0032.raw
+    - spanish/r05c0033.raw
+    - spanish/r05c0034.raw
+    - spanish/r05c0036.raw
+    - spanish/r05c0040.raw
+    - spanish/r05c0048.raw
+    - spanish/r05c0049.raw
+    - spanish/r05c0064.raw
+    - spanish/r05c0068.raw
+    - spanish/r05c0069.raw
+    - spanish/r05c0070.raw
+    - spanish/r05c0071.raw
+    - spanish/r05c0072.raw
+    - spanish/r05c0112.raw
+    - spanish/r05c0113.raw
+    - spanish/r05c0114.raw
+    - spanish/r05c0128.raw
+    - spanish/r05c0132.raw
+    - spanish/r05c0133.raw
+    - spanish/r05c0134.raw
+    - spanish/r05c0135.raw
+    - spanish/r05c0136.raw
+    - spanish/r05c0137.raw
+    - spanish/r05c0138.raw
+    - spanish/r05c0176.raw
+    - spanish/r05c0177.raw
+    - spanish/r05c0178.raw
+    - spanish/r05c0192.raw
+    - spanish/r05c0196.raw
+    - spanish/r05c0197.raw
+    - spanish/r05c0198.raw
+    - spanish/r05c0199.raw
+    - spanish/r05c0200.raw
+    - spanish/r05c0201.raw
+    - spanish/r05c0202.raw
+    - spanish/r05c0240.raw
+    - spanish/r05c0241.raw
+    - spanish/r07c0000.raw
+    - spanish/r07c0004.raw
+    - spanish/r07c0005.raw
+    - spanish/r07c0006.raw
+    - spanish/r07c0007.raw
+    - spanish/r07c0008.raw
+    - spanish/r07c0009.raw
+    - spanish/r07c0010.raw
+    - spanish/r07c0011.raw
+    - spanish/r07c0012.raw
+    - spanish/r07c0013.raw
+    - spanish/r07c0048.raw
+    - spanish/r07c0049.raw
+    - spanish/r08c0000.raw
+    - spanish/r08c0004.raw
+    - spanish/r08c0005.raw
+    - spanish/r08c0006.raw
+    - spanish/r08c0007.raw
+    - spanish/r08c0008.raw
+    - spanish/r08c0009.raw
+    - spanish/r08c0010.raw
+    - spanish/r08c0011.raw
+    - spanish/r08c0012.raw
+    - spanish/r08c0048.raw
+    - spanish/r08c0049.raw
+    - spanish/r08c0050.raw
+    - spanish/r08c0051.raw
+    - spanish/r08c0064.raw
+    - spanish/r08c0068.raw
+    - spanish/r08c0069.raw
+    - spanish/r08c0070.raw
+    - spanish/r08c0071.raw
+    - spanish/r08c0072.raw
+    - spanish/r08c0073.raw
+    - spanish/r08c0112.raw
+    - spanish/r08c0113.raw
+    - spanish/r23c0000.raw
+    - spanish/r23c0004.raw
+    - spanish/r23c0005.raw
+    - spanish/r23c0006.raw
+    - spanish/r23c0007.raw
+    - spanish/r23c0008.raw
+    - spanish/r23c0009.raw
+    - spanish/r23c0010.raw
+    - spanish/r23c0011.raw
+    - spanish/r23c0012.raw
+    - spanish/r23c0013.raw
+    - spanish/r23c0014.raw
+    - spanish/r23c0015.raw
+    - spanish/r23c0016.raw
+    - spanish/r23c0017.raw
+    - spanish/r23c0018.raw
+    - spanish/r23c0048.raw
+    - spanish/r23c0049.raw
+    - spanish/r23c0064.raw
+    - spanish/r23c0068.raw
+    - spanish/r23c0069.raw
+    - spanish/r23c0070.raw
+    - spanish/r23c0071.raw
+    - spanish/r23c0072.raw
+    - spanish/r23c0073.raw
+    - spanish/r23c0128.raw
+    - spanish/r23c0132.raw
+    - spanish/r23c0133.raw
+    - spanish/r23c0134.raw
+    - spanish/r23c0135.raw
+    - spanish/r23c0136.raw
+    - spanish/r23c0137.raw
+    - spanish/r23c0176.raw
+    - spanish/r23c0177.raw
+    - spanish/r23c0192.raw
+    - spanish/r23c0196.raw
+    - spanish/r23c0197.raw
+    - spanish/r23c0198.raw
+    - spanish/r23c0199.raw
+    - spanish/r23c0240.raw
+    - spanish/r23c0241.raw
+    - spanish/r23c0256.raw
+    - spanish/r23c0260.raw
+    - spanish/r23c0261.raw
+    - spanish/r23c0262.raw
+    - spanish/r23c0263.raw
+    - spanish/r23c0264.raw
+    - spanish/r23c0265.raw
+    - spanish/r23c0266.raw
+    - spanish/r23c0267.raw
+    - spanish/r23c0268.raw
+    - spanish/r23c0269.raw
+    - spanish/r23c0304.raw
+    - spanish/r23c0305.raw
+    - spanish/r23c0306.raw
+    - spanish/r23c0320.raw
+    - spanish/r23c0324.raw
+    - spanish/r23c0325.raw
+    - spanish/r23c0326.raw
+    - spanish/r23c0327.raw
+    - spanish/r23c0328.raw
+    - spanish/r23c0329.raw
+    - spanish/r23c0330.raw
+    - spanish/r23c0368.raw
+    - spanish/r23c0369.raw
+    - spanish/r23c0370.raw
+    - spanish/r23c0384.raw
+    - spanish/r23c0388.raw
+    - spanish/r23c0389.raw
+    - spanish/r23c0390.raw
+    - spanish/r23c0391.raw
+    - spanish/r23c0432.raw
+    - spanish/r23c0433.raw
+    - spanish/r23c0448.raw
+    - spanish/r23c0512.raw
+    - spanish/r23c0516.raw
+    - spanish/r23c0517.raw
+    - spanish/r23c0576.raw
+    - spanish/r23c0580.raw
+    - spanish/r23c0581.raw
+    - spanish/r23c0582.raw
+    - spanish/r23c0640.raw
+    - spanish/r23c0644.raw
+    - spanish/r23c0645.raw
+    - spanish/r23c0688.raw
+    - spanish/r23c0689.raw
+    - spanish/r23c0690.raw
+    - spanish/r23c0691.raw
+    - spanish/r24c0000.raw
+    - spanish/r24c0004.raw
+    - spanish/r24c0005.raw
+    - spanish/r24c0006.raw
+    - spanish/r24c0007.raw
+    - spanish/r24c0008.raw
+    - spanish/r24c0009.raw
+    - spanish/r24c0010.raw
+    - spanish/r24c0011.raw
+    - spanish/r24c0012.raw
+    - spanish/r24c0013.raw
+    - spanish/r24c0014.raw
+    - spanish/r24c0048.raw
+    - spanish/r24c0049.raw
+    - spanish/r24c0050.raw
+    - spanish/r24c0051.raw
+    - spanish/r24c0064.raw
+    - spanish/r24c0068.raw
+    - spanish/r24c0069.raw
+    - spanish/r24c0070.raw
+    - spanish/r24c0071.raw
+    - spanish/r24c0072.raw
+    - spanish/r24c0073.raw
+    - spanish/r24c0074.raw
+    - spanish/r24c0075.raw
+    - spanish/r24c0076.raw
+    - spanish/r24c0077.raw
+    - spanish/r24c0112.raw
+    - spanish/r24c0113.raw
+    - spanish/r24c0114.raw
+    - spanish/r24c0115.raw
+    - spanish/r27c0000.raw
+    - spanish/r27c0004.raw
+    - spanish/r27c0005.raw
+    - spanish/r27c0006.raw
+    - spanish/r27c0007.raw
+    - spanish/r27c0008.raw
+    - spanish/r27c0009.raw
+    - spanish/r27c0048.raw
+    - spanish/r27c0049.raw
+    - spanish/r29c0000.raw
+    - spanish/r29c0004.raw
+    - spanish/r29c0005.raw
+    - spanish/r29c0006.raw
+    - spanish/r29c0007.raw
+    - spanish/r29c0008.raw
+    - spanish/r29c0009.raw
+    - spanish/r29c0010.raw
+    - spanish/r29c0011.raw
+    - spanish/r29c0012.raw
+    - spanish/r29c0048.raw
+    - spanish/r29c0049.raw
+    - spanish/r29c0050.raw
+    - spanish/r45c0000.raw
+    - spanish/r45c0004.raw
+    - spanish/r45c0005.raw
+    - spanish/r45c0006.raw
+    - spanish/r45c0008.raw
+    - spanish/r45c0010.raw
+    - spanish/r45c0011.raw
+    - spanish/r45c0012.raw
+    - spanish/r45c0013.raw
+    - spanish/r45c0014.raw
+    - spanish/r45c0016.raw
+    - spanish/r45c0018.raw
+    - spanish/r45c0019.raw
+    - spanish/r45c0048.raw
+    - spanish/r45c0049.raw
+    - spanish/r45c0064.raw
+    - spanish/r45c0068.raw
+    - spanish/r45c0070.raw
+    - spanish/r45c0072.raw
+    - spanish/r45c0073.raw
+    - spanish/r45c0074.raw
+    - spanish/r45c0075.raw
+    - spanish/r45c0076.raw
+    - spanish/r45c0077.raw
+    - spanish/r45c0078.raw
+    - spanish/r45c0080.raw
+    - spanish/r45c0082.raw
+    - spanish/r45c0112.raw
+    - spanish/r45c0128.raw
+    - spanish/r45c0132.raw
+    - spanish/r45c0133.raw
+    - spanish/r45c0134.raw
+    - spanish/r45c0136.raw
+    - spanish/r45c0138.raw
+    - spanish/r45c0139.raw
+    - spanish/r45c0140.raw
+    - spanish/r45c0141.raw
+    - spanish/r45c0142.raw
+    - spanish/r45c0143.raw
+    - spanish/r45c0176.raw
+    - spanish/r45c0192.raw
+    - spanish/r45c0196.raw
+    - spanish/r45c0197.raw
+    - spanish/r45c0198.raw
+    - spanish/r45c0200.raw
+    - spanish/r45c0202.raw
+    - spanish/r45c0204.raw
+    - spanish/r45c0205.raw
+    - spanish/r45c0206.raw
+    - spanish/r45c0207.raw
+    - spanish/r45c0208.raw
+    - spanish/r45c0210.raw
+    - spanish/r45c0240.raw
+    - spanish/r45c0241.raw
+    - spanish/t82t0008.raw
+    - spanish/t82t0009.raw
+    - spanish/t82t0010.raw
+    - spanish/t82t0011.raw
+    - spanish/t82t0014.raw
+    - spanish/t82t0015.raw
+    - spanish/t82t0016.raw
+    - spanish/t82t0017.raw
+    - spanish/t82t0018.raw
+    - spanish/t82t0019.raw
+    - spanish/t82t0020.raw
+    - spanish/t82t0021.raw
+    - spanish/t82t0022.raw
+    - spanish/t82t0023.raw
+    - spanish/t82t0024.raw
+    - spanish/t82t0025.raw
+    - spanish/t82t0026.raw
+    - spanish/t82t0027.raw
+    - spanish/t82t0028.raw
+    - spanish/t82t0029.raw
+    - spanish/t82t0030.raw
+    - spanish/t82t0031.raw
+    - spanish/t82t0040.raw
+    - spanish/t82t0041.raw
+    - spanish/t82t0042.raw
+    - spanish/t82t0043.raw
+    - spanish/t82t0044.raw
+    - spanish/t82t0045.raw
+    - spanish/t82t0046.raw
+    - spanish/t82t0047.raw
+    - spanish/t82t0048.raw
+    - spanish/t82t0049.raw
+    - spanish/t82t0050.raw
+    - spanish/t82t0051.raw
+    - spanish/t82t0052.raw
+    - spanish/t82t0053.raw
+    - spanish/t82t0054.raw
+    - spanish/t82t0055.raw
+    - spanish/t82t0056.raw
+    - spanish/t82t0057.raw
+    - spanish/t82t0058.raw
+    - spanish/t82t0059.raw
+    - spanish/t82t0060.raw
+    - spanish/t82t0061.raw
+    - spanish/t82t0062.raw
+    - spanish/t83t0000.raw
+    - spanish/t83t0001.raw
+    - spanish/t83t0002.raw
+    - spanish/t83t0040.raw
+    - spanish/t83t0041.raw
+    - spanish/t83t0042.raw
+    - spanish/t83t0043.raw
+    - spanish/t83t0044.raw
+    - spanish/t83t0045.raw
+    - spanish/t83t0046.raw
+    - spanish/t83t0047.raw
+    - coveres.png
+    - manual.htm_es
+    - manual.txt_es
+    - screenes.gif
+    - symbol.gif
+    - track1.flac
+    - license.txt_nodiary
+
+  #############################
   # FRENCH                    #
   #############################
-  license.txt_fr:
-    install_as: license.txt
   coverfr.png:
     install_to: $docdir
   manuel.htm:
@@ -5942,7 +7096,7 @@ files:
     - manuel.txt
     - screenfr.gif
     - symbol.gif
-    - license.txt_fr
+    - license.txt_nodiary
 
 cksums: |
   _ 314193    diary/coveren.png
@@ -6001,7 +7155,6 @@ cksums: |
   _ 2461      dreamweb.t82
   _ 2659      dreamweb.t83
   _ 1039      dreamweb.t84
-  _ 1291      license.txt
   _ 307872    coveren.png
   _ 21630     manual.htm
   _ 14507     manual.txt
@@ -6111,7 +7264,6 @@ md5sums: |
   d3845fd0d7f108d75fcdf736e4800b48  dreamweb.t82
   a99dad5d6b3a1a8c0be3777312abc362  dreamweb.t83
   84a6d2a91aeb977c9c80e085fefc2c86  dreamweb.t84
-  775b2f1f55789618ce57a84be6a31919  license.txt
   67fad4c66b798738624fb5d4286be6ec  coveren.png
   0689982d27609379ee4aec2b506f51b3  manual.htm
   481028904e792fb42e14028a6d8a602d  manual.txt
@@ -6169,6 +7321,7 @@ sha1sums: |
   5d395bfbd96796046d9fe8207e59b624023f4667  dreamweb-cd-uk-1.1.zip
   7e4beee728ba195904dcf187f5eb8a685b07aa6c  dreamweb-cd-fr-1.1.zip
   f10f97cf6ac88fb811314e37fec5db14dde1a13e  dreamweb-cd-de-1.1.zip
+  91d1e5933a82ae3a83c090b084510d7141160a2d  dreamweb-cd-es-1.1.zip
 
 size_and_md5: |
   226360597 3ae3a109d6233cf6b5ab7b63e7cc8937 dreamweb-cd-us-1.1.zip
@@ -6233,6 +7386,9 @@ size_and_md5: |
   1028      3566ef845cb7bd0704c1d97af1ea9e2b symbol_p25.gif
   1168      4461bda78905165332f8f0d45b402a25 symbol_p27.gif
 
+  1291      775b2f1f55789618ce57a84be6a31919 license.txt
+  1280      7e37340221ff29f444befa63d4792c42 license.txt_nodiary
+
   # French
   166468360 7d76306395baf219439e5ce1841a4b03 dreamweb-cd-fr-1.1.zip
   303284    82053d76ce5d5b3378c8bf064e77d468 coverfr.png
@@ -6240,7 +7396,6 @@ size_and_md5: |
   17203     140a431bcb5b1b54012e0fc540bc2b90 manuel.txt
   52775     470fda1af19be71b4fb79b3e446a800a screenfr.gif
   29806518  9fff56eed8b4593f92acf92508d6cb7e track1.flac
-  1280      7e37340221ff29f444befa63d4792c42 license.txt_fr
 
   20522     d0ca5c2ff2a0e2e8c795a52b844d9727 dreamwfr.c00
   6046      988819a72541b43b7fadc599a8b54b66 dreamwfr.c01
@@ -6410,6 +7565,114 @@ size_and_md5: |
   2939      2206315fd208bddb2bb2c1e3db7012c4 dreamweb.t82_de
   2905      c28d8e7ad8251d9ae88592462e1db269 dreamweb.t83_de
   1161      a44a9b81b77d955a99e83dfba58761bc dreamweb.t84_de
+
+  # Spanish
+  171154186 f1f4c738e8b370559c43825ef132f46a dreamweb-cd-es-1.1.zip
+  303376    4b498ac3d24a39a23af0b929830bff6c coveres.png
+  52811     39434547085e6cfb7f51cfe41a7fc5d1 screenes.gif
+  25284     db21e65d7ace400307c440a84dd968cf manual.htm_es
+  16620     8de72b9d1ada6465f147c6d4da0a75c6 manual.txt_es
+  20248     e8d5c7414fd2245d77f8aea575298def dreamwsp.c00
+  5939      6516a821af787a3519f32f85fdd251a9 dreamwsp.c01
+  11755     e0fbd48fbb7e1f4a4245dcfef7cbe99d dreamwsp.c02
+  41478     2dd72188dbb567ee0fd5e16858cc294f dreamwsp.g00
+  26122     2efe54c16614ce4ab0381e6fe55e7fc4 dreamwsp.g01
+  28250     1c8fad687016e1e0276133f52bd5855c dreamwsp.g02
+  48247     07c3d4fadd17648f2f244363d49feefa dreamwsp.g03
+  34384     fc80692ec39cabae55ecb680337a3d32 dreamwsp.g04
+  41152     a6c23383c64e0f7a506fd39ad2543aa7 dreamwsp.g05
+  40018     704c25505cc8cf694747c895bb490feb dreamwsp.g06
+  13993     85cfd5e030d88cd19e3f484a76924b2e dreamwsp.g07
+  51121     bb7bb6f4ee599a0f574309d7947a472b dreamwsp.g08
+  62341     b6e0e65ea5a3631ea884c873b99d9736 dreamwsp.g09
+  19076     220168ca0e6dcd82c17a27510a69ee35 dreamwsp.g10
+  40383     7b585e92e0647aa6e4285d07f7b71112 dreamwsp.g11
+  29734     5b1c284d1376db1844a52fcd9f5d38f8 dreamwsp.g12
+  34390     3a404e9e54c1934168ca30cd26756c14 dreamwsp.g13
+  26735     36c70c959592930cb48ada126619ce2a dreamwsp.g14
+  11340     a49ae64ba5aa24b83b17835b4276270e dreamwsp.g15
+  16684     8324052cf13ae821042f1991c4bdc349 dreamwsp.i00
+  15662     abd0e8f5ed3fc9f8cb4a1d4c7c44c232 dreamwsp.i01
+  25736     3d2345ff6917758c3656a0e21e6f1a2d dreamwsp.i02
+  22581     d7ea6adea726d8ab711366c1f50a01e4 dreamwsp.i03
+  20459     2038eaacf2d4b790d32cebe073a47679 dreamwsp.i04
+  24065     14939b43b1198ed19be3d38eaa8c229a dreamwsp.i05
+  9230      cebeefe55335e527534b20007245ae33 dreamwsp.i06
+  60019572  e2139debbfa3c2837f24962050c980c9 dreamwsp.p01
+  4200      8535489d90a89bff9d7fe10e7677e657 dreamwsp.pal
+  153608    23763095fbab9e51b9bdc940b955b2d0 dreamwsp.r00
+  158485    7f635d6f82d18e30478bab58d450a06a dreamwsp.r01
+  199499    f792d5eddcd6425a50bbddf2cdd2d1b2 dreamwsp.r02
+  79191     e6a7c23f178e0d9c6be1501383fadb0b dreamwsp.r03
+  74502     f075b7bdc62e0812ff399a381c3e971b dreamwsp.r04
+  92875     fc31589e67dcd2b3b1671787607d245e dreamwsp.r05
+  106048    242b922fa369784afd89283c54bfb9a6 dreamwsp.r06
+  107686    5d6d99ca30ebb57043e8ff810df18619 dreamwsp.r07
+  144919    1d43c710b4a0408f1cfd137a024807bb dreamwsp.r08
+  150872    bab14344914c9fb48ff6c74edcb20b99 dreamwsp.r09
+  91931     a6b9c324bd63f47b5cc83d069a5702fb dreamwsp.r10
+  99387     a8ebb4d482017d621be501521ff0c8c9 dreamwsp.r11
+  72986     ca9fc69068d2d7d243187ba6a03e97d9 dreamwsp.r12
+  186297    2ba8d08bbb3a8bd6d3b4f9cc221950ac dreamwsp.r13
+  183295    ff504ab8a5bfcf8b1d372e9e1b16ef76 dreamwsp.r14
+  91974     9f564496b2ba4bb221303179e88de09c dreamwsp.r19
+  200785    46967d5d5b564476d2e9a626873dd5c7 dreamwsp.r20
+  89921     b949c30216d4e0342140f047e327fed0 dreamwsp.r21
+  190587    33f2e53b538d5169ba897178360306b3 dreamwsp.r22
+  174633    70fbc95e2a915402e1a9a88e64f6d0d7 dreamwsp.r23
+  146107    4477d3e76b09aff2e70f13b978a69ad6 dreamwsp.r24
+  192703    630080a6cc350a0316107da1302570ad dreamwsp.r25
+  122475    ea93456468590abfb4a245e028be6769 dreamwsp.r26
+  182003    617ec24942b94564b525157a30e78c15 dreamwsp.r27
+  168691    1d8300f8343685fd724cc0e752b2a4a4 dreamwsp.r28
+  94884     e1cfa08e92e67f7e73d54c1e003284c4 dreamwsp.r29
+  197874    ef3578127552646624b3d332375d7f52 dreamwsp.r45
+  99781     522ed30ad89316f83a50e7a32d1ae231 dreamwsp.r46
+  147810    33f990861b8cf533d7a4309d8fac6057 dreamwsp.r47
+  183071    bf0f565fd30c78c1c354066a807db15b dreamwsp.r50
+  199266    f878cc809763c31302efb85ca9838a2f dreamwsp.r52
+  151052    eda75d3cd4ffd884d63b4cf4ce1f40f6 dreamwsp.r53
+  79002     de9b2ebf39dbec10c7d0df1d3439dc01 dreamwsp.r54
+  187758    e553bfc0be0e91a8728f521960b89aa2 dreamwsp.r55
+  24301     6ddd8ebe18109cafc567e53eac4c7e5f dreamwsp.s00
+  45516     829548ba0ccb52b65c8a995291e9876f dreamwsp.s02
+  2701      c51aa8c9b1f36640470729e2244c01fd dreamwsp.t01
+  2322      c0bd8e23a5eaba6d8edc9ae507e0f8a5 dreamwsp.t02
+  2513      3d68e26ec02d953dae07279dc854cb21 dreamwsp.t10
+  3782      036e5c591adabcb377838abf57384df7 dreamwsp.t11
+  3954      1eda581cf86d92d9b1b4551a4e80f315 dreamwsp.t12
+  4302      50c8d8bd61a550e23ae88ccd95780ffc dreamwsp.t13
+  294       bb1cf23478ec70f7e775f9ed38f5073a dreamwsp.t20
+  586       80c2c5a8603c54ff7baa15783fda510f dreamwsp.t21
+  308       af620f8c8e9994f428d6eb738052d719 dreamwsp.t22
+  704       a88375cf56be4e3daf7d46618fddf855 dreamwsp.t23
+  855       d3f1ea73355cc6fa9f96b3d5724e1c38 dreamwsp.t24
+  3552      cbeb9fa1dd1ce942d46e6fafc3ab44cb dreamwsp.t50
+  1005      eadf4352e6fc937988beaf5e6bf8687d dreamwsp.t51
+  5736      8f564628cade657113554ea1bc5fe5ed dreamwsp.t80
+  3069      4fca9be285cd07f79b348e9d6f158402 dreamwsp.t81
+  2572      b7865cc615a3d2a298e2716012fa0fec dreamwsp.t82
+  2779      5d8ab4f9408a77694a250b40cc0bd3af dreamwsp.t83
+  1149      39074662f5d1354c7bb7b0292ede5a55 dreamwsp.t84
+  342142    b4c710822f99d853b7e5d39c56e1f4eb dreamwsp.v01
+  1040570   18fbb58f8621ee93b4045556cad447c6 dreamwsp.v02
+  1435834   eb54fd538ed92366a2b4d3f7d7207152 dreamwsp.v05
+  821362    4f9be19f732d283ebf2607d1dc4a3b75 dreamwsp.v06
+  147576    5c3fa954d72960fa4a3cd4fba123b846 dreamwsp.v08
+  1214596   065f62c44334a4567d4fc2945e599127 dreamwsp.v09
+  145522    3fd8d3f6d987f4adc52c61a5bb0b7f1c dreamwsp.v10
+  252018    d99e57fed7da3d537f0f27cc2dd515dd dreamwsp.v11
+  452746    dbd821aef07424a4fa48824cc4efb6da dreamwsp.v12
+  1755286   616be56aab0dd2c44678f6479568ad59 dreamwsp.v14
+  45158     1025da2c519a98d87a7fc32eaca896e5 dreamwsp.v19
+  1614004   efec0fedbc58806e4f6c6124b25caa1b dreamwsp.v22
+  1611926   98dc74757da8653a708bd469c3350851 dreamwsp.v23
+  1106022   2c846c320657aa255918c67ebe1b2b2e dreamwsp.v30
+  376940    4131f6d4121b0781e99c370467191a25 dreamwsp.v33
+  1075302   80d730a1f044e894ec1d8d3d92ce64a2 dreamwsp.v34
+  1808540   c2a2ed499c965ba5e541800d984c229d dreamwsp.v35
+  702632    a9c20b10066ebccf65f77af56b579d1e dreamwsp.v99
+  1792      44f27ec12293257eee63f1b69db6a883 dreamwsp.vol
 
   # speech English/French
   315711    a862e21ef60b6fb528ec75352acf1c22 speech/r01c0000.raw
@@ -6882,7 +8145,7 @@ size_and_md5: |
   76662     d8fb440b9477172d75fd0f582b32d4d1 speech/t83t0047.raw
   1278102   e64cc10ecdf7ec0a8561da9d65c45f78 speech/t83t0049.raw
 
-  # Speech German
+  # speech German
   243600    648ef8320a982741eb16758605093e91 speech/r01c0000.raw_de
   76400     0bdb7e80ce42ee2bba78bd7d77efee72 speech/r01c0004.raw_de
   54000     18db9ebe02d77dd653b8aa729ee4130e speech/r01c0005.raw_de
@@ -7350,4 +8613,459 @@ size_and_md5: |
   102016    9d2e2ec78ab34fcc8906c3e0558196ec speech/t83t0045.raw_de
   183310    592e1f1cd8db155c2c6cf428c794dbf9 speech/t83t0046.raw_de
   153024    e61e3a5978993992d0f4fca66ae4667e speech/t83t0047.raw_de
+
+  # speech Spanish
+  306870    4d324ce24f1df0e96f3ce709877e6f1b spanish/r01c0000.raw
+  71393     86605a4ff679a33cfa1e81771981cccd spanish/r01c0004.raw
+  39215     d9a158508c6c51d59324510b939b44c3 spanish/r01c0005.raw
+  111119    c77d460019d705a072684ab620202ace spanish/r01c0006.raw
+  17964     f7cc07c59975eb4487ee40a15a2e250c spanish/r01c0007.raw
+  99544     a4bd0852c2a9e4d977c3376eb5db5447 spanish/r01c0008.raw
+  265565    bf948cb5dbbb131146e67bbab9138db6 spanish/r01c0064.raw
+  157875    98fa5ae9823a053167fe2638f7ad38d7 spanish/r01c0068.raw
+  35144     7069d26677e4c866feeb740d4ea450c4 spanish/r01c0069.raw
+  50103     89d1dd3c45b34f976f9b4ba593cd890c spanish/r01c0070.raw
+  26934     f1b372cc681d934d1ca534c9c7f7ca04 spanish/r01c0071.raw
+  54116     047242baa7bed32c0b682d6729a47fda spanish/r01c0072.raw
+  39501     d1f97b201e1ad0f5188d4d5dab7c4146 spanish/r01c0073.raw
+  76095     1e5449b113462a3bee1a29ccd16e24dc spanish/r01c0112.raw
+  18920     716b9abed8516cd742f28f41948388d5 spanish/r01c0113.raw
+  102487    14a363dfecde820973bce2b20b1016f8 spanish/r01c0114.raw
+  48474     9ac083a061bb4c8c21e14326db04e1dd spanish/r01c0115.raw
+  323584    ce06a2cacacc87f5d186abf91664a5ec spanish/r01c0128.raw
+  73500     b6a427efd923c15d7c524a66df8f7549 spanish/r01c0132.raw
+  76824     8c3163bff804b903201c7180e0d4bba3 spanish/r01c0133.raw
+  35866     ebf041d7411926a9f473af904c6f0886 spanish/r01c0134.raw
+  16275     922a58e9c2d906f03d7aa87da0ed98d9 spanish/r01c0135.raw
+  132841    f094721be8338c17d6ff62b450a833bd spanish/r01c0136.raw
+  59475     df8e62dd584e9207e8bfdbba6699959d spanish/r01c0137.raw
+  69841     864c2995900d9449bf36a8b877abc829 spanish/r01c0138.raw
+  93972     fab9acb92d3c6940edc7c6a4430c852a spanish/r01c0139.raw
+  136950    28b517e0fb26b7bda65a4d1a588224ff spanish/r01c0140.raw
+  77830     6a4ea694d7fd77d502080cef938454f7 spanish/r01c0141.raw
+  190160    d6770a3c3cd4749efab1e959347fafe0 spanish/r01c0142.raw
+  71583     a8af0903d985cbbe07062104ed6e52df spanish/r01c0143.raw
+  114688    ec01c7d118eb357e99a5b5a632b6fef9 spanish/r01c0144.raw
+  65191     81c10e06a23b10161e7cdb9cd8775fbe spanish/r01c0176.raw
+  55056     65024f16165027a2670243f23846ec86 spanish/r01c0177.raw
+  54696     ea1554c8d507838fb5a9e67108e446c4 spanish/r01c0178.raw
+  344583    c0606b7c594d0a879a71313cacabd7a2 spanish/r01c0192.raw
+  143009    df908fe85a42692fec0d8d35936296d0 spanish/r01c0196.raw
+  51984     96766941933efc0ef1d35fe88f9bf804 spanish/r01c0197.raw
+  44352     5a0fc17b9a7addcabb46f2a425c83b9a spanish/r01c0199.raw
+  110704    8732d52af7aa202d024ff93b8306c6f2 spanish/r01c0240.raw
+  40474     f51c124e29d5087ef48b12654958365c spanish/r01c0241.raw
+  248266    5bc69d70854c4bd02c53ba2354c42390 spanish/r01c0256.raw
+  99372     8bfac6feac8f0d5e85b4d8bf1a724436 spanish/r01c0260.raw
+  51022     dcb0cdbf2fce6aefc36db59e0c80b737 spanish/r01c0261.raw
+  61682     9020d14da82ab21aa816193dc56e1fdc spanish/r01c0262.raw
+  40205     4ab1509758d2634c382c15b6d12b6d77 spanish/r01c0263.raw
+  91962     ec3ac19e38c84c51ebc892f8aebee864 spanish/r01c0264.raw
+  26195     ca43f15dba98a1634f1747ee0b34e0ca spanish/r01c0265.raw
+  84132     77451d9be5163e5346c68ca022c1f862 spanish/r01c0266.raw
+  27692     f73e33227ee4a77d4090d826bd9759cf spanish/r01c0267.raw
+  117605    76306477e4fa30ca4e885461e8cb2fa6 spanish/r01c0268.raw
+  103522    b93a7de96f0d2546d9989f4d41baf1ec spanish/r01c0269.raw
+  82320     124655278d9025090ab0e3d52e6e098b spanish/r01c0270.raw
+  62592     9435b1f43dc1e9122c231e95fc2f70e3 spanish/r01c0304.raw
+  35088     6e695b9a2974cd4ce63b16586ed62404 spanish/r01c0305.raw
+  249000    44a14ec907e344677c5f533c58844c8f spanish/r01c0320.raw
+  77490     b8caeb882cef99905ba0f1e5b4612db3 spanish/r01c0324.raw
+  68355     f7d02256ae34a48edd1fd9d882256900 spanish/r01c0325.raw
+  133548    903b18787e596106445a51dee25f5b09 spanish/r01c0326.raw
+  66096     94cab449ec21885071a6dd92bb2d40de spanish/r01c0327.raw
+  226116    e4d1eb09308d4f750df5a315d065cde8 spanish/r01c0328.raw
+  49601     1a1d9ebab3afb986ce196d62f74ecfd6 spanish/r01c0329.raw
+  380000    48106a071cfaf659151740a4fdbb5816 spanish/r02c0000.raw
+  54510     b8c568e1ff195386cf5432d8d48d689d spanish/r02c0004.raw
+  94350     0b3a8be4d7646ac553e83a09d8622060 spanish/r02c0005.raw
+  77154     36c34b5039738cfcb0b750eeb2cc797e spanish/r02c0006.raw
+  115488    e109d641e72829feb97b831da2a6e002 spanish/r02c0007.raw
+  65036     a5ec8253592b5740940c770e39318e55 spanish/r02c0008.raw
+  91719     3b47727804bda486ba50e4625861e055 spanish/r02c0009.raw
+  172530    67a4eb9c808ea1580696d1390fefda9c spanish/r02c0010.raw
+  50850     a8dbd4a3761079018d248dcb274e0a46 spanish/r02c0011.raw
+  86681     deaee76eeebec5668bf21daa7e3493ca spanish/r02c0012.raw
+  107016    508951054b7c4f7b9b78cde892bd36cd spanish/r02c0013.raw
+  183918    fd835dabb9d6d354c9a0f8ef19d5dfcc spanish/r02c0014.raw
+  35908     831c83b13b18f8689033c72bdb283b56 spanish/r02c0015.raw
+  150154    f2e8ec7e82ea8be89bfc30d494623159 spanish/r02c0016.raw
+  55440     5306bd23d6f2806055bcdd1c143fd26f spanish/r02c0017.raw
+  82200     eecb5f722f763e6695f3e92b78e5dc33 spanish/r02c0018.raw
+  43428     14156e17c198c302e34bd28790bfe054 spanish/r02c0019.raw
+  108240    b0f45f6559e76e4346e6933682875993 spanish/r02c0048.raw
+  95337     7a98ce976dfd3c33c378a5d855351f76 spanish/r02c0049.raw
+  65208     8ec1e33c3faf913c47953858430b3696 spanish/r02c0050.raw
+  174272    a0a36c14489a1531dae720b213711d2e spanish/r02c0064.raw
+  88320     70ae039650a4314cb3e3bca0950a2366 spanish/r02c0068.raw
+  39330     76192ccf26aa196f0f2123775eca7b1d spanish/r02c0069.raw
+  75840     2c52cf0c987da7191530d30a726c0700 spanish/r02c0070.raw
+  18080     0045dc521c1751b7e86948b64a384ddf spanish/r02c0071.raw
+  51493     a8d15618558a250fb23283418d1fa54b spanish/r02c0072.raw
+  60088     f24fbb6e04fde69e3c1966d7e619ee53 spanish/r02c0073.raw
+  89157     47d12d747ed9823052020e864c4af83c spanish/r02c0074.raw
+  18666     ecc457d4083a32eb71f1f56c1ee04f43 spanish/r02c0075.raw
+  60690     25449d68164612ebf200c35fe0f65127 spanish/r02c0076.raw
+  99502     e98bbf3166ac4e35eefad42fe0f96f57 spanish/r02c0077.raw
+  79277     74568695c12384eb22524de6fa33726b spanish/r02c0078.raw
+  30272     9dd51cf42ae830a2e7d82e8577a0754e spanish/r02c0079.raw
+  83520     8a697dd06c7446629b8bc9fd8ad96715 spanish/r02c0112.raw
+  43460     29c358e1691bf6898d6a8042afa66005 spanish/r02c0113.raw
+  59000     cb71dc151f4ce82221416659517250a5 spanish/r02c0114.raw
+  50244     a375b3ba6ea864db49686eb943871fe4 spanish/r02c0115.raw
+  296331    7f685ed39e3c189d3d6a9b0f1f74b1db spanish/r04c0000.raw
+  167406    106bd4919bae2172ae3655f789b4ba5b spanish/r04c0004.raw
+  56404     c6bf2f309a7ec7e0d909a37b21c4cc52 spanish/r04c0005.raw
+  129129    0509a45a9b9603e3e691fb623e900350 spanish/r04c0006.raw
+  82460     90baa1b7ba4e91adeeb844562998934b spanish/r04c0007.raw
+  251782    2be987a5abedceab44ebb39460081e53 spanish/r04c0008.raw
+  30447     fdbe3456300cbb7160e16e1023ce0293 spanish/r04c0009.raw
+  64484     0688f1d63c974d8e32d3501411f3752d spanish/r04c0010.raw
+  142211    246947e274877c1de0dc9c1b0347cbfc spanish/r04c0048.raw
+  71325     76319f43403c9192daf3f885cea68f01 spanish/r04c0049.raw
+  281087    9541b6ee894bae22c6668a469d393a94 spanish/r05c0000.raw
+  102512    49cc9c59f3a3162a39599d7e2d39ecec spanish/r05c0004.raw
+  48480     2286bf6a86e440b7c8667b135cd59339 spanish/r05c0005.raw
+  178464    1321da2e0fe853c730c49865d33d8c6f spanish/r05c0006.raw
+  70626     b8e8cdb8d11b85475b501f9963d8dfa0 spanish/r05c0007.raw
+  180476    fa867c1a15612c9b9f5bf7e78aa93d15 spanish/r05c0008.raw
+  47880     241eeac10d93da58745dccad428ad7ea spanish/r05c0009.raw
+  83842     b78dde2cf50f663fb62b0f637e632452 spanish/r05c0010.raw
+  38097     f23a6d078f586688ccb04c98ccaaf02c spanish/r05c0011.raw
+  102729    b98b6f70a9ff2b31844113a540438654 spanish/r05c0012.raw
+  31152     9b7f3c2b5a97d93972fc0265ea3085f6 spanish/r05c0013.raw
+  135564    0e80054fd3af56b35a828b71281ac36c spanish/r05c0014.raw
+  113354    e76b42abfc77681336fd425d65bd1526 spanish/r05c0016.raw
+  22791     11c6a471f49252510ec639ffde371d52 spanish/r05c0017.raw
+  121409    52dfbf8dbdc7782a6f4150c04562761b spanish/r05c0020.raw
+  52143     96d22cd36ef3b7356070ac09c27ec0bd spanish/r05c0021.raw
+  56643     576f5d735048d34767f6c91d6338463d spanish/r05c0024.raw
+  40392     ad77683dd4e7fc3af1c2cd3c6ebf490d spanish/r05c0025.raw
+  144486    01cf4c58e30c56a3d29d08d2bbf32dc7 spanish/r05c0028.raw
+  70015     f1a5e872921a876861e71558c22539b5 spanish/r05c0029.raw
+  59180     67b46413e53d974a68c638c749cd6762 spanish/r05c0030.raw
+  106704    9740416b6823ab43b7cfa650a849f81b spanish/r05c0032.raw
+  61128     51d304dad3a440d9fc62c89f187a67c4 spanish/r05c0033.raw
+  21210     b7fe894c6f31d7a91c2596c6f42ea866 spanish/r05c0034.raw
+  126048    7fa204ecc9967a6b0f7bfd2b2e7fd2fe spanish/r05c0036.raw
+  120712    6f02493db4b6bf4754ad174bac825ea9 spanish/r05c0040.raw
+  126063    d27f5f9bc9520044b0f6e52c71bbf033 spanish/r05c0048.raw
+  39375     ba911404c54d8dfc02b8fbd170459558 spanish/r05c0049.raw
+  196727    c11a94ab0bb1a2779f58ce378224a749 spanish/r05c0064.raw
+  72230     1cca04692a4c252bf78e7a3fe00805b5 spanish/r05c0068.raw
+  72408     7af981e504123c82d8df153717cfc678 spanish/r05c0069.raw
+  124709    a04760c5b273ee2d7c1b5b6d404f4959 spanish/r05c0070.raw
+  29568     3b27be91139ea12daa70003486108dbb spanish/r05c0071.raw
+  92049     fb45744dec36bd2a0bf739d40da573f2 spanish/r05c0072.raw
+  85749     a3a60a36fc0a94affbe2c22b02ad7521 spanish/r05c0112.raw
+  47553     8190ff3ec69c20822909680810906597 spanish/r05c0113.raw
+  120336    e12f723b141a839bf06f6097eb04f9de spanish/r05c0114.raw
+  290802    70fb003ad0063fd63527b335ef5b4e6b spanish/r05c0128.raw
+  49941     c10283d0f1470f4266649c26c385c089 spanish/r05c0132.raw
+  86009     4ec1e93a87433f5a79aea48d8bf78c65 spanish/r05c0133.raw
+  147402    6c96c61080812d8636a39b2f8ccdd713 spanish/r05c0134.raw
+  50244     7a6084e5dbdf64ed6590d7f82521aae2 spanish/r05c0135.raw
+  120276    f576b276e702548a7dd0bc72bb944e58 spanish/r05c0136.raw
+  45115     91660e70772242e4eddf982716a293ff spanish/r05c0137.raw
+  33150     9ffc8a30576e8adb011203e5fbbbde07 spanish/r05c0138.raw
+  86785     1ab3df1920189c63bc76d6e10b507c5d spanish/r05c0176.raw
+  55770     c5e6a1cef3f4cb1e4b7f90dfe9d678df spanish/r05c0177.raw
+  30400     fcad1e19b35a6a7d1af023038057ba5d spanish/r05c0178.raw
+  309590    1d67dec8dfed6ebaeaa4488018926159 spanish/r05c0192.raw
+  85398     52cccdea9519593f0e4bc870d6c09c8c spanish/r05c0196.raw
+  35066     0c706e27e871eeebd0affb0c94c553d8 spanish/r05c0197.raw
+  73566     3a5d936f09835c8637af1881c1e3df9a spanish/r05c0198.raw
+  46258     b49cb005359f400ce908ac2e723eb8bf spanish/r05c0199.raw
+  129276    06f3d382c7a631fa8fbf339992401def spanish/r05c0200.raw
+  87235     6390c50430bb8dab289515670f06940d spanish/r05c0201.raw
+  35066     3bca21ffa7e2efbb694022c41b8bd76c spanish/r05c0202.raw
+  104904    8624e8481cbb905b5e92499bdb2d6d13 spanish/r05c0240.raw
+  71205     62478d67ce727a513624de0e604dedee spanish/r05c0241.raw
+  217152    4ecbc7b5a54e420285a16f00c7dc20df spanish/r07c0000.raw
+  90274     23d3ba1e1d1ad9553f5b23cce1f71faf spanish/r07c0004.raw
+  21300     eb55c16f402477b666589936dd15e81e spanish/r07c0005.raw
+  86442     b67db6772e1b95214d81b9fe60a7147a spanish/r07c0006.raw
+  87039     460ba0a08e6281d32a822b747ff0993c spanish/r07c0007.raw
+  87376     cc239fa0c67b8b8a67a6d9dea35e6bb9 spanish/r07c0008.raw
+  18750     eaf9d1646c4fa3e4f8959fa5a00de0bc spanish/r07c0009.raw
+  130980    def7481dd2538e5c86ed14c1d3865fd6 spanish/r07c0010.raw
+  66523     8fc4fa6bbf5104f03e4b56323586a2fa spanish/r07c0011.raw
+  137952    cbe74c2d4c3f2fa159ff1d8cb36b8a6a spanish/r07c0012.raw
+  34965     39088192bee9d236392f379fb5f7f767 spanish/r07c0013.raw
+  110087    684c73376d10633b9e2065f7a558bdcc spanish/r07c0048.raw
+  58446     825c6741775df8e38f517e776effbf71 spanish/r07c0049.raw
+  307863    e276d297659890bd28ffbbfbcaec051f spanish/r08c0000.raw
+  49941     9a23b1443319d83dff7d43e725c5d83f spanish/r08c0004.raw
+  32430     bd36a6d10d385a404849c437f4ca6c7f spanish/r08c0005.raw
+  115498    f4c28d105f68a799519fb80a90f4ce96 spanish/r08c0006.raw
+  23807     effe734339e38ea65503624a6c558308 spanish/r08c0007.raw
+  158685    f74e43f9c1695f0154e319d21ea8d096 spanish/r08c0008.raw
+  50024     223425c03ac28623e74751672395cc8a spanish/r08c0009.raw
+  177408    7ea78afce627af9f62505de247749323 spanish/r08c0010.raw
+  54126     b035a157b13bceba249544938d70992f spanish/r08c0011.raw
+  38579     76705791fc19490cc70953e5dfee0512 spanish/r08c0012.raw
+  117872    872dd7d6c560b3d13d378b932a0b1ea1 spanish/r08c0048.raw
+  59045     8dc1e164aa62829c8b1111b49c08497c spanish/r08c0049.raw
+  99932     08e41cf619aa19f8a92878ced795a2f3 spanish/r08c0050.raw
+  33499     15e21ec77abf3e288981e091eeb06464 spanish/r08c0051.raw
+  341862    c15012e30382b96d5dfd884451fc7003 spanish/r08c0064.raw
+  88303     6c11d6404c1b9e3f9292719f986a569e spanish/r08c0068.raw
+  43248     5c9aa6889b46c9e8bf96db5d480b9739 spanish/r08c0069.raw
+  86988     9185a8caee4675fc8d7a7277625d4293 spanish/r08c0070.raw
+  38804     c3b0acb48de8a2a458d01ac5afe11b4b spanish/r08c0071.raw
+  67564     f3d9b7badc00842018d130acc8dbaa67 spanish/r08c0072.raw
+  52514     9b44d6c45c13f39f267b3e8b90a4669f spanish/r08c0073.raw
+  81652     8ee565f788f31b3b3e8da9eb74463e80 spanish/r08c0112.raw
+  58123     4b355236a51af77b62662aa2c4ec1a9a spanish/r08c0113.raw
+  329658    6c2159a845f161da40e51a7fc1ee0426 spanish/r23c0000.raw
+  83058     222785a0a2f1b1c576371dcdb7e39622 spanish/r23c0004.raw
+  139524    b492e7fd2a265eec5c54bd6e3653aaf5 spanish/r23c0005.raw
+  163326    1b0c77e8e7e260a16f8d546174467d4a spanish/r23c0006.raw
+  66906     b7071ba967d2bc938b124cc41ef9434f spanish/r23c0007.raw
+  92310     4fb7679b1dacdffc987f13a22ec6c112 spanish/r23c0008.raw
+  184786    8bdb822250fe9425d45d2fb85f96ce52 spanish/r23c0009.raw
+  214164    5650d2015d14a4985fbcf240035c0969 spanish/r23c0010.raw
+  25568     223cfdc20e4e0ef03d04dfff63ec692f spanish/r23c0011.raw
+  255789    10438a4456d10543c32977eafa4e5af1 spanish/r23c0012.raw
+  52080     8555e0c3ea35c88b1f77ad8948c21215 spanish/r23c0013.raw
+  161219    6ba4582366c92d4b01487c2775451eec spanish/r23c0014.raw
+  34760     983793fbeafa205318ae11bad029cc51 spanish/r23c0015.raw
+  114613    baae5cfff49174e9964204950f3831b7 spanish/r23c0016.raw
+  61291     2b07dc40ff2bf5872d49dca343c9baa0 spanish/r23c0017.raw
+  98087     1a172cff7ebd742a3b2ed5bacf908ebd spanish/r23c0018.raw
+  114540    94ac88e15f858630546912ad66495a79 spanish/r23c0048.raw
+  57452     7735c950771a83a0ba56b1ef480f7eed spanish/r23c0049.raw
+  232372    8e3049c8f1a5df06c61222323d95c5fc spanish/r23c0064.raw
+  67914     34b7ab4a62a65ebde427e3b750c75140 spanish/r23c0068.raw
+  54166     615087fc43dfa5db1df26d10aa871582 spanish/r23c0069.raw
+  68012     4f8bbceff927f3c5f546a17a862978f3 spanish/r23c0070.raw
+  41300     75f886a1b4c20fd41f76c7e9cb57cd73 spanish/r23c0071.raw
+  37664     4bb244611a0f7c5c20b9393c632f7a00 spanish/r23c0072.raw
+  39840     ad03a0867ab8cf12d5986b4c286b2a86 spanish/r23c0073.raw
+  328986    bebd24cc4f244d9d4b80f704fcb9c4d1 spanish/r23c0128.raw
+  105728    ab752fbeff9427eabceaaadbdf1cc80c spanish/r23c0132.raw
+  22320     b77d07fc9e09a4eb55d6405f7228382d spanish/r23c0133.raw
+  97781     4892f57a108d208fcb155d86dc48afe1 spanish/r23c0134.raw
+  49468     01ddfc5ec39c9799b3ab9d78d7860533 spanish/r23c0135.raw
+  93960     cbaf7c944a0183d545a727325a02aa43 spanish/r23c0136.raw
+  63860     4905e1e43176192de820e2e486000df1 spanish/r23c0137.raw
+  62228     867ad629b28e4059b4878ac72d6b8ae0 spanish/r23c0176.raw
+  103307    a4be5e1040e05deaa54ebb64d3bcd248 spanish/r23c0177.raw
+  241657    f593b10942202b9a2c385cc5cd893c9c spanish/r23c0192.raw
+  143838    1f4f2c47b0c4f71133ede71d8695259c spanish/r23c0196.raw
+  26344     2c5ec7c10f21965d519343d97235477d spanish/r23c0197.raw
+  69300     a3b62e6dd79eb2c4f7be0f703dba6347 spanish/r23c0198.raw
+  43039     225ef70d87a68104b49fffe65d7a1926 spanish/r23c0199.raw
+  40018     961c29723e16c49a0e1310364817ee08 spanish/r23c0240.raw
+  88485     6bce34ac152e6b78e34c63dcde2f9ad0 spanish/r23c0241.raw
+  217595    223e4b9d176794bc617fea303563112b spanish/r23c0256.raw
+  22400     79c902ae2302b5f3cf7330ae0b7cd1b9 spanish/r23c0260.raw
+  47637     1e0d4fa487debc4c5dece27fda97e848 spanish/r23c0261.raw
+  31622     adabc3579e7244b8db0ee2af4b91162f spanish/r23c0262.raw
+  95368     a00f7fa87de4340a9a70a8c5ffe06a43 spanish/r23c0263.raw
+  136155    c61557c619a8f0962e49f000a9f22810 spanish/r23c0264.raw
+  97022     c22e3e74a55e8f00c873c51dfc880b6d spanish/r23c0265.raw
+  166284    9d40e1aca7be70d9df9aa3dfd859907f spanish/r23c0266.raw
+  37050     6911f48c3f613c78bdd16bf13b0337c9 spanish/r23c0267.raw
+  167675    9ab536738c8e34c1e0797fd336c065a3 spanish/r23c0268.raw
+  39220     68b5f9ce78aed43719baf602d2e95e9c spanish/r23c0269.raw
+  107811    33e53a8dddc5ff1c9436c03a16c36596 spanish/r23c0304.raw
+  48678     515f4366aa684f2da957223907b24092 spanish/r23c0305.raw
+  106650    6a72769d2d2d26aa036a18ebfbacb6a1 spanish/r23c0306.raw
+  295290    6933ce4f1809f67cc9ea6759625e5a17 spanish/r23c0320.raw
+  28514     6d68615e33d647d55a15ebdf5b42da99 spanish/r23c0324.raw
+  36318     49159548a35cb77309b7ca83be96b52d spanish/r23c0325.raw
+  138296    787cc89d7fd4246923c2240e1cf62de2 spanish/r23c0326.raw
+  27336     c707994d1b2b59592e8c957df6e3ec77 spanish/r23c0327.raw
+  166304    9e97b2939b02ecac905d492e5b443452 spanish/r23c0328.raw
+  43581     9026bbbdcd1d70da9cceb1010169036c spanish/r23c0329.raw
+  25228     9133212ae616ca6a4c6b6cdb5a9b36fe spanish/r23c0330.raw
+  43686     f578d60a58e4101564aff46c0b4b27d6 spanish/r23c0368.raw
+  64449     a91bdcc40e81fbe9b5ec061a019c1e44 spanish/r23c0369.raw
+  56580     0040acc3fa4881bdb9eb8ddce4d4a7c9 spanish/r23c0370.raw
+  335700    efabc04eb28c5e07bb29481a7cbda9fb spanish/r23c0384.raw
+  42872     e209d06673861fa567dc8954285966fb spanish/r23c0388.raw
+  39758     49a8b10b05b9a531b5fd5c3059bf4956 spanish/r23c0389.raw
+  82960     32f67232b5ad4f4cfa00d8dac6014ab1 spanish/r23c0390.raw
+  36248     cfc859a3fd2ff1c318730a55e61e6976 spanish/r23c0391.raw
+  54865     503918f484165589b284145156ddbd04 spanish/r23c0432.raw
+  44896     b72c3100eed31d5bcf28f4fbfaa7c6c4 spanish/r23c0433.raw
+  241743    f775719f7706bd79276587b6104aefe4 spanish/r23c0448.raw
+  325240    4c4eb04db974a630638ad5988b59db4f spanish/r23c0512.raw
+  93450     10e2ad1ac74fd62b20d75e87ccd24c0e spanish/r23c0516.raw
+  53956     69f53182b5e4a2557dbe2c658b60daea spanish/r23c0517.raw
+  177870    03056be44d9b9a99e284378498b807fa spanish/r23c0576.raw
+  113373    8c7fc42349a86ad1c59ea51853ce337b spanish/r23c0580.raw
+  64559     59509a0b6377c3f2d8f4aab2f373a7f3 spanish/r23c0581.raw
+  51740     74e21727f9e8816a1c176789179642e5 spanish/r23c0582.raw
+  234472    fb820fc647bb4be6f0e11422bf51094a spanish/r23c0640.raw
+  142019    322148bb77db4b28b25fa14a810eb587 spanish/r23c0644.raw
+  33592     8ad420fd990556654df0b24cc7cfd6d0 spanish/r23c0645.raw
+  128522    ced2e0b531264df5bb50f86d266fb665 spanish/r23c0688.raw
+  37440     3526eae5b6bef5168938bf30bb5962eb spanish/r23c0689.raw
+  110424    d49f99c66d3dd8e81d29189cb3fc7e0f spanish/r23c0690.raw
+  55198     97bf9e661fa18fd23a19bac468549896 spanish/r23c0691.raw
+  286487    83a2e3d391709f3a0b908ba4d0ab4300 spanish/r24c0000.raw
+  145184    5c1d6dff223267b0b595300cd7545f7f spanish/r24c0004.raw
+  43049     14f3dac8ffcf92886c7be41b8e7c9eff spanish/r24c0005.raw
+  159572    dc35cc5d73d406b99b25f989828f585c spanish/r24c0006.raw
+  147886    be54eaec8fc62fd6a349671b9bb82a8f spanish/r24c0007.raw
+  72837     8e7601e30afe2453954e29b524127e07 spanish/r24c0008.raw
+  128751    96d24b93096138a207ffe0cf0f4298d4 spanish/r24c0009.raw
+  124691    e8c1c351bcd0d4550a551e0631260f0b spanish/r24c0010.raw
+  94267     59602b521635bb3295574d8dd668a759 spanish/r24c0011.raw
+  168232    893e90583857e6755b57a6eb2badb8ae spanish/r24c0012.raw
+  67116     6274cfee5f021c32597e6af56a683e7c spanish/r24c0013.raw
+  175243    b0c13ae8b0a28846e929eab505046ce5 spanish/r24c0014.raw
+  41595     4344a0761b6eabc1282fb0837ec18f7b spanish/r24c0048.raw
+  82800     d82fb243f47fc1dee9cd6df66385fd9d spanish/r24c0049.raw
+  78864     446c397a181e583ae554814e5b3dbf08 spanish/r24c0050.raw
+  42768     51daebd925c480312f5ecc58bf6b42a3 spanish/r24c0051.raw
+  192549    725ce4298d9ebe47fc801a929974f7f0 spanish/r24c0064.raw
+  78120     6ee422b0dee62a5d8f2bcb36c7a5b2f3 spanish/r24c0068.raw
+  80667     fcc3fc25be8cc93b8dfc58f384feb47b spanish/r24c0069.raw
+  62220     54c6fba00a9507fe2599e32397b5903a spanish/r24c0070.raw
+  55660     10634315b50e2b2a8964dab74398256f spanish/r24c0071.raw
+  63543     457756679bff498c7cab69786637982a spanish/r24c0072.raw
+  67798     79861ded5eae1776f28abdd5718867e7 spanish/r24c0073.raw
+  46020     d1e1f144faa5e29209f32070098f64d7 spanish/r24c0074.raw
+  48654     c48b166831ce377a6365002e20e132af spanish/r24c0075.raw
+  34029     ab93a150a5a7fb2590b986621eb8dda0 spanish/r24c0076.raw
+  20868     41afa14b8e8de750c651551656d3c1a9 spanish/r24c0077.raw
+  63244     a1a3d349a11d67ace366f519dbedac45 spanish/r24c0112.raw
+  51311     057efa4715ea0ecc1cfe180fc734642c spanish/r24c0113.raw
+  88245     c2d4614347f62ffab0664587948ef5f2 spanish/r24c0114.raw
+  38055     5bd4bf02e37a5fd0b9046d95dd0c224d spanish/r24c0115.raw
+  284994    91c241889e5e304fa7871948af94005f spanish/r27c0000.raw
+  165006    9876bfc08f7385b88fcfffe6d3196c05 spanish/r27c0004.raw
+  33372     938a8c1cc84bf08678b650a91d6ac423 spanish/r27c0005.raw
+  120510    4dde3c4aaa77a4483688bd0417a7b758 spanish/r27c0006.raw
+  74428     fadcb25022aecffc1890c5f7b502cc5e spanish/r27c0007.raw
+  59276     533536c57def05819a89b5383b630d39 spanish/r27c0008.raw
+  60636     b5371e8f49214a2ee18e4a5e53af5895 spanish/r27c0009.raw
+  52912     8e8a3093d8d76808104fb3476d86dca6 spanish/r27c0048.raw
+  68907     e3fd9998dba450d8ec775ab7c953f443 spanish/r27c0049.raw
+  305802    43f3dee88ac0a513409a9a6e7bdc989e spanish/r29c0000.raw
+  171624    b6e1fd0e85f599894d457dcd9bdbdb16 spanish/r29c0004.raw
+  16837     c38c3a0df37be61cc0c1960061e585cc spanish/r29c0005.raw
+  183922    e9e5ee6b33c04d5f583c227ae861ba22 spanish/r29c0006.raw
+  76765     8be328a4d031b968cfe1676dfc3df299 spanish/r29c0007.raw
+  128740    67c95fe302c804da895ba64a458ab557 spanish/r29c0008.raw
+  34188     8458e0aed55c694cb9ab21941f3a4cdc spanish/r29c0009.raw
+  228084    81a39659ea7c21ea9c9c3f895fb24912 spanish/r29c0010.raw
+  74690     d567021c334d86cfbbbeb5c5019aecc6 spanish/r29c0011.raw
+  142763    8f52cbad636c661046b2ee126937dccb spanish/r29c0012.raw
+  90473     3287bdf50085b3fbc3c5384358459797 spanish/r29c0048.raw
+  44520     4261b45cbe0d1f0c2945678693e1d4da spanish/r29c0049.raw
+  66531     534c1c40171f199d5e164e2802ee1061 spanish/r29c0050.raw
+  293760    19cde13afe16ccbe477d473ba1fec307 spanish/r45c0000.raw
+  100111    1e2bb7d6f740f2744f91b0226a57c5f9 spanish/r45c0004.raw
+  72693     6906d5f487a5f88673e596082b73d5c1 spanish/r45c0005.raw
+  134773    ea79dae122da8062fc11a29fa1aa1b7a spanish/r45c0006.raw
+  219072    3b8008744c329489091fe77dd313f750 spanish/r45c0008.raw
+  163590    034d16f1d6b86a91f368dfbbbeec2061 spanish/r45c0010.raw
+  36089     0249156cdad428218c4630a1a4e92d4d spanish/r45c0011.raw
+  179551    9cfd9d05e490053d9f6cde8472bae2d2 spanish/r45c0012.raw
+  37375     16119ec5f293ca1be6b6eadfe0357c96 spanish/r45c0013.raw
+  91923     8432d3fa85df4882eb92bfc9704e727f spanish/r45c0014.raw
+  97393     dc89a8f7993017ca29180be4d1cebec4 spanish/r45c0016.raw
+  152488    d8846f158ca3e6c44599159cd63c0078 spanish/r45c0018.raw
+  36437     a6fce505f7413e6fe1528e517820d389 spanish/r45c0019.raw
+  144126    7869aa024632de0ce7e1dbcbc8d33f9f spanish/r45c0048.raw
+  31518     014a529f11e0d31fad3fe8a4c5742074 spanish/r45c0049.raw
+  286261    8cab43c7ae6ab584bb5e1e55c04cbb38 spanish/r45c0064.raw
+  59558     32ca55ce0d64eb1af759555415f8a3d5 spanish/r45c0068.raw
+  181412    e3a2c18b7182996c60ec8ee4a2af2dba spanish/r45c0070.raw
+  124800    555c6f9fb70a7492e29f5ac630a3dbf1 spanish/r45c0072.raw
+  35788     3e5619cc3a38c135208522c6181f81fa spanish/r45c0073.raw
+  146520    1be4334eb8ba2190b8171d659f300fbc spanish/r45c0074.raw
+  41416     42e2aa90164bc63733cf22875e8221b3 spanish/r45c0075.raw
+  220594    98309594818e9f116979607949dece46 spanish/r45c0076.raw
+  80631     e9a3b1c05260f836c523b88f04515255 spanish/r45c0077.raw
+  138263    c3b02421072204d354b2b52f9f1468b6 spanish/r45c0078.raw
+  80053     9f0b404e5edc37a2fed2ff15d5d1c42e spanish/r45c0080.raw
+  125449    d80a14d1869c7a0d899fb89a79c2efb3 spanish/r45c0082.raw
+  144640    eb6d57da9a95959afdab1ff9a36e753a spanish/r45c0112.raw
+  283122    f4bd8b33474e3f0f3ae1de9299313189 spanish/r45c0128.raw
+  136323    29b70b6ef8302a8d0eff2d516c2f72de spanish/r45c0132.raw
+  40460     577d2f2c6a91187d5869c5ce5cf162ec spanish/r45c0133.raw
+  165010    6211196eabae9807b7ece25f4efb76bc spanish/r45c0134.raw
+  116022    c693bc7e5d3058862e6800887c41601e spanish/r45c0136.raw
+  79250     997438d085f182f1cdc7c4a71527c7b4 spanish/r45c0138.raw
+  63832     8b868a8e042f5a8a728900081b6c830e spanish/r45c0139.raw
+  145728    8cfd805939633323b48d1548f1f45bfd spanish/r45c0140.raw
+  42292     9c819ecea4dc588862886dcbaf5a7c2b spanish/r45c0141.raw
+  175052    53f5fc1b283addb6d1bb2abe1b632825 spanish/r45c0142.raw
+  31320     612d51dfcaabc33bc63af3e0702a0e64 spanish/r45c0143.raw
+  122171    e0fc7f5e4da4409980f42fc0175f8970 spanish/r45c0176.raw
+  284257    715d53d4a54916a558bab33dcb06a90c spanish/r45c0192.raw
+  137159    c257ca9561f4d32ac51426f365c473ab spanish/r45c0196.raw
+  38481     21902a45afe3a8147d96a39bc04f543b spanish/r45c0197.raw
+  197262    a0185458058609e6ce7529b418e1c205 spanish/r45c0198.raw
+  89490     409f0e47ee114aa96e4317f5095abfd0 spanish/r45c0200.raw
+  120780    c748709b8ee2e99af11aba7127d65471 spanish/r45c0202.raw
+  122059    1e5730e2207543cf88a1ecee271f8717 spanish/r45c0204.raw
+  47517     32547b07774c8e4f0e4f474c799bca9d spanish/r45c0205.raw
+  150259    3d8477dd37221ce625bc9c9dc4af5ab3 spanish/r45c0206.raw
+  59052     97e13b37a4ce6167d91c7605f0922f52 spanish/r45c0207.raw
+  212412    429383ec1a503dc107994335672f6e53 spanish/r45c0208.raw
+  123738    4eba424435de706d3f9c7336fb2b75cb spanish/r45c0210.raw
+  141645    3cf268710911d4aad8e26ad0f959ea82 spanish/r45c0240.raw
+  26378     440f1dc926b44c0bea0ce6da17499edf spanish/r45c0241.raw
+  147788    5e1419ae5ee5f143bbfc7a6ecff4cc19 spanish/t82t0008.raw
+  140940    7b8235a8c163b3b7e747db1be413e776 spanish/t82t0009.raw
+  160446    e7991d15b30c14a616d08c2fb7fec788 spanish/t82t0010.raw
+  173888    2743d16bf28b895176d4abc166563f55 spanish/t82t0011.raw
+  145911    beea787c95fe45509faecb490df6a8c1 spanish/t82t0014.raw
+  124244    2d706cae02f534dfa9b3025a3a6c40ab spanish/t82t0015.raw
+  60237     6ab0abd6a4939f452a9f012a852f1599 spanish/t82t0016.raw
+  172175    c6930f6b0c7cf4b0f0cecaf689e788b6 spanish/t82t0017.raw
+  118531    f5153dbac661626e193db11fb611819c spanish/t82t0018.raw
+  57327     572478499f7ffca79309df414e5fe614 spanish/t82t0019.raw
+  78648     62a4ee4d54156bf69481dabc55ab7958 spanish/t82t0020.raw
+  85666     11dae18c9266498a726a5f2aea49251d spanish/t82t0021.raw
+  53156     874be75c9445c0b00573baedb717228c spanish/t82t0022.raw
+  129551    8a74efc8c106866e06311a374c5d5f7a spanish/t82t0023.raw
+  43473     1f19cfdf8c46a474fecdcb231d19e15e spanish/t82t0024.raw
+  34036     8771fa90da4de36b0d71426c92a9f056 spanish/t82t0025.raw
+  96195     41bbe1e8ea5c5ed89d395ca99f03dfc4 spanish/t82t0026.raw
+  65262     ff35eae8a2732c4ff54f3d2e1628e29f spanish/t82t0027.raw
+  65224     7e08d5406ce357c685b329bc70289f36 spanish/t82t0028.raw
+  42900     b59a32628b9acb9932d8e7c9983ecce9 spanish/t82t0029.raw
+  125701    3e42b03988a66004200197fd4680c658 spanish/t82t0030.raw
+  51920     ae5d7d8ecf13d83b9ba8f4edb200c375 spanish/t82t0031.raw
+  76092     860f92f5f88f93c9f99f07a71714f7d8 spanish/t82t0040.raw
+  150101    8a6f51b78fab512dd9b7b399aa091ed8 spanish/t82t0041.raw
+  66830     b4965b2f339203a4128e95bf58d4d935 spanish/t82t0042.raw
+  77792     2846dff530435f47fdedb00651061faa spanish/t82t0043.raw
+  94731     ff9a43fed5a77c3de0218ca7da0c04ab spanish/t82t0044.raw
+  121832    4ef7bdec637d3057c7fa2f4e3f4f283f spanish/t82t0045.raw
+  168182    6eebe18456fe541313c47a8273e0f7af spanish/t82t0046.raw
+  73975     deea9098f0957db255c5bbdf7ebde15a spanish/t82t0047.raw
+  120294    d183fee0b93f96d4f64147a876ba3f21 spanish/t82t0048.raw
+  114075    ffb9cbb7dcf1e4c7b8bbc117c8408c1e spanish/t82t0049.raw
+  172032    e8dd8abf3d9643ea3921b22c9af2e0e7 spanish/t82t0050.raw
+  150136    ba9c484a9d5dd47926419f033893ee3c spanish/t82t0051.raw
+  61160     1d382448f867946ac56a1ce6c4bf324b spanish/t82t0052.raw
+  119262    964323a5f90d93097af64484bbab046c spanish/t82t0053.raw
+  101951    0dd914d0f3384fe0c1f260333626cdd4 spanish/t82t0054.raw
+  65084     bcecf9cf96823c8c2e3432a27ae4372b spanish/t82t0055.raw
+  101144    72cf07d66ae7e0c6ebff43a5461156f8 spanish/t82t0056.raw
+  145665    c74e6dacee1c59ebe1d6a8199d5e6fea spanish/t82t0057.raw
+  115404    0ec3f482656de53fd72a5371bd9eb4d2 spanish/t82t0058.raw
+  131016    93f1aa1ac6982998d6b1ca4c7a89c74e spanish/t82t0059.raw
+  138215    c74f544369ab04eb17bfd5e2fa76be58 spanish/t82t0060.raw
+  85869     0bb3a10c8c69f6ad31d967fb102f8718 spanish/t82t0061.raw
+  93960     1a3abe2d093160e075a3534304f6d8d2 spanish/t82t0062.raw
+  33099     9af301fcd715f1cd7d62da4883a74c28 spanish/t83t0000.raw
+  68832     e207c01bc399bc084a45fb696f5b96c0 spanish/t83t0001.raw
+  76328     0db9181630b7d34b71a4e311975bce84 spanish/t83t0002.raw
+  88208     6450ea863a87668b5b3d07691a2a3491 spanish/t83t0040.raw
+  73904     38d6b6fa3b500d092beb49f443a433f5 spanish/t83t0041.raw
+  125531    41f7812ca2710a31f928330db5d097c8 spanish/t83t0042.raw
+  79864     c39f91a52d0e73698f525657a80ae9c8 spanish/t83t0043.raw
+  69136     341dc11c857f69e8fd17a96fcd3e1a18 spanish/t83t0044.raw
+  66752     af108fbfc7a16d4831e2ed7055f5f248 spanish/t83t0045.raw
+  128880    67095072427cb497a7f28b841b273ac8 spanish/t83t0046.raw
+  84748     df6a714a973338c1ed799cc31ad58351 spanish/t83t0047.raw
 ...
