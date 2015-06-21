@@ -1,0 +1,557 @@
+---
+longname: "Legend of Kyrandia III: Malcolm's Revenge"
+copyright: © 1994 Westwood Studios
+plugin: scummvm_common
+gameid: kyra3
+
+packages:
+  kyrandia3-data:
+    gog:
+      url: legend_of_kyrandia
+      game: legend_of_kyrandia_malcolms_revenge
+    install:
+    - album.pak
+    - altar.pak
+    - anytalk.tlk
+    - arena.pak
+    - arrest1.aud
+    - bath1.aud
+    - baths.pak
+    - bench0.vqa
+    - bluff.pak
+    - boat0.vqa
+    - burbs.pak
+    - ccombs.pak
+    - cellar.pak
+    - ch1som.pak
+    - ch1some.pak
+    - ch1somf.pak
+    - ch1somg.pak
+    - ch1talk.tlk
+    - ch2som.pak
+    - ch2some.pak
+    - ch2somf.pak
+    - ch2somg.pak
+    - ch2talk.tlk
+    - ch3som.pak
+    - ch3some.pak
+    - ch3somf.pak
+    - ch3somg.pak
+    - ch3talk.tlk
+    - ch4som.pak
+    - ch4some.pak
+    - ch4somf.pak
+    - ch4somg.pak
+    - ch4talk.tlk
+    - ch5som.pak
+    - ch5some.pak
+    - ch5somf.pak
+    - ch5somg.pak
+    - ch5talk.tlk
+    - clown1.aud
+    - colossa.pak
+    - colossb.pak
+    - colossc.pak
+    - court.pak
+    - cow1_0.vqa
+    - cow2_0.vqa
+    - cow3_0.vqa
+    - credits0.vqa
+    - dairy.pak
+    - darm2.aud
+    - darms.pak
+    - dock.pak
+    - dump.pak
+    - entry.pak
+    - factory.pak
+    - fall1m.aud
+    - fall2.aud
+    - fallsa.pak
+    - fallsb.pak
+    - fallsc.pak
+    - fallsd.pak
+    - fallse.pak
+    - filedata.fdt
+    - fish1.aud
+    - fishwndr.aud
+    - fort.pak
+    - galley.pak
+    - gang.pak
+    - gate.pak
+    - grave.pak
+    - groove1.aud
+    - groove2.aud
+    - groove3.aud
+    - herman1.aud
+    - home.pak
+    - inlet.pak
+    - jail1.aud
+    - jail2.aud
+    - jung0.vqa
+    - jungle1.aud
+    - junglea.pak
+    - jungleb.pak
+    - junglec.pak
+    - jungled.pak
+    - junglee.pak
+    - junglef.pak
+    - jungleg.pak
+    - jungleh.pak
+    - junglei.pak
+    - k3intro0.vqa
+    - kathy1.aud
+    - king1.aud
+    - king2.aud
+    - landing.pak
+    - lodge.pak
+    - nicesine.aud
+    - ocean1.aud
+    - onboat.pak
+    - onetime.pak
+    - parlour.pak
+    - path.pak
+    - pegasus1.aud
+    - pirate.pak
+    - pirate1.aud
+    - pirate2.aud
+    - pirate3.aud
+    - pop1.aud
+    - pop2.aud
+    - pop3.aud
+    - port1.aud
+    - prison.pak
+    - quarry.pak
+    - queen1.aud
+    - ruins1.aud
+    - ruinsa.pak
+    - ruinsb.pak
+    - school.pak
+    - snakes1.aud
+    - spirit1.aud
+    - spring1.aud
+    - spring1a.aud
+    - squirl1.aud
+    - statue1.aud
+    - statue2.aud
+    - street.pak
+    - studio.pak
+    - termnl.pak
+    - title1.aud
+    - tower.pak
+    - town.pak
+    - under1.aud
+    - undera.pak
+    - underb.pak
+    - walkchp1.aud
+    - westwood.001
+    - xaltar.pak
+    - xarena.pak
+    - xbaths.pak
+    - xbluff.pak
+    - xburbs.pak
+    - xccombs.pak
+    - xcellar.pak
+    - xcolosc.pak
+    - xdairy.pak
+    - xdarms.pak
+    - xdock.pak
+    - xdump.pak
+    - xfactry.pak
+    - xfort.pak
+    - xgate.pak
+    - xgrave.pak
+    - xhome.pak
+    - xinboat.pak
+    - xingate.pak
+    - xjungla.pak
+    - xjunglb.pak
+    - xjunglc.pak
+    - xjungld.pak
+    - xjungle.pak
+    - xjunglf.pak
+    - xjunglg.pak
+    - xjunglh.pak
+    - xjungli.pak
+    - xlandng.pak
+    - xlodge.pak
+    - xparlr.pak
+    - xpath.pak
+    - xpawn.pak
+    - xpirate.pak
+    - xruinsa.pak
+    - xruinsb.pak
+    - xstreet.pak
+    - xstudio.pak
+    - xtown.pak
+    - yank1.aud
+    - zan2.aud
+    optional:
+    - manual.pdf
+
+files:
+  manual.pdf:
+    install_to: $docdir
+  setup_legend_of_kyrandia3_2.1.0.6.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - album.pak
+    - altar.pak
+    - anytalk.tlk
+    - arena.pak
+    - arrest1.aud
+    - bath1.aud
+    - baths.pak
+    - bench0.vqa
+    - bluff.pak
+    - boat0.vqa
+    - burbs.pak
+    - ccombs.pak
+    - cellar.pak
+    - ch1som.pak
+    - ch1some.pak
+    - ch1somf.pak
+    - ch1somg.pak
+    - ch1talk.tlk
+    - ch2som.pak
+    - ch2some.pak
+    - ch2somf.pak
+    - ch2somg.pak
+    - ch2talk.tlk
+    - ch3som.pak
+    - ch3some.pak
+    - ch3somf.pak
+    - ch3somg.pak
+    - ch3talk.tlk
+    - ch4som.pak
+    - ch4some.pak
+    - ch4somf.pak
+    - ch4somg.pak
+    - ch4talk.tlk
+    - ch5som.pak
+    - ch5some.pak
+    - ch5somf.pak
+    - ch5somg.pak
+    - ch5talk.tlk
+    - clown1.aud
+    - colossa.pak
+    - colossb.pak
+    - colossc.pak
+    - court.pak
+    - cow1_0.vqa
+    - cow2_0.vqa
+    - cow3_0.vqa
+    - credits0.vqa
+    - dairy.pak
+    - darm2.aud
+    - darms.pak
+    - dock.pak
+    - dump.pak
+    - entry.pak
+    - factory.pak
+    - fall1m.aud
+    - fall2.aud
+    - fallsa.pak
+    - fallsb.pak
+    - fallsc.pak
+    - fallsd.pak
+    - fallse.pak
+    - filedata.fdt
+    - fish1.aud
+    - fishwndr.aud
+    - fort.pak
+    - galley.pak
+    - gang.pak
+    - gate.pak
+    - grave.pak
+    - groove1.aud
+    - groove2.aud
+    - groove3.aud
+    - herman1.aud
+    - home.pak
+    - inlet.pak
+    - jail1.aud
+    - jail2.aud
+    - jung0.vqa
+    - jungle1.aud
+    - junglea.pak
+    - jungleb.pak
+    - junglec.pak
+    - jungled.pak
+    - junglee.pak
+    - junglef.pak
+    - jungleg.pak
+    - jungleh.pak
+    - junglei.pak
+    - k3intro0.vqa
+    - kathy1.aud
+    - king1.aud
+    - king2.aud
+    - landing.pak
+    - lodge.pak
+    - nicesine.aud
+    - ocean1.aud
+    - onboat.pak
+    - onetime.pak
+    - parlour.pak
+    - path.pak
+    - pegasus1.aud
+    - pirate.pak
+    - pirate1.aud
+    - pirate2.aud
+    - pirate3.aud
+    - pop1.aud
+    - pop2.aud
+    - pop3.aud
+    - port1.aud
+    - prison.pak
+    - quarry.pak
+    - queen1.aud
+    - ruins1.aud
+    - ruinsa.pak
+    - ruinsb.pak
+    - school.pak
+    - snakes1.aud
+    - spirit1.aud
+    - spring1.aud
+    - spring1a.aud
+    - squirl1.aud
+    - statue1.aud
+    - statue2.aud
+    - street.pak
+    - studio.pak
+    - termnl.pak
+    - title1.aud
+    - tower.pak
+    - town.pak
+    - under1.aud
+    - undera.pak
+    - underb.pak
+    - walkchp1.aud
+    - westwood.001
+    - xaltar.pak
+    - xarena.pak
+    - xbaths.pak
+    - xbluff.pak
+    - xburbs.pak
+    - xccombs.pak
+    - xcellar.pak
+    - xcolosc.pak
+    - xdairy.pak
+    - xdarms.pak
+    - xdock.pak
+    - xdump.pak
+    - xfactry.pak
+    - xfort.pak
+    - xgate.pak
+    - xgrave.pak
+    - xhome.pak
+    - xinboat.pak
+    - xingate.pak
+    - xjungla.pak
+    - xjunglb.pak
+    - xjunglc.pak
+    - xjungld.pak
+    - xjungle.pak
+    - xjunglf.pak
+    - xjunglg.pak
+    - xjunglh.pak
+    - xjungli.pak
+    - xlandng.pak
+    - xlodge.pak
+    - xparlr.pak
+    - xpath.pak
+    - xpawn.pak
+    - xpirate.pak
+    - xruinsa.pak
+    - xruinsb.pak
+    - xstreet.pak
+    - xstudio.pak
+    - xtown.pak
+    - yank1.aud
+    - zan2.aud
+    - manual.pdf
+
+size_and_md5: |
+  266271    03f98f45ca93aed90acf1f5db75379d8 album.pak
+  705155    d8d835c73d5de6d483a71e26b1df6424 altar.pak
+  6096297   a55216d74fcbcf9103dde01c841a0412 anytalk.tlk
+  1018073   c9afba2ce04c75637e32c63666d31e22 arena.pak
+  1938730   e09df4cfd5535fd925e573b5f9be6ccf arrest1.aud
+  3828092   781614034d08c25f8fd92aea3d10ed62 bath1.aud
+  172943    436ac85c7521940122cab7e5be129c79 baths.pak
+  61262     6ffe332b8550edf65744a5d872f4d9b9 bench0.vqa
+  1225697   60ceaf99594295535ef3e4a77aa1915a bluff.pak
+  1655624   33d626b36e837b9b2539b61e1d4d314c boat0.vqa
+  189592    df4027c8fc2fce090f82bb6bb17bd54a burbs.pak
+  51477     9a4046a442dc6a36e2b7f9ac85aa17fb ccombs.pak
+  375107    ca620b7a3e22caac828f2ab17641a793 cellar.pak
+  29319     5336235c8708b5660d560a9c8f17a990 ch1som.pak
+  104343    4cf7f1250c5b8ee161ed3eb0b1d967bc ch1some.pak
+  129649    7f50a9f875935cd856f6facc71b232d8 ch1somf.pak
+  125309    1519206a997dfe8e2dc98b7852c7b1a8 ch1somg.pak
+  56910696  f1ef73516a6613a012c415dc66e89d0b ch1talk.tlk
+  15921     165c6d0e76fc9ba51d07a096708253ad ch2som.pak
+  69855     a249a02c98a72da496b2099b2c3ff081 ch2some.pak
+  88327     1822bd3afedfced1dc1eef382ff7cb2c ch2somf.pak
+  85745     4eef08a536317f1b9a4c7c637b3c0da7 ch2somg.pak
+  27815053  196caf9e7a0d39d6b1ed6ebb512f07f3 ch2talk.tlk
+  260       003260078395019d9db3c810bca55a2e ch3som.pak
+  800       19b1b64f1aaf6235d51264bf4597a683 ch3some.pak
+  926       48252ad30b850362e31997890b5c49db ch3somf.pak
+  1015      a69916ecb568abab7f285cd8827197d5 ch3somg.pak
+  5404564   8038f00a806154696228a10b26f92b25 ch3talk.tlk
+  10606     ccc89581c7842e10a32483ace4578ad3 ch4som.pak
+  47472     0685e2d63ad5a8ef9471600276047100 ch4some.pak
+  57646     a36e51dd9c004ced0fd0e2141f3ef5b7 ch4somf.pak
+  57801     68735687d48a8fc8e6af92521665a70e ch4somg.pak
+  20306510  e85a0c3f42996622aa238a5eaeff9241 ch4talk.tlk
+  24759     0b0d5a8331f7a349ce3458f3d328a3dd ch5som.pak
+  71756     3a3cfa7c1c6cfdaa487acad46576bf5c ch5some.pak
+  90966     fc76a48f32dad3d23743c2f2259b4c19 ch5somf.pak
+  88811     d4373296d775140690c2bec846623190 ch5somg.pak
+  56304845  7437479223df5d64bafdf39bd85835a5 ch5talk.tlk
+  172214    283ff4b57dab1b9afb5e1323c170f565 clown1.aud
+  584162    72dd9c5f6109af1a80a2e00db7e35b08 colossa.pak
+  665033    14a706a237f491357ee7a2c7c9ebd63a colossb.pak
+  249683    3761e3769f1321fbc054b859dfe8b014 colossc.pak
+  496527    15eb3d2984b643f59ff8e866468091cd court.pak
+  2795320   168ecea2f6f84e78d63c514dc621eede cow1_0.vqa
+  3726098   985a023ea0248c3f8fc3bdec36bb3340 cow2_0.vqa
+  5297698   b7976dedbf80cba2ea048da4c8fbdf06 cow3_0.vqa
+  51659812  4f7738c1fe561f9c945e7b9d7738be14 credits0.vqa
+  682009    2f2e7604da569d5982672ed7a48d457a dairy.pak
+  3495794   7396ec4414e238b6d1f7de6f30ec3bc9 darm2.aud
+  1021057   75321aab93d5fce88a7a0610932a04ee darms.pak
+  320753    39e787f0e5390b3cf020673f82b0f55b dock.pak
+  399468    97a4527547762cbc98c340ba4384e381 dump.pak
+  102258    a6bc9bf834e094bdee94f613bd616ac0 entry.pak
+  180966    eb02289cecf1c4447f31aa9882c89104 factory.pak
+  44156     3b4bffa8cc6556199d91498188a06398 fall1m.aud
+  84778     9d56a279bf91563623d7934e12eb876e fall2.aud
+  688464    2d419de3efe9c58f3cf74d8fe7ec896c fallsa.pak
+  1406772   915c3c7b5bbf4f835d67b5957074e03e fallsb.pak
+  1265380   ac7ab7b0ba1704a592fa4932a93cf928 fallsc.pak
+  1351342   4e07f43a8663757e7dec437f8e9cd053 fallsd.pak
+  1325888   94beddb29f29134ee7da188c1a07fcb9 fallse.pak
+  89556     2e6f8ba0742f03374222b86e678bea25 filedata.fdt
+  2948176   4868ba778b4c3f6130aa7ea974c80d06 fish1.aud
+  3548497   a2cb509f990bf669046be29b6474fe73 fishwndr.aud
+  263019    c1bce091511ea2ec76f6fee5020a5de9 fort.pak
+  69334     e9b5771af7cc563f6ccca7c46a6b1925 galley.pak
+  189611    993c7b670e8f9706f8353278c33fd5c4 gang.pak
+  248720    9430cc3dfc781240c0cc50fc07b8dbe8 gate.pak
+  201795    958f95c04ecf65f6ca95afa4b2f8e489 grave.pak
+  3853320   d9b2e8ff5d5a64c940e9012c79a88b98 groove1.aud
+  840490    fd855fca4087fbf2abde0037af019c9d groove2.aud
+  1954203   9be26beaa7006dd9f55ab09a31ee8211 groove3.aud
+  687113    628bdf6c22651c57779dba080f2c5cd0 herman1.aud
+  251131    f42bc5ff6217542e7586f1c5d093d77a home.pak
+  501225    345d101e1910c4268241f980c4249ac8 inlet.pak
+  1998646   3e82bde8208d3c19a0fa779b1f308e51 jail1.aud
+  917302    51b7860e82a3a30337b986220857e06a jail2.aud
+  3170058   f6d06dfefb94ca2d4e472e0e5f702bf1 jung0.vqa
+  5958934   775f6f4646974ec45367ee652b3ff236 jungle1.aud
+  90164     89386de9d1281be7cc0ebe2ef61231f6 junglea.pak
+  79065     509dc97a4d87e63011dc308446adec5a jungleb.pak
+  88477     af99bf30456e9bb9cb24e792e0ba76ad junglec.pak
+  111514    ae5c48b681e7afb18023be2ba01b1f76 jungled.pak
+  126098    2e9c54b648e195e01b13640f0979f951 junglee.pak
+  82991     d60d9c0a4099c10c3552158516d145bc junglef.pak
+  75624     c224c8b7e3ed5f93ad392e3d7c78a04f jungleg.pak
+  88982     d1592f7dc80a76c1e53dd62abfdfc8a1 jungleh.pak
+  97386     c09ed9a183f0693bc07c71bcc2ab074e junglei.pak
+  38974196  1202b8182b3939b3766cae8e86938e36 k3intro0.vqa
+  1232404   906c115e64d0227a1c3f50de9b01b15f kathy1.aud
+  112564    8f60745d18057e4ea599a2b036e6e1f0 king1.aud
+  30470     8cdb25445b0b0ee5ccdccf9f5acb43a7 king2.aud
+  1127705   7863a7e257aab163f3c9e1d9495e4615 landing.pak
+  435424    b0a80555d0127cfb2b493970d378bc1b lodge.pak
+  152188    01600fb93f91e7ee29cbfbd4401dd9f2 nicesine.aud
+  2164346   6e8997492329331140cc1bc188cb5cc6 ocean1.aud
+  113271    02d016e733af9172c60c7b15fa2b250e onboat.pak
+  474840    3833ff312757b8e6147f464cca0a6587 onetime.pak
+  1001613   77762056c9ff7ed5996e3ae9197a1e6d parlour.pak
+  65930     5e9c58d6e272c142eddc5739a7860458 path.pak
+  301470    748d74baf582cccb79c187b23c68b445 pegasus1.aud
+  333824    6f9d0770c9ba558bcb8073f3e7d7f9c4 pirate.pak
+  2310620   965247d396b08f1c63564c12a0ff741d pirate1.aud
+  1650412   af4f8546d3de833b81c5dc10630244db pirate2.aud
+  70780     44f029b230ee15bca9d4b64731fd8969 pirate3.aud
+  1459340   90dd5cb555aa2fff97d5f0ea35dfa624 pop1.aud
+  2730719   9fa0b735bcdd5ddfc441e3e7064d57e2 pop2.aud
+  2146420   c33b54dc546d8877dcb34961d51130bf pop3.aud
+  146881    4739c9ca4d52d6c2b630bc4e6ea827c6 port1.aud
+  508878    e71157fd243300da6e18aa1b384c1f57 prison.pak
+  372837    4a944d2ab8dbb757a16156d463dc03e8 quarry.pak
+  1891374   12f96ebbf0576b9d26e1210e3a5d4816 queen1.aud
+  4316844   73d696d2ff45bbf594117c96fc16303f ruins1.aud
+  100774    30a9b6075979f16d17c0d8648f995943 ruinsa.pak
+  863512    bfdd6ed29ff6f57cc19b7b2128302988 ruinsb.pak
+  239834    7cc6f33e6402a32519db31168a891420 school.pak
+  79952     09d3916e1e639b1f3b4c5adc408189b0 snakes1.aud
+  1631992   7628ea4c336de21a0cb37f7a48b3c6cc spirit1.aud
+  552480    a01ea80886fc7ea6c3d06491dcdaed4c spring1.aud
+  2243284   9686074b2ce86bdddfbacbd493ad1cd4 spring1a.aud
+  107917    e942ca14c11d299e9266e9caa09704fa squirl1.aud
+  95843     73500eeceb3c2c300f9afe34bec38798 statue1.aud
+  93301     6b51a1c403e04dd33f124ac54fa5f9fd statue2.aud
+  190755    3928ef04b53d9f361c14d2303f2936a5 street.pak
+  912867    52dfc881dbf8d06aed3e7264ec90bff8 studio.pak
+  154382    2183ea806b71dd3cba7ee99a0a9534d1 termnl.pak
+  3560738   2c950d3df88d68d3515f0b9e0789f276 title1.aud
+  155667    b6e70c5b6f096865ff2321abacf7cc28 tower.pak
+  452930    a8afe788d969e2560ba49bd988389657 town.pak
+  1675618   a2b62450a72e09351c943325288dd12d under1.aud
+  432646    1148bec605296edfdac2497099cff4d2 undera.pak
+  333027    3b1b28a09ac62df8c4e8c8765578e7a2 underb.pak
+  3613094   29198a001be295490dec238f75bcbef0 walkchp1.aud
+  10898938  350d9f0366e00f3ae4350929c995dcbd westwood.001
+  247260    3a832ea9e8b03f052c2b33f2c40dc75b xaltar.pak
+  333359    80fb2359df26c83e23acabea4dff7001 xarena.pak
+  222408    789ec03eda0ba521dd12d4cab005f81e xbaths.pak
+  29812     58c3f91460d274593ac7c330895a2393 xbluff.pak
+  71181     2861d2ca1d937c08eb82e57a35ce6dca xburbs.pak
+  25542     57c84c0acdd7cd75cd6a5510fe71bb7f xccombs.pak
+  165779    6838b4ff7b6461bb5a18a87277f38241 xcellar.pak
+  174352    ec38066b76a8dd5af40f9ed04eb2c686 xcolosc.pak
+  200328    e76c897dff5ecd6731767c9e470d123f xdairy.pak
+  1051977   68885160b84776313c1cb3d18b4b7e00 xdarms.pak
+  57138     03cc771d51c526b60ca5c2ba51d2cb20 xdock.pak
+  151463    1f36b66a196779d2f77615053eaab044 xdump.pak
+  144932    a8e445e8ef9960161937497f357014bf xfactry.pak
+  90060     888690614a56f1e6ec91bbc5995d463c xfort.pak
+  100359    a9372e50cdbf4bb66652accc08cbc7e4 xgate.pak
+  164173    5d51179dac3d59eb81684911cf7b3367 xgrave.pak
+  976770    fafad7407b73b39a45ee3b2d22e7b555 xhome.pak
+  161192    f3bbdd1cd09ba9aca519759d43f2531b xinboat.pak
+  172040    9c5f41e9aa214ec14bcd55061f53e30e xingate.pak
+  75852     77efe2b14db8fb19dbd1239197785094 xjungla.pak
+  67146     9c6d348599901d2127868a6102ff2ffa xjunglb.pak
+  73367     20bc04b4f1aa48b94d51b412581a8537 xjunglc.pak
+  108568    88b1960f471c8a7c2da0e812d1c6da35 xjungld.pak
+  74808     d3ae3f2cfe8f2ab2641c2457408989d1 xjungle.pak
+  68826     3b3494ee95ac29cc64318d88e1ca5367 xjunglf.pak
+  62211     3f8f95a6134f051a99c0dc0d18566f1f xjunglg.pak
+  77228     c4af8041e520540b566bde5fc5f548db xjunglh.pak
+  77673     229e4471b431aa1ac71cb60a94aa42af xjungli.pak
+  451532    11086a8fc3dc73a8df734a8d7fa1747f xlandng.pak
+  378843    c13d1275654d617e7f15e2706e85ee57 xlodge.pak
+  1422984   34a8ae248f6a6ce3562f8da5f323df7b xparlr.pak
+  309934    9caef419dec0c7ee5d800cdf3591c5e1 xpath.pak
+  107648    5fb86e20916f98824246a29f1b0a3950 xpawn.pak
+  196901    ef8f56033498fbd3bcb32fc9bc85860e xpirate.pak
+  69241     c897ece8ed63e42f5e3224da06a686d6 xruinsa.pak
+  43791     425587aa65d73553d918b069e2eaa593 xruinsb.pak
+  71850     bb17eda69d2e6a67f8c0d77a61e9cd27 xstreet.pak
+  965352    86d5eb82dea1a27d33dfa4d5b909b485 xstudio.pak
+  76110     cee5fcb2fa9d0bbb3936ed53331163e0 xtown.pak
+  46362     5964594a7bb0737b9a46efc5256cc1b0 yank1.aud
+  993012    0979b891a8d370f63ea2d46f0a8bf6f5 zan2.aud
+  7266836   f37094707c94db818ee5426832254896 manual.pdf
+  281610968 58ba47db47bce7427e7618e2fc9d16e8 setup_legend_of_kyrandia3_2.1.0.6.exe
+
+sha1sums: |
+  3f2cb068f5b09e7c89874ec910257f28a73cfb1d  setup_legend_of_kyrandia3_2.1.0.6.exe
+...
+

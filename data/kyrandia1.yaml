@@ -1,0 +1,2224 @@
+---
+longname: Legend of Kyrandia I
+copyright: © 1992 Westwood Studios
+plugin: scummvm_common
+gameid: kyra1
+
+packages:
+  kyrandia1-en-data:
+    debian:
+      provides: kyrandia1-data
+    gog:
+      url: legend_of_kyrandia
+      game: legend_of_kyrandia
+    install:
+    - main_eng.cps
+    - text_eng.cps
+    - adl.pak
+    - alchemy.pak
+    - alchemy.vrm
+    - algae.pak
+    - algae.vrm
+    - altar.apk
+    - altar.pak
+    - altar.vrm
+    - arch.pak
+    - arch.vrm
+    - balcony.pak
+    - balcony.vrm
+    - belroom.apk
+    - belroom.pak
+    - belroom.vrm
+    - bonkbg.apk
+    - bonkbg.pak
+    - bonkbg.vrm
+    - bridge.pak
+    - bridge.vrm
+    - brins.pak
+    - brins.vrm
+    - broken.apk
+    - broken.pak
+    - broken.vrm
+    - burn.pak
+    - burn.vrm
+    - castle.apk
+    - castle.pak
+    - castle.vrm
+    - catacom.pak
+    - catacom.vrm
+    - cave.apk
+    - cave.pak
+    - cave.vrm
+    - caveb.pak
+    - caveb.vrm
+    - cgate.apk
+    - cgate.pak
+    - cgate.vrm
+    - chapter1.vrm
+    - chapter2.vrm
+    - chapter3.vrm
+    - chapter4.vrm
+    - chapter5.vrm
+    - chasm.pak
+    - chasm.vrm
+    - cliff.pak
+    - cliff.vrm
+    - col.pak
+    - darms.pak
+    - darms.vrm
+    - dead.apk
+    - dead.pak
+    - dead.vrm
+    - dnstair.apk
+    - dnstair.pak
+    - dnstair.vrm
+    - dragon.pak
+    - dragon.vrm
+    - dragon1.apk
+    - dragon2.apk
+    - edge.pak
+    - edge.vrm
+    - edgeb.pak
+    - edgeb.vrm
+    - emcav.pak
+    - emcav.vrm
+    - enter.pak
+    - enter.vrm
+    - extheal.pak
+    - extheal.vrm
+    - extpot.apk
+    - extpot.pak
+    - extpot.vrm
+    - extspel.pak
+    - extspel.vrm
+    - falls.pak
+    - falls.vrm
+    - feststh.pak
+    - feststh.vrm
+    - fgowest.pak
+    - fgowest.vrm
+    - finale.pak
+    - fnorth.pak
+    - fnorth.vrm
+    - foresta.apk
+    - foresta.pak
+    - foresta.vrm
+    - forestb.apk
+    - forestb.pak
+    - forestb.vrm
+    - forestc.pak
+    - forestc.vrm
+    - fountn.apk
+    - fountn.pak
+    - fountn.vrm
+    - foyer.apk
+    - foyer.pak
+    - foyer.vrm
+    - fsouth.pak
+    - fsouth.vrm
+    - fsouthb.pak
+    - fsouthb.vrm
+    - fwststh.pak
+    - fwststh.vrm
+    - gatecv.apk
+    - gatecv.pak
+    - gatecv.vrm
+    - gem.apk
+    - gem.pak
+    - gem.vrm
+    - gemcut.apk
+    - gemcut.pak
+    - gemcut.vrm
+    - gen_cav.pak
+    - gen_cav.vrm
+    - gencavb.pak
+    - gencavb.vrm
+    - genhall.apk
+    - genhall.pak
+    - genhall.vrm
+    - glade.apk
+    - glade.pak
+    - glade.vrm
+    - grave.apk
+    - grave.pak
+    - grave.vrm
+    - grthall.pak
+    - grthall.vrm
+    - healer.apk
+    - healer.pak
+    - healer.vrm
+    - intro.vrm
+    - intro1.pak
+    - intro2.pak
+    - intro3.pak
+    - intro4.pak
+    - kitchen.pak
+    - kitchen.vrm
+    - kyragem.pak
+    - kyragem.vrm
+    - lagoon.apk
+    - lagoon.pak
+    - lagoon.vrm
+    - landing.apk
+    - landing.pak
+    - landing.vrm
+    - lava.apk
+    - lava.pak
+    - lava.vrm
+    - lephole.apk
+    - lephole.pak
+    - lephole.vrm
+    - library.apk
+    - library.pak
+    - library.vrm
+    - misc.pak
+    - mix.apk
+    - mix.pak
+    - mix.vrm
+    - mooncav.apk
+    - mooncav.pak
+    - mooncav.vrm
+    - ncliff.pak
+    - ncliff.vrm
+    - ncliffb.pak
+    - ncliffb.vrm
+    - nwclifb.pak
+    - nwclifb.vrm
+    - nwcliff.pak
+    - nwcliff.vrm
+    - oaks.pak
+    - oaks.vrm
+    - plateau.pak
+    - plateau.vrm
+    - pltcave.pak
+    - pltcave.vrm
+    - potion.apk
+    - potion.pak
+    - potion.vrm
+    - ruby.pak
+    - ruby.vrm
+    - sickwil.pak
+    - sickwil.vrm
+    - snd.pak
+    - song.apk
+    - song.pak
+    - song.vrm
+    - sorrow.apk
+    - sorrow.pak
+    - sorrow.vrm
+    - spell.apk
+    - spell.pak
+    - spell.vrm
+    - spring.pak
+    - spring.vrm
+    - square.pak
+    - square.vrm
+    - startup.pak
+    - stump.apk
+    - stump.pak
+    - stump.vrm
+    - temple.apk
+    - temple.pak
+    - temple.vrm
+    - trunk.apk
+    - trunk.pak
+    - trunk.vrm
+    - upstair.pak
+    - upstair.vrm
+    - well.pak
+    - well.vrm
+    - willow.apk
+    - willow.pak
+    - willow.vrm
+    - wise.pak
+    - wise.vrm
+    - xedge.apk
+    - xedge.pak
+    - xedge.vrm
+    - xedgeb.pak
+    - xedgeb.vrm
+    - xedgec.pak
+    - xedgec.vrm
+    - xmi.pak
+    - zrock.pak
+    - zrock.vrm
+    optional:
+    - manual.pdf
+
+  kyrandia1-de-data:
+    lang: de
+    debian:
+      provides: kyrandia1-data
+    gog:
+      url: legend_of_kyrandia
+      game: legend_of_kyrandia
+    install:
+    - main_ger.cps
+    - text_ger.cps
+    - adl.pak
+    - alchemy.pak_de
+    - alchemy.vrm
+    - algae.pak_de
+    - algae.vrm
+    - altar.apk
+    - altar.pak_de
+    - altar.vrm
+    - arch.pak_de
+    - arch.vrm
+    - balcony.pak_de
+    - balcony.vrm
+    - belroom.apk
+    - belroom.pak_de
+    - belroom.vrm
+    - bonkbg.apk
+    - bonkbg.pak_de
+    - bonkbg.vrm
+    - bridge.pak_de
+    - bridge.vrm
+    - brins.pak_de
+    - brins.vrm
+    - broken.apk
+    - broken.pak_de
+    - broken.vrm
+    - burn.pak_de
+    - burn.vrm
+    - castle.apk
+    - castle.pak_de
+    - castle.vrm
+    - catacom.pak_de
+    - catacom.vrm
+    - cave.apk
+    - cave.pak_de
+    - cave.vrm
+    - caveb.pak_de
+    - caveb.vrm
+    - cgate.apk
+    - cgate.pak_de
+    - cgate.vrm
+    - chapter1.vrm
+    - chapter2.vrm
+    - chapter3.vrm
+    - chapter4.vrm
+    - chapter5.vrm
+    - chasm.pak_de
+    - chasm.vrm
+    - cliff.pak_de
+    - cliff.vrm
+    - col.pak
+    - darms.pak_de
+    - darms.vrm
+    - dead.apk
+    - dead.pak_de
+    - dead.vrm
+    - dnstair.apk
+    - dnstair.pak_de
+    - dnstair.vrm
+    - dragon.pak_de
+    - dragon.vrm
+    - dragon1.apk
+    - dragon2.apk
+    - edge.pak_de
+    - edge.vrm
+    - edgeb.pak_de
+    - edgeb.vrm
+    - emcav.pak_de
+    - emcav.vrm
+    - enter.pak_de
+    - enter.vrm
+    - extheal.pak_de
+    - extheal.vrm
+    - extpot.apk
+    - extpot.pak_de
+    - extpot.vrm
+    - extspel.pak_de
+    - extspel.vrm
+    - falls.pak_de
+    - falls.vrm
+    - feststh.pak_de
+    - feststh.vrm
+    - fgowest.pak_de
+    - fgowest.vrm
+    - finale.pak_de
+    - fnorth.pak_de
+    - fnorth.vrm
+    - foresta.apk
+    - foresta.pak_de
+    - foresta.vrm
+    - forestb.apk
+    - forestb.pak_de
+    - forestb.vrm
+    - forestc.pak_de
+    - forestc.vrm
+    - fountn.apk
+    - fountn.pak_de
+    - fountn.vrm
+    - foyer.apk
+    - foyer.pak_de
+    - foyer.vrm
+    - fsouth.pak_de
+    - fsouth.vrm
+    - fsouthb.pak_de
+    - fsouthb.vrm
+    - fwststh.pak_de
+    - fwststh.vrm
+    - gatecv.apk
+    - gatecv.pak_de
+    - gatecv.vrm
+    - gem.apk
+    - gem.pak_de
+    - gem.vrm
+    - gemcut.apk
+    - gemcut.pak_de
+    - gemcut.vrm
+    - gen_cav.pak_de
+    - gen_cav.vrm
+    - gencavb.pak_de
+    - gencavb.vrm
+    - genhall.apk
+    - genhall.pak_de
+    - genhall.vrm
+    - glade.apk
+    - glade.pak_de
+    - glade.vrm
+    - grave.apk
+    - grave.pak_de
+    - grave.vrm
+    - grthall.pak_de
+    - grthall.vrm
+    - healer.apk
+    - healer.pak_de
+    - healer.vrm
+    - intro.vrm
+    - intro1.pak
+    - intro2.pak
+    - intro3.pak
+    - intro4.pak
+    - kitchen.pak_de
+    - kitchen.vrm
+    - kyragem.pak_de
+    - kyragem.vrm
+    - lagoon.apk
+    - lagoon.pak_de
+    - lagoon.vrm
+    - landing.apk
+    - landing.pak_de
+    - landing.vrm
+    - lava.apk
+    - lava.pak_de
+    - lava.vrm
+    - lephole.apk
+    - lephole.pak_de
+    - lephole.vrm
+    - library.apk
+    - library.pak_de
+    - library.vrm
+    - misc.pak
+    - mix.apk
+    - mix.pak_de
+    - mix.vrm
+    - mooncav.apk
+    - mooncav.pak_de
+    - mooncav.vrm
+    - ncliff.pak_de
+    - ncliff.vrm
+    - ncliffb.pak_de
+    - ncliffb.vrm
+    - nwclifb.pak_de
+    - nwclifb.vrm
+    - nwcliff.pak_de
+    - nwcliff.vrm
+    - oaks.pak_de
+    - oaks.vrm
+    - plateau.pak_de
+    - plateau.vrm
+    - pltcave.pak_de
+    - pltcave.vrm
+    - potion.apk
+    - potion.pak_de
+    - potion.vrm
+    - ruby.pak_de
+    - ruby.vrm
+    - sickwil.pak_de
+    - sickwil.vrm
+    - snd.pak
+    - song.apk
+    - song.pak_de
+    - song.vrm
+    - sorrow.apk
+    - sorrow.pak_de
+    - sorrow.vrm
+    - spell.apk
+    - spell.pak_de
+    - spell.vrm
+    - spring.pak_de
+    - spring.vrm
+    - square.pak_de
+    - square.vrm
+    - startup.pak_de
+    - stump.apk
+    - stump.pak_de
+    - stump.vrm
+    - temple.apk
+    - temple.pak_de
+    - temple.vrm
+    - trunk.apk
+    - trunk.pak_de
+    - trunk.vrm
+    - upstair.pak_de
+    - upstair.vrm
+    - well.pak_de
+    - well.vrm
+    - willow.apk
+    - willow.pak_de
+    - willow.vrm
+    - wise.pak_de
+    - wise.vrm
+    - xedge.apk
+    - xedge.pak_de
+    - xedge.vrm
+    - xedgeb.pak_de
+    - xedgeb.vrm
+    - xedgec.pak_de
+    - xedgec.vrm
+    - xmi.pak
+    - zrock.pak_de
+    - zrock.vrm
+    optional:
+    - manual.pdf
+
+  kyrandia1-fr-data:
+    lang: fr
+    debian:
+      provides: kyrandia1-data
+    gog:
+      url: legend_of_kyrandia
+      game: legend_of_kyrandia
+    install:
+    - main_fre.cps
+    - text_fre.cps
+    - adl.pak
+    - alchemy.pak_fr
+    - alchemy.vrm
+    - algae.pak_fr
+    - algae.vrm
+    - altar.apk
+    - altar.pak_fr
+    - altar.vrm
+    - arch.pak_fr
+    - arch.vrm
+    - balcony.pak_fr
+    - balcony.vrm
+    - belroom.apk
+    - belroom.pak_fr
+    - belroom.vrm
+    - bonkbg.apk
+    - bonkbg.pak_fr
+    - bonkbg.vrm
+    - bridge.pak_fr
+    - bridge.vrm
+    - brins.pak_fr
+    - brins.vrm
+    - broken.apk
+    - broken.pak_fr
+    - broken.vrm
+    - burn.pak_fr
+    - burn.vrm
+    - castle.apk
+    - castle.pak_fr
+    - castle.vrm
+    - catacom.pak_fr
+    - catacom.vrm
+    - cave.apk
+    - cave.pak_fr
+    - cave.vrm
+    - caveb.pak_fr
+    - caveb.vrm
+    - cgate.apk
+    - cgate.pak_fr
+    - cgate.vrm
+    - chapter1.vrm
+    - chapter2.vrm
+    - chapter3.vrm
+    - chapter4.vrm
+    - chapter5.vrm
+    - chasm.pak_fr
+    - chasm.vrm
+    - cliff.pak_fr
+    - cliff.vrm
+    - col.pak
+    - darms.pak_fr
+    - darms.vrm
+    - dead.apk
+    - dead.pak_fr
+    - dead.vrm
+    - dnstair.apk
+    - dnstair.pak_fr
+    - dnstair.vrm
+    - dragon.pak_fr
+    - dragon.vrm
+    - dragon1.apk
+    - dragon2.apk
+    - edge.pak_fr
+    - edge.vrm
+    - edgeb.pak_fr
+    - edgeb.vrm
+    - emcav.pak_fr
+    - emcav.vrm
+    - enter.pak_fr
+    - enter.vrm
+    - extheal.pak_fr
+    - extheal.vrm
+    - extpot.apk
+    - extpot.pak_fr
+    - extpot.vrm
+    - extspel.pak_fr
+    - extspel.vrm
+    - falls.pak_fr
+    - falls.vrm
+    - feststh.pak_fr
+    - feststh.vrm
+    - fgowest.pak_fr
+    - fgowest.vrm
+    - finale.pak_fr
+    - fnorth.pak_fr
+    - fnorth.vrm
+    - foresta.apk
+    - foresta.pak_fr
+    - foresta.vrm
+    - forestb.apk
+    - forestb.pak_fr
+    - forestb.vrm
+    - forestc.pak_fr
+    - forestc.vrm
+    - fountn.apk
+    - fountn.pak_fr
+    - fountn.vrm
+    - foyer.apk
+    - foyer.pak_fr
+    - foyer.vrm
+    - fsouth.pak_fr
+    - fsouth.vrm
+    - fsouthb.pak_fr
+    - fsouthb.vrm
+    - fwststh.pak_fr
+    - fwststh.vrm
+    - gatecv.apk
+    - gatecv.pak_fr
+    - gatecv.vrm
+    - gem.apk
+    - gem.pak_fr
+    - gem.vrm
+    - gemcut.apk
+    - gemcut.pak_fr
+    - gemcut.vrm
+    - gen_cav.pak_fr
+    - gen_cav.vrm
+    - gencavb.pak_fr
+    - gencavb.vrm
+    - genhall.apk
+    - genhall.pak_fr
+    - genhall.vrm
+    - glade.apk
+    - glade.pak_fr
+    - glade.vrm
+    - grave.apk
+    - grave.pak_fr
+    - grave.vrm
+    - grthall.pak_fr
+    - grthall.vrm
+    - healer.apk
+    - healer.pak_fr
+    - healer.vrm
+    - intro.vrm
+    - intro1.pak
+    - intro2.pak
+    - intro3.pak
+    - intro4.pak
+    - kitchen.pak_fr
+    - kitchen.vrm
+    - kyragem.pak_fr
+    - kyragem.vrm
+    - lagoon.apk
+    - lagoon.pak_fr
+    - lagoon.vrm
+    - landing.apk
+    - landing.pak_fr
+    - landing.vrm
+    - lava.apk
+    - lava.pak_fr
+    - lava.vrm
+    - lephole.apk
+    - lephole.pak_fr
+    - lephole.vrm
+    - library.apk
+    - library.pak_fr
+    - library.vrm
+    - misc.pak
+    - mix.apk
+    - mix.pak_fr
+    - mix.vrm
+    - mooncav.apk
+    - mooncav.pak_fr
+    - mooncav.vrm
+    - ncliff.pak_fr
+    - ncliff.vrm
+    - ncliffb.pak_fr
+    - ncliffb.vrm
+    - nwclifb.pak_fr
+    - nwclifb.vrm
+    - nwcliff.pak_fr
+    - nwcliff.vrm
+    - oaks.pak_fr
+    - oaks.vrm
+    - plateau.pak_fr
+    - plateau.vrm
+    - pltcave.pak_fr
+    - pltcave.vrm
+    - potion.apk
+    - potion.pak_fr
+    - potion.vrm
+    - ruby.pak_fr
+    - ruby.vrm
+    - sickwil.pak_fr
+    - sickwil.vrm
+    - snd.pak
+    - song.apk
+    - song.pak_fr
+    - song.vrm
+    - sorrow.apk
+    - sorrow.pak_fr
+    - sorrow.vrm
+    - spell.apk
+    - spell.pak_fr
+    - spell.vrm
+    - spring.pak_fr
+    - spring.vrm
+    - square.pak_fr
+    - square.vrm
+    - startup.pak_fr
+    - stump.apk
+    - stump.pak_fr
+    - stump.vrm
+    - temple.apk
+    - temple.pak_fr
+    - temple.vrm
+    - trunk.apk
+    - trunk.pak_fr
+    - trunk.vrm
+    - upstair.pak_fr
+    - upstair.vrm
+    - well.pak_fr
+    - well.vrm
+    - willow.apk
+    - willow.pak_fr
+    - willow.vrm
+    - wise.pak_fr
+    - wise.vrm
+    - xedge.apk
+    - xedge.pak_fr
+    - xedge.vrm
+    - xedgeb.pak_fr
+    - xedgeb.vrm
+    - xedgec.pak_fr
+    - xedgec.vrm
+    - xmi.pak
+    - zrock.pak_fr
+    - zrock.vrm
+    optional:
+    - manual.pdf
+
+files:
+  manual.pdf:
+    install_to: $docdir
+
+  alchemy.pak_de:
+    install_as: alchemy.pak
+  algae.pak_de:
+    install_as: algae.pak
+  altar.pak_de:
+    install_as: altar.pak
+  arch.pak_de:
+    install_as: arch.pak
+  balcony.pak_de:
+    install_as: balcony.pak
+  belroom.pak_de:
+    install_as: belroom.pak
+  bonkbg.pak_de:
+    install_as: bonkbg.pak
+  bridge.pak_de:
+    install_as: bridge.pak
+  brins.pak_de:
+    install_as: brins.pak
+  broken.pak_de:
+    install_as: broken.pak
+  burn.pak_de:
+    install_as: burn.pak
+  castle.pak_de:
+    install_as: castle.pak
+  catacom.pak_de:
+    install_as: catacom.pak
+  caveb.pak_de:
+    install_as: caveb.pak
+  cave.pak_de:
+    install_as: cave.pak
+  cgate.pak_de:
+    install_as: cgate.pak
+  chasm.pak_de:
+    install_as: chasm.pak
+  cliff.pak_de:
+    install_as: cliff.pak
+  darms.pak_de:
+    install_as: darms.pak
+  dead.pak_de:
+    install_as: dead.pak
+  dnstair.pak_de:
+    install_as: dnstair.pak
+  dragon.pak_de:
+    install_as: dragon.pak
+  edgeb.pak_de:
+    install_as: edgeb.pak
+  edge.pak_de:
+    install_as: edge.pak
+  emcav.pak_de:
+    install_as: emcav.pak
+  enter.pak_de:
+    install_as: enter.pak
+  extheal.pak_de:
+    install_as: extheal.pak
+  extpot.pak_de:
+    install_as: extpot.pak
+  extspel.pak_de:
+    install_as: extspel.pak
+  falls.pak_de:
+    install_as: falls.pak
+  feststh.pak_de:
+    install_as: feststh.pak
+  fgowest.pak_de:
+    install_as: fgowest.pak
+  finale.pak_de:
+    install_as: finale.pak
+  fnorth.pak_de:
+    install_as: fnorth.pak
+  foresta.pak_de:
+    install_as: foresta.pak
+  forestb.pak_de:
+    install_as: forestb.pak
+  forestc.pak_de:
+    install_as: forestc.pak
+  fountn.pak_de:
+    install_as: fountn.pak
+  foyer.pak_de:
+    install_as: foyer.pak
+  fsouthb.pak_de:
+    install_as: fsouthb.pak
+  fsouth.pak_de:
+    install_as: fsouth.pak
+  fwststh.pak_de:
+    install_as: fwststh.pak
+  gatecv.pak_de:
+    install_as: gatecv.pak
+  gemcut.pak_de:
+    install_as: gemcut.pak
+  gem.pak_de:
+    install_as: gem.pak
+  gencavb.pak_de:
+    install_as: gencavb.pak
+  gen_cav.pak_de:
+    install_as: gen_cav.pak
+  genhall.pak_de:
+    install_as: genhall.pak
+  glade.pak_de:
+    install_as: glade.pak
+  grave.pak_de:
+    install_as: grave.pak
+  grthall.pak_de:
+    install_as: grthall.pak
+  healer.pak_de:
+    install_as: healer.pak
+  kitchen.pak_de:
+    install_as: kitchen.pak
+  kyragem.pak_de:
+    install_as: kyragem.pak
+  lagoon.pak_de:
+    install_as: lagoon.pak
+  landing.pak_de:
+    install_as: landing.pak
+  lava.pak_de:
+    install_as: lava.pak
+  lephole.pak_de:
+    install_as: lephole.pak
+  library.pak_de:
+    install_as: library.pak
+  mix.pak_de:
+    install_as: mix.pak
+  mooncav.pak_de:
+    install_as: mooncav.pak
+  ncliffb.pak_de:
+    install_as: ncliffb.pak
+  ncliff.pak_de:
+    install_as: ncliff.pak
+  nwclifb.pak_de:
+    install_as: nwclifb.pak
+  nwcliff.pak_de:
+    install_as: nwcliff.pak
+  oaks.pak_de:
+    install_as: oaks.pak
+  plateau.pak_de:
+    install_as: plateau.pak
+  pltcave.pak_de:
+    install_as: pltcave.pak
+  potion.pak_de:
+    install_as: potion.pak
+  ruby.pak_de:
+    install_as: ruby.pak
+  sickwil.pak_de:
+    install_as: sickwil.pak
+  song.pak_de:
+    install_as: song.pak
+  sorrow.pak_de:
+    install_as: sorrow.pak
+  spell.pak_de:
+    install_as: spell.pak
+  spring.pak_de:
+    install_as: spring.pak
+  square.pak_de:
+    install_as: square.pak
+  startup.pak_de:
+    install_as: startup.pak
+  stump.pak_de:
+    install_as: stump.pak
+  temple.pak_de:
+    install_as: temple.pak
+  trunk.pak_de:
+    install_as: trunk.pak
+  upstair.pak_de:
+    install_as: upstair.pak
+  well.pak_de:
+    install_as: well.pak
+  willow.pak_de:
+    install_as: willow.pak
+  wise.pak_de:
+    install_as: wise.pak
+  xedgeb.pak_de:
+    install_as: xedgeb.pak
+  xedgec.pak_de:
+    install_as: xedgec.pak
+  xedge.pak_de:
+    install_as: xedge.pak
+  zrock.pak_de:
+    install_as: zrock.pak
+
+  alchemy.pak_fr:
+    install_as: alchemy.pak
+  algae.pak_fr:
+    install_as: algae.pak
+  altar.pak_fr:
+    install_as: altar.pak
+  arch.pak_fr:
+    install_as: arch.pak
+  balcony.pak_fr:
+    install_as: balcony.pak
+  belroom.pak_fr:
+    install_as: belroom.pak
+  bonkbg.pak_fr:
+    install_as: bonkbg.pak
+  bridge.pak_fr:
+    install_as: bridge.pak
+  brins.pak_fr:
+    install_as: brins.pak
+  broken.pak_fr:
+    install_as: broken.pak
+  burn.pak_fr:
+    install_as: burn.pak
+  castle.pak_fr:
+    install_as: castle.pak
+  catacom.pak_fr:
+    install_as: catacom.pak
+  caveb.pak_fr:
+    install_as: caveb.pak
+  cave.pak_fr:
+    install_as: cave.pak
+  cgate.pak_fr:
+    install_as: cgate.pak
+  chasm.pak_fr:
+    install_as: chasm.pak
+  cliff.pak_fr:
+    install_as: cliff.pak
+  darms.pak_fr:
+    install_as: darms.pak
+  dead.pak_fr:
+    install_as: dead.pak
+  dnstair.pak_fr:
+    install_as: dnstair.pak
+  dragon.pak_fr:
+    install_as: dragon.pak
+  edgeb.pak_fr:
+    install_as: edgeb.pak
+  edge.pak_fr:
+    install_as: edge.pak
+  emcav.pak_fr:
+    install_as: emcav.pak
+  enter.pak_fr:
+    install_as: enter.pak
+  extheal.pak_fr:
+    install_as: extheal.pak
+  extpot.pak_fr:
+    install_as: extpot.pak
+  extspel.pak_fr:
+    install_as: extspel.pak
+  falls.pak_fr:
+    install_as: falls.pak
+  feststh.pak_fr:
+    install_as: feststh.pak
+  fgowest.pak_fr:
+    install_as: fgowest.pak
+  finale.pak_fr:
+    install_as: finale.pak
+  fnorth.pak_fr:
+    install_as: fnorth.pak
+  foresta.pak_fr:
+    install_as: foresta.pak
+  forestb.pak_fr:
+    install_as: forestb.pak
+  forestc.pak_fr:
+    install_as: forestc.pak
+  fountn.pak_fr:
+    install_as: fountn.pak
+  foyer.pak_fr:
+    install_as: foyer.pak
+  fsouthb.pak_fr:
+    install_as: fsouthb.pak
+  fsouth.pak_fr:
+    install_as: fsouth.pak
+  fwststh.pak_fr:
+    install_as: fwststh.pak
+  gatecv.pak_fr:
+    install_as: gatecv.pak
+  gemcut.pak_fr:
+    install_as: gemcut.pak
+  gem.pak_fr:
+    install_as: gem.pak
+  gencavb.pak_fr:
+    install_as: gencavb.pak
+  gen_cav.pak_fr:
+    install_as: gen_cav.pak
+  genhall.pak_fr:
+    install_as: genhall.pak
+  glade.pak_fr:
+    install_as: glade.pak
+  grave.pak_fr:
+    install_as: grave.pak
+  grthall.pak_fr:
+    install_as: grthall.pak
+  healer.pak_fr:
+    install_as: healer.pak
+  kitchen.pak_fr:
+    install_as: kitchen.pak
+  kyragem.pak_fr:
+    install_as: kyragem.pak
+  lagoon.pak_fr:
+    install_as: lagoon.pak
+  landing.pak_fr:
+    install_as: landing.pak
+  lava.pak_fr:
+    install_as: lava.pak
+  lephole.pak_fr:
+    install_as: lephole.pak
+  library.pak_fr:
+    install_as: library.pak
+  main_fre.cps:
+    install_as: main_fre.
+  mix.pak_fr:
+    install_as: mix.pak
+  mooncav.pak_fr:
+    install_as: mooncav.pak
+  ncliffb.pak_fr:
+    install_as: ncliffb.pak
+  ncliff.pak_fr:
+    install_as: ncliff.pak
+  nwclifb.pak_fr:
+    install_as: nwclifb.pak
+  nwcliff.pak_fr:
+    install_as: nwcliff.pak
+  oaks.pak_fr:
+    install_as: oaks.pak
+  plateau.pak_fr:
+    install_as: plateau.pak
+  pltcave.pak_fr:
+    install_as: pltcave.pak
+  potion.pak_fr:
+    install_as: potion.pak
+  ruby.pak_fr:
+    install_as: ruby.pak
+  sickwil.pak_fr:
+    install_as: sickwil.pak
+  song.pak_fr:
+    install_as: song.pak
+  sorrow.pak_fr:
+    install_as: sorrow.pak
+  spell.pak_fr:
+    install_as: spell.pak
+  spring.pak_fr:
+    install_as: spring.pak
+  square.pak_fr:
+    install_as: square.pak
+  startup.pak_fr:
+    install_as: startup.pak
+  stump.pak_fr:
+    install_as: stump.pak
+  temple.pak_fr:
+    install_as: temple.pak
+  text_fre.cps:
+    install_as: text_fre.
+  trunk.pak_fr:
+    install_as: trunk.pak
+  upstair.pak_fr:
+    install_as: upstair.pak
+  well.pak_fr:
+    install_as: well.pak
+  willow.pak_fr:
+    install_as: willow.pak
+  wise.pak_fr:
+    install_as: wise.pak
+  xedgeb.pak_fr:
+    install_as: xedgeb.pak
+  xedgec.pak_fr:
+    install_as: xedgec.pak
+  xedge.pak_fr:
+    install_as: xedge.pak
+  zrock.pak_fr:
+    install_as: zrock.pak
+
+  setup_legend_of_kyrandia_2.1.0.14.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - main_eng.cps
+    - text_eng.cps
+    - adl.pak
+    - alchemy.pak
+    - alchemy.vrm
+    - algae.pak
+    - algae.vrm
+    - altar.apk
+    - altar.pak
+    - altar.vrm
+    - arch.pak
+    - arch.vrm
+    - balcony.pak
+    - balcony.vrm
+    - belroom.apk
+    - belroom.pak
+    - belroom.vrm
+    - bonkbg.apk
+    - bonkbg.pak
+    - bonkbg.vrm
+    - bridge.pak
+    - bridge.vrm
+    - brins.pak
+    - brins.vrm
+    - broken.apk
+    - broken.pak
+    - broken.vrm
+    - burn.pak
+    - burn.vrm
+    - castle.apk
+    - castle.pak
+    - castle.vrm
+    - catacom.pak
+    - catacom.vrm
+    - cave.apk
+    - cave.pak
+    - cave.vrm
+    - caveb.pak
+    - caveb.vrm
+    - cgate.apk
+    - cgate.pak
+    - cgate.vrm
+    - chapter1.vrm
+    - chapter2.vrm
+    - chapter3.vrm
+    - chapter4.vrm
+    - chapter5.vrm
+    - chasm.pak
+    - chasm.vrm
+    - cliff.pak
+    - cliff.vrm
+    - col.pak
+    - darms.pak
+    - darms.vrm
+    - dead.apk
+    - dead.pak
+    - dead.vrm
+    - dnstair.apk
+    - dnstair.pak
+    - dnstair.vrm
+    - dragon.pak
+    - dragon.vrm
+    - dragon1.apk
+    - dragon2.apk
+    - edge.pak
+    - edge.vrm
+    - edgeb.pak
+    - edgeb.vrm
+    - emcav.pak
+    - emcav.vrm
+    - enter.pak
+    - enter.vrm
+    - extheal.pak
+    - extheal.vrm
+    - extpot.apk
+    - extpot.pak
+    - extpot.vrm
+    - extspel.pak
+    - extspel.vrm
+    - falls.pak
+    - falls.vrm
+    - feststh.pak
+    - feststh.vrm
+    - fgowest.pak
+    - fgowest.vrm
+    - finale.pak
+    - fnorth.pak
+    - fnorth.vrm
+    - foresta.apk
+    - foresta.pak
+    - foresta.vrm
+    - forestb.apk
+    - forestb.pak
+    - forestb.vrm
+    - forestc.pak
+    - forestc.vrm
+    - fountn.apk
+    - fountn.pak
+    - fountn.vrm
+    - foyer.apk
+    - foyer.pak
+    - foyer.vrm
+    - fsouth.pak
+    - fsouth.vrm
+    - fsouthb.pak
+    - fsouthb.vrm
+    - fwststh.pak
+    - fwststh.vrm
+    - gatecv.apk
+    - gatecv.pak
+    - gatecv.vrm
+    - gem.apk
+    - gem.pak
+    - gem.vrm
+    - gemcut.apk
+    - gemcut.pak
+    - gemcut.vrm
+    - gen_cav.pak
+    - gen_cav.vrm
+    - gencavb.pak
+    - gencavb.vrm
+    - genhall.apk
+    - genhall.pak
+    - genhall.vrm
+    - glade.apk
+    - glade.pak
+    - glade.vrm
+    - grave.apk
+    - grave.pak
+    - grave.vrm
+    - grthall.pak
+    - grthall.vrm
+    - healer.apk
+    - healer.pak
+    - healer.vrm
+    - intro.vrm
+    - intro1.pak
+    - intro2.pak
+    - intro3.pak
+    - intro4.pak
+    - kitchen.pak
+    - kitchen.vrm
+    - kyragem.pak
+    - kyragem.vrm
+    - lagoon.apk
+    - lagoon.pak
+    - lagoon.vrm
+    - landing.apk
+    - landing.pak
+    - landing.vrm
+    - lava.apk
+    - lava.pak
+    - lava.vrm
+    - lephole.apk
+    - lephole.pak
+    - lephole.vrm
+    - library.apk
+    - library.pak
+    - library.vrm
+    - misc.pak
+    - mix.apk
+    - mix.pak
+    - mix.vrm
+    - mooncav.apk
+    - mooncav.pak
+    - mooncav.vrm
+    - ncliff.pak
+    - ncliff.vrm
+    - ncliffb.pak
+    - ncliffb.vrm
+    - nwclifb.pak
+    - nwclifb.vrm
+    - nwcliff.pak
+    - nwcliff.vrm
+    - oaks.pak
+    - oaks.vrm
+    - plateau.pak
+    - plateau.vrm
+    - pltcave.pak
+    - pltcave.vrm
+    - potion.apk
+    - potion.pak
+    - potion.vrm
+    - ruby.pak
+    - ruby.vrm
+    - sickwil.pak
+    - sickwil.vrm
+    - snd.pak
+    - song.apk
+    - song.pak
+    - song.vrm
+    - sorrow.apk
+    - sorrow.pak
+    - sorrow.vrm
+    - spell.apk
+    - spell.pak
+    - spell.vrm
+    - spring.pak
+    - spring.vrm
+    - square.pak
+    - square.vrm
+    - startup.pak
+    - stump.apk
+    - stump.pak
+    - stump.vrm
+    - temple.apk
+    - temple.pak
+    - temple.vrm
+    - trunk.apk
+    - trunk.pak
+    - trunk.vrm
+    - upstair.pak
+    - upstair.vrm
+    - well.pak
+    - well.vrm
+    - willow.apk
+    - willow.pak
+    - willow.vrm
+    - wise.pak
+    - wise.vrm
+    - xedge.apk
+    - xedge.pak
+    - xedge.vrm
+    - xedgeb.pak
+    - xedgeb.vrm
+    - xedgec.pak
+    - xedgec.vrm
+    - xmi.pak
+    - zrock.pak
+    - zrock.vrm
+    - manual.pdf
+
+  setup_legend_of_kyrandia_german_2.1.0.14.exe:
+    unpack:
+      format: innoextract
+      suffix: _de
+    provides:
+    - main_ger.cps
+    - text_ger.cps
+    - adl.pak
+    - alchemy.pak_de
+    - alchemy.vrm
+    - algae.pak_de
+    - algae.vrm
+    - altar.apk
+    - altar.pak_de
+    - altar.vrm
+    - arch.pak_de
+    - arch.vrm
+    - balcony.pak_de
+    - balcony.vrm
+    - belroom.apk
+    - belroom.pak_de
+    - belroom.vrm
+    - bonkbg.apk
+    - bonkbg.pak_de
+    - bonkbg.vrm
+    - bridge.pak_de
+    - bridge.vrm
+    - brins.pak_de
+    - brins.vrm
+    - broken.apk
+    - broken.pak_de
+    - broken.vrm
+    - burn.pak_de
+    - burn.vrm
+    - castle.apk
+    - castle.pak_de
+    - castle.vrm
+    - catacom.pak_de
+    - catacom.vrm
+    - cave.apk
+    - cave.pak_de
+    - cave.vrm
+    - caveb.pak_de
+    - caveb.vrm
+    - cgate.apk
+    - cgate.pak_de
+    - cgate.vrm
+    - chapter1.vrm
+    - chapter2.vrm
+    - chapter3.vrm
+    - chapter4.vrm
+    - chapter5.vrm
+    - chasm.pak_de
+    - chasm.vrm
+    - cliff.pak_de
+    - cliff.vrm
+    - col.pak
+    - darms.pak_de
+    - darms.vrm
+    - dead.apk
+    - dead.pak_de
+    - dead.vrm
+    - dnstair.apk
+    - dnstair.pak_de
+    - dnstair.vrm
+    - dragon.pak_de
+    - dragon.vrm
+    - dragon1.apk
+    - dragon2.apk
+    - edge.pak_de
+    - edge.vrm
+    - edgeb.pak_de
+    - edgeb.vrm
+    - emcav.pak_de
+    - emcav.vrm
+    - enter.pak_de
+    - enter.vrm
+    - extheal.pak_de
+    - extheal.vrm
+    - extpot.apk
+    - extpot.pak_de
+    - extpot.vrm
+    - extspel.pak_de
+    - extspel.vrm
+    - falls.pak_de
+    - falls.vrm
+    - feststh.pak_de
+    - feststh.vrm
+    - fgowest.pak_de
+    - fgowest.vrm
+    - finale.pak_de
+    - fnorth.pak_de
+    - fnorth.vrm
+    - foresta.apk
+    - foresta.pak_de
+    - foresta.vrm
+    - forestb.apk
+    - forestb.pak_de
+    - forestb.vrm
+    - forestc.pak_de
+    - forestc.vrm
+    - fountn.apk
+    - fountn.pak_de
+    - fountn.vrm
+    - foyer.apk
+    - foyer.pak_de
+    - foyer.vrm
+    - fsouth.pak_de
+    - fsouth.vrm
+    - fsouthb.pak_de
+    - fsouthb.vrm
+    - fwststh.pak_de
+    - fwststh.vrm
+    - gatecv.apk
+    - gatecv.pak_de
+    - gatecv.vrm
+    - gem.apk
+    - gem.pak_de
+    - gem.vrm
+    - gemcut.apk
+    - gemcut.pak_de
+    - gemcut.vrm
+    - gen_cav.pak_de
+    - gen_cav.vrm
+    - gencavb.pak_de
+    - gencavb.vrm
+    - genhall.apk
+    - genhall.pak_de
+    - genhall.vrm
+    - glade.apk
+    - glade.pak_de
+    - glade.vrm
+    - grave.apk
+    - grave.pak_de
+    - grave.vrm
+    - grthall.pak_de
+    - grthall.vrm
+    - healer.apk
+    - healer.pak_de
+    - healer.vrm
+    - intro.vrm
+    - intro1.pak
+    - intro2.pak
+    - intro3.pak
+    - intro4.pak
+    - kitchen.pak_de
+    - kitchen.vrm
+    - kyragem.pak_de
+    - kyragem.vrm
+    - lagoon.apk
+    - lagoon.pak_de
+    - lagoon.vrm
+    - landing.apk
+    - landing.pak_de
+    - landing.vrm
+    - lava.apk
+    - lava.pak_de
+    - lava.vrm
+    - lephole.apk
+    - lephole.pak_de
+    - lephole.vrm
+    - library.apk
+    - library.pak_de
+    - library.vrm
+    - misc.pak
+    - mix.apk
+    - mix.pak_de
+    - mix.vrm
+    - mooncav.apk
+    - mooncav.pak_de
+    - mooncav.vrm
+    - ncliff.pak_de
+    - ncliff.vrm
+    - ncliffb.pak_de
+    - ncliffb.vrm
+    - nwclifb.pak_de
+    - nwclifb.vrm
+    - nwcliff.pak_de
+    - nwcliff.vrm
+    - oaks.pak_de
+    - oaks.vrm
+    - plateau.pak_de
+    - plateau.vrm
+    - pltcave.pak_de
+    - pltcave.vrm
+    - potion.apk
+    - potion.pak_de
+    - potion.vrm
+    - ruby.pak_de
+    - ruby.vrm
+    - sickwil.pak_de
+    - sickwil.vrm
+    - snd.pak
+    - song.apk
+    - song.pak_de
+    - song.vrm
+    - sorrow.apk
+    - sorrow.pak_de
+    - sorrow.vrm
+    - spell.apk
+    - spell.pak_de
+    - spell.vrm
+    - spring.pak_de
+    - spring.vrm
+    - square.pak_de
+    - square.vrm
+    - startup.pak_de
+    - stump.apk
+    - stump.pak_de
+    - stump.vrm
+    - temple.apk
+    - temple.pak_de
+    - temple.vrm
+    - trunk.apk
+    - trunk.pak_de
+    - trunk.vrm
+    - upstair.pak_de
+    - upstair.vrm
+    - well.pak_de
+    - well.vrm
+    - willow.apk
+    - willow.pak_de
+    - willow.vrm
+    - wise.pak_de
+    - wise.vrm
+    - xedge.apk
+    - xedge.pak_de
+    - xedge.vrm
+    - xedgeb.pak_de
+    - xedgeb.vrm
+    - xedgec.pak_de
+    - xedgec.vrm
+    - xmi.pak
+    - zrock.pak_de
+    - zrock.vrm
+    - manual.pdf
+
+  setup_legend_of_kyrandia_french_2.1.0.14.exe:
+    unpack:
+      format: innoextract
+      suffix: _fr
+    provides:
+    - main_fre.cps
+    - text_fre.cps
+    - adl.pak
+    - alchemy.pak_fr
+    - alchemy.vrm
+    - algae.pak_fr
+    - algae.vrm
+    - altar.apk
+    - altar.pak_fr
+    - altar.vrm
+    - arch.pak_fr
+    - arch.vrm
+    - balcony.pak_fr
+    - balcony.vrm
+    - belroom.apk
+    - belroom.pak_fr
+    - belroom.vrm
+    - bonkbg.apk
+    - bonkbg.pak_fr
+    - bonkbg.vrm
+    - bridge.pak_fr
+    - bridge.vrm
+    - brins.pak_fr
+    - brins.vrm
+    - broken.apk
+    - broken.pak_fr
+    - broken.vrm
+    - burn.pak_fr
+    - burn.vrm
+    - castle.apk
+    - castle.pak_fr
+    - castle.vrm
+    - catacom.pak_fr
+    - catacom.vrm
+    - cave.apk
+    - cave.pak_fr
+    - cave.vrm
+    - caveb.pak_fr
+    - caveb.vrm
+    - cgate.apk
+    - cgate.pak_fr
+    - cgate.vrm
+    - chapter1.vrm
+    - chapter2.vrm
+    - chapter3.vrm
+    - chapter4.vrm
+    - chapter5.vrm
+    - chasm.pak_fr
+    - chasm.vrm
+    - cliff.pak_fr
+    - cliff.vrm
+    - col.pak
+    - darms.pak_fr
+    - darms.vrm
+    - dead.apk
+    - dead.pak_fr
+    - dead.vrm
+    - dnstair.apk
+    - dnstair.pak_fr
+    - dnstair.vrm
+    - dragon.pak_fr
+    - dragon.vrm
+    - dragon1.apk
+    - dragon2.apk
+    - edge.pak_fr
+    - edge.vrm
+    - edgeb.pak_fr
+    - edgeb.vrm
+    - emcav.pak_fr
+    - emcav.vrm
+    - enter.pak_fr
+    - enter.vrm
+    - extheal.pak_fr
+    - extheal.vrm
+    - extpot.apk
+    - extpot.pak_fr
+    - extpot.vrm
+    - extspel.pak_fr
+    - extspel.vrm
+    - falls.pak_fr
+    - falls.vrm
+    - feststh.pak_fr
+    - feststh.vrm
+    - fgowest.pak_fr
+    - fgowest.vrm
+    - finale.pak_fr
+    - fnorth.pak_fr
+    - fnorth.vrm
+    - foresta.apk
+    - foresta.pak_fr
+    - foresta.vrm
+    - forestb.apk
+    - forestb.pak_fr
+    - forestb.vrm
+    - forestc.pak_fr
+    - forestc.vrm
+    - fountn.apk
+    - fountn.pak_fr
+    - fountn.vrm
+    - foyer.apk
+    - foyer.pak_fr
+    - foyer.vrm
+    - fsouth.pak_fr
+    - fsouth.vrm
+    - fsouthb.pak_fr
+    - fsouthb.vrm
+    - fwststh.pak_fr
+    - fwststh.vrm
+    - gatecv.apk
+    - gatecv.pak_fr
+    - gatecv.vrm
+    - gem.apk
+    - gem.pak_fr
+    - gem.vrm
+    - gemcut.apk
+    - gemcut.pak_fr
+    - gemcut.vrm
+    - gen_cav.pak_fr
+    - gen_cav.vrm
+    - gencavb.pak_fr
+    - gencavb.vrm
+    - genhall.apk
+    - genhall.pak_fr
+    - genhall.vrm
+    - glade.apk
+    - glade.pak_fr
+    - glade.vrm
+    - grave.apk
+    - grave.pak_fr
+    - grave.vrm
+    - grthall.pak_fr
+    - grthall.vrm
+    - healer.apk
+    - healer.pak_fr
+    - healer.vrm
+    - intro.vrm
+    - intro1.pak
+    - intro2.pak
+    - intro3.pak
+    - intro4.pak
+    - kitchen.pak_fr
+    - kitchen.vrm
+    - kyragem.pak_fr
+    - kyragem.vrm
+    - lagoon.apk
+    - lagoon.pak_fr
+    - lagoon.vrm
+    - landing.apk
+    - landing.pak_fr
+    - landing.vrm
+    - lava.apk
+    - lava.pak_fr
+    - lava.vrm
+    - lephole.apk
+    - lephole.pak_fr
+    - lephole.vrm
+    - library.apk
+    - library.pak_fr
+    - library.vrm
+    - misc.pak
+    - mix.apk
+    - mix.pak_fr
+    - mix.vrm
+    - mooncav.apk
+    - mooncav.pak_fr
+    - mooncav.vrm
+    - ncliff.pak_fr
+    - ncliff.vrm
+    - ncliffb.pak_fr
+    - ncliffb.vrm
+    - nwclifb.pak_fr
+    - nwclifb.vrm
+    - nwcliff.pak_fr
+    - nwcliff.vrm
+    - oaks.pak_fr
+    - oaks.vrm
+    - plateau.pak_fr
+    - plateau.vrm
+    - pltcave.pak_fr
+    - pltcave.vrm
+    - potion.apk
+    - potion.pak_fr
+    - potion.vrm
+    - ruby.pak_fr
+    - ruby.vrm
+    - sickwil.pak_fr
+    - sickwil.vrm
+    - snd.pak
+    - song.apk
+    - song.pak_fr
+    - song.vrm
+    - sorrow.apk
+    - sorrow.pak_fr
+    - sorrow.vrm
+    - spell.apk
+    - spell.pak_fr
+    - spell.vrm
+    - spring.pak_fr
+    - spring.vrm
+    - square.pak_fr
+    - square.vrm
+    - startup.pak_fr
+    - stump.apk
+    - stump.pak_fr
+    - stump.vrm
+    - temple.apk
+    - temple.pak_fr
+    - temple.vrm
+    - trunk.apk
+    - trunk.pak_fr
+    - trunk.vrm
+    - upstair.pak_fr
+    - upstair.vrm
+    - well.pak_fr
+    - well.vrm
+    - willow.apk
+    - willow.pak_fr
+    - willow.vrm
+    - wise.pak_fr
+    - wise.vrm
+    - xedge.apk
+    - xedge.pak_fr
+    - xedge.vrm
+    - xedgeb.pak_fr
+    - xedgeb.vrm
+    - xedgec.pak_fr
+    - xedgec.vrm
+    - xmi.pak
+    - zrock.pak_fr
+    - zrock.vrm
+    - manual.pdf
+
+size_and_md5: |
+  7131      c99fb43d666ef5881a73a509c2594b14 main_eng.cps
+  8517      ef464c59804d45b011032ee6d1366729 text_eng.cps
+  241255    947289d401b7b3496bb1cc79bcd2ad8d adl.pak
+  20670     5e20ffd2f9c3866396ca57f81af94ed8 alchemy.pak
+  215214    1338fafa67e8d47ad0e77c814699da27 alchemy.vrm
+  18859     4009074a613636487db4d69fbccbb33b algae.pak
+  99545     95acb91f1beada7f2bb4fbd952f812fd algae.vrm
+  32844     3873680988d213bf161fa81254773f7d altar.apk
+  19360     a966663052188257fdaa89f2c1db64f6 altar.pak
+  769574    2158aba010f4ed3c61f5da4e40349b77 altar.vrm
+  18535     2688c1184339753a73d2c9814a44d4da arch.pak
+  122109    fe40f497c581b26c9f8dc35ba368ae47 arch.vrm
+  38797     3159614fd12aeef19480731653acf6a5 balcony.pak
+  260447    fcedf25226508c71aece01d1445cfafe balcony.vrm
+  44039     bcff752f5ba93e39c923706e86b967f8 belroom.apk
+  37689     43178b6a92a314fd3f6be3efe8bfb8a8 belroom.pak
+  486322    b0289d391c81c2fc2bbceac9b21aeb59 belroom.vrm
+  52790     d5b8ff67b157e973caa2990ebe85e645 bonkbg.apk
+  20536     024a6fe2bda449674f24a102ea6429b1 bonkbg.pak
+  104001    9a089d2d16e17182dd4971669ca907b6 bonkbg.vrm
+  17837     0e12b7112298cb2020f12cbee16f01f6 bridge.pak
+  566350    457c288a8906875750a80307d40428a4 bridge.vrm
+  23098     28c310172bf4e83e3866a07eadf63ad7 brins.pak
+  371923    07a9806c7cba44c12d6fc3b5fdf44e3b brins.vrm
+  156345    e3fe32f59404e1f27dc125bce9cd9d29 broken.apk
+  23695     c59edba0d1eb5c0ce031127782ed040c broken.pak
+  2429166   7c7ee6afc76d36ce198fd510339e0f7e broken.vrm
+  27897     3faf99dbc38354107ab0ddcfadff3327 burn.pak
+  213105    7f9e5cc9f98e0d2a894c31b87af5af91 burn.vrm
+  3852      c3bd262309b74bdbb8dc3bde6a9921b9 castle.apk
+  18945     51dcb01eb6808ede6bdd6a6659693858 castle.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 castle.vrm
+  43656     e26d998024ccfebda954fbb8ebe6fc81 catacom.pak
+  154125    631c75f28ee8d9e69affbeeaa98d3d3e catacom.vrm
+  19567     73153507a7aac4ef0e65df49712722de cave.apk
+  25571     19526a1b98efaff33a734491ad2aa5bc cave.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 cave.vrm
+  23225     bdbe0fe6a11276d547bf6a1766fc8ac6 caveb.pak
+  139300    a13d21846450c3aae4b8f340591daa00 caveb.vrm
+  108421    c346233a69bf294c6147abb4038bb703 cgate.apk
+  30207     51f262e05b49cf0c3f76ab38f58c4ee0 cgate.pak
+  311411    225051c9493699f956313da89ae65247 cgate.vrm
+  5227516   9cabe269aad157877c3fed262380bb94 chapter1.vrm
+  5227516   9cabe269aad157877c3fed262380bb94 chapter2.vrm
+  5227516   9cabe269aad157877c3fed262380bb94 chapter3.vrm
+  5227516   9cabe269aad157877c3fed262380bb94 chapter4.vrm
+  5227516   9cabe269aad157877c3fed262380bb94 chapter5.vrm
+  17428     1fc1d740275439fe62e675949cb81ab2 chasm.pak
+  150613    95eafecaa2dd2e062602dad252a90f0c chasm.vrm
+  20669     a2409938ebc0009ed80ad8effdb44229 cliff.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 cliff.vrm
+  6273      6c0a16a2e7f6f9554d7794595d95a3ab col.pak
+  19971     4664c5432d03acfef3a2b81424fdbea8 darms.pak
+  429372    7f2236b73b0d33ad9b62a2f6708d8174 darms.vrm
+  74431     fcd07b39b879ef84ceed705057e7ae24 dead.apk
+  25736     064bd492eedb337f946a133c4575ed10 dead.pak
+  2172989   fa4a438baaa6ef5d4292dca6c92d068d dead.vrm
+  104446    41e17bb63dec2923031e3407df9d2842 dnstair.apk
+  16300     653659cb863473ff2d9d36015fe5823c dnstair.pak
+  1307816   99d8f4200fbf51e64e89c87ceee4ae78 dnstair.vrm
+  22686     5b9bbacd5d9c7fd8b615fe5f9da9e177 dragon.pak
+  1216277   6db51f71a59b9c2de18c2e9de254ccba dragon.vrm
+  258944    9984c821f57b387a203e9cd051958bd0 dragon1.apk
+  99911     182216bece72d7493a485b1a526dc9b6 dragon2.apk
+  25447     f9f3d1354794745c012c9abec5963208 edge.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 edge.vrm
+  38018     4e8b0e2e2532f72260b93583db772231 edgeb.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 edgeb.vrm
+  39701     d26d0133903cf0d0b6d19b3f99da4f7f emcav.pak
+  103844    65971082d4918e4b168777ca3bf26c9d emcav.vrm
+  17216     eb772c92ec443965c9914da439f49334 enter.pak
+  31655     ea0da5d7992dd6873f9705fe794f4e1a enter.vrm
+  22848     1ceb8a444e2dcf35c7cb310869980968 extheal.pak
+  301949    074ac147e7c653a1a766ce430ee00d51 extheal.vrm
+  47811     80e7beaf275d410df15440b38af35024 extpot.apk
+  43522     2f529cb051f6a1c71f9f15d9f0ed763c extpot.pak
+  111557    a130e2447038353fbc96d4e7aab4b605 extpot.vrm
+  29720     fbbbce94b4921cd7f9db5de97090d7db extspel.pak
+  270002    527c52c6742914eb4b161ea11458f766 extspel.vrm
+  30913     688322bbafba7d3bb114a68cf2987908 falls.pak
+  25457     a68bc7adfe0d45cb3bc98b4ef8aef623 falls.vrm
+  35366     f1d47c60ed04076e6ffed79e33e405eb feststh.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 feststh.vrm
+  21590     88c373b7bacc170084a0b43479078ced fgowest.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 fgowest.vrm
+  204132    62e7515cc322363444e1c0eeb9bb6c86 finale.pak
+  22788     cf61d53219ba7729fc61e18b20177d45 fnorth.pak
+  78009     8a876d692302d6e55c2a766a1d034bb9 fnorth.vrm
+  133963    24ca49fb1d0a34536672239f87266640 foresta.apk
+  43393     11a52bfd169d968ed4b9c0fff2f40848 foresta.pak
+  478867    c1cc91f5f5c6665049dbdd94d970c83a foresta.vrm
+  34509     9b2b4566e0b651bbb56482784b839857 forestb.apk
+  22442     ab770c33bd3f0dcdf6b1b2e696be64cf forestb.pak
+  376832    b5b8651e5cad38a11e1fed042387c956 forestb.vrm
+  20739     a925bc7744ef629178393cb488d2ae08 forestc.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 forestc.vrm
+  122581    e56f54aefa346214b6f1a37756ae582b fountn.apk
+  24941     e5a82406299556324584c0cddf8092f8 fountn.pak
+  861521    f289f08fd4b52423c1285a7e4e5e94d7 fountn.vrm
+  91530     0aafd23869055ee05fbafef5bcc97d26 foyer.apk
+  17681     963570851ccdaf3f2442a32ce7e08bf9 foyer.pak
+  1109750   0cab10010c3d5950cce1dc9c933cab4b foyer.vrm
+  23153     bf8d4ca91cb30d883e37a4d8b17da367 fsouth.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 fsouth.vrm
+  37858     813da5d1fed7ebdfbffd0e55869ac312 fsouthb.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 fsouthb.vrm
+  35417     08623af38f14871ae484ba5d92d94d21 fwststh.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 fwststh.vrm
+  93320     5637c940ab4ad2cbf9dc597860dba953 gatecv.apk
+  19469     88811ab8a2ec403d521a313d99e31f2d gatecv.pak
+  625772    0386943bab2a9b19a4316712ad67c58c gatecv.vrm
+  62465     e1bc30f76f71dead1bcbf4f64c992ee8 gem.apk
+  17815     e86db98c4e0d0179a0f24391b3234008 gem.pak
+  452083    f8820edf11bdafcb84fce76ddac53006 gem.vrm
+  42524     1b9241537cc97204e66cce9232b04df6 gemcut.apk
+  33435     fac399fe62f98671e56a005c5e94e39f gemcut.pak
+  3227187   09da5468c3973bb3bf591f482a6dab23 gemcut.vrm
+  20424     c5ad12e4f85066e02d806cb5461be546 gen_cav.pak
+  183136    617199d73b9d11cb087d7b7ee44c70db gen_cav.vrm
+  20578     3dcac20a632960629820612634a49648 gencavb.pak
+  203979    ab0ee0ad80fc9ef04d41ef10c6402b81 gencavb.vrm
+  35632     6876fe8221f29cd0722fdddec2b3f19f genhall.apk
+  26632     5565ae77b91f0444bef67430f342900e genhall.pak
+  241215    904d5e325a2baec7da9611aa4ad62d51 genhall.vrm
+  13365     e84dfa09c76115d84befe8b2c669acdb glade.apk
+  24388     d3b10cd9493bf29c41cb4b65aacfdcd0 glade.pak
+  194094    225afa33fb8b1079fed0ec7b1eefce00 glade.vrm
+  144859    330942204c1e091fc5a064a370adc6b9 grave.apk
+  29639     103a791304cf0a430831440138e5f190 grave.pak
+  1452208   4ec21fc69862c9afa281981a3ce92884 grave.vrm
+  22525     076238db1bb9d11791d4d11ee144dad2 grthall.pak
+  297185    f080c450b202d5062fd1a760d96f73db grthall.vrm
+  88429     b350ad836293d5296b4a97c58c55ea28 healer.apk
+  29581     00b39ed7e33f1c248570699698407290 healer.pak
+  3386510   c599e4fcba045c7142500c05d954c9ac healer.vrm
+  3308968   3e33fc97d42a433337b8819380418247 intro.vrm
+  181141    fad378347df618d6028936f3acaeabc4 intro1.pak
+  283503    1b32f7d563f8be3fbdf2cbdd3751c13c intro2.pak
+  167509    02a0bbb65f85b3e6ef5557e8f1a722ae intro3.pak
+  125727    4e216c1d10f6c0c51982b5768fa61e6f intro4.pak
+  18388     4e4d4616211b153e9f908358e2bdb574 kitchen.pak
+  205017    014b5e4e7faffe64478567dd5afc2ba1 kitchen.vrm
+  24998     badbb6c377247978f13be4d08b76f4a3 kyragem.pak
+  135836    284c86b04ee2ac42fb8bcffd808b5420 kyragem.vrm
+  137563    56eb78b5f2c69560083826b93f6c4ad8 lagoon.apk
+  22999     3fc318ee8f8d619f0a2bef9c49a0e6bc lagoon.pak
+  243615    0478b228a61f9e6463f44c40ed2fde57 lagoon.vrm
+  89961     0bdb869b68594e3cd147e0953b059c99 landing.apk
+  11892     4279049c7b7cd4c05a9c07ac16f2348d landing.pak
+  95012     d33806b88bcc76132e20403fa1f60586 landing.vrm
+  73222     86aa161126ff8ff383697628b636f8ed lava.apk
+  21922     d4b117e19bb767fc6c42dddd7a7825ee lava.pak
+  178182    522c9d2aa8a291257a4ad330c5757b3c lava.vrm
+  42939     1ebe0ff7123fd299513f99ca6078a4d8 lephole.apk
+  25263     47f44b71aac3606fb3a5174350e689cd lephole.pak
+  1735593   155883649f253606909d0aea7c170b29 lephole.vrm
+  97705     95306bf1500fab9b3b7fd25f69eb91bd library.apk
+  21798     40102282e8072509a3d5a20bbe8dd8c1 library.pak
+  558956    2394be36b2e918086c52fee125312e9b library.vrm
+  100660    8d1e24a2a45bdbc9126dc3e5a183b4e2 misc.pak
+  17314     14b0a0176a3a34e6f6b444812d72038f mix.apk
+  21818     28df8aee081368a8c5762226e1ddf656 mix.pak
+  497562    46032dc49f8f28d8771abb4cd6cb2743 mix.vrm
+  72133     7fe23d522a8b20282e6cb42f856846ff mooncav.apk
+  20956     8fdb8d5970bb6870ebaf0af2905e9aef mooncav.pak
+  2056789   3134fbb97024bbb03629e9cf090f97b7 mooncav.vrm
+  19717     f9521c73d5fc6708611a8929e6d774db ncliff.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 ncliff.vrm
+  19063     2138941539130d4f10bb3f22d7aba95e ncliffb.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 ncliffb.vrm
+  14652     635beb4725f180bed7dd0eea5be18f29 nwclifb.pak
+  91983     941a068f90fb27f9855cb62ff8f6db98 nwclifb.vrm
+  14394     399cc1ef0d8037058ef474756464923e nwcliff.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 nwcliff.vrm
+  35861     bc2a235150936de60241066b4b9ff640 oaks.pak
+  124904    3f953838722d164da175d5c321995ed9 oaks.vrm
+  15224     2182b6565608be2e71f5ee306d5a7966 plateau.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 plateau.vrm
+  22105     1b7829e188215414483d69170970799a pltcave.pak
+  86617     dc006e5005520a949918f949128dd48f pltcave.vrm
+  188007    c3e1847e32a64165da2e0cffe5a4db51 potion.apk
+  50273     134789502804bd78da03f0d8c71e2383 potion.pak
+  3615396   5f04186e38e81994fa0eab434ce6d252 potion.vrm
+  25234     bf1dd9598e409a744e697628ea0ca907 ruby.pak
+  307012    c9a7c8deea1ae7ff269df061d8072f64 ruby.vrm
+  34922     7989c95193ba772416491aae441c3bd0 sickwil.pak
+  485327    1af98db574230fbaaf0a1c5c4e86ec8b sickwil.vrm
+  77388     2e05c51a13870fa0bfdbaeb327df4752 snd.pak
+  48729     ddf666ae0f6e2cf4bc808975d9560529 song.apk
+  27616     521f3975e2eb7d2eca3af666192c353b song.pak
+  470437    0d76f5a385ce1acd881b8ed7f06b1b2e song.vrm
+  11564     4205fc5d5e1bab832c1f2547b7838d01 sorrow.apk
+  22981     1726fe6d853ecb3d90f6e8699870e541 sorrow.pak
+  408316    00e05aef46b4948c861e025b5ea3fd4b sorrow.vrm
+  117802    4bb501e97de16c297d6bff3a48732be4 spell.apk
+  26356     68c8f399c8ed6c6bc80329bbd38f61e5 spell.pak
+  3908699   22cdf89ddff40551ccbd4fc472842ad1 spell.vrm
+  25920     c4251392038e023906d17a46899013a0 spring.pak
+  608692    7d5b96544a36615300d208b662d6777c spring.vrm
+  24751     80f0fe88fd198933705a9c08dee93839 square.pak
+  191290    39be45b40ad24e8df83277ee58e77af7 square.vrm
+  95103     3fbaa64b3dfa883c1bbfd7a158de3123 startup.pak
+  43680     9ca7b820f89bfcb2cff72a70ec619da5 stump.apk
+  37373     dc914c5eb87e86876fcbf6b33733968b stump.pak
+  167402    57a492490fdc5ab6c524dbfb47837b02 stump.vrm
+  13978     426a7b3e87a27c3ce8e575d1ce381ade temple.apk
+  22861     9208215afbbd666401677712427902fb temple.pak
+  1262649   56f4d869f009628014d46658e10e4e60 temple.vrm
+  67248     19df4263ea4975f567fd5443c20c3e7e trunk.apk
+  15779     3ed222db55b44d303fd65929a5ce93fe trunk.pak
+  79935     4bcacc4c5a72672674dddab8f7c1f8b8 trunk.vrm
+  36539     d31776fda5572293f0f0cbe71c6c3b32 upstair.pak
+  142920    26a0168f7aeb3a58d30618307a599b6a upstair.vrm
+  25501     863e2141b731119aecdb73d1351a738d well.pak
+  453845    3301e6298cb4449b82514f5ac7137e3f well.vrm
+  10836     37d960934d9a8f13d6545090e8d9be94 willow.apk
+  21288     6e2e3b0e1115647ba71dc8e9d96d21e1 willow.pak
+  412807    bbc2087a4c7929551c3a4deee068964c willow.vrm
+  47136     d5e8b10b81a5aeb3751e3483a5b2cffb wise.pak
+  1639090   8ff5d021e5f0ea383dcb49d48da654eb wise.vrm
+  12492     30b5006daa62336f6edded08377281c4 xedge.apk
+  26023     1d7de6ea1ea48193493d6db76e43e7ae xedge.pak
+  464826    b926764f382d985099d7d2decb1e22a1 xedge.vrm
+  22496     77ac13ac63d8cea960f2a3ddba317154 xedgeb.pak
+  269       8bfb48dc9b8edcd6ae6d5fb038e31297 xedgeb.vrm
+  21668     12ff5fd021c3bf6bb667b5a20361086d xedgec.pak
+  38804     4f3fbe855ce33dba3ef565850cebca02 xedgec.vrm
+  329634    07c5358ebfced54fb3100563bd6b5714 xmi.pak
+  25759     b07c0d41caff73480e70139d82f7b1ba zrock.pak
+  115052    069b535e31412515cc6a77291e4c055c zrock.vrm
+  2570969   2981b5b2f8f2f21b1d74e1fe9b69f60c manual.pdf
+  53747640  562a149d31069f70c3ab92f05aca96e0 setup_legend_of_kyrandia_2.1.0.14.exe
+
+  7128      542c742e6d796fd9bc00881509470d1f main_ger.cps
+  9301      c0aa3396593b7265c41c0acb2251a28f text_ger.cps
+  20700     f1f8e2aa641221064602412bb8e8ad99 alchemy.pak_de
+  18883     967f6c1a10516c8545717bfc354b2077 algae.pak_de
+  19390     e9a89f92ce0a93f33edfa31314017f95 altar.pak_de
+  18561     c333f0871cc449a9ebd3c3ea10e85b85 arch.pak_de
+  38805     6e212eff64623a374e4180315de9b276 balcony.pak_de
+  37737     b72ac395ad8eaac8c3092429ee26c898 belroom.pak_de
+  20566     da83b21956c3949ef34a49317397822d bonkbg.pak_de
+  17897     c361fa27e6ec7425d6674f50d7754ae5 bridge.pak_de
+  23138     5f3adc57dd178be18365c9a55b97f4a2 brins.pak_de
+  23957     ad96be93087b6934089f7672acfa9da8 broken.pak_de
+  27911     9cf5ccc1aa67e902f5622f453e26c712 burn.pak_de
+  18949     05e97d4d3332a39f484605c8da09a821 castle.pak_de
+  43682     2ae6cb15a054666e78ce5f6ab59a7628 catacom.pak_de
+  25575     6aaa8cdeb61411923829f3f9dff39da5 cave.pak_de
+  23241     85efef852ada065897e99495ab3e1f92 caveb.pak_de
+  30271     222fa10920c851f4754e484166fb6587 cgate.pak_de
+  17480     40b321489c86cc76652fa84412910db4 chasm.pak_de
+  20673     b6299a8c6bea82b1d61489196917885a cliff.pak_de
+  20039     bd6753144ab1fc2dfe176ec7b043ad7b darms.pak_de
+  26092     af60b2af7f8547edaf4e4c8d8251b5cf dead.pak_de
+  16450     49e2bf3e014dc626901de863dc16c3b4 dnstair.pak_de
+  22866     d7bb4c7762265c1aba20ab35625fe99b dragon.pak_de
+  25447     ede1ecd20f66540447b904e0cd10cb4f edge.pak_de
+  38018     fb82a4179fe06ba96142a9d9de7721c8 edgeb.pak_de
+  39709     bacee33b20e5b537626191426b1b1d9f emcav.pak_de
+  17232     4d92970be6bfda097b65855043ee3368 enter.pak_de
+  22880     b611d70d90099c88c89ce205bb283ba5 extheal.pak_de
+  43528     dcbef1b98ac4550fefc85b04b570abbf extpot.pak_de
+  29752     b141b55ddcf0b027f730cd0d48f370ff extspel.pak_de
+  30917     3a251d7ddcc3dc1ef1565f7fab8bd4ac falls.pak_de
+  35368     52a9f6c109e627cbe11948c6fb99d900 feststh.pak_de
+  21592     01ee70df7b7bb1594b577e4b10d5b43f fgowest.pak_de
+  204177    e6a0ee176def91e26e4ed086bb43897f finale.pak_de
+  22804     2a8c0f6b12ba171d03902a68a01b15a2 fnorth.pak_de
+  43465     5b605025862fbe8edc855e3a95a96c0d foresta.pak_de
+  22490     272d3592f455fd68f2c0e08217fe5014 forestb.pak_de
+  20737     bec9b5eafd025e408c7005861d3c4a02 forestc.pak_de
+  25057     52358a9363775011f313ed9faa5d2677 fountn.pak_de
+  17935     40e8cf80b0a11264ed1f140d9c4efb72 foyer.pak_de
+  23155     15179d6bb27bc222a31915bbd8f764e0 fsouth.pak_de
+  37860     d7746330590dd3fb8c8f3e63569a82a5 fsouthb.pak_de
+  35419     e7398adda9f3065829d24c78ff8527ae fwststh.pak_de
+  19535     3c05de5cd36660d55a779e522929fb88 gatecv.pak_de
+  17875     58e467f89f1702c4744d185a1400d6e9 gem.pak_de
+  33771     230f54e6afc007ab4117159181a1c722 gemcut.pak_de
+  20462     8805f60894be49ecbe986d739ba50a6d gen_cav.pak_de
+  20616     a0126723bc1409b81256e7bdea424a9e gencavb.pak_de
+  26686     8dd601a448a47f95408cb339f78e51d2 genhall.pak_de
+  24394     330f1c33222b524b363728424662c534 glade.pak_de
+  29789     b9f82cf14bf031ba5f50d560544dedc8 grave.pak_de
+  22589     c33711bb10477df0060471918609e6c6 grthall.pak_de
+  29945     2584198d791dd513a3e393625a567949 healer.pak_de
+  18428     c5f4d898db9a57493e5c46cfddc958b3 kitchen.pak_de
+  25036     2e83155c0f9a0ae2d085683362aebb07 kyragem.pak_de
+  23027     2fa87551f4f18fb3294fc2917bb43cd1 lagoon.pak_de
+  11908     a12c8b34dbcb082e2bb56ff289ec555d landing.pak_de
+  21940     8973fed4e1f36704704ffe5472df9442 lava.pak_de
+  25455     618e5cc192ff9a2b1805d6007ea07445 lephole.pak_de
+  21862     347dc7073858bec33da2e3e37bae6d1b library.pak_de
+  21868     00f1df504383de27ed4355cf1d174cc1 mix.pak_de
+  21116     fae8d05daf03557a90dcaae269ba9b75 mooncav.pak_de
+  19721     78642a3794e973a2bae7581a2a95ef79 ncliff.pak_de
+  19067     1293f6137c5511cc181fdae1e0317a50 ncliffb.pak_de
+  14676     727ac8aeca3df53891f50520ccf68736 nwclifb.pak_de
+  14398     6dbc560457c467179ada4f3db8b68730 nwcliff.pak_de
+  35869     e7a350875a96b374c183d5ac9868ce86 oaks.pak_de
+  15232     380909772a57691eb3d2894c6f48e998 plateau.pak_de
+  22113     721fe11d220e93b0330436544640523b pltcave.pak_de
+  50853     8a19a71809131f31b9de02bed19e8bb7 potion.pak_de
+  25260     a1b9ed28b8f35c580ea5c4d107815336 ruby.pak_de
+  34980     c004fd067841cd405c8af36240fcc98c sickwil.pak_de
+  27720     f6c4528961ab49881449dbca35e90c7b song.pak_de
+  23041     220da4b659c4f4e6f1816525c9398dd3 sorrow.pak_de
+  26974     9b1f428bce1ccb55586e3b1834588530 spell.pak_de
+  26048     0410c0d87858023ed28dce17d26b8efb spring.pak_de
+  24767     bcc1d7bdac0cf58bcb7b084a955cc8a5 square.pak_de
+  95631     5240045ea14d63773881711740befbb3 startup.pak_de
+  37387     6dbb63c480e253e0ef0d06f85cafa715 stump.pak_de
+  22941     0100dcb18ee9f1bb7bc1fc5f52479c1d temple.pak_de
+  15807     77442497d467dd20cb8fd754df108ed6 trunk.pak_de
+  36537     55f93f50a74e641112becdbe6929a993 upstair.pak_de
+  25573     02d2dbf005aa95bfa9f39fd1d87cbbe9 well.pak_de
+  21376     6544598c7462f4d3d50353f3d06f8041 willow.pak_de
+  47276     294bcd1c2e406c64fca2372f6b9210d3 wise.pak_de
+  26063     6452b5f019b7761c5d39b96db52a3807 xedge.pak_de
+  22490     47a64dbc83d6dd4a5f2e2aa5e9bade66 xedgeb.pak_de
+  21670     9a7c67d32e5012e2b97a0e6e9e6ad463 xedgec.pak_de
+  25773     b1b27f91bace0fbdc83a9f59cc4750da zrock.pak_de
+  53761456  087261e9ec6de9b395fee90b028f6e8b setup_legend_of_kyrandia_german_2.1.0.14.exe
+
+  7131      c99fb43d666ef5881a73a509c2594b14 main_fre.cps
+  8889      b0fffc98774bf8398d11b606a051758c text_fre.cps
+  20696     63e8de33f2a9b61f0b050a5b0bcf1dcb alchemy.pak_fr
+  18879     5e5ead54159b3c634645bb10274190a5 algae.pak_fr
+  19370     755cde96cf1c11cfa0bd822e9e74cd6d altar.pak_fr
+  18565     e7d0412e746d6d932e4c601a47a6bf9b arch.pak_fr
+  38773     2391d3896c7eadd5186259211311f203 balcony.pak_fr
+  37745     cd117742c46d7b95b34bd14bf050b150 belroom.pak_fr
+  20544     c37666bdb10c2b568ad8b2a9a1d2d5f3 bonkbg.pak_fr
+  17863     bd464a5ba560d3ca68f561401eedcdc2 bridge.pak_fr
+  23138     1f1ee8e950b400a0e6142895a82d942a brins.pak_fr
+  23899     9ecee3e92dcbe85cc214a730e92b8444 broken.pak_fr
+  27917     de8e80d420eff58421b64fa492baaf40 burn.pak_fr
+  18953     97f380b4d408285473585a183cc6c181 castle.pak_fr
+  43688     313a84c122a98325a21f4491682d0bb6 catacom.pak_fr
+  25571     df65e21be8a6f8f8524d1a5a36ec89d2 cave.pak_fr
+  23259     09178a5b5c991c1b5df4a17b8fb4be5e caveb.pak_fr
+  30239     f9e8e824f0938092d0f70ccb5d98e289 cgate.pak_fr
+  17448     b1583bc64cdf815fd5443d39ce498333 chasm.pak_fr
+  20671     6593b93949c981910e5c1295e2e9df11 cliff.pak_fr
+  19979     6198a9e57310a21dd538e53dd8ba8251 darms.pak_fr
+  25870     3758db0ae39d4377e564b8f6b5b7d369 dead.pak_fr
+  16350     9e35a8a1dea79f1906017fbf8ea25d7d dnstair.pak_fr
+  22778     66900c8b93fabb3a8fc0c4774938d675 dragon.pak_fr
+  25449     3c6e43a21f61471cbc9320e4e0287ea9 edge.pak_fr
+  38020     ee33fc92f9359e3655416f4315335d6d edgeb.pak_fr
+  39709     3269210e359a5c08fa27c4dc7eb5a43f emcav.pak_fr
+  17222     fb5177dda67d4c98390d8ce480d25cf3 enter.pak_fr
+  22894     f48b64b9ef602ca689458399e238c262 extheal.pak_fr
+  43514     a7313a17ceaecde22cbb0f8a60d6529c extpot.pak_fr
+  29724     8d25b682581b4f6ec1b8b7dc894ce5f4 extspel.pak_fr
+  30905     40dba7b8d8329aa5af2c475be65d19ce falls.pak_fr
+  35368     1987db13dba5fca4c0ea8466bbc705af feststh.pak_fr
+  21592     77b1e421694d13406536d9b09db4acde fgowest.pak_fr
+  204225    e2de3ed1158029f26482410b0fa9c3fd finale.pak_fr
+  22788     cc1ae2a1939d6a0be88021147a480d40 fnorth.pak_fr
+  43415     7691c354a9812be764df6120d429cfe6 foresta.pak_fr
+  22440     b0fd25f5e47d5e38c6981a48197d0e29 forestb.pak_fr
+  20737     b80849463f4af919636b3f2afb11e9da forestc.pak_fr
+  24959     5a1f66bb876ae0dfa26ee82b8cd23672 fountn.pak_fr
+  17877     ddba630985c363f046737b9f8dba4ad9 foyer.pak_fr
+  23155     57c5c34adb6990b7b2dfef8fe9955949 fsouth.pak_fr
+  37860     b7d2783c3c8aef21f2635e0500f1ca0c fsouthb.pak_fr
+  35419     a219757718bcca4e1c6b25c0fb6173bf fwststh.pak_fr
+  19505     72678538ff296e9ca44a44f7393ece7e gatecv.pak_fr
+  17897     f58e92fc70140aeead43abe0a3bc103f gem.pak_fr
+  33709     b037c41768b652a040360ffa3556fd2a gemcut.pak_fr
+  20454     0426e22ed7ddc5dafc2e498317b0fa74 gen_cav.pak_fr
+  20618     73a195c9896b872d2807f5235b5b0ce9 gencavb.pak_fr
+  26656     d8046750ef75cfbaf17e0292e5b47ae3 genhall.pak_fr
+  24376     2d74a50c53fa40cd25de2ef1a84e0fd5 glade.pak_fr
+  29731     c8b8820adbaad3c9be647c5ff5ce11a9 grave.pak_fr
+  22565     038d2ae9bd50ce272e2a3e2c75768c60 grthall.pak_fr
+  29723     83f667aa3694b8949d4493f90ac7a957 healer.pak_fr
+  18396     24f097b1ba19ad4095da925670cfe783 kitchen.pak_fr
+  25002     a973bc818cb7d25ef410d05936e1b5b2 kyragem.pak_fr
+  23015     af1a3f2cf113d2189994f69be3a67fa0 lagoon.pak_fr
+  11886     b640c6892d6d97a2a8f3cdbc9e898409 landing.pak_fr
+  21934     2a86c75cb808c150e2cfdfa11d6fd0a2 lava.pak_fr
+  25287     c0b4a650ddfbf02fc5e06a579cc9aa84 lephole.pak_fr
+  21832     44595b9646945f34091c0d9dffdabf40 library.pak_fr
+  21848     e8c212de417e44817ca0daa528006c0c mix.pak_fr
+  21118     d3d3852d63a4016a7ff2a829a1453c19 mooncav.pak_fr
+  19723     7415f697ecbb0035a052235120f19067 ncliff.pak_fr
+  19069     fa19a22030705e6f3e63e07a66686391 ncliffb.pak_fr
+  14648     c8688e5350a269d6fa52a752981f7d24 nwclifb.pak_fr
+  14400     3ce7256b69e00f7461a07a1a110db674 nwcliff.pak_fr
+  35865     cf08bde5d704694c86314e9de19edd15 oaks.pak_fr
+  15226     499610413d9f8e0229e18c2fa3f01d56 plateau.pak_fr
+  22111     4ff3b3c64ec41f42eb1deb43cae8c47c pltcave.pak_fr
+  50729     df8625ebcb78b5dc08e2e10d674e073f potion.pak_fr
+  25238     0684c584ab17b794137581b80ebbcbd5 ruby.pak_fr
+  34950     497e15279c22e281990a3f51fb5c0a79 sickwil.pak_fr
+  27698     43d0f2f374024bbc43810be93e7dd11a song.pak_fr
+  23017     0a13cadd6fa87c2c634d35a0c090dbae sorrow.pak_fr
+  26838     0e8dfd67d5838f30b467b2c13e4a4bf6 spell.pak_fr
+  25986     6da3a211c8721a8b99576627db6396f4 spring.pak_fr
+  24763     31f7bfbc0ac5500ab32a76b03883eaf1 square.pak_fr
+  95267     43c682471f495cbb504f9a439e16197b startup.pak_fr
+  37375     6809b1bef249b7ad0b2fd20ecfe41bf7 stump.pak_fr
+  22825     d32f9f03b86ec18d621554892b4a40f8 temple.pak_fr
+  15805     aec95a4eb162e60e80ec21fda8f4fdcd trunk.pak_fr
+  36539     89d805bb6a2b768b5994767d406fb040 upstair.pak_fr
+  25515     b0b2c11b13400c3e6869a5931e44c75f well.pak_fr
+  21332     13f64d8da74f293fd777fdafa9540c9c willow.pak_fr
+  47194     ffd0370affc9bea0deab95019a36c1c3 wise.pak_fr
+  26035     badd0ffdcde30472982dc6c138473ff1 xedge.pak_fr
+  22488     55233b4be65c0f8ef5a06f7996742a7d xedgeb.pak_fr
+  21654     54bad00ed16639ca33341730434d4169 xedgec.pak_fr
+  25769     61e2648f0cb0a4d42e4305f2b8957f6d zrock.pak_fr
+  53759328  766aa416cb980d9a4cd2c36236f73b06 setup_legend_of_kyrandia_french_2.1.0.14.exe
+
+sha1sums: |
+  b043982972f76670ea49619e44ae0cb9cd9f5e5f  setup_legend_of_kyrandia_2.1.0.14.exe
+  854efd93afd88e3887ec7d48c6c7fb8a9db454c5  setup_legend_of_kyrandia_german_2.1.0.14.exe
+  189c7a1d1a17b721f77aaf4c9a77bf67a4d8820a  setup_legend_of_kyrandia_french_2.1.0.14.exe
+...

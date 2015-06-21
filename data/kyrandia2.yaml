@@ -1,0 +1,401 @@
+---
+longname: "Legend of Kyrandia II: Hand of Fate"
+copyright: © 1993 Westwood Studios
+plugin: scummvm_common
+gameid: kyra2
+
+packages:
+  kyrandia2-data:
+    gog:
+      url: legend_of_kyrandia
+      game: legend_of_kyrandia_hand_of_fate
+    install:
+    - alley.pak
+    - altar.pak
+    - anchor.pak
+    - anytalk.tlk
+    - audio.pak
+    - bridge.pak
+    - cauldron.pak
+    - cellar.pak
+    - ch1voc.tlk
+    - ch2voc.tlk
+    - ch4voc.tlk
+    - ch5voc.tlk
+    - clearng.pak
+    - cliff.pak
+    - close.pak
+    - cost1_sh.pak
+    - cost2_sh.pak
+    - cost3_sh.pak
+    - cost4_sh.pak
+    - cost5_sh.pak
+    - cost6_sh.pak
+    - cost7_sh.pak
+    - cost8_sh.pak
+    - cost9_sh.pak
+    - cricket.pak
+    - croc.pak
+    - dinoa.pak
+    - dinob.pak
+    - dinoc.pak
+    - dinod.pak
+    - dock.pak
+    - door.pak
+    - drivers.pak
+    - fall.pak
+    - fate.pak
+    - ferry.pak
+    - fight.pak
+    - filedata.fdt
+    - fisher.pak
+    - float.pak
+    - flytrap.pak
+    - foot.pak
+    - garden.pak
+    - gears.pak
+    - gears2.pak
+    - gears3.pak
+    - gnarl.pak
+    - hanoi.pak
+    - hole.pak
+    - incave.pak
+    - ingate.pak
+    - inherb.pak
+    - inhome.pak
+    - injail.pak
+    - injail2.pak
+    - inshop.pak
+    - instore.pak
+    - introdrv.pak
+    - introgen.pak
+    - introtlk.pak
+    - introvoc.pak
+    - isle.pak
+    - jungle.pak
+    - markhme.pak
+    - meadow.pak
+    - misc_cps.pak
+    - misc_emc.pak
+    - mystrm.pak
+    - nest.pak
+    - onboat.pak
+    - other.pak
+    - outcave.pak
+    - outcave2.pak
+    - outfarm.pak
+    - outgate.pak
+    - outherb.pak
+    - outhome.pak
+    - phone_a.pak
+    - phone_b.pak
+    - phone_c.pak
+    - phone_d.pak
+    - quick.pak
+    - raina.pak
+    - rainb.pak
+    - rat.pak
+    - road.pak
+    - rope.pak
+    - scorch.pak
+    - skull.pak
+    - sky.pak
+    - station.pak
+    - street.pak
+    - sulfur.pak
+    - talkeng.pak
+    - talkfre.pak
+    - talkger.pak
+    - tavern.pak
+    - timber.pak
+    - tram.pak
+    - tree.pak
+    - tree2.pak
+    - voc.pak
+    - volc_a.pak
+    - volc_b.pak
+    - volc_c.pak
+    - volc_d.pak
+    - volc_e.pak
+    - volc_f.pak
+    - volc_g.pak
+    - volc_h.pak
+    - volc_i.pak
+    - volc_j.pak
+    - volc_k.pak
+    - volc_l.pak
+    - volc_m.pak
+    - volc_n.pak
+    - volc_o.pak
+    - volc_p.pak
+    - volcano.pak
+    - wharf.pak
+    - wheel.pak
+    optional:
+    - manual.pdf
+    - manualde.pdf
+
+files:
+  manual.pdf:
+    install_to: $docdir
+  manualde.pdf:
+    install_to: $docdir
+
+  setup_legend_of_kyrandia2_2.1.0.7.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - alley.pak
+    - altar.pak
+    - anchor.pak
+    - anytalk.tlk
+    - audio.pak
+    - bridge.pak
+    - cauldron.pak
+    - cellar.pak
+    - ch1voc.tlk
+    - ch2voc.tlk
+    - ch4voc.tlk
+    - ch5voc.tlk
+    - clearng.pak
+    - cliff.pak
+    - close.pak
+    - cost1_sh.pak
+    - cost2_sh.pak
+    - cost3_sh.pak
+    - cost4_sh.pak
+    - cost5_sh.pak
+    - cost6_sh.pak
+    - cost7_sh.pak
+    - cost8_sh.pak
+    - cost9_sh.pak
+    - cricket.pak
+    - croc.pak
+    - dinoa.pak
+    - dinob.pak
+    - dinoc.pak
+    - dinod.pak
+    - dock.pak
+    - door.pak
+    - drivers.pak
+    - fall.pak
+    - fate.pak
+    - ferry.pak
+    - fight.pak
+    - filedata.fdt
+    - fisher.pak
+    - float.pak
+    - flytrap.pak
+    - foot.pak
+    - garden.pak
+    - gears.pak
+    - gears2.pak
+    - gears3.pak
+    - gnarl.pak
+    - hanoi.pak
+    - hole.pak
+    - incave.pak
+    - ingate.pak
+    - inherb.pak
+    - inhome.pak
+    - injail.pak
+    - injail2.pak
+    - inshop.pak
+    - instore.pak
+    - introdrv.pak
+    - introgen.pak
+    - introtlk.pak
+    - introvoc.pak
+    - isle.pak
+    - jungle.pak
+    - markhme.pak
+    - meadow.pak
+    - misc_cps.pak
+    - misc_emc.pak
+    - mystrm.pak
+    - nest.pak
+    - onboat.pak
+    - other.pak
+    - outcave.pak
+    - outcave2.pak
+    - outfarm.pak
+    - outgate.pak
+    - outherb.pak
+    - outhome.pak
+    - phone_a.pak
+    - phone_b.pak
+    - phone_c.pak
+    - phone_d.pak
+    - quick.pak
+    - raina.pak
+    - rainb.pak
+    - rat.pak
+    - road.pak
+    - rope.pak
+    - scorch.pak
+    - skull.pak
+    - sky.pak
+    - station.pak
+    - street.pak
+    - sulfur.pak
+    - talkeng.pak
+    - talkfre.pak
+    - talkger.pak
+    - tavern.pak
+    - timber.pak
+    - tram.pak
+    - tree.pak
+    - tree2.pak
+    - voc.pak
+    - volc_a.pak
+    - volc_b.pak
+    - volc_c.pak
+    - volc_d.pak
+    - volc_e.pak
+    - volc_f.pak
+    - volc_g.pak
+    - volc_h.pak
+    - volc_i.pak
+    - volc_j.pak
+    - volc_k.pak
+    - volc_l.pak
+    - volc_m.pak
+    - volc_n.pak
+    - volc_o.pak
+    - volc_p.pak
+    - volcano.pak
+    - wharf.pak
+    - wheel.pak
+    - manual.pdf
+    - manualde.pdf
+
+size_and_md5: |
+  200696    fe35f12bac8257ffefec7297f32b84ed alley.pak
+  101359    22fe78a241bc6a0fe700d351087c79ba altar.pak
+  111900    dbfd49334dd09f4b6cf99c9b19d86477 anchor.pak
+  12193192  2110f34b525553fae5db60794f00e031 anytalk.tlk
+  729012    9a7d485c9327f838d86414a21d9d64c2 audio.pak
+  208175    86d819be974681b4471553ec7ea46d15 bridge.pak
+  193566    9d36e829e47459adb704413d745e897b cauldron.pak
+  88912     10c19b7f1b9b2af02f6a187f94d42f3b cellar.pak
+  47343685  0495fe15fb0e48e8050af116e792905b ch1voc.tlk
+  60999550  6e37315a80e8936bd46ddc270b0d122b ch2voc.tlk
+  29255997  ed77849d24468ea9ac8eee312bcad641 ch4voc.tlk
+  34524782  0e14b8c2a4ece6d895ac8eb394d7d74e ch5voc.tlk
+  102424    aa511e5317d70589fe7d16620af3df9d clearng.pak
+  27754     7c93b223bbea7f289f245a06e1c36892 cliff.pak
+  139109    6cee3b7a60fed0c43c9bb71951ab5381 close.pak
+  139712    4e9135298b0f1b581f545c718da05e01 cost1_sh.pak
+  102872    8c78362031280b8f224aab82d6ced316 cost2_sh.pak
+  72631     7003c6341ea0480475270e39ca85787d cost3_sh.pak
+  79916     5202a6c29947066b65f34b8b2e9a3c01 cost4_sh.pak
+  79395     bb33ecc48dbf55cc5b0bead8af98fb3d cost5_sh.pak
+  78907     2a2e762807ddb269ac5541c6ecec9297 cost6_sh.pak
+  106423    18fce3e09fc757e07e13cca2917e9927 cost7_sh.pak
+  78046     9632e0fb858bffcde14e9c8638e704be cost8_sh.pak
+  63367     5464abfa4dc69dbfa9c03213b10dafa9 cost9_sh.pak
+  46877     88ad35c26bc938dd76dc0274689fbc13 cricket.pak
+  149494    1cd1cf27ae1046576e516e564cb82f02 croc.pak
+  127577    a51c69cb0bfce1c65f11776cd25b815a dinoa.pak
+  310923    6d2697c93272f6ff7112148345109045 dinob.pak
+  248939    ddfdda9246cbf2088b63e15bd6e6a66a dinoc.pak
+  265060    0526afd696424907cc8a5257050a0c66 dinod.pak
+  130294    63d80bd22e9fd0d9108a4f5065218e3f dock.pak
+  81587     41331e4015172d97773200ca82997806 door.pak
+  149190    82d516f2248a52c2d3deb8ee1a0aae33 drivers.pak
+  64633     0226654b22d9bc6e9b68340068e52f6a fall.pak
+  113449    28cbad1c5bf06b2d3825ae57d760d032 fate.pak
+  52516     4126e7ff1e624bef6de1088f635b3e67 ferry.pak
+  187696    b1f2d871ac86da6d04dac7bfedba4431 fight.pak
+  59514     b75776df2d94fb2a5bd16bdd809d9b9f filedata.fdt
+  186460    50bb11ca510d270bb947447f76b7d1b3 fisher.pak
+  39327     6c7ca8e737cd24421b36b4a82e515cd5 float.pak
+  118759    31a4a66af4621d00941ec5af9f31c0de flytrap.pak
+  168512    7487df4deea4db63fd1451cad4c5dab3 foot.pak
+  80094     cec8fb1181c38f4d0dc803001e31af05 garden.pak
+  211331    3f8c4b775b812a58f5b96e8ddc5a21d2 gears.pak
+  285269    48fbd5a737644d3ca908257e1949fe87 gears2.pak
+  469084    881ba205cee9a42002912f4d775caaae gears3.pak
+  59585     a1e2a8ad71a0eed946e772bb7cf9a183 gnarl.pak
+  72081     624184c9ef1911f0ad3a7d65d6985513 hanoi.pak
+  103695    dc267c5cbdf704fdc8b1ba65a0e2b83d hole.pak
+  249588    31780e3ac68aeccfe588fed0ffb149ca incave.pak
+  74567     2fe67178df0cdf6edbdeea9e03ed4604 ingate.pak
+  82104     d5bac84641d85fae4df33170e298b4bb inherb.pak
+  83413     0a740ad909e8ee5a022753bd7a73676c inhome.pak
+  288748    69a275156dc54525306fef6461c98c6a injail.pak
+  158953    d2697d528e8b7be140ce1f6c91bd851e injail2.pak
+  220866    a90fd9819bdf71c2213579223c3254aa inshop.pak
+  52641     e3f0ad3aac67dfca0f2ee124f0483a37 instore.pak
+  154328    b3f0caaa3dfd7fcae0657873c401d981 introdrv.pak
+  1467541   6651f7ac307f689205c740387c2cffb6 introgen.pak
+  1030584   919e7e09526d5b0a7d292df699a4e4a7 introtlk.pak
+  409039    4e3ee686bd6e22a8dd53e5df02a40241 introvoc.pak
+  69068     9d6604341f298e625452974d8b2b371f isle.pak
+  115532    5e59168daef773179befebedee5faf48 jungle.pak
+  33386     87637d426ca75d4b8a83da277e63d912 markhme.pak
+  250660    3abdb1c78b60c7ae575f0c9b382bac83 meadow.pak
+  301253    be0d0126dc1fd374837dc8b56fc2f24b misc_cps.pak
+  58352     7307968a964ff12ab8613eb9f8020a96 misc_emc.pak
+  242552    ef5129c682dc40a43aabdbcb292de7d9 mystrm.pak
+  54085     5e40ac3ec9e89f9f910d0a8ff3f26bba nest.pak
+  247707    6d690b6c64c9ead941d7b1225ab2b13c onboat.pak
+  498118    bddd0c243e927fe87ca44f0594b58ebe other.pak
+  162488    ee1fa4cd0f28bbf8aeeac27f75238300 outcave.pak
+  330844    174787910f3a5802230674da1c56086f outcave2.pak
+  176842    ab0b6b58bba5020d97c42977d4c245ff outfarm.pak
+  99006     253b73ed3e7b05fad3b1a8ec246e0948 outgate.pak
+  40754     be8368ff52f9fcb568ee881ec1d41e8b outherb.pak
+  123688    950c69240d559f06b3771d7a12d61cd2 outhome.pak
+  36276     5f29117667227da8ef5718982e83babe phone_a.pak
+  33174     ddae7e375c776ebe6d66c7d5ae4b0d4f phone_b.pak
+  32328     0a60f509c5bf130ba97327939817f3b3 phone_c.pak
+  63245     203256e5989e73b587136c2100672e04 phone_d.pak
+  161018    dc2152f6a16a7167e76d7fa83faf1f3a quick.pak
+  169039    2c5483e5118692c3517db7f506003f4a raina.pak
+  22750     80964dd4d0b0f26a8e2cd6e9808eae6d rainb.pak
+  125146    849a8b8b1d3a3aa312d8d25f630c8cfa rat.pak
+  22727     22977267ba3ff9b381cbc802bdb2ec09 road.pak
+  207272    23b7ec87d3491949d54bbddf1d3ca05d rope.pak
+  217996    89869a06d10534b29be91c3c5c122c0e scorch.pak
+  73612     185730e2e5a9d8ce2acf44860687c476 skull.pak
+  163425    f4660d141501d95376c4d3dfacfa2905 sky.pak
+  87145     b4c70d6be3becea0a2f9692a4a6cd5db station.pak
+  44784     fba3ba740d52cf8452c8a77d27f4008d street.pak
+  77112     ef241488e5e2ec162318e58251b5b034 sulfur.pak
+  771890    0e0095b223078e1f372179b185704fdb talkeng.pak
+  360225    2e2c595bf4b79e20649ead41406306b6 talkfre.pak
+  480856    e4c3f8696a6e7672bebc4c3fc3730359 talkger.pak
+  262899    c4c9e95183a1e63673c96bfa4897b13d tavern.pak
+  33425     af839beee0538df6fcc9da6d220b05ee timber.pak
+  321225    52ac55ca49522bd4c8d59fe680398a25 tram.pak
+  106831    ef0cc1f74299758dd7bb4a607caf1e5e tree.pak
+  289002    6ce772f0ba50632e508a42fc086bc674 tree2.pak
+  1958925   4e3197fe772fad431069463b090e6f88 voc.pak
+  140864    e7a2cef9558b5d244b1c1a400a108fd9 volc_a.pak
+  36542     ec76227305149e0135db7120320d33a4 volc_b.pak
+  48300     644ff92ff5c29049f2223b0a040a6ec5 volc_c.pak
+  146037    d5933e178186959374efa9b25225ba84 volc_d.pak
+  46567     0576dc120d562c4cc4bd644a4bf02c1e volc_e.pak
+  40934     8043a10ca2bd28d7ff4b57ea7ae38249 volc_f.pak
+  36382     1f0741e975c682286f4cfab19f8f3bef volc_g.pak
+  26864     348a0b77d1ccf93229f186e93a354ee4 volc_h.pak
+  27539     56e9b3e24d2350f8786ae2f94d6bfe98 volc_i.pak
+  137280    1c035ff5266439df6f7d505a65817908 volc_j.pak
+  39493     8e4c9db01dac77f20f7a1d52b21aa86d volc_k.pak
+  28273     2622a8b6b6ee6d9760dfa92bb6da6fef volc_l.pak
+  49965     dd91086c273a894511cc5604072c0d61 volc_m.pak
+  127347    f00e32af3be07bb46ba698e8ca122f38 volc_n.pak
+  69333     53de7a1bd36d5e06c09830f425b962e1 volc_o.pak
+  33253     77b93199f3f03d57a0ea89ad5dc22d8d volc_p.pak
+  106375    f76c62f20c2092b838411c17aa4063e7 volcano.pak
+  178065    dcf97a80b5fd0dd3347bf5df9b325107 wharf.pak
+  117167    c15bc167621cbadfa921ad2e87ab286a wheel.pak
+  646485    41cb07f18897b4db3fcb9dd0eeb4cc43 manual.pdf
+  643525    2829a1fab661b307675280d0d3b6064f manualde.pdf
+  107016808 801049d3b32259cce5d0fcdc336728ea setup_legend_of_kyrandia2_2.1.0.7.exe
+
+sha1sums: |
+  8806e90841044ec8040ac1d74aa453f81bac59f2  setup_legend_of_kyrandia2_2.1.0.7.exe
+...
+
