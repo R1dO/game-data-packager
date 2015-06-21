@@ -165,7 +165,7 @@ class HashedFile(object):
                     update_progress(human_size(done))
                 else:
                     update_progress('%.0f%% %s/%s' % (
-                                100 * done / size,
+                                100 * done / size if size != 0 else 100,
                                 human_size(done),
                                 human_size(size)))
 
@@ -744,7 +744,7 @@ class GameData(object):
                 assert wanted.size is None, wanted.name
             # FIXME: find out file size and add to yaml
             else:
-                assert wanted.size or filename in (
+                assert wanted.size is not None or filename in (
                    'hipnotic/pak0.pak_qdq_glquake_compat'
                    'resource.1_106_cd'
                    ), (self.shortname, wanted.name)
