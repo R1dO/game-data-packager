@@ -32,6 +32,12 @@ for name, game in load_games().items():
         langs[lang] = langs.get(lang, 0) + 1
         langs['total'] += 1
         stats[lang] = stats.get(lang, 0) + 1
+
+    for package in game.packages.values():
+        for m_lang in getattr(package, 'langs', []):
+            if m_lang not in stats:
+                stats[m_lang] = 'm'
+
     genres[game.genre] = genres.get(game.genre, 0) + 1
     stats['genre'] = game.genre
     stats['shortname'] = name
@@ -81,7 +87,7 @@ for game in games:
     html.write('  <td>%s</td>\n' % game['longname'])
     for lang in langs_order:
         count = game.get(lang,None)
-        if lang in ('total', 'en') or count == '*':
+        if lang in ('total', 'en') or count in ('*', 'm'):
             html.write('  <td bgcolor="lightgreen">%s</td>\n' % count)
         elif lang in missing.get(game['shortname'],[]):
             assert not count
@@ -104,6 +110,7 @@ html.write('''
 <ul>
 <li>* : provided as an alternative one-file in a 'en'/'C' package</li>
 <li>! : language is missing</li>
+<li>m : multi-lang support in a single package</li>
 </ul>
 </html>
 '''
