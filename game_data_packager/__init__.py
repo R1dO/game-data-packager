@@ -1539,12 +1539,14 @@ class GameData(object):
                             except UnicodeError:
                                 print(comment.encode('ascii', 'replace').decode('ascii'))
                         if 'FILE_ID.DIZ' in zf.namelist():
+                            id_diz = ''
                             try:
                                 entryfile = zf.open('FILE_ID.DIZ')
                                 id_diz = entryfile.read().decode(encoding, 'replace')
                             except NotImplementedError:
-                                id_diz = subprocess.check_output(['unzip', '-c','-q',
-                                  found_name, 'FILE_ID.DIZ']).decode(encoding, 'replace')
+                                if which('unzip'):
+                                    id_diz = subprocess.check_output(['unzip', '-c','-q',
+                                     found_name, 'FILE_ID.DIZ']).decode(encoding, 'replace')
                             try:
                                 print(id_diz)
                             except UnicodeError:
