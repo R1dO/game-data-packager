@@ -76,6 +76,14 @@ files:
 
   descent.pig_demo:
     install_as: descent.pig
+  descent.pig_demo_p1:
+    provides: [descent.pig_demo]
+    look_for: [descent.pig]
+    unpack:
+      format: cat
+      other_parts: [descent.pig_demo_p2]
+  descent.pig_demo_p2:
+    look_for: [descent.pig]
 
   desc14sw.exe:
     provides:
@@ -145,6 +153,8 @@ files:
 cksums: |
   _ 2339773   descent.hog_demo
   _ 5092871   descent.pig_demo
+  _ 1416672   descent.pig_demo_p1
+  _ 3676199   descent.pig_demo_p2
   # optional doc
   _ 53079     readme.txt_demo
   _ 2991      refcard.txt
@@ -176,6 +186,8 @@ cksums: |
 md5sums: |
   cf1caf9c7a0681de80fac8cb593b33eb  descent.hog_demo
   f8dc0f2b3ee8baa2c622f57b470fe147  descent.pig_demo
+  fe7471bfe9a6a452034c0e16c9f6793c  descent.pig_demo_p1
+  43483d69fbf59499062361c70bd1102a  descent.pig_demo_p2
   b647aded11632d44943e01a53e660320  readme.txt_demo
   f531aea2b8cdf805815d0c84ae1353a2  refcard.txt
   4aa5ea2fb66f893e195304cc6efae542  desc14sw.tar.gz
