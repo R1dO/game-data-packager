@@ -1685,7 +1685,7 @@ class GameData(object):
                     # for at least Theme Hospital the files we want are
                     # actually in subdirectories, so we search recursively
                     self.consider_file_or_dir(tmpdir)
-                elif fmt == 'unzip':
+                elif fmt == 'unzip' and which('unzip'):
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
@@ -1693,15 +1693,13 @@ class GameData(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     quiet = ['-q'] if VERBOSE else ['-qq']
-                    subprocess.check_call(['unzip', '-j', '-C', '-LL'] +
+                    subprocess.check_call(['unzip', '-j', '-C'] +
                                 quiet + [os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
                     # -j junk paths
                     # -C use case-insensitive matching
-                    # -LL forces conversion to lowercase
-                    for f in to_unpack:
-                        self.consider_file(os.path.join(tmpdir, f), True)
-                elif fmt == '7z':
+                    self.consider_file_or_dir(tmpdir)
+                elif fmt in ('7z', 'unzip'):
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
@@ -1715,7 +1713,7 @@ class GameData(object):
                                 [os.path.abspath(found_name)] +
                                 list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
-                elif fmt == 'unar':
+                elif fmt in ('unar', 'unzip'):
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s', to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -2804,6 +2802,9 @@ class GameData(object):
             return True
 
         if which(fmt) is not None:
+            return True
+
+        if fmt == 'unzip' and (which('7z') or which('unar')):
             return True
 
         # unace-nonfree package diverts /usr/bin/unace from unace package
