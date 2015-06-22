@@ -1,0 +1,539 @@
+---
+longname: "Elvira: Mistress of the Dark"
+copyright: © 1990 Horrorsoft
+plugin: scummvm_common
+genre: Horror
+
+packages:
+  elvira1-en-data:
+    debian:
+      provides: elvira1-data
+    install:
+    - gamepc
+    - icon.dat
+    - instr.dat
+    - start
+    - tbllist
+    - tables01
+    - tables02
+    - tables03
+    - tables04
+    - tables05
+    - tables06
+    - tables07
+    - tables08
+    - tables09
+    - tables10
+    - tables11
+    - 01.snd
+    - 02.snd
+    - 03.snd
+    - 04.snd
+    - 05.snd
+    - 06.snd
+    - 08.snd
+    - 09.snd
+    - 011.vga
+    - 012.vga
+    - 021.vga
+    - 022.vga
+    - 031.vga
+    - 032.vga
+    - 061.vga
+    - 062.vga
+    - 071.vga
+    - 072.vga
+    - 081.vga
+    - 082.vga
+    - 091.vga
+    - 092.vga
+    - 171.vga
+    - 172.vga
+    - 181.vga
+    - 182.vga
+    - 191.vga
+    - 192.vga
+    - 201.vga
+    - 202.vga
+    - 211.vga
+    - 212.vga
+    - 221.vga
+    - 222.vga
+    - 231.vga
+    - 232.vga
+    - 241.vga
+    - 242.vga
+    - 251.vga
+    - 252.vga
+    - 261.vga
+    - 262.vga
+    - 271.vga
+    - 272.vga
+    - 281.vga
+    - 282.vga
+    - 291.vga
+    - 292.vga
+    - 301.vga
+    - 302.vga
+    - 311.vga
+    - 312.vga
+    - 321.vga
+    - 322.vga
+    - 331.vga
+    - 332.vga
+    - 341.vga
+    - 342.vga
+    - 351.vga
+    - 352.vga
+    - 361.vga
+    - 362.vga
+    - 371.vga
+    - 372.vga
+    - 381.vga
+    - 382.vga
+    - 391.vga
+    - 392.vga
+    - 401.vga
+    - 402.vga
+    - 411.vga
+    - 412.vga
+    - 421.vga
+    - 422.vga
+    - 431.vga
+    - 432.vga
+    - 441.vga
+    - 442.vga
+    - 451.vga
+    - 452.vga
+    - 461.vga
+    - 462.vga
+    - 471.vga
+    - 472.vga
+    - 481.vga
+    - 482.vga
+    - 491.vga
+    - 492.vga
+    - 501.vga
+    - 502.vga
+    - 511.vga
+    - 512.vga
+    - 521.vga
+    - 522.vga
+    - 531.vga
+    - 532.vga
+    - 541.vga
+    - 542.vga
+    - 551.vga
+    - 552.vga
+    - 561.vga
+    - 562.vga
+    - 571.vga
+    - 572.vga
+    - 581.vga
+    - 582.vga
+    - 591.vga
+    - 592.vga
+    - 601.vga
+    - 602.vga
+    - 611.vga
+    - 612.vga
+    - 621.vga
+    - 622.vga
+    - 631.vga
+    - 632.vga
+    - 641.vga
+    - 642.vga
+    - 651.vga
+    - 652.vga
+    - 661.vga
+    - 662.vga
+    - 671.vga
+    - 672.vga
+    - 681.vga
+    - 682.vga
+    - 691.vga
+    - 692.vga
+    - 701.vga
+    - 702.vga
+    - 711.vga
+    - 712.vga
+    - 721.vga
+    - 722.vga
+    - 731.vga
+    - 732.vga
+    - 741.vga
+    - 742.vga
+    - mod1.mus
+    - mod7.mus
+    - mod8.mus
+    - mod9.mus
+    - mod10.mus
+    - mod14.mus
+
+  elvira1-fr-data:
+    lang: fr
+    debian:
+      provides: elvira1-data
+    install:
+    - gamepc_fr
+    - icon.dat
+    - instr.dat
+    - start
+    - tbllist
+    - tables01_fr
+    - tables02_fr
+    - tables03_fr
+    - tables04_fr
+    - tables05
+    - tables06_fr
+    - tables07_fr
+    - tables08_fr
+    - tables09
+    - tables10
+    - tables11
+    - 01.snd
+    - 02.snd
+    - 03.snd
+    - 04.snd
+    - 05.snd
+    - 06.snd
+    - 08.snd
+    - 09.snd
+    - 011.vga
+    - 012.vga
+    - 021.vga
+    - 022.vga
+    - 031.vga
+    - 032.vga
+    - 061.vga
+    - 062.vga
+    - 071.vga
+    - 072.vga
+    - 081.vga
+    - 082.vga
+    - 091.vga
+    - 092.vga
+    - 171.vga
+    - 172.vga
+    - 181.vga
+    - 182.vga
+    - 191.vga
+    - 192.vga
+    - 201.vga
+    - 202.vga
+    - 211.vga
+    - 212.vga
+    - 221.vga
+    - 222.vga
+    - 231.vga
+    - 232.vga
+    - 241.vga
+    - 242.vga
+    - 251.vga
+    - 252.vga
+    - 261.vga_fr
+    - 262.vga
+    - 271.vga
+    - 272.vga
+    - 281.vga_fr
+    - 282.vga
+    - 291.vga
+    - 292.vga
+    - 301.vga
+    - 302.vga
+    - 311.vga
+    - 312.vga
+    - 321.vga
+    - 322.vga
+    - 331.vga
+    - 332.vga
+    - 341.vga
+    - 342.vga_fr
+    - 351.vga
+    - 352.vga
+    - 361.vga
+    - 362.vga
+    - 371.vga
+    - 372.vga
+    - 381.vga
+    - 382.vga
+    - 391.vga
+    - 392.vga
+    - 401.vga
+    - 402.vga
+    - 411.vga
+    - 412.vga
+    - 421.vga
+    - 422.vga
+    - 431.vga
+    - 432.vga
+    - 441.vga
+    - 442.vga
+    - 451.vga
+    - 452.vga
+    - 461.vga
+    - 462.vga
+    - 471.vga
+    - 472.vga
+    - 481.vga
+    - 482.vga
+    - 491.vga
+    - 492.vga
+    - 501.vga
+    - 502.vga
+    - 511.vga
+    - 512.vga
+    - 521.vga
+    - 522.vga
+    - 531.vga
+    - 532.vga
+    - 541.vga
+    - 542.vga
+    - 551.vga
+    - 552.vga
+    - 561.vga
+    - 562.vga
+    - 571.vga
+    - 572.vga
+    - 581.vga
+    - 582.vga
+    - 591.vga
+    - 592.vga
+    - 601.vga
+    - 602.vga
+    - 611.vga
+    - 612.vga
+    - 621.vga
+    - 622.vga
+    - 631.vga
+    - 632.vga
+    - 641.vga
+    - 642.vga
+    - 651.vga
+    - 652.vga
+    - 661.vga
+    - 662.vga_fr
+    - 671.vga
+    - 672.vga
+    - 681.vga
+    - 682.vga
+    - 691.vga
+    - 692.vga
+    - 701.vga
+    - 702.vga
+    - 711.vga
+    - 712.vga
+    - 721.vga
+    - 722.vga
+    - 731.vga
+    - 732.vga
+    - 741.vga
+    - 742.vga
+    - mod1.mus
+    - mod7.mus
+    - mod8.mus
+    - mod9.mus
+    - mod10.mus
+    - mod14.mus
+
+files:
+  gamepc_fr:
+    install_as: gamepc
+  tables01_fr:
+    install_as: tables01
+  tables02_fr:
+    install_as: tables02
+  tables03_fr:
+    install_as: tables03
+  tables04_fr:
+    install_as: tables04
+  tables06_fr:
+    install_as: tables06
+  tables07_fr:
+    install_as: tables07
+  tables08_fr:
+    install_as: tables08
+  261.vga_fr:
+    install_as: 261.vga
+  281.vga_fr:
+    install_as: 281.vga
+  342.vga_fr:
+    install_as: 342.vga
+  662.vga_fr:
+    install_as: 662.vga
+
+size_and_md5: |
+  135332    ec75353a068e8674e35f564def1f7399 gamepc
+  138125    9abad99b50225b62780175dce922640c gamepc_fr
+  56448     8926a9247afac0061ab65b581c5d755e icon.dat
+  1863      00a719bf2eb770f4296b0c4065fc83be instr.dat
+  21780     66a87d08c49d1c98e220ad329169c29e start
+  368       319f6b227c7822a551f57d24e70f8149 tbllist
+  10044     2020ce143a77091fddb935fb4040d0e8 tables01
+  10044     20dfd94bcc1ec6359f56479ab35ff5ee tables01_fr
+  5212      444cb9b2f2e91d6d40b6a52aa66a045f tables02
+  5212      0f1bde40ca6c6054f4f9ff097de8e834 tables02_fr
+  11776     afc8a21dfbbfa7822a0ce139d22e19b2 tables03
+  11782     8bb13ca01a650349cce2340b405bfc03 tables03_fr
+  6886      9c543011eb88845c03e1ea12cdb5ef31 tables04
+  6886      56946314cce27839443cc5b00c0f95cd tables04_fr
+  4664      a0f58fb5dbbbcbc23788f14f7822d756 tables05
+  13412     2050134c2ae308d2f7899fa5d7ed13a4 tables06
+  13412     c19bfc5e3d6e2f9ac6337b7f636f8c10 tables06_fr
+  5502      19680edea3482842b5c3b59af40353c9 tables07
+  5504      61a8a730558c71d1518f67708d4fd759 tables07_fr
+  5178      317ebfadb1f4bb274e4287dae24769e9 tables08
+  5174      d156a4f8fb4b2d7ae7a1f333944c5760 tables08_fr
+  9624      d6896cb486e7e5e38c5b2730522497e7 tables09
+  6236      b5111fb17d71ecd55c12686570f2124a tables10
+  5124      ad6cea7b459fe92d79d6aa04dabb0a93 tables11
+  16783     e0a473bd0eafe3904b66daa060d48cde 01.snd
+  4706      a03a213a9980d15a533b5c6732826da1 02.snd
+  5544      3e2c27e5b38401050aa24b77fc8e54ea 03.snd
+  12062     d32d4fc44c6da61a1933cf8134b60297 04.snd
+  22854     5b1246c3fba3a5050a85cb8b97f28ca7 05.snd
+  2488      6c7b4f34af0ba5c30b864aeeaf373b44 06.snd
+  2769      22c7a34406b01f06a8f13a420cb90228 08.snd
+  2251      bcd4f512544b097458681bc0e4f32137 09.snd
+  1410      d4922b313716e55e20848f851c9eb1e0 011.vga
+  9738      832103f98e02d48c207e7264d459e90d 012.vga
+  2312      9dec1e703c5c1e53a91fa0fa270ced69 021.vga
+  109785    ce3bdc21c9c4300d12fa143491f9c1c5 022.vga
+  3598      e1198428d1f0583a29346aebd8f15a38 031.vga
+  57318     e80b56a39acfa28eb22dd538b21cd539 032.vga
+  770       7395870fff868ae57ce81fe817d7e903 061.vga
+  92629     98f3f61ca414a08af92f7e8ebe2e3ba4 062.vga
+  3160      2b2153b0bcd8e182a113deb6812573a5 071.vga
+  141394    79f52b409fc007f1618efb82c5bd95b4 072.vga
+  2194      8d8e8486754dd6aa67f214c0f5136bf0 081.vga
+  96253     5988b370415b0aa622b04e2c983328b6 082.vga
+  1976      487e3428808accae2c2fe62f281b4c49 091.vga
+  86092     bdae0567d10bd488c8d11fb9e488445e 092.vga
+  1652      d097f8a3c2f0b0b8a423d8e626b9dd66 171.vga
+  147846    150725ae0389695a5f765f6193e9fc80 172.vga
+  950       f7a7e80fea883adf1406900e01de6880 181.vga
+  71461     2bbc94cbfce6ad830f7e5d02df1c91cb 182.vga
+  758       4ec812d8bc2b8d972a3a6389acef2294 191.vga
+  110649    b0b4d666bde709d44080ecff44058e1d 192.vga
+  854       81cf9d8e7aaf6fc02f19113148c1a01a 201.vga
+  20167     f03c078ef00eccaef8dda91de62c241b 202.vga
+  3328      c26e005196548a58d9089b28037b669a 211.vga
+  76349     d6076737c4625218f95e443ff731bc0b 212.vga
+  988       20c85bc5cff71fdc99b0df678d579a9c 221.vga
+  132480    4029c4fe2653ab608dd42e1feed9c219 222.vga
+  294       c0eb1d37f31d9e47e54b2533135e055f 231.vga
+  31865     44076c2efdd25ad66de85ececc8effcb 232.vga
+  1658      a9bc69982863065ce7d3fb83f41839f0 241.vga
+  61055     70f2a5829f01f380b27bd8cc36cb0773 242.vga
+  6198      327e21828468263caf327b4546bda42b 251.vga
+  57365     66d87e2758ce606b3401f6e1ec2a7b07 252.vga
+  478       9ce4a1e9189923f3aeec62fd551ca85e 261.vga
+  442       08692b29b7b1d40ba620907cf39c68ee 261.vga_fr
+  45329     6ca5aa46b6c8ef6de1bc0a9eed560af3 262.vga
+  952       75ade24cb706f46ca0c22c7e70add7ea 271.vga
+  79122     9e7eb46f465f5b66aa71fe1abafbe367 272.vga
+  2904      8f6a45201a26e6f18085e89a9738c16e 281.vga
+  2904      6a165c7ca4cc87dde23a3e8b8f97f663 281.vga_fr
+  98752     2d4c6b349344a36623ca357864dc2b0c 282.vga
+  820       fd731704a768fe2b727c3f1e58ba7c8e 291.vga
+  140843    3ebc734d543bcb1919444fefaaa79127 292.vga
+  562       75e6acf3e08c67b3871b311129afee80 301.vga
+  32402     b5aed6d2881a4e26eccf14885d2b7bbc 302.vga
+  512       a561420972a99e46d7ae069784f01a95 311.vga
+  14969     d79d5a6e4fca7e9a4d1119c4c7076c49 312.vga
+  766       d28df1fb3d721e9019698534d08aa00a 321.vga
+  52569     a72af23b6046adcd7725a5e4c4840b7b 322.vga
+  472       52fff13730b78db507de10e641595fd7 331.vga
+  40083     7138d8a332743f3f441702c2f57e47f9 332.vga
+  5258      bf2408924bb8f452820350bbd7b3d58c 341.vga
+  38987     587719aa6fe63faf95c736c7e4b8f8dd 342.vga
+  41869     fdac14a8182ef3775635ea4a6c733726 342.vga_fr
+  372       f143aa7b4a850d9f93a99b383f660840 351.vga
+  10227     ec19d66340e13195086a3f2ca13fba41 352.vga
+  182       be02f9e8f859dcb3811387fddad18be8 361.vga
+  10641     ff2a0f0d89572dbcdb0fe83672ccb5db 362.vga
+  662       96e6e7f9c6f6cbfeab58a682b6d52849 371.vga
+  10958     8b5943606cbda726eff3ec914c03634f 372.vga
+  660       9b234e14c3b25d0dcddc99dc93b1b1a0 381.vga
+  21320     0ddb26e7e67a208172fbdcc9f8c24d31 382.vga
+  258       cc51ad9970a3d1ffb04877b8970ebfb8 391.vga
+  13182     0084f791578d29a9a31f36e3736fb615 392.vga
+  192       a719d84c9039a6a367c7fda15c0a7b80 401.vga
+  8559      04d98151e50c131f39c9cb5d5e34c7ea 402.vga
+  2346      42f6d2b469ee9063f95773a864639507 411.vga
+  86459     1b53d48cca759bd4210c9b5186704ffc 412.vga
+  5890      e7f186381681ad195ccced3757d673d1 421.vga
+  30649     e1ca34572301a37c1ba566a47dcc27b1 422.vga
+  282       6776c2702c03d6a21ded2ff9e2e9c54d 431.vga
+  19148     8f6928e52212b091935470480c954fc3 432.vga
+  918       90e70341425fab44202892b07caa2dff 441.vga
+  36365     5e23c93ecd92c5489bd1294db5477efb 442.vga
+  280       0712b9792a0317021da4ba238654106f 451.vga
+  10269     bfd6dc6c8277f16b37feb77e267fbc12 452.vga
+  416       49e0267ab0d2a4652ffae888d38f798d 461.vga
+  16906     89658b47dd666a3cc56f0fc8a9e6bd3b 462.vga
+  1750      c7c17a6ead9b486ebe0cbb421008939a 471.vga
+  78582     c2a9a411199afd7d85fae0784b991eb5 472.vga
+  696       f0eb25aa1b2bd4ccf0cd9d96983b9782 481.vga
+  38627     b755427477ae7c521ea4aa9ea43f011a 482.vga
+  872       c2247909a6a2fcf1767e348fa680f0ce 491.vga
+  27243     b8a036ea80027ad424f260ba370a57f4 492.vga
+  3680      2b2d653de76daf90eb9b678c73e0cb9f 501.vga
+  96472     fb946aa7a44b0a3b04ebc62210842aea 502.vga
+  3020      c0cbfdc766891cfdd10de3dd27e9f934 511.vga
+  64168     24c777ab02ba8c698718053169ffae9c 512.vga
+  1508      906f07daa765d423586be6495fc9f3ac 521.vga
+  32474     196deda4e614a461b8c7a1194edb8012 522.vga
+  660       c7f9611c7b1f9b977b085f1662650a6a 531.vga
+  32633     2215cef6f91e458b251bf5bb4fcced18 532.vga
+  738       d14aa74713649d10a1135e931e5e0302 541.vga
+  6171      547f2d583690b3b0ec031bde250abd85 542.vga
+  382       b52605725be3a1c0e523d1a48366f972 551.vga
+  12966     c085b6cc0ca54fd0514794236b58ec18 552.vga
+  5456      8401512f0b19df5d3b24c86004ffa1e9 561.vga
+  114051    215b09356d7b12bfaeb0bef0cbe2e9d5 562.vga
+  2398      173ca5d2905437ec525b56c6edf6a5c1 571.vga
+  120209    19bc94218a2cbb927536a8858d22538d 572.vga
+  1332      e314b989988de24593e795e424ce5271 581.vga
+  70151     d47220513468b98cfd8930036f7a1098 582.vga
+  2552      a63d667053c210ba16c418ba8a1b5a81 591.vga
+  78225     ceae0c1730547d04a631b9ba14114475 592.vga
+  900       e6581997ccc1ef129f85e9ce77d5d741 601.vga
+  61667     80d1a74d4b708579dd8fced8f3b5e9c8 602.vga
+  2312      54007b7586aa411355d2ac1132d01aef 611.vga
+  63864     e36d2237552c27042dec08acc9576793 612.vga
+  444       85f70bc6e51da4cea2c240fbdfa117a3 621.vga
+  32903     1c39bc7c7ed1f634e96624673c36938a 622.vga
+  2226      5a866d91140c9ca7ea5d9e6bdbaf1741 631.vga
+  60794     5c77c04252e6f70fad44644f88f05be6 632.vga
+  1516      b92346fce3e2665f6034a09f727e6573 641.vga
+  179492    dcccc9d6d7b08ba197762d6bbd884b08 642.vga
+  916       25f4049b204438e540b0bf213cc59228 651.vga
+  58702     d6857c5e331dc8cd2669d93ffa3b073e 652.vga
+  1394      f1bbaf153445a22f99765470c70f2ec9 661.vga
+  24056     c03ffedc06af262829b0d511820cb74d 662.vga
+  24262     64e7e01d285978dd8b02c041e09d4e1e 662.vga_fr
+  280       6a951bcd473dbc58e273679621ce0e7f 671.vga
+  40073     a968be07a8673161b92a97ed29a9c4a1 672.vga
+  310       b7c6ebf0661e3abaa2fc81dbdee65603 681.vga
+  48899     dd4e4b704ca5f36296535a46b320a31f 682.vga
+  356       f2ed058b7ef1f75a05258f9de4b4528e 691.vga
+  52795     4d7c97f258232579c057f91734597044 692.vga
+  204       1745a06b9ad5cae7893abe81af3f3573 701.vga
+  19180     5aa81e3ce1e7e592a56fa7d3fb37db23 702.vga
+  332       fa252515e7c0ac9699e1db5e41f78cb6 711.vga
+  39615     3cc09c19b75c8dd9580480d74484aa0b 712.vga
+  334       9b3960f4f6acd87b66405fc71bda89e3 721.vga
+  44621     293405684b3992cf86332ed4b25f84f8 722.vga
+  304       a1f3a262a35912d73c8f5987bbc29e5f 731.vga
+  42718     1c38f4a0397bc1111cb44c3a0ed90edf 732.vga
+  332       47cc0992aeb426b9ef79fa934e5140c7 741.vga
+  56023     db59f87eea8afa0ff66f7ef2725ac607 742.vga
+  5379      44cb383f5b73dd8a0780e06fba48f2b2 mod1.mus
+  6626      2e12053a63ae7c625ac236be1a676766 mod7.mus
+  12489     80f3472c824a50df09be8d345b70261c mod8.mus
+  7122      4a95f2b5483dd66fa52dd6bde579be54 mod9.mus
+  2461      0caaa045f6555fb46df973fa3980bcf5 mod10.mus
+  6721      83f063e5b1fa75804a1a205993037799 mod14.mus
+...
+
