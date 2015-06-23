@@ -246,6 +246,9 @@ packages:
     - 982.vga
     - 991.vga
     - 992.vga
+    # patch that requires ScummVM 1.8.0git
+    optional:
+    - 013.vga
 
   elvira2-fr-data:
     lang: fr
@@ -491,8 +494,18 @@ packages:
     - 982.vga
     - 991.vga_fr
     - 992.vga
+    # patch that requires ScummVM 1.8.0git
+    optional:
+    - 013.vga
 
 files:
+  elvira2_pc_sfx.zip:
+    download: http://prdownloads.sourceforge.net/scummvm/elvira2_pc_sfx.zip?download
+    unpack:
+      format: zip
+    provides:
+    - 013.vga
+
   gamepc_fr:
     install_as: gamepc
   start_fr:
@@ -1223,5 +1236,7 @@ size_and_md5: |
   49792     c101f01f36504e10f09719c7b8affdd5 972.vga_fr
   2110      64436d12c899a1439a1236f91b96c081 981.vga_fr
   66        a3ba75161a228c0834811a674b937f2c 991.vga_fr
-...
 
+  20855     9aa812daca912ffa7128e321609464b3 013.vga
+  18310     87ab081881850c3dc2c080bd7b6282f7 elvira2_pc_sfx.zip
+...
