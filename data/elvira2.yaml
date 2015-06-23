@@ -9,6 +9,7 @@ packages:
     debian:
       provides: elvira2-data
     install:
+    - music.drv
     - mylib.fxb
     - icon.dat
     - instr.dat
@@ -253,6 +254,7 @@ packages:
     optional:
     - icon.ega
     install:
+    - music.drv
     - gamepc_fr
     - icon.dat
     - instr.dat
@@ -819,6 +821,7 @@ files:
     install_as: 991.vga
 
 size_and_md5: |
+  5888      f91958a906a06d24f451d2aceea2b8b5 music.drv
   3852      304e98fbd6d0bec904c7335b86c78f5d mylib.fxb
   54471     d7223be67015aef06326c84a3897c35d icon.dat
   1863      00a719bf2eb770f4296b0c4065fc83be instr.dat

@@ -337,6 +337,13 @@ packages:
     - mod14.mus
 
 files:
+  271.vga_alt:
+    install_as: 271.vga
+
+  # $ cmp -l /usr/share/games/elvira1-en/271.vga Elvira/271.vga \
+  # | gawk '{printf "%08X %02X %02X\n", $1, strtonum(0$2), strtonum(0$3)}'
+  # 00000190 0A 00
+
   gamepc_fr:
     install_as: gamepc
   tables01_fr:
@@ -431,6 +438,7 @@ size_and_md5: |
   442       08692b29b7b1d40ba620907cf39c68ee 261.vga_fr
   45329     6ca5aa46b6c8ef6de1bc0a9eed560af3 262.vga
   952       75ade24cb706f46ca0c22c7e70add7ea 271.vga
+  952       74f5358eed6f557655f29c89a9a7a3ae 271.vga_alt
   79122     9e7eb46f465f5b66aa71fe1abafbe367 272.vga
   2904      8f6a45201a26e6f18085e89a9738c16e 281.vga
   2904      6a165c7ca4cc87dde23a3e8b8f97f663 281.vga_fr
