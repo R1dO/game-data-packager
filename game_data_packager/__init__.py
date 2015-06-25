@@ -70,8 +70,6 @@ if os.environ.get('DEBUG'):
 else:
     logging.getLogger().setLevel(logging.INFO)
 
-VERBOSE = False
-
 # arbitrary cutoff for providing progress bars
 QUITE_LARGE = 50 * MEBIBYTE
 
@@ -409,6 +407,9 @@ class GameDataPackage(object):
         # to components in the Debian archive
         self.component = 'local'
         self.section = 'games'
+
+        # show output of external tools?
+        self.verbose = False
 
     @property
     def aliases(self):
@@ -1529,7 +1530,7 @@ class GameData(object):
                         provider_name, found_name)
                 fmt = provider.unpack['format']
 
-                if VERBOSE and fmt in ('zip', 'unzip'):
+                if self.verbose and fmt in ('zip', 'unzip'):
                     with zipfile.ZipFile(found_name, 'r') as zf:
                         encoding = provider.unpack.get('encoding', 'cp437')
                         if zf.comment:
@@ -1592,7 +1593,7 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    arg = 'x' if VERBOSE else 'xq'
+                    arg = 'x' if self.verbose else 'xq'
                     subprocess.check_call(['lha', arg,
                                 os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
@@ -1622,7 +1623,7 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    quiet = [] if VERBOSE else ['-q']
+                    quiet = [] if self.verbose else ['-q']
                     subprocess.check_call(['cabextract'] + quiet + ['-L',
                                 os.path.abspath(found_name)], cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
@@ -1644,7 +1645,7 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    quiet = [] if VERBOSE else ['-inul']
+                    quiet = [] if self.verbose else ['-inul']
                     subprocess.check_call(['unrar-nonfree', 'x'] + quiet +
                              [os.path.abspath(found_name)] +
                              list(to_unpack), cwd=tmpdir)
@@ -1662,7 +1663,7 @@ class GameData(object):
                                '--lowercase',
                                '-d', tmpdir,
                                os.path.abspath(found_name)]
-                    if not VERBOSE:
+                    if not self.verbose:
                         cmdline.append('--silent')
                     version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
@@ -1692,7 +1693,7 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    quiet = ['-q'] if VERBOSE else ['-qq']
+                    quiet = ['-q'] if self.verbose else ['-qq']
                     subprocess.check_call(['unzip', '-j', '-C'] +
                                 quiet + [os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
@@ -1707,7 +1708,7 @@ class GameData(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     flags = provider.unpack.get('flags', [])
-                    if not VERBOSE:
+                    if not self.verbose:
                         flags.append('-bd')
                     subprocess.check_call(['7z', 'x'] + flags +
                                 [os.path.abspath(found_name)] +
@@ -1719,7 +1720,7 @@ class GameData(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    quiet = [] if VERBOSE else ['-q']
+                    quiet = [] if self.verbose else ['-q']
                     subprocess.check_call(['unar', '-D'] +
                                quiet + [os.path.abspath(found_name)] +
                                list(to_unpack), cwd=tmpdir)
@@ -2328,8 +2329,7 @@ class GameData(object):
         logger.debug('package description:\n%s',
                 yaml.safe_dump(self.to_yaml()))
 
-        global VERBOSE
-        VERBOSE = getattr(args, 'verbose', False)
+        self.verbose = getattr(args, 'verbose', False)
 
         preserve_debs = (getattr(args, 'destination', None) is not None)
         install_debs = getattr(args, 'install', True)
