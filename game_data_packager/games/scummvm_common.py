@@ -61,11 +61,11 @@ class ScummvmGameData(GameData):
         desktop['Desktop Entry'] = {}
         entry = desktop['Desktop Entry']
         entry['Name'] = package.longname or self.longname
-        entry['GenericName'] = self.genre + ' game'
+        entry['GenericName'] = self.genre + ' Game'
         entry['TryExec'] = 'scummvm'
         entry['Icon'] = 'scummvm'
         entry['Terminal'] = 'false'
-        entry['Categories'] = 'game'
+        entry['Categories'] = 'Game'
         gameid = package.gameid or self.gameid
         if len(package.langs) == 1:
             entry['Exec'] = 'scummvm -p /%s %s' % (package.install_to, gameid)
