@@ -98,7 +98,6 @@ packages:
       id: 208200
       path: "common/DOOM 3 BFG Edition"
     install:
-    - base/D3BFGConfig.cfg
     - base/_common.crc
     - base/_common.resources
     - base/_ordered.crc
@@ -428,6 +427,63 @@ packages:
     - base/maps/recycling2.resources
     - base/maps/site3.crc
     - base/maps/site3.resources
+    - base/sound/VO/video/deployment.bik
+    - base/sound/VO/video/epd.bik
+    - base/sound/VO/video/generator.bik
+    - base/sound/VO/video/grabber.bik
+    - base/sound/VO/video/hydrocon.bik
+    - base/sound/VO/video/mfs.bik
+    - base/sound/VO/video/video_alphalabs_intro.bik
+    - base/sound/VO/video/video_ancient_civ.bik
+    - base/sound/VO/video/video_bfg.bik
+    - base/sound/VO/video/video_chaingun.bik
+    - base/sound/VO/video/video_demon_museum.bik
+    - base/sound/VO/video/video_ian_report.bik
+    - base/sound/VO/video/video_ipn_news.bik
+    - base/sound/VO/video/video_marine_sops.bik
+    - base/sound/VO/video/video_meyers_report.bik
+    - base/sound/VO/video/video_plasmagun.bik
+    - base/sound/VO/video/video_recycling.bik
+    - base/sound/VO/video/video_soulcube.bik
+    - base/sound/VO/video/video_tablets.bik
+    - base/sound/VO/video/video_uac_welcome.bik
+    - base/strings/english.lang
+    - base/video/admin/betruger.bik
+    - base/video/comm1/swann_vidphone1.bik
+    - base/video/comm1/swann_vidphone2.bik
+    - base/video/comm1/swann_vidphone3.bik
+    - base/video/data.bik
+    - base/video/delta1/sarge_video1.bik
+    - base/video/enpro1/lm_meyers_enpro.bik
+    - base/video/erebusteam.bik
+    - base/video/fireball.bik
+    - base/video/hellhole/rescue.bik
+    - base/video/intro/introloop.bik
+    - base/video/loadvideo.bik
+    - base/video/mars1.bik
+    - base/video/marscity/decom.bik
+    - base/video/marscity/dropship.bik
+    - base/video/marscity/monoflyby.bik
+    - base/video/marscity/sarge_mission_brief.bik
+    - base/video/marscity/sci_team_request.bik
+    - base/video/marscity/ship.bik
+    - base/video/mars_rotation.bik
+    - base/video/mcneil.bik
+    - base/video/mc_underground/inv1sm.bik
+    - base/video/mc_underground/inv2sm.bik
+    - base/video/mc_underground/inv3.bik
+    - base/video/mc_underground/inv4sm.bik
+    - base/video/mc_underground/inv5sm.bik
+    - base/video/mc_underground/inv6sm.bik
+    - base/video/mc_underground/inv7sm.bik
+    - base/video/radar.bik
+    - base/video/recycling2/cs_bert01_composite.bik
+    - base/video/recycling2/cs_bert02_composite.bik
+    - base/wads/NERVE.WAD
+    - base/wads/DOOM2.WAD
+    - base/wads/DOOM.WAD
+    optional:
+    - base/D3BFGConfig.cfg
     - base/renderprogs/glsl-1_50/bink_fragment.glsl
     - base/renderprogs/glsl-1_50/bink_fragment.uniforms
     - base/renderprogs/glsl-1_50/bink_gui_fragment.glsl
@@ -726,61 +782,6 @@ packages:
     - base/savegame/GAME-autosave/gamedata.strings
     - base/savegame/GAME-autosave/game.details
     - base/savegame/profile.bin
-    - base/sound/VO/video/deployment.bik
-    - base/sound/VO/video/epd.bik
-    - base/sound/VO/video/generator.bik
-    - base/sound/VO/video/grabber.bik
-    - base/sound/VO/video/hydrocon.bik
-    - base/sound/VO/video/mfs.bik
-    - base/sound/VO/video/video_alphalabs_intro.bik
-    - base/sound/VO/video/video_ancient_civ.bik
-    - base/sound/VO/video/video_bfg.bik
-    - base/sound/VO/video/video_chaingun.bik
-    - base/sound/VO/video/video_demon_museum.bik
-    - base/sound/VO/video/video_ian_report.bik
-    - base/sound/VO/video/video_ipn_news.bik
-    - base/sound/VO/video/video_marine_sops.bik
-    - base/sound/VO/video/video_meyers_report.bik
-    - base/sound/VO/video/video_plasmagun.bik
-    - base/sound/VO/video/video_recycling.bik
-    - base/sound/VO/video/video_soulcube.bik
-    - base/sound/VO/video/video_tablets.bik
-    - base/sound/VO/video/video_uac_welcome.bik
-    - base/strings/english.lang
-    - base/video/admin/betruger.bik
-    - base/video/comm1/swann_vidphone1.bik
-    - base/video/comm1/swann_vidphone2.bik
-    - base/video/comm1/swann_vidphone3.bik
-    - base/video/data.bik
-    - base/video/delta1/sarge_video1.bik
-    - base/video/enpro1/lm_meyers_enpro.bik
-    - base/video/erebusteam.bik
-    - base/video/fireball.bik
-    - base/video/hellhole/rescue.bik
-    - base/video/intro/introloop.bik
-    - base/video/loadvideo.bik
-    - base/video/mars1.bik
-    - base/video/marscity/decom.bik
-    - base/video/marscity/dropship.bik
-    - base/video/marscity/monoflyby.bik
-    - base/video/marscity/sarge_mission_brief.bik
-    - base/video/marscity/sci_team_request.bik
-    - base/video/marscity/ship.bik
-    - base/video/mars_rotation.bik
-    - base/video/mcneil.bik
-    - base/video/mc_underground/inv1sm.bik
-    - base/video/mc_underground/inv2sm.bik
-    - base/video/mc_underground/inv3.bik
-    - base/video/mc_underground/inv4sm.bik
-    - base/video/mc_underground/inv5sm.bik
-    - base/video/mc_underground/inv6sm.bik
-    - base/video/mc_underground/inv7sm.bik
-    - base/video/radar.bik
-    - base/video/recycling2/cs_bert01_composite.bik
-    - base/video/recycling2/cs_bert02_composite.bik
-    - base/wads/NERVE.WAD
-    - base/wads/DOOM2.WAD
-    - base/wads/DOOM.WAD
 
 files:
   doom3-linux-1.3.1.1304.x86.run:
