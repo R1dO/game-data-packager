@@ -48,6 +48,7 @@ packages:
     longname: "Hexen: Beyond Heretic (demo)"
     debian:
       replaces: hexen-demo-data
+      breaks: chocolate-doom (<< 2.2.0)
     install_to: usr/share/games/doom
     demo_for: hexen-wad
     install:
