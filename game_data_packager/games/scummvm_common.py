@@ -65,6 +65,7 @@ class ScummvmGameData(GameData):
         entry['TryExec'] = 'scummvm'
         entry['Icon'] = 'scummvm'
         entry['Terminal'] = 'false'
+        entry['Type'] = 'Application'
         entry['Categories'] = 'Game'
         gameid = package.gameid or self.gameid
         if len(package.langs) == 1:
