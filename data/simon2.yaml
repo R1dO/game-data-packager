@@ -4,9 +4,9 @@ copyright: © 1995 Adventure Soft
 plugin: scummvm_common
 
 packages:
-  simon2-en-data:
+  simon-the-sorcerer2-en-data:
     debian:
-      provides: simon2-data
+      provides: simon-the-sorcerer2-data
     gog:
       url: simon_the_sorcerer_2
     install:
@@ -19,10 +19,10 @@ packages:
     optional:
     - manual.pdf
 
-  simon2-de-data:
+  simon-the-sorcerer2-de-data:
     lang: de
     debian:
-      provides: simon2-data
+      provides: simon-the-sorcerer2-data
     gog:
       url: simon_the_sorcerer_2
     install:
@@ -35,10 +35,10 @@ packages:
     optional:
     - manual.pdf
 
-  simon2-fr-data:
+  simon-the-sorcerer2-fr-data:
     lang: fr
     debian:
-      provides: simon2-data
+      provides: simon-the-sorcerer2-data
     gog:
       url: simon_the_sorcerer_2
     install:

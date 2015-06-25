@@ -4,9 +4,9 @@ copyright: © 1993 Adventure Soft
 plugin: scummvm_common
 
 packages:
-  simon1-en-data:
+  simon-the-sorcerer1-en-data:
     debian:
-      provides: simon1-data
+      provides: simon-the-sorcerer1-data
     gog:
       url: simon_the_sorcerer
     install:
@@ -48,7 +48,7 @@ packages:
     optional:
     - manual.pdf
 
-  simon1-de-data:
+  simon-the-sorcerer1-de-data:
     lang: de
     debian:
       provides: simon1-data
@@ -92,10 +92,10 @@ packages:
     optional:
     - manual.pdf
 
-  simon1-es-data:
+  simon-the-sorcerer1-es-data:
     lang: es
     debian:
-      provides: simon1-data
+      provides: simon-the-sorcerer1-data
     gog:
       url: simon_the_sorcerer
     install:
@@ -110,10 +110,10 @@ packages:
     optional:
     - manual.pdf
 
-  simon1-fr-data:
+  simon-the-sorcerer1-fr-data:
     lang: fr
     debian:
-      provides: simon1-data
+      provides: simon-the-sorcerer1-data
     gog:
       url: simon_the_sorcerer
     install:
@@ -128,10 +128,10 @@ packages:
     optional:
     - manual.pdf_fr
 
-  simon1-it-data:
+  simon-the-sorcerer1-it-data:
     lang: it
     debian:
-      provides: simon1-data
+      provides: simon-the-sorcerer1-data
     gog:
       url: simon_the_sorcerer
     install:
@@ -146,9 +146,9 @@ packages:
     optional:
     - manual.pdf
 
-  simon1-dos-en-data:
+  simon-the-sorcerer1-dos-en-data:
     longname: Simon the Sorcerer (DOS)
-    better_version: simon1-en-data
+    better_version: simon-the-sorcerer1-en-data
     gog:
       url: simon_the_sorcerer
     install:
@@ -587,10 +587,10 @@ packages:
     optional:
     - manual.pdf
 
-  simon1-dos-de-data:
+  simon-the-sorcerer1-dos-de-data:
     longname: Simon the Sorcerer (DOS/de)
     lang: de
-    better_version: simon1-de-data
+    better_version: simon-the-sorcerer1-de-data
     gog:
       url: simon_the_sorcerer
     install:
@@ -1026,10 +1026,10 @@ packages:
     - text29_de
     - text30_de
 
-  simon1-dos-fr-data:
+  simon-the-sorcercer1-dos-fr-data:
     longname: Simon the Sorcerer (DOS/fr)
     lang: fr
-    better_version: simon1-fr-data
+    better_version: simon-the-sorcerer1-fr-data
     gog:
       url: simon_the_sorcerer
     install:
