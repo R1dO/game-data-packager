@@ -43,7 +43,9 @@ packages:
     - sod.doc
 
   spear-of-destiny-data:
-    longname: "Spear of Destiny (registered version, mission 1)"
+    longname: "Spear of Destiny"
+    debian:
+      depends: spear-of-destiny-mission1-data | spear-of-destiny-mission2-data | spear-of-destiny-mission3-data
     install_to: usr/share/games/wolf3d
     install_files_from_cksums: |
       3311987448 1072    audiohed.sod
@@ -51,6 +53,12 @@ packages:
       3842239033 1024    vgadict.sod
       1710998175 947979  vgagraph.sod
       2581315576 510     vgahead.sod
+
+  spear-of-destiny-mission1-data:
+    expansion_for: spear-of-destiny-data
+    longname: "Spear of Destiny (registered version, mission 1)"
+    install_to: usr/share/games/wolf3d
+    install_files_from_cksums: |
       1623432876 68290   gamemaps.sd1
       2833983920 402     maphead.sd1
       2374872835 1616544 vswap.sd1
@@ -81,6 +89,27 @@ packages:
       2009956332 1881760 vswap.sd3
 
 files:
+  gamemaps.sd1:
+    look_for: [gamemaps.sd1,gamemaps.sod]
+  maphead.sd1:
+    look_for: [maphead.sd1,maphead.sod]
+  vswap.sd1:
+    look_for: [vswap.sd1,vswap.sod]
+
+  gamemaps.sd2:
+    look_for: [gamemaps.sd2,gamemaps.sod]
+  maphead.sd2:
+    look_for: [maphead.sd2,maphead.sod]
+  vswap.sd2:
+    look_for: [vswap.sd2,vswap.sod]
+
+  gamemaps.sd3:
+    look_for: [gamemaps.sd3,gamemaps.sod]
+  maphead.sd3:
+    look_for: [maphead.sd3,maphead.sod]
+  vswap.sd3:
+    look_for: [vswap.sd3,vswap.sod]
+
   sodemo.zip:
     size: 702564
     distinctive_size: false
