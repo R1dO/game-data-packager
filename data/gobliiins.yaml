@@ -4,9 +4,11 @@ plugin: scummvm_common
 gameid: gob1
 
 packages:
-  gobliiins-data:
+  gobliiins-en-data:
     gog:
-      url: 
+      url: gobliiins_pack
+    debian:
+      provides: gobliiins-data
     install:
     - intro.stk
     - disk1.stk
@@ -14,16 +16,41 @@ packages:
     - disk3.stk
     - disk4.stk
 
-  gobliiins-demo-data:
-    demo_for: gobliiins-data
+  gobliiins-fr-data:
+    lang: fr
+    debian:
+      provides: gobliiins-data
+    install:
+    - intro.stk_fr
+    - disk1.stk_fr
+    - disk2.stk_fr
+    - disk3.stk_fr
+    - disk4.stk_fr
+
+  gobliiins-demo-en-data:
+    lang: en
+    demo_for: gobliiins-en-data
+    debian:
+      provides: gobliiins-demo-data
     gameid: gob
     install:
     - intro.stk_demo
     - disk1.stk_demo
 
+  gobliiins-demo-fr-data:
+    longname: "Gobliiins (demo/fr)"
+    lang: fr
+    demo_for: gobliiins-fr-data
+    debian:
+      provides: gobliiins-demo-data
+    gameid: gob
+    install:
+    - intro.stk_demo_fr
+    - disk1.stk_demo_fr
+
 files:
   gob1-amiga_demo_en.zip:
-    download: http://sourceforge.net/projects/scummvm/files/demos/gob/gob1-amiga_demo_en.zip/download
+    download: http://sourceforge.net/projects/scummvm/files/demos/gob/gob1-amiga_demo_en.zip?download
     unpack:
       format: zip
     provides:
@@ -34,27 +61,50 @@ files:
   disk1.stk_demo:
     install_as: disk1.stk
 
-cksums: |
-  _ 233466    intro.stk
-  _ 496145    disk1.stk
-  _ 628628    disk2.stk
-  _ 644169    disk3.stk
-  _ 571911    disk4.stk
+  gob1-dos-demo-fr.zip:
+    download: http://sourceforge.net/projects/scummvm/files/demos/gob/gob1-dos-demo-fr.zip?download
+    unpack:
+      format: zip
+    provides:
+    - intro.stk_demo_fr
+    - disk1.stk_demo_fr
+  intro.stk_demo_fr:
+    install_as: intro.stk
+  disk1.stk_demo_fr:
+    install_as: disk1.stk
 
-  _ 397243    gob1-amiga_demo_en.zip
-  _ 201584    intro.stk_demo
-  _ 300871    disk1.stk_demo
+  intro.stk_fr:
+    install_as: intro.stk
+  disk1.stk_fr:
+    install_as: disk1.stk
+  disk2.stk_fr:
+    install_as: disk2.stk
+  disk3.stk_fr:
+    install_as: disk3.stk
+  disk4.stk_fr:
+    install_as: disk4.stk
 
-md5sums: |
-  a5e232fcd02733c7dffff107d22d36eb  intro.stk
-  604cbe12f143cc841223d0670f6428eb  disk1.stk
-  aefab95365d966d1413d72c57267db38  disk2.stk
-  e8e4151705f87a515a309d225f83a01f  disk3.stk
-  3cde14de82a30dc559e00e7ef7fade88  disk4.stk
+size_and_md5: |
+  135561    82aea70ef26f41fa963dfae270993e49 intro.stk_fr
+  367110    a42ca54c4f1e3bc3a9fee8fd301bf4e5 disk1.stk_fr
+  336641    520c458f08cfe9af1d250f0754d17002 disk2.stk_fr
+  317232    0f984718773a60c41f595e609d7299b5 disk3.stk_fr
+  362638    1a177171dc408d2a93b24bd9d5f0a0a3 disk4.stk_fr
 
-  70ceb406fa9b5a93a574423d47e93b8b  gob1-amiga_demo_en.zip
-  26de406cb09228d902274446a6a2eceb  intro.stk_demo
-  295b44ca477e1800a7c482dd85de5f45  disk1.stk_demo
+  233466    a5e232fcd02733c7dffff107d22d36eb intro.stk
+  496145    604cbe12f143cc841223d0670f6428eb disk1.stk
+  628628    aefab95365d966d1413d72c57267db38 disk2.stk
+  644169    e8e4151705f87a515a309d225f83a01f disk3.stk
+  571911    3cde14de82a30dc559e00e7ef7fade88 disk4.stk
+
+  397243    70ceb406fa9b5a93a574423d47e93b8b gob1-amiga_demo_en.zip
+  201584    26de406cb09228d902274446a6a2eceb intro.stk_demo
+  300871    295b44ca477e1800a7c482dd85de5f45 disk1.stk_demo
+
+  772326    197370761fb8fdc64cfc99de91c8c3ed gob1-dos-demo-fr.zip
+  116582    0f4997181908ffb489b48c6acc49f982 intro.stk_demo_fr
+  588595    b6bb374e108490d19f901c0b7fd1592a disk1.stk_demo_fr
+
 sha1sums: |
   d47e61885f54c8fb78522ddac64c187a53eed9bc  intro.stk
   057f1a87a8ab84e6b57f8232d71fda234f75e5e6  disk1.stk
@@ -62,8 +112,18 @@ sha1sums: |
   63a5a56e8e614a0d5ea412fcffb60d8dc9add257  disk3.stk
   3ae45a39c953820d439df3afff68ef2605ba9612  disk4.stk
 
+  cc4eea04283de97cd15806353d6fc4f5cac02153  disk1.stk_fr
+  110b6ffa92cc824ab65d5fb12bc8fdca49a73b4d  disk2.stk_fr
+  7f817c4d0e1654c6d8eba2f2c1880d27c89cbd4e  disk3.stk_fr
+  5d5da03ec097b8d05e81f9ca91806d2d9c06e95a  disk4.stk_fr
+  d62bf74d4e36cee683348f16b011f021a84c3510  intro.stk_fr
+
   44dd46a2f149502331d793de692e00fa61a5dce1  gob1-amiga_demo_en.zip
   01260678d12ea393c32a72bb13e418f7e7cd4322  intro.stk_demo
   1e339634094ece3dcde8b0b2549edbbd419fd82d  disk1.stk_demo
+
+  56af7cee4ea01ce523525a0b25439b9fd42c6bc6  gob1-dos-demo-fr.zip
+  17e75e54889635eed09fa1a72d5bfa0dbc0a5d65  intro.stk_demo_fr
+  6b1ea8a1682f35d0b9709c699254c8e5e015400a  disk1.stk_demo_fr
 ...
 
