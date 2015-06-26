@@ -351,8 +351,8 @@ class GameDataPackage(object):
         # This optional value will overide the game global copyright
         self.copyright = None
 
-        # Language, ISO-639 code
-        self.lang = 'en'
+        # Languages, list of ISO-639 codes
+        self.langs = ['en']
 
         # Where we install files.
         # For instance, if this is 'usr/share/games/quake3' and we have
@@ -459,6 +459,15 @@ class GameDataPackage(object):
         if self.expansion_for or self.expansion_for_ext:
             return 'expansion'
         return 'full'
+
+    @property
+    def lang(self):
+        return self.langs[0]
+
+    @lang.setter
+    def lang(self, value):
+        assert type(value) is str
+        self.langs = [value]
 
     def to_yaml(self):
         return {
@@ -840,7 +849,7 @@ class GameData(object):
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'steam', 'debian',
-                'rip_cd', 'architecture', 'aliases', 'better_version',
+                'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
                 'copyright', 'engine', 'gog', 'origin', 'lang', 'component', 'section'):
             if k in d:
                 setattr(package, k, d[k])
@@ -849,6 +858,7 @@ class GameData(object):
         assert package.component in ('main', 'contrib', 'non-free', 'local')
         assert package.component == 'local' or 'license' in d
         assert package.section in ('games', 'doc'), 'unsupported'
+        assert type(package.langs) is list
 
         if 'install_to' in d:
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \

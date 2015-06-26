@@ -36,15 +36,13 @@ for name, game in load_games().items():
     for package in game.packages.values():
         for m_lang in getattr(package, 'langs', []):
             if m_lang not in stats:
-                stats[m_lang] = 'm'
+                stats[m_lang] = '*'
 
     genres[game.genre] = genres.get(game.genre, 0) + 1
     stats['genre'] = game.genre
     stats['shortname'] = name
     stats['longname'] = ascii_safe(game.longname, force=True)
     stats['total'] = len(game.packages)
-    if name in ('doom2', 'rtcw'):
-        stats['fr'] = '*'
     games.append(stats)
 
 if 'ru' not in langs:
@@ -108,9 +106,8 @@ html.write('''
 </tr>
 </table>
 <ul>
-<li>* : provided as an alternative one-file in a 'en'/'C' package</li>
 <li>! : language is missing</li>
-<li>m : multi-lang support in a single package</li>
+<li>* : multi-lang support in a single package</li>
 </ul>
 </html>
 '''

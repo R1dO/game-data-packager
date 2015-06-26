@@ -17,6 +17,7 @@ help_text: |
 
 packages:
   doom2-wad:
+    langs: [en,fr]
     debian:
       provides: doom-wad
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)

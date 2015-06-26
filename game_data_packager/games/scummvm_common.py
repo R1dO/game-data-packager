@@ -45,8 +45,6 @@ class ScummvmGameData(GameData):
     def _populate_package(self, package, d):
         super(ScummvmGameData, self)._populate_package(package, d)
         package.gameid = d.get('gameid')
-        package.langs = d.get('langs',[package.lang])
-        assert type(package.langs) is list
 
     def fill_extra_files(self, package, destdir):
         super(ScummvmGameData, self).fill_extra_files(package, destdir)
