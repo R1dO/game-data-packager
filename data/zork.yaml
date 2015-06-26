@@ -12,42 +12,64 @@ packages:
   zork1-data:
     longname: "Zork I: The Great Underground Empire"
     copyright: © 1980 Infocom
+    gog:
+      url: the_zork_anthology
+      game: zork_the_great_underground_empire
     install_to: usr/share/games/zork
     install:
     - zork1.dat
     optional:
     - readme_zork1.txt
+    - manual.pdf_zork1
 
   zork2-data:
     longname: "Zork II: The Wizard of Frobozz"
     copyright: © 1981 Infocom
+    gog:
+      url: the_zork_anthology
+      game: zork_ii_the_wizard_of_frobozz
     install_to: usr/share/games/zork
     install:
     - zork2.dat
     optional:
     - readme_zork2.txt
+    - manual.pdf_zork2
 
   zork3-data:
     longname: "Zork III: The Dungeon Master"
     copyright: © 1982 Infocom
+    gog:
+      url: the_zork_anthology
+      game: zork_iii_the_dungeon_master
     install_to: usr/share/games/zork
     install:
     - zork3.dat
     optional:
     - readme_zork3.txt
+    - manual.pdf_zork3
 
   beyondzork-data:
     longname: "Beyond Zork: The Coconut of Quendor"
     copyright: © 1987 Infocom
+    gog:
+      url: the_zork_anthology
+      game: beyond_zork_the_coconut_of_quendor
     install_to: usr/share/games/zork
     install:
     - beyondzo.dat
+    optional:
+    - manual.pdf_beyondzork
 
   planetfall-data:
     longname: Planetfall
     copyright: © 1983 Infocom
+    gog:
+      url: the_zork_anthology
+      game: planetfall
     install:
     - planetfa.dat
+    optional:
+    - manual.pdf_planetfall
 
 files:
   zork1.dat:
@@ -112,34 +134,104 @@ files:
     - planetfa.dat
     # Zero Zork
 
+  setup_zork_2.1.0.17.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - data/zork1.dat
+      - manual.pdf
+    provides:
+    - zork1.dat
+    - manual.pdf_zork1
+
+  setup_zork2_2.1.0.17.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - data/zork2.dat
+      - manual.pdf
+    provides:
+    - zork2.dat
+    - manual.pdf_zork2
+
+  setup_zork3_2.1.0.17.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - data/zork3.dat
+      - manual.pdf
+    provides:
+    - zork3.dat
+    - manual.pdf_zork3
+
+  setup_beyond_zork_2.1.0.17.exe:
+    unpack:
+      format: innoextract
+      suffix: _beyondzork
+    provides:
+    - beyondzo.dat
+    - manual.pdf_beyondzork
+
+  setup_planetfall_2.1.0.17.exe:
+    unpack:
+      format: innoextract
+      suffix: _planetfall
+    provides:
+    - planetfa.dat
+    - manual.pdf_planetfall
+
+  manual.pdf_zork1:
+    install_as: manual.pdf
+    install_to: $docdir
+  manual.pdf_zork2:
+    install_as: manual.pdf
+    install_to: $docdir
+  manual.pdf_zork3:
+    install_as: manual.pdf
+    install_to: $docdir
+  manual.pdf_beyondzork:
+    install_as: manual.pdf
+    install_to: $docdir
+  manual.pdf_planetfall:
+    install_as: manual.pdf
+    install_to: $docdir
+
+size_and_md5: |
+  92160     b732a93a6244ddd92a9b9a3e3a46c687 zork1.dat_zip
+  92160     5bcd91ee055e9bd42812617571be227b zork2.dat
+  92160     ffda9ee2d428fa2fa8e75a1914ff6959 zork3.dat
+  276480    743c4a97b9c85d89d85d4f1e8e8bfe85 beyondzo.dat
+  122880    d7bbc3de5ad590c3ab641c020a936c41 planetfa.dat
+
+  1129552   ca6103f50b9aa55e6f533ef3d48bff79 manual.pdf_zork1
+  2213995   a46d98231c69c2b8e88f6e51dc432bed manual.pdf_zork2
+  1885475   97b4e20b13f49e14309a5c99bbd1c2f3 manual.pdf_zork3
+  364616    3442be09f8e997aa359d8a1872dd254c manual.pdf_beyondzork
+  1857160   deae31370ff0dd13a3543ef41c409fd6 manual.pdf_planetfall
+  17799208  6bd42788d696f154ce363830909259d3 setup_zork_2.1.0.17.exe
+  18861008  2ea2cf45bb6cf76b0365567e81f27aab setup_zork2_2.1.0.17.exe
+  18497752  1526e9be21bf47412dc053f4097e25bd setup_zork3_2.1.0.17.exe
+  17162896  8a5168d7340af5b1b4df708f467785c0 setup_beyond_zork_2.1.0.17.exe
+  18511960  f359f4b824a7694817e852ada102f6e7 setup_planetfall_2.1.0.17.exe
+
 cksums: |
   _ 4711      readme_zork1.txt
   _ 4604      readme_zork2.txt
   _ 4607      readme_zork3.txt
   _ 84992     zork1.dat_alt
-  _ 92160     zork1.dat_zip
   _ 82160     zork1.zip
-  _ 92160     zork2.dat
   _ 85755     zork2.zip
-  _ 92160     zork3.dat
   _ 77155     zork3.zip
   _ 9752528   setup_zork_anthology.exe
-  _ 276480    beyondzo.dat
-  _ 122880    planetfa.dat
 md5sums: |
   cbe6b6895418efffd7889b3f8152c1da  readme_zork1.txt
   59266a444e892d2849a280790c5227cd  readme_zork2.txt
   31272558b05259802ad1a72dd13c7fde  readme_zork3.txt
   4a0f76b9014a4c407520920710c42588  zork1.dat_alt
-  b732a93a6244ddd92a9b9a3e3a46c687  zork1.dat_zip
   f6dd915ea7315985536efb39154f3433  zork1.zip
-  5bcd91ee055e9bd42812617571be227b  zork2.dat
   ab521209656948516351996263a8ad34  zork2.zip
-  ffda9ee2d428fa2fa8e75a1914ff6959  zork3.dat
   c1a15e9c56267366fa54476baa6fb7d4  zork3.zip
   86edb0fefd9c4fbe62f51b869e2a1bec  setup_zork_anthology.exe
-  743c4a97b9c85d89d85d4f1e8e8bfe85  beyondzo.dat
-  d7bbc3de5ad590c3ab641c020a936c41  planetfa.dat
 
   # alternate md5sums ?
   #f53b893a244737c63180993db4100190  setup_zork_anthology.exe
@@ -159,6 +251,18 @@ sha1sums: |
   f51b2c8742817bcd9e7c7c3a208c1b43c06cfadc  setup_zork_anthology.exe
   835145b092498eba5be24542a0a2aec8e3199557  beyondzo.dat
   77769447c4c77d100a3ed722f712110e8576bea4  planetfa.dat
+
+  11db617ceb8620ce1672161e5f1cb7b590bb6085  manual.pdf_zork1
+  cdeadf6216a7451ada6fa2ada290d0ae88eae198  manual.pdf_zork2
+  35155dd970deb315b1523db08e2ea39dda1533a6  manual.pdf_zork3
+  2cb413d906d8178e05dbbf8547238bc93cd88da5  manual.pdf_beyondzork
+  6b21e7129720d29db86e1fd8068c7f0a3c1dff17  manual.pdf_planetfall
+  0094e7fea1fc96edd409e2a8df38e98ad9cf302c  setup_zork_2.1.0.17.exe
+  db7e52d5e719e955258eff8f6222fbbd2916ec1c  setup_zork2_2.1.0.17.exe
+  4f4625cf016938297a7dbd43795ac19aeb7a0ad8  setup_zork3_2.1.0.17.exe
+  398ce287ba292bebe163ee651bac3658b7dee948  setup_beyond_zork_2.1.0.17.exe
+  18377052c1c86fda51a6434ebc2b55a5f7f688b0  setup_planetfall_2.1.0.17.exe
+
 sha256sums: |
   180bb87dc0524c5f7b1ba29ac08cd3e12f75e1c6b5b211b309ce1f01709b2545  readme_zork1.txt
   589dbf8446c0c813aa25c4f10777a2cfd56561d9b27a6af9e53f4cc0fe79c95d  readme_zork2.txt
