@@ -989,6 +989,18 @@ class GameData(object):
                     progress=(size > QUITE_LARGE))
 
         if not wanted.skip_hash_matching and not hashes.matches(wanted):
+            # always silence warning if several files have same
+            # look_for & same size: e.g. wolf3d, spear, dune2, ...
+            if log:
+                sizes = []
+                for lf in wanted.look_for:
+                    for filename in self.known_filenames[lf]:
+                        size = self.files[filename].size
+                        if size in sizes:
+                            log = False
+                            break
+                        sizes.append(size)
+
             if log:
                 logger.warning('found possible %s\n' +
                     'but its checksums do not match:\n' +
