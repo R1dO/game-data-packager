@@ -91,7 +91,7 @@ class ScummvmGameData(GameData):
                 f.write("echo $LANGUAGE $LANG en | tr ': ' '\\n' | cut -c1-2 | while read lang\n")
                 f.write('do\n')
                 for lang in package.langs:
-                    f.write('[ "$lang" = "%s" ] && echo $lang && return\n' % lang)
+                    f.write('[ "$lang" = "%s" ] && echo $lang && break\n' % lang)
                 f.write('done\n')
                 f.write(')\n')
                 f.write('if [ "$GAME_LANG" = "en" ]; then\n')
