@@ -31,7 +31,7 @@ class ZCodeGameData(GameData):
         super(ZCodeGameData, self).__init__(shortname, data,
                 workdir=workdir)
         for package in self.packages.values():
-            assert package.only_file
+            assert os.path.splitext(package.only_file)[1] == '.z3'
 
         if self.engine is None:
             self.engine = 'gargoyle-free | frotz'
