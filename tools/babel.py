@@ -51,12 +51,12 @@ if 'ru' not in langs:
 missing = {
   'nomouth': ['ru'],
   'rtcw': ['de','es','it'],
-  'waxworks': ['de','es','fr'],
+  'waxworks': ['es','fr'],
 }
 
 games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
 
-langs_order = sorted(langs, key=langs.get, reverse=True)
+langs_order = [k for k, v in sorted(langs.items(), key=lambda kv: (-kv[1], kv[0]))]
 
 html = open('/home/tchet/Utilitaires/Homepage/babel.html', 'w', encoding='latin1')
 html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
