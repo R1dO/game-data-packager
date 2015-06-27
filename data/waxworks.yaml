@@ -4,7 +4,9 @@ plugin: scummvm_common
 genre: Horror
 
 packages:
-  waxworks-data:
+  waxworks-en-data:
+    debian:
+      provides: waxworks-data
     gog:
       url: waxworks
     install:
@@ -474,7 +476,561 @@ packages:
     optional:
     - manual.pdf
 
+  waxworks-de-data:
+    lang: de
+    debian:
+      provides: waxworks-data
+    gog:
+      url: waxworks
+    install:
+    - 001.vga
+    - 002.vga_de
+    - 011.vga
+    - 012.vga_de
+    - 021.vga_de
+    - 022.vga_de
+    - 031.vga
+    - 032.vga
+    - 033.vga
+    - 041.vga
+    - 042.vga
+    - 043.vga
+    - 051.vga
+    - 052.vga
+    - 053.vga
+    - 061.vga
+    - 062.vga
+    - 063.vga
+    - 071.vga
+    - 072.vga
+    - 073.vga
+    - 081.vga
+    - 082.vga
+    - 083.vga
+    - 091.vga
+    - 092.vga
+    - 093.vga
+    - 1001.vga
+    - 1002.vga
+    - 1003.vga
+    - 101.vga
+    - 1011.vga
+    - 1012.vga
+    - 1013.vga
+    - 102.vga
+    - 1021.vga
+    - 1022.vga
+    - 1023.vga
+    - 1031.vga
+    - 1032.vga
+    - 1041.vga
+    - 1042.vga
+    - 1043.vga
+    - 1051.vga
+    - 1052.vga
+    - 1061.vga
+    - 1062.vga
+    - 1063.vga
+    - 1071.vga
+    - 1072.vga
+    - 1081.vga
+    - 1082.vga
+    - 1083.vga
+    - 1091.vga
+    - 1092.vga
+    - 1093.vga
+    - 1101.vga
+    - 1102.vga
+    - 111.vga
+    - 1111.vga
+    - 1112.vga
+    - 112.vga
+    - 1121.vga
+    - 1122.vga
+    - 1131.vga
+    - 1132.vga
+    - 1133.vga
+    - 1141.vga
+    - 1142.vga
+    - 1151.vga
+    - 1152.vga
+    - 1161.vga
+    - 1162.vga
+    - 1171.vga
+    - 1172.vga
+    - 1173.vga
+    - 1181.vga
+    - 1182.vga
+    - 1183.vga
+    - 1191.vga
+    - 1192.vga
+    - 1193.vga
+    - 1201.vga
+    - 1202.vga
+    - 1203.vga
+    - 121.vga
+    - 1211.vga
+    - 1212.vga
+    - 122.vga
+    - 1221.vga
+    - 1222.vga
+    - 1231.vga
+    - 1232.vga
+    - 1241.vga
+    - 1242.vga
+    - 1243.vga
+    - 1251.vga
+    - 1252.vga
+    - 1261.vga
+    - 1262.vga
+    - 1271.vga
+    - 1272.vga_de
+    - 1281.vga_de
+    - 1282.vga_de
+    - 1283.vga
+    - 1291.vga_de
+    - 1292.vga_de
+    - 1301.vga
+    - 1302.vga
+    - 131.vga
+    - 1311.vga
+    - 1312.vga_de
+    - 132.vga
+    - 1321.vga
+    - 1322.vga
+    - 1331.vga
+    - 1332.vga
+    - 1341.vga
+    - 1342.vga
+    - 1351.vga
+    - 1352.vga
+    - 1361.vga
+    - 1362.vga
+    - 1371.vga
+    - 1372.vga
+    - 1373.vga
+    - 1381.vga
+    - 1382.vga_de
+    - 1391.vga
+    - 1392.vga
+    - 1401.vga
+    - 1402.vga
+    - 1403.vga
+    - 141.vga
+    - 1411.vga
+    - 1412.vga
+    - 142.vga
+    - 1421.vga
+    - 1422.vga
+    - 1423.vga
+    - 1431.vga
+    - 1432.vga
+    - 1441.vga
+    - 1442.vga
+    - 1451.vga
+    - 1452.vga
+    - 1461.vga
+    - 1462.vga
+    - 1463.vga
+    - 1471.vga
+    - 1472.vga
+    - 1473.vga
+    - 1481.vga
+    - 1482.vga
+    - 1483.vga
+    - 1491.vga
+    - 1492.vga
+    - 1493.vga
+    - 1501.vga
+    - 1502.vga
+    - 1503.vga
+    - 151.vga
+    - 1511.vga
+    - 1512.vga
+    - 1513.vga
+    - 152.vga
+    - 1521.vga
+    - 1522.vga
+    - 1523.vga
+    - 1531.vga
+    - 1532.vga
+    - 1533.vga
+    - 1541.vga
+    - 1542.vga
+    - 1543.vga
+    - 1551.vga
+    - 1552.vga_de
+    - 161.vga
+    - 162.vga
+    - 171.vga
+    - 172.vga
+    - 181.vga
+    - 182.vga
+    - 191.vga
+    - 192.vga
+    - 201.vga
+    - 202.vga
+    - 211.vga
+    - 212.vga
+    - 221.vga
+    - 222.vga
+    - 231.vga
+    - 232.vga
+    - 241.vga
+    - 242.vga
+    - 251.vga
+    - 252.vga
+    - 261.vga
+    - 262.vga
+    - 271.vga
+    - 272.vga
+    - 273.vga
+    - 281.vga
+    - 282.vga
+    - 291.vga
+    - 292.vga
+    - 301.vga
+    - 302.vga
+    - 311.vga
+    - 312.vga
+    - 321.vga
+    - 322.vga
+    - 331.vga
+    - 332.vga
+    - 341.vga
+    - 342.vga
+    - 351.vga
+    - 352.vga
+    - 361.vga
+    - 362.vga
+    - 363.vga
+    - 371.vga
+    - 372.vga
+    - 381.vga
+    - 382.vga
+    - 391.vga
+    - 392.vga
+    - 393.vga
+    - 401.vga
+    - 402.vga
+    - 411.vga
+    - 412.vga
+    - 421.vga
+    - 422.vga
+    - 431.vga
+    - 432.vga
+    - 441.vga
+    - 442.vga
+    - 443.vga
+    - 451.vga
+    - 452.vga
+    - 461.vga
+    - 462.vga
+    - 463.vga
+    - 471.vga
+    - 472.vga
+    - 481.vga
+    - 482.vga
+    - 483.vga
+    - 491.vga
+    - 492.vga
+    - 501.vga
+    - 502.vga
+    - 511.vga
+    - 512.vga
+    - 521.vga
+    - 522.vga
+    - 531.vga
+    - 532.vga
+    - 541.vga
+    - 542.vga
+    - 551.vga
+    - 552.vga
+    - 561.vga
+    - 562.vga
+    - 571.vga
+    - 572.vga
+    - 573.vga
+    - 581.vga
+    - 582.vga
+    - 583.vga
+    - 591.vga
+    - 592.vga
+    - 593.vga
+    - 601.vga
+    - 602.vga
+    - 611.vga
+    - 612.vga
+    - 621.vga
+    - 622.vga
+    - 631.vga
+    - 632.vga
+    - 633.vga
+    - 641.vga
+    - 642.vga
+    - 643.vga
+    - 651.vga
+    - 652.vga
+    - 661.vga
+    - 662.vga
+    - 671.vga
+    - 672.vga
+    - 673.vga
+    - 681.vga
+    - 682.vga
+    - 691.vga
+    - 692.vga
+    - 701.vga
+    - 702.vga
+    - 711.vga
+    - 712.vga
+    - 713.vga
+    - 721.vga
+    - 722.vga
+    - 723.vga
+    - 731.vga
+    - 732.vga
+    - 733.vga
+    - 741.vga
+    - 742.vga
+    - 743.vga
+    - 751.vga
+    - 752.vga
+    - 753.vga
+    - 761.vga
+    - 762.vga
+    - 771.vga
+    - 772.vga
+    - 773.vga
+    - 781.vga
+    - 782.vga
+    - 783.vga
+    - 791.vga
+    - 792.vga
+    - 793.vga
+    - 801.vga
+    - 802.vga
+    - 803.vga
+    - 811.vga
+    - 812.vga
+    - 813.vga
+    - 821.vga
+    - 822.vga
+    - 831.vga
+    - 832.vga
+    - 841.vga
+    - 842.vga
+    - 843.vga
+    - 851.vga
+    - 852.vga
+    - 861.vga
+    - 862.vga
+    - 863.vga
+    - 871.vga
+    - 872.vga
+    - 881.vga
+    - 882.vga
+    - 891.vga
+    - 892.vga
+    - 901.vga
+    - 902.vga
+    - 911.vga
+    - 912.vga
+    - 921.vga
+    - 922.vga
+    - 931.vga
+    - 932.vga
+    - 941.vga
+    - 942.vga
+    - 951.vga
+    - 952.vga
+    - 961.vga
+    - 962.vga
+    - 971.vga
+    - 972.vga
+    - 973.vga
+    - 981.vga
+    - 982.vga
+    - 983.vga
+    - 991.vga
+    - 992.vga
+    - gamepc_de
+    - icon.dat
+    - menus.dat
+    - mod0.mus
+    - mod1.mus
+    - mod10.mus
+    - mod11.mus
+    - mod12.mus
+    - mod13.mus
+    - mod14.mus
+    - mod15.mus
+    - mod16.mus
+    - mod17.mus
+    - mod18.mus
+    - mod19.mus
+    - mod2.mus
+    - mod20.mus
+    - mod21.mus
+    - mod22.mus
+    - mod23.mus
+    - mod24.mus
+    - mod25.mus
+    - mod26.mus
+    - mod3.mus
+    - mod4.mus
+    - mod5.mus
+    - mod6.mus
+    - mod7.mus
+    - mod8.mus
+    - mod9.mus
+    - music.drv
+    - rooms01
+    - rooms02
+    - rooms03
+    - rooms04
+    - rooms05
+    - rooms06
+    - rooms07
+    - rooms08
+    - roomslst
+    - start
+    - statelst
+    - stripped.txt
+    - tables01_de
+    - tables02
+    - tables03
+    - tables04
+    - tables05
+    - tables06
+    - tables07
+    - tables08
+    - tables09
+    - tables10
+    - tables11
+    - tables12
+    - tables13_de
+    - tables14
+    - tables15
+    - tables16
+    - tbllist
+    - text01_de
+    - text02_de
+    - text03_de
+    - text04_de
+    - text05_de
+    - text06_de
+    - text07_de
+    - text08_de
+    - text09_de
+    - text10_de
+    - text11_de
+    - text12_de
+    - text13_de
+    - text14_de
+    - text15_de
+    - text16_de
+    - text17_de
+    - text18_de
+    - text19_de
+    - text20_de
+    - text21_de
+    - text22_de
+    - text23_de
+    - text24_de
+    - text25_de
+    - wax.fxb
+    - xtable01
+    - xtable02
+    - xtable03
+    - xtable04
+    - xtable05
+    - xtbllist
+    optional:
+    - manual.pdf
+
 files:
+  002.vga_de:
+    install_as: 002.vga
+  012.vga_de:
+    install_as: 012.vga
+  021.vga_de:
+    install_as: 021.vga
+  022.vga_de:
+    install_as: 022.vga
+  1272.vga_de:
+    install_as: 1272.vga
+  1281.vga_de:
+    install_as: 1281.vga
+  1282.vga_de:
+    install_as: 1282.vga
+  1291.vga_de:
+    install_as: 1291.vga
+  1292.vga_de:
+    install_as: 1292.vga
+  1312.vga_de:
+    install_as: 1312.vga
+  1382.vga_de:
+    install_as: 1382.vga
+  1552.vga_de:
+    install_as: 1552.vga
+  gamepc_de:
+    install_as: gamepc
+  tables01_de:
+    install_as: tables01
+  tables13_de:
+    install_as: tables13
+  text01_de:
+    install_as: text01
+  text02_de:
+    install_as: text02
+  text03_de:
+    install_as: text03
+  text04_de:
+    install_as: text04
+  text05_de:
+    install_as: text05
+  text06_de:
+    install_as: text06
+  text07_de:
+    install_as: text07
+  text08_de:
+    install_as: text08
+  text09_de:
+    install_as: text09
+  text10_de:
+    install_as: text10
+  text11_de:
+    install_as: text11
+  text12_de:
+    install_as: text12
+  text13_de:
+    install_as: text13
+  text14_de:
+    install_as: text14
+  text15_de:
+    install_as: text15
+  text16_de:
+    install_as: text16
+  text17_de:
+    install_as: text17
+  text18_de:
+    install_as: text18
+  text19_de:
+    install_as: text19
+  text20_de:
+    install_as: text20
+  text21_de:
+    install_as: text21
+  text22_de:
+    install_as: text22
+  text23_de:
+    install_as: text23
+  text24_de:
+    install_as: text24
+  text25_de:
+    install_as: text25
+
   manual.pdf:
     install_to: $docdir
 
@@ -1416,9 +1972,480 @@ files:
     - xtbllist
     - manual.pdf
 
+  setup_waxworks_german_2.1.0.3.exe:
+    unpack:
+      format: innoextract
+      suffix: _de
+    provides:
+    - 001.vga
+    - 002.vga_de
+    - 011.vga
+    - 012.vga_de
+    - 021.vga_de
+    - 022.vga_de
+    - 031.vga
+    - 032.vga
+    - 033.vga
+    - 041.vga
+    - 042.vga
+    - 043.vga
+    - 051.vga
+    - 052.vga
+    - 053.vga
+    - 061.vga
+    - 062.vga
+    - 063.vga
+    - 071.vga
+    - 072.vga
+    - 073.vga
+    - 081.vga
+    - 082.vga
+    - 083.vga
+    - 091.vga
+    - 092.vga
+    - 093.vga
+    - 1001.vga
+    - 1002.vga
+    - 1003.vga
+    - 101.vga
+    - 1011.vga
+    - 1012.vga
+    - 1013.vga
+    - 102.vga
+    - 1021.vga
+    - 1022.vga
+    - 1023.vga
+    - 1031.vga
+    - 1032.vga
+    - 1041.vga
+    - 1042.vga
+    - 1043.vga
+    - 1051.vga
+    - 1052.vga
+    - 1061.vga
+    - 1062.vga
+    - 1063.vga
+    - 1071.vga
+    - 1072.vga
+    - 1081.vga
+    - 1082.vga
+    - 1083.vga
+    - 1091.vga
+    - 1092.vga
+    - 1093.vga
+    - 1101.vga
+    - 1102.vga
+    - 111.vga
+    - 1111.vga
+    - 1112.vga
+    - 112.vga
+    - 1121.vga
+    - 1122.vga
+    - 1131.vga
+    - 1132.vga
+    - 1133.vga
+    - 1141.vga
+    - 1142.vga
+    - 1151.vga
+    - 1152.vga
+    - 1161.vga
+    - 1162.vga
+    - 1171.vga
+    - 1172.vga
+    - 1173.vga
+    - 1181.vga
+    - 1182.vga
+    - 1183.vga
+    - 1191.vga
+    - 1192.vga
+    - 1193.vga
+    - 1201.vga
+    - 1202.vga
+    - 1203.vga
+    - 121.vga
+    - 1211.vga
+    - 1212.vga
+    - 122.vga
+    - 1221.vga
+    - 1222.vga
+    - 1231.vga
+    - 1232.vga
+    - 1241.vga
+    - 1242.vga
+    - 1243.vga
+    - 1251.vga
+    - 1252.vga
+    - 1261.vga
+    - 1262.vga
+    - 1271.vga
+    - 1272.vga_de
+    - 1281.vga_de
+    - 1282.vga_de
+    - 1283.vga
+    - 1291.vga_de
+    - 1292.vga_de
+    - 1301.vga
+    - 1302.vga
+    - 131.vga
+    - 1311.vga
+    - 1312.vga_de
+    - 132.vga
+    - 1321.vga
+    - 1322.vga
+    - 1331.vga
+    - 1332.vga
+    - 1341.vga
+    - 1342.vga
+    - 1351.vga
+    - 1352.vga
+    - 1361.vga
+    - 1362.vga
+    - 1371.vga
+    - 1372.vga
+    - 1373.vga
+    - 1381.vga
+    - 1382.vga_de
+    - 1391.vga
+    - 1392.vga
+    - 1401.vga
+    - 1402.vga
+    - 1403.vga
+    - 141.vga
+    - 1411.vga
+    - 1412.vga
+    - 142.vga
+    - 1421.vga
+    - 1422.vga
+    - 1423.vga
+    - 1431.vga
+    - 1432.vga
+    - 1441.vga
+    - 1442.vga
+    - 1451.vga
+    - 1452.vga
+    - 1461.vga
+    - 1462.vga
+    - 1463.vga
+    - 1471.vga
+    - 1472.vga
+    - 1473.vga
+    - 1481.vga
+    - 1482.vga
+    - 1483.vga
+    - 1491.vga
+    - 1492.vga
+    - 1493.vga
+    - 1501.vga
+    - 1502.vga
+    - 1503.vga
+    - 151.vga
+    - 1511.vga
+    - 1512.vga
+    - 1513.vga
+    - 152.vga
+    - 1521.vga
+    - 1522.vga
+    - 1523.vga
+    - 1531.vga
+    - 1532.vga
+    - 1533.vga
+    - 1541.vga
+    - 1542.vga
+    - 1543.vga
+    - 1551.vga
+    - 1552.vga_de
+    - 161.vga
+    - 162.vga
+    - 171.vga
+    - 172.vga
+    - 181.vga
+    - 182.vga
+    - 191.vga
+    - 192.vga
+    - 201.vga
+    - 202.vga
+    - 211.vga
+    - 212.vga
+    - 221.vga
+    - 222.vga
+    - 231.vga
+    - 232.vga
+    - 241.vga
+    - 242.vga
+    - 251.vga
+    - 252.vga
+    - 261.vga
+    - 262.vga
+    - 271.vga
+    - 272.vga
+    - 273.vga
+    - 281.vga
+    - 282.vga
+    - 291.vga
+    - 292.vga
+    - 301.vga
+    - 302.vga
+    - 311.vga
+    - 312.vga
+    - 321.vga
+    - 322.vga
+    - 331.vga
+    - 332.vga
+    - 341.vga
+    - 342.vga
+    - 351.vga
+    - 352.vga
+    - 361.vga
+    - 362.vga
+    - 363.vga
+    - 371.vga
+    - 372.vga
+    - 381.vga
+    - 382.vga
+    - 391.vga
+    - 392.vga
+    - 393.vga
+    - 401.vga
+    - 402.vga
+    - 411.vga
+    - 412.vga
+    - 421.vga
+    - 422.vga
+    - 431.vga
+    - 432.vga
+    - 441.vga
+    - 442.vga
+    - 443.vga
+    - 451.vga
+    - 452.vga
+    - 461.vga
+    - 462.vga
+    - 463.vga
+    - 471.vga
+    - 472.vga
+    - 481.vga
+    - 482.vga
+    - 483.vga
+    - 491.vga
+    - 492.vga
+    - 501.vga
+    - 502.vga
+    - 511.vga
+    - 512.vga
+    - 521.vga
+    - 522.vga
+    - 531.vga
+    - 532.vga
+    - 541.vga
+    - 542.vga
+    - 551.vga
+    - 552.vga
+    - 561.vga
+    - 562.vga
+    - 571.vga
+    - 572.vga
+    - 573.vga
+    - 581.vga
+    - 582.vga
+    - 583.vga
+    - 591.vga
+    - 592.vga
+    - 593.vga
+    - 601.vga
+    - 602.vga
+    - 611.vga
+    - 612.vga
+    - 621.vga
+    - 622.vga
+    - 631.vga
+    - 632.vga
+    - 633.vga
+    - 641.vga
+    - 642.vga
+    - 643.vga
+    - 651.vga
+    - 652.vga
+    - 661.vga
+    - 662.vga
+    - 671.vga
+    - 672.vga
+    - 673.vga
+    - 681.vga
+    - 682.vga
+    - 691.vga
+    - 692.vga
+    - 701.vga
+    - 702.vga
+    - 711.vga
+    - 712.vga
+    - 713.vga
+    - 721.vga
+    - 722.vga
+    - 723.vga
+    - 731.vga
+    - 732.vga
+    - 733.vga
+    - 741.vga
+    - 742.vga
+    - 743.vga
+    - 751.vga
+    - 752.vga
+    - 753.vga
+    - 761.vga
+    - 762.vga
+    - 771.vga
+    - 772.vga
+    - 773.vga
+    - 781.vga
+    - 782.vga
+    - 783.vga
+    - 791.vga
+    - 792.vga
+    - 793.vga
+    - 801.vga
+    - 802.vga
+    - 803.vga
+    - 811.vga
+    - 812.vga
+    - 813.vga
+    - 821.vga
+    - 822.vga
+    - 831.vga
+    - 832.vga
+    - 841.vga
+    - 842.vga
+    - 843.vga
+    - 851.vga
+    - 852.vga
+    - 861.vga
+    - 862.vga
+    - 863.vga
+    - 871.vga
+    - 872.vga
+    - 881.vga
+    - 882.vga
+    - 891.vga
+    - 892.vga
+    - 901.vga
+    - 902.vga
+    - 911.vga
+    - 912.vga
+    - 921.vga
+    - 922.vga
+    - 931.vga
+    - 932.vga
+    - 941.vga
+    - 942.vga
+    - 951.vga
+    - 952.vga
+    - 961.vga
+    - 962.vga
+    - 971.vga
+    - 972.vga
+    - 973.vga
+    - 981.vga
+    - 982.vga
+    - 983.vga
+    - 991.vga
+    - 992.vga
+    - gamepc_de
+    - icon.dat
+    - menus.dat
+    - mod0.mus
+    - mod1.mus
+    - mod10.mus
+    - mod11.mus
+    - mod12.mus
+    - mod13.mus
+    - mod14.mus
+    - mod15.mus
+    - mod16.mus
+    - mod17.mus
+    - mod18.mus
+    - mod19.mus
+    - mod2.mus
+    - mod20.mus
+    - mod21.mus
+    - mod22.mus
+    - mod23.mus
+    - mod24.mus
+    - mod25.mus
+    - mod26.mus
+    - mod3.mus
+    - mod4.mus
+    - mod5.mus
+    - mod6.mus
+    - mod7.mus
+    - mod8.mus
+    - mod9.mus
+    - music.drv
+    - rooms01
+    - rooms02
+    - rooms03
+    - rooms04
+    - rooms05
+    - rooms06
+    - rooms07
+    - rooms08
+    - roomslst
+    - start
+    - statelst
+    - stripped.txt
+    - tables01_de
+    - tables02
+    - tables03
+    - tables04
+    - tables05
+    - tables06
+    - tables07
+    - tables08
+    - tables09
+    - tables10
+    - tables11
+    - tables12
+    - tables13_de
+    - tables14
+    - tables15
+    - tables16
+    - tbllist
+    - text01_de
+    - text02_de
+    - text03_de
+    - text04_de
+    - text05_de
+    - text06_de
+    - text07_de
+    - text08_de
+    - text09_de
+    - text10_de
+    - text11_de
+    - text12_de
+    - text13_de
+    - text14_de
+    - text15_de
+    - text16_de
+    - text17_de
+    - text18_de
+    - text19_de
+    - text20_de
+    - text21_de
+    - text22_de
+    - text23_de
+    - text24_de
+    - text25_de
+    - wax.fxb
+    - xtable01
+    - xtable02
+    - xtable03
+    - xtable04
+    - xtable05
+    - xtbllist
+    - manual.pdf
+
 sha1sums: |
   3747a8875cbfbf519e4a02d71f63fdd25e9c7580  setup_waxworks.exe
   5730365488f3fd3fc12d5ed851dd959057ebbb8f  setup_waxworks_2.0.0.3.exe
+  c6798b81f69abcb6d1fce2e3f16cc85817dbb903  setup_waxworks_german_2.1.0.3.exe
 
 size_and_md5: |
   372       ba43de14718ef63bb3723d8389a95f9e 001.vga
@@ -1887,4 +2914,46 @@ size_and_md5: |
   4333385   2668173fa52186a1556aee1300f59e1c manual.pdf
   15166404  a57d3625beac079f0d59269aac48d025 setup_waxworks.exe
   22082528  a8fe60a593d6c01aa9f6518c1dde03f1 setup_waxworks_2.0.0.3.exe
+
+  12570     273a599b519ae630d451871fcf7eda16 002.vga_de
+  18850     d1db9a5c3c817ed8adb99755f581c2c8 012.vga_de
+  1262      000ca7d3b7e1deccf2a169ebe3b021f9 021.vga_de
+  14748     c486b7b67f8e1e7e01669ae30f546c3e 022.vga_de
+  81388     2ae7ea850a3a802b416401c715d92af4 1272.vga_de
+  2286      258b4e7d08405306dd5710b8db2168c6 1281.vga_de
+  165358    0c55610a1152152363063972b2216bcd 1282.vga_de
+  1056      cd421432beabd04b7d3368acedd54863 1291.vga_de
+  56708     d72f77791fcdbc678a5a8f1727f76048 1292.vga_de
+  178624    59d2fbb01ee4d46bae21fb87eeeaa779 1312.vga_de
+  32644     9c29d5d571fa9644a2edfe58f75ddaa6 1382.vga_de
+  324       84eb784fd9aba8b99d4aba6e96d37163 1552.vga_de
+  53523     1ef05b8620b568258c49a8c25104639e gamepc_de
+  1342      d80deccf5236fc36836264447c0a80da tables01_de
+  9463      9ccfd30c7574acbd81f717815d713419 tables13_de
+  4345      7ae687102f4dc74c3ea21d4fea6cbb39 text01_de
+  3445      fefdfd66bdb6db1bbdcbe3adc14ed717 text02_de
+  559       dfa268e99580434ffdd5483b88adf5f0 text03_de
+  1037      3663bae3e7a7cd6389a1d6850cbd63fe text04_de
+  3188      a9827ec6c951144dd641c6b86c9a1d5b text05_de
+  4236      f50435fff8deefbf0e1b0f21b5bf3a71 text06_de
+  1264      be3504039c6971472e25b3f082c66a6e text07_de
+  2067      9d41fabd4cb38f766bce1d585cd725ea text08_de
+  4421      b0e84fe4b9621a9bf8b3a19685e24ae0 text09_de
+  1939      4d8a23d3a6c43f22d1456ed92796497b text10_de
+  1088      ff636f5f66726d6ccfd5f556441fbce8 text11_de
+  3987      ce77f69b9d39088ac14368f01fc6ca4a text12_de
+  226       c05deec909b682271d3f2b11cac9791b text13_de
+  222       2163cae9b2fe8c8589abb707a1f55c5a text14_de
+  1066      201db75f2f0c2a42e9987fab2f119345 text15_de
+  1805      1780db7ae64265c70bc376d25cda1a30 text16_de
+  3967      9c27f1b59a414cd13ab43bdd197711e6 text17_de
+  2028      bc90c54c5ab0b5c08e1ebcea66e187f9 text18_de
+  2695      2d697c1edefd76f876ccca3ca983c146 text19_de
+  5150      7f1a2ea2540587b253ac26ad5d705a93 text20_de
+  1614      058a725b162bac8887d14cfd111aa930 text21_de
+  3207      3e5aae2b49869f764e8f3fb1a55d8b8e text22_de
+  4349      520bed8ba2b845edb36f3983ed8f6377 text23_de
+  4973      4f1805461f6889b76cbb3092b8489cdc text24_de
+  2656      745bcee0a0bd45e6c83c8fa1e0ab62cb text25_de
+  23994792  fa743992ac16da1c0fd2e28db0ad309d setup_waxworks_german_2.1.0.3.exe
 ...
