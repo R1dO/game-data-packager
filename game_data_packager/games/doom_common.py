@@ -150,7 +150,7 @@ class DoomGameData(GameData):
             entry['Terminal'] = 'false'
             entry['Type'] = 'Application'
             entry['Categories'] = 'Game'
-            entry['Keyword'] = wad_base
+            entry['Keywords'] = wad_base
 
             with open(os.path.join(appdir, '%s.desktop' % desktop_file),
                       'w', encoding='utf-8') as output:
