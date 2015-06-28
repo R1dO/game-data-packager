@@ -10,6 +10,20 @@ packages:
     debian:
       provides: gobliiins-data
     install:
+    - gob.lic
+    - intro.stk_cd
+    - track1.mp3
+    optional:
+    - manual.pdf
+
+  gobliiins-floppy-en-data:
+    longname: "Gobliiins (floppy version)"
+    better_version: gobliiins-en-data
+    gog:
+      url: gobliiins_pack
+    debian:
+      provides: gobliiins-data
+    install:
     - intro.stk
     - disk1.stk
     - disk2.stk
@@ -43,12 +57,13 @@ packages:
     demo_for: gobliiins-fr-data
     debian:
       provides: gobliiins-demo-data
-    gameid: gob
+    gameid: gob1-demo-fr
     install:
     - intro.stk_demo_fr
     - disk1.stk_demo_fr
 
 files:
+  # Demos
   gob1-amiga_demo_en.zip:
     download: http://sourceforge.net/projects/scummvm/files/demos/gob/gob1-amiga_demo_en.zip?download
     unpack:
@@ -73,6 +88,9 @@ files:
   disk1.stk_demo_fr:
     install_as: disk1.stk
 
+  # Full games
+  intro.stk_cd:
+    install_as: intro.stk
   intro.stk_fr:
     install_as: intro.stk
   disk1.stk_fr:
@@ -83,6 +101,21 @@ files:
     install_as: disk3.stk
   disk4.stk_fr:
     install_as: disk4.stk
+  manual.pdf:
+    install_to: $docdir
+  setup_gobliiins_2.1.0.64.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - intro.stk
+    - disk1.stk
+    - disk2.stk
+    - disk3.stk
+    - disk4.stk
+    - gob.lic
+    - intro.stk_cd
+    - track1.mp3
+    - manual.pdf
 
 size_and_md5: |
   135561    82aea70ef26f41fa963dfae270993e49 intro.stk_fr
@@ -97,6 +130,14 @@ size_and_md5: |
   644169    e8e4151705f87a515a309d225f83a01f disk3.stk
   571911    3cde14de82a30dc559e00e7ef7fade88 disk4.stk
 
+  949       3d53324939418df5815e613635ac1d8a gob.lic
+  3295368   b2171e7f5aedf43aba35e07413728607 intro.stk_cd
+
+  47410991  6b8df9f1c4a72c73ae1ea0038c1ddcb4 track1.mp3
+  842134    e0eb768e690d5593e29583e62ee75948 manual.pdf
+  68129736  e587f246c7dedb84b30ee09e6f1c5462 setup_gobliiins_2.1.0.64.exe
+
+  # Demos
   397243    70ceb406fa9b5a93a574423d47e93b8b gob1-amiga_demo_en.zip
   201584    26de406cb09228d902274446a6a2eceb intro.stk_demo
   300871    295b44ca477e1800a7c482dd85de5f45 disk1.stk_demo
@@ -118,6 +159,14 @@ sha1sums: |
   5d5da03ec097b8d05e81f9ca91806d2d9c06e95a  disk4.stk_fr
   d62bf74d4e36cee683348f16b011f021a84c3510  intro.stk_fr
 
+  29d9b195f414a9010f148e06290f867b6a188a5a  gob.lic
+  7a74794c92de2135041388b14d6cf2babbc2d858  intro.stk_cd
+
+  f463a6e54ca5839bac6015112d3310b4fa6db792  track1.mp3
+  176bfcdc63ec1b848547c2ba432b9ef87a928928  manual.pdf
+  79140df8f0c305223df16b23f2185f80d210354c  setup_gobliiins_2.1.0.64.exe
+
+  # Demos
   44dd46a2f149502331d793de692e00fa61a5dce1  gob1-amiga_demo_en.zip
   01260678d12ea393c32a72bb13e418f7e7cd4322  intro.stk_demo
   1e339634094ece3dcde8b0b2549edbbd419fd82d  disk1.stk_demo
