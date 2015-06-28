@@ -51,7 +51,6 @@ if 'ru' not in langs:
 missing = {
   'nomouth': ['ru'],
   'rtcw': ['de','es','it'],
-  'waxworks': ['es','fr'],
 }
 
 games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
