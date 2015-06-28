@@ -508,6 +508,10 @@ class GameData(object):
         # The game engine used to run the game (package name)
         self.engine = None
 
+        # Game translations known to exists, but missing in 'packages:'
+        # list of ISO-639 codes
+        self.missing_langs = []
+
         # The game genre
         # http://en.wikipedia.org/wiki/List_of_video_game_genres
         self.genre = None
@@ -546,9 +550,11 @@ class GameData(object):
         self.argument_parser = None
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text',
-                 'steam', 'gog', 'origin', 'engine', 'genre'):
+               'steam', 'gog', 'origin', 'engine', 'genre', 'missing_langs'):
             if k in self.data:
                 setattr(self, k, self.data[k])
+
+        assert type(self.missing_langs) is list
 
         if 'aliases' in self.data:
             self.aliases = set(self.data['aliases'])
@@ -729,6 +735,9 @@ class GameData(object):
             assert (not package.better_version or
               package.better_version in self.packages), package.better_version
 
+            # check for stale missing_langs
+            assert not set(package.langs).intersection(self.missing_langs)
+
         for filename, wanted in self.files.items():
             if wanted.unpack:
                 assert 'format' in wanted.unpack, filename
@@ -763,16 +772,21 @@ class GameData(object):
             prepend = '\npackages possible for this game:\n'
             help = []
             for package in self.packages.values():
-                type = { 'demo' : 1,
-                         'full' : 2,
-                         'expansion' : 3}.get(package.type)
-                help.append({ 'type' : type,
+                game_type = { 'demo' : 1,
+                              'full' : 2,
+                              'expansion' : 3}.get(package.type)
+                help.append({ 'type' : game_type,
                               'year' : package.copyright or self.copyright,
                               'name' : package.name,
                               'longname': package.longname or self.longname})
             for h in sorted(help, key=lambda k: (k['type'], k['year'][2:6], k['name'])):
                 prepend += "  %-40s %s\n" % (h['name'],h['longname'])
             self.help_text = prepend + '\n' + self.help_text
+
+        if self.missing_langs:
+            self.help_text += ('\nThe following languages are not '
+                               'yet supported: %s\n' %
+                               ','.join(self.missing_langs))
 
         # advertise where to buy games
         # if it's not already in the help_text
