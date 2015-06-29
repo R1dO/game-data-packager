@@ -83,8 +83,18 @@ These environment variables are used when a game is available in
 various languages to choose the correct version.
 .br
 Those are normally set by your desktop environment.
+.SH PATHS
+game\-data\-packager will automatically locate applicable files in these directories:
+.TP
+.B ~/.steam/SteamApps/common/<game>/
+.TP
+.B ~/.wine/drive_c/Program Files/Steam/SteamApps/common/<game>/
+and also the ~/.PlayOnLinux/wineprefix/Steam/drive_c/... variant
+.TP
+.B X:/Program Files/Steam/SteamApps/common/<game>/
+where X:\\ is any mounted vfat or NTFS partition
 .SH SEE ALSO
-\fIdpkg\fP(1), \fIsu\fP(1)
+\fIdpkg\fP(1), \fIsu\fP(1), \fIlgogdownloader\fP(1)
 .SH AUTHOR
 Copyright \(co 2010-2013 Jonathan Dowland \fI<jmtd@debian.org>\fP
 .br
