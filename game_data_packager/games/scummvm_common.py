@@ -56,8 +56,9 @@ class ScummvmGameData(GameData):
         if package.type == 'expansion':
             return
 
-        for icon in (package.name, self.shortname):
-            from_ = os.path.join(DATADIR, icon + '.png')
+        icon = package.name
+        for basename in (package.name, self.shortname):
+            from_ = os.path.join(DATADIR, basename + '.png')
             if os.path.exists(from_):
                 pixdir = os.path.join(destdir, 'usr/share/pixmaps')
                 mkdir_p(pixdir)
