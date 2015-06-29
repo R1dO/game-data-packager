@@ -19,11 +19,16 @@
 import configparser
 import logging
 import os
+import subprocess
 
 from .. import GameData
+from ..paths import DATADIR
 from ..util import mkdir_p
 
 logger = logging.getLogger('game-data-packager.games.scummvm-common')
+
+def install_data(from_, to):
+    subprocess.check_call(['cp', '--reflink=auto', from_, to])
 
 class ScummvmGameData(GameData):
     def __init__(self, shortname, data, workdir=None):
@@ -51,6 +56,16 @@ class ScummvmGameData(GameData):
         if package.type == 'expansion':
             return
 
+        for icon in (package.name, self.shortname):
+            from_ = os.path.join(DATADIR, icon + '.png')
+            if os.path.exists(from_):
+                pixdir = os.path.join(destdir, 'usr/share/pixmaps')
+                mkdir_p(pixdir)
+                install_data(from_, os.path.join(pixdir, '%s.png' % icon))
+                break
+        else:
+            icon = 'scummvm'
+
         appdir = os.path.join(destdir, 'usr/share/applications')
         mkdir_p(appdir)
 
@@ -61,7 +76,7 @@ class ScummvmGameData(GameData):
         entry['Name'] = package.longname or self.longname
         entry['GenericName'] = self.genre + ' Game'
         entry['TryExec'] = 'scummvm'
-        entry['Icon'] = 'scummvm'
+        entry['Icon'] = icon
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
         entry['Categories'] = 'Game'
