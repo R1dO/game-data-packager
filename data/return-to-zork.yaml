@@ -1,0 +1,403 @@
+---
+longname: Return To Zork
+copyright: © 1993 Infocom
+plugin: scummvm_common
+gameid: rtz
+
+packages:
+  return-to-zork-floppy-data:
+    longname: 'Return To Zork (floppy)'
+    better_version: return-to-zork-data
+    install:
+    - rtz.dat
+    - rtz.prj
+
+  return-to-zork-data:
+    gameid: rtz-cd
+    gog:
+      url: return_to_zork
+    install:
+    - rtzcd.dat
+    - rtzcd.prj
+    - fbftkn01.pmv
+    - fbla00xx.pmv
+    - fbla06xx.pmv
+    - fbla09xx.pmv
+    - fboo04aa.pmv
+    - fbosmf01.pmv
+    - fbospd01.pmv
+    - fbospu01.pmv
+    - fbostk01.pmv
+    - fbsgsw01.pmv
+    - fbsgvs01.pmv
+    - fcan34x1.pmv
+    - fcclwu01.pmv
+    - fcli04xx.pmv
+    - fcliff01.pmv
+    - fcshdr01.pmv
+    - fducky01.pmv
+    - fdwazzbb.pmv
+    - fdwnrv01.pmv
+    - fending0.pmv
+    - fending1.pmv
+    - ffbtrd01.pmv
+    - ffcbo101.pmv
+    - ffcbo201.pmv
+    - ffcbo301.pmv
+    - ffrytb01.pmv
+    - fgua02xx.pmv
+    - fhdwsu01.pmv
+    - fhol01xx.pmv
+    - fhwblw01.pmv
+    - fhwdrk01.pmv
+    - fhwfew01.pmv
+    - fhwhel01.pmv
+    - finhal01.pmv
+    - finrml01.pmv
+    - fintro00.pmv
+    - fintro01.pmv
+    - fitnhl01.pmv
+    - fkep01ax.pmv
+    - flh1st01.pmv
+    - flhkgd01.pmv
+    - fmay01xx.pmv
+    - fmayrj01.pmv
+    - fmoa11x1.pmv
+    - fmor15aa.pmv
+    - fombgr01.pmv
+    - fomtdu01.pmv
+    - forclv01.pmv
+    - forcsh01.pmv
+    - fpee01xx.pmv
+    - fpnshp01.pmv
+    - fpshwk01.pmv
+    - freb01x1.pmv
+    - freb02xx.pmv
+    - freb03xx.pmv
+    - frebg201.pmv
+    - frosir01.pmv
+    - fschwk01.pmv
+    - fshbfl01.pmv
+    - fsnbdr01.pmv
+    - fsnbth01.pmv
+    - fsnktn01.pmv
+    - fthlwk01.pmv
+    - ftmpdr01.pmv
+    - ftrlcv01.pmv
+    - ftro01xx.pmv
+    - ftro23x1.pmv
+    - ftrtmp01.pmv
+    - fuplad01.pmv
+    - fwai07xx.pmv
+    - fwaifl01.pmv
+    - fwaifp01.pmv
+    - fwalil01.pmv
+    - fwhamo01.pmv
+    - fwilct01.pmv
+    - fwit02xx.pmv
+    - fwit05aa.pmv
+    - fwit10aa.pmv
+    - fwit32xx.pmv
+    - fwiz01x1.pmv
+    - fwiz0zxx.pmv
+    - fwiz24x1.pmv
+    - fwizaf01.pmv
+    - fwsomw01.pmv
+    optional:
+    - music/rtz_02.ogg
+    - music/rtz_03.ogg
+    - music/rtz_04.ogg
+    - music/rtz_05.ogg
+    - music/rtz_06.ogg
+    - music/rtz_07.ogg
+    - music/rtz_08.ogg
+    - music/rtz_09.ogg
+    - music/rtz_10.ogg
+    - music/rtz_11.ogg
+    - music/rtz_12.ogg
+    - music/rtz_13.ogg
+    - music/rtz_14.ogg
+    - music/rtz_15.ogg
+    - music/rtz_16.ogg
+    - music/rtz_17.ogg
+    - music/rtz_18.ogg
+    - music/rtz_19.ogg
+    - music/rtz_20.ogg
+    - music/rtz_21.ogg
+    - music/rtz_22.ogg
+    - music/rtz_23.ogg
+    - music/rtz_24.ogg
+    - music/rtz_25.ogg
+    - music/rtz_26.ogg
+    - encyclopedia_frobozzica.pdf
+    - manual.pdf
+    license:
+    - license.txt
+
+files:
+  encyclopedia_frobozzica.pdf:
+    install_to: $docdir
+  manual.pdf:
+    install_to: $docdir
+
+  setup_return_to_zork_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - rtzcd.dat
+    - music/rtz_02.ogg
+    - music/rtz_03.ogg
+    - music/rtz_04.ogg
+    - music/rtz_05.ogg
+    - music/rtz_06.ogg
+    - music/rtz_07.ogg
+    - music/rtz_08.ogg
+    - music/rtz_09.ogg
+    - music/rtz_10.ogg
+    - music/rtz_11.ogg
+    - music/rtz_12.ogg
+    - music/rtz_13.ogg
+    - music/rtz_14.ogg
+    - music/rtz_15.ogg
+    - music/rtz_16.ogg
+    - music/rtz_17.ogg
+    - music/rtz_18.ogg
+    - music/rtz_19.ogg
+    - music/rtz_20.ogg
+    - music/rtz_21.ogg
+    - music/rtz_22.ogg
+    - music/rtz_23.ogg
+    - music/rtz_24.ogg
+    - music/rtz_25.ogg
+    - music/rtz_26.ogg
+    - encyclopedia_frobozzica.pdf
+    - manual.pdf
+    - license.txt
+    - rtz.gog
+  rtz.gog:
+    unpack:
+      format: unar
+      unpack: [RTZCD.PRJ,'*.PMV']
+    provides:
+    - rtzcd.prj
+    - fbftkn01.pmv
+    - fbla00xx.pmv
+    - fbla06xx.pmv
+    - fbla09xx.pmv
+    - fboo04aa.pmv
+    - fbosmf01.pmv
+    - fbospd01.pmv
+    - fbospu01.pmv
+    - fbostk01.pmv
+    - fbsgsw01.pmv
+    - fbsgvs01.pmv
+    - fcan34x1.pmv
+    - fcclwu01.pmv
+    - fcli04xx.pmv
+    - fcliff01.pmv
+    - fcshdr01.pmv
+    - fducky01.pmv
+    - fdwazzbb.pmv
+    - fdwnrv01.pmv
+    - fending0.pmv
+    - fending1.pmv
+    - ffbtrd01.pmv
+    - ffcbo101.pmv
+    - ffcbo201.pmv
+    - ffcbo301.pmv
+    - ffrytb01.pmv
+    - fgua02xx.pmv
+    - fhdwsu01.pmv
+    - fhol01xx.pmv
+    - fhwblw01.pmv
+    - fhwdrk01.pmv
+    - fhwfew01.pmv
+    - fhwhel01.pmv
+    - finhal01.pmv
+    - finrml01.pmv
+    - fintro00.pmv
+    - fintro01.pmv
+    - fitnhl01.pmv
+    - fkep01ax.pmv
+    - flh1st01.pmv
+    - flhkgd01.pmv
+    - fmay01xx.pmv
+    - fmayrj01.pmv
+    - fmoa11x1.pmv
+    - fmor15aa.pmv
+    - fombgr01.pmv
+    - fomtdu01.pmv
+    - forclv01.pmv
+    - forcsh01.pmv
+    - fpee01xx.pmv
+    - fpnshp01.pmv
+    - fpshwk01.pmv
+    - freb01x1.pmv
+    - freb02xx.pmv
+    - freb03xx.pmv
+    - frebg201.pmv
+    - frosir01.pmv
+    - fschwk01.pmv
+    - fshbfl01.pmv
+    - fsnbdr01.pmv
+    - fsnbth01.pmv
+    - fsnktn01.pmv
+    - fthlwk01.pmv
+    - ftmpdr01.pmv
+    - ftrlcv01.pmv
+    - ftro01xx.pmv
+    - ftro23x1.pmv
+    - ftrtmp01.pmv
+    - fuplad01.pmv
+    - fwai07xx.pmv
+    - fwaifl01.pmv
+    - fwaifp01.pmv
+    - fwalil01.pmv
+    - fwhamo01.pmv
+    - fwilct01.pmv
+    - fwit02xx.pmv
+    - fwit05aa.pmv
+    - fwit10aa.pmv
+    - fwit32xx.pmv
+    - fwiz01x1.pmv
+    - fwiz0zxx.pmv
+    - fwiz24x1.pmv
+    - fwizaf01.pmv
+    - fwsomw01.pmv
+
+size_and_md5: |
+  # Floppy version
+  508928    eb9567c4dbdf8396e03034e2aa624c4c rtz.dat
+  21117714  d52a0715953bfdd54b738e458aee2d4e rtz.prj
+
+  # CD-version
+  536064    f5c3c3740e9a20bbb26f7f952cf020bd rtzcd.dat
+  43016792  75ad93c9886300c95df6b81ea4e8d64a rtzcd.prj
+  1570801   3beb8982b8b1574058d42a5db3fbc89c fbftkn01.pmv
+  626380    dda3db79dc7a55899a6a8f4b9013a67e fbla00xx.pmv
+  605636    0c7c70eea73c3a1301d05e712ec4e088 fbla06xx.pmv
+  2340378   7f414700d3f50c46f94506b1df45b2a1 fbla09xx.pmv
+  291778    dc2fdc09f04ff296a22d5af489fabeae fboo04aa.pmv
+  720410    7537ae74777b6c1ed84ce359fc28322d fbosmf01.pmv
+  347158    922495b0941228a2492d4df02db2e3f5 fbospd01.pmv
+  217284    95a57882317b7aa4443b3826cac33903 fbospu01.pmv
+  706421    99fbe587526d73f4f241586a245eb352 fbostk01.pmv
+  663374    62146249861cb92ed712844346fc5c8f fbsgsw01.pmv
+  895358    66f733b0ba1479b61b91f254003c8028 fbsgvs01.pmv
+  1197229   e7be517d81b3d363bbf87cc72d4d5fc3 fcan34x1.pmv
+  1783565   7cabf85e7363f7c4e805c04c6e7d1639 fcclwu01.pmv
+  753947    d55383f9a1f23b576c0f53d701e24d10 fcli04xx.pmv
+  1585328   cb7b9c05f90be143425a3c72922cb6bf fcliff01.pmv
+  83144     d74c3f4d3af300b921f297f606547b2d fcshdr01.pmv
+  217666    4305f9891af03ddc1a778f6e543c50c0 fducky01.pmv
+  3481282   b4f493ecd6de88a9369255e48fd1f68b fdwazzbb.pmv
+  1583057   572b54695255ef3fc50ca400e725b92e fdwnrv01.pmv
+  10074387  580df764f19d815a38f2961ce9efc285 fending0.pmv
+  7686587   5061730eb28d27c06b028a0cf4133ceb fending1.pmv
+  2481129   9c7df446eb2740924b35b3ea078856a1 ffbtrd01.pmv
+  79463     51f007bb9559313b009af7902623315f ffcbo101.pmv
+  85713     87b765eb0a3b8fd374815d403d70c906 ffcbo201.pmv
+  65630     e81d0eff7c15ed88ba1e21db127c8e10 ffcbo301.pmv
+  352262    34979f11df69fa40e31b00ffbc249603 ffrytb01.pmv
+  1173652   04bde38cd676aa7aec0c3d74d5494378 fgua02xx.pmv
+  899565    47841cded4bcc19a741445874d633e9a fhdwsu01.pmv
+  150516    6c690d5623caa0589dfd2a2bdafa1939 fhol01xx.pmv
+  711462    10a05131dd059b61f44bd8b0da017366 fhwblw01.pmv
+  265133    a344777d0254e8666b727aaffd5770f7 fhwdrk01.pmv
+  106849    2136d5152128803992352417c77fca38 fhwfew01.pmv
+  703056    e77443feef69b2a6033c7a21868416a9 fhwhel01.pmv
+  650929    eb553818584b59da89e56c1e35687849 finhal01.pmv
+  203600    ab2182ee5c57a6b47e63ccfb99393e65 finrml01.pmv
+  8859653   df13a90f2d947672368479bfde3d24b2 fintro00.pmv
+  6765611   20c7ced0811fa8d37cfafb47c7220892 fintro01.pmv
+  467146    e4e7ac11e2f9fe1c0127bb23d1026eed fitnhl01.pmv
+  1691241   29cbc71b02674f4248ed63e51c6853ae fkep01ax.pmv
+  1236279   b75f579254429907a5d9cc93533ec6b2 flh1st01.pmv
+  561122    ff04e96850ea79038d5467242c7b031a flhkgd01.pmv
+  419844    efddf7f10c38a4c67d529c0f5e0b7405 fmay01xx.pmv
+  1631996   3ab61c99f448f73ed5b23099173cd309 fmayrj01.pmv
+  1379617   baf86d725cca396e87b800bdc4d77e72 fmoa11x1.pmv
+  487307    e3b8f728c80f581cd143ac7308c977e2 fmor15aa.pmv
+  1041767   d0126a67b82dacbcc27276c96bd89a07 fombgr01.pmv
+  1127330   c7d7815a61481411a500e823b180cbdc fomtdu01.pmv
+  235973    c2181bdb4b5d67c99da4d29e654beb97 forclv01.pmv
+  586670    453ddc0d954d2e3c67c22284671c07e7 forcsh01.pmv
+  764184    d58a9c72ffe50d2cdade0fc1052c5540 fpee01xx.pmv
+  719056    6ec033deb4335b9b7604c065e5c4b2ee fpnshp01.pmv
+  1108396   0dd458e6b531d9355defe8c790fe41c6 fpshwk01.pmv
+  234788    54be6a4a0aae9ec29c02ab39facf62e9 freb01x1.pmv
+  259332    236c5381125795b1c7787bea659caef6 freb02xx.pmv
+  282133    de456cb68174d35e6f73f8f0437b9345 freb03xx.pmv
+  138950    73ecee413f2d69755501e380d002de08 frebg201.pmv
+  320647    fbaff73be99e20b62bd2d113b7fbf8c4 frosir01.pmv
+  976253    bf09fcc20cfe7f0f8590f98da003d590 fschwk01.pmv
+  1268978   4c4b33a0cf45d060586b29f37353b6ef fshbfl01.pmv
+  349578    161ce1aba4a13d034ae8047a59146008 fsnbdr01.pmv
+  607384    fd2d4ddef9576f681f8cb121cbd2176e fsnbth01.pmv
+  628091    cf513370be5a01c1f3eac37717599cf1 fsnktn01.pmv
+  467175    36125b9b46f1351a03d1bc350b9dd598 fthlwk01.pmv
+  148872    1646b0a568cd11c477d4da5213bef6b6 ftmpdr01.pmv
+  432298    0c5b8b7c1fca32a246ccd6b13ed6f634 ftrlcv01.pmv
+  677194    d482b341438885abd7aa3e30c1f18161 ftro01xx.pmv
+  1839265   5bb6f931c3ce872aff480c2985d41b67 ftro23x1.pmv
+  1646188   a17e723b840b87bbd44dcb694af766bc ftrtmp01.pmv
+  443405    61b6fb5c85068ce7ebfd263dac9d03ed fuplad01.pmv
+  507694    e70f37320bf437ccddaf748963b76327 fwai07xx.pmv
+  82089     c7450012b957b6a7f33bc49096e69e3e fwaifl01.pmv
+  102279    bf23fbc2c2dde0dd8b9846f04c3f5df6 fwaifp01.pmv
+  629815    349c2aa5c5ff0383a0e8e21e8d8b062e fwalil01.pmv
+  326472    0c4d078f59dce9eb758ca626aeb4baf5 fwhamo01.pmv
+  3006257   f6efe43273bbadaff195d80128d4723b fwilct01.pmv
+  515640    4df05a8a027de0c3674d4667420d18e1 fwit02xx.pmv
+  1796722   37919052365fa2213cfa1076927ad0c9 fwit05aa.pmv
+  366660    31f30b49c144b7c64b191a4ff6e40084 fwit10aa.pmv
+  1615305   3d8bdd5061e72c0c79b3c63522724892 fwit32xx.pmv
+  947233    4194b7f6e84f2d5cce32f1c5e30562ca fwiz01x1.pmv
+  600499    46a484330ce51fc796ecc2710e031d84 fwiz0zxx.pmv
+  870431    438486dd808e5c5dfd38d161cb53a110 fwiz24x1.pmv
+  557260    882c39bd322815adb81caa04c611f971 fwizaf01.pmv
+  1304611   99b3bebc3b25017d79b184e82c4fda36 fwsomw01.pmv
+
+  # GOG.com packaging
+  230567    f104c2c5d4121c5a8843ea57ef008931 music/rtz_02.ogg
+  251155    9a75b42ea77904ca398d927a1fde6bd4 music/rtz_03.ogg
+  1080682   6aec3e5e03b72b0b97a79afc76274873 music/rtz_04.ogg
+  600148    c972fa700967727d676117653f2588a7 music/rtz_05.ogg
+  580443    8e3f6d9124077bc1a75fa4694318d62d music/rtz_06.ogg
+  1135480   e545ccf9b57ab7c209caba494792b8ce music/rtz_07.ogg
+  2154386   0181468782661f0e3381c37d0fadf035 music/rtz_08.ogg
+  1357408   6be38b0ff80ab41cd6c11af9437d7309 music/rtz_09.ogg
+  400004    2a13eaa6e3a8d450402a6564a4b1fecd music/rtz_10.ogg
+  382294    709e74f091eba79329b800b9d3dbff23 music/rtz_11.ogg
+  577940    3f82e6c49d2609c5c995c011d8086927 music/rtz_12.ogg
+  723478    ae0955514a0a2db5ba815dc8392133a4 music/rtz_13.ogg
+  536848    0617eb9eb68914b102c0f269a978e0c1 music/rtz_14.ogg
+  412119    756cb95979d6954673b7e96f292f8d1a music/rtz_15.ogg
+  1140058   26ceb6524a13fed6c02686caf93c7828 music/rtz_16.ogg
+  877729    fe075abde5a1dc1eef31f3baa205dd9a music/rtz_17.ogg
+  1070122   b5ad09ed16752df2536aa1ca2f553303 music/rtz_18.ogg
+  322357    9294f9b1d4d7c19a107d1d9d8c1186dd music/rtz_19.ogg
+  978026    7492cdbd96badd2e691457ea150999dc music/rtz_20.ogg
+  594756    83f9ab78f655b983ec7eef5b47061465 music/rtz_21.ogg
+  744192    1ee7804c2746794ce8f90b299fb9f106 music/rtz_22.ogg
+  1897313   8a87d86072a14bfdcedcef2a2cd2d427 music/rtz_23.ogg
+  1561808   4ef65f8db1f3074190074cd5b6989258 music/rtz_24.ogg
+  1450865   3d977d7e67e6af095133702021eb2102 music/rtz_25.ogg
+  3445781   b502ac609ff4d7f9e3c682a3d5163b78 music/rtz_26.ogg
+
+  163522800 bfd17c48e91e0f71c3f892354493303a rtz.gog
+  34753405  142e714c6c40f121ee3e3aca28bd1daf encyclopedia_frobozzica.pdf
+  6156018   5654dc609a246ab5afe884ed9820d821 manual.pdf
+  15869     5c797d134fd1a26ece19c4e9d01a33b3 license.txt
+  182031128 808c22635b76b4103ade54143ba5f61f setup_return_to_zork_2.0.0.7.exe
+
+sha1sums: |
+  533f57c15c26d062b145afa3c986b603cd482c76  rtz.dat
+  c525fd5304a04f974d77e7514c617472d54ba341  rtz.prj
+
+  7e9abf399d0b93cad1b49eb91b88da5ca69e00cf  rtzcd.dat
+  43d091e086fdae3568c47f064c156792d713e0d9  rtzcd.prj
+  e8419ba86f18bbcb4d6f5968725f0f1974cc3d4a  rtz.gog
+  ab2e4038e54e5f0e7c2fffca35be2f5c78841583  setup_return_to_zork_2.0.0.7.exe
+...
+
