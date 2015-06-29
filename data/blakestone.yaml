@@ -33,6 +33,7 @@ packages:
     - license.doc
 
   blakestone-old-data:
+    DISABLED: not support by ecwolf
     longname: "Blake Stone: Aliens of Gold (v ???)"
     #better_version: blakestone-data
     install:
@@ -81,18 +82,25 @@ packages:
 files:
   maphead.bs6_old:
     install_as: maphead.bs6
+    unsuitable: Blake Stone 3.0 is required
   maptemp.bs6_old:
     install_as: maptemp.bs6
+    unsuitable: Blake Stone 3.0 is required
   svswap.bs6_old:
     install_as: svswap.bs6
+    unsuitable: Blake Stone 3.0 is required
   vgadict.bs6_old:
     install_as: vgadict.bs6
+    unsuitable: Blake Stone 3.0 is required
   vgagraph.bs6_old:
     install_as: vgagraph.bs6
+    unsuitable: Blake Stone 3.0 is required
   vgahead.bs6_old:
     install_as: vgahead.bs6
+    unsuitable: Blake Stone 3.0 is required
   vswap.bs6_old:
     install_as: vswap.bs6
+    unsuitable: Blake Stone 3.0 is required
 
   manual.pdf:
     install_to: $docdir
