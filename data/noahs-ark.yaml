@@ -1,0 +1,51 @@
+---
+longname: "Super 3-D Noah's Ark"
+copyright: © 1994 Wisdom Tree
+engine: ecwolf
+genre: First-person shooter
+
+packages:
+  super-3d-noahs-ark-data:
+    steam:
+      id: 371180
+      path: "common/Super 3-D Noah's Ark"
+    install:
+    - audiohed.n3d
+    - audiot.n3d
+    - gamemaps.n3d
+    - maphead.n3d
+    - vgadict.n3d
+    - vgagraph.n3d
+    - vgahead.n3d
+    - vswap.n3d
+    optional:
+    - noah3d.pk3
+    - noah3d.wad
+
+size_and_md5: |
+  576       9c7e08401faf9c7d64e7ee7bceb6c9b8 audiohed.n3d
+  45043     8b40a14de58cf8578bb3a783dcb4f7bb audiot.n3d
+  60195     d35ce2257a4fb56f61529df5f7f77adb gamemaps.n3d
+  402       2eaab4dd50856abeaebe75a8bcbbab42 maphead.n3d
+  1024      fb3d87a2e265d87e720ac011b7301b23 vgadict.n3d
+  235451    58d67ea6f4a9d5c7a788b7406e50dda3 vgagraph.n3d
+  405       fe26baf052f03e92019e221bc106dfec vgahead.n3d
+  1048708   8c61a9b3bb38a598990ccb743d2679fa vswap.n3d
+
+  # what's this ?
+  39210     ed7d096eb6aaec1e93617265d2f78b69 noah3d.pk3
+  14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad
+
+sha1sums: |
+  52b8724ffac3d575a92b6d7b0348db46231327ea  audiohed.n3d
+  c52b0005bd0d3fc44b441b51184eb20497cd4d09  audiot.n3d
+  db55b225db9248bb71e22e6fd3cefb54c2bf75c8  gamemaps.n3d
+  96c397af4cfccfa9a09d949b90c34e21966dbddc  maphead.n3d
+  064e54e7ffde8363e4ff9e0c9bbcf613366e4da2  vgadict.n3d
+  5a6833c69556bdc82e9f921202a8028fbecf3b0c  vgagraph.n3d
+  84452bd416ac38c468dd4722abcd6aa1fc35255b  vgahead.n3d
+  27fa2eede1b6a06709e763ef4386651e1096db45  vswap.n3d
+
+  18f6afb7928ab4ab7e49d4f5b26ebe310264d854  noah3d.pk3
+  c9277ffef7b3f79515bff118c0917ace0cd6755b  noah3d.wad
+...
