@@ -2705,6 +2705,17 @@ class GameData(object):
 
         subprocess.call(['su', '-c', cmd])
 
+    def locate_steam_icon(self, package):
+        id = package.steam.get('id') or self.steam.get('id')
+        if not id:
+            return
+        for res in (128, 96, 64, 32):
+            icon = '~/.local/share/icons/hicolor/%dx%d/apps/steam_icon_%d.png'
+            icon = os.path.expanduser(icon % (res, res, id))
+            if os.path.isfile(icon):
+                return icon
+        return
+
     def iter_steam_paths(self, packages=None):
         if packages is None:
             packages = self.packages.values()
