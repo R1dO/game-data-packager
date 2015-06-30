@@ -1,14 +1,14 @@
 ---
 longname: "Super 3-D Noah's Ark"
 copyright: © 1994 Wisdom Tree
-engine: ecwolf
-genre: First-person shooter
-try_repack_from:
-- ~/.local/share/icons/hicolor/96x96/apps/
-- /usr/share/applications/
+plugin: ecwolf_common
 
 packages:
   super-3d-noahs-ark-data:
+    # ecwolf will complain a bit on stderr
+    # if it can't find this optional file
+    # but still run fine
+    quirks: '--file noah3d.wad'
     steam:
       id: 371180
       path: "common/Super 3-D Noah's Ark"
@@ -23,11 +23,23 @@ packages:
     - vswap.n3d
     optional:
     - noah3d.wad
-    - steam_icon_371180.png
 
 files:
-  steam_icon_371180.png:
-    install_to: usr/share/applications
+  noah3d.wad:
+    alternatives:
+    - noah3d.wad_steam
+    - noah3d.wad_1.3
+  noah3d.wad_steam:
+    install_as: noah3d.wad
+  noah3d.wad_1.3:
+    install_as: noah3d.wad
+
+  noah3d-1.3_x86.zip:
+    download: https://bitbucket.org/Blzut3/super-3d-noahs-ark/downloads/noah3d-1.3_x86.zip
+    unpack:
+      format: zip
+    provides:
+    - noah3d.wad_1.3
 
 size_and_md5: |
   576       9c7e08401faf9c7d64e7ee7bceb6c9b8 audiohed.n3d
@@ -39,9 +51,10 @@ size_and_md5: |
   405       fe26baf052f03e92019e221bc106dfec vgahead.n3d
   1048708   8c61a9b3bb38a598990ccb743d2679fa vswap.n3d
 
-  # what's this ?
-  14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad
-  12053     bbd40ae97c045a8cd38f6cf4f3a2f0a4 steam_icon_371180.png
+  # patch that provides enhanced "Read This!", etc...
+  14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad_steam
+  128647    f8fef8c1bb84ee8700e25858a41c7156 noah3d.wad_1.3
+  708058    d0a1bf332abc987ea561c7e748c9ca32 noah3d-1.3_x86.zip
 
 sha1sums: |
   52b8724ffac3d575a92b6d7b0348db46231327ea  audiohed.n3d
@@ -52,6 +65,4 @@ sha1sums: |
   5a6833c69556bdc82e9f921202a8028fbecf3b0c  vgagraph.n3d
   84452bd416ac38c468dd4722abcd6aa1fc35255b  vgahead.n3d
   27fa2eede1b6a06709e763ef4386651e1096db45  vswap.n3d
-
-  c9277ffef7b3f79515bff118c0917ace0cd6755b  noah3d.wad
 ...
