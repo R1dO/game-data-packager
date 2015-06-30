@@ -3,6 +3,9 @@ longname: "Super 3-D Noah's Ark"
 copyright: © 1994 Wisdom Tree
 engine: ecwolf
 genre: First-person shooter
+try_repack_from:
+- ~/.local/share/icons/hicolor/96x96/apps/
+- /usr/share/applications/
 
 packages:
   super-3d-noahs-ark-data:
@@ -19,8 +22,12 @@ packages:
     - vgahead.n3d
     - vswap.n3d
     optional:
-    - noah3d.pk3
     - noah3d.wad
+    - steam_icon_371180.png
+
+files:
+  steam_icon_371180.png:
+    install_to: usr/share/applications
 
 size_and_md5: |
   576       9c7e08401faf9c7d64e7ee7bceb6c9b8 audiohed.n3d
@@ -33,8 +40,8 @@ size_and_md5: |
   1048708   8c61a9b3bb38a598990ccb743d2679fa vswap.n3d
 
   # what's this ?
-  39210     ed7d096eb6aaec1e93617265d2f78b69 noah3d.pk3
   14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad
+  12053     bbd40ae97c045a8cd38f6cf4f3a2f0a4 steam_icon_371180.png
 
 sha1sums: |
   52b8724ffac3d575a92b6d7b0348db46231327ea  audiohed.n3d
@@ -46,6 +53,5 @@ sha1sums: |
   84452bd416ac38c468dd4722abcd6aa1fc35255b  vgahead.n3d
   27fa2eede1b6a06709e763ef4386651e1096db45  vswap.n3d
 
-  18f6afb7928ab4ab7e49d4f5b26ebe310264d854  noah3d.pk3
   c9277ffef7b3f79515bff118c0917ace0cd6755b  noah3d.wad
 ...
