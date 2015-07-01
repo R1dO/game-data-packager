@@ -1,0 +1,72 @@
+---
+longname: Gobliins 2 - The Prince Buffoon
+copyright: © 1992 Coktel Vision
+plugin: scummvm_common
+gameid: gob2
+
+packages:
+  gobliins2-data:
+    langs: [en,de,es,fr,it]
+    gameid: gob2cd
+    gog:
+      url: gobliiins_pack
+      game: gobliins_2_the_prince_buffoon
+    install:
+    - intro.stk
+    - gobnew.lic
+    optional:
+    - track1.mp3
+    - manual.pdf
+
+  gobliins2-floppy-data:
+    better_version: gobliins2-data
+    install:
+    - intro.stk_floppy
+    - disk2.stk
+    - disk3.stk
+
+files:
+  intro.stk_floppy:
+    install_as: intro.stk
+
+  manual.pdf:
+    install_to: $docdir
+
+  setup_gobliiins2_2.1.0.63.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - intro.stk_floppy
+    - disk2.stk
+    - disk3.stk
+
+    - intro.stk
+    - gobnew.lic
+
+    - track1.mp3
+    - manual.pdf
+
+size_and_md5: |
+  828443    9b6de65d811c08eebf50391b84fcba92 intro.stk_floppy
+  1001893   89f7ef7f82590e714967f88df7307255 disk2.stk
+  950651    d68d88d2116e9f72ce8e1fc984c5cb39 disk3.stk
+
+  4338      7dc7854378b42899f98c9bfb660bc3bf gobnew.lic
+  4541724   0540bc732f19bac1bb860515be0f4459 intro.stk
+
+  51240960  ec22a5676521237bd7ddedb2bd1a5f49 track1.mp3
+  891324    a7af6459d22ed3515ffb319738b5900a manual.pdf
+  72649984  0baf2ce55d00fce9af4c98848e88d7dc setup_gobliiins2_2.1.0.63.exe
+
+sha1sums: |
+  3157840638c3221f7ba10065a589ac67762c3a53  intro.stk_floppy
+  c503e9e840d79090d83cbb00a92e9ec489e4851b  disk2.stk
+  af3a47c103d90b1141274e4ddba4aaf886eadf1c  disk3.stk
+
+  3e63ed13780631f21ca0cf6c5d605e51216e5d9e  gobnew.lic
+  5bc1c8a3832cdf62d7938b0fccd7cf9fd2b77868  intro.stk
+
+  146c63b3bbfe690a77829495e1618ff034beb1ab  track1.mp3
+  128bfa828c469c0840eec316a8402c112aaa9b92  manual.pdf
+  0da99b6a2b02fd6123526dcf898ca660973cde50  setup_gobliiins2_2.1.0.63.exe
+...
