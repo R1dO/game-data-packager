@@ -1150,7 +1150,7 @@ class GameData(object):
             logger.warning('file "%s" does not match any known file', path)
             # ... still G-D-P should try to process any random .zip
             # file thrown at it, like the .zip provided by GamersHell
-            if os.path.splitext(path)[1].lower() == '.zip':
+            if os.path.splitext(path)[1].lower() in ('.zip', '.apk'):
                 with zipfile.ZipFile(path, 'r') as zf:
                     self.consider_zip(path, zf)
 
