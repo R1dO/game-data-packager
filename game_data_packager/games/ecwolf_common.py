@@ -57,17 +57,18 @@ class EcwolfGameData(GameData):
         pixdir = os.path.join(destdir, 'usr/share/pixmaps')
         mkdir_p(pixdir)
 
-        for from_ in (self.locate_steam_icon(package),
-                      os.path.join(DATADIR, package.name + '.png'),
-                      os.path.join(DATADIR, self.shortname + '.png'),
-                      os.path.join('/usr/share/pixmaps', package.name + '.png'),
-                      os.path.join(DATADIR, 'wolf-common.png')):
-            if from_ and os.path.exists(from_):
-                install_data(from_,
-                             os.path.join(pixdir, '%s.png' % package.name))
-                break
-        else:
-            raise AssertionError('wolf-common.png should have existed')
+        to_ = os.path.join(pixdir, '%s.png' % package.name)
+        if not os.path.isfile(to_):
+            for from_ in (self.locate_steam_icon(package),
+                          os.path.join(DATADIR, package.name + '.png'),
+                          os.path.join(DATADIR, self.shortname + '.png'),
+                          os.path.join('/usr/share/pixmaps', package.name + '.png'),
+                          os.path.join(DATADIR, 'wolf-common.png')):
+                if from_ and os.path.exists(from_):
+                    install_data(from_, to_)
+                    break
+            else:
+                raise AssertionError('wolf-common.png should have existed')
 
         desktop = configparser.RawConfigParser()
         desktop.optionxform = lambda option: option

@@ -3,6 +3,13 @@ longname: "Super 3-D Noah's Ark"
 copyright: © 1994 Wisdom Tree
 plugin: ecwolf_common
 
+help_text: |
+  This game can be bought online here:
+  http://wisdomtree.itch.io/s3dna
+  .
+  The physical CD is also still on sale:
+  http://wisdomtreegames.com/games/super3dnoahsark/
+
 packages:
   super-3d-noahs-ark-data:
     # ecwolf will complain a bit on stderr
@@ -41,6 +48,83 @@ files:
     provides:
     - noah3d.wad_1.3
 
+  noah3d-1.0_msdos.7z:
+    unpack:
+      format: 7z
+    provides:
+    - audiohed.n3d
+    - audiot.n3d
+    - gamemaps.n3d
+    - maphead.n3d
+    - vgadict.n3d
+    - vgagraph.n3d
+    - vgahead.n3d
+    - vswap.n3d
+
+  noah3d.png:
+    install_as: super-3d-noahs-ark-data.png
+    install_to: usr/share/pixmaps
+
+  noah3d-1.3.2_i386.deb:
+    unpack:
+      format: deb
+    provides:
+    - audiohed.n3d
+    - audiot.n3d
+    - gamemaps.n3d
+    - maphead.n3d
+    - vgadict.n3d
+    - vgagraph.n3d
+    - vgahead.n3d
+    - vswap.n3d
+    - noah3d.wad_steam
+    - noah3d.png
+
+  noah3d-1.3.2_amd64.deb:
+    unpack:
+      format: deb
+    provides:
+    - audiohed.n3d
+    - audiot.n3d
+    - gamemaps.n3d
+    - maphead.n3d
+    - vgadict.n3d
+    - vgagraph.n3d
+    - vgahead.n3d
+    - vswap.n3d
+    - noah3d.wad_steam
+    - noah3d.png
+
+  noah3d-1.3.2_32bit.msi:
+    unpack:
+      format: 7z
+      unpack: ['*.n3d', 'noah3d.wad']
+    provides:
+    - audiohed.n3d
+    - audiot.n3d
+    - gamemaps.n3d
+    - maphead.n3d
+    - vgadict.n3d
+    - vgagraph.n3d
+    - vgahead.n3d
+    - vswap.n3d
+    - noah3d.wad_steam
+
+  noah3d-1.3.2_64bit.msi:
+    unpack:
+      format: 7z
+      unpack: ['*.n3d', 'noah3d.wad']
+    provides:
+    - audiohed.n3d
+    - audiot.n3d
+    - gamemaps.n3d
+    - maphead.n3d
+    - vgadict.n3d
+    - vgagraph.n3d
+    - vgahead.n3d
+    - vswap.n3d
+    - noah3d.wad_steam
+
 size_and_md5: |
   576       9c7e08401faf9c7d64e7ee7bceb6c9b8 audiohed.n3d
   45043     8b40a14de58cf8578bb3a783dcb4f7bb audiot.n3d
@@ -56,6 +140,13 @@ size_and_md5: |
   128647    f8fef8c1bb84ee8700e25858a41c7156 noah3d.wad_1.3
   708058    d0a1bf332abc987ea561c7e748c9ca32 noah3d-1.3_x86.zip
 
+  617878    0af0389f94d64789738e5571e97c91eb noah3d-1.0_msdos.7z
+  39907     999545fad2848839881258cf448a73d3 noah3d.png
+  15632814  59bf74a4940c96949b2dc43b4932512f noah3d-1.3.2_i386.deb
+  15687936  e8bea518b2af37da76a2b22f1c357898 noah3d-1.3.2_amd64.deb
+  16076800  66edb83e8ef78cfe3da58377e17ef695 noah3d-1.3.2_32bit.msi
+  16490496  7303924c3a7e4620530a8a2588ae2706 noah3d-1.3.2_64bit.msi
+
 sha1sums: |
   52b8724ffac3d575a92b6d7b0348db46231327ea  audiohed.n3d
   c52b0005bd0d3fc44b441b51184eb20497cd4d09  audiot.n3d
@@ -65,4 +156,10 @@ sha1sums: |
   5a6833c69556bdc82e9f921202a8028fbecf3b0c  vgagraph.n3d
   84452bd416ac38c468dd4722abcd6aa1fc35255b  vgahead.n3d
   27fa2eede1b6a06709e763ef4386651e1096db45  vswap.n3d
+
+  2dbf4a31105e04a986ce5d2dbadd54df8eb4d23b  noah3d-1.0_msdos.7z
+  b8555d795919b4b070c28e170eefad05461296ca  noah3d-1.3.2_i386.deb
+  84a70cbd02167843f13651540dcb248da1b436c6  noah3d-1.3.2_amd64.deb
+  23504ae987b85e4e2cb0aab631216cd39a201a4f  noah3d-1.3.2_32bit.msi
+  2b7419e3d3455febaaec2b1f464f07d338d7cd58  noah3d-1.3.2_64bit.msi
 ...
