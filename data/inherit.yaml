@@ -5,28 +5,81 @@ plugin: scummvm_common
 gameid: ite
 
 packages:
-  inherit-the-earth-data:
-    gog:
-      url: inherit_the_earth
+  inherit-the-earth-floppy-data:
+    longname: "Inherit the Earth (floppy version)"
+    better_version: inherit-the-earth-data
     install:
-    - ite.rsc
-    - scripts.rsc
+    - ite.rsc_floppy
+    - scripts.rsc_floppy
     - voices.rsc
     optional:
     - instr.ad
     - instr.opl
 
+  inherit-the-earth-data:
+    steam:
+      id: 257260
+      path: common/Inherit the Earth/itedata
+    gog:
+      url: inherit_the_earth
+    install:
+    - ite.rsc
+    - scripts.rsc
+    - Inherit the Earth Voices
+    - music.rsc
+    - sounds.rsc
+    optional:
+    - manual.pdf
+
+files:
+  ite.rsc_floppy:
+    install_as: ite.rsc
+  scripts.rsc_floppy:
+    install_as: scripts.rsc
+
+  manual.pdf:
+    install_to: $docdir
+
+  setup_inherit_the_earth_2.0.0.6.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - ite.rsc
+    - scripts.rsc
+    - Inherit the Earth Voices
+    - music.rsc
+    - sounds.rsc
+    - manual.pdf
+
 size_and_md5: |
-  8903828   04f366b46a13c350619b7edb83470949 ite.rsc
-  327162    793bb8ceea2db752e10b3de91e5b1001 scripts.rsc
+  8903828   04f366b46a13c350619b7edb83470949 ite.rsc_floppy
+  327162    793bb8ceea2db752e10b3de91e5b1001 scripts.rsc_floppy
   5695569   a533d672e894769d69049311c53eb659 voices.rsc
   2982      1dddf5c5ff20b026a90b555ba430f9c3 instr.ad
   2982      1dddf5c5ff20b026a90b555ba430f9c3 instr.opl
 
+  8927165   c46c12579ef63f8b838ba034ebbdd969 ite.rsc
+  335927    afb4d5bd3786763063dfbdc641ace1a3 scripts.rsc
+  434830787 7a34787e18f9056e0e1475ca7592986f Inherit the Earth Voices
+  52894196  aff625582ae4178de17d03a8fe541f2b music.rsc
+  7356540   90252f09216de28bbffe80452b1aad95 sounds.rsc
+
+  377074    168feed7a142da495c0293524db65846 manual.pdf
+  508098200 a67ec0cd12fb49c129f994c614acd599 setup_inherit_the_earth_2.0.0.6.exe
+
 sha1sums: |
-  9c1e215e50a0bec77079b5fce2106b2f0f8cb27e  ite.rsc
-  4c0ddd504e99eb8daddacfe65f08377b91e9f30d  scripts.rsc
+  9c1e215e50a0bec77079b5fce2106b2f0f8cb27e  ite.rsc_floppy
+  4c0ddd504e99eb8daddacfe65f08377b91e9f30d  scripts.rsc_floppy
   ad2366d89a51e9932e519aa469821705b8d40177  voices.rsc
   04941d6e5f8c8208b45a3d229ea3862fe18ecf7b  instr.ad
   04941d6e5f8c8208b45a3d229ea3862fe18ecf7b  instr.opl
+
+  e9943490ee6af90cc6017125c8ea660628208333  ite.rsc
+  ae8109fc48fa18837935918f0285b460e24abd48  scripts.rsc
+  ba803c57aa74e04991544e097b3412df237b1191  Inherit the Earth Voices
+  aeeda6e4ff65eb664d4b0dbd4abd52d134ce2b31  music.rsc
+  6d73e8a3c9f13a461bf643364b326ee98cffce6d  sounds.rsc
+
+  2990ab03882ae157985468f8ffe791d57816e423  manual.pdf
+  32c77439c519bf632f9a4019ec837cea3a2fbb0b  setup_inherit_the_earth_2.0.0.6.exe
 ...
