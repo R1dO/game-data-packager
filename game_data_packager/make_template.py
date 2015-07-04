@@ -147,7 +147,7 @@ class GameData(object):
                      steam_id = acf['appid']
                      self.longname = game = acf['name']
                      break
-            steam_dict['id'] = steam_id
+            steam_dict['id'] = int(steam_id)
             steam_dict['path'] = destdir[steam+11:]
 
         game = game.replace(' ','').replace(':','').replace('-','').lower()
