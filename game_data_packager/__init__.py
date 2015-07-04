@@ -545,6 +545,10 @@ class GameData(object):
         self.gog = {}
         self.origin = {}
 
+        # full url of online game shops
+        self.url_steam = None
+        self.url_gog = None
+
         self.data = data
 
         self.argument_parser = None
@@ -799,10 +803,14 @@ class GameData(object):
             steam_id.add(package.steam.get('id'))
         steam_id.discard(None)
         www = list()
-        if steam_id and '://store.steampowered.com/' not in self.help_text:
-            www.append('http://store.steampowered.com/app/%s/' % min(steam_id))
-        if gog_url and '://www.gog.com/' not in self.help_text:
-            www.append('http://www.gog.com/game/' + gog_url + '?pp=' + gog_pp)
+        if steam_id:
+            self.url_steam = 'http://store.steampowered.com/app/%s/' % min(steam_id)
+            if '://store.steampowered.com/' not in self.help_text:
+                www.append(self.url_steam)
+        if gog_url:
+            self.url_gog = 'http://www.gog.com/game/' + gog_url + '?pp=' + gog_pp
+            if '://www.gog.com/' not in self.help_text:
+                www.append(self.url_gog)
         if www:
             random.shuffle(www)
             self.help_text += '\nThis game can be bought online here:\n  '

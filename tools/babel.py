@@ -44,6 +44,8 @@ for name, game in load_games().items():
     stats['longname'] = ascii_safe(game.longname, force=True)
     stats['total'] = len(game.packages)
     stats['missing_langs'] = game.missing_langs
+    stats['url_steam'] = game.url_steam
+    stats['url_gog'] = game.url_gog
     for l in game.missing_langs:
         if l not in langs:
             langs[l] = 0
@@ -67,7 +69,7 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 )
 for lang in langs_order:
     html.write('  <td><b>%s</b></td>\n' % lang)
-html.write('</tr>\n')
+html.write('<td>Steam</td><td>GOG.com</td></tr>\n')
 
 # BODY
 last_genre = None
@@ -89,6 +91,11 @@ for game in games:
         else:
             html.write('  <td>&nbsp;</td>\n')
 
+    for url in (game['url_steam'], game['url_gog']):
+        if url:
+            html.write('  <td align=center><a href="%s"><b>X</b></a></td>\n' % url)
+        else:
+            html.write('  <td>&nbsp;</td>\n')
     html.write('</tr>\n')
 
 # TOTAL
@@ -97,6 +104,7 @@ for lang in langs_order:
     html.write('  <td><b>%s</b></td>\n' % langs[lang])
 
 html.write('''
+<td colspan=2>&nbsp;</td>
 </tr>
 </table>
 <ul>
