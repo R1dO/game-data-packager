@@ -373,9 +373,10 @@ class GameDataPackage(object):
         # necessarily)
         self.symlinks = {}
 
-        # Steam ID and path
+        # online stores metadata
         self.steam = {}
         self.gog = {}
+        self.dotemu = {}
         self.origin = {}
 
         # overide the game engine when needed
@@ -540,21 +541,24 @@ class GameData(object):
         # Extra directories where we might find game files
         self.try_repack_from = []
 
-        # Steam ID and path
+        # online stores metadata
         self.steam = {}
         self.gog = {}
+        self.dotemu = {}
         self.origin = {}
 
         # full url of online game shops
         self.url_steam = None
         self.url_gog = None
+        self.url_dotemu = None
 
         self.data = data
 
         self.argument_parser = None
 
-        for k in ('longname', 'copyright', 'compress_deb', 'help_text',
-               'steam', 'gog', 'origin', 'engine', 'genre', 'missing_langs'):
+        for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
+                  'engine', 'genre', 'missing_langs',
+                  'steam', 'gog', 'dotemu', 'origin'):
             if k in self.data:
                 setattr(self, k, self.data[k])
 
@@ -797,10 +801,14 @@ class GameData(object):
         gog_url = self.gog.get('url')
         gog_pp = '22d200f8670dbdb3e253a90eee5098477c95c23d' # ScummVM
         steam_id = {self.steam.get('id')}
+        dotemu_id = self.dotemu.get('id')
+        dotemu_pp = '32202' # ScummVM
         for package in self.packages.values():
             gog_url = package.gog.get('url', gog_url)
             gog_pp = package.gog.get('pp', gog_pp)
             steam_id.add(package.steam.get('id'))
+            dotemu_id = package.dotemu.get('id', dotemu_id)
+            dotemu_pp = package.dotemu.get('pp', dotemu_pp)
         steam_id.discard(None)
         www = list()
         if steam_id:
@@ -811,6 +819,10 @@ class GameData(object):
             self.url_gog = 'http://www.gog.com/game/' + gog_url + '?pp=' + gog_pp
             if '://www.gog.com/' not in self.help_text:
                 www.append(self.url_gog)
+        if dotemu_id:
+            self.url_dotemu = 'http://www.dotemu.com/affiliate/%s/node/%d' % (
+                              dotemu_pp, dotemu_id)
+            www.append(self.url_dotemu)
         if www:
             random.shuffle(www)
             self.help_text += '\nThis game can be bought online here:\n  '
@@ -870,7 +882,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'install_to_docdir', 'install_contents_of', 'steam', 'debian',
+                'install_to_docdir', 'install_contents_of', 'steam', 'debian', 'dotemu',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
                 'copyright', 'engine', 'gog', 'origin', 'lang', 'component', 'section'):
             if k in d:
