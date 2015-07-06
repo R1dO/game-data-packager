@@ -1,5 +1,4 @@
 ---
-
 longname: Grim Fandango
 copyright: © 1998 LucasArts Entertainment Company LLC
 plugin: residualvm_common
@@ -10,8 +9,16 @@ gameid: grim
 # gzip compression is only fractionally smaller than uncompressed.
 compress_deb: false
 
+help_text: |
+  The german version works without a warning with ResidualVM 0.3.0 or GIT versions after 2015/02/08.
+  Versions before that may display warnings about the MD5SUMs, but these can safely be ignored, the game will still run.
+
+missing_langs: [es,fr,it]
+
 packages:
-  grimfandango-data:
+  grimfandango-en-data:
+    debian:
+      provides: grimfandango-data
     # Yes, the right way to use gfupd101.exe is really to just put it in
     # the data directory: residualvm can load files from there without a
     # separate unpacking step.
@@ -47,8 +54,124 @@ packages:
     license:
     - install/license.txt
 
+  grimfandango-de-data:
+    lang: de
+    debian:
+      provides: grimfandango-data
+    install:
+    - gfupd101.exe
+    - credits.lab_de
+    - data000.lab
+    - data001.lab
+    - data002.lab
+    - data003.lab_de
+    - data004.lab
+    - local.lab_de
+    - movie00.lab
+    - movie01.lab_de
+    - movie02.lab_de
+    - movie03.lab_de
+    - movie04.lab_de
+    - vox0000.lab_de
+    - vox0001.lab_de
+    - vox0002.lab_de
+    - vox0003.lab_de
+    - vox0004.lab_de
+    - year0mus.lab
+    - year1mus.lab
+    - year3mus.lab
+    - year2mus.lab
+    - year4mus.lab
+
+  #grimfandango-es-data:
+    #lang: es
+    #debian:
+      #provides: grimfandango-data
+    #install:
+    #- gfupd101.exe
+    #- credits.lab_es
+    #- data000.lab
+    #- data001.lab
+    #- data002.lab
+    #- data003.lab_es
+    #- data004.lab
+    #- local.lab_es
+    #- movie00.lab
+    #- movie01.lab_es
+    #- movie02.lab_es
+    #- movie03.lab_es
+    #- movie04.lab_es
+    #- vox0000.lab_es
+    #- vox0001.lab_es
+    #- vox0002.lab_es
+    #- vox0003.lab_es
+    #- vox0004.lab_es
+    #- year0mus.lab
+    #- year1mus.lab
+    #- year3mus.lab
+    #- year2mus.lab
+    #- year4mus.lab
+
+  #grimfandango-fr-data:
+    #lang: fr
+    #debian:
+      #provides: grimfandango-data
+    #install:
+    #- gfupd101.exe
+    #- credits.lab_fr
+    #- data000.lab
+    #- data001.lab
+    #- data002.lab
+    #- data003.lab_fr
+    #- data004.lab
+    #- local.lab_fr
+    #- movie00.lab
+    #- movie01.lab_fr
+    #- movie02.lab_fr
+    #- movie03.lab_fr
+    #- movie04.lab_fr
+    #- vox0000.lab_fr
+    #- vox0001.lab_fr
+    #- vox0002.lab_fr
+    #- vox0003.lab_fr
+    #- vox0004.lab_fr
+    #- year0mus.lab
+    #- year1mus.lab
+    #- year3mus.lab
+    #- year2mus.lab
+    #- year4mus.lab
+
+  #grimfandango-it-data:
+    #lang: it
+    #debian:
+      #provides: grimfandango-data
+    #install:
+    #- gfupd101.exe
+    #- credits.lab_it
+    #- data000.lab
+    #- data001.lab
+    #- data002.lab
+    #- data003.lab_it
+    #- data004.lab
+    #- local.lab_it
+    #- movie00.lab
+    #- movie01.lab_it
+    #- movie02.lab_it
+    #- movie03.lab_it
+    #- movie04.lab_it
+    #- vox0000.lab_it
+    #- vox0001.lab_it
+    #- vox0002.lab_it
+    #- vox0003.lab_it
+    #- vox0004.lab_it
+    #- year0mus.lab
+    #- year1mus.lab
+    #- year3mus.lab
+    #- year2mus.lab
+    #- year4mus.lab
+
   grimfandango-demo-data:
-    demo_for: grimfandango-data
+    demo_for: grimfandango-en-data
     install:
     - gfdemo01.lab
     - grimdemo.mus
@@ -110,111 +233,162 @@ files:
     unpack:
       format: zip
 
-cksums: |
-  _ 29489930  gfdemo01.lab
-  _ 247808    grim.doc
-  _ 20366437  grimdemo.mus
-  _ 3570      license.txt
-  _ 11998     readme.txt
-  _ 3405950   sound001.lab
-  _ 13722714  voice001.lab
-  _ 1614692   Movies/al_close.san
-  _ 1200420   Movies/al_open.san
-  _ 64382     Movies/demo_backend.san
-  _ 399622    Movies/demo_frontend.san
-  _ 706118    Movies/hq_close.san
-  _ 721192    Movies/hq_open.san
-  _ 56955092  GrimFandangoDemo.zip
-  _ 57009152  gffulldemo.exe
+  data000.lab:
+    alternatives:
+      - data000.lab_prepatched
+      - data000.lab_unpatched
+    install_as: data000.lab
+  data000.lab_prepatched:
+    look_for: [data000.lab]
+  data000.lab_unpatched:
+    look_for: [data000.lab]
 
-  758611505 2272959 gfupd101.exe
+  vox0000.lab:
+    alternatives:
+      - vox0000.lab_prepatched
+      - vox0000.lab_unpatched
+    install_as: vox0000.lab
+  vox0000.lab_prepatched:
+    look_for: [vox0000.lab]
+  vox0000.lab_unpatched:
+    look_for: [vox0000.lab]
 
-  3128267555 10366 flower.ico
-  3840831663 15886 gf.ico
-  1194600026 3566656 grim fandango - manual.pdf
-  4131435608 5849 install/license.txt
-  101128800 19523 install/readme.txt
-  3956085757 19399 credits.lab
-  1500263723 115377732 data002.lab
-  3201905571 81392084 data004.lab
-  3945391808 70712720 movie02.lab
-  1220327368 107184933 movie04.lab
-  1686939753 4333790 vox0000.lab
-  316602907 93358525 vox0002.lab
-  1288617324 38561440 vox0004.lab
-  1023837167 6995569 year0mus.lab
-  199361821 81147716 year2mus.lab
-  2664605500 63489389 year4mus.lab
+  vox0001.lab:
+    alternatives:
+      - vox0001.lab_prepatched
+      - vox0001.lab_unpatched
+    install_as: vox0001.lab
+  vox0001.lab_prepatched:
+    look_for: [vox0001.lab]
+  vox0001.lab_unpatched:
+    look_for: [vox0001.lab]
 
-  3956085757 19399 credits.lab
-  2257171813 29197049 data000.lab
-  2927090823 116140627 data001.lab
-  4100562588 65997693 data003.lab
-  4100447272 7121597 movie00.lab
-  2359759575 119199457 movie01.lab
-  297402648 88576747 movie03.lab
-  1686939753 4333790 vox0000.lab
-  725411884 57993159 vox0001.lab
-  3900751858 38906667 vox0003.lab
-  1023837167 6995569 year0mus.lab
-  3984262986 61363647 year1mus.lab
-  1591819570 43866360 year3mus.lab
+  credits.lab_de:
+    install_as: credits.lab
+  data003.lab_de:
+    install_as: data003.lab
+  local.lab_de:
+    install_as: local.lab
+  movie01.lab_de:
+    install_as: movie01.lab
+  movie02.lab_de:
+    install_as: movie02.lab
+  movie03.lab_de:
+    install_as: movie03.lab
+  movie04.lab_de:
+    install_as: movie04.lab
+  vox0000.lab_de:
+    install_as: vox0000.lab
+  vox0001.lab_de:
+    install_as: vox0001.lab
+  vox0002.lab_de:
+    install_as: vox0002.lab
+  vox0003.lab_de:
+    install_as: vox0003.lab
+  vox0004.lab_de:
+    install_as: vox0004.lab
+
+size_and_md5: |
+  29489930  25d831d57a93eb3ab8edbb07b7b63943 gfdemo01.lab
+  247808    72b4fdd4c5c9cb13d939a6350ee93fc0 grim.doc
+  20366437  3ba28e7e36a49b5fd01ba98e3c772fe8 grimdemo.mus
+  3570      31115996e024ec1c8c0625fd8f1de52a license.txt
+  11998     257d9e1631e9642bd57a9ae231db3f79 readme.txt
+  3405950   c91a7d405d15fb198a9cb31f89637026 sound001.lab
+  13722714  f24a45079394fee296a0f7fad07c7fad voice001.lab
+  1614692   b63b58537803e3c7d108bf24fb769be0 Movies/al_close.san
+  1200420   0cbd82d4f58b08500c61cf5ca69ae2ac Movies/al_open.san
+  64382     2c653237460e74e6bdcdca7aeb5961cf Movies/demo_backend.san
+  399622    f3b0fa334021401a7d235d0b9a579ff5 Movies/demo_frontend.san
+  706118    ca02511e8360cade1679a1d3305633b4 Movies/hq_close.san
+  721192    abe0e89f0b1786cb8db3277cec13700f Movies/hq_open.san
+  56955092  a47954de13578cebbcb4e151f4d0fd2d GrimFandangoDemo.zip
+  57009152  7ad1a9fd005214a3bb426f3f796b7bce gffulldemo.exe
+
+  2272959   bc57c4db2ab814f3bb115ec5702b62f4 gfupd101.exe
+
+  19399     6dcecad8f01657184f8576aab8fb3f00 credits.lab
+  29197049  2069b8bf113119910df8219e787e7e94 data000.lab_prepatched
+  29163069  08e2505a6a7fd90d3920131b1297c60f data000.lab_unpatched
+  116140627 84cf3072586fe2840ae16774adb6f5cb data001.lab
+  115377732 d236403c0d860961963db0134380001f data002.lab
+  65997693  76dcfc2c21f3412415674c65611fb76d data003.lab
+  81392084  2cdb79d3606965a9a0a3378507488dd7 data004.lab
+  7121597   0c6b8e4fa74024c4afdf7758f8d8b1a0 movie00.lab
+  119199457 548a19a0a4d4ccb8660966d646210820 movie01.lab
+  70712720  24a8704a331a03097d195f3597fe21e1 movie02.lab
+  88576747  113a768e7206016df72f9d2f5c1851b7 movie03.lab
+  107184933 605d6f2cc4d21fbe702d8e637b5bcfa1 movie04.lab
+  4333790   c7900f32d48d7e265629bd355a21c795 vox0000.lab_prepatched
+  #???      67627f2d9314f9c0ae55dd2099fc052f vox0000.lab_unpatched
+  57993159  40beb2e0a6572dc89fddb21f282bc237 vox0001.lab_prepatched
+  58011176  6a32f8079d2d98d1c10ec8364765fd4b vox0001.lab_unpatched
+  93358525  70419878e32377d9d2906fbcb2cb59b5 vox0002.lab
+  38906667  7c88ad7c949a516793b584299f33ed23 vox0003.lab
+  38561440  ae53a36f77eb0d42a28653b28c345439 vox0004.lab
+  6995569   fea10f11abe3ac32d53e4798f80d5ba0 year0mus.lab
+  61363647  c555c95b0f7557617da364091589d6ea year1mus.lab
+  81147716  775376fccf0415258be6b33e7e6e4985 year2mus.lab
+  43866360  df556a8fc151f6f48bb68a8cef855e7d year3mus.lab
+  63489389  939e041887c1b14f99ad951ac8e3cb25 year4mus.lab
+
+  10366     51c58777a2a8ee5011a3d8e00176e5ba flower.ico
+  15886     c706804922ef0913a4e5bfa651057125 gf.ico
+  3566656   00d4aa4161d81f939e268ef368d53ff5 grim fandango - manual.pdf
+  5849      2ba3a23bad66e675fc48e5f0de86bda2 install/license.txt
+  19523     5e6d32b8061e3af60aa10b3200c84a6b install/readme.txt
+
+  608       27c961c16f9eaf0260781883150e5611 local.lab_de
+  22410     2e6319c2ec5772ced5dc9f8b41eb5de7 credits.lab_de
+  65997693  7f76c20f1d77db287473ffef10b8b309 data003.lab_de
+  121032679 500bc51ce211d528f6c7170f479c9525 movie01.lab_de
+  68042073  a4d5c108a167afb0674e26790edf65e6 movie02.lab_de
+  89237151  d2aae2e27616f78016a71818e528acda movie03.lab_de
+  108330269 f1b8c1de4f82099ab080f9cbe2b02da6 movie04.lab_de
+  4456393   e884221099ba62dacf04a35be8428419 vox0000.lab_de
+  66829347  e13eb421b9490cbaeef66f0cf6156764 vox0001.lab_de
+  105318939 5ea9fde04f3315a51fe1fe9c5bdb9d0d vox0002.lab_de
+  46150860  5bda9a36181c1fea368491b842c11efe vox0003.lab_de
+  45076847  bae246c5335c1d139b97a48277ee8841 vox0004.lab_de
 
 md5sums: |
-  25d831d57a93eb3ab8edbb07b7b63943  gfdemo01.lab
-  72b4fdd4c5c9cb13d939a6350ee93fc0  grim.doc
-  3ba28e7e36a49b5fd01ba98e3c772fe8  grimdemo.mus
-  31115996e024ec1c8c0625fd8f1de52a  license.txt
-  257d9e1631e9642bd57a9ae231db3f79  readme.txt
-  c91a7d405d15fb198a9cb31f89637026  sound001.lab
-  f24a45079394fee296a0f7fad07c7fad  voice001.lab
-  b63b58537803e3c7d108bf24fb769be0  Movies/al_close.san
-  0cbd82d4f58b08500c61cf5ca69ae2ac  Movies/al_open.san
-  2c653237460e74e6bdcdca7aeb5961cf  Movies/demo_backend.san
-  f3b0fa334021401a7d235d0b9a579ff5  Movies/demo_frontend.san
-  ca02511e8360cade1679a1d3305633b4  Movies/hq_close.san
-  abe0e89f0b1786cb8db3277cec13700f  Movies/hq_open.san
-  a47954de13578cebbcb4e151f4d0fd2d  GrimFandangoDemo.zip
-  7ad1a9fd005214a3bb426f3f796b7bce  gffulldemo.exe
-
-  bc57c4db2ab814f3bb115ec5702b62f4  gfupd101.exe
-
-  # Disc A - english version
-  51c58777a2a8ee5011a3d8e00176e5ba  flower.ico
-  c706804922ef0913a4e5bfa651057125  gf.ico
-  00d4aa4161d81f939e268ef368d53ff5  grim fandango - manual.pdf
-  2ba3a23bad66e675fc48e5f0de86bda2  install/license.txt
-  5e6d32b8061e3af60aa10b3200c84a6b  install/readme.txt
-  6dcecad8f01657184f8576aab8fb3f00  credits.lab
-  d236403c0d860961963db0134380001f  data002.lab
-  2cdb79d3606965a9a0a3378507488dd7  data004.lab
-  24a8704a331a03097d195f3597fe21e1  movie02.lab
-  605d6f2cc4d21fbe702d8e637b5bcfa1  movie04.lab
-  c7900f32d48d7e265629bd355a21c795  vox0000.lab
-  70419878e32377d9d2906fbcb2cb59b5  vox0002.lab
-  ae53a36f77eb0d42a28653b28c345439  vox0004.lab
-  fea10f11abe3ac32d53e4798f80d5ba0  year0mus.lab
-  775376fccf0415258be6b33e7e6e4985  year2mus.lab
-  939e041887c1b14f99ad951ac8e3cb25  year4mus.lab
-  # Disc B (some of these are duplicates of files on disc A)
-  6dcecad8f01657184f8576aab8fb3f00  credits.lab
-  2069b8bf113119910df8219e787e7e94  data000.lab
-  84cf3072586fe2840ae16774adb6f5cb  data001.lab
-  76dcfc2c21f3412415674c65611fb76d  data003.lab
-  0c6b8e4fa74024c4afdf7758f8d8b1a0  movie00.lab
-  548a19a0a4d4ccb8660966d646210820  movie01.lab
-  113a768e7206016df72f9d2f5c1851b7  movie03.lab
-  c7900f32d48d7e265629bd355a21c795  vox0000.lab
-  40beb2e0a6572dc89fddb21f282bc237  vox0001.lab
-  7c88ad7c949a516793b584299f33ed23  vox0003.lab
-  fea10f11abe3ac32d53e4798f80d5ba0  year0mus.lab
-  c555c95b0f7557617da364091589d6ea  year1mus.lab
-  df556a8fc151f6f48bb68a8cef855e7d  year3mus.lab
-
   # https://github.com/residualvm/residualvm/blob/master/engines/grim/md5check.cpp
   # documents many more md5sums for other versions supported by residualvm:
-  # - english/italian/german/french/spanish
-  # - patched or unpatch
+  67627f2d9314f9c0ae55dd2099fc052f  vox0000.lab_unpatched
+
+  #1827307248d55c07642342c9213a4723  credits.lab_it
+  #cd71ca4e600198277f22e944988f7516  credits.lab_fr
+  #836a2081d5e57ed6ef5eaade7f770b0e  credits.lab_es
+  #6142624ce13ea3c9079aa80918010c4a  local.lab_it
+  #c9dd41f66883959de27f80bbe457f30d  local.lab_fr
+  #d22648d6787c2f8f0a789ee3ed0c08f7  local.lab_es
+  #9fd30d0289f9b4d5c09e821a0a478db5  movie01.lab_it
+  #16674e1496e4fb3f0f5f173f12e30617  movie01.lab_fr
+  #ede9fb7d035a5d4af496f23f811707a2  movie01.lab_es
+  #129dad4e40987e91c5549c819d0dad1d  movie02.lab_it
+  #90fce3e6e1f91455d92b072f773f0a67  movie02.lab_fr
+  #f5879c544f4c1f1f2e2d2e92c026c245  movie02.lab_es
+  #0fdb7dda9ebc049eac386d29bface366  movie03.lab_it
+  #c2ba7adbf09b7a4f69c180f1c74297ee  movie03.lab_fr
+  #fb87d5a9e3a81d3ffd521dee4432c4da  movie03.lab_es
+  #7c8d7e0f4beaca3910658290e8b14cf8  movie04.lab_it
+  #7e2a4578010cdf5407bb24dcfb6705e4  movie04.lab_fr
+  #2daf2ec272a7be49cbfde053482f182c  movie04.lab_es
+  #c9e1a755f280b3ebff58578c4e5f1e52  vox0000.lab_it
+  #dbe35af39eec29db21a4c6e1c228cc9d  vox0000.lab_fr
+  #076bf048de229ad8cefcb3d7c0bfd134  vox0000.lab_es
+  #a0455d5d883ed46f0bda5030e4b5654c  vox0001.lab_it
+  #e940d5a4a4f2229f0a6674bf45464457  vox0001.lab_fr
+  #77cdd6f02bc3f7085bff17c454066de3  vox0001.lab_es
+  #616e4147c39268b650ce112bf79ea3a1  vox0002.lab_it
+  #24bbf1f6d3d63ae07ad2dd06bd7dad8c  vox0002.lab_it
+  #c4484dadd4a33066290e1847523d7d64  vox0002.lab_es
+  #f900cb063fbd0ef2a0516e9a00291d13  vox0003.lab_it
+  #c4aa2c45b24f351e8fce40a141084fb0  vox0003.lab_fr
+  #1d4e94e3d3fd803a02c9993412359082  vox0003.lab_es
+  #57915d4dd3aa5aa44817477b7bd41ce6  vox0004.lab_it
+  #a49dce6e1bb83ad40b47e03903aaff1b  vox0004.lab_fr
+  #3577a8b6cf013bc5b9c9133e29d1f4f0  vox0004.lab_es
 
 sha1sums: |
   3c1dc57de81be733451ab2f81a2fec6bc23388ad  gfdemo01.lab
@@ -235,6 +409,7 @@ sha1sums: |
 
   c947fa95f1a32905e14202e0ad2de6bd907abb37  gfupd101.exe
 
+  # Disc A - english version
   54f8eeb0ec431a3306855834f7823e2d90ff07b7  flower.ico
   f3cbd2ead606f8fed352916466c72c2b819d5842  gf.ico
   d37cc728d09b9c74466808a7bb36b62acc5e074b  grim fandango - manual.pdf
@@ -245,26 +420,40 @@ sha1sums: |
   fa5ac6d75b6ba22c23d014cb7ab505a18a98c32e  data004.lab
   397d8124cf589fde7d22594d41aafd9e2728f4eb  movie02.lab
   63393814641a7faa19992a44ac914fdb95046046  movie04.lab
-  b63de15607bf584ebf3aaa720ec2b016ecad57c0  vox0000.lab
+  b63de15607bf584ebf3aaa720ec2b016ecad57c0  vox0000.lab_prepatched
   146f40f6cd2da1cb864b6c0af9b7239ab6980464  vox0002.lab
   e8ae79ae78218af317f2d38a53d1a5cb58ad7771  vox0004.lab
   5487825561b2405c96ff5aee2de9198572b97cc3  year0mus.lab
   3220b26916bf71645d9d6d97e3eb4414c855cf63  year2mus.lab
   79861426998371a67ee9180db0d8f2ec8611a5c2  year4mus.lab
 
+  # Disc B (some of these are duplicates of files on disc A)
   94b10f4489dc95e48b30e7a4e98c4f77c159a41e  credits.lab
-  f62d752f72b2c4d71440940ef52331d2211effbb  data000.lab
+  f62d752f72b2c4d71440940ef52331d2211effbb  data000.lab_prepatched
   4d6202132a01a939ebf39d49f2c99d311dd0753d  data001.lab
   43a4e8cf91449433678e02f93af5bb846556f593  data003.lab
   846f790323d16e46aaa8bd33b6f2a90096efa7d8  movie00.lab
   3dfaaf37f2b29763cca24e7785a1d32f7d097a7a  movie01.lab
   6cb663caa8aeb259c2902021cf8a96f708f3b85c  movie03.lab
-  b63de15607bf584ebf3aaa720ec2b016ecad57c0  vox0000.lab
-  3062ada7bd0e15e527eab2af175d6ad15f697e2f  vox0001.lab
+  b63de15607bf584ebf3aaa720ec2b016ecad57c0  vox0000.lab_prepatched
+  3062ada7bd0e15e527eab2af175d6ad15f697e2f  vox0001.lab_prepatched
   1f239713f11d60617d795317241859619a41c40c  vox0003.lab
   5487825561b2405c96ff5aee2de9198572b97cc3  year0mus.lab
   2cbc7b92372d9c697f1e8b179dee1f88a3ee9b5f  year1mus.lab
   14ab6da736518afc30599e20e5e1d898ac55565b  year3mus.lab
+
+  8775cbe627edea49e529b73955c6ffeedf33ed61  local.lab_de
+  e185e9143cc3affbb3680a9d39786087ec76d637  credits.lab_de
+  1dc53a77452a33b0323bc30e9f81fd040f77157a  data003.lab_de
+  72a39bc2a9f4382ee52cbce62028ebfa69246ce5  movie01.lab_de
+  6b5285223cf2f1be3c9f62d19f969187841a5a47  movie02.lab_de
+  7a583eb9afd97c513b08a4626915577179ba264b  movie03.lab_de
+  4afa658bd1a7ece67c00f22c272eab0f7527207b  movie04.lab_de
+  aa3e15d7df4501adaa23f87bc61a91389d707e9b  vox0000.lab_de
+  0845c9bf8431078e00516fd9b73aa228a619cced  vox0001.lab_de
+  093de0573d7481f13eb497375292e0f3f18d457e  vox0002.lab_de
+  ef850ef7a5e6371c9fb1f1eb0215af4662b91d9c  vox0003.lab_de
+  05f2231be2cfad24de1bd40dc9801e766242f31c  vox0004.lab_de
 
 sha256sums: |
   3abe7ea4607ea4b8e01d5320bd4cd7ba4e5dd7a44f4b6bb9c87940789de46109  gfdemo01.lab
@@ -295,7 +484,7 @@ sha256sums: |
   192f817dc7e71267f4044fffb32ac1a0fab8648a82fa779e04702081bfbd6a39  data004.lab
   7c1fe7a67c864e8939d7560091dc811807cf6de411410537253188cfa7949635  movie02.lab
   689e48deb4e9bb7f3650195bd98197ee2e078f167243bcd5a0819d8303c8d7ac  movie04.lab
-  4df5c6f09f7a578f4b3e880d1adc0ddf9ddf4b8d4dc54cc25d20a875fa94e051  vox0000.lab
+  4df5c6f09f7a578f4b3e880d1adc0ddf9ddf4b8d4dc54cc25d20a875fa94e051  vox0000.lab_prepatched
   76111ca8825dd7be9738dad70f200761430deb2407f2466a601657a68fbce85a  vox0002.lab
   dbd53b581dbd5ffd17f25d56a81eb58f096000a9f62bf39998e73917332e1cc5  vox0004.lab
   76638df2a7090f612c973cf336b63a7b9d63a9d7d35f2b7d7c23eb16a4d589ee  year0mus.lab
@@ -303,18 +492,30 @@ sha256sums: |
   989b0468c54a35569e79cbf3fb82e3733b7e99e0ab2b1659c87fb69b74f6a04c  year4mus.lab
 
   30b68b6fa83a375e320e26d3f34bc5d676f0d89253426177441fa9342afc8070  credits.lab
-  893a26c7480374188562ae9032ab616b09b781e0e2e6c6fccf613c5f3e5dd738  data000.lab
+  893a26c7480374188562ae9032ab616b09b781e0e2e6c6fccf613c5f3e5dd738  data000.lab_prepatched
   cb40cd50d2677b175ca05008f9c789ddec1d5d5e4ead798109d64da9a4000b54  data001.lab
   e1f36889ab4c133c924b038d838658aa6ef9dce20930e25ee22795c0ef9f8c01  data003.lab
   0a452538c2279d8e935671ed46d7c7b858a352897aebb6dd7d6ba6f75f2fb3d8  movie00.lab
   536e450b9d6b33cdbadb973abd45b99a728da077a3047e3e23e045502b54dd91  movie01.lab
   4af21664df7525c432f4095b9a76f6a2b25734626492aa27acbfa498c297876f  movie03.lab
-  4df5c6f09f7a578f4b3e880d1adc0ddf9ddf4b8d4dc54cc25d20a875fa94e051  vox0000.lab
-  43c085f36c5fa0343eb0711f781180c8074015a38b07d0e1d0795c3ea2eee54a  vox0001.lab
+  4df5c6f09f7a578f4b3e880d1adc0ddf9ddf4b8d4dc54cc25d20a875fa94e051  vox0000.lab_prepatched
+  43c085f36c5fa0343eb0711f781180c8074015a38b07d0e1d0795c3ea2eee54a  vox0001.lab_prepatched
   faae43db0a15dbe7b12848cff63ca25fa7f9ad4f754c98a2eae8a2a818995817  vox0003.lab
   76638df2a7090f612c973cf336b63a7b9d63a9d7d35f2b7d7c23eb16a4d589ee  year0mus.lab
   1f9defe5ce01cc4edfa33cf94ee51f6741e6356b65f212bba6a5cee511470938  year1mus.lab
   85df32cba7955620964de1ddeb0abb145972558b08d3187a7bc1c2908544ea86  year3mus.lab
 
+  9a984734c83bbe6867e58e8a6990202b0aae2dc5760f808fdc971f4a30565195  local.lab_de
+  170c4189ac0bf3fa13482ab2e5bfe66fe4b947e1b40c2e1f1cc9df5c3969eac0  credits.lab_de
+  f6e671fbf25b014ea78e208df9a8c4fa68d0676cb5b68bca6afa297e9572b5fc  data003.lab_de
+  c9f3fde1a18e5d54b4780a4ec1148a4cdc988bdf81e2c7cb3942476a2cdeafa7  movie01.lab_de
+  0233e91cec640fc1d13fbdbd3a813ca00a87aa551e967dc1f11ff1b173619f1d  movie02.lab_de
+  9df47e6cda8dfa4886cc3b361d3642d64b47fa0fa33c5dc5d162c477d8234dc3  movie03.lab_de
+  c017839df77247bba5921f2c393f1edd7904c1320535d49d701ce757f9acdd60  movie04.lab_de
+  6d93e7aceef04136c4eae80867d3e491bc42255343c22adde6eacfe8958ae330  vox0000.lab_de
+  4edfe50794bd8464b9a7e9590609acfa877e678e1dc6fc27d61b08d723b0b90e  vox0001.lab_de
+  8f37b606fe90a1eb558d68ff55c88474c2e345f70e360cec70554d35b75393cf  vox0002.lab_de
+  d6524396191d305b431335ff899543837b89bfc5216c8d9044ecaca4af228952  vox0003.lab_de
+  a27ef1e1f524f87a5935c39931c054827a2e82e1401245f0e913baecf40825f3  vox0004.lab_de
 ...
 # vim:set sw=2 sts=2 et:
