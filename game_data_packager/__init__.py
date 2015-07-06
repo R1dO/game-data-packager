@@ -772,8 +772,9 @@ class GameData(object):
             # FIXME: find out file size and add to yaml
             else:
                 assert wanted.size is not None or filename in (
-                   'hipnotic/pak0.pak_qdq_glquake_compat'
-                   'resource.1_106_cd'
+                   'hipnotic/pak0.pak_qdq_glquake_compat',
+                   'resource.1_106_cd',
+                   'vox0000.lab_unpatched',
                    ), (self.shortname, wanted.name)
 
         if len(self.packages) > 1:
