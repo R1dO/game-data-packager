@@ -4,10 +4,13 @@ copyright: © 1994 The Dreamers Guild
 plugin: scummvm_common
 gameid: ite
 
+help_text: |
+  The German version requires ScummVM 1.8.0
+
 packages:
   inherit-the-earth-floppy-data:
     longname: "Inherit the Earth (floppy version)"
-    better_version: inherit-the-earth-data
+    better_version: inherit-the-earth-en-data
     install:
     - ite.rsc_floppy
     - scripts.rsc_floppy
@@ -16,7 +19,9 @@ packages:
     - instr.ad
     - instr.opl
 
-  inherit-the-earth-data:
+  inherit-the-earth-en-data:
+    debian:
+      provides: inherit-the-earth-data
     steam:
       id: 257260
       path: common/Inherit the Earth/itedata
@@ -31,14 +36,43 @@ packages:
     optional:
     - manual.pdf
 
+  inherit-the-earth-de-data:
+    engine: scummvm (>= 1.8.0)
+    lang: de
+    debian:
+      provides: inherit-the-earth-data
+    steam:
+      id: 257260
+      path: common/Inherit the Earth/itedata
+    gog:
+      url: inherit_the_earth
+    install:
+    - ite.rsc_german
+    - scripts.rsc_german
+    - voices.rsc_german
+    - music.rsc
+    - sounds.rsc
+    optional:
+    - manual.pdf_german
+
 files:
   ite.rsc_floppy:
     install_as: ite.rsc
   scripts.rsc_floppy:
     install_as: scripts.rsc
 
+  ite.rsc_german:
+    install_as: ite.rsc
+  scripts.rsc_german:
+    install_as: scripts.rsc
+  voices.rsc_german:
+    install_as: voices.rsc
+
   manual.pdf:
     install_to: $docdir
+  manual.pdf_german:
+    install_to: $docdir
+    install_as: manual.pdf
 
   setup_inherit_the_earth_2.0.0.6.exe:
     unpack:
@@ -50,6 +84,18 @@ files:
     - music.rsc
     - sounds.rsc
     - manual.pdf
+
+  setup_inherit_the_earth_german_2.0.0.7.exe:
+    unpack:
+      format: innoextract
+      suffix: _german
+    provides:
+    - ite.rsc_german
+    - scripts.rsc_german
+    - voices.rsc_german
+    - music.rsc
+    - sounds.rsc
+    - manual.pdf_german
 
 size_and_md5: |
   8903828   04f366b46a13c350619b7edb83470949 ite.rsc_floppy
@@ -67,6 +113,12 @@ size_and_md5: |
   377074    168feed7a142da495c0293524db65846 manual.pdf
   508098200 a67ec0cd12fb49c129f994c614acd599 setup_inherit_the_earth_2.0.0.6.exe
 
+  8925349   5daa717888f95187db7dc82df3d750df ite.rsc_german
+  355364    5b4c047a22e8dc960eef5d091f931505 scripts.rsc_german
+  442278536 5bd6c43dbb4afff1cde540660f929472 voices.rsc_german
+  526382    abfe26c26615cf3b21c708a831e67bfd manual.pdf_german
+  510942128 40c809f3201966f85e9e740fab41834a setup_inherit_the_earth_german_2.0.0.7.exe
+
 sha1sums: |
   9c1e215e50a0bec77079b5fce2106b2f0f8cb27e  ite.rsc_floppy
   4c0ddd504e99eb8daddacfe65f08377b91e9f30d  scripts.rsc_floppy
@@ -82,4 +134,10 @@ sha1sums: |
 
   2990ab03882ae157985468f8ffe791d57816e423  manual.pdf
   32c77439c519bf632f9a4019ec837cea3a2fbb0b  setup_inherit_the_earth_2.0.0.6.exe
+
+  7a665492482611113ebcfa2b09a19f8592833c8c  ite.rsc_german
+  f7ae268233001903fcfd1091c693cb39ba567155  scripts.rsc_german
+  00dea7c1067e9cfeb3deb4804256e5449608470c  voices.rsc_german
+  738ecdee80053298dc805c09f53cb75254df041a  manual.pdf_german
+  0bc869cfac951f33b101f1b3b8b5e2a796df3278  setup_inherit_the_earth_german_2.0.0.7.exe
 ...
