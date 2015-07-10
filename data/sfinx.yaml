@@ -9,6 +9,7 @@ help_text: |
 
 packages:
   sfinx-en-data:
+    engine: scummvm (>= 1.8.0)
     version: '1.1'
     debian:
       provides: sfinx-data
@@ -20,6 +21,7 @@ packages:
     - license.txt
 
   sfinx-pl-data:
+    engine: scummvm (>= 1.8.0)
     lang: pl
     version: '1.0'
     debian:
