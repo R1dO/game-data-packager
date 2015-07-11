@@ -2222,6 +2222,11 @@ class GameData(object):
         conflicts = read_control_set(package, control, 'Conflicts')
         breaks = read_control_set(package, control, 'Breaks')
 
+        engine = package.engine or self.engine
+        if '>=' in engine:
+            breaks.add(engine.replace('>=', '<<'))
+            engine = engine.split()[0]
+
         if package.expansion_for:
             # check if default heuristic has been overriden in yaml
             for p in depends:
@@ -2230,9 +2235,9 @@ class GameData(object):
             else:
                 depends.add(package.expansion_for)
         if package.engine:
-            recommends.add(package.engine)
+            recommends.add(engine)
         elif not package.expansion_for and self.engine:
-            recommends.add(self.engine)
+            recommends.add(engine)
         for other_package in self.packages.values():
             if other_package.expansion_for == package.name:
                 suggests.add(other_package.name)
@@ -2298,7 +2303,6 @@ class GameData(object):
             copyright = package.copyright or self.copyright
             long_desc += '  Published by: ' + copyright.split(' ', 2)[2]
 
-            engine = package.engine or self.engine
             if engine and package.section == 'games':
                 long_desc += '\n .\n'
                 if '|' in engine:
