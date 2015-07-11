@@ -131,6 +131,8 @@ packages:
       id: 2350
       path: "common/Quake 3 Arena"
     expansion_for: quake3-data
+    debian:
+      depends: quake3-data (>= 38)
     symlinks:
       usr/share/games/quake3-team-arena-data/quake3-team-arena: usr/games/quake3
       # quake < 10
