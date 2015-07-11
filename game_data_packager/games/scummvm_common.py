@@ -60,7 +60,8 @@ class ScummvmGameData(GameData):
         for from_ in (self.locate_steam_icon(package),
                       os.path.join(DATADIR, package.name + '.png'),
                       os.path.join(DATADIR, self.shortname + '.png'),
-                      os.path.join('/usr/share/pixmaps', icon + '.png')):
+                      os.path.join('/usr/share/pixmaps', icon + '.png'),
+                      os.path.join(DATADIR, self.shortname.strip('1234567890') + '.png')):
             if from_ and os.path.exists(from_):
                 pixdir = os.path.join(destdir, 'usr/share/pixmaps')
                 mkdir_p(pixdir)
@@ -68,6 +69,12 @@ class ScummvmGameData(GameData):
                 break
         else:
             icon = 'scummvm'
+
+        from_ = os.path.splitext(from_)[0] + '.svgz'
+        if os.path.exists(from_):
+            svgdir = os.path.join(destdir, 'usr/share/icons/hicolor/scalable/apps')
+            mkdir_p(svgdir)
+            install_data(from_, os.path.join(svgdir, '%s.svgz' % icon))
 
         appdir = os.path.join(destdir, 'usr/share/applications')
         mkdir_p(appdir)
