@@ -2645,14 +2645,15 @@ class GameData(object):
                      '"%s" is neither available nor already installed.',
                      package.name, package.expansion_for)
 
-            if not build_demos:
-                for demo_for in package.demo_for:
-                    if self.packages[demo_for] in possible:
-                        # no point in packaging the demo if we have the full
+            if not build_demos and package.demo_for:
+                for p in possible:
+                    if p.type == 'full':
+                        # no point in packaging a demo if we have any full
                         # version
-                        logger.debug('will not produce "%s" because we have '
-                            'the full version "%s"', package.name, demo_for)
+                        logger.info('will not produce "%s" because we have '
+                            'the full version "%s"', package.name, p.name)
                         abort = True
+                        break
             if abort:
                 continue
 
