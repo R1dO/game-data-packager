@@ -16,6 +16,7 @@ TEST_SUITE += rott spear-of-destiny wolf3d heretic
 png       := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
 svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(wildcard ./data/*.svg))
 png       += out/memento-mori.png
+svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(filter-out ./data/memento-mori-2.svg,$(wildcard ./data/*.svg)))
 in_yaml   := $(wildcard ./data/*.yaml)
 json      := $(patsubst ./data/%.yaml,./out/%.json,$(in_yaml))
 copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright))
