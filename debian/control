@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Uploaders: Simon McVittie <smcv@debian.org>, Jonathan Dowland <jmtd@debian.org>
 Build-Depends:
+ bash-completion,
  debhelper (>= 9),
  dh-python,
  fakeroot,
@@ -12,7 +13,6 @@ Build-Depends:
  python3,
  python3-debian,
  python3-yaml,
- bash-completion,
 Standards-Version: 3.9.6
 Vcs-Git: git://anonscm.debian.org/pkg-games/game-data-packager
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/game-data-packager.git
