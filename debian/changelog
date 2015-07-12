@@ -60,6 +60,7 @@ game-data-packager (42) UNRELEASED; urgency=medium
     with/without the "II" part
   * Do not generate a .svgz icon from memento-mori-2.svg, which uses
     relatively complex SVG features that librsvg cannot render
+  * Where SVG icons exist, generate PNGs from those, not XPM icons
 
  -- Simon McVittie <smcv@debian.org>  Sun, 03 May 2015 14:34:00 +0200
 

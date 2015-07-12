@@ -104,7 +104,7 @@ class DoomGameData(GameData):
             if len(package.main_wads) > 1:
                 desktop_file += '-' + wad_base
 
-            for basename in (wad_base, package.name, self.shortname, 'doom-common'):
+            for basename in (quirks.get('icon', wad_base), package.name, self.shortname, 'doom-common'):
                 from_ = os.path.join(DATADIR, basename + '.png')
                 if os.path.exists(from_):
                     install_data(from_,

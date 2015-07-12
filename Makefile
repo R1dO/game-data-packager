@@ -14,7 +14,7 @@ GDP_MIRROR ?= localhost
 TEST_SUITE += rott spear-of-destiny wolf3d heretic
 
 png       := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
-svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(wildcard ./data/*.svg))
+png       += $(patsubst ./data/%.svg,./out/%.png,$(wildcard ./data/*.svg))
 png       += out/memento-mori.png
 svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(filter-out ./data/memento-mori-2.svg,$(wildcard ./data/*.svg)))
 in_yaml   := $(wildcard ./data/*.yaml)
@@ -50,6 +50,9 @@ out/memento-mori.png: out/memento-mori.svg
 
 out/%.png: data/%.xpm
 	convert $< $@
+
+out/%.png: data/%.svg
+	inkscape --export-png=$@ -w96 -h96 $<
 
 out/%.svgz: data/%.svg
 	gzip -nc $< > $@
