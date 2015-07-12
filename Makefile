@@ -42,6 +42,9 @@ out/changelog.gz: debian/changelog
 out/game-data-packager: run
 	install -m644 run out/game-data-packager
 
+out/%.svg: data/%.svg
+	inkscape --export-plain-svg=$@ $<
+
 out/memento-mori.svg: data/memento-mori-2.svg
 	inkscape --export-plain-svg=$@ --export-id=layer1 --export-id-only $<
 
@@ -54,7 +57,7 @@ out/%.png: data/%.xpm
 out/%.png: data/%.svg
 	inkscape --export-png=$@ -w96 -h96 $<
 
-out/%.svgz: data/%.svg
+out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
 $(DIRS):
