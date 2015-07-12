@@ -56,6 +56,8 @@ game-data-packager (42) UNRELEASED; urgency=medium
     distinguish between that and the other CC-BY-3.0 flavours
   * debian/copyright: document provenance of Tango-derived PD icons
   * Move the "m" and "II" of the Memento Mori (II) logo SVG into layers
+  * Build-depend on Inkscape and use it to generate Memento Mori icons
+    with/without the "II" part
 
  -- Simon McVittie <smcv@debian.org>  Sun, 03 May 2015 14:34:00 +0200
 

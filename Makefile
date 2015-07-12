@@ -15,6 +15,7 @@ TEST_SUITE += rott spear-of-destiny wolf3d heretic
 
 png       := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
 svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(wildcard ./data/*.svg))
+png       += out/memento-mori.png
 in_yaml   := $(wildcard ./data/*.yaml)
 json      := $(patsubst ./data/%.yaml,./out/%.json,$(in_yaml))
 copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright))
@@ -40,6 +41,12 @@ out/changelog.gz: debian/changelog
 out/game-data-packager: run
 	install -m644 run out/game-data-packager
 
+out/memento-mori.svg: data/memento-mori-2.svg
+	inkscape --export-plain-svg=$@ --export-id=layer1 --export-id-only $<
+
+out/memento-mori.png: out/memento-mori.svg
+	inkscape --export-png=$@ -w96 -h96 $<
+
 out/%.png: data/%.xpm
 	convert $< $@
 
@@ -61,6 +68,7 @@ clean:
 	rm -f ./out/*.preinst.in
 	rm -f ./out/*.png
 	rm -f ./out/*.svgz
+	rm -f ./out/*.svg
 	rm -f ./out/*.json
 	rm -rf game_data_packager/__pycache__
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
