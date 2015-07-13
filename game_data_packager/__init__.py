@@ -2369,6 +2369,7 @@ class GameData(object):
             if force:
                 logger.warning('Engine "%s" is not available, '
                                'proceeding anyway' % engine)
+                return
             else:
                 logger.error('Engine "%s" is not (yet) available, '
                              'aborting' % engine)
