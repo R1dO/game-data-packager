@@ -80,6 +80,7 @@ class FillResult(Enum):
     IMPOSSIBLE = 1
     DOWNLOAD_NEEDED = 2
     COMPLETE = 3
+    UPGRADE_NEEDED = 4
 
     def __and__(self, other):
         if other is FillResult.UNDETERMINED:
@@ -90,6 +91,9 @@ class FillResult(Enum):
 
         if other is FillResult.IMPOSSIBLE or self is FillResult.IMPOSSIBLE:
             return FillResult.IMPOSSIBLE
+
+        if other is FillResult.UPGRADE_NEEDED or self is FillResult.UPGRADE_NEEDED:
+            return FillResult.UPGRADE_NEEDED
 
         if other is FillResult.DOWNLOAD_NEEDED or self is FillResult.DOWNLOAD_NEEDED:
             return FillResult.DOWNLOAD_NEEDED
@@ -108,6 +112,9 @@ class FillResult(Enum):
 
         if other is FillResult.DOWNLOAD_NEEDED or self is FillResult.DOWNLOAD_NEEDED:
             return FillResult.DOWNLOAD_NEEDED
+
+        if other is FillResult.UPGRADE_NEEDED or self is FillResult.UPGRADE_NEEDED:
+            return FillResult.UPGRADE_NEEDED
 
         return FillResult.IMPOSSIBLE
 
@@ -2353,10 +2360,34 @@ class GameData(object):
 
     def look_for_engines(self, packages, force=False):
         engines = set(p.engine or self.engine for p in packages)
+        engines.discard(None)
         if len(engines) != 1:
             # XXX: handle complex cases too (e.g. Inherit the Earth DE vs EN)
             return
-        engine = list(engines)[0]
+
+        status = FillResult.UNDETERMINED
+        for engine in reversed(list(engines)[0].split('|')):
+            engine = engine.strip()
+            status |= self.look_for_engine(engine)
+
+        if status is FillResult.IMPOSSIBLE:
+            if force:
+                logger.warning('Engine "%s" is not available, '
+                               'proceeding anyway' % engine)
+            else:
+                logger.error('Engine "%s" is not (yet) available, '
+                             'aborting' % engine)
+                raise SystemExit(1)
+        elif status is FillResult.UPGRADE_NEEDED:
+            if force:
+                logger.warning('Engine "%s" is not up-to-date '
+                               'proceeding anyway' % engine)
+            else:
+                logger.error('Engine "%s" is not up-to-date, '
+                             'aborting' % engine)
+                raise SystemExit(1)
+
+    def look_for_engine(self, engine):
         if '(' in engine:
             engine, ver = engine.split(maxsplit=1)
             ver = ver.strip('(>=) ')
@@ -2366,16 +2397,12 @@ class GameData(object):
         # check engine
         is_installed = PACKAGE_CACHE.is_installed(engine)
         if not is_installed and not PACKAGE_CACHE.is_available(engine):
-            if force:
-                logger.warning('Engine "%s" is not available, '
-                               'proceeding anyway' % engine)
-                return
-            else:
-                logger.error('Engine "%s" is not (yet) available, '
-                             'aborting' % engine)
-                raise SystemExit(1)
+            return FillResult.IMPOSSIBLE
         if ver is None:
-            return
+            if is_installed:
+                return FillResult.COMPLETE
+            else:
+                return FillResult.DOWNLOAD_NEEDED
 
         # check version
         if is_installed:
@@ -2392,16 +2419,9 @@ class GameData(object):
         up_to_date = subprocess.call(['dpkg', '--compare-versions',
                     current_ver, '>=', ver]) == 0
         if up_to_date:
-            return
-        elif force:
-            logger.warning('Engine "%s" is not up-to-date '
-                           '(version %s is needed), '
-                           'proceeding anyway' % (engine, ver))
+            return FillResult.COMPLETE
         else:
-            logger.error('Engine "%s" is not up-to-date, '
-                         '(version %s is needed), '
-                         'aborting' % (engine, ver))
-            raise SystemExit(1)
+            return FillResult.UPGRADE_NEEDED
 
     def look_for_files(self, paths=(), search=True, packages=None):
         paths = list(paths)
