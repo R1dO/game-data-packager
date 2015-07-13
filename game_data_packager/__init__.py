@@ -2361,14 +2361,15 @@ class GameData(object):
     def look_for_engines(self, packages, force=False):
         engines = set(p.engine or self.engine for p in packages)
         engines.discard(None)
-        if len(engines) != 1:
-            # XXX: handle complex cases too (e.g. Inherit the Earth DE vs EN)
+        if not engines:
             return
 
+        # XXX: handle complex cases too (e.g. Inherit the Earth DE vs EN)
         status = FillResult.UNDETERMINED
-        for engine in reversed(list(engines)[0].split('|')):
-            engine = engine.strip()
-            status |= self.look_for_engine(engine)
+        for engine_alternative in engines:
+            for engine in reversed(engine_alternative.split('|')):
+                engine = engine.strip()
+                status |= self.look_for_engine(engine)
 
         if status is FillResult.IMPOSSIBLE:
             if force:
