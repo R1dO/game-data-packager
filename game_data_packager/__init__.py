@@ -3076,6 +3076,8 @@ def run_command_line():
     g = dumb_parser.parse_args().game
     if g is None:
         games = load_games(None)
+    elif '-h' in sys.argv or '--help' in sys.argv:
+        games = load_games(None)
     elif os.path.isfile(os.path.join(DATADIR, '%s.json' % g)):
         games = load_games(None, game=g)
     else:
