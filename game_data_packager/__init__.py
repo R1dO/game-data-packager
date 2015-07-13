@@ -2351,6 +2351,57 @@ class GameData(object):
         self.argument_parser = parser
         return parser
 
+    def look_for_engines(self, packages, force=False):
+        engines = set(p.engine or self.engine for p in packages)
+        if len(engines) != 1:
+            # XXX: handle complex cases too (e.g. Inherit the Earth DE vs EN)
+            return
+        engine = list(engines)[0]
+        if '(' in engine:
+            engine, ver = engine.split(maxsplit=1)
+            ver = ver.strip('(>=) ')
+        else:
+            ver = None
+
+        # check engine
+        is_installed = PACKAGE_CACHE.is_installed(engine)
+        if not is_installed and not PACKAGE_CACHE.is_available(engine):
+            if force:
+                logger.warning('Engine "%s" is not available, '
+                               'proceeding anyway' % engine)
+            else:
+                logger.error('Engine "%s" is not (yet) available, '
+                             'aborting' % engine)
+                raise SystemExit(1)
+        if ver is None:
+            return
+
+        # check version
+        if is_installed:
+            current_ver = subprocess.check_output(['dpkg-query',
+                   '--show', '--showformat', '${Version}', engine],
+                    universal_newlines=True)
+        else:
+            current_ver = subprocess.check_output(['apt-cache',
+                   'madison', engine],
+                    universal_newlines=True)
+            current_ver = current_ver.splitlines()[0]
+            current_ver = current_ver.split('|')[1].strip()
+
+        up_to_date = subprocess.call(['dpkg', '--compare-versions',
+                    current_ver, '>=', ver]) == 0
+        if up_to_date:
+            return
+        elif force:
+            logger.warning('Engine "%s" is not up-to-date '
+                           '(version %s is needed), '
+                           'proceeding anyway' % (engine, ver))
+        else:
+            logger.error('Engine "%s" is not up-to-date, '
+                         '(version %s is needed), '
+                         'aborting' % (engine, ver))
+            raise SystemExit(1)
+
     def look_for_files(self, paths=(), search=True, packages=None):
         paths = list(paths)
 
@@ -2430,6 +2481,8 @@ class GameData(object):
             # if no packages were specified, we require --demo to build
             # a demo if we have its corresponding full game
             packages = set(self.packages.values())
+
+        self.look_for_engines(packages, force=args.force)
 
         self.look_for_files(paths=args.paths, search=args.search,
                 packages=packages)
@@ -3004,6 +3057,12 @@ def run_command_line():
             dest='verbose', help='hide output from external '
              'tools (default)')
 
+    group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('--force', action='store_true',
+            help='force creation of packages')
+    group.add_argument('--no-force', action='store_false',
+            dest='force', help="don't create a package " +
+            "when engine is not available (default)")
 
     class DumbParser(argparse.ArgumentParser):
         def error(self, message):
@@ -3038,6 +3097,7 @@ def run_command_line():
             destination=None,
             download=True,
             verbose=False,
+            force=False,
             install=False,
             packages=[],
             save_downloads=None,
