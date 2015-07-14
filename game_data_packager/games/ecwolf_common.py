@@ -70,6 +70,12 @@ class EcwolfGameData(GameData):
             else:
                 raise AssertionError('wolf-common.png should have existed')
 
+        from_ = os.path.splitext(from_)[0] + '.svgz'
+        if os.path.exists(from_):
+            svgdir = os.path.join(destdir, 'usr/share/icons/hicolor/scalable/apps')
+            mkdir_p(svgdir)
+            install_data(from_, os.path.join(svgdir, '%s.svgz' % icon))
+
         desktop = configparser.RawConfigParser()
         desktop.optionxform = lambda option: option
         desktop['Desktop Entry'] = {}
