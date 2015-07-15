@@ -71,6 +71,8 @@ game-data-packager (42) UNRELEASED; urgency=medium
     instead of using dh_bash-completion (works around #668254, #785271)
   * For games that recently gained multilingual packages, also try repacking
     files from the non-language-specific location
+  * hexen2-data Conflicts and Replaces hexen2-demo-data, hopefully this will
+    give dpkg a hint that it is the better version
 
  -- Simon McVittie <smcv@debian.org>  Sun, 03 May 2015 14:34:00 +0200
 
