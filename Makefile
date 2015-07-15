@@ -40,7 +40,7 @@ out/changelog.gz: debian/changelog
 	chmod 0644 ./out/changelog.gz
 
 out/game-data-packager: run
-	install -m644 run out/game-data-packager
+	install run out/game-data-packager
 
 out/%.svg: data/%.svg
 	inkscape --export-plain-svg=$@ $<
