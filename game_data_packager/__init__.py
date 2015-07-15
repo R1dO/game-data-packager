@@ -3120,7 +3120,6 @@ def run_command_line():
             destination=None,
             download=True,
             verbose=False,
-            force=False,
             install=False,
             packages=[],
             save_downloads=None,
