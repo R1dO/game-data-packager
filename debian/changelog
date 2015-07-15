@@ -1,37 +1,37 @@
 game-data-packager (42) UNRELEASED; urgency=medium
 
   [ Alexandre Detiste ]
-  * add support for Space Quest 1, 2, 3, 4 & 5
+  * add support for many ScummVM games:
+    - The 7th Guest
+    - The Dig
+    - Dračí Historie GPL'ed game (Closes: #783914)
+    - Elvira 1 and 2
+    - Gobliiins 1 to 3
+    - Indiana Jones and the Fate of Atlantis
+      (en/de/fr/es/it languages, most CD & floppy versions)
+    - Inherit the Earth
+    - King's Quest 1 to 6
+    - Legend of Kyrandia 1 to 3
+    - Leisure Suit Larry 1, 2, 3, 5 and 6
+    - Loom
+    - Police Quest 2 and 3
+    - Quest for Glory 1, 2 & 3
+    - Sam & Max Hit the Road
+    - Simon the Sorcerer 1 and 2
+    - Space Quest 1 to 5
+    - TeenAgent (Closes: #783921)
+    - Waxworks
+    - Zak McKracken and the Alien Mindbenders
+    - Zork series: Return to Zork, Zork Nemesis, Zork Grand Inquisitor
   * replace non-ASCII characters with closest ASCII character
     when displaying help screen with LANG=C (Closes: #784330)
-  * add support for King's Quest 1, 2, 3, 4, 5 & 6
   * Heroes 3: don't package HiScore.dat (Closes: #784995)
-  * add support for Waxworks
-  * add support for Simon the Sorcerer 1 & 2
-  * add support for Gobliiins 1, 2 & 3
-  * add support for Leisure Suit Larry 1, 2, 3, 5 & 6
   * add support for Compet-N PWAD's (Closes: #776061)
   * only load actually needed YAML files (Closes: #779937)
   * improve 'GDP $game --help' (Closes: #784563)
   * use custom HTTP User-Agent (Closes: #784957)
-  * add support for Loom
-  * add support for The 7th Guest
-  * add support for Zak McKracken and the Alien Mindbenders
-  * add support for TeenAgent (Closes: #783921)
-  * add support for Dračí Historie GPL'ed game (Closes: #783914)
-  * add support for Quest for Glory 1, 2 & 3
-  * add support for Indiana Jones and the Fate of Atlantis
-    (en/de/fr/es/it languages, most CD & floppy versions)
-  * add support for The Dig
-  * add support for Sam & Max Hit the Road
-  * add support fot Inherit the Earth
-  * add support for Police Quest 2, 3
-  * add support for Legend of Kyrandia 1, 2 & 3
-  * add support for Elvira 1 & 2
   * add support for Dune 2
-  * add support for Return to Zork
   * add support for Super 3D Noah's Ark (Closes: #788061)
-  * add support for Zork Grand Inquisitor & Zork Nemesis
 
   [ Fabian Greffrath ]
   * provide information about patches needes by various
