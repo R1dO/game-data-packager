@@ -2504,7 +2504,8 @@ class GameData(object):
             # a demo if we have its corresponding full game
             packages = set(self.packages.values())
 
-        self.look_for_engines(packages, force=args.force)
+        if args.install:
+            self.look_for_engines(packages, force=args.force)
 
         self.look_for_files(paths=args.paths, search=args.search,
                 packages=packages)
