@@ -21,6 +21,10 @@ copyright: © 1999 Volition, Inc.
 packages:
   freespace2-data:
     install_to: usr/share/games/freespace2-open
+    debian:
+      replaces:
+        - freespace2-data-gog
+        - freespace2-data-volition
     steam:
       id: 273620
       path: common/Freespace 2

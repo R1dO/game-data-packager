@@ -73,6 +73,8 @@ game-data-packager (42) UNRELEASED; urgency=medium
     files from the non-language-specific location
   * hexen2-data Conflicts and Replaces hexen2-demo-data, hopefully this will
     give dpkg a hint that it is the better version
+  * freespace2-data Conflicts and Replaces the versions built by scripts
+    shipped with fs2-open
 
  -- Simon McVittie <smcv@debian.org>  Sun, 03 May 2015 14:34:00 +0200
 
