@@ -2250,9 +2250,15 @@ class GameData(object):
                 suggests.add(other_package.name)
         assert package.name not in provides, \
                "A package shouldn't extraneously provide itself"
+
+        # Shortcut: if A Replaces B, A automatically Conflicts B
         replace = package.debian.get('replaces')
         if replace:
-            conflicts.add(replace)
+            if isinstance(replace, str):
+                conflicts.add(replace)
+            elif isinstance(replace, list):
+                for x in replace:
+                    conflicts.add(x)
 
         if depends:
             control['Depends'] = ', '.join(sorted(depends))
