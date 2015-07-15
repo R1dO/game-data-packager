@@ -74,7 +74,7 @@ class EcwolfGameData(GameData):
         if os.path.exists(from_):
             svgdir = os.path.join(destdir, 'usr/share/icons/hicolor/scalable/apps')
             mkdir_p(svgdir)
-            install_data(from_, os.path.join(svgdir, '%s.svgz' % icon))
+            install_data(from_, os.path.join(svgdir, '%s.svgz' % package.name))
 
         desktop = configparser.RawConfigParser()
         desktop.optionxform = lambda option: option
