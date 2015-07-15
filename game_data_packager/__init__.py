@@ -2381,7 +2381,7 @@ class GameData(object):
                 raise SystemExit(1)
         elif status is FillResult.UPGRADE_NEEDED:
             if force:
-                logger.warning('Engine "%s" is not up-to-date '
+                logger.warning('Engine "%s" is not up-to-date, '
                                'proceeding anyway' % engine)
             else:
                 logger.error('Engine "%s" is not up-to-date, '
@@ -2504,8 +2504,7 @@ class GameData(object):
             # a demo if we have its corresponding full game
             packages = set(self.packages.values())
 
-        if args.install:
-            self.look_for_engines(packages, force=args.force)
+        self.look_for_engines(packages, force=not args.install)
 
         self.look_for_files(paths=args.paths, search=args.search,
                 packages=packages)
@@ -3079,13 +3078,6 @@ def run_command_line():
     group.add_argument('--no-verbose', action='store_false',
             dest='verbose', help='hide output from external '
              'tools (default)')
-
-    group = base_parser.add_mutually_exclusive_group()
-    group.add_argument('--force', action='store_true',
-            help='force creation of packages')
-    group.add_argument('--no-force', action='store_false',
-            dest='force', help="don't create a package " +
-            "when engine is not available (default)")
 
     class DumbParser(argparse.ArgumentParser):
         def error(self, message):
