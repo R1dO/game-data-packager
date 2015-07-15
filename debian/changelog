@@ -67,6 +67,8 @@ game-data-packager (42) UNRELEASED; urgency=medium
   * blakestone: re-word help
   * Make out/game-data-packager executable
   * ecwolf_common: fix installation of icon
+  * Install bash completion to the desired location with dh_install
+    instead of using dh_bash-completion (works around #668254, #785271)
 
  -- Simon McVittie <smcv@debian.org>  Sun, 03 May 2015 14:34:00 +0200
 
