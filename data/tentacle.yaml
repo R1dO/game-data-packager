@@ -2,6 +2,9 @@
 longname: Day Of The Tentacle
 copyright: © 1993 LucasArts
 plugin: scummvm_common
+# for upgrade from versions where it was not multilingual
+try_repack_from:
+  - /usr/share/games/dayofthetentacle
 
 packages:
   dayofthetentacle-en-data:

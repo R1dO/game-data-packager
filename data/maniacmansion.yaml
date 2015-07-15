@@ -1,6 +1,9 @@
 ---
 longname: Maniac Mansion
 copyright: © 1988 Lucasfilm Games
+# for upgrade from versions where it was not multilingual
+try_repack_from:
+  - /usr/share/games/maniacmansion
 
 plugin: scummvm_common
 gameid: maniac
