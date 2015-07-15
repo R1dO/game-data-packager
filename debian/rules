@@ -23,7 +23,7 @@ override_dh_auto_clean:
 		echo; \
 		exit 1; \
 	fi
-	debian/copyright.py > debian/copyright
+	debian/copyright.py
 
 override_dh_install:
 	dh_install
