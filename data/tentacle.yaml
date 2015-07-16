@@ -16,6 +16,15 @@ packages:
     - tentacle.000
     - tentacle.001
 
+  dayofthetentacle-floppy-en-data:
+    better_version: dayofthetentacle-en-data
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - monster.sou_floppy
+    - tentacle.000_floppy
+    - tentacle.001_floppy
+
   dayofthetentacle-de-data:
     lang: de
     debian:
@@ -24,6 +33,16 @@ packages:
     - monster.sou_de
     - tentacle.000_de
     - tentacle.001_de
+
+  dayofthetentacle-floppy-de-data:
+    better_version: dayofthetentacle-de-data
+    lang: de
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - monster.sou_de_floppy
+    - tentacle.000_de_floppy
+    - tentacle.001_de_floppy
 
   dayofthetentacle-es-data:
     lang: es
@@ -92,10 +111,21 @@ files:
     install_as: monster.sou
   monster.sou_de:
     install_as: monster.sou
+  monster.sou_de_floppy:
+    install_as: monster.sou
+
+  tentacle.000_floppy:
+    install_as: tentacle.000
+  tentacle.001_floppy:
+    install_as: tentacle.001
 
   tentacle.000_de:
     install_as: tentacle.000
   tentacle.001_de:
+    install_as: tentacle.001
+  tentacle.000_de_floppy:
+    install_as: tentacle.000
+  tentacle.001_de_floppy:
     install_as: tentacle.001
 
   tentacle.000_es:
@@ -135,10 +165,16 @@ size_and_md5: |
 
   7932      4167a92a1d46baa4f4127d918d561f88 tentacle.000
   11358470  c5d451e659e0915ac02f5807de3a0bc0 tentacle.001
+  7932      2723fea3dae0cb47768c424b145ae0e7 tentacle.000_floppy
+  10049341  51c4a97f3479bb49855bf1795269d767 tentacle.001_floppy
 
   238267139 8ea07a3e13af00f0a6e594820df1a9af monster.sou_de
   7932      6e959d65358eedf9b68b81e304b97fa4 tentacle.000_de
   11373177  0913cd05019c6821c672f1d84a8fc36d tentacle.001_de
+
+  4808781   8dfb1236c4a03ee0614a7ad8ace2a1c7 monster.sou_de_floppy
+  7932      57b0d89af79befe1cabce3bece869e7f tentacle.000_de_floppy
+  11303898  c753af069851d2ea255f80d4a331c89f tentacle.001_de_floppy
 
   7932      883af4b0af4f77a92f1dcf1d0a283140 tentacle.000_es
   11378198  8635954446203757d7eae09656b2342c tentacle.001_es
@@ -171,10 +207,16 @@ sha1sums: |
 
   c536e34f3a1ff638ead416be3359a264fd5aac3b  tentacle.000
   f84f3ca1a13c4059c86e253dbfe654c748b79567  tentacle.001
+  1ac9780a52584615b1af39c275b8a35d3f5f941d  tentacle.000_floppy
+  e1eca2ee3b7b5308c916a7b813f2ad675e10ad77  tentacle.001_floppy
 
   8ea8934f1ef9e212e26fbd72463c9d0c42af8ee7  monster.sou_de
   a774de9ad35fdc54f037f8c616862ab8b6638183  tentacle.000_de
   b5864862a445a9bb7c08af280ae0de2ed6d6140c  tentacle.001_de
+
+  b7e38f2d1f2c38aea1020f0c9100915d8f0dc4c4  monster.sou_de_floppy
+  b3aec1506faaa4ad63c403d798baf393759bdb14  tentacle.000_de_floppy
+  6eb9be1e3234aaf4cb9a95f99c155fc6d01fe351  tentacle.001_de_floppy
 
   8ae1bd4bce010c55f26de90e6ab77ee4237337e4  tentacle.000_es
   77130445ac0a43959fe870ed65316976b734f80d  tentacle.001_es
