@@ -2710,7 +2710,7 @@ class GameData(object):
         for package in possible:
             if (package.better_version
                 and self.packages[package.better_version] in possible):
-                  logger.debug('will not produce "%s" because better version '
+                  logger.info('will not produce "%s" because better version '
                      '"%s" is also available',
                      package.name,
                      package.better_version)
