@@ -11,7 +11,7 @@ packages:
     debian:
       provides: dayofthetentacle-data
     install:
-    # this is monster.sou re-encoded in FLAC
+    - any_monster_sound_file
     - monster.sof
     - tentacle.000
     - tentacle.001
@@ -25,12 +25,31 @@ packages:
     - tentacle.000_de
     - tentacle.001_de
 
+  dayofthetentacle-es-data:
+    lang: es
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - any_monster_sound_file
+    - tentacle.000_es
+    - tentacle.001_es
+
+  dayofthetentacle-floppy-es-data:
+    better_version: dayofthetentacle-es-data
+    lang: es
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - monster.sou_floppy
+    - tentacle.000_es_floppy
+    - tentacle.001_es_floppy
+
   dayofthetentacle-fr-data:
     lang: fr
     debian:
       provides: dayofthetentacle-data
     install:
-    - monster.sou_fr
+    - any_monster_sound_file
     - tentacle.000_fr
     - tentacle.001_fr
 
@@ -40,52 +59,104 @@ packages:
     debian:
       provides: dayofthetentacle-data
     install:
-    - monster.sou_fr_floppy
+    - monster.sou_floppy
     - tentacle.000_fr_floppy
     - tentacle.001_fr_floppy
 
+  dayofthetentacle-it-data:
+    lang: it
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - any_monster_sound_file
+    - tentacle.000_it
+    - tentacle.001_it
+
+  dayofthetentacle-floppy-it-data:
+    better_version: dayofthetentacle-it-data
+    lang: fr
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - monster.sou_floppy
+    - tentacle.000_it_floppy
+    - tentacle.001_it_floppy
+
 files:
+  any_monster_sound_file:
+    alternatives:
+    - monster.sou
+    - monster.sof
+
+  monster.sou_floppy:
+    install_as: monster.sou
   monster.sou_de:
     install_as: monster.sou
+
   tentacle.000_de:
     install_as: tentacle.000
   tentacle.001_de:
     install_as: tentacle.001
 
-  monster.sou_fr:
-    install_as: monster.sou
+  tentacle.000_es:
+    install_as: tentacle.000
+  tentacle.001_es:
+    install_as: tentacle.001
+  tentacle.000_es_floppy:
+    install_as: tentacle.000
+  tentacle.001_es_floppy:
+    install_as: tentacle.001
+
   tentacle.000_fr:
     install_as: tentacle.000
   tentacle.001_fr:
     install_as: tentacle.001
 
-  monster.sou_fr_floppy:
-    install_as: monster.sou
   tentacle.000_fr_floppy:
     install_as: tentacle.000
   tentacle.001_fr_floppy:
     install_as: tentacle.001
 
-size_and_md5: |
-  94948005  7eb02d6c9a428da90ee6ca1b7cb1de49  monster.sof
-  7932      4167a92a1d46baa4f4127d918d561f88  tentacle.000
-  11358470  c5d451e659e0915ac02f5807de3a0bc0  tentacle.001
+  tentacle.000_it:
+    install_as: tentacle.000
+  tentacle.001_it:
+    install_as: tentacle.001
 
-  238267139 8ea07a3e13af00f0a6e594820df1a9af  monster.sou_de
-  7932      6e959d65358eedf9b68b81e304b97fa4  tentacle.000_de
-  11373177  0913cd05019c6821c672f1d84a8fc36d  tentacle.001_de
+  tentacle.000_it_floppy:
+    install_as: tentacle.000
+  tentacle.001_it_floppy:
+    install_as: tentacle.001
+
+size_and_md5: |
+  268965339 86ed80f36192937d9a38fa8e9fb48b84 monster.sou
+  3830653   ec46c029ec58596485b221dac0c55d7a monster.sou_floppy
+  # this is monster.sou re-encoded in FLAC, with a custom container
+  94948005  7eb02d6c9a428da90ee6ca1b7cb1de49 monster.sof
+
+  7932      4167a92a1d46baa4f4127d918d561f88 tentacle.000
+  11358470  c5d451e659e0915ac02f5807de3a0bc0 tentacle.001
+
+  238267139 8ea07a3e13af00f0a6e594820df1a9af monster.sou_de
+  7932      6e959d65358eedf9b68b81e304b97fa4 tentacle.000_de
+  11373177  0913cd05019c6821c672f1d84a8fc36d tentacle.001_de
+
+  7932      883af4b0af4f77a92f1dcf1d0a283140 tentacle.000_es
+  11378198  8635954446203757d7eae09656b2342c tentacle.001_es
+  7932      ae94f110a14ce71fc515d5b648827a8f tentacle.000_es_floppy
+  11308818  9ae19014ad6af6b267a713b160405b97 tentacle.001_es_floppy
 
   # https://github.com/scummvm/scummvm/blob/master/engines/scumm/scumm-md5.h#L402
-  268965339 86ed80f36192937d9a38fa8e9fb48b84 monster.sou_fr
   7932      8aa05d3cdb0e795436043f0546af2da2 tentacle.000_fr
   11369946  d49cf89f25422bfb1800ad9b579f839d tentacle.001_fr
-
-  3830653   ec46c029ec58596485b221dac0c55d7a monster.sou_fr_floppy
   7932      92b078d9d6d9d751da9c26b8b3075779 tentacle.000_fr_floppy
   11298393  f600ee6719008f6403318af13bbe369c tentacle.001_fr_floppy
 
+  7932      4fbbe9f64b8bc547503a379a301183ce tentacle.000_it
+  11371455  b45b20ff214ad9e892f3d35305d82223 tentacle.001_it
+  7932      50fcdc982a25063b78ad46bf389b8e8d tentacle.000_it_floppy
+  11301871  a87008a3b5ffcd393926abe8310a053f tentacle.001_it_floppy
+
   # other version
-  # ec46c029ec58596485b221dac0c55d7a  monster.sou
   # 2723fea3dae0cb47768c424b145ae0e7  tentacle.000_floppy
   # 415d17122ee8b8415c9b57c1062fb77d  tentacle.001_floppy
 
@@ -94,7 +165,10 @@ size_and_md5: |
   # c1bcf3e8370831e966afe8d9fe7753b4  tentacle.001_fr_floppy2
 
 sha1sums: |
+  f8db8f165fd908d3933f79418e2aac839d52934f  monster.sou
+  9c9e1d8191ccbc0dab61ce9086db1eca61a41019  monster.sou_floppy
   dbbd92bc075b0197503cf3817a867312ff14047e  monster.sof
+
   c536e34f3a1ff638ead416be3359a264fd5aac3b  tentacle.000
   f84f3ca1a13c4059c86e253dbfe654c748b79567  tentacle.001
 
@@ -102,13 +176,20 @@ sha1sums: |
   a774de9ad35fdc54f037f8c616862ab8b6638183  tentacle.000_de
   b5864862a445a9bb7c08af280ae0de2ed6d6140c  tentacle.001_de
 
-  f8db8f165fd908d3933f79418e2aac839d52934f  monster.sou_fr
+  8ae1bd4bce010c55f26de90e6ab77ee4237337e4  tentacle.000_es
+  77130445ac0a43959fe870ed65316976b734f80d  tentacle.001_es
+  72e9b8b5c33f9e2214269e908d3a371f2c9b25be  tentacle.000_es_floppy
+  c4721c3a5665c931adec58cd4e14cb99b09fdc4a  tentacle.001_es_floppy
+
   48831b7cd826bcea604a1f4bd33aa2a37aefdc6d  tentacle.000_fr
   f7841f0fb1889e8049e22515921c198f5251002b  tentacle.001_fr
-
-  9c9e1d8191ccbc0dab61ce9086db1eca61a41019  monster.sou_fr_floppy
   ad4695f3f13bc2447573ce88de3c439d18a537a2  tentacle.000_fr_floppy
   b4304242d7d8c6b0a6b2ac3f3f72821cd8afb305  tentacle.001_fr_floppy
+
+  d6dc0bc7023c9e8d732a86b4d95e4a5ca17e0e47  tentacle.000_it
+  0e94ac4eadd12d49c55bb0f27cd8c497bd940468  tentacle.001_it
+  adece256214b95e66f26be8ec60df9d1a8dbf131  tentacle.000_it_floppy
+  bf8a2fe14415b0876c3ea81c6b39c007e0c77d95  tentacle.001_it_floppy
 
 sha256sums: |
   19ac155219688aabc98ad5f00b212ef0e75ef48e2bf85ee8bebf53aaf8cfefa6  monster.sof
