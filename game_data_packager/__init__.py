@@ -813,7 +813,8 @@ class GameData(object):
         steam_id = {self.steam.get('id')}
         dotemu_id = self.dotemu.get('id')
         dotemu_pp = '32202' # ScummVM
-        for package in self.packages.values():
+        for p in sorted(self.packages.keys(), reverse=True):
+            package = self.packages[p]
             gog_url = package.gog.get('url', gog_url)
             gog_pp = package.gog.get('pp', gog_pp)
             steam_id.add(package.steam.get('id'))
