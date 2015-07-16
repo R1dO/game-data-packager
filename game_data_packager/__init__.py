@@ -385,6 +385,7 @@ class GameDataPackage(object):
         self.gog = {}
         self.dotemu = {}
         self.origin = {}
+        self.url_misc = None
 
         # overide the game engine when needed
         self.engine = None
@@ -558,6 +559,7 @@ class GameData(object):
         self.url_steam = None
         self.url_gog = None
         self.url_dotemu = None
+        self.url_misc = None
 
         self.data = data
 
@@ -565,7 +567,7 @@ class GameData(object):
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
                   'engine', 'genre', 'missing_langs',
-                  'steam', 'gog', 'dotemu', 'origin'):
+                  'steam', 'gog', 'dotemu', 'origin', 'url_misc'):
             if k in self.data:
                 setattr(self, k, self.data[k])
 
@@ -817,6 +819,8 @@ class GameData(object):
             steam_id.add(package.steam.get('id'))
             dotemu_id = package.dotemu.get('id', dotemu_id)
             dotemu_pp = package.dotemu.get('pp', dotemu_pp)
+            if package.url_misc:
+                self.url_misc = package.url_misc
         steam_id.discard(None)
         www = list()
         if steam_id:
@@ -831,6 +835,8 @@ class GameData(object):
             self.url_dotemu = 'http://www.dotemu.com/affiliate/%s/node/%d' % (
                               dotemu_pp, dotemu_id)
             www.append(self.url_dotemu)
+        if self.url_misc:
+            www.append(self.url_misc)
         if www:
             random.shuffle(www)
             self.help_text += '\nThis game can be bought online here:\n  '
@@ -890,9 +896,10 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'install_to_docdir', 'install_contents_of', 'steam', 'debian', 'dotemu',
+                'install_to_docdir', 'install_contents_of', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
-                'copyright', 'engine', 'gog', 'origin', 'lang', 'component', 'section'):
+                'copyright', 'engine', 'lang', 'component', 'section',
+                'steam', 'gog', 'dotemu', 'origin', 'url_misc'):
             if k in d:
                 setattr(package, k, d[k])
 

@@ -57,6 +57,7 @@ for name, game in load_games().items():
     stats['url_steam'] = game.url_steam
     stats['url_gog'] = game.url_gog
     stats['url_dotemu'] = game.url_dotemu
+    stats['url_misc'] = game.url_misc
     for l in game.missing_langs:
         if l not in langs:
             langs[l] = 0
@@ -80,7 +81,7 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 )
 for lang in langs_order:
     html.write('  <td><b>%s</b></td>\n' % lang)
-html.write('<td>Demo</td><td>Steam</td><td>GOG.com</td><td>DotEmu</td></tr>\n')
+html.write('<td>Demo</td><td>Steam</td><td>GOG.com</td><td>DotEmu</td><td>Misc.</td></tr>\n')
 
 # BODY
 last_genre = None
@@ -103,13 +104,13 @@ for game in games:
             html.write('  <td>&nbsp;</td>\n')
 
     if game['fullfree']:
-        html.write('  <td colspan=4 align=center><b>freeload</b></td>\n')
+        html.write('  <td colspan=5 align=center><b>freeload</b></td>\n')
     else:
         if game['somefree']:
             html.write('  <td align=center><b>X</b></td>\n')
         else:
             html.write('  <td>&nbsp;</td>\n')
-        for url in (game['url_steam'], game['url_gog'], game['url_dotemu']):
+        for url in (game['url_steam'], game['url_gog'], game['url_dotemu'], game['url_misc']):
             if url:
                 html.write('  <td align=center><a href="%s"><b>X</b></a></td>\n' % url)
             else:
@@ -122,7 +123,7 @@ for lang in langs_order:
     html.write('  <td><b>%s</b></td>\n' % langs[lang])
 
 html.write('''
-<td colspan=4>&nbsp;</td>
+<td colspan=5>&nbsp;</td>
 </tr>
 </table>
 <ul>
