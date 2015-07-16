@@ -34,6 +34,16 @@ packages:
     - tentacle.000_fr
     - tentacle.001_fr
 
+  dayofthetentacle-floppy-fr-data:
+    better_version: dayofthetentacle-fr-data
+    lang: fr
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - monster.sou_fr_floppy
+    - tentacle.000_fr_floppy
+    - tentacle.001_fr_floppy
+
 files:
   monster.sou_de:
     install_as: monster.sou
@@ -47,6 +57,13 @@ files:
   tentacle.000_fr:
     install_as: tentacle.000
   tentacle.001_fr:
+    install_as: tentacle.001
+
+  monster.sou_fr_floppy:
+    install_as: monster.sou
+  tentacle.000_fr_floppy:
+    install_as: tentacle.000
+  tentacle.001_fr_floppy:
     install_as: tentacle.001
 
 size_and_md5: |
@@ -63,15 +80,18 @@ size_and_md5: |
   7932      8aa05d3cdb0e795436043f0546af2da2 tentacle.000_fr
   11369946  d49cf89f25422bfb1800ad9b579f839d tentacle.001_fr
 
+  3830653   ec46c029ec58596485b221dac0c55d7a monster.sou_fr_floppy
+  7932      92b078d9d6d9d751da9c26b8b3075779 tentacle.000_fr_floppy
+  11298393  f600ee6719008f6403318af13bbe369c tentacle.001_fr_floppy
+
   # other version
   # ec46c029ec58596485b221dac0c55d7a  monster.sou
-  # 2723fea3dae0cb47768c424b145ae0e7  tentacle.000
-  # 415d17122ee8b8415c9b57c1062fb77d  tentacle.001
+  # 2723fea3dae0cb47768c424b145ae0e7  tentacle.000_floppy
+  # 415d17122ee8b8415c9b57c1062fb77d  tentacle.001_floppy
 
   # https://github.com/scummvm/scummvm/blob/master/engines/scumm/scumm-md5.h#L430
-  # ec46c029ec58596485b221dac0c55d7a  monster.sou_fr_floppy
-  # 94aaedbb8f26d71ed3ad6dd34490e29e  tentacle.000_fr_floppy
-  # c1bcf3e8370831e966afe8d9fe7753b4  tentacle.001_fr_floppy
+  # 94aaedbb8f26d71ed3ad6dd34490e29e  tentacle.000_fr_floppy2
+  # c1bcf3e8370831e966afe8d9fe7753b4  tentacle.001_fr_floppy2
 
 sha1sums: |
   dbbd92bc075b0197503cf3817a867312ff14047e  monster.sof
@@ -85,6 +105,10 @@ sha1sums: |
   f8db8f165fd908d3933f79418e2aac839d52934f  monster.sou_fr
   48831b7cd826bcea604a1f4bd33aa2a37aefdc6d  tentacle.000_fr
   f7841f0fb1889e8049e22515921c198f5251002b  tentacle.001_fr
+
+  9c9e1d8191ccbc0dab61ce9086db1eca61a41019  monster.sou_fr_floppy
+  ad4695f3f13bc2447573ce88de3c439d18a537a2  tentacle.000_fr_floppy
+  b4304242d7d8c6b0a6b2ac3f3f72821cd8afb305  tentacle.001_fr_floppy
 
 sha256sums: |
   19ac155219688aabc98ad5f00b212ef0e75ef48e2bf85ee8bebf53aaf8cfefa6  monster.sof
