@@ -25,12 +25,28 @@ packages:
     - tentacle.000_de
     - tentacle.001_de
 
+  dayofthetentacle-fr-data:
+    lang: fr
+    debian:
+      provides: dayofthetentacle-data
+    install:
+    - monster.sou_fr
+    - tentacle.000_fr
+    - tentacle.001_fr
+
 files:
   monster.sou_de:
     install_as: monster.sou
   tentacle.000_de:
     install_as: tentacle.000
   tentacle.001_de:
+    install_as: tentacle.001
+
+  monster.sou_fr:
+    install_as: monster.sou
+  tentacle.000_fr:
+    install_as: tentacle.000
+  tentacle.001_fr:
     install_as: tentacle.001
 
 size_and_md5: |
@@ -42,14 +58,20 @@ size_and_md5: |
   7932      6e959d65358eedf9b68b81e304b97fa4  tentacle.000_de
   11373177  0913cd05019c6821c672f1d84a8fc36d  tentacle.001_de
 
+  # https://github.com/scummvm/scummvm/blob/master/engines/scumm/scumm-md5.h#L402
+  268965339 86ed80f36192937d9a38fa8e9fb48b84 monster.sou_fr
+  7932      8aa05d3cdb0e795436043f0546af2da2 tentacle.000_fr
+  11369946  d49cf89f25422bfb1800ad9b579f839d tentacle.001_fr
+
   # other version
   # ec46c029ec58596485b221dac0c55d7a  monster.sou
   # 2723fea3dae0cb47768c424b145ae0e7  tentacle.000
   # 415d17122ee8b8415c9b57c1062fb77d  tentacle.001
 
-  # ec46c029ec58596485b221dac0c55d7a  monster.sou_fr
-  # 94aaedbb8f26d71ed3ad6dd34490e29e  tentacle.000_fr
-  # c1bcf3e8370831e966afe8d9fe7753b4  tentacle.001_fr
+  # https://github.com/scummvm/scummvm/blob/master/engines/scumm/scumm-md5.h#L430
+  # ec46c029ec58596485b221dac0c55d7a  monster.sou_fr_floppy
+  # 94aaedbb8f26d71ed3ad6dd34490e29e  tentacle.000_fr_floppy
+  # c1bcf3e8370831e966afe8d9fe7753b4  tentacle.001_fr_floppy
 
 sha1sums: |
   dbbd92bc075b0197503cf3817a867312ff14047e  monster.sof
@@ -59,6 +81,11 @@ sha1sums: |
   8ea8934f1ef9e212e26fbd72463c9d0c42af8ee7  monster.sou_de
   a774de9ad35fdc54f037f8c616862ab8b6638183  tentacle.000_de
   b5864862a445a9bb7c08af280ae0de2ed6d6140c  tentacle.001_de
+
+  f8db8f165fd908d3933f79418e2aac839d52934f  monster.sou_fr
+  48831b7cd826bcea604a1f4bd33aa2a37aefdc6d  tentacle.000_fr
+  f7841f0fb1889e8049e22515921c198f5251002b  tentacle.001_fr
+
 sha256sums: |
   19ac155219688aabc98ad5f00b212ef0e75ef48e2bf85ee8bebf53aaf8cfefa6  monster.sof
   c89a825fcb2c4ea4d9678feab9c23e924ba578293d25a5d098cb3cb39ac86cb9  tentacle.000
