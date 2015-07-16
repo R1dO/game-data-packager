@@ -132,7 +132,7 @@ packages:
     debian:
       provides: maniacmansion-data
     install:
-    - 00.lfl_fr
+    - any_00.lfl_fr
     - 01.lfl_fr
     - 02.lfl_fr
     - 03.lfl_fr
@@ -283,8 +283,18 @@ files:
     install_as: 52.lfl
   53.lfl_de:
     install_as: 53.lfl
-  00.lfl_fr:
+
+  any_00.lfl_fr:
+    alternatives:
+    - 00.lfl_fr
+    - 00.lfl_fr_alt
     install_as: 00.lfl
+  00.lfl_fr:
+    look_for: [00.lfl]
+  00.lfl_fr_alt:
+    look_for: [00.lfl]
+  # bunch of x'CE' instead of x'CD' at x0315 till x033E
+
   01.lfl_fr:
     install_as: 01.lfl
   02.lfl_fr:
@@ -384,6 +394,7 @@ size_and_md5: |
   1988      b250d0f9cc83f80ced56fe11a4fb057c 00.lfl
   1988      183d7464902d40d00800e8ee1f04117c 00.lfl_de
   1988      114acdc2659a273c220f86ee9edb24c1 00.lfl_fr
+  1988      99a3699f80b8f776efae592b44b9b991 00.lfl_fr_alt
   20833     a16b6fce37d69ed7e129ffaa4b62af6b 01.lfl
   20937     f1a702b0caaf19527d714b74ea62417a 01.lfl_de
   20996     e9823e87de24bba57a8b7a5a8f1879f7 01.lfl_fr
