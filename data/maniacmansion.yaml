@@ -127,6 +127,66 @@ packages:
     - 52.lfl_de
     - 53.lfl_de
 
+  maniacmansion-es-data:
+    lang: es
+    debian:
+      provides: maniacmansion-data
+    install:
+    - 00.lfl_es
+    - 01.lfl_es
+    - 02.lfl_es
+    - 03.lfl_es
+    - 04.lfl_es
+    - 05.lfl_es
+    - 06.lfl_es
+    - 07.lfl_es
+    - 08.lfl_es
+    - 09.lfl_es
+    - 10.lfl_es
+    - 11.lfl_es
+    - 12.lfl_es
+    - 13.lfl_es
+    - 14.lfl_es
+    - 15.lfl_es
+    - 16.lfl_es
+    - 17.lfl_es
+    - 18.lfl_es
+    - 19.lfl_es
+    - 20.lfl_es
+    - 21.lfl_es
+    - 22.lfl_es
+    - 23.lfl_es
+    - 24.lfl_es
+    - 25.lfl_es
+    - 26.lfl_es
+    - 27.lfl_es
+    - 28.lfl_es
+    - 29.lfl_es
+    - 30.lfl_es
+    - 31.lfl_es
+    - 32.lfl
+    - 33.lfl_es
+    - 34.lfl
+    - 35.lfl
+    - 36.lfl_es
+    - 37.lfl_es
+    - 38.lfl_es
+    - 39.lfl
+    - 40.lfl_es
+    - 41.lfl_es
+    - 42.lfl_es
+    - 43.lfl_es
+    - 44.lfl_es
+    - 45.lfl_es
+    - 46.lfl_es
+    - 47.lfl_es
+    - 48.lfl
+    - 49.lfl
+    - 50.lfl_es
+    - 51.lfl_es
+    - 52.lfl_es
+    - 53.lfl_es
+
   maniacmansion-fr-data:
     lang: fr
     debian:
@@ -284,6 +344,103 @@ files:
   53.lfl_de:
     install_as: 53.lfl
 
+  00.lfl_es:
+    install_as: 00.lfl
+  01.lfl_es:
+    install_as: 01.lfl
+  02.lfl_es:
+    install_as: 02.lfl
+  03.lfl_es:
+    install_as: 03.lfl
+  04.lfl_es:
+    install_as: 04.lfl
+  05.lfl_es:
+    install_as: 05.lfl
+  06.lfl_es:
+    install_as: 06.lfl
+  07.lfl_es:
+    install_as: 07.lfl
+  08.lfl_es:
+    install_as: 08.lfl
+  09.lfl_es:
+    install_as: 09.lfl
+  10.lfl_es:
+    install_as: 10.lfl
+  11.lfl_es:
+    install_as: 11.lfl
+  12.lfl_es:
+    install_as: 12.lfl
+  13.lfl_es:
+    install_as: 13.lfl
+  14.lfl_es:
+    install_as: 14.lfl
+  15.lfl_es:
+    install_as: 15.lfl
+  16.lfl_es:
+    install_as: 16.lfl
+  17.lfl_es:
+    install_as: 17.lfl
+  18.lfl_es:
+    install_as: 18.lfl
+  19.lfl_es:
+    install_as: 19.lfl
+  20.lfl_es:
+    install_as: 20.lfl
+  21.lfl_es:
+    install_as: 21.lfl
+  22.lfl_es:
+    install_as: 22.lfl
+  23.lfl_es:
+    install_as: 23.lfl
+  24.lfl_es:
+    install_as: 24.lfl
+  25.lfl_es:
+    install_as: 25.lfl
+  26.lfl_es:
+    install_as: 26.lfl
+  27.lfl_es:
+    install_as: 27.lfl
+  28.lfl_es:
+    install_as: 28.lfl
+  29.lfl_es:
+    install_as: 29.lfl
+  30.lfl_es:
+    install_as: 30.lfl
+  31.lfl_es:
+    install_as: 31.lfl
+  33.lfl_es:
+    install_as: 33.lfl
+  36.lfl_es:
+    install_as: 36.lfl
+  37.lfl_es:
+    install_as: 37.lfl
+  38.lfl_es:
+    install_as: 38.lfl
+  40.lfl_es:
+    install_as: 40.lfl
+  41.lfl_es:
+    install_as: 41.lfl
+  42.lfl_es:
+    install_as: 42.lfl
+  43.lfl_es:
+    install_as: 43.lfl
+  44.lfl_es:
+    install_as: 44.lfl
+  45.lfl_es:
+    install_as: 45.lfl
+  46.lfl_es:
+    install_as: 46.lfl
+  47.lfl_es:
+    install_as: 47.lfl
+  50.lfl_es:
+    install_as: 50.lfl
+  51.lfl_es:
+    install_as: 51.lfl
+  52.lfl_es:
+    install_as: 52.lfl
+  53.lfl_es:
+    install_as: 53.lfl
+
   any_00.lfl_fr:
     alternatives:
     - 00.lfl_fr
@@ -393,166 +550,220 @@ files:
 size_and_md5: |
   1988      b250d0f9cc83f80ced56fe11a4fb057c 00.lfl
   1988      183d7464902d40d00800e8ee1f04117c 00.lfl_de
+  1988      0d1b69471605201ef2fa9cec1f5f02d2 00.lfl_es
   1988      114acdc2659a273c220f86ee9edb24c1 00.lfl_fr
   1988      99a3699f80b8f776efae592b44b9b991 00.lfl_fr_alt
   20833     a16b6fce37d69ed7e129ffaa4b62af6b 01.lfl
   20937     f1a702b0caaf19527d714b74ea62417a 01.lfl_de
+  20808     3f43df9ca28f0a541db9861b8833c85f 01.lfl_es
   20996     e9823e87de24bba57a8b7a5a8f1879f7 01.lfl_fr
   5103      460564628245943c8466d3e376502483 02.lfl
   5107      c22281ecf70fdcd456c4cd19f9dec9db 02.lfl_de
+  5094      1690b490a83fb41e60852218dea1bb2d 02.lfl_es
   5139      372dc9fcd42e869e834e17af79138a0d 02.lfl_fr
   11332     890c8ef6afc7b94c2bf3fe45b96c7759 03.lfl
   11364     1473290e7e93182134e17f5c4fd81029 03.lfl_de
+  11332     dfb98921302bbf70154f513bc9c56475 03.lfl_es
   11394     e1af1fdf2139047cebc0e17a4b0286d2 03.lfl_fr
   23596     a9a6f7200c5a7697e0647c49ce02c252 04.lfl
   23958     c052ab7e9efe7db8fef13d829c3a5aa2 04.lfl_de
+  23628     16d1fae549b3eed47df307e9d76499c2 04.lfl_es
   23709     581f9ef534d660a109fd0a1361f67f30 04.lfl_fr
   13931     7854a9c4af6372176cfd76271e465385 05.lfl
   13972     2719fbd56242f2ac15104a81abc3178a 05.lfl_de
+  13932     0e162dbfd7f9913851300c56a61c1058 05.lfl_es
   13928     57cee958506819f5023349d8860d5d9e 05.lfl_fr
   13210     62fa32a265183c5f6dc227fe1f7a2b7e 06.lfl
   13235     95e7f022325d803e28e5b189cbd2ed85 06.lfl_de
+  13206     e46df7b20f7b24bd1017f3484e6ca4db 06.lfl_es
   13273     a05bebe55a4013e8ae652979b26a9f5c 06.lfl_fr
   9999      88c04ce1996e7b69727a16cf582d90f8 07.lfl
   10082     6e57edc021e59049690b154c51a27893 07.lfl_de
+  10024     863063b918b85627e6a59acdc135baea 07.lfl_es
   10067     b4a4d56191467c12bf8912b916908feb 07.lfl_fr
   12069     b1c999bd68e6381414545a6f8816f54a 08.lfl
   12164     41b08a9773928a4e359856545564572f 08.lfl_de
+  12149     afca3975e521ede098fa1b32afe9a1d3 08.lfl_es
   12170     1ce5fac2b3286bdc7a7fe9fef87fac73 08.lfl_fr
   6871      ed17292f1389243ad0661592507b8dd4 09.lfl
   6885      ae2cf084a80297bd092d047c24bc3120 09.lfl_de
+  6905      05a4bf0da7a7a07e42a30e7e50730af6 09.lfl_es
   6903      f67f69b49f006338a70df2f0cb199473 09.lfl_fr
   9708      02cc671dfc3f1911861a846523d99c3a 10.lfl
   9689      eb29696349ce4da1f17d8dedefd459fb 10.lfl_de
+  9715      176ca655a9d3a9b7d3a9cb964d77221b 10.lfl_es
   9715      56782b3cae99178000d04cdef00af56b 10.lfl_fr
   12199     e768af3a8b3320fb78054d15ee663d53 11.lfl
   12216     e9a4c244ec585f2ff0dbd38863557236 11.lfl_de
+  12230     86f5453ee02749cbbd44cc52c33f5c95 11.lfl_es
   12235     a63e269d9e5f24e4253786ca10fb01be 11.lfl_fr
   21208     d77f200858108b2f519205effc65eea3 12.lfl
   21250     ee371883409376cd57404f0b98ea454a 12.lfl_de
+  21235     def9169aabe5a2addb44f7c2001cea2e 12.lfl_es
   21238     9dca26660639231ba725faf25b48d94e 12.lfl_fr
   16369     f633c5d218f01f7200f402cf8d47270e 13.lfl
   16374     4b40428447a6eb4b9425e70e5d823c28 13.lfl_de
+  16387     5c689159bf2c6172445e8d25cd1b09a3 13.lfl_es
   16385     c687ab2308d74d03812525262956696c 13.lfl_fr
   4966      343502f495c079331c8324650ba67fb8 14.lfl
   4989      2540710e1386559a41d4c98048ed833f 14.lfl_de
+  4957      c893fb6c2dda8b912d737c4606c11053 14.lfl_es
   4959      b83a78a32b4253b39fc62bb0316aea96 14.lfl_fr
   5781      0cbf417d3f3f2732c102485f790513d7 15.lfl
   5802      e244e857ebb2da53b98082fccf492342 15.lfl_de
+  5833      ae140cbd5a46a59df0aa49b6f2ee18c4 15.lfl_es
   5837      9ecf57c4ca95ded077a16b41ab85fad6 15.lfl_fr
   12192     013eee7b3039e9ab6086f3611525ee89 16.lfl
   12265     5ce3c9830171f41594c9a91defb8123f 16.lfl_de
+  12243     60d5960334733e3402274e429f4b0a20 16.lfl_es
   12334     92848d771fab08012d1b033fa85380d8 16.lfl_fr
   10342     35e92a39ff85a7580c735b8da289fd3c 17.lfl
   10401     51a84a8a45f39d7bcbff385bdd9f1e11 17.lfl_de
+  10322     3d6af43fd71b59dd970a033b67108340 17.lfl_es
   7856      9e1a5503ff943f31736ce8f1a1ecc211 17.lfl_fr
   11656     3f215604b4d1adf3732610c986efba23 18.lfl
   11799     1f0cc9d2cc3e4fdc04108c51e2f425fe 18.lfl_de
+  11885     31892c6fbbae53db2f2c6b95fe5b30e7 18.lfl_es
   11694     5d22dc429bde2cefa39d2d2f368bc725 18.lfl_fr
   11990     bcba281069372d394c6a4ddcae460cc1 19.lfl
   12042     7a7435443a57fd3dcd6c250e103d820b 19.lfl_de
+  12023     45f2c744dbbdfea0d43670a45a9f0556 19.lfl_es
   12028     fd791eda96607fb6e7b982e25f94e906 19.lfl_fr
   9461      b52ca4806da4ce5a690f7564fe5a0ead 20.lfl
   9548      c59bbb2acc74220f96aefbf190e63018 20.lfl_de
+  9500      977ce87e6e7b4e11c0496ce96ebac5d5 20.lfl_es
   9649      8a40af930378bf7c3a1ad52cf95cbf9b 20.lfl_fr
   6063      b08fea429b8e53c1702be40eb0b80809 21.lfl
   6155      1c99c5cca0979a9cd541fb20e1e671ff 21.lfl_de
+  6122      8fb1634b54ecbda84b3940070754722f 21.lfl_es
   6272      3dc92c62ee6108b883efed0931e88e78 21.lfl_fr
   7355      94186df7a9f8645f1e9e9ba01943a3d5 22.lfl
   7443      02587e9ef1ae8418b2df7cbe1a34403e 22.lfl_de
+  7362      d8073dd9c72eeb451135f40f23f02909 22.lfl_es
   7415      73ce54b96d707a135fb2325f3e11ce5f 22.lfl_fr
   3543      d480df6a35b415f4401677c468c6f7c8 23.lfl
   3624      25d42312d5fb74862248b3953535eea6 23.lfl_de
+  3617      919672b14c7ba7243f0c0ddf1b43d3ad 23.lfl_es
   3585      3d9910f82c11ce8da12ab23687043b12 23.lfl_fr
   9989      7940616bb9a931dcc67f06145315e50c 24.lfl
   10006     6ed399bb1ec5416a31abf536b73ab6a5 24.lfl_de
+  10008     a7235bace8a4ee2f01a867f2209aa59e 24.lfl_es
   10087     9ba26068861ea4f20d514216cc809b5b 24.lfl_fr
   7082      a3c0d640e837470314a6925755e97216 25.lfl
   7102      f1b230c515d3e06bc73ba30628aa1adb 25.lfl_de
+  7088      e38648adff00c9ea877ba0b398eee9e6 25.lfl_es
   7108      1a80ba0f90a17058f66f378571b1f1cd 25.lfl_fr
   17456     34a52f3d0318b8fa5c6a63b3e1ba7520 26.lfl
   17687     43e06407091566d448f1d61a2f8d6ccc 26.lfl_de
+  17555     ce2ff7a776be603a32c8fac3b39ab3d9 26.lfl_es
   17615     5ed7a63b759c0733192de67853b71c43 26.lfl_fr
   14373     41f41f3c66d26a7e1e10f60aa729f2d0 27.lfl
   14425     eda0b89658226f17c6e0a2c4b3692bbe 27.lfl_de
+  14392     edfad9b7134ab85cc84608d04c02fb19 27.lfl_es
   14385     e873b5a96b1bbad2f3802fb5c96925b5 27.lfl_fr
   4672      877333b352ea0a127324b0348739aaef 28.lfl
   4709      0c4d4e6f079c36e7bd4327bbe89d5fbc 28.lfl_de
+  4690      aaf0a55bf398904744b56bfdd577d773 28.lfl_es
   4697      ee86041d1f136d8ef952b79a34c30577 28.lfl_fr
   22429     1fda3d7dca008ef67996ecb180edf5f6 29.lfl
   22438     931ebfbc3a476400af98263450329c13 29.lfl_de
+  22437     7413fd142900ec8c4c5fdea32092e15b 29.lfl_es
   22433     78b0fa3339b05b6369a6e6f3c80a0a55 29.lfl_fr
   24719     bd3445eac43caa27fe1386bb84f8e3b4 30.lfl
   24887     1188c0ba982b956094fb556685b69b79 30.lfl_de
+  24802     3c6c02d1a25ce7b271c52f3dea2f9132 30.lfl_es
   24925     fd39e8600ffb0092e8ee9fc3b855b4ab 30.lfl_fr
   15006     943a85f82e0b7359f785a80b47da4ce4 31.lfl
   15054     fa9b6e1b454c2e192a551a056161acf1 31.lfl_de
+  15025     8743c34d5f7a7c7027921104dfe109c5 31.lfl_es
   15073     f58f6c07e93078bc7cbb41d657846502 31.lfl_fr
   7656      3fcec3d90925560427a82f517cc5b65c 32.lfl
   #7656     3fcec3d90925560427a82f517cc5b65c 32.lfl_fr
+  #7656     3fcec3d90925560427a82f517cc5b65c 32.lfl_es
   #7656     3fcec3d90925560427a82f517cc5b65c 32.lfl_de
   11699     e532d3c5ed451f2e63b0c62225aa49e1 33.lfl
   11757     b1bf2fa7b12772af63547f9be835e7d0 33.lfl_de
+  11693     50db86ade6d7451628b895d7bacde93c 33.lfl_es
   11692     2df2066182925a5e90b7af27d98ca732 33.lfl_fr
   4994      07d98909cd26ef72265a7bacf738881d 34.lfl
   #4994     07d98909cd26ef72265a7bacf738881d 34.lfl_de
+  #4994     07d98909cd26ef72265a7bacf738881d 34.lfl_es
   #4994     07d98909cd26ef72265a7bacf738881d 34.lfl_fr
   10849     cdd340c186bed55a4ae41ce7fabb2147 35.lfl
   #10849    cdd340c186bed55a4ae41ce7fabb2147 35.lfl_de
+  #10849    cdd340c186bed55a4ae41ce7fabb2147 35.lfl_es
   #10849    cdd340c186bed55a4ae41ce7fabb2147 35.lfl_fr
   7534      7122b131422f37b5eb74b854f2d348c5 36.lfl
   7557      68f50e373da5c83a8452f6cf7b207638 36.lfl_de
+  7546      eb4171309acc782915d6d53e755ca310 36.lfl_es
   7547      ab7a352ce29d1342bd88d2fbcec14b89 36.lfl_fr
   17128     09802fd16f00f23e501b727d42cb9884 37.lfl
   17132     dd2407c2519c116276496b40810b5c4c 37.lfl_de
+  17125     8ef61552628658cbde09582a5658efcc 37.lfl_es
   17146     83f313d99e255d03571ea414cddeb699 37.lfl_fr
   19278     d8efee83eb85d8b88d9a10428abe0a0b 38.lfl
   19297     8acda2a4f4eab78ac45af5b2340b0024 38.lfl_de
+  19253     9d2ad4dff7fb956377eb5ce50c319ebe 38.lfl_es
   19332     3f9cd4cfd9658da4173c87b7a4b431b8 38.lfl_fr
   2518      053eb6460d568e1302a4e8dcf5cd8a11 39.lfl
   #2518     053eb6460d568e1302a4e8dcf5cd8a11 39.lfl_de
+  #2518     053eb6460d568e1302a4e8dcf5cd8a11 39.lfl_es
   #2518     053eb6460d568e1302a4e8dcf5cd8a11 39.lfl_fr
   5177      9ce08d2402db882b3121f85cbf9b3d91 40.lfl
   5255      2a17a24107913bb14e17f2609e18a2d8 40.lfl_de
+  5170      e9a1637b14ff606d193adb1ed6f5c419 40.lfl_es
   5303      d2ff2a9b4da77d22d7cbd940994a178b 40.lfl_fr
   5564      37b0203f91ae96b96f5cce8b6c8612fa 41.lfl
   5632      8e076b4cdc0311b22a4941a8636f0194 41.lfl_de
+  5602      cd9f870d159ab712339a42687546bde8 41.lfl_es
   5602      5bb9a6a92d4a14c281c8d16b8ae2342f 41.lfl_fr
   6625      5ee9b22cd17a6c375dc09f51a64fbac3 42.lfl
   6670      3e0e9064b9549cd073d69b69658fddca 42.lfl_de
+  6660      62e2e37e16193caecdd241ee8acccf0e 42.lfl_es
   6707      4977966686dd347407630f2e6ad9200d 42.lfl_fr
   3038      57f9a7329d47abcaf551a9bb3cb93ee5 43.lfl
   3051      cd562448a8286876fba21784266f0618 43.lfl_de
+  3045      9abc7c6ad9d21109e64685ae6b25e74f 43.lfl_es
   3039      837c192fbaf502d1fa046eb9353b6e74 43.lfl_fr
   25510     69bf598818c98d6fbe7c591714eb5744 44.lfl
   25521     14a2d7a44ba48e32b675ea01add954c5 44.lfl_de
+  25513     70ea5ce5a9ebd92e2b23a8b9c51a0c01 44.lfl_es
   25514     ce42597558917da4e592ba2b2cd8b6b0 44.lfl_fr
   16172     2f92d0354b0ffdf8a52ebea2fb827908 45.lfl
   16264     dbe8f79bbbcdb3456110e0fbdd6ffb5c 45.lfl_de
+  16164     d38c2f3c2a2139fc1310bbda17ba709b 45.lfl_es
   16498     d719bb3bfd460508b7e7cbad3fefb5ad 45.lfl_fr
   4607      84b52afe27c63458c5871930c93713c7 46.lfl
   4609      e0f19706cc1f9f9eba0b1a068d74e74e 46.lfl_de
+  4605      4c04d88db718cfb5fcf8d5a24f47e086 46.lfl_es
   4563      757c05fff290168d21efe06682f02fe3 46.lfl_fr
   14239     2d3be66768c61cadf1bc3024198a6355 47.lfl
   14250     7541f3441821d1792d61d5a00c536507 47.lfl_de
+  14257     a46eb727ed01a045b76a7124ef17238f 47.lfl_es
   14230     bdc7b198c6dfe72033c879fc01b0e2f1 47.lfl_fr
   4050      2fe8c70c6c15b18e711fc88f3717145f 48.lfl
   #4050     2fe8c70c6c15b18e711fc88f3717145f 48.lfl_de
+  #4050     2fe8c70c6c15b18e711fc88f3717145f 48.lfl_es
   #4050     2fe8c70c6c15b18e711fc88f3717145f 48.lfl_fr
   4710      6003f9b85161377950bde2765303095a 49.lfl
   #4710     6003f9b85161377950bde2765303095a 49.lfl_de
+  #4710     6003f9b85161377950bde2765303095a 49.lfl_es
   #4710     6003f9b85161377950bde2765303095a 49.lfl_fr
   6325      6d46017cfdde50f46f5e9b6025332b78 50.lfl
   6781      2a80c058f767519a01315133aa00ba41 50.lfl_de
+  6313      109713874a36694f858c411b0565fad2 50.lfl_es
   6132      1fce0c02b669b31be2e75dd6a31872ce 50.lfl_fr
   8753      e9bf10f1186fc1405c32c5e17f6de062 51.lfl
   8746      e2d5cdd88883d79dd51d36de42fac6e1 51.lfl_de
+  8770      ad9cd277e15d4380553af5c5df093f2d 51.lfl_es
   8875      ecacc2ec60a9531dd1e4e4734678d15e 51.lfl_fr
   4014      05a89a8a3c15b243d07052901be0790d 52.lfl
   4022      09c1fe5a13a08e47757e91ffab113b04 52.lfl_de
+  4026      1a653646179e8527a3bcfab3bcd52ff7 52.lfl_es
+  4018      86161fbb1acd3cfcb9b6572fb8758471 52.lfl_fr
   12995     ca1f339f703d76b5c45ca7b4216b52ce 53.lfl
   13002     1763e793e66056b7f72adfd94acbcf05 53.lfl_de
-  4018      86161fbb1acd3cfcb9b6572fb8758471 52.lfl_fr
+  13085     54d80a4711044fd9e07e7d283c29d565 53.lfl_es
   13027     bff117954179b2fccf5ec58c712d1237 53.lfl_fr
 
 sha1sums: |
