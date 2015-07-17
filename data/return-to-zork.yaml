@@ -4,6 +4,8 @@ copyright: © 1993 Infocom
 plugin: scummvm_common
 gameid: rtz
 
+# http://www.thezorklibrary.com/installguides/rtz-scummvm.html
+
 packages:
   return-to-zork-floppy-data:
     longname: 'Return To Zork (floppy)'
@@ -135,6 +137,13 @@ packages:
     - license.txt
 
 files:
+  rtzpatch12.zip:
+    download: http://www.thezorklibrary.com/installguides/rtzpatch12.zip
+    unpack:
+      format: zip
+    provides:
+    - rtzcd.dat
+
   encyclopedia_frobozzica.pdf:
     install_to: $docdir
   manual.pdf:
@@ -271,6 +280,7 @@ size_and_md5: |
   21117714  d52a0715953bfdd54b738e458aee2d4e rtz.prj
 
   # CD-version
+  451379    971a7d4ee786fe73588d4095adb4bb15 rtzpatch12.zip
   536064    f5c3c3740e9a20bbb26f7f952cf020bd rtzcd.dat
   43016792  75ad93c9886300c95df6b81ea4e8d64a rtzcd.prj
   1570801   3beb8982b8b1574058d42a5db3fbc89c fbftkn01.pmv
@@ -395,6 +405,7 @@ sha1sums: |
   533f57c15c26d062b145afa3c986b603cd482c76  rtz.dat
   c525fd5304a04f974d77e7514c617472d54ba341  rtz.prj
 
+  057f8c320051695c3ffb96852b1069465e0f3fa5  rtzpatch12.zip
   7e9abf399d0b93cad1b49eb91b88da5ca69e00cf  rtzcd.dat
   43d091e086fdae3568c47f064c156792d713e0d9  rtzcd.prj
   e8419ba86f18bbcb4d6f5968725f0f1974cc3d4a  rtz.gog
