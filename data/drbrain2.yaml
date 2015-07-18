@@ -1,0 +1,77 @@
+---
+longname: "The Island of Dr. Brain"
+copyright: © 1992 Sierra
+plugin: scummvm_common
+gameid: islandbrain
+
+packages:
+  drbrain2-data:
+    install:
+    - 140.hep
+    - 140.scr
+    - 185.hep
+    - 185.scr
+    - 20.map
+    - 200.hep
+    - 200.scr
+    - 240.hep
+    - 240.scr
+    - 260.hep
+    - 260.scr
+    - 269.v56
+    - 30.hep
+    - 30.scr
+    - 300.msg
+    - 310.hep
+    - 310.scr
+    - 350.hep
+    - 350.scr
+    - 365.hep
+    - 365.scr
+    - 420.hep
+    - 420.scr
+    - 65535.map
+    - resource.000
+    - resource.aud
+    - resource.map
+    - version
+    optional:
+    - brainsg.000
+
+size_and_md5: |
+  3992      26adeed180888ab5640433f0afa99396 140.hep
+  10360     2d20484a63b4659b4be0ceeafc91e0f7 140.scr
+  536       504136d2a2c36ab00a3fed3ba2820ce1 185.hep
+  1622      8ed704c66151548f8630792b2e8826ec 185.scr
+  602       4cc68a53e4d66e482691e19b2a4135e3 20.map
+  2768      428a0365913fcd79ce5bb7b949b9c108 200.hep
+  3162      de4ec265f145f39421da95026bd3f82e 200.scr
+  2782      8dbd722a9c983c8c67ef92020b852619 240.hep
+  2784      8d9eb20d5c99bc42ac8d301937df7ed2 240.scr
+  3052      792b81329480d33ba70a519e19238ee3 260.hep
+  3222      03975837e460784154cd61ff632054c3 260.scr
+  9990      f8173009ce9dbdbb30ad9af5c81d8a72 269.v56
+  404       973f8d0392cbee1c1cb1ed4527ebf838 30.hep
+  484       82968164daa6108244a5f82c9b6c5573 30.scr
+  21780     5722e41e35ce1746fa93d8098a15c4df 300.msg
+  1946      d9ca0c1d6d66e7df6b38f3e115bb7d93 310.hep
+  7900      d6a6b2b98b742e186d840456e60680d5 310.scr
+  1970      3f4f34f08bef5e407e71e1c0a095227c 350.hep
+  8794      5aac18cdb85a57db9ef6bf44cdbbb006 350.scr
+  1100      e3462ec245809772e2c39747de9f8dce 365.hep
+  7806      8918b70f20bc8805b51a3b7c0c0c8411 365.scr
+  3170      ce8e5509354cf2b8cb96ddfa31dba830 420.hep
+  5698      89de857a5b46bc14ce16b75ef08a4656 420.scr
+  632       6c0248d3c97ec96fd334be388482aa58 65535.map
+  2103560   5a73b058d74a3f4bb9ba631c941cafdd resource.000
+  1880696   c787e0f3c777a7624b98ab7fe6ea09b7 resource.aud
+  3281      2388efef8430b041b0f3b00b9050e4a2 resource.map
+  46        9c8d9b2b5a333c0b98bfe723f41f2ce8 version
+
+  # needed ?
+  9066      5e2227579e49c84853da8e74dd0f59aa brainsg.000
+
+sha1sums: |
+  7b5c8c4a945b2ab237134d5e7776330fe9f350a4  resource.000
+  e682a97f15937386b6a723d53a25eb1731c8cea6  resource.aud
+...
