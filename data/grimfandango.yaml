@@ -51,10 +51,10 @@ packages:
     optional:
     - flower.ico
     - gf.ico
-    - grim fandango - manual.pdf
-    - install/readme.txt
+    - manual.pdf
+    - readme.txt
     license:
-    - install/license.txt
+    - license.txt
 
   grimfandango-de-data:
     lang: de
@@ -174,6 +174,8 @@ packages:
 
   grimfandango-demo-en-data:
     demo_for: grimfandango-en-data
+    debian:
+      provides: grimfandango-demo-data
     install:
     - gfdemo01.lab
     - grimdemo.mus
@@ -186,24 +188,37 @@ packages:
     - Movies/demo_backend.san
     - Movies/demo_frontend.san
     optional:
-    - grim.doc
-    - readme.txt
+    - readme.txt_demo
     license:
-    - license.txt
+    - license.txt_demo
+
+  grimfandango-demo-de-data:
+    demo_for: grimfandango-de-data
+    debian:
+      provides: grimfandango-demo-data
+    lang: de
+    install:
+    - gfdemo01.lab_de
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab_de
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san_de
+    - Movies/demo_frontend.san_de
+    optional:
+    - readme.txt_demo_de
+    license:
+    - license.txt_demo_de
 
 files:
-  grim.doc:
-    install_to: $docdir
-  readme.txt:
-    distinctive_name: false
-    install_to: $docdir
-
-  "grim fandango - manual.pdf":
-    install_to: $docdir
-  install/license.txt:
+  # demos
+  #######
+  license.txt_demo:
     install_as: license.txt
-  install/readme.txt:
-    distinctive_name: false
+  readme.txt_demo:
     install_to: $docdir
     install_as: readme.txt
 
@@ -218,6 +233,8 @@ files:
     download: http://demos.residualvm.org/patches/gfupd101.exe
 
   gffulldemo.exe:
+    unpack:
+      format: zip
     provides:
     - gfdemo01.lab
     - grimdemo.mus
@@ -229,12 +246,43 @@ files:
     - Movies/hq_open.san
     - Movies/demo_backend.san
     - Movies/demo_frontend.san
-    - grim.doc
-    - license.txt
-    - readme.txt
+    - license.txt_demo
+    - readme.txt_demo
+
+  gfdemo01.lab_de:
+    install_as: gfdemo01.lab
+  voice001.lab_de:
+    install_as: voice001.lab
+  Movies/demo_backend.san_de:
+    install_as: Movies/demo_backend.san
+  Movies/demo_frontend.san_de:
+    install_as: Movies/demo_frontend.san
+  license.txt_demo_de:
+    install_as: license.txt
+  readme.txt_demo_de:
+    install_to: $docdir
+    install_as: readme.txt
+
+  grim-win-demo-de.zip:
+    download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo-de.zip?download
     unpack:
       format: zip
+    provides:
+    - gfdemo01.lab_de
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab_de
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san_de
+    - Movies/demo_frontend.san_de
+    - license.txt_demo_de
+    - readme.txt_demo_de
 
+  # full games
+  ############
   data000.lab:
     alternatives:
       - data000.lab_prepatched
@@ -290,12 +338,17 @@ files:
   vox0004.lab_de:
     install_as: vox0004.lab
 
+  manual.pdf:
+    install_to: $docdir
+    look_for: ['grim fandango - manual.pdf', manual.pdf]
+  readme.txt:
+    install_to: $docdir
+
 size_and_md5: |
   29489930  25d831d57a93eb3ab8edbb07b7b63943 gfdemo01.lab
-  247808    72b4fdd4c5c9cb13d939a6350ee93fc0 grim.doc
   20366437  3ba28e7e36a49b5fd01ba98e3c772fe8 grimdemo.mus
-  3570      31115996e024ec1c8c0625fd8f1de52a license.txt
-  11998     257d9e1631e9642bd57a9ae231db3f79 readme.txt
+  3570      31115996e024ec1c8c0625fd8f1de52a license.txt_demo
+  11998     257d9e1631e9642bd57a9ae231db3f79 readme.txt_demo
   3405950   c91a7d405d15fb198a9cb31f89637026 sound001.lab
   13722714  f24a45079394fee296a0f7fad07c7fad voice001.lab
   1614692   b63b58537803e3c7d108bf24fb769be0 Movies/al_close.san
@@ -306,6 +359,15 @@ size_and_md5: |
   721192    abe0e89f0b1786cb8db3277cec13700f Movies/hq_open.san
   56955092  a47954de13578cebbcb4e151f4d0fd2d GrimFandangoDemo.zip
   57009152  7ad1a9fd005214a3bb426f3f796b7bce gffulldemo.exe
+
+  29533695  fd728f040557118b7ca436f8205029e5 gfdemo01.lab_de
+  10154     aeb093d29b48518309e5d3453caf3be1 readme.txt_demo_de
+  4518      828745b502599817de5cbca10906ffcb license.txt_demo_de
+  27506     627f34cb8ef6e1d79d597fad1c2b5aa0 language.tab
+  16561196  d1d68735ae10148ecccb6b5000a4db96 voice001.lab_de
+  32892580  3fff9d6d46d8d424f0598389404495a7 Movies/demo_backend.san_de
+  44247744  5ee5a054bb123f8d1f0cd1c2845ded73 Movies/demo_frontend.san_de
+  109152089 22a344efc9f4349faffd83f29e2e2c62 grim-win-demo-de.zip
 
   2272959   bc57c4db2ab814f3bb115ec5702b62f4 gfupd101.exe
 
@@ -336,9 +398,9 @@ size_and_md5: |
 
   10366     51c58777a2a8ee5011a3d8e00176e5ba flower.ico
   15886     c706804922ef0913a4e5bfa651057125 gf.ico
-  3566656   00d4aa4161d81f939e268ef368d53ff5 grim fandango - manual.pdf
-  5849      2ba3a23bad66e675fc48e5f0de86bda2 install/license.txt
-  19523     5e6d32b8061e3af60aa10b3200c84a6b install/readme.txt
+  3566656   00d4aa4161d81f939e268ef368d53ff5 manual.pdf
+  5849      2ba3a23bad66e675fc48e5f0de86bda2 license.txt
+  19523     5e6d32b8061e3af60aa10b3200c84a6b readme.txt
 
   608       27c961c16f9eaf0260781883150e5611 local.lab_de
   22410     2e6319c2ec5772ced5dc9f8b41eb5de7 credits.lab_de
@@ -394,10 +456,9 @@ md5sums: |
 
 sha1sums: |
   3c1dc57de81be733451ab2f81a2fec6bc23388ad  gfdemo01.lab
-  a9c3958cc2d6904a402ffbfe34a3c22472948df1  grim.doc
   9d79a5c44291713c0fa8174b296b9e569941ba38  grimdemo.mus
-  9753cc809c0385b0f8f4b084a0c6cecb7b3f86fa  license.txt
-  1147558a5e402bab50db44b256b01bbfd05e6418  readme.txt
+  9753cc809c0385b0f8f4b084a0c6cecb7b3f86fa  license.txt_demo
+  1147558a5e402bab50db44b256b01bbfd05e6418  readme.txt_demo
   c88690928218234b11a0ed154c27266772353d3d  sound001.lab
   fc2d5aed4f7389e9aaa25bd0007861452e449124  voice001.lab
   73cd3837d424a47c0285d293b5efe9da19693e26  Movies/al_close.san
@@ -409,14 +470,20 @@ sha1sums: |
   63ee2e378b4b1d8e770e12eae1ffdc6557c08458  GrimFandangoDemo.zip
   632bbb6b8e8907a280de6ef54fa82ff2a2df2e54  gffulldemo.exe
 
+  123db81a085b9029dde2e20dcf9297964c549a3f  gfdemo01.lab_de
+  c4d4e7f2c7a82f87a19f99a19ae6e2e3f854fbed  voice001.lab_de
+  34c9523e6abc7f48b9e9b5f2a2d6f1a645d11b05  Movies/demo_backend.san_de
+  dc683a3ee78446d85a05cc5b0507d33857af6952  Movies/demo_frontend.san_de
+  508c9f567b2d33edc04efbb78f51380852d3ad9f  grim-win-demo-de.zip
+
   c947fa95f1a32905e14202e0ad2de6bd907abb37  gfupd101.exe
 
   # Disc A - english version
   54f8eeb0ec431a3306855834f7823e2d90ff07b7  flower.ico
   f3cbd2ead606f8fed352916466c72c2b819d5842  gf.ico
-  d37cc728d09b9c74466808a7bb36b62acc5e074b  grim fandango - manual.pdf
-  0ff3234463cca277d565ded814639dd32fda023f  install/license.txt
-  9eb6a7caa3c882864444ab8ca7cff765153bde4d  install/readme.txt
+  d37cc728d09b9c74466808a7bb36b62acc5e074b  manual.pdf
+  0ff3234463cca277d565ded814639dd32fda023f  license.txt
+  9eb6a7caa3c882864444ab8ca7cff765153bde4d  readme.txt
   94b10f4489dc95e48b30e7a4e98c4f77c159a41e  credits.lab
   e561fb70b0d94a9b958f95dc8cae8ea63729c0e6  data002.lab
   fa5ac6d75b6ba22c23d014cb7ab505a18a98c32e  data004.lab
@@ -459,10 +526,9 @@ sha1sums: |
 
 sha256sums: |
   3abe7ea4607ea4b8e01d5320bd4cd7ba4e5dd7a44f4b6bb9c87940789de46109  gfdemo01.lab
-  9d40e8d44b55f3ec8572a68d18c218cebed25b22ac5a8a885f35a00351a22292  grim.doc
   4de6ca4fa176af64e2c8744d885519993c9b82b77067e2fab1907bf5701a23e2  grimdemo.mus
-  3b6d903709d0e8c5233f2b06ab40d19ff821791f4dfdb5cc33f998ac321a291d  license.txt
-  98616a17e26990eeaf21efa13c2c489cbca7f456b4d8309896c02f4a3a4a9843  readme.txt
+  3b6d903709d0e8c5233f2b06ab40d19ff821791f4dfdb5cc33f998ac321a291d  license.txt_demo
+  98616a17e26990eeaf21efa13c2c489cbca7f456b4d8309896c02f4a3a4a9843  readme.txt_demo
   4b4879ee424cf8a1abe8e0f7ba6bc41c383e5946d54ee4be0c4c5e4eab4a23df  sound001.lab
   46474b1e0c82836cf09e2d65866eb5e0c13b8afd0becece98b04945fde57ee02  voice001.lab
   77e142104383e2478edacf19e7bb14f6662b2293e0ec7229b6eb1bf26a1d237d  Movies/al_close.san
@@ -478,9 +544,9 @@ sha256sums: |
 
   b054fb45d261fe85ab19b1d4f46abda21b214fccfce61a7fe1a6f374dd3d3371  flower.ico
   55e7fec355c1435d0a6832eb34d00ad854993f1ba70c535323632ef3638a4b32  gf.ico
-  48b16fef842bdc73cce755afc01de638d84734b26fbd4d17db6a1d9442fcf7d3  grim fandango - manual.pdf
-  117b0fb913bafe346ee456c4e9971b5dd45144290a47c3103b2ee4821e3aefa7  install/license.txt
-  ccc086e012f4ec7f844de68c7b80240e2201a8baecd32d9d6fce8419bddac79f  install/readme.txt
+  48b16fef842bdc73cce755afc01de638d84734b26fbd4d17db6a1d9442fcf7d3  manual.pdf
+  117b0fb913bafe346ee456c4e9971b5dd45144290a47c3103b2ee4821e3aefa7  license.txt
+  ccc086e012f4ec7f844de68c7b80240e2201a8baecd32d9d6fce8419bddac79f  readme.txt
   30b68b6fa83a375e320e26d3f34bc5d676f0d89253426177441fa9342afc8070  credits.lab
   559f93854e21b28a26d4c0d9cffb515845585cc8611526b1851c0f3498e1eca3  data002.lab
   192f817dc7e71267f4044fffb32ac1a0fab8648a82fa779e04702081bfbd6a39  data004.lab
