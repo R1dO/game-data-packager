@@ -222,15 +222,30 @@ files:
     install_to: $docdir
     install_as: readme.txt
 
-  GrimFandangoDemo.zip:
-    download: https://archive.org/download/GrimFandangoDemo/GrimFandangoDemo.zip
-    provides:
-    - gffulldemo.exe
+  grim-win-demo1-en.zip:
+    download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo1-en.zip?download
     unpack:
       format: zip
+    provides:
+    - gfdemo01.lab
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san
+    - Movies/demo_frontend.san
+    - license.txt_demo
+    - readme.txt_demo
 
-  gfupd101.exe:
-    download: http://demos.residualvm.org/patches/gfupd101.exe
+  GrimFandangoDemo.zip:
+    download: https://archive.org/download/GrimFandangoDemo/GrimFandangoDemo.zip
+    unpack:
+      format: zip
+    provides:
+    - gffulldemo.exe
 
   gffulldemo.exe:
     unpack:
@@ -249,6 +264,7 @@ files:
     - license.txt_demo
     - readme.txt_demo
 
+  # German
   gfdemo01.lab_de:
     install_as: gfdemo01.lab
   voice001.lab_de:
@@ -283,6 +299,9 @@ files:
 
   # full games
   ############
+  gfupd101.exe:
+    download: http://demos.residualvm.org/patches/gfupd101.exe
+
   data000.lab:
     alternatives:
       - data000.lab_prepatched
@@ -345,6 +364,7 @@ files:
     install_to: $docdir
 
 size_and_md5: |
+  # Small English Demo
   29489930  25d831d57a93eb3ab8edbb07b7b63943 gfdemo01.lab
   20366437  3ba28e7e36a49b5fd01ba98e3c772fe8 grimdemo.mus
   3570      31115996e024ec1c8c0625fd8f1de52a license.txt_demo
@@ -359,6 +379,9 @@ size_and_md5: |
   721192    abe0e89f0b1786cb8db3277cec13700f Movies/hq_open.san
   56955092  a47954de13578cebbcb4e151f4d0fd2d GrimFandangoDemo.zip
   57009152  7ad1a9fd005214a3bb426f3f796b7bce gffulldemo.exe
+  56915444  627a0534f52cec13be5e5e8867d5a6fe grim-win-demo1-en.zip
+  # Large English Demo
+  103599118 d4f326bbf9bd5141bd1447a14c3ac45d grim-win-demo2-en.zip
 
   29533695  fd728f040557118b7ca436f8205029e5 gfdemo01.lab_de
   10154     aeb093d29b48518309e5d3453caf3be1 readme.txt_demo_de
@@ -469,6 +492,8 @@ sha1sums: |
   b6dcfdcb7c88330b920e56d311353d9aecf121bb  Movies/hq_open.san
   63ee2e378b4b1d8e770e12eae1ffdc6557c08458  GrimFandangoDemo.zip
   632bbb6b8e8907a280de6ef54fa82ff2a2df2e54  gffulldemo.exe
+  38f6178cb342c39f04e77cf0091141f58f5cad09  grim-win-demo1-en.zip
+  cb8e17b40652a9278a5ac5dbc9939df9df94fd3e  grim-win-demo2-en.zip
 
   123db81a085b9029dde2e20dcf9297964c549a3f  gfdemo01.lab_de
   c4d4e7f2c7a82f87a19f99a19ae6e2e3f854fbed  voice001.lab_de
