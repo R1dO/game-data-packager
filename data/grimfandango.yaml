@@ -178,6 +178,7 @@ packages:
     - year4mus.lab
 
   grimfandango-demo-en-data:
+    better_version: grimfandango-big-demo-en-data
     demo_for: grimfandango-en-data
     debian:
       provides: grimfandango-demo-data
@@ -197,6 +198,26 @@ packages:
     license:
     - license.txt_demo
 
+  grimfandango-big-demo-en-data:
+    demo_for: grimfandango-en-data
+    debian:
+      provides: grimfandango-demo-data
+    install:
+    - gfdemo01.lab
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san_big
+    - Movies/demo_frontend.san_big
+    optional:
+    - readme.txt_demo_big
+    license:
+    - license.txt_demo_big
+
   grimfandango-demo-de-data:
     engine: residualvm (>= 0.3.0)
     demo_for: grimfandango-de-data
@@ -204,7 +225,7 @@ packages:
       provides: grimfandango-demo-data
     lang: de
     install:
-    - gfdemo01.lab_de_fr
+    - gfdemo01.lab_de_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_de
@@ -226,7 +247,7 @@ packages:
       provides: grimfandango-demo-data
     lang: fr
     install:
-    - gfdemo01.lab_de_fr
+    - gfdemo01.lab_de_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_fr
@@ -240,6 +261,28 @@ packages:
     - readme.txt_demo_fr
     license:
     - license.txt_demo_fr
+
+  grimfandango-demo-it-data:
+    engine: residualvm (>= 0.3.0)
+    demo_for: grimfandango-it-data
+    debian:
+      provides: grimfandango-demo-data
+    lang: it
+    install:
+    - gfdemo01.lab_de_fr_it
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab_it
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san_it
+    - Movies/demo_frontend.san_it
+    optional:
+    - readme.txt_demo_it
+    license:
+    - license.txt_demo_it
 
 files:
   # demos
@@ -292,8 +335,18 @@ files:
     - license.txt_demo
     - readme.txt_demo
 
+  Movies/demo_backend.san_big:
+    install_as: Movies/demo_backend.san
+  Movies/demo_frontend.san_big:
+    install_as: Movies/demo_frontend.san
+  license.txt_demo_big:
+    install_as: license.txt
+  readme.txt_demo_big:
+    install_to: $docdir
+    install_as: readme.txt
+
   # German
-  gfdemo01.lab_de_fr:
+  gfdemo01.lab_de_fr_it:
     install_as: gfdemo01.lab
   voice001.lab_de:
     install_as: voice001.lab
@@ -312,7 +365,7 @@ files:
     unpack:
       format: zip
     provides:
-    - gfdemo01.lab_de_fr
+    - gfdemo01.lab_de_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_de
@@ -343,7 +396,7 @@ files:
     unpack:
       format: zip
     provides:
-    - gfdemo01.lab_de_fr
+    - gfdemo01.lab_de_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_fr
@@ -355,6 +408,37 @@ files:
     - Movies/demo_frontend.san_fr
     - license.txt_demo_fr
     - readme.txt_demo_fr
+
+  # Italian
+  voice001.lab_it:
+    install_as: voice001.lab
+  Movies/demo_backend.san_it:
+    install_as: Movies/demo_backend.san
+  Movies/demo_frontend.san_it:
+    install_as: Movies/demo_frontend.san
+  license.txt_demo_it:
+    install_as: license.txt
+  readme.txt_demo_it:
+    install_to: $docdir
+    install_as: readme.txt
+
+  grim-win-demo-it.zip:
+    download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo-fr.zip?download
+    unpack:
+      format: zip
+    provides:
+    - gfdemo01.lab_de_fr_it
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab_it
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san_it
+    - Movies/demo_frontend.san_it
+    - license.txt_demo_it
+    - readme.txt_demo_it
 
   # full games
   ############
@@ -499,25 +583,35 @@ size_and_md5: |
   57009152  7ad1a9fd005214a3bb426f3f796b7bce gffulldemo.exe
   56915444  627a0534f52cec13be5e5e8867d5a6fe grim-win-demo1-en.zip
   # Large English Demo
+  46615911  aa44d6c01a1b03d4607901933635d385 gdemo001.lab
+  3561      44cd06dcb4a200e4f85444a3e4228ed3 license.txt_demo_big
+  9061      a6067fb45d5c871a612e2d854141ac17 readme.txt_demo_big
+  32032600  ad02ff0f842ec873be9027fcc34359e3 Movies/demo_backend.san_big
+  42079548  1c10ead42737b0162e88337ce83aaa76 Movies/demo_frontend.san_big
   103599118 d4f326bbf9bd5141bd1447a14c3ac45d grim-win-demo2-en.zip
 
-  29533695  fd728f040557118b7ca436f8205029e5 gfdemo01.lab_de_fr
+  29533695  fd728f040557118b7ca436f8205029e5 gfdemo01.lab_de_fr_it
   10154     aeb093d29b48518309e5d3453caf3be1 readme.txt_demo_de
   4518      828745b502599817de5cbca10906ffcb license.txt_demo_de
-  27506     627f34cb8ef6e1d79d597fad1c2b5aa0 language.tab_de
   16561196  d1d68735ae10148ecccb6b5000a4db96 voice001.lab_de
   32892580  3fff9d6d46d8d424f0598389404495a7 Movies/demo_backend.san_de
   44247744  5ee5a054bb123f8d1f0cd1c2845ded73 Movies/demo_frontend.san_de
   109152089 22a344efc9f4349faffd83f29e2e2c62 grim-win-demo-de.zip
 
-  29533695  fd728f040557118b7ca436f8205029e5 gfdemo01.lab_de_fr
   12948     e7fac98c41c5b0f2669a4719f08efeca readme.txt_demo_fr
   4323      4d26946f51662e1c7505e67f1ea4bff6 license.txt_demo_fr
-  26580     e7e8e8ac70d393724c17854c73d69881 language.tab_fr
   13764168  43f56fca727e117b724051c740202c26 voice001.lab_fr
   32907832  7354de829eb6b8507fcb0283020ab49f Movies/demo_backend.san_fr
   44231358  e77f2994d0d65cd17cf53edee677dbff Movies/demo_frontend.san_fr
   106289874 75f9cf0c2234062057eb71f4a0a1be33 grim-win-demo-fr.zip
+
+  10592     4738bf8fa669237a22c5d4759fbb504f readme.txt_demo_it
+  4034      b89f06513b491db81a46294ee0843b2d license.txt_demo_it
+  14907410  412bd831ec42d226fa173e0f55cb47cd voice001.lab_it
+  33250146  e07b0ba0627ab9c7d88077325446db4b Movies/demo_backend.san_it
+  44358474  9168ef0396fdf543bcbc869088af1c60 Movies/demo_frontend.san_it
+  107546348 fa64964175febb657779475f13abadd4 grim-win-demo-it.zip
+
 
   # full games
   #############
@@ -629,9 +723,13 @@ sha1sums: |
   63ee2e378b4b1d8e770e12eae1ffdc6557c08458  GrimFandangoDemo.zip
   632bbb6b8e8907a280de6ef54fa82ff2a2df2e54  gffulldemo.exe
   38f6178cb342c39f04e77cf0091141f58f5cad09  grim-win-demo1-en.zip
+
+  ed6d15473bdcb3f87180ebb05c18740e6bcc2ed5  gdemo001.lab
+  51edb7b0bf49f7d9883193aeb2b94da8500af026  Movies/demo_backend.san_big
+  392fbaa105bfb985730a8ad45490bc471713b8d0  Movies/demo_frontend.san_big
   cb8e17b40652a9278a5ac5dbc9939df9df94fd3e  grim-win-demo2-en.zip
 
-  123db81a085b9029dde2e20dcf9297964c549a3f  gfdemo01.lab_de_fr
+  123db81a085b9029dde2e20dcf9297964c549a3f  gfdemo01.lab_de_fr_it
   c4d4e7f2c7a82f87a19f99a19ae6e2e3f854fbed  voice001.lab_de
   34c9523e6abc7f48b9e9b5f2a2d6f1a645d11b05  Movies/demo_backend.san_de
   dc683a3ee78446d85a05cc5b0507d33857af6952  Movies/demo_frontend.san_de
@@ -641,6 +739,11 @@ sha1sums: |
   c40b9f348c059326ba386623e848240b2de1f395  Movies/demo_backend.san_fr
   3aa955852fbca2c588e7d1b8df1f46795288b869  Movies/demo_frontend.san_fr
   1d7462e59692ea42358c5efcff0f13379c17967d  grim-win-demo-fr.zip
+
+  4be08b3d2c472879a5cd636725328b7510d38ab9  voice001.lab_it
+  c016f05dcc72d7319b8ea413ee9f75b6baa074cc  Movies/demo_backend.san_it
+  7e626dac311deb6ee32fdae75bd558cb157372a8  Movies/demo_frontend.san_it
+  ce596891262ce23b021ea6714698e537b71ad7c6  grim-win-demo-it.zip
 
   c947fa95f1a32905e14202e0ad2de6bd907abb37  gfupd101.exe
 
