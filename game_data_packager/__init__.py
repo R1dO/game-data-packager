@@ -753,7 +753,8 @@ class GameData(object):
               package.better_version in self.packages), package.better_version
 
             # check for stale missing_langs
-            assert not set(package.langs).intersection(self.missing_langs)
+            if not package.demo_for:
+                assert not set(package.langs).intersection(self.missing_langs)
 
         for filename, wanted in self.files.items():
             if wanted.unpack:

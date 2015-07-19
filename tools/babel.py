@@ -28,18 +28,21 @@ langs['total'] = 0
 for name, game in load_games().items():
     stats = dict()
     for package in game.packages.values():
-        lang = package.lang
-        langs[lang] = langs.get(lang, 0) + 1
         langs['total'] += 1
-        stats[lang] = stats.get(lang, 0) + 1
+        if package.demo_for:
+            stats['demos'] = stats.get('demos', 0) + 1
+        else:
+            langs[package.lang] = langs.get(package.lang, 0) + 1
+            stats[package.lang] = stats.get(package.lang, 0) + 1
 
     # free-as-in-beer
     fullfree = True
     somefree = False
     for package in game.packages.values():
-        for m_lang in getattr(package, 'langs', []):
-            if m_lang not in stats:
-                stats[m_lang] = '*'
+        if not package.demo_for:
+            for m_lang in package.langs:
+                if m_lang not in stats:
+                    stats[m_lang] = '*'
         if GameData.fill_gaps(game, package=package,
                  log=False) is FillResult.IMPOSSIBLE:
              fullfree = False
@@ -85,6 +88,7 @@ html.write('<td>Demo</td><td>Steam</td><td>GOG.com</td><td>DotEmu</td><td>Misc.<
 
 # BODY
 last_genre = None
+demos = 0
 for game in games:
     html.write('<tr>\n')
     genre = game['genre']
@@ -106,7 +110,10 @@ for game in games:
     if game['fullfree']:
         html.write('  <td colspan=5 align=center><b>freeload</b></td>\n')
     else:
-        if game['somefree']:
+        if 'demos' in game:
+            demos += game['demos']
+            html.write('  <td align=center><b>%i</b></td>\n' % game['demos'])
+        elif game['somefree']:
             html.write('  <td align=center><b>X</b></td>\n')
         else:
             html.write('  <td>&nbsp;</td>\n')
@@ -120,10 +127,12 @@ for game in games:
 # TOTAL
 html.write('<tr><td colspan=2><b>Total</b></td>\n')
 for lang in langs_order:
-    html.write('  <td><b>%s</b></td>\n' % langs[lang])
+    html.write('  <td><b>%i</b></td>\n' % langs[lang])
+
+html.write('  <td><b>%i</b></td>\n' % demos)
 
 html.write('''
-<td colspan=5>&nbsp;</td>
+<td colspan=4>&nbsp;</td>
 </tr>
 </table>
 <ul>
