@@ -15,7 +15,7 @@ help_text: |
   The german version works without a warning with ResidualVM 0.3.0 or GIT versions after 2015/02/08.
   Versions before that may display warnings about the MD5SUMs, but these can safely be ignored, the game will still run.
 
-missing_langs: [es,fr,it]
+missing_langs: [es,it]
 
 packages:
   grimfandango-en-data:
@@ -114,34 +114,39 @@ packages:
     #- year2mus.lab
     #- year4mus.lab
 
-  #grimfandango-fr-data:
-    #lang: fr
-    #debian:
-      #provides: grimfandango-data
-    #install:
-    #- gfupd101.exe
-    #- credits.lab_fr
-    #- data000.lab
-    #- data001.lab
-    #- data002.lab
-    #- data003.lab_fr
-    #- data004.lab
-    #- local.lab_fr
-    #- movie00.lab
-    #- movie01.lab_fr
-    #- movie02.lab_fr
-    #- movie03.lab_fr
-    #- movie04.lab_fr
-    #- vox0000.lab_fr
-    #- vox0001.lab_fr
-    #- vox0002.lab_fr
-    #- vox0003.lab_fr
-    #- vox0004.lab_fr
-    #- year0mus.lab
-    #- year1mus.lab
-    #- year3mus.lab
-    #- year2mus.lab
-    #- year4mus.lab
+  grimfandango-fr-data:
+    lang: fr
+    debian:
+      provides: grimfandango-data
+    install:
+    - gfupd101.exe
+    - credits.lab_fr
+    - data000.lab
+    - data001.lab
+    - data002.lab
+    - data003.lab
+    - data004.lab
+    - local.lab_fr
+    - movie00.lab
+    - movie01.lab_fr
+    - movie02.lab_fr
+    - movie03.lab_fr
+    - movie04.lab_fr
+    - vox0000.lab_fr
+    - vox0001.lab_fr
+    - vox0002.lab_fr
+    - vox0003.lab_fr
+    - vox0004.lab_fr
+    - year0mus.lab
+    - year1mus.lab
+    - year3mus.lab
+    - year2mus.lab
+    - year4mus.lab
+    optional:
+    - manual.pdf
+    - readme.txt_fr
+    license:
+    - license.txt_fr
 
   #grimfandango-it-data:
     #lang: it
@@ -357,11 +362,41 @@ files:
   vox0004.lab_de:
     install_as: vox0004.lab
 
+  credits.lab_fr:
+    install_as: credits.lab
+  local.lab_fr:
+    install_as: local.lab
+  movie01.lab_fr:
+    install_as: movie01.lab
+  movie02.lab_fr:
+    install_as: movie02.lab
+  movie03.lab_fr:
+    install_as: movie03.lab
+  movie04.lab_fr:
+    install_as: movie04.lab
+  vox0000.lab_fr:
+    install_as: vox0000.lab
+  vox0001.lab_fr:
+    install_as: vox0001.lab
+  vox0002.lab_fr:
+    install_as: vox0002.lab
+  vox0003.lab_fr:
+    install_as: vox0003.lab
+  vox0004.lab_fr:
+    install_as: vox0004.lab
+
+  # docs
   manual.pdf:
     install_to: $docdir
     look_for: ['grim fandango - manual.pdf', manual.pdf]
   readme.txt:
     install_to: $docdir
+
+  readme.txt_fr:
+    install_to: $docdir
+    install_as: readme.txt
+  license.txt_fr:
+    install_as: license.txt
 
 size_and_md5: |
   # Small English Demo
@@ -438,43 +473,47 @@ size_and_md5: |
   46150860  5bda9a36181c1fea368491b842c11efe vox0003.lab_de
   45076847  bae246c5335c1d139b97a48277ee8841 vox0004.lab_de
 
+  608       c9dd41f66883959de27f80bbe457f30d local.lab_fr
+  22827     cd71ca4e600198277f22e944988f7516 credits.lab_fr
+  120698568 16674e1496e4fb3f0f5f173f12e30617 movie01.lab_fr
+  67922585  90fce3e6e1f91455d92b072f773f0a67 movie02.lab_fr
+  89023244  c2ba7adbf09b7a4f69c180f1c74297ee movie03.lab_fr
+  108272734 7e2a4578010cdf5407bb24dcfb6705e4 movie04.lab_fr
+  4006869   dbe35af39eec29db21a4c6e1c228cc9d vox0000.lab_fr
+  56268691  e940d5a4a4f2229f0a6674bf45464457 vox0001.lab_fr
+  90380806  24bbf1f6d3d63ae07ad2dd06bd7dad8c vox0002.lab_fr
+  37188834  c4aa2c45b24f351e8fce40a141084fb0 vox0003.lab_fr
+  35932906  a49dce6e1bb83ad40b47e03903aaff1b vox0004.lab_fr
+  20463     03938d1da0c48b05e470e58c2766e549 readme.txt_fr
+  4878      6b49393e34e376c2f34914e107e4f0df license.txt_fr
+
 md5sums: |
   # https://github.com/residualvm/residualvm/blob/master/engines/grim/md5check.cpp
   # documents many more md5sums for other versions supported by residualvm:
   67627f2d9314f9c0ae55dd2099fc052f  vox0000.lab_unpatched
 
   #1827307248d55c07642342c9213a4723  credits.lab_it
-  #cd71ca4e600198277f22e944988f7516  credits.lab_fr
   #836a2081d5e57ed6ef5eaade7f770b0e  credits.lab_es
   #6142624ce13ea3c9079aa80918010c4a  local.lab_it
-  #c9dd41f66883959de27f80bbe457f30d  local.lab_fr
   #d22648d6787c2f8f0a789ee3ed0c08f7  local.lab_es
   #9fd30d0289f9b4d5c09e821a0a478db5  movie01.lab_it
-  #16674e1496e4fb3f0f5f173f12e30617  movie01.lab_fr
   #ede9fb7d035a5d4af496f23f811707a2  movie01.lab_es
   #129dad4e40987e91c5549c819d0dad1d  movie02.lab_it
-  #90fce3e6e1f91455d92b072f773f0a67  movie02.lab_fr
   #f5879c544f4c1f1f2e2d2e92c026c245  movie02.lab_es
   #0fdb7dda9ebc049eac386d29bface366  movie03.lab_it
-  #c2ba7adbf09b7a4f69c180f1c74297ee  movie03.lab_fr
   #fb87d5a9e3a81d3ffd521dee4432c4da  movie03.lab_es
   #7c8d7e0f4beaca3910658290e8b14cf8  movie04.lab_it
-  #7e2a4578010cdf5407bb24dcfb6705e4  movie04.lab_fr
   #2daf2ec272a7be49cbfde053482f182c  movie04.lab_es
   #c9e1a755f280b3ebff58578c4e5f1e52  vox0000.lab_it
-  #dbe35af39eec29db21a4c6e1c228cc9d  vox0000.lab_fr
   #076bf048de229ad8cefcb3d7c0bfd134  vox0000.lab_es
   #a0455d5d883ed46f0bda5030e4b5654c  vox0001.lab_it
-  #e940d5a4a4f2229f0a6674bf45464457  vox0001.lab_fr
   #77cdd6f02bc3f7085bff17c454066de3  vox0001.lab_es
   #616e4147c39268b650ce112bf79ea3a1  vox0002.lab_it
   #24bbf1f6d3d63ae07ad2dd06bd7dad8c  vox0002.lab_it
   #c4484dadd4a33066290e1847523d7d64  vox0002.lab_es
   #f900cb063fbd0ef2a0516e9a00291d13  vox0003.lab_it
-  #c4aa2c45b24f351e8fce40a141084fb0  vox0003.lab_fr
   #1d4e94e3d3fd803a02c9993412359082  vox0003.lab_es
   #57915d4dd3aa5aa44817477b7bd41ce6  vox0004.lab_it
-  #a49dce6e1bb83ad40b47e03903aaff1b  vox0004.lab_fr
   #3577a8b6cf013bc5b9c9133e29d1f4f0  vox0004.lab_es
 
 sha1sums: |
