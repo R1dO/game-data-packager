@@ -67,6 +67,66 @@ packages:
     - 52.lfl
     - 53.lfl
 
+  maniacmansion-v1-en-data:
+    longname: 'Maniac Mansion (v1)'
+    better_version: maniacmansion-en-data
+    debian:
+      provides: maniacmansion-data
+    install:
+    - 00.lfl_v1
+    - 01.lfl_v1
+    - 02.lfl_v1
+    - 03.lfl_v1
+    - 04.lfl_v1
+    - 05.lfl_v1
+    - 06.lfl_v1
+    - 07.lfl_v1
+    - 08.lfl_v1
+    - 09.lfl_v1
+    - 10.lfl_v1
+    - 11.lfl_v1
+    - 12.lfl_v1
+    - 13.lfl_v1
+    - 14.lfl_v1
+    - 15.lfl_v1
+    - 16.lfl_v1
+    - 17.lfl_v1
+    - 18.lfl_v1
+    - 19.lfl_v1
+    - 20.lfl_v1
+    - 21.lfl_v1
+    - 22.lfl_v1
+    - 23.lfl_v1
+    - 24.lfl_v1
+    - 25.lfl_v1
+    - 26.lfl_v1
+    - 27.lfl_v1
+    - 28.lfl_v1
+    - 29.lfl_v1
+    - 30.lfl_v1
+    - 31.lfl_v1
+    - 32.lfl_v1
+    - 33.lfl_v1
+    - 34.lfl_v1
+    - 35.lfl_v1
+    - 36.lfl_v1
+    - 37.lfl_v1
+    - 38.lfl_v1
+    - 39.lfl_v1
+    - 40.lfl_v1
+    - 41.lfl_v1
+    - 42.lfl_v1
+    - 43.lfl_v1
+    - 44.lfl_v1
+    - 45.lfl_v1
+    - 46.lfl_v1
+    - 47.lfl_v1
+    - 48.lfl_v1
+    - 49.lfl_v1
+    - 50.lfl_v1
+    - 51.lfl_v1
+    - 52.lfl_v1
+
   maniacmansion-de-data:
     lang: de
     debian:
@@ -704,6 +764,115 @@ files:
   53.lfl_it:
     install_as: 53.lfl
 
+  # version 1
+  ############
+  00.lfl_v1:
+    install_as: 00.lfl
+  01.lfl_v1:
+    install_as: 01.lfl
+  02.lfl_v1:
+    install_as: 02.lfl
+  03.lfl_v1:
+    install_as: 03.lfl
+  04.lfl_v1:
+    install_as: 04.lfl
+  05.lfl_v1:
+    install_as: 05.lfl
+  06.lfl_v1:
+    install_as: 06.lfl
+  07.lfl_v1:
+    install_as: 07.lfl
+  08.lfl_v1:
+    install_as: 08.lfl
+  09.lfl_v1:
+    install_as: 09.lfl
+  10.lfl_v1:
+    install_as: 10.lfl
+  11.lfl_v1:
+    install_as: 11.lfl
+  12.lfl_v1:
+    install_as: 12.lfl
+  13.lfl_v1:
+    install_as: 13.lfl
+  14.lfl_v1:
+    install_as: 14.lfl
+  15.lfl_v1:
+    install_as: 15.lfl
+  16.lfl_v1:
+    install_as: 16.lfl
+  17.lfl_v1:
+    install_as: 17.lfl
+  18.lfl_v1:
+    install_as: 18.lfl
+  19.lfl_v1:
+    install_as: 19.lfl
+  20.lfl_v1:
+    install_as: 20.lfl
+  21.lfl_v1:
+    install_as: 21.lfl
+  22.lfl_v1:
+    install_as: 22.lfl
+  23.lfl_v1:
+    install_as: 23.lfl
+  24.lfl_v1:
+    install_as: 24.lfl
+  25.lfl_v1:
+    install_as: 25.lfl
+  26.lfl_v1:
+    install_as: 26.lfl
+  27.lfl_v1:
+    install_as: 27.lfl
+  28.lfl_v1:
+    install_as: 28.lfl
+  29.lfl_v1:
+    install_as: 29.lfl
+  30.lfl_v1:
+    install_as: 30.lfl
+  31.lfl_v1:
+    install_as: 31.lfl
+  32.lfl_v1:
+    install_as: 32.lfl
+  33.lfl_v1:
+    install_as: 33.lfl
+  34.lfl_v1:
+    install_as: 34.lfl
+  35.lfl_v1:
+    install_as: 35.lfl
+  36.lfl_v1:
+    install_as: 36.lfl
+  37.lfl_v1:
+    install_as: 37.lfl
+  38.lfl_v1:
+    install_as: 38.lfl
+  39.lfl_v1:
+    install_as: 39.lfl
+  40.lfl_v1:
+    install_as: 40.lfl
+  41.lfl_v1:
+    install_as: 41.lfl
+  42.lfl_v1:
+    install_as: 42.lfl
+  43.lfl_v1:
+    install_as: 43.lfl
+  44.lfl_v1:
+    install_as: 44.lfl
+  45.lfl_v1:
+    install_as: 45.lfl
+  46.lfl_v1:
+    install_as: 46.lfl
+  47.lfl_v1:
+    install_as: 47.lfl
+  48.lfl_v1:
+    install_as: 48.lfl
+  49.lfl_v1:
+    install_as: 49.lfl
+  50.lfl_v1:
+    install_as: 50.lfl
+  51.lfl_v1:
+    install_as: 51.lfl
+  52.lfl_v1:
+    install_as: 52.lfl
+
 size_and_md5: |
   1988      b250d0f9cc83f80ced56fe11a4fb057c 00.lfl
   1988      183d7464902d40d00800e8ee1f04117c 00.lfl_de
@@ -976,6 +1145,60 @@ size_and_md5: |
   13085     54d80a4711044fd9e07e7d283c29d565 53.lfl_es
   13027     bff117954179b2fccf5ec58c712d1237 53.lfl_fr
   12993     e48ec8c48841e916d0dfbef09992ee83 53.lfl_it
+
+  1972      7f45ddd6dbfbf8f80c0c0efea4c295bc 00.lfl_v1
+  8290      28ff4e99d21fa9e9d197a6dc1f51e3f5 01.lfl_v1
+  2527      84304ec618a1a26da7e4271725522bf2 02.lfl_v1
+  3940      20a6a4d7ace4d7485b8291d2c102df5b 03.lfl_v1
+  4125      c2cdc24854c3c2f24f16861ccfaf285e 04.lfl_v1
+  8944      02b066cf9bef06ce8a0c6003c0e36457 05.lfl_v1
+  3249      495ed5cc738d115e84a10d3c69c7b4fb 06.lfl_v1
+  5350      68856591bf68e7765f2f2eee080748b2 07.lfl_v1
+  4998      3028186d8d99910173de1ccf6a2e3666 08.lfl_v1
+  2477      a7455ccf9fb0b073ec8bcf3285fe65dc 09.lfl_v1
+  3628      d540f2431711e8a1c7dd32d80212007e 10.lfl_v1
+  4091      855dcd5fa80fa05067f223681f7c2256 11.lfl_v1
+  4253      2c235f4a5556a03eb7f9e1e7a2f5f5c9 12.lfl_v1
+  4126      623921399ae21622f75f340c7063237d 13.lfl_v1
+  2153      cd9f1c304032e058dfa69ac4a4f8fb48 14.lfl_v1
+  2607      84e3a549fc69d2ab2fe53819329bf098 15.lfl_v1
+  4888      1068968da9779706dd38cef86fa936d7 16.lfl_v1
+  8462      5c637fe54851794fa744f0275a143cff 17.lfl_v1
+  5867      edf18e48d4aaddacb352033dbac8cda0 18.lfl_v1
+  5184      75af2a2f3c3ed3c8aae57a24d5f96f20 19.lfl_v1
+  4803      e34388636ef6c511e6466d026f97bec5 20.lfl_v1
+  4350      f2d565032b9918d49b0465fb75209751 21.lfl_v1
+  3352      af8437bb9db5d2b5b6853c084a5f963a 22.lfl_v1
+  1990      6007247085d61126c308fdf6352a9404 23.lfl_v1
+  4343      a6705590760e9b2ec0115861230fc721 24.lfl_v1
+  3336      d0e654bbf6ea52defcd07b4e20e06984 25.lfl_v1
+  7457      f64324cff5505893550a87b29474ac44 26.lfl_v1
+  4576      aba6b2787c857c9764311f6555d66c89 27.lfl_v1
+  2653      fc4ac5437081f241f052320b95cdf038 28.lfl_v1
+  3522      ad8773879b97e4e2f60ee7a9fc90cedd 29.lfl_v1
+  10569     0868cc4087ccfc9bbaab559f2e332649 30.lfl_v1
+  6191      7357feb7dae4f7fa611f89e682840349 31.lfl_v1
+  3903      995483a03540a519be3037180a59b398 32.lfl_v1
+  14613     4f2ea1c449ca1546141841e132febabf 33.lfl_v1
+  2441      04854663fc4a97ca9f0b4ebe7093adf2 34.lfl_v1
+  1822      fb000a26b08c54af3da23d41ad92a7d2 35.lfl_v1
+  1976      9bd90d8331c8fd954fb6791be47b9381 36.lfl_v1
+  4232      2851b7105cb0b01eeb421d8270625244 37.lfl_v1
+  4616      e22e752102166d8ce99dc0798f18cce7 38.lfl_v1
+  1247      acd778beff4a533c0d49221aec951c46 39.lfl_v1
+  2613      149c6cb30a62701f729e0d0c0c1e1584 40.lfl_v1
+  7544      bc4e3f0a8a93ebd0148672463c1c7cdd 41.lfl_v1
+  3164      0c5c7ec9f497ed938bd76491e352e664 42.lfl_v1
+  1774      bbe12b0ed584f0282aad441f47525a09 43.lfl_v1
+  9617      80c5264485a6e25d47fc41e85510b575 44.lfl_v1
+  10986     9e52c8eb2836d4c5a4084a93c312c26a 45.lfl_v1
+  2310      dabeb06189be405f5716a134e56b31c0 46.lfl_v1
+  3006      65024a12b1f4f2d09b2b8f28bcdc544b 47.lfl_v1
+  2009      fd388f07e257ee9166a466baa73e883a 48.lfl_v1
+  1909      c309a526d78264c62f93f9963c8fb355 49.lfl_v1
+  1589      c9b8c328508f07ea7b004deca4d890a1 50.lfl_v1
+  3831      dd90cf4eed8d1e7e3028356dc3ba51ea 51.lfl_v1
+  1763      0e3babd2a29f78ac54d0aa0e6e2cf6f3 52.lfl_v1
 
 sha1sums: |
   f3aa6fe1ba7a342d28f2c59148a5b95ac217acd5  00.lfl
