@@ -15,7 +15,7 @@ help_text: |
   The german version works without a warning with ResidualVM 0.3.0 or GIT versions after 2015/02/08.
   Versions before that may display warnings about the MD5SUMs, but these can safely be ignored, the game will still run.
 
-missing_langs: [es,it]
+missing_langs: [es]
 
 packages:
   grimfandango-en-data:
@@ -148,34 +148,34 @@ packages:
     license:
     - license.txt_fr
 
-  #grimfandango-it-data:
-    #lang: it
-    #debian:
-      #provides: grimfandango-data
-    #install:
-    #- gfupd101.exe
-    #- credits.lab_it
-    #- data000.lab
-    #- data001.lab
-    #- data002.lab
-    #- data003.lab_it
-    #- data004.lab
-    #- local.lab_it
-    #- movie00.lab
-    #- movie01.lab_it
-    #- movie02.lab_it
-    #- movie03.lab_it
-    #- movie04.lab_it
-    #- vox0000.lab_it
-    #- vox0001.lab_it
-    #- vox0002.lab_it
-    #- vox0003.lab_it
-    #- vox0004.lab_it
-    #- year0mus.lab
-    #- year1mus.lab
-    #- year3mus.lab
-    #- year2mus.lab
-    #- year4mus.lab
+  grimfandango-it-data:
+    lang: it
+    debian:
+      provides: grimfandango-data
+    install:
+    - gfupd101.exe
+    - credits.lab_it
+    - data000.lab
+    - data001.lab
+    - data002.lab
+    - data003.lab
+    - data004.lab
+    - local.lab_it
+    - movie00.lab
+    - movie01.lab_it
+    - movie02.lab_it
+    - movie03.lab_it
+    - movie04.lab_it
+    - vox0000.lab_it
+    - vox0001.lab_it
+    - vox0002.lab_it
+    - vox0003.lab_it
+    - vox0004.lab_it
+    - year0mus.lab
+    - year1mus.lab
+    - year3mus.lab
+    - year2mus.lab
+    - year4mus.lab
 
   grimfandango-demo-en-data:
     demo_for: grimfandango-en-data
@@ -439,6 +439,29 @@ files:
   vox0004.lab_fr:
     install_as: vox0004.lab
 
+  credits.lab_it:
+    install_as: credits.lab
+  local.lab_it:
+    install_as: local.lab
+  movie01.lab_it:
+    install_as: movie01.lab
+  movie02.lab_it:
+    install_as: movie02.lab
+  movie03.lab_it:
+    install_as: movie03.lab
+  movie04.lab_it:
+    install_as: movie04.lab
+  vox0000.lab_it:
+    install_as: vox0000.lab
+  vox0001.lab_it:
+    install_as: vox0001.lab
+  vox0002.lab_it:
+    install_as: vox0002.lab
+  vox0003.lab_it:
+    install_as: vox0003.lab
+  vox0004.lab_it:
+    install_as: vox0004.lab
+
   # docs
   manual.pdf:
     install_to: $docdir
@@ -450,6 +473,12 @@ files:
     install_to: $docdir
     install_as: readme.txt
   license.txt_fr:
+    install_as: license.txt
+
+  readme.txt_it:
+    install_to: $docdir
+    install_as: readme.txt
+  license.txt_it:
     install_as: license.txt
 
 size_and_md5: |
@@ -552,33 +581,36 @@ size_and_md5: |
   20463     03938d1da0c48b05e470e58c2766e549 readme.txt_fr
   4878      6b49393e34e376c2f34914e107e4f0df license.txt_fr
 
+  608       6142624ce13ea3c9079aa80918010c4a local.lab_it
+  20443     1827307248d55c07642342c9213a4723 credits.lab_it
+  119782233 9fd30d0289f9b4d5c09e821a0a478db5 movie01.lab_it
+  67785654  129dad4e40987e91c5549c819d0dad1d movie02.lab_it
+  88938419  0fdb7dda9ebc049eac386d29bface366 movie03.lab_it
+  107969541 7c8d7e0f4beaca3910658290e8b14cf8 movie04.lab_it
+  4198635   c9e1a755f280b3ebff58578c4e5f1e52 vox0000.lab_it
+  62185775  a0455d5d883ed46f0bda5030e4b5654c vox0001.lab_it
+  97693353  616e4147c39268b650ce112bf79ea3a1 vox0002.lab_it
+  #alt ?    24bbf1f6d3d63ae07ad2dd06bd7dad8c vox0002.lab_it_alt
+  40819529  f900cb063fbd0ef2a0516e9a00291d13 vox0003.lab_it
+  41316151  57915d4dd3aa5aa44817477b7bd41ce6 vox0004.lab_it
+  15294     c8ab25a0096baec5ec1ff44ae3442a4c readme.txt_it
+  3935      754ae87aa7844f460a17a4030a62d82a license.txt_it
+
 md5sums: |
   # https://github.com/residualvm/residualvm/blob/master/engines/grim/md5check.cpp
   # documents many more md5sums for other versions supported by residualvm:
   67627f2d9314f9c0ae55dd2099fc052f  vox0000.lab_unpatched
 
-  #1827307248d55c07642342c9213a4723  credits.lab_it
   #836a2081d5e57ed6ef5eaade7f770b0e  credits.lab_es
-  #6142624ce13ea3c9079aa80918010c4a  local.lab_it
   #d22648d6787c2f8f0a789ee3ed0c08f7  local.lab_es
-  #9fd30d0289f9b4d5c09e821a0a478db5  movie01.lab_it
   #ede9fb7d035a5d4af496f23f811707a2  movie01.lab_es
-  #129dad4e40987e91c5549c819d0dad1d  movie02.lab_it
   #f5879c544f4c1f1f2e2d2e92c026c245  movie02.lab_es
-  #0fdb7dda9ebc049eac386d29bface366  movie03.lab_it
   #fb87d5a9e3a81d3ffd521dee4432c4da  movie03.lab_es
-  #7c8d7e0f4beaca3910658290e8b14cf8  movie04.lab_it
   #2daf2ec272a7be49cbfde053482f182c  movie04.lab_es
-  #c9e1a755f280b3ebff58578c4e5f1e52  vox0000.lab_it
   #076bf048de229ad8cefcb3d7c0bfd134  vox0000.lab_es
-  #a0455d5d883ed46f0bda5030e4b5654c  vox0001.lab_it
   #77cdd6f02bc3f7085bff17c454066de3  vox0001.lab_es
-  #616e4147c39268b650ce112bf79ea3a1  vox0002.lab_it
-  #24bbf1f6d3d63ae07ad2dd06bd7dad8c  vox0002.lab_it
   #c4484dadd4a33066290e1847523d7d64  vox0002.lab_es
-  #f900cb063fbd0ef2a0516e9a00291d13  vox0003.lab_it
   #1d4e94e3d3fd803a02c9993412359082  vox0003.lab_es
-  #57915d4dd3aa5aa44817477b7bd41ce6  vox0004.lab_it
   #3577a8b6cf013bc5b9c9133e29d1f4f0  vox0004.lab_es
 
 sha1sums: |
