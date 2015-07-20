@@ -3,11 +3,19 @@ longname: "Lands Of Lore - The Throne of Chaos"
 copyright: © 1993 Westwood Studios
 plugin: scummvm_common
 gameid: lol
+genre: Role-playing
 
 help_text: |
   Only the first episode "Lands of Lore: The Throne of Chaos"
   is supported by scummvm.
   The sequel "Guardians of Destiny" is a 3D game and is not supported.
+
+  If needed, this game can be patched using DOSBox with
+  the patches available here:
+  http://www.patches-scrolls.com/lands_of_lore.php
+  http://www.patches-scrolls.de/patch/2406/27013
+  or here:
+  http://www.landsoflore.de/download_patches_lol1.html
 
 packages:
   lands-of-lore-data:
@@ -222,7 +230,105 @@ packages:
     - fre/new6p.fnt
     - ger/new6p.fnt
 
+  lands-of-lore-floppy1-en-data:
+    longname: "Lands Of Lore - The Throne of Chaos (floppy)"
+    better_version: lands-of-lore-data
+    debian:
+      provides: lands-of-lore-floppy-data
+    install:
+    - westwood.1
+    - westwood.2
+    - westwood.3
+    - westwood.4
+    - westwood.5
+    - westwood.6
+    - westwood.7
+    - westwood.8
+
+  lands-of-lore-floppy2-en-data:
+    longname: "Lands Of Lore - The Throne of Chaos (floppy)"
+    better_version: lands-of-lore-data
+    debian:
+      provides: lands-of-lore-floppy-data
+    install:
+    - chapter1.pak
+    - chapter2.pak
+    - chapter3.pak
+    - chapter4.pak
+    - chapter5.pak
+    - chapter6.pak
+    - chapter7.pak
+    - chapter8.pak
+    - drivers.pak_floppy
+    - finale1.pak
+    - finale2.pak
+    - general.pak_floppy
+    - intro.pak
+    - introvoc.pak
+    - voc.pak_floppy
+
+  lands-of-lore-floppy2-fr-data:
+    longname: "Lands Of Lore - The Throne of Chaos (floppy/fr)"
+    better_version: lands-of-lore-data
+    debian:
+      provides: lands-of-lore-floppy-data
+    lang: fr
+    install:
+    - chapter1.pak_fr
+    - chapter2.pak_fr
+    - chapter3.pak_fr
+    - chapter4.pak_fr
+    - chapter5.pak_fr
+    - chapter6.pak_fr
+    - chapter7.pak_fr
+    - chapter8.pak_fr
+    - drivers.pak_floppy_fr
+    - finale1.pak_fr
+    - finale2.pak_fr
+    - general.pak_floppy_fr
+    - intro.pak_fr
+    - introvoc.pak_fr
+    - voc.pak_floppy
+
 files:
+  # Floppies
+  drivers.pak_floppy:
+    install_as: drivers.pak
+  general.pak_floppy:
+    install_as: general.pak
+  voc.pak_floppy:
+    install_as: voc.pak
+
+  chapter1.pak_fr:
+    install_as: chapter1.pak
+  chapter2.pak_fr:
+    install_as: chapter2.pak
+  chapter3.pak_fr:
+    install_as: chapter3.pak
+  chapter4.pak_fr:
+    install_as: chapter4.pak
+  chapter5.pak_fr:
+    install_as: chapter5.pak
+  chapter6.pak_fr:
+    install_as: chapter6.pak
+  chapter7.pak_fr:
+    install_as: chapter7.pak
+  chapter8.pak_fr:
+    install_as: chapter8.pak
+  drivers.pak_floppy_fr:
+    install_as: drivers.pak
+  finale1.pak_fr:
+    install_as: finale1.pak
+  finale2.pak_fr:
+    install_as: finale2.pak
+  general.pak_floppy_fr:
+    install_as: general.pak
+  intro.pak_fr:
+    install_as: intro.pak
+  introvoc.pak_fr:
+    install_as: introvoc.pak
+
+  # CD's
   drivers.pak:
     distinctive_name: false
   general.pak:
@@ -461,6 +567,49 @@ files:
     - readme.ger
 
 size_and_md5: |
+  # Floppy - alternative 1 : non installed
+  1352193   75cb0e67b7b0c83833b76b585102354f westwood.1
+  1457153   e57c7f6bde55d1aab23998280e8ab310 westwood.2
+  1457153   6d18ebea99e125f394b0de03b5fc8e32 westwood.3
+  1457153   11e5482ea2c68ed20bf86845996e54ed westwood.4
+  1457153   28f36d5b6fe0daea4b588814b0ca4ff6 westwood.5
+  1457153   9792aad1cd30e3d08c6b38c1d27a7322 westwood.6
+  1457153   f421cdceb8724a0e3e964b10db5f5eca westwood.7
+  1364293   7fbbee6eda00961a71c6d24ec4205f1c westwood.8
+
+  # Floppy - alternative 2: installed
+  2287611   aeb147682a968b50c645154e7c027637 chapter1.pak
+  864560    a1e3dd83179c16003d9cae511b536233 chapter2.pak
+  1042409   6a7a8db06b43fd0d617ed260ee9cf2c2 chapter3.pak
+  746730    446d2d1fdb489ab698bf8d35e2f5f349 chapter4.pak
+  884328    5b83412d58eba6c6821a0fe9b579af33 chapter5.pak
+  1946461   6e458810be7aded44febba314e76460c chapter6.pak
+  325053    482308aba1c40ee32449b91b0c63b990 chapter7.pak
+  1147599   65a7d99f32b76c203f46f2771874cfc0 chapter8.pak
+  45132     a7b5a653d5f4c9dbfcc54ce9364ddb3d drivers.pak_floppy
+  839152    aa625a759fd65a54a7e03a837e413a06 finale1.pak
+  560678    a1db859b6bb8c04cdc36f605f00903c5 finale2.pak
+  1383453   74aa23c530155c2c9a7f894a616b4464 general.pak_floppy
+  932733    a08161bf8550ffccaf0c2f1f935c2b67 intro.pak
+  1785145   d77f40375fac839b17e3168e6909b1e6 introvoc.pak
+  2276340   f2343997ea753e8ae638a7fde831ba30 voc.pak_floppy
+
+  2290368   3bf0f601c7916aa72471de405730890a chapter1.pak_fr
+  865245    057629b5a653ae02161861329f3d8a46 chapter2.pak_fr
+  1043531   0747e79d0dc8404f694d0893779990ea chapter3.pak_fr
+  747266    9174e445c85c0c4e53d9dc9994335d74 chapter4.pak_fr
+  884836    138111d5383eb98668b3d451ff801aa5 chapter5.pak_fr
+  1949272   daf72d02616c14c03003f8f3cfe7addf chapter6.pak_fr
+  325124    733e33c8444c93843dac3b683c283eaa chapter7.pak_fr
+  1148461   57c97b5cf542c488c2825f82042e3b3f chapter8.pak_fr
+  44885     1ce7919e1b33935d18f9efeec886978a drivers.pak_floppy_fr
+  839239    82458a649bff50e7242bd5db392916e7 finale1.pak_fr
+  608044    6522d53a9aa8e3e8b4465e1aba3cd022 finale2.pak_fr
+  1395249   dd01e41e123cd905180d0fd646923382 general.pak_floppy_fr
+  941898    6fc916e9fb55b5699e6a94b36193dbc8 intro.pak_fr
+  1890471   4fe102edb9345e60f77c93e274686d27 introvoc.pak_fr
+
+  # CD
   20431     e861e7725ba773f53a16fc913dee08d1 lore01a.adl
   21343     2cdd56d91d8fb0867eaf2c3b98d3316d lore01b.adl
   19511     50b1f51b54aaa81ac3090f7cc75ae4e4 lore01c.adl
