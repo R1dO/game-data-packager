@@ -1,0 +1,669 @@
+---
+longname: "Lands Of Lore - The Throne of Chaos"
+copyright: © 1993 Westwood Studios
+plugin: scummvm_common
+gameid: lol
+
+help_text: |
+  Only the first episode "Lands of Lore: The Throne of Chaos"
+  is supported by scummvm.
+  The sequel "Guardians of Destiny" is a 3D game and is not supported.
+
+packages:
+  lands-of-lore-data:
+    langs: [en,de,fr]
+    gog:
+      url: lands_of_lore_1_2
+      game: lands_of_lore_the_throne_of_chaos
+    install:
+    - lore01a.adl
+    - lore01b.adl
+    - lore01c.adl
+    - lore01d.adl
+    - lore02a.adl
+    - lore03a.adl
+    - lore03b.adl
+    - lore04a.adl
+    - lore05a.adl
+    - lore05b.adl
+    - lore06a.adl
+    - lore06b.adl
+    - lore07a.adl
+    - lore08a.adl
+    - lore08b.adl
+    - loreintr.adl
+    - loresfx.adl
+
+    - filedata.fdt
+
+    - catwalk.pak
+    - cave1.pak
+    - cimmeria.pak
+    - drivers.pak
+    - forest1.pak
+    - general.pak
+    - keep.pak
+    - manor.pak
+    - mine1.pak
+    - monster.pak
+    - music.pak
+    - ruin.pak
+    - startup.pak
+    - swamp.pak
+    - tower1.pak
+    - urbish.pak
+    - voc.pak
+    - yvel.pak
+
+    - l01.pak
+    - l02.pak
+    - l03.pak
+    - l04.pak
+    - l05.pak
+    - l06.pak
+    - l07.pak
+    - l08.pak
+    - l09.pak
+    - l10.pak
+    - l11.pak
+    - l12.pak
+    - l13.pak
+    - l14.pak
+    - l15.pak
+    - l16.pak
+    - l17.pak
+    - l18.pak
+    - l19.pak
+    - l20.pak
+    - l21.pak
+    - l22.pak
+    - l23.pak
+    - l24.pak
+    - l25.pak
+    - l26.pak
+    - l27.pak
+    - l28.pak
+    - l29.pak
+    - o00a.pak
+    - o01a.pak
+    - o01b.pak
+    - o01c.pak
+    - o01d.pak
+    - o01e.pak
+    - o02a.pak
+    - o02b.pak
+    - o03a.pak
+    - o03b.pak
+    - o03c.pak
+    - o04a.pak
+    - o07a.pak
+    - o08a.pak
+    - o10a.pak
+    - o11a.pak
+    - o12a.pak
+    - o14a.pak
+    - o16a.pak
+    - o17a.pak
+    - o18a.pak
+    - o19a.pak
+    - o21a.pak
+    - o22a.pak
+    - o22b.pak
+    - o22c.pak
+    - o22d.pak
+    - o23a.pak
+    - o23b.pak
+    - o24a.pak
+    - o26a.pak
+    - o27a.pak
+    - o28a.pak
+    - o29a.pak
+
+    - 00.tlk
+    - 01.tlk
+    - 02.tlk
+    - 03.tlk
+    - 04.tlk
+    - 05.tlk
+    - 06.tlk
+    - 07.tlk
+    - 08.tlk
+    - 09.tlk
+    - 10.tlk
+    - 11.tlk
+    - 12.tlk
+    - 13.tlk
+    - 14.tlk
+    - 15.tlk
+    - 16.tlk
+    - 17.tlk
+    - 18.tlk
+    - 19.tlk
+    - 20.tlk
+    - 21.tlk
+    - 22.tlk
+    - 23.tlk
+    - 24.tlk
+    - 25.tlk
+    - 26.tlk
+    - 27.tlk
+    - 28.tlk
+    - 29.tlk
+    - eng/finale.pak
+    - eng/finale1.pak
+    - eng/finale2.pak
+    - eng/general.pak
+    - eng/history.pak
+    - eng/intro1.pak
+    - eng/intro2.pak
+    - eng/intro3.pak
+    - eng/intro4.pak
+    - eng/intro5.pak
+    - eng/intro6.pak
+    - eng/intro7.pak
+    - eng/intro8.pak
+    - eng/intro9.pak
+    - eng/introvoc.pak
+    - eng/startup.pak
+
+    - fre/finale.pak
+    - fre/finale1.pak
+    - fre/finale2.pak
+    - fre/general.pak
+    - fre/history.pak
+    - fre/intro1.pak
+    - fre/intro2.pak
+    - fre/intro3.pak
+    - fre/intro4.pak
+    - fre/intro5.pak
+    - fre/intro6.pak
+    - fre/intro7.pak
+    - fre/intro8.pak
+    - fre/intro9.pak
+    - fre/introvoc.pak
+    - fre/startup.pak
+
+    - ger/finale.pak
+    - ger/finale1.pak
+    - ger/finale2.pak
+    - ger/general.pak
+    - ger/history.pak
+    - ger/intro1.pak
+    - ger/intro2.pak
+    - ger/intro3.pak
+    - ger/intro4.pak
+    - ger/intro5.pak
+    - ger/intro6.pak
+    - ger/intro7.pak
+    - ger/intro8.pak
+    - ger/intro9.pak
+    - ger/introvoc.pak
+    - ger/startup.pak
+    optional:
+    # docs
+    - readme.eng
+    - readme.fre
+    - readme.ger
+    - manual.pdf
+    # seems not used
+    - eng/blend.tab
+    - fre/blend.tab
+    - ger/blend.tab
+    - eng/blend2.tab
+    - fre/blend2.tab
+    - ger/blend2.tab
+    - eng/drivers.pak
+    - fre/drivers.pak
+    - ger/drivers.pak
+    - eng/finale.tds
+    - fre/finale.tds
+    - ger/finale.tds
+    - eng/new6p.fnt
+    - fre/new6p.fnt
+    - ger/new6p.fnt
+
+files:
+  drivers.pak:
+    distinctive_name: false
+  general.pak:
+    distinctive_name: false
+  startup.pak:
+    distinctive_name: false
+
+  readme.eng:
+    install_to: $docdir
+  readme.fre:
+    install_to: $docdir
+  readme.ger:
+    install_to: $docdir
+
+  manual.pdf:
+    install_to: $docdir
+  setup_lands_of_lore_2.1.0.19.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - lore01a.adl
+    - lore01b.adl
+    - lore01c.adl
+    - lore01d.adl
+    - lore02a.adl
+    - lore03a.adl
+    - lore03b.adl
+    - lore04a.adl
+    - lore05a.adl
+    - lore05b.adl
+    - lore06a.adl
+    - lore06b.adl
+    - lore07a.adl
+    - lore08a.adl
+    - lore08b.adl
+    - loreintr.adl
+    - loresfx.adl
+    - voc.pak
+    - manual.pdf
+    - game.dat
+
+  # ISO CD image
+  game.dat:
+    unpack:
+      format: unar
+      unpack:
+      - '*.FDT'
+      - '*.PAK'
+      - '*.TLK'
+      - 'README.*'
+      # eng/fre/ger
+      - '*.TAB'
+      - '*.TDS'
+      - '*.FNT'
+    provides:
+    - filedata.fdt
+    - catwalk.pak
+    - cave1.pak
+    - cimmeria.pak
+    - drivers.pak
+    - general.pak
+    - forest1.pak
+    - keep.pak
+    - manor.pak
+    - mine1.pak
+    - monster.pak
+    - music.pak
+    - ruin.pak
+    - startup.pak
+    - swamp.pak
+    - tower1.pak
+    - urbish.pak
+    - voc.pak
+    - yvel.pak
+
+    - l01.pak
+    - l02.pak
+    - l03.pak
+    - l04.pak
+    - l05.pak
+    - l06.pak
+    - l07.pak
+    - l08.pak
+    - l09.pak
+    - l10.pak
+    - l11.pak
+    - l12.pak
+    - l13.pak
+    - l14.pak
+    - l15.pak
+    - l16.pak
+    - l17.pak
+    - l18.pak
+    - l19.pak
+    - l20.pak
+    - l21.pak
+    - l22.pak
+    - l23.pak
+    - l24.pak
+    - l25.pak
+    - l26.pak
+    - l27.pak
+    - l28.pak
+    - l29.pak
+    - o00a.pak
+    - o01a.pak
+    - o01b.pak
+    - o01c.pak
+    - o01d.pak
+    - o01e.pak
+    - o02a.pak
+    - o02b.pak
+    - o03a.pak
+    - o03b.pak
+    - o03c.pak
+    - o04a.pak
+    - o07a.pak
+    - o08a.pak
+    - o10a.pak
+    - o11a.pak
+    - o12a.pak
+    - o14a.pak
+    - o16a.pak
+    - o17a.pak
+    - o18a.pak
+    - o19a.pak
+    - o21a.pak
+    - o22a.pak
+    - o22b.pak
+    - o22c.pak
+    - o22d.pak
+    - o23a.pak
+    - o23b.pak
+    - o24a.pak
+    - o26a.pak
+    - o27a.pak
+    - o28a.pak
+    - o29a.pak
+
+    - 00.tlk
+    - 01.tlk
+    - 02.tlk
+    - 03.tlk
+    - 04.tlk
+    - 05.tlk
+    - 06.tlk
+    - 07.tlk
+    - 08.tlk
+    - 09.tlk
+    - 10.tlk
+    - 11.tlk
+    - 12.tlk
+    - 13.tlk
+    - 14.tlk
+    - 15.tlk
+    - 16.tlk
+    - 17.tlk
+    - 18.tlk
+    - 19.tlk
+    - 20.tlk
+    - 21.tlk
+    - 22.tlk
+    - 23.tlk
+    - 24.tlk
+    - 25.tlk
+    - 26.tlk
+    - 27.tlk
+    - 28.tlk
+    - 29.tlk
+
+    - eng/blend.tab
+    - eng/blend2.tab
+    - eng/drivers.pak
+    - eng/finale.pak
+    - eng/finale.tds
+    - eng/finale1.pak
+    - eng/finale2.pak
+    - eng/general.pak
+    - eng/history.pak
+    - eng/intro1.pak
+    - eng/intro2.pak
+    - eng/intro3.pak
+    - eng/intro4.pak
+    - eng/intro5.pak
+    - eng/intro6.pak
+    - eng/intro7.pak
+    - eng/intro8.pak
+    - eng/intro9.pak
+    - eng/introvoc.pak
+    - eng/new6p.fnt
+    - eng/startup.pak
+    - fre/blend.tab
+    - fre/blend2.tab
+    - fre/drivers.pak
+    - fre/finale.pak
+    - fre/finale.tds
+    - fre/finale1.pak
+    - fre/finale2.pak
+    - fre/general.pak
+    - fre/history.pak
+    - fre/intro1.pak
+    - fre/intro2.pak
+    - fre/intro3.pak
+    - fre/intro4.pak
+    - fre/intro5.pak
+    - fre/intro6.pak
+    - fre/intro7.pak
+    - fre/intro8.pak
+    - fre/intro9.pak
+    - fre/introvoc.pak
+    - fre/new6p.fnt
+    - fre/startup.pak
+    - ger/blend.tab
+    - ger/blend2.tab
+    - ger/drivers.pak
+    - ger/finale.pak
+    - ger/finale.tds
+    - ger/finale1.pak
+    - ger/finale2.pak
+    - ger/general.pak
+    - ger/history.pak
+    - ger/intro1.pak
+    - ger/intro2.pak
+    - ger/intro3.pak
+    - ger/intro4.pak
+    - ger/intro5.pak
+    - ger/intro6.pak
+    - ger/intro7.pak
+    - ger/intro8.pak
+    - ger/intro9.pak
+    - ger/introvoc.pak
+    - ger/new6p.fnt
+    - ger/startup.pak
+    - readme.eng
+    - readme.fre
+    - readme.ger
+
+size_and_md5: |
+  20431     e861e7725ba773f53a16fc913dee08d1 lore01a.adl
+  21343     2cdd56d91d8fb0867eaf2c3b98d3316d lore01b.adl
+  19511     50b1f51b54aaa81ac3090f7cc75ae4e4 lore01c.adl
+  18870     a5ee8736b634719743129ac6d66ce800 lore01d.adl
+  22717     8883e8c4968f0d20e9ec3c338d74d5ec lore02a.adl
+  21516     99e40ae556246e40e39816be7d773d58 lore03a.adl
+  10971     1cfd041e13460bccda10a0d604ee928c lore03b.adl
+  15170     da5077809e8ee6e6bb4d3beadec12243 lore04a.adl
+  17383     36d219afb390314147a5bada9aae2d91 lore05a.adl
+  24180     2ea68a4b69db331485f6f4d79f99e23b lore05b.adl
+  18314     2eaf8e4968017726a385003c98603582 lore06a.adl
+  22981     66263b49e938d1f23f942a029387ed8d lore06b.adl
+  11381     c75cae719ffee9cca5cdd6861dde3c9c lore07a.adl
+  23215     5f5805303818c61b8daf61d5178d0b52 lore08a.adl
+  24376     da90e597f5e7ef797bfba4aa73144803 lore08b.adl
+  14181     36bda6946017a7cc4a1dd259a7223d82 loreintr.adl
+  9176      7a6b9118021ca01ae1964ba2260a5b72 loresfx.adl
+  2276340   c5b639b18295f3d91b270f6a02bee9bf voc.pak
+
+  14605385  4370824654e6374c103fad6ad7c20ca5 00.tlk
+  26406632  ae4ed8a3f210edad13d7b919702de18d 01.tlk
+  13504571  cd2131495615f6cdb1170a951f74a682 02.tlk
+  13494997  99a95929b55dde7b614fdf841c03c7e3 03.tlk
+  8821656   000a403a1e5d20372974404bf44b511a 04.tlk
+  1224317   96ea375e87337b1731600b75d8f50a72 05.tlk
+  2767935   feed98bb4ac43d1155293329ec12b8e7 06.tlk
+  5262372   91d0d2cfdb910d574d3175f6b31c3654 07.tlk
+  5509618   c567b8b60a599da24ca8781fd7991e0b 08.tlk
+  986550    274ddadbb0b64743d26c1553fc4bbb7d 09.tlk
+  12264877  6443010e100e05a94cbf765f107c285d 10.tlk
+  14754115  d3888a1c2adf8b7e4393ff925bdcaf69 11.tlk
+  9162690   df5f83d4e786466809f8f3e6658c0baf 12.tlk
+  2172293   e0b5660cb6a435505deb32f9827f6752 13.tlk
+  4175241   94edd6e2925d3ec93280338812cd7de7 14.tlk
+  2992132   667d9c1511b1bfaaad56ea41d82fded0 15.tlk
+  2422928   ee227271fcb035e9baa993ff4e6f9d54 16.tlk
+  3975649   dc4483f14a2521e3a76d6e8dcc92d5d5 17.tlk
+  6198856   f260903db7d21d5c717b201d1a767e99 18.tlk
+  1738755   e835689b62556e13588bd50e9bf360bc 19.tlk
+  1863218   8947e9aa6d7f96d9a92cbaae5ef91c8b 20.tlk
+  2472365   e318b9bf839da1d22e59f5ab0ceb5a42 21.tlk
+  28970938  0a14b3f9ed28c860a165973b5cce9834 22.tlk
+  9591698   e91b0f5abe98a23961c962b6c8d82636 23.tlk
+  5944066   d032272f6ecad3e8bdaec21d6b7a5d4c 24.tlk
+  44138     756b51f1d8c5d871fa147defd7d7beca 25.tlk
+  7959091   b8fdfcd6ff742d273c29a56a03b0c637 26.tlk
+  6112672   9d5fab2e426c4ba0a8eceb6733d2d493 27.tlk
+  7574836   c45b326ff6d74e5c20f1e19e69281d6b 28.tlk
+  5270328   f5773309779809a37f804bd9d1e4be5f 29.tlk
+  116275    acc7af157680e5e078b37d21a98f0619 catwalk.pak
+  122924    761988fbfa247d3a9a1ede553c8076e9 cave1.pak
+  114388    fa3035f11fd3d423d7a171eedc1dc32d cimmeria.pak
+  41706     c975df2ec45287018e18ffe2785c3861 drivers.pak
+  65536     a19778df81d895d2dc8fbd5bb29a5e5f eng/blend.tab
+  65536     7b48997a495f0165f9b76e0378c9f245 eng/blend2.tab
+  44561     aac458d14adf1497932681a03e110437 eng/drivers.pak
+  687111    792ff5dbc97a409ab9a7f4d2c1fd57bb eng/finale.pak
+  210583    99c571fad684031d55a966c7d81e8d9f eng/finale.tds
+  843801    3c1ad626fc4564ac75514f1e7294081f eng/finale1.pak
+  911195    92d03baea6e6f9febb67bb3f3be3656c eng/finale2.pak
+  1225285   93b3aac5c94b075dc41d2d69e279af00 eng/general.pak
+  7777512   64e79b071a507fd96f74f20391eb3e00 eng/history.pak
+  15561     b6709f89ad1d45e5fabe47eef3487bd1 eng/intro1.pak
+  66538     0607faaef3f51f5bac660eb8a7cd0385 eng/intro2.pak
+  106749    9ac35785870039929c44fa24b0a76be4 eng/intro3.pak
+  61255     249026a3587230da636fb86ffad13b5e eng/intro4.pak
+  129658    e0ad13529d7636f3c82227a86616be44 eng/intro5.pak
+  61547     47eada3fce4e5eb0d4340de45c24fcdb eng/intro6.pak
+  123934    7100076b4fa7d33f9e4be49c11ea669d eng/intro7.pak
+  179365    66edc357abab6f443cefd0f4cf56a6f0 eng/intro8.pak
+  132660    bcb71f3b30e8e825c14b2d62c3d00d51 eng/intro9.pak
+  6863477   6d8a45bdd565c4f57c997ce04c2d307b eng/introvoc.pak
+  3213      cd35d6bec9b59a5d1bdf256c7cf620a6 eng/new6p.fnt
+  104974    e32eb42dda11b5889a8ccab2d00d52a0 eng/startup.pak
+  39941     02f276f7a69487a058ba56844bdf2298 filedata.fdt
+  113589    0db95c5f992a013076518a5fbb7bcef9 forest1.pak
+  65536     a19778df81d895d2dc8fbd5bb29a5e5f fre/blend.tab
+  65536     7b48997a495f0165f9b76e0378c9f245 fre/blend2.tab
+  44561     aac458d14adf1497932681a03e110437 fre/drivers.pak
+  687111    792ff5dbc97a409ab9a7f4d2c1fd57bb fre/finale.pak
+  210724    8c6766d0b95e9b5e3394cb7164738ef4 fre/finale.tds
+  843888    ddfc12443906d41f7490e2667e26abcd fre/finale1.pak
+  911318    1d4996ee90bc2ac004e3916051cb16a9 fre/finale2.pak
+  1225285   93b3aac5c94b075dc41d2d69e279af00 fre/general.pak
+  7777512   64e79b071a507fd96f74f20391eb3e00 fre/history.pak
+  15561     b6709f89ad1d45e5fabe47eef3487bd1 fre/intro1.pak
+  66538     0607faaef3f51f5bac660eb8a7cd0385 fre/intro2.pak
+  106749    9ac35785870039929c44fa24b0a76be4 fre/intro3.pak
+  61255     249026a3587230da636fb86ffad13b5e fre/intro4.pak
+  129658    e0ad13529d7636f3c82227a86616be44 fre/intro5.pak
+  61547     47eada3fce4e5eb0d4340de45c24fcdb fre/intro6.pak
+  123934    7100076b4fa7d33f9e4be49c11ea669d fre/intro7.pak
+  179365    66edc357abab6f443cefd0f4cf56a6f0 fre/intro8.pak
+  132668    275af824c177218f43799c00f4e44bee fre/intro9.pak
+  6863477   6d8a45bdd565c4f57c997ce04c2d307b fre/introvoc.pak
+  3213      cd35d6bec9b59a5d1bdf256c7cf620a6 fre/new6p.fnt
+  105227    cb73ac220f131f33024e9f358802f3a9 fre/startup.pak
+  1225033   a7dbbf23c4438967f89dc221bc659e88 general.pak
+  65536     a19778df81d895d2dc8fbd5bb29a5e5f ger/blend.tab
+  65536     7b48997a495f0165f9b76e0378c9f245 ger/blend2.tab
+  44561     aac458d14adf1497932681a03e110437 ger/drivers.pak
+  687111    792ff5dbc97a409ab9a7f4d2c1fd57bb ger/finale.pak
+  210724    4097369aa113164f8c3141e906065d8a ger/finale.tds
+  843639    12ad60ec86878efc67447463eda89cc5 ger/finale1.pak
+  911419    76f36f355c3a68ecb2bb7eded653713f ger/finale2.pak
+  1225285   93b3aac5c94b075dc41d2d69e279af00 ger/general.pak
+  7777512   64e79b071a507fd96f74f20391eb3e00 ger/history.pak
+  15561     b6709f89ad1d45e5fabe47eef3487bd1 ger/intro1.pak
+  66538     0607faaef3f51f5bac660eb8a7cd0385 ger/intro2.pak
+  106749    9ac35785870039929c44fa24b0a76be4 ger/intro3.pak
+  61255     249026a3587230da636fb86ffad13b5e ger/intro4.pak
+  129658    e0ad13529d7636f3c82227a86616be44 ger/intro5.pak
+  61547     47eada3fce4e5eb0d4340de45c24fcdb ger/intro6.pak
+  123934    7100076b4fa7d33f9e4be49c11ea669d ger/intro7.pak
+  179365    66edc357abab6f443cefd0f4cf56a6f0 ger/intro8.pak
+  132709    2dae2954557b247facbaac8e97ff1e7f ger/intro9.pak
+  6863477   6d8a45bdd565c4f57c997ce04c2d307b ger/introvoc.pak
+  3213      cd35d6bec9b59a5d1bdf256c7cf620a6 ger/new6p.fnt
+  105329    fc6872a2a903a2aea4ea9b2bf2ef249b ger/startup.pak
+  69045     576ded0fa6827c76c957fff163d9c227 keep.pak
+  68733     759a0ac26808d77ea968bd392355ba1d l01.pak
+  76265     cf0828cf2b79133d565687f268dde42a l02.pak
+  29006     ba8acb8488487b5f67ae6cf28e70948c l03.pak
+  55780     1f8a83d9954ce3dc7e8b06acda0a49cf l04.pak
+  11392     a63977595f35dd5dbdb0a1fc29921f88 l05.pak
+  70595     87dc97c8f11f76d2c1808d20a51f5d85 l06.pak
+  44336     19ca20e95e1b071b1e074bc400eacd15 l07.pak
+  61234     81d0e652ab61a3a575b324f508c6be3d l08.pak
+  36326     cac53e6c05b4724e901da693d9fe3853 l09.pak
+  60830     df49f4301bdeb9362c35d40b27dc7d06 l10.pak
+  104776    59bb6709ddf93cc5da33df8e19a0b928 l11.pak
+  70174     5ac80bc212c82378dfd637a064deb161 l12.pak
+  42820     6ba4ab706e7b622d76208698fad51b7c l13.pak
+  43509     0f4ff76e2e3e323b79668f7d496dcced l14.pak
+  70933     dd176b17135dfe5efcca6627b3737bf9 l15.pak
+  17131     622e46dab635af19c698f99f693dc7f4 l16.pak
+  53030     b8b8c52cc979f887feb4461986ed6232 l17.pak
+  56557     084f69e8b5bdc9a911a4edab3c87058b l18.pak
+  32983     74b73e820041e926901681c97841d835 l19.pak
+  77761     830c2f7b133e20033005a17317869512 l20.pak
+  29204     7916e971e9a364961c9e3f4675ab1c6d l21.pak
+  55365     5c18f64caebac270202057d7a1d19b35 l22.pak
+  61774     e15f536017d72c136b939f27e4feca3e l23.pak
+  62382     a3e3e86924694a886643268f4366f37b l24.pak
+  10372     e6f2ca2f56840ea41f0a2342e2c22e3d l25.pak
+  51890     6b9ee6e2e8b8468bf90c5f1783f7de08 l26.pak
+  51251     2b114134fd25016f25780072aa4f0618 l27.pak
+  87467     bf292fda5163d0a1f9d87e8232e36a77 l28.pak
+  280143    991bcc5b1f8d88952a60659582afab33 l29.pak
+  75440     b7042f71d02a4cb93335c06dd76cc130 manor.pak
+  139113    05276efe880d11d0ce2592c273cd9111 mine1.pak
+  110328    8aca778a32b7fb4934e5f19d8f49cdfe monster.pak
+  611958    835eea23c48b980abfbce792f0a98ae8 music.pak
+  235741    0485dae78f6ea2191268c43f81b94150 o00a.pak
+  119602    b85a70ac5b1e6ca5c1fe9a0d21c06b3b o01a.pak
+  287171    046ed337697c5e699a4d913e706649bb o01b.pak
+  576943    2793686dc2a099c0d8d4d5b828f50944 o01c.pak
+  59134     7ff675923e05d2763967db60ee10ce6b o01d.pak
+  171444    fa72fd9b1efab596627192a87504ba71 o01e.pak
+  155224    169c22806c4db3c47bd80c40c569b7a0 o02a.pak
+  256427    6d89dfe16007f78a58324e7519958258 o02b.pak
+  45535     33a9b6b317fd13b193198485ab125c63 o03a.pak
+  111690    01343ac8556ac81e94d907fadf3e0112 o03b.pak
+  50638     39bc31c64527b8f12ea6be25986a4521 o03c.pak
+  38977     5b4ba6ad4e2ac4f0ebd02ad9b96cac07 o04a.pak
+  114828    9edc46c474272c3dab56951fe3421d9f o07a.pak
+  208017    a3a8cd1b7eb10b7df4b300ddb47874f1 o08a.pak
+  276087    b32b17d6c28b80ef2b886c8855a16858 o10a.pak
+  239178    91af2033db6f136f7047fc27b2350802 o11a.pak
+  80415     c9ded9fa0ad0695ab6a95f69940b0bf8 o12a.pak
+  73052     5a5318813983a687c86b6b0ed94e304f o14a.pak
+  94521     52226152ef5d68d377d608f5d3cb396c o16a.pak
+  71132     1dc6732a9336ff5a6f1d9b59cc37e004 o17a.pak
+  123351    b25a9b6ed3a2fbec0e306e369b878f89 o18a.pak
+  106087    5c81e851c533181cf4bcf755e6011467 o19a.pak
+  93086     da8cca61b0a4365f08414146d9e8e7fd o21a.pak
+  221353    88cbc9d4a590c039cb8b5db064919c8d o22a.pak
+  69970     cde7ade1d598aae9fd8a05a7739c3b16 o22b.pak
+  389704    e3caec37e44f30bf0eafdca819d93364 o22c.pak
+  383872    dd9def5d428f1a30ffe882185cb58f8f o22d.pak
+  206411    62748d75c270893987a94705330dc9f2 o23a.pak
+  148956    a6d1d1c97718efa783ce507d96b5cbc7 o23b.pak
+  253056    6797506a8b25c4d03b74ef424d1c907b o24a.pak
+  167565    6b9cfbe73e49652f07720b410dbcb288 o26a.pak
+  133644    e3cff1e6a907e1764fc38cd20e875717 o27a.pak
+  345148    d160a4c1d991d6f0d150cd678f2d72b8 o28a.pak
+  36596     3acadc4617c67c2b4461a3556a99d95c o29a.pak
+  66099     57267f084aeab195df4f5bc02e294ce4 ruin.pak
+  167273    fc8c8737a5a79a8ca895c9c5185a4a31 startup.pak
+  87911     8309ad94171b57ebab4be4640bc71188 swamp.pak
+  73128     0ec2be9b7403160d93e93810c45afb3b tower1.pak
+  101968    a38d47af9386372a1f449fcdd8674136 urbish.pak
+  118524    8c5743f03ac7424d539feee65188365f yvel.pak
+  15115     fa151ec4b97df3f7f96c7c168aecd21e readme.eng
+  17595     658cc7ae966102d8831732361267d8a5 readme.fre
+  14400     d56331ac32fe5d360a6ce3e7f4ced391 readme.ger
+  3226017   aae7ad45bbd7a9a80eb6ab6f6f1caf26 westwood.001
+
+  2884474   fd7cc3b8653c4dcde618acfb72a55e99 manual.pdf
+  124064472 f89c72cd8e9980538c42b68218501dd7 setup_lands_of_lore_2.1.0.19.exe
+  306751488 c394e86662462133867fc2d5c9740bdc game.dat
+
+sha1sums: |
+  334c9eb5849a82d16c4fb6ef2d6b5d92c7f09981  setup_lands_of_lore_2.1.0.19.exe
+...
+
