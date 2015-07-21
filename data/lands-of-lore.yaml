@@ -5,6 +5,23 @@ plugin: scummvm_common
 gameid: lol
 genre: Role-playing
 
+missing_langs: [es,it]
+# http://forum.dune2k.com/topic/25600-dune-ii-v107-englishitalianspanish/
+#
+# Back in the early 90's, Westwood used to do Spanish (and I suppose, Italian too)
+# translations to their games. Eye of the Beholder, Eye of the Beholder II: The Legend of Darkmoon,
+# The Legend of Kyrandia, The Legend of Kyrandia Book Two: The Hand of Fate
+# and Lands of Lore: The Throne of Chaos, together with Dune II,
+# were all released in Spanish, but only in their original floppy releases.
+#
+# When Westwood developed the CD-ROM re-releases of all of them,
+# they only considered English, German and French as languages available for these versions,
+# dismissing the already developed Spanish and Italian translations completely.
+#
+# ... While there are already several patches for the CD-ROM versions of ...
+# Lands of Lore game which add the Spanish translations of the floppy versions
+# in order to have voiced translated versions of all of them, ...
+
 help_text: |
   Only the first episode "Lands of Lore: The Throne of Chaos"
   is supported by scummvm.
