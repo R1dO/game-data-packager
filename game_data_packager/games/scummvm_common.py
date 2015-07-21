@@ -89,7 +89,7 @@ class ScummvmGameData(GameData):
         entry['Icon'] = icon
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
-        entry['Categories'] = 'Game'
+        entry['Categories'] = 'Game;%sGame' % self.genre.replace(' ','')
         gameid = package.gameid or self.gameid
         if len(package.langs) == 1:
             entry['Exec'] = 'scummvm -p /%s %s' % (package.install_to, gameid)
