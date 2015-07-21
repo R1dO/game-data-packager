@@ -727,6 +727,230 @@ packages:
     optional:
     - manual.pdf
 
+  kyrandia1-floppy2-en-data:
+    longname: "Legend of Kyrandia I (floppy)"
+    better_version: kyrandia1-en-data
+    debian:
+      provides: kyrandia1-data
+    install:
+    - intro.adl
+    - kyra1a.adl
+    - kyra1b.adl
+    - kyra2a.adl
+    - kyra3a.adl
+    - kyra4a.adl
+    - kyra4b.adl
+    - kyra5a.adl
+    - kyra5b.adl
+    - kyramisc.adl
+    - kallak.col
+    - ktitle.col
+    - kyrandia.col
+    - mal-kal.col
+    - origpal.col
+    - palette.col
+    - temp.col
+    - tree_exp.col
+    - westwood.col
+    - ww.col
+    - wwlogo.col
+    - 8fat.cps
+    - 8slim.cps
+    - amulet3.cps
+    - bead.cps
+    - bottom.cps
+    - brandon.cps
+    - branston.cps
+    - branwill.cps
+    - buttons2.cps
+    - chalet.cps
+    - drink.cps
+    - edgeb.cps
+    - effects.cps
+    - feststh.cps
+    - flute1.cps
+    - flute2.cps
+    - frame1.cps
+    - frame2.cps
+    - fsouthb.cps
+    - fwststh.cps
+    - gemheal.cps
+    - healbr1.cps
+    - healbr2.cps
+    - herman.cps
+    - items.cps
+    - jewels3.cps
+    - main15.cps
+    - mal-kal.cps
+    - malcolm.cps
+    - merith.cps
+    - mouse.cps
+    - note.cps
+    - poison.cps
+    - reunion.cps
+    - snow1a.cps
+    - snow2a.cps
+    - telekin.cps
+    - text.cps
+    - top.cps
+    - tree.cps
+    - writing.cps
+    - _item_ht.dat
+    - edgeb.dat
+    - feststh.dat
+    - fsouthb.dat
+    - fwststh.dat
+    - _npc.emc
+    - _startup.emc
+    - alchemy.emc
+    - algae.emc
+    - altar.emc
+    - arch.emc
+    - balcony.emc
+    - belroom.emc
+    - bonkbg.emc
+    - bridge.emc
+    - brins.emc
+    - broken.emc
+    - burn.emc
+    - castle.emc
+    - catacom.emc
+    - cave.emc
+    - caveb.emc
+    - cgate.emc
+    - chasm.emc
+    - cliff.emc
+    - cliffb.emc
+    - darms.emc
+    - dead.emc
+    - dnstair.emc
+    - dragon.emc
+    - edge.emc
+    - edgeb.emc
+    - emcav.emc
+    - enter.emc
+    - extgem.emc
+    - extheal.emc
+    - extpot.emc
+    - extspel.emc
+    - falls.emc
+    - feststh.emc
+    - fgowest.emc
+    - fnorth.emc
+    - foresta.emc
+    - forestb.emc
+    - forestc.emc
+    - fountn.emc
+    - foyer.emc
+    - fsouth.emc
+    - fsouthb.emc
+    - fwststh.emc
+    - gatecv.emc
+    - gem.emc
+    - gemcut.emc
+    - gen_cav.emc
+    - gencavb.emc
+    - genhall.emc
+    - glade.emc
+    - grave.emc
+    - grthall.emc
+    - healer.emc
+    - kitchen.emc
+    - kyragem.emc
+    - lagoon.emc
+    - landing.emc
+    - lava.emc
+    - lephole.emc
+    - library.emc
+    - mix.emc
+    - mooncav.emc
+    - ncliff.emc
+    - ncliffb.emc
+    - nwclifb.emc
+    - nwcliff.emc
+    - oaks.emc
+    - plateau.emc
+    - pltcave.emc
+    - potion.emc
+    - ruby.emc
+    - sickwil.emc
+    - song.emc
+    - sorrow.emc
+    - spell.emc
+    - spring.emc
+    - square.emc
+    - stump.emc
+    - temple.emc
+    - trunk.emc
+    - upstair.emc
+    - well.emc
+    - willow.emc
+    - wise.emc
+    - xedge.emc
+    - xedgeb.emc
+    - xedgec.emc
+    - zrock.emc
+    - zrockb.emc
+    - 6.fnt
+    - 8fat.fnt
+    - credit6.fnt
+    - credit8.fnt
+    - a_e.pak
+    - f_l.pak
+    - m_s.pak
+    - s_z.pak
+    - dat.pak
+    - map_5.pak
+    - msc.pak
+    - wsa1.pak
+    - wsa2.pak
+    - wsa3.pak
+    - wsa4.pak
+    - wsa5.pak
+    - wsa6.pak
+    - credits.txt
+    - destruct.wsa
+    - finala.wsa
+    - finalb.wsa
+    - finalc.wsa
+    - finald.wsa
+    - hersaw1.wsa
+    - hersaw2.wsa
+    - hersaw3.wsa
+    - kallak.wsa
+    - kyrandia.wsa
+    - mal-kal.wsa
+    - malcom.wsa
+    - reunion.wsa
+    - shore.wsa
+    - tree1.wsa
+    - tree2.wsa
+    - westwood.wsa
+    - intro.xmi
+    - kyra1a.xmi
+    - kyra1b.xmi
+    - kyra2a.xmi
+    - kyra3a.xmi
+    - kyra4a.xmi
+    - kyra4b.xmi
+    - kyra5a.xmi
+    - kyra5b.xmi
+    - kyramisc.xmi
+    #- edgeb.msc
+    #- feststh.msc
+    #- fsouthb.msc
+    #- fwststh.msc
+    #- intro.snd
+    #- kyra1a.snd
+    #- kyra1b.snd
+    #- kyra2a.snd
+    #- kyra3a.snd
+    #- kyra4a.snd
+    #- kyra4b.snd
+    #- kyra5a.snd
+    #- kyra5b.snd
+    #- kyramisc.snd
+
 files:
   manual.pdf:
     install_to: $docdir
@@ -2216,6 +2440,226 @@ size_and_md5: |
   21654     54bad00ed16639ca33341730434d4169 xedgec.pak_fr
   25769     61e2648f0cb0a4d42e4305f2b8957f6d zrock.pak_fr
   53759328  766aa416cb980d9a4cd2c36236f73b06 setup_legend_of_kyrandia_french_2.1.0.14.exe
+
+  # floppy
+  8405      7baf621ef325cea47c1ca3f866d92192 intro.adl
+  30429     c4c6c02fd76968d56c1e34d55fa3c40b kyra1a.adl
+  26634     99cec7e3237b016a5b5bba5701434c7b kyra1b.adl
+  30206     7b4d4528d6ee8b44d1a5b1aecf9f4480 kyra2a.adl
+  24474     0a1bd29eb39e4a601e1c4287f0f88e4f kyra3a.adl
+  29869     73f4448d06add2c8ebe2405e92ecd597 kyra4a.adl
+  29897     4ee44b538775884076f120c82560db94 kyra4b.adl
+  21506     5fe5bbf86a43c39f6f2206c3976b5cb4 kyra5a.adl
+  14669     189616b8df9d151a8624adb177d8e918 kyra5b.adl
+  24604     38c257566084785621a763b288f48934 kyramisc.adl
+  768       20951977065ecf1d3b17840eb9a38cba kallak.col
+  768       fbbfd8d78b0ef50a9fce6ea92e203fe8 ktitle.col
+  768       c27d2c9beba5fabccd988cb3bc3e8d88 kyrandia.col
+  768       be53e16fd22eb89cf980c655e19f0a7d mal-kal.col
+  768       5c2246262bd0d29eb44ec0edb80cb0e5 origpal.col
+  768       0511bc8d46985a54bf1b68a2c49bf360 palette.col
+  768       aed9d31e53aede8e311a9b4b068076f7 temp.col
+  768       61e5036ce86ee9d865f06df9488ee67b tree_exp.col
+  768       5c2246262bd0d29eb44ec0edb80cb0e5 westwood.col
+  768       1ee553444d7514a74f89af5f617699af ww.col
+  768       928aaa7e64b67ee8019cef1220d4911f wwlogo.col
+  1549      213329d6be82c8cc74063fb1b40c711b 8fat.cps
+  1599      16f3a9741bb1675ee4f5be0bf0a90f68 8slim.cps
+  1267      bdab2b95d4b59ede2ba926c409b5a7af amulet3.cps
+  738       0bfcb978aca1ba1123704d6e0373438c bead.cps
+  18108     d13ab6a3cc58c9a9f74ea9fb414b5e43 bottom.cps
+  15156     61961fe2992f96c8568a8e0d390075e6 brandon.cps
+  12244     340a4836d76948f71879f829e88aa0ba branston.cps
+  7668      962d7781a7c8cd452235ff1df94dffc2 branwill.cps
+  935       8aeae330344f48737590f827a346ec57 buttons2.cps
+  12895     2bf24e7c6298f65036ad3664b685a6e3 chalet.cps
+  2414      670b52664bb6d19caebd91c11e446c02 drink.cps
+  35318     2204d46a4a787681eeb02b973cac3c88 edgeb.cps
+  5837      66f32dae83de3854efbf923f4a6fcd8d effects.cps
+  32471     028484be6294a58251a32c298599e7e7 feststh.cps
+  2475      bc778c9b4f51606faf4f5ba3704e874d flute1.cps
+  1283      0a0579eef8de409c26eb57777e42830b flute2.cps
+  18588     f4d083f41cb31412b15e790ed485d14f frame1.cps
+  17282     e866ae2fae29c3a4f9900f9d86c86ae1 frame2.cps
+  34481     efaa9557ee0298b2b3262cb24ad7ac9e fsouthb.cps
+  32597     9798002caebd9caf5fb374bdb738c574 fwststh.cps
+  24199     3761d283b73921a603ebab2d79b37f55 gemheal.cps
+  2306      4e908f30b9a9030b7b71c3ab4c6bafe2 healbr1.cps
+  6018      11dcfe31dcb53d5c95b37779cd86a943 healbr2.cps
+  16038     4d031ef1f98f2afd12d447fe49b88234 herman.cps
+  22110     f20353d627b06c49d648055b919236c5 items.cps
+  10036     36e39ee412ddc522c60ec96d10fd3f87 jewels3.cps
+  7131      c99fb43d666ef5881a73a509c2594b14 main15.cps
+  19062     cbcadda23249da0949fc84f9c8cfde05 mal-kal.cps
+  11729     dd721dfcda98a4a25d6a1578d4b95c13 malcolm.cps
+  4847      ff5a8423051d564d779f1851bfc9e16f merith.cps
+  2324      2eccb175333f6bf8f9347b43370bba9b mouse.cps
+  4331      5154325ad2803b529290b98e6e0551b6 note.cps
+  13262     0d0abb3bee0db784c9bff1709cbaddd7 poison.cps
+  19699     69cabdab4e47d4eb782d9c68ae27addc reunion.cps
+  19017     f418ab1a3b2e1dd48c2e42ab61f967b4 snow1a.cps
+  24350     d60b0d7aec8b0f8e7839d8fb82a49718 snow2a.cps
+  4489      2f0de987ee453376ecc8b91792448898 telekin.cps
+  8517      ef464c59804d45b011032ee6d1366729 text.cps
+  8466      d279f024e25ef1c740946a5203381056 top.cps
+  16776     c94bef9a3f22e531f9080189ea21f77e tree.cps
+  7281      59b4b62f3b45c1d37564603c397b94a8 writing.cps
+  107       57cff75644ca93fe3e17c1b20cfe2e7b _item_ht.dat
+  215       5cdaa48c2edf4420e902cbfee0fb5177 edgeb.dat
+  123       b188742eb72f358eccd12f5212ecc0b9 feststh.dat
+  123       c65bcacb5767c2452c37a44fa8334e8d fsouthb.dat
+  123       2964693ec1988a351632392980efcaaf fwststh.dat
+  8224      1e1a230566c1cc47a1be7a43df55c387 _npc.emc
+  1450      bfd81db1beb7817eb39918768cad10ea _startup.emc
+  424       32d123bf7387a3dbfae1a8c81a2b3997 alchemy.emc
+  652       2b5c9e428cd57e4aff3f0fc74845744a algae.emc
+  2264      26485e2a6cbd5863f464004d083659ff altar.emc
+  552       267d354285c3ece5fc59b310e3f6351c arch.emc
+  1368      c5b085ced048a2a6778ceb2fdd1b8400 balcony.emc
+  2064      12f9bf4451028e6f5d195468ccb171c7 belroom.emc
+  846       e9c2e986d0a46844b3f57c458f39ca8e bonkbg.emc
+  1084      f79155ef0c8e6272dfedd8263cfb35b4 bridge.emc
+  572       d9ce9dfafe093f0c8a9a7e6b7ec8a8a3 brins.emc
+  6624      39c1cb660192c0fcda4e6a47d4e93326 broken.emc
+  884       e743acba0789d464a619d8660f5ab667 burn.emc
+  696       5586541dd45ea35e206aebfefc028483 castle.emc
+  1574      aeb78fd613fa7b9a29aa7f36e28f9b8c catacom.emc
+  352       1c85dd4c0bb2e0a5638a51d1402cb87d cave.emc
+  698       01c71a447433576da6726b6cd874cc9d caveb.emc
+  1580      6e62163f0123984348710f01daec772d cgate.emc
+  802       92ae6f168d83cf6cc984583c8b5aaca1 chasm.emc
+  296       1f7b39d09fd76ee723f14804d56b2d4f cliff.emc
+  296       1f7b39d09fd76ee723f14804d56b2d4f cliffb.emc
+  598       be1ad31a69788df235a6ce9e57476d0c darms.emc
+  5194      389c9babbb59fc4b57af95058b77cf41 dead.emc
+  2976      7a520569a7d041a931b0a12552a7f295 dnstair.emc
+  3724      8ae039371c01898aaf3cdc1023916d3c dragon.emc
+  354       426bb14f1b87d130819128eace17d208 edge.emc
+  354       ae83eabdb4cd503255496275d98d30fe edgeb.emc
+  570       6eec1f5ab846bb84b23259852e76a2c8 emcav.emc
+  488       b84bd9fc20fe32c48be5fc1fe924a28d enter.emc
+  302       f4499b45cab375a7e84bad0fbdb529f4 extgem.emc
+  958       d6e38863e53fa4e8a731c7512770e72e extheal.emc
+  934       3be921a970a6fcea0d4208231d6c8cae extpot.emc
+  1046      b53012f16fb21e6cc1314bc41afc2786 extspel.emc
+  1138      9021bd43a94f76c737a363b5994f2aa6 falls.emc
+  288       304c8842350ecd5d32c8d2609e8c2c40 feststh.emc
+  290       5ef7b3c2036b65e81a9d23bbf82aa2f5 fgowest.emc
+  506       5ffbd9e7388fe86a090ead6f23ec0d9b fnorth.emc
+  2498      a6bfa7e41c77ed170ca57f7d5a4ef88e foresta.emc
+  1954      0df2c2577a221e6fef25ac0293dfac8c forestb.emc
+  286       f733c2597d696f5340c4e05bf163f03b forestc.emc
+  2750      c9cf966a0ca5d3017f543730ee939cb0 fountn.emc
+  3432      5c44b441c5970fa2fd11f2b7d080fc6b foyer.emc
+  290       5ef7b3c2036b65e81a9d23bbf82aa2f5 fsouth.emc
+  288       304c8842350ecd5d32c8d2609e8c2c40 fsouthb.emc
+  288       304c8842350ecd5d32c8d2609e8c2c40 fwststh.emc
+  4126      965b8ff93a3f6c30882dca5f7867d86f gatecv.emc
+  1488      482abe06760f7f3275648c809cb76e2b gem.emc
+  6792      3c244298395520bb62b5edfe41688879 gemcut.emc
+  1992      9d4d2dbc585706946d563158aefb9ad6 gen_cav.emc
+  1992      b983075ae94269952e9cab1d1412af0f gencavb.emc
+  2400      b424eb3bd3a24049efb25f4017e84b76 genhall.emc
+  1018      2eb8265b7f44d17a6cc6f05ed4c8d016 glade.emc
+  2442      2d9f5f008b5fa6e886eb5a4f37089901 grave.emc
+  1626      716e1b03be0a53a20f453b4ea6107431 grthall.emc
+  6910      ae45c7f82d62601986dc1013c121c140 healer.emc
+  688       36db03525b30959b2989f1fe0d36c54c kitchen.emc
+  672       8b309e3cb4732267f30e22e4db9b51a6 kyragem.emc
+  942       f2efba7403147c3b897a459115f7b08b lagoon.emc
+  574       029d8b2aca16e3e7680bd05940b0ede8 landing.emc
+  972       b6d760bd2501f16199ffdf1208845c1e lava.emc
+  3086      e06c70d6ac01891dc9b43d6ae77ef324 lephole.emc
+  4910      e7fa119484671d2cc03d8acf50b56f8f library.emc
+  2212      bfae92f15d6ae95e36fbabcc21bbe288 mix.emc
+  3130      61f56edb0d548d9c285bab3e951194c2 mooncav.emc
+  292       4ca13ba4d605de8bd199c39e2cae6a50 ncliff.emc
+  292       4ca13ba4d605de8bd199c39e2cae6a50 ncliffb.emc
+  566       3661c6942647a8517f1d67dd94f03823 nwclifb.emc
+  292       4ca13ba4d605de8bd199c39e2cae6a50 nwcliff.emc
+  792       1cb093aab4c96be15f80ee9522ac82a4 oaks.emc
+  326       0109bea01fe1f6610f19563429bba610 plateau.emc
+  582       09ee352c550ef475033b573ee4dfabf2 pltcave.emc
+  11878     bafe37ba7739081ca4920bb34d1f4093 potion.emc
+  1212      17032cdad633fc44963bda486ecd6bd6 ruby.emc
+  1208      8fcc36980c3d852a4a13a8a5613c4650 sickwil.emc
+  1552      4f61a13006d02605aeb11b2ab4c5483d song.emc
+  1476      a72de172ba5ecca7dee4e5c85e7d5c93 sorrow.emc
+  7470      daa0dc842a1616b3a9417cbcbd0b0392 spell.emc
+  1854      3adf28a75e51f12195073359016009ee spring.emc
+  710       abeb6b7ef42e53c3cf52a68676e24c1a square.emc
+  1014      720054f8b3ed05cfbc80dc15671f7880 stump.emc
+  3018      c725c285672ac2aab242b3d76e24e578 temple.emc
+  976       16f7105faeb1c7bcfd025469e51ced48 trunk.emc
+  586       45af71c6c87374903052a70aba58dc89 upstair.emc
+  1212      4b48fd2896e71a3bd7cb60f730624b64 well.emc
+  1190      735f569cf133104cf23c8c5ed8f55925 willow.emc
+  2258      5fcec063bfc1affbd8eaae15e5b21c5b wise.emc
+  1490      f1cf4d54217ac613d3a1598392c2a9ef xedge.emc
+  298       991a65ad346bb69375bf26f3374513f5 xedgeb.emc
+  394       b934d9480c51a2d7ead0ba7f97a14a9d xedgec.emc
+  582       506ef9a803177e1425491c64718fbc7f zrock.emc
+  296       1f7b39d09fd76ee723f14804d56b2d4f zrockb.emc
+  2463      01de09f4641ca421fda054334d587e61 6.fnt
+  5430      bc28efa60754f9de4d981353c5564796 8fat.fnt
+  2419      865ac17dace08baa7b6e3c77ac2057ff credit6.fnt
+  4335      6c71c3000bca9d874b79f7caed52377c credit8.fnt
+  466921    12373d8035c9f962c77b2be2e0863eb2 a_e.pak
+  369734    921504587dd2f0958124ff16dff632b4 f_l.pak
+  265208    16fc7ae247bda17bd640a836f16148a6 m_s.pak
+  304189    23df786464ce01ee52995eec1fddec85 s_z.pak
+  53738     191b0cb653dba4df44f61ea33f64e9d8 dat.pak
+  316446    98361b3dc9968ccf4371edda15fb57e7 map_5.pak
+  159786    2ed6cc24db9487ad3a51a5c449730755 msc.pak
+  422137    61e3f260b995a5523a0f359cac4c40b5 wsa1.pak
+  668972    962df0c2a57c2b0da7df98f1644cabf9 wsa2.pak
+  436411    a78c321c4f67d1525114185ca0077424 wsa3.pak
+  553178    c41f4b23ee5efb32c6797ecf571a7c0f wsa4.pak
+  397476    6f074c9536f6c333d79ac5b5027bb223 wsa5.pak
+  421419    7368da36c1ab9bebd9159ebec7ee6d43 wsa6.pak
+  1153      56a93519604b174afe5e3c3fb563ed95 credits.txt
+  10097     444027988df686e0f5f41c4ad165ce6d destruct.wsa
+  21360     908a8a01cbfe8ab106d67621075eaf23 finala.wsa
+  9284      d10090b4eaeb09430c852bd48190330c finalb.wsa
+  8158      5b5185cfb830c7b81a5f0ea6cd7bc0eb finalc.wsa
+  24421     8b41faa7fb1017ec157091cb72be5575 finald.wsa
+  6122      cd0f335a3027d628dcdc80a828fdf3fd hersaw1.wsa
+  13311     249ce50c31f47d055214fae320f2d89d hersaw2.wsa
+  16136     8294ae54ff12012dca1acdd1e1786ba8 hersaw3.wsa
+  159396    70829e5e2c7c152862524882bbac89d9 kallak.wsa
+  63788     89bae7956bcabbe85a441c05abf812aa kyrandia.wsa
+  104605    62d343f70b1ac7ed35f4d691e1df4432 mal-kal.wsa
+  12105     b48c1a2aeaa27d4de478936ecbef47a3 malcom.wsa
+  81002     c30ebedb76936e8c73ea4727dfd04272 reunion.wsa
+  42207     c4ac8d2c61639bc2e2a79db54156e2f1 shore.wsa
+  151034    0531ff40e54cf8fd71721583ab3e3648 tree1.wsa
+  88707     1fb043962b10c3c38bb5eda377c36902 tree2.wsa
+  36689     70f0f0c584b44412577c53588cd14ded westwood.wsa
+  28720     4b70b699ee35ac69dc38b1665b1e2096 intro.xmi
+  36388     3bb20a7fb6399d9db41c72097bbaa848 kyra1a.xmi
+  33098     099457179772032ecaabe42beb0d741e kyra1b.xmi
+  36696     aeb558e5afe81dd9437a627e02e9e649 kyra2a.xmi
+  37192     b22457449930a33ca2c4f3d6731255cc kyra3a.xmi
+  35898     b1eaca1b46270e573b6ca716415d28aa kyra4a.xmi
+  32554     0356d4db6aa047f5767504347f7a47de kyra4b.xmi
+  29530     15b5b9ab2aefceb8e57afd22efd0ce93 kyra5a.xmi
+  21672     2cfc9b6e5ee67945ec5c29722f46a3e8 kyra5b.xmi
+  37050     7f7a96a1abca498cb39d63009caf1024 kyramisc.xmi
+
+  #2064      4ab3b7e994049e4a6f090e4f0708b738 edgeb.msc
+  #2407      4078cf954b7330b7d64612b4f3ec7380 feststh.msc
+  #2889      3543106ec5305856d7c88104f3f052df fsouthb.msc
+  #2332      8d5103d1bff76bd71e5fe3c1576f195e fwststh.msc
+  #7116      f2ca3a09ac2b5b93c23f8ad928ef17ea intro.snd
+  #7118      441b5ef13b21811900a430875f1eacd2 kyra1a.snd
+  #7118      441b5ef13b21811900a430875f1eacd2 kyra1b.snd
+  #7118      441b5ef13b21811900a430875f1eacd2 kyra2a.snd
+  #7118      441b5ef13b21811900a430875f1eacd2 kyra3a.snd
+  #7118      441b5ef13b21811900a430875f1eacd2 kyra4a.snd
+  #7118      441b5ef13b21811900a430875f1eacd2 kyra4b.snd
+  #7146      d41eede8be5e94b2c38aefcaf4039b8b kyra5a.snd
+  #7118      441b5ef13b21811900a430875f1eacd2 kyra5b.snd
+  #7118      1ea4fbae9dfaa28ab176a46b13e891bc kyramisc.snd
 
 sha1sums: |
   b043982972f76670ea49619e44ae0cb9cd9f5e5f  setup_legend_of_kyrandia_2.1.0.14.exe
