@@ -4,7 +4,41 @@ copyright: © 1997 Activision
 plugin: scummvm_common
 
 help_text:
-  You need to first install the package fonts-liberation.
+  For all versions: you need to first install the package fonts-liberation.
+
+  ------------------------------------------------------------------------
+
+  For the CD version, you first need to:
+
+  0) If you don't have two CD-ROM drives: copy files from CD2 somewhere.
+
+  1) pop-in CD1 & install the game with Wine
+
+   $ wine /media/cdrom0/install/setup.exe
+
+  2) download ZPatch.exe here (this is a self-extracting .zip archive):
+     http://www.thezorklibrary.com/installguides/zgi-win.html
+
+   $ wget http://www.thezorklibrary.com/installguides/Zpatch.exe
+   $ unzip Zpatch.exe -d /tmp
+
+  Inside this you'll find ZGIPAT.EXE that can only be applied with Wine;
+  this archive format has not yet been reverse-engineered.
+
+   $ strings /tmp/ZGIPAT.EXE  | grep -i copyright
+   ".RTPatch Software Update System DLL version 4.10
+   (C) Copyright Pocket Soft, Inc. 1994-1997.  All Rights Reserved."
+
+   $ wine /tmp/ZGIPAT.EXE
+
+  3) Then you can create a package this way:
+
+   $ game-data-packager zork-inquisitor /path/to/cd1_assets/ /path/to/cd2_assets/ ...
+                                        ~/.wine/drive_c/Program\ Files/Activision/
+
+  4) You can finally clean up
+   $ rm -rv ~/.wine/drive_c/Program\ Files/Activision/
+   $ rm -rv /path/to/cd2_assets/
 
 packages:
   zork-grand-inquisitor-data:
