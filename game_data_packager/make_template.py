@@ -442,7 +442,9 @@ def do_one_exec(pgm,lower):
             if not line.startswith('open('):
                 continue
             file = line.split('"')[1]
+            file = file.replace('//', '/')
             if (not file.startswith('/usr/share/games')
+              and not file.startswith('/usr/share/' + pgm[0])
               and not file.startswith('/usr/local/')):
                 continue
             if 'ENOENT' in line:
