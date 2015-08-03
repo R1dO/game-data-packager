@@ -424,10 +424,9 @@ def do_one_file(name,lower):
         print('    skip: %d' % skip)
         print()
 
-    print('  _ %-9s %s' % (os.path.getsize(name), out_name))
-    print('  %s  %s' % (hf.md5, out_name))
+    print('  %-9s %s %s' % (os.path.getsize(name), hf.md5, out_name))
     print('  %s  %s' % (hf.sha1, out_name))
-    print('  %s  %s' % (hf.sha256, out_name))
+    #print('  %s  %s' % (hf.sha256, out_name))
 
 def do_one_exec(pgm,lower):
     print('running:', pgm)
