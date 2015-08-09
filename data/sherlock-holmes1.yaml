@@ -1,0 +1,665 @@
+---
+longname: "The Lost Files of Sherlock Holmes - The Case of the Serrated Scalpel"
+copyright: © 1992 Electronic Arts
+plugin: scummvm_common
+engine: scummvm (>= 1.8.0)
+
+help_text: |
+  This game is currently heavily Work-In-Process in Scummvm GIT.
+  Use this generated .deb package only for testing.
+
+packages:
+  sherlock-holmes1-data:
+    gameid: sherlock-logo
+    install:
+    - 1.rlb
+    - chess.pth
+    - chess.txt
+    - holmes.cfg
+    - invent.txt
+    - journal.lbv
+    - journal.txt
+    - rlibrary.dir
+    - sequence.txt
+    - sf3.rlb
+    - tsage.cfg
+
+    - epilogue.snd
+    - snd.snd
+    - title.snd
+
+    - adlib.sp
+    - blaster.sp
+    - tandyex.sp
+    - tandytl.sp
+
+    - epilog2.lib
+    - epilogue.lib
+    - music.lib
+    - portrait.lib
+    - talk.lib
+    - title.lib
+    - title2.lib
+    - vgs.lib
+
+    - res01.rrm
+    - res03.rrm
+    - res04.rrm
+    - res05.rrm
+    - res06.rrm
+    - res07.rrm
+    - res08.rrm
+    - res09.rrm
+    - res10.rrm
+    - res11.rrm
+    - res12.rrm
+    - res13.rrm
+    - res15.rrm
+    - res16.rrm
+    - res17.rrm
+    - res18.rrm
+    - res19.rrm
+    - res20.rrm
+    - res21.rrm
+    - res22.rrm
+    - res23.rrm
+    - res24.rrm
+    - res25.rrm
+    - res26.rrm
+    - res27.rrm
+    - res29.rrm
+    - res30.rrm
+    - res31.rrm
+    - res32.rrm
+    - res33.rrm
+    - res34.rrm
+    - res35.rrm
+    - res36.rrm
+    - res37.rrm
+    - res38.rrm
+    - res39.rrm
+    - res40.rrm
+    - res41.rrm
+    - res42.rrm
+    - res43.rrm
+    - res44.rrm
+    - res45.rrm
+    - res46.rrm
+    - res47.rrm
+    - res48.rrm
+    - res49.rrm
+    - res50.rrm
+    - res51.rrm
+    - res59.rrm
+    - res60.rrm
+
+  sherlock-holmes1-alt1-data:
+    gameid: sherlock-logo-1
+    install:
+    - 1.rlb
+    - chess.pth
+    - chess.txt
+    - holmes.cfg
+    - invent.txt
+    - journal.lbv
+    - journal.txt
+    - rlibrary.dir
+    - sequence.txt
+    - sf3.rlb
+    - tsage.cfg
+
+    - epilogue.snd
+    - snd.snd
+    - title.snd
+
+    - adlib.sp
+    - blaster.sp
+    - tandyex.sp
+    - tandytl.sp
+
+    - epilog2.lib
+    - epilogue.lib
+    - music.lib
+    - portrait.lib
+    - talk.lib
+    - title.lib
+    - title2.lib
+    - vgs.lib
+
+    - res01.rrm_alt
+    - res03.rrm_alt
+    - res04.rrm_alt
+    - res05.rrm_alt
+    - res06.rrm_alt
+    - res07.rrm_alt
+    - res08.rrm_alt
+    - res09.rrm_alt
+    - res10.rrm_alt
+    - res11.rrm_alt
+    - res12.rrm_alt
+    - res13.rrm_alt
+    - res15.rrm_alt
+    - res16.rrm_alt
+    - res17.rrm_alt
+    - res18.rrm_alt
+    - res19.rrm_alt
+    - res20.rrm_alt
+    - res21.rrm_alt
+    - res22.rrm_alt
+    - res23.rrm_alt
+    - res24.rrm_alt
+    - res25.rrm_alt
+    - res26.rrm_alt
+    - res27.rrm_alt
+    - res29.rrm_alt
+    - res30.rrm_alt
+    - res31.rrm_alt
+    - res32.rrm_alt
+    - res33.rrm_alt
+    - res34.rrm_alt
+    - res35.rrm_alt
+    - res36.rrm_alt
+    - res37.rrm_alt
+    - res38.rrm_alt
+    - res39.rrm_alt
+    - res40.rrm_alt
+    - res41.rrm_alt
+    - res42.rrm_alt
+    - res43.rrm_alt
+    - res44.rrm_alt
+    - res45.rrm_alt
+    - res46.rrm_alt
+    - res47.rrm_alt
+    - res48.rrm_alt
+    - res49.rrm_alt
+    - res50.rrm_alt
+    - res51.rrm_alt
+    - res59.rrm_alt
+    - res60.rrm_alt
+
+  sherlock-holmes1-alt2-data:
+    gameid: sherlock-logo-2
+    install:
+    - 1.rlb
+    - chess.pth
+    - chess.txt
+    - holmes.cfg_alt
+    - invent.txt
+    - journal.lbv
+    - journal.txt
+    - rlibrary.dir
+    - sequence.txt
+    - sf3.rlb
+    - talk.lib
+    - tsage.cfg
+
+    - epilogue.snd
+    - snd.snd_alt
+    - title.snd
+
+    - adlib.sp
+    - blaster.sp_alt
+    - tandyex.sp
+    - tandytl.sp
+
+    - epilog2.lib
+    - epilogue.lib
+    - music.lib
+    - title.lib
+    - portrait.lib
+    - title2.lib
+    - vgs.lib
+
+    - res01.rrm_alt2
+    - res03.rrm_alt2
+    - res04.rrm_alt2
+    - res05.rrm_alt2
+    - res06.rrm_alt2
+    - res07.rrm_alt2
+    - res08.rrm_alt2
+    - res09.rrm_alt2
+    - res10.rrm_alt2
+    - res11.rrm_alt2
+    - res12.rrm_alt2
+    - res13.rrm_alt2
+    - res15.rrm_alt2
+    - res16.rrm_alt2
+    - res17.rrm_alt2
+    - res18.rrm_alt2
+    - res19.rrm_alt2
+    - res20.rrm_alt2
+    - res21.rrm_alt2
+    - res22.rrm_alt2
+    - res23.rrm_alt2
+    - res24.rrm_alt2
+    - res25.rrm_alt2
+    - res26.rrm_alt2
+    - res27.rrm_alt2
+    - res29.rrm_alt2
+    - res30.rrm_alt2
+    - res31.rrm_alt2
+    - res32.rrm_alt2
+    - res33.rrm_alt2
+    - res34.rrm_alt2
+    - res35.rrm_alt2
+    - res36.rrm_alt2
+    - res37.rrm_alt2
+    - res38.rrm_alt2
+    - res39.rrm_alt2
+    - res40.rrm_alt2
+    - res41.rrm_alt2
+    - res42.rrm_alt2
+    - res43.rrm_alt2
+    - res44.rrm_alt2
+    - res45.rrm_alt2
+    - res46.rrm_alt2
+    - res47.rrm_alt2
+    - res48.rrm_alt2
+    - res49.rrm_alt2
+    - res50.rrm_alt2
+    - res51.rrm_alt2
+    - res59.rrm_alt2
+    - res60.rrm_alt2
+
+files:
+  # sherlock-logo-1
+  res01.rrm_alt:
+    install_as: res01.rrm
+  res03.rrm_alt:
+    install_as: res03.rrm
+  res04.rrm_alt:
+    install_as: res04.rrm
+  res05.rrm_alt:
+    install_as: res05.rrm
+  res06.rrm_alt:
+    install_as: res06.rrm
+  res07.rrm_alt:
+    install_as: res07.rrm
+  res08.rrm_alt:
+    install_as: res08.rrm
+  res09.rrm_alt:
+    install_as: res09.rrm
+  res10.rrm_alt:
+    install_as: res10.rrm
+  res11.rrm_alt:
+    install_as: res11.rrm
+  res12.rrm_alt:
+    install_as: res12.rrm
+  res13.rrm_alt:
+    install_as: res13.rrm
+  res15.rrm_alt:
+    install_as: res15.rrm
+  res16.rrm_alt:
+    install_as: res16.rrm
+  res17.rrm_alt:
+    install_as: res17.rrm
+  res18.rrm_alt:
+    install_as: res18.rrm
+  res19.rrm_alt:
+    install_as: res19.rrm
+  res20.rrm_alt:
+    install_as: res20.rrm
+  res21.rrm_alt:
+    install_as: res21.rrm
+  res22.rrm_alt:
+    install_as: res22.rrm
+  res23.rrm_alt:
+    install_as: res23.rrm
+  res24.rrm_alt:
+    install_as: res24.rrm
+  res25.rrm_alt:
+    install_as: res25.rrm
+  res26.rrm_alt:
+    install_as: res26.rrm
+  res27.rrm_alt:
+    install_as: res27.rrm
+  res29.rrm_alt:
+    install_as: res29.rrm
+  res30.rrm_alt:
+    install_as: res30.rrm
+  res31.rrm_alt:
+    install_as: res31.rrm
+  res32.rrm_alt:
+    install_as: res32.rrm
+  res33.rrm_alt:
+    install_as: res33.rrm
+  res34.rrm_alt:
+    install_as: res34.rrm
+  res35.rrm_alt:
+    install_as: res35.rrm
+  res36.rrm_alt:
+    install_as: res36.rrm
+  res37.rrm_alt:
+    install_as: res37.rrm
+  res38.rrm_alt:
+    install_as: res38.rrm
+  res39.rrm_alt:
+    install_as: res39.rrm
+  res40.rrm_alt:
+    install_as: res40.rrm
+  res41.rrm_alt:
+    install_as: res41.rrm
+  res42.rrm_alt:
+    install_as: res42.rrm
+  res43.rrm_alt:
+    install_as: res43.rrm
+  res44.rrm_alt:
+    install_as: res44.rrm
+  res45.rrm_alt:
+    install_as: res45.rrm
+  res46.rrm_alt:
+    install_as: res46.rrm
+  res47.rrm_alt:
+    install_as: res47.rrm
+  res48.rrm_alt:
+    install_as: res48.rrm
+  res49.rrm_alt:
+    install_as: res49.rrm
+  res50.rrm_alt:
+    install_as: res50.rrm
+  res51.rrm_alt:
+    install_as: res51.rrm
+  res59.rrm_alt:
+    install_as: res59.rrm
+  res60.rrm_alt:
+    install_as: res60.rrm
+
+  # sherlock-logo-2
+  holmes.cfg_alt:
+    install_as: holmes.cfg
+  snd.snd_alt:
+    install_as: snd.snd
+  blaster.sp_alt:
+    install_as: blaster.sp
+  res01.rrm_alt2:
+    install_as: res01.rrm
+  res03.rrm_alt2:
+    install_as: res03.rrm
+  res04.rrm_alt2:
+    install_as: res04.rrm
+  res05.rrm_alt2:
+    install_as: res05.rrm
+  res06.rrm_alt2:
+    install_as: res06.rrm
+  res07.rrm_alt2:
+    install_as: res07.rrm
+  res08.rrm_alt2:
+    install_as: res08.rrm
+  res09.rrm_alt2:
+    install_as: res09.rrm
+  res10.rrm_alt2:
+    install_as: res10.rrm
+  res11.rrm_alt2:
+    install_as: res11.rrm
+  res12.rrm_alt2:
+    install_as: res12.rrm
+  res13.rrm_alt2:
+    install_as: res13.rrm
+  res15.rrm_alt2:
+    install_as: res15.rrm
+  res16.rrm_alt2:
+    install_as: res16.rrm
+  res17.rrm_alt2:
+    install_as: res17.rrm
+  res18.rrm_alt2:
+    install_as: res18.rrm
+  res19.rrm_alt2:
+    install_as: res19.rrm
+  res20.rrm_alt2:
+    install_as: res20.rrm
+  res21.rrm_alt2:
+    install_as: res21.rrm
+  res22.rrm_alt2:
+    install_as: res22.rrm
+  res23.rrm_alt2:
+    install_as: res23.rrm
+  res24.rrm_alt2:
+    install_as: res24.rrm
+  res25.rrm_alt2:
+    install_as: res25.rrm
+  res26.rrm_alt2:
+    install_as: res26.rrm
+  res27.rrm_alt2:
+    install_as: res27.rrm
+  res29.rrm_alt2:
+    install_as: res29.rrm
+  res30.rrm_alt2:
+    install_as: res30.rrm
+  res31.rrm_alt2:
+    install_as: res31.rrm
+  res32.rrm_alt2:
+    install_as: res32.rrm
+  res33.rrm_alt2:
+    install_as: res33.rrm
+  res34.rrm_alt2:
+    install_as: res34.rrm
+  res35.rrm_alt2:
+    install_as: res35.rrm
+  res36.rrm_alt2:
+    install_as: res36.rrm
+  res37.rrm_alt2:
+    install_as: res37.rrm
+  res38.rrm_alt2:
+    install_as: res38.rrm
+  res39.rrm_alt2:
+    install_as: res39.rrm
+  res40.rrm_alt2:
+    install_as: res40.rrm
+  res41.rrm_alt2:
+    install_as: res41.rrm
+  res42.rrm_alt2:
+    install_as: res42.rrm
+  res43.rrm_alt2:
+    install_as: res43.rrm
+  res44.rrm_alt2:
+    install_as: res44.rrm
+  res45.rrm_alt2:
+    install_as: res45.rrm
+  res46.rrm_alt2:
+    install_as: res46.rrm
+  res47.rrm_alt2:
+    install_as: res47.rrm
+  res48.rrm_alt2:
+    install_as: res48.rrm
+  res49.rrm_alt2:
+    install_as: res49.rrm
+  res50.rrm_alt2:
+    install_as: res50.rrm
+  res51.rrm_alt2:
+    install_as: res51.rrm
+  res59.rrm_alt2:
+    install_as: res59.rrm
+  res60.rrm_alt2:
+    install_as: res60.rrm
+
+size_and_md5: |
+  # sherlock-logo
+  6         6a5697ee375948f505f61d4365dbf5d2 1.rlb
+  6593      a30e550ecb26f2e89bc85d9d82a739d6 chess.pth
+  987       4c5082b28b3c0403745eb29ee5687b00 chess.txt
+  31        41f74aed1e0d1d5cea43fd5646909cb2 holmes.cfg
+  591       811d64fda69eb907215984b08d3ebe1e invent.txt
+  64768     89ea334a922f388e04382f09d6027c04 journal.lbv
+  1444      8ab85299bf50f8d12bbcf4103274c3ac journal.txt
+  16        56fdd1c9642a08b17dfab2669f3c81db rlibrary.dir
+  1980      66822b08711fabaf72a36a4143a77494 sequence.txt
+  50419     ddfc506b722fcc933d3cb5fad4835176 sf3.rlb
+  337       c7638a2f1827bdf67aa4074356e96d4b tsage.cfg
+
+  193432    fbfc23b013a65b392b03a4ac47c41037 epilogue.snd
+  1186927   6a4607c956bbfa750b8c029324006331 snd.snd
+  471362    85bfb81ec49f9d1f8778f7e9c705f182 title.snd
+
+  1914      687bbc15e75f63acaf936f6844baf41a adlib.sp
+  1889      84cc0698212c7de6acc970dea8fcad6e blaster.sp
+  1762      1dea9de25b01cba08c6cea3a8ebddc9e tandyex.sp
+  2112      6ca20c2f705628b532e1c068489288dc tandytl.sp
+
+  346231    973cd377dd1b78e85712b26228ed58c0 epilog2.lib
+  3019130   fe862832c397974299f91e414bda1b52 epilogue.lib
+  366465    672b71852af2419dda50bce059154faa music.lib
+  1791676   4b68c54a78899883d646733077c8d86b portrait.lib
+  238928    2dac0a1627014706c1b71837cbd21838 talk.lib
+  2244156   95203391e582ba4593be329af3696c40 title.lib
+  924341    7b68d4298698a6e9884bf40b5f811108 title2.lib
+  589779    185365e4b55756b04819e1433eb1dd3d vgs.lib
+
+  351473    7dcfc6709c0f5b9e1e4c65dcd6af8d60 res01.rrm
+  435413    0cd5f5e2e5ded8dac31e6644f4b35152 res03.rrm
+  600215    eaafce77b944c63445bfef0e14266868 res04.rrm
+  367522    255a071cc3a1f24321e0e1822e869389 res05.rrm
+  282489    27a3c174ebd4be194557d6b91e4d80cd res06.rrm
+  278591    a4f9833ba3708901f2141b4ba9f109a7 res07.rrm
+  648875    5adfc974ef5e7bb4e400859f332fd7ee res08.rrm
+  422527    11ddc5eac8491afcc82118fe70ab2dff res09.rrm
+  157240    f08e53195d54b2d7e036538626ade3db res10.rrm
+  296532    ed1a22dafa28cda82a1601663abb22f7 res11.rrm
+  256251    4890487c49b7bf27fb633a8e5c867c87 res12.rrm
+  553322    d4deb34b7c2538083ce1bd9f3ecec22a res13.rrm
+  287831    b493e97d8ff14d224699212c163337c9 res15.rrm
+  363157    f6de565ad1f467b556042cba44dc18e9 res16.rrm
+  76511     aa66ed93a1d87844b5248e4280737aea res17.rrm
+  238983    1c2ab0089ce27764b427e6befffe79b8 res18.rrm
+  244769    f61e80a99d791fcc1f2205dc4e3626b1 res19.rrm
+  433490    15cfd0c43af8461d5e52f31630e652a0 res20.rrm
+  442652    b39c476d769973b8c1a4d051e6b0c646 res21.rrm
+  216430    70f0c1b78fe1b900eef8bf3f5f507add res22.rrm
+  407094    2cf71975bf848589459a449baeb03153 res23.rrm
+  428388    bf794828964029809ead29d240e1577c res24.rrm
+  207464    7e8e0b98fd8b71885e8da43e91510f6c res25.rrm
+  243850    2274b4cf2a1b49b08cc5a5acf866b428 res26.rrm
+  284740    c2373cd61b346844d2b77788e0751397 res27.rrm
+  230238    bd36b46aec430f06534c8af89507dce8 res29.rrm
+  351739    c55a03e83b0cfb0edf880829e4ed5e4e res30.rrm
+  298768    e7bded108afea33e4b9bff2f2e9babe8 res31.rrm
+  387165    aeffcb43e559b9ed5214f06938d7f042 res32.rrm
+  466894    50f8e92074050aa0da3e94e9b00591c8 res33.rrm
+  541676    4078309cf4c510806d26e8d40276af80 res34.rrm
+  534431    805e70fba5786bd8fe5ea1f7ea260d53 res35.rrm
+  453479    00479224d0ffbd3bda2ab9967ba9cd6d res36.rrm
+  201590    207e0838e4d9ad4a46402571b4a174e9 res37.rrm
+  179352    5d2b47df97b7532152a2975522494f57 res38.rrm
+  431070    d3cf53eb14f00708732012da5c8d351f res39.rrm
+  392773    d5f348d6bb53fac371a2294e27545b7f res40.rrm
+  209915    c4b0310edd1d35c25cc792743cd64513 res41.rrm
+  143610    42e28e85719a894d4a760169dc0267fd res42.rrm
+  308767    c057ba1031072b673a0d4ba64778edf9 res43.rrm
+  131728    2d5440f882d763fe60724963fe7af0fd res44.rrm
+  205939    5010b178fceb8d0e5f95a223875e8c25 res45.rrm
+  269146    8148f52e4a87b2604b166965015a7e13 res46.rrm
+  287327    258a0e4c6947d7c9b83c8a58d7682fee res47.rrm
+  276153    83af1f9f57ef8b45f62287dde69fe403 res48.rrm
+  245368    002d5a29f8e7eda30d00fbdf4ca53fff res49.rrm
+  301427    ea25ca33bf2ef75dbc9075c7915ef711 res50.rrm
+  305353    3696481f90bf484b51d95d516d76deff res51.rrm
+  434922    f412a8f88c214f402f629d2523e5598a res59.rrm
+  634701    59a2680e6001759cf1bad639f1331bea res60.rrm
+
+  # sherlock-logo-1
+  351473    97763386de7ce44979c5ccebef41f62d res01.rrm_alt
+  435413    6eef705e389b6f53052d8bc5497db520 res03.rrm_alt
+  600215    21d51d09d40337c1facaa0331f6cdba1 res04.rrm_alt
+  367522    5e5882b0077cd80223bea35b0fdcc5d7 res05.rrm_alt
+  282489    99489472f516d66a6cbd1287712d71b0 res06.rrm_alt
+  278591    8e9c6392f75a98089be2cce7adbc38dd res07.rrm_alt
+  648875    bcb47209270adc5f65bac6e8830753fa res08.rrm_alt
+  422527    2f3c74fbde71ed5babe955bd559f872b res09.rrm_alt
+  157240    c83efef624021b6b84bd78d560e68d1b res10.rrm_alt
+  296532    b35ce098599cb6861c22b3e948504bd1 res11.rrm_alt
+  256251    d2df1c7c88927ab6f9fa8a7de6514303 res12.rrm_alt
+  553322    cd555725181b26369ad2bb81da6f5916 res13.rrm_alt
+  287831    9695abcc03c5056dc115bae2dfc52553 res15.rrm_alt
+  363157    7a5d30699fc54807101a76c5530c39cd res16.rrm_alt
+  76511     777474b5c7e3006995bc1705d0ac26f0 res17.rrm_alt
+  238983    a7418b55d413bcbada246e8a89506fb7 res18.rrm_alt
+  244769    bb13c74bb0a78b8e5c7a753e8d8be499 res19.rrm_alt
+  433490    5151be7631a0c498798d5c77f2360184 res20.rrm_alt
+  442652    3b84e09e3ab2654ca020aabb3568e4c9 res21.rrm_alt
+  216430    b985db48faa0c64c79445fb1f6fa80c0 res22.rrm_alt
+  407094    430f07e2e871ef13d8a443fe35dfb347 res23.rrm_alt
+  428388    5cc0be362ee43e27233f3722e26b3a8f res24.rrm_alt
+  207464    4c3e4d872f80d801ea1ae2e76a7e331e res25.rrm_alt
+  243850    244af567ce0b54633a7de51f8c42ec0a res26.rrm_alt
+  284740    e666bdab62d3ad92435d134bdc65dc96 res27.rrm_alt
+  230238    1135513e34b34ddf4318961a4a7df61b res29.rrm_alt
+  351739    42766359dfcd2aabec6db0c3b96e5dd3 res30.rrm_alt
+  298768    bbfaf06142d9fdb32e289160751fe193 res31.rrm_alt
+  387165    048f9e3afd28d473864a0abd25663a0f res32.rrm_alt
+  466894    00fffb79bb0f4630431357c91bfaaa92 res33.rrm_alt
+  541676    d0746d1ee1cbc9ca1330c7b3c756b5df res34.rrm_alt
+  534431    c0bea3a3ef9fef55498dfb9cf6798764 res35.rrm_alt
+  453479    9d504c250a8992ae4901477af48b288b res36.rrm_alt
+  201590    9f9948839659491179f3f22dedd3efa0 res37.rrm_alt
+  179352    e78a20c6a4f9f15007348cfa2ffb0b80 res38.rrm_alt
+  431070    5f200a81e54ff7e70e85cbee5892bab1 res39.rrm_alt
+  392773    9cf6a36a0c14e646b224c962dd6ac998 res40.rrm_alt
+  209915    0a67b64a7b6d1c67d16f853f88843211 res41.rrm_alt
+  143610    8ac86e501ddb330560a7e9ec952f39e7 res42.rrm_alt
+  308767    bcfa571cf1ebd29f03be727de6462c42 res43.rrm_alt
+  131728    9f46b0c504979777ea7e89272170d858 res44.rrm_alt
+  205939    ff864dac7ef1c86835df2c14b76768cf res45.rrm_alt
+  269146    a39e3fa3e208fa6e73c63534349fee1d res46.rrm_alt
+  287327    8524584e0b796f7ab39f7e33d9715298 res47.rrm_alt
+  276153    cdcddbdba04a9840eb9b91339078df2b res48.rrm_alt
+  245368    88eaead774e7616e6e9b1c838fa6bfc4 res49.rrm_alt
+  301427    b619c1764b85ab8922a67fe67dddcb66 res50.rrm_alt
+  305353    be1202932c7e7c603a51fe25d43eb49a res51.rrm_alt
+  434922    d67150fbc1a7946708317f58e71cb2b0 res59.rrm_alt
+  634701    42564c3b4a58ffc8946976cd1de0d940 res60.rrm_alt
+
+  # sherlock-logo-2
+  31        d9d5a5fa15b3ad5cf5cc366055063d5f holmes.cfg_alt
+  840310    b20131d0371f07f195533b443b0b3de6 snd.snd_alt
+  1889      1048eae048c9d333c6b715d9fc82776e blaster.sp_alt
+
+  351473    b4d4a8ad5590a7fec933e7aabd032fa6 res01.rrm_alt2
+  435413    b0d9dbba47342196ad67e5f047b281f1 res03.rrm_alt2
+  600215    383a5a52f6f77ba7f36e062f3f894527 res04.rrm_alt2
+  367522    fb0223e28bd7499ee4aed7a5f8b6a0b5 res05.rrm_alt2
+  282489    4071f9c8aa6808864589db800c587009 res06.rrm_alt2
+  278591    768df2f5c0f99ad16d732e9d811bac20 res07.rrm_alt2
+  648875    faa9540792d0089397c23309f6221323 res08.rrm_alt2
+  422527    d7828c467f137ecddeb5ea03a2d067a6 res09.rrm_alt2
+  157240    658523dc7ae9118122efa0654dfa0546 res10.rrm_alt2
+  296532    6f332fac4d924efd98ac6f7da860e6d8 res11.rrm_alt2
+  256251    f2b1bf21300c9eab93ca125723ee7307 res12.rrm_alt2
+  553322    7e5dc962f296c724886583ac7cd62c69 res13.rrm_alt2
+  287831    6de54d4f26d754e71fb172dd7a4799fa res15.rrm_alt2
+  363157    29d2b587c4b4eee03e6499c3b1a85ae2 res16.rrm_alt2
+  76511     38dd321ce7e64dafcbac78c12903bb88 res17.rrm_alt2
+  238983    0e0e6ecec4fb3bf4e7be956fc3a776a6 res18.rrm_alt2
+  244769    b548bce94ba728e7323b197a5c17d3b7 res19.rrm_alt2
+  433490    cf09d78db8c818ecc7305997c598fe39 res20.rrm_alt2
+  442652    479686b97fda84eddb262731db554885 res21.rrm_alt2
+  216430    4e271d706890d63491fe00b63e700080 res22.rrm_alt2
+  407094    3a1f2d0afc231ad80ebb621363e4ae31 res23.rrm_alt2
+  428388    5de92387dce79e7721aa51779860f2f3 res24.rrm_alt2
+  207464    1dae2f6656aa87b3ee5ea9fca5b4ea1d res25.rrm_alt2
+  243850    baac94bcef249c535505b62fbef0397f res26.rrm_alt2
+  284740    21ee069bc018ccb6d375080ed07bfee8 res27.rrm_alt2
+  230238    6b6762ca87a0b137470d8f440f93e42a res29.rrm_alt2
+  351739    73f1b8f1d3d131b3f1eac821897d0c22 res30.rrm_alt2
+  298768    35731d0c659e90b13ae74b14c2316eda res31.rrm_alt2
+  387165    15913ae180b318e4ab0be4836d5e4725 res32.rrm_alt2
+  466894    913ce0d8159e31f4dbfedde63a1a4e06 res33.rrm_alt2
+  541676    b2a6979af0976cc78dfd942ae1581747 res34.rrm_alt2
+  534431    f776ae0d28cf576ddf80c145f809a0bb res35.rrm_alt2
+  453479    ece5f6bd97264091f9ae3497715e9fba res36.rrm_alt2
+  201590    e5abd17adec9014598ba3878be618125 res37.rrm_alt2
+  179352    3bea0b4cf91458d0805d1697680128a5 res38.rrm_alt2
+  431070    449d3ffc80ab96e170cbcf690cac2c25 res39.rrm_alt2
+  392773    ae003aab91b86d4832a4899598672998 res40.rrm_alt2
+  209915    0f0b7d34523c39039c3f5ec8a0b66c20 res41.rrm_alt2
+  143610    086298b96e8b233f60f86f09c6a2a3c2 res42.rrm_alt2
+  308767    17a39c04e0658b23cadeeb0c465295ee res43.rrm_alt2
+  131728    3f9c5c9a59c5ac0d9688bdd46c2a40e2 res44.rrm_alt2
+  205939    b8e84ca762a7bf13e99a69d8eaa08f02 res45.rrm_alt2
+  269146    42b67d0494294b32fe17091b042458d6 res46.rrm_alt2
+  287327    9e3fc43f4a879d4cdc192a9ffb7bf08a res47.rrm_alt2
+  276153    cf226f629d1927a31f27f1d320d6bbdb res48.rrm_alt2
+  245368    2e5c310ad12ecf363325360ab78e0ba9 res49.rrm_alt2
+  301427    f6abc9a5b83fdfc9018c76f12ac80aa6 res50.rrm_alt2
+  305353    5030013fba89d02a4808d7a527f316b8 res51.rrm_alt2
+  434922    a05cb78bd8fee34cc01118138bf31287 res59.rrm_alt2
+  634701    8be842ceae80b66aae33137331f5c0b5 res60.rrm_alt2
+...
