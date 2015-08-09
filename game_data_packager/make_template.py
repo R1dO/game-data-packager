@@ -442,6 +442,8 @@ def do_one_exec(pgm,lower):
                 continue
             file = line.split('"')[1]
             file = file.replace('//', '/')
+            if file.startswith('/usr/share/scummvm'):
+                continue
             if (not file.startswith('/usr/share/games')
               and not file.startswith('/usr/share/' + pgm[0])
               and not file.startswith('/usr/local/')):
