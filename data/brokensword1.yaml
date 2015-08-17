@@ -602,9 +602,10 @@ files:
     alternatives:
     - speech1.clu
     - speech1.clf
+    install_as: $alternative
   speech1.clu:
     install_as: speech/speech1.clu
-    look_for: [speech.clu]
+    look_for: [speech.clu,speech1.clu]
   speech1.clf:
     install_as: speech/speech1.clf
 
@@ -612,9 +613,10 @@ files:
     alternatives:
     - speech2.clu
     - speech2.clf
+    install_as: $alternative
   speech2.clu:
     install_as: speech/speech2.clu
-    look_for: [speech.clu]
+    look_for: [speech.clu,speech2.clu]
   speech2.clf:
     install_as: speech/speech2.clf
 
