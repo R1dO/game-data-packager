@@ -15,8 +15,6 @@ help_text: |
   The german version works without a warning with ResidualVM 0.3.0 or GIT versions after 2015/02/08.
   Versions before that may display warnings about the MD5SUMs, but these can safely be ignored, the game will still run.
 
-missing_langs: [es]
-
 packages:
   grimfandango-en-data:
     debian:
@@ -85,34 +83,34 @@ packages:
     - year2mus.lab
     - year4mus.lab
 
-  #grimfandango-es-data:
-    #lang: es
-    #debian:
-      #provides: grimfandango-data
-    #install:
-    #- gfupd101.exe
-    #- credits.lab_es
-    #- data000.lab
-    #- data001.lab
-    #- data002.lab
-    #- data003.lab_es
-    #- data004.lab
-    #- local.lab_es
-    #- movie00.lab
-    #- movie01.lab_es
-    #- movie02.lab_es
-    #- movie03.lab_es
-    #- movie04.lab_es
-    #- vox0000.lab_es
-    #- vox0001.lab_es
-    #- vox0002.lab_es
-    #- vox0003.lab_es
-    #- vox0004.lab_es
-    #- year0mus.lab
-    #- year1mus.lab
-    #- year3mus.lab
-    #- year2mus.lab
-    #- year4mus.lab
+  grimfandango-es-data:
+    lang: es
+    debian:
+      provides: grimfandango-data
+    install:
+    - gfupd101.exe
+    - credits.lab_es
+    - data000.lab
+    - data001.lab
+    - data002.lab
+    - data003.lab
+    - data004.lab
+    - local.lab_es
+    - movie00.lab
+    - movie01.lab_es
+    - movie02.lab_es
+    - movie03.lab_es
+    - movie04.lab_es
+    - vox0000.lab_es
+    - vox0001.lab_es
+    - vox0002.lab_es
+    - vox0003.lab_es
+    - vox0004.lab_es
+    - year0mus.lab
+    - year1mus.lab
+    - year3mus.lab
+    - year2mus.lab
+    - year4mus.lab
 
   grimfandango-fr-data:
     lang: fr
@@ -259,7 +257,7 @@ packages:
       provides: grimfandango-demo-data
     lang: de
     install:
-    - gfdemo01.lab_de_fr_it
+    - gfdemo01.lab_de_es_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_de
@@ -274,6 +272,28 @@ packages:
     license:
     - license.txt_demo_de
 
+  grimfandango-demo-es-data:
+    engine: residualvm (>= 0.3.0)
+    demo_for: grimfandango-es-data
+    debian:
+      provides: grimfandango-demo-data
+    lang: es
+    install:
+    - gfdemo01.lab_de_es_fr_it
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab_es
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san_es
+    - Movies/demo_frontend.san_es
+    optional:
+    - readme.txt_demo_es
+    license:
+    - license.txt_demo_es
+
   grimfandango-demo-fr-data:
     engine: residualvm (>= 0.3.0)
     demo_for: grimfandango-fr-data
@@ -281,7 +301,7 @@ packages:
       provides: grimfandango-demo-data
     lang: fr
     install:
-    - gfdemo01.lab_de_fr_it
+    - gfdemo01.lab_de_es_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_fr
@@ -303,7 +323,7 @@ packages:
       provides: grimfandango-demo-data
     lang: it
     install:
-    - gfdemo01.lab_de_fr_it
+    - gfdemo01.lab_de_es_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_it
@@ -380,7 +400,7 @@ files:
     install_as: readme.txt
 
   # German
-  gfdemo01.lab_de_fr_it:
+  gfdemo01.lab_de_es_fr_it:
     install_as: gfdemo01.lab
   voice001.lab_de:
     install_as: voice001.lab
@@ -399,7 +419,7 @@ files:
     unpack:
       format: zip
     provides:
-    - gfdemo01.lab_de_fr_it
+    - gfdemo01.lab_de_es_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_de
@@ -411,6 +431,37 @@ files:
     - Movies/demo_frontend.san_de
     - license.txt_demo_de
     - readme.txt_demo_de
+
+  # Spanish
+  voice001.lab_es:
+    install_as: voice001.lab
+  Movies/demo_backend.san_es:
+    install_as: Movies/demo_backend.san
+  Movies/demo_frontend.san_es:
+    install_as: Movies/demo_frontend.san
+  license.txt_demo_es:
+    install_as: license.txt
+  readme.txt_demo_es:
+    install_to: $docdir
+    install_as: readme.txt
+
+  grim-win-demo-sp.zip:
+    download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo-sp.zip?download
+    unpack:
+      format: zip
+    provides:
+    - gfdemo01.lab_de_es_fr_it
+    - grimdemo.mus
+    - sound001.lab
+    - voice001.lab_es
+    - Movies/al_close.san
+    - Movies/al_open.san
+    - Movies/hq_close.san
+    - Movies/hq_open.san
+    - Movies/demo_backend.san_es
+    - Movies/demo_frontend.san_es
+    - license.txt_demo_es
+    - readme.txt_demo_es
 
   # French
   voice001.lab_fr:
@@ -430,7 +481,7 @@ files:
     unpack:
       format: zip
     provides:
-    - gfdemo01.lab_de_fr_it
+    - gfdemo01.lab_de_es_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_fr
@@ -461,7 +512,7 @@ files:
     unpack:
       format: zip
     provides:
-    - gfdemo01.lab_de_fr_it
+    - gfdemo01.lab_de_es_fr_it
     - grimdemo.mus
     - sound001.lab
     - voice001.lab_it
@@ -532,6 +583,29 @@ files:
   vox0003.lab_de:
     install_as: vox0003.lab
   vox0004.lab_de:
+    install_as: vox0004.lab
+
+  credits.lab_es:
+    install_as: credits.lab
+  local.lab_es:
+    install_as: local.lab
+  movie01.lab_es:
+    install_as: movie01.lab
+  movie02.lab_es:
+    install_as: movie02.lab
+  movie03.lab_es:
+    install_as: movie03.lab
+  movie04.lab_es:
+    install_as: movie04.lab
+  vox0000.lab_es:
+    install_as: vox0000.lab
+  vox0001.lab_es:
+    install_as: vox0001.lab
+  vox0002.lab_es:
+    install_as: vox0002.lab
+  vox0003.lab_es:
+    install_as: vox0003.lab
+  vox0004.lab_es:
     install_as: vox0004.lab
 
   credits.lab_fr:
@@ -653,13 +727,20 @@ size_and_md5: |
   42079548  1c10ead42737b0162e88337ce83aaa76 Movies/demo_frontend.san_big
   103599118 d4f326bbf9bd5141bd1447a14c3ac45d grim-win-demo2-en.zip
 
-  29533695  fd728f040557118b7ca436f8205029e5 gfdemo01.lab_de_fr_it
+  29533695  fd728f040557118b7ca436f8205029e5 gfdemo01.lab_de_es_fr_it
   10154     aeb093d29b48518309e5d3453caf3be1 readme.txt_demo_de
   4518      828745b502599817de5cbca10906ffcb license.txt_demo_de
   16561196  d1d68735ae10148ecccb6b5000a4db96 voice001.lab_de
   32892580  3fff9d6d46d8d424f0598389404495a7 Movies/demo_backend.san_de
   44247744  5ee5a054bb123f8d1f0cd1c2845ded73 Movies/demo_frontend.san_de
   109152089 22a344efc9f4349faffd83f29e2e2c62 grim-win-demo-de.zip
+
+  11158     9fb7d450586078862384a1b365cc7af0 readme.txt_demo_es
+  4074      5c1f2a6db88528865788d87b4e43efb5 license.txt_demo_es
+  13367206  00cb825deca33b96719bc157a5427c40 voice001.lab_es
+  32995578  68a2f5b40f9abc347969ef38a4a2c1ee Movies/demo_backend.san_es
+  44289652  5201ac57e73486c2d2c9cf31f1838edf Movies/demo_frontend.san_es
+  106002228 c63511d1929c486b1a91e9be08e59e50 grim-win-demo-sp.zip
 
   12948     e7fac98c41c5b0f2669a4719f08efeca readme.txt_demo_fr
   4323      4d26946f51662e1c7505e67f1ea4bff6 license.txt_demo_fr
@@ -724,6 +805,19 @@ size_and_md5: |
   46150860  5bda9a36181c1fea368491b842c11efe vox0003.lab_de
   45076847  bae246c5335c1d139b97a48277ee8841 vox0004.lab_de
 
+  608       d22648d6787c2f8f0a789ee3ed0c08f7 local.lab_es
+  20117     836a2081d5e57ed6ef5eaade7f770b0e credits.lab_es
+  120129023 ede9fb7d035a5d4af496f23f811707a2 movie01.lab_es
+  67816506  f5879c544f4c1f1f2e2d2e92c026c245 movie02.lab_es
+  88912073  fb87d5a9e3a81d3ffd521dee4432c4da movie03.lab_es
+  107955623 2daf2ec272a7be49cbfde053482f182c movie04.lab_es
+  4095899   076bf048de229ad8cefcb3d7c0bfd134 vox0000.lab_es
+  53831340  77cdd6f02bc3f7085bff17c454066de3 vox0001.lab_es
+  89132266  c4484dadd4a33066290e1847523d7d64 vox0002.lab_es
+  36960437  1d4e94e3d3fd803a02c9993412359082 vox0003.lab_es
+  35626091  3577a8b6cf013bc5b9c9133e29d1f4f0 vox0004.lab_es
+  28189     9ab004a39d5af1de98c1b3b4679000fc readme.txt_es
+
   608       c9dd41f66883959de27f80bbe457f30d local.lab_fr
   22827     cd71ca4e600198277f22e944988f7516 credits.lab_fr
   120698568 16674e1496e4fb3f0f5f173f12e30617 movie01.lab_fr
@@ -767,23 +861,6 @@ size_and_md5: |
   18246     7f7d0aee1bc070a833375d77087db78a readme.txt_pt_br
   880       027fec44c66cf0345e5a70f65cee5226 license.txt_pt_br
 
-md5sums: |
-  # https://github.com/residualvm/residualvm/blob/master/engines/grim/md5check.cpp
-  # documents many more md5sums for other versions supported by residualvm:
-  67627f2d9314f9c0ae55dd2099fc052f  vox0000.lab_unpatched
-
-  #836a2081d5e57ed6ef5eaade7f770b0e  credits.lab_es
-  #d22648d6787c2f8f0a789ee3ed0c08f7  local.lab_es
-  #ede9fb7d035a5d4af496f23f811707a2  movie01.lab_es
-  #f5879c544f4c1f1f2e2d2e92c026c245  movie02.lab_es
-  #fb87d5a9e3a81d3ffd521dee4432c4da  movie03.lab_es
-  #2daf2ec272a7be49cbfde053482f182c  movie04.lab_es
-  #076bf048de229ad8cefcb3d7c0bfd134  vox0000.lab_es
-  #77cdd6f02bc3f7085bff17c454066de3  vox0001.lab_es
-  #c4484dadd4a33066290e1847523d7d64  vox0002.lab_es
-  #1d4e94e3d3fd803a02c9993412359082  vox0003.lab_es
-  #3577a8b6cf013bc5b9c9133e29d1f4f0  vox0004.lab_es
-
 sha1sums: |
   3c1dc57de81be733451ab2f81a2fec6bc23388ad  gfdemo01.lab
   9d79a5c44291713c0fa8174b296b9e569941ba38  grimdemo.mus
@@ -806,7 +883,7 @@ sha1sums: |
   392fbaa105bfb985730a8ad45490bc471713b8d0  Movies/demo_frontend.san_big
   cb8e17b40652a9278a5ac5dbc9939df9df94fd3e  grim-win-demo2-en.zip
 
-  123db81a085b9029dde2e20dcf9297964c549a3f  gfdemo01.lab_de_fr_it
+  123db81a085b9029dde2e20dcf9297964c549a3f  gfdemo01.lab_de_es_fr_it
   c4d4e7f2c7a82f87a19f99a19ae6e2e3f854fbed  voice001.lab_de
   34c9523e6abc7f48b9e9b5f2a2d6f1a645d11b05  Movies/demo_backend.san_de
   dc683a3ee78446d85a05cc5b0507d33857af6952  Movies/demo_frontend.san_de
