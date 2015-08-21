@@ -1,0 +1,181 @@
+---
+longname: The Hugo Trilogy
+copyright: © 1990-1992 Gray Design Associates
+plugin: scummvm_common
+
+packages:
+  hugo1-data:
+    longname: "Hugo's House of Horrors"
+    copyright: © 1990 Gray Design Associates
+    gameid: hugo1-win
+    gog:
+      url: the_hugo_trilogy
+    install:
+    - hugo.bsf
+    - objects.dat_hugo1
+    - scenery.dat_hugo1
+    - sounds.dat_hugo1
+    - strings.dat_hugo1
+    - uif.dat_hugo1
+    optional:
+    - hw_hint1.txt
+
+  hugo2-data:
+    longname: "Hugo II, Whodunit?"
+    copyright: © 1991 Gray Design Associates
+    gameid: hugo2-win
+    gog:
+      url: the_hugo_trilogy
+    install:
+    - hugo.bsf
+    - objects.dat_hugo2
+    - scenery.dat_hugo2
+    - sounds.dat_hugo2
+    - strings.dat_hugo2
+    - uif.dat_hugo2
+    optional:
+    - hw_hint2.txt
+
+  hugo3-data:
+    longname: "Hugo III, Jungle of Doom!"
+    copyright: © 1992 Gray Design Associates
+    gameid: hugo3-win
+    gog:
+      url: the_hugo_trilogy
+    install:
+    - hugo.bsf
+    - objects.dat_hugo3
+    - scenery.dat_hugo3
+    - sounds.dat_hugo3
+    - strings.dat_hugo3
+    - uif.dat_hugo3
+    optional:
+    - hw_hint3.txt
+
+files:
+  objects.dat_hugo1:
+    install_as: objects.dat
+  objects.dat_hugo2:
+    install_as: objects.dat
+  objects.dat_hugo3:
+    install_as: objects.dat
+
+  scenery.dat_hugo1:
+    install_as: scenery.dat
+  scenery.dat_hugo2:
+    install_as: scenery.dat
+  scenery.dat_hugo3:
+    install_as: scenery.dat
+
+  sounds.dat_hugo1:
+    install_as: sounds.dat
+  sounds.dat_hugo2:
+    install_as: sounds.dat
+  sounds.dat_hugo3:
+    install_as: sounds.dat
+
+  strings.dat_hugo1:
+    install_as: strings.dat
+  strings.dat_hugo2:
+    install_as: strings.dat
+  strings.dat_hugo3:
+    install_as: strings.dat
+
+  uif.dat_hugo1:
+    install_as: uif.dat
+  uif.dat_hugo2:
+    install_as: uif.dat
+  uif.dat_hugo3:
+    install_as: uif.dat
+
+  hw_hint1.txt:
+    install_to: $docdir
+  hw_hint2.txt:
+    install_to: $docdir
+  hw_hint3.txt:
+    install_to: $docdir
+
+  setup_the_hugo_trilogy_2.0.0.1.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - hugo.bsf
+      - objects.dat
+      - scenery.dat
+      - sounds.dat
+      - strings.dat
+      - uif.dat
+      - hw_hint1.txt
+      - hw_hint2.txt
+      - hw_hint3.txt
+    provides:
+    - hugo.bsf
+    - objects.dat_hugo1
+    - scenery.dat_hugo1
+    - sounds.dat_hugo1
+    - strings.dat_hugo1
+    - uif.dat_hugo1
+    - hw_hint1.txt
+
+    - objects.dat_hugo2
+    - scenery.dat_hugo2
+    - sounds.dat_hugo2
+    - strings.dat_hugo2
+    - uif.dat_hugo2
+    - hw_hint2.txt
+
+    - objects.dat_hugo3
+    - scenery.dat_hugo3
+    - sounds.dat_hugo3
+    - strings.dat_hugo3
+    - uif.dat_hugo3
+    - hw_hint3.txt
+
+size_and_md5: |
+  15796401  5da4ca64a236b3b2b421bb6c389e0cdd setup_the_hugo_trilogy_2.0.0.1.exe
+  876       3f99a3fc46c317924047e22e3b2985e3 hugo.bsf
+
+  126488    3e8cfd24e7bde462f0d341e6635d9785 objects.dat_hugo1
+  600948    e82ae311075cf5e2f8a326ce79afa814 scenery.dat_hugo1
+  263625    b313b1dce16ca2604f70a60db96616c3 sounds.dat_hugo1
+  16323     8a6200420091657c3637a94193cfaa88 strings.dat_hugo1
+  13694     9be386c8a9602d270f47846673981bb5 uif.dat_hugo1
+  9726      268dcac68635c91fbc9f3596c15c18fa hw_hint1.txt
+
+  158480    f68ba0cfb769a2b0d11cb87964ae940b objects.dat_hugo2
+  772258    12ed6bce64c3ea90438085ea7769e532 scenery.dat_hugo2
+  337336    4c548c021a2eb42109f43dfc3f60777a sounds.dat_hugo2
+  29574     ed72f37d027d23ec4dced2ab4c39e85a strings.dat_hugo2
+  14499     24ca0e6fce645705a53b81686ef9bf4c uif.dat_hugo2
+  18586     f6c0a4d73c114ba5f2c9b14de35d60b5 hw_hint2.txt
+
+  136638    f1178391b432185136e5a662b147a7cb objects.dat_hugo3
+  621726    baf665cdcae626791fe8406786e1e1f7 scenery.dat_hugo3
+  214674    d80fa22e3c90435190cf8eda8a985ada sounds.dat_hugo3
+  23155     215e96cefafa445a98c720e5ade84025 strings.dat_hugo3
+  12900     122e27213e9f1ea045ec82eabf9294de uif.dat_hugo3
+  13900     becd9d2ead5fbf2b227d86155c52ed39 hw_hint3.txt
+
+sha1sums: |
+  6a05687c447b305c8681f6b3c2e2b6ae4dc81db9  setup_the_hugo_trilogy_2.0.0.1.exe
+  558b452259f95a64dcaccdb77938f6dd65aeedf3  hugo.bsf
+
+  187d96447018026d47e2f5718f937a8ce7b1dc9c  objects.dat_hugo1
+  f7baf6c60212af468a39ee401c0a436be6a7f29e  scenery.dat_hugo1
+  103cb9daf629181b0381930c7f642e594149803e  sounds.dat_hugo1
+  285af8840aa5d5193038237b94470d1e39c97ea8  strings.dat_hugo1
+  785b00b41d930af91e4254019ab7d2ef3c9fe27a  uif.dat_hugo1
+
+  0b17a525911b48b255fc6c40b4395791225f1842  objects.dat_hugo2
+  10da108bc09ea565c0759776360bc18142bba845  scenery.dat_hugo2
+  6f758306c1f144cb409e38c22d327e591a69fe6c  sounds.dat_hugo2
+  94aa247bbe4aa8b6b40f1656cd4af24cd838db07  strings.dat_hugo2
+  3da39c1ece0ac5ce47e35d4958d4196de0801ea3  uif.dat_hugo2
+
+  279c486d46b007d21b02a3a5a46c84e8e93b555d  objects.dat_hugo3
+  2df0e4e81122afd4185dd42a61e2b9636800f180  scenery.dat_hugo3
+  c07a7da628489a86a7783d069a4462e20cde9ddf  sounds.dat_hugo3
+  b1ddfe41522cf6dfc0d28646039e1d0b4f0981d2  strings.dat_hugo3
+  7c478bc1e2dae704d9fb90baf0bf001f7abcca0d  uif.dat_hugo3
+...
+
