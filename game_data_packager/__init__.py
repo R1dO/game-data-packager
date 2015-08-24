@@ -1265,7 +1265,7 @@ class GameData(object):
         unique_provider = list()
         multi_provider = list()
         for filename in (package.install | package.optional):
-            if len(self.providers.get(filename)) == 1:
+            if len(self.providers.get(filename,[])) == 1:
                 unique_provider.append(filename)
             else:
                 multi_provider.append(filename)
