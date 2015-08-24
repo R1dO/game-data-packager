@@ -1,0 +1,25 @@
+---
+longname: "3 Skulls of the Toltecs"
+copyright: © 1996 Time Warner
+plugin: scummvm_common
+
+packages:
+  toltecs-data:
+    install:
+    - sample.opl
+    - western
+    symlinks:
+      usr/share/games/toltecs/sample.ad: usr/share/games/toltecs/sample.opl
+
+files:
+  sample.opl:
+    look_for: [sample.opl,sample.ad]
+
+size_and_md5: |
+  3242      904b04063ff4e04c8fc33576e41c68a9 sample.opl
+  337643527 4fd8152343326033c8c3b2440b31e816 western
+
+sha1sums: |
+  a99a70134fde20ef0c5dbf170a037f37a32cb425  sample.opl
+  3c5ee857ea5c98cd3f36d2db9e7a3063f6be2188  western
+...
