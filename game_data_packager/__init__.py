@@ -1260,7 +1260,17 @@ class GameData(object):
 
         result = FillResult.COMPLETE
 
+        # search first for files that have only one provider,
+        # to avoid extraneous downloads
+        unique_provider = list()
+        multi_provider = list()
         for filename in (package.install | package.optional):
+            if len(self.providers.get(filename)) == 1:
+                unique_provider.append(filename)
+            else:
+                multi_provider.append(filename)
+
+        for filename in unique_provider + multi_provider:
             if filename not in self.found:
                 wanted = self.files[filename]
                 # updates file_status as a side-effect
