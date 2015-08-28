@@ -45,7 +45,8 @@ for name, game in load_games().items():
                     stats[m_lang] = '*'
         if GameData.fill_gaps(game, package=package,
                  log=False) is FillResult.IMPOSSIBLE:
-             fullfree = False
+             if package.better_version is None:
+                 fullfree = False
         else:
              somefree = True
 
@@ -55,7 +56,7 @@ for name, game in load_games().items():
     stats['longname'] = ascii_safe(game.longname, force=True)
     stats['total'] = len(game.packages)
     stats['missing_langs'] = game.missing_langs
-    stats['fullfree'] = fullfree or name == 'dreamweb' #XXX
+    stats['fullfree'] = fullfree
     stats['somefree'] = somefree
     stats['url_steam'] = game.url_steam
     stats['url_gog'] = game.url_gog
