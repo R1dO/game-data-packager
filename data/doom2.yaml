@@ -25,6 +25,8 @@ packages:
       id: 2300
       path: "common/Doom 2"
     # FIXME: also look in 208200, common/DOOM 3 BFG Edition
+    gog:
+      url: doom_ii_final_doom
     install_to: usr/share/games/doom
     install:
     - doom2.wad
@@ -50,6 +52,8 @@ packages:
     steam:
       id: 9160
       path: "common/Master Levels of Doom"
+    gog:
+      url: doom_ii_final_doom
     debian:
       depends: doom2-wad | freedoom
       recommends: game-data-packager
