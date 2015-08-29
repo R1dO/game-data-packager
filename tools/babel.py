@@ -85,7 +85,12 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 )
 for lang in langs_order:
     html.write('  <td><b>%s</b></td>\n' % lang)
-html.write('<td>Demo</td><td>Steam</td><td>GOG.com</td><td>DotEmu</td><td>Misc.</td></tr>\n')
+html.write('''<td>Demo</td>
+<td>Steam</td>
+<td><a href="https://www.gog.com/mix/games_supported_by_debians_gamedatapackager">GOG.com</a></td>
+<td>DotEmu</td>
+<td>Misc.</td></tr>
+''')
 
 # BODY
 last_genre = None
