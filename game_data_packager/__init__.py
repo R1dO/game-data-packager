@@ -2825,7 +2825,14 @@ class GameData(object):
 
     def install_packages(self, debs):
         print('using su(1) to obtain root privileges and install the package(s)')
-        cmd = 'dpkg -i'
+
+        apt_ver = subprocess.check_output(['dpkg-query', '--show',
+                    '--showformat', '${Version}', 'apt'], universal_newlines=True)
+        if apt_ver[0:3] >= '1.1':
+            cmd = 'apt-get install --install-recommends'
+        else:
+            cmd = 'dpkg -i'
+
         for deb in debs:
             cmd = cmd + ' ' + shlex.quote(deb)
 
