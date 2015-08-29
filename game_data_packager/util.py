@@ -84,16 +84,6 @@ class PackageCache:
     available = None
 
     def is_installed(self, package):
-        if self.installed is None:
-            cache = set()
-            proc = subprocess.Popen(['dpkg-query', '--show',
-                        '--showformat', '${Package}\\n'],
-                    universal_newlines=True,
-                    stdout=subprocess.PIPE)
-            for line in proc.stdout:
-                cache.add(line.rstrip())
-            self.installed = cache
-
         # FIXME: this shouldn't be hard-coded
         if package == 'doom-engine':
             return (self.is_installed('chocolate-doom')
@@ -108,6 +98,19 @@ class PackageCache:
         if package == 'hexen-engine':
             return (self.is_installed('chocolate-hexen')
                  or self.is_installed('doomsday'))
+
+        if os.path.isdir(os.path.join('/usr/share/doc', package)):
+            return True
+
+        if self.installed is None:
+            cache = set()
+            proc = subprocess.Popen(['dpkg-query', '--show',
+                        '--showformat', '${Package}\\n'],
+                    universal_newlines=True,
+                    stdout=subprocess.PIPE)
+            for line in proc.stdout:
+                cache.add(line.rstrip())
+            self.installed = cache
 
         return package in self.installed
 
