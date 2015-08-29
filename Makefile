@@ -78,6 +78,7 @@ clean:
 	rm -f ./out/*.svgz
 	rm -f ./out/*.svg
 	rm -f ./out/*.json
+	rm -f ./out/index.html
 	rm -rf game_data_packager/__pycache__
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
@@ -94,4 +95,8 @@ manual-check:
 	done
 	rm -fr tmp/
 
-.PHONY: default clean check manual-check
+html: $(DIRS) $(json)
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
+	rsync out/index.html alioth.debian.org:/var/lib/gforge/chroot/home/groups/pkg-games/htdocs/game-data/ -e ssh -v
+
+.PHONY: default clean check manual-check html

@@ -16,10 +16,9 @@
 # /usr/share/common-licenses/GPL-2.
 
 
-# Online at http://users.teledisnet.be/ade15809/babel.html
+# Online at http://pkg-games.alioth.debian.org/game-data/
 
 from game_data_packager import (load_games, GameData, FillResult)
-from game_data_packager.util import ascii_safe
 
 games = []
 genres = dict()
@@ -53,7 +52,7 @@ for name, game in load_games().items():
     genres[game.genre] = genres.get(game.genre, 0) + 1
     stats['genre'] = game.genre
     stats['shortname'] = name
-    stats['longname'] = ascii_safe(game.longname, force=True)
+    stats['longname'] = game.longname
     stats['total'] = len(game.packages)
     stats['missing_langs'] = game.missing_langs
     stats['fullfree'] = fullfree
@@ -71,12 +70,12 @@ games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
 
 langs_order = [k for k, v in sorted(langs.items(), key=lambda kv: (-kv[1], kv[0]))]
 
-html = open('/home/tchet/Utilitaires/Homepage/babel.html', 'w', encoding='latin1')
+html = open('out/index.html', 'w', encoding='utf8')
 html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>Game-Data-Packager</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
 <table border=1 cellspacing=0>
 <tr>
