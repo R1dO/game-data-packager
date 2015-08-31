@@ -35,6 +35,9 @@ packages:
     longname: Doom
     install:
     - doom.wad
+    optional:
+    - doom bible.pdf
+    - manual.pdf
 
 files:
   # full version
@@ -138,6 +141,28 @@ files:
     sha1: 2c8212631b37f21ad06d18b5638c733a75e179ff
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
+
+  doom bible.pdf:
+    install_to: $docdir
+  manual.pdf:
+    install_to: $docdir
+  setup_the_ultimate_doom_2.0.0.3.exe:
+    sha1: 923c77b2cb7b4a73abd62f62c26f614446c849ff
+    unpack:
+      format: innoextract
+      unpack:
+      - doom.wad
+      - doom bible.pdf
+      - manual.pdf
+    provides:
+    - doom.wad_1.9ud
+    - doom bible.pdf
+    - manual.pdf
+
+size_and_md5: |
+  548488    c985db4e0aa6fa12dc650b04eaa041cc doom bible.pdf
+  684939    a2cbc904d3ea7648b973aac7c53e9685 manual.pdf
+  20575712  98a065ca917fc5ac021621098a2f80cd setup_the_ultimate_doom_2.0.0.3.exe
 
 ...
 # vim:set sw=2 sts=2 et:
