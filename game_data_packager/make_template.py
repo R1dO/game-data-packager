@@ -206,7 +206,15 @@ class GameData(object):
 
     def add_one_innoextract(self,exe):
         tmp = tempfile.mkdtemp(prefix='gdptmp.')
-        log = subprocess.check_output(['innoextract', os.path.realpath(exe), '-I', 'app'],
+
+        command = ['innoextract', os.path.realpath(exe)]
+        version = subprocess.check_output(['innoextract', '-v', '-s'], universal_newlines=True)
+        if version[0:3] >= '1.5':
+            command.append('-I')
+            command.append('app')
+
+        logger.info('running "%s" ...' % ' '.join(command))
+        log = subprocess.check_output(command,
                  stderr=subprocess.DEVNULL,
                  universal_newlines=True,
                  cwd=tmp)
