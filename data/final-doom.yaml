@@ -8,6 +8,8 @@ aliases: [tnt, plutonia]
 steam:
   id: 2290
   path: "common/Final Doom"
+gog:
+  url: doom_ii_final_doom
 
 plugin: doom_common
 
@@ -26,6 +28,8 @@ packages:
     install:
     - tnt.wad
     - tnt31.wad
+    optional:
+    - manual.pdf
     main_wads:
       tnt.wad:
         args: -iwad %s -file tnt31.wad
@@ -39,6 +43,8 @@ packages:
       conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
     install:
     - plutonia.wad
+    optional:
+    - manual.pdf
     install_to: usr/share/games/doom
 
 files:
@@ -120,5 +126,24 @@ files:
     look_for:
     - plutonia.wad
 
+  manual.pdf:
+    install_to: $docdir
+    size: 700050
+    md5: 22d3082cdf145cafcfce9e5b1c08a203
+
+  setup_final_doom_2.0.0.5.exe:
+    size: 27800120
+    md5: 61ae1fd2c50a6ef0c85b3248a9d58179
+    sha1: 101e41cb3f8e2e6ef08875634282559aefd0513a
+    unpack:
+      format: innoextract
+      unpack:
+      - tnt.wad
+      - plutonia.wad
+      - manual.pdf
+    provides:
+    - tnt.wad_id_anthology
+    - plutonia.wad_id_anthology
+    - manual.pdf
 ...
 # vim:set sw=2 sts=2 et:
