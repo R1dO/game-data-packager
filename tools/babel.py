@@ -77,6 +77,13 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 <title>Game-Data-Packager</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
+
+<h1>Debian Games Team</h1>
+<img src="../proposed-logo.png" height="64" width="64" alt="Debian Games Team logo">
+<h2>List of games supported by <code>game-data-packager</code> in git</h2>
+This is an automaticaly generated list of games supported by then upcoming release.<br>
+Please visit the <a href="http://wiki.debian.org/Games/GameDataPackager">Wiki</a>
+for more general information.
 <table border=1 cellspacing=0>
 <tr>
 <td colspan=2>&nbsp</td>
