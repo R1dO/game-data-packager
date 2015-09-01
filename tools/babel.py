@@ -92,7 +92,7 @@ for more general information.
 for lang in langs_order:
     html.write('  <td><b>%s</b></td>\n' % lang)
 html.write('''<td>Demo</td>
-<td>Steam</td>
+<td><a href="https://steamcommunity.com/groups/debian_gdp#curation">Steam</a></td>
 <td><a href="https://www.gog.com/mix/games_supported_by_debians_gamedatapackager">GOG.com</a></td>
 <td>DotEmu</td>
 <td>Misc.</td></tr>
