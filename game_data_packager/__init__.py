@@ -1750,7 +1750,7 @@ class GameData(object):
                         cmdline.append('--silent')
                     version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
-                    if version != '1.4' and 'FIXME' not in to_unpack:
+                    if version[0:3] >= '1.5':
                         prefix = provider.unpack.get('prefix', '')
                         suffix = provider.unpack.get('suffix', '')
                         if prefix and not prefix.endswith('/'):
