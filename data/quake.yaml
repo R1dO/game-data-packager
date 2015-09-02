@@ -55,9 +55,11 @@ packages:
     - id1/pak1.pak
     optional:
     - manual.txt_101_cd
+    - quake manual.pdf
     license:
     - comexp.txt_101_cd
     - licinfo.txt_101_cd
+    - licinfo.txt_gog
     - rlicnse.txt_101_cd
     install_to: usr/share/games/quake
 
@@ -145,6 +147,9 @@ files:
     install_as: licinfo.txt
 
   license.txt_mp12_cd:
+    install_as: license.txt
+
+  licinfo.txt_gog:
     install_as: license.txt
 
   manual.txt_101_cd:
@@ -317,6 +322,28 @@ files:
     unpack:
       format: lha
 
+  quake manual.pdf:
+    alternatives:
+    - quake manual.pdf_steam
+    - quake manual.pdf_gog
+    install_to: $docdir
+  quake manual.pdf_steam:
+    look_for: [quake manual.pdf]
+  quake manual.pdf_gog:
+    look_for: [quake manual.pdf]
+
+  setup_quake_the_offering_2.0.0.6.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - id1/pak0.pak_106
+    - id1/pak1.pak
+    - comexp.txt_101_cd
+    - licinfo.txt_gog
+    - quake manual.pdf
+    - hipnotic/pak0.pak
+    - rogue/pak0.pak
+
 cksums: |
   # demo, free to download
   263390945 9094045 quake106.zip
@@ -413,7 +440,6 @@ md5sums: |
   752f49131bb3ba832346e873c1bcfdc6  q101_int.1
   9ed67b39020575771e29645d977c9216  q101_int.2
   00ec83fe931371ddae30f9b7c83d414c  q101_int.exe
-  0575bbd0df753f6e44b7a0f67ffc1413  comexp.txt_101_cd
   f1a3b7c5c163059345d7507ad1324e3d  licinfo.txt_101_cd
   beaa9e3a9a8ef071d876d59fe35817ce  manual.txt_101_cd
   c19fec3ec138ee39868a021acaa34d65  rlicnse.txt_101_cd
@@ -430,6 +456,15 @@ md5sums: |
   4b041f0feaa269e8c056e55673351a77  eternity/ctf.txt_mp12_cd
   29500c8bd2b0359eb258a4987319fadd  eternity/manual.htm_mp12_cd
   9f9e2f2f14093d25f116a8a68c139251  eternity/manual.txt_mp12_cd
+
+size_and_md5: |
+  18689235   5906e5998fc3d896ddaf5e6a62e03abb id1/pak0.pak_106
+  34257856   d76b3e5678f0b64ac74ce5e340e6a685 id1/pak1.pak
+  25462      0575bbd0df753f6e44b7a0f67ffc1413 comexp.txt_101_cd
+  9308       0f77362a55b35e623d9f4710ed86cda7 licinfo.txt_gog
+  717202     785290e6e42c94934c3044851e380b64 quake manual.pdf_gog
+  727612     0eb0ce3c6244dce91e68eec572cbd67e quake manual.pdf_steam
+  1233689072 c8acba92fca95b8ba67111fa81730141 setup_quake_the_offering_2.0.0.6.exe
 
 sha1sums: |
   36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak_106
@@ -459,6 +494,7 @@ sha1sums: |
   09f5bd9d54985afce030ece22aa020786aab6110  eternity/ctf.txt_mp12_cd
   03c040d7a296b726a5b088784c4fc0db608fd635  eternity/manual.htm_mp12_cd
   083f5c4e1dbdb8cc7c105aa9e2d145cd42f9b86c  eternity/manual.txt_mp12_cd
+  482866072af20cd730b3ce7fc69606a63db83cad  setup_quake_the_offering_2.0.0.6.exe
 
 sha256sums: |
   35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak_106
