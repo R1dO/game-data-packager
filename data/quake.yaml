@@ -335,12 +335,20 @@ files:
   setup_quake_the_offering_2.0.0.6.exe:
     unpack:
       format: innoextract
+      unpack:
+      - id1/pak0.pak
+      - id1/pak1.pak
+      - comexp.txt
+      - licinfo.txt
+      - quake manual.pdf
+      - hipnotic/pak0.pak
+      - rogue/pak0.pak
     provides:
     - id1/pak0.pak_106
     - id1/pak1.pak
     - comexp.txt_101_cd
     - licinfo.txt_gog
-    - quake manual.pdf
+    - quake manual.pdf_gog
     - hipnotic/pak0.pak
     - rogue/pak0.pak
 
