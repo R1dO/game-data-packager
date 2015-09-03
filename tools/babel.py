@@ -104,6 +104,21 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 <head>
 <title>Game-Data-Packager</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<style>
+'''
+)
+
+for lang in langs_order:
+    if lang in ('total', 'en'):
+        continue
+    html.write('  #check-%s:checked ~ * .%s' % (lang, lang))
+    if lang != langs_order[-1]:
+        html.write(',\n')
+
+html.write(''' {
+  background-color: yellow;
+}
+</style>
 </head>
 
 <h1>Debian Games Team</h1>
@@ -112,7 +127,15 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 This is an automaticaly generated list of games supported by then upcoming release.<br>
 Please visit the <a href="http://wiki.debian.org/Games/GameDataPackager">Wiki</a>
 for more general information.
-<table border=1 cellspacing=0>
+<br><br>
+'''
+)
+for lang in langs_order:
+    if lang in ('total', 'en'):
+        continue
+    html.write('<!--label for=check-%s-->%s<!--/label--><input id=check-%s type=checkbox>&nbsp;&nbsp;' % (lang, lang, lang))
+
+html.write('''<table border=1 cellspacing=0>
 <tr>
 <td colspan=2>&nbsp</td>
 '''
@@ -135,7 +158,13 @@ for game in games:
     if genre != last_genre:
         html.write('<td rowspan=%i>%s</td>\n' % (genres[genre], genre))
         last_genre = genre
-    html.write('  <td>%s</td>\n' % game['longname'])
+    highlight = [l for l in langs_order if l not in ('total', 'en') and l in game]
+    highlight += game.get('missing_langs', [])
+    if highlight:
+        css = ' class="%s"' % ' '.join(highlight)
+    else:
+        css = ''
+    html.write('  <td%s>%s</td>\n' % (css, game['longname']))
     for lang in langs_order:
         count = game.get(lang,None)
         if lang in ('total', 'en') and count == None:
@@ -150,7 +179,7 @@ for game in games:
             html.write('  <td>&nbsp;</td>\n')
 
     if game.get('fullfree', False):
-        html.write('  <td colspan=5 align=center><b>freeload</b></td>\n')
+        html.write('  <td colspan=5 align=center%s><b>freeload</b></td>\n' % css)
     else:
         if 'demos' in game:
             demos += game['demos']
@@ -161,9 +190,9 @@ for game in games:
             html.write('  <td>&nbsp;</td>\n')
         for url in ('url_steam', 'url_gog', 'url_dotemu', 'url_misc'):
             if url in game and game[url]:
-                html.write('  <td align=center><a href="%s"><b>X</b></a></td>\n' % url)
+                html.write('  <td align=center%s><a href="%s"><b>X</b></a></td>\n' % (css, url))
             else:
-                html.write('  <td>&nbsp;</td>\n')
+                html.write('  <td%s>&nbsp;</td>\n' % css)
     html.write('</tr>\n')
 
 # TOTAL
