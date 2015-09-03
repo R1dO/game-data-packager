@@ -66,6 +66,30 @@ for name, game in load_games().items():
             langs[l] = 0
     games.append(stats)
 
+# add missing games from list
+with open('debian/TODO', 'r', encoding='utf8') as missing:
+    for line in missing:
+        if line[0:2] == '##':
+            break
+    genre = None
+    for line in missing:
+        line = line.strip()
+        if line[0:1] == '#':
+            genre = line[1:len(line)].strip()
+        elif line == '':
+            pass
+        else:
+            stats = dict()
+            genres[genre] = genres.get(genre, 0) + 1
+            stats['genre'] = genre
+            shortname = ''
+            for char in line.lower():
+                if 'a' <= char <= 'z' or '0' <= char <= '9':
+                   shortname += char
+            stats['shortname'] = shortname
+            stats['longname'] = line
+            games.append(stats)
+
 games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
 
 langs_order = [k for k, v in sorted(langs.items(), key=lambda kv: (-kv[1], kv[0]))]
@@ -110,27 +134,29 @@ for game in games:
     html.write('  <td>%s</td>\n' % game['longname'])
     for lang in langs_order:
         count = game.get(lang,None)
-        if lang in ('total', 'en') or count == '*':
+        if lang in ('total', 'en') and count == None:
+            html.write('  <td bgcolor="orange">!</td>\n')
+        elif lang in ('total', 'en') or count == '*':
             html.write('  <td bgcolor="lightgreen">%s</td>\n' % count)
-        elif lang in game['missing_langs']:
+        elif 'missing_langs' in game and lang in game['missing_langs']:
             html.write('  <td bgcolor="orange">!</td>\n')
         elif count:
             html.write('  <td bgcolor="green">%s</td>\n' % count)
         else:
             html.write('  <td>&nbsp;</td>\n')
 
-    if game['fullfree']:
+    if game.get('fullfree', False):
         html.write('  <td colspan=5 align=center><b>freeload</b></td>\n')
     else:
         if 'demos' in game:
             demos += game['demos']
             html.write('  <td align=center><b>%i</b></td>\n' % game['demos'])
-        elif game['somefree']:
+        elif game.get('somefree', False):
             html.write('  <td align=center><b>X</b></td>\n')
         else:
             html.write('  <td>&nbsp;</td>\n')
-        for url in (game['url_steam'], game['url_gog'], game['url_dotemu'], game['url_misc']):
-            if url:
+        for url in ('url_steam', 'url_gog', 'url_dotemu', 'url_misc'):
+            if url in game and game[url]:
                 html.write('  <td align=center><a href="%s"><b>X</b></a></td>\n' % url)
             else:
                 html.write('  <td>&nbsp;</td>\n')
@@ -155,3 +181,4 @@ html.write('''
 '''
 )
 
+html.close()
