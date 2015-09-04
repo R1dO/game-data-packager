@@ -511,6 +511,10 @@ class GameData(object):
         # The formal name of the game, e.g. Quake III Arena
         self.longname = shortname.title()
 
+        # The franchise this game belongs to.
+        # this is used to loosely ties various .yaml files
+        self.franchise = None
+
         # The one-line copyright notice used to build debian/copyright
         self.copyright = None
 
@@ -566,7 +570,7 @@ class GameData(object):
         self.argument_parser = None
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
-                  'engine', 'genre', 'missing_langs',
+                  'engine', 'genre', 'missing_langs', 'franchise',
                   'steam', 'gog', 'dotemu', 'origin', 'url_misc'):
             if k in self.data:
                 setattr(self, k, self.data[k])
