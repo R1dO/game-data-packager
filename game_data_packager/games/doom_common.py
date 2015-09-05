@@ -58,6 +58,10 @@ class DoomGameData(GameData):
     def __init__(self, shortname, data, workdir=None):
         super(DoomGameData, self).__init__(shortname, data,
                 workdir=workdir)
+
+        self.wikibase = 'http://doomwiki.org/wiki/'
+        assert self.wiki
+
         if self.engine is None:
             self.engine = "chocolate-doom | doom-engine"
         if self.genre is None:

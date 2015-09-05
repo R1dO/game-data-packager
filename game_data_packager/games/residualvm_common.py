@@ -35,6 +35,9 @@ class ResidualvmGameData(GameData):
         super(ResidualvmGameData, self).__init__(shortname, data,
                 workdir=workdir)
 
+        self.wikibase = 'http://wiki.residualvm.org/index.php/'
+        assert self.wiki
+
         self.gameid = self.data['gameid']
         if self.gameid != shortname:
             self.aliases.add(self.gameid)

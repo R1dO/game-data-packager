@@ -53,6 +53,7 @@ for name, game in load_games().items():
     stats['genre'] = game.genre
     stats['shortname'] = name
     stats['longname'] = game.longname
+    stats['url_wiki'] = game.wikibase + (game.wiki or '')
     stats['total'] = len(game.packages)
     stats['missing_langs'] = game.missing_langs
     stats['fullfree'] = fullfree
@@ -164,7 +165,12 @@ for game in games:
         css = ' class="%s"' % ' '.join(highlight)
     else:
         css = ''
-    html.write('  <td%s>%s</td>\n' % (css, game['longname']))
+    html.write('  <td%s>' % css)
+    if game.get('url_wiki', False):
+        html.write('<a href="%s">%s</a>' % (game['url_wiki'], game['longname']))
+    else:
+        html.write(game['longname'])
+    html.write('</td>')
     for lang in langs_order:
         count = game.get(lang,None)
         if lang in ('total', 'en') and count == None:

@@ -36,6 +36,7 @@ class ScummvmGameData(GameData):
                 workdir=workdir)
 
         self.wikibase = 'http://wiki.scummvm.org/index.php/'
+        assert self.wiki
 
         if 'gameid' in self.data:
             self.gameid = self.data['gameid']
