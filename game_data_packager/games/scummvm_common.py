@@ -35,6 +35,8 @@ class ScummvmGameData(GameData):
         super(ScummvmGameData, self).__init__(shortname, data,
                 workdir=workdir)
 
+        self.wikibase = 'http://wiki.scummvm.org/index.php/'
+
         if 'gameid' in self.data:
             self.gameid = self.data['gameid']
             assert self.gameid != shortname, 'extraneous gameid for ' + shortname

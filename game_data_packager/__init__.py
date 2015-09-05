@@ -511,6 +511,11 @@ class GameData(object):
         # The formal name of the game, e.g. Quake III Arena
         self.longname = shortname.title()
 
+        # Engine's wiki base URL, provided by engine plugin
+        self.wikibase = ''
+        # Game page on engine's wiki
+        self.wiki = None
+
         # The franchise this game belongs to.
         # this is used to loosely ties various .yaml files
         self.franchise = None
@@ -570,7 +575,7 @@ class GameData(object):
         self.argument_parser = None
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
-                  'engine', 'genre', 'missing_langs', 'franchise',
+                  'engine', 'genre', 'missing_langs', 'franchise', 'wiki',
                   'steam', 'gog', 'dotemu', 'origin', 'url_misc'):
             if k in self.data:
                 setattr(self, k, self.data[k])
@@ -791,6 +796,7 @@ class GameData(object):
                    'vox0000.lab_unpatched',
                    ), (self.shortname, wanted.name)
 
+    def edit_help_text(self):
         if len(self.packages) > 1:
             prepend = '\npackages possible for this game:\n'
             help = []
@@ -847,6 +853,10 @@ class GameData(object):
             random.shuffle(www)
             self.help_text += '\nThis game can be bought online here:\n  '
             self.help_text += '\n  '.join(www)
+
+        if self.wiki:
+            self.help_text += '\nExternal links:\n  '
+            self.help_text += (self.wikibase + self.wiki)
 
     def __enter__(self):
         return self
@@ -2362,6 +2372,8 @@ class GameData(object):
         aliases = self.aliases
 
         longname = ascii_safe(self.longname)
+
+        self.edit_help_text()
 
         parser = parsers.add_parser(self.shortname,
                 help=longname, aliases=aliases,
