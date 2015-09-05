@@ -1,0 +1,148 @@
+---
+longname: Bargon Attack
+copyright: © 1992 Coktel Vision
+plugin: scummvm_common
+wiki: Bargon_Attack
+missing_langs: [fr]
+
+packages:
+  bargon-en-data:
+    debian:
+      provides: bargon-data
+    install:
+    - 1intro3.snd
+    - 1intro_i.snd
+    - 1intro_v.snd
+    - 1introii.snd
+    - 1introiv.snd
+    - 1introvi.snd
+    - 2intro3.snd
+    - 2intro_i.snd
+    - 2intro_v.snd
+    - 2introii.snd
+    - 2introiv.snd
+    - 2introvi.snd
+    - 3introii.snd
+    - 3introvi.snd
+    - introvii.snd
+
+    - alcove.ang
+    - arrivee.ang
+    - bar.ang
+    - bargpla.ang
+    - base.ang
+    - bill.ang
+    - boul.ang
+    - bunk.ang
+    - bunk2.ang
+    - buren.ang
+    - chamb.ang
+    - ciel.ang
+    - club.ang
+    - crabe.ang
+    - demosph.ang
+    - depart.ang
+    - ecran0.ang
+    - eglise.ang
+    - fin.ang
+    - flore.ang
+    - foire.ang
+    - font.ang
+    - gara.ang
+    - grotte.ang
+    - intro0.ang
+    - lim.ang
+    - louvre.ang
+    - mikael.ang
+    - nage.ang
+    - pont.ang
+    - quai.ang
+    - quete.ang
+    - rugar.ang
+    - rumor.ang
+    - sark.ang
+    - scooter.ang
+    - sortie.ang
+    - sphynx.ang
+    - terre.ang
+    - tobo.ang
+    - tract.ang
+
+    - scaa.imd
+    - scba.imd
+    - scbb.imd
+    - scbc.imd
+    - scbd.imd
+    - scbf.imd
+    - intro.stk
+    - traduc.cat
+
+size_and_md5: |
+  48390     c42e3541c0455776b31a68d859fce475 1intro3.snd
+  35846     089aacc4d051abe54a98c674ba1948b8 1intro_i.snd
+  52870     54662b9276e69d83f4eadecba2820fba 1intro_v.snd
+  44038     b6857e0ca7878b8558e293dc18650c48 1introii.snd
+  39814     5e6e98f9937efac2cf02eff48c4f0b7e 1introiv.snd
+  50182     21e10bbdd622b70dacbf2f7df304566a 1introvi.snd
+  32212     ed3c6fffe4fdd48862e062ed6637f8be 2intro3.snd
+  48167     80c1da2cfb1a47db6965737aac941226 2intro_i.snd
+  22705     20b9acc80e13ba3f831d2b0686f2f9bd 2intro_v.snd
+  22918     8788f85e22896d142869a8ae1723a7cd 2introii.snd
+  36566     494b9dbc82c229c8f648a5bf78482dec 2introiv.snd
+  28550     9c70b0155ea57c57ce52af748aae8284 2introvi.snd
+  18711     2e18a615abf5c424408d624c38a7aa5c 3introii.snd
+  38427     6de81e9416a0636e5470e3d948a6a576 3introvi.snd
+  44369     2fd5937db08ce238687cb19a533e39c3 introvii.snd
+
+  373       8049552c03b653ed24cb9876af25219b alcove.ang
+  681       766f1ef86facbf6154a740431348548f arrivee.ang
+  4947      7fd6577cc37ff2002d36afa5cfe15617 bar.ang
+  3977      727b306380d362b8e782024799d47c88 bargpla.ang
+  2556      0ab6e7b9754e63465c666f56a44d4edd base.ang
+  7042      9cd421251b170e701efb23a96ef60294 bill.ang
+  3253      7b10e2c4d66b02e09fe00156776e0bb7 boul.ang
+  3383      130a8eb2a7d8296d4601eda44c389d92 bunk.ang
+  3438      b135391bc8f8159ba7093833c1400c5c bunk2.ang
+  1426      890dc5c0ef1eac46b58ffea769e2a079 buren.ang
+  821       9cff02f24c220a9ee8ec6ab2762cc8f1 chamb.ang
+  797       e3f29a1210e042235b761445ec0887f0 ciel.ang
+  6906      229b280301f86d8f741191137c6ef408 club.ang
+  112       2b0a97bc81997fb68c5457c0de4ae251 crabe.ang
+  4419      1a74849a1fa29d34e609c1de984d7200 demosph.ang
+  1197      570354d76c45afaa5c77c1005a7e683c depart.ang
+  4059      1cb2709c54deec02bda557b3d9a63291 ecran0.ang
+  511       97c9cb983f875dc57bd936dd32095f65 eglise.ang
+  1426      0cc35173e72cb1294ee77b39474fdf5a fin.ang
+  1972      84959f64f95b7313402563777bc3ce82 flore.ang
+  878       5b7256f142f098e86e770e72160480db foire.ang
+  1938      24b18759036cbf438e4c8047d93befd2 font.ang
+  4899      e7beceb924f99aba419703a9dfd0645c gara.ang
+  1602      d7ac16e9f313f6e1d17b49a0a58a5fbd grotte.ang
+  889       e840a0b27e816870820ab5c551064ef5 intro0.ang
+  5827      207cdd392b56ff7c0cec8ed7fc0f6066 lim.ang
+  2424      12908f4940c1081873fdfb83b52a6240 louvre.ang
+  941       9217b2a13eaf84e1269e9def69d37d7a mikael.ang
+  389       a7c132ac72a727594299003c7498fc45 nage.ang
+  1942      89320cbf0f55e2e87ba20afe8ff11eb5 pont.ang
+  3155      54f7d0c5c5434eaab28ccb00774f261b quai.ang
+  2698      8cf250882f969f6dadbaa8965cd931f7 quete.ang
+  4056      3f018988e059ab59959c5117d14950ba rugar.ang
+  3287      e23d99fa71e449cd089e772a9084e331 rumor.ang
+  826       e217e6740057e066ce0bcb8632fe418b sark.ang
+  3592      4cbde50bf051d9cb2638af3f94780bb6 scooter.ang
+  992       274d3ca5ed5922277b8eab5b2c6a5845 sortie.ang
+  4417      298d1df192296a44065f73c637b3065c sphynx.ang
+  512       a15e854e8330160d55a3889d21c1faef terre.ang
+  474       a5503ae5df92b28d2bf276b08646dbcd tobo.ang
+  3598      4612ae996ed0f26e23ba457d275488b1 tract.ang
+
+  295775    bc4c289c389a7e18a04b79ecf9863c41 scaa.imd
+  797803    10b803830860e7d8d807e18dc6551883 scba.imd
+  715296    02e1c3a04400fc3b4fcec3be3beb1f9c scbb.imd
+  742698    988ce2ee5dc478b3ece9e80706a98830 scbc.imd
+  789739    bbb376423932b98ff51a47f6d476e3a8 scbd.imd
+  467807    7b9208b46a6be1d81cb66ecbb0b6fa81 scbf.imd
+
+  3181825   ee9640160cdfdc5e9e2897248e27d85b intro.stk
+  8000      a0ce4a4edd40fe93636f41c07a239e22 traduc.cat
+...
