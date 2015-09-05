@@ -796,6 +796,30 @@ class GameData(object):
                    'vox0000.lab_unpatched',
                    ), (self.shortname, wanted.name)
 
+        # compute webshop URL's
+        gog_url = self.gog.get('url')
+        gog_pp = '22d200f8670dbdb3e253a90eee5098477c95c23d' # ScummVM
+        steam_id = {self.steam.get('id')}
+        dotemu_id = self.dotemu.get('id')
+        dotemu_pp = '32202' # ScummVM
+        for p in sorted(self.packages.keys(), reverse=True):
+            package = self.packages[p]
+            gog_url = package.gog.get('url', gog_url)
+            gog_pp = package.gog.get('pp', gog_pp)
+            steam_id.add(package.steam.get('id'))
+            dotemu_id = package.dotemu.get('id', dotemu_id)
+            dotemu_pp = package.dotemu.get('pp', dotemu_pp)
+            if package.url_misc:
+                self.url_misc = package.url_misc
+        steam_id.discard(None)
+        if steam_id:
+            self.url_steam = 'http://store.steampowered.com/app/%s/' % min(steam_id)
+        if gog_url:
+            self.url_gog = 'http://www.gog.com/game/' + gog_url + '?pp=' + gog_pp
+        if dotemu_id:
+            self.url_dotemu = 'http://www.dotemu.com/affiliate/%s/node/%d' % (
+                              dotemu_pp, dotemu_id)
+
     def edit_help_text(self):
         if len(self.packages) > 1:
             prepend = '\npackages possible for this game:\n'
@@ -819,33 +843,12 @@ class GameData(object):
 
         # advertise where to buy games
         # if it's not already in the help_text
-        gog_url = self.gog.get('url')
-        gog_pp = '22d200f8670dbdb3e253a90eee5098477c95c23d' # ScummVM
-        steam_id = {self.steam.get('id')}
-        dotemu_id = self.dotemu.get('id')
-        dotemu_pp = '32202' # ScummVM
-        for p in sorted(self.packages.keys(), reverse=True):
-            package = self.packages[p]
-            gog_url = package.gog.get('url', gog_url)
-            gog_pp = package.gog.get('pp', gog_pp)
-            steam_id.add(package.steam.get('id'))
-            dotemu_id = package.dotemu.get('id', dotemu_id)
-            dotemu_pp = package.dotemu.get('pp', dotemu_pp)
-            if package.url_misc:
-                self.url_misc = package.url_misc
-        steam_id.discard(None)
         www = list()
-        if steam_id:
-            self.url_steam = 'http://store.steampowered.com/app/%s/' % min(steam_id)
-            if '://store.steampowered.com/' not in self.help_text:
+        if self.url_steam and '://store.steampowered.com/' not in self.help_text:
                 www.append(self.url_steam)
-        if gog_url:
-            self.url_gog = 'http://www.gog.com/game/' + gog_url + '?pp=' + gog_pp
-            if '://www.gog.com/' not in self.help_text:
+        if self.url_gog and '://www.gog.com/' not in self.help_text:
                 www.append(self.url_gog)
-        if dotemu_id:
-            self.url_dotemu = 'http://www.dotemu.com/affiliate/%s/node/%d' % (
-                              dotemu_pp, dotemu_id)
+        if self.url_dotemu:
             www.append(self.url_dotemu)
         if self.url_misc:
             www.append(self.url_misc)
