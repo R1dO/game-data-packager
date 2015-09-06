@@ -196,7 +196,7 @@ for game in games:
             html.write('  <td>&nbsp;</td>\n')
         for url in ('url_steam', 'url_gog', 'url_dotemu', 'url_misc'):
             if url in game and game[url]:
-                html.write('  <td align=center%s><a href="%s"><b>X</b></a></td>\n' % (css, url))
+                html.write('  <td align=center%s><a href="%s"><b>X</b></a></td>\n' % (css, game[url]))
             else:
                 html.write('  <td%s>&nbsp;</td>\n' % css)
     html.write('</tr>\n')
