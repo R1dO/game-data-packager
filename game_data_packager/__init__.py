@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 # encoding=utf-8
 #
@@ -3096,7 +3097,7 @@ def run_steam_meta_mode(parsed, games):
                 continue
 
             paths = []
-            for path in gamedata.iter_steam_paths({'dummy': package}.values()): #XXX: ugly
+            for path in gamedata.iter_steam_paths((package,)):
                 if path not in paths:
                     paths.append(path)
             if not paths:
