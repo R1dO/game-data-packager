@@ -2385,6 +2385,15 @@ class GameData(object):
                 formatter_class=argparse.RawDescriptionHelpFormatter,
                 parents=(base_parser,),
                 **kwargs)
+
+        group = parser.add_mutually_exclusive_group()
+        group.add_argument('--search', action='store_true',
+            help='look for installed files in Steam and other likely places ' +
+                '(default)')
+        group.add_argument('--no-search', action='store_false',
+            dest='search',
+            help='only look in paths provided on the command line')
+
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE',
                 help='Files to use in constructing the .deb')
@@ -3074,6 +3083,56 @@ def load_games(workdir=None,game='*'):
     print('\r%s\r' % (' ' * len(games)), end='', flush=True, file=sys.stderr)
     return games
 
+def run_steam_meta_mode(parsed, games):
+    logging.info('Searching for Steam games...')
+    found_games = []
+    found_packages = []
+    for game, gamedata in games.items():
+        for package in gamedata.packages.values():
+            if package.type == 'demo':
+                continue
+            # ignore other translations for "I Have No Mouth"
+            if lang_score(package.lang) == 0:
+                continue
+
+            paths = []
+            for path in gamedata.iter_steam_paths({'dummy': package}.values()): #XXX: ugly
+                if path not in paths:
+                    paths.append(path)
+            if not paths:
+                continue
+
+            installed = PACKAGE_CACHE.is_installed(package.name)
+            if parsed.new and installed:
+                continue
+
+            if game not in found_games:
+                found_games.append(game)
+            found_packages.append({
+                'game' : game,
+                'type' : 1 if package.type == 'full' else 2,
+                'package': package.name,
+                'installed': installed,
+                'longname': package.longname or gamedata.longname,
+                'paths': paths,
+               })
+    if not found_games:
+        log.error('No Steam game found')
+        return
+
+    print('[x] = package is already installed')
+    print('----------------------------------------------------------------------\n')
+    found_packages = sorted(found_packages, key=lambda k: (k['game'], k['type'], k['longname']))
+    for g in sorted(found_games):
+        print(g)
+        for p in found_packages:
+            if p['game'] != g:
+                continue
+            print('[%s] %-42s    %s' % ('x' if p['installed'] else ' ',
+                                        p['package'], ascii_safe(p['longname'])))
+            print('\n'.join(p['paths']))
+        print()
+
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
 
@@ -3105,14 +3164,6 @@ def run_command_line():
     group.add_argument('--no-compress', action='store_false',
             dest='compress',
             help='do not compress generated .deb (default without -d)')
-
-    group = base_parser.add_mutually_exclusive_group()
-    group.add_argument('--search', action='store_true',
-            help='look for installed files in Steam and other likely places ' +
-                '(default)')
-    group.add_argument('--no-search', action='store_false',
-            dest='search',
-            help='only look in paths provided on the command line')
 
     group = base_parser.add_mutually_exclusive_group()
     group.add_argument('--download', action='store_true',
@@ -3159,6 +3210,18 @@ def run_command_line():
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers, base_parser)
 
+    # Steam meta-mode
+    steam_parser = game_parsers.add_parser('steam',
+        help='Package all Steam games at once',
+        description='Automatically package all your Steam games',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        parents=(base_parser,))
+    group = steam_parser.add_mutually_exclusive_group()
+    group.add_argument('--all', action='store_true', default=False,
+                       help='package all Steam games')
+    group.add_argument('--new', action='store_true', default=False,
+                       help='package all new Steam games')
+
     config = read_config()
     parsed = argparse.Namespace(
             compress=None,
@@ -3198,7 +3261,10 @@ def run_command_line():
                 parsed.save_downloads)
         sys.exit(2)
 
-    if parsed.shortname in games:
+    if parsed.shortname == 'steam':
+        run_steam_meta_mode(parsed, games)
+        return
+    elif parsed.shortname in games:
         game = games[parsed.shortname]
     else:
         parsed.package = parsed.shortname
