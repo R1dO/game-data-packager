@@ -3117,7 +3117,7 @@ def run_steam_meta_mode(parsed, games):
                 'paths': paths,
                })
     if not found_games:
-        log.error('No Steam game found')
+        logger.error('No Steam games found')
         return
 
     print('[x] = package is already installed')
