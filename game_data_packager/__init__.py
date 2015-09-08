@@ -2387,7 +2387,7 @@ class GameData(object):
                 **kwargs)
 
         group = parser.add_mutually_exclusive_group()
-        group.add_argument('--search', action='store_true',
+        group.add_argument('--search', action='store_true', default=True,
             help='look for installed files in Steam and other likely places ' +
                 '(default)')
         group.add_argument('--no-search', action='store_false',
@@ -3231,7 +3231,6 @@ def run_command_line():
             install=False,
             packages=[],
             save_downloads=None,
-            search=True,
             shortname=None,
     )
     if config['install']:
