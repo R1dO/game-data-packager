@@ -3154,8 +3154,14 @@ def run_steam_meta_mode(parsed, games):
         game.verbose = getattr(parsed, 'verbose', False)
         game.save_downloads = parsed.save_downloads
         game.look_for_files()
+
+        todo = list()
+        for packages in found_packages:
+            if packages['game'] == shortname:
+                todo.append(game.packages[packages['package']])
         try:
-            ready = game.prepare_packages(log_immediately=False)
+            ready = game.prepare_packages(log_immediately=False,
+                                          packages=todo)
         except NoPackagesPossible:
             logger.error('No package possible for %s.' % game.shortname)
             continue
