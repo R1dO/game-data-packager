@@ -3147,8 +3147,6 @@ def run_steam_meta_mode(parsed, games):
         # anyway
         parsed.compress = preserve_debs
 
-    found_games = ['duke3d']
-
     all_debs = set()
 
     for shortname in sorted(found_games):
