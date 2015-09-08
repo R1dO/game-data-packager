@@ -76,6 +76,36 @@ The game being packaged. Running
 without arguments will display a list of valid games. Running
 .B game\-data\-packager game \-\-help
 will display a list of valid options for that game.
+
+.SH ALTERNATIVE MODES
+.B game\-data\-packager steam
+[
+.I \-i
+]
+[
+.I \-d
+out-directory [
+.I \-n
+] ]
+[
+.I \-z | --no\-compress
+] [
+.I --new
+|
+.I --all
+]
+.br
+will package all your Steam game at once.
+.br
+Most games can only be downloaded with Windows Steam
+running optionally through Wine.
+.TP
+.B --new
+only package new games
+.TP
+.B --all
+package all games available
+
 .SH ENVIRONMENT VARIABLES
 .TP
 .B LANGUAGE, LANG

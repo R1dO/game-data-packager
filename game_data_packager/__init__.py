@@ -2665,8 +2665,11 @@ class GameData(object):
 
         return self._architecture
 
-    def prepare_packages(self, packages, build_demos=False, download=True,
+    def prepare_packages(self, packages=None, build_demos=False, download=True,
             log_immediately=True):
+        if packages is None:
+            packages = self.packages.values()
+
         possible = set()
 
         if self.cd_device is not None:
@@ -3132,6 +3135,63 @@ def run_steam_meta_mode(parsed, games):
                                         p['package'], ascii_safe(p['longname'])))
             print('\n'.join(p['paths']))
         print()
+
+    if not parsed.new and not parsed.all:
+       logger.info('Please specify --all or --new to create desired packages.')
+       return
+
+    preserve_debs = (getattr(parsed, 'destination', None) is not None)
+    install_debs = getattr(parsed, 'install', True)
+    if getattr(parsed, 'compress', None) is None:
+        # default to not compressing if we aren't going to install it
+        # anyway
+        parsed.compress = preserve_debs
+
+    found_games = ['duke3d']
+
+    all_debs = set()
+
+    for shortname in sorted(found_games):
+        game = games[shortname]
+        game.verbose = getattr(parsed, 'verbose', False)
+        game.save_downloads = parsed.save_downloads
+        game.look_for_files()
+        try:
+            ready = game.prepare_packages(log_immediately=False)
+        except NoPackagesPossible:
+            logger.error('No package possible for %s.' % game.shortname)
+            continue
+        except DownloadsFailed:
+            logger.error('Unable to complete any packages of %s'
+                         ' because downloads failed.' % game.shortname)
+            continue
+
+        if parsed.destination is None:
+            destination = workdir = tempfile.mkdtemp(prefix='gdptmp.')
+        else:
+            workdir = None
+            destination = parsed.destination
+
+        debs = game.build_packages(ready,
+                compress=getattr(parsed, 'compress', True),
+                destination=destination)
+        rm_rf(os.path.join(game.get_workdir(), 'tmp'))
+
+        if preserve_debs:
+            for deb in debs:
+                print('generated "%s"' % os.path.abspath(deb))
+        all_debs = all_debs.union(debs)
+
+    if not all_debs:
+        logger.error('Unable to package any game.')
+        if workdir:
+           rm_rf(workdir)
+        raise SystemExit(1)
+
+    if install_debs:
+        GameData.install_packages(games, all_debs)
+    if workdir:
+        rm_rf(workdir)
 
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
