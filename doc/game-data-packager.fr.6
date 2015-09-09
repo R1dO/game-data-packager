@@ -1,0 +1,142 @@
+.\" This program is free software; you can redistribute it and/or modify it
+.\" under the terms of the GNU General Public License as published by the
+.\" Free Software Foundation; version 2.
+.\" 
+.\" This program is distributed in the hope that it will be useful, but
+.\" WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+.\" Public License for more details.
+.\" 
+.\" You should have received a copy of the GNU General Public License along
+.\" with this library; if not, write to the Free Software Foundation, Inc.,
+.\" 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+.\"
+.\" See /usr/share/common-licenses/GPL-2
+.\" 
+.de URL
+\\$2 \(laURL: \\$1 \(ra\\$3
+..
+.if \n[.g] .mso www.tmac
+.TH game-data-packager 6 2015-09-09
+.SH NOM
+game\-data\-packager \- contruit des fichiers .deb à partir des données de jeux
+.
+.SH SYNOPSIS
+.B game\-data\-packager
+[
+.I -i
+]
+[
+.I -d
+répertoire-de-destination [
+.I -n
+] ]
+[
+.I -z | --no-compress
+]
+.I jeu
+[
+.I options\-du\-jeu
+]
+.SH DESCRIPTION
+De nombreux jeux open-source on besoin de données qui sont
+licensées en des termes incompatibles avec les
+Principes du logiciel libre selon Debian
+.I ("Debian Free Software Guidelines")
+.
+.br
+.B game\-data\-packager
+est un outil qui vous aide a assembler localement des packages
+Debian contenant des données provenant de CD-ROMs, d'Internet
+ou d'ailleurs.
+.SH OPTIONS
+.TP
+.B \-i
+installer directement le package créé avec
+.B dpkg(1)
+et
+.B su(1)
+\.
+.TP
+.B \-d répertoire-de-destination
+écrire les packages .deb générés dans le répertoire désigné.
+.TP
+.B \-n
+Ne pas installer les packages générés.
+.TP
+.B \-z | --compress
+Compresser les .deb (option par défaut si \-i n'est pas spécifié)
+.TP
+.B --no\-compress
+Ne pas compresser les .deb (option par défaut quand on utilise \-i)
+.TP
+.B jeu
+Nom-code du jeu à packager. Executer
+.B game\-data\-packager
+sans aucun paramètre afficher une liste des jeux possible. Executer
+.B game\-data\-packager <jeu> \-\-help
+affichera les options spécifiques à ce jeu.
+
+.SH AUTRE FONCTIONNALITÉS
+.B game\-data\-packager steam
+[
+.I \-i
+]
+[
+.I \-d
+répertoire-de-destination [
+.I \-n
+] ]
+[
+.I \-z | --no\-compress
+] [
+.I --new
+|
+.I --all
+]
+.br
+créera des packages pour tous vos jeux Steam compatibles en une fois.
+.br
+La plupart de ces jeux ne peuvent être téléchargés qu'avec
+la version 'Windows' de Steam qui aussi peux être exécutée
+via Wine.
+.TP
+.B --new
+ne créer de package .deb que pour les nouveaux jeux pas encore installés
+.TP
+.B --all
+créer tous les packages possibles
+
+.SH VARIABLES D'ENVIRONNEMENT
+.TP
+.B LANGUAGE, LANG
+Lorsqu'un jeu est disponible en plusieurs langues,
+ces variables d'environment seront utilisées
+pour choisir la bonne version.
+.br
+Ces variables sont normallement déjà correctement configurées
+par votre environnement de bureau.
+.br
+Si le jeu n'est pas disponible en Français,
+l'Anglais est alors accepté comme alternative valable.
+.SH RÉPERTOIRES
+game\-data\-packager trouvera automatiquement les données utiles
+entre autres présentes dans ces répertoires:
+.TP
+.B ~/.steam/SteamApps/common/<game>/
+.TP
+.B ~/.wine/drive_c/Program Files/Steam/SteamApps/common/<game>/
+ainsi que l'équivalent ~/.PlayOnLinux/wineprefix/Steam/drive_c/...
+.TP
+.B X:/Program Files/Steam/SteamApps/common/<game>/
+ou X:\\ est n'importe quel partition VFAT ou NTFS actuellement montée.
+.SH VOIR AUSSI
+\fIdpkg\fP(1), \fIsu\fP(1), \fIlgogdownloader\fP(1)
+.br
+Project homepage:
+.URL "https://wiki.debian.org/fr/Games/GameDataPackager"
+
+.SH AUTEUR
+Copyright \(co 2015 Alexandre Detiste \fI<alexandre@detiste.be>\fP
+.br
+Traduis à partir de la version en anglais.
