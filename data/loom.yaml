@@ -6,12 +6,10 @@ packages:
   loom-data:
     gog:
       url: loom
-# Steam provides the Windows version which isn't directly usable with ScummVM
-#    steam:
-#      id: 32340
-#      path: common/LOOM
+    steam:
+      id: 32340
+      path: common/LOOM
     install:
-    - 000.lfl
     - 901.lfl
     - 902.lfl
     - 903.lfl
@@ -19,7 +17,9 @@ packages:
     - cdda.sou
     - disk01.lec
     optional:
+    - 000.lfl
     - book_of_patterns.pdf
+    - loom.exe
     - manual.pdf
 
 files:
@@ -64,6 +64,8 @@ cksums: |
   _ 4388      904.lfl
   _ 289808802 cdda.sou
   _ 4059462   disk01.lec
+  # Steam version (000.lfl is inside loom.exe)
+  _ 585728    loom.exe
 
   _ 201588784 setup_loom_2.0.0.4.exe
   _ 201405970 gog_loom_1.0.0.5.deb
@@ -77,6 +79,7 @@ md5sums: |
   6b26151489c428be7c45c25a16e7c902  904.lfl
   e444985cc1aa65780d912b4fe21a6043  cdda.sou
   a2be3d9b4c9fceae8033a455d690c0ba  disk01.lec
+  0354ee0d14cde1264ec762261c04c14a  loom.exe
 
   a8d45197a7f81ff96ff622e182d16e80  setup_loom_2.0.0.4.exe
   e710481f2267253bca3f36656fedb009  gog_loom_1.0.0.5.deb
@@ -90,6 +93,7 @@ sha1sums: |
   880d34f2f0373f56e1d5427a5618ad9cf2060cb3  904.lfl
   c12627258fc0e9fd5f6bab63d546cd5297bfbc22  cdda.sou
   058be558b04ab60855dd3b3d7301ba75841e8ca4  disk01.lec
+  42276544d563b16693cf6c2905478c1fc8d382a4  loom.exe
 
   682cf1400410db4a9e2a280afba001b3361b69d9  setup_loom_2.0.0.4.exe
   2be126c64489928345e6d5ccd64a89d6a82bc868  gog_loom_1.0.0.5.deb
