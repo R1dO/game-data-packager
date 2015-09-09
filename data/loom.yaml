@@ -6,9 +6,10 @@ packages:
   loom-data:
     gog:
       url: loom
-    steam:
-      id: 32340
-      path: common/LOOM
+# Steam provides the Windows version which isn't directly usable with ScummVM
+#    steam:
+#      id: 32340
+#      path: common/LOOM
     install:
     - 000.lfl
     - 901.lfl
