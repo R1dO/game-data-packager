@@ -16,6 +16,7 @@
 # /usr/share/common-licenses/GPL-2.
 
 import glob
+import os
 import xml.etree.ElementTree
 import urllib.request
 
@@ -43,7 +44,7 @@ def parse_acf(path):
             yield acf_struct
 
 def owned_steam_games(steam_id):
-    url = "http://steamcommunity.com/id/" + steam_id + "/games?xml=1"
+    url = "http://steamcommunity.com/profiles/" + steam_id + "/games?xml=1"
     html = urllib.request.urlopen(url)
     tree = xml.etree.ElementTree.ElementTree()
     tree.parse(html)
@@ -52,4 +53,14 @@ def owned_steam_games(steam_id):
         appid = int(game.find('appID').text)
         name = game.find('name').text
         #print(appid, name)
-        yield [appid, name]
+        yield (appid, name)
+
+def get_steam_id():
+    path = os.path.expanduser('~/.steam/config/loginusers.vdf')
+    if not os.path.isfile(path):
+        return None
+    with open(path, 'r', ) as data:
+        for line in data.readlines():
+            line = line.strip('\t\n "')
+            if line not in ('users', '{'):
+                return line

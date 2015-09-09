@@ -54,6 +54,7 @@ from .util import (MEBIBYTE,
         lang_score,
         ascii_safe,
         which)
+from .steam import get_steam_id, owned_steam_games
 from .version import GAME_PACKAGE_VERSION
 
 AGENT = ('Debian Game-Data-Packager/%s (%s %s;'
@@ -3087,26 +3088,40 @@ def load_games(workdir=None,game='*'):
     return games
 
 def run_steam_meta_mode(parsed, games):
-    logging.info('Searching for Steam games...')
+    owned = set()
+    if parsed.download:
+        steam_id = get_steam_id()
+        if steam_id is None:
+            logger.error("Couldn't read SteamID from ~/.steam/config/loginusers.vdf")
+        else:
+            logger.info('Getting list of owned games from '
+                        'http://steamcommunity.com/profiles/' + steam_id)
+            owned = set(g[0] for g in owned_steam_games(steam_id))
+
+    logging.info('Searching for locally installed Steam games...')
     found_games = []
     found_packages = []
     for game, gamedata in games.items():
         for package in gamedata.packages.values():
+            id = package.steam.get('id') or gamedata.steam.get('id')
+            if not id:
+                continue
+
             if package.type == 'demo':
                 continue
             # ignore other translations for "I Have No Mouth"
             if lang_score(package.lang) == 0:
                 continue
 
+            installed = PACKAGE_CACHE.is_installed(package.name)
+            if parsed.new and installed:
+                continue
+
             paths = []
             for path in gamedata.iter_steam_paths((package,)):
                 if path not in paths:
                     paths.append(path)
-            if not paths:
-                continue
-
-            installed = PACKAGE_CACHE.is_installed(package.name)
-            if parsed.new and installed:
+            if not paths and id not in owned:
                 continue
 
             if game not in found_games:
@@ -3133,7 +3148,10 @@ def run_steam_meta_mode(parsed, games):
                 continue
             print('[%s] %-42s    %s' % ('x' if p['installed'] else ' ',
                                         p['package'], ascii_safe(p['longname'])))
-            print('\n'.join(p['paths']))
+            for path in p['paths']:
+                print(path)
+            if not p['paths']:
+                print('<game owned but not installed/found>')
         print()
 
     if not parsed.new and not parsed.all:
