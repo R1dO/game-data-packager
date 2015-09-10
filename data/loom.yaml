@@ -61,36 +61,23 @@ files:
     - book_of_patterns.pdf
     - manual.pdf
 
-cksums: |
-  _ 8307      000.lfl
-  _ 2613      901.lfl
-  _ 4193      902.lfl
-  _ 2019      903.lfl
-  _ 4388      904.lfl
-  _ 289808802 cdda.sou
-  _ 4059462   disk01.lec
+size_and_md5: |
+  8307      5d88b9d6a88e6f8e90cded9d01b7f082 000.lfl
+  2613      6642640c52ac20a413d00ca4eb0a7144 901.lfl
+  4193      211bb92795b77f5782bcab5ff4cdd9c2 902.lfl
+  2019      0c60481ff858c0e8ab136adab5fa5bdc 903.lfl
+  4388      6b26151489c428be7c45c25a16e7c902 904.lfl
+  289808802 e444985cc1aa65780d912b4fe21a6043 cdda.sou
+  4059462   a2be3d9b4c9fceae8033a455d690c0ba disk01.lec
   # Steam version (000.lfl is inside loom.exe)
   # https://github.com/scummvm/scummvm/blob/master/engines/scumm/detection.cpp#L213
-  _ 585728    loom.exe
+  585728    0354ee0d14cde1264ec762261c04c14a loom.exe
 
-  _ 201588784 setup_loom_2.0.0.4.exe
-  _ 201405970 gog_loom_1.0.0.5.deb
-  _ 4919785   book_of_patterns.pdf
-  _ 3297273   manual.pdf
-md5sums: |
-  5d88b9d6a88e6f8e90cded9d01b7f082  000.lfl
-  6642640c52ac20a413d00ca4eb0a7144  901.lfl
-  211bb92795b77f5782bcab5ff4cdd9c2  902.lfl
-  0c60481ff858c0e8ab136adab5fa5bdc  903.lfl
-  6b26151489c428be7c45c25a16e7c902  904.lfl
-  e444985cc1aa65780d912b4fe21a6043  cdda.sou
-  a2be3d9b4c9fceae8033a455d690c0ba  disk01.lec
-  0354ee0d14cde1264ec762261c04c14a  loom.exe
+  201588784 a8d45197a7f81ff96ff622e182d16e80 setup_loom_2.0.0.4.exe
+  201405970 e710481f2267253bca3f36656fedb009 gog_loom_1.0.0.5.deb
+  4919785   7e8bcb85ea4ab8b8a6238c4512b2b0e1 book_of_patterns.pdf
+  3297273   45b248c029ff6173ad9a944fd5f0baa3 manual.pdf
 
-  a8d45197a7f81ff96ff622e182d16e80  setup_loom_2.0.0.4.exe
-  e710481f2267253bca3f36656fedb009  gog_loom_1.0.0.5.deb
-  7e8bcb85ea4ab8b8a6238c4512b2b0e1  book_of_patterns.pdf
-  45b248c029ff6173ad9a944fd5f0baa3  manual.pdf
 sha1sums: |
   366ce8bb2c7876a445c870f6b19f8d56cbf91f47  000.lfl
   e7b80c90023b85d77349861d7a4f8c68b7b3b6d7  901.lfl
