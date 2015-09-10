@@ -10,6 +10,7 @@ packages:
       id: 32340
       path: common/LOOM
     install:
+    - 000.lfl_provider
     - 901.lfl
     - 902.lfl
     - 903.lfl
@@ -17,12 +18,16 @@ packages:
     - cdda.sou
     - disk01.lec
     optional:
-    - 000.lfl
     - book_of_patterns.pdf
-    - loom.exe
     - manual.pdf
 
 files:
+  000.lfl_provider:
+    alternatives:
+    - 000.lfl
+    - loom.exe
+    install_as: $alternative
+
   book_of_patterns.pdf:
     install_to: $docdir
     look_for: [book_of_patterns.pdf,Loom_Book_of_Patterns.pdf]
@@ -65,6 +70,7 @@ cksums: |
   _ 289808802 cdda.sou
   _ 4059462   disk01.lec
   # Steam version (000.lfl is inside loom.exe)
+  # https://github.com/scummvm/scummvm/blob/master/engines/scumm/detection.cpp#L213
   _ 585728    loom.exe
 
   _ 201588784 setup_loom_2.0.0.4.exe
