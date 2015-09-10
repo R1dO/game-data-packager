@@ -104,6 +104,8 @@ files:
     - 000.lfl
     - loom.exe
     install_as: $alternative
+  loom.exe:
+    distinctive_name: false
 
   book_of_patterns.pdf:
     install_to: $docdir
