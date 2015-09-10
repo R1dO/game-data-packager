@@ -6,8 +6,16 @@ plugin: scummvm_common
 gameid: indy3
 wiki: Indiana_Jones_and_the_Last_Crusade
 
+missing_langs: [de,es,fr,it]
+
 packages:
   last-crusade-en-data:
+    debian:
+      provides: last-crusade-data
+    steam:
+      id: 32310
+      path: "common/Indiana Jones and the Last Crusade"
+      #XXX: 00.lfl is included in "Indiana Jones and the Last Crusade.exe"
     install:
     - 00.lfl
     - 01.lfl
