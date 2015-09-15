@@ -1322,9 +1322,10 @@ class GameData(object):
                      subprocess.check_call(['lgogdownloader',
                                             '--download', '--no-extra',
                                             '--directory', tmpdir,
+                                            '--subdir-game', '',
                                             '--platform', '1',
                                             '--language', '1',
-                                            '--game', game])
+                                            '--game', '^' + game + '$'])
                      self.consider_file_or_dir(tmpdir)
                      # recursively call again
                      result = self.fill_gaps(package, log=True,
