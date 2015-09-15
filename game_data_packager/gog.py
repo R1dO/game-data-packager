@@ -28,9 +28,9 @@ class Gog:
         if self.available is not None:
             return self.available
 
+        self.available = []
         cache = os.path.expanduser('~/.cache/lgogdownloader/gamedetails.json')
         if os.path.isfile(cache):
-            self.available = []
             data = json.load(open(cache, encoding='utf-8'))
             for key in data['games']:
                 self.available.append(key['gamename'])
@@ -42,7 +42,7 @@ class Gog:
                                universal_newlines=True)
                 self.available = list.splitlines()
             except subprocess.CalledProcessError:
-                self.available = []
+                pass
 
         return self.available
 
