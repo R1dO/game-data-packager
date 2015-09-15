@@ -46,7 +46,7 @@ packages:
     license:
     - LICENSE.TXT
     optional:
-    - any_manual_pdf
+    - manual.pdf
 
   rott-extreme-data:
     expansion_for: rott-registered-data
@@ -73,18 +73,17 @@ files:
   # and it's not missing pages 25 to 27
   # ("Power Pack order form", "contact Apogee")
 
-  any_manual_pdf:
+  manual.pdf:
     alternatives:
     - manual.pdf_steam
-    - manual.pdf
-    install_as: manual.pdf
+    - manual.pdf_gog
     install_to: $docdir
 
   manual.pdf_steam:
     look_for: [manual.pdf]
 
-  manual.pdf:
-    look_for: [UserManual.pdf]
+  manual.pdf_gog:
+    look_for: [manual.pdf,UserManual.pdf]
 
   1rott13.zip:
     size: 3668139
@@ -134,6 +133,7 @@ files:
   setup_rise_of_the_triad_2.0.0.5.exe:
     unpack:
       format: innoextract
+      suffix: _gog
     provides:
     - DARKWAR.RTL
     - DARKWAR.WAD
@@ -141,7 +141,7 @@ files:
     - HUNTBGIN.RTC
     - HUNTBGIN.RTL
     - LICENSE.TXT
-    - manual.pdf
+    - manual.pdf_gog
     - REMOTE1.RTS
     - ROTTCD.RTC
 
@@ -155,7 +155,7 @@ files:
     - HUNTBGIN.RTC
     - HUNTBGIN.RTL
     - LICENSE.TXT
-    - manual.pdf
+    - manual.pdf_gog
     - REMOTE1.RTS
     - ROTTCD.RTC
 
@@ -169,7 +169,7 @@ files:
     - HUNTBGIN.RTC
     - HUNTBGIN.RTL
     - LICENSE.TXT
-    - manual.pdf
+    - manual.pdf_gog
     - REMOTE1.RTS
     - ROTTCD.RTC
 
@@ -195,7 +195,7 @@ cksums: |
   4153237746 7752     VENDOR.DOC
 
   _ 8199108   manual.pdf_steam
-  _ 9521526   manual.pdf
+  _ 9521526   manual.pdf_gog
   _ 31605104  setup_rise_of_the_triad_2.0.0.5.exe
   _ 21337749  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
   _ 18864246  gog_rise_of_the_triad_dark_war_1.0.0.7.deb
@@ -225,7 +225,7 @@ md5sums: |
   37ea1777fb3156634006c96e4be4ea17  manual.pdf_steam
 
   92a132d4d25d6f96587e406bd9959ae8  setup_rise_of_the_triad_2.0.0.5.exe
-  34c7f39c23482a7ecab464a2dd76ef8f  manual.pdf
+  34c7f39c23482a7ecab464a2dd76ef8f  manual.pdf_gog
   5695390945993b841f1c0b72781d143c  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
   7acfe7c8d48c4654604b90e955212793  gog_rise_of_the_triad_dark_war_1.0.0.7.deb
 
@@ -254,7 +254,7 @@ sha1sums: |
   78d12446ee71853ea71b648f4852b0f548773648  manual.pdf_steam
 
   53d4a05c474dd13098b9d591ea2eab13310af0bc  setup_rise_of_the_triad_2.0.0.5.exe
-  7ecd289958858af8dfc357fec2499d9bc3e7206b  manual.pdf
+  7ecd289958858af8dfc357fec2499d9bc3e7206b  manual.pdf_gog
   017a31ee33bdb81882287b497682b12de56b0f50  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
   a49f283110d5eb479ac8baf794e8a9d865c0d796  gog_rise_of_the_triad_dark_war_1.0.0.7.deb
 

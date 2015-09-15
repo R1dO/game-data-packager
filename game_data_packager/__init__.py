@@ -422,6 +422,9 @@ class GameDataPackage(object):
         # show output of external tools?
         self.verbose = False
 
+        # archives actually used to built a package
+        self.used_sources = set()
+
     @property
     def aliases(self):
         return self._aliases
@@ -1781,6 +1784,7 @@ class GameData(object):
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
+                    package.used_sources.add(provider.name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
@@ -2392,6 +2396,9 @@ class GameData(object):
                     long_desc += ' such as for example: ' + engine
                 else:
                     long_desc += ' Intended for use with: ' + engine
+
+            if package.used_sources:
+                long_desc += '\n Built from: ' + ', '.join(package.used_sources)
 
             control['Description'] = short_desc + '\n' + long_desc
 
