@@ -21,19 +21,29 @@ import subprocess
 
 from .util import which
 
-def owned_gog_games():
-    cache = os.path.expanduser('~/.cache/lgogdownloader/gamedetails.json')
-    if os.path.isfile(cache):
-       data = json.load(open(cache, encoding='utf-8'))
-       for key in data['games']:
-           yield key['gamename']
-    elif which('lgogdownloader'):
-       try:
-           list = subprocess.check_output(['lgogdownloader', '--list'],
+class Gog:
+    available = None
+
+    def owned_games(self):
+        if self.available is not None:
+            return self.available
+
+        cache = os.path.expanduser('~/.cache/lgogdownloader/gamedetails.json')
+        if os.path.isfile(cache):
+            self.available = []
+            data = json.load(open(cache, encoding='utf-8'))
+            for key in data['games']:
+                self.available.append(key['gamename'])
+        elif which('lgogdownloader'):
+            try:
+                list = subprocess.check_output(['lgogdownloader', '--list'],
                                stdin=subprocess.DEVNULL,
                                stderr=subprocess.DEVNULL,
                                universal_newlines=True)
-       except subprocess.CalledProcessError:
-           return
-       for line in list.splitlines():
-           yield line
+                self.available = list.splitlines()
+            except subprocess.CalledProcessError:
+                self.available = []
+
+        return self.available
+
+GOG = Gog()
