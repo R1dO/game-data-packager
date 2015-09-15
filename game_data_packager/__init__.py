@@ -43,6 +43,7 @@ from debian.deb822 import Deb822
 import yaml
 
 from .config import read_config
+from .gog import GOG
 from .paths import DATADIR, ETCDIR
 from .util import (MEBIBYTE,
         TemporaryUmask,
@@ -1257,7 +1258,7 @@ class GameData(object):
             logger.warning('file "%s" does not exist or is not a file, ' +
                     'directory or CD block device', path)
 
-    def fill_gaps(self, package, download=False, log=True):
+    def fill_gaps(self, package, download=False, log=True, recheck=False):
         """Return a FillResult.
         """
         assert package is not None
@@ -1293,6 +1294,7 @@ class GameData(object):
                 wanted = self.files[filename]
                 # updates file_status as a side-effect
                 self.fill_gap(package, wanted, download=download,
+                        recheck=recheck,
                         log=(log and filename in package.install))
 
             logger.debug('%s: %s', filename, self.file_status[filename])
@@ -1300,6 +1302,30 @@ class GameData(object):
             if filename in package.install:
                 # it is mandatory
                 result &= self.file_status[filename]
+
+        # download game if it is already owned by user's GOG.com account
+        # user must have used 'lgogdownloader' at least once to make this work
+        if (result is FillResult.IMPOSSIBLE and package.gog
+            and which('innoextract') and which('lgogdownloader') ):
+             game = package.gog.get('game', package.gog['url'])
+             if game in GOG.owned_games():
+                 if recheck:
+                     logger.error('Something went bad,avoiding infinite loop')
+                 elif not download:
+                     result = FillResult.DOWNLOAD_NEEDED
+                 else:
+                     tmpdir = os.path.join(self.get_workdir(), game)
+                     mkdir_p(tmpdir)
+                     subprocess.check_call(['lgogdownloader',
+                                            '--download', '--no-extra',
+                                            '--directory', tmpdir,
+                                            '--platform', '1',
+                                            '--language', '1',
+                                            '--game', game])
+                     self.consider_file_or_dir(tmpdir)
+                     # recursively call again
+                     result = self.fill_gaps(package, log=True,
+                                             download=True, recheck=True)
 
         self.package_status[package.name] = result
         logger.debug('%s: %s', package.name, result)
@@ -1497,7 +1523,7 @@ class GameData(object):
             os.utime(path, (orig_time, orig_time))
             self.use_file(wanted, path, hasher)
 
-    def fill_gap(self, package, wanted, download=False, log=True):
+    def fill_gap(self, package, wanted, download=False, log=True, recheck=False):
         """Try to unpack, download or otherwise obtain wanted.
 
         If download is true, we may attempt to download wanted or a
@@ -1509,7 +1535,7 @@ class GameData(object):
             assert self.file_status[wanted.name] is FillResult.COMPLETE
             return FillResult.COMPLETE
 
-        if self.file_status[wanted.name] is FillResult.IMPOSSIBLE:
+        if self.file_status[wanted.name] is FillResult.IMPOSSIBLE and not recheck:
             return FillResult.IMPOSSIBLE
 
         if (self.file_status[wanted.name] is FillResult.DOWNLOAD_NEEDED and

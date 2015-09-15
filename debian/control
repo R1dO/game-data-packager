@@ -25,6 +25,7 @@ Depends: fakeroot, ${misc:Depends},
 	python3-debian,
 	python3-yaml,
 	${python3:Depends},
+Breaks: lgogdownloader (<< 2.25-2~)
 Suggests:
 # for quake music and quake2 music
 	cdparanoia, vorbis-tools,
@@ -38,8 +39,8 @@ Suggests:
 	dynamite (>= 0.1.1-2),
 # for wolf3d v1.2
 	unzip,
-# gog.com games: Descent 1/2, Theme Hospital
-	innoextract,
+# for 100+ gog.com games
+	innoextract, lgogdownloader,
 # for Doom3
 	p7zip-full,
 # for Jedi Academy (demo), Arx Fatalis
