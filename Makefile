@@ -91,7 +91,7 @@ manual-check:
 	install -d tmp/
 	for game in $(TEST_SUITE); do \
 	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=. \
-		python3 -m game_data_packager -d ./tmp --no-search --no-compress $$game || exit $$?; \
+		python3 -m game_data_packager -d ./tmp --no-compress $$game --no-search || exit $$?; \
 	done
 	rm -fr tmp/
 
