@@ -1308,9 +1308,9 @@ class GameData(object):
 
         # download game if it is already owned by user's GOG.com account
         # user must have used 'lgogdownloader' at least once to make this work
-        if (result is FillResult.IMPOSSIBLE and package.gog
+        game = self.gog_download_name(package)
+        if (result is FillResult.IMPOSSIBLE and game
             and which('innoextract') and which('lgogdownloader') ):
-             game = package.gog.get('game', package.gog['url'])
              if game in GOG.owned_games():
                  if recheck:
                      logger.error('Something went bad,avoiding infinite loop')
@@ -3085,6 +3085,12 @@ class GameData(object):
                 'apt-get install %s',
                 ' '.join(sorted(packages)))
 
+    def gog_download_name(self, package):
+        gog = package.gog or self.gog
+        if not gog:
+            return
+        return gog.get('game', gog['url'])
+
 def iter_fat_mounts(folder):
     with open('/proc/mounts', 'r', encoding='utf8') as mounts:
         for line in mounts.readlines():
@@ -3249,6 +3255,64 @@ def run_steam_meta_mode(parsed, games):
     if workdir:
         rm_rf(workdir)
 
+def run_gog_meta_mode(parsed, games):
+    if not which('lgogdownloader') or not which('innoextract'):
+        logger.error("You need to install lgogdownloader & innoextract first")
+        logger.error("$ su -c 'apt-get install lgogdownloader innoextract'")
+        return
+
+    owned = GOG.owned_games()
+    if not owned:
+        logger.error("Couldn't locate any game, running 'lgogdownloader --login'")
+        subprocess.call(['lgogdownloader', '--login'])
+        logger.info("... and now 'lgogdownloader --update-cache'")
+        subprocess.call(['lgogdownloader', '--update-cache'])
+        GOG.available = None
+        owned = GOG.owned_games()
+    logger.info("Found %d game(s) !" % len(owned))
+
+    found_games = set()
+    found_packages = []
+    for game, data in games.items():
+        for package in data.packages.values():
+            id = data.gog_download_name(package)
+            if id is None or id not in owned:
+                continue
+            if lang_score(package.lang) == 0:
+                continue
+            if package.better_version:
+                if data.gog_download_name(data.packages[package.better_version]):
+                    continue
+            installed = PACKAGE_CACHE.is_installed(package.name)
+            if parsed.new and installed:
+                continue
+            found_games.add(game)
+            found_packages.append({
+                'game' : game,
+                'type' : 1 if package.type == 'full' else 2,
+                'package': package.name,
+                'installed': installed,
+                'longname': package.longname or data.longname,
+                'id': id,
+               })
+    if not found_games:
+        logger.error('No supported GOG.com games found')
+        return
+
+    print('[x] = package is already installed')
+    found_packages = sorted(found_packages, key=lambda k: (k['game'], k['type'], k['longname']))
+    for g in sorted(found_games):
+        ids = set()
+        for p in found_packages:
+            if p['game'] == g:
+                ids.add('"%s"' % p['id'])
+        print('%s - provided by %s' % (g, ','.join(ids)))
+        for p in found_packages:
+            if p['game'] == g:
+                print('[%s] %-42s    %s' % ('x' if p['installed'] else ' ',
+                                        p['package'], ascii_safe(p['longname'])))
+        print()
+
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
 
@@ -3326,6 +3390,18 @@ def run_command_line():
     for g in sorted(games.keys()):
         games[g].add_parser(game_parsers, base_parser)
 
+    # GOG meta-mode
+    gog_parser = game_parsers.add_parser('gog',
+        help='Package all your GOG.com games at once',
+        description='Automatically package all your GOG.com games',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        parents=(base_parser,))
+    group = gog_parser.add_mutually_exclusive_group()
+    group.add_argument('--all', action='store_true', default=False,
+                       help='show all GOG.com games')
+    group.add_argument('--new', action='store_true', default=False,
+                       help='show all new GOG.com games')
+
     # Steam meta-mode
     steam_parser = game_parsers.add_parser('steam',
         help='Package all Steam games at once',
@@ -3378,6 +3454,9 @@ def run_command_line():
 
     if parsed.shortname == 'steam':
         run_steam_meta_mode(parsed, games)
+        return
+    elif parsed.shortname == 'gog':
+        run_gog_meta_mode(parsed, games)
         return
     elif parsed.shortname in games:
         game = games[parsed.shortname]
