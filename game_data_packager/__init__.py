@@ -1324,7 +1324,7 @@ class GameData(object):
                                             '--directory', tmpdir,
                                             '--subdir-game', '',
                                             '--platform', '1',
-                                            '--language', '1',
+                                            '--language', package.lang,
                                             '--game', '^' + game + '$'])
                      self.consider_file_or_dir(tmpdir)
                      # recursively call again
