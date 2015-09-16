@@ -1306,31 +1306,6 @@ class GameData(object):
                 # it is mandatory
                 result &= self.file_status[filename]
 
-        # download game if it is already owned by user's GOG.com account
-        # user must have used 'lgogdownloader' at least once to make this work
-        game = self.gog_download_name(package)
-        if (result is FillResult.IMPOSSIBLE and game
-            and which('innoextract') and which('lgogdownloader') ):
-             if game in GOG.owned_games():
-                 if recheck:
-                     logger.error('Something went bad,avoiding infinite loop')
-                 elif not download:
-                     result = FillResult.DOWNLOAD_NEEDED
-                 else:
-                     tmpdir = os.path.join(self.get_workdir(), game)
-                     mkdir_p(tmpdir)
-                     subprocess.check_call(['lgogdownloader',
-                                            '--download', '--no-extra',
-                                            '--directory', tmpdir,
-                                            '--subdir-game', '',
-                                            '--platform', '1',
-                                            '--language', package.lang,
-                                            '--game', '^' + game + '$'])
-                     self.consider_file_or_dir(tmpdir)
-                     # recursively call again
-                     result = self.fill_gaps(package, log=True,
-                                             download=True, recheck=True)
-
         self.package_status[package.name] = result
         logger.debug('%s: %s', package.name, result)
         return result
@@ -2720,11 +2695,17 @@ class GameData(object):
                 self.rip_cd(rip_cd_packages.pop())
 
         for package in packages:
+            gog_id = self.gog_download_name(package)
             if package.rip_cd and not self.cd_tracks.get(package.name):
                 logger.debug('no CD tracks found for %s', package.name)
             elif self.fill_gaps(package,
                     log=log_immediately) is not FillResult.IMPOSSIBLE:
                 logger.debug('%s is possible', package.name)
+                possible.add(package)
+            # download game if it is already owned by user's GOG.com account
+            # user must have used 'lgogdownloader' at least once to make this work
+            elif gog_id and which('innoextract') and gog_id in GOG.owned_games():
+                logger.info('%s will be downloaded with lgogdownloader', package.name)
                 possible.add(package)
             else:
                 logger.debug('%s is impossible', package.name)
@@ -2859,8 +2840,28 @@ class GameData(object):
             logger.debug('will produce %s', package.name)
             result = self.fill_gaps(package=package, download=download,
                     log=True)
+            gog_id = self.gog_download_name(package)
             if result is FillResult.COMPLETE:
                 ready.add(package)
+            elif (gog_id and which('innoextract') and
+                  gog_id in GOG.owned_games() and download):
+                tmpdir = os.path.join(self.get_workdir(), gog_id)
+                mkdir_p(tmpdir)
+                try:
+                    subprocess.check_call(['lgogdownloader',
+                                       '--download', '--no-extra',
+                                       '--directory', tmpdir,
+                                       '--subdir-game', '',
+                                       '--platform', '1',
+                                       '--language', package.lang,
+                                       '--game', '^' + gog_id + '$'])
+                    self.consider_file_or_dir(tmpdir)
+                    # recheck file status
+                    if self.fill_gaps(package, log=True, download=True,
+                       recheck=True) is not FillResult.IMPOSSIBLE:
+                       ready.add(package)
+                except subprocess.CalledProcessError:
+                    pass
             elif result is FillResult.DOWNLOAD_NEEDED and not download:
                 logger.warning('As requested, not downloading necessary ' +
                         'files for %s', package.name)
