@@ -5,6 +5,8 @@ plugin: scummvm_common
 wiki: "The_Lost_Files_of_Sherlock_Holmes:_The_Case_of_the_Serrated_Scalpel"
 engine: scummvm (>= 1.8.0)
 
+# http://wiki.scummvm.org/index.php/Datafiles#The_Lost_Files_of_Sherlock_Holmes
+
 help_text: |
   This game is currently heavily Work-In-Process in Scummvm GIT.
   Use this generated .deb package only for testing.
@@ -13,14 +15,16 @@ packages:
   sherlock-holmes1-data:
     gameid: sherlock-logo
     install:
-    - 1.rlb
     - chess.pth
+    - journal.lbv
+
+    - 1.rlb
+    - sf3.rlb
+
     - chess.txt
     - invent.txt
-    - journal.lbv
     - journal.txt
     - sequence.txt
-    - sf3.rlb
 
     - epilogue.snd
     - snd.snd
@@ -89,14 +93,16 @@ packages:
   sherlock-holmes1-alt1-data:
     gameid: sherlock-logo-1
     install:
-    - 1.rlb
     - chess.pth
+    - journal.lbv
+
+    - 1.rlb
+    - sf3.rlb
+
     - chess.txt
     - invent.txt
-    - journal.lbv
     - journal.txt
     - sequence.txt
-    - sf3.rlb
 
     - epilogue.snd
     - snd.snd
@@ -165,15 +171,16 @@ packages:
   sherlock-holmes1-alt2-data:
     gameid: sherlock-logo-2
     install:
-    - 1.rlb
     - chess.pth
+    - journal.lbv
+
+    - 1.rlb
+    - sf3.rlb
+
     - chess.txt
     - invent.txt
-    - journal.lbv
     - journal.txt
     - sequence.txt
-    - sf3.rlb
-    - talk.lib
 
     - epilogue.snd
     - snd.snd_alt
@@ -184,6 +191,7 @@ packages:
     - music.lib
     - title.lib
     - portrait.lib
+    - talk.lib
     - title2.lib
     - vgs.lib
 
