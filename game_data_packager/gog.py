@@ -30,11 +30,13 @@ class Gog:
 
         self.available = []
         cache = os.path.expanduser('~/.cache/lgogdownloader/gamedetails.json')
-        if os.path.isfile(cache):
+        if not which('lgogdownloader'):
+            pass
+        elif os.path.isfile(cache):
             data = json.load(open(cache, encoding='utf-8'))
             for key in data['games']:
                 self.available.append(key['gamename'])
-        elif which('lgogdownloader'):
+        else:
             try:
                 list = subprocess.check_output(['lgogdownloader', '--list'],
                                stdin=subprocess.DEVNULL,
