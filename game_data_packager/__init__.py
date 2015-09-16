@@ -1209,7 +1209,9 @@ class GameData(object):
             logger.warning('file "%s" does not match any known file', path)
             # ... still G-D-P should try to process any random .zip
             # file thrown at it, like the .zip provided by GamersHell
-            if os.path.splitext(path)[1].lower() in ('.zip', '.apk'):
+            # or the MojoSetup installers provided by GOG.com
+            if (os.path.splitext(path)[1].lower() in ('.zip', '.apk')
+             or (os.path.basename(path).startswith('gog_') and path.endswith('.sh')) ):
                 with zipfile.ZipFile(path, 'r') as zf:
                     self.consider_zip(path, zf)
 
