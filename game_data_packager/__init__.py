@@ -2768,6 +2768,7 @@ class GameData(object):
             raise NoPackagesPossible()
 
         ready = set()
+        lgogdownloaded = set()
 
         for package in possible:
             if (package.better_version
@@ -2849,6 +2850,10 @@ class GameData(object):
                 ready.add(package)
             elif download and package.name in possible_with_lgogdownloader:
                 gog_id = self.gog_download_name(package)
+                if gog_id in lgogdownloaded:
+                    # something went bad, G-D-P will complain a lot anyway
+                    continue
+                lgogdownloaded.add(gog_id)
                 tmpdir = os.path.join(self.get_workdir(), gog_id)
                 mkdir_p(tmpdir)
                 try:
@@ -2856,10 +2861,15 @@ class GameData(object):
                                        '--download', '--no-extra',
                                        '--directory', tmpdir,
                                        '--subdir-game', '',
-                                       '--platform', '1',
+                                       '--platform-priority', 'linux,windows',
                                        '--language', package.lang,
                                        '--game', '^' + gog_id + '$'])
-                    self.consider_file_or_dir(tmpdir)
+                    for dirpath, dirnames, filenames in os.walk(tmpdir):
+                        for fn in filenames:
+                            archive = os.path.join(dirpath, fn)
+                            self.consider_file(archive, True)
+                            if self.save_downloads:
+                                shutil.move(archive, self.save_downloads)
                     # recheck file status
                     if self.fill_gaps(package, log=True, download=True,
                        recheck=True) is not FillResult.IMPOSSIBLE:
