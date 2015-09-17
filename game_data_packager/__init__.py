@@ -2708,7 +2708,10 @@ class GameData(object):
             # download game if it is already owned by user's GOG.com account
             # user must have used 'lgogdownloader' at least once to make this work
             elif gog_id and which('innoextract') and gog_id in GOG.owned_games():
-                logger.info('%s will be downloaded with lgogdownloader', package.name)
+                if lang_score(package.lang) == 0:
+                    logger.debug('%s can be downloaded with lgogdownloader', package.name)
+                else:
+                    logger.info('%s can be downloaded with lgogdownloader', package.name)
                 possible.add(package)
                 possible_with_lgogdownloader.add(package.name)
             else:
@@ -2864,16 +2867,17 @@ class GameData(object):
                                        '--platform-priority', 'linux,windows',
                                        '--language', package.lang,
                                        '--game', '^' + gog_id + '$'])
+                    archive = None
                     for dirpath, dirnames, filenames in os.walk(tmpdir):
                         for fn in filenames:
                             archive = os.path.join(dirpath, fn)
                             self.consider_file(archive, True)
-                            if self.save_downloads:
-                                shutil.move(archive, self.save_downloads)
                     # recheck file status
                     if self.fill_gaps(package, log=True, download=True,
                        recheck=True) is not FillResult.IMPOSSIBLE:
                        ready.add(package)
+                    if archive and self.save_downloads:
+                        shutil.move(archive, self.save_downloads)
                 except subprocess.CalledProcessError:
                     pass
             elif result is FillResult.DOWNLOAD_NEEDED and not download:
