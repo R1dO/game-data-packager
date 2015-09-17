@@ -96,6 +96,32 @@ files:
   hw_hint3.txt:
     install_to: $docdir
 
+  gog_the_hugo_trilogy_2.0.0.10.sh:
+    unpack:
+      format: zip
+    provides:
+    - hugo.bsf
+    - objects.dat_hugo1
+    - scenery.dat_hugo1
+    - sounds.dat_hugo1
+    - strings.dat_hugo1
+    - uif.dat_hugo1
+    - hw_hint1.txt
+
+    - objects.dat_hugo2
+    - scenery.dat_hugo2
+    - sounds.dat_hugo2
+    - strings.dat_hugo2
+    - uif.dat_hugo2
+    - hw_hint2.txt
+
+    - objects.dat_hugo3
+    - scenery.dat_hugo3
+    - sounds.dat_hugo3
+    - strings.dat_hugo3
+    - uif.dat_hugo3
+    - hw_hint3.txt
+
   setup_the_hugo_trilogy_2.0.0.1.exe:
     unpack:
       format: innoextract
@@ -133,6 +159,8 @@ files:
     - hw_hint3.txt
 
 size_and_md5: |
+  # the Linux archive is much bigger, but has the same usefull contents
+  25134308  e579e38e0220ea74b94abadcf475465a gog_the_hugo_trilogy_2.0.0.10.sh
   15796401  5da4ca64a236b3b2b421bb6c389e0cdd setup_the_hugo_trilogy_2.0.0.1.exe
   876       3f99a3fc46c317924047e22e3b2985e3 hugo.bsf
 
@@ -158,6 +186,7 @@ size_and_md5: |
   13900     becd9d2ead5fbf2b227d86155c52ed39 hw_hint3.txt
 
 sha1sums: |
+  1e62e4f79455a05f665bf0c42e8938714cb51b87  gog_the_hugo_trilogy_2.0.0.10.sh
   6a05687c447b305c8681f6b3c2e2b6ae4dc81db9  setup_the_hugo_trilogy_2.0.0.1.exe
   558b452259f95a64dcaccdb77938f6dd65aeedf3  hugo.bsf
 
