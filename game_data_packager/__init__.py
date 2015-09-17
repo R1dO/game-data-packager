@@ -1530,7 +1530,7 @@ class GameData(object):
         if wanted.alternatives:
             for alt in wanted.alternatives:
                 self.file_status[wanted.name] |= self.fill_gap(package,
-                        self.files[alt], download=download, log=False)
+                  self.files[alt], download=download, log=False, recheck=recheck)
 
             if self.file_status[wanted.name] is FillResult.IMPOSSIBLE and log:
                 logger.error('could not find a suitable version of %s:',
@@ -2841,10 +2841,10 @@ class GameData(object):
             if abort:
                 continue
 
-
             logger.debug('will produce %s', package.name)
             result = self.fill_gaps(package=package, download=download,
-                    log=True)
+              log=package.name not in possible_with_lgogdownloader,
+              recheck=package.name in possible_with_lgogdownloader)
             if result is FillResult.COMPLETE:
                 ready.add(package)
             elif download and package.name in possible_with_lgogdownloader:
