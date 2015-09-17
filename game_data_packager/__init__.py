@@ -2683,6 +2683,7 @@ class GameData(object):
             packages = self.packages.values()
 
         possible = set()
+        possible_with_lgogdownloader = set()
 
         if self.cd_device is not None:
             rip_cd_packages = self.rip_cd_packages & packages
@@ -2709,6 +2710,7 @@ class GameData(object):
             elif gog_id and which('innoextract') and gog_id in GOG.owned_games():
                 logger.info('%s will be downloaded with lgogdownloader', package.name)
                 possible.add(package)
+                possible_with_lgogdownloader.add(package.name)
             else:
                 logger.debug('%s is impossible', package.name)
 
@@ -2839,14 +2841,14 @@ class GameData(object):
             if abort:
                 continue
 
+
             logger.debug('will produce %s', package.name)
             result = self.fill_gaps(package=package, download=download,
                     log=True)
-            gog_id = self.gog_download_name(package)
             if result is FillResult.COMPLETE:
                 ready.add(package)
-            elif (gog_id and which('innoextract') and
-                  gog_id in GOG.owned_games() and download):
+            elif download and package.name in possible_with_lgogdownloader:
+                gog_id = self.gog_download_name(package)
                 tmpdir = os.path.join(self.get_workdir(), gog_id)
                 mkdir_p(tmpdir)
                 try:
