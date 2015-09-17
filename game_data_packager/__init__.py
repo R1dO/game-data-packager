@@ -2707,13 +2707,16 @@ class GameData(object):
                 possible.add(package)
             # download game if it is already owned by user's GOG.com account
             # user must have used 'lgogdownloader' at least once to make this work
-            elif gog_id and which('innoextract') and gog_id in GOG.owned_games():
-                if lang_score(package.lang) == 0:
-                    logger.debug('%s can be downloaded with lgogdownloader', package.name)
+            elif gog_id and gog_id in GOG.owned_games():
+                if which('innoextract') or GOG.is_native(gog_id):
+                    if lang_score(package.lang) == 0:
+                        logger.debug('%s can be downloaded with lgogdownloader', package.name)
+                    else:
+                        logger.info('%s can be downloaded with lgogdownloader', package.name)
+                    possible.add(package)
+                    possible_with_lgogdownloader.add(package.name)
                 else:
-                    logger.info('%s can be downloaded with lgogdownloader', package.name)
-                possible.add(package)
-                possible_with_lgogdownloader.add(package.name)
+                    self.missing_tools.add('innoextract')
             else:
                 logger.debug('%s is impossible', package.name)
 

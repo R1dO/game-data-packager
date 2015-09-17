@@ -48,4 +48,18 @@ class Gog:
 
         return self.available
 
+    def is_native(self, wanted):
+        cache = os.path.expanduser('~/.cache/lgogdownloader/gamedetails.json')
+        if not os.path.isfile(cache):
+            return
+
+        data = json.load(open(cache, encoding='utf-8'))
+        for game in data['games']:
+            if game['gamename'] != wanted:
+                continue
+            for installer in game['installers']:
+                if installer['platform'] == 4:
+                    return True
+            return False
+
 GOG = Gog()
