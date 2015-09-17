@@ -62,4 +62,17 @@ class Gog:
                     return True
             return False
 
+    def get_id_from_archive(self, archive):
+        cache = os.path.expanduser('~/.cache/lgogdownloader/gamedetails.json')
+        if not os.path.isfile(cache):
+            return None
+
+        archive = os.path.basename(archive)
+
+        data = json.load(open(cache, encoding='utf-8'))
+        for game in data['games']:
+            for installer in game['installers']:
+                if installer['path'].endswith(archive):
+                    return game['gamename']
+
 GOG = Gog()

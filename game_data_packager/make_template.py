@@ -29,6 +29,7 @@ from debian.deb822 import Deb822
 import yaml
 
 from . import HashedFile
+from .gog import GOG
 from .steam import parse_acf
 from .util import which
 
@@ -88,6 +89,7 @@ class GameData(object):
         self.try_repack_from = None
         self.plugin = None
         self.gog_url = None
+        self.gog_game = None
 
         self.data = dict()
         self.install = set()
@@ -205,6 +207,8 @@ class GameData(object):
             self.package['install_to'] = 'usr/share/games/' + game
 
     def add_one_innoextract(self,exe):
+        self.gog_game = GOG.get_id_from_archive(exe)
+
         tmp = tempfile.mkdtemp(prefix='gdptmp.')
 
         command = ['innoextract', os.path.realpath(exe)]
@@ -359,6 +363,8 @@ class GameData(object):
             print('plugin: %s' % self.plugin)
         if self.gog_url:
             print('gog:\n  url: %s' % self.gog_url)
+        if self.gog_game:
+            print('gog:\n  url: FIXME\n  game: %s' % self.gog_game)
 
         print('')
         yaml.safe_dump(self.data, stream=sys.stdout, default_flow_style=False)
