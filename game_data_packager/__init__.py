@@ -3468,11 +3468,16 @@ def run_command_line():
         parser.print_help()
         sys.exit(0)
 
-    if (parsed.save_downloads is not None and
-            not os.path.isdir(parsed.save_downloads)):
-        logger.error('argument "%s" to --save-downloads does not exist',
-                parsed.save_downloads)
-        sys.exit(2)
+    for arg, path in (('--save-downloads', parsed.save_downloads),
+                      ('--destination', parsed.destination)):
+        if path is None:
+            continue
+        elif not os.path.isdir(path):
+            logger.error('argument "%s" to %s does not exist', path, arg)
+            sys.exit(2)
+        elif not os.access(path, os.W_OK | os.X_OK):
+            logger.error('argument "%s" to %s is not writable', path, arg)
+            sys.exit(2)
 
     if parsed.shortname == 'steam':
         run_steam_meta_mode(parsed, games)
