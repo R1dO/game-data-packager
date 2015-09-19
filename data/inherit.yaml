@@ -54,6 +54,7 @@ packages:
     - music.rsc
     - sounds.rsc
     optional:
+    - manual.pdf
     - manual.pdf_german
 
 files:
@@ -73,7 +74,19 @@ files:
     install_to: $docdir
   manual.pdf_german:
     install_to: $docdir
-    install_as: manual.pdf
+    install_as: manual-de.pdf
+    look_for: [manual.pdf,manual-de.pdf]
+
+  gog_inherit_the_earth_2.0.0.4.sh:
+    unpack:
+      format: zip
+    provides:
+    - ite.rsc
+    - scripts.rsc
+    - Inherit the Earth Voices
+    - music.rsc
+    - sounds.rsc
+    - manual.pdf
 
   setup_inherit_the_earth_2.0.0.6.exe:
     unpack:
@@ -82,6 +95,17 @@ files:
     - ite.rsc
     - scripts.rsc
     - Inherit the Earth Voices
+    - music.rsc
+    - sounds.rsc
+    - manual.pdf
+
+  gog_inherit_the_earth_german_2.0.0.4.sh:
+    unpack:
+      format: zip
+    provides:
+    - ite.rsc_german
+    - scripts.rsc_german
+    - voices.rsc_german
     - music.rsc
     - sounds.rsc
     - manual.pdf
@@ -112,12 +136,14 @@ size_and_md5: |
   7356540   90252f09216de28bbffe80452b1aad95 sounds.rsc
 
   377074    168feed7a142da495c0293524db65846 manual.pdf
+  437492993 a22c011d69146fb20762f5d1c0609a7b gog_inherit_the_earth_2.0.0.4.sh
   508098200 a67ec0cd12fb49c129f994c614acd599 setup_inherit_the_earth_2.0.0.6.exe
 
   8925349   5daa717888f95187db7dc82df3d750df ite.rsc_german
   355364    5b4c047a22e8dc960eef5d091f931505 scripts.rsc_german
   442278536 5bd6c43dbb4afff1cde540660f929472 voices.rsc_german
   526382    abfe26c26615cf3b21c708a831e67bfd manual.pdf_german
+  447622655 c00581e713bb00f0f4f538190657ca0e gog_inherit_the_earth_german_2.0.0.4.sh
   510942128 40c809f3201966f85e9e740fab41834a setup_inherit_the_earth_german_2.0.0.7.exe
 
 sha1sums: |
@@ -134,11 +160,13 @@ sha1sums: |
   6d73e8a3c9f13a461bf643364b326ee98cffce6d  sounds.rsc
 
   2990ab03882ae157985468f8ffe791d57816e423  manual.pdf
+  5403c8cb0792089a7a12d5e34c20151a5656b262  gog_inherit_the_earth_2.0.0.4.sh
   32c77439c519bf632f9a4019ec837cea3a2fbb0b  setup_inherit_the_earth_2.0.0.6.exe
 
   7a665492482611113ebcfa2b09a19f8592833c8c  ite.rsc_german
   f7ae268233001903fcfd1091c693cb39ba567155  scripts.rsc_german
   00dea7c1067e9cfeb3deb4804256e5449608470c  voices.rsc_german
   738ecdee80053298dc805c09f53cb75254df041a  manual.pdf_german
+  9f40568460ebfee4a8dd2ede4d10cc9dcb447120  gog_inherit_the_earth_german_2.0.0.4.sh
   0bc869cfac951f33b101f1b3b8b5e2a796df3278  setup_inherit_the_earth_german_2.0.0.7.exe
 ...
