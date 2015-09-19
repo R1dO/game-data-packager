@@ -126,6 +126,16 @@ files:
     look_for: [manual.pdf,Indiana Jones and the Fate of Atlantis - Manual.pdf]
     install_as: manual.pdf
 
+  gog_indiana_jones_and_the_fate_of_atlantis_2.2.0.27.sh:
+    unpack:
+      format: zip
+    provides:
+    - atlantis.000
+    - atlantis.001
+    - monster.sou
+    - hintbook.pdf
+    - manual.pdf
+
   setup_indiana_jones_and_the_fate_of_atlantis_2.1.0.8.exe:
     unpack:
       format: innoextract
@@ -136,6 +146,7 @@ files:
     - hintbook.pdf
     - manual.pdf
 
+  # Deprecated, .deb are not downloadable anymore
   gog_indiana_jones_and_the_fate_of_atlantis_1.1.0.24.deb:
     unpack:
       format: deb
@@ -144,6 +155,15 @@ files:
     - atlantis.001
     - monster.sou
     # the files present in english/french/german/spanish have same checksums
+    - hintbook.pdf
+    - manual.pdf
+
+  gog_indiana_jones_and_the_fate_of_atlantis_spanish_2.2.0.27.sh:
+    unpack:
+      format: zip
+    provides:
+    - atlantis.000_es_floppy
+    - atlantis.001_es_floppy
     - hintbook.pdf
     - manual.pdf
 
@@ -161,6 +181,15 @@ files:
     - hintbook.pdf
     - manual.pdf
 
+  gog_indiana_jones_and_the_fate_of_atlantis_german_2.2.0.27.sh:
+    unpack:
+      format: zip
+    provides:
+    - atlantis.000_de_floppy
+    - atlantis.001_de_floppy
+    - hintbook.pdf
+    - manual.pdf
+
   setup_indiana_jones_and_the_fate_of_atlantis_german_2.0.0.7.exe:
     unpack:
       format: innoextract
@@ -175,6 +204,15 @@ files:
     - hintbook.pdf
     - manual.pdf
 
+  gog_indiana_jones_and_the_fate_of_atlantis_french_2.2.0.27.sh:
+    unpack:
+      format: zip
+    provides:
+    - atlantis.000_fr
+    - atlantis.001_fr
+    - hintbook.pdf
+    - manual.pdf
+
   setup_indiana_jones_and_the_fate_of_atlantis_french_2.0.0.7.exe:
     unpack:
       format: innoextract
@@ -186,6 +224,15 @@ files:
     provides:
     - atlantis.000_fr
     - atlantis.001_fr
+    - hintbook.pdf
+    - manual.pdf
+
+  gog_indiana_jones_and_the_fate_of_atlantis_italian_2.2.0.27.sh:
+    unpack:
+      format: zip
+    provides:
+    - atlantis.000_it
+    - atlantis.001_it
     - hintbook.pdf
     - manual.pdf
 
@@ -260,6 +307,11 @@ size_and_md5: |
   12030     8f3758ff98c9c5d78e5d635222cad026 atlantis.000_it
   9705021   99d4e5dc2231b4bf8b1c89126c30c8bb atlantis.001_it
 
+  135920245 d56a5850b9d1d4f82eebc282ef7fb52b gog_indiana_jones_and_the_fate_of_atlantis_2.2.0.27.sh
+  64419442  0da3a8b3d0505c86a9f863c27debbca7 gog_indiana_jones_and_the_fate_of_atlantis_french_2.2.0.27.sh
+  64426118  8d2afbd6b6464c1e474caaf2cb314c7c gog_indiana_jones_and_the_fate_of_atlantis_german_2.2.0.27.sh
+  64418812  79e8a5a7013deba805ef62e6501449e6 gog_indiana_jones_and_the_fate_of_atlantis_italian_2.2.0.27.sh
+  64408638  c3ae7d498d13350dbafbe0f33fd43b00 gog_indiana_jones_and_the_fate_of_atlantis_spanish_2.2.0.27.sh
   113996288 3c2f6ab56bd95f0168932a4d1feab236 setup_indiana_jones_and_the_fate_of_atlantis_2.1.0.8.exe
   52651368  9421960cb88219dc3012836e3564e245 setup_indiana_jones_and_the_fate_of_atlantis_spanish_2.0.0.7.exe
   52662264  62d7933909d0e7cd2ec078ad045820ee setup_indiana_jones_and_the_fate_of_atlantis_german_2.0.0.7.exe
@@ -294,6 +346,11 @@ sha1sums: |
   2f5707b7ecd85cb9dd029f83b9aba7d5952438fd  atlantis.000_it
   63c77e697fae9df5684b8879ebdc2b6ab26e02e9  atlantis.001_it
 
+  a54f2b61860ee05ec7cf1cd44f2f36413a206215  gog_indiana_jones_and_the_fate_of_atlantis_2.2.0.27.sh
+  57cc76063d4eec43d2596e221f8806923ca9567a  gog_indiana_jones_and_the_fate_of_atlantis_french_2.2.0.27.sh
+  a301023930cef6e97e320c6df5a022fd9646f88b  gog_indiana_jones_and_the_fate_of_atlantis_german_2.2.0.27.sh
+  1b3a776cb5c4569bc2af3534f3f635efc734e1e2  gog_indiana_jones_and_the_fate_of_atlantis_italian_2.2.0.27.sh
+  75a24c1c6165c1e4736877613c2a68e27b979a89  gog_indiana_jones_and_the_fate_of_atlantis_spanish_2.2.0.27.sh
   fdbc92a3337d4bdb54a48b67fed17b63abd0295a  setup_indiana_jones_and_the_fate_of_atlantis_2.1.0.8.exe
   0b29f7157579bc972caf1fa17dbc2799c56ad5a3  setup_indiana_jones_and_the_fate_of_atlantis_german_2.0.0.7.exe
   908ca503ab1c1e07261afad865f4f53424e5f14e  setup_indiana_jones_and_the_fate_of_atlantis_spanish_2.0.0.7.exe
