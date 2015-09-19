@@ -1692,6 +1692,8 @@ class GameData(object):
                                fileobj=fsys_process.stdout) as tar:
                             self.consider_tar_stream(found_name, tar, provider)
                 elif fmt == 'zip':
+                    if provider.name.startswith('gog_'):
+                        package.used_sources.add(provider.name)
                     with zipfile.ZipFile(found_name, 'r') as zf:
                         self.consider_zip(found_name, zf, provider)
                 elif fmt == 'lha':
