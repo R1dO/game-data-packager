@@ -47,13 +47,13 @@ archive = {
           }.get(game + '#' + (args.language or 'en'))
 
 if archive is None:
-    exit('Unknown game %s' % game)
+    exit('FAKE LGOGDOWNLOADER: Unknown game %s' % game)
 
 locate = subprocess.check_output(['locate', archive], universal_newlines=True)
 for file in locate.splitlines():
     if file.endswith(archive):
        break
 else:
-    exit('archive %s not found in "locate" database' % archive)
+    exit('FAKE LGOGDOWNLOADER: archive %s not found in "locate" database' % archive)
 
 subprocess.check_call(['cp', '--reflink=auto', '-v', file, args.directory])
