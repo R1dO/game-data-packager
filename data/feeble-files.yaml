@@ -1105,7 +1105,7 @@ packages:
 
   feeble-files-dxa-en-video:
     expansion_for: feeble-files-en-data
-    install_to: usr/share/games/feeble-files-en-data
+    install_to: usr/share/games/feeble-files-en
     install:
     - agent32.ogg
     - airlock.ogg
@@ -1577,6 +1577,7 @@ packages:
     - wurbs2.ogg
 
   feeble-files-fr-data:
+    DISABLED: WIP
     lang: fr
     debian:
       provides: feeble-files-data
@@ -2675,8 +2676,9 @@ packages:
     - manual.pdf
 
   feeble-files-orig-fr-video:
+    DISABLED: WIP
     expansion_for: feeble-files-fr-data
-    install_to: usr/share/games/feeble-files-fr-data
+    install_to: usr/share/games/feeble-files-fr
     install:
     - agent32.smk
     - airlock.smk
