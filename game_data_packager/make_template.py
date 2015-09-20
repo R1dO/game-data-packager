@@ -213,7 +213,7 @@ class GameData(object):
 
         command = ['innoextract', os.path.realpath(exe)]
         version = subprocess.check_output(['innoextract', '-v', '-s'], universal_newlines=True)
-        if version[0:3] >= '1.5':
+        if version.split('-')[0] >= '1.5':
             command.append('-I')
             command.append('app')
 
