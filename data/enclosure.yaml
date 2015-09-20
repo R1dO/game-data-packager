@@ -1,0 +1,68 @@
+---
+copyright: © 2004 Femo Duo Entertainment
+plugin: scummvm_common
+wiki: "AGIWiki/Enclosure"
+
+help_text: |
+  This is a fan-made game, original website is down.
+
+  https://web.archive.org/web/20140801095838/http://home.deds.nl/~femo/download.html#enclosure
+
+  http://www.reloaded.org/download/Enclosure/5/
+
+packages:
+  enclosure-data:
+    gameid: agi-fanmade
+    install:
+    - LOGDIR
+    - OBJECT
+    - PICDIR
+    - SNDDIR
+    - VIEWDIR
+    - VOL.0
+    - WORDS.TOK
+    optional:
+    - Enclosure.txt
+
+files:
+  Enclosure.txt:
+    install_to: $docdir
+
+  Enclosure.zip:
+    download:
+      spear-of-destiny-mirrors:
+        path: .
+    unpack:
+      format: zip
+    provides:
+    - LOGDIR
+    - OBJECT
+    - PICDIR
+    - SNDDIR
+    - VIEWDIR
+    - VOL.0
+    - WORDS.TOK
+    - Enclosure.txt
+
+size_and_md5: |
+  700224    5c01ef5f13d58cc5fbc4c3d575eb2cdf Enclosure.zip
+  330       e4a0613ed02401502e506ba3565a8c40 LOGDIR
+  261       ba5854aa65ffb1a2fb12d7c63e46c454 OBJECT
+  321       967481d1b67fe30732bd972cadffbf50 PICDIR
+  63        f1b2e35800fe541ee1c6d615eee7bc22 SNDDIR
+  666       5d061ae1c4653dd6811eae7a75aa9d78 VIEWDIR
+  1036737   ec57fdb4c6a015aede33cccffe08bce8 VOL.0
+  8853      f6cf515dbf7c26bdb01095be6379349d WORDS.TOK
+  10872     eca5ca252cc9f82f164ed86fda4996b6 Enclosure.txt
+
+sha1sums: |
+  ec02d075310f78ffbf1aabf053fd523e483f2ba5  Enclosure.zip
+  92e31c392ae4eb0560254564dd7b5dbfc0fde12d  LOGDIR
+  cfc0ffbb309b1a33cc58d40eb81f8fb928086c37  OBJECT
+  8cf054f9e1764d6ceacf3fc271793f679a642851  PICDIR
+  026deb11aa683b9a67e8cdccede83402639ffb6e  SNDDIR
+  c4f22ca798f158d9b98901501cb98276a4131c6c  VIEWDIR
+  f25a42446c9cb9b5778a6d19f0285c8a330675f8  VOL.0
+  fa6b4945e0e3489509b76391c1b66cdb389d491f  WORDS.TOK
+  c02e0cef9bc4deac2b83cb194faa4b5c6aaddf57  Enclosure.txt
+...
