@@ -3152,6 +3152,7 @@ def load_games(workdir=None,game='*'):
     return games
 
 def run_steam_meta_mode(parsed, games):
+    logger.info('Visit our community page: https://steamcommunity.com/groups/debian_gdp#curation')
     owned = set()
     if parsed.download:
         steam_id = get_steam_id()
@@ -3280,6 +3281,7 @@ def run_steam_meta_mode(parsed, games):
         rm_rf(workdir)
 
 def run_gog_meta_mode(parsed, games):
+    logger.info('Visit game-data-packager @ GOG.com: https://www.gog.com/mix/games_supported_by_debians_gamedatapackager')
     if not which('lgogdownloader') or not which('innoextract'):
         logger.error("You need to install lgogdownloader & innoextract first")
         logger.error("$ su -c 'apt-get install lgogdownloader innoextract'")
