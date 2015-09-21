@@ -1116,7 +1116,7 @@ class GameData(object):
         return HashedFile.from_file(path, open(path, 'rb'), size=size,
                 progress=(size > QUITE_LARGE))
 
-    def consider_file(self, path, really_should_match_something):
+    def consider_file(self, path, really_should_match_something, trusted=False):
         if not os.path.exists(path):
             # dangling symlink
             return
@@ -1205,13 +1205,38 @@ class GameData(object):
                     if self.use_file(self.files[wanted_name], path, hashes):
                         return
 
-        if really_should_match_something:
+        basename = os.path.basename(path)
+        extension = os.path.splitext(basename)[1]
+        if trusted:
+            if basename.startswith('gog_') and extension == '.sh':
+                with zipfile.ZipFile(path, 'r') as zf:
+                    self.consider_zip(path, zf)
+            elif basename.startswith('setup_') and extension == '.exe':
+                version = subprocess.check_output(['innoextract', '-v', '-s'],
+                                                      universal_newlines=True)
+                args = ['-I', '/app'] if version.split('-')[0] >= '1.5' else []
+                tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                            basename + '.d')
+                mkdir_p(tmpdir)
+                subprocess.check_call(['innoextract',
+                                       '--language', 'english',
+                                       '-T', 'local',
+                                       '-d', tmpdir,
+                                       path] + args)
+                self.consider_file_or_dir(tmpdir)
+            # print warning after innoextract's output,
+            # to give user a chance to read it
+            logger.warning('\n\nPlease repport this unknown archive to '
+                           'game-data-packager@packages.debian.org\n\n'
+                           '  %-9s %s %s\n'
+                           '  %s  %s\n' % (size, hashes.md5, basename, hashes.sha1, basename))
+        elif really_should_match_something:
             logger.warning('file "%s" does not match any known file', path)
             # ... still G-D-P should try to process any random .zip
             # file thrown at it, like the .zip provided by GamersHell
             # or the MojoSetup installers provided by GOG.com
-            if (os.path.splitext(path)[1].lower() in ('.zip', '.apk')
-             or (os.path.basename(path).startswith('gog_') and path.endswith('.sh')) ):
+            if (extension.lower() in ('.zip', '.apk')
+               or (basename.startswith('gog_') and extension == '.sh')):
                 with zipfile.ZipFile(path, 'r') as zf:
                     self.consider_zip(path, zf)
 
@@ -1778,7 +1803,7 @@ class GameData(object):
                         cmdline.append('--silent')
                     version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
-                    if version[0:3] >= '1.5':
+                    if version.split('-')[0] >= '1.5':
                         prefix = provider.unpack.get('prefix', '')
                         suffix = provider.unpack.get('suffix', '')
                         if prefix and not prefix.endswith('/'):
@@ -2876,7 +2901,7 @@ class GameData(object):
                     for dirpath, dirnames, filenames in os.walk(tmpdir):
                         for fn in filenames:
                             archive = os.path.join(dirpath, fn)
-                            self.consider_file(archive, True)
+                            self.consider_file(archive, True, trusted=True)
                     # recheck file status
                     if self.fill_gaps(package, log=True, download=True,
                        recheck=True) is not FillResult.IMPOSSIBLE:
