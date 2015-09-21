@@ -1226,7 +1226,7 @@ class GameData(object):
                 self.consider_file_or_dir(tmpdir)
             # print warning after innoextract's output,
             # to give user a chance to read it
-            logger.warning('\n\nPlease repport this unknown archive to '
+            logger.warning('\n\nPlease report this unknown archive to '
                            'game-data-packager@packages.debian.org\n\n'
                            '  %-9s %s %s\n'
                            '  %s  %s\n' % (size, hashes.md5, basename, hashes.sha1, basename))
