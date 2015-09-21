@@ -167,6 +167,27 @@ files:
     install_to: $docdir
     install_as: manual.pdf
 
+  gog_blake_stone_aliens_of_gold_2.0.0.5.sh:
+    unpack:
+       format: zip
+    provides:
+    - audiohed.bs6
+    - audiot.bs6
+    - eanim.bs6
+    - ganim.bs6
+    - ianim.bs6
+    - sanim.bs6
+    - maphead.bs6
+    - maptemp.bs6
+    - svswap.bs6
+    - vgadict.bs6
+    - vgagraph.bs6
+    - vgahead.bs6
+    - vswap.bs6
+    # not sure about these 2 ones
+    - manual.pdf
+    - license.doc
+
   setup_blake_stone_aliens_of_gold_2.0.0.2.exe:
     unpack:
        format: innoextract
@@ -188,6 +209,22 @@ files:
 
     - manual.pdf
     - license.doc
+
+  gog_blake_stone_planet_strike_2.0.0.4.sh:
+    unpack:
+      format: zip
+    provides:
+    - audiohed.vsi
+    - audiot.vsi
+    - eanim.vsi
+    - ianim.vsi
+    - maphead.vsi
+    - maptemp.vsi
+    - vgadict.vsi
+    - vgagraph.vsi
+    - vgahead.vsi
+    - vswap.vsi
+    - manual.pdf_2
 
   setup_blake_stone_planet_strike_2.0.0.2.exe:
     unpack:
@@ -244,6 +281,7 @@ size_and_md5: |
   709440    5fb43bf55b58313be585bb2b06927534 vgagraph.bs6_3.0
   678       e0de008dba2580709cfa49442424ab51 vgahead.bs6_3.0
 
+  16557534  ccb9410dfaf0e58e09e7b7b9f8c3fe45 gog_blake_stone_aliens_of_gold_2.0.0.5.sh
   26888888  b1686e263da9e836e67b64a2946a3222 setup_blake_stone_aliens_of_gold_2.0.0.2.exe
   2642      360fd990223b6c7d10d6d89517dad4ce license.doc
   8299535   4e092f5c9f8503f2bab7adbd1f9c6c19 manual.pdf
@@ -260,6 +298,7 @@ size_and_md5: |
   747       31c0301eb320718029efaa3b275f689c vgahead.vsi
   3195112   24827f8b2920acc60bab0e57b6e9937e vswap.vsi
 
+  11444448  870c8c037e3fd5fd08484363c4f6498d gog_blake_stone_planet_strike_2.0.0.4.sh
   21659584  2230bde51bc598440c14c978669209eb setup_blake_stone_planet_strike_2.0.0.2.exe
   4082123   fca4caf88fcb2057b1f7ac52a5661087 manual.pdf_2
 
@@ -287,6 +326,7 @@ sha1sums: |
   639ec9e7a81ad83fc5b5c557cf4fc5fa28b9676b  vgahead.bs6_1.0
   0a700732ccbc72f95318a6226a7e1ad78ac713bb  vswap.bs6_1.0
 
+  224747bd673ba20a14ca6f68663ebc2f5e75da43  gog_blake_stone_aliens_of_gold_2.0.0.5.sh
   911ca4507713b091767664ef1d10a5850c573ffe  setup_blake_stone_aliens_of_gold_2.0.0.2.exe
   9065277d9964595fc491b71c6f536cd20b39b524  license.doc
   3922e1608678dabbdf6b539d6aacb7b1e680ac42  manual.pdf
@@ -302,6 +342,7 @@ sha1sums: |
   ad5fed9de5d1d82145df3ff2286e4bc62cb80e2a  vgahead.vsi
   4113ce83c42e69dc5cb20de79f41971a100f876e  vswap.vsi
 
+  236dcb41053d94ed04a99d900b24bd7ecd2f1fb1  gog_blake_stone_planet_strike_2.0.0.4.sh
   5171c5855d0df6ae38893aa80a072045efe5e06c  setup_blake_stone_planet_strike_2.0.0.2.exe
   58a5199af8cc7ce984d3b133e4174fed4a057218  manual.pdf_2
 ...
