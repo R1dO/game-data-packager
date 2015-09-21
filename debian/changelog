@@ -24,9 +24,9 @@ game-data-packager (43) UNRELEASED; urgency=medium
   * use apt-get 1.1 instead of dpkg to install local .deb if available;
     this will automatically pull recommended engine
   * add "game-data-packager steam" mode
-  * make-template mode: check innoextract version (#797550)
-  * add support for the new Doom packages at GOG.com (#796995)
-  * call 'lgogdownloader' automatically
+  * make-template mode: check innoextract version (Closes: #797550)
+  * add support for the new Doom packages at GOG.com (Closes: #796995)
+  * call 'lgogdownloader' automatically (Closes: #782205)
 
   [ Stephen Kitt ]
   * Add Steam path for The 7th Guest.
