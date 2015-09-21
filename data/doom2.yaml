@@ -1,6 +1,5 @@
 ---
 # Version reference:
-# http://doom.wikia.com/wiki/DOOM2.WAD
 # http://doomwiki.org/wiki/DOOM2.WAD
 longname: "Doom 2: Hell on Earth"
 franchise: Doom
@@ -29,6 +28,7 @@ packages:
     # FIXME: also look in 208200, common/DOOM 3 BFG Edition
     gog:
       url: doom_ii_final_doom
+      game: doom_ii_master_levels_game
     install_to: usr/share/games/doom
     install:
     - doom2.wad
@@ -58,6 +58,7 @@ packages:
       path: "common/Master Levels of Doom"
     gog:
       url: doom_ii_final_doom
+      game: doom_ii_master_levels_game
     debian:
       depends: doom2-wad | freedoom
       recommends: game-data-packager

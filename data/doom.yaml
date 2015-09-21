@@ -1,8 +1,6 @@
 ---
 # Version reference:
-# http://doom.wikia.com/wiki/DOOM1.WAD
 # http://doomwiki.org/wiki/DOOM1.WAD
-# http://doom.wikia.com/wiki/DOOM.WAD
 # http://doomwiki.org/wiki/DOOM.WAD
 longname: Doom (including Ultimate Doom)
 franchise: Doom
@@ -33,6 +31,7 @@ packages:
     # FIXME: also look in 208200, common/DOOM 3 BFG Edition
     gog:
       url: the_ultimate_doom
+      game: the_ultimate_doom_game
     install_to: usr/share/games/doom
     longname: Doom
     install:
