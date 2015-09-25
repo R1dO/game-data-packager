@@ -36,6 +36,10 @@ from .util import which
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
 
+# I guess there is a minimum size under which a
+# MD5 collision is not possible and having
+# a SHA1 for these files is not usefull
+MD5_SAFE_ENOUGH = 5000
 
 def is_license(file):
     name, ext = os.path.splitext(file.lower())
@@ -127,9 +131,10 @@ class GameData(object):
             self.install.add(out_name)
 
         hf = HashedFile.from_file(name, open(name, 'rb'))
-        self.ck[out_name] = os.path.getsize(name)
+        self.ck[out_name] = size = os.path.getsize(name)
         self.md5[out_name] = hf.md5
-        self.sha1[out_name] = hf.sha1
+        if size > MD5_SAFE_ENOUGH:
+            self.sha1[out_name] = hf.sha1
 
     def add_one_dir(self,destdir,lower,archive=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
@@ -194,9 +199,10 @@ class GameData(object):
                         self.install.add(out_name)
 
                     hf = HashedFile.from_file(name, open(path, 'rb'))
-                    self.ck[out_name] = os.path.getsize(path)
+                    self.ck[out_name] = size = os.path.getsize(path)
                     self.md5[out_name] = hf.md5
-                    self.sha1[out_name] = hf.sha1
+                    if size > MD5_SAFE_ENOUGH:
+                        self.sha1[out_name] = hf.sha1
                 else:
                     logger.warning('ignoring unknown file type at %s' % path)
 
@@ -339,7 +345,8 @@ class GameData(object):
 
                         self.ck[name] = entry.size
                         self.md5[name] = hf.md5
-                        self.sha1[name] = hf.sha1
+                        if entry.size > MD5_SAFE_ENOUGH:
+                            self.sha1[name] = hf.sha1
                     elif entry.isdir():
                         pass
                     elif entry.issym():
@@ -393,7 +400,8 @@ class GameData(object):
             print('  %-9s %s %s' % (self.ck[filename], self.md5[filename], filename))
         print('\nsha1sums: |')
         for filename in print_order:
-            print('  %s  %s' % (self.sha1[filename], filename))
+            if filename in self.sha1:
+                print('  %s  %s' % (self.sha1[filename], filename))
 
         print('...')
         print('')
