@@ -1,0 +1,50 @@
+---
+longname: "Gold Rush!"
+copyright: © 1988 MacNeill Computer Company
+plugin: scummvm_common
+wiki: Gold_Rush
+
+packages:
+  goldrush-data:
+    install:
+    - grdir
+    - grvol.0
+    - grvol.1
+    - grvol.2
+    - grvol.3
+    - grvol.4
+    - grvol.5
+    - grvol.9
+    - grvol.10
+    - grvol.11
+    - grvol.12
+    - object
+    - words.tok
+
+size_and_md5: |
+  2399      3ae052117feb483f01a9017025fbb366 grdir
+  25070     099cf878595fea15a4b2506d40b8ea53 grvol.0
+  207528    8ddf79efdb570d3f56e6fc693ac916a3 grvol.1
+  125702    0dcb93d9e2901a8b41035812305ed135 grvol.2
+  279567    0cacd4aef3c9e3e9135166c8365ae262 grvol.3
+  259527    9e3e470c693a1bfbf545e5fc1bde7982 grvol.4
+  227102    6d6e1231594b8b5041aa8af64b13a161 grvol.5
+  26174     7b44a218c8ec630c96d9d452e51f43b3 grvol.9
+  20612     e2291ecbc0ddc036eb15ce2ac3417116 grvol.10
+  10123     eea575e47b1e8fbd915ed34b68ee17c9 grvol.11
+  3976      0649df472c193ca624dbe5f1327d357e grvol.12
+  1814      9fa64d3f27c489933c6d9700e94f1791 object
+  6110      ce085fc2ef513d084c4396d29ab5086b words.tok
+
+sha1sums: |
+  eba83fc4c765f24eee76dbe1f6c7f932508f6981  grvol.0
+  59345f368ddf4cfbfb428cc6e76ae4c32046e365  grvol.1
+  a9eccb6a43cb2aa2dd2d87e5dc8b95fa8c27aa3e  grvol.2
+  e54cf12f0e06cbd26fb7eacfd0f9f473ea8c3e24  grvol.3
+  00f2b5642f1919cf8baf2bf83526fdcf2fce41e1  grvol.4
+  0911006ab966abb6ffa089a6048ede3084689bfd  grvol.5
+  65aa692be9b2dc4476d7a8d77b4fc450188a545a  grvol.9
+  a69da8ef1d493a03fbe76f666a0052e392e5d64e  grvol.10
+  59f5da55be90a7da02c28c0ca40861c2d93c95a4  grvol.11
+  e4baee23a7cc73a98c6d9dc7a855d8f30e551031  words.tok
+...
