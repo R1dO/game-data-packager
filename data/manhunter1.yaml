@@ -1,0 +1,69 @@
+---
+franchise: Manhunter
+longname: "Manhunter: New York"
+copyright: © 1988 Evryware
+plugin: scummvm_common
+wiki: Manhunter
+gameid: mh1
+
+packages:
+  manhunter1-data:
+    install:
+    - mhdir
+    - mhvol.0
+    - mhvol.1
+    - mhvol.2
+    - mhvol.3
+    - mhvol.4
+    - mhvol.5
+    - mhvol.9
+    - mhvol.10
+    - mhvol.11
+    - mhvol.12
+    - object
+    - words.tok
+
+files:
+  mhvol.1:
+    alternatives:
+    - mhvol.1_not_prot
+    - mhvol.1_protected
+  mhvol.1_not_prot:
+    look_for: [mhvol.1]
+  mhvol.1_protected:
+    look_for: [mhvol.1]
+
+  # 3 bytes flipped
+  #00001A7F 41 7F
+  #00001A80 06 C3
+  #00001A81 7A 00
+
+size_and_md5: |
+  2123      0c7b86f05fe02c2e26cff1b07450b82a mhdir
+  115078    7da828147aded092778ceb6a51da1a60 mhvol.0
+  144059    5c6f2891133cd9c4b8d583e5edfa469b mhvol.1_not_prot
+  144059    6f8572989d5a5625c7eb56a79cf93f22 mhvol.1_protected
+  197136    4f18fc749cfb3b40ddb191817052652b mhvol.2
+  207016    1774c2c24c48c92ba47a436e8b5c2f7f mhvol.3
+  183955    771f9142448a7cc7066013205c882293 mhvol.4
+  123482    9153d89aff8758037b1b62af916e6b83 mhvol.5
+  10834     ab2152cf8db6ea4e298b927e96ebb982 mhvol.9
+  23347     576c39a0eceb1d7ec4e59ccce48a4d18 mhvol.10
+  35644     ec774ea1d0dc8d1faf45a087f42f19b0 mhvol.11
+  7632      036cb25785ce245b0387ff05fc64d51f mhvol.12
+  387       a729c0a711e3893e3586ebd76fcb04c7 object
+  275       239700be03a55519a1b7ccd4a6717e98 words.tok
+
+sha1sums: |
+  34f77e923717d85e8514eb3552f1867ea95dd659  mhvol.0
+  dbc48ef3e7f29b1af32535bc1070151a7768720f  mhvol.1_not_prot
+  4aae8c1154109eb054148e17579dcc45710031e1  mhvol.1_protected
+  c21f549c11d4d54710eb1a019d0573e5ad622432  mhvol.2
+  b52811d41ff93adbd00835b17c70fa0c07d3c1ce  mhvol.3
+  8cbe3ae5f9bf41fbd380f9c7efaa4c27100ad7bb  mhvol.4
+  6f0bf24f1f978f178fe2c142458a91591b20763f  mhvol.5
+  6ac5f2aa48b3d88c08c16c3857fd9cfcebed1e0f  mhvol.9
+  87bb21b1e95da1363310f8efbdfa65ac3ecdac31  mhvol.10
+  b65f34668fceaa73c5da5540c8175a24b289f03b  mhvol.11
+  6c21f4728614f3b56809bd6e7fc26e5ee1d33f37  mhvol.12
+...

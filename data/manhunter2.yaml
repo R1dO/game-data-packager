@@ -1,0 +1,43 @@
+---
+longname: "Manhunter 2: San Francisco"
+copyright: © 1989 Evryware
+plugin: scummvm_common
+gameid: mh2
+wiki: Manhunter_2
+
+packages:
+  manhunter2-data:
+    install:
+    - mh2dir
+    - mh2vol.0
+    - mh2vol.1
+    - mh2vol.2
+    - mh2vol.3
+    - mh2vol.9
+    - mh2vol.10
+    - mh2vol.11
+    - object
+    - words.tok
+
+size_and_md5: |
+  2588      6fb6f0ee2437704c409cf17e081ba152 mh2dir
+  118759    17b0285aa47aa4a9e2097a7b8a3c2a3a mh2vol.0
+  242963    f31864ca3a8e347a132fcf1becef9625 mh2vol.1
+  381583    866b00329917ac6bd4e15708631918cf mh2vol.2
+  362315    c65366bd09e7590ce9f607a9d624c688 mh2vol.3
+  44998     4318646e3553f144d857823aa453ba04 mh2vol.9
+  42536     42736d707926d2688ec94817812af762 mh2vol.10
+  14521     c3d68a1ab57a4761cd5f53d249add91c mh2vol.11
+  399       80ddd44ec62062ef517eef278e09cacc object
+  278       9a802fac3e5d572ed4eee80f320bfddc words.tok
+
+sha1sums: |
+  9d0775b965a8aa0851115742aec88dce28f5fdba  mh2vol.0
+  bddbbe6f836e860d873850a6e061bd09cc47ed69  mh2vol.1
+  714bffc64dbfb81b7ba516e318bd1466da8237ba  mh2vol.2
+  5aab297ea1e66131208cefa9dfcfd85e75343281  mh2vol.3
+  761941480f205b27ecb42548991479ba9ab7aa3e  mh2vol.9
+  7196412406852287f0f73f1856fe5fc5cf64eee2  mh2vol.10
+  cb0829c3892b268197d04317ec897be53cb44c1b  mh2vol.11
+...
+
