@@ -1,0 +1,36 @@
+---
+longname: The Black Cauldron
+copyright: © 1986 Sierra
+plugin: scummvm_common
+wiki: The_Black_Cauldron
+
+packages:
+  the-black-cauldron-data:
+    gameid: bc
+    install:
+    - logdir
+    - object
+    - picdir
+    - snddir
+    - viewdir
+    - vol.0
+    - vol.1
+    - vol.2
+    - words.tok
+
+size_and_md5: |
+  357       7f598d4712319b09d7bd5b3be10a2e4a logdir
+  312       8bda909f31057a87ecb6fbff44237e4c object
+  216       d8d9f4b760381c212093d3f6948cd140 picdir
+  87        1268c6e2c2802433d42a44513abea689 snddir
+  549       0e9b075bf0d72ef46c34b6f3e8e66515 viewdir
+  36317     7fa555bb98f2b87cfce8af099780c0e4 vol.0
+  204646    6dbceb046198594374dc41d2dc332c9e vol.1
+  145491    07a2594ebc5c5b043bcd5e4ef80448f5 vol.2
+  171       b9ddaf9442f7d897f0131f915f2c80a5 words.tok
+
+sha1sums: |
+  337f8d5795ea74ac3d0a3c512aa08b0d344ba00b  vol.0
+  8597c976a7b6837706bb6f2175a1c3203426f5ad  vol.1
+  9e6bd6cc2367c9613dde09b4f09df8d27cd90ecf  vol.2
+...
