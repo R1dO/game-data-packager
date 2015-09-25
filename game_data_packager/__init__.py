@@ -1796,7 +1796,6 @@ class GameData(object):
                     cmdline = ['innoextract',
                                '--language', 'english',
                                '-T', 'local',
-                               '--lowercase',
                                '-d', tmpdir,
                                os.path.abspath(found_name)]
                     if not self.verbose:
