@@ -1,0 +1,127 @@
+---
+longname: "The Manhole"
+copyright: © 1988 Cyan Worlds
+plugin: scummvm_common
+wiki: The_Manhole
+genre: Kids
+
+packages:
+  manhole-ega-data:
+    better_version: manhole-vga-data
+    install:
+    - manhole.dat
+    - music.blk
+    - pics.blk
+    - snds.blk
+
+  manhole-vga-data:
+    longname: "The Manhole (enhanced)"
+    copyright: © 1992 Cyan Worlds
+    gameid: manhole-cd
+    install:
+    - manhole.dat_cd
+    - manhole.prj
+    optional:
+    - track01.flac
+    - track02.flac
+    - track03.flac
+    - track04.flac
+    - track05.flac
+    - track06.flac
+    - track07.flac
+    - track08.flac
+    - track09.flac
+    - track10.flac
+    - track11.flac
+    - track12.flac
+    - track13.flac
+    - track14.flac
+    - track15.flac
+    - track16.flac
+    - track17.flac
+    - track18.flac
+    - track19.flac
+    - track20.flac
+    - track21.flac
+    - track22.flac
+    - track23.flac
+    - track24.flac
+    - track25.flac
+    - track26.flac
+
+files:
+  manhole.dat_cd:
+    install_as: manhole.dat
+
+size_and_md5: |
+  127541    735337cc5b44e58e5f7a0c35260f69db manhole.dat
+  132156    db967dbcdcb2c02ead6746e46639a83a music.blk
+  2073267   31929a22640c916d697da8042ccf8591 pics.blk
+  300092    f229896dfe647fd82ffdffef5d454608 snds.blk
+
+  107028    b9b36c9e496bae7d9b08f2929b463eef manhole.dat_cd
+  6989933   99c12e257dbc6802504ad91cc594e693 manhole.prj
+  3999406   8ea9a965041b229d22979e2b98961648 track01.flac
+  4377385   5327f4451b88880470245bad82396cd4 track02.flac
+  6883919   7c9f8002c0d18a640c63bf100c1c9441 track03.flac
+  6487063   7a770e3b8686f9a02ad4667b368926d8 track04.flac
+  3464469   8c01e56d723cea15f9193a6d2ecd5d57 track05.flac
+  3740970   b3e1b1bb2b826da4087aea2d4e0c7120 track06.flac
+  5265766   0274d7ddf816613a4e01760d515bde9d track07.flac
+  5298849   eb298bb8e2e06f093bd755fa16ead829 track08.flac
+  6256356   c31f0bbf9e39574e17992228f37c8833 track09.flac
+  11362546  b5dc052bd6ebcd4a35a703ce7c11b3a0 track10.flac
+  4947716   3316156a2cd88907fe917e957a6a4cb4 track11.flac
+  9466496   a41c9a0bae90df7aaf1bbff6632bdb6f track12.flac
+  4313635   04de4d01c79300083e0168e6f52c0e16 track13.flac
+  9175573   4a25ff589e015c5f4bf2a2d3384fc0aa track14.flac
+  6370898   725c53a077f620bd9791f8b271024cea track15.flac
+  6279634   fe1d2f36e84f85db7327b9cb4c39d487 track16.flac
+  4099402   c5ade13b26b1e3e83e6d4c3e23ece0a3 track17.flac
+  6256719   4eed123d3a36deb3cdf9f7d3a00b0dd4 track18.flac
+  4804006   7370629072e7d6a761122af9bddba85b track19.flac
+  4817471   187669de29094e0462aacef8e786ab61 track20.flac
+  5891429   4e82b348096aa0cdcf6f293933c6a5bf track21.flac
+  3219158   09a7e4b2c876ee40bac6ff57df26b61b track22.flac
+  1821984   2329c11b7c5f48ec99ffbe06f3f0c306 track23.flac
+  1045098   7b3d5c3e83aa9e7ab6c7bfd52ac8f1a4 track24.flac
+  1550361   3a0e53b8bfac59fa45d15f4e556600f8 track25.flac
+  6845607   0379471dcb5aaa2eeff76dac92a3eaa8 track26.flac
+
+sha1sums: |
+  88e727eee1307a8257f1addfca87f35706071abc  manhole.dat
+  9a133a8700c48183a446f2b60caf24e108b5b762  music.blk
+  fa744a52e0b8c387a67743b219e92a38c8f15be7  pics.blk
+  c6a7f27c3bcc1d9bfb56bad442717887b1c203a3  snds.blk
+
+  78a3a4103eadcbdba2e6f8a799f192ec52c59e49  manhole.dat_cd
+  ac7b8bdbc34312ccf4346bfd1c3ec836ef07a9a6  manhole.prj
+
+flacsums: |
+  4396c39ef91a4ae3dec31abf0b9a720e  track01.flac
+  a92d856a1e9dd672c54c87f591b96b4d  track02.flac
+  7952f899d365c375c05f2014cf3a96d2  track03.flac
+  906d3d102bde26a84233a4fb8d3dca21  track04.flac
+  16a56ab01531e4a1aceeccbae4941e3b  track05.flac
+  cd414ccc4e183018f495b88e2cdc8dd0  track06.flac
+  d6b63c7fb30a963255e3da3746a31666  track07.flac
+  20253cb8a152ac379aca2150fdfd1e1a  track08.flac
+  e57777c73366bab5d72b1fda02f72c3b  track09.flac
+  32ef3a4ab2d4967d657adc7f42a3f7e7  track10.flac
+  20cff035bdf97d39d314b759151c8853  track11.flac
+  0bc6a232656bced650545edc56eb4b04  track12.flac
+  622c62c71a0832ca765f920607b9bd54  track13.flac
+  be908860e6d73005c2e6c0e7ba2bda21  track14.flac
+  71726cceab781f6fbe88578702fb1906  track15.flac
+  d9c10ebc5fc691a5094593d15b5b7193  track16.flac
+  dec6d38548664219e1353989f7559617  track17.flac
+  4712402a759eb702dcc493a114ec64ce  track18.flac
+  be4d1c9d73d04c95309b114311f010b6  track19.flac
+  c130623a8a8fe7a70852bfe00dc357a5  track20.flac
+  0eac521d5afb7359ca46842314455454  track21.flac
+  b08152f12e6eaf40df8661d98f339297  track22.flac
+  4132c3ca7c910e771b6218072556b16f  track23.flac
+  179022b293941d800164b2c8b2bc012b  track24.flac
+  e8dd1ac211d28cb175ce04149d7dfe0d  track25.flac
+  8cf4ad989b8728dbba4ce7c3532c9d9a  track26.flac
+...
