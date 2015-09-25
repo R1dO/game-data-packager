@@ -1816,7 +1816,7 @@ class GameData(object):
                                 i = prefix + i
                             if suffix and i.endswith(suffix):
                                 i = i[:len(i)-len(suffix)]
-                            cmdline.append(i.lower())
+                            cmdline.append(i)
                     subprocess.check_call(cmdline)
                     # for at least Theme Hospital the files we want are
                     # actually in subdirectories, so we search recursively
