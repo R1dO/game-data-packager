@@ -1,0 +1,240 @@
+---
+longname: Personal Nightmare
+copyright: © 1989 Horror Soft
+plugin: scummvm_common
+gameid: pn
+genre: Horror
+wiki: Personal_Nightmare
+
+help_text: |
+  Manual:
+  http://www.lemonamiga.com/games/docs.php?id=1203
+
+packages:
+  # this is the DOS version,
+  # there are also an Amiga and an Atari versions
+  personal-nightmare-data:
+    gog:
+      url: personal_nightmare
+    install:
+    - 01.out
+    - 02.out
+    - 11.out
+    - 12.out
+    - 13.out
+    - 21.out
+    - 22.out
+    - 31.out
+    - 32.out
+    - 41.out
+    - 42.out
+    - 43.out
+    - 51.out
+    - 52.out
+    - 61.out
+    - 62.out
+    - 71.out
+    - 72.out
+    - 73.out
+    - 81.out
+    - 82.out
+    - 83.out
+    - 91.out
+    - 92.out
+    - a1.out
+    - a2.out
+    - a3.out
+    - b1.out
+    - b2.out
+    - c1.out
+    - c2.out
+    - d1.out
+    - d2.out
+    - d3.out
+    - e1.out
+    - e2.out
+    - f1.out
+    - f2.out
+    - g1.out
+    - g2.out
+    - h1.out
+    - h2.out
+    - i1.out
+    - i2.out
+    - i3.out
+    - icon.out
+    - j1.out
+    - j2.out
+    - j3.out
+    - k1.out
+    - k2.out
+    - l1.out
+    - l2.out
+    - night.dbm
+    - night.txt
+    optional:
+    - manual.pdf
+
+files:
+  manual.pdf:
+    install_to: $docdir
+
+  setup_personal_nightmare_2.0.0.22.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - 01.out
+    - 02.out
+    - 11.out
+    - 12.out
+    - 13.out
+    - 21.out
+    - 22.out
+    - 31.out
+    - 32.out
+    - 41.out
+    - 42.out
+    - 43.out
+    - 51.out
+    - 52.out
+    - 61.out
+    - 62.out
+    - 71.out
+    - 72.out
+    - 73.out
+    - 81.out
+    - 82.out
+    - 83.out
+    - 91.out
+    - 92.out
+    - a1.out
+    - a2.out
+    - a3.out
+    - b1.out
+    - b2.out
+    - c1.out
+    - c2.out
+    - d1.out
+    - d2.out
+    - d3.out
+    - e1.out
+    - e2.out
+    - f1.out
+    - f2.out
+    - g1.out
+    - g2.out
+    - h1.out
+    - h2.out
+    - i1.out
+    - i2.out
+    - i3.out
+    - icon.out
+    - j1.out
+    - j2.out
+    - j3.out
+    - k1.out
+    - k2.out
+    - l1.out
+    - l2.out
+    - night.dbm
+    - night.txt
+    - manual.pdf
+
+size_and_md5: |
+  4252      3a2a4c3e07dfbc4b309deade0af37baf 01.out
+  57748     ffc768f3f751a7d1fe6314fe711cf64a 02.out
+  1428      0f1ba4f608c5056f89ab33b2e80f87b4 11.out
+  27628     9e9e051ce94b9ce2a8fc35cad524d5c9 12.out
+  64100     48f56c75572bb94349664b1c011b887f 13.out
+  5728      c1f711a593d5d6448982de19d3c53d6c 21.out
+  80268     c18ffe47bfef6b909f602e8f42c80055 22.out
+  1576      be872382d97305f9da3059901bb13c82 31.out
+  83976     89039004b851771ab1bf843906be2ca7 32.out
+  1172      4fe1ddbe8ca383ee117e3b70b9f5e0e5 41.out
+  75316     574f064077816f3d1bb703edde427830 42.out
+  10148     623756767de31f11d885da107c6b5745 43.out
+  3264      6ee45221d7144a6eed8bce069ee0dd50 51.out
+  63756     5ac7357a0940d0c52f2eeccc30d0ecbb 52.out
+  1460      4c3f2818087d7cb7c19d0b7c465cdbbc 61.out
+  49100     5cf498a240352a1a3bba5750ccc1b9e7 62.out
+  1964      d60707db3a95b101962aadb75b066fcf 71.out
+  56932     24c724f4282ae43a2f583ea431001bc5 72.out
+  3008      f9f3d892e82b1e41ec68c909f5900016 73.out
+  928       bfe8b67c65bdeb4e5467f33bbfebc7b6 81.out
+  21920     c340aee01255da4aff630efd8f948ead 82.out
+  63980     0836d39b7a2a5bc97002d0c5ae9fa7e6 83.out
+  1772      24130dac564db69b7caceff788ab107c 91.out
+  39744     ed221773fe8c0f60da40d05821f0c973 92.out
+  1368      fadfb9bc9ee54edef0d1d694e7efc656 a1.out
+  112038    1e6a81c7126731653abd2614976efe41 a2.out
+  3008      f9f3d892e82b1e41ec68c909f5900016 a3.out
+  1220      ce5aa39abf4310461cf802a53260e9cf b1.out
+  28396     86a79055a1ee4427de49cc80aa826b8b b2.out
+  228       359626d2f3e4961cf667d5fc87a1aef6 c1.out
+  15632     e375b608a96f6bb3e96264215e2962fe c2.out
+  2268      d55707b4fa269923346d84308705eac5 d1.out
+  44940     81eb5191f5c3b53cb3a5c63d0a56cab7 d2.out
+  18716     c6d93148b14981585ffd3ab0a4688a74 d3.out
+  5932      0e568d97ac27f1c78e580a6a708c14a3 e1.out
+  50460     dd66571884f89f3de0f19ca97592e167 e2.out
+  608       38c6971ad800db425ba01987399c81c8 f1.out
+  31492     ea5ecb67d9b909a8d63e43d2ea9eb76c f2.out
+  5368      9a6e584d09a229359299105ecda2ca11 g1.out
+  78228     90a74e9afe412a159103fa425a19bf7c g2.out
+  1848      16924ea64507990d2a76abe2601eac50 h1.out
+  65368     ab258fdd7541da7bf7e23566c2803293 h2.out
+  556       f5ced6a340acb3b2385094a92878ad57 i1.out
+  48796     3dfd258d9e832c3e2f7e2b90676621c2 i2.out
+  18716     c6d93148b14981585ffd3ab0a4688a74 i3.out
+  15038     ddd3df690972f2feb644bf5f7a249696 icon.out
+  284       5eda37323ada9c475fd21b24d960d788 j1.out
+  7660      06f4b8c8b64a327bf436c9b6cf2c8854 j2.out
+  25420     4880f0473b260e09cd167a4aed5773d9 j3.out
+  364       d430756397269edaa7639d5db937c44c k1.out
+  18316     6ccb4046fc132d8175e36018e9b6aa91 k2.out
+  180       0cd6d02747154a2fe01709d8831573f1 l1.out
+  8532      3ea9bafbb07b014f188edf7e9eb3c256 l2.out
+  71814     0dbf347e393d82e7350b056f2bfce084 night.dbm
+  48320     3a1b159216a5a81537085cbd1e365cfc night.txt
+  8979      c26cf49fcd84fdb7a180168ec53f81f5 manual.pdf
+  16673808  fa7e91869a5ab191af892cfb5b169a43 setup_personal_nightmare_2.0.0.22.exe
+
+sha1sums: |
+  b58dad0cffff4375b2b84c5348af204080179560  02.out
+  6e6f3a67fc582deea8d1a74d5c793510b28ac6fe  12.out
+  06de61e1cb8287224a4d3e063a891cb828a6a8e7  13.out
+  2a3ced84eb74756b6edc745f975aa69fad59eb0b  21.out
+  8d84a6f15e8210b38bd477eff8e0a107581faedb  22.out
+  eda5dcc5a2a62472d05fd98501211e880efaf168  32.out
+  375df6fe53d2f394bbad6d364ddb18ec8405c356  42.out
+  ee5ec2588b90d42bc7f7d22a23f2ce568d78313c  43.out
+  84991786593c0163d0629fe6d26dd919ba1e95b6  52.out
+  d886806f00002274033f370c5e466ff62541207c  62.out
+  643b797832a2ee86a8c104a2bed6775e0118c3fc  72.out
+  7d9500bc835eb414ada40209b5a657a3436ca1ba  82.out
+  827e970daae9fdc83568efac886efc3d051c914d  83.out
+  866d0ee8141060c2e83d39f5173c91e016139587  92.out
+  dbdbcf3b770fc013a06728253c6bc0f63157d2fb  a2.out
+  6524602cf55b005d84156568508945d8eadcf410  b2.out
+  c1a75d5860be016eefb5f5f34cf2beac7eede7a9  c2.out
+  2123cf8bfd7ce5bbd2776ec46809aac591bbdfc7  d2.out
+  f64209533a98db6e2de7871d3c66a895a37e1236  d3.out
+  f4e38e736f03eecd329b11ecd985f276e9bbca18  e1.out
+  4704165fff72c7cd7b56824f55bfcc40f1113ec8  e2.out
+  c52e2c1d3587e8b917a69ded321949ec20192d4e  f2.out
+  8ba004b7573e0024194123464c1b48dcfd89dc60  g1.out
+  6bd456f959969baa69a7943dca95814059e3082f  g2.out
+  e2cdeb0d060623769859eab1f4a855e5a584c952  h2.out
+  82db5e7e6d90380ceaec8e84a8020d6f06cf7ccb  i2.out
+  f64209533a98db6e2de7871d3c66a895a37e1236  i3.out
+  6b059a2a98523bed3aa66c7715de16f342594cc0  icon.out
+  7d4cc2f5ca16754636dd36adac67b2d03571de72  j2.out
+  28a4d8fcc8ea82dcaf5397839cce556d7be5a0f7  j3.out
+  7e1a5433eb9041c7fc13b4e714096afec7314ec4  k2.out
+  784bb7ac81d50d6eefa0479fb5e0f0ecd1f3be47  l2.out
+  1c42066ee5a2d183fe93bcbe574bd392a64a390b  night.dbm
+  3b2af9a9bca760e89e344566c732f356699fb7f8  night.txt
+  64c15de2c4d4bbaeddbf8f55ff0f1bab709a2d9c  manual.pdf
+  ced28021afe3af7f90e11ffbea4dcea0048bef8e  setup_personal_nightmare_2.0.0.22.exe
+...
+
