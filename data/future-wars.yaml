@@ -24,6 +24,28 @@ packages:
     - part04b.pal
     - texte.dat
 
+  future-wars-amiga-en-data:
+    debian:
+      provides: future-wars-data
+    install:
+    - aliens
+    - auto00.prc_amiga
+    - dugger.dat
+    - escalator
+    - fwars.dat
+    - mediaval.dat
+    - moines.dat
+    - part01_amiga
+    - part02_amiga
+    - part03_amiga
+    - part04_amiga
+    - part04b_amiga
+    - suite21.dat
+    - suite22.dat
+    - suite23.dat
+    - superfutur
+    - texte.dat
+
   future-wars-fr-data:
     longname: Future Wars (Les Voyageurs du Temps)
     lang: fr
@@ -55,6 +77,18 @@ files:
     install_as: part04
   part04b_fr:
     install_as: part04b
+  auto00.prc_amiga:
+    install_as: auto00.prc
+  part01_amiga:
+    install_as: part01
+  part02_amiga:
+    install_as: part02
+  part03_amiga:
+    install_as: part03
+  part04_amiga:
+    install_as: part04
+  part04b_amiga:
+    install_as: part04b
 
 size_and_md5: |
   128       52e064ffa0cd191ea32781efd5cd4761 auto00.prc
@@ -77,6 +111,23 @@ size_and_md5: |
   153908    45b7b7fa6f7842d73bd6fe6a1d03ba16 part04_fr
   92704     8a56ee89bbb511c9d3d4791743153d75 part04b_fr
 
+  130       52994ede72ce0608b4db821dc80585f0 auto00.prc_amiga
+  51640     42588fd22ea3d1539c53f6fd477934d8 aliens
+  48676     f955de78916407eead1e2d3065335cec dugger.dat
+  38536     232a2fe6231573666f3a977f262495e9 escalator
+  73364     ab4122f9499eda2ecbef4a6e4aca31c5 fwars.dat
+  27016     acf971ed958d99e6a7e7f53a3176b2e4 mediaval.dat
+  20272     33b9a47db229dd5462ad7047779ed18c moines.dat
+  203309    49d5e82e9adec1c204f85ac2297e786c part01_amiga
+  337342    be1606a8981f8bad658ca2cc9a4081b9 part02_amiga
+  214799    86056a2caead0857cf2aa5bd19d67592 part03_amiga
+  163105    5f1e5fa7939423bb455d50856cd90f69 part04_amiga
+  124734    1c7340490aec6b590fcf1238f03e925a part04b_amiga
+  63564     a7fcb61ad05a2ee8925c79997402742d suite21.dat
+  43604     c5af74bfe633d5d4e43096b276c60ec7 suite22.dat
+  90676     36901fc8cdaf525910e645e3c7ab76d1 suite23.dat
+  43036     851bbac629680a61cf9a68002addcd90 superfutur
+
 sha1sums: |
   449c3a7ced01e99dff89bfe38af6e732ec626ed0  auto00.prc
   df5cd01b9095b4fdb4fd909331ee60e546f0396a  baseson.snd
@@ -96,4 +147,20 @@ sha1sums: |
   7e70fabe598cc77ee1cc5805682d95b9c80ee132  part03_fr
   a6959ff05e9a50270af3b58bbbfbb5446b9e4cf8  part04_fr
   e0baf5a2f65d33881e771227f07807b3cfd309da  part04b_fr
+
+  35c3b08a68f7bd899066ddf05010bd52b4fe1b80  aliens
+  1ccf4e25efdee7ae95a3b327961d1dfa34fff2d8  dugger.dat
+  db60bd99341327debd6c2546a710031563e1613d  escalator
+  ca1432d1323819703a4e26f668cb547bb41ac80f  fwars.dat
+  f7762e360567a8cb261abb79e15382fa694bed14  mediaval.dat
+  d17081edc99602107269199e42adcc4dc4c4ae43  moines.dat
+  b83a53acb3a4919a3f37403f00417dcc5459a9fd  part01_amiga
+  620732d7da34a96efac5ed07008bfb918725bb50  part02_amiga
+  85e5efd9283d99baa190551fb36ae9222755cbed  part03_amiga
+  190e3b90a60e758218d2a3bdf0e0830ce59be8e9  part04_amiga
+  9260ab55d2198f615232d2fcd0cb6c9234f7712e  part04b_amiga
+  068754eab39b237ff6381bd7cbf5a24524126c28  suite21.dat
+  551090f259e377b652943531a2755f1556362f0d  suite22.dat
+  c6f1b971354a1206c68f3919e140152b85026f6d  suite23.dat
+  e2ad2d33cff3ddf7bccab43d840c8bff0f2e81f1  superfutur
 ...
