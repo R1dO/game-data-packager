@@ -6,81 +6,94 @@ wiki: Future_Wars
 gameid: fw
 
 packages:
+  futurewars-en-data:
+    debian:
+      provides: future-wars-data
+    install:
+    - auto00.prc
+    - baseson.snd
+    - part01
+    - part01.pal
+    - part02
+    - part02.pal
+    - part03
+    - part03.pal
+    - part04
+    - part04.pal
+    - part04b
+    - part04b.pal
+    - texte.dat
+
   future-wars-fr-data:
     longname: Future Wars (fr)
     lang: fr
     debian:
       provides: future-wars-data
     install:
-    - auto00.prc_fr
-    - baseson.snd_fr
+    - auto00.prc
+    - baseson.snd
     - part01_fr
-    - part01.pal_fr
+    - part01.pal
     - part02_fr
-    - part02.pal_fr
+    - part02.pal
     - part03_fr
-    - part03.pal_fr
+    - part03.pal
     - part04_fr
-    - part04.pal_fr
+    - part04.pal
     - part04b_fr
-    - part04b.pal_fr
-    - texte.dat_fr
+    - part04b.pal
+    - texte.dat
 
 files:
-  auto00.prc_fr:
-    install_as: auto00.prc
-  baseson.snd_fr:
-    install_as: baseson.snd
   part01_fr:
     install_as: part01
-  part01.pal_fr:
-    install_as: part01.pal
   part02_fr:
     install_as: part02
-  part02.pal_fr:
-    install_as: part02.pal
   part03_fr:
     install_as: part03
-  part03.pal_fr:
-    install_as: part03.pal
   part04_fr:
     install_as: part04
-  part04.pal_fr:
-    install_as: part04.pal
   part04b_fr:
     install_as: part04b
-  part04b.pal_fr:
-    install_as: part04b.pal
-  texte.dat_fr:
-    install_as: texte.dat
 
 size_and_md5: |
-  128       52e064ffa0cd191ea32781efd5cd4761 auto00.prc_fr
-  16298     5f83f2422a82c3ec24ccb3f4688f3dcd baseson.snd_fr
+  128       52e064ffa0cd191ea32781efd5cd4761 auto00.prc
+  16298     5f83f2422a82c3ec24ccb3f4688f3dcd baseson.snd
+  173024    2b4ef42dd3a8f0d3a60075ced46cdd0c part01
+  4708      24b06ecf803c525176de2858a00fee9c part01.pal
+  276948    bea08338d16c715fb6ce9843814544d6 part02
+  4246      1467f207c900be65e92e33bc9c60c55e part02.pal
+  154970    0658a125a00e31fbbb5b1ae280d3c8ba part03
+  5842      21e06ff4ea8ce566c25025669cf81bea part03.pal
+  153596    9818d5878317efedb7a012fde0b58185 part04
+  2860      8a1ebe402e5eda99b7384debbc23450a part04.pal
+  92536     fb2162b4378a8f12c9f871433de63d67 part04b
+  1474      fc91d481fad90d042a6650402ed2c5e6 part04b.pal
+  4996      b7243a1d6f1c9740fcdd5bf18fec7caf texte.dat
+
   165376    309c40b1d01c4352ec632ef3c99918bd part01_fr
-  4708      24b06ecf803c525176de2858a00fee9c part01.pal_fr
   277572    1762a2356b903b5df674890168b7daf2 part02_fr
-  4246      1467f207c900be65e92e33bc9c60c55e part02.pal_fr
   155502    e08762cc7d92280e3f7bd726a2ef9140 part03_fr
-  5842      21e06ff4ea8ce566c25025669cf81bea part03.pal_fr
   153908    45b7b7fa6f7842d73bd6fe6a1d03ba16 part04_fr
-  2860      8a1ebe402e5eda99b7384debbc23450a part04.pal_fr
   92704     8a56ee89bbb511c9d3d4791743153d75 part04b_fr
-  1474      fc91d481fad90d042a6650402ed2c5e6 part04b.pal_fr
-  4996      b7243a1d6f1c9740fcdd5bf18fec7caf texte.dat_fr
 
 sha1sums: |
-  449c3a7ced01e99dff89bfe38af6e732ec626ed0  auto00.prc_fr
-  df5cd01b9095b4fdb4fd909331ee60e546f0396a  baseson.snd_fr
+  449c3a7ced01e99dff89bfe38af6e732ec626ed0  auto00.prc
+  df5cd01b9095b4fdb4fd909331ee60e546f0396a  baseson.snd
+  c296fbc0d7818fb9f5ea94ac387a2e44a35d2108  part01
+  b67bc5f175bbaa3333467b19a0bace195758fbce  part01.pal
+  3dc025cb5d23d1a9f4b3376d7d29347b00338453  part02
+  4c296481e094ea37bed356ab2933acf484ea3afc  part02.pal
+  a733a36be2d183da02aa4a670776ae53982d8375  part03
+  b98fb22c86477d589c365361d9a7e2dc2eed7159  part03.pal
+  e7177873fc8d410d6709c8a7cc524652320b283f  part04
+  85240e866a896893baeed089580347fc492fe037  part04.pal
+  8edfe4a4e3ed23ea0c7a731fd9c1874d502d55c8  part04b
+  0e55380b519d93269a70ed8cf8957b3d573c8d5f  part04b.pal
+
   02bfd050e84700574df3480b615be2438f6c84c2  part01_fr
-  b67bc5f175bbaa3333467b19a0bace195758fbce  part01.pal_fr
   f963cf179df5f4b1616a5c4251aee954ee7ee498  part02_fr
-  4c296481e094ea37bed356ab2933acf484ea3afc  part02.pal_fr
   7e70fabe598cc77ee1cc5805682d95b9c80ee132  part03_fr
-  b98fb22c86477d589c365361d9a7e2dc2eed7159  part03.pal_fr
   a6959ff05e9a50270af3b58bbbfbb5446b9e4cf8  part04_fr
-  85240e866a896893baeed089580347fc492fe037  part04.pal_fr
   e0baf5a2f65d33881e771227f07807b3cfd309da  part04b_fr
-  0e55380b519d93269a70ed8cf8957b3d573c8d5f  part04b.pal_fr
-  bd8b792cb6723b6966c82d3a83ea14fa5730c20b  texte.dat_fr
 ...
