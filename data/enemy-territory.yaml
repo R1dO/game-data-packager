@@ -1,0 +1,69 @@
+---
+longname: "Wolfenstein: Enemy Territory"
+copyright: © 2003 Id Software Inc
+engine: etlegacy
+genre: First-person shooter
+compress_deb: false
+help_text: |
+  Data from Wolfenstein Enemy Territory can be downloaded automatically.
+  You can skip the download by providing et260b.x86_full.zip.
+
+
+packages:
+  enemy-territory-data:
+    install_to: usr/share/games/etlegacy/etmain
+    install:
+    - etmain/pak0.pk3
+    - etmain/pak1.pk3
+    - etmain/pak2.pk3
+    license:
+    - Docs/License.rtf
+    - Docs/EULA_Wolfenstein_Enemy_Territory.txt
+
+files:
+  et260b.x86_full.zip:
+    size: 275647724
+    md5: 6db59b543d42ee096ce263f3df571c08
+    sha1: dda982dcaf9911c347f4b4d86c319da56be2a9ae
+    sha256: 2a8fef8e8558efffcad658bb9a8b12df8740418b3514142350eba3b7641eb3e0
+    unpack:
+      format: zip
+    download: http://filebase.trackbase.net/et/full/et260b.x86_full.zip
+    provides:
+    - et260b.x86_keygen_V03.run
+
+  et260b.x86_keygen_V03.run:
+    size: 275644494
+    md5: 2504fdbd97b8fd9a6b33652ba084800f
+    sha1: e7a388e4571bdbb593170b6dc906a2b230ff18e5
+    sha256: 5b6bd440470f211d4c60ec23249739741362baec3a9b52091bbbb4b670a4af41
+    unpack:
+      format: tar.gz
+      skip: 8756
+    provides:
+    - etmain/pak0.pk3
+    - etmain/pak1.pk3
+    - etmain/pak2.pk3
+    - Docs/License.rtf
+    - Docs/EULA_Wolfenstein_Enemy_Territory.txt
+
+
+size_and_md5: |
+  275647724 6db59b543d42ee096ce263f3df571c08 et260b.x86_full.zip
+  275644494 2504fdbd97b8fd9a6b33652ba084800f et260b.x86_keygen_V03.run
+  23491     3ea0ca69e255bd74d5873091a4784662 Docs/License.rtf
+  14550     10ce3006c0e63807f53aaa35329f7c28 Docs/EULA_Wolfenstein_Enemy_Territory.txt
+  228138631 9558347f477bfbdc65b06768ce2e31d1 etmain/pak0.pk3
+  51616     2502d531f5505d920ee1129baf392925 etmain/pak1.pk3
+  89910     256da2aa10c43728f36515ddad1aa582 etmain/pak2.pk3
+
+sha1sums: |
+  dda982dcaf9911c347f4b4d86c319da56be2a9ae  et260b.x86_full.zip
+  e7a388e4571bdbb593170b6dc906a2b230ff18e5  et260b.x86_keygen_V03.run
+  c1de5b20b1de1cfe22c026283d4511459272675b  Docs/License.rtf
+  68967e823c5f6e607989b6f1c48477bb7f72fa28  Docs/EULA_Wolfenstein_Enemy_Territory.txt
+  381660cd64aff71b87919c0883fb6b9d082a3835  etmain/pak0.pk3
+  25ab5c29c9534f7593e0dae33052478bb5b8a64e  etmain/pak1.pk3
+  64301bab7170e8e675e9ea8b94b4f77e1091e6c9  etmain/pak2.pk3
+...
+# vim:set sw=2 sts=2 et:
