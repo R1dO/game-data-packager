@@ -1,0 +1,484 @@
+---
+longname: Discworld
+copyright: © 1995 TWG
+plugin: scummvm_common
+wiki: Discworld_1
+gameid: tinsel
+
+packages:
+  discworld-cd-data:
+    install:
+    - act1.gra
+    - act2.gra
+    - act3.gra
+    - act4.gra
+    - alley.gra
+    - alshop.gra
+    - altar.gra
+    - ankhmap.gra
+    - arch.gra
+    - atuin.gra
+    - bar.gra
+    - barber.gra
+    - barn.gra
+    - bogus.gra
+    - book.gra
+    - brethren.gra
+    - camera.gra
+    - cathouse.gra
+    - cellar.gra
+    - citygate.gra
+    - claws1.gra
+    - claws2.gra
+    - cleavage.gra
+    - climax.gra
+    - closet.gra
+    - closeup.gra
+    - credits.gra
+    - cutalley.gra
+    - cutalsho.gra
+    - cutankhm.gra
+    - cutbar.gra
+    - cutbarn.gra
+    - cuthideo.gra
+    - cutmonkc.gra
+    - cutpalen.gra
+    - cutpub.gra
+    - cutrooft.gra
+    - cuttempl.gra
+    - cutthron.gra
+    - cuttoile.gra
+    - deathdun.gra
+    - deathfis.gra
+    - deathfoo.gra
+    - deathroo.gra
+    - deathsha.gra
+    - deaththi.gra
+    - detector.gra
+    - dining.gra
+    - discmap.gra
+    - donkcart.gra
+    - dragcage.gra
+    - dragon.gra
+    - drivers/fat.opl
+    - dungeon.gra
+    - dunnyman.gra
+    - dw.gra
+    - endgame.gra
+    - english.idx
+    - english.smp
+    - english.txt
+    - ensuite.gra
+    - finale.gra
+    - fishmong.gra
+    - fool.gra
+    - gods.gra
+    - gorge.gra
+    - hat.gra
+    - hideout.gra
+    - holrecep.gra
+    - holretro.gra
+    - index
+    - inn.gra
+    - innroom.gra
+    - introarc.gra
+    - introhid.gra
+    - introsha.gra
+    - introtur.gra
+    - introuni.gra
+    - island.gra
+    - kitchen.gra
+    - library.gra
+    - lightnin.gra
+    - livery.gra
+    - lspace.gra
+    - lwood.gra
+    - magbook.gra
+    - mambo.gra
+    - midi.dat
+    - mine.gra
+    - mineent.gra
+    - mirror.gra
+    - missile.gra
+    - monk1.gra
+    - monk2.gra
+    - monk2b.gra
+    - monk3.gra
+    - monk4.gra
+    - monk5.gra
+    - monkcorn.gra
+    - mountpas.gra
+    - mystwood.gra
+    - objects.gra
+    - overedge.gra
+    - palent.gra
+    - park.gra
+    - pastankh.gra
+    - pastbar.gra
+    - pastcath.gra
+    - pastcity.gra
+    - pastensu.gra
+    - pastfish.gra
+    - pasthide.gra
+    - pastinn.gra
+    - pastinnr.gra
+    - pastlibr.gra
+    - pastmonk.gra
+    - pastpark.gra
+    - pastpub.gra
+    - pastshad.gra
+    - paststre.gra
+    - pastthie.gra
+    - pasttoil.gra
+    - pavement.gra
+    - perfect1.gra
+    - psygnosi.gra
+    - pub.gra
+    - ramkin.gra
+    - rear.gra
+    - receptio.gra
+    - retro.gra
+    - rinceroo.gra
+    - rm.drv
+    - rockroll.gra
+    - rooftops.gra
+    - scenemen.gra
+    - shades.gra
+    - sheep.gra
+    - space.gra
+    - spire.gra
+    - square.gra
+    - street.gra
+    - sunset.gra
+    - temple.gra
+    - thief.gra
+    - throne.gra
+    - title.gra
+    - toilet.gra
+    - toyshop.gra
+    - trailers.gra
+    - turtle.gra
+    - turtle2.gra
+    - twg.gra
+    - unigard.gra
+    - unseen.gra
+    - witch.gra
+    - worldedg.gra
+    - xspot.gra
+
+size_and_md5: |
+  142532    010f82a29ca12c141d01caccf6878bf9 act1.gra
+  143532    d1bf25cf4ccf7a0bbb55a113f3395b04 act2.gra
+  144384    067d7fb03e510a133a10e1b079248f1b act3.gra
+  144416    9619d77c34ec24990f2dfbe2c9a329e4 act4.gra
+  616240    64da973281b787a294d80fefa717a79a alley.gra
+  598968    c2cf243ebb54d4e89152c6aaa3201617 alshop.gra
+  323348    94db23c8ff3e1719427ac481d7668749 altar.gra
+  136548    c3d672e24a74ee0dde25bfa0fc0bf3bb ankhmap.gra
+  314648    054f2c937e5517056c3f211e0193c2d5 arch.gra
+  118952    72f7b9520704f12705c440574263d28d atuin.gra
+  569424    db5ba3bba3206f871bce9630304166bf bar.gra
+  271940    76d1406bec71eaaffa53d7295ea69a40 barber.gra
+  411184    9ed618bcdda7407552f324790bc9db6b barn.gra
+  8         93bcfde8fe24c9b007d6a4debb48061c bogus.gra
+  74444     bfe90c1863ffe3eb816011632c494527 book.gra
+  262460    7205ef0436edc233908ced5495436f05 brethren.gra
+  312656    2858727275624bf03e467f436eba290c camera.gra
+  127584    f05b45e0d6e3f3fe49874abc79c1170e cathouse.gra
+  123404    a0ebff4fccedffb7edb58f7e382e66f3 cellar.gra
+  287232    5a3bd133c653b778d6b2e89bb6581381 citygate.gra
+  26368     c0b172b42b3e95706efea0d2976bc76d claws1.gra
+  54648     e8bd83c7021c0f55e23fd59e8e9ee5aa claws2.gra
+  59452     355d37844b5af8cae235f5dd8cf64bb2 cleavage.gra
+  961824    5b8dbc3b70f8d190aa798ab6070bb096 climax.gra
+  186104    e94e7de462c336681c7b1999264e745f closet.gra
+  427360    96d8d429ba36788e16c9d1eb67705618 closeup.gra
+  106892    80216e002b330d42b3dc81224e404aaa credits.gra
+  178712    690d0d274c563cdad2c2a04fe11748a2 cutalley.gra
+  403588    d07e97e0e2c9463130b680320451e84e cutalsho.gra
+  74260     6f40feaf1a5b72aba071ace5b5f62096 cutankhm.gra
+  241328    4a2be02cf93b57b88761499143d06929 cutbar.gra
+  736404    d049ea71811b7448780e6d4300a7455b cutbarn.gra
+  79356     2c28213a7873e75ae8a59679a301ab18 cuthideo.gra
+  196008    77c6591a50fbe1b4d63df43c053fe2e9 cutmonkc.gra
+  122624    f6b51f6a23e410fe6424c43ae1853c67 cutpalen.gra
+  180220    d80514f8ba50dae72fdbdacf3bdcd3e4 cutpub.gra
+  372548    f32d3029f483e4df3ea69f0b0f74738c cutrooft.gra
+  184948    fe1a8e871aed77d10a8ed00bea236fa2 cuttempl.gra
+  496460    0e5199ebc02fe50c1f56902ba6ed2266 cutthron.gra
+  443664    69efb06494d5a2b31ef39da5102b18cb cuttoile.gra
+  412408    c273507cf1da953cc35441b250931ddb deathdun.gra
+  225196    ea28cf55d0b542ccf14dd4dc91cdfd43 deathfis.gra
+  310448    9755b498d66d1ce5df7c4193a32570a3 deathfoo.gra
+  238380    b56c071a644e96eae362d3450e8eab44 deathroo.gra
+  454344    79c5359d737428d28c17c0b056afb488 deathsha.gra
+  215324    7ccd09fc534cbccdc5450681fdf5d0f0 deaththi.gra
+  107556    825ac44fef338122025e333d981ad15f detector.gra
+  914644    437ee69e0dd3149cb33bbb951a9f957e dining.gra
+  94324     3ecedf6b6a6828c95cbd0d6af92519d8 discmap.gra
+  77908     2a93147910cb7f202028f5b1f62fd8e9 donkcart.gra
+  434532    aa5a2ed2a44b98625b3820380d8c3d6c dragcage.gra
+  64852     531b4bc72f32f5780ed003368bbed128 dragon.gra
+  3622      af1e30f375f049dfabace2063956a414 drivers/fat.opl
+  621596    c32c294df1db0d926210280cdb9ae717 dungeon.gra
+  590072    52c5b95e3277d2e960b23db9a6317bfa dunnyman.gra
+  781656    ac505b9087f8a8d5b9df2f9b8515b0f6 dw.gra
+  324020    2d4b5e4527d0d8dd74a7db657f6bb11e endgame.gra
+  27400     d4b11031e59bc85b187ba5245d9eb943 english.idx
+  343755891 b9973da5c04aa7407f0efe621406d296 english.smp
+  228542    1cda31864620af353974a18203c55393 english.txt
+  89052     aff2ce3e32af55f326f47a921a1815dc ensuite.gra
+  751020    522a6c18f231600a2c27238dc2effef1 finale.gra
+  213136    7a547393d2eaed4d0f5f42d118c47df4 fishmong.gra
+  231316    291865ef0bc72672bef000789a678040 fool.gra
+  654128    6155d8574ddd4e512d5cf468de370800 gods.gra
+  718772    a3e413670f80d4958fe156a53b507aa2 gorge.gra
+  633884    bd06cc6251fd09fcd428e98a9cff4901 hat.gra
+  100880    37d374d9129039fb6d4322f72a1da298 hideout.gra
+  220216    6088a9b55a80d525e1db45c239c47344 holrecep.gra
+  151924    feca09807cae20bfb257d58823763e5b holretro.gra
+  2940      1f7b2dbeeb595d01e8211bf20842e0b6 index
+  600164    4be8293b93659b8e5738cfba9af5e68c inn.gra
+  137632    a9f9d5a5bbac829d79c69d7ea3ba6c95 innroom.gra
+  184412    b5ea95f00e12ca4f096543ea6d4f9a63 introarc.gra
+  105968    725cccc9e64dda206039ddd3ac0fcfb6 introhid.gra
+  656400    dd22b9a6a27196b65e64aa790f169309 introsha.gra
+  742712    c40fe35e5c6f288f1b04064e4d3bc0e2 introtur.gra
+  139356    6c50a1bc599928270e338bfd2d53d87f introuni.gra
+  359664    633ecbd96c7fbb54615f590f0cae2484 island.gra
+  300852    8085d511bc3778863f4ba2bf58e1c07d kitchen.gra
+  751440    24df262dd503c2d14597657736f8d100 library.gra
+  361664    17554e9474821314dc7fbe9dae59ce0c lightnin.gra
+  175032    5c6b90abb0ff5598611dc678b868ff7f livery.gra
+  773728    a47b071a696923c7278f763321491166 lspace.gra
+  359544    70a6202764a6c600746cb76251e0b059 lwood.gra
+  974324    3e8080273f7a54523d8bd78672b5b8b7 magbook.gra
+  282840    48ff8bf8df2666563d81839fc692f485 mambo.gra
+  801574    3375b0c85658efd8a511608b0aaa009f midi.dat
+  537788    14678117eed8d9f1017a4e9fa58b9a7c mine.gra
+  203008    9569868cf72eb4bbc9f2497601265a93 mineent.gra
+  185916    2f8bb5b4eb52b6d93a3e93e8b3380e9c mirror.gra
+  116840    e86866ad8571f470ad2548b46d20ea26 missile.gra
+  134228    75c29b598ee633f8ba2e3256543a87e1 monk1.gra
+  167996    d610cc8e7f03c804cbdcf14317361e16 monk2.gra
+  168452    bb43f37124230930bab3e3e183761384 monk2b.gra
+  85696     e0478e2ff5f701031ed8a5b702987a3c monk3.gra
+  261560    cc552cb456b170c98f1527d8832e0c44 monk4.gra
+  170744    876be9e0d5a9741f887ea6acac4dd629 monk5.gra
+  158632    38c46fb1404d0ed78ca9b561b263515f monkcorn.gra
+  296920    e52f1260246c3f2e9ee1b57831b4f887 mountpas.gra
+  356192    4ff355536a19fb2819b36d4ea1fe8a8b mystwood.gra
+  161604    e7f051678a5b8d36f385be281d1fcfc7 objects.gra
+  213644    7d24b468f7088324a52094b004e962c4 overedge.gra
+  288380    4fcdb239aa374fe1317794b6bd3c5a41 palent.gra
+  117140    3a105f86baecdbe326617fc1cd68f8b7 park.gra
+  198728    375f53d4193936162a509b3986648282 pastankh.gra
+  440208    c994732e0ced9f9e28f819a7247c3341 pastbar.gra
+  294584    d79d326029432bd4af370d2f2f90cea1 pastcath.gra
+  73300     068d1ab524fb904fc22345ebfe8d00fd pastcity.gra
+  75408     bf576b6ffd0e875045c49ac475c119a0 pastensu.gra
+  79564     9a4d1ddf33fd1366cfce6bf6c74e88ba pastfish.gra
+  268412    e981cf6ed35db14310b8822cea90f834 pasthide.gra
+  176748    b1c31e0e504a6f37fd26e4e11d224828 pastinn.gra
+  459032    c919d5003472820526061ff9bc6bdd2c pastinnr.gra
+  465332    432f0fc4e2c8382279005da0cf4cddbe pastlibr.gra
+  174888    5352c15781d2e4df7aa413f233c80ecc pastmonk.gra
+  353956    ad105f3e6b160e46d825f229c3357f8c pastpark.gra
+  402056    55766e532a09d2b09701a6e784542f00 pastpub.gra
+  601496    13cbb3d40e22f67ba58f4fc201d473d1 pastshad.gra
+  332112    f7b8531069cfde6fbcae07557e1aafcc paststre.gra
+  57708     c98442d2d461f492fbae69ad5a9c08f7 pastthie.gra
+  110056    00fab235366b7a5eaa06b4adeb7e40f3 pasttoil.gra
+  249452    a783a4ece3d0c7d421da5fadb30297d3 pavement.gra
+  489240    fdca63d361408659cf15c0934c7afa88 perfect1.gra
+  34960     d82559d03d2acc0d1351ca06c4a94ac2 psygnosi.gra
+  166148    553f547b468f018922dd1206702e8076 pub.gra
+  353868    7468120a42967c98f215a3c2584bac2a ramkin.gra
+  137136    0d4771884801be3af1eca3818aa748a7 rear.gra
+  199496    dcaa38e14e463a00a45d5a12dc93ae13 receptio.gra
+  180380    2c5e31f06c1fd1fbb278391d43d1ffe5 retro.gra
+  638472    75e36845dca32160790352864ce0f8c2 rinceroo.gra
+  10240     7eb76949ffca879ac9c90221a857af76 rm.drv
+  275144    12809364b6277ddd3cc8b2efbdf34316 rockroll.gra
+  431500    df40d87eec1ac659bc4710c735b11024 rooftops.gra
+  52584     515286e71c5f51830c765958830cdb1d scenemen.gra
+  729712    59d01b1fc2bfda445114d79add99479c shades.gra
+  208588    fc2be49ebd76a862072d7548cf673541 sheep.gra
+  118388    b28ab909c61fe8be54cb5c0abac2e4d0 space.gra
+  658444    7cc82e5263569e7b4cb360a828a428ab spire.gra
+  970332    511cc05efc63e5dcbb9832376d3b4b7b square.gra
+  445300    9ae9c8a994f6f8315c9c9795cb369c74 street.gra
+  300244    903debae43a24abb5035d90e21f65f8d sunset.gra
+  241800    2cb147a163a8cfb17765fa41a14c73d2 temple.gra
+  90024     10f6e650f6c1aae7e364ccf59c2b4400 thief.gra
+  643156    2d03114d7d3fea81676ede1210126850 throne.gra
+  73416     8cbe6f3a8b76c6e23d135e5e1bedb42f title.gra
+  162668    90a1bde504809d2a283d896be164baa3 toilet.gra
+  146432    39daa307880f3a7f10caeccdf6fd7d10 toyshop.gra
+  73212     409802c6b9e092b99efd9fbbf8c602ab trailers.gra
+  829536    9ef6ae1b6d2069030c0ec42ac560e857 turtle.gra
+  673248    309edbed6438516b73f69d3c8256ac1e turtle2.gra
+  126440    7cc8cfec1eb80f0c8e68d1904bf409fb twg.gra
+  511304    240271894b568ee8a595e63ae7e4641e unigard.gra
+  623648    c921f1c85c02e81eac05fe952203e621 unseen.gra
+  284588    51d87ed226ac86a1bf02e757aa5cbf3a witch.gra
+  344496    af5882679396053843f00ec439e454d4 worldedg.gra
+  76724     1605c55de9dd5e66bff5bbb3d79ae4cc xspot.gra
+
+sha1sums: |
+  52b191746a5a8fea499e59a0bf2b6365e631b950  act1.gra
+  18dfe437d8031e3386e75dddd7bbb8238fd0d5a4  act2.gra
+  6cacb59a34a736eb43556896160779b3587c1cd6  act3.gra
+  a153729a1fbfe08a30a5d286e364b69799b75d98  act4.gra
+  f8cf63f894e27b15333460f7a26987ed0b50203d  alley.gra
+  b0e2d6f0c88d55e9b6448c2f0ac3a649bafd68b8  alshop.gra
+  199e8dd3b7adf218ebb4a11e463420b74b9f5c52  altar.gra
+  e644dd1ff22afea27923071d485eb3c56e807459  ankhmap.gra
+  9b921e55149134f0f35530cebbb4f66dbfb97bcd  arch.gra
+  ac31ed2e3d50ca3218e1f500a4785038560e8dfd  atuin.gra
+  ee18f982a2b0d64706a898933b17fcb820442e83  bar.gra
+  3ff719f2481452e7d9b12e15ac4c7d9c6cb9637e  barber.gra
+  9bd9b62f138a3fb54d5fb10ee389a391465246c6  barn.gra
+  05efc83357feb44cb19b8114ce256989ab74f25e  book.gra
+  c02b14046198dfad5a460bd2326557886e7b4129  brethren.gra
+  13d73afddc1a933d64ae88a812395a1ceb026e44  camera.gra
+  c9a9b9435839f97c84c151f077d1ac646ebdc838  cathouse.gra
+  706c87d09d4c9be12974a8f18e0904c41631d967  cellar.gra
+  62642ccd4a40493f5f47993177e14aeb8221d694  citygate.gra
+  35f86661bfd3c82c2204408d243e6bbf11376a3d  claws1.gra
+  947de898d896ef31b137ec2b8ad2bc4c31ff12f8  claws2.gra
+  a2108a3e89d8f5e0e2d1afe4bfe4ccaaf7423fcb  cleavage.gra
+  abfda7bd87cbe91ce8b9ac1d94339228bb3d6d69  climax.gra
+  feee54da9b66795201b80e8cf205cc101dbed3f1  closet.gra
+  1deb2839e3fe667668e8c2ed88305837bc5f8047  closeup.gra
+  1466c7ead346bde384c664103882d3b48127db9f  credits.gra
+  5f1390a25dbe9f1d806705138dbff3a59bd1251f  cutalley.gra
+  f1a91fcdfaa8636cce9fd66109a73b5ab5dbc207  cutalsho.gra
+  a508187fe6ac607838bf9cb8c399cc8343af9a8d  cutankhm.gra
+  bfc5c6ae51b610fc5891c3b29474708c3ecaa596  cutbar.gra
+  5a5f6fa8f74ae9a496599c63d462c3eaf667a3da  cutbarn.gra
+  25992895fe7ef5c12ebff1804e41db0efee97750  cuthideo.gra
+  2cef195266882e5541640078aa9a7736736bea4f  cutmonkc.gra
+  06f4d751e41b17f929fa595d03194437607e1d8f  cutpalen.gra
+  e7644e68a142c5763f483450e116b8a05ca5a09d  cutpub.gra
+  8f3570870eb0a08df753751ca1ae5be6d4fb74a7  cutrooft.gra
+  9188d3c95c22f3361412e768fd8d9c3bdda8ce05  cuttempl.gra
+  bb14812833f506b8bc195e793731e5277073a394  cutthron.gra
+  c89ec58e226bce3da2ec86a48bf7ed97d598ae75  cuttoile.gra
+  dc2d8c3090eac1a58de0913a21fe42cc25e95fa6  deathdun.gra
+  72ee4589b97ded7846bc4bdb59a045cb338fb2ce  deathfis.gra
+  c65dcc5b622c1f595a6b49d9903a7b046a0b8f23  deathfoo.gra
+  e7f284f41709de4fb93b87fa9e06fa54162d58b3  deathroo.gra
+  93eafbd914cc8f12474128c7e82e5080069c11a2  deathsha.gra
+  084db5050444f9af882f0bf069bac296e76f98ca  deaththi.gra
+  429d483b8e3406564ba83fe8149a345ace697f63  detector.gra
+  b0bef03ff8f0aaad852839ba68af1d8a6aed8758  dining.gra
+  580a1c7cc86ff8a7f6b688b6da9531d9886da894  discmap.gra
+  afaf6454b5d8d72946d96cc1116d892ed6ab3d1b  donkcart.gra
+  6f5a9e152b04995c8345760ab90524616df48796  dragcage.gra
+  94c5b10d3cdfa36ed5e47f172d85c3f9dfadef01  dragon.gra
+  dec5f00b168499c40d707a98df81420e2250f9fa  dungeon.gra
+  5d0df3b48c83cfbb628e29a8678f1e72c697100d  dunnyman.gra
+  f4a2f9646aa478534634da392e4da28d3e3a9b2d  dw.gra
+  5df738286ad254164b114b43ce4fe658404b3a82  endgame.gra
+  ac46b13342de097b1e78be3f7beec6188860f79c  english.idx
+  8f7536e931285c5c97add3d4b7d7163cb200996c  english.smp
+  7303fd1fab1c4d7a18971c0f79a7b079288027f8  english.txt
+  b65879ce0cad4ad0ad5f49d2e06d5d08ff50fab4  ensuite.gra
+  faec21a76a8381d0686fa6ce1e6f0f7133ea2e22  finale.gra
+  5bcbfc5c0aea79132d0d974df4ffb1916e930667  fishmong.gra
+  23ac572025539a034129be72797726a47cd6d425  fool.gra
+  c36ecf729d5f017fd8e24a4baee629d7f2741ddc  gods.gra
+  d6735e38c51d1d0f7722cd0bb1d3df1b0104bc16  gorge.gra
+  a3ba424124119c3807dc6b9bfcc8e3163ff0b252  hat.gra
+  6a2b6edd742e8a2f89a5b2f863854f36826a096c  hideout.gra
+  0de0f5c17af70d117eca26d8ccfa9601211befc9  holrecep.gra
+  761187811da0efa40890389b4f077ba09c8cfae9  holretro.gra
+  365497cf9cf4aa1b047dca53cbc8240bf4efdf5b  inn.gra
+  feffddd1fca265c522cd881bcafcb2ba240aa062  innroom.gra
+  11b690f5b6a8a49e9cba95f65d1e2a57b6b582ca  introarc.gra
+  3aeb1480de1e832e4281381bb52b13284e0e9547  introhid.gra
+  03a7b9dbb7506232216292dd5e66c5eadbcaf328  introsha.gra
+  ddcecd52fae36c6ba4f544390ed811ec69561897  introtur.gra
+  3ea62417edbb7926711e12c9470ad46138444ad7  introuni.gra
+  06a4536e4ac87414491fb1821f9993616f1b6bb4  island.gra
+  bf309c010a051c8cd2ac861f1e33242a9a385996  kitchen.gra
+  f32dcc772609b3f912648fc76f1316e176bafebf  library.gra
+  0381b6ef53eb83eb8834b26374a1fa2a3f494a18  lightnin.gra
+  3ce6914dee0129aa559a32981a8202f7cdb4c52a  livery.gra
+  37ab663b8792492c45095a5aef538d26911ee6c9  lspace.gra
+  0a2b204eb5cf449fa4c7417322f13b0e0240c246  lwood.gra
+  3e7299577c5de341eb056cf43d657b24f39b3b5b  magbook.gra
+  d64c71cff5693b754a2cf3167de83c165de7facf  mambo.gra
+  e40a9e5ec133b855a98b100373bda90ef1327126  midi.dat
+  f0ae89cc101057495baa98eb21fd2389823f0981  mine.gra
+  2e0d83063737988887e134544187df778aa6f6ff  mineent.gra
+  850049f345c996062c951e2d484bbe78913bca5f  mirror.gra
+  52fe048e0f61fbf867f00d8fca5c3c307dd678bc  missile.gra
+  b90662eb932a0f8e0d8e94624ca6309ba84d230d  monk1.gra
+  e9618eb4be9c1b09928e7be881b02c8ae267c455  monk2.gra
+  6c8b7ef5c1ce420b63fbe4c59cdad2b36234ad6a  monk2b.gra
+  9403a3eb52ae6e1fe6f4d829b0e446c9d417b1b2  monk3.gra
+  345c93bd11daca6dded6b6513090864cd4b27571  monk4.gra
+  71e6cc216c2c6ccef79a8c4b3f0b0bada5313cd8  monk5.gra
+  c21bea3aee90da77011be42940da4ada42421db9  monkcorn.gra
+  070a243ef032cf7e852067e653cfc889d917a904  mountpas.gra
+  6b000b4ffed13e5e8df272cbe695dd18961ff3f8  mystwood.gra
+  d5a41d7f3883ad87b534c6f1ebc3d64110cb26f2  objects.gra
+  f1084ee9cb03dae329c50d99e7992d4583d35285  overedge.gra
+  0beeb9e2e806757b70c5db177e8b81efb9a8b0ee  palent.gra
+  c7f43b04241c423199629e65e07a53f051567ca3  park.gra
+  0cfba51bc33222489905f4a986956c596c16d952  pastankh.gra
+  9064b317c5b6412f93c670561cc8bf656dbb1cbf  pastbar.gra
+  499d5d652d420054517c0c12334382fd0baa53ca  pastcath.gra
+  906d7fc7eceb3ba5bac93b0453a53dc7c1a075cd  pastcity.gra
+  addd2d9b568db887369f473404e6fa80d38de931  pastensu.gra
+  f4c923f281af6298f6e5d34ca6d4d651892bd6c3  pastfish.gra
+  063fac67833997c0920d451548f2068dd4c89f84  pasthide.gra
+  f08b295de23e09189aa900eb14f5089ee27a4778  pastinn.gra
+  662bd490a610f5b5ef2f2d78cd9836632e7b5751  pastinnr.gra
+  b9b196db1e31ac951d6e11f76659a8a4b598727c  pastlibr.gra
+  52eef139420e74eee433030a580af648a9a878c0  pastmonk.gra
+  18c151528f46fd97e78faae71d554ac17c3be7d8  pastpark.gra
+  d6d97e04f88b1e3f82902bc8b3b389e356a221a2  pastpub.gra
+  e13c393ba15bd7df09fac182ed3d1422ec3069a0  pastshad.gra
+  6cf42ffa1811a1add00613eb8cfafe377d283e94  paststre.gra
+  be712f44c119687d9aec49e6d510b8aa99f2175e  pastthie.gra
+  a7c67dfa595749a12791e8bb4b74f92d78bb1b04  pasttoil.gra
+  17faa0ba000fedbf6a7a72e10d3a281fb0842345  pavement.gra
+  c5d4b062d7918919204aa683e681a687dd4ee69e  perfect1.gra
+  4f060db41ad826955772a45e37170630dde61a93  psygnosi.gra
+  5b724c0f932f3b99aa45c8955e5f8e789b4efa63  pub.gra
+  39efe821e695d5375432cb9a7e445d42b02d1e19  ramkin.gra
+  327d044674fa5269455be9782a00564d847f205a  rear.gra
+  0cb7fd69dc5bd09446ca08150845dfaf15873e26  receptio.gra
+  f0e9b8d5e07734e4409f7cdfd7af5b92f97be093  retro.gra
+  3e8c6f9447bd2cf3ed533632065dd8abbbe4cfa4  rinceroo.gra
+  c6ca00ce1abcf954e6c94677e53f155dadcb8350  rm.drv
+  c3bb98c095c7231c8fc8136b5c5a3072aecf5c2d  rockroll.gra
+  7b4fd36201a4d964f38bb83d94aab657cf6cd21f  rooftops.gra
+  61201da7a7c714b9dd05fb379c1f61e7349cfa72  scenemen.gra
+  07dab41859da78071d850596894327f866199d52  shades.gra
+  55563302dbc456ecb2690687d7f930e7926f3aa3  sheep.gra
+  435f4b54a390837d2313814d3de13b65237d4c3c  space.gra
+  28135ac39aaea9bda343bad2dd0d2950c647fbd3  spire.gra
+  1f6063d6dc38c9f6efd4c412a37a7f6c07368f54  square.gra
+  7ce51620d1cf584796203b93dcb9adc316c3366a  street.gra
+  a53481c43fa13c04f6009b9877c5a55c23757044  sunset.gra
+  95055df9398c6ffa7329f66b199fdc1458a2e642  temple.gra
+  d777413468b368619fe90ce17b16145e59963092  thief.gra
+  086f0a482a99bf7cfe4f4b28232d28126c891e0e  throne.gra
+  d1877f44d5261ed3679ed3be6114f27bdcc16435  title.gra
+  ca0d2a589965da15393b701524309c2af56a2641  toilet.gra
+  c77b15d7f3234460046cc80cba1aca53949e2ae7  toyshop.gra
+  6df181834a58bd03ab9815c5ed4fad81090dbbdf  trailers.gra
+  fa3f9a7936fddfe15f933db7e8ce9be97c16f580  turtle.gra
+  4fc2e52d3f36149e7666bd085435e93a274ba75d  turtle2.gra
+  db4db204c59ff10cd7b9f78bfb32aad797f83a2f  twg.gra
+  ae153f393fa0a68a9a073be18256a2050f9c47bc  unigard.gra
+  bda631d90b34646a2e208287995f9bb9945ea0bd  unseen.gra
+  55e88f1972373fd767e5cae143a885485a8149aa  witch.gra
+  5b2e5d37d0fa82e383c99e92e18ccde2331686af  worldedg.gra
+  04e673d6210e1a296aac537e7b7b4bad02c5a276  xspot.gra
+...
+
