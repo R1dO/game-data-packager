@@ -11,7 +11,7 @@ help_text: |
 
 packages:
   enemy-territory-data:
-    install_to: usr/share/games/etlegacy/etmain
+    install_to: usr/share/games/etlegacy/
     install:
     - etmain/pak0.pk3
     - etmain/pak1.pk3
@@ -39,7 +39,7 @@ files:
     sha256: 5b6bd440470f211d4c60ec23249739741362baec3a9b52091bbbb4b670a4af41
     unpack:
       format: tar.gz
-      skip: 8756
+      skip: 9455
     provides:
     - etmain/pak0.pk3
     - etmain/pak1.pk3
