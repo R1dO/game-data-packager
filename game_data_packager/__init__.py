@@ -521,6 +521,9 @@ class GameData(object):
         # Game page on engine's wiki
         self.wiki = None
 
+        # Wikipedia page, linked from per-engine wikis
+        self.wikipedia = None
+
         # The franchise this game belongs to.
         # this is used to loosely ties various .yaml files
         self.franchise = None
@@ -581,7 +584,7 @@ class GameData(object):
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
                   'engine', 'genre', 'missing_langs', 'franchise', 'wiki',
-                  'steam', 'gog', 'dotemu', 'origin', 'url_misc'):
+                  'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia'):
             if k in self.data:
                 setattr(self, k, self.data[k])
 
@@ -862,9 +865,14 @@ class GameData(object):
             self.help_text += '\nThis game can be bought online here:\n  '
             self.help_text += '\n  '.join(www)
 
+        wikis = list()
         if self.wiki:
+            wikis.append(self.wikibase + self.wiki)
+        if self.wikipedia:
+            wikis.append(self.wikipedia)
+        if wikis:
             self.help_text += '\nExternal links:\n  '
-            self.help_text += (self.wikibase + self.wiki)
+            self.help_text += '\n  '.join(wikis)
 
     def __enter__(self):
         return self
