@@ -22,8 +22,15 @@ import yaml
 
 def main():
     for f in sys.argv[1:]:
-        json.dump(yaml.load(open(f, encoding='utf-8'), Loader=yaml.CLoader),
-                sys.stdout, sort_keys=True)
+        data = yaml.load(open(f, encoding='utf-8'), Loader=yaml.CLoader)
+        game = f[5:].split('.')[0]
+        with open('data/wikipedia.csv', 'r', encoding='utf8') as csv:
+            for line in csv.readlines():
+                shortname, url = line.strip().split(';', 1)
+                if shortname == game:
+                    data['wikipedia'] = url
+                    break
+        json.dump(data, sys.stdout, sort_keys=True)
 
 if __name__ == '__main__':
     main()
