@@ -30,12 +30,13 @@ class Quake2GameData(GameData):
         if not super(Quake2GameData, self).fill_dest_dir(package, destdir):
             return False
 
-        if package.name not in ('quake2-rogue', 'quake2-xatrix'):
+        if package.name not in ('quake2-reckoning-data',
+                                'quake2-groundzero-data'):
             return True
 
         subdir = {
-            'quake2-rogue': 'rogue',
-            'quake2-xatrix': 'xatrix',
+            'quake2-groundzero-data': 'rogue',
+            'quake2-reckoning-data': 'xatrix',
         }[package.name]
 
         installdir = os.path.join(destdir, 'usr', 'share', 'games', 'quake2')
