@@ -57,4 +57,4 @@ for file in locate.splitlines():
 else:
     exit('FAKE LGOGDOWNLOADER: archive %s not found in "locate" database' % archive)
 
-subprocess.check_call(['cp', '--reflink=auto', '-v', file, args.directory])
+subprocess.check_call(['ln', '-s', '-v', file, args.directory])
