@@ -19,12 +19,18 @@
 # in per-engine-wiki pages
 # we don't rescan games we already have
 
+import sys
 import time
 import urllib.request
 from bs4 import BeautifulSoup
 from game_data_packager import load_games
 
 CSV = 'data/wikipedia.csv'
+
+try:
+     todo = sys.argv[1]
+except IndexError:
+     todo = '*'
 
 urls = dict()
 with open(CSV, 'r', encoding='utf8') as f:
@@ -38,16 +44,18 @@ with open(CSV, 'r', encoding='utf8') as f:
 def is_wikipedia(href):
     return href and "wikipedia" in href
 
-for shortname, game in load_games().items():
+for shortname, game in load_games(None, game=todo).items():
     if not game.wiki:
         continue
     if shortname in urls:
         continue
 
+    print('processing %s ...' % shortname)
     url = game.wikibase + game.wiki
     html = urllib.request.urlopen(url)
     soup = BeautifulSoup(html, 'lxml')
     for tag in soup.find_all(href=is_wikipedia):
+        print('  ' + tag['href'])
         urls[shortname] = tag['href']
 
     #break
