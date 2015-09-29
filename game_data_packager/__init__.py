@@ -3061,7 +3061,11 @@ class GameData(object):
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
         assert os.path.isdir(os.path.join(destdir, 'DEBIAN')), destdir
 
-        deb_basename = '%s_%s_all.deb' % (package.name, package.version)
+        arch = package.architecture
+        if arch != 'all':
+            arch = self.get_architecture()
+
+        deb_basename = '%s_%s_%s.deb' % (package.name, package.version, arch)
 
         outfile = os.path.join(os.path.abspath(destination), deb_basename)
 
