@@ -23,7 +23,7 @@ import yaml
 
 def main(f, out):
     data = yaml.load(open(f, encoding='utf-8'), Loader=yaml.CLoader)
-    game = f[5:].split('.')[0]
+    game = os.path.splitext(os.path.basename(f))[0]
     with open('data/wikipedia.csv', 'r', encoding='utf8') as csv:
         for line in csv.readlines():
             shortname, url = line.strip().split(';', 1)
