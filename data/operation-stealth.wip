@@ -1,0 +1,334 @@
+---
+longname: Operation Stealth
+copyright: © 1990 Delphine Software
+plugin: scummvm_common
+wiki: Operation_Stealth
+
+help_text: |
+  This game is still tagged as WIP in scummvm ~1.8
+
+packages:
+  operation-stealth-en-data:
+    debian:
+      provides: operation-stealth-data
+    gameid: os-us
+    install:
+    - egoubase
+    - egoubase.pal
+    - errmess.dat
+    - labybase
+    - labybase.pal
+    - poldat.dat
+    - procs1
+    - procs2
+    - procs3
+    - procs4
+    - procs5
+    - procs6
+    - sd.0
+    - sd.1
+    - sd.2
+    - sd.3
+    - sd.4
+    - sd.5
+    - sd.6
+    - sd.7
+    - sd.8
+    - sd.9
+    - sd.dir
+    - sd01a
+    - sd01a.pal
+    - sd01b
+    - sd01b.pal
+    - sd01c
+    - sd01c.pal
+    - sd01d
+    - sd01d.pal
+    - sd021
+    - sd021.pal
+    - sd022
+    - sd022.pal
+    - sd03
+    - sd03.pal
+    - sds1
+    - sds2
+    - sds3
+    - sds4
+    - sds5
+    - sds6
+    - sintro2
+    - sintro2.pal
+    - texte.dat
+    - vol.1
+    - vol.2
+    - vol.3
+    - vol.4
+    - vol.5
+    - vol.6
+    - vol.cnf
+    - vol.end
+
+  operation-stealth-fr-data:
+    lang: fr
+    debian:
+      provides: operation-stealth-data
+    gameid: os-fr
+    install:
+    - egoubase_fr
+    - errmess.dat_fr
+    - labybase_fr
+    - poldat.dat
+    - procegou
+    - proclaby
+    - procs00
+    - procs01
+    - procs02
+    - procs03
+    - procs04
+    - procs06
+    - procs07
+    - procs08
+    - procs10
+    - procs12
+    - procs13
+    - procs15
+    - procs16
+    - rsc00
+    - rsc01
+    - rsc02
+    - rsc03
+    - rsc04
+    - rsc05
+    - rsc06
+    - rsc07
+    - rsc08
+    - rsc09
+    - rsc10
+    - rsc11
+    - rsc12
+    - rsc13
+    - rsc14
+    - rsc15
+    - rsc16
+    - rsc17
+    - sd.0_fr
+    - sd.1_fr
+    - sd.dir_fr
+    - sons31
+    - sons32
+    - sons33
+    - sons34
+    - texte.dat
+    - vol.1_fr
+    - vol.2_fr
+    - vol.3_fr
+    - vol.4_fr
+    - vol.cnf_fr
+    - vol.end
+
+files:
+  egoubase_fr:
+    install_as: egoubase
+  errmess.dat_fr:
+    install_as: errmess.dat
+  labybase_fr:
+    install_as: labybase
+  sd.0_fr:
+    install_as: sd.0
+  sd.1_fr:
+    install_as: sd.1
+  sd.dir_fr:
+    install_as: sd.dir
+  vol.1_fr:
+    install_as: vol.1
+  vol.2_fr:
+    install_as: vol.2
+  vol.3_fr:
+    install_as: vol.3
+  vol.4_fr:
+    install_as: vol.4
+  vol.cnf_fr:
+    install_as: vol.cnf
+
+size_and_md5: |
+  17044     8932f627148e6b7c9bc6d05a3d9f2dd3 egoubase
+  802       99376929829755dbb8af949694f6e3bc egoubase.pal
+  1440      6b3b7099f48c561065afbac7a42d446d errmess.dat
+  18758     c568a72b62ba7c3d6eab5dc7755f9877 labybase
+  1154      5d20c156c9a19026970f85d8d6ddb2c7 labybase.pal
+  512       f2b555e6826945993b481e7dfc59b99a poldat.dat
+  13600     9584d8df6513d74424cf77a749924a6a procs1
+  36198     259400b7d4a317aff2eebb2313320b60 procs2
+  11276     b0b896672fd3b0eb59ca7f8793ab2adf procs3
+  60742     a7ae3faefb69d5ca9506a1a4eb6085dd procs4
+  43180     813672749c2325b3640361e5a78167e9 procs5
+  30610     4191dba4709e7e5dd254c00a042ab9a4 procs6
+  18680     3109fc21728c870171f5b0d9b1194dca sd.0
+  18518     14f66fe21c3a8fac0d96e97d03f1469a sd.1
+  18420     07d2511c5a6cc441adbd066feb649135 sd.2
+  18266     15944dc3d7fc4fd433872c69307203e5 sd.3
+  26128     d3983fdf3d7a313ed11888b77a493620 sd.4
+  18640     4f80c1067f7b871b1fd6fe80a4c0b772 sd.5
+  17930     7098dded28d863c3ab8449feeec3f396 sd.6
+  19928     2280b806aa75a17aae7e77a4cc190db4 sd.7
+  20612     284f831783c67a3dd61af102fcbcd4af sd.8
+  18114     7d8b9ab1285ccf95ca8657d3816e2314 sd.9
+  400       df835d1487325655d528897911c22f6f sd.dir
+  96810     44796e744ff3ef160aae06a241a20e89 sd01a
+  1994      d697eee25457a94c4428ee2d34372a3f sd01a.pal
+  299886    7c194ffc0b919cf25797ee0f407e62a0 sd01b
+  4330      d170caa63aa63f03cb851ee56173e7e9 sd01b.pal
+  66048     ebc9bdab58a0b94d244677b235126a5e sd01c
+  536       36d6385a35b95231144965f4bec3f863 sd01c.pal
+  51574     231be7286b6b366d9cf707dc5e73b286 sd01d
+  882       c6d162b6b0ba2104c7f2e28f81a2043a sd01d.pal
+  261002    afdc5416dcd3c9d28291a5b905e027e5 sd021
+  7502      d48a9d98fc5f91bf59d642ffa3419651 sd021.pal
+  282122    e74262d9958769fb47dd820dc6bf8508 sd022
+  13232     9bb814ca319a92230e1d471ad32abc17 sd022.pal
+  207946    be654a78b34cba3462439112ad0b6750 sd03
+  4150      75b2905b71a6eba31a5f140085de72fc sd03.pal
+  28406     d114272cfba2a55c6337cc8bb4ebc186 sds1
+  28100     6683470c78bb5e28ea068ce97ad017d9 sds2
+  30414     d3551a60a01ab8f56c33a0a319a63480 sds3
+  33119     eede8f5c1352c3ba6a15da08fc902461 sds4
+  25446     9467b344d7a8ebb629ba23c33896f614 sds5
+  30958     fb3a40355eaa0e8900f972d7cdb3f24e sds6
+  212020    c4244a722f4740ff4796371b39758afc sintro2
+  4292      723008c72a7d3919c4177f05a1b38438 sintro2.pal
+  5764      3e6f5ff8cbf53d75457965c0dda2da4b texte.dat
+  39        0d0d98f0df1235888d393cc1ab2c8391 vol.1
+  63        ade43eadfdcfb35ffeda74aacc80cdfd vol.2
+  49        3bb7e896c868239323550a4cd586b099 vol.3
+  39        0d0d98f0df1235888d393cc1ab2c8391 vol.4
+  39        0d0d98f0df1235888d393cc1ab2c8391 vol.5
+  39        0d0d98f0df1235888d393cc1ab2c8391 vol.6
+  7880      d2f3ab953f4518faa386f5bd0c9f465d vol.cnf
+  1         6bc1af258475ec126d1be66e6bee873a vol.end
+
+  27198     8ced5079ff2bd37300e9194318d144f2 egoubase_fr
+  1440      c82b927fa7c7a5604fa9dc297bcf6794 errmess.dat_fr
+  25240     775f962c1d518b43e0d08833e92244fc labybase_fr
+  5524      10963bff1e6842d00fa17a901b8a50ae procegou
+  6528      b6177aaddac947e37794aebcef67c7af proclaby
+  4504      f143567f08cfd1a9b1c9a41c89eadfef procs00
+  9616      776675b4f5ad6e4cbf730fa2d2b6d48d procs01
+  28080     0b0d54c7abf0d75be16e5e53c2030389 procs02
+  11684     555cfe5f42003696df4bb0796effe389 procs03
+  11684     555cfe5f42003696df4bb0796effe389 procs04
+  8116      1cf62613ba895067a8095a87f3fa2ef6 procs06
+  11684     555cfe5f42003696df4bb0796effe389 procs07
+  11926     2a8d87f29fdf60d08785f1d215ddbc20 procs08
+  13248     45c4039ea859ed4b0a591e72e1116fd1 procs10
+  10628     7a948317bc7d08fd4a2db72705e54a6a procs12
+  28164     b7043a4bdba56f55d67481d68cbf8817 procs13
+  21780     29a4e49cf978b87c60a976326b39dcdc procs15
+  3670      605a734fdc127dfb9031dc1b94ae7602 procs16
+  25460     263a6dc9754ee1c5d98c4686cb64e10a rsc00
+  268220    7f040158482c35ffc18c936ffdd8aed8 rsc01
+  170898    4574ea2418fcdeb638e96d51f75a6e3d rsc02
+  283072    c8a654118321cb05f7e87aa7cbc9290d rsc03
+  112906    7fa1882798d08f8b8b8c89b14e0263f6 rsc04
+  79662     7eb7e67ab008b1ca55d6c3c933590504 rsc05
+  170142    35af6e679e3ac2d272197da1f23512d9 rsc06
+  59390     4cc80ab2594ce2da11b4ea02f9bfe29b rsc07
+  116350    50653a53fd646562c01e0a5d50ed4473 rsc08
+  156352    576d09c32e691f8621f644a4a761a440 rsc09
+  123124    998aa4cba99882077195ded0d947e029 rsc10
+  46756     2b7e0d50dead433905d340d54eba59be rsc11
+  112242    07501a36c3685ef46f61bc90e22a14ff rsc12
+  123450    a64d49bb91b1b2f93b9f10f55e858b61 rsc13
+  186276    b62996560e2170efd880bded32d1d198 rsc14
+  169602    4a8cfc74a8370ea3214843ba36544af3 rsc15
+  164124    3b9db4f9a398ff3ada93a6a4b81b0b9a rsc16
+  1466      8f1bf873794c900267e566e57d8cfc83 rsc17
+  26360     08ffca4d2b0fa6f56999d2069767d6b8 sd.0_fr
+  3072      96d1de52821c49a500a58a3ffaac158f sd.1_fr
+  400       98e66bbdc241dd9cb9df85b62b9d9f31 sd.dir_fr
+  30469     d67d0fc374b0ffae5ca34717210a5373 sons31
+  31978     9393f05005aadeef005a70fdf31717e0 sons32
+  37066     722631441f135690d2e73fbf12c5c4ce sons33
+  27616     ada6fbe3e6ba1954b87c502ff7c8b97d sons34
+  63        d5aade5935c6962c2a144a2ac35aeea6 vol.1_fr
+  79        46184f89c2be39eb2fe10b169c9a3bb4 vol.2_fr
+  110       a4faf3f1293c7978795ed6910da704c7 vol.3_fr
+  63        09e8dbb5edb5ac3fb71871cc18be99d7 vol.4_fr
+  6452      6d93c51b479cfcda9beecace3a07758f vol.cnf_fr
+
+sha1sums: |
+  cebf4256a18ce229514efced64eae27e678f03b5  egoubase
+  cad90fca322c5dffe03c3875050b2771eb583d1b  labybase
+  3512274d0507d06da8fe8189cb6015b83a04477a  procs1
+  cb19e95ba725327bda564aede947e0c368e548e1  procs2
+  bb96859d8ae818a423830d59395fd0b24af16b36  procs3
+  9d6394796142a305ed8b1d045c9df354fa5b2ad3  procs4
+  cda5870df84468e8c0a731048c575339a798f487  procs5
+  9527e0e0920b77e2068640c34b3619c8db4a17a3  procs6
+  d7d915f292d0ea878b9d2212bd69617dfc68baf8  sd.0
+  3fe8e1cc9bfb045a4c0b83f063331054a33140bd  sd.1
+  51de414597b12bc68fee78c14bc8d404cb54443d  sd.2
+  e81c1b22bab607a930055cbbdebc032463dc2288  sd.3
+  fcbce8cce47de12d3aca39afda6e2515037ca579  sd.4
+  bf25e0999cda22554bb67ff90d5220d5e0e00a12  sd.5
+  557633d4f75d0f20243212754e72a17861e7b3ed  sd.6
+  80f4ae4196958d902264b3a99416580eead8aa32  sd.7
+  c17544e1cf29e07e10ae6c7c5e1d7eba18eac16c  sd.8
+  3af18b75ace7ea594901c3a176831ed53fc87ce0  sd.9
+  ac7d460e3701a4c17cf6758b48a19527656e4d80  sd01a
+  778175024298c8da9b430400fffe3a14a3a7b879  sd01b
+  60a067e3ee29be1b8a18784686d80b00900e6849  sd01c
+  c6c56d9c03af626494e15ef5d940a863168648fe  sd01d
+  77f5526346a8e09f88e4afc48ddd268d4a20d573  sd021
+  b3323719f43247a187c93eb5b255ae8f101a027c  sd021.pal
+  10353d80b074425de1f05f0dc24c26eb3d8c39f3  sd022
+  8563b3f172bef796eed9ce36f4b290468a3ffefb  sd022.pal
+  41078e30f3261b5defe65c4113fb8e6dd8f5d55e  sd03
+  630acc14e34f7010bafd60c49b7c2d835d928b32  sds1
+  de72e2a3e957904d75ee53f1b0a732cfa46e9b8b  sds2
+  e1b33624dade98841aa4417a78f1c7fa46bd9665  sds3
+  329362272c87cbba7aafa56e35c0cbb0f6870270  sds4
+  503523d572ea24d0fd9c1d2b41e00dc472f25231  sds5
+  148eca96b9087ce46917ccb77925c1e8d9837935  sds6
+  a8e96ec2db141cc616072a23eff49f1d1552387d  sintro2
+  7b5778ca51203e758a60e2f4b3f2147f4a643bc1  texte.dat
+  ec8c5131b992117df71ece287c8aae737a158d71  vol.cnf
+
+  ee3a815fdfd03863769b2c1b3d8dd52db4db555b  egoubase_fr
+  9abe4514f01c7bd03124f4c7f0fb2d4f910da0bf  labybase_fr
+  e0d804a4b8a4cac951a561e4e63105dfb0255a8b  procegou
+  c5a9ed4b3f5657d315db534d5053ae44c0e67d39  proclaby
+  d0692a36f414da9fab4504dff1b6d7f1b3e9cf0b  procs01
+  1a804333df42ed300178c0d1f3190ea29d7e0aee  procs02
+  fbe1e68b756333bd42f13be2afeb9b586244a7f1  procs03
+  fbe1e68b756333bd42f13be2afeb9b586244a7f1  procs04
+  399e167c7a89d879089fd1f5df17632210c175d7  procs06
+  fbe1e68b756333bd42f13be2afeb9b586244a7f1  procs07
+  b552664d70299874167fe15317797e2856d28024  procs08
+  6b646b91a008acf87e570188d30092cb3d3255ee  procs10
+  44308d10db7b3c228edce60231096e6f7cf7973c  procs12
+  ab73dcd06001970713ba5883e5ae791460c3b950  procs13
+  49cdd2c5bddca1ff16da1904238b889629b77402  procs15
+  20e7a5d5015976dca92aed762fb08e8582eeed9e  rsc00
+  f0972d1596a5d4e629091f8682bca1f319319acb  rsc01
+  bf77827b7b8981897d6919317c0687892e2f6cec  rsc02
+  dd0d065a6e2f62591cd331e810bb5865e93ce24c  rsc03
+  464fd5705a3ae06b8026d7d45e310b56ed662079  rsc04
+  2887994b734c9a11a9639c8b94e3e78a555feb37  rsc05
+  f7342d830a0155bdb60d38041e720ec54ca36470  rsc06
+  570662781609d64e94dedbd7df1a2b0aeea776cc  rsc07
+  3dee9f014be0303544d46a0b33e2dcd6db8cdf08  rsc08
+  82438003b46acfdef12d784c6c463f895cb0ae75  rsc09
+  bffb7a10caf5c7c91691ce0750edf6227b739054  rsc10
+  e065f6c62b6877a25151cff86143b8c1fa91844f  rsc11
+  3e308f008ab885ffdd89a0d45cd0191d13f564e2  rsc12
+  aaa19c520dcf8fd9ac26ae81f8f9746a7d8df424  rsc13
+  29b80f718c10e0ce29ed44087fa85780dbecf04c  rsc14
+  15ad53501b2c565e925f22d724ab28a43af68aad  rsc15
+  548e186abff1e56452bbba17e26aac031626c3a5  rsc16
+  205d636322139db5d07ff6c2b8b5c1353c1f7466  sd.0_fr
+  7547f5a9ccce9a133e359dda625e7f7eeb83e8ac  sons31
+  c9a93101c531125d6f6899faf3518e37c4679965  sons32
+  c620cfe0a2571894cf26df685fee8e4178146bf2  sons33
+  4765f1c43a7d76f59b244096fe154a0498f9c5ab  sons34
+  abf56cffe67318f6ef1e765498fd9d4c16a1894c  vol.cnf_fr
+...
