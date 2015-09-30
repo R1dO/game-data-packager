@@ -14,7 +14,7 @@ try_zenity () {
 
 try_kdialog () {
   if command -v kdialog >/dev/null; then
-    kdialog --error --text="$TEXT" --title="$TITLE"
+    kdialog --error "$TEXT" --title="$TITLE"
     return 0
   else
     return 1
