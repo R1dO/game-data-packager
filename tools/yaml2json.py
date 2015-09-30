@@ -16,21 +16,22 @@
 # /usr/share/common-licenses/GPL-2.
 
 import json
+import os
 import sys
 
 import yaml
 
-def main():
-    for f in sys.argv[1:]:
-        data = yaml.load(open(f, encoding='utf-8'), Loader=yaml.CLoader)
-        game = f[5:].split('.')[0]
-        with open('data/wikipedia.csv', 'r', encoding='utf8') as csv:
-            for line in csv.readlines():
-                shortname, url = line.strip().split(';', 1)
-                if shortname == game:
-                    data['wikipedia'] = url
-                    break
-        json.dump(data, sys.stdout, sort_keys=True)
+def main(f, out):
+    data = yaml.load(open(f, encoding='utf-8'), Loader=yaml.CLoader)
+    game = f[5:].split('.')[0]
+    with open('data/wikipedia.csv', 'r', encoding='utf8') as csv:
+        for line in csv.readlines():
+            shortname, url = line.strip().split(';', 1)
+            if shortname == game:
+                data['wikipedia'] = url
+                break
+    json.dump(data, open(out + '.tmp', 'w', encoding='utf-8'), sort_keys=True)
+    os.rename(out + '.tmp', out)
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1], sys.argv[2])

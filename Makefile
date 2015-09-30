@@ -29,8 +29,7 @@ out/%: data/%
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
 out/%.json: data/%.yaml
-	python3 tools/yaml2json.py $< > $@.tmp
-	mv $@.tmp $@
+	python3 tools/yaml2json.py $< $@
 
 out/bash_completion: $(in_yaml)
 	python3 tools/bash_completion.py > ./out/bash_completion
