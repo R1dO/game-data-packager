@@ -94,8 +94,8 @@ Depends: adduser,
          yamagi-quake2-core | quake2-engine-server,
          ${misc:Depends}
 Suggests:
- quake2-reckoning,
- quake2-groundzero,
+ quake2-reckoning-data,
+ quake2-groundzero-data,
 Description: dedicated server for Quake II
  This package contains a launcher script and init script to run a
  Quake II server automatically, with any suitable engine.
