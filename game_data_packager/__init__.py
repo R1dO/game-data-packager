@@ -1903,8 +1903,7 @@ class GameData(object):
                                 os.utime(full, (orig_time, orig_time))
                         self.consider_file_or_dir(tmpdir)
                 elif fmt == 'arj':
-                    other_parts = set(provider.unpack.get('other_parts'))
-                    other_parts.discard(None)
+                    other_parts = provider.unpack.get('other_parts',[])
                     for p in other_parts:
                         self.fill_gap(package, self.files[p], download=False, log=True)
                         if p not in self.found:
