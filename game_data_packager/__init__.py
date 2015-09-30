@@ -46,6 +46,7 @@ from .config import read_config
 from .gog import GOG
 from .paths import DATADIR, ETCDIR
 from .util import (MEBIBYTE,
+        AGENT,
         TemporaryUmask,
         copy_with_substitutions,
         mkdir_p,
@@ -57,10 +58,6 @@ from .util import (MEBIBYTE,
         which)
 from .steam import get_steam_id, owned_steam_games
 from .version import GAME_PACKAGE_VERSION
-
-AGENT = ('Debian Game-Data-Packager/%s (%s %s;'
-         ' +http://wiki.debian.org/Games/GameDataPackager)' %
-        (GAME_PACKAGE_VERSION, os.uname()[0], os.uname()[4]) )
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')

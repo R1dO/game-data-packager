@@ -21,9 +21,14 @@ import shutil
 import stat
 import subprocess
 import sys
+from .version import GAME_PACKAGE_VERSION
 
 KIBIBYTE = 1024
 MEBIBYTE = KIBIBYTE * KIBIBYTE
+
+AGENT = ('Debian Game-Data-Packager/%s (%s %s;'
+         ' +http://wiki.debian.org/Games/GameDataPackager)' %
+        (GAME_PACKAGE_VERSION, os.uname()[0], os.uname()[4]) )
 
 class TemporaryUmask(object):
     """Context manager to set the umask. Not thread-safe.

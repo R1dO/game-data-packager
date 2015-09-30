@@ -19,6 +19,7 @@ import glob
 import os
 import xml.etree.ElementTree
 import urllib.request
+from .util import AGENT
 
 def parse_acf(path):
     for manifest in glob.glob(path + '/*.acf'):
@@ -45,7 +46,7 @@ def parse_acf(path):
 
 def owned_steam_games(steam_id):
     url = "http://steamcommunity.com/profiles/" + steam_id + "/games?xml=1"
-    html = urllib.request.urlopen(url)
+    html = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': AGENT}))
     tree = xml.etree.ElementTree.ElementTree()
     tree.parse(html)
     games_xml = tree.getiterator('game')

@@ -24,6 +24,7 @@ import time
 import urllib.request
 from bs4 import BeautifulSoup
 from game_data_packager import load_games
+from game_data_packager.util import AGENT
 
 CSV = 'data/wikipedia.csv'
 
@@ -52,7 +53,7 @@ for shortname, game in load_games(None, game=todo).items():
 
     print('processing %s ...' % shortname)
     url = game.wikibase + game.wiki
-    html = urllib.request.urlopen(url)
+    html = urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent': AGENT}))
     soup = BeautifulSoup(html, 'lxml')
     for tag in soup.find_all(href=is_wikipedia):
         print('  ' + tag['href'])
