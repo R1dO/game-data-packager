@@ -1794,41 +1794,47 @@ class GameData(object):
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'innoextract':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
-                    logger.debug('Extracting %r from %s',
-                            to_unpack, found_name)
-                    package.used_sources.add(provider.name)
-                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
-                            provider_name + '.d')
-                    mkdir_p(tmpdir)
-                    cmdline = ['innoextract',
-                               '--language', 'english',
-                               '-T', 'local',
-                               '-d', tmpdir,
-                               os.path.abspath(found_name)]
-                    if not self.verbose:
-                        cmdline.append('--silent')
-                    version = subprocess.check_output(['innoextract', '-v', '-s'],
-                                                      universal_newlines=True)
-                    if version.split('-')[0] >= '1.5':
-                        prefix = provider.unpack.get('prefix', '')
-                        suffix = provider.unpack.get('suffix', '')
-                        if prefix and not prefix.endswith('/'):
-                            prefix += '/'
-                        if '$provides' in to_unpack:
-                            to_unpack.remove('$provides')
-                            to_unpack += provider.provides
-                        for i in to_unpack:
-                            cmdline.append('-I')
-                            if prefix and i[0] != '/':
-                                i = prefix + i
-                            if suffix and i.endswith(suffix):
-                                i = i[:len(i)-len(suffix)]
-                            cmdline.append(i)
-                    subprocess.check_call(cmdline)
-                    # for at least Theme Hospital the files we want are
-                    # actually in subdirectories, so we search recursively
-                    self.consider_file_or_dir(tmpdir)
+                    other_parts = provider.unpack.get('other_parts',[])
+                    for p in other_parts:
+                        self.fill_gap(package, self.files[p], download=False, log=True)
+                        if p not in self.found:
+                            # can't concatenate: one of the bits is missing
+                            break
+                    else:
+                        to_unpack = provider.unpack.get('unpack', provider.provides)
+                        logger.debug('Extracting %r from %s', to_unpack, found_name)
+                        package.used_sources.add(provider.name)
+                        tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                                provider_name + '.d')
+                        mkdir_p(tmpdir)
+                        cmdline = ['innoextract',
+                                   '--language', 'english',
+                                   '-T', 'local',
+                                   '-d', tmpdir,
+                                   os.path.abspath(found_name)]
+                        if not self.verbose:
+                            cmdline.append('--silent')
+                        version = subprocess.check_output(['innoextract', '-v', '-s'],
+                                                          universal_newlines=True)
+                        if version.split('-')[0] >= '1.5':
+                            prefix = provider.unpack.get('prefix', '')
+                            suffix = provider.unpack.get('suffix', '')
+                            if prefix and not prefix.endswith('/'):
+                                prefix += '/'
+                            if '$provides' in to_unpack:
+                                to_unpack.remove('$provides')
+                                to_unpack += provider.provides
+                            for i in to_unpack:
+                                cmdline.append('-I')
+                                if prefix and i[0] != '/':
+                                    i = prefix + i
+                                if suffix and i.endswith(suffix):
+                                    i = i[:len(i)-len(suffix)]
+                                cmdline.append(i)
+                        subprocess.check_call(cmdline)
+                        # for at least Theme Hospital the files we want are
+                        # actually in subdirectories, so we search recursively
+                        self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unzip' and which('unzip'):
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
@@ -2903,17 +2909,27 @@ class GameData(object):
                                        '--platform-priority', 'linux,windows',
                                        '--language', package.lang,
                                        '--game', '^' + gog_id + '$'])
-                    archive = None
+                    # consider *.bin before the .exe file
+                    main_archive = None
+                    archives = []
                     for dirpath, dirnames, filenames in os.walk(tmpdir):
                         for fn in filenames:
                             archive = os.path.join(dirpath, fn)
-                            self.consider_file(archive, True, trusted=True)
+                            archives.append(archive)
+                            if os.path.splitext(fn)[1] in ('.exe', '.sh'):
+                                main_archive = archive
+                            else:
+                                self.consider_file(archive, True, trusted=True)
+                    if main_archive:
+                        self.consider_file(main_archive, True, trusted=True)
+
                     # recheck file status
                     if self.fill_gaps(package, log=True, download=True,
                        recheck=True) is not FillResult.IMPOSSIBLE:
                        ready.add(package)
-                    if archive and self.save_downloads:
-                        shutil.move(archive, self.save_downloads)
+                    if self.save_downloads:
+                        for archive in archives:
+                            shutil.move(archive, self.save_downloads)
                 except subprocess.CalledProcessError:
                     pass
             elif result is FillResult.DOWNLOAD_NEEDED and not download:

@@ -37,24 +37,27 @@ assert args.game, 'Must specifiy --game'
 
 game = args.game.lstrip('^').rstrip('$')
 
-archive = {
-          'descent#en': 'setup_descent_2.1.0.8.exe',
-          'legend_of_kyrandia#en': 'setup_legend_of_kyrandia_2.1.0.14.exe',
-          'legend_of_kyrandia#de': 'setup_legend_of_kyrandia_german_2.1.0.14.exe',
-          'legend_of_kyrandia#fr': 'setup_legend_of_kyrandia_french_2.1.0.14.exe',
-          'loom#en': 'setup_loom_2.0.0.4.exe',
-          'rise_of_the_triad__dark_war#en': 'setup_rise_of_the_triad_2.0.0.5.exe',
-          #'rise_of_the_triad__dark_war#en': 'gog_rise_of_the_triad_dark_war_2.0.0.8.sh',
+archives = {
+          'descent#en': ['setup_descent_2.1.0.8.exe'],
+          'legend_of_kyrandia#en': ['setup_legend_of_kyrandia_2.1.0.14.exe'],
+          'legend_of_kyrandia#de': ['setup_legend_of_kyrandia_german_2.1.0.14.exe'],
+          'legend_of_kyrandia#fr': ['setup_legend_of_kyrandia_french_2.1.0.14.exe'],
+          'loom#en': ['setup_loom_2.0.0.4.exe'],
+          'rise_of_the_triad__dark_war#en': ['setup_rise_of_the_triad_2.0.0.5.exe'],
+          #'rise_of_the_triad__dark_war#en': ['gog_rise_of_the_triad_dark_war_2.0.0.8.sh'],
+          'the_feeble_files#en': ['setup_the_feeble_files_2.0.0.5.exe',
+                                  'setup_the_feeble_files_2.0.0.5-1.bin',
+                                  'setup_the_feeble_files_2.0.0.5-2.bin']
           }.get(game + '#' + (args.language or 'en'))
 
-if archive is None:
+if archives is None:
     exit('FAKE LGOGDOWNLOADER: Unknown game %s' % game)
 
-locate = subprocess.check_output(['locate', '-e', archive], universal_newlines=True)
-for file in locate.splitlines():
-    if file.endswith(archive):
-       break
-else:
-    exit('FAKE LGOGDOWNLOADER: archive %s not found in "locate" database' % archive)
-
-subprocess.check_call(['ln', '-s', '-v', file, args.directory])
+for archive in archives:
+    locate = subprocess.check_output(['locate', '-e', archive], universal_newlines=True)
+    for file in locate.splitlines():
+        if file.endswith(archive):
+           break
+    else:
+        exit('FAKE LGOGDOWNLOADER: archive %s not found in "locate" database' % archive)
+    subprocess.check_call(['ln', '-s', '-v', file, args.directory])
