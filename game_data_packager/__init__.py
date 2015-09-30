@@ -40,6 +40,7 @@ import urllib.request
 import zipfile
 
 from debian.deb822 import Deb822
+from debian.debian_support import Version
 import yaml
 
 from .config import read_config
@@ -1223,7 +1224,7 @@ class GameData(object):
             elif basename.startswith('setup_') and extension == '.exe':
                 version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
-                args = ['-I', '/app'] if version.split('-')[0] >= '1.5' else []
+                args = ['-I', '/app'] if Version(version.split('-')[0]) >= Version('1.5') else []
                 if not self.verbose:
                     args.append('--silent')
                     logger.info('extracting %s (%d bytes) with InnoExtract...'
@@ -1815,7 +1816,7 @@ class GameData(object):
                             cmdline.append('--silent')
                         version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                           universal_newlines=True)
-                        if version.split('-')[0] >= '1.5':
+                        if Version(version.split('-')[0]) >= Version('1.5'):
                             prefix = provider.unpack.get('prefix', '')
                             suffix = provider.unpack.get('suffix', '')
                             if prefix and not prefix.endswith('/'):
@@ -2520,9 +2521,7 @@ class GameData(object):
             current_ver = current_ver.splitlines()[0]
             current_ver = current_ver.split('|')[1].strip()
 
-        up_to_date = subprocess.call(['dpkg', '--compare-versions',
-                    current_ver, '>=', ver]) == 0
-        if up_to_date:
+        if Version(current_ver) >= Version(ver):
             return FillResult.COMPLETE
         else:
             return FillResult.UPGRADE_NEEDED
@@ -2968,7 +2967,7 @@ class GameData(object):
 
         apt_ver = subprocess.check_output(['dpkg-query', '--show',
                     '--showformat', '${Version}', 'apt'], universal_newlines=True)
-        if apt_ver[0:3] >= '1.1':
+        if Version(apt_ver.strip()) >= Version('1.1'):
             cmd = 'apt-get install --install-recommends'
         else:
             cmd = 'dpkg -i'

@@ -26,6 +26,7 @@ import tempfile
 import glob
 
 from debian.deb822 import Deb822
+from debian.debian_support import Version
 import yaml
 
 from . import HashedFile
@@ -219,7 +220,7 @@ class GameData(object):
 
         command = ['innoextract', os.path.realpath(exe)]
         version = subprocess.check_output(['innoextract', '-v', '-s'], universal_newlines=True)
-        if version.split('-')[0] >= '1.5':
+        if Version(version.split('-')[0]) >= Version('1.5'):
             command.append('-I')
             command.append('app')
 
