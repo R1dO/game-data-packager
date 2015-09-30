@@ -1216,6 +1216,10 @@ class GameData(object):
         basename = os.path.basename(path)
         extension = os.path.splitext(basename)[1]
         if trusted:
+            logger.warning('\n\nPlease report this unknown archive to '
+                           'game-data-packager@packages.debian.org\n\n'
+                           '  %-9s %s %s\n'
+                           '  %s  %s\n' % (size, hashes.md5, basename, hashes.sha1, basename))
             if basename.startswith('gog_') and extension == '.sh':
                 with zipfile.ZipFile(path, 'r') as zf:
                     self.consider_zip(path, zf)
@@ -1223,6 +1227,10 @@ class GameData(object):
                 version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                       universal_newlines=True)
                 args = ['-I', '/app'] if version.split('-')[0] >= '1.5' else []
+                if not self.verbose:
+                    args.append('--silent')
+                    logger.info('extracting %s (%d bytes) with InnoExtract...'
+                                    % (basename, size))
                 tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             basename + '.d')
                 mkdir_p(tmpdir)
@@ -1232,12 +1240,6 @@ class GameData(object):
                                        '-d', tmpdir,
                                        path] + args)
                 self.consider_file_or_dir(tmpdir)
-            # print warning after innoextract's output,
-            # to give user a chance to read it
-            logger.warning('\n\nPlease report this unknown archive to '
-                           'game-data-packager@packages.debian.org\n\n'
-                           '  %-9s %s %s\n'
-                           '  %s  %s\n' % (size, hashes.md5, basename, hashes.sha1, basename))
         elif really_should_match_something:
             logger.warning('file "%s" does not match any known file', path)
             # ... still G-D-P should try to process any random .zip
