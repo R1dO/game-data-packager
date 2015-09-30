@@ -2931,7 +2931,11 @@ class GameData(object):
                        ready.add(package)
                     if self.save_downloads:
                         for archive in archives:
-                            shutil.move(archive, self.save_downloads)
+                            try:
+                                shutil.move(archive, self.save_downloads)
+                            except shutil.Error:
+                                # file was already there, but not trusted
+                                pass
                 except subprocess.CalledProcessError:
                     pass
             elif result is FillResult.DOWNLOAD_NEEDED and not download:
