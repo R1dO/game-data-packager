@@ -22,6 +22,7 @@ import os
 import subprocess
 
 from .. import GameData
+from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import mkdir_p
 
@@ -31,9 +32,8 @@ def install_data(from_, to):
     subprocess.check_call(['cp', '--reflink=auto', from_, to])
 
 class ResidualvmGameData(GameData):
-    def __init__(self, shortname, data, workdir=None):
-        super(ResidualvmGameData, self).__init__(shortname, data,
-                workdir=workdir)
+    def __init__(self, shortname, data):
+        super(ResidualvmGameData, self).__init__(shortname, data)
 
         self.wikibase = 'http://wiki.residualvm.org/index.php/'
         assert self.wiki
@@ -47,17 +47,23 @@ class ResidualvmGameData(GameData):
         if self.genre is None:
             self.genre = 'Adventure'
 
+    def construct_task(self, **kwargs):
+        return ResidualvmTask(self, **kwargs)
+
+class ResidualvmTask(PackagingTask):
+
     def fill_extra_files(self, package, destdir):
-        super(ResidualvmGameData, self).fill_extra_files(package, destdir)
+        super(ResidualvmTask, self).fill_extra_files(package, destdir)
         if package.type == 'expansion':
             return
 
         icon = package.name
         for from_ in (self.locate_steam_icon(package),
                       os.path.join(DATADIR, package.name + '.png'),
-                      os.path.join(DATADIR, self.shortname + '.png'),
+                      os.path.join(DATADIR, self.game.shortname + '.png'),
                       os.path.join('/usr/share/pixmaps', icon + '.png'),
-                      os.path.join(DATADIR, self.shortname.strip('1234567890') + '.png')):
+                      os.path.join(DATADIR,
+                          self.game.shortname.strip('1234567890') + '.png')):
             if from_ and os.path.exists(from_):
                 pixdir = os.path.join(destdir, 'usr/share/pixmaps')
                 mkdir_p(pixdir)
@@ -79,14 +85,15 @@ class ResidualvmGameData(GameData):
         desktop.optionxform = lambda option: option
         desktop['Desktop Entry'] = {}
         entry = desktop['Desktop Entry']
-        entry['Name'] = package.longname or self.longname
-        entry['GenericName'] = self.genre + ' Game'
+        entry['Name'] = package.longname or self.game.longname
+        entry['GenericName'] = self.game.genre + ' Game'
         entry['TryExec'] = 'residualvm'
         entry['Icon'] = icon
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
         entry['Categories'] = 'Game'
-        entry['Exec'] = 'residualvm -p /%s %s' % (package.install_to, self.gameid)
+        entry['Exec'] = 'residualvm -p /%s %s' % (package.install_to,
+                self.game.gameid)
         with open(os.path.join(appdir, '%s.desktop' % package.name),
                   'w', encoding='utf-8') as output:
              desktop.write(output, space_around_delimiters=False)

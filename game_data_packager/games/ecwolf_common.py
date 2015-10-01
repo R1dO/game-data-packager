@@ -21,6 +21,7 @@ import os
 import subprocess
 
 from .. import GameData
+from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import mkdir_p
 
@@ -37,9 +38,8 @@ class EcwolfGameData(GameData):
     default to Wolfenstein3D
     """
 
-    def __init__(self, shortname, data, workdir=None):
-        super(EcwolfGameData, self).__init__(shortname, data,
-                workdir=workdir)
+    def __init__(self, shortname, data):
+        super(EcwolfGameData, self).__init__(shortname, data)
         if self.engine is None:
             self.engine = 'ecwolf'
         if self.genre is None:
@@ -51,8 +51,12 @@ class EcwolfGameData(GameData):
             else:
                 package.quirks = ''
 
+    def construct_task(self, **kwargs):
+        return EcwolfTask(self, **kwargs)
+
+class EcwolfTask(PackagingTask):
     def fill_extra_files(self, package, destdir):
-        super(EcwolfGameData, self).fill_extra_files(package, destdir)
+        super(EcwolfTask, self).fill_extra_files(package, destdir)
 
         pixdir = os.path.join(destdir, 'usr/share/pixmaps')
         mkdir_p(pixdir)
@@ -61,7 +65,7 @@ class EcwolfGameData(GameData):
         if not os.path.isfile(to_):
             for from_ in (self.locate_steam_icon(package),
                           os.path.join(DATADIR, package.name + '.png'),
-                          os.path.join(DATADIR, self.shortname + '.png'),
+                          os.path.join(DATADIR, self.game.shortname + '.png'),
                           os.path.join('/usr/share/pixmaps', package.name + '.png'),
                           os.path.join(DATADIR, 'wolf-common.png')):
                 if from_ and os.path.exists(from_):
@@ -80,8 +84,8 @@ class EcwolfGameData(GameData):
         desktop.optionxform = lambda option: option
         desktop['Desktop Entry'] = {}
         entry = desktop['Desktop Entry']
-        entry['Name'] = package.longname or self.longname
-        entry['GenericName'] = self.genre + ' game'
+        entry['Name'] = package.longname or self.game.longname
+        entry['GenericName'] = self.game.genre + ' game'
         entry['TryExec'] = 'ecwolf'
         entry['Exec'] = 'ecwolf' + package.quirks
         entry['Path'] = '/' + package.install_to

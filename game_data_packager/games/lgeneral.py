@@ -20,6 +20,7 @@ import shutil
 import subprocess
 
 from .. import (GameData, NoPackagesPossible)
+from ..build import (PackagingTask)
 from ..util import (mkdir_p, which)
 
 logger = logging.getLogger('game-data-packager.games.lgeneral')
@@ -34,6 +35,10 @@ class LGeneralGameData(GameData):
                     'if necessary)')
         return parser
 
+    def construct_task(self, **kwargs):
+        return LGeneralTask(self, **kwargs)
+
+class LGeneralTask(PackagingTask):
     def prepare_packages(self, packages, build_demos=False, download=True,
                     log_immediately=True):
         # don't bother even trying if it isn't going to work
@@ -46,16 +51,16 @@ class LGeneralGameData(GameData):
                          'to run in some graphical environment.')
             raise NoPackagesPossible()
 
-        ready = super(LGeneralGameData, self).prepare_packages(packages,
+        ready = super(LGeneralTask, self).prepare_packages(packages,
                 build_demos=build_demos, download=download)
 
         # would have raised an exception if not
-        assert self.packages['lgeneral-data-nonfree'] in ready
+        assert self.game.packages['lgeneral-data-nonfree'] in ready
         return ready
 
     def fill_dest_dir(self, package, destdir):
         assert package.name == 'lgeneral-data-nonfree'
-        if not super(LGeneralGameData, self).fill_dest_dir(package, destdir):
+        if not super(LGeneralTask, self).fill_dest_dir(package, destdir):
             return False
 
         installdir = os.path.join(destdir, 'usr/share/games/lgeneral')

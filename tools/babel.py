@@ -18,7 +18,7 @@
 
 # Online at http://pkg-games.alioth.debian.org/game-data/
 
-from game_data_packager import (load_games, GameData)
+from game_data_packager import (load_games)
 from game_data_packager.build import (FillResult)
 
 games = []
@@ -43,12 +43,13 @@ for name, game in load_games().items():
             for m_lang in package.langs:
                 if m_lang not in stats:
                     stats[m_lang] = '*'
-        if GameData.fill_gaps(game, package=package,
-                 log=False) is FillResult.IMPOSSIBLE:
-             if package.better_version is None:
-                 fullfree = False
-        else:
-             somefree = True
+        with game.construct_task() as task:
+            if task.fill_gaps(package=package,
+                     log=False) is FillResult.IMPOSSIBLE:
+                 if package.better_version is None:
+                     fullfree = False
+            else:
+                 somefree = True
 
     genres[game.genre] = genres.get(game.genre, 0) + 1
     stats['genre'] = game.genre

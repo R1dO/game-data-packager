@@ -19,12 +19,13 @@ import logging
 import os
 
 from .. import GameData
+from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import TemporaryUmask, mkdir_p
 
 logger = logging.getLogger('game-data-packager.games.quake')
 
-class QuakeGameData(GameData):
+class QuakeTask(PackagingTask):
     """With hindsight, it would have been better to make the TryExec
     in quake point to a symlink to the quake executable, or something;
     but with a name like hipnotic-tryexec.sh it would seem silly for it
@@ -40,15 +41,15 @@ class QuakeGameData(GameData):
             raise AssertionError('quake-common.control.in should exist')
 
     def modify_control_template(self, control, package, destdir):
-        super(QuakeGameData, self).modify_control_template(control, package,
+        super(QuakeTask, self).modify_control_template(control, package,
                 destdir)
 
         desc = control['Description']
-        desc = desc.replace('LONG', (package.longname or self.longname))
+        desc = desc.replace('LONG', (package.longname or self.game.longname))
         control['Description'] = desc
 
     def fill_extra_files(self, package, destdir):
-        super(QuakeGameData, self).fill_extra_files(package, destdir)
+        super(QuakeTask, self).fill_extra_files(package, destdir)
 
         for path in package.install:
             if path.startswith('hipnotic'):
@@ -67,6 +68,10 @@ class QuakeGameData(GameData):
             with open(path, 'w') as f:
                 f.write('#!/bin/sh\nexit 0\n')
             os.chmod(path, 0o755)
+
+class QuakeGameData(GameData):
+    def construct_task(self, **kwargs):
+        return QuakeTask(self, **kwargs)
 
     def add_parser(self, parsers, base_parser):
         parser = super(QuakeGameData, self).add_parser(parsers, base_parser,

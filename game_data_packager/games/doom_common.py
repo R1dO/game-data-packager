@@ -22,6 +22,7 @@ import os
 import subprocess
 
 from .. import GameData
+from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import (copy_with_substitutions, mkdir_p)
 
@@ -55,9 +56,8 @@ class DoomGameData(GameData):
     Darkplaces).
     """
 
-    def __init__(self, shortname, data, workdir=None):
-        super(DoomGameData, self).__init__(shortname, data,
-                workdir=workdir)
+    def __init__(self, shortname, data):
+        super(DoomGameData, self).__init__(shortname, data)
 
         self.wikibase = 'http://doomwiki.org/wiki/'
         assert self.wiki
@@ -94,8 +94,12 @@ class DoomGameData(GameData):
             package.data_type = 'PWAD' if (package.expansion_for
                                 or package.expansion_for_ext) else 'IWAD'
 
+    def construct_task(self, **kwargs):
+        return DoomTask(self, **kwargs)
+
+class DoomTask(PackagingTask):
     def fill_extra_files(self, package, destdir):
-        super(DoomGameData, self).fill_extra_files(package, destdir)
+        super(DoomTask, self).fill_extra_files(package, destdir)
 
         for main_wad, quirks in package.main_wads.items():
             wad_base = os.path.splitext(main_wad)[0]
@@ -108,7 +112,8 @@ class DoomGameData(GameData):
             if len(package.main_wads) > 1:
                 desktop_file += '-' + wad_base
 
-            for basename in (quirks.get('icon', wad_base), package.name, self.shortname, 'doom-common'):
+            for basename in (quirks.get('icon', wad_base), package.name,
+                    self.game.shortname, 'doom-common'):
                 from_ = os.path.join(DATADIR, basename + '.png')
                 if os.path.exists(from_):
                     install_data(from_,
@@ -135,15 +140,15 @@ class DoomGameData(GameData):
             desktop.optionxform = lambda option: option
             desktop['Desktop Entry'] = {}
             entry = desktop['Desktop Entry']
-            entry['Name'] = package.longname or self.longname
+            entry['Name'] = package.longname or self.game.longname
             if 'name' in quirks:
                 entry['Name'] += ' - ' + quirks['name']
-            entry['GenericName'] = self.genre + ' game'
+            entry['GenericName'] = self.game.genre + ' game'
             entry['TryExec'] = package.program
             if 'args' in quirks:
                 args = quirks['args'] % main_wad
             elif package.expansion_for:
-                iwad = self.packages[package.expansion_for].only_file
+                iwad = self.game.packages[package.expansion_for].only_file
                 assert iwad is not None, "Couldn't find %s's IWAD" % main_wad
                 args = (  '-iwad /usr/share/games/doom/' + iwad
                        + ' -file /usr/share/games/doom/' + main_wad)

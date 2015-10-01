@@ -21,15 +21,15 @@ import logging
 import os
 
 from .. import GameData
+from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import (TemporaryUmask, PACKAGE_CACHE, mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
 
 class ZCodeGameData(GameData):
-    def __init__(self, shortname, data, workdir=None):
-        super(ZCodeGameData, self).__init__(shortname, data,
-                workdir=workdir)
+    def __init__(self, shortname, data):
+        super(ZCodeGameData, self).__init__(shortname, data)
         for package in self.packages.values():
             assert os.path.splitext(package.only_file)[1] == '.z3'
 
@@ -38,8 +38,12 @@ class ZCodeGameData(GameData):
         if self.genre is None:
             self.genre = 'Adventure'
 
+    def construct_task(self, **kwargs):
+        return ZCodeTask(self, **kwargs)
+
+class ZCodeTask(PackagingTask):
     def fill_extra_files(self, package, destdir):
-        super(ZCodeGameData, self).fill_extra_files(package, destdir)
+        super(ZCodeTask, self).fill_extra_files(package, destdir)
 
         with TemporaryUmask(0o022):
             appdir = os.path.join(destdir, 'usr/share/applications')
@@ -50,7 +54,7 @@ class ZCodeGameData(GameData):
             desktop.read(from_, encoding='utf-8')
 
             entry = desktop['Desktop Entry']
-            entry['Name'] = package.longname or self.longname
+            entry['Name'] = package.longname or self.game.longname
             if (PACKAGE_CACHE.is_installed('frotz') and
                     not PACKAGE_CACHE.is_installed('gargoyle-free')):
                 engine = 'frotz'
@@ -63,8 +67,8 @@ class ZCodeGameData(GameData):
             entry['Exec'] = engine + ' ' + arg
 
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')
-            if os.path.exists(os.path.join(pixdir, '%s.png' % self.shortname)):
-                entry['Icon'] = self.shortname
+            if os.path.exists(os.path.join(pixdir, '%s.png' % self.game.shortname)):
+                entry['Icon'] = self.game.shortname
 
             if package.aliases:
                 entry['Keywords'] = ';'.join(package.aliases)

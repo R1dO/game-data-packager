@@ -22,6 +22,7 @@ import os
 import subprocess
 
 from .. import GameData
+from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import mkdir_p
 
@@ -31,9 +32,8 @@ def install_data(from_, to):
     subprocess.check_call(['cp', '--reflink=auto', from_, to])
 
 class ScummvmGameData(GameData):
-    def __init__(self, shortname, data, workdir=None):
-        super(ScummvmGameData, self).__init__(shortname, data,
-                workdir=workdir)
+    def __init__(self, shortname, data):
+        super(ScummvmGameData, self).__init__(shortname, data)
 
         self.wikibase = 'http://wiki.scummvm.org/index.php/'
         assert self.wiki
@@ -54,17 +54,22 @@ class ScummvmGameData(GameData):
         super(ScummvmGameData, self)._populate_package(package, d)
         package.gameid = d.get('gameid')
 
+    def construct_task(self, **kwargs):
+        return ScummvmTask(self, **kwargs)
+
+class ScummvmTask(PackagingTask):
     def fill_extra_files(self, package, destdir):
-        super(ScummvmGameData, self).fill_extra_files(package, destdir)
+        super(ScummvmTask, self).fill_extra_files(package, destdir)
         if package.type == 'expansion':
             return
 
         icon = package.name
         for from_ in (self.locate_steam_icon(package),
                       os.path.join(DATADIR, package.name + '.png'),
-                      os.path.join(DATADIR, self.shortname + '.png'),
+                      os.path.join(DATADIR, self.game.shortname + '.png'),
                       os.path.join('/usr/share/pixmaps', icon + '.png'),
-                      os.path.join(DATADIR, self.shortname.strip('1234567890') + '.png')):
+                      os.path.join(DATADIR,
+                          self.game.shortname.strip('1234567890') + '.png')):
             if from_ and os.path.exists(from_):
                 pixdir = os.path.join(destdir, 'usr/share/pixmaps')
                 mkdir_p(pixdir)
@@ -86,14 +91,14 @@ class ScummvmGameData(GameData):
         desktop.optionxform = lambda option: option
         desktop['Desktop Entry'] = {}
         entry = desktop['Desktop Entry']
-        entry['Name'] = package.longname or self.longname
-        entry['GenericName'] = self.genre + ' Game'
+        entry['Name'] = package.longname or self.game.longname
+        entry['GenericName'] = self.game.genre + ' Game'
         entry['TryExec'] = 'scummvm'
         entry['Icon'] = icon
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
-        entry['Categories'] = 'Game;%sGame' % self.genre.replace(' ','')
-        gameid = package.gameid or self.gameid
+        entry['Categories'] = 'Game;%sGame' % self.game.genre.replace(' ','')
+        gameid = package.gameid or self.game.gameid
         if len(package.langs) == 1:
             entry['Exec'] = 'scummvm -p /%s %s' % (package.install_to, gameid)
             lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')

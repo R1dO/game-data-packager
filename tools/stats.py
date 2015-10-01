@@ -15,7 +15,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-from game_data_packager import (load_games, GameData)
+from game_data_packager import (load_games)
 from game_data_packager.build import (FillResult)
 
 games = []
@@ -24,10 +24,12 @@ for name, game in load_games().items():
     for package in game.packages.values():
         if package.rip_cd or package.expansion_for:
             continue
-        elif GameData.fill_gaps(game, package=package,
-                log=False) is not FillResult.IMPOSSIBLE:
-            freeload = True
-            break
+
+        with game.construct_task() as task:
+            if task.fill_gaps(package=package,
+                    log=False) is not FillResult.IMPOSSIBLE:
+                freeload = True
+                break
 
     game_struct = {
              'genre': game.genre or 'Unknown',

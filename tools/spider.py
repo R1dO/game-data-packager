@@ -45,7 +45,7 @@ with open(CSV, 'r', encoding='utf8') as f:
 def is_wikipedia(href):
     return href and "wikipedia" in href
 
-for shortname, game in load_games(None, game=todo).items():
+for shortname, game in load_games(game=todo).items():
     if not game.wiki:
         continue
     if shortname in urls:

@@ -21,13 +21,17 @@ import subprocess
 import tarfile
 
 from .. import (GameData)
+from ..build import (PackagingTask)
 
 logger = logging.getLogger('game-data-packager.games.quake2')
 
 class Quake2GameData(GameData):
+    def construct_task(self, **kwargs):
+        return Quake2Task(self, **kwargs)
 
+class Quake2Task(PackagingTask):
     def fill_dest_dir(self, package, destdir):
-        if not super(Quake2GameData, self).fill_dest_dir(package, destdir):
+        if not super(Quake2Task, self).fill_dest_dir(package, destdir):
             return False
 
         if package.name not in ('quake2-reckoning-data',
