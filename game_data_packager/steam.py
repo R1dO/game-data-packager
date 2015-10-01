@@ -16,10 +16,22 @@
 # /usr/share/common-licenses/GPL-2.
 
 import glob
+import logging
 import os
+import tempfile
 import xml.etree.ElementTree
 import urllib.request
-from .util import AGENT
+
+from .build import (DownloadsFailed,
+        NoPackagesPossible)
+from .util import (AGENT,
+        PACKAGE_CACHE,
+        ascii_safe,
+        install_packages,
+        lang_score,
+        rm_rf)
+
+logger = logging.getLogger('game-data-packager.steam')
 
 def parse_acf(path):
     for manifest in glob.glob(path + '/*.acf'):
@@ -65,3 +77,132 @@ def get_steam_id():
             line = line.strip('\t\n "')
             if line not in ('users', '{'):
                 return line
+
+def run_steam_meta_mode(parsed, games):
+    logger.info('Visit our community page: https://steamcommunity.com/groups/debian_gdp#curation')
+    owned = set()
+    if parsed.download:
+        steam_id = get_steam_id()
+        if steam_id is None:
+            logger.error("Couldn't read SteamID from ~/.steam/config/loginusers.vdf")
+        else:
+            logger.info('Getting list of owned games from '
+                        'http://steamcommunity.com/profiles/' + steam_id)
+            owned = set(g[0] for g in owned_steam_games(steam_id))
+
+    logging.info('Searching for locally installed Steam games...')
+    found_games = []
+    found_packages = []
+    for game, gamedata in games.items():
+        for package in gamedata.packages.values():
+            id = package.steam.get('id') or gamedata.steam.get('id')
+            if not id:
+                continue
+
+            if package.type == 'demo':
+                continue
+            # ignore other translations for "I Have No Mouth"
+            if lang_score(package.lang) == 0:
+                continue
+
+            installed = PACKAGE_CACHE.is_installed(package.name)
+            if parsed.new and installed:
+                continue
+
+            paths = []
+            for path in gamedata.iter_steam_paths((package,)):
+                if path not in paths:
+                    paths.append(path)
+            if not paths and id not in owned:
+                continue
+
+            if game not in found_games:
+                found_games.append(game)
+            found_packages.append({
+                'game' : game,
+                'type' : 1 if package.type == 'full' else 2,
+                'package': package.name,
+                'installed': installed,
+                'longname': package.longname or gamedata.longname,
+                'paths': paths,
+               })
+    if not found_games:
+        logger.error('No Steam games found')
+        return
+
+    print('[x] = package is already installed')
+    print('----------------------------------------------------------------------\n')
+    found_packages = sorted(found_packages, key=lambda k: (k['game'], k['type'], k['longname']))
+    for g in sorted(found_games):
+        print(g)
+        for p in found_packages:
+            if p['game'] != g:
+                continue
+            print('[%s] %-42s    %s' % ('x' if p['installed'] else ' ',
+                                        p['package'], ascii_safe(p['longname'])))
+            for path in p['paths']:
+                print(path)
+            if not p['paths']:
+                print('<game owned but not installed/found>')
+        print()
+
+    if not parsed.new and not parsed.all:
+       logger.info('Please specify --all or --new to create desired packages.')
+       return
+
+    preserve_debs = (getattr(parsed, 'destination', None) is not None)
+    install_debs = getattr(parsed, 'install', True)
+    if getattr(parsed, 'compress', None) is None:
+        # default to not compressing if we aren't going to install it
+        # anyway
+        parsed.compress = preserve_debs
+
+    all_debs = set()
+
+    for shortname in sorted(found_games):
+        game = games[shortname]
+        game.verbose = getattr(parsed, 'verbose', False)
+        game.save_downloads = parsed.save_downloads
+        game.look_for_files()
+
+        todo = list()
+        for packages in found_packages:
+            if packages['game'] == shortname:
+                todo.append(game.packages[packages['package']])
+        try:
+            ready = game.prepare_packages(log_immediately=False,
+                                          packages=todo)
+        except NoPackagesPossible:
+            logger.error('No package possible for %s.' % game.shortname)
+            continue
+        except DownloadsFailed:
+            logger.error('Unable to complete any packages of %s'
+                         ' because downloads failed.' % game.shortname)
+            continue
+
+        if parsed.destination is None:
+            destination = workdir = tempfile.mkdtemp(prefix='gdptmp.')
+        else:
+            workdir = None
+            destination = parsed.destination
+
+        debs = game.build_packages(ready,
+                compress=getattr(parsed, 'compress', True),
+                destination=destination)
+        rm_rf(os.path.join(game.get_workdir(), 'tmp'))
+
+        if preserve_debs:
+            for deb in debs:
+                print('generated "%s"' % os.path.abspath(deb))
+        all_debs = all_debs.union(debs)
+
+    if not all_debs:
+        logger.error('Unable to package any game.')
+        if workdir:
+           rm_rf(workdir)
+        raise SystemExit(1)
+
+    if install_debs:
+        install_packages(all_debs)
+    if workdir:
+        rm_rf(workdir)
