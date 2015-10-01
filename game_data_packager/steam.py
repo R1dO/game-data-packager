@@ -93,6 +93,7 @@ def run_steam_meta_mode(args, games):
     logging.info('Searching for locally installed Steam games...')
     found_games = []
     found_packages = []
+    tasks = {}
     for game, gamedata in games.items():
         for package in gamedata.packages.values():
             id = package.steam.get('id') or gamedata.steam.get('id')
@@ -109,8 +110,11 @@ def run_steam_meta_mode(args, games):
             if args.new and installed:
                 continue
 
+            if game not in tasks:
+                tasks[game] = gamedata.construct_task()
+
             paths = []
-            for path in gamedata.iter_steam_paths((package,)):
+            for path in tasks[game].iter_steam_paths((package,)):
                 if path not in paths:
                     paths.append(path)
             if not paths and id not in owned:
@@ -160,24 +164,24 @@ def run_steam_meta_mode(args, games):
     all_debs = set()
 
     for shortname in sorted(found_games):
-        game = games[shortname]
-        game.verbose = getattr(args, 'verbose', False)
-        game.save_downloads = args.save_downloads
-        game.look_for_files()
+        task = tasks[shortname]
+        task.verbose = getattr(args, 'verbose', False)
+        task.save_downloads = args.save_downloads
+        task.look_for_files()
 
         todo = list()
         for packages in found_packages:
             if packages['game'] == shortname:
-                todo.append(game.packages[packages['package']])
+                todo.append(task.game.packages[packages['package']])
         try:
-            ready = game.prepare_packages(log_immediately=False,
+            ready = task.prepare_packages(log_immediately=False,
                                           packages=todo)
         except NoPackagesPossible:
-            logger.error('No package possible for %s.' % game.shortname)
+            logger.error('No package possible for %s.' % task.game.shortname)
             continue
         except DownloadsFailed:
             logger.error('Unable to complete any packages of %s'
-                         ' because downloads failed.' % game.shortname)
+                         ' because downloads failed.' % task.game.shortname)
             continue
 
         if args.destination is None:
@@ -186,10 +190,10 @@ def run_steam_meta_mode(args, games):
             workdir = None
             destination = args.destination
 
-        debs = game.build_packages(ready,
+        debs = task.build_packages(ready,
                 compress=getattr(args, 'compress', True),
                 destination=destination)
-        rm_rf(os.path.join(game.get_workdir(), 'tmp'))
+        rm_rf(os.path.join(task.get_workdir(), 'tmp'))
 
         if preserve_debs:
             for deb in debs:
