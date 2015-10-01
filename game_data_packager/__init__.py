@@ -28,7 +28,6 @@ import logging
 import os
 import random
 import re
-import shlex
 import shutil
 import stat
 import subprocess
@@ -50,6 +49,7 @@ from .util import (MEBIBYTE,
         AGENT,
         TemporaryUmask,
         copy_with_substitutions,
+        install_packages,
         mkdir_p,
         rm_rf,
         human_size,
@@ -2656,7 +2656,7 @@ class GameData(object):
                 print('generated "%s"' % os.path.abspath(deb))
 
         if install_debs:
-            self.install_packages(debs)
+            install_packages(debs)
 
         engines_alt = set((p.engine or self.engine) for p in ready)
         engines_alt.discard(None)
@@ -2961,21 +2961,6 @@ class GameData(object):
             debs.add(deb)
 
         return debs
-
-    def install_packages(self, debs):
-        print('using su(1) to obtain root privileges and install the package(s)')
-
-        apt_ver = subprocess.check_output(['dpkg-query', '--show',
-                    '--showformat', '${Version}', 'apt'], universal_newlines=True)
-        if Version(apt_ver.strip()) >= Version('1.1'):
-            cmd = 'apt-get install --install-recommends'
-        else:
-            cmd = 'dpkg -i'
-
-        for deb in debs:
-            cmd = cmd + ' ' + shlex.quote(deb)
-
-        subprocess.call(['su', '-c', cmd])
 
     def locate_steam_icon(self, package):
         id = package.steam.get('id') or self.steam.get('id')
@@ -3329,7 +3314,7 @@ def run_steam_meta_mode(parsed, games):
         raise SystemExit(1)
 
     if install_debs:
-        GameData.install_packages(games, all_debs)
+        install_packages(all_debs)
     if workdir:
         rm_rf(workdir)
 

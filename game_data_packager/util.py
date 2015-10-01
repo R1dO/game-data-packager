@@ -17,10 +17,14 @@
 # /usr/share/common-licenses/GPL-2.
 
 import os
+import shlex
 import shutil
 import stat
 import subprocess
 import sys
+
+from debian.debian_support import Version
+
 from .version import GAME_PACKAGE_VERSION
 
 KIBIBYTE = 1024
@@ -163,3 +167,20 @@ def ascii_safe(string, force=False):
         string = string.translate(str.maketrans('àäçčéèêëîïíłñ§┏┛',
                                                 'aacceeeeiiiln***'))
     return string
+
+def install_packages(debs):
+    """Install one or more packages (a list of filenames)."""
+
+    print('using su(1) to obtain root privileges and install the package(s)')
+
+    apt_ver = subprocess.check_output(['dpkg-query', '--show',
+                '--showformat', '${Version}', 'apt'], universal_newlines=True)
+    if Version(apt_ver.strip()) >= Version('1.1'):
+        cmd = 'apt-get install --install-recommends'
+    else:
+        cmd = 'dpkg -i'
+
+    for deb in debs:
+        cmd = cmd + ' ' + shlex.quote(deb)
+
+    subprocess.call(['su', '-c', cmd])
