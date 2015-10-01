@@ -28,6 +28,8 @@ Depends: fakeroot, ${misc:Depends},
 	${python3:Depends},
 Breaks: lgogdownloader (<< 2.25-2~)
 Suggests:
+# to install packages
+	gdebi | gdebi-kde,
 # for quake music and quake2 music
 	cdparanoia, vorbis-tools,
 # Doom 2 Master Levels, Quake, Spear Of Destiny demo
