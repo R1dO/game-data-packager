@@ -171,8 +171,12 @@ def run_steam_meta_mode(args, games):
 
         todo = list()
         for packages in found_packages:
-            if packages['game'] == shortname:
+            if packages['game'] == shortname and packages['paths']:
                 todo.append(task.game.packages[packages['package']])
+
+        if not todo:
+            continue
+
         try:
             ready = task.prepare_packages(log_immediately=False,
                                           packages=todo)
