@@ -28,50 +28,38 @@ packages:
       id: 9010
       path: "common/Return to Castle Wolfenstein"
     gog:
-      game: return_to_castle_wolfenstein
+      url: return_to_castle_wolfenstein
     # GDP version will be suffixed to this, e.g. : 1.42b+39
     version: 1.42b
-
-    # cksums(1) is pretty useless as a checksumming tool, but it's a convenient
-    # way to get exact file sizes in bytes (second column), which are a nice
-    # heuristic for identifying files
-    install_files_from_cksums: |
-      3201065489 12 main/autoexec.cfg
-      1738795795 760207 main/mp_bin.pk3
-      4046220680 63211149 main/mp_pak0.pk3
-      980150272 4449596 main/mp_pak1.pk3
-      1142316069 1118 main/mp_pak2.pk3
-      1777286697 159762 main/mp_pak3.pk3
-      2440657300 7799 main/mp_pak4.pk3
-      160211286 167075 main/mp_pak5.pk3
-      3845249867 3485134 main/mp_pakmaps0.pk3
-      3484376457 3765933 main/mp_pakmaps1.pk3
-      27684852 7408542 main/mp_pakmaps2.pk3
-      1630043139 10780146 main/mp_pakmaps3.pk3
-      74045012 24171802 main/mp_pakmaps4.pk3
-      26592339 20024689 main/mp_pakmaps5.pk3
-      3620415895 10080181 main/mp_pakmaps6.pk3
-      3545821488 315823656 main/pak0.pk3
-      136047737 11026123 main/sp_pak2.pk3
-      868477447 152544 main/sp_pak3.pk3
-      3497089350 15532040 main/sp_pak4.pk3
-      # From iortcw
-      898436086 381 main/hiquality.cfg
-      1537788466 635388 main/mp_bin0.pk3
-      2312958064 3257 main/mp_rend2_shaders0.pk3
-      3497089350 15532040 main/sp_pak4.pk3
-      1069457584 22225 main/sp_rend2_shaders0.pk3
-
     install:
     - main/sp_pak1.pk3
+    - main/scripts/translation.cfg_141_unix
 
-    install_files:
-      main/scripts/translation.cfg_141_unix:
-        install_as: main/scripts/translation.cfg
-        size: 159375
-        sha256: 301670fbd41eb6797b02cc5ba8ae5e221eeaef5de3280e6e2db390c7a29ddc8f
-        sha1: 7994040e61a234e284c730287ea6d098878cbfea
-        md5: f7b2003ef7499f2a6e750c2925c870ad
+    - main/autoexec.cfg
+    - main/mp_bin.pk3
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/pak0.pk3
+    - main/sp_pak2.pk3
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    # From iortcw
+    - main/hiquality.cfg
+    - main/mp_bin0.pk3
+    - main/mp_rend2_shaders0.pk3
+    - main/sp_pak4.pk3
+    - main/sp_rend2_shaders0.pk3
 
     optional:
     - main/autoexec.cfg
@@ -86,22 +74,16 @@ files:
     - main/sp_pak1.pk3_en
     - main/sp_pak1.pk3_fr
 
-  main/rotate.cfg:
-    size: 9559
-
   main/sp_pak1.pk3_en:
     look_for:
     - main/sp_pak1.pk3
-    size: 293887431
 
   main/sp_pak1.pk3_fr:
     look_for:
     - main/sp_pak1.pk3
-    size: 256811934
 
   iortcw-1.42b-linux-x86.zip:
     download: https://docs.google.com/uc?export=download&id=0ByCRmO4G6HOoRWNjaS04VTlMbWc
-    size: 21860031
     provides:
     - main/hiquality.cfg
     - main/mp_bin0.pk3
@@ -115,7 +97,6 @@ files:
     download:
       rtcw-mirrors:
         path: .
-    size: 73536309
     provides:
     - main/mp_bin.pk3
     - main/mp_pak3.pk3
@@ -136,7 +117,6 @@ files:
       skip: 6135
 
   wolf-linux-1.41b.x86.run:
-    size: 73940068
     provides:
     - main/mp_bin.pk3
     - main/mp_pak1.pk3
@@ -158,12 +138,15 @@ files:
       format: tar.gz
       skip: 8796
 
+  main/scripts/translation.cfg_141_unix:
+    install_as: main/scripts/translation.cfg
+    sha256: 301670fbd41eb6797b02cc5ba8ae5e221eeaef5de3280e6e2db390c7a29ddc8f
+    sha1: 7994040e61a234e284c730287ea6d098878cbfea
+
   main/scripts/translation.cfg_141_windows:
     look_for:
     - main/scripts/translation.cfg
     distinctive_name: false
-    size: 164376
-    md5: ff148e1367d0459d7855d37e7b8d80bc
     sha1: a823b49cb474b507d7461e9500ffa769d2b87a53
     sha256: 12653cad709eee7d1015060723b4f7da295c9ea4d570e295237dabec2bc3a752
     provides:
@@ -172,45 +155,46 @@ files:
       format: dos2unix
 
   license_fr.txt:
-    size: 18725
     look_for: [License.txt]
 
   license_en.txt:
-    size: 15483
     look_for: [License.txt]
 
-md5sums: |
-  d0c13dcf44a7baa7741af50e09844371  main/autoexec.cfg
-  7651d02fe51fc8a949536f3e0cfa8dd6  main/mp_bin.pk3
-  62641cffd9a8ad0f62cc1cca867d51f8  main/mp_pak0.pk3
-  22b972974f499a237c96a2200b0d019e  main/mp_pak1.pk3
-  30f29ffa81748a957e0441af8c14cb56  main/mp_pak2.pk3
-  fdc00dfd72b888e92a4387e1933826e4  main/mp_pak3.pk3
-  c5f76bbde262eba577a00bebe9cd4f8f  main/mp_pak4.pk3
-  d17df62d6c71078ed137aefc69d80f30  main/mp_pak5.pk3
-  f2d361a0082ed9bc1e26d2327b4f22db  main/mp_pakmaps0.pk3
-  d1856aa9bc62f719a400428b9ec27ebb  main/mp_pakmaps1.pk3
-  a0ee8714c6f7ee72680293778c22d6ee  main/mp_pakmaps2.pk3
-  01bb7c4fb3b11273d75ae658fb4de0cc  main/mp_pakmaps3.pk3
-  a39525809f7a0780f5546063dad1e5d1  main/mp_pakmaps4.pk3
-  bb24fb011b0f4b84335c66a869d1ab1c  main/mp_pakmaps5.pk3
-  397e0b48673a1a8e0ec25eb0f3ccae9d  main/mp_pakmaps6.pk3
-  ce92b11df889cb0a045762bb5fd7cde5  main/pak0.pk3
-  f97ff15e4248a72567aaddfa15443d1e  main/rotate.cfg
-  a0d3fe956f85f40c8efd6babe0d09832  main/sp_pak1.pk3_en
-  f19c389fe6310c24e664bc0fc84fdd95  main/sp_pak1.pk3_fr
-  330b272d5261fe19fcf3c3fbc943c7f3  main/sp_pak2.pk3
-  cf25d6731ed29c80303febbb177aa585  main/sp_pak3.pk3
-  4223cc6588594ec0ceee186f0e73a6e9  main/sp_pak4.pk3
-  87c3ebf106b107b60b472863aeec20c4  wolf-linux-1.4-full.x86.run
-  2aa37968aff19d665ed6c001773b2de3  wolf-linux-1.41b.x86.run
-  71ad166c7997513fe2b6cc364bc5a63e  iortcw-1.42b-linux-x86.zip
-  73326c394df3d2d944c7bff13b34412b  main/hiquality.cfg
-  a0cb6cc6874e33399983e6831dd78b64  main/mp_bin0.pk3
-  5f43f510586392fb99241e94ec7729b0  main/mp_rend2_shaders0.pk3
-  51f3ff74eeb6d7c8a88a8ed660857bcd  main/sp_rend2_shaders0.pk3
-  36267835e02f4456ac8f0c120ade5895  license_fr.txt
-  76055f8014127627fd97b93f5ecd91a5  license_en.txt
+size_and_md5: |
+  12        d0c13dcf44a7baa7741af50e09844371 main/autoexec.cfg
+  760207    7651d02fe51fc8a949536f3e0cfa8dd6 main/mp_bin.pk3
+  63211149  62641cffd9a8ad0f62cc1cca867d51f8 main/mp_pak0.pk3
+  4449596   22b972974f499a237c96a2200b0d019e main/mp_pak1.pk3
+  1118      30f29ffa81748a957e0441af8c14cb56 main/mp_pak2.pk3
+  159762    fdc00dfd72b888e92a4387e1933826e4 main/mp_pak3.pk3
+  7799      c5f76bbde262eba577a00bebe9cd4f8f main/mp_pak4.pk3
+  167075    d17df62d6c71078ed137aefc69d80f30 main/mp_pak5.pk3
+  3485134   f2d361a0082ed9bc1e26d2327b4f22db main/mp_pakmaps0.pk3
+  3765933   d1856aa9bc62f719a400428b9ec27ebb main/mp_pakmaps1.pk3
+  7408542   a0ee8714c6f7ee72680293778c22d6ee main/mp_pakmaps2.pk3
+  10780146  01bb7c4fb3b11273d75ae658fb4de0cc main/mp_pakmaps3.pk3
+  24171802  a39525809f7a0780f5546063dad1e5d1 main/mp_pakmaps4.pk3
+  20024689  bb24fb011b0f4b84335c66a869d1ab1c main/mp_pakmaps5.pk3
+  10080181  397e0b48673a1a8e0ec25eb0f3ccae9d main/mp_pakmaps6.pk3
+  315823656 ce92b11df889cb0a045762bb5fd7cde5 main/pak0.pk3
+  9559      f97ff15e4248a72567aaddfa15443d1e main/rotate.cfg
+  293887431 a0d3fe956f85f40c8efd6babe0d09832 main/sp_pak1.pk3_en
+  256811934 f19c389fe6310c24e664bc0fc84fdd95 main/sp_pak1.pk3_fr
+  11026123  330b272d5261fe19fcf3c3fbc943c7f3 main/sp_pak2.pk3
+  152544    cf25d6731ed29c80303febbb177aa585 main/sp_pak3.pk3
+  15532040  4223cc6588594ec0ceee186f0e73a6e9 main/sp_pak4.pk3
+  159375    f7b2003ef7499f2a6e750c2925c870ad main/scripts/translation.cfg_141_unix
+  164376    ff148e1367d0459d7855d37e7b8d80bc main/scripts/translation.cfg_141_windows
+
+  73536309  87c3ebf106b107b60b472863aeec20c4 wolf-linux-1.4-full.x86.run
+  73940068  2aa37968aff19d665ed6c001773b2de3 wolf-linux-1.41b.x86.run
+  21860031  71ad166c7997513fe2b6cc364bc5a63e iortcw-1.42b-linux-x86.zip
+  381       73326c394df3d2d944c7bff13b34412b main/hiquality.cfg
+  635388    a0cb6cc6874e33399983e6831dd78b64 main/mp_bin0.pk3
+  3257      5f43f510586392fb99241e94ec7729b0 main/mp_rend2_shaders0.pk3
+  22225     51f3ff74eeb6d7c8a88a8ed660857bcd main/sp_rend2_shaders0.pk3
+  18725     36267835e02f4456ac8f0c120ade5895 license_fr.txt
+  15483     76055f8014127627fd97b93f5ecd91a5 license_en.txt
 
 sha1sums: |
   e0422b4730daf306b428d419883d9147c6e2a946  main/autoexec.cfg
