@@ -17,7 +17,6 @@
 # /usr/share/common-licenses/GPL-2.
 
 from collections import defaultdict
-from enum import Enum
 import argparse
 import glob
 import hashlib
@@ -42,6 +41,11 @@ from debian.deb822 import Deb822
 from debian.debian_support import Version
 import yaml
 
+from .build import (CDRipFailed,
+        DownloadNotAllowed,
+        DownloadsFailed,
+        FillResult,
+        NoPackagesPossible)
 from .config import read_config
 from .gog import GOG
 from .paths import DATADIR, ETCDIR
@@ -74,61 +78,6 @@ else:
 QUITE_LARGE = 50 * MEBIBYTE
 
 MD5SUM_DIVIDER = re.compile(r' [ *]?')
-
-class FillResult(Enum):
-    UNDETERMINED = 0
-    IMPOSSIBLE = 1
-    DOWNLOAD_NEEDED = 2
-    COMPLETE = 3
-    UPGRADE_NEEDED = 4
-
-    def __and__(self, other):
-        if other is FillResult.UNDETERMINED:
-            return self
-
-        if self is FillResult.UNDETERMINED:
-            return other
-
-        if other is FillResult.IMPOSSIBLE or self is FillResult.IMPOSSIBLE:
-            return FillResult.IMPOSSIBLE
-
-        if other is FillResult.UPGRADE_NEEDED or self is FillResult.UPGRADE_NEEDED:
-            return FillResult.UPGRADE_NEEDED
-
-        if other is FillResult.DOWNLOAD_NEEDED or self is FillResult.DOWNLOAD_NEEDED:
-            return FillResult.DOWNLOAD_NEEDED
-
-        return FillResult.COMPLETE
-
-    def __or__(self, other):
-        if other is FillResult.UNDETERMINED:
-            return self
-
-        if self is FillResult.UNDETERMINED:
-            return other
-
-        if other is FillResult.COMPLETE or self is FillResult.COMPLETE:
-            return FillResult.COMPLETE
-
-        if other is FillResult.DOWNLOAD_NEEDED or self is FillResult.DOWNLOAD_NEEDED:
-            return FillResult.DOWNLOAD_NEEDED
-
-        if other is FillResult.UPGRADE_NEEDED or self is FillResult.UPGRADE_NEEDED:
-            return FillResult.UPGRADE_NEEDED
-
-        return FillResult.IMPOSSIBLE
-
-class NoPackagesPossible(Exception):
-    pass
-
-class DownloadsFailed(Exception):
-    pass
-
-class DownloadNotAllowed(Exception):
-    pass
-
-class CDRipFailed(Exception):
-    pass
 
 class HashedFile(object):
     def __init__(self, name):

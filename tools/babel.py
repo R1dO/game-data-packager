@@ -18,7 +18,8 @@
 
 # Online at http://pkg-games.alioth.debian.org/game-data/
 
-from game_data_packager import (load_games, GameData, FillResult)
+from game_data_packager import (load_games, GameData)
+from game_data_packager.build import (FillResult)
 
 games = []
 genres = dict()
