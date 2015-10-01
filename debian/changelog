@@ -34,7 +34,9 @@ game-data-packager (43) UNRELEASED; urgency=medium
   * make-template mode: check innoextract version (Closes: #797550)
   * add support for the new Doom packages at GOG.com (Closes: #796995)
   * call 'lgogdownloader' automatically (Closes: #782205)
-  * fix Quake2 exp. "Ground Zero" & "Reckoning" (Closes: #799955 #799955)
+  * fix Quake2 exp. "Ground Zero" & "Reckoning"
+  * Add partial support (no music) for the gog.com version of Quake 1
+    (partially addresses Bug #798816)
 
   [ Stephen Kitt ]
   * Add Steam path for The 7th Guest.
@@ -95,6 +97,7 @@ game-data-packager (42) unstable; urgency=medium
     - Waxworks
     - Zak McKracken and the Alien Mindbenders
     - Zork series: Return to Zork, Zork Nemesis, Zork Grand Inquisitor
+      (Closes: #792017)
   * replace non-ASCII characters with closest ASCII character
     when displaying help screen with LANG=C (Closes: #784330)
   * Heroes 3: don't package HiScore.dat (Closes: #784995)
