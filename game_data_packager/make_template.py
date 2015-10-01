@@ -223,6 +223,7 @@ class GameData(object):
         if Version(version.split('-')[0]) >= Version('1.5'):
             command.append('-I')
             command.append('app')
+            command.append('--collisions=rename')
 
         logger.info('running "%s" ...' % ' '.join(command))
         log = subprocess.check_output(command,
