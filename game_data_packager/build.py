@@ -374,7 +374,7 @@ class PackagingTask(object):
         # False: -Znone
         # str: -Zstr (gzip, xz or none)
         # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
-        self.compress_deb = True
+        self.compress_deb = game.compress_deb
 
     def __del__(self):
         self.__exit__()

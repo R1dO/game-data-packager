@@ -340,6 +340,13 @@ class GameData(object):
 
         self.argument_parser = None
 
+        # How to compress the .deb:
+        # True: dpkg-deb's default
+        # False: -Znone
+        # str: -Zstr (gzip, xz or none)
+        # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
+        self.compress_deb = True
+
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
                   'engine', 'genre', 'missing_langs', 'franchise', 'wiki',
                   'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia'):
