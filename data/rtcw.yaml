@@ -10,12 +10,25 @@ missing_langs: [de,es,it]
 # Like Jedi Academy, there isn't much point in compressing this .deb.
 compress_deb: false
 
+help_text: |
+  Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
+  or install it from Steam <http://store.steampowered.com/app/9010/>,
+  and tell game-data-packager the installation directory.
+
+  Steam installations would typically be in:
+  C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein
+
+  GOG.com sells these versions: "Audio and text: Deutsch, English",
+  while Steam only currently sells the English one.
+
 packages:
   rtcw-data:
     langs: [en,fr]
     steam:
       id: 9010
       path: "common/Return to Castle Wolfenstein"
+    gog:
+      game: return_to_castle_wolfenstein
     # GDP version will be suffixed to this, e.g. : 1.42b+39
     version: 1.42b
 
@@ -66,14 +79,6 @@ packages:
     license:
     - license_fr.txt
     - license_en.txt
-
-help_text: |
-  Install Return to Castle Wolfenstein from CD-ROM using Windows or Wine,
-  or install it from Steam <http://store.steampowered.com/app/9010/>,
-  and tell game-data-packager the installation directory.
-
-  Steam installations would typically be in:
-  C:/Program Files/Steam/steamapps/common/Return to Castle Wolfenstein
 
 files:
   main/sp_pak1.pk3:
