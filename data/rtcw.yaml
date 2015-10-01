@@ -22,8 +22,10 @@ help_text: |
   while Steam only currently sells the English one.
 
 packages:
-  rtcw-data:
-    langs: [en,fr]
+  rtcw-en-data:
+    debian:
+      provides: rtcw-data
+      conflicts: rtcw-data
     steam:
       id: 9010
       path: "common/Return to Castle Wolfenstein"
@@ -32,9 +34,6 @@ packages:
     # GDP version will be suffixed to this, e.g. : 1.42b+39
     version: 1.42b
     install:
-    - main/sp_pak1.pk3
-    - main/scripts/translation.cfg_141_unix
-
     - main/autoexec.cfg
     - main/mp_bin.pk3
     - main/mp_pak0.pk3
@@ -51,6 +50,8 @@ packages:
     - main/mp_pakmaps5.pk3
     - main/mp_pakmaps6.pk3
     - main/pak0.pk3
+    - main/scripts/translation.cfg_141_unix
+    - main/sp_pak1.pk3_en
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
     - main/sp_pak4.pk3
@@ -60,27 +61,57 @@ packages:
     - main/mp_rend2_shaders0.pk3
     - main/sp_pak4.pk3
     - main/sp_rend2_shaders0.pk3
+    optional:
+    - main/autoexec.cfg
+    - main/rotate.cfg
+    license:
+    - license_en.txt
 
+  rtcw-fr-data:
+    lang: fr
+    debian:
+      provides: rtcw-data
+      conflicts: rtcw-data
+    version: 1.42b
+    install:
+    - main/mp_bin.pk3
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/pak0.pk3
+    - main/scripts/translation.cfg_141_unix
+    - main/sp_pak1.pk3_fr
+    - main/sp_pak2.pk3
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    # From iortcw
+    - main/hiquality.cfg
+    - main/mp_bin0.pk3
+    - main/mp_rend2_shaders0.pk3
+    - main/sp_pak4.pk3
+    - main/sp_rend2_shaders0.pk3
     optional:
     - main/autoexec.cfg
     - main/rotate.cfg
     license:
     - license_fr.txt
-    - license_en.txt
 
 files:
-  main/sp_pak1.pk3:
-    alternatives:
-    - main/sp_pak1.pk3_en
-    - main/sp_pak1.pk3_fr
-
   main/sp_pak1.pk3_en:
-    look_for:
-    - main/sp_pak1.pk3
+    install_as: main/sp_pak1.pk3
 
   main/sp_pak1.pk3_fr:
-    look_for:
-    - main/sp_pak1.pk3
+    install_as: main/sp_pak1.pk3
 
   iortcw-1.42b-linux-x86.zip:
     download: https://docs.google.com/uc?export=download&id=0ByCRmO4G6HOoRWNjaS04VTlMbWc
