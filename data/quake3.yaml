@@ -38,7 +38,7 @@ packages:
       id: 2200
       path: "common/Quake 3 Arena"
     gog:
-      game: quake_iii_gold
+      url: quake_iii_gold
     # We deliberately only put baseq3 in the search path, not
     # missionpack, so that the engine doesn't think missionpack
     # is installed unless its pak0.pk3 is present.
@@ -134,7 +134,7 @@ packages:
       id: 2350
       path: "common/Quake 3 Arena/missionpack"
     gog:
-      game: quake_iii_gold
+      url: quake_iii_gold
     expansion_for: quake3-data
     debian:
       depends: quake3-data (>= 38)
