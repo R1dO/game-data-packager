@@ -16,6 +16,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
+import logging
 import os
 import shlex
 import shutil
@@ -26,6 +27,8 @@ import sys
 from debian.debian_support import Version
 
 from .version import GAME_PACKAGE_VERSION
+
+logger = logging.getLogger('game-data-packager.util')
 
 KIBIBYTE = 1024
 MEBIBYTE = KIBIBYTE * KIBIBYTE
@@ -168,19 +171,53 @@ def ascii_safe(string, force=False):
                                                 'aacceeeeiiiln***'))
     return string
 
-def install_packages(debs):
+def run_as_root(argv, gain_root='su'):
+    if gain_root not in ('su', 'pkexec' ,'sudo', 'super', 'really'):
+        logger.warning(('Unknown privilege escalation method %r, assuming ' +
+            'it works like sudo') % gain_root)
+
+    if gain_root == 'su':
+        print('using su to obtain root privileges and install the package(s)')
+
+        # su expects a single sh(1) command-line
+        cmd = ' '.join([shlex.quote(arg) for arg in argv])
+
+        subprocess.call(['su', '-c', cmd])
+    else:
+        # this code path works for pkexec, sudo, super, really;
+        # we assume everything else is the same
+        print('using %s to obtain root privileges and install the package(s)' %
+                gain_root)
+        subprocess.call([gain_root] + list(argv))
+
+def install_packages(debs, method, gain_root='su'):
     """Install one or more packages (a list of filenames)."""
 
-    print('using su(1) to obtain root privileges and install the package(s)')
+    default = None
 
-    apt_ver = subprocess.check_output(['dpkg-query', '--show',
-                '--showformat', '${Version}', 'apt'], universal_newlines=True)
-    if Version(apt_ver.strip()) >= Version('1.1'):
-        cmd = 'apt-get install --install-recommends'
+    if method and method not in (
+            'apt', 'dpkg',
+            'gdebi', 'gdebi-gtk', 'gdebi-kde',
+            ):
+        logger.warning(('Unknown installation method %r, using apt or dpkg ' +
+            'instead') % method)
+        method = None
+
+    if not method:
+        apt_ver = subprocess.check_output(['dpkg-query', '--show',
+                    '--showformat', '${Version}', 'apt'], universal_newlines=True)
+        if Version(apt_ver.strip()) >= Version('1.1'):
+            method = 'apt'
+        else:
+            method = 'dpkg'
+
+    if method == 'apt':
+        run_as_root(['apt-get', 'install', '--install-recommends'] + list(debs),
+                gain_root)
+    elif method == 'dpkg':
+        run_as_root(['dpkg', '-i'] + list(debs), gain_root)
+    elif method == 'gdebi':
+        run_as_root(['gdebi'] + list(debs), gain_root)
     else:
-        cmd = 'dpkg -i'
-
-    for deb in debs:
-        cmd = cmd + ' ' + shlex.quote(deb)
-
-    subprocess.call(['su', '-c', cmd])
+        # gdebi-gtk etc.
+        subprocess.call([method] + list(debs))

@@ -1,21 +1,5 @@
 TODO:
 
-* provide configurable methods for elevating privs
-  - su
-  - sudo
-  - pkexec
-* provide configurable methods for installing packages
-  - dpkg
-  - gdebi, this handle Depends: , but doesn't install 'Recommends:' (=game-engine)
-  - apt-get, but this needs that #47379 from 1999 to be fixed
-  - integrate with graphical package managers ?
-
-	nicer -i behaviour
-		support (somehow) installing a generated .deb and throwing
-		it away (current behaviour is now, generate and store in	
-		$(pwd) if otherwise unspecified; impossible not to preserve
-		generated file)
-
 See also: https://wiki.debian.org/Games/GameDataPackager/Development
 
 ## List of missing games (machine-read)

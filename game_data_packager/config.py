@@ -29,7 +29,13 @@ def read_config():
     """The world's simplest shell script parser.
     """
 
-    config = { 'install': False, 'preserve': True, 'verbose': False }
+    config = {
+            'install': False,
+            'preserve': True,
+            'verbose': False,
+            'install_method': '',
+            'gain_root_command': '',
+            }
 
     try:
         with open(CONFIG, encoding='utf-8') as conffile:

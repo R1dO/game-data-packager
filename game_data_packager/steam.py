@@ -203,6 +203,6 @@ def run_steam_meta_mode(parsed, games):
         raise SystemExit(1)
 
     if install_debs:
-        install_packages(all_debs)
+        install_packages(all_debs, args.install_method, args.gain_root_command)
     if workdir:
         rm_rf(workdir)

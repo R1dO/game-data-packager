@@ -1912,7 +1912,7 @@ class PackagingTask(object):
                 print('generated "%s"' % os.path.abspath(deb))
 
         if install_debs:
-            install_packages(debs)
+            install_packages(debs, args.install_method, args.gain_root_command)
 
         engines_alt = set((p.engine or self.game.engine) for p in ready)
         engines_alt.discard(None)

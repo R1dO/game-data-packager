@@ -878,6 +878,15 @@ def run_command_line():
             dest='packages', metavar='PACKAGE',
             help='Produce this data package (may be repeated)')
 
+    base_parser.add_argument('--install-method', metavar='METHOD',
+            dest='install_method',
+            help='Use METHOD (apt, dpkg, gdebi, gdebi-gtk, gdebi-kde) ' +
+                'to install packages')
+
+    base_parser.add_argument('--gain-root-command', metavar='METHOD',
+            dest='gain_root_command',
+            help='Use METHOD (su, sudo, pkexec) to gain root if needed')
+
     # Misc options
     group = base_parser.add_mutually_exclusive_group()
     group.add_argument('-i', '--install', action='store_true',
@@ -971,6 +980,8 @@ def run_command_line():
             download=True,
             verbose=False,
             install=False,
+            install_method='',
+            gain_root_command='',
             packages=[],
             save_downloads=None,
             shortname=None,
@@ -984,6 +995,14 @@ def run_command_line():
     if config['verbose']:
         logger.debug('obeying VERBOSE=yes in configuration')
         parsed.verbose = True
+    if config['install_method']:
+        logger.debug('obeying INSTALL_METHOD=%r in configuration',
+                config['install_method'])
+        parsed.install_method = config['install_method']
+    if config['gain_root_command']:
+        logger.debug('obeying GAIN_ROOT_COMMAND=%r in configuration',
+                config['gain_root_command'])
+        parsed.gain_root_command = config['gain_root_command']
 
     parser.parse_args(namespace=parsed)
     logger.debug('parsed command-line arguments into: %r', parsed)

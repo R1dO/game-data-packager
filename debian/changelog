@@ -59,6 +59,7 @@ game-data-packager (43) UNRELEASED; urgency=medium
   * Move detailed information about files to be packaged into separate JSON
     and *sums files, which are loaded lazily. This speeds up
     "game-data-packager --help" considerably. (Continuation of #779937)
+  * Add configurable installation method instead of always using su
 
  -- Simon McVittie <smcv@debian.org>  Thu, 16 Jul 2015 09:59:23 +0200
 
