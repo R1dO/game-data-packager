@@ -61,11 +61,11 @@ packages:
     - baseq2/video/idlog.cin
     - baseq2/video/ntro.cin
     # semi-official bonus content
-    - baseq2/base64.bsp
-    - baseq2/city64.bsp
+    - baseq2/maps/base64.bsp
+    - baseq2/maps/city64.bsp
+    - baseq2/maps/sewer64.bsp
     - baseq2/pak3.pak
     - ctf/q2ctf4a.bsp
-    - baseq2/sewer64.bsp
     - readme-dm64.txt
     # documentation
     - 3.20_changes.txt
@@ -888,20 +888,20 @@ files:
     unpack:
       format: tar.gz
     provides:
-    - baseq2/base64.bsp
-    - baseq2/city64.bsp
-    - baseq2/sewer64.bsp
+    - baseq2/maps/base64.bsp
+    - baseq2/maps/city64.bsp
+    - baseq2/maps/sewer64.bsp
     download:
       idstuff-mirrors:
         path: quake2/maps
 
-  baseq2/base64.bsp:
+  baseq2/maps/base64.bsp:
     look_for: [base64.bsp]
 
-  baseq2/city64.bsp:
+  baseq2/maps/city64.bsp:
     look_for: [city64.bsp]
 
-  baseq2/sewer64.bsp:
+  baseq2/maps/sewer64.bsp:
     look_for: [sewer64.bsp]
 
   readme-dm64.txt:
@@ -1258,6 +1258,539 @@ files:
     - quake2-rogue-2.02/LICENSE
     - quake2-rogue-2.02/README
 
+  setup_quake2_quad_damage_2.0.0.3.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - $provides
+      - pak0.pak
+      - quake2_manual/images/start_network_server_screen1.gif
+      - quake2_manual/multiplayer.html
+    provides:
+    - baseq2/maps.lst
+    - baseq2/maps/base64.bsp
+    - baseq2/maps/city64.bsp
+    - baseq2/maps/sewer64.bsp
+    - baseq2/maps/trdm01-06.html
+    - baseq2/maps/trdm01a.bsp
+    - baseq2/maps/trdm01a.rtz
+    - baseq2/maps/trdm02a.bsp
+    - baseq2/maps/trdm02a.html
+    - baseq2/maps/trdm02a.rtz
+    - baseq2/maps/trdm03a.bsp
+    - baseq2/maps/trdm03a.rtz
+    - baseq2/maps/trdm04a.bsp
+    - baseq2/maps/trdm04a.rtz
+    - baseq2/maps/trdm05a.bsp
+    - baseq2/maps/trdm05a.rtz
+    - baseq2/maps/trdm06.bsp
+    - baseq2/maps/trdm06.rtz
+    - baseq2/maps/ztnmap1.bsp
+    - baseq2/maps/ztnmap1.txt
+    - baseq2/maps/ztnmap2.bsp
+    - baseq2/maps/ztnmap2.txt
+    - baseq2/maps/ztnmap3.bsp
+    - baseq2/maps/ztnmap3.txt
+    - baseq2/maps/ztnmap4.bsp
+    - baseq2/maps/ztnmap4.txt
+    - baseq2/maps/ztnmap5.bsp
+    - baseq2/maps/ztnmap5.txt
+    - baseq2/maps/ztnmap6.bsp
+    - baseq2/maps/ztnmap6.txt
+    - baseq2/pak0.pak_1dd586a
+    - baseq2/pak1.pak
+    - baseq2/pak2.pak
+    - baseq2/players/crakhor/a_grenades.md2
+    - baseq2/players/crakhor/crakhorb.pcx
+    - baseq2/players/crakhor/crakhorb_i.pcx
+    - baseq2/players/crakhor/crakhorg.pcx
+    - baseq2/players/crakhor/crakhorg_i.pcx
+    - baseq2/players/crakhor/crakhorr.pcx
+    - baseq2/players/crakhor/crakhorr_i.pcx
+    - baseq2/players/crakhor/ctf_b.pcx
+    - baseq2/players/crakhor/ctf_b_i.pcx
+    - baseq2/players/crakhor/ctf_r.pcx
+    - baseq2/players/crakhor/ctf_r_i.pcx
+    - baseq2/players/crakhor/r2aqua.pcx
+    - baseq2/players/crakhor/r2aqua_i.pcx
+    - baseq2/players/crakhor/r2blue.pcx
+    - baseq2/players/crakhor/r2blue_i.pcx
+    - baseq2/players/crakhor/r2dgre.pcx
+    - baseq2/players/crakhor/r2dgre_i.pcx
+    - baseq2/players/crakhor/r2lgre.pcx
+    - baseq2/players/crakhor/r2lgre_i.pcx
+    - baseq2/players/crakhor/r2oran.pcx
+    - baseq2/players/crakhor/r2oran_i.pcx
+    - baseq2/players/crakhor/r2red.pcx
+    - baseq2/players/crakhor/r2red_i.pcx
+    - baseq2/players/crakhor/r2yell.pcx
+    - baseq2/players/crakhor/r2yell_i.pcx
+    - baseq2/players/crakhor/sumabeth.pcx
+    - baseq2/players/crakhor/sumabeth_i.pcx
+    - baseq2/players/crakhor/sumacw.pcx
+    - baseq2/players/crakhor/sumacw.txt
+    - baseq2/players/crakhor/sumacw_i.pcx
+    - baseq2/players/crakhor/sumaouch.pcx
+    - baseq2/players/crakhor/sumaouch_i.pcx
+    - baseq2/players/crakhor/sumasyrinx.pcx
+    - baseq2/players/crakhor/sumasyrinx_i.pcx
+    - baseq2/players/crakhor/tris.md2
+    - baseq2/players/crakhor/w_bfg.md2
+    - baseq2/players/crakhor/w_blaster.md2
+    - baseq2/players/crakhor/w_chainfist.md2
+    - baseq2/players/crakhor/w_chaingun.md2
+    - baseq2/players/crakhor/w_disrupt.md2
+    - baseq2/players/crakhor/w_etfrifle.md2
+    - baseq2/players/crakhor/w_glauncher.md2
+    - baseq2/players/crakhor/w_grapple.md2
+    - baseq2/players/crakhor/w_hyperblaster.md2
+    - baseq2/players/crakhor/w_machinegun.md2
+    - baseq2/players/crakhor/w_phalanx.md2
+    - baseq2/players/crakhor/w_plasma.md2
+    - baseq2/players/crakhor/w_plauncher.md2
+    - baseq2/players/crakhor/w_railgun.md2
+    - baseq2/players/crakhor/w_ripper.md2
+    - baseq2/players/crakhor/w_rlauncher.md2
+    - baseq2/players/crakhor/w_shotgun.md2
+    - baseq2/players/crakhor/w_sshotgun.md2
+    - baseq2/players/crakhor/weapon.md2
+    - baseq2/players/crakhor/weapon.pcx
+    - baseq2/players/cyborg/a_grenades.md2
+    - baseq2/players/cyborg/a_grenades1.md2
+    - baseq2/players/cyborg/a_rturret.md2
+    - baseq2/players/cyborg/a_vortex.md2
+    - baseq2/players/cyborg/bump1.wav
+    - baseq2/players/cyborg/death1.wav
+    - baseq2/players/cyborg/death2.wav
+    - baseq2/players/cyborg/death3.wav
+    - baseq2/players/cyborg/death4.wav
+    - baseq2/players/cyborg/disguise.pcx
+    - baseq2/players/cyborg/disguise_i.pcx
+    - baseq2/players/cyborg/drown1.wav
+    - baseq2/players/cyborg/fall1.wav
+    - baseq2/players/cyborg/fall2.wav
+    - baseq2/players/cyborg/gurp1.wav
+    - baseq2/players/cyborg/gurp2.wav
+    - baseq2/players/cyborg/jump1.wav
+    - baseq2/players/cyborg/oni911.pcx
+    - baseq2/players/cyborg/oni911_i.pcx
+    - baseq2/players/cyborg/pain100_1.wav
+    - baseq2/players/cyborg/pain100_2.wav
+    - baseq2/players/cyborg/pain25_1.wav
+    - baseq2/players/cyborg/pain25_2.wav
+    - baseq2/players/cyborg/pain50_1.wav
+    - baseq2/players/cyborg/pain50_2.wav
+    - baseq2/players/cyborg/pain75_1.wav
+    - baseq2/players/cyborg/pain75_2.wav
+    - baseq2/players/cyborg/ps9000.pcx
+    - baseq2/players/cyborg/ps9000_i.pcx
+    - baseq2/players/cyborg/r2aqua.pcx
+    - baseq2/players/cyborg/r2aqua_i.pcx
+    - baseq2/players/cyborg/r2blue.pcx
+    - baseq2/players/cyborg/r2blue_i.pcx
+    - baseq2/players/cyborg/r2dgre.pcx
+    - baseq2/players/cyborg/r2dgre_i.pcx
+    - baseq2/players/cyborg/r2lgre.pcx
+    - baseq2/players/cyborg/r2lgre_i.pcx
+    - baseq2/players/cyborg/r2oran.pcx
+    - baseq2/players/cyborg/r2oran_i.pcx
+    - baseq2/players/cyborg/r2red.pcx
+    - baseq2/players/cyborg/r2red_i.pcx
+    - baseq2/players/cyborg/r2yell.pcx
+    - baseq2/players/cyborg/r2yell_i.pcx
+    - baseq2/players/cyborg/tris.md2
+    - baseq2/players/cyborg/tyr574.pcx
+    - baseq2/players/cyborg/tyr574_i.pcx
+    - baseq2/players/cyborg/w_airfist.md2
+    - baseq2/players/cyborg/w_ak42.md2
+    - baseq2/players/cyborg/w_bfg.md2
+    - baseq2/players/cyborg/w_blaster.md2
+    - baseq2/players/cyborg/w_bow.md2
+    - baseq2/players/cyborg/w_buzzsaw.md2
+    - baseq2/players/cyborg/w_chainfist.md2
+    - baseq2/players/cyborg/w_chaingun.md2
+    - baseq2/players/cyborg/w_chainsaw.md2
+    - baseq2/players/cyborg/w_disrupt.md2
+    - baseq2/players/cyborg/w_etfrifle.md2
+    - baseq2/players/cyborg/w_glauncher.md2
+    - baseq2/players/cyborg/w_glauncher1.md2
+    - baseq2/players/cyborg/w_grapple.md2
+    - baseq2/players/cyborg/w_hyperblaster.md2
+    - baseq2/players/cyborg/w_machinegun.md2
+    - baseq2/players/cyborg/w_phalanx.md2
+    - baseq2/players/cyborg/w_plasma.md2
+    - baseq2/players/cyborg/w_plauncher.md2
+    - baseq2/players/cyborg/w_railgun.md2
+    - baseq2/players/cyborg/w_ripper.md2
+    - baseq2/players/cyborg/w_rlauncher.md2
+    - baseq2/players/cyborg/w_shotgun.md2
+    - baseq2/players/cyborg/w_sshotgun.md2
+    - baseq2/players/cyborg/w_sword.md2
+    - baseq2/players/cyborg/w_xlauncher.md2
+    - baseq2/players/cyborg/weapon.md2
+    - baseq2/players/cyborg/weapon.pcx
+    - baseq2/players/cyborg/weapon.pcx.pcx
+    - baseq2/players/female/a_grenades.md2
+    - baseq2/players/female/a_grenades1.md2
+    - baseq2/players/female/a_rturret.md2
+    - baseq2/players/female/a_vortex.md2
+    - baseq2/players/female/athena.pcx
+    - baseq2/players/female/athena_i.pcx
+    - baseq2/players/female/brianna.pcx
+    - baseq2/players/female/brianna_i.pcx
+    - baseq2/players/female/cobalt.pcx
+    - baseq2/players/female/cobalt_i.pcx
+    - baseq2/players/female/death1.wav
+    - baseq2/players/female/death2.wav
+    - baseq2/players/female/death3.wav
+    - baseq2/players/female/death4.wav
+    - baseq2/players/female/disguise.pcx
+    - baseq2/players/female/disguise_i.pcx
+    - baseq2/players/female/drown.wav
+    - baseq2/players/female/ensign.pcx
+    - baseq2/players/female/ensign_i.pcx
+    - baseq2/players/female/fall1.wav
+    - baseq2/players/female/fall2.wav
+    - baseq2/players/female/gurp1.wav
+    - baseq2/players/female/gurp2.wav
+    - baseq2/players/female/jezebel.pcx
+    - baseq2/players/female/jezebel_i.pcx
+    - baseq2/players/female/jump1.wav
+    - baseq2/players/female/jungle.pcx
+    - baseq2/players/female/jungle_i.pcx
+    - baseq2/players/female/lotus.pcx
+    - baseq2/players/female/lotus_i.pcx
+    - baseq2/players/female/pain100_1.wav
+    - baseq2/players/female/pain100_2.wav
+    - baseq2/players/female/pain25_1.wav
+    - baseq2/players/female/pain25_2.wav
+    - baseq2/players/female/pain50_1.wav
+    - baseq2/players/female/pain50_2.wav
+    - baseq2/players/female/pain75_1.wav
+    - baseq2/players/female/pain75_2.wav
+    - baseq2/players/female/r2aqua.pcx
+    - baseq2/players/female/r2aqua_i.pcx
+    - baseq2/players/female/r2blue.pcx
+    - baseq2/players/female/r2blue_i.pcx
+    - baseq2/players/female/r2dgre.pcx
+    - baseq2/players/female/r2dgre_i.pcx
+    - baseq2/players/female/r2lgre.pcx
+    - baseq2/players/female/r2lgre_i.pcx
+    - baseq2/players/female/r2oran.pcx
+    - baseq2/players/female/r2oran_i.pcx
+    - baseq2/players/female/r2red.pcx
+    - baseq2/players/female/r2red_i.pcx
+    - baseq2/players/female/r2yell.pcx
+    - baseq2/players/female/r2yell_i.pcx
+    - baseq2/players/female/rogue_b.pcx
+    - baseq2/players/female/rogue_b_i.pcx
+    - baseq2/players/female/rogue_r.pcx
+    - baseq2/players/female/rogue_r_i.pcx
+    - baseq2/players/female/stiletto.pcx
+    - baseq2/players/female/stiletto_i.pcx
+    - baseq2/players/female/tris.md2
+    - baseq2/players/female/venus.pcx
+    - baseq2/players/female/venus_i.pcx
+    - baseq2/players/female/voodoo.pcx
+    - baseq2/players/female/voodoo_i.pcx
+    - baseq2/players/female/w_airfist.md2
+    - baseq2/players/female/w_ak42.md2
+    - baseq2/players/female/w_bfg.md2
+    - baseq2/players/female/w_blaster.md2
+    - baseq2/players/female/w_bow.md2
+    - baseq2/players/female/w_buzzsaw.md2
+    - baseq2/players/female/w_chainfist.md2
+    - baseq2/players/female/w_chaingun.md2
+    - baseq2/players/female/w_chainsaw.md2
+    - baseq2/players/female/w_disrupt.md2
+    - baseq2/players/female/w_etfrifle.md2
+    - baseq2/players/female/w_glauncher.md2
+    - baseq2/players/female/w_glauncher1.md2
+    - baseq2/players/female/w_grapple.md2
+    - baseq2/players/female/w_hyperblaster.md2
+    - baseq2/players/female/w_machinegun.md2
+    - baseq2/players/female/w_phalanx.md2
+    - baseq2/players/female/w_plasma.md2
+    - baseq2/players/female/w_plauncher.md2
+    - baseq2/players/female/w_railgun.md2
+    - baseq2/players/female/w_ripper.md2
+    - baseq2/players/female/w_rlauncher.md2
+    - baseq2/players/female/w_shotgun.md2
+    - baseq2/players/female/w_sshotgun.md2
+    - baseq2/players/female/w_sword.md2
+    - baseq2/players/female/w_xlauncher.md2
+    - baseq2/players/female/weapon.md2
+    - baseq2/players/female/weapon.pcx
+    - baseq2/players/guard/ctf_b.pcx
+    - baseq2/players/guard/ctf_b_i.pcx
+    - baseq2/players/guard/ctf_r.pcx
+    - baseq2/players/guard/ctf_r_i.pcx
+    - baseq2/players/guard/sumaguard.txt
+    - baseq2/players/male/a_grenades.md2
+    - baseq2/players/male/a_grenades1.md2
+    - baseq2/players/male/a_rturret.md2
+    - baseq2/players/male/a_vortex.md2
+    - baseq2/players/male/bump1.wav
+    - baseq2/players/male/cipher.pcx
+    - baseq2/players/male/cipher_i.pcx
+    - baseq2/players/male/claymore.pcx
+    - baseq2/players/male/claymore_i.pcx
+    - baseq2/players/male/cyborg/disguise.pcx
+    - baseq2/players/male/cyborg/disguise_i.pcx
+    - baseq2/players/male/death1.wav
+    - baseq2/players/male/death2.wav
+    - baseq2/players/male/death3.wav
+    - baseq2/players/male/death4.wav
+    - baseq2/players/male/disguise.pcx
+    - baseq2/players/male/disguise_i.pcx
+    - baseq2/players/male/drown1.wav
+    - baseq2/players/male/fall1.wav
+    - baseq2/players/male/fall2.wav
+    - baseq2/players/male/female/disguise.pcx
+    - baseq2/players/male/female/disguise_i.pcx
+    - baseq2/players/male/flak.pcx
+    - baseq2/players/male/flak_i.pcx
+    - baseq2/players/male/grunt.pcx
+    - baseq2/players/male/grunt_i.pcx
+    - baseq2/players/male/gurp1.wav
+    - baseq2/players/male/gurp2.wav
+    - baseq2/players/male/howitzer.pcx
+    - baseq2/players/male/howitzer_i.pcx
+    - baseq2/players/male/jump1.wav
+    - baseq2/players/male/major.pcx
+    - baseq2/players/male/major_i.pcx
+    - baseq2/players/male/male/disguise.pcx
+    - baseq2/players/male/male/disguise_i.pcx
+    - baseq2/players/male/nightops.pcx
+    - baseq2/players/male/nightops_i.pcx
+    - baseq2/players/male/pain100_1.wav
+    - baseq2/players/male/pain100_2.wav
+    - baseq2/players/male/pain25_1.wav
+    - baseq2/players/male/pain25_2.wav
+    - baseq2/players/male/pain50_1.wav
+    - baseq2/players/male/pain50_2.wav
+    - baseq2/players/male/pain75_1.wav
+    - baseq2/players/male/pain75_2.wav
+    - baseq2/players/male/pointman.pcx
+    - baseq2/players/male/pointman_i.pcx
+    - baseq2/players/male/psycho.pcx
+    - baseq2/players/male/psycho_i.pcx
+    - baseq2/players/male/r2aqua.pcx
+    - baseq2/players/male/r2aqua_i.pcx
+    - baseq2/players/male/r2blue.pcx
+    - baseq2/players/male/r2blue_i.pcx
+    - baseq2/players/male/r2dgre.pcx
+    - baseq2/players/male/r2dgre_i.pcx
+    - baseq2/players/male/r2lgre.pcx
+    - baseq2/players/male/r2lgre_i.pcx
+    - baseq2/players/male/r2oran.pcx
+    - baseq2/players/male/r2oran_i.pcx
+    - baseq2/players/male/r2red.pcx
+    - baseq2/players/male/r2red_i.pcx
+    - baseq2/players/male/r2yell.pcx
+    - baseq2/players/male/r2yell_i.pcx
+    - baseq2/players/male/rampage.pcx
+    - baseq2/players/male/rampage_i.pcx
+    - baseq2/players/male/razor.pcx
+    - baseq2/players/male/razor_i.pcx
+    - baseq2/players/male/recon.pcx
+    - baseq2/players/male/recon_i.pcx
+    - baseq2/players/male/rogue_b.pcx
+    - baseq2/players/male/rogue_b_i.pcx
+    - baseq2/players/male/rogue_r.pcx
+    - baseq2/players/male/rogue_r_i.pcx
+    - baseq2/players/male/scout.pcx
+    - baseq2/players/male/scout_i.pcx
+    - baseq2/players/male/sniper.pcx
+    - baseq2/players/male/sniper_i.pcx
+    - baseq2/players/male/tris.md2
+    - baseq2/players/male/viper.pcx
+    - baseq2/players/male/viper_i.pcx
+    - baseq2/players/male/w_airfist.md2
+    - baseq2/players/male/w_ak42.md2
+    - baseq2/players/male/w_bfg.md2
+    - baseq2/players/male/w_blaster.md2
+    - baseq2/players/male/w_bow.md2
+    - baseq2/players/male/w_buzzsaw.md2
+    - baseq2/players/male/w_chainfist.md2
+    - baseq2/players/male/w_chaingun.md2
+    - baseq2/players/male/w_chainsaw.md2
+    - baseq2/players/male/w_disrupt.md2
+    - baseq2/players/male/w_etfrifle.md2
+    - baseq2/players/male/w_glauncher.md2
+    - baseq2/players/male/w_glauncher1.md2
+    - baseq2/players/male/w_grapple.md2
+    - baseq2/players/male/w_hyperblaster.md2
+    - baseq2/players/male/w_machinegun.md2
+    - baseq2/players/male/w_phalanx.md2
+    - baseq2/players/male/w_plasma.md2
+    - baseq2/players/male/w_plauncher.md2
+    - baseq2/players/male/w_railgun.md2
+    - baseq2/players/male/w_ripper.md2
+    - baseq2/players/male/w_rlauncher.md2
+    - baseq2/players/male/w_shotgun.md2
+    - baseq2/players/male/w_sshotgun.md2
+    - baseq2/players/male/w_sword.md2
+    - baseq2/players/male/w_xlauncher.md2
+    - baseq2/players/male/weapon.md2
+    - baseq2/players/male/weapon.pcx
+    - baseq2/players/zumlin/ctf_b.pcx
+    - baseq2/players/zumlin/ctf_b_i.pcx
+    - baseq2/players/zumlin/ctf_r.pcx
+    - baseq2/players/zumlin/ctf_r_i.pcx
+    - baseq2/players/zumlin/tris.md2
+    - baseq2/players/zumlin/weapon.md2
+    - baseq2/players/zumlin/weapon.pcx
+    - baseq2/players/zumlin/zafron.pcx
+    - baseq2/players/zumlin/zafron_i.pcx
+    - baseq2/players/zumlin/zaneel.pcx
+    - baseq2/players/zumlin/zaneel_i.pcx
+    - baseq2/players/zumlin/zuman.pcx
+    - baseq2/players/zumlin/zuman_i.pcx
+    - baseq2/players/zumlin/zumlin.pcx
+    - baseq2/players/zumlin/zumlin.txt
+    - baseq2/players/zumlin/zumlin_i.pcx
+    - baseq2/players/zumlin/zumlinbase.pcx
+    - baseq2/players/zumlin/zumlinstory.txt
+    - baseq2/video/end.cin
+    - baseq2/video/eou1_.cin
+    - baseq2/video/eou2_.cin
+    - baseq2/video/eou3_.cin
+    - baseq2/video/eou4_.cin
+    - baseq2/video/eou5_.cin
+    - baseq2/video/eou6_.cin
+    - baseq2/video/eou7_.cin
+    - baseq2/video/eou8_.cin
+    - baseq2/video/idlog.cin
+    - baseq2/video/ntro.cin
+
+    - quake2_manual/bottom.html
+    - quake2_manual/credits.html
+    - quake2_manual/enemy_barracuda_shark.html
+    - quake2_manual/enemy_berserker.html
+    - quake2_manual/enemy_brains.html
+    - quake2_manual/enemy_enforcer.html
+    - quake2_manual/enemy_flyer.html
+    - quake2_manual/enemy_gladiator.html
+    - quake2_manual/enemy_gunner.html
+    - quake2_manual/enemy_icarus.html
+    - quake2_manual/enemy_iron_maiden.html
+    - quake2_manual/enemy_light_guard.html
+    - quake2_manual/enemy_machinegun_guard.html
+    - quake2_manual/enemy_medic.html
+    - quake2_manual/enemy_mutant.html
+    - quake2_manual/enemy_parasite.html
+    - quake2_manual/enemy_shotgun_guard.html
+    - quake2_manual/enemy_tank.html
+    - quake2_manual/enemy_tank_commander.html
+    - quake2_manual/enemy_technician.html
+    - quake2_manual/images/adrenaline.gif
+    - quake2_manual/images/amor_body.gif
+    - quake2_manual/images/armor_combat.gif
+    - quake2_manual/images/armor_jacket.gif
+    - quake2_manual/images/armor_shard.gif
+    - quake2_manual/images/bandoleer.gif
+    - quake2_manual/images/barracuda_shark.gif
+    - quake2_manual/images/berserker.gif
+    - quake2_manual/images/bfg.gif
+    - quake2_manual/images/blaster.gif
+    - quake2_manual/images/bluekey.gif
+    - quake2_manual/images/bottom_id_link_transparent.gif
+    - quake2_manual/images/brains.gif
+    - quake2_manual/images/breather.gif
+    - quake2_manual/images/bullets.gif
+    - quake2_manual/images/buttons.jpg
+    - quake2_manual/images/cells.gif
+    - quake2_manual/images/chaingun.gif
+    - quake2_manual/images/cloaker.gif
+    - quake2_manual/images/commandant_james.gif
+    - quake2_manual/images/credits_main.gif
+    - quake2_manual/images/door.jpg
+    - quake2_manual/images/elevator_base_exit_sign.jpg
+    - quake2_manual/images/enemy_groupshot.gif
+    - quake2_manual/images/energy_armour.gif
+    - quake2_manual/images/enforcer.gif
+    - quake2_manual/images/envirosuit.gif
+    - quake2_manual/images/explosive_barrels.jpg
+    - quake2_manual/images/first_aid.gif
+    - quake2_manual/images/flyer.gif
+    - quake2_manual/images/gladiator.gif
+    - quake2_manual/images/goggles.gif
+    - quake2_manual/images/grenade_launcher.gif
+    - quake2_manual/images/grenades.gif
+    - quake2_manual/images/gunner.gif
+    - quake2_manual/images/hand_grenade.gif
+    - quake2_manual/images/heavy_pack.gif
+    - quake2_manual/images/hyper_blaster.gif
+    - quake2_manual/images/icarus.gif
+    - quake2_manual/images/invisibility.gif
+    - quake2_manual/images/invulnerability.gif
+    - quake2_manual/images/iron_maiden.gif
+    - quake2_manual/images/lava.jpg
+    - quake2_manual/images/lever.jpg
+    - quake2_manual/images/light_guard.gif
+    - quake2_manual/images/machinegun.gif
+    - quake2_manual/images/machinegun_guard.gif
+    - quake2_manual/images/main_cover_image.gif
+    - quake2_manual/images/manual_back.jpg
+    - quake2_manual/images/manual_bottom.jpg
+    - quake2_manual/images/manual_cover_image.jpg
+    - quake2_manual/images/manual_top.jpg
+    - quake2_manual/images/medic.gif
+    - quake2_manual/images/medkit.gif
+    - quake2_manual/images/mega_health.gif
+    - quake2_manual/images/menu.gif
+    - quake2_manual/images/multiplayer_main.jpg
+    - quake2_manual/images/multiplayer_menu1.gif
+    - quake2_manual/images/multiplayer_screen1.gif
+    - quake2_manual/images/mutant.gif
+    - quake2_manual/images/no_data.jpg
+    - quake2_manual/images/options_menu.gif
+    - quake2_manual/images/parasite.gif
+    - quake2_manual/images/player_properties_screen1.gif
+    - quake2_manual/images/quad_damage.gif
+    - quake2_manual/images/rail_gun.gif
+    - quake2_manual/images/rocket_launcher.gif
+    - quake2_manual/images/rockets.gif
+    - quake2_manual/images/scope.gif
+    - quake2_manual/images/secret_door.jpg
+    - quake2_manual/images/shells.gif
+    - quake2_manual/images/shotgun.gif
+    - quake2_manual/images/shotgun_guard.gif
+    - quake2_manual/images/sights.gif
+    - quake2_manual/images/silencer.gif
+    - quake2_manual/images/slime.jpg
+    - quake2_manual/images/start_network_server_screen1.gif_3.20
+    - quake2_manual/images/stimpack.gif
+    - quake2_manual/images/story_main.jpg
+    - quake2_manual/images/strogg_environ_1.jpg
+    - quake2_manual/images/strogg_environ_2.jpg
+    - quake2_manual/images/strogg_environ_3.jpg
+    - quake2_manual/images/supershotgun.gif
+    - quake2_manual/images/tank.gif
+    - quake2_manual/images/tank_commander.gif
+    - quake2_manual/images/technician.gif
+    - quake2_manual/images/top_nav_imagemap.gif
+    - quake2_manual/images/unit_exit_door.jpg
+    - quake2_manual/images/water.jpg
+    - quake2_manual/intel_brief.html
+    - quake2_manual/intel_brief2.html
+    - quake2_manual/intel_brief3.html
+    - quake2_manual/intel_brief4.html
+    - quake2_manual/intel_brief5.html
+    - quake2_manual/intel_brief6.html
+    - quake2_manual/intel_brief7.html
+    - quake2_manual/intel_brief8.html
+    - quake2_manual/intel_brief_enemy.html
+    - quake2_manual/main.html
+    - quake2_manual/multiplayer.html_3.20
+    - quake2_manual/page_index.html
+    - quake2_manual/setup_controls_screenmenus.html
+    - quake2_manual/story.html
+    - quake2_manual/technical_information.html
+    - quake2_manual/top_nav.html
+    # + a lot more
+
 cksums: |
   1206005048 239924 quake2-rogue-2.02.tar.xz
   285620057 1421 quake2-rogue-2.02/CHANGELOG
@@ -1277,217 +1810,6 @@ cksums: |
   1505038542 1063 baseq2/maps.lst
   # pak0.pak seen on Steam, and on smcv's Xplosiv-branded budget CD-ROM
   3164808345 183997730 baseq2/pak0.pak_1dd586a
-  1221363109 12992754 baseq2/pak1.pak
-  3960221075 45055 baseq2/pak2.pak
-  1724385511 31329 baseq2/players/crakhor/a_grenades.md2
-  2922136215 96757 baseq2/players/crakhor/w_bfg.md2
-  2276419541 83685 baseq2/players/crakhor/w_blaster.md2
-  2620860616 151453 baseq2/players/crakhor/w_chainfist.md2
-  1195231741 63409 baseq2/players/crakhor/w_chaingun.md2
-  3639434582 155189 baseq2/players/crakhor/w_disrupt.md2
-  952161879 107893 baseq2/players/crakhor/w_etfrifle.md2
-  1484086373 91541 baseq2/players/crakhor/w_glauncher.md2
-  3510470437 62717 baseq2/players/crakhor/w_grapple.md2
-  1951264649 71613 baseq2/players/crakhor/w_hyperblaster.md2
-  2959078375 65453 baseq2/players/crakhor/w_machinegun.md2
-  1036657934 127481 baseq2/players/crakhor/w_phalanx.md2
-  3073189979 101221 baseq2/players/crakhor/w_plasma.md2
-  3232171734 91565 baseq2/players/crakhor/w_plauncher.md2
-  469314277 92173 baseq2/players/crakhor/w_railgun.md2
-  1296713693 91881 baseq2/players/crakhor/w_ripper.md2
-  2160954138 97221 baseq2/players/crakhor/w_rlauncher.md2
-  3487383087 38912 baseq2/players/crakhor/w_shotgun.md2
-  863153064 85556 baseq2/players/crakhor/w_sshotgun.md2
-  3548426882 31329 baseq2/players/cyborg/a_grenades.md2
-  338391206 13916 baseq2/players/cyborg/bump1.wav
-  979775181 40296 baseq2/players/cyborg/death1.wav
-  2198982442 67190 baseq2/players/cyborg/death2.wav
-  2600617798 29898 baseq2/players/cyborg/death3.wav
-  182258907 48066 baseq2/players/cyborg/death4.wav
-  2328059538 56134 baseq2/players/cyborg/drown1.wav
-  2023468763 29490 baseq2/players/cyborg/fall1.wav
-  1787031612 21690 baseq2/players/cyborg/fall2.wav
-  1487434802 18382 baseq2/players/cyborg/gurp1.wav
-  2882891044 18376 baseq2/players/cyborg/gurp2.wav
-  2319806737 15258 baseq2/players/cyborg/jump1.wav
-  2589178268 52358 baseq2/players/cyborg/oni911.pcx
-  2268629682 1967 baseq2/players/cyborg/oni911_i.pcx
-  993880950 17292 baseq2/players/cyborg/pain100_1.wav
-  1658013456 20282 baseq2/players/cyborg/pain100_2.wav
-  1619807129 21252 baseq2/players/cyborg/pain25_1.wav
-  1287883571 22626 baseq2/players/cyborg/pain25_2.wav
-  1711674151 34010 baseq2/players/cyborg/pain50_1.wav
-  3990190390 23452 baseq2/players/cyborg/pain50_2.wav
-  1108738525 18784 baseq2/players/cyborg/pain75_1.wav
-  3733961141 22572 baseq2/players/cyborg/pain75_2.wav
-  3545801855 52102 baseq2/players/cyborg/ps9000.pcx
-  202386048 1975 baseq2/players/cyborg/ps9000_i.pcx
-  1480372243 280024 baseq2/players/cyborg/tris.md2
-  3990378997 51941 baseq2/players/cyborg/tyr574.pcx
-  2540597984 1929 baseq2/players/cyborg/tyr574_i.pcx
-  1901510842 96757 baseq2/players/cyborg/w_bfg.md2
-  1022252539 72520 baseq2/players/cyborg/w_blaster.md2
-  4231400491 151453 baseq2/players/cyborg/w_chainfist.md2
-  3385657807 63409 baseq2/players/cyborg/w_chaingun.md2
-  365462637 155189 baseq2/players/cyborg/w_disrupt.md2
-  2063730147 107893 baseq2/players/cyborg/w_etfrifle.md2
-  847147794 81120 baseq2/players/cyborg/w_glauncher.md2
-  2824458181 62717 baseq2/players/cyborg/w_grapple.md2
-  110826893 71613 baseq2/players/cyborg/w_hyperblaster.md2
-  1064029441 65453 baseq2/players/cyborg/w_machinegun.md2
-  4205170336 127481 baseq2/players/cyborg/w_phalanx.md2
-  4285977282 101221 baseq2/players/cyborg/w_plasma.md2
-  454040408 91565 baseq2/players/cyborg/w_plauncher.md2
-  4283946197 92173 baseq2/players/cyborg/w_railgun.md2
-  2909860075 91881 baseq2/players/cyborg/w_ripper.md2
-  872528095 97221 baseq2/players/cyborg/w_rlauncher.md2
-  1181845134 38912 baseq2/players/cyborg/w_shotgun.md2
-  4204290782 85556 baseq2/players/cyborg/w_sshotgun.md2
-  1945646688 38912 baseq2/players/cyborg/weapon.md2
-  728084765 9089 baseq2/players/cyborg/weapon.pcx
-  728084765 9089 baseq2/players/cyborg/weapon.pcx.pcx
-  4097107045 31329 baseq2/players/female/a_grenades.md2
-  3134303727 50156 baseq2/players/female/athena.pcx
-  1180013457 1921 baseq2/players/female/athena_i.pcx
-  3581330204 50897 baseq2/players/female/brianna.pcx
-  3321964250 1968 baseq2/players/female/brianna_i.pcx
-  838654900 50813 baseq2/players/female/cobalt.pcx
-  3735668899 1940 baseq2/players/female/cobalt_i.pcx
-  513059037 34330 baseq2/players/female/death1.wav
-  558528402 42764 baseq2/players/female/death2.wav
-  1692963585 48128 baseq2/players/female/death3.wav
-  3383910067 52896 baseq2/players/female/death4.wav
-  98341352 66440 baseq2/players/female/drown.wav
-  3307420683 52745 baseq2/players/female/ensign.pcx
-  600897704 1971 baseq2/players/female/ensign_i.pcx
-  250724216 9121 baseq2/players/female/fall1.wav
-  3683945532 17176 baseq2/players/female/fall2.wav
-  4083576819 23348 baseq2/players/female/gurp1.wav
-  1944956222 17062 baseq2/players/female/gurp2.wav
-  2117721070 51062 baseq2/players/female/jezebel.pcx
-  1991510169 1950 baseq2/players/female/jezebel_i.pcx
-  1576578249 14602 baseq2/players/female/jump1.wav
-  3179539225 61037 baseq2/players/female/jungle.pcx
-  3733830442 2118 baseq2/players/female/jungle_i.pcx
-  3254018750 54147 baseq2/players/female/lotus.pcx
-  100760306 2021 baseq2/players/female/lotus_i.pcx
-  882369737 30024 baseq2/players/female/pain100_1.wav
-  2210714951 32854 baseq2/players/female/pain100_2.wav
-  1021747756 21452 baseq2/players/female/pain25_1.wav
-  281448503 29306 baseq2/players/female/pain25_2.wav
-  1498225071 26216 baseq2/players/female/pain50_1.wav
-  2186901027 16274 baseq2/players/female/pain50_2.wav
-  1110236346 29568 baseq2/players/female/pain75_1.wav
-  375764566 20754 baseq2/players/female/pain75_2.wav
-  1799534513 54074 baseq2/players/female/stiletto.pcx
-  2548222781 2040 baseq2/players/female/stiletto_i.pcx
-  1594810430 275632 baseq2/players/female/tris.md2
-  1214491642 50891 baseq2/players/female/venus.pcx
-  1454151863 1963 baseq2/players/female/venus_i.pcx
-  2858573087 51033 baseq2/players/female/voodoo.pcx
-  1953873332 1970 baseq2/players/female/voodoo_i.pcx
-  3769582704 96757 baseq2/players/female/w_bfg.md2
-  170939432 72520 baseq2/players/female/w_blaster.md2
-  3637072087 151453 baseq2/players/female/w_chainfist.md2
-  522191310 63409 baseq2/players/female/w_chaingun.md2
-  3653414931 155189 baseq2/players/female/w_disrupt.md2
-  3551490337 107893 baseq2/players/female/w_etfrifle.md2
-  1868244535 81120 baseq2/players/female/w_glauncher.md2
-  17926891 62717 baseq2/players/female/w_grapple.md2
-  3645529841 71613 baseq2/players/female/w_hyperblaster.md2
-  166297705 65453 baseq2/players/female/w_machinegun.md2
-  2962324146 127481 baseq2/players/female/w_phalanx.md2
-  629803069 101221 baseq2/players/female/w_plasma.md2
-  3720624629 91565 baseq2/players/female/w_plauncher.md2
-  3920960701 92173 baseq2/players/female/w_railgun.md2
-  3198857230 91881 baseq2/players/female/w_ripper.md2
-  4190211201 97221 baseq2/players/female/w_rlauncher.md2
-  2108840822 38912 baseq2/players/female/w_shotgun.md2
-  3957744999 85556 baseq2/players/female/w_sshotgun.md2
-  2108840822 38912 baseq2/players/female/weapon.md2
-  728084765 9089 baseq2/players/female/weapon.pcx
-  3548426882 31329 baseq2/players/male/a_grenades.md2
-  2013767461 13916 baseq2/players/male/bump1.wav
-  3830184817 56554 baseq2/players/male/cipher.pcx
-  1950254561 1940 baseq2/players/male/cipher_i.pcx
-  4061656541 56727 baseq2/players/male/claymore.pcx
-  2619186362 1939 baseq2/players/male/claymore_i.pcx
-  2389100680 45892 baseq2/players/male/death1.wav
-  2043966192 83464 baseq2/players/male/death2.wav
-  2597592057 29898 baseq2/players/male/death3.wav
-  2320563289 48066 baseq2/players/male/death4.wav
-  930164147 56134 baseq2/players/male/drown1.wav
-  381782337 25760 baseq2/players/male/fall1.wav
-  3554697700 12412 baseq2/players/male/fall2.wav
-  2054555085 56636 baseq2/players/male/flak.pcx
-  340454555 1971 baseq2/players/male/flak_i.pcx
-  2099261319 58004 baseq2/players/male/grunt.pcx
-  2769576186 1967 baseq2/players/male/grunt_i.pcx
-  4072802296 18382 baseq2/players/male/gurp1.wav
-  3517677808 18376 baseq2/players/male/gurp2.wav
-  3759622521 59655 baseq2/players/male/howitzer.pcx
-  1486941710 1979 baseq2/players/male/howitzer_i.pcx
-  2548845438 15288 baseq2/players/male/jump1.wav
-  3691086752 58158 baseq2/players/male/major.pcx
-  3627943161 1971 baseq2/players/male/major_i.pcx
-  1286048555 57938 baseq2/players/male/nightops.pcx
-  1883454797 1976 baseq2/players/male/nightops_i.pcx
-  154404508 17292 baseq2/players/male/pain100_1.wav
-  71559266 20282 baseq2/players/male/pain100_2.wav
-  2195332369 21252 baseq2/players/male/pain25_1.wav
-  3085293526 22626 baseq2/players/male/pain25_2.wav
-  1072946272 34012 baseq2/players/male/pain50_1.wav
-  2859813508 23452 baseq2/players/male/pain50_2.wav
-  3809342052 18786 baseq2/players/male/pain75_1.wav
-  1207021065 22572 baseq2/players/male/pain75_2.wav
-  2838994388 58619 baseq2/players/male/pointman.pcx
-  3372875926 1956 baseq2/players/male/pointman_i.pcx
-  3380346146 56607 baseq2/players/male/psycho.pcx
-  569616031 1937 baseq2/players/male/psycho_i.pcx
-  2844985717 56685 baseq2/players/male/rampage.pcx
-  1205138028 1936 baseq2/players/male/rampage_i.pcx
-  2411139996 56767 baseq2/players/male/razor.pcx
-  3371853933 1924 baseq2/players/male/razor_i.pcx
-  1254914118 56672 baseq2/players/male/recon.pcx
-  803815987 1936 baseq2/players/male/recon_i.pcx
-  4258499525 57298 baseq2/players/male/scout.pcx
-  742319315 1959 baseq2/players/male/scout_i.pcx
-  693671303 61661 baseq2/players/male/sniper.pcx
-  4244686438 2109 baseq2/players/male/sniper_i.pcx
-  3115607268 278592 baseq2/players/male/tris.md2
-  3526875351 56334 baseq2/players/male/viper.pcx
-  2457826140 1925 baseq2/players/male/viper_i.pcx
-  1901510842 96757 baseq2/players/male/w_bfg.md2
-  1022252539 72520 baseq2/players/male/w_blaster.md2
-  4231400491 151453 baseq2/players/male/w_chainfist.md2
-  3385657807 63409 baseq2/players/male/w_chaingun.md2
-  365462637 155189 baseq2/players/male/w_disrupt.md2
-  2063730147 107893 baseq2/players/male/w_etfrifle.md2
-  847147794 81120 baseq2/players/male/w_glauncher.md2
-  2824458181 62717 baseq2/players/male/w_grapple.md2
-  110826893 71613 baseq2/players/male/w_hyperblaster.md2
-  1064029441 65453 baseq2/players/male/w_machinegun.md2
-  4205170336 127481 baseq2/players/male/w_phalanx.md2
-  4285977282 101221 baseq2/players/male/w_plasma.md2
-  454040408 91565 baseq2/players/male/w_plauncher.md2
-  4283946197 92173 baseq2/players/male/w_railgun.md2
-  2909860075 91881 baseq2/players/male/w_ripper.md2
-  872528095 97221 baseq2/players/male/w_rlauncher.md2
-  1181845134 38912 baseq2/players/male/w_shotgun.md2
-  4204290782 85556 baseq2/players/male/w_sshotgun.md2
-  1181845134 38912 baseq2/players/male/weapon.md2
-  728084765 9089 baseq2/players/male/weapon.pcx
-  1070068305 19311290 baseq2/video/end.cin
-  2385841766 6038210 baseq2/video/eou1_.cin
-  1020897235 6586381 baseq2/video/eou2_.cin
-  152880344 6708418 baseq2/video/eou3_.cin
-  2242225989 5464002 baseq2/video/eou4_.cin
-  330683442 6848133 baseq2/video/eou5_.cin
-  2196956516 7099332 baseq2/video/eou6_.cin
-  1286996367 7766671 baseq2/video/eou7_.cin
-  3025306190 11875656 baseq2/video/eou8_.cin
-  1925571030 3159828 baseq2/video/idlog.cin
-  2735477385 82836235 baseq2/video/ntro.cin
   #3172430066 17391 ctf/CTF_readme.txt - redundant with ctf/readme.txt
   1474989637 12101005 ctf/pak0.pak
   3490379174 17363 ctf/readme.txt
@@ -1500,127 +1822,7 @@ cksums: |
   1717569275 22647 commexp.txt
   2703370497 13350 license.txt_3.20
   3683639649 5579 licinfo.txt
-  2885980878 794 quake2_manual/bottom.html
-  3452009646 21929 quake2_manual/credits.html_steam
   3002114669 10085 quake2_manual/customer_support.html_steam
-  3430176163 4045 quake2_manual/enemy_barracuda_shark.html
-  2928827935 3923 quake2_manual/enemy_berserker.html
-  1691117906 3883 quake2_manual/enemy_brains.html
-  3273044109 4136 quake2_manual/enemy_enforcer.html
-  1396130021 3920 quake2_manual/enemy_flyer.html
-  1864076668 3998 quake2_manual/enemy_gladiator.html
-  226119167 4080 quake2_manual/enemy_gunner.html
-  3458232294 3952 quake2_manual/enemy_icarus.html
-  195740674 3927 quake2_manual/enemy_iron_maiden.html
-  1710715117 3898 quake2_manual/enemy_light_guard.html
-  3005469543 3870 quake2_manual/enemy_machinegun_guard.html
-  417464174 3971 quake2_manual/enemy_medic.html
-  3898420041 3902 quake2_manual/enemy_mutant.html
-  1130157490 3895 quake2_manual/enemy_parasite.html
-  1496927492 3819 quake2_manual/enemy_shotgun_guard.html
-  4182822139 3994 quake2_manual/enemy_tank.html
-  357925014 3837 quake2_manual/enemy_tank_commander.html
-  1884538809 4302 quake2_manual/enemy_technician.html
-  3791384400 3488 quake2_manual/images/adrenaline.gif
-  1452673567 5328 quake2_manual/images/amor_body.gif
-  2934565944 4298 quake2_manual/images/armor_combat.gif
-  948264520 4344 quake2_manual/images/armor_jacket.gif
-  2103742785 2878 quake2_manual/images/armor_shard.gif
-  62804506 3723 quake2_manual/images/bandoleer.gif
-  2418883510 9655 quake2_manual/images/barracuda_shark.gif
-  3166145000 9767 quake2_manual/images/berserker.gif
-  3070517917 3659 quake2_manual/images/bfg.gif
-  193412196 3596 quake2_manual/images/blaster.gif
-  1737835931 3386 quake2_manual/images/bluekey.gif
-  3699790756 346 quake2_manual/images/bottom_id_link_transparent.gif
-  3178667909 6663 quake2_manual/images/brains.gif
-  3628794599 3582 quake2_manual/images/breather.gif
-  3464246841 2804 quake2_manual/images/bullets.gif
-  4143965741 3378 quake2_manual/images/buttons.jpg
-  2017309410 2535 quake2_manual/images/cells.gif
-  2524847063 4876 quake2_manual/images/chaingun.gif
-  457055149 6330 quake2_manual/images/commandant_james.gif
-  678422609 68321 quake2_manual/images/credits_main.gif
-  2809311840 3333 quake2_manual/images/door.jpg
-  3500160578 4893 quake2_manual/images/elevator_base_exit_sign.jpg
-  2942009644 16500 quake2_manual/images/enemy_groupshot.gif
-  1248425518 3859 quake2_manual/images/energy_armour.gif
-  1994767833 9238 quake2_manual/images/enforcer.gif
-  652334636 4105 quake2_manual/images/envirosuit.gif
-  1521660122 3139 quake2_manual/images/explosive_barrels.jpg
-  2808857175 3814 quake2_manual/images/first_aid.gif
-  3916715560 6325 quake2_manual/images/flyer.gif
-  2575531603 10065 quake2_manual/images/gladiator.gif
-  3549607025 3606 quake2_manual/images/grenade_launcher.gif
-  4085768415 2223 quake2_manual/images/grenades.gif
-  528743727 8683 quake2_manual/images/gunner.gif
-  4282317523 3608 quake2_manual/images/hand_grenade.gif
-  2759870386 3641 quake2_manual/images/heavy_pack.gif
-  3931929168 5057 quake2_manual/images/hyper_blaster.gif
-  3528740931 13469 quake2_manual/images/icarus.gif
-  1106271840 2783 quake2_manual/images/invulnerability.gif
-  1141207815 7120 quake2_manual/images/iron_maiden.gif
-  2478119820 3332 quake2_manual/images/lava.jpg
-  3489527258 4018 quake2_manual/images/lever.jpg
-  3888224634 6692 quake2_manual/images/light_guard.gif
-  810251054 3834 quake2_manual/images/machinegun.gif
-  2049062005 7974 quake2_manual/images/machinegun_guard.gif
-  3614412005 7009 quake2_manual/images/main_cover_image.gif
-  2082640217 7441 quake2_manual/images/manual_back.jpg
-  2187226963 4403 quake2_manual/images/manual_bottom.jpg
-  1523617825 5034 quake2_manual/images/manual_cover_image.jpg
-  1999456731 9589 quake2_manual/images/manual_top.jpg
-  3779212218 10072 quake2_manual/images/medic.gif
-  4098016095 3680 quake2_manual/images/medkit.gif
-  305555070 2684 quake2_manual/images/mega_health.gif
-  3113847465 4014 quake2_manual/images/menu.gif
-  3179294190 12920 quake2_manual/images/multiplayer_main.jpg
-  3699910564 4823 quake2_manual/images/multiplayer_menu1.gif
-  1889267934 7778 quake2_manual/images/multiplayer_screen1.gif
-  2394120333 12543 quake2_manual/images/mutant.gif
-  3279372085 5397 quake2_manual/images/no_data.jpg
-  2892290746 9251 quake2_manual/images/options_menu.gif
-  1994073044 11493 quake2_manual/images/parasite.gif
-  200285077 7112 quake2_manual/images/player_properties_screen1.gif
-  650816235 2356 quake2_manual/images/quad_damage.gif
-  1644185378 3434 quake2_manual/images/rail_gun.gif
-  2022510637 5055 quake2_manual/images/rocket_launcher.gif
-  4077898281 2733 quake2_manual/images/rockets.gif
-  773344277 3265 quake2_manual/images/secret_door.jpg
-  1929572704 2203 quake2_manual/images/shells.gif
-  173263012 4921 quake2_manual/images/shotgun.gif
-  344828072 7239 quake2_manual/images/shotgun_guard.gif
-  3222611639 2583 quake2_manual/images/silencer.gif
-  995674657 2251 quake2_manual/images/slime.jpg
-  4209313998 7488 quake2_manual/images/start_network_server_screen1.gif_3.20
-  2303584412 3027 quake2_manual/images/stimpack.gif
-  3488021964 16067 quake2_manual/images/story_main.jpg
-  1385610756 5755 quake2_manual/images/strogg_environ_1.jpg
-  3223236317 6321 quake2_manual/images/strogg_environ_2.jpg
-  3715673593 4419 quake2_manual/images/strogg_environ_3.jpg
-  145595463 3725 quake2_manual/images/supershotgun.gif
-  136657968 8901 quake2_manual/images/tank.gif
-  100940255 11698 quake2_manual/images/tank_commander.gif
-  3154673695 11350 quake2_manual/images/technician.gif
-  1127825524 648 quake2_manual/images/top_nav_imagemap.gif
-  4239220813 4080 quake2_manual/images/unit_exit_door.jpg
-  2091190947 1897 quake2_manual/images/water.jpg
-  1892473987 3801 quake2_manual/intel_brief.html
-  2156858786 4214 quake2_manual/intel_brief2.html
-  1080443333 4088 quake2_manual/intel_brief3.html
-  193079061 3018 quake2_manual/intel_brief4.html
-  1837425376 4605 quake2_manual/intel_brief5.html
-  565074323 4349 quake2_manual/intel_brief6.html
-  138893136 7692 quake2_manual/intel_brief7.html
-  169357677 14239 quake2_manual/intel_brief8.html
-  2521420864 3724 quake2_manual/intel_brief_enemy.html
-  1037819561 695 quake2_manual/main.html
-  2604308855 10121 quake2_manual/multiplayer.html_3.20
-  4059658519 8349 quake2_manual/page_index.html
-  2495263545 29911 quake2_manual/setup_controls_screenmenus.html
-  1484426841 8480 quake2_manual/story.html
-  2769467748 13089 quake2_manual/technical_information.html_steam
-  1664165556 1626 quake2_manual/top_nav.html
   1411804084 79360 readme.doc
   1172450215 61630 readme.txt_3.20
   1674469592 13336 license.txt_steam
@@ -1678,15 +1880,12 @@ cksums: |
   810492254 14874670 xatrix/video/xu4.cin
 
   # semi-official addons
-  87321840 5836832 baseq2/base64.bsp
-  3764986335 4851184 baseq2/city64.bsp
   33054229 7325053 dm_64.tar.gz
   4131251154 337884 match1.tar.gz
   3675579124 789684 baseq2/pak3.pak
   3082650925 2176180 ctf/q2ctf4a.bsp
   3815719920 994080 q2ctf4a.tar.gz
   1083749212 787 readme-dm64.txt
-  3695062650 6635508 baseq2/sewer64.bsp
 
   # extra images found in 3.05
   _ 3148      quake2_manual/images/cloaker.gif
@@ -1695,19 +1894,536 @@ cksums: |
   _ 2795      quake2_manual/images/scope.gif
   _ 2795      quake2_manual/images/sights.gif
 
+size_and_md5: |
+  183997730 1ec55a724dc3109fd50dde71ab581d70 baseq2/pak0.pak_1dd586a
+  19311290  36fdaddd1c1b56ba10472466e4486ff8 baseq2/video/end.cin
+  6038210   cbab517cddc03ec676d7153eeb13417b baseq2/video/eou1_.cin
+  6586381   37201aa9c798982e7739dfdbad61c004 baseq2/video/eou2_.cin
+  6708418   f2b7fac58d5aa24bcf76ec942253dfcc baseq2/video/eou3_.cin
+  5464002   b0e360a5c4a55789e00d3f2223e23dc4 baseq2/video/eou4_.cin
+  6848133   76651dc4f2d92ed278ee8e2cac7c7600 baseq2/video/eou5_.cin
+  7099332   0b14fff288b8d260f812e830ce6bff7c baseq2/video/eou6_.cin
+  7766671   a342a79fadfe9efa2ce549842168ec7c baseq2/video/eou7_.cin
+  11875656  24a5178220322b3a4fb42f6b0757b821 baseq2/video/eou8_.cin
+  3159828   0747670d94cc873f8ce522d7652143a1 baseq2/video/idlog.cin
+  82836235  72846e547415856028006aaa4089c9c9 baseq2/video/ntro.cin
+  # Files from patch to install in game directory
+  1063      b2c3358d7be61f05651c88d9ef97d6aa baseq2/maps.lst
+  12992754  42663ea709b7cd3eb9b634b36cfecb1a baseq2/pak1.pak
+  45055     c8217cc5557b672a87fc210c2347d98d baseq2/pak2.pak
+  31329     14d330fe2a9af05a6254b2c2bda9f384 baseq2/players/crakhor/a_grenades.md2
+  13794     bbff538dbc1089351d1d8b7a224d0f89 baseq2/players/crakhor/crakhorb.pcx
+  2377      866b5df3b02ba5de3727c796744f5c1b baseq2/players/crakhor/crakhorb_i.pcx
+  16938     27ab59471a78a37ecfee2a31150160c9 baseq2/players/crakhor/crakhorg.pcx
+  2377      866b5df3b02ba5de3727c796744f5c1b baseq2/players/crakhor/crakhorg_i.pcx
+  11566     8290123b61771e91e6ffb05c41d75a8f baseq2/players/crakhor/crakhorr.pcx
+  2377      866b5df3b02ba5de3727c796744f5c1b baseq2/players/crakhor/crakhorr_i.pcx
+  31104     6ce16f46f9bb536ecdac3daba33db58b baseq2/players/crakhor/ctf_b.pcx
+  1846      110b0ee2407d4aade51abcac90557e40 baseq2/players/crakhor/ctf_b_i.pcx
+  30759     ea7ccea110d6b329abaf77d414112494 baseq2/players/crakhor/ctf_r.pcx
+  1887      9a84ded4a8bd044205703da160ad0cda baseq2/players/crakhor/ctf_r_i.pcx
+  15460     36d3854e004cd20830d9edd66545d205 baseq2/players/crakhor/r2aqua.pcx
+  1723      bcfe07dcf899743a2ae19ae309391693 baseq2/players/crakhor/r2aqua_i.pcx
+  16442     dee45fe127f9bc97cf87477cd4e79559 baseq2/players/crakhor/r2blue.pcx
+  1723      1e9c08d48393fb4828abfd3f65c57e00 baseq2/players/crakhor/r2blue_i.pcx
+  19651     369d85367759aae49e298f1ea8a7cafa baseq2/players/crakhor/r2dgre.pcx
+  1856      747dac95a78892bdfbf224551862a92c baseq2/players/crakhor/r2dgre_i.pcx
+  18695     d48600760b8f97cedec16174122cccd2 baseq2/players/crakhor/r2lgre.pcx
+  1856      8a8d9484ded2d629c8cabbc08858e8b8 baseq2/players/crakhor/r2lgre_i.pcx
+  16696     0421686e584c2f855b58ab80cd8d5b73 baseq2/players/crakhor/r2oran.pcx
+  1820      c7b4dd5ded42ca4af58d65bd32da654a baseq2/players/crakhor/r2oran_i.pcx
+  16529     0c372e4ee8ad79ad651eb4fd89fec14c baseq2/players/crakhor/r2red.pcx
+  1723      8067395003563f828ddcf17a26754643 baseq2/players/crakhor/r2red_i.pcx
+  17385     fe288c9e92598e2143da1e9611c5a1e4 baseq2/players/crakhor/r2yell.pcx
+  1814      940c837a2b0de84ab2413917dd9eaebd baseq2/players/crakhor/r2yell_i.pcx
+  26211     300bab6d48009c536d06ca43f5f6fe09 baseq2/players/crakhor/sumabeth.pcx
+  1750      a19467e173fa8be531c96579872fded7 baseq2/players/crakhor/sumabeth_i.pcx
+  30442     d70c87747a7eb2a4107baad1cd2b7288 baseq2/players/crakhor/sumacw.pcx
+  3182      e124b2eb5b5c4af65c5c3fbd4ac9b543 baseq2/players/crakhor/sumacw.txt
+  1859      b565b1beb173504ebf3d417e07ee13f4 baseq2/players/crakhor/sumacw_i.pcx
+  32845     23c13da3dcbe52ab7bf99ac75c3971b0 baseq2/players/crakhor/sumaouch.pcx
+  1979      0f830796f15874f5969ed004881f1630 baseq2/players/crakhor/sumaouch_i.pcx
+  30326     2f4e7a2defba92d95a7d3632d80f1932 baseq2/players/crakhor/sumasyrinx.pcx
+  1785      aba29c67d5dd0de6607715239db1fcde baseq2/players/crakhor/sumasyrinx_i.pcx
+  271200    f5bfc7e7ae2a9348cf0e0e429093e966 baseq2/players/crakhor/tris.md2
+  96757     30c768e9efd766b977cf09efe169d469 baseq2/players/crakhor/w_bfg.md2
+  83685     6083f459e8a4436d9c53aa9e56b8aea2 baseq2/players/crakhor/w_blaster.md2
+  151453    f374193db83cce95d2994ee4ddbb8aa5 baseq2/players/crakhor/w_chainfist.md2
+  63409     0dadb2a3db589b16108519f72ca9276c baseq2/players/crakhor/w_chaingun.md2
+  155189    760332f4732df928850ee11b0339eba8 baseq2/players/crakhor/w_disrupt.md2
+  107893    beb85d38cd38200f932ab1bd49da2ad7 baseq2/players/crakhor/w_etfrifle.md2
+  91541     ebf78a4bac3751312b567e4338543025 baseq2/players/crakhor/w_glauncher.md2
+  62717     0ff87ffebae73170d8c1ce80b21d4bf4 baseq2/players/crakhor/w_grapple.md2
+  71613     21c61d7b08ba7439d4c04acdf4188147 baseq2/players/crakhor/w_hyperblaster.md2
+  65453     78bfd0e09d09a1c8eb68ede057c94a0a baseq2/players/crakhor/w_machinegun.md2
+  127481    77c6ee11392be666a06de53ec626ebdb baseq2/players/crakhor/w_phalanx.md2
+  101221    ab3779c7b64d5407c3003b6877f805ad baseq2/players/crakhor/w_plasma.md2
+  91565     84a112fe3e53111bde93daba9af2ce12 baseq2/players/crakhor/w_plauncher.md2
+  92173     8eb180849cb82aa7f2c11f48939c496c baseq2/players/crakhor/w_railgun.md2
+  91881     45686bcf0256db68e31d625f81e08a01 baseq2/players/crakhor/w_ripper.md2
+  97221     61bbf8e9a1fed45ef6c9eda9b2831f4c baseq2/players/crakhor/w_rlauncher.md2
+  38912     ef962916f8286a8ac41a789691e7301d baseq2/players/crakhor/w_shotgun.md2
+  85556     3b33ccd6743b80073f4876f10f4f777a baseq2/players/crakhor/w_sshotgun.md2
+  38912     ef962916f8286a8ac41a789691e7301d baseq2/players/crakhor/weapon.md2
+  9089      0758d59ebfcb5931bda2b0985faf98a9 baseq2/players/crakhor/weapon.pcx
+  31329     8b26b6a4863b7e2c30b4dcd7867a6d10 baseq2/players/cyborg/a_grenades.md2
+  37448     92e7309a372c94365d11ce0e6af8c92a baseq2/players/cyborg/a_grenades1.md2
+  204228    872811ca2d1f22e2a111675e03e78041 baseq2/players/cyborg/a_rturret.md2
+  223384    1c6fd5f68d2680d670ec8054ff1a2db4 baseq2/players/cyborg/a_vortex.md2
+  13916     b2f11bdabf2b09eb66075a18315dc1cf baseq2/players/cyborg/bump1.wav
+  40296     3cbdf3527ca1bd4ae8ede5e2d7d08dd1 baseq2/players/cyborg/death1.wav
+  67190     5d45198b91768b300eb812cd13c9e8ea baseq2/players/cyborg/death2.wav
+  29898     f9aee3bd80a468a333fdd0c886dfd779 baseq2/players/cyborg/death3.wav
+  48066     093fd87e237c7631b19f0d93e01100c4 baseq2/players/cyborg/death4.wav
+  52438     1861c07e779ee4f4879fdfbdbd2c1c52 baseq2/players/cyborg/disguise.pcx
+  1989      346d62644537e11ce028b95db6022049 baseq2/players/cyborg/disguise_i.pcx
+  56134     d456b69f89e817dc418fc2f2b31be087 baseq2/players/cyborg/drown1.wav
+  29490     e0d17ec11d2d9a2f6c58c6d287674e81 baseq2/players/cyborg/fall1.wav
+  21690     772fba8054bfe34d0d14be259e57db93 baseq2/players/cyborg/fall2.wav
+  18382     9014a110ccd4a86bc7fa9e32e96f4a96 baseq2/players/cyborg/gurp1.wav
+  18376     b5699e778086ffcf4fb3d8d7e6d8c552 baseq2/players/cyborg/gurp2.wav
+  15258     3abaf0d5951560f08271542d9dbc4dc2 baseq2/players/cyborg/jump1.wav
+  52358     e9424f28e3b36c8de2f2899755a845cf baseq2/players/cyborg/oni911.pcx
+  1967      7b6efcd5a23445644ef6fb77e16a05b2 baseq2/players/cyborg/oni911_i.pcx
+  17292     61bf93c3191a21b52c6a6881a20d8553 baseq2/players/cyborg/pain100_1.wav
+  20282     4468325ba9f977c507289f1d581dfc3b baseq2/players/cyborg/pain100_2.wav
+  21252     a4e56dfd05b20782c81f3eda87320865 baseq2/players/cyborg/pain25_1.wav
+  22626     3807c207936e9b547fea16be7f54386f baseq2/players/cyborg/pain25_2.wav
+  34010     9af5ee44b6ff7b213b17b2a0688027d2 baseq2/players/cyborg/pain50_1.wav
+  23452     461a32c9acf2b7199c0013a9b1235258 baseq2/players/cyborg/pain50_2.wav
+  18784     657511d0b3c5fae1bbb9a26096c1b0c5 baseq2/players/cyborg/pain75_1.wav
+  22572     a3b382dab260dfa68c46b62d6aa49771 baseq2/players/cyborg/pain75_2.wav
+  52102     de6d6afe1209f5e404267063b12b3bb6 baseq2/players/cyborg/ps9000.pcx
+  1975      001f9d9a6b34c702f7561fa931a20fd3 baseq2/players/cyborg/ps9000_i.pcx
+  30222     6cd18861d506c762257358be4b8b2aba baseq2/players/cyborg/r2aqua.pcx
+  1788      497d25814fd822e1d9581c13621813c7 baseq2/players/cyborg/r2aqua_i.pcx
+  31968     0a20321a713858cb4a012e2aa2ca48f4 baseq2/players/cyborg/r2blue.pcx
+  1788      1ca44963418247c46f08c29bd788dfc9 baseq2/players/cyborg/r2blue_i.pcx
+  35732     ef69ac36bd88fef77382be4f3d309320 baseq2/players/cyborg/r2dgre.pcx
+  1845      5bd997a7ebf8ed36d7f7ad4afe19ff7b baseq2/players/cyborg/r2dgre_i.pcx
+  34699     733dd073ad2033f4c7da56b2b5284dc2 baseq2/players/cyborg/r2lgre.pcx
+  1845      8200d78ebcca5c3cb3de0aa28a40ead9 baseq2/players/cyborg/r2lgre_i.pcx
+  31936     08250b3d530f91e5ab6ed39619451693 baseq2/players/cyborg/r2oran.pcx
+  1845      7ffa127f489a47b247f71cd3e68a0c22 baseq2/players/cyborg/r2oran_i.pcx
+  29264     4197235bceb128b41835d4bc865f2e98 baseq2/players/cyborg/r2red.pcx
+  1788      1481bd74b041c603c175261ac12a1053 baseq2/players/cyborg/r2red_i.pcx
+  31528     066410b18bda136b8686066b688d0aa9 baseq2/players/cyborg/r2yell.pcx
+  1810      846ee4b4a3d28bf83062c0f305f64881 baseq2/players/cyborg/r2yell_i.pcx
+  280024    43298b5020639a55db7d1e15d006495e baseq2/players/cyborg/tris.md2
+  51941     992145603059a94688f36200e131d5eb baseq2/players/cyborg/tyr574.pcx
+  1929      bb75a77e28a1ab81d518680bd7ebc86c baseq2/players/cyborg/tyr574_i.pcx
+  290164    9aa9c7ff9d9b098b431a0bf52cc4dec0 baseq2/players/cyborg/w_airfist.md2
+  128928    98df832331828bc7650899bdd6b89996 baseq2/players/cyborg/w_ak42.md2
+  96757     234b1c49e4cc1dc86e9e46e4ab105479 baseq2/players/cyborg/w_bfg.md2
+  72520     68a19777b8a25f1657e321d78b949347 baseq2/players/cyborg/w_blaster.md2
+  126464    196e37a2e25407aa6a4aeb478c5383f3 baseq2/players/cyborg/w_bow.md2
+  243060    8f4d135cff4247ca84d586f8e654e94b baseq2/players/cyborg/w_buzzsaw.md2
+  151453    48890c7dae7053a8e9089abcaaa95cf9 baseq2/players/cyborg/w_chainfist.md2
+  63409     fb92d87e2255d767e692dd4d5dda490b baseq2/players/cyborg/w_chaingun.md2
+  144864    3db6d690a2834f6c1a68d06348151c11 baseq2/players/cyborg/w_chainsaw.md2
+  155189    a471b38d21d586da0a1064bfdeca9d04 baseq2/players/cyborg/w_disrupt.md2
+  107893    48747d1bc3d81e698cf1fa6ee05607ea baseq2/players/cyborg/w_etfrifle.md2
+  81120     3c22c7dcfc75ce786bd7e5d5c61defb4 baseq2/players/cyborg/w_glauncher.md2
+  91540     1f4ed58c380eead0274873f327edcfa9 baseq2/players/cyborg/w_glauncher1.md2
+  62717     6081b82197fa8105e8380445a6422904 baseq2/players/cyborg/w_grapple.md2
+  71613     eaa308d4893857646dba28cba84b35f9 baseq2/players/cyborg/w_hyperblaster.md2
+  65453     f0db74b83301a5b6d5414abc115f268b baseq2/players/cyborg/w_machinegun.md2
+  127481    f99b7aa61adbfc59038a414e81b9af53 baseq2/players/cyborg/w_phalanx.md2
+  101221    b70e91170b6923f83e089a865b26591e baseq2/players/cyborg/w_plasma.md2
+  91565     80caf9d707d2e681e0c54dda1f4fabf9 baseq2/players/cyborg/w_plauncher.md2
+  92173     b5a6a8e1235e0129ba6474983aef9989 baseq2/players/cyborg/w_railgun.md2
+  91881     b00cd4cce1cb9fdd9a6eeb1837f79778 baseq2/players/cyborg/w_ripper.md2
+  97221     9656c56907b8284bbbf30fe60443b211 baseq2/players/cyborg/w_rlauncher.md2
+  38912     e9a5e9b2df9bf2fa5e53794f929419af baseq2/players/cyborg/w_shotgun.md2
+  85556     46967dbfad628470a7bc344b20086d53 baseq2/players/cyborg/w_sshotgun.md2
+  58588     363ab9d4cb9c9f4f2f1056221e9bed90 baseq2/players/cyborg/w_sword.md2
+  217628    53e2e1f781a7cf0cef5b1f484491b982 baseq2/players/cyborg/w_xlauncher.md2
+  38912     7a1e0e90a91338c5fa3f3733e6f0691c baseq2/players/cyborg/weapon.md2
+  9089      0758d59ebfcb5931bda2b0985faf98a9 baseq2/players/cyborg/weapon.pcx
+  9089      0758d59ebfcb5931bda2b0985faf98a9 baseq2/players/cyborg/weapon.pcx.pcx
+  31329     3caf27fabfc11a5ee6c4b1c29ce12a9d baseq2/players/female/a_grenades.md2
+  37448     012e44b2599eec24b07b9f0112368a19 baseq2/players/female/a_grenades1.md2
+  204228    af3409c80a00733f4720a642f3122b1d baseq2/players/female/a_rturret.md2
+  223384    f25b88ac7bcbe68676730f135473b568 baseq2/players/female/a_vortex.md2
+  50156     55a4e452af3d421ab4f6b3497706cae2 baseq2/players/female/athena.pcx
+  1921      7245940c17b3afd002e65afbe79d218c baseq2/players/female/athena_i.pcx
+  50897     b3396956b5e178638110dc95b855b288 baseq2/players/female/brianna.pcx
+  1968      cdd8629513c6c45b2540cb519e985a49 baseq2/players/female/brianna_i.pcx
+  50813     5a8ab463b5d9bc80fad22d3391b0b09e baseq2/players/female/cobalt.pcx
+  1940      5e1788c5cdd379217f2f8be625073da4 baseq2/players/female/cobalt_i.pcx
+  34330     2ead5a8b2b647d6cfc8b461c60da9096 baseq2/players/female/death1.wav
+  42764     7e5bc1e979422e551786343e49d587a8 baseq2/players/female/death2.wav
+  48128     3759e298e7744bff928ea992dd8e4a67 baseq2/players/female/death3.wav
+  52896     2ae0c9acf42e52ef829995950f2069a9 baseq2/players/female/death4.wav
+  50932     b5f240c68238e3d8ff2b7ca6374e8972 baseq2/players/female/disguise.pcx
+  1950      d285f07d4e10398e95ffa239cc0254d2 baseq2/players/female/disguise_i.pcx
+  66440     f26db3a913b6d88a93a89968eb4eede4 baseq2/players/female/drown.wav
+  52745     9c03b38b6e3fcd5548664310fd8650fe baseq2/players/female/ensign.pcx
+  1971      1f7aa7364f1990f3fdec49510e828a1d baseq2/players/female/ensign_i.pcx
+  9121      dfda3c3e0cf1ffe4c856724af363fad7 baseq2/players/female/fall1.wav
+  17176     4b50b8ec2644d0e69311b49ef56d8a5b baseq2/players/female/fall2.wav
+  23348     7bd437017d09f2a7b9555036809a7697 baseq2/players/female/gurp1.wav
+  17062     c3c2d82563576e7fc7096a2fe2786f06 baseq2/players/female/gurp2.wav
+  51062     95bcfe6a4e4dc5ab8bfdbaea76807742 baseq2/players/female/jezebel.pcx
+  1950      b7f862734bbb31404322d4932908e86b baseq2/players/female/jezebel_i.pcx
+  14602     3628485bc515bd527bbe7e318a713a68 baseq2/players/female/jump1.wav
+  61037     d6214e7b3546ea04838ab3e3806fce88 baseq2/players/female/jungle.pcx
+  2118      cd2d2f629d051b00e2d4b2b0ef4ae31a baseq2/players/female/jungle_i.pcx
+  54147     e86de1939672ab98cd2161db163b0537 baseq2/players/female/lotus.pcx
+  2021      03c18db9988e87c576308d28a93a9458 baseq2/players/female/lotus_i.pcx
+  30024     241eb12ed56a20eb1c53d8bd2d7e7a71 baseq2/players/female/pain100_1.wav
+  32854     538694819553ff50bce8888b5056c928 baseq2/players/female/pain100_2.wav
+  21452     bf03ccdad210756600a94b2dc0e80aa9 baseq2/players/female/pain25_1.wav
+  29306     67596d7a46283dd12378a3fa17081de1 baseq2/players/female/pain25_2.wav
+  26216     440e887fd6f8cd37de9c894ec399b3fc baseq2/players/female/pain50_1.wav
+  16274     b78b8303d5a972eeab44f80b951b722b baseq2/players/female/pain50_2.wav
+  29568     a182517b0f96aa72cfae9bafd77a459f baseq2/players/female/pain75_1.wav
+  20754     3ac3a69c0d8a43ad53f910bde1401432 baseq2/players/female/pain75_2.wav
+  22869     1444eaa068b198d8464bff9cc3bb3755 baseq2/players/female/r2aqua.pcx
+  1703      d489717289b9063f116c1bcc32732158 baseq2/players/female/r2aqua_i.pcx
+  26749     42b9524ebbb11ed38c2b5fb3b4a15f72 baseq2/players/female/r2blue.pcx
+  1736      48f85d61f7df19912dcf1c8a3cb4cba8 baseq2/players/female/r2blue_i.pcx
+  29697     a0c409286a6d83c05b02e6614b05a619 baseq2/players/female/r2dgre.pcx
+  1764      249a4ff0e54bb697db9bda9e5de33125 baseq2/players/female/r2dgre_i.pcx
+  29002     c59fa015ad884c80e31cf94f9462d9d1 baseq2/players/female/r2lgre.pcx
+  1832      4cf6066086af1b92eaa2704e2aacb5cf baseq2/players/female/r2lgre_i.pcx
+  23354     e2b0bded1f178a59561bd128cd488fab baseq2/players/female/r2oran.pcx
+  1870      c8791f10b996e2488ba6dd1f20bbcbed baseq2/players/female/r2oran_i.pcx
+  28114     952d87c7f2ed5882691cbc0301b2eeee baseq2/players/female/r2red.pcx
+  1850      e3f5ccd9bc0c64e72542f9aecfb7fa10 baseq2/players/female/r2red_i.pcx
+  27525     45e2524cc7f102901bfa3abf4d2c8281 baseq2/players/female/r2yell.pcx
+  1801      ad2b15df30a0168488618282dd81ff85 baseq2/players/female/r2yell_i.pcx
+  50768     fa3b94af6af809301283666915a82d4c baseq2/players/female/rogue_b.pcx
+  1936      e61f7831603fae2c2426287a3e4dd9cb baseq2/players/female/rogue_b_i.pcx
+  50768     f3d1a5b6ceeb6eaeb2344b3241331bd1 baseq2/players/female/rogue_r.pcx
+  1946      bfb9fc4b82174370e46b25dc8fc9b61a baseq2/players/female/rogue_r_i.pcx
+  54074     af481347560c60880570696910c19bd7 baseq2/players/female/stiletto.pcx
+  2040      483e6c39fadcaf3df78e1741a83f5fe6 baseq2/players/female/stiletto_i.pcx
+  275632    24148fcc60c08e8325f8eee82f23c88d baseq2/players/female/tris.md2
+  50891     b5e2d772f3c469f96cdb7be947e5522e baseq2/players/female/venus.pcx
+  1963      d12db2c18be1206bd53eb64d486ce655 baseq2/players/female/venus_i.pcx
+  51033     c2ca5827551749ea7959d3326be7154d baseq2/players/female/voodoo.pcx
+  1970      7d199b6f0f36655fbea4338ee85a7c89 baseq2/players/female/voodoo_i.pcx
+  290164    723317f2dfab14f23d4c655c04269504 baseq2/players/female/w_airfist.md2
+  128928    70f5ded3051d6e59e31a2efd50983b68 baseq2/players/female/w_ak42.md2
+  96757     ace25cc0e1481a671f1cfff27ad73485 baseq2/players/female/w_bfg.md2
+  72520     7d38c30abb113cdfcea142b8aacf25c4 baseq2/players/female/w_blaster.md2
+  126464    b9502ecfca107f549324c53adde1697d baseq2/players/female/w_bow.md2
+  252196    12740ebbd77e7cb501889213c6786b7a baseq2/players/female/w_buzzsaw.md2
+  151453    d58bf8f9701422f21cf5133b6266b6b0 baseq2/players/female/w_chainfist.md2
+  63409     86103877e85726cb3af3a808f8088137 baseq2/players/female/w_chaingun.md2
+  144864    d171f83dae00854cda14efd31c359816 baseq2/players/female/w_chainsaw.md2
+  155189    b37f73c57cbbf24e86f50465b845cdf2 baseq2/players/female/w_disrupt.md2
+  107893    c1e2e35d6a5d43e879c7a715497871a6 baseq2/players/female/w_etfrifle.md2
+  81120     eabe7f32985a66f32a710dc65d9ac630 baseq2/players/female/w_glauncher.md2
+  91540     f221fd0044ec436ec900ba7e1f12ae19 baseq2/players/female/w_glauncher1.md2
+  62717     47e6bbf70c729754c66de7c3de7f9874 baseq2/players/female/w_grapple.md2
+  71613     30eb0a369e941c767044c74d0ced815e baseq2/players/female/w_hyperblaster.md2
+  65453     be6523a01f07a909f2297d4701d0c6cb baseq2/players/female/w_machinegun.md2
+  127481    b71a2557746052945fa90f7e13a3e2b2 baseq2/players/female/w_phalanx.md2
+  101221    814ece94ac2d5bc3a002d6ae3daa5860 baseq2/players/female/w_plasma.md2
+  91565     f4e0e9f8c6cc9d5b4fd7947360a3fe1d baseq2/players/female/w_plauncher.md2
+  92173     ec79193998da672c5f17aec8a781ceac baseq2/players/female/w_railgun.md2
+  91881     bfcac9f7d7e9a69e45355faae9364589 baseq2/players/female/w_ripper.md2
+  97221     877ab9be5145d030cd5f682e61695007 baseq2/players/female/w_rlauncher.md2
+  38912     3b9968c41e9fef1c8ce34305cc38d6f1 baseq2/players/female/w_shotgun.md2
+  85556     fbc4b51287c4b006b5a4d52a422db229 baseq2/players/female/w_sshotgun.md2
+  58588     a009fd202426f44b7fcea01589921c5a baseq2/players/female/w_sword.md2
+  217628    0c5d1e51e8937b5f1bcbd69894d51bd1 baseq2/players/female/w_xlauncher.md2
+  38912     3b9968c41e9fef1c8ce34305cc38d6f1 baseq2/players/female/weapon.md2
+  9089      0758d59ebfcb5931bda2b0985faf98a9 baseq2/players/female/weapon.pcx
+  28575     a356b4792e2d0eab0f0f456268002453 baseq2/players/guard/ctf_b.pcx
+  1676      37226404895a2c0dcddab9c56a7e29ba baseq2/players/guard/ctf_b_i.pcx
+  28486     a94211ea80c11076487d37a79ef28e25 baseq2/players/guard/ctf_r.pcx
+  1715      efdc4f3b05e28af5bee06729e11d4cdc baseq2/players/guard/ctf_r_i.pcx
+  1365      6c07bdc55aee38a5bd44296c1575cd92 baseq2/players/guard/sumaguard.txt
+  31329     8b26b6a4863b7e2c30b4dcd7867a6d10 baseq2/players/male/a_grenades.md2
+  37448     3c356bfbd0b32ad98713bc598c7e5e20 baseq2/players/male/a_grenades1.md2
+  204228    872811ca2d1f22e2a111675e03e78041 baseq2/players/male/a_rturret.md2
+  223384    1c6fd5f68d2680d670ec8054ff1a2db4 baseq2/players/male/a_vortex.md2
+  13916     998f5a453be87f1301823ad4f2e3c818 baseq2/players/male/bump1.wav
+  56554     8b27adf487714b21c900af1474cecf9e baseq2/players/male/cipher.pcx
+  1940      d0c3e03850569d223a9705cd5aba608e baseq2/players/male/cipher_i.pcx
+  56727     f192147481f31b16524d0bd4f9a7db5d baseq2/players/male/claymore.pcx
+  1939      e80f697c4ee4680b5c667b83b4a1b48c baseq2/players/male/claymore_i.pcx
+  52438     1861c07e779ee4f4879fdfbdbd2c1c52 baseq2/players/male/cyborg/disguise.pcx
+  1989      346d62644537e11ce028b95db6022049 baseq2/players/male/cyborg/disguise_i.pcx
+  45892     c1a37ac609cd280dde4eb40c6554cc4c baseq2/players/male/death1.wav
+  83464     e3596b73010d485fd4eb30930024c215 baseq2/players/male/death2.wav
+  29898     bbed4c80620d0889c265b6a3d9ba1201 baseq2/players/male/death3.wav
+  48066     6f064673e3889697a2fe282c98348690 baseq2/players/male/death4.wav
+  56519     b23f817d634af038a962d8f9d0a95f4e baseq2/players/male/disguise.pcx
+  1986      986096c2d98ba630c0dd3260c8981571 baseq2/players/male/disguise_i.pcx
+  56134     b0ed6afa04b2e57f59727ff6eb85c7d1 baseq2/players/male/drown1.wav
+  25760     7a2943c4824d0365a57b2bf3e0e81128 baseq2/players/male/fall1.wav
+  12412     28c39bb738169587d5e971181ccf16b1 baseq2/players/male/fall2.wav
+  50932     b5f240c68238e3d8ff2b7ca6374e8972 baseq2/players/male/female/disguise.pcx
+  1950      d285f07d4e10398e95ffa239cc0254d2 baseq2/players/male/female/disguise_i.pcx
+  56636     a25da9175683d7516631da1961c5f3ef baseq2/players/male/flak.pcx
+  1971      ed16d176fb1a3b6a1ea2fed2f863bd2a baseq2/players/male/flak_i.pcx
+  58004     34eaa46104de21bd7c4f8e8f48fac32e baseq2/players/male/grunt.pcx
+  1967      0a57ea0f39fb763e0338e736bd59bc22 baseq2/players/male/grunt_i.pcx
+  18382     53644df5f8c2d1ace04f3fa555c79ae0 baseq2/players/male/gurp1.wav
+  18376     7829cd11b6dc9bad808c293293ec907c baseq2/players/male/gurp2.wav
+  59655     f4a15fdb5036f2020c2a23462a4a8ae2 baseq2/players/male/howitzer.pcx
+  1979      3c9211a549d9bc126c168ea49a94741d baseq2/players/male/howitzer_i.pcx
+  15288     ee794f58cbced0643e2143d08d14d3a6 baseq2/players/male/jump1.wav
+  58158     ba536b3b53506f47bbecd8699f78e755 baseq2/players/male/major.pcx
+  1971      905dee6998c121babc9e62751e52703b baseq2/players/male/major_i.pcx
+  56519     b23f817d634af038a962d8f9d0a95f4e baseq2/players/male/male/disguise.pcx
+  1986      986096c2d98ba630c0dd3260c8981571 baseq2/players/male/male/disguise_i.pcx
+  57938     0ebaa3df3adb2f12a983a94ea82c15f0 baseq2/players/male/nightops.pcx
+  1976      83c2754d59312ace64b5cf3ad11f9a71 baseq2/players/male/nightops_i.pcx
+  17292     d492e20850243948166e91471d0b7839 baseq2/players/male/pain100_1.wav
+  20282     99438e6a46feabab8bec63411bba1dd6 baseq2/players/male/pain100_2.wav
+  21252     6a24f43061f8db2961b4adde76bf016d baseq2/players/male/pain25_1.wav
+  22626     825558a1abb9d5138952f6ec210efcef baseq2/players/male/pain25_2.wav
+  34012     1096f5798b8ac7b8a4dede4d189ee2c1 baseq2/players/male/pain50_1.wav
+  23452     49ac063de6c8f8d791428333b76d7363 baseq2/players/male/pain50_2.wav
+  18786     35d962b7fd722802bd445c7489b460d9 baseq2/players/male/pain75_1.wav
+  22572     a11b2ba8ddde40cd9b44c7e2211ab627 baseq2/players/male/pain75_2.wav
+  58619     10d6b2cf74286f7396fc1ac73840437c baseq2/players/male/pointman.pcx
+  1956      494824048e031d490e691ca9fefa8eb2 baseq2/players/male/pointman_i.pcx
+  56607     f600b69cb8a5d1b09bf2af436a7049a9 baseq2/players/male/psycho.pcx
+  1937      817a284dbbc63870c99e35f1c874f04c baseq2/players/male/psycho_i.pcx
+  34065     0b1ade4083c03991240ef1bb15f2ab78 baseq2/players/male/r2aqua.pcx
+  1731      0eeadc1846fb353c90298ebd15ba6e48 baseq2/players/male/r2aqua_i.pcx
+  28618     2243b1e91b28e8e15db01b6c8425298d baseq2/players/male/r2blue.pcx
+  1736      3c6ae5aae4440574c9f445905233250d baseq2/players/male/r2blue_i.pcx
+  36880     79eb486e04e1104cd05c9c48195541ac baseq2/players/male/r2dgre.pcx
+  1839      2c30cc78ea5141344dc7296b460dfe1c baseq2/players/male/r2dgre_i.pcx
+  37239     4d4906f5664856895b99fd8e57d51c94 baseq2/players/male/r2lgre.pcx
+  1829      36f0137428ecfd5d39ad5aeef5feefec baseq2/players/male/r2lgre_i.pcx
+  33431     d12bc73dfda9064a5deedd9bc5da9d8e baseq2/players/male/r2oran.pcx
+  1823      34148b572d49a585b2e2a5417c5f7f03 baseq2/players/male/r2oran_i.pcx
+  27889     cb0025fab50be2a678cc23d626b9ff5b baseq2/players/male/r2red.pcx
+  1739      b50993f27eddfd0eb9214db8f28664e5 baseq2/players/male/r2red_i.pcx
+  33414     410496b696909d40f3ef57feb2f64f96 baseq2/players/male/r2yell.pcx
+  1823      9cd95ba504536824a0baad1b7b78a7b9 baseq2/players/male/r2yell_i.pcx
+  56685     1950086c138cd3c9d38660dc60fc9a6e baseq2/players/male/rampage.pcx
+  1936      0c1e9f726b37ef6d633343c39ad0d441 baseq2/players/male/rampage_i.pcx
+  56767     f2a90e8e9c7756c7bc8a5c9ab22c7f86 baseq2/players/male/razor.pcx
+  1924      68d88b858c7bfdd847217bf9e4ce694b baseq2/players/male/razor_i.pcx
+  56672     2e6dc986cf21d5eee1e2ffc5ba81f241 baseq2/players/male/recon.pcx
+  1936      0351e8eee92b10c286f1516384b150cb baseq2/players/male/recon_i.pcx
+  56441     2d523b243c2137c9a0fbf56c8b4e93b2 baseq2/players/male/rogue_b.pcx
+  2043      a9493d515dbd2d4f04fd955ae5173ce8 baseq2/players/male/rogue_b_i.pcx
+  56441     cac300109c2b374041576e99ae24c333 baseq2/players/male/rogue_r.pcx
+  2043      34375d7fd7e3a21e3600c8d3bb32eca8 baseq2/players/male/rogue_r_i.pcx
+  57298     05d6229df32e289c8e2e95d9aa627d51 baseq2/players/male/scout.pcx
+  1959      328b0bd036961fcf20d352eeef9d1059 baseq2/players/male/scout_i.pcx
+  61661     5c9c6ecd148ddfd14a5191d92d42bd0c baseq2/players/male/sniper.pcx
+  2109      e0e503251db60e1c867f1675d287a2fc baseq2/players/male/sniper_i.pcx
+  278592    930dd7b37f9a40dc0ed02aaa86039710 baseq2/players/male/tris.md2
+  56334     bfbba21b67600e4e7a02ce4cb92dd0b9 baseq2/players/male/viper.pcx
+  1925      05cc280cee4ce1cb61bed6fa87eae5f1 baseq2/players/male/viper_i.pcx
+  290164    9aa9c7ff9d9b098b431a0bf52cc4dec0 baseq2/players/male/w_airfist.md2
+  128928    cae7bdde79423fd8014fde07fb438c42 baseq2/players/male/w_ak42.md2
+  96757     234b1c49e4cc1dc86e9e46e4ab105479 baseq2/players/male/w_bfg.md2
+  72520     68a19777b8a25f1657e321d78b949347 baseq2/players/male/w_blaster.md2
+  126464    196e37a2e25407aa6a4aeb478c5383f3 baseq2/players/male/w_bow.md2
+  243060    8f4d135cff4247ca84d586f8e654e94b baseq2/players/male/w_buzzsaw.md2
+  151453    48890c7dae7053a8e9089abcaaa95cf9 baseq2/players/male/w_chainfist.md2
+  63409     fb92d87e2255d767e692dd4d5dda490b baseq2/players/male/w_chaingun.md2
+  144864    3db6d690a2834f6c1a68d06348151c11 baseq2/players/male/w_chainsaw.md2
+  155189    a471b38d21d586da0a1064bfdeca9d04 baseq2/players/male/w_disrupt.md2
+  107893    48747d1bc3d81e698cf1fa6ee05607ea baseq2/players/male/w_etfrifle.md2
+  81120     3c22c7dcfc75ce786bd7e5d5c61defb4 baseq2/players/male/w_glauncher.md2
+  91540     1f4ed58c380eead0274873f327edcfa9 baseq2/players/male/w_glauncher1.md2
+  62717     6081b82197fa8105e8380445a6422904 baseq2/players/male/w_grapple.md2
+  71613     eaa308d4893857646dba28cba84b35f9 baseq2/players/male/w_hyperblaster.md2
+  65453     f0db74b83301a5b6d5414abc115f268b baseq2/players/male/w_machinegun.md2
+  127481    f99b7aa61adbfc59038a414e81b9af53 baseq2/players/male/w_phalanx.md2
+  101221    b70e91170b6923f83e089a865b26591e baseq2/players/male/w_plasma.md2
+  91565     80caf9d707d2e681e0c54dda1f4fabf9 baseq2/players/male/w_plauncher.md2
+  92173     b5a6a8e1235e0129ba6474983aef9989 baseq2/players/male/w_railgun.md2
+  91881     b00cd4cce1cb9fdd9a6eeb1837f79778 baseq2/players/male/w_ripper.md2
+  97221     9656c56907b8284bbbf30fe60443b211 baseq2/players/male/w_rlauncher.md2
+  38912     e9a5e9b2df9bf2fa5e53794f929419af baseq2/players/male/w_shotgun.md2
+  85556     46967dbfad628470a7bc344b20086d53 baseq2/players/male/w_sshotgun.md2
+  58588     363ab9d4cb9c9f4f2f1056221e9bed90 baseq2/players/male/w_sword.md2
+  217628    53e2e1f781a7cf0cef5b1f484491b982 baseq2/players/male/w_xlauncher.md2
+  38912     e9a5e9b2df9bf2fa5e53794f929419af baseq2/players/male/weapon.md2
+  9089      0758d59ebfcb5931bda2b0985faf98a9 baseq2/players/male/weapon.pcx
+  43590     f2bff76f2ab25bdb6fce513729869935 baseq2/players/zumlin/ctf_b.pcx
+  1513      c0845993afd0003e8b77468047f6d5a9 baseq2/players/zumlin/ctf_b_i.pcx
+  46616     fa6856856a1a0181c554ee96f6789288 baseq2/players/zumlin/ctf_r.pcx
+  1518      c158972d2fe72654fb50e71ee95023b3 baseq2/players/zumlin/ctf_r_i.pcx
+  319328    cb9d54ab8acc075d08d1abbcfdb10a73 baseq2/players/zumlin/tris.md2
+  38528     6f5338ebd97d3a8de02f5303fbf1b74e baseq2/players/zumlin/weapon.md2
+  4778      036e3c01af13924be16d2b2295668f53 baseq2/players/zumlin/weapon.pcx
+  44912     0404e94798d16163f9316b80276e6ce2 baseq2/players/zumlin/zafron.pcx
+  1808      7e5ee6bd98b171ecc6d658eba3986572 baseq2/players/zumlin/zafron_i.pcx
+  46051     8dbb48a6c9aab4d55c56e5c96e37bdde baseq2/players/zumlin/zaneel.pcx
+  1851      f2a2ca0f1c489ccfbc7832d313e31b43 baseq2/players/zumlin/zaneel_i.pcx
+  42646     eade25c3881dcbcd9a0142b0ac6af27d baseq2/players/zumlin/zuman.pcx
+  1593      0e0de0ab19a8b54c7069e5a78a52eddd baseq2/players/zumlin/zuman_i.pcx
+  45188     25d58876044850405e0793a7e727e56d baseq2/players/zumlin/zumlin.pcx
+  5651      d492995d92d392891f65c4ee28b577d2 baseq2/players/zumlin/zumlin.txt
+  1797      c9bafa36afc307db09353e32004c3132 baseq2/players/zumlin/zumlin_i.pcx
+  29317     54a5c9941687f7591527688da2cea04f baseq2/players/zumlin/zumlinbase.pcx
+  10138     4d7f277994b9ccb51ab770c85d00045c baseq2/players/zumlin/zumlinstory.txt
+  5836832   77baabfd18e5cf4a242df7931129247c baseq2/maps/base64.bsp
+  4851184   959e8450b5c7817c9ac7a9edcaf0dca5 baseq2/maps/city64.bsp
+  6635508   19a07f706332c48a83164d13d77b6729 baseq2/maps/sewer64.bsp
+
+  # maps only found in the GOG.com archive
+  15866     594f95ee1e97caffa8bd9517b4c64e61 baseq2/maps/trdm01-06.html
+  876680    81b23b4d2205379c5f777099dd6ceca1 baseq2/maps/trdm01a.bsp
+  16050     095cdd8c432e5f891d162c635801cf10 baseq2/maps/trdm01a.rtz
+  807216    adaab5b098d7f73fc33aadcc9115ba71 baseq2/maps/trdm02a.bsp
+  3648      16cfb9a99f8a8dc1a6d4a3fd5fd95038 baseq2/maps/trdm02a.html
+  18802     45d99a4e7280792f71e0796a75e9dabf baseq2/maps/trdm02a.rtz
+  1210524   eb5d3d277f01b934d484b6bf6d36cf5d baseq2/maps/trdm03a.bsp
+  22580     033f6b94caafe42f310a544034cdde4a baseq2/maps/trdm03a.rtz
+  736464    77b429c5a30a67ab8c38ddd01f268bbf baseq2/maps/trdm04a.bsp
+  22429     2afc9a24a1b5544f5092b01aceb37bb3 baseq2/maps/trdm04a.rtz
+  394372    928fc0f85db34142e906847cc45de52d baseq2/maps/trdm05a.bsp
+  7585      aacd4ac036c01bd7731f2acac01b3763 baseq2/maps/trdm05a.rtz
+  962932    d25b4d8ae5ffbb6c4262e30313d3bd5d baseq2/maps/trdm06.bsp
+  13074     6cf7b1fe45704d351b5f6cd33037c175 baseq2/maps/trdm06.rtz
+  363014    def2615ec9ca14f066ac754727b257f4 baseq2/maps/ztnmap1.bsp
+  1767      2d4ea254c5d0c155dd76a818bff21d17 baseq2/maps/ztnmap1.txt
+  579346    d440f39c577c48da316985b1c506be0e baseq2/maps/ztnmap2.bsp
+  1765      b340b3b329ea48764bf82d1d9f2a89b0 baseq2/maps/ztnmap2.txt
+  519360    83e265bf87b0f19a9e10bb0780659a6d baseq2/maps/ztnmap3.bsp
+  1593      062812fa0ab7155a01b5cf884452db9e baseq2/maps/ztnmap3.txt
+  482616    51997ec80112c7d17c4f4dff3a9b5264 baseq2/maps/ztnmap4.bsp
+  1522      322808f941aaedbd9bba607c55f18381 baseq2/maps/ztnmap4.txt
+  611732    dbf5a2d15801cf983315ee8bc2fce28e baseq2/maps/ztnmap5.bsp
+  1594      bf02f98c725f1ddfcaf7d04737f3808b baseq2/maps/ztnmap5.txt
+  633424    4fd7f78dda9e5fbf161d51fab98ac41d baseq2/maps/ztnmap6.bsp
+  1607      3f8813ae8bb1b3fc9820f2e4f25f287e baseq2/maps/ztnmap6.txt
+
+  794       b443713f8ad0b1c8825554f346850f9e quake2_manual/bottom.html
+  21929     9a28f86e8c5654b4381c9336e868c6f1 quake2_manual/credits.html_steam
+  4045      488755080b3e7c45cd3b03ecf4e2409c quake2_manual/enemy_barracuda_shark.html
+  3923      9454f9e5b2f74a79c0e2efcbf91ca950 quake2_manual/enemy_berserker.html
+  3883      c65aa12bd5f0c0bd7644274d78e31537 quake2_manual/enemy_brains.html
+  4136      c1c29d257524b45c4b8dc75a40e2b9a9 quake2_manual/enemy_enforcer.html
+  3920      82864bdf550162141890363f0a4dfe4b quake2_manual/enemy_flyer.html
+  3998      d228c03aa0f13048913883a26f25717c quake2_manual/enemy_gladiator.html
+  4080      801aafc6c11961445a3183d74a66aa6b quake2_manual/enemy_gunner.html
+  3952      c17c9e278b647a87a59f912c79bdc3b2 quake2_manual/enemy_icarus.html
+  3927      bc4c7345800243c7b53c62b78eb7d68f quake2_manual/enemy_iron_maiden.html
+  3898      1c45f8475c9118a6ac5aa5fb6688787c quake2_manual/enemy_light_guard.html
+  3870      a7ff8a179e1cfb46723c840e5644395c quake2_manual/enemy_machinegun_guard.html
+  3971      458f646a387a616ae2697758c67bfd54 quake2_manual/enemy_medic.html
+  3902      b9da61101f90fa77b3f869679f1dc067 quake2_manual/enemy_mutant.html
+  3895      908bc1b0fad3b2eda46c2b0e0c106b5b quake2_manual/enemy_parasite.html
+  3819      1917276059f6da285a3b91c55aa9d349 quake2_manual/enemy_shotgun_guard.html
+  3994      866caef591a5e4efe104f3b483ad90ac quake2_manual/enemy_tank.html
+  3837      b1bd9d55d14f4ad4e850d23790af3758 quake2_manual/enemy_tank_commander.html
+  4302      3edb50eac560537c7f5b901a5fe4243a quake2_manual/enemy_technician.html
+  3488      f131d96cdd72798f970c2a4ce0d2065f quake2_manual/images/adrenaline.gif
+  5328      c558e8dc151a6c23b8ab421083ed48a8 quake2_manual/images/amor_body.gif
+  4298      7575e8057fc282b08d0772b6603984de quake2_manual/images/armor_combat.gif
+  4344      9ae555dc632015dbad5be3b4450ceeda quake2_manual/images/armor_jacket.gif
+  2878      99debda0e35e96dda9d254824c425e3a quake2_manual/images/armor_shard.gif
+  3723      19b1fc6f32b2fe95981fe8e0a1ea61fd quake2_manual/images/bandoleer.gif
+  9655      da58ad0dfad2782305cad17d3e6eaf12 quake2_manual/images/barracuda_shark.gif
+  9767      68fc6e4c00844ba34b87f43de3c4fbac quake2_manual/images/berserker.gif
+  3659      6834f0b61f8d817d0dc79569845e3046 quake2_manual/images/bfg.gif
+  3596      5a6551fb3ec299f890d898594346db6f quake2_manual/images/blaster.gif
+  3386      23859933f199db9b2347e707638aac22 quake2_manual/images/bluekey.gif
+  346       ea8eb458d370e567066df689522d2b1a quake2_manual/images/bottom_id_link_transparent.gif
+  6663      e6643ac33290a735ca5d2894c1b906e9 quake2_manual/images/brains.gif
+  3582      c1d15da296ad651f16fc3f57560d1f5b quake2_manual/images/breather.gif
+  2804      1a8b9798ac6738c718b5cc904692d17e quake2_manual/images/bullets.gif
+  3378      21f07db8c561fe3a897e3731871957d3 quake2_manual/images/buttons.jpg
+  2535      c25bd13199f71501b7c4b363dcf37cfe quake2_manual/images/cells.gif
+  4876      97a0afa9d61a192d12500b331a0c8d76 quake2_manual/images/chaingun.gif
+  3148      d67f1ff8c52ef8994b57f7d7f00a4734 quake2_manual/images/cloaker.gif
+  6330      f08f699ed909f3a7331cd406e96841b2 quake2_manual/images/commandant_james.gif
+  68321     d1369409fd57537f7eb304eb200c5931 quake2_manual/images/credits_main.gif
+  3333      949210e74761ff8e933f1cec3291666e quake2_manual/images/door.jpg
+  4893      3ef44435fafc00bbeeb149caa88af413 quake2_manual/images/elevator_base_exit_sign.jpg
+  16500     adc7c35ae1e479c298d89656159c2ce2 quake2_manual/images/enemy_groupshot.gif
+  3859      6dd52e61c2a2a465bdac6ff87a4797f5 quake2_manual/images/energy_armour.gif
+  9238      a94e962385e7e2d811c09e95413a7ef5 quake2_manual/images/enforcer.gif
+  4105      63398d74292880bb1203cd45df6c1c5a quake2_manual/images/envirosuit.gif
+  3139      ee18f90587d73d1f645691f360f87798 quake2_manual/images/explosive_barrels.jpg
+  3814      61e78c0dfad3a69dc8adfa533b1adaa4 quake2_manual/images/first_aid.gif
+  6325      01295003292377b984d29ae3d5fae32f quake2_manual/images/flyer.gif
+  10065     42bd48f70c5ce445f82f12353856464f quake2_manual/images/gladiator.gif
+  2771      3dd7372f74c44d28e3e6cd4c46d33253 quake2_manual/images/goggles.gif
+  3606      53b065c8031059d3fa19a65b761854d9 quake2_manual/images/grenade_launcher.gif
+  2223      db2126ae4d004bbc62a13a0ca21e56e5 quake2_manual/images/grenades.gif
+  8683      eaa0f07ffd2714e10faf002625ee433a quake2_manual/images/gunner.gif
+  3608      a8e203bcc78f0332d0adcdc4ac837775 quake2_manual/images/hand_grenade.gif
+  3641      dc442f7cafc105894ee44cf766c9c41b quake2_manual/images/heavy_pack.gif
+  5057      59479569ef1d819cc0feef7a8f965646 quake2_manual/images/hyper_blaster.gif
+  13469     c9084fe8dabae2cf4c7989a21cd19e00 quake2_manual/images/icarus.gif
+  4118      6e1ae4235e32c624b2d7218f29c9634f quake2_manual/images/invisibility.gif
+  2783      acca7a57f799011ff568af2c504eaecd quake2_manual/images/invulnerability.gif
+  7120      71f68eb7bb6d45198736022d1ff1a733 quake2_manual/images/iron_maiden.gif
+  3332      16ae7c63436b121cebbbc7cb06f80507 quake2_manual/images/lava.jpg
+  4018      78c52ff576d89f37e8f74eda6c568fdd quake2_manual/images/lever.jpg
+  6692      b561aa6f574bcfb9eae772c77aef60b0 quake2_manual/images/light_guard.gif
+  3834      41edc7492a8c853a9406f417ee9b8f31 quake2_manual/images/machinegun.gif
+  7974      f4fee55919ff1d155faf15ecdc028392 quake2_manual/images/machinegun_guard.gif
+  7009      6d02566ebb37d18cefaf0fd57ee8860d quake2_manual/images/main_cover_image.gif
+  7441      02e47564117046653ef526f2b7717e90 quake2_manual/images/manual_back.jpg
+  4403      95bc839be47738333414794ce08e6cc0 quake2_manual/images/manual_bottom.jpg
+  5034      0c52056fd89a18e7ffc0c077eccac5c7 quake2_manual/images/manual_cover_image.jpg
+  9589      c4b3944d6df965fb59b1d79f71b60682 quake2_manual/images/manual_top.jpg
+  10072     460a57fc857179b148474d36a1baf199 quake2_manual/images/medic.gif
+  3680      f711c67053878f445e013fddaad9b638 quake2_manual/images/medkit.gif
+  2684      e2e02777a2baa8673927043a257cabb2 quake2_manual/images/mega_health.gif
+  4014      4a322e326a53e986093f9c01c877a7a4 quake2_manual/images/menu.gif
+  12920     7d7e39181822e05cedd6aa075eb162ed quake2_manual/images/multiplayer_main.jpg
+  4823      5d4835320037ba4d95da66c8d2549624 quake2_manual/images/multiplayer_menu1.gif
+  7778      4949949a172cb34ea2732b3127173e1f quake2_manual/images/multiplayer_screen1.gif
+  12543     ec5ec6f011301c102e6e4fe9cf8dcdb7 quake2_manual/images/mutant.gif
+  5397      275afc9861a9658c7c046342a2f7b23e quake2_manual/images/no_data.jpg
+  9251      a3ee36171d113a289fc5d2e75db54494 quake2_manual/images/options_menu.gif
+  11493     1e4fc2ecc3f02ffd74fab4cd47a014f6 quake2_manual/images/parasite.gif
+  7112      0637fab6270d7a717ca6cc3f95aebb34 quake2_manual/images/player_properties_screen1.gif
+  2356      5fd03a3df80e4172f9374ecbaa81bd53 quake2_manual/images/quad_damage.gif
+  3434      67819596d45e9c813b1ffac952171278 quake2_manual/images/rail_gun.gif
+  5055      a725bf6c45780713436766b2525a70fd quake2_manual/images/rocket_launcher.gif
+  2733      247ef5880017bcd4e798c0cdc6bfda04 quake2_manual/images/rockets.gif
+  2795      1a3af7e6b381b11cc4c80782ad156500 quake2_manual/images/scope.gif
+  3265      371e4e7533d3dba76cc4ec87173ed324 quake2_manual/images/secret_door.jpg
+  2203      5de3f7d97f7db24fa2f5ff3ad224c967 quake2_manual/images/shells.gif
+  4921      e9696363faaa96d5d6a409ccc8e8f015 quake2_manual/images/shotgun.gif
+  7239      6064616bad96220615e110dd664f111f quake2_manual/images/shotgun_guard.gif
+  2795      3b964fb8caf8f97debc0e1f2cbcc6374 quake2_manual/images/sights.gif
+  2583      164bc256f4f8617fd61b4c36d0429d7c quake2_manual/images/silencer.gif
+  2251      06dc2b46cae94542e3e4140615d85064 quake2_manual/images/slime.jpg
+  7488      f122ab7eeab31b4da0c2baffceb5cf11 quake2_manual/images/start_network_server_screen1.gif_3.20
+  3027      a189c129ad4c299009eac1178815ba3a quake2_manual/images/stimpack.gif
+  16067     2b8ae1a4e1d3123db66a76a08323e6b7 quake2_manual/images/story_main.jpg
+  5755      347cc3b0fe0aa4bd04f4ce40252af4cf quake2_manual/images/strogg_environ_1.jpg
+  6321      4eb8b956d495b0401a48769ac4f17c0e quake2_manual/images/strogg_environ_2.jpg
+  4419      6b297939ebb9eec6bc83c5fdc92023ea quake2_manual/images/strogg_environ_3.jpg
+  3725      73eebf0184fc436f9fe41508978581dd quake2_manual/images/supershotgun.gif
+  8901      00c5ebfbc38fb3b8f555f73079aec5a0 quake2_manual/images/tank.gif
+  11698     9ca52658cebfa202d42a150247305a70 quake2_manual/images/tank_commander.gif
+  11350     0d3f3d2a5cf21f32fcd70454996c0191 quake2_manual/images/technician.gif
+  648       f2c45a04108af0d6fc38ebba1e1b7d37 quake2_manual/images/top_nav_imagemap.gif
+  4080      56ec448b8292f79ce3793d1a8ec9cdd2 quake2_manual/images/unit_exit_door.jpg
+  1897      bee2b0739a9a9c3e29608b5bdf19b0fa quake2_manual/images/water.jpg
+  3801      0c4bdc0f1fd174f2c010cc31a3f3e236 quake2_manual/intel_brief.html
+  4214      d9f0b73e894cd8faebb4dceec6b81011 quake2_manual/intel_brief2.html
+  4088      95357eb18bf19e34cb872035cf0d1136 quake2_manual/intel_brief3.html
+  3018      76d5e436af64cdd403ea006331052003 quake2_manual/intel_brief4.html
+  4605      66e2ae70f279ff65a341f12607e2190c quake2_manual/intel_brief5.html
+  4349      5da237d3d8a09e1803015c00d2018fca quake2_manual/intel_brief6.html
+  7692      84fb833ed252a8a2416d4b9a34946fc6 quake2_manual/intel_brief7.html
+  14239     3d79ac1d55e1b721ad99dd3182277512 quake2_manual/intel_brief8.html
+  3724      bccace2d488b98b6ef28d3c635fce54c quake2_manual/intel_brief_enemy.html
+  695       6ab83a71a2ef04113ea7822c0d4107a3 quake2_manual/main.html
+  10121     40adc537d74bffd613fbbe364eb17b7d quake2_manual/multiplayer.html_3.20
+  8349      49f1cb26ce4bd2a2f8c65e50cea8a7cd quake2_manual/page_index.html
+  29911     e5164543d1d90c04b4ba430ed805b63e quake2_manual/setup_controls_screenmenus.html
+  8480      1b4895f3b8311e41df116ffd4194ab73 quake2_manual/story.html
+  13089     41cc66a0e64f34a07234089eee953158 quake2_manual/technical_information.html_steam
+  1626      4c08bae1efd913cda8c52cae2c05330f quake2_manual/top_nav.html
+
+  689920128 9bdc4b3a0fd426d1ccb2a55a46c4bf4a setup_quake2_quad_damage_2.0.0.3.exe
+
 md5sums: |
-  1ec55a724dc3109fd50dde71ab581d70  baseq2/pak0.pak_1dd586a
-  36fdaddd1c1b56ba10472466e4486ff8  baseq2/video/end.cin
-  cbab517cddc03ec676d7153eeb13417b  baseq2/video/eou1_.cin
-  37201aa9c798982e7739dfdbad61c004  baseq2/video/eou2_.cin
-  f2b7fac58d5aa24bcf76ec942253dfcc  baseq2/video/eou3_.cin
-  b0e360a5c4a55789e00d3f2223e23dc4  baseq2/video/eou4_.cin
-  76651dc4f2d92ed278ee8e2cac7c7600  baseq2/video/eou5_.cin
-  0b14fff288b8d260f812e830ce6bff7c  baseq2/video/eou6_.cin
-  a342a79fadfe9efa2ce549842168ec7c  baseq2/video/eou7_.cin
-  24a5178220322b3a4fb42f6b0757b821  baseq2/video/eou8_.cin
-  0747670d94cc873f8ce522d7652143a1  baseq2/video/idlog.cin
-  72846e547415856028006aaa4089c9c9  baseq2/video/ntro.cin
   # Files from patch to install in doc directory
   be525e9186c1a503a890cb0cf00dde0b  Commercial Exploitation.doc
   af91bb4178e223adaa258d50ce2541b0  Manual.html
@@ -1726,334 +2442,15 @@ md5sums: |
   1487b416e073bcd79f25423a9365091e  license.txt_steam
   7278eb0a731a984b119787c5dda1be13  readme.txt_steam
   # Files from patch to install in game directory
-  b2c3358d7be61f05651c88d9ef97d6aa  baseq2/maps.lst
-  42663ea709b7cd3eb9b634b36cfecb1a  baseq2/pak1.pak
-  c8217cc5557b672a87fc210c2347d98d  baseq2/pak2.pak
-  14d330fe2a9af05a6254b2c2bda9f384  baseq2/players/crakhor/a_grenades.md2
-  30c768e9efd766b977cf09efe169d469  baseq2/players/crakhor/w_bfg.md2
-  6083f459e8a4436d9c53aa9e56b8aea2  baseq2/players/crakhor/w_blaster.md2
-  f374193db83cce95d2994ee4ddbb8aa5  baseq2/players/crakhor/w_chainfist.md2
-  0dadb2a3db589b16108519f72ca9276c  baseq2/players/crakhor/w_chaingun.md2
-  760332f4732df928850ee11b0339eba8  baseq2/players/crakhor/w_disrupt.md2
-  beb85d38cd38200f932ab1bd49da2ad7  baseq2/players/crakhor/w_etfrifle.md2
-  ebf78a4bac3751312b567e4338543025  baseq2/players/crakhor/w_glauncher.md2
-  0ff87ffebae73170d8c1ce80b21d4bf4  baseq2/players/crakhor/w_grapple.md2
-  21c61d7b08ba7439d4c04acdf4188147  baseq2/players/crakhor/w_hyperblaster.md2
-  78bfd0e09d09a1c8eb68ede057c94a0a  baseq2/players/crakhor/w_machinegun.md2
-  77c6ee11392be666a06de53ec626ebdb  baseq2/players/crakhor/w_phalanx.md2
-  ab3779c7b64d5407c3003b6877f805ad  baseq2/players/crakhor/w_plasma.md2
-  84a112fe3e53111bde93daba9af2ce12  baseq2/players/crakhor/w_plauncher.md2
-  8eb180849cb82aa7f2c11f48939c496c  baseq2/players/crakhor/w_railgun.md2
-  45686bcf0256db68e31d625f81e08a01  baseq2/players/crakhor/w_ripper.md2
-  61bbf8e9a1fed45ef6c9eda9b2831f4c  baseq2/players/crakhor/w_rlauncher.md2
-  ef962916f8286a8ac41a789691e7301d  baseq2/players/crakhor/w_shotgun.md2
-  3b33ccd6743b80073f4876f10f4f777a  baseq2/players/crakhor/w_sshotgun.md2
-  8b26b6a4863b7e2c30b4dcd7867a6d10  baseq2/players/cyborg/a_grenades.md2
-  b2f11bdabf2b09eb66075a18315dc1cf  baseq2/players/cyborg/bump1.wav
-  3cbdf3527ca1bd4ae8ede5e2d7d08dd1  baseq2/players/cyborg/death1.wav
-  5d45198b91768b300eb812cd13c9e8ea  baseq2/players/cyborg/death2.wav
-  f9aee3bd80a468a333fdd0c886dfd779  baseq2/players/cyborg/death3.wav
-  093fd87e237c7631b19f0d93e01100c4  baseq2/players/cyborg/death4.wav
-  d456b69f89e817dc418fc2f2b31be087  baseq2/players/cyborg/drown1.wav
-  e0d17ec11d2d9a2f6c58c6d287674e81  baseq2/players/cyborg/fall1.wav
-  772fba8054bfe34d0d14be259e57db93  baseq2/players/cyborg/fall2.wav
-  9014a110ccd4a86bc7fa9e32e96f4a96  baseq2/players/cyborg/gurp1.wav
-  b5699e778086ffcf4fb3d8d7e6d8c552  baseq2/players/cyborg/gurp2.wav
-  3abaf0d5951560f08271542d9dbc4dc2  baseq2/players/cyborg/jump1.wav
-  e9424f28e3b36c8de2f2899755a845cf  baseq2/players/cyborg/oni911.pcx
-  7b6efcd5a23445644ef6fb77e16a05b2  baseq2/players/cyborg/oni911_i.pcx
-  61bf93c3191a21b52c6a6881a20d8553  baseq2/players/cyborg/pain100_1.wav
-  4468325ba9f977c507289f1d581dfc3b  baseq2/players/cyborg/pain100_2.wav
-  a4e56dfd05b20782c81f3eda87320865  baseq2/players/cyborg/pain25_1.wav
-  3807c207936e9b547fea16be7f54386f  baseq2/players/cyborg/pain25_2.wav
-  9af5ee44b6ff7b213b17b2a0688027d2  baseq2/players/cyborg/pain50_1.wav
-  461a32c9acf2b7199c0013a9b1235258  baseq2/players/cyborg/pain50_2.wav
-  657511d0b3c5fae1bbb9a26096c1b0c5  baseq2/players/cyborg/pain75_1.wav
-  a3b382dab260dfa68c46b62d6aa49771  baseq2/players/cyborg/pain75_2.wav
-  de6d6afe1209f5e404267063b12b3bb6  baseq2/players/cyborg/ps9000.pcx
-  001f9d9a6b34c702f7561fa931a20fd3  baseq2/players/cyborg/ps9000_i.pcx
-  43298b5020639a55db7d1e15d006495e  baseq2/players/cyborg/tris.md2
-  992145603059a94688f36200e131d5eb  baseq2/players/cyborg/tyr574.pcx
-  bb75a77e28a1ab81d518680bd7ebc86c  baseq2/players/cyborg/tyr574_i.pcx
-  234b1c49e4cc1dc86e9e46e4ab105479  baseq2/players/cyborg/w_bfg.md2
-  68a19777b8a25f1657e321d78b949347  baseq2/players/cyborg/w_blaster.md2
-  48890c7dae7053a8e9089abcaaa95cf9  baseq2/players/cyborg/w_chainfist.md2
-  fb92d87e2255d767e692dd4d5dda490b  baseq2/players/cyborg/w_chaingun.md2
-  a471b38d21d586da0a1064bfdeca9d04  baseq2/players/cyborg/w_disrupt.md2
-  48747d1bc3d81e698cf1fa6ee05607ea  baseq2/players/cyborg/w_etfrifle.md2
-  3c22c7dcfc75ce786bd7e5d5c61defb4  baseq2/players/cyborg/w_glauncher.md2
-  6081b82197fa8105e8380445a6422904  baseq2/players/cyborg/w_grapple.md2
-  eaa308d4893857646dba28cba84b35f9  baseq2/players/cyborg/w_hyperblaster.md2
-  f0db74b83301a5b6d5414abc115f268b  baseq2/players/cyborg/w_machinegun.md2
-  f99b7aa61adbfc59038a414e81b9af53  baseq2/players/cyborg/w_phalanx.md2
-  b70e91170b6923f83e089a865b26591e  baseq2/players/cyborg/w_plasma.md2
-  80caf9d707d2e681e0c54dda1f4fabf9  baseq2/players/cyborg/w_plauncher.md2
-  b5a6a8e1235e0129ba6474983aef9989  baseq2/players/cyborg/w_railgun.md2
-  b00cd4cce1cb9fdd9a6eeb1837f79778  baseq2/players/cyborg/w_ripper.md2
-  9656c56907b8284bbbf30fe60443b211  baseq2/players/cyborg/w_rlauncher.md2
-  e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/cyborg/w_shotgun.md2
-  46967dbfad628470a7bc344b20086d53  baseq2/players/cyborg/w_sshotgun.md2
-  7a1e0e90a91338c5fa3f3733e6f0691c  baseq2/players/cyborg/weapon.md2
-  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/cyborg/weapon.pcx
-  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/cyborg/weapon.pcx.pcx
-  3caf27fabfc11a5ee6c4b1c29ce12a9d  baseq2/players/female/a_grenades.md2
-  55a4e452af3d421ab4f6b3497706cae2  baseq2/players/female/athena.pcx
-  7245940c17b3afd002e65afbe79d218c  baseq2/players/female/athena_i.pcx
-  b3396956b5e178638110dc95b855b288  baseq2/players/female/brianna.pcx
-  cdd8629513c6c45b2540cb519e985a49  baseq2/players/female/brianna_i.pcx
-  5a8ab463b5d9bc80fad22d3391b0b09e  baseq2/players/female/cobalt.pcx
-  5e1788c5cdd379217f2f8be625073da4  baseq2/players/female/cobalt_i.pcx
-  2ead5a8b2b647d6cfc8b461c60da9096  baseq2/players/female/death1.wav
-  7e5bc1e979422e551786343e49d587a8  baseq2/players/female/death2.wav
-  3759e298e7744bff928ea992dd8e4a67  baseq2/players/female/death3.wav
-  2ae0c9acf42e52ef829995950f2069a9  baseq2/players/female/death4.wav
-  f26db3a913b6d88a93a89968eb4eede4  baseq2/players/female/drown.wav
-  9c03b38b6e3fcd5548664310fd8650fe  baseq2/players/female/ensign.pcx
-  1f7aa7364f1990f3fdec49510e828a1d  baseq2/players/female/ensign_i.pcx
-  dfda3c3e0cf1ffe4c856724af363fad7  baseq2/players/female/fall1.wav
-  4b50b8ec2644d0e69311b49ef56d8a5b  baseq2/players/female/fall2.wav
-  7bd437017d09f2a7b9555036809a7697  baseq2/players/female/gurp1.wav
-  c3c2d82563576e7fc7096a2fe2786f06  baseq2/players/female/gurp2.wav
-  95bcfe6a4e4dc5ab8bfdbaea76807742  baseq2/players/female/jezebel.pcx
-  b7f862734bbb31404322d4932908e86b  baseq2/players/female/jezebel_i.pcx
-  3628485bc515bd527bbe7e318a713a68  baseq2/players/female/jump1.wav
-  d6214e7b3546ea04838ab3e3806fce88  baseq2/players/female/jungle.pcx
-  cd2d2f629d051b00e2d4b2b0ef4ae31a  baseq2/players/female/jungle_i.pcx
-  e86de1939672ab98cd2161db163b0537  baseq2/players/female/lotus.pcx
-  03c18db9988e87c576308d28a93a9458  baseq2/players/female/lotus_i.pcx
-  241eb12ed56a20eb1c53d8bd2d7e7a71  baseq2/players/female/pain100_1.wav
-  538694819553ff50bce8888b5056c928  baseq2/players/female/pain100_2.wav
-  bf03ccdad210756600a94b2dc0e80aa9  baseq2/players/female/pain25_1.wav
-  67596d7a46283dd12378a3fa17081de1  baseq2/players/female/pain25_2.wav
-  440e887fd6f8cd37de9c894ec399b3fc  baseq2/players/female/pain50_1.wav
-  b78b8303d5a972eeab44f80b951b722b  baseq2/players/female/pain50_2.wav
-  a182517b0f96aa72cfae9bafd77a459f  baseq2/players/female/pain75_1.wav
-  3ac3a69c0d8a43ad53f910bde1401432  baseq2/players/female/pain75_2.wav
-  af481347560c60880570696910c19bd7  baseq2/players/female/stiletto.pcx
-  483e6c39fadcaf3df78e1741a83f5fe6  baseq2/players/female/stiletto_i.pcx
-  24148fcc60c08e8325f8eee82f23c88d  baseq2/players/female/tris.md2
-  b5e2d772f3c469f96cdb7be947e5522e  baseq2/players/female/venus.pcx
-  d12db2c18be1206bd53eb64d486ce655  baseq2/players/female/venus_i.pcx
-  c2ca5827551749ea7959d3326be7154d  baseq2/players/female/voodoo.pcx
-  7d199b6f0f36655fbea4338ee85a7c89  baseq2/players/female/voodoo_i.pcx
-  ace25cc0e1481a671f1cfff27ad73485  baseq2/players/female/w_bfg.md2
-  7d38c30abb113cdfcea142b8aacf25c4  baseq2/players/female/w_blaster.md2
-  d58bf8f9701422f21cf5133b6266b6b0  baseq2/players/female/w_chainfist.md2
-  86103877e85726cb3af3a808f8088137  baseq2/players/female/w_chaingun.md2
-  b37f73c57cbbf24e86f50465b845cdf2  baseq2/players/female/w_disrupt.md2
-  c1e2e35d6a5d43e879c7a715497871a6  baseq2/players/female/w_etfrifle.md2
-  eabe7f32985a66f32a710dc65d9ac630  baseq2/players/female/w_glauncher.md2
-  47e6bbf70c729754c66de7c3de7f9874  baseq2/players/female/w_grapple.md2
-  30eb0a369e941c767044c74d0ced815e  baseq2/players/female/w_hyperblaster.md2
-  be6523a01f07a909f2297d4701d0c6cb  baseq2/players/female/w_machinegun.md2
-  b71a2557746052945fa90f7e13a3e2b2  baseq2/players/female/w_phalanx.md2
-  814ece94ac2d5bc3a002d6ae3daa5860  baseq2/players/female/w_plasma.md2
-  f4e0e9f8c6cc9d5b4fd7947360a3fe1d  baseq2/players/female/w_plauncher.md2
-  ec79193998da672c5f17aec8a781ceac  baseq2/players/female/w_railgun.md2
-  bfcac9f7d7e9a69e45355faae9364589  baseq2/players/female/w_ripper.md2
-  877ab9be5145d030cd5f682e61695007  baseq2/players/female/w_rlauncher.md2
-  3b9968c41e9fef1c8ce34305cc38d6f1  baseq2/players/female/w_shotgun.md2
-  fbc4b51287c4b006b5a4d52a422db229  baseq2/players/female/w_sshotgun.md2
-  3b9968c41e9fef1c8ce34305cc38d6f1  baseq2/players/female/weapon.md2
-  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/female/weapon.pcx
-  8b26b6a4863b7e2c30b4dcd7867a6d10  baseq2/players/male/a_grenades.md2
-  998f5a453be87f1301823ad4f2e3c818  baseq2/players/male/bump1.wav
-  8b27adf487714b21c900af1474cecf9e  baseq2/players/male/cipher.pcx
-  d0c3e03850569d223a9705cd5aba608e  baseq2/players/male/cipher_i.pcx
-  f192147481f31b16524d0bd4f9a7db5d  baseq2/players/male/claymore.pcx
-  e80f697c4ee4680b5c667b83b4a1b48c  baseq2/players/male/claymore_i.pcx
-  c1a37ac609cd280dde4eb40c6554cc4c  baseq2/players/male/death1.wav
-  e3596b73010d485fd4eb30930024c215  baseq2/players/male/death2.wav
-  bbed4c80620d0889c265b6a3d9ba1201  baseq2/players/male/death3.wav
-  6f064673e3889697a2fe282c98348690  baseq2/players/male/death4.wav
-  b0ed6afa04b2e57f59727ff6eb85c7d1  baseq2/players/male/drown1.wav
-  7a2943c4824d0365a57b2bf3e0e81128  baseq2/players/male/fall1.wav
-  28c39bb738169587d5e971181ccf16b1  baseq2/players/male/fall2.wav
-  a25da9175683d7516631da1961c5f3ef  baseq2/players/male/flak.pcx
-  ed16d176fb1a3b6a1ea2fed2f863bd2a  baseq2/players/male/flak_i.pcx
-  34eaa46104de21bd7c4f8e8f48fac32e  baseq2/players/male/grunt.pcx
-  0a57ea0f39fb763e0338e736bd59bc22  baseq2/players/male/grunt_i.pcx
-  53644df5f8c2d1ace04f3fa555c79ae0  baseq2/players/male/gurp1.wav
-  7829cd11b6dc9bad808c293293ec907c  baseq2/players/male/gurp2.wav
-  f4a15fdb5036f2020c2a23462a4a8ae2  baseq2/players/male/howitzer.pcx
-  3c9211a549d9bc126c168ea49a94741d  baseq2/players/male/howitzer_i.pcx
-  ee794f58cbced0643e2143d08d14d3a6  baseq2/players/male/jump1.wav
-  ba536b3b53506f47bbecd8699f78e755  baseq2/players/male/major.pcx
-  905dee6998c121babc9e62751e52703b  baseq2/players/male/major_i.pcx
-  0ebaa3df3adb2f12a983a94ea82c15f0  baseq2/players/male/nightops.pcx
-  83c2754d59312ace64b5cf3ad11f9a71  baseq2/players/male/nightops_i.pcx
-  d492e20850243948166e91471d0b7839  baseq2/players/male/pain100_1.wav
-  99438e6a46feabab8bec63411bba1dd6  baseq2/players/male/pain100_2.wav
-  6a24f43061f8db2961b4adde76bf016d  baseq2/players/male/pain25_1.wav
-  825558a1abb9d5138952f6ec210efcef  baseq2/players/male/pain25_2.wav
-  1096f5798b8ac7b8a4dede4d189ee2c1  baseq2/players/male/pain50_1.wav
-  49ac063de6c8f8d791428333b76d7363  baseq2/players/male/pain50_2.wav
-  35d962b7fd722802bd445c7489b460d9  baseq2/players/male/pain75_1.wav
-  a11b2ba8ddde40cd9b44c7e2211ab627  baseq2/players/male/pain75_2.wav
-  10d6b2cf74286f7396fc1ac73840437c  baseq2/players/male/pointman.pcx
-  494824048e031d490e691ca9fefa8eb2  baseq2/players/male/pointman_i.pcx
-  f600b69cb8a5d1b09bf2af436a7049a9  baseq2/players/male/psycho.pcx
-  817a284dbbc63870c99e35f1c874f04c  baseq2/players/male/psycho_i.pcx
-  1950086c138cd3c9d38660dc60fc9a6e  baseq2/players/male/rampage.pcx
-  0c1e9f726b37ef6d633343c39ad0d441  baseq2/players/male/rampage_i.pcx
-  f2a90e8e9c7756c7bc8a5c9ab22c7f86  baseq2/players/male/razor.pcx
-  68d88b858c7bfdd847217bf9e4ce694b  baseq2/players/male/razor_i.pcx
-  2e6dc986cf21d5eee1e2ffc5ba81f241  baseq2/players/male/recon.pcx
-  0351e8eee92b10c286f1516384b150cb  baseq2/players/male/recon_i.pcx
-  05d6229df32e289c8e2e95d9aa627d51  baseq2/players/male/scout.pcx
-  328b0bd036961fcf20d352eeef9d1059  baseq2/players/male/scout_i.pcx
-  5c9c6ecd148ddfd14a5191d92d42bd0c  baseq2/players/male/sniper.pcx
-  e0e503251db60e1c867f1675d287a2fc  baseq2/players/male/sniper_i.pcx
-  930dd7b37f9a40dc0ed02aaa86039710  baseq2/players/male/tris.md2
-  bfbba21b67600e4e7a02ce4cb92dd0b9  baseq2/players/male/viper.pcx
-  05cc280cee4ce1cb61bed6fa87eae5f1  baseq2/players/male/viper_i.pcx
-  234b1c49e4cc1dc86e9e46e4ab105479  baseq2/players/male/w_bfg.md2
-  68a19777b8a25f1657e321d78b949347  baseq2/players/male/w_blaster.md2
-  48890c7dae7053a8e9089abcaaa95cf9  baseq2/players/male/w_chainfist.md2
-  fb92d87e2255d767e692dd4d5dda490b  baseq2/players/male/w_chaingun.md2
-  a471b38d21d586da0a1064bfdeca9d04  baseq2/players/male/w_disrupt.md2
-  48747d1bc3d81e698cf1fa6ee05607ea  baseq2/players/male/w_etfrifle.md2
-  3c22c7dcfc75ce786bd7e5d5c61defb4  baseq2/players/male/w_glauncher.md2
-  6081b82197fa8105e8380445a6422904  baseq2/players/male/w_grapple.md2
-  eaa308d4893857646dba28cba84b35f9  baseq2/players/male/w_hyperblaster.md2
-  f0db74b83301a5b6d5414abc115f268b  baseq2/players/male/w_machinegun.md2
-  f99b7aa61adbfc59038a414e81b9af53  baseq2/players/male/w_phalanx.md2
-  b70e91170b6923f83e089a865b26591e  baseq2/players/male/w_plasma.md2
-  80caf9d707d2e681e0c54dda1f4fabf9  baseq2/players/male/w_plauncher.md2
-  b5a6a8e1235e0129ba6474983aef9989  baseq2/players/male/w_railgun.md2
-  b00cd4cce1cb9fdd9a6eeb1837f79778  baseq2/players/male/w_ripper.md2
-  9656c56907b8284bbbf30fe60443b211  baseq2/players/male/w_rlauncher.md2
-  e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/male/w_shotgun.md2
-  46967dbfad628470a7bc344b20086d53  baseq2/players/male/w_sshotgun.md2
-  e9a5e9b2df9bf2fa5e53794f929419af  baseq2/players/male/weapon.md2
-  0758d59ebfcb5931bda2b0985faf98a9  baseq2/players/male/weapon.pcx
   1f6bd3d4c08f7ed8c037b12fcffd2eb5  ctf/pak0.pak
   9e5a0bc728d8e06a65244f8065d68c09  ctf/readme.txt
   de2e8781bca657e62d4ad5e4b763cc7a  ctf/server.cfg
   # Files from demo to install in doc directory
   af91bb4178e223adaa258d50ce2541b0  Manual.html
   0fff07160047d23e53b68c490ea1bbbc  license.txt_3.14_demo
-  b443713f8ad0b1c8825554f346850f9e  quake2_manual/bottom.html
   13cae63eea980606ffa9766b388e05ae  quake2_manual/credits.html_3.14_demo
   525c98cd717fc7e6ea18b5fd758a2f97  quake2_manual/customer_support.html_3.14_demo
-  488755080b3e7c45cd3b03ecf4e2409c  quake2_manual/enemy_barracuda_shark.html
-  9454f9e5b2f74a79c0e2efcbf91ca950  quake2_manual/enemy_berserker.html
-  c65aa12bd5f0c0bd7644274d78e31537  quake2_manual/enemy_brains.html
-  c1c29d257524b45c4b8dc75a40e2b9a9  quake2_manual/enemy_enforcer.html
-  82864bdf550162141890363f0a4dfe4b  quake2_manual/enemy_flyer.html
-  d228c03aa0f13048913883a26f25717c  quake2_manual/enemy_gladiator.html
-  801aafc6c11961445a3183d74a66aa6b  quake2_manual/enemy_gunner.html
-  c17c9e278b647a87a59f912c79bdc3b2  quake2_manual/enemy_icarus.html
-  bc4c7345800243c7b53c62b78eb7d68f  quake2_manual/enemy_iron_maiden.html
-  1c45f8475c9118a6ac5aa5fb6688787c  quake2_manual/enemy_light_guard.html
-  a7ff8a179e1cfb46723c840e5644395c  quake2_manual/enemy_machinegun_guard.html
-  458f646a387a616ae2697758c67bfd54  quake2_manual/enemy_medic.html
-  b9da61101f90fa77b3f869679f1dc067  quake2_manual/enemy_mutant.html
-  908bc1b0fad3b2eda46c2b0e0c106b5b  quake2_manual/enemy_parasite.html
-  1917276059f6da285a3b91c55aa9d349  quake2_manual/enemy_shotgun_guard.html
-  866caef591a5e4efe104f3b483ad90ac  quake2_manual/enemy_tank.html
-  b1bd9d55d14f4ad4e850d23790af3758  quake2_manual/enemy_tank_commander.html
-  3edb50eac560537c7f5b901a5fe4243a  quake2_manual/enemy_technician.html
-  f131d96cdd72798f970c2a4ce0d2065f  quake2_manual/images/adrenaline.gif
-  c558e8dc151a6c23b8ab421083ed48a8  quake2_manual/images/amor_body.gif
-  7575e8057fc282b08d0772b6603984de  quake2_manual/images/armor_combat.gif
-  9ae555dc632015dbad5be3b4450ceeda  quake2_manual/images/armor_jacket.gif
-  99debda0e35e96dda9d254824c425e3a  quake2_manual/images/armor_shard.gif
-  19b1fc6f32b2fe95981fe8e0a1ea61fd  quake2_manual/images/bandoleer.gif
-  da58ad0dfad2782305cad17d3e6eaf12  quake2_manual/images/barracuda_shark.gif
-  68fc6e4c00844ba34b87f43de3c4fbac  quake2_manual/images/berserker.gif
-  6834f0b61f8d817d0dc79569845e3046  quake2_manual/images/bfg.gif
-  5a6551fb3ec299f890d898594346db6f  quake2_manual/images/blaster.gif
-  23859933f199db9b2347e707638aac22  quake2_manual/images/bluekey.gif
-  ea8eb458d370e567066df689522d2b1a  quake2_manual/images/bottom_id_link_transparent.gif
-  e6643ac33290a735ca5d2894c1b906e9  quake2_manual/images/brains.gif
-  c1d15da296ad651f16fc3f57560d1f5b  quake2_manual/images/breather.gif
-  1a8b9798ac6738c718b5cc904692d17e  quake2_manual/images/bullets.gif
-  21f07db8c561fe3a897e3731871957d3  quake2_manual/images/buttons.jpg
-  c25bd13199f71501b7c4b363dcf37cfe  quake2_manual/images/cells.gif
-  97a0afa9d61a192d12500b331a0c8d76  quake2_manual/images/chaingun.gif
-  f08f699ed909f3a7331cd406e96841b2  quake2_manual/images/commandant_james.gif
-  d1369409fd57537f7eb304eb200c5931  quake2_manual/images/credits_main.gif
-  949210e74761ff8e933f1cec3291666e  quake2_manual/images/door.jpg
-  3ef44435fafc00bbeeb149caa88af413  quake2_manual/images/elevator_base_exit_sign.jpg
-  adc7c35ae1e479c298d89656159c2ce2  quake2_manual/images/enemy_groupshot.gif
-  6dd52e61c2a2a465bdac6ff87a4797f5  quake2_manual/images/energy_armour.gif
-  a94e962385e7e2d811c09e95413a7ef5  quake2_manual/images/enforcer.gif
-  63398d74292880bb1203cd45df6c1c5a  quake2_manual/images/envirosuit.gif
-  ee18f90587d73d1f645691f360f87798  quake2_manual/images/explosive_barrels.jpg
-  61e78c0dfad3a69dc8adfa533b1adaa4  quake2_manual/images/first_aid.gif
-  01295003292377b984d29ae3d5fae32f  quake2_manual/images/flyer.gif
-  42bd48f70c5ce445f82f12353856464f  quake2_manual/images/gladiator.gif
-  53b065c8031059d3fa19a65b761854d9  quake2_manual/images/grenade_launcher.gif
-  db2126ae4d004bbc62a13a0ca21e56e5  quake2_manual/images/grenades.gif
-  eaa0f07ffd2714e10faf002625ee433a  quake2_manual/images/gunner.gif
-  a8e203bcc78f0332d0adcdc4ac837775  quake2_manual/images/hand_grenade.gif
-  dc442f7cafc105894ee44cf766c9c41b  quake2_manual/images/heavy_pack.gif
-  59479569ef1d819cc0feef7a8f965646  quake2_manual/images/hyper_blaster.gif
-  c9084fe8dabae2cf4c7989a21cd19e00  quake2_manual/images/icarus.gif
-  acca7a57f799011ff568af2c504eaecd  quake2_manual/images/invulnerability.gif
-  71f68eb7bb6d45198736022d1ff1a733  quake2_manual/images/iron_maiden.gif
-  16ae7c63436b121cebbbc7cb06f80507  quake2_manual/images/lava.jpg
-  78c52ff576d89f37e8f74eda6c568fdd  quake2_manual/images/lever.jpg
-  b561aa6f574bcfb9eae772c77aef60b0  quake2_manual/images/light_guard.gif
-  41edc7492a8c853a9406f417ee9b8f31  quake2_manual/images/machinegun.gif
-  f4fee55919ff1d155faf15ecdc028392  quake2_manual/images/machinegun_guard.gif
-  6d02566ebb37d18cefaf0fd57ee8860d  quake2_manual/images/main_cover_image.gif
-  02e47564117046653ef526f2b7717e90  quake2_manual/images/manual_back.jpg
-  95bc839be47738333414794ce08e6cc0  quake2_manual/images/manual_bottom.jpg
-  0c52056fd89a18e7ffc0c077eccac5c7  quake2_manual/images/manual_cover_image.jpg
-  c4b3944d6df965fb59b1d79f71b60682  quake2_manual/images/manual_top.jpg
-  460a57fc857179b148474d36a1baf199  quake2_manual/images/medic.gif
-  f711c67053878f445e013fddaad9b638  quake2_manual/images/medkit.gif
-  e2e02777a2baa8673927043a257cabb2  quake2_manual/images/mega_health.gif
-  4a322e326a53e986093f9c01c877a7a4  quake2_manual/images/menu.gif
-  7d7e39181822e05cedd6aa075eb162ed  quake2_manual/images/multiplayer_main.jpg
-  5d4835320037ba4d95da66c8d2549624  quake2_manual/images/multiplayer_menu1.gif
-  4949949a172cb34ea2732b3127173e1f  quake2_manual/images/multiplayer_screen1.gif
-  ec5ec6f011301c102e6e4fe9cf8dcdb7  quake2_manual/images/mutant.gif
-  275afc9861a9658c7c046342a2f7b23e  quake2_manual/images/no_data.jpg
-  a3ee36171d113a289fc5d2e75db54494  quake2_manual/images/options_menu.gif
-  1e4fc2ecc3f02ffd74fab4cd47a014f6  quake2_manual/images/parasite.gif
-  0637fab6270d7a717ca6cc3f95aebb34  quake2_manual/images/player_properties_screen1.gif
-  5fd03a3df80e4172f9374ecbaa81bd53  quake2_manual/images/quad_damage.gif
-  67819596d45e9c813b1ffac952171278  quake2_manual/images/rail_gun.gif
-  a725bf6c45780713436766b2525a70fd  quake2_manual/images/rocket_launcher.gif
-  247ef5880017bcd4e798c0cdc6bfda04  quake2_manual/images/rockets.gif
-  371e4e7533d3dba76cc4ec87173ed324  quake2_manual/images/secret_door.jpg
-  5de3f7d97f7db24fa2f5ff3ad224c967  quake2_manual/images/shells.gif
-  e9696363faaa96d5d6a409ccc8e8f015  quake2_manual/images/shotgun.gif
-  6064616bad96220615e110dd664f111f  quake2_manual/images/shotgun_guard.gif
-  164bc256f4f8617fd61b4c36d0429d7c  quake2_manual/images/silencer.gif
-  06dc2b46cae94542e3e4140615d85064  quake2_manual/images/slime.jpg
-  f122ab7eeab31b4da0c2baffceb5cf11  quake2_manual/images/start_network_server_screen1.gif_3.20
-  a189c129ad4c299009eac1178815ba3a  quake2_manual/images/stimpack.gif
-  2b8ae1a4e1d3123db66a76a08323e6b7  quake2_manual/images/story_main.jpg
-  347cc3b0fe0aa4bd04f4ce40252af4cf  quake2_manual/images/strogg_environ_1.jpg
-  4eb8b956d495b0401a48769ac4f17c0e  quake2_manual/images/strogg_environ_2.jpg
-  6b297939ebb9eec6bc83c5fdc92023ea  quake2_manual/images/strogg_environ_3.jpg
-  73eebf0184fc436f9fe41508978581dd  quake2_manual/images/supershotgun.gif
-  00c5ebfbc38fb3b8f555f73079aec5a0  quake2_manual/images/tank.gif
-  9ca52658cebfa202d42a150247305a70  quake2_manual/images/tank_commander.gif
-  0d3f3d2a5cf21f32fcd70454996c0191  quake2_manual/images/technician.gif
-  f2c45a04108af0d6fc38ebba1e1b7d37  quake2_manual/images/top_nav_imagemap.gif
-  56ec448b8292f79ce3793d1a8ec9cdd2  quake2_manual/images/unit_exit_door.jpg
-  bee2b0739a9a9c3e29608b5bdf19b0fa  quake2_manual/images/water.jpg
-  0c4bdc0f1fd174f2c010cc31a3f3e236  quake2_manual/intel_brief.html
-  d9f0b73e894cd8faebb4dceec6b81011  quake2_manual/intel_brief2.html
-  95357eb18bf19e34cb872035cf0d1136  quake2_manual/intel_brief3.html
-  76d5e436af64cdd403ea006331052003  quake2_manual/intel_brief4.html
-  66e2ae70f279ff65a341f12607e2190c  quake2_manual/intel_brief5.html
-  5da237d3d8a09e1803015c00d2018fca  quake2_manual/intel_brief6.html
-  84fb833ed252a8a2416d4b9a34946fc6  quake2_manual/intel_brief7.html
-  3d79ac1d55e1b721ad99dd3182277512  quake2_manual/intel_brief8.html
-  bccace2d488b98b6ef28d3c635fce54c  quake2_manual/intel_brief_enemy.html
-  6ab83a71a2ef04113ea7822c0d4107a3  quake2_manual/main.html
-  40adc537d74bffd613fbbe364eb17b7d  quake2_manual/multiplayer.html_3.20
-  49f1cb26ce4bd2a2f8c65e50cea8a7cd  quake2_manual/page_index.html
-  e5164543d1d90c04b4ba430ed805b63e  quake2_manual/setup_controls_screenmenus.html
-  1b4895f3b8311e41df116ffd4194ab73  quake2_manual/story.html
   43ed8b9aab50fe9cd02c142dcceb030d  quake2_manual/technical_information.html_3.14_demo
-  4c08bae1efd913cda8c52cae2c05330f  quake2_manual/top_nav.html
   c3ff4ac8608dc4f5891214b8f6d1f0ad  readme.txt_3.14_demo
   5aab43e52b123e88b8b5b62952e5ac2a  release.txt_3.14_demo
   # Files from demo to install in game directory
@@ -2160,15 +2557,12 @@ md5sums: |
   9ad6f4cbc9834784420a3b6bd6d2c76b  xatrix/video/xu3.cin
   441e0e33ef48aa028896dfcee3613f74  xatrix/video/xu4.cin
 
-  77baabfd18e5cf4a242df7931129247c  baseq2/base64.bsp
-  959e8450b5c7817c9ac7a9edcaf0dca5  baseq2/city64.bsp
   0c393439252e16942a4b1093c8fa6c4d  dm_64.tar.gz
   03ab8b183d8f6be62fce6fda5d71f93f  match1.tar.gz
   43a31cf52b7281ea263d1020a9aedca6  baseq2/pak3.pak
   1def0b241d56a435017843fadc2d86ef  ctf/q2ctf4a.bsp
   37ad48301e5ffc1b3de7d0bd84fba154  q2ctf4a.tar.gz
   917611eec2f2f699b1b0ca149ac66244  readme-dm64.txt
-  19a07f706332c48a83164d13d77b6729  baseq2/sewer64.bsp
 
   d67f1ff8c52ef8994b57f7d7f00a4734  quake2_manual/images/cloaker.gif
   3dd7372f74c44d28e3e6cd4c46d33253  quake2_manual/images/goggles.gif
@@ -2546,21 +2940,23 @@ sha1sums: |
   420e0463f44337dcea84d0340dfd504b8289b9c3  xatrix/video/xu3.cin
   b4de86dc16c59ca93c9f2953d8e273dbe4272e87  xatrix/video/xu4.cin
 
-  a5490206ff2949e89f986fa9b0aeb078ddcf84b4  baseq2/base64.bsp
-  80eb7dff6957f3090ee9e6c70e3908b4f343b9c7  baseq2/city64.bsp
+  a5490206ff2949e89f986fa9b0aeb078ddcf84b4  baseq2/maps/base64.bsp
+  80eb7dff6957f3090ee9e6c70e3908b4f343b9c7  baseq2/maps/city64.bsp
+  6d9a210bde080e7c5a27146c2323b7a6c72f44cb  baseq2/maps/sewer64.bsp
   2c5fb8e424eab9477daba921fa86b2ccfd74fc1d  dm_64.tar.gz
   06018ad9403e9a02d0ff2d261abbfd391c549788  match1.tar.gz
   95ad9cfd50813a9a57beb96ba53413b0ad27b7fe  baseq2/pak3.pak
   78566d010f1225dc68acda4c8219a0816a3aba7d  ctf/q2ctf4a.bsp
   d4ece293055f595d7b810546d6420e3e64be1b9c  q2ctf4a.tar.gz
   2c5832c6256592504502b6f5d0999612abeb779e  readme-dm64.txt
-  6d9a210bde080e7c5a27146c2323b7a6c72f44cb  baseq2/sewer64.bsp
 
   fa3bab0b06bb97c55ade27a01d7612ebf01c8f42  quake2_manual/images/cloaker.gif
   ca9e4578781565acc817836693211dff80b5d05e  quake2_manual/images/goggles.gif
   b004a7e5b0626c4f3d47c3a4ae7f97a174d0e5a9  quake2_manual/images/invisibility.gif
   64e3890c56cbd6cd6478172adc9c0e929f1e449d  quake2_manual/images/scope.gif
   4a4e5445e3038f549e5a086c87e4fd12a7fd79a7  quake2_manual/images/sights.gif
+
+  95692ee89f3a4376ca447266044e114ed0c5339c  setup_quake2_quad_damage_2.0.0.3.exe
 
 sha256sums: |
   54f95e0d37811c3ef7f7d3df8fe068453b58059c546015de7608aaabad646b81  quake2-rogue-2.02.tar.xz
@@ -2942,15 +3338,15 @@ sha256sums: |
   cd3468ed2b625dcf0f77fe870e51129d23c9e9de5bd6b860579572f677de7234  xatrix/video/xu3.cin
   c8fe12339d0e22e4177b2ffc42efdd0228fd1adf174f8ad5670d2f388f9fcd5e  xatrix/video/xu4.cin
 
-  bb201ec5bb8f429ea0e999f4d588f967d91457dd27286af284e6332c18c13fc6  baseq2/base64.bsp
-  9b79cbdf50113c14422e524ae9d5d6456e354df6b16715837c2e4e70ea470fc3  baseq2/city64.bsp
+  bb201ec5bb8f429ea0e999f4d588f967d91457dd27286af284e6332c18c13fc6  baseq2/maps/base64.bsp
+  9b79cbdf50113c14422e524ae9d5d6456e354df6b16715837c2e4e70ea470fc3  baseq2/maps/city64.bsp
+  66e3278bfe4b16983ea9a22d7300af813f05747db6d9941caa1fea38bb14d435  baseq2/maps/sewer64.bsp
   ecbf62f7838a61f77d3e0e60a70b2eb4fb85250f259e9ab4191e89211a08f2c6  dm_64.tar.gz
   17ea08c4c40bc08fa25a0fb1b1934b35c85f5e2e95bfecdc0be9938419c03579  match1.tar.gz
   510bb2be69be7db572e41f6c662159d9714758d0d8d9a5573e97783f23b8b2dc  baseq2/pak3.pak
   962e6f6352f8fde291828d2a835312360f30effbdfd20ec266999398884b1684  ctf/q2ctf4a.bsp
   c2cc0e375d68e6a8e05af5279ba80a4e0085b1698601523e74b7797b5be4c986  q2ctf4a.tar.gz
   88abca6ad0ee1fd19a503f3fd957f98b9274a81ad9cb0bd8fef3ea4ec77c4d45  readme-dm64.txt
-  66e3278bfe4b16983ea9a22d7300af813f05747db6d9941caa1fea38bb14d435  baseq2/sewer64.bsp
 
   bef5d74e19f312076432abbff26b8cb7cdf2e534dc2af7f08b76441a6043bea3  quake2_manual/images/cloaker.gif
   b00ceb46e9f4087ac2aa3b30749ab69a3b601396470f17f2046ef97d040c3326  quake2_manual/images/goggles.gif
