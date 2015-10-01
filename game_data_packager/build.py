@@ -363,6 +363,9 @@ class PackagingTask(object):
         # Debian architecture
         self._architecture = None
 
+        # If true, be more verbose
+        self.verbose = False
+
         # None or an existing directory in which to save downloaded files.
         self.save_downloads = None
 
