@@ -78,10 +78,10 @@ def get_steam_id():
             if line not in ('users', '{'):
                 return line
 
-def run_steam_meta_mode(parsed, games):
+def run_steam_meta_mode(args, games):
     logger.info('Visit our community page: https://steamcommunity.com/groups/debian_gdp#curation')
     owned = set()
-    if parsed.download:
+    if args.download:
         steam_id = get_steam_id()
         if steam_id is None:
             logger.error("Couldn't read SteamID from ~/.steam/config/loginusers.vdf")
@@ -106,7 +106,7 @@ def run_steam_meta_mode(parsed, games):
                 continue
 
             installed = PACKAGE_CACHE.is_installed(package.name)
-            if parsed.new and installed:
+            if args.new and installed:
                 continue
 
             paths = []
@@ -146,23 +146,23 @@ def run_steam_meta_mode(parsed, games):
                 print('<game owned but not installed/found>')
         print()
 
-    if not parsed.new and not parsed.all:
+    if not args.new and not args.all:
        logger.info('Please specify --all or --new to create desired packages.')
        return
 
-    preserve_debs = (getattr(parsed, 'destination', None) is not None)
-    install_debs = getattr(parsed, 'install', True)
-    if getattr(parsed, 'compress', None) is None:
+    preserve_debs = (getattr(args, 'destination', None) is not None)
+    install_debs = getattr(args, 'install', True)
+    if getattr(args, 'compress', None) is None:
         # default to not compressing if we aren't going to install it
         # anyway
-        parsed.compress = preserve_debs
+        args.compress = preserve_debs
 
     all_debs = set()
 
     for shortname in sorted(found_games):
         game = games[shortname]
-        game.verbose = getattr(parsed, 'verbose', False)
-        game.save_downloads = parsed.save_downloads
+        game.verbose = getattr(args, 'verbose', False)
+        game.save_downloads = args.save_downloads
         game.look_for_files()
 
         todo = list()
@@ -180,14 +180,14 @@ def run_steam_meta_mode(parsed, games):
                          ' because downloads failed.' % game.shortname)
             continue
 
-        if parsed.destination is None:
+        if args.destination is None:
             destination = workdir = tempfile.mkdtemp(prefix='gdptmp.')
         else:
             workdir = None
-            destination = parsed.destination
+            destination = args.destination
 
         debs = game.build_packages(ready,
-                compress=getattr(parsed, 'compress', True),
+                compress=getattr(args, 'compress', True),
                 destination=destination)
         rm_rf(os.path.join(game.get_workdir(), 'tmp'))
 

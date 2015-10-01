@@ -193,8 +193,6 @@ def run_as_root(argv, gain_root='su'):
 def install_packages(debs, method, gain_root='su'):
     """Install one or more packages (a list of filenames)."""
 
-    default = None
-
     if method and method not in (
             'apt', 'dpkg',
             'gdebi', 'gdebi-gtk', 'gdebi-kde',
