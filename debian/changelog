@@ -56,6 +56,9 @@ game-data-packager (43) UNRELEASED; urgency=medium
   * Move steam and gog modes to their own modules
   * Separate GameData (static information about the game) from
     PackagingTask (the actual game-data-packaging)
+  * Move detailed information about files to be packaged into separate JSON
+    and *sums files, which are loaded lazily. This speeds up
+    "game-data-packager --help" considerably. (Continuation of #779937)
 
  -- Simon McVittie <smcv@debian.org>  Thu, 16 Jul 2015 09:59:23 +0200
 

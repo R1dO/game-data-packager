@@ -23,6 +23,7 @@ from game_data_packager.util import ascii_safe
 
 if __name__ == '__main__':
     for name, game in load_games().items():
+        game.load_file_data()
         ascii_safe(game.longname, force=True).encode('ascii')
         ascii_safe(game.help_text, force=True).encode('ascii')
         if 'DEBUG' in os.environ:

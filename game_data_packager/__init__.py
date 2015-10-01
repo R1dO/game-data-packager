@@ -366,6 +366,9 @@ class GameData(object):
         assert 'symlinks' not in self.data
         assert 'install_files_from_cksums' not in self.data
 
+        # True if the lazy load of full file info has been done
+        self.loaded_file_data = False
+
         # Map from WantedFile name to instance.
         # { 'baseq3/pak1.pk3': WantedFile instance }
         self.files = {}
@@ -408,124 +411,14 @@ class GameData(object):
             self.packages[binary] = package
             self._populate_package(package, data)
 
-        if 'cksums' in self.data:
-            for line in self.data['cksums'].splitlines():
-                stripped = line.strip()
-                if stripped == '' or stripped.startswith('#'):
-                    continue
-
-                _, size, filename = line.split(None, 2)
-                f = self._ensure_file(filename)
-                f.size = int(size)
-
         if 'size_and_md5' in self.data:
             for line in self.data['size_and_md5'].splitlines():
-                stripped = line.strip()
-                if stripped == '' or stripped.startswith('#'):
-                    continue
+                self._add_hash(line, 'size_and_md5')
 
-                size, md5, filename = line.split(None, 2)
-                f = self._ensure_file(filename)
-                f.size = int(size)
-                f.md5 = md5
-
-        for alg in ('md5', 'sha1', 'sha256'):
+        for alg in ('ck', 'md5', 'sha1', 'sha256'):
             if alg + 'sums' in self.data:
                 for line in self.data[alg + 'sums'].splitlines():
-                    stripped = line.strip()
-                    if stripped == '' or stripped.startswith('#'):
-                        continue
-
-                    hexdigest, filename = MD5SUM_DIVIDER.split(line, 1)
-                    f = self._ensure_file(filename)
-                    setattr(f, alg, hexdigest)
-
-        for filename, f in self.files.items():
-            for provided in f.provides:
-                self.providers.setdefault(provided, set()).add(filename)
-
-            if f.alternatives:
-                continue
-
-            if f.distinctive_size and f.size is not None:
-                self.known_sizes.setdefault(f.size, set()).add(filename)
-
-            for lf in f.look_for:
-                self.known_filenames.setdefault(lf, set()).add(filename)
-
-            if f.md5 is not None:
-                self.known_md5s.setdefault(f.md5, set()).add(filename)
-
-            if f.sha1 is not None:
-                self.known_sha1s.setdefault(f.sha1, set()).add(filename)
-
-            if f.sha256 is not None:
-                self.known_sha256s.setdefault(f.sha256, set()).add(filename)
-
-        # consistency check
-        for package in self.packages.values():
-            for provider in package.install_contents_of:
-                assert provider in self.files, (package.name, provider)
-                for filename in self.files[provider].provides:
-                    assert filename in self.files, (package.name, provider,
-                            filename)
-                    if filename not in package.optional:
-                        package.install.add(filename)
-
-            if package.rip_cd:
-                # we only support Ogg Vorbis for now
-                assert package.rip_cd['encoding'] == 'vorbis', package.name
-                self.rip_cd_packages.add(package)
-
-            # there had better be something it wants to install
-            assert package.install or package.rip_cd, package.name
-            for installable in package.install:
-                assert installable in self.files, installable
-            for installable in package.optional:
-                assert installable in self.files, installable
-
-            # check internal depedencies
-            for demo_for_item in package.demo_for:
-                assert demo_for_item in self.packages, demo_for_item
-            assert (not package.expansion_for or
-              package.expansion_for in self.packages), package.expansion_for
-            assert (not package.better_version or
-              package.better_version in self.packages), package.better_version
-
-            # check for stale missing_langs
-            if not package.demo_for:
-                assert not set(package.langs).intersection(self.missing_langs)
-
-        for filename, wanted in self.files.items():
-            if wanted.unpack:
-                assert 'format' in wanted.unpack, filename
-                assert wanted.provides, filename
-                if wanted.unpack['format'] == 'cat':
-                    assert len(wanted.provides) == 1, filename
-                    assert isinstance(wanted.unpack['other_parts'],
-                            list), filename
-                if 'include' in wanted.unpack:
-                    assert isinstance(wanted.unpack['include'],
-                            list), filename
-
-            if wanted.alternatives:
-                for alt in wanted.alternatives:
-                    assert alt in self.files, alt
-
-                # if this is a placeholder for a bunch of alternatives, then
-                # it doesn't make sense for it to have a defined checksum
-                # or size
-                assert wanted.md5 is None, wanted.name
-                assert wanted.sha1 is None, wanted.name
-                assert wanted.sha256 is None, wanted.name
-                assert wanted.size is None, wanted.name
-            # FIXME: find out file size and add to yaml
-            else:
-                assert wanted.size is not None or filename in (
-                   'hipnotic/pak0.pak_qdq_glquake_compat',
-                   'resource.1_106_cd',
-                   'vox0000.lab_unpatched',
-                   ), (self.shortname, wanted.name)
+                    self._add_hash(line, alg)
 
         # compute webshop URL's
         gog_url = self.gog.get('url')
@@ -792,7 +685,144 @@ class GameData(object):
         self.argument_parser = parser
         return parser
 
+    def _add_hash(self, line, alg):
+        """Parse one line from md5sums-style data."""
+
+        stripped = line.strip()
+        if stripped == '' or stripped.startswith('#'):
+            return
+
+        if alg == 'ck':
+            _, size, filename = line.split(None, 2)
+            hexdigest = None
+        elif alg == 'size_and_md5':
+            size, hexdigest, filename = line.split(None, 2)
+            alg = 'md5'
+        else:
+            size = None
+            hexdigest, filename = MD5SUM_DIVIDER.split(line, 1)
+
+        f = self._ensure_file(filename)
+
+        if size is not None:
+            f.size = int(size)
+
+        if hexdigest is not None:
+            setattr(f, alg, hexdigest)
+
+    def load_file_data(self):
+        if self.loaded_file_data:
+            return
+
+        logger.debug('loading full data')
+
+        filename = os.path.join(DATADIR, '%s.files' % self.shortname)
+        if os.path.isfile(filename):
+            logger.debug('... %s', filename)
+            data = json.load(open(filename, encoding='utf-8'))
+            self._populate_files(data)
+
+        for  alg in ('ck', 'md5', 'sha1', 'sha256', 'size_and_md5'):
+            filename = os.path.join(DATADIR, '%s.%s%s' %
+                    (self.shortname, alg,
+                        '' if alg == 'size_and_md5' else 'sums'))
+            if os.path.isfile(filename):
+                logger.debug('... %s', filename)
+                with open(filename) as f:
+                    for line in f:
+                        self._add_hash(line.rstrip('\n'), alg)
+
+        self.loaded_file_data = True
+
+        for filename, f in self.files.items():
+            for provided in f.provides:
+                self.providers.setdefault(provided, set()).add(filename)
+
+            if f.alternatives:
+                continue
+
+            if f.distinctive_size and f.size is not None:
+                self.known_sizes.setdefault(f.size, set()).add(filename)
+
+            for lf in f.look_for:
+                self.known_filenames.setdefault(lf, set()).add(filename)
+
+            if f.md5 is not None:
+                self.known_md5s.setdefault(f.md5, set()).add(filename)
+
+            if f.sha1 is not None:
+                self.known_sha1s.setdefault(f.sha1, set()).add(filename)
+
+            if f.sha256 is not None:
+                self.known_sha256s.setdefault(f.sha256, set()).add(filename)
+
+        # consistency check
+        for package in self.packages.values():
+            for provider in package.install_contents_of:
+                assert provider in self.files, (package.name, provider)
+                for filename in self.files[provider].provides:
+                    assert filename in self.files, (package.name, provider,
+                            filename)
+                    if filename not in package.optional:
+                        package.install.add(filename)
+
+            if package.rip_cd:
+                # we only support Ogg Vorbis for now
+                assert package.rip_cd['encoding'] == 'vorbis', package.name
+                self.rip_cd_packages.add(package)
+
+            # there had better be something it wants to install
+            assert package.install or package.rip_cd, package.name
+            for installable in package.install:
+                assert installable in self.files, installable
+            for installable in package.optional:
+                assert installable in self.files, installable
+
+            # check internal depedencies
+            for demo_for_item in package.demo_for:
+                assert demo_for_item in self.packages, demo_for_item
+            assert (not package.expansion_for or
+              package.expansion_for in self.packages), package.expansion_for
+            assert (not package.better_version or
+              package.better_version in self.packages), package.better_version
+
+            # check for stale missing_langs
+            if not package.demo_for:
+                assert not set(package.langs).intersection(self.missing_langs)
+
+        for filename, wanted in self.files.items():
+            if wanted.unpack:
+                assert 'format' in wanted.unpack, filename
+                assert wanted.provides, filename
+                if wanted.unpack['format'] == 'cat':
+                    assert len(wanted.provides) == 1, filename
+                    assert isinstance(wanted.unpack['other_parts'],
+                            list), filename
+                if 'include' in wanted.unpack:
+                    assert isinstance(wanted.unpack['include'],
+                            list), filename
+
+            if wanted.alternatives:
+                for alt in wanted.alternatives:
+                    assert alt in self.files, alt
+
+                # if this is a placeholder for a bunch of alternatives, then
+                # it doesn't make sense for it to have a defined checksum
+                # or size
+                assert wanted.md5 is None, wanted.name
+                assert wanted.sha1 is None, wanted.name
+                assert wanted.sha256 is None, wanted.name
+                assert wanted.size is None, wanted.name
+            # FIXME: find out file size and add to yaml
+            else:
+                assert wanted.size is not None or filename in (
+                   'hipnotic/pak0.pak_qdq_glquake_compat',
+                   'resource.1_106_cd',
+                   'vox0000.lab_unpatched',
+                   ), (self.shortname, wanted.name)
+
     def construct_task(self, **kwargs):
+        self.load_file_data()
         return PackagingTask(self, **kwargs)
 
     def construct_package(self, binary):

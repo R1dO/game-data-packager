@@ -23,13 +23,36 @@ import yaml
 
 def main(f, out):
     data = yaml.load(open(f, encoding='utf-8'), Loader=yaml.CLoader)
-    game = os.path.splitext(os.path.basename(f))[0]
+    game = f[5:].split('.')[0]
+
     with open('data/wikipedia.csv', 'r', encoding='utf8') as csv:
         for line in csv.readlines():
             shortname, url = line.strip().split(';', 1)
             if shortname == game:
                 data['wikipedia'] = url
                 break
+
+    v = data.pop('files', None)
+    if v is not None:
+        offload = os.path.splitext(out)[0] + '.files'
+        json.dump(v, open(offload + '.tmp', 'w', encoding='utf-8'), sort_keys=True)
+        os.rename(offload + '.tmp', offload)
+
+    for k in ('cksums', 'sha1sums', 'sha256sums', 'md5sums',
+            'size_and_md5'):
+        v = data.pop(k, None)
+
+        if v is not None:
+            offload = os.path.splitext(out)[0] + '.' + k
+            with open(offload + '.tmp', 'w', encoding='utf-8') as writer:
+                for line in v.splitlines():
+                    stripped = line.strip()
+                    if stripped == '' or stripped.startswith('#'):
+                        continue
+                    writer.write(line)
+                    writer.write('\n')
+            os.rename(offload + '.tmp', offload)
+
     json.dump(data, open(out + '.tmp', 'w', encoding='utf-8'), sort_keys=True)
     os.rename(out + '.tmp', out)
 

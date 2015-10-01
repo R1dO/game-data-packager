@@ -323,6 +323,7 @@ class PackagingTask(object):
     def __init__(self, game):
         # A GameData object.
         self.game = game
+        self.game.load_file_data()
 
         # A temporary directory.
         self.__workdir = None

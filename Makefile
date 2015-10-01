@@ -68,12 +68,17 @@ clean:
 	rm -f ./out/changelog.gz
 	rm -f ./out/copyright
 	rm -f ./out/game-data-packager
+	rm -f ./out/*.cksums
 	rm -f ./out/*.control.in
 	rm -f ./out/*.copyright
 	rm -f ./out/*.copyright.in
 	rm -f ./out/*.desktop.in
+	rm -f ./out/*.files
+	rm -f ./out/*.md5sums
 	rm -f ./out/*.preinst.in
 	rm -f ./out/*.png
+	rm -f ./out/*.sha1sums
+	rm -f ./out/*.sha256sums
 	rm -f ./out/*.svgz
 	rm -f ./out/*.svg
 	rm -f ./out/*.json
