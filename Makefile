@@ -79,6 +79,7 @@ clean:
 	rm -f ./out/*.png
 	rm -f ./out/*.sha1sums
 	rm -f ./out/*.sha256sums
+	rm -f ./out/*.size_and_md5
 	rm -f ./out/*.svgz
 	rm -f ./out/*.svg
 	rm -f ./out/*.json
