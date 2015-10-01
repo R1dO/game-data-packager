@@ -16,6 +16,10 @@ help_text: |
 
   For the expansion packs quake2-reckoning (xatrix) and quake2-groundzero
   (rogue), provide the appropriate pak0.pak and video directory.
+  game-data-packager will automatically download and compile compatible
+  game-code, derived from the Quake II mod SDK, with bug fixes from the
+  author of yamagi-quake2. Unfortunately, this game-code's license is
+  unsuitable for packaging in non-free.
 
   For quake2-demo-data, all necessary files can be downloaded automatically.
 
