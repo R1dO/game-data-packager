@@ -89,32 +89,32 @@ build/quake3-server: quake3.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/tmp-dissolution.svg: quake1+2.svg Makefile
-	install -d build
+build/tmp/recolour-dissolution.svg: quake1+2.svg Makefile
+	install -d build/tmp
 	sed -e 's/#c17d11/#999984/' \
 		-e 's/#d5b582/#dede95/' \
 		-e 's/#5f3b01/#403f31/' \
 		-e 's/#e9b96e/#dede95/' \
 		< $< > $@
 
-build/tmp-armagon.svg: quake1+2.svg Makefile
-	install -d build
+build/tmp/recolour-armagon.svg: quake1+2.svg Makefile
+	install -d build/tmp
 	sed -e 's/#c17d11/#565248/' \
 		-e 's/#d5b582/#aba390/' \
 		-e 's/#5f3b01/#000000/' \
 		-e 's/#e9b96e/#aba390/' \
 		< $< > $@
 
-build/tmp-reckoning.svg: quake1+2.svg Makefile
-	install -d build
+build/tmp/recolour-reckoning.svg: quake1+2.svg Makefile
+	install -d build/tmp
 	sed -e 's/#3a5a1e/#999984/' \
 		-e 's/#73ae3a/#eeeeec/' \
 		-e 's/#8ae234/#eeeeec/' \
 		-e 's/#132601/#233436/' \
 		< $< > $@
 
-build/tmp-groundzero.svg: quake1+2.svg Makefile
-	install -d build
+build/tmp/recolour-groundzero.svg: quake1+2.svg Makefile
+	install -d build/tmp
 	sed -e 's/#3a5a1e/#ce5c00/' \
 		-e 's/#73ae3a/#fce94f/' \
 		-e 's/#8ae234/#fce94f/' \
@@ -148,7 +148,7 @@ $(patsubst %,build/%/quake.png,$(layer_sizes)): build/%/quake.png: quake1+2.svg
 		--export-png=$@ \
 		$<
 
-$(patsubst %,build/%/quake-armagon.png,$(layer_sizes)): build/%/quake-armagon.png: build/tmp-armagon.svg
+$(patsubst %,build/%/quake-armagon.png,$(layer_sizes)): build/%/quake-armagon.png: build/tmp/recolour-armagon.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -159,7 +159,7 @@ $(patsubst %,build/%/quake-armagon.png,$(layer_sizes)): build/%/quake-armagon.pn
 		--export-png=$@ \
 		$<
 
-$(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)): build/%/quake-dissolution.png: build/tmp-dissolution.svg
+$(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)): build/%/quake-dissolution.png: build/tmp/recolour-dissolution.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -181,7 +181,7 @@ $(patsubst %,build/%/quake2.png,$(layer_sizes)): build/%/quake2.png: quake1+2.sv
 		--export-png=$@ \
 		$<
 
-$(patsubst %,build/%/quake2-reckoning.png,$(layer_sizes)): build/%/quake2-reckoning.png: build/tmp-reckoning.svg
+$(patsubst %,build/%/quake2-reckoning.png,$(layer_sizes)): build/%/quake2-reckoning.png: build/tmp/recolour-reckoning.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -192,7 +192,7 @@ $(patsubst %,build/%/quake2-reckoning.png,$(layer_sizes)): build/%/quake2-reckon
 		--export-png=$@ \
 		$<
 
-$(patsubst %,build/%/quake2-groundzero.png,$(layer_sizes)): build/%/quake2-groundzero.png: build/tmp-groundzero.svg
+$(patsubst %,build/%/quake2-groundzero.png,$(layer_sizes)): build/%/quake2-groundzero.png: build/tmp/recolour-groundzero.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -208,39 +208,39 @@ clean:
 
 build/quake.svg: quake1+2.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake-256']" < $< > tmp.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake-256']" < $< > build/tmp/quake.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \
-		tmp.svg
-	rm -f tmp.svg
+		build/tmp/quake.svg
+	rm -f build/tmp/quake.svg
 
-build/quake-%.svg: build/tmp-%.svg Makefile
+build/quake-%.svg: build/tmp/recolour-%.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake-256']" < $< > tmp.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake-256']" < $< > build/tmp/quake-$*.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \
-		tmp.svg
-	rm -f tmp.svg
+		build/tmp/quake-$*.svg
+	rm -f build/tmp/quake-$*.svg
 
 build/quake2.svg: quake1+2.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > tmp.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > build/tmp/quake2.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \
-		tmp.svg
-	rm -f tmp.svg
+		build/tmp/quake2.svg
+	rm -f build/tmp/quake2.svg
 
-build/quake2-%.svg: build/tmp-%.svg Makefile
+build/quake2-%.svg: build/tmp/recolour-%.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > tmp.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > build/tmp/quake2-$*.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \
-		tmp.svg
-	rm -f tmp.svg
+		build/tmp/quake2-$*.svg
+	rm -f build/tmp/quake2-$*.svg
 
 build/quake3.png: quake3-tango.xcf
 	install -d build

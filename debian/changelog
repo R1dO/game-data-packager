@@ -11,6 +11,7 @@ quake (14) UNRELEASED; urgency=medium
   * Stop installing traditional Debian menu files to comply with
     CTTE decision #741573
   * Stop installing XPM icons
+  * Use unique temporary filenames, so parallel builds can work
 
  -- Simon McVittie <smcv@debian.org>  Wed, 30 Sep 2015 13:28:10 +0200
 
