@@ -237,28 +237,29 @@ files:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
 
 size_and_md5: |
-  # the same in all 1.4 versions
-  1156      a41af25a2f193e7d4afbcc4301b3d1ce audiohed.wl6
-  320209    2385b488b18f8721633e5b2bdf054853 audiot.wl6
-  150652    a4e73706e100dc0cadfb02d23de46481 gamemaps.wl6
-  402       b8d2a78bc7c50da7ec9ab1d94f7975e1 maphead.wl6
-
   # "Wolfenstein 3D v1.2 full Apogee"
   # run with wolf3sdl-wl6a1
-  # v1.0 & v1.1 are automaticaly patched
+  # unchanged from v1.0 (1992/05/05)
   1156      3bfac1f5de61d8a1a7df949fbde873fc audiohed.wl6_1.0
   317049    bb228b96fc12f2a658fc8033637ec051 audiot.wl6_1.0
   1024      d159e885f32e2355c6a31eaef350b902 vgadict.wl6_1.0
   302374    977242319585dbd9a47c666d4b93fb3f vgagraph.wl6_1.0
   477       9f0a9da0a8ac0b831c2fb5efd1a1e6fb vgahead.wl6_1.0
   1545400   82c20804eea23067e83bef88605cf982 vswap.wl6_1.0
-  # intermediate patch level
+  # intermediate patch level v1.1 (1992/06/10)
   402       accc0231d871a4350da4374d87b57d88 maphead.wl6_1.1
   150746    05ee51e9bc7d60f01a05334b1cfab1a5 gamemaps.wl6_1.1
-  # needed patch
+  # patch needed to update to v1.2 (1992/06/22)
   402       42c7b607a33be82143e6525d481b8beb maphead.wl6_1.2
   150758    a15b04941937b7e136419a1e74e57e2f gamemaps.wl6_1.2
   104052    564558b32f20268069c2823b09591f8b w6patc12.zip
+
+
+  # the same in all 1.4 versions (1992/12/03)
+  1156      a41af25a2f193e7d4afbcc4301b3d1ce audiohed.wl6
+  320209    2385b488b18f8721633e5b2bdf054853 audiot.wl6
+  150652    a4e73706e100dc0cadfb02d23de46481 gamemaps.wl6
+  402       b8d2a78bc7c50da7ec9ab1d94f7975e1 maphead.wl6
 
   # "Wolfenstein 3D v1.4 full GT/ID/Activision" (esp on #745081)
   # also matches the Steam version, and the id Anthology on CD
