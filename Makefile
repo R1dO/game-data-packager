@@ -27,6 +27,8 @@ obj = \
 	build/quake3.xpm \
 	build/quake332.xpm \
 	build/quake3-teamarena.png \
+	build/48/quake3.png \
+	build/48/quake3-teamarena.png \
 	build/quake3-teamarena.xpm \
 	build/quake3-teamarena32.xpm \
 	$(patsubst %,build/%/quake.png,$(layer_sizes)) \
@@ -258,8 +260,16 @@ build/quake3-teamarena.png: quake3-teamarena-tango.xcf
 	install -d build
 	xcf2png -o $@ $<
 
+build/48/quake3.png: build/quake3.png Makefile
+	install -d build/48
+	convert -resize 48x48 $< $@
+
 build/%.xpm: build/%.png
 	convert $< $@
+
+build/48/quake3-teamarena.png: build/quake3-teamarena.png Makefile
+	install -d build/48
+	convert -resize 48x48 $< $@
 
 build/%32.xpm: build/%.png
 	convert -resize 32x32 $< $@
