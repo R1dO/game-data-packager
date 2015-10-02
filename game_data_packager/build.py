@@ -316,8 +316,13 @@ def iter_fat_mounts(folder):
     with open('/proc/mounts', 'r', encoding='utf8') as mounts:
         for line in mounts.readlines():
             mount, type = line.split(' ')[1:3]
-            if type in ('fat','vfat', 'ntfs'):
-                yield os.path.join(mount, 'Program Files', folder)
+            if type in ('fat', 'vfat', 'ntfs'):
+                path = os.path.join(mount, 'Program Files', folder)
+                if os.path.isdir(path):
+                    yield path
+                path = os.path.join(mount, folder)
+                if os.path.isdir(path):
+                    yield path
 
 class PackagingTask(object):
     def __init__(self, game):
