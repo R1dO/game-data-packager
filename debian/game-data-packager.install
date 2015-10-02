@@ -3,11 +3,17 @@ data/bash-completion/game-data-packager usr/share/bash-completion/completions
 etc/game-data-packager.conf   etc
 etc/*-mirrors                 etc/game-data-packager
 game_data_packager            usr/share/games/game-data-packager
+out/*.cksums                  usr/share/games/game-data-packager
 out/*.control.in              usr/share/games/game-data-packager
 out/*.copyright               usr/share/games/game-data-packager
 out/*.copyright.in            usr/share/games/game-data-packager
 out/*.desktop.in              usr/share/games/game-data-packager
+out/*.files                   usr/share/games/game-data-packager
+out/*.md5sums                 usr/share/games/game-data-packager
 out/*.png                     usr/share/games/game-data-packager
+out/*.sha1sums                usr/share/games/game-data-packager
+out/*.sha256sums              usr/share/games/game-data-packager
+out/*.size_and_md5            usr/share/games/game-data-packager
 out/*.svgz                    usr/share/games/game-data-packager
 out/*.preinst.in              usr/share/games/game-data-packager
 out/bash_completion           usr/share/games/game-data-packager
