@@ -23,7 +23,7 @@ from .paths import CONFIG
 logger = logging.getLogger('game-data-packager.config')
 
 COMMENT = re.compile(r'#.*')
-OPTION = re.compile('^([A-Z]+)=(["\']?)(.*)\\2$')
+OPTION = re.compile('^([A-Z_]+)=(["\']?)(.*)\\2$')
 
 def read_config():
     """The world's simplest shell script parser.
@@ -55,6 +55,8 @@ def read_config():
                             config[k] = True
                         elif v == 'no':
                             config[k] = False
+                        elif k in ('install_method', 'gain_root_command'):
+                            config[k] = v
                         else:
                             logger.warning('%s:%d: unknown option value: %s=%r',
                                     CONFIG, lineno, k, v)
