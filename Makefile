@@ -9,8 +9,6 @@ obj = \
 	build/quake-server \
 	build/quake2-server \
 	build/quake3-server \
-	build/quake.xpm \
-	build/quake2.xpm \
 	build/24/quake.png \
 	build/24/quake-armagon.png \
 	build/24/quake-dissolution.png \
@@ -24,13 +22,9 @@ obj = \
 	build/quake2-reckoning.svg \
 	build/quake2-groundzero.svg \
 	build/quake3.png \
-	build/quake3.xpm \
-	build/quake332.xpm \
 	build/quake3-teamarena.png \
 	build/48/quake3.png \
 	build/48/quake3-teamarena.png \
-	build/quake3-teamarena.xpm \
-	build/quake3-teamarena32.xpm \
 	$(patsubst %,build/%/quake.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake-armagon.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)) \
@@ -209,10 +203,6 @@ $(patsubst %,build/%/quake2-groundzero.png,$(layer_sizes)): build/%/quake2-groun
 		--export-png=$@ \
 		$<
 
-build/%.xpm: build/32/%.png
-	install -d build
-	convert $< $@
-
 clean:
 	rm -rf build
 
@@ -264,12 +254,6 @@ build/48/quake3.png: build/quake3.png Makefile
 	install -d build/48
 	convert -resize 48x48 $< $@
 
-build/%.xpm: build/%.png
-	convert $< $@
-
 build/48/quake3-teamarena.png: build/quake3-teamarena.png Makefile
 	install -d build/48
 	convert -resize 48x48 $< $@
-
-build/%32.xpm: build/%.png
-	convert -resize 32x32 $< $@
