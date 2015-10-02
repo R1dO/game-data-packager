@@ -7,13 +7,13 @@ export DH_OPTIONS
 include /usr/share/dpkg/pkg-info.mk
 
 %:
-	dh $@ --with python3,bash-completion
+	dh $@ --parallel --with python3,bash-completion
 
 override_dh_auto_build:
-	$(MAKE) VERSION=$(DEB_VERSION)
+	dh_auto_build --parallel VERSION=$(DEB_VERSION)
 
 override_dh_auto_clean:
-	$(MAKE) clean VERSION=$(DEB_VERSION)
+	dh_auto_clean --parallel VERSION=$(DEB_VERSION)
 	@if [ "`echo *.deb`" != "*.deb" ]; then \
 		echo; \
 		echo "*************************************************"; \
