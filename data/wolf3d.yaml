@@ -56,6 +56,7 @@ packages:
       path: common/Wolfenstein 3D
     gog:
       url: wolfenstein_3d_and_spear_of_destiny
+      game: wolfenstein_3d
     url_misc: https://3drealms.com/catalog/wolfenstein-3d_25/
     install_to: usr/share/games/wolf3d
     install:
@@ -188,6 +189,20 @@ files:
     look_for:
     - vswap.wl6
 
+  setup_wolfenstein3d_2.0.0.4.exe:
+    unpack:
+      format: innoextract
+      suffix: _steam
+    provides:
+    - audiohed.wl6
+    - audiot.wl6
+    - gamemaps.wl6
+    - maphead.wl6
+    - vgadict.wl6_steam
+    - vgagraph.wl6_steam
+    - vgahead.wl6_steam
+    - vswap.wl6_steam
+
   # older demos
   AUDIOHED.WL1_1.0:
     look_for: [audiohed.wl1]
@@ -254,7 +269,7 @@ size_and_md5: |
   150758    a15b04941937b7e136419a1e74e57e2f gamemaps.wl6_1.2
   104052    564558b32f20268069c2823b09591f8b w6patc12.zip
 
-
+  17066408  7e8c178b7efca0f3bc3d08704b35cade setup_wolfenstein3d_2.0.0.4.exe
   # the same in all 1.4 versions (1992/12/03)
   1156      a41af25a2f193e7d4afbcc4301b3d1ce audiohed.wl6
   320209    2385b488b18f8721633e5b2bdf054853 audiot.wl6
@@ -333,6 +348,7 @@ sha1sums: |
   6b066ff8a8ae6537f97b4b0af7e11c8c326ca995  vendor.doc
   a4553d7ec4216061b9486c40be90b066862ea8e0  1wolf14.zip
 
+  0b32b8c05754f5bba19be58eedcd722e345fa5ed  setup_wolfenstein3d_2.0.0.4.exe
   2a8407cd436250b6df9d6022c971030882ae37ca  audiohed.wl6
   8a1e19ec1dc669ebe6916b1e24a261d10d9d5ff3  audiot.wl6
   22bfcde221efec232b48258117d7fc04337cce3a  gamemaps.wl6
