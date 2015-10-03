@@ -12,6 +12,7 @@ steam:
 
 gog:
   url: wolfenstein_3d_and_spear_of_destiny
+  game: wolfenstein_spear_of_destiny
 
 help_text: |
   If you do not provide any files to be packaged, game-data-packager will
@@ -145,6 +146,34 @@ files:
     - vswap.sdm
     - sod.doc
 
+  setup_spear_of_destiny_2.0.0.6.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - m1/audiohed.sod
+      - m1/audiot.sod
+      - m1/vgadict.sod
+      - m1/vgagraph.sod
+      - m1/vgahead.sod
+      - gamemaps.sod
+      - maphead.sod
+      - vswap.sod
+    provides:
+    - audiohed.sod
+    - audiot.sod
+    - vgadict.sod
+    - vgagraph.sod
+    - vgahead.sod
+    - gamemaps.sd1
+    - maphead.sd1
+    - vswap.sd1
+    - gamemaps.sd2
+    - maphead.sd2
+    - vswap.sd2
+    - gamemaps.sd3
+    - maphead.sd3
+    - vswap.sd3
+
 size_and_md5: |
   1072      f0022742f86c214872bd72f03aaf1529 audiohed.sdm
   93412     fcde1333c941229f4dd6ca099fcfe616 audiot.sdm
@@ -173,6 +202,7 @@ size_and_md5: |
   148534    29860b87c31348e163e10f8aa6f19295 gamemaps.sd3
   86        a8b24dd3d3271e0b7fc6f2f995915f27 maphead.sd3
   1881760   94aeef7980ef640c448087f92be16d83 vswap.sd3
+  20339104  4069529a76d6d0face90007ba29755be setup_spear_of_destiny_2.0.0.6.exe
 
 sha1sums: |
   a6519b58bcaac5e8a866cebaf268e74afe2f1778  audiohed.sdm
@@ -202,6 +232,7 @@ sha1sums: |
   8e358dd0cbd6ffa942f14f013f3f7e5c4eecfca4  gamemaps.sd3
   a80bdd3d87b54517040347c452962b53a8a5e225  maphead.sd3
   97197d0effbe61fbe204c3d8e870888460de4353  vswap.sd3
+  00b008a747b1c77022744ec2a89346902d5e0a9c  setup_spear_of_destiny_2.0.0.6.exe
 
 sha256sums: |
   47f3236be1544f51d1dd993a168eeaa22da672fdfa30fb6a57947167afec7d25  audiohed.sdm
