@@ -24,6 +24,7 @@ import sys
 import tarfile
 import tempfile
 import glob
+import zipfile
 
 from debian.deb822 import Deb822
 from debian.debian_support import Version
@@ -91,7 +92,7 @@ class GameData(object):
     '''simplified object with only one package per game'''
     def __init__(self):
         self.longname = None
-        self.try_repack_from = None
+        self.try_repack_from = []
         self.plugin = None
         self.gog_url = None
         self.gog_game = None
@@ -139,7 +140,7 @@ class GameData(object):
 
     def add_one_dir(self,destdir,lower,archive=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
-            self.try_repack_from = destdir
+            self.try_repack_from.append(destdir)
 
         game = os.path.basename(os.path.abspath(destdir))
         if game.endswith('-data'):
@@ -212,6 +213,21 @@ class GameData(object):
 
         if self.plugin != 'scummvm_common':
             self.package['install_to'] = 'usr/share/games/' + game
+
+    def add_one_zip(self,archive):
+        # TODO
+        return
+
+    def add_one_gog_sh(self,archive):
+        self.add_one_zip(archive)
+        with zipfile.ZipFile(archive, 'r') as zf:
+            if 'scripts/config.lua' in zf.namelist():
+                with zf.open('scripts/config.lua') as metadata:
+                    for line in metadata.read().decode().splitlines():
+                        line = line.strip()
+                        if line.startswith('id = '):
+                            dir = '~/GOG Games/' + line.split('"')[1]
+                            self.try_repack_from.append(dir)
 
     def add_one_innoextract(self,exe):
         self.gog_game = GOG.get_id_from_archive(exe)
@@ -367,7 +383,7 @@ class GameData(object):
             print('longname: %s' % self.longname)
         print('copyright: © 1970 FIXME')
         if self.try_repack_from:
-            print('try_repack_from: [- %s]' % self.try_repack_from)
+            print('try_repack_from: %s' % self.try_repack_from)
         if self.plugin:
             print('plugin: %s' % self.plugin)
         if self.gog_url:
@@ -580,10 +596,12 @@ def main():
                 gamedata.add_one_file(arg,args.lower)
                 gamedata.files['files'][basename] = dict(unpack=dict(format='deb'),
                                                          provides=['<stuff>'])
-        elif os.path.basename(arg).startswith('setup_') and arg.endswith('.exe'):
+        elif basename.startswith('setup_') and arg.endswith('.exe'):
             if not which('innoextract'):
                 exit('Install innoextract')
             gamedata.add_one_innoextract(arg)
+        elif basename.startswith('gog_') and arg.endswith('.sh'):
+            gamedata.add_one_gog_sh(arg)
         elif len(args.args) == 1:
             do_one_file(arg,args.lower)
             return
