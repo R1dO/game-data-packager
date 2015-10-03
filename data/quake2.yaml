@@ -81,6 +81,7 @@ packages:
     - licinfo.txt
     - readme.doc
     - readme.txt_3.20
+    - release.txt
     - quake2_manual/bottom.html
     - quake2_manual/credits.html
     - quake2_manual/customer_support.html
@@ -874,6 +875,10 @@ files:
     unpack:
       format: zip
 
+  # this file has a weird name in GOG.com package
+  ctf/server.cfg:
+     look_for: [ctf/server.cfg,__support/save/chaos/server.cfg]
+
   match1.tar.gz:
     download:
       idstuff-mirrors:
@@ -1265,9 +1270,12 @@ files:
       format: innoextract
       unpack:
       - $provides
+      # the look_for don't get passed to innoextract arguments
       - pak0.pak
       - quake2_manual/images/start_network_server_screen1.gif
       - quake2_manual/multiplayer.html
+      - __support/save/chaos/server.cfg
+      - license.txt
     provides:
     - baseq2/maps.lst
     - baseq2/maps/base64.bsp
@@ -1665,7 +1673,9 @@ files:
     - baseq2/video/eou8_.cin
     - baseq2/video/idlog.cin
     - baseq2/video/ntro.cin
-
+    - ctf/pak0.pak
+    - ctf/readme.txt
+    - ctf/server.cfg
     - quake2_manual/bottom.html
     - quake2_manual/credits.html
     - quake2_manual/enemy_barracuda_shark.html
@@ -1791,7 +1801,23 @@ files:
     - quake2_manual/story.html
     - quake2_manual/technical_information.html
     - quake2_manual/top_nav.html
-    # + a lot more
+    - 3.20_changes.txt
+    - Commercial Exploitation.doc
+    - Manual.html
+    - QII License Information.doc
+    - Quake II License.doc
+    - Release Notes.doc
+    - commexp.txt
+    - license.txt_3.20
+    - licinfo.txt
+    - readme.doc
+    - readme.txt_3.20
+    - release.txt_gog
+
+    # + rogue
+    # + xatrix
+    # + action, arena, capture, chaos, eraser, jail, kick, pb2 & rover:
+    # -> can not supported without source for a native game.so
 
 cksums: |
   1206005048 239924 quake2-rogue-2.02.tar.xz
@@ -2297,6 +2323,10 @@ size_and_md5: |
   633424    4fd7f78dda9e5fbf161d51fab98ac41d baseq2/maps/ztnmap6.bsp
   1607      3f8813ae8bb1b3fc9820f2e4f25f287e baseq2/maps/ztnmap6.txt
 
+  12101005  1f6bd3d4c08f7ed8c037b12fcffd2eb5 ctf/pak0.pak
+  1314      de2e8781bca657e62d4ad5e4b763cc7a ctf/server.cfg
+  17363     9e5a0bc728d8e06a65244f8065d68c09 ctf/readme.txt
+
   794       b443713f8ad0b1c8825554f346850f9e quake2_manual/bottom.html
   21929     9a28f86e8c5654b4381c9336e868c6f1 quake2_manual/credits.html_steam
   4045      488755080b3e7c45cd3b03ecf4e2409c quake2_manual/enemy_barracuda_shark.html
@@ -2423,6 +2453,18 @@ size_and_md5: |
   13089     41cc66a0e64f34a07234089eee953158 quake2_manual/technical_information.html_steam
   1626      4c08bae1efd913cda8c52cae2c05330f quake2_manual/top_nav.html
 
+  4327      a2a13d58e49c100c0488121918710e75 3.20_changes.txt
+  35840     be525e9186c1a503a890cb0cf00dde0b Commercial Exploitation.doc
+  8938      af91bb4178e223adaa258d50ce2541b0 Manual.html
+  15872     ece2e3e69d0965c26d89f2e7136ca0c8 QII License Information.doc
+  26112     e609fa212754b209bb6a5699bc375ef5 Quake II license.doc
+  5820      aa982a9b086cb2ec3ef474485f35037f Release Notes.doc
+  22647     64cf07696d2f0e0f69a4c133c2dbf3a5 commexp.txt
+  13350     c17a9ef88a73d57a6935cdef8a160579 license.txt_3.20
+  5579      09bfc1ee52836250d5a7071d5cca6179 licinfo.txt
+  79360     664db6482beaa2c129fb2fdaa024b27c readme.doc
+  60435     7278eb0a731a984b119787c5dda1be13 readme.txt
+  2811      cf55adc0ff845a4c1298457d18a32c21 release.txt
   689920128 9bdc4b3a0fd426d1ccb2a55a46c4bf4a setup_quake2_quad_damage_2.0.0.3.exe
 
 md5sums: |
