@@ -1,5 +1,16 @@
 ## Adding a game to `game-data-packager`
 
+### Step 0: working with the git tree
+
+$ git clone https://anonscm.debian.org/git/pkg-games/game-data-packager.git
+$ make
+
+Then the `./run` command can be used instead of the
+system-installed `game-data-packager` command.
+
+Further calls to `make` will only process modified
+new game description data in data/.
+
 ### Step 1: locate and describe the necessary files
 
 Write a YAML document that describes the files needed and how to get them.
