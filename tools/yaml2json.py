@@ -41,9 +41,9 @@ def main(f, out):
     for k in ('cksums', 'sha1sums', 'sha256sums', 'md5sums',
             'size_and_md5'):
         v = data.pop(k, None)
+        offload = os.path.splitext(out)[0] + '.' + k
 
         if v is not None:
-            offload = os.path.splitext(out)[0] + '.' + k
             with open(offload + '.tmp', 'w', encoding='utf-8') as writer:
                 for line in v.splitlines():
                     stripped = line.strip()
@@ -52,6 +52,8 @@ def main(f, out):
                     writer.write(line)
                     writer.write('\n')
             os.rename(offload + '.tmp', offload)
+        elif os.path.isfile(offload):
+            os.remove(offload)
 
     json.dump(data, open(out + '.tmp', 'w', encoding='utf-8'), sort_keys=True)
     os.rename(out + '.tmp', out)
