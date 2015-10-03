@@ -210,50 +210,44 @@ files:
     install_to: $docdir
 
 size_and_md5: |
+  # version provided at http://www.infocom-if.org/
   92160     b732a93a6244ddd92a9b9a3e3a46c687 zork1.z3_zip
+  4711      cbe6b6895418efffd7889b3f8152c1da readme_zork1.txt
+  82160     f6dd915ea7315985536efb39154f3433 zork1.zip
+
   92160     5bcd91ee055e9bd42812617571be227b zork2.z3
+  4604      59266a444e892d2849a280790c5227cd readme_zork2.txt
+  85755     ab521209656948516351996263a8ad34 zork2.zip
+
   92160     ffda9ee2d428fa2fa8e75a1914ff6959 zork3.z3
+  4607      31272558b05259802ad1a72dd13c7fde readme_zork3.txt
+  77155     c1a15e9c56267366fa54476baa6fb7d4 zork3.zip
+
+  # some alternative version
+  84992     4a0f76b9014a4c407520920710c42588 zork1.z3_alt
+
+  # 3 extra games sold in the GOG bundle
   276480    743c4a97b9c85d89d85d4f1e8e8bfe85 beyondzo.z3
   122880    d7bbc3de5ad590c3ab641c020a936c41 planetfa.z3
+  # Zero Zork is not supported by a free engine
 
+  # GOG.com packaging
   1129552   ca6103f50b9aa55e6f533ef3d48bff79 manual.pdf_zork1
   2213995   a46d98231c69c2b8e88f6e51dc432bed manual.pdf_zork2
   1885475   97b4e20b13f49e14309a5c99bbd1c2f3 manual.pdf_zork3
   364616    3442be09f8e997aa359d8a1872dd254c manual.pdf_beyondzork
   1857160   deae31370ff0dd13a3543ef41c409fd6 manual.pdf_planetfall
+  # older archive
+  # ?       f53b893a244737c63180993db4100190 setup_zork_anthology.exe
+  # ?       f24d4c64e0b01d81beae7a5d788bbd9b setup_zork_anthology.exe
+  9752528   86edb0fefd9c4fbe62f51b869e2a1bec setup_zork_anthology.exe
   17799208  6bd42788d696f154ce363830909259d3 setup_zork_2.1.0.17.exe
   18861008  2ea2cf45bb6cf76b0365567e81f27aab setup_zork2_2.1.0.17.exe
   18497752  1526e9be21bf47412dc053f4097e25bd setup_zork3_2.1.0.17.exe
   17162896  8a5168d7340af5b1b4df708f467785c0 setup_beyond_zork_2.1.0.17.exe
   18511960  f359f4b824a7694817e852ada102f6e7 setup_planetfall_2.1.0.17.exe
 
-cksums: |
-  _ 4711      readme_zork1.txt
-  _ 4604      readme_zork2.txt
-  _ 4607      readme_zork3.txt
-  _ 84992     zork1.z3_alt
-  _ 82160     zork1.zip
-  _ 85755     zork2.zip
-  _ 77155     zork3.zip
-  _ 9752528   setup_zork_anthology.exe
-md5sums: |
-  cbe6b6895418efffd7889b3f8152c1da  readme_zork1.txt
-  59266a444e892d2849a280790c5227cd  readme_zork2.txt
-  31272558b05259802ad1a72dd13c7fde  readme_zork3.txt
-  4a0f76b9014a4c407520920710c42588  zork1.z3_alt
-  f6dd915ea7315985536efb39154f3433  zork1.zip
-  ab521209656948516351996263a8ad34  zork2.zip
-  c1a15e9c56267366fa54476baa6fb7d4  zork3.zip
-  86edb0fefd9c4fbe62f51b869e2a1bec  setup_zork_anthology.exe
-
-  # alternate md5sums ?
-  #f53b893a244737c63180993db4100190  setup_zork_anthology.exe
-  #f24d4c64e0b01d81beae7a5d788bbd9b  setup_zork_anthology.exe
-
 sha1sums: |
-  531c483f975941beb2c2ba067b9765ce4751a1c3  readme_zork1.txt
-  6639decd524acbaeae95c0367ba13d6167a3a9e0  readme_zork2.txt
-  18fa069ec0944f2b93bb20502dbf8efd08f92a3e  readme_zork3.txt
   e05781fc76d87985ceb23a62c0c71843147a3099  zork1.z3_alt
   70b9e127569a66ac8dc005395e9deccc52e84056  zork1.z3_zip
   c0792003a0f4f9ae5f7d058c95142ad2cb052e16  zork1.zip
@@ -277,9 +271,6 @@ sha1sums: |
   18377052c1c86fda51a6434ebc2b55a5f7f688b0  setup_planetfall_2.1.0.17.exe
 
 sha256sums: |
-  180bb87dc0524c5f7b1ba29ac08cd3e12f75e1c6b5b211b309ce1f01709b2545  readme_zork1.txt
-  589dbf8446c0c813aa25c4f10777a2cfd56561d9b27a6af9e53f4cc0fe79c95d  readme_zork2.txt
-  5f8334feaa5e98aa4308f262a7ae820bd3d6537ae9be428df2cb9704d3de05f8  readme_zork3.txt
   0ae5ac229e79094ff368b6669356444af0f35e21d862a1baaa546989085c15fd  zork1.z3_zip
   645027fb189ba8fd30daecca609e68e2bf2337b76e7b4f925ccf58778f3eac40  zork1.zip
   abf145d22371f825f13388587d92632bcde90582698f774b896b123a90e1fb1e  zork2.z3
