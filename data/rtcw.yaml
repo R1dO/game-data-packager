@@ -31,6 +31,7 @@ packages:
       path: "common/Return to Castle Wolfenstein"
     gog:
       url: return_to_castle_wolfenstein
+      game: return_to_castle_wolfenstein_game
     # GDP version will be suffixed to this, e.g. : 1.42b+39
     version: 1.42b
     install:
@@ -191,6 +192,37 @@ files:
   license_en.txt:
     look_for: [License.txt]
 
+  setup_return_to_castle_wolfenstein_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - $provides
+      - main/sp_pak1.pk3
+      - main/scripts/translation.cfg
+    provides:
+    - main/autoexec.cfg
+    - main/mp_bin.pk3
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/pak0.pk3
+    - main/scripts/translation.cfg_141_windows
+    - main/sp_pak1.pk3_en
+    - main/sp_pak2.pk3
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    - main/autoexec.cfg
+
 size_and_md5: |
   12        d0c13dcf44a7baa7741af50e09844371 main/autoexec.cfg
   760207    7651d02fe51fc8a949536f3e0cfa8dd6 main/mp_bin.pk3
@@ -216,6 +248,8 @@ size_and_md5: |
   15532040  4223cc6588594ec0ceee186f0e73a6e9 main/sp_pak4.pk3
   159375    f7b2003ef7499f2a6e750c2925c870ad main/scripts/translation.cfg_141_unix
   164376    ff148e1367d0459d7855d37e7b8d80bc main/scripts/translation.cfg_141_windows
+
+  798673040 f0734b69c3ca194488a89f0afcd3c513 setup_return_to_castle_wolfenstein_2.0.0.2.exe
 
   73536309  87c3ebf106b107b60b472863aeec20c4 wolf-linux-1.4-full.x86.run
   73940068  2aa37968aff19d665ed6c001773b2de3 wolf-linux-1.41b.x86.run
@@ -250,6 +284,9 @@ sha1sums: |
   feee8ecadb551a769dfb1ee97eff4c7ed7f93495  main/sp_pak2.pk3
   94539eded69eb99a86d752808c5e029d5915fde7  main/sp_pak3.pk3
   76b1074a350616bd8942005c4eabda06199e81f2  main/sp_pak4.pk3
+
+  f5d1307bd41917bd6f9ee3830240a535018368c0  setup_return_to_castle_wolfenstein_2.0.0.2.exe
+
   576e749167ae310a65443e4215401030d6e87685  wolf-linux-1.4-full.x86.run
   176da1567107eeec3ec3dc14a6b389c47e1303b5  wolf-linux-1.41b.x86.run
   2261e73933ae46c574d4268116b361e0293b377d  iortcw-1.42b-linux-x86.zip
