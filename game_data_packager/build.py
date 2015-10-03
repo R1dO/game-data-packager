@@ -2224,13 +2224,14 @@ class PackagingTask(object):
         return debs
 
     def locate_steam_icon(self, package):
-        id = package.steam.get('id') or self.steam.get('id')
+        id = package.steam.get('id') or self.game.steam.get('id')
         if not id:
             return
         for res in (128, 96, 64, 32):
             icon = '~/.local/share/icons/hicolor/%dx%d/apps/steam_icon_%d.png'
             icon = os.path.expanduser(icon % (res, res, id))
             if os.path.isfile(icon):
+                logger.info('found icon provided by native Steam client at %s.' % icon)
                 return icon
         return
 
