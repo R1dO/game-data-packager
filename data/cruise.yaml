@@ -26,27 +26,13 @@ packages:
     debian:
       provides: cruise-for-a-corpse-data
     install:
-    - d1_fr
-    - d2_fr
-    - d3_fr
-    - d4_fr
-    - d5_fr
+    - d1?fr
+    - d2?fr
+    - d3?fr
+    - d4?fr
+    - d5?fr
     - system.fnt
-    - vol.cnf_fr
-
-files:
-  d1_fr:
-    install_as: d1
-  d2_fr:
-    install_as: d2
-  d3_fr:
-    install_as: d3
-  d4_fr:
-    install_as: d4
-  d5_fr:
-    install_as: d5
-  vol.cnf_fr:
-    install_as: vol.cnf
+    - vol.cnf?fr
 
 size_and_md5: |
   612731    330cb6c19ee4feaed1023413bfb710a5 d1
@@ -58,12 +44,12 @@ size_and_md5: |
   6362      e501ff132e71d12590f56657cb2d7d95 system.fnt
   14372     31e25f3bfaeac1ade788aef0feb1ecfc vol.cnf
 
-  541225    701fadf05a7bc00cc4186d72fb5a8a20 d1_fr
-  600107    9c65889e959c189758c8d59e438d494a d2_fr
-  660159    4945fd4834c213fbfa7bfa2b212f6adf d3_fr
-  705044    57e319e3b819805ebdc8a2139ef71b84 d4_fr
-  649375    3594fa7efe4ec1ed63d81c92bb2f7d5b d5_fr
-  12370     9c578575468b356a11d4d1f9f2a3786a vol.cnf_fr
+  541225    701fadf05a7bc00cc4186d72fb5a8a20 d1?fr
+  600107    9c65889e959c189758c8d59e438d494a d2?fr
+  660159    4945fd4834c213fbfa7bfa2b212f6adf d3?fr
+  705044    57e319e3b819805ebdc8a2139ef71b84 d4?fr
+  649375    3594fa7efe4ec1ed63d81c92bb2f7d5b d5?fr
+  12370     9c578575468b356a11d4d1f9f2a3786a vol.cnf?fr
 
 sha1sums: |
   562f4ab92883f01622f6ac342d61a18830e972a4  d1
@@ -74,10 +60,10 @@ sha1sums: |
   350f97456d77db5276b909eb5578cd7092804ce6  system.fnt
   46614c056901b4378dcadc7a25e0a31edd2b8b7e  vol.cnf
 
-  54aec52fa0957c3207589073de97d5237299f9be  d1_fr
-  b7d77d13bdf67f6f3929a16df5eb859b2b3b713e  d2_fr
-  1bbe056078d319f4d83a6df138fe113ba7ebbf06  d3_fr
-  578f640ed30a1aa94583750126c8c8682c547c62  d4_fr
-  22938b410e232d463d31e4c64779892c54a6a7b1  d5_fr
-  7aa203ade3bc99d0e7daae16b167ac6bbb4084fd  vol.cnf_fr
+  54aec52fa0957c3207589073de97d5237299f9be  d1?fr
+  b7d77d13bdf67f6f3929a16df5eb859b2b3b713e  d2?fr
+  1bbe056078d319f4d83a6df138fe113ba7ebbf06  d3?fr
+  578f640ed30a1aa94583750126c8c8682c547c62  d4?fr
+  22938b410e232d463d31e4c64779892c54a6a7b1  d5?fr
+  7aa203ade3bc99d0e7daae16b167ac6bbb4084fd  vol.cnf?fr
 ...
