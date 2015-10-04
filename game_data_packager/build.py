@@ -328,7 +328,6 @@ class PackagingTask(object):
     def __init__(self, game):
         # A GameData object.
         self.game = game
-        self.game.load_file_data()
 
         # A temporary directory.
         self.__workdir = None
@@ -380,6 +379,8 @@ class PackagingTask(object):
         # str: -Zstr (gzip, xz or none)
         # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
         self.compress_deb = game.compress_deb
+
+        self.game.load_file_data()
 
     def __del__(self):
         self.__exit__()
