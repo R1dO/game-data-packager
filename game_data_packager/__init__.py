@@ -54,7 +54,7 @@ class WantedFile(HashedFile):
         self.distinctive_name = True
         self.distinctive_size = False
         self.download = None
-        self.install_as = name
+        self.install_as = name.split('?')[0]
         self.install_to = None
         self.license = False
         self._look_for = []
