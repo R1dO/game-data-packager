@@ -34,9 +34,9 @@ packages:
       provides: quake-data
       conflicts: quake-registered
     install:
-    - id1/pak0.pak_106
+    - id1/pak0.pak?106
     license:
-    - licinfo.txt_shareware
+    - licinfo.txt?shareware
     - slicnse.txt
     install_to: usr/share/games/quake
 
@@ -53,16 +53,16 @@ packages:
       url: quake_the_offering
       game: quake_the_offering_game
     install:
-    - id1/pak0.pak_106
+    - id1/pak0.pak?106
     - id1/pak1.pak
     optional:
-    - manual.txt_101_cd
+    - manual.txt?101_cd
     - quake manual.pdf
     license:
-    - comexp.txt_101_cd
-    - licinfo.txt_101_cd
-    - licinfo.txt_gog
-    - rlicnse.txt_101_cd
+    - comexp.txt?101_cd
+    - licinfo.txt?101_cd
+    - licinfo.txt?gog
+    - rlicnse.txt?101_cd
     install_to: usr/share/games/quake
 
   quake-armagon:
@@ -79,7 +79,7 @@ packages:
     - armagon/manual.htm
     - armagon/manual.txt
     license:
-    - license.txt_mp12_cd
+    - license.txt?mp12_cd
     install_to: usr/share/games/quake
 
   quake-dissolution:
@@ -98,7 +98,7 @@ packages:
     - eternity/manual.htm
     - eternity/manual.txt
     license:
-    - license.txt_mp12_cd
+    - license.txt?mp12_cd
     install_to: usr/share/games/quake
 
   quake-music:
@@ -132,47 +132,27 @@ packages:
       first_track: 2
 
 files:
-  id1/pak0.pak_101:
+  id1/pak0.pak?101:
     unsuitable: version 1.01, should be replaced by v1.06 automatically
 
-  id1/pak0.pak_106:
+  id1/pak0.pak?106:
     size: 18689235
-    install_as: id1/pak0.pak
 
   id1/pak1.pak:
     size: 34257856
 
-  licinfo.txt_shareware:
-    install_as: licinfo.txt
-
-  licinfo.txt_101_cd:
-    install_as: licinfo.txt
-
-  license.txt_mp12_cd:
-    install_as: license.txt
-
-  licinfo.txt_gog:
-    install_as: license.txt
-
-  manual.txt_101_cd:
+  manual.txt?101_cd:
     distinctive_name: false
     install_to: $docdir
-    install_as: manual.txt
-
-  comexp.txt_101_cd:
-    install_as: comexp.txt
-
-  rlicnse.txt_101_cd:
-    install_as: rlicnse.txt
 
   armagon/manual.htm:
     install_to: $docdir
     install_as: manual.html
     alternatives:
-    - manual.htm_mp1_cd
-    - armagon/manual.htm_mp12_cd
+    - manual.htm?mp1_cd
+    - armagon/manual.htm?mp12_cd
 
-  manual.htm_mp1_cd:
+  manual.htm?mp1_cd:
     distinctive_name: false
     look_for:
     - manual.html
@@ -182,39 +162,38 @@ files:
     install_to: $docdir
     install_as: manual.txt
     alternatives:
-    - manual.txt_mp1_cd
-    - armagon/manual.txt_mp12_cd
+    - manual.txt?mp1_cd
+    - armagon/manual.txt?mp12_cd
 
-  manual.txt_mp1_cd:
+  manual.txt?mp1_cd:
     distinctive_name: false
-    look_for: [manual.txt]
 
   eternity/manual.htm:
     install_to: $docdir
     install_as: manual.html
     alternatives:
-    - manual.htm_mp2_cd
-    - eternity/manual.htm_mp12_cd
+    - manual.htm?mp2_cd
+    - eternity/manual.htm?mp12_cd
 
   eternity/ctf.htm:
     install_to: $docdir
     install_as: ctf.html
     alternatives:
-    - eternity/ctf.htm_mp12_cd
+    - eternity/ctf.htm?mp12_cd
 
-  eternity/manual.htm_mp12_cd:
+  eternity/manual.htm?mp12_cd:
     distinctive_name: false
     look_for:
     - manual.htm
     - manual.html
 
-  eternity/ctf.htm_mp12_cd:
+  eternity/ctf.htm?mp12_cd:
     distinctive_name: false
     look_for:
     - ctf.htm
     - ctf.html
 
-  manual.htm_mp2_cd:
+  manual.htm?mp2_cd:
     distinctive_name: false
     look_for:
     - manual.html
@@ -224,26 +203,25 @@ files:
     install_to: $docdir
     install_as: manual.txt
     alternatives:
-    - manual.txt_mp2_cd
-    - eternity/manual.txt_mp12_cd
+    - manual.txt?mp2_cd
+    - eternity/manual.txt?mp12_cd
 
   eternity/ctf.txt:
     install_to: $docdir
     install_as: ctf.txt
     alternatives:
-    - eternity/ctf.txt_mp12_cd
+    - eternity/ctf.txt?mp12_cd
 
-  eternity/manual.txt_mp12_cd:
+  eternity/manual.txt?mp12_cd:
     distinctive_name: false
     look_for: [manual.txt]
 
-  eternity/ctf.txt_mp12_cd:
+  eternity/ctf.txt?mp12_cd:
     distinctive_name: false
     look_for: [ctf.txt]
 
-  manual.txt_mp2_cd:
+  manual.txt?mp2_cd:
     distinctive_name: false
-    look_for: [manual.txt]
 
   hipnotic/pak0.pak:
     alternatives:
@@ -256,17 +234,13 @@ files:
 
   rogue/pak0.pak:
     alternatives:
-    - rogue/pak0.pak_mp12_cd
-    - rogue/pak0.pak_mp2_cd
-    - rogue/pak0.pak_steam
-  rogue/pak0.pak_mp2_cd:
-    look_for: [rogue/pak0.pak]
-  rogue/pak0.pak_steam:
+    - rogue/pak0.pak?mp12_cd
+    - rogue/pak0.pak?mp2_cd
+    - rogue/pak0.pak?steam
+  rogue/pak0.pak?steam:
     size: 37875279
-    look_for: [rogue/pak0.pak]
-  rogue/pak0.pak_mp12_cd:
+  rogue/pak0.pak?mp12_cd:
     size: 37875279
-    look_for: [rogue/pak0.pak]
 
   quake106.zip:
     download:
@@ -275,12 +249,10 @@ files:
     unpack:
       format: zip
     provides:
-    - resource.1_106_demo
+    - resource.1?106_demo
 
-  resource.1_106_demo:
+  resource.1?106_demo:
     distinctive_name: false
-    look_for:
-    - resource.1
     unpack:
       format: lha
       unpack:
@@ -288,22 +260,20 @@ files:
         - licinfo.txt
         - slicnse.txt
     provides:
-    - id1/pak0.pak_106
-    - licinfo.txt_shareware
+    - id1/pak0.pak?106
+    - licinfo.txt?shareware
     - slicnse.txt
 
   # found on retail Quake v1.06 CDROM according to #718688
-  resource.1_106_cd:
+  resource.1?106_cd:
     distinctive_name: false
-    look_for:
-    - resource.1
     unpack:
       format: lha
       unpack:
       - ID1/PAK0.PAK
       - ID1/PAK1.PAK
     provides:
-    - id1/pak0.pak_106
+    - id1/pak0.pak?106
     - id1/pak1.pak
 
   q101_int.1:
@@ -315,24 +285,20 @@ files:
 
   q101_int.exe:
     provides:
-    - comexp.txt_101_cd
-    - licinfo.txt_101_cd
-    - manual.txt_101_cd
-    - rlicnse.txt_101_cd
+    - comexp.txt?101_cd
+    - licinfo.txt?101_cd
+    - manual.txt?101_cd
+    - rlicnse.txt?101_cd
     - id1/pak1.pak
-    # also id1/pak0.pak_101 but that's of little use to us
+    # also id1/pak0.pak?101 but that's of little use to us
     unpack:
       format: lha
 
   quake manual.pdf:
     alternatives:
-    - quake manual.pdf_steam
-    - quake manual.pdf_gog
+    - quake manual.pdf?steam
+    - quake manual.pdf?gog
     install_to: $docdir
-  quake manual.pdf_steam:
-    look_for: [quake manual.pdf]
-  quake manual.pdf_gog:
-    look_for: [quake manual.pdf]
 
   setup_quake_the_offering_2.0.0.6.exe:
     unpack:
@@ -346,11 +312,11 @@ files:
       - hipnotic/pak0.pak
       - rogue/pak0.pak
     provides:
-    - id1/pak0.pak_106
+    - id1/pak0.pak?106
     - id1/pak1.pak
-    - comexp.txt_101_cd
-    - licinfo.txt_gog
-    - quake manual.pdf_gog
+    - comexp.txt?101_cd
+    - licinfo.txt?gog
+    - quake manual.pdf?gog
     - hipnotic/pak0.pak
     - rogue/pak0.pak
 
@@ -358,11 +324,11 @@ cksums: |
   # demo, free to download
   263390945 9094045 quake106.zip
   # unpacks into:
-  3503147729 9086574 resource.1_106_demo
+  3503147729 9086574 resource.1?106_demo
   # unpacks into:
   22264292 10036 slicnse.txt
-  3091285839 9311 licinfo.txt_shareware
-  _ 18689235 id1/pak0.pak_106
+  3091285839 9311 licinfo.txt?shareware
+  _ 18689235 id1/pak0.pak?106
 
   # Quake 1.01 CD (skitt@)
   # http://musicbrainz.org/release-group/ece43805-d8d4-4052-9cc7-806036633e32
@@ -371,17 +337,17 @@ cksums: |
   # q101_int.[12] concatenate to...
   3769782044 24552071 q101_int.exe
   # which contains:
-  3351025396 25462 comexp.txt_101_cd
-  3946223549 4031 licinfo.txt_101_cd
-  1339070913 44326 manual.txt_101_cd
-  3769057337 10862 rlicnse.txt_101_cd
-  4232016217 18276119 id1/pak0.pak_101
+  3351025396 25462 comexp.txt?101_cd
+  3946223549 4031 licinfo.txt?101_cd
+  1339070913 44326 manual.txt?101_cd
+  3769057337 10862 rlicnse.txt?101_cd
+  4232016217 18276119 id1/pak0.pak?101
   3683309993 34257856 id1/pak1.pak
 
   # Scourge of Armagon CD (skitt@)
   # http://musicbrainz.org/release/318a45be-5d92-4397-a157-7d052bf73824
-  345401104 40564 manual.htm_mp1_cd
-  2684027732 29551 manual.txt_mp1_cd
+  345401104 40564 manual.htm?mp1_cd
+  2684027732 29551 manual.txt?mp1_cd
   415120192 35527205 hipnotic/pak0.pak_orig
   # The CD has eight audio tracks (2 to 9) with the following lengths:
   # track 2: 3m:10.840s
@@ -395,9 +361,9 @@ cksums: |
 
   # Dissolution of Eternity CD (skitt@)
   # http://musicbrainz.org/release/7a7647e8-6eee-4f2e-9061-832cb5a64bd6
-  1111051062 43702 manual.htm_mp2_cd
-  27864436 30664 manual.txt_mp2_cd
-  4033998175 37875279 rogue/pak0.pak_mp2_cd
+  1111051062 43702 manual.htm?mp2_cd
+  27864436 30664 manual.txt?mp2_cd
+  4033998175 37875279 rogue/pak0.pak?mp2_cd
   # The CD has eight audio tracks as follows:
   # track 2: 3m:12.000s
   # track 3: 3m:09.680s
@@ -411,16 +377,16 @@ cksums: |
   # combined SoA/DoE CD (smcv@)
   # http://musicbrainz.org/release/eca51545-8548-4324-ac0b-2f8a7f8c8b7c
   # /dev/cdrom: UUID="1998-09-21-19-14-40-00" LABEL="QPACKS" TYPE="iso9660"
-  46825283 14554 license.txt_mp12_cd
+  46825283 14554 license.txt?mp12_cd
   415120192 35527205 hipnotic/pak0.pak_orig
-  3993845759 54994 armagon/manual.htm_mp12_cd
-  1659950884 44547 armagon/manual.txt_mp12_cd
-  434394072 21077 armagon/readme.htm_mp12_cd
-  1850939051 6089 eternity/ctf.htm_mp12_cd
-  2425680595 5951 eternity/ctf.txt_mp12_cd
-  1120740306 58113 eternity/manual.htm_mp12_cd
-  3929125575 44840 eternity/manual.txt_mp12_cd
-  1366046711 37875279 rogue/pak0.pak_mp12_cd
+  3993845759 54994 armagon/manual.htm?mp12_cd
+  1659950884 44547 armagon/manual.txt?mp12_cd
+  434394072 21077 armagon/readme.htm?mp12_cd
+  1850939051 6089 eternity/ctf.htm?mp12_cd
+  2425680595 5951 eternity/ctf.txt?mp12_cd
+  1120740306 58113 eternity/manual.htm?mp12_cd
+  3929125575 44840 eternity/manual.txt?mp12_cd
+  1366046711 37875279 rogue/pak0.pak?mp12_cd
   # Track listing (MM:SS:FF where FF is a 1/75s CD audio frame):
   #  1      DATA    4      00:00:00(     0)     14:35:19( 65644)
   #  2      AUDIO   0      14:35:19( 65644)     03:10:63( 14313)
@@ -434,106 +400,106 @@ cksums: |
   # Leadout AUDIO   0      39:29:38(177713)
 
 md5sums: |
-  5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak_106
-  85fc9cee2035b66290da1e33be2ac86b  id1/pak0.pak_101
+  5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak?106
+  85fc9cee2035b66290da1e33be2ac86b  id1/pak0.pak?101
   d76b3e5678f0b64ac74ce5e340e6a685  id1/pak1.pak
   0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak_orig
   # "MD5 sum for glQuake-compatible version (see
   # http://speeddemosarchive.com/quake/qdq/movies/sds.html for more info)"
   f05b7452ae725e060fb3d14f7731fb00  hipnotic/pak0.pak_qdq_glquake_compat
-  c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak_mp12_cd
-  f8898a483b131de21581656c94f3c1a4  rogue/pak0.pak_mp2_cd
-  f71428763229bdb373f00a547296efe3  rogue/pak0.pak_steam
+  c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak?mp12_cd
+  f8898a483b131de21581656c94f3c1a4  rogue/pak0.pak?mp2_cd
+  f71428763229bdb373f00a547296efe3  rogue/pak0.pak?steam
   8cee4d03ee092909fdb6a4f84f0c1357  quake106.zip
-  994d127ea51ba4bae1030cb7242806aa  resource.1_106_demo
-  959e4bd69d817ee0cbea6ddbf4f3af37  resource.1_106_cd
+  994d127ea51ba4bae1030cb7242806aa  resource.1?106_demo
+  959e4bd69d817ee0cbea6ddbf4f3af37  resource.1?106_cd
   752f49131bb3ba832346e873c1bcfdc6  q101_int.1
   9ed67b39020575771e29645d977c9216  q101_int.2
   00ec83fe931371ddae30f9b7c83d414c  q101_int.exe
-  f1a3b7c5c163059345d7507ad1324e3d  licinfo.txt_101_cd
-  beaa9e3a9a8ef071d876d59fe35817ce  manual.txt_101_cd
-  c19fec3ec138ee39868a021acaa34d65  rlicnse.txt_101_cd
-  d571f4e25c39a6ee1aa5e71dd7219838  manual.htm_mp1_cd
-  9e5a6f56047e1b586be108c0598cbe5e  manual.txt_mp1_cd
-  6d258cb6d042c10b0f638b4dbf7b242d  manual.htm_mp2_cd
-  7d9d3fad75c0ee581a8265e59151ee2c  manual.txt_mp2_cd
+  f1a3b7c5c163059345d7507ad1324e3d  licinfo.txt?101_cd
+  beaa9e3a9a8ef071d876d59fe35817ce  manual.txt?101_cd
+  c19fec3ec138ee39868a021acaa34d65  rlicnse.txt?101_cd
+  d571f4e25c39a6ee1aa5e71dd7219838  manual.htm?mp1_cd
+  9e5a6f56047e1b586be108c0598cbe5e  manual.txt?mp1_cd
+  6d258cb6d042c10b0f638b4dbf7b242d  manual.htm?mp2_cd
+  7d9d3fad75c0ee581a8265e59151ee2c  manual.txt?mp2_cd
   5450cdeca31e270a64fc64e1b52a25a6  slicnse.txt
-  2b63fd0623b86b22ef915c7c0fca8ff2  licinfo.txt_shareware
-  be58e6beab67da309eabc3a4048e943f  license.txt_mp12_cd
-  4cbb8fd26b83631eaa79f4e8e5161293  armagon/manual.htm_mp12_cd
-  f0e5b60a8af31b40603faca2d831a5a2  armagon/manual.txt_mp12_cd
-  a82c063881a57f3ddeaccb2da285da19  eternity/ctf.htm_mp12_cd
-  4b041f0feaa269e8c056e55673351a77  eternity/ctf.txt_mp12_cd
-  29500c8bd2b0359eb258a4987319fadd  eternity/manual.htm_mp12_cd
-  9f9e2f2f14093d25f116a8a68c139251  eternity/manual.txt_mp12_cd
+  2b63fd0623b86b22ef915c7c0fca8ff2  licinfo.txt?shareware
+  be58e6beab67da309eabc3a4048e943f  license.txt?mp12_cd
+  4cbb8fd26b83631eaa79f4e8e5161293  armagon/manual.htm?mp12_cd
+  f0e5b60a8af31b40603faca2d831a5a2  armagon/manual.txt?mp12_cd
+  a82c063881a57f3ddeaccb2da285da19  eternity/ctf.htm?mp12_cd
+  4b041f0feaa269e8c056e55673351a77  eternity/ctf.txt?mp12_cd
+  29500c8bd2b0359eb258a4987319fadd  eternity/manual.htm?mp12_cd
+  9f9e2f2f14093d25f116a8a68c139251  eternity/manual.txt?mp12_cd
 
 size_and_md5: |
-  18689235   5906e5998fc3d896ddaf5e6a62e03abb id1/pak0.pak_106
+  18689235   5906e5998fc3d896ddaf5e6a62e03abb id1/pak0.pak?106
   34257856   d76b3e5678f0b64ac74ce5e340e6a685 id1/pak1.pak
-  25462      0575bbd0df753f6e44b7a0f67ffc1413 comexp.txt_101_cd
-  9308       0f77362a55b35e623d9f4710ed86cda7 licinfo.txt_gog
-  717202     785290e6e42c94934c3044851e380b64 quake manual.pdf_gog
-  727612     0eb0ce3c6244dce91e68eec572cbd67e quake manual.pdf_steam
+  25462      0575bbd0df753f6e44b7a0f67ffc1413 comexp.txt?101_cd
+  9308       0f77362a55b35e623d9f4710ed86cda7 licinfo.txt?gog
+  717202     785290e6e42c94934c3044851e380b64 quake manual.pdf?gog
+  727612     0eb0ce3c6244dce91e68eec572cbd67e quake manual.pdf?steam
   1233689072 c8acba92fca95b8ba67111fa81730141 setup_quake_the_offering_2.0.0.6.exe
 
 sha1sums: |
-  36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak_106
+  36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak?106
   6fd0d1643047612f41afb2001b972d830c792921  id1/pak1.pak
   1b089a41dd0cf9268668a5072acfb858a7fb8cc2  hipnotic/pak0.pak_orig
-  78df8ce771d1bef5eb9da3d51c7628b11b4ae2c8  rogue/pak0.pak_mp12_cd
+  78df8ce771d1bef5eb9da3d51c7628b11b4ae2c8  rogue/pak0.pak?mp12_cd
   f8a1a509b094ccdbed3c54b96f7d9b351c0898f5  quake106.zip
-  5301abe61da5876aac74f8a112e0e66ff1ce1aea  resource.1_106_demo
+  5301abe61da5876aac74f8a112e0e66ff1ce1aea  resource.1?106_demo
   cb4c93b3b3715d228628452700aa5210319819b1  q101_int.1
   0635481600468265453eb1f22e7ac12303cdab94  q101_int.2
   05c914478ac19e19561916c18b2327343b825dbb  q101_int.exe
-  606c21d258d58823a605fc20f5c45600d9b0ffb0  comexp.txt_101_cd
-  1ee3fef4440431a26235f7375632a523c1776466  licinfo.txt_101_cd
-  1296dc25be9412b7a09eb7fbf6883638895fa402  manual.txt_101_cd
-  26767c3ee16d16c36031789f851644afa79fbca4  rlicnse.txt_101_cd
-  f856211bbd001fdd45ef6723471bb821b39271f9  manual.htm_mp1_cd
-  d843e899db57630c612ff71207cd1c52f7415850  manual.txt_mp1_cd
-  25b37eb5a420ffef67ce23b52a086464e4d6b18e  manual.htm_mp2_cd
-  fa3365bc72459409f87b370a5ccf3b0a143bb7ff  manual.txt_mp2_cd
-  cc81b8f6acde6dde148a91f2f34ef172192c2036  rogue/pak0.pak_mp2_cd
+  606c21d258d58823a605fc20f5c45600d9b0ffb0  comexp.txt?101_cd
+  1ee3fef4440431a26235f7375632a523c1776466  licinfo.txt?101_cd
+  1296dc25be9412b7a09eb7fbf6883638895fa402  manual.txt?101_cd
+  26767c3ee16d16c36031789f851644afa79fbca4  rlicnse.txt?101_cd
+  f856211bbd001fdd45ef6723471bb821b39271f9  manual.htm?mp1_cd
+  d843e899db57630c612ff71207cd1c52f7415850  manual.txt?mp1_cd
+  25b37eb5a420ffef67ce23b52a086464e4d6b18e  manual.htm?mp2_cd
+  fa3365bc72459409f87b370a5ccf3b0a143bb7ff  manual.txt?mp2_cd
+  cc81b8f6acde6dde148a91f2f34ef172192c2036  rogue/pak0.pak?mp2_cd
   202c682a486bbfe1f0d8f2526d64a4974fcbce5e  slicnse.txt
-  af53bc70e4d1a2ae9fa7921744292aa9d8590e4a  licinfo.txt_shareware
-  5154fe8f92a174b273152bfbe24aad6668ffb980  license.txt_mp12_cd
-  0e8e91db4b334dd9a35e2ccbae5d46d3ceb9852a  armagon/manual.htm_mp12_cd
-  7e1788170c2c8f3c7d9d3518e82528c631b87114  armagon/manual.txt_mp12_cd
-  f888bd69b315515284c84ec8e805c798abe1393a  eternity/ctf.htm_mp12_cd
-  09f5bd9d54985afce030ece22aa020786aab6110  eternity/ctf.txt_mp12_cd
-  03c040d7a296b726a5b088784c4fc0db608fd635  eternity/manual.htm_mp12_cd
-  083f5c4e1dbdb8cc7c105aa9e2d145cd42f9b86c  eternity/manual.txt_mp12_cd
+  af53bc70e4d1a2ae9fa7921744292aa9d8590e4a  licinfo.txt?shareware
+  5154fe8f92a174b273152bfbe24aad6668ffb980  license.txt?mp12_cd
+  0e8e91db4b334dd9a35e2ccbae5d46d3ceb9852a  armagon/manual.htm?mp12_cd
+  7e1788170c2c8f3c7d9d3518e82528c631b87114  armagon/manual.txt?mp12_cd
+  f888bd69b315515284c84ec8e805c798abe1393a  eternity/ctf.htm?mp12_cd
+  09f5bd9d54985afce030ece22aa020786aab6110  eternity/ctf.txt?mp12_cd
+  03c040d7a296b726a5b088784c4fc0db608fd635  eternity/manual.htm?mp12_cd
+  083f5c4e1dbdb8cc7c105aa9e2d145cd42f9b86c  eternity/manual.txt?mp12_cd
   482866072af20cd730b3ce7fc69606a63db83cad  setup_quake_the_offering_2.0.0.6.exe
 
 sha256sums: |
-  35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak_106
+  35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak?106
   94e355836ec42bc464e4cbe794cfb7b5163c6efa1bcc575622bb36475bf1cf30  id1/pak1.pak
   62b83569ba975015535be73407796ce0829ebcfa75a68fb29c67514649dc655f  hipnotic/pak0.pak_orig
-  c3c40408f953e2de99f241dd85bf7854b69f1ae264b4e55a5657ef2ab12201a7  rogue/pak0.pak_mp12_cd
+  c3c40408f953e2de99f241dd85bf7854b69f1ae264b4e55a5657ef2ab12201a7  rogue/pak0.pak?mp12_cd
   ec6c9d34b1ae0252ac0066045b6611a7919c2a0d78a3a66d9387a8f597553239  quake106.zip
-  c192c9c71bee41750dd7d14c99378766d61e077977b9d13d1a457b8d9eabe34a  resource.1_106_demo
+  c192c9c71bee41750dd7d14c99378766d61e077977b9d13d1a457b8d9eabe34a  resource.1?106_demo
   9069aa9e6e421520419621df06ee2464d912d37f456544e01b99dce95e96d603  q101_int.1
   7386c8dfc0479b96a509b8f910923482a460812dc286bff1027745b2342cbad2  q101_int.2
   49754ddfe94e186ce8f9d6ecdf0bcfcda1d9f77f8b661622ee6a1d056a174862  q101_int.exe
-  82e2d4eefc220d3b595a74317155c3159d758d5fda288f039a9371ed13e5a11a  comexp.txt_101_cd
-  52952e005f5bcd9bca0813eb8d3b2b4ce860ff6b48ee17e30bd8be872c3268ae  licinfo.txt_101_cd
-  aaec528149360af828c499b3e3a53b0bccf31778876f159b532888bf33df54ad  manual.txt_101_cd
-  c16e5944f9fa873444458923622654b49f51b8064e081d01c0894ebf22fe3abe  rlicnse.txt_101_cd
-  ee1ac8bd99e3e8a3dbf4692b5563d24300f6041bcbb59944bd834084631b07b8  manual.htm_mp1_cd
-  2cc953802c9b6d5ac680438b4f88213a8657ece4f2ab7b67b51a590b125d4d88  manual.txt_mp1_cd
-  e1a0117c8f97305b72da97fd34873669836eb48702f7272abe42bd53c129024a  manual.htm_mp2_cd
-  ffdb37e124bf1f35d149a63a2b5cdc8ddd31c3b571c39003d986111450c91584  manual.txt_mp2_cd
-  51b861f617f280cf02b78b7f867f5e9522f82d12d9b28d5bfad6b554834f40e3  rogue/pak0.pak_mp2_cd
+  82e2d4eefc220d3b595a74317155c3159d758d5fda288f039a9371ed13e5a11a  comexp.txt?101_cd
+  52952e005f5bcd9bca0813eb8d3b2b4ce860ff6b48ee17e30bd8be872c3268ae  licinfo.txt?101_cd
+  aaec528149360af828c499b3e3a53b0bccf31778876f159b532888bf33df54ad  manual.txt?101_cd
+  c16e5944f9fa873444458923622654b49f51b8064e081d01c0894ebf22fe3abe  rlicnse.txt?101_cd
+  ee1ac8bd99e3e8a3dbf4692b5563d24300f6041bcbb59944bd834084631b07b8  manual.htm?mp1_cd
+  2cc953802c9b6d5ac680438b4f88213a8657ece4f2ab7b67b51a590b125d4d88  manual.txt?mp1_cd
+  e1a0117c8f97305b72da97fd34873669836eb48702f7272abe42bd53c129024a  manual.htm?mp2_cd
+  ffdb37e124bf1f35d149a63a2b5cdc8ddd31c3b571c39003d986111450c91584  manual.txt?mp2_cd
+  51b861f617f280cf02b78b7f867f5e9522f82d12d9b28d5bfad6b554834f40e3  rogue/pak0.pak?mp2_cd
   070cdf6a6410adef8fb5f83a4e5ccdb9e2301d2e48d460bb3a67a0f5ba9d70a8  slicnse.txt
-  8d654834d085c088d603fb6879a874799e8b4cc6ae9317bbf826afd83bc72e31  licinfo.txt_shareware
-  876fb4cda48e3a02e53045ba8a3bf1a6dd2cdbff66702ccf22c1d6eacd5d1dcb  license.txt_mp12_cd
-  56b9e84c70f204349baa822e24986796e43e33ffbaa3f70b873c60976c0697cf  armagon/manual.htm_mp12_cd
-  e2f41d9e6cc3f47e89051b66141204d3282615074e247d779cd427b51dc0f1af  armagon/manual.txt_mp12_cd
-  5dca3811a0b7885b205220a5bff30fa404329a4832c45cc05189465a998e843e  eternity/ctf.htm_mp12_cd
-  06166db2b6eaacdb9757b922f8480a151873ccdc3a4cc80508d733708f4ba681  eternity/ctf.txt_mp12_cd
-  439059faedded5a970ae30f4791a2939225f7934bb5c1a5e1ffbd7d273a4628d  eternity/manual.htm_mp12_cd
-  4975e10d0088078aff29770f19499e657e9e71d15b4a36c4018cf02167605feb  eternity/manual.txt_mp12_cd
+  8d654834d085c088d603fb6879a874799e8b4cc6ae9317bbf826afd83bc72e31  licinfo.txt?shareware
+  876fb4cda48e3a02e53045ba8a3bf1a6dd2cdbff66702ccf22c1d6eacd5d1dcb  license.txt?mp12_cd
+  56b9e84c70f204349baa822e24986796e43e33ffbaa3f70b873c60976c0697cf  armagon/manual.htm?mp12_cd
+  e2f41d9e6cc3f47e89051b66141204d3282615074e247d779cd427b51dc0f1af  armagon/manual.txt?mp12_cd
+  5dca3811a0b7885b205220a5bff30fa404329a4832c45cc05189465a998e843e  eternity/ctf.htm?mp12_cd
+  06166db2b6eaacdb9757b922f8480a151873ccdc3a4cc80508d733708f4ba681  eternity/ctf.txt?mp12_cd
+  439059faedded5a970ae30f4791a2939225f7934bb5c1a5e1ffbd7d273a4628d  eternity/manual.htm?mp12_cd
+  4975e10d0088078aff29770f19499e657e9e71d15b4a36c4018cf02167605feb  eternity/manual.txt?mp12_cd
 
 ...
 # vim:set sw=2 sts=2 et:

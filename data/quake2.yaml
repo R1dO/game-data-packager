@@ -931,12 +931,8 @@ files:
 
   baseq2/pak0.pak:
     alternatives:
-    - baseq2/pak0.pak_1dd586a
-    - baseq2/pak0.pak_6be3f40
-  baseq2/pak0.pak_1dd586a:
-    look_for: [baseq2/pak0.pak]
-  baseq2/pak0.pak_6be3f40:
-    look_for: [baseq2/pak0.pak]
+    - baseq2/pak0.pak?1dd586a
+    - baseq2/pak0.pak?6be3f40
 
   baseq2/pak0.pak_demo:
     install_as: baseq2/pak0.pak
@@ -1307,7 +1303,7 @@ files:
     - baseq2/maps/ztnmap5.txt
     - baseq2/maps/ztnmap6.bsp
     - baseq2/maps/ztnmap6.txt
-    - baseq2/pak0.pak_1dd586a
+    - baseq2/pak0.pak?1dd586a
     - baseq2/pak1.pak
     - baseq2/pak2.pak
     - baseq2/players/crakhor/a_grenades.md2
@@ -1837,7 +1833,7 @@ cksums: |
   #3809877159 234 README - reckoning.txt - not useful in practice
   1505038542 1063 baseq2/maps.lst
   # pak0.pak seen on Steam, and on smcv's Xplosiv-branded budget CD-ROM
-  3164808345 183997730 baseq2/pak0.pak_1dd586a
+  3164808345 183997730 baseq2/pak0.pak?1dd586a
   #3172430066 17391 ctf/CTF_readme.txt - redundant with ctf/readme.txt
   1474989637 12101005 ctf/pak0.pak
   3490379174 17363 ctf/readme.txt
@@ -1857,7 +1853,7 @@ cksums: |
   2807424234 60435 readme.txt_steam
 
   # pak0.pak as seen in Fabian Greffrath's copy (#776059)
-  639175200 194965474 baseq2/pak0.pak_6be3f40
+  639175200 194965474 baseq2/pak0.pak?6be3f40
 
   # files from the demo
   _ 5073 quake2_manual/customer_support.html_3.14_demo
@@ -1923,7 +1919,7 @@ cksums: |
   _ 2795      quake2_manual/images/sights.gif
 
 size_and_md5: |
-  183997730 1ec55a724dc3109fd50dde71ab581d70 baseq2/pak0.pak_1dd586a
+  183997730 1ec55a724dc3109fd50dde71ab581d70 baseq2/pak0.pak?1dd586a
   19311290  36fdaddd1c1b56ba10472466e4486ff8 baseq2/video/end.cin
   6038210   cbab517cddc03ec676d7153eeb13417b baseq2/video/eou1_.cin
   6586381   37201aa9c798982e7739dfdbad61c004 baseq2/video/eou2_.cin
@@ -2580,7 +2576,7 @@ md5sums: |
   9a28f86e8c5654b4381c9336e868c6f1  quake2_manual/credits.html_steam
 
   # alternative version
-  4f7dafbfb99c30d5455bc63003da8357  baseq2/pak0.pak_6be3f40
+  4f7dafbfb99c30d5455bc63003da8357  baseq2/pak0.pak?6be3f40
 
   # expansions on Steam
   5e2ecbe9287152a1e6e0d77b3f47dcb2  rogue/pak0.pak
@@ -2618,7 +2614,7 @@ sha1sums: |
   # Steam
   5f4b3c6ea746dd3a304c471d405579664cd263f7  3.20_changes.txt
   2a1b3b479e56fab0581d64c2bca6360bf2f372b7  baseq2/maps.lst
-  1dd586a3230d1ac5bfd34e57cc796000d4c252c2  baseq2/pak0.pak_1dd586a
+  1dd586a3230d1ac5bfd34e57cc796000d4c252c2  baseq2/pak0.pak?1dd586a
   67e76a7f3234646507ae59ec1bf755637c1dad03  baseq2/pak2.pak
   c5ff3d06fd9ae2676df0ea74f1bb381fc433c1cb  baseq2/players/crakhor/a_grenades.md2
   ff3f87bbc6f81a346946967b08194dcb19dd90c0  baseq2/players/crakhor/w_bfg.md2
@@ -2964,7 +2960,7 @@ sha1sums: |
   039f8542c5e968d1b9a2d6c2a2a441ec87e1b38b  readme.doc
   8039588eafadb9a5eb8bd227776ba5ef3fd5c141  readme.txt_3.20
 
-  6be3f40f61ab9534d503316f95ac766cbfe6e77c  baseq2/pak0.pak_6be3f40
+  6be3f40f61ab9534d503316f95ac766cbfe6e77c  baseq2/pak0.pak?6be3f40
 
   1f3130cd08918173a52d1343981c0c75753c170b  xatrix/docs/license.doc
   a05ce9237b74d68b6f362dc3e3676b55ee48e866  xatrix/docs/license.txt
@@ -3015,7 +3011,7 @@ sha256sums: |
 
   e9011ba63be06b79c45000701ca6881c29a8a5bd49f56bf824988daac2e177a8  3.20_changes.txt
   3649016f324b334f1c4a55d7c20f4d30532f1727d9388bc1064fda191353f667  baseq2/maps.lst
-  1ce99eb11e7e251ccdf690858effba79836dbe5e32a4083ad00a13ecda491679  baseq2/pak0.pak_1dd586a
+  1ce99eb11e7e251ccdf690858effba79836dbe5e32a4083ad00a13ecda491679  baseq2/pak0.pak?1dd586a
   678210ecd1b27dde1c645660333a1a7b139d849425793859657f804d379b62ad  baseq2/pak1.pak
   cb88d584ef939d08e24433a6cf86274737303fac2bbd94415927a75e6b269dd8  baseq2/pak2.pak
   017c6a39e8c49525f5d41de3a06a2d6ecd088ac9529f675ee00187425fed0343  baseq2/players/crakhor/a_grenades.md2
@@ -3362,7 +3358,7 @@ sha256sums: |
   a6fbe78e4c97e5b585d99607fbc2f3182f85ff0201d3f8728d0733b721823473  readme.doc
   b3ec0876f693a3c8791b93ea194d57ac7deea3d058197c7ab74b8252fd2a2bf8  readme.txt_3.20
 
-  7fea4fe24b5871787962cd8f1df3bd55b93baf34fea5743e3f90fcc8e5675995  baseq2/pak0.pak_6be3f40
+  7fea4fe24b5871787962cd8f1df3bd55b93baf34fea5743e3f90fcc8e5675995  baseq2/pak0.pak?6be3f40
 
   1c2f4bb156b0a7c6dca1c338d84145996025000e7345a660ed21b21b21f00473  xatrix/docs/license.doc
   0e462a27702c74e7f29c1f6426650291b396996a064950e263de5d1991fec126  xatrix/docs/license.txt
