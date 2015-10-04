@@ -328,6 +328,7 @@ class GameData(object):
                             there = name[len('opt/GOG Games/'):]
                             there = there.split('/', 1)[0]
                             install_to = ('opt/GOG Games/' + there)
+                            self.try_repack_from.append('/' + install_to)
 
                     if entry.isfile():
                         hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
@@ -383,7 +384,12 @@ class GameData(object):
             print('longname: %s' % self.longname)
         print('copyright: © 1970 FIXME')
         if self.try_repack_from:
-            print('try_repack_from: %s' % self.try_repack_from)
+            if len(self.try_repack_from) == 1:
+                print('try_repack_from: %s' % self.try_repack_from)
+            else:
+                print('try_repack_from:')
+                for path in sorted(self.try_repack_from):
+                    print('- "%s"' % path)
         if self.plugin:
             print('plugin: %s' % self.plugin)
         if self.gog_url:
