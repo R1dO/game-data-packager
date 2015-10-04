@@ -51,8 +51,8 @@ packages:
     debian:
       provides: fate-of-atlantis-data
     install:
-    - atlantis.000_de
-    - atlantis.001_de
+    - atlantis.000?de
+    - atlantis.001?de
     optional:
     - monster.sog
     - hintbook.pdf
@@ -66,8 +66,8 @@ packages:
     debian:
       provides: fate-of-atlantis-data
     install:
-    - atlantis.000_de_floppy
-    - atlantis.001_de_floppy
+    - atlantis.000?de_floppy
+    - atlantis.001?de_floppy
     optional:
     - hintbook.pdf
     - manual.pdf
@@ -77,8 +77,8 @@ packages:
     debian:
       provides: fate-of-atlantis-data
     install:
-    - atlantis.000_es
-    - atlantis.001_es
+    - atlantis.000?es
+    - atlantis.001?es
     optional:
     - monster.so3
     - hintbook.pdf
@@ -92,8 +92,8 @@ packages:
     debian:
       provides: fate-of-atlantis-data
     install:
-    - atlantis.000_es_floppy
-    - atlantis.001_es_floppy
+    - atlantis.000?es_floppy
+    - atlantis.001?es_floppy
     optional:
     - hintbook.pdf
     - manual.pdf
@@ -105,8 +105,8 @@ packages:
     debian:
       provides: fate-of-atlantis-data
     install:
-    - atlantis.000_fr
-    - atlantis.001_fr
+    - atlantis.000?fr
+    - atlantis.001?fr
     # floppy version, no dubbing known
     optional:
     - hintbook.pdf
@@ -119,8 +119,8 @@ packages:
     debian:
       provides: fate-of-atlantis-data
     install:
-    - atlantis.000_it
-    - atlantis.001_it
+    - atlantis.000?it
+    - atlantis.001?it
     # floppy version, no dubbing known
     optional:
     - hintbook.pdf
@@ -173,22 +173,17 @@ files:
     unpack:
       format: zip
     provides:
-    - atlantis.000_es_floppy
-    - atlantis.001_es_floppy
+    - atlantis.000?es_floppy
+    - atlantis.001?es_floppy
     - hintbook.pdf
     - manual.pdf
 
   setup_indiana_jones_and_the_fate_of_atlantis_spanish_2.0.0.7.exe:
     unpack:
       format: innoextract
-      unpack:
-      - atlantis.000
-      - atlantis.001
-      - hintbook.pdf
-      - manual.pdf
     provides:
-    - atlantis.000_es_floppy
-    - atlantis.001_es_floppy
+    - atlantis.000?es_floppy
+    - atlantis.001?es_floppy
     - hintbook.pdf
     - manual.pdf
 
@@ -196,22 +191,17 @@ files:
     unpack:
       format: zip
     provides:
-    - atlantis.000_de_floppy
-    - atlantis.001_de_floppy
+    - atlantis.000?de_floppy
+    - atlantis.001?de_floppy
     - hintbook.pdf
     - manual.pdf
 
   setup_indiana_jones_and_the_fate_of_atlantis_german_2.0.0.7.exe:
     unpack:
       format: innoextract
-      unpack:
-      - atlantis.000
-      - atlantis.001
-      - hintbook.pdf
-      - manual.pdf
     provides:
-    - atlantis.000_de_floppy
-    - atlantis.001_de_floppy
+    - atlantis.000?de_floppy
+    - atlantis.001?de_floppy
     - hintbook.pdf
     - manual.pdf
 
@@ -219,22 +209,17 @@ files:
     unpack:
       format: zip
     provides:
-    - atlantis.000_fr
-    - atlantis.001_fr
+    - atlantis.000?fr
+    - atlantis.001?fr
     - hintbook.pdf
     - manual.pdf
 
   setup_indiana_jones_and_the_fate_of_atlantis_french_2.0.0.7.exe:
     unpack:
       format: innoextract
-      unpack:
-      - atlantis.000
-      - atlantis.001
-      - hintbook.pdf
-      - manual.pdf
     provides:
-    - atlantis.000_fr
-    - atlantis.001_fr
+    - atlantis.000?fr
+    - atlantis.001?fr
     - hintbook.pdf
     - manual.pdf
 
@@ -242,81 +227,46 @@ files:
     unpack:
       format: zip
     provides:
-    - atlantis.000_it
-    - atlantis.001_it
+    - atlantis.000?it
+    - atlantis.001?it
     - hintbook.pdf
     - manual.pdf
 
   setup_indiana_jones_and_the_fate_of_atlantis_italian_2.1.0.8.exe:
     unpack:
       format: innoextract
-      unpack:
-      - atlantis.000
-      - atlantis.001
-      - hintbook.pdf
-      - manual.pdf
     provides:
-    - atlantis.000_it
-    - atlantis.001_it
+    - atlantis.000?it
+    - atlantis.001?it
     - hintbook.pdf
     - manual.pdf
-
-  atlantis.000_de:
-    install_as: atlantis.000
-  atlantis.001_de:
-    install_as: atlantis.001
-
-  atlantis.000_de_floppy:
-    install_as: atlantis.000
-  atlantis.001_de_floppy:
-    install_as: atlantis.001
-
-  atlantis.000_es:
-    install_as: atlantis.000
-  atlantis.001_es:
-    install_as: atlantis.001
-
-  atlantis.000_es_floppy:
-    install_as: atlantis.000
-  atlantis.001_es_floppy:
-    install_as: atlantis.001
-
-  atlantis.000_fr:
-    install_as: atlantis.000
-  atlantis.001_fr:
-    install_as: atlantis.001
-
-  atlantis.000_it:
-    install_as: atlantis.000
-  atlantis.001_it:
-    install_as: atlantis.001
 
 size_and_md5: |
   12035     182344899c2e2998fca0bebcd82aa81a atlantis.000
   9823920   4c8e73ac88f522b3452b37a607240190 atlantis.001
   149867609 8f9ea0cfd03f6631c8072797192d1f0b monster.sou
 
-  12035     9e2a760803844af0e9742936c6b4c318 atlantis.000_de
-  9866887   b94dab06b74fb79e9a830b7d26778398 atlantis.001_de
+  12035     9e2a760803844af0e9742936c6b4c318 atlantis.000?de
+  9866887   b94dab06b74fb79e9a830b7d26778398 atlantis.001?de
   # monster.sou encoded with Ogg
   68382401  24d48d4921d57b4e96fbb66a1cda6128 monster.sog
 
-  12030     1fbebd7b2b692df5297870447a80cfed atlantis.000_de_floppy
-  9711182   138dd237fb46bb3f4c7659161d10abf7 atlantis.001_de_floppy
+  12030     1fbebd7b2b692df5297870447a80cfed atlantis.000?de_floppy
+  9711182   138dd237fb46bb3f4c7659161d10abf7 atlantis.001?de_floppy
 
-  12030     d8b3580b90ec2335f70c47027bfb3336 atlantis.000_es
-  9809253   8f00e5247941953d931c6e0dd641e36c atlantis.001_es
+  12030     d8b3580b90ec2335f70c47027bfb3336 atlantis.000?es
+  9809253   8f00e5247941953d931c6e0dd641e36c atlantis.001?es
   # monster.sou encoded with Mp3
   61788733  fe49942b17060190ce5d449618753035 monster.so3
 
-  12030     9bd2a8f72613e715c199246dd511e10f atlantis.000_es_floppy
-  9677678   e5266f7e26fbeafd06a60a84ced2480c atlantis.001_es_floppy
+  12030     9bd2a8f72613e715c199246dd511e10f atlantis.000?es_floppy
+  9677678   e5266f7e26fbeafd06a60a84ced2480c atlantis.001?es_floppy
 
-  12030     edfdb24a499d92c59f824c52987c0eec atlantis.000_fr
-  9705940   e248f5de0b31a34377e9a0871a61a057 atlantis.001_fr
+  12030     edfdb24a499d92c59f824c52987c0eec atlantis.000?fr
+  9705940   e248f5de0b31a34377e9a0871a61a057 atlantis.001?fr
 
-  12030     8f3758ff98c9c5d78e5d635222cad026 atlantis.000_it
-  9705021   99d4e5dc2231b4bf8b1c89126c30c8bb atlantis.001_it
+  12030     8f3758ff98c9c5d78e5d635222cad026 atlantis.000?it
+  9705021   99d4e5dc2231b4bf8b1c89126c30c8bb atlantis.001?it
 
   135920245 d56a5850b9d1d4f82eebc282ef7fb52b gog_indiana_jones_and_the_fate_of_atlantis_2.2.0.27.sh
   64419442  0da3a8b3d0505c86a9f863c27debbca7 gog_indiana_jones_and_the_fate_of_atlantis_french_2.2.0.27.sh
@@ -337,25 +287,25 @@ sha1sums: |
   790bcd468f72cb160754558b8c80e0222c12dadb  atlantis.001
   0e148e116d0baa9b34d2179bfb51688504250466  monster.sou
 
-  cf3e5757002479e511931c1ac242e2ab86d21bf4  atlantis.000_de
-  ce0bf7f4dd0713947e8d954c16153fbcd48d3d03  atlantis.001_de
+  cf3e5757002479e511931c1ac242e2ab86d21bf4  atlantis.000?de
+  ce0bf7f4dd0713947e8d954c16153fbcd48d3d03  atlantis.001?de
   7e3ea1b6c9af07f624e0011c9ed6bccfafde15ec  monster.sog
 
-  55af2af676a927ce3f34eaaeb22dbccb44f984f9  atlantis.000_de_floppy
-  60b72a11f8f5977b133c9d7f176c10dc5c548e4a  atlantis.001_de_floppy
+  55af2af676a927ce3f34eaaeb22dbccb44f984f9  atlantis.000?de_floppy
+  60b72a11f8f5977b133c9d7f176c10dc5c548e4a  atlantis.001?de_floppy
 
-  3b4971f2ceb00bcd508014c6ea8b1114502ba9da  atlantis.000_es
-  d9b36894f822fa5da1850a5595896fcf0b92ba02  atlantis.001_es
+  3b4971f2ceb00bcd508014c6ea8b1114502ba9da  atlantis.000?es
+  d9b36894f822fa5da1850a5595896fcf0b92ba02  atlantis.001?es
   9edbec1c522bd2579dff8a2e07a9290e3d8f2c19  monster.so3
 
-  e032133af0090fb7bb2abde58076a5fc9a84030a  atlantis.000_es_floppy
-  b091997605908bdfb3e084e4f3c92a6b6f59d48e  atlantis.001_es_floppy
+  e032133af0090fb7bb2abde58076a5fc9a84030a  atlantis.000?es_floppy
+  b091997605908bdfb3e084e4f3c92a6b6f59d48e  atlantis.001?es_floppy
 
-  5581b5c4a6e1db1b593cc80564832f7baa539991  atlantis.000_fr
-  ccf8cdae42e0a0d0fb64ffe31d675c80066dcf7d  atlantis.001_fr
+  5581b5c4a6e1db1b593cc80564832f7baa539991  atlantis.000?fr
+  ccf8cdae42e0a0d0fb64ffe31d675c80066dcf7d  atlantis.001?fr
 
-  2f5707b7ecd85cb9dd029f83b9aba7d5952438fd  atlantis.000_it
-  63c77e697fae9df5684b8879ebdc2b6ab26e02e9  atlantis.001_it
+  2f5707b7ecd85cb9dd029f83b9aba7d5952438fd  atlantis.000?it
+  63c77e697fae9df5684b8879ebdc2b6ab26e02e9  atlantis.001?it
 
   a54f2b61860ee05ec7cf1cd44f2f36413a206215  gog_indiana_jones_and_the_fate_of_atlantis_2.2.0.27.sh
   57cc76063d4eec43d2596e221f8806923ca9567a  gog_indiana_jones_and_the_fate_of_atlantis_french_2.2.0.27.sh
