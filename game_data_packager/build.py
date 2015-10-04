@@ -1128,6 +1128,8 @@ class PackagingTask(object):
                                     i = prefix + i
                                 if suffix and i.endswith(suffix):
                                     i = i[:len(i)-len(suffix)]
+                                if 'unpack' not in provider.unpack:
+                                    i = i.split('?')[0]
                                 cmdline.append(i)
                         subprocess.check_call(cmdline)
                         # for at least Theme Hospital the files we want are
