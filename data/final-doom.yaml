@@ -53,30 +53,24 @@ packages:
 files:
   tnt.wad:
     alternatives:
-    - tnt.wad_id_anthology
-    - tnt.wad_1.9
-    - tnt.wad_psn
+    - tnt.wad?id_anthology
+    - tnt.wad?1.9
+    - tnt.wad?psn
 
-  tnt.wad_id_anthology:
+  tnt.wad?id_anthology:
     size: 18654796
     sha1: 4a65c8b960225505187c36040b41a40b152f8f3e
     md5: 1d39e405bf6ee3df69a8d2646c8d5c49
-    look_for:
-    - tnt.wad
 
-  tnt.wad_1.9:
+  tnt.wad?1.9:
     size: 18195736
     sha1: 9fbc66aedef7fe3bae0986cdb9323d2b8db4c9d3
     md5: 4e158d9953c79ccf97bd0663244cc6b6
-    look_for:
-    - tnt.wad
 
-  tnt.wad_psn:
+  tnt.wad?psn:
     size: 18222568
     sha1: 139e26d801a64b404b8d898defca10227a61867b
     md5: be626c12b7c9d94b1dfb9c327566b4ff
-    look_for:
-    - tnt.wad
 
   tnt31.wad:
     size: 282000
@@ -92,7 +86,7 @@ files:
     provides:
     - tnt31.wad
 
-  tnt31fix.zip_repack:
+  tnt31fix.zip?repack:
     look_for: [tnt31fix.zip]
     download: http://doomedsda.us/lmps/944/tnt31fix.zip
     size: 110428
@@ -104,30 +98,24 @@ files:
 
   plutonia.wad:
     alternatives:
-    - plutonia.wad_id_anthology
-    - plutonia.wad_1.9
-    - plutonia.wad_psn
+    - plutonia.wad?id_anthology
+    - plutonia.wad?1.9
+    - plutonia.wad?psn
 
-  plutonia.wad_id_anthology:
+  plutonia.wad?id_anthology:
     size: 18240172
     sha1: f131cbe1946d7fddb3caec4aa258c83399c21e60
     md5: 3493be7e1e2588bc9c8b31eab2587a04
-    look_for:
-    - plutonia.wad
 
-  plutonia.wad_1.9:
+  plutonia.wad?1.9:
     size: 17420824
     sha1: 90361e2a538d2388506657252ae41aceeb1ba360
     md5: 75c8cf89566741fa9d22447604053bd7
-    look_for:
-    - plutonia.wad
 
-  plutonia.wad_psn:
+  plutonia.wad?psn:
     size: 17417800
     sha1: 327f8c41ebd4138354e9fca63cebbbd1b9489749
     md5: b77ca6a809c4fae086162dad8e7a1335
-    look_for:
-    - plutonia.wad
 
   manual.pdf:
     install_to: $docdir
@@ -145,8 +133,8 @@ files:
       - plutonia.wad
       - manual.pdf
     provides:
-    - tnt.wad_id_anthology
-    - plutonia.wad_id_anthology
+    - tnt.wad?id_anthology
+    - plutonia.wad?id_anthology
     - manual.pdf
 ...
 # vim:set sw=2 sts=2 et:

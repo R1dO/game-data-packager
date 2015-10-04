@@ -112,59 +112,47 @@ packages:
 files:
   doom2.wad:
     alternatives:
-    - doom2.wad_1.9
-    - doom2.wad_bfg
-    - doom2.wad_xbox360_bfg
-    - doom2.wad_xbla
-    - doom2.wad_xbox_roe
-    - doom2.wad_psn
-    - doom2.wad_tapwave_zodiac
+    - doom2.wad?1.9
+    - doom2.wad?bfg
+    - doom2.wad?xbox360_bfg
+    - doom2.wad?xbla
+    - doom2.wad?xbox_roe
+    - doom2.wad?psn
+    - doom2.wad?tapwave_zodiac
     - doom2f.wad
 
-  doom2.wad_1.9:
+  doom2.wad?1.9:
     size: 14604584
-    look_for: [doom2.wad]
-  doom2.wad_bfg:
+  doom2.wad?bfg:
     size: 14691821
-    look_for: [doom2.wad]
-  doom2.wad_xbox360_bfg:
+  doom2.wad?xbox360_bfg:
     size: 14677988
-    look_for: [doom2.wad]
-  doom2.wad_xbla:
+  doom2.wad?xbla:
     size: 14685034
-    look_for: [doom2.wad]
-  doom2.wad_xbox_roe:
+  doom2.wad?xbox_roe:
     size: 14683458
-    look_for: [doom2.wad]
-  doom2.wad_psn:
+  doom2.wad?psn:
     size: 14599800
-    look_for: [doom2.wad]
-  doom2.wad_tapwave_zodiac:
+  doom2.wad?tapwave_zodiac:
     size: 14639397
-    look_for: [doom2.wad]
   doom2f.wad:
     size: 14607420
     install_as: doom2.wad
 
-  doom2.wad_1.666g:
+  doom2.wad?1.666g:
     size: 14824716
-    look_for: [doom2.wad]
     unsuitable: Doom 2 v1.9 is required
-  doom2.wad_1.666:
+  doom2.wad?1.666:
     size: 14943400
-    look_for: [doom2.wad]
     unsuitable: Doom 2 v1.9 is required
-  doom2.wad_1.7:
+  doom2.wad?1.7:
     size: 14612688
-    look_for: [doom2.wad]
     unsuitable: Doom 2 v1.9 is required
-  doom2.wad_1.7a:
+  doom2.wad?1.7a:
     size: 14612688
-    look_for: [doom2.wad]
     unsuitable: Doom 2 v1.9 is required
-  doom2.wad_1.8:
+  doom2.wad?1.8:
     size: 14612688
-    look_for: [doom2.wad]
     unsuitable: Doom 2 v1.9 is required
 
   attack.txt:
@@ -255,12 +243,8 @@ files:
 
   nerve.wad:
     alternatives:
-    - nerve.wad_pc
-    - nerve.wad_xbox360_bfg
-  nerve.wad_pc:
-    look_for: [nerve.wad]
-  nerve.wad_xbox360_bfg:
-    look_for: [nerve.wad]
+    - nerve.wad?pc
+    - nerve.wad?xbox360_bfg
 
   manual.pdf:
     install_to: $docdir
@@ -270,7 +254,7 @@ files:
       format: innoextract
       suffix: _1.9
     provides:
-    - doom2.wad_1.9
+    - doom2.wad?1.9
     - attack.wad
     - blacktwr.wad
     - bloodsea.wad
@@ -314,31 +298,31 @@ files:
     - manual.pdf
 
 cksums: |
-  _ 3819855   nerve.wad_pc
-  _ 3786293   nerve.wad_xbox360_bfg
-  _ 14824716  nerve.wad_xboxla
+  _ 3819855   nerve.wad?pc
+  _ 3786293   nerve.wad?xbox360_bfg
+  _ 14824716  nerve.wad?xboxla
   _ 1436188   master.exe
 
 md5sums: |
-  c3bea40570c23e511a7ed3ebcd9865f7  doom2.wad_bfg
-  d9153ced9fd5b898b36cc5844e35b520  doom2.wad_1.666g
-  30e3c2d0350b67bfbf47271970b74b2f  doom2.wad_1.666
-  ea74a47a791fdef2e9f2ea8b8a9da13b  doom2.wad_1.7
-  d7a07e5d3f4625074312bc299d7ed33f  doom2.wad_1.7a
-  c236745bb01d89bbb866c8fed81b6f8c  doom2.wad_1.8
-  f617591a6c5d07037eb716dc4863e26b  doom2.wad_xbox360_bfg
-  43c2df32dc6c740cb11f34dc5ab693fa  doom2.wad_xbla
-  a793ebcdd790afad4a1f39cc39a893bd  doom2.wad_xbox_roe
-  4c3db5f23b145fccd24c9b84aba3b7dd  doom2.wad_psn
-  9640fc4b2c8447bbd28f2080725d5c51  doom2.wad_tapwave_zodiac
+  c3bea40570c23e511a7ed3ebcd9865f7  doom2.wad?bfg
+  d9153ced9fd5b898b36cc5844e35b520  doom2.wad?1.666g
+  30e3c2d0350b67bfbf47271970b74b2f  doom2.wad?1.666
+  ea74a47a791fdef2e9f2ea8b8a9da13b  doom2.wad?1.7
+  d7a07e5d3f4625074312bc299d7ed33f  doom2.wad?1.7a
+  c236745bb01d89bbb866c8fed81b6f8c  doom2.wad?1.8
+  f617591a6c5d07037eb716dc4863e26b  doom2.wad?xbox360_bfg
+  43c2df32dc6c740cb11f34dc5ab693fa  doom2.wad?xbla
+  a793ebcdd790afad4a1f39cc39a893bd  doom2.wad?xbox_roe
+  4c3db5f23b145fccd24c9b84aba3b7dd  doom2.wad?psn
+  9640fc4b2c8447bbd28f2080725d5c51  doom2.wad?tapwave_zodiac
   3cb02349b3df649c86290907eed64e7b  doom2f.wad
-  967d5ae23daf45196212ae1b605da3b0  nerve.wad_pc
-  4f47bb32bf5fd06bc1cc0b4a2e8e3910  nerve.wad_xbox360_bfg
-  d4c3cb51899e8c399d0ea48cfcc87c53  nerve.wad_xboxla
+  967d5ae23daf45196212ae1b605da3b0  nerve.wad?pc
+  4f47bb32bf5fd06bc1cc0b4a2e8e3910  nerve.wad?xbox360_bfg
+  d4c3cb51899e8c399d0ea48cfcc87c53  nerve.wad?xboxla
   7c203b03cf052b6b731baec7c42d7ea9  master.exe
 
 size_and_md5: |
-  14604584  25e1459ca71d321525f84628f45ca8cd doom2.wad_1.9
+  14604584  25e1459ca71d321525f84628f45ca8cd doom2.wad?1.9
   1581      b5d81e4014b0e41a977ad837be62015a attack.txt
   185135    cb03fd0cd84b10579c2b2b313199d4c1 attack.wad
   4872      cd05ef340481c80dd866910fb61de078 blacktwr.txt
@@ -383,21 +367,21 @@ size_and_md5: |
   21908760  5915beaf6b0947fc2ec8075e262b4096 setup_doom2_2.0.0.6.exe
 
 sha1sums: |
-  7ec7652fcfce8ddc6e801839291f0e28ef1d5ae7  doom2.wad_1.9
-  79c283b18e61b9a989cfd3e0f19a42ea98fda551  doom2.wad_1.8
-  70192b8d5aba65c7e633a7c7bcfe7e3e90640c97  doom2.wad_1.7a
-  78009057420b792eacff482021db6fe13b370dcc  doom2.wad_1.7
-  6d559b7ceece4f5ad457415049711992370d520a  doom2.wad_1.666
-  a4ce5128d57cb129fdd1441c12b58245be55c8ce  doom2.wad_1.666g
-  a59548125f59f6aa1a41c22f615557d3dd2e85a9  doom2.wad_bfg
-  b7ba1c68631023ea1aab1d7b9f7f6e9afc508f39  doom2.wad_xbox360_bfg
-  55e445badd63d8841ebea887910c26c62c7f525e  doom2.wad_xbla
-  1c91d86cd8a2f3817227986503a6672a5e1613f0  doom2.wad_xbox_roe
-  ca8db908a7c9fbac764f34c148f0bcc78d18553e  doom2.wad_psn
-  2cda310805397ae44059bbcaed3cd602f4864a82  doom2.wad_tapwave_zodiac
+  7ec7652fcfce8ddc6e801839291f0e28ef1d5ae7  doom2.wad?1.9
+  79c283b18e61b9a989cfd3e0f19a42ea98fda551  doom2.wad?1.8
+  70192b8d5aba65c7e633a7c7bcfe7e3e90640c97  doom2.wad?1.7a
+  78009057420b792eacff482021db6fe13b370dcc  doom2.wad?1.7
+  6d559b7ceece4f5ad457415049711992370d520a  doom2.wad?1.666
+  a4ce5128d57cb129fdd1441c12b58245be55c8ce  doom2.wad?1.666g
+  a59548125f59f6aa1a41c22f615557d3dd2e85a9  doom2.wad?bfg
+  b7ba1c68631023ea1aab1d7b9f7f6e9afc508f39  doom2.wad?xbox360_bfg
+  55e445badd63d8841ebea887910c26c62c7f525e  doom2.wad?xbla
+  1c91d86cd8a2f3817227986503a6672a5e1613f0  doom2.wad?xbox_roe
+  ca8db908a7c9fbac764f34c148f0bcc78d18553e  doom2.wad?psn
+  2cda310805397ae44059bbcaed3cd602f4864a82  doom2.wad?tapwave_zodiac
   d510c877031bbd5f3d198581a2c8651e09b9861f  doom2f.wad
-  3451288383fb16e196f273d9f85d58c1fda97bf4  nerve.wad_pc
-  bb78b34dba684cc1ef1eea21f37092c6784d3b6f  nerve.wad_xbox360_bfg
+  3451288383fb16e196f273d9f85d58c1fda97bf4  nerve.wad?pc
+  bb78b34dba684cc1ef1eea21f37092c6784d3b6f  nerve.wad?xbox360_bfg
   139095fcf78349ad570be721d21dd1fa809fb3c8  attack.txt
   e0b93dcb87875544cc57306088983cb21ca45165  attack.wad
   c64e724dda69bd7318b63b9192434edc1bd9dcf7  blacktwr.txt

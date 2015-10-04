@@ -44,99 +44,87 @@ files:
   # full version
   doom.wad:
     alternatives:
-    - doom.wad_1.9ud
-    - doom.wad_1.9
-    - doom.wad_xbox
-    - doom.wad_psn
-    - doom.wad_bfg
-    - doom1.wad_pocketpc
+    - doom.wad?1.9ud
+    - doom.wad?1.9
+    - doom.wad?xbox
+    - doom.wad?psn
+    - doom.wad?bfg
+    - doom1.wad?pocketpc
 
   # Best available full version: The Ultimate Doom
-  doom.wad_1.9ud:
+  doom.wad?1.9ud:
     size: 12408292
     sha1: 9b07b02ab3c275a6a7570c3f73cc20d63a0e3833
     md5: c4fe9fd920207691a9f493668e0a2083
-    look_for:
-    - doom.wad
 
   # Other 1.9 variants
-  doom.wad_1.9:
+  doom.wad?1.9:
     size: 11159840
     sha1: 7742089b4468a736cadb659a7deca3320fe6dcbd
     md5: 1cd63c5ddff1bf8ce844237f580e9cf3
-    look_for:
-    - doom.wad
-  doom.wad_xbox:
+  doom.wad?xbox:
     size: 12538385
     md5: 0c8758f102ccafe26a3040bee8ba5021
     sha1: 1d1d4f69fe14fa255228d8243470678b1b4efdc5
-    look_for:
-    - doom.wad
-  doom.wad_psn:
+  doom.wad?psn:
     size: 12474561
     md5: e4f120eab6fb410a5b6e11c947832357
     sha1: 117015379c529573510be08cf59810aa10bb934e
-    look_for:
-    - doom.wad
-  doom.wad_bfg:
+  doom.wad?bfg:
     size: 12487824
     md5: fb35c4a5a9fd49ec29ab6e900572c524
     sha1: e5ec79505530e151ff0e6f517f3ce1fd65969c46
-    look_for:
-    - doom.wad
   # despite its name this is full Doom
-  doom1.wad_pocketpc:
+  doom1.wad?pocketpc:
     distinctive_name: false
     size: 14445632
     md5: 3e410ecd27f61437d53fa5c279536e88
     sha1: 1d3c00534c452e266012e28ddc399ffe4d9ac8ed
-    look_for:
-    - doom1.wad
 
   # Older versions
-  doom.wad_0.2:
+  doom.wad?0.2:
     size: 496250
     md5: 740901119ba2953e3c7f3764eca6e128
     sha1: 89d934616c57fe974b06c2b37a9837853a89dbbc
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
-  doom.wad_0.4:
+  doom.wad?0.4:
     size: 2675669
     md5: b6afa12a8b22e2726a8ff5bd249223de
     sha1: 5f78b23fbffc828f5863ecff7e908d556241ff45
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
-  doom.wad_0.5:
+  doom.wad?0.5:
     size: 3522207
     md5: 9c877480b8ef33b7074f1f0c07ed6487
     sha1: d3648d720b5324ce3c7bf58cf019e395911d677e
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
-  doom.wad_beta:
+  doom.wad?beta:
     size: 5468456
     md5: 049e32f18d9c9529630366cfc72726ea
     sha1: 692994db9579be4201730b9ac77797fae2111bde
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
-  doom.wad_1.1:
+  doom.wad?1.1:
     size: 10396254
     md5: 981b03e6d1dc033301aa3095acc437ce
     sha1: df0040ccb29cc1622e74ceb3b7793a2304cca2c8
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
-  doom.wad_1.2:
+  doom.wad?1.2:
     size: 10399316
     md5: 792fd1fea023d61210857089a7c1e351
     sha1: b5f86a559642a2b3bdfb8a75e91c8da97f057fe6
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
-  doom.wad_1.666:
+  doom.wad?1.666:
     size: 11159840
     md5: 54978d12de87f162b9bcc011676cb3c0
     sha1: 2e89b86859acd9fc1e552f587b710751efcffa8e
     look_for: [doom1.wad]
     unsuitable: Doom 1.9 or The Ultimate Doom is required
-  doom.wad_1.8:
+  doom.wad?1.8:
     size: 11159840
     md5: 11e1cd216801ea2657723abc86ecb01f
     sha1: 2c8212631b37f21ad06d18b5638c733a75e179ff
@@ -144,7 +132,7 @@ files:
     unsuitable: Doom 1.9 or The Ultimate Doom is required
 
   # doom-wad-shareware
-  doom_wad_shareware:
+  doom_wad?shareware:
     size: 4196020
     md5: f0cefca49926d00903cf57551d901abe
     sha1: 5b2e249b9c5133ec987b3ea77596381dc0d6bc1d
@@ -164,7 +152,7 @@ files:
       - doom bible.pdf
       - manual.pdf
     provides:
-    - doom.wad_1.9ud
+    - doom.wad?1.9ud
     - doom bible.pdf
     - manual.pdf
 
