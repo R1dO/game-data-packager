@@ -235,7 +235,7 @@ files:
     - GOG_EULA.txt
     - smarty_fs2.vp
     - sparky_hi_fs2.vp
-    - stu_fs2.vp_gog
+    - stu_fs2.vp?gog
     - tango1_fs2.vp
     - tango2_fs2.vp
     - tango3_fs2.vp
@@ -245,7 +245,7 @@ files:
     - tangoa_fs2.vp
     - tangob_fs2.vp
     - COLOSSUS.MVE
-    - INTRO.MVE_gog
+    - INTRO.MVE?gog
     - MONO1.MVE
     - BASTION.MVE
     - ENDPART1.MVE
@@ -366,15 +366,14 @@ files:
     - freddocs/wing-positions.gif
     - freddocs/wings-editor.gif
     - freddocs/zoom.gif
-  setup_freespace2_2.0.0.8.exe_smcv:
-    look_for: setup_freespace2_2.0.0.8.exe
+  setup_freespace2_2.0.0.8.exe?smcv:
     unpack:
       format: innoextract
     provides:
     - GOG_EULA.txt
     - smarty_fs2.vp
     - sparky_hi_fs2.vp
-    - stu_fs2.vp_gog
+    - stu_fs2.vp?gog
     - tango1_fs2.vp
     - tango2_fs2.vp
     - tango3_fs2.vp
@@ -384,7 +383,7 @@ files:
     - tangoa_fs2.vp
     - tangob_fs2.vp
     - COLOSSUS.MVE
-    - INTRO.MVE_gog
+    - INTRO.MVE?gog
     - MONO1.MVE
     - BASTION.MVE
     - ENDPART1.MVE
@@ -517,12 +516,8 @@ files:
     distinctive_name: false
   stu_fs2.vp:
     alternatives:
-    - stu_fs2.vp_steam
-    - stu_fs2.vp_gog
-  stu_fs2.vp_steam:
-    look_for: [stu_fs2.vp]
-  stu_fs2.vp_gog:
-    look_for: [stu_fs2.vp]
+    - stu_fs2.vp?steam
+    - stu_fs2.vp?gog
 
   MANUAL.PDF:
     install_to: $docdir
@@ -539,12 +534,8 @@ files:
   INTRO.MVE:
     install_to: usr/share/games/freespace2-open/data/movies
     alternatives:
-    - INTRO.MVE_steam
-    - INTRO.MVE_gog
-  INTRO.MVE_steam:
-    look_for: [INTRO.MVE]
-  INTRO.MVE_gog:
-    look_for: [INTRO.MVE]
+    - INTRO.MVE?steam
+    - INTRO.MVE?gog
 
   MONO1.MVE:
     install_to: usr/share/games/freespace2-open/data/movies
@@ -565,7 +556,7 @@ files:
 
 cksums: |
   _ 1649820744 setup_freespace2_2.0.0.8.exe
-  _ 1649724616 setup_freespace2_2.0.0.8.exe_smcv
+  _ 1649724616 setup_freespace2_2.0.0.8.exe?smcv
   _ 7505      GOG_EULA.txt
   _ 231       mod.ini
   _ 86070     FS2.bmp
@@ -573,8 +564,8 @@ cksums: |
   _ 11756     ReadMe.txt
   _ 6404494   root_fs2.vp
   _ 83388218  COLOSSUS.MVE
-  _ 205252206 INTRO.MVE_steam
-  _ 205252206 INTRO.MVE_gog
+  _ 205252206 INTRO.MVE?steam
+  _ 205252206 INTRO.MVE?gog
   _ 61605812  MONO1.MVE
   _ 25386260  tangoa_fs2.vp
   _ 35637782  BASTION.MVE
@@ -592,8 +583,8 @@ cksums: |
   _ 123125814 smarty_fs2.vp
   _ 260563452 sparky_fs2.vp
   _ 265242014 sparky_hi_fs2.vp
-  _ 173166260 stu_fs2.vp_steam
-  _ 173166260 stu_fs2.vp_gog
+  _ 173166260 stu_fs2.vp?steam
+  _ 173166260 stu_fs2.vp?gog
   _ 195887233 tango1_fs2.vp
   _ 72778161  tango2_fs2.vp
   _ 50497261  tango3_fs2.vp
@@ -727,9 +718,9 @@ cksums: |
   _ 23125109  mono4.ogg
 md5sums: |
   4713c27c02d4de4368c2ebde46e46c9f  setup_freespace2_2.0.0.8.exe
-  2870b98722a1e56a360e3a959019e678  setup_freespace2_2.0.0.8.exe_smcv
-  #0f1387432717f9d4331e120de0ab8e7e  setup_freespace_2.exe_old
-  #06341f1ccd8f70a1e02cc236712e7726  setup_freespace_2.exe_alt
+  2870b98722a1e56a360e3a959019e678  setup_freespace2_2.0.0.8.exe?smcv
+  #0f1387432717f9d4331e120de0ab8e7e  setup_freespace_2.exe?old
+  #06341f1ccd8f70a1e02cc236712e7726  setup_freespace_2.exe?alt
   # https://www.playonlinux.com/en/changelog-1107-GOGcom__Freespace_2.html
 
   3ca819220a3269e314c601a2333501f7  GOG_EULA.txt
@@ -855,8 +846,8 @@ md5sums: |
   a2d7a6638eda4c9060cb7dd47f2de64b  data/players/hud_2.hcf
   9a01349a2adeacef564103ce6dc2be49  data/players/hud_3.hcf
   d33f21ec6df7eb82d629b75125e3811a  COLOSSUS.MVE
-  81e32f5ab10c3da9e9ccfa0ee7f578b7  INTRO.MVE_steam
-  59d0085dcf98e50d2ca49a0a2304afb6  INTRO.MVE_gog
+  81e32f5ab10c3da9e9ccfa0ee7f578b7  INTRO.MVE?steam
+  59d0085dcf98e50d2ca49a0a2304afb6  INTRO.MVE?gog
   3d52c77261aca0144f5f2d25f0a0cbea  MONO1.MVE
   f7f346e4c0339ba38cff4d9d4dc663f3  tangoa_fs2.vp
   5e451ef90831da3453696660fc4db066  BASTION.MVE
@@ -874,8 +865,8 @@ md5sums: |
   0d662decc0b443ccb8e8aa2e3a0887ce  smarty_fs2.vp
   2a47bdf14860071cf0196d92e9ee7c2f  sparky_fs2.vp
   97661124cdc47c0a2f0678982b8cbd91  sparky_hi_fs2.vp
-  ab98302b0a5b3dd348ac4c21ddfb1291  stu_fs2.vp_steam
-  e88f0e0011b3e525a5ad625933684c03  stu_fs2.vp_gog
+  ab98302b0a5b3dd348ac4c21ddfb1291  stu_fs2.vp?steam
+  e88f0e0011b3e525a5ad625933684c03  stu_fs2.vp?gog
   8ca7330cfe63329b41868efc2e40e048  tango1_fs2.vp
   6fb6e9a36248980540155a9777c51c47  tango2_fs2.vp
   d42c20b6ffb4782e431899c211ae55c4  tango3_fs2.vp
@@ -893,7 +884,7 @@ md5sums: |
   8c1370a3501ac7884c6a692d771091e8  mono4.ogg
 sha1sums: |
   f98af31596b7f4ef1c624775e6c37a2eb4f8ffd2  setup_freespace2_2.0.0.8.exe
-  c14d18e7adb7c49112820e5e57a17bc5ca7efebc  setup_freespace2_2.0.0.8.exe_smcv
+  c14d18e7adb7c49112820e5e57a17bc5ca7efebc  setup_freespace2_2.0.0.8.exe?smcv
   2acb1ec04139af2cc39d4253ca557c9571a4d15c  GOG_EULA.txt
   c146fe02bb04033bce8c297b33fb980ed2e98fc6  MANUAL.PDF
   a407edf5c4595c610dbf3610359416168701ca24  ReadMe.txt
@@ -1015,8 +1006,8 @@ sha1sums: |
   2991ac9667133b738c534d3ab858845af04ab45a  data/players/hud_2.hcf
   cd72148a94f04d9ffc2213504c8428caf0aba6e1  data/players/hud_3.hcf
   3d2d64b07b6e4c36c06f1d9311819a0ad2116d12  COLOSSUS.MVE
-  277ca9364cf4d3bb30429780ea236113c0b2ac13  INTRO.MVE_steam
-  e5b81fbd2f792ae7ecbf12e65e4925c383d77cc9  INTRO.MVE_gog
+  277ca9364cf4d3bb30429780ea236113c0b2ac13  INTRO.MVE?steam
+  e5b81fbd2f792ae7ecbf12e65e4925c383d77cc9  INTRO.MVE?gog
   500da3a7d1f4a9faef94c8563b7575bb8e7f277f  MONO1.MVE
   18ec0cffe98353eda9094d97ffcd07bdacaeb9f8  tangoa_fs2.vp
   8100814b1b0a43bd89221f187cbe55b09169f009  BASTION.MVE
@@ -1034,8 +1025,8 @@ sha1sums: |
   62e90f7af060dd57521a85a509f0faa8f27d3c3d  smarty_fs2.vp
   e7505c6989e5ba52e77c385855ca28f15492d7d1  sparky_fs2.vp
   f634c6a550450784f6b101ac0fbb087725f688ae  sparky_hi_fs2.vp
-  0084788b4a3cf27ef1d8d25e8d4c9c8040bf9c40  stu_fs2.vp_steam
-  29f54af800ece722a51a0cfac358f96984cd9676  stu_fs2.vp_gog
+  0084788b4a3cf27ef1d8d25e8d4c9c8040bf9c40  stu_fs2.vp?steam
+  29f54af800ece722a51a0cfac358f96984cd9676  stu_fs2.vp?gog
   b092eea774f2328d2d885f58bd7714c69ea3fc32  tango1_fs2.vp
   bb0e6aa0e8f627da0cd3188b1ad21717c605c692  tango2_fs2.vp
   cd442b1f220d01cf36cd2fb73932f05d2d6bbcbb  tango3_fs2.vp
@@ -1053,7 +1044,7 @@ sha1sums: |
   994c2087d6bb6d913e04a17292573a7a0bc298e9  mono4.ogg
 sha256sums: |
   b6df573dfe01978513d34c06984929f6dc7b341c94554e97a646533371e609cb  setup_freespace2_2.0.0.8.exe
-  4ce5de67ccaa9743fdfa58cc7bc418319095bf8cec07ec160efcea96d67025a1  setup_freespace2_2.0.0.8.exe_smcv
+  4ce5de67ccaa9743fdfa58cc7bc418319095bf8cec07ec160efcea96d67025a1  setup_freespace2_2.0.0.8.exe?smcv
   57b1686c07ab2ceca6e6e0e7a815f1d6b65780a2f7093f143484aaa3615a16d9  MANUAL.PDF
   20a65e8ea7dcc61480fcff8508d6b0b26ce89946d36889829ddfb8009124195a  ReadMe.txt
   a796243434945af28f16331421bf472efbc86de86d47c39c1b399bcf7fe2bd6a  root_fs2.vp
@@ -1174,8 +1165,8 @@ sha256sums: |
   44d9cd1f8a7769c3b0593ce9da7149fc1b3821436a14b3791c10478c1b082feb  data/players/hud_2.hcf
   538f15f911a007ae9d5f08af3810895370c2e136b1ae1e532bf59f0dd13cf885  data/players/hud_3.hcf
   e449cfa1a6ccbe900d57f0c1cff247ba7615af83bab885b2c6c9df94fcd8cd5b  COLOSSUS.MVE
-  a879e350e7000434710c2fc11edede17171255111a90543040a9c562bbb0f674  INTRO.MVE_steam
-  ab2eae1a1c9a7bd93ee159b314008f4b14ac69a0c66ab4538a112fa009fb34b6  INTRO.MVE_gog
+  a879e350e7000434710c2fc11edede17171255111a90543040a9c562bbb0f674  INTRO.MVE?steam
+  ab2eae1a1c9a7bd93ee159b314008f4b14ac69a0c66ab4538a112fa009fb34b6  INTRO.MVE?gog
   fa2e380384e7c3e140c351d789bf71b00ec3549ae53f9766833e8b56dba9f2e3  MONO1.MVE
   9b3d7ccf050184170bee6e6bb56090762e2f3bf0e885bd51cb053bbaf17c07e6  tangoa_fs2.vp
   366bd359b70e0bf9ae0b74e96093c6389ca19fbc8f20747efc70c96f401557f4  BASTION.MVE
@@ -1193,8 +1184,8 @@ sha256sums: |
   3307d19f06fba6ca57b3982aca077e23c1b8344791d2974ccfd54dc3cf16dd9a  smarty_fs2.vp
   72df504ac5a2fdadf28b11aba255ed4bc5e1add6dc773ca2653d8d81fc5c4a92  sparky_fs2.vp
   ff82ebae70372665fdcebb0bfb8ee89e2635f6d4eaaa23ba33260b567ca16db7  sparky_hi_fs2.vp
-  e2d7b3ecb300e6a13ef17b6932cc8bbdcd7251701122365595fc333c502cb1e8  stu_fs2.vp_steam
-  e6da7b2320b037d4f523d82fe844df8278a47e5c006332a99faf45095787bcd2  stu_fs2.vp_gog
+  e2d7b3ecb300e6a13ef17b6932cc8bbdcd7251701122365595fc333c502cb1e8  stu_fs2.vp?steam
+  e6da7b2320b037d4f523d82fe844df8278a47e5c006332a99faf45095787bcd2  stu_fs2.vp?gog
   164a0c5b910f0cbb2eb0c2a0e7679a271a517ebec3a3163f6e902ff983b23238  tango1_fs2.vp
   3570d261dfdfccf914969ba9365d28559bd28ad13a696c139fd2248324853fdb  tango2_fs2.vp
   36b01ab93ef2c290210d7755a29458bb4606763c8fe7561d47ff431703a2e171  tango3_fs2.vp
