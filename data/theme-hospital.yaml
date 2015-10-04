@@ -8,6 +8,13 @@ help_text: |
   For the full version, provide a Theme Hospital installation,
   or the gog.com installer setup_theme_hospital_2.0.0.5.exe.
 
+  Run the game once and then edit your ~/.config/CorsixTH/config.txt
+  to choose your language from [en,da,de,es,fi,fr,it,nb,nl,pt,sv].
+
+  For russian you'll need to provide a extra font file.
+
+  ----
+
   game-data-packager can download the demo version automatically.
 
   A different demo version can be manually downloaded here:
@@ -17,6 +24,7 @@ help_text: |
 
 packages:
   theme-hospital-data:
+    langs: [en,da,de,es,fi,fr,it,nb,nl,pt,sv]
     debian:
       conflicts: [theme-hospital-demo-data, theme-hospital-full-data]
       provides: theme-hospital-full-data
