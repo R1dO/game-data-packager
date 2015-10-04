@@ -123,7 +123,7 @@ packages:
       _ 384282 missionpack/pak3.pk3
     install_to_docdir:
       - Help
-    optional:
+    license:
       - Help/Q3A_CELA.txt
       - Help/Q3A_EULA.txt?loki
 
@@ -199,15 +199,16 @@ packages:
         usr/share/games/quake3-demo-data/demoq3/vm
     install_to_docdir:
       - Help
-    optional:
+    license:
     - Help/Q3A_EULA.html
+    - Help/Q3A_EULA.txt
+    optional:
     - Help/Support/Information/Minimum_System_Requirements.htm
     - Help/Support/Information/Improving_Performance.htm
     - Help/Support/Index.html
     - Help/Support/CustomerSupport/Customer_Support.htm
     - Help/Readme.html
     - Help/Quake3World.html
-    - Help/Q3A_EULA.txt
     - Help/Manual/navart/weapons/teleport.jpg
     - Help/Manual/navart/weapons/shotgunh.jpg
     - Help/Manual/navart/weapons/shotguna.jpg
@@ -770,15 +771,6 @@ files:
     - Help/DocsArt/fast1.jpg
     - Help/DedicatedServer.html
     - Help/BotCommands.html
-
-  Help/Q3A_EULA.txt:
-    license: true
-
-  Help/Q3A_EULA.txt?loki:
-    license: true
-
-  Help/Q3A_CELA.txt:
-    license: true
 
 cksums: |
   2320976398 49289300 linuxq3ademo-1.11-6.x86.gz.sh
