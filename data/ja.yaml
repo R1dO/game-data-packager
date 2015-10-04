@@ -46,7 +46,7 @@ packages:
     demo_for: jedi-academy-data
     install_to: usr/share/games/jedi-academy-demo/base
     install:
-    - assets0.pk3_demo
+    - assets0.pk3?demo
     - ui/demo_ingame.txt
     - ui/demo_menus.txt
     license:
@@ -134,12 +134,10 @@ files:
       #open("Disk1/data2.cab", O_RDONLY)       = 4
       groups: ['Game Files', 'English Files']
     provides:
-    - assets0.pk3_demo
+    - assets0.pk3?demo
     - license.txt
 
-  assets0.pk3_demo:
-    install_as: assets0.pk3
-    look_for: assets0.pk3
+  assets0.pk3?demo:
     unpack:
       format: zip
     provides:
@@ -151,7 +149,7 @@ cksums: |
   _ 2883388   data1.cab
   _ 22740     data1.hdr
   _ 191976107 data2.cab
-  _ 188127360 assets0.pk3_demo
+  _ 188127360 assets0.pk3?demo
   _ 6242      license.txt
   2369534339 196079221 Jedi_Knight_jediacademydemo.exe
   1245905322 196080485 GHJediAcademy.zip
@@ -173,7 +171,7 @@ md5sums: |
   8ad81b71336465f0e77432ffacacfdf2  data1.cab
   e5d1e819214ee6ce4e3d001b6c2e0689  data1.hdr
   149bb051007547ff8aae15fec6305a32  data2.cab
-  6f8a641f2ac6415359d988578a58d973  assets0.pk3_demo
+  6f8a641f2ac6415359d988578a58d973  assets0.pk3?demo
   e006adc9086c848c16f1f4309d5773b2  license.txt
   fdfa73db069a7483655d36382e6ca5c2  ui/demo_ingame.txt
   424ced91603a58e353b5e458df93c412  ui/demo_menus.txt
@@ -193,7 +191,7 @@ sha1sums: |
   964b879b3121bed38475a5503282910d55c3e6b2  data1.cab
   2b3f83dc4dcf5323f74eaecae5a2b6faa82e5a02  data1.hdr
   ce92ea7e92c77da09d7a21245699ce56b1923d4e  data2.cab
-  93c5a678fc250dacb17be8f09b3a8253d2ec8048  assets0.pk3_demo
+  93c5a678fc250dacb17be8f09b3a8253d2ec8048  assets0.pk3?demo
   85d35354ac49f102baed51ff67d5f7abe892785b  license.txt
 
 sha256sums: |
@@ -211,7 +209,7 @@ sha256sums: |
   7598d076b4694d614cf3543cb8888941fb50d5d18294494a9cfe570cb09f806b  data1.cab
   c0a70499f27f2b8d9061933b568a27f2645216bf409e12d6884e4bdd5295db73  data1.hdr
   9fe56ac86286847ab5a1dfebc1dd1c6d9001ca9d986da0b223ae53b80815fa5a  data2.cab
-  d7d015ef905f7df092eb5b9d011013a80b3eca414aca3e8de50d89a2e8e299ed  assets0.pk3_demo
+  d7d015ef905f7df092eb5b9d011013a80b3eca414aca3e8de50d89a2e8e299ed  assets0.pk3?demo
   60b35b90f168939db20c3e9ab7b72d657f576e56adba65b01bf2ea6d88f1f6f5  license.txt
 
 # Not used yet
