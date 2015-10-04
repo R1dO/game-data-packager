@@ -135,12 +135,6 @@ files:
   id1/pak0.pak?101:
     unsuitable: version 1.01, should be replaced by v1.06 automatically
 
-  id1/pak0.pak?106:
-    size: 18689235
-
-  id1/pak1.pak:
-    size: 34257856
-
   manual.txt?101_cd:
     distinctive_name: false
     install_to: $docdir
@@ -225,12 +219,8 @@ files:
 
   hipnotic/pak0.pak:
     alternatives:
-    - hipnotic/pak0.pak_orig
-    - hipnotic/pak0.pak_qdq_glquake_compat
-  hipnotic/pak0.pak_orig:
-    look_for: [hipnotic/pak0.pak]
-  hipnotic/pak0.pak_qdq_glquake_compat:
-    look_for: [hipnotic/pak0.pak]
+    - hipnotic/pak0.pak?orig
+    - hipnotic/pak0.pak?qdq_glquake_compat
 
   rogue/pak0.pak:
     alternatives:
@@ -303,21 +293,13 @@ files:
   setup_quake_the_offering_2.0.0.6.exe:
     unpack:
       format: innoextract
-      unpack:
-      - id1/pak0.pak
-      - id1/pak1.pak
-      - comexp.txt
-      - licinfo.txt
-      - quake manual.pdf
-      - hipnotic/pak0.pak
-      - rogue/pak0.pak
     provides:
     - id1/pak0.pak?106
     - id1/pak1.pak
     - comexp.txt?101_cd
     - licinfo.txt?gog
     - quake manual.pdf?gog
-    - hipnotic/pak0.pak
+    - hipnotic/pak0.pak?orig
     - rogue/pak0.pak
 
 cksums: |
@@ -348,7 +330,7 @@ cksums: |
   # http://musicbrainz.org/release/318a45be-5d92-4397-a157-7d052bf73824
   345401104 40564 manual.htm?mp1_cd
   2684027732 29551 manual.txt?mp1_cd
-  415120192 35527205 hipnotic/pak0.pak_orig
+  415120192 35527205 hipnotic/pak0.pak?orig
   # The CD has eight audio tracks (2 to 9) with the following lengths:
   # track 2: 3m:10.840s
   # track 3: 3m:11.173s
@@ -378,7 +360,7 @@ cksums: |
   # http://musicbrainz.org/release/eca51545-8548-4324-ac0b-2f8a7f8c8b7c
   # /dev/cdrom: UUID="1998-09-21-19-14-40-00" LABEL="QPACKS" TYPE="iso9660"
   46825283 14554 license.txt?mp12_cd
-  415120192 35527205 hipnotic/pak0.pak_orig
+  415120192 35527205 hipnotic/pak0.pak?orig
   3993845759 54994 armagon/manual.htm?mp12_cd
   1659950884 44547 armagon/manual.txt?mp12_cd
   434394072 21077 armagon/readme.htm?mp12_cd
@@ -403,10 +385,10 @@ md5sums: |
   5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak?106
   85fc9cee2035b66290da1e33be2ac86b  id1/pak0.pak?101
   d76b3e5678f0b64ac74ce5e340e6a685  id1/pak1.pak
-  0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak_orig
+  0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak?orig
   # "MD5 sum for glQuake-compatible version (see
   # http://speeddemosarchive.com/quake/qdq/movies/sds.html for more info)"
-  f05b7452ae725e060fb3d14f7731fb00  hipnotic/pak0.pak_qdq_glquake_compat
+  f05b7452ae725e060fb3d14f7731fb00  hipnotic/pak0.pak?qdq_glquake_compat
   c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak?mp12_cd
   f8898a483b131de21581656c94f3c1a4  rogue/pak0.pak?mp2_cd
   f71428763229bdb373f00a547296efe3  rogue/pak0.pak?steam
@@ -445,7 +427,7 @@ size_and_md5: |
 sha1sums: |
   36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak?106
   6fd0d1643047612f41afb2001b972d830c792921  id1/pak1.pak
-  1b089a41dd0cf9268668a5072acfb858a7fb8cc2  hipnotic/pak0.pak_orig
+  1b089a41dd0cf9268668a5072acfb858a7fb8cc2  hipnotic/pak0.pak?orig
   78df8ce771d1bef5eb9da3d51c7628b11b4ae2c8  rogue/pak0.pak?mp12_cd
   f8a1a509b094ccdbed3c54b96f7d9b351c0898f5  quake106.zip
   5301abe61da5876aac74f8a112e0e66ff1ce1aea  resource.1?106_demo
@@ -475,7 +457,7 @@ sha1sums: |
 sha256sums: |
   35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak?106
   94e355836ec42bc464e4cbe794cfb7b5163c6efa1bcc575622bb36475bf1cf30  id1/pak1.pak
-  62b83569ba975015535be73407796ce0829ebcfa75a68fb29c67514649dc655f  hipnotic/pak0.pak_orig
+  62b83569ba975015535be73407796ce0829ebcfa75a68fb29c67514649dc655f  hipnotic/pak0.pak?orig
   c3c40408f953e2de99f241dd85bf7854b69f1ae264b4e55a5657ef2ab12201a7  rogue/pak0.pak?mp12_cd
   ec6c9d34b1ae0252ac0066045b6611a7919c2a0d78a3a66d9387a8f597553239  quake106.zip
   c192c9c71bee41750dd7d14c99378766d61e077977b9d13d1a457b8d9eabe34a  resource.1?106_demo
