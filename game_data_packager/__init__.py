@@ -54,7 +54,8 @@ class WantedFile(HashedFile):
         self.distinctive_name = True
         self.distinctive_size = False
         self.download = None
-        self.install_as = name.split('?')[0]
+        self.filename = name.split('?')[0]
+        self.install_as = self.filename
         self.install_to = None
         self.license = False
         self._look_for = []
@@ -68,7 +69,7 @@ class WantedFile(HashedFile):
         if self.alternatives:
             return set([])
         if not self._look_for:
-            self._look_for = set([self.name.lower(), self.install_as.lower()])
+            self._look_for = set([self.filename.lower(), self.install_as.lower()])
         return self._look_for
     @look_for.setter
     def look_for(self, value):
