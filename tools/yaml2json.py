@@ -33,10 +33,12 @@ def main(f, out):
                 break
 
     v = data.pop('files', None)
+    offload = os.path.splitext(out)[0] + '.files'
     if v is not None:
-        offload = os.path.splitext(out)[0] + '.files'
         json.dump(v, open(offload + '.tmp', 'w', encoding='utf-8'), sort_keys=True)
         os.rename(offload + '.tmp', offload)
+    elif os.path.isfile(offload):
+        os.remove(offload)
 
     for k in ('cksums', 'sha1sums', 'sha256sums', 'md5sums',
             'size_and_md5'):
