@@ -484,6 +484,10 @@ files:
       - vox0000.lab?prepatched
       - vox0000.lab?unpatched
 
+  # remove this when filesize is found out
+  vox0000.lab?unpatched:
+    md5: 67627f2d9314f9c0ae55dd2099fc052f
+
   vox0001.lab:
     alternatives:
       - vox0001.lab?prepatched
@@ -641,7 +645,7 @@ size_and_md5: |
   67785654  129dad4e40987e91c5549c819d0dad1d movie02.lab?it
   88938419  0fdb7dda9ebc049eac386d29bface366 movie03.lab?it
   107969541 7c8d7e0f4beaca3910658290e8b14cf8 movie04.lab?it
-  4198635   c9e1a755f280b3ebff58578c4e5f1e52 vox0000.lab.lab?
+  4198635   c9e1a755f280b3ebff58578c4e5f1e52 vox0000.lab?it
   62185775  a0455d5d883ed46f0bda5030e4b5654c vox0001.lab?it
   97693353  616e4147c39268b650ce112bf79ea3a1 vox0002.lab?it
   #alt ?    24bbf1f6d3d63ae07ad2dd06bd7dad8c vox0002.lab?it_alt
