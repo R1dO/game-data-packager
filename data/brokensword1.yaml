@@ -628,11 +628,11 @@ files:
   # becauses it uses a higher sample rate
   music/2m29.wav:
     alternatives:
-    - music/2m29.wav_cd1
-    - music/2m29.wav_cd2
-  music/2m29.wav_cd1:
+    - music/2m29.wav?cd1
+    - music/2m29.wav?cd2
+  music/2m29.wav?cd1:
     look_for: [music/2m29.wav]
-  music/2m29.wav_cd2:
+  music/2m29.wav?cd2:
     look_for: [music/2m29.wav]
 
   manual.pdf:
@@ -729,8 +729,8 @@ cksums: |
   _ 1532644   music/2m26.wav
   _ 193084    music/2m27.wav
   _ 485448    music/2m28.wav
-  _ 2313548   music/2m29.wav_cd1
-  _ 1108450   music/2m29.wav_cd2
+  _ 2313548   music/2m29.wav?cd1
+  _ 1108450   music/2m29.wav?cd2
   _ 2180508   music/2m3.wav
   _ 144616    music/2m30.wav
   _ 703130    music/2m31.wav
@@ -1267,7 +1267,7 @@ md5sums: |
   d7fc994ea60680fedb5f89b918d662aa  music/2m26.wav
   bf05591354721d4a0afa16f2427f860f  music/2m27.wav
   e8e7e9fdd9ab8264e3ccacbd70087b50  music/2m28.wav
-  9bef836679250f627de89e2a8f8736d7  music/2m29.wav_cd1
+  9bef836679250f627de89e2a8f8736d7  music/2m29.wav?cd1
   0f39c0f113cbf91113b8f19b4dcb0187  music/2m30.wav
   7e5bb17861d196a5e1f8fe236352d594  music/2m31.wav
   b40631517d7d03c358ea40f7fd74848b  music/2m32.wav
@@ -1382,7 +1382,7 @@ md5sums: |
   5bc7e95da436abc9ebb901af5f7ee4ab  music/11m7.wav
   5338aefd7dc23be44bb2cdeb139ab052  music/11m8.wav
   12666fab95df7f2c527a242bece61125  music/12m1.wav
-  aaabf7e11ef44b2450a7d17b280358af  music/2m29.wav_cd2
+  aaabf7e11ef44b2450a7d17b280358af  music/2m29.wav?cd2
   21ab5e0696b34945340a6dc171c249ba  music/2m3.wav
   1c84e863d8956f0829555369f2dbc8d8  music/5m23.wav
   7402d72f792ab2a2cfb330731017a99e  music/5m24.wav
