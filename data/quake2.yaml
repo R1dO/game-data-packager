@@ -5,6 +5,8 @@ copyright: © 1997 id Software
 aliases: [q2rogue, q2xatrix]
 engine: quake2 | quake2-server
 genre: First-person shooter
+wikibase: http://quake.wikia.com/wiki/
+wiki: Quake_II
 
 help_text: |
   For quake2-full-data, you must provide baseq2/pak0.pak and the baseq2/video
@@ -358,6 +360,7 @@ packages:
     symlinks:
       usr/share/games/quake2/quake2-reckoning: usr/games/quake2
     longname: "Quake II Mission Pack 1: The Reckoning"
+    wiki: "Quake_II_Mission_Pack:_The_Reckoning"
     steam:
       id: 2330
       path: "common/Quake 2/xatrix"
@@ -410,6 +413,7 @@ packages:
       usr/share/games/quake2/quake2-groundzero: usr/games/quake2
     aliases: [rogue, q2rogue, groundzero, mp2, 2]
     longname: "Quake II Mission Pack 2: Ground Zero"
+    wiki: "Quake_II_Mission_Pack:_Ground_Zero"
     copyright: © 1998 Rogue Entertainment
     steam:
       id: 2340

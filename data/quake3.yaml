@@ -4,6 +4,8 @@ franchise: Quake
 copyright: © 1999 id Software
 engine: quake3 | quake3-server
 genre: First-person shooter
+wikibase: http://quake.wikia.com/wiki/
+wiki: Quake_III_Arena
 
 compress_deb: false
 try_repack_from:
@@ -129,7 +131,8 @@ packages:
 
   quake3-team-arena-data:
     longname: Quake III Team Arena
-    copyright: © 2010 id Software
+    wiki: Quake_3_Team_Arena
+    copyright: © 2000 id Software
     steam:
       id: 2350
       path: "common/Quake 3 Arena/missionpack"
