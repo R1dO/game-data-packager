@@ -19,7 +19,7 @@ packages:
     copyright: © 1992 Cyan Worlds
     gameid: manhole-cd
     install:
-    - manhole.dat_cd
+    - manhole.dat?cd
     - manhole.prj
     optional:
     - track01.flac
@@ -49,17 +49,13 @@ packages:
     - track25.flac
     - track26.flac
 
-files:
-  manhole.dat_cd:
-    install_as: manhole.dat
-
 size_and_md5: |
   127541    735337cc5b44e58e5f7a0c35260f69db manhole.dat
   132156    db967dbcdcb2c02ead6746e46639a83a music.blk
   2073267   31929a22640c916d697da8042ccf8591 pics.blk
   300092    f229896dfe647fd82ffdffef5d454608 snds.blk
 
-  107028    b9b36c9e496bae7d9b08f2929b463eef manhole.dat_cd
+  107028    b9b36c9e496bae7d9b08f2929b463eef manhole.dat?cd
   6989933   99c12e257dbc6802504ad91cc594e693 manhole.prj
   3999406   8ea9a965041b229d22979e2b98961648 track01.flac
   4377385   5327f4451b88880470245bad82396cd4 track02.flac
@@ -94,7 +90,7 @@ sha1sums: |
   fa744a52e0b8c387a67743b219e92a38c8f15be7  pics.blk
   c6a7f27c3bcc1d9bfb56bad442717887b1c203a3  snds.blk
 
-  78a3a4103eadcbdba2e6f8a799f192ec52c59e49  manhole.dat_cd
+  78a3a4103eadcbdba2e6f8a799f192ec52c59e49  manhole.dat?cd
   ac7b8bdbc34312ccf4346bfd1c3ec836ef07a9a6  manhole.prj
 
 flacsums: |
