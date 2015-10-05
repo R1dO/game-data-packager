@@ -167,6 +167,9 @@ class GameDataPackage(object):
         # overide the game engine when needed
         self.engine = None
 
+        # expansion's dedicated Wiki page, appended to GameData.wikibase
+        self.wiki = None
+
         # depedency information needed to build the debian/control file
         self.debian = {}
 
@@ -310,7 +313,7 @@ class GameData(object):
         # list of ISO-639 codes
         self.missing_langs = []
 
-        # The game genre
+        # The game genre, as seen in existing .desktop files or
         # http://en.wikipedia.org/wiki/List_of_video_game_genres
         self.genre = None
 
@@ -349,7 +352,7 @@ class GameData(object):
         self.compress_deb = True
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
-                  'engine', 'genre', 'missing_langs', 'franchise', 'wiki',
+                  'engine', 'genre', 'missing_langs', 'franchise', 'wiki', 'wikibase',
                   'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia'):
             if k in self.data:
                 setattr(self, k, self.data[k])
@@ -492,6 +495,10 @@ class GameData(object):
         wikis = list()
         if self.wiki:
             wikis.append(self.wikibase + self.wiki)
+        for p in sorted(self.packages.keys()):
+            package = self.packages[p]
+            if package.wiki:
+                wikis.append(self.wikibase + package.wiki)
         if self.wikipedia:
             wikis.append(self.wikipedia)
         if wikis:
@@ -537,7 +544,7 @@ class GameData(object):
                 'install_to_docdir', 'install_contents_of', 'debian',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
                 'copyright', 'engine', 'lang', 'component', 'section',
-                'steam', 'gog', 'dotemu', 'origin', 'url_misc'):
+                'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki'):
             if k in d:
                 setattr(package, k, d[k])
 
