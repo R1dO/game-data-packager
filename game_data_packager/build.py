@@ -1116,7 +1116,6 @@ class PackagingTask(object):
                                                           universal_newlines=True)
                         if Version(version.split('-')[0]) >= Version('1.5'):
                             prefix = provider.unpack.get('prefix', '')
-                            suffix = provider.unpack.get('suffix', '')
                             if prefix and not prefix.endswith('/'):
                                 prefix += '/'
                             if '$provides' in to_unpack:
@@ -1126,8 +1125,6 @@ class PackagingTask(object):
                                 cmdline.append('-I')
                                 if prefix and i[0] != '/':
                                     i = prefix + i
-                                if suffix and i.endswith(suffix):
-                                    i = i[:len(i)-len(suffix)]
                                 if 'unpack' not in provider.unpack:
                                     i = i.split('?')[0]
                                 cmdline.append(i)

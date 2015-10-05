@@ -16,10 +16,13 @@ missing_langs: list
 
 help_text: string
 disabled_help_text: string
+wikibase: string (url)
+wiki: string
 
 packages:
  <package>:
     longname: string
+    wiki: string
     aliases: list
     engine: string
     demo_for: list
@@ -82,8 +85,7 @@ files:
       flags: list (7z)
       groups: list (unshield)
       prefix: string (innoextract)
-      suffix: string (innoextract)
-      other_parts: list (cat, unshield, arj)
+      other_parts: list (cat, unshield, arj, innoextract)
       unpack: list
     provides: list
 
