@@ -29,11 +29,11 @@ packages:
     gog:
       url: simon_the_sorcerer_2
     install:
-    - gsptr30_de
+    - gsptr30?de
     - icon.dat
-    - simon2.gme_de
+    - simon2.gme?de
     - simon2.ogg
-    - stripped.txt_de
+    - stripped.txt?de
     - tbllist
     optional:
     - manual.pdf
@@ -45,29 +45,16 @@ packages:
     gog:
       url: simon_the_sorcerer_2
     install:
-    - gsptr30_fr
+    - gsptr30?fr
     - icon.dat
-    - simon2.gme_fr
+    - simon2.gme?fr
     - simon2.voc
-    - stripped.txt_fr
+    - stripped.txt?fr
     - tbllist
     optional:
     - manual.pdf
 
 files:
-  gsptr30_de:
-    install_as: gsptr30
-  gsptr30_fr:
-    install_as: gsptr30
-  simon2.gme_de:
-    install_as: simon2.gme
-  simon2.gme_fr:
-    install_as: simon2.gme
-  stripped.txt_de:
-    install_as: stripped.txt
-  stripped.txt_fr:
-    install_as: stripped.txt
-
   manual.pdf:
     install_to: $docdir
 
@@ -98,43 +85,41 @@ files:
   setup_simon_the_sorcerer2_german_2.0.0.8.exe:
     unpack:
       format: innoextract
-      suffix: _de
     provides:
-    - gsptr30_de
+    - gsptr30?de
     - icon.dat
-    - simon2.gme_de
+    - simon2.gme?de
     - simon2.ogg
-    - stripped.txt_de
+    - stripped.txt?de
     - tbllist
     - manual.pdf
 
   setup_simon_the_sorcerer2_french_2.1.0.26.exe:
     unpack:
       format: innoextract
-      suffix: _fr
     provides:
-    - gsptr30_fr
+    - gsptr30?fr
     - icon.dat
-    - simon2.gme_fr
+    - simon2.gme?fr
     - simon2.voc
-    - stripped.txt_fr
+    - stripped.txt?fr
     - tbllist
     - manual.pdf
 
 size_and_md5: |
   58652     bd85a8b5135592ada9cbeae49160f1d3 gsptr30
-  62346     3bdf85dc57c1abff8f05416b4571198f gsptr30_de
-  60857     c8ddd48919aa75423dd2d3e5864909df gsptr30_fr
+  62346     3bdf85dc57c1abff8f05416b4571198f gsptr30?de
+  60857     c8ddd48919aa75423dd2d3e5864909df gsptr30?fr
   18089     ee92d1f84893195a60449f2430d07285 icon.dat
   20046789  a03bd98fca6f60b30300ce56a4363d77 simon2.gme
-  19698790  9e5db40b9b5aae6041294aae86dc390d simon2.gme_de
-  19706029  cd569185ae51b3da97126eee16517e9b simon2.gme_fr
+  19698790  9e5db40b9b5aae6041294aae86dc390d simon2.gme?de
+  19706029  cd569185ae51b3da97126eee16517e9b simon2.gme?fr
   154091444 aa665e68d738a36fa4a25ed1a76bf68e simon2.wav
   72572996  d067d33e56c290f362ed95ce06eb2e08 simon2.ogg
   144203424 a31e9ef6d6fbfb38e73809662eea8e3b simon2.voc
   171       e229f84d46fa83f99b4a7115679f3fb6 stripped.txt
-  171       6de6292c9ac11bfb2e70fdb0f773ba85 stripped.txt_de
-  171       5ea27977b4d7dcfd50eb5074e162ebbf stripped.txt_fr
+  171       6de6292c9ac11bfb2e70fdb0f773ba85 stripped.txt?de
+  171       5ea27977b4d7dcfd50eb5074e162ebbf stripped.txt?fr
   513       2082f8d02075e590300478853a91ffd9 tbllist
 
   2011875   065a20a3926c1f2981bb2834d4352300 manual.pdf
@@ -145,18 +130,18 @@ size_and_md5: |
 
 sha1sums: |
   06eed4eb0056984ca3fff57ba07568e535424dfd  gsptr30
-  b15411b35fbefb6a3ef69801bf071ef96d3ae474  gsptr30_de
-  557cba5ee31599b0a266079c6742ec6fdb7e58ce  gsptr30_fr
+  b15411b35fbefb6a3ef69801bf071ef96d3ae474  gsptr30?de
+  557cba5ee31599b0a266079c6742ec6fdb7e58ce  gsptr30?fr
   dd4c787dbf754a98129ed1f13900875a0e777f4a  icon.dat
   9ade175af3910f1ad2b8acdbfb6a137893a28b72  simon2.gme
-  88f04fdce567084225a4e7ae0f32c425d07bc7e7  simon2.gme_de
-  252f27a5bb6dc3c480caea041b6f7bb4a0a98275  simon2.gme_fr
+  88f04fdce567084225a4e7ae0f32c425d07bc7e7  simon2.gme?de
+  252f27a5bb6dc3c480caea041b6f7bb4a0a98275  simon2.gme?fr
   60045963c670e5820e7edf4372b7a62ecd42cb06  simon2.wav
   38b363b979ff526bbb942e353b2b9c39ac529396  simon2.ogg
   686110797263807d6a941a7cd0eed8dea508f565  simon2.voc
   528e5590680cf8bd268bd019afb6cabde289c7ab  stripped.txt
-  157399f17f0d175a8e0741ab7962adcf961cf160  stripped.txt_de
-  b7bb5d76100122f0f60a01f68a958386836397e3  stripped.txt_fr
+  157399f17f0d175a8e0741ab7962adcf961cf160  stripped.txt?de
+  b7bb5d76100122f0f60a01f68a958386836397e3  stripped.txt?fr
   dffc286bb1471dd05d9c5377c41b149dea62e932  tbllist
 
   138308cb4f307756518ec4272da6a63cc3328eda  manual.pdf
