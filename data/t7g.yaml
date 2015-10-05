@@ -108,11 +108,11 @@ files:
 
   at.gjd:
     alternatives:
-    - at.gjd_gog
-    - at.gjd_alt
-  at.gjd_gog:
+    - at.gjd?gog
+    - at.gjd?alt
+  at.gjd?gog:
     look_for: [at.gjd]
-  at.gjd_alt:
+  at.gjd?alt:
     look_for: [at.gjd]
 
   manual.pdf:
@@ -121,9 +121,8 @@ files:
   setup_the_7th_guest_2.0.0.17.exe:
     unpack:
       format: innoextract
-      suffix: _orig
     provides:
-    - at.gjd_orig
+    - at.gjd?gog
     - at.grv
     - at.rl
     - b.gjd
@@ -198,8 +197,8 @@ files:
     - manual.pdf
 
 cksums: |
-  _ 45171574  at.gjd_gog
-  _ 45171574  at.gjd_alt
+  _ 45171574  at.gjd?gog
+  _ 45171574  at.gjd?alt
   _ 6725      at.grv
   _ 760       at.rl
   _ 25672908  b.gjd
@@ -283,8 +282,8 @@ flacsums: |
   d7325fb43db73a3e61d23026fd8aec6a  track2.flac
 
 md5sums: |
-  a24e6c5e22cfcf6d7653039e7256012a  at.gjd_gog
-  6e489e57e3aa06e5425a50956701757b  at.gjd_alt
+  a24e6c5e22cfcf6d7653039e7256012a  at.gjd?gog
+  6e489e57e3aa06e5425a50956701757b  at.gjd?alt
   1b96fe1e03d1f8014dbfae46d691d02a  at.grv
   c0b257d351b4ad3780afad8797b1119a  at.rl
   da9e17605e5beb385bc7f573f5e2e53d  b.gjd
@@ -365,8 +364,8 @@ md5sums: |
   a71cccc18669771450b1425dfdb58a32  track2.flac
 
 sha1sums: |
-  f0f5fec37fb4f86eba66b4c91bb1e99c98d80e13  at.gjd_gog
-  1a93a95e91c110697db7412e8d31da9387045b08  at.gjd_alt
+  f0f5fec37fb4f86eba66b4c91bb1e99c98d80e13  at.gjd?gog
+  1a93a95e91c110697db7412e8d31da9387045b08  at.gjd?alt
   5d35f5df8d287d01bcade11cee132e5b71358d41  at.grv
   8a30909213376f36b225b9f5b94dd9b588d8799b  at.rl
   1bb84ed1dc9a4cf873f52b9778535e35ece2c2e7  b.gjd
