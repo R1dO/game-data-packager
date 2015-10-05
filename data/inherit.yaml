@@ -16,8 +16,8 @@ packages:
     longname: "Inherit the Earth (floppy version)"
     better_version: inherit-the-earth-en-data
     install:
-    - ite.rsc_floppy
-    - scripts.rsc_floppy
+    - ite.rsc?floppy
+    - scripts.rsc?floppy
     - voices.rsc
     optional:
     - instr.ad
@@ -51,31 +51,19 @@ packages:
     gog:
       url: inherit_the_earth
     install:
-    - ite.rsc_german
-    - scripts.rsc_german
-    - voices.rsc_german
+    - ite.rsc?de
+    - scripts.rsc?de
+    - voices.rsc?de
     - music.rsc
     - sounds.rsc
     optional:
     - manual.pdf
-    - manual.pdf_german
+    - manual.pdf?de
 
 files:
-  ite.rsc_floppy:
-    install_as: ite.rsc
-  scripts.rsc_floppy:
-    install_as: scripts.rsc
-
-  ite.rsc_german:
-    install_as: ite.rsc
-  scripts.rsc_german:
-    install_as: scripts.rsc
-  voices.rsc_german:
-    install_as: voices.rsc
-
   manual.pdf:
     install_to: $docdir
-  manual.pdf_german:
+  manual.pdf?de:
     install_to: $docdir
     install_as: manual-de.pdf
     look_for: [manual.pdf,manual-de.pdf]
@@ -106,9 +94,9 @@ files:
     unpack:
       format: zip
     provides:
-    - ite.rsc_german
-    - scripts.rsc_german
-    - voices.rsc_german
+    - ite.rsc?de
+    - scripts.rsc?de
+    - voices.rsc?de
     - music.rsc
     - sounds.rsc
     - manual.pdf
@@ -116,18 +104,17 @@ files:
   setup_inherit_the_earth_german_2.0.0.7.exe:
     unpack:
       format: innoextract
-      suffix: _german
     provides:
-    - ite.rsc_german
-    - scripts.rsc_german
-    - voices.rsc_german
+    - ite.rsc?de
+    - scripts.rsc?de
+    - voices.rsc?de
     - music.rsc
     - sounds.rsc
-    - manual.pdf_german
+    - manual.pdf?de
 
 size_and_md5: |
-  8903828   04f366b46a13c350619b7edb83470949 ite.rsc_floppy
-  327162    793bb8ceea2db752e10b3de91e5b1001 scripts.rsc_floppy
+  8903828   04f366b46a13c350619b7edb83470949 ite.rsc?floppy
+  327162    793bb8ceea2db752e10b3de91e5b1001 scripts.rsc?floppy
   5695569   a533d672e894769d69049311c53eb659 voices.rsc
   2982      1dddf5c5ff20b026a90b555ba430f9c3 instr.ad
   2982      1dddf5c5ff20b026a90b555ba430f9c3 instr.opl
@@ -142,16 +129,16 @@ size_and_md5: |
   437492993 a22c011d69146fb20762f5d1c0609a7b gog_inherit_the_earth_2.0.0.4.sh
   508098200 a67ec0cd12fb49c129f994c614acd599 setup_inherit_the_earth_2.0.0.6.exe
 
-  8925349   5daa717888f95187db7dc82df3d750df ite.rsc_german
-  355364    5b4c047a22e8dc960eef5d091f931505 scripts.rsc_german
-  442278536 5bd6c43dbb4afff1cde540660f929472 voices.rsc_german
-  526382    abfe26c26615cf3b21c708a831e67bfd manual.pdf_german
+  8925349   5daa717888f95187db7dc82df3d750df ite.rsc?de
+  355364    5b4c047a22e8dc960eef5d091f931505 scripts.rsc?de
+  442278536 5bd6c43dbb4afff1cde540660f929472 voices.rsc?de
+  526382    abfe26c26615cf3b21c708a831e67bfd manual.pdf?de
   447622655 c00581e713bb00f0f4f538190657ca0e gog_inherit_the_earth_german_2.0.0.4.sh
   510942128 40c809f3201966f85e9e740fab41834a setup_inherit_the_earth_german_2.0.0.7.exe
 
 sha1sums: |
-  9c1e215e50a0bec77079b5fce2106b2f0f8cb27e  ite.rsc_floppy
-  4c0ddd504e99eb8daddacfe65f08377b91e9f30d  scripts.rsc_floppy
+  9c1e215e50a0bec77079b5fce2106b2f0f8cb27e  ite.rsc?floppy
+  4c0ddd504e99eb8daddacfe65f08377b91e9f30d  scripts.rsc?floppy
   ad2366d89a51e9932e519aa469821705b8d40177  voices.rsc
   04941d6e5f8c8208b45a3d229ea3862fe18ecf7b  instr.ad
   04941d6e5f8c8208b45a3d229ea3862fe18ecf7b  instr.opl
@@ -166,10 +153,10 @@ sha1sums: |
   5403c8cb0792089a7a12d5e34c20151a5656b262  gog_inherit_the_earth_2.0.0.4.sh
   32c77439c519bf632f9a4019ec837cea3a2fbb0b  setup_inherit_the_earth_2.0.0.6.exe
 
-  7a665492482611113ebcfa2b09a19f8592833c8c  ite.rsc_german
-  f7ae268233001903fcfd1091c693cb39ba567155  scripts.rsc_german
-  00dea7c1067e9cfeb3deb4804256e5449608470c  voices.rsc_german
-  738ecdee80053298dc805c09f53cb75254df041a  manual.pdf_german
+  7a665492482611113ebcfa2b09a19f8592833c8c  ite.rsc?de
+  f7ae268233001903fcfd1091c693cb39ba567155  scripts.rsc?de
+  00dea7c1067e9cfeb3deb4804256e5449608470c  voices.rsc?de
+  738ecdee80053298dc805c09f53cb75254df041a  manual.pdf?de
   9f40568460ebfee4a8dd2ede4d10cc9dcb447120  gog_inherit_the_earth_german_2.0.0.4.sh
   0bc869cfac951f33b101f1b3b8b5e2a796df3278  setup_inherit_the_earth_german_2.0.0.7.exe
 ...
