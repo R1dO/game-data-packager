@@ -4928,6 +4928,20 @@ files:
   setup_zork_grand_inquisitor_2.0.0.15.exe:
     unpack:
       format: innoextract
+      unpack:
+      - $provides
+      - ue1ea011.rlf
+      - ue1ea021.rlf
+      - ue1ea031.rlf
+      - ue1ea041.rlf
+      - ue1ea051.rlf
+      - ue1ea061.rlf
+      - ue1ea071.rlf
+      - ue1ea081.rlf
+      - ue1ea091.rlf
+      - ue1ea101.rlf
+      - ue1ea111.rlf
+      - ue1ea121.rlf
     provides:
     - inquis.str
     - inquis.zix
@@ -5799,7 +5813,7 @@ files:
     - zassets1/griffqst/cd60s011.tga
     - zassets1/griffqst/cd60s021.tga
     - zassets1/griffqst/cd60s031.tga
-    #- zassets1/griffqst/cd60w111.avi
+    - zassets1/griffqst/cd60w111.avi
     - zassets1/griffqst/cd60w111.src
     #- zassets1/griffqst/cd60w121.rlf
     - zassets1/griffqst/cd60w121.src
@@ -9625,22 +9639,21 @@ files:
     - zgi/zgi_mx/th00h83p.src
     - zgi/zgi_mx/th00h84p.src
     - zgi/zgi_mx/u000h01q.src
-    #- zgi/zgi_mx/ue1ea011.rlf
-    #- zgi/zgi_mx/ue1ea021.rlf
-    #- zgi/zgi_mx/ue1ea031.rlf
-    #- zgi/zgi_mx/ue1ea041.rlf
-    #- zgi/zgi_mx/ue1ea051.rlf
-    #- zgi/zgi_mx/ue1ea061.rlf
-    #- zgi/zgi_mx/ue1ea071.rlf
-    #- zgi/zgi_mx/ue1ea081.rlf
-    #- zgi/zgi_mx/ue1ea091.rlf
-    #- zgi/zgi_mx/ue1ea101.rlf
-    #- zgi/zgi_mx/ue1ea111.rlf
-    #- zgi/zgi_mx/ue1ea121.rlf
+    - zgi/zgi_mx/ue1ea011.rlf
+    - zgi/zgi_mx/ue1ea021.rlf
+    - zgi/zgi_mx/ue1ea031.rlf
+    - zgi/zgi_mx/ue1ea041.rlf
+    - zgi/zgi_mx/ue1ea051.rlf
+    - zgi/zgi_mx/ue1ea061.rlf
+    - zgi/zgi_mx/ue1ea071.rlf
+    - zgi/zgi_mx/ue1ea081.rlf
+    - zgi/zgi_mx/ue1ea091.rlf
+    - zgi/zgi_mx/ue1ea101.rlf
+    - zgi/zgi_mx/ue1ea111.rlf
+    - zgi/zgi_mx/ue1ea121.rlf
     - zgi_mx/c000h01q.raw
     - zgi_mx/cd00h40q.raw
     - zgi_mx/cd30q05p.raw
-    - zgi_mx/cd60w111.avi
     - zgi_mx/cm00h01q.raw
     - zgi_mx/dm00h01q.raw
     - zgi_mx/e000h01q.raw
@@ -9699,18 +9712,6 @@ files:
     - zgi_mx/trgfh65p.raw
     - zgi_mx/trgfh66p.raw
     - zgi_mx/u000h01q.raw
-    - zgi_mx/ue1ea011.rlf
-    - zgi_mx/ue1ea021.rlf
-    - zgi_mx/ue1ea031.rlf
-    - zgi_mx/ue1ea041.rlf
-    - zgi_mx/ue1ea051.rlf
-    - zgi_mx/ue1ea061.rlf
-    - zgi_mx/ue1ea071.rlf
-    - zgi_mx/ue1ea081.rlf
-    - zgi_mx/ue1ea091.rlf
-    - zgi_mx/ue1ea101.rlf
-    #- zgi_mx/ue1ea111.rlf
-    - zgi_mx/ue1ea121.rlf
     - manual.pdf
     - eula.txt
 
