@@ -37,27 +37,26 @@ packages:
       path: "common/Hexen 2"
     debian:
       replaces: heretic2-demo-data
-    install_files_from_cksums: |
-      2912412704 22704056 data1/pak0.pak
-      4210700438 75601170 data1/pak1.pak
+    install:
+    - data1/pak0.pak
+    - data1/pak1.pak
 
   hexen2-portals-data:
     longname: "Hexen II Mission Pack: Portal of Praevus"
     expansion_for: hexen2-data
     install_to: usr/share/games/hexen2
-    install_files_from_cksums: |
-      1873146513 49089114 portals/pak3.pak
+    install:
+    - portals/pak3.pak
 
   hexen2-hexenworld-data:
     longname: "Hexen II: HexenWorld"
     expansion_for: hexen2-data
     install_to: usr/share/games/hexen2
-    install_files_from_cksums: |
-      _ 10780245 hw/pak4.pak
+    install:
+    - hw/pak4.pak
 
 files:
   hexenworld-pakfiles-0.15.tgz:
-    size: 4948641
     provides:
     - hw/pak4.pak
     # FIXME: if we list this as downloadable, then g-d-p will download it
@@ -89,22 +88,16 @@ files:
     look_for: [HEXEN II SUBLICENSE.doc, SUBLICENSE.doc]
     install_as: hexen_II_sublicense.doc
 
-cksums: |
-  1099843119 27750257 data1/pak0.pak_demo
-  _          30208    HEXEN II SUBLICENSE.doc
-  _          15334912 h2demoupd.exe
-  _          19585198 hexen2demo_nov1997-linux-i586.tgz
-
-md5sums: |
-  c9675191e75dd25a3b9ed81ee7e05eff  data1/pak0.pak
-  c2ac5b0640773eed9ebe1cda2eca2ad0  data1/pak1.pak
-  77ae298dd0dcd16ab12f4a68067ff2c3  portals/pak3.pak
-  88109ee385d9723ac5f1015e034a44dd  hw/pak4.pak
-  9ac598a80765daa0862893bd0aac765a  hexenworld-pakfiles-0.15.tgz
-  8e598d82bf53436ed7a0e133aa4b9f09  data1/pak0.pak_demo
-  f610eb93304c4cd2cdce97bdb9140e4e  HEXEN II SUBLICENSE.doc
-  d058ecd35e419a5b8bdf17003a006843  h2demoupd.exe
-  b486f7b7a01b359ad801eac9486ba25f  hexen2demo_nov1997-linux-i586.tgz
+size_and_md5: |
+  22704056 c9675191e75dd25a3b9ed81ee7e05eff data1/pak0.pak
+  75601170 c2ac5b0640773eed9ebe1cda2eca2ad0 data1/pak1.pak
+  49089114 77ae298dd0dcd16ab12f4a68067ff2c3 portals/pak3.pak
+  10780245 88109ee385d9723ac5f1015e034a44dd hw/pak4.pak
+  4948641  9ac598a80765daa0862893bd0aac765a hexenworld-pakfiles-0.15.tgz
+  27750257 8e598d82bf53436ed7a0e133aa4b9f09 data1/pak0.pak_demo
+  30208    f610eb93304c4cd2cdce97bdb9140e4e HEXEN II SUBLICENSE.doc
+  15334912 d058ecd35e419a5b8bdf17003a006843 h2demoupd.exe
+  19585198 b486f7b7a01b359ad801eac9486ba25f hexen2demo_nov1997-linux-i586.tgz
 
 sha1sums: |
   7c6b19d76ce85771026ea8dbdc397cd1109355b7  data1/pak0.pak
