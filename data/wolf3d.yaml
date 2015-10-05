@@ -35,14 +35,14 @@ packages:
       conflicts: [wolf3d-v14-data, wolf3d-full-v14-data, wolf3d-full-v12-data, wolf3d-full-data]
     install_to: usr/share/games/wolf3d
     install:
-    - audiohed.wl6_1.0
-    - audiot.wl6_1.0
-    - gamemaps.wl6_1.2
-    - maphead.wl6_1.2
-    - vgadict.wl6_1.0
-    - vgagraph.wl6_1.0
-    - vgahead.wl6_1.0
-    - vswap.wl6_1.0
+    - audiohed.wl6?1.0
+    - audiot.wl6?1.0
+    - gamemaps.wl6?1.2
+    - maphead.wl6?1.2
+    - vgadict.wl6?1.0
+    - vgagraph.wl6?1.0
+    - vgahead.wl6?1.0
+    - vswap.wl6?1.0
 
   wolf3d-v14-data:
     longname: Wolfenstein 3D v1.4
@@ -109,164 +109,102 @@ files:
       - MAPHEAD.WL6
       - GAMEMAPS.WL6
     provides:
-    - maphead.wl6_1.2
-    - gamemaps.wl6_1.2
+    - maphead.wl6?1.2
+    - gamemaps.wl6?1.2
 
-  audiohed.wl6_1.0:
-    install_as: audiohed.wl6
-  audiot.wl6_1.0:
-    install_as: audiot.wl6
-  vgadict.wl6_1.0:
-    install_as: vgadict.wl6
-  vgagraph.wl6_1.0:
-    install_as: vgagraph.wl6
-  vgahead.wl6_1.0:
-    install_as: vgahead.wl6
-  vswap.wl6_1.0:
-    install_as: vswap.wl6
-  maphead.wl6_1.2:
-    install_as: maphead.wl6
-  gamemaps.wl6_1.2:
-    install_as: gamemaps.wl6
-  maphead.wl6_1.1:
+  maphead.wl6?1.1:
     look_for: [maphead.wl6]
     unsuitable: Wolfenstein 3D v1.4 or v1.2 is required, this file is from v1.1
-  gamemaps.wl6_1.1:
+  gamemaps.wl6?1.1:
     look_for: [gamemaps.wl6]
     unsuitable: Wolfenstein 3D v1.4 or v1.2 is required, this file is from v1.1
 
   # full version 1.4
   vgadict.wl6:
     alternatives:
-    - vgadict.wl6_steam
-    - vgadict.wl6_alt
-    - vgadict.wl6_wl6a
-  vgadict.wl6_steam:
-    look_for: [vgadict.wl6]
-  vgadict.wl6_alt:
-    look_for: [vgadict.wl6]
-  vgadict.wl6_wl6a:
-    look_for: [vgadict.wl6]
+    - vgadict.wl6?steam
+    - vgadict.wl6?alt
+    - vgadict.wl6?wl6a
 
   vgagraph.wl6:
     alternatives:
-    - vgagraph.wl6_steam
-    - vgagraph.wl6_alt
-    - vgagraph.wl6_wl6a
-  vgagraph.wl6_steam:
-    look_for:
-    - vgagraph.wl6
-  vgagraph.wl6_alt:
-    look_for:
-    - vgagraph.wl6
-  vgagraph.wl6_wl6a:
-    look_for:
-    - vgagraph.wl6
+    - vgagraph.wl6?steam
+    - vgagraph.wl6?alt
+    - vgagraph.wl6?wl6a
 
   vgahead.wl6:
     alternatives:
-    - vgahead.wl6_steam
-    - vgahead.wl6_alt
-    - vgahead.wl6_wl6a
-  vgahead.wl6_steam:
-    look_for:
-    - vgahead.wl6
-  vgahead.wl6_alt:
-    look_for:
-    - vgahead.wl6
-  vgahead.wl6_wl6a:
-    look_for:
-    - vgahead.wl6
+    - vgahead.wl6?steam
+    - vgahead.wl6?alt
+    - vgahead.wl6?wl6a
 
   vswap.wl6:
     alternatives:
-    - vswap.wl6_steam
-    - vswap.wl6_alt
-  vswap.wl6_steam:
-    look_for:
-    - vswap.wl6
-  vswap.wl6_alt:
-    look_for:
-    - vswap.wl6
+    - vswap.wl6?steam
+    - vswap.wl6?alt
 
   setup_wolfenstein3d_2.0.0.4.exe:
     unpack:
       format: innoextract
-      suffix: _steam
     provides:
     - audiohed.wl6
     - audiot.wl6
     - gamemaps.wl6
     - maphead.wl6
-    - vgadict.wl6_steam
-    - vgagraph.wl6_steam
-    - vgahead.wl6_steam
-    - vswap.wl6_steam
+    - vgadict.wl6?steam
+    - vgagraph.wl6?steam
+    - vgahead.wl6?steam
+    - vswap.wl6?steam
 
   # older demos
-  AUDIOHED.WL1_1.0:
-    look_for: [audiohed.wl1]
+  AUDIOHED.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
-  AUDIOT.WL1_1.0:
-    look_for: [audiot.wl1]
+  AUDIOT.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
-  MAPHEAD.WL1_1.0:
-    look_for: [maphead.wl1]
+  MAPHEAD.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
-  MAPTEMP.WL1_1.0:
-    look_for: [maptemp.wl1]
+  MAPTEMP.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
-  VGADICT.WL1_1.0:
-    look_for: [vgadict.wl1]
+  VGADICT.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
-  VGAGRAPH.WL1_1.0:
-    look_for: [vgagraph.wl1]
+  VGAGRAPH.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
-  VGAHEAD.WL1_1.0:
-    look_for: [vgahead.wl1]
+  VGAHEAD.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
-  VSWAP.WL1_1.0:
-    look_for: [vswap.wl1]
+  VSWAP.WL1?1.0:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.0
 
-  AUDIOT.WL1_1.1:
-    look_for: [audiot.wl1]
+  AUDIOT.WL1?1.1:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
-  GAMEMAPS.WL1_1.1:
-    look_for: [gamemaps.wl1]
+  GAMEMAPS.WL1?1.1:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
-  MAPHEAD.WL1_1.1:
-    look_for: [maphead.wl1]
+  MAPHEAD.WL1?1.1:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
-  VGADICT.WL1_1.1:
-    look_for: [vgadict.wl1]
+  VGADICT.WL1?1.1:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
-  VGAGRAPH.WL1_1.1:
-    look_for: [vgagraph.wl1]
+  VGAGRAPH.WL1?1.1:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
-  VGAHEAD.WL1_1.1:
-    look_for: [vgahead.wl1]
+  VGAHEAD.WL1?1.1:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
-  VSWAP.WL1_1.1:
-    look_for: [vswap.wl1]
+  VSWAP.WL1?1.1:
     unsuitable: Wolfenstein 3D v1.4 is required, this file is from v1.1
 
 size_and_md5: |
   # "Wolfenstein 3D v1.2 full Apogee"
   # run with wolf3sdl-wl6a1
   # unchanged from v1.0 (1992/05/05)
-  1156      3bfac1f5de61d8a1a7df949fbde873fc audiohed.wl6_1.0
-  317049    bb228b96fc12f2a658fc8033637ec051 audiot.wl6_1.0
-  1024      d159e885f32e2355c6a31eaef350b902 vgadict.wl6_1.0
-  302374    977242319585dbd9a47c666d4b93fb3f vgagraph.wl6_1.0
-  477       9f0a9da0a8ac0b831c2fb5efd1a1e6fb vgahead.wl6_1.0
-  1545400   82c20804eea23067e83bef88605cf982 vswap.wl6_1.0
+  1156      3bfac1f5de61d8a1a7df949fbde873fc audiohed.wl6?1.0
+  317049    bb228b96fc12f2a658fc8033637ec051 audiot.wl6?1.0
+  1024      d159e885f32e2355c6a31eaef350b902 vgadict.wl6?1.0
+  302374    977242319585dbd9a47c666d4b93fb3f vgagraph.wl6?1.0
+  477       9f0a9da0a8ac0b831c2fb5efd1a1e6fb vgahead.wl6?1.0
+  1545400   82c20804eea23067e83bef88605cf982 vswap.wl6?1.0
   # intermediate patch level v1.1 (1992/06/10)
-  402       accc0231d871a4350da4374d87b57d88 maphead.wl6_1.1
-  150746    05ee51e9bc7d60f01a05334b1cfab1a5 gamemaps.wl6_1.1
+  402       accc0231d871a4350da4374d87b57d88 maphead.wl6?1.1
+  150746    05ee51e9bc7d60f01a05334b1cfab1a5 gamemaps.wl6?1.1
   # patch needed to update to v1.2 (1992/06/22)
-  402       42c7b607a33be82143e6525d481b8beb maphead.wl6_1.2
-  150758    a15b04941937b7e136419a1e74e57e2f gamemaps.wl6_1.2
+  402       42c7b607a33be82143e6525d481b8beb maphead.wl6?1.2
+  150758    a15b04941937b7e136419a1e74e57e2f gamemaps.wl6?1.2
   104052    564558b32f20268069c2823b09591f8b w6patc12.zip
 
   17066408  7e8c178b7efca0f3bc3d08704b35cade setup_wolfenstein3d_2.0.0.4.exe
@@ -279,28 +217,28 @@ size_and_md5: |
   # "Wolfenstein 3D v1.4 full GT/ID/Activision" (esp on #745081)
   # also matches the Steam version, and the id Anthology on CD
   # run with wolf4sdl-wl6
-  1024      dec8939cff5a4ec27ae7b43e8f52ec28 vgadict.wl6_steam
-  275774    8b40b5b785f898e229bf1c2f2e3ee003 vgagraph.wl6_steam
-  450       8e75e3ffb842ed3d08abe6ffea97b231 vgahead.wl6_steam
-  1544376   b8ff4997461bafa5ef2a94c11f9de001 vswap.wl6_steam
+  1024      dec8939cff5a4ec27ae7b43e8f52ec28 vgadict.wl6?steam
+  275774    8b40b5b785f898e229bf1c2f2e3ee003 vgagraph.wl6?steam
+  450       8e75e3ffb842ed3d08abe6ffea97b231 vgahead.wl6?steam
+  1544376   b8ff4997461bafa5ef2a94c11f9de001 vswap.wl6?steam
 
   # some alternative edition (Fabian on #745081)
   # "(These comes) from the Quake Shareware CD.
   # All previous ID games were also present on this CD packed in encrypted
   # archives. IIRC you had to call somewhere and buy a key to unlock them."
   # run with wolf4sdl-wl6
-  1024      ccad1a688ebafad9856eca085a20dfc4 vgadict.wl6_alt
-  276096    f18b07d6ba988b8505415f7446235366 vgagraph.wl6_alt
-  450       9059afb104a51140bd0c127b73717197 vgahead.wl6_alt
-  1545400   a6d901dfb455dfac96db5e4705837cdb vswap.wl6_alt
+  1024      ccad1a688ebafad9856eca085a20dfc4 vgadict.wl6?alt
+  276096    f18b07d6ba988b8505415f7446235366 vgagraph.wl6?alt
+  450       9059afb104a51140bd0c127b73717197 vgahead.wl6?alt
+  1545400   a6d901dfb455dfac96db5e4705837cdb vswap.wl6?alt
 
   # "the new 3D Realms Anthology" (skitt on #745081)
   # "Wolf3d Full v1.4 Apogee (with ReadThis)" according to wolf4sdl man page
   # run with wolf4sdl-wl6a
-  1024      adb10b0d6fdddba9fcc3d1a7c16937e7 vgadict.wl6_wl6a
-  334506    4e96d7b4e89a5b3a4beeebf5d7d87eb7 vgagraph.wl6_wl6a
-  486       a08905e2b0d299b3fad259f90c0efb1a vgahead.wl6_wl6a
-  #1545400  a6d901dfb455dfac96db5e4705837cdb  vswap.wl6_wl6a - same as alt
+  1024      adb10b0d6fdddba9fcc3d1a7c16937e7 vgadict.wl6?wl6a
+  334506    4e96d7b4e89a5b3a4beeebf5d7d87eb7 vgagraph.wl6?wl6a
+  486       a08905e2b0d299b3fad259f90c0efb1a vgahead.wl6?wl6a
+  #1545400  a6d901dfb455dfac96db5e4705837cdb  vswap.wl6?wl6a - same as alt
   2606      8eccd0fe00da18e06227426292f3d863  license.doc
 
   # v1.4 shareware
@@ -318,23 +256,23 @@ size_and_md5: |
 
   # v1.1 shareware
   #1156     58aa1b9892d5adfa725fab343d9446f8 AUDIOHED.WL1 - same as v1.4
-  132613    d0fbaa02e8659afb80caf59398cda4b4 AUDIOT.WL1_1.1
-  27448     d50dfc66596c00622cf5731a7a071858 GAMEMAPS.WL1_1.1
-  402       d1b36a2025603c6d21d52c4f69b34902 MAPHEAD.WL1_1.1
-  1024      d868d2a672547e89586c33827a43bdaf VGADICT.WL1_1.1
-  296826    67922b6d026ced8f0830075359d31b5b VGAGRAPH.WL1_1.1
-  462       fbe02c3719e1081f0f5a48dc4519691a VGAHEAD.WL1_1.1
-  742912    c2cd4a5d3d4fef10e9da342f82ee3d8d VSWAP.WL1_1.1
+  132613    d0fbaa02e8659afb80caf59398cda4b4 AUDIOT.WL1?1.1
+  27448     d50dfc66596c00622cf5731a7a071858 GAMEMAPS.WL1?1.1
+  402       d1b36a2025603c6d21d52c4f69b34902 MAPHEAD.WL1?1.1
+  1024      d868d2a672547e89586c33827a43bdaf VGADICT.WL1?1.1
+  296826    67922b6d026ced8f0830075359d31b5b VGAGRAPH.WL1?1.1
+  462       fbe02c3719e1081f0f5a48dc4519691a VGAHEAD.WL1?1.1
+  742912    c2cd4a5d3d4fef10e9da342f82ee3d8d VSWAP.WL1?1.1
 
   # v1.0 shareware
-  988       27c5bf36ceb771c20cec105153ca4ee7 AUDIOHED.WL1_1.0
-  130696    8bdadb421e5327a88830c8c560b79835 AUDIOT.WL1_1.0
-  402       ed41668f5f1af0c9bcf0464961b9e4cd MAPHEAD.WL1_1.0
-  56618     75668c68d30ce3b5d3c3be8354201a7a MAPTEMP.WL1_1.0
-  1024      5679026c03e91995bf3f74ed0d7b8d4c VGADICT.WL1_1.0
-  295394    917a3a8a0d1a57afbc336993403cfbb6 VGAGRAPH.WL1_1.0
-  447       00001991fe97e9811daa1e9b7a490340 VGAHEAD.WL1_1.0
-  707072    50aebc9edc2de0c0a4622a7a59ae2097 VSWAP.WL1_1.0
+  988       27c5bf36ceb771c20cec105153ca4ee7 AUDIOHED.WL1?1.0
+  130696    8bdadb421e5327a88830c8c560b79835 AUDIOT.WL1?1.0
+  402       ed41668f5f1af0c9bcf0464961b9e4cd MAPHEAD.WL1?1.0
+  56618     75668c68d30ce3b5d3c3be8354201a7a MAPTEMP.WL1?1.0
+  1024      5679026c03e91995bf3f74ed0d7b8d4c VGADICT.WL1?1.0
+  295394    917a3a8a0d1a57afbc336993403cfbb6 VGAGRAPH.WL1?1.0
+  447       00001991fe97e9811daa1e9b7a490340 VGAHEAD.WL1?1.0
+  707072    50aebc9edc2de0c0a4622a7a59ae2097 VSWAP.WL1?1.0
 
 sha1sums: |
   732460795d77cab19c8018d879f5c27a3cbd5f84  audiohed.wl1
@@ -353,46 +291,46 @@ sha1sums: |
   8a1e19ec1dc669ebe6916b1e24a261d10d9d5ff3  audiot.wl6
   22bfcde221efec232b48258117d7fc04337cce3a  gamemaps.wl6
   1b5bf23e6edae13f6a582a44f72729c6e5a0e692  maphead.wl6
-  4883109b6e3b9eb989fbadaff456410522f3e843  vgadict.wl6_steam
-  f04ee31c8193d4cdc2dd48a6bf34445345652d68  vgagraph.wl6_steam
-  19444414fe3e7b1ceb95a8cfd60a8ac54c69daaf  vgahead.wl6_steam
-  e604f436f31a456b003e99f8a3d14fe3ecdcec23  vswap.wl6_steam
-  cb080bd0103f2995b92e185be92c63f80069caae  vgadict.wl6_alt
-  2b4edd39f016460b2c02864c5b2268c4204f32dd  vgagraph.wl6_alt
-  5a040087758a01189b57a1840a9064b38502f90e  vgahead.wl6_alt
-  e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_alt
-  45f17d1a8e43dcf3411e41f1da7e452dc1fb72b9  vgadict.wl6_wl6a
-  7ea4ccb7c446628a528c8f68ebd1fbcb8b5366e6  vgagraph.wl6_wl6a
-  c5100bcbaaf2a78fc831f6780089bd3fa46bd9a5  vgahead.wl6_wl6a
-  #e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6_wl6a - same as alt
+  4883109b6e3b9eb989fbadaff456410522f3e843  vgadict.wl6?steam
+  f04ee31c8193d4cdc2dd48a6bf34445345652d68  vgagraph.wl6?steam
+  19444414fe3e7b1ceb95a8cfd60a8ac54c69daaf  vgahead.wl6?steam
+  e604f436f31a456b003e99f8a3d14fe3ecdcec23  vswap.wl6?steam
+  cb080bd0103f2995b92e185be92c63f80069caae  vgadict.wl6?alt
+  2b4edd39f016460b2c02864c5b2268c4204f32dd  vgagraph.wl6?alt
+  5a040087758a01189b57a1840a9064b38502f90e  vgahead.wl6?alt
+  e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6?alt
+  45f17d1a8e43dcf3411e41f1da7e452dc1fb72b9  vgadict.wl6?wl6a
+  7ea4ccb7c446628a528c8f68ebd1fbcb8b5366e6  vgagraph.wl6?wl6a
+  c5100bcbaaf2a78fc831f6780089bd3fa46bd9a5  vgahead.wl6?wl6a
+  #e1a7cac993e4af7fddef80367090f10a2efa7196  vswap.wl6?wl6a - same as alt
   cd03e6f036764464eeb29705f67ebd356f26cde9  license.doc
-  660a3effb265442f770040aee1d9f2447300767a  audiohed.wl6_1.0
-  d2d97546f37d177478c1c8ec10deaebac1e9b534  audiot.wl6_1.0
-  33ef9c6082376763eed32484240c3bce128f38f2  vgadict.wl6_1.0
-  6a274ef41baeba65110f9f92ea8e132a166f222e  vgagraph.wl6_1.0
-  5bd0a5ec540d65b56a868d67131cb8ea6bfe565f  vgahead.wl6_1.0
-  b8e3c55e2077ee821ed3ddf4707d13ef73a8d456  vswap.wl6_1.0
-  855ab6c71bc6a4a6b808e948a1ca115918855af0  maphead.wl6_1.1
-  0fe31241ecb994ab31797cf146ccfdb8623d826d  gamemaps.wl6_1.1
-  e6cbd8f9c43921f4418f4150573a47e26e71cb6f  maphead.wl6_1.2
-  0f8956bf9185abfac16666f8bcbf1d316bb68ff6  gamemaps.wl6_1.2
+  660a3effb265442f770040aee1d9f2447300767a  audiohed.wl6?1.0
+  d2d97546f37d177478c1c8ec10deaebac1e9b534  audiot.wl6?1.0
+  33ef9c6082376763eed32484240c3bce128f38f2  vgadict.wl6?1.0
+  6a274ef41baeba65110f9f92ea8e132a166f222e  vgagraph.wl6?1.0
+  5bd0a5ec540d65b56a868d67131cb8ea6bfe565f  vgahead.wl6?1.0
+  b8e3c55e2077ee821ed3ddf4707d13ef73a8d456  vswap.wl6?1.0
+  855ab6c71bc6a4a6b808e948a1ca115918855af0  maphead.wl6?1.1
+  0fe31241ecb994ab31797cf146ccfdb8623d826d  gamemaps.wl6?1.1
+  e6cbd8f9c43921f4418f4150573a47e26e71cb6f  maphead.wl6?1.2
+  0f8956bf9185abfac16666f8bcbf1d316bb68ff6  gamemaps.wl6?1.2
   8c2f38a4bad0890d274f65e19bf87d10b297f7ed  w6patc12.zip
 
-  0987a555841ed5cfd5ce7d8fec07e7e0d255a29d  AUDIOHED.WL1_1.0
-  4f77222c0bba442140967fa3bf17d2ce6d86ae9a  AUDIOT.WL1_1.0
-  e759ae9cc21af852ee07bf0d2c80fd137801a20b  MAPHEAD.WL1_1.0
-  3d4f123181dc6a612a07395b96e301fce386bcb4  MAPTEMP.WL1_1.0
-  149cf8460da67ff11dd0e4ce761284c25ec624a4  VGADICT.WL1_1.0
-  7171e7c3ee9ca41e18de36eb2ebaf069312ba2a2  VGAGRAPH.WL1_1.0
-  097b2a545a62905f7d87a1d1dad40fba00528de7  VGAHEAD.WL1_1.0
-  32ca34f76c4818a047209410a08b51d38d87c527  VSWAP.WL1_1.0
-  b9963c487130772e8a4d034bcce86c190805dd28  AUDIOT.WL1_1.1
-  29d86a84c2da22268dcc54d4e0288945e7186717  GAMEMAPS.WL1_1.1
-  62298c94b636fa100bf39e75ef2219530afc2d9b  MAPHEAD.WL1_1.1
-  5e6b346645a4a65b12c6a45cc7ad1700516bb37c  VGADICT.WL1_1.1
-  ac48bc31f70efdd238c7bd185cede1419ff89482  VGAGRAPH.WL1_1.1
-  086244eb5987629af6146ff45b79b46e3fe03ae3  VGAHEAD.WL1_1.1
-  b3097097d1af718f17e60feb36d406b443845ec9  VSWAP.WL1_1.1
+  0987a555841ed5cfd5ce7d8fec07e7e0d255a29d  AUDIOHED.WL1?1.0
+  4f77222c0bba442140967fa3bf17d2ce6d86ae9a  AUDIOT.WL1?1.0
+  e759ae9cc21af852ee07bf0d2c80fd137801a20b  MAPHEAD.WL1?1.0
+  3d4f123181dc6a612a07395b96e301fce386bcb4  MAPTEMP.WL1?1.0
+  149cf8460da67ff11dd0e4ce761284c25ec624a4  VGADICT.WL1?1.0
+  7171e7c3ee9ca41e18de36eb2ebaf069312ba2a2  VGAGRAPH.WL1?1.0
+  097b2a545a62905f7d87a1d1dad40fba00528de7  VGAHEAD.WL1?1.0
+  32ca34f76c4818a047209410a08b51d38d87c527  VSWAP.WL1?1.0
+  b9963c487130772e8a4d034bcce86c190805dd28  AUDIOT.WL1?1.1
+  29d86a84c2da22268dcc54d4e0288945e7186717  GAMEMAPS.WL1?1.1
+  62298c94b636fa100bf39e75ef2219530afc2d9b  MAPHEAD.WL1?1.1
+  5e6b346645a4a65b12c6a45cc7ad1700516bb37c  VGADICT.WL1?1.1
+  ac48bc31f70efdd238c7bd185cede1419ff89482  VGAGRAPH.WL1?1.1
+  086244eb5987629af6146ff45b79b46e3fe03ae3  VGAHEAD.WL1?1.1
+  b3097097d1af718f17e60feb36d406b443845ec9  VSWAP.WL1?1.1
 
 sha256sums: |
   39351624ae6f8eef4b873e060c1a6f3e5ee7e81c4939c485275a89b145336338  audiohed.wl1
@@ -410,42 +348,42 @@ sha256sums: |
   2cc23cb811df16e656f1fea25cd2629859c1ec9997d35bc3b1776594094b67ef  audiot.wl6
   3df9f2ad54c601e79ab117c8175477b5d96571ba9e290cb9cd7d910abfeaae56  gamemaps.wl6
   289e04f47128a5ba19f9b3f912b4048e26dc16c6fa00205ead51efb1d8e23c69  maphead.wl6
-  114f66d40e16f19f6866a30378178b7b85f26f02f948b85e91d9dc4d07a3a63e  vgadict.wl6_steam
-  26b4bd0a79c757a48c9c6bf943d82d4a6afbda341ee68eeedf532470e79a7f5b  vgagraph.wl6_steam
-  4ba3b8faedce7de2f0a9928affeaae45b3faefea6893d411f079d3ca1e8afa0b  vgahead.wl6_steam
-  175f3acb81cbc10297223e8916c1b90c5a0db0cf1d1d55732629624906aff083  vswap.wl6_steam
-  4411cbdb446af98392cf685a583d3266e644edcff149807fab0ae5850c54586c  vgadict.wl6_alt
-  0f7a038b8523d729eb98fe0bc50a858c47a41569e07cbbbf5d8aca8ff4e9863e  vgagraph.wl6_alt
-  a9823004be77b68813f0e4d9ac35947e2e2586271fbc2fb0685ff8ecb1deb3d5  vgahead.wl6_alt
-  49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_alt
-  e4ca6e61a1da1de5b4b59b75fbd702f173238577b2f870e679fd499cfe78bf00  vgadict.wl6_wl6a
-  84adea791e3ab1251312ee159414e48d5114622dc84348cebbac8a1dacb4b41f  vgagraph.wl6_wl6a
-  386b56a62ce79cdfa502542b0c9a9bad0d29fab4250edf17e05ee4ac51aa37a8  vgahead.wl6_wl6a
-  #49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6_wl6a - same as alt
+  114f66d40e16f19f6866a30378178b7b85f26f02f948b85e91d9dc4d07a3a63e  vgadict.wl6?steam
+  26b4bd0a79c757a48c9c6bf943d82d4a6afbda341ee68eeedf532470e79a7f5b  vgagraph.wl6?steam
+  4ba3b8faedce7de2f0a9928affeaae45b3faefea6893d411f079d3ca1e8afa0b  vgahead.wl6?steam
+  175f3acb81cbc10297223e8916c1b90c5a0db0cf1d1d55732629624906aff083  vswap.wl6?steam
+  4411cbdb446af98392cf685a583d3266e644edcff149807fab0ae5850c54586c  vgadict.wl6?alt
+  0f7a038b8523d729eb98fe0bc50a858c47a41569e07cbbbf5d8aca8ff4e9863e  vgagraph.wl6?alt
+  a9823004be77b68813f0e4d9ac35947e2e2586271fbc2fb0685ff8ecb1deb3d5  vgahead.wl6?alt
+  49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6?alt
+  e4ca6e61a1da1de5b4b59b75fbd702f173238577b2f870e679fd499cfe78bf00  vgadict.wl6?wl6a
+  84adea791e3ab1251312ee159414e48d5114622dc84348cebbac8a1dacb4b41f  vgagraph.wl6?wl6a
+  386b56a62ce79cdfa502542b0c9a9bad0d29fab4250edf17e05ee4ac51aa37a8  vgahead.wl6?wl6a
+  #49ba24e0b3916732cd065122de4fe6fb6e6a5009c353eafa407c0e3a5a503407  vswap.wl6?wl6a - same as alt
   578ed140d4a0c32109ceba304bc2aa537e4372459afd90acfe2ec3041b9faf44  license.doc
-  45991892e1a0fabdfecf1d52a3d7b31096e455372f5bb4116789b914f9f3b96f  audiohed.wl6_1.0
-  f43f345c8ec5515e97c7782c6e032090a7e8942174b157fd0c8af47cf1d1e834  audiot.wl6_1.0
-  ee387050e4d0e894f14c0e06a9174dd7ef28ddd375f3e1102bd83106642641b8  vgadict.wl6_1.0
-  a114b2fbb65f55774f0a672248fa1fbf9fbae4da7ef53605021fb9a33498d526  vgagraph.wl6_1.0
-  6d4d312f4c1d3738907b99a5d400101d87570333853b95d63df630b7e11a4666  vgahead.wl6_1.0
-  58707a957eb3426c58ee617f057fc67ff21504f30c88b433290fdb265676e559  vswap.wl6_1.0
-  b1ccea3648c5737afdcc9966ee2e99d9189c48958b61d8ff7b4a8a4fc8e962c7  maphead.wl6_1.1
-  5f3ce493027bf2ddd29ca0f112e4ceb09df8736fc22719bc5575689847c0c645  gamemaps.wl6_1.1
-  13f125200d944fc83a28705e8fbc29024a6f2dbbb05e4a382846c18a6f80aca3  maphead.wl6_1.2
-  9c9e7feecc0b9804f5201b38e17311db2dbda7d956d7cab076cc9367f03789af  gamemaps.wl6_1.2
-  b86d2e697b4c3235ec4395e9ff6d3fecc281403a8faa972a4264ed071ccc944f  AUDIOHED.WL1_1.0
-  c4f4ead90e8cff5d7bcfa28dc906c9cbc69268a7c44ea4a9d2598e17862b3428  AUDIOT.WL1_1.0
-  de61761d847d1808303f324ee648ed2addc3aa10acc04304c63b7ca9ee153d4a  MAPHEAD.WL1_1.0
-  c3bb3d394bb7758ab8844758dc655ac88075f7d75935268c137b2ffe83004a03  MAPTEMP.WL1_1.0
-  f7742293c56b33786f5bd494110e7704fd73921f578a6b52ced2d89d10277bdb  VGADICT.WL1_1.0
-  9c22c4f965bc6ee46ef03928096957d19588830956b58eda09ad3aad743f822d  VGAGRAPH.WL1_1.0
-  0d3775eb79ba3ebb555b18bf0811c64b0df1bddebc48622be1afe811dcccb690  VGAHEAD.WL1_1.0
-  8b6a9215491b49fb1f48f27162eff34267873d1cc02e45452c990b5ffd5f0e26  VSWAP.WL1_1.0
-  de239aebb12c0630bddf952f747762d6870052972b0cbbd0b2f83018cedfa0ec  AUDIOT.WL1_1.1
-  fc6d275e8e3154c66143e8f2066dfe3b0fb0e43fc41f7145e70e91af7693626f  GAMEMAPS.WL1_1.1
-  c956cb44f4c77c12b557ada390e85c09bf4b08db6679ead6ce26e64a8055478b  MAPHEAD.WL1_1.1
-  8d02ce93c679fc4c5f7685649751ddd082878cc0d92767858ae11f3094321d7d  VGADICT.WL1_1.1
-  7a3c53c5bcbbe642d917b74de782653e44d273cbb64cadf7fc175d9fa8e74840  VGAGRAPH.WL1_1.1
-  fbac6b66fe785625902ec37ed059508cc019d54fd676f1a906e497176ffcb42e  VGAHEAD.WL1_1.1
-  6924c25e50dad77a0c8eaa4203301dd07180848c7f8f163b68105dbffdf997e1  VSWAP.WL1_1.1
+  45991892e1a0fabdfecf1d52a3d7b31096e455372f5bb4116789b914f9f3b96f  audiohed.wl6?1.0
+  f43f345c8ec5515e97c7782c6e032090a7e8942174b157fd0c8af47cf1d1e834  audiot.wl6?1.0
+  ee387050e4d0e894f14c0e06a9174dd7ef28ddd375f3e1102bd83106642641b8  vgadict.wl6?1.0
+  a114b2fbb65f55774f0a672248fa1fbf9fbae4da7ef53605021fb9a33498d526  vgagraph.wl6?1.0
+  6d4d312f4c1d3738907b99a5d400101d87570333853b95d63df630b7e11a4666  vgahead.wl6?1.0
+  58707a957eb3426c58ee617f057fc67ff21504f30c88b433290fdb265676e559  vswap.wl6?1.0
+  b1ccea3648c5737afdcc9966ee2e99d9189c48958b61d8ff7b4a8a4fc8e962c7  maphead.wl6?1.1
+  5f3ce493027bf2ddd29ca0f112e4ceb09df8736fc22719bc5575689847c0c645  gamemaps.wl6?1.1
+  13f125200d944fc83a28705e8fbc29024a6f2dbbb05e4a382846c18a6f80aca3  maphead.wl6?1.2
+  9c9e7feecc0b9804f5201b38e17311db2dbda7d956d7cab076cc9367f03789af  gamemaps.wl6?1.2
+  b86d2e697b4c3235ec4395e9ff6d3fecc281403a8faa972a4264ed071ccc944f  AUDIOHED.WL1?1.0
+  c4f4ead90e8cff5d7bcfa28dc906c9cbc69268a7c44ea4a9d2598e17862b3428  AUDIOT.WL1?1.0
+  de61761d847d1808303f324ee648ed2addc3aa10acc04304c63b7ca9ee153d4a  MAPHEAD.WL1?1.0
+  c3bb3d394bb7758ab8844758dc655ac88075f7d75935268c137b2ffe83004a03  MAPTEMP.WL1?1.0
+  f7742293c56b33786f5bd494110e7704fd73921f578a6b52ced2d89d10277bdb  VGADICT.WL1?1.0
+  9c22c4f965bc6ee46ef03928096957d19588830956b58eda09ad3aad743f822d  VGAGRAPH.WL1?1.0
+  0d3775eb79ba3ebb555b18bf0811c64b0df1bddebc48622be1afe811dcccb690  VGAHEAD.WL1?1.0
+  8b6a9215491b49fb1f48f27162eff34267873d1cc02e45452c990b5ffd5f0e26  VSWAP.WL1?1.0
+  de239aebb12c0630bddf952f747762d6870052972b0cbbd0b2f83018cedfa0ec  AUDIOT.WL1?1.1
+  fc6d275e8e3154c66143e8f2066dfe3b0fb0e43fc41f7145e70e91af7693626f  GAMEMAPS.WL1?1.1
+  c956cb44f4c77c12b557ada390e85c09bf4b08db6679ead6ce26e64a8055478b  MAPHEAD.WL1?1.1
+  8d02ce93c679fc4c5f7685649751ddd082878cc0d92767858ae11f3094321d7d  VGADICT.WL1?1.1
+  7a3c53c5bcbbe642d917b74de782653e44d273cbb64cadf7fc175d9fa8e74840  VGAGRAPH.WL1?1.1
+  fbac6b66fe785625902ec37ed059508cc019d54fd676f1a906e497176ffcb42e  VGAHEAD.WL1?1.1
+  6924c25e50dad77a0c8eaa4203301dd07180848c7f8f163b68105dbffdf997e1  VSWAP.WL1?1.1
 ...
