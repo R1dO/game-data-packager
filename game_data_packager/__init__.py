@@ -815,9 +815,6 @@ class GameData(object):
                     assert len(wanted.provides) == 1, filename
                     assert isinstance(wanted.unpack['other_parts'],
                             list), filename
-                if 'include' in wanted.unpack:
-                    assert isinstance(wanted.unpack['include'],
-                            list), filename
 
             if wanted.alternatives:
                 for alt in wanted.alternatives:
