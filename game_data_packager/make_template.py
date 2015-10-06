@@ -189,7 +189,8 @@ class GameData(object):
             pkg = game + '-data'
         self.package = self.data.setdefault('packages', {}).setdefault(pkg, {})
         if lang:
-            self.package['lang'] = lang
+            if lang != 'en':
+                self.package['lang'] = lang
             self.package['debian'] = { 'provides' : virtual }
 
         self.package['install'] = []
