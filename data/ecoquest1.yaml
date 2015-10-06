@@ -1,0 +1,136 @@
+---
+longname: "EcoQuest 1 - The Search for Cetus"
+copyright: © 1991 Sierra Entertainment
+plugin: scummvm_common
+wiki: EcoQuest
+gameid: ecoquest
+
+packages:
+  ecoquest1-en-data:
+    debian:
+      provides: ecoquest1-data
+    install:
+    - 0.scr
+    - 140.msg
+    - 200.msg
+    - 200.scr
+    - 224.msg
+    - 345.scr
+    - 360.scr
+    - 381.scr
+    - 50.msg
+    - 500.scr
+    - 540.scr
+    - 560.scr
+    - 580.scr
+    - 64.scr
+    - 67.scr
+    - 810.msg
+    - 919.snd
+    - resource.000
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.cfg
+    - resource.map
+    - version
+
+  ecoquest1-fr-data:
+    debian:
+      provides: ecoquest1-data
+    langs: [fr,en]
+    install:
+    - 1180.msg
+    - 1221.msg
+    - 1222.msg
+    - 1223.msg
+    - 1343.msg
+    - 1540.msg
+    - 222.scr
+    - 3341.v56
+    - 480.scr
+    - 604.v56
+    - resource.000?fr
+    - resource.001?fr
+    - resource.002?fr
+    - resource.003?fr
+    - resource.cfg?fr
+    - resource.map?fr
+    - version?fr
+
+size_and_md5: |
+  18762     16cab226c3ee4d637fdca39f1bb79be0 0.scr
+  16134     8adf5546df0d2312ad2c701b9b184d7f 1180.msg
+  6917      0f762d3eaadac10241efa2e0f6be32a7 1221.msg
+  7734      46f738182b99af592019eb84e61fa08f 1222.msg
+  5387      e803166c94b99741476a8d7c1becf464 1223.msg
+  8061      c81ce0242816ed5c6da091f6c5b64c41 1343.msg
+  10615     5d26a675e8a915048c8aa2af3dccb112 140.msg
+  11314     26ddad7733d0578d638d6fd36bb42fe5 1540.msg
+  17317     3a2856449676551e27805f031d04f9f6 200.msg
+  13708     d07e9e70e67ea9b47d1c7da8ced54eef 200.scr
+  5712      fba3cfe342005640b6ee002789c5197e 222.scr
+  8044      511f265176df49d716e72580bef3d5a3 224.msg
+  5964      9c6b729f8ba9dc54c082ecbb45fb98e6 3341.v56
+  7262      f03307ce7c64217bc0130182b615f253 345.scr
+  10784     1ac423c4f4b7617132e859539f14089d 360.scr
+  10674     fd9b7739db9eebcd91efef4a84a1bde9 381.scr
+  17430     b7dd48783f7f3858e36e4bb010d551cd 480.scr
+  11971     056890b53422810d2bb9a36f9a54a05f 50.msg
+  11062     56eca7c1366d94303c6f02737ec5211c 500.scr
+  9606      ed2efdc04dc9e7833879f59464bf5fdd 540.scr
+  2608      df7e46d7a7985e2bd262b9f806a38ebf 560.scr
+  14756     54e527c0502339728893c893b3dc4e97 580.scr
+  4123      44d6d7c6be4ebc584d4f6e0d11c9d668 604.v56
+  3112      d5740b76d5f36bef89f1fb72479bb111 64.scr
+  3344      c3ae11c42c43fd289e448901dd4e613a 67.scr
+  2803      7a1139b419de77b456e6c04d68d973d4 810.msg
+  15222     5bba04fba080548ff369eb8a19c41adb 919.snd
+  858490    f22138355b7ac3e9932a316ebf6423fa resource.000
+  973723    be3a2325a2a07190dae8a5d5c4929ac3 resource.000?fr
+  1212161   bd9864e76af7e529f42d749e26ab7607 resource.001
+  1205841   a4a0f8e3696eb98a45fa4ab1820bd73d resource.001?fr
+  1129316   f79571d796857d577813f7ab1fddec28 resource.002
+  1173872   157d1f6fe646e4646136c7c8e3c8de5d resource.002?fr
+  1145616   02d757de5b981600133fe3d9a7768fcc resource.003
+  1141520   3394561d52a9de2777ce6565eb170196 resource.003?fr
+  216       f25b9f130496f3195423682ece64005d resource.cfg
+  210       60484c1822fbc2e60e723b8575f8aec0 resource.cfg?fr
+  4059      f77baec05fae76707205f5be6534a7f3 resource.map
+  4407      67742945cd59b896d9f22a549f605217 resource.map?fr
+  7         fa5ccbff55174b9e9881db1aa6126c62 version
+  56        178159a1de5cdbbdfc781a310e10f872 version?fr
+
+sha1sums: |
+  854dd28a0696973d8fff3a05c7db94116fadf560  0.scr
+  278a0fd1785c68be6690dc98cdb2cbc3ef581fed  1180.msg
+  d37bb159fe546bb08677fa54b712442f68d9e38f  1221.msg
+  ac4a4ef50e7c01bb729626ad86bb3a0fb9a1932e  1222.msg
+  0971706d590104cf6c60b039406fab743d736430  1223.msg
+  52a4b6c0fd2d741c20116a5f15662735dc14e9c2  1343.msg
+  5bf53e63716076a4e322c99bebc127dd5d276a07  140.msg
+  466f40f4271b8dc08c825405d12fe183c7f4fc34  1540.msg
+  0b2c951846205593f67a55c29d7218f4611aea23  200.msg
+  95c2bd53b90a97fd0f82171f6795b57e46685c02  200.scr
+  a31da2a3c6151b8290904e4a45d1ed4e7457d3cd  222.scr
+  674b278a556a69b81809672265dc23432de5addf  224.msg
+  2c3c6b03a466c0d648903a425241137e45825c06  3341.v56
+  7555fe752e6834b9bca455e857d821f10bfea55a  345.scr
+  25c7a712e51fc2446c27f75835d86ba8c3284819  360.scr
+  49f9c9164d243aca3080f8dd496d8089ae3c7526  381.scr
+  5b8a79efffacab7acfa6477755e16afaa28fb005  480.scr
+  421dc485c8af6b484e221f6f10593771f80cb9c7  50.msg
+  36d7c5bcb9a14d74a8a558dc919fadd0d9240908  500.scr
+  e33ef29e52acdc08cde81fcb2944286ceb3810c8  540.scr
+  e404e4cfa098c30a92deb1517fae02b87b5ccbe6  580.scr
+  312021c04bad5dba9af833cb85f423ced5229308  919.snd
+  4d0613fdd0d16fa6e8c9104fb3fddef4be331806  resource.000
+  f3a1593d281beca1c73923715a9d685042c5c168  resource.000?fr
+  9da366ff738513b1608a3d722511ab2220be5e3a  resource.001
+  f772b4940b915cab814f44c34fd2196b8f6d383e  resource.001?fr
+  8ff83e677330da93bcaef64147ad4bf8c0133098  resource.002
+  36c62a806d55f91b8c18a8bf5a586e3ee1b3166e  resource.002?fr
+  27a913fb9a46e1da39e42964e01e0bf5e0059917  resource.003
+  62a44b5cffb0b956bed83049d1bb06a8de35e28f  resource.003?fr
+...
+
