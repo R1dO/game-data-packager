@@ -668,7 +668,7 @@ def main():
     for arg in args.args:
         basename = os.path.basename(arg)
         if os.path.isdir(arg):
-            gamedata.add_one_dir(arg.rstrip('/'),args.lower)
+            gamedata.add_one_dir(arg.rstrip('/'), args.lower, lang=guess_lang(arg))
         elif arg.endswith('.deb'):
             gamedata.add_one_deb(arg,args.lower)
             if basename.startswith('gog_'):
