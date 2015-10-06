@@ -79,10 +79,10 @@ packages:
     - Quake II License.doc
     - Release Notes.doc
     - commexp.txt
-    - license.txt_3.20
+    - license.txt?3.20
     - licinfo.txt
     - readme.doc
-    - readme.txt_3.20
+    - readme.txt?3.20
     - release.txt
     - quake2_manual/bottom.html
     - quake2_manual/credits.html
@@ -219,10 +219,10 @@ packages:
     - q2-314-demo-x86.exe
     optional:
     - Manual.html
-    - license.txt_3.14_demo
+    - license.txt?3.14_demo
     - quake2_manual/bottom.html
-    - quake2_manual/credits.html_3.14_demo
-    - quake2_manual/customer_support.html_3.14_demo
+    - quake2_manual/credits.html?3.14_demo
+    - quake2_manual/customer_support.html?3.14_demo
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
     - quake2_manual/enemy_brains.html
@@ -312,7 +312,7 @@ packages:
     - quake2_manual/images/shotgun_guard.gif
     - quake2_manual/images/silencer.gif
     - quake2_manual/images/slime.jpg
-    - quake2_manual/images/start_network_server_screen1.gif_3.20
+    - quake2_manual/images/start_network_server_screen1.gif?3.20
     - quake2_manual/images/stimpack.gif
     - quake2_manual/images/story_main.jpg
     - quake2_manual/images/strogg_environ_1.jpg
@@ -339,10 +339,10 @@ packages:
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
-    - quake2_manual/technical_information.html_3.14_demo
+    - quake2_manual/technical_information.html?3.14_demo
     - quake2_manual/top_nav.html
-    - readme.txt_3.14_demo
-    - release.txt_3.14_demo
+    - readme.txt?3.14_demo
+    - release.txt?3.14_demo
 
   quake2-music:
     aliases: [music]
@@ -466,12 +466,14 @@ files:
         path: quake2
     size: 39015499
     sha256: 7ace5a43983f10d6bdc9d9b6e17a1032ba6223118d389bd170df89b945a04a1e
+    unpack:
+      format: zip
     provides:
     - Manual.html
-    - license.txt_3.14_demo
+    - license.txt?3.14_demo
     - quake2_manual/bottom.html
-    - quake2_manual/credits.html_3.14_demo
-    - quake2_manual/customer_support.html_3.14_demo
+    - quake2_manual/credits.html?3.14_demo
+    - quake2_manual/customer_support.html?3.14_demo
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
     - quake2_manual/enemy_brains.html
@@ -561,7 +563,7 @@ files:
     - quake2_manual/images/shotgun_guard.gif
     - quake2_manual/images/silencer.gif
     - quake2_manual/images/slime.jpg
-    - quake2_manual/images/start_network_server_screen1.gif_3.20
+    - quake2_manual/images/start_network_server_screen1.gif?3.20
     - quake2_manual/images/stimpack.gif
     - quake2_manual/images/story_main.jpg
     - quake2_manual/images/strogg_environ_1.jpg
@@ -584,15 +586,15 @@ files:
     - quake2_manual/intel_brief8.html
     - quake2_manual/intel_brief_enemy.html
     - quake2_manual/main.html
-    - quake2_manual/multiplayer.html_3.20
+    - quake2_manual/multiplayer.html?3.20
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
-    - quake2_manual/technical_information.html_3.14_demo
+    - quake2_manual/technical_information.html?3.14_demo
     - quake2_manual/top_nav.html
-    - readme.txt_3.14_demo
-    - release.txt_3.14_demo
-    - baseq2/pak0.pak_demo
+    - readme.txt?3.14_demo
+    - release.txt?3.14_demo
+    - baseq2/pak0.pak?demo
     - baseq2/players/female/athena.pcx
     - baseq2/players/female/athena_i.pcx
     - baseq2/players/female/brianna.pcx
@@ -652,8 +654,6 @@ files:
     - baseq2/players/male/viper_i.pcx
     - baseq2/players/male/weapon.md2
     - baseq2/players/male/weapon.pcx
-    unpack:
-      format: zip
 
   q2-3.20-x86-full-ctf.exe:
     download:
@@ -661,6 +661,8 @@ files:
         path: quake2
     size: 19267584
     sha256: f82197c8c8089202a4b3a85d8833b0c2e827a709d205c760369407c212488baa
+    unpack:
+      format: zip
     provides:
     - Commercial Exploitation.doc
     - Manual.html
@@ -668,10 +670,10 @@ files:
     - Quake II License.doc
     - Release Notes.doc
     - commexp.txt
-    - license.txt_3.20
+    - license.txt?3.20
     - licinfo.txt
     - readme.doc
-    - readme.txt_3.20
+    - readme.txt?3.20
     - baseq2/maps.lst
     - baseq2/pak1.pak
     - baseq2/pak2.pak
@@ -876,8 +878,6 @@ files:
     - ctf/pak0.pak
     - ctf/readme.txt
     - ctf/server.cfg
-    unpack:
-      format: zip
 
   # this file has a weird name in GOG.com package
   ctf/server.cfg:
@@ -938,17 +938,11 @@ files:
     - baseq2/pak0.pak?1dd586a
     - baseq2/pak0.pak?6be3f40
 
-  baseq2/pak0.pak_demo:
-    install_as: baseq2/pak0.pak
-
   quake2_manual/credits.html:
     alternatives:
-    - quake2_manual/credits.html_steam
-    - quake2_manual/credits.html_3.05
-  quake2_manual/credits.html_steam:
-    look_for: [quake2_manual/credits.html]
-  quake2_manual/credits.html_3.05:
-    look_for: [quake2_manual/credits.html]
+    - quake2_manual/credits.html?steam
+    - quake2_manual/credits.html?3.05
+  quake2_manual/credits.html?3.05:
     size:   18873
     md5:    71a8fc7089eddda402ab11d3443aaae2
     sha1:   40974c7cb195dc1c3e43a011a7efef8fdc10a971
@@ -956,12 +950,9 @@ files:
 
   quake2_manual/customer_support.html:
     alternatives:
-    - quake2_manual/customer_support.html_steam
-    - quake2_manual/customer_support.html_3.05
-  quake2_manual/customer_support.html_steam:
-    look_for: [quake2_manual/customer_support.html]
-  quake2_manual/customer_support.html_3.05:
-    look_for: [quake2_manual/customer_support.html]
+    - quake2_manual/customer_support.html?steam
+    - quake2_manual/customer_support.html?3.05
+  quake2_manual/customer_support.html?3.05:
     size:   5073
     md5:    525c98cd717fc7e6ea18b5fd758a2f97
     sha1:   1b5569bbe7abf42b5113401dd2b84a0a3b3d814c
@@ -969,12 +960,9 @@ files:
 
   quake2_manual/technical_information.html:
     alternatives:
-    - quake2_manual/technical_information.html_steam
-    - quake2_manual/technical_information.html_3.05
-  quake2_manual/technical_information.html_steam:
-    look_for: [quake2_manual/technical_information.html]
-  quake2_manual/technical_information.html_3.05:
-    look_for: [quake2_manual/technical_information.html]
+    - quake2_manual/technical_information.html?steam
+    - quake2_manual/technical_information.html?3.05
+  quake2_manual/technical_information.html?3.05:
     size:   13079
     md5:    43ed8b9aab50fe9cd02c142dcceb030d
     sha1:   ef3f246b3d75d3d447f7d404beaf89c2e8e3fda5
@@ -982,60 +970,46 @@ files:
 
   quake2_manual/multiplayer.html:
     alternatives:
-    - quake2_manual/multiplayer.html_3.20
-    - quake2_manual/multiplayer.html_3.05
-  quake2_manual/multiplayer.html_3.20:
+    - quake2_manual/multiplayer.html?3.20
+    - quake2_manual/multiplayer.html?3.05
+  quake2_manual/multiplayer.html?3.20:
     # also in the 3.14 demo
     look_for: [quake2_manual/multiplayer.html]
-  quake2_manual/multiplayer.html_3.05:
-    look_for: [quake2_manual/multiplayer.html]
+  quake2_manual/multiplayer.html?3.05:
     size: 9826
     md5: 0ef979e71bb0f1decfef7638bfaaca95
 
   quake2_manual/images/start_network_server_screen1.gif:
     alternatives:
-    - quake2_manual/images/start_network_server_screen1.gif_3.20
-    - quake2_manual/images/start_network_server_screen1.gif_3.05
-  quake2_manual/images/start_network_server_screen1.gif_3.20:
+    - quake2_manual/images/start_network_server_screen1.gif?3.20
+    - quake2_manual/images/start_network_server_screen1.gif?3.05
+  quake2_manual/images/start_network_server_screen1.gif?3.20:
     # also in the 3.14 demo
     look_for: [quake2_manual/images/start_network_server_screen1.gif]
-  quake2_manual/images/start_network_server_screen1.gif_3.05:
-    look_for: [quake2_manual/images/start_network_server_screen1.gif]
+  quake2_manual/images/start_network_server_screen1.gif?3.05:
     size: 4058
     md5: 0de34a0bd6b888a31417b78cc265bfbe
 
-  quake2_manual/credits.html_3.14_demo:
-    install_as: quake2_manual/credits.html
-  quake2_manual/customer_support.html_3.14_demo:
-    install_as: quake2_manual/customer_support.html
-  quake2_manual/technical_information.html_3.14_demo:
-    install_as: quake2_manual/technical_information.html
-
-  license.txt_3.14_demo:
+  license.txt?3.14_demo:
     distinctive_name: false
-    install_as: license.txt
     install_to: $docdir
     license: true
 
-  readme.txt_3.14_demo:
+  readme.txt?3.14_demo:
     distinctive_name: false
-    install_as: readme.txt
     install_to: $docdir
 
-  release.txt_3.14_demo:
+  release.txt?3.14_demo:
     distinctive_name: false
-    install_as: release.txt
     install_to: $docdir
 
-  license.txt_3.20:
+  license.txt?3.20:
     distinctive_name: false
-    install_as: license.txt
     install_to: $docdir
     license: true
 
-  readme.txt_3.20:
+  readme.txt?3.20:
     distinctive_name: false
-    install_as: readme.txt
     install_to: $docdir
 
   Commercial Exploitation.doc:
@@ -1772,7 +1746,7 @@ files:
     - quake2_manual/images/sights.gif
     - quake2_manual/images/silencer.gif
     - quake2_manual/images/slime.jpg
-    - quake2_manual/images/start_network_server_screen1.gif_3.20
+    - quake2_manual/images/start_network_server_screen1.gif?3.20
     - quake2_manual/images/stimpack.gif
     - quake2_manual/images/story_main.jpg
     - quake2_manual/images/strogg_environ_1.jpg
@@ -1795,7 +1769,7 @@ files:
     - quake2_manual/intel_brief8.html
     - quake2_manual/intel_brief_enemy.html
     - quake2_manual/main.html
-    - quake2_manual/multiplayer.html_3.20
+    - quake2_manual/multiplayer.html?3.20
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
@@ -1808,10 +1782,10 @@ files:
     - Quake II License.doc
     - Release Notes.doc
     - commexp.txt
-    - license.txt_3.20
+    - license.txt?3.20
     - licinfo.txt
     - readme.doc
-    - readme.txt_3.20
+    - readme.txt?3.20
     - release.txt
 
     # + rogue
@@ -1848,25 +1822,25 @@ cksums: |
   68473654 26112 Quake II License.doc
   4151477234 5820 Release Notes.doc
   1717569275 22647 commexp.txt
-  2703370497 13350 license.txt_3.20
+  2703370497 13350 license.txt?3.20
   3683639649 5579 licinfo.txt
-  3002114669 10085 quake2_manual/customer_support.html_steam
+  3002114669 10085 quake2_manual/customer_support.html?steam
   1411804084 79360 readme.doc
-  1172450215 61630 readme.txt_3.20
-  1674469592 13336 license.txt_steam
-  2807424234 60435 readme.txt_steam
+  1172450215 61630 readme.txt?3.20
+  1674469592 13336 license.txt?steam
+  2807424234 60435 readme.txt?steam
 
   # pak0.pak as seen in Fabian Greffrath's copy (#776059)
   639175200 194965474 baseq2/pak0.pak?6be3f40
 
   # files from the demo
-  _ 5073 quake2_manual/customer_support.html_3.14_demo
-  _ 49951322 baseq2/pak0.pak_demo
-  _ 8963 license.txt_3.14_demo
-  _ 20919 quake2_manual/credits.html_3.14_demo
-  _ 13079 quake2_manual/technical_information.html_3.14_demo
-  _ 62410 readme.txt_3.14_demo
-  _ 3675 release.txt_3.14_demo
+  _ 5073 quake2_manual/customer_support.html?3.14_demo
+  _ 49951322 baseq2/pak0.pak?demo
+  _ 8963 license.txt?3.14_demo
+  _ 20919 quake2_manual/credits.html?3.14_demo
+  _ 13079 quake2_manual/technical_information.html?3.14_demo
+  _ 62410 readme.txt?3.14_demo
+  _ 3675 release.txt?3.14_demo
 
   _ 36277 baseq2/players/female/doomgal.pcx
   _ 1803  baseq2/players/female/doomgal_i.pcx
@@ -2328,7 +2302,7 @@ size_and_md5: |
   17363     9e5a0bc728d8e06a65244f8065d68c09 ctf/readme.txt
 
   794       b443713f8ad0b1c8825554f346850f9e quake2_manual/bottom.html
-  21929     9a28f86e8c5654b4381c9336e868c6f1 quake2_manual/credits.html_steam
+  21929     9a28f86e8c5654b4381c9336e868c6f1 quake2_manual/credits.html?steam
   4045      488755080b3e7c45cd3b03ecf4e2409c quake2_manual/enemy_barracuda_shark.html
   3923      9454f9e5b2f74a79c0e2efcbf91ca950 quake2_manual/enemy_berserker.html
   3883      c65aa12bd5f0c0bd7644274d78e31537 quake2_manual/enemy_brains.html
@@ -2423,7 +2397,7 @@ size_and_md5: |
   2795      3b964fb8caf8f97debc0e1f2cbcc6374 quake2_manual/images/sights.gif
   2583      164bc256f4f8617fd61b4c36d0429d7c quake2_manual/images/silencer.gif
   2251      06dc2b46cae94542e3e4140615d85064 quake2_manual/images/slime.jpg
-  7488      f122ab7eeab31b4da0c2baffceb5cf11 quake2_manual/images/start_network_server_screen1.gif_3.20
+  7488      f122ab7eeab31b4da0c2baffceb5cf11 quake2_manual/images/start_network_server_screen1.gif?3.20
   3027      a189c129ad4c299009eac1178815ba3a quake2_manual/images/stimpack.gif
   16067     2b8ae1a4e1d3123db66a76a08323e6b7 quake2_manual/images/story_main.jpg
   5755      347cc3b0fe0aa4bd04f4ce40252af4cf quake2_manual/images/strogg_environ_1.jpg
@@ -2446,11 +2420,11 @@ size_and_md5: |
   14239     3d79ac1d55e1b721ad99dd3182277512 quake2_manual/intel_brief8.html
   3724      bccace2d488b98b6ef28d3c635fce54c quake2_manual/intel_brief_enemy.html
   695       6ab83a71a2ef04113ea7822c0d4107a3 quake2_manual/main.html
-  10121     40adc537d74bffd613fbbe364eb17b7d quake2_manual/multiplayer.html_3.20
+  10121     40adc537d74bffd613fbbe364eb17b7d quake2_manual/multiplayer.html?3.20
   8349      49f1cb26ce4bd2a2f8c65e50cea8a7cd quake2_manual/page_index.html
   29911     e5164543d1d90c04b4ba430ed805b63e quake2_manual/setup_controls_screenmenus.html
   8480      1b4895f3b8311e41df116ffd4194ab73 quake2_manual/story.html
-  13089     41cc66a0e64f34a07234089eee953158 quake2_manual/technical_information.html_steam
+  13089     41cc66a0e64f34a07234089eee953158 quake2_manual/technical_information.html?steam
   1626      4c08bae1efd913cda8c52cae2c05330f quake2_manual/top_nav.html
 
   4327      a2a13d58e49c100c0488121918710e75 3.20_changes.txt
@@ -2460,7 +2434,7 @@ size_and_md5: |
   26112     e609fa212754b209bb6a5699bc375ef5 Quake II license.doc
   5820      aa982a9b086cb2ec3ef474485f35037f Release Notes.doc
   22647     64cf07696d2f0e0f69a4c133c2dbf3a5 commexp.txt
-  13350     c17a9ef88a73d57a6935cdef8a160579 license.txt_3.20
+  13350     c17a9ef88a73d57a6935cdef8a160579 license.txt?3.20
   5579      09bfc1ee52836250d5a7071d5cca6179 licinfo.txt
   79360     664db6482beaa2c129fb2fdaa024b27c readme.doc
   60435     7278eb0a731a984b119787c5dda1be13 readme.txt
@@ -2476,29 +2450,29 @@ md5sums: |
   aa982a9b086cb2ec3ef474485f35037f  Release Notes.doc
   64cf07696d2f0e0f69a4c133c2dbf3a5  commexp.txt
   # this is /docs/license.txt in Steam - /license.txt is different
-  c17a9ef88a73d57a6935cdef8a160579  license.txt_3.20
+  c17a9ef88a73d57a6935cdef8a160579  license.txt?3.20
   09bfc1ee52836250d5a7071d5cca6179  licinfo.txt
   664db6482beaa2c129fb2fdaa024b27c  readme.doc
   # this is /docs/readme.txt in Steam - /readme.txt is different
-  9e6ed9910b11d4dbb7d0527f1ff140a1  readme.txt_3.20
+  9e6ed9910b11d4dbb7d0527f1ff140a1  readme.txt?3.20
   # Alternate files also shipped by Steam: the diff is small and only in
   # contact details etc. so there's little point in having both
-  1487b416e073bcd79f25423a9365091e  license.txt_steam
-  7278eb0a731a984b119787c5dda1be13  readme.txt_steam
+  1487b416e073bcd79f25423a9365091e  license.txt?steam
+  7278eb0a731a984b119787c5dda1be13  readme.txt?steam
   # Files from patch to install in game directory
   1f6bd3d4c08f7ed8c037b12fcffd2eb5  ctf/pak0.pak
   9e5a0bc728d8e06a65244f8065d68c09  ctf/readme.txt
   de2e8781bca657e62d4ad5e4b763cc7a  ctf/server.cfg
   # Files from demo to install in doc directory
   af91bb4178e223adaa258d50ce2541b0  Manual.html
-  0fff07160047d23e53b68c490ea1bbbc  license.txt_3.14_demo
-  13cae63eea980606ffa9766b388e05ae  quake2_manual/credits.html_3.14_demo
-  525c98cd717fc7e6ea18b5fd758a2f97  quake2_manual/customer_support.html_3.14_demo
-  43ed8b9aab50fe9cd02c142dcceb030d  quake2_manual/technical_information.html_3.14_demo
-  c3ff4ac8608dc4f5891214b8f6d1f0ad  readme.txt_3.14_demo
-  5aab43e52b123e88b8b5b62952e5ac2a  release.txt_3.14_demo
+  0fff07160047d23e53b68c490ea1bbbc  license.txt?3.14_demo
+  13cae63eea980606ffa9766b388e05ae  quake2_manual/credits.html?3.14_demo
+  525c98cd717fc7e6ea18b5fd758a2f97  quake2_manual/customer_support.html?3.14_demo
+  43ed8b9aab50fe9cd02c142dcceb030d  quake2_manual/technical_information.html?3.14_demo
+  c3ff4ac8608dc4f5891214b8f6d1f0ad  readme.txt?3.14_demo
+  5aab43e52b123e88b8b5b62952e5ac2a  release.txt?3.14_demo
   # Files from demo to install in game directory
-  27d77240466ec4f3253256832b54db8a  baseq2/pak0.pak_demo
+  27d77240466ec4f3253256832b54db8a  baseq2/pak0.pak?demo
   55a4e452af3d421ab4f6b3497706cae2  baseq2/players/female/athena.pcx
   7245940c17b3afd002e65afbe79d218c  baseq2/players/female/athena_i.pcx
   b3396956b5e178638110dc95b855b288  baseq2/players/female/brianna.pcx
@@ -2575,9 +2549,9 @@ md5sums: |
   4c732d8661c8a863db477782350a5fa4  xatrix/docs/readme.txt
   7d07f8ed0c94a453cb4a4289ab0c01c5  xatrix/docs/release.htm
   5c69df5d4b0a96d9ba75951ce9117b36  xatrix/docs/release.txt
-  fd17c7aee49974f31e0de2ad0e49c3a1  quake2_manual/customer_support.html_steam
-  41cc66a0e64f34a07234089eee953158  quake2_manual/technical_information.html_steam
-  9a28f86e8c5654b4381c9336e868c6f1  quake2_manual/credits.html_steam
+  fd17c7aee49974f31e0de2ad0e49c3a1  quake2_manual/customer_support.html?steam
+  41cc66a0e64f34a07234089eee953158  quake2_manual/technical_information.html?steam
+  9a28f86e8c5654b4381c9336e868c6f1  quake2_manual/credits.html?steam
 
   # alternative version
   4f7dafbfb99c30d5455bc63003da8357  baseq2/pak0.pak?6be3f40
@@ -2838,11 +2812,11 @@ sha1sums: |
   c8cbae40dbe9ce0cf3a24ea29dc137ed8fe2f900  Quake II License.doc
   fc896c4f6a6ee6322c69dc2b57e522374440f1e2  Release Notes.doc
   1a59e4509a4e98aff12e7266622e316517eced49  commexp.txt
-  22d5f1884141ae88d710d49d5fff8fd0ac248556  license.txt_3.20
+  22d5f1884141ae88d710d49d5fff8fd0ac248556  license.txt?3.20
   148c8de785aa7bde1171ac89252867f47fc5f5a8  licinfo.txt
   7652267b333f9cac1b37997078f945f3dcb33528  quake2_manual/bottom.html
-  2a1bc968ce975f2ed4fb73bb5d114958364b7058  quake2_manual/credits.html_steam
-  9df137e944c86ba3d0803e0a1304c76f70114206  quake2_manual/customer_support.html_steam
+  2a1bc968ce975f2ed4fb73bb5d114958364b7058  quake2_manual/credits.html?steam
+  9df137e944c86ba3d0803e0a1304c76f70114206  quake2_manual/customer_support.html?steam
   2ef974853e1a992f35eee9ec0b3e054481f81a33  quake2_manual/enemy_barracuda_shark.html
   bbb42bf580e4402647b16f6f327a57e08bd8005e  quake2_manual/enemy_berserker.html
   019086a02b34d6208fc8b538de60a295d25bf136  quake2_manual/enemy_brains.html
@@ -2932,7 +2906,7 @@ sha1sums: |
   3953f8fb902ae5aefa2f420572277d3fcdc6e867  quake2_manual/images/shotgun_guard.gif
   c608f059d359a82ce3eaed414bb64ac04493cfdb  quake2_manual/images/silencer.gif
   5b2fcafb08d1874ea8bad245ffe095db8ad49bab  quake2_manual/images/slime.jpg
-  5f1dd53fb2f79dd830ac2d268f5684701ff48741  quake2_manual/images/start_network_server_screen1.gif_3.20
+  5f1dd53fb2f79dd830ac2d268f5684701ff48741  quake2_manual/images/start_network_server_screen1.gif?3.20
   dd7a1deeb70657553b8ae82f959ae56d329ba2c0  quake2_manual/images/stimpack.gif
   6c9acd88b7140c73026ef6043e358e55ebcf6bcf  quake2_manual/images/story_main.jpg
   1fe89e52aa6805395b6a00554c648f7dd6971fc0  quake2_manual/images/strogg_environ_1.jpg
@@ -2955,14 +2929,14 @@ sha1sums: |
   9d8a54089cf65d45dd15b89c31a413107d384efa  quake2_manual/intel_brief8.html
   bde6844124e0570e3f6b21672e3f79dd406a280c  quake2_manual/intel_brief_enemy.html
   27d4f422deb6bf3a91d44980a162fed36c098174  quake2_manual/main.html
-  83b2e1a66c6658b39f324755d79c0f73b118c1e9  quake2_manual/multiplayer.html_3.20
+  83b2e1a66c6658b39f324755d79c0f73b118c1e9  quake2_manual/multiplayer.html?3.20
   0d408ba43ade6ed7b92fc4642e18eed27be1ad42  quake2_manual/page_index.html
   38bd8e7bd7869c670d439d5f04fb1eb85822e262  quake2_manual/setup_controls_screenmenus.html
   12091356fac45268a39336fb64106f004ca57e70  quake2_manual/story.html
-  eaa38abb35e3700489196e6ca2b424e58451fb51  quake2_manual/technical_information.html_steam
+  eaa38abb35e3700489196e6ca2b424e58451fb51  quake2_manual/technical_information.html?steam
   1e85cb879e6f89cdc808896b01743b61132df595  quake2_manual/top_nav.html
   039f8542c5e968d1b9a2d6c2a2a441ec87e1b38b  readme.doc
-  8039588eafadb9a5eb8bd227776ba5ef3fd5c141  readme.txt_3.20
+  8039588eafadb9a5eb8bd227776ba5ef3fd5c141  readme.txt?3.20
 
   6be3f40f61ab9534d503316f95ac766cbfe6e77c  baseq2/pak0.pak?6be3f40
 
@@ -3236,11 +3210,11 @@ sha256sums: |
   6dc8e6c2b56746e3c68d4577e324e06991941f9290b9d2590c768da77eaf9b72  Quake II License.doc
   c90bca72f30e55f2de435b18fcdff04054db2c0a23a0571fd7788ec5dc14ebf8  Release Notes.doc
   ac7a9828bd3835d9ae4d0eeb06e3a6acde71c2d644e3cfc21832f18bf54b0862  commexp.txt
-  4e550f681863c5d2cfd376d0bae855fccd557aacab5dfc7f5efec673f1e1438b  license.txt_3.20
+  4e550f681863c5d2cfd376d0bae855fccd557aacab5dfc7f5efec673f1e1438b  license.txt?3.20
   0d1ce5265753ab2998480742d7ef02ab34fbf42f19ce81e18e621614e4e3afa9  licinfo.txt
   1c1ecdebbd917cd61285a08ecd65d10f45663cb314232902f935a787b27507b3  quake2_manual/bottom.html
-  2600ae0c84eb53af401eb02a32efc8207ba0fbac26381207fd39cb1a9d29a2af  quake2_manual/credits.html_steam
-  a97f099b2cfce020dff4e9bc5913c1f4061d7ec6af97b502b00649f23f361a90  quake2_manual/customer_support.html_steam
+  2600ae0c84eb53af401eb02a32efc8207ba0fbac26381207fd39cb1a9d29a2af  quake2_manual/credits.html?steam
+  a97f099b2cfce020dff4e9bc5913c1f4061d7ec6af97b502b00649f23f361a90  quake2_manual/customer_support.html?steam
   dfcfa9fbc6c4aa09f56b7dd08759444b02ec33b9599ff0562e6a629fa6f37e01  quake2_manual/enemy_barracuda_shark.html
   6cbd92796027ec29cb98de33723e3a3c9114da80ec33ba6040304325fe9668a2  quake2_manual/enemy_berserker.html
   e2ce09da4931b18010e9aa0b6fead0d593269e001d2764f4bc47aadd5efbc393  quake2_manual/enemy_brains.html
@@ -3330,7 +3304,7 @@ sha256sums: |
   5f0963230c8d5a799179793901cdb304166562463fa6f1dced41b4d803c30291  quake2_manual/images/shotgun_guard.gif
   b3390e30508d676283ee3a5c5a6e7c35b6ba9ac8a44d5e5624b2be8a67f54e22  quake2_manual/images/silencer.gif
   85ab649aaea04d07ececd99c8b838dbd589e368894678db293f36f9d1beff890  quake2_manual/images/slime.jpg
-  1130ebe21c53151b519d39bb39ab7ce16b910eb7bb61b8ed64ef7f7942d0e677  quake2_manual/images/start_network_server_screen1.gif_3.20
+  1130ebe21c53151b519d39bb39ab7ce16b910eb7bb61b8ed64ef7f7942d0e677  quake2_manual/images/start_network_server_screen1.gif?3.20
   cf68ed5c5194582a1ca0bb9847344c4997b32861daa993e29b96116885bb1f31  quake2_manual/images/stimpack.gif
   d79cd535681ab1ef5c1e5750e5e4f41227853c5993f98841c5787b4328eaf6d5  quake2_manual/images/story_main.jpg
   bd871006862f2e88e0a754e193e26e3a58df8fbe50ce17faa3d9e0a96727d081  quake2_manual/images/strogg_environ_1.jpg
@@ -3353,14 +3327,14 @@ sha256sums: |
   ccc4a3f3f3c9877c007e8aca8c1553280c16a3dc8bdf333c531324d97d2040fd  quake2_manual/intel_brief8.html
   4cca0c7814a2bf5fd9bbdba66b6a0de7f47120dbdcef596f0d4d50fbad32bded  quake2_manual/intel_brief_enemy.html
   2aa56f80a933adb659cc2db905fb91bb5deb65fd2d05af54f2150619e4e81fdc  quake2_manual/main.html
-  8e2dd4970685f2723c2cafcedb5547f8c2b11f1ca43d296938798e3035db5b44  quake2_manual/multiplayer.html_3.20
+  8e2dd4970685f2723c2cafcedb5547f8c2b11f1ca43d296938798e3035db5b44  quake2_manual/multiplayer.html?3.20
   c821ca4701289151f5d95a86e21e0b0f6a96db70d9d264d2ea5f8b2434b2b9c8  quake2_manual/page_index.html
   3aeda329e052a951bcd93b0990912a5f5fafcf4945ab4bdd1f443742f239f3b7  quake2_manual/setup_controls_screenmenus.html
   75d4c5e8fdd2c0359221aae2fbc2b28ce4f4867f8864fc5aa2f10d0c2cda1fe8  quake2_manual/story.html
-  a904c3369f5ec22cc19b63a4668550c4fc5201dbb28a194c097ee8a0452cc98a  quake2_manual/technical_information.html_steam
+  a904c3369f5ec22cc19b63a4668550c4fc5201dbb28a194c097ee8a0452cc98a  quake2_manual/technical_information.html?steam
   2019714b8dec3924018a4730e4908531507e02a170a66bfb58e9716be3da58b6  quake2_manual/top_nav.html
   a6fbe78e4c97e5b585d99607fbc2f3182f85ff0201d3f8728d0733b721823473  readme.doc
-  b3ec0876f693a3c8791b93ea194d57ac7deea3d058197c7ab74b8252fd2a2bf8  readme.txt_3.20
+  b3ec0876f693a3c8791b93ea194d57ac7deea3d058197c7ab74b8252fd2a2bf8  readme.txt?3.20
 
   7fea4fe24b5871787962cd8f1df3bd55b93baf34fea5743e3f90fcc8e5675995  baseq2/pak0.pak?6be3f40
 
