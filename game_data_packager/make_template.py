@@ -251,7 +251,16 @@ class GameData(object):
                             self.try_repack_from.append(dir)
 
     def add_one_innoextract(self,exe):
-        self.gog_game = GOG.get_id_from_archive(exe)
+        game = self.gog_game = GOG.get_id_from_archive(exe)
+        if not game:
+            game = os.path.basename(exe)
+            game = game[len('setup_'):len(game)-len('.exe')]
+            last_part = game.split('_')[-1]
+            if last_part.strip('0123456789.') == '':
+                game = game[0:len(game)-len(last_part)-1]
+            last_part = game.split('_')[-1]
+            if last_part in ('german', 'spanish', 'french', 'italian', 'polish', 'russian'):
+                game = game[0:len(game)-len(last_part)-1]
 
         tmp = tempfile.mkdtemp(prefix='gdptmp.')
 
@@ -268,7 +277,7 @@ class GameData(object):
                  universal_newlines=True,
                  cwd=tmp)
         self.longname = log.split('\n')[0].split('"')[1]
-        self.add_one_dir(os.path.join(tmp, 'app'), True, game=self.gog_game, lang=guess_lang(exe))
+        self.add_one_dir(os.path.join(tmp, 'app'), True, game=game, lang=guess_lang(exe))
         os.system('rm -r ' + tmp)
 
         self.add_one_file(exe,False)
