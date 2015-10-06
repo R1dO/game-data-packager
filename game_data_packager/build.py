@@ -2124,7 +2124,7 @@ class PackagingTask(object):
             # keep only prefered language for this virtual package
             virtual = package.debian.get('provides')
             if virtual:
-                score = lang_score(package.lang)
+                score = max(set(lang_score(l) for l in package.langs))
                 if score == 0:
                     logger.info('will not produce "%s" '
                                 'because %s is not in LANGUAGE selection',

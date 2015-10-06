@@ -5,6 +5,12 @@ plugin: scummvm_common
 wiki: EcoQuest
 gameid: ecoquest
 
+help_text: |
+  The French version can also be played in English.
+
+  The '/usr/games/ecoquest1-fr' launcher script will default to English on
+  systems without 'fr' specified in $LANGUAGE or $LANG environment variables.
+
 packages:
   ecoquest1-en-data:
     debian:
