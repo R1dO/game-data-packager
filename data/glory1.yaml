@@ -11,12 +11,12 @@ packages:
     better_version: quest-for-glory1-vga-data
     gameid: qfg1
     install:
-    - resource.000_ega
+    - resource.000?ega
     - resource.001
     - resource.002
     - resource.003
     - resource.004
-    - resource.map_ega
+    - resource.map?ega
 
   quest-for-glory1-vga-data:
     copyright: © 1992 Sierra
@@ -103,11 +103,6 @@ packages:
     optional:
     - quest for glory 1 - manual.pdf
 files:
-  resource.000_ega:
-    install_as: resource.000
-  resource.map_ega:
-    install_as: resource.map
-
   quest for glory 1 - manual.pdf:
     install_to: $docdir
     look_for: [quest for glory 1 - manual.pdf,manual.pdf]
@@ -117,12 +112,12 @@ files:
     unpack:
       format: innoextract
     provides:
-    - resource.000_ega
+    - resource.000?ega
     - resource.001
     - resource.002
     - resource.003
     - resource.004
-    - resource.map_ega
+    - resource.map?ega
     - 120.hep
     - 120.scr
     - 121.hep
@@ -201,12 +196,12 @@ files:
     - quest for glory 1 - manual.pdf
 
 cksums: |
-  _ 79181     resource.000_ega
+  _ 79181     resource.000?ega
   _ 461422    resource.001
   _ 635734    resource.002
   _ 640483    resource.003
   _ 644443    resource.004
-  _ 6432      resource.map_ega
+  _ 6432      resource.map?ega
 
   _ 322       120.hep
   _ 2010      120.scr
@@ -288,12 +283,12 @@ cksums: |
   _ 3901146   quest for glory 1 - manual.pdf
 
 md5sums: |
-  087a2a7de8b3ffe6b3207fc0c87db779  resource.000_ega
+  087a2a7de8b3ffe6b3207fc0c87db779  resource.000?ega
   140af341b34ab457302cca607a723a16  resource.001
   fd92551ae245a19edf6862d2cbf9cfb5  resource.002
   3a45139a53ceec96cfa797ad9f16917d  resource.003
   842f0b4fee49482c609d7e67ed4c45e6  resource.004
-  8b3780c81ce743703f5813107b878444  resource.map_ega
+  8b3780c81ce743703f5813107b878444  resource.map?ega
 
   8b2afd8894438aa255e4463f62bc20e1  120.hep
   fc1fca56fccaf54a6dcf64eae03fcb06  120.scr
