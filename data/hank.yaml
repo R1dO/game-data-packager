@@ -37,15 +37,15 @@ packages:
       provides: hanqs-quest-data
     install:
     - HGC_FONT
-    - LOGDIR_nl
-    - OBJECT_nl
-    - PICDIR_nl
-    - SNDDIR_nl
-    - VIEWDIR_nl
-    - VOL.0_nl
-    - WORDS.TOK_nl
+    - LOGDIR?nl
+    - OBJECT?nl
+    - PICDIR?nl
+    - SNDDIR?nl
+    - VIEWDIR?nl
+    - VOL.0?nl
+    - WORDS.TOK?nl
     optional:
-    - readme.txt_nl
+    - readme.txt?nl
 
 files:
   hq_eng181.zip:
@@ -77,34 +77,18 @@ files:
       format: zip
     provides:
     - HGC_FONT
-    - LOGDIR_nl
-    - OBJECT_nl
-    - PICDIR_nl
-    - SNDDIR_nl
-    - VIEWDIR_nl
-    - VOL.0_nl
-    - WORDS.TOK_nl
-    - readme.txt_nl
+    - LOGDIR?nl
+    - OBJECT?nl
+    - PICDIR?nl
+    - SNDDIR?nl
+    - VIEWDIR?nl
+    - VOL.0?nl
+    - WORDS.TOK?nl
+    - readme.txt?nl
 
-  LOGDIR_nl:
-    install_as: LOGDIR
-  OBJECT_nl:
-    install_as: OBJECT
-  PICDIR_nl:
-    install_as: PICDIR
-  SNDDIR_nl:
-    install_as: SNDDIR
-  VIEWDIR_nl:
-    install_as: VIEWDIR
-  VOL.0_nl:
-    install_as: VOL.0
-  WORDS.TOK_nl:
-    install_as: WORDS.TOK
-
-  readme.txt_nl:
+  readme.txt?nl:
     look_for: [readme.txt,"Hank's Quest - Slachtoffer van het Gebeuren.txt"]
     install_to: $docdir
-    install_as: readme.txt
 
 size_and_md5: |
   217232    3d5beafe6bd333b050dd789c0bb04715 hq_eng181.zip
@@ -119,14 +103,14 @@ size_and_md5: |
   10020     f6b2d5a3f9935d6b06be5c9691541155 readme.txt
 
   218429    e76b110af029e749fee5d397a5eb2991 hq_dut_upd.zip
-  300       41e53972d55ff3dff9e90d15fe1b659f LOGDIR_nl
-  276       78539cbe2230acbb29920b427fe674c0 OBJECT_nl
-  87        687927750a97de30fc2ad2a376e5e895 PICDIR_nl
-  57        f5ea5e480e801b883edfe0302379a693 SNDDIR_nl
-  714       49074eccc07b7ca50d1e959b865bbc4d VIEWDIR_nl
-  505670    59d2d630a9e6c4ce1e55066835488e0c VOL.0_nl
-  6050      c661d8e49c44c3e92428417b5173ef38 WORDS.TOK_nl
-  12518     b179834836f7b366fabf2298365f4027 readme.txt_nl
+  300       41e53972d55ff3dff9e90d15fe1b659f LOGDIR?nl
+  276       78539cbe2230acbb29920b427fe674c0 OBJECT?nl
+  87        687927750a97de30fc2ad2a376e5e895 PICDIR?nl
+  57        f5ea5e480e801b883edfe0302379a693 SNDDIR?nl
+  714       49074eccc07b7ca50d1e959b865bbc4d VIEWDIR?nl
+  505670    59d2d630a9e6c4ce1e55066835488e0c VOL.0?nl
+  6050      c661d8e49c44c3e92428417b5173ef38 WORDS.TOK?nl
+  12518     b179834836f7b366fabf2298365f4027 readme.txt?nl
 
 sha1sums: |
   6998ad892aab5542f04b1477297807f754a1ccf5  hq_eng181.zip
@@ -141,12 +125,12 @@ sha1sums: |
   c6958a5f1b45a9419f4744bf55343368ab8ecb29  readme.txt
 
   70f2aeb63d717761fcec0e477dc0ce570a570e6e  hq_dut_upd.zip
-  87335f513a5941de3572ccd621603edef436fbe7  LOGDIR_nl
-  4b47f099a61722b7d78982f04c1f66b7595443f0  OBJECT_nl
-  a9c8da4e9e042dcbfaa5bdb81aa9c8c5dea573a4  PICDIR_nl
-  27656329aea435df36a7e3ad4221927979c933eb  SNDDIR_nl
-  6898f1da42a99a7bf4192f46004d4eb89577c9a4  VIEWDIR_nl
-  39f0d003d9b951f83bb89f44b2b718d90ae6f8b9  VOL.0_nl
-  97d0f2fc6cb30f2025fa35efc12216c7db5733f0  WORDS.TOK_nl
-  794d70c7f45179f39c661767427ae7fe89f4355a  readme.txt_nl
+  87335f513a5941de3572ccd621603edef436fbe7  LOGDIR?nl
+  4b47f099a61722b7d78982f04c1f66b7595443f0  OBJECT?nl
+  a9c8da4e9e042dcbfaa5bdb81aa9c8c5dea573a4  PICDIR?nl
+  27656329aea435df36a7e3ad4221927979c933eb  SNDDIR?nl
+  6898f1da42a99a7bf4192f46004d4eb89577c9a4  VIEWDIR?nl
+  39f0d003d9b951f83bb89f44b2b718d90ae6f8b9  VOL.0?nl
+  97d0f2fc6cb30f2025fa35efc12216c7db5733f0  WORDS.TOK?nl
+  794d70c7f45179f39c661767427ae7fe89f4355a  readme.txt?nl
 ...
