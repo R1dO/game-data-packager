@@ -27,13 +27,13 @@ packages:
     - ianim.bs6
     - sanim.bs6
 
-    - maphead.bs6_1.0
-    - maptemp.bs6_1.0
-    - svswap.bs6_1.0
-    - vgadict.bs6_1.0
-    - vgagraph.bs6_1.0
-    - vgahead.bs6_1.0
-    - vswap.bs6_1.0
+    - maphead.bs6?1.0
+    - maptemp.bs6?1.0
+    - svswap.bs6?1.0
+    - vgadict.bs6?1.0
+    - vgagraph.bs6?1.0
+    - vgahead.bs6?1.0
+    - vswap.bs6?1.0
     optional:
     - manual.pdf
     license:
@@ -49,12 +49,12 @@ packages:
     - ganim.bs6
     - ianim.bs6
     - sanim.bs6
-    - maphead.bs6_2.0
+    - maphead.bs6?2.0
     - maptemp.bs6
     - svswap.bs6
-    - vgadict.bs6_2.0
-    - vgagraph.bs6_2.0
-    - vgahead.bs6_2.0
+    - vgadict.bs6?2.0
+    - vgagraph.bs6?2.0
+    - vgahead.bs6?2.0
     - vswap.bs6
 
   blakestone-data:
@@ -99,9 +99,9 @@ packages:
     - maphead.bs6
     - maptemp.bs6
     - svswap.bs6
-    - vgadict.bs6_3.0
-    - vgagraph.bs6_3.0
-    - vgahead.bs6_3.0
+    - vgadict.bs6?3.0
+    - vgagraph.bs6?3.0
+    - vgahead.bs6?3.0
     - vswap.bs6
 
   planetstrike-data:
@@ -127,45 +127,13 @@ packages:
     - vgahead.vsi
     - vswap.vsi
     optional:
-    - manual.pdf_2
+    - manual.pdf?planetstrike
 
 files:
-  maphead.bs6_1.0:
-    install_as: maphead.bs6
-  maptemp.bs6_1.0:
-    install_as: maptemp.bs6
-  svswap.bs6_1.0:
-    install_as: svswap.bs6
-  vgadict.bs6_1.0:
-    install_as: vgadict.bs6
-  vgagraph.bs6_1.0:
-    install_as: vgagraph.bs6
-  vgahead.bs6_1.0:
-    install_as: vgahead.bs6
-  vswap.bs6_1.0:
-    install_as: vswap.bs6
-
-  maphead.bs6_2.0:
-    install_as: maphead.bs6
-  vgadict.bs6_2.0:
-    install_as: vgadict.bs6
-  vgagraph.bs6_2.0:
-    install_as: vgagraph.bs6
-  vgahead.bs6_2.0:
-    install_as: vgahead.bs6
-
-  vgadict.bs6_3.0:
-    install_as: vgadict.bs6
-  vgagraph.bs6_3.0:
-    install_as: vgagraph.bs6
-  vgahead.bs6_3.0:
-    install_as: vgahead.bs6
-
   manual.pdf:
     install_to: $docdir
-  manual.pdf_2:
+  manual.pdf?planetstrike:
     install_to: $docdir
-    install_as: manual.pdf
 
   gog_blake_stone_aliens_of_gold_2.0.0.5.sh:
     unpack:
@@ -224,14 +192,11 @@ files:
     - vgagraph.vsi
     - vgahead.vsi
     - vswap.vsi
-    - manual.pdf_2
+    - manual.pdf?planetstrike
 
   setup_blake_stone_planet_strike_2.0.0.2.exe:
     unpack:
       format: innoextract
-      unpack:
-      - $provides
-      - manual.pdf
     provides:
     - audiohed.vsi
     - audiot.vsi
@@ -243,23 +208,23 @@ files:
     - vgagraph.vsi
     - vgahead.vsi
     - vswap.vsi
-    - manual.pdf_2
+    - manual.pdf?planetstrike
 
 size_and_md5: |
   # version 1.0
-  834       6cf51fb5cdece6b03c90feb6c94cc7ff maphead.bs6_1.0
-  520920    897af42e172bf6d68954c111d1625bd8 maptemp.bs6_1.0
-  2878696   d9dbfb903478cf6c7ede6af9afe3b4d3 svswap.bs6_1.0
-  1024      b303d9155baaa1c126917053a93f054a vgadict.bs6_1.0
-  596336    6089a1cbe454cdf5022b3c115bcd2e9d vgagraph.bs6_1.0
-  639       095d7c737e1c31d7674e1ed2160b676c vgahead.bs6_1.0
-  2767592   5e7d5862fda72a1b2874301c01491aac vswap.bs6_1.0
+  834       6cf51fb5cdece6b03c90feb6c94cc7ff maphead.bs6?1.0
+  520920    897af42e172bf6d68954c111d1625bd8 maptemp.bs6?1.0
+  2878696   d9dbfb903478cf6c7ede6af9afe3b4d3 svswap.bs6?1.0
+  1024      b303d9155baaa1c126917053a93f054a vgadict.bs6?1.0
+  596336    6089a1cbe454cdf5022b3c115bcd2e9d vgagraph.bs6?1.0
+  639       095d7c737e1c31d7674e1ed2160b676c vgahead.bs6?1.0
+  2767592   5e7d5862fda72a1b2874301c01491aac vswap.bs6?1.0
 
   # version 2.0
-  834       028dbaabf4202936209787abb8e9dc18 maphead.bs6_2.0
-  1024      2d8ff4c7093938725008a3afe8fea6f0 vgadict.bs6_2.0
-  599393    be3a4feef03166fecbe4e15dcde28189 vgagraph.bs6_2.0
-  672       2cede32a19a97eae9fff284112d6d79d vgahead.bs6_2.0
+  834       028dbaabf4202936209787abb8e9dc18 maphead.bs6?2.0
+  1024      2d8ff4c7093938725008a3afe8fea6f0 vgadict.bs6?2.0
+  599393    be3a4feef03166fecbe4e15dcde28189 vgagraph.bs6?2.0
+  672       2cede32a19a97eae9fff284112d6d79d vgahead.bs6?2.0
 
   # version 2.1 (best version)
   1280      52a203285041846c9fd73e8947a64522 audiohed.bs6
@@ -277,9 +242,9 @@ size_and_md5: |
   2767080   7288f8acec83da317fca3a6d1895dc2a vswap.bs6
 
   # version 3.0
-  1024      7ff0dae42ea839b425c3b3a801df226b vgadict.bs6_3.0
-  709440    5fb43bf55b58313be585bb2b06927534 vgagraph.bs6_3.0
-  678       e0de008dba2580709cfa49442424ab51 vgahead.bs6_3.0
+  1024      7ff0dae42ea839b425c3b3a801df226b vgadict.bs6?3.0
+  709440    5fb43bf55b58313be585bb2b06927534 vgagraph.bs6?3.0
+  678       e0de008dba2580709cfa49442424ab51 vgahead.bs6?3.0
 
   16557534  ccb9410dfaf0e58e09e7b7b9f8c3fe45 gog_blake_stone_aliens_of_gold_2.0.0.5.sh
   26888888  b1686e263da9e836e67b64a2946a3222 setup_blake_stone_aliens_of_gold_2.0.0.2.exe
@@ -300,7 +265,7 @@ size_and_md5: |
 
   11444448  870c8c037e3fd5fd08484363c4f6498d gog_blake_stone_planet_strike_2.0.0.4.sh
   21659584  2230bde51bc598440c14c978669209eb setup_blake_stone_planet_strike_2.0.0.2.exe
-  4082123   fca4caf88fcb2057b1f7ac52a5661087 manual.pdf_2
+  4082123   fca4caf88fcb2057b1f7ac52a5661087 manual.pdf?planetstrike
 
 sha1sums: |
   e2c101f9fd4bc7e22ddbfa3f019c9303877de4e2  audiohed.bs6
@@ -318,13 +283,13 @@ sha1sums: |
   1a3864cd12de4b8fd6be023b73d2d79e91b9018d  vgahead.bs6
   6fcc6e007b02b2e55892cfa7acfd42966ef9c9fb  vswap.bs6
 
-  6f19a144d8985e90f096fc1c67ade58e9051235c  maphead.bs6_1.0
-  4d00c5f5c843f99a266bd938648192a6eff17b5a  maptemp.bs6_1.0
-  75b54b5ec566ef62a42d22062426e78a79c95ef3  svswap.bs6_1.0
-  d4f81ace1701a7338d43ce07723c2adaafdc837c  vgadict.bs6_1.0
-  02dc27d4810e3ffa26540b310eac6091f5e16de0  vgagraph.bs6_1.0
-  639ec9e7a81ad83fc5b5c557cf4fc5fa28b9676b  vgahead.bs6_1.0
-  0a700732ccbc72f95318a6226a7e1ad78ac713bb  vswap.bs6_1.0
+  6f19a144d8985e90f096fc1c67ade58e9051235c  maphead.bs6?1.0
+  4d00c5f5c843f99a266bd938648192a6eff17b5a  maptemp.bs6?1.0
+  75b54b5ec566ef62a42d22062426e78a79c95ef3  svswap.bs6?1.0
+  d4f81ace1701a7338d43ce07723c2adaafdc837c  vgadict.bs6?1.0
+  02dc27d4810e3ffa26540b310eac6091f5e16de0  vgagraph.bs6?1.0
+  639ec9e7a81ad83fc5b5c557cf4fc5fa28b9676b  vgahead.bs6?1.0
+  0a700732ccbc72f95318a6226a7e1ad78ac713bb  vswap.bs6?1.0
 
   224747bd673ba20a14ca6f68663ebc2f5e75da43  gog_blake_stone_aliens_of_gold_2.0.0.5.sh
   911ca4507713b091767664ef1d10a5850c573ffe  setup_blake_stone_aliens_of_gold_2.0.0.2.exe
@@ -344,5 +309,5 @@ sha1sums: |
 
   236dcb41053d94ed04a99d900b24bd7ecd2f1fb1  gog_blake_stone_planet_strike_2.0.0.4.sh
   5171c5855d0df6ae38893aa80a072045efe5e06c  setup_blake_stone_planet_strike_2.0.0.2.exe
-  58a5199af8cc7ce984d3b133e4174fed4a057218  manual.pdf_2
+  58a5199af8cc7ce984d3b133e4174fed4a057218  manual.pdf?planetstrike
 ...
