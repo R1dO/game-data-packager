@@ -43,6 +43,18 @@ logger = logging.getLogger('game_data_packager.make-template')
 # a SHA1 for these files is not usefull
 MD5_SAFE_ENOUGH = 5000
 
+def guess_lang(string):
+    string = string.lower()
+    for short, long in [('de', 'german'),
+                        ('es', 'spanish'),
+                        ('fr', 'french'),
+                        ('it', 'italian'),
+                        ('ja', 'japanese'),
+                        ('pl', 'polish'),
+                        ('ru', 'russian')]:
+      if long in string:
+          return short
+
 def is_license(file):
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
@@ -138,11 +150,12 @@ class GameData(object):
         if size > MD5_SAFE_ENOUGH:
             self.sha1[out_name] = hf.sha1
 
-    def add_one_dir(self,destdir,lower,archive=None):
+    def add_one_dir(self, destdir, lower, game=None, lang=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
             self.try_repack_from.append(destdir)
 
-        game = os.path.basename(os.path.abspath(destdir))
+        if not game:
+            game = os.path.basename(os.path.abspath(destdir))
         if game.endswith('-data'):
             game = game[:len(game) - 5]
 
@@ -159,8 +172,16 @@ class GameData(object):
             steam_dict['id'] = int(steam_id)
             steam_dict['path'] = destdir[steam+11:]
 
-        game = game.replace(' ','').replace(':','').replace('-','').lower()
-        self.package = self.data.setdefault('packages', {}).setdefault(game + '-data', {})
+        game = game.replace(' ','').replace(':','').replace('_','-').lower()
+        if lang:
+            pkg = game + '-' + lang + '-data'
+            virtual = game + '-data'
+        else:
+            pkg = game + '-data'
+        self.package = self.data.setdefault('packages', {}).setdefault(pkg, {})
+        if lang:
+            self.package['lang'] = lang
+            self.package['debian'] = { 'provides' : virtual }
 
         if steam > 0:
             self.package['steam'] = steam_dict
@@ -247,7 +268,7 @@ class GameData(object):
                  universal_newlines=True,
                  cwd=tmp)
         self.longname = log.split('\n')[0].split('"')[1]
-        self.add_one_dir(os.path.join(tmp, 'app'),True)
+        self.add_one_dir(os.path.join(tmp, 'app'), True, game=self.gog_game, lang=guess_lang(exe))
         os.system('rm -r ' + tmp)
 
         self.add_one_file(exe,False)
