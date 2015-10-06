@@ -56,6 +56,7 @@ def guess_lang(string):
           return short
 
 def is_license(file):
+    file = file.split('?')[0]
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
@@ -65,6 +66,7 @@ def is_license(file):
     return False
 
 def is_doc(file):
+    file = file.split('?')[0]
     name, ext = os.path.splitext(file.lower())
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
@@ -212,6 +214,16 @@ class GameData(object):
                 elif os.path.islink(path):
                     self.package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
                 elif os.path.isfile(path):
+                    size = os.path.getsize(path)
+                    hf = HashedFile.from_file(name, open(path, 'rb'))
+                    if out_name in self.size:
+                        if (size == self.size[out_name] and hf.md5 == self.md5[out_name]):
+                            continue
+                        elif lang:
+                            out_name += ('?' + lang)
+                        else:
+                            out_name += ('?' + hf.md5[1:6])
+
                     if is_license(fn):
                         out_name = os.path.basename(out_name)
                         self.license.add(out_name)
@@ -221,8 +233,7 @@ class GameData(object):
                     else:
                         self.install.add(out_name)
 
-                    hf = HashedFile.from_file(name, open(path, 'rb'))
-                    self.size[out_name] = size = os.path.getsize(path)
+                    self.size[out_name] = size
                     self.md5[out_name] = hf.md5
                     if size > MD5_SAFE_ENOUGH:
                         self.sha1[out_name] = hf.sha1
