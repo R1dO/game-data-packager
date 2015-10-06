@@ -54,6 +54,11 @@ def guess_lang(string):
                         ('ru', 'russian')]:
       if long in string:
           return short
+    # check against other args
+    for lang in ('german', 'spanish', 'french', 'italian', 'polish', 'russian'):
+        for arg in sys.argv:
+            if lang in arg:
+                return 'en'
 
 def is_license(file):
     file = file.split('?')[0]
@@ -112,9 +117,11 @@ class GameData(object):
         self.gog_game = None
 
         self.data = dict()
+        # global list of files accross packages
         self.install = set()
         self.optional = set()
         self.license = set()
+        self.loose_file = set()
 
         self.files = dict(files={})
         self.size = {}
@@ -139,12 +146,12 @@ class GameData(object):
             pass
         elif is_license(name):
             out_name = os.path.basename(out_name)
-            self.license.add(out_name)
+            self.loose_file.add(out_name)
         elif is_doc(name):
-            self.optional.add(out_name)
+            self.loose_file.add(out_name)
             self.files['files'][out_name] = dict(install_to='$docdir')
         else:
-            self.install.add(out_name)
+            self.loose_file.add(out_name)
 
         hf = HashedFile.from_file(name, open(name, 'rb'))
         self.size[out_name] = size = os.path.getsize(name)
@@ -185,6 +192,10 @@ class GameData(object):
             self.package['lang'] = lang
             self.package['debian'] = { 'provides' : virtual }
 
+        self.package['install'] = []
+        self.package['optional'] = []
+        self.package['license'] = []
+
         if steam > 0:
             self.package['steam'] = steam_dict
 
@@ -218,7 +229,7 @@ class GameData(object):
                     hf = HashedFile.from_file(name, open(path, 'rb'))
                     if out_name in self.size:
                         if (size == self.size[out_name] and hf.md5 == self.md5[out_name]):
-                            continue
+                            pass
                         elif lang:
                             out_name += ('?' + lang)
                         else:
@@ -227,11 +238,14 @@ class GameData(object):
                     if is_license(fn):
                         out_name = os.path.basename(out_name)
                         self.license.add(out_name)
+                        self.package['license'].append(out_name)
                     elif is_doc(fn):
                         self.optional.add(out_name)
+                        self.package['optional'].append(out_name)
                         self.files['files'][out_name] = dict(install_to='$docdir')
                     else:
                         self.install.add(out_name)
+                        self.package['install'].append(out_name)
 
                     self.size[out_name] = size
                     self.md5[out_name] = hf.md5
@@ -245,6 +259,16 @@ class GameData(object):
 
         if self.plugin != 'scummvm_common':
             self.package['install_to'] = 'usr/share/games/' + game
+
+        self.package['install'].sort()
+        if self.package['optional']:
+            self.package['optional'].sort()
+        else:
+            del self.package['optional']
+        if self.package['license']:
+            self.package['license'].sort()
+        else:
+            del self.package['license']
 
     def add_one_zip(self,archive):
         # TODO
@@ -331,6 +355,9 @@ class GameData(object):
 
         self.data = dict(packages={ control['package']: {} })
         self.package = self.data['packages'][control['package']]
+        self.package['install'] = []
+        self.package['optional'] = []
+        self.package['license'] = []
         install_to = None
 
         with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', deb],
@@ -387,9 +414,11 @@ class GameData(object):
                         elif name.startswith('opt/') and is_license(name):
                             name = basename_l
                             self.license.add(name)
+                            self.package['license'].append(name)
                         elif name.startswith('opt/') and is_doc(name):
                             name = basename_l
                             self.optional.add(name)
+                            self.package['optional'].append(name)
                             self.files['files'][name] = dict(install_to='$docdir')
                         elif (install_to is not None and
                             name.startswith(install_to + '/')):
@@ -399,6 +428,7 @@ class GameData(object):
                             if self.gog_url and name.startswith('data/'):
                                 name = name[len('data/'):]
                             self.install.add(name)
+                            self.package['install'].append(name)
                         else:
                             self.optional.add(name)
                             self.files['files'][name] = dict(install_to='.')
@@ -418,6 +448,15 @@ class GameData(object):
 
         if self.plugin != 'scummvm_common':
             self.package['install_to'] = install_to
+        self.package['install'].sort()
+        if self.package['optional']:
+            self.package['optional'].sort()
+        else:
+            del self.package['optional']
+        if self.package['license']:
+            self.package['license'].sort()
+        else:
+            del self.package['license']
 
     def to_yaml(self):
         print('---')
@@ -441,17 +480,9 @@ class GameData(object):
         print('')
         yaml.safe_dump(self.data, stream=sys.stdout, default_flow_style=False)
 
-        print('    install:')
-        for file in sorted(self.install):
-            print('    - %s' % file)
-
-        if self.optional:
-            print('    optional:')
-            for file in sorted(self.optional):
-                print('    - %s' % file)
-        if self.license:
-            print('    license:')
-            for file in sorted(self.license):
+        if self.loose_file:
+            print('    XXX:')
+            for file in sorted(self.loose_file):
                 print('    - %s' % file)
 
         if self.files['files']:
