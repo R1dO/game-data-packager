@@ -33,13 +33,13 @@ packages:
     lang: fr
     install:
     - commun.stk
-    - commun1.itk_floppy
-    - commun1.ltk_floppy
-    - intro.stk_floppy
-    - partie1.itk_floppy
-    - partie1.ltk_floppy
-    - partie2.itk_floppy
-    - partie2.ltk_floppy
+    - commun1.itk?floppy
+    - commun1.ltk?floppy
+    - intro.stk?floppy
+    - partie1.itk?floppy
+    - partie1.ltk?floppy
+    - partie2.itk?floppy
+    - partie2.ltk?floppy
     - tome1.stk
 
   lost-in-time-floppy2-fr-data:
@@ -51,67 +51,42 @@ packages:
     - commun.stk
     - commun2.itk
     - commun2.ltk
-    - intro.stk_floppy
-    - partie3.itk_floppy
-    - partie3.ltk_floppy
-    - partie4.itk_floppy
-    - partie4.ltk_floppy
+    - intro.stk?floppy
+    - partie3.itk?floppy
+    - partie3.ltk?floppy
+    - partie4.itk?floppy
+    - partie4.ltk?floppy
     - tome2.stk
-
-files:
-  commun1.itk_floppy:
-    install_as: commun1.itk
-  commun1.ltk_floppy:
-    install_as: commun1.ltk
-  intro.stk_floppy:
-    install_as: intro.stk
-  partie1.itk_floppy:
-    install_as: partie1.itk
-  partie1.ltk_floppy:
-    install_as: partie1.ltk
-  partie2.itk_floppy:
-    install_as: partie2.itk
-  partie2.ltk_floppy:
-    install_as: partie2.ltk
-  partie3.itk_floppy:
-    install_as: partie3.itk
-  partie3.ltk_floppy:
-    install_as: partie3.ltk
-  partie4.itk_floppy:
-    install_as: partie4.itk
-  partie4.ltk_floppy:
-    install_as: partie4.ltk
-
 
 size_and_md5: |
   5962538   cbf7c612343fb03047a9b603d193388d batcom.itk
   74549     efa569e6c1ed80f09ac70ca2727c5970 batcom.ltk
   447694    b26f4f097535228049c89751e422b584 commun.stk
   1747972   726ad64a8bb5b54f4d66e54811b815f9 commun1.itk
-  729622    4b376c3417c43df480aaf36f8182b76a commun1.itk_floppy
+  729622    4b376c3417c43df480aaf36f8182b76a commun1.itk?floppy
   21171     032e73735df86db094c1041c7e39eb14 commun1.ltk
-  2168      52844ccc2203f82675ea01e14305be01 commun1.ltk_floppy
+  2168      52844ccc2203f82675ea01e14305be01 commun1.ltk?floppy
   727028    e3f6c7c26f23581b46312510691522a7 commun2.itk
   2204      8f6d53b91d578507bf0405a39965b7f2 commun2.ltk
   4831170   b3b7f0d830d330ff36248d283346c6ed intro.stk
-  72318     f747df00b910c65da233f77d8418bb01 intro.stk_floppy
+  72318     f747df00b910c65da233f77d8418bb01 intro.stk?floppy
   7836      1357c08613d77308e36363edd807bd85 lost.lic
   3502260   8e0e50158622962230deb6f47739e5a3 partie1.itk
-  2134154   6b7db22a78d10fd97af8ac5f1f7653e4 partie1.itk_floppy
+  2134154   6b7db22a78d10fd97af8ac5f1f7653e4 partie1.itk?floppy
   39984     a16c08cb1469811fe870222b86654e8a partie1.ltk
-  10196     0b8c906d4ee63645aac8a87456d535dd partie1.ltk_floppy
+  10196     0b8c906d4ee63645aac8a87456d535dd partie1.ltk?floppy
   13708948  b83e0fefc6b4e11e26b2a2d895801cfc partie2.itk
-  4396644   91b824a9aa0b264a8c760e321ce9b06f partie2.itk_floppy
+  4396644   91b824a9aa0b264a8c760e321ce9b06f partie2.itk?floppy
   145934    69aecb91ec57195b8a8d1b5d0f64ec0d partie2.ltk
-  23306     d39ed07fb7ed75830525345d73e7f58a partie2.ltk_floppy
+  23306     d39ed07fb7ed75830525345d73e7f58a partie2.ltk?floppy
   6226504   f4ca2cf74599c787203fa73f47e829c7 partie3.itk
-  4435864   bc9421f84937e16e9f2900a5fb870aeb partie3.itk_floppy
+  4435864   bc9421f84937e16e9f2900a5fb870aeb partie3.itk?floppy
   149600    a7cfc5af903a4baf5a021a74475df6b1 partie3.ltk
-  21326     637b97a4e4628b4573d560395dd8c77d partie3.ltk_floppy
+  21326     637b97a4e4628b4573d560395dd8c77d partie3.ltk?floppy
   5063452   d3d447f9dae5b9c2c503ceb7128968b6 partie4.itk
-  2612087   407dddbd313c2d9c714172ef8a3adc17 partie4.itk_floppy
+  2612087   407dddbd313c2d9c714172ef8a3adc17 partie4.itk?floppy
   81011     1339a350626017633acf8cbcefe45489 partie4.ltk
-  14378     4789e1edd76535e4bbc5c0d6548f4726 partie4.ltk_floppy
+  14378     4789e1edd76535e4bbc5c0d6548f4726 partie4.ltk?floppy
   2254550   a6952913bcd29e1279a5209e91519706 tome1.stk
   1691160   94c4d4d9174fa011557479a776a29e96 tome2.stk
   251988875 a217f61c83ad0b4a21d3006e4cad8a3f track01.flac
@@ -121,30 +96,30 @@ sha1sums: |
   f8ca4f54defc4d004c7bff3b014b93c80b7a1744  batcom.ltk
   1b03384e7e6ff846f10ee20d31a4d95825c489ce  commun.stk
   64e6f048bdf4766959e4dc090af0744675082251  commun1.itk
-  ed113b3c79c411ade835b2b3f511c883e14cab5a  commun1.itk_floppy
+  ed113b3c79c411ade835b2b3f511c883e14cab5a  commun1.itk?floppy
   05b282250fd7afb89e427ef7ab942f86f072870e  commun1.ltk
-  b097cb5ce4a9b29b6516ee3a3c195c495713f799  commun1.ltk_floppy
+  b097cb5ce4a9b29b6516ee3a3c195c495713f799  commun1.ltk?floppy
   a7a79a64feaade09b156cfee85ce28123314673d  commun2.itk
   82588c0cab15fd4087207939693662a3ff81e97c  commun2.ltk
   f98c943df8de128ae146971f23a6557aa5de338c  intro.stk
-  7dcc81259bdd85ce2d1767c6338d6f29b931a539  intro.stk_floppy
+  7dcc81259bdd85ce2d1767c6338d6f29b931a539  intro.stk?floppy
   80060391e097d551a6dd05ba730a9fe6773a8b26  lost.lic
   0c49bf21839c74e5c164679356c3bf3ff1822bce  partie1.itk
-  868324a863e086fe43dd99e6ad011ba5d8092757  partie1.itk_floppy
+  868324a863e086fe43dd99e6ad011ba5d8092757  partie1.itk?floppy
   13e792ce93826201782f5f6c5e7152ba50502fac  partie1.ltk
-  3a1b8b6ae1cfb6d9cea56e7804524b75a5ed99ba  partie1.ltk_floppy
+  3a1b8b6ae1cfb6d9cea56e7804524b75a5ed99ba  partie1.ltk?floppy
   b75d00810c1ba9d2e711f87b9d5c276548f98491  partie2.itk
-  f7ab2ac71b63a7fbd6cd5363793e1a29d460582c  partie2.itk_floppy
+  f7ab2ac71b63a7fbd6cd5363793e1a29d460582c  partie2.itk?floppy
   13ea78f65edc414565f522a29c0e0c4cd0ec75e4  partie2.ltk
-  29fdb7c99d1a215b9a2d1a5e07cd14ef58aa7845  partie2.ltk_floppy
+  29fdb7c99d1a215b9a2d1a5e07cd14ef58aa7845  partie2.ltk?floppy
   f5458ab7bc0453b9c881b9103c17c3c1728ab928  partie3.itk
-  338c334d2c7a8c729d154fab27a8632265384c9d  partie3.itk_floppy
+  338c334d2c7a8c729d154fab27a8632265384c9d  partie3.itk?floppy
   c3e94a59633ed1eb2a072c5892f1a2ac4348bde3  partie3.ltk
-  9140e8f62517a778e8e0e8241dff0f1cc7540180  partie3.ltk_floppy
+  9140e8f62517a778e8e0e8241dff0f1cc7540180  partie3.ltk?floppy
   f5f28b399c583fd9ab3c1e180aec734cbf6e72b0  partie4.itk
-  74c03f6f906ac6aa15b8e35cc34ff1cadc7ee02c  partie4.itk_floppy
+  74c03f6f906ac6aa15b8e35cc34ff1cadc7ee02c  partie4.itk?floppy
   f80b666ed23867dafe8325ee8cb71c3e55f22a0d  partie4.ltk
-  1acf0b2ba3ecb9123f4bad4b9fd8858b2150868d  partie4.ltk_floppy
+  1acf0b2ba3ecb9123f4bad4b9fd8858b2150868d  partie4.ltk?floppy
   05f4a22f45a665a490fe25f607f19efc3b219c69  tome1.stk
   a825dae6db2c2ac73bd6264d39c85606f27876d7  tome2.stk
   535bd816894534042bdf6f7261a0dd760dfc4a11  track01.flac
