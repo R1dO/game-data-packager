@@ -6,18 +6,28 @@ wiki: Goblins_3
 gameid: gob3
 copyright: © 1992 Coktel Vision
 
+missing_langs: [es,pl]
+
+help_text: |
+  DotEmu claims to sell a Spanish & Polish version of this game too.
+
+  Please provide the output of
+  $ game-data-packager make-template <path>
+  if you own these translations.
+
 packages:
   goblins3-floppy-data:
     longname: "Goblins Quest 3 (floppy)"
-    better_version: goblins3-data
+    better_version: goblins3-en-data
     install:
     - ext.stk?floppy
     - imd.itk?floppy
     - intro.stk?floppy
     - tot.stk?floppy
 
-  goblins3-data:
-    langs: [en,de,fr,it]
+  goblins3-en-data:
+    debian:
+      provides: goblins3-data
     gog:
       url: gobliiins_pack
       game: goblins_quest_3
@@ -30,11 +40,71 @@ packages:
     - mdos.imd
     - mus_gob3.lic
     - tot.stk
-    optional:
     - usgob3.itk
+    optional:
+    - track1.mp3
+    - manual.pdf
+
+  goblins3-de-data:
+    debian:
+      provides: goblins3-data
+    lang: de
+    gog:
+      url: gobliiins_pack
+      game: goblins_quest_3
+    dotemu:
+      id: 25
+    install:
+    - ext.stk
+    - imd.itk
+    - intro.stk
+    - mdos.imd
+    - mus_gob3.lic
+    - tot.stk
     - degob3.itk
+    optional:
+    - track1.mp3
+    - manual.pdf
+
+  goblins3-fr-data:
+    debian:
+      provides: goblins3-data
+    lang: fr
+    gog:
+      url: gobliiins_pack
+      game: goblins_quest_3
+    dotemu:
+      id: 25
+    install:
+    - ext.stk
+    - imd.itk
+    - intro.stk
+    - mdos.imd
+    - mus_gob3.lic
+    - tot.stk
     - frgob3.itk
+    optional:
+    - track1.mp3
+    - manual.pdf
+
+  goblins3-it-data:
+    debian:
+      provides: goblins3-data
+    lang: it
+    gog:
+      url: gobliiins_pack
+      game: goblins_quest_3
+    dotemu:
+      id: 25
+    install:
+    - ext.stk
+    - imd.itk
+    - intro.stk
+    - mdos.imd
+    - mus_gob3.lic
+    - tot.stk
     - itgob3.itk
+    optional:
     - track1.mp3
     - manual.pdf
 
