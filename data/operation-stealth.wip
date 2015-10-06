@@ -74,9 +74,9 @@ packages:
       provides: operation-stealth-data
     gameid: os-fr
     install:
-    - egoubase_fr
-    - errmess.dat_fr
-    - labybase_fr
+    - egoubase?fr
+    - errmess.dat?fr
+    - labybase?fr
     - poldat.dat
     - procegou
     - proclaby
@@ -111,44 +111,20 @@ packages:
     - rsc15
     - rsc16
     - rsc17
-    - sd.0_fr
-    - sd.1_fr
-    - sd.dir_fr
+    - sd.0?fr
+    - sd.1?fr
+    - sd.dir?fr
     - sons31
     - sons32
     - sons33
     - sons34
     - texte.dat
-    - vol.1_fr
-    - vol.2_fr
-    - vol.3_fr
-    - vol.4_fr
-    - vol.cnf_fr
+    - vol.1?fr
+    - vol.2?fr
+    - vol.3?fr
+    - vol.4?fr
+    - vol.cnf?fr
     - vol.end
-
-files:
-  egoubase_fr:
-    install_as: egoubase
-  errmess.dat_fr:
-    install_as: errmess.dat
-  labybase_fr:
-    install_as: labybase
-  sd.0_fr:
-    install_as: sd.0
-  sd.1_fr:
-    install_as: sd.1
-  sd.dir_fr:
-    install_as: sd.dir
-  vol.1_fr:
-    install_as: vol.1
-  vol.2_fr:
-    install_as: vol.2
-  vol.3_fr:
-    install_as: vol.3
-  vol.4_fr:
-    install_as: vol.4
-  vol.cnf_fr:
-    install_as: vol.cnf
 
 size_and_md5: |
   17044     8932f627148e6b7c9bc6d05a3d9f2dd3 egoubase
@@ -206,9 +182,9 @@ size_and_md5: |
   7880      d2f3ab953f4518faa386f5bd0c9f465d vol.cnf
   1         6bc1af258475ec126d1be66e6bee873a vol.end
 
-  27198     8ced5079ff2bd37300e9194318d144f2 egoubase_fr
-  1440      c82b927fa7c7a5604fa9dc297bcf6794 errmess.dat_fr
-  25240     775f962c1d518b43e0d08833e92244fc labybase_fr
+  27198     8ced5079ff2bd37300e9194318d144f2 egoubase?fr
+  1440      c82b927fa7c7a5604fa9dc297bcf6794 errmess.dat?fr
+  25240     775f962c1d518b43e0d08833e92244fc labybase?fr
   5524      10963bff1e6842d00fa17a901b8a50ae procegou
   6528      b6177aaddac947e37794aebcef67c7af proclaby
   4504      f143567f08cfd1a9b1c9a41c89eadfef procs00
@@ -242,18 +218,18 @@ size_and_md5: |
   169602    4a8cfc74a8370ea3214843ba36544af3 rsc15
   164124    3b9db4f9a398ff3ada93a6a4b81b0b9a rsc16
   1466      8f1bf873794c900267e566e57d8cfc83 rsc17
-  26360     08ffca4d2b0fa6f56999d2069767d6b8 sd.0_fr
-  3072      96d1de52821c49a500a58a3ffaac158f sd.1_fr
-  400       98e66bbdc241dd9cb9df85b62b9d9f31 sd.dir_fr
+  26360     08ffca4d2b0fa6f56999d2069767d6b8 sd.0?fr
+  3072      96d1de52821c49a500a58a3ffaac158f sd.1?fr
+  400       98e66bbdc241dd9cb9df85b62b9d9f31 sd.dir?fr
   30469     d67d0fc374b0ffae5ca34717210a5373 sons31
   31978     9393f05005aadeef005a70fdf31717e0 sons32
   37066     722631441f135690d2e73fbf12c5c4ce sons33
   27616     ada6fbe3e6ba1954b87c502ff7c8b97d sons34
-  63        d5aade5935c6962c2a144a2ac35aeea6 vol.1_fr
-  79        46184f89c2be39eb2fe10b169c9a3bb4 vol.2_fr
-  110       a4faf3f1293c7978795ed6910da704c7 vol.3_fr
-  63        09e8dbb5edb5ac3fb71871cc18be99d7 vol.4_fr
-  6452      6d93c51b479cfcda9beecace3a07758f vol.cnf_fr
+  63        d5aade5935c6962c2a144a2ac35aeea6 vol.1?fr
+  79        46184f89c2be39eb2fe10b169c9a3bb4 vol.2?fr
+  110       a4faf3f1293c7978795ed6910da704c7 vol.3?fr
+  63        09e8dbb5edb5ac3fb71871cc18be99d7 vol.4?fr
+  6452      6d93c51b479cfcda9beecace3a07758f vol.cnf?fr
 
 sha1sums: |
   cebf4256a18ce229514efced64eae27e678f03b5  egoubase
@@ -293,8 +269,8 @@ sha1sums: |
   7b5778ca51203e758a60e2f4b3f2147f4a643bc1  texte.dat
   ec8c5131b992117df71ece287c8aae737a158d71  vol.cnf
 
-  ee3a815fdfd03863769b2c1b3d8dd52db4db555b  egoubase_fr
-  9abe4514f01c7bd03124f4c7f0fb2d4f910da0bf  labybase_fr
+  ee3a815fdfd03863769b2c1b3d8dd52db4db555b  egoubase?fr
+  9abe4514f01c7bd03124f4c7f0fb2d4f910da0bf  labybase?fr
   e0d804a4b8a4cac951a561e4e63105dfb0255a8b  procegou
   c5a9ed4b3f5657d315db534d5053ae44c0e67d39  proclaby
   d0692a36f414da9fab4504dff1b6d7f1b3e9cf0b  procs01
@@ -325,10 +301,10 @@ sha1sums: |
   29b80f718c10e0ce29ed44087fa85780dbecf04c  rsc14
   15ad53501b2c565e925f22d724ab28a43af68aad  rsc15
   548e186abff1e56452bbba17e26aac031626c3a5  rsc16
-  205d636322139db5d07ff6c2b8b5c1353c1f7466  sd.0_fr
+  205d636322139db5d07ff6c2b8b5c1353c1f7466  sd.0?fr
   7547f5a9ccce9a133e359dda625e7f7eeb83e8ac  sons31
   c9a93101c531125d6f6899faf3518e37c4679965  sons32
   c620cfe0a2571894cf26df685fee8e4178146bf2  sons33
   4765f1c43a7d76f59b244096fe154a0498f9c5ab  sons34
-  abf56cffe67318f6ef1e765498fd9d4c16a1894c  vol.cnf_fr
+  abf56cffe67318f6ef1e765498fd9d4c16a1894c  vol.cnf?fr
 ...
