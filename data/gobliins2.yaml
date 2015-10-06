@@ -25,14 +25,11 @@ packages:
   gobliins2-floppy-data:
     better_version: gobliins2-data
     install:
-    - intro.stk_floppy
+    - intro.stk?floppy
     - disk2.stk
     - disk3.stk
 
 files:
-  intro.stk_floppy:
-    install_as: intro.stk
-
   manual.pdf:
     install_to: $docdir
 
@@ -40,7 +37,7 @@ files:
     unpack:
       format: innoextract
     provides:
-    - intro.stk_floppy
+    - intro.stk?floppy
     - disk2.stk
     - disk3.stk
 
@@ -51,7 +48,7 @@ files:
     - manual.pdf
 
 size_and_md5: |
-  828443    9b6de65d811c08eebf50391b84fcba92 intro.stk_floppy
+  828443    9b6de65d811c08eebf50391b84fcba92 intro.stk?floppy
   1001893   89f7ef7f82590e714967f88df7307255 disk2.stk
   950651    d68d88d2116e9f72ce8e1fc984c5cb39 disk3.stk
 
@@ -63,7 +60,7 @@ size_and_md5: |
   72649984  0baf2ce55d00fce9af4c98848e88d7dc setup_gobliiins2_2.1.0.63.exe
 
 sha1sums: |
-  3157840638c3221f7ba10065a589ac67762c3a53  intro.stk_floppy
+  3157840638c3221f7ba10065a589ac67762c3a53  intro.stk?floppy
   c503e9e840d79090d83cbb00a92e9ec489e4851b  disk2.stk
   af3a47c103d90b1141274e4ddba4aaf886eadf1c  disk3.stk
 
