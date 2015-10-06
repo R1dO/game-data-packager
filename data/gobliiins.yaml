@@ -16,7 +16,7 @@ packages:
       provides: gobliiins-data
     install:
     - gob.lic
-    - intro.stk_cd
+    - intro.stk?cd
     - track1.mp3
     optional:
     - manual.pdf
@@ -41,11 +41,11 @@ packages:
     debian:
       provides: gobliiins-data
     install:
-    - intro.stk_fr
-    - disk1.stk_fr
-    - disk2.stk_fr
-    - disk3.stk_fr
-    - disk4.stk_fr
+    - intro.stk?fr
+    - disk1.stk?fr
+    - disk2.stk?fr
+    - disk3.stk?fr
+    - disk4.stk?fr
 
   gobliiins-demo-en-data:
     lang: en
@@ -54,8 +54,8 @@ packages:
       provides: gobliiins-demo-data
     gameid: gob
     install:
-    - intro.stk_demo
-    - disk1.stk_demo
+    - intro.stk?demo
+    - disk1.stk?demo
 
   gobliiins-demo-fr-data:
     longname: "Gobliiins (demo/fr)"
@@ -65,8 +65,8 @@ packages:
       provides: gobliiins-demo-data
     gameid: gob1-demo-fr
     install:
-    - intro.stk_demo_fr
-    - disk1.stk_demo_fr
+    - intro.stk?demo_fr
+    - disk1.stk?demo_fr
 
 files:
   # Demos
@@ -75,38 +75,18 @@ files:
     unpack:
       format: zip
     provides:
-    - intro.stk_demo
-    - disk1.stk_demo
-  intro.stk_demo:
-    install_as: intro.stk
-  disk1.stk_demo:
-    install_as: disk1.stk
+    - intro.stk?demo
+    - disk1.stk?demo
 
   gob1-dos-demo-fr.zip:
     download: http://sourceforge.net/projects/scummvm/files/demos/gob/gob1-dos-demo-fr.zip?download
     unpack:
       format: zip
     provides:
-    - intro.stk_demo_fr
-    - disk1.stk_demo_fr
-  intro.stk_demo_fr:
-    install_as: intro.stk
-  disk1.stk_demo_fr:
-    install_as: disk1.stk
+    - intro.stk?demo_fr
+    - disk1.stk?demo_fr
 
   # Full games
-  intro.stk_cd:
-    install_as: intro.stk
-  intro.stk_fr:
-    install_as: intro.stk
-  disk1.stk_fr:
-    install_as: disk1.stk
-  disk2.stk_fr:
-    install_as: disk2.stk
-  disk3.stk_fr:
-    install_as: disk3.stk
-  disk4.stk_fr:
-    install_as: disk4.stk
   manual.pdf:
     install_to: $docdir
   setup_gobliiins_2.1.0.64.exe:
@@ -119,16 +99,16 @@ files:
     - disk3.stk
     - disk4.stk
     - gob.lic
-    - intro.stk_cd
+    - intro.stk?cd
     - track1.mp3
     - manual.pdf
 
 size_and_md5: |
-  135561    82aea70ef26f41fa963dfae270993e49 intro.stk_fr
-  367110    a42ca54c4f1e3bc3a9fee8fd301bf4e5 disk1.stk_fr
-  336641    520c458f08cfe9af1d250f0754d17002 disk2.stk_fr
-  317232    0f984718773a60c41f595e609d7299b5 disk3.stk_fr
-  362638    1a177171dc408d2a93b24bd9d5f0a0a3 disk4.stk_fr
+  135561    82aea70ef26f41fa963dfae270993e49 intro.stk?fr
+  367110    a42ca54c4f1e3bc3a9fee8fd301bf4e5 disk1.stk?fr
+  336641    520c458f08cfe9af1d250f0754d17002 disk2.stk?fr
+  317232    0f984718773a60c41f595e609d7299b5 disk3.stk?fr
+  362638    1a177171dc408d2a93b24bd9d5f0a0a3 disk4.stk?fr
 
   233466    a5e232fcd02733c7dffff107d22d36eb intro.stk
   496145    604cbe12f143cc841223d0670f6428eb disk1.stk
@@ -137,7 +117,7 @@ size_and_md5: |
   571911    3cde14de82a30dc559e00e7ef7fade88 disk4.stk
 
   949       3d53324939418df5815e613635ac1d8a gob.lic
-  3295368   b2171e7f5aedf43aba35e07413728607 intro.stk_cd
+  3295368   b2171e7f5aedf43aba35e07413728607 intro.stk?cd
 
   47410991  6b8df9f1c4a72c73ae1ea0038c1ddcb4 track1.mp3
   842134    e0eb768e690d5593e29583e62ee75948 manual.pdf
@@ -145,12 +125,12 @@ size_and_md5: |
 
   # Demos
   397243    70ceb406fa9b5a93a574423d47e93b8b gob1-amiga_demo_en.zip
-  201584    26de406cb09228d902274446a6a2eceb intro.stk_demo
-  300871    295b44ca477e1800a7c482dd85de5f45 disk1.stk_demo
+  201584    26de406cb09228d902274446a6a2eceb intro.stk?demo
+  300871    295b44ca477e1800a7c482dd85de5f45 disk1.stk?demo
 
   772326    197370761fb8fdc64cfc99de91c8c3ed gob1-dos-demo-fr.zip
-  116582    0f4997181908ffb489b48c6acc49f982 intro.stk_demo_fr
-  588595    b6bb374e108490d19f901c0b7fd1592a disk1.stk_demo_fr
+  116582    0f4997181908ffb489b48c6acc49f982 intro.stk?demo_fr
+  588595    b6bb374e108490d19f901c0b7fd1592a disk1.stk?demo_fr
 
 sha1sums: |
   d47e61885f54c8fb78522ddac64c187a53eed9bc  intro.stk
@@ -159,14 +139,14 @@ sha1sums: |
   63a5a56e8e614a0d5ea412fcffb60d8dc9add257  disk3.stk
   3ae45a39c953820d439df3afff68ef2605ba9612  disk4.stk
 
-  cc4eea04283de97cd15806353d6fc4f5cac02153  disk1.stk_fr
-  110b6ffa92cc824ab65d5fb12bc8fdca49a73b4d  disk2.stk_fr
-  7f817c4d0e1654c6d8eba2f2c1880d27c89cbd4e  disk3.stk_fr
-  5d5da03ec097b8d05e81f9ca91806d2d9c06e95a  disk4.stk_fr
-  d62bf74d4e36cee683348f16b011f021a84c3510  intro.stk_fr
+  cc4eea04283de97cd15806353d6fc4f5cac02153  disk1.stk?fr
+  110b6ffa92cc824ab65d5fb12bc8fdca49a73b4d  disk2.stk?fr
+  7f817c4d0e1654c6d8eba2f2c1880d27c89cbd4e  disk3.stk?fr
+  5d5da03ec097b8d05e81f9ca91806d2d9c06e95a  disk4.stk?fr
+  d62bf74d4e36cee683348f16b011f021a84c3510  intro.stk?fr
 
   29d9b195f414a9010f148e06290f867b6a188a5a  gob.lic
-  7a74794c92de2135041388b14d6cf2babbc2d858  intro.stk_cd
+  7a74794c92de2135041388b14d6cf2babbc2d858  intro.stk?cd
 
   f463a6e54ca5839bac6015112d3310b4fa6db792  track1.mp3
   176bfcdc63ec1b848547c2ba432b9ef87a928928  manual.pdf
@@ -174,11 +154,11 @@ sha1sums: |
 
   # Demos
   44dd46a2f149502331d793de692e00fa61a5dce1  gob1-amiga_demo_en.zip
-  01260678d12ea393c32a72bb13e418f7e7cd4322  intro.stk_demo
-  1e339634094ece3dcde8b0b2549edbbd419fd82d  disk1.stk_demo
+  01260678d12ea393c32a72bb13e418f7e7cd4322  intro.stk?demo
+  1e339634094ece3dcde8b0b2549edbbd419fd82d  disk1.stk?demo
 
   56af7cee4ea01ce523525a0b25439b9fd42c6bc6  gob1-dos-demo-fr.zip
-  17e75e54889635eed09fa1a72d5bfa0dbc0a5d65  intro.stk_demo_fr
-  6b1ea8a1682f35d0b9709c699254c8e5e015400a  disk1.stk_demo_fr
+  17e75e54889635eed09fa1a72d5bfa0dbc0a5d65  intro.stk?demo_fr
+  6b1ea8a1682f35d0b9709c699254c8e5e015400a  disk1.stk?demo_fr
 ...
 
