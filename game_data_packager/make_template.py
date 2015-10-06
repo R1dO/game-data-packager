@@ -115,7 +115,7 @@ class GameData(object):
         self.license = set()
 
         self.files = dict(files={})
-        self.ck = {}
+        self.size = {}
         self.md5 = {}
         self.sha1 = {}
 
@@ -145,7 +145,7 @@ class GameData(object):
             self.install.add(out_name)
 
         hf = HashedFile.from_file(name, open(name, 'rb'))
-        self.ck[out_name] = size = os.path.getsize(name)
+        self.size[out_name] = size = os.path.getsize(name)
         self.md5[out_name] = hf.md5
         if size > MD5_SAFE_ENOUGH:
             self.sha1[out_name] = hf.sha1
@@ -222,7 +222,7 @@ class GameData(object):
                         self.install.add(out_name)
 
                     hf = HashedFile.from_file(name, open(path, 'rb'))
-                    self.ck[out_name] = size = os.path.getsize(path)
+                    self.size[out_name] = size = os.path.getsize(path)
                     self.md5[out_name] = hf.md5
                     if size > MD5_SAFE_ENOUGH:
                         self.sha1[out_name] = hf.sha1
@@ -383,7 +383,7 @@ class GameData(object):
                             self.optional.add(name)
                             self.files['files'][name] = dict(install_to='.')
 
-                        self.ck[name] = entry.size
+                        self.size[name] = entry.size
                         self.md5[name] = hf.md5
                         if entry.size > MD5_SAFE_ENOUGH:
                             self.sha1[name] = hf.sha1
@@ -438,11 +438,11 @@ class GameData(object):
             yaml.safe_dump(self.files, stream=sys.stdout, default_flow_style=False)
 
         print_order = sorted(self.install) + sorted(self.optional) + sorted(self.license)
-        print_order += sorted(set(self.ck.keys()) - set(print_order))
+        print_order += sorted(set(self.size.keys()) - set(print_order))
 
         print('\nsize_and_md5: |')
         for filename in print_order:
-            print('  %-9s %s %s' % (self.ck[filename], self.md5[filename], filename))
+            print('  %-9s %s %s' % (self.size[filename], self.md5[filename], filename))
         print('\nsha1sums: |')
         for filename in print_order:
             if filename in self.sha1:
