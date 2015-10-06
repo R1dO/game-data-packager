@@ -11,10 +11,10 @@ packages:
     longname: "Goblins Quest 3 (floppy)"
     better_version: goblins3-data
     install:
-    - ext.stk_floppy
-    - imd.itk_floppy
-    - intro.stk_floppy
-    - tot.stk_floppy
+    - ext.stk?floppy
+    - imd.itk?floppy
+    - intro.stk?floppy
+    - tot.stk?floppy
 
   goblins3-data:
     langs: [en,de,fr,it]
@@ -39,25 +39,17 @@ packages:
     - manual.pdf
 
 files:
-  ext.stk_floppy:
-    install_as: ext.stk
-  imd.itk_floppy:
-    install_as: imd.itk
-  intro.stk_floppy:
-    install_as: intro.stk
-  tot.stk_floppy:
-    install_as: tot.stk
-
   manual.pdf:
     install_to: $docdir
+
   setup_gobliiins3_2.1.0.64.exe:
     unpack:
       format: innoextract
     provides:
-    - ext.stk_floppy
-    - imd.itk_floppy
-    - intro.stk_floppy
-    - tot.stk_floppy
+    - ext.stk?floppy
+    - imd.itk?floppy
+    - intro.stk?floppy
+    - tot.stk?floppy
     - ext.stk
     - imd.itk
     - intro.stk
@@ -72,10 +64,10 @@ files:
     unpack:
       format: innoextract
     provides:
-    - ext.stk_floppy
-    - imd.itk_floppy
-    - intro.stk_floppy
-    - tot.stk_floppy
+    - ext.stk?floppy
+    - imd.itk?floppy
+    - intro.stk?floppy
+    - tot.stk?floppy
     - ext.stk
     - imd.itk
     - intro.stk
@@ -90,10 +82,10 @@ files:
     unpack:
       format: innoextract
     provides:
-    - ext.stk_floppy
-    - imd.itk_floppy
-    - intro.stk_floppy
-    - tot.stk_floppy
+    - ext.stk?floppy
+    - imd.itk?floppy
+    - intro.stk?floppy
+    - tot.stk?floppy
     - ext.stk
     - imd.itk
     - intro.stk
@@ -108,10 +100,10 @@ files:
     unpack:
       format: innoextract
     provides:
-    - ext.stk_floppy
-    - imd.itk_floppy
-    - intro.stk_floppy
-    - tot.stk_floppy
+    - ext.stk?floppy
+    - imd.itk?floppy
+    - intro.stk?floppy
+    - tot.stk?floppy
     - ext.stk
     - imd.itk
     - intro.stk
@@ -123,10 +115,10 @@ files:
     - manual.pdf
 
 size_and_md5: |
-  3922524   a9a7eaaed24e295bdca22e9f784ebfe6 ext.stk_floppy
-  2951256   de51a2c41418c2cd05865ef9949c3384 imd.itk_floppy
-  157084    36d9b4032b39a794c8640e500e98893a intro.stk_floppy
-  447200    7237fccc3716f777c4ea851714c15cfe tot.stk_floppy
+  3922524   a9a7eaaed24e295bdca22e9f784ebfe6 ext.stk?floppy
+  2951256   de51a2c41418c2cd05865ef9949c3384 imd.itk?floppy
+  157084    36d9b4032b39a794c8640e500e98893a intro.stk?floppy
+  447200    7237fccc3716f777c4ea851714c15cfe tot.stk?floppy
 
   7224322   08b694360f10661f86b8411f4caab7ce ext.stk
   9089298   d03740776ca9c81d1eb6fd9792e3dcbd imd.itk
