@@ -178,19 +178,19 @@ packages:
     debian:
       provides: elvira1-data
     install:
-    - gamepc_fr
+    - gamepc?fr
     - icon.dat
     - instr.dat
     - start
     - tbllist
-    - tables01_fr
-    - tables02_fr
-    - tables03_fr
-    - tables04_fr
+    - tables01?fr
+    - tables02?fr
+    - tables03?fr
+    - tables04?fr
     - tables05
-    - tables06_fr
-    - tables07_fr
-    - tables08_fr
+    - tables06?fr
+    - tables07?fr
+    - tables08?fr
     - tables09
     - tables10
     - tables11
@@ -234,11 +234,11 @@ packages:
     - 242.vga
     - 251.vga
     - 252.vga
-    - 261.vga_fr
+    - 261.vga?fr
     - 262.vga
     - 271.vga
     - 272.vga
-    - 281.vga_fr
+    - 281.vga?fr
     - 282.vga
     - 291.vga
     - 292.vga
@@ -251,7 +251,7 @@ packages:
     - 331.vga
     - 332.vga
     - 341.vga
-    - 342.vga_fr
+    - 342.vga?fr
     - 351.vga
     - 352.vga
     - 361.vga
@@ -315,7 +315,7 @@ packages:
     - 651.vga
     - 652.vga
     - 661.vga
-    - 662.vga_fr
+    - 662.vga?fr
     - 671.vga
     - 672.vga
     - 681.vga
@@ -340,60 +340,35 @@ packages:
     - mod14.mus
 
 files:
-  271.vga_alt:
+  271.vga?alt:
     install_as: 271.vga
 
   # $ cmp -l /usr/share/games/elvira1-en/271.vga Elvira/271.vga \
   # | gawk '{printf "%08X %02X %02X\n", $1, strtonum(0$2), strtonum(0$3)}'
   # 00000190 0A 00
 
-  gamepc_fr:
-    install_as: gamepc
-  tables01_fr:
-    install_as: tables01
-  tables02_fr:
-    install_as: tables02
-  tables03_fr:
-    install_as: tables03
-  tables04_fr:
-    install_as: tables04
-  tables06_fr:
-    install_as: tables06
-  tables07_fr:
-    install_as: tables07
-  tables08_fr:
-    install_as: tables08
-  261.vga_fr:
-    install_as: 261.vga
-  281.vga_fr:
-    install_as: 281.vga
-  342.vga_fr:
-    install_as: 342.vga
-  662.vga_fr:
-    install_as: 662.vga
-
 size_and_md5: |
   135332    ec75353a068e8674e35f564def1f7399 gamepc
-  138125    9abad99b50225b62780175dce922640c gamepc_fr
+  138125    9abad99b50225b62780175dce922640c gamepc?fr
   56448     8926a9247afac0061ab65b581c5d755e icon.dat
   1863      00a719bf2eb770f4296b0c4065fc83be instr.dat
   21780     66a87d08c49d1c98e220ad329169c29e start
   368       319f6b227c7822a551f57d24e70f8149 tbllist
   10044     2020ce143a77091fddb935fb4040d0e8 tables01
-  10044     20dfd94bcc1ec6359f56479ab35ff5ee tables01_fr
+  10044     20dfd94bcc1ec6359f56479ab35ff5ee tables01?fr
   5212      444cb9b2f2e91d6d40b6a52aa66a045f tables02
-  5212      0f1bde40ca6c6054f4f9ff097de8e834 tables02_fr
+  5212      0f1bde40ca6c6054f4f9ff097de8e834 tables02?fr
   11776     afc8a21dfbbfa7822a0ce139d22e19b2 tables03
-  11782     8bb13ca01a650349cce2340b405bfc03 tables03_fr
+  11782     8bb13ca01a650349cce2340b405bfc03 tables03?fr
   6886      9c543011eb88845c03e1ea12cdb5ef31 tables04
-  6886      56946314cce27839443cc5b00c0f95cd tables04_fr
+  6886      56946314cce27839443cc5b00c0f95cd tables04?fr
   4664      a0f58fb5dbbbcbc23788f14f7822d756 tables05
   13412     2050134c2ae308d2f7899fa5d7ed13a4 tables06
-  13412     c19bfc5e3d6e2f9ac6337b7f636f8c10 tables06_fr
+  13412     c19bfc5e3d6e2f9ac6337b7f636f8c10 tables06?fr
   5502      19680edea3482842b5c3b59af40353c9 tables07
-  5504      61a8a730558c71d1518f67708d4fd759 tables07_fr
+  5504      61a8a730558c71d1518f67708d4fd759 tables07?fr
   5178      317ebfadb1f4bb274e4287dae24769e9 tables08
-  5174      d156a4f8fb4b2d7ae7a1f333944c5760 tables08_fr
+  5174      d156a4f8fb4b2d7ae7a1f333944c5760 tables08?fr
   9624      d6896cb486e7e5e38c5b2730522497e7 tables09
   6236      b5111fb17d71ecd55c12686570f2124a tables10
   5124      ad6cea7b459fe92d79d6aa04dabb0a93 tables11
@@ -438,13 +413,13 @@ size_and_md5: |
   6198      327e21828468263caf327b4546bda42b 251.vga
   57365     66d87e2758ce606b3401f6e1ec2a7b07 252.vga
   478       9ce4a1e9189923f3aeec62fd551ca85e 261.vga
-  442       08692b29b7b1d40ba620907cf39c68ee 261.vga_fr
+  442       08692b29b7b1d40ba620907cf39c68ee 261.vga?fr
   45329     6ca5aa46b6c8ef6de1bc0a9eed560af3 262.vga
   952       75ade24cb706f46ca0c22c7e70add7ea 271.vga
-  952       74f5358eed6f557655f29c89a9a7a3ae 271.vga_alt
+  952       74f5358eed6f557655f29c89a9a7a3ae 271.vga?alt
   79122     9e7eb46f465f5b66aa71fe1abafbe367 272.vga
   2904      8f6a45201a26e6f18085e89a9738c16e 281.vga
-  2904      6a165c7ca4cc87dde23a3e8b8f97f663 281.vga_fr
+  2904      6a165c7ca4cc87dde23a3e8b8f97f663 281.vga?fr
   98752     2d4c6b349344a36623ca357864dc2b0c 282.vga
   820       fd731704a768fe2b727c3f1e58ba7c8e 291.vga
   140843    3ebc734d543bcb1919444fefaaa79127 292.vga
@@ -458,7 +433,7 @@ size_and_md5: |
   40083     7138d8a332743f3f441702c2f57e47f9 332.vga
   5258      bf2408924bb8f452820350bbd7b3d58c 341.vga
   38987     587719aa6fe63faf95c736c7e4b8f8dd 342.vga
-  41869     fdac14a8182ef3775635ea4a6c733726 342.vga_fr
+  41869     fdac14a8182ef3775635ea4a6c733726 342.vga?fr
   372       f143aa7b4a850d9f93a99b383f660840 351.vga
   10227     ec19d66340e13195086a3f2ca13fba41 352.vga
   182       be02f9e8f859dcb3811387fddad18be8 361.vga
@@ -523,7 +498,7 @@ size_and_md5: |
   58702     d6857c5e331dc8cd2669d93ffa3b073e 652.vga
   1394      f1bbaf153445a22f99765470c70f2ec9 661.vga
   24056     c03ffedc06af262829b0d511820cb74d 662.vga
-  24262     64e7e01d285978dd8b02c041e09d4e1e 662.vga_fr
+  24262     64e7e01d285978dd8b02c041e09d4e1e 662.vga?fr
   280       6a951bcd473dbc58e273679621ce0e7f 671.vga
   40073     a968be07a8673161b92a97ed29a9c4a1 672.vga
   310       b7c6ebf0661e3abaa2fc81dbdee65603 681.vga
