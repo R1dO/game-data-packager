@@ -36,19 +36,15 @@ packages:
 files:
   noah3d.wad:
     alternatives:
-    - noah3d.wad_steam
-    - noah3d.wad_1.3
-  noah3d.wad_steam:
-    install_as: noah3d.wad
-  noah3d.wad_1.3:
-    install_as: noah3d.wad
+    - noah3d.wad?steam
+    - noah3d.wad?1.3
 
   noah3d-1.3_x86.zip:
     download: https://bitbucket.org/Blzut3/super-3d-noahs-ark/downloads/noah3d-1.3_x86.zip
     unpack:
       format: zip
     provides:
-    - noah3d.wad_1.3
+    - noah3d.wad?1.3
 
   noah3d-1.0_msdos.7z:
     unpack:
@@ -79,7 +75,7 @@ files:
     - vgagraph.n3d
     - vgahead.n3d
     - vswap.n3d
-    - noah3d.wad_steam
+    - noah3d.wad?steam
     - noah3d.png
 
   noah3d-1.3.2_amd64.deb:
@@ -94,7 +90,7 @@ files:
     - vgagraph.n3d
     - vgahead.n3d
     - vswap.n3d
-    - noah3d.wad_steam
+    - noah3d.wad?steam
     - noah3d.png
 
   noah3d-1.3.2_32bit.msi:
@@ -110,7 +106,7 @@ files:
     - vgagraph.n3d
     - vgahead.n3d
     - vswap.n3d
-    - noah3d.wad_steam
+    - noah3d.wad?steam
 
   noah3d-1.3.2_64bit.msi:
     unpack:
@@ -125,7 +121,7 @@ files:
     - vgagraph.n3d
     - vgahead.n3d
     - vswap.n3d
-    - noah3d.wad_steam
+    - noah3d.wad?steam
 
 size_and_md5: |
   576       9c7e08401faf9c7d64e7ee7bceb6c9b8 audiohed.n3d
@@ -138,8 +134,8 @@ size_and_md5: |
   1048708   8c61a9b3bb38a598990ccb743d2679fa vswap.n3d
 
   # patch that provides enhanced "Read This!", etc...
-  14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad_steam
-  128647    f8fef8c1bb84ee8700e25858a41c7156 noah3d.wad_1.3
+  14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad?steam
+  128647    f8fef8c1bb84ee8700e25858a41c7156 noah3d.wad?1.3
   708058    d0a1bf332abc987ea561c7e748c9ca32 noah3d-1.3_x86.zip
 
   617878    0af0389f94d64789738e5571e97c91eb noah3d-1.0_msdos.7z
