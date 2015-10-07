@@ -5,6 +5,8 @@ franchise: Wolfenstein
 copyright: © 1992 id Software
 engine: wolf4sdl
 genre: First-person shooter
+wikibase: http://wolfenstein.wikia.com/wiki/
+wiki: Spear_of_Destiny
 
 steam:
   id: 9000
@@ -77,6 +79,7 @@ packages:
   spear-of-destiny-mission2-data:
     expansion_for: spear-of-destiny-data
     longname: "Spear of Destiny - Mission 2: Return to Danger"
+    wiki: Return_to_Danger
     install_to: usr/share/games/wolf3d
     install:
     - gamemaps.sd2
@@ -86,6 +89,7 @@ packages:
   spear-of-destiny-mission3-data:
     expansion_for: spear-of-destiny-data
     longname: "Spear of Destiny - Mission 3: Ultimate Challenge"
+    wiki: Ultimate_Challenge
     install_to: usr/share/games/wolf3d
     install:
     - gamemaps.sd3
