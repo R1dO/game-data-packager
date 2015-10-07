@@ -12,7 +12,7 @@ _game_data_packager()
     if [ "${cur:0:1}" == "-" ]
     then
       local longopts
-      longopts='--compress --destination --help --install --no-compress --no-download --no-search --package --save-downloads'
+      longopts='--compress --destination --help --install --no-compress --no-download --no-search --package --save-downloads --install-method --gain-root-command'
       COMPREPLY=( $( compgen -W "$longopts" -- $cur ) )
     elif [ "$prev" == '--package' ]
     then
@@ -31,7 +31,7 @@ _game_data_packager()
     then
       local supported
       supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.json 2>/dev/null |cut -d'.' -f1)
-      COMPREPLY=( $( compgen -W "make-template $supported" -- $cur ) )
+      COMPREPLY=( $( compgen -W "make-template gog steam $supported" -- $cur ) )
     else
       COMPREPLY=()
     fi
