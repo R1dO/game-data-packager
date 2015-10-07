@@ -1,5 +1,6 @@
 ---
 longname: "EcoQuest 1 - The Search for Cetus"
+franchise: EcoQuest
 copyright: © 1991 Sierra Entertainment
 plugin: scummvm_common
 wiki: EcoQuest
@@ -42,6 +43,7 @@ packages:
     - version
 
   ecoquest1-fr-data:
+    longname: 'EcoQuest 1 - Le Secret de la cité engloutie'
     debian:
       provides: ecoquest1-data
     langs: [fr,en]
