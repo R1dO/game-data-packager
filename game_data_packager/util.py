@@ -204,7 +204,7 @@ def install_packages(debs, method, gain_root='su'):
     if not method:
         apt_ver = subprocess.check_output(['dpkg-query', '--show',
                     '--showformat', '${Version}', 'apt'], universal_newlines=True)
-        if Version(apt_ver.strip()) >= Version('1.1'):
+        if Version(apt_ver.strip()) >= Version('1.1~0'):
             method = 'apt'
         else:
             method = 'dpkg'
