@@ -5,7 +5,7 @@ copyright: © 2001 id Software, Inc. and Activision Publishing, Inc.
 engine: rtcw
 genre: First-person shooter
 try_repack_from: [/usr/local/games/wolfenstein]
-missing_langs: [de,es,it]
+missing_langs: [es,it]
 
 # Like Jedi Academy, there isn't much point in compressing this .deb.
 compress_deb: false
@@ -34,6 +34,7 @@ packages:
       game: return_to_castle_wolfenstein_game
     # GDP version will be suffixed to this, e.g. : 1.42b+39
     version: 1.42b
+    install_to: usr/share/games/rtcw
     install:
     - main/autoexec.cfg
     - main/mp_bin.pk3
@@ -51,8 +52,8 @@ packages:
     - main/mp_pakmaps5.pk3
     - main/mp_pakmaps6.pk3
     - main/pak0.pk3
-    - main/scripts/translation.cfg_141_unix
-    - main/sp_pak1.pk3_en
+    - main/scripts/translation.cfg?141_unix
+    - main/sp_pak1.pk3?en
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
     - main/sp_pak4.pk3
@@ -66,7 +67,55 @@ packages:
     - main/autoexec.cfg
     - main/rotate.cfg
     license:
-    - license_en.txt
+    - license.txt?en
+
+  rtcw-de-data:
+    lang: de
+    debian:
+      provides: rtcw-data
+      conflicts: rtcw-data
+    gog:
+      url: return_to_castle_wolfenstein
+      game: return_to_castle_wolfenstein_game
+    version: 1.42b
+    symlinks:
+      usr/lib/rtcw/main/sp_pakG.pk3:
+        usr/share/games/rtcw/main/sp_pakG.pk3
+    install_to: usr/share/games/rtcw
+    install:
+    - main/autoexec.cfg
+    - main/mp_bin.pk3
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/pak0.pk3
+    - main/scripts/translation.cfg?141_unix
+    - main/sp_pak1.pk3?en
+    - main/sp_pak2.pk3
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    - main/sp_pakG.pk3
+    # From iortcw
+    - main/hiquality.cfg
+    - main/mp_bin0.pk3
+    - main/mp_rend2_shaders0.pk3
+    - main/sp_pak4.pk3
+    - main/sp_rend2_shaders0.pk3
+    optional:
+    - main/autoexec.cfg
+    - main/rotate.cfg
+    license:
+    - license.txt?en
 
   rtcw-fr-data:
     lang: fr
@@ -74,6 +123,7 @@ packages:
       provides: rtcw-data
       conflicts: rtcw-data
     version: 1.42b
+    install_to: usr/share/games/rtcw
     install:
     - main/mp_bin.pk3
     - main/mp_pak0.pk3
@@ -90,8 +140,8 @@ packages:
     - main/mp_pakmaps5.pk3
     - main/mp_pakmaps6.pk3
     - main/pak0.pk3
-    - main/scripts/translation.cfg_141_unix
-    - main/sp_pak1.pk3_fr
+    - main/scripts/translation.cfg?141_unix
+    - main/sp_pak1.pk3?fr
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
     - main/sp_pak4.pk3
@@ -105,15 +155,9 @@ packages:
     - main/autoexec.cfg
     - main/rotate.cfg
     license:
-    - license_fr.txt
+    - license.txt?fr
 
 files:
-  main/sp_pak1.pk3_en:
-    install_as: main/sp_pak1.pk3
-
-  main/sp_pak1.pk3_fr:
-    install_as: main/sp_pak1.pk3
-
   iortcw-1.42b-linux-x86.zip:
     download: https://docs.google.com/uc?export=download&id=0ByCRmO4G6HOoRWNjaS04VTlMbWc
     provides:
@@ -129,6 +173,9 @@ files:
     download:
       rtcw-mirrors:
         path: .
+    unpack:
+      format: tar.gz
+      skip: 6135
     provides:
     - main/mp_bin.pk3
     - main/mp_pak3.pk3
@@ -141,12 +188,9 @@ files:
     - main/mp_pakmaps4.pk3
     - main/mp_pakmaps5.pk3
     - main/mp_pakmaps6.pk3
-    - main/scripts/translation.cfg_141_unix
+    - main/scripts/translation.cfg?141_unix
     - main/sp_pak3.pk3
     - main/sp_pak4.pk3
-    unpack:
-      format: tar.gz
-      skip: 6135
 
   wolf-linux-1.41b.x86.run:
     provides:
@@ -163,42 +207,24 @@ files:
     - main/mp_pakmaps4.pk3
     - main/mp_pakmaps5.pk3
     - main/mp_pakmaps6.pk3
-    - main/scripts/translation.cfg_141_unix
+    - main/scripts/translation.cfg?141_unix
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
     unpack:
       format: tar.gz
       skip: 8796
 
-  main/scripts/translation.cfg_141_unix:
-    install_as: main/scripts/translation.cfg
-    sha256: 301670fbd41eb6797b02cc5ba8ae5e221eeaef5de3280e6e2db390c7a29ddc8f
-    sha1: 7994040e61a234e284c730287ea6d098878cbfea
-
-  main/scripts/translation.cfg_141_windows:
-    look_for:
-    - main/scripts/translation.cfg
-    distinctive_name: false
+  main/scripts/translation.cfg?141_windows:
     sha1: a823b49cb474b507d7461e9500ffa769d2b87a53
     sha256: 12653cad709eee7d1015060723b4f7da295c9ea4d570e295237dabec2bc3a752
     provides:
-    - main/scripts/translation.cfg_141_unix
+    - main/scripts/translation.cfg?141_unix
     unpack:
       format: dos2unix
-
-  license_fr.txt:
-    look_for: [License.txt]
-
-  license_en.txt:
-    look_for: [License.txt]
 
   setup_return_to_castle_wolfenstein_2.0.0.2.exe:
     unpack:
       format: innoextract
-      unpack:
-      - $provides
-      - main/sp_pak1.pk3
-      - main/scripts/translation.cfg
     provides:
     - main/autoexec.cfg
     - main/mp_bin.pk3
@@ -216,11 +242,39 @@ files:
     - main/mp_pakmaps5.pk3
     - main/mp_pakmaps6.pk3
     - main/pak0.pk3
-    - main/scripts/translation.cfg_141_windows
-    - main/sp_pak1.pk3_en
+    - main/scripts/translation.cfg?141_windows
+    - main/sp_pak1.pk3?en
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
     - main/sp_pak4.pk3
+    - main/autoexec.cfg
+
+  setup_return_to_castle_wolfenstein_german_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - main/autoexec.cfg
+    - main/mp_bin.pk3
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/pak0.pk3
+    - main/scripts/translation.cfg?141_windows
+    - main/sp_pak1.pk3?en
+    - main/sp_pak2.pk3
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    - main/sp_pakG.pk3
     - main/autoexec.cfg
 
 size_and_md5: |
@@ -241,15 +295,17 @@ size_and_md5: |
   10080181  397e0b48673a1a8e0ec25eb0f3ccae9d main/mp_pakmaps6.pk3
   315823656 ce92b11df889cb0a045762bb5fd7cde5 main/pak0.pk3
   9559      f97ff15e4248a72567aaddfa15443d1e main/rotate.cfg
-  293887431 a0d3fe956f85f40c8efd6babe0d09832 main/sp_pak1.pk3_en
-  256811934 f19c389fe6310c24e664bc0fc84fdd95 main/sp_pak1.pk3_fr
+  293887431 a0d3fe956f85f40c8efd6babe0d09832 main/sp_pak1.pk3?en
+  256811934 f19c389fe6310c24e664bc0fc84fdd95 main/sp_pak1.pk3?fr
   11026123  330b272d5261fe19fcf3c3fbc943c7f3 main/sp_pak2.pk3
   152544    cf25d6731ed29c80303febbb177aa585 main/sp_pak3.pk3
   15532040  4223cc6588594ec0ceee186f0e73a6e9 main/sp_pak4.pk3
-  159375    f7b2003ef7499f2a6e750c2925c870ad main/scripts/translation.cfg_141_unix
-  164376    ff148e1367d0459d7855d37e7b8d80bc main/scripts/translation.cfg_141_windows
+  148374118 98a612b5861e030d9d1f0c3adb1df940 main/sp_pakG.pk3
+  159375    f7b2003ef7499f2a6e750c2925c870ad main/scripts/translation.cfg?141_unix
+  164376    ff148e1367d0459d7855d37e7b8d80bc main/scripts/translation.cfg?141_windows
 
   798673040 f0734b69c3ca194488a89f0afcd3c513 setup_return_to_castle_wolfenstein_2.0.0.2.exe
+  949112496 6f5d2499916070557be426a86821dd52 setup_return_to_castle_wolfenstein_german_2.0.0.2.exe
 
   73536309  87c3ebf106b107b60b472863aeec20c4 wolf-linux-1.4-full.x86.run
   73940068  2aa37968aff19d665ed6c001773b2de3 wolf-linux-1.41b.x86.run
@@ -258,8 +314,8 @@ size_and_md5: |
   635388    a0cb6cc6874e33399983e6831dd78b64 main/mp_bin0.pk3
   3257      5f43f510586392fb99241e94ec7729b0 main/mp_rend2_shaders0.pk3
   22225     51f3ff74eeb6d7c8a88a8ed660857bcd main/sp_rend2_shaders0.pk3
-  18725     36267835e02f4456ac8f0c120ade5895 license_fr.txt
-  15483     76055f8014127627fd97b93f5ecd91a5 license_en.txt
+  18725     36267835e02f4456ac8f0c120ade5895 license.txt?fr
+  15483     76055f8014127627fd97b93f5ecd91a5 license.txt?en
 
 sha1sums: |
   e0422b4730daf306b428d419883d9147c6e2a946  main/autoexec.cfg
@@ -279,13 +335,16 @@ sha1sums: |
   abf1ff047a1cc6f92c9d24164991e5a49c98d0f8  main/mp_pakmaps6.pk3
   917685b93cd3430ec9aa41dcbabb7063c6b2a785  main/pak0.pk3
   6a700396ae789cbf7ba592d0e1ce7de6fe6616a9  main/rotate.cfg
-  4fe77f53b7effd54a1576212983b9bb9b36e50ed  main/sp_pak1.pk3_en
-  0867395305426cc9374aa1d6e49b091f9b281cce  main/sp_pak1.pk3_fr
+  4fe77f53b7effd54a1576212983b9bb9b36e50ed  main/sp_pak1.pk3?en
+  0867395305426cc9374aa1d6e49b091f9b281cce  main/sp_pak1.pk3?fr
   feee8ecadb551a769dfb1ee97eff4c7ed7f93495  main/sp_pak2.pk3
   94539eded69eb99a86d752808c5e029d5915fde7  main/sp_pak3.pk3
   76b1074a350616bd8942005c4eabda06199e81f2  main/sp_pak4.pk3
+  61f8f83f25001d3ee5c1c367c5d7cf7d6c118c32  main/sp_pakG.pk3
+  7994040e61a234e284c730287ea6d098878cbfea  main/scripts/translation.cfg?141_unix
 
   f5d1307bd41917bd6f9ee3830240a535018368c0  setup_return_to_castle_wolfenstein_2.0.0.2.exe
+  430c82414d1cc08d659ccfc5cd693ee98fc17e72  setup_return_to_castle_wolfenstein_german_2.0.0.2.exe
 
   576e749167ae310a65443e4215401030d6e87685  wolf-linux-1.4-full.x86.run
   176da1567107eeec3ec3dc14a6b389c47e1303b5  wolf-linux-1.41b.x86.run
@@ -294,8 +353,8 @@ sha1sums: |
   3bc3710b4adbc305feba5f142ec756a83618a545  main/mp_bin0.pk3
   ce9423820422146a052fd7b72cc2064682a40f83  main/mp_rend2_shaders0.pk3
   25416e72326367b75b228b5d96c6bd2af6fa7dd8  main/sp_rend2_shaders0.pk3
-  9706a1b715afecb0a4197815a2eab40ebac075ee  license_fr.txt
-  7dcb33dea7eb63b8669f950cb48804d437adc4ed  license_en.txt
+  9706a1b715afecb0a4197815a2eab40ebac075ee  license.txt?fr
+  7dcb33dea7eb63b8669f950cb48804d437adc4ed  license.txt?en
 
 sha256sums: |
   ca3ca09d79a755262cb8c9766d457a2c72ab0258e8f8cec469fddd686ea488ef  main/autoexec.cfg
@@ -315,11 +374,12 @@ sha256sums: |
   fcdb3754ca4e9f60b3086c8461b26160dd8de7f5e94c04100a2eb6f9519abca2  main/mp_pakmaps6.pk3
   1dfcfc3187ba09fe32cd8a7921a09cd15dd789816186c89b11e5e0d954c55e6c  main/pak0.pk3
   b0d5fa3f029167d73eddabec562938e6ee8d97b2a7f5215dde66525a574b40d5  main/rotate.cfg
-  66785d612f88a19c3bb5fd24f84d89b240375a28550a79039dfb6afae865ec9a  main/sp_pak1.pk3_en
-  d8825aa5b7fb0b03f6956da4e6bf822db5dd50153a8e2f87dfedefb434b78e54  main/sp_pak1.pk3_fr
+  66785d612f88a19c3bb5fd24f84d89b240375a28550a79039dfb6afae865ec9a  main/sp_pak1.pk3?en
+  d8825aa5b7fb0b03f6956da4e6bf822db5dd50153a8e2f87dfedefb434b78e54  main/sp_pak1.pk3?fr
   eca64ea0fda6edd653865e2eb768f152d38abc8b89941aa954ed74fa36928796  main/sp_pak2.pk3
   936437413956f88b9e5d548ccab9b51b8c8b9754f8f8e13ee7b910813a24d0f9  main/sp_pak3.pk3
   5532801005eaf2d74fe9098dc638abdb8284225c293cee3573ffa9b6c2edd8fc  main/sp_pak4.pk3
+  301670fbd41eb6797b02cc5ba8ae5e221eeaef5de3280e6e2db390c7a29ddc8f  main/scripts/translation.cfg?141_unix
   de2b0728ef9286eefb69a65c0badb260319d8bd806ecd3903e915b0580eb2f12  wolf-linux-1.4-full.x86.run
   2921425c1b429147c1bc6f0c6a8664bec502ae86a2d6bccfaa1162f75dce89f3  wolf-linux-1.41b.x86.run
   f38f83233a0bf6e34123ac78f853f42cc5ecfe89fd4b8be63d38e5b87bfc6f1a  iortcw-1.42b-linux-x86.zip
@@ -327,7 +387,7 @@ sha256sums: |
   135722ca744259ccba8864173bf70439897065e001e127bbb57279343fd74f50  main/mp_bin0.pk3
   b4719cd0866d4286f7022001e35b5b213a565b28e9481b9564e14a10928b3ec9  main/mp_rend2_shaders0.pk3
   29cb03e27a04393f91a19614fc215e5299bc7b047217385beedb831a9bb9513c  main/sp_rend2_shaders0.pk3
-  ab8b3aa11c285a763f239c4a116cf0fbe5039067c3e9b73e01998e58c7712356  license_fr.txt
-  c4bd06fba3e95625b85a3a4b5f3ec11be399a7f040ae2234048937d44436a729  license_en.txt
+  ab8b3aa11c285a763f239c4a116cf0fbe5039067c3e9b73e01998e58c7712356  license.txt?fr
+  c4bd06fba3e95625b85a3a4b5f3ec11be399a7f040ae2234048937d44436a729  license.txt?en
 ...
 # vim:set sw=2 sts=2 et:
