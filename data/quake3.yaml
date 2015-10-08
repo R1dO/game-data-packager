@@ -36,6 +36,9 @@ help_text: |
 packages:
   quake3-data:
     longname: Quake III Arena
+    description: |
+       To play Quake III Arena using this data, install the quake3 package, or to
+       run a dedicated server, install the quake3-server package.
     steam:
       id: 2200
       path: "common/Quake 3 Arena"
@@ -131,6 +134,12 @@ packages:
 
   quake3-team-arena-data:
     longname: Quake III Team Arena
+    description: |
+      To play Team Arena using this data, install the quake3 package
+      and select it from the Mods menu.
+      .
+      To run a dedicated server, install the quake3-server package
+      and run the server with the option "+set fs_game missionpack".
     wiki: Quake_3_Team_Arena
     copyright: © 2000 id Software
     steam:
