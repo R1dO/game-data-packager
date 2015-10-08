@@ -8,6 +8,8 @@ genre: First-person shooter
 wikibase: http://wolfenstein.wikia.com/wiki/
 wiki: Spear_of_Destiny
 
+# http://legacy.3drealms.com/tech/wolf3d.html
+
 steam:
   id: 9000
   path: common/Spear of Destiny
@@ -32,7 +34,12 @@ help_text: |
 
 packages:
   spear-of-destiny-demo-data:
-    longname: "Spear of Destiny (shareware)"
+    longname: "Spear of Destiny (demo)"
+    description: |
+      Spear of Destiny is the sequel of Wolfenstein 3D.
+
+      This demo provides the 2 first levels of the first mission pack
+      out of 21 in total.
     demo_for: spear-of-destiny-data
     component: non-free
     install_to: usr/share/games/wolf3d
@@ -50,6 +57,9 @@ packages:
 
   spear-of-destiny-data:
     longname: "Spear of Destiny"
+    description: |
+      This package provides the assets shared by the 3 mission packs
+      of Spear of Destiny, the sequel of Wolfenstein 3D, but has no use alone.
     debian:
       depends: spear-of-destiny-mission1-data | spear-of-destiny-mission2-data | spear-of-destiny-mission3-data
     install_to: usr/share/games/wolf3d
@@ -63,6 +73,10 @@ packages:
   spear-of-destiny-mission1-data:
     expansion_for: spear-of-destiny-data
     longname: "Spear of Destiny (registered version, mission 1)"
+    description: |
+      Spear of Destiny is the sequel of Wolfenstein 3D.
+
+      Each mission consists of 21 levels.
     install_to: usr/share/games/wolf3d
     install:
     - gamemaps.sd1
@@ -79,6 +93,7 @@ packages:
   spear-of-destiny-mission2-data:
     expansion_for: spear-of-destiny-data
     longname: "Spear of Destiny - Mission 2: Return to Danger"
+    description: "Each mission pack provides 21 levels."
     wiki: Return_to_Danger
     install_to: usr/share/games/wolf3d
     install:
@@ -89,6 +104,7 @@ packages:
   spear-of-destiny-mission3-data:
     expansion_for: spear-of-destiny-data
     longname: "Spear of Destiny - Mission 3: Ultimate Challenge"
+    description: "Each mission pack provides 21 levels."
     wiki: Ultimate_Challenge
     install_to: usr/share/games/wolf3d
     install:

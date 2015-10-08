@@ -1688,6 +1688,7 @@ class PackagingTask(object):
                 for line in package.description.splitlines():
                     line = line.rstrip() or '.'
                     long_desc += (' ' + line + '\n')
+                long_desc += ' .\n'
 
             if self.game.genre:
                 long_desc += '  Genre: ' + self.game.genre + '\n'
