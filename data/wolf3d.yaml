@@ -9,6 +9,10 @@ wiki: Wolfenstein_3D
 
 packages:
   wolf3d-demo-data:
+    description: |
+      The demo only provides the first episode
+      'Escape from Castle Wolfenstein'
+      out of the six episodes of the full game.
     demo_for:
     - wolf3d-v12-data
     - wolf3d-v14-data
@@ -31,6 +35,18 @@ packages:
 
   wolf3d-v12-data:
     longname: Wolfenstein 3D v1.2
+    description: |
+      The bugs fixed in v1.4 are also fixed when playing v1.2 with wolf4sdl.
+
+      This version include the original levels:
+       * Episode 1: Escape from Castle Wolfenstein
+       * Episode 2: Operation: Eisenfaust
+       * Episode 3: Die, Fuhrer, Die!
+
+      as well as the 'Nocturnal Missions':
+       * Episode 4: Dark Secret
+       * Episode 5: Trail of the Madman
+       * Episode 6: Confrontation
     better_version: wolf3d-v14-data
     debian:
       provides: wolf3d-data
@@ -49,6 +65,16 @@ packages:
 
   wolf3d-v14-data:
     longname: Wolfenstein 3D v1.4
+    description: |
+      This version include the original levels:
+       * Episode 1: Escape from Castle Wolfenstein
+       * Episode 2: Operation: Eisenfaust
+       * Episode 3: Die, Fuhrer, Die!
+
+      as well as the 'Nocturnal Missions':
+       * Episode 4: Dark Secret
+       * Episode 5: Trail of the Madman
+       * Episode 6: Confrontation
     debian:
       provides: wolf3d-data
       #conflicts: wolf3d-data
