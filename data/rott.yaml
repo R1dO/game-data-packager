@@ -20,7 +20,8 @@ packages:
     copyright: © 1994 Apogee Software
     # this shareware data are considered a as full game because
     # it includes the HUNT Begin levels not present in the commercial game
-
+    description: |
+      Use the 'rott-shareware' command to play this game.
     install:
     - DEMO1_3.DMO
     - DEMO2_3.DMO
@@ -35,6 +36,9 @@ packages:
 
   rott-registered-data:
     longname: "Rise of the Triad: Dark War"
+    description: |
+      This doesn't include the shareware episode "The HUNT Begins".
+      Use the 'rott-commercial' command to play this game.
     debian:
       depends: rott-data
     url_misc: https://3drealms.com/catalog/rise-triad-dark-war_44/
@@ -51,6 +55,8 @@ packages:
   rott-extreme-data:
     expansion_for: rott-registered-data
     longname: "Extreme Rise of the Triad"
+    description: |
+      Use the 'rott-commercial -filertl extreme.rtl' command to play this game.
     install_to: usr/share/games/rott
     install:
     - EXTREME.RTL

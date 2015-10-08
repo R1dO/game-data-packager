@@ -132,6 +132,9 @@ class GameDataPackage(object):
         # 'data' / 'PWAD' / 'IWAD'
         self.data_type = 'data'
 
+        # extra blurb of text added to .deb long description
+        self.description = None
+
         # This optional value will overide the game global copyright
         self.copyright = None
 
@@ -541,7 +544,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'install_to_docdir', 'install_contents_of', 'debian',
+                'install_to_docdir', 'install_contents_of', 'debian', 'description',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
                 'copyright', 'engine', 'lang', 'component', 'section',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki'):

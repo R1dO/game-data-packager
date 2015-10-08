@@ -1684,6 +1684,10 @@ class PackagingTask(object):
                 long_desc += ' It contains free game data and may be redistributed.\n'
                 long_desc += ' .\n'
 
+            if package.description:
+                for line in package.description.splitlines():
+                    long_desc += (' ' + line.rstrip() + '\n .\n')
+
             if self.game.genre:
                 long_desc += '  Genre: ' + self.game.genre + '\n'
 
