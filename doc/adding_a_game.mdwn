@@ -127,18 +127,15 @@ section of a binary package
  * the control file
  * a copyright file, in `/usr/share/doc/package/copyright`
 
-For new games in `game-data-packager` these are normally
-`data/*.control.in` and `data/*.copyright`.
-
 `game-data-packager` will automatically build the copyright file
 using the contents of the `copyright:` tags in the yaml file;
 you only need to provide one if the default generated
 copyright file isn't suitable; see for example
 `data/descent1-demo-data.copyright`.
 
-`game-data-packager` will automatically provide the control file
-with default values if missing. It will also ensure that
-all the field required by policy are present:
+`game-data-packager` will automatically build the control file.
+It will also ensure that all the field required by policy
+are present:
 
  * `Version` field. This will automatically be filled with
    the version of gdp which generated the template package.
@@ -150,6 +147,8 @@ all the field required by policy are present:
    will be provided if this field is missing.
  * `Description`. Both the single line synopsis and the extended
    description that follows.
+   Most of the extended description is automatically edited,
+   you can provide extra information by using a `description:` tag.
  * Any required dependencies.  For game data packages, we use
    `Recommends` to recommend a corresponding engine package, where
    appropriate. To document an engine, you should add
