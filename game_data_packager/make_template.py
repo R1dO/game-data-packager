@@ -222,9 +222,11 @@ class GameData(object):
                     continue
                 elif is_dosbox(path):
                     has_dosbox = True
-                elif os.path.splitext(fn.lower())[1] in ('.exe', '.ovl', '.dll', '.bat', '.386'):
+                elif os.path.splitext(fn.lower())[1] in ('.exe', '.exe$0', '.ovl',
+                                                         '.dll', '.dll$0', '.bat', '.386'):
                     logger.warning('ignoring dos/windows binary %s' % fn)
-                elif out_name.startswith('goggame-') or out_name == 'webcache.zip':
+                elif out_name.startswith('goggame-') or out_name in ('webcache.zip',
+                                                                 'gog.ico', 'gfw_high.ico'):
                     logger.warning('ignoring GOG stuff %s' % fn)
                 elif os.path.islink(path):
                     self.package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
