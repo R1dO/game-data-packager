@@ -415,11 +415,9 @@ files:
   manual.pdf:
     install_to: $docdir
     look_for: [manual.pdf,the dig - manual.pdf]
-    install_as: manual.pdf
   refcard.pdf:
     install_to: $docdir
     look_for: [refcard.pdf,the dig - quick reference card.pdf]
-    install_as: refcard.pdf
 
   setup_the_dig_2.0.0.3.exe:
     unpack:
@@ -711,7 +709,6 @@ files:
 
   manual.pdf?es:
     install_to: $docdir
-    install_as: manual.pdf
     look_for: [manual.pdf,manual_spanish.pdf]
 
   setup_the_dig_spanish_2.0.0.3.exe:
@@ -861,7 +858,6 @@ files:
 
   manual.pdf?fr:
     install_to: $docdir
-    install_as: manual.pdf
     look_for: [manual.pdf,manual_french.pdf]
 
   setup_the_dig_french_2.0.0.3.exe:
@@ -1011,7 +1007,6 @@ files:
 
   manual.pdf?it:
     install_to: $docdir
-    install_as: manual.pdf
     look_for: [manual.pdf,manual_italian.pdf]
 
   setup_the_dig_italian_2.0.0.3.exe:
