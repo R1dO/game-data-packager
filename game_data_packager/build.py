@@ -2077,19 +2077,41 @@ class PackagingTask(object):
         if not possible:
             raise NoPackagesPossible()
 
-        ready = set()
-        lgogdownloaded = set()
+        for package in set(possible):
+            score = max(set(lang_score(l) for l in package.langs))
+            if score == 0:
+                logger.info('will not produce "%s" '
+                            'because "%s" is not in LANGUAGE selection',
+                            package.name, package.lang)
+                possible.discard(package)
+                continue
+            # keep only prefered language for this virtual package
+            virtual = package.debian.get('provides')
+            if virtual:
+                for other_p in possible:
+                    if other_p.name == package.name:
+                        continue
+                    other_virtual = other_p.debian.get('provides')
+                    if other_virtual != virtual:
+                        continue
+                    if score < lang_score(other_p.lang):
+                        logger.info('will not produce "%s" '
+                                    'because "%s" is prefered language',
+                                    package.name, other_p.lang)
+                        possible.discard(package)
+                        break
+        if not possible:
+            raise NoPackagesPossible()
 
-        for package in possible:
+        for package in set(possible):
             if (package.better_version
                 and self.game.packages[package.better_version] in possible):
                   logger.info('will not produce "%s" because better version '
                      '"%s" is also available',
                      package.name,
                      package.better_version)
+                  possible.discard(package)
                   continue
-
-            abort = False
 
             if (package.expansion_for
               and self.game.packages[package.expansion_for] not in possible
@@ -2100,7 +2122,7 @@ class PackagingTask(object):
                           'full game "%s" is neither available nor already installed;'
                           ' and we are packaging "%s" instead.',
                           package.name, package.expansion_for, fullgame.name)
-                        abort = True
+                        possible.discard(package)
                         break
                 else:
                   logger.warning('will generate "%s" expansion, but full game '
@@ -2108,47 +2130,26 @@ class PackagingTask(object):
                      package.name, package.expansion_for)
 
             if not build_demos and package.demo_for:
-                for p in possible:
+                for p in set(possible):
                     if p.type == 'full':
                         # no point in packaging a demo if we have any full
                         # version
                         logger.info('will not produce "%s" because we have '
                             'the full version "%s"', package.name, p.name)
-                        abort = True
-                        break
-            if abort:
-                continue
+                        possible.discard(package)
+        if not possible:
+            raise NoPackagesPossible()
 
+        ready = set()
+        lgogdownloaded = set()
+
+        for package in possible:
+            abort = False
             for previous in ready:
                 if previous.debian.get('conflicts') == package.name:
                     logger.error('will not produce "%s" because it '
                        'conflicts with "%s"', package.name, previous.name)
                     abort = True
-            if abort:
-                continue
-
-            # keep only prefered language for this virtual package
-            virtual = package.debian.get('provides')
-            if virtual:
-                score = max(set(lang_score(l) for l in package.langs))
-                if score == 0:
-                    logger.info('will not produce "%s" '
-                                'because %s is not in LANGUAGE selection',
-                                package.name, package.lang)
-                    continue
-                for other_p in possible:
-                    if other_p.name == package.name:
-                        continue
-                    other_virtual = other_p.debian.get('provides')
-                    if other_virtual != virtual:
-                        continue
-                    other_score = lang_score(other_p.lang)
-                    if score < other_score:
-                        logger.info('will not produce "%s" '
-                                    'because %s is prefered language',
-                                     package.name, other_p.lang)
-                        abort = True
-                        break
             if abort:
                 continue
 
