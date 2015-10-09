@@ -7,6 +7,15 @@ gameid: feeble
 gog:
   url: the_feeble_files
 
+help_text: |
+  The videos from the original English version are not yet supported;
+  the only videos supported are the one re-encoded as DXA+OGG files
+  as provided by GOG.com archive.
+
+  Please provide the output of
+  $ game-data-packager make-template <dir>/*.smk
+  to fix this.
+
 packages:
   feeble-files-en-data:
     debian:
@@ -1108,70 +1117,70 @@ packages:
     expansion_for: feeble-files-en-data
     install_to: usr/share/games/feeble-files-en
     install:
-    - agent32.ogg
-    - airlock.ogg
-    - allcreds.ogg
-    - allships.ogg
-    - anlstink.ogg
-    - badluck.ogg
-    - bentalk1.ogg
-    - bentalk2.ogg
-    - bentalk3.ogg
-    - bigfight.ogg
-    - biktomb1.ogg
-    - biktomb2.ogg
-    - blowlab.ogg
-    - br-j1.ogg
-    - breakdown.ogg
-    - bridge.ogg
-    - button1.ogg
-    - button2.ogg
-    - cardlift.ogg
-    - cargo.ogg
-    - cartomb1.ogg
-    - cartomb2.ogg
-    - charisma.ogg
-    - chute1.ogg
-    - clossmok.ogg
-    - closvent.ogg
-    - coach.ogg
-    - cola1.ogg
-    - colatalk.ogg
-    - cygnus1.ogg
-    - cygnus2.ogg
-    - cygnus3.ogg
     - agent32.dxa
+    - agent32.ogg
     - airlock.dxa
+    - airlock.ogg
     - allcreds.dxa
+    - allcreds.ogg
     - allships.dxa
+    - allships.ogg
     - anlstink.dxa
+    - anlstink.ogg
     - badluck.dxa
+    - badluck.ogg
     - bentalk1.dxa
+    - bentalk1.ogg
     - bentalk2.dxa
+    - bentalk2.ogg
     - bentalk3.dxa
+    - bentalk3.ogg
     - bigfight.dxa
+    - bigfight.ogg
     - biktomb1.dxa
+    - biktomb1.ogg
     - biktomb2.dxa
+    - biktomb2.ogg
     - blowlab.dxa
+    - blowlab.ogg
     - br-j1.dxa
+    - br-j1.ogg
     - breakdown.dxa
+    - breakdown.ogg
     - bridge.dxa
+    - bridge.ogg
     - button1.dxa
+    - button1.ogg
     - button2.dxa
+    - button2.ogg
     - cardlift.dxa
+    - cardlift.ogg
     - cargo.dxa
+    - cargo.ogg
     - cartomb1.dxa
+    - cartomb1.ogg
     - cartomb2.dxa
+    - cartomb2.ogg
     - charisma.dxa
+    - charisma.ogg
     - chute1.dxa
+    - chute1.ogg
     - clossmok.dxa
+    - clossmok.ogg
     - closvent.dxa
+    - closvent.ogg
     - coach.dxa
+    - coach.ogg
     - cola1.dxa
+    - cola1.ogg
     - colatalk.dxa
+    - colatalk.ogg
     - cygnus1.dxa
+    - cygnus1.ogg
     - cygnus2.dxa
+    - cygnus2.ogg
     - cygnus3.dxa
+    - cygnus3.ogg
     - d5rklrs.dxa
     - d5rklrs.ogg
     - dia-j3.dxa
