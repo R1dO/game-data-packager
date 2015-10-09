@@ -4244,13 +4244,14 @@ packages:
     - wurbs2.smk
 
 files:
+  # I have no idea which one is better
   0091.vga:
     alternatives:
-    - 0091.vga_fast
-    - 0091.vga_slow
-  0091.vga_fast:
+    - 0091.vga?fast
+    - 0091.vga?slow
+  0091.vga?fast:
     look_for: [0091.vga,0091.fst]
-  0091.vga_slow:
+  0091.vga?slow:
     look_for: [0091.vga,0091.slw]
 
   voices1.wav:
@@ -4328,7 +4329,7 @@ files:
     - 0072.vga
     - 0081.vga
     - 0082.vga
-    - 0091.vga
+    - 0091.vga?fast
     - 0092.vga
     - 0111.vga
     - 0112.vga
@@ -5893,7 +5894,7 @@ files:
     - 0072.vga
     - 0081.vga
     - 0082.vga
-    - 0091.vga
+    - 0091.vga?fast
     - 0092.vga?de
     - 0111.vga
     - 0112.vga
@@ -7212,7 +7213,7 @@ files:
     - 0072.vga
     - 0081.vga
     - 0082.vga
-    - 0091.vga
+    - 0091.vga?fast
     - 0092.vga
     - 0111.vga
     - 0112.vga
@@ -8531,8 +8532,8 @@ size_and_md5: |
   208960    c9984357a5534e05b9d3f7da36856730 0072.vga
   35        a884cd4b8597f40e9557ef4a7ca80031 0081.vga
   14464     e465c315cbe92ba02821c8e9ff927777 0082.vga
-  3744      a1af4636fe0d3286d17d0aa6ca89fda4 0091.vga_fast
-  3744      1f8c398703d331547b1b0c33de176eed 0091.vga_slow
+  3744      a1af4636fe0d3286d17d0aa6ca89fda4 0091.vga?fast
+  3744      1f8c398703d331547b1b0c33de176eed 0091.vga?slow
   316360    34f3dd6e1b6978a0b05ef8b0c33557f4 0092.vga
   6867      b089d0826fcd31f4cee07821c421f8b8 0111.vga
   296600    81a2356eaa10b64e96c1df514c613ad7 0112.vga
@@ -10621,8 +10622,8 @@ sha1sums: |
   8328aeb84a169e32a80b3162b8402f00e3e164aa  0072.vga
   0f7aa0897f62d355f3d446cad5d469c22a4aa034  0081.vga
   361a494e5a411dbde667b83fb5c18be386a97f42  0082.vga
-  0aea5213240db8667392c16393b8d492f38ff4a6  0091.vga_fast
-  d23679b843ec07fe5adff908ef1fd856afa45bb4  0091.vga_slow
+  0aea5213240db8667392c16393b8d492f38ff4a6  0091.vga?fast
+  d23679b843ec07fe5adff908ef1fd856afa45bb4  0091.vga?slow
   f2c7809c322c4be3623d6dc2dae349ec7c8ff40b  0092.vga
   be06626856462f2cc8e5381d131436a6ce6f8df1  0111.vga
   2d92532f20b94e61c7d1bef076d393a7eb1519f5  0112.vga
