@@ -573,6 +573,7 @@ class PackagingTask(object):
                 args = ['-I', '/app'] if Version(version.split('-')[0]) >= Version('1.5') else []
                 if not self.verbose:
                     args.append('--silent')
+                    args.append('--progress')
                     logger.info('extracting %s (%d bytes) with InnoExtract...'
                                     % (basename, size))
                 tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1112,6 +1113,7 @@ class PackagingTask(object):
                                    os.path.abspath(found_name)]
                         if not self.verbose:
                             cmdline.append('--silent')
+                            cmdline.append('--progress')
                         version = subprocess.check_output(['innoextract', '-v', '-s'],
                                                           universal_newlines=True)
                         if Version(version.split('-')[0]) >= Version('1.5'):
