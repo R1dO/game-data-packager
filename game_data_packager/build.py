@@ -2204,7 +2204,8 @@ class PackagingTask(object):
                                 pass
                 except subprocess.CalledProcessError:
                     pass
-            elif result is FillResult.DOWNLOAD_NEEDED and not download:
+            elif (result is FillResult.DOWNLOAD_NEEDED or
+                  package.name in possible_with_lgogdownloader) and not download:
                 logger.warning('As requested, not downloading necessary ' +
                         'files for %s', package.name)
             else:
