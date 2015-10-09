@@ -45,6 +45,9 @@ MD5_SAFE_ENOUGH = 5000
 
 def guess_lang(string):
     string = string.lower()
+    path = os.path.basename(string.rstrip('/'))
+    if path in ('de', 'en', 'fr', 'it', 'ja', 'pl', 'ru'):
+        return path
     for short, long in [('de', 'german'),
                         ('es', 'spanish'),
                         ('fr', 'french'),
@@ -228,13 +231,27 @@ class GameData(object):
                 elif os.path.isfile(path):
                     size = os.path.getsize(path)
                     hf = HashedFile.from_file(name, open(path, 'rb'))
-                    if out_name in self.size:
-                        if (size == self.size[out_name] and hf.md5 == self.md5[out_name]):
-                            pass
-                        elif lang:
-                            out_name += ('?' + lang)
-                        else:
-                            out_name += ('?' + hf.md5[1:6])
+                    # avoid that look_for: overlaps in cases where
+                    # that leeds to looping during package build.
+                    #
+                    # e.g.:
+                    #   md5 English = $A
+                    #   md5 German = $B
+                    #   md5 French = $B
+                    for existing in self.size.keys():
+                        if (    size == self.size[existing]
+                            and hf.md5 == self.md5[existing]
+                            and existing.startswith(out_name)):
+                            out_name = existing
+                            break
+                    else:
+                        if out_name in self.size:
+                            if (size == self.size[out_name] and hf.md5 == self.md5[out_name]):
+                                pass
+                            elif lang:
+                                out_name += ('?' + lang)
+                            else:
+                                out_name += ('?' + hf.md5[1:6])
 
                     if is_license(fn):
                         out_name = os.path.basename(out_name)
