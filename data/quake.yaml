@@ -231,10 +231,6 @@ files:
     - rogue/pak0.pak?mp12_cd
     - rogue/pak0.pak?mp2_cd
     - rogue/pak0.pak?steam
-  rogue/pak0.pak?steam:
-    size: 37875279
-  rogue/pak0.pak?mp12_cd:
-    size: 37875279
 
   quake106.zip:
     download:
@@ -383,9 +379,6 @@ md5sums: |
   # "MD5 sum for glQuake-compatible version (see
   # http://speeddemosarchive.com/quake/qdq/movies/sds.html for more info)"
   f05b7452ae725e060fb3d14f7731fb00  hipnotic/pak0.pak?qdq_glquake_compat
-  c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak?mp12_cd
-  f8898a483b131de21581656c94f3c1a4  rogue/pak0.pak?mp2_cd
-  f71428763229bdb373f00a547296efe3  rogue/pak0.pak?steam
   959e4bd69d817ee0cbea6ddbf4f3af37  resource.1?106_cd
   752f49131bb3ba832346e873c1bcfdc6  q101_int.1
   9ed67b39020575771e29645d977c9216  q101_int.2
@@ -418,6 +411,11 @@ size_and_md5: |
   34257856   d76b3e5678f0b64ac74ce5e340e6a685 id1/pak1.pak
   25462      0575bbd0df753f6e44b7a0f67ffc1413 comexp.txt?101_cd
   9308       0f77362a55b35e623d9f4710ed86cda7 licinfo.txt?gog
+
+  37875279   c38a4e04219c317cd1b02f386bdfe11f rogue/pak0.pak?mp12_cd
+  37875279   f8898a483b131de21581656c94f3c1a4 rogue/pak0.pak?mp2_cd
+  37875279   f71428763229bdb373f00a547296efe3 rogue/pak0.pak?steam
+
   717202     785290e6e42c94934c3044851e380b64 quake manual.pdf?gog
   727612     0eb0ce3c6244dce91e68eec572cbd67e quake manual.pdf?steam
   1233689072 c8acba92fca95b8ba67111fa81730141 setup_quake_the_offering_2.0.0.6.exe
