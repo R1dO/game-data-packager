@@ -11,10 +11,10 @@ packages:
     debian:
       conflicts: [descent1-full-data, descent1-data]
     install:
-    - descent.hog_demo
-    - descent.pig_demo
+    - descent.hog?demo
+    - descent.pig?demo
     optional: 
-    - readme.txt_demo
+    - readme.txt?demo
     - refcard.txt
     - d1xr-hires.dxa
     install_to: usr/share/games/d1x-rebirth/
@@ -51,10 +51,9 @@ packages:
     install_to: usr/share/games/d1x-rebirth/
 
 files:
-  readme.txt_demo:
+  readme.txt?demo:
     install_to: $docdir
     distinctive_name: false
-    install_as: readme.txt
   refcard.txt:
     install_to: $docdir  
 
@@ -63,9 +62,9 @@ files:
     unpack:
       format: tar.gz
     provides:
-    - descent.hog_demo
-    - descent.pig_demo
-    - readme.txt_demo
+    - descent.hog?demo
+    - descent.pig?demo
+    - readme.txt?demo
     - refcard.txt
 
   d1xr-hires.dxa:
@@ -73,19 +72,11 @@ files:
     provides:
     - d1xr-hires.dxa
     
-  descent.hog_demo:
-    install_as: descent.hog
-
-  descent.pig_demo:
-    install_as: descent.pig
-  descent.pig_demo_p1:
-    provides: [descent.pig_demo]
-    look_for: [descent.pig]
+  descent.pig?demo_p1:
+    provides: ['descent.pig?demo']
     unpack:
       format: cat
-      other_parts: [descent.pig_demo_p2]
-  descent.pig_demo_p2:
-    look_for: [descent.pig]
+      other_parts: ['descent.pig?demo_p2']
 
   desc14sw.exe:
     provides:
@@ -95,9 +86,9 @@ files:
       format: zip
   descent1.sow:
     provides:
-    - descent.hog_demo
-    - descent.pig_demo
-    - readme.txt_demo
+    - descent.hog?demo
+    - descent.pig?demo
+    - readme.txt?demo
     - refcard.txt
     unpack:
       format: arj
@@ -153,12 +144,12 @@ files:
     - refcard.pdf
 
 cksums: |
-  _ 2339773   descent.hog_demo
-  _ 5092871   descent.pig_demo
-  _ 1416672   descent.pig_demo_p1
-  _ 3676199   descent.pig_demo_p2
+  _ 2339773   descent.hog?demo
+  _ 5092871   descent.pig?demo
+  _ 1416672   descent.pig?demo_p1
+  _ 3676199   descent.pig?demo_p2
   # optional doc
-  _ 53079     readme.txt_demo
+  _ 53079     readme.txt?demo
   _ 2991      refcard.txt
 
   _ 2893467   desc14sw.tar.gz
@@ -186,11 +177,11 @@ cksums: |
   _ 25876928  setup_descent_2.1.0.8.exe
 
 md5sums: |
-  cf1caf9c7a0681de80fac8cb593b33eb  descent.hog_demo
-  f8dc0f2b3ee8baa2c622f57b470fe147  descent.pig_demo
-  fe7471bfe9a6a452034c0e16c9f6793c  descent.pig_demo_p1
-  43483d69fbf59499062361c70bd1102a  descent.pig_demo_p2
-  b647aded11632d44943e01a53e660320  readme.txt_demo
+  cf1caf9c7a0681de80fac8cb593b33eb  descent.hog?demo
+  f8dc0f2b3ee8baa2c622f57b470fe147  descent.pig?demo
+  fe7471bfe9a6a452034c0e16c9f6793c  descent.pig?demo_p1
+  43483d69fbf59499062361c70bd1102a  descent.pig?demo_p2
+  b647aded11632d44943e01a53e660320  readme.txt?demo
   f531aea2b8cdf805815d0c84ae1353a2  refcard.txt
   4aa5ea2fb66f893e195304cc6efae542  desc14sw.tar.gz
   c36ccd1f35841403a68a8359eb2a01d5  desc14sw.exe
@@ -213,9 +204,9 @@ md5sums: |
   c3fe34d48407201d6da65ae85b8e2e6b  setup_descent_2.1.0.8.exe
 
 sha1sums: |
-  6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog_demo
-  c1be2e728c8cdfb03e3fcaab870b7a6b01e016ba  descent.pig_demo
-  e242a53584f1fea6359f5562e8c72dfbd8460b15  readme.txt_demo
+  6d45c6c49e085158af990dcb2985ebe079122f0c  descent.hog?demo
+  c1be2e728c8cdfb03e3fcaab870b7a6b01e016ba  descent.pig?demo
+  e242a53584f1fea6359f5562e8c72dfbd8460b15  readme.txt?demo
   763e322433bb0873b3497384c64c2762be25f8cd  refcard.txt
   a79c32c8fcdbf10968476e47881aad4ade613dbe  desc14sw.tar.gz
   0364a8280b8c10ccab009cf7ab8bb64ab6c27d90  desc14sw.exe
@@ -237,9 +228,9 @@ sha1sums: |
   c0d429158a23528df4c9006d8d06afeb32c91f56  setup_descent_2.1.0.8.exe
 
 sha256sums: |
-  26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog_demo
-  b67865e513452a35887a20270d17fdfb5af1a2edaaae247bc523489f1d84f9ac  descent.pig_demo
-  28bc52300f6144b114ea0d5afde5139fc0a5ac7090e44eed49e22c3bcd719a5c  readme.txt_demo
+  26d1e31e7709dfe6dddf17ccd37f5c82e866dce49a0faf07e90ba3213b288eab  descent.hog?demo
+  b67865e513452a35887a20270d17fdfb5af1a2edaaae247bc523489f1d84f9ac  descent.pig?demo
+  28bc52300f6144b114ea0d5afde5139fc0a5ac7090e44eed49e22c3bcd719a5c  readme.txt?demo
   46bd7a21fb48228590918a7883735bfce86cfb924caed6b387b0dbf76ee924e3  refcard.txt
   8b65eda01d03401d7a2dc71976528fbb7e0b07a93ce8ee0a9f1d9103623ae249  desc14sw.tar.gz
   3dadb7fbc01efce2904d0908c55d9a9cf1f402e83bf771970552efaca15efcb0  desc14sw.exe
