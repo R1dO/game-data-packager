@@ -21,7 +21,7 @@ packages:
     - zork1.z3
     optional:
     - readme_zork1.txt
-    - manual.pdf_zork1
+    - manual.pdf?zork1
 
   zork2-data:
     longname: "Zork II: The Wizard of Frobozz"
@@ -34,7 +34,7 @@ packages:
     - zork2.z3
     optional:
     - readme_zork2.txt
-    - manual.pdf_zork2
+    - manual.pdf?zork2
 
   zork3-data:
     longname: "Zork III: The Dungeon Master"
@@ -47,7 +47,7 @@ packages:
     - zork3.z3
     optional:
     - readme_zork3.txt
-    - manual.pdf_zork3
+    - manual.pdf?zork3
 
   beyondzork-data:
     longname: "Beyond Zork: The Coconut of Quendor"
@@ -59,7 +59,7 @@ packages:
     install:
     - beyondzo.z3
     optional:
-    - manual.pdf_beyondzork
+    - manual.pdf?beyondzork
 
   planetfall-data:
     longname: Planetfall
@@ -70,7 +70,7 @@ packages:
     install:
     - planetfa.z3
     optional:
-    - manual.pdf_planetfall
+    - manual.pdf?planetfall
 
 files:
   zork1.z3:
@@ -151,7 +151,7 @@ files:
       - manual.pdf
     provides:
     - zork1.z3_zip
-    - manual.pdf_zork1
+    - manual.pdf?zork1
 
   setup_zork2_2.1.0.17.exe:
     unpack:
@@ -161,7 +161,7 @@ files:
       - manual.pdf
     provides:
     - zork2.z3
-    - manual.pdf_zork2
+    - manual.pdf?zork2
 
   setup_zork3_2.1.0.17.exe:
     unpack:
@@ -171,7 +171,7 @@ files:
       - manual.pdf
     provides:
     - zork3.z3
-    - manual.pdf_zork3
+    - manual.pdf?zork3
 
   setup_beyond_zork_2.1.0.17.exe:
     unpack:
@@ -181,7 +181,7 @@ files:
       - manual.pdf
     provides:
     - beyondzo.z3
-    - manual.pdf_beyondzork
+    - manual.pdf?beyondzork
 
   setup_planetfall_2.1.0.17.exe:
     unpack:
@@ -191,22 +191,17 @@ files:
       - manual.pdf
     provides:
     - planetfa.z3
-    - manual.pdf_planetfall
+    - manual.pdf?planetfall
 
-  manual.pdf_zork1:
-    install_as: manual.pdf
+  manual.pdf?zork1:
     install_to: $docdir
-  manual.pdf_zork2:
-    install_as: manual.pdf
+  manual.pdf?zork2:
     install_to: $docdir
-  manual.pdf_zork3:
-    install_as: manual.pdf
+  manual.pdf?zork3:
     install_to: $docdir
-  manual.pdf_beyondzork:
-    install_as: manual.pdf
+  manual.pdf?beyondzork:
     install_to: $docdir
-  manual.pdf_planetfall:
-    install_as: manual.pdf
+  manual.pdf?planetfall:
     install_to: $docdir
 
 size_and_md5: |
@@ -232,11 +227,11 @@ size_and_md5: |
   # Zero Zork is not supported by a free engine
 
   # GOG.com packaging
-  1129552   ca6103f50b9aa55e6f533ef3d48bff79 manual.pdf_zork1
-  2213995   a46d98231c69c2b8e88f6e51dc432bed manual.pdf_zork2
-  1885475   97b4e20b13f49e14309a5c99bbd1c2f3 manual.pdf_zork3
-  364616    3442be09f8e997aa359d8a1872dd254c manual.pdf_beyondzork
-  1857160   deae31370ff0dd13a3543ef41c409fd6 manual.pdf_planetfall
+  1129552   ca6103f50b9aa55e6f533ef3d48bff79 manual.pdf?zork1
+  2213995   a46d98231c69c2b8e88f6e51dc432bed manual.pdf?zork2
+  1885475   97b4e20b13f49e14309a5c99bbd1c2f3 manual.pdf?zork3
+  364616    3442be09f8e997aa359d8a1872dd254c manual.pdf?beyondzork
+  1857160   deae31370ff0dd13a3543ef41c409fd6 manual.pdf?planetfall
   # older archive
   # ?       f53b893a244737c63180993db4100190 setup_zork_anthology.exe
   # ?       f24d4c64e0b01d81beae7a5d788bbd9b setup_zork_anthology.exe
@@ -259,11 +254,11 @@ sha1sums: |
   835145b092498eba5be24542a0a2aec8e3199557  beyondzo.z3
   77769447c4c77d100a3ed722f712110e8576bea4  planetfa.z3
 
-  11db617ceb8620ce1672161e5f1cb7b590bb6085  manual.pdf_zork1
-  cdeadf6216a7451ada6fa2ada290d0ae88eae198  manual.pdf_zork2
-  35155dd970deb315b1523db08e2ea39dda1533a6  manual.pdf_zork3
-  2cb413d906d8178e05dbbf8547238bc93cd88da5  manual.pdf_beyondzork
-  6b21e7129720d29db86e1fd8068c7f0a3c1dff17  manual.pdf_planetfall
+  11db617ceb8620ce1672161e5f1cb7b590bb6085  manual.pdf?zork1
+  cdeadf6216a7451ada6fa2ada290d0ae88eae198  manual.pdf?zork2
+  35155dd970deb315b1523db08e2ea39dda1533a6  manual.pdf?zork3
+  2cb413d906d8178e05dbbf8547238bc93cd88da5  manual.pdf?beyondzork
+  6b21e7129720d29db86e1fd8068c7f0a3c1dff17  manual.pdf?planetfall
   0094e7fea1fc96edd409e2a8df38e98ad9cf302c  setup_zork_2.1.0.17.exe
   db7e52d5e719e955258eff8f6222fbbd2916ec1c  setup_zork2_2.1.0.17.exe
   4f4625cf016938297a7dbd43795ac19aeb7a0ad8  setup_zork3_2.1.0.17.exe
