@@ -814,6 +814,7 @@ class GameData(object):
                 assert wanted.provides, filename
                 for f in wanted.provides:
                     assert f in self.files, (filename, f)
+                    assert self.files[f].alternatives == [], (filename, f)
                 if wanted.unpack['format'] == 'cat':
                     assert len(wanted.provides) == 1, filename
                     assert isinstance(wanted.unpack['other_parts'],
