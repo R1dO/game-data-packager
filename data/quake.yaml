@@ -307,15 +307,6 @@ files:
     - rogue/pak0.pak?mp12_cd
 
 cksums: |
-  # demo, free to download
-  263390945 9094045 quake106.zip
-  # unpacks into:
-  3503147729 9086574 resource.1?106_demo
-  # unpacks into:
-  22264292 10036 slicnse.txt
-  3091285839 9311 licinfo.txt?shareware
-  _ 18689235 id1/pak0.pak?106
-
   # Quake 1.01 CD (skitt@)
   # http://musicbrainz.org/release-group/ece43805-d8d4-4052-9cc7-806036633e32
   326782693 15323555 q101_int.1
@@ -386,7 +377,6 @@ cksums: |
   # Leadout AUDIO   0      39:29:38(177713)
 
 md5sums: |
-  5906e5998fc3d896ddaf5e6a62e03abb  id1/pak0.pak?106
   85fc9cee2035b66290da1e33be2ac86b  id1/pak0.pak?101
   d76b3e5678f0b64ac74ce5e340e6a685  id1/pak1.pak
   0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak?orig
@@ -396,8 +386,6 @@ md5sums: |
   c38a4e04219c317cd1b02f386bdfe11f  rogue/pak0.pak?mp12_cd
   f8898a483b131de21581656c94f3c1a4  rogue/pak0.pak?mp2_cd
   f71428763229bdb373f00a547296efe3  rogue/pak0.pak?steam
-  8cee4d03ee092909fdb6a4f84f0c1357  quake106.zip
-  994d127ea51ba4bae1030cb7242806aa  resource.1?106_demo
   959e4bd69d817ee0cbea6ddbf4f3af37  resource.1?106_cd
   752f49131bb3ba832346e873c1bcfdc6  q101_int.1
   9ed67b39020575771e29645d977c9216  q101_int.2
@@ -409,8 +397,6 @@ md5sums: |
   9e5a6f56047e1b586be108c0598cbe5e  manual.txt?mp1_cd
   6d258cb6d042c10b0f638b4dbf7b242d  manual.htm?mp2_cd
   7d9d3fad75c0ee581a8265e59151ee2c  manual.txt?mp2_cd
-  5450cdeca31e270a64fc64e1b52a25a6  slicnse.txt
-  2b63fd0623b86b22ef915c7c0fca8ff2  licinfo.txt?shareware
   be58e6beab67da309eabc3a4048e943f  license.txt?mp12_cd
   4cbb8fd26b83631eaa79f4e8e5161293  armagon/manual.htm?mp12_cd
   f0e5b60a8af31b40603faca2d831a5a2  armagon/manual.txt?mp12_cd
@@ -420,7 +406,15 @@ md5sums: |
   9f9e2f2f14093d25f116a8a68c139251  eternity/manual.txt?mp12_cd
 
 size_and_md5: |
+  # demo, free to download
+  9094045    8cee4d03ee092909fdb6a4f84f0c1357 quake106.zip
+  # unpacks into:
+  9086574    994d127ea51ba4bae1030cb7242806aa resource.1?106_demo
+  # unpacks into:
+  10036      5450cdeca31e270a64fc64e1b52a25a6 slicnse.txt
+  9311       2b63fd0623b86b22ef915c7c0fca8ff2 licinfo.txt?shareware
   18689235   5906e5998fc3d896ddaf5e6a62e03abb id1/pak0.pak?106
+
   34257856   d76b3e5678f0b64ac74ce5e340e6a685 id1/pak1.pak
   25462      0575bbd0df753f6e44b7a0f67ffc1413 comexp.txt?101_cd
   9308       0f77362a55b35e623d9f4710ed86cda7 licinfo.txt?gog
