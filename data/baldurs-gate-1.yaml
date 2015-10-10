@@ -23,6 +23,7 @@ packages:
     longname: Baldur's Gate -  The Original Saga (English)
     debian:
       provides: baldurs-gate-1-data
+    install_to: usr/share/gemrb/baldurs-gate-1-en
     install:
     - Baldur.ini
     - Characters/cleric.chr
