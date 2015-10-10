@@ -1,0 +1,2409 @@
+---
+franchise: "Baldur's Gate"
+longname: "Baldur's Gate -  The Original Saga"
+shortname: "Baldur's Gate 1"
+copyright: © 1998 Bioware
+engine: gemrb
+compress_deb: [-Zgzip, -z1]
+help_text: |
+  Data from Baldur's Gate - The Original Saga can be downloaded from gog.com.
+  Please download the English Linux installer and run it manually. Copy all
+  files into a directory of your choice and then run
+  .
+  game-data-packager baldurs-gate-1 <path-to-your-directory>
+  .
+  Please use /usr/share/gemrb/baldurs-gate-original-saga-en as data directory
+  path in your /etc/gemrb/*.conf files and bg1 as game type.
+
+
+packages:
+  baldurs-gate-original-saga-en-data:
+    #gog:
+    #  url: baldurs_gate_the_original_saga
+    #  game: baldurs_gate_the_original_saga
+    longname: Baldur's Gate -  The Original Saga (English)
+    debian:
+      provides: baldurs-gate-original-saga-data
+    install_to: usr/share/gemrb/baldurs-gate-original-saga-en
+    install:
+    - Baldur.ini
+    - Characters/cleric.chr
+    - Characters/fighter.chr
+    - Characters/mage.chr
+    - Characters/multi.chr
+    - Characters/thief.chr
+    - Chitin.key
+    - Keymap.ini
+    - MPSave/888888888-Mission-Pack-Save/Baldur.bmp
+    - MPSave/888888888-Mission-Pack-Save/Baldur.gam
+    - MPSave/888888888-Mission-Pack-Save/Baldur.sav
+    - MPSave/888888888-Mission-Pack-Save/Portrt0.bmp
+    - MPSave/888888888-Mission-Pack-Save/Portrt1.bmp
+    - MPSave/888888888-Mission-Pack-Save/Portrt2.bmp
+    - MPSave/888888888-Mission-Pack-Save/Portrt3.bmp
+    - MPSave/888888888-Mission-Pack-Save/Portrt4.bmp
+    - MPSave/888888888-Mission-Pack-Save/Portrt5.bmp
+    - MPSave/888888888-Mission-Pack-Save/Worldmap.wmp
+    - Music/BC1.mus
+    - Music/BC2.mus
+    - Music/BD1.mus
+    - Music/BD2.mus
+    - Music/BF1.mus
+    - Music/BF2.mus
+    - Music/BL1.mus
+    - Music/BL2.mus
+    - Music/BP1.mus
+    - Music/BP2.mus
+    - Music/BW1.mus
+    - Music/Bc1/Bc1a1.ACM
+    - Music/Bc1/Bc1a2.ACM
+    - Music/Bc1/Bc1a3.ACM
+    - Music/Bc1/Bc1a4.ACM
+    - Music/Bc1/Bc1b1.ACM
+    - Music/Bc1/Bc1b2.ACM
+    - Music/Bc1/Bc1b3.ACM
+    - Music/Bc1/Bc1c1.ACM
+    - Music/Bc1/Bc1d1.ACM
+    - Music/Bc1/Bc1d1a.ACM
+    - Music/Bc1/Bc1d2.ACM
+    - Music/Bc1/Bc1d2a.ACM
+    - Music/Bc1/Bc1d3.ACM
+    - Music/Bc1/Bc1d4.ACM
+    - Music/Bc1/Bc1e1.ACM
+    - Music/Bc1/Bc1e2.ACM
+    - Music/Bc1/Bc1e3.ACM
+    - Music/Bc1/Bc1e4.ACM
+    - Music/Bc1/Bc1enda1.ACM
+    - Music/Bc1/Bc1enda4.ACM
+    - Music/Bc1/Bc1endb1.ACM
+    - Music/Bc1/Bc1endb2.ACM
+    - Music/Bc1/Bc1endb3.ACM
+    - Music/Bc1/Bc1endc1.ACM
+    - Music/Bc1/Bc1endd1.ACM
+    - Music/Bc1/Bc1endd2.ACM
+    - Music/Bc1/Bc1endd4.ACM
+    - Music/Bc1/Bc1ende1.ACM
+    - Music/Bc1/Bc1ende2.ACM
+    - Music/Bc1/Bc1ende4.ACM
+    - Music/Bc1/Bc1endf2.ACM
+    - Music/Bc1/Bc1endf4.ACM
+    - Music/Bc1/Bc1endg2.ACM
+    - Music/Bc1/Bc1endg3.ACM
+    - Music/Bc1/Bc1endh2.ACM
+    - Music/Bc1/Bc1endh3.ACM
+    - Music/Bc1/Bc1endh4.ACM
+    - Music/Bc1/Bc1f1.ACM
+    - Music/Bc1/Bc1f2.ACM
+    - Music/Bc1/Bc1f3.ACM
+    - Music/Bc1/Bc1f4.ACM
+    - Music/Bc1/Bc1g1.ACM
+    - Music/Bc1/Bc1g2.ACM
+    - Music/Bc1/Bc1g3.ACM
+    - Music/Bc1/Bc1h1.ACM
+    - Music/Bc1/Bc1h2.ACM
+    - Music/Bc1/Bc1h3.ACM
+    - Music/Bc1/Bc1h4.ACM
+    - Music/Bc1/Bc1i1.ACM
+    - Music/Bc2/Bc2a1.ACM
+    - Music/Bc2/Bc2a2.ACM
+    - Music/Bc2/Bc2a3.ACM
+    - Music/Bc2/Bc2b1.ACM
+    - Music/Bc2/Bc2b2.ACM
+    - Music/Bc2/Bc2c1.ACM
+    - Music/Bc2/Bc2c2.ACM
+    - Music/Bc2/Bc2d1.ACM
+    - Music/Bc2/Bc2d2.ACM
+    - Music/Bc2/Bc2e1.ACM
+    - Music/Bc2/Bc2e2.ACM
+    - Music/Bc2/Bc2enda.ACM
+    - Music/Bc2/Bc2endb.ACM
+    - Music/Bc2/Bc2endc.ACM
+    - Music/Bc2/Bc2f1.ACM
+    - Music/Bc2/Bc2f2.ACM
+    - Music/Bc2/Bc2g1.ACM
+    - Music/Bc2/Bc2g2.ACM
+    - Music/Bc2/Bc2g3.ACM
+    - Music/Bc2/Bc2h1.ACM
+    - Music/Bc2/Bc2h2.ACM
+    - Music/Bc2/Bc2h3.ACM
+    - Music/Bc2/Bc2h4.ACM
+    - Music/Bc2/Bc2i1.ACM
+    - Music/Bc2/Bc2i2.ACM
+    - Music/Bc2/Bc2i3.ACM
+    - Music/Bc2/Bc2i4.ACM
+    - Music/Bc2/Bc2j1.ACM
+    - Music/Bc2/Bc2j2.ACM
+    - Music/Bc2/Bc2j3.ACM
+    - Music/Bc2/Bc2j4.ACM
+    - Music/Bc2/Bc2k1.ACM
+    - Music/Bc2/Bc2k2.ACM
+    - Music/Bc2/Bc2k3.ACM
+    - Music/Bc2/Bc2xa1.ACM
+    - Music/Bd1/Bd1a1.ACM
+    - Music/Bd1/Bd1a2.ACM
+    - Music/Bd1/Bd1b1.ACM
+    - Music/Bd1/Bd1b2.ACM
+    - Music/Bd1/Bd1b3.ACM
+    - Music/Bd1/Bd1b4.ACM
+    - Music/Bd1/Bd1c1.ACM
+    - Music/Bd1/Bd1c2.ACM
+    - Music/Bd1/Bd1d1.ACM
+    - Music/Bd1/Bd1d2.ACM
+    - Music/Bd1/Bd1d3.ACM
+    - Music/Bd1/Bd1e1.ACM
+    - Music/Bd1/Bd1e2.ACM
+    - Music/Bd1/Bd1e3.ACM
+    - Music/Bd1/Bd1e4.ACM
+    - Music/Bd1/Bd1enda.ACM
+    - Music/Bd1/Bd1endb.ACM
+    - Music/Bd1/Bd1endc.ACM
+    - Music/Bd1/Bd1f1.ACM
+    - Music/Bd1/Bd1f2.ACM
+    - Music/Bd1/Bd1f3.ACM
+    - Music/Bd1/Bd1g1.ACM
+    - Music/Bd1/Bd1g2.ACM
+    - Music/Bd1/Bd1g3a.ACM
+    - Music/Bd1/Bd1g4a.ACM
+    - Music/Bd1/Bd1h1.ACM
+    - Music/Bd1/Bd1h2.ACM
+    - Music/Bd1/Bd1h3.ACM
+    - Music/Bd1/Bd1i12.ACM
+    - Music/Bd1/Bd1xa1.ACM
+    - Music/Bd2/Bd2a1.ACM
+    - Music/Bd2/Bd2a2.ACM
+    - Music/Bd2/Bd2a3.ACM
+    - Music/Bd2/Bd2b1.ACM
+    - Music/Bd2/Bd2b2.ACM
+    - Music/Bd2/Bd2b2b.ACM
+    - Music/Bd2/Bd2c1.ACM
+    - Music/Bd2/Bd2c2.ACM
+    - Music/Bd2/Bd2c3.ACM
+    - Music/Bd2/Bd2c4.ACM
+    - Music/Bd2/Bd2d1.ACM
+    - Music/Bd2/Bd2d2.ACM
+    - Music/Bd2/Bd2d3.ACM
+    - Music/Bd2/Bd2d4.ACM
+    - Music/Bd2/Bd2e1.ACM
+    - Music/Bd2/Bd2e2.ACM
+    - Music/Bd2/Bd2e3.ACM
+    - Music/Bd2/Bd2e4.ACM
+    - Music/Bd2/Bd2enda1.ACM
+    - Music/Bd2/Bd2enda2.ACM
+    - Music/Bd2/Bd2endb1.ACM
+    - Music/Bd2/Bd2endb2.ACM
+    - Music/Bd2/Bd2endd1.ACM
+    - Music/Bd2/Bd2ende1.ACM
+    - Music/Bd2/Bd2endg3.ACM
+    - Music/Bd2/Bd2f1.ACM
+    - Music/Bd2/Bd2f2.ACM
+    - Music/Bd2/Bd2f3.ACM
+    - Music/Bd2/Bd2f4.ACM
+    - Music/Bd2/Bd2g1a.ACM
+    - Music/Bd2/Bd2g2b.ACM
+    - Music/Bd2/Bd2g3.ACM
+    - Music/Bf1/BF1endA.ACM
+    - Music/Bf1/BF1endB.ACM
+    - Music/Bf1/BF1endC.ACM
+    - Music/Bf1/BF1endD.ACM
+    - Music/Bf1/BF1endE.ACM
+    - Music/Bf1/BF1endF.ACM
+    - Music/Bf1/BF1endG.ACM
+    - Music/Bf1/Bf1a1.ACM
+    - Music/Bf1/Bf1a2.ACM
+    - Music/Bf1/Bf1a3.ACM
+    - Music/Bf1/Bf1b1.ACM
+    - Music/Bf1/Bf1b2.ACM
+    - Music/Bf1/Bf1c1.ACM
+    - Music/Bf1/Bf1d1.ACM
+    - Music/Bf1/Bf1d2.ACM
+    - Music/Bf1/Bf1e1.ACM
+    - Music/Bf1/Bf1e2.ACM
+    - Music/Bf1/Bf1f1.ACM
+    - Music/Bf1/Bf1f2.ACM
+    - Music/Bf1/Bf1f3.ACM
+    - Music/Bf1/Bf1g1.ACM
+    - Music/Bf1/Bf1g2.ACM
+    - Music/Bf1/Bf1g3.ACM
+    - Music/Bf1/Bf1h1.ACM
+    - Music/Bf1/Bf1h2.ACM
+    - Music/Bf1/Bf1i1.ACM
+    - Music/Bf1/Bf1i2.ACM
+    - Music/Bf1/Bf1i3.ACM
+    - Music/Bf1/Bf1j1.ACM
+    - Music/Bf1/Bf1j2.ACM
+    - Music/Bf1/Bf1j3.ACM
+    - Music/Bf1/Bf1j4.ACM
+    - Music/Bf1/Bf1j5.ACM
+    - Music/Bf2/Bf2a1.ACM
+    - Music/Bf2/Bf2a2.ACM
+    - Music/Bf2/Bf2a3.ACM
+    - Music/Bf2/Bf2a4.ACM
+    - Music/Bf2/Bf2b1.ACM
+    - Music/Bf2/Bf2b2.ACM
+    - Music/Bf2/Bf2b3.ACM
+    - Music/Bf2/Bf2b4.ACM
+    - Music/Bf2/Bf2c1.ACM
+    - Music/Bf2/Bf2c2.ACM
+    - Music/Bf2/Bf2c3.ACM
+    - Music/Bf2/Bf2c4.ACM
+    - Music/Bf2/Bf2d1.ACM
+    - Music/Bf2/Bf2d2.ACM
+    - Music/Bf2/Bf2d3.ACM
+    - Music/Bf2/Bf2d4.ACM
+    - Music/Bf2/Bf2e1.ACM
+    - Music/Bf2/Bf2e2.ACM
+    - Music/Bf2/Bf2enda1.ACM
+    - Music/Bf2/Bf2enda2.ACM
+    - Music/Bf2/Bf2enda3.ACM
+    - Music/Bf2/Bf2enda4.ACM
+    - Music/Bf2/Bf2endc1.ACM
+    - Music/Bf2/Bf2endd1.ACM
+    - Music/Bf2/Bf2endd2.ACM
+    - Music/Bf2/Bf2endd4.ACM
+    - Music/Bf2/Bf2endf1.ACM
+    - Music/Bf2/Bf2endf2.ACM
+    - Music/Bf2/Bf2endf3.ACM
+    - Music/Bf2/Bf2endg3.ACM
+    - Music/Bf2/Bf2endg4.ACM
+    - Music/Bf2/Bf2f1.ACM
+    - Music/Bf2/Bf2f2.ACM
+    - Music/Bf2/Bf2f3.ACM
+    - Music/Bf2/Bf2f4.ACM
+    - Music/Bf2/Bf2g1.ACM
+    - Music/Bf2/Bf2g2.ACM
+    - Music/Bf2/Bf2g3.ACM
+    - Music/Bf2/Bf2g4.ACM
+    - Music/Bf2/Bf2h1.ACM
+    - Music/Bf2/Bf2h2.ACM
+    - Music/Bf2/Bf2h3.ACM
+    - Music/Bf2/Bf2h4.ACM
+    - Music/Bl1/Bl1a1.ACM
+    - Music/Bl1/Bl1a3.ACM
+    - Music/Bl1/Bl1a4.ACM
+    - Music/Bl1/Bl1b1.ACM
+    - Music/Bl1/Bl1b2.ACM
+    - Music/Bl1/Bl1b3.ACM
+    - Music/Bl1/Bl1b4.ACM
+    - Music/Bl1/Bl1c1.ACM
+    - Music/Bl1/Bl1c2.ACM
+    - Music/Bl1/Bl1c3.ACM
+    - Music/Bl1/Bl1c4.ACM
+    - Music/Bl1/Bl1d1.ACM
+    - Music/Bl1/Bl1d2.ACM
+    - Music/Bl1/Bl1d3.ACM
+    - Music/Bl1/Bl1e1.ACM
+    - Music/Bl1/Bl1e2.ACM
+    - Music/Bl1/Bl1e3.ACM
+    - Music/Bl1/Bl1e4a.ACM
+    - Music/Bl1/Bl1enda1.ACM
+    - Music/Bl1/Bl1enda4.ACM
+    - Music/Bl1/Bl1endb1.ACM
+    - Music/Bl1/Bl1endb2.ACM
+    - Music/Bl1/Bl1endb3.ACM
+    - Music/Bl1/Bl1endc1.ACM
+    - Music/Bl1/Bl1ende4.ACM
+    - Music/Bl1/Bl1f1a.ACM
+    - Music/Bl1/Bl1f2.ACM
+    - Music/Bl1/Bl1f3.ACM
+    - Music/Bl1/Bl1f4.ACM
+    - Music/Bl1/Bl1g1.ACM
+    - Music/Bl1/Bl1g2.ACM
+    - Music/Bl1/Bl1g3.ACM
+    - Music/Bl1/Bl1h1.ACM
+    - Music/Bl1/Bl1h2.ACM
+    - Music/Bl1/Bl1xa4.ACM
+    - Music/Bl2/BL2endA.ACM
+    - Music/Bl2/BL2endB.ACM
+    - Music/Bl2/BL2endC.ACM
+    - Music/Bl2/BL2endD.ACM
+    - Music/Bl2/BL2endE.ACM
+    - Music/Bl2/Bl2a1.ACM
+    - Music/Bl2/Bl2a2.ACM
+    - Music/Bl2/Bl2a3.ACM
+    - Music/Bl2/Bl2a4.ACM
+    - Music/Bl2/Bl2b1.ACM
+    - Music/Bl2/Bl2b2.ACM
+    - Music/Bl2/Bl2b3.ACM
+    - Music/Bl2/Bl2b4.ACM
+    - Music/Bl2/Bl2c1.ACM
+    - Music/Bl2/Bl2c2.ACM
+    - Music/Bl2/Bl2c3.ACM
+    - Music/Bl2/Bl2c4.ACM
+    - Music/Bl2/Bl2d1.ACM
+    - Music/Bl2/Bl2d2.ACM
+    - Music/Bl2/Bl2e1.ACM
+    - Music/Bl2/Bl2f1.ACM
+    - Music/Bl2/Bl2f2.ACM
+    - Music/Bl2/Bl2g1.ACM
+    - Music/Bl2/Bl2g2.ACM
+    - Music/Bl2/Bl2g3.ACM
+    - Music/Bl2/Bl2h1.ACM
+    - Music/Bl2/Bl2h2.ACM
+    - Music/Bl2/Bl2h3.ACM
+    - Music/Bl2/Bl2h4.ACM
+    - Music/Bl2/Bl2h5.ACM
+    - Music/Bl2/Bl2h6.ACM
+    - Music/Bp1/Bp1a1.ACM
+    - Music/Bp1/Bp1a2.ACM
+    - Music/Bp1/Bp1a3.ACM
+    - Music/Bp1/Bp1b1.ACM
+    - Music/Bp1/Bp1b2.ACM
+    - Music/Bp1/Bp1b3.ACM
+    - Music/Bp1/Bp1c1.ACM
+    - Music/Bp1/Bp1c2.ACM
+    - Music/Bp1/Bp1d1.ACM
+    - Music/Bp1/Bp1d2.ACM
+    - Music/Bp1/Bp1d3.ACM
+    - Music/Bp1/Bp1enda1.ACM
+    - Music/Bp1/Bp1enda2.ACM
+    - Music/Bp1/Bp1endb1.ACM
+    - Music/Bp1/Bp1endb2.ACM
+    - Music/Bp1/Bp1endc2.ACM
+    - Music/Bp1/Bp1endd1.ACM
+    - Music/Bp1/Bp1endd2.ACM
+    - Music/Bp1/Bp1endz1.ACM
+    - Music/Bp2/Bp2a1.ACM
+    - Music/Bp2/Bp2a2.ACM
+    - Music/Bp2/Bp2a3.ACM
+    - Music/Bp2/Bp2b1.ACM
+    - Music/Bp2/Bp2b2.ACM
+    - Music/Bp2/Bp2c1.ACM
+    - Music/Bp2/Bp2c2.ACM
+    - Music/Bp2/Bp2d1.ACM
+    - Music/Bp2/Bp2d2.ACM
+    - Music/Bp2/Bp2d3.ACM
+    - Music/Bp2/Bp2d4.ACM
+    - Music/Bp2/Bp2e1.ACM
+    - Music/Bp2/Bp2e2.ACM
+    - Music/Bp2/Bp2e3.ACM
+    - Music/Bp2/Bp2e4.ACM
+    - Music/Bp2/Bp2e5.ACM
+    - Music/Bp2/Bp2enda1.ACM
+    - Music/Bp2/Bp2endc1.ACM
+    - Music/Bp2/Bp2endc2.ACM
+    - Music/Bp2/Bp2endd1.ACM
+    - Music/Bp2/Bp2endd2.ACM
+    - Music/Bp2/Bp2endd3.ACM
+    - Music/Bp2/Bp2endf1.ACM
+    - Music/Bp2/Bp2endf4.ACM
+    - Music/Bp2/Bp2endg4.ACM
+    - Music/Bp2/Bp2endh1.ACM
+    - Music/Bp2/Bp2endh3.ACM
+    - Music/Bp2/Bp2endz1.ACM
+    - Music/Bp2/Bp2f1.ACM
+    - Music/Bp2/Bp2f2.ACM
+    - Music/Bp2/Bp2f3.ACM
+    - Music/Bp2/Bp2f4.ACM
+    - Music/Bp2/Bp2g1.ACM
+    - Music/Bp2/Bp2g2.ACM
+    - Music/Bp2/Bp2g3.ACM
+    - Music/Bp2/Bp2g4.ACM
+    - Music/Bp2/Bp2h1.ACM
+    - Music/Bp2/Bp2h2.ACM
+    - Music/Bp2/Bp2h3.ACM
+    - Music/Bp2/Bp2xa1.ACM
+    - Music/Bp2/Bp2z1.ACM
+    - Music/Bw1/Bw1a1.ACM
+    - Music/Bw1/Bw1a3.ACM
+    - Music/Bw1/Bw1a4.ACM
+    - Music/Bw1/Bw1b1.ACM
+    - Music/Bw1/Bw1b2.ACM
+    - Music/Bw1/Bw1b3.ACM
+    - Music/Bw1/Bw1b4.ACM
+    - Music/Bw1/Bw1c1.ACM
+    - Music/Bw1/Bw1c2.ACM
+    - Music/Bw1/Bw1c3.ACM
+    - Music/Bw1/Bw1c4.ACM
+    - Music/Bw1/Bw1d1.ACM
+    - Music/Bw1/Bw1d2.ACM
+    - Music/Bw1/Bw1d3.ACM
+    - Music/Bw1/Bw1d4.ACM
+    - Music/Bw1/Bw1e1.ACM
+    - Music/Bw1/Bw1e2.ACM
+    - Music/Bw1/Bw1e3.ACM
+    - Music/Bw1/Bw1e4.ACM
+    - Music/Bw1/Bw1enda1.ACM
+    - Music/Bw1/Bw1enda3.ACM
+    - Music/Bw1/Bw1endb1.ACM
+    - Music/Bw1/Bw1endb2.ACM
+    - Music/Bw1/Bw1endb4.ACM
+    - Music/Bw1/Bw1endd3.ACM
+    - Music/Bw1/Bw1endd4.ACM
+    - Music/Bw1/Bw1ende1.ACM
+    - Music/Bw1/Bw1ende2.ACM
+    - Music/Bw1/Bw1endf1.ACM
+    - Music/Bw1/Bw1endf2.ACM
+    - Music/Bw1/Bw1f1.ACM
+    - Music/Bw1/Bw1f2.ACM
+    - Music/Bw1/Bw1g12.ACM
+    - Music/Bw1/Bw1h1.ACM
+    - Music/Bw1/Bw1h2.ACM
+    - Music/CDay1.mus
+    - Music/CDay1/CDay1a.ACM
+    - Music/CDay2.mus
+    - Music/CDay2/CDay2a.ACM
+    - Music/CNite.mus
+    - Music/CNite/CNitea.ACM
+    - Music/Chants.mus
+    - Music/Chants/Chantsa.ACM
+    - Music/Chapter.mus
+    - Music/Dream.mus
+    - Music/Dream/Dreama.ACM
+    - Music/Dung1.mus
+    - Music/Dung1/Dung1a.ACM
+    - Music/Dung2.mus
+    - Music/Dung2/Dung2a.ACM
+    - Music/Dung3.mus
+    - Music/Dung3/Dung3a.ACM
+    - Music/FDay.mus
+    - Music/FDay/FDaya.ACM
+    - Music/FNite.mus
+    - Music/FNite/FNitea.ACM
+    - Music/Fort.mus
+    - Music/Fort/Forta.ACM
+    - Music/PDay.mus
+    - Music/PDay/PDaya.ACM
+    - Music/PNite/PNitea.ACM
+    - Music/Pnite.mus
+    - Music/TDay1.mus
+    - Music/TDay1/TDay1a.ACM
+    - Music/TDay2.mus
+    - Music/TDay2/TDay2a.ACM
+    - Music/TNite.mus
+    - Music/TNite/TNitea.ACM
+    - Music/Tav1.mus
+    - Music/Tav1/Tav1a.acm
+    - Music/Tav2.mus
+    - Music/Tav2/Tav2a.acm
+    - Music/Tav3.mus
+    - Music/Tav3/Tav3a.acm
+    - Music/Tav4.mus
+    - Music/Tav4/Tav4a.acm
+    - Music/Temple.mus
+    - Music/Temple/Templea.ACM
+    - Music/Theme.mus
+    - Music/Theme/Themea.ACM
+    - Override/Ar0109.ARE
+    - Override/Ar0110.ARE
+    - Override/Ar0111.ARE
+    - Override/Ar0145.ARE
+    - Override/Ar0146.ARE
+    - Override/Ar0154.ARE
+    - Override/Ar0307.ARE
+    - Override/Ar0308.ARE
+    - Override/Ar0504.ARE
+    - Override/Ar1801a.are
+    - Override/Ar2600.ARE
+    - Override/Ar2608.ARE
+    - Override/Ar2609.ARE
+    - Override/Ar2610.ARE
+    - Override/Ar2611.ARE
+    - Override/Ar2612.ARE
+    - Override/Ar2614.ARE
+    - Override/ClairD.dlg
+    - Override/DAGG10.itm
+    - Override/DEATHKNI.bcs
+    - Override/HAMM04.itm
+    - Override/Halbaz.dlg
+    - Override/ISCRL5A.bam
+    - Override/ISCRL5B.bam
+    - Override/ISCRL5C.bam
+    - Override/ISCRL5D.bam
+    - Override/ISCRL5E.bam
+    - Override/ISCRL5F.bam
+    - Override/ISCRL5G.bam
+    - Override/ISCRL5H.bam
+    - Override/ISCRL5I.bam
+    - Override/ISCRL5J.bam
+    - Override/ISCRL5K.bam
+    - Override/ISCRL5L.bam
+    - Override/ISCRL5M.bam
+    - Override/ISCRL5N.bam
+    - Override/ISCRL5O.bam
+    - Override/ISCRL5P.bam
+    - Override/ISCRL5Q.bam
+    - Override/Ike.dlg
+    - Override/Isloff.2da
+    - Override/Islon.2da
+    - Override/MGnlInv.BAM
+    - Override/MOgrInv.BAM
+    - Override/MSli2Inv.BAM
+    - Override/MSpi3Inv.BAM
+    - Override/MastArea.2DA
+    - Override/Rndscrol.2da
+    - Override/SW1H22.itm
+    - Override/SkillBrd.2DA
+    - Override/SpWi959.spl
+    - Override/SpWi960.spl
+    - Override/TRAPDIS.bcs
+    - Override/WorldMap.WMP
+    - Override/ar0123.bcs
+    - Override/ar0125.bcs
+    - Override/ar0300.ARE
+    - Override/ar0400.WED
+    - Override/ar0400sr.bmp
+    - Override/ar0502.bcs
+    - Override/ar0600.bcs
+    - Override/ar0700n.WED
+    - Override/ar0900sr.BMP
+    - Override/ar1000.bcs
+    - Override/ar1801.ARE
+    - Override/ar5406.MOS
+    - Override/ar7200.WED
+    - Override/arealink.2da
+    - Override/baresh.CRE
+    - Override/blun06.itm
+    - Override/blun07.itm
+    - Override/blun09.itm
+    - Override/blun10.itm
+    - Override/cachvald.2da
+    - Override/delain.CRE
+    - Override/dplayer3.bcs
+    - Override/durlyl.CRE
+    - Override/galkin.CRE
+    - Override/garric.dlg
+    - Override/gretek.dlg
+    - Override/helm14.itm
+    - Override/initinv2.bcs
+    - Override/karoug.CRE
+    - Override/kirinh.CRE
+    - Override/menda1.dlg
+    - Override/misc1H.itm
+    - Override/misc73.itm
+    - Override/misc94.itm
+    - Override/misc95.itm
+    - Override/scrl07.itm
+    - Override/shandal.bcs
+    - Override/shld19.itm
+    - Override/silke.dlg
+    - Override/spwi118.spl
+    - Override/spwi924.spl
+    - Override/spwi925.spl
+    - Override/spwi944.spl
+    - Override/spwi945.spl
+    - Override/spwi946.spl
+    - Override/spwi947.spl
+    - Override/spwi948.spl
+    - Override/spwi949.spl
+    - Override/sw1h18.itm
+    - Override/sw1h19.itm
+    - Override/sw1h20.itm
+    - Override/sw1h23.itm
+    - Override/tanar.CRE
+    - Override/ulgoth.STO
+    - Override/xan6.CRE
+    - Save/888888888-Mission-Pack-Save/Baldur.bmp
+    - Save/888888888-Mission-Pack-Save/Baldur.gam
+    - Save/888888888-Mission-Pack-Save/Baldur.sav
+    - Save/888888888-Mission-Pack-Save/Portrt0.bmp
+    - Save/888888888-Mission-Pack-Save/Portrt1.bmp
+    - Save/888888888-Mission-Pack-Save/Portrt2.bmp
+    - Save/888888888-Mission-Pack-Save/Portrt3.bmp
+    - Save/888888888-Mission-Pack-Save/Portrt4.bmp
+    - Save/888888888-Mission-Pack-Save/Portrt5.bmp
+    - Save/888888888-Mission-Pack-Save/Worldmap.wmp
+    - Sounds/Female1a.wav
+    - Sounds/Female1b.wav
+    - Sounds/Female1c.wav
+    - Sounds/Female1d.wav
+    - Sounds/Female1e.wav
+    - Sounds/Female1f.wav
+    - Sounds/Female1g.wav
+    - Sounds/Female1h.wav
+    - Sounds/Female1i.wav
+    - Sounds/Female1j.wav
+    - Sounds/Female1k.wav
+    - Sounds/Female1l.wav
+    - Sounds/Female1m.wav
+    - Sounds/Female2a.wav
+    - Sounds/Female2b.wav
+    - Sounds/Female2c.wav
+    - Sounds/Female2d.wav
+    - Sounds/Female2e.wav
+    - Sounds/Female2f.wav
+    - Sounds/Female2g.wav
+    - Sounds/Female2h.wav
+    - Sounds/Female2i.wav
+    - Sounds/Female2j.wav
+    - Sounds/Female2k.wav
+    - Sounds/Female2l.wav
+    - Sounds/Female2m.wav
+    - Sounds/Male1a.wav
+    - Sounds/Male1b.wav
+    - Sounds/Male1c.wav
+    - Sounds/Male1d.wav
+    - Sounds/Male1e.wav
+    - Sounds/Male1f.wav
+    - Sounds/Male1g.wav
+    - Sounds/Male1h.wav
+    - Sounds/Male1i.wav
+    - Sounds/Male1j.wav
+    - Sounds/Male1k.wav
+    - Sounds/Male1l.wav
+    - Sounds/Male1m.wav
+    - Sounds/Male2a.wav
+    - Sounds/Male2b.wav
+    - Sounds/Male2c.wav
+    - Sounds/Male2d.wav
+    - Sounds/Male2e.wav
+    - Sounds/Male2f.wav
+    - Sounds/Male2g.wav
+    - Sounds/Male2h.wav
+    - Sounds/Male2i.wav
+    - Sounds/Male2j.wav
+    - Sounds/Male2k.wav
+    - Sounds/Male2l.wav
+    - Sounds/Male2m.wav
+    - Sounds/Male3a.wav
+    - Sounds/Male3b.wav
+    - Sounds/Male3c.wav
+    - Sounds/Male3d.wav
+    - Sounds/Male3e.wav
+    - Sounds/Male3f.wav
+    - Sounds/Male3g.wav
+    - Sounds/Male3h.wav
+    - Sounds/Male3i.wav
+    - Sounds/Male3j.wav
+    - Sounds/Male3k.wav
+    - Sounds/Male3l.wav
+    - Sounds/Male3m.wav
+    - Sounds/female3a.wav
+    - Sounds/female3b.wav
+    - Sounds/female3c.wav
+    - Sounds/female3d.wav
+    - Sounds/female3e.wav
+    - Sounds/female3f.wav
+    - Sounds/female3g.wav
+    - Sounds/female3h.wav
+    - Sounds/female3i.wav
+    - Sounds/female3j.wav
+    - Sounds/female3k.wav
+    - Sounds/female3l.wav
+    - Sounds/female3m.wav
+    - Sounds/sndlist.txt
+    - data/AREA000A.BIF
+    - data/AREA000B.BIF
+    - data/AREA000C.BIF
+    - data/AREA000D.BIF
+    - data/AREA000E.BIF
+    - data/AREA000F.BIF
+    - data/AREA000G.BIF
+    - data/AREA000H.BIF
+    - data/AREA0100.BIF
+    - data/AREA010A.BIF
+    - data/AREA010B.BIF
+    - data/AREA0200.BIF
+    - data/AREA020A.BIF
+    - data/AREA020B.BIF
+    - data/AREA0300.BIF
+    - data/AREA030A.BIF
+    - data/AREA030B.BIF
+    - data/AREA0400.BIF
+    - data/AREA040X.BIF
+    - data/AREA0500.bif
+    - data/AREA050A.bif
+    - data/AREA050B.bif
+    - data/AREA050C.bif
+    - data/AREA050D.bif
+    - data/AREA0600.BIF
+    - data/AREA060A.BIF
+    - data/AREA0700.BIF
+    - data/AREA070A.BIF
+    - data/AREA0800.BIF
+    - data/AREA080A.BIF
+    - data/AREA080B.BIF
+    - data/AREA0900.BIF
+    - data/AREA090X.BIF
+    - data/AREA1000.bif
+    - data/AREA100A.bif
+    - data/AREA1100.BIF
+    - data/AREA110A.BIF
+    - data/AREA110B.BIF
+    - data/AREA110C.BIF
+    - data/AREA1200.BIF
+    - data/AREA120A.BIF
+    - data/AREA120B.BIF
+    - data/AREA1300.BIF
+    - data/AREA130A.BIF
+    - data/AREA1400.BIF
+    - data/AREA140A.BIF
+    - data/AREA140B.BIF
+    - data/AREA1500.bif
+    - data/AREA150A.bif
+    - data/AREA1600.BIF
+    - data/AREA160X.BIF
+    - data/AREA1700.BIF
+    - data/AREA1800.BIF
+    - data/AREA180A.BIF
+    - data/AREA180B.BIF
+    - data/AREA180C.BIF
+    - data/AREA180D.BIF
+    - data/AREA180E.BIF
+    - data/AREA1900.BIF
+    - data/AREA190X.BIF
+    - data/AREA2000.bif
+    - data/AREA200A.bif
+    - data/AREA200B.bif
+    - data/AREA2100.BIF
+    - data/AREA210x.BIF
+    - data/AREA2200.BIF
+    - data/AREA220X.BIF
+    - data/AREA2300.BIF
+    - data/AREA230A.BIF
+    - data/AREA230B.BIF
+    - data/AREA2400.BIF
+    - data/AREA2600.BIF
+    - data/AREA260A.BIF
+    - data/AREA260B.BIF
+    - data/AREA260C.BIF
+    - data/AREA2700.BIF
+    - data/AREA2800.BIF
+    - data/AREA2900.BIF
+    - data/AREA3000.BIF
+    - data/AREA3100.BIF
+    - data/AREA3200.BIF
+    - data/AREA320X.BIF
+    - data/AREA3300.BIF
+    - data/AREA330A.BIF
+    - data/AREA330B.BIF
+    - data/AREA330C.BIF
+    - data/AREA330D.BIF
+    - data/AREA3400.BIF
+    - data/AREA340X.BIF
+    - data/AREA3500.BIF
+    - data/AREA3600.BIF
+    - data/AREA360X.BIF
+    - data/AREA3700.BIF
+    - data/AREA3800.BIF
+    - data/AREA380X.BIF
+    - data/AREA3900.BIF
+    - data/AREA390X.BIF
+    - data/AREA4000.BIF
+    - data/AREA400X.BIF
+    - data/AREA4100.BIF
+    - data/AREA410X.BIF
+    - data/AREA4200.BIF
+    - data/AREA420X.BIF
+    - data/AREA4300.BIF
+    - data/AREA4400.BIF
+    - data/AREA440X.BIF
+    - data/AREA4500.BIF
+    - data/AREA450X.BIF
+    - data/AREA4600.BIF
+    - data/AREA4700.BIF
+    - data/AREA470X.BIF
+    - data/AREA4800.BIF
+    - data/AREA480X.BIF
+    - data/AREA4900.BIF
+    - data/AREA490X.BIF
+    - data/AREA5000.BIF
+    - data/AREA500X.BIF
+    - data/AREA5100.BIF
+    - data/AREA510X.BIF
+    - data/AREA5200.BIF
+    - data/AREA520X.BIF
+    - data/AREA5300.BIF
+    - data/AREA5400.BIF
+    - data/AREA540A.BIF
+    - data/AREA540B.BIF
+    - data/AREA540C.BIF
+    - data/AREA540D.BIF
+    - data/AREA5500.BIF
+    - data/AREA550X.BIF
+    - data/ARMisc.bif
+    - data/Areas.bif
+    - data/CHAANIM.bif
+    - data/CHASound.bif
+    - data/CREAnim.bif
+    - data/CRESound.BIF
+    - data/Creature.bif
+    - data/Default.bif
+    - data/Dialog.bif
+    - data/EFFECTS.bif
+    - data/ExArMaps.bif
+    - data/ExPAreas.bif
+    - data/Gui.bif
+    - data/Items.bif
+    - data/MPCREANM.bif
+    - data/MPGUI.bif
+    - data/MPSounds.bif
+    - data/NPCSound.bif
+    - data/OBJANIM.bif
+    - data/RndEncnt.BIF
+    - data/SFXSound.bif
+    - data/Spells.bif
+    - data/scripts.bif
+    - dialog.tlk
+    - luaAuto.cfg
+    - movies/MOVIECD1.BIF
+    - movies/MOVIECD2.BIF
+    - movies/MOVIECD3.BIF
+    - movies/MOVIECD4.BIF
+    - movies/MOVIECD5.BIF
+    - movies/MOVIES.BIF
+    - movies/MovieCD6.bif
+    - scripts/None.bs
+    - scripts/cleric1.bs
+    - scripts/cleric2.bs
+    - scripts/cleric3.bs
+    - scripts/cleric4.bs
+    - scripts/default.bs
+    - scripts/fighter1.bs
+    - scripts/fighter2.bs
+    - scripts/fighter3.bs
+    - scripts/fighter4.bs
+    - scripts/mage1.bs
+    - scripts/mage2.bs
+    - scripts/mage3.bs
+    - scripts/mage4.bs
+    - scripts/thief1.bs
+    - scripts/thief2.bs
+    - scripts/thief3.bs
+    - scripts/thief4.bs
+    optional:
+    - MAP.pdf
+    - MANUAL.PDF
+    - MANUAL_addon.PDF
+    - readme_patch.txt
+    license:
+    - Readme.txt
+    - Readme_totsc.txt
+
+files:
+  MANUAL.PDF:
+    install_to: $docdir
+  MANUAL_addon.PDF:
+    install_to: $docdir
+  readme_patch.txt:
+    install_to: $docdir
+  MAP.pdf:
+    install_to: $docdir
+
+size_and_md5: |
+  1392777   cf0ae4b7261bb3d9c560fb4aeed4f70e MAP.pdf
+  842       e5526c907bb56ec72f8e6cf4eb30fc2e Baldur.ini
+  1324      aac81dc6e797e52c86090027b266f355 Characters/cleric.chr
+  1180      31fcd439edd0bb9b2492ad97a713568e Characters/fighter.chr
+  1216      756cfa6335b7ac1130e85aaec40e7e69 Characters/mage.chr
+  1240      b0e6d8973b48abb433cdd4eb698496d2 Characters/multi.chr
+  1180      85babcaff8163ef9abc15e638ba5ced9 Characters/thief.chr
+  238496    20e12866311a215e236b8eb6fa91405c Chitin.key
+  4277      013b3a77decc8051f145ca40b6f0d4a3 Keymap.ini
+  23462     dfbd32cde5ecd2a056aa7fa8cf43b5d0 MPSave/888888888-Mission-Pack-Save/Baldur.bmp
+  79452     e6b0c5af9e6a072c25d5db31611f1881 MPSave/888888888-Mission-Pack-Save/Baldur.gam
+  482106    06b830a9853648f42662c03040c8e93f MPSave/888888888-Mission-Pack-Save/Baldur.sav
+  1854      81bb3c15850d2009a9d11d528b5cb97f MPSave/888888888-Mission-Pack-Save/Portrt0.bmp
+  1854      826286c8651f9a843df1be8b6cddcdf7 MPSave/888888888-Mission-Pack-Save/Portrt1.bmp
+  1854      80166f6e2bb142c1bb61e1fcd53f2094 MPSave/888888888-Mission-Pack-Save/Portrt2.bmp
+  1854      58f50fbba327f73d9eb9fbc44b113fa1 MPSave/888888888-Mission-Pack-Save/Portrt3.bmp
+  1854      f496af7b884f79605424f7345aba2ce9 MPSave/888888888-Mission-Pack-Save/Portrt4.bmp
+  1854      3ac3704114229baf102304edc2709902 MPSave/888888888-Mission-Pack-Save/Portrt5.bmp
+  49784     101a7efb3ce405fc69edabc6ae153744 MPSave/888888888-Mission-Pack-Save/Worldmap.wmp
+  855       1641684316a5fdd4bc579803708e0476 Music/BC1.mus
+  879       676e4f7998daa72ed05f3c5b750d0a63 Music/BC2.mus
+  750       6b5aec7690e40aae318eb692dae3af8c Music/BD1.mus
+  717       5e062414d8dae442c68be28902aa063b Music/BD2.mus
+  721       31a2dab26b6ea5184d90692cbb64632a Music/BF1.mus
+  859       b97607d89c20208d5acccaf455254141 Music/BF2.mus
+  805       4f6ece1e5b3be7e281b05b82bbc5fea2 Music/BL1.mus
+  721       922a72e7404beedd191b6fc728fe0a1b Music/BL2.mus
+  327       3b493acc640bf6d5fb4181cc96ecf01c Music/BP1.mus
+  829       c3fb07b5ec0285c459311995cd83f69e Music/BP2.mus
+  691       06d5950a01e4f0b0e8cbf0abefa20327 Music/BW1.mus
+  64807     d19ebce67418e2734895b13e9b8d5845 Music/Bc1/Bc1a1.ACM
+  61421     d1ceec7902bbccb3f01157d0e2873cde Music/Bc1/Bc1a2.ACM
+  64781     b1bab73b4eb26a217f4bd838383a42b3 Music/Bc1/Bc1a3.ACM
+  63160     dd73048277759a68e5a69cc0dbda93ef Music/Bc1/Bc1a4.ACM
+  62400     c26c3971326c44752033f4a88ace751c Music/Bc1/Bc1b1.ACM
+  64130     868a1acd4eb402df8986747e6ce944ed Music/Bc1/Bc1b2.ACM
+  65744     cb237ae15f4136cad81af58d29c10ab5 Music/Bc1/Bc1b3.ACM
+  70672     d40c75909813c0c35db3a7e468e80c00 Music/Bc1/Bc1c1.ACM
+  34602     740211f3f85b1968292fe4e7766e12bd Music/Bc1/Bc1d1.ACM
+  34602     740211f3f85b1968292fe4e7766e12bd Music/Bc1/Bc1d1a.ACM
+  30453     faddeb916dd6c63262255da6144a8668 Music/Bc1/Bc1d2.ACM
+  30453     faddeb916dd6c63262255da6144a8668 Music/Bc1/Bc1d2a.ACM
+  59245     13f878770a7a632328ef30d262801b35 Music/Bc1/Bc1d3.ACM
+  63342     3cc0ae50bcba2f9f2192d076b62f3276 Music/Bc1/Bc1d4.ACM
+  34641     d0601bc8ab311c1e80be9666a603eca0 Music/Bc1/Bc1e1.ACM
+  56741     202e42506991f1ab32ff362f0654ae5b Music/Bc1/Bc1e2.ACM
+  41996     492ec0c59e9687befb1c38e9320bed2b Music/Bc1/Bc1e3.ACM
+  30565     e14ebccb5f5a16dea810142ea7c6fddb Music/Bc1/Bc1e4.ACM
+  69574     d99bfb1a40fa7c0bb053623a65f8e4c3 Music/Bc1/Bc1enda1.ACM
+  69257     69219ae78e4b4acc35760946bfe5f9f9 Music/Bc1/Bc1enda4.ACM
+  75181     1d761f126874667f515a95a8a2da1865 Music/Bc1/Bc1endb1.ACM
+  63383     b0567e0333ead8f7368497a3ce8f1014 Music/Bc1/Bc1endb2.ACM
+  68572     1efad6ebe5275ad71ddf62024ae74eae Music/Bc1/Bc1endb3.ACM
+  69609     ec7b52d6ce5a52fe5c9c8ad5db85dea9 Music/Bc1/Bc1endc1.ACM
+  114280    6213e884154183e0ca39854f72888df4 Music/Bc1/Bc1endd1.ACM
+  131098    94ccfa56b31932a1e2370905443d2c62 Music/Bc1/Bc1endd2.ACM
+  137476    c43f189cb490b8661fc5bceb71c05bd2 Music/Bc1/Bc1endd4.ACM
+  77629     94b29d7bad0f0a94e7228398f4b87361 Music/Bc1/Bc1ende1.ACM
+  58325     b924f0c46042f98bc3bd9d1a2e1a44e2 Music/Bc1/Bc1ende2.ACM
+  141756    10bb54fdc3d07e8648d2aed3e740749d Music/Bc1/Bc1ende4.ACM
+  61142     b637849a02dc6368ef40da7eb793bf7b Music/Bc1/Bc1endf2.ACM
+  105144    3c223b6933f9acb177e622b27ec06030 Music/Bc1/Bc1endf4.ACM
+  102225    603a47c182d85c0fe4c8d255f5e2ddd8 Music/Bc1/Bc1endg2.ACM
+  102432    48960e2c3389bfa22b954118b142ac17 Music/Bc1/Bc1endg3.ACM
+  68507     864f220bb6569506de7523fa90ba3ea4 Music/Bc1/Bc1endh2.ACM
+  93945     640959291f0b2d891a0e7fb06cdc81b7 Music/Bc1/Bc1endh3.ACM
+  126646    571e65898ae6cdaaf22d258dc557849b Music/Bc1/Bc1endh4.ACM
+  42676     7452a5d736b7f6206741050805361d44 Music/Bc1/Bc1f1.ACM
+  85290     62ca4a5372d86fae3a21c25a9eb8f7d0 Music/Bc1/Bc1f2.ACM
+  50935     1cb6edf8bb2ec9a44418657d189faac5 Music/Bc1/Bc1f3.ACM
+  66326     a95541d3202c2bf8c1fc056378dd9b8b Music/Bc1/Bc1f4.ACM
+  61593     e08cd04e3d44d0aad8c43e7ac07da75f Music/Bc1/Bc1g1.ACM
+  64087     3d9934611c7bd155282ee1d2e137d009 Music/Bc1/Bc1g2.ACM
+  46877     d21ab55659ae702632d74cc919e1d66f Music/Bc1/Bc1g3.ACM
+  64796     ce1ea7f7918eaeb118dc9c2b187e3643 Music/Bc1/Bc1h1.ACM
+  46946     21abc1fd688a3cabba2a9b4c7b7e064e Music/Bc1/Bc1h2.ACM
+  64177     27363a9878a975c52e967b40fa83a0fc Music/Bc1/Bc1h3.ACM
+  46811     2c2b16f9ae9c0a911eebf4eac7137ee0 Music/Bc1/Bc1h4.ACM
+  64156     5e5bca64d400fc9ad392ce1a2ee34d96 Music/Bc1/Bc1i1.ACM
+  27907     a37540c56c4e89bb9c0f9990c0d0a164 Music/Bc2/Bc2a1.ACM
+  27064     a521e4c232536333c49fa904941d3fa3 Music/Bc2/Bc2a2.ACM
+  54137     038ecca3b2f765a6015e6c0dbee289aa Music/Bc2/Bc2a3.ACM
+  54361     84ea4abde3f9b61deaec988d98da3eaf Music/Bc2/Bc2b1.ACM
+  54394     f6ddbfdc24a0c51003cece32f167b138 Music/Bc2/Bc2b2.ACM
+  52866     ba6651f802d06b39e66bba24f382e9ba Music/Bc2/Bc2c1.ACM
+  54371     ade66ef2937ce42982ac7c872468b276 Music/Bc2/Bc2c2.ACM
+  53610     33390cbebf881b4f55e7f8d0bde463c3 Music/Bc2/Bc2d1.ACM
+  54323     9501500e291fc3c733e1824492ce339f Music/Bc2/Bc2d2.ACM
+  53658     bdc5af38babf483f5708063b8d14317d Music/Bc2/Bc2e1.ACM
+  53623     0c70cc9dd4778feeab8fe34db6b2ae51 Music/Bc2/Bc2e2.ACM
+  114280    6213e884154183e0ca39854f72888df4 Music/Bc2/Bc2enda.ACM
+  112988    0f7551b90e4cdd963d3c8b98b759d2f4 Music/Bc2/Bc2endb.ACM
+  112215    4c7d3caf1e71a900cf227c40ea5c7dab Music/Bc2/Bc2endc.ACM
+  53761     e42f99d9b9eb386440856af2c5b42270 Music/Bc2/Bc2f1.ACM
+  53735     ac4edfe952303574ac9c6a2293600f8b Music/Bc2/Bc2f2.ACM
+  53465     c99d529744262aa35629397c57bd3601 Music/Bc2/Bc2g1.ACM
+  53565     6861ac28ac6ef688c3346835937fffaa Music/Bc2/Bc2g2.ACM
+  53400     484181675a5d0f77d4f53a2aa852883f Music/Bc2/Bc2g3.ACM
+  54188     966731c7596d1fe900beab3a01d0761a Music/Bc2/Bc2h1.ACM
+  53427     11994c5433eca96ae8195016eae3d8b0 Music/Bc2/Bc2h2.ACM
+  41109     1e3f5c2fbd9e6cb53c6d71d11db796bc Music/Bc2/Bc2h3.ACM
+  40389     e0e9e95eb0d486ad7ffe5e4cb2791da3 Music/Bc2/Bc2h4.ACM
+  54418     a9096464bcf32050641b1ec3d3c7c7ec Music/Bc2/Bc2i1.ACM
+  54439     3542e9d41bbf851e81eb85c8a9c23819 Music/Bc2/Bc2i2.ACM
+  54453     b6efdc5bb917780739d5a4cc51570173 Music/Bc2/Bc2i3.ACM
+  54330     45f04e6c4aab1057828c15bc7bf518cf Music/Bc2/Bc2i4.ACM
+  52738     4ff5e1dc5f7bd35bb7bbc23e87df7e0c Music/Bc2/Bc2j1.ACM
+  52775     9c90227eb070c52206e99544344f96d9 Music/Bc2/Bc2j2.ACM
+  54394     3daecc248bc54f292f1b82ba7b54759f Music/Bc2/Bc2j3.ACM
+  52774     4e9c598d0298a52a8c113d987dce4321 Music/Bc2/Bc2j4.ACM
+  53681     7cd7dbba2a9770d26607d33e29628ed4 Music/Bc2/Bc2k1.ACM
+  52853     6761935595e553579b23034a3c6da58f Music/Bc2/Bc2k2.ACM
+  28082     b14f00c99bc0c0929507bd24d8cbc0e0 Music/Bc2/Bc2k3.ACM
+  27924     e73b275458481e95c00c85ebbd7d6a8e Music/Bc2/Bc2xa1.ACM
+  42571     42872b1fb62571eb1d7269e8aceddb32 Music/Bd1/Bd1a1.ACM
+  42659     4421d4cf75c5fa6c7338d13000f19e27 Music/Bd1/Bd1a2.ACM
+  43548     e076c0f2644aa26cddae3298b89209d5 Music/Bd1/Bd1b1.ACM
+  42710     2c03822e91471e72a4f037adb564933b Music/Bd1/Bd1b2.ACM
+  42773     67423219c62e8918bd3ee167b30981d8 Music/Bd1/Bd1b3.ACM
+  42729     67298bd44c1cc05a6d17613d7f983866 Music/Bd1/Bd1b4.ACM
+  42741     b85d65c86080459c00ce7bc6a05d14ce Music/Bd1/Bd1c1.ACM
+  34482     f663eba648f170c8b3b4a42cf307da11 Music/Bd1/Bd1c2.ACM
+  43487     1173a45c11947714a7f698335d721c7e Music/Bd1/Bd1d1.ACM
+  71487     d246de562a2ef18f28aa8b014c305740 Music/Bd1/Bd1d2.ACM
+  71459     1e01a7e5cc9e60f14086fb31f4f2be0f Music/Bd1/Bd1d3.ACM
+  42807     706e4b0959f3b99a6e844863c6168b28 Music/Bd1/Bd1e1.ACM
+  42825     e375043bbdf9e4ff49de5cb3e7a7777c Music/Bd1/Bd1e2.ACM
+  41940     8178308bfc006eb13eb802209f4255ae Music/Bd1/Bd1e3.ACM
+  42806     adde487e3380bb7c022b4dd6a52d71d5 Music/Bd1/Bd1e4.ACM
+  106858    0824cfb2acb91da5b7e88f8558c8cffe Music/Bd1/Bd1enda.ACM
+  105633    e7f167d94066485dee5a733db1d4b47b Music/Bd1/Bd1endb.ACM
+  104720    e17e2f76d4a08d170a0124730113e9fe Music/Bd1/Bd1endc.ACM
+  42736     24b95e3ff10aeae94e3078e2877ef7f1 Music/Bd1/Bd1f1.ACM
+  42728     52f6090618dd734f2f9080208b98a79b Music/Bd1/Bd1f2.ACM
+  42758     be52ea340eb4c891e596e53aab7fe04e Music/Bd1/Bd1f3.ACM
+  42786     f7319a37a0b625ba7a87cb00bfb7ca2d Music/Bd1/Bd1g1.ACM
+  34556     4bab8dfef06cd90e528a3be76340e9f3 Music/Bd1/Bd1g2.ACM
+  42738     c33f0f5d9ec87690913beefcb6108915 Music/Bd1/Bd1g3a.ACM
+  29620     b72902fa23666e8385f589c0087e4625 Music/Bd1/Bd1g4a.ACM
+  42764     0fe4cbb83389cef48c1a730576ebc0c4 Music/Bd1/Bd1h1.ACM
+  36198     03f001f6e7a30a9c2ac56ee86ed4dcd6 Music/Bd1/Bd1h2.ACM
+  36235     451815494e797686a42b717268577279 Music/Bd1/Bd1h3.ACM
+  42830     629f42cf4ce44906915ef1b102468106 Music/Bd1/Bd1i12.ACM
+  42620     a44b20ea58365e0b2d39beae3cc18647 Music/Bd1/Bd1xa1.ACM
+  83381     44aafcb208284ebd21657b6b93989b25 Music/Bd2/Bd2a1.ACM
+  39995     b03b11c1a5c39bbe0f1a9b1ffc7d3027 Music/Bd2/Bd2a2.ACM
+  39249     059269d001ba7921a2401d3710b523e9 Music/Bd2/Bd2a3.ACM
+  39268     03c192fc2466493bc307a4cff883a621 Music/Bd2/Bd2b1.ACM
+  78777     b28947231e0de119b8fe36e96eed19d8 Music/Bd2/Bd2b2.ACM
+  39455     0758f1636641e66a4a78900885a1df68 Music/Bd2/Bd2b2b.ACM
+  59136     33d51efebafa34b9b3f4a9f321a394bc Music/Bd2/Bd2c1.ACM
+  78957     37fe641bcd63c2be8989913cd16b2768 Music/Bd2/Bd2c2.ACM
+  40206     48472437e057144f0cd0bd53c0ed8f22 Music/Bd2/Bd2c3.ACM
+  39356     a3ccbb63e4b109e0e68757a7670f0850 Music/Bd2/Bd2c4.ACM
+  40269     e6b87e1781ad83135ad708d231b7e7e0 Music/Bd2/Bd2d1.ACM
+  38708     ffa45c2df50217fc1a83dffc18a52242 Music/Bd2/Bd2d2.ACM
+  39362     60136e557c13f12312f9e91889be9b92 Music/Bd2/Bd2d3.ACM
+  88620     48f6b72476450943145b7c4a8df58650 Music/Bd2/Bd2d4.ACM
+  39395     583206d3386541ea75ed04a8a7817e52 Music/Bd2/Bd2e1.ACM
+  40166     8329d03b0bd6f0a7106da3bbb4d72c98 Music/Bd2/Bd2e2.ACM
+  39385     156c2961cd66fc803d050e8d8f721566 Music/Bd2/Bd2e3.ACM
+  78961     b17f64bc3d30db3acb4c258d3b292889 Music/Bd2/Bd2e4.ACM
+  69227     850717e786cd18f434b1bc9fc5eca32f Music/Bd2/Bd2enda1.ACM
+  69205     85f8e300dfaadc82941d7f93ab8f9432 Music/Bd2/Bd2enda2.ACM
+  69215     066d58ee1802125acbdd2fdf1ba28e31 Music/Bd2/Bd2endb1.ACM
+  141469    60c6d99801e70c2a97b13d90a7ced988 Music/Bd2/Bd2endb2.ACM
+  69224     7c93b6ef9c93736931dbb4d916b520f4 Music/Bd2/Bd2endd1.ACM
+  69241     09a23024ce618aecaeeb81ebbf69d44f Music/Bd2/Bd2ende1.ACM
+  155294    b9ac6da0668d7116ad82370c3069ae90 Music/Bd2/Bd2endg3.ACM
+  39389     99f0fcd5629bda68557a2b314a29c8ef Music/Bd2/Bd2f1.ACM
+  39376     e929baeeb480e9655f9bacf013b729e1 Music/Bd2/Bd2f2.ACM
+  39421     fc141f4975cbcd54abd59a4f81ea4fff Music/Bd2/Bd2f3.ACM
+  39456     51169cbe599798d3fe7e478e8c5f552f Music/Bd2/Bd2f4.ACM
+  78936     a5748c2f1cdab35e81526f1eb30d63bc Music/Bd2/Bd2g1a.ACM
+  39418     9f968aa74c5ab873eafa79fdb2848f2f Music/Bd2/Bd2g2b.ACM
+  78909     5f5e261f77bcda17f03b659a70702c4d Music/Bd2/Bd2g3.ACM
+  157346    ebf558445923f22842229250f19c5513 Music/Bf1/BF1endA.ACM
+  146859    000794274047dbe7e646f050279ceb38 Music/Bf1/BF1endB.ACM
+  104115    4aecd2faf8dfd25debe5f537760cd0ff Music/Bf1/BF1endC.ACM
+  106361    b878b6330c08e6e464722acaecb53d7f Music/Bf1/BF1endD.ACM
+  104900    4e050724b9c759190d05950f851ad3da Music/Bf1/BF1endE.ACM
+  154438    ac37ab61cd687f433956af6eeb6dea5b Music/Bf1/BF1endF.ACM
+  139638    79f7f46289c7644c9733f1a2f2cf8db4 Music/Bf1/BF1endG.ACM
+  38982     ea951d50ac2a5668d342164226f7de3b Music/Bf1/Bf1a1.ACM
+  61440     d4453922fa17f9d6e19027e57e53d64b Music/Bf1/Bf1a2.ACM
+  31100     bab8bdbeed1bd270ad5f6e32d0684a83 Music/Bf1/Bf1a3.ACM
+  93388     fdc25830b4a656e1b00b699bcfb4a66b Music/Bf1/Bf1b1.ACM
+  47526     8f40750d4f344b32d94b6f71fbd540ad Music/Bf1/Bf1b2.ACM
+  110266    25801f4b550c54d947fcddca0e40754f Music/Bf1/Bf1c1.ACM
+  42712     4b708761e7a0c741885d2adba54659f9 Music/Bf1/Bf1d1.ACM
+  31217     a69f951eda0c95f567e3d13ddd134085 Music/Bf1/Bf1d2.ACM
+  51886     48814923c7585d228d39e27a7107d630 Music/Bf1/Bf1e1.ACM
+  41380     dcfea6abad71c21054509db5e8675973 Music/Bf1/Bf1e2.ACM
+  31221     76fc09dfb2e8bdb65f2179000290f134 Music/Bf1/Bf1f1.ACM
+  51885     f8ea5d1dfb40aa00f7330cf6453605e1 Music/Bf1/Bf1f2.ACM
+  41195     6ba26df5c5ea3d41b782346270cd1ab4 Music/Bf1/Bf1f3.ACM
+  41112     6101b53560f2a2865a0b907e3a095ed6 Music/Bf1/Bf1g1.ACM
+  31215     9a9dfbe715a8e326af4c1ab1c94ad714 Music/Bf1/Bf1g2.ACM
+  51971     385b4a2040a18cacace3ab774efbde01 Music/Bf1/Bf1g3.ACM
+  41150     2bed7c2f4217350da96eb241e7666a36 Music/Bf1/Bf1h1.ACM
+  31252     4d5316ab0a69c7389333cbf3ddbc52e6 Music/Bf1/Bf1h2.ACM
+  41263     00e6b7bac41778673384f2870529b072 Music/Bf1/Bf1i1.ACM
+  51876     21f5abfb169c0ffbfc19385f78167d64 Music/Bf1/Bf1i2.ACM
+  41117     a8869e06cecf581b1628c4402ef4e80a Music/Bf1/Bf1i3.ACM
+  61832     69d44b4b7fb55187058118a8698727b3 Music/Bf1/Bf1j1.ACM
+  41990     1d91c3657bd3ec7a6642c79bd4b23ec6 Music/Bf1/Bf1j2.ACM
+  76475     e7cd7b1ec1ff9bb1aa343f892181b77c Music/Bf1/Bf1j3.ACM
+  15612     fc9c3e3fdac2d8a133923762137a4d31 Music/Bf1/Bf1j4.ACM
+  42735     ed965291c3658d0432fa093887dd39af Music/Bf1/Bf1j5.ACM
+  48080     d21a4ed2ddaff56dd05a52f2de348335 Music/Bf2/Bf2a1.ACM
+  47331     3101948cc30cf00fc41d0e9f70d2a7ac Music/Bf2/Bf2a2.ACM
+  47422     7b81a3cdb28b8daa09346398037b6cd9 Music/Bf2/Bf2a3.ACM
+  47630     22f796b633a1b21afa2bfb915c5f1891 Music/Bf2/Bf2a4.ACM
+  47624     7c99f0fd6d5780c703ff5de8bab40f62 Music/Bf2/Bf2b1.ACM
+  47689     4851db190a800205e037d2367f22f2d5 Music/Bf2/Bf2b2.ACM
+  47570     7ac75d777f284952754f85f53cda70f4 Music/Bf2/Bf2b3.ACM
+  47822     df9816f385e539fc5156ef8b61f2b6de Music/Bf2/Bf2b4.ACM
+  47754     aeb5e6c4f30a797f60e4930552adc86c Music/Bf2/Bf2c1.ACM
+  47804     7359f1b0e037d6b7685a7e203562c0c4 Music/Bf2/Bf2c2.ACM
+  47758     850cf199871806131540fa2374896be1 Music/Bf2/Bf2c3.ACM
+  47647     1ee0d65adc9eeaf8468c0af28d9d22a8 Music/Bf2/Bf2c4.ACM
+  47720     767d7f54a70d40aa5b4ecb6be25ac839 Music/Bf2/Bf2d1.ACM
+  47705     6b0dbf61d9d221f336775e1a20d4e8d9 Music/Bf2/Bf2d2.ACM
+  47745     c6cd96e26e79437152360bd5c342cd7c Music/Bf2/Bf2d3.ACM
+  47639     13719a160ff6314f6ef479e70b4f00ee Music/Bf2/Bf2d4.ACM
+  47759     d52ed36810dcfae57e01fcb20e5dfe35 Music/Bf2/Bf2e1.ACM
+  47599     7114dceb1d984462c074ee3e880ce9c2 Music/Bf2/Bf2e2.ACM
+  75181     1d761f126874667f515a95a8a2da1865 Music/Bf2/Bf2enda1.ACM
+  69205     85f8e300dfaadc82941d7f93ab8f9432 Music/Bf2/Bf2enda2.ACM
+  69215     066d58ee1802125acbdd2fdf1ba28e31 Music/Bf2/Bf2enda3.ACM
+  56228     f27e39ab727d698b31794e5704c6a05d Music/Bf2/Bf2enda4.ACM
+  55992     8dc05a5557e582c5979bb498ecb6cc03 Music/Bf2/Bf2endc1.ACM
+  166097    0765526ee6a6b43a3cdf16e38761540b Music/Bf2/Bf2endd1.ACM
+  126646    571e65898ae6cdaaf22d258dc557849b Music/Bf2/Bf2endd2.ACM
+  141469    60c6d99801e70c2a97b13d90a7ced988 Music/Bf2/Bf2endd4.ACM
+  148926    3bc81f30878a41d566623e169f193dc4 Music/Bf2/Bf2endf1.ACM
+  148760    f2c9aa7b97293dbc9f5359a4bc1886d1 Music/Bf2/Bf2endf2.ACM
+  106858    0824cfb2acb91da5b7e88f8558c8cffe Music/Bf2/Bf2endf3.ACM
+  105633    e7f167d94066485dee5a733db1d4b47b Music/Bf2/Bf2endg3.ACM
+  215543    42c19e60053260a2dfa2f4af79db9243 Music/Bf2/Bf2endg4.ACM
+  47658     4d542ef0ed64b68217368eb361078f88 Music/Bf2/Bf2f1.ACM
+  47715     af8a885b86b61c5675bdb195f2fc31de Music/Bf2/Bf2f2.ACM
+  47671     47bd3eaba33a43b5006e4492ae948658 Music/Bf2/Bf2f3.ACM
+  47756     3fb9df60aebfb133e262ecdd49ed0714 Music/Bf2/Bf2f4.ACM
+  48537     5a710750522e3b775aefe62fd6350c68 Music/Bf2/Bf2g1.ACM
+  46844     df7bc3709b78806ac84c7663a70d567c Music/Bf2/Bf2g2.ACM
+  47662     bf8bf9abfce77f11a589f8f3909a3746 Music/Bf2/Bf2g3.ACM
+  47719     bc1adc2510b9d6802258749931cc3098 Music/Bf2/Bf2g4.ACM
+  47700     cf709a070785bd47105f08ea663e96a5 Music/Bf2/Bf2h1.ACM
+  47703     aa0c29ed2676f334aa5d3187ebd7d8e6 Music/Bf2/Bf2h2.ACM
+  47543     cd554d93ad19629254f4c143d23efaaa Music/Bf2/Bf2h3.ACM
+  47624     38f18c1d47e057db36f53af2f39fccf9 Music/Bf2/Bf2h4.ACM
+  38599     82f5bf8b9ca68916e549cf475bebd1f3 Music/Bl1/Bl1a1.ACM
+  28841     d0ac52c7b63c1878c4d1d19677434513 Music/Bl1/Bl1a3.ACM
+  28809     18244f655b1d37cc7edc2f241113bac1 Music/Bl1/Bl1a4.ACM
+  28818     719a1dfee82c61af60c1fbad32d1331d Music/Bl1/Bl1b1.ACM
+  28803     905f5022fface90dcc1dbd634dda6c7c Music/Bl1/Bl1b2.ACM
+  28778     16f915e12686f228fcef2080c0e9a3b2 Music/Bl1/Bl1b3.ACM
+  28852     0cb5edd6bc1af2563bbe1c652777c496 Music/Bl1/Bl1b4.ACM
+  28871     9755fbb642f5eb885454ff0d1a036f9b Music/Bl1/Bl1c1.ACM
+  28812     fef50ec34af5c6eeed43485be7d376d4 Music/Bl1/Bl1c2.ACM
+  28816     77c669dcec52c005ce99e9ec3e11fd66 Music/Bl1/Bl1c3.ACM
+  28807     8a143c6e8e4a53608e0e7c872834ee3c Music/Bl1/Bl1c4.ACM
+  28821     ca4ec92a22ba20126dff6c87d7c438eb Music/Bl1/Bl1d1.ACM
+  28811     4ca61a89257b80a3c80a71a87ca26e98 Music/Bl1/Bl1d2.ACM
+  28887     09afb974ab7dd030f1aea76efa9b5de5 Music/Bl1/Bl1d3.ACM
+  56926     5fb08fa3abf7ce6e7cb4038ff6ef86ec Music/Bl1/Bl1e1.ACM
+  42890     459cdd93ff5deac9f82736d0fdb9fe9a Music/Bl1/Bl1e2.ACM
+  57848     e78a322dccfc0d374a3a99bb57231369 Music/Bl1/Bl1e3.ACM
+  35502     483abe766ac50df5b72151bd7b0cd081 Music/Bl1/Bl1e4a.ACM
+  55885     c8ba961ee40a451a7588a4ca3efbe6d9 Music/Bl1/Bl1enda1.ACM
+  105633    e7f167d94066485dee5a733db1d4b47b Music/Bl1/Bl1enda4.ACM
+  106819    9eaa8658efe82352b4139e98e09f7fc2 Music/Bl1/Bl1endb1.ACM
+  107733    9d45fa19da58f8da45816451141dda47 Music/Bl1/Bl1endb2.ACM
+  108400    a1e831afb4ff1c39451b546e45bb71eb Music/Bl1/Bl1endb3.ACM
+  109025    066719a940f2d9a5b64eb117c3c2e5ee Music/Bl1/Bl1endc1.ACM
+  137476    c43f189cb490b8661fc5bceb71c05bd2 Music/Bl1/Bl1ende4.ACM
+  86731     ab72663ff2e8f542a318d0c5db45631f Music/Bl1/Bl1f1a.ACM
+  28882     6bd5eb54589217e65e9cc0daa6e6c27a Music/Bl1/Bl1f2.ACM
+  28884     450a8a928d50cd3007b6ec11e50ba1af Music/Bl1/Bl1f3.ACM
+  28867     050dadf92a0bfaed57d8d6dee56ddd29 Music/Bl1/Bl1f4.ACM
+  28903     542336dbbef18e5d7e144ae399b09673 Music/Bl1/Bl1g1.ACM
+  28908     c1044ca6427e9a195dbe230260fe8fa5 Music/Bl1/Bl1g2.ACM
+  28833     135abedc72f787d339a7389b5ee24ccd Music/Bl1/Bl1g3.ACM
+  85725     3d6cd012fcf09391363a6b8d37289023 Music/Bl1/Bl1h1.ACM
+  28899     c5e5376e754d0165556ba2f1a3f67d54 Music/Bl1/Bl1h2.ACM
+  56828     a405fba6e6557a163f34dddac8dffe44 Music/Bl1/Bl1xa4.ACM
+  62813     6626ab3a02074c18d8b5fc4ac9818ec8 Music/Bl2/BL2endA.ACM
+  62254     84b156ddef9a01488c3c40aa04484855 Music/Bl2/BL2endB.ACM
+  70445     57b2996e9a0e679a764d7fa986def85a Music/Bl2/BL2endC.ACM
+  74979     7a79e6649b8550276c5571a322380f9a Music/Bl2/BL2endD.ACM
+  76417     a7b6bb6c5a8ff30390d5c21e9199f151 Music/Bl2/BL2endE.ACM
+  44762     378212f893f553c50c467b466e8c272b Music/Bl2/Bl2a1.ACM
+  49776     89874dbc46b580960c51f9d6a94430a1 Music/Bl2/Bl2a2.ACM
+  53248     0724ebbf876e1c2e1beb411e9f6a5c39 Music/Bl2/Bl2a3.ACM
+  51685     1e5e9e80fa2699ed58b010698f850c9c Music/Bl2/Bl2a4.ACM
+  53326     0469de506d5853db065a0bbabd4eba38 Music/Bl2/Bl2b1.ACM
+  51629     90a75d7d433b3731b208954e38b4e707 Music/Bl2/Bl2b2.ACM
+  52356     52226bb33c13dec67d6c8e1d4e7ace2c Music/Bl2/Bl2b3.ACM
+  39327     5588bad92fe858222b6dd1ca3636ea14 Music/Bl2/Bl2b4.ACM
+  40391     cb48995bb97686cc384a75682ea50159 Music/Bl2/Bl2c1.ACM
+  66061     898498760a723f153d910d534d71b09c Music/Bl2/Bl2c2.ACM
+  65118     d6c926f56d5d5b4bd3bc7fbb15e4859d Music/Bl2/Bl2c3.ACM
+  65123     16cd5c1138debb573585ac320e298f96 Music/Bl2/Bl2c4.ACM
+  38671     52a09b5fa0e109b4f6c0c5a32433c3bd Music/Bl2/Bl2d1.ACM
+  64972     0eb1f707f8e34fc66ee67592054dbb24 Music/Bl2/Bl2d2.ACM
+  79765     3590f018b778acdfbae67df4a593c275 Music/Bl2/Bl2e1.ACM
+  33844     4388f3f6b1adb59474f159da6a4684f7 Music/Bl2/Bl2f1.ACM
+  66033     a5a20d1e3bcce056d1e18fb9a468870e Music/Bl2/Bl2f2.ACM
+  57796     10e6e27af28aff6bcdbbf2c9bb1c3513 Music/Bl2/Bl2g1.ACM
+  38861     0f511398a3adfd7635d7de17a181d5f9 Music/Bl2/Bl2g2.ACM
+  26483     11105107b8a942f6c944a460828df8f5 Music/Bl2/Bl2g3.ACM
+  46187     cf4fbf7ad2c351bbf0b02f4cab324021 Music/Bl2/Bl2h1.ACM
+  32693     2f7d2f673a8a9b185f8526602c48d84a Music/Bl2/Bl2h2.ACM
+  32955     6f3b649320d5217092a1f40139271bac Music/Bl2/Bl2h3.ACM
+  46951     ac5db8e01363e63a96ad73f2a634563b Music/Bl2/Bl2h4.ACM
+  33936     722c79daad9a488ba6a78042f0259222 Music/Bl2/Bl2h5.ACM
+  40470     116fc96b44486a3d27e9aced160e0fb0 Music/Bl2/Bl2h6.ACM
+  68999     42d6002d35914f8313f2af3dbbd537bb Music/Bp1/Bp1a1.ACM
+  94632     5a0f69886b796cedc4aa54684b585071 Music/Bp1/Bp1a2.ACM
+  64215     59c9ea86cc5755a150732691188e5433 Music/Bp1/Bp1a3.ACM
+  56855     98ada8a05bf81e57e062f6b7ba9cad36 Music/Bp1/Bp1b1.ACM
+  49369     4b1ef69c59f2dbb2bffa8b593f2c1958 Music/Bp1/Bp1b2.ACM
+  56814     066dc666ba62b266e81ffbf4e6c37780 Music/Bp1/Bp1b3.ACM
+  50157     3ca9aee9fdb197aba2e9aa01a0c1378c Music/Bp1/Bp1c1.ACM
+  70691     1d658fa4abf11165d2d98680cdf66aa6 Music/Bp1/Bp1c2.ACM
+  78897     96a33e8d7e1abe4eadf5798682f08ea9 Music/Bp1/Bp1d1.ACM
+  66750     66104b0586bdf5dd85dac049bb54ca0f Music/Bp1/Bp1d2.ACM
+  56072     ae7e973f7131583fb4643c100e0f16ba Music/Bp1/Bp1d3.ACM
+  29157     39f558df0ff49aec38ce5380cee5e6c0 Music/Bp1/Bp1enda1.ACM
+  77399     c624431a50da51e507162369bb605bd4 Music/Bp1/Bp1enda2.ACM
+  77282     d06a9f139de3e800c51034aed35782a8 Music/Bp1/Bp1endb1.ACM
+  76896     d6963ab9d6b73ffc90828563f25559f2 Music/Bp1/Bp1endb2.ACM
+  77433     779bec692b893a80dc42dfc0d2012c1f Music/Bp1/Bp1endc2.ACM
+  77246     79094e30338fcabe663c547a40ffca5a Music/Bp1/Bp1endd1.ACM
+  77380     def4ac3a62605f76b037180f251bb685 Music/Bp1/Bp1endd2.ACM
+  77399     ef4ab1a137f61aaefbc94b3b72484ddd Music/Bp1/Bp1endz1.ACM
+  56925     376543834116d78e363982cc00876cc3 Music/Bp2/Bp2a1.ACM
+  77367     104682ffb12ca189b886e820ead1a40d Music/Bp2/Bp2a2.ACM
+  77044     c517952b763bf1c28d0641a9969ab7da Music/Bp2/Bp2a3.ACM
+  38564     c66c7eec5e2e07dddf222d895583b384 Music/Bp2/Bp2b1.ACM
+  50811     58e62f1fc0d241028dc9469f69155d24 Music/Bp2/Bp2b2.ACM
+  63868     8b4b23cd929d89157eb5610c56597749 Music/Bp2/Bp2c1.ACM
+  63973     60fc20af960e26d401b0378bba26669a Music/Bp2/Bp2c2.ACM
+  45154     3c7cf84ddfdcfbb3c3ae61162a31bb98 Music/Bp2/Bp2d1.ACM
+  64268     84e45ea12d5ed8282b55a9b981c714b6 Music/Bp2/Bp2d2.ACM
+  76621     86fce3640ac088711bf190620c3a1aac Music/Bp2/Bp2d3.ACM
+  51723     601e79422b8f976dde1e01a0d6f58b1e Music/Bp2/Bp2d4.ACM
+  50912     70029e2e204bc550ef07b2995842464c Music/Bp2/Bp2e1.ACM
+  57510     6daa3e22063a6342334e3b626a52d1f5 Music/Bp2/Bp2e2.ACM
+  32785     eb9ad3d620948fd0d922c12a260cc0d7 Music/Bp2/Bp2e3.ACM
+  31955     6f0c8f19ceaf31d2dbf435e0ba624075 Music/Bp2/Bp2e4.ACM
+  32072     36d387fbadde891e187641ed8d6888fa Music/Bp2/Bp2e5.ACM
+  76822     93719e5ffede1a9ead8e9ac604cb4536 Music/Bp2/Bp2enda1.ACM
+  77476     14d19be4c1d7092d6530d9098562a993 Music/Bp2/Bp2endc1.ACM
+  77140     62e6985efc5a62b58838083daea869c2 Music/Bp2/Bp2endc2.ACM
+  76985     11d331b6fc8b676e33e94296b209abd1 Music/Bp2/Bp2endd1.ACM
+  106819    9eaa8658efe82352b4139e98e09f7fc2 Music/Bp2/Bp2endd2.ACM
+  57332     7122a10117754aa227c83615173b2337 Music/Bp2/Bp2endd3.ACM
+  57450     e37a3ad4f8380f7d1a53b3bfe6e88694 Music/Bp2/Bp2endf1.ACM
+  57570     c4295a190ea69257e18515518a08d91f Music/Bp2/Bp2endf4.ACM
+  57382     53bc2e7fda3c6a5d105085f548c0be03 Music/Bp2/Bp2endg4.ACM
+  56935     2ff4fc01400580c7fca94b52a916c65e Music/Bp2/Bp2endh1.ACM
+  141020    c5e069c2a3cefac7d4b1b4bd3c7fa7f7 Music/Bp2/Bp2endh3.ACM
+  57378     6d78835ea8bc9928dfbcb8a2b78b76ba Music/Bp2/Bp2endz1.ACM
+  32951     e1f7b1cb9a1bda42922848ebcab33421 Music/Bp2/Bp2f1.ACM
+  45234     ec417ab6d52b2fc42c30016452442ca9 Music/Bp2/Bp2f2.ACM
+  57614     419c21547a1c5d14ff8d11829563c628 Music/Bp2/Bp2f3.ACM
+  45329     9dd59894930840c7a00a9ea9d484cafc Music/Bp2/Bp2f4.ACM
+  57623     03225353202af02c62731c753eb304b2 Music/Bp2/Bp2g1.ACM
+  51670     9af9cf38aaf295a1ecc0bf1de5ae7e90 Music/Bp2/Bp2g2.ACM
+  51879     0b5c0be584cfadeccfb77842bdd3b4ea Music/Bp2/Bp2g3.ACM
+  70749     1b07d75e5b57276fb9383967b043e660 Music/Bp2/Bp2g4.ACM
+  37857     c16f5afe003e23e9573326c9b8870673 Music/Bp2/Bp2h1.ACM
+  46110     d9eb90478c3b2ae25ab12d984c95503f Music/Bp2/Bp2h2.ACM
+  50199     9e208f0bcd7f6a5a39095bcb9c85e54e Music/Bp2/Bp2h3.ACM
+  51891     decf64a2ebfad92b0888278c474d6aff Music/Bp2/Bp2xa1.ACM
+  83785     4c0b6e55f3bda8f3f50ef20ff8d996eb Music/Bp2/Bp2z1.ACM
+  53388     abd1a11da522090a8b6696c68adfb60f Music/Bw1/Bw1a1.ACM
+  42655     74afd40ce7411877121f3597854c0058 Music/Bw1/Bw1a3.ACM
+  42700     3b7c4969a799fb7e12739a74fcf6caaf Music/Bw1/Bw1a4.ACM
+  42683     dc93ec188663e0fdc9189fd2d764b7b1 Music/Bw1/Bw1b1.ACM
+  42670     46905008e04da8c2d4488d5183022bbd Music/Bw1/Bw1b2.ACM
+  42733     92010f8acc58aa5e350056b55a16ab82 Music/Bw1/Bw1b3.ACM
+  42795     f81e18396909f02e9c0d700320da553e Music/Bw1/Bw1b4.ACM
+  42698     fab7e960c1387344ddf7b8a4e9c3c045 Music/Bw1/Bw1c1.ACM
+  42736     a80179c1d17e4454804b5daf21ac1963 Music/Bw1/Bw1c2.ACM
+  42799     171f76cbe745bcf8715ad6f7b8dc1b49 Music/Bw1/Bw1c3.ACM
+  42811     9c4fdfb9172390bb5a53154cf98686dc Music/Bw1/Bw1c4.ACM
+  42700     fe22b9eaf6c68b226cc3144757d813f8 Music/Bw1/Bw1d1.ACM
+  42710     cadbb54cac56b5a4d5d5055a9c38f132 Music/Bw1/Bw1d2.ACM
+  42727     1ad6a03fcd772ec224e01c8d9bde1ada Music/Bw1/Bw1d3.ACM
+  42788     33e4344c95694493d18d27387658cd3f Music/Bw1/Bw1d4.ACM
+  42751     e386c9cc630cef78f58cdeda267782a7 Music/Bw1/Bw1e1.ACM
+  42748     cdbf11fd6a90fbbba19da5ef63568b8b Music/Bw1/Bw1e2.ACM
+  42772     77ca3b495d3cff62e3554c3230c5e487 Music/Bw1/Bw1e3.ACM
+  42831     af30c410743cd48b5b7424c9c34bfd43 Music/Bw1/Bw1e4.ACM
+  69257     69219ae78e4b4acc35760946bfe5f9f9 Music/Bw1/Bw1enda1.ACM
+  104720    e17e2f76d4a08d170a0124730113e9fe Music/Bw1/Bw1enda3.ACM
+  69227     ddf5d4abeebdcd548a1d977c66890be4 Music/Bw1/Bw1endb1.ACM
+  68507     864f220bb6569506de7523fa90ba3ea4 Music/Bw1/Bw1endb2.ACM
+  56833     a28a88d09432609390e0a92297bb04ee Music/Bw1/Bw1endb4.ACM
+  105633    e7f167d94066485dee5a733db1d4b47b Music/Bw1/Bw1endd3.ACM
+  106858    0824cfb2acb91da5b7e88f8558c8cffe Music/Bw1/Bw1endd4.ACM
+  76636     780bec4f465a2d90bac20a983b2a4855 Music/Bw1/Bw1ende1.ACM
+  77075     dedd741910300541537a19548aec055a Music/Bw1/Bw1ende2.ACM
+  74697     2b4ebe1dae69ee502d432e9d5146b0fa Music/Bw1/Bw1endf1.ACM
+  195662    8e6b6611bdb62623ae114bf09d73056c Music/Bw1/Bw1endf2.ACM
+  51872     54cae2b2bfabd863f4677eaccac4f19c Music/Bw1/Bw1f1.ACM
+  51822     9d51251b8703edddf1c349a5ae07491d Music/Bw1/Bw1f2.ACM
+  85491     228556fed43a1393fb8837d4bcd38b9a Music/Bw1/Bw1g12.ACM
+  59931     2e277ab164a4b3f97720eb6d1a797011 Music/Bw1/Bw1h1.ACM
+  68208     49a58b3249746a7ca04f2f959e6df0b1 Music/Bw1/Bw1h2.ACM
+  30        2c78bcca358cba964db23238216a1fca Music/CDay1.mus
+  2463317   23a515ae5b9ebf135e1447a55709d6ab Music/CDay1/CDay1a.ACM
+  30        722acc054121ec92538f7bd5da050aef Music/CDay2.mus
+  1603692   235dd6fb903cb513452aa80cb7e5d1a1 Music/CDay2/CDay2a.ACM
+  30        a3be411c356fec0cab149034e690dad8 Music/CNite.mus
+  2205600   7553079b5a84e1338f632e03d43c3c81 Music/CNite/CNitea.ACM
+  31        bdf77b68472805a83a14dd803e17c3f9 Music/Chants.mus
+  798582    813f219e00fc76587bb0ead5e1f6ced1 Music/Chants/Chantsa.ACM
+  30        8bed3ddd4d182898931c0a1d7d05393f Music/Chapter.mus
+  30        8bed3ddd4d182898931c0a1d7d05393f Music/Dream.mus
+  2143795   38db71fe7171697ce70c9f2c20dd1748 Music/Dream/Dreama.ACM
+  29        630d67946bf1e13c29875a623ddd4829 Music/Dung1.mus
+  3115779   c56e57910254190ba661b48f9e5141f0 Music/Dung1/Dung1a.ACM
+  29        4fd0753b936c707d953e7ec192be4f71 Music/Dung2.mus
+  3108626   b02aaa763efbacaac5c7edce99bfd9a9 Music/Dung2/Dung2a.ACM
+  29        8a058f263a24e32d8e5ad3d42a24afef Music/Dung3.mus
+  1964740   0966e8607f878b76a3510ada8885bd57 Music/Dung3/Dung3a.ACM
+  29        d5e16f91622a26373d3b419b99581814 Music/FDay.mus
+  1879166   f06c997a0278b4adf26d163e549812d3 Music/FDay/FDaya.ACM
+  30        9950db579ddd8f0b6fe23739f590ba23 Music/FNite.mus
+  1438902   6eefe0f449a5178e0f2bdb8a7a984835 Music/FNite/FNitea.ACM
+  29        4ce939646ff022ac2621469b1c72206e Music/Fort.mus
+  1586283   d6b1c0f4d07287ad4c76d51d6062d4ee Music/Fort/Forta.ACM
+  29        9ccffed7683b6b3265283362b92f592d Music/PDay.mus
+  1505445   9ae1911c53abe8f45c05bbf97198e31e Music/PDay/PDaya.ACM
+  2233903   8f4bedde4d4f5ef7cbb5fe1a2c9ca25e Music/PNite/PNitea.ACM
+  30        9c1b1bfbd47fb6693c836263a1611265 Music/Pnite.mus
+  30        501caa4b4cd6beebd401b22d90732ddd Music/TDay1.mus
+  1660948   0b286cff962a7d1bd6e5bb1ae9e11e9f Music/TDay1/TDay1a.ACM
+  30        bee756d743ed095c36cf584dc01dfa21 Music/TDay2.mus
+  1552035   ef13326cfd92f67b66260ed1c4b64c2e Music/TDay2/TDay2a.ACM
+  30        e13bf4588fa72fb0bd8d3fef841cb928 Music/TNite.mus
+  1550499   3eb0cfc2a5d7632b698ff02bdfc97310 Music/TNite/TNitea.ACM
+  27        898c4a85dfcdc3fd3b89260c576124a1 Music/Tav1.mus
+  1618906   139e9a15301efc8fe0ba3f30221b4d7c Music/Tav1/Tav1a.acm
+  27        055e34269150c52e8bd208d50fc222ec Music/Tav2.mus
+  1353880   9f5f9906e69550dd3e415083d2d63356 Music/Tav2/Tav2a.acm
+  27        f6060a045b6e8654f0d5c913903c5203 Music/Tav3.mus
+  1781122   71dda32b350f1c18e94b7d2502c732aa Music/Tav3/Tav3a.acm
+  27        bd2b68d66068a57b4b260d257f59ed6e Music/Tav4.mus
+  1434605   1519da5a10f4cdc22ac7ce7383f218a2 Music/Tav4/Tav4a.acm
+  31        58a812ce381107d73b870f18f7ed4a80 Music/Temple.mus
+  1005934   4fba4b59acca5ab6c8aaf522061d374a Music/Temple/Templea.ACM
+  29        ce10ad5cba34c3e835eea22b4d48e88d Music/Theme.mus
+  1648385   bb434af47e6221f1a005a20dbb5f948e Music/Theme/Themea.ACM
+  2984      0df6f2e721bc839a89fcd02edde1a5f4 Override/Ar0109.ARE
+  4204      5fc789f84f35f3aa6bc6b28350edf374 Override/Ar0110.ARE
+  2776      77db8db5586feb9971175cd3089ddf15 Override/Ar0111.ARE
+  2844      f5a5fccc6df7d21259981ff113058797 Override/Ar0145.ARE
+  10988     c864b455d4566212a5315338a7f28048 Override/Ar0146.ARE
+  3192      66dc513234693f0bc42d0fbdd620da58 Override/Ar0154.ARE
+  2948      ee1affbf9ec78678e69a84dd7cf3c70a Override/Ar0307.ARE
+  1924      670b29a69b2011edfb6c98d118add9d4 Override/Ar0308.ARE
+  6408      99b415b5bd856523267d16184a00c4a4 Override/Ar0504.ARE
+  11280     eaa55080c43af7be2ffa4e97ed2fe255 Override/Ar1801a.are
+  21664     9a7bfc5fcbe99792b464189e32607834 Override/Ar2600.ARE
+  10340     bb2ca8bd9fce65af090f7d076bb5cdd8 Override/Ar2608.ARE
+  9712      5e7fd56e606543b56a6cf8b388440aea Override/Ar2609.ARE
+  6204      a3352f73e9c7323cb97833e1f8fedce2 Override/Ar2610.ARE
+  6408      9b7010ef7eed7bfd323bc7e242a089ae Override/Ar2611.ARE
+  4884      2f73eb6c030e2fc818a392af1e95948e Override/Ar2612.ARE
+  4152      d44097f753e3c3bc7632c0ca25f974bf Override/Ar2614.ARE
+  3111      74094ec86954d3e0248e9a68e8b567c1 Override/ClairD.dlg
+  314       9895df3ece39d75dd4cbf4a1ba425a8b Override/DAGG10.itm
+  6133      a07584004053f0db92ff1d75847e6968 Override/DEATHKNI.bcs
+  410       a705bd2cf741db9e8b92f615e83011c1 Override/HAMM04.itm
+  1127      a6e19a66fd712d96da67c62776386285 Override/Halbaz.dlg
+  2721      cdf2b26b3e6355d9072dc5ef88c13f52 Override/ISCRL5A.bam
+  2721      28db5015994932ee33911075f4c4cea6 Override/ISCRL5B.bam
+  2721      e87e2a78711d641f95a47a38b4246322 Override/ISCRL5C.bam
+  2721      b40fd5e01cb0cc2fa60ffe59483fed0a Override/ISCRL5D.bam
+  2721      c3f5513f0809c4bcd3db8fc83243eadd Override/ISCRL5E.bam
+  2721      d5697f2aa556c30df3a2ad4f12a8e868 Override/ISCRL5F.bam
+  2721      0570b8afcce90b0d83a600e366f228bb Override/ISCRL5G.bam
+  2721      5c5a793947aa3cafde2d1cff09f8f385 Override/ISCRL5H.bam
+  2721      b883fc076e6dc7824b44ca48ecd22225 Override/ISCRL5I.bam
+  2721      60fea4410d8c71eb77ecb5023bab068c Override/ISCRL5J.bam
+  2721      0673e20a03717d2c54e30a9a7cea817d Override/ISCRL5K.bam
+  2721      5dc8e4f0c661312119915d25b2b2223e Override/ISCRL5L.bam
+  2721      199fc0f38ddff03c59a397f8941d3f05 Override/ISCRL5M.bam
+  2721      9d52a0b4f3cdc66ffd5625afa0a6b7fc Override/ISCRL5N.bam
+  2721      85e81de62edb3ac2c2ad68fbc56fd5bd Override/ISCRL5O.bam
+  2721      20e7cf38898f393f68e11111aa641f70 Override/ISCRL5P.bam
+  2721      df6a476fbcc7ae1305cca388e382005e Override/ISCRL5Q.bam
+  1139      20221a34eb31135303ba95b67ace9f5d Override/Ike.dlg
+  360       c677fffee5f15ca25903cd3df466560b Override/Isloff.2da
+  377       0d94949aec649acdcea7db051113af3f Override/Islon.2da
+  5180      c218301b03c99bf433e7ae8de4da8e6e Override/MGnlInv.BAM
+  6424      c0b471a984383b05210f26ed39c3abbd Override/MOgrInv.BAM
+  5931      f5729967000f135dbdd580ca3564f6eb Override/MSli2Inv.BAM
+  5619      148a2fa5ff38b351d8edfd00bf3e00ec Override/MSpi3Inv.BAM
+  1353      c3324592cfaca6c7649a476c8afa6f9d Override/MastArea.2DA
+  744       a550649163bc635971419756c3282ff2 Override/Rndscrol.2da
+  314       b29184badf6aae7bde70b9d6888f4aed Override/SW1H22.itm
+  374       799f38e102b20e69d1516e4d9c90252d Override/SkillBrd.2DA
+  298       7dcebf315c3812502a39488778e7f817 Override/SpWi959.spl
+  250       84fc5b6c4d3097a7797d77d43a6cc374 Override/SpWi960.spl
+  1258      803eaa57239c2f7beefaa9aa34ad46d2 Override/TRAPDIS.bcs
+  53552     6b6ea958969f03a2bd4658e68f40721f Override/WorldMap.WMP
+  2343      91b67b8e19c6eaf737cf0f7a75f091b7 Override/ar0123.bcs
+  3391      b601bf12f5ed74d1a50c5904f6dc1a46 Override/ar0125.bcs
+  27116     9e6d48b041a704434cbd5d87b8514f0f Override/ar0300.ARE
+  83892     7cd53d51ce4b4bfe5a9430be15c52b43 Override/ar0400.WED
+  51318     70ee6bc3a71a652bdaacdee2a93e6e97 Override/ar0400sr.bmp
+  1824      c1c3ab54337ab9e9234595a99f84e311 Override/ar0502.bcs
+  1897      8e19216eea805c14bcac19cd69e28e1d Override/ar0600.bcs
+  107540    30960cf425e47e89e8f1f4dc2917c7d5 Override/ar0700n.WED
+  51318     e19cdc36621b19fef94d83388d54157e Override/ar0900sr.BMP
+  4406      bde73c9b09614af166d18af6afe0f2b6 Override/ar1000.bcs
+  11280     3d1f1523667fc6d62f5594c4d6b95f6e Override/ar1801.ARE
+  3932      afdc5ac03dce7340c3455647f1db32e9 Override/ar5406.MOS
+  774       0f2473fff83303f34c78ab5eef2babe5 Override/ar7200.WED
+  8677      b00853ec2835f17c2e65e3803f31b75d Override/arealink.2da
+  1136      3b6a92911dc8def71e574c2e5c7f7f64 Override/baresh.CRE
+  314       5e4b7b8780e1510bbc3efffcdf9043c4 Override/blun06.itm
+  314       1220794f89dfcf39b7d4bb1056c28d6d Override/blun07.itm
+  410       7222088b18d9e86f38628f473d6c1678 Override/blun09.itm
+  602       126e6f194ca005f03d2eaceb6e0741bd Override/blun10.itm
+  3657      a519729dffec85b7834a6dfc7de64578 Override/cachvald.2da
+  1236      d76e9d06d616192ca0199bdf4f4f3076 Override/delain.CRE
+  4416      4eaa6b6791c3211d6df84f9fc8a1bd20 Override/dplayer3.bcs
+  1236      8118680853ee00ec8e64300a207749f9 Override/durlyl.CRE
+  1096      41e7d05de7ee392669d6cb7939966e03 Override/galkin.CRE
+  1736      b11246ba8fe828a8557ecbd919e34d98 Override/garric.dlg
+  619       1230e278ed0a52baf137054509b9f830 Override/gretek.dlg
+  498       d84ef9a3cbe421228c35045f6d614718 Override/helm14.itm
+  212       13bc40cb2bdd62d755aa0f8c2801481a Override/initinv2.bcs
+  1136      fa98fbac2f5c5fd13d8bb6d4222efd92 Override/karoug.CRE
+  1156      63ae71dd7f5b8821216f7c13d064a772 Override/kirinh.CRE
+  4480      71b683153d0960bcf824448565a16674 Override/menda1.dlg
+  114       f5ef2c75a64e715702096dbcf6cee856 Override/misc1H.itm
+  1034      b4ca4cf7c331d2e9f51203b97e39e721 Override/misc73.itm
+  114       09ca5fcc8d3cfa3bf270be9f613da994 Override/misc94.itm
+  114       5ec56c0fb2665afa1132f1190730abc7 Override/misc95.itm
+  1034      758ab6679d0840f5a56305c0e1bbf61b Override/scrl07.itm
+  4780      020c93741eeb7d3f8e6df4a2ff9dd1cc Override/shandal.bcs
+  354       ce3b6507b5538e21a9f22034020b28d9 Override/shld19.itm
+  3354      83ecd6f3b212a48401b6dd6535d7f174 Override/silke.dlg
+  2362      65aa25a31202b5521ae9f33de044cc86 Override/spwi118.spl
+  298       2bcbf4fda0da854a7fc3c4f05246c3b8 Override/spwi924.spl
+  298       86f7f89f928cb1ee4a3d3927fafe1c46 Override/spwi925.spl
+  298       6f93635b9c3e3cb02dbbbc9a66ea275e Override/spwi944.spl
+  298       6b7f2aa9edf66295c42421a52229dcf6 Override/spwi945.spl
+  298       7640dcf961e24b968ebeddee14d9a0da Override/spwi946.spl
+  298       f532d0993f0aef709d78a58d4704681d Override/spwi947.spl
+  250       ac8ccbdffc5380dc0d66cc6700a6fd33 Override/spwi948.spl
+  298       b421be9bb3dbbc67e4c29717312d2f55 Override/spwi949.spl
+  410       ffa6f077583d53691c9cfec4ed7d9dcd Override/sw1h18.itm
+  458       402b20731234bf7cd1e634d608fa86fe Override/sw1h19.itm
+  314       1ecf347f683c169ff6f645b31332458c Override/sw1h20.itm
+  410       3c3967bf5e1f01b3988342203a9d672a Override/sw1h23.itm
+  1116      e137201aba01aff65f62dd7267b70668 Override/tanar.CRE
+  2008      c3809ef9dd8fec77813c80917a46305e Override/ulgoth.STO
+  1160      cfd5b84d34910a486e648d82d0d7b37c Override/xan6.CRE
+  23462     dfbd32cde5ecd2a056aa7fa8cf43b5d0 Save/888888888-Mission-Pack-Save/Baldur.bmp
+  79452     e6b0c5af9e6a072c25d5db31611f1881 Save/888888888-Mission-Pack-Save/Baldur.gam
+  482106    06b830a9853648f42662c03040c8e93f Save/888888888-Mission-Pack-Save/Baldur.sav
+  1854      81bb3c15850d2009a9d11d528b5cb97f Save/888888888-Mission-Pack-Save/Portrt0.bmp
+  1854      826286c8651f9a843df1be8b6cddcdf7 Save/888888888-Mission-Pack-Save/Portrt1.bmp
+  1854      80166f6e2bb142c1bb61e1fcd53f2094 Save/888888888-Mission-Pack-Save/Portrt2.bmp
+  1854      58f50fbba327f73d9eb9fbc44b113fa1 Save/888888888-Mission-Pack-Save/Portrt3.bmp
+  1854      f496af7b884f79605424f7345aba2ce9 Save/888888888-Mission-Pack-Save/Portrt4.bmp
+  1854      3ac3704114229baf102304edc2709902 Save/888888888-Mission-Pack-Save/Portrt5.bmp
+  49784     101a7efb3ce405fc69edabc6ae153744 Save/888888888-Mission-Pack-Save/Worldmap.wmp
+  61648     2c3440d1fb9a22ffd00bb3be82a00e9e Sounds/Female1a.wav
+  95760     b2a8997211f30dad995b3fe69f609ea3 Sounds/Female1b.wav
+  159390    0bb4fd77833f7fe66e8c80bb03ea5d8b Sounds/Female1c.wav
+  127084    6718a9f181e2dba3bfee6ef50034c41c Sounds/Female1d.wav
+  112520    efcb4d28cdcfea063d32e94814677679 Sounds/Female1e.wav
+  17432     9cec8380317fbe975a63630d20a8e12b Sounds/Female1f.wav
+  19052     dca4c16c9903e4ca87f79cb637e9faab Sounds/Female1g.wav
+  28468     125933a10b9a0cdb1e0c8ffb975ffced Sounds/Female1h.wav
+  66200     a1c3dc27f7e955d44659bef427d2a8c2 Sounds/Female1i.wav
+  32036     ca8993fa68e453f9e18bde6ac67d2b53 Sounds/Female1j.wav
+  26164     b34a85e8521828e8a40e3ce5c7a4d776 Sounds/Female1k.wav
+  14914     d2279398857fcb39bd0fb3e2a0d8e16b Sounds/Female1l.wav
+  57116     56dde0b47c870f680b923ca021e370fa Sounds/Female1m.wav
+  77186     36f8e926b554a9dc522096ee1fa0003d Sounds/Female2a.wav
+  63534     e8786bf837c38ba7d06735cb065d12b3 Sounds/Female2b.wav
+  158416    1b6764de714c30ee232ebf1571f680c5 Sounds/Female2c.wav
+  86610     3d7f23a934fc1362ddedb40a8193bb69 Sounds/Female2d.wav
+  82098     9ac4945b8849ded184e47a5c0be92235 Sounds/Female2e.wav
+  19476     ede4b5737049fd23e98078eda32e3356 Sounds/Female2f.wav
+  26828     5999e17c7ba776fc3407261012efa4ed Sounds/Female2g.wav
+  39752     34570f0ea8d13066ffc24e95086f05bc Sounds/Female2h.wav
+  33520     6540df72f7d53d762efca1e1498385fb Sounds/Female2i.wav
+  66042     d83362628297edbcc5f82c9566470c80 Sounds/Female2j.wav
+  48388     7e7d8fcaecdd3ab4540bc7109029310d Sounds/Female2k.wav
+  28086     d47310d2a939077073289d1a9cd274f5 Sounds/Female2l.wav
+  68836     bf1e107be2d39c6d8ea7ea0f6c0a5347 Sounds/Female2m.wav
+  78806     dbf31eebceaafd10a820a9936b648ec5 Sounds/Male1a.wav
+  52360     e7fccd10d8c71c8a8e5a96ad0543e84d Sounds/Male1b.wav
+  84814     b153d380749940aa7690717b12682669 Sounds/Male1c.wav
+  90478     f690a65122c6eaa721a77a9111d8d910 Sounds/Male1d.wav
+  158442    33c8045073f47e8bf3936bbffb8c0fdf Sounds/Male1e.wav
+  18446     d611b6469d325d1379a00577381119e4 Sounds/Male1f.wav
+  39100     c64c6efc590d05f1469541ff8c516af3 Sounds/Male1g.wav
+  26208     7d9ac597d22a204fcf6ca70c9fbde0a8 Sounds/Male1h.wav
+  79744     7034448f612b41115d92be332ce703d2 Sounds/Male1i.wav
+  31500     138f33c1dc22114a2fb4c8fa60a6cea2 Sounds/Male1j.wav
+  71596     3694d8dcf3095ba1de85dda9d05abf4e Sounds/Male1k.wav
+  19534     006c2787e39531bb7634f7509a2c1b32 Sounds/Male1l.wav
+  102124    e44663aafb887e685edaef71fa0c8e2e Sounds/Male1m.wav
+  93740     ebcbb54b9b36799f02ae8c0fe6f931ca Sounds/Male2a.wav
+  65906     1e27db781bdc1fb23dea5b4c65ef851b Sounds/Male2b.wav
+  189228    72847fff8b0a6165dfecf8f669488e88 Sounds/Male2c.wav
+  87902     e30d80c317c3c2da2cb8eb66a902888e Sounds/Male2d.wav
+  140790    ea0b475686eabb2da4fd17a2186124ad Sounds/Male2e.wav
+  54778     6e5358358dd33586bfd55ef65a73a349 Sounds/Male2f.wav
+  32674     fa6c417c76940a2d69fe6ec41b98a152 Sounds/Male2g.wav
+  32070     8496b07e1ed0714de43aae79e4b32bdc Sounds/Male2h.wav
+  51404     6c21d6a3153f0b20c8f50832697a51f4 Sounds/Male2i.wav
+  28910     c352082e5e5588c0fc0d32bf27eb37d9 Sounds/Male2j.wav
+  51970     838f0812e4fa22ddf2b55744785bf874 Sounds/Male2k.wav
+  17728     62d733a3c02735764142947dbd0ec67a Sounds/Male2l.wav
+  62446     caeae12422f2dce14959fb86ed0d860a Sounds/Male2m.wav
+  140096    bae139b6102b96408c03143703558692 Sounds/Male3a.wav
+  114244    5fd0aca85820200513c3a4eb3518b2a3 Sounds/Male3b.wav
+  81396     0669176d1ca12082a7e154993d14b233 Sounds/Male3c.wav
+  135020    20201afd0ec6399d5f39a07fc69f8790 Sounds/Male3d.wav
+  222208    8867528d0b48e865bb3d9e83dcd42700 Sounds/Male3e.wav
+  20402     3e807368ddbca131dd8245ee1c4d30f6 Sounds/Male3f.wav
+  65106     70a0af80ebc0e618cf424adf671ec3e4 Sounds/Male3g.wav
+  42958     9d22b07d8f6e0ff98f4acdee9209524c Sounds/Male3h.wav
+  68260     e97d5dc0db66920428729a6d05ceed8d Sounds/Male3i.wav
+  67840     28b9ba2a8a25118de2b72f4d7d9c659a Sounds/Male3j.wav
+  54722     573cac805c57b586a4ab10bd86ad67eb Sounds/Male3k.wav
+  20548     0241c6452c5008c6534ef2c867ef5d8c Sounds/Male3l.wav
+  89856     422e991d60be17624e0e9a674f16fc47 Sounds/Male3m.wav
+  107428    f7044fbbcced2619c6c7bcf005b98863 Sounds/female3a.wav
+  107128    e73773bd314a34ea463a16560a7ed154 Sounds/female3b.wav
+  218872    b8145804ae257cd2adeac4d87de6e0e2 Sounds/female3c.wav
+  138972    3e12d28bb1b732e0c41b857fbc774e52 Sounds/female3d.wav
+  171114    dba5b26bb12e9340cf88990e2ad3c8e3 Sounds/female3e.wav
+  49596     508f997683f11937fab67e317b3bc72c Sounds/female3f.wav
+  58282     d12f5818ad5f34f789f87ac719751f11 Sounds/female3g.wav
+  27974     5d689a392fb5b7c9470812b6189a9165 Sounds/female3h.wav
+  57458     9dae9a9088bb89a33dac7353feaf128d Sounds/female3i.wav
+  45194     85caeb8fcea8f9004586ed6d2e8ecd54 Sounds/female3j.wav
+  41532     43c81566afe0f9649905de3b7ab52e91 Sounds/female3k.wav
+  24826     042602e808b75ff058f87d9204525b08 Sounds/female3l.wav
+  51836     96ac61930d445f9b2a2f82ec045769e0 Sounds/female3m.wav
+  1048      e520c6f549e82516fe5a064604d1b79e Sounds/sndlist.txt
+  8062554   581a0d68d88c4b67a755be0b4cbc1886 data/AREA000A.BIF
+  7784364   ee5e909260203e851badd906fddefe0a data/AREA000B.BIF
+  7947826   f334ff06aa446c5a884d82b16e30cc46 data/AREA000C.BIF
+  21438060  90bde06a038ff8bb736ed5ddf37b46f5 data/AREA000D.BIF
+  19253690  8d515aecb6474f001cb30bf08fd7cc64 data/AREA000E.BIF
+  11038220  b788d0a9af2a0c8c438ead96067f77a8 data/AREA000F.BIF
+  25187918  e0a37c26f1d5dc85725225c763d85611 data/AREA000G.BIF
+  2409218   98cac13288f9e58138403e38c4a81958 data/AREA000H.BIF
+  35303294  ec267880188f3186b01190433b574479 data/AREA0100.BIF
+  8059674   ba643832eb8e9460922702c748b391f5 data/AREA010A.BIF
+  3081740   e8a9b64a86e0ad798ac30b41337cf744 data/AREA010B.BIF
+  36621168  85c3570cc281f0ebf6b3c645fb05fe05 data/AREA0200.BIF
+  9053478   11d18f59ed817c485affd2856f2aba43 data/AREA020A.BIF
+  7928622   e8f300321066bbd6c62d4dec915314a4 data/AREA020B.BIF
+  36085058  131295740a3bc85b11026c12a2a5d66f data/AREA0300.BIF
+  4970746   285ad744ce63a4b781d129c72e23d4f1 data/AREA030A.BIF
+  6252022   03106b0996e3706d25d2c786fa774b78 data/AREA030B.BIF
+  25102578  1894e8b16fc8c83ed94e210d69f4ea28 data/AREA0400.BIF
+  524496    3611a4bee3b723d443d3d9e41f86dbfa data/AREA040X.BIF
+  24846404  47dfa070f6cafb236da6c2f6100ec1c8 data/AREA0500.bif
+  7772040   90e6b6f56ed2841fbeb8d3a390d2a088 data/AREA050A.bif
+  11794654  1b8b570e52ad322e6738d558290af892 data/AREA050B.bif
+  21528826  0e30b1237a19c5f92b5fd08a928f7047 data/AREA050C.bif
+  42675778  030d9598b0453f90e25ceeac89b90b5d data/AREA050D.bif
+  36409204  580b205ccdafe6ec4f1c5ab1d6959fcb data/AREA0600.BIF
+  7214312   6f8f8cfc6c3c43522f8a7321a5732d85 data/AREA060A.BIF
+  37882874  94a4ef05ea4572a626e658165f3fe0fc data/AREA0700.BIF
+  1331698   016234757632724e8693ca3d76a5ca34 data/AREA070A.BIF
+  37968696  c242715d988471967db167ec641d65dc data/AREA0800.BIF
+  8739854   aba11e4a2ab7c6ff058e515d6fa09d56 data/AREA080A.BIF
+  14397210  4127547e6bc599e414db535bb8a94562 data/AREA080B.BIF
+  25380704  dbc91f7fc40663a124a1644648bedf2a data/AREA0900.BIF
+  629498    9469190616a1665d435171e27aea7545 data/AREA090X.BIF
+  7261726   0abd11bdc4531aadf2008477dc02dd40 data/AREA1000.bif
+  21337622  4f98c4ea24aa0cb3098c4e6ff2d691d5 data/AREA100A.bif
+  38211222  11b5dfa8c4f8b7dd3d5b0be14950f8d8 data/AREA1100.BIF
+  1704460   01b258276a35a36a5185fca867f6a3d9 data/AREA110A.BIF
+  6421490   5a7b52ada500bd8a12ca60aae8bb6ae1 data/AREA110B.BIF
+  5050420   42ef48efa93f001cfcc9dc919d1a0976 data/AREA110C.BIF
+  39324522  ad40e70efae9ef846f1a0b9bedb59e07 data/AREA1200.BIF
+  7698086   dbc5699f4761342a200ab11fbb50fa85 data/AREA120A.BIF
+  10994514  5362653abb8e415b3f328edebf6386e6 data/AREA120B.BIF
+  39396418  9931628875b520f6da373745b48f25be data/AREA1300.BIF
+  886374    5ca6009a7912f923867a1558d6dcbc5f data/AREA130A.BIF
+  25245408  1e0df8c80f1c96836113a3e0a2fc2da0 data/AREA1400.BIF
+  1719528   577d44641fbb36c05137de6e519e6b03 data/AREA140A.BIF
+  5899030   38b7d9e093e4619501e26f3858868a8b data/AREA140B.BIF
+  24944762  76c49fb29e10cb8d871c06cf6eff315a data/AREA1500.bif
+  3422862   71321feaa234354877509b2bdbfac7d1 data/AREA150A.bif
+  25319942  c3439c6fd877233236a0adfb4fb618b9 data/AREA1600.BIF
+  1049956   1ad6b4762191c56a031e5eebdd42886c data/AREA160X.BIF
+  25300442  496788a2ce730353acf26d2bebf0471c data/AREA1700.BIF
+  25435418  a23816e029f1f8f9dade96718accce83 data/AREA1800.BIF
+  1692588   6a024ada4b9746c1d4c16d60061f8b9e data/AREA180A.BIF
+  6563986   32486583b769469843bb2df07b96e1f3 data/AREA180B.BIF
+  14851436  65fbb7c3452c2307df7f2f6f183a4e24 data/AREA180C.BIF
+  5533754   4c4b16ea3aedaf7e944d78128ec7d724 data/AREA180D.BIF
+  5423386   038e8493e66b23c313cbd3e0797a8f4e data/AREA180E.BIF
+  25249992  bba4965098f6d271e5385d0925aded59 data/AREA1900.BIF
+  1886236   b0943145e9e5a0b8c9a233811813ad6d data/AREA190X.BIF
+  25167528  f6ce32f2f2bfc3afc6c94c02f49a16e1 data/AREA2000.bif
+  2001956   662d98df9e4c66c3d91940842d931a13 data/AREA200A.bif
+  5841884   e8744d7c2218cc85c8da2d27291073f0 data/AREA200B.bif
+  25143780  c964ea8b381cb7b36de114fea41bf55b data/AREA2100.BIF
+  1070178   55a983030e3ab64d0aac982413924084 data/AREA210x.BIF
+  25370282  a3494e12102527f8199128b89105ad30 data/AREA2200.BIF
+  464184    f156a8cc3f9f230635cd79ea61080f8b data/AREA220X.BIF
+  25219382  78e77ee362e512f39695c5c636feff82 data/AREA2300.BIF
+  7137728   7b4cc705f18a9ccd236d93f642d68741 data/AREA230A.BIF
+  1877336   b8fe6eddd318e808066e2024997912a3 data/AREA230B.BIF
+  25169600  f057782a64c5bae1e5a6a77af40bfb62 data/AREA2400.BIF
+  25281544  679cacd0cb00422da91f9904d3640bc6 data/AREA2600.BIF
+  7702485   870dba83ddc7152a86c821d14bb6b491 data/AREA260A.BIF
+  27066896  1dfe376ae6664a0eb13c02d3b766a65e data/AREA260B.BIF
+  27325778  9263b1387cbf4dc3c028810f170e0533 data/AREA260C.BIF
+  25204536  0a37951fdb8a96d2f64bb7f1efc8f787 data/AREA2700.BIF
+  25172096  518d3d3b3a85de89c77b383e6558cebe data/AREA2800.BIF
+  25315980  8fa11d01413e73e7f986d1f759f06901 data/AREA2900.BIF
+  25191462  1b1cd0931ca57d4541097551ba156cf8 data/AREA3000.BIF
+  25115618  ff145d0e3bf5df6f855cce65a0bc667a data/AREA3100.BIF
+  25307814  61fe253aeef10201cb01fedcddc84bc4 data/AREA3200.BIF
+  1324532   21ca741b05b91d12bf44d290ad008199 data/AREA320X.BIF
+  25614608  b850d849d35a304a6ba940b3e15f32ea data/AREA3300.BIF
+  3753842   0ae635caab5d493223f7ae96d98c8f64 data/AREA330A.BIF
+  4999984   15a8246389971f840be6f194f637c246 data/AREA330B.BIF
+  4267158   e159b718b030aa213817760826b3f33e data/AREA330C.BIF
+  5075638   3776cd4782bec96a9dcc5ae3cdd113be data/AREA330D.BIF
+  25083904  973d04dc15f3a8088b8b3f45bd1acc69 data/AREA3400.BIF
+  1886214   f120439d39663ace760c7fc11faaf648 data/AREA340X.BIF
+  25152676  551869e1e87cbd31dc7cac38a8fee72a data/AREA3500.BIF
+  25224348  44807956d3dfee220aaf5e8e1741af2d data/AREA3600.BIF
+  1925880   0e3f80ecb1fff504427186677ab21c2c data/AREA360X.BIF
+  25173268  0a4acb63dac4235e7c371ea907e01030 data/AREA3700.BIF
+  25210846  58f3e8093345eff1e96fbccce724a613 data/AREA3800.BIF
+  419788    6ec8f79456c5f2138aee860cec2917bb data/AREA380X.BIF
+  25097384  73642de0bd887c28d34bca5390633d3d data/AREA3900.BIF
+  5033004   17e10367287932cc057db73d21b15c30 data/AREA390X.BIF
+  25249632  c908cf1afa408dc552e095658735710f data/AREA4000.BIF
+  2411940   6406dee01bed12a72502a48e2706f20d data/AREA400X.BIF
+  25224696  812efc305534bc1add610dc6f4d279de data/AREA4100.BIF
+  1328662   169c0f6f5bb38c2ec24bce6b6208ec31 data/AREA410X.BIF
+  25207926  4b48147eab17b7fa7c8984ca6a0703c5 data/AREA4200.BIF
+  519232    6570a30337ba723d6db8160effe8b88e data/AREA420X.BIF
+  25154240  a1f833b7ae274b91bc3518728669b474 data/AREA4300.BIF
+  25123978  09e22aa6e22b979ca3f7053563dba0dc data/AREA4400.BIF
+  419788    026343f242670421ba2c92d40a8d8799 data/AREA440X.BIF
+  25103948  aa5311e899c99bd346cd8a281db7013a data/AREA4500.BIF
+  1615572   1292a144f58b560a5a022e2c7ff9a920 data/AREA450X.BIF
+  25159638  e8a416ad1aa024a3852b186190e80f4f data/AREA4600.BIF
+  25223800  0cfc5ca8d0e0c26f867a64a1b43a2fdf data/AREA4700.BIF
+  420146    69515b569567f2ad701d962381784df3 data/AREA470X.BIF
+  25389758  a2958adb2714200bad9608a0f5a42f92 data/AREA4800.BIF
+  7045682   ca75c9ed3d7dae1b2224b9ff783f9cf5 data/AREA480X.BIF
+  25194324  61edcfd3e1820d12ae512e0291649d07 data/AREA4900.BIF
+  2703882   e7d1b12e87ba9b94b809ac2cc74ac7a3 data/AREA490X.BIF
+  25097302  10e8f8257153f542f1c02c9412baa97f data/AREA5000.BIF
+  1007314   56fbcf5db9fb7a2a750d1e531db74544 data/AREA500X.BIF
+  25100810  42b1ab337ca6c63113083cb3d3b29812 data/AREA5100.BIF
+  1946628   226fea5f1f4f8b23e0a77dc4eaeba9be data/AREA510X.BIF
+  25548884  9bdc3ea01b47f3ce78de73584efdbdd3 data/AREA5200.BIF
+  5611936   440e3376b2d25e004724b5c21d84ab71 data/AREA520X.BIF
+  25241294  2464a5c3cadf390b95aaa232d9f459d7 data/AREA5300.BIF
+  25161920  661c10e20a28a808e956d54a3c8e19e0 data/AREA5400.BIF
+  8535268   125db98cb28d5494b06fa490a4df670e data/AREA540A.BIF
+  15642744  0c57e4e240cb25ae0e4db16194ef47e9 data/AREA540B.BIF
+  15234780  f621e34470274a303794c232c6e719e9 data/AREA540C.BIF
+  10992878  4536749376e1ceaf79620b93fe630883 data/AREA540D.BIF
+  25108964  5ef8015f6b8a3683c64d15c231b9cb6b data/AREA5500.BIF
+  5337048   e5827c6fc94f34f86cc2fd729bb9d411 data/AREA550X.BIF
+  2380682   bdb47f9d8783c67cc3d1a06f02ea8e54 data/ARMisc.bif
+  2325252   56c2e067712ba518685e2ec590b9cbcd data/Areas.bif
+  65903156  3194a02bfd61167f076ddf9bc1a60559 data/CHAANIM.bif
+  37021390  4357009c28cf629290a039beb24b9ccf data/CHASound.bif
+  27908813  87a52ca4faa50a3d49e38b83adc3d6f6 data/CREAnim.bif
+  8250469   6dfcc6f30981ef7e0322282466d92671 data/CRESound.BIF
+  2027726   50c8850989600cb7073ba49bc56b6152 data/Creature.bif
+  451093    efffc7798dea45bb9990c7e7df4a9b5a data/Default.bif
+  933941    0db8e64e5eded6cebbc3a3625db92104 data/Dialog.bif
+  1711857   a236a67d68c86a9c3d34d4474f0ec9de data/EFFECTS.bif
+  1806480   a4a4c590d743f7ef7e806e6a4496f9cc data/ExArMaps.bif
+  308952    9cb99a140003a21ee9044f71276c6015 data/ExPAreas.bif
+  56616018  638891bd8a626a248989b1c583f0e4ae data/Gui.bif
+  1529003   e66ba0ecab90536e44803a615e789a81 data/Items.bif
+  9143146   ffd61cdb98d93e81ed77ed27bf0cd814 data/MPCREANM.bif
+  738174    e0aa13f46df508be83547c18611bd52e data/MPGUI.bif
+  6730534   4b253124b0ce0baa06af9b6cdc9d5a0e data/MPSounds.bif
+  51002156  58de1dd608dce874acb0cde23ea88d4f data/NPCSound.bif
+  11539863  568b76e9602c3c446a80a9f3147df710 data/OBJANIM.bif
+  9424468   96e48d1c31a570331586e48ebfd91e05 data/RndEncnt.BIF
+  48628181  4891ba74bed1df3ec0238ad28bceff27 data/SFXSound.bif
+  165862    884bc8de569482c1966bcb2be7f9a69f data/Spells.bif
+  920621    3a19b71dc530ee86af6efdb12fb2cb1c data/scripts.bif
+  3407262   6887663facebd8f594a52fe915e55803 dialog.tlk
+  63        c80daeef346e3e457f5af0e7f7b61d55 luaAuto.cfg
+  77656592  1be4323ec6db65c6e4c273ddd9cb6386 movies/MOVIECD1.BIF
+  14995202  c04758a6af171bf9a35d8e3d4dcd807c movies/MOVIECD2.BIF
+  12103426  ba4224f50f890e10561d22f602d6a991 movies/MOVIECD3.BIF
+  89154212  a066c263e13bf20b84d71c2ca7120fde movies/MOVIECD4.BIF
+  28885936  f19415703d3ccad01325b9338380ac7c movies/MOVIECD5.BIF
+  9410264   ec0af6cd77dc1fb7ac272229b9964268 movies/MOVIES.BIF
+  18858824  99d33949b95e622c6601a7e440d3d16f movies/MovieCD6.bif
+  0         d41d8cd98f00b204e9800998ecf8427e scripts/None.bs
+  2626      7127e28310c26e4d0b51e8355cfa9afb scripts/cleric1.bs
+  2021      e76a27cc17f09e120905cc966cdaff84 scripts/cleric2.bs
+  1157      792abc6b09a798dadcd8da0627450668 scripts/cleric3.bs
+  1485      197ba2f567c93d14b4a3107432f94a38 scripts/cleric4.bs
+  531       09742ec5b4f68d93193d2fbad513bd53 scripts/default.bs
+  594       8c0ca75834025677c41ad3cb5166b2fb scripts/fighter1.bs
+  1483      9c71e305dd5e0f9b116f0416abf17af5 scripts/fighter2.bs
+  1157      f4dc7e760a34881280a5bb75e3fdcee9 scripts/fighter3.bs
+  1485      a59d58925652848294ecf907f7e4511c scripts/fighter4.bs
+  4247      ef587de4cab6110cbd47f545c89f7daa scripts/mage1.bs
+  5084      88e362924ab3afa2180749cddebb97ca scripts/mage2.bs
+  1157      cbef768257dddfcc82606322ede1e238 scripts/mage3.bs
+  3798      b4a7f03dbfbaf4958834f4aeda85d519 scripts/mage4.bs
+  802       5c75a83be7d63c44d6360c9b3c7ac0db scripts/thief1.bs
+  2076      233c3baf3c21548280b8adf07bd06ebc scripts/thief2.bs
+  1157      792abc6b09a798dadcd8da0627450668 scripts/thief3.bs
+  1485      197ba2f567c93d14b4a3107432f94a38 scripts/thief4.bs
+  4053991   fa57017cb535147d5afafd56d9b178fc MANUAL.PDF
+  1201601   92802987a523e7bd6e0fae9688135681 MANUAL_addon.PDF
+  45793     36e0eb32a9ce74e3460280637e0b9516 Readme.txt
+  15758     30a075eef52f6edc315655ef25a7a50e Readme_totsc.txt
+  79681     0629deab9d54b90c35860b962bf256da readme_patch.txt
+  84678     5ca22d16e3665c4c2f7cf9d4a8e16d06 End User License Agreement.txt
+  389       dc9b6ecd19a14a54a628edaaf23733bf LICENSE
+
+sha1sums: |
+  90deca7b26d7f477de5667236973fbcdd3f1e626  MAP.pdf
+  dc9b2590ae6a7576a4e12d9b8ab5ade231517e09  Chitin.key
+  eb5366c89188bf3c87408287850bd1330da9c389  MPSave/888888888-Mission-Pack-Save/Baldur.bmp
+  db775e677a4646dbdcaa55422b4da294a3fb30ef  MPSave/888888888-Mission-Pack-Save/Baldur.gam
+  03c2e60dc538fcfcefb972569b7f212eb99723a2  MPSave/888888888-Mission-Pack-Save/Baldur.sav
+  feca683c96d319e57f0785d1945a47ad5b65fb90  MPSave/888888888-Mission-Pack-Save/Worldmap.wmp
+  4eae207689c9fa7a6df886576a122ed9e439bec2  Music/Bc1/Bc1a1.ACM
+  9c9d9b1054d484c6f96a93a9189124e162aaccb5  Music/Bc1/Bc1a2.ACM
+  ef01611edb896adb2499629bc5a13e102c575f57  Music/Bc1/Bc1a3.ACM
+  120a16c650f71e4d26ddad8345bfdb45386ce8b2  Music/Bc1/Bc1a4.ACM
+  1c7ce9ef239d29187743b4db36b4c449ae895eee  Music/Bc1/Bc1b1.ACM
+  8abb0e28441bfe514d9cf63f50793d4c000928a0  Music/Bc1/Bc1b2.ACM
+  c4d92964151018310e60d5e3c78dc8d8df3c0778  Music/Bc1/Bc1b3.ACM
+  036196e1bfcb1b6461819232864fb039d7d4d455  Music/Bc1/Bc1c1.ACM
+  88babd5cf26c901a2ba627a068082dd6bc31b5e9  Music/Bc1/Bc1d1.ACM
+  88babd5cf26c901a2ba627a068082dd6bc31b5e9  Music/Bc1/Bc1d1a.ACM
+  e5e50ee050865da11859dea20dbe5a7b5f272e32  Music/Bc1/Bc1d2.ACM
+  e5e50ee050865da11859dea20dbe5a7b5f272e32  Music/Bc1/Bc1d2a.ACM
+  5295c60a35d731998efbbc2e57998ee2b65fd720  Music/Bc1/Bc1d3.ACM
+  35b7c85d68f070b8b57dd3b63c34034e5d240b92  Music/Bc1/Bc1d4.ACM
+  70cd82c9cf6698ca4f3eb65badda57afccd05efe  Music/Bc1/Bc1e1.ACM
+  8bed96697d936cb15fc7ef4bbce2410c285dbb03  Music/Bc1/Bc1e2.ACM
+  38e5ecc175f59565506d54396792f6a3f4a27df1  Music/Bc1/Bc1e3.ACM
+  cefe604f688aba2160bad5de73f6eff78ba1f61c  Music/Bc1/Bc1e4.ACM
+  ea3d99d3523c502410fa44c8d899272894cf75d5  Music/Bc1/Bc1enda1.ACM
+  4c35acd62739879ced99c9de0ceef092e5acc52b  Music/Bc1/Bc1enda4.ACM
+  fd296f7d5da74cac55f880ac3b2fb07f03c2be0f  Music/Bc1/Bc1endb1.ACM
+  6833550370b1219724cb7f5f527461a625b1cfe3  Music/Bc1/Bc1endb2.ACM
+  37a9fba988d4307f381499c847a70fcdbbe12fea  Music/Bc1/Bc1endb3.ACM
+  f4a09a332ad91f1bf2e245f39413d3e2ca559467  Music/Bc1/Bc1endc1.ACM
+  d204477820de9fc47ca31c4b8478dd7bdb3ea6c2  Music/Bc1/Bc1endd1.ACM
+  52532528fb46dd7f4f776224589b5aa1829a6f32  Music/Bc1/Bc1endd2.ACM
+  aacef71f9c9562d38d90db336995669e881e17a3  Music/Bc1/Bc1endd4.ACM
+  dfbbf56daa1cc314c622d6f842cb88bf39a843bb  Music/Bc1/Bc1ende1.ACM
+  af03f3e89cf0782cf0ea10d1562bf114d0cfe0fd  Music/Bc1/Bc1ende2.ACM
+  7a476c50659ac3b48931d4e6b777d4e2dc96dafa  Music/Bc1/Bc1ende4.ACM
+  a1f3701ffd7911493ae378f7b6c098c5255da0d0  Music/Bc1/Bc1endf2.ACM
+  34443524120a6065b099e12e2c1b0428660204a1  Music/Bc1/Bc1endf4.ACM
+  ad04f43a91b6c14d7249e63fbffd064a82c2061d  Music/Bc1/Bc1endg2.ACM
+  ed497023cce27c2fdf2a637732903b8662ab9150  Music/Bc1/Bc1endg3.ACM
+  1124dfaa456d661a4da88b5528882033e190b364  Music/Bc1/Bc1endh2.ACM
+  3f7a6216b9923b6bddcf26777295a0ce76b4911d  Music/Bc1/Bc1endh3.ACM
+  af6d9233a9b4f9d44d8ee166b96cd5c148b8c841  Music/Bc1/Bc1endh4.ACM
+  929cf4ec33e09af1dbfeb42140239d7f7e6f8395  Music/Bc1/Bc1f1.ACM
+  7a15f17ee5a38442f885f7c2dc31ef95986c3712  Music/Bc1/Bc1f2.ACM
+  f82d8a56e2656ae54137ef6e1b1375ce137d1bbb  Music/Bc1/Bc1f3.ACM
+  9787af06d1ec705c51002024c24feb47df9b620a  Music/Bc1/Bc1f4.ACM
+  294e78cbb85a7bbc8772006d0d2d6febf789e0a0  Music/Bc1/Bc1g1.ACM
+  47ecc57c48e61636f005fd6ad6ea271fbd744abc  Music/Bc1/Bc1g2.ACM
+  87414bf0e94da7aebf2353a3a5a757b150b72e35  Music/Bc1/Bc1g3.ACM
+  1d2ee20e5dbdcf88b95a497d342893532d593840  Music/Bc1/Bc1h1.ACM
+  44f64ef405dd77964d96ee66ab413990c8d10db4  Music/Bc1/Bc1h2.ACM
+  8bcc51c98c821290f83d76514140059bc08b5664  Music/Bc1/Bc1h3.ACM
+  f9cb2d0031963427e53424cba8f519b33e4f531f  Music/Bc1/Bc1h4.ACM
+  5c18974ca363a9595cf602ffdf93cf6ff6b9946e  Music/Bc1/Bc1i1.ACM
+  a5b65cba6d109959367c589b1926c1748ecf03c3  Music/Bc2/Bc2a1.ACM
+  eaa6382a95fba5b8da747e6d6e4ad11901c912f3  Music/Bc2/Bc2a2.ACM
+  f66dc7e26100a806c7732b3e4a0da83ec353d29f  Music/Bc2/Bc2a3.ACM
+  4f86c107f88480ce9b6f19d9f906c40cb06b167c  Music/Bc2/Bc2b1.ACM
+  16dc5b9c8652173cb0125a801fb04f5ebc6ba471  Music/Bc2/Bc2b2.ACM
+  df3c1b8554d39472f38834cab012dbc9e6ae5fcd  Music/Bc2/Bc2c1.ACM
+  9a4b8e99bd5cce331a12367f5e0e876ab2009267  Music/Bc2/Bc2c2.ACM
+  ad6abb4e5f9b09b2ab13448651b0e72bb3c525cd  Music/Bc2/Bc2d1.ACM
+  39e7f59ab3a3008ed2bc811f8c7d2966fe30b597  Music/Bc2/Bc2d2.ACM
+  85f795a44b786dff5db51f5ecede9f8516dd60c5  Music/Bc2/Bc2e1.ACM
+  3b6452657a440eb50850564d48efd5e99b41efd9  Music/Bc2/Bc2e2.ACM
+  d204477820de9fc47ca31c4b8478dd7bdb3ea6c2  Music/Bc2/Bc2enda.ACM
+  61ef080f57771f6b490ea39a8f1b5f66d18cc0f9  Music/Bc2/Bc2endb.ACM
+  857955bde4d583b328b70a8d3b2fb61e53edf907  Music/Bc2/Bc2endc.ACM
+  f512ded11ff8d4228eac765ac01a334f7215adaa  Music/Bc2/Bc2f1.ACM
+  fa80d99ff9e39a74a1822e68bd9baecd255280a2  Music/Bc2/Bc2f2.ACM
+  258d7c83ec629d94fed9c03a0c1a194e0ff86982  Music/Bc2/Bc2g1.ACM
+  986c7088b0068e30d1d1c8c2d187d06d522980b3  Music/Bc2/Bc2g2.ACM
+  b074b90d7e5b8122151f1c760b9e9362f31090cf  Music/Bc2/Bc2g3.ACM
+  52a63947179aa68589923e35be4fe7806ae545e2  Music/Bc2/Bc2h1.ACM
+  080371e72c3f90bb982de923cb1dd82f9b2f739b  Music/Bc2/Bc2h2.ACM
+  2ff284675ba46a31f62b454353df6da49393b2aa  Music/Bc2/Bc2h3.ACM
+  a862cf16b8d66ce26157cb55623cadd930b45165  Music/Bc2/Bc2h4.ACM
+  bdaebade955a9c887b053cd4a7869929ca57f578  Music/Bc2/Bc2i1.ACM
+  f27c54e729bf30f3697d4932d3aa1def63fe47bf  Music/Bc2/Bc2i2.ACM
+  d40d0c2751fcf737b53f331e5464f01196311f2c  Music/Bc2/Bc2i3.ACM
+  88887a73c3082a2d5408861d7b62728de2a96c2c  Music/Bc2/Bc2i4.ACM
+  ad483f409504de6b7da6894ea98907bd3c794d08  Music/Bc2/Bc2j1.ACM
+  2788e8e3a9bf796d197bf041d1359a55b52f84fc  Music/Bc2/Bc2j2.ACM
+  e7a52726ed2153b52fa8b1d974570367562626ce  Music/Bc2/Bc2j3.ACM
+  931f9cc96c752c19b22abae6ea33f8ed38b45ffb  Music/Bc2/Bc2j4.ACM
+  3f9b1e2ce938e2910d06e8aeb267b7224bdc8722  Music/Bc2/Bc2k1.ACM
+  030df2261f85998a9beaf9dba6d4178fb2459b86  Music/Bc2/Bc2k2.ACM
+  51d2685fd200e6bd4a3a8da7bcab5fed1ad56235  Music/Bc2/Bc2k3.ACM
+  70c47fddec7f73861bcf3fc9779a250d48f50bab  Music/Bc2/Bc2xa1.ACM
+  8d33da473d08e41104f7b55905d72aab96f50b3e  Music/Bd1/Bd1a1.ACM
+  6385374e4a85d78a324b3e49f5a8c1ae37559520  Music/Bd1/Bd1a2.ACM
+  969972dd347578a03b48dcfe0ed1f2c680e2162c  Music/Bd1/Bd1b1.ACM
+  a9647366ec5b89be4b3ff7cea35040147f5e5361  Music/Bd1/Bd1b2.ACM
+  d89d57b4698b3ad64b20de1dfb9eaf348ed356ab  Music/Bd1/Bd1b3.ACM
+  e571c113653caa311498b201a48de2785feb9aa2  Music/Bd1/Bd1b4.ACM
+  602a84b42c47f53e43747b96b4f8eddb54c709a2  Music/Bd1/Bd1c1.ACM
+  b062d5ffc518991887abf12c02d7dff6a8e1818f  Music/Bd1/Bd1c2.ACM
+  b37d25c798a8e493fe5ae09b22ce3df2b6f86f4a  Music/Bd1/Bd1d1.ACM
+  2724bca92fabe3a1e503dfdc3cd70e8089eefa82  Music/Bd1/Bd1d2.ACM
+  3eaf610801061aefa6ae17d3e736567303342d3f  Music/Bd1/Bd1d3.ACM
+  89291e783b5ca52c9138e86b01cf987f70dac1d2  Music/Bd1/Bd1e1.ACM
+  a6eca80416557d5d5cf2f262fb56bef8dc82c595  Music/Bd1/Bd1e2.ACM
+  ed784d97e0e9305c4bf524587d4e9bbf162dd841  Music/Bd1/Bd1e3.ACM
+  d20d61955263a9909398df03e42c096340079a55  Music/Bd1/Bd1e4.ACM
+  5765a892b42d1771c5ba2a6c3d59fc8a987afa10  Music/Bd1/Bd1enda.ACM
+  14d50796bad6db140cce411180c1f97f913d82c6  Music/Bd1/Bd1endb.ACM
+  f59f1d83adc46c65ca3b4f3866620ed6579c2035  Music/Bd1/Bd1endc.ACM
+  526bae1719b4ce5b350b36876f44bb6f79b36dd9  Music/Bd1/Bd1f1.ACM
+  09c3520a6fc804acfd25e6aa23b0390c8933c252  Music/Bd1/Bd1f2.ACM
+  4a923fe32b5f5d9aec79c81113b657a2d187fb20  Music/Bd1/Bd1f3.ACM
+  511abe8b4df50b5d6bb49643022dff2ff5a97f33  Music/Bd1/Bd1g1.ACM
+  90bea7f49e505175cc45d336bc3e01acf7c547f2  Music/Bd1/Bd1g2.ACM
+  445c4ce9f23d50dfda8bf135f0e79565dd96f119  Music/Bd1/Bd1g3a.ACM
+  2ae5984f96643188eaaf0ffa28f98ecddb3bdc31  Music/Bd1/Bd1g4a.ACM
+  62722dbacb51e54c37266b4ac486f034192db7e2  Music/Bd1/Bd1h1.ACM
+  ac8d9ee345c46bed1c8b79269cae1d5954266489  Music/Bd1/Bd1h2.ACM
+  bb08e908270fe6e0d2a87e2ee7b3e119dc28ba10  Music/Bd1/Bd1h3.ACM
+  b0d2f460fb3d2b57f018f486b721e29897d74b77  Music/Bd1/Bd1i12.ACM
+  ed116492ecb70cb85f201596f68b594b00ceb356  Music/Bd1/Bd1xa1.ACM
+  3f2161b6973e482680d9e44318239882cd490bfd  Music/Bd2/Bd2a1.ACM
+  87541cbf745cf82d011f79fe6f4d421f9f944081  Music/Bd2/Bd2a2.ACM
+  5b4c0f8090f687413da54864b8a65b5a07d4ac1c  Music/Bd2/Bd2a3.ACM
+  83493bae0868a7fc100381cced31ea9e38c2add2  Music/Bd2/Bd2b1.ACM
+  890556e316f85358a3357ca0567ecc7404fa0d55  Music/Bd2/Bd2b2.ACM
+  86a34b6a01d46f8f6486029dc5af2e9973ad3b9b  Music/Bd2/Bd2b2b.ACM
+  8a55f40b916c7aa14c7709bfda25798ffcd15b94  Music/Bd2/Bd2c1.ACM
+  45c037d255f64f5d91accb262e0c717f4a6fa08b  Music/Bd2/Bd2c2.ACM
+  3b83bd4e93bcee346a248e0a28709afff8e9756a  Music/Bd2/Bd2c3.ACM
+  033ede12510b556f2a2cb6a20391fdbf3b9312a0  Music/Bd2/Bd2c4.ACM
+  4798704b22e5618c8802c40ebf942ce0c591e799  Music/Bd2/Bd2d1.ACM
+  d3218c9e6ad74fe25463cbe8c707e8bec49b6877  Music/Bd2/Bd2d2.ACM
+  08deaf6a5b90acf7de448a7093bbcbf5e9930844  Music/Bd2/Bd2d3.ACM
+  12a22146fabe40ad7680753faa34b3370594a4d2  Music/Bd2/Bd2d4.ACM
+  601d77889da2472213a7281bf71e199cdae98833  Music/Bd2/Bd2e1.ACM
+  2835455473bbcc1a066f5aa365e6c969a208d253  Music/Bd2/Bd2e2.ACM
+  3d0feab3e48f43932da9e2917824521ff5504f0e  Music/Bd2/Bd2e3.ACM
+  dfabe69a1574af6a75660769457f80ad9a48c784  Music/Bd2/Bd2e4.ACM
+  72cbf370442c9bb1d8287a05925b0342cc99b845  Music/Bd2/Bd2enda1.ACM
+  8a9784d602fcca6890875ad8776571c7e2216f64  Music/Bd2/Bd2enda2.ACM
+  447c1b39f03bf0d2c61a1c9bd9699800c6e6d9e1  Music/Bd2/Bd2endb1.ACM
+  fa670e7810253e8dfba283f844d450b8c5f429e4  Music/Bd2/Bd2endb2.ACM
+  9bf5e99432194c6d602151c65ced0e474f9dd5fe  Music/Bd2/Bd2endd1.ACM
+  c8ae3bbd0722dea4e6c2edd6ded12dc55cc1ed9e  Music/Bd2/Bd2ende1.ACM
+  6c7d824f9e26c041727368fd43db219991b884d7  Music/Bd2/Bd2endg3.ACM
+  4a9ec127de1627e4e175a99ba94f2b9fb865d993  Music/Bd2/Bd2f1.ACM
+  8df594cb95ef46ce200c2e7349f76d295a58e921  Music/Bd2/Bd2f2.ACM
+  60c5093021cb7939b02014c1e97bb6f0c5c336fb  Music/Bd2/Bd2f3.ACM
+  f07e8fdc23d869ff9d199b01c661882d0919374f  Music/Bd2/Bd2f4.ACM
+  74800b6a2e80975124bd7bfdf86430ff4da87142  Music/Bd2/Bd2g1a.ACM
+  b76bf3b3550d9dc50774fbabfe0c15b077d05bdd  Music/Bd2/Bd2g2b.ACM
+  d014550c774c0c3e575a04d3d76721a35335dc74  Music/Bd2/Bd2g3.ACM
+  219d9696a5ffc55c69834952f40ca6538a2401dc  Music/Bf1/BF1endA.ACM
+  7ae479ccf46f7321abd56771be54a62f59e933a1  Music/Bf1/BF1endB.ACM
+  a0f36d574be04ca8f3e17b78edf594bfd18548b1  Music/Bf1/BF1endC.ACM
+  92e2894a69b2a1f14fe58034e8cb72186b739a41  Music/Bf1/BF1endD.ACM
+  6cd23e2844a1579c96ed27d10793247a0cd39001  Music/Bf1/BF1endE.ACM
+  b0a3f1151449f2ace4b307c9e674d86c406e4b47  Music/Bf1/BF1endF.ACM
+  71cbc3c81905bbc3a09701e9b60dce253b100c34  Music/Bf1/BF1endG.ACM
+  7dcc34b1ce18217ef6a46d05e4f8ee81b715fe03  Music/Bf1/Bf1a1.ACM
+  fde90d2fd06355384e19ca4cd2600e9f17705910  Music/Bf1/Bf1a2.ACM
+  f84884e3147d63f170e65ac357b2d582d56a6c89  Music/Bf1/Bf1a3.ACM
+  748bfaeedda8c02af3688e976369477776039915  Music/Bf1/Bf1b1.ACM
+  49204b9c93e64a6d89811e429ce6141191393f9a  Music/Bf1/Bf1b2.ACM
+  43ed4d22dca86fa67a7324e727ccf61b0c64376e  Music/Bf1/Bf1c1.ACM
+  fcc84c2ef4982324e359c3a69801517b327a6e3b  Music/Bf1/Bf1d1.ACM
+  43d538bee1f2ecc463dca7c793659fe5ea2764bf  Music/Bf1/Bf1d2.ACM
+  5f252cd1c5d3703cab16c0703f72e430ff297924  Music/Bf1/Bf1e1.ACM
+  34c6c37a763468085dbe1914704b20e58da7361d  Music/Bf1/Bf1e2.ACM
+  9152bde8ffcfa5eeae0a7d6fb05fe71f79114e98  Music/Bf1/Bf1f1.ACM
+  3dd3739092f8bdff8b6f724b6427eb5e5a081dee  Music/Bf1/Bf1f2.ACM
+  6499222cce992c066aaee5ff66234d678d70212c  Music/Bf1/Bf1f3.ACM
+  e96538515c7265937c36dbe64801d59175a50eab  Music/Bf1/Bf1g1.ACM
+  013cf78b2d1183413b331cbe226a8aa4c82466ab  Music/Bf1/Bf1g2.ACM
+  82b90510ff09118756b69ac89979dbfe9a40ece3  Music/Bf1/Bf1g3.ACM
+  5127a85e0ab785391ef5532d22896ff833589506  Music/Bf1/Bf1h1.ACM
+  2b9b3274d91b665b0a39e58ff51ffdf2c8abf177  Music/Bf1/Bf1h2.ACM
+  ecd8b6a352234269641250fe998520c4fd5bfa15  Music/Bf1/Bf1i1.ACM
+  5073f50148c0f7919b0fef0f3192f0062af40a25  Music/Bf1/Bf1i2.ACM
+  75fb6c4ff00431ab648d737ba3ce7e4a4892080b  Music/Bf1/Bf1i3.ACM
+  77735435cf76441874a2b686c09cbbf6264644ef  Music/Bf1/Bf1j1.ACM
+  2a56a288838df8f071cf26ddca06fd7455d4e320  Music/Bf1/Bf1j2.ACM
+  774bd339be13ef91bf6e50872e88d6faa6532185  Music/Bf1/Bf1j3.ACM
+  5ff69cca2923ed5be1acb4bd243affb6d544667b  Music/Bf1/Bf1j4.ACM
+  06ca97fa620edc468f2236a65e90adf6de8270db  Music/Bf1/Bf1j5.ACM
+  12523d1f4e937095d68e0fcd59a0bcab477ab18e  Music/Bf2/Bf2a1.ACM
+  d22f9de134864014dab587c117ae8151e9cdd100  Music/Bf2/Bf2a2.ACM
+  06021eb7c48fd348c9b182521000658e76634420  Music/Bf2/Bf2a3.ACM
+  6c7a6262cdea6ed5f61312ef565e9051561754f0  Music/Bf2/Bf2a4.ACM
+  4cbe8ed793d630d331dcebb6ddfd9a9964951a52  Music/Bf2/Bf2b1.ACM
+  632b4fae6fcc44f5a7a90085dd5fb5599669a0ec  Music/Bf2/Bf2b2.ACM
+  83c91c79ea7964f1463cde6aead8850c3896bbcb  Music/Bf2/Bf2b3.ACM
+  ae037a0097b8ab8146c04b45d272f5307bb9e85e  Music/Bf2/Bf2b4.ACM
+  5cbff179c7a860057399ecc44d1aba0516300021  Music/Bf2/Bf2c1.ACM
+  14e4001115031ceea290b75094ad8b78418a92e4  Music/Bf2/Bf2c2.ACM
+  3538bfdcca3655852926dfcdc3a14888c3234604  Music/Bf2/Bf2c3.ACM
+  4d80bea773d9fedb57f37278644829ed53ebb3c0  Music/Bf2/Bf2c4.ACM
+  15ffc686ad444ee30f43800d2d2dfec52acd5a02  Music/Bf2/Bf2d1.ACM
+  4ab4a16da876d6a99962f7d1a145f9f6084d4576  Music/Bf2/Bf2d2.ACM
+  3e86f9af9be2f1ac3526d3228c953883534dad4c  Music/Bf2/Bf2d3.ACM
+  4f5222aee79b3b93b9ada145f79cc7ccd682fe70  Music/Bf2/Bf2d4.ACM
+  4cc1b440ce27094270bd1557f78a0a46132bdc5f  Music/Bf2/Bf2e1.ACM
+  1854c0bfc090ab2402e743f875b987e16bab88cf  Music/Bf2/Bf2e2.ACM
+  fd296f7d5da74cac55f880ac3b2fb07f03c2be0f  Music/Bf2/Bf2enda1.ACM
+  8a9784d602fcca6890875ad8776571c7e2216f64  Music/Bf2/Bf2enda2.ACM
+  447c1b39f03bf0d2c61a1c9bd9699800c6e6d9e1  Music/Bf2/Bf2enda3.ACM
+  c36b3bf8afb45840f95c8b7dd261d2bf9fe25944  Music/Bf2/Bf2enda4.ACM
+  675fae42bb0dd4cd68ae2b16608fa92420d2d7c2  Music/Bf2/Bf2endc1.ACM
+  0a77fc49b648a37a575160fdeb99d42159bbfd6e  Music/Bf2/Bf2endd1.ACM
+  af6d9233a9b4f9d44d8ee166b96cd5c148b8c841  Music/Bf2/Bf2endd2.ACM
+  fa670e7810253e8dfba283f844d450b8c5f429e4  Music/Bf2/Bf2endd4.ACM
+  5797ccbc4cb940372e616fbd187e9bec0b8c1d7b  Music/Bf2/Bf2endf1.ACM
+  eacd66e20615cb4028ed3c878251feb25b6c5f10  Music/Bf2/Bf2endf2.ACM
+  5765a892b42d1771c5ba2a6c3d59fc8a987afa10  Music/Bf2/Bf2endf3.ACM
+  14d50796bad6db140cce411180c1f97f913d82c6  Music/Bf2/Bf2endg3.ACM
+  60b2789bc5e42c5ad12eccc52750220fb9e2b654  Music/Bf2/Bf2endg4.ACM
+  c2eaa96f64e923cbb18f1b308b11d59cbf502044  Music/Bf2/Bf2f1.ACM
+  84414906949ede3cac27a1a0b0a3330793ca797a  Music/Bf2/Bf2f2.ACM
+  3b335b142d9a52a51c196336ebc31dcd1614e28c  Music/Bf2/Bf2f3.ACM
+  dfcaa302eab1ef96723708b14055fd3212c6ccaf  Music/Bf2/Bf2f4.ACM
+  335723f4311646c7302cc800bea1ae22c02ffefa  Music/Bf2/Bf2g1.ACM
+  bde25673f763e9cdbb15bf8214319d9a75eb8b6d  Music/Bf2/Bf2g2.ACM
+  8d5a9b9e8134ca1e3085e9b238ae6192b104fabe  Music/Bf2/Bf2g3.ACM
+  8738453bdad151ea41e80098d22486ef7a431cc5  Music/Bf2/Bf2g4.ACM
+  c6e14edd3c1e4149a42c48a01ae206a66aa207f7  Music/Bf2/Bf2h1.ACM
+  ef4ce4006ff6dcbb22b1c0aa39f27dfe4f9f950c  Music/Bf2/Bf2h2.ACM
+  b3d101f6a95f9559efac952aa2cf6131beb1d479  Music/Bf2/Bf2h3.ACM
+  3c6dc1870417c0801933406fd8d1562b488f4529  Music/Bf2/Bf2h4.ACM
+  5f0dc4986a73a6f87c7a4976b20bc963d023a5af  Music/Bl1/Bl1a1.ACM
+  f14431c3a33df7463ecdbc2226a2198409a0b394  Music/Bl1/Bl1a3.ACM
+  5372dd7cc5f615c63defdaa99d1bc92aabcc25cb  Music/Bl1/Bl1a4.ACM
+  b92253183b74c0bb3ab87c371b7cc6f64225ed49  Music/Bl1/Bl1b1.ACM
+  1330980d30a0252c0f95da2671273c14e25a081b  Music/Bl1/Bl1b2.ACM
+  5a9135822eab4e1f24c8a8008bc58de4ea66fc78  Music/Bl1/Bl1b3.ACM
+  b1a4e956482630e558bc993cc54d62f08f33c32a  Music/Bl1/Bl1b4.ACM
+  cb6a03e3187f07ee74a5dd6c266e6e76b5d09cd7  Music/Bl1/Bl1c1.ACM
+  f0b04983c9b515c3d85d8efcfe64a0365b04c2b6  Music/Bl1/Bl1c2.ACM
+  130dd8a91b208a538a9a68ed664b627cac47c477  Music/Bl1/Bl1c3.ACM
+  21775afdc1a6514f806fadd618eac0880aa17c68  Music/Bl1/Bl1c4.ACM
+  34a6f9761e33e43bf81682ba701bcbb203f10676  Music/Bl1/Bl1d1.ACM
+  2b7896054d1c05c90b1b043078e42bd9b69c20c3  Music/Bl1/Bl1d2.ACM
+  a40fc36b564dce379a065f255bfda959c3e286fb  Music/Bl1/Bl1d3.ACM
+  dc961a7b4b46e35f79f9165d90f8bd15f78da523  Music/Bl1/Bl1e1.ACM
+  1b8277c4a10c0e260d75077bf2a6b6daa5897b30  Music/Bl1/Bl1e2.ACM
+  79729393180442a947d0852d95893d0db6315eb8  Music/Bl1/Bl1e3.ACM
+  ff597044b1f8124723dbc7aa4c19c0ab45ac23e0  Music/Bl1/Bl1e4a.ACM
+  9d42f809be4fbc09f3a75e1cc2d21db893a119a3  Music/Bl1/Bl1enda1.ACM
+  14d50796bad6db140cce411180c1f97f913d82c6  Music/Bl1/Bl1enda4.ACM
+  afbe1bc94dd3e315c970fea12a35ffc813ae1ff4  Music/Bl1/Bl1endb1.ACM
+  4d0863eb6273d55c228e0c47ed79946e5ebf5ed5  Music/Bl1/Bl1endb2.ACM
+  8fc8a394bc251557fd8ef83a1ce4bcc1f85ae14f  Music/Bl1/Bl1endb3.ACM
+  d823a59ff355a5297c936650209d6aa15ea612c6  Music/Bl1/Bl1endc1.ACM
+  aacef71f9c9562d38d90db336995669e881e17a3  Music/Bl1/Bl1ende4.ACM
+  66db8c967217a998ca7227870b7cb6d3b6f63a53  Music/Bl1/Bl1f1a.ACM
+  1471b2ef8304b0d028e97a29233168f9302663d5  Music/Bl1/Bl1f2.ACM
+  d1a35fecdee28e25b441d790a080b52bcfdc3220  Music/Bl1/Bl1f3.ACM
+  286f1a980aa8d72cb8bddc74676f881e112a20da  Music/Bl1/Bl1f4.ACM
+  9ac69417a4d8e8158a39e5e60e7b396761b188a1  Music/Bl1/Bl1g1.ACM
+  2b195d3d5ce5ce83d3c8ea7a4454d7e895e4fc2e  Music/Bl1/Bl1g2.ACM
+  0080e1ec3c394f90b132e6ab99faabcd3a477889  Music/Bl1/Bl1g3.ACM
+  3a1180e556c126a14554b7d18dbad48cc5158cf2  Music/Bl1/Bl1h1.ACM
+  d96fce63e5164238d49aba25296b4766b1469e0e  Music/Bl1/Bl1h2.ACM
+  4ba11a10856e9711bb7069fa10d1c12b01759e11  Music/Bl1/Bl1xa4.ACM
+  c475190eb3f9f6e0fd304ec2f868a8bff7b1c552  Music/Bl2/BL2endA.ACM
+  ce45a0bf9fdcb792a264850790efdea8952cc219  Music/Bl2/BL2endB.ACM
+  c718ba35e1cf7dbfceec9661db675ae99ef85cb9  Music/Bl2/BL2endC.ACM
+  bf15146fcc59a4f786fcac0b324794c83e81bac2  Music/Bl2/BL2endD.ACM
+  ebd0686254eb2e4c625ff3f5989b1b240d8d6ebe  Music/Bl2/BL2endE.ACM
+  bbe97d984c560890cc8689014a11d79e006db089  Music/Bl2/Bl2a1.ACM
+  45ec4ee3162f9f106e044ca72ba0d4648e9a3ee0  Music/Bl2/Bl2a2.ACM
+  fa5897e6511741fbae62fe0c882599dbc345aa50  Music/Bl2/Bl2a3.ACM
+  259791226be4d3a67bd6a44cc26f979bd162ba42  Music/Bl2/Bl2a4.ACM
+  334beac9eafe5595249804a6fc4c7efbcaf06858  Music/Bl2/Bl2b1.ACM
+  25e8a6e019662e198fee5d1816aa9624697463d0  Music/Bl2/Bl2b2.ACM
+  a957f0ea15199dbe959a9a27db61ccd4e68abb17  Music/Bl2/Bl2b3.ACM
+  d89ed2e6f777c6056418eb55b7a8a69093ed08e1  Music/Bl2/Bl2b4.ACM
+  34e7715071993d124d73af88810c46b08f9809e4  Music/Bl2/Bl2c1.ACM
+  a72cbad3278019c37a5cea6f3230a0c12b480b55  Music/Bl2/Bl2c2.ACM
+  b7d71a0d410ab1dd6a888836eadfdb442d4fad9d  Music/Bl2/Bl2c3.ACM
+  663ac4539e7adc56bea273eddce5627f73e80042  Music/Bl2/Bl2c4.ACM
+  f1c200e567047233adc716997afed36bc1e42e9c  Music/Bl2/Bl2d1.ACM
+  4858543640879af79141344ffc4e17a5b1345a0e  Music/Bl2/Bl2d2.ACM
+  ae1b804899b52bfe3f2526249ef342c02727e366  Music/Bl2/Bl2e1.ACM
+  dc49b0bf1a17382a10c8d98a29227c8464fbd753  Music/Bl2/Bl2f1.ACM
+  6c374fa3f7438c54c9585d0e123b1f75684d139a  Music/Bl2/Bl2f2.ACM
+  b5cb96a4f4b3ad89873511aeb657a3c3fa147411  Music/Bl2/Bl2g1.ACM
+  5637cc1463a4b25a6e3a2c5e6707151a85959f3c  Music/Bl2/Bl2g2.ACM
+  3978e360f3269cb0bf23c835615ed0e757c7fa25  Music/Bl2/Bl2g3.ACM
+  5f367e32792159d96225f96bb4ec399429d6f605  Music/Bl2/Bl2h1.ACM
+  7bed6e7719a2b82db38e7db7cbf07914c430c5b5  Music/Bl2/Bl2h2.ACM
+  def22c7156b62812a6086d6da509b70a601ea006  Music/Bl2/Bl2h3.ACM
+  496eeff61cb6b9880d1f81216602841f3e9b4edf  Music/Bl2/Bl2h4.ACM
+  d56e9cd7b07a9c2663732baafe69386d0aa49941  Music/Bl2/Bl2h5.ACM
+  2b2fbafc8f8f967a4ba88665e33d71d2416531c4  Music/Bl2/Bl2h6.ACM
+  8aeb9eda8cd9cdb0f9718663a5dca72d70d12184  Music/Bp1/Bp1a1.ACM
+  8d8cb1dca48e07744cd60d61e0864c625ce380ec  Music/Bp1/Bp1a2.ACM
+  457d593db72a8a5c8c9d20a530bad827baac4cdd  Music/Bp1/Bp1a3.ACM
+  c73664ae0ce1ecbbb36dffbebdf6d339455305af  Music/Bp1/Bp1b1.ACM
+  7bb4c3d465651670d5d02f698cfd2c6b74371f81  Music/Bp1/Bp1b2.ACM
+  18cc4047b8059886f389d52592d75b1305ce21fa  Music/Bp1/Bp1b3.ACM
+  180bc5030dcacc5f8170f4a7631f63c941553d60  Music/Bp1/Bp1c1.ACM
+  2edd0709f998007fe315e3922608c115714d8add  Music/Bp1/Bp1c2.ACM
+  6d8e7f5ff30b407107024a81ebbfcdc736f8c3d3  Music/Bp1/Bp1d1.ACM
+  895636e33fe0af973f2589bf197737c70653d929  Music/Bp1/Bp1d2.ACM
+  354211dd781c28f796f8b079b7e7a0818be23215  Music/Bp1/Bp1d3.ACM
+  7b99b163284d32e3d1d52883c176168e59382793  Music/Bp1/Bp1enda1.ACM
+  2885f774e52a4e3c9b8c472b2693ee1af132cfde  Music/Bp1/Bp1enda2.ACM
+  e3eeb3ea8164bebb99c43534853e3031083e87ba  Music/Bp1/Bp1endb1.ACM
+  bd63dff689432ea1b485aebde64af4cecda66957  Music/Bp1/Bp1endb2.ACM
+  d0077e89d6359e93e2ff56211f4f3e1e5b87a96a  Music/Bp1/Bp1endc2.ACM
+  a263338a663903b84676346ebfdd13ec80ca45f9  Music/Bp1/Bp1endd1.ACM
+  ed4b811657ee1ca928d4ad9539c531c2af73923b  Music/Bp1/Bp1endd2.ACM
+  cc69aa7054542e852d6e2a2d98b6f7f67ab91081  Music/Bp1/Bp1endz1.ACM
+  a631221f25d389f0a021dfd6e7fe97dec00ad806  Music/Bp2/Bp2a1.ACM
+  d571a7e0872c38424ee48e60f0307b621b16a890  Music/Bp2/Bp2a2.ACM
+  c6f9f00086ad97cbcdc197fbfc0e5a538db0bd26  Music/Bp2/Bp2a3.ACM
+  64317f44df687060d067781cb8e564367d2f6829  Music/Bp2/Bp2b1.ACM
+  7789dfd53a4328cb257f06ed89ce010e5a654af0  Music/Bp2/Bp2b2.ACM
+  e0450c5b7628e8c7a5b5ea2e4461b411b9948ec8  Music/Bp2/Bp2c1.ACM
+  c127f82d36d577f14ca28ace17aec6beae9f8d96  Music/Bp2/Bp2c2.ACM
+  7c2674c34a33db087b8c53f27e1a10dc609a82b9  Music/Bp2/Bp2d1.ACM
+  c3f3068e81a279d4b95a4ee80eadb22b205d7b58  Music/Bp2/Bp2d2.ACM
+  9e91724cb41defa0cdee89b4eeba4289d22adcf8  Music/Bp2/Bp2d3.ACM
+  575ac07e9f452a512b5430b2b0eab36a7703d159  Music/Bp2/Bp2d4.ACM
+  d743aeffb6e889de470e88199e30caf67059ad02  Music/Bp2/Bp2e1.ACM
+  d4f0ca9e19c40605fa3a9a884544d99055388793  Music/Bp2/Bp2e2.ACM
+  18772f2dac276a73b59491ea6f5bfe370d00c1f4  Music/Bp2/Bp2e3.ACM
+  f919e8ac2985ad2ede7846b2f6b0a424d4f78c79  Music/Bp2/Bp2e4.ACM
+  fb3b74878e6da333abb71e444fd538540557a0d9  Music/Bp2/Bp2e5.ACM
+  fed37a471a064daf3d9c92ce6411f522e6a80d29  Music/Bp2/Bp2enda1.ACM
+  0bb728b3fd07cef52a089bd9809eff5387854cf3  Music/Bp2/Bp2endc1.ACM
+  1fa6ed559c4c10ecfbd64f6736278b4ef03374b2  Music/Bp2/Bp2endc2.ACM
+  ace01a8cfa03c7ff3abc50ae43048ac590e9480d  Music/Bp2/Bp2endd1.ACM
+  afbe1bc94dd3e315c970fea12a35ffc813ae1ff4  Music/Bp2/Bp2endd2.ACM
+  8932df36f5ebe5c084b210882bfb972bbdb4c007  Music/Bp2/Bp2endd3.ACM
+  921d8e9f218c1354a72698ea43441bf057cf8136  Music/Bp2/Bp2endf1.ACM
+  0a9deb662503d72f1852dc830a8cc0f4b694e9a4  Music/Bp2/Bp2endf4.ACM
+  69d7d83173ba83ccb41690658fb84905937bcd54  Music/Bp2/Bp2endg4.ACM
+  753d59dfa34018f690ae94f66529fef1780da07f  Music/Bp2/Bp2endh1.ACM
+  81c48cbaa460f1c3103e72c20503947eea9a8689  Music/Bp2/Bp2endh3.ACM
+  6748116895d0286f3f1e3b7de76ff491b025deb7  Music/Bp2/Bp2endz1.ACM
+  098a7f2eebe772323ad72283f83016a151a39397  Music/Bp2/Bp2f1.ACM
+  44c5bd3f677e959f1866349efe5a2e7f7ce4a772  Music/Bp2/Bp2f2.ACM
+  6117849af3495935e082be1910ae459af5ae336e  Music/Bp2/Bp2f3.ACM
+  64fe5a4dccbc57a5ebb2131841124eeec89a0833  Music/Bp2/Bp2f4.ACM
+  511205be4b13446f1a09cea141b3b7e1a5798ecd  Music/Bp2/Bp2g1.ACM
+  e076447baf1009b782e982aa2d5f3199dba30ad4  Music/Bp2/Bp2g2.ACM
+  e26412a66425fbdbf1ed4e9cb4663b6640c982f4  Music/Bp2/Bp2g3.ACM
+  70df9d959cc6bcfbfc897c0bdf7c9ed324e7e4d4  Music/Bp2/Bp2g4.ACM
+  0d4d15200b7a97c6934b1325c2f5ed0db075e2ff  Music/Bp2/Bp2h1.ACM
+  b4bc7ec00f5aef82de9719f58c2c546ee84261ff  Music/Bp2/Bp2h2.ACM
+  f2599055e95a6c48f254484c36c0102be28ef754  Music/Bp2/Bp2h3.ACM
+  d80c41b63a75defca3e5d9680b388012c956c23f  Music/Bp2/Bp2xa1.ACM
+  e606691365ce074d9f01b798cd338e5279c57a87  Music/Bp2/Bp2z1.ACM
+  67912454e1a6ead67a723160145adb47a55c2661  Music/Bw1/Bw1a1.ACM
+  d9a742c56c390a236d8a8f49744ba33bf39ea868  Music/Bw1/Bw1a3.ACM
+  adc3345bb20fba35edb511082a74be456c3e5df2  Music/Bw1/Bw1a4.ACM
+  e0c1ea88402fd494457a3c298eb01feebdccaec5  Music/Bw1/Bw1b1.ACM
+  2f1d54b7567d84ac6b45cfb15bce743168dc9c30  Music/Bw1/Bw1b2.ACM
+  ad540cefff15222e995372e285a74a1413dae877  Music/Bw1/Bw1b3.ACM
+  3bf9fd8b9a7c08ec11db2452849902149cb47c86  Music/Bw1/Bw1b4.ACM
+  7fe1c5cf32e18d38b5ffe134a8fda20ee0db0eff  Music/Bw1/Bw1c1.ACM
+  e8166a99d7f6c5b234a89240ee9739798966130d  Music/Bw1/Bw1c2.ACM
+  b551e966464f811b771ced0adad0db3021a34ee8  Music/Bw1/Bw1c3.ACM
+  f13108e8d9cfe082b901cb7be4156ca37365597c  Music/Bw1/Bw1c4.ACM
+  855ffbeba19e6d03b4d05ddbd847086480de0d25  Music/Bw1/Bw1d1.ACM
+  7a60c137592b995aa000c060bc2f0b4eefefdab5  Music/Bw1/Bw1d2.ACM
+  87074cc96f75f46e80841d2b037cf5679e692709  Music/Bw1/Bw1d3.ACM
+  2e8f97496ba5a00a570f757a7da4737ef09a14dc  Music/Bw1/Bw1d4.ACM
+  be21b5d8a0b307202f5f7906ad26c46d5543d08d  Music/Bw1/Bw1e1.ACM
+  09ca8555c1f2de3b017942875e4dd93b589f24a0  Music/Bw1/Bw1e2.ACM
+  cfae51301efc8f70635e58e9c96b5af6bf3d36d4  Music/Bw1/Bw1e3.ACM
+  8e66f106808912b04c9c407fae9ee7aa16c6459a  Music/Bw1/Bw1e4.ACM
+  4c35acd62739879ced99c9de0ceef092e5acc52b  Music/Bw1/Bw1enda1.ACM
+  f59f1d83adc46c65ca3b4f3866620ed6579c2035  Music/Bw1/Bw1enda3.ACM
+  fbbc98b317c4e83473e2134d58a635a0464bef8b  Music/Bw1/Bw1endb1.ACM
+  1124dfaa456d661a4da88b5528882033e190b364  Music/Bw1/Bw1endb2.ACM
+  eff72d3bd331f135d8fbf9fb902dd5cef0dd57f5  Music/Bw1/Bw1endb4.ACM
+  14d50796bad6db140cce411180c1f97f913d82c6  Music/Bw1/Bw1endd3.ACM
+  5765a892b42d1771c5ba2a6c3d59fc8a987afa10  Music/Bw1/Bw1endd4.ACM
+  2c0088bda4d596bbcec971145ed9b8581f69266e  Music/Bw1/Bw1ende1.ACM
+  5f001df841b6d0e932617510346f63385e191e57  Music/Bw1/Bw1ende2.ACM
+  ec3b90ad9fea55cfda878dc5410464ee589fcfa3  Music/Bw1/Bw1endf1.ACM
+  66ee395c40627ece18d12e733e9df29cc92c5f9e  Music/Bw1/Bw1endf2.ACM
+  4ce02adc200125909299100c83772118cd7e2ab3  Music/Bw1/Bw1f1.ACM
+  5af78107ddf203576b898d16f2498aef7d88710a  Music/Bw1/Bw1f2.ACM
+  6d7f48d8f23ca91531a48415b20221f229f22458  Music/Bw1/Bw1g12.ACM
+  db1ec41575723c31f53e5d9acb2d7f755b76bd3f  Music/Bw1/Bw1h1.ACM
+  2596e729ad4b681a099554450f8b25a12f6610ab  Music/Bw1/Bw1h2.ACM
+  8748acae683ac406339e90e32834fec379b82471  Music/CDay1/CDay1a.ACM
+  12320b9eb90b70f1387d3e525919ed97ca44076f  Music/CDay2/CDay2a.ACM
+  eaa57f1287330b6a6faeb97e285f9d933c9dd7b9  Music/CNite/CNitea.ACM
+  bb6b4a2705d3948172e4b69a5776cea975c766d6  Music/Chants/Chantsa.ACM
+  ce08ede40244c12e0d76a96470d37ac31aeccfc1  Music/Dream/Dreama.ACM
+  2442c28702169165e1f3537fa6a4c71d454a6bec  Music/Dung1/Dung1a.ACM
+  5859dfe140f327a0f1b5ef132ddb93b941d98b1a  Music/Dung2/Dung2a.ACM
+  0312c6d0defcb4c80cc8c877ff58028a71459fb0  Music/Dung3/Dung3a.ACM
+  b93cf81aac6d8263f98fd8adf958046d21c65cdd  Music/FDay/FDaya.ACM
+  88f3ac445a6b4b451a14a13f508b43d6c2914f5f  Music/FNite/FNitea.ACM
+  1e94246adc83fb73aef9662fafdde4ff9796dc56  Music/Fort/Forta.ACM
+  184473ae155693da29f7a65e3b16fb521059d8a8  Music/PDay/PDaya.ACM
+  5abf4f345822b23a4c18031f96aa4fcb62b47eb3  Music/PNite/PNitea.ACM
+  4e2e7ed449c16f9ad08647663e9d7d726a029199  Music/TDay1/TDay1a.ACM
+  4cd15d69ea30826aa71a83385f71bc432893cee5  Music/TDay2/TDay2a.ACM
+  a60e782009de084034d999c10374ee7119ad7dcd  Music/TNite/TNitea.ACM
+  ea6e7112468b4d54b0a20729f861e8779ded895a  Music/Tav1/Tav1a.acm
+  8e54893473f7b510565278fbf38c0e333bcc5dc4  Music/Tav2/Tav2a.acm
+  16b44011f6fc534b200cc75b430d68640525105b  Music/Tav3/Tav3a.acm
+  21c6212fc4a89a3da9adb714d5424d1b83fdcd05  Music/Tav4/Tav4a.acm
+  f68dfd8d1b2e32dddad001781bf6273fb5d3dd92  Music/Temple/Templea.ACM
+  8668735b09f3c6bbf1243b0ca3b600396d95e8e5  Music/Theme/Themea.ACM
+  b8e036de76b24ef8b4efef4dd058fea3222e0d35  Override/Ar0146.ARE
+  1499f7fb04c691c19adede614783bd2260a4d763  Override/Ar0504.ARE
+  f48b874966d045f14dfdada0bb3d0f61225a5fc6  Override/Ar1801a.are
+  df7001a85f7091e9b979a2e231bfdb624675b145  Override/Ar2600.ARE
+  315f53f17fbaef191ce9136982f93bfb86ffd361  Override/Ar2608.ARE
+  277dd4472282e0d344c1b1ac3956bc10e4591018  Override/Ar2609.ARE
+  6ea0b34f06f46d8ded491aa76d29cbe0d09a953d  Override/Ar2610.ARE
+  6affcd844367117718bf950bc609542eace28647  Override/Ar2611.ARE
+  8b41c13ecfd081ae61cc4614111cd4420fe11b89  Override/DEATHKNI.bcs
+  df5cf1eddca4bc26ab3a1e42f3e9c4ee3638dd8b  Override/MGnlInv.BAM
+  beed15a8ee1745139642af19570a99f002c4e064  Override/MOgrInv.BAM
+  e5b0cc51017bb8eb1df1caf56724e717fccc44b1  Override/MSli2Inv.BAM
+  d25c0ce3edb6ed45d86d3353c4dc22bb25d9ca47  Override/MSpi3Inv.BAM
+  938c10cbabc3933e56ad2483488aff1f7d3dd97c  Override/WorldMap.WMP
+  3519e015f51604814d9b838b0f08b2e40607d431  Override/ar0300.ARE
+  10b6046f100e7db8c584badf64bb4e4fe910e0b3  Override/ar0400.WED
+  90b443d0efb581a7557429ed47fd36781e8237e7  Override/ar0400sr.bmp
+  7996d70cd49a924704a59cdaf25826abe27468d3  Override/ar0700n.WED
+  b0c81af7f85372b9180c2e0d37868873bf88061d  Override/ar0900sr.BMP
+  46bc341ecdf0425f94052a7c8026211fcf04c3c6  Override/ar1801.ARE
+  cdb8912e2da882095a33c41c20af1054d42203ad  Override/arealink.2da
+  eb5366c89188bf3c87408287850bd1330da9c389  Save/888888888-Mission-Pack-Save/Baldur.bmp
+  db775e677a4646dbdcaa55422b4da294a3fb30ef  Save/888888888-Mission-Pack-Save/Baldur.gam
+  03c2e60dc538fcfcefb972569b7f212eb99723a2  Save/888888888-Mission-Pack-Save/Baldur.sav
+  feca683c96d319e57f0785d1945a47ad5b65fb90  Save/888888888-Mission-Pack-Save/Worldmap.wmp
+  2ac20a93ea4f718dd7257c66c2a13d0a4be75a3b  Sounds/Female1a.wav
+  84a7e9544cb25d49226a64560c8b0ff1a69f40de  Sounds/Female1b.wav
+  11cc8d378a381d3e32c531c8d1a7e0ffcacc41c6  Sounds/Female1c.wav
+  91b8bbd2d5ba912f0396db1a7b744bfca2261d95  Sounds/Female1d.wav
+  22575f872bd90637100b5a33e5cb1912a519d7d7  Sounds/Female1e.wav
+  0384c1d20f753a2ebcdd01e1e8d125c260708d38  Sounds/Female1f.wav
+  e895e6b386abda9771fb9c794028a43f3602cd97  Sounds/Female1g.wav
+  b08dbbc9cec51385e0aef28e095fddd982eff50d  Sounds/Female1h.wav
+  ef9153ee5fe87d4962d6530d263bffcfb56057e4  Sounds/Female1i.wav
+  6a0deff1cfcbbe21766137dab0baa8d95ab38978  Sounds/Female1j.wav
+  5ebdcf56aa7b8f9930810f45bf8918b5ef1503c9  Sounds/Female1k.wav
+  bdca0ba37548c196cc3e5192bb31e0344fd138bb  Sounds/Female1l.wav
+  f895377389a2b7776d56d5293f306ff22606882a  Sounds/Female1m.wav
+  df5ebd73f00cab335e9f81120c00a252f133fba1  Sounds/Female2a.wav
+  5fb8dcd5174d1df153d9c35b5bc14dda686cd4d2  Sounds/Female2b.wav
+  8bc13e1e46131a3ff8b7e8355521023357dbf258  Sounds/Female2c.wav
+  4e1b6fd43ef2ef03824850ebc356b1b423a625cf  Sounds/Female2d.wav
+  7a0e573871be48d6ce924c797359d452d9cdce37  Sounds/Female2e.wav
+  1bd359fe4f5d908d1eb7f734ed1491ccd33eab68  Sounds/Female2f.wav
+  1514bd1c4137a74b6759f09d45cc1c216009ff71  Sounds/Female2g.wav
+  551d72c18911e360f64f354e814f72fa43c5c22d  Sounds/Female2h.wav
+  4177dc9bb89b62e8d819f4dcee78c6eeed2d79a2  Sounds/Female2i.wav
+  28b88f23102bfbffd14c9e5830a59e3beee1456d  Sounds/Female2j.wav
+  df5cd021a25580dbb57a41b8478e33dcbea61d18  Sounds/Female2k.wav
+  a12673b3209ad0616c60d6314800fe5c76eac0ad  Sounds/Female2l.wav
+  8c304050aa741dca22046bea0b1baa20b6d714da  Sounds/Female2m.wav
+  77165d7f8d8b112512e93ac901ed6595fbfc298e  Sounds/Male1a.wav
+  963186b34f56a57c99191fca72816298f9a9b313  Sounds/Male1b.wav
+  83d32d7e85c91630224454ff7f4896b63e913154  Sounds/Male1c.wav
+  2431d2da578130d02359e2ea3283ba9ed102f3f5  Sounds/Male1d.wav
+  ab2cb27e443439846ed42caaa700f06c43d7ccd1  Sounds/Male1e.wav
+  5108b0480b81d3c92948d884d5604e7fd4915c2a  Sounds/Male1f.wav
+  5ad5de44d74c4da5fa386e9ada826941fad6b8c4  Sounds/Male1g.wav
+  39461dfd67774034930a45762396c46fb4b98e75  Sounds/Male1h.wav
+  338aa36f5652f33fa5c303ebc32e17716ff88073  Sounds/Male1i.wav
+  7f1547c6421038331982232f8ce812e44a3baa77  Sounds/Male1j.wav
+  e5196c21b35ac8146778800c80768383554acf9e  Sounds/Male1k.wav
+  c3b46f09557cf51c38907a47dfd5f92e599c43cc  Sounds/Male1l.wav
+  7951392203caa15d5b57f5f828a872f2ba826fd5  Sounds/Male1m.wav
+  98d9060d342257ffb7f4290ae57678ace00bad3f  Sounds/Male2a.wav
+  f587965eb47ebab7366601442f64fd700329fdeb  Sounds/Male2b.wav
+  d52ae2a005e9fef6bbb2e2a94dc48fd87177422e  Sounds/Male2c.wav
+  d40c36292079bb3ddb87fd0d29685e17bcbd3cb4  Sounds/Male2d.wav
+  a7a6b530575b2635f9ca6ad6d6b89208f84615ed  Sounds/Male2e.wav
+  f84c9dee01236a98b03dc1df7ff6a9d390f08e32  Sounds/Male2f.wav
+  43bb010c9047164aaff68f195d8446400b89e4f0  Sounds/Male2g.wav
+  d9215279239c3795edf8823eb321335151ce0276  Sounds/Male2h.wav
+  ee709c517f009056069788d572ff08250803019d  Sounds/Male2i.wav
+  c0def46b277531170f107cdd0ac6b2de7f90a149  Sounds/Male2j.wav
+  6893b2d6642e52860c6f767bc431bf79eefc32b5  Sounds/Male2k.wav
+  13b4e76af0591d6e4986a459c86c493b5f5b09f0  Sounds/Male2l.wav
+  a9131b704f113ce956f958acffc410e638d66ed9  Sounds/Male2m.wav
+  51522b69df1973c1793eeef25aa637366b8ac5b0  Sounds/Male3a.wav
+  bfa9bf13ac79cd758975a7b66aa2d46e615040f7  Sounds/Male3b.wav
+  e0998bf6694a220aa25d105cfdf589b7c13da5f4  Sounds/Male3c.wav
+  b8e8f4e11d3c1144eed712f356eec516799c7de1  Sounds/Male3d.wav
+  31adf7bdf7055356a705436eb40d3fb0fe428f1a  Sounds/Male3e.wav
+  5376154ddc0609b690b98947b1aca66217fcea84  Sounds/Male3f.wav
+  7ffe80ef67b4747751beebc92521ed609ee0545c  Sounds/Male3g.wav
+  e3609c4c134d3eb259ca2cee4038b3018677f625  Sounds/Male3h.wav
+  4b47012dfc5eb05e831dde118e5ba3ff9803c9bc  Sounds/Male3i.wav
+  4ea89fda2217bbc06ce392b8c5c53a6979958918  Sounds/Male3j.wav
+  3481486ccc165f8f8691460788a911b92fae7a11  Sounds/Male3k.wav
+  7ac5dff94d1bf621c087ab4d1a6449e556500046  Sounds/Male3l.wav
+  12a842ee90bd00f222aaeefbaff0d848bbe6d7f0  Sounds/Male3m.wav
+  2ddd9d671e11d0508bd2d29dc5ef8bbdadb9690c  Sounds/female3a.wav
+  3c4d3b8d89ffcabcca00cdf224f2085477ed9011  Sounds/female3b.wav
+  a6c3419aad1e0ccdb54dd6e4bd5a13d8ad337d2f  Sounds/female3c.wav
+  7cb72da5880d820c81776e2646c6ef02ad9f7837  Sounds/female3d.wav
+  0d065e38dc3fa7cf08a4f0ed22fa36e322cb1dca  Sounds/female3e.wav
+  07552fd20e5fe72af31180dcbf4576deb4030a15  Sounds/female3f.wav
+  50bf9c85bdce3fd4191d9306c9493395603fe44d  Sounds/female3g.wav
+  d92ada80c2f34941956bff8cb8d131492b070653  Sounds/female3h.wav
+  9fd43be2bdf241e254515dab7fb9e3b9dbae97e9  Sounds/female3i.wav
+  83d86e1af86ded5d5ab49a1f8ede431b25b905b8  Sounds/female3j.wav
+  79a9d8eb40438210113bc04dd906e3a4b7e07e74  Sounds/female3k.wav
+  bbc1e86829758d8cf0246573073ac1be218da247  Sounds/female3l.wav
+  d2988bb06b1f26ae82ae9e34041c150158563347  Sounds/female3m.wav
+  eef351d259bec5501a9abec89d803adbea564dc0  data/AREA000A.BIF
+  fce5105cc2d183454e1615c4c6c828c75208173a  data/AREA000B.BIF
+  e7bab3db4e542a32a601a164c666956441d10ef0  data/AREA000C.BIF
+  570c71605bfe51a80a14b10d7e5d0d742043e678  data/AREA000D.BIF
+  1d7966b24f459d3acf0ceca1e33862cf82a9509b  data/AREA000E.BIF
+  faf722442bf61a5a5ed34ce2a100cc98f9232562  data/AREA000F.BIF
+  70f681d7d2708f153ec840ef74cc21870cbe2c3b  data/AREA000G.BIF
+  d9790d884a25ceca4c059bacf77f03d77a6eb6e7  data/AREA000H.BIF
+  e0186b9364f6fb634d577f577b33d601ef720801  data/AREA0100.BIF
+  64f99f69bc3fe1ad3ea873646ca9620ed5389826  data/AREA010A.BIF
+  2f6378980d1af3e5a35f28d648a0fe7f6fca9ed9  data/AREA010B.BIF
+  4c7b657176589631244484fa0a0c6c664f83c044  data/AREA0200.BIF
+  05fb9300a1657a27293d756eccb6de8d66a8440a  data/AREA020A.BIF
+  691acfd157e0720bd8bf78007323b56612051699  data/AREA020B.BIF
+  aa0f01e1b890c03900dbba0ab09e61935cc19416  data/AREA0300.BIF
+  cd1cf1c71e9a39fb3271644fba5eb4f248a27899  data/AREA030A.BIF
+  e6fc21ad68d85fd35c0ed733314d5d178946147d  data/AREA030B.BIF
+  ca341f259aa949c14dc18df54d0e11a2ed672720  data/AREA0400.BIF
+  9b2cc76ff5a32aeff28d4f7b0576f4a1eaa2e4af  data/AREA040X.BIF
+  42505344c90878bf0bbe85cc2389d7205b74d86f  data/AREA0500.bif
+  1860c47b29d11c06da29290aefac9491ff416a96  data/AREA050A.bif
+  6700006cf069ae9ea877ea473e3ab9cf61196a15  data/AREA050B.bif
+  b8dc442753a93979ae4b7c3243dc6ec78e59b7e5  data/AREA050C.bif
+  5b9ae4c7ceb33af5a2404b80a08d801d667318a9  data/AREA050D.bif
+  01875d6cea5c5c6078d6880fcd7a80e2836486ff  data/AREA0600.BIF
+  85556a96a88454ae17c1f262116114861c6c3d2f  data/AREA060A.BIF
+  0092850bbcd5d658c4c90dbdc3e59ea45cc42e33  data/AREA0700.BIF
+  f39fc7554590f88fac40f56a8a756c5369cced5e  data/AREA070A.BIF
+  5d5db917089ff4768a27400f0dd2032896feed87  data/AREA0800.BIF
+  6547121771cf30eca9ab42793b05dc95c7a66b5c  data/AREA080A.BIF
+  9f997ce5d4399fec9da559ff9b0bc7b834acc72b  data/AREA080B.BIF
+  802c25a8676da2cdcfe5d9276e237f06ef65d780  data/AREA0900.BIF
+  2e747ec980682ff1644e25579d0fcaf7b05a5657  data/AREA090X.BIF
+  b80d620127f390f96aa3f5ab2f5ef8535b5d8e57  data/AREA1000.bif
+  e513928d5bc9387cc92355e48b2bbac488b5b3c8  data/AREA100A.bif
+  be2bd70309e895bf50a711a361a6a20f5e1ed888  data/AREA1100.BIF
+  3c97b628ec8aca7cda9040101d5b7351ebde6eb6  data/AREA110A.BIF
+  47ab597e319773da1b186aad511d09f21e1614cc  data/AREA110B.BIF
+  68ed43a64c558eb198cca856889a4e72ef66246e  data/AREA110C.BIF
+  746f6e13e9302803e572d70c84902cf4ca8d2a50  data/AREA1200.BIF
+  5630959bac0dd51d902f19f3b653a08c29229b5b  data/AREA120A.BIF
+  7ac992d1b11762afd159d2747fea829ec4110a16  data/AREA120B.BIF
+  87d63a8da00b351b18191999449e3bf053aa0f1b  data/AREA1300.BIF
+  8648652500109c553e0ad2e1b44fbe2ae7dc9801  data/AREA130A.BIF
+  58a6c523eb3adeb30a68812b649b0cef87edc400  data/AREA1400.BIF
+  550001ac456a516cf27fcc0bee1d803c3e34d8a9  data/AREA140A.BIF
+  05e39926be9402ceb48ffb4c5cc121e259438b88  data/AREA140B.BIF
+  bfc9b4e5b997dedf36109ebdf51c0c984faa6fbf  data/AREA1500.bif
+  b02a020080153a0c45c843bc009b641e07f9460a  data/AREA150A.bif
+  0f144f6421696d58fe1a2584603cde15370d1613  data/AREA1600.BIF
+  994cc526336b513e81685f027120ceefc8516f43  data/AREA160X.BIF
+  137b0e1c2e71ebe973b33f2c78537e0089895f3e  data/AREA1700.BIF
+  ec11f450352d201ff596968ec58d0cfde8713dbd  data/AREA1800.BIF
+  5f6104f32c33260f71d2bf130f9d053fe52c20fb  data/AREA180A.BIF
+  bb08656c687b8d832b4af856e333c1ee5510214d  data/AREA180B.BIF
+  3fb92946750b402fcc4e688bbbb8c11602ffd7f9  data/AREA180C.BIF
+  10d7e5a1b2b5cf3ca325e365f4a2ec6884454bdd  data/AREA180D.BIF
+  b33f2c7f5fdd29e9bf30d2c666395b9313324b1f  data/AREA180E.BIF
+  73f78eb965a35d5c6fab48f1b38467e70e506116  data/AREA1900.BIF
+  d2c5b510a375464336b47a642150a71b07e520e1  data/AREA190X.BIF
+  c00d57d9c585db0328a64cbdb34369d594e69088  data/AREA2000.bif
+  eaec7b6618576f5ffd4c4814edc8b83f3ff008c2  data/AREA200A.bif
+  aad1f755cf355849ebcb108f8a3e938073f00649  data/AREA200B.bif
+  fb1ecef7af34610211a4e80127988c191a14e7a3  data/AREA2100.BIF
+  adb0977447b745858283b9e72bf94e6884d3e936  data/AREA210x.BIF
+  050df4408c04fa657c20e3f8b844d47c9c7bce02  data/AREA2200.BIF
+  8ffeff8f3079e89058f06da0b0e40b3f882d5bd1  data/AREA220X.BIF
+  63e7a640f95403ddcb1f56c2291aa252d9d01f2a  data/AREA2300.BIF
+  e6170e15eda88ccc96ad9598774f6a443d235bf0  data/AREA230A.BIF
+  47024d92091c53a358b2e666b1de90b9c348bdfd  data/AREA230B.BIF
+  813a50408789202aba3b6880be75ad8776df22e2  data/AREA2400.BIF
+  adb1ffe13931865732f2c30e44a05e3b973876de  data/AREA2600.BIF
+  e0ac43cb118217df33ad523bda047c1988628cff  data/AREA260A.BIF
+  cd147f99b66040c328caedf278e4f214cf887a2c  data/AREA260B.BIF
+  f2af006e9b7fac83b53b056526ce3798f331d306  data/AREA260C.BIF
+  5cc0362e1ccc01ff1af7c5cc6781586f46a68fa3  data/AREA2700.BIF
+  ffbca35a8977272939946c6b206e8fcf4bc6f0d7  data/AREA2800.BIF
+  8db210c1c3e72e54fb342443dc1d83b18bd52951  data/AREA2900.BIF
+  0822d5351eb3f17384b39dc2f37fedb34595b1b4  data/AREA3000.BIF
+  525d77278e94c6d5e2c68a3bb43de92828000d53  data/AREA3100.BIF
+  4406455a8ac97f5ab6048bfa8700bf3051a31aa5  data/AREA3200.BIF
+  dd6924184a1a24f8508b0a3bd01eb5e1bac4c4c3  data/AREA320X.BIF
+  8735beeae41b9bed068dea7e61d2aae3c3d4c10c  data/AREA3300.BIF
+  f39a28e5b01bc889cd691f48bad9a333766b2c26  data/AREA330A.BIF
+  e911896c7a70f60c342ffa904b8f9ef18f94fbe0  data/AREA330B.BIF
+  3f56321125bac7ed5457d28bc8cd2dae2a576121  data/AREA330C.BIF
+  a5493ac6c0b3463dbdc4d013aec8be8fc345c7e6  data/AREA330D.BIF
+  e88a202a6d0e029c0d60e2053bdeca6af7010036  data/AREA3400.BIF
+  b05b61876454683be4df11b6f7b1be5f4b1552c4  data/AREA340X.BIF
+  5c4a7add4c09bbce448e910d827b8148135d51f2  data/AREA3500.BIF
+  8cd9cb3367e725e84473190b08bc1271997b0c6f  data/AREA3600.BIF
+  57b731d13c6c942d58067d8df1b215cb40d8f79b  data/AREA360X.BIF
+  a814c9437bddaf9e3633ededbb3265d00cca500a  data/AREA3700.BIF
+  1b5df15b055da053868e6081e9c1ef6fc26de86b  data/AREA3800.BIF
+  466a833b303eaa10077ecdbcbdbecd0609e49358  data/AREA380X.BIF
+  67dcc65aa074bc0e29e69d8db5688978886b95f6  data/AREA3900.BIF
+  5a3ed2a0bd4b9840b48b358d9ee1d73e30da4c77  data/AREA390X.BIF
+  6ba8f51af05323a117d64ba4e77b3f247242bfc5  data/AREA4000.BIF
+  086358f37af529b731889e1b7b023628fa6dca52  data/AREA400X.BIF
+  e9735e3cf71b15b14d23597991f061d915d7b533  data/AREA4100.BIF
+  273470cd3079d4e377d9cea86d55e3e8d21da6d9  data/AREA410X.BIF
+  a09e76258193e6ef2c51786f9629dd281575f226  data/AREA4200.BIF
+  e7f0e90f69c184598b824f43d8e247f5f325584c  data/AREA420X.BIF
+  2e591d2df1940fcd8e30e16194e0148658c0f915  data/AREA4300.BIF
+  8e988e546113ecd39306c4862fcb762b6c9dab31  data/AREA4400.BIF
+  80b092896213f5c1950e45ac54d5feb27d5e41cc  data/AREA440X.BIF
+  d79d882cbe01248faf202537494709ff76ec8bd0  data/AREA4500.BIF
+  e7e810b7e6d900e673b7a0fa72426bd773b92481  data/AREA450X.BIF
+  f6edbaf1d803dccffbc0e1aca670971a36184978  data/AREA4600.BIF
+  3c9f26e9f24069d42eaee08881ea3470caf4e751  data/AREA4700.BIF
+  17ec86357e95fa207dbfa565975db4999ede0445  data/AREA470X.BIF
+  5fcead81612ddb20a0fe001fc50bc012f86d97b5  data/AREA4800.BIF
+  55fe92db542dd56026119f4db701758cd308788e  data/AREA480X.BIF
+  7e86f5744d5e8030240776c68c555241ea38baf5  data/AREA4900.BIF
+  e2c4340431e72c5233cc12ab71b68ff0e9f64ff1  data/AREA490X.BIF
+  5c6b98d5010d490a422b81c2383f9f7a79e431b0  data/AREA5000.BIF
+  b2129fdc9b85946e9a1d728009182e2dba3a33c4  data/AREA500X.BIF
+  80e4f19173aed640ad401fc27392391853fca078  data/AREA5100.BIF
+  45ebea9b32d6bf7f4bba44b101f27024492f605c  data/AREA510X.BIF
+  3effe0d91dc9b2a8bfe060b9b4398dbc3ada8702  data/AREA5200.BIF
+  a31ef408722d4b304875eff52aa4a5d28ab4abb1  data/AREA520X.BIF
+  7ca7c331f056118b2a4c4ec02cfe20f3f22b8ec8  data/AREA5300.BIF
+  d868242491e4d1b7dc03581f12cd27bc3e5cd82c  data/AREA5400.BIF
+  1ec8f55257a8d21fc776f8e793098fd5ac15b532  data/AREA540A.BIF
+  9fdd5b0b47ca139b5849b38fbfb55f6559979986  data/AREA540B.BIF
+  f8ed90bc5425f6055ad750f3394760dcd871886b  data/AREA540C.BIF
+  671c1dad9d1137ffea9347d397a6115538befd46  data/AREA540D.BIF
+  6bef293bac57853d990148ce2b2267097824a70f  data/AREA5500.BIF
+  c79212f60da43358db03d6ff311a61ff5f516357  data/AREA550X.BIF
+  03090be1619b402d7713b0eed43fdea3016d68a3  data/ARMisc.bif
+  658f4a53edf022ecbfa9d945467776e2ce8c83ae  data/Areas.bif
+  6dea4539081d4499da0e8034097264cfa3eada98  data/CHAANIM.bif
+  8f897173e2f58a8a4986337209c01146d937ba05  data/CHASound.bif
+  4cad0a5d18da01f1b9afa8258dfa45f28da65556  data/CREAnim.bif
+  abe49c1ee5f444ee2967d80e4ccbf59204a8ae36  data/CRESound.BIF
+  c95b4ad8d2bf505aebc974f076c62c83ac860fba  data/Creature.bif
+  27d73c2b5b95cc188d1a4003f15286fb8dcd3569  data/Default.bif
+  d2febf9cf9dad98f77fd25424db1b5f989e59ff5  data/Dialog.bif
+  53bd6d9572ebf792bcf02c02a0022db4b04dfcea  data/EFFECTS.bif
+  b3aa34ea832e1ba0da8a27cb585a47d2a2c006c1  data/ExArMaps.bif
+  ac5ffd1c07dcd0c4a8169942267dc1a7aa269028  data/ExPAreas.bif
+  bc6b2d6be88d56c546536d78ef6d3be6800a54fc  data/Gui.bif
+  c64140f2179458b853ceb1f61fcdc4231e1f9fba  data/Items.bif
+  74b29a886f581610d23a5cb99e84c5bd587eed82  data/MPCREANM.bif
+  9e7077eca01ff674109d95205cf8de805252ae3f  data/MPGUI.bif
+  555592ac70016dce7dc2834e9f2fe45b8b4427a0  data/MPSounds.bif
+  4960647171d9931f86a3376ccaf7cbf813c33553  data/NPCSound.bif
+  d061f58bd2b2a7845b15d57ec3b3e0404d8b41b6  data/OBJANIM.bif
+  2833f781c8f1a6af7e73dd224723cd1f05998873  data/RndEncnt.BIF
+  af01189d2eaf7ab1a66efef6e07a2f8183ff5ec2  data/SFXSound.bif
+  6cde750f035e201bb5a95632a6c650d75caa17db  data/Spells.bif
+  0b6badeb145371c7a15a0353d1dfdbdc65b835ee  data/scripts.bif
+  681d6cb45cd38defd3a91934034bb55be502d92e  dialog.tlk
+  36082be29898dbfafa26f06f09f8daf6ea314a88  movies/MOVIECD1.BIF
+  b41581bb43d3ec5df0a614a85d18cce1fcc0c1de  movies/MOVIECD2.BIF
+  fe1e386ba3c90c4a5dde010ebffe265ae91183af  movies/MOVIECD3.BIF
+  3f05e8895749c2ad3a1e939e93c245d4eba57dc4  movies/MOVIECD4.BIF
+  af8ea33a303c7deace1f90436399dc91341beb08  movies/MOVIECD5.BIF
+  77ba0b81a7d830ee4d32e5b12a8f174f563ffb5a  movies/MOVIES.BIF
+  82f7468f992771014fec4b24a99ef8b44243274b  movies/MovieCD6.bif
+  085c7677b5b1fecfe5d269f56fa1aa53bc721c9f  scripts/mage2.bs
+  47baa61bba790c3b1f3fcc6f6d6f4ec5d81dbaef  MANUAL.PDF
+  546809ddfd582dfeb8ff8db8e35f28d9ce97f95a  MANUAL_addon.PDF
+  89be65b6d02dc683a635bf965eb5aacc0fc3dbfa  Readme.txt
+  2d0c3d821b426caba088f8e143f692e145921916  Readme_totsc.txt
+  748712fb9565db4091022ac96778ba827c72b640  readme_patch.txt
+  9bbbd95ea69603f499205f191935bc0581523067  End User License Agreement.txt
+...
+# vim:set sw=2 sts=2 et:
