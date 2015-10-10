@@ -859,26 +859,25 @@ packages:
     - scripts/thief3.bs
     - scripts/thief4.bs
     optional:
-    - MAP.pdf
-    - MANUAL.PDF
-    - MANUAL_addon.PDF
+    - map.pdf
+    - manual.pdf
+    - manual_addon.pdf
     - readme_patch.txt
     license:
-    - Readme.txt
-    - Readme_totsc.txt
+    - readme.txt
+    - readme_totsc.txt
 
 files:
-  MANUAL.PDF:
+  manual.pdf:
     install_to: $docdir
-  MANUAL_addon.PDF:
+  manual_addon.pdf:
     install_to: $docdir
   readme_patch.txt:
     install_to: $docdir
-  MAP.pdf:
+  map.pdf:
     install_to: $docdir
 
 size_and_md5: |
-  1392777   cf0ae4b7261bb3d9c560fb4aeed4f70e MAP.pdf
   842       e5526c907bb56ec72f8e6cf4eb30fc2e Baldur.ini
   1324      aac81dc6e797e52c86090027b266f355 Characters/cleric.chr
   1180      31fcd439edd0bb9b2492ad97a713568e Characters/fighter.chr
@@ -1713,16 +1712,16 @@ size_and_md5: |
   2076      233c3baf3c21548280b8adf07bd06ebc scripts/thief2.bs
   1157      792abc6b09a798dadcd8da0627450668 scripts/thief3.bs
   1485      197ba2f567c93d14b4a3107432f94a38 scripts/thief4.bs
-  4053991   fa57017cb535147d5afafd56d9b178fc MANUAL.PDF
-  1201601   92802987a523e7bd6e0fae9688135681 MANUAL_addon.PDF
-  45793     36e0eb32a9ce74e3460280637e0b9516 Readme.txt
-  15758     30a075eef52f6edc315655ef25a7a50e Readme_totsc.txt
+  4053991   fa57017cb535147d5afafd56d9b178fc manual.pdf
+  1201601   92802987a523e7bd6e0fae9688135681 manual_addon.pdf
+  1392777   cf0ae4b7261bb3d9c560fb4aeed4f70e map.pdf
+  45793     36e0eb32a9ce74e3460280637e0b9516 readme.txt
+  15758     30a075eef52f6edc315655ef25a7a50e readme_totsc.txt
   79681     0629deab9d54b90c35860b962bf256da readme_patch.txt
   84678     5ca22d16e3665c4c2f7cf9d4a8e16d06 End User License Agreement.txt
   389       dc9b6ecd19a14a54a628edaaf23733bf LICENSE
 
 sha1sums: |
-  90deca7b26d7f477de5667236973fbcdd3f1e626  MAP.pdf
   dc9b2590ae6a7576a4e12d9b8ab5ade231517e09  Chitin.key
   eb5366c89188bf3c87408287850bd1330da9c389  MPSave/888888888-Mission-Pack-Save/Baldur.bmp
   db775e677a4646dbdcaa55422b4da294a3fb30ef  MPSave/888888888-Mission-Pack-Save/Baldur.gam
@@ -2397,10 +2396,11 @@ sha1sums: |
   77ba0b81a7d830ee4d32e5b12a8f174f563ffb5a  movies/MOVIES.BIF
   82f7468f992771014fec4b24a99ef8b44243274b  movies/MovieCD6.bif
   085c7677b5b1fecfe5d269f56fa1aa53bc721c9f  scripts/mage2.bs
-  47baa61bba790c3b1f3fcc6f6d6f4ec5d81dbaef  MANUAL.PDF
-  546809ddfd582dfeb8ff8db8e35f28d9ce97f95a  MANUAL_addon.PDF
-  89be65b6d02dc683a635bf965eb5aacc0fc3dbfa  Readme.txt
-  2d0c3d821b426caba088f8e143f692e145921916  Readme_totsc.txt
+  47baa61bba790c3b1f3fcc6f6d6f4ec5d81dbaef  manual.pdf
+  546809ddfd582dfeb8ff8db8e35f28d9ce97f95a  manual_addon.pdf
+  90deca7b26d7f477de5667236973fbcdd3f1e626  map.pdf
+  89be65b6d02dc683a635bf965eb5aacc0fc3dbfa  readme.txt
+  2d0c3d821b426caba088f8e143f692e145921916  readme_totsc.txt
   748712fb9565db4091022ac96778ba827c72b640  readme_patch.txt
   9bbbd95ea69603f499205f191935bc0581523067  End User License Agreement.txt
 ...
