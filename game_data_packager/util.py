@@ -138,6 +138,16 @@ class PackageCache:
 
         return package in self.available
 
+    def current_version(self, package):
+        # 'dpkg-query: no packages found matching $package'
+        # will leak on stderr if called with an unknown package,
+        # but that should never happen
+        try:
+            return subprocess.check_output(['dpkg-query', '--show',
+              '--showformat', '${Version}', package], universal_newlines=True)
+        except subprocess.CalledProcessError:
+            return
+
 PACKAGE_CACHE = PackageCache()
 
 def prefered_lang():
@@ -202,8 +212,7 @@ def install_packages(debs, method, gain_root='su'):
         method = None
 
     if not method:
-        apt_ver = subprocess.check_output(['dpkg-query', '--show',
-                    '--showformat', '${Version}', 'apt'], universal_newlines=True)
+        apt_ver = PACKAGE_CACHE.current_version('apt')
         if Version(apt_ver.strip()) >= Version('1.1~0'):
             method = 'apt'
         else:

@@ -1780,9 +1780,7 @@ class PackagingTask(object):
 
         # check version
         if is_installed:
-            current_ver = subprocess.check_output(['dpkg-query',
-                   '--show', '--showformat', '${Version}', engine],
-                    universal_newlines=True)
+            current_ver = PACKAGE_CACHE.current_version(engine)
         else:
             current_ver = subprocess.check_output(['apt-cache',
                    'madison', engine],
@@ -1790,7 +1788,7 @@ class PackagingTask(object):
             current_ver = current_ver.splitlines()[0]
             current_ver = current_ver.split('|')[1].strip()
 
-        if Version(current_ver) >= Version(ver):
+        if current_ver and Version(current_ver) >= Version(ver):
             return FillResult.COMPLETE
         else:
             return FillResult.UPGRADE_NEEDED
