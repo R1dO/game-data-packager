@@ -1,7 +1,6 @@
 ---
 franchise: "Baldur's Gate"
 longname: "Baldur's Gate -  The Original Saga"
-shortname: "Baldur's Gate 1"
 copyright: © 1998 Bioware
 engine: gemrb
 compress_deb: [-Zgzip, -z1]
@@ -12,19 +11,18 @@ help_text: |
   .
   game-data-packager baldurs-gate-1 <path-to-your-directory>
   .
-  Please use /usr/share/gemrb/baldurs-gate-original-saga-en as data directory
+  Please use /usr/share/gemrb/baldurs-gate-1-en as data directory
   path in your /etc/gemrb/*.conf files and bg1 as game type.
 
 
 packages:
-  baldurs-gate-original-saga-en-data:
+  baldurs-gate-1-en-data:
     #gog:
     #  url: baldurs_gate_the_original_saga
     #  game: baldurs_gate_the_original_saga
     longname: Baldur's Gate -  The Original Saga (English)
     debian:
-      provides: baldurs-gate-original-saga-data
-    install_to: usr/share/gemrb/baldurs-gate-original-saga-en
+      provides: baldurs-gate-1-data
     install:
     - Baldur.ini
     - Characters/cleric.chr
