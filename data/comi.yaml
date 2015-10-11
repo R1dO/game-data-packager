@@ -102,6 +102,40 @@ packages:
     - resource/wrecksan.san?de
     - resource/zap010.san
 
+  curse-of-monkey-island-fr-data:
+    lang: fr
+    debian:
+      provides: curse-of-monkey-island-data
+    install:
+    - comi.la0
+    - comi.la1
+    - comi.la2
+    - resource/musdisk1.bun
+    - resource/musdisk2.bun
+    - resource/voxdisk1.bun?fr
+    - resource/voxdisk2.bun?fr
+    - resource/font0.nut
+    - resource/font1.nut
+    - resource/font2.nut
+    - resource/font3.nut
+    - resource/font4.nut
+    - resource/bbsan.san?fr
+    - resource/curserng.san?fr
+    - resource/fg010gp.san
+    - resource/finale.san?fr
+    - resource/kis030.san
+    - resource/language.tab?fr
+    - resource/lavaride.san?fr
+    - resource/liftcrse.san?fr
+    - resource/moreslaw.san?fr
+    - resource/newboots.san?fr
+    - resource/opening.san?fr
+    - resource/sb010.san
+    - resource/sb020.san
+    - resource/sinkshp.san?fr
+    - resource/wrecksan.san?fr
+    - resource/zap010.san
+
 files:
   resource/font1.nut:
     distinctive_name: false
@@ -125,121 +159,75 @@ files:
     - monkeytg.txt
     - readme.txt
 
-cksums: |
-  _ 76791     comi.la0
-  _ 69340645  comi.la1
-  _ 83452557  comi.la2
-  _ 14973880  resource/bbsan.san
-  _ 20817514  resource/curserng.san
-  _ 435640    resource/fg010gp.san
-  _ 10945770  resource/finale.san
-  _ 94240     resource/font0.nut
-  _ 104848    resource/font1.nut
-  _ 104848    resource/font2.nut
-  _ 60968     resource/font3.nut
-  _ 126954    resource/font4.nut
-  _ 1079072   resource/kis030.san
-  _ 439080    resource/language.tab
-  _ 14072824  resource/lavaride.san
-  _ 7029446   resource/liftcrse.san
-  _ 9848862   resource/moreslaw.san
-  _ 176849464 resource/musdisk1.bun
-  _ 190295532 resource/musdisk2.bun
-  _ 11075238  resource/newboots.san
-  _ 82864970  resource/opening.san
-  _ 773474    resource/sb010.san
-  _ 768550    resource/sb020.san
-  _ 10347350  resource/sinkshp.san
-  _ 150287970 resource/voxdisk1.bun
-  _ 189733340 resource/voxdisk2.bun
-  _ 15003404  resource/wrecksan.san
-  _ 768114    resource/zap010.san
-  _ 14973826  resource/bbsan.san?de
-  _ 20817434  resource/curserng.san?de
-  _ 10902674  resource/finale.san?de
-  _ 104856    resource/font1.nut?de
-  _ 104856    resource/font2.nut?de
-  _ 493252    resource/language.tab?de
-  _ 14072906  resource/lavaride.san?de
-  _ 7029492   resource/liftcrse.san?de
-  _ 9848654   resource/moreslaw.san?de
-  _ 11075278  resource/newboots.san?de
-  _ 82866094  resource/opening.san?de
-  _ 10347302  resource/sinkshp.san?de
-  _ 171017667 resource/voxdisk1.bun?de
-  _ 218406620 resource/voxdisk2.bun?de
-  _ 15003534  resource/wrecksan.san?de
-  _ 18041     comi.la0?demo
-  _ 10579949  comi.la1?demo
-  _ 74740     resource/font0.nut?demo
-  _ 14412203  resource/voice.bun
-  _ 24466     monkeytg.txt
-  _ 8197      readme.txt
-  _ 18985347  cursmon1.zip
-md5sums: |
-  fe60d6b5ff51b0553ac59963123b5777  comi.la0
-  #fe60d6b5ff51b0553ac59963123b5777  comi.la0?de
-  09ae3abb98c43df89119466ae3557c0f  comi.la1
-  #09ae3abb98c43df89119466ae3557c0f  comi.la1?de
-  468f5ea61bb622284d57e615718b73cc  comi.la2
-  #468f5ea61bb622284d57e615718b73cc  comi.la2?de
-  ff9f5d3d05e72bada4ba1f8849352cf7  resource/bbsan.san
-  b3d38b245d3e16b0b8c05eeeed97d381  resource/bbsan.san?de
-  6cceb9586037e325f429836efbfd12c5  resource/curserng.san
-  0dc12bb4f8c1734ed8b2babb67a8960a  resource/curserng.san?de
-  e4fcdbd3487886a06d56492696fd1c84  resource/fg010gp.san
-  #e4fcdbd3487886a06d56492696fd1c84  resource/fg010gp.san?de
-  953a1221941e53c5b7ae0c4f99395064  resource/finale.san
-  72a9fb4e6885f3e76f915570b895e48d  resource/finale.san?de
-  8b9f2180203fad6fbe22db9a48b6a839  resource/font0.nut
-  #8b9f2180203fad6fbe22db9a48b6a839  resource/font0.nut?de
-  c5c8e3a0ab861b38f9805fbc16f62550  resource/font1.nut
-  d7dbd55f272ce2130a11ce2fe365615d  resource/font1.nut?de
-  c5c8e3a0ab861b38f9805fbc16f62550  resource/font2.nut
-  d7dbd55f272ce2130a11ce2fe365615d  resource/font2.nut?de
-  90d178dacab8dd14c40e61005131d118  resource/font3.nut
-  #90d178dacab8dd14c40e61005131d118  resource/font3.nut?de
-  97a7d3fb528f16e86cf3970ace75e66c  resource/font4.nut
-  #97a7d3fb528f16e86cf3970ace75e66c  resource/font4.nut?de
-  71725a54a64252628c6b021341520632  resource/kis030.san
-  #71725a54a64252628c6b021341520632  resource/kis030.san?de
-  2daf3db71d23d99d19fc9a544fcf6431  resource/language.tab
-  5d59594b24f3f1332e7d7e17455ed533  resource/language.tab?de
-  7d0ad52e7fe32d819edf8c6095adbedf  resource/lavaride.san
-  ba821a5dedac59259ecfd3c2bdd94e2a  resource/lavaride.san?de
-  ec2d9d57148e21f46896a359b239fcf4  resource/liftcrse.san
-  71f8f4b32526a9fec112074431033d68  resource/liftcrse.san?de
-  214d0a3b9c8fffc77cc35be8a0101d03  resource/moreslaw.san
-  464dd136b075a74d2b8c5aedb9f1c261  resource/moreslaw.san?de
-  9e662f111ae0cdf9f68c594475a891a2  resource/musdisk1.bun
-  #9e662f111ae0cdf9f68c594475a891a2  resource/musdisk1.bun?de
-  3ed44debfb6ce1de6a2cd99f4ed0c408  resource/musdisk2.bun
-  #3ed44debfb6ce1de6a2cd99f4ed0c408  resource/musdisk2.bun?de
-  dd7b5beaa17e4eebb896ddbca9ffb2f0  resource/newboots.san
-  9fa8d4c47dac53a585cdfec08157b6da  resource/newboots.san?de
-  833ba64fde983bcd62f7b5e769e60130  resource/opening.san
-  be29e77c441aa994b8bc0aa0aa720a52  resource/opening.san?de
-  b965b2753c541391e90396ab20f3bc96  resource/sb010.san
-  #b965b2753c541391e90396ab20f3bc96  resource/sb010.san?de
-  b6167e556992b16fe68c628e40cb2f04  resource/sb020.san
-  #b6167e556992b16fe68c628e40cb2f04  resource/sb020.san?de
-  876086bf27ad1c9f1053992595bce7e9  resource/sinkshp.san
-  3fe729eeecf4eb974a979e493df4b861  resource/sinkshp.san?de
-  c25c4a1a0ebdcfa50f4027541b096326  resource/voxdisk1.bun
-  7f4d1a336f227b8c1fa3110ee95b6af8  resource/voxdisk1.bun?de
-  ee1e9b7f1b2a91548cdc36d6137ab883  resource/voxdisk2.bun
-  2742a0943db648a2b9a78d36c81748dd  resource/voxdisk2.bun?de
-  28fb6dbe5963aa28daf18584332ea0e9  resource/wrecksan.san
-  0936c249ad307fd935ebd6d7df3febcf  resource/wrecksan.san?de
-  711bd2711eefe4e3aec2a48021b81351  resource/zap010.san
-  #711bd2711eefe4e3aec2a48021b81351  resource/zap010.san?de
-  8fec68383202d38c0d25e9e3b757c5df  comi.la0?demo
-  ac56f66940257da4fef5aeedc3c08e07  comi.la1?demo
-  c473ee4ba7b3099119ed1fc5c942541c  resource/font0.nut?demo
-  21f9af16fcfd1a81b41e880128700e25  resource/voice.bun
-  6bf57731ee20c60c2737047fed67fc50  monkeytg.txt
-  78d9cdb8f246b750e5bf238c0fb06013  readme.txt
-  50acfa584331104174a1261bfcae6fc6  cursmon1.zip
+size_and_md5: |
+  76791     fe60d6b5ff51b0553ac59963123b5777 comi.la0
+  18041     8fec68383202d38c0d25e9e3b757c5df comi.la0?demo
+  69340645  09ae3abb98c43df89119466ae3557c0f comi.la1
+  10579949  ac56f66940257da4fef5aeedc3c08e07 comi.la1?demo
+  83452557  468f5ea61bb622284d57e615718b73cc comi.la2
+
+  176849464 9e662f111ae0cdf9f68c594475a891a2 resource/musdisk1.bun
+  190295532 3ed44debfb6ce1de6a2cd99f4ed0c408 resource/musdisk2.bun
+  150287970 c25c4a1a0ebdcfa50f4027541b096326 resource/voxdisk1.bun
+  171017667 7f4d1a336f227b8c1fa3110ee95b6af8 resource/voxdisk1.bun?de
+  155260626 44d67daf9d0f1d083ef5a254a06350af resource/voxdisk1.bun?fr
+  189733340 ee1e9b7f1b2a91548cdc36d6137ab883 resource/voxdisk2.bun
+  218406620 2742a0943db648a2b9a78d36c81748dd resource/voxdisk2.bun?de
+  195381373 6a3af3db24daeb001d2f62c1c77acf49 resource/voxdisk2.bun?fr
+
+  94240     8b9f2180203fad6fbe22db9a48b6a839 resource/font0.nut
+  74740     c473ee4ba7b3099119ed1fc5c942541c resource/font0.nut?demo
+  104848    c5c8e3a0ab861b38f9805fbc16f62550 resource/font1.nut
+  104856    d7dbd55f272ce2130a11ce2fe365615d resource/font1.nut?de
+  104848    c5c8e3a0ab861b38f9805fbc16f62550 resource/font2.nut
+  104856    d7dbd55f272ce2130a11ce2fe365615d resource/font2.nut?de
+  60968     90d178dacab8dd14c40e61005131d118 resource/font3.nut
+  126954    97a7d3fb528f16e86cf3970ace75e66c resource/font4.nut
+
+  14973880  ff9f5d3d05e72bada4ba1f8849352cf7 resource/bbsan.san
+  14973826  b3d38b245d3e16b0b8c05eeeed97d381 resource/bbsan.san?de
+  14973666  5a213cabc56e4e5509293df2125da45d resource/bbsan.san?fr
+  20817514  6cceb9586037e325f429836efbfd12c5 resource/curserng.san
+  20817434  0dc12bb4f8c1734ed8b2babb67a8960a resource/curserng.san?de
+  20818174  560a949cc527154b65f21a1de03a7cfd resource/curserng.san?fr
+  435640    e4fcdbd3487886a06d56492696fd1c84 resource/fg010gp.san
+  10945770  953a1221941e53c5b7ae0c4f99395064 resource/finale.san
+  10902674  72a9fb4e6885f3e76f915570b895e48d resource/finale.san?de
+  10901912  504f6d7e91fb6287969f33e6877a1edd resource/finale.san?fr
+  1079072   71725a54a64252628c6b021341520632 resource/kis030.san
+  439080    2daf3db71d23d99d19fc9a544fcf6431 resource/language.tab
+  493252    5d59594b24f3f1332e7d7e17455ed533 resource/language.tab?de
+  461746    35bbe0e4d573b318b7b2092c331fd1fa resource/language.tab?fr
+  14072824  7d0ad52e7fe32d819edf8c6095adbedf resource/lavaride.san
+  14072906  ba821a5dedac59259ecfd3c2bdd94e2a resource/lavaride.san?de
+  14072910  543449b1e15815f4b90872dbfd7d73e3 resource/lavaride.san?fr
+  7029446   ec2d9d57148e21f46896a359b239fcf4 resource/liftcrse.san
+  7029492   71f8f4b32526a9fec112074431033d68 resource/liftcrse.san?de
+  7029444   512eefd65ce432281ebeb662a144023b resource/liftcrse.san?fr
+  9848862   214d0a3b9c8fffc77cc35be8a0101d03 resource/moreslaw.san
+  9848654   464dd136b075a74d2b8c5aedb9f1c261 resource/moreslaw.san?de
+  9848568   0b28de4f5ca52f163c463c040080188d resource/moreslaw.san?fr
+  11075238  dd7b5beaa17e4eebb896ddbca9ffb2f0 resource/newboots.san
+  11075278  9fa8d4c47dac53a585cdfec08157b6da resource/newboots.san?de
+  11075152  0f62cdbbd743e9b4a9c49302d85e07b5 resource/newboots.san?fr
+  82864970  833ba64fde983bcd62f7b5e769e60130 resource/opening.san
+  82866094  be29e77c441aa994b8bc0aa0aa720a52 resource/opening.san?de
+  82864298  d3fddcd3005f3b0e68127de6a0e6d61e resource/opening.san?fr
+  10347350  876086bf27ad1c9f1053992595bce7e9 resource/sinkshp.san
+  10347302  3fe729eeecf4eb974a979e493df4b861 resource/sinkshp.san?de
+  10347152  0400c3de5381c3f359ab6923405bd7e5 resource/sinkshp.san?fr
+  773474    b965b2753c541391e90396ab20f3bc96 resource/sb010.san
+  768550    b6167e556992b16fe68c628e40cb2f04 resource/sb020.san
+  15003404  28fb6dbe5963aa28daf18584332ea0e9 resource/wrecksan.san
+  15003534  0936c249ad307fd935ebd6d7df3febcf resource/wrecksan.san?de
+  15003488  dd4351d4e67f36154d4532b901cf0d4d resource/wrecksan.san?fr
+  768114    711bd2711eefe4e3aec2a48021b81351 resource/zap010.san
+
+  # file only in demo
+  14412203  21f9af16fcfd1a81b41e880128700e25 resource/voice.bun
+  24466     6bf57731ee20c60c2737047fed67fc50 monkeytg.txt
+  8197      78d9cdb8f246b750e5bf238c0fb06013 readme.txt
+  18985347  50acfa584331104174a1261bfcae6fc6 cursmon1.zip
 sha1sums: |
   b0160a63bffa951a4ef23ca57a35162cf6f87803  comi.la0
   94dc72c98d4e0ea0b6fa2bbd7469cd186dd9ff1b  comi.la1
