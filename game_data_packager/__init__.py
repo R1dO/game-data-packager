@@ -191,6 +191,10 @@ class GameDataPackage(object):
         # CD audio stuff from YAML
         self.rip_cd = {}
 
+        # possible override for disks: tag at top level
+        # e.g.: Feeble Files had 2-CD releases too
+        self.disks = None
+
         # Debian architecture(s)
         self.architecture = 'all'
 
@@ -326,6 +330,9 @@ class GameData(object):
         # Subset of packages.values() with nonempty rip_cd
         self.rip_cd_packages = set()
 
+        # Number of CD the full game was sold on
+        self.disks = None
+
         self.help_text = ''
 
         # Extra directories where we might find game files
@@ -354,7 +361,7 @@ class GameData(object):
         # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
         self.compress_deb = True
 
-        for k in ('longname', 'copyright', 'compress_deb', 'help_text', 
+        for k in ('longname', 'copyright', 'compress_deb', 'help_text', 'disks',
                   'engine', 'genre', 'missing_langs', 'franchise', 'wiki', 'wikibase',
                   'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia'):
             if k in self.data:
@@ -459,19 +466,36 @@ class GameData(object):
                               dotemu_pp, dotemu_id)
 
     def edit_help_text(self):
-        if len(self.packages) > 1:
+        if len(self.packages) > 1 or self.disks:
             prepend = '\npackages possible for this game:\n'
             help = []
+            has_multi_cd = False
             for package in self.packages.values():
+                disks = package.disks or self.disks or 1
+                longname = package.longname or self.longname
+                if disks > 1:
+                    has_multi_cd = True
+                    longname += ' (%dCD)' % disks
                 game_type = { 'demo' : 1,
                               'full' : 2,
                               'expansion' : 3}.get(package.type)
                 help.append({ 'type' : game_type,
                               'year' : package.copyright or self.copyright,
                               'name' : package.name,
-                              'longname': package.longname or self.longname})
+                              'longname': longname})
             for h in sorted(help, key=lambda k: (k['type'], k['year'][2:6], k['name'])):
                 prepend += "  %-40s %s\n" % (h['name'],h['longname'])
+            if has_multi_cd and self.shortname != 'zork-inquisitor':
+                prepend += "\nWARNING: for multi-cd games, you'll first need to ensure that all the data\n"
+                prepend += "         is accessible simultaneously, e.g. copy data from CD1 to CD3 in /tmp/cd{1-3}\n"
+                prepend += "         and let CD4 *mounted* in the drive.\n\n"
+                prepend += "         It's important to first mkdir '/tmp/cd1 /tmp/cd2 /tmp/cd3' because for some\n"
+                prepend += "         games there are different files accross the disks with the same name that\n"
+                prepend += "         would be overwriten.\n\n"
+                prepend += "         If /tmp/ is on a tmpfs and you don't have something like 16GB of RAM,\n"
+                prepend += "         you'll likely need to store the files somewhere else.\n\n"
+                prepend += "         The game can then be packaged this way:\n"
+                prepend += "         $ game-data-packager {game} /tmp/cd1 /tmp/cd2 /tmp/cd3 /media/cdrom0\n\n"
             self.help_text = prepend + '\n' + self.help_text
 
         if self.missing_langs:
@@ -546,7 +570,7 @@ class GameData(object):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'debian', 'description',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
-                'copyright', 'engine', 'lang', 'component', 'section',
+                'copyright', 'engine', 'lang', 'component', 'section', 'disks',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki'):
             if k in d:
                 setattr(package, k, d[k])
@@ -562,6 +586,8 @@ class GameData(object):
                 "install_to %s is extraneous" % package.name
 
         if 'demo_for' in d:
+            if package.disks is None:
+                package.disks = 1
             if type(d['demo_for']) is str:
                 package.demo_for.add(d['demo_for'])
             else:
@@ -576,6 +602,8 @@ class GameData(object):
                 package.longname = self.longname + ' (%s)' % package.lang
 
         if 'expansion_for' in d:
+            if package.disks is None:
+                package.disks = 1
             assert package.name != d['expansion_for'], \
                    "a game can't be an expansion for itself"
             if 'demo_for' in d:
