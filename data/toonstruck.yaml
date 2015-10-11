@@ -3,6 +3,8 @@ copyright: © 1996 Virgin Interactive
 plugin: scummvm_common
 wiki: Toonstruck
 gameid: toon
+disks: 2
+missing_langs: [es,fr]
 
 packages:
   toonstruck-en-data:
@@ -291,6 +293,292 @@ packages:
     - misc/toonstrk.res
     - misc/vielogom.smk
 
+  toonstruck-de-data:
+    lang: de
+    debian:
+      provides: toonstruck-data
+    gog:
+      url: toonstruck
+    install:
+    - act1/arcaddbl/422m.smk?de
+    - act1/arcaddbl/423m.smk?de
+    - act1/arcaddbl/424m.smk?de
+    - act1/arcaddbl/425m.smk?de
+    - act1/arcaddbl/arcaddbl.pak?de
+    - act1/arcaddbl/arcaddbl.svl?de
+    - act1/arcaddbl/kpm814.mus
+    - act1/arcaddbl/scd16522.mus
+    - act1/bakeries/212em.smk?de
+    - act1/bakeries/212fm.smk?de
+    - act1/bakeries/218bm.smk?de
+    - act1/bakeries/bakeries.pak?de
+    - act1/bakeries/bakeries.svl?de
+    - act1/bakeries/kpm8236.mus
+    - act1/bakeries/mnwhile2.smk?de
+    - act1/bakeries/scd16519.mus
+    - act1/bakeries/scd16520.mus
+    - act1/barnin1/barnin1.pak?de
+    - act1/barnin1/barnin1.svl?de
+    - act1/barnin1/cls11141.mus
+    - act1/barnin1/kpm8719.mus
+    - act1/barnin2/barnin2.pak?de
+    - act1/barnin2/barnin2.svl?de
+    - act1/barnin2/brc11051.mus
+    - act1/bedrmdbl/408m.smk?de
+    - act1/bedrmdbl/409m.smk?de
+    - act1/bedrmdbl/bedrmdbl.pak?de
+    - act1/bedrmdbl/bedrmdbl.svl?de
+    - act1/bedrmdbl/kpm18325.mus
+    - act1/cellar/bcc810.mus
+    - act1/cellar/cellar.pak?de
+    - act1/cellar/cellar.svl?de
+    - act1/costdbl/212am.smk?de
+    - act1/costdbl/212bm.smk?de
+    - act1/costdbl/218am.smk?de
+    - act1/costdbl/costdbl.pak?de
+    - act1/costdbl/costdbl.svl?de
+    - act1/costdbl/kpm22433.mus
+    - act1/costdbl/kpm8236.mus
+    - act1/costdbl/mnwhile2.smk?de
+    - act1/farmex1/cls11141.mus
+    - act1/farmex1/farmex1.pak?de
+    - act1/farmex1/farmex1.svl?de
+    - act1/farmex2/413m.smk?de
+    - act1/farmex2/cls11141.mus
+    - act1/farmex2/farmex2.pak?de
+    - act1/farmex2/farmex2.svl?de
+    - act1/farmex2/kpm13241.mus
+    - act1/farmex3/farmex3.pak?de
+    - act1/farmex3/farmex3.svl?de
+    - act1/farmex3/kpm2248.mus
+    - act1/forest/202m.smk?de
+    - act1/forest/428m.smk?de
+    - act1/forest/car1368b.mus
+    - act1/forest/forest.pak?de
+    - act1/forest/forest.svl?de
+    - act1/forest/kpm15128.mus
+    - act1/forest/kpm18221.mus
+    - act1/forest/mnwhile1.smk?de
+    - act1/jimex/car20471.mus
+    - act1/jimex/jimex.pak?de
+    - act1/jimex/jimex.svl?de
+    - act1/jimex/kpm814.mus
+    - act1/jimin/426m.smk?de
+    - act1/jimin/427m.smk?de
+    - act1/jimin/499m.smk?de
+    - act1/jimin/jimin.pak?de
+    - act1/jimin/jimin.svl?de
+    - act1/jimin/kpm814.mus
+    - act1/jimin/mnwhile1.smk?de
+    - act1/maltown/gt1720.mus
+    - act1/maltown/maltown.pak?de
+    - act1/maltown/maltown.svl?de
+    - act1/mdmeadow/kpm2248.mus
+    - act1/mdmeadow/mdmeadow.pak?de
+    - act1/mdmeadow/mdmeadow.svl?de
+    - act1/mdmeadow/net1214.mus
+    - act1/nexus/car20410.mus
+    - act1/nexus/nexus.pak?de
+    - act1/nexus/nexus.svl?de
+    - act1/outhsdbl/kpm8132.mus
+    - act1/outhsdbl/outhsdbl.pak?de
+    - act1/outhsdbl/outhsdbl.svl?de
+    - act1/overlook/kpm18232.mus
+    - act1/overlook/overlook.pak?de
+    - act1/overlook/overlook.svl?de
+    - act1/pal1lan/kpm18325.mus
+    - act1/pal1lan/pal1lan.pak?de
+    - act1/pal1lan/pal1lan.svl?de
+    - act1/palex/kpm18325.mus
+    - act1/palex/palex.pak?de
+    - act1/palex/palex.svl?de
+    - act1/prisndbl/kpm8120.mus
+    - act1/prisndbl/prisndbl.pak?de
+    - act1/prisndbl/prisndbl.svl?de
+    - act1/randdbl/car1365b.mus
+    - act1/randdbl/randdbl.pak?de
+    - act1/randdbl/randdbl.svl?de
+    - act1/roboshow/brc169.mus?de
+    - act1/roboshow/kpm6337.mus
+    - act1/roboshow/roboshow.pak?de
+    - act1/roboshow/roboshow.svl?de
+    - act1/seedys/212cm.smk?de
+    - act1/seedys/212dm.smk?de
+    - act1/seedys/218cm.smk?de
+    - act1/seedys/418m.smk?de
+    - act1/seedys/420m.smk?de
+    - act1/seedys/421m.smk?de
+    - act1/seedys/603m.smk?de
+    - act1/seedys/gt1720.mus
+    - act1/seedys/kpm13253.mus
+    - act1/seedys/kpm8236.mus
+    - act1/seedys/mnwhile2.smk?de
+    - act1/seedys/seedys.pak?de
+    - act1/seedys/seedys.svl?de
+    - act1/taverdbl/404m.smk?de
+    - act1/taverdbl/405m.smk
+    - act1/taverdbl/406_2m.smk
+    - act1/taverdbl/406_3m.smk
+    - act1/taverdbl/406m.smk
+    - act1/taverdbl/car1227.mus
+    - act1/taverdbl/fluffyeq.mus
+    - act1/taverdbl/kpm13237.mus
+    - act1/taverdbl/taverdbl.pak?de
+    - act1/taverdbl/taverdbl.svl?de
+    - act1/towncent/kpm15125.mus
+    - act1/towncent/towncent.pak?de
+    - act1/towncent/towncent.svl?de
+    - act1/trophyrm/car14431.mus
+    - act1/trophyrm/kpm18325.mus
+    - act1/trophyrm/trophyrm.pak?de
+    - act1/trophyrm/trophyrm.svl?de
+    - act1/wacexdbl/kpm8110.mus
+    - act1/wacexdbl/sgext11.smk
+    - act1/wacexdbl/wacexdbl.pak?de
+    - act1/wacexdbl/wacexdbl.svl?de
+    - act1/wacindbl/414m.smk
+    - act1/wacindbl/415m.smk
+    - act1/wacindbl/416m.smk?de
+    - act1/wacindbl/417m.smk?de
+    - act1/wacindbl/kpm815.mus
+    - act1/wacindbl/wacindbl.pak?de
+    - act1/wacindbl/wacindbl.svl?de
+    - act1/wolfden/429m.smk?de
+    - act1/wolfden/kpm18221.mus
+    - act1/wolfden/wolfden.pak?de
+    - act1/wolfden/wolfden.svl?de
+    - act1/wrap/kpm42629.mus
+    - act1/wrap/wrap.pak?de
+    - act1/wrap/wrap.svl?de
+    - act1/zcross/207m.smk?de
+    - act1/zcross/gt1719.mus?de
+    - act1/zcross/mnwhile1.smk?de
+    - act1/zcross/zcross.pak?de
+    - act1/zcross/zcross.svl?de
+    - act1/zdockdbl/400m.smk
+    - act1/zdockdbl/401bm.smk
+    - act1/zdockdbl/401m.smk
+    - act1/zdockdbl/402m.smk
+    - act1/zdockdbl/kpm8121.mus
+    - act1/zdockdbl/zdockdbl.pak?de
+    - act1/zdockdbl/zdockdbl.svl?de
+    - act2/armory/armory.pak?de
+    - act2/armory/armory.svl?de
+    - act2/armory/brcd1011.mus
+    - act2/bathdbl/456m.smk
+    - act2/bathdbl/457m.smk
+    - act2/bathdbl/bathdbl.pak?de
+    - act2/bathdbl/bathdbl.svl?de
+    - act2/bathdbl/kpm26427.mus
+    - act2/cas1dbl/439m.smk
+    - act2/cas1dbl/440m.smk?de
+    - act2/cas1dbl/cas1dbl.pak?de
+    - act2/cas1dbl/cas1dbl.svl?de
+    - act2/cas1dbl/kpm13238.mus
+    - act2/cas1dbl/kpm26425.mus
+    - act2/cas2dbl/cas2dbl.pak?de
+    - act2/cas2dbl/cas2dbl.svl?de
+    - act2/cas2dbl/kpm26425.mus
+    - act2/cas3lan/cas3lan.pak?de
+    - act2/cas3lan/cas3lan.svl?de
+    - act2/cas3lan/kpm26425.mus
+    - act2/cas4dbl/apm2817.mus
+    - act2/cas4dbl/cas4dbl.pak?de
+    - act2/cas4dbl/cas4dbl.svl?de
+    - act2/climdbl/441m.smk
+    - act2/climdbl/442m.smk
+    - act2/climdbl/climdbl.pak?de
+    - act2/climdbl/climdbl.svl?de
+    - act2/climdbl/kpm2642.mus
+    - act2/clownrm/435m.smk?de
+    - act2/clownrm/437m.smk
+    - act2/clownrm/438m.smk?de
+    - act2/clownrm/car13648.mus
+    - act2/clownrm/clownrm.pak?de
+    - act2/clownrm/clownrm.svl?de
+    - act2/dungeon/200_1m.smk?de
+    - act2/dungeon/200_2m.smk?de
+    - act2/dungeon/200bm.smk?de
+    - act2/dungeon/201_1m.smk?de
+    - act2/dungeon/201_2m.smk?de
+    - act2/dungeon/201am.smk?de
+    - act2/dungeon/201dm.smk?de
+    - act2/dungeon/201em.smk?de
+    - act2/dungeon/433m.smk?de
+    - act2/dungeon/434am.smk?de
+    - act2/dungeon/434bm.smk?de
+    - act2/dungeon/434cm.smk?de
+    - act2/dungeon/car136_1.mus
+    - act2/dungeon/dungeon.pak?de
+    - act2/dungeon/dungeon.svl?de
+    - act2/dungeon/kpm2642.mus
+    - act2/dungeon/kpm87_57.mus
+    - act2/dungeon/mnwhile1.smk?de
+    - act2/kitchdbl/444m.smk
+    - act2/kitchdbl/445m.smk
+    - act2/kitchdbl/446m.smk
+    - act2/kitchdbl/448m.smk
+    - act2/kitchdbl/449m.smk
+    - act2/kitchdbl/450m.smk
+    - act2/kitchdbl/451m.smk
+    - act2/kitchdbl/kitchdbl.pak?de
+    - act2/kitchdbl/kitchdbl.svl?de
+    - act2/kitchdbl/kpm26426.mus
+    - act2/knight/207am.smk
+    - act2/knight/knight.pak?de
+    - act2/knight/knight.svl?de
+    - act2/knight/kpm26427.mus
+    - act2/knight/mnwhile1.smk?de
+    - act2/msfortun/460m.smk?de
+    - act2/msfortun/461m.smk?de
+    - act2/msfortun/kpm2245.mus
+    - act2/msfortun/msfortun.pak?de
+    - act2/msfortun/msfortun.svl?de
+    - act2/nefhq/203m.smk?de
+    - act2/nefhq/215_1m.smk?de
+    - act2/nefhq/215_2m.smk?de
+    - act2/nefhq/kpm26426.mus
+    - act2/nefhq/nefhq.pak?de
+    - act2/nefhq/nefhq.svl?de
+    - act2/recroom/kpm2641.mus
+    - act2/recroom/recroom.pak?de
+    - act2/recroom/recroom.svl?de
+    - act2/stairs/apm2817.mus
+    - act2/stairs/stairs.pak?de
+    - act2/stairs/stairs.svl?de
+    - act2/study/607m.smk?de
+    - act2/study/608m.smk
+    - act2/study/609m.smk
+    - act2/study/610m.smk
+    - act2/study/ss514019.mus
+    - act2/study/study.pak?de
+    - act2/study/study.svl?de
+    - act2/survrdbl/205m.smk?de
+    - act2/survrdbl/kpm26425.mus
+    - act2/survrdbl/lullaby.mus
+    - act2/survrdbl/survrdbl.pak?de
+    - act2/survrdbl/survrdbl.svl?de
+    - act2/vent/amb.mus
+    - act2/vent/vent.pak?de
+    - act2/vent/vent.svl?de
+    - misc/209_1m.smk?de
+    - misc/209_2m.smk?de
+    - misc/209_3m.smk?de
+    - misc/br091013.mus
+    - misc/credits.smk
+    - misc/drew.pak
+    - misc/ezfont.caf?de
+    - misc/filedata.fdt?de
+    - misc/gcreditm.smk
+    - misc/generic.svl?de
+    - misc/local.pak?de
+    - misc/onetime.pak?de
+    - misc/test.pcx?de
+    - misc/test.wav?de
+    - misc/toonfont.caf?de
+    - misc/toonstrk.res
+    - misc/vielogom.smk
+
 size_and_md5: |
   6891136   718bfd7cadb63997757d10067b7a0b20 act1/arcaddbl/422m.smk
   6267424   04257850261004d34cf33b6a26171db1 act1/arcaddbl/423m.smk
@@ -571,5 +859,182 @@ size_and_md5: |
   9995      916156345bdcdf7d7aae407753938e3f misc/toonfont.caf
   70144     45b61d7b7d81c63b279c7b211566145a misc/toonstrk.res
   3077708   47966c48f221a7d3b0c5899fbd507437 misc/vielogom.smk
+
+  6882324   4beecbe2fd5ae2662fea0e45511bb694 act1/arcaddbl/422m.smk?de
+  6158768   0a5f82025c5e121e3ccd60eb48612bff act1/arcaddbl/423m.smk?de
+  2178096   ffeb56a6e35c2df051626d6c284fb44f act1/arcaddbl/424m.smk?de
+  6393384   92e2a45236307aa75992bd9735c1bbf2 act1/arcaddbl/425m.smk?de
+  1279332   1cf8c1726fa6121a3d07d0b4899eea04 act1/arcaddbl/arcaddbl.pak?de
+  9122249   c16c429fbd0a93e1e30385f9555a7444 act1/arcaddbl/arcaddbl.svl?de
+  1691496   be1fb4e604dcfd50e2203ff2dced698d act1/bakeries/212em.smk?de
+  1424532   eea6305de893be7601b502ddb145516a act1/bakeries/212fm.smk?de
+  548068    40c2b8d44827bcd30de88800f56eac5c act1/bakeries/218bm.smk?de
+  1538206   09033ea6743b31c63d95132fc0bce1e8 act1/bakeries/bakeries.pak?de
+  9167359   7ea07605d6e96bf7262929cd12c0313a act1/bakeries/bakeries.svl?de
+  95472     aafd43600f9e0d82322e1a70695abbbb act1/bakeries/mnwhile2.smk?de
+  1758719   eddd37d59d5a8babb60844f772eb0464 act1/barnin1/barnin1.pak?de
+  8031164   c055dbed255068ff3cd2e99440efeedb act1/barnin1/barnin1.svl?de
+  2335854   2486da0a10fb1b538766389713ca1bd5 act1/barnin2/barnin2.pak?de
+  6350846   9b8d3988ea9b5d4dd4fad9c1a73d56f3 act1/barnin2/barnin2.svl?de
+  1406968   8d876b02307736b59c218cc6baa6ac3f act1/bedrmdbl/408m.smk?de
+  5912368   3690cce601aa00698fac26fb42a38b3f act1/bedrmdbl/409m.smk?de
+  3184982   f31b9ea77ed3f3a4ccc215c4556cb622 act1/bedrmdbl/bedrmdbl.pak?de
+  2734943   2a5517666c8c2fc581a253c5cac2145d act1/bedrmdbl/bedrmdbl.svl?de
+  615553    aaba901f7b7551f988db4c02dc16a76a act1/cellar/cellar.pak?de
+  1425634   d34eaabd71bc4cb8ce0c452924126fc6 act1/cellar/cellar.svl?de
+  795264    bad7fa56fadbdc7edc802343870412d1 act1/costdbl/212am.smk?de
+  1002580   9ed4f7c48ace57b70f19899da8ecf8a9 act1/costdbl/212bm.smk?de
+  548068    40c2b8d44827bcd30de88800f56eac5c act1/costdbl/218am.smk?de
+  1849584   dff3ff5a8972d38549aafc2a85de504c act1/costdbl/costdbl.pak?de
+  8438235   ea42cdf7f356300d9ae8896acf374c42 act1/costdbl/costdbl.svl?de
+  95472     aafd43600f9e0d82322e1a70695abbbb act1/costdbl/mnwhile2.smk?de
+  1384497   bcc525fbab70550676ec3d7d2cf6634b act1/farmex1/farmex1.pak?de
+  9140490   def809fb78e16597b4d8742be35d515e act1/farmex1/farmex1.svl?de
+  10462432  a62372f5e04582958f51685c16933e0e act1/farmex2/413m.smk?de
+  1479989   0818210a43ae480822da7331ae94a383 act1/farmex2/farmex2.pak?de
+  12302284  2a426792ef9db7db5139188e2d9275be act1/farmex2/farmex2.svl?de
+  686253    ed8e61f4f827dae424948ece8ba3c299 act1/farmex3/farmex3.pak?de
+  750289    a06682c67f9cae5abf7a40b7dfe14855 act1/farmex3/farmex3.svl?de
+  7970364   ee4f7cba4b39842bfbb849954ed82884 act1/forest/202m.smk?de
+  7541384   533189da6f31a7989bc90d1770635eb6 act1/forest/428m.smk?de
+  2481630   7cc18241ce2133fca2320f99476dc819 act1/forest/forest.pak?de
+  9475581   6fbd1993a81d9bd6c60a868ee7d7f448 act1/forest/forest.svl?de
+  86616     d6fa64bdf3a2a19e9464a81c94c41199 act1/forest/mnwhile1.smk?de
+  443761    fb80e5f663c9bb3491fac035d7f85369 act1/jimex/jimex.pak?de
+  7470943   c1c9049198354bc14565114c6a2123fa act1/jimex/jimex.svl?de
+  4522444   218379fbbaf0d42d76aeb5e680234044 act1/jimin/426m.smk?de
+  3832548   ad0e8a5cb68a4aaefbb368fdfc8052c1 act1/jimin/427m.smk?de
+  871200    0353c2c357d2ca64673068a472cd97e7 act1/jimin/499m.smk?de
+  1899631   7e728be871d8087d75d62adb7c792f92 act1/jimin/jimin.pak?de
+  6431526   123811783ca4697849a33898272d53d6 act1/jimin/jimin.svl?de
+  86616     d6fa64bdf3a2a19e9464a81c94c41199 act1/jimin/mnwhile1.smk?de
+  1965998   04cb4126b305a1d40bf543ece15bc25c act1/maltown/maltown.pak?de
+  8830084   62fab6638d7228f5918f32dd357c6615 act1/maltown/maltown.svl?de
+  758550    00c674bf0bd183740b23063eec2dfe85 act1/mdmeadow/mdmeadow.pak?de
+  8567389   bc2b0939281d95d69f85f6ac3516f9b5 act1/mdmeadow/mdmeadow.svl?de
+  507606    32b7b2ee075344fe4b6ee70d9d08f74d act1/nexus/nexus.pak?de
+  722018    a2c0d55a7e6d08c5a3823414b06a88c7 act1/nexus/nexus.svl?de
+  2835741   76c127ed052b345b37aa6ff6ad393d30 act1/outhsdbl/outhsdbl.pak?de
+  3111710   4d0c22cf173f7b30f0ea2a32f73733a4 act1/outhsdbl/outhsdbl.svl?de
+  471466    42deb634128f811c74dbf4cdcae16429 act1/overlook/overlook.pak?de
+  246321    bc9be975be40b666b258ecd84d4db0d5 act1/overlook/overlook.svl?de
+  693259    028ddb9a0debfae48b036a0e3258426c act1/pal1lan/pal1lan.pak?de
+  2089717   69dfd76c5104445c98a62d49781d1776 act1/pal1lan/pal1lan.svl?de
+  649047    393b8c353cc3ff8db4b76fd1b8b47e76 act1/palex/palex.pak?de
+  4893433   ea557109999f4e79969a3e02b1b3ac1e act1/palex/palex.svl?de
+  1152512   8ffe5f8b49ee39a0115634b501e39053 act1/prisndbl/prisndbl.pak?de
+  2839691   f2407afe05f08f3c7d1cfe7d014fa3dc act1/prisndbl/prisndbl.svl?de
+  2453435   6a45d46a86f744a78fa5a96056d6dcab act1/randdbl/randdbl.pak?de
+  10601625  9639fd9cf13e669efc9370c3f01271c6 act1/randdbl/randdbl.svl?de
+  1479995   4c5532c8c2343f29c907b6b21fa02785 act1/roboshow/brc169.mus?de
+  1260741   4b44cfd7042047e198209ef670714ee7 act1/roboshow/roboshow.pak?de
+  14392598  dd60b9fb42a883777988d01b382f5bb7 act1/roboshow/roboshow.svl?de
+  818908    dcee5b32a1ec372d7723cc6a9d5af1dd act1/seedys/212cm.smk?de
+  944808    c1113b68afd36c3285b3e4c9a95ce574 act1/seedys/212dm.smk?de
+  1187588   2be8acedb2689b3b6ff2cc13b24a0566 act1/seedys/218cm.smk?de
+  4501572   4c97f859660d6d2ec3eafaad5206629f act1/seedys/418m.smk?de
+  9502308   c7fd4784eba4c5add2d75640763a5dda act1/seedys/420m.smk?de
+  4750072   347f1485b607495bb4bbc103a37e80f7 act1/seedys/421m.smk?de
+  1746364   8e735a196c7e4140de22aa66fe2bed39 act1/seedys/603m.smk?de
+  95472     aafd43600f9e0d82322e1a70695abbbb act1/seedys/mnwhile2.smk?de
+  2614896   b312f300133411792aafbebd054c540b act1/seedys/seedys.pak?de
+  10282658  2af1a126a7ced051fe023b9009c49373 act1/seedys/seedys.svl?de
+  4592196   4c28c1a95c8825797668098a2fd548b3 act1/taverdbl/404m.smk?de
+  3875671   e04c25957053d506783f04f9091c8ea4 act1/taverdbl/taverdbl.pak?de
+  16624503  c42153f604866dba94b3ff12d780ea27 act1/taverdbl/taverdbl.svl?de
+  547433    28b87b8620e961f359dec4e2e4882e6e act1/towncent/towncent.pak?de
+  889466    656615e851b8899a21c3f79b04271fc9 act1/towncent/towncent.svl?de
+  1369967   cabe992bfbd03d06fb583ea47a6f87b5 act1/trophyrm/trophyrm.pak?de
+  7572185   fa9270d67506b6e9eddc0adf78ffc107 act1/trophyrm/trophyrm.svl?de
+  1427919   2c763a4b8c403f98b52ecabbccf01cb9 act1/wacexdbl/wacexdbl.pak?de
+  1543837   376fab9ddab4e444dbf838eb68c297b3 act1/wacexdbl/wacexdbl.svl?de
+  6609360   c00a8c7834382692c1b0a7967a0eb554 act1/wacindbl/416m.smk?de
+  2125140   97a999915d7e5a3a5ef45ae587180b35 act1/wacindbl/417m.smk?de
+  1793230   fd106914269031251a6ef0ad21854c92 act1/wacindbl/wacindbl.pak?de
+  8799982   e443bb9261b6b2b597c1200c78ad9a4c act1/wacindbl/wacindbl.svl?de
+  8961624   3e9c7c0208ab1364d67b128ae47b5cfe act1/wolfden/429m.smk?de
+  2845256   a7058f44179e9b6af1c911a645481185 act1/wolfden/wolfden.pak?de
+  2132337   4181190f59edff7e82a49ddb28442fe9 act1/wolfden/wolfden.svl?de
+  709782    aceaac27e08dee9388b697e1895d5122 act1/wrap/wrap.pak?de
+  1235605   5d1420406cb69a189a25fc68ef3aa625 act1/wrap/wrap.svl?de
+  5826780   b5e1f7d80db7f448349c215ddb32dc2d act1/zcross/207m.smk?de
+  1575520   14d1625ce603bea7f07d740ac563b518 act1/zcross/gt1719.mus?de
+  86616     d6fa64bdf3a2a19e9464a81c94c41199 act1/zcross/mnwhile1.smk?de
+  544554    68743fd51374968a6da90d6d1e7eb0b6 act1/zcross/zcross.pak?de
+  1560853   ad12b8cb5896652adf5cca9bdaca86ae act1/zcross/zcross.svl?de
+  1623192   e2580eb13e864ce57208ab047d57dcb0 act1/zdockdbl/zdockdbl.pak?de
+  2194112   961a3cb0c7463358effbd323ed62dab9 act1/zdockdbl/zdockdbl.svl?de
+  2335520   735a0caf7414e179d96a6a8aacc55bde act2/armory/armory.pak?de
+  5107184   24d398ca26b184d10a6f2c1f9e46477d act2/armory/armory.svl?de
+  3844102   94207cd98abbe397feb00e9f1051226b act2/bathdbl/bathdbl.pak?de
+  2125094   82e63b431420c2d8352575c28f2e8484 act2/bathdbl/bathdbl.svl?de
+  6781560   b801ab0e4ba6e46207c81146c06c3b69 act2/cas1dbl/440m.smk?de
+  2114315   4e3b34aacb6184bcb0990b34dee1c4ed act2/cas1dbl/cas1dbl.pak?de
+  2203706   effeee50ef36452e4ad8f2a968bf8ea1 act2/cas1dbl/cas1dbl.svl?de
+  1988830   dc035db10b57d47eced700f3aed4c6e3 act2/cas2dbl/cas2dbl.pak?de
+  845300    adab8a3beb1a33eaf2c62a882513566f act2/cas2dbl/cas2dbl.svl?de
+  997815    5d185f8f8c26a3c58123b4a7698aff75 act2/cas3lan/cas3lan.pak?de
+  975034    ef8668dc65e59178e17cb81e929b9e62 act2/cas3lan/cas3lan.svl?de
+  1939505   f803ba098ac3257cb311cc32ef40491b act2/cas4dbl/cas4dbl.pak?de
+  3896575   3f29725157fa4f9ac9381ad3e3d4f406 act2/cas4dbl/cas4dbl.svl?de
+  979703    cd3be3e978209fd78acff7e9abd1f665 act2/climdbl/climdbl.pak?de
+  1021282   b14e99f3f95d60263d5634b79ca3c138 act2/climdbl/climdbl.svl?de
+  8413844   b20063772606edb3a6a193d2fb5729fa act2/clownrm/435m.smk?de
+  10589568  7a69113c1e70da797be4c3ada5cf33e2 act2/clownrm/438m.smk?de
+  3354564   2a8562bbe074f0505a94632281882754 act2/clownrm/clownrm.pak?de
+  5813840   caf9a5c93b75e2cd3cfe78512523df36 act2/clownrm/clownrm.svl?de
+  30105228  5df7c355e8533e679afc7bbb529defcf act2/dungeon/200_1m.smk?de
+  26434216  8d904ee1950ca05afd682b620a0f0e9c act2/dungeon/200_2m.smk?de
+  6400344   96ca4286406dfe179287fa274ce97920 act2/dungeon/200bm.smk?de
+  23198476  ac619958298e8c574bc38660f2932176 act2/dungeon/201_1m.smk?de
+  23795908  37ab82e6daddefa24987d0fb59d18805 act2/dungeon/201_2m.smk?de
+  23343068  347bc30666db8f127dcf1955ec1d1dcc act2/dungeon/201am.smk?de
+  12505928  206ca24b277d4d080582e4e77a1c867d act2/dungeon/201dm.smk?de
+  7859608   fe9f26948e6a00b4ce8691aa91a2c472 act2/dungeon/201em.smk?de
+  2029148   3af528d2709833e8cb0648ee43a9f244 act2/dungeon/433m.smk?de
+  2798548   146ec903c4c2c4f7a03d47de14b2fe3b act2/dungeon/434am.smk?de
+  2717400   e2737ce122e41007cf01c77259976eff act2/dungeon/434bm.smk?de
+  1326888   9366af4d00f43664f279464a55d7be75 act2/dungeon/434cm.smk?de
+  6903075   c4fa5d1e8111b75503d7c1413b3f9d1e act2/dungeon/dungeon.pak?de
+  11743860  fef058234f52f1ff788f5903a2ee9ba4 act2/dungeon/dungeon.svl?de
+  86616     d6fa64bdf3a2a19e9464a81c94c41199 act2/dungeon/mnwhile1.smk?de
+  4219668   40aa4c13b4198014e4d6df9f11073d8f act2/kitchdbl/kitchdbl.pak?de
+  1616611   69890efdce660238aca7491a6570f38c act2/kitchdbl/kitchdbl.svl?de
+  913555    7c74b32374540729dd9b10b397547d06 act2/knight/knight.pak?de
+  1884245   99e99d4b613257cb148def33a600a901 act2/knight/knight.svl?de
+  86616     d6fa64bdf3a2a19e9464a81c94c41199 act2/knight/mnwhile1.smk?de
+  16130616  2d1b35969f68a30d1597dcf2e9c4bd84 act2/msfortun/460m.smk?de
+  6465072   4a7d6be822631da94b9aa2cb8a33e9fd act2/msfortun/461m.smk?de
+  985723    aa740a38ccd54cc3fb40917bd60a5333 act2/msfortun/msfortun.pak?de
+  2814846   eb43c724f9e48c774bd5c52a0e20aa29 act2/msfortun/msfortun.svl?de
+  8963516   a057c3bc911c081984cb37002d27f254 act2/nefhq/203m.smk?de
+  24093656  d6a4ca4ab7c628a988a249a65074a539 act2/nefhq/215_1m.smk?de
+  32772576  93d4092ea30c63c9368f5ecda299b390 act2/nefhq/215_2m.smk?de
+  1531085   e969c3a45031f9998e9cc4e08cf175bf act2/nefhq/nefhq.pak?de
+  2517449   5cbcd6d07ee4a296466d02291cc39701 act2/nefhq/nefhq.svl?de
+  387984    e33f12b8bd57955d9872bed7833985f7 act2/recroom/recroom.pak?de
+  993852    00eeb1b8bb9fcf5dac52b4946e7f782d act2/recroom/recroom.svl?de
+  1911964   6527190ca30f51b69bdf7b6706eed708 act2/stairs/stairs.pak?de
+  530677    78e6244073e465dde8454e3a85dc1acc act2/stairs/stairs.svl?de
+  1444372   8e8064aac4a2d1778ab856e7f96b4e99 act2/study/607m.smk?de
+  2606311   2fddf48b9a4709ea3fa7b0411a8f590f act2/study/study.pak?de
+  2910283   717e7303f83902bc55f6a3372c56c9b6 act2/study/study.svl?de
+  6202300   514c3f70e6b74418d04c64476909c32d act2/survrdbl/205m.smk?de
+  2705487   f2d87b70b2d77f43613941e1dbdcc761 act2/survrdbl/survrdbl.pak?de
+  1558454   4ad798201666af19d2f49d7f4ea1c721 act2/survrdbl/survrdbl.svl?de
+  1213547   d4907d3fc6c7c8d4928befa3cf3b0f59 act2/vent/vent.pak?de
+  924554    495b7e2c4798ce5e95b5f20b5efa007d act2/vent/vent.svl?de
+  27078212  5ebc07d5cf01b9082d6ba0a59e9de909 misc/209_1m.smk?de
+  29027228  a35d99f83cad52ba893e55ff2044f2ed misc/209_2m.smk?de
+  16489956  8e3b120d923b6855bfb7d3253f46a8b9 misc/209_3m.smk?de
+  10237     2405622f624d4159194acf9aa989f7e8 misc/ezfont.caf?de
+  81018     88b4448a377153ce70847389d3bd250d misc/filedata.fdt?de
+  814980    1aa790c8be326529955b52307f04a97f misc/gcreditm.smk
+  9404599   122b6286075b5e139b5c686496abf98c misc/generic.svl?de
+  3250841   4b9f9e42269605cf1206010ad6b77523 misc/local.pak?de
+  468667    441dcab644ad40963f130545c717268e misc/onetime.pak?de
+  226624    13b1e4fa2d8e930e9778748ba24ab784 misc/test.pcx?de
+  229364    345495a3ea59a560ebe9c20e6cec6c59 misc/test.wav?de
+  9958      d36453ca7d9af44bfd1c2f6be2abad08 misc/toonfont.caf?de
 ...
 
