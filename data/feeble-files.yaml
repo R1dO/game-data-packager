@@ -5,6 +5,7 @@ plugin: scummvm_common
 wiki: Feeble_Files
 gameid: feeble
 disks: 4
+missing_langs: [pl]
 
 help_text: |
   The videos from the original English version are not yet supported;
@@ -5581,6 +5582,13 @@ packages:
     - wurbatak.smk
     - wurbs1.smk
     - wurbs2.smk
+
+  feeble-files-pl-data:
+    DISABLED: TODO
+    debian:
+      provides: feeble-files-data
+    lang: pl
+    disks: 2
 
 files:
   # I have no idea which one is better
