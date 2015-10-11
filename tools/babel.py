@@ -50,9 +50,9 @@ for name, game in load_games().items():
                      fullfree = False
             else:
                  somefree = True
-
-    genres[game.genre] = genres.get(game.genre, 0) + 1
-    stats['genre'] = game.genre
+    genre = game.genre or 'Unknown'
+    genres[genre] = genres.get(genre, 0) + 1
+    stats['genre'] = genre
     stats['shortname'] = name
     stats['longname'] = game.longname
     stats['url_wiki'] = game.wikibase + (game.wiki or '')
