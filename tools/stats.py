@@ -16,38 +16,31 @@
 # /usr/share/common-licenses/GPL-2.
 
 from game_data_packager import (load_games)
-from game_data_packager.build import (FillResult)
 
 games = []
+order = { 'demo' : 1,
+          'full' : 2,
+          'expansion' : 3}
 for name, game in load_games().items():
-    freeload = False
+    game.load_file_data()
     for package in game.packages.values():
-        if package.rip_cd or package.expansion_for:
+        if package.rip_cd:
             continue
+        size_min, size_max = game.size(package)
+        games.append({
+             'game': name,
+             'year': int((package.copyright or game.copyright)[2:6]),
+             'type': package.type,
+             'fanmade': 'N',
+             'package': package.name,
+             'disks': package.disks or game.disks or 1,
+             'size_min': size_min,
+             'size_max': size_max,
+             })
 
-        with game.construct_task() as task:
-            if task.fill_gaps(package=package,
-                    log=False) is not FillResult.IMPOSSIBLE:
-                freeload = True
-                break
+games = sorted(games, key=lambda k: (k['game'], order[k['type']], k['package']))
 
-    game_struct = {
-             'genre': game.genre or 'Unknown',
-             'shortname': name,
-             'longname': game.longname,
-             'freeload': '' if freeload else "  ($)",
-             }
-    games.append(game_struct)
-
-games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
-
-last_genre = None
-for game in games:
-   if last_genre is None or game['genre'] != last_genre:
-       print('[%s]' % game['genre'])
-   print('%20s - %s%s' % (game['shortname'], game['longname'], game['freeload']))
-   last_genre = game['genre']
-
-print('')
-print('($): no freeload (fullgame/demo) available')
-print('     remember there is doom-wad-shareware in non-free repository')
+print('GAME;YEAR;TYPE;FANMADE;PACKAGE;DISKS;SIZE_MIN;SIZE_MAX')
+for g in games:
+   print('%s;%d;%s;%s;%s;%d;%d;%d' % (g['game'], g['year'], g['type'], g['fanmade'],
+                                      g['package'], g['disks'], g['size_min'], g['size_max']))
