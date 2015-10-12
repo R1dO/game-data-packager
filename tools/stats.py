@@ -31,7 +31,7 @@ for name, game in load_games().items():
              'game': name,
              'year': int((package.copyright or game.copyright)[2:6]),
              'type': package.type,
-             'fanmade': 'N',
+             'fanmade': {True: 'Y'}.get(game.fanmade, 'N'),
              'package': package.name,
              'disks': package.disks or game.disks or 1,
              'size_min': size_min,

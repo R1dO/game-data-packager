@@ -313,6 +313,9 @@ class GameData(object):
         # The one-line copyright notice used to build debian/copyright
         self.copyright = None
 
+        # Tag fanmade games so they don't screw up year * size regression
+        self.fanmade = False
+
         # The game engine used to run the game (package name)
         self.engine = None
 
@@ -361,7 +364,7 @@ class GameData(object):
         # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
         self.compress_deb = True
 
-        for k in ('longname', 'copyright', 'compress_deb', 'help_text', 'disks',
+        for k in ('longname', 'copyright', 'compress_deb', 'help_text', 'disks', 'fanmade',
                   'engine', 'genre', 'missing_langs', 'franchise', 'wiki', 'wikibase',
                   'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia'):
             if k in self.data:
