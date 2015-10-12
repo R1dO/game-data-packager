@@ -566,6 +566,26 @@ class GameData(object):
             'files': files,
         }
 
+    def size(self, package):
+        size_min = 0
+        size_max = 0
+        for filename in package._install:
+           file = self.files[filename]
+           if file.alternatives:
+               # 'or 0' is a workaround for the files without known size
+               size_min += min(set(self.files[a].size or 0 for a in file.alternatives))
+               size_max += max(set(self.files[a].size or 0 for a in file.alternatives))
+           else:
+               size_min += file.size
+               size_max += file.size
+        for filename in package._optional:
+           file = self.files[filename]
+           if file.alternatives:
+               size_max += max(set(self.files[a].size for a in file.alternatives))
+           else:
+               size_max += file.size
+        return (size_min, size_max)
+
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'debian', 'description',
