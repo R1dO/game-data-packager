@@ -7,18 +7,19 @@ engine: gemrb
 compress_deb: [-Zgzip, -z1]
 missing_langs: [de,pl,ru]
 help_text: |
-  Data for Icewind Dale can be downloaded from gog.com.
-  Please download the English Windows installer and run it manually. Copy all
-  files into a directory of your choice and then run
+  Data for Icewind Dale can be downloaded from gog.com automatically.
+  You can skip the download by providing
+  setup_icewind_dale_complete_2.0.0.11.exe
   .
-  game-data-packager icewind-dale <path-to-your-directory>
-  .
-  Please use /usr/share/gemrb/icewind-dale-1-en as data directory
-  path in your /etc/gemrb/*.conf files and bg1 as game type.
+  Please use /usr/share/gemrb/icewind-dale-1-en as GamePath in your
+  /etc/gemrb/*.conf files.
 
 
 packages:
   icewind-dale-1-en-data:
+    gog:
+      url: icewind_dale_complete
+      game: icewind_dale_complete
     longname: Icewind Dale - Complete (English)
     debian:
       provides: icewind-dale-1-data
