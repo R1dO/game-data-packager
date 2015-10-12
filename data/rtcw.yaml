@@ -5,7 +5,7 @@ copyright: © 2001 id Software, Inc. and Activision Publishing, Inc.
 engine: rtcw
 genre: First-person shooter
 try_repack_from: [/usr/local/games/wolfenstein]
-missing_langs: [es,it]
+missing_langs: [it]
 wikibase: http://wolfenstein.wikia.com/wiki/
 wiki: Return_to_Castle_Wolfenstein
 
@@ -118,6 +118,44 @@ packages:
     - main/rotate.cfg
     license:
     - license.txt?en
+
+  rtcw-es-data:
+    lang: es
+    debian:
+      provides: rtcw-data
+      conflicts: rtcw-data
+    version: 1.42b
+    install_to: usr/share/games/rtcw
+    install:
+    - main/mp_bin.pk3
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/pak0.pk3
+    - main/scripts/translation.cfg?es
+    - main/sp_pak1.pk3?es
+    - main/sp_pak2.pk3
+    - main/sp_pak3.pk3
+    - main/sp_pak4.pk3
+    # From iortcw
+    - main/hiquality.cfg
+    - main/mp_bin0.pk3
+    - main/mp_rend2_shaders0.pk3
+    - main/sp_pak4.pk3
+    - main/sp_rend2_shaders0.pk3
+    optional:
+    - main/autoexec.cfg
+    - main/rotate.cfg
 
   rtcw-fr-data:
     lang: fr
@@ -298,6 +336,7 @@ size_and_md5: |
   315823656 ce92b11df889cb0a045762bb5fd7cde5 main/pak0.pk3
   9559      f97ff15e4248a72567aaddfa15443d1e main/rotate.cfg
   293887431 a0d3fe956f85f40c8efd6babe0d09832 main/sp_pak1.pk3?en
+  255164624 99a26bcd4b8511f8f43576a37a7ccbdb main/sp_pak1.pk3?es
   256811934 f19c389fe6310c24e664bc0fc84fdd95 main/sp_pak1.pk3?fr
   11026123  330b272d5261fe19fcf3c3fbc943c7f3 main/sp_pak2.pk3
   152544    cf25d6731ed29c80303febbb177aa585 main/sp_pak3.pk3
@@ -305,6 +344,7 @@ size_and_md5: |
   148374118 98a612b5861e030d9d1f0c3adb1df940 main/sp_pakG.pk3
   159375    f7b2003ef7499f2a6e750c2925c870ad main/scripts/translation.cfg?141_unix
   164376    ff148e1367d0459d7855d37e7b8d80bc main/scripts/translation.cfg?141_windows
+  157850    e13f7519c0afd471c344c72bd5ca8959 main/scripts/translation.cfg?es
 
   798673040 f0734b69c3ca194488a89f0afcd3c513 setup_return_to_castle_wolfenstein_2.0.0.2.exe
   949112496 6f5d2499916070557be426a86821dd52 setup_return_to_castle_wolfenstein_german_2.0.0.2.exe
@@ -338,12 +378,14 @@ sha1sums: |
   917685b93cd3430ec9aa41dcbabb7063c6b2a785  main/pak0.pk3
   6a700396ae789cbf7ba592d0e1ce7de6fe6616a9  main/rotate.cfg
   4fe77f53b7effd54a1576212983b9bb9b36e50ed  main/sp_pak1.pk3?en
+  c0e4f312a1871adf821172ba49f96110426309a8  main/sp_pak1.pk3?es
   0867395305426cc9374aa1d6e49b091f9b281cce  main/sp_pak1.pk3?fr
   feee8ecadb551a769dfb1ee97eff4c7ed7f93495  main/sp_pak2.pk3
   94539eded69eb99a86d752808c5e029d5915fde7  main/sp_pak3.pk3
   76b1074a350616bd8942005c4eabda06199e81f2  main/sp_pak4.pk3
   61f8f83f25001d3ee5c1c367c5d7cf7d6c118c32  main/sp_pakG.pk3
   7994040e61a234e284c730287ea6d098878cbfea  main/scripts/translation.cfg?141_unix
+  ef534380ad96093e21a547c4eb78880790530fd1  main/scripts/translation.cfg?es
 
   f5d1307bd41917bd6f9ee3830240a535018368c0  setup_return_to_castle_wolfenstein_2.0.0.2.exe
   430c82414d1cc08d659ccfc5cd693ee98fc17e72  setup_return_to_castle_wolfenstein_german_2.0.0.2.exe
