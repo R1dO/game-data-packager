@@ -111,21 +111,21 @@ packages:
       usr/lib/quake3/ta/missionpack/pak3.pk3:
         usr/share/games/quake3-data/missionpack/pak3.pk3
     install_to: usr/share/games/quake3-data
-    install_files_from_cksums: |
-      # Retail
-      1131927141 479493658 baseq3/pak0.pk3
-      # Patch
-      3518406034 374405 baseq3/pak1.pk3
-      243530540 7511182 baseq3/pak2.pk3
-      987913107 276305 baseq3/pak3.pk3
-      1445361719 9600350 baseq3/pak4.pk3
-      3989134593 191872 baseq3/pak5.pk3
-      1938352652 7346884 baseq3/pak6.pk3
-      241293937 320873 baseq3/pak7.pk3
-      1541013579 454478 baseq3/pak8.pk3
-      _ 383888 missionpack/pak1.pk3
-      _ 376234 missionpack/pak2.pk3
-      _ 384282 missionpack/pak3.pk3
+    install:
+    # Retail
+    - baseq3/pak0.pk3
+    # Patch
+    - baseq3/pak1.pk3
+    - baseq3/pak2.pk3
+    - baseq3/pak3.pk3
+    - baseq3/pak4.pk3
+    - baseq3/pak5.pk3
+    - baseq3/pak6.pk3
+    - baseq3/pak7.pk3
+    - baseq3/pak8.pk3
+    - missionpack/pak1.pk3
+    - missionpack/pak2.pk3
+    - missionpack/pak3.pk3
     install_to_docdir:
       - Help
     license:
@@ -150,6 +150,8 @@ packages:
     expansion_for: quake3-data
     debian:
       depends: quake3-data (>= 38)
+    install:
+    - missionpack/pak0.pk3
     symlinks:
       usr/share/games/quake3-team-arena-data/quake3-team-arena: usr/games/quake3
       # quake < 10
@@ -165,10 +167,6 @@ packages:
       usr/lib/quake3/ta/missionpack/pak0.pk3:
         usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3
     install_to: usr/share/games/quake3-team-arena-data
-    install_files:
-      missionpack/pak0.pk3:
-        size: 351623691
-        distinctive_size: true
 
   quake3-demo-data:
     # deliberately no quake3-server alternative, I'm pretty sure it isn't
@@ -507,6 +505,9 @@ files:
     unpack:
       format: zip
 
+  missionpack/pak0.pk3:
+    distinctive_size: true
+
   demoq3/pak0.pk3:
     install_to: usr/share/games/quake3-demo-data
 
@@ -784,6 +785,24 @@ files:
     - Help/DedicatedServer.html
     - Help/BotCommands.html
 
+  setup_quake3_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - baseq3/pak0.pk3
+    - baseq3/pak1.pk3
+    - baseq3/pak2.pk3
+    - baseq3/pak3.pk3
+    - baseq3/pak4.pk3
+    - baseq3/pak5.pk3
+    - baseq3/pak6.pk3
+    - baseq3/pak7.pk3
+    - baseq3/pak8.pk3
+    - missionpack/pak0.pk3
+    - missionpack/pak1.pk3
+    - missionpack/pak2.pk3
+    - missionpack/pak3.pk3
+
 cksums: |
   2320976398 49289300 linuxq3ademo-1.11-6.x86.gz.sh
   3701968173 6122 botfiles/chars.h
@@ -1041,19 +1060,6 @@ cksums: |
 
 md5sums: |
   484610c1ce34272223a52ec331c99d5d  linuxq3ademo-1.11-6.x86.gz.sh
-  1197ca3df1e65f3c380f8abc10ca43bf  baseq3/pak0.pk3
-  48911719d91be25adb957f2d325db4a0  baseq3/pak1.pk3
-  d550ce896130c47166ca44b53f8a670a  baseq3/pak2.pk3
-  968dfd0f30dad67056115c8e92344ddc  baseq3/pak3.pk3
-  24bb1f4fcabd95f6e320c0e2f62f19ca  baseq3/pak4.pk3
-  734dcd06d2cbc7a16432ff6697f1c5ba  baseq3/pak5.pk3
-  873888a73055c023f6c38b8ca3f2ce05  baseq3/pak6.pk3
-  8fd38c53ed814b64f6ab03b5290965e4  baseq3/pak7.pk3
-  d8b96d429ca4a9c289071cb7e77e14d2  baseq3/pak8.pk3
-  e8ba9e3bf06210930bc0e7fdbcdd01c2  missionpack/pak0.pk3
-  8b8a51f9edf2671dfeb53e0405bac3c6  missionpack/pak1.pk3
-  4e02be54614ca7dbed81b5c44a19302d  missionpack/pak2.pk3
-  e7f91f4eb6e3d28d978b8cca54631695  missionpack/pak3.pk3
   339f23a769e70b29a244aa10618e889c  botfiles/chars.h
   60b36bc6cb6924e8963002ea5bbfd8f5  botfiles/fw_items.c
   1c9a146b79288dfbfefc162290709afc  botfiles/fw_weap.c
@@ -1306,6 +1312,23 @@ md5sums: |
   fa1c7334651344bc703a6a68f5434bdb  Help/Support/Index.html
   fd4679a386341c9ba23996d17a34d091  Help/Support/Information/Improving_Performance.htm
   31252ddf577ee39b22e11d03861575c4  Help/Support/Information/Minimum_System_Requirements.htm
+
+size_and_md5: |
+  479493658 1197ca3df1e65f3c380f8abc10ca43bf baseq3/pak0.pk3
+  374405    48911719d91be25adb957f2d325db4a0 baseq3/pak1.pk3
+  7511182   d550ce896130c47166ca44b53f8a670a baseq3/pak2.pk3
+  276305    968dfd0f30dad67056115c8e92344ddc baseq3/pak3.pk3
+  9600350   24bb1f4fcabd95f6e320c0e2f62f19ca baseq3/pak4.pk3
+  191872    734dcd06d2cbc7a16432ff6697f1c5ba baseq3/pak5.pk3
+  7346884   873888a73055c023f6c38b8ca3f2ce05 baseq3/pak6.pk3
+  320873    8fd38c53ed814b64f6ab03b5290965e4 baseq3/pak7.pk3
+  454478    d8b96d429ca4a9c289071cb7e77e14d2 baseq3/pak8.pk3
+  351623691 e8ba9e3bf06210930bc0e7fdbcdd01c2 missionpack/pak0.pk3
+  383888    8b8a51f9edf2671dfeb53e0405bac3c6 missionpack/pak1.pk3
+  376234    4e02be54614ca7dbed81b5c44a19302d missionpack/pak2.pk3
+  384282    e7f91f4eb6e3d28d978b8cca54631695 missionpack/pak3.pk3
+
+  921345992 7fcdcf938ad2194f30aedfa58b300efc setup_quake3_2.0.0.2.exe
 
 sha1sums: |
   7d305eed3fc896c874697278ec0fb746690e04d0  linuxq3ademo-1.11-6.x86.gz.sh
@@ -1574,6 +1597,8 @@ sha1sums: |
   cbd0b6b87cab819fabcf7b3fc315d73d8ba0e886  Help/Support/Index.html
   b4ede9121c14485d008a7349c774e6c09cbe3629  Help/Support/Information/Improving_Performance.htm
   a318ea3dc4579349ae9382d4fa8447a9fe503003  Help/Support/Information/Minimum_System_Requirements.htm
+
+  a7e37ff9fd25e2bd230b858ce8b93cfcea438d81  setup_quake3_2.0.0.2.exe
 
 sha256sums: |
   64dee3f69b6e792d1da4fe0ac98fedc7eb1e37ea1027fb609a9fadd06150a4ec  linuxq3ademo-1.11-6.x86.gz.sh
