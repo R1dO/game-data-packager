@@ -68,21 +68,22 @@ packages:
     - baseq2/maps/sewer64.bsp
     - baseq2/pak3.pak
     - ctf/q2ctf4a.bsp
-    - readme-dm64.txt
-    # documentation
-    - 3.20_changes.txt
-    - ctf/readme.txt
-    - ctf/server.cfg
-    - Commercial Exploitation.doc
-    - Manual.html
-    - QII License Information.doc
-    - Quake II License.doc
-    - Release Notes.doc
+    license:
     - commexp.txt
     - license.txt?3.20
     - licinfo.txt
+    - Commercial Exploitation.doc
+    - Quake II License.doc
+    - QII License Information.doc
+    doc:
+    - 3.20_changes.txt
+    - ctf/readme.txt
+    - ctf/server.cfg
+    - Manual.html
+    - Release Notes.doc
     - readme.doc
     - readme.txt?3.20
+    - readme-dm64.txt
     - release.txt
     - quake2_manual/bottom.html
     - quake2_manual/credits.html
@@ -217,9 +218,10 @@ packages:
       - quake2_manual
     install_contents_of:
     - q2-314-demo-x86.exe
-    optional:
-    - Manual.html
+    license:
     - license.txt?3.14_demo
+    doc:
+    - Manual.html
     - quake2_manual/bottom.html
     - quake2_manual/credits.html?3.14_demo
     - quake2_manual/customer_support.html?3.14_demo
@@ -990,69 +992,12 @@ files:
     size: 4058
     md5: 0de34a0bd6b888a31417b78cc265bfbe
 
-  license.txt?3.14_demo:
-    distinctive_name: false
-    install_to: $docdir
-    license: true
-
-  readme.txt?3.14_demo:
-    distinctive_name: false
-    install_to: $docdir
-
-  release.txt?3.14_demo:
-    distinctive_name: false
-    install_to: $docdir
-
-  license.txt?3.20:
-    distinctive_name: false
-    install_to: $docdir
-    license: true
-
-  readme.txt?3.20:
-    distinctive_name: false
-    install_to: $docdir
-
-  Commercial Exploitation.doc:
-    install_to: $docdir
-    license: true
-
-  Manual.html:
-    distinctive_name: false
-    install_to: $docdir
-
-  QII License Information.doc:
-    install_to: $docdir
-    license: true
-
-  Quake II License.doc:
-    install_to: $docdir
-    license: true
-
-  Release Notes.doc:
-    distinctive_name: false
-    install_to: $docdir
-
-  commexp.txt:
-    install_to: $docdir
-    license: true
-
-  licinfo.txt:
-    install_to: $docdir
-    license: true
-
-  readme.doc:
-    distinctive_name: false
-    install_to: $docdir
-
   ctf/readme.txt:
     install_to: $docdir
     install_as: ctf.txt
     look_for:
     - ctf.txt
     - ctf/readme.txt
-
-  3.20_changes.txt:
-    install_to: $docdir
 
   quake2-xatrix-2.03/CHANGELOG:
     distinctive_name: false
