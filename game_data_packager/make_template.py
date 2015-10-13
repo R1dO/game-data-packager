@@ -123,6 +123,7 @@ class GameData(object):
         # global list of files accross packages
         self.install = set()
         self.optional = set()
+        self.doc = set()
         self.license = set()
         self.loose_file = set()
 
@@ -198,6 +199,7 @@ class GameData(object):
 
         self.package['install'] = []
         self.package['optional'] = []
+        self.package['doc'] = []
         self.package['license'] = []
 
         if steam > 0:
@@ -260,9 +262,12 @@ class GameData(object):
                         self.license.add(out_name)
                         self.package['license'].append(out_name)
                     elif is_doc(fn):
+                        self.doc.add(out_name)
+                        self.package['doc'].append(out_name)
+                    # most of the times these files are not needed
+                    elif fn.split('.')[-1] in ('cfg', 'cmd', 'drv', 'ico', 'ini'):
                         self.optional.add(out_name)
                         self.package['optional'].append(out_name)
-                        self.files['files'][out_name] = dict(install_to='$docdir')
                     else:
                         self.install.add(out_name)
                         self.package['install'].append(out_name)
@@ -285,6 +290,10 @@ class GameData(object):
             self.package['optional'].sort()
         else:
             del self.package['optional']
+        if self.package['doc']:
+            self.package['doc'].sort()
+        else:
+            del self.package['doc']
         if self.package['license']:
             self.package['license'].sort()
         else:
@@ -508,7 +517,7 @@ class GameData(object):
         if self.files['files']:
             yaml.safe_dump(self.files, stream=sys.stdout, default_flow_style=False)
 
-        print_order = sorted(self.install) + sorted(self.optional) + sorted(self.license)
+        print_order = sorted(self.install | self.optional) + sorted(self.doc) + sorted(self.license)
         print_order += sorted(set(self.size.keys()) - set(print_order))
 
         print('\nsize_and_md5: |')

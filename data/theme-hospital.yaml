@@ -38,13 +38,13 @@ packages:
     - gog_eula.txt
     - eula.txt
     - en_US_eula.rtf
-    optional:
-    # documentation
+    doc:
     - EN.pdf
     - FR.pdf
     - GE.pdf
     - IT.pdf
     - manual.pdf
+    optional:
     # not present in the gog.com copy; judging by their names, they're
     # probably unnecessary?
     - levels/easy00.bak
@@ -824,21 +824,15 @@ files:
   EN.pdf:
     size: 4514818
     md5: 61c5337dd5d371b57bdf9ccdc95b4960
-    install_to: $docdir
   FR.pdf:
     size: 3192246
     md5: 2df86ca7026808d8ddc0cf349796d0c3
-    install_to: $docdir
   GE.pdf:
     size: 7656323
     md5: 5c9ea61edc4334264f2f1aa52e28f3d7
-    install_to: $docdir
   IT.pdf:
     size: 1028644
     md5: 0a8b2534c4c6cfa31815ec75b3877996
-    install_to: $docdir
-  manual.pdf:
-    install_to: $docdir
 
   Demo.zip:
     download:

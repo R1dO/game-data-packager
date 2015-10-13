@@ -645,6 +645,13 @@ class GameData(object):
                 f = self._ensure_file(filename)
                 package.optional.add(filename)
 
+        if 'doc' in d:
+            assert isinstance(d['doc'], list), package.name
+            for filename in d['doc']:
+                f = self._ensure_file(filename)
+                f.install_to = '$docdir'
+                package.optional.add(filename)
+
         if 'license' in d:
             assert isinstance(d['license'], list), package.name
             for filename in d['license']:

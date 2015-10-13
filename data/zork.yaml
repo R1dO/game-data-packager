@@ -19,7 +19,7 @@ packages:
     install_to: usr/share/games/zork
     install:
     - zork1.z3
-    optional:
+    doc:
     - readme_zork1.txt
     - manual.pdf?zork1
 
@@ -32,7 +32,7 @@ packages:
     install_to: usr/share/games/zork
     install:
     - zork2.z3
-    optional:
+    doc:
     - readme_zork2.txt
     - manual.pdf?zork2
 
@@ -45,7 +45,7 @@ packages:
     install_to: usr/share/games/zork
     install:
     - zork3.z3
-    optional:
+    doc:
     - readme_zork3.txt
     - manual.pdf?zork3
 
@@ -58,7 +58,7 @@ packages:
     install_to: usr/share/games/zork
     install:
     - beyondzo.z3
-    optional:
+    doc:
     - manual.pdf?beyondzork
 
   planetfall-data:
@@ -69,7 +69,7 @@ packages:
       game: planetfall
     install:
     - planetfa.z3
-    optional:
+    doc:
     - manual.pdf?planetfall
 
 files:
@@ -99,7 +99,6 @@ files:
     - readme_zork1.txt
   readme_zork1.txt:
     distinctive_name: false
-    install_to: $docdir
     install_as: readme.txt
 
   zork2.zip:
@@ -111,7 +110,6 @@ files:
     - readme_zork2.txt
   readme_zork2.txt:
     distinctive_name: false
-    install_to: $docdir
     install_as: readme.txt
 
   zork3.zip:
@@ -123,7 +121,6 @@ files:
     - readme_zork3.txt
   readme_zork3.txt:
     distinctive_name: false
-    install_to: $docdir
     install_as: readme.txt
 
   setup_zork_anthology.exe:
@@ -192,17 +189,6 @@ files:
     provides:
     - planetfa.z3
     - manual.pdf?planetfall
-
-  manual.pdf?zork1:
-    install_to: $docdir
-  manual.pdf?zork2:
-    install_to: $docdir
-  manual.pdf?zork3:
-    install_to: $docdir
-  manual.pdf?beyondzork:
-    install_to: $docdir
-  manual.pdf?planetfall:
-    install_to: $docdir
 
 size_and_md5: |
   # version provided at http://www.infocom-if.org/
