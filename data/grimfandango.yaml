@@ -52,6 +52,7 @@ packages:
     optional:
     - flower.ico
     - gf.ico
+    doc:
     - manual.pdf
     - readme.txt
     license:
@@ -143,7 +144,7 @@ packages:
     - year3mus.lab
     - year2mus.lab
     - year4mus.lab
-    optional:
+    doc:
     - manual.pdf
     - readme.txt?fr
     license:
@@ -206,7 +207,7 @@ packages:
     - year3mus.lab
     - year2mus.lab
     - year4mus.lab
-    optional:
+    doc:
     - manual.pdf
     - readme.txt?pt_br
     license:
@@ -228,7 +229,7 @@ packages:
     - Movies/hq_open.san
     - Movies/demo_backend.san
     - Movies/demo_frontend.san
-    optional:
+    doc:
     - readme.txt?demo
     license:
     - license.txt?demo
@@ -248,7 +249,7 @@ packages:
     - Movies/hq_open.san
     - Movies/demo_backend.san?big
     - Movies/demo_frontend.san?big
-    optional:
+    doc:
     - readme.txt?demo_big
     license:
     - license.txt?demo_big
@@ -270,7 +271,7 @@ packages:
     - Movies/hq_open.san
     - Movies/demo_backend.san?de
     - Movies/demo_frontend.san?de
-    optional:
+    doc:
     - readme.txt?demo_de
     license:
     - license.txt?demo_de
@@ -292,7 +293,7 @@ packages:
     - Movies/hq_open.san
     - Movies/demo_backend.san?es
     - Movies/demo_frontend.san?es
-    optional:
+    doc:
     - readme.txt?demo_es
     license:
     - license.txt?demo_es
@@ -314,7 +315,7 @@ packages:
     - Movies/hq_open.san
     - Movies/demo_backend.san?fr
     - Movies/demo_frontend.san?fr
-    optional:
+    doc:
     - readme.txt?demo_fr
     license:
     - license.txt?demo_fr
@@ -336,7 +337,7 @@ packages:
     - Movies/hq_open.san
     - Movies/demo_backend.san?it
     - Movies/demo_frontend.san?it
-    optional:
+    doc:
     - readme.txt?demo_it
     license:
     - license.txt?demo_it
@@ -344,8 +345,6 @@ packages:
 files:
   # demos
   #######
-  readme.txt?demo:
-    install_to: $docdir
 
   grim-win-demo1-en.zip:
     download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo1-en.zip?download
@@ -407,9 +406,6 @@ files:
     - license.txt?demo_de
     - readme.txt?demo_de
 
-  readme.txt?demo_es:
-    install_to: $docdir
-
   grim-win-demo-sp.zip:
     download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo-sp.zip?download
     unpack:
@@ -428,9 +424,6 @@ files:
     - license.txt?demo_es
     - readme.txt?demo_es
 
-  readme.txt?demo_fr:
-    install_to: $docdir
-
   grim-win-demo-fr.zip:
     download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo-fr.zip?download
     unpack:
@@ -448,9 +441,6 @@ files:
     - Movies/demo_frontend.san?fr
     - license.txt?demo_fr
     - readme.txt?demo_fr
-
-  readme.txt?demo_it:
-    install_to: $docdir
 
   grim-win-demo-it.zip:
     download: http://sourceforge.net/projects/residualvm/files/demos/grim/grim-win-demo-fr.zip?download
@@ -494,21 +484,9 @@ files:
       - vox0001.lab?prepatched
       - vox0001.lab?unpatched
 
-  # docs
   manual.pdf:
     install_to: $docdir
     look_for: ['grim fandango - manual.pdf', manual.pdf]
-  readme.txt:
-    install_to: $docdir
-
-  readme.txt?fr:
-    install_to: $docdir
-
-  readme.txt?it:
-    install_to: $docdir
-
-  readme.txt?pt_br:
-    install_to: $docdir
 
 size_and_md5: |
   # Small English Demo
