@@ -58,7 +58,7 @@ packages:
     - requiem.wad
     - req21fix.wad
     - reqmus.wad
-    optional:
+    doc:
     - av.txt
     - class_ep.txt
     - hr.txt
@@ -69,24 +69,8 @@ packages:
     - req21.txt
 
 files:
-  av.txt:
-    install_to: $docdir
-  class_ep.txt:
-    install_to: $docdir
-  hr.txt:
-    install_to: $docdir
-  mm.txt:
-    install_to: $docdir
-  mm11fix.txt:
-    install_to: $docdir
-  mm2.txt:
-    install_to: $docdir
   mm2info.wad:
     look_for: [mm2info.wad,mm2info.dat]
-  requiem.txt:
-    install_to: $docdir
-  req21.txt:
-    install_to: $docdir
   req21fix.wad:
     look_for: [req21fix.wad,req21_competn.wad]
 
