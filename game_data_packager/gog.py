@@ -81,6 +81,39 @@ class Gog:
                 if installer['path'].endswith(archive):
                     return game['gamename']
 
+    def verify_checksum(self, archive, size, md5):
+        basename = os.path.basename(archive)
+        extension = os.path.splitext(basename)[1]
+        if not (basename.startswith('gog_') and extension == '.sh'
+             or basename.startswith('setup_') and extension == '.exe'):
+            return False
+
+        xml_root = os.path.expanduser('~/.cache/lgogdownloader/xml/')
+        if not os.path.isdir(xml_root):
+            return False
+
+        for dirpath, dirnames, filenames in os.walk(xml_root):
+            for fn in filenames:
+                if fn != basename + '.xml':
+                    continue
+                xml_file = os.path.join(dirpath, fn)
+                xml = open(xml_file, 'r', encoding='utf-8').readline()
+                xml = xml.strip('<>\n')
+                xml_md5 = None
+                xml_size = None
+                for tag in xml.split(' '):
+                    if '=' not in tag:
+                        continue
+                    k,v = tag.split('=', 2)
+                    v = v.strip('"')
+                    if k == 'md5':
+                        xml_md5 = v
+                    elif k == 'total_size':
+                        xml_size = int(v)
+                if xml_size == size and xml_md5 == md5:
+                    return True
+        return False
+
 GOG = Gog()
 
 def run_gog_meta_mode(parsed, games):

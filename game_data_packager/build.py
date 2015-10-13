@@ -556,6 +556,8 @@ class PackagingTask(object):
                     tried.add(wanted_name)
                     if self.use_file(self.game.files[wanted_name], path, hashes):
                         return
+            if not trusted:
+                trusted = GOG.verify_checksum(path, size, hashes.md5)
 
         basename = os.path.basename(path)
         extension = os.path.splitext(basename)[1]
