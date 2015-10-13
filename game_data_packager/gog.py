@@ -99,18 +99,16 @@ class Gog:
                 xml_file = os.path.join(dirpath, fn)
                 xml = open(xml_file, 'r', encoding='utf-8').readline()
                 xml = xml.strip('<>\n')
-                xml_md5 = None
-                xml_size = None
                 for tag in xml.split(' '):
                     if '=' not in tag:
                         continue
                     k,v = tag.split('=', 2)
                     v = v.strip('"')
-                    if k == 'md5':
-                        xml_md5 = v
-                    elif k == 'total_size':
-                        xml_size = int(v)
-                if xml_size == size and xml_md5 == md5:
+                    if k == 'md5' and v != md5:
+                        return False
+                    elif k == 'total_size' and int(v) != size:
+                        return False
+                else:
                     return True
         return False
 
