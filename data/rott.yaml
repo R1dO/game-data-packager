@@ -125,19 +125,19 @@ files:
   DEMO4_3.DMO:
     distinctive_name: false
 
-  #setup_rise_of_the_triad_2.0.0.5.exe:
-  #  unpack:
-  #    format: innoextract
-  #  provides:
-  #  - DARKWAR.RTL
-  #  - DARKWAR.WAD
-  #  - EXTREME.RTL
-  #  - HUNTBGIN.RTC
-  #  - HUNTBGIN.RTL
-  #  - LICENSE.TXT
-  #  - manual.pdf?gog
-  #  - REMOTE1.RTS
-  #  - ROTTCD.RTC
+  setup_rise_of_the_triad_2.0.0.5.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - DARKWAR.RTL
+    - DARKWAR.WAD
+    - EXTREME.RTL
+    - HUNTBGIN.RTC
+    - HUNTBGIN.RTL
+    - LICENSE.TXT
+    - manual.pdf?gog
+    - REMOTE1.RTS
+    - ROTTCD.RTC
 
   # MojoSetup archive
   gog_rise_of_the_triad_dark_war_2.0.0.8.sh:
@@ -215,7 +215,7 @@ size_and_md5: |
 
   8199108  37ea1777fb3156634006c96e4be4ea17 manual.pdf?steam
 
-  #31605104 92a132d4d25d6f96587e406bd9959ae8 setup_rise_of_the_triad_2.0.0.5.exe
+  31605104 92a132d4d25d6f96587e406bd9959ae8 setup_rise_of_the_triad_2.0.0.5.exe
   22951652 bd413e46648d9dbcf10bb579c9b867fd gog_rise_of_the_triad_dark_war_2.0.0.8.sh
   21337749 5695390945993b841f1c0b72781d143c gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
   18864246 7acfe7c8d48c4654604b90e955212793 gog_rise_of_the_triad_dark_war_1.0.0.7.deb
@@ -247,7 +247,7 @@ sha1sums: |
 
   78d12446ee71853ea71b648f4852b0f548773648  manual.pdf?steam
 
-  #53d4a05c474dd13098b9d591ea2eab13310af0bc  setup_rise_of_the_triad_2.0.0.5.exe
+  53d4a05c474dd13098b9d591ea2eab13310af0bc  setup_rise_of_the_triad_2.0.0.5.exe
   7ecd289958858af8dfc357fec2499d9bc3e7206b  manual.pdf?gog
   22189affd36bed5e0be9c9fde86e1701c840c0a8  gog_rise_of_the_triad_dark_war_2.0.0.8.sh
   017a31ee33bdb81882287b497682b12de56b0f50  gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz
