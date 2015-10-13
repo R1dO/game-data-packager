@@ -225,12 +225,12 @@ packages:
     - ger/intro9.pak
     - ger/introvoc.pak
     - ger/startup.pak
-    optional:
-    # docs
+    doc:
     - readme.eng
     - readme.fre
     - readme.ger
     - manual.pdf
+    optional:
     # seems not used
     - eng/blend.tab
     - fre/blend.tab
@@ -318,15 +318,6 @@ files:
   startup.pak:
     distinctive_name: false
 
-  readme.eng:
-    install_to: $docdir
-  readme.fre:
-    install_to: $docdir
-  readme.ger:
-    install_to: $docdir
-
-  manual.pdf:
-    install_to: $docdir
   setup_lands_of_lore_2.1.0.19.exe:
     unpack:
       format: innoextract
