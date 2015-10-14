@@ -2065,6 +2065,16 @@ class PackagingTask(object):
                             package.name, self.get_architecture())
                     possible.discard(package)
 
+        for package in set(possible):
+            if 'build-depends' in package.debian:
+                for tool in package.debian['build-depends'].split(','):
+                    tool = tool.strip()
+                    if not which(tool):
+                        logger.error('tool "%s" is needed to build "%s"' %
+                                     (tool, package.name))
+                        possible.discard(package)
+                        self.missing_tools.add(tool)
+
         logger.debug('possible packages: %r', set(p.name for p in possible))
         if not possible:
             raise NoPackagesPossible()

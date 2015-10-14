@@ -367,6 +367,7 @@ packages:
       id: 2330
       path: "common/Quake 2/xatrix"
     debian:
+      build-depends: gcc, make
       provides: quake2-xatrix
       conflicts: quake2-xatrix
       replaces: quake2-xatrix
@@ -421,6 +422,7 @@ packages:
       id: 2340
       path: "common/Quake 2/rogue"
     debian:
+      build-depends: gcc, make
       provides: quake2-rogue
       conflicts: quake2-rogue
       replaces: quake2-rogue
