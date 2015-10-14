@@ -19,8 +19,8 @@ import os
 import shutil
 import subprocess
 
-from .. import (GameData, NoPackagesPossible)
-from ..build import (PackagingTask)
+from .. import (GameData)
+from ..build import (PackagingTask, NoPackagesPossible)
 from ..util import (mkdir_p, which)
 
 logger = logging.getLogger('game-data-packager.games.lgeneral')
