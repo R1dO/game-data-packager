@@ -1547,8 +1547,8 @@ class PackagingTask(object):
         return True
 
     def modify_control_template(self, control, package, destdir):
-        if 'Package' in control:
-            assert control['Package'] in ('PACKAGE', package.name)
+        for key in control.keys():
+            assert key == 'Description', 'specify "%s" only in YAML' % key
         control['Package'] = package.name
 
         installed_size = 0
@@ -1571,32 +1571,22 @@ class PackagingTask(object):
                     installed_size += 1
         control['Installed-Size'] = str(installed_size)
 
-        default_values = {
-            'Priority' : 'optional',
-            'Architecture' : 'all',
-            'Maintainer' : 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>',
-        }
-        for field in default_values:
-            if field not in control:
-                control[field] = default_values[field]
+        control['Priority'] = 'optional'
+        control['Maintainer'] = 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>'
 
-        assert 'Section' not in control, 'please specify only in YAML'
         if package.component == 'main':
             control['Section'] = package.section
         else:
             control['Section'] = package.component + '/' + package.section
 
-        if package.architecture != 'all':
-            control['Architecture'] = self.get_architecture()
-
-        if control['Architecture'] == 'all' and 'Multi-Arch' not in control:
+        if package.architecture == 'all':
+            control['Architecture'] = 'all'
             control['Multi-Arch'] = 'foreign'
+        else:
+            control['Architecture'] = self.get_architecture()
 
         def read_control_set(package, control, field):
             result = set()
-            if field in control:
-                for value in control[field].split(','):
-                    result.add(value.strip())
             value = package.debian.get(field.lower())
             if isinstance(value, str):
                 result.add(value)
