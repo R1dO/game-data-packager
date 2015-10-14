@@ -1234,6 +1234,11 @@ files:
     - Help/Index.html?demo
     - Help/Index.html?team
 
+  Help/Index.html?win:
+    look_for: [Help/Index.html,Help/Index.htm]
+  Help/Index.html?team:
+    look_for: [Help/Index.html,Help/Index.htm]
+
   # the sames HTML pages with
   # <meta name="generator" content="Microsoft FrontPage 4.0">
   # or
