@@ -26,7 +26,7 @@ Depends: fakeroot, ${misc:Depends},
 	python3-debian,
 	python3-yaml,
 	${python3:Depends},
-Breaks: lgogdownloader (<< 2.25-2~)
+Breaks: lgogdownloader (<< 2.26-1~)
 Suggests:
 # to install packages
 	gdebi | gdebi-kde,

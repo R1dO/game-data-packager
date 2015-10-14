@@ -2171,10 +2171,11 @@ class PackagingTask(object):
                 mkdir_p(tmpdir)
                 try:
                     subprocess.check_call(['lgogdownloader',
-                                       '--download', '--no-extra',
+                                       '--download',
+                                       '--include', 'installers',
                                        '--directory', tmpdir,
                                        '--subdir-game', '',
-                                       '--platform-priority', 'linux,windows',
+                                       '--platform', 'linux,windows',
                                        '--language', package.lang,
                                        '--game', '^' + gog_id + '$'])
                     # consider *.bin before the .exe file
