@@ -9,6 +9,9 @@ gameid: eob2
 
 packages:
   eye-of-the-beholder2-data:
+    # 'pref' as in 'preferences' ?
+    optional:
+    - eosprefs.dat
     install:
     - azure.adl
     - catacomb.adl
@@ -137,7 +140,6 @@ packages:
     - willowis.cps
     - winding.cps
     - wolf.cps
-    - eosprefs.dat
     - fading.dat
     - item.dat
     - itemtype.dat
@@ -237,11 +239,16 @@ packages:
     - crimson.vmp
     - dung.vmp
     - forest.vmp
-    - levels.tmp
     - mezz.vmp
     - silver.vmp
 
+files:
+  eosprefs.dat:
+    distinctive_name: false
+
 size_and_md5: |
+  6         73a0d0e3eb71bd1c6b10bcf64053e3f5 eosprefs.dat
+
   21530     806cb1776e784cfc2af65a942faab4d3 airseal.cps
   18510     8a8f78e442941dbf41f166ada1bfb7d4 altar.cps
   7845      575d3a0db3c43daae8c43841702a5a8d ant.cps
@@ -319,7 +326,6 @@ size_and_md5: |
   41549     664d26a3b53526b493ff83cf82a7f80e dung.vcn
   5834      fdcde017a074eb8c60ff0bd7ed7b43f1 dung.vmp
   46891     f5ba1b2e5d89e8c69f906a36ec3e9d99 eobdata0.sav
-  6         73a0d0e3eb71bd1c6b10bcf64053e3f5 eosprefs.dat
   1792      72dc6cf8e2cf6428355a9c9649e7e0ac fading.dat
   8402      bb4aaebc7198b7058c10329d141d8b84 finale1.adl
   2115      ff7b60753a3aab257190c19aebc21002 finale1.snd
@@ -408,7 +414,6 @@ size_and_md5: |
   4102      52b3003cdf93eb1747bf2b3bc8c0d76a level8.maz
   4301      62fbd6efedce5c250d5485ecb29cac01 level9.inf
   4102      f2a3e47c65a3f4bb99faec79432a6014 level9.maz
-  36210     3c8432b8429305fc25efb518fc856dfd levels.tmp
   6341      963b4453d6bce1741e8fecb8370d7293 mage.cps
   38        c3cb05e2407b20d9d4f75098d16a249a mage.dcr
   3564      9ece60756c154e6715492fd7391d684a magic.cps
@@ -569,7 +574,6 @@ sha1sums: |
   04f648399b73b0c929093771a8c2f3af5b9dcac4  level6.inf
   6a925b57a55507e82744d27e00589747c9a4c66a  level7.inf
   1e75a7e5d2b4ae8ec3b6aa0f16ebd7bb3d97cc4e  level8.inf
-  895acd851dbccf0917b68e85a0a21cb5987c7f60  levels.tmp
   b13dd0bb29f79b27c7ba52d6bb11c7b6f81f3279  mage.cps
   109a4cc089dbb44cbe74f9d8ca980438a231f3f8  mantis.cps
   57f224ff43c1c2cb6ffdaeb76025827ed689b8af  map.cps
