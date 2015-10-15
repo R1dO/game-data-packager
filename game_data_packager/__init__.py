@@ -929,6 +929,7 @@ def load_games(game='*'):
                 game_data_constructor = plugin.GAME_DATA_SUBCLASS
             except (ImportError, AttributeError) as e:
                 logger.debug('No special code for %s: %s', g, e)
+                assert 'game_data_packager.games' in e.msg, e
                 game_data_constructor = GameData
 
             games[g] = game_data_constructor(g, data)
