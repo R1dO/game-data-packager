@@ -2069,8 +2069,8 @@ class PackagingTask(object):
             if 'build-depends' in package.debian:
                 for tool in package.debian['build-depends'].split(','):
                     tool = tool.strip()
-                    if not which(tool):
-                        logger.error('tool "%s" is needed to build "%s"' %
+                    if not which(tool) and not PACKAGE_CACHE.is_installed(tool):
+                        logger.error('package "%s" is needed to build "%s"' %
                                      (tool, package.name))
                         possible.discard(package)
                         self.missing_tools.add(tool)
