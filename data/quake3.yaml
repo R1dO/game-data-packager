@@ -996,6 +996,9 @@ files:
   setup_quake3_2.0.0.2.exe:
     unpack:
       format: innoextract
+      unpack:
+      - $provides
+      - index.htm
     provides:
     - baseq3/pak0.pk3
     - baseq3/pak1.pk3
