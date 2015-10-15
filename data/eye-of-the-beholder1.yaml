@@ -8,6 +8,7 @@ wiki: Eye_of_the_Beholder
 gameid: eob
 
 packages:
+  # version 1.7
   eye-of-the-beholder1-data:
     install:
     - eobdata1.pak
@@ -22,6 +23,12 @@ packages:
     optional:
     - eobdata.sav
 
+files:
+  eobdata.sav:
+    alternatives:
+    - eobdata.sav?1
+    - eobdata.sav?2
+
 size_and_md5: |
   237691    7c5aae5c361dea7b3a14c3c31dec513e eobdata1.pak
   14499     feaf0345086b3a1d931352f4b0ad8feb eobdata2.pak
@@ -29,7 +36,8 @@ size_and_md5: |
   355402    7aa3f528805bc777a39141d5a7131b8c eobdata4.pak
   314900    76628ddfa24dd8409eefdaf66eaf428d eobdata5.pak
   317081    36ae9346a128fe1e03400e8f6f458c76 eobdata6.pak
-  33101     8de5eadd17246e87491e3a22e03fd792 eobdata.sav
+  33101     8de5eadd17246e87491e3a22e03fd792 eobdata.sav?1
+  33101     0f423953de8b07e985c97d611c8af070 eobdata.sav?2
   1028      96de7c14da18ebe209f6db87a6b290d5 font6.fnt
   1284      f83e15b5780ff8669cadc30e89730a89 font8.fnt
 
@@ -40,5 +48,6 @@ sha1sums: |
   536d7ef96bfaac48407b7d7137baba015c17e6e7  eobdata4.pak
   7f5732c8738cb750df8cef3446dbb6afe027acc8  eobdata5.pak
   3610cb42bc283f8450a1be67c2be2903c1bbebab  eobdata6.pak
-  b64c3e5e03963f45f4ee785e1151252b5ff2341a  eobdata.sav
+  b64c3e5e03963f45f4ee785e1151252b5ff2341a  eobdata.sav?1
+  5c32261dc4c1cf3892af4e06e30bea00778589ac  eobdata.sav?2
 ...

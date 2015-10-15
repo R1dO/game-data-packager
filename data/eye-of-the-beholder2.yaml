@@ -246,6 +246,10 @@ packages:
 files:
   eosprefs.dat:
     distinctive_name: false
+  credits.txt:
+    alternatives:
+    - credits.txt?1
+    - credits.txt?2
 
 size_and_md5: |
   6         73a0d0e3eb71bd1c6b10bcf64053e3f5 eosprefs.dat
@@ -287,7 +291,8 @@ size_and_md5: |
   110       f307815af22ed16d5e038829267781c1 cleric3.dcr
   5815      6a47a690c845b3baeca3eb1ad218f18c coin.cps
   3340      307387089cc38fe237e64a96674ebebb credits.cps
-  2316      55319d602ca10bf9ed46df441a9fb1b0 credits.txt
+  2316      55319d602ca10bf9ed46df441a9fb1b0 credits.txt?1
+  2036      e2f7bad40f244f22ba48afb2eac74912 credits.txt?2
   8251      24677d107ec6ca01836f43886edf74f1 credits2.cps
   2007      30343b3ef4111f50c20881af19988a97 credits3.cps
   16047     fd3925d1fadcbc8c98dbfe919c207c18 crimring.cps
