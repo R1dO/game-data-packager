@@ -1,0 +1,616 @@
+---
+franchise: Eye of the Beholder
+longname: "Eye of the Beholder II: The Legend of Darkmoon"
+copyright: © 1993 Strategic Simulations, Inc.
+genre: Role Playing
+plugin: scummvm_common
+wiki: "Eye_of_the_Beholder_II:_The_Legend_of_Darkmoon"
+gameid: eob2
+
+packages:
+  eye-of-the-beholder2-data:
+    install:
+    - azure.adl
+    - catacomb.adl
+    - crimson1.adl
+    - crimson2.adl
+    - finale1.adl
+    - finale2.adl
+    - forest.adl
+    - intro.adl
+    - mezanine.adl
+    - silver.adl
+    - palette.col
+    - airseal.cps
+    - altar.cps
+    - ant.cps
+    - aservant.cps
+    - azure1.cps
+    - azure2.cps
+    - badmood.cps
+    - basilisk.cps
+    - beholder.cps
+    - blood.cps
+    - border.cps
+    - brown1.cps
+    - brown2.cps
+    - brown3.cps
+    - bulette.cps
+    - chargen.cps
+    - chargena.cps
+    - chargenb.cps
+    - choice.cps
+    - cleric1.cps
+    - cleric2.cps
+    - cleric3.cps
+    - coin.cps
+    - credits.cps
+    - credits2.cps
+    - credits3.cps
+    - crimring.cps
+    - crimson.cps
+    - crimson2.cps
+    - crystal.cps
+    - cube.cps
+    - darkmoon.cps
+    - decorate.cps
+    - destroy0.cps
+    - destroy1.cps
+    - destroy2.cps
+    - destroy3.cps
+    - door1.cps
+    - door2.cps
+    - doorway1.cps
+    - doorway2.cps
+    - dragon.cps
+    - dragon1.cps
+    - dragon2.cps
+    - dran.cps
+    - dranaz3.cps
+    - dransl2.cps
+    - dranx.cps
+    - dream.cps
+    - forest.cps
+    - frgiant.cps
+    - fsnake.cps
+    - gargoyle.cps
+    - gasspore.cps
+    - glass.cps
+    - guard1.cps
+    - guard2.cps
+    - guardian.cps
+    - head.cps
+    - hellhnd.cps
+    - heroes.cps
+    - hurry1.cps
+    - hurry2.cps
+    - implode.cps
+    - intro.cps
+    - invent.cps
+    - itemicn.cps
+    - iteml1.cps
+    - items1.cps
+    - khelban1.cps
+    - khelban2.cps
+    - khelban3.cps
+    - khelban4.cps
+    - khelban5.cps
+    - khelban6.cps
+    - khelben.cps
+    - kheldran.cps
+    - mage.cps
+    - magic.cps
+    - mantis.cps
+    - map.cps
+    - medusa.cps
+    - menu.cps
+    - mezz1.cps
+    - mezz2.cps
+    - mindflay.cps
+    - mmouth1.cps
+    - mmouth2.cps
+    - outports.cps
+    - outtake.cps
+    - playfld.cps
+    - portala.cps
+    - portalb.cps
+    - salamndr.cps
+    - shrunken.cps
+    - silver1.cps
+    - silver2.cps
+    - skelwar.cps
+    - sout1.cps
+    - sout2.cps
+    - sout3.cps
+    - sout4.cps
+    - sout5.cps
+    - spider.cps
+    - stonegia.cps
+    - street1.cps
+    - street2.cps
+    - suicide.cps
+    - tanglor.cps
+    - thanks.cps
+    - thrown.cps
+    - wasp.cps
+    - westwood.cps
+    - willowis.cps
+    - winding.cps
+    - wolf.cps
+    - eosprefs.dat
+    - fading.dat
+    - item.dat
+    - itemtype.dat
+    - text.dat
+    - beholder.dcr
+    - cleric1.dcr
+    - cleric2.dcr
+    - cleric3.dcr
+    - dragon.dcr
+    - guard1.dcr
+    - guard2.dcr
+    - mage.dcr
+    - mantis.dcr
+    - azure.dec
+    - brown.dec
+    - crimson.dec
+    - forest.dec
+    - mezz.dec
+    - silver.dec
+    - azure.ega
+    - crimson.ega
+    - dung.ega
+    - forest.ega
+    - intro.ega
+    - menu.ega
+    - mezz.ega
+    - silver.ega
+    - font6.fnt
+    - font8.fnt
+    - level1.inf
+    - level2.inf
+    - level3.inf
+    - level4.inf
+    - level5.inf
+    - level6.inf
+    - level7.inf
+    - level8.inf
+    - level9.inf
+    - level10.inf
+    - level11.inf
+    - level12.inf
+    - level13.inf
+    - level14.inf
+    - level15.inf
+    - level16.inf
+    - level1.maz
+    - level2.maz
+    - level3.maz
+    - level4.maz
+    - level5.maz
+    - level6.maz
+    - level7.maz
+    - level8.maz
+    - level9.maz
+    - level10.maz
+    - level11.maz
+    - level12.maz
+    - level13.maz
+    - level14.maz
+    - level15.maz
+    - azure.pal
+    - crimson.pal
+    - dung.pal
+    - finale_0.pal
+    - finale_1.pal
+    - finale_2.pal
+    - finale_3.pal
+    - finale_4.pal
+    - finale_5.pal
+    - finale_6.pal
+    - finale_7.pal
+    - forest.pal
+    - mezz.pal
+    - palette0.pal
+    - palette1.pal
+    - palette2.pal
+    - palette3.pal
+    - palette4.pal
+    - silver.pal
+    - eobdata0.sav
+    - azure.snd
+    - catacomb.snd
+    - crimson1.snd
+    - crimson2.snd
+    - finale1.snd
+    - finale2.snd
+    - forest.snd
+    - intro.snd
+    - mezanine.snd
+    - silver.snd
+    - credits.txt
+    - crimson.vcn
+    - dung.vcn
+    - forest.vcn
+    - mezz.vcn
+    - silver.vcn
+    - crimson.vmp
+    - dung.vmp
+    - forest.vmp
+    - levels.tmp
+    - mezz.vmp
+    - silver.vmp
+
+size_and_md5: |
+  21530     806cb1776e784cfc2af65a942faab4d3 airseal.cps
+  18510     8a8f78e442941dbf41f166ada1bfb7d4 altar.cps
+  7845      575d3a0db3c43daae8c43841702a5a8d ant.cps
+  6088      356179f19228c160418e33ab6da9260b aservant.cps
+  10543     d12e7cf375050b27cd9b6f38b5b6479c azure.adl
+  5112      4a3b57c3e5ba3936aeff7ff062e3ca19 azure.dec
+  768       8b33cb6b4fcc95cac08433effdb63c45 azure.ega
+  768       6a5d786b07334fc97f28dcbb58421a45 azure.pal
+  5190      dad1929f9e6df9414620e0eed484a50a azure.snd
+  23256     1f8abac0cf4b593a613dd90ae372780b azure1.cps
+  3545      7bb18a1ad377a2b4a11f8f84fa7dbe6b azure2.cps
+  20437     2bf6f4ec33ce4a773d2a21f1514c9dc5 badmood.cps
+  9283      9d4740f4507a78e78b7ae2ecdde7ba1b basilisk.cps
+  9918      2ee6b02af36b6bb0940585b54f8c0483 beholder.cps
+  38        420d84247141881952885cd6033898ad beholder.dcr
+  13344     7e5b10a0b193ba225ba55b4de6a01d92 blood.cps
+  3328      77e04ed70905ab348cdc1cf02536ddf8 border.cps
+  6048      28110ea83435124199ea4618b4e138b9 brown.dec
+  27229     fdd5e04b215cc592a41172116306b01e brown1.cps
+  18978     1101d1203a799f6c070e27a5dc437d53 brown2.cps
+  7434      c4138b2046284de4b23656e011ea637d brown3.cps
+  8588      c1fddc20cbda0c0fc4d0940e62646494 bulette.cps
+  8358      faf2162a32a5272ffbe5894e381013bf catacomb.adl
+  5190      a9e643d41f7cca90b6abe83f8bd99529 catacomb.snd
+  25914     720a0b092989972b08af80a9e221515f chargen.cps
+  33141     4ba0129a9a153e82531caad78058ff08 chargena.cps
+  7888      42951c212a1a70ad248706ede9dcee99 chargenb.cps
+  23794     46c1ebd6a2e6687b73db296241e7b79c choice.cps
+  7279      235048c75bd761b5ed676d64b2649077 cleric1.cps
+  110       5a090a2efbeabc7fa679bf82f3c79b0d cleric1.dcr
+  8689      c3fc873e3a91dace578846d2967ec856 cleric2.cps
+  110       2fe8c81e1488ca42bfb9178e46b4616e cleric2.dcr
+  8102      1deb7f1498dd8061f7d5117cc15f0aaf cleric3.cps
+  110       f307815af22ed16d5e038829267781c1 cleric3.dcr
+  5815      6a47a690c845b3baeca3eb1ad218f18c coin.cps
+  3340      307387089cc38fe237e64a96674ebebb credits.cps
+  2316      55319d602ca10bf9ed46df441a9fb1b0 credits.txt
+  8251      24677d107ec6ca01836f43886edf74f1 credits2.cps
+  2007      30343b3ef4111f50c20881af19988a97 credits3.cps
+  16047     fd3925d1fadcbc8c98dbfe919c207c18 crimring.cps
+  18617     8155dec1274781b43cf86035b5acf65d crimson.cps
+  4832      f476abf6216f8f190236bae8fee97a0b crimson.dec
+  768       d045a62bbda46ed23b55a1828354fecb crimson.ega
+  768       ca477228196475e9fda106b1d31c70fe crimson.pal
+  23699     cf2c69827f6c9ea015215bd9523b3c95 crimson.vcn
+  5834      137af24d2f29bbd620cb68f560e872c3 crimson.vmp
+  7863      5dceb0a050af0de6dd791b95cfed1132 crimson1.adl
+  5190      8a8f3f8068d79ded464795952527dc32 crimson1.snd
+  9288      57bb0efc01586ec175ae9a50afe0c829 crimson2.adl
+  1871      85128de4251f36dd67f389bc2392ce4a crimson2.cps
+  5190      50cf19aaccc43c6c94a75a6177ac902d crimson2.snd
+  23279     dd8b0648fc2fb435d87fe61e2696ce15 crystal.cps
+  5491      ab03159413501c07e36c644131547395 cube.cps
+  9047      79f0e75cb300400b7dfdf84f2316b98f darkmoon.cps
+  4929      f1338c11dffcf4db9ef6cf68cdb49641 decorate.cps
+  11029     586ff79db27ab1617bf467551186b1cb destroy0.cps
+  11739     e41f89f1c908d1beccc0dfeb2764abb6 destroy1.cps
+  13747     2db1a5ec0ed597ab92970e17e03888bb destroy2.cps
+  15998     f35d457964e0c0fce5f090839672987e destroy3.cps
+  17000     ad6cc0f9b75581c7f96ed05791f08da5 door1.cps
+  12117     359bf9d57fc6719ddc59aebcf86e9b3a door2.cps
+  9974      43daecc6525dc7ea5760758d3b662173 doorway1.cps
+  13154     cfcae0dd9ceda76160e06d1f22530e62 doorway2.cps
+  15706     b367eda918eafd27f0743b589d145c16 dragon.cps
+  74        632e1ed463238c7c82dd419bd9a5e857 dragon.dcr
+  16493     66ccdc3b9be02c51567bf24cabdb9a57 dragon1.cps
+  21760     8da8ef1cc330d822fed9db7134b589b3 dragon2.cps
+  6742      b8e0412e8409ead933c4bd5642942622 dran.cps
+  10967     97f3254e7e67a5e73b46f7c068fc6de4 dranaz3.cps
+  9738      2ecc91381d4cd8118d0709efce9f98fa dransl2.cps
+  17206     ad423d7a021833787daf67820bdabb16 dranx.cps
+  23919     448c8b32c694ec80497f81251ebe423d dream.cps
+  768       7f125b2263f57e166ad4040e4d310419 dung.ega
+  768       ccb247d7302eea5dc41cf29f973fc52b dung.pal
+  41549     664d26a3b53526b493ff83cf82a7f80e dung.vcn
+  5834      fdcde017a074eb8c60ff0bd7ed7b43f1 dung.vmp
+  46891     f5ba1b2e5d89e8c69f906a36ec3e9d99 eobdata0.sav
+  6         73a0d0e3eb71bd1c6b10bcf64053e3f5 eosprefs.dat
+  1792      72dc6cf8e2cf6428355a9c9649e7e0ac fading.dat
+  8402      bb4aaebc7198b7058c10329d141d8b84 finale1.adl
+  2115      ff7b60753a3aab257190c19aebc21002 finale1.snd
+  13349     9d6e3308f624f5fe831131853250a2d5 finale2.adl
+  1529      a48540937b85c077f488c7535549bb7b finale2.snd
+  768       3f9a086bc95157bb5c0cf1a6aea3a88e finale_0.pal
+  768       ab2b13e87db6ebcbde28ce6d3bd5bcbf finale_1.pal
+  768       36891b84540c4213f2a23dc62f2e8a13 finale_2.pal
+  768       906af79c60590eb39e0b674551a97faf finale_3.pal
+  768       b8a5f1b43c9a9e1bd4ecbc266607fc7d finale_4.pal
+  768       c1ec85484f4544e12e9e81e740ac387e finale_5.pal
+  768       c1114b9cb2e8082c217cb94fc2d39776 finale_6.pal
+  768       581f0ab7c85b752e9f217d85dc800715 finale_7.pal
+  1028      35a29d118c027c2963d6be6d113950b6 font6.fnt
+  1284      f83e15b5780ff8669cadc30e89730a89 font8.fnt
+  6997      6ec4e33c74aa3c90d60ac54d00818c3f forest.adl
+  10687     8a4cc4e54f61e1031b58ca4a39b27342 forest.cps
+  248       bb4bfc880c7b69735a6394220363db23 forest.dec
+  768       bf5f33965077557bc4d70aacc04c95ec forest.ega
+  768       b55088b48e62867847c529ae50c4e896 forest.pal
+  5190      0514bda74f77a195ed4e73c40f2c0b05 forest.snd
+  22139     a1ebb89c6c78307d46f71c8c47e887d7 forest.vcn
+  2386      e06b3dbeb9cd9dd6cfcf13651ddb9d80 forest.vmp
+  10761     4c98eefb19f918ce187b2b67bca32f80 frgiant.cps
+  7269      3f39c588329f5368d368c1cd1bebda32 fsnake.cps
+  9434      7ec218928bc321df48e14853ef8a4919 gargoyle.cps
+  6556      b7c50e3b6b86bdfb7edd29a38a146001 gasspore.cps
+  16870     cb6e226b86d40a90f5abd0e4b2632658 glass.cps
+  8715      87e09a5b0c8a42c5ac42fb46deec8471 guard1.cps
+  110       7c96a1f9e67af8c820a97d60602399ac guard1.dcr
+  7252      df9be2c12a6f1568f8cd5677cf75d140 guard2.cps
+  74        d4738d87069d84d73ac96ce00b9aeaac guard2.dcr
+  13436     4270072b5b0f15ff853b2866af2bebbe guardian.cps
+  526       0456e7403125bd5543b7a01d96872e38 head.cps
+  5595      20c0bbb04fc6453f27f9961923269c9c hellhnd.cps
+  18322     8af2110572d821b63b4ccc8c633d6008 heroes.cps
+  18291     aa2b8169a11daaaec8bd61a348e35b40 hurry1.cps
+  6954      05ce8c7d3bcb5c9fba6f744c80f1369f hurry2.cps
+  15391     8c6f1e27b290f95b44aac34ab6c9f395 implode.cps
+  7849      2fc9cd04ee2b4ffdac2b255698735d33 intro.adl
+  16479     5e59169f0fa21b95f584e7480eee30f1 intro.cps
+  768       6245f45e7e29b15d7d9a7674c4159a90 intro.ega
+  1529      9d6aeb753024281813d68dfef3eef16a intro.snd
+  2450      79218b31a19978f69526f05aeddfe90c invent.cps
+  10385     5b8c11c3c6d036f308a4cfeb9cb74091 item.dat
+  11056     1eeb747262e8490b4c557e05a375887d itemicn.cps
+  3685      1e3eebc2eba1698104dd70f07431b143 iteml1.cps
+  3981      589e4a50e85f5a8be3ecfe45e7caf696 items1.cps
+  1026      14e1399c2b293848ae7a7f81a6cd2473 itemtype.dat
+  15572     e25c2dbef64e21769f9d51e92e2141cb khelban1.cps
+  9163      bdfddce4e5a7c9cf5883fb6ce76a1858 khelban2.cps
+  11259     ef25a4948dfaaff57cb2c4f1f364b847 khelban3.cps
+  14137     225ff3f99b2083ff8a415d32f5c4ef46 khelban4.cps
+  8093      dd845e7024c7974256f3c2b057ad8318 khelban5.cps
+  13355     63f56a6ad4265c872ffa4e0a119a3964 khelban6.cps
+  7075      aeebfde3da090591c7543f3c01df6958 khelben.cps
+  17575     f5c03ddb23d3409e433ba33af31eb193 kheldran.cps
+  4712      fd7da33911f467b91039182478242537 level1.inf
+  4102      19b05a79eb2dce62bc49ab1a70da975b level1.maz
+  867       d5f92de043316f243981d006df36b5a7 level10.inf
+  4102      b98f4add568fd4a024d00e75addd1d1a level10.maz
+  5560      e310ee4d20af19304a37186836540ea5 level11.inf
+  4102      153c102ac9ce0839e646664529238224 level11.maz
+  5334      074ab94915ba9bb8fca7b6a43a40bac6 level12.inf
+  4102      66f286f03257f2489c8f31fd4be2b53a level12.maz
+  3746      61acf091c033d3b1aceead38263e63f5 level13.inf
+  4102      b9593d7b68540f3ce8e4c2461243fbd2 level13.maz
+  4258      4d20c134f90837960f2216e9f2016838 level14.inf
+  4102      0fb5594b49a9bc7e1255472dbf3b6401 level14.maz
+  4580      10f19eab75c73d0476dc58bcf70fff7a level15.inf
+  4102      d4586f655e8f69982aa7e8e64a192110 level15.maz
+  1769      96ee087ef44a38cfd8d4a11a22bf181b level16.inf
+  5048      57157e100434e83c353ad6da6c10552b level2.inf
+  4102      d3dbd0e2a50abe2f71374a5f3be90f35 level2.maz
+  4419      f539053035834eb12297598607326b56 level3.inf
+  4102      6904938b8747155fe93fcd8ccd2dc9fa level3.maz
+  1512      bb4b568afd69711bc012b0a8dd298e6f level4.inf
+  4102      2d4b0335c70a3b1cd4c372383c7aedf2 level4.maz
+  2684      03618b46cd79e6ef5e602b8ed7aa1468 level5.inf
+  4102      a30163ec65379620558d579e434ab7f6 level5.maz
+  5765      cc909423c5ebd738c57ed312d6f842df level6.inf
+  4102      b67701ca9bc77e0a6dbf067e33b91e9d level6.maz
+  5614      2fff506de3fec1d333c3d40da4d43889 level7.inf
+  4102      b20e11330931b458cae9bc4ca8672387 level7.maz
+  5112      013ec4993dcb86a238a54f7e8cabd5c8 level8.inf
+  4102      52b3003cdf93eb1747bf2b3bc8c0d76a level8.maz
+  4301      62fbd6efedce5c250d5485ecb29cac01 level9.inf
+  4102      f2a3e47c65a3f4bb99faec79432a6014 level9.maz
+  36210     3c8432b8429305fc25efb518fc856dfd levels.tmp
+  6341      963b4453d6bce1741e8fecb8370d7293 mage.cps
+  38        c3cb05e2407b20d9d4f75098d16a249a mage.dcr
+  3564      9ece60756c154e6715492fd7391d684a magic.cps
+  8830      6f76ad2ca7bc6564f1031c6a77100bd6 mantis.cps
+  110       331b9d8632a5dd8c31757bb75fe8b079 mantis.dcr
+  9166      6fb2f7bd829a0d66e3b5ca4f75a941e2 map.cps
+  6506      7915018a3df71e1a456d9c88c84d69d4 medusa.cps
+  24493     62cf6a1f523d65d5561583cfadc2782a menu.cps
+  768       1df6ed6a035433133e90114cb745b643 menu.ega
+  8070      a11e1fad95e8862f1deb18206f1cb953 mezanine.adl
+  5190      39bf1381b94096c58a05b7901ef726fd mezanine.snd
+  4476      7a87bd6d68708d6a2e732c2312e9417b mezz.dec
+  768       bd9ded287d8e1a6bf6d10b1f07011aa8 mezz.ega
+  768       b42ef408b89b1ee701827525a6e0cedf mezz.pal
+  25585     15e9af5752ed43c2bc62fc1a24e9c00e mezz.vcn
+  5834      0885209204f0b4f68cebc1f815644f64 mezz.vmp
+  22527     af25896bbdf9b2973d53add0634ca211 mezz1.cps
+  16354     fc6165d1421bcc42aa67d3219edc4133 mezz2.cps
+  8890      890478959a9720c08f0f286fea9f802d mindflay.cps
+  8999      92313fdb5c4d481f57ed2240eab346b3 mmouth1.cps
+  10658     7e0b9c728e0312e0e7d1972c2b4e58f8 mmouth2.cps
+  4315      b4a9e477dda6de40a21dc1d7633caa68 outports.cps
+  3583      becbe77bcb58b16857c2c0162d47cff1 outtake.cps
+  768       b55088b48e62867847c529ae50c4e896 palette.col
+  768       dcc4edd7bc9c2191f55dbf454b2c0dfb palette0.pal
+  768       8ae3c7118d9f582c65ddd0b006a70aa6 palette1.pal
+  768       425ee7f32190c2b8aef19bef6c41b1c7 palette2.pal
+  768       9caeb593212f7a606c662f29ca77f204 palette3.pal
+  768       cad882ce9a4facb21d09a3510b4f6217 palette4.pal
+  8821      5be9ab09c68a7c32d79e6129c137e9fd playfld.cps
+  13225     53cd968e393607ae76d0a1ddbe669954 portala.cps
+  16861     5c57d8e522806507d4240a1089a82293 portalb.cps
+  11154     7971486554dc87a4513aa0a10b987fbc salamndr.cps
+  7430      ea25bfc0dffaf1d111c31f5335851abd shrunken.cps
+  10381     6ea035ef09e1b2d99027e6dfe12d9a7c silver.adl
+  4692      0ab19cb968d8535e1897d14fdc50e480 silver.dec
+  768       b9aac802abb1b09eacfb1bc6b562d0b4 silver.ega
+  768       fc0bf2b99575b8faeeaf5974b124bf1a silver.pal
+  5190      737b783268132c1204b49f20bfc0ca26 silver.snd
+  24936     9d92fbb6fd3e0172ae67f5b6808b3c48 silver.vcn
+  5834      f0b4e7b1d7c795a76c38f704c366c2f9 silver.vmp
+  20543     0d5f30951aa396abcc2aaaafb8bf34e5 silver1.cps
+  7094      b79ed4dd9929b4f850aa6077ddc4bcd7 silver2.cps
+  14703     02e0e87f31bb1e81e5f29b420e8aa1bb skelwar.cps
+  29935     205af46030f07d390c313bb1f594664b sout1.cps
+  24759     266120f8458da01238d13e8edad1f42e sout2.cps
+  22232     c401645aea70c53977252ee21a81ed5e sout3.cps
+  27829     021f39d739bd4c0a1d3df5ac8dd93f52 sout4.cps
+  19589     7163a62b1968070a6895ec9a92210cfa sout5.cps
+  6581      c3c38764311d8fe3192b512d09cebd24 spider.cps
+  10632     00ffe5467772f62bb8d654d798646a19 stonegia.cps
+  13961     f74c4cbbd0fd4d3f3e2602202c62a6f1 street1.cps
+  13026     bbd1385733159878c7ddcd7d018cc7d1 street2.cps
+  18251     89ad6ca6bca651563ea5ee6e46a2e611 suicide.cps
+  9048      7d96144a74e86f874442049e7568662b tanglor.cps
+  22463     438534e7ba748251c5ac24b4d6654c88 text.dat
+  15017     1852cab73c06065c8e69325e92f5e1a9 thanks.cps
+  4957      c56660a48fa7a2841f4d22b01ec5e011 thrown.cps
+  5194      8ab47eecd89f45e25b8239f50698d8f2 wasp.cps
+  2451      3020688bd9095e565be5e42c54ded168 westwood.cps
+  6377      e61ac03e08c676e3761c1c45b005ec06 willowis.cps
+  23188     e7f0a30fe0aa68aa754f086dbc01e136 winding.cps
+  5952      1bec547324a4c3cd4b2a52b836159f19 wolf.cps
+
+sha1sums: |
+  28811325918990a7bcc028b4aa150877788f4352  airseal.cps
+  f297834dd876984451a5fb26594333bf8526ffae  altar.cps
+  1aef9bc8f60d5b8dc9a953b23830e35f35f02f97  ant.cps
+  c1ff3a145cff7f9a9f419c65bdb49eb607c6f1a5  aservant.cps
+  7743751f0f7def7585524641852f1fed6543aa5e  azure.adl
+  c83664321ecd9fbb6d6dfb8b530b173371bb6668  azure.dec
+  c77c2b4f5be684840519c85dbe1f7c7531374fe4  azure.snd
+  1bc3a67370d5efa9978d616fc7e9ea1283fe2a6e  azure1.cps
+  fce9612fd650c2e11e29b6d65925199c2fe1f9c0  badmood.cps
+  097ebd512de3e9731f85acda612892206f357f6e  basilisk.cps
+  65df53f7887052aa2c5004f67966dbf24498fa73  beholder.cps
+  43a8de9718127223ed0a68e0a14d80336b15a242  blood.cps
+  5eb1a0afbd11b93ec8bc064b7d4d397f519c86c9  brown.dec
+  965e9eacea06db15c365d9992335feeb555abf30  brown1.cps
+  36647ef919982f21da82a661535871f51d1f86d1  brown2.cps
+  d405baca6fa001bbba359b047ffb56479dd9c286  brown3.cps
+  f30e4ff9cea6291ef01412780340b1671c2597db  bulette.cps
+  9f3291fcb8f4b6ca53207fe2567e9c14ea1a7a5f  catacomb.adl
+  5f7c1f4ce662a9091d69d590dfbe289f8b0d9193  catacomb.snd
+  5aff3328e5cbe315400fadcf93b1bf18e0ba036d  chargen.cps
+  0323c06a2d6c3f838377b4ebdb9479ed17d91fe5  chargena.cps
+  51b4993ca0c797624a76023f2de78145e799becf  chargenb.cps
+  a1954183ffbda82e436b501958ed08e1f7d2b23d  choice.cps
+  dbb5cd5379701937d37276b865fbab9ecda56541  cleric1.cps
+  458e2fc2f4a5511b0a8f126c840bbe1fd812e67b  cleric2.cps
+  be5da9604c1bacb331a35b11789ef4fc5a713673  cleric3.cps
+  c6ab2a4c5b9720fe2abd3e2db9c07b021b11d9e7  coin.cps
+  239b91608babc8424cc5e3ac5e7bddd420417788  credits2.cps
+  ec4d84bd32c2bf0fc34fc785f0cdce6656b747cc  crimring.cps
+  19426b831a20bba891a510b4a304c8d7dd587cf8  crimson.cps
+  971d21814f0c040475df47de097532cfd3c46336  crimson.vcn
+  ff9835ed7b2b06a9b31a3b61de0ac4727dbb64f6  crimson.vmp
+  d7908aa6346af14c3947cfef76ed93ad1ae0fa1b  crimson1.adl
+  093cdb63845d3ff599e21ba5267e9cff08283825  crimson1.snd
+  4254ed319965a9ec600f7c262bec6d5035d5d334  crimson2.adl
+  a0d64553d66a2af10f8500475411d7beb4d42678  crimson2.snd
+  a28d0da49a17cf2b3b55bf4fa9a19e8a7b38f714  crystal.cps
+  fda6d1499895962cd263fd3d01c4d7eff61ad8a3  cube.cps
+  08421cea8379e3777ffc663e98fd3c9f4e2704ce  darkmoon.cps
+  0fdaa8ab7c01d14c98d6f335a18ade9252e94663  destroy0.cps
+  1da7bd847079b259e2f6496156a9c5da39d5563e  destroy1.cps
+  133b55bf4ca8ff58129810b5c0ff0ce4b2cbc631  destroy2.cps
+  20592baba55390ede40d0569358b4a749f9e61fd  destroy3.cps
+  0426d55c481ffccfee39a39aeed2fe0cd94bd3ee  door1.cps
+  8903e1c121818330a4a38164ff229e17055ba4ef  door2.cps
+  acb923f7cb3af7169e74a2ab769e143e55cfddd2  doorway1.cps
+  425c2a7cb068ada283600751a13cdb105451ddc3  doorway2.cps
+  7682e31cbd83ca731830b0530f248989e33b711b  dragon.cps
+  c0aab5acba747ccba964c547d800df258fd483ad  dragon1.cps
+  7003da2d28a4439ebc36b6a8b4b5c6b1fbb65edd  dragon2.cps
+  c22795a69430a182dc0697a5255c9c05f1259be7  dran.cps
+  ba998517eb024af942679b193635237cb9545e30  dranaz3.cps
+  e187b5994e0a63369a88ddf9511fefbe91264539  dransl2.cps
+  9160ad48391c0e0290ddc5ddf68a24d71b59de3c  dranx.cps
+  afff84264e7adeb55e993ec8857cf4f5032f236c  dream.cps
+  f8111345f4bad890efc02cb6d71581daceee3eb1  dung.vcn
+  a0c3bf346de4d34a60870a183a95abb56e85b694  dung.vmp
+  f5280573f9a301d9917b63b3e7e2699efafa8d2d  eobdata0.sav
+  8c3141ba7a9139ab4b0bbe70efb41c850c52dd07  finale1.adl
+  a598579ad8e810fe8a524f587757364bb5941609  finale2.adl
+  4a73f3ef4609bafc6ddd276c05911c6ae814a53d  forest.adl
+  8d33a00b6df8a38f498bd7c376c2c0da1d82eb85  forest.cps
+  75d8346cdd059bc68ca765bde5283b1381b94e5e  forest.snd
+  948865ea974b3062a60dd41efa2733f668a2fa97  forest.vcn
+  eef924cc04e1b32a60b54c31d94a1b885c17d95b  frgiant.cps
+  75c6ca8ca65361d547a009da0e2c9bdcedf03275  fsnake.cps
+  e4b6eceb4f847e9e507492a6f8dfcfdd3d34628d  gargoyle.cps
+  e2c54ece4510ded2b2c029c52958c38896e59ee9  gasspore.cps
+  4bb08531f7b5f9ec04602aa4e7c0cbdbbe8aa644  glass.cps
+  503039e312ab57052b76065fa2407eb73f987e9f  guard1.cps
+  a7fdecebd17029e861178592fda0725d9c126c02  guard2.cps
+  fb8dcdd0e9c016ce2fe510729cb7530502f9daab  guardian.cps
+  9db22647038f42a2b2ff007fb90414996764e031  hellhnd.cps
+  09b269c2969eb3ea7c973e176240ca405b4262d9  heroes.cps
+  4137fc062b5508436dd1c9b598ae4d2d1cc07e85  hurry1.cps
+  590a02c111ce842860cfa789d929a5f718a5e328  hurry2.cps
+  0816c7c7dc27394891627ab5a7a424e062b191b2  implode.cps
+  93baf637f05f7efebe2ff53a2ec8ebbc68fcd7f7  intro.adl
+  8db6963360891a50b0a1b4770d6e28494dceebb4  intro.cps
+  e07fe7373215b36a983fd201c832dbb5f96fe96d  item.dat
+  b6939d710b03f522cd63d0fc3f44c61684ba9ac1  itemicn.cps
+  012a76eb9d019515dee1a54159454eb85b761be6  khelban1.cps
+  da4eba2436740aab239580433a4b510ff09ab678  khelban2.cps
+  85b8ef555f30ad04c3fb8de3a67fa1f78806c894  khelban3.cps
+  d8924e9113048851e4cda1e8fb6531c46385724d  khelban4.cps
+  f358d2485c18446f27a10d6117e028a56afaed19  khelban5.cps
+  030312976f0a82b0bbdade66a2a2538bccaac965  khelban6.cps
+  66f4363dfcab85cf0cf6aeec1e3ada3b9665fd32  khelben.cps
+  26ffcbec4145152a368244455c19a914bde86ee5  kheldran.cps
+  4f8f069d18cd84233fdfb1dd60cbd486cabc8e8a  level11.inf
+  50ea5d727deb9bd48de3fc09f7fca12605371cea  level12.inf
+  5bc5477330e6b4ce707afe939ec167506be1671a  level2.inf
+  04f648399b73b0c929093771a8c2f3af5b9dcac4  level6.inf
+  6a925b57a55507e82744d27e00589747c9a4c66a  level7.inf
+  1e75a7e5d2b4ae8ec3b6aa0f16ebd7bb3d97cc4e  level8.inf
+  895acd851dbccf0917b68e85a0a21cb5987c7f60  levels.tmp
+  b13dd0bb29f79b27c7ba52d6bb11c7b6f81f3279  mage.cps
+  109a4cc089dbb44cbe74f9d8ca980438a231f3f8  mantis.cps
+  57f224ff43c1c2cb6ffdaeb76025827ed689b8af  map.cps
+  a3d9b5f066bb2e1d3c55b5e319e923acff0bcb96  medusa.cps
+  034b4fc90a4d4022ecb42594b537df5383221c94  menu.cps
+  d233c448d32bb4ea01c4aedf239e53203ab60174  mezanine.adl
+  bd3ecdfb336dee7a932c803ed0618d54ba12ad3b  mezanine.snd
+  fe819155403be6b4fb753270f33413a83e58bbc0  mezz.vcn
+  d7a356d46653cbc7f3943a8b7a8270d4c8416bff  mezz.vmp
+  778cfbb829306debb781b56792f414a9ee0c01a3  mezz1.cps
+  865065ecbfc53c67acc2cb0e46ff7aa5276ce32b  mezz2.cps
+  29efc91402c1c225545e99958aa497e7fb3da526  mindflay.cps
+  cdcfcd1567129616e11e78e710f7509ef6b18c9d  mmouth1.cps
+  1e58c1ab89cc8141db6ab498bf38945814eff41d  mmouth2.cps
+  a7d29d51f62f474cd70cda710915f1418a302ac3  playfld.cps
+  84a73113a3cd5aab36d38d47ff7f91b8b92501b3  portala.cps
+  04881576a3b6b76a1e070bc9c1854dd1b894ed3b  portalb.cps
+  2d56c63c1ae95e43b83898ef7698435d05b32e17  salamndr.cps
+  eddf861181c0ea3285d69a3a882b00ce42d1e8d2  shrunken.cps
+  ddd6a166e94a54b7a8cf15ebf5e1dda00009b848  silver.adl
+  6382d4c16d15f6ab8103201e1203869195175b02  silver.snd
+  c8310e966db456f0ab700f5f6c2b9205b26b789c  silver.vcn
+  07358a51a6cbd16997b552f3e9329ddb0cb28f28  silver.vmp
+  e650eee0f83f07cec3ce4334a25f1edce06ed8a1  silver1.cps
+  ca91d3cc2083875e015ce77809de8d2d20376116  silver2.cps
+  6ca9a07cdf97c479cceca11e5afb1fd65c5999b3  skelwar.cps
+  0bff8d8ac3f66119ab92889ec69f74eadecec3c1  sout1.cps
+  8c032332d774e47ac4f3b76d8aadc34d16783073  sout2.cps
+  71babfa4132797471d3c13d27224954e11b3071c  sout3.cps
+  a3955dc4188e5cc0c23fec7456d7ef20499fa5cd  sout4.cps
+  a2287ddd76a295c1cd2b66b4e2509bb7c4579da8  sout5.cps
+  ef5b97bf5dc37072bad1d620d4eb9fe207c469e3  spider.cps
+  73b65c00441e04860d941fdcc9842576e6d4782c  stonegia.cps
+  bf7e682a275fcce31c0769b31b0c96f800c2a041  street1.cps
+  0c562cbc601e291a05220cd295933c9b8f1b8aff  street2.cps
+  acec0b60ed30fb0ffe48d76498536456ca20dcb4  suicide.cps
+  56fc3124ab201f6e015699dc5bbb5952d58c66b6  tanglor.cps
+  e47722f5a41287f765e901eac67a01e49af5db11  text.dat
+  3752bac967cada6d3202ef5d397f0a425cb9a9f0  thanks.cps
+  de138d2936f67483a0de1feec7e3108268c36924  wasp.cps
+  61c70436675fb50852c890dea9674c0839ac6f3b  willowis.cps
+  1da64e9b550587f675300b82d5444634bdb0d757  winding.cps
+  395fb77cb9e56726329f5b05491cf3133cc527d7  wolf.cps
+...
