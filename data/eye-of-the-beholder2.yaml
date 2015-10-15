@@ -12,6 +12,8 @@ packages:
     # 'pref' as in 'preferences' ?
     optional:
     - eosprefs.dat
+    # Quick Start Party
+    - eobdata0.sav
     install:
     - azure.adl
     - catacomb.adl
@@ -219,7 +221,6 @@ packages:
     - palette3.pal
     - palette4.pal
     - silver.pal
-    - eobdata0.sav
     - azure.snd
     - catacomb.snd
     - crimson1.snd
@@ -248,6 +249,7 @@ files:
 
 size_and_md5: |
   6         73a0d0e3eb71bd1c6b10bcf64053e3f5 eosprefs.dat
+  46891     f5ba1b2e5d89e8c69f906a36ec3e9d99 eobdata0.sav
 
   21530     806cb1776e784cfc2af65a942faab4d3 airseal.cps
   18510     8a8f78e442941dbf41f166ada1bfb7d4 altar.cps
@@ -325,7 +327,6 @@ size_and_md5: |
   768       ccb247d7302eea5dc41cf29f973fc52b dung.pal
   41549     664d26a3b53526b493ff83cf82a7f80e dung.vcn
   5834      fdcde017a074eb8c60ff0bd7ed7b43f1 dung.vmp
-  46891     f5ba1b2e5d89e8c69f906a36ec3e9d99 eobdata0.sav
   1792      72dc6cf8e2cf6428355a9c9649e7e0ac fading.dat
   8402      bb4aaebc7198b7058c10329d141d8b84 finale1.adl
   2115      ff7b60753a3aab257190c19aebc21002 finale1.snd
