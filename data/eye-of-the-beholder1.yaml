@@ -6,10 +6,16 @@ genre: Role Playing
 plugin: scummvm_common
 wiki: Eye_of_the_Beholder
 gameid: eob
+try_repack_from: ['~/GOG Games/Eye of the Beholder']
 
 packages:
   # version 1.7
-  eye-of-the-beholder1-data:
+  eye-of-the-beholder1-en-data:
+    debian:
+      provides: eye-of-the-beholder1-data
+    gog:
+      url: forgotten_realms_the_archives_collection_one
+      game: eye_of_the_beholder
     install:
     - eobdata1.pak
     - eobdata2.pak
@@ -22,12 +28,50 @@ packages:
     # Quick Start Party
     optional:
     - eobdata.sav
+    doc:
+    - cluebook.pdf
+    - manual.pdf
 
 files:
   eobdata.sav:
     alternatives:
     - eobdata.sav?1
     - eobdata.sav?2
+
+  cluebook.pdf:
+    look_for: [cluebook.pdf,"clue book.pdf"]
+
+  setup_eye_of_the_beholder_2.0.0.4.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - eobdata1.pak
+    - eobdata2.pak
+    - eobdata3.pak
+    - eobdata4.pak
+    - eobdata5.pak
+    - eobdata6.pak
+    - font6.fnt
+    - font8.fnt
+    - eobdata.sav?2
+    - cluebook.pdf
+    - manual.pdf
+
+  gog_eye_of_the_beholder_2.0.0.2.sh:
+    unpack:
+      format: zip
+    provides:
+    - eobdata1.pak
+    - eobdata2.pak
+    - eobdata3.pak
+    - eobdata4.pak
+    - eobdata5.pak
+    - eobdata6.pak
+    - font6.fnt
+    - font8.fnt
+    - eobdata.sav?2
+    - cluebook.pdf
+    - manual.pdf
 
 size_and_md5: |
   237691    7c5aae5c361dea7b3a14c3c31dec513e eobdata1.pak
@@ -41,6 +85,15 @@ size_and_md5: |
   1028      96de7c14da18ebe209f6db87a6b290d5 font6.fnt
   1284      f83e15b5780ff8669cadc30e89730a89 font8.fnt
 
+  7986153   a63958ffba11e7192c86a17ab60a658f cluebook.pdf
+  10027534  2d3214839ebf5696cf95cc2004df3ef3 manual.pdf
+  38269920  cfc483c9ee48c514c2963c79ae9b8950 setup_eye_of_the_beholder_2.0.0.4.exe
+  36671424  096fbeefed0a791de7c66add621aa238 setup_eye_of_the_beholder_german_2.0.0.4.exe
+  36743168  08f548efbe6f3891218879757cb389e1 setup_eye_of_the_beholder_spanish_2.0.0.4.exe
+  26407111  dbf82c6c123ab8ef845318e205dbba3f gog_eye_of_the_beholder_2.0.0.2.sh
+  24782841  b05b8cf44a5ab0452ac2da77347442f9 gog_eye_of_the_beholder_german_2.0.0.2.sh
+  24873614  27ad7e7b1a96764b2a0b368c0778beec gog_eye_of_the_beholder_spanish_2.0.0.2.sh
+
 sha1sums: |
   6094abe7d211fc2909f05e6af60b6e1f2141c84e  eobdata1.pak
   26bcc449291cec667dba27c4e13d80454b426816  eobdata2.pak
@@ -50,4 +103,13 @@ sha1sums: |
   3610cb42bc283f8450a1be67c2be2903c1bbebab  eobdata6.pak
   b64c3e5e03963f45f4ee785e1151252b5ff2341a  eobdata.sav?1
   5c32261dc4c1cf3892af4e06e30bea00778589ac  eobdata.sav?2
+
+  564511053ae485ae810de47a167fe061cca6b7c9  cluebook.pdf
+  72bedcfe3affb2fee1828fd86a037f1e85671488  manual.pdf
+  1890e2e65f4dd664539e313bf9cc1cdfd8d15fd0  setup_eye_of_the_beholder_2.0.0.4.exe
+  1185d985e22f2efc084cf0220b59febe1ddb7f77  setup_eye_of_the_beholder_german_2.0.0.4.exe
+  ce5b7b4f66d7d8957d25122e8c1120a5dab3b76a  setup_eye_of_the_beholder_spanish_2.0.0.4.exe
+  ef99ad8ddcc7e9d687a8e797c165554007914b00  gog_eye_of_the_beholder_2.0.0.2.sh
+  4bb484a68067ec4a22479984eeb66f3c624ab930  gog_eye_of_the_beholder_german_2.0.0.2.sh
+  3e65602c4e4aa06fe5c3b3419ce391e6530c4ffd  gog_eye_of_the_beholder_spanish_2.0.0.2.sh
 ...
