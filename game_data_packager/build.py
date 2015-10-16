@@ -704,7 +704,7 @@ class PackagingTask(object):
             distinctive_dirs = provider.unpack.get('distinctive_dirs', True)
 
         for entry in zf.infolist():
-            if not entry.file_size:
+            if not entry.file_size and entry.filename.endswith('/'):
                 continue
 
             for filename in try_to_unpack:
@@ -1225,6 +1225,8 @@ class PackagingTask(object):
                     assert (self.file_status[wanted.name] ==
                             FillResult.COMPLETE)
                     return FillResult.COMPLETE
+            elif wanted.size == 0:
+                self.use_file(wanted, '/dev/null')
             elif self.file_status[provider_name] is FillResult.DOWNLOAD_NEEDED:
                 # we don't have it, but we can get it
                 self.file_status[wanted.name] |= FillResult.DOWNLOAD_NEEDED

@@ -515,10 +515,6 @@ files:
     - credits.txt?1
     - credits.txt?2
 
-  # workaround bug when processing 0 byte file in zip file
-  playfld.cps?de:
-    look_for: [playfld.cps,/dev/null]
-
   cluebook.pdf:
     look_for: [cluebook.pdf,eobii_cluebook_pdf.pdf]
   manual.pdf:
