@@ -744,9 +744,17 @@ files:
     - mezz.vmp
     - silver.vmp
 
+  item.dat?es:
+    unsuitable: The Spanish version is not yet supported by ScummVM
+  gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_spanish_2.0.0.1.sh:
+    unsuitable: The Spanish version is not yet supported by ScummVM
+  setup_eye_of_the_beholder2_spanish_2.0.0.3.exe:
+    unsuitable: The Spanish version is not yet supported by ScummVM
+
 size_and_md5: |
   6         73a0d0e3eb71bd1c6b10bcf64053e3f5 eosprefs.dat
   46891     f5ba1b2e5d89e8c69f906a36ec3e9d99 eobdata0.sav
+  46891     53ec022abb35f5851d9c5611d95b7b4d eobdata0.sav?es
 
   21530     806cb1776e784cfc2af65a942faab4d3 airseal.cps
   18510     8a8f78e442941dbf41f166ada1bfb7d4 altar.cps
@@ -773,8 +781,10 @@ size_and_md5: |
   8358      faf2162a32a5272ffbe5894e381013bf catacomb.adl
   5190      a9e643d41f7cca90b6abe83f8bd99529 catacomb.snd
   25914     720a0b092989972b08af80a9e221515f chargen.cps
+  26136     7691b0b97da0924f70153ffaf1eb3a2c chargen.cps?es
   33141     4ba0129a9a153e82531caad78058ff08 chargena.cps
   7888      42951c212a1a70ad248706ede9dcee99 chargenb.cps
+  7943      19e10d47889a6dd78e9ba0a08218b262 chargenb.cps?es
   23794     46c1ebd6a2e6687b73db296241e7b79c choice.cps
   7279      235048c75bd761b5ed676d64b2649077 cleric1.cps
   110       5a090a2efbeabc7fa679bf82f3c79b0d cleric1.dcr
@@ -786,6 +796,7 @@ size_and_md5: |
   3340      307387089cc38fe237e64a96674ebebb credits.cps
   2316      55319d602ca10bf9ed46df441a9fb1b0 credits.txt?1
   2036      e2f7bad40f244f22ba48afb2eac74912 credits.txt?2
+  2316      55319d602ca10bf9ed46df441a9fb1b0 credits.txt?es
   8251      24677d107ec6ca01836f43886edf74f1 credits2.cps
   2007      30343b3ef4111f50c20881af19988a97 credits3.cps
   16047     fd3925d1fadcbc8c98dbfe919c207c18 crimring.cps
@@ -870,6 +881,7 @@ size_and_md5: |
   1529      9d6aeb753024281813d68dfef3eef16a intro.snd
   2450      79218b31a19978f69526f05aeddfe90c invent.cps
   10385     5b8c11c3c6d036f308a4cfeb9cb74091 item.dat
+  10385     32741d4937cbcce63c8fd36a8d17a769 item.dat?es
   11056     1eeb747262e8490b4c557e05a375887d itemicn.cps
   3685      1e3eebc2eba1698104dd70f07431b143 iteml1.cps
   3981      589e4a50e85f5a8be3ecfe45e7caf696 items1.cps
@@ -883,35 +895,51 @@ size_and_md5: |
   7075      aeebfde3da090591c7543f3c01df6958 khelben.cps
   17575     f5c03ddb23d3409e433ba33af31eb193 kheldran.cps
   4712      fd7da33911f467b91039182478242537 level1.inf
+  7699      ee11abc20959bf56205d05d221aafa0d level1.inf?es
   4102      19b05a79eb2dce62bc49ab1a70da975b level1.maz
   867       d5f92de043316f243981d006df36b5a7 level10.inf
+  1082      7379422af0856da3058a4099c9be6532 level10.inf?es
   4102      b98f4add568fd4a024d00e75addd1d1a level10.maz
   5560      e310ee4d20af19304a37186836540ea5 level11.inf
+  8644      ae5c0f6c698788129d273a5ea70aff0e level11.inf?es
   4102      153c102ac9ce0839e646664529238224 level11.maz
   5334      074ab94915ba9bb8fca7b6a43a40bac6 level12.inf
+  8847      e72061ce2a9b6320ee5f1a37c7ae4c76 level12.inf?es
   4102      66f286f03257f2489c8f31fd4be2b53a level12.maz
   3746      61acf091c033d3b1aceead38263e63f5 level13.inf
+  5744      4bd7501a19144a2292c36eb3b71c7081 level13.inf?es
   4102      b9593d7b68540f3ce8e4c2461243fbd2 level13.maz
   4258      4d20c134f90837960f2216e9f2016838 level14.inf
+  7635      567bf0d846d8e8cabf7f4a5ba1e58d01 level14.inf?es
   4102      0fb5594b49a9bc7e1255472dbf3b6401 level14.maz
   4580      10f19eab75c73d0476dc58bcf70fff7a level15.inf
+  7325      099c683dc4e66171b19b64ea3e90aa12 level15.inf?es
   4102      d4586f655e8f69982aa7e8e64a192110 level15.maz
   1769      96ee087ef44a38cfd8d4a11a22bf181b level16.inf
+  3178      3f02011f86cc999e5ff8b4730f2c2177 level16.inf?es
   5048      57157e100434e83c353ad6da6c10552b level2.inf
+  8614      b9252329605659395083a3de5c8ca29f level2.inf?es
   4102      d3dbd0e2a50abe2f71374a5f3be90f35 level2.maz
   4419      f539053035834eb12297598607326b56 level3.inf
+  7043      d18e07241fc918c91335d9e79046d7cb level3.inf?es
   4102      6904938b8747155fe93fcd8ccd2dc9fa level3.maz
   1512      bb4b568afd69711bc012b0a8dd298e6f level4.inf
+  2390      e81834655960bd872b5e85e698a96db3 level4.inf?es
   4102      2d4b0335c70a3b1cd4c372383c7aedf2 level4.maz
   2684      03618b46cd79e6ef5e602b8ed7aa1468 level5.inf
+  4153      eb13498fab5e172c7add1ee939b8add8 level5.inf?es
   4102      a30163ec65379620558d579e434ab7f6 level5.maz
   5765      cc909423c5ebd738c57ed312d6f842df level6.inf
+  9065      70879d7704db9a52df6936852e230417 level6.inf?es
   4102      b67701ca9bc77e0a6dbf067e33b91e9d level6.maz
   5614      2fff506de3fec1d333c3d40da4d43889 level7.inf
+  9376      bf1610083e65cc435ad3416055d7f0cb level7.inf?es
   4102      b20e11330931b458cae9bc4ca8672387 level7.maz
   5112      013ec4993dcb86a238a54f7e8cabd5c8 level8.inf
+  8657      9fd85b012ebf56f4d9268deaa5eac0e4 level8.inf?es
   4102      52b3003cdf93eb1747bf2b3bc8c0d76a level8.maz
   4301      62fbd6efedce5c250d5485ecb29cac01 level9.inf
+  6671      5517b9965f8b04987ac449b87ca867bd level9.inf?es
   4102      f2a3e47c65a3f4bb99faec79432a6014 level9.maz
   6341      963b4453d6bce1741e8fecb8370d7293 mage.cps
   38        c3cb05e2407b20d9d4f75098d16a249a mage.dcr
@@ -969,6 +997,7 @@ size_and_md5: |
   18251     89ad6ca6bca651563ea5ee6e46a2e611 suicide.cps
   9048      7d96144a74e86f874442049e7568662b tanglor.cps
   22463     438534e7ba748251c5ac24b4d6654c88 text.dat
+  23085     f3b75050a8852c0711027e341fdeb4bb text.dat?es
   15017     1852cab73c06065c8e69325e92f5e1a9 thanks.cps
   4957      c56660a48fa7a2841f4d22b01ec5e011 thrown.cps
   5194      8ab47eecd89f45e25b8239f50698d8f2 wasp.cps
@@ -980,7 +1009,9 @@ size_and_md5: |
   95383153  cf57a085b0d7c5e103200805e26bb029 cluebook.pdf
   6879531   666fa65ded5913b170cb10a026e57670 manual.pdf
   106070730 31c0c708ab12c36e2f17fb58b1c88061 gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_2.0.0.1.sh
+  106053490 bfd32712589a696925b923c0c6bf7545 gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_spanish_2.0.0.1.sh
   113999752 325700eeea8355643606ebdaa99fdd68 setup_eye_of_the_beholder2_2.0.0.3.exe
+  113978184 dde1eb6b695c5d23d43129af8cb3ea42 setup_eye_of_the_beholder2_spanish_2.0.0.3.exe
 
 sha1sums: |
   28811325918990a7bcc028b4aa150877788f4352  airseal.cps
@@ -1125,5 +1156,7 @@ sha1sums: |
   7db8d00adafc1c57ac54b857bf45765bc868a302  cluebook.pdf
   13ae09c426e45ce39725a967c41791c179875539  manual.pdf
   f8e9841b135de1eb6b9b3bddc516673a862f7617  gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_2.0.0.1.sh
+  8326662ede9a91cf7523b61f44400f90eb462b80  gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_spanish_2.0.0.1.sh
   2eb96f06b3afe592c041412a8c140c0f89b4aafb  setup_eye_of_the_beholder2_2.0.0.3.exe
+  c34db46229f9000442bc47c73e6ef89bc60240da  setup_eye_of_the_beholder2_spanish_2.0.0.3.exe
 ...
