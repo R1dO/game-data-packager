@@ -10,6 +10,9 @@ try_repack_from: ['~/GOG Games/Eye of the Beholder']
 
 missing_langs: [es]
 
+# http://eob.wikispaces.com/eob.dro
+# http://eob.wikispaces.com/eob.inf
+
 help_text: |
   The Spanish version is not yet supported by ScummVM
 
@@ -38,6 +41,210 @@ packages:
     doc:
     - cluebook.pdf
     - manual.pdf
+
+  eye-of-the-beholder1-de-data:
+    lang: de
+    debian:
+      provides: eye-of-the-beholder1-data
+    gog:
+      url: forgotten_realms_the_archives_collection_one
+      game: eye_of_the_beholder
+    doc:
+    - cluebook.pdf
+    - manual.pdf
+    optional:
+    - eobdata.sav?de
+    install:
+    - adlib.dat
+    - adventur.cmp
+    - and.cmp
+    - avalanch.cmp
+    - blue.cps
+    - blue.dat
+    - blue.ecn
+    - blue.ega
+    - blue.emp
+    - blue.pal
+    - blue.vcn
+    - blue.vmp
+    - brick.dat
+    - brick.ecn
+    - brick.emp
+    - brick.pal
+    - brick.vcn
+    - brick.vmp
+    - brick1.cps
+    - brick1.ega
+    - brick2.cps
+    - brick2.ega
+    - brick3.cps
+    - brick3.ega
+    - chargen.cps
+    - chargen.ega
+    - chargena.cps
+    - chargena.ega
+    - chargenb.cps
+    - chargenb.ega
+    - dand.cmp
+    - decorate.cps
+    - decorate.ega
+    - disbeast.cps
+    - disbeast.ega
+    - door.cps
+    - door.ega
+    - drider1.cps
+    - drider1.ega
+    - drow.cps
+    - drow.dat
+    - drow.ecn
+    - drow.ega
+    - drow.emp
+    - drow.pal
+    - drow.vcn
+    - drow.vmp
+    - drowelf.cps
+    - drowelf.ega
+    - dwarf.cps
+    - dwarf.ega
+    - eobpal.col
+    - eobtitle.cmp
+    - flind.cps
+    - flind.ega
+    - font6.fnt
+    - font8.fnt
+    - golem.cps
+    - golem.ega
+    - green.cps
+    - green.dat
+    - green.ecn
+    - green.ega
+    - green.emp
+    - green.pal
+    - green.vcn
+    - green.vmp
+    - hands.cmp
+    - hellhnd.cps
+    - hellhnd.ega
+    - intro.cps
+    - intro.ega
+    - invent.cps
+    - invent.ega
+    - item.dat
+    - itemicn.cps
+    - itemicn.ega
+    - iteml1.cps
+    - iteml1.ega
+    - itemrmp.ega
+    - itemrmp.vga
+    - items1.cps
+    - items1.ega
+    - itemtype.dat
+    - kenku.cps
+    - kenku.ega
+    - king.cmp
+    - kobold.cps
+    - kobold.ega
+    - kuotoa.cps
+    - kuotoa.ega
+    - leech.cps
+    - leech.ega
+    - level1.elo
+    - level1.maz
+    - level10.elo
+    - level10.maz
+    - level11.elo
+    - level11.maz
+    - level12.elo
+    - level12.maz
+    - level2.elo
+    - level2.maz
+    - level3.elo
+    - level3.maz
+    - level4.elo
+    - level4.maz
+    - level5.elo
+    - level5.maz
+    - level6.elo
+    - level6.maz
+    - level7.elo
+    - level7.maz
+    - level8.elo
+    - level8.maz
+    - level9.elo
+    - level9.maz
+    - mage.cps
+    - mage.ega
+    - mantis.cps
+    - mantis1.cps
+    - mantis1.ega
+    - mflayer.cps
+    - mflayer.ega
+    - orb.cmp
+    - orb.col
+    - outtake.cps
+    - outtake.ega
+    - palette.col
+    - pcgamesn.dat
+    - pcsound.dat
+    - playfld.cps
+    - playfld.ega
+    - portala.cps
+    - portala.ega
+    - portalb.cps
+    - portalb.ega
+    - present.cmp
+    - rust1.cps
+    - rust1.ega
+    - shindia.cps
+    - shindia.ega
+    - skeleton.cps
+    - skeleton.ega
+    - skelwar.cps
+    - skelwar.ega
+    - sound.dat
+    - spider1.cps
+    - spider1.ega
+    - ssi.cmp
+    - text.dat
+    - text.raw
+    - thrown.cps
+    - thrown.ega
+    - title-e.cmp
+    - title-v.cmp
+    - title-v.col
+    - towrmage.cmp
+    - towrmage.col
+    - treeinfo.ncd
+    - tunnel.cmp
+    - westwood.cmp
+    - westwood.col
+    - wtrdp1.cmp
+    - wtrdp2.cmp
+    - wtrdp2.col
+    - wtrdp3.cmp
+    - xanath1.cps
+    - xanath1.ega
+    - xanatha.cps
+    - xanatha.dat
+    - xanatha.ecn
+    - xanatha.ega
+    - xanatha.emp
+    - xanatha.pal
+    - xanatha.vcn
+    - xanatha.vmp
+    - xanatha.vol
+    - xdeath1.cps
+    - xdeath1.ega
+    - xdeath2.cps
+    - xdeath2.ega
+    - xdeath3.cps
+    - xdeath3.ega
+    - xorn1.cps
+    - xorn1.ega
+    - zombie.cps
+    - zombie.ega
+    - zoomtunl.cmp
+    - zoomtunl.col
 
 files:
   eobdata.sav:
@@ -80,6 +287,402 @@ files:
     - cluebook.pdf
     - manual.pdf
 
+  setup_eye_of_the_beholder_german_2.0.0.4.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - cluebook.pdf
+    - manual.pdf
+    - eobdata.sav?de
+    - adlib.dat
+    - adventur.cmp
+    - and.cmp
+    - avalanch.cmp
+    - blue.cps
+    - blue.dat
+    - blue.ecn
+    - blue.ega
+    - blue.emp
+    - blue.pal
+    - blue.vcn
+    - blue.vmp
+    - brick.dat
+    - brick.ecn
+    - brick.emp
+    - brick.pal
+    - brick.vcn
+    - brick.vmp
+    - brick1.cps
+    - brick1.ega
+    - brick2.cps
+    - brick2.ega
+    - brick3.cps
+    - brick3.ega
+    - chargen.cps
+    - chargen.ega
+    - chargena.cps
+    - chargena.ega
+    - chargenb.cps
+    - chargenb.ega
+    - dand.cmp
+    - decorate.cps
+    - decorate.ega
+    - disbeast.cps
+    - disbeast.ega
+    - door.cps
+    - door.ega
+    - drider1.cps
+    - drider1.ega
+    - drow.cps
+    - drow.dat
+    - drow.ecn
+    - drow.ega
+    - drow.emp
+    - drow.pal
+    - drow.vcn
+    - drow.vmp
+    - drowelf.cps
+    - drowelf.ega
+    - dwarf.cps
+    - dwarf.ega
+    - eobpal.col
+    - eobtitle.cmp
+    - flind.cps
+    - flind.ega
+    - font6.fnt
+    - font8.fnt
+    - golem.cps
+    - golem.ega
+    - green.cps
+    - green.dat
+    - green.ecn
+    - green.ega
+    - green.emp
+    - green.pal
+    - green.vcn
+    - green.vmp
+    - hands.cmp
+    - hellhnd.cps
+    - hellhnd.ega
+    - intro.cps
+    - intro.ega
+    - invent.cps
+    - invent.ega
+    - item.dat
+    - itemicn.cps
+    - itemicn.ega
+    - iteml1.cps
+    - iteml1.ega
+    - itemrmp.ega
+    - itemrmp.vga
+    - items1.cps
+    - items1.ega
+    - itemtype.dat
+    - kenku.cps
+    - kenku.ega
+    - king.cmp
+    - kobold.cps
+    - kobold.ega
+    - kuotoa.cps
+    - kuotoa.ega
+    - leech.cps
+    - leech.ega
+    - level1.elo
+    - level1.maz
+    - level10.elo
+    - level10.maz
+    - level11.elo
+    - level11.maz
+    - level12.elo
+    - level12.maz
+    - level2.elo
+    - level2.maz
+    - level3.elo
+    - level3.maz
+    - level4.elo
+    - level4.maz
+    - level5.elo
+    - level5.maz
+    - level6.elo
+    - level6.maz
+    - level7.elo
+    - level7.maz
+    - level8.elo
+    - level8.maz
+    - level9.elo
+    - level9.maz
+    - mage.cps
+    - mage.ega
+    - mantis.cps
+    - mantis1.cps
+    - mantis1.ega
+    - mflayer.cps
+    - mflayer.ega
+    - orb.cmp
+    - orb.col
+    - outtake.cps
+    - outtake.ega
+    - palette.col
+    - pcgamesn.dat
+    - pcsound.dat
+    - playfld.cps
+    - playfld.ega
+    - portala.cps
+    - portala.ega
+    - portalb.cps
+    - portalb.ega
+    - present.cmp
+    - rust1.cps
+    - rust1.ega
+    - shindia.cps
+    - shindia.ega
+    - skeleton.cps
+    - skeleton.ega
+    - skelwar.cps
+    - skelwar.ega
+    - sound.dat
+    - spider1.cps
+    - spider1.ega
+    - ssi.cmp
+    - text.dat
+    - text.raw
+    - thrown.cps
+    - thrown.ega
+    - title-e.cmp
+    - title-v.cmp
+    - title-v.col
+    - towrmage.cmp
+    - towrmage.col
+    - treeinfo.ncd
+    - tunnel.cmp
+    - westwood.cmp
+    - westwood.col
+    - wtrdp1.cmp
+    - wtrdp2.cmp
+    - wtrdp2.col
+    - wtrdp3.cmp
+    - xanath1.cps
+    - xanath1.ega
+    - xanatha.cps
+    - xanatha.dat
+    - xanatha.ecn
+    - xanatha.ega
+    - xanatha.emp
+    - xanatha.pal
+    - xanatha.vcn
+    - xanatha.vmp
+    - xanatha.vol
+    - xdeath1.cps
+    - xdeath1.ega
+    - xdeath2.cps
+    - xdeath2.ega
+    - xdeath3.cps
+    - xdeath3.ega
+    - xorn1.cps
+    - xorn1.ega
+    - zombie.cps
+    - zombie.ega
+    - zoomtunl.cmp
+    - zoomtunl.col
+
+  gog_eye_of_the_beholder_german_2.0.0.2.sh:
+    unpack:
+      format: zip
+    provides:
+    - cluebook.pdf
+    - manual.pdf
+    - eobdata.sav?de
+    - adlib.dat
+    - adventur.cmp
+    - and.cmp
+    - avalanch.cmp
+    - blue.cps
+    - blue.dat
+    - blue.ecn
+    - blue.ega
+    - blue.emp
+    - blue.pal
+    - blue.vcn
+    - blue.vmp
+    - brick.dat
+    - brick.ecn
+    - brick.emp
+    - brick.pal
+    - brick.vcn
+    - brick.vmp
+    - brick1.cps
+    - brick1.ega
+    - brick2.cps
+    - brick2.ega
+    - brick3.cps
+    - brick3.ega
+    - chargen.cps
+    - chargen.ega
+    - chargena.cps
+    - chargena.ega
+    - chargenb.cps
+    - chargenb.ega
+    - dand.cmp
+    - decorate.cps
+    - decorate.ega
+    - disbeast.cps
+    - disbeast.ega
+    - door.cps
+    - door.ega
+    - drider1.cps
+    - drider1.ega
+    - drow.cps
+    - drow.dat
+    - drow.ecn
+    - drow.ega
+    - drow.emp
+    - drow.pal
+    - drow.vcn
+    - drow.vmp
+    - drowelf.cps
+    - drowelf.ega
+    - dwarf.cps
+    - dwarf.ega
+    - eobpal.col
+    - eobtitle.cmp
+    - flind.cps
+    - flind.ega
+    - font6.fnt
+    - font8.fnt
+    - golem.cps
+    - golem.ega
+    - green.cps
+    - green.dat
+    - green.ecn
+    - green.ega
+    - green.emp
+    - green.pal
+    - green.vcn
+    - green.vmp
+    - hands.cmp
+    - hellhnd.cps
+    - hellhnd.ega
+    - intro.cps
+    - intro.ega
+    - invent.cps
+    - invent.ega
+    - item.dat
+    - itemicn.cps
+    - itemicn.ega
+    - iteml1.cps
+    - iteml1.ega
+    - itemrmp.ega
+    - itemrmp.vga
+    - items1.cps
+    - items1.ega
+    - itemtype.dat
+    - kenku.cps
+    - kenku.ega
+    - king.cmp
+    - kobold.cps
+    - kobold.ega
+    - kuotoa.cps
+    - kuotoa.ega
+    - leech.cps
+    - leech.ega
+    - level1.elo
+    - level1.maz
+    - level10.elo
+    - level10.maz
+    - level11.elo
+    - level11.maz
+    - level12.elo
+    - level12.maz
+    - level2.elo
+    - level2.maz
+    - level3.elo
+    - level3.maz
+    - level4.elo
+    - level4.maz
+    - level5.elo
+    - level5.maz
+    - level6.elo
+    - level6.maz
+    - level7.elo
+    - level7.maz
+    - level8.elo
+    - level8.maz
+    - level9.elo
+    - level9.maz
+    - mage.cps
+    - mage.ega
+    - mantis.cps
+    - mantis1.cps
+    - mantis1.ega
+    - mflayer.cps
+    - mflayer.ega
+    - orb.cmp
+    - orb.col
+    - outtake.cps
+    - outtake.ega
+    - palette.col
+    - pcgamesn.dat
+    - pcsound.dat
+    - playfld.cps
+    - playfld.ega
+    - portala.cps
+    - portala.ega
+    - portalb.cps
+    - portalb.ega
+    - present.cmp
+    - rust1.cps
+    - rust1.ega
+    - shindia.cps
+    - shindia.ega
+    - skeleton.cps
+    - skeleton.ega
+    - skelwar.cps
+    - skelwar.ega
+    - sound.dat
+    - spider1.cps
+    - spider1.ega
+    - ssi.cmp
+    - text.dat
+    - text.raw
+    - thrown.cps
+    - thrown.ega
+    - title-e.cmp
+    - title-v.cmp
+    - title-v.col
+    - towrmage.cmp
+    - towrmage.col
+    - treeinfo.ncd
+    - tunnel.cmp
+    - westwood.cmp
+    - westwood.col
+    - wtrdp1.cmp
+    - wtrdp2.cmp
+    - wtrdp2.col
+    - wtrdp3.cmp
+    - xanath1.cps
+    - xanath1.ega
+    - xanatha.cps
+    - xanatha.dat
+    - xanatha.ecn
+    - xanatha.ega
+    - xanatha.emp
+    - xanatha.pal
+    - xanatha.vcn
+    - xanatha.vmp
+    - xanatha.vol
+    - xdeath1.cps
+    - xdeath1.ega
+    - xdeath2.cps
+    - xdeath2.ega
+    - xdeath3.cps
+    - xdeath3.ega
+    - xorn1.cps
+    - xorn1.ega
+    - zombie.cps
+    - zombie.ega
+    - zoomtunl.cmp
+    - zoomtunl.col
+
   eobdata3.pak?es:
     unsuitable: The Spanish version is not yet supported by ScummVM
   eobdata6.pak?es:
@@ -102,11 +705,231 @@ size_and_md5: |
   317081    b724ab4dca4341b28bdc943d756d367a eobdata6.pak?es
   33101     8de5eadd17246e87491e3a22e03fd792 eobdata.sav?1
   33101     0f423953de8b07e985c97d611c8af070 eobdata.sav?2
+  33101     ab3f1627909dcdefbcb2b7d272e7933b eobdata.sav?de
   33101     12a891af1bca26f2a191a483973555c2 eobdata.sav?es
   1028      96de7c14da18ebe209f6db87a6b290d5 font6.fnt
   1284      f83e15b5780ff8669cadc30e89730a89 font8.fnt
 
+  7489      e0c0f134185e8b99bc7fea4665c9df17 adlib.dat
+  8078      b30bd6b9a7e3452261e3d43966c3a0b0 adventur.cmp
+  364       3033548a10619cd07b24532a59a42b92 and.cmp
+  20524     872182aed4ccb4b9a2fc1bb18ec0e7b2 avalanch.cmp
+  22787     396636865879e820383958657656d18f blue.cps
+  3228      b4c593776f46be6f56fee92dbd6467c7 blue.dat
+  24290     2aee74768f915a9894db5ea8f9b8fa0e blue.ecn
+  13946     5ff6bce3092f2ba552ce048d1e2f6216 blue.ega
+  5834      d8d839992ba25e7be3d4921381c18e8c blue.emp
+  768       3e60a7854597c0e8917a723203d23978 blue.pal
+  40822     f1f3962436b58195fda9c797963a323c blue.vcn
+  5834      ce4948e7661d04a1531ad10bdc7f64e4 blue.vmp
+  4540      4de559ca528e606f829bf2e2f86ba7b5 brick.dat
+  20641     0c209420faffd6bcdd743636a069cd1a brick.ecn
+  5834      d1dfd0328a1222ceebf4de572c5c08f4 brick.emp
+  768       17ac27a690871ddc85547ad8336381d1 brick.pal
+  34847     c00aa5f50a19820b6ba060a9f5215280 brick.vcn
+  5834      456cf7841e9c1ba3e67111bf2b93b6a6 brick.vmp
+  11543     e62e5a9e38d3dd4e908fd7584241d473 brick1.cps
+  9215      67cdb3427301f5e8de3acc08a5ae3da0 brick1.ega
+  7337      91085ce45e305410f8d8309cde8a4aa3 brick2.cps
+  5270      fb73ab98745b82d36ac37871f4dcdbff brick2.ega
+  3303      b82d472670b89eb336479aa46145f6d7 brick3.cps
+  2717      5cf5eef10e324d6844fe68f81e0986c8 brick3.ega
+  26585     12193c9e70e3bc6f28759731b14500d9 ccargen.cps
+  10466     19d337385ec8587b195f381515541cb0 ccargen.ega
+  8555      f8a62d77a67e485f4af459be9a795590 ccargenb.cps
+  5392      16ca84148cc7455873932c21bb1a81d5 ccargenb.ega
+  25914     720a0b092989972b08af80a9e221515f chargen.cps
+  10466     19d337385ec8587b195f381515541cb0 chargen.ega
+  27474     8be5a96e4e08780b7dd74f1e7ef49ed9 chargena.cps
+  15975     77258d24a744bae19fcd2e27bd739e11 chargena.ega
+  7888      42951c212a1a70ad248706ede9dcee99 chargenb.cps
+  5300      f07baec124caf2e102c38bb96b3a94e6 chargenb.ega
+  5800      bce71f6f32a00641ac9c359cb52d12da dand.cmp
+  2967      c3f899b0a3c15f6af56ccb56b99b563c decorate.cps
+  2148      0f39c4e8bef5d29f865de86980c078d7 decorate.ega
+  5159      411202667ab15b6e80fbbe2205c37234 disbeast.cps
+  4136      9c34cf67db02b3bc383ddaba3b6e4511 disbeast.ega
+  25232     530a7320d919a7b38c2f83ee1712dc1f door.cps
+  13699     4e229a8d9c7a66714cb005df9f8ca21a door.ega
+  8983      787f4858c52234c044968ea316838a60 drider1.cps
+  8241      66e0dc487163c25be1794727ef2e58c6 drider1.ega
+  14722     f8ffca5e6609c45c29faf210b34d8b7f drow.cps
+  2744      021605773b387f58877a6638178a2563 drow.dat
+  21219     389d174c64c2242b86ec3eeb28db79ca drow.ecn
+  8384      6299a40e32c7f3329d8f5889abc0ca54 drow.ega
+  5834      ecf40f9e000f86b3614dad31672bac39 drow.emp
+  768       d11e4a60c77f4ac67421fad7d3957de4 drow.pal
+  38539     5a7ac780dfd122a66b8fa1a78e482038 drow.vcn
+  5834      01052dbc1356b551013375c26d56cf79 drow.vmp
+  7115      dba85fced212ad377b4501c572bde462 drowelf.cps
+  6184      87c785cd6988c12caff696bc1dc215d8 drowelf.ega
+  5051      f22c41d726617a16b391aa6b8100203d dwarf.cps
+  4114      98a44831f852f090399dc1ebd82c18c5 dwarf.ega
+  237691    7c5aae5c361dea7b3a14c3c31dec513e eobdata1.pak
+  14499     feaf0345086b3a1d931352f4b0ad8feb eobdata2.pak
+  346303    61aff543131bd61a8b7d7dc901a8278b eobdata3.pak
+  346303    a7800a8ea8251f678530eb952de7b815 eobdata3.pak?es
+  355402    7aa3f528805bc777a39141d5a7131b8c eobdata4.pak
+  314900    76628ddfa24dd8409eefdaf66eaf428d eobdata5.pak
+  317081    36ae9346a128fe1e03400e8f6f458c76 eobdata6.pak
+  317081    b724ab4dca4341b28bdc943d756d367a eobdata6.pak?es
+  768       15d798ce7ce43bbad2ad6d45d5dc002f eobpal.col
+  6966      d74e34f55890d3ff98344e40c9a452b1 eobtitle.cmp
+  1753104   9a4933c3349077df3765e75e0f845fd0 eye.pak
+  7944      1e21c6126bfdb153537f8fbabf59e8fa flind.cps
+  6206      93b52159747fc20f3835a921a5ef04f7 flind.ega
+  1028      96de7c14da18ebe209f6db87a6b290d5 font6.fnt
+  1284      f83e15b5780ff8669cadc30e89730a89 font8.fnt
+  8973      68a3a4e7b7f747df77a14977ab5c29a0 golem.cps
+  6070      e1920bd22138eac6baa7c9f3017123d6 golem.ega
+  13680     659d9eae9f116c4c45910e149f8513b9 green.cps
+  2820      ce4511827bc9314159e71deb2d3ec9ed green.dat
+  34728     b37e408a9e03d50e8d38c78a66890307 green.ecn
+  10116     6a57814c0f8987ba01a197358a67a434 green.ega
+  5834      133b657c6fad51c858bc2fa49ea0ff11 green.emp
+  768       24c71b36a59eb4c91efbae5161802639 green.pal
+  42770     43d55537e894960f2b0fb71f0e093ef1 green.vcn
+  5834      4f0d7ddc20c7b8392399e12781995f2c green.vmp
+  12854     537abe30d347244dde10462a17514c00 hands.cmp
+  5595      20c0bbb04fc6453f27f9961923269c9c hellhnd.cps
+  4339      6981426015d7c7669e251908c576e727 hellhnd.ega
+  16479     5e59169f0fa21b95f584e7480eee30f1 intro.cps
+  9568      f9736f6bb7673ed1717033503ebc5b80 intro.ega
+  2481      af132c0c25de66bd6868e673c30cfdde invent.cps
+  1998      aba505f8632d445fb7bbbf6460aa39a2 invent.ega
+  9601      e62badeffd8485f5afe1c30af8e0a98f item.dat
   10385     5b8c11c3c6d036f308a4cfeb9cb74091 item.dat?es
+  8655      035ff9b563bf1ddbd2433e03c455e871 itemicn.cps
+  6455      9b1e4877dfefeaec7c8f13be213e3d67 itemicn.ega
+  9645      197342a1788f8d145f941ecb5248793f iteml1.cps
+  7033      c3126f3810f9c2a0f56ad1e959b05598 iteml1.ega
+  1600      377ce09f52dd536a98f9e5c5035ca9bf itemrmp.ega
+  1600      049f31e396f6b17d6ecd9db2a770c1e8 itemrmp.vga
+  6497      dac508221bc3d6b150b330ed5a33ae2c items1.cps
+  5094      ea57fab2128e6c87d1cada8945329261 items1.ega
+  914       4c61b41f020bb22166a97f9ffe897e82 itemtype.dat
+  7220      88587035ceca62e7b9e225f7297ee324 kenku.cps
+  5902      e05a7b22d4922b0cfc65a671c13911d7 kenku.ega
+  13685     4312726dbe6f34fa158be5716eae3b8a king.cmp
+  4072      8d1137039266cd952c25ab6de1c7d162 kobold.cps
+  3520      078a04b55410afaccca32e9f62c6c4e3 kobold.ega
+  9990      b2b6b7500f9525a7805f1e360a7a1f8f kuotoa.cps
+  7777      ed88d5edaf2120c5c5187cda9dd11d82 kuotoa.ega
+  4485      483ff5c32b841bda8a0f988c0a2086d6 leech.cps
+  4144      8bd3465fe1c357065245680a82adfc9f leech.ega
+  3016      4f10ce0f2cac5c659bc956c3e48f81eb level1.dro
+  3003      88a8497a74d7f1233fb4d192fa290daa level1.elo
+  4102      516129f0f1084c50f376ed0182db5179 level1.maz
+  3378      a46a29875694330979d82ad6e29bfd89 level10.dro
+  3416      b13dc49c16a9869ca71dfe8582737e4d level10.elo
+  4102      c7cbb65dc914efcb9b60f8f98f5e1d07 level10.maz
+  3904      d7a3758d1aad8e52a9b279567e94da35 level11.dro
+  3920      896591a05f71a5c49e68a42c35298b46 level11.elo
+  4102      47b225a02f82eda763be0a496f70d3f0 level11.maz
+  3569      631949c04406ec84ea80a34a4033b029 level12.dro
+  3607      5b23d3de18e3ad1fda26fe8702627b8e level12.elo
+  4102      1951a2c422e30b077937e856864cb8fb level12.maz
+  6954      4553de7a8342f6903e40a83035501adb level2.dro
+  7909      e1d076777d9d88fc4e05c7628845021e level2.elo
+  4102      f7a69a6a1609ccb148b707de129970e5 level2.maz
+  5942      a0fc0a15839e15a32faf514a0b836c24 level3.dro
+  6095      4b212e3c7e86daaa6ac8673c882046c2 level3.elo
+  4102      01e2022a29ac78930aa8569c611337d3 level3.maz
+  6940      cf78c03478e4265fe8526d3ca5aeb811 level4.dro
+  7149      44eafaf39dfda06101f3aea26cb697dc level4.elo
+  4102      7a5c1751935a23067a754d55b861b5cc level4.maz
+  7365      678f866eda097bd174c70a686e12b549 level5.dro
+  7657      50d75aaef5d783aec6f9f258de19dddc level5.elo
+  4102      726a91f76b4a03e02820467a6b3bb4aa level5.maz
+  7226      d732a991978064ce5b4053e09de26fcf level6.dro
+  7303      d98497922e9c92d4a7ce5230d24328ed level6.elo
+  4102      31ca411de99242d863e4196374c5e269 level6.maz
+  6478      791b5ce0ab836abbbd5682c62ce01cf8 level7.dro
+  6737      c4c1b9392b2ea1385e5303375946edcf level7.elo
+  4102      77080e73dd177805acf154198b67f98e level7.maz
+  5147      c115e9b533d525d386134e38b8babd9a level8.dro
+  5243      a519de8c47e9df3f8cb8465aa62cb864 level8.elo
+  4102      d6d04c07be405ef4879af4aa5d35b454 level8.maz
+  6329      0bce42051f4aeb2e4920208b14a0fb36 level9.dro
+  6541      f3e3dbeed297d878154a407a3df4a2f5 level9.elo
+  4102      fe091cc87034f22831f6241dd490ec45 level9.maz
+  6171      5fc5278e90c3cfb918dfad6becf46974 mage.cps
+  5658      20914c651298ae2614488beb3616c0f5 mage.ega
+  9163      198039d07754ce69b7a5fb0c174ada25 mantis.cps
+  9163      198039d07754ce69b7a5fb0c174ada25 mantis1.cps
+  8324      3f486362a03b40b731b074c4c3633d4f mantis1.ega
+  8837      763c7b13aee2e5674ce0b8f8c8154d8a mflayer.cps
+  7304      5612f113f8f46fcd621af3e7828603a5 mflayer.ega
+  16936     24d8c6d3b2fc92341933ab36c77711a2 nntro.cps
+  10264     97d6a1f0d83ac38b1a813723de0047b6 nntro.ega
+  17252     9134846801dab6f08fa74f0dc1a23bd5 orb.cmp
+  768       58ec72ff144011807237a4049e888252 orb.col
+  21234     5d4298c1955b847fa00be69e170eff56 outtake.cps
+  15270     cce18cc50db14a56eca29c807cbb81aa outtake.ega
+  768       0bc07e6fbd26d190becf0fb1b0ec47bd palette.col
+  4757      3fd78faa712b33be5459d7fd2639f441 pcgamesn.dat
+  1990      7aac3921c8702166fe0bc05991f27059 pcsound.dat
+  9983      2b8bc45a77b35a4cf42898d19a53e59d playfld.cps
+  4666      bbe710b3d44534c61df4a634579f33d9 playfld.ega
+  13225     53cd968e393607ae76d0a1ddbe669954 portala.cps
+  5420      817eefd77f098a23f7bb99f9324dc21d portala.ega
+  16861     5c57d8e522806507d4240a1089a82293 portalb.cps
+  9110      750c5b99b8d83c45bab29d99045d5948 portalb.ega
+  547       597c529729940c5ec8e84fd7e3ac6676 present.cmp
+  6929      c246d1c09e169db70c01c56d746d6161 rust1.cps
+  6430      fbb42c2cbc1fd54c8c4db4dea0df9671 rust1.ega
+  5639      383b0c7ba0903eae5d04cad28ce90aaf shindia.cps
+  4794      46692aec01a86746b2a69174feda9f94 shindia.ega
+  8406      0f45ed0565a5ca1e0363085f8b75112b skeleton.cps
+  6564      6653b27b5d43acf9cf5ecac49211fd22 skeleton.ega
+  6974      60f11e6c35dbd9e3f222a9f3cb2b6834 skelwar.cps
+  6188      dcfce4ff4f731449bc36e73903bf8d4f skelwar.ega
+  13139     370880f4892e43f7c1bf527e152ff76d sound.dat
+  6581      c3c38764311d8fe3192b512d09cebd24 spider1.cps
+  6050      a6e3af75054f3fdc4cca10a00e8f84a9 spider1.ega
+  2882      6af464a2ea38e7d4d0fd1f69c543b2bf ssi.cmp
+  17208     fb59b50f97fd1806756911d986b9b2b5 text.dat
+  64768     c717ef427adb351a3a53f0acfef502c4 text.raw
+  6393      f73194cd11e85bbd779a39b7ffe47f75 thrown.cps
+  5778      889df0d72a82e35411a0c75bc3961323 thrown.ega
+  9568      f9736f6bb7673ed1717033503ebc5b80 title-e.cmp
+  16526     26059881ff336e3245724e2f0afe53ba title-v.cmp
+  768       ad5e6fca2ac7765860e2a2c3272cb68a title-v.col
+  19736     b1da1fe41ae0bd8a84d565802134e253 towrmage.cmp
+  768       d1ceeece39c74d73ff9abd06a8be39a2 towrmage.col
+  843       85defec388af4856f928facdefdc31cb treeinfo.ncd
+  10199     49f7f5c62ac375c779dee9273dcad411 tttle-e.cmp
+  17284     6753c9fda9049293a8b62699444a35f9 tttle-v.cmp
+  23134     59a5ae9e884aab26bf64cd01052baa4d tunnel.cmp
+  4765      e295c5241eebe8a363c6bdaa99c1278a westwood.cmp
+  768       ad5e6fca2ac7765860e2a2c3272cb68a westwood.col
+  14403     2e99305cf705c0ab8500fd5c927248b8 wtrdp1.cmp
+  21165     09017230001a69424bd247be92a1a554 wtrdp2.cmp
+  768       2bb71551f2d9671f78391082205bf847 wtrdp2.col
+  23101     0dd5ed6e2f08871f7f656e1d6f32cc7c wtrdp3.cmp
+  9102      5a2e55ceebadf5233a3d34e55f9d173b xanath1.cps
+  8751      24a84e8d84733db934bfcbedf7796f95 xanath1.ega
+  9261      cf61b537b6b805d0fd60e0ed15fc5609 xanatha.cps
+  2096      590cc3d30727ce2776f11be22481ad63 xanatha.dat
+  12974     0dc0a9611e9049e675103b8c49e36e32 xanatha.ecn
+  6766      0706f4587e0445effa3f2698b2c1d49b xanatha.ega
+  5834      aa1e08b9ad5789fb2fb77e0f9900e239 xanatha.emp
+  768       a0c807afb4f408acae406e516d6dc426 xanatha.pal
+  25328     1146a7657b74bfe44a413e8eb6dbda40 xanatha.vcn
+  5834      24977f6e947d81d5ae68bd3a97d897f3 xanatha.vmp
+  41794     d954e7adeca8e5289a6f7604bf812dab xanatha.vol
+  15749     46d291aaa1b18fb264f8ba2164812a2e xdeath1.cps
+  12744     595cf115a00a0099a4c40c82d6abd6db xdeath1.ega
+  13040     f2bf4ff79167b4e685fdd42f27c30e40 xdeath2.cps
+  10237     dbe17e112b460ce68da7eb53b5d308aa xdeath2.ega
+  1087      54e717d049ee16c29e5aae4084acf605 xdeath3.cps
+  773       2266a46f98c8a7fd3a74bf5c01d3190a xdeath3.ega
+  10862     ab762cac7b20179782cebc0b4db7cd80 xorn1.cps
+  7231      9e1d36ba9ca217290a9e02123d8c4d49 xorn1.ega
+  7242      5f415516b54f31abfff81734de8f9ddc zombie.cps
+  5801      1204895eb3201c81752fa1cbb2718eb3 zombie.ega
+  17825     a3f67453680224a6bb4bed8a1cf3f644 zoomtunl.cmp
+  768       4e13c09d5a155abd7fb5ad6c733ea539 zoomtunl.col
 
   7986153   a63958ffba11e7192c86a17ab60a658f cluebook.pdf
   10027534  2d3214839ebf5696cf95cc2004df3ef3 manual.pdf
