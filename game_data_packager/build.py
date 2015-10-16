@@ -965,6 +965,16 @@ class PackagingTask(object):
             provider_status = self.fill_gap(package, provider,
                     download=download, log=log)
 
+            # ... and it's other parts
+            if (provider_status is FillResult.COMPLETE
+                and provider.unpack
+                and 'other_parts' in provider.unpack):
+                for p in provider.unpack['other_parts']:
+                    part_status = self.fill_gap(package, self.game.files[p],
+                                                download=False, log=True)
+                    logger.debug('other part "%s" is %s' % (p, part_status))
+                    provider_status &= part_status
+
             if provider_status is FillResult.COMPLETE:
                 found_name = self.found[provider_name]
                 logger.debug('trying provider %s found at %s',
@@ -1094,48 +1104,38 @@ class PackagingTask(object):
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'innoextract':
-                    other_parts = provider.unpack.get('other_parts',[])
-                    for p in other_parts:
-                        self.fill_gap(package, self.game.files[p],
-                                download=False, log=True)
-                        if p not in self.found:
-                            # can't concatenate: one of the bits is missing
-                            break
-                    else:
-                        to_unpack = provider.unpack.get('unpack', provider.provides)
-                        logger.debug('Extracting %r from %s', to_unpack, found_name)
-                        package.used_sources.add(provider.name)
-                        tmpdir = os.path.join(self.get_workdir(), 'tmp',
-                                provider_name + '.d')
-                        mkdir_p(tmpdir)
-                        cmdline = ['innoextract',
-                                   '--language', 'english',
-                                   '-T', 'local',
-                                   '-d', tmpdir,
-                                   os.path.abspath(found_name)]
-                        if not self.verbose:
-                            cmdline.append('--silent')
-                            cmdline.append('--progress')
-                        version = subprocess.check_output(['innoextract', '-v', '-s'],
-                                                          universal_newlines=True)
-                        if Version(version.split('-')[0]) >= Version('1.5'):
-                            prefix = provider.unpack.get('prefix', '')
-                            if prefix and not prefix.endswith('/'):
-                                prefix += '/'
-                            if '$provides' in to_unpack:
-                                to_unpack.remove('$provides')
-                                to_unpack += provider.provides
-                            for i in to_unpack:
-                                cmdline.append('-I')
-                                if prefix and i[0] != '/':
-                                    i = prefix + i
-                                if 'unpack' not in provider.unpack:
-                                    i = i.split('?')[0]
-                                cmdline.append(i)
-                        subprocess.check_call(cmdline)
-                        # for at least Theme Hospital the files we want are
-                        # actually in subdirectories, so we search recursively
-                        self.consider_file_or_dir(tmpdir)
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s', to_unpack, found_name)
+                    package.used_sources.add(provider.name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                                          provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    cmdline = ['innoextract',
+                               '--language', 'english',
+                               '-T', 'local',
+                               '-d', tmpdir,
+                               os.path.abspath(found_name)]
+                    if not self.verbose:
+                        cmdline.append('--silent')
+                        cmdline.append('--progress')
+                    version = subprocess.check_output(['innoextract', '-v', '-s'],
+                                                      universal_newlines=True)
+                    if Version(version.split('-')[0]) >= Version('1.5'):
+                        prefix = provider.unpack.get('prefix', '')
+                        if prefix and not prefix.endswith('/'):
+                            prefix += '/'
+                        if '$provides' in to_unpack:
+                            to_unpack.remove('$provides')
+                            to_unpack += provider.provides
+                        for i in to_unpack:
+                            cmdline.append('-I')
+                            if prefix and i[0] != '/':
+                                i = prefix + i
+                            if 'unpack' not in provider.unpack:
+                                i = i.split('?')[0]
+                            cmdline.append(i)
+                    subprocess.check_call(cmdline)
+                    self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unzip' and which('unzip'):
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
@@ -1176,65 +1176,48 @@ class PackagingTask(object):
                                list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unshield':
-                    other_parts = provider.unpack['other_parts']
-                    for p in other_parts:
-                        self.fill_gap(package, self.game.files[p],
-                                download=False, log=True)
-                        if p not in self.found:
-                            # can't concatenate: one of the bits is missing
-                            break
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s', to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                                          provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    # we can't specify individual files to extract
+                    # but we can narrow down to 'groups'
+                    groups = provider.unpack.get('groups')
+                    if groups:
+                        # unshield only take last '-g' into account
+                        for group in groups:
+                            subprocess.check_call(['unshield', '-g', group,
+                               'x', os.path.abspath(found_name)], cwd=tmpdir)
                     else:
-                        to_unpack = provider.unpack.get('unpack', provider.provides)
-                        logger.debug('Extracting %r from %s',
-                                to_unpack, found_name)
-                        tmpdir = os.path.join(self.get_workdir(), 'tmp',
-                                provider_name + '.d')
-                        mkdir_p(tmpdir)
-                        # we can't specify individual files to extract
-                        # but we can narrow down to 'groups'
-                        groups = provider.unpack.get('groups')
-                        if groups:
-                            # unshield only take last '-g' into account
-                            for group in groups:
-                                subprocess.check_call(['unshield', '-g', group,
-                                   'x', os.path.abspath(found_name)], cwd=tmpdir)
-                        else:
-                            subprocess.check_call(['unshield', 'x',
-                                     os.path.abspath(found_name)], cwd=tmpdir)
+                        subprocess.check_call(['unshield', 'x',
+                                 os.path.abspath(found_name)], cwd=tmpdir)
 
-                        # this format doesn't store a timestamp, so the extracted
-                        # files will instead inherit the archive's timestamp
-                        orig_time = os.stat(found_name).st_mtime
-                        for dirpath, dirnames, filenames in os.walk(tmpdir):
-                            for fn in filenames:
-                                full = os.path.join(dirpath, fn)
-                                os.utime(full, (orig_time, orig_time))
-                        self.consider_file_or_dir(tmpdir)
+                    # this format doesn't store a timestamp, so the extracted
+                    # files will instead inherit the archive's timestamp
+                    orig_time = os.stat(found_name).st_mtime
+                    for dirpath, dirnames, filenames in os.walk(tmpdir):
+                        for fn in filenames:
+                            full = os.path.join(dirpath, fn)
+                            os.utime(full, (orig_time, orig_time))
+                    self.consider_file_or_dir(tmpdir)
                 elif fmt == 'arj':
-                    other_parts = provider.unpack.get('other_parts',[])
-                    for p in other_parts:
-                        self.fill_gap(package, self.game.files[p],
-                                download=False, log=True)
-                        if p not in self.found:
-                            # can't concatenate: one of the bits is missing
-                            break
-                    else:
-                        to_unpack = provider.unpack.get('unpack', provider.provides)
-                        logger.debug('Extracting %r from %s',
-                                to_unpack, found_name)
-                        tmpdir = os.path.join(self.get_workdir(), 'tmp',
-                                provider_name + '.d')
-                        mkdir_p(tmpdir)
-                        subprocess.check_call(['arj', 'e',
+                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    logger.debug('Extracting %r from %s',
+                                 to_unpack, found_name)
+                    tmpdir = os.path.join(self.get_workdir(), 'tmp',
+                                          provider_name + '.d')
+                    mkdir_p(tmpdir)
+                    subprocess.check_call(['arj', 'e',
                                   os.path.abspath(found_name)] +
                                   list(to_unpack), cwd=tmpdir)
-                        for p in other_parts:
-                            subprocess.check_call(['arj', 'e', '-jya',
+                    for p in provider.unpack.get('other_parts', []):
+                        subprocess.check_call(['arj', 'e', '-jya',
                                   os.path.join(os.path.dirname(found_name),p)] +
                                   list(to_unpack), cwd=tmpdir)
-                        for f in to_unpack:
-                            tmp = os.path.join(tmpdir, f)
-                            self.consider_file(tmp, True)
+                    for f in to_unpack:
+                        tmp = os.path.join(tmpdir, f)
+                        self.consider_file(tmp, True)
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
 
