@@ -139,14 +139,12 @@ class GameData(object):
             return True
         return False
 
-    def add_one_file(self,name,lower):
+    def add_one_file(self, name, lower, is_content=True):
         out_name = os.path.basename(name)
         if lower:
             out_name = out_name.lower()
 
-        if out_name.startswith('setup_') and name.endswith('.exe'):
-            pass
-        elif name.endswith('.deb'):
+        if not is_content:
             pass
         elif is_license(name):
             out_name = os.path.basename(out_name)
@@ -300,6 +298,7 @@ class GameData(object):
             del self.package['license']
 
     def add_one_zip(self,archive):
+        self.add_one_file(archive, lower=False, is_content=False)
         # TODO
         return
 
@@ -344,7 +343,7 @@ class GameData(object):
         self.add_one_dir(os.path.join(tmp, 'app'), True, game=game, lang=guess_lang(exe))
         os.system('rm -r ' + tmp)
 
-        self.add_one_file(exe,False)
+        self.add_one_file(exe, lower=False, is_content=False)
         self.files['files'][os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
 
     def add_one_deb(self,deb,lower):
@@ -700,7 +699,7 @@ def main():
         elif arg.endswith('.deb'):
             gamedata.add_one_deb(arg,args.lower)
             if basename.startswith('gog_'):
-                gamedata.add_one_file(arg,args.lower)
+                gamedata.add_one_file(arg, lower=args.lower)
                 gamedata.files['files'][basename] = dict(unpack=dict(format='deb'),
                                                          provides=['<stuff>'])
         elif basename.startswith('setup_') and arg.endswith('.exe'):
@@ -713,7 +712,7 @@ def main():
             do_one_file(arg,args.lower)
             return
         else:
-            gamedata.add_one_file(arg,args.lower)
+            gamedata.add_one_file(arg, lower=args.lower)
     gamedata.to_yaml()
 
 
