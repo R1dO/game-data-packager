@@ -1,12 +1,14 @@
 ---
 franchise: Eye of the Beholder
 longname: "Eye of the Beholder II: The Legend of Darkmoon"
-copyright: © 1993 Strategic Simulations, Inc.
+copyright: © 1991 Strategic Simulations, Inc.
 genre: Role Playing
 plugin: scummvm_common
 wiki: "Eye_of_the_Beholder_II:_The_Legend_of_Darkmoon"
 gameid: eob2
-try_repack_from: ['~/GOG Games/Eye of the Beholder II The Legend of Darkmoon']
+try_repack_from:
+- '~/GOG Games/Eye of the Beholder II The Legend of Darkmoon'
+- '~/GOG Games/Eye of the Beholder II The Legend of Darkmoon German'
 
 missing_langs: [es]
 
@@ -259,6 +261,252 @@ packages:
     - mezz.vmp
     - silver.vmp
 
+  eye-of-the-beholder2-de-data:
+    longname: "Eye of the Beholder II: Legende von Darkmoon"
+    lang: de
+    debian:
+      provides: eye-of-the-beholder2-data
+    gog:
+      url: forgotten_realms_the_archives_collection_one
+      game: eye_of_the_beholder_ii_the_legend_of_darkmoon
+    doc:
+    - cluebook.pdf
+    - manual.pdf
+    optional:
+    - eosprefs.dat
+    - eobdata0.sav?de
+    install:
+    - airseal.cps
+    - altar.cps
+    - ant.cps
+    - aservant.cps
+    - azure.adl
+    - azure.dec
+    - azure.ega
+    - azure.pal
+    - azure.snd
+    - azure1.cps
+    - azure2.cps
+    - badmood.cps
+    - basilisk.cps
+    - beholder.cps
+    - beholder.dcr
+    - blood.cps
+    - border.cps
+    - brown.dec
+    - brown1.cps
+    - brown2.cps
+    - brown3.cps
+    - bulette.cps
+    - catacomb.adl
+    - catacomb.snd
+    - chargen.cps
+    - chargena.cps
+    - choice.cps
+    - cleric1.cps
+    - cleric1.dcr
+    - cleric2.cps
+    - cleric2.dcr
+    - cleric3.cps
+    - cleric3.dcr
+    - coin.cps
+    - credits.cps
+    - credits.txt?de
+    - credits3.cps
+    - crimring.cps
+    - crimson.cps
+    - crimson.dec
+    - crimson.ega
+    - crimson.pal
+    - crimson.vcn
+    - crimson.vmp
+    - crimson1.adl
+    - crimson1.snd
+    - crimson2.adl
+    - crimson2.cps
+    - crimson2.snd
+    - crystal.cps
+    - cube.cps
+    - darkmoon.cps
+    - decorate.cps?de
+    - destroy0.cps
+    - destroy1.cps
+    - destroy2.cps
+    - destroy3.cps
+    - door1.cps
+    - door2.cps
+    - doorway1.cps
+    - doorway2.cps
+    - dragon.cps
+    - dragon.dcr
+    - dragon1.cps
+    - dragon2.cps
+    - dran.cps
+    - dranaz3.cps
+    - dransl2.cps
+    - dranx.cps
+    - dream.cps
+    - dung.ega
+    - dung.pal
+    - dung.vcn
+    - dung.vmp
+    - fading.dat
+    - finale1.adl
+    - finale1.snd
+    - finale2.adl
+    - finale2.snd
+    - finale_0.pal
+    - finale_1.pal
+    - finale_2.pal
+    - finale_3.pal
+    - finale_4.pal
+    - finale_5.pal
+    - finale_6.pal
+    - finale_7.pal
+    - font6.fnt?de
+    - font8.fnt?de
+    - forest.adl
+    - forest.cps
+    - forest.dec
+    - forest.ega
+    - forest.pal
+    - forest.snd
+    - forest.vcn
+    - forest.vmp
+    - frgiant.cps
+    - fsnake.cps
+    - gargoyle.cps
+    - gasspore.cps
+    - glass.cps
+    - guard1.cps
+    - guard1.dcr
+    - guard2.cps
+    - guard2.dcr
+    - guardian.cps
+    - head.cps
+    - hellhnd.cps
+    - hurry1.cps
+    - hurry2.cps
+    - implode.cps
+    - intro.adl
+    - intro.cps
+    - intro.ega
+    - intro.snd
+    - invent.cps?de
+    - item.dat?de
+    - itemicn.cps
+    - iteml1.cps
+    - items1.cps
+    - itemtype.dat
+    - khelban1.cps
+    - khelban2.cps
+    - khelban3.cps
+    - khelban4.cps
+    - khelban5.cps
+    - khelban6.cps
+    - khelben.cps
+    - kheldran.cps
+    - level1.inf?de
+    - level1.maz
+    - level10.inf?de
+    - level10.maz
+    - level11.inf?de
+    - level11.maz
+    - level12.inf?de
+    - level12.maz
+    - level13.inf?de
+    - level13.maz
+    - level14.inf?de
+    - level14.maz
+    - level15.inf?de
+    - level15.maz
+    - level16.inf?de
+    - level2.inf?de
+    - level2.maz
+    - level3.inf?de
+    - level3.maz
+    - level4.inf?de
+    - level4.maz
+    - level5.inf?de
+    - level5.maz
+    - level6.inf?de
+    - level6.maz
+    - level7.inf?de
+    - level7.maz
+    - level8.inf?de
+    - level8.maz
+    - level9.inf?de
+    - level9.maz
+    - mage.cps
+    - mage.dcr
+    - magic.cps
+    - mantis.cps
+    - mantis.dcr
+    - medusa.cps
+    - menu.ega
+    - mezanine.adl
+    - mezanine.snd
+    - mezz.dec
+    - mezz.ega
+    - mezz.pal
+    - mezz.vcn
+    - mezz.vmp
+    - mezz1.cps
+    - mezz2.cps
+    - mindflay.cps
+    - mmouth1.cps
+    - mmouth2.cps
+    - outports.cps
+    - outtake.cps
+    - palette.col
+    - palette0.pal
+    - palette1.pal
+    - palette2.pal
+    - palette3.pal
+    - palette4.pal
+    - playfld.cps?de
+    - portala.cps
+    - portalb.cps
+    - salamndr.cps
+    - shrunken.cps
+    - silver.adl
+    - silver.dec
+    - silver.ega
+    - silver.pal
+    - silver.snd
+    - silver.vcn
+    - silver.vmp
+    - silver1.cps
+    - silver2.cps
+    - skelwar.cps
+    - sout1.cps
+    - sout2.cps
+    - sout3.cps
+    - sout4.cps
+    - sout5.cps
+    - spider.cps
+    - stonegia.cps
+    - street1.cps
+    - street2.cps
+    - suicide.cps
+    - tanglor.cps
+    - text.dat?de
+    - thanks.cps
+    - thrown.cps
+    - wasp.cps
+    - willowis.cps
+    - winding.cps
+    - wolf.cps
+    # only in German version
+    - mezz.dat
+    - xap.cps
+    - xenu.cps
+    - xeroes.cps
+    - xestwood.cps
+    - xhargenb.cps
+    - xlayfld.cps
+    - xredits2.cps
+
 files:
   eosprefs.dat:
     distinctive_name: false
@@ -266,6 +514,10 @@ files:
     alternatives:
     - credits.txt?1
     - credits.txt?2
+
+  # workaround bug when processing 0 byte file in zip file
+  playfld.cps?de:
+    look_for: [playfld.cps,/dev/null]
 
   cluebook.pdf:
     look_for: [cluebook.pdf,eobii_cluebook_pdf.pdf]
@@ -744,6 +996,482 @@ files:
     - mezz.vmp
     - silver.vmp
 
+  setup_eye_of_the_beholder2_german_2.0.0.3.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - cluebook.pdf
+    - manual.pdf
+    - eosprefs.dat
+    - eobdata0.sav?de
+    - airseal.cps
+    - altar.cps
+    - ant.cps
+    - aservant.cps
+    - azure.adl
+    - azure.dec
+    - azure.ega
+    - azure.pal
+    - azure.snd
+    - azure1.cps
+    - azure2.cps
+    - badmood.cps
+    - basilisk.cps
+    - beholder.cps
+    - beholder.dcr
+    - blood.cps
+    - border.cps
+    - brown.dec
+    - brown1.cps
+    - brown2.cps
+    - brown3.cps
+    - bulette.cps
+    - catacomb.adl
+    - catacomb.snd
+    - chargen.cps
+    - chargena.cps
+    - choice.cps
+    - cleric1.cps
+    - cleric1.dcr
+    - cleric2.cps
+    - cleric2.dcr
+    - cleric3.cps
+    - cleric3.dcr
+    - coin.cps
+    - credits.cps
+    - credits.txt?de
+    - credits3.cps
+    - crimring.cps
+    - crimson.cps
+    - crimson.dec
+    - crimson.ega
+    - crimson.pal
+    - crimson.vcn
+    - crimson.vmp
+    - crimson1.adl
+    - crimson1.snd
+    - crimson2.adl
+    - crimson2.cps
+    - crimson2.snd
+    - crystal.cps
+    - cube.cps
+    - darkmoon.cps
+    - decorate.cps?de
+    - destroy0.cps
+    - destroy1.cps
+    - destroy2.cps
+    - destroy3.cps
+    - door1.cps
+    - door2.cps
+    - doorway1.cps
+    - doorway2.cps
+    - dragon.cps
+    - dragon.dcr
+    - dragon1.cps
+    - dragon2.cps
+    - dran.cps
+    - dranaz3.cps
+    - dransl2.cps
+    - dranx.cps
+    - dream.cps
+    - dung.ega
+    - dung.pal
+    - dung.vcn
+    - dung.vmp
+    - fading.dat
+    - finale1.adl
+    - finale1.snd
+    - finale2.adl
+    - finale2.snd
+    - finale_0.pal
+    - finale_1.pal
+    - finale_2.pal
+    - finale_3.pal
+    - finale_4.pal
+    - finale_5.pal
+    - finale_6.pal
+    - finale_7.pal
+    - font6.fnt?de
+    - font8.fnt?de
+    - forest.adl
+    - forest.cps
+    - forest.dec
+    - forest.ega
+    - forest.pal
+    - forest.snd
+    - forest.vcn
+    - forest.vmp
+    - frgiant.cps
+    - fsnake.cps
+    - gargoyle.cps
+    - gasspore.cps
+    - glass.cps
+    - guard1.cps
+    - guard1.dcr
+    - guard2.cps
+    - guard2.dcr
+    - guardian.cps
+    - head.cps
+    - hellhnd.cps
+    - hurry1.cps
+    - hurry2.cps
+    - implode.cps
+    - intro.adl
+    - intro.cps
+    - intro.ega
+    - intro.snd
+    - invent.cps?de
+    - item.dat?de
+    - itemicn.cps
+    - iteml1.cps
+    - items1.cps
+    - itemtype.dat
+    - khelban1.cps
+    - khelban2.cps
+    - khelban3.cps
+    - khelban4.cps
+    - khelban5.cps
+    - khelban6.cps
+    - khelben.cps
+    - kheldran.cps
+    - level1.inf?de
+    - level1.maz
+    - level10.inf?de
+    - level10.maz
+    - level11.inf?de
+    - level11.maz
+    - level12.inf?de
+    - level12.maz
+    - level13.inf?de
+    - level13.maz
+    - level14.inf?de
+    - level14.maz
+    - level15.inf?de
+    - level15.maz
+    - level16.inf?de
+    - level2.inf?de
+    - level2.maz
+    - level3.inf?de
+    - level3.maz
+    - level4.inf?de
+    - level4.maz
+    - level5.inf?de
+    - level5.maz
+    - level6.inf?de
+    - level6.maz
+    - level7.inf?de
+    - level7.maz
+    - level8.inf?de
+    - level8.maz
+    - level9.inf?de
+    - level9.maz
+    - mage.cps
+    - mage.dcr
+    - magic.cps
+    - mantis.cps
+    - mantis.dcr
+    - medusa.cps
+    - menu.ega
+    - mezanine.adl
+    - mezanine.snd
+    - mezz.dec
+    - mezz.ega
+    - mezz.pal
+    - mezz.vcn
+    - mezz.vmp
+    - mezz1.cps
+    - mezz2.cps
+    - mindflay.cps
+    - mmouth1.cps
+    - mmouth2.cps
+    - outports.cps
+    - outtake.cps
+    - palette.col
+    - palette0.pal
+    - palette1.pal
+    - palette2.pal
+    - palette3.pal
+    - palette4.pal
+    - playfld.cps?de
+    - portala.cps
+    - portalb.cps
+    - salamndr.cps
+    - shrunken.cps
+    - silver.adl
+    - silver.dec
+    - silver.ega
+    - silver.pal
+    - silver.snd
+    - silver.vcn
+    - silver.vmp
+    - silver1.cps
+    - silver2.cps
+    - skelwar.cps
+    - sout1.cps
+    - sout2.cps
+    - sout3.cps
+    - sout4.cps
+    - sout5.cps
+    - spider.cps
+    - stonegia.cps
+    - street1.cps
+    - street2.cps
+    - suicide.cps
+    - tanglor.cps
+    - text.dat?de
+    - thanks.cps
+    - thrown.cps
+    - wasp.cps
+    - willowis.cps
+    - winding.cps
+    - wolf.cps
+    - mezz.dat
+    - xap.cps
+    - xenu.cps
+    - xeroes.cps
+    - xestwood.cps
+    - xhargenb.cps
+    - xlayfld.cps
+    - xredits2.cps
+
+  gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_german_2.0.0.1.sh:
+    unpack:
+      format: zip
+    provides:
+    - cluebook.pdf
+    - manual.pdf
+    - eosprefs.dat
+    - eobdata0.sav?de
+    - airseal.cps
+    - altar.cps
+    - ant.cps
+    - aservant.cps
+    - azure.adl
+    - azure.dec
+    - azure.ega
+    - azure.pal
+    - azure.snd
+    - azure1.cps
+    - azure2.cps
+    - badmood.cps
+    - basilisk.cps
+    - beholder.cps
+    - beholder.dcr
+    - blood.cps
+    - border.cps
+    - brown.dec
+    - brown1.cps
+    - brown2.cps
+    - brown3.cps
+    - bulette.cps
+    - catacomb.adl
+    - catacomb.snd
+    - chargen.cps
+    - chargena.cps
+    - choice.cps
+    - cleric1.cps
+    - cleric1.dcr
+    - cleric2.cps
+    - cleric2.dcr
+    - cleric3.cps
+    - cleric3.dcr
+    - coin.cps
+    - credits.cps
+    - credits.txt?de
+    - credits3.cps
+    - crimring.cps
+    - crimson.cps
+    - crimson.dec
+    - crimson.ega
+    - crimson.pal
+    - crimson.vcn
+    - crimson.vmp
+    - crimson1.adl
+    - crimson1.snd
+    - crimson2.adl
+    - crimson2.cps
+    - crimson2.snd
+    - crystal.cps
+    - cube.cps
+    - darkmoon.cps
+    - decorate.cps?de
+    - destroy0.cps
+    - destroy1.cps
+    - destroy2.cps
+    - destroy3.cps
+    - door1.cps
+    - door2.cps
+    - doorway1.cps
+    - doorway2.cps
+    - dragon.cps
+    - dragon.dcr
+    - dragon1.cps
+    - dragon2.cps
+    - dran.cps
+    - dranaz3.cps
+    - dransl2.cps
+    - dranx.cps
+    - dream.cps
+    - dung.ega
+    - dung.pal
+    - dung.vcn
+    - dung.vmp
+    - fading.dat
+    - finale1.adl
+    - finale1.snd
+    - finale2.adl
+    - finale2.snd
+    - finale_0.pal
+    - finale_1.pal
+    - finale_2.pal
+    - finale_3.pal
+    - finale_4.pal
+    - finale_5.pal
+    - finale_6.pal
+    - finale_7.pal
+    - font6.fnt?de
+    - font8.fnt?de
+    - forest.adl
+    - forest.cps
+    - forest.dec
+    - forest.ega
+    - forest.pal
+    - forest.snd
+    - forest.vcn
+    - forest.vmp
+    - frgiant.cps
+    - fsnake.cps
+    - gargoyle.cps
+    - gasspore.cps
+    - glass.cps
+    - guard1.cps
+    - guard1.dcr
+    - guard2.cps
+    - guard2.dcr
+    - guardian.cps
+    - head.cps
+    - hellhnd.cps
+    - hurry1.cps
+    - hurry2.cps
+    - implode.cps
+    - intro.adl
+    - intro.cps
+    - intro.ega
+    - intro.snd
+    - invent.cps?de
+    - item.dat?de
+    - itemicn.cps
+    - iteml1.cps
+    - items1.cps
+    - itemtype.dat
+    - khelban1.cps
+    - khelban2.cps
+    - khelban3.cps
+    - khelban4.cps
+    - khelban5.cps
+    - khelban6.cps
+    - khelben.cps
+    - kheldran.cps
+    - level1.inf?de
+    - level1.maz
+    - level10.inf?de
+    - level10.maz
+    - level11.inf?de
+    - level11.maz
+    - level12.inf?de
+    - level12.maz
+    - level13.inf?de
+    - level13.maz
+    - level14.inf?de
+    - level14.maz
+    - level15.inf?de
+    - level15.maz
+    - level16.inf?de
+    - level2.inf?de
+    - level2.maz
+    - level3.inf?de
+    - level3.maz
+    - level4.inf?de
+    - level4.maz
+    - level5.inf?de
+    - level5.maz
+    - level6.inf?de
+    - level6.maz
+    - level7.inf?de
+    - level7.maz
+    - level8.inf?de
+    - level8.maz
+    - level9.inf?de
+    - level9.maz
+    - mage.cps
+    - mage.dcr
+    - magic.cps
+    - mantis.cps
+    - mantis.dcr
+    - medusa.cps
+    - menu.ega
+    - mezanine.adl
+    - mezanine.snd
+    - mezz.dec
+    - mezz.ega
+    - mezz.pal
+    - mezz.vcn
+    - mezz.vmp
+    - mezz1.cps
+    - mezz2.cps
+    - mindflay.cps
+    - mmouth1.cps
+    - mmouth2.cps
+    - outports.cps
+    - outtake.cps
+    - palette.col
+    - palette0.pal
+    - palette1.pal
+    - palette2.pal
+    - palette3.pal
+    - palette4.pal
+    - playfld.cps?de
+    - portala.cps
+    - portalb.cps
+    - salamndr.cps
+    - shrunken.cps
+    - silver.adl
+    - silver.dec
+    - silver.ega
+    - silver.pal
+    - silver.snd
+    - silver.vcn
+    - silver.vmp
+    - silver1.cps
+    - silver2.cps
+    - skelwar.cps
+    - sout1.cps
+    - sout2.cps
+    - sout3.cps
+    - sout4.cps
+    - sout5.cps
+    - spider.cps
+    - stonegia.cps
+    - street1.cps
+    - street2.cps
+    - suicide.cps
+    - tanglor.cps
+    - text.dat?de
+    - thanks.cps
+    - thrown.cps
+    - wasp.cps
+    - willowis.cps
+    - winding.cps
+    - wolf.cps
+    - mezz.dat
+    - xap.cps
+    - xenu.cps
+    - xeroes.cps
+    - xestwood.cps
+    - xhargenb.cps
+    - xlayfld.cps
+    - xredits2.cps
+
   item.dat?es:
     unsuitable: The Spanish version is not yet supported by ScummVM
   gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_spanish_2.0.0.1.sh:
@@ -754,6 +1482,7 @@ files:
 size_and_md5: |
   6         73a0d0e3eb71bd1c6b10bcf64053e3f5 eosprefs.dat
   46891     f5ba1b2e5d89e8c69f906a36ec3e9d99 eobdata0.sav
+  46891     1275aba6aedfa2639a88b9e5dbb10512 eobdata0.sav?de
   46891     53ec022abb35f5851d9c5611d95b7b4d eobdata0.sav?es
 
   21530     806cb1776e784cfc2af65a942faab4d3 airseal.cps
@@ -796,6 +1525,7 @@ size_and_md5: |
   3340      307387089cc38fe237e64a96674ebebb credits.cps
   2316      55319d602ca10bf9ed46df441a9fb1b0 credits.txt?1
   2036      e2f7bad40f244f22ba48afb2eac74912 credits.txt?2
+  2833      462478e9ce75457b3baa15d85bcb063a credits.txt?de
   2316      55319d602ca10bf9ed46df441a9fb1b0 credits.txt?es
   8251      24677d107ec6ca01836f43886edf74f1 credits2.cps
   2007      30343b3ef4111f50c20881af19988a97 credits3.cps
@@ -815,6 +1545,7 @@ size_and_md5: |
   5491      ab03159413501c07e36c644131547395 cube.cps
   9047      79f0e75cb300400b7dfdf84f2316b98f darkmoon.cps
   4929      f1338c11dffcf4db9ef6cf68cdb49641 decorate.cps
+  4861      9b5de6e26650bad62cb2a0cf46f32f4a decorate.cps?de
   11029     586ff79db27ab1617bf467551186b1cb destroy0.cps
   11739     e41f89f1c908d1beccc0dfeb2764abb6 destroy1.cps
   13747     2db1a5ec0ed597ab92970e17e03888bb destroy2.cps
@@ -850,7 +1581,9 @@ size_and_md5: |
   768       c1114b9cb2e8082c217cb94fc2d39776 finale_6.pal
   768       581f0ab7c85b752e9f217d85dc800715 finale_7.pal
   1028      35a29d118c027c2963d6be6d113950b6 font6.fnt
+  1028      6fe495ecdfce7ab616a0e60aa6538b8b font6.fnt?de
   1284      f83e15b5780ff8669cadc30e89730a89 font8.fnt
+  1284      924849404db9558d21771e386e242da4 font8.fnt?de
   6997      6ec4e33c74aa3c90d60ac54d00818c3f forest.adl
   10687     8a4cc4e54f61e1031b58ca4a39b27342 forest.cps
   248       bb4bfc880c7b69735a6394220363db23 forest.dec
@@ -880,7 +1613,9 @@ size_and_md5: |
   768       6245f45e7e29b15d7d9a7674c4159a90 intro.ega
   1529      9d6aeb753024281813d68dfef3eef16a intro.snd
   2450      79218b31a19978f69526f05aeddfe90c invent.cps
+  2454      4de1dca736fa0645ceaf22de9355ae9d invent.cps?de
   10385     5b8c11c3c6d036f308a4cfeb9cb74091 item.dat
+  10385     333f3bac958ea522094ab217f8f7ec79 item.dat?de
   10385     32741d4937cbcce63c8fd36a8d17a769 item.dat?es
   11056     1eeb747262e8490b4c557e05a375887d itemicn.cps
   3685      1e3eebc2eba1698104dd70f07431b143 iteml1.cps
@@ -895,50 +1630,66 @@ size_and_md5: |
   7075      aeebfde3da090591c7543f3c01df6958 khelben.cps
   17575     f5c03ddb23d3409e433ba33af31eb193 kheldran.cps
   4712      fd7da33911f467b91039182478242537 level1.inf
+  7550      327cf8b0494bfce3b5416ef2f804202f level1.inf?de
   7699      ee11abc20959bf56205d05d221aafa0d level1.inf?es
   4102      19b05a79eb2dce62bc49ab1a70da975b level1.maz
   867       d5f92de043316f243981d006df36b5a7 level10.inf
+  1103      e2c9f79365ecf56bb7391eb97b6aa032 level10.inf?de
   1082      7379422af0856da3058a4099c9be6532 level10.inf?es
   4102      b98f4add568fd4a024d00e75addd1d1a level10.maz
   5560      e310ee4d20af19304a37186836540ea5 level11.inf
+  8809      eded1a2ac968e6262e0e5608e3784424 level11.inf?de
   8644      ae5c0f6c698788129d273a5ea70aff0e level11.inf?es
   4102      153c102ac9ce0839e646664529238224 level11.maz
   5334      074ab94915ba9bb8fca7b6a43a40bac6 level12.inf
+  8745      e60471180f935c31571ef0ec32ab2163 level12.inf?de
   8847      e72061ce2a9b6320ee5f1a37c7ae4c76 level12.inf?es
   4102      66f286f03257f2489c8f31fd4be2b53a level12.maz
   3746      61acf091c033d3b1aceead38263e63f5 level13.inf
+  5724      06e29936fe09fafb630d53be569482cf level13.inf?de
   5744      4bd7501a19144a2292c36eb3b71c7081 level13.inf?es
   4102      b9593d7b68540f3ce8e4c2461243fbd2 level13.maz
   4258      4d20c134f90837960f2216e9f2016838 level14.inf
+  7642      080d9eea101729faa75f8a5d887f7725 level14.inf?de
   7635      567bf0d846d8e8cabf7f4a5ba1e58d01 level14.inf?es
   4102      0fb5594b49a9bc7e1255472dbf3b6401 level14.maz
   4580      10f19eab75c73d0476dc58bcf70fff7a level15.inf
+  7459      ce54243ad1ca4447f521340428da2c91 level15.inf?de
   7325      099c683dc4e66171b19b64ea3e90aa12 level15.inf?es
   4102      d4586f655e8f69982aa7e8e64a192110 level15.maz
   1769      96ee087ef44a38cfd8d4a11a22bf181b level16.inf
+  3272      48d8bfc33afbf725456f7be665624433 level16.inf?de
   3178      3f02011f86cc999e5ff8b4730f2c2177 level16.inf?es
   5048      57157e100434e83c353ad6da6c10552b level2.inf
+  8648      dfb9024e13c6f63e530aadb6870af47e level2.inf?de
   8614      b9252329605659395083a3de5c8ca29f level2.inf?es
   4102      d3dbd0e2a50abe2f71374a5f3be90f35 level2.maz
   4419      f539053035834eb12297598607326b56 level3.inf
+  7034      1804aba89f43fa53cdf4a02a63eb0339 level3.inf?de
   7043      d18e07241fc918c91335d9e79046d7cb level3.inf?es
   4102      6904938b8747155fe93fcd8ccd2dc9fa level3.maz
   1512      bb4b568afd69711bc012b0a8dd298e6f level4.inf
+  2454      e8e2b0fa65a79a8fd99ed5ed78fcf9ec level4.inf?de
   2390      e81834655960bd872b5e85e698a96db3 level4.inf?es
   4102      2d4b0335c70a3b1cd4c372383c7aedf2 level4.maz
   2684      03618b46cd79e6ef5e602b8ed7aa1468 level5.inf
+  4191      f312c6351596137942bc1aadacbaf011 level5.inf?de
   4153      eb13498fab5e172c7add1ee939b8add8 level5.inf?es
   4102      a30163ec65379620558d579e434ab7f6 level5.maz
   5765      cc909423c5ebd738c57ed312d6f842df level6.inf
+  9153      4091ddd1c87ffc7c3bb80b16c2e7a2b6 level6.inf?de
   9065      70879d7704db9a52df6936852e230417 level6.inf?es
   4102      b67701ca9bc77e0a6dbf067e33b91e9d level6.maz
   5614      2fff506de3fec1d333c3d40da4d43889 level7.inf
+  9529      7ee3318babf20999ee60b333b4e50630 level7.inf?de
   9376      bf1610083e65cc435ad3416055d7f0cb level7.inf?es
   4102      b20e11330931b458cae9bc4ca8672387 level7.maz
   5112      013ec4993dcb86a238a54f7e8cabd5c8 level8.inf
+  8628      483af5a11a7f8fec116e0ec43caa74d0 level8.inf?de
   8657      9fd85b012ebf56f4d9268deaa5eac0e4 level8.inf?es
   4102      52b3003cdf93eb1747bf2b3bc8c0d76a level8.maz
   4301      62fbd6efedce5c250d5485ecb29cac01 level9.inf
+  6791      35089d1d711642c6e51ec62a6f7f1302 level9.inf?de
   6671      5517b9965f8b04987ac449b87ca867bd level9.inf?es
   4102      f2a3e47c65a3f4bb99faec79432a6014 level9.maz
   6341      963b4453d6bce1741e8fecb8370d7293 mage.cps
@@ -971,6 +1722,7 @@ size_and_md5: |
   768       9caeb593212f7a606c662f29ca77f204 palette3.pal
   768       cad882ce9a4facb21d09a3510b4f6217 palette4.pal
   8821      5be9ab09c68a7c32d79e6129c137e9fd playfld.cps
+  0         d41d8cd98f00b204e9800998ecf8427e playfld.cps?de
   13225     53cd968e393607ae76d0a1ddbe669954 portala.cps
   16861     5c57d8e522806507d4240a1089a82293 portalb.cps
   11154     7971486554dc87a4513aa0a10b987fbc salamndr.cps
@@ -997,6 +1749,7 @@ size_and_md5: |
   18251     89ad6ca6bca651563ea5ee6e46a2e611 suicide.cps
   9048      7d96144a74e86f874442049e7568662b tanglor.cps
   22463     438534e7ba748251c5ac24b4d6654c88 text.dat
+  22870     5e0895e244b2ca0447f142a150de2310 text.dat?de
   23085     f3b75050a8852c0711027e341fdeb4bb text.dat?es
   15017     1852cab73c06065c8e69325e92f5e1a9 thanks.cps
   4957      c56660a48fa7a2841f4d22b01ec5e011 thrown.cps
@@ -1006,11 +1759,24 @@ size_and_md5: |
   23188     e7f0a30fe0aa68aa754f086dbc01e136 winding.cps
   5952      1bec547324a4c3cd4b2a52b836159f19 wolf.cps
 
+  # only in German version
+  1612      5fe168fe9276a014628e59ac6405ab85 mezz.dat
+  64768     b97966e1f18f284af812927ea1da9449 xap.cps
+  64768     43f0038faa99c5715e0b91dc9dddc996 xenu.cps
+  64768     7391ff1c04543902a3b82d3851ed34a8 xeroes.cps
+  64768     efc8811b91cb71fb0416c7805889bb5e xestwood.cps
+  64768     cb842cb109978997e58eeb6402596a0e xhargenb.cps
+  64768     465a138bf51e30b6ad21756b49e6467a xlayfld.cps
+  64768     196638fe5e05a0a38389cb1a1aa605d6 xredits2.cps
+  8999      92313fdb5c4d481f57ed2240eab346b3 z1.cps
+
   95383153  cf57a085b0d7c5e103200805e26bb029 cluebook.pdf
   6879531   666fa65ded5913b170cb10a026e57670 manual.pdf
   106070730 31c0c708ab12c36e2f17fb58b1c88061 gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_2.0.0.1.sh
+  106064363 161986d49463ec92f5032940024b836b gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_german_2.0.0.1.sh
   106053490 bfd32712589a696925b923c0c6bf7545 gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_spanish_2.0.0.1.sh
   113999752 325700eeea8355643606ebdaa99fdd68 setup_eye_of_the_beholder2_2.0.0.3.exe
+  113979240 68127d13c48552f5273fa0710d2445b9 setup_eye_of_the_beholder2_german_2.0.0.3.exe
   113978184 dde1eb6b695c5d23d43129af8cb3ea42 setup_eye_of_the_beholder2_spanish_2.0.0.3.exe
 
 sha1sums: |
@@ -1147,16 +1913,29 @@ sha1sums: |
   acec0b60ed30fb0ffe48d76498536456ca20dcb4  suicide.cps
   56fc3124ab201f6e015699dc5bbb5952d58c66b6  tanglor.cps
   e47722f5a41287f765e901eac67a01e49af5db11  text.dat
+  a67ac1174f13d0bb1503d2bcef446b927a32ac01  text.dat?de
   3752bac967cada6d3202ef5d397f0a425cb9a9f0  thanks.cps
   de138d2936f67483a0de1feec7e3108268c36924  wasp.cps
   61c70436675fb50852c890dea9674c0839ac6f3b  willowis.cps
   1da64e9b550587f675300b82d5444634bdb0d757  winding.cps
   395fb77cb9e56726329f5b05491cf3133cc527d7  wolf.cps
 
+  # only in German version
+  4f91f6dfe8c00ebd76d5f3746e84841a15a463d6  xap.cps
+  c95500922cd5131336101dc2335e46338c7b2da8  xenu.cps
+  7aae8083a71661a8f7f1d9162677b126210130c7  xeroes.cps
+  86a85fced43835d66de5491d43e9e9c7a8788a8e  xestwood.cps
+  82392573a2c531b6bf0f0e8fe6cf2225521a7a3c  xhargenb.cps
+  494a5b0f7a36babf5ea91ffefead3804eb79043e  xlayfld.cps
+  0d44bf48792bf5ba39c39db2e39fdd3adb101526  xredits2.cps
+  cdcfcd1567129616e11e78e710f7509ef6b18c9d  z1.cps
+
   7db8d00adafc1c57ac54b857bf45765bc868a302  cluebook.pdf
   13ae09c426e45ce39725a967c41791c179875539  manual.pdf
   f8e9841b135de1eb6b9b3bddc516673a862f7617  gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_2.0.0.1.sh
+  880a6cd3dba478588b0f05f4b6c711395d6c4acc  gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_german_2.0.0.1.sh
   8326662ede9a91cf7523b61f44400f90eb462b80  gog_eye_of_the_beholder_ii_the_legend_of_darkmoon_spanish_2.0.0.1.sh
   2eb96f06b3afe592c041412a8c140c0f89b4aafb  setup_eye_of_the_beholder2_2.0.0.3.exe
+  130452a3bd1eaebba30a78854430725cbd238f95  setup_eye_of_the_beholder2_german_2.0.0.3.exe
   c34db46229f9000442bc47c73e6ef89bc60240da  setup_eye_of_the_beholder2_spanish_2.0.0.3.exe
 ...
