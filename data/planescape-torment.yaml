@@ -1,0 +1,2785 @@
+---
+longname: "Planescape Torment"
+copyright: © 1999 Interplay Entertainment Corp.
+genre: Role Playing
+engine: gemrb
+compress_deb: [-Zgzip, -z1]
+missing_langs: [de,fr,pl]
+help_text: |
+  Data for Planescape Torment can be downloaded from gog.com automatically.
+  You can skip the download by providing setup_planescape_torment_2.0.0.8.exe.
+  .
+  Please use /usr/share/gemrb/planescape-torment-en as GamePath in your
+  /etc/gemrb/*.conf files.
+
+
+packages:
+  planescape-torment-en-data:
+    gog:
+      url: planescape_torment
+      game: planescape_torment
+    longname: "Planescape Torment (English)"
+    debian:
+      provides: planescape-torment-data
+    install_to: usr/share/gemrb/planescape-torment-en
+    install:
+    - 2dafiles.bif
+    - ar13en.bif
+    - ar13fd.bif
+    - ar13fy.bif
+    - ar13g1.bif
+    - ar13g2.bif
+    - ar13g3.bif
+    - ar13wz.bif
+    - arefiles.bif
+    - arescrpt.bif
+    - ca_ann.bif
+    - ca_col.bif
+    - ca_ctf.bif
+    - ca_cth.bif
+    - ca_ctm.bif
+    - ca_dkk.bif
+    - ca_ffg.bif
+    - ca_hkm.bif
+    - ca_hlf.bif
+    - ca_hlm.bif
+    - ca_huf.bif
+    - ca_hum.bif
+    - ca_igy.bif
+    - ca_lkm.bif
+    - ca_mdr.bif
+    - ca_mrt.bif
+    - ca_ndm.bif
+    - ca_noa.bif
+    - ca_noc.bif
+    - ca_nod.bif
+    - ca_nod2.bif
+    - ca_nof.bif
+    - ca_noh.bif
+    - ca_nom.bif
+    - ca_nos.bif
+    - ca_noz.bif
+    - ca_vha.bif
+    - ca_wiz.bif
+    - ca_zmm.bif
+    - cachemos.bif
+    - chitin.key
+    - crefiles.bif
+    - cs_0000.bif
+    - cs_0100.bif
+    - cs_0101.bif
+    - cs_0102.bif
+    - cs_0103.bif
+    - cs_0104a.bif
+    - cs_0104c.bif
+    - cs_0105.bif
+    - cs_0106.bif
+    - cs_0107.bif
+    - cs_0108.bif
+    - cs_0109.bif
+    - cs_0110.bif
+    - cs_0200.bif
+    - cs_0201.bif
+    - cs_0202.bif
+    - cs_0203.bif
+    - cs_0205.bif
+    - cs_0208.bif
+    - cs_0209.bif
+    - cs_0300.bif
+    - cs_0301.bif
+    - cs_0302.bif
+    - cs_0303.bif
+    - cs_0304.bif
+    - cs_0305.bif
+    - cs_0306a.bif
+    - cs_0400.bif
+    - cs_0401.bif
+    - cs_0402.bif
+    - cs_0403.bif
+    - cs_0404.bif
+    - cs_0405.bif
+    - cs_0500.bif
+    - cs_0501.bif
+    - cs_0502.bif
+    - cs_0503.bif
+    - cs_0504.bif
+    - cs_0505.bif
+    - cs_0506.bif
+    - cs_0508.bif
+    - cs_0509.bif
+    - cs_0510.bif
+    - cs_0511.bif
+    - cs_0512.bif
+    - cs_0513.bif
+    - cs_0600.bif
+    - cs_0601.bif
+    - cs_0602.bif
+    - cs_0603.bif
+    - cs_0604.bif
+    - cs_0605.bif
+    - cs_0606.bif
+    - cs_0607.bif
+    - cs_0608.bif
+    - cs_0609.bif
+    - cs_0610.bif
+    - cs_0611.bif
+    - cs_0612.bif
+    - cs_0700.bif
+    - cs_0701.bif
+    - cs_0702.bif
+    - cs_0703.bif
+    - cs_0704.bif
+    - cs_0705.bif
+    - cs_0706.bif
+    - cs_0706b.bif
+    - cs_0707.bif
+    - cs_0708.bif
+    - cs_0800.bif
+    - cs_0900.bif
+    - cs_0901.bif
+    - cs_0902.bif
+    - cs_0903.bif
+    - cs_0904.bif
+    - cs_1000.bif
+    - cs_1001.bif
+    - cs_1100.bif
+    - cs_1101.bif
+    - cs_1200.bif
+    - cs_1201.bif
+    - cs_1202.bif
+    - cs_1203.bif
+    - cs_1204.bif
+    - cs_1300.bif
+    - cs_1400.bif
+    - cs_1401.bif
+    - cs_1402.bif
+    - cs_1403.bif
+    - cs_1404.bif
+    - cs_1405.bif
+    - cs_1500.bif
+    - cs_1501.bif
+    - cs_1600.bif
+    - cs_1601.bif
+    - cs_1700.bif
+    - cs_1800.bif
+    - cs_1900.bif
+    - cs_2000.bif
+    - cs_3001.bif
+    - cs_3002a.bif
+    - cs_3003.bif
+    - cs_3004a.bif
+    - cs_3004b.bif
+    - cs_3005a.bif
+    - cs_3005b.bif
+    - cs_3005c.bif
+    - cs_3006a.bif
+    - cs_3006c.bif
+    - cs_3006d.bif
+    - cs_3007a.bif
+    - cs_3007c.bif
+    - cs_3008b.bif
+    - cs_3008d.bif
+    - cs_3008e.bif
+    - cs_3008f.bif
+    - cs_3009.bif
+    - cs_3010a.bif
+    - cs_3012.bif
+    - cs_3014.bif
+    - cs_3015.bif
+    - cs_3016.bif
+    - cs_3017.bif
+    - cs_9999.bif
+    - cs_pc.bif
+    - cursors.bif
+    - data/ar0100.bif
+    - data/ar0101.bif
+    - data/ar0102.bif
+    - data/ar0103.bif
+    - data/ar0104.bif
+    - data/ar0105.bif
+    - data/ar0106.bif
+    - data/ar0107.bif
+    - data/ar0108.bif
+    - data/ar0109.bif
+    - data/ar0110.bif
+    - data/ar0200.bif
+    - data/ar0201.bif
+    - data/ar0202.bif
+    - data/ar0203.bif
+    - data/ar0205.bif
+    - data/ar0206.bif
+    - data/ar0207.bif
+    - data/ar0208.bif
+    - data/ar0209.bif
+    - data/ar0300.bif
+    - data/ar0301.bif
+    - data/ar0302.bif
+    - data/ar0303.bif
+    - data/ar0304.bif
+    - data/ar0305.bif
+    - data/ar0306.bif
+    - data/ar0400.bif
+    - data/ar0401.bif
+    - data/ar0402.bif
+    - data/ar0403.bif
+    - data/ar0404.bif
+    - data/ar0405.bif
+    - data/ar0500.bif
+    - data/ar0501.bif
+    - data/ar0502.bif
+    - data/ar0503.bif
+    - data/ar0504.bif
+    - data/ar0505.bif
+    - data/ar0506.bif
+    - data/ar0507.bif
+    - data/ar0508.bif
+    - data/ar0509.bif
+    - data/ar0510.bif
+    - data/ar0511.bif
+    - data/ar0512.bif
+    - data/ar0513.bif
+    - data/ar0600.bif
+    - data/ar0601.bif
+    - data/ar0602.bif
+    - data/ar0603.bif
+    - data/ar0604.bif
+    - data/ar0605.bif
+    - data/ar0606.bif
+    - data/ar0607.bif
+    - data/ar0608.bif
+    - data/ar0609.bif
+    - data/ar0610.bif
+    - data/ar0611.bif
+    - data/ar0612.bif
+    - data/ar0613.bif
+    - data/ar0700.bif
+    - data/ar0701.bif
+    - data/ar0702.bif
+    - data/ar0703.bif
+    - data/ar0704.bif
+    - data/ar0705.bif
+    - data/ar0706.bif
+    - data/ar0707.bif
+    - data/ar0708.bif
+    - data/ar0800.bif
+    - data/ar0900.bif
+    - data/ar0901.bif
+    - data/ar0902.bif
+    - data/ar0903.bif
+    - data/ar0904.bif
+    - data/ar1000.bif
+    - data/ar1001.bif
+    - data/ar1100.bif
+    - data/ar1101.bif
+    - data/ar1200.bif
+    - data/ar1201.bif
+    - data/ar1202.bif
+    - data/ar1203.bif
+    - data/ar1204.bif
+    - data/ar1400.bif
+    - data/ar1401.bif
+    - data/ar1402.bif
+    - data/ar1403.bif
+    - data/ar1404.bif
+    - data/ar1405.bif
+    - data/ar1500.bif
+    - data/ar1501.bif
+    - data/ar1600.bif
+    - data/ar1601.bif
+    - data/ar1700.bif
+    - data/ar1800.bif
+    - data/ar1900.bif
+    - data/ar2000.bif
+    - data/ar3001.bif
+    - data/ar3002.bif
+    - data/ar3003.bif
+    - data/ar3004.bif
+    - data/ar3005.bif
+    - data/ar3006.bif
+    - data/ar3007.bif
+    - data/ar3008.bif
+    - data/ar3009.bif
+    - data/ar3010.bif
+    - data/ar3011.bif
+    - data/ar3012.bif
+    - data/ar3013.bif
+    - data/ar3014.bif
+    - data/ar3015.bif
+    - data/ar3016.bif
+    - data/ar3017.bif
+    - data/ca_aaf.bif
+    - data/ca_abs.bif
+    - data/ca_aca.bif
+    - data/ca_adv.bif
+    - data/ca_arm.bif
+    - data/ca_bau.bif
+    - data/ca_cam.bif
+    - data/ca_cgd.bif
+    - data/ca_cor.bif
+    - data/ca_crn.bif
+    - data/ca_dab.bif
+    - data/ca_dei.bif
+    - data/ca_dhl.bif
+    - data/ca_dtf.bif
+    - data/ca_dtm.bif
+    - data/ca_ebb.bif
+    - data/ca_fel.bif
+    - data/ca_fhj.bif
+    - data/ca_gab.bif
+    - data/ca_gar.bif
+    - data/ca_gdg.bif
+    - data/ca_ghf.bif
+    - data/ca_ghm.bif
+    - data/ca_gla.bif
+    - data/ca_god.bif
+    - data/ca_gri.bif
+    - data/ca_grk.bif
+    - data/ca_gst.bif
+    - data/ca_gyt.bif
+    - data/ca_har.bif
+    - data/ca_hrs.bif
+    - data/ca_jbr.bif
+    - data/ca_jft.bif
+    - data/ca_lem.bif
+    - data/ca_lop.bif
+    - data/ca_lth.bif
+    - data/ca_mht.bif
+    - data/ca_mid.bif
+    - data/ca_mkl.bif
+    - data/ca_npr.bif
+    - data/ca_phd.bif
+    - data/ca_pro.bif
+    - data/ca_puz.bif
+    - data/ca_qui.bif
+    - data/ca_rab.bif
+    - data/ca_skw.bif
+    - data/ca_sm1.bif
+    - data/ca_sm2.bif
+    - data/ca_sm3.bif
+    - data/ca_spt.bif
+    - data/ca_tff.bif
+    - data/ca_tfm.bif
+    - data/ca_tgt.bif
+    - data/ca_thk.bif
+    - data/ca_tlr.bif
+    - data/ca_trc.bif
+    - data/ca_tre.bif
+    - data/ca_trs.bif
+    - data/ca_trz.bif
+    - data/ca_twz.bif
+    - data/ca_uhd.bif
+    - data/ca_vgy.bif
+    - data/ca_wre.bif
+    - data/ca_wrm.bif
+    - data/ca_wur.bif
+    - data/ca_zmf.bif
+    - data/ca_zmm.bif
+    - data/genmova.bif
+    - data/genmovb.bif
+    - data/jrnlpic.bif
+    - data/movies2.bif
+    - data/movies4.bif
+    - dialog.tlk
+    - dialogf.tlk
+    - dlgfiles.bif
+    - effects.bif
+    - idsfiles.bif
+    - inifiles.bif
+    - interface.bif
+    - interfacedbg.bif
+    - irongolm.bif
+    - items.bif
+    - mrtghost.bif
+    - music/baat.mus
+    - music/baat/baator.acm
+    - music/bone.mus
+    - music/bone/bonesnig.acm
+    - music/bt1.mus
+    - music/bt1/bt1a1.acm
+    - music/bt1/bt1a2.acm
+    - music/bt1/bt1a3.acm
+    - music/bt1/bt1b1.acm
+    - music/bt1/bt1b2.acm
+    - music/bt1/bt1b3.acm
+    - music/bt1/bt1b4.acm
+    - music/bt1/bt1c1.acm
+    - music/bt1/bt1c2.acm
+    - music/bt1/bt1d1.acm
+    - music/bt1/bt1d2.acm
+    - music/bt1/bt1d3.acm
+    - music/bt1/bt1e1.acm
+    - music/bt1/bt1e2.acm
+    - music/bt1/bt1e3.acm
+    - music/bt1/bt1e4z.acm
+    - music/bt1/bt1z.acm
+    - music/bt1/bt1z3c.acm
+    - music/bt2.mus
+    - music/bt2/bt2a1.acm
+    - music/bt2/bt2a2.acm
+    - music/bt2/bt2b.acm
+    - music/bt2/bt2c1.acm
+    - music/bt2/bt2c2.acm
+    - music/bt2/bt2c3.acm
+    - music/bt2/bt2d1.acm
+    - music/bt2/bt2d2.acm
+    - music/bt2/bt2d3.acm
+    - music/bt2/bt2e1.acm
+    - music/bt2/bt2e2.acm
+    - music/bt2/bt2e3.acm
+    - music/bt2/bt2e4.acm
+    - music/bt2/bt2end1.acm
+    - music/bt2/bt2end2.acm
+    - music/bt2/bt2end3.acm
+    - music/bt2/bt2end4.acm
+    - music/bt2/bt2f1.acm
+    - music/bt2/bt2f2.acm
+    - music/bt2/bt2f3.acm
+    - music/bt2/bt2f4.acm
+    - music/bt2/bt2f5.acm
+    - music/bt2/bt2z.acm
+    - music/bt2/bt2zc1.acm
+    - music/bt3.mus
+    - music/bt3/bt3a1.acm
+    - music/bt3/bt3a2.acm
+    - music/bt3/bt3a3.acm
+    - music/bt3/bt3a4.acm
+    - music/bt3/bt3b1.acm
+    - music/bt3/bt3b2.acm
+    - music/bt3/bt3b3.acm
+    - music/bt3/bt3b4.acm
+    - music/bt3/bt3c1.acm
+    - music/bt3/bt3c2.acm
+    - music/bt3/bt3c3.acm
+    - music/bt3/bt3c4.acm
+    - music/bt3/bt3z.acm
+    - music/bt4.mus
+    - music/bt4/bt4a1.acm
+    - music/bt4/bt4a2.acm
+    - music/bt4/bt4a3.acm
+    - music/bt4/bt4a4.acm
+    - music/bt4/bt4b1.acm
+    - music/bt4/bt4b2.acm
+    - music/bt4/bt4b3.acm
+    - music/bt4/bt4c1.acm
+    - music/bt4/bt4c2.acm
+    - music/bt4/bt4c3.acm
+    - music/bt4/bt4d1.acm
+    - music/bt4/bt4d2.acm
+    - music/bt4/bt4d3.acm
+    - music/bt4/bt4e1.acm
+    - music/bt4/bt4e2.acm
+    - music/bt4/bt4e3.acm
+    - music/bt4/bt4f1.acm
+    - music/bt4/bt4f2.acm
+    - music/bt4/bt4f3.acm
+    - music/bt4/bt4f4.acm
+    - music/bt4/bt4z1.acm
+    - music/bt4/bt4z1z2.acm
+    - music/bt4/bt4z2.acm
+    - music/bt4/bt4z2a1.acm
+    - music/bt5.mus
+    - music/bt5/bt5a1.acm
+    - music/bt5/bt5a2.acm
+    - music/bt5/bt5a3.acm
+    - music/bt5/bt5a4.acm
+    - music/bt5/bt5b1.acm
+    - music/bt5/bt5b2b.acm
+    - music/bt5/bt5c1b.acm
+    - music/bt5/bt5c2.acm
+    - music/bt5/bt5c3.acm
+    - music/bt5/bt5d1b.acm
+    - music/bt5/bt5d2b.acm
+    - music/bt5/bt5e1.acm
+    - music/bt5/bt5e2.acm
+    - music/bt5/bt5e3.acm
+    - music/bt5/bt5end1.acm
+    - music/bt5/bt5end2.acm
+    - music/bt5/bt5end3.acm
+    - music/bt5/bt5end4.acm
+    - music/bt5/bt5f1.acm
+    - music/bt5/bt5f1z.acm
+    - music/bt5/bt5f2.acm
+    - music/bt5/bt5g1.acm
+    - music/bt5/bt5g2.acm
+    - music/bt5/bt5g3.acm
+    - music/bt5/bt5g4.acm
+    - music/bt5/bt5g5.acm
+    - music/bt5/bt5h1.acm
+    - music/bt5/bt5h1z.acm
+    - music/bt5/bt5z.acm
+    - music/bt5/bt5za1.acm
+    - music/char13b.mus
+    - music/char13b/char13ba.acm
+    - music/char_01.mus
+    - music/char_01/char_01a.acm
+    - music/char_02.mus
+    - music/char_02/char_02a.acm
+    - music/char_03.mus
+    - music/char_03/char_03a.acm
+    - music/char_04.mus
+    - music/char_04/char_04a.acm
+    - music/char_05.mus
+    - music/char_05/char_05a.acm
+    - music/char_06.mus
+    - music/char_06/char_06a.acm
+    - music/char_07.mus
+    - music/char_07/char_07a.acm
+    - music/char_09.mus
+    - music/char_09/char_09a.acm
+    - music/char_10.mus
+    - music/char_10/char_10a.acm
+    - music/char_12.mus
+    - music/char_12/char_12a.acm
+    - music/char_13.mus
+    - music/char_13/char_13a.acm
+    - music/char_14.mus
+    - music/char_14/char_14a.acm
+    - music/char_15.mus
+    - music/char_15/char_15a.acm
+    - music/civic.mus
+    - music/civic/civicfes.acm
+    - music/cur.mus
+    - music/cur/curst.acm
+    - music/end_01b.mus
+    - music/end_01b/end_01ba.acm
+    - music/end_01g.mus
+    - music/end_01g/end_01ga.acm
+    - music/end_02.mus
+    - music/end_02/end_02a.acm
+    - music/fort.mus
+    - music/fort/fortress.acm
+    - music/main.mus
+    - music/main/main_01.acm
+    - music/modr.mus
+    - music/modr/modronmz.acm
+    - music/mort.mus
+    - music/mort/mortuary.acm
+    - music/rave.mus
+    - music/rave/ravelmaz.acm
+    - music/sig.mus
+    - music/sig/sigil.acm
+    - music/smol.mus
+    - music/smol/smolder.acm
+    - music/songlist.txt
+    - music/spc.acm
+    - music/spc1.acm
+    - override/0202cut5.bcs
+    - override/0202trg1.bcs
+    - override/0301ramo.bcs
+    - override/0301shmo.bcs
+    - override/0401dabu.bcs
+    - override/0403gang.bcs
+    - override/0403ggng.bcs
+    - override/0403gngb.bcs
+    - override/0404fell.bcs
+    - override/0500gith.bcs
+    - override/0500vrtn.bcs
+    - override/0502gfcl.bcs
+    - override/0508loth.bcs
+    - override/0600neme.bcs
+    - override/0600sarh.bcs
+    - override/0600tod1.bcs
+    - override/0600tod2.bcs
+    - override/0610cut3.bcs
+    - override/0610cut5.bcs
+    - override/0610cut6.bcs
+    - override/0610cut7.bcs
+    - override/0610ravl.bcs
+    - override/0700anam.bcs
+    - override/0701anam.bcs
+    - override/0702gar2.bcs
+    - override/0702gar3.bcs
+    - override/0702gard.bcs
+    - override/0702prsn.bcs
+    - override/0900grdg.bcs
+    - override/0900hezo.bcs
+    - override/0900jjog.bcs
+    - override/0900loot.bcs
+    - override/0900mob.bcs
+    - override/0900off.bcs
+    - override/0900slv0.bcs
+    - override/0900slvc.bcs
+    - override/0900tem1.bcs
+    - override/0900tem2.bcs
+    - override/0900tem3.bcs
+    - override/0900tem4.bcs
+    - override/0900tgrd.bcs
+    - override/0900twn1.bcs
+    - override/0900xatk.bcs
+    - override/0900xfle.bcs
+    - override/0901geh6.bcs
+    - override/0901gehr.bcs
+    - override/0901grds.bcs
+    - override/0901loot.bcs
+    - override/0901shm1.bcs
+    - override/0901shm2.bcs
+    - override/0901shm3.bcs
+    - override/0901shm4.bcs
+    - override/0901shm5.bcs
+    - override/0901shm6.bcs
+    - override/0901shm7.bcs
+    - override/0901shm8.bcs
+    - override/0901shm9.bcs
+    - override/0901shma.bcs
+    - override/0901tria.bcs
+    - override/1000abd2.bcs
+    - override/1000abid.bcs
+    - override/1000fnds.bcs
+    - override/1000lemd.bcs
+    - override/1100anim.bcs
+    - override/1100grg0.bcs
+    - override/1100grg4.bcs
+    - override/1100grk0.bcs
+    - override/1204trb1.bcs
+    - override/1204trb2.bcs
+    - override/1204trb3.bcs
+    - override/1204trnf.bcs
+    - override/1500cs14.bcs
+    - override/1500cs5.bcs
+    - override/1600cut2.bcs
+    - override/1601mana.bcs
+    - override/1601manb.bcs
+    - override/1601manc.bcs
+    - override/1700var4.bcs
+    - override/1700vini.bcs
+    - override/2000cati.bcs
+    - override/2000wrms.bcs
+    - override/agril.cre
+    - override/ar0105.are
+    - override/ar0301.bcs
+    - override/ar0401.bcs
+    - override/ar0605.are
+    - override/ar0702.are
+    - override/ar0901.are
+    - override/ar0901.bcs
+    - override/ar1204.bcs
+    - override/ar1500.bcs
+    - override/ar1601.bcs
+    - override/chigh.cre
+    - override/cmod.cre
+    - override/conall.sto
+    - override/crstlot1.cre
+    - override/crstlot2.cre
+    - override/crstlot3.cre
+    - override/dable.dlg
+    - override/dagril.dlg
+    - override/dannah.dlg
+    - override/dawait.dlg
+    - override/dberrog.dlg
+    - override/dbody1.dlg
+    - override/dburgher.dlg
+    - override/dcandri.dlg
+    - override/dcube.dlg
+    - override/dcwpoetf.dlg
+    - override/ddakkon.dlg
+    - override/decant2.itm
+    - override/decco.dlg
+    - override/df_ss_ra.dlg
+    - override/dfell.dlg
+    - override/dfhjull.dlg
+    - override/dgith.dlg
+    - override/dgrace.dlg
+    - override/dhamrys.dlg
+    - override/dharlotn.dlg
+    - override/dilquixt.dlg
+    - override/dkarina.dlg
+    - override/dkiina.dlg
+    - override/dkitla.dlg
+    - override/dkrys.dlg
+    - override/dlenny.dlg
+    - override/dmarquez.dlg
+    - override/dmarrow.dlg
+    - override/dmerkil1.dlg
+    - override/dmerkil2.dlg
+    - override/dmerkil3.dlg
+    - override/dmodron.dlg
+    - override/dmooch.dlg
+    - override/dmorte.dlg
+    - override/dnordom.dlg
+    - override/dpillar.dlg
+    - override/dquell.dlg
+    - override/dravel.dlg
+    - override/droberta.dlg
+    - override/drotwill.dlg
+    - override/dscoff.dlg
+    - override/dstalema.dlg
+    - override/dtrans.dlg
+    - override/dtrias.dlg
+    - override/dvrisch.dlg
+    - override/dxach.dlg
+    - override/dxander.dlg
+    - override/emoric.sto
+    - override/fell.sto
+    - override/fontdlg.bam
+    - override/gib.cre
+    - override/giscorl.sto
+    - override/gsknife.itm
+    - override/iron3.itm
+    - override/mebbeth.sto
+    - override/quint.sto
+    - override/sppr204.spl
+    - override/spwi101.spl
+    - override/spwi212.spl
+    - override/spwi314.spl
+    - override/spwi401.spl
+    - override/spwi501.spl
+    - override/spwi603.spl
+    - override/spwi705.spl
+    - override/spwi802.spl
+    - override/trans.cre
+    - override/trans2.cre
+    - override/trans3.cre
+    - override/trans4.cre
+    - override/trans5.cre
+    - override/yelaan.cre
+    - palette.bif
+    - pillar.bif
+    - roundbmp.bif
+    - sound.bif
+    - spells.bif
+    - startup.bif
+    - store.bif
+    - traps.bif
+    - var.var
+    - voice.bif
+    optional:
+    - autonote.ini
+    - beast.ini
+    - keymap.ini
+    - layout.ini
+    - override/ar0700.ini
+    - override/ar0901.ini
+    - quests.ini
+    - support.ico
+    - torment.ini
+    license:
+    - readme.txt
+files:
+  ddrawfix/readme.html:
+    install_to: $docdir
+  manual.pdf:
+    install_to: $docdir
+  readme11.txt:
+    install_to: $docdir
+  setup_planescape_torment_2.0.0.8.exe:
+    provides:
+    - autonote.ini
+    - beast.ini
+    - keymap.ini
+    - layout.ini
+    - override/ar0700.ini
+    - override/ar0901.ini
+    - quests.ini
+    - support.ico
+    - torment.ini
+    - 2dafiles.bif
+    - ar13en.bif
+    - ar13fd.bif
+    - ar13fy.bif
+    - ar13g1.bif
+    - ar13g2.bif
+    - ar13g3.bif
+    - ar13wz.bif
+    - arefiles.bif
+    - arescrpt.bif
+    - ca_ann.bif
+    - ca_col.bif
+    - ca_ctf.bif
+    - ca_cth.bif
+    - ca_ctm.bif
+    - ca_dkk.bif
+    - ca_ffg.bif
+    - ca_hkm.bif
+    - ca_hlf.bif
+    - ca_hlm.bif
+    - ca_huf.bif
+    - ca_hum.bif
+    - ca_igy.bif
+    - ca_lkm.bif
+    - ca_mdr.bif
+    - ca_mrt.bif
+    - ca_ndm.bif
+    - ca_noa.bif
+    - ca_noc.bif
+    - ca_nod.bif
+    - ca_nod2.bif
+    - ca_nof.bif
+    - ca_noh.bif
+    - ca_nom.bif
+    - ca_nos.bif
+    - ca_noz.bif
+    - ca_vha.bif
+    - ca_wiz.bif
+    - ca_zmm.bif
+    - cachemos.bif
+    - chitin.key
+    - crefiles.bif
+    - cs_0000.bif
+    - cs_0100.bif
+    - cs_0101.bif
+    - cs_0102.bif
+    - cs_0103.bif
+    - cs_0104a.bif
+    - cs_0104c.bif
+    - cs_0105.bif
+    - cs_0106.bif
+    - cs_0107.bif
+    - cs_0108.bif
+    - cs_0109.bif
+    - cs_0110.bif
+    - cs_0200.bif
+    - cs_0201.bif
+    - cs_0202.bif
+    - cs_0203.bif
+    - cs_0205.bif
+    - cs_0208.bif
+    - cs_0209.bif
+    - cs_0300.bif
+    - cs_0301.bif
+    - cs_0302.bif
+    - cs_0303.bif
+    - cs_0304.bif
+    - cs_0305.bif
+    - cs_0306a.bif
+    - cs_0400.bif
+    - cs_0401.bif
+    - cs_0402.bif
+    - cs_0403.bif
+    - cs_0404.bif
+    - cs_0405.bif
+    - cs_0500.bif
+    - cs_0501.bif
+    - cs_0502.bif
+    - cs_0503.bif
+    - cs_0504.bif
+    - cs_0505.bif
+    - cs_0506.bif
+    - cs_0508.bif
+    - cs_0509.bif
+    - cs_0510.bif
+    - cs_0511.bif
+    - cs_0512.bif
+    - cs_0513.bif
+    - cs_0600.bif
+    - cs_0601.bif
+    - cs_0602.bif
+    - cs_0603.bif
+    - cs_0604.bif
+    - cs_0605.bif
+    - cs_0606.bif
+    - cs_0607.bif
+    - cs_0608.bif
+    - cs_0609.bif
+    - cs_0610.bif
+    - cs_0611.bif
+    - cs_0612.bif
+    - cs_0700.bif
+    - cs_0701.bif
+    - cs_0702.bif
+    - cs_0703.bif
+    - cs_0704.bif
+    - cs_0705.bif
+    - cs_0706.bif
+    - cs_0706b.bif
+    - cs_0707.bif
+    - cs_0708.bif
+    - cs_0800.bif
+    - cs_0900.bif
+    - cs_0901.bif
+    - cs_0902.bif
+    - cs_0903.bif
+    - cs_0904.bif
+    - cs_1000.bif
+    - cs_1001.bif
+    - cs_1100.bif
+    - cs_1101.bif
+    - cs_1200.bif
+    - cs_1201.bif
+    - cs_1202.bif
+    - cs_1203.bif
+    - cs_1204.bif
+    - cs_1300.bif
+    - cs_1400.bif
+    - cs_1401.bif
+    - cs_1402.bif
+    - cs_1403.bif
+    - cs_1404.bif
+    - cs_1405.bif
+    - cs_1500.bif
+    - cs_1501.bif
+    - cs_1600.bif
+    - cs_1601.bif
+    - cs_1700.bif
+    - cs_1800.bif
+    - cs_1900.bif
+    - cs_2000.bif
+    - cs_3001.bif
+    - cs_3002a.bif
+    - cs_3003.bif
+    - cs_3004a.bif
+    - cs_3004b.bif
+    - cs_3005a.bif
+    - cs_3005b.bif
+    - cs_3005c.bif
+    - cs_3006a.bif
+    - cs_3006c.bif
+    - cs_3006d.bif
+    - cs_3007a.bif
+    - cs_3007c.bif
+    - cs_3008b.bif
+    - cs_3008d.bif
+    - cs_3008e.bif
+    - cs_3008f.bif
+    - cs_3009.bif
+    - cs_3010a.bif
+    - cs_3012.bif
+    - cs_3014.bif
+    - cs_3015.bif
+    - cs_3016.bif
+    - cs_3017.bif
+    - cs_9999.bif
+    - cs_pc.bif
+    - cursors.bif
+    - data/ar0100.bif
+    - data/ar0101.bif
+    - data/ar0102.bif
+    - data/ar0103.bif
+    - data/ar0104.bif
+    - data/ar0105.bif
+    - data/ar0106.bif
+    - data/ar0107.bif
+    - data/ar0108.bif
+    - data/ar0109.bif
+    - data/ar0110.bif
+    - data/ar0200.bif
+    - data/ar0201.bif
+    - data/ar0202.bif
+    - data/ar0203.bif
+    - data/ar0205.bif
+    - data/ar0206.bif
+    - data/ar0207.bif
+    - data/ar0208.bif
+    - data/ar0209.bif
+    - data/ar0300.bif
+    - data/ar0301.bif
+    - data/ar0302.bif
+    - data/ar0303.bif
+    - data/ar0304.bif
+    - data/ar0305.bif
+    - data/ar0306.bif
+    - data/ar0400.bif
+    - data/ar0401.bif
+    - data/ar0402.bif
+    - data/ar0403.bif
+    - data/ar0404.bif
+    - data/ar0405.bif
+    - data/ar0500.bif
+    - data/ar0501.bif
+    - data/ar0502.bif
+    - data/ar0503.bif
+    - data/ar0504.bif
+    - data/ar0505.bif
+    - data/ar0506.bif
+    - data/ar0507.bif
+    - data/ar0508.bif
+    - data/ar0509.bif
+    - data/ar0510.bif
+    - data/ar0511.bif
+    - data/ar0512.bif
+    - data/ar0513.bif
+    - data/ar0600.bif
+    - data/ar0601.bif
+    - data/ar0602.bif
+    - data/ar0603.bif
+    - data/ar0604.bif
+    - data/ar0605.bif
+    - data/ar0606.bif
+    - data/ar0607.bif
+    - data/ar0608.bif
+    - data/ar0609.bif
+    - data/ar0610.bif
+    - data/ar0611.bif
+    - data/ar0612.bif
+    - data/ar0613.bif
+    - data/ar0700.bif
+    - data/ar0701.bif
+    - data/ar0702.bif
+    - data/ar0703.bif
+    - data/ar0704.bif
+    - data/ar0705.bif
+    - data/ar0706.bif
+    - data/ar0707.bif
+    - data/ar0708.bif
+    - data/ar0800.bif
+    - data/ar0900.bif
+    - data/ar0901.bif
+    - data/ar0902.bif
+    - data/ar0903.bif
+    - data/ar0904.bif
+    - data/ar1000.bif
+    - data/ar1001.bif
+    - data/ar1100.bif
+    - data/ar1101.bif
+    - data/ar1200.bif
+    - data/ar1201.bif
+    - data/ar1202.bif
+    - data/ar1203.bif
+    - data/ar1204.bif
+    - data/ar1400.bif
+    - data/ar1401.bif
+    - data/ar1402.bif
+    - data/ar1403.bif
+    - data/ar1404.bif
+    - data/ar1405.bif
+    - data/ar1500.bif
+    - data/ar1501.bif
+    - data/ar1600.bif
+    - data/ar1601.bif
+    - data/ar1700.bif
+    - data/ar1800.bif
+    - data/ar1900.bif
+    - data/ar2000.bif
+    - data/ar3001.bif
+    - data/ar3002.bif
+    - data/ar3003.bif
+    - data/ar3004.bif
+    - data/ar3005.bif
+    - data/ar3006.bif
+    - data/ar3007.bif
+    - data/ar3008.bif
+    - data/ar3009.bif
+    - data/ar3010.bif
+    - data/ar3011.bif
+    - data/ar3012.bif
+    - data/ar3013.bif
+    - data/ar3014.bif
+    - data/ar3015.bif
+    - data/ar3016.bif
+    - data/ar3017.bif
+    - data/ca_aaf.bif
+    - data/ca_abs.bif
+    - data/ca_aca.bif
+    - data/ca_adv.bif
+    - data/ca_arm.bif
+    - data/ca_bau.bif
+    - data/ca_cam.bif
+    - data/ca_cgd.bif
+    - data/ca_cor.bif
+    - data/ca_crn.bif
+    - data/ca_dab.bif
+    - data/ca_dei.bif
+    - data/ca_dhl.bif
+    - data/ca_dtf.bif
+    - data/ca_dtm.bif
+    - data/ca_ebb.bif
+    - data/ca_fel.bif
+    - data/ca_fhj.bif
+    - data/ca_gab.bif
+    - data/ca_gar.bif
+    - data/ca_gdg.bif
+    - data/ca_ghf.bif
+    - data/ca_ghm.bif
+    - data/ca_gla.bif
+    - data/ca_god.bif
+    - data/ca_gri.bif
+    - data/ca_grk.bif
+    - data/ca_gst.bif
+    - data/ca_gyt.bif
+    - data/ca_har.bif
+    - data/ca_hrs.bif
+    - data/ca_jbr.bif
+    - data/ca_jft.bif
+    - data/ca_lem.bif
+    - data/ca_lop.bif
+    - data/ca_lth.bif
+    - data/ca_mht.bif
+    - data/ca_mid.bif
+    - data/ca_mkl.bif
+    - data/ca_npr.bif
+    - data/ca_phd.bif
+    - data/ca_pro.bif
+    - data/ca_puz.bif
+    - data/ca_qui.bif
+    - data/ca_rab.bif
+    - data/ca_skw.bif
+    - data/ca_sm1.bif
+    - data/ca_sm2.bif
+    - data/ca_sm3.bif
+    - data/ca_spt.bif
+    - data/ca_tff.bif
+    - data/ca_tfm.bif
+    - data/ca_tgt.bif
+    - data/ca_thk.bif
+    - data/ca_tlr.bif
+    - data/ca_trc.bif
+    - data/ca_tre.bif
+    - data/ca_trs.bif
+    - data/ca_trz.bif
+    - data/ca_twz.bif
+    - data/ca_uhd.bif
+    - data/ca_vgy.bif
+    - data/ca_wre.bif
+    - data/ca_wrm.bif
+    - data/ca_wur.bif
+    - data/ca_zmf.bif
+    - data/ca_zmm.bif
+    - data/genmova.bif
+    - data/genmovb.bif
+    - data/jrnlpic.bif
+    - data/movies2.bif
+    - data/movies4.bif
+    - dialog.tlk
+    - dialogf.tlk
+    - dlgfiles.bif
+    - effects.bif
+    - idsfiles.bif
+    - inifiles.bif
+    - interface.bif
+    - interfacedbg.bif
+    - irongolm.bif
+    - items.bif
+    - mrtghost.bif
+    - music/baat.mus
+    - music/baat/baator.acm
+    - music/bone.mus
+    - music/bone/bonesnig.acm
+    - music/bt1.mus
+    - music/bt1/bt1a1.acm
+    - music/bt1/bt1a2.acm
+    - music/bt1/bt1a3.acm
+    - music/bt1/bt1b1.acm
+    - music/bt1/bt1b2.acm
+    - music/bt1/bt1b3.acm
+    - music/bt1/bt1b4.acm
+    - music/bt1/bt1c1.acm
+    - music/bt1/bt1c2.acm
+    - music/bt1/bt1d1.acm
+    - music/bt1/bt1d2.acm
+    - music/bt1/bt1d3.acm
+    - music/bt1/bt1e1.acm
+    - music/bt1/bt1e2.acm
+    - music/bt1/bt1e3.acm
+    - music/bt1/bt1e4z.acm
+    - music/bt1/bt1z.acm
+    - music/bt1/bt1z3c.acm
+    - music/bt2.mus
+    - music/bt2/bt2a1.acm
+    - music/bt2/bt2a2.acm
+    - music/bt2/bt2b.acm
+    - music/bt2/bt2c1.acm
+    - music/bt2/bt2c2.acm
+    - music/bt2/bt2c3.acm
+    - music/bt2/bt2d1.acm
+    - music/bt2/bt2d2.acm
+    - music/bt2/bt2d3.acm
+    - music/bt2/bt2e1.acm
+    - music/bt2/bt2e2.acm
+    - music/bt2/bt2e3.acm
+    - music/bt2/bt2e4.acm
+    - music/bt2/bt2end1.acm
+    - music/bt2/bt2end2.acm
+    - music/bt2/bt2end3.acm
+    - music/bt2/bt2end4.acm
+    - music/bt2/bt2f1.acm
+    - music/bt2/bt2f2.acm
+    - music/bt2/bt2f3.acm
+    - music/bt2/bt2f4.acm
+    - music/bt2/bt2f5.acm
+    - music/bt2/bt2z.acm
+    - music/bt2/bt2zc1.acm
+    - music/bt3.mus
+    - music/bt3/bt3a1.acm
+    - music/bt3/bt3a2.acm
+    - music/bt3/bt3a3.acm
+    - music/bt3/bt3a4.acm
+    - music/bt3/bt3b1.acm
+    - music/bt3/bt3b2.acm
+    - music/bt3/bt3b3.acm
+    - music/bt3/bt3b4.acm
+    - music/bt3/bt3c1.acm
+    - music/bt3/bt3c2.acm
+    - music/bt3/bt3c3.acm
+    - music/bt3/bt3c4.acm
+    - music/bt3/bt3z.acm
+    - music/bt4.mus
+    - music/bt4/bt4a1.acm
+    - music/bt4/bt4a2.acm
+    - music/bt4/bt4a3.acm
+    - music/bt4/bt4a4.acm
+    - music/bt4/bt4b1.acm
+    - music/bt4/bt4b2.acm
+    - music/bt4/bt4b3.acm
+    - music/bt4/bt4c1.acm
+    - music/bt4/bt4c2.acm
+    - music/bt4/bt4c3.acm
+    - music/bt4/bt4d1.acm
+    - music/bt4/bt4d2.acm
+    - music/bt4/bt4d3.acm
+    - music/bt4/bt4e1.acm
+    - music/bt4/bt4e2.acm
+    - music/bt4/bt4e3.acm
+    - music/bt4/bt4f1.acm
+    - music/bt4/bt4f2.acm
+    - music/bt4/bt4f3.acm
+    - music/bt4/bt4f4.acm
+    - music/bt4/bt4z1.acm
+    - music/bt4/bt4z1z2.acm
+    - music/bt4/bt4z2.acm
+    - music/bt4/bt4z2a1.acm
+    - music/bt5.mus
+    - music/bt5/bt5a1.acm
+    - music/bt5/bt5a2.acm
+    - music/bt5/bt5a3.acm
+    - music/bt5/bt5a4.acm
+    - music/bt5/bt5b1.acm
+    - music/bt5/bt5b2b.acm
+    - music/bt5/bt5c1b.acm
+    - music/bt5/bt5c2.acm
+    - music/bt5/bt5c3.acm
+    - music/bt5/bt5d1b.acm
+    - music/bt5/bt5d2b.acm
+    - music/bt5/bt5e1.acm
+    - music/bt5/bt5e2.acm
+    - music/bt5/bt5e3.acm
+    - music/bt5/bt5end1.acm
+    - music/bt5/bt5end2.acm
+    - music/bt5/bt5end3.acm
+    - music/bt5/bt5end4.acm
+    - music/bt5/bt5f1.acm
+    - music/bt5/bt5f1z.acm
+    - music/bt5/bt5f2.acm
+    - music/bt5/bt5g1.acm
+    - music/bt5/bt5g2.acm
+    - music/bt5/bt5g3.acm
+    - music/bt5/bt5g4.acm
+    - music/bt5/bt5g5.acm
+    - music/bt5/bt5h1.acm
+    - music/bt5/bt5h1z.acm
+    - music/bt5/bt5z.acm
+    - music/bt5/bt5za1.acm
+    - music/char13b.mus
+    - music/char13b/char13ba.acm
+    - music/char_01.mus
+    - music/char_01/char_01a.acm
+    - music/char_02.mus
+    - music/char_02/char_02a.acm
+    - music/char_03.mus
+    - music/char_03/char_03a.acm
+    - music/char_04.mus
+    - music/char_04/char_04a.acm
+    - music/char_05.mus
+    - music/char_05/char_05a.acm
+    - music/char_06.mus
+    - music/char_06/char_06a.acm
+    - music/char_07.mus
+    - music/char_07/char_07a.acm
+    - music/char_09.mus
+    - music/char_09/char_09a.acm
+    - music/char_10.mus
+    - music/char_10/char_10a.acm
+    - music/char_12.mus
+    - music/char_12/char_12a.acm
+    - music/char_13.mus
+    - music/char_13/char_13a.acm
+    - music/char_14.mus
+    - music/char_14/char_14a.acm
+    - music/char_15.mus
+    - music/char_15/char_15a.acm
+    - music/civic.mus
+    - music/civic/civicfes.acm
+    - music/cur.mus
+    - music/cur/curst.acm
+    - music/end_01b.mus
+    - music/end_01b/end_01ba.acm
+    - music/end_01g.mus
+    - music/end_01g/end_01ga.acm
+    - music/end_02.mus
+    - music/end_02/end_02a.acm
+    - music/fort.mus
+    - music/fort/fortress.acm
+    - music/main.mus
+    - music/main/main_01.acm
+    - music/modr.mus
+    - music/modr/modronmz.acm
+    - music/mort.mus
+    - music/mort/mortuary.acm
+    - music/rave.mus
+    - music/rave/ravelmaz.acm
+    - music/sig.mus
+    - music/sig/sigil.acm
+    - music/smol.mus
+    - music/smol/smolder.acm
+    - music/songlist.txt
+    - music/spc.acm
+    - music/spc1.acm
+    - override/0202cut5.bcs
+    - override/0202trg1.bcs
+    - override/0301ramo.bcs
+    - override/0301shmo.bcs
+    - override/0401dabu.bcs
+    - override/0403gang.bcs
+    - override/0403ggng.bcs
+    - override/0403gngb.bcs
+    - override/0404fell.bcs
+    - override/0500gith.bcs
+    - override/0500vrtn.bcs
+    - override/0502gfcl.bcs
+    - override/0508loth.bcs
+    - override/0600neme.bcs
+    - override/0600sarh.bcs
+    - override/0600tod1.bcs
+    - override/0600tod2.bcs
+    - override/0610cut3.bcs
+    - override/0610cut5.bcs
+    - override/0610cut6.bcs
+    - override/0610cut7.bcs
+    - override/0610ravl.bcs
+    - override/0700anam.bcs
+    - override/0701anam.bcs
+    - override/0702gar2.bcs
+    - override/0702gar3.bcs
+    - override/0702gard.bcs
+    - override/0702prsn.bcs
+    - override/0900grdg.bcs
+    - override/0900hezo.bcs
+    - override/0900jjog.bcs
+    - override/0900loot.bcs
+    - override/0900mob.bcs
+    - override/0900off.bcs
+    - override/0900slv0.bcs
+    - override/0900slvc.bcs
+    - override/0900tem1.bcs
+    - override/0900tem2.bcs
+    - override/0900tem3.bcs
+    - override/0900tem4.bcs
+    - override/0900tgrd.bcs
+    - override/0900twn1.bcs
+    - override/0900xatk.bcs
+    - override/0900xfle.bcs
+    - override/0901geh6.bcs
+    - override/0901gehr.bcs
+    - override/0901grds.bcs
+    - override/0901loot.bcs
+    - override/0901shm1.bcs
+    - override/0901shm2.bcs
+    - override/0901shm3.bcs
+    - override/0901shm4.bcs
+    - override/0901shm5.bcs
+    - override/0901shm6.bcs
+    - override/0901shm7.bcs
+    - override/0901shm8.bcs
+    - override/0901shm9.bcs
+    - override/0901shma.bcs
+    - override/0901tria.bcs
+    - override/1000abd2.bcs
+    - override/1000abid.bcs
+    - override/1000fnds.bcs
+    - override/1000lemd.bcs
+    - override/1100anim.bcs
+    - override/1100grg0.bcs
+    - override/1100grg4.bcs
+    - override/1100grk0.bcs
+    - override/1204trb1.bcs
+    - override/1204trb2.bcs
+    - override/1204trb3.bcs
+    - override/1204trnf.bcs
+    - override/1500cs14.bcs
+    - override/1500cs5.bcs
+    - override/1600cut2.bcs
+    - override/1601mana.bcs
+    - override/1601manb.bcs
+    - override/1601manc.bcs
+    - override/1700var4.bcs
+    - override/1700vini.bcs
+    - override/2000cati.bcs
+    - override/2000wrms.bcs
+    - override/agril.cre
+    - override/ar0105.are
+    - override/ar0301.bcs
+    - override/ar0401.bcs
+    - override/ar0605.are
+    - override/ar0702.are
+    - override/ar0901.are
+    - override/ar0901.bcs
+    - override/ar1204.bcs
+    - override/ar1500.bcs
+    - override/ar1601.bcs
+    - override/chigh.cre
+    - override/cmod.cre
+    - override/conall.sto
+    - override/crstlot1.cre
+    - override/crstlot2.cre
+    - override/crstlot3.cre
+    - override/dable.dlg
+    - override/dagril.dlg
+    - override/dannah.dlg
+    - override/dawait.dlg
+    - override/dberrog.dlg
+    - override/dbody1.dlg
+    - override/dburgher.dlg
+    - override/dcandri.dlg
+    - override/dcube.dlg
+    - override/dcwpoetf.dlg
+    - override/ddakkon.dlg
+    - override/decant2.itm
+    - override/decco.dlg
+    - override/df_ss_ra.dlg
+    - override/dfell.dlg
+    - override/dfhjull.dlg
+    - override/dgith.dlg
+    - override/dgrace.dlg
+    - override/dhamrys.dlg
+    - override/dharlotn.dlg
+    - override/dilquixt.dlg
+    - override/dkarina.dlg
+    - override/dkiina.dlg
+    - override/dkitla.dlg
+    - override/dkrys.dlg
+    - override/dlenny.dlg
+    - override/dmarquez.dlg
+    - override/dmarrow.dlg
+    - override/dmerkil1.dlg
+    - override/dmerkil2.dlg
+    - override/dmerkil3.dlg
+    - override/dmodron.dlg
+    - override/dmooch.dlg
+    - override/dmorte.dlg
+    - override/dnordom.dlg
+    - override/dpillar.dlg
+    - override/dquell.dlg
+    - override/dravel.dlg
+    - override/droberta.dlg
+    - override/drotwill.dlg
+    - override/dscoff.dlg
+    - override/dstalema.dlg
+    - override/dtrans.dlg
+    - override/dtrias.dlg
+    - override/dvrisch.dlg
+    - override/dxach.dlg
+    - override/dxander.dlg
+    - override/emoric.sto
+    - override/fell.sto
+    - override/fontdlg.bam
+    - override/gib.cre
+    - override/giscorl.sto
+    - override/gsknife.itm
+    - override/iron3.itm
+    - override/mebbeth.sto
+    - override/quint.sto
+    - override/sppr204.spl
+    - override/spwi101.spl
+    - override/spwi212.spl
+    - override/spwi314.spl
+    - override/spwi401.spl
+    - override/spwi501.spl
+    - override/spwi603.spl
+    - override/spwi705.spl
+    - override/spwi802.spl
+    - override/trans.cre
+    - override/trans2.cre
+    - override/trans3.cre
+    - override/trans4.cre
+    - override/trans5.cre
+    - override/yelaan.cre
+    - palette.bif
+    - pillar.bif
+    - roundbmp.bif
+    - sound.bif
+    - spells.bif
+    - startup.bif
+    - store.bif
+    - traps.bif
+    - var.var
+    - voice.bif
+    unpack:
+      format: innoextract
+
+size_and_md5: |
+  103613    111714f8aeb1bf4e6b2c89add3642b8b 2dafiles.bif
+  2551026   23f247f08ae29a50d3a04463913d1b96 ar13en.bif
+  2417320   04ca4c5fefc813d38e0e8e2ba7108235 ar13fd.bif
+  2497162   a58035ce8cfa5769e9a09e6b3dbefa26 ar13fy.bif
+  3020512   3cb8afc29e937b91ae751b65f1ebc638 ar13g1.bif
+  2537652   15ef1f28681756aea0bbb6dcc2a6576c ar13g2.bif
+  2535678   dd7879a7d4908481f9f5af12f945f658 ar13g3.bif
+  4554379   b227064f4504c7cb8475f061bbd6d1ec ar13wz.bif
+  1313176   58ccc5999b69628eb4682fc0d8e69a57 arefiles.bif
+  772030    49a62a495553c864da9e2a266ed5dec0 arescrpt.bif
+  9994      ce6211890a0ff9b0a8abd67be7466813 autonote.ini
+  9985      38bb306c43690c8b8069e7deb2b0e43d beast.ini
+  1901144   2a66ec2fcfc32424189769d9080beb80 ca_ann.bif
+  1836949   40b446d9b6b22a87ae860862a4d082d8 ca_col.bif
+  1674588   3ddedf0df469f257f4344176b617648d ca_ctf.bif
+  2021447   2629a7edde768e8ad40494a5a0ce7970 ca_cth.bif
+  2165726   39896d9b6d9f3f9a6d0e223dbf3fe7fc ca_ctm.bif
+  2798344   023b69515c5e44bfe279c9c0e0a86ebc ca_dkk.bif
+  3747849   d9aeb8847eea0bcf5e36b35663635c03 ca_ffg.bif
+  9053505   6c73d3ee2a5f7bd264912ab6d94f6518 ca_hkm.bif
+  1629943   5782653536c5d99bf7153cd629e7104d ca_hlf.bif
+  2066706   5a7d74e4edb6a257f484438cf609b18d ca_hlm.bif
+  1631168   57ecdcf24687edcf68feec9925a2fe9d ca_huf.bif
+  2064676   b4c450ff44393cdbe7e8f5261c64264c ca_hum.bif
+  4833434   420ceb06df245c37e5acc3ef67104748 ca_igy.bif
+  2253922   8c2f9431047dd58e65b8070830b7089f ca_lkm.bif
+  5331639   a38272c420bd37feb15421c6bd995883 ca_mdr.bif
+  431822    f3f72ece2d03262f23507da81e35123f ca_mrt.bif
+  4782876   1d80e154d32ba577fe409d1e53a8aa4e ca_ndm.bif
+  3725539   e3892eee01f41426029b70492f754d73 ca_noa.bif
+  3571118   7128b01ce6407f2d60c9e1514c67b8a4 ca_noc.bif
+  3150983   47bde3fcbc4aceb93bcd09f3fe4f9bf7 ca_nod.bif
+  2129173   ec1df32da01a0dc73273c87ebdefcaa6 ca_nod2.bif
+  6658545   8fbc83c0f47b3cc46016fb2be547a7ee ca_nof.bif
+  4024099   a19ba604d8b4e13d46ccb57ac6cc038d ca_noh.bif
+  2537915   1e429484f7db99e0cba6656c54c0c1bf ca_nom.bif
+  6007190   e27c3f678ba1ad47d766f23c5b72e858 ca_nos.bif
+  3146922   b0d30391641d1a5774a1e4add8c4df77 ca_noz.bif
+  3830415   85ce9a12eba34f5401ec8fafa0b940f7 ca_vha.bif
+  4938142   0b91633fc3006223a577c6f546502217 ca_wiz.bif
+  1293476   02d091888db4935504b294ffacc87b50 ca_zmm.bif
+  16490278  db8d3ac5f21489363e0ceb8019cbd923 cachemos.bif
+  178649    e52ae240dc607491caafaf37e1f34753 chitin.key
+  1440518   91bc2d7503146ca1359e9b86e6242ed0 crefiles.bif
+  57977     4daca7d95c5686251eeb14b5f86b7693 cs_0000.bif
+  293448    aa928b58a180f264480d84e62d7e40a0 cs_0100.bif
+  117500    aa540d160e9549a3391d199d63847ce0 cs_0101.bif
+  5446      5fbfb0296a578aff1018327b5ed09732 cs_0102.bif
+  13339     9fe2743999e0050b102a27582d8ebe87 cs_0103.bif
+  1059      0c548b7e5e88bd0ae860d51977085cf5 cs_0104a.bif
+  6218      da98aec5ab6006662d683f44f8730c1a cs_0104c.bif
+  884       e804fd43ad93f536c0451b42a9674065 cs_0105.bif
+  605       146ef0ad504ef002cf1b6ba6aa482a6a cs_0106.bif
+  3284      aad9893216d1b462708c6acb11032e77 cs_0107.bif
+  83497     aa9669f199b7552498d1c2a122cb8cdb cs_0108.bif
+  137132    fbdabf49c73cd0758fdb4a618ba4266f cs_0109.bif
+  31482     5797be4b64951f07a2ca7c18d8d8a1de cs_0110.bif
+  277787    13f29638120e3d20ee99b1d634ad556c cs_0200.bif
+  51138     15253a85c49dbaea1a5b2b8349b24cfa cs_0201.bif
+  89897     d9429e8a416452b316f6234480cc6dd5 cs_0202.bif
+  49149     64d172179107be283b4b2996b4f5707f cs_0203.bif
+  111591    3c8d142a2acec548c8e1dd334c73b677 cs_0205.bif
+  74441     73ca34ede1e8e9dd2d7fda303c468828 cs_0208.bif
+  7513      260042fb58df14ffc68aba953ac61120 cs_0209.bif
+  442265    681306d64bbfcecaffb87fd0595e63ab cs_0300.bif
+  145598    67b1fbd8750724a0d2a42712fffbb73f cs_0301.bif
+  3865      749a27615cac0f63aa7c09afc82c86ba cs_0302.bif
+  1230      3e726483c07cfb3cfaee7868b4184ce8 cs_0303.bif
+  3948      5938511e4f701277126cf4775f3f2e23 cs_0304.bif
+  16621     2984efcfefe40cb6c46091c648f194df cs_0305.bif
+  4395      05eb586cc1955c9f2a87fbb1c342f079 cs_0306a.bif
+  434388    36b4331163b97e3a1155cc1f73dcbdd9 cs_0400.bif
+  11866     7bfa666235daddc906018329f6c56a80 cs_0401.bif
+  78728     0d6ef64338c36afec562076b36e97a59 cs_0402.bif
+  67697     a2551f30f2d77e1adda61c10a96f0b1d cs_0403.bif
+  7597      3c61b41b7bba6e3c2ff01413c6017b0e cs_0404.bif
+  20764     7a54775924a9d44e1bc0d9c38602658a cs_0405.bif
+  196303    aba9c22bc4ca33abc325ad1ea63d45e1 cs_0500.bif
+  1616      ada586886488320c319e6ec74d200048 cs_0501.bif
+  87321     3a9074d26728f2194a88f3c679e50e63 cs_0502.bif
+  31471     c8d2c52b347affe993f9f66b17ca4b01 cs_0503.bif
+  240962    518f35a7c698fa694019892924093087 cs_0504.bif
+  16310     9fd7ea37b0ecd01f4387c4aff79368c6 cs_0505.bif
+  5131      5aa0a48d8d4835c42a6cfb693fecabe2 cs_0506.bif
+  26812     3d26e3981ae2185365be11c65c976287 cs_0508.bif
+  10075     e773bf4ccaf08c2ed1f5610206e88dcf cs_0509.bif
+  3393      ae795fb672ef2f550171d5e5d7e5f5f5 cs_0510.bif
+  17507     ec12b5c8d95e9422606aee5ee122d9a3 cs_0511.bif
+  119494    def92ff363175bf3ea8039cef5ae3c13 cs_0512.bif
+  5769      9dc50537ebc823ac168ed7a3e4f7ba28 cs_0513.bif
+  279395    24f1d269ce6edd74d4838e36f22ca933 cs_0600.bif
+  349964    62abfec85d82cb89cede1281a76876db cs_0601.bif
+  40414     0cb4a4d1cb2445de5c86a34782857aa6 cs_0602.bif
+  30723     52e561b94ec91047d850b4cb69dec045 cs_0603.bif
+  39657     d6598f70c46a7804afb0814cf8eb3522 cs_0604.bif
+  464714    ece468984c7c1391b372ad7a496f6aaa cs_0605.bif
+  27034     b68ae3b3f82e7437225fde2ddf353583 cs_0606.bif
+  9857      650ece3991c9505f8284b40fc03a75e3 cs_0607.bif
+  29687     16a1ef0ba5ce1d8aecd9a6f2eb1d4ac1 cs_0608.bif
+  43376     04a2eec67a358a11792e7e94dd03af3d cs_0609.bif
+  198161    1971cb230d37a6da22b73226b584a110 cs_0610.bif
+  23038     7f1469aa0589fce8689c0bdb6308ccc8 cs_0611.bif
+  40317     dc032ad42316c88676f69e10441176e5 cs_0612.bif
+  70178     f6449a4b15fcadadda810f5e430e7954 cs_0700.bif
+  205151    e8cd7664ab26226519eef54dc348332a cs_0701.bif
+  23901     9eaf7821ca7ce048b1d992776e797ef3 cs_0702.bif
+  15867     834b39df81dab1b9bfa7012bdab1e9db cs_0703.bif
+  37157     1bf75f9b2665f00d6ec8099bba8da304 cs_0704.bif
+  1655      0996b7e23af9859cbe045917c2cb4219 cs_0705.bif
+  2437      59d3cde71c49c15e9e8384a4fcc38fe1 cs_0706.bif
+  7779      4c49aeeb85adec126f7a9d0d3e5b3b15 cs_0706b.bif
+  1535      967082be651c33c5f67587c99904e30c cs_0707.bif
+  33046     4b31a54d0f36459157915c455e45cd50 cs_0708.bif
+  321       1379c9ad8660b309486e355614dd8629 cs_0800.bif
+  254936    05fd52fb1e0832a4d1c96a79c6038016 cs_0900.bif
+  71132     efd7bcb18f44d962c1e0793c809d0691 cs_0901.bif
+  25476     40c1f5c53982b971b437fe30c444ab25 cs_0902.bif
+  1825      83da88427188deaf2d0d28e75898ac88 cs_0903.bif
+  1234      306c5ed42eb890fbc126d3b317849f28 cs_0904.bif
+  22703     88b9f0f22aa71cb08d9a8e1fa778788e cs_1000.bif
+  10586     34de4b7b3bdcec42dbb1e76f1cfac602 cs_1001.bif
+  70570     f8d71ac1715f0bd2f6de863a2f5c790d cs_1100.bif
+  33040     9629904fc2b6751bea6f6b29b29ddb6e cs_1101.bif
+  5889      93400e00caae76163df7c7444de443bf cs_1200.bif
+  183195    2c0384f5404f603727996990bc02ee9e cs_1201.bif
+  30080     880dbd7797ae84784474dd95919c9948 cs_1202.bif
+  25729     8b505dccab0e6e9c4e04425c2e3e8455 cs_1203.bif
+  126384    e2679e5c7e3457da5dfd357e415db68f cs_1204.bif
+  24350     2dd5830f6164629d70646d0da306581c cs_1300.bif
+  54751     1f1cd34d83bc7b5b98fea4d2db05ee4f cs_1400.bif
+  1135      8f257f528e282b7b289dbcd3076d57cc cs_1401.bif
+  935       969892ffd6f53016680a769cb66c0260 cs_1402.bif
+  1240      e2e2f15dde027552b5cfbf6798c75c03 cs_1403.bif
+  2821      76be9f13222fc73aae5b80ad38376ac1 cs_1404.bif
+  4717      76a2e9dca6b3cde70fb69144826d1378 cs_1405.bif
+  379088    b2af73b2a8ad39107a487bccac84cb5d cs_1500.bif
+  41349     af1c14b2716fd7bd5fb9a1fe20a87d7e cs_1501.bif
+  221890    f26f264ccb4dc3b15ef4057ee66f5c3d cs_1600.bif
+  42004     7da1bcc6ccf159da93b8a201b02d2535 cs_1601.bif
+  70302     a2cfcdee7b765cf64b109ac7ebd0bcde cs_1700.bif
+  23844     f5b41c4c683d367b480bfb3facf13d4f cs_1800.bif
+  60022     d84b196bb231a1443a40ff6c9a1e9adb cs_1900.bif
+  120346    8c08b46e4326a7b717c0d679164292f3 cs_2000.bif
+  36728     ae31ffe362b9960f772e45e689fdc16e cs_3001.bif
+  1825      ea4b3fd30b5d9a671e1e283f535850db cs_3002a.bif
+  1825      94a6de88e46f94ebbe066823d31be9bf cs_3003.bif
+  2622      190e6914f2f661ee0bda364c40de4b97 cs_3004a.bif
+  1825      f7a329515cf847755a3ff122acda2f7c cs_3004b.bif
+  2622      b8037c70ce9740d0cd5e2b63c4949179 cs_3005a.bif
+  1825      390f0c84ac671f1771b283551d62b739 cs_3005b.bif
+  424       98c641a63d0c05912dba9069c5902ca7 cs_3005c.bif
+  14717     7091fe0046eeadf9c1f20662bbbe496f cs_3006a.bif
+  3977      f184cc3a6fc5d03f109f9139cf49a5a7 cs_3006c.bif
+  3038      1aade2085e2c231daa4d49c9fec64790 cs_3006d.bif
+  1134      68d416f29b0bfc1840a03078f053b515 cs_3007a.bif
+  2996      41253e1abc44fbba375bb1e6e625cef9 cs_3007c.bif
+  776       fea3e9a0942e59216a2bae6279837a2b cs_3008b.bif
+  776       62f845a18c7d346b1b729bc7ffc78485 cs_3008d.bif
+  776       5788b6347ceaf519abbe722cfe70598f cs_3008e.bif
+  776       782be3926b3fbd808ba230025a632a50 cs_3008f.bif
+  7099      7698f5efb401effb6cc043fa021f8175 cs_3009.bif
+  2901      e94e5389e5563ef83be52abf65987998 cs_3010a.bif
+  88210     e11e2da0295b57309e26631d913db5b0 cs_3012.bif
+  2507      c901aace062cc5543751e6e41ff0d6ba cs_3014.bif
+  6822      ad5950b17df0dc695f30938cfe4abfe8 cs_3015.bif
+  5864      f7d56594a99dae7959e4517f0dca4766 cs_3016.bif
+  30175     5a5e2e2bb388b36e7c0a695dad0209d8 cs_3017.bif
+  2735      0d5dd0e947e1f38d1a4a55a25775b1df cs_9999.bif
+  11750     6e078c72ebcb07a664cb06b248bdc368 cs_pc.bif
+  55373     49f4a4577b777721744b0991bb85a448 cursors.bif
+  6584190   a2bc5f5d87b51c926c7d477c9e8ae495 data/ar0100.bif
+  9975504   4dd7a5032e17f0a7921b9ddb85a57de8 data/ar0101.bif
+  526114    b0c7f1e32d8c52726d0744b9db29335c data/ar0102.bif
+  924932    0e25e22298b8de274a169fb4d15e46b1 data/ar0103.bif
+  735476    e4b394cdbfd2a74ac5bc22886a97ef9b data/ar0104.bif
+  19110848  a489c5161e96acdcbb5711f5ad25b32c data/ar0105.bif
+  2854990   52b2446c72bf024a46dc055330147158 data/ar0106.bif
+  2856832   aeabd586d551efe51405cd62d85a3311 data/ar0107.bif
+  22668376  2fc9ecd9ee54fc2c6da3ef99f6b4ca62 data/ar0108.bif
+  19978460  ce2af77a9a3cc0ebb6c1a49a96575635 data/ar0109.bif
+  10868462  e21ee6c926f086cdc25710d324fa8a92 data/ar0110.bif
+  19177818  8c6b962818e87ef67e65618fbd423d00 data/ar0200.bif
+  20534870  e0991d1a407cea162418b1a32c84b7cb data/ar0201.bif
+  22008356  26c76148e47643fe7643bf9f86815229 data/ar0202.bif
+  17403120  708ab48812f15413916c06083737b1d8 data/ar0203.bif
+  3374018   5030b8f1534e426f0c9dff9c0d75f515 data/ar0205.bif
+  956042    2e8807247aa4fad865a279810197ca6e data/ar0206.bif
+  955694    0b026ecfc4b16e6586a73e85e554b4eb data/ar0207.bif
+  20131014  9106b8d3c3925f7697f8ae4caa5b287e data/ar0208.bif
+  2170138   6dc0f89bb90316a9a4aa3b552550ea7c data/ar0209.bif
+  11381472  1740fe63407d61ca4bb99f9cb42415cc data/ar0300.bif
+  8201842   8a02c89f10388fdf3d8611e113169c09 data/ar0301.bif
+  1362722   bd433dcad621223ea30c67b1ffa9c47c data/ar0302.bif
+  757962    e062ce187f21b6a37705771ef06c3c4e data/ar0303.bif
+  821418    5f217f610c8398369efaa122bc0eea64 data/ar0304.bif
+  1072676   c17bfde752e69451abaa0f9a233c090c data/ar0305.bif
+  694994    b0d644ebeb76beca56f98a2fa4fc776f data/ar0306.bif
+  13629328  2716ae1731a71765729b979962a9a1c2 data/ar0400.bif
+  9296506   d2061655e2af8e538df8f698d0639929 data/ar0401.bif
+  5701368   821abdd520053c3ae14219c7c2e27ff5 data/ar0402.bif
+  20978169  f1408e986903a6ef8f173370a5afbd64 data/ar0403.bif
+  3402042   7e174297cac45fddca3fe19571f1c65a data/ar0404.bif
+  1864522   aea7b74e5c0851fa2acfdc5e1c500bf8 data/ar0405.bif
+  16730088  6ffd2c51a41603c7dca6196d9bef2e26 data/ar0500.bif
+  2988316   8503c6ebb8124bbe117568d0d8712214 data/ar0501.bif
+  17135426  73b5952f43950f163d396cf8ed01cd6d data/ar0502.bif
+  7902208   4ccc9263a289849b32d7d45e312e521b data/ar0503.bif
+  4588942   9e2bbbc33ae977e837764c11ddbdcf83 data/ar0504.bif
+  1257898   05f64a7a704268d94f65fc02416766d0 data/ar0505.bif
+  1206014   ac92c49c73e1f275433d36fb30e369a3 data/ar0506.bif
+  754210    bbe02a0f559d828b58d7f595df115a82 data/ar0507.bif
+  18357508  8061e08e5d35b0c3584479de502ceae5 data/ar0508.bif
+  1150511   18eaecc11eb27dcb5eec892b690f002a data/ar0509.bif
+  5086456   d5596f5ca34a70a338a6d5a72418588b data/ar0510.bif
+  1757803   046389a5186a8e6f08c30a84dd2e3d14 data/ar0511.bif
+  3267166   34cf29fc392045da8cc0695039115723 data/ar0512.bif
+  3266118   d5800dc3c13add36827a6030af0c797d data/ar0513.bif
+  19572906  aa0d4d0a07adf9fd63bd0fe77facd53f data/ar0600.bif
+  12050314  3e5fefef2759891dffce3b2860c93ca0 data/ar0601.bif
+  8460848   79b84f6211c9d10132913c52861f2f7d data/ar0602.bif
+  6363532   51d324a2d530cf9b42e75e20897d171c data/ar0603.bif
+  2546106   5e685f86396679f4984e8712805981ed data/ar0604.bif
+  8616040   685d87cc18ee88470b3d52948f95f0d2 data/ar0605.bif
+  7002160   a40763f49151955b65db44ed6bb4edc6 data/ar0606.bif
+  1594728   931ca92257a1cb5bf052cdaf180812e2 data/ar0607.bif
+  2913854   645d0d5d589ad1cd1b3d6ae37c92aeb8 data/ar0608.bif
+  1093796   68dfe69bae35f5ceac4b53daeb8bbb85 data/ar0609.bif
+  25137808  cee1ce5f0fa63944b13e77c8abd8fec7 data/ar0610.bif
+  2304186   bdf8ed3f595b802c742032cdd0837774 data/ar0611.bif
+  1095002   6e80d319eb4c7ec01a51546abc820764 data/ar0612.bif
+  577150    ae064ac0d62abed78fd6692af76051cc data/ar0613.bif
+  18158144  e423150cb8f9ea62e4521607eb1a1799 data/ar0700.bif
+  20776178  13c4de65a48a1f53c0f26c40c7f327db data/ar0701.bif
+  25585249  de60387fe0af673e5b9f14a58c8cd9bd data/ar0702.bif
+  2345546   430441d4c0db62d01bf9a33c16c6b247 data/ar0703.bif
+  12234840  f81dd136cdfe6f83949d55c27b3721a1 data/ar0704.bif
+  1918848   43c626dc92c56f2a74116fa6f4f79957 data/ar0705.bif
+  786412    0a638f00ebcf4930fbeb8ffa731ad3e1 data/ar0706.bif
+  579420    90be95c856d8dddf43b49760002a091d data/ar0707.bif
+  20697048  3e71de076b999ac1504eb7c3bba94746 data/ar0708.bif
+  25087602  8fbd7f855ec5b2ecdd55ab52419740a1 data/ar0800.bif
+  20689594  cbd4c7df7f94071593b0cb4b79c6c448 data/ar0900.bif
+  25873372  e935854b5ac9187444c112d9980e1da6 data/ar0901.bif
+  2355098   266cb7e1deff9da39907f7b6bb252a8f data/ar0902.bif
+  786982    e110c85c1761e0c9e95a61aa092518e4 data/ar0903.bif
+  578856    1bb4b0fe60969aa3d3b43be26f7c02bb data/ar0904.bif
+  19269294  915a994a155f666bb25578d5a91fbdc1 data/ar1000.bif
+  5992834   408165bc7cbf6b2f10c47d1297c61ebb data/ar1001.bif
+  14484682  7c13a4c93b4d84dc3be151e9152f85d9 data/ar1100.bif
+  4625496   5c773c146a6c867997f701b036a2df16 data/ar1101.bif
+  14389562  56a31fc8400f530806688d45e09687d8 data/ar1200.bif
+  26070384  768967ff98b482282df862b67f58c8ca data/ar1201.bif
+  7594250   5f6c7027b7e4f32c6525ab1d9011edf2 data/ar1202.bif
+  3223704   cbdce7df2780ff643261cbbbea2f793e data/ar1203.bif
+  6705773   0ac36eaa46154161da2328d7a3bbbc0d data/ar1204.bif
+  17495456  73af39f60af422b8a3804e91ea1c8903 data/ar1400.bif
+  2767122   dab098c2419e690f603c112bdf41ec31 data/ar1401.bif
+  2304940   3d3fd1714ea06c50ed50697549d96e6e data/ar1402.bif
+  5101224   2aa6d7381bcf993f5e8e2cfe9510e9a5 data/ar1403.bif
+  3264470   6388ed27f13840a172dfff147eb73a92 data/ar1404.bif
+  3989822   588a250a5903c20fa8827dc80d60b2a7 data/ar1405.bif
+  21662026  b4270d083139d93b8b9039cac8348efa data/ar1500.bif
+  6770036   b7be3f19ae69e0a7ef1b130ffd6b6af6 data/ar1501.bif
+  25587172  425490bce6cb52930c1e14c695b20fe5 data/ar1600.bif
+  5362280   2a702efdee48035809ec839a0ec505ae data/ar1601.bif
+  23083066  4c8df87759057f561e58f3960626464c data/ar1700.bif
+  16462716  71009abd3033e1016ace3d828b922607 data/ar1800.bif
+  25066296  b837d9b6b64c184b831f58db44419293 data/ar1900.bif
+  25409568  b3231337abfad226cbbba9062aaa5535 data/ar2000.bif
+  3925552   a715c3bd2a18533c3d1eb69342bcd330 data/ar3001.bif
+  758236    86fdef2f270af4beb832763a55f3829f data/ar3002.bif
+  759762    d3e9ae86a86ee813d13653c67d1f82d2 data/ar3003.bif
+  751974    703f399ec77045d80862f5192ead5441 data/ar3004.bif
+  755143    a15107c5e19f988094e59c10fc59097b data/ar3005.bif
+  752006    9ad3365f9c9ffc7f9f57b788953895bb data/ar3006.bif
+  420638    3ac02b787cde5749c21e9a2fab169bc6 data/ar3007.bif
+  420070    0a93bcacc08c142621aa1ce122f8e341 data/ar3008.bif
+  2168414   5422f4f00ff54bc3660953e5db5ec853 data/ar3009.bif
+  420930    ea3d56fba28720c867802e7bc124db7e data/ar3010.bif
+  420242    b467e283d249f94ac6b4dc8a8b6883fb data/ar3011.bif
+  1779340   b3a1258d30cded6489e650e681e1c355 data/ar3012.bif
+  1101614   4d9e02a25de43955af90fe6b3695f244 data/ar3013.bif
+  752420    b6fe473d0e9b754c9fa817385c15b909 data/ar3014.bif
+  2997466   8ffc0ffba5b833f84511ccd48f6e79c8 data/ar3015.bif
+  752042    79dd7ec4f59c21964ed9fbc2fa4ed5e8 data/ar3016.bif
+  17494662  f28fe060c9ac978166765c986c38ee9f data/ar3017.bif
+  1848821   e75380fe3f433e44a9c667030c696e6c data/ca_aaf.bif
+  4502064   082d5b92aedc9724aeb597a782cab9b1 data/ca_abs.bif
+  2215273   468d47ac68399b3ea5a9be5c7a2ec660 data/ca_aca.bif
+  1885052   285d914f0e53b2b997ade126a2cf16d9 data/ca_adv.bif
+  3738085   1271ee1c734a8925a8023205582287b6 data/ca_arm.bif
+  3240524   68ca1d7843426b89a634af90e43f98ae data/ca_bau.bif
+  4296203   d9dab7be73888e3f3b9501ffe8cf2ad6 data/ca_cam.bif
+  3714230   9d2a616b19958b58690b07c71327b4a9 data/ca_cgd.bif
+  5394326   d3e43cd43d6f33c644597cc438732903 data/ca_cor.bif
+  184739    6fbf7330cf3e3b4dbf45a9651ff50949 data/ca_crn.bif
+  1856847   5e5f0c98a5c8d4c06ef49463a09f102f data/ca_dab.bif
+  1462691   d82058cccb05833a31322d0686963c19 data/ca_dei.bif
+  2741854   4c8d405dec07178e99b780b81c19758d data/ca_dhl.bif
+  1775453   160b94a673b143a14450fbf849b1e8f9 data/ca_dtf.bif
+  2128768   49d693e71b82f2a2fb0465e246422f36 data/ca_dtm.bif
+  3100948   6e0c3dee9ad2e81746e7ca40f26fcd6e data/ca_ebb.bif
+  2008606   25955479a9313ae7649124bcaf45dd11 data/ca_fel.bif
+  5517055   06b000226cd62223ded2682604ebba6f data/ca_fhj.bif
+  4514080   d0d69419944a6bee1fbcb273ee1bdf89 data/ca_gab.bif
+  1796017   7355b364989f71a391e000e8b3e9a548 data/ca_gar.bif
+  3135184   fd47d81186af6b8e57ebc1fb3a884172 data/ca_gdg.bif
+  1993721   18af64429256b76ca61cddc87f1a0d2d data/ca_ghf.bif
+  1907881   2c29e324f5ffde0d0a8d9e09e767329f data/ca_ghm.bif
+  5125615   48149e5f3b0aa5168c4e56cb17066fe5 data/ca_gla.bif
+  2012986   f4536afd6529d816bb9162865838d936 data/ca_god.bif
+  1693360   9cc676012429964443138582db381019 data/ca_gri.bif
+  4062214   72ae76fa307fcaa8b0165a02dc5d423b data/ca_grk.bif
+  1412985   114d3c39cc8cde77fa49c87ce26f21b4 data/ca_gst.bif
+  1728404   9d557d39b7b19ea073255ac47e0af6c4 data/ca_gyt.bif
+  3384523   0e968212004181854e10a8913c368865 data/ca_har.bif
+  3787251   c4757e3c6f8f344d4642b98a576b0031 data/ca_hrs.bif
+  1128373   21dcfbb38f10976da26cc8522d65635f data/ca_jbr.bif
+  460303    6336092a036762001323d34f01b3ec0e data/ca_jft.bif
+  2400835   ba5c2987f7a62dad99963951f4cbced4 data/ca_lem.bif
+  2265510   70af89a20e620959b85c25525cd948d7 data/ca_lop.bif
+  2367818   a5916f352cbc66408e62ecad0fff862a data/ca_lth.bif
+  1693106   18d962e20572364b8a0de503eee72d2e data/ca_mht.bif
+  1673552   3cc6ae54a651e6b3edf2fe89bdd9fbe5 data/ca_mid.bif
+  3142895   1424853be4c7f267a4b75af49bd968cb data/ca_mkl.bif
+  1979037   09903add3dd6b9961f73d7f115f2fcbf data/ca_npr.bif
+  1238578   c2a4eb3ade37aeaea4205b91e8b46096 data/ca_phd.bif
+  1251194   d26828e1f75ce88124e1c7dac8801dc1 data/ca_pro.bif
+  2799269   a23793b2d6fbba04ac92231930ce224f data/ca_puz.bif
+  605588    add8641eaf1348cc693b8f8e806cf7bc data/ca_qui.bif
+  4593011   d7a26e5f5755f804aa18597c12f62338 data/ca_rab.bif
+  1621880   77f45e7a5aafb2ebbcfc0933083134ac data/ca_skw.bif
+  2009096   08db25424702d92428c2516cc58353e7 data/ca_sm1.bif
+  1825002   ff43e8ab80c8082f76159f26be824281 data/ca_sm2.bif
+  4180612   c235bafde4e852b06778d49dcc166d71 data/ca_sm3.bif
+  3293417   8e5b6a6bb50ae0b19bfc4b7444b4fc54 data/ca_spt.bif
+  1655911   d9268bee8bc48b849141478d74396b8f data/ca_tff.bif
+  2239255   6214c00bf594fae2a89c49c54dc14da6 data/ca_tfm.bif
+  4687454   c04d9fcc9aae0e4db3907acc4de3783d data/ca_tgt.bif
+  5192103   2f6b90e967194f61b60a6c55052202c7 data/ca_thk.bif
+  2650403   cc22b02cf97427225181b36583013bdd data/ca_tlr.bif
+  3846880   348c363e3e4a948aa1b25e9117637fe8 data/ca_trc.bif
+  2266384   8bc324987ad6e2abeac7ac3687810cc4 data/ca_tre.bif
+  4245620   9ffc17c243900650147df09e9e9ad581 data/ca_trs.bif
+  8682273   defad12ba83cf5bdf56c052de56aa12e data/ca_trz.bif
+  2631355   152a9bd69b476f4e53314fc837fc4f23 data/ca_twz.bif
+  23460     8175079db6959bded40879ec24ced5ad data/ca_uhd.bif
+  1487649   ea907f118f0570b6f4b8fbfd034f05b4 data/ca_vgy.bif
+  3321109   7ce197f0fdddf92aca9f41c3ec33e672 data/ca_wre.bif
+  5902118   418eadc12921c6c082e232c89eb81f24 data/ca_wrm.bif
+  1537395   7b922be556fb56ad85b4dd16e38423b5 data/ca_wur.bif
+  1024485   795a220cc21a725b6f57920af355d3a6 data/ca_zmf.bif
+  1293476   02d091888db4935504b294ffacc87b50 data/ca_zmm.bif
+  63750188  7ee1525718648daadad4f753abd39e72 data/genmova.bif
+  16673242  6e31f128df9a28ef0fa2f239f87188bf data/genmovb.bif
+  32756088  9b552a093711acb2578f958c2e6afef3 data/jrnlpic.bif
+  79991492  99be7c8544016302c820088091c52fef data/movies2.bif
+  131208652 92674eff34f374398d56cca62a499316 data/movies4.bif
+  8041168   37aaf53e840b5a465c49052bd5812271 dialog.tlk
+  8041168   37aaf53e840b5a465c49052bd5812271 dialogf.tlk
+  3274108   91a4395ab7621e9131aaddccd6d41343 dlgfiles.bif
+  1349447   84c7eddbf95e8fbaa6be4a1e821a1fd0 effects.bif
+  52992     26d4d4cad1d42994e3e28bd603bc9706 idsfiles.bif
+  377076    b81d2e40626fb3b15c0a7a89c61aafb6 inifiles.bif
+  22568037  8e4113135b1b7f04abc57e81a448d08e interface.bif
+  256522    17fb471ebd78d180b0b40280a2bbcb04 interfacedbg.bif
+  946875    ff60d2395bcfac3b92e99f927491cd57 irongolm.bif
+  1908997   f36ac6f3687bfbc3d62b1b1dd6684c7b items.bif
+  4012      db056ebe8eeb7d5704b192557ec52a5e keymap.ini
+  18        6bd39d7277921f0ffb27cef77c497e21 layout.ini
+  10571     354b5bd771129f0b39b93a2cd5954fe9 mrtghost.bif
+  32        0622cdcd5b18b09c9a8775924f80d78e music/baat.mus
+  1188466   9fb00ea0edf7d5268c192367b55b5bd3 music/baat/baator.acm
+  34        ada2aa1e2ab900f7845f3a59465f9012 music/bone.mus
+  1285207   6a04b26b7c9451975e75862ec790ea0d music/bone/bonesnig.acm
+  263       51dcb0d3514e8f8d0cd2f3d1916d7238 music/bt1.mus
+  108807    be9bb98ebaa2ff9d17eca2a6abafe101 music/bt1/bt1a1.acm
+  105417    fa2455aeb749ed975efa6b490c792115 music/bt1/bt1a2.acm
+  53700     6437b9820bd26a1561e764dd7224fb45 music/bt1/bt1a3.acm
+  107217    00c69ebeb32f596a97336c2bb58fdd31 music/bt1/bt1b1.acm
+  107196    4e58732e05cd07e6bb8125aa713ac0dc music/bt1/bt1b2.acm
+  107204    2cc67f90730f53ad972ebe9065679566 music/bt1/bt1b3.acm
+  107113    a30561e70b47a7580cc2133008a89330 music/bt1/bt1b4.acm
+  107216    a8981b495dcffce010c6431af81bf1d0 music/bt1/bt1c1.acm
+  107195    86900aa7a52a0ac04785cca6cccb4c7b music/bt1/bt1c2.acm
+  107148    4483df67b2c160d4f0a44f72458af371 music/bt1/bt1d1.acm
+  107228    37d1ff28aeabd73626a38f6f8637fb77 music/bt1/bt1d2.acm
+  107210    72d044e33c35f9b8df0ad1f27c59c66d music/bt1/bt1d3.acm
+  54379     b8ab736ab86dff46fa659f5e3d966a4b music/bt1/bt1e1.acm
+  107277    646e30d1f288f5287fe778a3d7fee5f4 music/bt1/bt1e2.acm
+  107115    d5e24b50b96ce596fd57eec223703e05 music/bt1/bt1e3.acm
+  424411    3d68701713b39026b9806800022c50da music/bt1/bt1e4z.acm
+  396867    389274df7510821131a3f9c1aa06eeee music/bt1/bt1z.acm
+  186961    19a498299b73974144e4e8abe34e2f01 music/bt1/bt1z3c.acm
+  519       bb59e23c21f0e4672ff09b178cc78fc2 music/bt2.mus
+  64457     2ae7a75c1215d32f166b64eacd28bf0d music/bt2/bt2a1.acm
+  64114     8b1ff9e2f10c061dbfb2a3620882942c music/bt2/bt2a2.acm
+  128231    84df1f4945bf6f77e3bc1aa0059048e2 music/bt2/bt2b.acm
+  63970     e42f06c63ce1e163723179f3ca6637c3 music/bt2/bt2c1.acm
+  64111     8c2e642af837c62fcd6e331f22ef1be5 music/bt2/bt2c2.acm
+  64120     b4dac3a7a66bdb9c4dfb21bdc1b74c9e music/bt2/bt2c3.acm
+  64190     475f3b88a5725834329044bda1549bd6 music/bt2/bt2d1.acm
+  64231     3f2ba4c5a42fa36aeb61f1f4f54147ce music/bt2/bt2d2.acm
+  64136     ad1b7f03ebaf8c787889e01214f44f55 music/bt2/bt2d3.acm
+  64198     e8b7a23e646a1fcf5dc210c00e8c22f7 music/bt2/bt2e1.acm
+  64253     274b4c580a7533e712496a349c0c4678 music/bt2/bt2e2.acm
+  64170     d23a74cd09eb6a1df4902cb962e280ea music/bt2/bt2e3.acm
+  64299     b926401ac7969e33807b20118c62bcf5 music/bt2/bt2e4.acm
+  264190    e5cc18fcb43e7677765c3cbe28037276 music/bt2/bt2end1.acm
+  264220    1841c83b2c7c58415b3c2e087bf64875 music/bt2/bt2end2.acm
+  264130    857444762e51ecd7a35b6704a9ec5e15 music/bt2/bt2end3.acm
+  264149    3492eb9ebe2c7cf510fbcf1c56c50a62 music/bt2/bt2end4.acm
+  64351     26034b981fb68319e6d2acad33481208 music/bt2/bt2f1.acm
+  64367     f40fd2552e93ba2681e629255d5b346c music/bt2/bt2f2.acm
+  64239     ac8e2f296fe49638ce694f764a7a7863 music/bt2/bt2f3.acm
+  64212     ec315a579e6a7cd5677b2a732ea5162d music/bt2/bt2f4.acm
+  64246     34c137d526b9e2c55ed03935cb1763b7 music/bt2/bt2f5.acm
+  264132    a3f343aee0eb3b10d5951b8e12ee91af music/bt2/bt2z.acm
+  64039     aa7c2a644730acd2b144ffad58536855 music/bt2/bt2zc1.acm
+  295       a0532b42a8d1bddbfd8c02b91c779426 music/bt3.mus
+  66076     3aecbc3ddc7fe0f3b8d1b7621b47595a music/bt3/bt3a1.acm
+  66234     8cee1ff3d77008de010797b3041bec57 music/bt3/bt3a2.acm
+  66191     172ea12697730051a330eacf622c5af3 music/bt3/bt3a3.acm
+  66211     df302f29ebcb18a99f6895772bdb018d music/bt3/bt3a4.acm
+  66248     3c75eb6d2c83ae481eeaaed660f1fe49 music/bt3/bt3b1.acm
+  66201     d5620c135c025be15b7fd88b265ec8a7 music/bt3/bt3b2.acm
+  66157     96e41294b384c9ab9d8622a4bf4f44b8 music/bt3/bt3b3.acm
+  66138     c82755d5e13b4d91b94116f914e19695 music/bt3/bt3b4.acm
+  66236     96a0cc6bcf71757f8c590362f48ddbb1 music/bt3/bt3c1.acm
+  66146     d1a39f90c4643478ed9dc5a4fbc18d77 music/bt3/bt3c2.acm
+  66136     b2ea3512891a5bcf2eb547b0a7474a08 music/bt3/bt3c3.acm
+  66217     9bf860189825e48f1559676d47a102cd music/bt3/bt3c4.acm
+  470602    1b6403e094f99fa14aee8e62a1560141 music/bt3/bt3z.acm
+  561       75efc93cfeb95d9171638c9e0534c84d music/bt4.mus
+  60748     eb4529f996d19c84265312bae8ec18b4 music/bt4/bt4a1.acm
+  60652     416b0f3333e882e3ef0a507a076042ed music/bt4/bt4a2.acm
+  60734     7e13fabc59ed02238e76da5ea46baabf music/bt4/bt4a3.acm
+  92162     4409aa49d85a41fe393f0c507bd32bbe music/bt4/bt4a4.acm
+  91906     3334ce9d9683335156474fe2f520ac87 music/bt4/bt4b1.acm
+  91841     1baca68a20fb8d04e2fb4f7d9f8043a6 music/bt4/bt4b2.acm
+  91894     9566cc250a9d9b549e26e25c11dbe05d music/bt4/bt4b3.acm
+  91850     e5077d4bc2169e117fa9bf17230fa620 music/bt4/bt4c1.acm
+  91919     a272ebd851338582e1a1a0385f509dac music/bt4/bt4c2.acm
+  91931     aa1a539590465e52bc9eb0e26e889497 music/bt4/bt4c3.acm
+  92001     fc7688d195e05391de94ee24cac14146 music/bt4/bt4d1.acm
+  92109     6fc7c3018a3057da79a9584f49b75095 music/bt4/bt4d2.acm
+  92005     938140ce969e87726c18f15ee202d3d1 music/bt4/bt4d3.acm
+  45977     789336c2d10b776b0b0aee3820b03729 music/bt4/bt4e1.acm
+  92110     2fbf767dfcbcbdaee5a2ed6ee433f13e music/bt4/bt4e2.acm
+  92097     9c6726212dfc5c6be9fb0e4d3fdd5e03 music/bt4/bt4e3.acm
+  92485     476ff07e93b36f27c1a68322912f0fbb music/bt4/bt4f1.acm
+  92097     805696963d7c318c682408a4df11994b music/bt4/bt4f2.acm
+  92162     38dd25d97755d5f6ed6b99621baa80fa music/bt4/bt4f3.acm
+  92003     3738cbf3bccaccbf7b309ec2e88eb6f5 music/bt4/bt4f4.acm
+  45884     c2758bf26943c267326f0101362f9cd0 music/bt4/bt4z1.acm
+  192595    b5c21034887337e5edb923029ab8f1db music/bt4/bt4z1z2.acm
+  146793    95358c7221a63e0795054646e1d525cb music/bt4/bt4z2.acm
+  60683     1746dd3861aac0bf24e907193c3c4494 music/bt4/bt4z2a1.acm
+  622       44ad2af18bc2a2b6e2cb40b4ea671612 music/bt5.mus
+  102658    60ccbaccd5c0010c7bf53b105932bbbe music/bt5/bt5a1.acm
+  103218    1af95739d45faec12cff8ab02d6dc529 music/bt5/bt5a2.acm
+  103597    1fca57b671c1727bdd5b37a95e874295 music/bt5/bt5a3.acm
+  52717     0ca442292981acf074f459edda0a218d music/bt5/bt5a4.acm
+  90407     70730a3965dc76e6ab2352291a700b88 music/bt5/bt5b1.acm
+  77290     36aec7f0d9e8da0e3ea9e97e0510346a music/bt5/bt5b2b.acm
+  103806    591788da05d266ecea9564fb224525b4 music/bt5/bt5c1b.acm
+  103802    4a960c3292f06d95b69334ea2619032d music/bt5/bt5c2.acm
+  26349     84934511588976759e7bd4c16282d79e music/bt5/bt5c3.acm
+  103900    d35b44e03a37990f3915f741ba5d1d66 music/bt5/bt5d1b.acm
+  52665     7258bbaa9115ea44a5a6c40314394a1b music/bt5/bt5d2b.acm
+  103725    4bf113fe837d1cc16b7f3d8edb700e68 music/bt5/bt5e1.acm
+  104180    59f5d727b214605e877e82b98aafea3d music/bt5/bt5e2.acm
+  104150    57e7c3e6581990ccee581cc412f06d04 music/bt5/bt5e3.acm
+  122942    fb73c44bd97303d06facc69a6a67abd5 music/bt5/bt5end1.acm
+  122984    452abc81797dd25d4531e4381f967ce7 music/bt5/bt5end2.acm
+  122991    b3621f2df586092c525fc8b4b828fa38 music/bt5/bt5end3.acm
+  122640    927faf052d928531397791a97a6893de music/bt5/bt5end4.acm
+  117147    6634ffb7ffcbd1f4d9b0c0184871ddbb music/bt5/bt5f1.acm
+  122781    f07a67041d9fbb4f52286d29a2f15ff2 music/bt5/bt5f1z.acm
+  142323    c4932c3c4aa199d01ad32d0f5dc51888 music/bt5/bt5f2.acm
+  103176    e9c0afffe7bb0f0f0c10477a570678d3 music/bt5/bt5g1.acm
+  102860    a7bae6ca23e3ecb7da4e05bd3ea37d0a music/bt5/bt5g2.acm
+  102909    51e78e766ac6cd3bba1cac93e33f4c58 music/bt5/bt5g3.acm
+  103569    756b2a698388d1152ef1d82fb7734c06 music/bt5/bt5g4.acm
+  103685    13df4dbd33cc5815f25ce30ef6078296 music/bt5/bt5g5.acm
+  103655    f400c266eabbf19c9cc1775dfdf5b48e music/bt5/bt5h1.acm
+  170216    77ea3367ff38a4063818923208f9e6bb music/bt5/bt5h1z.acm
+  66844     582f887a3de236ebded8913213ae7ee2 music/bt5/bt5z.acm
+  137114    0fe3d079999e28b29f79651506a10c0d music/bt5/bt5za1.acm
+  32        bb97dba5bd20ae5fec83e4f1314ef0ac music/char13b.mus
+  1382697   952629d5a81bc826f577f2941eaf0509 music/char13b/char13ba.acm
+  24        d110b8929562c39e63a905a52749dea2 music/char_01.mus
+  1387879   7cf4e7addaea32dc462ee397798b5f9e music/char_01/char_01a.acm
+  24        c13e64ea830e8ae738e5283e0b99516b music/char_02.mus
+  1237088   33145254d0c9c014c749c15e107d7032 music/char_02/char_02a.acm
+  24        bb06f36e0e45cfd0e7ccc947d7205be2 music/char_03.mus
+  657008    55a6d755a97f98d0dfcf91b42ac27c1b music/char_03/char_03a.acm
+  28        c37d02190ed3dde8e911483938bf8888 music/char_04.mus
+  1521163   2230d6646d1220986f1a62d657808e98 music/char_04/char_04a.acm
+  24        6669664bebbe845421f38768cc8ea67a music/char_05.mus
+  1210815   b67a66a2399a418e94348eb41192dc05 music/char_05/char_05a.acm
+  24        3ad1ee0ab8d32804559c31ab61b523cc music/char_06.mus
+  1553528   d4328adce37988a1f29ef6248dba517b music/char_06/char_06a.acm
+  28        d9e945ae328e2d4db0db16f9f9b5f40b music/char_07.mus
+  1776509   9ae4759a7acd9a485c7a4250c138da54 music/char_07/char_07a.acm
+  24        15679e899bc1d06a96553489b0df325f music/char_09.mus
+  1540675   4b5c6de1be17be3da80d4c596ad1cb08 music/char_09/char_09a.acm
+  24        410dfccda8ea8611fc8aba0ba430101d music/char_10.mus
+  1618146   5a1fb5243de11b5a78835c9c2c2fccae music/char_10/char_10a.acm
+  24        2567512d497d132d20604bd5ab9331d6 music/char_12.mus
+  1196550   a9de5518f0d0281881cc55dcf11a1fe0 music/char_12/char_12a.acm
+  24        248c3d513f0c655bd42e63948f7504d6 music/char_13.mus
+  1382697   952629d5a81bc826f577f2941eaf0509 music/char_13/char_13a.acm
+  24        6a440480c7c946e0d2e2bc8bf4b49bf5 music/char_14.mus
+  884385    65e26c7e9f6166cb9c91c4ef16015849 music/char_14/char_14a.acm
+  24        5535c4c52fc9c07b3582949324577708 music/char_15.mus
+  1215073   d74af1219536dffe16527fef97411a23 music/char_15/char_15a.acm
+  34        77b677f195722dd9af77ac17757a5624 music/civic.mus
+  2399414   8ee7a8c7b00393a104d0f5502d135189 music/civic/civicfes.acm
+  28        75de4da5d9bb51d30853b516cee92963 music/cur.mus
+  1233385   65d78a9c70b4b29259fdeed1c3824195 music/cur/curst.acm
+  29        e17978e8bf5265c7d6dac604b59eac95 music/end_01b.mus
+  1593851   ee3e7b832f1acc2a95d498764e16ab5f music/end_01b/end_01ba.acm
+  29        4d595f92c2b751e2fde7b5584d5e3545 music/end_01g.mus
+  1486379   6fb35cef9e488f7d0348075ec3da215e music/end_01g/end_01ga.acm
+  27        3265c35b5f4c38501dfaf8c0b58dd54b music/end_02.mus
+  1474201   63b70791ae27433673b4c0c56d708167 music/end_02/end_02a.acm
+  34        598d0a0c4ec98b9fe46fa73df48cb7ad music/fort.mus
+  1867360   0b280f03d46e7adfeb49c3e8ea844071 music/fort/fortress.acm
+  27        59b15dd0d9b3789542719c90a41f6b6d music/main.mus
+  1928803   633ef1818efedd636010cc1eb246fa3d music/main/main_01.acm
+  34        8d75647ed291c3d17358d96b7e846fa7 music/modr.mus
+  1212576   b60a2ad67ac9c4bb7746c11f932b43ba music/modr/modronmz.acm
+  39        a0ae4b4566c6174f14b0f9e97de8ab4f music/mort.mus
+  1564619   d51344b7901894f4c7f9cdd7a0ffcbce music/mort/mortuary.acm
+  34        2706bb9019b1d62b31f1651e990f420d music/rave.mus
+  1478675   d7a293e6c4df7d08e3c362927eae50f5 music/rave/ravelmaz.acm
+  28        9b96007b99707ec22995e38613a1ed65 music/sig.mus
+  1254373   4c8e0ba47052a501e1852d9201344c40 music/sig/sigil.acm
+  32        2b5371c400ed38b176b3645abc7356c3 music/smol.mus
+  2263662   097d4188cf72f6149e5df15ac23bc3dd music/smol/smolder.acm
+  1494      a05cd7db85828f85baf333f82c174988 music/songlist.txt
+  41135     2cf5110d666c8e72a827265fe6727550 music/spc.acm
+  158126    ef2b452b8d53bf6e1f5d1e18417477c1 music/spc1.acm
+  847       035ba4baa2bd44554c0802ffa417e45b override/0202cut5.bcs
+  1709      296a52865fee44b49a12bec9cea77d5a override/0202trg1.bcs
+  3273      051071f01adfcf91547cf3f810e4173c override/0301ramo.bcs
+  3269      bd857881f7896350c2b045b57283bcc1 override/0301shmo.bcs
+  9685      efa74008a04efdffec0e47abc5de89c2 override/0401dabu.bcs
+  17748     b5b2f443fd5f91e912557fa759d9cbdc override/0403gang.bcs
+  3878      faf82610c9a7a581564d7bf5aafe95d7 override/0403ggng.bcs
+  5624      06bb70af12ace10b42ac81d33a669db8 override/0403gngb.bcs
+  7132      d11ca47268053f849ff3c89a825e4f8a override/0404fell.bcs
+  2972      7c85269d8dd43e3601a1e89d2b3c36b8 override/0500gith.bcs
+  1847      aadcdaa18c6cc11f0e48452ea55799eb override/0500vrtn.bcs
+  2641      57909c1976154584689b55b8b7c73849 override/0502gfcl.bcs
+  750       aca94d423dd19be69c27fc5b4c7dc767 override/0508loth.bcs
+  3762      d081a1a80270bd4dd934018be01ccd23 override/0600neme.bcs
+  5848      c83c9f60c734f01285a1c216982e3bb9 override/0600sarh.bcs
+  3055      7e7254d9a228006526379b3d0132dc74 override/0600tod1.bcs
+  3055      7e7254d9a228006526379b3d0132dc74 override/0600tod2.bcs
+  5426      a08e33202c5db0102c3fb309aeb466ff override/0610cut3.bcs
+  2577      47ec44ffcd98cddb765098c83b9e6167 override/0610cut5.bcs
+  4520      51d85169c0a55a18eab4bbb7f92cf294 override/0610cut6.bcs
+  4182      7b5332fef508426198a2567e5708ed3f override/0610cut7.bcs
+  21158     73432782e9b4d27f2c0d7cf66d0c56da override/0610ravl.bcs
+  1871      d7123babd9a6780af71f125b255d8b00 override/0700anam.bcs
+  1871      d7123babd9a6780af71f125b255d8b00 override/0701anam.bcs
+  3000      4fffdf5d1fa78f28de08929b0327d184 override/0702gar2.bcs
+  2719      bda60ec20725bceae8be4f29d6dd8131 override/0702gar3.bcs
+  2717      d8950da607a628b681f761135989e9e0 override/0702gard.bcs
+  4330      f77ee647640b9f980e6a5f4ca3516760 override/0702prsn.bcs
+  4445      2becb909c4d11163ba0df7561c0f54ba override/0900grdg.bcs
+  12460     4a9e784b941aabece446c5e19a83c1a5 override/0900hezo.bcs
+  6872      9ca1b8ddea78b78bf49e273ff59dfd0c override/0900jjog.bcs
+  5391      81e724a410581c9377d70929a9aa4775 override/0900loot.bcs
+  10708     a3aeacf00db8cbd419d7431378047332 override/0900mob.bcs
+  3743      c777a5b12de6f191353fe79f3c19e2f8 override/0900off.bcs
+  3916      2c404941bd5b40a47fdebce0d07c73a1 override/0900slv0.bcs
+  9938      9633678d9879fbcf5cc84873f4f2c4d3 override/0900slvc.bcs
+  3766      036e9686ea8b2c1abf95e75915f517fb override/0900tem1.bcs
+  3768      2dd2a93c44cd0f494dc2beef20776c5e override/0900tem2.bcs
+  3766      036e9686ea8b2c1abf95e75915f517fb override/0900tem3.bcs
+  3766      036e9686ea8b2c1abf95e75915f517fb override/0900tem4.bcs
+  3898      21464ff3902d6dd44b5e54cb436ce14a override/0900tgrd.bcs
+  5017      a1dec9246502da6f4fb26e45fae86524 override/0900twn1.bcs
+  8253      a93b5b5786370c46a1695fac541dd174 override/0900xatk.bcs
+  8259      3d131009c53dd99c0ffa2c16b108e69a override/0900xfle.bcs
+  2527      242469e2375a0bdaf37e40d7502f48df override/0901geh6.bcs
+  2528      c4c694d7d748ebb69b2cddd4d63be555 override/0901gehr.bcs
+  2703      1e4ee4c28b738ef8f10435ab2279cd71 override/0901grds.bcs
+  1992      ab83c026f3ef410ae23732f83298c064 override/0901loot.bcs
+  2168      0f76e45ca29c0568b22340cc748b9e9d override/0901shm1.bcs
+  2168      d9bd5a6ef03cab0c9cb07a5610748762 override/0901shm2.bcs
+  2348      a86b0fb5adf6d01079e81223d1950c76 override/0901shm3.bcs
+  2348      5a16fb74551c4022963ead39155702bc override/0901shm4.bcs
+  2168      9a0fedb3a02e72f23ed908a63ac5804e override/0901shm5.bcs
+  2168      28e2687aa3c361dae950739281a7f3b5 override/0901shm6.bcs
+  2248      86628cea05264b5b5339201a03b52d82 override/0901shm7.bcs
+  2248      9203a97a634468e9a23c013875b5a6c8 override/0901shm8.bcs
+  2245      0cf98225e6c87aa2ec0f5e4f596e4ecf override/0901shm9.bcs
+  2245      4b423d7621e8dd6f5fb3c3ee1cdeffbe override/0901shma.bcs
+  24672     9151e24e1b149b7d42ed5064ecf2e047 override/0901tria.bcs
+  2087      a6c4a7f3a22ddb726e492180b8318306 override/1000abd2.bcs
+  1935      05ccc1ab4cf437540f3e5a3800b46e8a override/1000abid.bcs
+  3194      4174a68b6d7cd05781aa6ee2459b1b48 override/1000fnds.bcs
+  2544      bc03352d58cab6808f69239fa5661a59 override/1000lemd.bcs
+  3578      0ef39d04aa320b58dd04b0237015dff3 override/1100anim.bcs
+  2284      6fd6a1c716ef6491ad26322d517f6aa4 override/1100grg0.bcs
+  3450      6032b6aa7667281c255c54ff01037296 override/1100grg4.bcs
+  1999      ac3989af4896a157224d583cb2e991e7 override/1100grk0.bcs
+  5885      4f87d4e0a40de44cdaab864ec7fdfa89 override/1204trb1.bcs
+  5885      2d31a71ced1403fadfeb8812ab13391a override/1204trb2.bcs
+  5885      519a80f676901df8ed9531ee00f34971 override/1204trb3.bcs
+  13366     cd2855996953cd82c9345e8d86b49349 override/1204trnf.bcs
+  5519      ef596bd6e246ee4950f39d237af55308 override/1500cs14.bcs
+  646       c06202fc689c6ec7b8b5e1f3b9d21b86 override/1500cs5.bcs
+  2271      69208a3924917b951bf06bf5d4fb5871 override/1600cut2.bcs
+  17202     ac8cb32a5a23cdd7a665a0e13014dce0 override/1601mana.bcs
+  10320     b3285652d893d9c9b14a21525b10c36a override/1601manb.bcs
+  6881      b842fdfef2e61f49f98cc3bfe595b556 override/1601manc.bcs
+  2819      e52d838a7b25dc34f1097aff8a6c46ab override/1700var4.bcs
+  2968      388c1694f53bf51c19ec5b58221e0eb1 override/1700vini.bcs
+  3193      c797a1759b172c6b243d7fdbbc8728c6 override/2000cati.bcs
+  2983      cbf439b19f29ba74abbd06717cab788e override/2000wrms.bcs
+  1524      1332ae792f9b8adb9003928ebc437bdc override/agril.cre
+  9968      46ad7b10f0bdfc1b2be0524782eaa51c override/ar0105.are
+  4692      9437cbf35a5b55ac8556be66bc590ef4 override/ar0301.bcs
+  4625      d551fb6cb4fbed6867904dc62d91ec11 override/ar0401.bcs
+  20000     24950917bb9526e7e174b9ec1b564852 override/ar0605.are
+  9898      b676f09a7fd2f03c598c3d664578495a override/ar0700.ini
+  42908     087e15ec256bf97f23a5761e901268e7 override/ar0702.are
+  28220     44965884f5851fa1c90ed6cef6a03769 override/ar0901.are
+  11998     413e5a78262e03b6523711e734632701 override/ar0901.bcs
+  1487      09081dc190c73f85c9d32cea548692d0 override/ar0901.ini
+  20642     81601b0830902d26dd8e984cc8ee3cf4 override/ar1204.bcs
+  13459     9d7a5a7bce27913298fa8ae0e756b7f4 override/ar1500.bcs
+  17584     7f9f120f8a1e7cf6646a55389cd5917d override/ar1601.bcs
+  1296      dfdbd5638a4ff7c2f83572f0dbef1cbe override/chigh.cre
+  1296      1986d39c5b0d98d1467fa03bfcc700eb override/cmod.cre
+  3300      2b8c8b02def406480cd5f520c3ebe884 override/conall.sto
+  1296      74d6fb1fedb06e2634719619c528df97 override/crstlot1.cre
+  1296      d5fb444471f99ba9f97008ce954044d2 override/crstlot2.cre
+  1296      4d68bbd147621a90a280622805f26569 override/crstlot3.cre
+  17390     b78050d8b6dc70e2fc4b808b13f55553 override/dable.dlg
+  3740      6cc11fd3fb74207b3420dd8fb8756e57 override/dagril.dlg
+  98865     ae85b3873914e1b08521db47a7f09fd4 override/dannah.dlg
+  12583     52ef48a75ce8a2007c747f0f88c25048 override/dawait.dlg
+  3175      ceea3f46d61cdefa79e56c90cdf04497 override/dberrog.dlg
+  753       da9ed762942deaafea220b46fc6a916a override/dbody1.dlg
+  8123      79010e40328c5dea7acba97df8489e6a override/dburgher.dlg
+  7824      7dcc17af458e33fbda27ecfd18173a34 override/dcandri.dlg
+  5165      f7511860888724e1fd7de4e97b20e3de override/dcube.dlg
+  820       6bfeb9a444b261bba2047a6cfe44f119 override/dcwpoetf.dlg
+  96958     1794d80e29204358ec7a071855c9fd83 override/ddakkon.dlg
+  154       2f80365721667cb47e47fecac3558979 override/decant2.itm
+  12500     2efddc2a5aba1565ae39207d7bec0da4 override/decco.dlg
+  4278      e736e6088ed4d9696c3a9a81aa501492 override/df_ss_ra.dlg
+  51785     11fee437dd8535ede35d57835c1df2c3 override/dfell.dlg
+  35078     f97f85c961e108678e49f1c9a0485796 override/dfhjull.dlg
+  19183     0bbeed9f1aa7ad772e3bb6af153ad66a override/dgith.dlg
+  100217    1c7a72964289d568ece39abeb14202b0 override/dgrace.dlg
+  10292     3a5d5248798b9299bb9d432f027b8eaf override/dhamrys.dlg
+  13521     7fe6e8ced9abcc78fbdee4fe3d8ea9c6 override/dharlotn.dlg
+  3184      ebc9c948e7f6dcfce4cd39a3925f51a9 override/dilquixt.dlg
+  2978      2ebe3b172f091b72140533d44e65a090 override/dkarina.dlg
+  12870     2f5a31ccf4156960113d50d1f9d2d92d override/dkiina.dlg
+  6378      36c034af6b1376c13bfc6510d8d38d84 override/dkitla.dlg
+  4131      c8c094fc1b19dabedc297b2879489ce9 override/dkrys.dlg
+  6844      88eeb60485c8fc5e07f14b4a7bad5628 override/dlenny.dlg
+  12949     1b302adcbaf918db9867573bf2453ba0 override/dmarquez.dlg
+  6283      4744e23638d6c58850cc0e578d055acd override/dmarrow.dlg
+  2670      d39a16a5a7464a5ccfb1e9066dd39465 override/dmerkil1.dlg
+  1051      318e68c72093eb330551f192c98ea41b override/dmerkil2.dlg
+  2471      2674d15f0ca77087c782118db6bfab78 override/dmerkil3.dlg
+  3670      7b1b29419f3ca244ff2bb04b80318102 override/dmodron.dlg
+  7200      afad6ae4959f8f10ca47d4ca06a9d454 override/dmooch.dlg
+  113563    32c864d9e550fabd0c19828096958cc6 override/dmorte.dlg
+  35149     68aa9f4b0f8d72b73b426e56cb1e0123 override/dnordom.dlg
+  21363     dc03d0aba5fedb65c4834acbc718442c override/dpillar.dlg
+  8749      cb5dc276063153d64841fe196055f7f6 override/dquell.dlg
+  60178     04819885be60c1554724f0ddcb99d48b override/dravel.dlg
+  4099      0ffe9a85e7a21db657bea1306b70d18a override/droberta.dlg
+  8342      8ec1f1a15b9826001f5ed339be78a25e override/drotwill.dlg
+  13545     b5f77375530427ec057a7b846dceade6 override/dscoff.dlg
+  10183     c6e2a628a23e1b4e1c3d6e72e3636096 override/dstalema.dlg
+  31436     96f063ab94f3d150bea18b474f68a230 override/dtrans.dlg
+  21764     08e4cabc5b3620ec48857cf0822ed565 override/dtrias.dlg
+  13349     a67067e69e90999917cefac983d82f90 override/dvrisch.dlg
+  13040     d071abb611ff78230fd8138dc9b76829 override/dxach.dlg
+  8012      ba0e00217c1384f4060bd584f8ac511e override/dxander.dlg
+  3564      ca6fbf5d78b960fba5124c9857a79c3f override/emoric.sto
+  5876      aa959ea0176a449aae00a403b5f1deb2 override/fell.sto
+  17585     1a728823bd0ecff4c432597429c4c743 override/fontdlg.bam
+  1316      df8e699f8db3d02cded9b803fcbb6dbf override/gib.cre
+  440       39723f013cd7289dfa324081d514dd69 override/giscorl.sto
+  210       3810a398d592fb90d8cef0ddb43171fc override/gsknife.itm
+  402       a08d8c6eed2341350a067c95111bf2b3 override/iron3.itm
+  2688      81b96facda24487a13158213b2e50b0c override/mebbeth.sto
+  2508      e1cb627d2e2e98529eb13630283071d6 override/quint.sto
+  1082      5d7bf54ca00aac4fabc4a4b0d4f74459 override/sppr204.spl
+  1722      4651410cfa9be6b0af9fd1d2bccd40ac override/spwi101.spl
+  490       a00822eb541650a0f1d77c5a691dcd78 override/spwi212.spl
+  202       c7b13d3048bdb4d46432589e70ba3f0c override/spwi314.spl
+  578       b78a3b2e80d1a151aa4d9d4234e3b828 override/spwi401.spl
+  346       ad60630afd4cfb17572982272befb7b7 override/spwi501.spl
+  394       00960ab6d8586c2a437e70120cb74f00 override/spwi603.spl
+  442       67ccb52ac7e8e0efa7e268c99aadad46 override/spwi705.spl
+  250       f662e20794dd0bd9aebde5fa692b641a override/spwi802.spl
+  2416      a56ec6d4640041acdd2683a6b421a901 override/trans.cre
+  2416      1869b4a37b4fa012af8a46ffc3fef8c1 override/trans2.cre
+  2416      947c6a4806bfa9a34caa539ac1bc0b1f override/trans3.cre
+  2416      5f7c5a17c9f934779b1a66b321d3a280 override/trans4.cre
+  2416      d8bba7302ac35759a174ba382eaa10f8 override/trans5.cre
+  1316      d73d8f10907f459ebb326afbf6361367 override/yelaan.cre
+  790628    b4653f06c65db51b833fc5bf233447f5 palette.bif
+  1242602   c1c904654c30f20cd89465d4372879e0 pillar.bif
+  33883     2056196d3ccb7486db79be9069aab50a quests.ini
+  2230      9b1d1b03e7c8c94aedd25a85b5a86de9 roundbmp.bif
+  93967727  3ad55770e4511862f6349137bd6df235 sound.bif
+  112396125 71683d10dd82ce90448cec449c52ec11 spells.bif
+  58784     af48bb1d0e80f2f99cab210642db04bf startup.bif
+  67112     77dd5d902a9455fe6346d3b12551c3e5 store.bif
+  62895     650bee8a9ef04c41760502a1c3b89c76 support.ico
+  1258      cd862c6c101328c8ea88486ee13e6c5a torment.ini
+  671918    d02cfaff2543668cc62dab7e747adc21 traps.bif
+  123200    684204db285389397f67ac50633f0acf var.var
+  57916644  321a7b39aa134bfd93e8382c6794426c voice.bif
+  2623      d1994009c495d31e9de9b765b35ce674 ddrawfix/readme.html
+  2561523   7e61f1f55751c86989eb2525e5d45d64 manual.pdf
+  25087     d9a20c3894b2596dce36231f25ba8943 readme.txt
+  3933      b2cb7adceca45f34c09ce2f61442b644 readme11.txt
+  1082120640 a6e2879e10d49f29a5d70e2eee4093e2 setup_planescape_torment_2.0.0.8.exe
+
+sha1sums: |
+  2e19ea3230ce525b9c8fa4ad85a2037edf813201  2dafiles.bif
+  4b6bd4e7826fe0649190acdfee02b039328ea574  ar13en.bif
+  5b906e4bf554c7d85a5d7e9377175739a698ca43  ar13fd.bif
+  f6e7f5e897235a4425219b7dad96dace95f3eb3e  ar13fy.bif
+  bbee82815d2b8caf10841e645a9efa9c438fe3e7  ar13g1.bif
+  e9624f44f30bc395e4417808d19b4015d7d668b3  ar13g2.bif
+  a120e525ca0af5e4b51b09eda4ec46bd9da95c31  ar13g3.bif
+  932ae9229c3d41bf879dd32be42384d8990e770f  ar13wz.bif
+  ffea64274637d50374e621d0fb447e0a8e32a32a  arefiles.bif
+  05bd953afe56dc3119f3c92271aedae670aabbc3  arescrpt.bif
+  72ce256731306259c460056ef1b9254c90ef1cf5  autonote.ini
+  5196827e7454ce2d9a52d38c197c445a8c888ae7  beast.ini
+  99d49d0f25b2595cba80fa0148c2e5a6b22a1a46  ca_ann.bif
+  4317cfe367cb670e4c982f8623f53c3cc7b14d54  ca_col.bif
+  6d0594af8591fb2e9cbf3868f5b9be6f858095e1  ca_ctf.bif
+  d510abc161fb9825558419ea1a833c8400609e4b  ca_cth.bif
+  245586b8809dc336d3111068acdb03229613c916  ca_ctm.bif
+  8fcb84764061ff63ea88b4f28a64c2352658ae96  ca_dkk.bif
+  28628bb9fa3859dd8be355866d857a7bd433f3a7  ca_ffg.bif
+  3334e73db9ca98f4da602d43d264dd722d4c1e36  ca_hkm.bif
+  4bbe68ef4c8a341ef9a333bd42a7a697ebad06d4  ca_hlf.bif
+  0082839e6370493373a7f24ebd31044c5edf5e88  ca_hlm.bif
+  25e030ddfb6da04b1ceafe77f923e630cc468057  ca_huf.bif
+  1ac6f5f9e5fc912bb7f5c45f1fe65dac931a7e2e  ca_hum.bif
+  a4f1593567fa4c9b5cb15cf9bbb3c1b1aacdc60c  ca_igy.bif
+  6c2605751f0da2fb0269f8be25519b17bfc23e6f  ca_lkm.bif
+  5eaeb7dac02110448a75a2a3dc2a14ac1eeb55e7  ca_mdr.bif
+  745553ce2240fa6d7a7bfcc3ead0981fba3b1081  ca_mrt.bif
+  c8b415694f1f5ca7c8655815aae96447b29239e5  ca_ndm.bif
+  857e4166a29e4fb105f72e5985f662373c581c43  ca_noa.bif
+  a255ca46a18a1b8660a875a9ebd24292f2799a02  ca_noc.bif
+  e516d751448c1dfe734a1018f86a8b07935063f6  ca_nod.bif
+  d2de287650e73b9621e6514da2247454f6c0cc0a  ca_nod2.bif
+  4717a0831d24ebff3911c0beba7aee3a6570785c  ca_nof.bif
+  d386b034afbdc9fc9783456a4a7d4545b2eb6dab  ca_noh.bif
+  a3b59ed17f57c39e06c8d5f6fd996c080bde5e09  ca_nom.bif
+  5cb71b0d6976e5e679c1983648e1eeaf396d3a1c  ca_nos.bif
+  69aa3a59ad62b2d82196504e061c5d43aad1a446  ca_noz.bif
+  a02c713d1eccbcfc5fbd0f5d5741d2c2c69b2134  ca_vha.bif
+  d3c5b728d18627324a48a7768a3db209b79b2c9e  ca_wiz.bif
+  85c748450dd149340465ac46529c67b0cfdc41c0  ca_zmm.bif
+  0708220c273ea2b760cbe5b136c197a11306f640  cachemos.bif
+  4a8478d095a8354760ee8cbde5db66882670b947  chitin.key
+  47efd3be4658148f48e0b2bab4819014c0c10298  crefiles.bif
+  fa912bc741552754c6e82105e2839ad22e04397f  cs_0000.bif
+  8dcd5bd3daf17b8ec40a1fccd842f69c726b7410  cs_0100.bif
+  78731b508ce81c1fdda4cc9ed7e7d09e9bfac743  cs_0101.bif
+  ef99be0f1ba85ac2e837963415a83ba77f085a08  cs_0102.bif
+  3ff9b07bcfa185681ae4f1ce62ccb24ee8f84a59  cs_0103.bif
+  785058e6d141454f490a4342c73f3eb54761026f  cs_0104c.bif
+  5457b46cf48781fc557528153cc1ab46f422b609  cs_0108.bif
+  df21e04735b5ddc9ce6c1f612d4326ece4f1660f  cs_0109.bif
+  01e1eb0bfa6c3bd2983ee89a9bd7f258b1d4685c  cs_0110.bif
+  57d89959859e142728f1ae46cd367da4fc345f42  cs_0200.bif
+  1455e1b34c656b85a8972fdcc34b3c8610e946fd  cs_0201.bif
+  e8bf01ca960ee0fecb2cfef642f2d9ba96edcc1c  cs_0202.bif
+  21bce4c6bfad680177a767660f1d8d4fbf4b2dbf  cs_0203.bif
+  4730973c457bc4422cc57d540852c01d5c8ef7e2  cs_0205.bif
+  c420f07d67762ae1d203791ddbaada3405a6e677  cs_0208.bif
+  001d5a3225dc56d45d62559c40b71f7baaa8cb27  cs_0209.bif
+  ae0ecdb8bb80931b0f1dde9b81d07301ceb1aa2d  cs_0300.bif
+  8222e6d5b757b58b808505b6d904c2f8ee1a5e5c  cs_0301.bif
+  4306293dc958dcae102fde862f13874526f3a686  cs_0305.bif
+  f621a348fea5c59432dfcb13ee0629752795a8fc  cs_0400.bif
+  f19e94f67e59fe131712275b6e1d494a7cf9dabc  cs_0401.bif
+  35b3b380388f3d9a05893c0eac61f864100ec94a  cs_0402.bif
+  bb7b8aa202c72dc7295f3d22a2a5aac468fe3249  cs_0403.bif
+  ece30cd8c1190849dd75a29676cdbb500f16bdbb  cs_0404.bif
+  1b721f1eaffdd984c80876897d0a714a505adca4  cs_0405.bif
+  6034923541ef64c57ce6a98be26f1d636fed0753  cs_0500.bif
+  c3833af5b769fffa0683132bce4b928557b9ee71  cs_0502.bif
+  202fdb1f7ee6d1ed1e359a5cc4ff71dee0746115  cs_0503.bif
+  480be0e5b8e3b3fae96e149c2ec0205b7cab3bc7  cs_0504.bif
+  de3008fa30cd8668ccfd99a6736a80a32357075e  cs_0505.bif
+  34b0ffa7d9747f732337a6ee52b0830cbe5e8bad  cs_0506.bif
+  d8bdb12e10b4b86eeac9cd816295ad75a01dd0e7  cs_0508.bif
+  596dce961ffb65b4312f9a26fa046e9faff0facc  cs_0509.bif
+  418e1c146f0abb0dfa1a7ae974d6aaee0d250d7f  cs_0511.bif
+  16acedfd00ddb9a793b9dcb50ae53186a5455033  cs_0512.bif
+  1b2556943f7a91169786c4a8e286c1e932d32140  cs_0513.bif
+  5d927645ad74d87588ea33c26fe48fc13de8b51a  cs_0600.bif
+  f5b1dfe81e2e79928687bc6c130169103ef0cbe8  cs_0601.bif
+  2d8e554eafb2b75053de3bc3247283b6416d4982  cs_0602.bif
+  8d9dd97108bf736eb7e3f64afd6567dba108019a  cs_0603.bif
+  4a3b1f26cf243655ab05044bc2c8b60223a5a539  cs_0604.bif
+  b82f922e1d7a1dc364b3d28a360dd9e637b7fcef  cs_0605.bif
+  e6b775bd4297d39793b340dd52d22bcea1289613  cs_0606.bif
+  5fc98ed6c8ad466ca980cd04d283e136020ac2ec  cs_0607.bif
+  56f1bea252aede0fad90d7749479969a811975cb  cs_0608.bif
+  48c5869f9b1479a75f69d2bdd756dd2fa2a967bf  cs_0609.bif
+  873639c82134de31274a814876368aa4675c4cd2  cs_0610.bif
+  2d65884f1787414dcb1f7dcb64ff4c50ad147fbd  cs_0611.bif
+  deaed7a4badca19d27ac7624415d1e5f0a4b2496  cs_0612.bif
+  11d431f270909f5dda95ab798844184ba46b038d  cs_0700.bif
+  b7ed364e7b53833dc154388d303ab7e3e7f60b5f  cs_0701.bif
+  31d751fc204c5dadf1e314ca49bcfa9130533509  cs_0702.bif
+  61bd0d5967ffe0f9065b25d9300e81753c9ca1e8  cs_0703.bif
+  36cb37c9330e5393e7ff33852dc30067af69fe18  cs_0704.bif
+  f15bb8d5f8be99419872161e92c26536add10742  cs_0706b.bif
+  9746b8049d74d8af9e60aad3a9563ba6dbc45c69  cs_0708.bif
+  3321dd222d49443143ab60b2b32355a25f7d5d72  cs_0900.bif
+  5f3d44cb16d1ab6dd267bad3f3a32bb933c90d4d  cs_0901.bif
+  7b2311def2e9de590c82da298a17a36d9612869c  cs_0902.bif
+  c1d771b331ef43608eadc3d2dcd10ad521fd3d85  cs_1000.bif
+  38b3bf2a6a5e9ca7ef6c5d42b01ebc7be2586487  cs_1001.bif
+  d98d83131c0f1258642a4c06a2a2e6aec1f3596d  cs_1100.bif
+  9b24b9629b004354c9a4b8e7d95beb4e4b4c6069  cs_1101.bif
+  e6bf91427a39c763a92b3208a41d7bf8543dcfb9  cs_1200.bif
+  e3185a7c3069bc45439e4d277cbe973f5e9c765c  cs_1201.bif
+  6ce7e80de8c97447f733edf91211aa187216d9b2  cs_1202.bif
+  6abd42ee20a21285d3f22fabc4be21fdf17a40dc  cs_1203.bif
+  e9d68dee9bf62ee96a299b9e4d5ca5a4cd0dcd5c  cs_1204.bif
+  b6b738bc20565b3d04c0b9210e4963ea0f175085  cs_1300.bif
+  d9cbcbd6a2a1e201474d7f57df9b8324b933ba8f  cs_1400.bif
+  c8fb9a26d8ec800c7c52c6a5b4bb223425e8e501  cs_1500.bif
+  7bd907a6864a0e2a1f4b5b15edee5832a1f13c5d  cs_1501.bif
+  da34f5fc1d6f6f4bdc018d1a11147904f42bab8a  cs_1600.bif
+  c1aba5b908d77559cba0dceb460d67e646cefd8a  cs_1601.bif
+  6201cb6dd8acecccc6632e4769fcacda189db790  cs_1700.bif
+  aaa437887f2549484bdb528f8c92aa2c982e7ac5  cs_1800.bif
+  b0c257f0b632405268c50dcf72503f34f12f1e67  cs_1900.bif
+  485d280fe9ec0d46cd91b03df4c36f482d2dd792  cs_2000.bif
+  45323619d1ff3afc2d82e7b18a30a8704f674116  cs_3001.bif
+  7558a044469ff6aa906f7a332bf725d1e892801a  cs_3006a.bif
+  799ef602974b8ba0a9597fb0a5343c499e1db816  cs_3009.bif
+  ee6d48529226d82d2cd8ac19e2cb89328b39aca1  cs_3012.bif
+  c7d0b6746b5cdce95e5dba04d89723891b9344c4  cs_3015.bif
+  350eab787c2e326942c378d3c56649e94ed5b7b9  cs_3016.bif
+  f8c69844e9a224af464b261c260c79857029e380  cs_3017.bif
+  db8eebce39469f6757a57ac6f47fcb7cf99308e5  cs_pc.bif
+  6e19f6632520b9ae1383cb5a8449aadc90d01e13  cursors.bif
+  9c89ffd891f235328dbbe2a2b26a3b043e4a683f  data/ar0100.bif
+  daef1074e93ee774c4abac217f32611d8e299eee  data/ar0101.bif
+  d671b220344bbc45f6351dd788534ec89b28e827  data/ar0102.bif
+  40abf46f85bfdda45b75ee9531ec611ec37a86e5  data/ar0103.bif
+  62153948ec773cd4979033896639381b7497290d  data/ar0104.bif
+  9b57e24b56c4194de0694993140bb8c958e020a7  data/ar0105.bif
+  0b9648958b04c0cadde41f5fcd3ef6719bcf4917  data/ar0106.bif
+  557d02592cd0f5c9ca312d9a83606c60f6de1416  data/ar0107.bif
+  c0410381cd68463e0e6c7b5c2c581408a6abf781  data/ar0108.bif
+  34148592d5d01479d7081147436165dfdfb0ea1c  data/ar0109.bif
+  cd05d584a7c483dab1058875c6c9a2eb1e989e69  data/ar0110.bif
+  20aef840a7493f83269b51658a810af63228c888  data/ar0200.bif
+  37774c732c52ffd23ed0c76df757aede3ba1e45c  data/ar0201.bif
+  e0c093eb9f45fecb92ba1275d28e78c4421ea348  data/ar0202.bif
+  3be560805fedd03ccc4689ae87befa5a6f136853  data/ar0203.bif
+  c6332d1ebe01e5fec99f10501f54a270d9533b12  data/ar0205.bif
+  6460d2e0420929c472a2c146281e58b78ffa196e  data/ar0206.bif
+  800294e8857b193d79ccfa3915595d23d2d1a37c  data/ar0207.bif
+  fde5ea91ae2ac07b997ee3dda9a66a252b2b73cc  data/ar0208.bif
+  912d097f4c38578f9546ff0df88be00272fe193f  data/ar0209.bif
+  28b2374cb69a68cb4f367d5d3f22a6b363b5382c  data/ar0300.bif
+  6dd09bbae88693cee2e0c094075a33290ee2cad7  data/ar0301.bif
+  cbde2aa5247cd9d67f2bd2bb644e544449dce3b0  data/ar0302.bif
+  b47320e0aa6c67be0d3eedd7b87d91bde32d244e  data/ar0303.bif
+  dc269b3c58b99ccaa42b0e04c3b45cf8bd15eafe  data/ar0304.bif
+  c9ac4391ca63e9ea49b077c596206a0671a63ec4  data/ar0305.bif
+  add7a78f9bc0d4af20d5bcad078d7913695bd3bf  data/ar0306.bif
+  30dfc8f878ba3c82502390843823a950dfc11b7c  data/ar0400.bif
+  df164d3498b99f2755214d3e4c7bd08b6ca6b27f  data/ar0401.bif
+  c02d28914f5bdae5f765c9ba4a5c6117cf69f1f6  data/ar0402.bif
+  c624de4ba2f69aa15afea3ceacfa1fa94bfb9fc5  data/ar0403.bif
+  37ab049ecee8e706d2cb6e0ca9c3a207d303b040  data/ar0404.bif
+  1410b86ee1733282f1ae05c9283b86955aa4ac0f  data/ar0405.bif
+  0274cbbfc12015d69f05ee6658a2e7d8968995c9  data/ar0500.bif
+  b2b63f77f17506a00b87f7f4af42df3bfb046042  data/ar0501.bif
+  9133a1dec37c67858a8bab9847a39e453da670af  data/ar0502.bif
+  70158b2a810ec2cf0c47c6fb006057c9f5705fae  data/ar0503.bif
+  183583547a88f273b35ae1fce8a1aeac7b30f906  data/ar0504.bif
+  2c9400338abab83fbea50214cb27a19acb9778ae  data/ar0505.bif
+  990db3df44a38c04065c4015033c6579fc700002  data/ar0506.bif
+  88e8b9ac90e8a3c93f852e619d1c54379c3ee976  data/ar0507.bif
+  675eee2665af40034a2fb178e54d84ee8d6c92f6  data/ar0508.bif
+  71fa3db8c837a5deaebec30e6793218de9458a43  data/ar0509.bif
+  97818443a5b900c1c2eac16be0bfdce43e35e9de  data/ar0510.bif
+  aaf41f26b3aeff4866f6fbfa66ff813c9c01ba90  data/ar0511.bif
+  3a37cc1fe609294190cfb92cae656d71bb6a2d11  data/ar0512.bif
+  dc63cdbfbacb29a0a88406dea53857fd2dd8c78a  data/ar0513.bif
+  826fe91e94682a1bea4fc462785b726fc5d38a9e  data/ar0600.bif
+  6e65c722c2a85706cda8dcece4277939266fb759  data/ar0601.bif
+  ecb4bdaa14d953dfb9b7c36b9737084c9dcda518  data/ar0602.bif
+  4b69926c9063f37d9a376265d2ad1499f03c587c  data/ar0603.bif
+  a3f5fdd57afba4929f3a187e85aac21adaa482f5  data/ar0604.bif
+  fe10531c68475b4b0be2f4d49bec32f4e76f358e  data/ar0605.bif
+  71ab7ba5a0d3f5751dee01d93cb247cb5c849eaf  data/ar0606.bif
+  53e178a57896de43d8fa7e62e68e9c673fdf4d1c  data/ar0607.bif
+  5437bdd69e8665b244e96b3c9f4f10c6d5904403  data/ar0608.bif
+  287043080894e537cbbd55362eae6202eb516fa6  data/ar0609.bif
+  941f61965305e11312ae3659154bcb31c476dae6  data/ar0610.bif
+  678917fc764fcd2a7479a7acd44ea0d7a865811a  data/ar0611.bif
+  54415d7eab874fce1756997d21b5699c9aac6ffe  data/ar0612.bif
+  4f326997adc2eaefca1916b2391376f06bc1b6fe  data/ar0613.bif
+  0152ac3bd3058bc74a8727af23d106fb938192ad  data/ar0700.bif
+  8fcc2418ca01e1a935f44a6b50b85da9db4e7de7  data/ar0701.bif
+  135e0fb7a8925b1f1fd86800446a0072def4e344  data/ar0702.bif
+  916af3608039120929d60bf993850f427d8ab485  data/ar0703.bif
+  ed69633430b57311e3f74bcbbc1e8ba6dd33b18b  data/ar0704.bif
+  7aec281a7df252d7575a4a04d9bc26e5a0c01fdb  data/ar0705.bif
+  7c4bec41101b056a703666901fd9461dc643f128  data/ar0706.bif
+  220613457a47f78d970120db649883c86bcbe3b1  data/ar0707.bif
+  da62d4dbf743c3261f09ba63952c8d2077b9f469  data/ar0708.bif
+  b69851b113135f3415ad6b2c3ec7c5b250f6c4ef  data/ar0800.bif
+  b10039ca7d1763f55089ae0d0785ba2dee9d7276  data/ar0900.bif
+  3a1124314d30dc1a31dd458c84c6ee7f2524b4a0  data/ar0901.bif
+  d7d2491f22e45c1cf122d9c0b2463c21e5bf4db0  data/ar0902.bif
+  ed25af1610500f93d6415f18cb67623cb57d4851  data/ar0903.bif
+  b357bf149a40304ff485987eac3b58656b97a841  data/ar0904.bif
+  86ea485cb99a0c1afd060ee780dae945cf2db51e  data/ar1000.bif
+  145c848f7d4e924343eced4be213b423e50088d6  data/ar1001.bif
+  b5ad15844aa12fd2836ae99db16f245f7aba986d  data/ar1100.bif
+  2ecf5b144013cc0cd05f862bc1df8adb3b258935  data/ar1101.bif
+  312651e99c0c659caa094a58310ca721474cec4e  data/ar1200.bif
+  270843c1d838e1a42b99738b4543baf5d72e22e8  data/ar1201.bif
+  5947b9ca9ea07e3368f59e893afe395fa956f328  data/ar1202.bif
+  c4d86f3e5e7d10ef4c21695de6cc6b1706d8e80f  data/ar1203.bif
+  20dce9e47f4c948858db9e5c6869eac8b3e63d51  data/ar1204.bif
+  17b58d64d42cb10f9075cc3f4de45f821a8fe959  data/ar1400.bif
+  c4baa6d6f18bef3f20fce453e6d893a033292b0f  data/ar1401.bif
+  32ee01cf2f0bddcae5138e3b7ebbd1da62eaa3d6  data/ar1402.bif
+  2f90ed27093566ca558104eabe778c60d625649e  data/ar1403.bif
+  6c0f292b37091b13af479c658453d704aefa3af4  data/ar1404.bif
+  729376946bdeb745106edad409d7a50f186392e4  data/ar1405.bif
+  effe31194802c90c1299321a9621f05118290f5b  data/ar1500.bif
+  7589dc2ed99e9a041e80ca24493cc9c0e864f6bb  data/ar1501.bif
+  eb82ca128b7cb9b0ced5190545c22d020688acc7  data/ar1600.bif
+  02577f3d387d5a69597d60d1a869d60ebd2e01d0  data/ar1601.bif
+  f8e0a7f6619484464e0a1d07c8081f4615256d68  data/ar1700.bif
+  9b9aeddb7e5d0e49a2059047d06ba4f72820e633  data/ar1800.bif
+  61824fae58e9c6e70ed55def4179f655b7a402ff  data/ar1900.bif
+  75b3bca22c389cb0b18c53196af8430eb67be0cc  data/ar2000.bif
+  d6e4670dd20de24eb31a74ecbbe83024245ac1d1  data/ar3001.bif
+  7402948eb5b098f0532227bd6f8e16cdb4e1ab34  data/ar3002.bif
+  65b2d7bab5cd8c97ab2fef611c9f3c93a025f6e9  data/ar3003.bif
+  286637ce62c6a842163e6209d135812a26fa94b4  data/ar3004.bif
+  3eab64cc94c22e530f94030303ba6ec24f606a92  data/ar3005.bif
+  1b73d43743a1ade21eea57644bf4eb96ab43bc7f  data/ar3006.bif
+  4d966cc743abb38c7f03401bb8f5ca318157ca3a  data/ar3007.bif
+  b78a4d2f7b9c02fd23b9c28945b64dad9dcc4f37  data/ar3008.bif
+  607c10e590703b1ead872a559077a9e59a8b9197  data/ar3009.bif
+  11f8005935b42e48c2d31ac2b125710530ed24ea  data/ar3010.bif
+  d95c3c9b213e071aee5c003bd9e782aa230aa894  data/ar3011.bif
+  68932bc68c9498b0fae31fb0f45e9d96c8272bdb  data/ar3012.bif
+  caa201e95f9749387c256d4f2746e9788497664a  data/ar3013.bif
+  d9411a1f3e418c5c90f0bae0b631da4fd254fd84  data/ar3014.bif
+  833ce18d22e9a38cb495292af0e6113fdbd2eac6  data/ar3015.bif
+  7a1b966e1b749b08f55864cc538a14939f906d6e  data/ar3016.bif
+  dd4867de2abbe48fb335ff92053bfe0dee6849b3  data/ar3017.bif
+  02bd09afb2111aeb7281432633e14e18b38ffcf2  data/ca_aaf.bif
+  a7d16b2484e6e9f602505831c2be89f87dc221b4  data/ca_abs.bif
+  18f2ee5a52884d2652f0dee22a8b7cdd8d121bba  data/ca_aca.bif
+  23e1eb720d35f90bf7ec1ad6d9716597e2f556bb  data/ca_adv.bif
+  d4fcfd929fb2d8f960123c8c8414116c0804a4b2  data/ca_arm.bif
+  692d26e20f572e2a8d1606e36ae7f17dfb90f363  data/ca_bau.bif
+  cc08b463610e11f33d9110723ca770db18c7ac20  data/ca_cam.bif
+  e23ec44f8c7435cf3f00898251412e6237cf9092  data/ca_cgd.bif
+  32d186c5c8670fb5e5b6c68ece0e2f8b1200d41c  data/ca_cor.bif
+  4fbefb77d2133eb86facf5a945f416c04c46b450  data/ca_crn.bif
+  e79eb7820c952eae7caf34b622804f88a9f521c1  data/ca_dab.bif
+  7e8662ab7e52427e75c85e15191e5b4968f78602  data/ca_dei.bif
+  2d72e9c00efb14a25b914d5be87e76f6d16d00a3  data/ca_dhl.bif
+  5b1da7f2039f74aed60a190c145001824b4d909a  data/ca_dtf.bif
+  764ff67acdba1c963a358800d323f7b3d3a720c1  data/ca_dtm.bif
+  a8ba09acb9ac296b77c542c146b29662d20340af  data/ca_ebb.bif
+  0dc53717cdd6177759f06b39ec99f04e3f26c550  data/ca_fel.bif
+  d17863fcf63a945811a9e5c54fd30b1bc9745548  data/ca_fhj.bif
+  8c5b8b5b43b6a57b2abf40e8f4c52e36354c3ff9  data/ca_gab.bif
+  3c381f9f481d4f2d365c1251b1369f055e816658  data/ca_gar.bif
+  fa3115cadb738565657aea773f0e63f3c050a756  data/ca_gdg.bif
+  43543b8486599481ceaa68147e4d31b6d9110512  data/ca_ghf.bif
+  0947051ff3c7cd53aac15dc82d562d9b212b6c6e  data/ca_ghm.bif
+  bea89761eae2f2d7c54f001d0094ef7f0d750ae9  data/ca_gla.bif
+  2fb5cbf92c16fc6da04bf04266a48f34db790a7b  data/ca_god.bif
+  74407b3248baf9fe0b17ed49ef8ea8108020f58e  data/ca_gri.bif
+  8d415afcfdd7b8c100a57469a85ccae8133d1dd0  data/ca_grk.bif
+  53bfbddd9906a2a03597f57795a4cb12fba8c866  data/ca_gst.bif
+  3d5d993025092decbfba74e71a49e5504a8e5b15  data/ca_gyt.bif
+  c05c5a7dd34856e25594ee52c3ddd67abc13af22  data/ca_har.bif
+  15191b3a6a30483fa3da2770ad627985a0b62279  data/ca_hrs.bif
+  7cabae9de28b7e2184802bea80820f51ae47c0d0  data/ca_jbr.bif
+  6b09d5f5992277b7b1daccff9dde46efeb0ea4c4  data/ca_jft.bif
+  e4d0839775194050daa076efe4323156adab1ba9  data/ca_lem.bif
+  8bc5d64adcacfe5aae0694e287e099f380c6214b  data/ca_lop.bif
+  57fc491dc4d7dd990f757759f88fa563ac524c04  data/ca_lth.bif
+  49289b3e750bdce57037fa9a3a7778e6cbe17dbf  data/ca_mht.bif
+  a732f1f918beb3f960b9f216d0b3bef4b6240de1  data/ca_mid.bif
+  0b225a8f2f9823855ae18e14df5bdb19080f7aef  data/ca_mkl.bif
+  f66c8a33cb2d91d13f49e67efab527940a662a23  data/ca_npr.bif
+  720e0614d42903c43638c4246bdfadde4ebea363  data/ca_phd.bif
+  720e5a0d67c795e4440f224716a3d6c7ef6139aa  data/ca_pro.bif
+  fd6d43cdccf8f1ce02e007422da7d5aa798e641c  data/ca_puz.bif
+  2f8445ffc32c6f5d82d2c3726a1245a6d4073618  data/ca_qui.bif
+  7c746abc059b928e93f5bff6154a32d0a93ee391  data/ca_rab.bif
+  0c652873337ce703bb0f5514f59f5473b3b18eb2  data/ca_skw.bif
+  03d7314eea1e3b55f4d46df8cfd4f411525b0db3  data/ca_sm1.bif
+  909fbd222f89969e28de1464a588a4274c4970d9  data/ca_sm2.bif
+  81598344f5d5d1e38b3ae1a0c1f5e6558fce5409  data/ca_sm3.bif
+  88f2bf4f6608353399b60646acf2359eaf957269  data/ca_spt.bif
+  891e159375154494a619c8d48e8c85bae7a92efe  data/ca_tff.bif
+  b83bd52c12001bb474b183931f7aba8048999832  data/ca_tfm.bif
+  82e1792bb91e34d1a2d9cf2d9abee563cc955e13  data/ca_tgt.bif
+  3605123f4e6ddb41f0c73a38d2db3a3e9ea1e180  data/ca_thk.bif
+  e06051c5b4a2757b791a801b93187116f8b6321e  data/ca_tlr.bif
+  56f507bcaf76e7ba88f3bd5f3a22f137a555f354  data/ca_trc.bif
+  fab6ea1e73d7c89735cfd592900715382df44a47  data/ca_tre.bif
+  5786c391d9e36e448384461e257340f30f3db34a  data/ca_trs.bif
+  24304ee8bf9c0122e9972563898fe9bac368878c  data/ca_trz.bif
+  e16f465510e6b22c70328ca12a1da72db1dd61d3  data/ca_twz.bif
+  70c6fb50e19ffca27471b1cf3c16c2ecc482ad70  data/ca_uhd.bif
+  c568f32f21ff125b6c54a681006abba9491783f6  data/ca_vgy.bif
+  1b2ca7dea2bdc5b456ff4a0539e62d1649699e97  data/ca_wre.bif
+  4387e4ef7aa09ab599dac7be3ee94e86b6b69c55  data/ca_wrm.bif
+  f33b091cbfff9bed550e68187ff2b85b91d8d55e  data/ca_wur.bif
+  e12f582f7303b5ebb2acf6eb66f625db8d193dbd  data/ca_zmf.bif
+  85c748450dd149340465ac46529c67b0cfdc41c0  data/ca_zmm.bif
+  ec972f093c1c004e16d0a80bbb0ecbf68eee4c6d  data/genmova.bif
+  0b171a9e0d5f396bb4b1fb0665f15cc851500919  data/genmovb.bif
+  2fd495b26f1e3933d762424ff78aae8ee0b04ee0  data/jrnlpic.bif
+  f74e3ea4b800345a704219688552341ec28477b2  data/movies2.bif
+  8e0dff7017698bc9ec9e55aeb28fea02513b79f6  data/movies4.bif
+  e0a2aff527c9da5313924649fc375dac6f37deb3  dialog.tlk
+  e0a2aff527c9da5313924649fc375dac6f37deb3  dialogf.tlk
+  cdb417e219a37eddca0a8d6b3d92ddf151b6dfbb  dlgfiles.bif
+  689ec2639ed81abb6238a465c0f316ce4501cea1  effects.bif
+  409e8c7d51b55c3be687b42f3c61d614504b1d89  idsfiles.bif
+  3a88ea8fc9b68e1a074815f8a14f1e53597c122f  inifiles.bif
+  d1ebfde39ad8d482420a17709e9de50ef442c277  interface.bif
+  48bd07a922b25723382bb548d1dc90c5c9886512  interfacedbg.bif
+  3d5de68ec0972d9e1bb86f4ed098b8010f48e5b9  irongolm.bif
+  d431d9cc725a1e60eff60fa98e6e46faccb6d4b4  items.bif
+  f549789e60c144aa69b9d9019d551c7797f67c5f  mrtghost.bif
+  88438ff1f0ad678effe9b85c112d8b47889e6db9  music/baat/baator.acm
+  daa94b9ea2f4299e5667b437419fc8d686e49899  music/bone/bonesnig.acm
+  a3a86613f47bafee031ba00855afdde3dfb25234  music/bt1/bt1a1.acm
+  91675b5d6a829e22b455b22f27c34aaf187eb4ad  music/bt1/bt1a2.acm
+  160ff00d400d162eaa20006a41a326166bdffeea  music/bt1/bt1a3.acm
+  495b2c0a9233701070e140112a2fb5981625b0be  music/bt1/bt1b1.acm
+  e5fc82fb604328b3988c10a17b741dbdfb2f8c8f  music/bt1/bt1b2.acm
+  137f30fcc174e0214e9152dad0970cb33e7dd3ea  music/bt1/bt1b3.acm
+  d2c576480c33b5704126de50a607ac19eed0836a  music/bt1/bt1b4.acm
+  2f15ac9c6265af0784e66150ce4193a6768552f0  music/bt1/bt1c1.acm
+  18175ce0cf7fea56e7344de2c9eeee1a395603ca  music/bt1/bt1c2.acm
+  ddb75aa04d4433b42428219831921224f646a021  music/bt1/bt1d1.acm
+  99a853a1770d6d66cf2657a68e6f65a2d3926b03  music/bt1/bt1d2.acm
+  b86ea9746a526157f192055aea3000f3543e981c  music/bt1/bt1d3.acm
+  d77b01ae7e7293011011ed5eadc553b250b85188  music/bt1/bt1e1.acm
+  f81bc499641da53ead0a6f01a94182f97b96845a  music/bt1/bt1e2.acm
+  dc1ebe6efabe1eaf2eebf91677aa934502f863f4  music/bt1/bt1e3.acm
+  0ad945510d7970538f6ae744088f2846ab4f3b41  music/bt1/bt1e4z.acm
+  dafe444e644c02b59b83d30657a4ea83b4bdce5c  music/bt1/bt1z.acm
+  b4ca5fb02eb23cb1a9bf55c390cc6b2b41441c6d  music/bt1/bt1z3c.acm
+  3cbd5c1a9f22a456e1a753ac3d6d9dcb803aa1cc  music/bt2/bt2a1.acm
+  cec4a073c59798e13c79f7d8c034d50657c2877c  music/bt2/bt2a2.acm
+  092da600fa918dc8a1a7c6c17bf968a755b057fe  music/bt2/bt2b.acm
+  d172ecd20ad88c5f6a9c83cfdde1efcd082419ac  music/bt2/bt2c1.acm
+  42dda15204266be71bb9f96c54329c83e1d31921  music/bt2/bt2c2.acm
+  9da4d6e033cdd9eed2e53ebc939b52eccb766375  music/bt2/bt2c3.acm
+  353f7536563c1d0673f4097fddc4aea8e69d17f8  music/bt2/bt2d1.acm
+  e06035f88a342a9b4ff62cb516416b0e30505111  music/bt2/bt2d2.acm
+  26c3de2d8fe901d439807f642439bdc2c3fe40a1  music/bt2/bt2d3.acm
+  28c44426ab8feae67c963e797f34398f24d794f1  music/bt2/bt2e1.acm
+  d92e82e4f02ed761bb6c03c54a4be943e37cb64b  music/bt2/bt2e2.acm
+  f84bb62113524fa132dc6cdbd6ecd1091e57792b  music/bt2/bt2e3.acm
+  8f6504ce6fb763954604e75aa1784b8bbf0234c6  music/bt2/bt2e4.acm
+  b22266d02281e0d76d2571480813e4b4543b1475  music/bt2/bt2end1.acm
+  8168ac4e92e760d6f542081d789cc48a337d265f  music/bt2/bt2end2.acm
+  653e0371a9b5e23473d20f9356a77656503e9c6a  music/bt2/bt2end3.acm
+  c950a433938d09e4cc09c5445a2319516e491150  music/bt2/bt2end4.acm
+  88cc6c9ff1700ccb99e26cb8a4589d9bd684f72d  music/bt2/bt2f1.acm
+  758e2e35eefb0ea3f30a5e04a516797c051af585  music/bt2/bt2f2.acm
+  9dac6f7a0bd7fef7774bcdda6313df3d3833ab46  music/bt2/bt2f3.acm
+  fcf5198de55e169067aa92b99c1acbaafa298f8b  music/bt2/bt2f4.acm
+  5c228a99093fcbae61a7951e131d9cbeb5947b02  music/bt2/bt2f5.acm
+  47ebf8d1afd9bdd6288180b5bca0cab293b802cf  music/bt2/bt2z.acm
+  dad02c58e2fb62b4a7cde350aa30166ecdccb94b  music/bt2/bt2zc1.acm
+  c70734be64eabe43787fdfa7be2e65b0ea301e80  music/bt3/bt3a1.acm
+  087b34beebebad48823ef9349c991ee24389ba0d  music/bt3/bt3a2.acm
+  f79c6e9c119137b9f2fe6a48d87d45314559e0cc  music/bt3/bt3a3.acm
+  b2d56665793b310035fa296bebb55bba5d3c0ffd  music/bt3/bt3a4.acm
+  a15e9c164fde915239d2a75b9c0bac11e0741035  music/bt3/bt3b1.acm
+  ea39332e850bc6313521fd0b71e31b871e9935f1  music/bt3/bt3b2.acm
+  968e7bb6b0425fa67e2d0bac191a0b58562b676e  music/bt3/bt3b3.acm
+  07bf0a5e1195f97d54d414186acbcc1c8f5eef47  music/bt3/bt3b4.acm
+  12ea0b44d3f48d5a15c7effaca6afc2591542728  music/bt3/bt3c1.acm
+  5b562ead54ab58858eb45043188dfdecdfd19004  music/bt3/bt3c2.acm
+  c93eea7ae5c02ca96878068118f1f676aa0f56f8  music/bt3/bt3c3.acm
+  2aaafd48d59a07572caebb286cfaec8d3369f35d  music/bt3/bt3c4.acm
+  ae1ac908c9c69ca89ca5b34662f9bd0d617f2174  music/bt3/bt3z.acm
+  1a9a4314a9cb3ae442fbefc33cbfe2e367eac634  music/bt4/bt4a1.acm
+  9c03c9ff310747c27067e4c89b44f83fb38b79c9  music/bt4/bt4a2.acm
+  a63cede891797f560788b5633da8a53ae4443301  music/bt4/bt4a3.acm
+  eb93ce192d69fa40fc31d0531c61e7741f9cd6ac  music/bt4/bt4a4.acm
+  32b6d5af7046f9919ff589c69fdb88802968e050  music/bt4/bt4b1.acm
+  a4d4d12b0c6dd77b112d378583bf4b259b510ef4  music/bt4/bt4b2.acm
+  55e88df71584b6b28a67fd6814c2a9407aceb874  music/bt4/bt4b3.acm
+  2899a37d0dd3d7a8565f29f45eac8fba895d07de  music/bt4/bt4c1.acm
+  7bdca8916f921cf87a7d3e1b723177117fb7c9fb  music/bt4/bt4c2.acm
+  0ec3ffcfe4add73c623ce1e672d7d535c0fdae25  music/bt4/bt4c3.acm
+  5e867606b93702afc518d5c2d360938245e179fa  music/bt4/bt4d1.acm
+  a02b0cb94a1d3e3bddb225e3bd25ddd6fb770893  music/bt4/bt4d2.acm
+  c9f1a67e982fc3a93b5530be8d44ee8bd4c87626  music/bt4/bt4d3.acm
+  ee47da2741f3e8f42b955831da9a6a8dd90e3fd9  music/bt4/bt4e1.acm
+  892e60a2613a4de68d6686310062713f5ea4567e  music/bt4/bt4e2.acm
+  3aa6676141f959006a608999426bb66dcbdbc5bb  music/bt4/bt4e3.acm
+  bb63ecd10d229c6954a6a098e2192bbfef65674e  music/bt4/bt4f1.acm
+  e3a4b79c19236215a001950a7a06e0f7c0199245  music/bt4/bt4f2.acm
+  ea21e66195cd6860b747dc125b12d31c971840d3  music/bt4/bt4f3.acm
+  9cee4dfc09b1f3a19dd04a074ac089eb51763aef  music/bt4/bt4f4.acm
+  9a2d3e5535f1b34bc618bf31713391f53b325d73  music/bt4/bt4z1.acm
+  c1237dbec1f59b2e844e449c9acd21cb57f93783  music/bt4/bt4z1z2.acm
+  fc427ca00d5aac35f71aac47a48349ea03db8f9e  music/bt4/bt4z2.acm
+  e346f4155d4d6eb9e441f52fce74bb4883b28a8b  music/bt4/bt4z2a1.acm
+  b083faaf8ed5b0393912c658182c1d1fa22a3333  music/bt5/bt5a1.acm
+  fdee7394aab3a60291a9aed7fa0bbc640bec8882  music/bt5/bt5a2.acm
+  d4473a1021a40401671441486ac18b7f6263d6b1  music/bt5/bt5a3.acm
+  6a11d9c264c90b9bcdde33d548149dbb9ea3892b  music/bt5/bt5a4.acm
+  ce154ca3b759f2c97f06b238be20ebb9147f59e5  music/bt5/bt5b1.acm
+  92616742af012e5b131faf580f2c781284e990cc  music/bt5/bt5b2b.acm
+  c8e12c3fe594994cde7cdda0f20d845659c5d177  music/bt5/bt5c1b.acm
+  cd17ef7defec041494fc068340112c9ba06e475f  music/bt5/bt5c2.acm
+  2633cba1ab50c98b60ba20a74935c4801ddbf00c  music/bt5/bt5c3.acm
+  657311cf7f2173622d946bea3fd0e83b15676dcb  music/bt5/bt5d1b.acm
+  d2b4b9acd42ba511741e437399494b2bcfc8e882  music/bt5/bt5d2b.acm
+  1807e54117f8db46ee8d25a738b23e5091dac191  music/bt5/bt5e1.acm
+  62055d7df1481705703855eed939e1c0f5404302  music/bt5/bt5e2.acm
+  fd953f304898306af193f796f93a496facc1c03f  music/bt5/bt5e3.acm
+  87d6ddb21651064ea1b56a324e379993d72a55dc  music/bt5/bt5end1.acm
+  d58c6f25647863ccfec833ef13afe01f852ed2e7  music/bt5/bt5end2.acm
+  1c15715415464930d521494e028fb316832c757c  music/bt5/bt5end3.acm
+  ba975ffb7cd96f191e822fcfc4bbcc5e3f392fdf  music/bt5/bt5end4.acm
+  44a17afdd2fd21888b0d4efc6a5eeded37a85616  music/bt5/bt5f1.acm
+  113418312769aa5468921565a8ebb524d0b52d50  music/bt5/bt5f1z.acm
+  c3159e738971c82dda2bb5d12a2369fe50aefe8b  music/bt5/bt5f2.acm
+  05f48bb47110be2153e36fa855d472685c4918fe  music/bt5/bt5g1.acm
+  43ebd3f40a0784bcf7d937874bdd85fda05e2e53  music/bt5/bt5g2.acm
+  2230ae91f6c7fc652a846cc3b358ae3937efbdcb  music/bt5/bt5g3.acm
+  f0100ce00fc5e72370319bc4cd05a762ef2985c3  music/bt5/bt5g4.acm
+  fefeedf13a28456c868ae1df7be2b944c81d99eb  music/bt5/bt5g5.acm
+  85bb9f385d36a6413dd43f066d2acd70176a7392  music/bt5/bt5h1.acm
+  140c9739a5efce13c318a364c798dbd24d6023dd  music/bt5/bt5h1z.acm
+  1b5fdcc2d7843338172c985d840270f192d2b2e0  music/bt5/bt5z.acm
+  1fe86e00a171557d13c18c722168ffe238b95e31  music/bt5/bt5za1.acm
+  66e46e9932a1aa23375d70c973f0d43d568d6891  music/char13b/char13ba.acm
+  3cd1e130ceb88fa0c096b6480b36635fde23f986  music/char_01/char_01a.acm
+  1051acd1712a6e4fe884071955a44dc73cd4ebbe  music/char_02/char_02a.acm
+  e1b4ca8a9619e2a5d81decbd573ee4b841d0b98d  music/char_03/char_03a.acm
+  1b847cc48e649c9886d69dd92f4611b352aa6ad4  music/char_04/char_04a.acm
+  2c21e98b191d1ae96fac317a79e89bbd1fbbdd57  music/char_05/char_05a.acm
+  5c8c4840574bf525145570c5055a3ddd7e293b39  music/char_06/char_06a.acm
+  d930a120b212a2014230cf6527b1ce8d799e8a42  music/char_07/char_07a.acm
+  3cf666a0903217f9838b7c4a38285363d4c6e479  music/char_09/char_09a.acm
+  dbeaa009b412730643921c51052e277ab6870ad5  music/char_10/char_10a.acm
+  f93ac0fef6d875254da2bb42e5dcee40f7b3eec0  music/char_12/char_12a.acm
+  66e46e9932a1aa23375d70c973f0d43d568d6891  music/char_13/char_13a.acm
+  724d11a043233e218b0f249ce753a55da48b1166  music/char_14/char_14a.acm
+  af99f41e3ef89b1c5f7a14fdf1a8e43a512419bd  music/char_15/char_15a.acm
+  cbac6c643bd3e30fa65b928711d2a97f47545bc5  music/civic/civicfes.acm
+  c4ef138f739f7488697aab302271d77f6eaade22  music/cur/curst.acm
+  8ba247acd23206c4f1253d9e54e057f7f2961cb2  music/end_01b/end_01ba.acm
+  2b63173a7b3711a32fc537588888ba3b3e149e2c  music/end_01g/end_01ga.acm
+  51fd950f26bb082ebbaeea9f13561cec42971b3f  music/end_02/end_02a.acm
+  6f53079c4f754f257f2a28c95460655d0f89307f  music/fort/fortress.acm
+  a134ac2ae8e8c878453571579143534adc1b492c  music/main/main_01.acm
+  2f739f4c942fa17f832c4b99dbc80315e0d864ca  music/modr/modronmz.acm
+  198b9c93bdcb40bd17d7f24656ed9e681c7285c3  music/mort/mortuary.acm
+  336108ed78be8921941dd8125fc35caa1f29c97a  music/rave/ravelmaz.acm
+  e1b4c10bb605c4009103c1099e2681c27a8936ef  music/sig/sigil.acm
+  e259254b620c30a2d85aab87135ad5575879e1fe  music/smol/smolder.acm
+  e961660befa24d91478ccc2844885aeb52acfe6c  music/spc.acm
+  c27522b0ac5bedfd7667371e8689f0127875eb59  music/spc1.acm
+  ea04403b63dba235515f56ce1bbd46cb98fa9cac  override/0401dabu.bcs
+  1ea22d786a0821f3abe5d2c32233b47a71cfbe86  override/0403gang.bcs
+  226ae8653fd95c188a0db1e860add43c3727eb3a  override/0403gngb.bcs
+  782451899a37004ce498e829e0d78431c5a16af4  override/0404fell.bcs
+  b84f8b373717faddfc271fd2ffc6ef4da2cd9f13  override/0600sarh.bcs
+  dc68df86c7b95c0771e8d98172c0800f8e145489  override/0610cut3.bcs
+  9b8a6f25f1ae72f817ca931b167a9d7d56711b38  override/0610ravl.bcs
+  2785c0310733a6ef76798637ae9d84d59db09fe5  override/0900hezo.bcs
+  7f1b34d0c2b38ce9696e6be82dbcad591f7f9e2d  override/0900jjog.bcs
+  13ddafb4fe47ca3cd5defdb7587281f034775545  override/0900loot.bcs
+  572b8ae1827925e39dd475ecaed18cb6c59ce3ab  override/0900mob.bcs
+  99c532ad2df552c28935bbef6113bea030076e4d  override/0900slvc.bcs
+  bec77b8355e553ff7ffcf69ebd5019bffddc5601  override/0900twn1.bcs
+  1b8dcbba686944d217dc4ccf840649b9a6ead5ac  override/0900xatk.bcs
+  9984934c0473d9fafd94107ff32e73360fd74517  override/0900xfle.bcs
+  03836c80f67f3bf1e61a183d3757d9dfc2c83ba1  override/0901tria.bcs
+  06a9fc9067469d993f806cca2f4004560ee7b6c5  override/1204trb1.bcs
+  203d3437fd428b32489c75deb625429accc45de0  override/1204trb2.bcs
+  11e437fd3f479c9b6d7166ce15261f265d0b0a62  override/1204trb3.bcs
+  0d8c155c1179fa66ff049e06c048f5b0af12089d  override/1204trnf.bcs
+  81a47ac40c8fe9a0341e8f3036d534bc47a850f4  override/1500cs14.bcs
+  0273d898826cbb94f13e803b89b1ca9987e23097  override/1601mana.bcs
+  f22e0366393cecb03dec59c83d46e412b3005060  override/1601manb.bcs
+  ac6475c1e4dc5ffdccea032bd8c1b6e5350c7de6  override/1601manc.bcs
+  dbe9cbc26dcb23ea1dd4bd4700f4b92188a3cd68  override/ar0105.are
+  ba7927510015019c27009754c2012637eaf77b77  override/ar0605.are
+  67394bd5ece6c0255e3d5d13ddad89031664fd47  override/ar0700.ini
+  89622bd4bbb99cda8550c07432281ef31ce3610d  override/ar0702.are
+  e59e3f42947e79aa2f2409fb5cfee3d8fc40dd9c  override/ar0901.are
+  eb5b638603bb4f1261fa93781bd9f32ec4bfc2d2  override/ar0901.bcs
+  8d001e3ee0fc9497156c79e763d4f748ec1b2d79  override/ar1204.bcs
+  1d62ae6546c1d87020fbc553ddf3eefef8e76d5e  override/ar1500.bcs
+  b60bda4fe4fbb8f731c1154ba6e6fdce94fb9b1e  override/ar1601.bcs
+  cdd11fdf6bfd7636566a56ac306aa0b50bc7b806  override/dable.dlg
+  07d026d4bc636f39b040a623725c2e6d32010ed0  override/dannah.dlg
+  331ca78d36865f417069826f7d13770882115d74  override/dawait.dlg
+  4b5bcb83a7c65f3ae891315d6041feab5b740e45  override/dburgher.dlg
+  7a1eb941a8988282e0191cc469bb78d628585699  override/dcandri.dlg
+  acaaa0980d9435b993bf412354c244b823b91da0  override/dcube.dlg
+  889809129f08609da782cf2d02db483445f832c8  override/ddakkon.dlg
+  e9572ef9f53560a4043dc9303c4f5ecb1eb41c1a  override/decco.dlg
+  842ef184babc29bd4d2e13564a6284a487beef08  override/dfell.dlg
+  b4ef2fb34729a68d18d13e74e2061a2ad55bfc73  override/dfhjull.dlg
+  f702a854c9a71b0e894c1f402d1b0c62684bc0ec  override/dgith.dlg
+  a37c35737751fff5c92f9dec38ec142ffe552d5d  override/dgrace.dlg
+  6fb89ce975667ec8d5782f5b8a916de07d5e5e7f  override/dhamrys.dlg
+  8984bf8b6aea50cca471b34c5ea320fda0b711d7  override/dharlotn.dlg
+  9df651fc4e741737f0b1fef174365bdc6fa038b5  override/dkiina.dlg
+  5af2d9378816d15029826237d5104b123687ba2b  override/dkitla.dlg
+  4c4d94627e1d03045362675cefb282e49b00c128  override/dlenny.dlg
+  61ea47467d2ac9144e3a360384960995374ed546  override/dmarquez.dlg
+  4995e4b260de188de3d2462e05fb0d681c5c9115  override/dmarrow.dlg
+  76197f7958ffc46a47c9ca930da3c8a571607a7c  override/dmooch.dlg
+  97deb1ba65f88a5b212e74c5c0167f7b81e6a235  override/dmorte.dlg
+  d881987aab7394c21b18ea22657737985f2f8191  override/dnordom.dlg
+  e7bdbf827507fae0ca6083bd22f98f28940a33bd  override/dpillar.dlg
+  153ebb27162e7e6137c85d6a723c6e02aae6f73b  override/dquell.dlg
+  1cbc7a29a57b604876e83e487b6f57dcd78fd24a  override/dravel.dlg
+  664edad2f36f30fc4b2df22c75421eb0c3dadc16  override/drotwill.dlg
+  d1b331e192830e7fd779b9f614694246bbbfc564  override/dscoff.dlg
+  d60bf73fa9c07b5dc9ed6b55fafc43130be08a8e  override/dstalema.dlg
+  e68a8f8ef8bfbcf4ef6617d93ec9ee08063aeb77  override/dtrans.dlg
+  1f6292bd23e965163e27cdc7bac0ff26d8cfe97d  override/dtrias.dlg
+  63ac8dde4a8b0459c990b5bce76229ee6a65899d  override/dvrisch.dlg
+  c19350c2e4aa1cfdd64f71453848b41fe482cbf1  override/dxach.dlg
+  213d05c4d925fee3ebc78c7242eebfd314156d3a  override/dxander.dlg
+  6e56015c81414ee8d74e33f872201af846743d30  override/fell.sto
+  14a2c53bee1f8aa7bf1401ead9ba7e9627ce8753  override/fontdlg.bam
+  3cf753b957e723a6eeb373f9281deb6f5720d7dc  palette.bif
+  7d6af080e78a7a999e529d43c855c5a01fb89d71  pillar.bif
+  80c9b66e119af955ed973ddf406a1c8f80d22826  quests.ini
+  f57b790d1f66a95fb1bd60a31a2354c64d48f233  sound.bif
+  3c8e119454592880a561c7975a66b53e876b5587  spells.bif
+  12e8b04b9e199d03712146de54359711823774e7  startup.bif
+  997664071300f3de57ad35ac4fa46ddbe58002be  store.bif
+  c18a2d771d2487e6c6dc51a2ba1127f4ebb0213a  support.ico
+  4bdd1f4b2cdbce390ff6c2ff89ee6810a50bc3fc  traps.bif
+  29eb911e93d726f24b1de301dc2e729430c146d1  var.var
+  41b5920a07f67e3bdc97c6a835b235301e6efa5f  voice.bif
+  c7c090fcdc2933acf3c9f0f013a3867c18996217  manual.pdf
+  b69be18c9f09d69ff3a762d02324f1be71d62542  readme.txt
+  1d12744f5a19636dcefc2e190f3e376c176e4a5b  setup_planescape_torment_2.0.0.8.exe
+...
+# vim:set sw=2 sts=2 et:
