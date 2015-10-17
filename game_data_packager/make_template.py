@@ -263,7 +263,7 @@ class GameData(object):
                         self.doc.add(out_name)
                         self.package['doc'].append(out_name)
                     # most of the times these files are not needed
-                    elif fn.split('.')[-1] in ('cfg', 'cmd', 'drv', 'ico', 'ini'):
+                    elif fn.lower().split('.')[-1] in ('cfg', 'cmd', 'com', 'drv', 'ico', 'ini'):
                         self.optional.add(out_name)
                         self.package['optional'].append(out_name)
                     else:
@@ -528,7 +528,6 @@ class GameData(object):
                 print('  %s  %s' % (self.sha1[filename], filename))
 
         print('...')
-        print('')
 
 def do_one_file(name,lower):
     hf = HashedFile.from_file(name, open(name, 'rb'))
