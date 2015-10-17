@@ -1,0 +1,350 @@
+---
+franchise: Laura Bow
+longname: "Laura Bow 2: The Dagger of Amon Ra"
+copyright: © 1992 Sierra
+plugin: scummvm_common
+gameid: laurabow2
+wiki: The_Dagger_of_Amon_Ra
+
+packages:
+  laura-bow2-data:
+    optional:
+    # squareish picture, could be converted in a .png icon
+    - laurt.bmp
+    install:
+    - 100.hep
+    - 100.scr
+    - 450.hep
+    - 450.scr
+    - resource.000
+    - resource.aud
+    - resource.map
+    - version
+    - audiosfx/111.aud
+    - audiosfx/281.aud
+    - audiosfx/282.aud
+    - audiosfx/292.aud
+    - audiosfx/312.aud
+    - audiosfx/40.aud
+    - audiosfx/41.aud
+    - audiosfx/42.aud
+    - audiosfx/430.aud
+    - audiosfx/44.aud
+    - audiosfx/440.aud
+    - audiosfx/441.aud
+    - audiosfx/443.aud
+    - audiosfx/444.aud
+    - audiosfx/445.aud
+    - audiosfx/45.aud
+    - audiosfx/452.aud
+    - audiosfx/453.aud
+    - audiosfx/455.aud
+    - audiosfx/46.aud
+    - audiosfx/460.aud
+    - audiosfx/462.aud
+    - audiosfx/47.aud
+    - audiosfx/48.aud
+    - audiosfx/480.aud
+    - audiosfx/481.aud
+    - audiosfx/49.aud
+    - audiosfx/490.aud
+    - audiosfx/500.aud
+    - audiosfx/501.aud
+    - audiosfx/51.aud
+    - audiosfx/52.aud
+    - audiosfx/522.aud
+    - audiosfx/523.aud
+    - audiosfx/54.aud
+    - audiosfx/543.aud
+    - audiosfx/555.aud
+    - audiosfx/556.aud
+    - audiosfx/560.aud
+    - audiosfx/561.aud
+    - audiosfx/566.aud
+    - audiosfx/600.aud
+    - audiosfx/612.aud
+    - audiosfx/631.aud
+    - audiosfx/632.aud
+    - audiosfx/633.aud
+    - audiosfx/634.aud
+    - audiosfx/635.aud
+    - audiosfx/640.aud
+    - audiosfx/641.aud
+    - audiosfx/651.aud
+    - audiosfx/652.aud
+    - audiosfx/654.aud
+    - audiosfx/700.aud
+    - audiosfx/701.aud
+    - audiosfx/710.aud
+    - audiosfx/712.aud
+    - audiosfx/713.aud
+    - audiosfx/721.aud
+    - audiosfx/722.aud
+    - audiosfx/750.aud
+    - audiosfx/751.aud
+    - audiosfx/752.aud
+    - audiosfx/770.aud
+    - audiosfx/80.aud
+    - audiosfx/81.aud
+    - audiosfx/82.aud
+    - audiosfx/83.aud
+    - audiosfx/84.aud
+    - audiosfx/85.aud
+    - audiosfx/96.aud
+
+  laura-bow2-floppy-data:
+    better_version: laura-bow2-data
+    install:
+    - message.map
+    - resource.000?floppy
+    - resource.aud?floppy
+    - resource.map?floppy
+    - resource.msg
+    - version?floppy
+    - 0.hep
+    - 0.msg
+    - 0.scr
+    - 13.hep
+    - 13.msg
+    - 13.scr
+    - 20.hep
+    - 20.scr
+    - 22.hep
+    - 22.scr
+    - 90.hep
+    - 90.scr
+    - 230.hep
+    - 230.scr
+    - 400.hep
+    - 400.scr
+    - 420.hep
+    - 420.scr
+    - 440.hep
+    - 440.scr
+    - 441.hep
+    - 441.scr
+    - 448.hep
+    - 448.scr
+    - 450.hep?floppy
+    - 450.scr?floppy
+    - 454.hep
+    - 454.scr
+    - 480.hep
+    - 480.scr
+    - 500.hep
+    - 500.scr
+    - 510.hep
+    - 510.scr
+    - 520.hep
+    - 520.scr
+    - 521.hep
+    - 521.scr
+    - 550.hep
+    - 550.scr
+    - 630.hep
+    - 630.scr
+    - 700.hep
+    - 700.scr
+    - 720.hep
+    - 720.scr
+    - 780.hep
+    - 780.scr
+    - 999.fon
+
+size_and_md5: |
+  1408      6ae1b157908f349e8702fc2099df1b2a 100.hep
+  2398      61d98577d5028898071e293b0f553acc 100.scr
+  1518      7b81ca2e2a83442820ed7c2f57634637 450.hep
+  2688      dfb1d396cbb0176665f0a9548770ccd4 450.scr
+  24918     d7738cfc830f5e626ec7865cce2297ef laurt.bmp
+  5598672   f40cc773a2de6a1a6271782be36e0e62 resource.000
+  355217113 abe788a54759c09030d072d8dbe960f2 resource.aud
+  7274      eb41961ba4446d6f484edb9de91224b3 resource.map
+  5         b0bb487d1d0461aab4df6f4243e370f5 version
+  1080      bbbcfcd4e6628ba5ddffa8559348fb2b audiosfx/40.aud
+  1280      13d9aecdfea1d28f429ce68c4f882087 audiosfx/41.aud
+  5031      e72a758b8023fee0c3607286b28adc1b audiosfx/42.aud
+  5273      91a8268d883476a6ab5b73e34bb39232 audiosfx/44.aud
+  3951      3f8151ab54076b9a41b7dd880c804b00 audiosfx/45.aud
+  5273      91a8268d883476a6ab5b73e34bb39232 audiosfx/46.aud
+  3951      3f8151ab54076b9a41b7dd880c804b00 audiosfx/47.aud
+  9283      a931d22b8e970d2728521b79a6457ca7 audiosfx/48.aud
+  1445      b20ed9c7e9e267a22806ce846d319207 audiosfx/49.aud
+  761       817907819f5b1b028c91925367c7fb8a audiosfx/51.aud
+  4690      5c20ad03a532bfec7643b87aba57f6e7 audiosfx/52.aud
+  3213      fbdd5fc7f02670d8921b25b89c91622d audiosfx/54.aud
+  1011      48bbba88f193e4875b61dce7ec796552 audiosfx/80.aud
+  21042     3c39f90a586ab7b97fe0e85e64605e3a audiosfx/81.aud
+  22740     8d2ea2f30355fa076eb72ac9bf6ba3ad audiosfx/82.aud
+  11332     b3b0e20c10475dd9f2b4525b5183535a audiosfx/83.aud
+  8788      8c647e5938e74feedfc18c4d37919524 audiosfx/84.aud
+  5005      d8225e7de8d6fd1a57642aeaa9bbb2b6 audiosfx/85.aud
+  21818     26f5e56f6a6db0bdafe267b728932ee3 audiosfx/96.aud
+  13270     364ba65f2bc380c23d74b3e978eee0d6 audiosfx/111.aud
+  7082      8cd28993d6c495adbb0b7e0822ba566b audiosfx/281.aud
+  11571     a5ea00c932d59d0ae34caabfa3aa0227 audiosfx/282.aud
+  3201      5e65e75b038151c659620000b995e0b9 audiosfx/292.aud
+  278295    02ccfc5a02435538cec1c0a15cf15514 audiosfx/312.aud
+  1169      cb938bf97312aafe1c3d396c17fb83e9 audiosfx/430.aud
+  2459      1a5d9b117fc7999416b9b0104d128691 audiosfx/440.aud
+  2388      8fba55a626b881b5daf08ea5ca1a1556 audiosfx/441.aud
+  9189      6fe4f400b86aa3043d1b1f8e9f55f66d audiosfx/443.aud
+  5081      0182bdf1ded14636da1fe39fb4152529 audiosfx/444.aud
+  8776      d6d9042dca509e35b5284141217f93f4 audiosfx/445.aud
+  11310     89e9e19a35c603ec16bcb7aa45dcf83f audiosfx/452.aud
+  9858      a1088d93a7b754b95e03ce4dffb34292 audiosfx/453.aud
+  779       ffa149559d079f79cd6e15d2268974e7 audiosfx/455.aud
+  453       25fd031e85d426e72755ec1b05dc358f audiosfx/460.aud
+  14586     b21a11d98bc2be4ee788327d46dced30 audiosfx/462.aud
+  20830     c95c91b5356d142f4a323a6e8aee65a0 audiosfx/480.aud
+  2402      1ed57cb2cc5beb02ba22deab908b5635 audiosfx/481.aud
+  778       728c08c676a7fb23c1d29f3db1dca3a6 audiosfx/490.aud
+  4269      2e140741d192bf002a1f1a760ad0905c audiosfx/500.aud
+  1988      dfb835d776125aaa11fbe742ed387659 audiosfx/501.aud
+  16899     0a9881cef9a42a74b64aa8497cf78c37 audiosfx/522.aud
+  10479     f277eea040bbc6f94fa5bd98b64626c1 audiosfx/523.aud
+  778       1bd9f90d71f5a34c5a32121832aa312f audiosfx/543.aud
+  5005      05f7148e647381c983b3985d11e571dc audiosfx/555.aud
+  1011      8ca8302373bddafbd8f94a17ed78b32d audiosfx/556.aud
+  6941      dffee10f6e5954766d303fa2f966365e audiosfx/560.aud
+  3270      3f8c594cbadda8cebf358b10d550a355 audiosfx/561.aud
+  1370      d87df48ffe31a4f059db2784fc3d75f5 audiosfx/566.aud
+  5494      f83ebcde10d687ef133d0bc8c4237a60 audiosfx/600.aud
+  11072     538243b6d59e2184e1f0102044e796d6 audiosfx/612.aud
+  4063      134fd78fc9b5bdb01d8ace3824fe21c7 audiosfx/631.aud
+  2080      de85966ae28fa9f9fc06be8288878cd7 audiosfx/632.aud
+  1245      460c2a0cbae47e8ff859a68eb347e675 audiosfx/633.aud
+  1281      d55c6a55770d967fae4c6ddefb7e0135 audiosfx/634.aud
+  8435      1b3588427c5f36f976c59ea03a49e81c audiosfx/635.aud
+  1325      c8bf1cc7db356857d7821f49c0de225e audiosfx/640.aud
+  1397      939043b27df85d6e689ddb5487b9fe26 audiosfx/641.aud
+  19661     50691f8a53d96dd35ec18154dd1d7830 audiosfx/651.aud
+  517       8192d1ed742aa0740233f48a33f9e72c audiosfx/652.aud
+  561       8b68507d429f43da6de70cd7471b8cbf audiosfx/654.aud
+  2378      dbc056deda3cce88c27a62794b9d1923 audiosfx/700.aud
+  25755     c9c23faf894f33469c3e8c516a1ef8e2 audiosfx/701.aud
+  26195     7d4af35300b77b8ab414b9469f9a420a audiosfx/710.aud
+  25755     44e6381aae7716b5c26772c02613d575 audiosfx/712.aud
+  47755     d8db323e2a564df61016983f11e020b9 audiosfx/713.aud
+  5870      bb838f594e0e9c4344743c1a15a82bb5 audiosfx/721.aud
+  9868      03b3d6e93c919b62f7dad52742bd9826 audiosfx/722.aud
+  28089     abbe82f9f0841573328d1412e323d461 audiosfx/750.aud
+  32722     e292a0f9fe133c91fc9fb1d9b8d2c528 audiosfx/751.aud
+  20352     40ceaf4d310f7fe59a56753ba61a7a0b audiosfx/752.aud
+  7053      c0b9d1bfd077c8251fdad42864f75c9c audiosfx/770.aud
+
+  624       007a9cca6e6b583e419647f26e722a2d message.map
+  5035964   2d591d9416607beeac48303c6f4fe212 resource.000?floppy
+  1738878   ba89c724edfcb7bf7704ea7dbe697bde resource.aud?floppy
+  6489      330d4a87da2ea2520a316c9f25ab538e resource.map?floppy
+  276697    ed4a092e460d3e9bedc44ae46d6e9c2c resource.msg
+  48        6f60edc76d2384c5453810aadbd30e30 version?floppy
+  2508      2432e55287dfc6878df0107399a0b82a 0.hep
+  2434      d3f74f3cf9d8a703c704a88d52e1fc84 0.msg
+  8666      f3fc5c088bbac56f990b7f329168a86f 0.scr
+  222       3f91d45908b6bddc1465e2470b56d1c3 13.hep
+  3814      f9a509c03bb37317264c2ea0edba074e 13.msg
+  1404      e87b2ba4ccfe73e16b452cc795a074f4 13.scr
+  1026      f7ca6e1e77498fe377e9f6513d1ccdbb 20.hep
+  2736      ddc6ac06893b0f53f40922681ffa5dd4 20.scr
+  546       9874617b016027ec9a94d8cf6765763f 22.hep
+  1156      adbb87a21b5eccc1b60ef1a7b2686c9d 22.scr
+  2178      447b5551f587837325a2c7830bad50c1 90.hep
+  14136     b09e14f458bfa5b2436c18215da4e166 90.scr
+  3632      e31e096e1476db72161bdb01738ac8c5 230.hep
+  5752      1aedc863030a201c76634131179798cc 230.scr
+  1668      bef89e22a70fe202499652c898086314 400.hep
+  1352      75b27e057b56111f6dd00a67e1eae9ea 400.scr
+  2612      bc6c4830f2e4de5b383e9cdeed0442d1 420.hep
+  2998      4a16376fc3166dadf8f00a6126f7e4a7 420.scr
+  1794      7e8434ade24dd550d6a5dd50907456b7 440.hep
+  4840      acfb5b2b4afa91e1ab74f26bacd13234 440.scr
+  398       4871393c49274ec7490f34ee308beec2 441.hep
+  1480      4da0ce824adef50d4b7be6667f778313 441.scr
+  1870      e6ddbfc73fa75e42792b1665eb2706b4 448.hep
+  3768      0d6c51a67349f7a4a30b723548900688 448.scr
+  1500      aa53145985be70ae808bc1c570ab7f43 450.hep?floppy
+  2426      a03c6038224efaa3e25f52b9520363f4 450.scr?floppy
+  2422      30247953c08d91c84d55f1ba099b0039 454.hep
+  4292      ce22b3660091d7e50612001ff4563722 454.scr
+  2540      34cb99a45bd599a38bb39bb5ff24b37a 480.hep
+  5148      fe06bbc4d276d2974aae53012f9e59b7 480.scr
+  3984      f7a7ea31e05639aad386b315e967885a 500.hep
+  4814      1cae7c227ba5331a81f69be4fa33ef30 500.scr
+  2254      5be5a06c28d9d64337289ecd2cbfe625 510.hep
+  4910      1864684295ee2ee6192f296cf8dd9f70 510.scr
+  4210      5ff2c50ba7fefdd2596de279d8ca9461 520.hep
+  8116      2221887b52f4638b154c6bf80dcbcb3f 520.scr
+  714       2ac91f83d9c5b47e85098d10d0bb7ffa 521.hep
+  806       67f10d3969bcbade76fdf8a8144fb261 521.scr
+  4196      c51d95a7cb5f33858f4224fbf8b718a9 550.hep
+  7528      5b3ab9d8e677917fcec96219ba9580bb 550.scr
+  3160      afc098733ab45c22c99ed0eeccd32b29 630.hep
+  6372      75237eb32809a9f870de66502ca9f824 630.scr
+  2440      45901adc0eec056a73199f9adf7ad9af 700.hep
+  4134      bc3df55d179cd886f42a0ce4ce9d135c 700.scr
+  3098      7b76ac9b2e6288b038ddf3872222654a 720.hep
+  5690      f82c1324ca0394b0272db90ae0867624 720.scr
+  1260      cacdc319f01b75c7255233763a033763 780.hep
+  2294      8249ead39b2800555ec9df3d9b83fa0a 780.scr
+  1250      b62d1a13a8ad5f9de44949c0121819dd 999.fon
+
+sha1sums: |
+  0910fadcadcbee7ac1d9af1073c4f9e951e077e3  laurt.bmp
+  14f8699e6f4d12e654cce9f8ec8037cc02228af7  resource.000
+  7a3e86692bde5d67c516af5decd5db81b303c72b  resource.aud
+  9f6e3aa652b4c8682ab2fa1b48a163d8eacb8041  resource.map
+  31b0126dc273c13958896cfd972dbf86e40ac415  audiosfx/42.aud
+  8219b1a4fa9a676216e054ba2c0bc2ff0192cde4  audiosfx/44.aud
+  8219b1a4fa9a676216e054ba2c0bc2ff0192cde4  audiosfx/46.aud
+  cc841c12d4b0565e0ade37a41e7687edd371bb5d  audiosfx/48.aud
+  59c3b64c8066bc99841633906f483a0c374c6e92  audiosfx/81.aud
+  9eb44f6ca9d8f902e3711a1af4c303187e1c3672  audiosfx/82.aud
+  376bcd67cf44b610c092de7abc9ccef28baf5cf5  audiosfx/83.aud
+  c2acab35974ee34ea1a0f56fe523c2143ed1034f  audiosfx/84.aud
+  b483be2ae0d3d0046f0544214cf0c20a2534567d  audiosfx/85.aud
+  0d1d68b0e826920ae7e1d7e286b4ee1c0922a0ab  audiosfx/96.aud
+  b7238c6c0091f1afde09d59d998f38e1b6de231b  audiosfx/111.aud
+  bf4fe734703c2d3ccbb7132a6215367c855a1209  audiosfx/281.aud
+  a36b174af56cda9b123d45c1c09a3e18508a67d1  audiosfx/282.aud
+  8900df5c1711b62c6cfc776130069ad4d03e2c86  audiosfx/312.aud
+  83ea7700b5513ac2ed86062d1b4c566353644016  audiosfx/443.aud
+  7653083604f3a680112dfebbcb282ebd81708355  audiosfx/444.aud
+  f62a403204c342f978fed01fbf055d707fa5ca5a  audiosfx/445.aud
+  7ac9e5f2b9f4c8af04d084945fb895cd0670f055  audiosfx/452.aud
+  cd279f52fe7a7d73100e3ffdad0695f2831b8554  audiosfx/453.aud
+  ec182c74a8a52b6bff39dec257b1034b94953a72  audiosfx/462.aud
+  49a39b8859a5a3f6947eae44dcc356988693ad18  audiosfx/480.aud
+  117ace10394b125f7cfb25c536f8abeb9f17e024  audiosfx/522.aud
+  ed6e66dd5ac44cb51242e486c8b9c87950ca16e9  audiosfx/523.aud
+  da7dd2c913d93d2b6fa8bafc40bf7608e9b59c4a  audiosfx/555.aud
+  ba4a6486de3cdeac297032411873a221711ec311  audiosfx/560.aud
+  addbbdac7d5a49be9134da4747de3ce8451d889e  audiosfx/600.aud
+  5a98dd6f93e1ab6cba896f889721ac53d27c709e  audiosfx/612.aud
+  f49e36e4b3ede87ddf2a71b1386e7b9dd0bd7349  audiosfx/635.aud
+  e359a1a28f0b7bdd1c8e73da15213d39beab849a  audiosfx/651.aud
+  d4a173f61c238a33bad57df499e32fc7d4857ef1  audiosfx/701.aud
+  b5d3a034c31555b20beed1b0a44ace924ae0856e  audiosfx/710.aud
+  57fdb3122e5c025adcbde630ae389a0cf8c3b200  audiosfx/712.aud
+  fb2c7a0a07c85a3bc0c8a6fd07c65688c5018656  audiosfx/713.aud
+  d17ad7512778f071bcc1fd256a801d8dba67f217  audiosfx/721.aud
+  e1567669189d056846faa7777e192cf3c6afd98d  audiosfx/722.aud
+  c1350e35028055749bb72bc40e151cb9ee9d80b3  audiosfx/750.aud
+  720cc877b8c8c5500784fc7ea4e1cd5125129fd4  audiosfx/751.aud
+  9860cb2cbd92af1330803bcf29f99226a5801241  audiosfx/752.aud
+  89c4521a8af18feff1286bcc8368848ed3703772  audiosfx/770.aud
+
+  30acd061e4b2780dae5724df6e4faff19c3b961c  resource.000?floppy
+  b3461b1e3548945a8285a3ed05f6861a85926b9c  resource.aud?floppy
+  e6ff592fad10aa4a9aa4ae7dae00c24f5d323ce7  resource.map?floppy
+  ba9ae1ccc2768097481e9ec9993ca2c45e92c570  resource.msg
+
+  c34b561f42fefb2d3a522ddafdc096e20d49ef36  0.scr
+  4dcd2fea840121598843ef988f9135eb5375b1d7  90.scr
+  0cdd82f5d1d17c6dc317bd479d2e7908c0043f6a  230.scr
+  a1573466aa70c69ce3532852a3b04e03924545ad  480.scr
+  79f2700a2436c796453744efe0773cdf1d70b201  520.scr
+  6deb16d34a5ce1390082d8750bcaf49ec18ddbcf  550.scr
+  f2267c996d1742454134fec774040990e909a84d  630.scr
+  f5fcaee32c83840783fead2592656bdbff1b04f4  720.scr
+...
