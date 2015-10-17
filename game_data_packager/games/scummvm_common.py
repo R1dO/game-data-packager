@@ -58,6 +58,27 @@ class ScummvmGameData(GameData):
         return ScummvmTask(self, **kwargs)
 
 class ScummvmTask(PackagingTask):
+    def iter_extra_paths(self, packages):
+        super(ScummvmTask, self).iter_extra_paths(packages)
+
+        # http://wiki.scummvm.org/index.php/User_Manual/Configuring_ScummVM
+        rcfile = os.path.expanduser('~/.scummvmrc')
+        if not os.path.isfile(rcfile):
+            return
+
+        config = configparser.ConfigParser()
+        config.read(rcfile, encoding='utf-8')
+        gameids = set(p.gameid or self.game.gameid for p in packages)
+        for section in config.sections():
+            for gameid in gameids:
+                if section.startswith(gameid):
+                    if 'path' not in config[section]:
+                        # invalid .scummvmrc
+                        continue
+                    path = config[section]['path']
+                    if os.path.isdir(path):
+                        yield path
+
     def fill_extra_files(self, package, destdir):
         super(ScummvmTask, self).fill_extra_files(package, destdir)
         if package.type == 'expansion':

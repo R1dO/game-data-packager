@@ -1770,6 +1770,9 @@ class PackagingTask(object):
         else:
             return FillResult.UPGRADE_NEEDED
 
+    def iter_extra_paths(self, packages):
+        return []
+
     def look_for_files(self, paths=(), search=True, packages=None):
         paths = list(paths)
 
@@ -1798,6 +1801,10 @@ class PackagingTask(object):
                     paths.append(path)
 
             for path in self.iter_origin_paths():
+                if path not in paths:
+                    paths.append(path)
+
+            for path in self.iter_extra_paths(packages):
                 if path not in paths:
                     paths.append(path)
 
