@@ -61,6 +61,15 @@ class ScummvmTask(PackagingTask):
     def iter_extra_paths(self, packages):
         super(ScummvmTask, self).iter_extra_paths(packages)
 
+        gameids = set()
+        for p in packages:
+            gameid = p.gameid or self.game.gameid
+            if gameid == 'agi-fanmade':
+                continue
+            gameids.add(gameid.split('-')[0])
+        if not gameids:
+            return
+
         # http://wiki.scummvm.org/index.php/User_Manual/Configuring_ScummVM
         rcfile = os.path.expanduser('~/.scummvmrc')
         if not os.path.isfile(rcfile):
@@ -68,10 +77,9 @@ class ScummvmTask(PackagingTask):
 
         config = configparser.ConfigParser()
         config.read(rcfile, encoding='utf-8')
-        gameids = set(p.gameid or self.game.gameid for p in packages)
         for section in config.sections():
             for gameid in gameids:
-                if section.startswith(gameid):
+                if section.split('-')[0] == gameid:
                     if 'path' not in config[section]:
                         # invalid .scummvmrc
                         continue
