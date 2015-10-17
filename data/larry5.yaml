@@ -7,8 +7,13 @@ wiki: Leisure_Suit_Larry_5
 gameid: lsl5
 genre: Adult Humor
 
+help_text: |
+  The french version is not currently sold on GOG.com.
+
 packages:
-  larry5-data:
+  larry5-en-data:
+    debian:
+      provides: larry5-data
     gog:
       url: leisure_suit_larry
       game: leisure_suit_larry_5_passionate_patti_does_a_little_undercover_work
@@ -43,10 +48,31 @@ packages:
     optional:
     - Leisure Suit Larry 5 - Manual.pdf
 
+  larry5-fr-data:
+    langs: [fr,en]
+    longname: "Leisure Suit Larry 5: Passionate Patti se fait détective privée"
+    debian:
+      provides: larry5-data
+    doc:
+    # encoded in CP437, with some "àéè" characters
+    - readme?fr
+    install:
+    - 961.v56
+    - resource.000?fr
+    - resource.001?fr
+    - resource.002?fr
+    - resource.003?fr
+    - resource.004?fr
+    - resource.005?fr
+    - resource.006?fr
+    - resource.007?fr
+    - resource.map?fr
+    - version?fr
+
   larry-doc:
     longname: "Leisure Suit Larry Hits and Misses booklet"
     copyright: © 1987-1994 Sierra On-Line
-    expansion_for: larry5-data
+    expansion_for: larry5-en-data
     section: doc
     debian:
       depends: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
@@ -91,6 +117,47 @@ files:
     - version
     - Leisure Suit Larry 5 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+size_and_md5: |
+  14270     23e9f4ca0e24b2271d3186dee4fd8b12 200.scr
+  7200      c5f660c8b2dfe9f06a63daf1d60dcea7 200.tex
+  6516      7d2319d2279da32c9557a3f7083ec35e 255.scr
+  5         ac98be2ddf2b7da30f95de3bb80b520d 255.tex
+  11532     b668385901b9475f2171d7b2b928e64c 460.scr
+  6213      cd087cc0d8c280eff8e1df16e7ed7abc 460.tex
+  27392     6b29d1f040b686741c8a5472c37fae3d 467.snd
+  4330      4a69818272fed96203da55e8d7d2ff46 480.scr
+  2842      17eb39757fbbef88a2870a9e58ae0554 480.tex
+  14388     424dc9bb50ccb9fb18dac77d1c1dba75 760.scr
+  3886      f8256e2b432717e57a74c6ddaae5c6e4 760.tex
+  4308      e665745a79ac2ab88c45eb9a2b8a58c9 800.scr
+  374       4d6cfa6737b342745ee549cca21f7620 800.tex
+  5254      0900c210f639b50aecd7bfc9c7978b86 900.scr
+  745       3a6a091ffefe7a118ba2a4ce74a0def9 900.tex
+  4820      0f0c16f1a6905717bcfbc8d6da376bf2 910.scr
+  1691      4364867ecd9e83fca4c21b740d854649 910.tex
+  2062      4ca0adae17abb736f5378933458ec0ee 961.v56
+  726823    20441886fc2b5602de823f3bc04e7e8d resource.000
+  958096    06bb1e370d35291ce37754184425472b resource.000?fr
+  751296    af007f1156f4ab2a48f52c21e52ef9f0 resource.001
+  1196765   877aa8cb577398bef6997468b8807bf0 resource.001?fr
+  1137646   66e9cd2c6b924b13360bfaefe10afef2 resource.002
+  948898    73c8a1b5e8009f2966d72262728c69ea resource.002?fr
+  768599    65a86ab826fdb08bc92ab729e3e3dbbe resource.003
+  1006608   91329e04adf87a31aa17a40b958b7f23 resource.003?fr
+  1024516   624cdd7210af85ca02112850f0b758ca resource.004
+  971293    02795f0d81f09deea8b12ad1097ec25e resource.004?fr
+  1011944   5e1b787096d0f8def14ed136f6d7ef91 resource.005
+  920524    1e8abf5e021984de15dcfaf391c3e85a resource.005?fr
+  1024810   04642bae1c80ce3252e42409bbc35032 resource.006
+  946540    13ae300b9fbdf714d59e9f302d28ea46 resource.006?fr
+  1030656   09df2d50905c32df6dbab5bdf87d1c49 resource.007
+  958842    7975bc81e03eba87eb9838a259ec2126 resource.007?fr
+  6417      30ce4b267d9459b2dd0a7c3e2fb22829 resource.map
+  7023      4850e48003c16853c4181d9ca821f2a1 resource.map?fr
+  45        71f088365ff0e76719d5318fe8e3b456 version
+  47        46193f01af607c4ae9fed96054f8c3c2 version?fr
+  1514      56462f66091cc0da0fed8074603a8824 readme?fr
 
 cksums: |
   _ 14270     200.scr
