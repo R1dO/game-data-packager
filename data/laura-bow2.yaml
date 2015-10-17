@@ -92,8 +92,10 @@ packages:
     - audiosfx/85.aud
     - audiosfx/96.aud
 
-  laura-bow2-floppy-data:
+  laura-bow2-floppy-en-data:
     better_version: laura-bow2-data
+    debian:
+      provides: laura-bow2-floppy-data
     install:
     - message.map
     - resource.000?floppy
@@ -150,6 +152,100 @@ packages:
     - 780.hep
     - 780.scr
     - 999.fon
+
+  laura-bow2-floppy-fr-data:
+    lang: fr
+    longname: "Laura Bow 2: La Dague d'Amon-Ra"
+    debian:
+      provides: laura-bow2-floppy-data
+    install:
+    - message.map?fr
+    - resource.000?floppy_fr
+    - resource.aud
+    - resource.map?floppy_fr
+    - resource.msg?fr
+    - version?floppy_fr
+    - view.v56
+    - 0.fon
+    - 0.hep
+    - 0.scr?fr
+    - 1.fon
+    - 6.v56
+    - 10.fon
+    - 13.msg?fr
+    - 15.hep
+    - 15.scr
+    - 20.hep
+    - 20.scr?fr
+    - 24.hep
+    - 24.scr
+    - 26.hep
+    - 26.scr
+    - 26.v56
+    - 51.v56
+    - 60.fon
+    - 61.fon
+    - 69.fon
+    - 99.hep
+    - 99.scr
+    - 100.hep
+    - 100.scr
+    - 120.hep
+    - 120.scr
+    - 150.hep
+    - 150.scr
+    - 151.v56
+    - 220.p56
+    - 235.v56
+    - 310.hep
+    - 310.scr
+    - 320.hep
+    - 320.scr
+    - 330.hep
+    - 330.scr
+    - 430.hep
+    - 430.scr
+    - 440.hep
+    - 440.scr?fr
+    - 441.hep
+    - 441.scr?fr
+    - 454.hep
+    - 454.scr?fr
+    - 500.hep?fr
+    - 500.scr?fr
+    - 520.hep?fr
+    - 520.scr?fr
+    - 520.v56
+    - 562.v56
+    - 563.v56
+    - 565.p56
+    - 640.msg
+    - 640.v56
+    - 710.hep
+    - 710.scr
+    - 740.hep
+    - 740.scr
+    - 750.hep
+    - 750.scr
+    - 760.p56
+    - 760.v56
+    - 791.v56
+    - 851.v56
+    - 857.v56
+    - 990.v56
+    - 992.v56
+    - 995.v56
+    - 999.fon?fr
+    - 1207.fon
+    - 1900.fon
+    - 2107.fon
+    - 2108.fon
+    - 2407.fon
+    - 2430.hep
+    - 2430.scr
+    - 2510.fon
+    - 4115.fon
+    - 8000.v56
 
 size_and_md5: |
   1408      6ae1b157908f349e8702fc2099df1b2a 100.hep
@@ -234,19 +330,27 @@ size_and_md5: |
   7053      c0b9d1bfd077c8251fdad42864f75c9c audiosfx/770.aud
 
   624       007a9cca6e6b583e419647f26e722a2d message.map
+  630       482fd8884735ab2039c1874f21f58b15 message.map?fr
   5035964   2d591d9416607beeac48303c6f4fe212 resource.000?floppy
+  5028766   7188c78a61a87caa322af561b3d9952e resource.000?floppy_fr
   1738878   ba89c724edfcb7bf7704ea7dbe697bde resource.aud?floppy
   6489      330d4a87da2ea2520a316c9f25ab538e resource.map?floppy
+  6483      ffcc8335e9de50293d0b6a263a830752 resource.map?floppy_fr
   276697    ed4a092e460d3e9bedc44ae46d6e9c2c resource.msg
+  278253    83cb4c97494b0899502276659635b941 resource.msg?fr
   48        6f60edc76d2384c5453810aadbd30e30 version?floppy
+  44        9c455e4c46d8dc735801d2a366fabb25 version?floppy_fr
   2508      2432e55287dfc6878df0107399a0b82a 0.hep
   2434      d3f74f3cf9d8a703c704a88d52e1fc84 0.msg
   8666      f3fc5c088bbac56f990b7f329168a86f 0.scr
+  7428      d9bc2c8c5b33fc1718e7724a134e1862 0.scr?fr
   222       3f91d45908b6bddc1465e2470b56d1c3 13.hep
   3814      f9a509c03bb37317264c2ea0edba074e 13.msg
   1404      e87b2ba4ccfe73e16b452cc795a074f4 13.scr
+  3747      8af18dffac2fed10823a789497cddac0 13.msg?fr
   1026      f7ca6e1e77498fe377e9f6513d1ccdbb 20.hep
   2736      ddc6ac06893b0f53f40922681ffa5dd4 20.scr
+  2736      65c02ebb348bd23f9220c1389d46d6ac 20.scr?fr
   546       9874617b016027ec9a94d8cf6765763f 22.hep
   1156      adbb87a21b5eccc1b60ef1a7b2686c9d 22.scr
   2178      447b5551f587837325a2c7830bad50c1 90.hep
@@ -259,22 +363,29 @@ size_and_md5: |
   2998      4a16376fc3166dadf8f00a6126f7e4a7 420.scr
   1794      7e8434ade24dd550d6a5dd50907456b7 440.hep
   4840      acfb5b2b4afa91e1ab74f26bacd13234 440.scr
+  4852      1712f1c1254b89eedfbcc997eb43b530 440.scr?fr
   398       4871393c49274ec7490f34ee308beec2 441.hep
   1480      4da0ce824adef50d4b7be6667f778313 441.scr
+  1504      cc2493d5306ff88b9bd1e92bff0aa3b9 441.scr?fr
   1870      e6ddbfc73fa75e42792b1665eb2706b4 448.hep
   3768      0d6c51a67349f7a4a30b723548900688 448.scr
   1500      aa53145985be70ae808bc1c570ab7f43 450.hep?floppy
   2426      a03c6038224efaa3e25f52b9520363f4 450.scr?floppy
   2422      30247953c08d91c84d55f1ba099b0039 454.hep
   4292      ce22b3660091d7e50612001ff4563722 454.scr
+  4304      f0b480679b4498f626297e4014838c8c 454.scr?fr
   2540      34cb99a45bd599a38bb39bb5ff24b37a 480.hep
   5148      fe06bbc4d276d2974aae53012f9e59b7 480.scr
   3984      f7a7ea31e05639aad386b315e967885a 500.hep
+  3984      616406c910408b354c1830b18ade3852 500.hep?fr
   4814      1cae7c227ba5331a81f69be4fa33ef30 500.scr
+  4830      d0d8a53229c58334404ba8019997d8ec 500.scr?fr
   2254      5be5a06c28d9d64337289ecd2cbfe625 510.hep
   4910      1864684295ee2ee6192f296cf8dd9f70 510.scr
   4210      5ff2c50ba7fefdd2596de279d8ca9461 520.hep
+  4216      9f5e53f103e9ad3755c64d52da69b7ae 520.hep?fr
   8116      2221887b52f4638b154c6bf80dcbcb3f 520.scr
+  8386      8716e1d3f3d6c37f347dea3c2075bb9a 520.scr?fr
   714       2ac91f83d9c5b47e85098d10d0bb7ffa 521.hep
   806       67f10d3969bcbade76fdf8a8144fb261 521.scr
   4196      c51d95a7cb5f33858f4224fbf8b718a9 550.hep
@@ -288,6 +399,74 @@ size_and_md5: |
   1260      cacdc319f01b75c7255233763a033763 780.hep
   2294      8249ead39b2800555ec9df3d9b83fa0a 780.scr
   1250      b62d1a13a8ad5f9de44949c0121819dd 999.fon
+  2150      a215370e0fea3be73ed94e91b82733e0 999.fon?fr
+
+  # only in french version
+  7277      3ceb8edd17de93f46583fd53f0c8b3fd view.v56
+  2799      75a70717e0b3b4efcbb692fe369060d3 0.fon
+  2920      92c2f81dec975c1d0c96e5752ec5a0dc 1.fon
+  1602      63a08988b261af4b97091d9bbf7c2fa1 6.v56
+  2242      d30af148f5cb48ad980b8b15c6daa5ab 10.fon
+  3918      c490ebc3be8745aa9cff0423623a77c2 15.hep
+  2168      8abe3068a5e0bd2639051f93d56a8f44 15.scr
+  1080      60fdc8db919a27402c515188e7f2c9a7 24.hep
+  1266      3d4c2c93172765049a0264d98468af89 24.scr
+  436       ba20dd4a32e18cee48b43ee2dfc65b95 26.hep
+  840       8b8a6899a53c6fb1f72f1844de25251b 26.scr
+  8699      06648cb718f704d2ff145f1b41351c08 26.v56
+  1899      217f241befd56dc4210c92b44d3ce9f9 51.v56
+  2809      e88eae6c46cf2c26f782a60e3291afaf 60.fon
+  2810      aee555635854dcd5deff6a3d246f04c3 61.fon
+  2710      a5bfcfb2b45ca5ca9b153c1d55f952ab 69.fon
+  82        5b478e718f45f92ecd0ce091d5caa704 99.hep
+  230       e475bfc3b641b686b64d5c0d2c697a01 99.scr
+  794       494e74846e3a0165ced579080eeb2153 120.hep
+  1410      3ce314fe6242a98d97c6a70f28a620e9 120.scr
+  564       c754930c59e599af4ca234bd1f5172c7 150.hep
+  674       1aabef4a1fa03e36b660f0113a8267e6 150.scr
+  16924     a0afa7ea80a1e06461f347978be1d93d 151.v56
+  48588     e46d41399f904bdfab06e3e3e99e47ac 220.p56
+  15911     79dacaf906ada19d3d6f63702c148176 235.v56
+  2486      ee999c9f9bfabba0557da4a3fc6b1c10 310.hep
+  3520      5ef02836d5b629ce2c19433609081544 310.scr
+  1292      459b40f343dbffdb47f7af5c5262df30 320.hep
+  2322      b9feb9a4043959c421361f765ec7aae0 320.scr
+  2754      403d34750d1a8899e4cc903f35ad95e0 330.hep
+  2138      f63f84d6fbbea83ae5e946549c448572 330.scr
+  2612      bc6c4830f2e4de5b383e9cdeed0442d1 420.hep
+  2106      8b32e45cdb95a4f177b0ba5f250526b8 430.hep
+  2638      6f1c77e81cf440860aa7e89854fdc4c5 430.scr
+  4392      2762dad86f91362b641fb290edcc4f44 520.v56
+  3800      c3db284f8303b38ce30296d3a56b7707 562.v56
+  17356     4bb2bc9f328bf367b64a013c0cdae60b 563.v56
+  27657     9f0d8140e517bbebbea1cd84c93b7c18 565.p56
+  5419      9d6a8286d38e4c371f7313ce8f8a69ca 640.msg
+  13353     9bc7fefc7dffa8cc0b99f8e334708245 640.v56
+  2440      45901adc0eec056a73199f9adf7ad9af 700.hep
+  2158      79f473c0c2ebc69bb0a7f52ec66b3fb4 710.hep
+  1536      613dedbac92e9a527d0bb04b9a1bc1bf 710.scr
+  2430      e94cbfd2b845ceb35f48402b191be5b0 740.hep
+  7512      5a7994bc93b52d41d7c5b7779d3aa44c 740.scr
+  1692      f1f5159db86d9baf4202fb27ce93fd1d 750.hep
+  2796      dcc66ec9172d2f0307617c1bb3a9b258 750.scr
+  20373     59c5cbc88a187aecaa16d749cb17d1f9 760.p56
+  29874     306b7cf7c75cb0a50f585a7e0a3270ce 760.v56
+  47614     6968ec19b5411cff52e8687dbc5a3e52 791.v56
+  6099      51a0204216c6eb93f5978b779c076711 851.v56
+  5814      4537b1b0de8b8e0b358f30f23cf9da1c 857.v56
+  18855     6d46fe5820e653cce4461b136a859d32 990.v56
+  6082      5ce96b0822aaefb4e2a94a5addc24590 992.v56
+  11118     6de628305a4dba85ae0b0a337a66d388 995.v56
+  2229      fee196c2e4618ddb2b38d2da1241efe2 1207.fon
+  2135      d73c68b2cf5c41ed1dc7eca0ac763565 1900.fon
+  2601      49a8465b2a376fca4b61c530654850c4 2107.fon
+  2729      ca6b8f2cd1441c8c42fa95423af89fd5 2108.fon
+  2445      25e77ed1b79d7646ab684b547d3ba013 2407.fon
+  292       b8a8cecd4460dc204df4a874bda3dd63 2430.hep
+  130       46d8fae977dcf32af5df8d0b5f2d5b1c 2430.scr
+  3327      a1df99f4c5a7fe9a97bd4a144917146b 2510.fon
+  5526      776ca750b9900ceb3b21d11a55e559ec 4115.fon
+  14050     5d419ed5e2bdf37bd882da77d8fa4496 8000.v56
 
 sha1sums: |
   0910fadcadcbee7ac1d9af1073c4f9e951e077e3  laurt.bmp
@@ -335,15 +514,19 @@ sha1sums: |
   89c4521a8af18feff1286bcc8368848ed3703772  audiosfx/770.aud
 
   30acd061e4b2780dae5724df6e4faff19c3b961c  resource.000?floppy
+  d31b53e4d5814dc7780f3a5ef263ae840d0331e7  resource.000?floppy_fr
   b3461b1e3548945a8285a3ed05f6861a85926b9c  resource.aud?floppy
   e6ff592fad10aa4a9aa4ae7dae00c24f5d323ce7  resource.map?floppy
+  6658cd768634f5ac5b6a817bc9454a2f4264bece  resource.map?floppy_fr
   ba9ae1ccc2768097481e9ec9993ca2c45e92c570  resource.msg
-
+  7a4ebd5a1df8d803c8dc0bde8a72ac0140e8e7c8  resource.msg?fr
   c34b561f42fefb2d3a522ddafdc096e20d49ef36  0.scr
+  2eba8fb0c6247808c9a3749cdc1049e36b9dae41  0.scr?fr
   4dcd2fea840121598843ef988f9135eb5375b1d7  90.scr
   0cdd82f5d1d17c6dc317bd479d2e7908c0043f6a  230.scr
   a1573466aa70c69ce3532852a3b04e03924545ad  480.scr
   79f2700a2436c796453744efe0773cdf1d70b201  520.scr
+  38e5826e3495d5edbf520d3290605bef4df02e32  520.scr?fr
   6deb16d34a5ce1390082d8750bcaf49ec18ddbcf  550.scr
   f2267c996d1742454134fec774040990e909a84d  630.scr
   f5fcaee32c83840783fead2592656bdbff1b04f4  720.scr
