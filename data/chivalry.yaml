@@ -1,0 +1,36 @@
+---
+longname: Chivalry is Not Dead
+copyright: © 2007 Deirdra Kiai Productions
+plugin: scummvm_common
+engine: scummvm (>= 1.7.0)
+wiki: Chivalry_is_NOT_Dead
+fanmade: True
+
+packages:
+  chivalry-data:
+    description: |
+      Chivalry is NOT Dead is a quite open-ended epic-quest game,
+      where Lord Horrible sends you on a quest to kill the queen of Everything.
+    install:
+    - data.dcp
+    - fonts/aleawb__.ttf
+
+files:
+  chivalry.zip:
+    download: http://squinky.me/downloads/chivalry/chivalry.zip
+    unpack:
+      format: zip
+    provides:
+    - data.dcp
+    - fonts/aleawb__.ttf
+
+size_and_md5: |
+  7278306   a76921fc87366d0840529b33196821f2 data.dcp
+  28648     be5860ddf6d50816a575f3e20e1f82e2 fonts/aleawb__.ttf
+  7444972   4d322337785ed73e03f7b266abd640fa chivalry.zip
+
+sha1sums: |
+  b9fa210511adbbe05b31682ce40ea28bfa95bf08  data.dcp
+  f539c534ed4c5d7ba59307e0408f4002da681168  fonts/aleawb__.ttf
+  d76906a4e2fabed01d2896773f4a760bd7d4eeb1  chivalry.zip
+...
