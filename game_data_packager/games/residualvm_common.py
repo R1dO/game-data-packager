@@ -51,6 +51,22 @@ class ResidualvmGameData(GameData):
         return ResidualvmTask(self, **kwargs)
 
 class ResidualvmTask(PackagingTask):
+    def iter_extra_paths(self, packages):
+        super(ResidualvmTask, self).iter_extra_paths(packages)
+
+        rcfile = os.path.expanduser('~/.residualvmrc')
+        if not os.path.isfile(rcfile):
+            return
+
+        config = configparser.ConfigParser()
+        config.read(rcfile, encoding='utf-8')
+        for section in config.sections():
+            if section.startswith(self.game.gameid):
+                if 'path' not in config[section]:
+                    continue
+                path = config[section]['path']
+                if os.path.isdir(path):
+                    yield path
 
     def fill_extra_files(self, package, destdir):
         super(ResidualvmTask, self).fill_extra_files(package, destdir)
