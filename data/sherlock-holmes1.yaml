@@ -6,13 +6,18 @@ wiki: "The_Lost_Files_of_Sherlock_Holmes:_The_Case_of_the_Serrated_Scalpel"
 engine: scummvm (>= 1.8.0)
 
 # http://wiki.scummvm.org/index.php/Datafiles#The_Lost_Files_of_Sherlock_Holmes
+# https://github.com/scummvm/scummvm/blob/master/engines/sherlock/detection_tables.h
 
 help_text: |
   This game is currently heavily Work-In-Process in Scummvm GIT.
   Use this generated .deb package only for testing.
 
+missing_langs: [de,es]
+
 packages:
-  sherlock-holmes1-data:
+  sherlock-holmes1-en-data:
+    debian:
+      provides: sherlock-holmes1-data
     gameid: sherlock-logo
     install:
     - chess.pth
@@ -90,8 +95,10 @@ packages:
     - res59.rrm
     - res60.rrm
 
-  sherlock-holmes1-alt1-data:
+  sherlock-holmes1-en-alt1-data:
     gameid: sherlock-logo-1
+    debian:
+      provides: sherlock-holmes1-data
     install:
     - chess.pth
     - journal.lbv
@@ -168,8 +175,10 @@ packages:
     - res59.rrm?alt
     - res60.rrm?alt
 
-  sherlock-holmes1-alt2-data:
+  sherlock-holmes1-en-alt2-data:
     gameid: sherlock-logo-2
+    debian:
+      provides: sherlock-holmes1-data
     install:
     - chess.pth
     - journal.lbv
