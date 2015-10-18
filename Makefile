@@ -72,7 +72,6 @@ clean:
 	rm -f ./out/*.control.in
 	rm -f ./out/*.copyright
 	rm -f ./out/*.copyright.in
-	rm -f ./out/*.desktop.in
 	rm -f ./out/*.files
 	rm -f ./out/*.md5sums
 	rm -f ./out/*.preinst.in
