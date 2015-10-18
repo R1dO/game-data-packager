@@ -48,12 +48,13 @@ class ZCodeTask(PackagingTask):
         with TemporaryUmask(0o022):
             appdir = os.path.join(destdir, 'usr/share/applications')
             mkdir_p(appdir)
-            from_ = os.path.join(DATADIR, 'z_code.desktop.in')
             desktop = configparser.RawConfigParser()
             desktop.optionxform = lambda option: option
-            desktop.read(from_, encoding='utf-8')
-
+            desktop['Desktop Entry'] = {}
             entry = desktop['Desktop Entry']
+            entry['Type'] = 'Application'
+            entry['Categories'] = 'Game'
+            entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
             if (PACKAGE_CACHE.is_installed('frotz') and
                     not PACKAGE_CACHE.is_installed('gargoyle-free')):
@@ -69,6 +70,8 @@ class ZCodeTask(PackagingTask):
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')
             if os.path.exists(os.path.join(pixdir, '%s.png' % self.game.shortname)):
                 entry['Icon'] = self.game.shortname
+            else:
+                entry['Icon'] = 'utilities-terminal'
 
             if package.aliases:
                 entry['Keywords'] = ';'.join(package.aliases)
