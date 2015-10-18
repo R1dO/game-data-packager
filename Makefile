@@ -31,6 +31,11 @@ out/%: data/%
 out/%.json: data/%.yaml
 	python3 tools/yaml2json.py $< $@
 
+out/vfs.zip:
+	rm -f out/vfs.zip
+	find out -regex '.*\.\(json\|files\|size_and_md5\|cksums\|md5sums\|sha1sums\|sha256sums\)' \
+          | LC_ALL=C sort | TZ=UTC zip out/vfs.zip -X -j -q -@
+
 out/bash_completion: $(in_yaml)
 	python3 tools/bash_completion.py > ./out/bash_completion
 	chmod 0644 ./out/bash_completion
@@ -82,6 +87,7 @@ clean:
 	rm -f ./out/*.svgz
 	rm -f ./out/*.svg
 	rm -f ./out/*.json
+	rm -f ./out/vfs.zip
 	rm -f ./out/index.html
 	rm -rf game_data_packager/__pycache__
 	rm -rf game_data_packager/games/__pycache__
@@ -105,4 +111,4 @@ html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
 	rsync out/index.html alioth.debian.org:/var/lib/gforge/chroot/home/groups/pkg-games/htdocs/game-data/ -e ssh -v
 
-.PHONY: default clean check manual-check html
+.PHONY: default clean check manual-check html out/vfs.zip

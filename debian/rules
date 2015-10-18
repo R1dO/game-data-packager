@@ -5,12 +5,16 @@
 export DH_OPTIONS
 
 include /usr/share/dpkg/pkg-info.mk
+BUILD_DATE := $(shell dpkg-parsechangelog --show-field=Date)
 
 %:
 	dh $@ --parallel --with python3,bash-completion
 
 override_dh_auto_build:
 	dh_auto_build --parallel VERSION=$(DEB_VERSION)
+	find out -regex '.*\.\(json\|files\|size_and_md5\|cksums\|md5sums\|sha1sums\|sha256sums\)' \
+          -exec touch --date='$(BUILD_DATE)' {} \;
+	make out/vfs.zip
 
 override_dh_auto_clean:
 	dh_auto_clean --parallel VERSION=$(DEB_VERSION)

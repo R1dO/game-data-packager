@@ -25,12 +25,13 @@ import os
 import random
 import re
 import sys
+import zipfile
 
 from .build import (HashedFile,
         PackagingTask)
 from .config import read_config
 from .gog import run_gog_meta_mode
-from .paths import DATADIR
+from .paths import (DATADIR,USE_VFS)
 from .util import ascii_safe
 from .steam import run_steam_meta_mode
 from .version import GAME_PACKAGE_VERSION
@@ -792,21 +793,41 @@ class GameData(object):
 
         logger.debug('loading full data')
 
-        filename = os.path.join(DATADIR, '%s.files' % self.shortname)
-        if os.path.isfile(filename):
-            logger.debug('... %s', filename)
-            data = json.load(open(filename, encoding='utf-8'))
-            self._populate_files(data)
+        if USE_VFS:
+            zip = os.path.join(DATADIR, 'vfs.zip')
+            with zipfile.ZipFile(zip, 'r') as zf:
+                files = zf.namelist()
+                filename = '%s.files' % self.shortname
+                if filename in files:
+                    logger.debug('... vfs.zip/%s', filename)
+                    jsondata = zf.open(filename).read().decode('utf-8')
+                    data = json.loads(jsondata)
+                    self._populate_files(data)
 
-        for  alg in ('ck', 'md5', 'sha1', 'sha256', 'size_and_md5'):
-            filename = os.path.join(DATADIR, '%s.%s%s' %
-                    (self.shortname, alg,
-                        '' if alg == 'size_and_md5' else 'sums'))
+                for alg in ('ck', 'md5', 'sha1', 'sha256', 'size_and_md5'):
+                    filename = '%s.%s%s' % (self.shortname, alg,
+                            '' if alg == 'size_and_md5' else 'sums')
+                    if filename in files:
+                        logger.debug('... vfs.zip/%s', filename)
+                        rawdata = zf.open(filename).read().decode('utf-8')
+                        for line in rawdata.splitlines():
+                            self._add_hash(line.rstrip('\n'), alg)
+        else:
+            filename = os.path.join(DATADIR, '%s.files' % self.shortname)
             if os.path.isfile(filename):
                 logger.debug('... %s', filename)
-                with open(filename) as f:
-                    for line in f:
-                        self._add_hash(line.rstrip('\n'), alg)
+                data = json.load(open(filename, encoding='utf-8'))
+                self._populate_files(data)
+
+            for alg in ('ck', 'md5', 'sha1', 'sha256', 'size_and_md5'):
+                filename = os.path.join(DATADIR, '%s.%s%s' %
+                        (self.shortname, alg,
+                            '' if alg == 'size_and_md5' else 'sums'))
+                if os.path.isfile(filename):
+                    logger.debug('... %s', filename)
+                    with open(filename) as f:
+                        for line in f:
+                            self._add_hash(line.rstrip('\n'), alg)
 
         self.loaded_file_data = True
 
@@ -911,16 +932,38 @@ class GameData(object):
         return gog.get('game', gog['url'])
 
 def load_games(game='*'):
+    progress = game == '*' and sys.stderr.isatty()
     games = {}
 
-    for jsonfile in glob.glob(os.path.join(DATADIR, game + '.json')):
-        if game == '*' and sys.stderr.isatty():
+    if USE_VFS:
+        zip = os.path.join(DATADIR, 'vfs.zip')
+        with zipfile.ZipFile(zip, 'r') as zf:
+            if game == '*':
+                for entry in zf.infolist():
+                    if entry.filename.split('.')[-1] == 'json':
+                        jsonfile = 'vfs.zip/' + entry.filename
+                        jsondata = zf.open(entry).read().decode('utf-8')
+                        load_json(progress, games, jsonfile, jsondata)
+            else:
+                jsonfile = game + '.json'
+                jsondata = zf.open(jsonfile).read().decode('utf-8')
+                load_json(progress, games, 'vfs.zip/' + jsonfile, jsondata)
+    else:
+        for jsonfile in glob.glob(os.path.join(DATADIR, game + '.json')):
+            jsondata = open(jsonfile, encoding='utf-8').read()
+            load_json(progress, games, jsonfile, jsondata)
+
+    print('\r%s\r' % (' ' * len(games)), end='', flush=True, file=sys.stderr)
+    return games
+
+def load_json(progress, games, jsonfile, jsondata):
+        if progress:
             print('.', end='', flush=True, file=sys.stderr)
         try:
             g = os.path.basename(jsonfile)
             g = g[:len(g) - 5]
 
-            data = json.load(open(jsonfile, encoding='utf-8'))
+            data = json.loads(jsondata)
             plugin = data.get('plugin', g)
 
             try:
@@ -936,9 +979,6 @@ def load_games(game='*'):
         except:
             print('Error loading %s:\n' % jsonfile)
             raise
-
-    print('\r%s\r' % (' ' * len(games)), end='', flush=True, file=sys.stderr)
-    return games
 
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
