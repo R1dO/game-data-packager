@@ -22,7 +22,6 @@ import os
 
 from .. import GameData
 from ..build import (PackagingTask)
-from ..paths import DATADIR
 from ..util import (TemporaryUmask, PACKAGE_CACHE, mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
