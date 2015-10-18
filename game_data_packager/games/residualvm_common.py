@@ -58,7 +58,7 @@ class ResidualvmTask(PackagingTask):
         if not os.path.isfile(rcfile):
             return
 
-        config = configparser.ConfigParser()
+        config = configparser.ConfigParser(strict=False)
         config.read(rcfile, encoding='utf-8')
         for section in config.sections():
             if section.startswith(self.game.gameid):
