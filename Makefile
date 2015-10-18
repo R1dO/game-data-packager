@@ -84,6 +84,8 @@ clean:
 	rm -f ./out/*.json
 	rm -f ./out/index.html
 	rm -rf game_data_packager/__pycache__
+	rm -rf game_data_packager/games/__pycache__
+	rm -rf tools/__pycache__
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
