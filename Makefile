@@ -34,7 +34,7 @@ out/%.json: data/%.yaml
 out/vfs.zip:
 	rm -f out/vfs.zip
 	find out -regex '.*\.\(json\|files\|size_and_md5\|cksums\|md5sums\|sha1sums\|sha256sums\)' \
-          | LC_ALL=C sort | TZ=UTC zip out/vfs.zip -X -j -q -@
+          | LC_ALL=C sort | TZ=UTC zip out/vfs.zip -9 -X -j -q -@
 
 out/bash_completion: $(in_yaml)
 	python3 tools/bash_completion.py > ./out/bash_completion
