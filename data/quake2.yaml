@@ -883,10 +883,6 @@ files:
     - ctf/readme.txt
     - ctf/server.cfg
 
-  # this file has a weird name in GOG.com package
-  ctf/server.cfg:
-     look_for: [ctf/server.cfg,__support/save/chaos/server.cfg]
-
   match1.tar.gz:
     download:
       idstuff-mirrors:
@@ -999,7 +995,7 @@ files:
     install_as: ctf.txt
     look_for:
     - ctf.txt
-    - ctf/readme.txt
+    - readme.txt
 
   quake2-xatrix-2.03/CHANGELOG:
     distinctive_name: false
@@ -1063,11 +1059,10 @@ files:
     - data_license.doc
 
   xatrix/docs/readme.txt:
-    distinctive_name: false
     install_to: $docdir
     install_as: data_readme.txt
     look_for:
-    - xatrix/docs/readme.txt
+    - readme.txt
     - data_readme.txt
 
   xatrix/docs/readme.htm:
@@ -1079,11 +1074,10 @@ files:
     - data_readme.html
 
   xatrix/docs/release.txt:
-    distinctive_name: false
     install_to: $docdir
     install_as: data_release.txt
     look_for:
-    - xatrix/docs/release.txt
+    - release.txt
     - data_release.txt
 
   xatrix/docs/release.htm:
@@ -1111,12 +1105,11 @@ files:
     - manual.doc
 
   xatrix/docs/license.txt:
-    distinctive_name: false
     install_to: $docdir
     install_as: data_license.txt
     license: true
     look_for:
-    - xatrix/docs/license.txt
+    - license.txt
     - data_license.txt
 
   rogue/docs/license.doc:
@@ -1129,11 +1122,10 @@ files:
     - data_license.doc
 
   rogue/docs/license.txt:
-    distinctive_name: false
     install_to: $docdir
     install_as: data_license.txt
     look_for:
-    - rogue/docs/license.txt
+    - license.txt
     - data_license.txt
 
   rogue/docs/readme.htm:
@@ -1145,11 +1137,10 @@ files:
     - data_readme.html
 
   rogue/docs/readme.txt:
-    distinctive_name: false
     install_to: $docdir
     install_as: data_readme.txt
     look_for:
-    - rogue/docs/readme.txt
+    - readme.txt
     - data_readme.txt
 
   rogue/docs/release.htm:
@@ -1161,11 +1152,10 @@ files:
     - data_release.html
 
   rogue/docs/release.txt:
-    distinctive_name: false
     install_to: $docdir
     install_as: data_release.txt
     look_for:
-    - rogue/docs/release.txt
+    - release.txt
     - data_release.txt
 
   quake2-xatrix-2.03.tar.xz:
@@ -1189,14 +1179,6 @@ files:
   setup_quake2_quad_damage_2.0.0.3.exe:
     unpack:
       format: innoextract
-      unpack:
-      - $provides
-      # the look_for don't get passed to innoextract arguments
-      - pak0.pak
-      - quake2_manual/images/start_network_server_screen1.gif
-      - quake2_manual/multiplayer.html
-      - __support/save/chaos/server.cfg
-      - license.txt
     provides:
     - baseq2/maps.lst
     - baseq2/maps/base64.bsp
@@ -2387,6 +2369,21 @@ size_and_md5: |
   60435     7278eb0a731a984b119787c5dda1be13 readme.txt
   2811      cf55adc0ff845a4c1298457d18a32c21 release.txt
   689920128 9bdc4b3a0fd426d1ccb2a55a46c4bf4a setup_quake2_quad_damage_2.0.0.3.exe
+
+  # unsupported
+  19085     8639d54d7069478dd253c2b0ecc24576 readme.txt?action
+  594       078f17bb85c0103e554ae3b6430dd2c0 readme.txt?action_male
+  22847     7a98110955fa1ca4661d4fe234e06c8b readme.txt?arena
+  12361     79e01cc556cbd92427413cc46101e631 readme.txt?capture
+  3414      3f6e5a1e280ec34c56f47ed9ffeb808c readme.txt?chaos
+  88        0a23c1484678d3f30f7cc5f6f563931e readme.txt?chaos2
+  27820     633710410aad7c7feda9836c95f7e61d readme.txt?eraser
+  13741     c472e2d785e853dbc996c413fc4eb56e readme.txt?eraser2
+  21967     f56c7199e909a70e36c66dadce41d3e6 release.txt?eraser
+  11366     e2f638c3c766f043d15d771b6eee9cfa readme.txt?kick
+  2719      a6d04ae3818358d007be7158501b3e49 readme.txt?pb2
+  1169      e236e68e089fe1c481bffecf586a7471 readme.txt?rail
+  4979      a75558b41c5da28ac5522b49c23f8707 readme.txt?qwar2
 
 md5sums: |
   # Files from patch to install in doc directory
