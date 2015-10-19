@@ -2070,6 +2070,17 @@ class PackagingTask(object):
         if not possible:
             raise NoPackagesPossible()
 
+        # this check is done before the language check to avoid to end up with
+        # simon-the-sorcerer1-fr-data + simon-the-sorcerer1-dos-en-data
+        for package in set(possible):
+            if (package.better_version
+                and self.game.packages[package.better_version] in possible):
+                  logger.info('will not produce "%s" because better version '
+                     '"%s" is also available',
+                     package.name,
+                     package.better_version)
+                  possible.discard(package)
+
         for package in set(possible):
             score = max(set(lang_score(l) for l in package.langs))
             if score == 0:
@@ -2097,15 +2108,6 @@ class PackagingTask(object):
             raise NoPackagesPossible()
 
         for package in set(possible):
-            if (package.better_version
-                and self.game.packages[package.better_version] in possible):
-                  logger.info('will not produce "%s" because better version '
-                     '"%s" is also available',
-                     package.name,
-                     package.better_version)
-                  possible.discard(package)
-                  continue
-
             if (package.expansion_for
               and self.game.packages[package.expansion_for] not in possible
               and not PACKAGE_CACHE.is_installed(package.expansion_for)):
