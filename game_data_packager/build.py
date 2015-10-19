@@ -1131,8 +1131,7 @@ class PackagingTask(object):
                             cmdline.append('-I')
                             if prefix and i[0] != '/':
                                 i = prefix + i
-                            if 'unpack' not in provider.unpack:
-                                i = i.split('?')[0]
+                            i = i.split('?')[0]
                             cmdline.append(i)
                     subprocess.check_call(cmdline)
                     self.consider_file_or_dir(tmpdir)
