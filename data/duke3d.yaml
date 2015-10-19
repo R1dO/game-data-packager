@@ -20,7 +20,7 @@ packages:
     install:
     - duke3d.grp?demo
     optional:
-    - duke.rts?demo
+    - duke.rts
     license:
     - license.txt?demo
 
@@ -56,7 +56,7 @@ files:
       format: zip
     provides:
     - duke3d.grp?demo
-    - duke.rts?demo
+    - duke.rts
     - license.txt?demo
 
   manual.pdf:
@@ -66,7 +66,6 @@ size_and_md5: |
   5924374  04e4ca70b8a2d59ed56c451c5c1d5d39 3dduke13.zip
   5848108  e061c3794afbf168698946b26e161d75 dn3dsw13.shr
   11035779 c03558e3a78d1c5356dc69b6134c5b55 duke3d.grp?demo
-  188954   9d29f9673bbdb56068acf7645c13749c duke.rts?demo
   9108     583bf2a6cb3d404a21c2205041c45481 license.txt?demo
 
   44356548 22b6938fe767e5cc57d1fe13080cd522 duke3d.grp
@@ -78,7 +77,6 @@ sha1sums: |
   72b832734d72c829cecaffd8d8ae0eb38995aeb3  3dduke13.zip
   4307b7f33c8df15a2338e06d8ac26651b3cf523a  dn3dsw13.shr
   a58bdbfaf28416528a0d9a4452f896f46774a806  duke3d.grp?demo
-  738c7f5fd0c8b57ee2e87ae7a97bf8e21a821d07  duke.rts?demo
   efb92cf5a397ec80f1752f0a75590529a5b30fc0  license.txt?demo
 
   4fdef8559e2d35b1727fe92f021df9c148cf696c  duke3d.grp
