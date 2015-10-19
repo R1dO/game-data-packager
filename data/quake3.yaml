@@ -117,6 +117,8 @@ packages:
         usr/share/doc/quake3-data/Help/DedicatedServer.html
       usr/share/doc/quake3-data/Help/Index.htm:
         usr/share/doc/quake3-data/Help/Index.html
+      usr/share/doc/quake3-data/Help/Readme.htm:
+        usr/share/doc/quake3-data/Help/Readme.html
     install_to: usr/share/games/quake3-data
     install:
     # Retail
@@ -357,6 +359,7 @@ packages:
     - Help/DocsArt/Header.jpg
     - Help/DedicatedServer.html
     - Help/BotCommands.html
+    - Help/Readme.html
 
   quake3-team-arena-data:
     longname: Quake III Team Arena
@@ -781,7 +784,7 @@ files:
     provides:
     - demoq3/pak0.pk3
     - Help/Q3A_EULA.html
-    - Help/Readme.html
+    - Help/Readme.html?linux
     - Help/Quake3World.html
     - Help/Q3A_EULA.txt
     - Help/Manual/navart/weapons/teleport.jpg
@@ -1010,6 +1013,7 @@ files:
       - 'Help/BotCommands.htm'
       - 'Help/Dedicated Server.htm'
       - 'Help/Index.htm'
+      - 'Help/Readme.htm'
     provides:
     - baseq3/pak0.pk3
     - baseq3/pak1.pk3
@@ -1240,6 +1244,7 @@ files:
     - Help/DocsArt/Header.jpg
     - Help/DedicatedServer.html?win
     - Help/BotCommands.html?win
+    - Help/Readme.html?win
 
   Help/Index.html:
     alternatives:
@@ -1270,6 +1275,16 @@ files:
     look_for: [Help/DedicatedServer.html,Help/Dedicated Server.htm]
   Help/DedicatedServer.html?team:
     look_for: [Help/DedicatedServer.html,Help/Dedicated Server.htm]
+
+  Help/Readme.html:
+    alternatives:
+    - Help/Index.html?linux
+    - Help/Index.html?win
+
+  Help/Readme.html?win:
+    look_for: [Help/Readme.html,Help/Readme.htm]
+  Help/Readme.html?team:
+    look_for: [Help/Readme.html,Help/Readme.htm]
 
   # the sames HTML pages with
   # <meta name="generator" content="Microsoft FrontPage 4.0">
@@ -1794,9 +1809,9 @@ size_and_md5: |
   11491     8e966fad82e57ba8bc812020f2993812 Help/Q3A_FAQ.html
   1119      5df9a70f7a694ae37d8e502d90c9cfee Help/Quake3World.html
   9169      4d316611444c981ff1b8d9f06314e669 Help/Scoring.htm
-  17972     c3146abaaff7f714c8fde3a04e2fab8e Help/Readme.htm
-  15821     7e0ed2c3a61f2405a209aab86ead8a78 Help/Readme.htm?team
-  13845     e7306d73bb92768e5d76697894134dca Help/Readme.html
+  17972     c3146abaaff7f714c8fde3a04e2fab8e Help/Readme.html?win
+  15821     7e0ed2c3a61f2405a209aab86ead8a78 Help/Readme.html?team
+  13845     e7306d73bb92768e5d76697894134dca Help/Readme.html?linux
 
   5686      8f9d6ec0fe273440a205e7362f4b3851 Help/Licenses.txt
   42572     7133c2cc6e739b080d271ad18964d282 Help/Q3A Comm_expl.rtf
@@ -2073,7 +2088,7 @@ sha1sums: |
   d82469cc8b90d38623f1a153cdac121271c650cd  Help/Q3A_EULA.txt
   8593879d72aee066e28cff56a978a84faa031cb6  Help/Q3A_EULA.txt?loki
   09fb42cccb8086c7feb138d4851e0ad6479a51ab  Help/Quake3World.html
-  23ad420bb65a42a10a5a9657b7746856ef71461a  Help/Readme.html
+  23ad420bb65a42a10a5a9657b7746856ef71461a  Help/Readme.html?linux
 
   a7e37ff9fd25e2bd230b858ce8b93cfcea438d81  setup_quake3_2.0.0.2.exe
 
@@ -2337,7 +2352,7 @@ sha256sums: |
   23ed30a9ea5875261791549f16875576e7428365ff82dd943cc07339f1173673  Help/Q3A_EULA.txt
   b5fb337e43b03729e7062ce6ef92d2e920d51ac0df0822369805713acd644578  Help/Q3A_EULA.txt?loki
   0e51b4ce2e13e8cca2865e1c6b995636467a2e56e6fef759b388d10fd2bd1da5  Help/Quake3World.html
-  99aedc13cc99c86e4f199846a2b1433ab042d159ba3d52fb3d1b997b29e3cfd1  Help/Readme.html
+  99aedc13cc99c86e4f199846a2b1433ab042d159ba3d52fb3d1b997b29e3cfd1  Help/Readme.html?linux
 
 # Not used yet
 sha512sums: |
