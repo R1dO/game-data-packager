@@ -853,6 +853,17 @@ class GameData(object):
             if f.sha256 is not None:
                 self.known_sha256s.setdefault(f.sha256, set()).add(filename)
 
+        # check for different files that shares same md5 & look_for
+        for file in self.known_md5s:
+            if len(self.known_md5s[file]) == 1:
+                continue
+            all_lf = set()
+            for f in self.known_md5s[file]:
+                assert not all_lf.intersection(self.files[f].look_for),(
+                       'duplicate file description in %s: %s' %
+                       (self.shortname, ', '.join(self.known_md5s[file])) )
+                all_lf |= self.files[f].look_for
+
         # consistency check
         for package in self.packages.values():
             for provider in package.install_contents_of:
