@@ -89,7 +89,7 @@ packages:
     - ttrap.wad
     - vesperas.wad
     - virgil.wad
-    optional:
+    doc:
     - attack.txt
     - blacktwr.txt
     - bloodsea.txt
@@ -136,47 +136,6 @@ files:
     unsuitable: Doom 2 v1.9 is required
   doom2.wad?1.8:
     unsuitable: Doom 2 v1.9 is required
-
-  attack.txt:
-    install_to: $docdir
-  blacktwr.txt:
-    install_to: $docdir
-  bloodsea.txt:
-    install_to: $docdir
-  canyon.txt:
-    install_to: $docdir
-  catwalk.txt:
-    install_to: $docdir
-  combine.txt:
-    install_to: $docdir
-  fistula.txt:
-    install_to: $docdir
-  garrison.txt:
-    install_to: $docdir
-  geryon.txt:
-    install_to: $docdir
-  manor.txt:
-    install_to: $docdir
-  mephisto.txt:
-    install_to: $docdir
-  minos.txt:
-    install_to: $docdir
-  nessus.txt:
-    install_to: $docdir
-  paradox.txt:
-    install_to: $docdir
-  subspace.txt:
-    install_to: $docdir
-  subterra.txt:
-    install_to: $docdir
-  teeth.txt:
-    install_to: $docdir
-  ttrap.txt:
-    install_to: $docdir
-  vesperas.txt:
-    install_to: $docdir
-  virgil.txt:
-    install_to: $docdir
 
   master.exe:
     unpack:
