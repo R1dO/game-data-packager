@@ -113,6 +113,10 @@ packages:
       # let mix win & linux html documentation
       usr/share/doc/quake3-data/Help/BotCommands.htm:
         usr/share/doc/quake3-data/Help/BotCommands.html
+      usr/share/doc/quake3-data/Help/Dedicated Server.htm:
+        usr/share/doc/quake3-data/Help/DedicatedServer.html
+      usr/share/doc/quake3-data/Help/Index.htm:
+        usr/share/doc/quake3-data/Help/Index.html
     install_to: usr/share/games/quake3-data
     install:
     # Retail
@@ -995,7 +999,7 @@ files:
     - Help/Manual/htmlpages/overview.html?linux
     - Help/Index.html?demo
     - Help/DocsArt/Header.jpg
-    - Help/DedicatedServer.html
+    - Help/DedicatedServer.html?linux
     - Help/BotCommands.html?linux
 
   setup_quake3_2.0.0.2.exe:
@@ -1003,7 +1007,9 @@ files:
       format: innoextract
       unpack:
       - $provides
-      - index.htm
+      - 'Help/BotCommands.htm'
+      - 'Help/Dedicated Server.htm'
+      - 'Help/Index.htm'
     provides:
     - baseq3/pak0.pk3
     - baseq3/pak1.pk3
@@ -1232,7 +1238,7 @@ files:
     - Help/Manual/htmlpages/arena.html?win
     - Help/Index.html?win
     - Help/DocsArt/Header.jpg
-    - Help/DedicatedServer.html
+    - Help/DedicatedServer.html?win
     - Help/BotCommands.html?win
 
   Help/Index.html:
@@ -1255,6 +1261,15 @@ files:
     look_for: [Help/BotCommands.html,Help/BotCommands.htm]
   Help/BotCommands.html?team:
     look_for: [Help/BotCommands.html,Help/BotCommands.htm]
+
+  Help/DedicatedServer.html:
+    alternatives:
+    - Help/DedicatedServer.html?linux
+    - Help/DedicatedServer.html?win
+  Help/DedicatedServer.html?win:
+    look_for: [Help/DedicatedServer.html,Help/Dedicated Server.htm]
+  Help/DedicatedServer.html?team:
+    look_for: [Help/DedicatedServer.html,Help/Dedicated Server.htm]
 
   # the sames HTML pages with
   # <meta name="generator" content="Microsoft FrontPage 4.0">
@@ -1430,9 +1445,9 @@ size_and_md5: |
   44950     4544496dfd7d5eee572d504d54475949 Help/BotCommands.html?win
   49276     ff85a668d25991b99cc560e7670349ab Help/BotCommands.html?team
   44237     bdf269853bd4e0be5af2b0faf48280f3 Help/BotCommands.html?linux
-  26406     84c3e129e85ccb39f4b99ebd3790d675 Help/Dedicated Server.htm
-  28921     28525c0d6cd1df9c604c5252f9717852 Help/Dedicated Server.htm?team
-  26797     ce8832945e3d9e8ea5cddf7c09269b1d Help/DedicatedServer.html
+  26406     84c3e129e85ccb39f4b99ebd3790d675 Help/DedicatedServer.html?win
+  28921     28525c0d6cd1df9c604c5252f9717852 Help/DedicatedServer.html?team
+  26797     ce8832945e3d9e8ea5cddf7c09269b1d Help/DedicatedServer.html?linux
   11762     ac205a945de6e1a040d94ccb1325fd0a Help/DocsArt/Header.jpg
   25726     b2a1899d252fbec39c6fd82aed19186a Help/DocsArt/Header.jpg?team
   17231     97d8890fa47253035eca6d2e44227faf Help/DocsArt/ordericons.jpg
@@ -1838,7 +1853,7 @@ sha1sums: |
   4637d68985c838385919523101d575f173ee1ad8  vm/qagame.qvm
   1976ee8b604f928a1ed38f5646d04a62355f3e8e  demoq3/pak0.pk3
   a55a0589d77602445a499c74b04e7acc1bd74e1b  Help/BotCommands.html?linux
-  33c256b432bcb6dd8ec0df79f0621f30d20c550b  Help/DedicatedServer.html
+  33c256b432bcb6dd8ec0df79f0621f30d20c550b  Help/DedicatedServer.html?linux
   8c8948e92523ff04c0bd9512df6e02556d9f71b0  Help/DocsArt/Header.jpg
   5703f32250952f3bd60689c9a0343a338b3914d0  Help/Index.html?demo
   19c9d25a4099c077c986cd20c7e57dd6a9c0b888  Help/Manual/htmlpages/arena.html?linux
@@ -2102,7 +2117,7 @@ sha256sums: |
   57c52bf22e4f528c064f8af1553a7103723bab0a02276bb11eed944bf829b219  vm/qagame.qvm
   e77abad2466f45a0a7ea018445528f9b95a0fe7789fa1abc1a7718bbf0754b08  demoq3/pak0.pk3
   3b04c212a9cc46fdc8ef544575d7a4e6a3991d4eab72d89034aee3bd8b677b6d  Help/BotCommands.html?linux
-  43cddb56a69897b9a2199f7b5d0ceda2f8446cd7fe6b0f1ffd2f04bcc944a53f  Help/DedicatedServer.html
+  43cddb56a69897b9a2199f7b5d0ceda2f8446cd7fe6b0f1ffd2f04bcc944a53f  Help/DedicatedServer.html?linux
   6a3c25cc736e82515a6a944c2d64536c586623013bcfe5f0b955ed9c831ccea4  Help/DocsArt/Header.jpg
   2379c1737f72cdb1c9c3a87d8db5a9b9c8124a11baec4835b1000dfc5bd224a3  Help/Index.html?demo
   a4cebe641f34c86248bd3ba0224543bda02afbe65506dbfcdeb29b3021c77e84  Help/Manual/htmlpages/arena.html?linux
