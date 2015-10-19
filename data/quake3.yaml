@@ -110,6 +110,9 @@ packages:
         usr/share/games/quake3-data/missionpack/pak2.pk3
       usr/lib/quake3/ta/missionpack/pak3.pk3:
         usr/share/games/quake3-data/missionpack/pak3.pk3
+      # let mix win & linux html documentation
+      usr/share/doc/quake3-data/Help/BotCommands.htm:
+        usr/share/doc/quake3-data/Help/BotCommands.html
     install_to: usr/share/games/quake3-data
     install:
     # Retail
@@ -385,6 +388,8 @@ packages:
       # quake >= 10
       usr/lib/quake3/ta/missionpack/pak0.pk3:
         usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3
+      usr/lib/quake3/base/baseq3/pak0.pk3:
+        usr/share/games/quake3-data/baseq3/pak0.pk3
     install_to: usr/share/games/quake3-team-arena-data
 
   quake3-demo-data:
@@ -991,7 +996,7 @@ files:
     - Help/Index.html?demo
     - Help/DocsArt/Header.jpg
     - Help/DedicatedServer.html
-    - Help/BotCommands.html
+    - Help/BotCommands.html?linux
 
   setup_quake3_2.0.0.2.exe:
     unpack:
@@ -1228,7 +1233,7 @@ files:
     - Help/Index.html?win
     - Help/DocsArt/Header.jpg
     - Help/DedicatedServer.html
-    - Help/BotCommands.html
+    - Help/BotCommands.html?win
 
   Help/Index.html:
     alternatives:
@@ -1241,6 +1246,15 @@ files:
     look_for: [Help/Index.html,Help/Index.htm]
   Help/Index.html?team:
     look_for: [Help/Index.html,Help/Index.htm]
+
+  Help/BotCommands.html:
+    alternatives:
+    - Help/BotCommands.html?linux
+    - Help/BotCommands.html?win
+  Help/BotCommands.html?win:
+    look_for: [Help/BotCommands.html,Help/BotCommands.htm]
+  Help/BotCommands.html?team:
+    look_for: [Help/BotCommands.html,Help/BotCommands.htm]
 
   # the sames HTML pages with
   # <meta name="generator" content="Microsoft FrontPage 4.0">
@@ -1413,9 +1427,9 @@ size_and_md5: |
   384282    e7f91f4eb6e3d28d978b8cca54631695 missionpack/pak3.pk3
 
   # the Linux demo & retail versions share the same HTML
-  44950     4544496dfd7d5eee572d504d54475949 Help/BotCommands.htm
-  49276     ff85a668d25991b99cc560e7670349ab Help/BotCommands.htm?team
-  44237     bdf269853bd4e0be5af2b0faf48280f3 Help/BotCommands.html
+  44950     4544496dfd7d5eee572d504d54475949 Help/BotCommands.html?win
+  49276     ff85a668d25991b99cc560e7670349ab Help/BotCommands.html?team
+  44237     bdf269853bd4e0be5af2b0faf48280f3 Help/BotCommands.html?linux
   26406     84c3e129e85ccb39f4b99ebd3790d675 Help/Dedicated Server.htm
   28921     28525c0d6cd1df9c604c5252f9717852 Help/Dedicated Server.htm?team
   26797     ce8832945e3d9e8ea5cddf7c09269b1d Help/DedicatedServer.html
@@ -1823,7 +1837,7 @@ sha1sums: |
   21fa029bd1b115e510c2ca1bdf89977e4a04265b  vm/cgame.qvm
   4637d68985c838385919523101d575f173ee1ad8  vm/qagame.qvm
   1976ee8b604f928a1ed38f5646d04a62355f3e8e  demoq3/pak0.pk3
-  a55a0589d77602445a499c74b04e7acc1bd74e1b  Help/BotCommands.html
+  a55a0589d77602445a499c74b04e7acc1bd74e1b  Help/BotCommands.html?linux
   33c256b432bcb6dd8ec0df79f0621f30d20c550b  Help/DedicatedServer.html
   8c8948e92523ff04c0bd9512df6e02556d9f71b0  Help/DocsArt/Header.jpg
   5703f32250952f3bd60689c9a0343a338b3914d0  Help/Index.html?demo
@@ -2087,7 +2101,7 @@ sha256sums: |
   4ea18569bf56a282d26dc89eb9efcc5eedbe0b69c10182fc38446174c1e55b49  vm/cgame.qvm
   57c52bf22e4f528c064f8af1553a7103723bab0a02276bb11eed944bf829b219  vm/qagame.qvm
   e77abad2466f45a0a7ea018445528f9b95a0fe7789fa1abc1a7718bbf0754b08  demoq3/pak0.pk3
-  3b04c212a9cc46fdc8ef544575d7a4e6a3991d4eab72d89034aee3bd8b677b6d  Help/BotCommands.html
+  3b04c212a9cc46fdc8ef544575d7a4e6a3991d4eab72d89034aee3bd8b677b6d  Help/BotCommands.html?linux
   43cddb56a69897b9a2199f7b5d0ceda2f8446cd7fe6b0f1ffd2f04bcc944a53f  Help/DedicatedServer.html
   6a3c25cc736e82515a6a944c2d64536c586623013bcfe5f0b955ed9c831ccea4  Help/DocsArt/Header.jpg
   2379c1737f72cdb1c9c3a87d8db5a9b9c8124a11baec4835b1000dfc5bd224a3  Help/Index.html?demo
