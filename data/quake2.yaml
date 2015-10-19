@@ -82,7 +82,7 @@ packages:
     - Manual.html
     - Release Notes.doc
     - readme.doc
-    - readme.txt?3.20
+    - readme.txt
     - readme-dm64.txt
     - release.txt
     - quake2_manual/bottom.html
@@ -224,7 +224,7 @@ packages:
     - Manual.html
     - quake2_manual/bottom.html
     - quake2_manual/credits.html?3.14_demo
-    - quake2_manual/customer_support.html?3.14_demo
+    - quake2_manual/customer_support.html?3.05_or_3.14_demo
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
     - quake2_manual/enemy_brains.html
@@ -341,7 +341,7 @@ packages:
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
-    - quake2_manual/technical_information.html?3.14_demo
+    - quake2_manual/technical_information.html?3.05_or_3.14_demo
     - quake2_manual/top_nav.html
     - readme.txt?3.14_demo
     - release.txt?3.14_demo
@@ -477,7 +477,7 @@ files:
     - license.txt?3.14_demo
     - quake2_manual/bottom.html
     - quake2_manual/credits.html?3.14_demo
-    - quake2_manual/customer_support.html?3.14_demo
+    - quake2_manual/customer_support.html?3.05_or_3.14_demo
     - quake2_manual/enemy_barracuda_shark.html
     - quake2_manual/enemy_berserker.html
     - quake2_manual/enemy_brains.html
@@ -594,7 +594,7 @@ files:
     - quake2_manual/page_index.html
     - quake2_manual/setup_controls_screenmenus.html
     - quake2_manual/story.html
-    - quake2_manual/technical_information.html?3.14_demo
+    - quake2_manual/technical_information.html?3.05_or_3.14_demo
     - quake2_manual/top_nav.html
     - readme.txt?3.14_demo
     - release.txt?3.14_demo
@@ -883,6 +883,11 @@ files:
     - ctf/readme.txt
     - ctf/server.cfg
 
+  readme.txt:
+    alternatives:
+    - readme.txt?3.20
+    - readme.txt?steam
+
   match1.tar.gz:
     download:
       idstuff-mirrors:
@@ -951,22 +956,12 @@ files:
   quake2_manual/customer_support.html:
     alternatives:
     - quake2_manual/customer_support.html?steam
-    - quake2_manual/customer_support.html?3.05
-  quake2_manual/customer_support.html?3.05:
-    size:   5073
-    md5:    525c98cd717fc7e6ea18b5fd758a2f97
-    sha1:   1b5569bbe7abf42b5113401dd2b84a0a3b3d814c
-    sha256: b90985c9c5a201ce42ef80ebb489110f0df8767862aa77a107c43dc618cce7d7
+    - quake2_manual/customer_support.html?3.05_or_3.14_demo
 
   quake2_manual/technical_information.html:
     alternatives:
     - quake2_manual/technical_information.html?steam
-    - quake2_manual/technical_information.html?3.05
-  quake2_manual/technical_information.html?3.05:
-    size:   13079
-    md5:    43ed8b9aab50fe9cd02c142dcceb030d
-    sha1:   ef3f246b3d75d3d447f7d404beaf89c2e8e3fda5
-    sha256: 426277295a0a857805fbd7df60bf05a2af61973aa4b1f4cf8096cb43dfca795d
+    - quake2_manual/technical_information.html?3.05_or_3.14_demo
 
   quake2_manual/multiplayer.html:
     alternatives:
@@ -1763,11 +1758,11 @@ cksums: |
   639175200 194965474 baseq2/pak0.pak?6be3f40
 
   # files from the demo
-  _ 5073 quake2_manual/customer_support.html?3.14_demo
+  _ 5073 quake2_manual/customer_support.html?3.05_or_3.14_demo
   _ 49951322 baseq2/pak0.pak?demo
   _ 8963 license.txt?3.14_demo
   _ 20919 quake2_manual/credits.html?3.14_demo
-  _ 13079 quake2_manual/technical_information.html?3.14_demo
+  _ 13079 quake2_manual/technical_information.html?3.05_or_3.14_demo
   _ 62410 readme.txt?3.14_demo
   _ 3675 release.txt?3.14_demo
 
@@ -2366,7 +2361,7 @@ size_and_md5: |
   13350     c17a9ef88a73d57a6935cdef8a160579 license.txt?3.20
   5579      09bfc1ee52836250d5a7071d5cca6179 licinfo.txt
   79360     664db6482beaa2c129fb2fdaa024b27c readme.doc
-  60435     7278eb0a731a984b119787c5dda1be13 readme.txt
+  60435     7278eb0a731a984b119787c5dda1be13 readme.txt?steam
   2811      cf55adc0ff845a4c1298457d18a32c21 release.txt
   689920128 9bdc4b3a0fd426d1ccb2a55a46c4bf4a setup_quake2_quad_damage_2.0.0.3.exe
 
@@ -2411,8 +2406,8 @@ md5sums: |
   af91bb4178e223adaa258d50ce2541b0  Manual.html
   0fff07160047d23e53b68c490ea1bbbc  license.txt?3.14_demo
   13cae63eea980606ffa9766b388e05ae  quake2_manual/credits.html?3.14_demo
-  525c98cd717fc7e6ea18b5fd758a2f97  quake2_manual/customer_support.html?3.14_demo
-  43ed8b9aab50fe9cd02c142dcceb030d  quake2_manual/technical_information.html?3.14_demo
+  525c98cd717fc7e6ea18b5fd758a2f97  quake2_manual/customer_support.html?3.05_or_3.14_demo
+  43ed8b9aab50fe9cd02c142dcceb030d  quake2_manual/technical_information.html?3.05_or_3.14_demo
   c3ff4ac8608dc4f5891214b8f6d1f0ad  readme.txt?3.14_demo
   5aab43e52b123e88b8b5b62952e5ac2a  release.txt?3.14_demo
   # Files from demo to install in game directory
