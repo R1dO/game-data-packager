@@ -39,7 +39,7 @@ _game_data_packager()
       while read line
       do
           supported="$supported $line"
-          read packages
+          read
       done < /usr/share/games/game-data-packager/bash_completion
       COMPREPLY=( $( compgen -W "make-template gog steam $supported" -- $cur ) )
     else
