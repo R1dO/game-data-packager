@@ -14,6 +14,12 @@ _game_data_packager()
       local longopts
       longopts='--compress --destination --help --install --no-compress --no-download --no-search --package --save-downloads --install-method --gain-root-command'
       COMPREPLY=( $( compgen -W "$longopts" -- $cur ) )
+    elif [ "$prev" == '--install-method' ]
+    then
+      COMPREPLY=( $( compgen -W "dpkg apt gdebi gdebi-gtk gdebi-kde" -- $cur ) )
+    elif [ "$prev" == '--gain-root-command' ]
+    then
+      COMPREPLY=( $( compgen -W "su sudo pkexec" -- $cur ) )
     elif [ "$prev" == '--package' ]
     then
       [ -e /usr/share/games/game-data-packager/bash_completion ] || return
@@ -29,8 +35,12 @@ _game_data_packager()
       COMPREPLY=( $( compgen -W "$packages" -- $cur ) )
     elif [ $COMP_CWORD -eq 1 ]
     then
-      local supported
-      supported=$(cd  /usr/share/games/game-data-packager/; ls -1 *.json 2>/dev/null |cut -d'.' -f1)
+      local line supported
+      while read line
+      do
+          supported="$supported $line"
+          read packages
+      done < /usr/share/games/game-data-packager/bash_completion
       COMPREPLY=( $( compgen -W "make-template gog steam $supported" -- $cur ) )
     else
       COMPREPLY=()
