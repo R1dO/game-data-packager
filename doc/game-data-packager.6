@@ -123,6 +123,17 @@ and also the ~/.PlayOnLinux/wineprefix/Steam/drive_c/... variant
 .TP
 .B X:/Program Files/Steam/SteamApps/common/<game>/
 where X:\\ is any mounted vfat or NTFS partition
+.SH FILES
+.TP
+.B ~/.scummvmrc
+provides location information for game registered in ScummVM GUI
+.TP
+.B ~/.steam/config/loginusers.vdf
+is used to detect user's SteamID, which is then used
+to download a list of owned games
+.TP
+.B ~/.cache/lgogdownloader/gamedetails.json
+holds a cached list of owned GOG.com games
 .SH SEE ALSO
 \fIdpkg\fP(1), \fIsu\fP(1), \fIlgogdownloader\fP(1)
 .br

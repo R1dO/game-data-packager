@@ -421,6 +421,8 @@ packages:
     steam:
       id: 2340
       path: "common/Quake 2/rogue"
+    gog:
+      url: quake_ii_quad_damage
     debian:
       build-depends: gcc, make, libc6-dev
       provides: quake2-rogue
@@ -1712,6 +1714,20 @@ files:
     - readme.txt?3.20
     - release.txt
 
+    - rogue/pak0.pak
+    - rogue/video/logo.cin
+    - rogue/video/rend.cin
+    - rogue/video/reu1_.cin
+    - rogue/video/reu2_.cin
+    - rogue/video/reu3_.cin
+    - rogue/video/reu4_.cin
+    - rogue/video/rintro.cin
+    - rogue/docs/readme.htm
+    - rogue/docs/release.htm
+    - rogue/docs/license.doc
+    - rogue/docs/license.txt
+    - rogue/docs/readme.txt
+    - rogue/docs/release.txt
     # + rogue
     # + xatrix
     # + action, arena, capture, chaos, eraser, jail, kick, pb2 & rover:
