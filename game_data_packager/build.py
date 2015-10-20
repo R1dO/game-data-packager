@@ -2070,42 +2070,44 @@ class PackagingTask(object):
         if not possible:
             raise NoPackagesPossible()
 
-        # this check is done before the language check to avoid to end up with
-        # simon-the-sorcerer1-fr-data + simon-the-sorcerer1-dos-en-data
-        for package in set(possible):
-            if (package.better_version
-                and self.game.packages[package.better_version] in possible):
-                  logger.info('will not produce "%s" because better version '
-                     '"%s" is also available',
-                     package.name,
-                     package.better_version)
-                  possible.discard(package)
+        # this fancy algorithm will be overiden by '--package' argument
+        if not log_immediately:
+            # this check is done before the language check to avoid to end up with
+            # simon-the-sorcerer1-fr-data + simon-the-sorcerer1-dos-en-data
+            for package in set(possible):
+                if (package.better_version
+                    and self.game.packages[package.better_version] in possible):
+                      logger.info('will not produce "%s" because better version '
+                         '"%s" is also available',
+                         package.name,
+                         package.better_version)
+                      possible.discard(package)
 
-        for package in set(possible):
-            score = max(set(lang_score(l) for l in package.langs))
-            if score == 0:
-                logger.info('will not produce "%s" '
-                            'because "%s" is not in LANGUAGE selection',
-                            package.name, package.lang)
-                possible.discard(package)
-                continue
-            # keep only prefered language for this virtual package
-            virtual = package.debian.get('provides')
-            if virtual:
-                for other_p in possible:
-                    if other_p.name == package.name:
-                        continue
-                    other_virtual = other_p.debian.get('provides')
-                    if other_virtual != virtual:
-                        continue
-                    if score < lang_score(other_p.lang):
-                        logger.info('will not produce "%s" '
-                                    'because "%s" is prefered language',
-                                    package.name, other_p.lang)
-                        possible.discard(package)
-                        break
-        if not possible:
-            raise NoPackagesPossible()
+            for package in set(possible):
+                score = max(set(lang_score(l) for l in package.langs))
+                if score == 0:
+                    logger.info('will not produce "%s" '
+                                'because "%s" is not in LANGUAGE selection',
+                                package.name, package.lang)
+                    possible.discard(package)
+                    continue
+                # keep only prefered language for this virtual package
+                virtual = package.debian.get('provides')
+                if virtual:
+                    for other_p in possible:
+                        if other_p.name == package.name:
+                            continue
+                        other_virtual = other_p.debian.get('provides')
+                        if other_virtual != virtual:
+                            continue
+                        if score < lang_score(other_p.lang):
+                            logger.info('will not produce "%s" '
+                                        'because "%s" is prefered language',
+                                        package.name, other_p.lang)
+                            possible.discard(package)
+                            break
+            if not possible:
+                raise NoPackagesPossible()
 
         for package in set(possible):
             if (package.expansion_for
