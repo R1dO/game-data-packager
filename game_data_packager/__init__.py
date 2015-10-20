@@ -1057,14 +1057,21 @@ def run_command_line():
     dumb_parser.add_argument('paths', type=str, nargs='*')
     dumb_parser.add_argument('-h', '--help', action='store_true', dest='h')
     g = dumb_parser.parse_args().game
+    zip = os.path.join(DATADIR, 'vfs.zip')
     if g is None:
         games = load_games()
     elif '-h' in sys.argv or '--help' in sys.argv:
         games = load_games()
     elif os.path.isfile(os.path.join(DATADIR, '%s.json' % g)):
         games = load_games(game=g)
-    else:
+    elif not os.path.isfile(zip):
         games = load_games()
+    else:
+        with zipfile.ZipFile(zip, 'r') as zf:
+            if '%s.json' % g in zf.namelist():
+                games = load_games(game=g)
+            else:
+                games = load_games()
 
     parser = argparse.ArgumentParser(prog='game-data-packager',
             description='Package game files.', parents=(base_parser,),
