@@ -1069,8 +1069,7 @@ class PackagingTask(object):
                     check_call(['lha', arg, os.path.abspath(found_name)] +
                             list(to_unpack),
                             cwd=tmpdir)
-                    for f in to_unpack:
-                        self.consider_file(os.path.join(tmpdir, f), True)
+                    self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'id-shr-extract':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
@@ -1083,9 +1082,7 @@ class PackagingTask(object):
                     # this format doesn't store a timestamp, so the extracted
                     # files will instead inherit the archive's timestamp
                     recursive_utime(tmpdir, os.stat(found_name).st_mtime)
-                    for f in to_unpack:
-                        tmp = os.path.join(tmpdir, f)
-                        self.consider_file(tmp, True)
+                    self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'cabextract':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
                     logger.debug('Extracting %r from %s',
