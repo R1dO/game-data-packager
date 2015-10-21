@@ -28,6 +28,7 @@ packages:
     debian:
       provides: rtcw-data
       conflicts: rtcw-data
+      replaces: rtcw-data
     steam:
       id: 9010
       path: "common/Return to Castle Wolfenstein"
@@ -76,6 +77,7 @@ packages:
     debian:
       provides: rtcw-data
       conflicts: rtcw-data
+      replaces: rtcw-data
     gog:
       url: return_to_castle_wolfenstein
       game: return_to_castle_wolfenstein_game
@@ -124,6 +126,7 @@ packages:
     debian:
       provides: rtcw-data
       conflicts: rtcw-data
+      replaces: rtcw-data
     version: 1.42b
     install_to: usr/share/games/rtcw
     install:
@@ -162,6 +165,7 @@ packages:
     debian:
       provides: rtcw-data
       conflicts: rtcw-data
+      replaces: rtcw-data
     version: 1.42b
     install_to: usr/share/games/rtcw
     install:
