@@ -33,7 +33,10 @@ import yaml
 from . import HashedFile
 from .gog import GOG
 from .steam import parse_acf
-from .util import which
+from .util import (
+        check_output,
+        which,
+        )
 
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
@@ -328,14 +331,14 @@ class GameData(object):
         tmp = tempfile.mkdtemp(prefix='gdptmp.')
 
         command = ['innoextract', os.path.realpath(exe)]
-        version = subprocess.check_output(['innoextract', '-v', '-s'], universal_newlines=True)
+        version = check_output(['innoextract', '-v', '-s'], universal_newlines=True)
         if Version(version.split('-')[0]) >= Version('1.5'):
             command.append('-I')
             command.append('app')
             command.append('--collisions=rename')
 
         logger.info('running "%s" ...' % ' '.join(command))
-        log = subprocess.check_output(command,
+        log = check_output(command,
                  stderr=subprocess.DEVNULL,
                  universal_newlines=True,
                  cwd=tmp)
@@ -636,7 +639,7 @@ def do_flacsums(destdir, lower):
         file = os.path.basename(filename).lower()
         file, ext = os.path.splitext(file)
         if ext == '.wav':
-            md5 = subprocess.check_output([tool, '-i', filename, '-f', 'md5', '-'],
+            md5 = check_output([tool, '-i', filename, '-f', 'md5', '-'],
                      stderr=subprocess.DEVNULL,
                      universal_newlines=True)
             md5 = md5.rstrip().split('=')[1]
@@ -647,7 +650,7 @@ def do_flacsums(destdir, lower):
         if ext == '.flac':
             fla_or_flac = '.flac'
         if ext in ('.fla','.flac'):
-            md5 = subprocess.check_output(['metaflac', '--show-md5sum', filename],
+            md5 = check_output(['metaflac', '--show-md5sum', filename],
                      universal_newlines=True)
             md5 = md5.rstrip()
             assert file not in md5s or md5s[file] == md5, \

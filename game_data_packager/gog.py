@@ -22,6 +22,7 @@ import subprocess
 
 from .util import (PACKAGE_CACHE,
         ascii_safe,
+        check_output,
         lang_score,
         which)
 
@@ -44,10 +45,10 @@ class Gog:
                 self.available.append(key['gamename'])
         else:
             try:
-                list = subprocess.check_output(['lgogdownloader', '--list'],
-                               stdin=subprocess.DEVNULL,
-                               stderr=subprocess.DEVNULL,
-                               universal_newlines=True)
+                list = check_output(['lgogdownloader', '--list'],
+                        stdin=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL,
+                        universal_newlines=True)
                 self.available = list.splitlines()
             except subprocess.CalledProcessError:
                 pass

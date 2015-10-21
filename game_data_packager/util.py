@@ -143,7 +143,7 @@ class PackageCache:
         # will leak on stderr if called with an unknown package,
         # but that should never happen
         try:
-            return subprocess.check_output(['dpkg-query', '--show',
+            return check_output(['dpkg-query', '--show',
               '--showformat', '${Version}', package], universal_newlines=True)
         except subprocess.CalledProcessError:
             return
@@ -228,3 +228,13 @@ def install_packages(debs, method, gain_root='su'):
     else:
         # gdebi-gtk etc.
         subprocess.call([method] + list(debs))
+
+def check_call(command, *args, **kwargs):
+    """Like subprocess.check_call, but log what we will do first."""
+    logger.debug('%r', command)
+    return subprocess.check_call(command, *args, **kwargs)
+
+def check_output(command, *args, **kwargs):
+    """Like subprocess.check_output, but log what we will do first."""
+    logger.debug('%r', command)
+    return subprocess.check_output(command, *args, **kwargs)

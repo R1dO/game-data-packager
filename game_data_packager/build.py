@@ -43,6 +43,8 @@ from .util import (AGENT,
         MEBIBYTE,
         PACKAGE_CACHE,
         TemporaryUmask,
+        check_call,
+        check_output,
         copy_with_substitutions,
         human_size,
         install_packages,
@@ -570,8 +572,8 @@ class PackagingTask(object):
                 with zipfile.ZipFile(path, 'r') as zf:
                     self.consider_zip(path, zf)
             elif basename.startswith('setup_') and extension == '.exe':
-                version = subprocess.check_output(['innoextract', '-v', '-s'],
-                                                      universal_newlines=True)
+                version = check_output(['innoextract', '-v', '-s'],
+                        universal_newlines=True)
                 args = ['-I', '/app'] if Version(version.split('-')[0]) >= Version('1.5') else []
                 if not self.verbose:
                     args.append('--silent')
@@ -581,11 +583,11 @@ class PackagingTask(object):
                 tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             basename + '.d')
                 mkdir_p(tmpdir)
-                subprocess.check_call(['innoextract',
-                                       '--language', 'english',
-                                       '-T', 'local',
-                                       '-d', tmpdir,
-                                       path] + args)
+                check_call(['innoextract',
+                    '--language', 'english',
+                    '-T', 'local',
+                    '-d', tmpdir,
+                    path] + args)
                 self.consider_file_or_dir(tmpdir)
         elif really_should_match_something:
             logger.warning('file "%s" does not match any known file', path)
@@ -997,8 +999,9 @@ class PackagingTask(object):
                                 id_diz = entryfile.read().decode(encoding, 'replace')
                             except NotImplementedError:
                                 if which('unzip'):
-                                    id_diz = subprocess.check_output(['unzip', '-c','-q',
-                                     found_name, 'FILE_ID.DIZ']).decode(encoding, 'replace')
+                                    id_diz = check_output(['unzip', '-c','-q',
+                                        found_name, 'FILE_ID.DIZ']
+                                        ).decode(encoding, 'replace')
                             try:
                                 print(id_diz)
                             except UnicodeError:
@@ -1047,9 +1050,9 @@ class PackagingTask(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     arg = 'x' if self.verbose else 'xq'
-                    subprocess.check_call(['lha', arg,
-                                os.path.abspath(found_name)] +
-                            list(to_unpack), cwd=tmpdir)
+                    check_call(['lha', arg, os.path.abspath(found_name)] +
+                            list(to_unpack),
+                            cwd=tmpdir)
                     for f in to_unpack:
                         self.consider_file(os.path.join(tmpdir, f), True)
                 elif fmt == 'id-shr-extract':
@@ -1059,8 +1062,7 @@ class PackagingTask(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['id-shr-extract',
-                                os.path.abspath(found_name)],
+                    check_call(['id-shr-extract', os.path.abspath(found_name)],
                             cwd=tmpdir)
                     # this format doesn't store a timestamp, so the extracted
                     # files will instead inherit the archive's timestamp
@@ -1077,8 +1079,8 @@ class PackagingTask(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     quiet = [] if self.verbose else ['-q']
-                    subprocess.check_call(['cabextract'] + quiet + ['-L',
-                                os.path.abspath(found_name)], cwd=tmpdir)
+                    check_call(['cabextract'] + quiet + ['-L',
+                            os.path.abspath(found_name)], cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unace-nonfree':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
@@ -1087,7 +1089,7 @@ class PackagingTask(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['unace', 'x',
+                    check_call(['unace', 'x',
                              os.path.abspath(found_name)] +
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
@@ -1099,7 +1101,7 @@ class PackagingTask(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     quiet = [] if self.verbose else ['-inul']
-                    subprocess.check_call(['unrar-nonfree', 'x'] + quiet +
+                    check_call(['unrar-nonfree', 'x'] + quiet +
                              [os.path.abspath(found_name)] +
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
@@ -1118,8 +1120,8 @@ class PackagingTask(object):
                     if not self.verbose:
                         cmdline.append('--silent')
                         cmdline.append('--progress')
-                    version = subprocess.check_output(['innoextract', '-v', '-s'],
-                                                      universal_newlines=True)
+                    version = check_output(['innoextract', '-v', '-s'],
+                            universal_newlines=True)
                     if Version(version.split('-')[0]) >= Version('1.5'):
                         prefix = provider.unpack.get('prefix', '')
                         if prefix and not prefix.endswith('/'):
@@ -1133,7 +1135,7 @@ class PackagingTask(object):
                                 i = prefix + i
                             i = i.split('?')[0]
                             cmdline.append(i)
-                    subprocess.check_call(cmdline)
+                    check_call(cmdline)
                     self.consider_file_or_dir(tmpdir)
                 elif fmt == 'unzip' and which('unzip'):
                     to_unpack = provider.unpack.get('unpack', provider.provides)
@@ -1143,7 +1145,7 @@ class PackagingTask(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     quiet = ['-q'] if self.verbose else ['-qq']
-                    subprocess.check_call(['unzip', '-j', '-C'] +
+                    check_call(['unzip', '-j', '-C'] +
                                 quiet + [os.path.abspath(found_name)] +
                             list(to_unpack), cwd=tmpdir)
                     # -j junk paths
@@ -1159,7 +1161,7 @@ class PackagingTask(object):
                     flags = provider.unpack.get('flags', [])
                     if not self.verbose:
                         flags.append('-bd')
-                    subprocess.check_call(['7z', 'x'] + flags +
+                    check_call(['7z', 'x'] + flags +
                                 [os.path.abspath(found_name)] +
                                 list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
@@ -1170,7 +1172,7 @@ class PackagingTask(object):
                             provider_name + '.d')
                     mkdir_p(tmpdir)
                     quiet = [] if self.verbose else ['-q']
-                    subprocess.check_call(['unar', '-D'] +
+                    check_call(['unar', '-D'] +
                                quiet + [os.path.abspath(found_name)] +
                                list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir)
@@ -1186,10 +1188,10 @@ class PackagingTask(object):
                     if groups:
                         # unshield only take last '-g' into account
                         for group in groups:
-                            subprocess.check_call(['unshield', '-g', group,
+                            check_call(['unshield', '-g', group,
                                'x', os.path.abspath(found_name)], cwd=tmpdir)
                     else:
-                        subprocess.check_call(['unshield', 'x',
+                        check_call(['unshield', 'x',
                                  os.path.abspath(found_name)], cwd=tmpdir)
 
                     # this format doesn't store a timestamp, so the extracted
@@ -1207,11 +1209,11 @@ class PackagingTask(object):
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                                           provider_name + '.d')
                     mkdir_p(tmpdir)
-                    subprocess.check_call(['arj', 'e',
+                    check_call(['arj', 'e',
                                   os.path.abspath(found_name)] +
                                   list(to_unpack), cwd=tmpdir)
                     for p in provider.unpack.get('other_parts', []):
-                        subprocess.check_call(['arj', 'e', '-jya',
+                        check_call(['arj', 'e', '-jya',
                                   os.path.join(os.path.dirname(found_name),p)] +
                                   list(to_unpack), cwd=tmpdir)
                     for f in to_unpack:
@@ -1450,7 +1452,7 @@ class PackagingTask(object):
                     mkdir_p(copy_to_dir)
                 # Use cp(1) so we can make a reflink if source and
                 # destination happen to be the same btrfs volume
-                subprocess.check_call(['cp', '--reflink=auto',
+                check_call(['cp', '--reflink=auto',
                     '--preserve=timestamps', copy_from, copy_to])
 
         for symlink, real_file in package.symlinks.items():
@@ -1486,13 +1488,13 @@ class PackagingTask(object):
                 copy_to_dir = os.path.dirname(copy_to)
                 if not os.path.isdir(copy_to_dir):
                     mkdir_p(copy_to_dir)
-                subprocess.check_call(['cp', '--reflink=auto',
+                check_call(['cp', '--reflink=auto',
                     '--preserve=timestamps', copy_from, copy_to])
 
         self.fill_extra_files(package, destdir)
 
         # adapted from dh_md5sums
-        subprocess.check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
+        check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
                 "-printf '%P\\0' | LC_ALL=C sort -z | " +
                 "xargs -r0 md5sum > DEBIAN/md5sums",
                 shell=True, cwd=destdir)
@@ -1758,9 +1760,9 @@ class PackagingTask(object):
         if is_installed:
             current_ver = PACKAGE_CACHE.current_version(engine)
         else:
-            current_ver = subprocess.check_output(['apt-cache',
-                   'madison', engine],
-                    universal_newlines=True)
+            current_ver = check_output(['apt-cache',
+                'madison', engine],
+                universal_newlines=True)
             current_ver = current_ver.splitlines()[0]
             current_ver = current_ver.split('|')[1].strip()
 
@@ -1947,7 +1949,7 @@ class PackagingTask(object):
             if subprocess.call(['cdparanoia', '-d', cd_device, str(i),
                     tmp_wav]) != 0:
                 break
-            subprocess.check_call(['oggenc', '-o', track, tmp_wav])
+            check_call(['oggenc', '-o', track, tmp_wav])
             self.cd_tracks[package.name][i] = track
             if os.path.exists(tmp_wav):
                 os.remove(tmp_wav)
@@ -1959,7 +1961,7 @@ class PackagingTask(object):
 
     def get_architecture(self):
         if self._architecture is None:
-            self._architecture = subprocess.check_output(['dpkg',
+            self._architecture = check_output(['dpkg',
                 '--print-architecture']).strip().decode('ascii')
 
         return self._architecture
@@ -2165,7 +2167,7 @@ class PackagingTask(object):
                 tmpdir = os.path.join(self.get_workdir(), gog_id)
                 mkdir_p(tmpdir)
                 try:
-                    subprocess.check_call(['lgogdownloader',
+                    check_call(['lgogdownloader',
                                        '--download',
                                        '--include', 'installers',
                                        '--directory', tmpdir,
@@ -2349,7 +2351,7 @@ class PackagingTask(object):
 
         try:
             logger.info('generating package %s', package.name)
-            subprocess.check_output(['fakeroot', 'dpkg-deb'] +
+            check_output(['fakeroot', 'dpkg-deb'] +
                     dpkg_deb_args +
                     ['-b', '%s.deb.d' % package.name, outfile],
                     cwd=self.get_workdir())
