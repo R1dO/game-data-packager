@@ -7,7 +7,9 @@ wiki: Space_Quest_V
 gameid: sq5
 
 packages:
-  spacequest5-data:
+  spacequest5-en-data:
+    debian:
+      provides: spacequest5-data
     gog:
       url: space_quest_4_5_6
     install:
@@ -96,6 +98,122 @@ packages:
     - resource.map
     - resource.msg
     - version
+
+  spacequest5-fr-data:
+    longname: "Space Quest V: La Mutation Suivante"
+    lang: fr
+    debian:
+      provides: spacequest5-data
+    install:
+    - 0.fon?fr
+    - 10.fon?fr
+    - 100.v56?fr
+    - 1001.v56
+    - 1004.v56?fr
+    - 1005.fon?fr
+    - 1006.v56?fr
+    - 1007.fon?fr
+    - 1008.fon?fr
+    - 101.v56?fr
+    - 104.hep?fr
+    - 104.scr?fr
+    - 1040.hep
+    - 1040.scr
+    - 105.v56?fr
+    - 114.v56?fr
+    - 118.p56
+    - 119.hep
+    - 119.p56
+    - 119.scr
+    - 127.p56?fr
+    - 1307.fon?fr
+    - 133.hep
+    - 133.p56?fr
+    - 133.scr
+    - 137.hep?fr
+    - 137.scr?fr
+    - 142.v56?fr
+    - 160.v56?fr
+    - 1605.fon?fr
+    - 167.v56?fr
+    - 2003.v56?fr
+    - 201.hep
+    - 201.scr
+    - 201.tex
+    - 201.v56
+    - 204.hep
+    - 204.scr
+    - 205.v56?fr
+    - 206.v56
+    - 2099.v56?fr
+    - 2106.fon?fr
+    - 211.v56?fr
+    - 2306.fon?fr
+    - 24.p56?fr
+    - 240.hep
+    - 240.scr
+    - 2407.fon?fr
+    - 2510.fon?fr
+    - 252.v56?fr
+    - 264.v56?fr
+    - 29.v56?fr
+    - 305.hep
+    - 305.scr
+    - 31.p56?fr
+    - 3270.v56
+    - 335.hep
+    - 335.scr
+    - 38.p56
+    - 4.fon?fr
+    - 4111.v56
+    - 4115.fon?fr
+    - 48.p56?fr
+    - 5.p56?fr
+    - 50.p56?fr
+    - 5220.fon
+    - 537.v56?fr
+    - 538.v56?fr
+    - 539.v56
+    - 550.v56?fr
+    - 606.v56?fr
+    - 613.v56?fr
+    - 616.v56?fr
+    - 625.v56?fr
+    - 627.v56?fr
+    - 65535.map
+    - 667.v56?fr
+    - 674.v56?fr
+    - 676.v56?fr
+    - 7.p56?fr
+    - 701.v56?fr
+    - 730.hep
+    - 730.scr
+    - 8.p56?fr
+    - 801.hep
+    - 801.scr
+    - 81.p56?fr
+    - 900.v56
+    - 910.v56
+    - 916.v56
+    - 917.v56
+    - 96.v56
+    - 97.v56?fr
+    - 98.v56?fr
+    - 980.v56?fr
+    - 986.v56?fr
+    - 987.v56?fr
+    - 988.v56?fr
+    - 99.v56?fr
+    - 992.v56?fr
+    - 995.v56?fr
+    - 999.fon?fr
+    - message.map?fr
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.msg?fr
+    - version
+
 files:
   setup_space_quest.exe:
     unpack:
@@ -277,6 +395,97 @@ size_and_md5: |
 
   536147110 d1909145d2b4007b25c27c4afbb3feac setup_space_quest.exe
 
+  2791      ef62d5be51eaba4ee0d49fae99fd55e4 0.fon?fr
+  2701      927db5401f3f7c417645385e3ea582a6 4.fon?fr
+  4654      5a4fe5fca55dec2aeae8bfbddba687a9 5.p56?fr
+  41363     978891550d3ab4261f5717f817a3168c 7.p56?fr
+  7982      14b7202e97e5539cc81cc00118b12382 8.p56?fr
+  2830      899322af76cfb34eee33a4ed45fd53f6 10.fon?fr
+  13455     74c3f243602f153eb31b433cdad7fd1a 24.p56?fr
+  16290     1b7508e15ae7555e84fad9cbe1686f24 29.v56?fr
+  42745     fd85407fb2b403f8537d135f2822dd48 31.p56?fr
+  4960      7c3457998696b390e729023a4b54d77a 38.p56
+  30771     34aa7d28b45e3bcc64ed04c7644d5f21 48.p56?fr
+  17963     f5f920275cab8c27375af45d31a0922c 50.p56?fr
+  50405     7b699875c139beda96851974703f5c0b 81.p56?fr
+  49838     71bf00db4a438e7fdf3adc38941ff69b 97.v56?fr
+  2539      5afd67e8bd57f947bf8c6c1fb9f3d392 98.v56?fr
+  51848     994ee23a7badad8fa1fedc211788ae89 99.v56?fr
+  52368     5fb2a2108242ce75af53aa77c9445d29 100.v56?fr
+  33978     2cffa15c0d0245d6097a357e1290a151 101.v56?fr
+  4850      a38e92354d46e27545cb521d6b88ac9a 104.hep?fr
+  5084      6846639cff0c1764c2b26a2b96ff3aac 104.scr?fr
+  28511     02a50a8e6c773a54cef62a5e5ce2edf6 105.v56?fr
+  17825     b74c13aaaf87e136bbde44f901eb509b 114.v56?fr
+  40052     74c8897324b97f83eb8d3d80811be00d 118.p56
+  4678      4453bf8d90921373a6f8893f0379f8c1 119.hep
+  13046     938dc593cc0ca850438ff7726e6e0b95 119.scr
+  10295     b9fc9a3d815a7f233b653a4436218ad5 127.p56?fr
+  1286      a208ed83a43295ff2cb7152fdede5930 133.hep
+  2830      c1ad07c39c16d3ed23c70cd1d269d399 133.scr
+  13926     b8dae15aa0da6ec21e14f8a475f47589 133.p56?fr
+  1414      249febaac3d99fdd518b9d674456dd2c 137.hep?fr
+  4100      ba755124389e1c5b3806d269b57c4db6 137.scr?fr
+  15900     c5ff2302301e01b446ba0077cfdf3e43 142.v56?fr
+  52922     2bd3184d1646e00ceb1b688ec19383eb 160.v56?fr
+  35149     d5082dce7a3c45f13ebca96f3ce7e4a1 167.v56?fr
+  8381      3b601f2559109ffc4d23228f3ce7ae6a 201.v56
+  16632     66f9fe238f6b0c1828a3c9a97a79ad1b 205.v56?fr
+  15278     287a7d6bca60b9c376ce5b30c7ba4298 206.v56
+  27005     8eee8c809d1a1119abe5257aa58b2933 211.v56?fr
+  4116      1a07af337b3a1daa07c9b75e29ff0b2a 240.hep
+  12300     14fd456e64d40c265664331751f9333a 240.scr
+  7148      b8b5f42bbe4d56942af0e6b74aada9bc 252.v56?fr
+  11603     e06275f6cf1932cbd573a417b97559a8 264.v56?fr
+  2934      60995e9087930dbf4ffe61d54158cd61 305.hep
+  7940      26835cb7856266f79954f0ab67ab360b 305.scr
+  12298     cb907549904e81cf37eeefdd6609cde4 537.v56?fr
+  48559     fec5def91684805dd8d983c900a8368c 538.v56?fr
+  4368      b0c0fe6879e45cafbd9a9edcc4b59562 539.v56
+  28675     518972839ca8a482f023ec9b34a0d616 550.v56?fr
+  15615     437b72316ebd887060e7ebeaa1aaccfa 606.v56?fr
+  8842      e1d4f28c28ded114d3756d84623d47d5 613.v56?fr
+  4491      4f5fd1e4ebc5fb084ac9b510f584e696 616.v56?fr
+  21688     6553f00f1eeea6825f65e2e8362e7906 625.v56?fr
+  18092     97afc538fb103a1423520a505b083763 627.v56?fr
+  8467      951401ea085d803968ca0aa29f163d7f 667.v56?fr
+  38526     8b4a8fb3da1a618b5c99dc9fe62d0317 674.v56?fr
+  21614     582c964f6b829f2c4dae70abce00c811 676.v56?fr
+  5176      1866ae9171ba8d68282572e2540a8537 701.v56?fr
+  3016      583e8c73b8206fe494fee9f58da93d8e 730.hep
+  6774      a183cb5d9b51458380d432dc8d371556 730.scr
+  5086      bb4a6310f45b24a46c115d5b85131c33 801.hep
+  6604      cd61a4503a9111d1b0f6a2656728767e 801.scr
+  2109      0a64ce187ab1ac9f4e539e0a204affef 980.v56?fr
+  1362      47f66e410750d7951828a7b1f8d494d5 986.v56?fr
+  1581      56e530b3696f738462c286287baa3e76 987.v56?fr
+  1308      0a3152f6dbfdc701bd16257d869b8cdc 988.v56?fr
+  10080     f08b79ea4d88700823d2ab5317e1246b 992.v56?fr
+  11506     9cdf15ddf3f0024569108bf12afddb59 995.v56?fr
+  2587      50d305bad8b76e6194ae612986f3d72c 999.fon?fr
+  14773     5c408f73b8aa3a314f06f386173093f2 1001.v56
+  9903      7e1b0d08b7c4a9e9ef75e327fcad7562 1004.v56?fr
+  2776      64ba4a7dd0e8efb7d2fbd73555eba084 1005.fon?fr
+  8751      679579898b3c22241d32f9e7db296312 1006.v56?fr
+  2573      ae1e990eeb1913f1b28f92158137e8d9 1007.fon?fr
+  2653      8f9a63e0604f9fc8d710ff6ab47e4fab 1008.fon?fr
+  4182      a912697a7e9388deb210e0f9b3574163 1040.hep
+  3448      a5f7d6d67690a6ce40615a7498ad2daa 1040.scr
+  2751      18b362fc02ff8f70bc978e2366d2eee0 1307.fon?fr
+  2795      9cd1260022c0758a03dcd326f1dd0028 1605.fon?fr
+  23734     b84d541a3ad742821e6bdeac2e2f6ff5 2003.v56?fr
+  3203      6c5497f26665b978a7a1fc00353eeceb 2099.v56?fr
+  2756      3358469e0affc1d1c1edc74a9c21e00d 2106.fon?fr
+  2553      6bf5f69cbe3f9a871817726886f6b4de 2306.fon?fr
+  2601      5adb0a22d297aa2aeaeacf5658af758c 2407.fon?fr
+  3635      8fcb8500cfc8e4d02bc46ef50f541c8e 2510.fon?fr
+  2183      bae815c64b035e692355388c51410c8b 3270.v56
+  2574      bf54ece2e1ca533840ab02cda142b044 4111.v56
+  5326      144a47abc05f2f4d42a321c2820e3e5d 4115.fon?fr
+  2816      6d1f223521eb690db06166c84238efaa 5220.fon
+  446       71dfa6d6795b68b68ac36353870311aa message.map?fr
+  140374    669db9ab3615c6de4a6fda0e0d2c680e resource.msg?fr
+
 sha1sums: |
   2a2ce2807ad71675dd5c2d2fbcf87def8d54dfee  setup_space_quest.exe
   3b21ba5410e75ddf25042d3873a9f12cfd9470ad  100.v56
@@ -349,5 +558,47 @@ sha1sums: |
   7affe5977cc225cef61a204c3de9b6b9b92882e2  resource.aud
   694f0971919c592979559cb25c0c37c301f9d895  resource.map
   bc0892ecd7a66d01c2aa33226eb7cdf65713fbb6  resource.msg
-...
 
+  0e2dac82a2d6ee159e0c1242b9b05484a58ccb24  100.v56?fr
+  f5f1af5e68f95ba960230de5d689988724f5f3d3  1004.v56?fr
+  0751cbf12ad752ba7c0b9ecbdc811c0531758dff  1006.v56?fr
+  ae3f79fb1cef2810b5a562bc95d0b87ebe07af64  101.v56?fr
+  1ed4b6f8636e788f795e6fbcd384b892d2f5c9e8  104.scr?fr
+  df156788a364a40c400b2f93443bf250d0516db6  105.v56?fr
+  a9a6439944e48620a67984ef9a5f58373e39773a  114.v56?fr
+  26ec238032d78791cd73396778fbbf7c942edf2f  127.p56?fr
+  6f2c6f3cd7fd8301b0dcbc122e2013a82893041b  133.p56?fr
+  f44b7c3881ee7ec7f4b22910ec741fbfe2992e88  142.v56?fr
+  087d4f3df7d88cad7e0e897ad5677dd6d17fbe01  160.v56?fr
+  40b85d5fc701601b09f4b6939d90478025168399  167.v56?fr
+  e871788a2f3f48dfc5c7ad02c295d8652cada2bc  2003.v56?fr
+  b3d9d917f773f5f6e1f52cd0d841c92b26e47235  205.v56?fr
+  6ac0e5b71c8e0a26e8e2ba5d108f136e67b441f1  211.v56?fr
+  1ef503a1329fe73ce00ce1559edda7ca568f71c8  24.p56?fr
+  ad4de2ee8e22d5c8060ea73ef4ebc9208bd9ae4e  252.v56?fr
+  c9a14efafb70bb0937ae46f928e615fd297116b7  264.v56?fr
+  88235aa4784220df36c53734883937e63a68c9d5  29.v56?fr
+  64ea64128623cf56fe94b306e2d4a91f52343532  31.p56?fr
+  3a3d2f7dfeae1b409efb2d0330054a19f8600997  4115.fon?fr
+  f86df270aa0d8ec31c9a5f7b8a5c81c27600b089  48.p56?fr
+  c621fa307744380a6e4ad770cc0118d75cdd4a63  50.p56?fr
+  41b23f811e0f83d9f3c69b314222ce8468adff71  537.v56?fr
+  7fbe304972b0710e0ee95815f5be2a3f06c36a1e  538.v56?fr
+  aa3c872ab539b1f86326d8cb6ad0af8ec9720a4f  550.v56?fr
+  523a15661c1e8b4323bb844305ebd08916adaf4e  606.v56?fr
+  d424e54020c50216a31bf0e805f6c2f190e8368e  613.v56?fr
+  1043f3edfc8b2d8f6afe6c6c0ab88517af7ea546  625.v56?fr
+  faab03079be19a2143edc788870942771132d9d3  627.v56?fr
+  1d32daa69f529feea9c27a0f19174de83415ad0f  667.v56?fr
+  6d41336f43707bd5bf62678866a224b0aa91f127  674.v56?fr
+  964c0f5e541cba94b58435bafbac673a31a8f966  676.v56?fr
+  ad52c0e36992284a93d09d0aedbfdb9424ab11b1  7.p56?fr
+  ff89e3c177c8461b701bb8a82d7116987d89a62e  701.v56?fr
+  ac89c5ea202e6b334656c987013f257e660321c7  8.p56?fr
+  465ad4c5971a71756530e0f1b7e2c8c466ebab72  81.p56?fr
+  43710d2670f1b250412afc98609300c02d9054f1  97.v56?fr
+  8a93b4c8a5c161665ea94c4c863299d42ecfd0d9  99.v56?fr
+  ce81a2608a869407fb10085913fa005419fee448  992.v56?fr
+  3f5acddbd0a74be09404f18a6668311f5ecd9505  995.v56?fr
+  7c8ab2b3c245418d08c0cfef935ad494d0842fba  resource.msg?fr
+...
