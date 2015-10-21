@@ -92,6 +92,8 @@ game-data-packager (43) UNRELEASED; urgency=medium
   * Enable parallel build
   * Log external commands at debug level before we run them
   * Never try to unpack an archive more than once
+  * Warn if we unpack an archive and it doesn't contain everything that
+    our metadata says it should
 
  -- Simon McVittie <smcv@debian.org>  Thu, 16 Jul 2015 09:59:23 +0200
 
