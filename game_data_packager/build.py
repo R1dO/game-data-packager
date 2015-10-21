@@ -356,8 +356,8 @@ class PackagingTask(object):
         # Set of executables we wanted but don't have
         self.missing_tools = set()
 
-        # Set of filenames we couldn't unpack
-        self.unpack_failed = set()
+        # Set of filenames we couldn't unpack, or already unpacked
+        self.unpack_tried = set()
 
         # Block device from which to rip audio
         self.cd_device = None
@@ -977,11 +977,16 @@ class PackagingTask(object):
                     logger.debug('other part "%s" is %s' % (p, part_status))
                     provider_status &= part_status
 
-            if provider_status is FillResult.COMPLETE:
+            if provider_name in self.unpack_tried:
+                logger.debug('already tried unpacking provider %s',
+                        provider_name)
+            elif provider_status is FillResult.COMPLETE:
                 found_name = self.found[provider_name]
                 logger.debug('trying provider %s found at %s',
                         provider_name, found_name)
                 fmt = provider.unpack['format']
+
+                self.unpack_tried.add(provider_name)
 
                 if self.verbose and fmt in ('zip', 'unzip'):
                     with zipfile.ZipFile(found_name, 'r') as zf:
@@ -2366,7 +2371,7 @@ class PackagingTask(object):
         if not wanted.unpack:
             return True
 
-        if wanted.name in self.unpack_failed:
+        if wanted.name in self.unpack_tried:
             return False
 
         fmt = wanted.unpack['format']
@@ -2389,7 +2394,7 @@ class PackagingTask(object):
         logger.warning('cannot unpack "%s": tool "%s" is not ' +
                        'installed', wanted.name, fmt)
         self.missing_tools.add(fmt)
-        self.unpack_failed.add(wanted.name)
+        self.unpack_tried.add(wanted.name)
         return False
 
     def log_missing_tools(self):

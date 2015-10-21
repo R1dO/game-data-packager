@@ -91,6 +91,7 @@ game-data-packager (43) UNRELEASED; urgency=medium
   * quake2: mark videos as optional (Closes: #800575)
   * Enable parallel build
   * Log external commands at debug level before we run them
+  * Never try to unpack an archive more than once
 
  -- Simon McVittie <smcv@debian.org>  Thu, 16 Jul 2015 09:59:23 +0200
 
