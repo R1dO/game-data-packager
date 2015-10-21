@@ -16,6 +16,7 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
+import grp
 import logging
 import os
 import shlex
@@ -26,6 +27,7 @@ import sys
 
 from debian.debian_support import Version
 
+from .paths import DATADIR
 from .version import GAME_PACKAGE_VERSION
 
 logger = logging.getLogger('game-data-packager.util')
@@ -181,7 +183,42 @@ def ascii_safe(string, force=False):
                                                 'aacceeeeiiiln***'))
     return string
 
-def run_as_root(argv, gain_root='su'):
+def run_as_root(argv, gain_root=''):
+    if not gain_root and which('pkexec') is not None:
+            # Use pkexec if possible. It has desktop integration, and will
+            # prompt for the user's password if they are administratively
+            # privileged (a member of group sudo), or root's password
+            # otherwise.
+            gain_root = 'pkexec'
+
+    if not gain_root and which('sudo') is not None:
+        # Use sudo as the next choice after pkexec, but only if we're in
+        # a group that should be able to use it.
+        try:
+            sudo_group = grp.getgrnam('sudo')
+        except KeyError:
+            pass
+        else:
+            if sudo_group.gr_gid in os.getgroups():
+                gain_root = 'sudo'
+
+        # If we are in the admin group, also use sudo, but only
+        # if this looks like Ubuntu. We use dpkg-vendor at build time
+        # to detect Ubuntu derivatives.
+        try:
+            admin_group = grp.getgrnam('admin')
+        except KeyError:
+            pass
+        else:
+            if (admin_group.gr_gid in os.getgroups() and
+                    os.path.exists(os.path.join(DATADIR,
+                        'is-ubuntu-derived'))):
+                gain_root = 'sudo'
+
+    if not gain_root:
+        # Use su if we don't have anything better.
+        gain_root = 'su'
+
     if gain_root not in ('su', 'pkexec' ,'sudo', 'super', 'really'):
         logger.warning(('Unknown privilege escalation method %r, assuming ' +
             'it works like sudo') % gain_root)

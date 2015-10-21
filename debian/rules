@@ -32,8 +32,9 @@ override_dh_auto_clean:
 override_dh_install:
 	dh_install
 	echo 'GAME_PACKAGE_VERSION = """$(DEB_VERSION)"""' > debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/version.py
-	if dpkg-vendor --is Raspbian; then sed -i 's#"su"#"sudo"#' debian/game-data-packager/etc/game-data-packager.conf; fi
-	if dpkg-vendor --derives-from Ubuntu; then sed -i 's#"su"#"sudo"#' debian/game-data-packager/etc/game-data-packager.conf; fi
+	if dpkg-vendor --derives-from Ubuntu; then \
+		touch debian/game-data-packager/usr/share/games/game-data-packager/is-ubuntu-derived; \
+	fi
 	install -D -m755 runtime/doom2-masterlevels.py debian/game-data-packager/usr/games/doom2-masterlevels
 
 override_dh_installdocs:

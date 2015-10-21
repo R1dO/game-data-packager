@@ -82,7 +82,9 @@ game-data-packager (43) UNRELEASED; urgency=medium
     and *sums files, which are loaded lazily. This speeds up
     "game-data-packager --help" considerably. (Continuation of #779937)
   * Add configurable installation method instead of always using dpkg or apt
-  * Add configurable privilege-gaining method instead of always using su
+  * Add configurable privilege-gaining method instead of always using su,
+    defaulting to pkexec if available, or sudo if available and the user
+    is in a privileged group, or su
   * Update metadata for yquake2 mod code
     - The Reckoning (xatrix) 2.03 (Closes: #799954)
     - Ground Zero (rogue) 2.02 (Closes: #799955)

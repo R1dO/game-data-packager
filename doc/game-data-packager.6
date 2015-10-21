@@ -51,9 +51,15 @@ such game data from CD-ROMs, the Internet or elsewhere.
 .TP
 .B \-i
 attempt to install the generated Debian package via
-.B dpkg(1)
-and 
-.B su(1)
+.BR dpkg (1)
+or
+.BR apt (8),
+using
+.BR pkexec (1),
+.BR sudo (1)
+or
+.BR su (1)
+to obtain suitable privileges.
 \.
 .TP
 .B \-d out-directory
