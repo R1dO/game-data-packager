@@ -8,6 +8,7 @@ gameid: sq5
 
 packages:
   spacequest5-en-data:
+    longname: "Space Quest V: The Next Mutation (v1.04)"
     debian:
       provides: spacequest5-data
     gog:
@@ -98,6 +99,98 @@ packages:
     - resource.map
     - resource.msg
     - version
+
+  spacequest5-103-en-data:
+    longname: "Space Quest V: The Next Mutation (v1.03)"
+    better_version: spacequest5-en-data
+    debian:
+      provides: spacequest5-data
+    install:
+    - 0.fon
+    - 10.fon
+    - 100.v56
+    - 1004.v56
+    - 1005.fon
+    - 1006.v56
+    - 1007.fon
+    - 1008.fon
+    - 101.v56
+    - 104.hep
+    - 104.scr
+    - 105.v56
+    - 114.v56
+    - 119.p56
+    - 127.p56
+    - 1307.fon
+    - 133.p56
+    - 137.hep
+    - 137.scr
+    - 142.v56
+    - 160.v56
+    - 1605.fon
+    - 167.v56
+    - 2003.v56
+    - 201.hep
+    - 201.scr
+    - 201.tex
+    - 204.hep
+    - 204.scr
+    - 205.v56
+    - 2099.v56
+    - 2106.fon
+    - 211.v56
+    - 2306.fon
+    - 24.p56
+    - 2407.fon
+    - 2510.fon
+    - 252.v56
+    - 264.v56
+    - 29.v56
+    - 31.p56
+    - 335.hep
+    - 335.scr?1.03
+    - 4.fon
+    - 4115.fon
+    - 48.p56
+    - 5.p56
+    - 50.p56
+    - 537.v56
+    - 538.v56
+    - 550.v56
+    - 606.v56
+    - 613.v56
+    - 616.v56
+    - 625.v56
+    - 627.v56
+    - 65535.map
+    - 667.v56
+    - 674.v56
+    - 676.v56
+    - 7.p56
+    - 701.v56
+    - 8.p56
+    - 81.p56
+    - 900.v56
+    - 910.v56
+    - 916.v56
+    - 917.v56
+    - 96.v56
+    - 97.v56
+    - 98.v56
+    - 980.v56
+    - 986.v56
+    - 987.v56
+    - 988.v56
+    - 99.v56
+    - 992.v56
+    - 995.v56
+    - 999.fon
+    - message.map
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.msg
+    - version?1.03
 
   spacequest5-fr-data:
     longname: "Space Quest V: La Mutation Suivante"
@@ -350,6 +443,7 @@ size_and_md5: |
   43072     810779c5330dfc6741a277684014dc68 31.p56
   3514      0f18cde9cdface83baa442c4d29f5402 335.hep
   3054      09f4b3ad1ce4566d1b09ec5f36a12319 335.scr
+  3050      bdbf393f702e1de9db35667d4154bf80 335.scr?1.03
   1323      5b0d667b915abab96d23b636cf703b22 4.fon
   3479      ef5f9963c174f9b0201df1920e2d16b5 4115.fon
   31003     017e100468064e8f945b3287a5ea4df1 48.p56
@@ -392,6 +486,7 @@ size_and_md5: |
   6143      ea937aae231c4acdaeb249dea8f71060 resource.map
   125988    47fec20a4d5d973e4235bab8cea40676 resource.msg
   7         3dd2fe70870f9ca46d53d5dec17466fc version
+  6         f2b0054b79403596c4687dda393ba724 version?1.03
 
   536147110 d1909145d2b4007b25c27c4afbb3feac setup_space_quest.exe
 
