@@ -53,10 +53,15 @@ ou d'ailleurs.
 .TP
 .B \-i
 installer directement le package créé avec
-.B dpkg(1)
-et
-.B su(1)
-\.
+.BR dpkg (1)
+ou
+.BR apt (8),
+en utilisant
+.BR pkexec (1),
+.BR sudo (1)
+ou
+.BR su (1)
+pour obtenir les droits superutilisateur.
 .TP
 .B \-d répertoire-de-destination
 écrire les packages .deb générés dans le répertoire désigné.
@@ -145,7 +150,7 @@ qui sert ensuite à télécharger une liste des jeux possédés par l'utilisateu
 .B ~/.cache/lgogdownloader/gamedetails.json
 reprend une copie de la liste des jeux GOG.com achetés par l'utilisateur
 .SH VOIR AUSSI
-\fIdpkg\fP(1), \fIsu\fP(1), \fIlgogdownloader\fP(1)
+\fIpkexec\fP(1), \fIsudo\fP(8), \fIsu\fP(1), \fIlgogdownloader\fP(1)
 .br
 Project homepage:
 .URL "https://wiki.debian.org/fr/Games/GameDataPackager"
