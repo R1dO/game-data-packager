@@ -51,6 +51,7 @@ from .util import (AGENT,
         lang_score,
         mkdir_p,
         rm_rf,
+        recursive_utime,
         which)
 from .version import GAME_PACKAGE_VERSION
 
@@ -1081,10 +1082,9 @@ class PackagingTask(object):
                             cwd=tmpdir)
                     # this format doesn't store a timestamp, so the extracted
                     # files will instead inherit the archive's timestamp
-                    orig_time = os.stat(found_name).st_mtime
+                    recursive_utime(tmpdir, os.stat(found_name).st_mtime)
                     for f in to_unpack:
                         tmp = os.path.join(tmpdir, f)
-                        os.utime(tmp, (orig_time, orig_time))
                         self.consider_file(tmp, True)
                 elif fmt == 'cabextract':
                     to_unpack = provider.unpack.get('unpack', provider.provides)
@@ -1211,11 +1211,7 @@ class PackagingTask(object):
 
                     # this format doesn't store a timestamp, so the extracted
                     # files will instead inherit the archive's timestamp
-                    orig_time = os.stat(found_name).st_mtime
-                    for dirpath, dirnames, filenames in os.walk(tmpdir):
-                        for fn in filenames:
-                            full = os.path.join(dirpath, fn)
-                            os.utime(full, (orig_time, orig_time))
+                    recursive_utime(tmpdir, os.stat(found_name).st_mtime)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'arj':
                     to_unpack = provider.unpack.get('unpack', provider.provides)

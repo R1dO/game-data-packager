@@ -238,3 +238,17 @@ def check_output(command, *args, **kwargs):
     """Like subprocess.check_output, but log what we will do first."""
     logger.debug('%r', command)
     return subprocess.check_output(command, *args, **kwargs)
+
+def recursive_utime(directory, orig_time):
+    """Recursively set the access and modification times of everything
+    in directory to orig_time.
+
+    orig_time may be a tuple (atime, mtime), or a single int or float.
+    """
+    if isinstance(orig_time, (int, float)):
+        orig_time = (orig_time, orig_time)
+
+    for dirpath, dirnames, filenames in os.walk(directory):
+        for fn in filenames:
+            full = os.path.join(dirpath, fn)
+            os.utime(full, orig_time)
