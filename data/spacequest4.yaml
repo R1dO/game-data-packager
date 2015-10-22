@@ -8,6 +8,8 @@ gameid: sq4
 
 packages:
   spacequest4-dos-en-data:
+    version: '1.052'
+    # yes, version 1.0 is better than 1.052
     better_version: spacequest4-win-data
     debian:
       provides: spacequest4-data
@@ -34,6 +36,7 @@ packages:
 
   spacequest4-win-data:
     copyright: © 1992 Sierra
+    version: '1.0'
     debian:
       provides: spacequest4-data
     gog:
@@ -59,6 +62,7 @@ packages:
 
   spacequest4-fr-data:
     longname: "Space Quest IV: Roger Wilco et les Voyageurs dans le Temps"
+    version: '1.00'
     lang: fr
     debian:
       provides: spacequest4-data

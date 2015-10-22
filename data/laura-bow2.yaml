@@ -8,6 +8,7 @@ wiki: The_Dagger_of_Amon_Ra
 
 packages:
   laura-bow2-data:
+    version: '1.1'
     optional:
     # squareish picture, could be converted in a .png icon
     - laurt.bmp
@@ -93,6 +94,7 @@ packages:
     - audiosfx/96.aud
 
   laura-bow2-floppy-en-data:
+    version: '1.000'
     better_version: laura-bow2-data
     debian:
       provides: laura-bow2-floppy-data
@@ -154,6 +156,7 @@ packages:
     - 999.fon
 
   laura-bow2-floppy-fr-data:
+    version: '1.1'
     lang: fr
     longname: "Laura Bow 2: La Dague d'Amon-Ra"
     debian:

@@ -9,6 +9,7 @@ gameid: sq5
 packages:
   spacequest5-en-data:
     longname: "Space Quest V: The Next Mutation (v1.04)"
+    version: '1.04'
     debian:
       provides: spacequest5-data
     gog:
@@ -103,6 +104,7 @@ packages:
   spacequest5-103-en-data:
     longname: "Space Quest V: The Next Mutation (v1.03)"
     better_version: spacequest5-en-data
+    version: '1.03'
     debian:
       provides: spacequest5-data
     install:
