@@ -7,6 +7,7 @@ wiki: EcoQuest_II
 
 packages:
   ecoquest2-en-data:
+    version: 1.000
     debian:
       provides: ecoquest2-data
     install:
@@ -25,6 +26,7 @@ packages:
     - version
 
   ecoquest2-fr-data:
+    version: 1.000
     debian:
       provides: ecoquest2-data
     lang: fr
