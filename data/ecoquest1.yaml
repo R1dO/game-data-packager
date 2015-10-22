@@ -14,7 +14,7 @@ help_text: |
 
 packages:
   ecoquest1-en-data:
-    version: 1.000
+    version: '1.000'
     debian:
       provides: ecoquest1-data
     install:
@@ -43,7 +43,7 @@ packages:
     - version
 
   ecoquest1-fr-data:
-    version: 1.000
+    version: '1.000'
     longname: 'EcoQuest 1 - Le Secret de la cité engloutie'
     debian:
       provides: ecoquest1-data
