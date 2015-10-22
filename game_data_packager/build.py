@@ -53,7 +53,6 @@ from .util import (AGENT,
         rm_rf,
         recursive_utime,
         which)
-from .version import GAME_PACKAGE_VERSION
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager.build')
@@ -1645,10 +1644,6 @@ class PackagingTask(object):
             control['Conflicts'] = ', '.join(sorted(conflicts))
         if breaks:
             control['Breaks'] = ', '.join(sorted(breaks))
-
-        if 'Version' in control:
-            package.version = control['Version'].replace('VERSION',
-                    GAME_PACKAGE_VERSION)
 
         control['Version'] = package.version
 
