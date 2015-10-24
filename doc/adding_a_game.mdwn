@@ -117,6 +117,52 @@ to mapping:
   sets to install
 * `engine`: let you overide the engine in special cases
 
+#### Steam games
+
+For games that can be bought from Steam, the top-level metadata, the
+individual packages or both can have a mapping named `steam`, with
+these keys:
+
+* `id`: the numeric identifier of the game, as seen in
+  URLs like http://store.steampowered.com/app/2280/
+* `path`: the directory below `steamapps` where Steam installs the game,
+  usually starting with `common/`
+
+#### GOG games
+
+Similar to Steam, games sold on gog.com can have a mapping named `gog`
+with these keys:
+
+* `url`: the game-specific part of games' URLs, such as
+  `the_ultimate_doom` for http://www.gog.com/game/the_ultimate_doom
+* `pp`: an affiliate ID, typically used to donate to a relevant game engine
+  (if not specified, g-d-p will use ScummVM's affiliate ID)
+* `path`: the directory below `GOG Games` where the GOG installer puts
+  the game by default, or a list of strings if more than one directory
+  is used by different installer versions. game-data-packager will
+  search any directory that starts with this string, so language
+  suffixes are not necessary: if GOG will install "Some Game (German)",
+  only "Some Game" is needed.
+
+#### Origin games
+
+Similar to Steam, games sold on Origin can have a mapping named `origin`
+with these keys:
+
+* `path`: the directory below `Origin Games` where Origin installs the game
+
+Use the `url_misc` top-level key for Origin download URLs: see
+`data/syndicate.yaml` and `data/theme-hospital.yaml` for examples.
+
+#### dotemu games
+
+Similar to Steam, games sold on dotemu can have a mapping named `dotemu`
+with these keys:
+
+* `id`: the numeric identifier of the game
+* `pp`: an affiliate ID, typically used to donate to a relevant game engine
+  (if not specified, g-d-p will use ScummVM's affiliate ID)
+
 ### Step 2: required files for the `.deb`
 
 #### things to include in the template package

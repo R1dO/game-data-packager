@@ -11,6 +11,11 @@ genre: string
 steam:
   id: int
   path: string
+gog:
+  url: string
+  pp: string (hash)
+  game: string
+  path: string (prefix)
 try_repack_from: list
 missing_langs: list
 
@@ -47,6 +52,7 @@ packages:
       url: string
       pp: string (hash)
       game: string
+      path: string (prefix)
     steam:
       id: int
       path: string
