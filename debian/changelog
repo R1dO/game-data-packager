@@ -1,76 +1,100 @@
 game-data-packager (43) UNRELEASED; urgency=medium
 
+  New game support:
+
   [ Alexandre Detiste ]
-  * add support for extra miscellaneous shops URLs
-  * Day Of The Tentacle: add French, Italian & Spanish versions
-  * Maniac Mansion: add Italian & Spanish versions
-  * Grim Fandango: add French, Brazilian & Spanish versions
-  * RTCW: add German & Spanish versions
-  * Leisure Suit Larry 5: add French version
-  * Space Quest: add French versino for Ep.4&5
-  * add support for ScummVM games:
-    - Lands of Lore: The Throne of Chaos
-    - Castle of Dr. Brain & The Island of Dr. Brain
-    - Toonstruck
-    - The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel
-       (support for this game is currently being added to scummvm)
-    - Hugo's House of Horrors and it's two sequels
+  * X-COM: UFO Defense (Closes: #793017)
+  * ScummVM games:
     - 3 Skulls of the Toltecs
-    - Lost in Time
     - Bargon Attack
+    - The Black Cauldron
     - Blue Force
-    - Enclosure & "Hank's Quest" fan-made games
-    - the Feeble Files
-    - the Black Cauldron
-    - Gold Rush!
-    - Manhunter 1 & 2
-    - the Manhole
-    - Personal Nightmare
-    - Future Wars (English version)
-    - Cruise for a Corpse
-    - EcoQuest 1 & 2
-    - Eye of the Beholder 1 & 2
+    - Castle of Dr. Brain & The Island of Dr. Brain
     - Chivalry is Not Dead
     - Codename: ICEMAN
+    - Cruise for a Corpse
+    - EcoQuest 1 & 2
+    - Enclosure (fan-made game)
+    - Eye of the Beholder 1 & 2
+    - The Feeble Files
+    - Future Wars (English version)
+    - Gold Rush!
+    - Hank's Quest (fan-made game)
+    - Hugo's House of Horrors and its two sequels
+    - Lands of Lore: The Throne of Chaos
     - Laura Bow 1 & 2
+    - The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel
+       (support for this game is currently being added to scummvm)
+    - Lost in Time
+    - Manhunter 1 & 2
+    - The Manhole
     - The Neverhood
-  * add support for X-COM: UFO Defense (Closes: #793017)
-  * fix speeches altenatives in Broken Sword1 (Closes: #795624)
-  * use apt-get 1.1 instead of dpkg to install local .deb if available;
-    this will automatically pull recommended engine
-  * add "game-data-packager steam" mode
-  * make-template mode: check innoextract version (Closes: #797550)
-  * add support for the new Doom packages at GOG.com (Closes: #796995)
-  * call 'lgogdownloader' automatically (Closes: #782205)
-  * fix Quake2 exp. "Ground Zero" & "Reckoning"
-  * Add partial support (no music) for the gog.com version of Quake 1
-    (partially addresses Bug #798816)
-  * Add support for the gog.com version of Quake 3 (Closes: #801671)
-    The 'quake3-data' package now includes the HTML documentation.
-
-  [ Stephen Kitt ]
-  * Add Steam path for The 7th Guest.
-  * Add support for the Steam version of Loom.
-  * Add support for the EGA version of Loom.
-  * Add support for Indiana Jones and the Last Crusade.
-  * Add support for the French PC and English Amiga versions of Future
-    Wars.
-  * Add support for Discworld (CD).
+    - Personal Nightmare
+    - Toonstruck
 
   [ Markus Koschany ]
-  * Add support for Wolfenstein: Enemy Territory. The game data can be used
-    with the etlegacy engine. (Closes: #780446)
-  * Add support for the gog.com version (English Linux Installer) of
-    Baldur's Gate - The Original Saga which can be used with the gemrb engine.
-    (Closes: #776540)
-  * Add support for Baldur's Gate 2, English Linux installer from gog.com.
+  * Wolfenstein: Enemy Territory, for the etlegacy engine (Closes: #780446)
+  * Baldur's Gate - The Original Saga (GOG.com English Linux installer)
+    for the gemrb engine (Closes: #776540)
+  * Baldur's Gate 2 (GOG.com English Linux installer) for the gemrb engine
     (Closes: #800712)
-  * Add support for Icewind Dale, English Windows installer from gog.com.
-    (Closes: #800713)
-  * Add support for Icewind Dale 2, English Windows installer from gog.com.
-    (Closes: #800714)
-  * Add support for Planescape: Torment, English Windows installer from
-    gog.com. (Closes: #800715)
+  * Icewind Dale (GOG.com English Windows installer) (Closes: #800713)
+  * Icewind Dale 2 (GOG.com English Windows installer) (Closes: #800714)
+  * Planescape: Torment (GOG.com English Windows installer) (Closes: #800715)
+
+  [ Stephen Kitt ]
+  * ScummVM games:
+    - Indiana Jones and the Last Crusade
+    - Discworld (CD version)
+
+  [ Simon McVittie ]
+  * Quake 4, using the proprietary x86 binaries
+
+  Support for new languages and versions:
+
+  [ Alexandre Detiste ]
+  * Day Of The Tentacle: French, Italian, Spanish
+  * Doom packages from GOG.com (Closes: #796995)
+  * Grim Fandango: French, Brazilian, Spanish, Italian;
+    English, French, Italian demos
+  * Legend of Kyrandia 1: English floppy disk version
+  * Leisure Suit Larry 5: French
+  * Maniac Mansion: Italian, Spanish
+  * Quake 1: partial support (no music) for the gog.com version
+    (partially addresses Bug #798816)
+  * Quake 3: support the GOG.com version (Closes: #801671)
+    The 'quake3-data' package now includes the HTML documentation
+    if available.
+  * RTCW: German, Spanish
+  * Space Quest 4 and 5: French
+
+  [ Stephen Kitt ]
+  * The 7th Guest: Steam version
+  * Loom: Steam version, EGA version
+  * Future Wars: French PC and English Amiga versions
+
+  Other changes:
+
+  [ Alexandre Detiste ]
+  * Add myself to Uploaders
+  * Add support for more miscellaneous shop URLs
+  * Fix speech alternatives in Broken Sword 1 (Closes: #795624)
+  * Use apt-get 1.1 instead of dpkg to install local .deb if available;
+    this will automatically pull recommended engine
+  * Add "game-data-packager steam" mode
+  * make-template mode: check innoextract version (Closes: #797550)
+  * Call 'lgogdownloader' automatically (Closes: #782205)
+  * Fix Quake2 expansions "Ground Zero" and "Reckoning", and name the .deb
+    with the correct architecture, not "all"
+  * Display messages about "not building X because Y is better"
+    by default, not just in debug mode
+  * Make it less likely that unnecessary files are downloaded
+  * Don't warn if doom-wad-shareware is installed
+  * Search for Steam at the root of a disk, since C:\ on SSD and
+    D:\Steam on HDD is a somewhat popular setup
+  * Pack game data into a zip file for faster startup when installed
+
+  [ Markus Koschany ]
   * Vcs-Browser: Use cgit and https.
 
   [ Simon McVittie ]
@@ -99,6 +123,8 @@ game-data-packager (43) UNRELEASED; urgency=medium
     our metadata says it should
   * rtcw: add Replaces, so that dpkg will automatically replace rtcw-data
     with language-specific packages like rtcw-en-data
+  * Add --debug command-line option, more discoverable than DEBUG=1
+  * Make GOG search-paths more declarative
 
  -- Simon McVittie <smcv@debian.org>  Thu, 16 Jul 2015 09:59:23 +0200
 
