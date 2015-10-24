@@ -943,7 +943,8 @@ class GameData(object):
         return gog.get('game', gog['url'])
 
 def load_games(game='*'):
-    progress = game == '*' and sys.stderr.isatty()
+    progress = (game == '*' and sys.stderr.isatty() and
+            not logging.getLogger().isEnabledFor(logging.DEBUG))
     games = {}
 
     if USE_VFS:
@@ -1047,6 +1048,13 @@ def run_command_line():
     group.add_argument('--no-verbose', action='store_false',
             dest='verbose', help='hide output from external '
              'tools (default)')
+
+    class DebugAction(argparse.Action):
+        def __call__(self, parser, namespace, values, option_string=None):
+            logging.getLogger().setLevel(logging.DEBUG)
+
+    base_parser.add_argument('--debug', action=DebugAction, nargs=0,
+            help='show debug messages')
 
     class DumbParser(argparse.ArgumentParser):
         def error(self, message):
