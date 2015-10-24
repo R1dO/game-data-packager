@@ -3,15 +3,15 @@ longname: The Hugo Trilogy
 copyright: © 1990-1992 Gray Design Associates
 plugin: scummvm_common
 wiki: Hugo
-try_repack_from: ['~/GOG Games/The Hugo Trilogy']
+gog:
+  path: 'The Hugo Trilogy'
+  url: the_hugo_trilogy
 
 packages:
   hugo1-data:
     longname: "Hugo's House of Horrors"
     copyright: © 1990 Gray Design Associates
     gameid: hugo1
-    gog:
-      url: the_hugo_trilogy
     install:
     - hugo.bsf
     - objects.dat?hugo1
@@ -26,8 +26,6 @@ packages:
     longname: "Hugo II, Whodunit?"
     copyright: © 1991 Gray Design Associates
     gameid: hugo2
-    gog:
-      url: the_hugo_trilogy
     install:
     - hugo.bsf
     - objects.dat?hugo2
@@ -42,8 +40,6 @@ packages:
     longname: "Hugo III, Jungle of Doom!"
     copyright: © 1992 Gray Design Associates
     gameid: hugo3
-    gog:
-      url: the_hugo_trilogy
     install:
     - hugo.bsf
     - objects.dat?hugo3

@@ -8,17 +8,11 @@ gameid: ihnm
 steam:
   id: 245390
   path: common/IHNMAIMS
+gog:
+  # known suffix: " French", " (French)"; same for German, Spanish
+  path: 'I Have No Mouth And I Must Scream'
+  url: i_have_no_mouth_and_i_must_scream
 missing_langs: [ru]
-
-try_repack_from:
-- "/opt/GOG Games/I Have No Mouth And I Must Scream"
-- "/opt/GOG Games/I Have No Mouth And I Must Scream (French)"
-- "/opt/GOG Games/I Have No Mouth And I Must Scream (German)"
-- "/opt/GOG Games/I Have No Mouth And I Must Scream (Spanish)"
-- "~/GOG Games/I Have No Mouth And I Must Scream"
-- "~/GOG Games/I Have No Mouth And I Must Scream French"
-- "~/GOG Games/I Have No Mouth And I Must Scream German"
-- "~/GOG Games/I Have No Mouth And I Must Scream Spanish"
 
 help_text: |
   In the French & German versions,
@@ -41,8 +35,6 @@ packages:
   i-have-no-mouth-and-i-must-scream-en-data:
     debian:
       provides: i-have-no-mouth-and-i-must-scream-data
-    gog:
-      url: i_have_no_mouth_and_i_must_scream
     install:
     - musicfm.res
     - musicgm.res
@@ -66,8 +58,6 @@ packages:
     lang: de
     debian:
       provides: i-have-no-mouth-and-i-must-scream-data
-    gog:
-      url: i_have_no_mouth_and_i_must_scream
     install:
     - musicfm.res
     - musicgm.res
@@ -91,8 +81,6 @@ packages:
     lang: fr
     debian:
       provides: i-have-no-mouth-and-i-must-scream-data
-    gog:
-      url: i_have_no_mouth_and_i_must_scream
     install:
     - musicfm.res
     - musicgm.res
@@ -116,8 +104,6 @@ packages:
     lang: es
     debian:
       provides: i-have-no-mouth-and-i-must-scream-data
-    gog:
-      url: i_have_no_mouth_and_i_must_scream
     install:
     - musicfm.res
     - musicgm.res

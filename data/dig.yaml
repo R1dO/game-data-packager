@@ -3,17 +3,10 @@ longname: The Dig
 copyright: © 1995 LucasArts
 plugin: scummvm_common
 wiki: Dig
-try_repack_from:
-- "/opt/GOG Games/The Dig"
-- "/opt/GOG Games/The Dig (French)"
-- "/opt/GOG Games/The Dig (German)"
-- "/opt/GOG Games/The Dig (Italian)"
-- "/opt/GOG Games/The Dig (Spanish)"
-- "~/GOG Games/The Dig"
-- "~/GOG Games/The Dig French"
-- "~/GOG Games/The Dig German"
-- "~/GOG Games/The Dig Italian"
-- "~/GOG Games/The Dig Spanish"
+gog:
+  # also seen with language suffix: "... (French)" or "... French",
+  # and the same for German, Italian, Spanish
+  path: "The Dig"
 
 packages:
   the-dig-en-data:

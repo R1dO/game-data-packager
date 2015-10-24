@@ -5,18 +5,15 @@ wiki: Toonstruck
 gameid: toon
 disks: 2
 missing_langs: [ru]
-try_repack_from:
-- '~/GOG Games/Toonstruck'
-- '~/GOG Games/Toonstruck German'
-- '~/GOG Games/Toonstruck Spanish'
-- '~/GOG Games/Toonstruck French'
+gog:
+  url: toonstruck
+  # also seen as "Toonstruck {German,Spanish,French}"
+  path: Toonstruck
 
 packages:
   toonstruck-en-data:
     debian:
       provides: toonstruck-data
-    gog:
-      url: toonstruck
     install:
     - act1/arcaddbl/422m.smk
     - act1/arcaddbl/423m.smk
@@ -586,8 +583,6 @@ packages:
     lang: de
     debian:
       provides: toonstruck-data
-    gog:
-      url: toonstruck
     install:
     - act1/arcaddbl/422m.smk?de
     - act1/arcaddbl/423m.smk?de
@@ -873,8 +868,6 @@ packages:
     lang: es
     debian:
       provides: toonstruck-data
-    gog:
-      url: toonstruck
     doc:
     - manual.pdf?es
     install:
@@ -1160,8 +1153,6 @@ packages:
     lang: fr
     debian:
       provides: toonstruck-data
-    gog:
-      url: toonstruck
     doc:
     - manual.pdf?fr
     install:

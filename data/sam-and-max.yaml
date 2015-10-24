@@ -4,17 +4,6 @@ copyright: © 1993 LucasArts
 plugin: scummvm_common
 wiki: Sam_%26_Max_Hit_the_Road
 gameid: samnmax
-try_repack_from:
-- "/opt/GOG Games/Sam And Max Hit The Road"
-- "/opt/GOG Games/Sam And Max Hit The Road (French)"
-- "/opt/GOG Games/Sam And Max Hit The Road (German)"
-- "/opt/GOG Games/Sam And Max Hit The Road (Italian)"
-- "/opt/GOG Games/Sam And Max Hit The Road (Spanish)"
-- "~/GOG Games/Sam Max Hit the Road"
-- "~/GOG Games/Sam Max Hit the Road French"
-- "~/GOG Games/Sam Max Hit the Road German"
-- "~/GOG Games/Sam Max Hit the Road Italian"
-- "~/GOG Games/Sam Max Hit the Road Spanish"
 
 help_text: |
   Here are the versions available in GOG package:
@@ -24,6 +13,11 @@ help_text: |
 
 gog:
   url: sam_max_hit_the_road
+  path:
+    # also with " (French)" suffix, and same for German, Italian, Spanish
+    - "Sam And Max Hit The Road"
+    # also with " French" suffix, and same for German, Italian, Spanish
+    - "Sam Max Hit the Road"
 
 packages:
   sam-and-max-en-data:

@@ -6,7 +6,10 @@ genre: Role Playing
 plugin: scummvm_common
 wiki: Eye_of_the_Beholder
 gameid: eob
-try_repack_from: ['~/GOG Games/Eye of the Beholder']
+gog:
+  url: forgotten_realms_the_archives_collection_one
+  game: eye_of_the_beholder
+  path: 'Eye of the Beholder'
 
 missing_langs: [es]
 
@@ -23,9 +26,6 @@ packages:
   eye-of-the-beholder1-en-data:
     debian:
       provides: eye-of-the-beholder1-data
-    gog:
-      url: forgotten_realms_the_archives_collection_one
-      game: eye_of_the_beholder
     install:
     - eobdata1.pak
     - eobdata2.pak
@@ -46,9 +46,6 @@ packages:
     lang: de
     debian:
       provides: eye-of-the-beholder1-data
-    gog:
-      url: forgotten_realms_the_archives_collection_one
-      game: eye_of_the_beholder
     doc:
     - cluebook.pdf
     - manual.pdf

@@ -6,9 +6,11 @@ genre: Role Playing
 plugin: scummvm_common
 wiki: "Eye_of_the_Beholder_II:_The_Legend_of_Darkmoon"
 gameid: eob2
-try_repack_from:
-- '~/GOG Games/Eye of the Beholder II The Legend of Darkmoon'
-- '~/GOG Games/Eye of the Beholder II The Legend of Darkmoon German'
+gog:
+  # also seen with " German" suffix
+  path: 'Eye of the Beholder II The Legend of Darkmoon'
+  url: forgotten_realms_the_archives_collection_one
+  game: eye_of_the_beholder_ii_the_legend_of_darkmoon
 
 missing_langs: [es]
 
@@ -21,9 +23,6 @@ packages:
   eye-of-the-beholder2-en-data:
     debian:
       provides: eye-of-the-beholder2-data
-    gog:
-      url: forgotten_realms_the_archives_collection_one
-      game: eye_of_the_beholder_ii_the_legend_of_darkmoon
     doc:
     - cluebook.pdf
     - manual.pdf

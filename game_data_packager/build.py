@@ -2246,6 +2246,40 @@ class PackagingTask(object):
                 return icon
         return
 
+    def iter_gog_paths(self, packages=None):
+        if packages is None:
+            packages = self.game.packages.values()
+
+        dirnames = set()
+        for p in list(packages) + [self.game]:
+            # some games seem to list more than one installation path :-(
+            path = p.gog.get('path')
+            if isinstance(path, list):
+                dirnames |= set(path)
+            else:
+                dirnames.add(path)
+        dirnames.discard(None)
+        if not dirnames:
+            return
+
+        for prefix in ('/opt/GOG Games', os.path.expanduser('~/GOG Games')):
+            try:
+                # We look for anything starting with an element of dirnames,
+                # so that we'll pick up names like "Inherit The Earth German".
+                for name in os.listdir(prefix):
+                    for target in dirnames:
+                        try:
+                            if name.startswith(target):
+                                path = os.path.join(prefix, name)
+                                if os.path.isdir(path):
+                                    logger.debug('possible %r found at %r',
+                                            self.game.shortname, path)
+                                    yield os.path.realpath(path)
+                        except OSError:
+                            continue
+            except OSError:
+                continue
+
     def iter_steam_paths(self, packages=None):
         if packages is None:
             packages = self.game.packages.values()

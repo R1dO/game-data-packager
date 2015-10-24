@@ -121,6 +121,7 @@ class GameData(object):
         self.plugin = None
         self.gog_url = None
         self.gog_game = None
+        self.gog_path = None
 
         self.data = dict()
         # global list of files accross packages
@@ -313,8 +314,7 @@ class GameData(object):
                     for line in metadata.read().decode().splitlines():
                         line = line.strip()
                         if line.startswith('id = '):
-                            dir = '~/GOG Games/' + line.split('"')[1]
-                            self.try_repack_from.append(dir)
+                            self.gog_path = line.split('"')[1]
 
     def add_one_innoextract(self,exe):
         game = self.gog_game = GOG.get_id_from_archive(exe)
@@ -427,7 +427,7 @@ class GameData(object):
                             there = name[len('opt/GOG Games/'):]
                             there = there.split('/', 1)[0]
                             install_to = ('opt/GOG Games/' + there)
-                            self.try_repack_from.append('/' + install_to)
+                            self.gog_path = there
 
                     if entry.isfile():
                         hf = HashedFile.from_file(deb + '//data.tar.*//' + name,

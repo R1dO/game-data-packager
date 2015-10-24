@@ -4,9 +4,10 @@ copyright: © 1994 The Dreamers Guild
 plugin: scummvm_common
 wiki: Inherit_the_Earth
 gameid: ite
-try_repack_from:
-- "~/GOG Games/Inherit The Earth"
-- "~/GOG Games/Inherit The Earth German"
+gog:
+  url: inherit_the_earth
+  # German version has "... German" suffix
+  path: 'Inherit The Earth'
 
 help_text: |
   The German version requires ScummVM 1.8.0
@@ -29,8 +30,6 @@ packages:
     steam:
       id: 257260
       path: common/Inherit the Earth/itedata
-    gog:
-      url: inherit_the_earth
     install:
     - ite.rsc
     - scripts.rsc
@@ -48,8 +47,6 @@ packages:
     steam:
       id: 257260
       path: common/Inherit the Earth/itedata
-    gog:
-      url: inherit_the_earth
     install:
     - ite.rsc?de
     - scripts.rsc?de

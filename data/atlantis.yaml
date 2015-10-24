@@ -4,17 +4,10 @@ franchise: Indiana Jones
 copyright: © 1992 LucasArts
 plugin: scummvm_common
 wiki: Indiana_Jones_and_the_Fate_of_Atlantis
-try_repack_from:
-- "/opt/GOG Games/Indiana Jones and the Fate of Atlantis"
-- "/opt/GOG Games/Indiana Jones and the Fate of Atlantis (French)"
-- "/opt/GOG Games/Indiana Jones and the Fate of Atlantis (German)"
-- "/opt/GOG Games/Indiana Jones and the Fate of Atlantis (Italian)"
-- "/opt/GOG Games/Indiana Jones and the Fate of Atlantis (Spanish)"
-- "~/GOG Games/Indiana Jones and the Fate of Atlantis"
-- "~/GOG Games/Indiana Jones and the Fate of Atlantis French"
-- "~/GOG Games/Indiana Jones and the Fate of Atlantis German"
-- "~/GOG Games/Indiana Jones and the Fate of Atlantis Italian"
-- "~/GOG Games/Indiana Jones and the Fate of Atlantis Spanish"
+gog:
+  # also seen with language suffix: "... (French)" or "... French",
+  # and the same for German, Italian, Spanish
+  path: "Indiana Jones and the Fate of Atlantis"
 
 help_text: |
   The non-english versions available on GOG.com are not always the best ones.

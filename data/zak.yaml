@@ -4,10 +4,6 @@ copyright: © 1988 Lucasfilm Games
 plugin: scummvm_common
 wiki: Zak_McKracken_and_the_Alien_Mindbenders
 
-try_repack_from:
-- "/opt/GOG Games/Zak McKracken and the Alien Mindbenders"
-- "~/GOG Games/Zak McKracken and the Alien Mindbenders"
-
 help_text: |
   GOG.com only sells the English version.
 
@@ -15,6 +11,7 @@ packages:
   zak-en-data:
     gog:
       url: zak_mckracken_and_the_alien_mindbenders
+      path: 'Zak McKracken and the Alien Mindbenders'
     debian:
       provides: zak-data
     install:
