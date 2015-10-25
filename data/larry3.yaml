@@ -33,11 +33,7 @@ packages:
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
 files:
-  Leisure Suit Larry 3 - Manual.pdf:
-    install_to: $docdir
   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf:
-    install_to: $docdir
-  lsl3 answers.txt:
     install_to: $docdir
   setup_leisure_suit_larry3_2.2.0.19.exe:
     unpack:
@@ -52,29 +48,18 @@ files:
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
     - lsl3 answers.txt
 
-cksums: |
-  _ 456722    resource.001
-  _ 578024    resource.002
-  _ 506807    resource.003
-  _ 513651    resource.004
-  _ 5916      resource.map
+size_and_md5: |
+  456722    3437c56f0cb7f4a3df5f5bc21008a786 resource.001
+  578024    bc85504bc658389d3a8847cea5a695f0 resource.002
+  506807    fa9542cf8747fe4773ff7fd81dca9d8e resource.003
+  513651    c10e480d37fdb59673ef242bf12c7e7c resource.004
+  5916      b7a2fb642614dd76d10d1ad5e0625044 resource.map
 
-  _ 31554032  setup_leisure_suit_larry3_2.2.0.19.exe
-  _ 3982554   Leisure Suit Larry 3 - Manual.pdf
-  _ 8230209   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
-  _ 20580     lsl3 answers.txt
+  31554032  50cf0a52dfa9b78d033ac67b90a16ef3 setup_leisure_suit_larry3_2.2.0.19.exe
+  3982554   609d5c0936321757058e2c5593218c7d Leisure Suit Larry 3 - Manual.pdf
+  8230209   bcc1974851f3d79ab57358a78d84c13c Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+  20580     014441a515d58fd2d527716412993a82 lsl3 answers.txt
 
-md5sums: |
-  3437c56f0cb7f4a3df5f5bc21008a786  resource.001
-  bc85504bc658389d3a8847cea5a695f0  resource.002
-  fa9542cf8747fe4773ff7fd81dca9d8e  resource.003
-  c10e480d37fdb59673ef242bf12c7e7c  resource.004
-  b7a2fb642614dd76d10d1ad5e0625044  resource.map
-
-  50cf0a52dfa9b78d033ac67b90a16ef3  setup_leisure_suit_larry3_2.2.0.19.exe
-  609d5c0936321757058e2c5593218c7d  Leisure Suit Larry 3 - Manual.pdf
-  bcc1974851f3d79ab57358a78d84c13c  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
-  014441a515d58fd2d527716412993a82  lsl3 answers.txt
 sha1sums: |
   1618c31ada641790a3e52d9f8cd3686d69efbf87  resource.001
   b9237d2ff1a6350e000f5444fcbfae505b9bef36  resource.002
