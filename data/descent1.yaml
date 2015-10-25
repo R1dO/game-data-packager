@@ -10,14 +10,15 @@ packages:
     demo_for: descent1-data
     debian:
       conflicts: [descent1-full-data, descent1-data]
+    install_to: usr/share/games/d1x-rebirth/
     install:
     - descent.hog?demo
     - descent.pig?demo
     optional: 
+    - d1xr-hires.dxa
+    doc:
     - readme.txt?demo
     - refcard.txt
-    - d1xr-hires.dxa
-    install_to: usr/share/games/d1x-rebirth/
 
   descent1-data:
     debian:
@@ -34,6 +35,7 @@ packages:
     steam:
       id: 273570
       path: common/Descent
+    install_to: usr/share/games/d1x-rebirth/
     install:
     - descent.hog
     - descent.pig
@@ -43,20 +45,14 @@ packages:
     - descent.dem
     - level18.dem
     - miniboss.dem
+    - d1xr-hires.dxa
+    doc:
     - descent.faq
     - manual.pdf
     - readme.txt
     - refcard.pdf
-    - d1xr-hires.dxa
-    install_to: usr/share/games/d1x-rebirth/
 
 files:
-  readme.txt?demo:
-    install_to: $docdir
-    distinctive_name: false
-  refcard.txt:
-    install_to: $docdir  
-
   desc14sw.tar.gz:
     download: http://icculus.org/d2x/data/desc14sw.tar.gz
     unpack:
@@ -98,17 +94,6 @@ files:
       - DESCENT.PIG
       - README.TXT
       - REFCARD.TXT
-
-  descent.faq:
-    install_to: $docdir
-  manual.pdf:
-    install_to: $docdir
-    distinctive_name: false
-  refcard.pdf:
-    install_to: $docdir
-    distinctive_name: false
-  readme.txt:
-    install_to: $docdir
 
   setup_descent_1_2.exe:
     unpack:
