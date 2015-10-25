@@ -1,0 +1,2198 @@
+---
+longname: Quake 4
+franchise: Quake
+copyright: © 2005-2007 id Software, Inc.
+engine: quake4 | quake4-server
+steam:
+  id: 2210
+  path: common/Quake 4
+genre: First-person shooter
+wikibase: http://quake.wikia.com/wiki/
+wiki: Quake_4
+compress_deb: false
+binary_executables: i386
+
+packages:
+  quake4-pb-bin:
+    longname: Quake 4 PunkBuster binaries
+    install_to: usr/lib/quake4
+    architecture: i386
+    version: "1.4.2"
+    debian:
+      depends:
+        - libc6 (>= 2.1)
+        - quake4-bin
+    doc:
+    - pb/htm/la001307.htm
+    - pb/htm/lc001095.htm
+    - pb/htm/ma001307.htm
+    - pb/htm/mc001095.htm
+    - pb/htm/wa001307.htm
+    - pb/htm/wc001095.htm
+    install:
+    - pb/pbag.so
+    - pb/pbags.so
+    - pb/pbcl.so
+    - pb/pbcls.so
+    - pb/pbsv.so
+    license:
+    - PBEULA.txt?steam
+    - ENG/PBEULA.txt
+    - ENU/PBEULA.txt
+    - ESP/PBEULA.txt
+    - FRA/PBEULA.txt
+    - ITA/PBEULA.txt
+
+  quake4-bin:
+    longname: Quake 4 binaries
+    install_to: usr/lib/quake4
+    architecture: i386
+    version: "1.4.2"
+    debian:
+      depends:
+        - libc6 (>= 2.2.4)
+        - libgcc1 (>= 4.1.2)
+        - libsdl1.2debian (>= 1.2.10)
+        - libstdc++6 (>= 4.1.2)
+        - quake4-data | quake4-censored-de-data
+        - xdg-utils
+      suggests:
+        - quake4-pb-bin
+    install:
+      - libSDL-1.2.id.so.0
+      - q4ded.x86
+      - quake4.x86
+      - quake4smp.x86
+    symlinks:
+      usr/lib/quake4/q4base: usr/share/games/quake4/q4base
+      usr/lib/quake4/q4mp: usr/share/games/quake4/q4mp
+      # The bundled implementation isn't great, and xdg-open is
+      # binary-compatible
+      usr/lib/quake4/openurl.sh: usr/bin/xdg-open
+      usr/lib/quake4/version.info: usr/share/games/quake4/version.info
+      usr/lib/quake4/q4icon.bmp: usr/share/games/quake4/q4icon.bmp
+
+    license:
+      - EULA.txt?steam
+      - ENG/License.txt
+      - ENU/License.txt
+      - ESP/License.txt
+      - FRA/License.txt
+      - ITA/License.txt
+
+  quake4-data:
+    version: "1.4.2"
+    longname: Quake 4
+    debian:
+      provides: quake4-any-data
+      conflicts: quake4-any-data
+      replaces: quake4-any-data
+    langs:
+      - cs
+      - en
+      - es
+      - fr
+      - it
+      - pl
+      - ru
+    license:
+      - EULA.txt?steam
+      - ENG/License.txt
+      - ENU/License.txt
+      - ESP/License.txt
+      - FRA/License.txt
+      - ITA/License.txt
+    doc:
+      # either version
+      - CHANGES_14.txt
+
+      - ENG/MSR.txt
+      - ENG/help.htm
+      - ENG/htm/Default.htm
+      - ENG/htm/credits.htm
+      - ENG/htm/cs.htm
+      - ENG/htm/left.htm
+      - ENG/htm/man_def.htm
+      - ENG/htm/man_left.htm
+      - ENG/htm/man_top.htm
+      - ENG/htm/readme.htm
+      - ENG/htm/side_ie.css
+      - ENG/htm/style_ie.css
+      - ENG/htm/techhelp.htm
+      - ENG/htm/top.htm
+      - ENG/images/ATVIsmall.gif
+      - ENG/images/ATVIsmaller.jpg
+      - ENG/images/Bink_Video_4c_rev.png
+      - ENG/images/ammo_regen.png
+      - ENG/images/armor.png
+      - ENG/images/blaster.png
+      - ENG/images/doubler.png
+      - ENG/images/guard.png
+      - ENG/images/h01.gif
+      - ENG/images/h02.gif
+      - ENG/images/h03.gif
+      - ENG/images/h04.gif
+      - ENG/images/h05.gif
+      - ENG/images/h06.gif
+      - ENG/images/h07.gif
+      - ENG/images/h08.gif
+      - ENG/images/h09.gif
+      - ENG/images/h10.gif
+      - ENG/images/h17a.gif
+      - ENG/images/h17b.gif
+      - ENG/images/h26.gif
+      - ENG/images/h27.gif
+      - ENG/images/h28a.gif
+      - ENG/images/h28b.gif
+      - ENG/images/h28c.gif
+      - ENG/images/h_def.gif
+      - ENG/images/h_sup.gif
+      - ENG/images/h_tec.gif
+      - ENG/images/h_top.gif
+      - ENG/images/haste.png
+      - ENG/images/health.png
+      - ENG/images/health_pack.png
+      - ENG/images/id_logo_small.jpg
+      - ENG/images/ingamedisplay.png
+      - ENG/images/invisibility.png
+      - ENG/images/line1.gif
+      - ENG/images/line1_b.gif
+      - ENG/images/line2.gif
+      - ENG/images/line2_b.gif
+      - ENG/images/machinegun.png
+      - ENG/images/mega_health.png
+      - ENG/images/mpbrowser.png
+      - ENG/images/mssLogo.png
+      - ENG/images/pad.gif
+      - ENG/images/q4_logo_small.jpg
+      - ENG/images/quad_damage.png
+      - ENG/images/raven.gif
+      - ENG/images/regeneration.png
+      - ENG/images/save.png
+      - ENG/images/scout.png
+      - ENG/images/shotgun.png
+      - ENG/images/watermark.gif
+      - ENG/manual.htm
+      - ENG/readme.txt
+      - ENU/MSR.txt
+      - ENU/help.htm
+      - ENU/htm/Default.htm
+      - ENU/htm/credits.htm
+      - ENU/htm/cs.htm
+      - ENU/htm/left.htm
+      - ENU/htm/man_def.htm
+      - ENU/htm/man_left.htm
+      - ENU/htm/man_top.htm
+      - ENU/htm/readme.htm
+      - ENU/htm/side_ie.css
+      - ENU/htm/style_ie.css
+      - ENU/htm/techhelp.htm
+      - ENU/htm/top.htm
+      - ENU/images/ATVIsmall.gif
+      - ENU/images/ATVIsmaller.jpg
+      - ENU/images/Bink_Video_4c_rev.png
+      - ENU/images/ammo_regen.png
+      - ENU/images/armor.png
+      - ENU/images/blaster.png
+      - ENU/images/doubler.png
+      - ENU/images/guard.png
+      - ENU/images/h01.gif
+      - ENU/images/h02.gif
+      - ENU/images/h03.gif
+      - ENU/images/h04.gif
+      - ENU/images/h05.gif
+      - ENU/images/h06.gif
+      - ENU/images/h07.gif
+      - ENU/images/h08.gif
+      - ENU/images/h09.gif
+      - ENU/images/h10.gif
+      - ENU/images/h17a.gif
+      - ENU/images/h17b.gif
+      - ENU/images/h26.gif
+      - ENU/images/h27.gif
+      - ENU/images/h28a.gif
+      - ENU/images/h28b.gif
+      - ENU/images/h28c.gif
+      - ENU/images/h_def.gif
+      - ENU/images/h_sup.gif
+      - ENU/images/h_tec.gif
+      - ENU/images/h_top.gif
+      - ENU/images/haste.png
+      - ENU/images/health.png
+      - ENU/images/health_pack.png
+      - ENU/images/id_logo_small.jpg
+      - ENU/images/ingamedisplay.png
+      - ENU/images/invisibility.png
+      - ENU/images/line1.gif
+      - ENU/images/line1_b.gif
+      - ENU/images/line2.gif
+      - ENU/images/line2_b.gif
+      - ENU/images/machinegun.png
+      - ENU/images/mega_health.png
+      - ENU/images/mpbrowser.png
+      - ENU/images/mssLogo.png
+      - ENU/images/pad.gif
+      - ENU/images/q4_logo_small.jpg
+      - ENU/images/quad_damage.png
+      - ENU/images/raven.gif
+      - ENU/images/regeneration.png
+      - ENU/images/save.png
+      - ENU/images/scout.png
+      - ENU/images/shotgun.png
+      - ENU/images/watermark.gif
+      - ENU/manual.htm
+      - ENU/readme.txt
+      - ESP/MSR.txt
+      - ESP/help.htm
+      - ESP/htm/Default.htm
+      - ESP/htm/credits.htm
+      - ESP/htm/cs.htm
+      - ESP/htm/left.htm
+      - ESP/htm/man_def.htm
+      - ESP/htm/man_left.htm
+      - ESP/htm/man_top.htm
+      - ESP/htm/readme.htm
+      - ESP/htm/side_ie.css
+      - ESP/htm/style_ie.css
+      - ESP/htm/techhelp.htm
+      - ESP/htm/top.htm
+      - ESP/images/ATVIsmall.gif
+      - ESP/images/ATVIsmaller.jpg
+      - ESP/images/Bink_Video_4c_rev.png
+      - ESP/images/ammo_regen.png
+      - ESP/images/armor.png
+      - ESP/images/blaster.png
+      - ESP/images/doubler.png
+      - ESP/images/guard.png
+      - ESP/images/h01.gif
+      - ESP/images/h02.gif
+      - ESP/images/h03.gif
+      - ESP/images/h04.gif
+      - ESP/images/h05.gif
+      - ESP/images/h06.gif
+      - ESP/images/h07.gif
+      - ESP/images/h08.gif
+      - ESP/images/h09.gif
+      - ESP/images/h10.gif
+      - ESP/images/h17a.gif
+      - ESP/images/h17b.gif
+      - ESP/images/h26.gif
+      - ESP/images/h27.gif
+      - ESP/images/h28a.gif
+      - ESP/images/h28b.gif
+      - ESP/images/h28c.gif
+      - ESP/images/h_def.gif
+      - ESP/images/h_sup.gif
+      - ESP/images/h_tec.gif
+      - ESP/images/h_top.gif
+      - ESP/images/haste.png
+      - ESP/images/health.png
+      - ESP/images/health_pack.png
+      - ESP/images/id_logo_small.jpg
+      - ESP/images/ingamedisplay.png
+      - ESP/images/invisibility.png
+      - ESP/images/line1.gif
+      - ESP/images/line1_b.gif
+      - ESP/images/line2.gif
+      - ESP/images/line2_b.gif
+      - ESP/images/machinegun.png
+      - ESP/images/mega_health.png
+      - ESP/images/mpbrowser.png
+      - ESP/images/mssLogo.png
+      - ESP/images/pad.gif
+      - ESP/images/q4_logo_small.jpg
+      - ESP/images/quad_damage.png
+      - ESP/images/raven.gif
+      - ESP/images/regeneration.png
+      - ESP/images/save.png
+      - ESP/images/scout.png
+      - ESP/images/shotgun.png
+      - ESP/images/watermark.gif
+      - ESP/manual.htm
+      - ESP/readme.txt
+      - FRA/MSR.txt
+      - FRA/help.htm
+      - FRA/htm/Default.htm
+      - FRA/htm/credits.htm
+      - FRA/htm/cs.htm
+      - FRA/htm/left.htm
+      - FRA/htm/man_def.htm
+      - FRA/htm/man_left.htm
+      - FRA/htm/man_top.htm
+      - FRA/htm/readme.htm
+      - FRA/htm/side_ie.css
+      - FRA/htm/style_ie.css
+      - FRA/htm/techhelp.htm
+      - FRA/htm/top.htm
+      - FRA/images/ATVIsmall.gif
+      - FRA/images/ATVIsmaller.jpg
+      - FRA/images/Bink_Video_4c_rev.png
+      - FRA/images/ammo_regen.png
+      - FRA/images/armor.png
+      - FRA/images/blaster.png
+      - FRA/images/doubler.png
+      - FRA/images/guard.png
+      - FRA/images/h01.gif
+      - FRA/images/h02.gif
+      - FRA/images/h03.gif
+      - FRA/images/h04.gif
+      - FRA/images/h05.gif
+      - FRA/images/h06.gif
+      - FRA/images/h07.gif
+      - FRA/images/h08.gif
+      - FRA/images/h09.gif
+      - FRA/images/h10.gif
+      - FRA/images/h17a.gif
+      - FRA/images/h17b.gif
+      - FRA/images/h26.gif
+      - FRA/images/h27.gif
+      - FRA/images/h28a.gif
+      - FRA/images/h28b.gif
+      - FRA/images/h28c.gif
+      - FRA/images/h_def.gif
+      - FRA/images/h_sup.gif
+      - FRA/images/h_tec.gif
+      - FRA/images/h_top.gif
+      - FRA/images/haste.png
+      - FRA/images/health.png
+      - FRA/images/health_pack.png
+      - FRA/images/id_logo_small.jpg
+      - FRA/images/ingamedisplay.png
+      - FRA/images/invisibility.png
+      - FRA/images/line1.gif
+      - FRA/images/line1_b.gif
+      - FRA/images/line2.gif
+      - FRA/images/line2_b.gif
+      - FRA/images/machinegun.png
+      - FRA/images/mega_health.png
+      - FRA/images/mpbrowser.png
+      - FRA/images/mssLogo.png
+      - FRA/images/pad.gif
+      - FRA/images/q4_logo_small.jpg
+      - FRA/images/quad_damage.png
+      - FRA/images/raven.gif
+      - FRA/images/regeneration.png
+      - FRA/images/save.png
+      - FRA/images/scout.png
+      - FRA/images/shotgun.png
+      - FRA/images/watermark.gif
+      - FRA/manual.htm
+      - FRA/readme.txt
+      - ITA/MSR.txt
+      - ITA/help.htm
+      - ITA/htm/Default.htm
+      - ITA/htm/credits.htm
+      - ITA/htm/cs.htm
+      - ITA/htm/left.htm
+      - ITA/htm/man_def.htm
+      - ITA/htm/man_left.htm
+      - ITA/htm/man_top.htm
+      - ITA/htm/readme.htm
+      - ITA/htm/side_ie.css
+      - ITA/htm/style_ie.css
+      - ITA/htm/techhelp.htm
+      - ITA/htm/top.htm
+      - ITA/images/ATVIsmall.gif
+      - ITA/images/ATVIsmaller.jpg
+      - ITA/images/Bink_Video_4c_rev.png
+      - ITA/images/ammo_regen.png
+      - ITA/images/armor.png
+      - ITA/images/blaster.png
+      - ITA/images/doubler.png
+      - ITA/images/guard.png
+      - ITA/images/h01.gif
+      - ITA/images/h02.gif
+      - ITA/images/h03.gif
+      - ITA/images/h04.gif
+      - ITA/images/h05.gif
+      - ITA/images/h06.gif
+      - ITA/images/h07.gif
+      - ITA/images/h08.gif
+      - ITA/images/h09.gif
+      - ITA/images/h10.gif
+      - ITA/images/h17a.gif
+      - ITA/images/h17b.gif
+      - ITA/images/h26.gif
+      - ITA/images/h27.gif
+      - ITA/images/h28a.gif
+      - ITA/images/h28b.gif
+      - ITA/images/h28c.gif
+      - ITA/images/h_def.gif
+      - ITA/images/h_sup.gif
+      - ITA/images/h_tec.gif
+      - ITA/images/h_top.gif
+      - ITA/images/haste.png
+      - ITA/images/health.png
+      - ITA/images/health_pack.png
+      - ITA/images/id_logo_small.jpg
+      - ITA/images/ingamedisplay.png
+      - ITA/images/invisibility.png
+      - ITA/images/line1.gif
+      - ITA/images/line1_b.gif
+      - ITA/images/line2.gif
+      - ITA/images/line2_b.gif
+      - ITA/images/machinegun.png
+      - ITA/images/mega_health.png
+      - ITA/images/mpbrowser.png
+      - ITA/images/mssLogo.png
+      - ITA/images/pad.gif
+      - ITA/images/q4_logo_small.jpg
+      - ITA/images/quad_damage.png
+      - ITA/images/raven.gif
+      - ITA/images/regeneration.png
+      - ITA/images/save.png
+      - ITA/images/scout.png
+      - ITA/images/shotgun.png
+      - ITA/images/watermark.gif
+      - ITA/manual.htm
+      - ITA/readme.txt
+      - README
+      - README-1.3.htm
+      - README_Q4TV_broadcasting.txt
+      - README_builtin_downloads.txt
+      - sdl.patch.1.2.10
+
+    install:
+      #- openurl.sh
+      - q4base/arena_ctf.cfg
+      - q4base/ctf.cfg
+      - q4base/dm.cfg
+      - q4base/game000.pk4
+      - q4base/game100.pk4
+      - q4base/game200.pk4
+      - q4base/mapcycle-mp1.scriptcfg
+      - q4base/mapcycle-mp2.scriptcfg
+      - q4base/mapcycle-mp3.scriptcfg
+      - q4base/mapcycle-q4cmp_pak001.scriptcfg
+      - q4base/mapcycle.scriptcfg?unix
+      - q4base/pak013.pk4
+      - q4base/pak014.pk4
+      - q4base/pak016.pk4
+      - q4base/pak018.pk4
+      - q4base/pak019.pk4
+      - q4base/pak021.pk4
+      - q4base/q4cmp_pak001.pk4
+      - q4base/teamdm.cfg
+      - q4base/tourney.cfg
+      - q4base/zpak_czech_01.pk4.off
+      - q4base/zpak_czech_02.pk4.off
+      - q4base/zpak_english_01.pk4
+      - q4base/zpak_english_02.pk4
+      - q4base/zpak_english_03.pk4
+      - q4base/zpak_english_04.pk4
+      - q4base/zpak_french_01.pk4.off
+      - q4base/zpak_french_02.pk4.off
+      - q4base/zpak_french_03.pk4.off
+      - q4base/zpak_french_04.pk4.off
+      - q4base/zpak_italian_01.pk4.off
+      - q4base/zpak_italian_02.pk4.off
+      - q4base/zpak_italian_03.pk4.off
+      - q4base/zpak_italian_04.pk4.off
+      - q4base/zpak_polish_01.pk4.off
+      - q4base/zpak_polish_02.pk4.off
+      - q4base/zpak_russian_01.pk4.off
+      - q4base/zpak_russian_02.pk4.off
+      - q4base/zpak_spanish_01.pk4.off
+      - q4base/zpak_spanish_02.pk4.off
+      - q4base/zpak_spanish_03.pk4.off
+      - q4base/zpak_spanish_04.pk4.off
+      - q4icon.bmp
+      - q4mp/demos/id_perftest.ndmo85
+      - q4mp/demos/id_serverdemo.ndmo85
+      - q4mp/game000.pk4
+      - q4mp/game100.pk4
+      - q4mp/game200.pk4
+
+      - q4base/pak001.pk4?interoperable
+      - q4base/pak002.pk4?interoperable
+      - q4base/pak003.pk4?interoperable
+      - q4base/pak004.pk4?interoperable
+      - q4base/pak005.pk4?interoperable
+      - q4base/pak006.pk4?interoperable
+      - q4base/pak007.pk4?interoperable
+      - q4base/pak008.pk4?interoperable
+      - q4base/pak009.pk4?interoperable
+      - q4base/pak010.pk4?interoperable
+      - q4base/pak011.pk4?interoperable
+      - q4base/pak012.pk4?interoperable
+      - q4base/pak015.pk4?interoperable
+      - q4base/pak017.pk4?interoperable
+      - q4base/pak020.pk4?interoperable
+      - q4base/pak022.pk4?interoperable
+      - q4base/zpak_english.pk4?interoperable
+      - version.info?interoperable
+
+    optional:
+      - q4base/game300.pk4?steam
+      - q4base/pak023.pk4?steam
+      - q4base/pak024.pk4?steam
+      - q4base/pak025.pk4?steam
+      - q4base/zpak_english_05.pk4?steam
+      - q4mp/game300.pk4?steam
+
+  quake4-censored-de-data:
+    longname: Quake 4 (censored German version)
+    version: "1.4.2"
+    debian:
+      provides: quake4-any-data
+      conflicts: quake4-any-data
+      replaces: quake4-any-data
+    install_to: usr/share/games/quake4
+    # this is not actually dubbed, just censored
+    langs:
+      - en
+    license:
+      - ENG/License.txt
+      - ENU/License.txt
+      - ESP/License.txt
+      - FRA/License.txt
+      - ITA/License.txt
+
+    doc:
+      # the censored German version is not on Steam
+      - CHANGES_14.txt?142
+
+      - ENG/MSR.txt
+      - ENG/help.htm
+      - ENG/htm/Default.htm
+      - ENG/htm/credits.htm
+      - ENG/htm/cs.htm
+      - ENG/htm/left.htm
+      - ENG/htm/man_def.htm
+      - ENG/htm/man_left.htm
+      - ENG/htm/man_top.htm
+      - ENG/htm/readme.htm
+      - ENG/htm/side_ie.css
+      - ENG/htm/style_ie.css
+      - ENG/htm/techhelp.htm
+      - ENG/htm/top.htm
+      - ENG/images/ATVIsmall.gif
+      - ENG/images/ATVIsmaller.jpg
+      - ENG/images/Bink_Video_4c_rev.png
+      - ENG/images/ammo_regen.png
+      - ENG/images/armor.png
+      - ENG/images/blaster.png
+      - ENG/images/doubler.png
+      - ENG/images/guard.png
+      - ENG/images/h01.gif
+      - ENG/images/h02.gif
+      - ENG/images/h03.gif
+      - ENG/images/h04.gif
+      - ENG/images/h05.gif
+      - ENG/images/h06.gif
+      - ENG/images/h07.gif
+      - ENG/images/h08.gif
+      - ENG/images/h09.gif
+      - ENG/images/h10.gif
+      - ENG/images/h17a.gif
+      - ENG/images/h17b.gif
+      - ENG/images/h26.gif
+      - ENG/images/h27.gif
+      - ENG/images/h28a.gif
+      - ENG/images/h28b.gif
+      - ENG/images/h28c.gif
+      - ENG/images/h_def.gif
+      - ENG/images/h_sup.gif
+      - ENG/images/h_tec.gif
+      - ENG/images/h_top.gif
+      - ENG/images/haste.png
+      - ENG/images/health.png
+      - ENG/images/health_pack.png
+      - ENG/images/id_logo_small.jpg
+      - ENG/images/ingamedisplay.png
+      - ENG/images/invisibility.png
+      - ENG/images/line1.gif
+      - ENG/images/line1_b.gif
+      - ENG/images/line2.gif
+      - ENG/images/line2_b.gif
+      - ENG/images/machinegun.png
+      - ENG/images/mega_health.png
+      - ENG/images/mpbrowser.png
+      - ENG/images/mssLogo.png
+      - ENG/images/pad.gif
+      - ENG/images/q4_logo_small.jpg
+      - ENG/images/quad_damage.png
+      - ENG/images/raven.gif
+      - ENG/images/regeneration.png
+      - ENG/images/save.png
+      - ENG/images/scout.png
+      - ENG/images/shotgun.png
+      - ENG/images/watermark.gif
+      - ENG/manual.htm
+      - ENG/readme.txt
+      - ENU/MSR.txt
+      - ENU/help.htm
+      - ENU/htm/Default.htm
+      - ENU/htm/credits.htm
+      - ENU/htm/cs.htm
+      - ENU/htm/left.htm
+      - ENU/htm/man_def.htm
+      - ENU/htm/man_left.htm
+      - ENU/htm/man_top.htm
+      - ENU/htm/readme.htm
+      - ENU/htm/side_ie.css
+      - ENU/htm/style_ie.css
+      - ENU/htm/techhelp.htm
+      - ENU/htm/top.htm
+      - ENU/images/ATVIsmall.gif
+      - ENU/images/ATVIsmaller.jpg
+      - ENU/images/Bink_Video_4c_rev.png
+      - ENU/images/ammo_regen.png
+      - ENU/images/armor.png
+      - ENU/images/blaster.png
+      - ENU/images/doubler.png
+      - ENU/images/guard.png
+      - ENU/images/h01.gif
+      - ENU/images/h02.gif
+      - ENU/images/h03.gif
+      - ENU/images/h04.gif
+      - ENU/images/h05.gif
+      - ENU/images/h06.gif
+      - ENU/images/h07.gif
+      - ENU/images/h08.gif
+      - ENU/images/h09.gif
+      - ENU/images/h10.gif
+      - ENU/images/h17a.gif
+      - ENU/images/h17b.gif
+      - ENU/images/h26.gif
+      - ENU/images/h27.gif
+      - ENU/images/h28a.gif
+      - ENU/images/h28b.gif
+      - ENU/images/h28c.gif
+      - ENU/images/h_def.gif
+      - ENU/images/h_sup.gif
+      - ENU/images/h_tec.gif
+      - ENU/images/h_top.gif
+      - ENU/images/haste.png
+      - ENU/images/health.png
+      - ENU/images/health_pack.png
+      - ENU/images/id_logo_small.jpg
+      - ENU/images/ingamedisplay.png
+      - ENU/images/invisibility.png
+      - ENU/images/line1.gif
+      - ENU/images/line1_b.gif
+      - ENU/images/line2.gif
+      - ENU/images/line2_b.gif
+      - ENU/images/machinegun.png
+      - ENU/images/mega_health.png
+      - ENU/images/mpbrowser.png
+      - ENU/images/mssLogo.png
+      - ENU/images/pad.gif
+      - ENU/images/q4_logo_small.jpg
+      - ENU/images/quad_damage.png
+      - ENU/images/raven.gif
+      - ENU/images/regeneration.png
+      - ENU/images/save.png
+      - ENU/images/scout.png
+      - ENU/images/shotgun.png
+      - ENU/images/watermark.gif
+      - ENU/manual.htm
+      - ENU/readme.txt
+      - ESP/MSR.txt
+      - ESP/help.htm
+      - ESP/htm/Default.htm
+      - ESP/htm/credits.htm
+      - ESP/htm/cs.htm
+      - ESP/htm/left.htm
+      - ESP/htm/man_def.htm
+      - ESP/htm/man_left.htm
+      - ESP/htm/man_top.htm
+      - ESP/htm/readme.htm
+      - ESP/htm/side_ie.css
+      - ESP/htm/style_ie.css
+      - ESP/htm/techhelp.htm
+      - ESP/htm/top.htm
+      - ESP/images/ATVIsmall.gif
+      - ESP/images/ATVIsmaller.jpg
+      - ESP/images/Bink_Video_4c_rev.png
+      - ESP/images/ammo_regen.png
+      - ESP/images/armor.png
+      - ESP/images/blaster.png
+      - ESP/images/doubler.png
+      - ESP/images/guard.png
+      - ESP/images/h01.gif
+      - ESP/images/h02.gif
+      - ESP/images/h03.gif
+      - ESP/images/h04.gif
+      - ESP/images/h05.gif
+      - ESP/images/h06.gif
+      - ESP/images/h07.gif
+      - ESP/images/h08.gif
+      - ESP/images/h09.gif
+      - ESP/images/h10.gif
+      - ESP/images/h17a.gif
+      - ESP/images/h17b.gif
+      - ESP/images/h26.gif
+      - ESP/images/h27.gif
+      - ESP/images/h28a.gif
+      - ESP/images/h28b.gif
+      - ESP/images/h28c.gif
+      - ESP/images/h_def.gif
+      - ESP/images/h_sup.gif
+      - ESP/images/h_tec.gif
+      - ESP/images/h_top.gif
+      - ESP/images/haste.png
+      - ESP/images/health.png
+      - ESP/images/health_pack.png
+      - ESP/images/id_logo_small.jpg
+      - ESP/images/ingamedisplay.png
+      - ESP/images/invisibility.png
+      - ESP/images/line1.gif
+      - ESP/images/line1_b.gif
+      - ESP/images/line2.gif
+      - ESP/images/line2_b.gif
+      - ESP/images/machinegun.png
+      - ESP/images/mega_health.png
+      - ESP/images/mpbrowser.png
+      - ESP/images/mssLogo.png
+      - ESP/images/pad.gif
+      - ESP/images/q4_logo_small.jpg
+      - ESP/images/quad_damage.png
+      - ESP/images/raven.gif
+      - ESP/images/regeneration.png
+      - ESP/images/save.png
+      - ESP/images/scout.png
+      - ESP/images/shotgun.png
+      - ESP/images/watermark.gif
+      - ESP/manual.htm
+      - ESP/readme.txt
+      - FRA/MSR.txt
+      - FRA/help.htm
+      - FRA/htm/Default.htm
+      - FRA/htm/credits.htm
+      - FRA/htm/cs.htm
+      - FRA/htm/left.htm
+      - FRA/htm/man_def.htm
+      - FRA/htm/man_left.htm
+      - FRA/htm/man_top.htm
+      - FRA/htm/readme.htm
+      - FRA/htm/side_ie.css
+      - FRA/htm/style_ie.css
+      - FRA/htm/techhelp.htm
+      - FRA/htm/top.htm
+      - FRA/images/ATVIsmall.gif
+      - FRA/images/ATVIsmaller.jpg
+      - FRA/images/Bink_Video_4c_rev.png
+      - FRA/images/ammo_regen.png
+      - FRA/images/armor.png
+      - FRA/images/blaster.png
+      - FRA/images/doubler.png
+      - FRA/images/guard.png
+      - FRA/images/h01.gif
+      - FRA/images/h02.gif
+      - FRA/images/h03.gif
+      - FRA/images/h04.gif
+      - FRA/images/h05.gif
+      - FRA/images/h06.gif
+      - FRA/images/h07.gif
+      - FRA/images/h08.gif
+      - FRA/images/h09.gif
+      - FRA/images/h10.gif
+      - FRA/images/h17a.gif
+      - FRA/images/h17b.gif
+      - FRA/images/h26.gif
+      - FRA/images/h27.gif
+      - FRA/images/h28a.gif
+      - FRA/images/h28b.gif
+      - FRA/images/h28c.gif
+      - FRA/images/h_def.gif
+      - FRA/images/h_sup.gif
+      - FRA/images/h_tec.gif
+      - FRA/images/h_top.gif
+      - FRA/images/haste.png
+      - FRA/images/health.png
+      - FRA/images/health_pack.png
+      - FRA/images/id_logo_small.jpg
+      - FRA/images/ingamedisplay.png
+      - FRA/images/invisibility.png
+      - FRA/images/line1.gif
+      - FRA/images/line1_b.gif
+      - FRA/images/line2.gif
+      - FRA/images/line2_b.gif
+      - FRA/images/machinegun.png
+      - FRA/images/mega_health.png
+      - FRA/images/mpbrowser.png
+      - FRA/images/mssLogo.png
+      - FRA/images/pad.gif
+      - FRA/images/q4_logo_small.jpg
+      - FRA/images/quad_damage.png
+      - FRA/images/raven.gif
+      - FRA/images/regeneration.png
+      - FRA/images/save.png
+      - FRA/images/scout.png
+      - FRA/images/shotgun.png
+      - FRA/images/watermark.gif
+      - FRA/manual.htm
+      - FRA/readme.txt
+      - ITA/MSR.txt
+      - ITA/help.htm
+      - ITA/htm/Default.htm
+      - ITA/htm/credits.htm
+      - ITA/htm/cs.htm
+      - ITA/htm/left.htm
+      - ITA/htm/man_def.htm
+      - ITA/htm/man_left.htm
+      - ITA/htm/man_top.htm
+      - ITA/htm/readme.htm
+      - ITA/htm/side_ie.css
+      - ITA/htm/style_ie.css
+      - ITA/htm/techhelp.htm
+      - ITA/htm/top.htm
+      - ITA/images/ATVIsmall.gif
+      - ITA/images/ATVIsmaller.jpg
+      - ITA/images/Bink_Video_4c_rev.png
+      - ITA/images/ammo_regen.png
+      - ITA/images/armor.png
+      - ITA/images/blaster.png
+      - ITA/images/doubler.png
+      - ITA/images/guard.png
+      - ITA/images/h01.gif
+      - ITA/images/h02.gif
+      - ITA/images/h03.gif
+      - ITA/images/h04.gif
+      - ITA/images/h05.gif
+      - ITA/images/h06.gif
+      - ITA/images/h07.gif
+      - ITA/images/h08.gif
+      - ITA/images/h09.gif
+      - ITA/images/h10.gif
+      - ITA/images/h17a.gif
+      - ITA/images/h17b.gif
+      - ITA/images/h26.gif
+      - ITA/images/h27.gif
+      - ITA/images/h28a.gif
+      - ITA/images/h28b.gif
+      - ITA/images/h28c.gif
+      - ITA/images/h_def.gif
+      - ITA/images/h_sup.gif
+      - ITA/images/h_tec.gif
+      - ITA/images/h_top.gif
+      - ITA/images/haste.png
+      - ITA/images/health.png
+      - ITA/images/health_pack.png
+      - ITA/images/id_logo_small.jpg
+      - ITA/images/ingamedisplay.png
+      - ITA/images/invisibility.png
+      - ITA/images/line1.gif
+      - ITA/images/line1_b.gif
+      - ITA/images/line2.gif
+      - ITA/images/line2_b.gif
+      - ITA/images/machinegun.png
+      - ITA/images/mega_health.png
+      - ITA/images/mpbrowser.png
+      - ITA/images/mssLogo.png
+      - ITA/images/pad.gif
+      - ITA/images/q4_logo_small.jpg
+      - ITA/images/quad_damage.png
+      - ITA/images/raven.gif
+      - ITA/images/regeneration.png
+      - ITA/images/save.png
+      - ITA/images/scout.png
+      - ITA/images/shotgun.png
+      - ITA/images/watermark.gif
+      - ITA/manual.htm
+      - ITA/readme.txt
+      - README
+      - README-1.3.htm
+      - README_Q4TV_broadcasting.txt
+      - README_builtin_downloads.txt
+      - sdl.patch.1.2.10
+
+    install:
+      #- openurl.sh
+      - q4base/arena_ctf.cfg
+      - q4base/ctf.cfg
+      - q4base/dm.cfg
+      - q4base/game000.pk4
+      - q4base/game100.pk4
+      - q4base/game200.pk4
+      - q4base/mapcycle-mp1.scriptcfg
+      - q4base/mapcycle-mp2.scriptcfg
+      - q4base/mapcycle-mp3.scriptcfg
+      - q4base/mapcycle-q4cmp_pak001.scriptcfg
+      - q4base/mapcycle.scriptcfg?unix
+      - q4base/pak013.pk4
+      - q4base/pak014.pk4
+      - q4base/pak016.pk4
+      - q4base/pak018.pk4
+      - q4base/pak019.pk4
+      - q4base/pak021.pk4
+      - q4base/q4cmp_pak001.pk4
+      - q4base/teamdm.cfg
+      - q4base/tourney.cfg
+      - q4base/zpak_czech_01.pk4.off
+      - q4base/zpak_czech_02.pk4.off
+      - q4base/zpak_english_01.pk4
+      - q4base/zpak_english_02.pk4
+      - q4base/zpak_english_03.pk4
+      - q4base/zpak_english_04.pk4
+      - q4base/zpak_french_01.pk4.off
+      - q4base/zpak_french_02.pk4.off
+      - q4base/zpak_french_03.pk4.off
+      - q4base/zpak_french_04.pk4.off
+      - q4base/zpak_italian_01.pk4.off
+      - q4base/zpak_italian_02.pk4.off
+      - q4base/zpak_italian_03.pk4.off
+      - q4base/zpak_italian_04.pk4.off
+      - q4base/zpak_polish_01.pk4.off
+      - q4base/zpak_polish_02.pk4.off
+      - q4base/zpak_russian_01.pk4.off
+      - q4base/zpak_russian_02.pk4.off
+      - q4base/zpak_spanish_01.pk4.off
+      - q4base/zpak_spanish_02.pk4.off
+      - q4base/zpak_spanish_03.pk4.off
+      - q4base/zpak_spanish_04.pk4.off
+      - q4icon.bmp
+      - q4mp/demos/id_perftest.ndmo85
+      - q4mp/demos/id_serverdemo.ndmo85
+      - q4mp/game000.pk4
+      - q4mp/game100.pk4
+      - q4mp/game200.pk4
+
+      - q4base/pak001.pk4?de
+      - q4base/pak002.pk4?de
+      - q4base/pak003.pk4?de
+      - q4base/pak004.pk4?de
+      - q4base/pak005.pk4?de
+      - q4base/pak006.pk4?de
+      - q4base/pak007.pk4?de
+      - q4base/pak008.pk4?de
+      - q4base/pak009.pk4?de
+      - q4base/pak010.pk4?de
+      - q4base/pak011.pk4?de
+      - q4base/pak012.pk4?de
+      - q4base/pak015.pk4?de
+      - q4base/pak017.pk4?de
+      - q4base/pak020.pk4?de
+      - q4base/pak022.pk4?de
+      - q4base/zpak_english.pk4?de
+      - version.info?de
+
+files:
+  CHANGES_14.txt:
+    alternatives:
+      - CHANGES_14.txt?steam
+      - CHANGES_14.txt?142
+
+  README:
+    distinctive_name: false
+
+  quake4-linux-1.4.2.x86.run:
+    download:
+      idstuff-mirrors:
+        path: quake4/linux
+      gentoo-distfiles-mirrors:
+        path: .
+      freebsd-ports-distfiles-mirrors:
+        path: .
+    unpack:
+      format: tar.gz
+      skip: 8750
+    provides:
+      - CHANGES_14.txt?142
+      - ENG/License.txt
+      - ENG/MSR.txt
+      - ENG/PBEULA.txt
+      - ENG/help.htm
+      - ENG/htm/Default.htm
+      - ENG/htm/credits.htm
+      - ENG/htm/cs.htm
+      - ENG/htm/left.htm
+      - ENG/htm/man_def.htm
+      - ENG/htm/man_left.htm
+      - ENG/htm/man_top.htm
+      - ENG/htm/readme.htm
+      - ENG/htm/side_ie.css
+      - ENG/htm/style_ie.css
+      - ENG/htm/techhelp.htm
+      - ENG/htm/top.htm
+      - ENG/images/ATVIsmall.gif
+      - ENG/images/ATVIsmaller.jpg
+      - ENG/images/Bink_Video_4c_rev.png
+      - ENG/images/ammo_regen.png
+      - ENG/images/armor.png
+      - ENG/images/blaster.png
+      - ENG/images/doubler.png
+      - ENG/images/guard.png
+      - ENG/images/h01.gif
+      - ENG/images/h02.gif
+      - ENG/images/h03.gif
+      - ENG/images/h04.gif
+      - ENG/images/h05.gif
+      - ENG/images/h06.gif
+      - ENG/images/h07.gif
+      - ENG/images/h08.gif
+      - ENG/images/h09.gif
+      - ENG/images/h10.gif
+      - ENG/images/h17a.gif
+      - ENG/images/h17b.gif
+      - ENG/images/h26.gif
+      - ENG/images/h27.gif
+      - ENG/images/h28a.gif
+      - ENG/images/h28b.gif
+      - ENG/images/h28c.gif
+      - ENG/images/h_def.gif
+      - ENG/images/h_sup.gif
+      - ENG/images/h_tec.gif
+      - ENG/images/h_top.gif
+      - ENG/images/haste.png
+      - ENG/images/health.png
+      - ENG/images/health_pack.png
+      - ENG/images/id_logo_small.jpg
+      - ENG/images/ingamedisplay.png
+      - ENG/images/invisibility.png
+      - ENG/images/line1.gif
+      - ENG/images/line1_b.gif
+      - ENG/images/line2.gif
+      - ENG/images/line2_b.gif
+      - ENG/images/machinegun.png
+      - ENG/images/mega_health.png
+      - ENG/images/mpbrowser.png
+      - ENG/images/mssLogo.png
+      - ENG/images/pad.gif
+      - ENG/images/q4_logo_small.jpg
+      - ENG/images/quad_damage.png
+      - ENG/images/raven.gif
+      - ENG/images/regeneration.png
+      - ENG/images/save.png
+      - ENG/images/scout.png
+      - ENG/images/shotgun.png
+      - ENG/images/watermark.gif
+      - ENG/manual.htm
+      - ENG/readme.txt
+      - ENU/License.txt
+      - ENU/MSR.txt
+      - ENU/PBEULA.txt
+      - ENU/help.htm
+      - ENU/htm/Default.htm
+      - ENU/htm/credits.htm
+      - ENU/htm/cs.htm
+      - ENU/htm/left.htm
+      - ENU/htm/man_def.htm
+      - ENU/htm/man_left.htm
+      - ENU/htm/man_top.htm
+      - ENU/htm/readme.htm
+      - ENU/htm/side_ie.css
+      - ENU/htm/style_ie.css
+      - ENU/htm/techhelp.htm
+      - ENU/htm/top.htm
+      - ENU/images/ATVIsmall.gif
+      - ENU/images/ATVIsmaller.jpg
+      - ENU/images/Bink_Video_4c_rev.png
+      - ENU/images/ammo_regen.png
+      - ENU/images/armor.png
+      - ENU/images/blaster.png
+      - ENU/images/doubler.png
+      - ENU/images/guard.png
+      - ENU/images/h01.gif
+      - ENU/images/h02.gif
+      - ENU/images/h03.gif
+      - ENU/images/h04.gif
+      - ENU/images/h05.gif
+      - ENU/images/h06.gif
+      - ENU/images/h07.gif
+      - ENU/images/h08.gif
+      - ENU/images/h09.gif
+      - ENU/images/h10.gif
+      - ENU/images/h17a.gif
+      - ENU/images/h17b.gif
+      - ENU/images/h26.gif
+      - ENU/images/h27.gif
+      - ENU/images/h28a.gif
+      - ENU/images/h28b.gif
+      - ENU/images/h28c.gif
+      - ENU/images/h_def.gif
+      - ENU/images/h_sup.gif
+      - ENU/images/h_tec.gif
+      - ENU/images/h_top.gif
+      - ENU/images/haste.png
+      - ENU/images/health.png
+      - ENU/images/health_pack.png
+      - ENU/images/id_logo_small.jpg
+      - ENU/images/ingamedisplay.png
+      - ENU/images/invisibility.png
+      - ENU/images/line1.gif
+      - ENU/images/line1_b.gif
+      - ENU/images/line2.gif
+      - ENU/images/line2_b.gif
+      - ENU/images/machinegun.png
+      - ENU/images/mega_health.png
+      - ENU/images/mpbrowser.png
+      - ENU/images/mssLogo.png
+      - ENU/images/pad.gif
+      - ENU/images/q4_logo_small.jpg
+      - ENU/images/quad_damage.png
+      - ENU/images/raven.gif
+      - ENU/images/regeneration.png
+      - ENU/images/save.png
+      - ENU/images/scout.png
+      - ENU/images/shotgun.png
+      - ENU/images/watermark.gif
+      - ENU/manual.htm
+      - ENU/readme.txt
+      - ESP/License.txt
+      - ESP/MSR.txt
+      - ESP/PBEULA.txt
+      - ESP/help.htm
+      - ESP/htm/Default.htm
+      - ESP/htm/credits.htm
+      - ESP/htm/cs.htm
+      - ESP/htm/left.htm
+      - ESP/htm/man_def.htm
+      - ESP/htm/man_left.htm
+      - ESP/htm/man_top.htm
+      - ESP/htm/readme.htm
+      - ESP/htm/side_ie.css
+      - ESP/htm/style_ie.css
+      - ESP/htm/techhelp.htm
+      - ESP/htm/top.htm
+      - ESP/images/ATVIsmall.gif
+      - ESP/images/ATVIsmaller.jpg
+      - ESP/images/Bink_Video_4c_rev.png
+      - ESP/images/ammo_regen.png
+      - ESP/images/armor.png
+      - ESP/images/blaster.png
+      - ESP/images/doubler.png
+      - ESP/images/guard.png
+      - ESP/images/h01.gif
+      - ESP/images/h02.gif
+      - ESP/images/h03.gif
+      - ESP/images/h04.gif
+      - ESP/images/h05.gif
+      - ESP/images/h06.gif
+      - ESP/images/h07.gif
+      - ESP/images/h08.gif
+      - ESP/images/h09.gif
+      - ESP/images/h10.gif
+      - ESP/images/h17a.gif
+      - ESP/images/h17b.gif
+      - ESP/images/h26.gif
+      - ESP/images/h27.gif
+      - ESP/images/h28a.gif
+      - ESP/images/h28b.gif
+      - ESP/images/h28c.gif
+      - ESP/images/h_def.gif
+      - ESP/images/h_sup.gif
+      - ESP/images/h_tec.gif
+      - ESP/images/h_top.gif
+      - ESP/images/haste.png
+      - ESP/images/health.png
+      - ESP/images/health_pack.png
+      - ESP/images/id_logo_small.jpg
+      - ESP/images/ingamedisplay.png
+      - ESP/images/invisibility.png
+      - ESP/images/line1.gif
+      - ESP/images/line1_b.gif
+      - ESP/images/line2.gif
+      - ESP/images/line2_b.gif
+      - ESP/images/machinegun.png
+      - ESP/images/mega_health.png
+      - ESP/images/mpbrowser.png
+      - ESP/images/mssLogo.png
+      - ESP/images/pad.gif
+      - ESP/images/q4_logo_small.jpg
+      - ESP/images/quad_damage.png
+      - ESP/images/raven.gif
+      - ESP/images/regeneration.png
+      - ESP/images/save.png
+      - ESP/images/scout.png
+      - ESP/images/shotgun.png
+      - ESP/images/watermark.gif
+      - ESP/manual.htm
+      - ESP/readme.txt
+      - FRA/License.txt
+      - FRA/MSR.txt
+      - FRA/PBEULA.txt
+      - FRA/help.htm
+      - FRA/htm/Default.htm
+      - FRA/htm/credits.htm
+      - FRA/htm/cs.htm
+      - FRA/htm/left.htm
+      - FRA/htm/man_def.htm
+      - FRA/htm/man_left.htm
+      - FRA/htm/man_top.htm
+      - FRA/htm/readme.htm
+      - FRA/htm/side_ie.css
+      - FRA/htm/style_ie.css
+      - FRA/htm/techhelp.htm
+      - FRA/htm/top.htm
+      - FRA/images/ATVIsmall.gif
+      - FRA/images/ATVIsmaller.jpg
+      - FRA/images/Bink_Video_4c_rev.png
+      - FRA/images/ammo_regen.png
+      - FRA/images/armor.png
+      - FRA/images/blaster.png
+      - FRA/images/doubler.png
+      - FRA/images/guard.png
+      - FRA/images/h01.gif
+      - FRA/images/h02.gif
+      - FRA/images/h03.gif
+      - FRA/images/h04.gif
+      - FRA/images/h05.gif
+      - FRA/images/h06.gif
+      - FRA/images/h07.gif
+      - FRA/images/h08.gif
+      - FRA/images/h09.gif
+      - FRA/images/h10.gif
+      - FRA/images/h17a.gif
+      - FRA/images/h17b.gif
+      - FRA/images/h26.gif
+      - FRA/images/h27.gif
+      - FRA/images/h28a.gif
+      - FRA/images/h28b.gif
+      - FRA/images/h28c.gif
+      - FRA/images/h_def.gif
+      - FRA/images/h_sup.gif
+      - FRA/images/h_tec.gif
+      - FRA/images/h_top.gif
+      - FRA/images/haste.png
+      - FRA/images/health.png
+      - FRA/images/health_pack.png
+      - FRA/images/id_logo_small.jpg
+      - FRA/images/ingamedisplay.png
+      - FRA/images/invisibility.png
+      - FRA/images/line1.gif
+      - FRA/images/line1_b.gif
+      - FRA/images/line2.gif
+      - FRA/images/line2_b.gif
+      - FRA/images/machinegun.png
+      - FRA/images/mega_health.png
+      - FRA/images/mpbrowser.png
+      - FRA/images/mssLogo.png
+      - FRA/images/pad.gif
+      - FRA/images/q4_logo_small.jpg
+      - FRA/images/quad_damage.png
+      - FRA/images/raven.gif
+      - FRA/images/regeneration.png
+      - FRA/images/save.png
+      - FRA/images/scout.png
+      - FRA/images/shotgun.png
+      - FRA/images/watermark.gif
+      - FRA/manual.htm
+      - FRA/readme.txt
+      - ITA/License.txt
+      - ITA/MSR.txt
+      - ITA/PBEULA.txt
+      - ITA/help.htm
+      - ITA/htm/Default.htm
+      - ITA/htm/credits.htm
+      - ITA/htm/cs.htm
+      - ITA/htm/left.htm
+      - ITA/htm/man_def.htm
+      - ITA/htm/man_left.htm
+      - ITA/htm/man_top.htm
+      - ITA/htm/readme.htm
+      - ITA/htm/side_ie.css
+      - ITA/htm/style_ie.css
+      - ITA/htm/techhelp.htm
+      - ITA/htm/top.htm
+      - ITA/images/ATVIsmall.gif
+      - ITA/images/ATVIsmaller.jpg
+      - ITA/images/Bink_Video_4c_rev.png
+      - ITA/images/ammo_regen.png
+      - ITA/images/armor.png
+      - ITA/images/blaster.png
+      - ITA/images/doubler.png
+      - ITA/images/guard.png
+      - ITA/images/h01.gif
+      - ITA/images/h02.gif
+      - ITA/images/h03.gif
+      - ITA/images/h04.gif
+      - ITA/images/h05.gif
+      - ITA/images/h06.gif
+      - ITA/images/h07.gif
+      - ITA/images/h08.gif
+      - ITA/images/h09.gif
+      - ITA/images/h10.gif
+      - ITA/images/h17a.gif
+      - ITA/images/h17b.gif
+      - ITA/images/h26.gif
+      - ITA/images/h27.gif
+      - ITA/images/h28a.gif
+      - ITA/images/h28b.gif
+      - ITA/images/h28c.gif
+      - ITA/images/h_def.gif
+      - ITA/images/h_sup.gif
+      - ITA/images/h_tec.gif
+      - ITA/images/h_top.gif
+      - ITA/images/haste.png
+      - ITA/images/health.png
+      - ITA/images/health_pack.png
+      - ITA/images/id_logo_small.jpg
+      - ITA/images/ingamedisplay.png
+      - ITA/images/invisibility.png
+      - ITA/images/line1.gif
+      - ITA/images/line1_b.gif
+      - ITA/images/line2.gif
+      - ITA/images/line2_b.gif
+      - ITA/images/machinegun.png
+      - ITA/images/mega_health.png
+      - ITA/images/mpbrowser.png
+      - ITA/images/mssLogo.png
+      - ITA/images/pad.gif
+      - ITA/images/q4_logo_small.jpg
+      - ITA/images/quad_damage.png
+      - ITA/images/raven.gif
+      - ITA/images/regeneration.png
+      - ITA/images/save.png
+      - ITA/images/scout.png
+      - ITA/images/shotgun.png
+      - ITA/images/watermark.gif
+      - ITA/manual.htm
+      - ITA/readme.txt
+      - README
+      - README-1.3.htm
+      - README_Q4TV_broadcasting.txt
+      - README_builtin_downloads.txt
+      - libSDL-1.2.id.so.0
+      #- libgcc_s.so.1
+      #- libstdc++.so.6
+      #- openurl.sh
+      - pb/htm/la001307.htm
+      - pb/htm/lc001095.htm
+      - pb/htm/ma001307.htm
+      - pb/htm/mc001095.htm
+      - pb/htm/wa001307.htm
+      - pb/htm/wc001095.htm
+      - pb/pbag.so
+      - pb/pbags.so
+      - pb/pbcl.so
+      - pb/pbcls.so
+      - pb/pbsv.so
+      - q4base/arena_ctf.cfg
+      - q4base/ctf.cfg
+      - q4base/dm.cfg
+      - q4base/game000.pk4
+      - q4base/game100.pk4
+      - q4base/game200.pk4
+      - q4base/mapcycle-mp1.scriptcfg
+      - q4base/mapcycle-mp2.scriptcfg
+      - q4base/mapcycle-mp3.scriptcfg
+      - q4base/mapcycle-q4cmp_pak001.scriptcfg
+      - q4base/mapcycle.scriptcfg?unix
+      - q4base/pak013.pk4
+      - q4base/pak014.pk4
+      - q4base/pak015.pk4?de
+      - q4base/pak015.pk4?interoperable
+      - q4base/pak016.pk4
+      - q4base/pak017.pk4?de
+      - q4base/pak017.pk4?interoperable
+      - q4base/pak018.pk4
+      - q4base/pak019.pk4
+      - q4base/pak020.pk4?de
+      - q4base/pak020.pk4?interoperable
+      - q4base/pak021.pk4
+      - q4base/pak022.pk4?de
+      - q4base/pak022.pk4?interoperable
+      - q4base/q4cmp_pak001.pk4
+      - q4base/teamdm.cfg
+      - q4base/tourney.cfg
+      - q4base/zpak_czech_01.pk4.off
+      - q4base/zpak_czech_02.pk4.off
+      - q4base/zpak_english_01.pk4
+      - q4base/zpak_english_02.pk4
+      - q4base/zpak_english_03.pk4
+      - q4base/zpak_english_04.pk4
+      - q4base/zpak_french_01.pk4.off
+      - q4base/zpak_french_02.pk4.off
+      - q4base/zpak_french_03.pk4.off
+      - q4base/zpak_french_04.pk4.off
+      - q4base/zpak_italian_01.pk4.off
+      - q4base/zpak_italian_02.pk4.off
+      - q4base/zpak_italian_03.pk4.off
+      - q4base/zpak_italian_04.pk4.off
+      - q4base/zpak_polish_01.pk4.off
+      - q4base/zpak_polish_02.pk4.off
+      - q4base/zpak_russian_01.pk4.off
+      - q4base/zpak_russian_02.pk4.off
+      - q4base/zpak_spanish_01.pk4.off
+      - q4base/zpak_spanish_02.pk4.off
+      - q4base/zpak_spanish_03.pk4.off
+      - q4base/zpak_spanish_04.pk4.off
+      - q4ded.x86
+      - q4icon.bmp
+      - q4mp/demos/id_perftest.ndmo85
+      - q4mp/demos/id_serverdemo.ndmo85
+      - q4mp/game000.pk4
+      - q4mp/game100.pk4
+      - q4mp/game200.pk4
+      - quake4.x86
+      - quake4smp.x86
+      - sdl.patch.1.2.10
+      - version.info?de
+      - version.info?interoperable
+
+size_and_md5: |
+  # the official release
+  287552973 bd2cb8164ede4272adcc091f724855ac  quake4-linux-1.4.2.x86.run
+  # used by Arch Linux's PKGBUILD; not noticeably smaller but the user
+  # might have it already
+  287483220 b186954ab5fbadd57f7ca9519b5b0503  quake4-linux-1.4.2.x86.run.gz
+
+  # contents of quake4-linux-1.4.2.x86.run
+  7914      7d955e799fc088d0e6bb46100058c34d CHANGES_14.txt?142
+  18891     7b1cbf74e6ebe75da1d067c4c7fa0500 ENG/License.txt
+  1328      8322fac51e0eba28174565e574a9f2c6 ENG/MSR.txt
+  5325      308adc5942bef686655ef8c5aefc29e0 ENG/PBEULA.txt
+  1128      3929af27ac910f7fa832dc460d1f8c8f ENG/help.htm
+  2793      6f86456dd4007a576ac3f8404cdecf7c ENG/htm/Default.htm
+  38289     4132a11c52fec619504ddf2115221f63 ENG/htm/credits.htm
+  220364    09172bfc5b679d7692febbf919edfd1b ENG/htm/cs.htm
+  2170      4e2c4fe9a4b61b78750787dcca10448d ENG/htm/left.htm
+  91281     0685dc4f0dc154e7e34e2bc55064d7ab ENG/htm/man_def.htm
+  1286      6d1a98bb31e72ba14f286cd283bb4035 ENG/htm/man_left.htm
+  1143      a56451247ded7fe8ec4083d6dd56b928 ENG/htm/man_top.htm
+  913       1d7e307211889427875b7061fb3669ff ENG/htm/readme.htm
+  862       4143e0888137cc850c9732aa46813e10 ENG/htm/side_ie.css
+  1130      950a925935c97a2c086938904b4404e0 ENG/htm/style_ie.css
+  7141      424aa007168d2584d1c159474c495a27 ENG/htm/techhelp.htm
+  1151      57d793796582ea89c6ee5f41a4073660 ENG/htm/top.htm
+  3641      2a48a010040e2189862b9e2831f07ddf ENG/images/ATVIsmall.gif
+  17752     3adc1b0fb534f733c8b1d114f3257ffc ENG/images/ATVIsmaller.jpg
+  7384      e2c6e5e17569a83ccb236b9f17569974 ENG/images/Bink_Video_4c_rev.png
+  7304      4769022663da2f1223b694f4d8d3e30c ENG/images/ammo_regen.png
+  6179      f7277e233be74041ed0b72ec7e910917 ENG/images/armor.png
+  15662     4d9285e07d8c7240d613d199f40caeee ENG/images/blaster.png
+  6741      1548c584199aee4398d54a7cdb99c5c7 ENG/images/doubler.png
+  6532      25d7b08b9dbd679fc32b49e2dec2ba32 ENG/images/guard.png
+  595       9dd88b00715968a77f3b1dd6ee98e0c2 ENG/images/h01.gif
+  675       93dd910c7f9722a7579da6472bde1503 ENG/images/h02.gif
+  1097      e106852df1b6c7051db5b310b8fa4b56 ENG/images/h03.gif
+  1142      beffe97eca39048497a86dc408f9f388 ENG/images/h04.gif
+  443       a2dfb2f1ed79fd89028f3391c124d24d ENG/images/h05.gif
+  923       ef6d33eab57a11345b52b7a2abc4cb7f ENG/images/h06.gif
+  572       eacefc56af6aaf5a19b402d61fcc8d76 ENG/images/h07.gif
+  1276      5ea59a4bf3a744cad6539f477c8b0122 ENG/images/h08.gif
+  1120      5eafceb139dca167f24091ec8dd2ecb6 ENG/images/h09.gif
+  760       d598b596f169b663da1e2209e273c256 ENG/images/h10.gif
+  964       cb4dded80b6c0ccd660de8a97a5fb280 ENG/images/h17a.gif
+  947       84f09c2248e20be4cd9ed67a75fff636 ENG/images/h17b.gif
+  479       77c9d6a01122764e9214009bef4c5703 ENG/images/h26.gif
+  1016      f6fe745ec37d47409ec166710d25651b ENG/images/h27.gif
+  1062      28b39458f01a12797c36b8a9f433594f ENG/images/h28a.gif
+  987       79ade229684c584c5dc689b636e24807 ENG/images/h28b.gif
+  762       8724f17f47082beea87eae80259f6879 ENG/images/h28c.gif
+  662       1a774dbb289c3b9fbb55965814edcf66 ENG/images/h_def.gif
+  1023      8b5f383cb19a8f0c44a2ca6a3d863339 ENG/images/h_sup.gif
+  625       ee1272cf1ce3c11e64142cadbdb1e488 ENG/images/h_tec.gif
+  883       cbd7183418c6a254eda94a76e683dcc1 ENG/images/h_top.gif
+  6321      a3e1e9ed3a28c8730468f1c8d72f5b8f ENG/images/haste.png
+  7179      098dd13cfb9d654d2f404426d83f613c ENG/images/health.png
+  7127      5c6961b7208854bd7f0d74acf6456363 ENG/images/health_pack.png
+  4678      782ec7578ebd6e728f18c1718c4a303a ENG/images/id_logo_small.jpg
+  506217    ed567b01e8c8884a52baf243b3caccb9 ENG/images/ingamedisplay.png
+  5458      d003805ae614f2f18e1fecf6ded94826 ENG/images/invisibility.png
+  1018      baeb3c5191806e114b66fae60205d06d ENG/images/line1.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ENG/images/line1_b.gif
+  1018      baeb3c5191806e114b66fae60205d06d ENG/images/line2.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ENG/images/line2_b.gif
+  20717     2c362e452dc250f04da8b9a5200ec25e ENG/images/machinegun.png
+  6661      9946fd063b57f1a67652183eb7309994 ENG/images/mega_health.png
+  460445    9abbb067a6cc9b70da81101d413628a2 ENG/images/mpbrowser.png
+  7337      0b7ad311eaa5b3f280551201aa054a2f ENG/images/mssLogo.png
+  49        eff4220aced886e8117e47d604687547 ENG/images/pad.gif
+  4699      e20f2fd57e2b4e9ae59aa8f55cf9d2c6 ENG/images/q4_logo_small.jpg
+  4530      39f029e8e0452c95a28ec4ce188611fb ENG/images/quad_damage.png
+  3352      015ff02e03e5784c3439621fb5f24beb ENG/images/raven.gif
+  5488      f88df71fd89fa6a04132fe21fe11fd58 ENG/images/regeneration.png
+  469731    3479c6c31225ad0cad8ee03ed588486e ENG/images/save.png
+  6543      7e0c33c400e72396308d70baf3bc8e8f ENG/images/scout.png
+  17906     09b8bb1a2ee8cb1c8a3116b29d7edd3e ENG/images/shotgun.png
+  16885     eaf6d35a21b76886d927b7d6e8831b57 ENG/images/watermark.gif
+  1121      0f293096a0b7a156070596212b43153e ENG/manual.htm
+  15710     28c23372d1eed34ead30662f3a3f544d ENG/readme.txt
+  18862     3d4b3177fa8969b76c67e3a75003227b ENU/License.txt
+  1328      8322fac51e0eba28174565e574a9f2c6 ENU/MSR.txt
+  5325      308adc5942bef686655ef8c5aefc29e0 ENU/PBEULA.txt
+  1128      3929af27ac910f7fa832dc460d1f8c8f ENU/help.htm
+  2793      6f86456dd4007a576ac3f8404cdecf7c ENU/htm/Default.htm
+  38289     4132a11c52fec619504ddf2115221f63 ENU/htm/credits.htm
+  220364    09172bfc5b679d7692febbf919edfd1b ENU/htm/cs.htm
+  2170      4e2c4fe9a4b61b78750787dcca10448d ENU/htm/left.htm
+  90936     c23e705f20ef03c0b0bd718d91e5da08 ENU/htm/man_def.htm
+  1286      6d1a98bb31e72ba14f286cd283bb4035 ENU/htm/man_left.htm
+  1143      a56451247ded7fe8ec4083d6dd56b928 ENU/htm/man_top.htm
+  913       1d7e307211889427875b7061fb3669ff ENU/htm/readme.htm
+  862       4143e0888137cc850c9732aa46813e10 ENU/htm/side_ie.css
+  1130      950a925935c97a2c086938904b4404e0 ENU/htm/style_ie.css
+  7141      424aa007168d2584d1c159474c495a27 ENU/htm/techhelp.htm
+  1151      57d793796582ea89c6ee5f41a4073660 ENU/htm/top.htm
+  3641      2a48a010040e2189862b9e2831f07ddf ENU/images/ATVIsmall.gif
+  17752     3adc1b0fb534f733c8b1d114f3257ffc ENU/images/ATVIsmaller.jpg
+  7384      e2c6e5e17569a83ccb236b9f17569974 ENU/images/Bink_Video_4c_rev.png
+  7304      4769022663da2f1223b694f4d8d3e30c ENU/images/ammo_regen.png
+  6179      f7277e233be74041ed0b72ec7e910917 ENU/images/armor.png
+  15662     4d9285e07d8c7240d613d199f40caeee ENU/images/blaster.png
+  6741      1548c584199aee4398d54a7cdb99c5c7 ENU/images/doubler.png
+  6532      25d7b08b9dbd679fc32b49e2dec2ba32 ENU/images/guard.png
+  595       9dd88b00715968a77f3b1dd6ee98e0c2 ENU/images/h01.gif
+  675       93dd910c7f9722a7579da6472bde1503 ENU/images/h02.gif
+  1097      e106852df1b6c7051db5b310b8fa4b56 ENU/images/h03.gif
+  1142      beffe97eca39048497a86dc408f9f388 ENU/images/h04.gif
+  443       a2dfb2f1ed79fd89028f3391c124d24d ENU/images/h05.gif
+  923       ef6d33eab57a11345b52b7a2abc4cb7f ENU/images/h06.gif
+  572       eacefc56af6aaf5a19b402d61fcc8d76 ENU/images/h07.gif
+  1276      5ea59a4bf3a744cad6539f477c8b0122 ENU/images/h08.gif
+  1120      5eafceb139dca167f24091ec8dd2ecb6 ENU/images/h09.gif
+  760       d598b596f169b663da1e2209e273c256 ENU/images/h10.gif
+  964       cb4dded80b6c0ccd660de8a97a5fb280 ENU/images/h17a.gif
+  947       84f09c2248e20be4cd9ed67a75fff636 ENU/images/h17b.gif
+  479       77c9d6a01122764e9214009bef4c5703 ENU/images/h26.gif
+  1016      f6fe745ec37d47409ec166710d25651b ENU/images/h27.gif
+  1062      28b39458f01a12797c36b8a9f433594f ENU/images/h28a.gif
+  987       79ade229684c584c5dc689b636e24807 ENU/images/h28b.gif
+  762       8724f17f47082beea87eae80259f6879 ENU/images/h28c.gif
+  662       1a774dbb289c3b9fbb55965814edcf66 ENU/images/h_def.gif
+  1023      8b5f383cb19a8f0c44a2ca6a3d863339 ENU/images/h_sup.gif
+  625       ee1272cf1ce3c11e64142cadbdb1e488 ENU/images/h_tec.gif
+  883       cbd7183418c6a254eda94a76e683dcc1 ENU/images/h_top.gif
+  6321      a3e1e9ed3a28c8730468f1c8d72f5b8f ENU/images/haste.png
+  7179      098dd13cfb9d654d2f404426d83f613c ENU/images/health.png
+  7127      5c6961b7208854bd7f0d74acf6456363 ENU/images/health_pack.png
+  4678      782ec7578ebd6e728f18c1718c4a303a ENU/images/id_logo_small.jpg
+  506217    ed567b01e8c8884a52baf243b3caccb9 ENU/images/ingamedisplay.png
+  5458      d003805ae614f2f18e1fecf6ded94826 ENU/images/invisibility.png
+  1018      baeb3c5191806e114b66fae60205d06d ENU/images/line1.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ENU/images/line1_b.gif
+  1018      baeb3c5191806e114b66fae60205d06d ENU/images/line2.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ENU/images/line2_b.gif
+  20717     2c362e452dc250f04da8b9a5200ec25e ENU/images/machinegun.png
+  6661      9946fd063b57f1a67652183eb7309994 ENU/images/mega_health.png
+  460445    9abbb067a6cc9b70da81101d413628a2 ENU/images/mpbrowser.png
+  7337      0b7ad311eaa5b3f280551201aa054a2f ENU/images/mssLogo.png
+  49        eff4220aced886e8117e47d604687547 ENU/images/pad.gif
+  4699      e20f2fd57e2b4e9ae59aa8f55cf9d2c6 ENU/images/q4_logo_small.jpg
+  4530      39f029e8e0452c95a28ec4ce188611fb ENU/images/quad_damage.png
+  3352      015ff02e03e5784c3439621fb5f24beb ENU/images/raven.gif
+  5488      f88df71fd89fa6a04132fe21fe11fd58 ENU/images/regeneration.png
+  469731    3479c6c31225ad0cad8ee03ed588486e ENU/images/save.png
+  6543      7e0c33c400e72396308d70baf3bc8e8f ENU/images/scout.png
+  17906     09b8bb1a2ee8cb1c8a3116b29d7edd3e ENU/images/shotgun.png
+  16885     eaf6d35a21b76886d927b7d6e8831b57 ENU/images/watermark.gif
+  1121      0f293096a0b7a156070596212b43153e ENU/manual.htm
+  15708     d59382a7970d1bc10ff32fc8f5b78276 ENU/readme.txt
+  19604     6d5b8ffca9df3d95967ba36aabab6141 ESP/License.txt
+  1518      0e7fa140507b6acb4a5e3bc5087f794c ESP/MSR.txt
+  6018      b2a24ce32f893b81773b3369348b6bc1 ESP/PBEULA.txt
+  1180      322cf8e4d98a9d84232d2c43dd69dbb8 ESP/help.htm
+  2911      0363921ed53bd1d44a82d863564dbbb2 ESP/htm/Default.htm
+  38316     5fbe9ee5018e8edf12a5dc3eb7d6919e ESP/htm/credits.htm
+  222209    895b8ad2865c9fd21e6c22096af00dbf ESP/htm/cs.htm
+  2255      0de6ee405fa081862663aa9a5aeb1886 ESP/htm/left.htm
+  91887     d9d0626e2eb71c4977768621844b5d2f ESP/htm/man_def.htm
+  1332      bac79da31919f4ab52dcd3eccd35ce7d ESP/htm/man_left.htm
+  1141      824bea50a05542e183f738324716c005 ESP/htm/man_top.htm
+  962       baab74f6d5541fe75cfa3516757571dd ESP/htm/readme.htm
+  862       4143e0888137cc850c9732aa46813e10 ESP/htm/side_ie.css
+  1130      950a925935c97a2c086938904b4404e0 ESP/htm/style_ie.css
+  7783      4d88120af403f867b6e1edf6ab8981ff ESP/htm/techhelp.htm
+  1154      13a86f34ab62155f9fc9453dade1e558 ESP/htm/top.htm
+  3641      2a48a010040e2189862b9e2831f07ddf ESP/images/ATVIsmall.gif
+  17752     3adc1b0fb534f733c8b1d114f3257ffc ESP/images/ATVIsmaller.jpg
+  7384      e2c6e5e17569a83ccb236b9f17569974 ESP/images/Bink_Video_4c_rev.png
+  7304      4769022663da2f1223b694f4d8d3e30c ESP/images/ammo_regen.png
+  6179      f7277e233be74041ed0b72ec7e910917 ESP/images/armor.png
+  15662     4d9285e07d8c7240d613d199f40caeee ESP/images/blaster.png
+  6741      1548c584199aee4398d54a7cdb99c5c7 ESP/images/doubler.png
+  6532      25d7b08b9dbd679fc32b49e2dec2ba32 ESP/images/guard.png
+  488       909c2d4b28478c6f681f054e49d42135 ESP/images/h01.gif
+  776       2e218dcdf8f6c81c1c93e65bc0317190 ESP/images/h02.gif
+  1269      10b25139633c8b99ee9db692c74b579d ESP/images/h03.gif
+  1178      c71e71d922f4729f30e706d6be816b2b ESP/images/h04.gif
+  454       373884f16197bfb7e32161f7cd1b2213 ESP/images/h05.gif
+  1019      259736d5559804f08aeb32a13c4294a6 ESP/images/h06.gif
+  473       e236372d5327cd64e07aa655369dc376 ESP/images/h07.gif
+  1068      fbc05ac1635de5625f172e91d10f52d2 ESP/images/h08.gif
+  1036      9561884de735172cc3bdaba955703bfe ESP/images/h09.gif
+  841       afa7e9d98a2935b424e49d40909e7856 ESP/images/h10.gif
+  1291      658c0e53a8560fc3e4526a55c528fb61 ESP/images/h17a.gif
+  801       1143f17342826637252b2d671e5f91e0 ESP/images/h17b.gif
+  541       9beb24ec70d22e09e6e586c928eb6be5 ESP/images/h26.gif
+  957       f56b881329ddf2e87c0fe880a575f169 ESP/images/h27.gif
+  1102      26a60c574d07c5e0df303e50cdacd28c ESP/images/h28a.gif
+  1019      7987133ed5672835db76dbdad288f63c ESP/images/h28b.gif
+  620       1883224b71cff8caea199954515da0f2 ESP/images/h28c.gif
+  841       347714060c7be68fd0f3451640ae6085 ESP/images/h_def.gif
+  1134      f6089f18e504e1574c892922ddb3aa30 ESP/images/h_sup.gif
+  626       65fc158fab91783cb19d0be04b9c8e12 ESP/images/h_tec.gif
+  840       d521c23d77e66fa75b53d7151bf761d8 ESP/images/h_top.gif
+  6321      a3e1e9ed3a28c8730468f1c8d72f5b8f ESP/images/haste.png
+  7179      098dd13cfb9d654d2f404426d83f613c ESP/images/health.png
+  7127      5c6961b7208854bd7f0d74acf6456363 ESP/images/health_pack.png
+  4678      782ec7578ebd6e728f18c1718c4a303a ESP/images/id_logo_small.jpg
+  371080    2af13909f04544112b567095dcebf4c4 ESP/images/ingamedisplay.png
+  5458      d003805ae614f2f18e1fecf6ded94826 ESP/images/invisibility.png
+  1018      baeb3c5191806e114b66fae60205d06d ESP/images/line1.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ESP/images/line1_b.gif
+  1018      baeb3c5191806e114b66fae60205d06d ESP/images/line2.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ESP/images/line2_b.gif
+  20717     2c362e452dc250f04da8b9a5200ec25e ESP/images/machinegun.png
+  6661      9946fd063b57f1a67652183eb7309994 ESP/images/mega_health.png
+  53779     083551fd0cb6a2a231a7458021b57341 ESP/images/mpbrowser.png
+  7337      0b7ad311eaa5b3f280551201aa054a2f ESP/images/mssLogo.png
+  49        eff4220aced886e8117e47d604687547 ESP/images/pad.gif
+  4699      e20f2fd57e2b4e9ae59aa8f55cf9d2c6 ESP/images/q4_logo_small.jpg
+  4530      39f029e8e0452c95a28ec4ce188611fb ESP/images/quad_damage.png
+  3352      015ff02e03e5784c3439621fb5f24beb ESP/images/raven.gif
+  5488      f88df71fd89fa6a04132fe21fe11fd58 ESP/images/regeneration.png
+  90125     f4dcb6e7b7da74a3a9ba2c8ce4ddf69a ESP/images/save.png
+  6543      7e0c33c400e72396308d70baf3bc8e8f ESP/images/scout.png
+  17906     09b8bb1a2ee8cb1c8a3116b29d7edd3e ESP/images/shotgun.png
+  16885     eaf6d35a21b76886d927b7d6e8831b57 ESP/images/watermark.gif
+  1163      8f093d28efbf0779f45b70b772c29e10 ESP/manual.htm
+  16898     8007f89b0e405b6b0fa733da9d769ce9 ESP/readme.txt
+  16796     78eb770f9bebcd2e3fcfd294714f5cb1 FRA/License.txt
+  1661      e078cf4bcebd0fd8d0afd4fca66769e0 FRA/MSR.txt
+  5421      d79778f062cc8e565ca7ef81859ea6cb FRA/PBEULA.txt
+  1170      840d5324baeb7257c3b266e6d21e5af3 FRA/help.htm
+  2754      f9b636ae47a18a6ef430c1a832d49832 FRA/htm/Default.htm
+  38311     a3264c699394bcb4bd5ccbb0031a9bee FRA/htm/credits.htm
+  221141    1b1d2aafd12bb02e5fcb7b5efb58dbc6 FRA/htm/cs.htm
+  2184      816235d587ecbcbb7eb186037b3325c5 FRA/htm/left.htm
+  91215     e384c011061e5f3ee598d0ce9e966b32 FRA/htm/man_def.htm
+  1297      4d2553a647167b70742f844d2e74fe0f FRA/htm/man_left.htm
+  1143      a9dadca897c0a71d1a48b14e4747c282 FRA/htm/man_top.htm
+  950       9bec38f40adf3e6f9f77104a7ad28022 FRA/htm/readme.htm
+  862       4143e0888137cc850c9732aa46813e10 FRA/htm/side_ie.css
+  1130      950a925935c97a2c086938904b4404e0 FRA/htm/style_ie.css
+  8072      bbe0abfad0037f8da7a7b66d1ce8192f FRA/htm/techhelp.htm
+  1151      57d793796582ea89c6ee5f41a4073660 FRA/htm/top.htm
+  3641      2a48a010040e2189862b9e2831f07ddf FRA/images/ATVIsmall.gif
+  17752     3adc1b0fb534f733c8b1d114f3257ffc FRA/images/ATVIsmaller.jpg
+  7384      e2c6e5e17569a83ccb236b9f17569974 FRA/images/Bink_Video_4c_rev.png
+  7304      4769022663da2f1223b694f4d8d3e30c FRA/images/ammo_regen.png
+  6179      f7277e233be74041ed0b72ec7e910917 FRA/images/armor.png
+  15662     4d9285e07d8c7240d613d199f40caeee FRA/images/blaster.png
+  6741      1548c584199aee4398d54a7cdb99c5c7 FRA/images/doubler.png
+  6532      25d7b08b9dbd679fc32b49e2dec2ba32 FRA/images/guard.png
+  627       0f5f8a974253ce05ff3bb26ba40afec7 FRA/images/h01.gif
+  822       5b2f15a35fd54db37ea8fec0f5c0dcae FRA/images/h02.gif
+  1320      4f860d89318825b9c57cab2bedae0745 FRA/images/h03.gif
+  1022      63590f0f02e8cbfccd2263e68f82f8db FRA/images/h04.gif
+  443       a2dfb2f1ed79fd89028f3391c124d24d FRA/images/h05.gif
+  918       eccf3240279faaa8c114f1f00becb3e4 FRA/images/h06.gif
+  465       48c8dea28492ee0ec2a23e99b415cda8 FRA/images/h07.gif
+  1292      fb489327dc6b6de5f220c6736dd59916 FRA/images/h08.gif
+  1434      2b9fbc6527df094b5eeb03ba4cce7d4e FRA/images/h09.gif
+  775       d376774ba78fa8d882a03af095f97ee2 FRA/images/h10.gif
+  1118      6825e5a918ea61fd2d8d22bd2ed25c90 FRA/images/h17a.gif
+  892       7c1ab8d65926bda997fc0101e5bb0c3b FRA/images/h17b.gif
+  479       77c9d6a01122764e9214009bef4c5703 FRA/images/h26.gif
+  914       26fd1d9f6aed71983e87df44ec8e0d74 FRA/images/h27.gif
+  881       1ad31cfc9422e3085ab8c840eba1e640 FRA/images/h28a.gif
+  541       380fc0102dad952dd7c8e42f5fcbfa36 FRA/images/h28b.gif
+  623       4341b6b2467b7df48a33552769dd1c6d FRA/images/h28c.gif
+  709       9ab309f750f320d1ab9d8c0cad62522e FRA/images/h_def.gif
+  1171      40695802342f46b4b8f767f504748a1c FRA/images/h_sup.gif
+  649       54b3111988091ad6b8f77352aa4150d9 FRA/images/h_tec.gif
+  893       d653a3881ac0aade55db13bef1295a0f FRA/images/h_top.gif
+  6321      a3e1e9ed3a28c8730468f1c8d72f5b8f FRA/images/haste.png
+  7179      098dd13cfb9d654d2f404426d83f613c FRA/images/health.png
+  7127      5c6961b7208854bd7f0d74acf6456363 FRA/images/health_pack.png
+  4678      782ec7578ebd6e728f18c1718c4a303a FRA/images/id_logo_small.jpg
+  452074    487afa4b1887e3a900345a689ee6ed05 FRA/images/ingamedisplay.png
+  5458      d003805ae614f2f18e1fecf6ded94826 FRA/images/invisibility.png
+  1018      baeb3c5191806e114b66fae60205d06d FRA/images/line1.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 FRA/images/line1_b.gif
+  1018      baeb3c5191806e114b66fae60205d06d FRA/images/line2.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 FRA/images/line2_b.gif
+  20717     2c362e452dc250f04da8b9a5200ec25e FRA/images/machinegun.png
+  6661      9946fd063b57f1a67652183eb7309994 FRA/images/mega_health.png
+  58458     9f23c5446b8233b065c6b1db765d258e FRA/images/mpbrowser.png
+  7337      0b7ad311eaa5b3f280551201aa054a2f FRA/images/mssLogo.png
+  49        eff4220aced886e8117e47d604687547 FRA/images/pad.gif
+  4699      e20f2fd57e2b4e9ae59aa8f55cf9d2c6 FRA/images/q4_logo_small.jpg
+  4530      39f029e8e0452c95a28ec4ce188611fb FRA/images/quad_damage.png
+  3352      015ff02e03e5784c3439621fb5f24beb FRA/images/raven.gif
+  5488      f88df71fd89fa6a04132fe21fe11fd58 FRA/images/regeneration.png
+  81422     1d4db8c394ed29dcbd6e1dcb837c0054 FRA/images/save.png
+  6543      7e0c33c400e72396308d70baf3bc8e8f FRA/images/scout.png
+  17906     09b8bb1a2ee8cb1c8a3116b29d7edd3e FRA/images/shotgun.png
+  16885     eaf6d35a21b76886d927b7d6e8831b57 FRA/images/watermark.gif
+  1157      a44747cb01b57d8ec54f8eab83ab90c8 FRA/manual.htm
+  16954     b830f0967c86c9ea8941e06c1cd67c26 FRA/readme.txt
+  21324     00da3d2ef09d546375dac8e1bd170d26 ITA/License.txt
+  1574      dc0d10597bc92a4caa7f3cd88343a20c ITA/MSR.txt
+  5758      f5e48061672e15caf74d45fa3f4dc221 ITA/PBEULA.txt
+  1184      f41749ec201126c589b00834cb1ce235 ITA/help.htm
+  3263      4211905eac84c3968920cd57d8c51b1c ITA/htm/Default.htm
+  38262     30627d579ae7be5a0e7a89ec0243e6cc ITA/htm/credits.htm
+  221501    2d5f8d6a8df78d8f663da51914a80edb ITA/htm/cs.htm
+  2289      dee3d9085dac49b6db1232694e64f4c5 ITA/htm/left.htm
+  96603     3f5afa2aae346bea9f4c85fc8958342a ITA/htm/man_def.htm
+  1268      0f69d0b0836f44e5ded6483b61aad72c ITA/htm/man_left.htm
+  1143      a56451247ded7fe8ec4083d6dd56b928 ITA/htm/man_top.htm
+  938       c7a40cf40557ebc6d2ac355d9771e3b3 ITA/htm/readme.htm
+  862       4143e0888137cc850c9732aa46813e10 ITA/htm/side_ie.css
+  1130      950a925935c97a2c086938904b4404e0 ITA/htm/style_ie.css
+  7810      f8e78638d5eb079cf506888a67b581cb ITA/htm/techhelp.htm
+  1159      83b26226265d6b6ccb37d1716e406c60 ITA/htm/top.htm
+  3641      2a48a010040e2189862b9e2831f07ddf ITA/images/ATVIsmall.gif
+  17752     3adc1b0fb534f733c8b1d114f3257ffc ITA/images/ATVIsmaller.jpg
+  7384      e2c6e5e17569a83ccb236b9f17569974 ITA/images/Bink_Video_4c_rev.png
+  7304      4769022663da2f1223b694f4d8d3e30c ITA/images/ammo_regen.png
+  6179      f7277e233be74041ed0b72ec7e910917 ITA/images/armor.png
+  15662     4d9285e07d8c7240d613d199f40caeee ITA/images/blaster.png
+  6741      1548c584199aee4398d54a7cdb99c5c7 ITA/images/doubler.png
+  6532      25d7b08b9dbd679fc32b49e2dec2ba32 ITA/images/guard.png
+  523       bd1bece66f8487d13b46238d8c4cbc04 ITA/images/h01.gif
+  638       edf41c94f4820df954d1730da601a2af ITA/images/h02.gif
+  956       cf242538de4a8fa639da04d85f0ce9ca ITA/images/h03.gif
+  1061      f5b79e810366973d2fa40a3ea98e5995 ITA/images/h04.gif
+  398       a8e4543f26027d12b5a72461e568287f ITA/images/h05.gif
+  933       c08999de5187e4ffffb6bc9600d1f742 ITA/images/h06.gif
+  413       eba5ea6951e85b2e4ce2111cb7bdbb3f ITA/images/h07.gif
+  931       8e8736c7fa80f762eec55825c0f0bf9b ITA/images/h08.gif
+  1001      de21cfa495f80d4cc87c20c7896c9fac ITA/images/h09.gif
+  745       f14034ac46bd7630d8159ada40750965 ITA/images/h10.gif
+  873       b707e81c49d8c7eaf5742a59004b01ab ITA/images/h17a.gif
+  653       02c429b5c8cf69e2176c35309be785af ITA/images/h17b.gif
+  919       42836ede35e7dd385065de78c50604cc ITA/images/h26.gif
+  967       2178a659176d83cdbcc7c33990ebe0a3 ITA/images/h27.gif
+  986       6c5fec55eb643131d690c0c65a53a254 ITA/images/h28a.gif
+  708       c3c3d9a341356428df2e690f0a431fd7 ITA/images/h28b.gif
+  544       93426ebc0c1eae6dd9e2f1f6e35cbe2b ITA/images/h28c.gif
+  776       7775f4df32bdb1c887149ceecae42220 ITA/images/h_def.gif
+  1083      dfd82622b76135d056cf71d23649b32e ITA/images/h_sup.gif
+  671       ae8ef06fa446841de92cd48c6e8840e2 ITA/images/h_tec.gif
+  797       e9059ae8d4617ede1609faabc97412e5 ITA/images/h_top.gif
+  6321      a3e1e9ed3a28c8730468f1c8d72f5b8f ITA/images/haste.png
+  7179      098dd13cfb9d654d2f404426d83f613c ITA/images/health.png
+  7127      5c6961b7208854bd7f0d74acf6456363 ITA/images/health_pack.png
+  4678      782ec7578ebd6e728f18c1718c4a303a ITA/images/id_logo_small.jpg
+  378454    510c31749bdabbb6b2185e3e0a15e9c3 ITA/images/ingamedisplay.png
+  5458      d003805ae614f2f18e1fecf6ded94826 ITA/images/invisibility.png
+  1018      baeb3c5191806e114b66fae60205d06d ITA/images/line1.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ITA/images/line1_b.gif
+  1018      baeb3c5191806e114b66fae60205d06d ITA/images/line2.gif
+  1018      90201fc1f0633a505a4a8be5f21077a3 ITA/images/line2_b.gif
+  20717     2c362e452dc250f04da8b9a5200ec25e ITA/images/machinegun.png
+  6661      9946fd063b57f1a67652183eb7309994 ITA/images/mega_health.png
+  55751     4c459794a7fce50cf8c1ed3ed12a96c6 ITA/images/mpbrowser.png
+  7337      0b7ad311eaa5b3f280551201aa054a2f ITA/images/mssLogo.png
+  49        eff4220aced886e8117e47d604687547 ITA/images/pad.gif
+  4699      e20f2fd57e2b4e9ae59aa8f55cf9d2c6 ITA/images/q4_logo_small.jpg
+  4530      39f029e8e0452c95a28ec4ce188611fb ITA/images/quad_damage.png
+  3352      015ff02e03e5784c3439621fb5f24beb ITA/images/raven.gif
+  5488      f88df71fd89fa6a04132fe21fe11fd58 ITA/images/regeneration.png
+  337838    51042e1cee782d132350a36b594f05ec ITA/images/save.png
+  6543      7e0c33c400e72396308d70baf3bc8e8f ITA/images/scout.png
+  17906     09b8bb1a2ee8cb1c8a3116b29d7edd3e ITA/images/shotgun.png
+  16885     eaf6d35a21b76886d927b7d6e8831b57 ITA/images/watermark.gif
+  1142      b0c3c094a3c7294710f0a84431cbb602 ITA/manual.htm
+  17344     be2b43d5c8a5a0821ac2f9d8c9f5285f ITA/readme.txt
+  3101      bce6c919cad7e4e54a97d4d01a2a822d README
+  32170     fa808230f9262976d35ed74852d6bc99 README-1.3.htm
+  2334      4ba37fb90ea77188364999a995c7a196 README_Q4TV_broadcasting.txt
+  919       b18ce4d402f67114d5ae4a14ab0d8480 README_builtin_downloads.txt
+  3368297   74b39bd25753c3056f69dd811d211ef9 libSDL-1.2.id.so.0
+  #224402    957ca54cedbaf3b92e3d76bc6250d1ea libgcc_s.so.1
+  #4387755   6eea38656d78c371fbf01cc0f78da6eb libstdc++.so.6
+  #271       2c1d0644a047fab1b2b0b6b3d97bbcbb openurl.sh
+  25775     be4abfc21bd6dd5faeb6634d0353e654 pb/htm/la001307.htm
+  597428    96862634fa57b4253025154759b83c2c pb/htm/lc001095.htm
+  17        74df4244adcd334c1c7a77d0142d4f2d pb/htm/ma001307.htm
+  17        74df4244adcd334c1c7a77d0142d4f2d pb/htm/mc001095.htm
+  50732     639a05fb3b1f36429435448cb669392c pb/htm/wa001307.htm
+  431852    dd46e28ea9ac24ba28e26cf5aa43c85a pb/htm/wc001095.htm
+  29136     5d6d0943e63ba9a7b1aafd07cb7d6b88 pb/pbag.so
+  29136     5d6d0943e63ba9a7b1aafd07cb7d6b88 pb/pbags.so
+  980068    2ed53a04d10922df08eb277d819a5e2c pb/pbcl.so
+  980068    2ed53a04d10922df08eb277d819a5e2c pb/pbcls.so
+  2153668   4bd9fd356cf6f05bece053dfa017f3b7 pb/pbsv.so
+  2740      2e12fbf682d8b5d5fb3107442ec7fd35 q4base/arena_ctf.cfg
+  2721      a2ee60bce268b82a942d708b3a743d50 q4base/ctf.cfg
+  2775      5e4f658d4136f83256d557bbf489ea7c q4base/dm.cfg
+  1710345   808e8804ab3dab0eab9810179f1a8943 q4base/game000.pk4
+  2306391   1ddd9d4067679d4ffdbf0cd6dd9695f5 q4base/game100.pk4
+  5188690   e74002463f81728cf3072c92b867dc41 q4base/game200.pk4
+  4568      c24d666dab78c3e63ba46cbcb5963598 q4base/mapcycle-mp1.scriptcfg
+  5102      6ab8911a4b7a8becb2cc5a645e2b4c73 q4base/mapcycle-mp2.scriptcfg
+  6949      420ae6e0bd6da2af9d1b75a865a68c61 q4base/mapcycle-mp3.scriptcfg
+  12569     d1cd74f603cf939c5baaf9b2d9bf9969 q4base/mapcycle-q4cmp_pak001.scriptcfg
+  3990      46ab20d4da5c0abe934d6442508406bf q4base/mapcycle.scriptcfg?unix
+  17391934  c1383eeb82a7d303b27d3884180ffd22 q4base/pak013.pk4
+  21404183  e2ec0b8ce4c460bf196ef61280ae20e0 q4base/pak014.pk4
+  11322012  22f0ba54cf4af29fbc026d32a9e7ca18 q4base/pak015.pk4?de
+  512986    1c74cadf76ea4567edc75af6fc6a4fcb q4base/pak015.pk4?interoperable
+  45360121  3f005b0703c7b8f7c77627d2f091dd9e q4base/pak016.pk4
+  17718     084c99f8dd72c9f489e0cc38e871d807 q4base/pak017.pk4?de
+  17759     909d24e331efc8b40e818af02faebf4c q4base/pak017.pk4?interoperable
+  80946     15af0fb2c33b0743edc0ff11199fffb0 q4base/pak018.pk4
+  116026927 5865f9172801fee0c48b7a83d17b29ca q4base/pak019.pk4
+  32644     f6eb300676be606c2cd310efcb910c46 q4base/pak020.pk4?de
+  32710     482565b7860b81e21d586bcb117d0aff q4base/pak020.pk4?interoperable
+  962643    615306b72e71f2ed9224b3f16183795c q4base/pak021.pk4
+  41978     85328954046572ccfef3db7fe59232ec q4base/pak022.pk4?de
+  42035     b4692f9e82390ea39750749e18f3fa09 q4base/pak022.pk4?interoperable
+  37426396  79d90c4564d043036b0e3831d158ea7d q4base/q4cmp_pak001.pk4
+  2799      97aafde98e8362bead9d93383f095b27 q4base/teamdm.cfg
+  2950      20a30db2911a81816004fd24a7c65b85 q4base/tourney.cfg
+  23713     09bd2ab05f92d67e593836c517dbeb9a q4base/zpak_czech_01.pk4.off
+  24143     bce05b5df66b64f44604dda11b842c7b q4base/zpak_czech_02.pk4.off
+  7885      609d085ed8bbd8db1e3b52a06818a745 q4base/zpak_english_01.pk4
+  229965    a4d6207c12ce47f1effc60d7fe8b5b9d q4base/zpak_english_02.pk4
+  29317     9d13ed76b9db99175381a83b6d46a929 q4base/zpak_english_03.pk4
+  22831     1dffc34ee05313f790ceea670a744e11 q4base/zpak_english_04.pk4
+  8636      5eb83cae50559e8ada7ead26b1ba2a88 q4base/zpak_french_01.pk4.off
+  287505    9b6bcb78e9733d6afa56133d453d0152 q4base/zpak_french_02.pk4.off
+  23865     3fbea36af6316859b44d00516a37ef81 q4base/zpak_french_03.pk4.off
+  24503     2664c2d7dae10f3266b078cce3c87a05 q4base/zpak_french_04.pk4.off
+  8422      0067eb7b6236011d36319176d838fde8 q4base/zpak_italian_01.pk4.off
+  218076    0dc4bdd35cdfaf201aea93af541586a3 q4base/zpak_italian_02.pk4.off
+  23786     923a72b912b3c1490f52bf9dc34f8316 q4base/zpak_italian_03.pk4.off
+  24415     cb39944fb0edb67e9d4bb90e270b20cc q4base/zpak_italian_04.pk4.off
+  25044     b6585b3e5a2b35abf093dabdf4efbb2e q4base/zpak_polish_01.pk4.off
+  25470     3966a8bdc05c24b0773ed682aa6a8a4d q4base/zpak_polish_02.pk4.off
+  133982    c98f907d00d4a5d7114fd21ea8c9a51f q4base/zpak_russian_01.pk4.off
+  111391    6f4a08087694e51b411cb71e0f609af6 q4base/zpak_russian_02.pk4.off
+  8758      5fa204bb992f3e2e81b6a26835955a8e q4base/zpak_spanish_01.pk4.off
+  227372    1c90da720b88192e0c07324ddd940ac6 q4base/zpak_spanish_02.pk4.off
+  24106     4d198b6e352eaf3f6a088d62816f43ff q4base/zpak_spanish_03.pk4.off
+  24733     985e6b75c962978cb5aff8219b72de22 q4base/zpak_spanish_04.pk4.off
+  5546656   5dac53dfcdf8d718567265a915aa042d q4ded.x86
+  6966      ae0976f07e2600103e59f4321f9bad67 q4icon.bmp
+  1069656   47cd545e64c63d279fb7d4b5be9ee29e q4mp/demos/id_perftest.ndmo85
+  487053    d07f75f5c806266d83126cc27a2fe194 q4mp/demos/id_serverdemo.ndmo85
+  1724367   238857e89e2e9598bc37a2e0168b5e95 q4mp/game000.pk4
+  2323535   c9afcec694d296ff181ccab60898851a q4mp/game100.pk4
+  5210239   2922512b756f998f9f5f6e2e2089f5f4 q4mp/game200.pk4
+  5633784   f5f3a43e54f081093b27136afa0e95bd quake4.x86
+  5645304   60d42b3a6ee1591275ff13abe59e4efa quake4smp.x86
+  10148     67593d58699db882c090431f07b477f2 sdl.patch.1.2.10
+  14        8174cb597be750821b9a41ccd14df931 version.info?de
+  11        c80a29a1ed2cd1b5c208071783025e40 version.info?interoperable
+
+  # Steam version only?
+  8183      b805271388f9baa3b483cc8513532e66 CHANGES_14.txt?steam
+  5344      dc694e01c2cdc4e8dee10f850d4c6993 PBEULA.txt?steam
+  15973     d22460dcf58a06aa1a9804be30cfc3ef EULA.txt?steam
+  2407      01eb2c316f1ccad46b992f5b5428690e README_Q4TV_broadcasting.txt?steam
+  953       9232b91c9fbdad4e2b38cc3dc2e58e0b README_builtin_downloads.txt?steam
+  8906639   385573cba39714df97e175c9906f5940 q4base/game300.pk4?steam
+  # same as mapcycle.scriptcfg?unix but with CRLF
+  4119      d934979dd0c85f84380443d43f9a5099 q4base/mapcycle.scriptcfg?windows
+  60063     e28e787d25e1a93f2582203776105b03 q4base/pak023.pk4?steam
+  65876     6eed36573a6ccd35e9483ef5252ff7b9 q4base/pak024.pk4?steam
+  1373806   21fc633dae1beed27e702f5ada6c902c q4base/pak025.pk4?steam
+  22107     ed012e025352e715bde7e95fbc4a675e q4base/zpak_english_05.pk4?steam
+  8956755   145c15719cc05731fc3f23b41a82c81f q4mp/game300.pk4?steam
+
+  # Commercial files (all versions except .de)
+  # reference: http://zerowing.idsoftware.com/linux/quake4/Quake4FrontPage/
+  223947812 b201b914167f47061fa5f975af527122 q4base/pak001.pk4?interoperable
+  220639087 dabe2c88e004198947431250e3f4ca1d q4base/pak002.pk4?interoperable
+  220452548 8573f05af4c9568880cc464d06292079 q4base/pak003.pk4?interoperable
+  221972032 12ff4006a7f7181ac16835d05c59905f q4base/pak004.pk4?interoperable
+  224006192 3576213f4e00f06baf3cd5de089a538a q4base/pak005.pk4?interoperable
+  220656388 aec7bb418b9a86256f9e5daee894dee2 q4base/pak006.pk4?interoperable
+  221657190 0f53b4fb4df2c14fcd10012baf8b2f87 q4base/pak007.pk4?interoperable
+  220516301 b099d75869f0ffcbcb8e5166374af345 q4base/pak008.pk4?interoperable
+  220608314 cb2b44bf573559dc19b488d9e1e5bec3 q4base/pak009.pk4?interoperable
+  221232656 d024073349dc917b4feab49e6abc417b q4base/pak010.pk4?interoperable
+  221047953 98c854d94ce1da5272952b77821823df q4base/pak011.pk4?interoperable
+  75481176  e77a2fda6656495d38773e05bbffda33 q4base/pak012.pk4?interoperable
+  65658433  669d6d9a30b798d19434972475b98c53 q4base/zpak_english.pk4?interoperable
+
+unknown_sizes:
+  # needs input from someone with a non-German DVD
+  - q4base/game000.pk4?en_retail
+  - q4base/zpak_french.pk4
+  - q4base/zpak_italian.pk4
+  - q4base/zpak_spanish.pk4
+
+  # needs input from someone with a German DVD
+  - q4base/game000.pk4?de_retail
+  - q4base/pak001.pk4?de
+  - q4base/pak002.pk4?de
+  - q4base/pak003.pk4?de
+  - q4base/pak004.pk4?de
+  - q4base/pak005.pk4?de
+  - q4base/pak006.pk4?de
+  - q4base/pak007.pk4?de
+  - q4base/pak008.pk4?de
+  - q4base/pak009.pk4?de
+  - q4base/pak010.pk4?de
+  - q4base/pak011.pk4?de
+  - q4base/pak012.pk4?de
+  - q4base/zpak_english.pk4?de
+
+md5sums: |
+  # Original version, overwritten by the patches
+  # reference: http://zerowing.idsoftware.com/linux/quake4/Quake4FrontPage/
+  a9f6a2e4bf8e193591954f75d1d39f85  q4base/game000.pk4?en_retail
+
+  # Listed in http://zerowing.idsoftware.com/linux/quake4/Quake4FrontPage/
+  # but not present in smcv's Steam copy, so sizes/sha*sums cannot be verified
+  2cabddd692e214c78c20a464da43f1ef  q4base/zpak_french.pk4
+  4ee7eb637cde6bcfe3a9ffac5e4579dd  q4base/zpak_italian.pk4
+  36eee38e6c2dce12986f7192a5a996e5  q4base/zpak_spanish.pk4
+
+  # FIXME: someone with a German DVD should tell us the sizes/sha*sums
+  # http://zerowing.idsoftware.com/linux/quake4/Quake4FrontPage/#head-6bdb011d1f323f1f5626a85a3240962356938f86
+  b4b1f8e5d3dd0a4a862453a6abf9a424  q4base/game000.pk4?de_retail
+  e4c42f172ee4d81c7c43a82761e9816c  q4base/pak001.pk4?de
+  6ceb1be5ffe81a1da5795a4bd129eb85  q4base/pak002.pk4?de
+  c35fce5cb94bd4dfd5a8305ed9c93097  q4base/pak003.pk4?de
+  ce95f67b0e385683fae6d8dab28d85c5  q4base/pak004.pk4?de
+  ad9421a76cda3786c83f1e7b95196a1a  q4base/pak005.pk4?de
+  e0ef17afebbb088e7139986ba9e417d6  q4base/pak006.pk4?de
+  52cc00f832e643f51c42bafbbdf30b60  q4base/pak007.pk4?de
+  854e063fd4944bbdf10ed213b9f3a731  q4base/pak008.pk4?de
+  c66b39400bf688d8ed78222c28be3d7b  q4base/pak009.pk4?de
+  099899344357f204ff8ac9362d0986e7  q4base/pak010.pk4?de
+  c3a93f43ce0e505fa8acf12be6929f4b  q4base/pak011.pk4?de
+  684df5107936fbc0f946a2019fb7c370  q4base/pak012.pk4?de
+  b8e075ddbfc6b5cf41bc49cafd8aeaea  q4base/zpak_english.pk4?de
+
+sha1sums: |
+  870bbda920b846c51904b22c40ce15aac8c9183b  quake4-linux-1.4.2.x86.run
+  b09d7a0ff96eacd35341bccceb216ba2c8eea04a  quake4-linux-1.4.2.x86.run.gz
+
+  6002b60c2091e60c9fe23dfde04941651dc24216  CHANGES_14.txt?142
+  a53042b8a253ad4519ab2bb2423e9ac1b9a588b1  ENG/htm/credits.htm
+  ec881b27ce79eec277d42f156006f24e50ddf1bd  ENG/htm/cs.htm
+  487710d89067ddae6ffbfb2c3d5e74cbc8d7abad  ENG/htm/man_def.htm
+  374a2cc58bb79f7ba0320da2284d3936ada0609f  ENG/htm/techhelp.htm
+  7ea5a5bdb8da61e4350a9570054a9298742942b8  ENG/images/ATVIsmaller.jpg
+  a5c1f42863967461f475d8d9134f22e6c0df3dc2  ENG/images/Bink_Video_4c_rev.png
+  afd8233731d547b7b238f7eb88d0ff85696590ae  ENG/images/ammo_regen.png
+  d72819b0a779c625a665adb169c99da08cc63f65  ENG/images/armor.png
+  d3712b5814b727f3de497b65a5ef86b3f8faf1ed  ENG/images/blaster.png
+  e9a241d3b65d322b2d455abd92ceb3666df2330b  ENG/images/doubler.png
+  434f69d85c7d6270f8191d54e752dfb3760efc9b  ENG/images/guard.png
+  a9317154f08ba5e5e93b99b72a7d8f86edf88acd  ENG/images/haste.png
+  c0141d95356d417991d0a77488d8ddd50d3650e6  ENG/images/health.png
+  1c9f79e991d6a46e7464231dd7b202a3739130f1  ENG/images/health_pack.png
+  c6c5677177da5704a60e812f883b65c1cece6793  ENG/images/ingamedisplay.png
+  bf9b84325ba6b39bde4c59b4411df47040dad5ea  ENG/images/invisibility.png
+  473f2393239e6d8145f43ba27416e46e4693e05e  ENG/images/machinegun.png
+  1c656ece4733385b1d64536cfd6334000f9b06e4  ENG/images/mega_health.png
+  c4c7cf8cc74d6615cda300c8c5d53851c41a4a80  ENG/images/mpbrowser.png
+  5951edafb18464b1a11a85859ff08f681c7938f0  ENG/images/mssLogo.png
+  6882c1f91151f7ab58a06020efaf34a2d09216a3  ENG/images/regeneration.png
+  54781c8b2604f01cfdcd4a5bdd3fac6117f0ff88  ENG/images/save.png
+  988b398771b0350059f78a3e9dbbb4d07178a65f  ENG/images/scout.png
+  9e89ea40d4f3e2d649128cbd80654a732f7cedee  ENG/images/shotgun.png
+  b3f7ef814953d46b7e347195d865fb8d8486fe28  ENG/images/watermark.gif
+  310a813eefeefc1ee0b6cd7995c5210387bb5d57  ENG/readme.txt
+  a53042b8a253ad4519ab2bb2423e9ac1b9a588b1  ENU/htm/credits.htm
+  ec881b27ce79eec277d42f156006f24e50ddf1bd  ENU/htm/cs.htm
+  ae955d012f386a1f81df15124cd41465f228103b  ENU/htm/man_def.htm
+  374a2cc58bb79f7ba0320da2284d3936ada0609f  ENU/htm/techhelp.htm
+  7ea5a5bdb8da61e4350a9570054a9298742942b8  ENU/images/ATVIsmaller.jpg
+  a5c1f42863967461f475d8d9134f22e6c0df3dc2  ENU/images/Bink_Video_4c_rev.png
+  afd8233731d547b7b238f7eb88d0ff85696590ae  ENU/images/ammo_regen.png
+  d72819b0a779c625a665adb169c99da08cc63f65  ENU/images/armor.png
+  d3712b5814b727f3de497b65a5ef86b3f8faf1ed  ENU/images/blaster.png
+  e9a241d3b65d322b2d455abd92ceb3666df2330b  ENU/images/doubler.png
+  434f69d85c7d6270f8191d54e752dfb3760efc9b  ENU/images/guard.png
+  a9317154f08ba5e5e93b99b72a7d8f86edf88acd  ENU/images/haste.png
+  c0141d95356d417991d0a77488d8ddd50d3650e6  ENU/images/health.png
+  1c9f79e991d6a46e7464231dd7b202a3739130f1  ENU/images/health_pack.png
+  c6c5677177da5704a60e812f883b65c1cece6793  ENU/images/ingamedisplay.png
+  bf9b84325ba6b39bde4c59b4411df47040dad5ea  ENU/images/invisibility.png
+  473f2393239e6d8145f43ba27416e46e4693e05e  ENU/images/machinegun.png
+  1c656ece4733385b1d64536cfd6334000f9b06e4  ENU/images/mega_health.png
+  c4c7cf8cc74d6615cda300c8c5d53851c41a4a80  ENU/images/mpbrowser.png
+  5951edafb18464b1a11a85859ff08f681c7938f0  ENU/images/mssLogo.png
+  6882c1f91151f7ab58a06020efaf34a2d09216a3  ENU/images/regeneration.png
+  54781c8b2604f01cfdcd4a5bdd3fac6117f0ff88  ENU/images/save.png
+  988b398771b0350059f78a3e9dbbb4d07178a65f  ENU/images/scout.png
+  9e89ea40d4f3e2d649128cbd80654a732f7cedee  ENU/images/shotgun.png
+  b3f7ef814953d46b7e347195d865fb8d8486fe28  ENU/images/watermark.gif
+  2a08a1d57d3864d7bc8f892032b0ba8a1b460031  ENU/readme.txt
+  c102437fa89755a5682a48d7175c4fd23b3d208d  ESP/htm/credits.htm
+  5554c7f44eb681098dded6cada798735c80653d9  ESP/htm/cs.htm
+  b7d8f8092a1fcd86a215834415cd822886ac665c  ESP/htm/man_def.htm
+  34083ecdff01ae897d5b112c0d4112a291fd1e80  ESP/htm/techhelp.htm
+  7ea5a5bdb8da61e4350a9570054a9298742942b8  ESP/images/ATVIsmaller.jpg
+  a5c1f42863967461f475d8d9134f22e6c0df3dc2  ESP/images/Bink_Video_4c_rev.png
+  afd8233731d547b7b238f7eb88d0ff85696590ae  ESP/images/ammo_regen.png
+  d72819b0a779c625a665adb169c99da08cc63f65  ESP/images/armor.png
+  d3712b5814b727f3de497b65a5ef86b3f8faf1ed  ESP/images/blaster.png
+  e9a241d3b65d322b2d455abd92ceb3666df2330b  ESP/images/doubler.png
+  434f69d85c7d6270f8191d54e752dfb3760efc9b  ESP/images/guard.png
+  a9317154f08ba5e5e93b99b72a7d8f86edf88acd  ESP/images/haste.png
+  c0141d95356d417991d0a77488d8ddd50d3650e6  ESP/images/health.png
+  1c9f79e991d6a46e7464231dd7b202a3739130f1  ESP/images/health_pack.png
+  5d87cfb767c8ee2e1c82d4b08408613e129384e7  ESP/images/ingamedisplay.png
+  bf9b84325ba6b39bde4c59b4411df47040dad5ea  ESP/images/invisibility.png
+  473f2393239e6d8145f43ba27416e46e4693e05e  ESP/images/machinegun.png
+  1c656ece4733385b1d64536cfd6334000f9b06e4  ESP/images/mega_health.png
+  71398c112a11f4911e8a6220f76967060ca66810  ESP/images/mpbrowser.png
+  5951edafb18464b1a11a85859ff08f681c7938f0  ESP/images/mssLogo.png
+  6882c1f91151f7ab58a06020efaf34a2d09216a3  ESP/images/regeneration.png
+  a355d84c5d03dd3644f5ff523dbc690cda006ab6  ESP/images/save.png
+  988b398771b0350059f78a3e9dbbb4d07178a65f  ESP/images/scout.png
+  9e89ea40d4f3e2d649128cbd80654a732f7cedee  ESP/images/shotgun.png
+  b3f7ef814953d46b7e347195d865fb8d8486fe28  ESP/images/watermark.gif
+  d19f48159f97eb03221ed20a1ac3086c8095ef5e  ESP/readme.txt
+  fed04b94fbbe84c9d888569fc5089bdd86aedc1c  FRA/htm/credits.htm
+  6ee0d160e274974eb8a13b07d66e73a288a34571  FRA/htm/cs.htm
+  d88841f8e7f559a7de0697c113cc2a3bdfbaf281  FRA/htm/man_def.htm
+  30ffe1f7107228dd1922bdc5976d95779828696b  FRA/htm/techhelp.htm
+  7ea5a5bdb8da61e4350a9570054a9298742942b8  FRA/images/ATVIsmaller.jpg
+  a5c1f42863967461f475d8d9134f22e6c0df3dc2  FRA/images/Bink_Video_4c_rev.png
+  afd8233731d547b7b238f7eb88d0ff85696590ae  FRA/images/ammo_regen.png
+  d72819b0a779c625a665adb169c99da08cc63f65  FRA/images/armor.png
+  d3712b5814b727f3de497b65a5ef86b3f8faf1ed  FRA/images/blaster.png
+  e9a241d3b65d322b2d455abd92ceb3666df2330b  FRA/images/doubler.png
+  434f69d85c7d6270f8191d54e752dfb3760efc9b  FRA/images/guard.png
+  a9317154f08ba5e5e93b99b72a7d8f86edf88acd  FRA/images/haste.png
+  c0141d95356d417991d0a77488d8ddd50d3650e6  FRA/images/health.png
+  1c9f79e991d6a46e7464231dd7b202a3739130f1  FRA/images/health_pack.png
+  994c4e823fb476bf111b71fc786a070cb878375d  FRA/images/ingamedisplay.png
+  bf9b84325ba6b39bde4c59b4411df47040dad5ea  FRA/images/invisibility.png
+  473f2393239e6d8145f43ba27416e46e4693e05e  FRA/images/machinegun.png
+  1c656ece4733385b1d64536cfd6334000f9b06e4  FRA/images/mega_health.png
+  276b1c40e190f3bdd9c34c3e85f6994f87cb628b  FRA/images/mpbrowser.png
+  5951edafb18464b1a11a85859ff08f681c7938f0  FRA/images/mssLogo.png
+  6882c1f91151f7ab58a06020efaf34a2d09216a3  FRA/images/regeneration.png
+  af51af121f10c7acb84111611adf96e396013e50  FRA/images/save.png
+  988b398771b0350059f78a3e9dbbb4d07178a65f  FRA/images/scout.png
+  9e89ea40d4f3e2d649128cbd80654a732f7cedee  FRA/images/shotgun.png
+  b3f7ef814953d46b7e347195d865fb8d8486fe28  FRA/images/watermark.gif
+  c04348713909f4d5bc4abecc465895218bf541b6  FRA/readme.txt
+  0035854877487c444f27888937b6b8cb430d1908  ITA/htm/credits.htm
+  93b74acd3fdda7c37ffb52f08f34e8632ad1675b  ITA/htm/cs.htm
+  6c8b6684bdd6c58d5d6d46b9a8944b004d57a9c9  ITA/htm/man_def.htm
+  7e8f68f7c053bf3124ff42e50222ed5cbcc44253  ITA/htm/techhelp.htm
+  7ea5a5bdb8da61e4350a9570054a9298742942b8  ITA/images/ATVIsmaller.jpg
+  a5c1f42863967461f475d8d9134f22e6c0df3dc2  ITA/images/Bink_Video_4c_rev.png
+  afd8233731d547b7b238f7eb88d0ff85696590ae  ITA/images/ammo_regen.png
+  d72819b0a779c625a665adb169c99da08cc63f65  ITA/images/armor.png
+  d3712b5814b727f3de497b65a5ef86b3f8faf1ed  ITA/images/blaster.png
+  e9a241d3b65d322b2d455abd92ceb3666df2330b  ITA/images/doubler.png
+  434f69d85c7d6270f8191d54e752dfb3760efc9b  ITA/images/guard.png
+  a9317154f08ba5e5e93b99b72a7d8f86edf88acd  ITA/images/haste.png
+  c0141d95356d417991d0a77488d8ddd50d3650e6  ITA/images/health.png
+  1c9f79e991d6a46e7464231dd7b202a3739130f1  ITA/images/health_pack.png
+  d552a510c2aa94e1f8cc355436adad6bd9a37814  ITA/images/ingamedisplay.png
+  bf9b84325ba6b39bde4c59b4411df47040dad5ea  ITA/images/invisibility.png
+  473f2393239e6d8145f43ba27416e46e4693e05e  ITA/images/machinegun.png
+  1c656ece4733385b1d64536cfd6334000f9b06e4  ITA/images/mega_health.png
+  72a84a3f2c00c2288ab27287696f1625e53fb4d2  ITA/images/mpbrowser.png
+  5951edafb18464b1a11a85859ff08f681c7938f0  ITA/images/mssLogo.png
+  6882c1f91151f7ab58a06020efaf34a2d09216a3  ITA/images/regeneration.png
+  7df3cec03098a73952ce71c093898e3fac0c3226  ITA/images/save.png
+  988b398771b0350059f78a3e9dbbb4d07178a65f  ITA/images/scout.png
+  9e89ea40d4f3e2d649128cbd80654a732f7cedee  ITA/images/shotgun.png
+  b3f7ef814953d46b7e347195d865fb8d8486fe28  ITA/images/watermark.gif
+  2217762787bc4c9f7c3fec2de9d9ca2691369e50  ITA/readme.txt
+  b2aa1bb9a41996ce5da7e210388e8b83fb91aea4  README-1.3.htm
+  dbc78374d7f923033bfc8986268cdfc5e959fef7  libSDL-1.2.id.so.0
+  #a892ae29ab9a64e8231ef23ba96083953d740b04  libgcc_s.so.1
+  #3eddb41550b9688a616af161700a7b263ba22ddc  libstdc++.so.6
+  fded322aac7a6dba20acaa70c05ebf1ae89fd631  pb/htm/la001307.htm
+  6384d522c16983e66874567a401cdc85c2482d73  pb/htm/lc001095.htm
+  5f810a215be160c145560978b4563ca6362a576c  pb/htm/wa001307.htm
+  cda7daae94bb276e35f61d28fb45f08c8d5225b4  pb/htm/wc001095.htm
+  f1f9000327487605ef71da590e1eab54ccca4a3d  pb/pbag.so
+  f1f9000327487605ef71da590e1eab54ccca4a3d  pb/pbags.so
+  0fd6d59e594f499dabffbdcdc7b098aa81f27757  pb/pbcl.so
+  0fd6d59e594f499dabffbdcdc7b098aa81f27757  pb/pbcls.so
+  0754b1fe7769faf1b7e19b5f83684ce0180156c1  pb/pbsv.so
+  02448d66638a95263367e0a87d7e5cd066931083  q4base/game000.pk4
+  a75ed648c4351705cbac6dc2a9ddcae98009a584  q4base/game100.pk4
+  de99de9f7ba2ebc2439fb13303347b84d7fcb6d2  q4base/game200.pk4
+  38fba0fa1f260d102d76a747ab3098c30f14ee99  q4base/mapcycle-mp2.scriptcfg
+  788c207489ec4348ae5d9f41f014e4e7e9b51bd0  q4base/mapcycle-mp3.scriptcfg
+  738694a4b88e14bfeee66dbab5e36de19c10b5df  q4base/mapcycle-q4cmp_pak001.scriptcfg
+  8827f692599ba530d70015f4e03ff9c9e77673e5  q4base/pak013.pk4
+  2e4583d8e518e2dc05e43b20ba849e0d3ef19040  q4base/pak014.pk4
+  5ee50b0c74360aba34d0198157b3f9e622566140  q4base/pak015.pk4?de
+  cf779e8f484539c821eeaf6f35e96507894f6e29  q4base/pak015.pk4?interoperable
+  dd0917bb454f698332aa62c339447eaf8962b52d  q4base/pak016.pk4
+  f2afebe50a28bbf5a7e95cddc1fe7f62fc4b3f97  q4base/pak017.pk4?de
+  8c6471eba7c28825dd5342d113d2274150cd7608  q4base/pak017.pk4?interoperable
+  1f8ac554a8647522a418d68270ae3a07d0dd2bf3  q4base/pak018.pk4
+  b008e2e15ac86fc6ffb3e505e3a3f647ef759bf5  q4base/pak019.pk4
+  32a323db7003f78cd17cb4e4ec4602e8daa52fd7  q4base/pak020.pk4?de
+  5a935016e3096c069a9b9619c991e00fcdb381ca  q4base/pak020.pk4?interoperable
+  b8d015609ffe1557154117d417f8d6d7c76184f9  q4base/pak021.pk4
+  f74b1d646396ede0a5c401011b472807d114eef3  q4base/pak022.pk4?de
+  b2729925cc1d0eb50a8cc7937124242ac5465568  q4base/pak022.pk4?interoperable
+  df60c8dbb34c87ff809307e072d3a498e2efcf21  q4base/q4cmp_pak001.pk4
+  d9451ccb5010ac08cac087bfc4c7a91148a96af9  q4base/zpak_czech_01.pk4.off
+  7e3bdb23b62c2889e21bbb3ce15316ce4d7e0a35  q4base/zpak_czech_02.pk4.off
+  2995a20a2067c19957f1fb26c0fb78d7b837f7ae  q4base/zpak_english_01.pk4
+  a01dbc8389607b4f91131e9e4aa39e2e2be234e8  q4base/zpak_english_02.pk4
+  bd886f58dcda12e5d38c367ec7b7666c90ce909d  q4base/zpak_english_03.pk4
+  f7712e625b8c5ade8a99fee646ee4d4325fc9ef7  q4base/zpak_english_04.pk4
+  8b9110d699d14cfe567ccad08c84e19f854546d3  q4base/zpak_french_01.pk4.off
+  44f13db1483b2ee80decb590325bf37c5cda660a  q4base/zpak_french_02.pk4.off
+  ee8ea07801c3267eba7b4f283d8cace3bc00d4bd  q4base/zpak_french_03.pk4.off
+  20b618f0570328026eb7e2b7c64be8c8c364013d  q4base/zpak_french_04.pk4.off
+  6b2d9e69a8f8c0b56491c644f7373eaad384b0c6  q4base/zpak_italian_01.pk4.off
+  03b6ba38f6ca579d50b79c7b82917c05b44ab5e4  q4base/zpak_italian_02.pk4.off
+  23e8ebfe058668a3daf8c0b87000d80f10dc24c4  q4base/zpak_italian_03.pk4.off
+  4f594da607b3b3655cca3f2f50cf31f07ed23c8d  q4base/zpak_italian_04.pk4.off
+  b2551b76ef7b0c12690f7239aee061e4b233af60  q4base/zpak_polish_01.pk4.off
+  5f04a6b7c3777d60705173cd1b643a2663baaeaa  q4base/zpak_polish_02.pk4.off
+  bb10935e2126385d03233e1cd1218f6d8228496a  q4base/zpak_russian_01.pk4.off
+  1b0d12e6b0312bbcb89c70e1c807674bed211537  q4base/zpak_russian_02.pk4.off
+  dec31d1eb6df266652a58cb7c4b5970302de3e74  q4base/zpak_spanish_01.pk4.off
+  7f5e86f5e3186ad020b70414759b14956bb98f10  q4base/zpak_spanish_02.pk4.off
+  c67a04ec33fb360f267c1bda7c407212a928498a  q4base/zpak_spanish_03.pk4.off
+  e742b1c5c6294063c78f43ba482352a37c3de322  q4base/zpak_spanish_04.pk4.off
+  486ca126ad14c2d5df92c9bf9dd2fe20e3fd9a9d  q4ded.x86
+  6725333c09fc23f9ba49eb6c30e903ba0efde3a5  q4icon.bmp
+  8e88437779014654a8a0bd9a2237cfc7b637ac9c  q4mp/demos/id_perftest.ndmo85
+  44fe8162693f985716e8a6663ee507153e3f1d7e  q4mp/demos/id_serverdemo.ndmo85
+  6624a6948c3c6dc6fa7ad9c621448f4a91c612cf  q4mp/game000.pk4
+  b1fb13299df1d42b6d454608fef9b4e300987db0  q4mp/game100.pk4
+  2fa1633220c53e209de2edf6653a138c3bb11a0f  q4mp/game200.pk4
+  c9edd2f4f5234054974842a0f700729a31565c1d  quake4.x86
+  8822597ce83e976b317ea52a41675fcd71aa9de7  quake4smp.x86
+  0f4749a12b38caed9013121f77e9f8a9b3cda0fa  sdl.patch.1.2.10
+
+  8fbe6ba4ee74c811afb74cb022a9cea5476c0384  q4base/pak001.pk4?interoperable
+  e11bad54ec237a5fd5630fa899886bed6a0f5eee  q4base/pak002.pk4?interoperable
+  75b55dce73e30b2293989f44e43607329199e843  q4base/pak003.pk4?interoperable
+  e9be9d5bf8974195a9d03dc7f384723b61021e7d  q4base/pak004.pk4?interoperable
+  f89f51628c3b741a9af671c8cf7a7cf20ca6add8  q4base/pak005.pk4?interoperable
+  b3354915c05ac5596aa35f1225cde8b31a4310ae  q4base/pak006.pk4?interoperable
+  99e5ec142061e2b1ac2cb2e1543247bc5a8bf51d  q4base/pak007.pk4?interoperable
+  c21c9447f80df4d5d684be8d3282d077020f612f  q4base/pak008.pk4?interoperable
+  d85675cd9d7053c2b02751ee555dff4240f1c902  q4base/pak009.pk4?interoperable
+  213eb92a9344e477cc06c192f8dba51816890a2a  q4base/pak010.pk4?interoperable
+  953bbfdfad1e441b98eeb9ad8c77b7e43d3c2d36  q4base/pak011.pk4?interoperable
+  83cf52bac477b75cf57faf9c255e0ae465f978bb  q4base/pak012.pk4?interoperable
+  6b670700070d922968d0bd11c421da90a046c522  q4base/zpak_english.pk4?interoperable
+
+sha256sums: |
+  9203b387b1a4075a1b9ad1eb7be32b49a88141a448d9330d9cbe1f40a145bd6a  quake4-linux-1.4.2.x86.run
+  cc8d3b7279cce790d4c594931d21080509b1e2d7297f7a797544606cecf057b6  quake4-linux-1.4.2.x86.run.gz
+  507be913e3bfc292d0cf246f359a32e00e08cfaf1b436f06c1416e5e45b9306a  q4base/pak001.pk4?interoperable
+  c26827263ec4a9a3c04fd06441dcf49358984ab01abad0fcc4832222935402dc  q4base/pak002.pk4?interoperable
+  09bee32a86f23afef299c3581383f79c0c2c06b565fdb21ce0b3d032144ebf7c  q4base/pak003.pk4?interoperable
+  f933fe6151e6fdbd03f983c09fac668e5f5f5c141162773dab8440b389c5f8e5  q4base/pak004.pk4?interoperable
+  f2815946f8be5d508e40c1ff5ed7836d4b3429420915a65666ac9e6427e7065b  q4base/pak005.pk4?interoperable
+  f93ecbbbecc41c85691253abe3899c5906e9ee591ccb6d9fcd7538ca37c01420  q4base/pak006.pk4?interoperable
+  e4a9aaa40dc6c7146734d1a63fa12a0967562f491ebbc62a6cace887d58f9fff  q4base/pak007.pk4?interoperable
+  ce4bd1afbcaf66dc7a860fa7c4d0883706896a2d268f5ba430ebe2ad0394c787  q4base/pak008.pk4?interoperable
+  3fe438f066a28537d03b3d8ae7b2546ea5a4f58c46ab3da2b1930fd1ed311401  q4base/pak009.pk4?interoperable
+  ebd7cfb6a222318a9e1c52f42c9fb3adf87658296dfd0071431e5e488636b797  q4base/pak010.pk4?interoperable
+  cc62f136a0c34052bb09802d2a35692dc61a42455c7d9d0e8b23cec9b6920205  q4base/pak011.pk4?interoperable
+  af8b0a1be45cc43ed3fe1c3ac89e80ddc5e01ea81eb988bc9678d4dbb19e8031  q4base/pak012.pk4?interoperable
+  2d69f171e7d107730ebb8da329ca34d33a0de64fd14c8ac0816068b23c66cf77  q4base/zpak_english.pk4?interoperable
+
+sha512sums: |
+  a6a390a8f46c7e696fe865d0688c9a95eb0d9e32ad62ecb796dcc03618994ec065e8c74358518221cb6c8771d2414ed7e144c77a1a8ecd4ae9ce6406459c5f36  quake4-linux-1.4.2.x86.run
+  752e5893ebc8c4db7f1a83079a6e30c097dddab424eebe3c49562451f81ad6fd690c33e28a5973faa8fed51ff45543b52c00f55ba01bb1356c69f32a560af6fc  quake4-linux-1.4.2.x86.run.gz
+  3fe5644a5519857620367f7232773bdd566b49f9a42c9a922b3fb59ab65df672cb84bf0a03389ea8734dd73155e6ddd096cd72cfffcaa3f5caa933c23ddc7572  q4base/pak001.pk4?interoperable
+  11988cf63b7c3deaec07b440f49fa33922538f2a1ab7daeedd08d7ca13cba5221c378315fdfef73eae2f2ad5a60d36c91fdbfccbc3c67e3ec6db3d49aa843bab  q4base/pak002.pk4?interoperable
+  43993a251774a1d8df5729679a59f70546437dd17d6051bb5aaa93d6d8254c25a3978bb26e43d1eb6ead8cdf9a24f8aa5deeb7260f63f4281cc83c932377e798  q4base/pak003.pk4?interoperable
+  068755bb00de6b90289c5014d6bc90194d58049d7b52e6002f707f51b8a6cd0a1321ee3423ab2bc5533baadf37e2528618447d22e2212ab6bdba8e04f3cfcae0  q4base/pak004.pk4?interoperable
+  189ec1dc4e4ecff9a685ee9aea6ef7430609cad9c26b0a1e57d722b18e5b2107b0e0a77f26e90d531813d124c5782d72c7f91e28c1bae6901440767c59e24c3c  q4base/pak005.pk4?interoperable
+  520ccfa61f6ccf233a6bb5f8e90bad6e502242be88444c914db67036f304de958cc4c7be576a481d9f5936219e79d2f8a28b3e8bf07265977ec734ee034d0232  q4base/pak006.pk4?interoperable
+  848ce51ddb51fa9e709ad56669f033b64fd6b4fc004e2b015424919ee823fc1a67e1a4f1eeb07bd8cac9a00f90158274f7dd59042c078e5d28c55827c903d4bb  q4base/pak007.pk4?interoperable
+  ac1e4dd6c03c3e93e8553d24e957077c0b93539bc7f56329dea0d74893d3c7184420db1725dae79683ffc127085d30af3b059caa7928fbb554ed56ab3b10e376  q4base/pak008.pk4?interoperable
+  3ee7ec94459fd5842a7780c5bbb84cb1df489b229ce324fe306085c4117ed94873515e9923f14a2a5bc04bf78802ebcc863ae4950228aaf9a2f2e62e7846f968  q4base/pak009.pk4?interoperable
+  b1a7f9b949a8a18990d078598341a9c2c240316317896f6d1cdb3df1415b870ec4e7c1aca265f85f35a6132df7b6c6576c9253d3d8d02329d20803c5e6cce470  q4base/pak010.pk4?interoperable
+  597d43bcb7ce243721aeb10ba968b42f120d32df09b89b4f34f6cb8d36b0bdd5a64a38745382c3ee02708a2febf89ba8deedd59782eb74d7983b7a47425270bf  q4base/pak011.pk4?interoperable
+  63440bbd635ae904aacab759721c03ba09be6a4b4dc17a4bb7b1c6a7d4de39207ae611e50e4ddb4586fd3db7fad66f8f608f9e1bc4e66619e4c2474d9e55fa02  q4base/pak012.pk4?interoperable
+  efa6b4d0c95ed06897cc282e433bbcf0d33309eb8957a7ac10cdd6ebd632c248fd8d698a04ffd7c6c0dee1a46fba49edc6323d93cb9f17b4b2495ace1a9fc333  q4base/zpak_english.pk4?interoperable
+
+...
