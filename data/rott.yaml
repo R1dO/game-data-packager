@@ -7,6 +7,12 @@ try_repack_from:
 - "/opt/GOG Games/Rise of the Triad Dark War"
 - "~/GOG Games/Rise of the Triad Dark War"
 
+help_text: |
+  The GOG.com & Steam packages doesn't include
+  the first - shareware - episode "The HUNT begins".
+  .
+  HUNTBGIN.WAD will be downloaded if not supplied.
+
 steam:
   id: 238050
   path: "common/The Apogee Throwback Pack/Rise of the Triad"
@@ -103,10 +109,10 @@ files:
     unpack:
       format: zip
     provides:
-    - DEMO1_3.DMO
-    - DEMO2_3.DMO
-    - DEMO3_3.DMO
-    - DEMO4_3.DMO
+    - DEMO1_3.DMO?huntbgin
+    - DEMO2_3.DMO?huntbgin
+    - DEMO3_3.DMO?huntbgin
+    - DEMO4_3.DMO?huntbgin
     - HUNTBGIN.RTC
     - HUNTBGIN.RTL
     - HUNTBGIN.WAD
@@ -114,16 +120,24 @@ files:
     - VENDOR.DOC
 
   DEMO1_3.DMO:
-    distinctive_name: false
+    alternatives:
+    - DEMO1_3.DMO?huntbgin
+    - DEMO1_3.DMO?darkwar
 
   DEMO2_3.DMO:
-    distinctive_name: false
+    alternatives:
+    - DEMO1_3.DMO?huntbgin
+    - DEMO1_3.DMO?darkwar
 
   DEMO3_3.DMO:
-    distinctive_name: false
+    alternatives:
+    - DEMO1_3.DMO?huntbgin
+    - DEMO1_3.DMO?darkwar
 
   DEMO4_3.DMO:
-    distinctive_name: false
+    alternatives:
+    - DEMO1_3.DMO?huntbgin
+    - DEMO1_3.DMO?darkwar
 
   setup_rise_of_the_triad_2.0.0.5.exe:
     unpack:
@@ -138,6 +152,10 @@ files:
     - manual.pdf?gog
     - REMOTE1.RTS
     - ROTTCD.RTC
+    - DEMO1_3.DMO?darkwar
+    - DEMO2_3.DMO?darkwar
+    - DEMO3_3.DMO?darkwar
+    - DEMO4_3.DMO?darkwar
 
   # MojoSetup archive
   gog_rise_of_the_triad_dark_war_2.0.0.8.sh:
@@ -153,6 +171,10 @@ files:
     - manual.pdf?gog
     - REMOTE1.RTS
     - ROTTCD.RTC
+    - DEMO1_3.DMO?darkwar
+    - DEMO2_3.DMO?darkwar
+    - DEMO3_3.DMO?darkwar
+    - DEMO4_3.DMO?darkwar
 
   # deprecated by GOG.com
   gog_rise_of_the_triad_dark_war_1.0.0.7.tar.gz:
@@ -188,10 +210,10 @@ size_and_md5: |
   # shareware episode
   3668139  0fafd6b629eab80278fc726e31f9cf41 1rott13.zip
   3595834  770356b78619e0566efaffdc1806bae0 ROTTSW13.SHR
-  27028    001a2aafefe4f5394655f735ee60c326 DEMO1_3.DMO
-  34360    e8fd589799adecca76a4bb32577df464 DEMO2_3.DMO
-  47704    8fac9ee45c36da721c16d987f5c2297d DEMO3_3.DMO
-  36412    0c0a7818c2ff289258531a9e5cd3086a DEMO4_3.DMO
+  27028    001a2aafefe4f5394655f735ee60c326 DEMO1_3.DMO?huntbgin
+  34360    e8fd589799adecca76a4bb32577df464 DEMO2_3.DMO?huntbgin
+  47704    8fac9ee45c36da721c16d987f5c2297d DEMO3_3.DMO?huntbgin
+  36412    0c0a7818c2ff289258531a9e5cd3086a DEMO4_3.DMO?huntbgin
   54258    4d90dec2da07a8eee1162efd3e23d98d HUNTBGIN.RTC
   103316   b9b0a3be46a4f7fccabb1c1e8cf5455f HUNTBGIN.RTL
   6436871  37793500e3b1de2125a98604b69838e3 HUNTBGIN.WAD
@@ -199,10 +221,10 @@ size_and_md5: |
   7752     37aef7c2eacd84c7b5914389b496af78 VENDOR.DOC
 
   # commercial episode, re-use same REMOTE1.RTS
-  12548    5686a95fa42a5e7eb32eaaed5f35ce30 DEMO1_3.DMO_darkwar
-  17468    42f2e5042c7be99fab68a2330c5fcc94 DEMO2_3.DMO_darkwar
-  28508    70fd8261d8f7c32e1d368061bdf6e72f DEMO3_3.DMO_darkwar
-  29612    a14e5ad38dca4d6cffd0d661e002eeb9 DEMO4_3.DMO_darkwar
+  12548    5686a95fa42a5e7eb32eaaed5f35ce30 DEMO1_3.DMO?darkwar
+  17468    42f2e5042c7be99fab68a2330c5fcc94 DEMO2_3.DMO?darkwar
+  28508    70fd8261d8f7c32e1d368061bdf6e72f DEMO3_3.DMO?darkwar
+  29612    a14e5ad38dca4d6cffd0d661e002eeb9 DEMO4_3.DMO?darkwar
   162646   2823fe5baa07fa2a5a05df3af0cf8265 DARKWAR.RTC
   408096   93a91694e7c3dec45b72708fe5914b37 DARKWAR.RTL
   14610149 e7bc1e06e6fa141e6601e64169f24697 DARKWAR.WAD
@@ -224,19 +246,19 @@ size_and_md5: |
 sha1sums: |
   c1548f0dc0280eb40e31fe25d770921782aaa16d  1rott13.zip
   5c9c8217f0ece1dd03022b29cc3fcc143e488486  ROTTSW13.SHR
-  9dea7c8e1ae32628ce8ee39750a6fcde73ae29c1  DEMO1_3.DMO
-  91e28745ef367ae2ef64524575abc094d2dada4a  DEMO2_3.DMO
-  729396f48ad207cf5a3400f30df210ea1424fa3d  DEMO3_3.DMO
-  143585d09a1074552845e45b32d786c77d95c38c  DEMO4_3.DMO
+  9dea7c8e1ae32628ce8ee39750a6fcde73ae29c1  DEMO1_3.DMO?huntbgin
+  91e28745ef367ae2ef64524575abc094d2dada4a  DEMO2_3.DMO?huntbgin
+  729396f48ad207cf5a3400f30df210ea1424fa3d  DEMO3_3.DMO?huntbgin
+  143585d09a1074552845e45b32d786c77d95c38c  DEMO4_3.DMO?huntbgin
   f0f530d700405ac75e3773b8f185568c787924e2  HUNTBGIN.RTC
   9a2bcd49a6a9710f95158edee5f3111baca0cea2  HUNTBGIN.RTL
   faa232a2078c209c7d4ba125655a55213369c8de  HUNTBGIN.WAD
   945f1c126de553cd6e11b9c40e9dd05a103ee25a  REMOTE1.RTS
   3f5e9334057fc278289b9b020f6ee4367cd67c4a  VENDOR.DOC
-  a975da7f844811d38aaa10fe1a70ddec122102ce  DEMO1_3.DMO_darkwar
-  35d76cb1741727ec55a4fff047342f88bfb817d4  DEMO2_3.DMO_darkwar
-  8a1dbe3728e6226b361add363933c18c6b8dd112  DEMO3_3.DMO_darkwar
-  79f9f25046237f87debcf997e22c2f77c6ada476  DEMO4_3.DMO_darkwar
+  a975da7f844811d38aaa10fe1a70ddec122102ce  DEMO1_3.DMO?darkwar
+  35d76cb1741727ec55a4fff047342f88bfb817d4  DEMO2_3.DMO?darkwar
+  8a1dbe3728e6226b361add363933c18c6b8dd112  DEMO3_3.DMO?darkwar
+  79f9f25046237f87debcf997e22c2f77c6ada476  DEMO4_3.DMO?darkwar
   078384f66f48f8f3f26d62e49aaf0f908bbfa7e5  DARKWAR.RTC
   6005b9e2b0ca32c86fe1fe2b7b96a0e815561d20  DARKWAR.RTL
   57f76d3fdd234522e66ef7a33bce3dfb38308cf2  DARKWAR.WAD
@@ -256,19 +278,19 @@ sha1sums: |
 sha256sums: |
   eea67a85845d52fa0ee7272e3ae24b79769ed1e8bdff7b1360904078bc51ad1e  1rott13.zip
   e49b53722410d2e11a78c5715652cca3fbfdbaac2c27956f4a8e7739200a563c  ROTTSW13.SHR
-  b57b2a1d5c72f6a9b2761537340969b297af16b14dbc284794a71163bc6c50a0  DEMO1_3.DMO
-  ed18246749adb5f3834ff8043028c25e0c1059f37679dd86756338e4ef5d90f3  DEMO2_3.DMO
-  bd0400207df98d92774db3f92a924ebc1d53f6dce216101df931fd5c6cffb3a4  DEMO3_3.DMO
-  e30b0dfe205a59b2da17fe1a577a4bda2745160898d747b2e0169fcc3fc3ab67  DEMO4_3.DMO
+  b57b2a1d5c72f6a9b2761537340969b297af16b14dbc284794a71163bc6c50a0  DEMO1_3.DMO?huntbgin
+  ed18246749adb5f3834ff8043028c25e0c1059f37679dd86756338e4ef5d90f3  DEMO2_3.DMO?huntbgin
+  bd0400207df98d92774db3f92a924ebc1d53f6dce216101df931fd5c6cffb3a4  DEMO3_3.DMO?huntbgin
+  e30b0dfe205a59b2da17fe1a577a4bda2745160898d747b2e0169fcc3fc3ab67  DEMO4_3.DMO?huntbgin
   a914e8c120d67801969582f44a4ba117f088904714ee6101c6d64a4a86f51146  HUNTBGIN.RTC
   96fd5f16735b75151a7a1878ad77b653883fb53f0462b5dd231f6e841a35bfee  HUNTBGIN.RTL
   863212c2c9af490271f32487e333c44de71f4f368d93e887181d4f7d9525e893  HUNTBGIN.WAD
   7901e0102436b3d153a747e1d7b7fe18a4af113701e4dc9ba4764fb997d7d88b  REMOTE1.RTS
   a8a73af0f5f46e975d005becfac692c48c097dc43b9230a32c0734801c9df701  VENDOR.DOC
-  520c90c0f37c8fbebc796de46cfa6e969e56314aa4029d28a1530b07e34ca376  DEMO1_3.DMO_darkwar
-  ecac18cd3e2447610edbc3f007c398f632bc6395ed6caa25c4e0614835e4cb63  DEMO2_3.DMO_darkwar
-  fef7db860a6e24840168235486693a725879b5408b3acad9d4a3eeb49b3b96e2  DEMO3_3.DMO_darkwar
-  804ba414886acc7599d494fb8ff5d069d0ab243a0240bb89dac6f55c46cc7651  DEMO4_3.DMO_darkwar
+  520c90c0f37c8fbebc796de46cfa6e969e56314aa4029d28a1530b07e34ca376  DEMO1_3.DMO?darkwar
+  ecac18cd3e2447610edbc3f007c398f632bc6395ed6caa25c4e0614835e4cb63  DEMO2_3.DMO?darkwar
+  fef7db860a6e24840168235486693a725879b5408b3acad9d4a3eeb49b3b96e2  DEMO3_3.DMO?darkwar
+  804ba414886acc7599d494fb8ff5d069d0ab243a0240bb89dac6f55c46cc7651  DEMO4_3.DMO?darkwar
   471a7b77fd03bbdd43a2dec3ca56034981bcab2eff8d4046bfbaa7b57a186b66  DARKWAR.RTC
   72d8f9dd1bf2fa50cd06e27432496ab5c3895e0c9a61298de4c0b43be631d680  DARKWAR.RTL
   78761bdc78cb2340b71e3b7b320dbe47e3f7dbcd0eb456fc084973acd582edeb  DARKWAR.WAD
