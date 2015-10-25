@@ -82,7 +82,7 @@ with open('debian/TODO', 'r', encoding='utf8') as missing:
         elif line == '':
             pass
         else:
-            stats = dict()
+            stats = {'todo': True}
             genres[genre] = genres.get(genre, 0) + 1
             stats['genre'] = genre
             shortname = ''
@@ -141,6 +141,7 @@ for lang in langs_order:
 html.write('''<table border=1 cellspacing=0>
 <tr>
 <td colspan=2>&nbsp</td>
+<td>yaml</td>
 '''
 )
 for lang in langs_order:
@@ -173,6 +174,13 @@ for game in games:
     else:
         html.write(game['longname'])
     html.write('</td>')
+
+    if 'todo' in game:
+        html.write('<td>&nbsp;</td>')
+    else:
+        html.write('<td><a href="http://anonscm.debian.org/cgit/pkg-games/game-data-packager.git/tree/data/%s.yaml">'
+                   '<img src="gear.png"></a></td>' % game['shortname'])
+
     for lang in langs_order:
         count = game.get(lang,None)
         if lang in ('total', 'en') and count == None:
