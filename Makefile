@@ -84,7 +84,7 @@ build/quake3-server: quake3.in Makefile
 	install -d build
 	sed \
 		-e 's!@IOQ3BINARY@!ioq3ded!' \
-		-e 's!@IOQ3SELF@!quake3!' \
+		-e 's!@IOQ3SELF@!quake3-server!' \
 		-e 's!@IOQ3ROLE@!server!' \
 		< $< > $@
 	chmod +x $@
