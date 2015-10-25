@@ -1,0 +1,39 @@
+---
+longname: The Neverhood
+copyright: © 1996 DreamWorks Interactive
+plugin: scummvm_common
+engine: scummvm (>= 1.7.0)
+wiki: The_Neverhood
+
+missing_langs: [ja]
+# released in Japan as Klaymen Klaymen
+
+packages:
+  the-neverhood-data:
+    install:
+    - a.blb
+    - c.blb
+    - hd.blb
+    - i.blb
+    - m.blb
+    - s.blb
+    - t.blb
+
+size_and_md5: |
+  50571893  90e2b47a562df6d0df87e50247040330 a.blb
+  241856188 238721c3465d8fdcb8c51f6a4e6b49ac c.blb
+  4279716   13aae91bebac0f4e81cf7eb921a8143d hd.blb
+  42015045  0af9995cb40bfde614abf6249173e31c i.blb
+  53797472  dd9464d65ab6cae231720f3f768378a8 m.blb
+  16622792  187369731ef1ab24cf1cdc271ed4c67c s.blb
+  228979468 e5587ce78666016a567fd428da6fdae7 t.blb
+
+sha1sums: |
+  ae0989287331764a34df3d83b067f28c9689a84c  a.blb
+  0de09ba84fc36b4131bb67392b2cd801607cb1c3  c.blb
+  86f4386d9775c48cc89e1834e42adf8269c7357d  hd.blb
+  df3e5e803ad8872b6f2c8c286ef268a0daabb052  i.blb
+  1af5df5c3da1670a02f67a7ded1479874618e4e4  m.blb
+  fe97d065b49bd027485e6c2d2d7c23eef4e9967e  s.blb
+  b64ab0aabc5109f4af58d5469e7833ab50869cf7  t.blb
+...
