@@ -103,6 +103,9 @@ class FillResult(Enum):
 
         return FillResult.IMPOSSIBLE
 
+class BinaryExecutablesNotAllowed(Exception):
+    pass
+
 class NoPackagesPossible(Exception):
     pass
 
@@ -1576,7 +1579,7 @@ class PackagingTask(object):
             control['Architecture'] = 'all'
             control['Multi-Arch'] = 'foreign'
         else:
-            control['Architecture'] = self.get_architecture()
+            control['Architecture'] = self.get_architecture(package.architecture)
 
         def read_control_set(package, control, field):
             result = set()
@@ -1777,8 +1780,26 @@ class PackagingTask(object):
     def iter_extra_paths(self, packages):
         return []
 
-    def look_for_files(self, paths=(), search=True, packages=None):
+    def look_for_files(self, paths=(), search=True, packages=None,
+            binary_executables=False):
         paths = list(paths)
+
+        if self.game.binary_executables:
+            if not binary_executables:
+                logger.error('%s requires binary-only executables which are '
+                        'currently disallowed', self.game.longname)
+                logger.info('Use the --binary-executables option to allow this, '
+                        'at your own risk')
+                raise BinaryExecutablesNotAllowed()
+
+            if self.get_architecture(self.game.binary_executables) not in \
+                    self.game.binary_executables.split():
+                logger.error('%s requires binary-only executables which are '
+                        'only available for %s', self.game.longname,
+                        ', '.join(self.game.binary_executables.split()))
+                logger.info('If your CPU can run one of those architectures, '
+                        'use dpkg --add-architecture to enable multiarch')
+                raise NoPackagesPossible()
 
         if self.save_downloads is not None and self.save_downloads not in paths:
             paths.append(self.save_downloads)
@@ -1863,8 +1884,14 @@ class PackagingTask(object):
 
         self.look_for_engines(packages, force=not args.install)
 
-        self.look_for_files(paths=args.paths, search=args.search,
-                packages=packages)
+        try:
+            self.look_for_files(paths=args.paths, search=args.search,
+                    packages=packages,
+                    binary_executables=args.binary_executables)
+        except BinaryExecutablesNotAllowed:
+            raise SystemExit(1)
+        except NoPackagesPossible:
+            raise SystemExit(1)
 
         try:
             ready = self.prepare_packages(packages,
@@ -1962,10 +1989,25 @@ class PackagingTask(object):
                     package.name)
             raise CDRipFailed()
 
-    def get_architecture(self):
+    def get_architecture(self, archs=''):
         if self._architecture is None:
             self._architecture = check_output(['dpkg',
                 '--print-architecture']).strip().decode('ascii')
+            self._foreign_architectures = set(check_output(['dpkg',
+                '--print-foreign-architectures']
+                ).strip().decode('ascii').split())
+
+        if archs:
+            # In theory this should deal with wildcards like linux-any,
+            # but it's unlikely to be relevant in practice.
+            archs = archs.split()
+
+            if self._architecture in archs or 'any' in archs:
+                return self._architecture
+
+            for arch in archs:
+                if arch in self._foreign_architectures:
+                    return arch
 
         return self._architecture
 
@@ -2056,9 +2098,10 @@ class PackagingTask(object):
                 self.get_architecture()
             else:
                 archs = package.architecture.split()
-                if self.get_architecture() not in archs:
+                arch = self.get_architecture(package.architecture)
+                if arch not in archs:
                     logger.warning('cannot produce "%s" on architecture %s',
-                            package.name, self.get_architecture())
+                            package.name, archs)
                     possible.discard(package)
 
         for package in set(possible):
@@ -2368,7 +2411,7 @@ class PackagingTask(object):
 
         arch = package.architecture
         if arch != 'all':
-            arch = self.get_architecture()
+            arch = self.get_architecture(arch)
 
         deb_basename = '%s_%s_%s.deb' % (package.name, package.version, arch)
 

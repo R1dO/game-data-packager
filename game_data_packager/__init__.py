@@ -342,6 +342,10 @@ class GameData(object):
         # Extra directories where we might find game files
         self.try_repack_from = []
 
+        # If non-empty, the game requires binary executables which are only
+        # available for the given architectures (typically i386)
+        self.binary_executables = ''
+
         # online stores metadata
         self.steam = {}
         self.gog = {}
@@ -367,7 +371,8 @@ class GameData(object):
 
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 'disks', 'fanmade',
                   'engine', 'genre', 'missing_langs', 'franchise', 'wiki', 'wikibase',
-                  'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia'):
+                  'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia',
+                  'binary_executables'):
             if k in self.data:
                 setattr(self, k, self.data[k])
 
@@ -1016,6 +1021,15 @@ def run_command_line():
             dest='gain_root_command',
             help='Use METHOD (su, sudo, pkexec) to gain root if needed')
 
+    # This is about ability to audit, not freeness. We don't have an
+    # option to restrict g-d-p to dealing with Free Software, because
+    # that would rule out the vast majority of its packages: if a game's
+    # data is Free Software, we could put it in main or contrib and not need
+    # g-d-p at all.
+    base_parser.add_argument('--binary-executables', action='store_true',
+            help='allow installation of executable code that was not built ' +
+                'from public source code')
+
     # Misc options
     group = base_parser.add_mutually_exclusive_group()
     group.add_argument('-i', '--install', action='store_true',
@@ -1118,6 +1132,7 @@ def run_command_line():
 
     config = read_config()
     parsed = argparse.Namespace(
+            binary_executables=False,
             compress=None,
             destination=None,
             download=True,

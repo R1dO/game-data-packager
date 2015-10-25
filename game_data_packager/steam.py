@@ -22,7 +22,8 @@ import tempfile
 import xml.etree.ElementTree
 import urllib.request
 
-from .build import (DownloadsFailed,
+from .build import (BinaryExecutablesNotAllowed,
+        DownloadsFailed,
         NoPackagesPossible)
 from .util import (AGENT,
         PACKAGE_CACHE,
@@ -167,7 +168,12 @@ def run_steam_meta_mode(args, games):
         task = tasks[shortname]
         task.verbose = getattr(args, 'verbose', False)
         task.save_downloads = args.save_downloads
-        task.look_for_files()
+        try:
+            task.look_for_files(binary_executables=args.binary_executables)
+        except BinaryExecutablesNotAllowed:
+            continue
+        except NoPackagesPossible:
+            continue
 
         todo = list()
         for packages in found_packages:
