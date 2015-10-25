@@ -10,6 +10,12 @@ case "$1" in
         --gecos "Quake III Arena dedicated server" \
 	--ingroup games --force-badname Debian-quake3
     fi
+    # Unlock account, if it was locked by our postrm
+    if [ -f /etc/shadow ]; then
+      usermod -U -e '' Debian-quake3
+    else
+      usermod -U Debian-quake3
+    fi
     install -d /var/games
     install -d /var/games/quake3-server
     chown Debian-quake3:games /var/games/quake3-server

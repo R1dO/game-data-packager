@@ -1,6 +1,12 @@
 quake (15) UNRELEASED; urgency=medium
 
   * quake3-server: correct help text
+  * quake3-server: lock the Debian-quake3 account on purge, and unlock
+    it on reinstallation, instead of deleting it on purge.
+    This matches what we do for quake-server and quake2-server,
+    and hardens the system against the possibility that files owned
+    by Debian-quake3 might become owned by an unrelated user that
+    is given the same numeric uid.
 
  -- Simon McVittie <smcv@debian.org>  Sun, 25 Oct 2015 01:51:37 +0100
 
