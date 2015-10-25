@@ -928,11 +928,9 @@ class GameData(object):
                 assert wanted.size is None, wanted.name
             # FIXME: find out file size and add to yaml
             else:
-                assert wanted.size is not None or filename in (
-                   'hipnotic/pak0.pak?qdq_glquake_compat',
-                   'resource.1?106_cd',
-                   'vox0000.lab?unpatched',
-                   ), (self.shortname, wanted.name)
+                assert (wanted.size is not None or filename in
+                        self.data.get('unknown_sizes', ())
+                        ), (self.shortname, wanted.name)
 
     def construct_task(self, **kwargs):
         self.load_file_data()
