@@ -1465,6 +1465,9 @@ class PackagingTask(object):
                 check_call(['cp', '--reflink=auto',
                     '--preserve=timestamps', copy_from, copy_to])
 
+                if wanted.executable:
+                    os.chmod(copy_to, 0o755)
+
         for symlink, real_file in package.symlinks.items():
             symlink = symlink.lstrip('/')
             real_file = real_file.lstrip('/')

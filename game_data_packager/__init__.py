@@ -55,6 +55,7 @@ class WantedFile(HashedFile):
         self.distinctive_name = True
         self.distinctive_size = False
         self.download = None
+        self.executable = False
         self.filename = name.split('?')[0]
         self.install_as = self.filename
         self.install_to = None
@@ -99,6 +100,7 @@ class WantedFile(HashedFile):
             'distinctive_name': self.distinctive_name,
             'distinctive_size': self.distinctive_size,
             'download': self.download,
+            'executable': self.executable,
             'install_as': self.install_as,
             'install_to': self.install_to,
             'license': self.license,
@@ -705,6 +707,7 @@ class GameData(object):
                     'distinctive_name',
                     'distinctive_size',
                     'download',
+                    'executable',
                     'install_as',
                     'install_to',
                     'license',
