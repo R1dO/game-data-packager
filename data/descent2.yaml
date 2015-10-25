@@ -8,13 +8,14 @@ genre: Flight simulator
 packages:
   descent2-demo-data:
     demo_for: descent2-data
+    install_to: usr/share/games/d2x-rebirth
     install:
     - d2demo.pig
     - d2demo.ham
     - d2demo.hog
-    - readme.txt_demo
     - d2demo.dem
-    install_to: usr/share/games/d2x-rebirth
+    doc:
+    - readme.txt?demo
 
   descent2-data:
     gog:
@@ -28,6 +29,7 @@ packages:
       conflicts: descent2-full-data
       provides: descent2-full-data
       replaces: descent2-full-data
+    install_to: usr/share/games/d2x-rebirth
     install:
     - alien1.pig
     - alien2.pig
@@ -50,16 +52,12 @@ packages:
     - missions/d2-2plyr.mn2
     - missions/d2chaos.hog
     - missions/d2chaos.mn2
+    doc:
     - manual.pdf
     - readme.txt
     - refcard.pdf
-    install_to: usr/share/games/d2x-rebirth
 
 files:
-  readme.txt_demo:
-    install_to: $docdir
-    distinctive_name: false
-    install_as: readme.txt
   d2shar10.tar.gz:
     download: http://icculus.org/d2x/data/d2shar10.tar.gz
     unpack:
@@ -68,18 +66,8 @@ files:
     - d2demo.pig
     - d2demo.ham
     - d2demo.hog
-    - readme.txt_demo
+    - readme.txt?demo
     - d2demo.dem
-
-  manual.pdf:
-    install_to: $docdir
-    distinctive_name: false
-  readme.txt:
-    distinctive_name: false
-    install_to: $docdir
-  refcard.pdf:
-    install_to: $docdir
-    distinctive_name: false
 
   setup_descent_1_2.exe:
     unpack:
@@ -147,7 +135,7 @@ cksums: |
   _ 1961015   d2demo.ham
   _ 2292566   d2demo.hog
   _ 2800295   d2demo.pig
-  _ 88065     readme.txt_demo
+  _ 88065     readme.txt?demo
   _ 4311406   d2shar10.tar.gz
 
   _ 5016232   alien1.pig
@@ -180,7 +168,7 @@ md5sums: |
   2584a96d33ed6e78e2522001e71257a3  d2demo.ham
   e14ea49e03f58622244a25c680e1b6dd  d2demo.hog
   a68ed63e074468f38bfad88382741a5a  d2demo.pig
-  ab80e41750af684992cb2e066bb67856  readme.txt_demo
+  ab80e41750af684992cb2e066bb67856  readme.txt?demo
   1b952cc4a4419e24d230589027d73490  d2shar10.tar.gz
   b0619642eeb50ac4d5198499a26b7355  alien1.pig
   a242d46dfd0f16454f6f5377cbb424a5  alien2.pig
@@ -213,7 +201,7 @@ sha1sums: |
   d2c9b1b9050b4b40d3fe8895c4a45188c11e42c6  d2demo.ham
   3c0f3e1d2182d07710b81350227db0b853418892  d2demo.hog
   553132d3273d55c3fb76ee6d1de94b1c5068ae3b  d2demo.pig
-  75eca5ea764a7deebe26f617354b56b322aeba04  readme.txt_demo
+  75eca5ea764a7deebe26f617354b56b322aeba04  readme.txt?demo
   fc1740e21858244d33e840d85949084407e2e2fb  d2shar10.tar.gz
   80e040199b347f8f17f31afb32d551113cf40956  alien1.pig
   2bbb8d941f8b06b56d5ddc7f723a206907a95548  alien2.pig
@@ -245,7 +233,7 @@ sha256sums: |
   747ccf2494916892061e13601cd8695c35e46f2a99062fff3e3f298da94b9be6  d2demo.ham
   b6bf5514b7f2c25ff516c46e9d49eef5862b10667a95365631e7a64a10adc47e  d2demo.hog
   368f9ea56fe8eb8b6e4636ab5eba60bfffdf692fe10100d604fedf654d7d8989  d2demo.pig
-  478620d7ea4bddd439ce880ddd5bfa5d2bc1abc83c788f57a334f7d1ae4de622  readme.txt_demo
+  478620d7ea4bddd439ce880ddd5bfa5d2bc1abc83c788f57a334f7d1ae4de622  readme.txt?demo
   65e8dc58dc7fdc09696f9a06c814ef81f8026b330976a2dced3347895814a4af  d2shar10.tar.gz
   811fc58caa3e2a72cdfa07d7530b2bb0ca71836a6a2d8a3cb401e4284949c233  alien1.pig
   75ef8fa0cba03410c61ad1b58f57dcb1481f1f302985828aab0af90639926055  alien2.pig
