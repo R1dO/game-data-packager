@@ -7,6 +7,9 @@ quake (15) UNRELEASED; urgency=medium
     and hardens the system against the possibility that files owned
     by Debian-quake3 might become owned by an unrelated user that
     is given the same numeric uid.
+  * Add support for Quake 4, using the proprietary binaries (there is
+    no open-source engine). These packages are currently skipped by
+    default: use DEB_BUILD_OPTIONS=quake4 to build them.
 
  -- Simon McVittie <smcv@debian.org>  Sun, 25 Oct 2015 01:51:37 +0100
 

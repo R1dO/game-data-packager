@@ -1,0 +1,35 @@
+Quake 4 dedicated server for Debian
+===================================
+
+The quake4-server systemd unit runs a dedicated server as
+the user "quake4-server". This is a simple setup suitable for running one
+server on a machine; by default it will cycle through the standard
+Quake 4 deathmatch maps.
+
+The quake4-server user's home directory is /var/games/quake4-server,
+so game files can be found in /var/games/quake4-server/.quake4.
+For convenience, /var/games/quake4-server/quake4 is a symlink to
+that directory.
+
+The /etc/quake4-server directory is symlinked into the game engine's
+search path as etc/quake4-server, so you can place files there and execute
+them with commands like "exec etc/quake4-server/ctf.cfg".
+By default, the init script will use etc/quake4-server/server.cfg.
+
+To set options that can only be configured via the command-line,
+such as net_port, set the variable DAEMON_OPTS
+in /etc/default/quake4-server.
+
+The server can be managed in the usual way, e.g. via service(8)
+and update-rc.d(8) commands like
+
+    service quake4-server stop
+    service quake4-server start
+    update-rc.d quake4-server disable
+    update-rc.d quake4-server enable
+
+Because Quake 4 is proprietary software and might have security flaws
+that Debian cannot fix, the dedicated server is disabled by default.
+To mitigate any security flaws that might exist in it, the systemd unit
+is configured with various security-hardening options, and a
+corresponding sysvinit script is not provided.

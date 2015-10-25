@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# quake4 or quake4-dedicated
+self=@self@
+# client or server
+role=@role@
+# quake4.x86, quake4smp.x86 or q4ded.x86
+binary=@binary@
+
+pkglibdir="/usr/lib/quake4"
+
+help() {
+  cat <<EOF
+Quake 4 ${role} wrapper for Debian
+
+Usage: ${self} [OPTION]...
+
+ -h, --help\t\tDisplay this help
+EOF
+
+  if [ "$role" = client ] && [ -x "$pkglibdir/quake4smp.x86" ]; then
+    cat <<EOF
+ --smp\t\tUse the multi-threaded version of the client
+EOF
+  fi
+
+  cat <<EOF
+ +<internal command>\tPass commands to the engine
+EOF
+}
+
+while [ "$1" != "" ]; do
+  case "$1" in
+    -h|--help)
+      help
+      exit 0
+      ;;
+    --smp)
+      if [ "$role" = client ] && [ -x "$pkglibdir/quake4smp.x86" ]; then
+        binary=quake4smp.x86
+      fi
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+# sanity check: the engine doesn't cope well with missing data
+for i in pak001 pak021 pak022 zpak_english; do
+  if [ -f $pkglibdir/q4base/$i.pk4 ]; then
+    :
+  else
+    if [ "$role" = client ]; then
+      $pkglibdir/need-data.sh "Quake 4" "$(cat $pkglibdir/README.quake4-data)"
+    else
+      echo "Quake 4 data missing, see /usr/share/doc/quake4-server/README.quake4-data"
+    fi
+    exit 72     # EX_OSFILE
+  fi
+done
+
+# Quake 4 expects to run in its installation directory
+cd "$pkglibdir"
+# The SMP binary needs a modified bundled copy of SDL.
+export LD_LIBRARY_PATH="${pkglibdir}${LD_LIBRARY_PATH:+":${LD_LIBRARY_PATH}"}"
+
+if test -n "$QUAKE4_BACKTRACE"; then
+  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args "${pkglibdir}/${binary}" "$@"
+else
+  exec ${QUAKE4_DEBUGGER} "${pkglibdir}/${binary}" "$@"
+fi
+
+# vim:set sw=2 sts=2 et:

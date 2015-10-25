@@ -6,15 +6,18 @@ obj = \
 	build/quake \
 	build/quake2 \
 	build/quake3 \
+	build/quake4 \
 	build/quake-server \
 	build/quake2-server \
 	build/quake3-server \
+	build/quake4-dedicated \
 	build/24/quake.png \
 	build/24/quake-armagon.png \
 	build/24/quake-dissolution.png \
 	build/24/quake2.png \
 	build/24/quake2-reckoning.png \
 	build/24/quake2-groundzero.png \
+	build/24/quake4.png \
 	build/quake.svg \
 	build/quake-armagon.svg \
 	build/quake-dissolution.svg \
@@ -23,6 +26,7 @@ obj = \
 	build/quake2-groundzero.svg \
 	build/quake3.png \
 	build/quake3-teamarena.png \
+	build/quake4.svg \
 	build/48/quake3.png \
 	build/48/quake3-teamarena.png \
 	$(patsubst %,build/%/quake.png,$(layer_sizes)) \
@@ -31,6 +35,7 @@ obj = \
 	$(patsubst %,build/%/quake2.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake2-reckoning.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake2-groundzero.png,$(layer_sizes)) \
+	$(patsubst %,build/%/quake4.png,$(layer_sizes)) \
 	$(NULL)
 
 all: $(obj)
@@ -62,6 +67,24 @@ build/quake3: quake3.in Makefile
 		< $< > $@
 	chmod +x $@
 
+build/quake4: quake4.in Makefile
+	install -d build
+	sed \
+		-e 's!@binary@!quake4.x86!' \
+		-e 's!@self@!quake4!' \
+		-e 's!@role@!client!' \
+		< $< > $@
+	chmod +x $@
+
+build/quake4-smp: quake4-smp.in Makefile
+	install -d build
+	sed \
+		-e 's!@binary@!quake4smp.x86!' \
+		-e 's!@self@!quake4-smp!' \
+		-e 's!@role@!client!' \
+		< $< > $@
+	chmod +x $@
+
 build/quake2-server: quake2.in
 	install -d build
 	sed -e 's/@self@/quake2-server/g' \
@@ -86,6 +109,15 @@ build/quake3-server: quake3.in Makefile
 		-e 's!@IOQ3BINARY@!ioq3ded!' \
 		-e 's!@IOQ3SELF@!quake3-server!' \
 		-e 's!@IOQ3ROLE@!server!' \
+		< $< > $@
+	chmod +x $@
+
+build/quake4-dedicated: quake4.in Makefile
+	install -d build
+	sed \
+		-e 's!@Q4BINARY@!q4ded.x86!' \
+		-e 's!@Q4SELF@!quake4-dedicated!' \
+		-e 's!@Q4ROLE@!server!' \
 		< $< > $@
 	chmod +x $@
 
@@ -130,6 +162,10 @@ build/24/quake-%.png: build/22/quake-%.png
 	convert -bordercolor Transparent -border 1x1 $< $@
 
 build/24/quake2.png: build/22/quake2.png
+	install -d build/24
+	convert -bordercolor Transparent -border 1x1 $< $@
+
+build/24/quake4.png: build/22/quake4.png
 	install -d build/24
 	convert -bordercolor Transparent -border 1x1 $< $@
 
@@ -181,6 +217,28 @@ $(patsubst %,build/%/quake2.png,$(layer_sizes)): build/%/quake2.png: quake1+2.sv
 		--export-png=$@ \
 		$<
 
+$(patsubst %,build/%/quake4.png,16 22 32): build/%/quake4.png: quake1+2.svg
+	install -d build/$*
+	inkscape \
+		--export-area=0:0:32:32 \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake4-32 \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,build/%/quake4.png,48 256): build/%/quake4.png: quake1+2.svg
+	install -d build/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake4-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
 $(patsubst %,build/%/quake2-reckoning.png,$(layer_sizes)): build/%/quake2-reckoning.png: build/tmp/recolour-reckoning.svg
 	install -d build/$*
 	inkscape \
@@ -208,7 +266,7 @@ clean:
 
 build/quake.svg: quake1+2.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake-256']" < $< > build/tmp/quake.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake-256']" < $< > build/tmp/quake.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \
@@ -217,7 +275,7 @@ build/quake.svg: quake1+2.svg Makefile
 
 build/quake-%.svg: build/tmp/recolour-%.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake-256']" < $< > build/tmp/quake-$*.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake-256']" < $< > build/tmp/quake-$*.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \
@@ -226,16 +284,25 @@ build/quake-%.svg: build/tmp/recolour-%.svg Makefile
 
 build/quake2.svg: quake1+2.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > build/tmp/quake2.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake2-256']" < $< > build/tmp/quake2.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \
 		build/tmp/quake2.svg
 	rm -f build/tmp/quake2.svg
 
+build/quake4.svg: quake1+2.svg Makefile
+	install -d build
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake4-256']" < $< > build/tmp/quake4.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		build/tmp/quake4.svg
+	rm -f build/tmp/quake4.svg
+
 build/quake2-%.svg: build/tmp/recolour-%.svg Makefile
 	install -d build
-	xmlstarlet ed -d "//*[local-name() = 'g' and @id != 'layer-quake2-256']" < $< > build/tmp/quake2-$*.svg
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake2-256']" < $< > build/tmp/quake2-$*.svg
 	inkscape \
 		--export-area-page \
 		--export-plain-svg=$@ \

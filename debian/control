@@ -144,3 +144,59 @@ Description: Quake III Arena dedicated server launcher scripts
  To make this package useful, you will need to create and install the
  non-distributable quake3-data package, by using the game-data-packager
  package. This requires pak0.pk3 from a Quake III installation or CD-ROM.
+
+Package: quake4
+Architecture: i386
+Depends:
+ ${misc:Depends},
+ quake4-bin | game-data-packager (>= 43),
+Suggests:
+ quake4-pb-bin,
+Description: science-fiction-themed first person shooter
+ Quake 4 is a first-person shooter game by Raven Software and id Software,
+ released in 2005. This package contains a launcher script and menu
+ entry to play Quake 4 using the proprietary x86 binaries provided by
+ id Software.
+ .
+ Please note that the Quake 4 engine is not Free Software, and Debian
+ cannot fix any bugs or security flaws in the engine or game code.
+ .
+ To make this package useful, you will need to create and install some
+ non-distributable packages by using the game-data-packager package:
+ quake4-bin, and either quake4-data (for all regions except Germany)
+ or quake4-censored-de-data (for the incompatible version sold in
+ Germany). Creating those packages requires data files from a Quake 4
+ installation or DVD.
+
+Package: quake4-server
+Architecture: i386
+Depends:
+ ${misc:Depends},
+ adduser,
+ quake4-bin | game-data-packager (>= 43),
+ quake4-data | quake4-censored-de-data | game-data-packager (>= 43),
+Recommends:
+ systemd-sysv,
+Suggests:
+ quake4-pb-bin,
+Description: dedicated server for Quake 4
+ This package contains a launcher script and systemd unit to run a
+ Quake 4 server using the proprietary x86 binaries provided by id Software.
+ .
+ Please note that the Quake 4 engine is not Free Software, and Debian
+ cannot fix any bugs or security flaws in the engine or game code.
+ .
+ To mitigate any security flaws that might exist in this server,
+ the systemd unit is not enabled by default, and must be enabled
+ with systemctl if it should start at boot time. The systemd unit
+ uses various security hardening options to prevent the server from
+ escalating its privileges. There is no sysvinit script,
+ since sysvinit does not provide similar security hardening.
+ .
+ To make this package useful, you will need to create and install some
+ non-distributable packages by using the game-data-packager package:
+ quake4-bin, and either quake4-data (for the uncensored
+ version sold on Steam and in countries other than Germany) or
+ quake4-censored-de-data (for the incompatible version sold in Germany).
+ Creating those packages requires data files from a Quake 4 installation
+ or DVD.

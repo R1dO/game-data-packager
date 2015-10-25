@@ -1,0 +1,59 @@
+.TH QUAKE4 6 2015-10-25
+
+.SH NAME
+quake4 \- Quake 4 client
+
+.SH SYNOPSIS
+.B quake3
+.BR "" [ \-h | \-\-help ]
+.BR "" [ +set
+.IR option " " value ]...
+
+.SH DESCRIPTION
+.B quake4
+is the client for Quake 4, a first-person shooter game.
+
+.SH OPTIONS
+The wrapper script used for Quake 4 in Debian accepts these options:
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display a short help summary
+.TP
+\fB\-\-smp\fR
+Use the multi-threaded version of the client and the modified
+copy of SDL that is bundled with it. The default is to use the
+single-threaded client and the system copy of SDL. Both versions
+are included in the quake4-bin package.
+.PP
+Any console command can also be prefixed with \fB+\fR and used as a
+command-line option (press Ctrl+Alt and the key above Tab to access the
+in-game console).
+
+.SH FILES
+.TP
+\fI~/.quake4\fR
+Configuration and state for Quake 4
+
+.SH ENVIRONMENT
+The wrapper script used to launch Quake 4 allows it to be debugged
+by setting environment variables.
+.TP
+\fBQUAKE4_DEBUGGER=\fIcommand\fR
+A debugger or other prefix to prepend to the Quake 4 command line, such
+as \fBstrace\fR; overridden by \fBQUAKE4_BACKTRACE\fR
+.TP
+\fBQUAKE4_BACKTRACE=1\fR
+Use \fBgdb\fR(1) to get a backtrace if Quake 4 crashes (the \fBgdb\fR
+package must be installed)
+
+.SH AUTHOR
+Quake 4 was written by id Software and originally published by Activision.
+It is proprietary software.
+.PP
+This manual page was written by Simon McVittie for the Debian project (but
+may be used by others). Permission is granted to copy, distribute and/or
+modify this document under the terms of the GNU General Public License,
+Version 2 or any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public License
+can be found in /usr/share/common-licenses/GPL-2.
