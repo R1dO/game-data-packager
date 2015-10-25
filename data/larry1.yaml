@@ -32,7 +32,7 @@ packages:
     - vol.1
     - vol.2
     - words.tok
-    optional:
+    doc:
     - LSL1 Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
 
@@ -49,7 +49,7 @@ packages:
     - resource.002
     - resource.map
     - version
-    optional:
+    doc:
     - LSL1 VGA Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
 
@@ -80,11 +80,7 @@ files:
     - LSL1 Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
-  Leisure Suit Larry 1 - Manual.pdf:
-    install_to: $docdir
   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf:
-    install_to: $docdir
-  LSL1 Answers.txt:
     install_to: $docdir
 
   setup_leisure_suit_larry_vga_2.2.0.20.exe:
@@ -99,31 +95,6 @@ files:
     - LSL1 VGA Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
-  LSL1 VGA Answers.txt:
-    install_to: $docdir
-
-cksums: |
-  _ 177       logdir
-  _ 311       object
-  _ 138       picdir
-  _ 102       snddir
-  _ 573       viewdir
-  _ 66731     vol.0
-  _ 146558    vol.1
-  _ 237821    vol.2
-  _ 6597      words.tok
-  _ 23768496  setup_leisure_suit_larry_2.2.0.18.exe
-  _ 2187      LSL1 Answers.txt
-  _ 1140028   Leisure Suit Larry 1 - Manual.pdf
-  _ 8230209   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
-
-  _ 918242    resource.000
-  _ 1114688   resource.001
-  _ 1078443   resource.002
-  _ 3198      resource.map
-  _ 6         version
-  _ 26725608  setup_leisure_suit_larry_vga_2.2.0.20.exe
-  _ 7211      LSL1 VGA Answers.txt
 
 md5sums: |
   1fe764e66857e7f305a5f03ca3f4971d  logdir
@@ -147,6 +118,31 @@ md5sums: |
   3fa20af2bc4731fff64a1884ba142940  version
   22c1089852291ce42af2715c88f53e55  setup_leisure_suit_larry_vga_2.2.0.20.exe
   9e7eb68fa7836217b2b000f09fa3e1d9  LSL1 VGA Answers.txt
+
+size_and_md5: |
+  177       1fe764e66857e7f305a5f03ca3f4971d logdir
+  311       aa7bce1ca83f181c92c1feea2c119eec object
+  138       a22e109d14d5cff65be77dd1b12af6f3 picdir
+  102       8fbdd1377d7110c3a28979d4627fc3e5 snddir
+  573       8c4edeea3fa5518ab431ee9b0ba7c378 viewdir
+  66731     28dabb6408d2eb4757ee28686308a475 vol.0
+  146558    7ddb49cf212d5fab3c2edf86ee895886 vol.1
+  237821    89103f5b48fa49c00eed42f4b19808e1 vol.2
+  6597      988a1baaf3ee0d9cd678274dc2f219f2 words.tok
+
+  23768496  bd8e0429499febf5dc0bf1df5790c520 setup_leisure_suit_larry_2.2.0.18.exe
+  2187      3b6117888a79a82073ab33f6ecd8cb7d LSL1 Answers.txt
+  1140028   4aea404ebe88f93bc567bd169a8dffb8 Leisure Suit Larry 1 - Manual.pdf
+  8230209   bcc1974851f3d79ab57358a78d84c13c Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+
+  918242    142296b299e3fa2c016fc979a68ed0e7 resource.000
+  1114688   0042e959102738fea0df78124ca008b2 resource.001
+  1078443   e6d04ac43f58e25c1f3df317af464c5b resource.002
+  3198      8606b083b011a0cc4a1fbfc2198a0a77 resource.map
+  6         3fa20af2bc4731fff64a1884ba142940 version
+
+  26725608  22c1089852291ce42af2715c88f53e55 setup_leisure_suit_larry_vga_2.2.0.20.exe
+  7211      9e7eb68fa7836217b2b000f09fa3e1d9 LSL1 VGA Answers.txt
 
 sha1sums: |
   1e8a5282f477a895ef6c9e8d328a6292926b1000  logdir
