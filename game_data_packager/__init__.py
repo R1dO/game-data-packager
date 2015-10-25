@@ -980,6 +980,7 @@ def load_json(progress, games, jsonfile, jsondata):
 
             data = json.loads(jsondata)
             plugin = data.get('plugin', g)
+            plugin = plugin.replace('-', '_')
 
             try:
                 plugin = importlib.import_module('game_data_packager.games.%s' %
