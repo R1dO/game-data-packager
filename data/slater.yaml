@@ -1,0 +1,50 @@
+---
+longname: 'Slater & Charlie Go Camping'
+copyright: © 1993 Sierra
+plugin: scummvm_common
+wiki: Slater_%26_Charlie_Go_Camping
+genre: Kids
+
+packages:
+  slater-and-charlie-data:
+    install:
+    - 943.tex
+    - 952.tex
+    - 999.tex
+    - message.map
+    - resource.000
+    - resource.aud
+    - resource.map
+    - resource.msg
+    - version
+
+  slater-and-charlie-alt-data:
+    install:
+    - 943.tex
+    - 952.tex
+    - 999.tex
+    - message.map
+    - resource.000?alt
+    - resource.aud?alt
+    - resource.map
+    - resource.msg
+
+size_and_md5: |
+  155       1d08443371e9d0a56e55cefc5e66424f 943.tex
+  119       b8952cc077a3cb2c8164091d273f365d 952.tex
+  70        43b1e0e5b8d491e7301f401480ce22ba 999.tex
+  36        20dd1687cd8afd048a42dc50299c9779 message.map
+  2256126   c6fcde97e4e69622ce749ea230e2587c resource.000
+  2256126   a4bbc7e107a4fcde8eb71bce4350b063 resource.000?alt
+  4439298   576b523d31d18cc2302d98cf5eb7edd5 resource.aud
+  4443822   84858595766f2dd4034bda2456f54edf resource.aud?alt
+  4044      21f85414124dc23e54544a5536dc35cd resource.map
+  1132      c44f51fb955eae266fecf360ebcd5ad2 resource.msg
+  54        c121798c4fd7ef17b8671501ecee796c version
+
+sha1sums: |
+  8fe5a8ac3d84b2fdcbff95fbb0702bf258b9bc8a  resource.000
+  9cdcec1c7af206e3203f797be69ebab5ee86af96  resource.000?alt
+  7f0db4811b1980eb3befc9835e9eedff35412043  resource.aud
+  a6cee5f2c5b1030abb15a6fae546f801ea543406  resource.aud?alt
+...
