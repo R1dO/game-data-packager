@@ -212,7 +212,7 @@ for game in games:
     html.write('</tr>\n')
 
 # TOTAL
-html.write('<tr><td colspan=2><b>Total</b></td>\n')
+html.write('<tr><td colspan=3><b>Total</b></td>\n')
 for lang in langs_order:
     html.write('  <td><b>%i</b></td>\n' % langs[lang])
 
