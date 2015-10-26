@@ -61,15 +61,17 @@ for i in pak001 pak021 pak022 zpak_english; do
   fi
 done
 
+cvars="+set com_allowconsole 1"
+
 # Quake 4 expects to run in its installation directory
 cd "$pkglibdir"
 # The SMP binary needs a modified bundled copy of SDL.
 export LD_LIBRARY_PATH="${pkglibdir}${LD_LIBRARY_PATH:+":${LD_LIBRARY_PATH}"}"
 
 if test -n "$QUAKE4_BACKTRACE"; then
-  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args "${pkglibdir}/${binary}" "$@"
+  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args "${pkglibdir}/${binary}" ${cvars} "$@"
 else
-  exec ${QUAKE4_DEBUGGER} "${pkglibdir}/${binary}" "$@"
+  exec ${QUAKE4_DEBUGGER} "${pkglibdir}/${binary}" ${cvars} "$@"
 fi
 
 # vim:set sw=2 sts=2 et:
