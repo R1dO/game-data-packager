@@ -1828,6 +1828,10 @@ class PackagingTask(object):
                 if path not in paths:
                     paths.append(path)
 
+            for path in self.iter_gog_paths():
+                if path not in paths:
+                    paths.append(path)
+
             for path in self.iter_origin_paths():
                 if path not in paths:
                     paths.append(path)
