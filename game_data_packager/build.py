@@ -601,6 +601,12 @@ class PackagingTask(object):
                or (basename.startswith('gog_') and extension == '.sh')):
                 with zipfile.ZipFile(path, 'r') as zf:
                     self.consider_zip(path, zf)
+            elif extension.lower() == '.deb':
+                with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', path],
+                            stdout=subprocess.PIPE) as fsys_process:
+                    with tarfile.open(path + '//data.tar.*', mode='r|',
+                           fileobj=fsys_process.stdout) as tar:
+                        self.consider_tar_stream(path, tar)
 
     def _log_not_any_of(self, path, size, hashes, why, candidates):
         message = ('found %s but it is not one of the expected ' +
@@ -773,14 +779,19 @@ class PackagingTask(object):
                 logger.error('%s should have provided %s but did not',
                         name, missing)
 
-    def consider_tar_stream(self, name, tar, provider):
-        should_provide = set(provider.provides)
+    def consider_tar_stream(self, name, tar, provider=None):
+        if provider is None:
+            try_to_unpack = self.game.files
+            should_provide = set()
+        else:
+            try_to_unpack = provider.provides
+            should_provide = set(try_to_unpack)
 
         for entry in tar:
             if not entry.isfile():
                 continue
 
-            for filename in provider.provides:
+            for filename in try_to_unpack:
                 wanted = self.game.files.get(filename)
 
                 if wanted is None:
