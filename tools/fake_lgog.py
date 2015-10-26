@@ -20,6 +20,8 @@
 import argparse
 import subprocess
 
+print('FAKE LGOGDOWNLOADER:')
+
 parser = argparse.ArgumentParser(prog='lgogdownloader',
             description='Fake lgogdownloader.')
 parser.add_argument('--download', action='store_true')
@@ -27,7 +29,7 @@ parser.add_argument('--no-extra', action='store_true')
 parser.add_argument('--directory', metavar='DIR')
 parser.add_argument('--subdir-game', type=str)
 parser.add_argument('--platform', type=str)
-parser.add_argument('--platform-priority', type=str)
+parser.add_argument('--include', type=str)
 parser.add_argument('--language', type=str)
 parser.add_argument('--game', type=str)
 args = parser.parse_args()
@@ -47,17 +49,21 @@ archives = {
           #'rise_of_the_triad__dark_war#en': ['gog_rise_of_the_triad_dark_war_2.0.0.8.sh'],
           'the_feeble_files#en': ['setup_the_feeble_files_2.0.0.5.exe',
                                   'setup_the_feeble_files_2.0.0.5-1.bin',
-                                  'setup_the_feeble_files_2.0.0.5-2.bin']
+                                  'setup_the_feeble_files_2.0.0.5-2.bin'],
+          'toonstruck#en': ['gog_toonstruck_2.0.0.4.sh'],
           }.get(game + '#' + (args.language or 'en'))
 
 if archives is None:
-    exit('FAKE LGOGDOWNLOADER: Unknown game %s' % game)
+    exit('Unknown game %s' % game)
 
 for archive in archives:
-    locate = subprocess.check_output(['locate', '-e', archive], universal_newlines=True)
+    try:
+        locate = subprocess.check_output(['locate', '-e', archive], universal_newlines=True)
+    except subprocess.CalledProcessError:
+        exit('Archive %s not found in "locate" database' % archive)
     for file in locate.splitlines():
         if file.endswith(archive):
            break
     else:
-        exit('FAKE LGOGDOWNLOADER: archive %s not found in "locate" database' % archive)
+        exit('Archive %s not found in "locate" database' % archive)
     subprocess.check_call(['ln', '-s', '-v', file, args.directory])
