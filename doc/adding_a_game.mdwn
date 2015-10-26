@@ -135,6 +135,9 @@ with these keys:
 
 * `url`: the game-specific part of games' URLs, such as
   `the_ultimate_doom` for http://www.gog.com/game/the_ultimate_doom
+* `game`: some games are sold on gog.com as bundle, this is the
+  name of each individual part. Use `lgogdownloader --list` to
+  know this value. If not specified, this default to the value of `url`.
 * `pp`: an affiliate ID, typically used to donate to a relevant game engine
   (if not specified, g-d-p will use ScummVM's affiliate ID)
 * `path`: the directory below `GOG Games` where the GOG installer puts
