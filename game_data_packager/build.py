@@ -1715,6 +1715,8 @@ class PackagingTask(object):
                 else:
                     has_virtual = False
                 engine = engine.split('|')[0].split('(')[0].strip()
+                if engine.startswith('gemrb'):
+                    engine = 'gemrb'
                 if has_virtual:
                     long_desc += ' Intended for use with some ' + virtual + ',\n'
                     long_desc += ' such as for example: ' + engine
