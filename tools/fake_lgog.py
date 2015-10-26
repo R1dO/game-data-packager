@@ -51,6 +51,8 @@ archives = {
                                   'setup_the_feeble_files_2.0.0.5-1.bin',
                                   'setup_the_feeble_files_2.0.0.5-2.bin'],
           'toonstruck#en': ['gog_toonstruck_2.0.0.4.sh'],
+          'wolfenstein_3d#en': ['setup_wolfenstein3d_2.0.0.4.exe'],
+          'wolfenstein_spear_of_destiny#en': ['setup_spear_of_destiny_2.0.0.6.exe'],
           }.get(game + '#' + (args.language or 'en'))
 
 if archives is None:
