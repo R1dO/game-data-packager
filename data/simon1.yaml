@@ -4,13 +4,13 @@ franchise: Simon the Sorcerer
 copyright: © 1993 Adventure Soft
 plugin: scummvm_common
 wiki: Simon_the_Sorcerer
+gog:
+  url: simon_the_sorcerer
 
 packages:
   simon-the-sorcerer1-en-data:
     debian:
       provides: simon-the-sorcerer1-data
-    gog:
-      url: simon_the_sorcerer
     url_misc: http://www.adventuresoft.com/acatalog/Simon_the_Sorcerer_games.html
     install:
     - gamepc
@@ -55,8 +55,6 @@ packages:
     lang: de
     debian:
       provides: simon1-data
-    gog:
-      url: simon_the_sorcerer
     install:
     - gamepc?de
     - icon.dat
@@ -99,8 +97,6 @@ packages:
     lang: es
     debian:
       provides: simon-the-sorcerer1-data
-    gog:
-      url: simon_the_sorcerer
     install:
     - effects.voc
     - gamepc?es
@@ -117,8 +113,6 @@ packages:
     lang: fr
     debian:
       provides: simon-the-sorcerer1-data
-    gog:
-      url: simon_the_sorcerer
     install:
     - effects.voc
     - gamepc?fr
@@ -135,8 +129,6 @@ packages:
     lang: it
     debian:
       provides: simon-the-sorcerer1-data
-    gog:
-      url: simon_the_sorcerer
     install:
     - effects.voc
     - gamepc?it
@@ -152,8 +144,6 @@ packages:
   simon-the-sorcerer1-dos-en-data:
     longname: Simon the Sorcerer (DOS)
     better_version: simon-the-sorcerer1-en-data
-    gog:
-      url: simon_the_sorcerer
     install:
     - 0001.vga
     - 0002.vga
@@ -594,8 +584,6 @@ packages:
     longname: Simon the Sorcerer (DOS/de)
     lang: de
     better_version: simon-the-sorcerer1-de-data
-    gog:
-      url: simon_the_sorcerer
     install:
     - 0001.vga?de
     - 0002.vga?de
@@ -1033,8 +1021,6 @@ packages:
     longname: Simon the Sorcerer (DOS/fr)
     lang: fr
     better_version: simon-the-sorcerer1-fr-data
-    gog:
-      url: simon_the_sorcerer
     install:
     - 0001.vga?fr
     - 0002.vga?fr
