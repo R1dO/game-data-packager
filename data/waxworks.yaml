@@ -3,13 +3,13 @@ copyright: © 1992 Horrorsoft
 plugin: scummvm_common
 wiki: Waxworks
 genre: Horror
+gog:
+  url: waxworks
 
 packages:
   waxworks-en-data:
     debian:
       provides: waxworks-data
-    gog:
-      url: waxworks
     install:
     - 001.vga
     - 002.vga
@@ -481,8 +481,6 @@ packages:
     lang: de
     debian:
       provides: waxworks-data
-    gog:
-      url: waxworks
     install:
     - 001.vga
     - 002.vga?de
@@ -954,8 +952,6 @@ packages:
     lang: es
     debian:
       provides: waxworks-data
-    gog:
-      url: waxworks
     install:
     - 001.vga
     - 002.vga?es
@@ -1427,8 +1423,6 @@ packages:
     lang: fr
     debian:
       provides: waxworks-data
-    gog:
-      url: waxworks
     install:
     - 001.vga
     - 002.vga?fr
