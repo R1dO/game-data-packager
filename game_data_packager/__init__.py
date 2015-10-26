@@ -460,8 +460,9 @@ class GameData(object):
         dotemu_pp = '32202' # ScummVM
         for p in sorted(self.packages.keys(), reverse=True):
             package = self.packages[p]
-            gog_url = package.gog.get('url', gog_url)
-            gog_pp = package.gog.get('pp', gog_pp)
+            if package.gog:
+                gog_url = package.gog.get('url', gog_url)
+                gog_pp = package.gog.get('pp', gog_pp)
             steam_id.add(package.steam.get('id'))
             dotemu_id = package.dotemu.get('id', dotemu_id)
             dotemu_pp = package.dotemu.get('pp', dotemu_pp)
@@ -943,6 +944,8 @@ class GameData(object):
         return GameDataPackage(binary)
 
     def gog_download_name(self, package):
+        if package.gog == False:
+            return
         gog = package.gog or self.gog
         if not gog:
             return
