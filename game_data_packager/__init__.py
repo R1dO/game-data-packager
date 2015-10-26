@@ -478,8 +478,10 @@ class GameData(object):
                               dotemu_pp, dotemu_id)
 
     def edit_help_text(self):
+        help_text = ''
+
         if len(self.packages) > 1 or self.disks:
-            prepend = '\npackages possible for this game:\n'
+            help_text = '\npackages possible for this game:\n'
             help = []
             has_multi_cd = False
             for package in self.packages.values():
@@ -496,24 +498,26 @@ class GameData(object):
                               'name' : package.name,
                               'longname': longname})
             for h in sorted(help, key=lambda k: (k['type'], k['year'][2:6], k['name'])):
-                prepend += "  %-40s %s\n" % (h['name'],h['longname'])
+                help_text += "  %-40s %s\n" % (h['name'],h['longname'])
             if has_multi_cd and self.shortname != 'zork-inquisitor':
-                prepend += "\nWARNING: for multi-cd games, you'll first need to ensure that all the data\n"
-                prepend += "         is accessible simultaneously, e.g. copy data from CD1 to CD3 in /tmp/cd{1-3}\n"
-                prepend += "         and let CD4 *mounted* in the drive.\n\n"
-                prepend += "         It's important to first mkdir '/tmp/cd1 /tmp/cd2 /tmp/cd3' because for some\n"
-                prepend += "         games there are different files accross the disks with the same name that\n"
-                prepend += "         would be overwriten.\n\n"
-                prepend += "         If /tmp/ is on a tmpfs and you don't have something like 16GB of RAM,\n"
-                prepend += "         you'll likely need to store the files somewhere else.\n\n"
-                prepend += "         The game can then be packaged this way:\n"
-                prepend += "         $ game-data-packager {game} /tmp/cd1 /tmp/cd2 /tmp/cd3 /media/cdrom0\n\n"
-            self.help_text = prepend + '\n' + self.help_text
+                help_text += "\nWARNING: for multi-cd games, you'll first need to ensure that all the data\n"
+                help_text += "         is accessible simultaneously, e.g. copy data from CD1 to CD3 in /tmp/cd{1-3}\n"
+                help_text += "         and let CD4 *mounted* in the drive.\n\n"
+                help_text += "         It's important to first mkdir '/tmp/cd1 /tmp/cd2 /tmp/cd3' because for some\n"
+                help_text += "         games there are different files accross the disks with the same name that\n"
+                help_text += "         would be overwriten.\n\n"
+                help_text += "         If /tmp/ is on a tmpfs and you don't have something like 16GB of RAM,\n"
+                help_text += "         you'll likely need to store the files somewhere else.\n\n"
+                help_text += "         The game can then be packaged this way:\n"
+                help_text += "         $ game-data-packager {game} /tmp/cd1 /tmp/cd2 /tmp/cd3 /media/cdrom0\n\n"
+
+        if self.help_text:
+            help_text += '\n' + self.help_text
 
         if self.missing_langs:
-            self.help_text += ('\nThe following languages are not '
-                               'yet supported: %s\n' %
-                               ','.join(self.missing_langs))
+            help_text += ('\nThe following languages are not '
+                          'yet supported: %s\n' %
+                          ','.join(self.missing_langs))
 
         # advertise where to buy games
         # if it's not already in the help_text
@@ -528,8 +532,8 @@ class GameData(object):
             www.append(self.url_misc)
         if www:
             random.shuffle(www)
-            self.help_text += '\nThis game can be bought online here:\n  '
-            self.help_text += '\n  '.join(www)
+            help_text += '\nThis game can be bought online here:\n  '
+            help_text += '\n  '.join(www)
 
         wikis = list()
         if self.wiki:
@@ -541,8 +545,10 @@ class GameData(object):
         if self.wikipedia:
             wikis.append(self.wikipedia)
         if wikis:
-            self.help_text += '\nExternal links:\n  '
-            self.help_text += '\n  '.join(wikis)
+            help_text += '\nExternal links:\n  '
+            help_text += '\n  '.join(wikis)
+
+        return help_text
 
     def to_yaml(self):
         files = {}
@@ -736,12 +742,10 @@ class GameData(object):
 
         longname = ascii_safe(self.longname)
 
-        self.edit_help_text()
-
         parser = parsers.add_parser(self.shortname,
                 help=longname, aliases=aliases,
                 description='Package data files for %s.' % longname,
-                epilog=ascii_safe(self.help_text),
+                epilog=ascii_safe(self.edit_help_text()),
                 formatter_class=argparse.RawDescriptionHelpFormatter,
                 parents=(base_parser,),
                 **kwargs)
