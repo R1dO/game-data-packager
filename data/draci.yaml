@@ -110,7 +110,8 @@ packages:
   draci-cz-data:
     # .zip file is missing a license
     # component: main
-    lang: cz
+    lang: cs
+    # cs_CZ.UTF-8
     debian:
       provides: draci-data
     install:
