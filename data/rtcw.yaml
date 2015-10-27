@@ -4,7 +4,9 @@ franchise: Wolfenstein
 copyright: © 2001 id Software, Inc. and Activision Publishing, Inc.
 engine: rtcw
 genre: First-person shooter
-try_repack_from: [/usr/local/games/wolfenstein]
+try_repack_from:
+- /usr/local/games/wolfenstein
+- '~/.wine/drive_c/Program Files/Return to Castle Wolfenstein/'
 missing_langs: [it]
 wikibase: http://wolfenstein.wikia.com/wiki/
 wiki: Return_to_Castle_Wolfenstein
