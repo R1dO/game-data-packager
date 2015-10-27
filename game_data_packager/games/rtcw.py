@@ -36,9 +36,8 @@ class RTCWTask(PackagingTask):
             return True
 
         zip_in = os.path.join(destdir, 'usr/share/games/rtcw/main', 'sp_pak1.pk3')
-        libdir = os.path.join(destdir, 'usr/lib/rtcw/main')
-        mkdir_p(libdir)
-        zip_out = os.path.join(libdir, 'sp_pak3_%s.pk3' % package.lang)
+        zip_out = os.path.join(destdir, 'usr/share/games/rtcw/main',
+                               'sp_pak3_%s.pk3' % package.lang)
 
         with zipfile.ZipFile(zip_in, 'r') as zf_in:
             txt = zf_in.open('text/EnglishUSA/escape1.txt').read()

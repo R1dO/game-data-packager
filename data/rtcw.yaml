@@ -131,6 +131,9 @@ packages:
       replaces: rtcw-data
     version: 1.42b
     install_to: usr/share/games/rtcw
+    symlinks:
+      usr/lib/rtcw/main/sp_pak3_es.pk3:
+        usr/share/games/rtcw/main/sp_pak3_es.pk3
     install:
     - main/mp_bin.pk3
     - main/mp_pak0.pk3
@@ -170,6 +173,9 @@ packages:
       replaces: rtcw-data
     version: 1.42b
     install_to: usr/share/games/rtcw
+    symlinks:
+      usr/lib/rtcw/main/sp_pak3_fr.pk3:
+        usr/share/games/rtcw/main/sp_pak3_fr.pk3
     install:
     - main/mp_bin.pk3
     - main/mp_pak0.pk3
