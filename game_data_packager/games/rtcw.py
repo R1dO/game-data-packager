@@ -41,9 +41,9 @@ class RTCWTask(PackagingTask):
         zip_out = os.path.join(libdir, 'sp_pak5.pk3')
 
         with zipfile.ZipFile(zip_in, 'r') as zf_in:
-            with zipfile.ZipFile(zip_out, 'w') as zf_out:
-                txt = zf_in.open('text/EnglishUSA/escape1.txt').read()
-                zf_out.writestr('text/EnglishUSA/escape1.txt', txt)
+            txt = zf_in.open('text/EnglishUSA/escape1.txt').read()
+        with zipfile.ZipFile(zip_out, 'w') as zf_out:
+            zf_out.writestr('text/EnglishUSA/escape1.txt', txt)
 
         return True
 
