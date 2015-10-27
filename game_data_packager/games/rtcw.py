@@ -33,12 +33,11 @@ class RTCWTask(PackagingTask):
         if not super(RTCWTask, self).fill_dest_dir(package, destdir):
             return False
 
-        if package.name not in ('rtcw-es-data', 'rtcw-fr-data'):
+        if package.name != 'rtcw-fr-data':
             return True
 
         zip_in = os.path.join(destdir, 'usr/share/games/rtcw/main', 'sp_pak1.pk3')
-        zip_out = os.path.join(destdir, 'usr/share/games/rtcw/main',
-                               'sp_pak3_%s.pk3' % package.lang)
+        zip_out = os.path.join(destdir, 'usr/share/games/rtcw/main', 'sp_pak3_fr.pk3')
 
         with zipfile.ZipFile(zip_in, 'r') as zf_in:
             txt = zf_in.open('text/EnglishUSA/escape1.txt').read()
