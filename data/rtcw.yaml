@@ -61,12 +61,12 @@ packages:
     - main/sp_pak1.pk3?en
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
+    # From GOTY edition
     - main/sp_pak4.pk3
     # From iortcw
     - main/hiquality.cfg
     - main/mp_bin0.pk3
     - main/mp_rend2_shaders0.pk3
-    - main/sp_pak4.pk3
     - main/sp_rend2_shaders0.pk3
     optional:
     - main/autoexec.cfg
@@ -109,13 +109,13 @@ packages:
     - main/sp_pak1.pk3?en
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
-    - main/sp_pak4.pk3
     - main/sp_pakG.pk3
+    # From GOTY edition
+    - main/sp_pak4.pk3
     # From iortcw
     - main/hiquality.cfg
     - main/mp_bin0.pk3
     - main/mp_rend2_shaders0.pk3
-    - main/sp_pak4.pk3
     - main/sp_rend2_shaders0.pk3
     optional:
     - main/autoexec.cfg
@@ -152,6 +152,7 @@ packages:
     - main/sp_pak2.pk3
     # From "Edición especial"
     - main/sp_pak3.pk3?es
+    # From GOTY edition
     - main/sp_pak4.pk3
     # From iortcw
     - main/hiquality.cfg
@@ -193,12 +194,12 @@ packages:
     - main/sp_pak1.pk3?fr
     - main/sp_pak2.pk3
     - main/sp_pak3.pk3
+    # From GOTY edition
     - main/sp_pak4.pk3
     # From iortcw
     - main/hiquality.cfg
     - main/mp_bin0.pk3
     - main/mp_rend2_shaders0.pk3
-    - main/sp_pak4.pk3
     - main/sp_rend2_shaders0.pk3
     optional:
     - main/autoexec.cfg
@@ -213,8 +214,9 @@ files:
     - main/hiquality.cfg
     - main/mp_bin0.pk3
     - main/mp_rend2_shaders0.pk3
-    - main/sp_pak4.pk3
     - main/sp_rend2_shaders0.pk3
+    # repacked from GOTY edition
+    - main/sp_pak4.pk3
     unpack:
       format: zip
 
