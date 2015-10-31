@@ -1,4 +1,3 @@
-VERSION := $(shell dpkg-parsechangelog | grep ^Version | cut -d' ' -f2-)
 DIRS := ./out
 GDP_MIRROR ?= localhost
 
