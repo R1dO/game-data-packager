@@ -31,11 +31,11 @@ import tarfile
 import tempfile
 import time
 import urllib.request
-import yaml
 import zipfile
 
 from debian.deb822 import Deb822
 from debian.debian_support import Version
+import yaml
 
 from .gog import GOG
 from .paths import (DATADIR, ETCDIR)
