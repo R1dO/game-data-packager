@@ -1782,11 +1782,7 @@ class PackagingTask(object):
         if is_installed:
             current_ver = PACKAGE_CACHE.current_version(engine)
         else:
-            current_ver = check_output(['apt-cache',
-                'madison', engine],
-                universal_newlines=True)
-            current_ver = current_ver.splitlines()[0]
-            current_ver = current_ver.split('|')[1].strip()
+            current_ver = PACKAGE_CACHE.available_version(engine)
 
         if current_ver and Version(current_ver) >= Version(ver):
             return FillResult.COMPLETE

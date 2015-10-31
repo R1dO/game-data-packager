@@ -150,6 +150,13 @@ class PackageCache:
         except subprocess.CalledProcessError:
             return
 
+    def available_version(self, package):
+        current_ver = check_output(['apt-cache', 'madison', package],
+                                    universal_newlines=True)
+        current_ver = current_ver.splitlines()[0]
+        current_ver = current_ver.split('|')[1].strip()
+        return current_ver
+
 PACKAGE_CACHE = PackageCache()
 
 def prefered_lang():
