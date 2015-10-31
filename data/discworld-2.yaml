@@ -1,0 +1,840 @@
+---
+longname: "Discworld II: Missing Presumed...!?"
+copyright: © 1996 Perfect Entertainment Ltd
+plugin: scummvm_common
+wiki: "Discworld_II:_Missing_Presumed...!%3F"
+gameid: tinsel
+disks: 2
+missing_langs: [de,en_US,fr]
+
+packages:
+  discworld2-cd-en-gb-data:
+    lang: en_GB
+    debian:
+      provides: discworld2-data
+    install:
+    - act1.scn
+    - act2.scn
+    - act3end.cdp
+    - act3end.mus
+    - act3end.scn
+    - act3.scn
+    - act4.scn
+    - act5.scn
+    - alcove.cdp
+    - alcove.mus
+    - alcove.scn
+    - altar.cdp
+    - altar.mus
+    - altar.scn
+    - ankh.mus
+    - ankh.scn
+    - arnie.bmv
+    - ashkente.mus
+    - ashkente.scn
+    - backlot2.cdp
+    - backlot2.mus
+    - backlot2.scn
+    - backlot.cdp
+    - backlot.mus
+    - backlot.scn
+    - backyard.cdp
+    - backyard.mus
+    - backyard.scn
+    - beach.cdp
+    - beach.mus
+    - beach.scn
+    - bedroom.mus
+    - bedroom.scn
+    - bomb.bmv
+    - bonedie2.cdp
+    - bonedie2.mus
+    - bonedie2.scn
+    - bonedie.cdp
+    - bonedie.mus
+    - bonedie.scn
+    - camels.cdp
+    - camels.mus
+    - camels.scn
+    - castle.cdp
+    - castle.mus
+    - castle.scn
+    - cdchange.scn
+    - cemetery.mus
+    - cemetery.scn
+    - coffin.mus
+    - coffin.scn
+    - computer.mus
+    - computer.scn
+    - concert.bmv
+    - corn.cdp
+    - corn.mus
+    - corn.scn
+    - credits.bmv
+    - crucify.cdp
+    - crucify.mus
+    - crucify.scn
+    - crypt.cdp
+    - crypt.mus
+    - crypt.scn
+    - death.cdp
+    - death.mus
+    - death.scn
+    - dining.cdp
+    - dining.mus
+    - dining.scn
+    - discmap.cdp
+    - discmap.mus
+    - discmap.scn
+    - djeli2.cdp
+    - djeli2.mus
+    - djeli2.scn
+    - djeli.cdp
+    - djeli.mus
+    - djeli.scn
+    - docks.cdp
+    - docks.mus
+    - docks.scn
+    - dthintro.bmv
+    - dw2.scn
+    - english.idx?cd1
+    - english.smp?cd1
+    - english.txt?cd1
+    - english.idx?cd2
+    - english.smp?cd2
+    - english.txt?cd2
+    - filmset.cdp
+    - filmset.mus
+    - filmset.scn
+    - fools.cdp
+    - fools.mus
+    - fools.scn
+    - fountain.cdp
+    - fountain.mus
+    - fountain.scn
+    - garden2.cdp
+    - garden2.mus
+    - garden2.scn
+    - garden.cdp
+    - garden.mus
+    - garden.scn
+    - gdata
+    - gimlets.cdp
+    - gimlets.mus
+    - gimlets.scn
+    - grate.cdp
+    - grate.mus
+    - grate.scn
+    - hallway.cdp
+    - hallway.mus
+    - hallway.scn
+    - hienergy.cdp
+    - hienergy.mus
+    - hienergy.scn
+    - holywood.cdp
+    - holywood.mus
+    - holywood.scn
+    - hopper
+    - house.cdp
+    - house.mus
+    - house.scn
+    - idining.cdp
+    - idining.mus
+    - idining.scn
+    - index
+    - inshop.cdp
+    - inshop.mus
+    - inshop.scn
+    - intro.bmv
+    - kingkong.bmv
+    - kingkong.mus
+    - kingkong.scn
+    - kitchen.cdp
+    - kitchen.mus
+    - kitchen.scn
+    - library.mus
+    - library.scn
+    - lug01.scn
+    - lug02.scn
+    - lug03.scn
+    - lug04.scn
+    - lug05.scn
+    - lug06.scn
+    - lug07.scn
+    - lug08.scn
+    - lug09.scn
+    - lug10.scn
+    - makeup.cdp
+    - makeup.mus
+    - makeup.scn
+    - mapmaker.mus
+    - mapmaker.scn
+    - mortuary.cdp
+    - mortuary.mus
+    - mortuary.scn
+    - mouse.bmv
+    - movies2.scn
+    - movies.scn
+    - mrscakes.cdp
+    - mrscakes.mus
+    - mrscakes.scn
+    - mummy.cdp
+    - mummy.mus
+    - mummy.scn
+    - oasis.cdp
+    - oasis.mus
+    - oasis.scn
+    - objects.scn
+    - odium2.cdp
+    - odium2.mus
+    - odium2.scn
+    - odium.mus
+    - odium.scn
+    - onstage.mus
+    - onstage.scn
+    - palace.cdp
+    - palace.mus
+    - palace.scn
+    - perfect.bmv
+    - plaza.mus
+    - plaza.scn
+    - pork.cdp
+    - pork.mus
+    - pork.scn
+    - produced.bmv
+    - project.cdp
+    - project.mus
+    - project.scn
+    - prophet.cdp
+    - prophet.mus
+    - prophet.scn
+    - psyg.bmv
+    - pyramid.mus
+    - pyramid.scn
+    - rambo.bmv
+    - room.cdp
+    - room.mus
+    - room.scn
+    - rw01.scn
+    - rw02.scn
+    - rw03.scn
+    - rw04.scn
+    - rw05.scn
+    - rw06.scn
+    - rw07.scn
+    - rw08.scn
+    - rw09.scn
+    - rw10.scn
+    - scales.scn
+    - seamap.cdp
+    - seamap.mus
+    - seamap.scn
+    - sewer.cdp
+    - sewer.mus
+    - sewer.scn
+    - shades.cdp
+    - shades.mus
+    - shades.scn
+    - ship.cdp
+    - ship.mus
+    - ship.scn
+    - shop.mus
+    - shop.scn
+    - stable.cdp
+    - stable.mus
+    - stable.scn
+    - stones.cdp
+    - stones.mus
+    - stones.scn
+    - stoning.cdp
+    - stoning.mus
+    - stoning.scn
+    - study.cdp
+    - study.mus
+    - study.scn
+    - sunset.bmv
+    - surfing.bmv
+    - theatre.bmv
+    - theatre.cdp
+    - theatre.mus
+    - theatre.scn
+    - throne.cdp
+    - throne.mus
+    - throne.scn
+    - title.mus
+    - title.scn
+    - topork.cdp
+    - topork.mus
+    - topork.scn
+    - tower.cdp
+    - tower.mus
+    - tower.scn
+    - trailer.cdp
+    - trailer.mus
+    - trailer.scn
+    - trollbar.cdp
+    - trollbar.mus
+    - trollbar.scn
+    - undead.cdp
+    - undead.mus
+    - undead.scn
+    - unseen.mus
+    - unseen.scn
+    - wardrobe.mus
+    - wardrobe.scn
+    - wildcat.bmv
+    - wipeout.bmv
+
+files:
+  english.idx?cd1:
+    install_as: english1.idx
+  english.smp?cd1:
+    install_as: english1.smp
+  english.txt?cd1:
+    install_as: english1.txt
+  english.idx?cd2:
+    install_as: english2.idx
+  english.smp?cd2:
+    install_as: english2.smp
+  english.txt?cd2:
+    install_as: english2.txt
+
+size_and_md5: |
+  121017    f14bdc331bf6d61965ac6795677d4b4b act1.scn
+  124421    b2a8c3bf044e2b38d429483a206b5d2f act2.scn
+  117209    d7034aee3aa67e40597e6b1920732d57 act3.scn
+  297732    c3390319be337dc7501252520b005015 act3end.cdp
+  2775993   c84e6f7c6055bab3e90c203ebb5ae4bf act3end.mus
+  698897    62547df300f297cbcbb3a97b016170de act3end.scn
+  117081    8032b8defde93aa5578fa7dba6c80f6e act4.scn
+  174645    c652cc6a81e2b5a60e360135cfe815c7 act5.scn
+  258480    0e1cfdf40fab8af2148e15ecced4bcf2 alcove.cdp
+  3810741   7b65ff0ea63abd7bb7ee4d47ef851288 alcove.mus
+  451241    735360ceb1ee2cf16a66457d83e90a04 alcove.scn
+  1869484   688fca5350dba946e6a057a39a82f587 altar.cdp
+  3417051   f3b04ba4bebbc8f191a943dfaec2f7d9 altar.mus
+  1780541   30a685e07a2fba9a41e0fa57c6cec203 altar.scn
+  1382205   ab86394d2f3569c6b059cd81238b3493 ankh.mus
+  360929    f0935ea43c18f42b4bdf25f916f62b46 ankh.scn
+  10902044  24daa0ff286935fa952d07911efc3ee4 arnie.bmv
+  1068804   c28ad5a5c920a3bd89d338f38ff97e3c ashkente.mus
+  299077    ea46705b94832d3e72e1ab1ef4aa9621 ashkente.scn
+  861552    70ea4ad3d09256f02bea83ebea59a7d1 backlot.cdp
+  1638879   f449e1eb756eb10e6e654f80df3c94ed backlot.mus
+  1605529   391762dd57a9e51fda7c2045d018bb8a backlot.scn
+  1803768   7b07f178789980ac6ef4115d38151aff backlot2.cdp
+  1638879   f449e1eb756eb10e6e654f80df3c94ed backlot2.mus
+  1320657   6e0806d11fa1f9a7b477f3056e83d282 backlot2.scn
+  1436416   1298813eb36ee72e1341d6ebb16bb8f7 backyard.cdp
+  1021152   58bcc3f6992a792e32ceac5d2468422b backyard.mus
+  1758369   a2f2e00632b1cdf20ac2e8b77fd93cf9 backyard.scn
+  585612    9adeebd8d732435a80b7f9408726f082 beach.cdp
+  832491    3c14fd3c37a459fa06f099c2b13738d3 beach.mus
+  361165    e35955f63e13807138dbd0e16531dcf7 beach.scn
+  3468729   6aabb50767ca7505f2480cd445190423 bedroom.mus
+  351977    2b7e3a0c3f1feaf51cf48ccd40bc0ddb bedroom.scn
+  8163466   520511727e93d6ac317139692d38e6c5 bomb.bmv
+  855848    1668250c304d61ff4df6d64723df8fa2 bonedie.cdp
+  2179089   cc460f96cdf86328ba62fa6bac99d2d5 bonedie.mus
+  2308725   2805c357f362fa5d452459015b98e6e4 bonedie.scn
+  11720     5d66a1dd71ace896edad70627c6d38a0 bonedie2.cdp
+  2179089   cc460f96cdf86328ba62fa6bac99d2d5 bonedie2.mus
+  1652289   21ed85fe33c56cd61226eff8d7911b05 bonedie2.scn
+  871184    ce63dd84ba3a67827f80b974f7783310 camels.cdp
+  181929    8bba26df42fe317f56047392d614febd camels.mus
+  883565    aa37bc5e97bcf85ba08b086b4a81ecfc camels.scn
+  1979104   1e7dd30790ea24a9169e67d2df016222 castle.cdp
+  1405074   704c59401c0121fe61e405e9e893f73d castle.mus
+  632265    52066fac52c259598d200172bb7a2d15 castle.scn
+  745345    139ea411c05194b05c053c656749f399 cdchange.scn
+  5268120   d21d88eb1f26876a640efa96c1b4aef9 cemetery.mus
+  1021881   ee93088d6615988bf125c91beda7531b cemetery.scn
+  2664288   20166badd4d17a57b4752bb7b057838b coffin.mus
+  356497    2ff55b9a2772fdf9e68e759753435b1d coffin.scn
+  206052    269225d04587684b01e4c8711c8225e6 computer.mus
+  611825    2f7091feca919ef2f14e4cfb18851381 computer.scn
+  29921132  8e41892fddb94c8584fe460b123d5b5b concert.bmv
+  844308    85c8654859868fe5072e7d3888768263 corn.cdp
+  321684    ece48141f9909f6a7655c8162001b8fe corn.mus
+  307665    c253fbfe099af6ed5398356cc6291e3b corn.scn
+  49027717  efb9632eb6539dfe41420059a2f1d7cf credits.bmv
+  887728    1b5e91b9320d8efd7d84a5b0e5654409 crucify.cdp
+  1195854   1713ce392deee170ef21cb47ec1ec02f crucify.mus
+  653813    9402012336f2e4dac0837738155f5db0 crucify.scn
+  258300    177843062fd5ea0b807eb58a742c2800 crypt.cdp
+  2664288   20166badd4d17a57b4752bb7b057838b crypt.mus
+  328693    606cfbcba4bc5ceb37f626296586cbd2 crypt.scn
+  221768    d8bf8ba62a5e8918651b2b970a3740c1 death.cdp
+  3213606   f623cd23b8e36550934258a72f13b733 death.mus
+  846109    1e070a851d204968888fdd90f6eab43e death.scn
+  533200    0c84598cc8d73125a6668baa863d9176 dining.cdp
+  3483876   b280eef840917f8047e0f836a42c23f1 dining.mus
+  1201881   23fe000acd1dc25a8c9fc6aa2c05ec42 dining.scn
+  174028    8508b595360e9aac198c98cf4849bc34 discmap.cdp
+  1023264   43fb2bd9fa63d102b2dc56184791c609 discmap.mus
+  279233    08cf15dd22a284135b940a703496f227 discmap.scn
+  1973336   cbbc46c7f05242d7cf56208f2b4006d6 djeli.cdp
+  2540835   58ebf5fe0b4130e1eb85edade93dbd51 djeli.mus
+  2021113   efdd86fd134d0f65d2575df74afda6ed djeli.scn
+  1068776   5da1c1d9aecba5440a23d83e932c2eac djeli2.cdp
+  2540835   58ebf5fe0b4130e1eb85edade93dbd51 djeli2.mus
+  2071397   3dccdfcf2f19f4087c09c1846fbd60f2 djeli2.scn
+  2912988   f6931bb92fb583f1c8bfe1296479d026 docks.cdp
+  2933766   b41dd9cf976ee86032720cfed5842567 docks.mus
+  1341645   752167aae7ea71051426af2facd3bb23 docks.scn
+  5569999   634dbc075e58724274f03915f3a17c3a dthintro.bmv
+  103593    4ff4709df7a13b3347076cc0c52aecc4 dw2.scn
+  39996     4e9d5ef4fb42e5ec5e31c1f30b45aee6 english.idx?cd1
+  39988     42c99fa66ead758c0048b9b8abc7e31e english.idx?cd2
+  235378748 ed44bd55059c4e2c4789d54d5370e7eb english.smp?cd1
+  105358318 509157558473e310f8674effa21e4caa english.smp?cd2
+  233295    5062d37a0f6ea8e7e4afb7475cb09fe0 english.txt?cd1
+  118189    1c90b297898aed9414922a8c215addc7 english.txt?cd2
+  1594556   05d9dbd143cc545c46e0da9c4c088361 filmset.cdp
+  1639374   2dfecd390e62ae8f309c653c20e2bcaa filmset.mus
+  1457053   66b2930ba72fd8ee6b525d491fad6b84 filmset.scn
+  271272    47bd02aa192e76c3bc8c537316a0bb2c fools.cdp
+  2969769   e09abc9f8fe10d1269c5a7642c77d11c fools.mus
+  317701    cfd40a10f23186b6d3c7edd8aed7a9f9 fools.scn
+  1760732   5c33b8eb9127755139f987519a56354b fountain.cdp
+  1800909   2f07fae7a99abd5179fba44bf8478fa1 fountain.mus
+  771461    e4058bbcd4b8de6da5fd2f70ade6dad6 fountain.scn
+  2728108   ad6e445f1f0c5bd99a88a65a157addad garden.cdp
+  7938810   473c41abc43f9d77b04b13a282e8ac39 garden.mus
+  2491525   79d83f14d8fa1cafeb8573ac9b846f69 garden.scn
+  449512    188d8987b63c98e5bf6cd57593069ff5 garden2.cdp
+  7938810   473c41abc43f9d77b04b13a282e8ac39 garden2.mus
+  449697    ea2c3936c666787aebdc11105ae72b39 garden2.scn
+  2148      f0bbb5888c2af7d87d53c508415a6900 gdata
+  203296    80511097b0cb9c98b9c7100aedba60e1 gimlets.cdp
+  2914197   390f72e2d34043ac9a197c8ffe927534 gimlets.mus
+  477741    6bc040ff176782f83668a293b9a3429e gimlets.scn
+  350544    d698c294d858de38a3e4d01d3d893466 grate.cdp
+  1843512   9b978a65b888258365f75b2379a24a2f grate.mus
+  414181    6c513a65d31c2f88689807ad4ee45308 grate.scn
+  280932    54cb817f17115ad6287dc9df50cd3b1b hallway.cdp
+  4459488   334285449bcd74fa78d1f9ceec72e859 hallway.mus
+  320249    ebc986f5f00c401c5e75e129dfc100f5 hallway.scn
+  2819212   35d6497974e2e2b991a9878e81a58a9d hienergy.cdp
+  2060355   d87153342215c1d8e6345458f63fa7a9 hienergy.mus
+  1450645   41ee62868ca0c50fba6958dad5dab8dc hienergy.scn
+  12836     5a662b61e101308b4aba9f2bb51bf2f5 holywood.cdp
+  490545    66c40713841c216c902d613250442778 holywood.mus
+  358025    8912fb8a3ab30075c885aded5cc0d69e holywood.scn
+  4116      94447e63780a33e45b14d11f3faaf185 hopper
+  1087284   a87d5bc3f502015c770efeb8aa33ed7d house.cdp
+  3213606   f623cd23b8e36550934258a72f13b733 house.mus
+  328181    6bf0f862e372b8f7f6b6840c70d384d2 house.scn
+  63472     7d9f8495e12a4ab12fdd7f43487f012b idining.cdp
+  3483876   b280eef840917f8047e0f836a42c23f1 idining.mus
+  2120925   25de121b2e7a60d464cd20835972da99 idining.scn
+  2616      a90233c0370358149812be3ec1949cbb index
+  150448    e60b2454e43404260414f1f14625cc8c inshop.cdp
+  1963599   748e0393912a219f9f16dee2c3fe8773 inshop.mus
+  395941    5b746bd27e68673de5eac910ba16fc69 inshop.scn
+  72179853  d6eb030228c9aa4ef6f13f01d194c71c intro.bmv
+  6814462   6ceb7ad0f487ab61a0d7adb6a565ea8b kingkong.bmv
+  663201    df092e5878287692c9b02eee19df9a5c kingkong.mus
+  396605    cee410a50512ea55302fc92421911053 kingkong.scn
+  814020    e10b2395b0018d3add0cfcd42d30db90 kitchen.cdp
+  3810741   7b65ff0ea63abd7bb7ee4d47ef851288 kitchen.mus
+  847981    99b9809d9205bb3f6a98fe683d734820 kitchen.scn
+  3810741   7b65ff0ea63abd7bb7ee4d47ef851288 library.mus
+  1370209   7edd04877d6db143d9d9e2692ab3c321 library.scn
+  5789      b13db743c5afb4c6cc7e5fb3b786ea51 lug01.scn
+  12029     2b7583a2b817ef4b25ccb4cbb658a859 lug02.scn
+  20437     e746cc32c629df90f88f6a149587aadc lug03.scn
+  30325     cb853991ad1cc3f8307f16a0901341cf lug04.scn
+  41653     f257765bfc7b4f5c64ae61e53f28f10e lug05.scn
+  54069     990b669b265fdfdc2f2d24facfb15c87 lug06.scn
+  67581     523fab8650eb4eba0c99dd9ae2ee2f68 lug07.scn
+  82105     5830b7780f7480e82f3ad9d2011acde6 lug08.scn
+  97469     c1e71bd240ae3a6d850d762a894b5316 lug09.scn
+  112449    8ab62f477dc773bfdd6f869ffba3f9ba lug10.scn
+  2211184   8d7b17a77f953a5b01963c73a6875a1a makeup.cdp
+  1639374   2dfecd390e62ae8f309c653c20e2bcaa makeup.mus
+  711501    ab868c626f27f471f6eeadd0cfebdf2a makeup.scn
+  1937265   80689dbca8a34aafe31b5526febf97af mapmaker.mus
+  548425    0b8db4319d774f4ff396846d62624b48 mapmaker.scn
+  1076852   dd71776757bfef6218ad6b6cb193ec56 mortuary.cdp
+  939609    0e963afa84e8f1d68ac09cd266ff7427 mortuary.mus
+  1592321   f91ec5046b620053a188b45aa65b07d8 mortuary.scn
+  2634483   8ed44b65bdd293fe7dc1fd5ceea592ef mouse.bmv
+  3165      6c0d92105c230888773ef0c0262f2ce1 movies.scn
+  2553      e93de8dc9642e1c039525bfaf4889a4f movies2.scn
+  1950300   b4f0001e43b64d4c7de83c33443231f3 mrscakes.cdp
+  2483184   6bf27f0e3a5aaad0dbd08bcfe9132cfd mrscakes.mus
+  979969    0191f892798f5a4c239ac03bc722c060 mrscakes.scn
+  17544     96cbf1c842d74893a60f6c839e514745 mummy.cdp
+  2332077   fb3681836b4bd050c806874e68a4a212 mummy.mus
+  649093    68cf177be9136b22c6cff893146f4bfa mummy.scn
+  2755200   dcc89ddb6ffbb98e8929125a282c4115 oasis.cdp
+  1628418   d0b00a65343344bce6adbbd7e568c4ad oasis.mus
+  558541    cf24f53dd6092a184e4ef0da8c7e4a8a oasis.scn
+  458453    c15f8cd3d96c4bd166b8fcd76ce40d14 objects.scn
+  1275021   0a39661ced6c3f7d585930660148b9ee odium.mus
+  1155697   9d5c306005337ff59e24ad086583c61c odium.scn
+  865784    730ba81ae5b81973cd77c79920a72529 odium2.cdp
+  3062169   35ba946a368ca8d9d0254acfbd436735 odium2.mus
+  1895961   2322d4c7da906124f674054cdc38db22 odium2.scn
+  961785    68e726c3bc46aa0cc0e99eccd48e7be3 onstage.mus
+  760401    6d4862e53b458837490a94a49e285b45 onstage.scn
+  332580    4327751d8e5a0277cb7d867049a31fae palace.cdp
+  2536248   852740e6e7089962735b5f84f2fa4eff palace.mus
+  856117    c3ebfee0d9093ccd004c7416ee7b6bd3 palace.scn
+  2814095   ddd0ef048e77868be06a4593cc520cd3 perfect.bmv
+  5461467   ec0f3d9f1b4e44f7ab41c036a7cb07e4 plaza.mus
+  1336329   f6bbd8bd0aeed94a801e88083b7128b8 plaza.scn
+  41500     858ae7363a08647c220b16e02f40eb81 pork.cdp
+  1217040   d0320912ef057bfe6d00c0d0869aeb9d pork.mus
+  282381    185c51fb6f099727ccbd24acdd4b8b4d pork.scn
+  1416      69453f8eeef5397213e0102d2be73a56 produced.bmv
+  1424844   6e8fcf39e6057f01a66af737bafc361a project.cdp
+  1407582   c656af082db5d2df900a67be592c28a8 project.mus
+  639849    7a5537eea4b7850b209e59f5d726bd2d project.scn
+  1276288   133adc05f39d6b1ca652456652c19c4f prophet.cdp
+  2594493   3d80875af2877a31dc87e7174b4f8e16 prophet.mus
+  1648125   88cf20d97d3debb3768b20cd6af51b91 prophet.scn
+  4870442   a9c7440eb3be7b72d70f6f62615d6e46 psyg.bmv
+  8880069   93159c962b42978c6f6ad9e3fe277f96 pyramid.mus
+  320037    974da5426ed179f5358bdf2bf8c398b9 pyramid.scn
+  6328382   1298436c06437f491ea714107aa3a564 rambo.bmv
+  69656     474ae5743862f76b75a0735988b46e3f room.cdp
+  2264592   0e81ad14a71519cfa798583680c420bb room.mus
+  561325    23419cfafc8f46466fb8368c9b14fd34 room.scn
+  22377     5b11698c5fdeeb76de5f1cbf62a30723 rw01.scn
+  52033     0d3f6a97b969b6b15fc48d85628915f0 rw02.scn
+  94249     1daf0e6cb6b99f787db738893f7f9c77 rw03.scn
+  140733    4d6f6a9f3a7dc13405e570b293409d06 rw04.scn
+  189581    c10b80542db4b10ef024885f7880a234 rw05.scn
+  245957    3a3b8595562b7017b2acb75ded9d2299 rw06.scn
+  294749    fa50cd3e383e2eb85ceb769888fb2016 rw07.scn
+  351645    f63f5bc5fb238f7e0746a033543fe319 rw08.scn
+  418025    6292edccdcaf2b619fa02ccb5fd58e1b rw09.scn
+  462993    25443d84a3e7bc6a99bc2e32c6406daa rw10.scn
+  284025    6374b4292d8a01ff66a7631b5ff51cdf scales.scn
+  53432     1b01c96bf601b41ed23d9778d4e6a38f seamap.cdp
+  1165131   baebe4b156b5771cbb9d975a5e4d1f65 seamap.mus
+  581181    b055d93f8f116fe5e4669adb0d208e90 seamap.scn
+  4544      e40a46920a066ed034e472bbe393737b sewer.cdp
+  1843512   9b978a65b888258365f75b2379a24a2f sewer.mus
+  289037    9dd8ed153b784f6c09ff77cbce05299a sewer.scn
+  1572816   15e838524317451f24e85dd5ef061783 shades.cdp
+  2914197   390f72e2d34043ac9a197c8ffe927534 shades.mus
+  2096121   2121bd948ba01ebd67e5512b123e3428 shades.scn
+  130092    1c5aa626b67fc859f9e47836cbfe88b1 ship.cdp
+  1100946   1f1b10ddbacca181a95ab67ad27b0524 ship.mus
+  520137    fbda897c9b72b186ab41256fcdef50f5 ship.scn
+  1963599   748e0393912a219f9f16dee2c3fe8773 shop.mus
+  501657    c66cd7801480c366fee920b0ca7c615d shop.scn
+  2247060   129318d3b8d9a6daad266adaf9b91687 stable.cdp
+  1013496   8d060163a9fa6a3f84a4af0fd944fca6 stable.mus
+  1562861   108a2f434040b116f37600d00e8b487a stable.scn
+  602400    60d17c2fa861c7bccaeb44cb5b036a7a stones.cdp
+  1120647   b75a6a49bc84297fe7d58408612689ad stones.mus
+  908741    68d00c19c3970b13c4703df9a00e984f stones.scn
+  2333720   e3452f1767e1d15e04513471d31467ff stoning.cdp
+  1711479   caf3835236330f2c15381014b558722a stoning.mus
+  711089    2025408a7d958c2b8b60402ab2569a66 stoning.scn
+  340536    cfcebb47ea5021e7c20b4ba2cbf371e6 study.cdp
+  3810741   7b65ff0ea63abd7bb7ee4d47ef851288 study.mus
+  818205    6dea7e44b883d084d2091b14a81787fa study.scn
+  7731210   f8a9a0690ff57534b137a7c4aaccaa9d sunset.bmv
+  5423528   52e12586ca50e30274236a08b4db7c15 surfing.bmv
+  38845321  eebb1222106e9f5169279a73de3ba30e theatre.bmv
+  2842472   c23c2a84cf91ba18114142269c25f247 theatre.cdp
+  2655411   134eecdc246d6aa33ad553c61468002b theatre.mus
+  770713    aacd4404fc254bf4405d7064a03121bb theatre.scn
+  1720164   a40b21db600c9fc1bf837eb07716af20 throne.cdp
+  1475958   f1966205da2851f2755e67fa7730501d throne.mus
+  2372749   2221357f90fe481f9e2a844655c56f93 throne.scn
+  801438    1249fb40b8fadc715152d88e3657bdcd title.mus
+  1415725   0758baecc9e7cb1dfc1657ed679a3dfa title.scn
+  175832    43aa9bbfe80708e0dfa479aeec8cf8e4 topork.cdp
+  1843512   9b978a65b888258365f75b2379a24a2f topork.mus
+  326121    2c8672545fb9411c8e43926c4d41e87e topork.scn
+  1496128   c76218ebb18d41d5046652e5e0bfa094 tower.cdp
+  5606832   9f5b9140acb631fbbd938f7d74c93bb6 tower.mus
+  882085    794c10d15c022f2e1985182a836c513c tower.scn
+  542684    544e4ca8f7f1de99d4fba6aafb864e24 trailer.cdp
+  2139753   52226f851b2bc8af14906b146d679fc3 trailer.mus
+  615753    d1f73f4f3d36a1c00f0d45fd41d6b333 trailer.scn
+  1415692   a27ddb3a9fc9aa88c9742268e0acc75a trollbar.cdp
+  2264988   db1bc12831b2e24a359432e531029a5c trollbar.mus
+  1568941   122317fef8a77a035e72f76c4a4ee454 trollbar.scn
+  117016    2cad8bdc4d19e03e211cf5e66e412b41 undead.cdp
+  2921292   2ad4239b3c442fffd5abc0a40c1036ba undead.mus
+  1114593   3e683aa2891e0ebdccda6416007104dd undead.scn
+  2163315   1692b259aa4578a2e3df99cd9a42fd67 unseen.mus
+  1121637   9e2f438328e29aaac5aeccc57d7fd4e8 unseen.scn
+  1913571   157f37eb4e30bf4a5a3cb92d680b1c1f wardrobe.mus
+  1154597   ff3cf06709c5549d5f5beb246ddf4826 wardrobe.scn
+  3072010   4e360431f9b9585706f043f6b4d3b40b wildcat.bmv
+  5258102   001d4184e3cc72905c2d777b6504af9a wipeout.bmv
+
+sha1sums: |
+  982d8c7745436badedffa38edccb9d663eeab22d  act1.scn
+  3c3cd2f6b56194d930b4c13a21da0e4f88c2ce8e  act2.scn
+  42205092967b157d3e0c77024404b8670a46e54f  act3.scn
+  89e70cb011e17b55cf69e26dd5d5fc99334e841e  act3end.cdp
+  eae1d7e6f7b66c2be4bcba4ffdc76a7016c3c567  act3end.mus
+  58a2a0d17f96419a70005501b6adfb0f97530346  act3end.scn
+  77df57601eb35228201cd0c016a50fc74d21130b  act4.scn
+  af46fa85053c4e718c65d14ae99265a863588b10  act5.scn
+  9baba37b6d1a3becb61caf350f5c7fe598023ee3  alcove.cdp
+  7ae1c2dd4d005412669bdec87f9559748a50fa32  alcove.mus
+  63bc9ceadcddfca9743cfb13cbd79b1960684f82  alcove.scn
+  f2bd0c33db01caf0253f081e638a879540f661f7  altar.cdp
+  1d1df3d6b5f0661668a44cd36687a429a5604074  altar.mus
+  6520015ddabdec81e2e44f4ed7cdfbf585af8f95  altar.scn
+  18e9dda05b04c6f6f24a13b796b6fa5d5824ec7a  ankh.mus
+  50ac6a4566bacf6803ad803e99c8ad3b919c93c5  ankh.scn
+  40d7cdf8827230d0fef561fb77a98d1bdf71526c  arnie.bmv
+  ff98240949c39ac96e0636b1aaf424ce13eca182  ashkente.mus
+  fe98f34e4d2b0a18c7f8c5b6f0906308021dfa6c  ashkente.scn
+  c7614f9ed2ac8813b5b3078b2e0622108c5d7d49  backlot.cdp
+  bd5eaf41f4daeaba7d1f8fc27afa5bcfa22afe60  backlot.mus
+  22dc84574d796c3d4984ec90fbf5dc51d1460bb2  backlot.scn
+  00a5952884a565b9cd760241fe635405014c4d1b  backlot2.cdp
+  bd5eaf41f4daeaba7d1f8fc27afa5bcfa22afe60  backlot2.mus
+  db747bf9cd712c722f44070762557f2a59f6bbbb  backlot2.scn
+  722a0577708f4c5135315ed7b1fb512b22cf7f64  backyard.cdp
+  dd65498a71beb77b156fa0b84a628308284f3032  backyard.mus
+  c575710a938b7b894d7fe60a3622c0e7e15b3a0c  backyard.scn
+  95346f8a204518fcd8615e6275f0f7106e74b025  beach.cdp
+  82cb4af27f01f667e5643da22e40851ed60819e4  beach.mus
+  a425adb6d96d02729452341ae0a754a1d3b23d29  beach.scn
+  dd8732748a8920e9ce948269031cb74e01e35c1c  bedroom.mus
+  547f22036c0b61b604f64767c3a893aa53ebf605  bedroom.scn
+  13db4e6e218b79636b68149016b7cfe1be0cd329  bomb.bmv
+  2652877b4f72c2cfadb576629db2e356f42d1ae7  bonedie.cdp
+  298abf8128a80b0b8beee3a0165aa6eb3e8d93ce  bonedie.mus
+  67d6177c5c68bd40be8da633787f73e29a89d7ef  bonedie.scn
+  844789b7bbeedd70cf5a754055afda448e7f73fd  bonedie2.cdp
+  298abf8128a80b0b8beee3a0165aa6eb3e8d93ce  bonedie2.mus
+  378e1e380d9127da8d73182cd107dbe441779b22  bonedie2.scn
+  3f3b184a3671bdd4b49f078f38749d7b8195f637  camels.cdp
+  fad83f042454707a284b449b8e4c8cbfe2dd88ea  camels.mus
+  71c338749179737c910850e5ab72156ba7567695  camels.scn
+  16280e343b806cbda413801ac5242a57fa07af6c  castle.cdp
+  5cf2fc5377aafc8a18bfff91dc2aa816034eac32  castle.mus
+  d5a03f9564417e57a156d1f1f7f837632dcc235d  castle.scn
+  54a32c95959b492c341f9cef20f4196a2410a092  cdchange.scn
+  cc1e2718797e31688204fdf4487a2c09e7e43cf6  cemetery.mus
+  ae6fb5f100552f621cf8b5a59dea2ea442238720  cemetery.scn
+  2076070fca7dd800a4e663f01c2b5d0f6cc9ed81  coffin.mus
+  039e5d945a0abe33003a210e44fb5a82cc599fba  coffin.scn
+  a447723577bd4333530225c223afa4d5ccd09aaf  computer.mus
+  8364b8cea589ad35f45de51e071202c33af5fd29  computer.scn
+  4c36a0e8614c293ec663cbc4e83ce2bf5770471f  concert.bmv
+  aba4bc1fdea34dd9d640558230db0b93f226284f  corn.cdp
+  1110a4a773e7ea8e1319b495653f00015f7170bd  corn.mus
+  4a8b05deee209fa95a6667c574db0270a575b13e  corn.scn
+  c9bf6efe0b7f0ae22d756bf0b3c31682379c473c  credits.bmv
+  ee65705ec4c30116b4320e698ded35b383bf2064  crucify.cdp
+  1b46c88153cc5eb9426332a1ee68283fd279a753  crucify.mus
+  422bfd38118daf525df6466df388f656364c62d6  crucify.scn
+  1dc1572e1f9b2d2be795221115df5534f4dadcfe  crypt.cdp
+  2076070fca7dd800a4e663f01c2b5d0f6cc9ed81  crypt.mus
+  8537ed8cf273ec02c9feb4faec5ed736a84b56fa  crypt.scn
+  bba1dcf548f23113d00bc2869450a7f98229d513  death.cdp
+  c989f92bee7fb198639dbe3e1e6e35d14fa3b4b3  death.mus
+  9bd7af537ea936b431a45c01ff0414c4c12c9cf0  death.scn
+  9e3004041433b6d4781a67257a5ef8a0e5e64cb0  dining.cdp
+  dfa4782e2903697d1d448107e2484e89ed7054f6  dining.mus
+  fc34bd4b5e4a0367a7748382ec515f6c6251acb0  dining.scn
+  10d3956e0914095509cb36d7c018c18fa59a5037  discmap.cdp
+  3444a238936249cddce9aaaa78509f456237419c  discmap.mus
+  49792cfc5fb0b57bf83307d4815e4818fb00c6d5  discmap.scn
+  c214b6192e9e273ba164e7033116ccc6d0648db1  djeli.cdp
+  889a680da6c4a6780f4f7d560f965cffc0cfac1f  djeli.mus
+  76201ff7a1103291f86e256f6a028ddd84794d8b  djeli.scn
+  58f63e509c027c5468197e04d4a1687c61529c18  djeli2.cdp
+  889a680da6c4a6780f4f7d560f965cffc0cfac1f  djeli2.mus
+  081e34a162503a1869be6bdfe6f6ad0672e37b9d  djeli2.scn
+  eeb946e7faba6c055ea93ecfb7b593155abf1f00  docks.cdp
+  e0c56be6ee438f42a419b6eeaa80c5300d131ced  docks.mus
+  538fff6d289dc5d25c17ebfe58b407c179ef9652  docks.scn
+  fc5d755b8e54b25d6e220e02132a1cf3ce8b968c  dthintro.bmv
+  32b6659f3a1e14e9aed52d308dd44f9b5e71e05f  dw2.scn
+  a89d0f09f2771ff5bb0fc985c32d3a9c00bd6cd5  english.idx?cd1
+  791c9b396974bfd897d6219fa91a9c9800a9db80  english.idx?cd2
+  15fa4dd66fcbe1e36a2a4cf322789f9134ddd0f7  english.smp?cd1
+  d55c0b766db8e6f0b952ee930370a20f5d76508a  english.smp?cd2
+  f3ec507fcc7258b86d29866ddfe38207ed44533e  english.txt?cd1
+  eae507d447b807940fe44c5d1bbd3747bd5cd33f  english.txt?cd2
+  9cbfdc7b71dbc1f1d7790a25f6f655f2d8e0d34b  filmset.cdp
+  c4117983f6f3bca44cd59a1332dd98485d93fae0  filmset.mus
+  f517f9cd7e088df7835ddda2cbf8b1a48735ffc5  filmset.scn
+  16f759a535d6208128f748b938ac639a5209dbd3  fools.cdp
+  193e2405b2d5b14a24bd6b7857c876db37381732  fools.mus
+  6f9f9dc347eb2a11ca133de9f12de96ba1182bb7  fools.scn
+  aa4b99cd69433a3d9147118b3e7a3268eb1f7dd2  fountain.cdp
+  35ca4f142e5e459600b21f43edca8890c2596efe  fountain.mus
+  3e6fdefbeed2f1453eb37fac532c8f442ec87da0  fountain.scn
+  64b03950f080204e64a99610f5bc0f897c1c918f  garden.cdp
+  e69fbe24bf8ceff35792ed0e20a3425b29b1ceca  garden.mus
+  481476080cb7dd97713dcb8a53954e41da92b3ae  garden.scn
+  ab3ca6523d9a5adc78c440391eeec36192b61c62  garden2.cdp
+  e69fbe24bf8ceff35792ed0e20a3425b29b1ceca  garden2.mus
+  cd9d1e2d8994931319f533d8fe7702ba357de2ee  garden2.scn
+  8f8ed3beff7a725fdbb78af85041fe70a28b57ac  gimlets.cdp
+  a1a5ae55bafc7ab7087cf6d0e4afe90900e4fc90  gimlets.mus
+  746ae8de109ef0d0b56451839d93c0ee88222874  gimlets.scn
+  0d5eed44b66de38f866ece320dd0350833d1a455  grate.cdp
+  3390bf47b5ed53ac1e788f93544738894ce26c69  grate.mus
+  0f3af42e0f08cc8531b1290a59b5b44f227944ae  grate.scn
+  f94ea11a92a0ce5d1087e645431ce43eb1242018  hallway.cdp
+  163c35e8190337231b0a58afd756bac968a9bb3b  hallway.mus
+  1592e637b482d0f2737bdf4139592ef8997231cb  hallway.scn
+  d9f46cb16ef21fa1998fb74442f3847fbfd6f9e8  hienergy.cdp
+  5e8f992afa502e16604b8856a70fa63b33cf2a13  hienergy.mus
+  d3e97088b1ba0909b8ee2c022f64e3123297ea8c  hienergy.scn
+  c734ed5650126bae7180a52b09129a2cc42f4b79  holywood.cdp
+  27abbf74363fb83386c54532816078239d6cf9cb  holywood.mus
+  06ff06b09b215c5a9d5abcbcd66456b1830b3454  holywood.scn
+  2d9cac521138d1303ef192c3858b30331dd942e0  house.cdp
+  c989f92bee7fb198639dbe3e1e6e35d14fa3b4b3  house.mus
+  d3f9f4217ad6ae422d8b63a956625ef24c8338c7  house.scn
+  e848ee59dd9802600e9592b2f3d9226a274fd30f  idining.cdp
+  dfa4782e2903697d1d448107e2484e89ed7054f6  idining.mus
+  8377d6bc57319eb15ecbe7e276bc803058cd8e69  idining.scn
+  389f722fa3fe50288df40f576e78efdb8ca81947  inshop.cdp
+  22bac37511e1dee465806404cd71676ed298f3f8  inshop.mus
+  7d4c6d56917071ee76ed2080161247fe6cbed872  inshop.scn
+  a27a97d100926f4ad64f1cbe4bd7aa0dda36f950  intro.bmv
+  1bcc32188414745528ba5894e27149181cb2c65f  kingkong.bmv
+  0db914c2dda6fa6a322b76b6d85cc3ede34e9fbf  kingkong.mus
+  8ad71dd24edb6c244f7d96ff54505f3255e55cc4  kingkong.scn
+  739cd790a3f27eb823c35cabea0c15d8c17028aa  kitchen.cdp
+  7ae1c2dd4d005412669bdec87f9559748a50fa32  kitchen.mus
+  f09aea25804e3e79df4d5a3658d07164ab99e9c0  kitchen.scn
+  7ae1c2dd4d005412669bdec87f9559748a50fa32  library.mus
+  bfdadc92a3a4dab5f79bc8c8e79405244d423e51  library.scn
+  6cb27ff8d8b5f4fbace36ac781bc81d46858d513  lug01.scn
+  b81ed5abaf97bd09adaecc1650093421be198976  lug02.scn
+  668b7fbda8c90ccead8b80a45e7d897afea22b77  lug03.scn
+  92680c983c990a07a9f91d522de643b064af2ac7  lug04.scn
+  4c796501af4f6eaecfbf3ccbe287510ec5e36aa1  lug05.scn
+  2ff4d274a80b1893e0552e07b32e504a0c8487a4  lug06.scn
+  d835563bcf1f0be907edacdc304ee0d3fcd7dbe7  lug07.scn
+  69bdefe8b89787c2fe2481c53bff97997a2b6243  lug08.scn
+  36b9f4c2276fdfff72b2099943e436802a7af921  lug09.scn
+  bf2ce77725ffa3f527be5f8c1b5e83c4712a5dd5  lug10.scn
+  2a0753448342958bcac025a4345e63ce460f38cf  makeup.cdp
+  c4117983f6f3bca44cd59a1332dd98485d93fae0  makeup.mus
+  9c3369bcc2d73fc5377efa5f982a8b0149d6b4b7  makeup.scn
+  e9d067cb577fefe960101def81b6389bf939e01b  mapmaker.mus
+  1a818eef1776701d91cfee62d17a7acec70e9859  mapmaker.scn
+  d495f4adfe528708d4a25635c5cfd9f341e32bb6  mortuary.cdp
+  37e1a672d2b056491f7aee34985a144452373201  mortuary.mus
+  9b62a085e31df1e0dc6f3799d143f8dac4a00634  mortuary.scn
+  f4e91c2b62af0648c665fe353b7ee4a5957d1d92  mouse.bmv
+  de303b8c399ae1c1693febd5995998878057984e  mrscakes.cdp
+  02499cf66956836fd7d13141e067e4713c0d8f11  mrscakes.mus
+  88dd9341d50510dd71fb61cd4c0b5f88c351f355  mrscakes.scn
+  79bd1ffe423b651514e079c74e191a21ab73a7d3  mummy.cdp
+  e4ebb3b48b7a470923593fb0908a32ed33f17de8  mummy.mus
+  6387d4f7517368d71f74bd2cc5ed3460cfa365aa  mummy.scn
+  cfae14c46fe709e6cdc0a9ba38efffd526df7a8c  oasis.cdp
+  10001e30aa3addb149c8762f70777d27a2507f07  oasis.mus
+  4656aae11a63dec4f8a5f92398eb56fad0ea69bf  oasis.scn
+  14b651d08996e570348859569f603b4922aab839  objects.scn
+  49a928d3c615eebefd4f02555c0840211ff1c874  odium.mus
+  9cd0d809ca045ac5ca434b530590869cc0e6a13f  odium.scn
+  f549c25d7f07616f23c29c2bd71e945091351fc3  odium2.cdp
+  45e9d2023d7741a0606fe0fae482aff52e873e0e  odium2.mus
+  9db9f592686955774371ae8cab94f800eaf9cba6  odium2.scn
+  893c7321335ce2d55056419b67de2dafe09e0ca1  onstage.mus
+  7937aba4767fbb2be23573bcc5d55cb2be7b28a5  onstage.scn
+  299ebdfe8d3b24d7912e76a58d05ddda5b80b99b  palace.cdp
+  f18472707abf7d7ccff16698b6aaf8bc31178aa1  palace.mus
+  28d03ad943514135873f4750bce07c55687f6cfa  palace.scn
+  81afebef8bc0e732ef01670133bd3829c689b618  perfect.bmv
+  247a0878f343e2a084b13c02b434e5c03c7ccc87  plaza.mus
+  c91bb0b1f77c1029964ebddeda45c1c9d126cde4  plaza.scn
+  6f4fc9fa2de80d46af36b97bfc8c5a64f3eed1ca  pork.cdp
+  16d01dae65a4e01e099cd3e99d11d3f6992850ee  pork.mus
+  99dd1ab58c9b4569b99fd6d180a4556408b6e2c5  pork.scn
+  19e12aa29cf0ee5c1f61ff01c78bda337e496ec8  project.cdp
+  b551b05730bd65c9fb1cbf88752efd2fb0258fbd  project.mus
+  f5de3058638a130e6fd3ae2c062dcb5e0a17b3ae  project.scn
+  adbc297d9a13ad53dc2e5691105c4fd375b89085  prophet.cdp
+  da8a9fc0f70370fa6ba58377343540e371bd287b  prophet.mus
+  010212268e49064ea43a674666b7a7f674cf2fa6  prophet.scn
+  a734ccaebe0a7f02643da1f6d80605e223da2dab  psyg.bmv
+  f5f28eea4156f32070983672fb0cd0fc3d71ebe6  pyramid.mus
+  207050b278eaf4b2c98f699fa768df3fb752b19e  pyramid.scn
+  ba8200c75a95c1b9e2aeeb4a3051866957c472c9  rambo.bmv
+  23aefac354b33a08fd500d0cd9221eacc75f5267  room.cdp
+  8d4b9e29774d2fe5c37027964c8025f6b971ce56  room.mus
+  57a789da7b62bd0268b39b4e83a6ec2eda4e09da  room.scn
+  0ffedf931413b6e49407a7036ad8d471122e4a40  rw01.scn
+  eb704715dc1920f99bc4113eb34e400d3000b36b  rw02.scn
+  c2d3b4171cf97e032de7e7f6b44cbe1e3abd312f  rw03.scn
+  0641f61bededf6331aed07198bd35fba5778b780  rw04.scn
+  a5f875f82c5ad04e5d89b9f95b6d48e646fabb63  rw05.scn
+  04046628337cae3e3bc794d12b51943381b0d46c  rw06.scn
+  4e948b435a012b787c296f9f0f0810f8098af563  rw07.scn
+  883a400eece633c6c639413dff3a3b11f4f27882  rw08.scn
+  707787b441b9825a9b25b209f0e3fdc4c662c314  rw09.scn
+  f9ce6beaa999c829b9fe71e0646a8467e06c389e  rw10.scn
+  906638999b5113e9dfc4f54a7ccaee51bae86676  scales.scn
+  e4c91a13870d6a905c8514005a58dde233b58a72  seamap.cdp
+  a9d433db864598d05802c219775efc9ae709a6b5  seamap.mus
+  72e1b3cc4e200319eb63954d4f0b0ed0c2127dc1  seamap.scn
+  3390bf47b5ed53ac1e788f93544738894ce26c69  sewer.mus
+  e3a01e1e5a8081f3f51a148fc8452305df85c49c  sewer.scn
+  67f2d13363727d66b58d9b79d02186d102ec0fe6  shades.cdp
+  a1a5ae55bafc7ab7087cf6d0e4afe90900e4fc90  shades.mus
+  61b0cdad7b2f88b72102369822ac91c169093765  shades.scn
+  2c92a0cfd3907bf15f8a099ad1db78e3a4f34681  ship.cdp
+  ea8318c16d1394146937a277896e11ae9960c6a6  ship.mus
+  23e3c9ad3df7f3efb0b700a8537b5a3374e98ff6  ship.scn
+  22bac37511e1dee465806404cd71676ed298f3f8  shop.mus
+  7ac4dfa521cb81797e293166dc95c4c8cede2f12  shop.scn
+  45e86a209ebb768fd54c0f324a17bab3f7f2d182  stable.cdp
+  8d91257bcff41b2d4569d6283a3cc3d457661f6b  stable.mus
+  ef7535700a51722b212aab4690f5725ab50c7ed1  stable.scn
+  cd541b249711929c7204e9b259b3f9df26618c75  stones.cdp
+  9ddabc5e6b9f88727cd207ee477783a3221de598  stones.mus
+  130e039b2547db8766b3913e05d6a7907d10e083  stones.scn
+  047b4316747dd938fd6da48242acfefa0cef3d88  stoning.cdp
+  6c8cc1da9486bed42821994637be23d0b1427be5  stoning.mus
+  6534e59ec4ace831ae07d909741cee3e640b0046  stoning.scn
+  eb04d2757fc018e3c7f95203e8c66e42a18e9e92  study.cdp
+  7ae1c2dd4d005412669bdec87f9559748a50fa32  study.mus
+  6853f19f0c6bd78db5e1acf42cde35b6ec502ab7  study.scn
+  884503a4eb8c08ff1fbb3652320771cf63cc1704  sunset.bmv
+  cd2c11c93a320017a1e816e9db5c16bb0a918921  surfing.bmv
+  de99951b984ba594c10a95df65ccd083074bc716  theatre.bmv
+  ade3aa2a883b05e33bf97e14a5c831cf520a6362  theatre.cdp
+  4dc4f4b4eb377f35de2331766dbfc42a81914149  theatre.mus
+  56f3c089c01a1a84cd4a96755119ffc262c035f5  theatre.scn
+  31d8abb8898ecc01b79cc23d72ebd872915b331f  throne.cdp
+  e5249a8fd4084c2f89e6f50928b3612c24e6af76  throne.mus
+  c92bc6a4bb63e48332086c1ed8e6ba14a75bc0ad  throne.scn
+  9955e8b697c858cab7b80a3f52e4b54a80c8f604  title.mus
+  7f502f663ec6a8f41a0e45b091f24771be09ea5a  title.scn
+  4551d0c078770e788975d9dfc72f3b3f2b2898df  topork.cdp
+  3390bf47b5ed53ac1e788f93544738894ce26c69  topork.mus
+  35ac604f02e5a9dbb0828f976dd588766ac2851a  topork.scn
+  b8d8e9ceb786f2f040eacf883190ffdf77a726b3  tower.cdp
+  0b1806e0b45fb8727aac6f41aa922a4c3fa543b2  tower.mus
+  ba54939b97d77d78b3a30588bc04c0240a9bbaa6  tower.scn
+  2d64c0a32a718f206cf7cf031e1110d6a64c6c15  trailer.cdp
+  19cfe7f0e96b6b2493e8af1d127026cd79e7c80d  trailer.mus
+  867bf172e6ead5033cf3d38be816ba06ea45c36b  trailer.scn
+  7808f55be862984f0f59a194cc28a680f225f10e  trollbar.cdp
+  fe256cf80c224a6b6fd15778091b14d6dd2ea317  trollbar.mus
+  831deb929ce2914eed1512b16743cf8fd34a2db4  trollbar.scn
+  75b808d0e19ad30e9dd801bb58e95292698d4507  undead.cdp
+  f19f90e9921cc2e1464c36653689cf517056b1d0  undead.mus
+  738251e5b093c3082307ff2d85fb59d6166022dc  undead.scn
+  235d0da8315e4fbaed4537ba41de4ab28a4fbc17  unseen.mus
+  d710a60917ea3c508414d57217f9f8b0261c5c8b  unseen.scn
+  3b557fc9cf06ac823c82a1164b2c7db74abaad4b  wardrobe.mus
+  044bb3e1559934b2cb54ede51ceac8d954481c78  wardrobe.scn
+  d945258a563cfc4f3a11ed84993819bfa4f7f13d  wildcat.bmv
+  060fb6e3d971d0e3f4377c03c6c0640a3fb7cd2c  wipeout.bmv
+...
