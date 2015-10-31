@@ -115,9 +115,9 @@ build/quake3-server: quake3.in Makefile
 build/quake4-dedicated: quake4.in Makefile
 	install -d build
 	sed \
-		-e 's!@Q4BINARY@!q4ded.x86!' \
-		-e 's!@Q4SELF@!quake4-dedicated!' \
-		-e 's!@Q4ROLE@!server!' \
+		-e 's!@binary@!q4ded.x86!' \
+		-e 's!@self@!quake4-dedicated!' \
+		-e 's!@role@!server!' \
 		< $< > $@
 	chmod +x $@
 
