@@ -1,5 +1,6 @@
 DIRS := ./out
 GDP_MIRROR ?= localhost
+PYFLAKES3 := $(shell test -x /usr/bin/pyflakes3 && echo pyflakes3 || echo python3-pyflakes)
 
 # some cherry picked games that:
 # - are freely downloadable (either demo or full version)
@@ -94,7 +95,7 @@ clean:
 	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
 
 check:
-	LC_ALL=C pyflakes3 game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tools/*.py || :
+	LC_ALL=C $(PYFLAKES3) game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tools/*.py || :
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_syntax.py
 
 # Requires additional setup, so not part of "make check"
