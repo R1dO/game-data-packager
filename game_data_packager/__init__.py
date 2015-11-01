@@ -309,7 +309,6 @@ class GameDataPackage(object):
                 'dotemu',
                 'gog',
                 'install',
-                'install_contents_of',
                 'install_to_docdir',
                 'optional',
                 'origin',
@@ -897,6 +896,12 @@ class GameData(object):
 
         self.loaded_file_data = True
 
+        for package in self.packages.values():
+            for provider in package.install_contents_of:
+                for filename in self.files[provider].provides:
+                    if filename not in package.optional:
+                        package.install.add(filename)
+
         for filename, f in self.files.items():
             for provided in f.provides:
                 self.providers.setdefault(provided, set()).add(filename)
@@ -937,8 +942,8 @@ class GameData(object):
                 for filename in self.files[provider].provides:
                     assert filename in self.files, (package.name, provider,
                             filename)
-                    if filename not in package.optional:
-                        package.install.add(filename)
+                    assert (filename in package.optional or
+                            filename in package.install), (package.name, filename)
 
             if package.rip_cd:
                 # we only support Ogg Vorbis for now
