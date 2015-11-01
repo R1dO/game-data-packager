@@ -4,12 +4,12 @@ franchise: Discworld
 copyright: © 1996 Perfect Entertainment Ltd
 plugin: scummvm_common
 wiki: "Discworld_II:_Missing_Presumed...!%3F"
-gameid: tinsel
 disks: 2
 missing_langs: [de,en_US,fr]
 
 packages:
   discworld2-cd-en-gb-data:
+    gameid: dw2-gb
     lang: en_GB
     debian:
       provides: discworld2-data
