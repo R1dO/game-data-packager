@@ -54,6 +54,8 @@ from .util import (AGENT,
         recursive_utime,
         which)
 
+from .version import (FORMAT)
+
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager.build')
 
@@ -1331,6 +1333,8 @@ class PackagingTask(object):
                      continue
                  license_file = self.game.files[f].install_as
                  licenses.add("/usr/share/doc/%s/%s" % (package.name, license_file))
+                 if FORMAT != 'deb':
+                     continue
                  if os.path.splitext(license_file)[0].lower() == 'license':
                      lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
                      mkdir_p(lintiandir)
@@ -1546,6 +1550,7 @@ class PackagingTask(object):
                     os.chmod(full, 0o755)
                 elif ((stat.S_IMODE(stat_res.st_mode) & 0o111) != 0
                        and (fn.endswith('.sh')
+                            or dirpath.endswith('/usr/bin')
                             or dirpath.endswith('/usr/games')
                             or dirpath.endswith('/DEBIAN'))):
                     # make executable files rwxr-xr-x

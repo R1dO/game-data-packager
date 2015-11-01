@@ -25,6 +25,7 @@ from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import mkdir_p
+from ..version import (FORMAT, BINDIR)
 
 logger = logging.getLogger('game-data-packager.games.scummvm-common')
 
@@ -130,17 +131,18 @@ class ScummvmTask(PackagingTask):
         gameid = package.gameid or self.game.gameid
         if len(package.langs) == 1:
             entry['Exec'] = 'scummvm -p /%s %s' % (package.install_to, gameid)
-            lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
-            mkdir_p(lintiandir)
-            with open(os.path.join(lintiandir, package.name),
-                      'a', encoding='utf-8') as o:
-                 o.write('%s: desktop-command-not-in-package '
-                         'usr/share/applications/%s.desktop scummvm\n'
-                         % (package.name, package.name))
+            if FORMAT == 'deb':
+                lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+                mkdir_p(lintiandir)
+                with open(os.path.join(lintiandir, package.name),
+                          'a', encoding='utf-8') as o:
+                     o.write('%s: desktop-command-not-in-package '
+                             'usr/share/applications/%s.desktop scummvm\n'
+                             % (package.name, package.name))
         else:
             pgm = package.name[0:len(package.name)-len('-data')]
             entry['Exec'] = pgm
-            bindir = os.path.join(destdir, 'usr/games')
+            bindir = os.path.join(destdir, BINDIR)
             mkdir_p(bindir)
             path = os.path.join(bindir, pgm)
             if 'en' not in package.langs:

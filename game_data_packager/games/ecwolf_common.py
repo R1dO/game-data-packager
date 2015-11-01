@@ -24,6 +24,7 @@ from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import mkdir_p
+from ..version import (FORMAT)
 
 logger = logging.getLogger('game-data-packager.games.ecwolf-common')
 
@@ -99,6 +100,9 @@ class EcwolfTask(PackagingTask):
         with open(os.path.join(appdir, '%s.desktop' % package.name),
                   'w', encoding='utf-8') as output:
              desktop.write(output, space_around_delimiters=False)
+
+        if FORMAT != 'deb':
+            return
 
         lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
         mkdir_p(lintiandir)

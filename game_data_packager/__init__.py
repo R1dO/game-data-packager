@@ -34,7 +34,7 @@ from .gog import run_gog_meta_mode
 from .paths import (DATADIR,USE_VFS)
 from .util import ascii_safe
 from .steam import run_steam_meta_mode
-from .version import GAME_PACKAGE_VERSION
+from .version import (GAME_PACKAGE_VERSION, ASSETS)
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
@@ -150,9 +150,9 @@ class GameDataPackage(object):
         # put 'usr/share/games/quake3/baseq3/pak1.pk3' in the .deb.
         # The default is 'usr/share/games/' plus the binary package's name.
         if name.endswith('-data'):
-            self.install_to = 'usr/share/games/' + name[:len(name) - 5]
+            self.install_to = ASSETS + '/' + name[:len(name) - 5]
         else:
-            self.install_to = 'usr/share/games/' + name
+            self.install_to = ASSETS + '/' + name
 
         # Prefixes of files that get installed to /usr/share/doc/PACKAGE
         # instead
