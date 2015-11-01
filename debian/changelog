@@ -1,4 +1,4 @@
-quake (15) UNRELEASED; urgency=medium
+quake (15) unstable; urgency=medium
 
   * quake3-server: correct help text
   * quake3-server: lock the Debian-quake3 account on purge, and unlock
@@ -11,7 +11,7 @@ quake (15) UNRELEASED; urgency=medium
     no open-source engine). These packages are currently skipped by
     default: use DEB_BUILD_OPTIONS=quake4 to build them.
 
- -- Simon McVittie <smcv@debian.org>  Sun, 25 Oct 2015 01:51:37 +0100
+ -- Simon McVittie <smcv@debian.org>  Sun, 01 Nov 2015 00:05:29 +0000
 
 quake (14) unstable; urgency=medium
 
