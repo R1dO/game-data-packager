@@ -44,29 +44,9 @@ packages:
          args: -file %s req21fix.wad reqmus.wad
     install_to: usr/share/games/doom
     install:
-    - av.wad
-    - av.deh
-    - class_ep.wad
-    - hr.wad
-    - hrmus.wad
-    - mm.wad
-    - mm11fix.wad
-    - mmmus.wad
-    - mm2.wad
-    - mm2info.wad
-    - mm2mus.wad
-    - requiem.wad
-    - req21fix.wad
-    - reqmus.wad
+      - all wads
     doc:
-    - av.txt
-    - class_ep.txt
-    - hr.txt
-    - mm.txt
-    - mm11fix.txt
-    - mm2.txt
-    - requiem.txt
-    - req21.txt
+      - all docs
 
 files:
   mm2info.wad:
@@ -146,80 +126,44 @@ files:
     - requiem.txt
     - req21.txt
 
-cksums: |
-  # order:= zips, main wad, patches, music, .txt
-  _ 8577803   av_new.zip
-  _ 23819412  av.wad
-  _ 7403      av.deh
-  _ 55068     av.txt
+groups:
+  all wads: |
+    23819412  6006c3a370aa1dc0be04e0f3976f1ca4  av.wad
+    7403      9e3073749f59fc3afeea48faa967a332  av.deh
+    1314027   6e114eee48f8f1427110f3e2baee5acf  class_ep.wad
+    7027154   bb04d6c30c4bbee580063808828ea2da  hr.wad
+    519357    b80ebf10d3504742faa756ff705375ee  hrmus.wad
+    7825282   371e532847f2b9ae916db4dce76640d8  mm.wad
+    170316    5328cd7178a98200d6030110b66eaba3  mm11fix.wad
+    885387    4b5bc47f4c2af03874d8912dbb455e9b  mmmus.wad
+    11453000  83414913d5c5c1685d633b7138cda387  mm2.wad
+    1202547   ed9c1765b9e2d349f178cfaea1851646  mm2info.wad
+    1075404   eee117057694fb3598d18762fe7e83fb  mm2mus.wad
+    11464486  f5bdfb5a32ead6f8c642fc13555074de  requiem.wad
+    571446    0991dc3c961d2848ce3ecbc79214c7d9  req21fix.wad
+    855889    dee390a1a5f38a6d58697de1f27bd6f8  reqmus.wad
 
-  _ 865847    class_ep.zip
-  _ 1314027   class_ep.wad
-  _ 3851      class_ep.txt
+  all docs:
+    doc: true
+    group_members: |
+      55068     c2ac69490620e311243e81f51389550e  av.txt
+      3851      142b4911177490c66b4e7863d803e263  class_ep.txt
+      2551      0333dcd59de7968fbe8101800ea74298  hr.txt
+      2893      39879bc7be4164590bc697ac4a49778e  mm.txt
+      1802      002600e8300d4cb04a68077303a93496  mm11fix.txt
+      42580     8463b914bcb9263ab0a7d7aa9a577023  mm2.txt
+      27324     e06f0122fd47e609a03d7eb7f39fbd35  requiem.txt
+      596       f8bdd24e0fc9037d4b030b3cccf10063  req21.txt
 
-  _ 2167267   hr.zip
-  _ 7027154   hr.wad
-  _ 519357    hrmus.wad
-  _ 2551      hr.txt
-
-  _ 2788343   mm_allup.zip
-  _ 65968     mm11fix.zip
-  _ 7825282   mm.wad
-  _ 170316    mm11fix.wad
-  _ 885387    mmmus.wad
-  _ 2893      mm.txt
-  _ 1802      mm11fix.txt
-
-  _ 4243405   mm2.zip
-  _ 375117    mm2info.zip
-  _ 11453000  mm2.wad
-  _ 1202547   mm2info.wad
-  _ 1075404   mm2mus.wad
-  _ 42580     mm2.txt
-
-  _ 4187990   requiem.zip
-  _ 11464486  requiem.wad
-  _ 571446    req21fix.wad
-  _ 855889    reqmus.wad
-  _ 27324     requiem.txt
-  _ 596       req21.txt
-
-md5sums: |
-  605f6ef1a4d509ae530120fe1c9ac1da  av_new.zip
-  6006c3a370aa1dc0be04e0f3976f1ca4  av.wad
-  9e3073749f59fc3afeea48faa967a332  av.deh
-  c2ac69490620e311243e81f51389550e  av.txt
-
-  a371abfc6c948e088cc653f26c54eb66  class_ep.zip
-  6e114eee48f8f1427110f3e2baee5acf  class_ep.wad
-  142b4911177490c66b4e7863d803e263  class_ep.txt
-
-  207a853266f3f32e0d57b9d03aad891d  hr.zip
-  bb04d6c30c4bbee580063808828ea2da  hr.wad
-  b80ebf10d3504742faa756ff705375ee  hrmus.wad
-  0333dcd59de7968fbe8101800ea74298  hr.txt
-
-  7092a6a40dcad2aeb647783b939aba08  mm_allup.zip
-  7d6f1015c2ed11d920f3f7ae35239ba1  mm11fix.zip
-  371e532847f2b9ae916db4dce76640d8  mm.wad
-  5328cd7178a98200d6030110b66eaba3  mm11fix.wad
-  4b5bc47f4c2af03874d8912dbb455e9b  mmmus.wad
-  39879bc7be4164590bc697ac4a49778e  mm.txt
-  002600e8300d4cb04a68077303a93496  mm11fix.txt
-
-  1bacb1013e2eae3c54fff4de97b90115  mm2.zip
-  4c6313dc4b16db3c4feb0f80dcbffc22  mm2info.zip
-  8463b914bcb9263ab0a7d7aa9a577023  mm2.txt
-  ed9c1765b9e2d349f178cfaea1851646  mm2info.wad
-  eee117057694fb3598d18762fe7e83fb  mm2mus.wad
-  83414913d5c5c1685d633b7138cda387  mm2.wad
-
-  52df3782b73b326a8be480448bf56a45  requiem.zip
-  f5bdfb5a32ead6f8c642fc13555074de  requiem.wad
-  0991dc3c961d2848ce3ecbc79214c7d9  req21fix.wad
-  dee390a1a5f38a6d58697de1f27bd6f8  reqmus.wad
-  e06f0122fd47e609a03d7eb7f39fbd35  requiem.txt
-  f8bdd24e0fc9037d4b030b3cccf10063  req21.txt
+  downloadables: |
+    8577803   605f6ef1a4d509ae530120fe1c9ac1da  av_new.zip
+    865847    a371abfc6c948e088cc653f26c54eb66  class_ep.zip
+    2167267   207a853266f3f32e0d57b9d03aad891d  hr.zip
+    2788343   7092a6a40dcad2aeb647783b939aba08  mm_allup.zip
+    65968     7d6f1015c2ed11d920f3f7ae35239ba1  mm11fix.zip
+    4243405   1bacb1013e2eae3c54fff4de97b90115  mm2.zip
+    375117    4c6313dc4b16db3c4feb0f80dcbffc22  mm2info.zip
+    4187990   52df3782b73b326a8be480448bf56a45  requiem.zip
 
 sha1sums: |
   0a5c6df402c8170f20683ec09d8baf4b49812ab8  av_new.zip
