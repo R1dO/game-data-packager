@@ -159,7 +159,10 @@ class PackageCache:
 
 PACKAGE_CACHE = PackageCache()
 
-def prefered_lang():
+def prefered_langs():
+    if prefered_langs.langs is not None:
+        return prefered_langs.langs
+
     lang_raw = []
     if 'LANGUAGE' in os.environ:
         lang_raw = os.getenv('LANGUAGE').split(':')
@@ -167,22 +170,35 @@ def prefered_lang():
         lang_raw.append(os.getenv('LANG'))
     lang_raw.append('en')
 
-    lang_pref = []
+    prefered_langs.langs = []
     for lang in lang_raw:
         lang = lang.split('.')[0]
         if not lang or lang == 'C':
             continue
-        if lang in ('en_GB', 'pt_BR'):
-            lang_pref.append(lang)
-        lang_pref.append(lang[0:2])
-    return lang_pref
+        if lang in ('en_US', 'en_GB', 'pt_BR'):
+            prefered_langs.langs.append(lang)
+        lang = lang[0:2]
+        if lang not in prefered_langs.langs:
+            prefered_langs.langs.append(lang)
+
+    return prefered_langs.langs
+
+prefered_langs.langs = None
 
 def lang_score(lang):
-    langs = prefered_lang()
-    if lang not in langs:
-        return 0
+    langs = prefered_langs()
 
-    return len(langs) - langs.index(lang)
+    if lang in langs:
+        return len(langs) - langs.index(lang)
+
+    for l in langs:
+        if l == lang[0:2]:
+            score = len(langs) - langs.index(l)
+            if score > 1:
+                score -= 1
+            return score
+
+    return 0
 
 def ascii_safe(string, force=False):
     if sys.stdout.encoding != 'UTF-8' or force:
