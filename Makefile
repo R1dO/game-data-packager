@@ -23,7 +23,8 @@ copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright))
 dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
 
 default: $(DIRS) $(png) $(svgz) $(json) $(copyright) $(dot_in) \
-      out/bash_completion out/changelog.gz out/copyright out/game-data-packager
+      out/bash_completion out/changelog.gz out/copyright \
+      out/game-data-packager out/vfs.zip
 
 out/%: data/%
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
@@ -31,10 +32,17 @@ out/%: data/%
 out/%.json: data/%.yaml
 	python3 tools/yaml2json.py $< $@
 
-out/vfs.zip:
+out/vfs.zip: $(json)
 	rm -f out/vfs.zip
-	find out -regex '.*\.\(json\|files\|size_and_md5\|cksums\|md5sums\|sha1sums\|sha256sums\)' \
-          | LC_ALL=C sort | TZ=UTC zip out/vfs.zip -9 -X -j -q -@
+	rm -fr out/vfs
+	mkdir out/vfs
+	cp out/*.json out/*.files out/*.size_and_md5 out/*.cksums out/vfs/
+	cp out/*.md5sums out/*.sha1sums out/*.sha256sums out/vfs/
+	if [ -n "$(BUILD_DATE)" ]; then \
+		touch --date='$(BUILD_DATE)' out/vfs/*; \
+	fi
+	cd out/vfs && ls -1 | LC_ALL=C sort | \
+		env TZ=UTC zip ../vfs.zip -9 -X -q -@
 
 out/bash_completion: $(in_yaml)
 	python3 tools/bash_completion.py > ./out/bash_completion
@@ -89,6 +97,7 @@ clean:
 	rm -f ./out/*.json
 	rm -f ./out/vfs.zip
 	rm -f ./out/index.html
+	rm -fr out/vfs
 	rm -rf game_data_packager/__pycache__
 	rm -rf game_data_packager/games/__pycache__
 	rm -rf tools/__pycache__
@@ -111,4 +120,4 @@ html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
 	rsync out/index.html alioth.debian.org:/var/lib/gforge/chroot/home/groups/pkg-games/htdocs/game-data/ -e ssh -v
 
-.PHONY: default clean check manual-check html out/vfs.zip
+.PHONY: default clean check manual-check html

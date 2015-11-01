@@ -6,7 +6,7 @@ if os.environ.get('GDP_UNINSTALLED'):
     CONFIG = './etc/game-data-packager.conf'
     DATADIR = './out'
     ETCDIR = './etc'
-    USE_VFS = False
+    USE_VFS = bool(os.environ.get('GDP_USE_VFS'))
 else:
     CONFIG = '/etc/game-data-packager.conf'
     DATADIR = '/usr/share/games/game-data-packager'
