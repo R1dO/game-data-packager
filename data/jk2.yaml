@@ -29,23 +29,18 @@ packages:
     gog:
       url: star_wars_jedi_knight_ii_jedi_outcast
     version: '1.04'
-    # cksums(1) is pretty useless as a checksumming tool, but it's a convenient
-    # way to get exact file sizes in bytes (second column), which are a nice
-    # heuristic for identifying files
-    install_files_from_cksums: |
-      # Jedi Outcast CD-ROM or installation
-      3463813793 534984353 base/assets0.pk3
-      3343752168 86950705 base/assets1.pk3
-      # Jedi Outcast patch 1.01 (self-extracting patch, no known way to extract
-      # programatically)
-      571340734 3764210 base/assets2.pk3
-      2217997310 550829 base/assets5.pk3
+    install:
+      - required files
 
-md5sums: |
-  bbd8243669d551c910cfe60ccb4e5edd  base/assets0.pk3
-  e91efd51a8883b1c2590e8be7705877f  base/assets1.pk3
-  88369ad9f959cbe64a6d948f08305d20  base/assets2.pk3
-  b7c34a06029798e178c075216ea37a9d  base/assets5.pk3
+groups:
+  required files: |
+    # Jedi Outcast CD-ROM or installation
+    534984353 bbd8243669d551c910cfe60ccb4e5edd  base/assets0.pk3
+    86950705  e91efd51a8883b1c2590e8be7705877f  base/assets1.pk3
+    # Jedi Outcast patch 1.01 (self-extracting patch, no known way to extract
+    # programatically)
+    3764210   88369ad9f959cbe64a6d948f08305d20  base/assets2.pk3
+    550829    b7c34a06029798e178c075216ea37a9d  base/assets5.pk3
 
 sha1sums: |
   a8729608364c0ef9fa54173c947f070ecb1fae61  base/assets0.pk3

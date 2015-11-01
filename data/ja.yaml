@@ -47,9 +47,7 @@ packages:
     demo_for: jedi-academy-data
     install_to: usr/share/games/jedi-academy-demo/base
     install:
-    - assets0.pk3?demo
-    - ui/demo_ingame.txt
-    - ui/demo_menus.txt
+      - demo data
     license:
     - license.txt
 
@@ -57,15 +55,9 @@ packages:
     version: '1.01'
     gog:
       url: star_wars_jedi_knight_jedi_academy
-    install_files_from_cksums: |
-      # Jedi Academy CD1 GameData/GameData or installation
-      3585517488 561806019 base/assets0.pk3
-      # Jedi Academy CD2 GameData/GameData or installation
-      2879468840 652804510 base/assets1.pk3
-      1436095349 1116384 base/assets2.pk3
-      # Jedi Academy patch 1.04 (self-extracting patch, no known way to extract
-      # programatically)
-      3247293709 9282026 base/assets3.pk3
+    install:
+      - base game
+      - patch
 
   jedi-academy-bonus-data:
     aliases: [bonus]
@@ -79,20 +71,56 @@ packages:
     symlinks:
       usr/lib/openjk/JediAcademy/base/bonus.pk3: usr/share/games/jedi-academy/base/bonus.pk3
       usr/lib/openjk/JediAcademy/base/siege_destroyer.pk3: usr/share/games/jedi-academy/base/siege_destroyer.pk3
-    install_files_from_cksums: |
-      2890259980 14328834 base/bonus.pk3
-      4222768269 5948070 base/siege_destroyer.pk3
+    install:
+      - bonus maps
+
+groups:
+  base game: |
+    # Jedi Academy CD1 GameData/GameData or installation
+    561806019 e17ee714ce9632f401960abb1b22fa4a  base/assets0.pk3
+    # Jedi Academy CD2 GameData/GameData or installation
+    652804510 3f47006dde61f171769666f31065a34c  base/assets1.pk3
+    1116384   961ad372c3cd73075d70ba71a497b89e  base/assets2.pk3
+
+  patch: |
+    # Jedi Academy patch 1.04 (self-extracting patch, no known way to extract
+    # programatically)
+    9282026   71c2edf5a30135d4aa921bf6259946ee  base/assets3.pk3
+
+  bonus maps: |
+    14328834  85b76849fea33bea2f37727e8a33e373  base/bonus.pk3
+    5948070   31d6b95740930ce4b8f1da7d7326c7aa  base/siege_destroyer.pk3
+
+  demo data: |
+    188127360 6f8a641f2ac6415359d988578a58d973  assets0.pk3?demo
+    859       fdfa73db069a7483655d36382e6ca5c2  ui/demo_ingame.txt
+    1158      424ced91603a58e353b5e458df93c412  ui/demo_menus.txt
+
+  demo license:
+    license: true
+    group_members: |
+      6242    e006adc9086c848c16f1f4309d5773b2  license.txt
+
+  demo Installshield: |
+    2883388   8ad81b71336465f0e77432ffacacfdf2  data1.cab
+    22740     e5d1e819214ee6ce4e3d001b6c2e0689  data1.hdr
+    191976107 149bb051007547ff8aae15fec6305a32  data2.cab
+
+  intermediate files: |
+    195892094 cae3213d54df238f611f4b630f4d4743  JediAcademyDemo.exe
+    196079221 15524eb3a7a778803592b967584fc34f  Jedi_Knight_jediacademydemo.exe
+    196080485 93f4f42338f1479eeb6ef8b6ca2f8e13  GHJediAcademy.zip
+    14191104  b58bd4b6ee9ecf32bf36c06468627675  jabonusmaps.exe
+    5945344   ea334db95f4436ceab5c6670d1695f67  jasiegedestroyer.exe
 
 files:
   jabonusmaps.exe:
-    size: 14191104
     provides:
     - base/bonus.pk3
     unpack:
       format: zip
 
   jasiegedestroyer.exe:
-    size: 5945344
     provides:
     - base/siege_destroyer.pk3
     unpack:
@@ -104,9 +132,7 @@ files:
       format: 7z
       flags: ['-r']
     provides:
-    - data1.cab
-    - data1.hdr
-    - data2.cab
+      - demo Installshield
 
   # GamersHell adds extra cruft and wraps it in a zip file
   GHJediAcademy.zip:
@@ -121,9 +147,7 @@ files:
       format: 7z
       flags: ['-r']
     provides:
-    - data1.cab
-    - data1.hdr
-    - data2.cab
+      - demo Installshield
 
   data1.cab:
     unpack:
@@ -144,38 +168,6 @@ files:
     provides:
     - ui/demo_ingame.txt
     - ui/demo_menus.txt
-
-cksums: |
-  _ 195892094 JediAcademyDemo.exe
-  _ 2883388   data1.cab
-  _ 22740     data1.hdr
-  _ 191976107 data2.cab
-  _ 188127360 assets0.pk3?demo
-  _ 6242      license.txt
-  2369534339 196079221 Jedi_Knight_jediacademydemo.exe
-  1245905322 196080485 GHJediAcademy.zip
-  _ 859 ui/demo_ingame.txt
-  _ 1158 ui/demo_menus.txt
-
-md5sums: |
-  e17ee714ce9632f401960abb1b22fa4a  base/assets0.pk3
-  3f47006dde61f171769666f31065a34c  base/assets1.pk3
-  961ad372c3cd73075d70ba71a497b89e  base/assets2.pk3
-  71c2edf5a30135d4aa921bf6259946ee  base/assets3.pk3
-  b58bd4b6ee9ecf32bf36c06468627675  jabonusmaps.exe
-  85b76849fea33bea2f37727e8a33e373  base/bonus.pk3
-  ea334db95f4436ceab5c6670d1695f67  jasiegedestroyer.exe
-  31d6b95740930ce4b8f1da7d7326c7aa  base/siege_destroyer.pk3
-  cae3213d54df238f611f4b630f4d4743  JediAcademyDemo.exe
-  15524eb3a7a778803592b967584fc34f  Jedi_Knight_jediacademydemo.exe
-  93f4f42338f1479eeb6ef8b6ca2f8e13  GHJediAcademy.zip
-  8ad81b71336465f0e77432ffacacfdf2  data1.cab
-  e5d1e819214ee6ce4e3d001b6c2e0689  data1.hdr
-  149bb051007547ff8aae15fec6305a32  data2.cab
-  6f8a641f2ac6415359d988578a58d973  assets0.pk3?demo
-  e006adc9086c848c16f1f4309d5773b2  license.txt
-  fdfa73db069a7483655d36382e6ca5c2  ui/demo_ingame.txt
-  424ced91603a58e353b5e458df93c412  ui/demo_menus.txt
 
 sha1sums: |
   d2f73d9c53b20f1d7c8e2b778c3c5255272223b6  base/assets0.pk3
