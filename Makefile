@@ -106,6 +106,7 @@ clean:
 check:
 	LC_ALL=C $(PYFLAKES3) game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tools/*.py || :
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_syntax.py
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_equivalence.py
 
 # Requires additional setup, so not part of "make check"
 manual-check:

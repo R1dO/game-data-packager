@@ -27,6 +27,8 @@ import re
 import sys
 import zipfile
 
+import yaml
+
 from .build import (HashedFile,
         PackagingTask)
 from .config import read_config
@@ -848,19 +850,22 @@ class GameData(object):
         if hexdigest is not None:
             setattr(f, alg, hexdigest)
 
-    def load_file_data(self):
+    def load_file_data(self, use_vfs=USE_VFS):
         if self.loaded_file_data:
             return
 
         logger.debug('loading full data')
 
-        if USE_VFS:
-            zip = os.path.join(DATADIR, 'vfs.zip')
+        if use_vfs:
+            if isinstance(use_vfs, str):
+                zip = use_vfs
+            else:
+                zip = os.path.join(DATADIR, 'vfs.zip')
             with zipfile.ZipFile(zip, 'r') as zf:
                 files = zf.namelist()
                 filename = '%s.files' % self.shortname
                 if filename in files:
-                    logger.debug('... vfs.zip/%s', filename)
+                    logger.debug('... %s/%s', zip, filename)
                     jsondata = zf.open(filename).read().decode('utf-8')
                     data = json.loads(jsondata)
                     self._populate_files(data)
@@ -869,7 +874,7 @@ class GameData(object):
                     filename = '%s.%s%s' % (self.shortname, alg,
                             '' if alg == 'size_and_md5' else 'sums')
                     if filename in files:
-                        logger.debug('... vfs.zip/%s', filename)
+                        logger.debug('... %s/%s', zip, filename)
                         rawdata = zf.open(filename).read().decode('utf-8')
                         for line in rawdata.splitlines():
                             self._add_hash(line.rstrip('\n'), alg)
@@ -1003,40 +1008,54 @@ class GameData(object):
             return
         return gog.get('game', gog['url'])
 
-def load_games(game='*'):
+def load_games(game='*', use_vfs=USE_VFS, use_yaml=False):
     progress = (game == '*' and sys.stderr.isatty() and
             not logging.getLogger().isEnabledFor(logging.DEBUG))
     games = {}
 
-    if USE_VFS:
-        zip = os.path.join(DATADIR, 'vfs.zip')
+    if use_vfs:
+        if isinstance(use_vfs, str):
+            zip = use_vfs
+        else:
+            zip = os.path.join(DATADIR, 'vfs.zip')
+
         with zipfile.ZipFile(zip, 'r') as zf:
             if game == '*':
                 for entry in zf.infolist():
                     if entry.filename.split('.')[-1] == 'json':
-                        jsonfile = 'vfs.zip/' + entry.filename
+                        jsonfile = '%s/%s' % (zip, entry.filename)
                         jsondata = zf.open(entry).read().decode('utf-8')
-                        load_json(progress, games, jsonfile, jsondata)
+                        load_game(progress, games, jsonfile, jsondata)
             else:
                 jsonfile = game + '.json'
                 jsondata = zf.open(jsonfile).read().decode('utf-8')
-                load_json(progress, games, 'vfs.zip/' + jsonfile, jsondata)
+                load_game(progress, games, '%s/%s' % (zip, jsonfile), jsondata)
+    elif use_yaml:
+        for yamlfile in glob.glob(os.path.join('data/', game + '.yaml')):
+            yamldata = open(yamlfile, encoding='utf-8').read()
+            load_game(progress, games, yamlfile, yamldata)
     else:
         for jsonfile in glob.glob(os.path.join(DATADIR, game + '.json')):
             jsondata = open(jsonfile, encoding='utf-8').read()
-            load_json(progress, games, jsonfile, jsondata)
+            load_game(progress, games, jsonfile, jsondata)
 
-    print('\r%s\r' % (' ' * len(games)), end='', flush=True, file=sys.stderr)
+    if progress:
+        print('\r%s\r' % (' ' * len(games)), end='', flush=True, file=sys.stderr)
+
     return games
 
-def load_json(progress, games, jsonfile, jsondata):
+def load_game(progress, games, filename, content):
         if progress:
             print('.', end='', flush=True, file=sys.stderr)
         try:
-            g = os.path.basename(jsonfile)
+            g = os.path.basename(filename)
             g = g[:len(g) - 5]
 
-            data = json.loads(jsondata)
+            if filename.endswith('.yaml'):
+                data = yaml.load(content, Loader=yaml.CLoader)
+            else:
+                data = json.loads(content)
+
             plugin = data.get('plugin', g)
             plugin = plugin.replace('-', '_')
 
@@ -1051,7 +1070,7 @@ def load_json(progress, games, jsonfile, jsondata):
 
             games[g] = game_data_constructor(g, data)
         except:
-            print('Error loading %s:\n' % jsonfile)
+            print('Error loading %s:\n' % filename)
             raise
 
 def run_command_line():
