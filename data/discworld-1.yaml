@@ -4,7 +4,7 @@ franchise: Discworld
 copyright: © 1995 TWG
 plugin: scummvm_common
 wiki: Discworld_1
-gameid: tinsel
+gameid: dw
 
 packages:
   discworld-cd-data:
@@ -166,7 +166,182 @@ packages:
     - worldedg.gra
     - xspot.gra
 
+  discworld-floppy-data:
+    better_version: discworld-cd-data
+    langs: [de,es,fr,it]
+    install:
+    # english.txt ???
+    - english.idx?floppy
+    - french.txt
+    - german.txt
+    - italian.txt
+    - spanish.txt
+    - drivers/fat.opl
+
+    - act1.gra
+    - act2.gra
+    - act3.gra
+    - act4.gra
+    - alley.gra
+    - alshop.gra
+    - altar.gra
+    - ankhmap.gra
+    - arch.gra
+    - atuin.gra
+    - bar.gra
+    - barber.gra
+    - barn.gra
+    - bogus.gra
+    - book.gra
+    - brethren.gra
+    - camera.gra
+    - cathouse.gra
+    - cellar.gra
+    - citygate.gra
+    - claws1.gra
+    - claws2.gra
+    - climax.gra
+    - closet.gra
+    - closeup.gra
+    - credits.gra
+    - cutalley.gra
+    - cutalsho.gra
+    - cutankhm.gra
+    - cutbar.gra
+    - cutbarn.gra
+    - cuthideo.gra
+    - cutmonkc.gra
+    - cutpalen.gra
+    - cutpub.gra
+    - cutrooft.gra
+    - cuttempl.gra
+    - cutthron.gra
+    - cuttoile.gra
+    - deathdun.gra
+    - deathfis.gra
+    - deathfoo.gra
+    - deathroo.gra
+    - deathsha.gra
+    - deaththi.gra
+    - detector.gra
+    - dining.gra
+    - discmap.gra?floppy
+    - donkcart.gra
+    - dragcage.gra
+    - dragon.gra
+    - dungeon.gra
+    - dunnyman.gra
+    - dw.gra
+    - endgame.gra
+    - ensuite.gra
+    - finale.gra
+    - fishmong.gra
+    - fool.gra
+    - gorge.gra
+    - hat.gra
+    - hideout.gra
+    - holrecep.gra
+    - holretro.gra
+    - index
+    - inn.gra
+    - innroom.gra
+    - introarc.gra
+    - introhid.gra
+    - introsha.gra
+    - introtur.gra
+    - introuni.gra
+    - kitchen.gra
+    - library.gra
+    - livery.gra
+    - lspace.gra
+    - lwood.gra
+    - magbook.gra
+    - mambo.gra
+    - midi.dat
+    - mine.gra
+    - mineent.gra
+    - mirror.gra
+    - missile.gra
+    - monk1.gra
+    - monk2.gra
+    - monk2b.gra
+    - monk3.gra
+    - monk4.gra
+    - monk5.gra
+    - monkcorn.gra
+    - mountpas.gra
+    - mystwood.gra
+    - objects.gra
+    - overedge.gra
+    - palent.gra
+    - park.gra
+    - pastankh.gra
+    - pastbar.gra
+    - pastcath.gra
+    - pastcity.gra
+    - pastensu.gra
+    - pastfish.gra
+    - pasthide.gra
+    - pastinn.gra
+    - pastinnr.gra
+    - pastlibr.gra
+    - pastmonk.gra
+    - pastpark.gra
+    - pastpub.gra
+    - pastshad.gra
+    - paststre.gra
+    - pastthie.gra
+    - pasttoil.gra
+    - pavement.gra
+    - perfect1.gra
+    - psygnosi.gra
+    - pub.gra
+    - ramkin.gra
+    - rear.gra
+    - receptio.gra
+    - retro.gra
+    - rinceroo.gra
+    - rockroll.gra
+    - rooftops.gra
+    - shades.gra
+    - sheep.gra
+    - space.gra
+    - spire.gra
+    - square.gra
+    - street.gra
+    - sunset.gra
+    - temple.gra
+    - thief.gra
+    - throne.gra
+    - title.gra
+    - toilet.gra
+    - toyshop.gra
+    - turtle.gra
+    - turtle2.gra
+    - twg.gra
+    - unigard.gra
+    - unseen.gra
+    - witch.gra
+    - worldedg.gra
+
 size_and_md5: |
+  # Floppy version
+  271514    4ecb36a68cc13136f88f90d5095a2dc3 french.txt
+  261734    88ef4cc6a5854f5485ed937a2bdc77a6 german.txt
+  237774    2b45d063d31aeb7e6b0c74eb93257484 italian.txt
+  234618    ba830b3564fb06eb7ab081158d2da2fc spanish.txt
+  94324     393db101de98011d540559a94e9b63a1 discmap.gra?floppy
+  27400     5ea1a82df5e7d5377d9fb074e3fb77cd english.idx?floppy
+
+  # CD version
+  27400     d4b11031e59bc85b187ba5245d9eb943 english.idx
+  343755891 b9973da5c04aa7407f0efe621406d296 english.smp
+  228542    1cda31864620af353974a18203c55393 english.txt
+  94324     3ecedf6b6a6828c95cbd0d6af92519d8 discmap.gra
+
+  # same in CD and Floppy
+  3622      af1e30f375f049dfabace2063956a414 drivers/fat.opl
+  2940      1f7b2dbeeb595d01e8211bf20842e0b6 index
   142532    010f82a29ca12c141d01caccf6878bf9 act1.gra
   143532    d1bf25cf4ccf7a0bbb55a113f3395b04 act2.gra
   144384    067d7fb03e510a133a10e1b079248f1b act3.gra
@@ -215,18 +390,13 @@ size_and_md5: |
   215324    7ccd09fc534cbccdc5450681fdf5d0f0 deaththi.gra
   107556    825ac44fef338122025e333d981ad15f detector.gra
   914644    437ee69e0dd3149cb33bbb951a9f957e dining.gra
-  94324     3ecedf6b6a6828c95cbd0d6af92519d8 discmap.gra
   77908     2a93147910cb7f202028f5b1f62fd8e9 donkcart.gra
   434532    aa5a2ed2a44b98625b3820380d8c3d6c dragcage.gra
   64852     531b4bc72f32f5780ed003368bbed128 dragon.gra
-  3622      af1e30f375f049dfabace2063956a414 drivers/fat.opl
   621596    c32c294df1db0d926210280cdb9ae717 dungeon.gra
   590072    52c5b95e3277d2e960b23db9a6317bfa dunnyman.gra
   781656    ac505b9087f8a8d5b9df2f9b8515b0f6 dw.gra
   324020    2d4b5e4527d0d8dd74a7db657f6bb11e endgame.gra
-  27400     d4b11031e59bc85b187ba5245d9eb943 english.idx
-  343755891 b9973da5c04aa7407f0efe621406d296 english.smp
-  228542    1cda31864620af353974a18203c55393 english.txt
   89052     aff2ce3e32af55f326f47a921a1815dc ensuite.gra
   751020    522a6c18f231600a2c27238dc2effef1 finale.gra
   213136    7a547393d2eaed4d0f5f42d118c47df4 fishmong.gra
@@ -237,7 +407,6 @@ size_and_md5: |
   100880    37d374d9129039fb6d4322f72a1da298 hideout.gra
   220216    6088a9b55a80d525e1db45c239c47344 holrecep.gra
   151924    feca09807cae20bfb257d58823763e5b holretro.gra
-  2940      1f7b2dbeeb595d01e8211bf20842e0b6 index
   600164    4be8293b93659b8e5738cfba9af5e68c inn.gra
   137632    a9f9d5a5bbac829d79c69d7ea3ba6c95 innroom.gra
   184412    b5ea95f00e12ca4f096543ea6d4f9a63 introarc.gra
