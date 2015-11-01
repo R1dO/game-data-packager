@@ -1,13 +1,7 @@
 #!/usr/bin/make -f
 
-dh_options =
-
-ifeq (,$(filter quake4,$(DEB_BUILD_OPTIONS)))
-dh_options += -Nquake4 -Nquake4-server
-endif
-
 %:
-	dh $@ --parallel --with=systemd $(dh_options)
+	dh $@ --parallel --with=systemd
 
 override_dh_installinit:
 	dh_installinit -pquake4-server --noscripts
