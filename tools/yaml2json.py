@@ -40,6 +40,55 @@ def main(f, out):
     elif os.path.isfile(offload):
         os.remove(offload)
 
+    groups = data.pop('groups', None)
+    offload = os.path.splitext(out)[0] + '.groups'
+
+    if groups is not None:
+        with open(offload + '.tmp', 'w', encoding='utf-8') as writer:
+            assert isinstance(groups, dict)
+            for group_name, group_data in groups.items():
+                writer.write('[%s]\n' % group_name)
+
+                if isinstance(group_data, dict):
+                    attrs = {}
+                    members = group_data['group_members']
+                    for k, v in group_data.items():
+                        if k != 'group_members':
+                            attrs[k] = v
+                    if attrs:
+                        json.dump(attrs, writer, sort_keys=True)
+                        writer.write('\n')
+                elif isinstance(group_data, (str, list)):
+                    members = group_data
+                else:
+                    raise AssertionError('group %r should be dict, str or list' % group_name)
+
+                has_members = False
+
+                if isinstance(members, str):
+                    for line in members.splitlines():
+                        assert not line.startswith('[')
+                        assert not line.startswith('{')
+                        line = line.strip()
+                        if line and not line.startswith('#'):
+                            has_members = True
+                            writer.write(' '.join(line.split()))
+                            writer.write('\n')
+                elif isinstance(members, list):
+                    for m in members:
+                        has_members = True
+                        writer.write('? ? %s\n' % m)
+                else:
+                    raise AssertionError('group %r members should be str or list' % group_name)
+
+                # an empty group is no use, and would break the assumption
+                # that we can use f.group_members to detect groups
+                assert has_members
+
+        os.rename(offload + '.tmp', offload)
+    elif os.path.isfile(offload):
+        os.remove(offload)
+
     for k in ('cksums', 'sha1sums', 'sha256sums', 'md5sums',
             'size_and_md5'):
         v = data.pop(k, None)

@@ -49,19 +49,7 @@ packages:
     install:
     - baseq2/pak0.pak
     optional:
-    # videos present in Steam and on smcv's Xplosiv-branded CD-ROM, but
-    # apparently not strictly necessary (#776059)
-    - baseq2/video/end.cin
-    - baseq2/video/eou1_.cin
-    - baseq2/video/eou2_.cin
-    - baseq2/video/eou3_.cin
-    - baseq2/video/eou4_.cin
-    - baseq2/video/eou5_.cin
-    - baseq2/video/eou6_.cin
-    - baseq2/video/eou7_.cin
-    - baseq2/video/eou8_.cin
-    - baseq2/video/idlog.cin
-    - baseq2/video/ntro.cin
+    - baseq2 videos
     # semi-official bonus content
     - baseq2/maps/base64.bsp
     - baseq2/maps/city64.bsp
@@ -1562,17 +1550,7 @@ files:
     - baseq2/players/zumlin/zumlin_i.pcx
     - baseq2/players/zumlin/zumlinbase.pcx
     - baseq2/players/zumlin/zumlinstory.txt
-    - baseq2/video/end.cin
-    - baseq2/video/eou1_.cin
-    - baseq2/video/eou2_.cin
-    - baseq2/video/eou3_.cin
-    - baseq2/video/eou4_.cin
-    - baseq2/video/eou5_.cin
-    - baseq2/video/eou6_.cin
-    - baseq2/video/eou7_.cin
-    - baseq2/video/eou8_.cin
-    - baseq2/video/idlog.cin
-    - baseq2/video/ntro.cin
+    - baseq2 videos
     - ctf/pak0.pak
     - ctf/readme.txt
     - ctf/server.cfg
@@ -1751,6 +1729,22 @@ files:
     # + action, arena, capture, chaos, eraser, jail, kick, pb2 & rover:
     # -> can not supported without source for a native game.so
 
+groups:
+  baseq2 videos: |
+    # videos present in Steam and on smcv's Xplosiv-branded CD-ROM, but
+    # apparently not strictly necessary (#776059)
+    19311290  36fdaddd1c1b56ba10472466e4486ff8 baseq2/video/end.cin
+    6038210   cbab517cddc03ec676d7153eeb13417b baseq2/video/eou1_.cin
+    6586381   37201aa9c798982e7739dfdbad61c004 baseq2/video/eou2_.cin
+    6708418   f2b7fac58d5aa24bcf76ec942253dfcc baseq2/video/eou3_.cin
+    5464002   b0e360a5c4a55789e00d3f2223e23dc4 baseq2/video/eou4_.cin
+    6848133   76651dc4f2d92ed278ee8e2cac7c7600 baseq2/video/eou5_.cin
+    7099332   0b14fff288b8d260f812e830ce6bff7c baseq2/video/eou6_.cin
+    7766671   a342a79fadfe9efa2ce549842168ec7c baseq2/video/eou7_.cin
+    11875656  24a5178220322b3a4fb42f6b0757b821 baseq2/video/eou8_.cin
+    3159828   0747670d94cc873f8ce522d7652143a1 baseq2/video/idlog.cin
+    82836235  72846e547415856028006aaa4089c9c9 baseq2/video/ntro.cin
+
 cksums: |
   1206005048 239924 quake2-rogue-2.02.tar.xz
   285620057 1421 quake2-rogue-2.02/CHANGELOG
@@ -1856,17 +1850,7 @@ cksums: |
 
 size_and_md5: |
   183997730 1ec55a724dc3109fd50dde71ab581d70 baseq2/pak0.pak?1dd586a
-  19311290  36fdaddd1c1b56ba10472466e4486ff8 baseq2/video/end.cin
-  6038210   cbab517cddc03ec676d7153eeb13417b baseq2/video/eou1_.cin
-  6586381   37201aa9c798982e7739dfdbad61c004 baseq2/video/eou2_.cin
-  6708418   f2b7fac58d5aa24bcf76ec942253dfcc baseq2/video/eou3_.cin
-  5464002   b0e360a5c4a55789e00d3f2223e23dc4 baseq2/video/eou4_.cin
-  6848133   76651dc4f2d92ed278ee8e2cac7c7600 baseq2/video/eou5_.cin
-  7099332   0b14fff288b8d260f812e830ce6bff7c baseq2/video/eou6_.cin
-  7766671   a342a79fadfe9efa2ce549842168ec7c baseq2/video/eou7_.cin
-  11875656  24a5178220322b3a4fb42f6b0757b821 baseq2/video/eou8_.cin
-  3159828   0747670d94cc873f8ce522d7652143a1 baseq2/video/idlog.cin
-  82836235  72846e547415856028006aaa4089c9c9 baseq2/video/ntro.cin
+
   # Files from patch to install in game directory
   1063      b2c3358d7be61f05651c88d9ef97d6aa baseq2/maps.lst
   12992754  42663ea709b7cd3eb9b634b36cfecb1a baseq2/pak1.pak

@@ -37,7 +37,7 @@ out/vfs.zip: $(json)
 	rm -fr out/vfs
 	mkdir out/vfs
 	cp out/*.json out/*.files out/*.size_and_md5 out/*.cksums out/vfs/
-	cp out/*.md5sums out/*.sha1sums out/*.sha256sums out/vfs/
+	cp out/*.md5sums out/*.sha1sums out/*.sha256sums out/*.groups out/vfs/
 	if [ -n "$(BUILD_DATE)" ]; then \
 		touch --date='$(BUILD_DATE)' out/vfs/*; \
 	fi
@@ -86,6 +86,7 @@ clean:
 	rm -f ./out/*.copyright
 	rm -f ./out/*.copyright.in
 	rm -f ./out/*.files
+	rm -f ./out/*.groups
 	rm -f ./out/*.md5sums
 	rm -f ./out/*.preinst.in
 	rm -f ./out/*.png
