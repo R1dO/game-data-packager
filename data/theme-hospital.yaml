@@ -815,12 +815,8 @@ packages:
 files:
   levels/full00.sam:
     alternatives:
-      - levels/full00.sam_cd
-      - levels/full00.sam_gog
-  levels/full00.sam_cd:
-    look_for: [levels/full00.sam]
-  levels/full00.sam_gog:
-    look_for: [levels/full00.sam]
+      - levels/full00.sam?cd
+      - levels/full00.sam?gog
   EN.pdf:
     size: 4514818
     md5: 61c5337dd5d371b57bdf9ccdc95b4960
@@ -1597,7 +1593,7 @@ files:
     - levels/easy10.sam
     - levels/easy11.sam
     - levels/easy12.sam
-    - levels/full00.sam_gog
+    - levels/full00.sam?gog
     - levels/full01.sam
     - levels/full02.sam
     - levels/full03.sam
@@ -2032,7 +2028,7 @@ cksums: |
   _ 11235     levels/easy10.sam
   _ 12415     levels/easy11.sam
   _ 12726     levels/easy12.sam
-  _ 31802     levels/full00.sam_cd
+  _ 31802     levels/full00.sam?cd
   _ 3517      levels/full01.sam
   _ 5024      levels/full02.sam
   _ 7296      levels/full03.sam
@@ -2579,7 +2575,7 @@ cksums: |
   2696051171 23897 eula.txt
   2094702119 7505 gog_eula.txt
   1541739238 1123270 manual.pdf
-  2051011456 31801 levels/full00.sam_gog
+  2051011456 31801 levels/full00.sam?gog
 
   # Origin
   1616675884 224382 en_US_eula.rtf
@@ -2710,7 +2706,7 @@ md5sums: |
   047ee39a6c6b6342648c047e815a3166  levels/easy10.sam
   35c1a8073403d057a912a2b9564bff2b  levels/easy11.sam
   2d8caa87a6af7fe248c3f1a5f494869e  levels/easy12.sam
-  6b5085e24a0edfc74e05ce461dd32848  levels/full00.sam_cd
+  6b5085e24a0edfc74e05ce461dd32848  levels/full00.sam?cd
   6225e4953597aa92772da2be1eacdc33  levels/full01.sam
   bc241898707921e9903f1bd766181a4f  levels/full02.sam
   366dc05c3e3251a9eb78077c91cccbc2  levels/full03.sam
@@ -3256,7 +3252,7 @@ md5sums: |
   3ca819220a3269e314c601a2333501f7  gog_eula.txt
   88806c2c2f9376b696dc282939afd8cf  setup_theme_hospital_2.0.0.5.exe
   115f65922bb0e845a9f585b424bab45b  manual.pdf
-  9b2e0ebc8a38340e8717968db40504ac  levels/full00.sam_gog
+  9b2e0ebc8a38340e8717968db40504ac  levels/full00.sam?gog
   # Origin
   6f02a3dbdfed6e1938d4708ec046de38  en_US_eula.rtf
 
@@ -3361,7 +3357,7 @@ sha1sums: |
   e983f37434a536819d743146055492917898a77c  levels/easy10.sam
   3cbcf802832f09282f064192b3ff0e75f8b43c20  levels/easy11.sam
   ed6e428f36fcbf21322a66897d696cef8e3d4609  levels/easy12.sam
-  102053fafea0e9920e3021b7cbd65cc93611770c  levels/full00.sam_cd
+  102053fafea0e9920e3021b7cbd65cc93611770c  levels/full00.sam?cd
   4189eead6b3dac31fb19ca445710273ab4854f86  levels/full01.sam
   a4ef413f916ce97624978c78b943422f2e9ef79f  levels/full02.sam
   24012e6a192f7172b2f0b2dc97216077b9b32538  levels/full03.sam
@@ -3688,7 +3684,7 @@ sha1sums: |
   2acb1ec04139af2cc39d4253ca557c9571a4d15c  gog_eula.txt
   9860016a76883c9a15dee8fac5b810c0eea601c9  setup_theme_hospital_2.0.0.5.exe
   c96d0b7a79dd4a2dde61f595f4d2fd5d238f28de  manual.pdf
-  98e886f214951b3ba5cebe43621532325044d534  levels/full00.sam_gog
+  98e886f214951b3ba5cebe43621532325044d534  levels/full00.sam?gog
   # Origin
   72928584b845a43a920e09c7a0838a63af4ee248  en_US_eula.rtf
 
@@ -3792,7 +3788,7 @@ sha256sums: |
   5e8494f2cdcef2c54cda6b96e05ec506be1b34363300e54007625a22e999f830  levels/easy10.sam
   b2fcf6839cac63fcd9bc3b1bd14d427248f72075d15cc7cbafa69e1ec3039da0  levels/easy11.sam
   c17e8fd6afb3133b509f8ba439e09b89889dc9b051e95b790304c654de5412bf  levels/easy12.sam
-  29b4575c425002c02413b93ddb9ec05cd1a1599c1bee593439f04f4e673bae66  levels/full00.sam_cd
+  29b4575c425002c02413b93ddb9ec05cd1a1599c1bee593439f04f4e673bae66  levels/full00.sam?cd
   202cd582171f0f2ed06863275a965f115bc726cce037e3ee0983b6bf19c7beae  levels/full01.sam
   3d337b72c8b48ff06d2af33bde84851b4cebf03a31354d40fa5b3e5fa7268d35  levels/full02.sam
   70193dcd5ec18a6d77cd18b4b8feefa67175010689b5aec6b5e49a395c3408f3  levels/full03.sam
@@ -4118,7 +4114,7 @@ sha256sums: |
   17314b556b82b7b0378223324f53a94af343fe731ce93fc67ad750ff656cbcb7  gog_eula.txt
   c41a77632ca1c33389b57d7210936eb5151ceb6d540707420a4de2d55bd47497  setup_theme_hospital_2.0.0.5.exe
   fdf943a36ec066a8f0dcdd2f3a2d3f9573a0a367dbefabc18c28536dc41ecfde  manual.pdf
-  03ef32ce27867196ac5991025de59d658254e3287cf4c9dd73a7c3824bddfd2b  levels/full00.sam_gog
+  03ef32ce27867196ac5991025de59d658254e3287cf4c9dd73a7c3824bddfd2b  levels/full00.sam?gog
 
 ...
 # vim:set sw=2 sts=2 et:
