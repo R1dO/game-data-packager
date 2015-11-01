@@ -191,12 +191,9 @@ def lang_score(lang):
     if lang in langs:
         return len(langs) - langs.index(lang)
 
-    for l in langs:
-        if l == lang[0:2]:
-            score = len(langs) - langs.index(l)
-            if score > 1:
-                score -= 1
-            return score
+    lang = lang[0:2]
+    if lang in langs:
+        return len(langs) - langs.index(lang)
 
     return 0
 
