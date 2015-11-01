@@ -1249,15 +1249,21 @@ files:
     - Help/Index.html?linux
     - Help/Index.html?win
 
+  Help/Index.html?linux:
+    look_for: [Help/Index.html,Help/Index.htm]
   Help/Index.html?win:
     look_for: [Help/Index.html,Help/Index.htm]
   Help/Index.html?team:
+    look_for: [Help/Index.html,Help/Index.htm]
+  Help/Index.html?demo:
     look_for: [Help/Index.html,Help/Index.htm]
 
   Help/BotCommands.html:
     alternatives:
     - Help/BotCommands.html?linux
     - Help/BotCommands.html?win
+  Help/BotCommands.html?linux:
+    look_for: [Help/BotCommands.html,Help/BotCommands.htm]
   Help/BotCommands.html?win:
     look_for: [Help/BotCommands.html,Help/BotCommands.htm]
   Help/BotCommands.html?team:
@@ -1267,6 +1273,8 @@ files:
     alternatives:
     - Help/DedicatedServer.html?linux
     - Help/DedicatedServer.html?win
+  Help/DedicatedServer.html?linux:
+    look_for: [Help/DedicatedServer.html,Help/Dedicated Server.htm]
   Help/DedicatedServer.html?win:
     look_for: [Help/DedicatedServer.html,Help/Dedicated Server.htm]
   Help/DedicatedServer.html?team:

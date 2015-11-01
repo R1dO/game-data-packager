@@ -132,6 +132,8 @@ game-data-packager (43) UNRELEASED; urgency=medium
   * quake3-team-arena-data: remove colliding symlink
   * quake3: always install the Index.html from the Linux or Windows
     full version, not the one from the demo if found
+  * quake3: look for foo.htm as matching any version of foo.html where there
+    are multiple versions
 
  -- Simon McVittie <smcv@debian.org>  Thu, 16 Jul 2015 09:59:23 +0200
 
