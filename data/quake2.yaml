@@ -91,6 +91,9 @@ packages:
     expansion_for: quake2-full-data
     # http://musicbrainz.org/release/06727a29-435d-423e-90a8-1a4fed5edb54
     install_to: usr/share/games/quake2
+    copyright_notice: |
+      This package contains the Quake II soundtrack by Sonic Mayhem, Jer Sypult
+      and Bill Brown, copied from the CD-ROM and encoded in Ogg Vorbis.
     rip_cd:
       encoding: vorbis
       filename_format: "baseq2/music/%02d.ogg"
@@ -133,6 +136,9 @@ packages:
     expansion_for: quake2-reckoning-data
     # http://musicbrainz.org/release/a1eb0af4-6348-4aa6-a586-4f41a33c5dea
     install_to: usr/share/games/quake2
+    copyright_notice: |
+      This package contains the Quake II soundtrack by Sonic Mayhem, Jer Sypult
+      and Bill Brown, copied from the CD-ROM and encoded in Ogg Vorbis.
     rip_cd:
       encoding: vorbis
       filename_format: "xatrix/music/%02d.ogg"
@@ -177,6 +183,9 @@ packages:
     aliases: [mp2music]
     # http://musicbrainz.org/release/7590e38c-f203-425a-b726-37a55b6d2937
     install_to: usr/share/games/quake2
+    copyright_notice: |
+      This package contains the Quake II soundtrack by Sonic Mayhem, Jer Sypult
+      and Bill Brown, copied from the CD-ROM and encoded in Ogg Vorbis.
     rip_cd:
       encoding: vorbis
       filename_format: "rogue/music/%02d.ogg"
