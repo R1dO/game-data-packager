@@ -1356,6 +1356,12 @@ class PackagingTask(object):
                         'redistributed under conditions specified in\n')
                 o.write(',\n'.join(licenses) + '.\n\n')
 
+
+            if self.game.copyright_notice:
+                 o.write('-' * 70)
+                 o.write('\n\n' + self.game.copyright_notice + '\n')
+                 o.write('-' * 70 + '\n\n')
+
             count_usr = 0
             exts = set()
             count_doc = 0

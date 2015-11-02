@@ -316,6 +316,9 @@ class GameData(object):
         # The one-line copyright notice used to build debian/copyright
         self.copyright = None
 
+        # A blurb of text that is used to build debian/copyright
+        self.copyright_notice = None
+
         # Tag fanmade games so they don't screw up year * size regression
         self.fanmade = False
 
@@ -374,7 +377,7 @@ class GameData(object):
         for k in ('longname', 'copyright', 'compress_deb', 'help_text', 'disks', 'fanmade',
                   'engine', 'genre', 'missing_langs', 'franchise', 'wiki', 'wikibase',
                   'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wikipedia',
-                  'binary_executables'):
+                  'binary_executables', 'copyright_notice'):
             if k in self.data:
                 setattr(self, k, self.data[k])
 
