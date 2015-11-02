@@ -2018,11 +2018,19 @@ class PackagingTask(object):
 
     def get_architecture(self, archs=''):
         if self._architecture is None:
-            self._architecture = check_output(['dpkg',
-                '--print-architecture']).strip().decode('ascii')
-            self._foreign_architectures = set(check_output(['dpkg',
-                '--print-foreign-architectures']
-                ).strip().decode('ascii').split())
+            if FORMAT == 'deb':
+                self._architecture = check_output(['dpkg',
+                    '--print-architecture']).strip().decode('ascii')
+                self._foreign_architectures = set(check_output(['dpkg',
+                    '--print-foreign-architectures']
+                    ).strip().decode('ascii').split())
+            elif FORMAT == 'rpm':
+                arch = check_output(['rpm', '-q', '--qf', '%{ARCH}\n',
+                       'rpm']).strip().decode('ascii')
+                self._architecture = { 'armhfp': 'armhf',
+                                       'x86_64': 'amd64',
+                                     }.get(arch, arch)
+                self._foreign_architectures = set()
 
         if archs:
             # In theory this should deal with wildcards like linux-any,
