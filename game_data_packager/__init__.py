@@ -95,22 +95,40 @@ class WantedFile(HashedFile):
         self._provides = set(value)
 
     def to_yaml(self):
-        return {
-            'alternatives': self.alternatives,
+        ret = {
             'distinctive_name': self.distinctive_name,
-            'distinctive_size': self.distinctive_size,
-            'download': self.download,
-            'executable': self.executable,
-            'install_as': self.install_as,
-            'install_to': self.install_to,
-            'license': self.license,
-            'look_for': list(self.look_for),
             'name': self.name,
-            'provides': list(self.provides),
             'size': self.size,
-            'skip_hash_matching': self.skip_hash_matching,
-            'unpack': self.unpack,
         }
+
+        for k in (
+                'alternatives',
+                'distinctive_size',
+                'executable',
+                'license',
+                'look_for',
+                'provides',
+                'skip_hash_matching',
+                ):
+            v = getattr(self, k)
+            if v:
+                if isinstance(v, set):
+                    ret[k] = sorted(v)
+                else:
+                    ret[k] = v
+
+        for k in (
+                'download',
+                'install_as',
+                'install_to',
+                'unsuitable',
+                'unpack',
+                ):
+            v = getattr(self, k)
+            if v is not None:
+                ret[k] = v
+
+        return ret
 
 class GameDataPackage(object):
     def __init__(self, name):
@@ -272,23 +290,55 @@ class GameDataPackage(object):
         self.langs = [value]
 
     def to_yaml(self):
-        return {
+        ret = {
             'architecture': self.architecture,
-            'demo_for': sorted(self.demo_for),
-            'better_version': self.better_version,
-            'expansion_for': self.expansion_for,
-            'install': sorted(self.install),
+            'component': self.component,
             'install_to': self.install_to,
-            'install_to_docdir': self.install_to_docdir,
             'name': self.name,
-            'optional': sorted(self.optional),
-            'rip_cd': self.rip_cd,
-            'steam': self.steam,
-            'gog': self.gog,
-            'origin': self.origin,
-            'symlinks': self.symlinks,
+            'section': self.section,
             'type': self.type,
+            'version': self.version,
         }
+
+        for k in (
+                'aliases',
+                'debian',
+                'demo_for',
+                'dotemu',
+                'gog',
+                'install',
+                'install_contents_of',
+                'install_to_docdir',
+                'optional',
+                'origin',
+                'rip_cd',
+                'steam',
+                'symlinks',
+                ):
+            v = getattr(self, k)
+            if v:
+                if isinstance(v, set):
+                    ret[k] = sorted(v)
+                else:
+                    ret[k] = v
+
+        for k in (
+                'better_version',
+                'copyright',
+                'description',
+                'disks',
+                'engine',
+                'expansion_for',
+                'expansion_for_ext',
+                'longname',
+                'url_misc',
+                'wiki',
+                ):
+            v = getattr(self, k)
+            if v is not None:
+                ret[k] = v
+
+        return ret
 
 class GameData(object):
     def __init__(self, shortname, data):
@@ -555,35 +605,30 @@ class GameData(object):
 
     def to_yaml(self):
         files = {}
-        providers = {}
         packages = {}
-        known_filenames = {}
-        known_sizes = {}
+
+        def sort_set_values(d):
+            ret = {}
+            for k, v in d.items():
+                assert isinstance(v, set), (repr(k), repr(v))
+                ret[k] = sorted(v)
 
         for filename, f in self.files.items():
             files[filename] = f.to_yaml()
-
-        for provided, by in self.providers.items():
-            providers[provided] = list(by)
-
-        for size, known in self.known_sizes.items():
-            known_sizes[size] = list(known)
-
-        for filename, known in self.known_filenames.items():
-            known_filenames[filename] = list(known)
 
         for name, package in self.packages.items():
             packages[name] = package.to_yaml()
 
         return {
+            'copyright_notice': self.copyright_notice,
             'help_text': self.help_text,
-            'known_filenames': known_filenames,
-            'known_md5s': self.known_md5s,
-            'known_sha1s': self.known_sha1s,
-            'known_sha256s': self.known_sha256s,
-            'known_sizes': known_sizes,
+            'known_filenames': sort_set_values(self.known_filenames),
+            'known_md5s': sort_set_values(self.known_md5s),
+            'known_sha1s': sort_set_values(self.known_sha1s),
+            'known_sha256s': sort_set_values(self.known_sha256s),
+            'known_sizes': sort_set_values(self.known_sizes),
             'packages': packages,
-            'providers': providers,
+            'providers': sort_set_values(self.providers),
             'files': files,
         }
 
