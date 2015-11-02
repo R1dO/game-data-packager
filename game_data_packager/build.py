@@ -603,7 +603,7 @@ class PackagingTask(object):
                or (basename.startswith('gog_') and extension == '.sh')):
                 with zipfile.ZipFile(path, 'r') as zf:
                     self.consider_zip(path, zf)
-            elif extension.lower() == '.deb':
+            elif extension.lower() == '.deb' and which('dpkg-deb'):
                 with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', path],
                             stdout=subprocess.PIPE) as fsys_process:
                     with tarfile.open(path + '//data.tar.*', mode='r|',
@@ -2479,8 +2479,14 @@ class PackagingTask(object):
         fmt = wanted.unpack['format']
 
         # builtins
-        if fmt in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'deb', 'zip'):
+        if fmt in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'zip'):
             return True
+
+        if fmt == 'deb':
+            if FORMAT == 'deb':
+                return True
+            else:
+                fmt = 'dpkg-deb'
 
         if which(fmt) is not None:
             return True
@@ -2503,12 +2509,23 @@ class PackagingTask(object):
         if not self.missing_tools:
             return False
 
-        package_map = {
+        if FORMAT == 'deb':
+            command = 'apt-get'
+            package_map = {
                 'id-shr-extract': 'dynamite',
                 'lha': 'lhasa',
                 '7z': 'p7zip-full',
                 'unrar-nonfree': 'unrar',
-        }
+            }
+        elif FORMAT == 'rpm':
+            command = 'dnf'
+            package_map = {
+                'dpkg-deb': 'dpkg',
+                'id-shr-extract': 'dynamite',
+                '7z': 'p7zip-plugins',
+                'unrar-nonfree': 'unrar',
+            }
+
         packages = set()
 
         for t in self.missing_tools:
@@ -2517,5 +2534,4 @@ class PackagingTask(object):
                 packages.add(p)
 
         logger.warning('installing these packages might help:\n' +
-                'apt-get install %s',
-                ' '.join(sorted(packages)))
+                '%s install %s', command, ' '.join(sorted(packages)))
