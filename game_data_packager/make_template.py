@@ -26,9 +26,14 @@ import tempfile
 import glob
 import zipfile
 
-from debian.deb822 import Deb822
-from debian.debian_support import Version
 import yaml
+try:
+    from debian.deb822 import Deb822
+    from debian.debian_support import Version
+    ON_DEBIAN = True
+except ImportError:
+    from distutils.version import LooseVersion as Version
+    ON_DEBIAN = False
 
 from . import HashedFile
 from .gog import GOG
@@ -350,8 +355,12 @@ class GameData(object):
         self.files['files'][os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
 
     def add_one_deb(self,deb,lower):
+        if not ON_DEBIAN or not which('dpkg-deb'):
+            exit('.deb analysis is only implemented on Debian.')
+
         control = None
 
+        version = None
         with subprocess.Popen(['dpkg-deb', '--ctrl-tarfile', deb],
                 stdout=subprocess.PIPE) as ctrl_process:
             with tarfile.open(deb + '//control.tar.*', mode='r|',
@@ -367,7 +376,7 @@ class GameData(object):
                         reader = ctrl_tarfile.extractfile(entry)
                         control = Deb822(reader)
                         print('# data/%s.control.in' % control['package'])
-                        control['version'] = 'VERSION'
+                        version = control['version']
                         if 'Homepage' in control:
                             if 'gog.com/' in control['Homepage']:
                                 self.gog_url = control['Homepage'].split('/')[-1]
@@ -389,6 +398,9 @@ class GameData(object):
         self.package['install'] = []
         self.package['optional'] = []
         self.package['license'] = []
+        if version:
+            self.package['version'] = version
+
         install_to = None
 
         with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', deb],
