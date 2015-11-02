@@ -1357,9 +1357,10 @@ class PackagingTask(object):
                 o.write(',\n'.join(licenses) + '.\n\n')
 
 
-            if self.game.copyright_notice:
+            notice = package.copyright_notice or self.game.copyright_notice
+            if notice:
                  o.write('-' * 70)
-                 o.write('\n\n' + self.game.copyright_notice + '\n')
+                 o.write('\n\n' + notice + '\n')
                  o.write('-' * 70 + '\n\n')
 
             count_usr = 0

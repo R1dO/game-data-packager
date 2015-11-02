@@ -180,6 +180,9 @@ class GameDataPackage(object):
         # This optional value will overide the game global copyright
         self.copyright = None
 
+        # A blurb of text that is used to build debian/copyright
+        self.copyright_notice = None
+
         # Languages, list of ISO-639 codes
         self.langs = ['en']
 
@@ -718,7 +721,7 @@ class GameData(object):
                 'install_to_docdir', 'install_contents_of', 'debian', 'description',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks',
-                'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki'):
+                'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice'):
             if k in d:
                 setattr(package, k, d[k])
 

@@ -11,6 +11,17 @@ packages:
     debian:
       conflicts: [descent1-full-data, descent1-data]
     install_to: usr/share/games/d1x-rebirth/
+    copyright_notice: |
+      DESCENT is a trademark of Interplay Productions, Inc.
+      .
+      GIVE SHAREWARE DESCENT TO EVERYONE YOU KNOW!
+      .
+      THIS GAME MAY BE FREELY DISTRIBUTED
+      .
+      Shareware Descent is freely distributable to anyone and everyone so
+      long as it is distributed in UNMODIFIED FORM and no fees are charged.
+      .
+      (Package's note: so this means this repacked game is not distributable)
     install:
     - descent.hog?demo
     - descent.pig?demo
