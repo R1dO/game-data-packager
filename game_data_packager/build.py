@@ -2300,17 +2300,20 @@ class PackagingTask(object):
         return ready
 
     def build_packages(self, ready, destination, compress):
-        debs = set()
+        packages = set()
 
         for package in ready:
-            deb = self.build_deb(package, destination, compress=compress)
+            if FORMAT == 'deb':
+                pkg = self.build_deb(package, destination, compress=compress)
+            elif FORMAT == 'rpm':
+                pkg = self.build_rpm(package)
 
-            if deb is None:
+            if pkg is None:
                 raise SystemExit(1)
 
-            debs.add(deb)
+            packages.add(pkg)
 
-        return debs
+        return packages
 
     def locate_steam_icon(self, package):
         id = package.steam.get('id') or self.game.steam.get('id')
@@ -2476,6 +2479,27 @@ class PackagingTask(object):
 
         rm_rf(destdir)
         return outfile
+
+    def build_rpm(self, package):
+        destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
+
+        if not self.fill_dest_dir(package, destdir):
+            return None
+
+        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
+
+        try:
+            logger.info('generating package %s', package.name)
+            specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
+            check_output(['rpmbuild', '--buildroot', destdir,
+                                      '-bb', '-v', specfile],
+                                      cwd=self.get_workdir())
+        except subprocess.CalledProcessError as cpe:
+            print(cpe.output)
+            raise
+
+        return (os.path.expanduser('~/rpmbuild/RPMS/noarch/')
+                + package.name + '-' + package.version + '-0.noarch.rpm')
 
     def check_unpacker(self, wanted):
         if not wanted.unpack:

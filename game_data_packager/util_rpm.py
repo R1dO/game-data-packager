@@ -61,4 +61,4 @@ PACKAGE_CACHE = PackageCache()
 
 def install_packages(debs, method, gain_root='su'):
     """Install one or more packages (a list of filenames)."""
-    run_as_root(['rpm', '-ivh'] + list(debs), gain_root)
+    run_as_root(['dnf', 'install'] + list(debs), gain_root)
