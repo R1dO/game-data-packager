@@ -1435,6 +1435,7 @@ class PackagingTask(object):
                     full = os.path.join(dirpath, fn)
                     full = full[len(destdir):]
                     spec.write(full + '\n')
+        return specfile
 
     def fill_dest_dir_deb(self, package, destdir):
         debdir = os.path.join(destdir, 'DEBIAN')
@@ -2509,14 +2510,13 @@ class PackagingTask(object):
         if not self.fill_dest_dir(package, destdir):
             return None
 
-        self.fill_dest_dir_rpm(package, destdir)
+        specfile = self.fill_dest_dir_rpm(package, destdir)
         self.our_dh_fixperms(destdir)
 
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
 
         try:
             logger.info('generating package %s', package.name)
-            specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
             check_output(['rpmbuild', '--buildroot', destdir,
                                       '-bb', '-v', specfile],
                                       cwd=self.get_workdir())
