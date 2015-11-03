@@ -14,15 +14,8 @@ packages:
       path: common/Doom 3
     disks: 3
     install:
-    - base/pak000.pk4
-    - base/pak001.pk4
-    - base/pak002.pk4
-    - base/pak003.pk4
-    - base/pak004.pk4
-    - base/pak005.pk4
-    - base/pak006.pk4
-    - base/pak007.pk4
-    - base/pak008.pk4
+      - base data
+      - base patch
     license:
     - License.txt
 
@@ -36,8 +29,8 @@ packages:
       path: common/Doom 3
     install_to: usr/share/games/doom3
     install:
-    - d3xp/pak000.pk4
-    - d3xp/pak001.pk4
+      - d3xp data
+      - d3xp patch
     license:
       - License.txt?d3xp
 
@@ -48,24 +41,12 @@ packages:
     expansion_for: doom3-data
     install_to: usr/share/games/doom3
     install:
-    - cdoom/autoexec.cfg
-    - cdoom/cdoom_main.pk4
-    - cdoom/cdoom_maps.pk4
-    - cdoom/cdoom_models.pk4
-    - cdoom/cdoom_sounds.pk4
-    - cdoom/cdoom_textures.pk4
+      - Classic Doom data
     optional:
-    - cdoom/cdoom.ico
-    - cdoom/Classic Doom 3.url
-    - cdoom/description.txt
-    - cdoom/docs/shot00002.jpg
-    - cdoom/docs/Readme.txt
-    - cdoom/fan_extras/classicdoom_001_1280x1024.jpg
-    - cdoom/fan_extras/wallpaper1.jpg
-    - cdoom/fan_extras/wallpaper2.jpg
-    - cdoom/fan_extras/wallpaper3.jpg
+      - Classic Doom docs
+      - Classic Doom extras
     license:
-    - cdoom/docs/License.txt
+      - cdoom/docs/License.txt
 
   doom3-classic-dev:
     DISABLED:
@@ -74,27 +55,7 @@ packages:
     expansion_for: doom3-classic-data
     install_to: usr/share/games/doom3
     install:
-    - cdoom/fan_extras/cdoomsource_131/readme.txt
-    - cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
-    - cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Entity.h
-    - cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Game_local.h
-    - cdoom/fan_extras/cdoomsource_131/game/Item.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Item.h
-    - cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Misc.h
-    - cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Player.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Player.h
-    - cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Target.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Target.h
-    - cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
+      - Classic Doom source
 
   doom3bfg-data:
     longname: 'Doom 3: BFG Edition'
@@ -104,407 +65,481 @@ packages:
       id: 208200
       path: "common/DOOM 3 BFG Edition"
     install:
-    - base/_common.crc
-    - base/_common.resources
-    - base/_ordered.crc
-    - base/_ordered.resources
-    - base/_sound_pc.crc
-    - base/_sound_pc_en.crc
-    - base/_sound_pc_en.resources
-    - base/_sound_pc_fr.crc
-    - base/_sound_pc_gr.crc
-    - base/_sound_pc_it.crc
-    - base/_sound_pc_jp.crc
-    - base/_sound_pc.resources
-    - base/_sound_pc_sp.crc
-    - base/classicmusic/gravis.cfg
-    - base/classicmusic/instruments/ACBASS.PAT
-    - base/classicmusic/instruments/ACCORDN.PAT
-    - base/classicmusic/instruments/ACGUITAR.PAT
-    - base/classicmusic/instruments/ACPIANO.PAT
-    - base/classicmusic/instruments/AGOGOHI.PAT
-    - base/classicmusic/instruments/AGOGOLO.PAT
-    - base/classicmusic/instruments/AGOGO.PAT
-    - base/classicmusic/instruments/ALTOSAX.PAT
-    - base/classicmusic/instruments/APPLAUSE.PAT
-    - base/classicmusic/instruments/ATMOSPHR.PAT
-    - base/classicmusic/instruments/AURORA.PAT
-    - base/classicmusic/instruments/BAGPIPES.PAT
-    - base/classicmusic/instruments/BANJO.PAT
-    - base/classicmusic/instruments/BARISAX.PAT
-    - base/classicmusic/instruments/BASSLEAD.PAT
-    - base/classicmusic/instruments/BASSOON.PAT
-    - base/classicmusic/instruments/BELLTREE.PAT
-    - base/classicmusic/instruments/BLANK.PAT
-    - base/classicmusic/instruments/BONGOHI.PAT
-    - base/classicmusic/instruments/BONGOLO.PAT
-    - base/classicmusic/instruments/BOTTLE.PAT
-    - base/classicmusic/instruments/BOWGLASS.PAT
-    - base/classicmusic/instruments/BRITEPNO.PAT
-    - base/classicmusic/instruments/CABASA.PAT
-    - base/classicmusic/instruments/CALLIOPE.PAT
-    - base/classicmusic/instruments/CARILLON.PAT
-    - base/classicmusic/instruments/CASTINET.PAT
-    - base/classicmusic/instruments/CELESTE.PAT
-    - base/classicmusic/instruments/CELLO.PAT
-    - base/classicmusic/instruments/CHARANG.PAT
-    - base/classicmusic/instruments/CHIFLEAD.PAT
-    - base/classicmusic/instruments/CHOIR.PAT
-    - base/classicmusic/instruments/CHURCH.PAT
-    - base/classicmusic/instruments/CLAPS.PAT
-    - base/classicmusic/instruments/CLARINET.PAT
-    - base/classicmusic/instruments/CLAVE.PAT
-    - base/classicmusic/instruments/CLAVINET.PAT
-    - base/classicmusic/instruments/CLEANGTR.PAT
-    - base/classicmusic/instruments/CONCRTNA.PAT
-    - base/classicmusic/instruments/CONGAHI1.PAT
-    - base/classicmusic/instruments/CONGAHI2.PAT
-    - base/classicmusic/instruments/CONGALO.PAT
-    - base/classicmusic/instruments/CONTRABA.PAT
-    - base/classicmusic/instruments/COWBELL.PAT
-    - base/classicmusic/instruments/CRYSTAL.PAT
-    - base/classicmusic/instruments/CUICA1.PAT
-    - base/classicmusic/instruments/CUICA2.PAT
-    - base/classicmusic/instruments/CYMBELL.PAT
-    - base/classicmusic/instruments/CYMCHINA.PAT
-    - base/classicmusic/instruments/CYMCRSH1.PAT
-    - base/classicmusic/instruments/CYMCRSH2.PAT
-    - base/classicmusic/instruments/CYMRIDE1.PAT
-    - base/classicmusic/instruments/CYMRIDE2.PAT
-    - base/classicmusic/instruments/CYMSPLSH.PAT
-    - base/classicmusic/instruments/DISTGTR.PAT
-    - base/classicmusic/instruments/DOO.PAT
-    - base/classicmusic/instruments/ECHOVOX.PAT
-    - base/classicmusic/instruments/ENGLHORN.PAT
-    - base/classicmusic/instruments/EPIANO1.PAT
-    - base/classicmusic/instruments/EPIANO2.PAT
-    - base/classicmusic/instruments/FANTASIA.PAT
-    - base/classicmusic/instruments/FIDDLE.PAT
-    - base/classicmusic/instruments/FLUTE.PAT
-    - base/classicmusic/instruments/FNGRBASS.PAT
-    - base/classicmusic/instruments/FRENCHRN.PAT
-    - base/classicmusic/instruments/FRESHAIR.PAT
-    - base/classicmusic/instruments/FRETLESS.PAT
-    - base/classicmusic/instruments/FX-BLOW.PAT
-    - base/classicmusic/instruments/FX-FRET.PAT
-    - base/classicmusic/instruments/GHOSTIE.PAT
-    - base/classicmusic/instruments/GLOCKEN.PAT
-    - base/classicmusic/instruments/GTRHARM.PAT
-    - base/classicmusic/instruments/GUIRO1.PAT
-    - base/classicmusic/instruments/GUIRO2.PAT
-    - base/classicmusic/instruments/HALOPAD.PAT
-    - base/classicmusic/instruments/HARMONCA.PAT
-    - base/classicmusic/instruments/HARP.PAT
-    - base/classicmusic/instruments/HELICPTR.PAT
-    - base/classicmusic/instruments/HIGHQ.PAT
-    - base/classicmusic/instruments/HIHATCL.PAT
-    - base/classicmusic/instruments/HIHATOP.PAT
-    - base/classicmusic/instruments/HIHATPD.PAT
-    - base/classicmusic/instruments/HITBRASS.PAT
-    - base/classicmusic/instruments/HOMEORG.PAT
-    - base/classicmusic/instruments/HONKY.PAT
-    - base/classicmusic/instruments/HRPSCHRD.PAT
-    - base/classicmusic/instruments/JAZZGTR.PAT
-    - base/classicmusic/instruments/JINGLES.PAT
-    - base/classicmusic/instruments/JUNGLE.PAT
-    - base/classicmusic/instruments/KALIMBA.PAT
-    - base/classicmusic/instruments/KICK1.PAT
-    - base/classicmusic/instruments/KICK2.PAT
-    - base/classicmusic/instruments/KOTO.PAT
-    - base/classicmusic/instruments/LEAD5TH.PAT
-    - base/classicmusic/instruments/MARACAS.PAT
-    - base/classicmusic/instruments/MARCATO.PAT
-    - base/classicmusic/instruments/MARIMBA.PAT
-    - base/classicmusic/instruments/METALPAD.PAT
-    - base/classicmusic/instruments/METBELL.PAT
-    - base/classicmusic/instruments/METCLICK.PAT
-    - base/classicmusic/instruments/MUSICBOX.PAT
-    - base/classicmusic/instruments/MUTEGTR.PAT
-    - base/classicmusic/instruments/MUTETRUM.PAT
-    - base/classicmusic/instruments/NYGUITAR.PAT
-    - base/classicmusic/instruments/OBOE.PAT
-    - base/classicmusic/instruments/OCARINA.PAT
-    - base/classicmusic/instruments/ODGUITAR.PAT
-    - base/classicmusic/instruments/ORCHHIT.PAT
-    - base/classicmusic/instruments/PERCORG.PAT
-    - base/classicmusic/instruments/PICCOLO.PAT
-    - base/classicmusic/instruments/PICKBASS.PAT
-    - base/classicmusic/instruments/PISTOL.PAT
-    - base/classicmusic/instruments/PIZZCATO.PAT
-    - base/classicmusic/instruments/POLYSYN.PAT
-    - base/classicmusic/instruments/RECORDER.PAT
-    - base/classicmusic/instruments/REEDORG.PAT
-    - base/classicmusic/instruments/REVCYM.PAT
-    - base/classicmusic/instruments/ROCKORG.PAT
-    - base/classicmusic/instruments/SANTUR.PAT
-    - base/classicmusic/instruments/SAWWAVE.PAT
-    - base/classicmusic/instruments/SCRATCH1.PAT
-    - base/classicmusic/instruments/SCRATCH2.PAT
-    - base/classicmusic/instruments/SEASHORE.PAT
-    - base/classicmusic/instruments/SHAKAZUL.PAT
-    - base/classicmusic/instruments/SHAKER.PAT
-    - base/classicmusic/instruments/SHAMISEN.PAT
-    - base/classicmusic/instruments/SHANNAI.PAT
-    - base/classicmusic/instruments/SITAR.PAT
-    - base/classicmusic/instruments/SLAPBAS1.PAT
-    - base/classicmusic/instruments/SLAPBAS2.PAT
-    - base/classicmusic/instruments/SLAP.PAT
-    - base/classicmusic/instruments/SLOWSTR.PAT
-    - base/classicmusic/instruments/SNARE1.PAT
-    - base/classicmusic/instruments/SNARE2.PAT
-    - base/classicmusic/instruments/SOUNDTRK.PAT
-    - base/classicmusic/instruments/SPRNOSAX.PAT
-    - base/classicmusic/instruments/SQRCLICK.PAT
-    - base/classicmusic/instruments/SQRWAVE.PAT
-    - base/classicmusic/instruments/STARTRAK.PAT
-    - base/classicmusic/instruments/STEELDRM.PAT
-    - base/classicmusic/instruments/STICKRIM.PAT
-    - base/classicmusic/instruments/STICKS.PAT
-    - base/classicmusic/instruments/SURDO1.PAT
-    - base/classicmusic/instruments/SURDO2.PAT
-    - base/classicmusic/instruments/SWEEPER.PAT
-    - base/classicmusic/instruments/SYNBASS1.PAT
-    - base/classicmusic/instruments/SYNBASS2.PAT
-    - base/classicmusic/instruments/SYNBRAS1.PAT
-    - base/classicmusic/instruments/SYNBRAS2.PAT
-    - base/classicmusic/instruments/SYNPIANO.PAT
-    - base/classicmusic/instruments/SYNSTR1.PAT
-    - base/classicmusic/instruments/SYNSTR2.PAT
-    - base/classicmusic/instruments/SYNTOM.PAT
-    - base/classicmusic/instruments/TAIKO.PAT
-    - base/classicmusic/instruments/TAMBORIN.PAT
-    - base/classicmusic/instruments/TELEPHON.PAT
-    - base/classicmusic/instruments/TENORSAX.PAT
-    - base/classicmusic/instruments/TIMBALEH.PAT
-    - base/classicmusic/instruments/TIMBALEL.PAT
-    - base/classicmusic/instruments/TIMPANI.PAT
-    - base/classicmusic/instruments/TOMHI1.PAT
-    - base/classicmusic/instruments/TOMHI2.PAT
-    - base/classicmusic/instruments/TOMLO1.PAT
-    - base/classicmusic/instruments/TOMLO2.PAT
-    - base/classicmusic/instruments/TOMMID1.PAT
-    - base/classicmusic/instruments/TOMMID2.PAT
-    - base/classicmusic/instruments/TOMS.PAT
-    - base/classicmusic/instruments/TREMSTR.PAT
-    - base/classicmusic/instruments/TRIANGL1.PAT
-    - base/classicmusic/instruments/TRIANGL2.PAT
-    - base/classicmusic/instruments/TROMBONE.PAT
-    - base/classicmusic/instruments/TRUMPET.PAT
-    - base/classicmusic/instruments/TUBA.PAT
-    - base/classicmusic/instruments/TUBEBELL.PAT
-    - base/classicmusic/instruments/UNICORN.PAT
-    - base/classicmusic/instruments/VIBES.PAT
-    - base/classicmusic/instruments/VIBSLAP.PAT
-    - base/classicmusic/instruments/VIOLA.PAT
-    - base/classicmusic/instruments/VIOLIN.PAT
-    - base/classicmusic/instruments/VOICES.PAT
-    - base/classicmusic/instruments/VOXLEAD.PAT
-    - base/classicmusic/instruments/WARMPAD.PAT
-    - base/classicmusic/instruments/WHISTLE1.PAT
-    - base/classicmusic/instruments/WHISTLE2.PAT
-    - base/classicmusic/instruments/WHISTLE.PAT
-    - base/classicmusic/instruments/WOODBLK1.PAT
-    - base/classicmusic/instruments/WOODBLK2.PAT
-    - base/classicmusic/instruments/WOODBLK.PAT
-    - base/classicmusic/instruments/WOODFLUT.PAT
-    - base/classicmusic/instruments/XYLOPHON.PAT
-    - base/default.cfg
-    - base/joy_360_0.cfg
-    - base/joy_360_1.cfg
-    - base/joy_lefty.cfg
-    - base/joy_righty.cfg
-    - base/maps/admin.crc
-    - base/maps/admin.resources
-    - base/maps/alphalabs1.crc
-    - base/maps/alphalabs1.resources
-    - base/maps/alphalabs2.crc
-    - base/maps/alphalabs2.resources
-    - base/maps/alphalabs3.crc
-    - base/maps/alphalabs3.resources
-    - base/maps/alphalabs4.crc
-    - base/maps/alphalabs4.resources
-    - base/maps/caverns1.crc
-    - base/maps/caverns1.resources
-    - base/maps/caverns2.crc
-    - base/maps/caverns2.resources
-    - base/maps/comm1.crc
-    - base/maps/comm1.resources
-    - base/maps/commoutside.crc
-    - base/maps/commoutside.resources
-    - base/maps/cpuboss.crc
-    - base/maps/cpuboss.resources
-    - base/maps/cpu.crc
-    - base/maps/cpu.resources
-    - base/maps/d3ctf1.crc
-    - base/maps/d3ctf1.resources
-    - base/maps/d3ctf2.crc
-    - base/maps/d3ctf2.resources
-    - base/maps/d3ctf3.crc
-    - base/maps/d3ctf3.resources
-    - base/maps/d3ctf4.crc
-    - base/maps/d3ctf4.resources
-    - base/maps/d3dm1.crc
-    - base/maps/d3dm1.resources
-    - base/maps/d3dm2.crc
-    - base/maps/d3dm2.resources
-    - base/maps/d3dm3.crc
-    - base/maps/d3dm3.resources
-    - base/maps/d3dm4.crc
-    - base/maps/d3dm4.resources
-    - base/maps/d3dm5.crc
-    - base/maps/d3dm5.resources
-    - base/maps/d3xpdm1.crc
-    - base/maps/d3xpdm1.resources
-    - base/maps/d3xpdm2.crc
-    - base/maps/d3xpdm2.resources
-    - base/maps/d3xpdm3.crc
-    - base/maps/d3xpdm3.resources
-    - base/maps/d3xpdm4.crc
-    - base/maps/d3xpdm4.resources
-    - base/maps/delta1.crc
-    - base/maps/delta1.resources
-    - base/maps/delta2a.crc
-    - base/maps/delta2a.resources
-    - base/maps/delta2b.crc
-    - base/maps/delta2b.resources
-    - base/maps/delta3.crc
-    - base/maps/delta3.resources
-    - base/maps/delta4.crc
-    - base/maps/delta4.resources
-    - base/maps/delta5.crc
-    - base/maps/delta5.resources
-    - base/maps/deltax.crc
-    - base/maps/deltax.resources
-    - base/maps/enpro.crc
-    - base/maps/enpro.resources
-    - base/maps/erebus1.crc
-    - base/maps/erebus1.resources
-    - base/maps/erebus2.crc
-    - base/maps/erebus2.resources
-    - base/maps/erebus3.crc
-    - base/maps/erebus3.resources
-    - base/maps/erebus4.crc
-    - base/maps/erebus4.resources
-    - base/maps/erebus5.crc
-    - base/maps/erebus5.resources
-    - base/maps/erebus6.crc
-    - base/maps/erebus6.resources
-    - base/maps/hell1.crc
-    - base/maps/hell1.resources
-    - base/maps/hell.crc
-    - base/maps/hellhole.crc
-    - base/maps/hellhole.resources
-    - base/maps/hell.resources
-    - base/maps/le_enpro1.crc
-    - base/maps/le_enpro1.resources
-    - base/maps/le_enpro2.crc
-    - base/maps/le_enpro2.resources
-    - base/maps/le_exis1.crc
-    - base/maps/le_exis1.resources
-    - base/maps/le_exis2.crc
-    - base/maps/le_exis2.resources
-    - base/maps/le_hell.crc
-    - base/maps/le_hell_post.crc
-    - base/maps/le_hell_post.resources
-    - base/maps/le_hell.resources
-    - base/maps/le_underground2.crc
-    - base/maps/le_underground2.resources
-    - base/maps/le_underground.crc
-    - base/maps/le_underground.resources
-    - base/maps/mars_city1.crc
-    - base/maps/mars_city1.resources
-    - base/maps/mars_city2.crc
-    - base/maps/mars_city2.resources
-    - base/maps/mc_underground.crc
-    - base/maps/mc_underground.resources
-    - base/maps/monorail.crc
-    - base/maps/monorail.resources
-    - base/maps/phobos1.crc
-    - base/maps/phobos1.resources
-    - base/maps/phobos2.crc
-    - base/maps/phobos2.resources
-    - base/maps/phobos3.crc
-    - base/maps/phobos3.resources
-    - base/maps/phobos4.crc
-    - base/maps/phobos4.resources
-    - base/maps/recycling1.crc
-    - base/maps/recycling1.resources
-    - base/maps/recycling2.crc
-    - base/maps/recycling2.resources
-    - base/maps/site3.crc
-    - base/maps/site3.resources
-    - base/sound/VO/video/deployment.bik
-    - base/sound/VO/video/epd.bik
-    - base/sound/VO/video/generator.bik
-    - base/sound/VO/video/grabber.bik
-    - base/sound/VO/video/hydrocon.bik
-    - base/sound/VO/video/mfs.bik
-    - base/sound/VO/video/video_alphalabs_intro.bik
-    - base/sound/VO/video/video_ancient_civ.bik
-    - base/sound/VO/video/video_bfg.bik
-    - base/sound/VO/video/video_chaingun.bik
-    - base/sound/VO/video/video_demon_museum.bik
-    - base/sound/VO/video/video_ian_report.bik
-    - base/sound/VO/video/video_ipn_news.bik
-    - base/sound/VO/video/video_marine_sops.bik
-    - base/sound/VO/video/video_meyers_report.bik
-    - base/sound/VO/video/video_plasmagun.bik
-    - base/sound/VO/video/video_recycling.bik
-    - base/sound/VO/video/video_soulcube.bik
-    - base/sound/VO/video/video_tablets.bik
-    - base/sound/VO/video/video_uac_welcome.bik
-    - base/strings/english.lang
-    - base/video/admin/betruger.bik
-    - base/video/comm1/swann_vidphone1.bik
-    - base/video/comm1/swann_vidphone2.bik
-    - base/video/comm1/swann_vidphone3.bik
-    - base/video/data.bik
-    - base/video/delta1/sarge_video1.bik
-    - base/video/enpro1/lm_meyers_enpro.bik
-    - base/video/erebusteam.bik
-    - base/video/fireball.bik
-    - base/video/hellhole/rescue.bik
-    - base/video/intro/introloop.bik
-    - base/video/loadvideo.bik
-    - base/video/mars1.bik
-    - base/video/marscity/decom.bik
-    - base/video/marscity/dropship.bik
-    - base/video/marscity/monoflyby.bik
-    - base/video/marscity/sarge_mission_brief.bik
-    - base/video/marscity/sci_team_request.bik
-    - base/video/marscity/ship.bik
-    - base/video/mars_rotation.bik
-    - base/video/mcneil.bik
-    - base/video/mc_underground/inv1sm.bik
-    - base/video/mc_underground/inv2sm.bik
-    - base/video/mc_underground/inv3.bik
-    - base/video/mc_underground/inv4sm.bik
-    - base/video/mc_underground/inv5sm.bik
-    - base/video/mc_underground/inv6sm.bik
-    - base/video/mc_underground/inv7sm.bik
-    - base/video/radar.bik
-    - base/video/recycling2/cs_bert01_composite.bik
-    - base/video/recycling2/cs_bert02_composite.bik
-    - base/wads/NERVE.WAD
-    - base/wads/DOOM2.WAD
-    - base/wads/DOOM.WAD
+      - BFG data
+
+groups:
+  base data: |
+    353159257 71b8d37b2444d3d86a36fd61783844fe  base/pak000.pk4
+    229649726 4bc4f3ba04ec2b4f4837be40e840a3c1  base/pak001.pk4
+    416937674 fa84069e9642ad9aa4b49624150cc345  base/pak002.pk4
+    317590154 f22d8464997924e4913e467e7d62d5fe  base/pak003.pk4
+    237752384 38561a3c73f93f2e6fd31abf1d4e9102  base/pak004.pk4
+
+  base patch: |
+    552334    2afd4ece27d36393b7538d55a345b90d  base/pak005.pk4
+    218751    a6e7003fa9dcc75073dc02b56399b370  base/pak006.pk4
+    192031    6319f086f930ec1618ab09b4c20c268c  base/pak007.pk4
+    12243     28750b7841de9453eb335bad6841a2a5  base/pak008.pk4
+
+  d3xp data: |
+    538385153 a883fef0fd10aadeb73d34c462ff865d  d3xp/pak000.pk4
+
+  d3xp patch: |
+    99336 06fc9be965e345587064056bf22236d2  d3xp/pak001.pk4
+
+  BFG data: |
+    9064        00f89dc77d79f015d834019114f5fe74 base/_common.crc
+    80383351    6eea23da08930c4f91415ee005d417ff base/_common.resources
+    5360        c6017691bc059f4c460a5df0f6ab5a5a base/_ordered.crc
+    11311441    cedb159596cacb5a8f22bda251475b6a base/_ordered.resources
+    19052       0645725e0c5d03cadffc4695e663c233 base/_sound_pc.crc
+    545924092   98ce8ddb7aa83b7f2b39ff9cc6a5064e base/_sound_pc.resources
+    3376        27bf2ef54ff3743f8c52e296ad97c037 base/_sound_pc_en.crc
+    133979908   d30d68a061b8771e9730c2a0dd07edbb base/_sound_pc_en.resources
+    3316        c13acbb298d4deadfcd06db10cba0d43 base/_sound_pc_fr.crc
+    3336        4277451b4cfbcb7b060dedbdaf93b0fd base/_sound_pc_gr.crc
+    3336        e8e977b1b58069354da2b05e7e9a54a2 base/_sound_pc_it.crc
+    3340        6df877b53293348cb360fe7215d0b18c base/_sound_pc_jp.crc
+    3316        4b82286cec8f8ce00f20f35566dc5049 base/_sound_pc_sp.crc
+    2973        d6dab5e941e5090e99951e521336daeb base/classicmusic/gravis.cfg
+    10829       08a0918d039ca1cfb418feaca1fe8983 base/classicmusic/instruments/ACBASS.PAT
+    19623       ee71868661463ac9f8bb6b2eede1dbef base/classicmusic/instruments/ACCORDN.PAT
+    52581       755dabe1a645820f0c96fa5cf1dc8a2a base/classicmusic/instruments/ACGUITAR.PAT
+    65259       f79fa41fdc1e2916c93f94dfb92526e0 base/classicmusic/instruments/ACPIANO.PAT
+    27727       272763736cab67ec659788c1c69b2b95 base/classicmusic/instruments/AGOGO.PAT
+    7283        0818f0d4f1314c04009f5b0551182a30 base/classicmusic/instruments/AGOGOHI.PAT
+    7283        a9591b9372d89cf805881afc39fef5f3 base/classicmusic/instruments/AGOGOLO.PAT
+    11711       6cc3fb0e79aa4b77830851ed01c52a49 base/classicmusic/instruments/ALTOSAX.PAT
+    60449       ea36c2e74a19a34fcfb957326989537f base/classicmusic/instruments/APPLAUSE.PAT
+    63035       d72b0950b013cc52e01ff6748f6e221a base/classicmusic/instruments/ATMOSPHR.PAT
+    62503       ccc316461e499102c7eed64d7dfad330 base/classicmusic/instruments/AURORA.PAT
+    16057       2ae148dd3236ab01e512e6f4e03d5708 base/classicmusic/instruments/BAGPIPES.PAT
+    64523       91376a6a81ad1136846d41f17a82f89c base/classicmusic/instruments/BANJO.PAT
+    21739       af7f6916b179766d578b4f7960a6feca base/classicmusic/instruments/BARISAX.PAT
+    53389       7830b813e24b337aeeb188f698fb70d1 base/classicmusic/instruments/BASSLEAD.PAT
+    16723       fe96a48f6bf6cf5a0301b469a3dd6645 base/classicmusic/instruments/BASSOON.PAT
+    64103       9ee77f3c3dbff0bb8e218cc60ef9ef3c base/classicmusic/instruments/BELLTREE.PAT
+    3367        09655a4dca92c12b769f1290f684c172 base/classicmusic/instruments/BLANK.PAT
+    7233        bfe5e0ceee5e5cbae4033d6125424ed5 base/classicmusic/instruments/BONGOHI.PAT
+    9201        49261077b29782ebc82ca5ecc9e28213 base/classicmusic/instruments/BONGOLO.PAT
+    25063       623c4cd3758834337a026e4edd4e7c56 base/classicmusic/instruments/BOTTLE.PAT
+    49691       3d5ee64c6366240a7743508c245a4ffe base/classicmusic/instruments/BOWGLASS.PAT
+    72739       381d9db3552ab1e3a4e10baa12fe1a11 base/classicmusic/instruments/BRITEPNO.PAT
+    17203       121fd2256b5c53a021b9229f15c2a43b base/classicmusic/instruments/CABASA.PAT
+    46303       cc4f8fbf084bc5dd3087758e7a2084a2 base/classicmusic/instruments/CALLIOPE.PAT
+    12089       b239e3fae8d7754975420464313f7057 base/classicmusic/instruments/CARILLON.PAT
+    12349       3055f331dd75e04d2863d68865d69dc5 base/classicmusic/instruments/CASTINET.PAT
+    20207       5ea85c7747ed3ef5310ea17f39251baa base/classicmusic/instruments/CELESTE.PAT
+    18741       c64484edc6389a59676bd2bc2125bfbb base/classicmusic/instruments/CELLO.PAT
+    90661       f6d7516d4f864cfadcfe594249861fcd base/classicmusic/instruments/CHARANG.PAT
+    63381       1f7e8cfb28c0137338bc234a30cf1387 base/classicmusic/instruments/CHIFLEAD.PAT
+    45353       21012953d4f5009ba92171c7008a326f base/classicmusic/instruments/CHOIR.PAT
+    4609        a940c2d0935254de87432ab49a146f03 base/classicmusic/instruments/CHURCH.PAT
+    11719       07df2480991307667885624fa494edcf base/classicmusic/instruments/CLAPS.PAT
+    19161       6a686100010311756f8cdf9ec00f9d96 base/classicmusic/instruments/CLARINET.PAT
+    5035        772881799199742c66ee7f5fa4ccb0fc base/classicmusic/instruments/CLAVE.PAT
+    3443        12dfc9d40d85e8856412532fe3d155f1 base/classicmusic/instruments/CLAVINET.PAT
+    46027       fec3fb42c126e18a3a9d7c02a734b2ce base/classicmusic/instruments/CLEANGTR.PAT
+    17981       2b3dd9b420b4c3ec9162c7c5faee5951 base/classicmusic/instruments/CONCRTNA.PAT
+    8753        a835066fb20b92137a1656c81f034f01 base/classicmusic/instruments/CONGAHI1.PAT
+    9713        4eb1e50b72e79c46187a791affc9e692 base/classicmusic/instruments/CONGAHI2.PAT
+    9713        03cdf416c641a3d55c47d096907263e3 base/classicmusic/instruments/CONGALO.PAT
+    9723        e5e6d96900a570c01cf7fabefaf1dbd9 base/classicmusic/instruments/CONTRABA.PAT
+    6645        c34bb86bbcae74f575271e36ed170554 base/classicmusic/instruments/COWBELL.PAT
+    60783       10da2d6bebbba8390d0c86c5546815c7 base/classicmusic/instruments/CRYSTAL.PAT
+    18995       ed79f6b512f5d0ab6a96d963edbbcaae base/classicmusic/instruments/CUICA1.PAT
+    26017       db457f2f93ea6d8e591288cbc86f03df base/classicmusic/instruments/CUICA2.PAT
+    34815       59768d88925d72dab9deb3990247322f base/classicmusic/instruments/CYMBELL.PAT
+    48545       792521e4fd5ead35a093e94186393e44 base/classicmusic/instruments/CYMCHINA.PAT
+    63353       2598e06670eba72cd4cfa9d45c543336 base/classicmusic/instruments/CYMCRSH1.PAT
+    62411       011f618d30b6a604ff6564030cb468fd base/classicmusic/instruments/CYMCRSH2.PAT
+    35655       bb014b007a3b730398b34603f9626574 base/classicmusic/instruments/CYMRIDE1.PAT
+    35655       2b7e10fe54e2efbc9a886b968abbf84f base/classicmusic/instruments/CYMRIDE2.PAT
+    63353       6bcf17228b9ee20fecd8baf79c32108e base/classicmusic/instruments/CYMSPLSH.PAT
+    38249       fd3c1b8d959b85d1564f236a42638443 base/classicmusic/instruments/DISTGTR.PAT
+    17333       752516b6b8755b8a9b43653ac8debe4b base/classicmusic/instruments/DOO.PAT
+    30287       f36704bd746cbce9ea9c68a7ae42da3d base/classicmusic/instruments/ECHOVOX.PAT
+    24675       86fd731092111c447672cc42fb661521 base/classicmusic/instruments/ENGLHORN.PAT
+    15005       d64659adfd078970d459f1b54eb0fe82 base/classicmusic/instruments/EPIANO1.PAT
+    44191       df57162d53abb01b9ba09582c75b76c6 base/classicmusic/instruments/EPIANO2.PAT
+    47229       c97b1e94eb20fcac7c6c9b3ddf24271b base/classicmusic/instruments/FANTASIA.PAT
+    12309       16d0486475bde0fa4c8fa39b1c6eafda base/classicmusic/instruments/FIDDLE.PAT
+    12383       6675402f37fdc88724514c7a7c530c12 base/classicmusic/instruments/FLUTE.PAT
+    19797       0f42b9f56daf77d955ddd3011c0da144 base/classicmusic/instruments/FNGRBASS.PAT
+    28635       35da5afae4202b69e223d4a37589d2f7 base/classicmusic/instruments/FRENCHRN.PAT
+    58307       b8f71092a142aa30f5c005b1d2a83037 base/classicmusic/instruments/FRESHAIR.PAT
+    5605        c526525e7d94071677442d06994a3dbe base/classicmusic/instruments/FRETLESS.PAT
+    57693       b0fe2195303525e3e613064b373cb424 base/classicmusic/instruments/FX-BLOW.PAT
+    27631       92c4a811a5c8dfa365fb77f865afac4f base/classicmusic/instruments/FX-FRET.PAT
+    63301       7370ae5964c2712a6a6af60e83dfd7fb base/classicmusic/instruments/GHOSTIE.PAT
+    10695       13e7c2dae8d24f5e4d6af0f0b99efbe6 base/classicmusic/instruments/GLOCKEN.PAT
+    10173       a744038719d53cbe3c28aa6e8611c447 base/classicmusic/instruments/GTRHARM.PAT
+    8561        94f16f9deafa0d3346923e7c061511d9 base/classicmusic/instruments/GUIRO1.PAT
+    18821       d6b2b262d634964bbb403344f5aad6a9 base/classicmusic/instruments/GUIRO2.PAT
+    60291       a324502b03aa8f9a958f13a643693a06 base/classicmusic/instruments/HALOPAD.PAT
+    15301       26fc9e3e9bb60535e9e0f2b241c23aac base/classicmusic/instruments/HARMONCA.PAT
+    23927       3d96f9d2a12e0d05f9a1435e88501aba base/classicmusic/instruments/HARP.PAT
+    50327       44515f7fe59bd30b3b98ee86beebd953 base/classicmusic/instruments/HELICPTR.PAT
+    3945        56b92ed6febae6fe63ca510049c0d45f base/classicmusic/instruments/HIGHQ.PAT
+    9453        3e21dd3d95925f7e7b94f7bed7e5f47f base/classicmusic/instruments/HIHATCL.PAT
+    40417       0079f2bb33ff962f6542b334c2b5bc55 base/classicmusic/instruments/HIHATOP.PAT
+    3925        925df5b8f460a0ba9520a8c8452db729 base/classicmusic/instruments/HIHATPD.PAT
+    63369       871f29ce5beb2537d8d6ee1b99271a5e base/classicmusic/instruments/HITBRASS.PAT
+    2301        ae48658fa5486f23abdf951d9302e976 base/classicmusic/instruments/HOMEORG.PAT
+    131905      615fb972f898ca531ce4fdec04d0eb6e base/classicmusic/instruments/HONKY.PAT
+    7709        8a6f07001d4569af771f32e932e73738 base/classicmusic/instruments/HRPSCHRD.PAT
+    55923       68fd50d9cfed898f96a4c161bc3352e5 base/classicmusic/instruments/JAZZGTR.PAT
+    34219       a2bb9d1516bc407b0f60508be7236c8f base/classicmusic/instruments/JINGLES.PAT
+    27541       99a22cfb0ced2fd9a9b8faa88ff835ff base/classicmusic/instruments/JUNGLE.PAT
+    4739        07aef92295767e67f7c7c57464f898c1 base/classicmusic/instruments/KALIMBA.PAT
+    9411        3d9cb546a01c993d09807b9513484466 base/classicmusic/instruments/KICK1.PAT
+    10377       8d0e3077e0651d573c6ad21ec7ca4e31 base/classicmusic/instruments/KICK2.PAT
+    42079       253283581dbae8563f0ba875eb5cd357 base/classicmusic/instruments/KOTO.PAT
+    13233       80f2bc2010f9ec7d7fed71034bacd724 base/classicmusic/instruments/LEAD5TH.PAT
+    9433        c20fddf0d708917109ebebd9e3c9279d base/classicmusic/instruments/MARACAS.PAT
+    122881      d2f361dd0e6f31310188de5ecd937bb4 base/classicmusic/instruments/MARCATO.PAT
+    4447        47c3dbe7196dfee0fa9925dedc720ff6 base/classicmusic/instruments/MARIMBA.PAT
+    60905       ed0f0556971acc0783c8b2061b308306 base/classicmusic/instruments/METALPAD.PAT
+    539         d53324ccf52c88c4928e324cca87093d base/classicmusic/instruments/METBELL.PAT
+    539         a3dc7a3b86d34ff8a8f59296d0b4f4a0 base/classicmusic/instruments/METCLICK.PAT
+    30947       c4614885a9287a4dd905fdde97126bad base/classicmusic/instruments/MUSICBOX.PAT
+    34577       0512952794aec23a679c0a43b741f0d6 base/classicmusic/instruments/MUTEGTR.PAT
+    19019       451bd80af84ebceaa534d4d5512fb4a0 base/classicmusic/instruments/MUTETRUM.PAT
+    39211       476d7262f7699b4d37cb930a6f2e7832 base/classicmusic/instruments/NYGUITAR.PAT
+    9269        3ee62c16e96ea4998f46d9b704823c88 base/classicmusic/instruments/OBOE.PAT
+    3537        90ae9f25e00a53090e6ea1c921216c28 base/classicmusic/instruments/OCARINA.PAT
+    25845       3a394df719af2ea3d7f03965402a5fbb base/classicmusic/instruments/ODGUITAR.PAT
+    28751       44720380ea8c449c637cf106508894e2 base/classicmusic/instruments/ORCHHIT.PAT
+    15435       70739dfdc05f15134e8e39b41ddef914 base/classicmusic/instruments/PERCORG.PAT
+    8945        b00dada605ee318779759bb77345be67 base/classicmusic/instruments/PICCOLO.PAT
+    33213       2b08f4ed47567b2e2c3cf75934fd6a12 base/classicmusic/instruments/PICKBASS.PAT
+    36595       aba0f0341fd76440619b42295a670b0d base/classicmusic/instruments/PISTOL.PAT
+    40173       68d36cd69bfcd7c22487747b1e2c6aa2 base/classicmusic/instruments/PIZZCATO.PAT
+    60759       7ed1d40c84318cb010de3a0eb719df9b base/classicmusic/instruments/POLYSYN.PAT
+    5647        5098194490c5861a5c91bb81a151ad57 base/classicmusic/instruments/RECORDER.PAT
+    3471        ce1ecec4327380bfa50514f38dec8654 base/classicmusic/instruments/REEDORG.PAT
+    27391       0d889d530f1896eef577799dc74d9ee2 base/classicmusic/instruments/REVCYM.PAT
+    60887       d5397ea3d2d31326d1d4ca5d404447fb base/classicmusic/instruments/ROCKORG.PAT
+    43833       111c7940dc7613209e7d114f59dcc354 base/classicmusic/instruments/SANTUR.PAT
+    54485       c1edf7db70663f0aa17450931bb57d76 base/classicmusic/instruments/SAWWAVE.PAT
+    9091        a9e0f1f049fafaaf4e5fc0f44e556e8c base/classicmusic/instruments/SCRATCH1.PAT
+    4883        432b7f0b16954a03fd84578cf1a2e90a base/classicmusic/instruments/SCRATCH2.PAT
+    62407       8d0e1e6576a7ea28c501d8349fd8f478 base/classicmusic/instruments/SEASHORE.PAT
+    62589       83f58d66f19e3480904229085370c159 base/classicmusic/instruments/SHAKAZUL.PAT
+    6527        629207f107b5b19268b06930f19c96c4 base/classicmusic/instruments/SHAKER.PAT
+    26667       053cfa2cbe020d342e2aa86d6145dcf4 base/classicmusic/instruments/SHAMISEN.PAT
+    20151       cda799949350716440f0d72b026f184c base/classicmusic/instruments/SHANNAI.PAT
+    36979       d647c81792bda594e2f16a2305089b56 base/classicmusic/instruments/SITAR.PAT
+    12031       b9482a886dad694fb42d6c32318fa15a base/classicmusic/instruments/SLAP.PAT
+    56133       b830108a3e6447511b44fcaa626ae503 base/classicmusic/instruments/SLAPBAS1.PAT
+    41581       5cebf0e3e744768fbf46b880d91af4e6 base/classicmusic/instruments/SLAPBAS2.PAT
+    36717       7162cf8dea06d05f5a7e0d66179fcbe1 base/classicmusic/instruments/SLOWSTR.PAT
+    17417       1ca9188b1900689cf061d47b601088c0 base/classicmusic/instruments/SNARE1.PAT
+    8503        ccdddedf4cc3dc9c9d95d4d757f73fa8 base/classicmusic/instruments/SNARE2.PAT
+    40091       6bb379a14ae4c17a21d37a50e3a52822 base/classicmusic/instruments/SOUNDTRK.PAT
+    14713       c4aeedb4269e140950770e0e289a57af base/classicmusic/instruments/SPRNOSAX.PAT
+    539         53ed3fb852a61d8aae2bec5db740bd32 base/classicmusic/instruments/SQRCLICK.PAT
+    30439       1621b67653dd7648bf6b8565d911f399 base/classicmusic/instruments/SQRWAVE.PAT
+    55085       f7a256ff0c77590f0a1dd16f7a28eacd base/classicmusic/instruments/STARTRAK.PAT
+    24229       e81942cc8f8a2379c4621793acc24090 base/classicmusic/instruments/STEELDRM.PAT
+    6005        11496958bd66a2e8592c86466dc4a549 base/classicmusic/instruments/STICKRIM.PAT
+    8757        b97605a8eb68aa23ebbe9946c3bdcfc8 base/classicmusic/instruments/STICKS.PAT
+    19527       81aa141c160ade3bdcbc5678216c68c4 base/classicmusic/instruments/SURDO1.PAT
+    19527       b16a038ca9c4c35a2ebb48550593b89f base/classicmusic/instruments/SURDO2.PAT
+    62745       03e76264eee9f61f0c5feb82cfb29dee base/classicmusic/instruments/SWEEPER.PAT
+    12627       d2381706c6000580b4aa2c29ea6f26ff base/classicmusic/instruments/SYNBASS1.PAT
+    6191        f9ddf2793f904f2d8798145c7624cc71 base/classicmusic/instruments/SYNBASS2.PAT
+    61735       8709e8f0b70479c6ad6d51f615325a5f base/classicmusic/instruments/SYNBRAS1.PAT
+    60641       08f18a3dd2ab1691e263656080f88777 base/classicmusic/instruments/SYNBRAS2.PAT
+    11543       6804c3d96cc966c731460bdeeabb32c5 base/classicmusic/instruments/SYNPIANO.PAT
+    62763       1285df8e7ec98a205c799851063360ee base/classicmusic/instruments/SYNSTR1.PAT
+    33165       f98e4c1081a48d3a7cbdb838e9780f99 base/classicmusic/instruments/SYNSTR2.PAT
+    61331       0197ca308eb7d6aa825356fd4bcb91a0 base/classicmusic/instruments/SYNTOM.PAT
+    37671       606ab6204b3d853851b4a3245e0b5845 base/classicmusic/instruments/TAIKO.PAT
+    18219       1718fb7fef7f1ebc91601ecf15ca078e base/classicmusic/instruments/TAMBORIN.PAT
+    9157        c3a57bb7a415ae31e4bfea36b7cec65a base/classicmusic/instruments/TELEPHON.PAT
+    17367       1c699f9c9a1fce54d0efbe5baf046644 base/classicmusic/instruments/TENORSAX.PAT
+    10839       0f8f64a11f19f0cef2420309200d2b7e base/classicmusic/instruments/TIMBALEH.PAT
+    19787       d3ae41d760f783a7859e9233aaa79e84 base/classicmusic/instruments/TIMBALEL.PAT
+    14473       c5ae50faec03d2dae2b338f30d36712e base/classicmusic/instruments/TIMPANI.PAT
+    13467       d354a2fd0fcf5faf4202a953f1d5902d base/classicmusic/instruments/TOMHI1.PAT
+    13455       16dacdf8fa4f7a07830fc78ef8d26295 base/classicmusic/instruments/TOMHI2.PAT
+    13455       056ce10bbe52f62de6d102e402b1dc7b base/classicmusic/instruments/TOMLO1.PAT
+    19527       7aaf6587d2f915d4df3eee55e3f8bf5f base/classicmusic/instruments/TOMLO2.PAT
+    13455       45789a2ea894b16998f4e6f027648720 base/classicmusic/instruments/TOMMID1.PAT
+    13455       b122269bb2da503aa3b02a747791a59e base/classicmusic/instruments/TOMMID2.PAT
+    13467       823403bdd63a2aaa8813758600ac2919 base/classicmusic/instruments/TOMS.PAT
+    122881      af1e9273df8d883d8598e2c62eec413d base/classicmusic/instruments/TREMSTR.PAT
+    4781        2f43f3a3fc43bfe34208a8db7ef3c23e base/classicmusic/instruments/TRIANGL1.PAT
+    31901       9639795c49cb0eb938cedac7dedf3e36 base/classicmusic/instruments/TRIANGL2.PAT
+    26187       efe2666352dcf293d1601797a42c6bdb base/classicmusic/instruments/TROMBONE.PAT
+    13621       62265dbaf7d02ad88764b6fbb1f112c5 base/classicmusic/instruments/TRUMPET.PAT
+    11847       bcc9e1d821134bfc17074f9acc9027d9 base/classicmusic/instruments/TUBA.PAT
+    18637       f49344b82899ca0e0173bea0d054307d base/classicmusic/instruments/TUBEBELL.PAT
+    60505       35fc66854a8778917bbeaa6802c08355 base/classicmusic/instruments/UNICORN.PAT
+    21597       3abdb279b7a9372259304cc511afe0ca base/classicmusic/instruments/VIBES.PAT
+    19247       ef456cb88a5f69702292fc3baeb042bf base/classicmusic/instruments/VIBSLAP.PAT
+    56465       83dd0a6dc3ffcade864a83c25e8189e8 base/classicmusic/instruments/VIOLA.PAT
+    25061       0703505e239b30723389cd510bac01f7 base/classicmusic/instruments/VIOLIN.PAT
+    30287       b0f4b3defad343e8fb9e79a6b51e9bb2 base/classicmusic/instruments/VOICES.PAT
+    30289       5675ef5e3d792e8e37c37a3250b772b2 base/classicmusic/instruments/VOXLEAD.PAT
+    36491       f86471f661e11b87ab7835c8f200edbd base/classicmusic/instruments/WARMPAD.PAT
+    12053       9bbf7bd68b33653be3a195aff630baa4 base/classicmusic/instruments/WHISTLE.PAT
+    4315        b173c3e39d9336474469da6d01fa2c67 base/classicmusic/instruments/WHISTLE1.PAT
+    2173        a574f4f6167c1618a6ed3d2d8409c2dd base/classicmusic/instruments/WHISTLE2.PAT
+    7685        fc3ee9c47f93f9450859b89d139bfebc base/classicmusic/instruments/WOODBLK.PAT
+    5035        5afe18a3897b085d6aa0629abf5009db base/classicmusic/instruments/WOODBLK1.PAT
+    7685        13a58fa04070fdc80c496dddc28e619a base/classicmusic/instruments/WOODBLK2.PAT
+    4191        1735a5bb967002defbf8060315762e26 base/classicmusic/instruments/WOODFLUT.PAT
+    19085       75639f8686485c8de2e267950e1b4ead base/classicmusic/instruments/XYLOPHON.PAT
+    1413        a3140d269c610f3c9c85208945e1601d base/default.cfg
+    621         dd19a3ecc592ec2d7ab9e9c6ae958826 base/joy_360_0.cfg
+    621         2a51b291696dd8e8be620344226a43bd base/joy_360_1.cfg
+    382         bc641cdf9cc99993eb17ee63cd1e3647 base/joy_lefty.cfg
+    382         0f68b829267b2cd4592b9729d2514798 base/joy_righty.cfg
+    8608        3f5f66774f73868a02c1160a00d52df4 base/maps/admin.crc
+    101795344   12c31bf318c264fce068a9ceda33585c base/maps/admin.resources
+    9352        72a22fd41cf2e7b825dc7f4371325125 base/maps/alphalabs1.crc
+    126566915   039bf15cbfcc0d83f02dc1a7ba2aeb20 base/maps/alphalabs1.resources
+    9324        8d1fd898ecaa738005ae421102b104b8 base/maps/alphalabs2.crc
+    128148914   aefbf010decff6836b2e4c64d0fe589a base/maps/alphalabs2.resources
+    6820        ab0a33abba5e255636d4c7a74999a9ea base/maps/alphalabs3.crc
+    78831805    a120fb992178914439c0920ea6fcb39a base/maps/alphalabs3.resources
+    8644        5b01c3f44fdcf947cbdd018879fe6e39 base/maps/alphalabs4.crc
+    117490100   7b411a091c51249c3e998375d3d21c29 base/maps/alphalabs4.resources
+    6396        6f5624817f2912bba37c6a316482ae21 base/maps/caverns1.crc
+    98084232    82b4803f2d591310c44a6ddc10fb97bc base/maps/caverns1.resources
+    4324        d7a80258c02c22ba65d3677430a5b82e base/maps/caverns2.crc
+    66722108    987080e7382bf748e1362197b425ca5c base/maps/caverns2.resources
+    9988        d0920830fea06b195c2606355637b974 base/maps/comm1.crc
+    139019479   c0bde129242c68f0db11c2f642eef020 base/maps/comm1.resources
+    8836        a9dbae5ece8258ddd2ac7986fb935f91 base/maps/commoutside.crc
+    123959035   1589de447088abd7262be891b6371c9f base/maps/commoutside.resources
+    7464        391c0d33b418a609f8a01d60c2d9d73d base/maps/cpu.crc
+    84589252    af9baa752992a8e536aee7aa83ba65c6 base/maps/cpu.resources
+    7108        8681b5dec0601eeef38f41a3a6c0aa13 base/maps/cpuboss.crc
+    90619051    9d30ae26f53695d6641d8311137112da base/maps/cpuboss.resources
+    2776        a84cc88f1ddf8a187d740d4b17de91b9 base/maps/d3ctf1.crc
+    46790625    dc32cc26f4f604dabe8e913b3ae6e5e3 base/maps/d3ctf1.resources
+    4412        fbeef9444fd68feb11906a59f3ed0cbb base/maps/d3ctf2.crc
+    59934268    15e8834b717c13bd1385d55386e10c95 base/maps/d3ctf2.resources
+    4332        c244e4590fb39bfc1fa9fb73cae7ad6b base/maps/d3ctf3.crc
+    71580181    b1248bfb554dc1e662e65c754da685a5 base/maps/d3ctf3.resources
+    4124        eb21be732ff0c8340ed582c4a119ad8a base/maps/d3ctf4.crc
+    62686388    89a61ad3b70adecd99dee51c4a12944e base/maps/d3ctf4.resources
+    4876        67351fdf3b9a1412104d0a10131586e5 base/maps/d3dm1.crc
+    66062799    f74158a1cb4bdd2a54d206b25761f6bb base/maps/d3dm1.resources
+    3860        f615038324acf5862b9f14ab29293e93 base/maps/d3dm2.crc
+    43977226    710f0ff38397391b99d2112a7aa3edd4 base/maps/d3dm2.resources
+    3964        d9a17cdb36f21284ddb81b173a64b063 base/maps/d3dm3.crc
+    47869084    30ee1416aac035841345c5932e07b24d base/maps/d3dm3.resources
+    4624        69be30b6a8c73f28e98d13f5228cd0b4 base/maps/d3dm4.crc
+    57478892    693e00681732161401e15174d42706f6 base/maps/d3dm4.resources
+    3844        ded83da17ca52cbac1bb045764fddc25 base/maps/d3dm5.crc
+    42230897    d43c038f80d34922415f9207ab3719ea base/maps/d3dm5.resources
+    1920        e6b03f9eeaab0da7768d71d4d64db9b0 base/maps/d3xpdm1.crc
+    42876278    8fb360a6ea93137608c35f105fc335e7 base/maps/d3xpdm1.resources
+    1372        2c39b0aa8bbd9195b4800304e7770fb4 base/maps/d3xpdm2.crc
+    27607886    0de577a6a00dc09d4c65630c02f5609a base/maps/d3xpdm2.resources
+    1176        d33e0e1b2eefa87f769275e3808a187a base/maps/d3xpdm3.crc
+    34264539    264e2003f260019a4bb568173067f32f base/maps/d3xpdm3.resources
+    1228        3c2280becb6b0aa06d532fbb014a965f base/maps/d3xpdm4.crc
+    39515105    484c7c63230ab4b49e965cb23d36fbd4 base/maps/d3xpdm4.resources
+    9212        569eea4891e6a66ae8e883a2d116d86a base/maps/delta1.crc
+    118713861   d46e12279d0ded172316df797432b12b base/maps/delta1.resources
+    9744        7b4e7d78b88a5d50cf352966d4d314d9 base/maps/delta2a.crc
+    124225762   9ba9771b7577d9f4970d48c2def605d3 base/maps/delta2a.resources
+    9348        738d64062774d4d406de660880a98520 base/maps/delta2b.crc
+    127242652   a8a45978eaf07b824dfcbede83caf145 base/maps/delta2b.resources
+    9320        f0eade565fa6c84f87d17d75548b9fda base/maps/delta3.crc
+    110709700   93fe4a5c82ac4a63c649cb9c7a452886 base/maps/delta3.resources
+    4320        56fadf994f014c5ac8a11dde7068c7f0 base/maps/delta4.crc
+    57849193    17a8a5420c20620c6258b56e4c73f554 base/maps/delta4.resources
+    8608        9f7ef7c40f8f36a51051931d9614a796 base/maps/delta5.crc
+    110982739   241e1d4656cacc80ec1109baabf05860 base/maps/delta5.resources
+    9980        60be5c90216c941238373cf09da54e55 base/maps/deltax.crc
+    144038712   b05d72e67baa2c18decd14363c5986d2 base/maps/deltax.resources
+    8512        4551c0c812c9a76485408a2b66bf077e base/maps/enpro.crc
+    139460400   2b2e96284c8b40232d3fd1e37db8b98c base/maps/enpro.resources
+    6832        6c98c714234e475dc7dc842ee0f5f08f base/maps/erebus1.crc
+    135606275   f4d48742dbaa1f458c5101e078bd585f base/maps/erebus1.resources
+    8476        d9f0c7120ee0735c095ab03adb9f698a base/maps/erebus2.crc
+    129155025   c1078da8cdbe1130887b8b41b7d824ce base/maps/erebus2.resources
+    11580       844b97fd57538a9939584bc705d08805 base/maps/erebus3.crc
+    151219132   97fe6d46fc28e03180b034c9e1ad6ab7 base/maps/erebus3.resources
+    10652       a53e53dfc2d5779c024f4ecddedb6588 base/maps/erebus4.crc
+    147794309   3021a83e2427ac4df33dc0b32a76bff2 base/maps/erebus4.resources
+    7960        7bb32d067d52cbaf25d055ff6d683e25 base/maps/erebus5.crc
+    142505713   e7483cc80d82e6a9b175ff89a24def62 base/maps/erebus5.resources
+    7288        9d4f3472c333003e14a637c1330c19d8 base/maps/erebus6.crc
+    128093344   7f815ccb6f752b8ef7572c0fc1242215 base/maps/erebus6.resources
+    4516        fffcc4afb32bcb00b549220dabeb8216 base/maps/hell.crc
+    113253451   30afe55f1182e1e1096262ba87a1b4e5 base/maps/hell.resources
+    4816        78fa10be9b5806c9933e85c9c96aae20 base/maps/hell1.crc
+    119990825   8b043f2c4b8e884dd037693f5a36e2c9 base/maps/hell1.resources
+    5264        d088b085313f6aecffa488e1ae400de9 base/maps/hellhole.crc
+    93810831    9b28c38622cddb8ad9515cd9ab8f497d base/maps/hellhole.resources
+    9136        d304acd026867697672a3ec4e4616d40 base/maps/le_enpro1.crc
+    145248407   2ef7b8125b7b81df28d831404dda5477 base/maps/le_enpro1.resources
+    7936        1646dddb8da04bc055ebeb34577b808f base/maps/le_enpro2.crc
+    142053617   bb08344710a8922285d1f7413da4cd08 base/maps/le_enpro2.resources
+    10332       5ac75b4dacc8dcda3af8b77c58033b77 base/maps/le_exis1.crc
+    128735507   7b9b7a3fe303abce93d5ab6206d7022d base/maps/le_exis1.resources
+    10712       3df699eb935057d3d2d9dbe7df15a8f4 base/maps/le_exis2.crc
+    155636000   c4b65e05aba3eca1459e8c340976fb31 base/maps/le_exis2.resources
+    4244        9b99b1256b85998eb1956f6434b4381e base/maps/le_hell.crc
+    116540602   454f9606bf879198216a276b81c5ce3d base/maps/le_hell.resources
+    4696        7593651d29f22bb79b2113189f3998b5 base/maps/le_hell_post.crc
+    103851549   2df21cb8eff373c06cde09a590a88b41 base/maps/le_hell_post.resources
+    7688        7b203bc3f233e4874cba4095dc02b01f base/maps/le_underground.crc
+    98514027    c73c779789da3e0f1b5bab7681e10be9 base/maps/le_underground.resources
+    9316        88ffa79dccc7f85d2b50055120bbe7db base/maps/le_underground2.crc
+    143316101   9fd4766a341b7a23e29b335bd3b2e99c base/maps/le_underground2.resources
+    10900       d905455d800f43e562562fd37d4285b2 base/maps/mars_city1.crc
+    133277663   b0d7e6d1291f1535f55a4f0c9ab0946b base/maps/mars_city1.resources
+    10572       d2aa1ca77136fd1862eb37c7541032ff base/maps/mars_city2.crc
+    126988683   50212c6a7cc55d5203314752e4005df8 base/maps/mars_city2.resources
+    9476        dc6a769436b4da2b2f139c09d9446920 base/maps/mc_underground.crc
+    142847095   a35c207ec4ef11bc87c68fb5fb60d05a base/maps/mc_underground.resources
+    8776        5561107c4f861d05af1bae9c9f955c53 base/maps/monorail.crc
+    118063477   8535bcdf5123182143eb949bd6633a54 base/maps/monorail.resources
+    11016       1d4674d59038e700b6376238be1d6bfe base/maps/phobos1.crc
+    165455360   b56da275bebd344a708d529b6988b486 base/maps/phobos1.resources
+    11184       15840dcf5e8ad891ff6a747ae6018901 base/maps/phobos2.crc
+    153669125   2703b8f53f6de17e5999d12256d9422c base/maps/phobos2.resources
+    10220       b8c04b9bb378bc4d1679abae8ad81e50 base/maps/phobos3.crc
+    175448889   a3b645daab7f4ebb159df781cb849a45 base/maps/phobos3.resources
+    8688        c28202a5ceb55d8d5cb99063001da4f9 base/maps/phobos4.crc
+    109809009   52cdf612ed33a7e516f1a16be89af3a8 base/maps/phobos4.resources
+    6644        f55417f3d02a98c5912498c271f9bf7e base/maps/recycling1.crc
+    109775573   d67e71f236942ef18c3519f1124c0f11 base/maps/recycling1.resources
+    6128        59357385cc90d01810b490f027c52a1b base/maps/recycling2.crc
+    88706900    3ac61a1aba62effdc00833b5b61d0269 base/maps/recycling2.resources
+    6916        f584be0b7d4a7075e2768620d45c0b72 base/maps/site3.crc
+    106716157   09fbbb57a41cb9901ab52cd531130fe4 base/maps/site3.resources
+    7094560     f63c9e6c6cd155f8498bcfbfc5ae1317 base/sound/VO/video/deployment.bik
+    8433256     5a0ceb42981d67549f229056cf6a2923 base/sound/VO/video/epd.bik
+    5113228     28b3c31f0b13567a3cd957cc06c8ee7d base/sound/VO/video/generator.bik
+    5380928     75dae950961760e98dcd948ff799c0bc base/sound/VO/video/grabber.bik
+    8305516     0bb242683e6d30ad3f54949b77786ecf base/sound/VO/video/hydrocon.bik
+    8149436     0c7d21a069c4bd50495aad7d62421f31 base/sound/VO/video/mfs.bik
+    6237592     086fa2c7331c2ba5640b3802dbd5cfed base/sound/VO/video/video_alphalabs_intro.bik
+    13289632    a0aa87d8e597410087ff02658d170988 base/sound/VO/video/video_ancient_civ.bik
+    7363368     4ec548f317c73eb1034d36e627f6b92e base/sound/VO/video/video_bfg.bik
+    4872792     f1f7b26098b509d40ac8150096ad7c94 base/sound/VO/video/video_chaingun.bik
+    6626196     497b38dd3904e7aa0657955ee9f25e98 base/sound/VO/video/video_demon_museum.bik
+    16843008    f87813c18a138413591df47fb583848f base/sound/VO/video/video_ian_report.bik
+    16438520    842de633937e7009416d731a62d24069 base/sound/VO/video/video_ipn_news.bik
+    7068072     90ff9d5094d827cf1007ba8a4a49dd06 base/sound/VO/video/video_marine_sops.bik
+    29663272    a7cd289cfb2df374458ff2324b7e2913 base/sound/VO/video/video_meyers_report.bik
+    4449736     db7c96b76a7aeec831a54c2f4b4850e3 base/sound/VO/video/video_plasmagun.bik
+    7742276     77625a99d7c825fdbca29ee66797603e base/sound/VO/video/video_recycling.bik
+    8923828     2c84eeda28ab80493d2ca51bfadb4f97 base/sound/VO/video/video_soulcube.bik
+    10925312    0712f07602c2ed95c5ecda40b20f877b base/sound/VO/video/video_tablets.bik
+    7563896     c551fcd420081f8542decdc03265df38 base/sound/VO/video/video_uac_welcome.bik
+    564165      97edda4321c179507708695e9505471c base/strings/english.lang
+    353912      f5b0544be30f1c7b579c70e31073ea3f base/video/admin/betruger.bik
+    1393180     c5f6b652709d305324e35501c4b6acb5 base/video/comm1/swann_vidphone1.bik
+    1398308     92a75b1d68ce944f9209191f97a7d5b8 base/video/comm1/swann_vidphone2.bik
+    1431740     c4f65108e3df9d9d0221ec5b33bee479 base/video/comm1/swann_vidphone3.bik
+    1620328     d158d22a064423946f5f197816728102 base/video/data.bik
+    2386144     e4317ebcbbb236d77201a158e7eec70d base/video/delta1/sarge_video1.bik
+    10111424    f8f9b75f5deb496bb91a8af697872492 base/video/enpro1/lm_meyers_enpro.bik
+    333916      9aa92c2846d63ccb1922e94651b7b63a base/video/erebusteam.bik
+    121164      9ae86edf9b8d8270d2a3b2c7e5139bd5 base/video/fireball.bik
+    2690568     93db97d019aec65067614513fe5935c6 base/video/hellhole/rescue.bik
+    2401492     b8acbf46d247a359007be4ecf140a1b6 base/video/intro/introloop.bik
+    5003796     431d38e4fcd81df09febfad012a22412 base/video/loadvideo.bik
+    5138764     2b60ec1b157d53d49123d08387c24f89 base/video/mars1.bik
+    25011168    67c5bf92470b811334e0ca34172d1706 base/video/mars_rotation.bik
+    427296      308362451eb429e11be5410392aff285 base/video/marscity/decom.bik
+    675408      1632bc29f9301d42b1331a9802392888 base/video/marscity/dropship.bik
+    269232      cc841a7a09df7da8117b140a64e5b4c2 base/video/marscity/monoflyby.bik
+    3160712     195084ef97470ea8571785bcd2358b7c base/video/marscity/sarge_mission_brief.bik
+    884456      f89b54896ed8fa9d7841557386adee3e base/video/marscity/sci_team_request.bik
+    470092      da58e3c365ca2a7d4569ac89b50a2a2b base/video/marscity/ship.bik
+    594128      aecf9ca202d85bc8e4379e44c49c6405 base/video/mc_underground/inv1sm.bik
+    333880      a9e8a9eda088b9fd36e40ced7ad42158 base/video/mc_underground/inv2sm.bik
+    1426136     76bb188cf494fc3d576aad288dd823c1 base/video/mc_underground/inv3.bik
+    171052      98e29b60073e230df374bfff6300e240 base/video/mc_underground/inv4sm.bik
+    457372      773b99bb6109aa5938b1c3115c29a655 base/video/mc_underground/inv5sm.bik
+    675204      eed7e6224c9d478afea81f5b3708651e base/video/mc_underground/inv6sm.bik
+    477304      d6edcc803ddaedfa60250f8800292d9c base/video/mc_underground/inv7sm.bik
+    7142608     b5e2866867f1016bd21092b1028cc176 base/video/mcneil.bik
+    1538884     35646f399f09cffe1cd455591fa36d52 base/video/radar.bik
+    4665364     2bf9a98b9734f610407eb8e360379bb5 base/video/recycling2/cs_bert01_composite.bik
+    3811088     203b2ccc8895f8a62868f753f9b95d1c base/video/recycling2/cs_bert02_composite.bik
+    12487824    fb35c4a5a9fd49ec29ab6e900572c524 base/wads/DOOM.WAD
+    14691821    c3bea40570c23e511a7ed3ebcd9865f7 base/wads/DOOM2.WAD
+    3819855     967d5ae23daf45196212ae1b605da3b0 base/wads/NERVE.WAD
+
+  downloadable: |
+    21145838  6325f0936f59420d33668754032141cb  doom3-linux-1.3.1.1304.x86.run
+    19653399  48330b83d08298826992da9a348c1620  DOOM3-1.3.1.exe
+    212439198 2cea594e8e0638e94bcada63b977d02e  classic_doom_3_1.3.1.exe
+
+  Classic Doom data: |
+    89        8e4117000ed0d0c288be3f38a1f07cb1 cdoom/autoexec.cfg
+    20610219  204b9f7ffe12073f8458f7b12728bb36 cdoom/cdoom_main.pk4
+    29532860  59025199c33249925657602ce7f1bac9 cdoom/cdoom_maps.pk4
+    72481549  4946368d3060001909dd2107c6f863c8 cdoom/cdoom_models.pk4
+    52829162  3c513546626c58321363130269e04077 cdoom/cdoom_sounds.pk4
+    15633643  b83d1225b8cdcf38a428f4cf24335fc4 cdoom/cdoom_textures.pk4
+
+  Classic Doom docs:
+    doc: true
+    group_members: |
+      50        50f7eea4e35dc518cda28c54c7b3316c cdoom/Classic Doom 3.url
+      13502     d727b20e4a99c3855f34455c133671b1 cdoom/docs/Readme.txt
+
+  Classic Doom extras: |
+    22486     f9a08966390b10bc234adb7202e40d27 cdoom/cdoom.ico
+    23        84c7bdf8a7210b617fe77497d5db6164 cdoom/description.txt
+    45969     c39a3658c4d4addd7e04154843bc083d cdoom/docs/shot00002.jpg
+    343424    834b5ad600a9e6a8e88276a186cae9f9 cdoom/fan_extras/classicdoom_001_1280x1024.jpg
+    659523    6ea13fe278a85ae4a1a92b4f61ab9eb3 cdoom/fan_extras/wallpaper1.jpg
+    1027454   36879001ab7ebeb08221a5254f789e22 cdoom/fan_extras/wallpaper2.jpg
+    127737    6954ef3418f244bf35f2f00a9d65d95a cdoom/fan_extras/wallpaper3.jpg
+
+  Classic Doom source: |
+    4938      509b22ad5b18bbb04d6d5fb7bcd426b7 cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
+    137567    61faa696fa033aa23e3b29e4500c70be cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
+    22440     ea5d2ab9438dd564725d76742f01d8bc cdoom/fan_extras/cdoomsource_131/game/Entity.h
+    116116    75e196b09da3d4fbe8f937c3df703a32 cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
+    28038     17672596922cfc8b791293fbfc64da21 cdoom/fan_extras/cdoomsource_131/game/Game_local.h
+    32962     a72d5273bd485011087b836aae5d456c cdoom/fan_extras/cdoomsource_131/game/Item.cpp
+    5033      ae6761508628b436b5604ea5d43a6333 cdoom/fan_extras/cdoomsource_131/game/Item.h
+    77425     5ce340cde019bc17a269165a595aa858 cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
+    17302     1555bbf2d03198d5c7253d59aa7bb7c3 cdoom/fan_extras/cdoomsource_131/game/Misc.h
+    104346    46d0d22c607d941841cd84d2ad22a431 cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
+    238594    8fccfffae00a720cfdba73850bf99fc9 cdoom/fan_extras/cdoomsource_131/game/Player.cpp
+    24420     a74ffcebc8081be2d914c7517cd79194 cdoom/fan_extras/cdoomsource_131/game/Player.h
+    19831     4122bccf922b9ae0d8873cba4ae583be cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
+    7020      9728bf226b15d1c97d4f911eb88bdc00 cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
+    46810     69ecf2b841c7d0583b30f2c91bd9043c cdoom/fan_extras/cdoomsource_131/game/Target.cpp
+    12712     e4e045c0288d684283f76a1eb6ae0e47 cdoom/fan_extras/cdoomsource_131/game/Target.h
+    141644    24d05f54b4b8a30e2ef06122a66cd7ba cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
+    64019     ce926e087af0187d94be7ea223b2e411 cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
+    30523     f216a04b5451826a7f2be58ca3e7dc5c cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
+    6489      d4a799d5949e6e15236a3c71d408e7b5 cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
+    2803      4575ebd83cfd178caed42d433ae84698 cdoom/fan_extras/cdoomsource_131/readme.txt
+
+  licenses:
+    license: true
+    group_members: |
+      17811 0e6dea0e5505da10e8fdf6c98a76271a  License.txt
+      18129 148d5da64fe41c4709f3f83aaddb1f25  License.txt?d3xp
+      954   9db62a73aea3db208194bb4a2c1944b1  cdoom/docs/License.txt
 
 files:
   doom3-linux-1.3.1.1304.x86.run:
-    size: 21145838
     distinctive_size: true
     download:
       idstuff-mirrors:
         path: doom3/linux
     provides:
-    - base/pak005.pk4
-    - base/pak006.pk4
-    - base/pak007.pk4
-    - base/pak008.pk4
-    - d3xp/pak001.pk4
-    md5: 6325f0936f59420d33668754032141cb
-    sha1: 028dd18e5bada1e563c2a0d3bf5e77572d78e6b9
-    sha256: 2f90dff20f2d3c0c47f17b3d6d45c4f0e7d27b986bf6084f21b85180cd1e03b4
+      - base patch
+      - d3xp patch
     unpack:
       format: tar.gz
       skip: 8736
@@ -515,952 +550,29 @@ files:
   cdoom/docs/License.txt:
     install_as: license.txt
   cdoom/docs/Readme.txt:
-    install_to: $docdir
     install_as: readme.txt
     distinctive_name: false
   cdoom/Classic Doom 3.url:
-    install_to: $docdir
     install_as: classic_doom3.url
   cdoom/fan_extras/cdoomsource_131/readme.txt:
     distinctive_name: false
 
   DOOM3-1.3.1.exe:
-    size: 19653399
-    md5: 48330b83d08298826992da9a348c1620
-    sha1: a619eb0c6dd2cc384e5ba2c8b444ab56db43897d
-    sha256: a3215349ecfbb6d6b4d3411d1ed5c60394a8c072c74c6214609c78e556f1fb5b
     unpack:
       format: 7z
     provides:
-    - base/pak005.pk4
-    - base/pak006.pk4
-    - base/pak007.pk4
-    - base/pak008.pk4
-    - d3xp/pak001.pk4
+      - base patch
+      - d3xp patch
 
   classic_doom_3_1.3.1.exe:
-    size: 212439198
-    md5: 2cea594e8e0638e94bcada63b977d02e
-    sha1: 5402b4edf1dbff8fff242d999325fc2be51e4b72
-    sha256: 2eacb9fce4447c22b8f7a24741534df952116b6efa9e6cdc807651b184432935
     unpack:
       format: 7z
     provides:
-    - cdoom/Classic Doom 3.url
-    - cdoom/autoexec.cfg
-    - cdoom/cdoom.ico
-    - cdoom/cdoom_main.pk4
-    - cdoom/cdoom_maps.pk4
-    - cdoom/cdoom_models.pk4
-    - cdoom/cdoom_sounds.pk4
-    - cdoom/cdoom_textures.pk4
-    - cdoom/description.txt
-    - cdoom/docs/License.txt
-    - cdoom/docs/Readme.txt
-    - cdoom/docs/shot00002.jpg
-    - cdoom/fan_extras/cdoomsource_131/readme.txt
-    - cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
-    - cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Entity.h
-    - cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Game_local.h
-    - cdoom/fan_extras/cdoomsource_131/game/Item.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Item.h
-    - cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Misc.h
-    - cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Player.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Player.h
-    - cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Target.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/Target.h
-    - cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
-    - cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
-    - cdoom/fan_extras/classicdoom_001_1280x1024.jpg
-    - cdoom/fan_extras/wallpaper1.jpg
-    - cdoom/fan_extras/wallpaper2.jpg
-    - cdoom/fan_extras/wallpaper3.jpg
-
-cksums: |
-  3705538269 21145838 doom3-linux-1.3.1.1304.x86.run
-  3020409499 353159257 base/pak000.pk4
-  1437100813 229649726 base/pak001.pk4
-  2513550240 416937674 base/pak002.pk4
-  1287221965 317590154 base/pak003.pk4
-  1029570683 237752384 base/pak004.pk4
-  3302722352 552334    base/pak005.pk4
-  2130247405 218751    base/pak006.pk4
-  1446435975 192031    base/pak007.pk4
-  3955608439 12243     base/pak008.pk4
-  _          17811     License.txt
-  _          18129     License.txt?d3xp
-  2831166546 538385153 d3xp/pak000.pk4
-  1892025358 99336     d3xp/pak001.pk4
-
-  _ 50        cdoom/Classic Doom 3.url
-  _ 89        cdoom/autoexec.cfg
-  _ 22486     cdoom/cdoom.ico
-  _ 20610219  cdoom/cdoom_main.pk4
-  _ 29532860  cdoom/cdoom_maps.pk4
-  _ 72481549  cdoom/cdoom_models.pk4
-  _ 52829162  cdoom/cdoom_sounds.pk4
-  _ 15633643  cdoom/cdoom_textures.pk4
-  _ 23        cdoom/description.txt
-  _ 954       cdoom/docs/License.txt
-  _ 13502     cdoom/docs/Readme.txt
-  _ 45969     cdoom/docs/shot00002.jpg
-  _ 4938      cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
-  _ 137567    cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
-  _ 22440     cdoom/fan_extras/cdoomsource_131/game/Entity.h
-  _ 116116    cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
-  _ 28038     cdoom/fan_extras/cdoomsource_131/game/Game_local.h
-  _ 32962     cdoom/fan_extras/cdoomsource_131/game/Item.cpp
-  _ 5033      cdoom/fan_extras/cdoomsource_131/game/Item.h
-  _ 77425     cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
-  _ 17302     cdoom/fan_extras/cdoomsource_131/game/Misc.h
-  _ 104346    cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
-  _ 238594    cdoom/fan_extras/cdoomsource_131/game/Player.cpp
-  _ 24420     cdoom/fan_extras/cdoomsource_131/game/Player.h
-  _ 19831     cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
-  _ 7020      cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
-  _ 46810     cdoom/fan_extras/cdoomsource_131/game/Target.cpp
-  _ 12712     cdoom/fan_extras/cdoomsource_131/game/Target.h
-  _ 141644    cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
-  _ 64019     cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
-  _ 30523     cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
-  _ 6489      cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
-  _ 2803      cdoom/fan_extras/cdoomsource_131/readme.txt
-  _ 343424    cdoom/fan_extras/classicdoom_001_1280x1024.jpg
-  _ 659523    cdoom/fan_extras/wallpaper1.jpg
-  _ 1027454   cdoom/fan_extras/wallpaper2.jpg
-  _ 127737    cdoom/fan_extras/wallpaper3.jpg
-
-  _ 9064      base/_common.crc
-  _ 80383351  base/_common.resources
-  _ 5360      base/_ordered.crc
-  _ 11311441  base/_ordered.resources
-  _ 19052     base/_sound_pc.crc
-  _ 545924092 base/_sound_pc.resources
-  _ 3376      base/_sound_pc_en.crc
-  _ 133979908 base/_sound_pc_en.resources
-  _ 3316      base/_sound_pc_fr.crc
-  _ 3336      base/_sound_pc_gr.crc
-  _ 3336      base/_sound_pc_it.crc
-  _ 3340      base/_sound_pc_jp.crc
-  _ 3316      base/_sound_pc_sp.crc
-  _ 2973      base/classicmusic/gravis.cfg
-  _ 10829     base/classicmusic/instruments/ACBASS.PAT
-  _ 19623     base/classicmusic/instruments/ACCORDN.PAT
-  _ 52581     base/classicmusic/instruments/ACGUITAR.PAT
-  _ 65259     base/classicmusic/instruments/ACPIANO.PAT
-  _ 27727     base/classicmusic/instruments/AGOGO.PAT
-  _ 7283      base/classicmusic/instruments/AGOGOHI.PAT
-  _ 7283      base/classicmusic/instruments/AGOGOLO.PAT
-  _ 11711     base/classicmusic/instruments/ALTOSAX.PAT
-  _ 60449     base/classicmusic/instruments/APPLAUSE.PAT
-  _ 63035     base/classicmusic/instruments/ATMOSPHR.PAT
-  _ 62503     base/classicmusic/instruments/AURORA.PAT
-  _ 16057     base/classicmusic/instruments/BAGPIPES.PAT
-  _ 64523     base/classicmusic/instruments/BANJO.PAT
-  _ 21739     base/classicmusic/instruments/BARISAX.PAT
-  _ 53389     base/classicmusic/instruments/BASSLEAD.PAT
-  _ 16723     base/classicmusic/instruments/BASSOON.PAT
-  _ 64103     base/classicmusic/instruments/BELLTREE.PAT
-  _ 3367      base/classicmusic/instruments/BLANK.PAT
-  _ 7233      base/classicmusic/instruments/BONGOHI.PAT
-  _ 9201      base/classicmusic/instruments/BONGOLO.PAT
-  _ 25063     base/classicmusic/instruments/BOTTLE.PAT
-  _ 49691     base/classicmusic/instruments/BOWGLASS.PAT
-  _ 72739     base/classicmusic/instruments/BRITEPNO.PAT
-  _ 17203     base/classicmusic/instruments/CABASA.PAT
-  _ 46303     base/classicmusic/instruments/CALLIOPE.PAT
-  _ 12089     base/classicmusic/instruments/CARILLON.PAT
-  _ 12349     base/classicmusic/instruments/CASTINET.PAT
-  _ 20207     base/classicmusic/instruments/CELESTE.PAT
-  _ 18741     base/classicmusic/instruments/CELLO.PAT
-  _ 90661     base/classicmusic/instruments/CHARANG.PAT
-  _ 63381     base/classicmusic/instruments/CHIFLEAD.PAT
-  _ 45353     base/classicmusic/instruments/CHOIR.PAT
-  _ 4609      base/classicmusic/instruments/CHURCH.PAT
-  _ 11719     base/classicmusic/instruments/CLAPS.PAT
-  _ 19161     base/classicmusic/instruments/CLARINET.PAT
-  _ 5035      base/classicmusic/instruments/CLAVE.PAT
-  _ 3443      base/classicmusic/instruments/CLAVINET.PAT
-  _ 46027     base/classicmusic/instruments/CLEANGTR.PAT
-  _ 17981     base/classicmusic/instruments/CONCRTNA.PAT
-  _ 8753      base/classicmusic/instruments/CONGAHI1.PAT
-  _ 9713      base/classicmusic/instruments/CONGAHI2.PAT
-  _ 9713      base/classicmusic/instruments/CONGALO.PAT
-  _ 9723      base/classicmusic/instruments/CONTRABA.PAT
-  _ 6645      base/classicmusic/instruments/COWBELL.PAT
-  _ 60783     base/classicmusic/instruments/CRYSTAL.PAT
-  _ 18995     base/classicmusic/instruments/CUICA1.PAT
-  _ 26017     base/classicmusic/instruments/CUICA2.PAT
-  _ 34815     base/classicmusic/instruments/CYMBELL.PAT
-  _ 48545     base/classicmusic/instruments/CYMCHINA.PAT
-  _ 63353     base/classicmusic/instruments/CYMCRSH1.PAT
-  _ 62411     base/classicmusic/instruments/CYMCRSH2.PAT
-  _ 35655     base/classicmusic/instruments/CYMRIDE1.PAT
-  _ 35655     base/classicmusic/instruments/CYMRIDE2.PAT
-  _ 63353     base/classicmusic/instruments/CYMSPLSH.PAT
-  _ 38249     base/classicmusic/instruments/DISTGTR.PAT
-  _ 17333     base/classicmusic/instruments/DOO.PAT
-  _ 30287     base/classicmusic/instruments/ECHOVOX.PAT
-  _ 24675     base/classicmusic/instruments/ENGLHORN.PAT
-  _ 15005     base/classicmusic/instruments/EPIANO1.PAT
-  _ 44191     base/classicmusic/instruments/EPIANO2.PAT
-  _ 47229     base/classicmusic/instruments/FANTASIA.PAT
-  _ 12309     base/classicmusic/instruments/FIDDLE.PAT
-  _ 12383     base/classicmusic/instruments/FLUTE.PAT
-  _ 19797     base/classicmusic/instruments/FNGRBASS.PAT
-  _ 28635     base/classicmusic/instruments/FRENCHRN.PAT
-  _ 58307     base/classicmusic/instruments/FRESHAIR.PAT
-  _ 5605      base/classicmusic/instruments/FRETLESS.PAT
-  _ 57693     base/classicmusic/instruments/FX-BLOW.PAT
-  _ 27631     base/classicmusic/instruments/FX-FRET.PAT
-  _ 63301     base/classicmusic/instruments/GHOSTIE.PAT
-  _ 10695     base/classicmusic/instruments/GLOCKEN.PAT
-  _ 10173     base/classicmusic/instruments/GTRHARM.PAT
-  _ 8561      base/classicmusic/instruments/GUIRO1.PAT
-  _ 18821     base/classicmusic/instruments/GUIRO2.PAT
-  _ 60291     base/classicmusic/instruments/HALOPAD.PAT
-  _ 15301     base/classicmusic/instruments/HARMONCA.PAT
-  _ 23927     base/classicmusic/instruments/HARP.PAT
-  _ 50327     base/classicmusic/instruments/HELICPTR.PAT
-  _ 3945      base/classicmusic/instruments/HIGHQ.PAT
-  _ 9453      base/classicmusic/instruments/HIHATCL.PAT
-  _ 40417     base/classicmusic/instruments/HIHATOP.PAT
-  _ 3925      base/classicmusic/instruments/HIHATPD.PAT
-  _ 63369     base/classicmusic/instruments/HITBRASS.PAT
-  _ 2301      base/classicmusic/instruments/HOMEORG.PAT
-  _ 131905    base/classicmusic/instruments/HONKY.PAT
-  _ 7709      base/classicmusic/instruments/HRPSCHRD.PAT
-  _ 55923     base/classicmusic/instruments/JAZZGTR.PAT
-  _ 34219     base/classicmusic/instruments/JINGLES.PAT
-  _ 27541     base/classicmusic/instruments/JUNGLE.PAT
-  _ 4739      base/classicmusic/instruments/KALIMBA.PAT
-  _ 9411      base/classicmusic/instruments/KICK1.PAT
-  _ 10377     base/classicmusic/instruments/KICK2.PAT
-  _ 42079     base/classicmusic/instruments/KOTO.PAT
-  _ 13233     base/classicmusic/instruments/LEAD5TH.PAT
-  _ 9433      base/classicmusic/instruments/MARACAS.PAT
-  _ 122881    base/classicmusic/instruments/MARCATO.PAT
-  _ 4447      base/classicmusic/instruments/MARIMBA.PAT
-  _ 60905     base/classicmusic/instruments/METALPAD.PAT
-  _ 539       base/classicmusic/instruments/METBELL.PAT
-  _ 539       base/classicmusic/instruments/METCLICK.PAT
-  _ 30947     base/classicmusic/instruments/MUSICBOX.PAT
-  _ 34577     base/classicmusic/instruments/MUTEGTR.PAT
-  _ 19019     base/classicmusic/instruments/MUTETRUM.PAT
-  _ 39211     base/classicmusic/instruments/NYGUITAR.PAT
-  _ 9269      base/classicmusic/instruments/OBOE.PAT
-  _ 3537      base/classicmusic/instruments/OCARINA.PAT
-  _ 25845     base/classicmusic/instruments/ODGUITAR.PAT
-  _ 28751     base/classicmusic/instruments/ORCHHIT.PAT
-  _ 15435     base/classicmusic/instruments/PERCORG.PAT
-  _ 8945      base/classicmusic/instruments/PICCOLO.PAT
-  _ 33213     base/classicmusic/instruments/PICKBASS.PAT
-  _ 36595     base/classicmusic/instruments/PISTOL.PAT
-  _ 40173     base/classicmusic/instruments/PIZZCATO.PAT
-  _ 60759     base/classicmusic/instruments/POLYSYN.PAT
-  _ 5647      base/classicmusic/instruments/RECORDER.PAT
-  _ 3471      base/classicmusic/instruments/REEDORG.PAT
-  _ 27391     base/classicmusic/instruments/REVCYM.PAT
-  _ 60887     base/classicmusic/instruments/ROCKORG.PAT
-  _ 43833     base/classicmusic/instruments/SANTUR.PAT
-  _ 54485     base/classicmusic/instruments/SAWWAVE.PAT
-  _ 9091      base/classicmusic/instruments/SCRATCH1.PAT
-  _ 4883      base/classicmusic/instruments/SCRATCH2.PAT
-  _ 62407     base/classicmusic/instruments/SEASHORE.PAT
-  _ 62589     base/classicmusic/instruments/SHAKAZUL.PAT
-  _ 6527      base/classicmusic/instruments/SHAKER.PAT
-  _ 26667     base/classicmusic/instruments/SHAMISEN.PAT
-  _ 20151     base/classicmusic/instruments/SHANNAI.PAT
-  _ 36979     base/classicmusic/instruments/SITAR.PAT
-  _ 12031     base/classicmusic/instruments/SLAP.PAT
-  _ 56133     base/classicmusic/instruments/SLAPBAS1.PAT
-  _ 41581     base/classicmusic/instruments/SLAPBAS2.PAT
-  _ 36717     base/classicmusic/instruments/SLOWSTR.PAT
-  _ 17417     base/classicmusic/instruments/SNARE1.PAT
-  _ 8503      base/classicmusic/instruments/SNARE2.PAT
-  _ 40091     base/classicmusic/instruments/SOUNDTRK.PAT
-  _ 14713     base/classicmusic/instruments/SPRNOSAX.PAT
-  _ 539       base/classicmusic/instruments/SQRCLICK.PAT
-  _ 30439     base/classicmusic/instruments/SQRWAVE.PAT
-  _ 55085     base/classicmusic/instruments/STARTRAK.PAT
-  _ 24229     base/classicmusic/instruments/STEELDRM.PAT
-  _ 6005      base/classicmusic/instruments/STICKRIM.PAT
-  _ 8757      base/classicmusic/instruments/STICKS.PAT
-  _ 19527     base/classicmusic/instruments/SURDO1.PAT
-  _ 19527     base/classicmusic/instruments/SURDO2.PAT
-  _ 62745     base/classicmusic/instruments/SWEEPER.PAT
-  _ 12627     base/classicmusic/instruments/SYNBASS1.PAT
-  _ 6191      base/classicmusic/instruments/SYNBASS2.PAT
-  _ 61735     base/classicmusic/instruments/SYNBRAS1.PAT
-  _ 60641     base/classicmusic/instruments/SYNBRAS2.PAT
-  _ 11543     base/classicmusic/instruments/SYNPIANO.PAT
-  _ 62763     base/classicmusic/instruments/SYNSTR1.PAT
-  _ 33165     base/classicmusic/instruments/SYNSTR2.PAT
-  _ 61331     base/classicmusic/instruments/SYNTOM.PAT
-  _ 37671     base/classicmusic/instruments/TAIKO.PAT
-  _ 18219     base/classicmusic/instruments/TAMBORIN.PAT
-  _ 9157      base/classicmusic/instruments/TELEPHON.PAT
-  _ 17367     base/classicmusic/instruments/TENORSAX.PAT
-  _ 10839     base/classicmusic/instruments/TIMBALEH.PAT
-  _ 19787     base/classicmusic/instruments/TIMBALEL.PAT
-  _ 14473     base/classicmusic/instruments/TIMPANI.PAT
-  _ 13467     base/classicmusic/instruments/TOMHI1.PAT
-  _ 13455     base/classicmusic/instruments/TOMHI2.PAT
-  _ 13455     base/classicmusic/instruments/TOMLO1.PAT
-  _ 19527     base/classicmusic/instruments/TOMLO2.PAT
-  _ 13455     base/classicmusic/instruments/TOMMID1.PAT
-  _ 13455     base/classicmusic/instruments/TOMMID2.PAT
-  _ 13467     base/classicmusic/instruments/TOMS.PAT
-  _ 122881    base/classicmusic/instruments/TREMSTR.PAT
-  _ 4781      base/classicmusic/instruments/TRIANGL1.PAT
-  _ 31901     base/classicmusic/instruments/TRIANGL2.PAT
-  _ 26187     base/classicmusic/instruments/TROMBONE.PAT
-  _ 13621     base/classicmusic/instruments/TRUMPET.PAT
-  _ 11847     base/classicmusic/instruments/TUBA.PAT
-  _ 18637     base/classicmusic/instruments/TUBEBELL.PAT
-  _ 60505     base/classicmusic/instruments/UNICORN.PAT
-  _ 21597     base/classicmusic/instruments/VIBES.PAT
-  _ 19247     base/classicmusic/instruments/VIBSLAP.PAT
-  _ 56465     base/classicmusic/instruments/VIOLA.PAT
-  _ 25061     base/classicmusic/instruments/VIOLIN.PAT
-  _ 30287     base/classicmusic/instruments/VOICES.PAT
-  _ 30289     base/classicmusic/instruments/VOXLEAD.PAT
-  _ 36491     base/classicmusic/instruments/WARMPAD.PAT
-  _ 12053     base/classicmusic/instruments/WHISTLE.PAT
-  _ 4315      base/classicmusic/instruments/WHISTLE1.PAT
-  _ 2173      base/classicmusic/instruments/WHISTLE2.PAT
-  _ 7685      base/classicmusic/instruments/WOODBLK.PAT
-  _ 5035      base/classicmusic/instruments/WOODBLK1.PAT
-  _ 7685      base/classicmusic/instruments/WOODBLK2.PAT
-  _ 4191      base/classicmusic/instruments/WOODFLUT.PAT
-  _ 19085     base/classicmusic/instruments/XYLOPHON.PAT
-  _ 1413      base/default.cfg
-  _ 621       base/joy_360_0.cfg
-  _ 621       base/joy_360_1.cfg
-  _ 382       base/joy_lefty.cfg
-  _ 382       base/joy_righty.cfg
-  _ 8608      base/maps/admin.crc
-  _ 101795344 base/maps/admin.resources
-  _ 9352      base/maps/alphalabs1.crc
-  _ 126566915 base/maps/alphalabs1.resources
-  _ 9324      base/maps/alphalabs2.crc
-  _ 128148914 base/maps/alphalabs2.resources
-  _ 6820      base/maps/alphalabs3.crc
-  _ 78831805  base/maps/alphalabs3.resources
-  _ 8644      base/maps/alphalabs4.crc
-  _ 117490100 base/maps/alphalabs4.resources
-  _ 6396      base/maps/caverns1.crc
-  _ 98084232  base/maps/caverns1.resources
-  _ 4324      base/maps/caverns2.crc
-  _ 66722108  base/maps/caverns2.resources
-  _ 9988      base/maps/comm1.crc
-  _ 139019479 base/maps/comm1.resources
-  _ 8836      base/maps/commoutside.crc
-  _ 123959035 base/maps/commoutside.resources
-  _ 7464      base/maps/cpu.crc
-  _ 84589252  base/maps/cpu.resources
-  _ 7108      base/maps/cpuboss.crc
-  _ 90619051  base/maps/cpuboss.resources
-  _ 2776      base/maps/d3ctf1.crc
-  _ 46790625  base/maps/d3ctf1.resources
-  _ 4412      base/maps/d3ctf2.crc
-  _ 59934268  base/maps/d3ctf2.resources
-  _ 4332      base/maps/d3ctf3.crc
-  _ 71580181  base/maps/d3ctf3.resources
-  _ 4124      base/maps/d3ctf4.crc
-  _ 62686388  base/maps/d3ctf4.resources
-  _ 4876      base/maps/d3dm1.crc
-  _ 66062799  base/maps/d3dm1.resources
-  _ 3860      base/maps/d3dm2.crc
-  _ 43977226  base/maps/d3dm2.resources
-  _ 3964      base/maps/d3dm3.crc
-  _ 47869084  base/maps/d3dm3.resources
-  _ 4624      base/maps/d3dm4.crc
-  _ 57478892  base/maps/d3dm4.resources
-  _ 3844      base/maps/d3dm5.crc
-  _ 42230897  base/maps/d3dm5.resources
-  _ 1920      base/maps/d3xpdm1.crc
-  _ 42876278  base/maps/d3xpdm1.resources
-  _ 1372      base/maps/d3xpdm2.crc
-  _ 27607886  base/maps/d3xpdm2.resources
-  _ 1176      base/maps/d3xpdm3.crc
-  _ 34264539  base/maps/d3xpdm3.resources
-  _ 1228      base/maps/d3xpdm4.crc
-  _ 39515105  base/maps/d3xpdm4.resources
-  _ 9212      base/maps/delta1.crc
-  _ 118713861 base/maps/delta1.resources
-  _ 9744      base/maps/delta2a.crc
-  _ 124225762 base/maps/delta2a.resources
-  _ 9348      base/maps/delta2b.crc
-  _ 127242652 base/maps/delta2b.resources
-  _ 9320      base/maps/delta3.crc
-  _ 110709700 base/maps/delta3.resources
-  _ 4320      base/maps/delta4.crc
-  _ 57849193  base/maps/delta4.resources
-  _ 8608      base/maps/delta5.crc
-  _ 110982739 base/maps/delta5.resources
-  _ 9980      base/maps/deltax.crc
-  _ 144038712 base/maps/deltax.resources
-  _ 8512      base/maps/enpro.crc
-  _ 139460400 base/maps/enpro.resources
-  _ 6832      base/maps/erebus1.crc
-  _ 135606275 base/maps/erebus1.resources
-  _ 8476      base/maps/erebus2.crc
-  _ 129155025 base/maps/erebus2.resources
-  _ 11580     base/maps/erebus3.crc
-  _ 151219132 base/maps/erebus3.resources
-  _ 10652     base/maps/erebus4.crc
-  _ 147794309 base/maps/erebus4.resources
-  _ 7960      base/maps/erebus5.crc
-  _ 142505713 base/maps/erebus5.resources
-  _ 7288      base/maps/erebus6.crc
-  _ 128093344 base/maps/erebus6.resources
-  _ 4516      base/maps/hell.crc
-  _ 113253451 base/maps/hell.resources
-  _ 4816      base/maps/hell1.crc
-  _ 119990825 base/maps/hell1.resources
-  _ 5264      base/maps/hellhole.crc
-  _ 93810831  base/maps/hellhole.resources
-  _ 9136      base/maps/le_enpro1.crc
-  _ 145248407 base/maps/le_enpro1.resources
-  _ 7936      base/maps/le_enpro2.crc
-  _ 142053617 base/maps/le_enpro2.resources
-  _ 10332     base/maps/le_exis1.crc
-  _ 128735507 base/maps/le_exis1.resources
-  _ 10712     base/maps/le_exis2.crc
-  _ 155636000 base/maps/le_exis2.resources
-  _ 4244      base/maps/le_hell.crc
-  _ 116540602 base/maps/le_hell.resources
-  _ 4696      base/maps/le_hell_post.crc
-  _ 103851549 base/maps/le_hell_post.resources
-  _ 7688      base/maps/le_underground.crc
-  _ 98514027  base/maps/le_underground.resources
-  _ 9316      base/maps/le_underground2.crc
-  _ 143316101 base/maps/le_underground2.resources
-  _ 10900     base/maps/mars_city1.crc
-  _ 133277663 base/maps/mars_city1.resources
-  _ 10572     base/maps/mars_city2.crc
-  _ 126988683 base/maps/mars_city2.resources
-  _ 9476      base/maps/mc_underground.crc
-  _ 142847095 base/maps/mc_underground.resources
-  _ 8776      base/maps/monorail.crc
-  _ 118063477 base/maps/monorail.resources
-  _ 11016     base/maps/phobos1.crc
-  _ 165455360 base/maps/phobos1.resources
-  _ 11184     base/maps/phobos2.crc
-  _ 153669125 base/maps/phobos2.resources
-  _ 10220     base/maps/phobos3.crc
-  _ 175448889 base/maps/phobos3.resources
-  _ 8688      base/maps/phobos4.crc
-  _ 109809009 base/maps/phobos4.resources
-  _ 6644      base/maps/recycling1.crc
-  _ 109775573 base/maps/recycling1.resources
-  _ 6128      base/maps/recycling2.crc
-  _ 88706900  base/maps/recycling2.resources
-  _ 6916      base/maps/site3.crc
-  _ 106716157 base/maps/site3.resources
-  _ 7094560   base/sound/VO/video/deployment.bik
-  _ 8433256   base/sound/VO/video/epd.bik
-  _ 5113228   base/sound/VO/video/generator.bik
-  _ 5380928   base/sound/VO/video/grabber.bik
-  _ 8305516   base/sound/VO/video/hydrocon.bik
-  _ 8149436   base/sound/VO/video/mfs.bik
-  _ 6237592   base/sound/VO/video/video_alphalabs_intro.bik
-  _ 13289632  base/sound/VO/video/video_ancient_civ.bik
-  _ 7363368   base/sound/VO/video/video_bfg.bik
-  _ 4872792   base/sound/VO/video/video_chaingun.bik
-  _ 6626196   base/sound/VO/video/video_demon_museum.bik
-  _ 16843008  base/sound/VO/video/video_ian_report.bik
-  _ 16438520  base/sound/VO/video/video_ipn_news.bik
-  _ 7068072   base/sound/VO/video/video_marine_sops.bik
-  _ 29663272  base/sound/VO/video/video_meyers_report.bik
-  _ 4449736   base/sound/VO/video/video_plasmagun.bik
-  _ 7742276   base/sound/VO/video/video_recycling.bik
-  _ 8923828   base/sound/VO/video/video_soulcube.bik
-  _ 10925312  base/sound/VO/video/video_tablets.bik
-  _ 7563896   base/sound/VO/video/video_uac_welcome.bik
-  _ 564165    base/strings/english.lang
-  _ 353912    base/video/admin/betruger.bik
-  _ 1393180   base/video/comm1/swann_vidphone1.bik
-  _ 1398308   base/video/comm1/swann_vidphone2.bik
-  _ 1431740   base/video/comm1/swann_vidphone3.bik
-  _ 1620328   base/video/data.bik
-  _ 2386144   base/video/delta1/sarge_video1.bik
-  _ 10111424  base/video/enpro1/lm_meyers_enpro.bik
-  _ 333916    base/video/erebusteam.bik
-  _ 121164    base/video/fireball.bik
-  _ 2690568   base/video/hellhole/rescue.bik
-  _ 2401492   base/video/intro/introloop.bik
-  _ 5003796   base/video/loadvideo.bik
-  _ 5138764   base/video/mars1.bik
-  _ 25011168  base/video/mars_rotation.bik
-  _ 427296    base/video/marscity/decom.bik
-  _ 675408    base/video/marscity/dropship.bik
-  _ 269232    base/video/marscity/monoflyby.bik
-  _ 3160712   base/video/marscity/sarge_mission_brief.bik
-  _ 884456    base/video/marscity/sci_team_request.bik
-  _ 470092    base/video/marscity/ship.bik
-  _ 594128    base/video/mc_underground/inv1sm.bik
-  _ 333880    base/video/mc_underground/inv2sm.bik
-  _ 1426136   base/video/mc_underground/inv3.bik
-  _ 171052    base/video/mc_underground/inv4sm.bik
-  _ 457372    base/video/mc_underground/inv5sm.bik
-  _ 675204    base/video/mc_underground/inv6sm.bik
-  _ 477304    base/video/mc_underground/inv7sm.bik
-  _ 7142608   base/video/mcneil.bik
-  _ 1538884   base/video/radar.bik
-  _ 4665364   base/video/recycling2/cs_bert01_composite.bik
-  _ 3811088   base/video/recycling2/cs_bert02_composite.bik
-  _ 12487824  base/wads/DOOM.WAD
-  _ 14691821  base/wads/DOOM2.WAD
-  _ 3819855   base/wads/NERVE.WAD
-
-md5sums: |
-  6325f0936f59420d33668754032141cb  doom3-linux-1.3.1.1304.x86.run
-  71b8d37b2444d3d86a36fd61783844fe  base/pak000.pk4
-  4bc4f3ba04ec2b4f4837be40e840a3c1  base/pak001.pk4
-  fa84069e9642ad9aa4b49624150cc345  base/pak002.pk4
-  f22d8464997924e4913e467e7d62d5fe  base/pak003.pk4
-  38561a3c73f93f2e6fd31abf1d4e9102  base/pak004.pk4
-  2afd4ece27d36393b7538d55a345b90d  base/pak005.pk4
-  a6e7003fa9dcc75073dc02b56399b370  base/pak006.pk4
-  6319f086f930ec1618ab09b4c20c268c  base/pak007.pk4
-  28750b7841de9453eb335bad6841a2a5  base/pak008.pk4
-  0e6dea0e5505da10e8fdf6c98a76271a  License.txt
-  a883fef0fd10aadeb73d34c462ff865d  d3xp/pak000.pk4
-  06fc9be965e345587064056bf22236d2  d3xp/pak001.pk4
-  148d5da64fe41c4709f3f83aaddb1f25  License.txt?d3xp
-
-  50f7eea4e35dc518cda28c54c7b3316c  cdoom/Classic Doom 3.url
-  8e4117000ed0d0c288be3f38a1f07cb1  cdoom/autoexec.cfg
-  f9a08966390b10bc234adb7202e40d27  cdoom/cdoom.ico
-  204b9f7ffe12073f8458f7b12728bb36  cdoom/cdoom_main.pk4
-  59025199c33249925657602ce7f1bac9  cdoom/cdoom_maps.pk4
-  4946368d3060001909dd2107c6f863c8  cdoom/cdoom_models.pk4
-  3c513546626c58321363130269e04077  cdoom/cdoom_sounds.pk4
-  b83d1225b8cdcf38a428f4cf24335fc4  cdoom/cdoom_textures.pk4
-  84c7bdf8a7210b617fe77497d5db6164  cdoom/description.txt
-  9db62a73aea3db208194bb4a2c1944b1  cdoom/docs/License.txt
-  d727b20e4a99c3855f34455c133671b1  cdoom/docs/Readme.txt
-  c39a3658c4d4addd7e04154843bc083d  cdoom/docs/shot00002.jpg
-  509b22ad5b18bbb04d6d5fb7bcd426b7  cdoom/fan_extras/cdoomsource_131/framework/UsercmdGen.h
-  61faa696fa033aa23e3b29e4500c70be  cdoom/fan_extras/cdoomsource_131/game/Entity.cpp
-  ea5d2ab9438dd564725d76742f01d8bc  cdoom/fan_extras/cdoomsource_131/game/Entity.h
-  75e196b09da3d4fbe8f937c3df703a32  cdoom/fan_extras/cdoomsource_131/game/Game_local.cpp
-  17672596922cfc8b791293fbfc64da21  cdoom/fan_extras/cdoomsource_131/game/Game_local.h
-  a72d5273bd485011087b836aae5d456c  cdoom/fan_extras/cdoomsource_131/game/Item.cpp
-  ae6761508628b436b5604ea5d43a6333  cdoom/fan_extras/cdoomsource_131/game/Item.h
-  5ce340cde019bc17a269165a595aa858  cdoom/fan_extras/cdoomsource_131/game/Misc.cpp
-  1555bbf2d03198d5c7253d59aa7bb7c3  cdoom/fan_extras/cdoomsource_131/game/Misc.h
-  46d0d22c607d941841cd84d2ad22a431  cdoom/fan_extras/cdoomsource_131/game/MultiplayerGame.cpp
-  8fccfffae00a720cfdba73850bf99fc9  cdoom/fan_extras/cdoomsource_131/game/Player.cpp
-  a74ffcebc8081be2d914c7517cd79194  cdoom/fan_extras/cdoomsource_131/game/Player.h
-  4122bccf922b9ae0d8873cba4ae583be  cdoom/fan_extras/cdoomsource_131/game/PlayerView.cpp
-  9728bf226b15d1c97d4f911eb88bdc00  cdoom/fan_extras/cdoomsource_131/game/Sound.cpp
-  69ecf2b841c7d0583b30f2c91bd9043c  cdoom/fan_extras/cdoomsource_131/game/Target.cpp
-  e4e045c0288d684283f76a1eb6ae0e47  cdoom/fan_extras/cdoomsource_131/game/Target.h
-  24d05f54b4b8a30e2ef06122a66cd7ba  cdoom/fan_extras/cdoomsource_131/game/ai/AI.cpp
-  ce926e087af0187d94be7ea223b2e411  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCmds.cpp
-  f216a04b5451826a7f2be58ca3e7dc5c  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.cpp
-  d4a799d5949e6e15236a3c71d408e7b5  cdoom/fan_extras/cdoomsource_131/game/gamesys/SysCvar.h
-  4575ebd83cfd178caed42d433ae84698  cdoom/fan_extras/cdoomsource_131/readme.txt
-  834b5ad600a9e6a8e88276a186cae9f9  cdoom/fan_extras/classicdoom_001_1280x1024.jpg
-  6ea13fe278a85ae4a1a92b4f61ab9eb3  cdoom/fan_extras/wallpaper1.jpg
-  36879001ab7ebeb08221a5254f789e22  cdoom/fan_extras/wallpaper2.jpg
-  6954ef3418f244bf35f2f00a9d65d95a  cdoom/fan_extras/wallpaper3.jpg
-
-  00f89dc77d79f015d834019114f5fe74  base/_common.crc
-  6eea23da08930c4f91415ee005d417ff  base/_common.resources
-  c6017691bc059f4c460a5df0f6ab5a5a  base/_ordered.crc
-  cedb159596cacb5a8f22bda251475b6a  base/_ordered.resources
-  0645725e0c5d03cadffc4695e663c233  base/_sound_pc.crc
-  98ce8ddb7aa83b7f2b39ff9cc6a5064e  base/_sound_pc.resources
-  27bf2ef54ff3743f8c52e296ad97c037  base/_sound_pc_en.crc
-  d30d68a061b8771e9730c2a0dd07edbb  base/_sound_pc_en.resources
-  c13acbb298d4deadfcd06db10cba0d43  base/_sound_pc_fr.crc
-  4277451b4cfbcb7b060dedbdaf93b0fd  base/_sound_pc_gr.crc
-  e8e977b1b58069354da2b05e7e9a54a2  base/_sound_pc_it.crc
-  6df877b53293348cb360fe7215d0b18c  base/_sound_pc_jp.crc
-  4b82286cec8f8ce00f20f35566dc5049  base/_sound_pc_sp.crc
-  d6dab5e941e5090e99951e521336daeb  base/classicmusic/gravis.cfg
-  08a0918d039ca1cfb418feaca1fe8983  base/classicmusic/instruments/ACBASS.PAT
-  ee71868661463ac9f8bb6b2eede1dbef  base/classicmusic/instruments/ACCORDN.PAT
-  755dabe1a645820f0c96fa5cf1dc8a2a  base/classicmusic/instruments/ACGUITAR.PAT
-  f79fa41fdc1e2916c93f94dfb92526e0  base/classicmusic/instruments/ACPIANO.PAT
-  272763736cab67ec659788c1c69b2b95  base/classicmusic/instruments/AGOGO.PAT
-  0818f0d4f1314c04009f5b0551182a30  base/classicmusic/instruments/AGOGOHI.PAT
-  a9591b9372d89cf805881afc39fef5f3  base/classicmusic/instruments/AGOGOLO.PAT
-  6cc3fb0e79aa4b77830851ed01c52a49  base/classicmusic/instruments/ALTOSAX.PAT
-  ea36c2e74a19a34fcfb957326989537f  base/classicmusic/instruments/APPLAUSE.PAT
-  d72b0950b013cc52e01ff6748f6e221a  base/classicmusic/instruments/ATMOSPHR.PAT
-  ccc316461e499102c7eed64d7dfad330  base/classicmusic/instruments/AURORA.PAT
-  2ae148dd3236ab01e512e6f4e03d5708  base/classicmusic/instruments/BAGPIPES.PAT
-  91376a6a81ad1136846d41f17a82f89c  base/classicmusic/instruments/BANJO.PAT
-  af7f6916b179766d578b4f7960a6feca  base/classicmusic/instruments/BARISAX.PAT
-  7830b813e24b337aeeb188f698fb70d1  base/classicmusic/instruments/BASSLEAD.PAT
-  fe96a48f6bf6cf5a0301b469a3dd6645  base/classicmusic/instruments/BASSOON.PAT
-  9ee77f3c3dbff0bb8e218cc60ef9ef3c  base/classicmusic/instruments/BELLTREE.PAT
-  09655a4dca92c12b769f1290f684c172  base/classicmusic/instruments/BLANK.PAT
-  bfe5e0ceee5e5cbae4033d6125424ed5  base/classicmusic/instruments/BONGOHI.PAT
-  49261077b29782ebc82ca5ecc9e28213  base/classicmusic/instruments/BONGOLO.PAT
-  623c4cd3758834337a026e4edd4e7c56  base/classicmusic/instruments/BOTTLE.PAT
-  3d5ee64c6366240a7743508c245a4ffe  base/classicmusic/instruments/BOWGLASS.PAT
-  381d9db3552ab1e3a4e10baa12fe1a11  base/classicmusic/instruments/BRITEPNO.PAT
-  121fd2256b5c53a021b9229f15c2a43b  base/classicmusic/instruments/CABASA.PAT
-  cc4f8fbf084bc5dd3087758e7a2084a2  base/classicmusic/instruments/CALLIOPE.PAT
-  b239e3fae8d7754975420464313f7057  base/classicmusic/instruments/CARILLON.PAT
-  3055f331dd75e04d2863d68865d69dc5  base/classicmusic/instruments/CASTINET.PAT
-  5ea85c7747ed3ef5310ea17f39251baa  base/classicmusic/instruments/CELESTE.PAT
-  c64484edc6389a59676bd2bc2125bfbb  base/classicmusic/instruments/CELLO.PAT
-  f6d7516d4f864cfadcfe594249861fcd  base/classicmusic/instruments/CHARANG.PAT
-  1f7e8cfb28c0137338bc234a30cf1387  base/classicmusic/instruments/CHIFLEAD.PAT
-  21012953d4f5009ba92171c7008a326f  base/classicmusic/instruments/CHOIR.PAT
-  a940c2d0935254de87432ab49a146f03  base/classicmusic/instruments/CHURCH.PAT
-  07df2480991307667885624fa494edcf  base/classicmusic/instruments/CLAPS.PAT
-  6a686100010311756f8cdf9ec00f9d96  base/classicmusic/instruments/CLARINET.PAT
-  772881799199742c66ee7f5fa4ccb0fc  base/classicmusic/instruments/CLAVE.PAT
-  12dfc9d40d85e8856412532fe3d155f1  base/classicmusic/instruments/CLAVINET.PAT
-  fec3fb42c126e18a3a9d7c02a734b2ce  base/classicmusic/instruments/CLEANGTR.PAT
-  2b3dd9b420b4c3ec9162c7c5faee5951  base/classicmusic/instruments/CONCRTNA.PAT
-  a835066fb20b92137a1656c81f034f01  base/classicmusic/instruments/CONGAHI1.PAT
-  4eb1e50b72e79c46187a791affc9e692  base/classicmusic/instruments/CONGAHI2.PAT
-  03cdf416c641a3d55c47d096907263e3  base/classicmusic/instruments/CONGALO.PAT
-  e5e6d96900a570c01cf7fabefaf1dbd9  base/classicmusic/instruments/CONTRABA.PAT
-  c34bb86bbcae74f575271e36ed170554  base/classicmusic/instruments/COWBELL.PAT
-  10da2d6bebbba8390d0c86c5546815c7  base/classicmusic/instruments/CRYSTAL.PAT
-  ed79f6b512f5d0ab6a96d963edbbcaae  base/classicmusic/instruments/CUICA1.PAT
-  db457f2f93ea6d8e591288cbc86f03df  base/classicmusic/instruments/CUICA2.PAT
-  59768d88925d72dab9deb3990247322f  base/classicmusic/instruments/CYMBELL.PAT
-  792521e4fd5ead35a093e94186393e44  base/classicmusic/instruments/CYMCHINA.PAT
-  2598e06670eba72cd4cfa9d45c543336  base/classicmusic/instruments/CYMCRSH1.PAT
-  011f618d30b6a604ff6564030cb468fd  base/classicmusic/instruments/CYMCRSH2.PAT
-  bb014b007a3b730398b34603f9626574  base/classicmusic/instruments/CYMRIDE1.PAT
-  2b7e10fe54e2efbc9a886b968abbf84f  base/classicmusic/instruments/CYMRIDE2.PAT
-  6bcf17228b9ee20fecd8baf79c32108e  base/classicmusic/instruments/CYMSPLSH.PAT
-  fd3c1b8d959b85d1564f236a42638443  base/classicmusic/instruments/DISTGTR.PAT
-  752516b6b8755b8a9b43653ac8debe4b  base/classicmusic/instruments/DOO.PAT
-  f36704bd746cbce9ea9c68a7ae42da3d  base/classicmusic/instruments/ECHOVOX.PAT
-  86fd731092111c447672cc42fb661521  base/classicmusic/instruments/ENGLHORN.PAT
-  d64659adfd078970d459f1b54eb0fe82  base/classicmusic/instruments/EPIANO1.PAT
-  df57162d53abb01b9ba09582c75b76c6  base/classicmusic/instruments/EPIANO2.PAT
-  c97b1e94eb20fcac7c6c9b3ddf24271b  base/classicmusic/instruments/FANTASIA.PAT
-  16d0486475bde0fa4c8fa39b1c6eafda  base/classicmusic/instruments/FIDDLE.PAT
-  6675402f37fdc88724514c7a7c530c12  base/classicmusic/instruments/FLUTE.PAT
-  0f42b9f56daf77d955ddd3011c0da144  base/classicmusic/instruments/FNGRBASS.PAT
-  35da5afae4202b69e223d4a37589d2f7  base/classicmusic/instruments/FRENCHRN.PAT
-  b8f71092a142aa30f5c005b1d2a83037  base/classicmusic/instruments/FRESHAIR.PAT
-  c526525e7d94071677442d06994a3dbe  base/classicmusic/instruments/FRETLESS.PAT
-  b0fe2195303525e3e613064b373cb424  base/classicmusic/instruments/FX-BLOW.PAT
-  92c4a811a5c8dfa365fb77f865afac4f  base/classicmusic/instruments/FX-FRET.PAT
-  7370ae5964c2712a6a6af60e83dfd7fb  base/classicmusic/instruments/GHOSTIE.PAT
-  13e7c2dae8d24f5e4d6af0f0b99efbe6  base/classicmusic/instruments/GLOCKEN.PAT
-  a744038719d53cbe3c28aa6e8611c447  base/classicmusic/instruments/GTRHARM.PAT
-  94f16f9deafa0d3346923e7c061511d9  base/classicmusic/instruments/GUIRO1.PAT
-  d6b2b262d634964bbb403344f5aad6a9  base/classicmusic/instruments/GUIRO2.PAT
-  a324502b03aa8f9a958f13a643693a06  base/classicmusic/instruments/HALOPAD.PAT
-  26fc9e3e9bb60535e9e0f2b241c23aac  base/classicmusic/instruments/HARMONCA.PAT
-  3d96f9d2a12e0d05f9a1435e88501aba  base/classicmusic/instruments/HARP.PAT
-  44515f7fe59bd30b3b98ee86beebd953  base/classicmusic/instruments/HELICPTR.PAT
-  56b92ed6febae6fe63ca510049c0d45f  base/classicmusic/instruments/HIGHQ.PAT
-  3e21dd3d95925f7e7b94f7bed7e5f47f  base/classicmusic/instruments/HIHATCL.PAT
-  0079f2bb33ff962f6542b334c2b5bc55  base/classicmusic/instruments/HIHATOP.PAT
-  925df5b8f460a0ba9520a8c8452db729  base/classicmusic/instruments/HIHATPD.PAT
-  871f29ce5beb2537d8d6ee1b99271a5e  base/classicmusic/instruments/HITBRASS.PAT
-  ae48658fa5486f23abdf951d9302e976  base/classicmusic/instruments/HOMEORG.PAT
-  615fb972f898ca531ce4fdec04d0eb6e  base/classicmusic/instruments/HONKY.PAT
-  8a6f07001d4569af771f32e932e73738  base/classicmusic/instruments/HRPSCHRD.PAT
-  68fd50d9cfed898f96a4c161bc3352e5  base/classicmusic/instruments/JAZZGTR.PAT
-  a2bb9d1516bc407b0f60508be7236c8f  base/classicmusic/instruments/JINGLES.PAT
-  99a22cfb0ced2fd9a9b8faa88ff835ff  base/classicmusic/instruments/JUNGLE.PAT
-  07aef92295767e67f7c7c57464f898c1  base/classicmusic/instruments/KALIMBA.PAT
-  3d9cb546a01c993d09807b9513484466  base/classicmusic/instruments/KICK1.PAT
-  8d0e3077e0651d573c6ad21ec7ca4e31  base/classicmusic/instruments/KICK2.PAT
-  253283581dbae8563f0ba875eb5cd357  base/classicmusic/instruments/KOTO.PAT
-  80f2bc2010f9ec7d7fed71034bacd724  base/classicmusic/instruments/LEAD5TH.PAT
-  c20fddf0d708917109ebebd9e3c9279d  base/classicmusic/instruments/MARACAS.PAT
-  d2f361dd0e6f31310188de5ecd937bb4  base/classicmusic/instruments/MARCATO.PAT
-  47c3dbe7196dfee0fa9925dedc720ff6  base/classicmusic/instruments/MARIMBA.PAT
-  ed0f0556971acc0783c8b2061b308306  base/classicmusic/instruments/METALPAD.PAT
-  d53324ccf52c88c4928e324cca87093d  base/classicmusic/instruments/METBELL.PAT
-  a3dc7a3b86d34ff8a8f59296d0b4f4a0  base/classicmusic/instruments/METCLICK.PAT
-  c4614885a9287a4dd905fdde97126bad  base/classicmusic/instruments/MUSICBOX.PAT
-  0512952794aec23a679c0a43b741f0d6  base/classicmusic/instruments/MUTEGTR.PAT
-  451bd80af84ebceaa534d4d5512fb4a0  base/classicmusic/instruments/MUTETRUM.PAT
-  476d7262f7699b4d37cb930a6f2e7832  base/classicmusic/instruments/NYGUITAR.PAT
-  3ee62c16e96ea4998f46d9b704823c88  base/classicmusic/instruments/OBOE.PAT
-  90ae9f25e00a53090e6ea1c921216c28  base/classicmusic/instruments/OCARINA.PAT
-  3a394df719af2ea3d7f03965402a5fbb  base/classicmusic/instruments/ODGUITAR.PAT
-  44720380ea8c449c637cf106508894e2  base/classicmusic/instruments/ORCHHIT.PAT
-  70739dfdc05f15134e8e39b41ddef914  base/classicmusic/instruments/PERCORG.PAT
-  b00dada605ee318779759bb77345be67  base/classicmusic/instruments/PICCOLO.PAT
-  2b08f4ed47567b2e2c3cf75934fd6a12  base/classicmusic/instruments/PICKBASS.PAT
-  aba0f0341fd76440619b42295a670b0d  base/classicmusic/instruments/PISTOL.PAT
-  68d36cd69bfcd7c22487747b1e2c6aa2  base/classicmusic/instruments/PIZZCATO.PAT
-  7ed1d40c84318cb010de3a0eb719df9b  base/classicmusic/instruments/POLYSYN.PAT
-  5098194490c5861a5c91bb81a151ad57  base/classicmusic/instruments/RECORDER.PAT
-  ce1ecec4327380bfa50514f38dec8654  base/classicmusic/instruments/REEDORG.PAT
-  0d889d530f1896eef577799dc74d9ee2  base/classicmusic/instruments/REVCYM.PAT
-  d5397ea3d2d31326d1d4ca5d404447fb  base/classicmusic/instruments/ROCKORG.PAT
-  111c7940dc7613209e7d114f59dcc354  base/classicmusic/instruments/SANTUR.PAT
-  c1edf7db70663f0aa17450931bb57d76  base/classicmusic/instruments/SAWWAVE.PAT
-  a9e0f1f049fafaaf4e5fc0f44e556e8c  base/classicmusic/instruments/SCRATCH1.PAT
-  432b7f0b16954a03fd84578cf1a2e90a  base/classicmusic/instruments/SCRATCH2.PAT
-  8d0e1e6576a7ea28c501d8349fd8f478  base/classicmusic/instruments/SEASHORE.PAT
-  83f58d66f19e3480904229085370c159  base/classicmusic/instruments/SHAKAZUL.PAT
-  629207f107b5b19268b06930f19c96c4  base/classicmusic/instruments/SHAKER.PAT
-  053cfa2cbe020d342e2aa86d6145dcf4  base/classicmusic/instruments/SHAMISEN.PAT
-  cda799949350716440f0d72b026f184c  base/classicmusic/instruments/SHANNAI.PAT
-  d647c81792bda594e2f16a2305089b56  base/classicmusic/instruments/SITAR.PAT
-  b9482a886dad694fb42d6c32318fa15a  base/classicmusic/instruments/SLAP.PAT
-  b830108a3e6447511b44fcaa626ae503  base/classicmusic/instruments/SLAPBAS1.PAT
-  5cebf0e3e744768fbf46b880d91af4e6  base/classicmusic/instruments/SLAPBAS2.PAT
-  7162cf8dea06d05f5a7e0d66179fcbe1  base/classicmusic/instruments/SLOWSTR.PAT
-  1ca9188b1900689cf061d47b601088c0  base/classicmusic/instruments/SNARE1.PAT
-  ccdddedf4cc3dc9c9d95d4d757f73fa8  base/classicmusic/instruments/SNARE2.PAT
-  6bb379a14ae4c17a21d37a50e3a52822  base/classicmusic/instruments/SOUNDTRK.PAT
-  c4aeedb4269e140950770e0e289a57af  base/classicmusic/instruments/SPRNOSAX.PAT
-  53ed3fb852a61d8aae2bec5db740bd32  base/classicmusic/instruments/SQRCLICK.PAT
-  1621b67653dd7648bf6b8565d911f399  base/classicmusic/instruments/SQRWAVE.PAT
-  f7a256ff0c77590f0a1dd16f7a28eacd  base/classicmusic/instruments/STARTRAK.PAT
-  e81942cc8f8a2379c4621793acc24090  base/classicmusic/instruments/STEELDRM.PAT
-  11496958bd66a2e8592c86466dc4a549  base/classicmusic/instruments/STICKRIM.PAT
-  b97605a8eb68aa23ebbe9946c3bdcfc8  base/classicmusic/instruments/STICKS.PAT
-  81aa141c160ade3bdcbc5678216c68c4  base/classicmusic/instruments/SURDO1.PAT
-  b16a038ca9c4c35a2ebb48550593b89f  base/classicmusic/instruments/SURDO2.PAT
-  03e76264eee9f61f0c5feb82cfb29dee  base/classicmusic/instruments/SWEEPER.PAT
-  d2381706c6000580b4aa2c29ea6f26ff  base/classicmusic/instruments/SYNBASS1.PAT
-  f9ddf2793f904f2d8798145c7624cc71  base/classicmusic/instruments/SYNBASS2.PAT
-  8709e8f0b70479c6ad6d51f615325a5f  base/classicmusic/instruments/SYNBRAS1.PAT
-  08f18a3dd2ab1691e263656080f88777  base/classicmusic/instruments/SYNBRAS2.PAT
-  6804c3d96cc966c731460bdeeabb32c5  base/classicmusic/instruments/SYNPIANO.PAT
-  1285df8e7ec98a205c799851063360ee  base/classicmusic/instruments/SYNSTR1.PAT
-  f98e4c1081a48d3a7cbdb838e9780f99  base/classicmusic/instruments/SYNSTR2.PAT
-  0197ca308eb7d6aa825356fd4bcb91a0  base/classicmusic/instruments/SYNTOM.PAT
-  606ab6204b3d853851b4a3245e0b5845  base/classicmusic/instruments/TAIKO.PAT
-  1718fb7fef7f1ebc91601ecf15ca078e  base/classicmusic/instruments/TAMBORIN.PAT
-  c3a57bb7a415ae31e4bfea36b7cec65a  base/classicmusic/instruments/TELEPHON.PAT
-  1c699f9c9a1fce54d0efbe5baf046644  base/classicmusic/instruments/TENORSAX.PAT
-  0f8f64a11f19f0cef2420309200d2b7e  base/classicmusic/instruments/TIMBALEH.PAT
-  d3ae41d760f783a7859e9233aaa79e84  base/classicmusic/instruments/TIMBALEL.PAT
-  c5ae50faec03d2dae2b338f30d36712e  base/classicmusic/instruments/TIMPANI.PAT
-  d354a2fd0fcf5faf4202a953f1d5902d  base/classicmusic/instruments/TOMHI1.PAT
-  16dacdf8fa4f7a07830fc78ef8d26295  base/classicmusic/instruments/TOMHI2.PAT
-  056ce10bbe52f62de6d102e402b1dc7b  base/classicmusic/instruments/TOMLO1.PAT
-  7aaf6587d2f915d4df3eee55e3f8bf5f  base/classicmusic/instruments/TOMLO2.PAT
-  45789a2ea894b16998f4e6f027648720  base/classicmusic/instruments/TOMMID1.PAT
-  b122269bb2da503aa3b02a747791a59e  base/classicmusic/instruments/TOMMID2.PAT
-  823403bdd63a2aaa8813758600ac2919  base/classicmusic/instruments/TOMS.PAT
-  af1e9273df8d883d8598e2c62eec413d  base/classicmusic/instruments/TREMSTR.PAT
-  2f43f3a3fc43bfe34208a8db7ef3c23e  base/classicmusic/instruments/TRIANGL1.PAT
-  9639795c49cb0eb938cedac7dedf3e36  base/classicmusic/instruments/TRIANGL2.PAT
-  efe2666352dcf293d1601797a42c6bdb  base/classicmusic/instruments/TROMBONE.PAT
-  62265dbaf7d02ad88764b6fbb1f112c5  base/classicmusic/instruments/TRUMPET.PAT
-  bcc9e1d821134bfc17074f9acc9027d9  base/classicmusic/instruments/TUBA.PAT
-  f49344b82899ca0e0173bea0d054307d  base/classicmusic/instruments/TUBEBELL.PAT
-  35fc66854a8778917bbeaa6802c08355  base/classicmusic/instruments/UNICORN.PAT
-  3abdb279b7a9372259304cc511afe0ca  base/classicmusic/instruments/VIBES.PAT
-  ef456cb88a5f69702292fc3baeb042bf  base/classicmusic/instruments/VIBSLAP.PAT
-  83dd0a6dc3ffcade864a83c25e8189e8  base/classicmusic/instruments/VIOLA.PAT
-  0703505e239b30723389cd510bac01f7  base/classicmusic/instruments/VIOLIN.PAT
-  b0f4b3defad343e8fb9e79a6b51e9bb2  base/classicmusic/instruments/VOICES.PAT
-  5675ef5e3d792e8e37c37a3250b772b2  base/classicmusic/instruments/VOXLEAD.PAT
-  f86471f661e11b87ab7835c8f200edbd  base/classicmusic/instruments/WARMPAD.PAT
-  9bbf7bd68b33653be3a195aff630baa4  base/classicmusic/instruments/WHISTLE.PAT
-  b173c3e39d9336474469da6d01fa2c67  base/classicmusic/instruments/WHISTLE1.PAT
-  a574f4f6167c1618a6ed3d2d8409c2dd  base/classicmusic/instruments/WHISTLE2.PAT
-  fc3ee9c47f93f9450859b89d139bfebc  base/classicmusic/instruments/WOODBLK.PAT
-  5afe18a3897b085d6aa0629abf5009db  base/classicmusic/instruments/WOODBLK1.PAT
-  13a58fa04070fdc80c496dddc28e619a  base/classicmusic/instruments/WOODBLK2.PAT
-  1735a5bb967002defbf8060315762e26  base/classicmusic/instruments/WOODFLUT.PAT
-  75639f8686485c8de2e267950e1b4ead  base/classicmusic/instruments/XYLOPHON.PAT
-  a3140d269c610f3c9c85208945e1601d  base/default.cfg
-  dd19a3ecc592ec2d7ab9e9c6ae958826  base/joy_360_0.cfg
-  2a51b291696dd8e8be620344226a43bd  base/joy_360_1.cfg
-  bc641cdf9cc99993eb17ee63cd1e3647  base/joy_lefty.cfg
-  0f68b829267b2cd4592b9729d2514798  base/joy_righty.cfg
-  3f5f66774f73868a02c1160a00d52df4  base/maps/admin.crc
-  12c31bf318c264fce068a9ceda33585c  base/maps/admin.resources
-  72a22fd41cf2e7b825dc7f4371325125  base/maps/alphalabs1.crc
-  039bf15cbfcc0d83f02dc1a7ba2aeb20  base/maps/alphalabs1.resources
-  8d1fd898ecaa738005ae421102b104b8  base/maps/alphalabs2.crc
-  aefbf010decff6836b2e4c64d0fe589a  base/maps/alphalabs2.resources
-  ab0a33abba5e255636d4c7a74999a9ea  base/maps/alphalabs3.crc
-  a120fb992178914439c0920ea6fcb39a  base/maps/alphalabs3.resources
-  5b01c3f44fdcf947cbdd018879fe6e39  base/maps/alphalabs4.crc
-  7b411a091c51249c3e998375d3d21c29  base/maps/alphalabs4.resources
-  6f5624817f2912bba37c6a316482ae21  base/maps/caverns1.crc
-  82b4803f2d591310c44a6ddc10fb97bc  base/maps/caverns1.resources
-  d7a80258c02c22ba65d3677430a5b82e  base/maps/caverns2.crc
-  987080e7382bf748e1362197b425ca5c  base/maps/caverns2.resources
-  d0920830fea06b195c2606355637b974  base/maps/comm1.crc
-  c0bde129242c68f0db11c2f642eef020  base/maps/comm1.resources
-  a9dbae5ece8258ddd2ac7986fb935f91  base/maps/commoutside.crc
-  1589de447088abd7262be891b6371c9f  base/maps/commoutside.resources
-  391c0d33b418a609f8a01d60c2d9d73d  base/maps/cpu.crc
-  af9baa752992a8e536aee7aa83ba65c6  base/maps/cpu.resources
-  8681b5dec0601eeef38f41a3a6c0aa13  base/maps/cpuboss.crc
-  9d30ae26f53695d6641d8311137112da  base/maps/cpuboss.resources
-  a84cc88f1ddf8a187d740d4b17de91b9  base/maps/d3ctf1.crc
-  dc32cc26f4f604dabe8e913b3ae6e5e3  base/maps/d3ctf1.resources
-  fbeef9444fd68feb11906a59f3ed0cbb  base/maps/d3ctf2.crc
-  15e8834b717c13bd1385d55386e10c95  base/maps/d3ctf2.resources
-  c244e4590fb39bfc1fa9fb73cae7ad6b  base/maps/d3ctf3.crc
-  b1248bfb554dc1e662e65c754da685a5  base/maps/d3ctf3.resources
-  eb21be732ff0c8340ed582c4a119ad8a  base/maps/d3ctf4.crc
-  89a61ad3b70adecd99dee51c4a12944e  base/maps/d3ctf4.resources
-  67351fdf3b9a1412104d0a10131586e5  base/maps/d3dm1.crc
-  f74158a1cb4bdd2a54d206b25761f6bb  base/maps/d3dm1.resources
-  f615038324acf5862b9f14ab29293e93  base/maps/d3dm2.crc
-  710f0ff38397391b99d2112a7aa3edd4  base/maps/d3dm2.resources
-  d9a17cdb36f21284ddb81b173a64b063  base/maps/d3dm3.crc
-  30ee1416aac035841345c5932e07b24d  base/maps/d3dm3.resources
-  69be30b6a8c73f28e98d13f5228cd0b4  base/maps/d3dm4.crc
-  693e00681732161401e15174d42706f6  base/maps/d3dm4.resources
-  ded83da17ca52cbac1bb045764fddc25  base/maps/d3dm5.crc
-  d43c038f80d34922415f9207ab3719ea  base/maps/d3dm5.resources
-  e6b03f9eeaab0da7768d71d4d64db9b0  base/maps/d3xpdm1.crc
-  8fb360a6ea93137608c35f105fc335e7  base/maps/d3xpdm1.resources
-  2c39b0aa8bbd9195b4800304e7770fb4  base/maps/d3xpdm2.crc
-  0de577a6a00dc09d4c65630c02f5609a  base/maps/d3xpdm2.resources
-  d33e0e1b2eefa87f769275e3808a187a  base/maps/d3xpdm3.crc
-  264e2003f260019a4bb568173067f32f  base/maps/d3xpdm3.resources
-  3c2280becb6b0aa06d532fbb014a965f  base/maps/d3xpdm4.crc
-  484c7c63230ab4b49e965cb23d36fbd4  base/maps/d3xpdm4.resources
-  569eea4891e6a66ae8e883a2d116d86a  base/maps/delta1.crc
-  d46e12279d0ded172316df797432b12b  base/maps/delta1.resources
-  7b4e7d78b88a5d50cf352966d4d314d9  base/maps/delta2a.crc
-  9ba9771b7577d9f4970d48c2def605d3  base/maps/delta2a.resources
-  738d64062774d4d406de660880a98520  base/maps/delta2b.crc
-  a8a45978eaf07b824dfcbede83caf145  base/maps/delta2b.resources
-  f0eade565fa6c84f87d17d75548b9fda  base/maps/delta3.crc
-  93fe4a5c82ac4a63c649cb9c7a452886  base/maps/delta3.resources
-  56fadf994f014c5ac8a11dde7068c7f0  base/maps/delta4.crc
-  17a8a5420c20620c6258b56e4c73f554  base/maps/delta4.resources
-  9f7ef7c40f8f36a51051931d9614a796  base/maps/delta5.crc
-  241e1d4656cacc80ec1109baabf05860  base/maps/delta5.resources
-  60be5c90216c941238373cf09da54e55  base/maps/deltax.crc
-  b05d72e67baa2c18decd14363c5986d2  base/maps/deltax.resources
-  4551c0c812c9a76485408a2b66bf077e  base/maps/enpro.crc
-  2b2e96284c8b40232d3fd1e37db8b98c  base/maps/enpro.resources
-  6c98c714234e475dc7dc842ee0f5f08f  base/maps/erebus1.crc
-  f4d48742dbaa1f458c5101e078bd585f  base/maps/erebus1.resources
-  d9f0c7120ee0735c095ab03adb9f698a  base/maps/erebus2.crc
-  c1078da8cdbe1130887b8b41b7d824ce  base/maps/erebus2.resources
-  844b97fd57538a9939584bc705d08805  base/maps/erebus3.crc
-  97fe6d46fc28e03180b034c9e1ad6ab7  base/maps/erebus3.resources
-  a53e53dfc2d5779c024f4ecddedb6588  base/maps/erebus4.crc
-  3021a83e2427ac4df33dc0b32a76bff2  base/maps/erebus4.resources
-  7bb32d067d52cbaf25d055ff6d683e25  base/maps/erebus5.crc
-  e7483cc80d82e6a9b175ff89a24def62  base/maps/erebus5.resources
-  9d4f3472c333003e14a637c1330c19d8  base/maps/erebus6.crc
-  7f815ccb6f752b8ef7572c0fc1242215  base/maps/erebus6.resources
-  fffcc4afb32bcb00b549220dabeb8216  base/maps/hell.crc
-  30afe55f1182e1e1096262ba87a1b4e5  base/maps/hell.resources
-  78fa10be9b5806c9933e85c9c96aae20  base/maps/hell1.crc
-  8b043f2c4b8e884dd037693f5a36e2c9  base/maps/hell1.resources
-  d088b085313f6aecffa488e1ae400de9  base/maps/hellhole.crc
-  9b28c38622cddb8ad9515cd9ab8f497d  base/maps/hellhole.resources
-  d304acd026867697672a3ec4e4616d40  base/maps/le_enpro1.crc
-  2ef7b8125b7b81df28d831404dda5477  base/maps/le_enpro1.resources
-  1646dddb8da04bc055ebeb34577b808f  base/maps/le_enpro2.crc
-  bb08344710a8922285d1f7413da4cd08  base/maps/le_enpro2.resources
-  5ac75b4dacc8dcda3af8b77c58033b77  base/maps/le_exis1.crc
-  7b9b7a3fe303abce93d5ab6206d7022d  base/maps/le_exis1.resources
-  3df699eb935057d3d2d9dbe7df15a8f4  base/maps/le_exis2.crc
-  c4b65e05aba3eca1459e8c340976fb31  base/maps/le_exis2.resources
-  9b99b1256b85998eb1956f6434b4381e  base/maps/le_hell.crc
-  454f9606bf879198216a276b81c5ce3d  base/maps/le_hell.resources
-  7593651d29f22bb79b2113189f3998b5  base/maps/le_hell_post.crc
-  2df21cb8eff373c06cde09a590a88b41  base/maps/le_hell_post.resources
-  7b203bc3f233e4874cba4095dc02b01f  base/maps/le_underground.crc
-  c73c779789da3e0f1b5bab7681e10be9  base/maps/le_underground.resources
-  88ffa79dccc7f85d2b50055120bbe7db  base/maps/le_underground2.crc
-  9fd4766a341b7a23e29b335bd3b2e99c  base/maps/le_underground2.resources
-  d905455d800f43e562562fd37d4285b2  base/maps/mars_city1.crc
-  b0d7e6d1291f1535f55a4f0c9ab0946b  base/maps/mars_city1.resources
-  d2aa1ca77136fd1862eb37c7541032ff  base/maps/mars_city2.crc
-  50212c6a7cc55d5203314752e4005df8  base/maps/mars_city2.resources
-  dc6a769436b4da2b2f139c09d9446920  base/maps/mc_underground.crc
-  a35c207ec4ef11bc87c68fb5fb60d05a  base/maps/mc_underground.resources
-  5561107c4f861d05af1bae9c9f955c53  base/maps/monorail.crc
-  8535bcdf5123182143eb949bd6633a54  base/maps/monorail.resources
-  1d4674d59038e700b6376238be1d6bfe  base/maps/phobos1.crc
-  b56da275bebd344a708d529b6988b486  base/maps/phobos1.resources
-  15840dcf5e8ad891ff6a747ae6018901  base/maps/phobos2.crc
-  2703b8f53f6de17e5999d12256d9422c  base/maps/phobos2.resources
-  b8c04b9bb378bc4d1679abae8ad81e50  base/maps/phobos3.crc
-  a3b645daab7f4ebb159df781cb849a45  base/maps/phobos3.resources
-  c28202a5ceb55d8d5cb99063001da4f9  base/maps/phobos4.crc
-  52cdf612ed33a7e516f1a16be89af3a8  base/maps/phobos4.resources
-  f55417f3d02a98c5912498c271f9bf7e  base/maps/recycling1.crc
-  d67e71f236942ef18c3519f1124c0f11  base/maps/recycling1.resources
-  59357385cc90d01810b490f027c52a1b  base/maps/recycling2.crc
-  3ac61a1aba62effdc00833b5b61d0269  base/maps/recycling2.resources
-  f584be0b7d4a7075e2768620d45c0b72  base/maps/site3.crc
-  09fbbb57a41cb9901ab52cd531130fe4  base/maps/site3.resources
-  f63c9e6c6cd155f8498bcfbfc5ae1317  base/sound/VO/video/deployment.bik
-  5a0ceb42981d67549f229056cf6a2923  base/sound/VO/video/epd.bik
-  28b3c31f0b13567a3cd957cc06c8ee7d  base/sound/VO/video/generator.bik
-  75dae950961760e98dcd948ff799c0bc  base/sound/VO/video/grabber.bik
-  0bb242683e6d30ad3f54949b77786ecf  base/sound/VO/video/hydrocon.bik
-  0c7d21a069c4bd50495aad7d62421f31  base/sound/VO/video/mfs.bik
-  086fa2c7331c2ba5640b3802dbd5cfed  base/sound/VO/video/video_alphalabs_intro.bik
-  a0aa87d8e597410087ff02658d170988  base/sound/VO/video/video_ancient_civ.bik
-  4ec548f317c73eb1034d36e627f6b92e  base/sound/VO/video/video_bfg.bik
-  f1f7b26098b509d40ac8150096ad7c94  base/sound/VO/video/video_chaingun.bik
-  497b38dd3904e7aa0657955ee9f25e98  base/sound/VO/video/video_demon_museum.bik
-  f87813c18a138413591df47fb583848f  base/sound/VO/video/video_ian_report.bik
-  842de633937e7009416d731a62d24069  base/sound/VO/video/video_ipn_news.bik
-  90ff9d5094d827cf1007ba8a4a49dd06  base/sound/VO/video/video_marine_sops.bik
-  a7cd289cfb2df374458ff2324b7e2913  base/sound/VO/video/video_meyers_report.bik
-  db7c96b76a7aeec831a54c2f4b4850e3  base/sound/VO/video/video_plasmagun.bik
-  77625a99d7c825fdbca29ee66797603e  base/sound/VO/video/video_recycling.bik
-  2c84eeda28ab80493d2ca51bfadb4f97  base/sound/VO/video/video_soulcube.bik
-  0712f07602c2ed95c5ecda40b20f877b  base/sound/VO/video/video_tablets.bik
-  c551fcd420081f8542decdc03265df38  base/sound/VO/video/video_uac_welcome.bik
-  97edda4321c179507708695e9505471c  base/strings/english.lang
-  f5b0544be30f1c7b579c70e31073ea3f  base/video/admin/betruger.bik
-  c5f6b652709d305324e35501c4b6acb5  base/video/comm1/swann_vidphone1.bik
-  92a75b1d68ce944f9209191f97a7d5b8  base/video/comm1/swann_vidphone2.bik
-  c4f65108e3df9d9d0221ec5b33bee479  base/video/comm1/swann_vidphone3.bik
-  d158d22a064423946f5f197816728102  base/video/data.bik
-  e4317ebcbbb236d77201a158e7eec70d  base/video/delta1/sarge_video1.bik
-  f8f9b75f5deb496bb91a8af697872492  base/video/enpro1/lm_meyers_enpro.bik
-  9aa92c2846d63ccb1922e94651b7b63a  base/video/erebusteam.bik
-  9ae86edf9b8d8270d2a3b2c7e5139bd5  base/video/fireball.bik
-  93db97d019aec65067614513fe5935c6  base/video/hellhole/rescue.bik
-  b8acbf46d247a359007be4ecf140a1b6  base/video/intro/introloop.bik
-  431d38e4fcd81df09febfad012a22412  base/video/loadvideo.bik
-  2b60ec1b157d53d49123d08387c24f89  base/video/mars1.bik
-  67c5bf92470b811334e0ca34172d1706  base/video/mars_rotation.bik
-  308362451eb429e11be5410392aff285  base/video/marscity/decom.bik
-  1632bc29f9301d42b1331a9802392888  base/video/marscity/dropship.bik
-  cc841a7a09df7da8117b140a64e5b4c2  base/video/marscity/monoflyby.bik
-  195084ef97470ea8571785bcd2358b7c  base/video/marscity/sarge_mission_brief.bik
-  f89b54896ed8fa9d7841557386adee3e  base/video/marscity/sci_team_request.bik
-  da58e3c365ca2a7d4569ac89b50a2a2b  base/video/marscity/ship.bik
-  aecf9ca202d85bc8e4379e44c49c6405  base/video/mc_underground/inv1sm.bik
-  a9e8a9eda088b9fd36e40ced7ad42158  base/video/mc_underground/inv2sm.bik
-  76bb188cf494fc3d576aad288dd823c1  base/video/mc_underground/inv3.bik
-  98e29b60073e230df374bfff6300e240  base/video/mc_underground/inv4sm.bik
-  773b99bb6109aa5938b1c3115c29a655  base/video/mc_underground/inv5sm.bik
-  eed7e6224c9d478afea81f5b3708651e  base/video/mc_underground/inv6sm.bik
-  d6edcc803ddaedfa60250f8800292d9c  base/video/mc_underground/inv7sm.bik
-  b5e2866867f1016bd21092b1028cc176  base/video/mcneil.bik
-  35646f399f09cffe1cd455591fa36d52  base/video/radar.bik
-  2bf9a98b9734f610407eb8e360379bb5  base/video/recycling2/cs_bert01_composite.bik
-  203b2ccc8895f8a62868f753f9b95d1c  base/video/recycling2/cs_bert02_composite.bik
-  fb35c4a5a9fd49ec29ab6e900572c524  base/wads/DOOM.WAD
-  c3bea40570c23e511a7ed3ebcd9865f7  base/wads/DOOM2.WAD
-  967d5ae23daf45196212ae1b605da3b0  base/wads/NERVE.WAD
+      - Classic Doom data
+      - Classic Doom extras
+      - Classic Doom docs
+      - Classic Doom source
+      - cdoom/docs/License.txt
 
 sha1sums: |
   028dd18e5bada1e563c2a0d3bf5e77572d78e6b9  doom3-linux-1.3.1.1304.x86.run
@@ -1477,7 +589,9 @@ sha1sums: |
   4a40e1f4ef41341a122d405930a6edb825b720e9  d3xp/pak000.pk4
   0d9ca3d4532c0d412fbb64ab2885f52ef8852594  d3xp/pak001.pk4
   60173a82931e6db3ed3bbc07cc9df430d7cf5452  License.txt?d3xp
+  a619eb0c6dd2cc384e5ba2c8b444ab56db43897d  DOOM3-1.3.1.exe
 
+  5402b4edf1dbff8fff242d999325fc2be51e4b72  classic_doom_3_1.3.1.exe
   7fdba41af0521cdb815cad272499b888a348acfd  cdoom/Classic Doom 3.url
   c4b63b17223ba9ec77408eac0d2bad1370ce47c2  cdoom/autoexec.cfg
   295abe683546900bdea4b73a2760545e03f6ad55  cdoom/cdoom.ico
@@ -1902,6 +1016,7 @@ sha1sums: |
   3451288383fb16e196f273d9f85d58c1fda97bf4  base/wads/NERVE.WAD
 
 sha256sums: |
+  a3215349ecfbb6d6b4d3411d1ed5c60394a8c072c74c6214609c78e556f1fb5b  DOOM3-1.3.1.exe
   2f90dff20f2d3c0c47f17b3d6d45c4f0e7d27b986bf6084f21b85180cd1e03b4  doom3-linux-1.3.1.1304.x86.run
   220513bba8cc51191738b52b4ea320cd3376736e13147e240aa503622aa926ce  base/pak000.pk4
   dc85da3d731793f2973ffb7ef31be17057e88dee0b1157531c7f26a7b33c8fc0  base/pak001.pk4
@@ -1917,6 +1032,7 @@ sha256sums: |
   2ba245254b8ed3440e252f6e2e24af2c6343d7c312f9a9a7e73509abdaf13e49  d3xp/pak001.pk4
   e1600b370ed0b2bb6893e0795ea21017efac73faab5025eb67fbb127512d3b4a  License.txt?d3xp
 
+  2eacb9fce4447c22b8f7a24741534df952116b6efa9e6cdc807651b184432935  classic_doom_3_1.3.1.exe
   43561eabe56575aa74ba89a0650158bbf11bb42f91d1d11d9d77fa04fc7d2ed3  cdoom/Classic Doom 3.url
   79918fe28d234e47124c5118117d8b341e133a1c09f06377112ae401217740e5  cdoom/autoexec.cfg
   cb42810ea29d1e0b775fde33f9973cc1d08b6350c11bf24693c200810af7e089  cdoom/cdoom.ico
