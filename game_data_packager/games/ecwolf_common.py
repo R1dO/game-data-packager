@@ -23,8 +23,7 @@ import subprocess
 from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
-from ..util import mkdir_p
-from ..version import (FORMAT)
+from ..util import (mkdir_p, lintian_desktop)
 
 logger = logging.getLogger('game-data-packager.games.ecwolf-common')
 
@@ -101,16 +100,6 @@ class EcwolfTask(PackagingTask):
                   'w', encoding='utf-8') as output:
              desktop.write(output, space_around_delimiters=False)
 
-        if FORMAT != 'deb':
-            return
-
-        lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
-        mkdir_p(lintiandir)
-
-        with open(os.path.join(lintiandir, package.name),
-                  'a', encoding='utf-8') as o:
-             o.write('%s: desktop-command-not-in-package '
-                     'usr/share/applications/%s.desktop ecwolf\n'
-                     % (package.name, package.name))
+        lintian_desktop(destdir, package.name, 'ecwolf')
 
 GAME_DATA_SUBCLASS = EcwolfGameData

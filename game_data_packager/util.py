@@ -216,10 +216,17 @@ def recursive_utime(directory, orig_time):
 
 # loaded at the end to avoid failed cyclic loads
 if FORMAT == 'deb':
-    from .util_deb import (PACKAGE_CACHE, install_packages)
+    from .util_deb import (PACKAGE_CACHE,
+                           install_packages,
+                           lintian_license,
+                           lintian_desktop)
 else:
     from .util_rpm import (PACKAGE_CACHE, install_packages)
+    lintian_license = lambda a,b,c: None
+    lintian_desktop = lambda a,b,c: None
 
 # pyflakes
 PACKAGE_CACHE
 install_packages
+lintian_license
+lintian_desktop

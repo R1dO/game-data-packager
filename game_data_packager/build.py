@@ -49,6 +49,7 @@ from .util import (AGENT,
         human_size,
         install_packages,
         lang_score,
+        lintian_license,
         mkdir_p,
         rm_rf,
         recursive_utime,
@@ -1333,15 +1334,8 @@ class PackagingTask(object):
                      continue
                  license_file = self.game.files[f].install_as
                  licenses.add("/usr/share/doc/%s/%s" % (package.name, license_file))
-                 if FORMAT != 'deb':
-                     continue
                  if os.path.splitext(license_file)[0].lower() == 'license':
-                     lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
-                     mkdir_p(lintiandir)
-                     with open(os.path.join(lintiandir, package.name),
-                              'a', encoding='utf-8') as l:
-                         l.write('%s: extra-license-file usr/share/doc/%s/%s\n'
-                                 % (package.name, package.name, license_file))
+                     lintian_license(destdir, package.name, license_file)
 
             if package.component == 'local':
                 o.write('It contains proprietary game data '

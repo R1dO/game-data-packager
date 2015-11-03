@@ -24,8 +24,8 @@ import subprocess
 from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
-from ..util import (copy_with_substitutions, mkdir_p)
-from ..version import (FORMAT)
+from ..util import (copy_with_substitutions, mkdir_p, lintian_desktop)
+from ..version import FORMAT
 
 logger = logging.getLogger('game-data-packager.games.doom-common')
 
@@ -166,26 +166,17 @@ class DoomTask(PackagingTask):
                       'w', encoding='utf-8') as output:
                  desktop.write(output, space_around_delimiters=False)
 
-            if FORMAT != 'deb':
-                return
+            lintian_desktop(destdir, package.name, package.program)
 
-            lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
-            mkdir_p(lintiandir)
-
-            with open(os.path.join(lintiandir, package.name),
-                      'a', encoding='utf-8') as o:
-                 o.write('%s: desktop-command-not-in-package '
-                         'usr/share/applications/%s.desktop %s\n'
-                         % (package.name, desktop_file, package.program))
-
-            debdir = os.path.join(destdir, 'DEBIAN')
-            mkdir_p(debdir)
-            copy_with_substitutions(
+            if FORMAT == 'deb':
+                debdir = os.path.join(destdir, 'DEBIAN')
+                mkdir_p(debdir)
+                copy_with_substitutions(
                     open(os.path.join(DATADIR, 'doom-common.preinst.in'),
                         encoding='utf-8'),
                     open(os.path.join(debdir, 'preinst'), 'w',
                         encoding='utf-8'),
                     IWAD=main_wad)
-            os.chmod(os.path.join(debdir, 'preinst'), 0o755)
+                os.chmod(os.path.join(debdir, 'preinst'), 0o755)
 
 GAME_DATA_SUBCLASS = DoomGameData

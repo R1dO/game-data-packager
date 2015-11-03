@@ -20,7 +20,7 @@ import logging
 import os
 import subprocess
 
-from .util import (run_as_root, check_output)
+from .util import (run_as_root, check_output, mkdir_p)
 from debian.debian_support import Version
 
 logger = logging.getLogger('game-data-packager.util_deb')
@@ -119,3 +119,20 @@ def install_packages(debs, method, gain_root='su'):
     else:
         # gdebi-gtk etc.
         subprocess.call([method] + list(debs))
+
+def lintian_license(destdir, package, file):
+    assert type(package) is str
+    lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+    mkdir_p(lintiandir)
+    with open(os.path.join(lintiandir, package), 'a', encoding='utf-8') as l:
+        l.write('%s: extra-license-file usr/share/doc/%s/%s\n'
+                % (package, package, file))
+
+def lintian_desktop(destdir, package, program):
+    assert type(package) is str
+    lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+    mkdir_p(lintiandir)
+    with open(os.path.join(lintiandir, package), 'a', encoding='utf-8') as l:
+        l.write('%s: desktop-command-not-in-package '
+                'usr/share/applications/%s.desktop %s\n'
+                 % (package, package, program))
