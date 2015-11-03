@@ -1419,8 +1419,9 @@ class PackagingTask(object):
 
     def fill_dest_dir_rpm(self, package, destdir):
         specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
+        short_desc, long_desc = self.generate_description(package)
         with open(specfile, 'w', encoding='utf-8') as spec:
-            spec.write('Summary: %s\n' % package.longname or self.longname)
+            spec.write('Summary: %s\n' % short_desc)
             spec.write('Name: %s\n' % package.name)
             spec.write('Version: %s\n' % package.version)
             spec.write('Release: 0\n')
@@ -1428,7 +1429,7 @@ class PackagingTask(object):
             spec.write('Group: Amusements/Games\n')
             spec.write('BuildArch: noarch\n')
             spec.write('%description\n')
-            spec.write('(long description)\n')
+            spec.write('%s\n' % long_desc)
             spec.write('%files\n')
             for dirpath, dirnames, filenames in os.walk(destdir):
                 for fn in filenames:
@@ -1697,6 +1698,10 @@ class PackagingTask(object):
         control['Version'] = package.version
 
         if 'Description' not in control:
+            short_desc, long_desc = self.generate_description(package)
+            control['Description'] = short_desc + '\n' + long_desc
+
+    def generate_description(self, package):
             longname = package.longname or self.game.longname
 
             if package.section == 'games':
@@ -1739,6 +1744,7 @@ class PackagingTask(object):
             copyright = package.copyright or self.game.copyright
             long_desc += '  Published by: ' + copyright.split(' ', 2)[2]
 
+            engine = package.engine or self.game.engine
             if engine and package.section == 'games':
                 long_desc += '\n .\n'
                 if '|' in engine:
@@ -1758,7 +1764,7 @@ class PackagingTask(object):
             if package.used_sources:
                 long_desc += '\n Built from: ' + ', '.join(package.used_sources)
 
-            control['Description'] = short_desc + '\n' + long_desc
+            return (short_desc, long_desc)
 
     def get_control_template(self, package):
         return os.path.join(DATADIR, package.name + '.control.in')
