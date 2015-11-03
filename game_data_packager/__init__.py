@@ -667,6 +667,7 @@ class GameData(object):
         files = {}
         groups = {}
         packages = {}
+        ret = {}
 
         def sort_set_values(d):
             ret = {}
@@ -684,19 +685,36 @@ class GameData(object):
         for name, package in self.packages.items():
             packages[name] = package.to_yaml()
 
-        return {
-            'copyright_notice': self.copyright_notice,
-            'help_text': self.help_text,
-            'known_filenames': sort_set_values(self.known_filenames),
-            'known_md5s': sort_set_values(self.known_md5s),
-            'known_sha1s': sort_set_values(self.known_sha1s),
-            'known_sha256s': sort_set_values(self.known_sha256s),
-            'known_sizes': sort_set_values(self.known_sizes),
-            'packages': packages,
-            'providers': sort_set_values(self.providers),
-            'files': files,
-            'groups': groups,
-        }
+        if files:
+            ret['files'] = files
+
+        if groups:
+            ret['groups'] = groups
+
+        if packages:
+            ret['packages'] = packages
+
+        for k in (
+                'known_filenames',
+                'known_md5s',
+                'known_sha1s',
+                'known_sha256s',
+                'known_sizes',
+                'providers',
+                ):
+            v = getattr(self, k)
+            if v:
+                ret[k] = sort_set_values(v)
+
+        for k in (
+                'copyright_notice',
+                'help_text',
+                ):
+            v = getattr(self, k)
+            if v is not None:
+                ret[k] = v
+
+        return ret
 
     def size(self, package):
         size_min = 0
