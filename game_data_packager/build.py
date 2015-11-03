@@ -648,7 +648,7 @@ class PackagingTask(object):
         if provider is None:
             should_provide = set()
         else:
-            should_provide = set(provider.provides)
+            should_provide = set(provider.provides_files)
 
         if stat.S_ISREG(st.st_mode):
             self.consider_file(path, True)
@@ -667,7 +667,7 @@ class PackagingTask(object):
             logger.warning('file "%s" does not exist or is not a file, ' +
                     'directory or CD block device', path)
 
-        for missing in sorted(should_provide):
+        for missing in sorted(f.name for f in should_provide):
             if missing not in self.found:
                 logger.error('%s should have provided %s but did not',
                         self.found[provider.name], missing)
@@ -680,16 +680,14 @@ class PackagingTask(object):
         logger.debug('trying to fill any gaps for %s', package.name)
 
         # this is redundant, it's only done to get the debug messages first
-        for filename in package.install:
-            if filename not in self.found:
-                wanted = self.game.files[filename]
-
+        for wanted in package.install_files:
+            if wanted.name not in self.found:
                 for alt in wanted.alternatives:
                     if alt in self.found:
                         break
                 else:
                     logger.debug('gap needs to be filled for %s: %s',
-                            package.name, filename)
+                            package.name, wanted.name)
 
         result = FillResult.COMPLETE
 
@@ -697,25 +695,24 @@ class PackagingTask(object):
         # to avoid extraneous downloads
         unique_provider = list()
         multi_provider = list()
-        for filename in (package.install | package.optional):
-            if len(self.game.providers.get(filename,[])) == 1:
-                unique_provider.append(filename)
+        for wanted in (package.install_files | package.optional_files):
+            if len(self.game.providers.get(wanted.name,[])) == 1:
+                unique_provider.append(wanted)
             else:
-                multi_provider.append(filename)
+                multi_provider.append(wanted)
 
-        for filename in unique_provider + multi_provider:
-            if filename not in self.found:
-                wanted = self.game.files[filename]
+        for wanted in unique_provider + multi_provider:
+            if wanted.name not in self.found:
                 # updates file_status as a side-effect
                 self.fill_gap(package, wanted, download=download,
                         recheck=recheck,
-                        log=(log and filename in package.install))
+                        log=(log and wanted in package.install_files))
 
-            logger.debug('%s: %s', filename, self.file_status[filename])
+            logger.debug('%s: %s', wanted.name, self.file_status[wanted.name])
 
-            if filename in package.install:
+            if wanted in package.install_files:
                 # it is mandatory
-                result &= self.file_status[filename]
+                result &= self.file_status[wanted.name]
 
         self.package_status[package.name] = result
         logger.debug('%s: %s', package.name, result)
@@ -727,7 +724,7 @@ class PackagingTask(object):
             should_provide = set()
             distinctive_dirs = False
         else:
-            try_to_unpack = provider.provides
+            try_to_unpack = set(f.name for f in provider.provides_files)
             should_provide = set(try_to_unpack)
             distinctive_dirs = provider.unpack.get('distinctive_dirs', True)
 
@@ -791,7 +788,7 @@ class PackagingTask(object):
             try_to_unpack = self.game.files
             should_provide = set()
         else:
-            try_to_unpack = provider.provides
+            try_to_unpack = set(f.name for f in provider.provides_files)
             should_provide = set(try_to_unpack)
 
         for entry in tar:
@@ -1079,7 +1076,8 @@ class PackagingTask(object):
                     with zipfile.ZipFile(found_name, 'r') as zf:
                         self.consider_zip(found_name, zf, provider)
                 elif fmt == 'lha':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1091,7 +1089,8 @@ class PackagingTask(object):
                             cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'id-shr-extract':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1104,7 +1103,8 @@ class PackagingTask(object):
                     recursive_utime(tmpdir, os.stat(found_name).st_mtime)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'cabextract':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1115,7 +1115,8 @@ class PackagingTask(object):
                             os.path.abspath(found_name)], cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unace-nonfree':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1126,7 +1127,8 @@ class PackagingTask(object):
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unrar-nonfree':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1138,7 +1140,8 @@ class PackagingTask(object):
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'innoextract':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s', to_unpack, found_name)
                     package.used_sources.add(provider.name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1160,7 +1163,7 @@ class PackagingTask(object):
                             prefix += '/'
                         if '$provides' in to_unpack:
                             to_unpack.remove('$provides')
-                            to_unpack += provider.provides
+                            to_unpack += [f.name for f in provider.provides_files]
                         for i in to_unpack:
                             cmdline.append('-I')
                             if prefix and i[0] != '/':
@@ -1170,7 +1173,8 @@ class PackagingTask(object):
                     check_call(cmdline)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unzip' and which('unzip'):
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1184,7 +1188,8 @@ class PackagingTask(object):
                     # -C use case-insensitive matching
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt in ('7z', 'unzip'):
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1198,7 +1203,8 @@ class PackagingTask(object):
                                 list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt in ('unar', 'unzip'):
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s', to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
@@ -1209,7 +1215,8 @@ class PackagingTask(object):
                                list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unshield':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s', to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                                           provider_name + '.d')
@@ -1231,7 +1238,8 @@ class PackagingTask(object):
                     recursive_utime(tmpdir, os.stat(found_name).st_mtime)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'arj':
-                    to_unpack = provider.unpack.get('unpack', provider.provides)
+                    to_unpack = provider.unpack.get('unpack',
+                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                                  to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1281,11 +1289,9 @@ class PackagingTask(object):
     def check_complete(self, package, log=False):
         # Got everything?
         complete = True
-        for filename in package.install:
-            if filename in self.found:
+        for wanted in package.install_files:
+            if wanted.name in self.found:
                 continue
-
-            wanted = self.game.files[filename]
 
             for alt in wanted.alternatives:
                 if alt in self.found:
@@ -1331,12 +1337,12 @@ class PackagingTask(object):
                     'game-data-packager.\n' % package.name)
 
             licenses = set()
-            for f in package.install | package.optional:
-                 if self.file_status[f] is not FillResult.COMPLETE:
+            for f in (package.install_files | package.optional_files):
+                 if self.file_status[f.name] is not FillResult.COMPLETE:
                      continue
-                 if not self.game.files[f].license:
+                 if not f.license:
                      continue
-                 license_file = self.game.files[f].install_as
+                 license_file = f.install_as
                  licenses.add("/usr/share/doc/%s/%s" % (package.name, license_file))
                  if os.path.splitext(license_file)[0].lower() == 'license':
                      lintian_license(destdir, package.name, license_file)
@@ -1364,17 +1370,17 @@ class PackagingTask(object):
             count_usr = 0
             exts = set()
             count_doc = 0
-            for f in package.install | package.optional:
-                 if self.file_status[f] is FillResult.IMPOSSIBLE:
+            for f in (package.install_files | package.optional_files):
+                 if self.file_status[f.name] is FillResult.IMPOSSIBLE:
                      continue
-                 install_to = self.game.files[f].install_to
+                 install_to = f.install_to
                  if install_to and install_to.startswith('$docdir'):
                      count_doc +=1
                  else:
                      count_usr +=1
                      # doesn't have to be a .wad, ROTT's EXTREME.RTL
                      # or any other one-datafile .deb would qualify too
-                     main_wad = self.game.files[f].install_as
+                     main_wad = f.install_as
                      exts.add(os.path.splitext(main_wad.lower())[1])
 
             if count_usr == 0 and count_doc == 1:
@@ -1480,12 +1486,11 @@ class PackagingTask(object):
 
         self.fill_docs(package, destdir, docdir)
 
-        for filename in (package.install | package.optional):
-            wanted = self.game.files[filename]
+        for wanted in (package.install_files | package.optional_files):
             install_as = wanted.install_as
 
-            if filename in self.found:
-                copy_from = self.found[filename]
+            if wanted.name in self.found:
+                copy_from = self.found[wanted.name]
             else:
                 for alt in wanted.alternatives:
                     if alt in self.found:
@@ -1494,13 +1499,13 @@ class PackagingTask(object):
                             install_as = self.game.files[alt].install_as
                         break
                 else:
-                    if filename not in package.install:
+                    if wanted not in package.install_files:
                         logger.debug('optional file %r is missing, ignoring',
-                                filename)
+                                wanted.name)
                         continue
 
                     raise AssertionError('we already checked that %s exists' %
-                            (filename))
+                            (wanted.name))
 
             # cp it into place
             with TemporaryUmask(0o22):
@@ -1899,8 +1904,11 @@ class PackagingTask(object):
             self.consider_file_or_dir(arg)
 
     def run_command_line(self, args):
-        logger.debug('package description:\n%s',
-                yaml.safe_dump(self.game.to_yaml()))
+        if logging.getLogger().isEnabledFor(logging.DEBUG):
+            logger.debug('package description:\n%s',
+                    yaml.safe_dump(self.game.to_yaml(expand=False)))
+            logger.debug('package description after expansion:\n%s',
+                    yaml.safe_dump(self.game.to_yaml(expand=True)))
 
         self.verbose = getattr(args, 'verbose', False)
 

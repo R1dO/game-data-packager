@@ -66,6 +66,7 @@ class WantedFile(HashedFile):
         self.license = False
         self._look_for = []
         self._provides = set()
+        self.provides_files = None
         self._size = None
         self.unpack = None
         self.unsuitable = None
@@ -114,7 +115,7 @@ class WantedFile(HashedFile):
     def provides(self, value):
         self._provides = set(value)
 
-    def to_yaml(self):
+    def to_yaml(self, expand=True):
         ret = {
             'distinctive_name': self.distinctive_name,
             'name': self.name,
@@ -126,7 +127,6 @@ class WantedFile(HashedFile):
                 'executable',
                 'license',
                 'look_for',
-                'provides',
                 'skip_hash_matching',
                 ):
             v = getattr(self, k)
@@ -135,6 +135,13 @@ class WantedFile(HashedFile):
                     ret[k] = sorted(v)
                 else:
                     ret[k] = v
+
+        if expand:
+            if self.provides_files:
+                ret['provides'] = sorted(f.name for f in self.provides_files)
+        else:
+            if self.provides:
+                ret['provides'] = sorted(self.provides)
 
         for k in (
                 'download',
@@ -230,6 +237,12 @@ class GameDataPackage(object):
         # set of names of WantedFile instances to be optionally installed
         self._optional = set()
 
+        # set of WantedFile instances for install, with groups expanded
+        # only available after load_file_data()
+        self.install_files = None
+        # set of WantedFile instances for optional, with groups expanded
+        self.optional_files = None
+
         self.version = GAME_PACKAGE_VERSION
 
         # if not None, install every file provided by the files with
@@ -316,7 +329,7 @@ class GameDataPackage(object):
         assert type(value) is str
         self.langs = [value]
 
-    def to_yaml(self):
+    def to_yaml(self, expand=True):
         ret = {
             'architecture': self.architecture,
             'component': self.component,
@@ -333,9 +346,7 @@ class GameDataPackage(object):
                 'demo_for',
                 'dotemu',
                 'gog',
-                'install',
                 'install_to_docdir',
-                'optional',
                 'origin',
                 'rip_cd',
                 'steam',
@@ -347,6 +358,17 @@ class GameDataPackage(object):
                     ret[k] = sorted(v)
                 else:
                     ret[k] = v
+
+        if expand and self.install_files is not None:
+            if self.install_files:
+                ret['install'] = sorted(f.name for f in self.install_files)
+            if self.optional_files:
+                ret['optional'] = sorted(f.name for f in self.optional_files)
+        else:
+            if self.install:
+                ret['install'] = sorted(self.install)
+            if self.optional:
+                ret['optional'] = sorted(self.optional)
 
         for k in (
                 'better_version',
@@ -664,7 +686,7 @@ class GameData(object):
 
         return help_text
 
-    def to_yaml(self):
+    def to_yaml(self, expand=True):
         files = {}
         groups = {}
         packages = {}
@@ -679,12 +701,12 @@ class GameData(object):
 
         for filename, f in self.files.items():
             if f.group_members is not None:
-                groups[filename] = f.to_yaml()
+                groups[filename] = f.to_yaml(expand=expand)
             else:
-                files[filename] = f.to_yaml()
+                files[filename] = f.to_yaml(expand=expand)
 
         for name, package in self.packages.items():
-            packages[name] = package.to_yaml()
+            packages[name] = package.to_yaml(expand=expand)
 
         if files:
             ret['files'] = files
@@ -1023,19 +1045,19 @@ class GameData(object):
         self.loaded_file_data = True
 
         for package in self.packages.values():
-            package.install = set(self._iter_expand_groups(package.install))
-            package.optional = set(self._iter_expand_groups(package.optional))
+            package.install_files = set(self._iter_expand_groups(package.install))
+            package.optional_files = set(self._iter_expand_groups(package.optional))
 
             for provider in package.install_contents_of:
-                for filename in self._iter_expand_groups(self.files[provider].provides):
-                    if filename not in package.optional:
-                        package.install.add(filename)
+                for f in self._iter_expand_groups(self.files[provider].provides):
+                    if f not in package.optional_files:
+                        package.install_files.add(f)
 
         for filename, f in self.files.items():
-            f.provides = set(self._iter_expand_groups(f.provides))
+            f.provides_files = set(self._iter_expand_groups(f.provides))
 
-            for provided in f.provides:
-                self.providers.setdefault(provided, set()).add(filename)
+            for provided in f.provides_files:
+                self.providers.setdefault(provided.name, set()).add(filename)
 
             if f.alternatives or f.group_members is not None:
                 continue
@@ -1070,11 +1092,9 @@ class GameData(object):
         for package in self.packages.values():
             for provider in package.install_contents_of:
                 assert provider in self.files, (package.name, provider)
-                for filename in self.files[provider].provides:
-                    assert filename in self.files, (package.name, provider,
-                            filename)
-                    assert (filename in package.optional or
-                            filename in package.install), (package.name, filename)
+                for f in self.files[provider].provides_files:
+                    assert (f in package.install_files or
+                            f in package.optional_files), (package.name, f.name)
 
             if package.rip_cd:
                 # we only support Ogg Vorbis for now
@@ -1082,11 +1102,7 @@ class GameData(object):
                 self.rip_cd_packages.add(package)
 
             # there had better be something it wants to install
-            assert package.install or package.rip_cd, package.name
-            for installable in package.install:
-                assert installable in self.files, installable
-            for installable in package.optional:
-                assert installable in self.files, installable
+            assert package.install_files or package.rip_cd, package.name
 
             # check internal depedencies
             for demo_for_item in package.demo_for:
@@ -1103,10 +1119,9 @@ class GameData(object):
         for filename, wanted in self.files.items():
             if wanted.unpack:
                 assert 'format' in wanted.unpack, filename
-                assert wanted.provides, filename
-                for f in wanted.provides:
-                    assert f in self.files, (filename, f)
-                    assert self.files[f].alternatives == [], (filename, f)
+                assert wanted.provides_files, filename
+                for f in wanted.provides_files:
+                    assert f.alternatives == [], (filename, f.name)
                 if wanted.unpack['format'] == 'cat':
                     assert len(wanted.provides) == 1, filename
                     assert isinstance(wanted.unpack['other_parts'],
@@ -1147,7 +1162,8 @@ class GameData(object):
 
     def _iter_expand_groups(self, grouped):
         """Given a set of strings that are either filenames or groups,
-        yield the members of those groups, recursively.
+        yield the WantedFile instances for those names or the members of
+        those groups, recursively.
         """
         for filename in grouped:
             wanted = self.files.get(filename)
@@ -1156,7 +1172,7 @@ class GameData(object):
                 for x in self._iter_expand_groups(wanted.group_members):
                     yield x
             else:
-                yield filename
+                yield wanted
 
     def construct_task(self, **kwargs):
         self.load_file_data()
