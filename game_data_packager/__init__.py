@@ -1020,13 +1020,13 @@ class GameData(object):
         self.loaded_file_data = True
 
         for package in self.packages.values():
-            for provider in package.install_contents_of:
-                for filename in self.files[provider].provides:
-                    if filename not in package.optional:
-                        package.install.add(filename)
-
             package.install = set(self._iter_expand_groups(package.install))
             package.optional = set(self._iter_expand_groups(package.optional))
+
+            for provider in package.install_contents_of:
+                for filename in self._iter_expand_groups(self.files[provider].provides):
+                    if filename not in package.optional:
+                        package.install.add(filename)
 
         for filename, f in self.files.items():
             f.provides = set(self._iter_expand_groups(f.provides))
