@@ -33,9 +33,11 @@ import time
 import urllib.request
 import zipfile
 
-from debian.deb822 import Deb822
-from debian.debian_support import Version
 import yaml
+try:
+    from debian.debian_support import Version
+except ImportError:
+    from distutils.version import LooseVersion as Version
 
 from .gog import GOG
 from .paths import (DATADIR, ETCDIR)
@@ -54,8 +56,10 @@ from .util import (AGENT,
         rm_rf,
         recursive_utime,
         which)
-
 from .version import (FORMAT)
+
+if FORMAT == 'deb':
+    from debian.deb822 import Deb822
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager.build')
@@ -1413,6 +1417,52 @@ class PackagingTask(object):
     def fill_extra_files(self, package, destdir):
         pass
 
+    def fill_dest_dir_rpm(self, package, destdir):
+        specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
+        with open(specfile, 'w', encoding='utf-8') as spec:
+            spec.write('Summary: %s\n' % package.longname or self.longname)
+            spec.write('Name: %s\n' % package.name)
+            spec.write('Version: %s\n' % package.version)
+            spec.write('Release: 0\n')
+            spec.write('License: Commercial\n')
+            spec.write('Group: Amusements/Games\n')
+            spec.write('BuildArch: noarch\n')
+            spec.write('%description\n')
+            spec.write('(long description)\n')
+            spec.write('%files\n')
+            for dirpath, dirnames, filenames in os.walk(destdir):
+                for fn in filenames:
+                    full = os.path.join(dirpath, fn)
+                    full = full[len(destdir):]
+                    spec.write(full + '\n')
+
+    def fill_dest_dir_deb(self, package, destdir):
+        debdir = os.path.join(destdir, 'DEBIAN')
+        mkdir_p(debdir)
+
+        for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
+            maintscript = os.path.join(DATADIR, package.name + '.' + ms)
+            if os.path.isfile(maintscript):
+                shutil.copy(maintscript, os.path.join(debdir, ms))
+
+        # adapted from dh_md5sums
+        check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
+                "-printf '%P\\0' | LC_ALL=C sort -z | " +
+                "xargs -r0 md5sum > DEBIAN/md5sums",
+                shell=True, cwd=destdir)
+        os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
+
+        try:
+            control_in = open(self.get_control_template(package),
+                    encoding='utf-8')
+            control = Deb822(control_in)
+        except FileNotFoundError:
+            control = Deb822()
+        self.modify_control_template(control, package, destdir)
+        control.dump(fd=open(os.path.join(debdir, 'control'), 'wb'),
+                encoding='utf-8')
+        os.chmod(os.path.join(debdir, 'control'), 0o644)
+
     def fill_dest_dir(self, package, destdir):
         if not self.check_complete(package, log=True):
             return False
@@ -1423,14 +1473,6 @@ class PackagingTask(object):
                 os.path.join(docdir, 'changelog.gz'))
 
         self.fill_docs(package, destdir, docdir)
-
-        debdir = os.path.join(destdir, 'DEBIAN')
-        mkdir_p(debdir)
-
-        for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
-            maintscript = os.path.join(DATADIR, package.name + '.' + ms)
-            if os.path.isfile(maintscript):
-                shutil.copy(maintscript, os.path.join(debdir, ms))
 
         for filename in (package.install | package.optional):
             wanted = self.game.files[filename]
@@ -1522,24 +1564,9 @@ class PackagingTask(object):
 
         self.fill_extra_files(package, destdir)
 
-        # adapted from dh_md5sums
-        check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
-                "-printf '%P\\0' | LC_ALL=C sort -z | " +
-                "xargs -r0 md5sum > DEBIAN/md5sums",
-                shell=True, cwd=destdir)
-        os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
+        return True
 
-        try:
-            control_in = open(self.get_control_template(package),
-                    encoding='utf-8')
-            control = Deb822(control_in)
-        except FileNotFoundError:
-            control = Deb822()
-        self.modify_control_template(control, package, destdir)
-        control.dump(fd=open(os.path.join(debdir, 'control'), 'wb'),
-                encoding='utf-8')
-        os.chmod(os.path.join(debdir, 'control'), 0o644)
-
+    def our_dh_fixperms(self, destdir):
         for dirpath, dirnames, filenames in os.walk(destdir):
             for fn in filenames + dirnames:
                 full = os.path.join(dirpath, fn)
@@ -1559,8 +1586,6 @@ class PackagingTask(object):
                 else:
                     # make other files rw-r--r--
                     os.chmod(full, 0o644)
-
-        return True
 
     def modify_control_template(self, control, package, destdir):
         for key in control.keys():
@@ -2437,6 +2462,9 @@ class PackagingTask(object):
             # FIXME: probably better as an exception?
             return None
 
+        self.fill_dest_dir_deb(package, destdir)
+        self.our_dh_fixperms(destdir)
+
         # it had better have a /usr and a DEBIAN directory or
         # something has gone very wrong
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
@@ -2480,6 +2508,9 @@ class PackagingTask(object):
 
         if not self.fill_dest_dir(package, destdir):
             return None
+
+        self.fill_dest_dir_rpm(package, destdir)
+        self.our_dh_fixperms(destdir)
 
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
 
