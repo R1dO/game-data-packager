@@ -59,15 +59,11 @@ packages:
       - patch licenses
     doc:
     - common documentation
+    - patch documentation
     - extra documentation
 
     - 3.20_changes.txt
-    - ctf/readme.txt
-    - Release Notes.doc
-    - readme.doc
-    - readme.txt
     - readme-dm64.txt
-    - release.txt
     - quake2_manual/credits.html
     - quake2_manual/customer_support.html
     - quake2_manual/images/start_network_server_screen1.gif
@@ -1191,6 +1187,7 @@ groups:
       8938      af91bb4178e223adaa258d50ce2541b0 Manual.html
       # this is /docs/readme.txt in Steam - /readme.txt is different
       61630     9e6ed9910b11d4dbb7d0527f1ff140a1 readme.txt?3.20
+      2811      cf55adc0ff845a4c1298457d18a32c21 release.txt
 
   patch licenses:
     license: true
@@ -1203,7 +1200,7 @@ groups:
       # this is /docs/license.txt in Steam - /license.txt is different
       13350     c17a9ef88a73d57a6935cdef8a160579 license.txt?3.20
 
-  # steam and gog.com
+  # steam and gog.com but not the 3.20 patch
   updated documentation:
     doc: true
     group_members: |
@@ -1241,7 +1238,6 @@ groups:
       1462      _                                quake2-xatrix-2.03/CHANGELOG
       2048      _                                quake2-xatrix-2.03/README
       787       917611eec2f2f699b1b0ca149ac66244 readme-dm64.txt
-      2811      cf55adc0ff845a4c1298457d18a32c21 release.txt
 
       # Alternate files also shipped by Steam: the diff is small and only in
       # contact details etc. so there's little point in having both
