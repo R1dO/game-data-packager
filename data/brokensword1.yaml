@@ -43,7 +43,7 @@ packages:
   brokensword1-orig-music:
     longname: 'Broken Sword 1 - music'
     expansion_for: brokensword1-data
-    install_to: usr/share/games/brokensword1
+    install_to: $assets/brokensword1
     better_version: brokensword1-flac-music
     install:
     - music/10m1.wav
@@ -302,7 +302,7 @@ packages:
   brokensword1-flac-music:
     longname: 'Broken Sword 1 - music compressed with FLAC'
     expansion_for: brokensword1-data
-    install_to: usr/share/games/brokensword1
+    install_to: $assets/brokensword1
     install:
     - music/10m1.fla
     - music/10m2.fla
@@ -559,7 +559,7 @@ packages:
   brokensword1-orig-video:
     expansion_for: brokensword1-data
     longname: "Broken Sword 1 - original cutscenes"
-    install_to: usr/share/games/brokensword1/video
+    install_to: $assets/brokensword1/video
     install:
     - candle.smk
     - credits.smk

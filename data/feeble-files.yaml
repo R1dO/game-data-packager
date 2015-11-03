@@ -1112,12 +1112,13 @@ packages:
     - 4432.vga
     optional:
     - startup.wav
+    doc:
     - manual.pdf
 
   feeble-files-dxa-en-video:
     longname: The Feeble Files (optional videos)
     expansion_for: feeble-files-en-data
-    install_to: usr/share/games/feeble-files-en
+    install_to: $assets/feeble-files-en
     gog:
       url: the_feeble_files
     install:
@@ -2687,14 +2688,14 @@ packages:
     - 4422.vga?de
     - 4431.vga
     - 4432.vga?de
-    optional:
+    doc:
     - manual.pdf
 
   feeble-files-orig-de-video:
     longname: The Feeble Files (optional videos)
     lang: de
     expansion_for: feeble-files-de-data
-    install_to: usr/share/games/feeble-files-de
+    install_to: $assets/feeble-files-de
     gog:
       url: the_feeble_files
     install:
@@ -4024,7 +4025,7 @@ packages:
     longname: The Feeble Files (optional videos)
     lang: es
     expansion_for: feeble-files-es-data
-    install_to: usr/share/games/feeble-files-es
+    install_to: $assets/feeble-files-es
     install:
     - agent32.smk?es
     - airlock.smk?es
@@ -5347,14 +5348,14 @@ packages:
     - 4422.vga?fr
     - 4431.vga
     - 4432.vga?fr
-    optional:
+    doc:
     - manual.pdf
 
   feeble-files-orig-fr-video:
     longname: The Feeble Files (optional videos)
     lang: fr
     expansion_for: feeble-files-fr-data
-    install_to: usr/share/games/feeble-files-fr
+    install_to: $assets/feeble-files-fr
     gog:
       url: the_feeble_files
     install:
@@ -5637,9 +5638,6 @@ files:
     look_for: [voices.wav,voices3.wav]
   voices4.wav?fr:
     look_for: [voices.wav,voices4.wav]
-
-  manual.pdf:
-    install_to: $docdir
 
   setup_the_feeble_files_2.0.0.5.exe:
     unpack:
