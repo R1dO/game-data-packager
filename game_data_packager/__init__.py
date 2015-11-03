@@ -317,7 +317,6 @@ class GameDataPackage(object):
         ret = {
             'architecture': self.architecture,
             'component': self.component,
-            'copyright_notice': self.copyright_notice,
             'install_to': self.install_to,
             'name': self.name,
             'section': self.section,
@@ -349,6 +348,7 @@ class GameDataPackage(object):
         for k in (
                 'better_version',
                 'copyright',
+                'copyright_notice',
                 'description',
                 'disks',
                 'engine',
