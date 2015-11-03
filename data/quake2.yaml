@@ -102,6 +102,12 @@ packages:
   quake2-reckoning-data:
     aliases: [xatrix, q2xatrix, reckoning, mp1, "1"]
     copyright: © 1998 Xatrix Entertainment
+    description: |
+      The game-code in this package was compiled from a version maintained
+      by the author of yamagi-quake2, derived from the Quake II mod SDK.
+      .
+      To play Quake II using this data, install the quake2 package and pass
+      "+set game xatrix" as arguments.
     symlinks:
       usr/share/games/quake2/quake2-reckoning: usr/games/quake2
     longname: "Quake II Mission Pack 1: The Reckoning"
@@ -151,6 +157,12 @@ packages:
     longname: "Quake II Mission Pack 2: Ground Zero"
     wiki: "Quake_II_Mission_Pack:_Ground_Zero"
     copyright: © 1998 Rogue Entertainment
+    description: |
+      The game-code in this package was compiled from a version maintained
+      by the author of yamagi-quake2, derived from the Quake II mod SDK.
+      .
+      To play Quake II using this data, install the quake2 package and pass
+      "+set game rogue" as arguments.
     steam:
       id: 2340
       path: "common/Quake 2/rogue"
