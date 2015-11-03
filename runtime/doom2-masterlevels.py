@@ -231,7 +231,8 @@ class Launcher:
                 radiobutton.connect('toggled', self.select_engine)
                 i += 1
                 radiogrid.attach(radiobutton, 0, i, i, 1)
-                radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
+                if os.path.isfile('/etc/debian_version'):
+                    radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
 
         grid.attach(radiogrid, 2, 4, 1, 1)
 
