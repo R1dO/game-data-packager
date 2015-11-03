@@ -42,7 +42,6 @@ packages:
       requiem.wad:
          name: Requiem
          args: -file %s req21fix.wad reqmus.wad
-    install_to: usr/share/games/doom
     install:
       - all wads
     doc:

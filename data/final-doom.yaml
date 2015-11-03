@@ -36,7 +36,6 @@ packages:
     main_wads:
       tnt.wad:
         args: -iwad %s -file tnt31.wad
-    install_to: usr/share/games/doom
 
   plutonia-wad:
     longname: "Final Doom: The Plutonia Experiment"
@@ -48,7 +47,6 @@ packages:
     - plutonia.wad
     optional:
     - manual.pdf
-    install_to: usr/share/games/doom
 
 files:
   tnt.wad:

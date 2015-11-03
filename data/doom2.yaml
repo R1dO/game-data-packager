@@ -29,7 +29,6 @@ packages:
     gog:
       url: doom_ii_final_doom
       game: doom_ii_master_levels_game
-    install_to: usr/share/games/doom
     install:
     - doom2.wad
     optional:
@@ -43,7 +42,6 @@ packages:
     steam:
       id: 208200
       path: "common/DOOM 3 BFG Edition"
-    install_to: usr/share/games/doom
     main_wads:
       nerve.wad:
         args: -file %s
@@ -64,10 +62,8 @@ packages:
     debian:
       depends: doom2-wad | freedoom
       recommends: game-data-packager
-    install_to: usr/share/games/doom
     symlinks:
-      usr/share/games/doom/doom2-masterlevels-tryexec:
-        etc/alternatives/doom
+      $install_to/doom2-masterlevels-tryexec: etc/alternatives/doom
     install:
     - attack.wad
     - blacktwr.wad

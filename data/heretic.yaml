@@ -27,13 +27,11 @@ packages:
     steam:
       id: 2390
       path: "common/Heretic Shadow of the Serpent Riders"
-    install_to: usr/share/games/doom
     install:
     - heretic.wad
 
   heretic-shareware-wad:
     longname: "Heretic (shareware)"
-    install_to: usr/share/games/doom
     demo_for: heretic-wad
     component: non-free
     debian:

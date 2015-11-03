@@ -12,7 +12,6 @@ wiki: Chex_Quest
 packages:
   chexquest-data:
     longname: Chex Quest
-    install_to: usr/share/games/doom
     main_wads:
       chex.wad: {}
     install:
@@ -28,7 +27,6 @@ packages:
     main_wads:
       chex2.wad:
         args: -iwad chex.wad -file %s
-    install_to: usr/share/games/doom
     install:
     - chex2.wad
 

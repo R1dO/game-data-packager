@@ -25,7 +25,7 @@ from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import (copy_with_substitutions, mkdir_p, lintian_desktop)
-from ..version import FORMAT
+from ..version import (FORMAT, ASSETS)
 
 logger = logging.getLogger('game-data-packager.games.doom-common')
 
@@ -77,6 +77,7 @@ class DoomGameData(GameData):
         }
 
         for package in self.packages.values():
+            package.install_to = ASSETS + '/doom'
             engine = package.engine or self.engine
             engine = engine.split('|')[-1].strip()
             package.program = package_map.get(engine, engine)
@@ -151,10 +152,10 @@ class DoomTask(PackagingTask):
             elif package.expansion_for:
                 iwad = self.game.packages[package.expansion_for].only_file
                 assert iwad is not None, "Couldn't find %s's IWAD" % main_wad
-                args = (  '-iwad /usr/share/games/doom/' + iwad
-                       + ' -file /usr/share/games/doom/' + main_wad)
+                args = (  '-iwad /' + package.install_to + iwad
+                       + ' -file /' + package.install_to + main_wad)
             else:
-                args = '-iwad /usr/share/games/doom/' + main_wad
+                args = '-iwad /' + package.install_to + main_wad
             entry['Exec'] = package.program + ' ' + args
             entry['Icon'] = desktop_file
             entry['Terminal'] = 'false'
