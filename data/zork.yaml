@@ -18,7 +18,7 @@ packages:
     gog:
       url: the_zork_anthology
       game: zork_the_great_underground_empire
-    install_to: usr/share/games/zork
+    install_to: $assets/zork
     install:
     - zork1.z3
     doc:
@@ -31,7 +31,7 @@ packages:
     gog:
       url: the_zork_anthology
       game: zork_ii_the_wizard_of_frobozz
-    install_to: usr/share/games/zork
+    install_to: $assets/zork
     install:
     - zork2.z3
     doc:
@@ -44,7 +44,7 @@ packages:
     gog:
       url: the_zork_anthology
       game: zork_iii_the_dungeon_master
-    install_to: usr/share/games/zork
+    install_to: $assets/zork
     install:
     - zork3.z3
     doc:
@@ -57,7 +57,7 @@ packages:
     gog:
       url: the_zork_anthology
       game: beyond_zork_the_coconut_of_quendor
-    install_to: usr/share/games/zork
+    install_to: $assets/zork
     install:
     - beyondzo.z3
     doc:

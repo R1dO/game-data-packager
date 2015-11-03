@@ -733,6 +733,8 @@ class GameData(object):
         assert type(package.langs) is list
 
         if 'install_to' in d:
+            if package.install_to.startswith('$assets/'):
+                package.install_to = ASSETS + package.install_to[len('$assets'):]
             assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
                 "install_to %s is extraneous" % package.name
 
