@@ -673,6 +673,7 @@ class GameData(object):
             for k, v in d.items():
                 assert isinstance(v, set), (repr(k), repr(v))
                 ret[k] = sorted(v)
+            return ret
 
         for filename, f in self.files.items():
             if f.group_members:
