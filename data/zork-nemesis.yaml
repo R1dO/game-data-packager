@@ -19,29 +19,29 @@ packages:
     gog:
       url: zork_nemesis_the_forbidden_lands
     symlinks:
-      usr/share/games/zork-nemesis/addon/LiberationMono-BoldItalic.ttf:
+      $install_to/addon/LiberationMono-BoldItalic.ttf:
         usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf
-      usr/share/games/zork-nemesis/addon/LiberationMono-Bold.ttf:
+      $install_to/addon/LiberationMono-Bold.ttf:
         usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf
-      usr/share/games/zork-nemesis/addon/LiberationMono-Italic.ttf:
+      $install_to/addon/LiberationMono-Italic.ttf:
         usr/share/fonts/truetype/liberation/LiberationMono-Italic.ttf
-      usr/share/games/zork-nemesis/addon/LiberationMono-Regular.ttf:
+      $install_to/addon/LiberationMono-Regular.ttf:
         usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSans-BoldItalic.ttf:
+      $install_to/addon/LiberationSans-BoldItalic.ttf:
         usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSans-Bold.ttf:
+      $install_to/addon/LiberationSans-Bold.ttf:
         usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSans-Italic.ttf:
+      $install_to/addon/LiberationSans-Italic.ttf:
         usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSans-Regular.ttf:
+      $install_to/addon/LiberationSans-Regular.ttf:
         usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSerif-BoldItalic.ttf:
+      $install_to/addon/LiberationSerif-BoldItalic.ttf:
         usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSerif-Bold.ttf:
+      $install_to/addon/LiberationSerif-Bold.ttf:
         usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSerif-Italic.ttf:
+      $install_to/addon/LiberationSerif-Italic.ttf:
         usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf
-      usr/share/games/zork-nemesis/addon/LiberationSerif-Regular.ttf:
+      $install_to/addon/LiberationSerif-Regular.ttf:
         usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf
     install:
     - nemesis.str

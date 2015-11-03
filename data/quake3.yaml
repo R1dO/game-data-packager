@@ -49,67 +49,37 @@ packages:
     # is installed unless its pak0.pk3 is present.
     symlinks:
       # src:quake < 10
-      usr/share/games/quake3/baseq3/pak0.pk3:
-        usr/share/games/quake3-data/baseq3/pak0.pk3
-      usr/share/games/quake3/baseq3/pak1.pk3:
-        usr/share/games/quake3-data/baseq3/pak1.pk3
-      usr/share/games/quake3/baseq3/pak2.pk3:
-        usr/share/games/quake3-data/baseq3/pak2.pk3
-      usr/share/games/quake3/baseq3/pak3.pk3:
-        usr/share/games/quake3-data/baseq3/pak3.pk3
-      usr/share/games/quake3/baseq3/pak4.pk3:
-        usr/share/games/quake3-data/baseq3/pak4.pk3
-      usr/share/games/quake3/baseq3/pak5.pk3:
-        usr/share/games/quake3-data/baseq3/pak5.pk3
-      usr/share/games/quake3/baseq3/pak6.pk3:
-        usr/share/games/quake3-data/baseq3/pak6.pk3
-      usr/share/games/quake3/baseq3/pak7.pk3:
-        usr/share/games/quake3-data/baseq3/pak7.pk3
-      usr/share/games/quake3/baseq3/pak8.pk3:
-        usr/share/games/quake3-data/baseq3/pak8.pk3
+      usr/share/games/quake3/baseq3/pak0.pk3: $install_to/baseq3/pak0.pk3
+      usr/share/games/quake3/baseq3/pak1.pk3: $install_to/baseq3/pak1.pk3
+      usr/share/games/quake3/baseq3/pak2.pk3: $install_to/baseq3/pak2.pk3
+      usr/share/games/quake3/baseq3/pak3.pk3: $install_to/baseq3/pak3.pk3
+      usr/share/games/quake3/baseq3/pak4.pk3: $install_to/baseq3/pak4.pk3
+      usr/share/games/quake3/baseq3/pak5.pk3: $install_to/baseq3/pak5.pk3
+      usr/share/games/quake3/baseq3/pak6.pk3: $install_to/baseq3/pak6.pk3
+      usr/share/games/quake3/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
+      usr/share/games/quake3/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
       # src:quake >= 10
-      usr/lib/quake3/base/baseq3/pak0.pk3:
-        usr/share/games/quake3-data/baseq3/pak0.pk3
-      usr/lib/quake3/base/baseq3/pak1.pk3:
-        usr/share/games/quake3-data/baseq3/pak1.pk3
-      usr/lib/quake3/base/baseq3/pak2.pk3:
-        usr/share/games/quake3-data/baseq3/pak2.pk3
-      usr/lib/quake3/base/baseq3/pak3.pk3:
-        usr/share/games/quake3-data/baseq3/pak3.pk3
-      usr/lib/quake3/base/baseq3/pak4.pk3:
-        usr/share/games/quake3-data/baseq3/pak4.pk3
-      usr/lib/quake3/base/baseq3/pak5.pk3:
-        usr/share/games/quake3-data/baseq3/pak5.pk3
-      usr/lib/quake3/base/baseq3/pak6.pk3:
-        usr/share/games/quake3-data/baseq3/pak6.pk3
-      usr/lib/quake3/base/baseq3/pak7.pk3:
-        usr/share/games/quake3-data/baseq3/pak7.pk3
-      usr/lib/quake3/base/baseq3/pak8.pk3:
-        usr/share/games/quake3-data/baseq3/pak8.pk3
-      usr/lib/quake3/ta/baseq3/pak0.pk3:
-        usr/share/games/quake3-data/baseq3/pak0.pk3
-      usr/lib/quake3/ta/baseq3/pak1.pk3:
-        usr/share/games/quake3-data/baseq3/pak1.pk3
-      usr/lib/quake3/ta/baseq3/pak2.pk3:
-        usr/share/games/quake3-data/baseq3/pak2.pk3
-      usr/lib/quake3/ta/baseq3/pak3.pk3:
-        usr/share/games/quake3-data/baseq3/pak3.pk3
-      usr/lib/quake3/ta/baseq3/pak4.pk3:
-        usr/share/games/quake3-data/baseq3/pak4.pk3
-      usr/lib/quake3/ta/baseq3/pak5.pk3:
-        usr/share/games/quake3-data/baseq3/pak5.pk3
-      usr/lib/quake3/ta/baseq3/pak6.pk3:
-        usr/share/games/quake3-data/baseq3/pak6.pk3
-      usr/lib/quake3/ta/baseq3/pak7.pk3:
-        usr/share/games/quake3-data/baseq3/pak7.pk3
-      usr/lib/quake3/ta/baseq3/pak8.pk3:
-        usr/share/games/quake3-data/baseq3/pak8.pk3
-      usr/lib/quake3/ta/missionpack/pak1.pk3:
-        usr/share/games/quake3-data/missionpack/pak1.pk3
-      usr/lib/quake3/ta/missionpack/pak2.pk3:
-        usr/share/games/quake3-data/missionpack/pak2.pk3
-      usr/lib/quake3/ta/missionpack/pak3.pk3:
-        usr/share/games/quake3-data/missionpack/pak3.pk3
+      usr/lib/quake3/base/baseq3/pak0.pk3: $install_to/baseq3/pak0.pk3
+      usr/lib/quake3/base/baseq3/pak1.pk3: $install_to/baseq3/pak1.pk3
+      usr/lib/quake3/base/baseq3/pak2.pk3: $install_to/baseq3/pak2.pk3
+      usr/lib/quake3/base/baseq3/pak3.pk3: $install_to/baseq3/pak3.pk3
+      usr/lib/quake3/base/baseq3/pak4.pk3: $install_to/baseq3/pak4.pk3
+      usr/lib/quake3/base/baseq3/pak5.pk3: $install_to/baseq3/pak5.pk3
+      usr/lib/quake3/base/baseq3/pak6.pk3: $install_to/baseq3/pak6.pk3
+      usr/lib/quake3/base/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
+      usr/lib/quake3/base/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
+      usr/lib/quake3/ta/baseq3/pak0.pk3: $install_to/baseq3/pak0.pk3
+      usr/lib/quake3/ta/baseq3/pak1.pk3: $install_to/baseq3/pak1.pk3
+      usr/lib/quake3/ta/baseq3/pak2.pk3: $install_to/baseq3/pak2.pk3
+      usr/lib/quake3/ta/baseq3/pak3.pk3: $install_to/baseq3/pak3.pk3
+      usr/lib/quake3/ta/baseq3/pak4.pk3: $install_to/baseq3/pak4.pk3
+      usr/lib/quake3/ta/baseq3/pak5.pk3: $install_to/baseq3/pak5.pk3
+      usr/lib/quake3/ta/baseq3/pak6.pk3: $install_to/baseq3/pak6.pk3
+      usr/lib/quake3/ta/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
+      usr/lib/quake3/ta/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
+      usr/lib/quake3/ta/missionpack/pak1.pk3: $install_to/missionpack/pak1.pk3
+      usr/lib/quake3/ta/missionpack/pak2.pk3: $install_to/missionpack/pak2.pk3
+      usr/lib/quake3/ta/missionpack/pak3.pk3: $install_to/missionpack/pak3.pk3
       # let mix win & linux html documentation
       usr/share/doc/quake3-data/Help/BotCommands.htm:
         usr/share/doc/quake3-data/Help/BotCommands.html
@@ -372,17 +342,12 @@ packages:
     symlinks:
       usr/share/games/quake3-team-arena-data/quake3-team-arena: usr/games/quake3
       # quake < 10
-      usr/share/games/quake3/missionpack/pak0.pk3:
-        usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3
-      usr/share/games/quake3/missionpack/pak1.pk3:
-        usr/share/games/quake3-data/missionpack/pak1.pk3
-      usr/share/games/quake3/missionpack/pak2.pk3:
-        usr/share/games/quake3-data/missionpack/pak2.pk3
-      usr/share/games/quake3/missionpack/pak3.pk3:
-        usr/share/games/quake3-data/missionpack/pak3.pk3
+      usr/share/games/quake3/missionpack/pak0.pk3: $install_to/missionpack/pak0.pk3
+      usr/share/games/quake3/missionpack/pak1.pk3: $install_to/missionpack/pak1.pk3
+      usr/share/games/quake3/missionpack/pak2.pk3: $install_to/missionpack/pak2.pk3
+      usr/share/games/quake3/missionpack/pak3.pk3: $install_to/missionpack/pak3.pk3
       # quake >= 10
-      usr/lib/quake3/ta/missionpack/pak0.pk3:
-        usr/share/games/quake3-team-arena-data/missionpack/pak0.pk3
+      usr/lib/quake3/ta/missionpack/pak0.pk3: $install_to/missionpack/pak0.pk3
     install_to: usr/share/games/quake3-team-arena-data
 
   quake3-demo-data:
@@ -395,16 +360,11 @@ packages:
     - demoq3/pak0.pk3
     - demo files from patches
     symlinks:
-      usr/lib/quake3/demo/demoq3/pak0.pk3:
-        usr/share/games/quake3-demo-data/demoq3/pak0.pk3
-      usr/lib/quake3/demo/demoq3/botfiles:
-        usr/share/games/quake3-demo-data/demoq3/botfiles
-      usr/lib/quake3/demo/demoq3/gfx:
-        usr/share/games/quake3-demo-data/demoq3/gfx
-      usr/lib/quake3/demo/demoq3/scripts:
-        usr/share/games/quake3-demo-data/demoq3/scripts
-      usr/lib/quake3/demo/demoq3/vm:
-        usr/share/games/quake3-demo-data/demoq3/vm
+      usr/lib/quake3/demo/demoq3/pak0.pk3: $install_to/pak0.pk3
+      usr/lib/quake3/demo/demoq3/botfiles: $install_to/botfiles
+      usr/lib/quake3/demo/demoq3/gfx: $install_to/gfx
+      usr/lib/quake3/demo/demoq3/scripts: $install_to/scripts
+      usr/lib/quake3/demo/demoq3/vm: $install_to/vm
     install_to_docdir:
       - Help
     license:

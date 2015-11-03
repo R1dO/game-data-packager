@@ -77,8 +77,8 @@ packages:
     expansion_for: jedi-academy-data
     install_to: usr/share/games/jedi-academy
     symlinks:
-      usr/lib/openjk/JediAcademy/base/bonus.pk3: usr/share/games/jedi-academy/base/bonus.pk3
-      usr/lib/openjk/JediAcademy/base/siege_destroyer.pk3: usr/share/games/jedi-academy/base/siege_destroyer.pk3
+      usr/lib/openjk/JediAcademy/base/bonus.pk3: $install_to/base/bonus.pk3
+      usr/lib/openjk/JediAcademy/base/siege_destroyer.pk3: $install_to/base/siege_destroyer.pk3
     install:
       - bonus maps
 

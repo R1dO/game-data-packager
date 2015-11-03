@@ -83,12 +83,9 @@ packages:
     - maphead.sd1
     - vswap.sd1
     symlinks:
-      usr/share/games/wolf3d/gamemaps.sod:
-        usr/share/games/wolf3d/gamemaps.sd1
-      usr/share/games/wolf3d/maphead.sod:
-        usr/share/games/wolf3d/maphead.sd1
-      usr/share/games/wolf3d/vswap.sod:
-        usr/share/games/wolf3d/vswap.sd1
+      $install_to/gamemaps.sod: $install_to/gamemaps.sd1
+      $install_to/maphead.sod: $install_to/maphead.sd1
+      $install_to/vswap.sod: $install_to/vswap.sd1
 
   spear-of-destiny-mission2-data:
     expansion_for: spear-of-destiny-data

@@ -799,18 +799,12 @@ packages:
     - sound/midi/nightsh.xmi
     - sound/midi/steady.xmi
     symlinks:
-      usr/share/games/theme-hospital/qdata/font02v.tab:
-        usr/share/games/theme-hospital/qdata/font01v.tab
-      usr/share/games/theme-hospital/qdata/font38v.tab:
-        usr/share/games/theme-hospital/qdata/font05v.tab
-      usr/share/games/theme-hospital/qdata/shot1.pal:
-        usr/share/games/theme-hospital/data/mpalette.dat
-      usr/share/games/theme-hospital/qdata/shot2.pal:
-        usr/share/games/theme-hospital/data/mpalette.dat
-      usr/share/games/theme-hospital/qdata/shot3.pal:
-        usr/share/games/theme-hospital/data/mpalette.dat
-      usr/share/games/theme-hospital/qdata/shot4.pal:
-        usr/share/games/theme-hospital/data/mpalette.dat
+      $install_to/qdata/font02v.tab: $install_to/qdata/font01v.tab
+      $install_to/qdata/font38v.tab: $install_to/qdata/font05v.tab
+      $install_to/qdata/shot1.pal: $install_to/data/mpalette.dat
+      $install_to/qdata/shot2.pal: $install_to/data/mpalette.dat
+      $install_to/qdata/shot3.pal: $install_to/data/mpalette.dat
+      $install_to/qdata/shot4.pal: $install_to/data/mpalette.dat
 
 files:
   levels/full00.sam:

@@ -1211,8 +1211,7 @@ packages:
       provides: dreamweb-data
     version: '1.1'
     symlinks:
-      usr/share/games/dreamweb-fr/french:
-        usr/share/games/dreamweb-fr/speech
+      $install_to/french: $install_to/speech
     install:
     - dreamweb.wav
     - dreamwfr.c00

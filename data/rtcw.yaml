@@ -86,7 +86,7 @@ packages:
     version: 1.42b
     symlinks:
       usr/lib/rtcw/main/sp_pakG.pk3:
-        usr/share/games/rtcw/main/sp_pakG.pk3
+        $install_to/main/sp_pakG.pk3
     install_to: usr/share/games/rtcw
     install:
     - main/autoexec.cfg

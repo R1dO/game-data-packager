@@ -27,7 +27,7 @@ packages:
   tyrian-data:
     # there are two identical files in the zip
     symlinks:
-      usr/share/games/tyrian/netset.pcx: usr/share/games/tyrian/tyrset.pcx
+      $install_to/netset.pcx: $install_to/tyrset.pcx
     install:
       - wanted
 

@@ -10,7 +10,7 @@ packages:
     - sample.opl
     - western
     symlinks:
-      usr/share/games/toltecs/sample.ad: usr/share/games/toltecs/sample.opl
+      $install_to/sample.ad: $install_to/sample.opl
 
 files:
   sample.opl:
