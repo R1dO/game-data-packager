@@ -55,16 +55,17 @@ class WantedFile(HashedFile):
     def __init__(self, name):
         super(WantedFile, self).__init__(name)
         self.alternatives = []
+        self.doc = False
         self.group_members = None
-        self.distinctive_name = True
+        self._distinctive_name = None
         self.distinctive_size = False
         self.download = None
         self.executable = False
         self.filename = name.split('?')[0]
         self.install_as = self.filename
-        self.install_to = None
+        self._install_to = None
         self.license = False
-        self._look_for = []
+        self._look_for = None
         self._provides = set()
         self.provides_files = None
         self._size = None
@@ -73,27 +74,36 @@ class WantedFile(HashedFile):
 
     def apply_group_attributes(self, attributes):
         for k, v in attributes.items():
-            if k == 'doc':
-                if v:
-                    self.install_to = '$docdir'
-                continue
-
-            if k == 'license' and v:
-                self.install_to = '$docdir'
-                self.distinctive_name = False
-                self.license = v
-                continue
-
             assert hasattr(self, k)
             setattr(self, k, v)
+
+    @property
+    def distinctive_name(self):
+        if self._distinctive_name is not None:
+            return self._distinctive_name
+        return not self.license
+    @distinctive_name.setter
+    def distinctive_name(self, value):
+        self._distinctive_name = value
+
+    @property
+    def install_to(self):
+        if self._install_to is not None:
+            return self._install_to
+        if self.doc or self.license:
+            return '$docdir'
+        return None
+    @install_to.setter
+    def install_to(self, value):
+        self._install_to = value
 
     @property
     def look_for(self):
         if self.alternatives:
             return set([])
-        if not self._look_for:
-            self._look_for = set([self.filename.lower(), self.install_as.lower()])
-        return self._look_for
+        if self._look_for is not None:
+            return self._look_for
+        return set([self.filename.lower(), self.install_as.lower()])
     @look_for.setter
     def look_for(self, value):
         self._look_for = set(x.lower() for x in value)
@@ -117,7 +127,6 @@ class WantedFile(HashedFile):
 
     def to_yaml(self, expand=True):
         ret = {
-            'distinctive_name': self.distinctive_name,
             'name': self.name,
         }
 
@@ -126,7 +135,6 @@ class WantedFile(HashedFile):
                 'distinctive_size',
                 'executable',
                 'license',
-                'look_for',
                 'skip_hash_matching',
                 ):
             v = getattr(self, k)
@@ -147,12 +155,28 @@ class WantedFile(HashedFile):
                 'download',
                 'group_members',
                 'install_as',
-                'install_to',
                 'size',
                 'unsuitable',
                 'unpack',
                 ):
             v = getattr(self, k)
+            if v is not None:
+                if isinstance(v, set):
+                    ret[k] = sorted(v)
+                else:
+                    ret[k] = v
+
+        for k in (
+                'distinctive_name',
+                'install_to',
+                'look_for',
+                ):
+            if expand:
+                # use derived value
+                v = getattr(self, k)
+            else:
+                v = getattr(self, '_' + k)
+
             if v is not None:
                 if isinstance(v, set):
                     ret[k] = sorted(v)
@@ -808,29 +832,21 @@ class GameData(object):
 
         if 'install' in d:
             for filename in d['install']:
-                f = self._ensure_file(filename)
                 package.install.add(filename)
 
         if 'optional' in d:
             assert isinstance(d['optional'], list), package.name
             for filename in d['optional']:
-                f = self._ensure_file(filename)
                 package.optional.add(filename)
 
         if 'doc' in d:
             assert isinstance(d['doc'], list), package.name
             for filename in d['doc']:
-                f = self._ensure_file(filename)
-                f.install_to = '$docdir'
                 package.optional.add(filename)
 
         if 'license' in d:
             assert isinstance(d['license'], list), package.name
             for filename in d['license']:
-                f = self._ensure_file(filename)
-                f.license = True
-                f.install_to = '$docdir'
-                f.distinctive_name = False
                 package.optional.add(filename)
 
         if 'install_files_from_cksums' in d:
@@ -1045,6 +1061,16 @@ class GameData(object):
         self.loaded_file_data = True
 
         for package in self.packages.values():
+            d = self.data['packages'][package.name]
+
+            for filename in d.get('doc', ()):
+                f = self._ensure_file(filename)
+                f.doc = True
+
+            for filename in d.get('license', ()):
+                f = self._ensure_file(filename)
+                f.license = True
+
             package.install_files = set(self._iter_expand_groups(package.install))
             package.optional_files = set(self._iter_expand_groups(package.optional))
 
@@ -1166,8 +1192,7 @@ class GameData(object):
         those groups, recursively.
         """
         for filename in grouped:
-            wanted = self.files.get(filename)
-            assert wanted is not None, filename
+            wanted = self._ensure_file(filename)
             if wanted.group_members is not None:
                 for x in self._iter_expand_groups(wanted.group_members):
                     yield x
