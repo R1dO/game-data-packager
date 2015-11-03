@@ -55,7 +55,7 @@ class WantedFile(HashedFile):
     def __init__(self, name):
         super(WantedFile, self).__init__(name)
         self.alternatives = []
-        self.group_members = set()
+        self.group_members = None
         self.distinctive_name = True
         self.distinctive_size = False
         self.download = None
@@ -124,7 +124,6 @@ class WantedFile(HashedFile):
                 'alternatives',
                 'distinctive_size',
                 'executable',
-                'group_members',
                 'license',
                 'look_for',
                 'provides',
@@ -139,6 +138,7 @@ class WantedFile(HashedFile):
 
         for k in (
                 'download',
+                'group_members',
                 'install_as',
                 'install_to',
                 'size',
@@ -147,7 +147,10 @@ class WantedFile(HashedFile):
                 ):
             v = getattr(self, k)
             if v is not None:
-                ret[k] = v
+                if isinstance(v, set):
+                    ret[k] = sorted(v)
+                else:
+                    ret[k] = v
 
         return ret
 
@@ -536,6 +539,8 @@ class GameData(object):
                     raise AssertionError('group %r should be dict, str or list' % group_name)
 
                 group = self._ensure_file(group_name)
+                if group.group_members is None:
+                    group.group_members = set()
                 group.apply_group_attributes(attrs)
 
                 if isinstance(members, str):
@@ -551,10 +556,6 @@ class GameData(object):
                         group.group_members.add(member_name)
                 else:
                     raise AssertionError('group %r members should be str or list' % group_name)
-
-                # an empty group is no use, and would break the assumption
-                # that we can use f.group_members to detect groups
-                assert group.group_members
 
         if 'size_and_md5' in self.data:
             for line in self.data['size_and_md5'].splitlines():
@@ -677,7 +678,7 @@ class GameData(object):
             return ret
 
         for filename, f in self.files.items():
-            if f.group_members:
+            if f.group_members is not None:
                 groups[filename] = f.to_yaml()
             else:
                 files[filename] = f.to_yaml()
@@ -948,6 +949,8 @@ class GameData(object):
             if stripped.startswith('['):
                 assert stripped.endswith(']'), repr(stripped)
                 current_group = self._ensure_file(stripped[1:-1])
+                if current_group.group_members is None:
+                    current_group.group_members = set()
                 attributes = {}
             elif stripped.startswith('{'):
                 attributes = {}
@@ -1034,7 +1037,7 @@ class GameData(object):
             for provided in f.provides:
                 self.providers.setdefault(provided, set()).add(filename)
 
-            if f.alternatives or f.group_members:
+            if f.alternatives or f.group_members is not None:
                 continue
 
             if f.distinctive_size and f.size is not None:
@@ -1115,7 +1118,7 @@ class GameData(object):
                     # an alternative can't be a placeholder for alternatives
                     assert not alt.alternatives, alt_name
                     # an alternative can't be a placeholder for a group
-                    assert not alt.group_members, alt_name
+                    assert alt.group_members is None, alt_name
 
                 # if this is a placeholder for a bunch of alternatives, then
                 # it doesn't make sense for it to have a defined checksum
@@ -1127,8 +1130,8 @@ class GameData(object):
 
                 # a placeholder for alternatives can't also be a placeholder
                 # for a group
-                assert not wanted.group_members, wanted.name
-            elif wanted.group_members:
+                assert wanted.group_members is None, wanted.name
+            elif wanted.group_members is not None:
                 for member_name in wanted.group_members:
                     assert member_name in self.files
 
@@ -1137,7 +1140,6 @@ class GameData(object):
                 assert wanted.sha256 is None, wanted.name
                 assert wanted.size is None, wanted.name
                 assert not wanted.unpack, wanted.unpack
-            # FIXME: find out file size and add to yaml
             else:
                 assert (wanted.size is not None or filename in
                         self.data.get('unknown_sizes', ())
@@ -1150,7 +1152,7 @@ class GameData(object):
         for filename in grouped:
             wanted = self.files.get(filename)
             assert wanted is not None, filename
-            if wanted.group_members:
+            if wanted.group_members is not None:
                 for x in self._iter_expand_groups(wanted.group_members):
                     yield x
             else:
