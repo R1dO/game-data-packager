@@ -32,6 +32,11 @@ def which(exe):
 
     return None
 
+if os.path.isdir('/usr/share/doom'):
+    DIR = '/usr/share/doom'
+else:
+    DIR = '/usr/share/games/doom'
+
 requirements='''
 --------------------------------------------------------
 
@@ -193,21 +198,35 @@ class Launcher:
         radiobuttonDefault.connect('toggled', self.select_engine)
         radiogrid.attach(radiobuttonDefault, 0, 0, 1, 1)
 
+        default = None
+        alternatives = []
         if os.path.islink('/etc/alternatives/doom'):
+            # on Debian
             default = os.readlink('/etc/alternatives/doom')
             if default == '/usr/games/doomsday-compat':
                 default = '/usr/games/doomsday'
+
+            proc = subprocess.check_output(['update-alternatives', '--list', 'doom'],
+                                             universal_newlines=True)
+            for alternative in proc.splitlines():
+                if alternative == '/usr/games/doomsday-compat':
+                    alternative = '/usr/games/doomsday'
+                if alternative != default:
+                    alternatives.append(alternative)
+        else:
+            # not on Debian
+            for alternative in ('prboom-plus', 'prboom', 'chocolate-doom'):
+                if which(alternative):
+                    if not default:
+                        default = alternative
+                    else:
+                        alternatives.append(alternative)
+
+        if default:
             radiobuttonDefault.set_label("%s (default)" % default)
             self.select_engine(radiobuttonDefault)
             i = 1
-            proc = subprocess.Popen(['update-alternatives', '--list', 'doom'],
-                                stdout=subprocess.PIPE, universal_newlines=True)
-            for alternative in proc.stdout:
-                alternative = alternative.strip()
-                if alternative == '/usr/games/doomsday-compat':
-                    alternative = '/usr/games/doomsday'
-                if alternative == default:
-                   continue
+            for alternative in alternatives:
                 radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
                 radiobutton.connect('toggled', self.select_engine)
                 i += 1
@@ -262,10 +281,13 @@ class Launcher:
         if self.engine == ['/usr/games/doomsday']:
             self.engine.append('-game')
             self.engine.append('doom2')
+        if self.engine == ['chocolate-doom'] and DIR == '/usr/share/doom':
+            self.engine.append('-iwad')
+            self.engine.append('/usr/share/doom/doom2.wad')
 
     def run_game(self, event):
         subprocess.call(self.engine +
-            ['-file', '/usr/share/games/doom/%s.wad' % self.game,
+            ['-file', '%s/%s.wad' % (DIR, self.game),
             '-warp', '%d' % self.warp,
             '-skill', '%d' % self.difficulty])
 
@@ -278,7 +300,7 @@ class Launcher:
             exit(message)
         for level in levels.keys():
             level = os.path.splitext(level)[0]
-            fullpath = '/usr/share/games/doom/%s.wad' % level
+            fullpath = DIR + '/%s.wad' % level
             if not os.path.isfile(fullpath):
                 print('\n')
                 message = fullpath + " is missing !\n" + requirements
