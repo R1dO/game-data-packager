@@ -1417,7 +1417,7 @@ class PackagingTask(object):
     def fill_extra_files(self, package, destdir):
         pass
 
-    def fill_dest_dir_rpm(self, package, destdir):
+    def fill_dest_dir_rpm(self, package, destdir, compress):
         specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
         short_desc, long_desc = self.generate_description(package)
         with open(specfile, 'w', encoding='utf-8') as spec:
@@ -1428,6 +1428,10 @@ class PackagingTask(object):
             spec.write('License: Commercial\n')
             spec.write('Group: Amusements/Games\n')
             spec.write('BuildArch: noarch\n')
+            if not compress or not self.compress_deb or package.rip_cd:
+                spec.write('%define _binary_payload w0.gzdio\n')
+            elif self.compress_deb == ['-Zgzip', '-z1']:
+                spec.write('%define _binary_payload w1.gzdio\n')
             spec.write('%description\n')
             spec.write('%s\n' % long_desc)
             spec.write('%files\n')
@@ -2332,7 +2336,7 @@ class PackagingTask(object):
             if FORMAT == 'deb':
                 pkg = self.build_deb(package, destination, compress=compress)
             elif FORMAT == 'rpm':
-                pkg = self.build_rpm(package)
+                pkg = self.build_rpm(package, compress=compress)
 
             if pkg is None:
                 raise SystemExit(1)
@@ -2509,13 +2513,13 @@ class PackagingTask(object):
         rm_rf(destdir)
         return outfile
 
-    def build_rpm(self, package):
+    def build_rpm(self, package, compress=True):
         destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
 
         if not self.fill_dest_dir(package, destdir):
             return None
 
-        specfile = self.fill_dest_dir_rpm(package, destdir)
+        specfile = self.fill_dest_dir_rpm(package, destdir, compress)
         self.our_dh_fixperms(destdir)
 
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
