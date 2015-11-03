@@ -81,15 +81,36 @@ def is_license(file):
             return True
     return False
 
+def iter_path_components(filename):
+    dirname, basename = os.path.split(filename)
+
+    if dirname == filename:
+        # the root
+        yield dirname
+    elif dirname:
+        for x in iter_path_components(dirname):
+            yield x
+
+    if basename:
+        yield basename
+
 def is_doc(file):
     file = file.split('?')[0]
+
+    for dirname in iter_path_components(file):
+        if dirname.lower() in  ('manual', 'docs', 'doc', 'help'):
+            return True
+
     name, ext = os.path.splitext(file.lower())
+
     if ext not in ('.doc', '.htm', '.html', '.pdf', '.txt', ''):
         return False
+
     for word in ('changes', 'hintbook', 'manual', 'quickstart',
                  'readme', 'refcard', 'reference', 'support'):
         if word in name:
             return True
+
     return False
 
 def is_dosbox(file):
@@ -268,7 +289,7 @@ class GameData(object):
                         out_name = os.path.basename(out_name)
                         self.license.add(out_name)
                         self.package['license'].append(out_name)
-                    elif is_doc(fn):
+                    elif is_doc(path):
                         self.doc.add(out_name)
                         self.package['doc'].append(out_name)
                     # most of the times these files are not needed
