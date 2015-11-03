@@ -118,7 +118,6 @@ class WantedFile(HashedFile):
         ret = {
             'distinctive_name': self.distinctive_name,
             'name': self.name,
-            'size': self.size,
         }
 
         for k in (
@@ -142,6 +141,7 @@ class WantedFile(HashedFile):
                 'download',
                 'install_as',
                 'install_to',
+                'size',
                 'unsuitable',
                 'unpack',
                 ):
