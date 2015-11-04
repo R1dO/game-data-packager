@@ -77,8 +77,8 @@ packages:
       $install_to/addon/LiberationSerif-Regular.ttf:
         usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf
     install:
-    - any_inquis_str
-    - any_inquis_zix
+    - inquis.str
+    - inquis.zix
     - assets cd 1
     - assets cd 2
     doc:
@@ -89,21 +89,15 @@ packages:
 files:
   # single bit difference
   # 000021B7 32 30
-  any_inquis_str:
+  inquis.str:
     alternatives:
-    - inquis.str
-    - inquis.str_alt
-    install_as: inquis.str
-  inquis.str_alt:
-    look_for: [inquis.str]
+    - inquis.str?gog
+    - inquis.str?alt
 
-  any_inquis_zix:
+  inquis.zix:
     alternatives:
-    - inquis.zix
-    - inquis.zix_alt
-    install_as: inquis.zix
-  inquis.zix_alt:
-    look_for: [inquis.zix]
+    - inquis.zix?gog
+    - inquis.zix?alt
 
   # three bytes, just 'aaa'
   aaa:
@@ -177,8 +171,8 @@ files:
       - ue1ea111.rlf
       - ue1ea121.rlf
     provides:
-    - inquis.str
-    - inquis.zix
+    - inquis.str?gog
+    - inquis.zix?gog
     - assets cd 1
     - assets cd 2
     - manual.pdf
@@ -186,10 +180,10 @@ files:
 
 groups:
  stuff: |
-  11971     4ebde47ab81339b0418797bd91270e17 inquis.str
-  11971     1a8ae13317b0914bf83ad177c777e677 inquis.str_alt
-  126129    014a27088be461e4829fd189d00796f3 inquis.zix
-  126095    ed473e1cdd7d3f2efcd056772f1327b5 inquis.zix_alt
+  11971     4ebde47ab81339b0418797bd91270e17 inquis.str?gog
+  11971     1a8ae13317b0914bf83ad177c777e677 inquis.str?alt
+  126129    014a27088be461e4829fd189d00796f3 inquis.zix?gog
+  126095    ed473e1cdd7d3f2efcd056772f1327b5 inquis.zix?alt
   3         47bce5c74f589f4867dbd57e9ca9f808 aaa
  assets cd 1: |
   4947211   feaa1c8ccad7ae18d2e1fe681d44e89a cursor.zfs
