@@ -36,103 +36,20 @@ files:
     install_to: $docdir
 
   tyrian21.zip:
-    size: 4754048
     distinctive_size: true
     download:
       tyrian-mirrors:
         path: .
       gentoo-distfiles-mirrors:
         path: .
-    provides:
-    - cubetxt1.dat
-    - cubetxt2.dat
-    - cubetxt3.dat
-    - cubetxt4.dat
-    - demo.1
-    - demo.2
-    - demo.3
-    - demo.4
-    - demo.5
-    - estsc.shp
-    - exitmsg.bin
-    - levels1.dat
-    - levels2.dat
-    - levels3.dat
-    - levels4.dat
-    - loudness.awe
-    - manual.doc
-    - music.mus
-    - netarena.pcx
-    - netfont1.pcx
-    - netfont2.pcx
-    - netmega.pcx
-    - netterm.int
-    - newsh0.shp
-    - newsh1.shp
-    - newsh2.shp
-    - newsh3.shp
-    - newsh4.shp
-    - newsh5.shp
-    - newsh6.shp
-    - newsh7.shp
-    - newsh8.shp
-    - newsh9.shp
-    - newsha.shp
-    - newshb.shp
-    - newshc.shp
-    - newshd.shp
-    - newshe.shp
-    - newshf.shp
-    - newshg.shp
-    - newshh.shp
-    - newshi.shp
-    - newshj.shp
-    - newshk.shp
-    - newshl.shp
-    - newshm.shp
-    - newshn.shp
-    - newsho.shp
-    - newshp.shp
-    - newshr.shp
-    - newsh^.shp
-    - newsh~.shp
-    - newsh#.shp
-    - newshs.shp
-    - newsht.shp
-    - newshu.shp
-    - newshv.shp
-    - order.tfp
-    - palette.dat
-    - shapes).dat
-    - shapesw.dat
-    - shapesx.dat
-    - shapesy.dat
-    - shapesz.dat
-    - shipedit.pcx
-    - tshp2.pcx
-    - tyrend.anm
-    - tyrian1.lvl
-    - tyrian2.lvl
-    - tyrian3.lvl
-    - tyrian4.lvl
-    - tyrian.cdt
-    - tyrianc.shp
-    - tyrian.hdt
-    - tyrian.pic
-    - tyrian.shp
-    - tyrian.snd
-    - tyrset.pcx
-    - user1.shp
-    - user2.shp
-    - voicesc.snd
-    - voices.snd
-    md5: 2a3b206a6de25ed4b771af073f8ca904
-    sha1: 29827de99c92cdba7ac8d8b1307776c8f473cd44
-    sha256: 7790d09a2a3addcd33c66ef063d5900eb81cc9c342f4807eb8356364dd1d9277
     unpack:
       format: zip
+    provides:
+    - wanted
 
 groups:
+  archive: |
+    4754048 2a3b206a6de25ed4b771af073f8ca904 tyrian21.zip
   wanted: |
     36169  3f2476d9ff29a06cf9fb85d52302222a  cubetxt1.dat
     8108   2b199deeccab1042fb02b46c47c2a8d0  cubetxt2.dat
@@ -218,6 +135,8 @@ groups:
     188275 c00534446f089c940e649dc75a28e8a4  voicesc.snd
 
 sha1sums: |
+  29827de99c92cdba7ac8d8b1307776c8f473cd44  tyrian21.zip
+
   58807f32c413a0c9db6deb0365f2fac9518e7c86  cubetxt1.dat
   ee7dc2eb87e5a75564382efcd95d13554d3835ba  cubetxt2.dat
   1ee93623406dc61b50ccb41a97bae769ea15cef2  cubetxt3.dat
@@ -301,6 +220,8 @@ sha1sums: |
   63ff6b55caeda529f69983a342618c84cba5addf  voices.snd
   a2d5730a7ddf4da0a0b8338efd65a28fa482c731  voicesc.snd
 sha256sums: |
+  7790d09a2a3addcd33c66ef063d5900eb81cc9c342f4807eb8356364dd1d9277  tyrian21.zip
+
   2a0bc26ac4a8cdcbe7a145c9b1868a87ecb4335e9787f2f1e5713c965372df2b  cubetxt1.dat
   6604a1dcc264e8b8e98f036a8bc35579e9b90b92eccbc4d7c1effee9785d1580  cubetxt2.dat
   fcfc9762cd4cfad42feb12d975929de86851b216d4491252c701527e22b55539  cubetxt3.dat
