@@ -119,13 +119,17 @@ files:
     - ue1ea111.rlf
     - ue1ea121.rlf
 
-  zgi_mx/cd60w111.avi:
+  zassets1/griffqst/cd60w111.avi:
     look_for: [cd60w111.avi]
-  zgi_mx/cd60w121.rlf:
+  zassets1/griffqst/cd60w121.rlf:
     look_for: [cd60w121.rlf]
-  zgi_mx/cd60w141.rlf:
+  zassets1/griffqst/cd60w131.rlf:
+    look_for: [cd60w131.rlf]
+  zassets1/griffqst/cd60w141.rlf:
     look_for: [cd60w141.rlf]
-  zgi_mx/cd60w161.rlf:
+  zassets1/griffqst/cd60w151.rlf:
+    look_for: [cd60w151.rlf]
+  zassets1/griffqst/cd60w161.rlf:
     look_for: [cd60w161.rlf]
 
   zgi_mx/ue1ea011.rlf:
@@ -1056,15 +1060,15 @@ groups:
   676276    307faeb469c43cc980ab01764770f0db zassets1/griffqst/cd60s031.tga
   141134    60283c6301e065c54264c0c187f65938 zassets1/griffqst/cd60w111.avi
   141134    60283c6301e065c54264c0c187f65938 zassets1/griffqst/cd60w111.src
-  #545472    465d7de401ebe7e86173209ea95c4d63 zassets1/griffqst/cd60w121.rlf
+  545472    465d7de401ebe7e86173209ea95c4d63 zassets1/griffqst/cd60w121.rlf
   545472    465d7de401ebe7e86173209ea95c4d63 zassets1/griffqst/cd60w121.src
-  #85402     f051ef7a6b17d43b49fe378b53aa024e zassets1/griffqst/cd60w131.rlf
+  85402     f051ef7a6b17d43b49fe378b53aa024e zassets1/griffqst/cd60w131.rlf
   85402     f051ef7a6b17d43b49fe378b53aa024e zassets1/griffqst/cd60w131.src
-  #223968    576485bf6e67310af52d4a2b6416e090 zassets1/griffqst/cd60w141.rlf
+  223968    576485bf6e67310af52d4a2b6416e090 zassets1/griffqst/cd60w141.rlf
   223968    576485bf6e67310af52d4a2b6416e090 zassets1/griffqst/cd60w141.src
-  #281592    826071eb30c7aa99b5311b8ce6154291 zassets1/griffqst/cd60w151.rlf
+  281592    826071eb30c7aa99b5311b8ce6154291 zassets1/griffqst/cd60w151.rlf
   281592    826071eb30c7aa99b5311b8ce6154291 zassets1/griffqst/cd60w151.src
-  #333072    daf841f7f6338b8a85ab494ead6bdcb2 zassets1/griffqst/cd60w161.rlf
+  333072    daf841f7f6338b8a85ab494ead6bdcb2 zassets1/griffqst/cd60w161.rlf
   333072    daf841f7f6338b8a85ab494ead6bdcb2 zassets1/griffqst/cd60w161.src
   2214      fa2b25df5b34e2c090923e64e745e453 zassets1/griffqst/cd60y011.tga
   9614      bab02657ba2b9500f44e8e38f3e01c81 zassets1/griffqst/cd60y031.tga
@@ -2021,12 +2025,15 @@ groups:
   25678     b06be6e4723008d442e8f93e907bc0d7 taunts/g0lph19p.raw
   3359532   9aa5dd1f1a06d9aee8510a1ca24e917c zgi_mx/c000h01q.src
   467302    677c1aff7629d634ba2523a66d9fcf57 zgi_mx/cd00h40q.src
-  141134    60283c6301e065c54264c0c187f65938 zgi_mx/cd60w111.avi
-  545472    465d7de401ebe7e86173209ea95c4d63 zgi_mx/cd60w121.rlf
-  85402     f051ef7a6b17d43b49fe378b53aa024e zgi_mx/cd60w131.rlf
-  223968    576485bf6e67310af52d4a2b6416e090 zgi_mx/cd60w141.rlf
-  281592    826071eb30c7aa99b5311b8ce6154291 zgi_mx/cd60w151.rlf
-  333072    daf841f7f6338b8a85ab494ead6bdcb2 zgi_mx/cd60w161.rlf
+
+  # same files are also found in zassets1/griffqst,
+  # guess ScummVM VFS doesn't need both
+  #141134    60283c6301e065c54264c0c187f65938 zgi_mx/cd60w111.avi
+  #545472    465d7de401ebe7e86173209ea95c4d63 zgi_mx/cd60w121.rlf
+  #85402     f051ef7a6b17d43b49fe378b53aa024e zgi_mx/cd60w131.rlf
+  #223968    576485bf6e67310af52d4a2b6416e090 zgi_mx/cd60w141.rlf
+  #281592    826071eb30c7aa99b5311b8ce6154291 zgi_mx/cd60w151.rlf
+  #333072    daf841f7f6338b8a85ab494ead6bdcb2 zgi_mx/cd60w161.rlf
   2521088   7198d41ba5c88bc5717695cc465e2734 zgi_mx/cm00h01q.src
   8504318   4835bfbb8888d714826ed5d2506e4099 zgi_mx/dm00h01q.src
   8876030   87e6abad68eb9e30f943c846727de988 zgi_mx/e000h01q.src
