@@ -2845,6 +2845,22 @@ files:
 
 
 groups:
+ manuals: |
+  3597466   07822437f4833d4c8d20cdf4ecd76081 manual.pdf
+  4032581   931467a185f848ec848acf387dc114c4 manual.pdf?de
+  7470288   8153fed82cf745c9a8ae0a73b9515e5c manual.pdf?es
+  2872991   24502e92038dfae55294585400b55815 manual.pdf?fr
+
+ archives: |
+  886204056 28a55b88fda4c5899b92946972152a39 setup_toonstruck_2.0.0.2.exe
+  929307800 490c88e36614ad028dc0ff7f8fa603b7 setup_toonstruck_german_2.0.0.2.exe
+  936802776 d759a3292f07011554fb7db322b1ed30 setup_toonstruck_french_2.0.0.2.exe
+  896496376 eac6be8307b7deedc2ad313f282b1084 setup_toonstruck_spanish_2.0.0.2.exe
+  937836649 c3fc183b3f534a2da18f646e4a11ed82 gog_toonstruck_2.0.0.4.sh
+  981496738 79037fe7370ad2148dd0663717d0b566 gog_toonstruck_german_2.0.0.4.sh
+  948184546 f036a71031910a429184ae3cc0236412 gog_toonstruck_spanish_2.0.0.4.sh
+  985279408 f3b22c627fd59a1c0bc0a02e4cbc9972 gog_toonstruck_french_2.0.0.4.sh
+
  music: |
   1062116   f5320c0e14e1793b914fc68c7658aece act1/arcaddbl/kpm814.mus
   1573592   8f42c92f10404d6e922d5a1f9d9fe266 act1/arcaddbl/scd16522.mus
@@ -2917,12 +2933,13 @@ groups:
   130315    69c8ff364335eef63f7bff8a4a02ed5e act2/vent/amb.mus
   1105313   a690b2e3b82be5bc5549c0221b2976b1 misc/br091013.mus
 
-size_and_md5: |
+ default group: |
   1416701   82e5c800eff52fd462b3f5a83794920c act1/palex/scd16519.mus
   1479995   4c5532c8c2343f29c907b6b21fa02785 act1/roboshow/brc169.mus
   1479995   4ee0c1f964a2adf1bed509687e84385c act1/roboshow/brc169.mus?en_alt
   1575520   14d1625ce603bea7f07d740ac563b518 act1/zcross/gt1719.mus
   1575520   1425a55a19fc062d92f1f45139ac753f act1/zcross/gt1719.mus?en_alt
+  9958      d36453ca7d9af44bfd1c2f6be2abad08 misc/toonfont.caf?de_es
 
   6891136   718bfd7cadb63997757d10067b7a0b20 act1/arcaddbl/422m.smk
   6267424   04257850261004d34cf33b6a26171db1 act1/arcaddbl/423m.smk
@@ -3135,14 +3152,7 @@ size_and_md5: |
   9995      916156345bdcdf7d7aae407753938e3f misc/toonfont.caf
   3077708   47966c48f221a7d3b0c5899fbd507437 misc/vielogom.smk
 
-  3597466   07822437f4833d4c8d20cdf4ecd76081 manual.pdf
-  886204056 28a55b88fda4c5899b92946972152a39 setup_toonstruck_2.0.0.2.exe
-  937836649 c3fc183b3f534a2da18f646e4a11ed82 gog_toonstruck_2.0.0.4.sh
-
-  4032581   931467a185f848ec848acf387dc114c4 manual.pdf?de
-  981496738 79037fe7370ad2148dd0663717d0b566 gog_toonstruck_german_2.0.0.4.sh
-  929307800 490c88e36614ad028dc0ff7f8fa603b7 setup_toonstruck_german_2.0.0.2.exe
-
+ german dub: |
   6882324   4beecbe2fd5ae2662fea0e45511bb694 act1/arcaddbl/422m.smk?de
   6158768   0a5f82025c5e121e3ccd60eb48612bff act1/arcaddbl/423m.smk?de
   2178096   ffeb56a6e35c2df051626d6c284fb44f act1/arcaddbl/424m.smk?de
@@ -3316,12 +3326,8 @@ size_and_md5: |
   468667    441dcab644ad40963f130545c717268e misc/onetime.pak?de
   226624    13b1e4fa2d8e930e9778748ba24ab784 misc/test.pcx?de
   229364    345495a3ea59a560ebe9c20e6cec6c59 misc/test.wav?de
-  9958      d36453ca7d9af44bfd1c2f6be2abad08 misc/toonfont.caf?de_es
 
-  7470288   8153fed82cf745c9a8ae0a73b9515e5c manual.pdf?es
-  948184546 f036a71031910a429184ae3cc0236412 gog_toonstruck_spanish_2.0.0.4.sh
-  896496376 eac6be8307b7deedc2ad313f282b1084 setup_toonstruck_spanish_2.0.0.2.exe
-
+ spanish dub: |
   6594296   cc1a7e4b49b74111147d52b2f01eef00 act1/arcaddbl/422m.smk?es
   6170576   88d66ffdaa5a65db162f0e276130125b act1/arcaddbl/423m.smk?es
   2183584   95718dde039ed2b0a70b749fc7e6baf4 act1/arcaddbl/424m.smk?es
@@ -3496,10 +3502,7 @@ size_and_md5: |
   228804    53b008cffd528ed3fc62749a76a48cf5 misc/test.pcx?es
   201260    d3e423e951262a43335c2f541d180722 misc/test.wav?es
 
-  2872991   24502e92038dfae55294585400b55815 manual.pdf?fr
-  936802776 d759a3292f07011554fb7db322b1ed30 setup_toonstruck_french_2.0.0.2.exe
-  985279408 f3b22c627fd59a1c0bc0a02e4cbc9972 gog_toonstruck_french_2.0.0.4.sh
-
+ french dub: |
   7112452   bce4a1990471e918874232a9b1f43568 act1/arcaddbl/422m.smk?fr
   6413784   12852e344f3e03afd3a2a66567ea2169 act1/arcaddbl/423m.smk?fr
   2270716   67a0cfcdbfaa125efb6f1caac06cea93 act1/arcaddbl/424m.smk?fr
