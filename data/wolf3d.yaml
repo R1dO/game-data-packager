@@ -15,7 +15,9 @@ packages:
       out of the six episodes of the full game.
     demo_for:
     - wolf3d-v12-data
-    - wolf3d-v14-data
+    - wolf3d-v14-id-data
+    - wolf3d-v14-alt-data
+    - wolf3d-v14-apogee-data
     debian:
       replaces: wolf3d-data-wl1
     install_to: usr/share/games/wolf3d
@@ -47,11 +49,9 @@ packages:
        * Episode 4: Dark Secret
        * Episode 5: Trail of the Madman
        * Episode 6: Confrontation
-    better_version: wolf3d-v14-data
     debian:
       provides: wolf3d-data
-      #conflicts: wolf3d-data
-      conflicts: [wolf3d-v14-data, wolf3d-full-v14-data, wolf3d-full-v12-data, wolf3d-full-data]
+      conflicts: wolf3d-data
     install_to: usr/share/games/wolf3d
     install:
     - audiohed.wl6?1.0
@@ -63,8 +63,8 @@ packages:
     - vgahead.wl6?1.0
     - vswap.wl6?1.0
 
-  wolf3d-v14-data:
-    longname: Wolfenstein 3D v1.4
+  wolf3d-v14-id-data:
+    longname: Wolfenstein 3D v1.4 - id Software
     description: |
       This version include the original levels:
        * Episode 1: Escape from Castle Wolfenstein
@@ -77,9 +77,10 @@ packages:
        * Episode 6: Confrontation
     debian:
       provides: wolf3d-data
-      #conflicts: wolf3d-data
-      conflicts: [wolf3d-v12-data, wolf3d-full-v12-data, wolf3d-full-data]
-      replaces: [wolf3d-full-v14-data, wolf3d-full-data]
+      conflicts: wolf3d-data
+    fedora:
+      engine: wolf4sdl-registered-id
+      install_to: usr/share/wolf3d/registered-id
     steam:
       id: 2270
       path: common/Wolfenstein 3D
@@ -93,10 +94,67 @@ packages:
     - audiot.wl6
     - gamemaps.wl6
     - maphead.wl6
-    - vgadict.wl6
-    - vgagraph.wl6
-    - vgahead.wl6
-    - vswap.wl6
+    - vgadict.wl6?steam
+    - vgagraph.wl6?steam
+    - vgahead.wl6?steam
+    - vswap.wl6?steam
+
+  wolf3d-v14-alt-data:
+    longname: Wolfenstein 3D v1.4 - id Software
+    description: |
+      This version include the original levels:
+       * Episode 1: Escape from Castle Wolfenstein
+       * Episode 2: Operation: Eisenfaust
+       * Episode 3: Die, Fuhrer, Die!
+
+      as well as the 'Nocturnal Missions':
+       * Episode 4: Dark Secret
+       * Episode 5: Trail of the Madman
+       * Episode 6: Confrontation
+    debian:
+      provides: wolf3d-data
+      conflicts: wolf3d-data
+    fedora:
+      engine: wolf4sdl-registered-id
+      install_to: usr/share/wolf3d/registered-id
+    install_to: usr/share/games/wolf3d
+    install:
+    - audiohed.wl6
+    - audiot.wl6
+    - gamemaps.wl6
+    - maphead.wl6
+    - vgadict.wl6?alt
+    - vgagraph.wl6?alt
+    - vgahead.wl6?alt
+    - vswap.wl6?alt
+
+  wolf3d-v14-apogee-data:
+    longname: Wolfenstein 3D v1.4 - Apogee
+    description: |
+      This version include the original levels:
+       * Episode 1: Escape from Castle Wolfenstein
+       * Episode 2: Operation: Eisenfaust
+       * Episode 3: Die, Fuhrer, Die!
+
+      as well as the 'Nocturnal Missions':
+       * Episode 4: Dark Secret
+       * Episode 5: Trail of the Madman
+       * Episode 6: Confrontation
+    debian:
+      provides: wolf3d-data
+    fedora:
+      engine: wolf4sdl-registered-apogee
+      install_to: usr/share/wolf3d/registered-apogee
+    install_to: usr/share/games/wolf3d
+    install:
+    - audiohed.wl6
+    - audiot.wl6
+    - gamemaps.wl6
+    - maphead.wl6
+    - vgadict.wl6?wl6a
+    - vgagraph.wl6?wl6a
+    - vgahead.wl6?wl6a
+    - vswap.wl6?alt
     license:
     - license.doc
 
@@ -147,30 +205,6 @@ files:
   gamemaps.wl6?1.1:
     look_for: [gamemaps.wl6]
     unsuitable: Wolfenstein 3D v1.4 or v1.2 is required, this file is from v1.1
-
-  # full version 1.4
-  vgadict.wl6:
-    alternatives:
-    - vgadict.wl6?steam
-    - vgadict.wl6?alt
-    - vgadict.wl6?wl6a
-
-  vgagraph.wl6:
-    alternatives:
-    - vgagraph.wl6?steam
-    - vgagraph.wl6?alt
-    - vgagraph.wl6?wl6a
-
-  vgahead.wl6:
-    alternatives:
-    - vgahead.wl6?steam
-    - vgahead.wl6?alt
-    - vgahead.wl6?wl6a
-
-  vswap.wl6:
-    alternatives:
-    - vswap.wl6?steam
-    - vswap.wl6?alt
 
   setup_wolfenstein3d_2.0.0.4.exe:
     unpack:
