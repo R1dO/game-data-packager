@@ -518,12 +518,6 @@ class GameData(object):
             else:
                 raise AssertionError('try_repack_from should be str or list')
 
-        # these should be per-package
-        assert 'install_files' not in self.data
-        assert 'package' not in self.data
-        assert 'symlinks' not in self.data
-        assert 'install_files_from_cksums' not in self.data
-
         # True if the lazy load of full file info has been done
         self.loaded_file_data = False
 
@@ -848,17 +842,6 @@ class GameData(object):
             assert isinstance(d['license'], list), package.name
             for filename in d['license']:
                 package.optional.add(filename)
-
-        if 'install_files_from_cksums' in d:
-            for line in d['install_files_from_cksums'].splitlines():
-                stripped = line.strip()
-                if stripped == '' or stripped.startswith('#'):
-                    continue
-
-                _, size, filename = line.split(None, 2)
-                f = self._ensure_file(filename)
-                f.size = int(size)
-                package.install.add(filename)
 
         if 'version' in d:
             package.version = d['version'] + '+' + GAME_PACKAGE_VERSION

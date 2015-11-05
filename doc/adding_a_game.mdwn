@@ -91,10 +91,6 @@ The `install_files` item in a package (see below) can be used to flag
 several files for installation and also provide their metadata
 in the same format as `files`.
 
-The `install_files_from_cksums` item in a package can be used to flag
-several files for installation and also provide their sizes, using
-cksums(1) syntax.
-
 #### Packages
 
 The `packages` top-level item is a mapping from Debian binary package name
