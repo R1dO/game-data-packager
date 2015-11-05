@@ -7,7 +7,6 @@ genre: First-person shooter
 try_repack_from:
 - /usr/local/games/wolfenstein
 - '~/.wine/drive_c/Program Files/Return to Castle Wolfenstein/'
-missing_langs: [it]
 wikibase: http://wolfenstein.wikia.com/wiki/
 wiki: Return_to_Castle_Wolfenstein
 
@@ -205,6 +204,46 @@ packages:
     license:
     - license.txt?fr
 
+  rtcw-it-data:
+    lang: it
+    debian:
+      provides: rtcw-data
+      conflicts: rtcw-data
+      replaces: rtcw-data
+    version: 1.42b
+    install_to: usr/share/games/rtcw
+    install:
+    - main/mp_bin.pk3
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - main/mp_pak3.pk3
+    - main/mp_pak4.pk3
+    - main/mp_pak5.pk3
+    - main/mp_pakmaps0.pk3
+    - main/mp_pakmaps1.pk3
+    - main/mp_pakmaps2.pk3
+    - main/mp_pakmaps3.pk3
+    - main/mp_pakmaps4.pk3
+    - main/mp_pakmaps5.pk3
+    - main/mp_pakmaps6.pk3
+    - main/pak0.pk3
+    - main/scripts/translation.cfg?141_unix
+    - main/sp_pak1.pk3?it
+    - main/sp_pak2.pk3
+    # Patch
+    - main/sp_pak3.pk3?it
+    # From GOTY edition
+    - main/sp_pak4.pk3
+    # From iortcw
+    - main/hiquality.cfg
+    - main/mp_bin0.pk3
+    - main/mp_rend2_shaders0.pk3
+    - main/sp_rend2_shaders0.pk3
+    optional:
+    - main/autoexec.cfg
+    - main/rotate.cfg
+
 files:
   iortcw-1.42b-linux-x86.zip:
     download: https://docs.google.com/uc?export=download&id=0ByCRmO4G6HOoRWNjaS04VTlMbWc
@@ -229,6 +268,11 @@ files:
       spear-of-destiny-mirrors:
         path: .
         name: sp_pak3.pk3.FR
+  main/sp_pak3.pk3?it:
+    download:
+      spear-of-destiny-mirrors:
+        path: .
+        name: sp_pak3.pk3.IT
 
   wolf-linux-1.4-full.x86.run:
     download:
@@ -338,6 +382,9 @@ files:
     - main/sp_pakG.pk3
     - main/autoexec.cfg
 
+unknown_sizes:
+  - main/sp_pak1.pk3?it
+
 size_and_md5: |
   12        d0c13dcf44a7baa7741af50e09844371 main/autoexec.cfg
   760207    7651d02fe51fc8a949536f3e0cfa8dd6 main/mp_bin.pk3
@@ -359,10 +406,12 @@ size_and_md5: |
   293887431 a0d3fe956f85f40c8efd6babe0d09832 main/sp_pak1.pk3?en
   255164624 99a26bcd4b8511f8f43576a37a7ccbdb main/sp_pak1.pk3?es
   256811934 f19c389fe6310c24e664bc0fc84fdd95 main/sp_pak1.pk3?fr
+  _         55da33452c65ef2ff62c25d0d1158bf2 main/sp_pak1.pk3?it
   11026123  330b272d5261fe19fcf3c3fbc943c7f3 main/sp_pak2.pk3
   152544    cf25d6731ed29c80303febbb177aa585 main/sp_pak3.pk3
   152039    d26f576768793a046b4e03c7d0617fdf main/sp_pak3.pk3?es
   151931    00cee7ee80cdb2920322cf37a5f65a11 main/sp_pak3.pk3?fr
+  151882    2e5e834ab69eacf96cc1141840adca08 main/sp_pak3.pk3?it
   15532040  4223cc6588594ec0ceee186f0e73a6e9 main/sp_pak4.pk3
   148374118 98a612b5861e030d9d1f0c3adb1df940 main/sp_pakG.pk3
   159375    f7b2003ef7499f2a6e750c2925c870ad main/scripts/translation.cfg?141_unix
@@ -407,6 +456,7 @@ sha1sums: |
   94539eded69eb99a86d752808c5e029d5915fde7  main/sp_pak3.pk3
   f5dbd82fb2e5d489cd90868472cd47afa5c4966d  main/sp_pak3.pk3?es
   4958f2172cb37cd11d49119ef4895f1e6fb6c428  main/sp_pak3.pk3?fr
+  3823c4322c81f9ae2cf58b469275e807a326a8b8  main/sp_pak3.pk3?it
   76b1074a350616bd8942005c4eabda06199e81f2  main/sp_pak4.pk3
   61f8f83f25001d3ee5c1c367c5d7cf7d6c118c32  main/sp_pakG.pk3
   7994040e61a234e284c730287ea6d098878cbfea  main/scripts/translation.cfg?141_unix
