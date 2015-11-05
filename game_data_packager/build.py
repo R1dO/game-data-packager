@@ -1434,6 +1434,12 @@ class PackagingTask(object):
             spec.write('License: Commercial\n')
             spec.write('Group: Amusements/Games\n')
             spec.write('BuildArch: noarch\n')
+            if package.expansion_for:
+                spec.write('Requires: %s\n' % package.expansion_for)
+            else:
+                engine = package.engine or self.game.engine
+                if engine and len(engine.split()) == 1:
+                    spec.write('Requires: %s\n' % engine)
             if not compress or not self.compress_deb or package.rip_cd:
                 spec.write('%define _binary_payload w0.gzdio\n')
             elif self.compress_deb == ['-Zgzip', '-z1']:

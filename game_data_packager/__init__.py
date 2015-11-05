@@ -37,7 +37,7 @@ from .gog import run_gog_meta_mode
 from .paths import (DATADIR,USE_VFS)
 from .util import ascii_safe
 from .steam import run_steam_meta_mode
-from .version import (GAME_PACKAGE_VERSION, ASSETS)
+from .version import (GAME_PACKAGE_VERSION, FORMAT, ASSETS)
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
@@ -785,6 +785,11 @@ class GameData(object):
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice'):
             if k in d:
                 setattr(package, k, d[k])
+
+        if FORMAT == 'rpm' and 'fedora' in d:
+            for k in ('engine', 'install_to', 'description'):
+                if k in d['fedora']:
+                    setattr(package, k, d['fedora'][k])
 
         assert self.copyright or package.copyright, package.name
         assert package.component in ('main', 'contrib', 'non-free', 'local')
