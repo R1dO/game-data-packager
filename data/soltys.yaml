@@ -7,8 +7,7 @@ wiki: Soltys
 packages:
   soltys-en-data:
     version: '1.0'
-    debian:
-      provides: soltys-data
+    provides: soltys-data
     component: main
     install:
     - vol.cat
@@ -19,8 +18,7 @@ packages:
   soltys-pl-data:
     lang: pl
     version: '1.0'
-    debian:
-      provides: soltys-data
+    provides: soltys-data
     component: main
     install:
     - vol.cat?pl
@@ -31,8 +29,7 @@ packages:
   soltys-es-data:
     lang: es
     version: '1.0'
-    debian:
-      provides: soltys-data
+    provides: soltys-data
     component: main
     install:
     - vol.cat?es

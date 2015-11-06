@@ -16,8 +16,7 @@ missing_langs: [de,es]
 
 packages:
   sherlock-holmes1-en-data:
-    debian:
-      provides: sherlock-holmes1-data
+    provides: sherlock-holmes1-data
     gameid: sherlock-logo
     install:
     - chess.pth
@@ -97,8 +96,7 @@ packages:
 
   sherlock-holmes1-en-alt1-data:
     gameid: sherlock-logo-1
-    debian:
-      provides: sherlock-holmes1-data
+    provides: sherlock-holmes1-data
     install:
     - chess.pth
     - journal.lbv
@@ -177,8 +175,7 @@ packages:
 
   sherlock-holmes1-en-alt2-data:
     gameid: sherlock-logo-2
-    debian:
-      provides: sherlock-holmes1-data
+    provides: sherlock-holmes1-data
     install:
     - chess.pth
     - journal.lbv

@@ -9,8 +9,7 @@ gog:
 
 packages:
   simon-the-sorcerer1-en-data:
-    debian:
-      provides: simon-the-sorcerer1-data
+    provides: simon-the-sorcerer1-data
     url_misc: http://www.adventuresoft.com/acatalog/Simon_the_Sorcerer_games.html
     install:
     - gamepc
@@ -53,8 +52,7 @@ packages:
 
   simon-the-sorcerer1-de-data:
     lang: de
-    debian:
-      provides: simon1-data
+    provides: simon-the-sorcerer1-data
     install:
     - gamepc?de
     - icon.dat
@@ -95,8 +93,7 @@ packages:
 
   simon-the-sorcerer1-es-data:
     lang: es
-    debian:
-      provides: simon-the-sorcerer1-data
+    provides: simon-the-sorcerer1-data
     install:
     - effects.voc
     - gamepc?es
@@ -111,8 +108,7 @@ packages:
 
   simon-the-sorcerer1-fr-data:
     lang: fr
-    debian:
-      provides: simon-the-sorcerer1-data
+    provides: simon-the-sorcerer1-data
     install:
     - effects.voc
     - gamepc?fr
@@ -127,8 +123,7 @@ packages:
 
   simon-the-sorcerer1-it-data:
     lang: it
-    debian:
-      provides: simon-the-sorcerer1-data
+    provides: simon-the-sorcerer1-data
     install:
     - effects.voc
     - gamepc?it

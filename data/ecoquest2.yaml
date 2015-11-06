@@ -8,8 +8,7 @@ wiki: EcoQuest_II
 packages:
   ecoquest2-en-data:
     version: '1.000'
-    debian:
-      provides: ecoquest2-data
+    provides: ecoquest2-data
     install:
     - 5.hep
     - 5.scr
@@ -27,8 +26,7 @@ packages:
 
   ecoquest2-fr-data:
     version: '1.000'
-    debian:
-      provides: ecoquest2-data
+    provides: ecoquest2-data
     lang: fr
     longname: 'EcoQuest 2 - SOS Forêt Vierge'
     install:

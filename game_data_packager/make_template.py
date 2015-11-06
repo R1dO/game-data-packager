@@ -223,7 +223,7 @@ class GameData(object):
         if lang:
             if lang != 'en':
                 self.package['lang'] = lang
-            self.package['debian'] = { 'provides' : virtual }
+            self.package['provides'] = virtual
 
         self.package['install'] = []
         self.package['optional'] = []

@@ -35,6 +35,7 @@ packages:
     expansion_for: string
     expansion_for_ext: string
     lang: string
+    provides: string
     debian:
       breaks:
       conflicts:
@@ -42,6 +43,10 @@ packages:
       provides:
       recommends:
       replaces:
+    fedora:
+      engine: string
+      install_to: string
+      description: string
     component: string
     copyright: string
     main_wads: dict (doom)

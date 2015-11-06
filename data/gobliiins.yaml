@@ -12,8 +12,7 @@ packages:
       game: gobliiins
     dotemu:
       id: 25
-    debian:
-      provides: gobliiins-data
+    provides: gobliiins-data
     install:
     - gob.lic
     - intro.stk?cd
@@ -27,8 +26,7 @@ packages:
     gog:
       url: gobliiins_pack
       game: gobliiins
-    debian:
-      provides: gobliiins-data
+    provides: gobliiins-data
     install:
     - intro.stk
     - disk1.stk
@@ -38,8 +36,7 @@ packages:
 
   gobliiins-fr-data:
     lang: fr
-    debian:
-      provides: gobliiins-data
+    provides: gobliiins-data
     install:
     - intro.stk?fr
     - disk1.stk?fr
@@ -50,8 +47,7 @@ packages:
   gobliiins-demo-en-data:
     lang: en
     demo_for: gobliiins-en-data
-    debian:
-      provides: gobliiins-demo-data
+    provides: gobliiins-demo-data
     gameid: gob
     install:
     - intro.stk?demo
@@ -61,8 +57,7 @@ packages:
     longname: "Gobliiins (demo/fr)"
     lang: fr
     demo_for: gobliiins-fr-data
-    debian:
-      provides: gobliiins-demo-data
+    provides: gobliiins-demo-data
     gameid: gob1-demo-fr
     install:
     - intro.stk?demo_fr

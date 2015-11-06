@@ -24,8 +24,7 @@ help_text: |
 packages:
   # version 1.7
   eye-of-the-beholder1-en-data:
-    debian:
-      provides: eye-of-the-beholder1-data
+    provides: eye-of-the-beholder1-data
     install:
     - eobdata1.pak
     - eobdata2.pak
@@ -44,8 +43,7 @@ packages:
 
   eye-of-the-beholder1-de-data:
     lang: de
-    debian:
-      provides: eye-of-the-beholder1-data
+    provides: eye-of-the-beholder1-data
     doc:
     - cluebook.pdf
     - manual.pdf

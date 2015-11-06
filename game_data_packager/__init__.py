@@ -197,6 +197,8 @@ class GameDataPackage(object):
         self.demo_for = set()
         self.better_version = None
         self.expansion_for = None
+        # use this to group together dubs
+        self.provides = None
         # expansion for a package outside of this yaml file;
         # may be another GDP package or a package not made by GDP
         self.expansion_for_ext = None
@@ -781,7 +783,7 @@ class GameData(object):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
                 'install_to_docdir', 'install_contents_of', 'debian', 'description',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs',
-                'copyright', 'engine', 'lang', 'component', 'section', 'disks',
+                'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice'):
             if k in d:
                 setattr(package, k, d[k])
@@ -796,6 +798,9 @@ class GameData(object):
         assert package.component == 'local' or 'license' in d
         assert package.section in ('games', 'doc'), 'unsupported'
         assert type(package.langs) is list
+
+        if 'provides' in d:
+            assert type(package.provides) is str
 
         if 'install_to' in d:
             if package.install_to.startswith('$assets/'):

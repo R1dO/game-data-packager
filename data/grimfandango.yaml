@@ -20,8 +20,7 @@ help_text: |
 
 packages:
   grimfandango-en-data:
-    debian:
-      provides: grimfandango-data
+    provides: grimfandango-data
     # Yes, the right way to use gfupd101.exe is really to just put it in
     # the data directory: residualvm can load files from there without a
     # separate unpacking step.
@@ -60,8 +59,7 @@ packages:
 
   grimfandango-de-data:
     lang: de
-    debian:
-      provides: grimfandango-data
+    provides: grimfandango-data
     install:
     - gfupd101.exe
     - credits.lab?de
@@ -89,8 +87,7 @@ packages:
 
   grimfandango-es-data:
     lang: es
-    debian:
-      provides: grimfandango-data
+    provides: grimfandango-data
     install:
     - gfupd101.exe
     - credits.lab?es
@@ -118,8 +115,7 @@ packages:
 
   grimfandango-fr-data:
     lang: fr
-    debian:
-      provides: grimfandango-data
+    provides: grimfandango-data
     install:
     - gfupd101.exe
     - credits.lab?fr
@@ -152,8 +148,7 @@ packages:
 
   grimfandango-it-data:
     lang: it
-    debian:
-      provides: grimfandango-data
+    provides: grimfandango-data
     install:
     - gfupd101.exe
     - credits.lab?it
@@ -181,8 +176,7 @@ packages:
 
   grimfandango-pt-br-data:
     lang: pt_BR
-    debian:
-      provides: grimfandango-data
+    provides: grimfandango-data
     install:
     - gfupd101.exe
     - credits.lab?pt_br
@@ -216,8 +210,7 @@ packages:
   grimfandango-demo-en-data:
     better_version: grimfandango-big-demo-en-data
     demo_for: grimfandango-en-data
-    debian:
-      provides: grimfandango-demo-data
+    provides: grimfandango-demo-data
     install:
     - gfdemo01.lab
     - grimdemo.mus
@@ -236,8 +229,7 @@ packages:
 
   grimfandango-big-demo-en-data:
     demo_for: grimfandango-en-data
-    debian:
-      provides: grimfandango-demo-data
+    provides: grimfandango-demo-data
     install:
     - gfdemo01.lab
     - grimdemo.mus
@@ -257,8 +249,7 @@ packages:
   grimfandango-demo-de-data:
     engine: residualvm (>= 0.3.0)
     demo_for: grimfandango-de-data
-    debian:
-      provides: grimfandango-demo-data
+    provides: grimfandango-demo-data
     lang: de
     install:
     - gfdemo01.lab?de_es_fr_it
@@ -279,8 +270,7 @@ packages:
   grimfandango-demo-es-data:
     engine: residualvm (>= 0.3.0)
     demo_for: grimfandango-es-data
-    debian:
-      provides: grimfandango-demo-data
+    provides: grimfandango-demo-data
     lang: es
     install:
     - gfdemo01.lab?de_es_fr_it
@@ -301,8 +291,7 @@ packages:
   grimfandango-demo-fr-data:
     engine: residualvm (>= 0.3.0)
     demo_for: grimfandango-fr-data
-    debian:
-      provides: grimfandango-demo-data
+    provides: grimfandango-demo-data
     lang: fr
     install:
     - gfdemo01.lab?de_es_fr_it
@@ -323,8 +312,7 @@ packages:
   grimfandango-demo-it-data:
     engine: residualvm (>= 0.3.0)
     demo_for: grimfandango-it-data
-    debian:
-      provides: grimfandango-demo-data
+    provides: grimfandango-demo-data
     lang: it
     install:
     - gfdemo01.lab?de_es_fr_it

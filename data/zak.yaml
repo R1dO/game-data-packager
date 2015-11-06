@@ -12,8 +12,7 @@ packages:
     gog:
       url: zak_mckracken_and_the_alien_mindbenders
       path: 'Zak McKracken and the Alien Mindbenders'
-    debian:
-      provides: zak-data
+    provides: zak-data
     install:
     - 00.lfl
     - 01.lfl
@@ -172,8 +171,7 @@ packages:
 
   zak-fr-data:
     lang: fr
-    debian:
-      provides: zak-data
+    provides: zak-data
     install:
     - 00.lfl?fr
     - 01.lfl?fr

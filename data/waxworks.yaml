@@ -8,8 +8,7 @@ gog:
 
 packages:
   waxworks-en-data:
-    debian:
-      provides: waxworks-data
+    provides: waxworks-data
     install:
     - 001.vga
     - 002.vga
@@ -479,8 +478,7 @@ packages:
 
   waxworks-de-data:
     lang: de
-    debian:
-      provides: waxworks-data
+    provides: waxworks-data
     install:
     - 001.vga
     - 002.vga?de
@@ -950,8 +948,7 @@ packages:
 
   waxworks-es-data:
     lang: es
-    debian:
-      provides: waxworks-data
+    provides: waxworks-data
     install:
     - 001.vga
     - 002.vga?es
@@ -1421,8 +1418,7 @@ packages:
 
   waxworks-fr-data:
     lang: fr
-    debian:
-      provides: waxworks-data
+    provides: waxworks-data
     install:
     - 001.vga
     - 002.vga?fr

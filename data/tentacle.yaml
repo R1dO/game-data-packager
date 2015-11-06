@@ -9,8 +9,7 @@ try_repack_from:
 
 packages:
   dayofthetentacle-en-data:
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - any_monster_sound_file
     - monster.sof
@@ -19,8 +18,7 @@ packages:
 
   dayofthetentacle-floppy-en-data:
     better_version: dayofthetentacle-en-data
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - monster.sou?floppy
     - tentacle.000?floppy
@@ -28,8 +26,7 @@ packages:
 
   dayofthetentacle-de-data:
     lang: de
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - monster.sou?de
     - tentacle.000?de
@@ -38,8 +35,7 @@ packages:
   dayofthetentacle-floppy-de-data:
     better_version: dayofthetentacle-de-data
     lang: de
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - monster.sou?de_floppy
     - tentacle.000?de_floppy
@@ -47,8 +43,7 @@ packages:
 
   dayofthetentacle-es-data:
     lang: es
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - any_monster_sound_file
     - tentacle.000?es
@@ -57,8 +52,7 @@ packages:
   dayofthetentacle-floppy-es-data:
     better_version: dayofthetentacle-es-data
     lang: es
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - monster.sou?floppy
     - tentacle.000?es_floppy
@@ -66,8 +60,7 @@ packages:
 
   dayofthetentacle-fr-data:
     lang: fr
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - any_monster_sound_file
     - tentacle.000?fr
@@ -76,8 +69,7 @@ packages:
   dayofthetentacle-floppy-fr-data:
     better_version: dayofthetentacle-fr-data
     lang: fr
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - monster.sou?floppy
     - tentacle.000?fr_floppy
@@ -85,8 +77,7 @@ packages:
 
   dayofthetentacle-it-data:
     lang: it
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - any_monster_sound_file
     - tentacle.000?it
@@ -95,8 +86,7 @@ packages:
   dayofthetentacle-floppy-it-data:
     better_version: dayofthetentacle-it-data
     lang: it
-    debian:
-      provides: dayofthetentacle-data
+    provides: dayofthetentacle-data
     install:
     - monster.sou?floppy
     - tentacle.000?it_floppy

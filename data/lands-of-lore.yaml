@@ -251,8 +251,7 @@ packages:
   lands-of-lore-floppy1-en-data:
     longname: "Lands Of Lore - The Throne of Chaos (floppy)"
     better_version: lands-of-lore-data
-    debian:
-      provides: lands-of-lore-floppy-data
+    provides: lands-of-lore-floppy-data
     install:
     - westwood.1
     - westwood.2
@@ -266,8 +265,7 @@ packages:
   lands-of-lore-floppy2-en-data:
     longname: "Lands Of Lore - The Throne of Chaos (floppy)"
     better_version: lands-of-lore-data
-    debian:
-      provides: lands-of-lore-floppy-data
+    provides: lands-of-lore-floppy-data
     install:
     - chapter1.pak
     - chapter2.pak
@@ -289,8 +287,7 @@ packages:
     longname: "Lands Of Lore - The Throne of Chaos (floppy/fr)"
     gameid: lol-fr
     better_version: lands-of-lore-data
-    debian:
-      provides: lands-of-lore-floppy-data
+    provides: lands-of-lore-floppy-data
     lang: fr
     install:
     - chapter1.pak?fr

@@ -32,8 +32,8 @@ packages:
 
   dune2-v10-data:
     longname: "Dune II (v1.00/US)"
+    provides: dune2-data
     debian:
-      provides: dune2-data
       conflicts: dune2-data
     install_to: usr/share/games/dunelegacy
     install:
@@ -53,8 +53,8 @@ packages:
 
   dune2-v17-us-data:
     longname: "Dune II (v1.07/US)"
+    provides: dune2-data
     debian:
-      provides: dune2-data
       conflicts: dune2-data
     install_to: usr/share/games/dunelegacy
     install:
@@ -75,8 +75,8 @@ packages:
   dune2-v17-eu-data:
     longname: "Dune II (v1.07/EU)"
     langs: [en,de,fr]
+    provides: dune2-data
     debian:
-      provides: dune2-data
       conflicts: dune2-data
     install_to: usr/share/games/dunelegacy
     langs: [en,de,fr]
@@ -101,8 +101,8 @@ packages:
   dune2-v17-hs-data:
     longname: "Dune II (v1.07/HitSquad)"
     langs: [en,de,fr]
+    provides: dune2-data
     debian:
-      provides: dune2-data
       conflicts: dune2-data
     install_to: usr/share/games/dunelegacy
     install:

@@ -21,8 +21,7 @@ gog:
 
 packages:
   sam-and-max-en-data:
-    debian:
-      provides: sam-and-max-data
+    provides: sam-and-max-data
     install:
     - monster.sou
     - samnmax.000
@@ -35,8 +34,7 @@ packages:
 
   sam-and-max-de-data:
     lang: de
-    debian:
-      provides: sam-and-max-data
+    provides: sam-and-max-data
     install:
     - monster.sou?de
     - samnmax.000?de
@@ -49,8 +47,7 @@ packages:
 
   sam-and-max-es-data:
     lang: es
-    debian:
-      provides: sam-and-max-data
+    provides: sam-and-max-data
     install:
     - monster.sou
     - samnmax.000?es
@@ -63,8 +60,7 @@ packages:
 
   sam-and-max-fr-data:
     lang: fr
-    debian:
-      provides: sam-and-max-data
+    provides: sam-and-max-data
     install:
     - monster.sog?fr
     - samnmax.000?fr
@@ -77,8 +73,7 @@ packages:
 
   sam-and-max-it-data:
     lang: it
-    debian:
-      provides: sam-and-max-data
+    provides: sam-and-max-data
     install:
     - monster.sou?it
     - samnmax.000?it

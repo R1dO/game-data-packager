@@ -49,8 +49,8 @@ packages:
        * Episode 4: Dark Secret
        * Episode 5: Trail of the Madman
        * Episode 6: Confrontation
+    provides: wolf3d-data
     debian:
-      provides: wolf3d-data
       conflicts: wolf3d-data
     install_to: usr/share/games/wolf3d
     install:
@@ -75,8 +75,8 @@ packages:
        * Episode 4: Dark Secret
        * Episode 5: Trail of the Madman
        * Episode 6: Confrontation
+    provides: wolf3d-data
     debian:
-      provides: wolf3d-data
       conflicts: wolf3d-data
     fedora:
       engine: wolf4sdl-registered-id
@@ -111,8 +111,8 @@ packages:
        * Episode 4: Dark Secret
        * Episode 5: Trail of the Madman
        * Episode 6: Confrontation
+    provides: wolf3d-data
     debian:
-      provides: wolf3d-data
       conflicts: wolf3d-data
     fedora:
       engine: wolf4sdl-registered-id
@@ -142,6 +142,7 @@ packages:
        * Episode 6: Confrontation
     debian:
       provides: wolf3d-data
+      conflicts: wolf3d-data
     fedora:
       engine: wolf4sdl-registered-apogee
       install_to: usr/share/wolf3d/registered-apogee

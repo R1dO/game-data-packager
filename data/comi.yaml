@@ -34,8 +34,7 @@ packages:
       $install_to/resource/font3.nut: $install_to/resource/font0.nut
 
   curse-of-monkey-island-en-data:
-    debian:
-      provides: curse-of-monkey-island-data
+    provides: curse-of-monkey-island-data
     install:
     - comi.la0
     - comi.la1
@@ -68,8 +67,7 @@ packages:
 
   curse-of-monkey-island-de-data:
     lang: de
-    debian:
-      provides: curse-of-monkey-island-data
+    provides: curse-of-monkey-island-data
     install:
     - comi.la0
     - comi.la1
@@ -102,8 +100,7 @@ packages:
 
   curse-of-monkey-island-fr-data:
     lang: fr
-    debian:
-      provides: curse-of-monkey-island-data
+    provides: curse-of-monkey-island-data
     install:
     - comi.la0
     - comi.la1

@@ -23,7 +23,7 @@ packages:
     debian:
       replaces: arx-fatalis-demo-data
       conflicts: arx-fatalis-data
-      provides: arx-fatalis-data
+    provides: arx-fatalis-data
     steam:
       id: 1700
       path: "common/Arx Fatalis"
@@ -78,7 +78,7 @@ packages:
     demo_for: arx-fatalis-en-data
     debian:
       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-      provides: arx-fatalis-demo-data
+    provides: arx-fatalis-demo-data
     install:
     - arx.ttf?latin
     - data.pak?demo_latin
@@ -95,7 +95,7 @@ packages:
     demo_for: arx-fatalis-en-data
     debian:
       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-      provides: arx-fatalis-demo-data
+    provides: arx-fatalis-demo-data
     install:
     - arx.ttf?latin
     - data.pak?demo_latin
@@ -112,7 +112,7 @@ packages:
     demo_for: arx-fatalis-en-data
     debian:
       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-      provides: arx-fatalis-demo-data
+    provides: arx-fatalis-demo-data
     install:
     - arx.ttf?latin
     - data.pak?demo_latin
@@ -129,7 +129,7 @@ packages:
     demo_for: arx-fatalis-en-data
     debian:
       conflicts: arx-fatalis-data, arx-fatalis-demo-data
-      provides: arx-fatalis-demo-data
+    provides: arx-fatalis-demo-data
     install:
     - arx.ttf?ja
     - data.pak?demo_ja
@@ -148,7 +148,7 @@ files:
     look_for: [arx.ttf]
     install_as: misc/arx.ttf
   misc/logo.bmp:
-    distinctive_name: false
+    look_for: [logo.bmp]
   manual.pdf:
     install_to: $docdir
   map.pdf:

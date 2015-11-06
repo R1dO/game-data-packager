@@ -24,8 +24,7 @@ packages:
       url: baldurs_gate_the_original_saga
       game: baldurs_gate_the_original_saga
     longname: Baldur's Gate -  The Original Saga (English)
-    debian:
-      provides: baldurs-gate-1-data
+    provides: baldurs-gate-1-data
     install_to: usr/share/gemrb/baldurs-gate-1-en
     install:
     - Baldur.ini

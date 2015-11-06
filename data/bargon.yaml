@@ -7,8 +7,7 @@ missing_langs: [fr]
 
 packages:
   bargon-en-data:
-    debian:
-      provides: bargon-data
+    provides: bargon-data
     install:
     - 1intro3.snd
     - 1intro_i.snd

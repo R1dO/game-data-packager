@@ -7,8 +7,7 @@ wiki: Cruise_for_a_Corpse
 packages:
   # without copy protection
   cruise-for-a-corpse-en-data:
-    debian:
-      provides: cruise-for-a-corpse-data
+    provides: cruise-for-a-corpse-data
     install:
     - d1
     - d2
@@ -23,8 +22,7 @@ packages:
   cruise-for-a-corpse-fr-data:
     longname: "Cruise for a Corpse (Croisière pour un cadavre)"
     lang: fr
-    debian:
-      provides: cruise-for-a-corpse-data
+    provides: cruise-for-a-corpse-data
     install:
     - d1?fr
     - d2?fr

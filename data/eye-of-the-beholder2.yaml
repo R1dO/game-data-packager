@@ -21,8 +21,7 @@ help_text: |
 
 packages:
   eye-of-the-beholder2-en-data:
-    debian:
-      provides: eye-of-the-beholder2-data
+    provides: eye-of-the-beholder2-data
     doc:
     - cluebook.pdf
     - manual.pdf
@@ -263,8 +262,7 @@ packages:
   eye-of-the-beholder2-de-data:
     longname: "Eye of the Beholder II: Legende von Darkmoon"
     lang: de
-    debian:
-      provides: eye-of-the-beholder2-data
+    provides: eye-of-the-beholder2-data
     gog:
       url: forgotten_realms_the_archives_collection_one
       game: eye_of_the_beholder_ii_the_legend_of_darkmoon

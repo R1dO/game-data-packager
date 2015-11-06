@@ -13,8 +13,7 @@ help_text: |
 packages:
   larry5-en-data:
     version: '1.000'
-    debian:
-      provides: larry5-data
+    provides: larry5-data
     gog:
       url: leisure_suit_larry
       game: leisure_suit_larry_5_passionate_patti_does_a_little_undercover_work
@@ -52,8 +51,7 @@ packages:
   larry5-fr-data:
     langs: [fr,en]
     longname: "Leisure Suit Larry 5: Passionate Patti se fait détective privée"
-    debian:
-      provides: larry5-data
+    provides: larry5-data
     doc:
     # encoded in CP437, with some "àéè" characters
     - readme?fr

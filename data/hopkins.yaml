@@ -11,8 +11,7 @@ help_text: |
 packages:
   hopkins-fbi-en-data:
     version: '4.0'
-    debian:
-      provides: hopkins-fbi-data
+    provides: hopkins-fbi-data
     install:
     - anim/agent1.pe2
     - anim/agent1.spr
@@ -990,8 +989,7 @@ packages:
   hopkins-fbi-fr-data:
     lang: fr
     version: '4.0'
-    debian:
-      provides: hopkins-fbi-data
+    provides: hopkins-fbi-data
     install:
     - anim/agent1.pe2
     - anim/agent1.spr

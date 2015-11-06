@@ -26,8 +26,8 @@ help_text: |
 
 packages:
   rtcw-en-data:
+    provides: rtcw-data
     debian:
-      provides: rtcw-data
       conflicts: rtcw-data
       replaces: rtcw-data
     steam:
@@ -75,8 +75,8 @@ packages:
 
   rtcw-de-data:
     lang: de
+    provides: rtcw-data
     debian:
-      provides: rtcw-data
       conflicts: rtcw-data
       replaces: rtcw-data
     gog:
@@ -124,8 +124,8 @@ packages:
 
   rtcw-es-data:
     lang: es
+    provides: rtcw-data
     debian:
-      provides: rtcw-data
       conflicts: rtcw-data
       replaces: rtcw-data
     version: 1.42b
@@ -164,8 +164,8 @@ packages:
 
   rtcw-fr-data:
     lang: fr
+    provides: rtcw-data
     debian:
-      provides: rtcw-data
       conflicts: rtcw-data
       replaces: rtcw-data
     version: 1.42b
@@ -206,8 +206,8 @@ packages:
 
   rtcw-it-data:
     lang: it
+    provides: rtcw-data
     debian:
-      provides: rtcw-data
       conflicts: rtcw-data
       replaces: rtcw-data
     version: 1.42b

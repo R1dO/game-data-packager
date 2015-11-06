@@ -7,8 +7,7 @@ wiki: "Simon_the_Sorcerer_II:_The_Lion,_the_Wizard_and_the_Wardrobe"
 
 packages:
   simon-the-sorcerer2-en-data:
-    debian:
-      provides: simon-the-sorcerer2-data
+    provides: simon-the-sorcerer2-data
     gog:
       url: simon_the_sorcerer_2
     url_misc: http://www.adventuresoft.com/acatalog/Simon_the_Sorcerer_games.html
@@ -24,8 +23,7 @@ packages:
 
   simon-the-sorcerer2-de-data:
     lang: de
-    debian:
-      provides: simon-the-sorcerer2-data
+    provides: simon-the-sorcerer2-data
     gog:
       url: simon_the_sorcerer_2
     install:
@@ -40,8 +38,7 @@ packages:
 
   simon-the-sorcerer2-fr-data:
     lang: fr
-    debian:
-      provides: simon-the-sorcerer2-data
+    provides: simon-the-sorcerer2-data
     gog:
       url: simon_the_sorcerer_2
     install:

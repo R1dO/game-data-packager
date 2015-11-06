@@ -12,8 +12,7 @@ packages:
   sfinx-en-data:
     engine: scummvm (>= 1.8.0)
     version: '1.1'
-    debian:
-      provides: sfinx-data
+    provides: sfinx-data
     component: main
     install:
     - vol.cat
@@ -25,8 +24,7 @@ packages:
     engine: scummvm (>= 1.8.0)
     lang: pl
     version: '1.0'
-    debian:
-      provides: sfinx-data
+    provides: sfinx-data
     component: main
     install:
     - vol.cat?pl

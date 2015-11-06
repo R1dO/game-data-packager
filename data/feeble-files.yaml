@@ -18,8 +18,7 @@ help_text: |
 
 packages:
   feeble-files-en-data:
-    debian:
-      provides: feeble-files-data
+    provides: feeble-files-data
     gog:
       url: the_feeble_files
     install:
@@ -1594,8 +1593,7 @@ packages:
   feeble-files-de-data:
     lang: de
     longname: "Floyd: Es gibt noch Helden (The Feeble Files)"
-    debian:
-      provides: feeble-files-data
+    provides: feeble-files-data
     gog:
       url: the_feeble_files
     install:
@@ -2926,8 +2924,7 @@ packages:
 
   feeble-files-es-data:
     lang: es
-    debian:
-      provides: feeble-files-data
+    provides: feeble-files-data
     optional:
     - startup.wav
     install:
@@ -4254,8 +4251,7 @@ packages:
 
   feeble-files-fr-data:
     lang: fr
-    debian:
-      provides: feeble-files-data
+    provides: feeble-files-data
     gog:
       url: the_feeble_files
     install:
@@ -5587,8 +5583,7 @@ packages:
   feeble-files-pl-data:
     DISABLED: TODO
     longname: "Flojd (The Feeble Files)"
-    debian:
-      provides: feeble-files-data
+    provides: feeble-files-data
     lang: pl
     disks: 2
 

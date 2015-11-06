@@ -23,8 +23,7 @@ help_text: |
 packages:
   baldurs-gate-2-en-data:
     longname: Baldur's Gate 2 (English)
-    debian:
-      provides: baldurs-gate-2-data
+    provides: baldurs-gate-2-data
     install_to: usr/share/gemrb/baldurs-gate-2-en
     install:
     - game assets

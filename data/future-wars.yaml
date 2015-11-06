@@ -7,8 +7,7 @@ gameid: fw
 
 packages:
   future-wars-en-data:
-    debian:
-      provides: future-wars-data
+    provides: future-wars-data
     install:
     - auto00.prc
     - baseson.snd
@@ -25,8 +24,7 @@ packages:
     - texte.dat
 
   future-wars-amiga-en-data:
-    debian:
-      provides: future-wars-data
+    provides: future-wars-data
     install:
     - aliens
     - auto00.prc?amiga
@@ -49,8 +47,7 @@ packages:
   future-wars-fr-data:
     longname: Future Wars (Les Voyageurs du Temps)
     lang: fr
-    debian:
-      provides: future-wars-data
+    provides: future-wars-data
     install:
     - auto00.prc
     - baseson.snd

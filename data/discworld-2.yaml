@@ -11,8 +11,7 @@ packages:
   discworld2-cd-en-gb-data:
     gameid: dw2-gb
     lang: en_GB
-    debian:
-      provides: discworld2-data
+    provides: discworld2-data
     install:
     - act1.scn
     - act2.scn

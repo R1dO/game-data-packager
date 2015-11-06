@@ -12,8 +12,7 @@ gog:
 
 packages:
   toonstruck-en-data:
-    debian:
-      provides: toonstruck-data
+    provides: toonstruck-data
     install:
     - music
     - act1/roboshow/brc169.mus
@@ -199,8 +198,7 @@ packages:
     - manual.pdf
 
   toonstruck-alt-en-data:
-    debian:
-      provides: toonstruck-data
+    provides: toonstruck-data
     gog: False
     install:
     - music
@@ -386,8 +384,7 @@ packages:
 
   toonstruck-de-data:
     lang: de
-    debian:
-      provides: toonstruck-data
+    provides: toonstruck-data
     install:
     - music
     - act1/roboshow/brc169.mus
@@ -401,8 +398,7 @@ packages:
 
   toonstruck-es-data:
     lang: es
-    debian:
-      provides: toonstruck-data
+    provides: toonstruck-data
     doc:
     - manual.pdf?es
     install:
@@ -416,8 +412,7 @@ packages:
 
   toonstruck-fr-data:
     lang: fr
-    debian:
-      provides: toonstruck-data
+    provides: toonstruck-data
     doc:
     - manual.pdf?fr
     install:

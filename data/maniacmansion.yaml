@@ -11,8 +11,7 @@ wiki: Maniac_Mansion
 
 packages:
   maniacmansion-en-data:
-    debian:
-      provides: maniacmansion-data
+    provides: maniacmansion-data
     install:
     - 00.lfl
     - 01.lfl
@@ -72,8 +71,7 @@ packages:
   maniacmansion-v1-en-data:
     longname: 'Maniac Mansion (v1)'
     better_version: maniacmansion-en-data
-    debian:
-      provides: maniacmansion-data
+    provides: maniacmansion-data
     install:
     - 00.lfl?v1
     - 01.lfl?v1
@@ -131,8 +129,7 @@ packages:
 
   maniacmansion-de-data:
     lang: de
-    debian:
-      provides: maniacmansion-data
+    provides: maniacmansion-data
     install:
     - 00.lfl?de
     - 01.lfl?de
@@ -191,8 +188,7 @@ packages:
 
   maniacmansion-es-data:
     lang: es
-    debian:
-      provides: maniacmansion-data
+    provides: maniacmansion-data
     install:
     - 00.lfl?es
     - 01.lfl?es
@@ -251,8 +247,7 @@ packages:
 
   maniacmansion-fr-data:
     lang: fr
-    debian:
-      provides: maniacmansion-data
+    provides: maniacmansion-data
     install:
     - any_00.lfl_fr
     - 01.lfl?fr
@@ -311,8 +306,7 @@ packages:
 
   maniacmansion-it-data:
     lang: it
-    debian:
-      provides: maniacmansion-data
+    provides: maniacmansion-data
     install:
     - 00.lfl?it
     - 01.lfl?it

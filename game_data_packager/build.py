@@ -1434,6 +1434,8 @@ class PackagingTask(object):
             spec.write('License: Commercial\n')
             spec.write('Group: Amusements/Games\n')
             spec.write('BuildArch: noarch\n')
+            if package.provides:
+                spec.write('Provides: %s\n' % package.provides)
             if package.expansion_for:
                 spec.write('Requires: %s\n' % package.expansion_for)
             else:
@@ -1612,6 +1614,7 @@ class PackagingTask(object):
         for key in control.keys():
             assert key == 'Description', 'specify "%s" only in YAML' % key
         control['Package'] = package.name
+        control['Version'] = package.version
 
         installed_size = 0
         # algorithm from https://bugs.debian.org/650077 designed to be
@@ -1647,7 +1650,7 @@ class PackagingTask(object):
         else:
             control['Architecture'] = self.get_architecture(package.architecture)
 
-        def read_control_set(package, control, field):
+        def read_control_set(package, field):
             result = set()
             value = package.debian.get(field.lower())
             if isinstance(value, str):
@@ -1660,13 +1663,16 @@ class PackagingTask(object):
                         (package.name, field.lower()))
             return result
 
-        depends = read_control_set(package, control, 'Depends')
-        recommends = read_control_set(package, control, 'Recommends')
-        suggests = read_control_set(package, control, 'Suggests')
-        provides = read_control_set(package, control, 'Provides')
-        replaces = read_control_set(package, control, 'Replaces')
-        conflicts = read_control_set(package, control, 'Conflicts')
-        breaks = read_control_set(package, control, 'Breaks')
+        depends = read_control_set(package, 'Depends')
+        recommends = read_control_set(package, 'Recommends')
+        suggests = read_control_set(package, 'Suggests')
+        provides = read_control_set(package, 'Provides')
+        replaces = read_control_set(package, 'Replaces')
+        conflicts = read_control_set(package, 'Conflicts')
+        breaks = read_control_set(package, 'Breaks')
+
+        if package.provides:
+            provides.add(package.provides)
 
         engine = package.engine or self.game.engine
         if '>=' in engine:
@@ -1713,8 +1719,6 @@ class PackagingTask(object):
             control['Conflicts'] = ', '.join(sorted(conflicts))
         if breaks:
             control['Breaks'] = ', '.join(sorted(breaks))
-
-        control['Version'] = package.version
 
         if 'Description' not in control:
             short_desc, long_desc = self.generate_description(package)
@@ -2223,13 +2227,11 @@ class PackagingTask(object):
                     possible.discard(package)
                     continue
                 # keep only prefered language for this virtual package
-                virtual = package.debian.get('provides')
-                if virtual:
+                if package.provides:
                     for other_p in possible:
                         if other_p.name == package.name:
                             continue
-                        other_virtual = other_p.debian.get('provides')
-                        if other_virtual != virtual:
+                        if other_p.provides != package.provides:
                             continue
                         if score < lang_score(other_p.lang):
                             logger.info('will not produce "%s" '

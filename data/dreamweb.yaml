@@ -11,8 +11,7 @@ help_text: |
 packages:
   dreamweb-en-censored-data:
     better_version: dreamweb-en-data
-    debian:
-      provides: dreamweb-data
+    provides: dreamweb-data
     version: '1.1'
     install_to_docdir:
     - diary
@@ -610,8 +609,7 @@ packages:
     - license.txt
 
   dreamweb-en-data:
-    debian:
-      provides: dreamweb-data
+    provides: dreamweb-data
     version: '1.1'
     install_to_docdir:
     - diary
@@ -1207,8 +1205,7 @@ packages:
 
   dreamweb-fr-data:
     lang: fr
-    debian:
-      provides: dreamweb-data
+    provides: dreamweb-data
     version: '1.1'
     symlinks:
       $install_to/french: $install_to/speech
@@ -1796,8 +1793,7 @@ packages:
 
   dreamweb-de-data:
     lang: de
-    debian:
-      provides: dreamweb-data
+    provides: dreamweb-data
     version: '1.1'
     install:
     - dreamweb.c00?de
@@ -2392,8 +2388,7 @@ packages:
 
   dreamweb-es-data:
     lang: es
-    debian:
-      provides: dreamweb-data
+    provides: dreamweb-data
     version: '1.1'
     install:
     - dreamweb.wav
@@ -2963,8 +2958,7 @@ packages:
 
   dreamweb-it-data:
     lang: it
-    debian:
-      provides: dreamweb-data
+    provides: dreamweb-data
     version: '1.1'
     install:
     - dreamweb.c00?it

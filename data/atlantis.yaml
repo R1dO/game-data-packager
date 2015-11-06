@@ -26,8 +26,7 @@ packages:
   fate-of-atlantis-en-data:
     gog:
       url: indiana_jones_and_the_fate_of_atlantis
-    debian:
-      provides: fate-of-atlantis-data
+    provides: fate-of-atlantis-data
     steam:
       id: 6010
       path: "common/Indiana Jones and the Fate of Atlantis"
@@ -41,8 +40,7 @@ packages:
 
   fate-of-atlantis-de-data:
     lang: de
-    debian:
-      provides: fate-of-atlantis-data
+    provides: fate-of-atlantis-data
     install:
     - atlantis.000?de
     - atlantis.001?de
@@ -56,8 +54,7 @@ packages:
     lang: de
     gog:
       url: indiana_jones_and_the_fate_of_atlantis
-    debian:
-      provides: fate-of-atlantis-data
+    provides: fate-of-atlantis-data
     install:
     - atlantis.000?de_floppy
     - atlantis.001?de_floppy
@@ -67,8 +64,7 @@ packages:
 
   fate-of-atlantis-es-data:
     lang: es
-    debian:
-      provides: fate-of-atlantis-data
+    provides: fate-of-atlantis-data
     install:
     - atlantis.000?es
     - atlantis.001?es
@@ -82,8 +78,7 @@ packages:
     lang: es
     gog:
       url: indiana_jones_and_the_fate_of_atlantis
-    debian:
-      provides: fate-of-atlantis-data
+    provides: fate-of-atlantis-data
     install:
     - atlantis.000?es_floppy
     - atlantis.001?es_floppy
@@ -96,8 +91,7 @@ packages:
     lang: fr
     gog:
       url: indiana_jones_and_the_fate_of_atlantis
-    debian:
-      provides: fate-of-atlantis-data
+    provides: fate-of-atlantis-data
     install:
     - atlantis.000?fr
     - atlantis.001?fr
@@ -110,8 +104,7 @@ packages:
     lang: it
     gog:
       url: indiana_jones_and_the_fate_of_atlantis
-    debian:
-      provides: fate-of-atlantis-data
+    provides: fate-of-atlantis-data
     install:
     - atlantis.000?it
     - atlantis.001?it

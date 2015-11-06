@@ -9,8 +9,7 @@ help_text: |
 
 packages:
   operation-stealth-en-data:
-    debian:
-      provides: operation-stealth-data
+    provides: operation-stealth-data
     gameid: os-us
     install:
     - egoubase

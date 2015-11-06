@@ -946,8 +946,7 @@ packages:
   warcraft2-sounds-fr:
     expansion_for: warcraft2-data
     lang: fr
-    debian:
-      provides: warcraft2-sounds
+    provides: warcraft2-sounds
     install_to: usr/share/games/stratagus/wargus/sounds
     install:
     - buildings/blacksmith.wav.gz

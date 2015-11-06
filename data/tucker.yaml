@@ -8,8 +8,7 @@ missing_langs: [en,de]
 packages:
   bud-tucker-fr-data:
     lang: fr
-    debian:
-      provides: bud-tucker-data
+    provides: bud-tucker-data
     gameid: tucker-fr
     install:
     - french data

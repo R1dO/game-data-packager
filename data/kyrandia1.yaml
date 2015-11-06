@@ -7,8 +7,7 @@ gameid: kyra1
 
 packages:
   kyrandia1-en-data:
-    debian:
-      provides: kyrandia1-data
+    provides: kyrandia1-data
     gog:
       url: legend_of_kyrandia
     install:
@@ -247,8 +246,7 @@ packages:
 
   kyrandia1-de-data:
     lang: de
-    debian:
-      provides: kyrandia1-data
+    provides: kyrandia1-data
     gog:
       url: legend_of_kyrandia
     install:
@@ -487,8 +485,7 @@ packages:
 
   kyrandia1-fr-data:
     lang: fr
-    debian:
-      provides: kyrandia1-data
+    provides: kyrandia1-data
     gog:
       url: legend_of_kyrandia
     install:
@@ -728,8 +725,7 @@ packages:
   kyrandia1-floppy2-en-data:
     longname: "Legend of Kyrandia I (floppy)"
     better_version: kyrandia1-en-data
-    debian:
-      provides: kyrandia1-data
+    provides: kyrandia1-data
     install:
     - intro.adl
     - kyra1a.adl

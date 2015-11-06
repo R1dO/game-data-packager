@@ -10,8 +10,7 @@ packages:
   spacequest5-en-data:
     longname: "Space Quest V: The Next Mutation (v1.04)"
     version: '1.04'
-    debian:
-      provides: spacequest5-data
+    provides: spacequest5-data
     gog:
       url: space_quest_4_5_6
     install:
@@ -105,8 +104,7 @@ packages:
     longname: "Space Quest V: The Next Mutation (v1.03)"
     better_version: spacequest5-en-data
     version: '1.03'
-    debian:
-      provides: spacequest5-data
+    provides: spacequest5-data
     install:
     - 0.fon
     - 10.fon
@@ -197,8 +195,7 @@ packages:
   spacequest5-fr-data:
     longname: "Space Quest V: La Mutation Suivante"
     lang: fr
-    debian:
-      provides: spacequest5-data
+    provides: spacequest5-data
     install:
     - 0.fon?fr
     - 10.fon?fr

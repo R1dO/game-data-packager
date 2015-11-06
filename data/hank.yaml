@@ -16,8 +16,7 @@ packages:
   hanqs-quest-en-data:
     longname: "Hank's Quest - Victim of Society"
     gameid: agi-fanmade
-    debian:
-      provides: hanqs-quest-data
+    provides: hanqs-quest-data
     install:
     - HGC_FONT
     - LOGDIR
@@ -34,8 +33,7 @@ packages:
     longname: "Hank's Quest - Slachtoffer van het Gebeuren"
     gameid: agi-fanmade
     lang: nl
-    debian:
-      provides: hanqs-quest-data
+    provides: hanqs-quest-data
     install:
     - HGC_FONT
     - LOGDIR?nl
