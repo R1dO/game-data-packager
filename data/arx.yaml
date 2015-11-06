@@ -22,8 +22,8 @@ packages:
     install_to: usr/share/games/arx
     debian:
       replaces: arx-fatalis-demo-data
-      conflicts: arx-fatalis-data
     provides: arx-fatalis-data
+    mutually_exclusive: True
     steam:
       id: 1700
       path: "common/Arx Fatalis"
@@ -77,8 +77,9 @@ packages:
     install_to: usr/share/games/arx
     demo_for: arx-fatalis-en-data
     debian:
-      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
+    mutually_exclusive: True
     install:
     - arx.ttf?latin
     - data.pak?demo_latin
@@ -94,8 +95,9 @@ packages:
     # XXX need to package arx-fatalis-fr-data
     demo_for: arx-fatalis-en-data
     debian:
-      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
+    mutually_exclusive: True
     install:
     - arx.ttf?latin
     - data.pak?demo_latin
@@ -111,8 +113,9 @@ packages:
     # XXX need to package arx-fatalis-de-data
     demo_for: arx-fatalis-en-data
     debian:
-      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
+    mutually_exclusive: True
     install:
     - arx.ttf?latin
     - data.pak?demo_latin
@@ -128,8 +131,9 @@ packages:
     # XXX need to package arx-fatalis-ja-data
     demo_for: arx-fatalis-en-data
     debian:
-      conflicts: arx-fatalis-data, arx-fatalis-demo-data
+      conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
+    mutually_exclusive: True
     install:
     - arx.ttf?ja
     - data.pak?demo_ja

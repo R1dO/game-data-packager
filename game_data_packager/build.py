@@ -1436,6 +1436,8 @@ class PackagingTask(object):
             spec.write('BuildArch: noarch\n')
             if package.provides:
                 spec.write('Provides: %s\n' % package.provides)
+                if package.mutually_exclusive:
+                    spec.write('Conflicts: %s\n' % package.provides)
             if package.expansion_for:
                 spec.write('Requires: %s\n' % package.expansion_for)
             else:
@@ -1673,6 +1675,9 @@ class PackagingTask(object):
 
         if package.provides:
             provides.add(package.provides)
+            if package.mutually_exclusive:
+                conflicts.add(package.provides)
+                replaces.add(package.provides)
 
         engine = package.engine or self.game.engine
         if '>=' in engine:
@@ -1697,13 +1702,7 @@ class PackagingTask(object):
                "A package shouldn't extraneously provide itself"
 
         # Shortcut: if A Replaces B, A automatically Conflicts B
-        replace = package.debian.get('replaces')
-        if replace:
-            if isinstance(replace, str):
-                conflicts.add(replace)
-            elif isinstance(replace, list):
-                for x in replace:
-                    conflicts.add(x)
+        conflicts |= replaces
 
         if depends:
             control['Depends'] = ', '.join(sorted(depends))
@@ -2274,15 +2273,6 @@ class PackagingTask(object):
         lgogdownloaded = set()
 
         for package in possible:
-            abort = False
-            for previous in ready:
-                if previous.debian.get('conflicts') == package.name:
-                    logger.error('will not produce "%s" because it '
-                       'conflicts with "%s"', package.name, previous.name)
-                    abort = True
-            if abort:
-                continue
-
             logger.debug('will produce %s', package.name)
             result = self.fill_gaps(package=package, download=download,
               log=package.name not in possible_with_lgogdownloader,

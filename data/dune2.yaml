@@ -54,8 +54,7 @@ packages:
   dune2-v17-us-data:
     longname: "Dune II (v1.07/US)"
     provides: dune2-data
-    debian:
-      conflicts: dune2-data
+    mutually_exclusive: True
     install_to: usr/share/games/dunelegacy
     install:
     - ATRE.PAK
@@ -76,8 +75,7 @@ packages:
     longname: "Dune II (v1.07/EU)"
     langs: [en,de,fr]
     provides: dune2-data
-    debian:
-      conflicts: dune2-data
+    mutually_exclusive: True
     install_to: usr/share/games/dunelegacy
     langs: [en,de,fr]
     install:
@@ -102,8 +100,7 @@ packages:
     longname: "Dune II (v1.07/HitSquad)"
     langs: [en,de,fr]
     provides: dune2-data
-    debian:
-      conflicts: dune2-data
+    mutually_exclusive: True
     install_to: usr/share/games/dunelegacy
     install:
     - ATRE.PAK

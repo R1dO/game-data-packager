@@ -69,8 +69,7 @@ packages:
 
   operation-stealth-fr-data:
     lang: fr
-    debian:
-      provides: operation-stealth-data
+    provides: operation-stealth-data
     gameid: os-fr
     install:
     - egoubase?fr
