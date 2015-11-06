@@ -112,7 +112,7 @@ packages:
       id: 2330
       path: "common/Quake 2/xatrix"
     debian:
-      build-depends: gcc, make, libc6-dev
+      build-depends: [gcc, make, libc6-dev]
       provides: quake2-xatrix
       conflicts: quake2-xatrix
       replaces: quake2-xatrix
@@ -165,7 +165,7 @@ packages:
     gog:
       url: quake_ii_quad_damage
     debian:
-      build-depends: gcc, make, libc6-dev
+      build-depends: [gcc, make, libc6-dev]
       provides: quake2-rogue
       conflicts: quake2-rogue
       replaces: quake2-rogue

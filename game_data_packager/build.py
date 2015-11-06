@@ -1652,72 +1652,44 @@ class PackagingTask(object):
         else:
             control['Architecture'] = self.get_architecture(package.architecture)
 
-        def read_control_set(package, field):
-            result = set()
-            value = package.debian.get(field.lower())
-            if isinstance(value, str):
-                result.add(value)
-            elif isinstance(value, list):
-                for x in value:
-                    result.add(x)
-            elif value is not None:
-                raise AssertionError('%s: debian.%s should be str or list' %
-                        (package.name, field.lower()))
-            return result
-
-        depends = read_control_set(package, 'Depends')
-        recommends = read_control_set(package, 'Recommends')
-        suggests = read_control_set(package, 'Suggests')
-        provides = read_control_set(package, 'Provides')
-        replaces = read_control_set(package, 'Replaces')
-        conflicts = read_control_set(package, 'Conflicts')
-        breaks = read_control_set(package, 'Breaks')
+        dep = dict()
+        for field in ('breaks', 'conflicts', 'depends', 'provides',
+                      'recommends', 'replaces', 'suggests'):
+            dep[field] = set(package.debian.get(field,[]))
 
         if package.provides:
-            provides.add(package.provides)
+            dep['provides'].add(package.provides)
             if package.mutually_exclusive:
-                conflicts.add(package.provides)
-                replaces.add(package.provides)
+                dep['conflicts'].add(package.provides)
+                dep['replaces'].add(package.provides)
 
         engine = package.engine or self.game.engine
-        if '>=' in engine:
-            breaks.add(engine.replace('>=', '<<'))
+        if engine and '>=' in engine:
+            dep['breaks'].add(engine.replace('>=', '<<'))
             engine = engine.split()[0]
 
         if package.expansion_for:
             # check if default heuristic has been overriden in yaml
-            for p in depends:
+            for p in dep['depends']:
                 if package.expansion_for == p.split()[0]:
                     break
             else:
-                depends.add(package.expansion_for)
+                dep['depends'].add(package.expansion_for)
+
         if package.engine:
-            recommends.add(engine)
+            dep['recommends'].add(engine)
         elif not package.expansion_for and self.game.engine:
-            recommends.add(engine)
+            dep['recommends'].add(engine)
         for other_package in self.game.packages.values():
             if other_package.expansion_for == package.name:
-                suggests.add(other_package.name)
-        assert package.name not in provides, \
-               "A package shouldn't extraneously provide itself"
+                dep['suggests'].add(other_package.name)
 
         # Shortcut: if A Replaces B, A automatically Conflicts B
-        conflicts |= replaces
+        dep['conflicts'] |= dep['replaces']
 
-        if depends:
-            control['Depends'] = ', '.join(sorted(depends))
-        if recommends:
-            control['Recommends'] = ', '.join(sorted(recommends))
-        if suggests:
-            control['Suggests'] = ', '.join(sorted(suggests))
-        if provides:
-            control['Provides'] = ', '.join(sorted(provides))
-        if replaces:
-            control['Replaces'] = ', '.join(sorted(replaces))
-        if conflicts:
-            control['Conflicts'] = ', '.join(sorted(conflicts))
-        if breaks:
-            control['Breaks'] = ', '.join(sorted(breaks))
+        for k, v in dep.items():
+            if v:
+                control[k.title()] = ', '.join(sorted(v))
 
         if 'Description' not in control:
             short_desc, long_desc = self.generate_description(package)
@@ -2192,7 +2164,7 @@ class PackagingTask(object):
 
         for package in set(possible):
             if 'build-depends' in package.debian:
-                for tool in package.debian['build-depends'].split(','):
+                for tool in package.debian['build-depends']:
                     tool = tool.strip()
                     if not which(tool) and not PACKAGE_CACHE.is_installed(tool):
                         logger.error('package "%s" is needed to build "%s"' %

@@ -801,8 +801,23 @@ class GameData(object):
         assert type(package.langs) is list
         assert type(package.mutually_exclusive) is bool
 
+        if 'debian' in d:
+            assert type(package.debian) is dict
+            for k, v in package.debian.items():
+                assert k in ('breaks', 'conflicts', 'depends', 'provides',
+                             'recommends', 'replaces', 'suggests',
+                             'build-depends'), (package.name, package.debian)
+                assert type(v) in (str, list), (package.name, package.debian)
+                if type(v) == str:
+                    assert ',' not in v, (package.name, package.debian)
+                    package.debian[k] = list([v])
+                assert package.name not in v, \
+                   "A package shouldn't extraneously %s itself" % k
+
         if 'provides' in d or package.mutually_exclusive:
             assert type(package.provides) is str
+            assert package.name != package.provides, \
+               "A package shouldn't extraneously provide itself"
 
         if 'install_to' in d:
             if package.install_to.startswith('$assets/'):

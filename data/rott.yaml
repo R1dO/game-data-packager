@@ -26,6 +26,8 @@ packages:
     # it includes the HUNT Begin levels not present in the commercial game
     description: |
       Use the 'rott-shareware' command to play this game.
+    debian:
+      suggests: rott-registered-data
     install:
     - DEMO1_3.DMO
     - DEMO2_3.DMO

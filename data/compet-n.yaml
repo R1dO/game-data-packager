@@ -20,7 +20,7 @@ packages:
     # mostly, for 5 of 6 PWADS
     expansion_for_ext: doom2-wad
     debian:
-      recommends: doom2-wad | freedoom, doom-wad | freedoom
+      recommends: ["doom2-wad | freedoom", "doom-wad | freedoom"]
     main_wads:
       av.wad:
          name: Alien Vendetta (2nd Ed.)

@@ -27,7 +27,7 @@ packages:
     aliases: [tnt, t]
     debian:
       provides: doom-wad
-      conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
+      conflicts: ["freedoom (<< 0.6.4-4)", "freedm (<< 0.6.4-4)"]
     install:
     - tnt.wad
     - tnt31.wad
@@ -42,7 +42,7 @@ packages:
     aliases: [plutonia, p]
     debian:
       provides: doom-wad
-      conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
+      conflicts: ["freedoom (<< 0.6.4-4)", "freedm (<< 0.6.4-4)"]
     install:
     - plutonia.wad
     optional:

@@ -21,7 +21,7 @@ packages:
     langs: [en,fr]
     debian:
       provides: doom-wad
-      conflicts: freedoom (<< 0.6.4-4), freedm (<< 0.6.4-4)
+      conflicts: ["freedoom (<< 0.6.4-4)", "freedm (<< 0.6.4-4)"]
     steam:
       id: 2300
       path: "common/Doom 2"
