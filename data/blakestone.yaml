@@ -34,7 +34,7 @@ packages:
     - vgagraph.bs6?1.0
     - vgahead.bs6?1.0
     - vswap.bs6?1.0
-    optional:
+    doc:
     - manual.pdf
     license:
     - license.doc
@@ -81,7 +81,7 @@ packages:
     - vgagraph.bs6
     - vgahead.bs6
     - vswap.bs6
-    optional:
+    doc:
     - manual.pdf
     license:
     - license.doc
@@ -126,15 +126,10 @@ packages:
     - vgagraph.vsi
     - vgahead.vsi
     - vswap.vsi
-    optional:
+    doc:
     - manual.pdf?planetstrike
 
 files:
-  manual.pdf:
-    install_to: $docdir
-  manual.pdf?planetstrike:
-    install_to: $docdir
-
   gog_blake_stone_aliens_of_gold_2.0.0.5.sh:
     unpack:
        format: zip
