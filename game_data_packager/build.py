@@ -1617,6 +1617,8 @@ class PackagingTask(object):
             assert key == 'Description', 'specify "%s" only in YAML' % key
         control['Package'] = package.name
         control['Version'] = package.version
+        control['Priority'] = 'optional'
+        control['Maintainer'] = 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>'
 
         installed_size = 0
         # algorithm from https://bugs.debian.org/650077 designed to be
@@ -1637,9 +1639,6 @@ class PackagingTask(object):
                     # 1 KiB per non-regular, non-directory, non-symlink file
                     installed_size += 1
         control['Installed-Size'] = str(installed_size)
-
-        control['Priority'] = 'optional'
-        control['Maintainer'] = 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>'
 
         if package.component == 'main':
             control['Section'] = package.section
@@ -1665,13 +1664,16 @@ class PackagingTask(object):
         if package.provides:
             dep['provides'].add(package.provides)
             if package.mutually_exclusive:
-                dep['conflicts'].add(package.provides)
                 dep['replaces'].add(package.provides)
 
         engine = package.engine or self.game.engine
         if engine and '>=' in engine:
             dep['breaks'].add(engine.replace('>=', '<<'))
             engine = engine.split()[0]
+        if package.engine:
+            dep['recommends'].add(engine)
+        elif not package.expansion_for and self.game.engine:
+            dep['recommends'].add(engine)
 
         if package.expansion_for:
             # check if default heuristic has been overriden in yaml
@@ -1680,11 +1682,6 @@ class PackagingTask(object):
                     break
             else:
                 dep['depends'].add(package.expansion_for)
-
-        if package.engine:
-            dep['recommends'].add(engine)
-        elif not package.expansion_for and self.game.engine:
-            dep['recommends'].add(engine)
 
         # dependencies derived from *other* package's data
         for other_package in self.game.packages.values():
