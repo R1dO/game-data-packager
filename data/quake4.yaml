@@ -66,8 +66,11 @@ packages:
     longname: Quake 4
     debian:
       provides: quake4-any-data
-      conflicts: quake4-any-data
       replaces: quake4-any-data
+      #conflicts: quake4-any-data
+      # This is extraneous because the 'replaces' set
+      # is always added to the 'conflicts' set.
+      #   dep['conflicts'] |= dep['replaces']
     langs:
       - en
       - cs
@@ -97,7 +100,6 @@ packages:
     version: "1.4.2"
     debian:
       provides: quake4-any-data
-      conflicts: quake4-any-data
       replaces: quake4-any-data
     install_to: usr/share/games/quake4
     # this is not actually dubbed, just censored

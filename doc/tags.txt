@@ -36,6 +36,7 @@ packages:
     expansion_for_ext: string
     lang: string
     provides: string
+    mutually_exclusive: bool
     debian:
       breaks:
       conflicts:

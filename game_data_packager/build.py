@@ -1657,6 +1657,11 @@ class PackagingTask(object):
                       'recommends', 'replaces', 'suggests'):
             dep[field] = set(package.debian.get(field,[]))
 
+        if package.mutually_exclusive:
+            dep['conflicts'] |= package.demo_for
+            if package.better_version:
+                dep['conflicts'].add(package.better_version)
+
         if package.provides:
             dep['provides'].add(package.provides)
             if package.mutually_exclusive:
@@ -1680,9 +1685,16 @@ class PackagingTask(object):
             dep['recommends'].add(engine)
         elif not package.expansion_for and self.game.engine:
             dep['recommends'].add(engine)
+
+        # dependencies derived from *other* package's data
         for other_package in self.game.packages.values():
             if other_package.expansion_for == package.name:
                 dep['suggests'].add(other_package.name)
+            if other_package.mutually_exclusive:
+                if other_package.better_version == package.name:
+                    dep['replaces'].add(other_package.name)
+                if package.name in other_package.demo_for:
+                    dep['replaces'].add(other_package.name)
 
         # Shortcut: if A Replaces B, A automatically Conflicts B
         dep['conflicts'] |= dep['replaces']

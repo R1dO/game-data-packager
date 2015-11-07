@@ -114,7 +114,6 @@ packages:
     debian:
       build-depends: [gcc, make, libc6-dev]
       provides: quake2-xatrix
-      conflicts: quake2-xatrix
       replaces: quake2-xatrix
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
@@ -167,7 +166,6 @@ packages:
     debian:
       build-depends: [gcc, make, libc6-dev]
       provides: quake2-rogue
-      conflicts: quake2-rogue
       replaces: quake2-rogue
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested

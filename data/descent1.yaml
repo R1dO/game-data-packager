@@ -8,8 +8,9 @@ genre: Flight simulator
 packages:
   descent1-demo-data:
     demo_for: descent1-data
+    mutually_exclusive: True
     debian:
-      conflicts: [descent1-full-data, descent1-data]
+      conflicts: descent1-full-data
     install_to: usr/share/games/d1x-rebirth/
     copyright_notice: |
       DESCENT is a trademark of Interplay Productions, Inc.
@@ -33,8 +34,6 @@ packages:
 
   descent1-data:
     debian:
-      conflicts: [descent1-full-data, descent1-demo-data]
-      provides: descent1-full-data
       replaces: descent1-full-data
     gog:
       # http://www.gog.com/game/${url}?pp=${pp}

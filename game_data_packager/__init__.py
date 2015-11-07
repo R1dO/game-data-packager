@@ -199,6 +199,7 @@ class GameDataPackage(object):
         self.expansion_for = None
         # use this to group together dubs
         self.provides = None
+        # use this for games with demo_for/better_version/provides
         self.mutually_exclusive = False
         # expansion for a package outside of this yaml file;
         # may be another GDP package or a package not made by GDP
@@ -814,7 +815,7 @@ class GameData(object):
                 assert package.name not in v, \
                    "A package shouldn't extraneously %s itself" % k
 
-        if 'provides' in d or package.mutually_exclusive:
+        if 'provides' in d:
             assert type(package.provides) is str
             assert package.name != package.provides, \
                "A package shouldn't extraneously provide itself"
@@ -840,6 +841,9 @@ class GameData(object):
                 package.name + ' miss a demo_for tag.'
             if not package.longname and package.lang != 'en':
                 package.longname = self.longname + ' (%s)' % package.lang
+
+        if package.mutually_exclusive:
+            assert package.demo_for or package.better_version or package.provides
 
         if 'expansion_for' in d:
             if package.disks is None:

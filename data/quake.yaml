@@ -30,11 +30,11 @@ help_text: |
 packages:
   quake-shareware:
     demo_for: quake-registered
+    mutually_exclusive: True
     longname: Quake (shareware)
     component: non-free
     debian:
       provides: quake-data
-      conflicts: quake-registered
     install:
     - id1/pak0.pak?106
     license:
@@ -45,9 +45,8 @@ packages:
   quake-registered:
     debian:
       provides: quake-data
-      # when a replaces: is set,
-      # a conflicts: is implied too
-      replaces: quake-shareware
+      # "replaces: quake-shareware" is implied by 'mutually_exclusive:'
+      # & 'demo_for:' tags on 'quake-shareware'
     steam:
       id: 2310
       path: common/Quake
