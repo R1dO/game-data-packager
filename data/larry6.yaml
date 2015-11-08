@@ -24,76 +24,8 @@ packages:
       url: leisure_suit_larry
       game: leisure_suit_larry_6_vga_shape_up_or_slip_out
     install:
-    - aud/0.map
-    - aud/130.map
-    - aud/140.map
-    - aud/190.map
-    - aud/200.map
-    - aud/205.map
-    - aud/210.map
-    - aud/230.map
-    - aud/240.map
-    - aud/250.map
-    - aud/260.map
-    - aud/270.map
-    - aud/280.map
-    - aud/300.map
-    - aud/305.map
-    - aud/310.map
-    - aud/320.map
-    - aud/330.map
-    - aud/340.map
-    - aud/350.map
-    - aud/360.map
-    - aud/370.map
-    - aud/380.map
-    - aud/390.map
-    - aud/400.map
-    - aud/410.map
-    - aud/420.map
-    - aud/430.map
-    - aud/440.map
-    - aud/460.map
-    - aud/500.map
-    - aud/505.map
-    - aud/510.map
-    - aud/520.map
-    - aud/530.map
-    - aud/560.map
-    - aud/570.map
-    - aud/580.map
-    - aud/590.map
-    - aud/600.map
-    - aud/610.map
-    - aud/611.map
-    - aud/620.map
-    - aud/630.map
-    - aud/640.map
-    - aud/650.map
-    - aud/660.map
-    - aud/680.map
-    - aud/690.map
-    - aud/700.map
-    - aud/710.map
-    - aud/720.map
-    - aud/740.map
-    - aud/800.map
-    - aud/810.map
-    - aud/82.map
-    - aud/820.map
-    - aud/825.map
-    - aud/830.map
-    - aud/840.map
-    - aud/85.map
-    - aud/850.map
-    - aud/860.map
-    - aud/resource.aud
-    - patches/93.msg
-    - resource.000
-    - resource.map
-    - sfx/resource.sfx
-    - version
-    optional:
+    - vga assets
+    doc:
     - Leisure Suit Larry 6 - Manual.pdf
 
   larry-doc:
@@ -109,15 +41,11 @@ packages:
 files:
   setup_leisure_suit_larry6_2.2.0.18.exe:
     unsuitable: "ScummVM only support the VGA version (320x200x256), not the SVGA one (640x480x256)"
-  resource.000_svga:
+  resource.000?svga:
     unsuitable: "ScummVM only support the VGA version (320x200x256), not the SVGA one (640x480x256)"
-    look_for: [resource.000]
-  resource.map_svga:
+  resource.map?svga:
     unsuitable: "ScummVM only support the VGA version (320x200x256), not the SVGA one (640x480x256)"
-    look_for: [resource.map]
 
-  Leisure Suit Larry 6 - Manual.pdf:
-    install_to: $docdir
   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf:
     install_to: $docdir
 
@@ -125,236 +53,94 @@ files:
     unpack:
       format: innoextract
     provides:
-    - aud/0.map
-    - aud/130.map
-    - aud/140.map
-    - aud/190.map
-    - aud/200.map
-    - aud/205.map
-    - aud/210.map
-    - aud/230.map
-    - aud/240.map
-    - aud/250.map
-    - aud/260.map
-    - aud/270.map
-    - aud/280.map
-    - aud/300.map
-    - aud/305.map
-    - aud/310.map
-    - aud/320.map
-    - aud/330.map
-    - aud/340.map
-    - aud/350.map
-    - aud/360.map
-    - aud/370.map
-    - aud/380.map
-    - aud/390.map
-    - aud/400.map
-    - aud/410.map
-    - aud/420.map
-    - aud/430.map
-    - aud/440.map
-    - aud/460.map
-    - aud/500.map
-    - aud/505.map
-    - aud/510.map
-    - aud/520.map
-    - aud/530.map
-    - aud/560.map
-    - aud/570.map
-    - aud/580.map
-    - aud/590.map
-    - aud/600.map
-    - aud/610.map
-    - aud/611.map
-    - aud/620.map
-    - aud/630.map
-    - aud/640.map
-    - aud/650.map
-    - aud/660.map
-    - aud/680.map
-    - aud/690.map
-    - aud/700.map
-    - aud/710.map
-    - aud/720.map
-    - aud/740.map
-    - aud/800.map
-    - aud/810.map
-    - aud/82.map
-    - aud/820.map
-    - aud/825.map
-    - aud/830.map
-    - aud/840.map
-    - aud/85.map
-    - aud/850.map
-    - aud/860.map
-    - aud/resource.aud
-    - patches/93.msg
-    - resource.000
-    - resource.map
-    #- resource.pro ???
-    - sfx/resource.sfx
-    - version
+    - vga assets
     - Leisure Suit Larry 6 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
-cksums: |
-  _ 675       aud/0.map
-  _ 108       aud/130.map
-  _ 318       aud/140.map
-  _ 45        aud/190.map
-  _ 724       aud/200.map
-  _ 444       aud/205.map
-  _ 676       aud/210.map
-  _ 1949      aud/230.map
-  _ 710       aud/240.map
-  _ 925       aud/250.map
-  _ 52        aud/260.map
-  _ 269       aud/270.map
-  _ 437       aud/280.map
-  _ 115       aud/300.map
-  _ 227       aud/305.map
-  _ 1242      aud/310.map
-  _ 612       aud/320.map
-  _ 1767      aud/330.map
-  _ 409       aud/340.map
-  _ 507       aud/350.map
-  _ 80        aud/360.map
-  _ 696       aud/370.map
-  _ 521       aud/380.map
-  _ 771       aud/390.map
-  _ 773       aud/400.map
-  _ 1078      aud/410.map
-  _ 521       aud/420.map
-  _ 940       aud/430.map
-  _ 465       aud/440.map
-  _ 635       aud/460.map
-  _ 66        aud/500.map
-  _ 276       aud/505.map
-  _ 1410      aud/510.map
-  _ 567       aud/520.map
-  _ 311       aud/530.map
-  _ 570       aud/560.map
-  _ 94        aud/570.map
-  _ 297       aud/580.map
-  _ 630       aud/590.map
-  _ 703       aud/600.map
-  _ 1424      aud/610.map
-  _ 451       aud/611.map
-  _ 885       aud/620.map
-  _ 1249      aud/630.map
-  _ 150       aud/640.map
-  _ 171       aud/650.map
-  _ 185       aud/660.map
-  _ 101       aud/680.map
-  _ 94        aud/690.map
-  _ 276       aud/700.map
-  _ 234       aud/710.map
-  _ 1664      aud/720.map
-  _ 24        aud/740.map
-  _ 290       aud/800.map
-  _ 472       aud/810.map
-  _ 143       aud/82.map
-  _ 668       aud/820.map
-  _ 157       aud/825.map
-  _ 206       aud/830.map
-  _ 332       aud/840.map
-  _ 2166      aud/85.map
-  _ 817       aud/850.map
-  _ 794       aud/860.map
-  _ 507859930 aud/resource.aud
-  _ 5973      patches/93.msg
-  _ 5754790   resource.000
-  _ 7263      resource.map
-  _ 7482184   sfx/resource.sfx
-  _ 11        version
+groups:
+ vga assets: |
+  675       d519cbd80f99f4c018678a0b73aaccd9 aud/0.map
+  108       e6c1edea1759964888541ab86e085e4e aud/130.map
+  318       f2f7d4cf894640456bd7800bfe506e39 aud/140.map
+  45        e814d928dae857fcfe50013991eec2a8 aud/190.map
+  724       4aecc8b0d344c48e4b23efba24823efd aud/200.map
+  444       434d8693c49f04148d9dd4b722ec202e aud/205.map
+  676       a2b17730abe920159e1482c1734f7a7e aud/210.map
+  1949      af7897534de5e6024b6b7c7638b89076 aud/230.map
+  710       be12369e3684de2216d8a7a681ca27b6 aud/240.map
+  925       9a1a1e0a0712d74cd92d2fe98c38fffa aud/250.map
+  52        a072b3accaefbc4ecd644ddcbd3d725d aud/260.map
+  269       ca3d6ec3e4893d1e56504cea88c03c3c aud/270.map
+  437       a41a7ad7cde0d627c903915673c6f2ec aud/280.map
+  115       03a321f89795ed2fd63f794c0e7b2070 aud/300.map
+  227       38fd797793977fb25a2075ef03b049a6 aud/305.map
+  1242      8d1cb8070644cc613db56d7b90d4eb5a aud/310.map
+  612       213e88a30637b42d278492a8dc97c73a aud/320.map
+  1767      9b213006eefb11cb67e82c16df7f8185 aud/330.map
+  409       efd1d329d74e31d20031131942a5ace7 aud/340.map
+  507       4c6509ed99b62e1a8cf4838cfd454152 aud/350.map
+  80        7b46d4f311afb8befd689ccc34991174 aud/360.map
+  696       5d4a3699d8aa44c03020d99dc2cacddd aud/370.map
+  521       031cefba0287c944f5224beb7a64ed1d aud/380.map
+  771       5dc946ae8b34d33fcc16adb4de17a72a aud/390.map
+  773       7a092f04a5c2a8551a270a775bed8a1d aud/400.map
+  1078      a274831e5eeeeb31a70cd66b6d347bf4 aud/410.map
+  521       0653f6f4fd9806fc105eeb8a144cb296 aud/420.map
+  940       763350495edfe7bd1c94122fd6ace1a7 aud/430.map
+  465       c39d4df27a0ce6b4a6d8d34de6762dca aud/440.map
+  635       65644aca79b63bac1635627e192c8d50 aud/460.map
+  66        91e9263bd4fc31f48fdb0839192b9990 aud/500.map
+  276       6f4194b507a8bde4a8fb3d6d670932f4 aud/505.map
+  1410      941e810f0c5cc4a32a10da1f46cf4219 aud/510.map
+  567       5de46fab5f8b7f49b48ffef07e53e28d aud/520.map
+  311       417c22d4f2a953cf55a9e4476830880a aud/530.map
+  570       dbd8a3d2125c4723d08fd1ca5a2f2843 aud/560.map
+  94        78b7f7d93993a5169c50dccd1d2e91ae aud/570.map
+  297       6264218504cc6b2d8a05dbe5d631a6b8 aud/580.map
+  630       79c032c062e89cff84ce76458daa659a aud/590.map
+  703       9538062ad379d995c0980c068ebde1d1 aud/600.map
+  1424      277fd769a170e0a5d42984f40fbaae4a aud/610.map
+  451       d85dd0022c4e3a4d72909712ce3516e7 aud/611.map
+  885       0df965db5569106a75adf3b49e9f9411 aud/620.map
+  1249      1c8fe48594deb8df8970988815f28842 aud/630.map
+  150       f0422e53a0459f140977551d8c911247 aud/640.map
+  171       8307ebca7c355e86ba57167b64553ebe aud/650.map
+  185       d47bbbcecedaf93987378dca76c62d3c aud/660.map
+  101       16f5269e90ce1688a3fe8fa30065fd52 aud/680.map
+  94        d26b365f744ca24c653197ea769e55de aud/690.map
+  276       abfd10e7ddd8461241b7dde5931ebdd4 aud/700.map
+  234       bbbe81f88658d76468c38646e4201eea aud/710.map
+  1664      9b1db90814a6e56e20e8888e6b6cb006 aud/720.map
+  24        d2ccfe3683474777ea8b554e9ba6986e aud/740.map
+  290       f4cbb38f6581db085b3d909d523a2322 aud/800.map
+  472       f7fd652b9efb9c0f1e30d8b430c5d53c aud/810.map
+  143       c94148b1c18115787ceb88fe882378ee aud/82.map
+  668       68cd8331d9e9ac2ffbe8f1bb6574c720 aud/820.map
+  157       212b8089fed779285d0d4624044af1e4 aud/825.map
+  206       74a25a37536e7add3a186d758d6e508e aud/830.map
+  332       80fa56f4d0c03d9bebdd6e1321172b5d aud/840.map
+  2166      bb0b9770298f936267d624bdf6f6c67a aud/85.map
+  817       2ad1b7999028d3d171bf6c1df03e2932 aud/850.map
+  794       f00a2f50fbbfa03a404c9d32fdb0f73e aud/860.map
+  507859930 217d9e460a4a9ff03aa73e3e2e1544e5 aud/resource.aud
+  5973      be6b9872a2da486b58beb331697087f6 patches/93.msg
+  5754790   3434f03c74ae136ce8cb6b8f2ae87b78 resource.000
+  7263      c18d3dd21b5637344f407604bc06d006 resource.map
+  377       cbbe51830655cd8abe8dc2cfdb3cb025 resource.mtb
+  384       ff96016b21e92df672abe3ca57901fe2 resource.nol
+  7482184   8d284d70d11327ec6f6acee8bd4ca0fb sfx/resource.sfx
+  11        275dbe1cec69850722da197284b57f86 version
+  2387      17cd1603be97afff56b6ca6b07688a1d readme
 
-  _ 404934784 setup_leisure_suit_larry6_vga_2.2.0.18.exe
-  _ 964895    Leisure Suit Larry 6 - Manual.pdf
-  _ 8230209   Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+ svga assets: |
+  18520872  699958e370a81cdddb4ac8289f10398d resource.000?svga
+  8872      278d4b7b548a805ba5fbfaea04d61d63 resource.map?svga
 
-  _ 415305696 setup_leisure_suit_larry6_2.2.0.18.exe
-  _ 18520872  resource.000_svga
-  _ 8872      resource.map_svga
-
-md5sums: |
-  d519cbd80f99f4c018678a0b73aaccd9  aud/0.map
-  e6c1edea1759964888541ab86e085e4e  aud/130.map
-  f2f7d4cf894640456bd7800bfe506e39  aud/140.map
-  e814d928dae857fcfe50013991eec2a8  aud/190.map
-  4aecc8b0d344c48e4b23efba24823efd  aud/200.map
-  434d8693c49f04148d9dd4b722ec202e  aud/205.map
-  a2b17730abe920159e1482c1734f7a7e  aud/210.map
-  af7897534de5e6024b6b7c7638b89076  aud/230.map
-  be12369e3684de2216d8a7a681ca27b6  aud/240.map
-  9a1a1e0a0712d74cd92d2fe98c38fffa  aud/250.map
-  a072b3accaefbc4ecd644ddcbd3d725d  aud/260.map
-  ca3d6ec3e4893d1e56504cea88c03c3c  aud/270.map
-  a41a7ad7cde0d627c903915673c6f2ec  aud/280.map
-  03a321f89795ed2fd63f794c0e7b2070  aud/300.map
-  38fd797793977fb25a2075ef03b049a6  aud/305.map
-  8d1cb8070644cc613db56d7b90d4eb5a  aud/310.map
-  213e88a30637b42d278492a8dc97c73a  aud/320.map
-  9b213006eefb11cb67e82c16df7f8185  aud/330.map
-  efd1d329d74e31d20031131942a5ace7  aud/340.map
-  4c6509ed99b62e1a8cf4838cfd454152  aud/350.map
-  7b46d4f311afb8befd689ccc34991174  aud/360.map
-  5d4a3699d8aa44c03020d99dc2cacddd  aud/370.map
-  031cefba0287c944f5224beb7a64ed1d  aud/380.map
-  5dc946ae8b34d33fcc16adb4de17a72a  aud/390.map
-  7a092f04a5c2a8551a270a775bed8a1d  aud/400.map
-  a274831e5eeeeb31a70cd66b6d347bf4  aud/410.map
-  0653f6f4fd9806fc105eeb8a144cb296  aud/420.map
-  763350495edfe7bd1c94122fd6ace1a7  aud/430.map
-  c39d4df27a0ce6b4a6d8d34de6762dca  aud/440.map
-  65644aca79b63bac1635627e192c8d50  aud/460.map
-  91e9263bd4fc31f48fdb0839192b9990  aud/500.map
-  6f4194b507a8bde4a8fb3d6d670932f4  aud/505.map
-  941e810f0c5cc4a32a10da1f46cf4219  aud/510.map
-  5de46fab5f8b7f49b48ffef07e53e28d  aud/520.map
-  417c22d4f2a953cf55a9e4476830880a  aud/530.map
-  dbd8a3d2125c4723d08fd1ca5a2f2843  aud/560.map
-  78b7f7d93993a5169c50dccd1d2e91ae  aud/570.map
-  6264218504cc6b2d8a05dbe5d631a6b8  aud/580.map
-  79c032c062e89cff84ce76458daa659a  aud/590.map
-  9538062ad379d995c0980c068ebde1d1  aud/600.map
-  277fd769a170e0a5d42984f40fbaae4a  aud/610.map
-  d85dd0022c4e3a4d72909712ce3516e7  aud/611.map
-  0df965db5569106a75adf3b49e9f9411  aud/620.map
-  1c8fe48594deb8df8970988815f28842  aud/630.map
-  f0422e53a0459f140977551d8c911247  aud/640.map
-  8307ebca7c355e86ba57167b64553ebe  aud/650.map
-  d47bbbcecedaf93987378dca76c62d3c  aud/660.map
-  16f5269e90ce1688a3fe8fa30065fd52  aud/680.map
-  d26b365f744ca24c653197ea769e55de  aud/690.map
-  abfd10e7ddd8461241b7dde5931ebdd4  aud/700.map
-  bbbe81f88658d76468c38646e4201eea  aud/710.map
-  9b1db90814a6e56e20e8888e6b6cb006  aud/720.map
-  d2ccfe3683474777ea8b554e9ba6986e  aud/740.map
-  f4cbb38f6581db085b3d909d523a2322  aud/800.map
-  f7fd652b9efb9c0f1e30d8b430c5d53c  aud/810.map
-  c94148b1c18115787ceb88fe882378ee  aud/82.map
-  68cd8331d9e9ac2ffbe8f1bb6574c720  aud/820.map
-  212b8089fed779285d0d4624044af1e4  aud/825.map
-  74a25a37536e7add3a186d758d6e508e  aud/830.map
-  80fa56f4d0c03d9bebdd6e1321172b5d  aud/840.map
-  bb0b9770298f936267d624bdf6f6c67a  aud/85.map
-  2ad1b7999028d3d171bf6c1df03e2932  aud/850.map
-  f00a2f50fbbfa03a404c9d32fdb0f73e  aud/860.map
-  217d9e460a4a9ff03aa73e3e2e1544e5  aud/resource.aud
-  be6b9872a2da486b58beb331697087f6  patches/93.msg
-  3434f03c74ae136ce8cb6b8f2ae87b78  resource.000
-  c18d3dd21b5637344f407604bc06d006  resource.map
-  8d284d70d11327ec6f6acee8bd4ca0fb  sfx/resource.sfx
-  275dbe1cec69850722da197284b57f86  version
-
-  373cc731980938602a79bd9220a56040  setup_leisure_suit_larry6_vga_2.2.0.18.exe
-  bcf41711544685c9b5365311f839619f  Leisure Suit Larry 6 - Manual.pdf
-  bcc1974851f3d79ab57358a78d84c13c  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
-
-  49b574db89248fa813505bc1aee216a3  setup_leisure_suit_larry6_2.2.0.18.exe
-  699958e370a81cdddb4ac8289f10398d  resource.000_svga
-  278d4b7b548a805ba5fbfaea04d61d63  resource.map_svga
+ gog packaging: |
+  964895    bcf41711544685c9b5365311f839619f Leisure Suit Larry 6 - Manual.pdf
+  8230209   bcc1974851f3d79ab57358a78d84c13c Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
+  404934784 373cc731980938602a79bd9220a56040 setup_leisure_suit_larry6_vga_2.2.0.18.exe
+  415305696 49b574db89248fa813505bc1aee216a3 setup_leisure_suit_larry6_2.2.0.18.exe
 
 sha1sums: |
   d7c4779ec96dce3acf1c30d62bf953cba4dff06f  aud/0.map
@@ -432,7 +218,7 @@ sha1sums: |
   f99b52b8f43c6928f9a620e48ced09859221f5ad  Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
   2c9fcad0253cfafdbea218111ab83fc0949ad45e  setup_leisure_suit_larry6_2.2.0.18.exe
-  4b0d6c04541fdd433e1722ebb4ea30ec4beb0925  resource.000_svga
-  e391d3b382ff803faa6b38c8ebfbdd6329b2220c  resource.map_svga
+  4b0d6c04541fdd433e1722ebb4ea30ec4beb0925  resource.000?svga
+  e391d3b382ff803faa6b38c8ebfbdd6329b2220c  resource.map?svga
 ...
 
