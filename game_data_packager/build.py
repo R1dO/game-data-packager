@@ -289,7 +289,8 @@ def choose_mirror(wanted):
     if type(wanted.download) is str:
         if not mirror:
             return [wanted.download]
-        mirrors = [mirror + wanted.name]
+        if ' ' not in wanted.name:
+            mirrors.append(mirror + wanted.name)
         url_basename = os.path.basename(wanted.download)
         if url_basename != wanted.name and '?' not in url_basename:
             mirrors.append(mirror + url_basename)
