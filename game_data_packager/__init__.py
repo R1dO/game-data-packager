@@ -662,7 +662,7 @@ class GameData(object):
                 help_text += "         is accessible simultaneously, e.g. copy data from CD1 to CD3 in /tmp/cd{1-3}\n"
                 help_text += "         and let CD4 *mounted* in the drive.\n\n"
                 help_text += "         It's important to first mkdir '/tmp/cd1 /tmp/cd2 /tmp/cd3' because for some\n"
-                help_text += "         games there are different files accross the disks with the same name that\n"
+                help_text += "         games there are different files across the disks with the same name that\n"
                 help_text += "         would be overwriten.\n\n"
                 help_text += "         If /tmp/ is on a tmpfs and you don't have something like 16GB of RAM,\n"
                 help_text += "         you'll likely need to store the files somewhere else.\n\n"

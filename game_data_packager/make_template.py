@@ -48,7 +48,7 @@ logger = logging.getLogger('game_data_packager.make-template')
 
 # I guess there is a minimum size under which a
 # MD5 collision is not possible and having
-# a SHA1 for these files is not usefull
+# a SHA1 for these files is not useful
 MD5_SAFE_ENOUGH = 5000
 
 def guess_lang(string):
@@ -150,7 +150,7 @@ class GameData(object):
         self.gog_path = None
 
         self.data = dict()
-        # global list of files accross packages
+        # global list of files across packages
         self.install = set()
         self.optional = set()
         self.doc = set()

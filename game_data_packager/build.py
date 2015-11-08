@@ -2207,7 +2207,7 @@ class PackagingTask(object):
                                 package.name, package.lang)
                     possible.discard(package)
                     continue
-                # keep only prefered language for this virtual package
+                # keep only preferred language for this virtual package
                 if package.provides:
                     for other_p in possible:
                         if other_p.name == package.name:
@@ -2216,7 +2216,7 @@ class PackagingTask(object):
                             continue
                         if score < lang_score(other_p.lang):
                             logger.info('will not produce "%s" '
-                                        'because "%s" is prefered language',
+                                        'because "%s" is preferred language',
                                         package.name, other_p.lang)
                             possible.discard(package)
                             break
