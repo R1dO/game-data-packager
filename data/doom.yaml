@@ -35,7 +35,7 @@ packages:
     longname: Doom
     install:
     - doom.wad
-    optional:
+    doc:
     - doom bible.pdf
     - manual.pdf
 
@@ -139,9 +139,9 @@ files:
 
   doom bible.pdf:
     download: http://5years.doomworld.com/doombible/doombible.pdf
-    install_to: $docdir
-  manual.pdf:
-    install_to: $docdir
+    install_as: doom_bible.pdf
+    look_for: [doombible.pdf, doom_bible.pdf, 'doom bible.pdf']
+
   setup_the_ultimate_doom_2.0.0.3.exe:
     sha1: 923c77b2cb7b4a73abd62f62c26f614446c849ff
     unpack:
