@@ -18,76 +18,30 @@ packages:
       url: police_quest_1_2_3_4
       game: police_quest_3_the_kindred
     install:
-    - 12.scr
-    - 12.tex
-    - 129.scr
-    - 129.tex
-    - 133.scr
-    - 133.tex
-    - 202.scr
-    - 202.tex
-    - 21.scr
-    - 21.tex
-    - 50.scr
-    - 50.tex
-    - 56.scr
-    - 56.tex
-    - 57.scr
-    - 57.tex
-    - 594.v56
-    - 99.scr
-    - 994.scr
-    - resource.000
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map
-    - version
-    optional:
+    - assets
+    doc:
     - pq3_map_color.jpg
     - pq3pen.bmp
 
 files:
-  pq3_map_color.jpg:
-    install_to: $docdir
-  pq3pen.bmp:
-    install_to: $docdir
-
   setup_police_quest3_2.1.0.10.exe:
     unpack:
       format: innoextract
     provides:
-    - 12.scr
-    - 12.tex
-    - 129.scr
-    - 129.tex
-    - 133.scr
-    - 133.tex
-    - 202.scr
-    - 202.tex
-    - 21.scr
-    - 21.tex
-    - 50.scr
-    - 50.tex
-    - 56.scr
-    - 56.tex
-    - 57.scr
-    - 57.tex
-    - 594.v56
-    - 99.scr
-    - 994.scr
-    - resource.000
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map
-    - version
+    - assets
     - pq3_map_color.jpg
     - pq3pen.bmp
 
-size_and_md5: |
+  PQ3PENT.ZIP:
+    download: http://www.sierrahelp.com/Files/Patches/PoliceQuest/PQ3PENT.ZIP
+    unpack:
+      format: zip
+    provides:
+    - 202.scr
+    - 202.tex
+
+groups:
+ assets: |
   10012     9b5d97d1190d1b0dc0e5b436deb717ab 12.scr
   1116      5c82b0745604bd5e9b4cb328177ec68e 12.tex
   5872      5fa7ef67edc5d22c9f64942d37c6069a 129.scr
@@ -115,9 +69,11 @@ size_and_md5: |
   5559      baac9cc6903a7bd6acb4d4d9f9ed6931 resource.map
   8         c50ac7e6672c5dfbf74b9ca7501d56c7 version
 
+ default group: |
   72862     e6d58c020b4da9da8ddb026b274b95ce pq3_map_color.jpg
   65078     443726b38bcd15b772a1a5e4358cbe45 pq3pen.bmp
   18718736  25b5dc1b66999f414740f8fa34c7a30c setup_police_quest3_2.1.0.10.exe
+  5067      5541fd54d666004d2642ad8900e6d81b PQ3PENT.ZIP
 
 sha1sums: |
   d29365a858d7bccd1aea3d7582f00f2c9c1f35d1  setup_police_quest3_2.1.0.10.exe
