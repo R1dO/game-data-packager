@@ -11,15 +11,9 @@ packages:
       url: kings_quest_4_5_6
       game: kings_quest_4_the_perils_of_rosella
     install:
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map
-    - view.653
-    - view.997
+    - assets
     # needed for password prompt on first screen
-    optional:
+    doc:
     - manual.pdf
 
 files:
@@ -31,53 +25,30 @@ files:
       - $provides
       - /app/manual.pdf
     provides:
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map
-    - view.653
-    - view.997
+    - assets
     - manual.pdf
 
   setup_kings_quest4_2.1.0.18.exe:
     unpack:
       format: innoextract
     provides:
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map
-    - view.653
-    - view.997
+    - assets
     - manual.pdf
 
-  manual.pdf:
-    install_to: $docdir
+groups:
+  assets: |
+    452523    68c558be55b4362de8b4f0b89930b00b resource.001
+    536573    0b924fd922de2389fcfd35d747263c61 resource.002
+    707591    1046214aa22aae83c83a26eaf3e9412f resource.003
+    479562    e9b2f80c58e0cf079db0b53175dd069b resource.004
+    7476      66f466a791898ac9f51d7d1e82b8e8b6 resource.map
+    1274      3ca1d84ed247bc6bd71632e34e2907f1 view.653
+    66        692c4c009d3397a7e41e2558085f47ab view.997
+  gog packages: |
+    4841227   bd897ec43bf416ee08a4a8e9b4bd7ff4 manual.pdf
+    305459671 00c153eb0f99d76b7778daf3cd0045c7 setup_kings_quest_4_5_6.exe
+    20631744  ff066aeba1f7fe7ffb78a97d06b7e867 setup_kings_quest4_2.1.0.18.exe
 
-cksums: |
-  _ 452523    resource.001
-  _ 536573    resource.002
-  _ 707591    resource.003
-  _ 479562    resource.004
-  _ 7476      resource.map
-  _ 1274      view.653
-  _ 66        view.997
-  _ 4841227   manual.pdf
-  _ 305459671 setup_kings_quest_4_5_6.exe
-  _ 20631744  setup_kings_quest4_2.1.0.18.exe
-md5sums: |
-  68c558be55b4362de8b4f0b89930b00b  resource.001
-  0b924fd922de2389fcfd35d747263c61  resource.002
-  1046214aa22aae83c83a26eaf3e9412f  resource.003
-  e9b2f80c58e0cf079db0b53175dd069b  resource.004
-  66f466a791898ac9f51d7d1e82b8e8b6  resource.map
-  3ca1d84ed247bc6bd71632e34e2907f1  view.653
-  692c4c009d3397a7e41e2558085f47ab  view.997
-  bd897ec43bf416ee08a4a8e9b4bd7ff4  manual.pdf
-  00c153eb0f99d76b7778daf3cd0045c7  setup_kings_quest_4_5_6.exe
-  ff066aeba1f7fe7ffb78a97d06b7e867  setup_kings_quest4_2.1.0.18.exe
 sha1sums: |
   600dbc40ed731f359c0fddcc90f70d7ecd0e4be3  resource.001
   03693409c9ce776dcd6d4872a1e248f6e8d022c6  resource.002
@@ -89,4 +60,3 @@ sha1sums: |
   c8b7f666c75130c8cb40c2da9161fa6e3849de51  setup_kings_quest_4_5_6.exe
   213e12ed5709a118586573dbe44388f9bc1ba087  setup_kings_quest4_2.1.0.18.exe
 ...
-
