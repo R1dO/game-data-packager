@@ -35,6 +35,14 @@ files:
     - assets
     - manual.pdf
 
+  KQ4(KQ4FIX).zip:
+    download: http://www.sierrahelp.com/Files/Patches/KingsQuest/KQ4(KQ4FIX).zip
+    unpack:
+      format: zip
+    provides:
+    - view.653
+    - view.997
+
 groups:
   assets: |
     452523    68c558be55b4362de8b4f0b89930b00b resource.001
@@ -44,6 +52,8 @@ groups:
     7476      66f466a791898ac9f51d7d1e82b8e8b6 resource.map
     1274      3ca1d84ed247bc6bd71632e34e2907f1 view.653
     66        692c4c009d3397a7e41e2558085f47ab view.997
+  patch: |
+    2810      7d8f247ea23872a051528f8da94a0154 KQ4(KQ4FIX).zip
   gog packages: |
     4841227   bd897ec43bf416ee08a4a8e9b4bd7ff4 manual.pdf
     305459671 00c153eb0f99d76b7778daf3cd0045c7 setup_kings_quest_4_5_6.exe
