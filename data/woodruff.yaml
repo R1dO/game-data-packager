@@ -1,0 +1,34 @@
+---
+longname: The Bizarre Adventures of Woodruff and the Schnibble
+copyright: © 1994 Coktel Vision
+plugin: scummvm_common
+wiki: The_Bizarre_Adventures_of_Woodruff_and_the_Schnibble
+missing_langs: [pl]
+help_text: |
+  The subtitles are translated, but the voices are
+  only in French.
+
+packages:
+  woodruff-fr-data:
+    provides: woodruff-data
+    version: '1.00'
+    langs: [fr,en,de,es,it]
+    description: |
+      Also known as "Woodruff and the Schnibble of Azimuth"
+    install:
+    - intro.stk
+    - woodruff.itk
+    license:
+    - license.txt
+
+groups:
+  assets: |
+    20296390  5efe802eb0dcf926eeb71ac3b87c997b intro.stk
+    552277350 3d11ab0f8c5029afd2b114faf5612140 woodruff.itk
+    7103      087da6389730b8ca3d11b82bcd3a18dc license.txt
+
+sha1sums: |
+  d77daf92373de6150e5081b1830ed6bb5cea5c89  intro.stk
+  f57e893623f69e655444f6be556d81ad39c31b1d  woodruff.itk
+  b3a88a4454f5442e9824113eb001eec2b51ad950  license.txt
+...
