@@ -6,6 +6,7 @@ License:       GPLv2 and GPLv2+
 Url:           https://wiki.debian.org/Games/GameDataPackager
 # git archive --prefix=game-data-packager/ --format tar.gz master > ../rpmbuild/SOURCES/game-data-packager.tar.gz
 Source:        game-data-packager.tar.gz
+#http://http.debian.net/debian/pool/contrib/g/game-data-packager/game-data-packager_${version}.tar.xz
 BuildArch:     noarch
 BuildRequires: ImageMagick
 BuildRequires: inkscape
