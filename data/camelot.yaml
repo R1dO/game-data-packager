@@ -1,0 +1,33 @@
+---
+franchise: Conquest series
+longname: "Conquests of Camelot: The Search for the Grail"
+copyright: © 1990 Sierra
+plugin: scummvm_common
+wiki: Conquests_of_Camelot
+
+packages:
+  conquests-of-camelot-data:
+    install:
+    - resource.001
+    - resource.002
+    - resource.003
+    - resource.004
+    - resource.map
+    - version
+
+groups:
+  assets: |
+    596774    2f21c992da30741065e891db1a80a7cb resource.001
+    722250    805fc69c7e7e4be58477e77eedd37466 resource.002
+    723712    1aa54171a8578765da70e96187a1eabf resource.003
+    729143    216444e9f37ce07ff4352ea78b08745c resource.004
+    7278      26d6030d5df8cdb3b4dff3ab3f6d385f resource.map
+    11        16be5b5ebd8863129a60ef9227965b2b version
+
+sha1sums: |
+  72391a69175628322b5b6fda3b6e5e98b894df36  resource.001
+  1ff9f0acc1294373027208cb7e4d693efa93480c  resource.002
+  06faa858d252f532049b7e56e8d02fa1b979eab6  resource.003
+  16aa3fed3e3219f9debd0e4f83bd0dbf4d1f4e5d  resource.004
+  4f67f4d9a13889cb8b91e7f80688b6db9448f95c  resource.map
+...

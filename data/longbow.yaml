@@ -1,0 +1,163 @@
+---
+franchise: Conquest series
+longname: "Conquests of the Longbow: The Legend of Robin Hood"
+copyright: © 1992 Sierra
+plugin: scummvm_common
+wiki: Conquests_of_the_Longbow
+
+packages:
+  conquests-of-the-longbow-v10-data:
+    better_version: conquests-of-the-longbow-v11-data
+    version: '1.0'
+    install:
+    - assets v1.0
+    - patch
+
+  conquests-of-the-longbow-v11-data:
+    version: '1.1'
+    install:
+    - assets v1.1
+
+files:
+  ConquestOfTheLongbow(LBPAT).zip:
+    download: http://www.sierrahelp.com/Files/Patches/Conquests/ConquestOfTheLongbow(LBPAT).zip
+    unpack:
+      format: zip
+    provides:
+    - patch
+
+  readme.txt:
+    distinctive_name: false
+    install_to: $docdir
+
+groups:
+  archives: |
+    14698     5e66cfee74a794977c57058a1eb5ceed ConquestOfTheLongbow(LBPAT).zip
+  patch: |
+    14102     41bab5f46ad5451efe8c6e9f4d1bc5d9 140.scr
+    5         dc76056b921f5eb413e63fd10a5571bc 140.tex
+    3056      483bc24be4275bf8323cfa8902dca8ae 1535.tex
+    12408     516552b1bc4ff2601f85f6fe71e9af1e 180.scr
+    4587      7b3edda3b88ba1520be3273047e0f024 readme.txt
+  overwriten files: |
+    12364     f78040a030b9c6975e36555e98c59c82 180.scr?bad
+  assets v1.0: |
+    3970      5d1b307a28bedd799735ff2c2a6b5a86 100.scr
+    2715      26426887fe5031268e82e38fb19f7f23 1162.tex
+    5125      ba4cc908450a0f0fc91c272a342458d6 1179.tex
+    4069      b2b584cc4ad63566c9706ac240a9e49e 1402.tex
+    902       66af97a913d8d63a9c65fe8ab5736435 1490.tex
+    12102     e549908aeef25d78c82047efa33b85ac 150.scr
+    6706      21a635d1ecab2efa6f28910c10621ece 1530.tex
+    10078     30d4adde7ee726f946e7ad41557068de 160.scr
+    17276     6b5d1217c4bbf9e22116040b97818e91 171.scr
+    1664      46ecfd035e4d3433aa846bed48773b04 175.scr
+    139       9d2b902f28492011f35436ce73f74b26 175.tex
+    2094      9ca44eed5e51ec000b90e727756e732d 179.scr
+    6722      cf4d899be3ff70f736e5108c513c918d 185.scr?1.0
+    16452     3909b8f0cbab840291390bab9450718a 210.scr
+    3250      ef755372c6ccf12f093856c64606b5b8 223.scr
+    8152      151f447249941a876c72f2dccaf2627c 225.scr
+    5654      05bd5a4f7816e06a95bed852a409f005 25.scr
+    8922      7e5d497155de9929a1ac9a93e974617e 27.scr
+    6574      71402d43fafe35b0a0b1cd31a0b9d872 28.scr
+    10094     017926043e4a52594bb65da6bdffa2ab 320.scr?1.0
+    7996      9c52608ee207a234c332256e0fbbe888 360.scr
+    17186     cc61a4f197e23a8174df4ea63172c15b 392.v56
+    5372      bb746a36664f8b8a2f86b942fd2302f5 440.scr
+    7358      949b4148850437dd5d802761670c800c 470.scr
+    4588      04a55bce8901427c74f8a350d51427e7 490.scr
+    5788      7b03ddced75255e738c529d209442238 5.scr
+    10830     885e5e29d6f0e156fb06df89bcd95b59 530.scr
+    1256      9177c386aa3ace48f56de9616054ce2a 534.scr
+    9088      07c4470996b66f87fd49490e618fb2c0 540.scr
+    7908      e36af983d8a3adf36775def779fc7496 550.scr
+    7438      1e3d46e8826eaf29701b9188951f4369 561.scr
+    11712     5bb7685ec536be70a4647e20d9e47583 570.scr
+    8604      c102c4cf7e937b57926bb4ec25136678 640.scr
+    8640      d844c3edaf7b82531556953771e7eb21 700.scr
+    2410      f037bb37a323f39c25ae9125bbb5ded3 701.scr
+    3628      4ee6b12f0b3bae79cbf76d417552b90c 702.scr
+    3524      97ea7da4467c37e3fbec34011cc3abe5 705.scr
+    10000     0bef076e065f0660b2f659aed18525c0 801.scr
+    1032      a21bda9b639213ea50af3c4e455f5381 806.scr
+    75        5d0f52c0bc494bb439a40cd5f73a035d 806.tex
+    2072      1857bafbf5081ea46dfd27364c9987f0 808.scr
+    4946      259b527c9863e5bb131083a4233d6b4b 851.scr
+    2048      0042b1a5e75cf89f4edf1d047b7b8ceb 928.scr
+    642       47f32564ae4dfccfc2578079f61b6634 fcc1.dat
+    4096      7fbfde095e541e488a79e19d0adbf525 fcc2.dat
+    1563      c1aedf6d0d4607896fa089ee2a5f275d fcc3.dat
+    1296607   b612419bead4bb37a8a14bb7a3061687 resource.000?1.0
+    1379267   eb24e74f9cf1df37af088024046543ae resource.001?1.0
+    1234140   0babf48138dd2ecdd4e5bf3ae299e37d resource.002?1.0
+    823610    afb52a4eb3e1e748bf4ac860b57c6e39 resource.003?1.0
+    1260237   fdee2e2ae180a7137d6927c339d5df89 resource.004?1.0
+    1284609   c67b5ed7aee544d019d0fa27c8d6b847 resource.005?1.0
+    6045      ace85c2389006e0a0d6ed8e7db4c9ac6 resource.map?1.0
+    8         4e572926b0d3797c3bfd48ab1ddd670a version?1.0
+
+  assets v1.1: |
+    14102     41bab5f46ad5451efe8c6e9f4d1bc5d9 140.scr
+    6816      1e7735a49d188d71e83a98065a1ca337 185.scr?1.1
+    4066      2828c2e820b58ac4299cdcfe73e36362 312.scr
+    10128     3410eb30fb54518f4ce095434cad856e 320.scr?1.1
+    17268     e3fd54bd1cc22bcac85f4ccde0ad4c72 750.scr
+    1297120   12dfffa38dd0d8a904f2fcf02f9412ca resource.000?1.1
+    1366155   f156fe74e2a9e67c7f907a8984b08358 resource.001?1.1
+    1234743   bee6d36ecf931d662a47dccb82ba3d1e resource.002?1.1
+    823686    94f2f85bd7e8cdec523cec42732a0cab resource.003?1.1
+    1261462   14b08dc564bffac0716f417fbd919451 resource.004?1.1
+    1284720   a7627a39e9b39abf8f5bc60674b6403c resource.005?1.1
+    6027      a76e64ea69f96f47af642c5ce989f8ef resource.map?1.1
+    3         777d45bbbcdf50d49c42c70ad7acf5fe version?1.1
+
+sha1sums: |
+  7d11f9658eab96806e4c3aee8c5d62ec666bccdf  ConquestOfTheLongbow(LBPAT).zip
+
+  020136b68fc727f4791c2fac79037018e006ebba  1179.tex
+  c4dbbac81f6b2c8afc422e79d17f94971a891aef  150.scr
+  2e603f3b402eadfd13828e61e9dbb9aecb061fee  1530.tex
+  4040e671e36daf0fdca3f932c5c2d986b7f4dacc  160.scr
+  44ee1747a4fb7cdf051e257cf6b23a39cdbf75f8  171.scr
+  eff8de0b7b783b64d7c123d75d4ff7d452c69526  180.scr?bad
+  381a4273b974884370c561689907f9ef75a289ae  185.scr?1.0
+  80d1c03ea697f724c216d7378a89326d61886303  210.scr
+  43d05779d506652282c99a4cd6a02c1a0da9af55  225.scr
+  e28386917ce795743ba47e7d464887cc78cc5926  25.scr
+  39a0a5ea636f789ea67f104a5ef4627a3339696c  27.scr
+  e2a324e8934c16671da431b8933b9a5ab39dddf6  28.scr
+  bec9ec4fc1fe38a56a9942c1a18bc8af4b476f06  320.scr?1.0
+  9016693a0405df96a1570421376cd2eaa98c78e2  360.scr
+  8c1d769ae7be5421e36a456aba1baa220c93d464  392.v56
+  d82adfc2e9df815359cd1b0e456640ffead2de7e  440.scr
+  665afb5f8ec4b5d321db2bbaafe97ad738ab9a60  470.scr
+  a750c87891549f309ed3a501168c87d5f10ba75d  5.scr
+  25c37e23d0891c8273809f983b344a973ad4830c  530.scr
+  1321fabe862b97a1634bb5241868730367874e53  540.scr
+  bbbe6275b20ec1b78bbb7f0e2b2e8692bff46748  550.scr
+  214445eb1ac7380d425b478cdf625cb7e8dab997  561.scr
+  d54c50e7e83d6dcbd3127bd3dcf872716e57f368  570.scr
+  660397673bbf7a9568a64cf29d8eef65cde8c3ba  640.scr
+  8136fe6cc500c2130c031ddb6201ab81955f84a7  700.scr
+  3c0aca3e3ee82339a9cdc2df6a87328fe14f98bb  801.scr
+  d85aef535afa5fe722b21ff565a3db158bea297b  resource.000?1.0
+  b1ad1ce1c6b55c4de574be5eb7251d28441114ad  resource.001?1.0
+  5f7ac7ae83c82c3075902ca7e73aee7262d5ff5a  resource.002?1.0
+  c238ca2dc3114082d5030a83e99d59e2eb15c40f  resource.003?1.0
+  49c18cfa84506684ff5b7db982feaa37963f7484  resource.004?1.0
+  6ffe5914600829d8bb7b2337f1a2e53e5d018a2d  resource.005?1.0
+  f5facbda1c67dc54fe576f4fd6be95d0a284e0bf  resource.map?1.0
+
+  0dd27a2a52e13979ea52cc7d364847a8b2eada0c  140.scr
+  e7ad7be19d5aa77aafe56dc4464a7fb8edfe450e  185.scr?1.1
+  fd82732809cac20b680264b26e72c82feba900a2  320.scr?1.1
+  7de577167bf0af7918c8ba6fc771fe02fb4c6a49  750.scr
+  528c1a1fbfd0935b2832d9eba85f2cd7a181bd3a  resource.000?1.1
+  969cc655a78b36585321f66f1dddfbf12508ef49  resource.001?1.1
+  19844bc77347807bb864a809ccfbde150e64417c  resource.002?1.1
+  4c72b824bffeb70b61bf01363cc7574d409e56c6  resource.003?1.1
+  a9da4f4fdca96d7988721fba88f42f51789f3569  resource.004?1.1
+  c46ebfab19c22da46ba9866f5d1cf81e9ba86a7d  resource.005?1.1
+  242b989c422f37641f32309d1b48a54e4db676b4  resource.map?1.1
+...
