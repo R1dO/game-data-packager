@@ -107,7 +107,7 @@ class ResidualvmTask(PackagingTask):
         entry['Icon'] = icon
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
-        entry['Categories'] = 'Game'
+        entry['Categories'] = 'Game;'
         entry['Exec'] = 'residualvm -p /%s %s' % (package.install_to,
                 self.game.gameid)
         with open(os.path.join(appdir, '%s.desktop' % package.name),

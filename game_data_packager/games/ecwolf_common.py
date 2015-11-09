@@ -92,7 +92,7 @@ class EcwolfTask(PackagingTask):
         entry['Icon'] = package.name
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
-        entry['Categories'] = 'Game'
+        entry['Categories'] = 'Game;'
 
         appdir = os.path.join(destdir, 'usr/share/applications')
         mkdir_p(appdir)

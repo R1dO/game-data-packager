@@ -127,7 +127,7 @@ class ScummvmTask(PackagingTask):
         entry['Icon'] = icon
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
-        entry['Categories'] = 'Game;%sGame' % self.game.genre.replace(' ','')
+        entry['Categories'] = 'Game;%sGame;' % self.game.genre.replace(' ','')
         gameid = package.gameid or self.game.gameid
         if len(package.langs) == 1:
             entry['Exec'] = 'scummvm -p /%s %s' % (package.install_to, gameid)

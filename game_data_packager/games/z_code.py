@@ -56,7 +56,7 @@ class ZCodeTask(PackagingTask):
             desktop['Desktop Entry'] = {}
             entry = desktop['Desktop Entry']
             entry['Type'] = 'Application'
-            entry['Categories'] = 'Game'
+            entry['Categories'] = 'Game;'
             entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
             if (PACKAGE_CACHE.is_installed('frotz') and
@@ -77,7 +77,7 @@ class ZCodeTask(PackagingTask):
                 entry['Icon'] = 'utilities-terminal'
 
             if package.aliases:
-                entry['Keywords'] = ';'.join(package.aliases)
+                entry['Keywords'] = ';'.join(package.aliases) + ';'
 
             with open(os.path.join(appdir, '%s.desktop' % package.name),
                       'w', encoding='utf-8') as output:

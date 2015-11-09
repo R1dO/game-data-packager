@@ -160,8 +160,8 @@ class DoomTask(PackagingTask):
             entry['Icon'] = desktop_file
             entry['Terminal'] = 'false'
             entry['Type'] = 'Application'
-            entry['Categories'] = 'Game'
-            entry['Keywords'] = wad_base
+            entry['Categories'] = 'Game;'
+            entry['Keywords'] = wad_base + ';'
 
             with open(os.path.join(appdir, '%s.desktop' % desktop_file),
                       'w', encoding='utf-8') as output:
