@@ -22,7 +22,7 @@ import sys
 import yaml
 
 def main(f, out):
-    data = yaml.load(open(f, encoding='utf-8'), Loader=yaml.CLoader)
+    data = yaml.load(open(f, encoding='utf-8'), Loader=yaml.CSafeLoader)
     game = f[5:].split('.')[0]
 
     with open('data/wikipedia.csv', 'r', encoding='utf8') as csv:

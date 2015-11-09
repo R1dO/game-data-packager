@@ -1272,7 +1272,7 @@ def load_game(progress, games, filename, content):
             g = g[:len(g) - 5]
 
             if filename.endswith('.yaml'):
-                data = yaml.load(content, Loader=yaml.CLoader)
+                data = yaml.load(content, Loader=yaml.CSafeLoader)
             else:
                 data = json.loads(content)
 

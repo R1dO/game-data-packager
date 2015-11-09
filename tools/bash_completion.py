@@ -25,7 +25,7 @@ import glob
 for yaml_file in sorted(glob.glob('data/*.yaml')):
     print(os.path.splitext(os.path.basename(yaml_file))[0])
     with open(yaml_file, encoding='utf-8') as raw:
-        #yaml_data = yaml.load(raw)
+        #yaml_data = yaml.load(raw, Loader=yaml.CSafeLoader)
         #for key in sorted(yaml_data['packages'].keys()):
         #    print(key, end=' ')
 
