@@ -13,61 +13,34 @@ packages:
     gog:
       url: space_quest_1_2_3
     install:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
-    optional:
+    - assets
+    doc:
     - manual.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
   setup_space_quest_1_2_3.exe:
     unpack:
       format: innoextract
       prefix: "Space Quest 1"
     provides:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - assets
     - manual.pdf
 
-cksums: |
-  _ 331       object
-  _ 372       logdir
-  _ 315       picdir
-  _ 198       snddir
-  _ 762       viewdir
-  _ 40622     vol.0
-  _ 222807    vol.1
-  _ 264177    vol.2
-  _ 4793      words.tok
-  _ 1358148   manual.pdf
-  _ 18505218  setup_space_quest_1_2_3.exe
-md5sums: |
-  b1a713b5061db3f536971e234f261c47  object
-  5d67630aba008ec5f7f9a6d0a00582f4  logdir
-  64680cd14e572be7f46636e819895fdf  picdir
-  ab684bd2f6c0e87a80fc4cd06e544b1a  snddir
-  1868e1ce06e6c3816ec7364085e13f73  viewdir
-  e3c443117a755102173db7b0fb8b423c  vol.0
-  0e575ee31e7ad04f7d6f07cea41cca39  vol.1
-  57790c69c23fddc56840d8b0255c232f  vol.2
-  42b35795b6b489cd6e8d326e679f6a25  words.tok
-  6a0ecbaaab1fc5e43eb3d6fff6af9459  manual.pdf
-  6ab36bf35f920828cdcb3f3b83156572  setup_space_quest_1_2_3.exe
+groups:
+  assets: |
+    331       b1a713b5061db3f536971e234f261c47 object
+    372       5d67630aba008ec5f7f9a6d0a00582f4 logdir
+    315       64680cd14e572be7f46636e819895fdf picdir
+    198       ab684bd2f6c0e87a80fc4cd06e544b1a snddir
+    762       1868e1ce06e6c3816ec7364085e13f73 viewdir
+    40622     e3c443117a755102173db7b0fb8b423c vol.0
+    222807    0e575ee31e7ad04f7d6f07cea41cca39 vol.1
+    264177    57790c69c23fddc56840d8b0255c232f vol.2
+    4793      42b35795b6b489cd6e8d326e679f6a25 words.tok
+  gog archive: |
+    1358148   6a0ecbaaab1fc5e43eb3d6fff6af9459 manual.pdf
+    18505218  6ab36bf35f920828cdcb3f3b83156572 setup_space_quest_1_2_3.exe
+
 sha1sums: |
   7b82cc9bde99576bca00e7a56a2263765c431a07  object
   e5b85250d403dd711dd68377c7bdcecb7a483c10  logdir
