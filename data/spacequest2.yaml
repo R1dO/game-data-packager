@@ -11,15 +11,7 @@ packages:
     gog:
       url: space_quest_1_2_3
     install:
-    - object
-    - logdir
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - assets
     optional:
     - manual.pdf
 
@@ -31,41 +23,25 @@ files:
       format: innoextract
       prefix: "Space quest 2"
     provides:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2    
-    - words.tok 
+    - assets
     - manual.pdf
 
-cksums: |
-  _ 426       logdir
-  _ 331       object
-  _ 444       picdir
-  _ 210       snddir
-  _ 720       viewdir
-  _ 70313     vol.0
-  _ 161225    vol.1
-  _ 411824    vol.2
-  _ 6828      words.tok
-  _ 5456095   manual.pdf
-  _ 18505218  setup_space_quest_1_2_3.exe
-md5sums: |
-  28add5125484302d213911df60d2aded  logdir
-  5024d50d42801aaea7170a756218a7e6  object
-  514534df82237848dfcd760e476a766e  picdir
-  eab6a5f4cb071c906df674e98891a432  snddir
-  efb1f93513d57eeca9a539e019df7b89  viewdir
-  3e09c8580506212cd3494b5df8ea6cbc  vol.0
-  fa5415f7cbc6e78c69d94ef3c92d000d  vol.1
-  f7015465702a24333a0e799ad0d967bb  vol.2
-  552e2b31bf8825eea5a46e6eebb4cb3e  words.tok
-  91185d0d657338941a177cb5f6a7c2f3  manual.pdf
-  6ab36bf35f920828cdcb3f3b83156572  setup_space_quest_1_2_3.exe
+groups:
+  assets: |
+    426       28add5125484302d213911df60d2aded logdir
+    331       5024d50d42801aaea7170a756218a7e6 object
+    444       514534df82237848dfcd760e476a766e picdir
+    210       eab6a5f4cb071c906df674e98891a432 snddir
+    720       efb1f93513d57eeca9a539e019df7b89 viewdir
+    70313     3e09c8580506212cd3494b5df8ea6cbc vol.0
+    161225    fa5415f7cbc6e78c69d94ef3c92d000d vol.1
+    411824    f7015465702a24333a0e799ad0d967bb vol.2
+    6828      552e2b31bf8825eea5a46e6eebb4cb3e words.tok
+
+  gog archive: |
+    5456095   91185d0d657338941a177cb5f6a7c2f3 manual.pdf
+    18505218  6ab36bf35f920828cdcb3f3b83156572 setup_space_quest_1_2_3.exe
+
 sha1sums: |
   698adf61f0d28d02d438536795cf07d75b7dfa7e  logdir
   0e77603e5ddd16252e67fb5193aa527e04c8efd9  object
