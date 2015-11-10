@@ -25,6 +25,8 @@
 # you'll have to investigate by yourself
 
 WEBROOT = '/var/www/html'
+KEEP_FREE_SPACE = 250 * 1024 * 1024
+QUITE_LARGE = 10 * 1024 * 1024
 
 import os
 import subprocess
@@ -35,6 +37,8 @@ from game_data_packager.build import (choose_mirror)
 archives = []
 
 os.environ.pop('GDP_MIRROR')
+
+print('loading game definitions...')
 
 for gamename, game in load_games().items():
     game.load_file_data()
@@ -73,8 +77,9 @@ for a in archives:
    if not os.path.isfile(archive):
        statvfs = os.statvfs(WEBROOT)
        freespace = statvfs.f_frsize * statvfs.f_bavail
-       if a['size'] > freespace:
-           exit('out of space, can not download' % a['name'])
+       if a['size'] > freespace - KEEP_FREE_SPACE:
+           print('out of space, can not download %s' % a['name'])
+           continue
        subprocess.check_call(['wget', a['download'],
                               '-O', a['name']],
                               cwd=WEBROOT)
@@ -83,8 +88,9 @@ for a in archives:
        exit("%s is empty !!!" % archive)
    if os.path.getsize(archive) != a['size']:
        exit("%s has the wrong size !!!" % archive)
-   hf = HashedFile.from_file(archive, open(archive, 'rb'))
    print('checking %s ...' % archive)
+   hf = HashedFile.from_file(archive, open(archive, 'rb'),
+        size=a['size'], progress=(a['size'] > QUITE_LARGE))
    if a['md5'] and a['md5'] != hf.md5:
        exit("md5 doesn't match for %s !!!" % archive)
    if a['sha1'] and a['sha1'] != hf.sha1:
