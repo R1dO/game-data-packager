@@ -316,14 +316,12 @@ def choose_mirror(wanted):
                 url = url + details.get('name', wanted.name)
                 mirrors.append(url)
         except:
-            url = None
             logger.warning('Could not open mirror list "%s"', mirror_list,
                     exc_info=True)
     random.shuffle(mirrors)
     if mirror:
-        url_basename = os.path.basename(url)
-        if url and '?' not in url_basename:
-            mirrors.insert(0, mirror + url_basename)
+        if mirrors and '?' not in mirrors[0]:
+            mirrors.insert(0, mirror + os.path.basename(mirrors[0]))
         elif '?' not in wanted.name:
             mirrors.insert(0, mirror + wanted.name)
     if not mirrors:
