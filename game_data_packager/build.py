@@ -289,11 +289,12 @@ def choose_mirror(wanted):
     if type(wanted.download) is str:
         if not mirror:
             return [wanted.download]
-        if ' ' not in wanted.name:
-            mirrors.append(mirror + wanted.name)
         url_basename = os.path.basename(wanted.download)
-        if url_basename != wanted.name and '?' not in url_basename:
+        if '?' not in url_basename:
             mirrors.append(mirror + url_basename)
+        wanted.name = wanted.name.replace(' ','%20')
+        if wanted.name != url_basename and '?' not in wanted.name:
+            mirrors.append(mirror + wanted.name)
         mirrors.append(wanted.download)
         return mirrors
 
@@ -315,11 +316,16 @@ def choose_mirror(wanted):
                 url = url + details.get('name', wanted.name)
                 mirrors.append(url)
         except:
+            url = None
             logger.warning('Could not open mirror list "%s"', mirror_list,
                     exc_info=True)
     random.shuffle(mirrors)
     if mirror:
-        mirrors.insert(0, mirror + wanted.name)
+        url_basename = os.path.basename(url)
+        if url and '?' not in url_basename:
+            mirrors.insert(0, mirror + url_basename)
+        elif '?' not in wanted.name:
+            mirrors.insert(0, mirror + wanted.name)
     if not mirrors:
         logger.error('Could not select a mirror for "%s"', wanted.name)
         return []
