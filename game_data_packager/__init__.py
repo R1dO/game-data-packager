@@ -1224,9 +1224,7 @@ class GameData(object):
         if package.gog == False:
             return
         gog = package.gog or self.gog
-        if not gog:
-            return
-        return gog.get('game', gog['url'])
+        return gog.get('game') or gog.get('url')
 
 def load_games(game='*', use_vfs=USE_VFS, use_yaml=False):
     progress = (game == '*' and sys.stderr.isatty() and
