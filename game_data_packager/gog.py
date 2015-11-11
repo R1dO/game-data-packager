@@ -136,8 +136,8 @@ def run_gog_meta_mode(parsed, games):
     found_packages = []
     for game, data in games.items():
         for package in data.packages.values():
-            id = data.gog_download_name(package)
-            if id is None or id not in owned:
+            gog_id = data.gog_download_name(package)
+            if gog_id is None or gog_id not in owned:
                 continue
             if lang_score(package.lang) == 0:
                 continue
@@ -154,7 +154,7 @@ def run_gog_meta_mode(parsed, games):
                 'package': package.name,
                 'installed': installed,
                 'longname': package.longname or data.longname,
-                'id': id,
+                'id': gog_id,
                })
     if not found_games:
         logger.error('No supported GOG.com games found')
