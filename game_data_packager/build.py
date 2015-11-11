@@ -859,6 +859,7 @@ class PackagingTask(object):
             # we didn't break, so we have all the bits
             path = os.path.join(self.get_workdir(), 'tmp',
                     wanted.name)
+            mkdir_p(os.path.dirname(path))
             with open(path, 'wb') as writer:
                 def open_files():
                     yield open(self.found[provider.name], 'rb')
