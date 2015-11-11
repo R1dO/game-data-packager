@@ -1,0 +1,146 @@
+---
+longname: "Freddy Pharkas: Frontier Pharmacist"
+copyright: © 1993 Sierra On-Line
+plugin: scummvm_common
+wiki: Freddy_Pharkas
+
+packages:
+  freddy-pharkas-cd-data:
+    install:
+    - cd assets
+    - version
+
+  freddy-pharkas-floppy-dos-data:
+    better_version: freddy-pharkas-cd-data
+    install:
+    - floppy assets
+    - floppy assets dos
+    - version
+
+  freddy-pharkas-floppy-win-data:
+    better_version: freddy-pharkas-cd-data
+    install:
+    - floppy assets
+    - floppy assets win
+    - version
+
+files:
+  resource.000?floppy_win_part1:
+    unpack:
+      format: cat
+      other_parts:
+      - resource.000?floppy_win_part2
+      - resource.000?floppy_win_part3
+      - resource.000?floppy_win_part4
+    provides:
+    - resource.000?floppy_win
+
+groups:
+  cd assets: |
+    73        5a2b307c08352910d736908d5c61744e 0.map
+    1109      e6f4efa57549eee490a9958e42fe9e6b 15.map
+    45        5139933206ddc15a223dcfe1fc6dd97f 16.map
+    248       49c691091258504c1b79a3f8423a8848 18.map
+    521       de96f65f392c7f0a80b284b1210706b9 19.map
+    24        4227f8f4a55a3cbf5d4b7b8e5bfa575e 26.map
+    73        d823d98ea258d20b65bbc4d4ac57a46c 32.map
+    1046      64342aa5d9c97229253d1931753dfc42 90.map
+    171       bd457e4992b5fb3c1381aee05c23ee56 99.map
+    906       c596e85771116cde819677de459f714c 200.map
+    451       288addc238e87ef6b4a3e12a0c1b9b8c 210.map
+    640       fdb90a2affbab6c91c50e250b0b98eae 220.map
+    612       ac05a6dc6c59f16a6a3f7db625b8964d 230.map
+    584       14bae985e3affdf0527e96acde103fb1 235.map
+    381       7e20bc77d8df4bb2285ae0e5c1864b92 240.map
+    829       94a77ee85c452ed4339ade3b1e58944a 250.map
+    1690      97b02c1df0bfee690ddbcae6693b6c1b 260.map
+    402       b88cbc32eb948a7c4c96c5517b05dc5a 265.map
+    283       89dec82d1a419b49aef751d2b0b6b55e 270.map
+    1221      9300c15cc1d566fb59b930b7789d067f 300.map
+    444       0c2572fb8dbe1df9444fffc5b9b403cb 310.map
+    927       d96aa56a7d48094c3143dfc90af93134 320.map
+    745       5a0e250e59aff41df3a855c526f2ff6d 400.map
+    675       218a999396468009278d2d28d9a8d3b0 410.map
+    115       82d7a3af902c2264693c9d1768560aab 420.map
+    374       980acc62ec7987002d86fb3601e5cec6 500.map
+    45        37d2a9bf3c3e278629a2257de69278de 540.map
+    143       79b358935ff7a1b0ac33b695441d1f16 560.map
+    220       0dc40de51316376ae40bc4699efe19c3 570.map
+    24        0f035f3d45057991bad8483d8ec4bac5 576.map
+    2635      47c5c7844446496d42ab59f63cd1fd53 600.map
+    353       b0e4673bf927c44bfd347436d3e41e5c 610.map
+    668       0a0c0e65fb93be192c79d6be89ae10b4 620.map
+    416       5fb6ada15d1f0a110e6da1d44f18c5a5 630.map
+    1501      3f59d634935187b30efdf3ff5d72e920 640.map
+    1431      cd404e9495685358e3723b3a1eb964d2 650.map
+    3090      0647558689427566dfd0a70d1579cd6f 660.map
+    3699      615ffc147abd9e67ff437756f370f72a 670.map
+    276       dbf337655861d5c11e91e322dc5ad5b7 671.map
+    346       d097f7daaaa5eb05b757ec477e1cf3b8 675.map
+    1424      c52a5def255355b1c0e3707e94b967b2 690.map
+    73        483d43604d6bd8307509a49e394d4198 700.map
+    2061      d961dd637d0844fcfb9ff5a474c3dc08 710.map
+    591       640bcbd37bf17c6f5d89f70f72a3d87d 720.map
+    514       811c642abfe23d2dbfa6d5ed6cff9f30 730.map
+    689       f122989c7a5e12ae53abac786d4565ba 740.map
+    437       7b7763882469c107854e61e57b095d89 791.map
+    4568      c02f95cc8dba95a424fc6e7c7e4434d4 2998.syn
+    2936      6f45720a7c7bc8339a21645ab5aaa7f1 2999.syn
+    5490246   25ee9f7e9ff3c47e24cf061bcbd5bf54 resource.000
+    599841365 e1b32ee952069b4612c259b1029ca07c resource.aud
+    6058      c421287532ed6192f4a55918ee2650a0 resource.map
+    16743534  cfed0ff63d616554f85034355ac79785 resource.sfx
+
+  default group: |
+    7         fa5ccbff55174b9e9881db1aa6126c62 version
+    1456640   bb6fc02637099dc85efaf1eecad144b1 resource.000?floppy_win_part1
+    1456640   dd423c3521995fa7dd44d4f25a6cf017 resource.000?floppy_win_part2
+    1456640   c91c6873c15c2e473d6635a2c83ee9d8 resource.000?floppy_win_part3
+    863310    8d5fa56bed45c4332a8ce5f861ddccf9 resource.000?floppy_win_part4
+
+  floppy assets dos: |
+    5233230   0b85b81519b05affce6a764c5708256b resource.000?floppy_dos
+    4123462   fbac7fe90ea61c7232a328ccb3c09d30 resource.aud?floppy_dos
+
+  floppy assets win: |
+    5233230   1eb7d5ee53bf309884c5e116372d4c77 resource.000?floppy_win
+    1064900   519aa7fa6c3a0af049053a71d44ce187 resource.aud?floppy_win
+
+  floppy assets: |
+    21743     266e1c623e61bad056aa2b06b0fa0d39 15.msg
+    3080      cbc967d807196b274db468a220b59980 300.hep
+    4896      707db72ba1883092f219a851d76b17e1 300.scr
+    4420      ae702048b18ac50b42ff0e852061f161 600.hep
+    10358     ca88f290d0a670314259f69c00679b63 600.scr
+    5016      aae05c70b711f4369dd85311be00bc56 670.hep
+    5904      0463c6b72581a2c00f844dc4a0414a00 670.scr
+    5286      511b4374bafdd6d1582cf6390fe88f6e 671.hep
+    7638      b7bd4c1b1d5d469b2969a5f572593fbb 671.scr
+    3432      c520d7b8bef39602d59b244fb62bc7e8 720.hep
+    2858      d069b86f3bc3a384e9214fdace35efde 720.scr
+    596       3ec24765153fa639bdd3c7cbd3f78b90 message.map
+    331706    f98b8c693321003c783842a4557f59a0 resource.msg
+    5816      5d6ba5fe9528da7b8a1132e251d589be resource.map?floppy
+
+sha1sums: |
+  61edfc80f987e8640b082b6f1db64db04636976c  15.msg
+  59d72f4dc813ee1f0a0ca7fe09f70a98c92b0101  600.scr
+  c0185d17a2a93673e8875796f48cab6e450f89b6  670.hep
+  1b4053b3591acbe4d23db3271d733aca00203f08  670.scr
+  3ea0e740a90fd1d36cdad242023d0e7e346a485f  671.hep
+  bb8eaf527b2cbf2f5536da42f1d4546ceb3d7ccd  671.scr
+  8d8e3811f2ae94bedbd183c74a71164233091a5e  resource.000
+  0d540a1156007000e0d9caa15f2f827c0da0321f  resource.000?floppy_dos
+  c7e5a4b8b7fd61e01fc4fcb266f067a3b3af2bd3  resource.000?floppy_win
+  6899d16e61849ba40015c4316db9978fc079ad06  resource.000?floppy_win_part1
+  3c00d56d7aa6ee6e97886c1c70ab61aa024154f8  resource.000?floppy_win_part2
+  9d13cd9550a1d566e7595cf45bdc5506c985482b  resource.000?floppy_win_part3
+  4fbfbdcc250a45a6e413ce0f95f360844920c1ab  resource.000?floppy_win_part4
+  62be63af24bb593afb3ceaaeb7a3736c1c41d07a  resource.aud
+  53103c1d6031c88be3f8f4910ae8d9df588f9c96  resource.aud?floppy_dos
+  77339e411d138a257a4c199c9cf0bea3d1f921d1  resource.aud?floppy_win
+  ecc7698966f79f1e71c51d4b70dc44c477d994e8  resource.map
+  d161d0b07e89b017a04d821e399ca7e4bf04f044  resource.map?floppy
+  43c5f9bc36266b5eb3d71a2f972b1c1cdac13683  resource.msg
+  812f817e9151717d241d060827f442b7521d8e39  resource.sfx
+...
