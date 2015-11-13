@@ -54,7 +54,7 @@ MD5_SAFE_ENOUGH = 5000
 def guess_lang(string):
     string = string.lower()
     path = os.path.basename(string.rstrip('/'))
-    if path in ('de', 'en', 'fr', 'it', 'ja', 'pl', 'ru'):
+    if path.split('-')[-1] in ('de', 'en', 'es', 'fr', 'it', 'ja', 'pl', 'ru'):
         return path
     for short, long in [('de', 'german'),
                         ('es', 'spanish'),
