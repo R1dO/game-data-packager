@@ -12,82 +12,42 @@ packages:
       url: kings_quest_1_2_3
       game: kings_quest
     install:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
-    optional:
+    - assets
+    doc:
     - manual.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
-
   setup_kings_quest_1_2_3.exe:
     unpack:
       format: innoextract
       prefix: "Kings Quest 1"
     provides:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - assets
     - manual.pdf
 
   setup_kings_quest_2.1.0.16.exe:
     unpack:
       format: innoextract
     provides:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - assets
     - manual.pdf
 
-cksums: |
-  _ 315       logdir
-  _ 331       object
-  _ 255       picdir
-  _ 144       snddir
-  _ 432       viewdir
-  _ 48472     vol.0
-  _ 200630    vol.1
-  _ 90891     vol.2
-  _ 3144      words.tok
+groups:
+  assets: |
+    315      10ad66e2ecbd66951534a50aedcd0128 logdir
+    331      6eca02fa540337308529ff13e9e764aa object
+    255      d468936618bed024ea453a315aba1958 picdir
+    144      cf37ab2f6af09afee3598b92c9a42983 snddir
+    432      ac7048eceb628c07f452ecd1662d7b3d viewdir
+    48472    8ec91effac02ba476f823f065ca10172 vol.0
+    200630   77c3be070fc9bf9c69952ed56821efe1 vol.1
+    90891    b33d0a9938c095da1a69b5ee3c9209d4 vol.2
+    3144     50e00d15fa3e25b512c19608119111cf words.tok
 
-  _ 16447803  setup_kings_quest_1_2_3.exe
-  _ 15420944  setup_kings_quest_2.1.0.16.exe
-  _ 2038442   manual.pdf
-
-md5sums: |
-  10ad66e2ecbd66951534a50aedcd0128  logdir
-  6eca02fa540337308529ff13e9e764aa  object
-  d468936618bed024ea453a315aba1958  picdir
-  cf37ab2f6af09afee3598b92c9a42983  snddir
-  ac7048eceb628c07f452ecd1662d7b3d  viewdir
-  8ec91effac02ba476f823f065ca10172  vol.0
-  77c3be070fc9bf9c69952ed56821efe1  vol.1
-  b33d0a9938c095da1a69b5ee3c9209d4  vol.2
-  50e00d15fa3e25b512c19608119111cf  words.tok
-
-  df5045d1f5b1b1ed3626bfc9673fab7a  setup_kings_quest_1_2_3.exe
-  4985e1041db1b1458ceabf57e6503ff9  setup_kings_quest_2.1.0.16.exe
-  cd321dcbaf43a4c2017bcabe3f18fcc8  manual.pdf
+  gog archives: |
+    16447803 df5045d1f5b1b1ed3626bfc9673fab7a setup_kings_quest_1_2_3.exe
+    15420944 4985e1041db1b1458ceabf57e6503ff9 setup_kings_quest_2.1.0.16.exe
+    2038442  cd321dcbaf43a4c2017bcabe3f18fcc8 manual.pdf
 
 sha1sums: |
   8dcdb16fa70c5b5a9a49ee95a57d4e1555ea310f  logdir
@@ -104,4 +64,3 @@ sha1sums: |
   3faa46361f90ecf240a2154782c417a6d062df91  setup_kings_quest_2.1.0.16.exe
   855aee30c392665060cf8b5ff3f0e81314961f70  manual.pdf
 ...
-

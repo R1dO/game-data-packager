@@ -14,35 +14,7 @@ packages:
       url: kings_quest_4_5_6
       game: kings_quest_5_absence_makes_the_heart_go_yonder
     install:
-    - 0.scr
-    - 0.tex
-    - 1.scr
-    - 10125.syn
-    - 10126.syn
-    - 119.scr
-    - 119.tex
-    - 124.scr
-    - 1699.snd
-    - 1799.snd
-    - 1849.snd
-    - 203.scr
-    - 205.scr
-    - 36.scr
-    - 47.scr
-    - 610.scr
-    - 610.tex
-    - 611.scr
-    - 612.scr
-    - 66.scr
-    - 769.scr
-    - 99.scr
-    - audio001.002
-    - audio001.map
-    - resource.000
-    - resource.001
-    - resource.map
-    optional:
-    - version
+    - assets
 
 files:
   setup_kings_quest_4_5_6.exe:
@@ -50,157 +22,64 @@ files:
       format: innoextract
       prefix: "Kings Quest 5"
     provides:
-    - 0.scr
-    - 0.tex
-    - 1.scr
-    - 10125.syn
-    - 10126.syn
-    - 119.scr
-    - 119.tex
-    - 124.scr
-    - 1699.snd
-    - 1799.snd
-    - 1849.snd
-    - 203.scr
-    - 205.scr
-    - 36.scr
-    - 47.scr
-    - 610.scr
-    - 610.tex
-    - 611.scr
-    - 612.scr
-    - 66.scr
-    - 769.scr
-    - 99.scr
-    - audio001.002
-    - audio001.map
-    - resource.000
-    - resource.001
-    - resource.map
-    - version
+    - assets
 
   setup_kings_quest5_2.1.0.18.exe:
     unpack:
       format: innoextract
     provides:
-    - 0.scr
-    - 0.tex
-    - 1.scr
-    - 10125.syn
-    - 10126.syn
-    - 119.scr
-    - 119.tex
-    - 124.scr
-    - 1699.snd
-    - 1799.snd
-    - 1849.snd
-    - 203.scr
-    - 205.scr
-    - 36.scr
-    - 47.scr
-    - 610.scr
-    - 610.tex
-    - 611.scr
-    - 612.scr
-    - 66.scr
-    - 769.scr
-    - 99.scr
-    - audio001.002
-    - audio001.map
-    - resource.000
-    - resource.001
-    - resource.map
-    - version
+    - assets
 
-cksums: |
-  _ 9960      0.scr
-  _ 50        0.tex
-  _ 6726      1.scr
-  _ 1229      10125.syn
-  _ 73        10126.syn
-  _ 2204      119.scr
-  _ 54        119.tex
-  _ 12288     124.scr
-  _ 62596     1699.snd
-  _ 138       1799.snd
-  _ 834       1849.snd
-  _ 6340      203.scr
-  _ 5012      205.scr
-  _ 3640      36.scr
-  _ 9232      47.scr
-  _ 10970     610.scr
-  _ 226       610.tex
-  _ 10924     611.scr
-  _ 10552     612.scr
-  _ 8232      66.scr
-  _ 302       769.scr
-  _ 978       99.scr
-  _ 97103872  audio001.002
-  _ 16850     audio001.map
-  _ 571368    resource.000
-  _ 16800210  resource.001
-  _ 13122     resource.map
-  _ 11        version
-
-  _ 305459671 setup_kings_quest_4_5_6.exe
-  _ 66756232  setup_kings_quest5_2.1.0.18.exe
-
-md5sums: |
-  ea3ef2d5afe9252a6b1f9224c720ad4a  0.scr
-  5034ad302d1dbfdbf0566ccb871f9cb4  0.tex
-  863615199b7bd10428dff483fd803b4e  1.scr
-  6aa9be2eded3126c8773c2e5a3ea5f91  10125.syn
-  efae0f95e29ad1d0d4a62a7c62556bd6  10126.syn
-  666abc15dfaab90878a877b2c9812b2e  119.scr
-  0daf18d184ac8978a8afd4a86adbb1fa  119.tex
-  aae5dd6fa81c2818d260c8dfba58f373  124.scr
-  db0d6e94fef80b84f7c8c50be3b6d727  1699.snd
-  3cb2dd53a7b2f58dbcbb2c5e90e0e9e2  1799.snd
-  eca9ef7156f15da4ab10364bc85db68d  1849.snd
-  607b4f560e203bbf6a13364a4294b2aa  203.scr
-  6dc25db2c53d42f40f111a56c7192d3d  205.scr
-  34492b55d2b74d009cad1c2c3e1c4500  36.scr
-  98e6ed543dad7b0c96a478fcd4fbd775  47.scr
-  f17a178b30c16f730d765d41c529fafb  610.scr
-  cf91cb9b8c9f4d6da16492535084d922  610.tex
-  2631a0abdd69f3b093bc9359e27c6cd7  611.scr
-  db068590c82a03ef292109dc257a4bb6  612.scr
-  046750d6d1f143ebadd6dff872b76e38  66.scr
-  c78e7473ba6ff049c77c33b930245bfc  769.scr
-  454291cf1f56ba49c650ab81da111766  99.scr
-  3bff2d8f4111dcc79d5f6c65416d7391  audio001.002
-  5295501d3c72a0c1699880b18c905030  audio001.map
-  b0e65037aa69693f8d77bc9f9fb91dc0  resource.000
-  4cccbae67165762f0f2c64949204dcb1  resource.001
-  ecca51581ce72ba4fd997605e303f05d  resource.map
-  8ce08a5279071c36664c670498c1cf8b  version
-
-  00c153eb0f99d76b7778daf3cd0045c7  setup_kings_quest_4_5_6.exe
-  8512167c7f4f5bf9b3e76d4ff58f8c57  setup_kings_quest5_2.1.0.18.exe
+groups:
+  assests: |
+    9960      ea3ef2d5afe9252a6b1f9224c720ad4a 0.scr
+    50        5034ad302d1dbfdbf0566ccb871f9cb4 0.tex
+    6726      863615199b7bd10428dff483fd803b4e 1.scr
+    3640      34492b55d2b74d009cad1c2c3e1c4500 36.scr
+    9232      98e6ed543dad7b0c96a478fcd4fbd775 47.scr
+    8232      046750d6d1f143ebadd6dff872b76e38 66.scr
+    978       454291cf1f56ba49c650ab81da111766 99.scr
+    2204      666abc15dfaab90878a877b2c9812b2e 119.scr
+    54        0daf18d184ac8978a8afd4a86adbb1fa 119.tex
+    12288     aae5dd6fa81c2818d260c8dfba58f373 124.scr
+    6340      607b4f560e203bbf6a13364a4294b2aa 203.scr
+    5012      6dc25db2c53d42f40f111a56c7192d3d 205.scr
+    10970     f17a178b30c16f730d765d41c529fafb 610.scr
+    226       cf91cb9b8c9f4d6da16492535084d922 610.tex
+    10924     2631a0abdd69f3b093bc9359e27c6cd7 611.scr
+    10552     db068590c82a03ef292109dc257a4bb6 612.scr
+    302       c78e7473ba6ff049c77c33b930245bfc 769.scr
+    62596     db0d6e94fef80b84f7c8c50be3b6d727 1699.snd
+    138       3cb2dd53a7b2f58dbcbb2c5e90e0e9e2 1799.snd
+    834       eca9ef7156f15da4ab10364bc85db68d 1849.snd
+    1229      6aa9be2eded3126c8773c2e5a3ea5f91 10125.syn
+    73        efae0f95e29ad1d0d4a62a7c62556bd6 10126.syn
+    97103872  3bff2d8f4111dcc79d5f6c65416d7391 audio001.002
+    16850     5295501d3c72a0c1699880b18c905030 audio001.map
+    571368    b0e65037aa69693f8d77bc9f9fb91dc0 resource.000
+    16800210  4cccbae67165762f0f2c64949204dcb1 resource.001
+    13122     ecca51581ce72ba4fd997605e303f05d resource.map
+    11        8ce08a5279071c36664c670498c1cf8b version
+  gog archives: |
+    305459671 00c153eb0f99d76b7778daf3cd0045c7 setup_kings_quest_4_5_6.exe
+    66756232  8512167c7f4f5bf9b3e76d4ff58f8c57 setup_kings_quest5_2.1.0.18.exe
 
 sha1sums: |
   9941094d4b310dcc74b93f59cd055ed6fe9b9786  0.scr
-  a4186779a6ce590038bc0406a96c2a299cf181f9  0.tex
   d2a5851979a2493c67cfa336833e0c8e63519647  1.scr
-  499bf91858d58b04c5fda6005ca854010f3c671c  10125.syn
-  6992316241b3da09a2d2a167b0b6c0f484495cfb  10126.syn
-  dd25987957519bc632bff2e5082f864004e817d9  119.scr
-  a6770062139c477db3f98c1dcda41951ff7d851f  119.tex
-  13774c5288b23305acacf37a2644665d7ce2bf41  124.scr
-  eee305f962fd378b9edb9315ff51e8a721d9e5f1  1699.snd
-  1cb4a6428523d75b1e760a29159e0bf2473ea4a7  1799.snd
-  9ae816c025fe0fd6b9bb5e9d8be1e591f30a19ec  1849.snd
-  52266150904b98f6fe72bcd7377eebb2a6eb5856  203.scr
-  10a6c1c4bcece1e26cda84f286f1a2f0d9fc993c  205.scr
   78ee0b49176bc7e4f478c5cf143efc5f3d03cd84  36.scr
   8f6a53b149f12002f9630d9431f194625701e518  47.scr
+  ff26333df980b25aeb02896f16a5ecf4ba3a6bd5  66.scr
+  dd25987957519bc632bff2e5082f864004e817d9  119.scr
+  13774c5288b23305acacf37a2644665d7ce2bf41  124.scr
+  52266150904b98f6fe72bcd7377eebb2a6eb5856  203.scr
+  10a6c1c4bcece1e26cda84f286f1a2f0d9fc993c  205.scr
   108ada1f3c129fd021d27978e4bb4531a65a15c1  610.scr
-  5398535acbd0428f35f3be8b1faae061fbee58b1  610.tex
   c71f35f60eb0506cf9d93f09a58577f77e1108a9  611.scr
   2e692f647efd14505804093d0eab3467cd5bc68d  612.scr
-  ff26333df980b25aeb02896f16a5ecf4ba3a6bd5  66.scr
   3b584f84776c076384d662a5e62b65a9cd53dd1f  769.scr
-  66c1e8ad97faca5897c22814798b7adfbdf67655  99.scr
+  eee305f962fd378b9edb9315ff51e8a721d9e5f1  1699.snd
+  499bf91858d58b04c5fda6005ca854010f3c671c  10125.syn
   271f0ad2b45e604981d7f2b2a6ff94387fb0eeec  audio001.002
   e7d81245c67828bdbf23c844809dc65ae023c49a  audio001.map
   90a16713a7c5ebf9afbcf8b423414533330763f2  resource.000

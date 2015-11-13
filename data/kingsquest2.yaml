@@ -12,80 +12,42 @@ packages:
       url: kings_quest_1_2_3
       game: kings_quest_2_romancing_the_throne
     install:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
-    optional:
+    - assets
+    doc:
     - manual.pdf
-files:
-  manual.pdf:
-    install_to: $docdir
 
+files:
   setup_kings_quest_1_2_3.exe:
     unpack:
       format: innoextract
       prefix: "Kings Quest 2"
     provides:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - assets
     - manual.pdf
 
   setup_kings_quest2_2.1.0.18.exe:
     unpack:
       format: innoextract
     provides:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - assets
     - manual.pdf
 
-cksums: |
-  _ 543       logdir
-  _ 601       object
-  _ 354       picdir
-  _ 135       snddir
-  _ 705       viewdir
-  _ 47769     vol.0
-  _ 190481    vol.1
-  _ 247952    vol.2
-  _ 3516      words.tok
+groups:
+  assets: |
+    543       759e39f891a0e1d86dd29d7de485c6ac logdir
+    601       ef32575e784ad173671eb780595338b5 object
+    354       44517da392eb48f2fa1a73deffa56f9f picdir
+    135       3a865d993b9f1bdcfb6e23a2fd45ef0d snddir
+    705       9ef1036a3c7c47b60a32e97a9e44360b viewdir
+    47769     a9a86189c78139a454a9c0c23edce827 vol.0
+    190481    5eb56fcb0022cf3fcbe8a6626e03184b vol.1
+    247952    160aedd09c4e4425257e46e03f6c39b8 vol.2
+    3516      e588b7b3d29f3627023a565e0c806bc5 words.tok
+  gog archives: |
+    16447803  df5045d1f5b1b1ed3626bfc9673fab7a setup_kings_quest_1_2_3.exe
+    15520832  1137e76126b8ec6a73c85e21be66b2e4 setup_kings_quest2_2.1.0.18.exe
+    2010988   de48c82fa50862bf6db2d5b1088034be manual.pdf
 
-  _ 16447803  setup_kings_quest_1_2_3.exe
-  _ 15520832  setup_kings_quest2_2.1.0.18.exe
-  _ 2010988   manual.pdf
-md5sums: |
-  759e39f891a0e1d86dd29d7de485c6ac  logdir
-  ef32575e784ad173671eb780595338b5  object
-  44517da392eb48f2fa1a73deffa56f9f  picdir
-  3a865d993b9f1bdcfb6e23a2fd45ef0d  snddir
-  9ef1036a3c7c47b60a32e97a9e44360b  viewdir
-  a9a86189c78139a454a9c0c23edce827  vol.0
-  5eb56fcb0022cf3fcbe8a6626e03184b  vol.1
-  160aedd09c4e4425257e46e03f6c39b8  vol.2
-  e588b7b3d29f3627023a565e0c806bc5  words.tok
-
-  df5045d1f5b1b1ed3626bfc9673fab7a  setup_kings_quest_1_2_3.exe
-  1137e76126b8ec6a73c85e21be66b2e4  setup_kings_quest2_2.1.0.18.exe
-  de48c82fa50862bf6db2d5b1088034be  manual.pdf
 sha1sums: |
   693c576134d8938d8156287552be6cd6df033ebf  logdir
   91cf06c740c5c56dc3daa9b08217013c7cc40216  object
@@ -101,4 +63,3 @@ sha1sums: |
   bbb1c12883359cd0eb2afad3026dd6117bc42fe9  setup_kings_quest2_2.1.0.18.exe
   8cd72e00a27c6c860f90146e35b3c4a476164e80  manual.pdf
 ...
-
