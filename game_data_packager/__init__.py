@@ -1156,6 +1156,11 @@ class GameData(object):
             if not package.demo_for:
                 assert not set(package.langs).intersection(self.missing_langs)
 
+            # check for missing 'version:'
+            for file in package.install_files:
+                if self.files[file.name].filename == 'version':
+                    assert package.version != GAME_PACKAGE_VERSION, package.name
+
         for filename, wanted in self.files.items():
             if wanted.unpack:
                 assert 'format' in wanted.unpack, filename
