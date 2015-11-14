@@ -13,66 +13,31 @@ packages:
     gog:
       url: teenagent
     install:
-    - advert.res
-    - lan_000.res
-    - lan_500.res
-    - mmm.res
-    - off.res
-    - on.res
-    - ons.res
-    - sam_mmm.res
-    - sam_sam.res
-    - sdr.res
-    - unlogic.res
-    - varia.res
+    - assets
 
 files:
   setup_teenagent_2.1.0.16.exe:
     unpack:
       format: innoextract
     provides:
-    - advert.res
-    - lan_000.res
-    - lan_500.res
-    - mmm.res
-    - off.res
-    - on.res
-    - ons.res
-    - sam_mmm.res
-    - sam_sam.res
-    - sdr.res
-    - unlogic.res
-    - varia.res
+    - assets
 
-cksums: |
-  _ 712500    advert.res
-  _ 535599    lan_000.res
-  _ 9538457   lan_500.res
-  _ 42104     mmm.res
-  _ 2720432   off.res
-  _ 153907    on.res
-  _ 173077    ons.res
-  _ 229636    sam_mmm.res
-  _ 769552    sam_sam.res
-  _ 14665     sdr.res
-  _ 202880    unlogic.res
-  _ 216683    varia.res
-  _ 19429296  setup_teenagent_2.1.0.16.exe
-
-md5sums: |
-  a5b2dda315ea82748201bdfe1892469a  advert.res
-  2b376797af05a8a021a82d3d5abf96d4  lan_000.res
-  0a1f0114b8f3450ccf5d908f0a5d78ec  lan_500.res
-  fc491322ff6c91232e719b06ac9c1cae  mmm.res
-  f91d019934d78905d2acbc88fa56b1cf  off.res
-  c9207f1e31cb2a12be26d9598412294c  on.res
-  98cdf12d28297401381815d9725852fa  ons.res
-  d1bc477bd0f00e77d4d8d9495d644472  sam_mmm.res
-  76bf553afba9272457e759c6bab030e7  sam_sam.res
-  45a12561f17fe0143f52201fdfcf1d02  sdr.res
-  ac505f7117d577140e3ae14f19a32f1c  unlogic.res
-  554699904d1469b32d11ae731003f8fc  varia.res
-  f55bde36b2c8184033df8ba7cd39e046  setup_teenagent_2.1.0.16.exe
+groups:
+  assets: |
+    712500    a5b2dda315ea82748201bdfe1892469a advert.res
+    535599    2b376797af05a8a021a82d3d5abf96d4 lan_000.res
+    9538457   0a1f0114b8f3450ccf5d908f0a5d78ec lan_500.res
+    42104     fc491322ff6c91232e719b06ac9c1cae mmm.res
+    2720432   f91d019934d78905d2acbc88fa56b1cf off.res
+    153907    c9207f1e31cb2a12be26d9598412294c on.res
+    173077    98cdf12d28297401381815d9725852fa ons.res
+    229636    d1bc477bd0f00e77d4d8d9495d644472 sam_mmm.res
+    769552    76bf553afba9272457e759c6bab030e7 sam_sam.res
+    14665     45a12561f17fe0143f52201fdfcf1d02 sdr.res
+    202880    ac505f7117d577140e3ae14f19a32f1c unlogic.res
+    216683    554699904d1469b32d11ae731003f8fc varia.res
+  gog archive: |
+    19429296  f55bde36b2c8184033df8ba7cd39e046 setup_teenagent_2.1.0.16.exe
 
 sha1sums: |
   4bde9aee3c38500b70f8d80ff0ceea485b010aee  advert.res
