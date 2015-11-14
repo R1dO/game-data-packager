@@ -8,20 +8,10 @@ packages:
   iceman-data:
     version: '1.023'
     install:
-    - resource.000
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.005
-    - resource.006
-    - resource.007
-    - resource.008
-    - resource.009
-    - resource.map
-    - version
+    - assets
 
-size_and_md5: |
+groups:
+ assets: |
   26974     d008c0ab07143aa4ab3141326c05ba69 resource.000
   126833    1bbfd115c4468699ab22053a5d0877a4 resource.001
   306891    40dcfaf45c5fa2a0ba141e597d7b3469 resource.002
