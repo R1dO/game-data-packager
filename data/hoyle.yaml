@@ -1,0 +1,146 @@
+---
+longname: "Hoyle's Official Book of Games"
+copyright: © 1989-1995 Sierra
+plugin: scummvm_common
+wiki: Hoyle%27s_Official_Book_of_Games_series
+genre: Card
+
+packages:
+  hoyle-book1-data:
+    longname: "Hoyle's Official Book of Games: Volume 1"
+    copyright: © 1989 Sierra
+    install:
+    - hoyle.set
+    - name.set
+    - resource.001
+    - resource.map
+
+  hoyle-book2-data:
+    longname: "Hoyle's Official Book of Games: Volume 2"
+    copyright: © 1990 Sierra
+    install:
+    - resource.001?book2
+    - resource.002?book2
+    - resource.map?book2
+    - hoylesol files
+
+  hoyle-book3-data:
+    longname: "Hoyle's Official Book of Games: Volume 3"
+    copyright: © 1992 Sierra
+    version: '1.000'
+    install:
+    - 600.scr
+    - resource.000?book3
+    - resource.001?book3
+    - resource.map?book3
+    - version
+
+  hoyle-book4-data:
+    longname: "Hoyle Classic Card Games"
+    copyright: © 1993 Sierra
+    version: '2.000'
+    install:
+    - 600.hep
+    - 600.scr?book4
+    - 600.tex
+    - resource.000?book4
+    - resource.aud
+    - resource.map?book4
+    - version?book4
+    doc:
+    - hlpconv.txt
+
+groups:
+  default group: |
+    4664      20b7406eb122b2ff59c19d6e3a0de0c5 600.hep
+    17412     2dd3c78f45494cbed7a92dae40ede5f0 600.scr
+    16054     a3b5cf814f6f3855ca95bf50c1689c42 600.scr?book4
+    11        52ba0cdc56636275b010e4978d551c43 600.tex
+    319905    409b448c19cb1cc36217d9203d0a5c81 resource.000?book3
+    2000132   f7b15d8fa44572f3deb368a78b4f6ddf resource.000?book4
+    518127    94b171f4bc285cf19e3528be84cbc1ee resource.001
+    98138     141d6b7b691c694663cafe94ed3d034b resource.001?book2
+    526438    1e3f2fbae3ebb9ca37915eaad1887b90 resource.001?book3
+    196631    ff86a25294a3c7ec3133aa6df7cdc76f resource.002?book2
+    3321346   7d39703518d7c085e7ca20986fda725a resource.aud
+    4386      0af9a3dcd72a091960de070432e1f524 resource.map
+    2100      4f894d203f64aa23d9ff64d30ae36926 resource.map?book2
+    2205      1728af1f6a85938c3522e64449e76ca1 resource.map?book3
+    4352      2b577c975cc8d8d43f61b6a756129fe3 resource.map?book4
+    8         4e572926b0d3797c3bfd48ab1ddd670a version
+    49        eb09e55a6f39ee61be439e9773598c15 version?book4
+    10        0dd1c38730889ed83bbbcf1d00d1bc9c name.set
+    23        04ec3402b9130a99b8e0845a0d8ca608 hoyle.set
+    5628      dcbfc80d71c1401d62fdc9335ecdcea8 hlpconv.txt
+  hoylesol files: |
+    1856      72394b421419314aab5770f9572758a5 hoylesol.100
+    1742      aad1f0cb59b8082fe7f6005f46e6b027 hoylesol.101
+    1856      e29b18114bfa9971ca841173830efe64 hoylesol.102
+    1628      fc3f73bdd09d8f65d86b59cdbc6808d8 hoylesol.103
+    1628      8f37b8dacddac31061847c2a000c482f hoylesol.104
+    1400      8b15e2e0cf7441bb96cce1fee5034712 hoylesol.105
+    1172      37147f6268daa0fabffe74875e86873c hoylesol.106
+    1514      c7b9061c50390496b2c195b245725cef hoylesol.107
+    1058      cd2169afe394e7acd4f32d8204b4ea3f hoylesol.108
+    1058      deecca2119f3f63f502bb83424d97cd4 hoylesol.109
+    2540      2be3a87a0348fc519c700190b616803f hoylesol.110
+    1856      12c0000cd48cd4200581307b58a8eb62 hoylesol.111
+    2198      5d55f67bc5e5317c4977bd4c89b941a1 hoylesol.112
+    1970      f129ac4517ca736ef2cfe486a1ad89b9 hoylesol.113
+    2540      ec00a2f588ce65df15869088dd45c865 hoylesol.114
+    2768      b9d439b3a5de424dd62cbec72d2fc74c hoylesol.115
+    1514      07e7d17424dbd2d607e58ebfac442879 hoylesol.116
+    1628      eb72f9bbe2adf3dd6868f97cec799170 hoylesol.117
+    3359      f183bd752ea94c81826eb43f90fb80b9 hoylesol.118
+    1742      d9bc255f6c7568b697deae4dd798ec4c hoylesol.119
+    2198      7f0dcd568a1d31fb9b2ad1332f9ecc7a hoylesol.120
+    944       6a7826783164b8ecd15db1235f06bd2f hoylesol.121
+    6290      2d1221fac94bbe91dfff91e29cb6ef82 hoylesol.122
+    2312      28f8831317a62b4232489909b0a6ef00 hoylesol.123
+    4622      ab63b6ea6d856517983157c7c8869d52 hoylesol.124
+    2426      3f78783021990be8a4c1f966b0182c98 hoylesol.125
+    3359      738b74b77265ec605d9cb9bcb4aa6514 hoylesol.126
+    2312      0412517e6cb109b1155e951ed92ea268 hoylesol.127
+    1742      9863043730deabae12d0211da7986137 hoylesol.400
+    1514      bfdeb3699a77966f218028a2ee6bafc6 hoylesol.401
+    1856      237d6a86261e70dd733dd46a6e76aeca hoylesol.402
+    1628      21e93b78689ad6c02fb62d3345a51e9e hoylesol.403
+    1628      3fcd62f13ba6d24780e385527758507f hoylesol.404
+    1400      71db62de8a08d14ad054f5129478e8f9 hoylesol.405
+    1058      de28df1ac71ccdebbdfcf3ba9f8dbe1e hoylesol.406
+    1514      e40a3397a6d9a0a362824dbc849268aa hoylesol.407
+    1058      6e531c25541bba97c33def6c4c6b0e32 hoylesol.408
+    1058      1e2a7987cc36940e78bad2a399f4356a hoylesol.409
+    2540      a841d7d6da6fc932100a4e3d705e5144 hoylesol.410
+    1856      53290004247caa5e4accbe4664d51c6b hoylesol.411
+    2198      96619281e3127cc4d2050a921c18d284 hoylesol.412
+    1970      4908b00ce5b1b9de2e10026394ebebd2 hoylesol.413
+    2540      2d039dca81e4294064062bc2b0178995 hoylesol.414
+    2768      bf77dc753cd8f04de064b4b9f6032c3c hoylesol.415
+    1514      15fb424887b8706185075c21b35e720b hoylesol.416
+    1742      2351d40a90317bdc88bddd33f08ae7ec hoylesol.417
+    3359      f183bd752ea94c81826eb43f90fb80b9 hoylesol.418
+    1742      e633f408e8ad7835be6b9be89b816391 hoylesol.419
+    1514      3b0ae06f7e926fd7b9c7d2900eae33ef hoylesol.420
+    830       909018e3f952e9d5bbf1c8c619bf48e9 hoylesol.421
+    6290      fdc0d360d9e8bba39b0faa4eb37ce0d6 hoylesol.422
+    2312      3c7277f88afd71323652c0eca1b5e3ce hoylesol.423
+    3824      63d4cabe4a72c3149a8f6670c8177e99 hoylesol.424
+    2426      3f78783021990be8a4c1f966b0182c98 hoylesol.425
+    3245      08fc4f9c4b8d4da942fe05d82e645856 hoylesol.426
+    2198      6483c3e407b0a55ea8b517c91a0a448e hoylesol.427
+
+sha1sums: |
+  934885b3d8db05b5c1e3c76f0b61400ccc51b8a1  600.scr
+  17fcba9241cfda355597c83d2b5f84620d69a458  600.scr?book4
+  ff518470260f44f54b4f74998f160ede4c41b0c3  hlpconv.txt
+  9c1f7ab600d792ed00e51d0154d3c57320f8a6fa  hoylesol.122
+  937a752220004e64972df4b14e6a1efec4b8416f  hoylesol.422
+  a028a86a5040101d44622ec20d9f5defbd954e74  resource.000?book3
+  db99b7e427f97840fc49772176c7c3247350ebec  resource.000?book4
+  8bf4e5329cfbaab0fdc8286f7d0968226745a151  resource.001
+  e4e402203a90631d4b113cac45ad9f64c38bc0d6  resource.001?book2
+  be90cce5a6cb4b8b94baf0c76f34e6b5abcc23d7  resource.001?book3
+  1d5516190fffb2ecc4731a6c8d9785782a3ecd47  resource.002?book2
+  20af998d9a3259c41b39b7c9f61b681600aa015d  resource.aud
+...
