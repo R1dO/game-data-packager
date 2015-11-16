@@ -1,0 +1,159 @@
+---
+longname: Rex Nebular and the Cosmic Gender Bender
+copyright: © 1992 Microprose
+plugin: scummvm_common
+wiki: Rex_Nebular_and_the_Cosmic_Gender_Bender
+
+gog:
+  url: rex_nebular_and_the_cosmic_gender_bender
+  path: "Rex Nebular and the Cosmic Gender Bender"
+steam:
+  id: 328430
+  path: "common/Rex Nebular and the Cosmic Gender Bender"
+
+packages:
+  rex-nebular-and-the-cosmic-gender-bender-data:
+    install:
+    - assets
+    optional:
+    - dubious files
+    doc:
+    - gog documentation
+
+files:
+  setup_rex_nebular_2.1.0.5.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+    - dubious files
+    - gog documentation
+
+  gog_rex_nebular_and_the_cosmic_gender_bender_2.0.0.2.sh:
+    unpack:
+      format: zip
+    provides:
+    - assets
+    - dubious files
+    - gog documentation
+
+groups:
+  dubious files: |
+    30        7561f0315b1b199190fcbc2e3e8583f9 config.rex
+    44        f68c044f84708de6961a06431c6cc9b2 happy.rex
+  assets: |
+    2608      d7a1484128d0d1b663928674fcd5e62a digital.aga
+
+    49        92a785a569490bde66a03ed4a70c2ae5 rexend1.res
+    49        8d28eabea20f6eacaf9dd6826068140f rexend2.res
+    114       7b25d3fd205f5d44d5b340a17d700a38 rexend3.res
+    407       1473c0dc013df3f0540ff7b7aabd41b7 rexopen.res
+    147       04e140654ec0ed6e2c18fdb808130236 death.res
+    27        d7bfcd4e989200329c529c155fa63ceb evolve.res
+    148       286176989183591b1a81e4c6384033f1 sets.res
+
+    11460     1b416406b0d4731709609e7aad9b1190 asound.001
+    24909     25d4861ecffaaa214f2111045b466995 asound.002
+    26058     704ee1f1abe13d943bc6182d292e725a asound.003
+    15896     4156bfde67c1bda8c5d25168604fc6b4 asound.004
+    13886     e30736dcfee189f8b8715c0f8d2b3fe6 asound.005
+    13919     cb2caae0b4701392e6c51d972df25440 asound.006
+    16714     b6490be9480ad27390a55d767a6bb559 asound.007
+    11412     492798826f7553f800fb019a8741b4c3 asound.008
+    40071     670097d05ff968cbd8e8f032e0392f41 asound.009
+    3290      98f2ceb79d9df7b4d108a304b26368e6 isound.001
+    3478      a21a46384a56c584d05c6fbca994e34e isound.002
+    3794      d0b4c48de6eb78eec0bf6369c66bf410 isound.003
+    3794      aec7f555d36ecac9b4a82b681dfc1e9b isound.004
+    3380      5ac0d16c7d12afed72eb55a402b3186e isound.005
+    2914      80822a2886293c8fe30f51b8c211db29 isound.006
+    3140      5e97dd51f5d595df3e7764b7706b6fb2 isound.007
+    3262      c55841fa8d489811e4e1299c85d3ea98 isound.008
+    3304      fbd438625a0b5a4faa3b045bc4e0f30f isound.009
+    14214     051ba52ce8bbf2e661562f6ff9a09f7b psound.001
+    24992     b0a533995ff1d20f947cab4c02f80377 psound.002
+    26946     9f935c056f8a86228c5c8bf2b4e2b958 psound.003
+    16463     c9a59f956591b020824f825f558cc333 psound.004
+    14560     3f8d84fa815500127b3df750b8b85752 psound.005
+    14862     2784bcf6e83f75ac0a126b90a1fb6b75 psound.006
+    17209     66aa1f6bd18aae687590b697dbe20ba9 psound.007
+    12890     0b4fbeac7e059e4ce19735a969d0abfb psound.008
+    37740     0c309ff88c1dac81f353b62f7c9e2c06 psound.009
+    11352     5898c4d352ada6728124c803e758d968 rsound.001
+    21748     59ae82cdedcbcded7b74c1e547d68eb6 rsound.002
+    24506     9a8a727c397e4e199ffa58b3053fb180 rsound.003
+    16352     04a3a0f6135217e086c4af734242794b rsound.004
+    12522     bc6bcc9ef1826a6e0ce049d484d59bc2 rsound.005
+    12342     3308bdc58f748b37e728f564d2bd4b9c rsound.006
+    12208     9bc7e307eefb9c3bea7b7244977d4b9a rsound.007
+    10922     1305b15a7dce94409a3de17f1627729b rsound.008
+    40128     87354d49b67ce2c10668019876f3fcca rsound.009
+    4096      6ae59e64850377ee5470c854761551ea xsound.000
+    2083078   ae43d0dc5ccdbb079d8183e5f69f26bb global.hag
+    50710     3d979d8209ff69eee5aadeace64028fe section0.hag
+    927222    95d1d15df9e1d6c4059b5e61cc8a859e section1.hag
+    966332    7ec02cfdeb4de9c359e019399f6adc04 section2.hag
+    2046402   0e97c89bc144ee2e4a94f02d3d4e280a section3.hag
+    414587    9656d42c2deeb2bb53b206664994ea69 section4.hag
+    593297    ac300acbca8768dcb096dbfc4bcd22e4 section5.hag
+    737577    0fff5f078c628a4aa24ee3afffe361d9 section6.hag
+    425895    7d9e726099dd2ebfb4076cb8b2872b38 section7.hag
+    594528    3c266cdd8bb25d3d1677071a74b13703 section8.hag
+    2548727   8694897c1e5e4f422929c9f56346e4b1 section9.hag
+  gog documentation: |
+    2869218   064d9f0d9decb22c69de655ed1e1d667 audiolog.pdf
+    7280      9283a3f5f6eee500220cafe0b69604bb bonus.txt
+    10854885  d14ba639d06d201f0094886791021d08 hintbook.pdf
+    5994834   e212b698363d15c265af08f0963ce62e manual.pdf
+    2638      85b69017215da17c8241e6719ec0472d readme.txt
+  archives: |
+    34455811  0cb43b642a855662946322c83be371c8 gog_rex_nebular_and_the_cosmic_gender_bender_2.0.0.2.sh
+    43297880  1ba53cc8fe50c6cdb96ace0b3fe08bf6 setup_rex_nebular_2.1.0.5.exe
+
+sha1sums: |
+  c4bef95b6be4aeb4ecacec2d2849b5be93d28fa2  asound.001
+  f64fc75db2701e1067c1b57db93f220d25772579  asound.002
+  8591493402ef0e284b214836b949f2a08156f199  asound.003
+  c8a9c0bf737e62b6a1959c93f7a656ee5fcb5474  asound.004
+  0e48c97e31ee1a4b99c4945d2f4802a915e8d1c6  asound.005
+  83c2e85984e4cc4ee12c6b2f802595404ac468e1  asound.006
+  189ba5bb6884fb01c6fc7c54c4eca63b19d2497f  asound.007
+  0e1cd848517342ceeffe75fad0057254509eadf5  asound.008
+  b9292f1dfd797fed6c14068dd2fafe043b544c64  asound.009
+  6926b7ec82d25ca2351bfb7824aabc0675c2dd7a  psound.001
+  ce9227c013c94b5d9a26b9089cdda081d903a188  psound.002
+  bb6f9fb087872d780b9584be1836a05ea3fcc40d  psound.003
+  dd22027a08fd47d34af3d4630d4cdfb26da5cc40  psound.004
+  7caf40c01e88a1dea8042fcbf4a849b3095dc5a3  psound.005
+  36a6afecaf6d5f91c230eec95cae3278b168f7a5  psound.006
+  d52a21ecf7d9bcebca86c81b432522ceb135618b  psound.007
+  54316285cdfcf62d037907bc3059e1f102623157  psound.008
+  a72189576b5c9554a3e94ea0e10c454024984777  psound.009
+  9b776fc3d0946e4316b89e4eb421c672d6dcdb1a  rsound.001
+  1c9846bb6ce2600a5339e4ccaa88043f07d05df9  rsound.002
+  102b0e16b28af4fb6e33909ea43e56472613ae42  rsound.003
+  3dc8f2dd810f8606b0ce0ed3f2b8c9efbd7e9cfe  rsound.004
+  888610ae6f3ca8d8bc5d511f80f736673197f94d  rsound.005
+  b8cf413cd97329fbfb7ebc0781693808bb81e109  rsound.006
+  7aa417567cbd5c751d8f85bff4050e57b34f6ddf  rsound.007
+  0c5c9c38ef15bbeaf5e153afebffdd011c3c76ce  rsound.008
+  a16ceee47afb651467cb263ccbad2ccef26b3a1e  rsound.009
+  aa221e4752782c5e087ff9c9f129ec4baf6df4d7  global.hag
+  03cabc05b98ed2672bbbe24f582df6fd3473eab5  section0.hag
+  73300566a34d9ae36a61af106c565b6d476061a5  section1.hag
+  568ff505588501f6a8243b205f6201aceeb95a0d  section2.hag
+  23ad0b703fdbfb21d0cbb72b25cec7e26b6f399f  section3.hag
+  b46b427c02b2ff8436a2e9e970c4550918548d8f  section4.hag
+  8f14e526ed8ddd1231484ea43c57a43ade26efc7  section5.hag
+  bdac15f166fb7ecd40315dd201a2f6eeeef0571f  section6.hag
+  46a9a26b7a64c47eaecbea552eb31458d491a524  section7.hag
+  1560da50f4570a046de5a372d595aa6ec03bc541  section8.hag
+  647ac8c1f9395f20c7068f9bd982ffb6d4cc7334  section9.hag
+
+  e52c3e6227b99760c4cc921a713c4fb111212402  audiolog.pdf
+  38ad7a657f33889808dd0dc577c1184d130c7dbe  bonus.txt
+  db78e1a5cd2a5dd9623851fca859b12524289038  hintbook.pdf
+  f9c13a28d35f32926b92a314c79caac98d9503aa  manual.pdf
+  24ac02a45515d0e7fe38df2cd52b5e034008b413  gog_rex_nebular_and_the_cosmic_gender_bender_2.0.0.2.sh
+  6c24b299a6cc877e3f6170f48d86a85b689ce435  setup_rex_nebular_2.1.0.5.exe
+...
