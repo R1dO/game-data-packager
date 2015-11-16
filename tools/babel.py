@@ -60,6 +60,7 @@ for name, game in load_games().items():
     stats['missing_langs'] = game.missing_langs
     stats['fullfree'] = fullfree
     stats['somefree'] = somefree
+    stats['url_wikipedia'] = game.wikipedia
     stats['url_steam'] = game.url_steam
     stats['url_gog'] = game.url_gog
     stats['url_dotemu'] = game.url_dotemu
@@ -107,7 +108,7 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 <head>
 <title>Game-Data-Packager</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<style>
+<style type="text/css">
 '''
 )
 
@@ -124,6 +125,7 @@ html.write(''' {
 </style>
 </head>
 
+<body>
 <h1>Debian Games Team</h1>
 <img src="../proposed-logo.png" height="64" width="64" alt="Debian Games Team logo">
 <h2>List of games supported by <code>game-data-packager</code> in git</h2>
@@ -141,6 +143,7 @@ for lang in langs_order:
 html.write('''<table border=1 cellspacing=0>
 <tr>
 <td colspan=2>&nbsp</td>
+<td>WP</td>
 <td>yaml</td>
 '''
 )
@@ -156,6 +159,7 @@ html.write('''<td>Demo</td>
 # BODY
 last_genre = None
 demos = 0
+wikipedia = set()
 for game in games:
     html.write('<tr>\n')
     genre = game['genre']
@@ -175,11 +179,20 @@ for game in games:
         html.write(game['longname'])
     html.write('</td>')
 
+    wp = game.get('url_wikipedia')
+    if wp in wikipedia:
+        html.write('<td><b>&Prime;</b></td>')
+    elif wp:
+        html.write('<td><a href="%s"><b>W</b></a></td>' % wp)
+        wikipedia.add(wp)
+    else:
+        html.write('<td>&nbsp;</td>')
+
     if 'todo' in game:
         html.write('<td>&nbsp;</td>')
     else:
         html.write('<td><a href="http://anonscm.debian.org/cgit/pkg-games/game-data-packager.git/tree/data/%s.yaml">'
-                   '<img src="gear.png"></a></td>' % game['shortname'])
+                   '<img src="gear.png" alt="gear icon"></a></td>' % game['shortname'])
 
     for lang in langs_order:
         count = game.get(lang,None)
@@ -212,7 +225,7 @@ for game in games:
     html.write('</tr>\n')
 
 # TOTAL
-html.write('<tr><td colspan=3><b>Total</b></td>\n')
+html.write('<tr><td colspan=4><b>Total</b></td>\n')
 for lang in langs_order:
     html.write('  <td><b>%i</b></td>\n' % langs[lang])
 
@@ -226,6 +239,7 @@ html.write('''
 <li>! : language is missing</li>
 <li>* : multi-lang support in a single package</li>
 </ul>
+</body>
 </html>
 '''
 )
