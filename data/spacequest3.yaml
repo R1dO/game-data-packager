@@ -7,17 +7,22 @@ wiki: Space_Quest_III
 gameid: sq3
 
 packages:
-  spacequest3-data:
+  spacequest3-en-data:
+    provides: spacequest3-data
     version: '1.018'
     gog:
       url: space_quest_1_2_3
     install:
     - assets
-    optional:
+    doc:
     - manual.pdf
+
+  spacequest3-de-data:
+    provides: spacequest3-data
+    langs: [de,en]
+    DISABLED: info is missing
+
 files:
-  manual.pdf:
-    install_to: $docdir
   setup_space_quest_1_2_3.exe:
     unpack:
       format: innoextract

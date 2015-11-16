@@ -5,6 +5,7 @@ copyright: © 1991 Sierra Entertainment
 plugin: scummvm_common
 wiki: EcoQuest
 gameid: ecoquest
+missing_langs: [de,es]
 
 help_text: |
   The French version can also be played in English.
@@ -40,6 +41,16 @@ packages:
     - resource.003
     - resource.map
     - version
+
+  ecoquest1-de-data:
+    provides: ecoquest1-data
+    langs: [de,en]
+    DISABLED: info is missing
+
+  ecoquest1-es-data:
+    provides: ecoquest1-data
+    langs: [es,en]
+    DISABLED: info is missing
 
   ecoquest1-fr-data:
     version: '1.000'

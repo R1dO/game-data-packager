@@ -4,9 +4,11 @@ longname: "Conquests of the Longbow: The Legend of Robin Hood"
 copyright: © 1992 Sierra
 plugin: scummvm_common
 wiki: Conquests_of_the_Longbow
+missing_langs: [de]
 
 packages:
   conquests-of-the-longbow-v10-data:
+    provides: conquests-of-the-longbow-data
     better_version: conquests-of-the-longbow-v11-data
     version: '1.0'
     install:
@@ -14,9 +16,15 @@ packages:
     - patch
 
   conquests-of-the-longbow-v11-data:
+    provides: conquests-of-the-longbow-data
     version: '1.1'
     install:
     - assets v1.1
+
+  conquests-of-the-longbow-de-data:
+    provides: conquests-of-the-longbow-data
+    langs: [de,en]
+    DISABLED: missing info
 
 files:
   ConquestOfTheLongbow(LBPAT).zip:

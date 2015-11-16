@@ -5,6 +5,7 @@ copyright: © 1991 Sierra On-Line
 plugin: scummvm_common
 wiki: Police_Quest_III
 gameid: pq3
+missing_langs: [de]
 
 help_text: |
   ScummVM complains about un-needed unofficial patches.
@@ -12,7 +13,8 @@ help_text: |
   Please provide checksums of original files if you have thoses.
 
 packages:
-  policequest3-data:
+  policequest3-en-data:
+    provides: policequest3-data
     version: '1.00'
     gog:
       url: police_quest_1_2_3_4
@@ -22,6 +24,11 @@ packages:
     doc:
     - pq3_map_color.jpg
     - pq3pen.bmp
+
+  policequest3-de-data:
+    provides: policequest3-data
+    langs: [de,en]
+    DISABLED: missing info
 
 files:
   setup_police_quest3_2.1.0.10.exe:

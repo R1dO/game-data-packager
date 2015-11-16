@@ -4,7 +4,7 @@ copyright: © 1990 Sierra Entertainment
 plugin: scummvm_common
 wiki: King%27s_Quest_V
 gameid: kq5
-missing_langs: [ja]
+missing_langs: [de,fr,it,ja]
 
 packages:
   kingsquest5-en-data:
@@ -17,6 +17,21 @@ packages:
       game: kings_quest_5_absence_makes_the_heart_go_yonder
     install:
     - assets
+
+  kingsquest5-de-data:
+    provides: kingsquest5-data
+    langs: [de,en]
+    DISABLED: missing info
+
+  kingsquest5-fr-data:
+    provides: kingsquest5-data
+    langs: [fr,en]
+    DISABLED: missing info
+
+  kingsquest5-it-data:
+    provides: kingsquest5-data
+    langs: [it,en]
+    DISABLED: missing info
 
   kingsquest5-ja-data:
     provides: kingsquest5-data

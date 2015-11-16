@@ -6,6 +6,7 @@ plugin: scummvm_common
 wiki: Leisure_Suit_Larry_5
 gameid: lsl5
 genre: Adult Humor
+missing_langs: [de]
 
 help_text: |
   The french version is not currently sold on GOG.com.
@@ -47,6 +48,11 @@ packages:
     - version
     optional:
     - Leisure Suit Larry 5 - Manual.pdf
+
+  larry5-de-data:
+    provides: larry5-data
+    langs: [de,en]
+    DISABLED: info is missing
 
   larry5-fr-data:
     langs: [fr,en]

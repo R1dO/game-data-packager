@@ -6,7 +6,7 @@ plugin: scummvm_common
 wiki: Castle_of_Dr._Brain
 gameid: castlebrain
 genre: Kids
-missing_langs: [ja]
+missing_langs: [de,es,ja]
 
 packages:
   drbrain1-en-data:
@@ -46,6 +46,16 @@ packages:
     - version
     optional:
     - brainsg.dir
+
+  drbrain1-de-data:
+    provides: drbrain1-data
+    langs: [de,en]
+    DISABLED: missing info
+
+  drbrain1-es-data:
+    provides: drbrain1-data
+    langs: [es,en]
+    DISABLED: missing info
 
   drbrain1-ja-data:
     provides: drbrain1-data

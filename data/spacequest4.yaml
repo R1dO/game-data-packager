@@ -59,6 +59,16 @@ packages:
     - resource.map
     - version
 
+  spacequest4-de-data:
+    provides: spacequest4-data
+    langs: [de,en]
+    DISABLED: missing data
+
+  spacequest4-es-data:
+    provides: spacequest4-data
+    langs: [es,en]
+    DISABLED: missing data
+
   spacequest4-fr-data:
     longname: "Space Quest IV: Roger Wilco et les Voyageurs dans le Temps"
     version: '1.00'
@@ -86,10 +96,15 @@ packages:
     - resource.map?fr
     - version?fr
 
+  spacequest4-it-data:
+    provides: spacequest4-data
+    langs: [it,en]
+    DISABLED: missing data
+
   spacequest4-ja-data:
     provides: spacequest4-data
     longname: "スペースクエストIV"
-    lang: [ja,en]
+    langs: [ja,en]
     DISABLED: missing data
 
 files:
