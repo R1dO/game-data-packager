@@ -4,6 +4,7 @@ franchise: Simon the Sorcerer
 copyright: © 1995 Adventure Soft
 plugin: scummvm_common
 wiki: "Simon_the_Sorcerer_II:_The_Lion,_the_Wizard_and_the_Wardrobe"
+missing_langs: [es,he,it]
 
 packages:
   simon-the-sorcerer2-en-data:
@@ -18,7 +19,7 @@ packages:
     - simon2.wav
     - stripped.txt
     - tbllist
-    optional:
+    doc:
     - manual.pdf
 
   simon-the-sorcerer2-de-data:
@@ -33,7 +34,7 @@ packages:
     - simon2.ogg
     - stripped.txt?de
     - tbllist
-    optional:
+    doc:
     - manual.pdf
 
   simon-the-sorcerer2-fr-data:
@@ -48,13 +49,10 @@ packages:
     - simon2.voc
     - stripped.txt?fr
     - tbllist
-    optional:
+    doc:
     - manual.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
-
   setup_simon_the_sorcerer_2.exe:
     unpack:
       format: innoextract
