@@ -8,99 +8,47 @@ packages:
   transport-tycoon-deluxe-data:
     install_to: usr/share/games/openttd/baseset
     install:
-    - sample.cat
-    - trg1r.grf
-    - trgcr.grf
-    - trghr.grf
-    - trgir.grf
-    - trgtr.grf
+    - assets
 
   transport-tycoon-deluxe-music:
     longname: Transport Tycoon Deluxe (music)
     expansion_for: transport-tycoon-deluxe-data
     install_to: usr/share/games/openttd/baseset
     install:
-    - gm_tt00.gm
-    - gm_tt01.gm
-    - gm_tt02.gm
-    - gm_tt03.gm
-    - gm_tt04.gm
-    - gm_tt05.gm
-    - gm_tt06.gm
-    - gm_tt07.gm
-    - gm_tt08.gm
-    - gm_tt09.gm
-    - gm_tt10.gm
-    - gm_tt11.gm
-    - gm_tt12.gm
-    - gm_tt13.gm
-    - gm_tt14.gm
-    - gm_tt15.gm
-    - gm_tt16.gm
-    - gm_tt17.gm
-    - gm_tt18.gm
-    - gm_tt19.gm
-    - gm_tt20.gm
-    - gm_tt21.gm
+    - musics
 
-cksums: |
-  _ 1608618   sample.cat
-  _ 2426943   trg1r.grf
-  _ 267110    trgcr.grf
-  _ 410483    trghr.grf
-  _ 342377    trgir.grf
-  _ 559392    trgtr.grf
-  _ 29714     gm_tt00.gm
-  _ 50427     gm_tt01.gm
-  _ 46406     gm_tt02.gm
-  _ 60986     gm_tt03.gm
-  _ 62712     gm_tt04.gm
-  _ 62952     gm_tt05.gm
-  _ 69089     gm_tt06.gm
-  _ 37182     gm_tt07.gm
-  _ 17877     gm_tt08.gm
-  _ 57940     gm_tt09.gm
-  _ 43530     gm_tt10.gm
-  _ 57439     gm_tt11.gm
-  _ 40305     gm_tt12.gm
-  _ 35152     gm_tt13.gm
-  _ 14751     gm_tt14.gm
-  _ 60572     gm_tt15.gm
-  _ 48614     gm_tt16.gm
-  _ 43766     gm_tt17.gm
-  _ 52082     gm_tt18.gm
-  _ 50279     gm_tt19.gm
-  _ 64219     gm_tt20.gm
-  _ 46812     gm_tt21.gm
-md5sums: |
-  9212e81e72badd4bbe1eaeae66458e10  sample.cat
-  b04ce593d8c5016e07473a743d7d3358  trg1r.grf
-  3668f410c761a050b5e7095a2b14879b  trgcr.grf
-  06bf2b7a31766f048baac2ebe43457b1  trghr.grf
-  0c2484ff6be49fc63a83be6ab5c38f32  trgir.grf
-  de53650517fe661ceaa3138c6edb0eb8  trgtr.grf
-  45cfec1b9d8c7a0ad45e755833cbf221  gm_tt00.gm
-  ab14ed3392d848abd2a2e90a9d75d121  gm_tt01.gm
-  dd4f696e4be5987ce738257b08b50171  gm_tt02.gm
-  a1bfde23343df9e4063419bf29c166b8  gm_tt03.gm
-  4e6943aa0c455203d76c79389054747d  gm_tt04.gm
-  cee281cb85a2e2343552d97640545a47  gm_tt05.gm
-  26d1de5efa8675f94065784e9d539e49  gm_tt06.gm
-  6f2691e17558f552ec4c565e4ab7139c  gm_tt07.gm
-  a42bf2cb3340a822f1a69646fc7a487d  gm_tt08.gm
-  eb35761a58a8df3c59ed8929cce13916  gm_tt09.gm
-  42fecd686720a785d20a78590c466a82  gm_tt10.gm
-  50ef1ef02e49d2112786dd45e69dc3ee  gm_tt11.gm
-  4ce707a0e0e72419f0681dd9bd95271b  gm_tt12.gm
-  e765753be29d889ec818f38009103619  gm_tt13.gm
-  270e2d63bd32b95a4d007ce15a6ce45f  gm_tt14.gm
-  89e116a1c0c69f1845cc903a9bfbe460  gm_tt15.gm
-  f824e2371b3bedfe61aad4b9c62dd6be  gm_tt16.gm
-  1b23eebb0796c1ab99cd97fa7082cf7b  gm_tt17.gm
-  15650de3bad645d0e88c4f5c7a2df92a  gm_tt18.gm
-  7aec079e15bd09588660b85545ac4dfc  gm_tt19.gm
-  1509097889dee617aa1e9a1738a5a930  gm_tt20.gm
-  a8d0aaad02e1a762d8d54cf81da56bab  gm_tt21.gm
+groups:
+  assets: |
+    1608618   9212e81e72badd4bbe1eaeae66458e10 sample.cat
+    2426943   b04ce593d8c5016e07473a743d7d3358 trg1r.grf
+    267110    3668f410c761a050b5e7095a2b14879b trgcr.grf
+    410483    06bf2b7a31766f048baac2ebe43457b1 trghr.grf
+    342377    0c2484ff6be49fc63a83be6ab5c38f32 trgir.grf
+    559392    de53650517fe661ceaa3138c6edb0eb8 trgtr.grf
+  musics: |
+    29714     45cfec1b9d8c7a0ad45e755833cbf221 gm_tt00.gm
+    50427     ab14ed3392d848abd2a2e90a9d75d121 gm_tt01.gm
+    46406     dd4f696e4be5987ce738257b08b50171 gm_tt02.gm
+    60986     a1bfde23343df9e4063419bf29c166b8 gm_tt03.gm
+    62712     4e6943aa0c455203d76c79389054747d gm_tt04.gm
+    62952     cee281cb85a2e2343552d97640545a47 gm_tt05.gm
+    69089     26d1de5efa8675f94065784e9d539e49 gm_tt06.gm
+    37182     6f2691e17558f552ec4c565e4ab7139c gm_tt07.gm
+    17877     a42bf2cb3340a822f1a69646fc7a487d gm_tt08.gm
+    57940     eb35761a58a8df3c59ed8929cce13916 gm_tt09.gm
+    43530     42fecd686720a785d20a78590c466a82 gm_tt10.gm
+    57439     50ef1ef02e49d2112786dd45e69dc3ee gm_tt11.gm
+    40305     4ce707a0e0e72419f0681dd9bd95271b gm_tt12.gm
+    35152     e765753be29d889ec818f38009103619 gm_tt13.gm
+    14751     270e2d63bd32b95a4d007ce15a6ce45f gm_tt14.gm
+    60572     89e116a1c0c69f1845cc903a9bfbe460 gm_tt15.gm
+    48614     f824e2371b3bedfe61aad4b9c62dd6be gm_tt16.gm
+    43766     1b23eebb0796c1ab99cd97fa7082cf7b gm_tt17.gm
+    52082     15650de3bad645d0e88c4f5c7a2df92a gm_tt18.gm
+    50279     7aec079e15bd09588660b85545ac4dfc gm_tt19.gm
+    64219     1509097889dee617aa1e9a1738a5a930 gm_tt20.gm
+    46812     a8d0aaad02e1a762d8d54cf81da56bab gm_tt21.gm
+
 sha1sums: |
   57ff8c136db86a5d91a497931b2d6df53e8635b5  sample.cat
   6d385630f7ad8413758bbfe8b4b16b0ed946e7ee  trg1r.grf
