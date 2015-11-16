@@ -13,12 +13,7 @@ packages:
     better_version: quest-for-glory1-en-data
     gameid: qfg1
     install:
-    - resource.000?ega
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map?ega
+    - assets ega
 
   quest-for-glory1-en-data:
     provides: quest-for-glory1-data
@@ -29,81 +24,7 @@ packages:
       game: quest_for_glory_vga_remake
     gameid: qfg1vga
     install:
-    - 120.hep
-    - 120.scr
-    - 121.hep
-    - 121.scr
-    - 13.hep
-    - 13.scr
-    - 141.hep
-    - 141.scr
-    - 15.hep
-    - 15.scr
-    - 16.hep
-    - 16.scr
-    - 171.hep
-    - 171.scr
-    - 21.hep
-    - 21.scr
-    - 210.hep
-    - 210.scr
-    - 22.hep
-    - 22.scr
-    - 222.hep
-    - 222.scr
-    - 223.hep
-    - 223.scr
-    - 29.hep
-    - 29.msg
-    - 29.scr
-    - 301.hep
-    - 301.scr
-    - 31.hep
-    - 31.scr
-    - 314.hep
-    - 314.scr
-    - 32.hep
-    - 32.scr
-    - 331.hep
-    - 331.scr
-    - 334.hep
-    - 334.scr
-    - 37.hep
-    - 37.scr
-    - 39.hep
-    - 39.scr
-    - 41.hep
-    - 41.scr
-    - 45.hep
-    - 45.scr
-    - 54.hep
-    - 54.scr
-    - 54.v56
-    - 55.hep
-    - 55.scr
-    - 600.hep
-    - 600.scr
-    - 70.hep
-    - 70.scr
-    - 73.hep
-    - 73.scr
-    - 76.hep
-    - 76.scr
-    - 815.msg
-    - 91.hep
-    - 91.scr
-    - 93.v56
-    - 95.msg
-    - 952.hep
-    - 952.scr
-    - 96.hep
-    - 96.scr
-    - 97.hep
-    - 97.scr
-    - 988.v56
-    - resource.000
-    - resource.map
-    - version
+    - assets vga
     doc:
     - quest for glory 1 - manual.pdf
 
@@ -122,262 +43,97 @@ files:
     unpack:
       format: innoextract
     provides:
-    - resource.000?ega
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map?ega
-    - 120.hep
-    - 120.scr
-    - 121.hep
-    - 121.scr
-    - 13.hep
-    - 13.scr
-    - 141.hep
-    - 141.scr
-    - 15.hep
-    - 15.scr
-    - 16.hep
-    - 16.scr
-    - 171.hep
-    - 171.scr
-    - 21.hep
-    - 21.scr
-    - 210.hep
-    - 210.scr
-    - 22.hep
-    - 22.scr
-    - 222.hep
-    - 222.scr
-    - 223.hep
-    - 223.scr
-    - 29.hep
-    - 29.msg
-    - 29.scr
-    - 301.hep
-    - 301.scr
-    - 31.hep
-    - 31.scr
-    - 314.hep
-    - 314.scr
-    - 32.hep
-    - 32.scr
-    - 331.hep
-    - 331.scr
-    - 334.hep
-    - 334.scr
-    - 37.hep
-    - 37.scr
-    - 39.hep
-    - 39.scr
-    - 41.hep
-    - 41.scr
-    - 45.hep
-    - 45.scr
-    - 54.hep
-    - 54.scr
-    - 54.v56
-    - 55.hep
-    - 55.scr
-    - 600.hep
-    - 600.scr
-    - 70.hep
-    - 70.scr
-    - 73.hep
-    - 73.scr
-    - 76.hep
-    - 76.scr
-    - 815.msg
-    - 91.hep
-    - 91.scr
-    - 93.v56
-    - 95.msg
-    - 952.hep
-    - 952.scr
-    - 96.hep
-    - 96.scr
-    - 97.hep
-    - 97.scr
-    - 988.v56
-    - resource.000
-    - resource.map
-    - version
+    - assets ega
+    - assets vga
     - quest for glory 1 - manual.pdf
 
-cksums: |
-  _ 79181     resource.000?ega
-  _ 461422    resource.001
-  _ 635734    resource.002
-  _ 640483    resource.003
-  _ 644443    resource.004
-  _ 6432      resource.map?ega
-
-  _ 322       120.hep
-  _ 2010      120.scr
-  _ 40        121.hep
-  _ 316       121.scr
-  _ 1102      13.hep
-  _ 6894      13.scr
-  _ 2994      141.hep
-  _ 4046      141.scr
-  _ 3178      15.hep
-  _ 9832      15.scr
-  _ 2970      16.hep
-  _ 10760     16.scr
-  _ 1294      171.hep
-  _ 1326      171.scr
-  _ 2682      21.hep
-  _ 7292      21.scr
-  _ 1318      210.hep
-  _ 9836      210.scr
-  _ 3692      22.hep
-  _ 7382      22.scr
-  _ 174       222.hep
-  _ 1720      222.scr
-  _ 120       223.hep
-  _ 838       223.scr
-  _ 2066      29.hep
-  _ 7850      29.msg
-  _ 5624      29.scr
-  _ 5626      301.hep
-  _ 9100      301.scr
-  _ 3790      31.hep
-  _ 5412      31.scr
-  _ 3948      314.hep
-  _ 3340      314.scr
-  _ 3024      32.hep
-  _ 7026      32.scr
-  _ 4710      331.hep
-  _ 9768      331.scr
-  _ 2414      334.hep
-  _ 3950      334.scr
-  _ 2680      37.hep
-  _ 6092      37.scr
-  _ 2090      39.hep
-  _ 3402      39.scr
-  _ 1834      41.hep
-  _ 4374      41.scr
-  _ 3482      45.hep
-  _ 6142      45.scr
-  _ 3378      54.hep
-  _ 9770      54.scr
-  _ 7744      54.v56
-  _ 3324      55.hep
-  _ 7288      55.scr
-  _ 4548      600.hep
-  _ 5562      600.scr
-  _ 1320      70.hep
-  _ 2018      70.scr
-  _ 3426      73.hep
-  _ 9042      73.scr
-  _ 2630      76.hep
-  _ 7620      76.scr
-  _ 16386     815.msg
-  _ 2562      91.hep
-  _ 5234      91.scr
-  _ 22682     93.v56
-  _ 1500      95.msg
-  _ 40        952.hep
-  _ 26        952.scr
-  _ 2906      96.hep
-  _ 12756     96.scr
-  _ 4170      97.hep
-  _ 6442      97.scr
-  _ 1630      988.v56
-  _ 6570147   resource.000
-  _ 8469      resource.map
-  _ 7         version
-
-  _ 29357000  setup_quest_for_glory_vga_2.1.0.33.exe
-  _ 3901146   quest for glory 1 - manual.pdf
-
-md5sums: |
-  087a2a7de8b3ffe6b3207fc0c87db779  resource.000?ega
-  140af341b34ab457302cca607a723a16  resource.001
-  fd92551ae245a19edf6862d2cbf9cfb5  resource.002
-  3a45139a53ceec96cfa797ad9f16917d  resource.003
-  842f0b4fee49482c609d7e67ed4c45e6  resource.004
-  8b3780c81ce743703f5813107b878444  resource.map?ega
-
-  8b2afd8894438aa255e4463f62bc20e1  120.hep
-  fc1fca56fccaf54a6dcf64eae03fcb06  120.scr
-  2fd3022509641f4f755933b297a905d1  121.hep
-  5a7137ed24da020e59af450dcdeab28c  121.scr
-  d3fe907020f36ac4ea639cc54cdf2c17  13.hep
-  4d991b2e42d0fa34a5909f1fb3a83964  13.scr
-  d36e1137e30f584f24bbb332376f298b  141.hep
-  e5c8b8ef05a8cbe64d05e8bd9a0fc5e5  141.scr
-  75b8c86575636f906156a69fb4388102  15.hep
-  1bc1b5ad8197dbe0260ba64ee5ff581d  15.scr
-  2e395fb5988155b6287dfe45c305f5c7  16.hep
-  478f750df778d0c78c0cad4828a026f7  16.scr
-  6ec89e586c7b653e4974b368c7c18a34  171.hep
-  6a0fdd58cdae9276f5450c3f0b50513c  171.scr
-  21e2d3baadc374318cd65976f157af9a  21.hep
-  573b4d91a83ac387aed128f0d4769b12  21.scr
-  15b685ca4b088f52a1a60eb05c1aae8c  210.hep
-  62ec52e612766ef91fc77bfd1e3d8ef7  210.scr
-  0543892372e411e4bfca9e88063138fe  22.hep
-  ab2ff1e7173c6863713c746eda9f6fd3  22.scr
-  1bb8d77a099ffc625fdc6cc5cb9141d1  222.hep
-  b41b77b5607d8f0040a44407bee54e2f  222.scr
-  af1a3d46595526c95a89745c0cbf0bc0  223.hep
-  bd471f2481d091944902fff3ae63bf71  223.scr
-  a8122a52765618b23be351df13e757d2  29.hep
-  7267f2e78fce9dc55a8abdcb62efc665  29.msg
-  3e98d406e1a73614b570d6eef59ad5e8  29.scr
-  e8f57717d201afac4bc4d2c74cc9ee87  301.hep
-  0ad611d7660dbe2e423d64685ff4a9b5  301.scr
-  c8b1f84bdbb40e1a835e405ea8cbbb18  31.hep
-  1086451fe437aa32513e553767000965  31.scr
-  9c5ab9cedaa301e0fe82079ee2ba0f8f  314.hep
-  53eceec8f633cf5603c9248e09088baf  314.scr
-  3b14f182fcf9a4c6a5046006ea7d584a  32.hep
-  a05008aa73b28d0df6f244b7e2f021b0  32.scr
-  925e88250b71cc9887a55953cbc00d7c  331.hep
-  c724134bf4523538c3d6cb62522dacc3  331.scr
-  ba112105872876951573417b5ad78155  334.hep
-  3a0cc8e220563d5f3c48b44ab0758ec2  334.scr
-  4b13bd2adef079315997953a3e15906a  37.hep
-  77e4be675a31b7736a60e6806d389f39  37.scr
-  cb7f71af4d700225792d3872bf769b34  39.hep
-  1a0c26ac55f2918babea464ace98b4c6  39.scr
-  ec240f49e577701ad960d94ae66b2836  41.hep
-  1e6fd91374752b7bbc6d730daa056a59  41.scr
-  8a1e1be7d81db88ca03bfe457527011f  45.hep
-  25ff54ac2415af40fef644eabecd42d6  45.scr
-  2008a4c913d8951bad5953f7f2cf60bd  54.hep
-  2666661b4a71089ce20f1bf0d6ab4808  54.scr
-  ac78a33273c04f3555e1236e6f7cde14  54.v56
-  4f242796fa145011ac7f48e68445fab5  55.hep
-  c18792c6cf4f5b1297daf23f00de67aa  55.scr
-  f82810850ea87bcadd9dbe1d8b9b3727  600.hep
-  e03ab01e6ac4139ff7f2d528fa535fa5  600.scr
-  f2ed6983ad7eb8082b8227ba455d069c  70.hep
-  b777e12bc6398e4f64989527e573b52f  70.scr
-  cf1d8119a02a35ace73014737888dc0f  73.hep
-  15d210b4279d099a76bee63486a34dab  73.scr
-  74eac02eeae7cb95376a9caa7f8a95ac  76.hep
-  1c2ba6b5b6d2b44f831804d418b489a1  76.scr
-  b7ef1f89c736f57b8f295b655161f464  815.msg
-  06d9b20963223c7b71b982b49280a805  91.hep
-  4586aeae5f3a582c7e0e82836bc3f24a  91.scr
-  ce5398b1c72e4a593815acf1e1c8725e  93.v56
-  93dba57b69569c22bfddac86a5a5efa1  95.msg
-  153d6b088588349de6f33142236c2550  952.hep
-  0b0dd69d3e9636593fcf5e76967d79f5  952.scr
-  facefc64c59d12a3a96642c83a878d70  96.hep
-  15ae54f4d208a310c147192a41ad6850  96.scr
-  fe92ecf0564540b418ebaac38397ac77  97.hep
-  0550b82dbadf56b527dc69af42b8a6d5  97.scr
-  6347197e287ff8eedd65b4d9481ef249  988.v56
-  71e710d086d21bdf9c8c108a798a4596  resource.000
-  a5a29ff0038a27e4f791fc918f5dc18d  resource.map
-  01869a900e47bcf330c4c17d5b7e5a4d  version
-
-  3fcf599a0bcb174f1816c9f2742dc9a5  setup_quest_for_glory_vga_2.1.0.33.exe
-  dc977e03d3fc743c2716830550d5f5d6  quest for glory 1 - manual.pdf
+groups:
+  assets ega: |
+    79181     087a2a7de8b3ffe6b3207fc0c87db779 resource.000?ega
+    461422    140af341b34ab457302cca607a723a16 resource.001
+    635734    fd92551ae245a19edf6862d2cbf9cfb5 resource.002
+    640483    3a45139a53ceec96cfa797ad9f16917d resource.003
+    644443    842f0b4fee49482c609d7e67ed4c45e6 resource.004
+    6432      8b3780c81ce743703f5813107b878444 resource.map?ega
+  assets vga: |
+    1102      d3fe907020f36ac4ea639cc54cdf2c17 13.hep
+    6894      4d991b2e42d0fa34a5909f1fb3a83964 13.scr
+    3178      75b8c86575636f906156a69fb4388102 15.hep
+    9832      1bc1b5ad8197dbe0260ba64ee5ff581d 15.scr
+    2970      2e395fb5988155b6287dfe45c305f5c7 16.hep
+    10760     478f750df778d0c78c0cad4828a026f7 16.scr
+    2682      21e2d3baadc374318cd65976f157af9a 21.hep
+    7292      573b4d91a83ac387aed128f0d4769b12 21.scr
+    3692      0543892372e411e4bfca9e88063138fe 22.hep
+    7382      ab2ff1e7173c6863713c746eda9f6fd3 22.scr
+    2066      a8122a52765618b23be351df13e757d2 29.hep
+    7850      7267f2e78fce9dc55a8abdcb62efc665 29.msg
+    5624      3e98d406e1a73614b570d6eef59ad5e8 29.scr
+    3790      c8b1f84bdbb40e1a835e405ea8cbbb18 31.hep
+    5412      1086451fe437aa32513e553767000965 31.scr
+    3024      3b14f182fcf9a4c6a5046006ea7d584a 32.hep
+    7026      a05008aa73b28d0df6f244b7e2f021b0 32.scr
+    2680      4b13bd2adef079315997953a3e15906a 37.hep
+    6092      77e4be675a31b7736a60e6806d389f39 37.scr
+    2090      cb7f71af4d700225792d3872bf769b34 39.hep
+    3402      1a0c26ac55f2918babea464ace98b4c6 39.scr
+    1834      ec240f49e577701ad960d94ae66b2836 41.hep
+    4374      1e6fd91374752b7bbc6d730daa056a59 41.scr
+    3482      8a1e1be7d81db88ca03bfe457527011f 45.hep
+    6142      25ff54ac2415af40fef644eabecd42d6 45.scr
+    3378      2008a4c913d8951bad5953f7f2cf60bd 54.hep
+    9770      2666661b4a71089ce20f1bf0d6ab4808 54.scr
+    7744      ac78a33273c04f3555e1236e6f7cde14 54.v56
+    3324      4f242796fa145011ac7f48e68445fab5 55.hep
+    7288      c18792c6cf4f5b1297daf23f00de67aa 55.scr
+    1320      f2ed6983ad7eb8082b8227ba455d069c 70.hep
+    2018      b777e12bc6398e4f64989527e573b52f 70.scr
+    3426      cf1d8119a02a35ace73014737888dc0f 73.hep
+    9042      15d210b4279d099a76bee63486a34dab 73.scr
+    2630      74eac02eeae7cb95376a9caa7f8a95ac 76.hep
+    7620      1c2ba6b5b6d2b44f831804d418b489a1 76.scr
+    2562      06d9b20963223c7b71b982b49280a805 91.hep
+    5234      4586aeae5f3a582c7e0e82836bc3f24a 91.scr
+    22682     ce5398b1c72e4a593815acf1e1c8725e 93.v56
+    1500      93dba57b69569c22bfddac86a5a5efa1 95.msg
+    2906      facefc64c59d12a3a96642c83a878d70 96.hep
+    12756     15ae54f4d208a310c147192a41ad6850 96.scr
+    4170      fe92ecf0564540b418ebaac38397ac77 97.hep
+    6442      0550b82dbadf56b527dc69af42b8a6d5 97.scr
+    322       8b2afd8894438aa255e4463f62bc20e1 120.hep
+    2010      fc1fca56fccaf54a6dcf64eae03fcb06 120.scr
+    40        2fd3022509641f4f755933b297a905d1 121.hep
+    316       5a7137ed24da020e59af450dcdeab28c 121.scr
+    2994      d36e1137e30f584f24bbb332376f298b 141.hep
+    4046      e5c8b8ef05a8cbe64d05e8bd9a0fc5e5 141.scr
+    1294      6ec89e586c7b653e4974b368c7c18a34 171.hep
+    1326      6a0fdd58cdae9276f5450c3f0b50513c 171.scr
+    1318      15b685ca4b088f52a1a60eb05c1aae8c 210.hep
+    9836      62ec52e612766ef91fc77bfd1e3d8ef7 210.scr
+    174       1bb8d77a099ffc625fdc6cc5cb9141d1 222.hep
+    1720      b41b77b5607d8f0040a44407bee54e2f 222.scr
+    120       af1a3d46595526c95a89745c0cbf0bc0 223.hep
+    838       bd471f2481d091944902fff3ae63bf71 223.scr
+    5626      e8f57717d201afac4bc4d2c74cc9ee87 301.hep
+    9100      0ad611d7660dbe2e423d64685ff4a9b5 301.scr
+    3948      9c5ab9cedaa301e0fe82079ee2ba0f8f 314.hep
+    3340      53eceec8f633cf5603c9248e09088baf 314.scr
+    4710      925e88250b71cc9887a55953cbc00d7c 331.hep
+    9768      c724134bf4523538c3d6cb62522dacc3 331.scr
+    2414      ba112105872876951573417b5ad78155 334.hep
+    3950      3a0cc8e220563d5f3c48b44ab0758ec2 334.scr
+    4548      f82810850ea87bcadd9dbe1d8b9b3727 600.hep
+    5562      e03ab01e6ac4139ff7f2d528fa535fa5 600.scr
+    16386     b7ef1f89c736f57b8f295b655161f464 815.msg
+    40        153d6b088588349de6f33142236c2550 952.hep
+    26        0b0dd69d3e9636593fcf5e76967d79f5 952.scr
+    1630      6347197e287ff8eedd65b4d9481ef249 988.v56
+    6570147   71e710d086d21bdf9c8c108a798a4596 resource.000
+    8469      a5a29ff0038a27e4f791fc918f5dc18d resource.map
+    7         01869a900e47bcf330c4c17d5b7e5a4d version
+  gog archives: |
+    29357000  3fcf599a0bcb174f1816c9f2742dc9a5 setup_quest_for_glory_vga_2.1.0.33.exe
+    3901146   dc977e03d3fc743c2716830550d5f5d6 quest for glory 1 - manual.pdf
 
 sha1sums: |
   0c19078e61b49ee8e3a89648df9f580d4d2711e9  setup_quest_for_glory_vga_2.1.0.33.exe
