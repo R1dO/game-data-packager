@@ -145,9 +145,7 @@ class GameData(object):
         self.longname = None
         self.try_repack_from = []
         self.plugin = None
-        self.gog_url = None
-        self.gog_game = None
-        self.gog_path = None
+        self.gog = dict()
 
         self.data = dict()
         # global list of files across packages
@@ -340,10 +338,10 @@ class GameData(object):
                     for line in metadata.read().decode().splitlines():
                         line = line.strip()
                         if line.startswith('id = '):
-                            self.gog_path = line.split('"')[1]
+                            self.gog['path'] = '"%s"' % line.split('"')[1]
 
     def add_one_innoextract(self,exe):
-        game = self.gog_game = GOG.get_id_from_archive(exe)
+        game = self.gog['game'] = GOG.get_id_from_archive(exe)
         if not game:
             game = os.path.basename(exe)
             game = game[len('setup_'):len(game)-len('.exe')]
@@ -400,7 +398,7 @@ class GameData(object):
                         version = control['version']
                         if 'Homepage' in control:
                             if 'gog.com/' in control['Homepage']:
-                                self.gog_url = control['Homepage'].split('/')[-1]
+                                self.gog['url'] = control['Homepage'].split('/')[-1]
 
                         control.dump(fd=sys.stdout, text_mode=True)
                         print('')
@@ -460,7 +458,7 @@ class GameData(object):
                             there = name[len('opt/GOG Games/'):]
                             there = there.split('/', 1)[0]
                             install_to = ('opt/GOG Games/' + there)
-                            self.gog_path = there
+                            self.gog['path'] = '"%s"' % there
 
                     if entry.isfile():
                         hf = HashedFile.from_file(deb + '//data.tar.*//' + name,
@@ -489,7 +487,7 @@ class GameData(object):
                             name = name[len(install_to) + 1:]
                             if lower:
                                 name = name.lower()
-                            if self.gog_url and name.startswith('data/'):
+                            if self.gog and name.startswith('data/'):
                                 name = name[len('data/'):]
                             self.install.add(name)
                             self.package['install'].append(name)
@@ -536,10 +534,12 @@ class GameData(object):
                     print('- "%s"' % path)
         if self.plugin:
             print('plugin: %s' % self.plugin)
-        if self.gog_url:
-            print('gog:\n  url: %s' % self.gog_url)
-        if self.gog_game:
-            print('gog:\n  url: FIXME\n  game: %s' % self.gog_game)
+
+        if self.gog:
+            print('gog:')
+            for k in ('url', 'game', 'path'):
+                if k in self.gog:
+                    print('  %s: %s' % (k, self.gog[k]))
 
         print('')
         yaml.safe_dump(self.data, stream=sys.stdout, default_flow_style=False)
