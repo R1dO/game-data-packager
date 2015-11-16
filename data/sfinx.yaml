@@ -2,6 +2,7 @@
 copyright: © 1997 L.K. Avalon
 plugin: scummvm_common
 wiki: Sfinx
+engine: scummvm (>= 1.8.0)
 
 help_text: |
   This requires a recent ScummVM build (December 22, 2014 or more recent),
@@ -10,7 +11,6 @@ help_text: |
 
 packages:
   sfinx-en-data:
-    engine: scummvm (>= 1.8.0)
     version: '1.1'
     provides: sfinx-data
     component: main
@@ -21,7 +21,6 @@ packages:
     - license.txt
 
   sfinx-pl-data:
-    engine: scummvm (>= 1.8.0)
     lang: pl
     version: '1.0'
     provides: sfinx-data
