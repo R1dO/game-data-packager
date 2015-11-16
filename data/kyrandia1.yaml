@@ -4,6 +4,7 @@ copyright: © 1992 Westwood Studios
 plugin: scummvm_common
 wiki: The_Legend_of_Kyrandia
 gameid: kyra1
+missing_langs: [ja]
 
 packages:
   kyrandia1-en-data:
@@ -241,7 +242,7 @@ packages:
     - xmi.pak
     - zrock.pak
     - zrock.vrm
-    optional:
+    doc:
     - manual.pdf
 
   kyrandia1-de-data:
@@ -480,7 +481,7 @@ packages:
     - xmi.pak
     - zrock.pak?de
     - zrock.vrm
-    optional:
+    doc:
     - manual.pdf
 
   kyrandia1-fr-data:
@@ -719,7 +720,7 @@ packages:
     - xmi.pak
     - zrock.pak?fr
     - zrock.vrm
-    optional:
+    doc:
     - manual.pdf
 
   kyrandia1-floppy2-en-data:
@@ -946,9 +947,6 @@ packages:
     #- kyramisc.snd
 
 files:
-  manual.pdf:
-    install_to: $docdir
-
   setup_legend_of_kyrandia_2.1.0.14.exe:
     unpack:
       format: innoextract

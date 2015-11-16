@@ -5,6 +5,7 @@ copyright: © 1991 Sierra
 plugin: scummvm_common
 wiki: Space_Quest_IV
 gameid: sq4
+missing_langs: [ja]
 
 packages:
   spacequest4-dos-en-data:
@@ -84,6 +85,12 @@ packages:
     - resource.005?fr
     - resource.map?fr
     - version?fr
+
+  spacequest4-ja-data:
+    provides: spacequest4-data
+    longname: "スペースクエストIV"
+    lang: [ja,en]
+    DISABLED: missing data
 
 files:
   setup_space_quest.exe:

@@ -5,10 +5,12 @@ copyright: © 1989 Sierra
 genre: Role Playing
 plugin: scummvm_common
 wiki: Quest_for_Glory
+missing_langs: [ja]
 
 packages:
   quest-for-glory1-ega-data:
-    better_version: quest-for-glory1-vga-data
+    provides: quest-for-glory1-data
+    better_version: quest-for-glory1-en-data
     gameid: qfg1
     install:
     - resource.000?ega
@@ -18,7 +20,8 @@ packages:
     - resource.004
     - resource.map?ega
 
-  quest-for-glory1-vga-data:
+  quest-for-glory1-en-data:
+    provides: quest-for-glory1-data
     version: '2.000'
     copyright: © 1992 Sierra
     gog:
@@ -101,11 +104,17 @@ packages:
     - resource.000
     - resource.map
     - version
-    optional:
+    doc:
     - quest for glory 1 - manual.pdf
+
+  quest-for-glory-data:
+    provides: quest-for-glory1-data
+    longname: "クエスト フォー グローリィ"
+    langs: [ja,en]
+    DISABLED: missing info
+
 files:
   quest for glory 1 - manual.pdf:
-    install_to: $docdir
     look_for: [quest for glory 1 - manual.pdf,manual.pdf]
     install_as: manual.pdf
 

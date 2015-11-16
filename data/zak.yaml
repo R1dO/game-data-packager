@@ -3,6 +3,7 @@ longname: Zak McKracken and the Alien Mindbenders
 copyright: © 1988 Lucasfilm Games
 plugin: scummvm_common
 wiki: Zak_McKracken_and_the_Alien_Mindbenders
+missing_langs: [ja]
 
 help_text: |
   GOG.com only sells the English version.
@@ -98,6 +99,7 @@ packages:
     - track19.mp3
     - track20.mp3
     - track21.mp3
+    doc:
     - hintbook.pdf
     - manual.pdf
     - newspaper.pdf
@@ -164,7 +166,7 @@ packages:
     - 56.lfl?floppy
     - 57.lfl?floppy
     - 58.lfl?floppy
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf
     - newspaper.pdf
@@ -235,13 +237,10 @@ packages:
 
 files:
   hintbook.pdf:
-    install_to: $docdir
     look_for: [hintbook.pdf,'Zak McKraken and the Alien Mindbenders - Hintbook.pdf']
   manual.pdf:
-    install_to: $docdir
     look_for: [manual.pdf,'Zak McKraken and the Alien Mindbenders - Manual.pdf']
   newspaper.pdf:
-    install_to: $docdir
     look_for: [newspaper.pdf,'Zak McKracken - The National Inquisitor.pdf']
 
   setup_zak_mckracken_and_the_alien_mindbenders_2.0.0.4.exe:

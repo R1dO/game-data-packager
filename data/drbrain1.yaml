@@ -6,9 +6,11 @@ plugin: scummvm_common
 wiki: Castle_of_Dr._Brain
 gameid: castlebrain
 genre: Kids
+missing_langs: [ja]
 
 packages:
-  drbrain1-data:
+  drbrain1-en-data:
+    provides: drbrain1-data
     version: '1.00'
     install:
     - 440.scr
@@ -44,6 +46,12 @@ packages:
     - version
     optional:
     - brainsg.dir
+
+  drbrain1-ja-data:
+    provides: drbrain1-data
+    longname: "ドクターブレイン パズルの城"
+    lang: ja
+    DISABLED: missing info
 
 size_and_md5: |
   14634     f3320e215f0079db371069af83726977 440.scr

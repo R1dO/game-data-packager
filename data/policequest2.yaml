@@ -6,8 +6,11 @@ plugin: scummvm_common
 wiki: Police_Quest_II
 gameid: pq2
 
+missing_langs: [ja]
+
 packages:
-  policequest2-data:
+  policequest2-en-data:
+    provides: policequest2-data
     gog:
       url: police_quest_1_2_3_4
       game: police_quest_2_vengeance
@@ -18,19 +21,18 @@ packages:
     - resource.002
     - resource.003
     - resource.map
-    optional:
+    doc:
     - pq2map.txt
     - readme.txt
     - wanted.jpg
 
-files:
-  pq2map.txt:
-    install_to: $docdir
-  readme.txt:
-    install_to: $docdir
-  wanted.jpg:
-    install_to: $docdir
+  policequest2-ja-data:
+    provides: policequest2-data
+    longname: "ポリスクエスト2"
+    langs: [ja,en]
+    DISABLED: info is missing
 
+files:
   setup_police_quest2_2.1.0.10.exe:
     unpack:
       format: innoextract

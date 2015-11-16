@@ -4,9 +4,11 @@ copyright: © 1990 Sierra Entertainment
 plugin: scummvm_common
 wiki: King%27s_Quest_V
 gameid: kq5
+missing_langs: [ja]
 
 packages:
-  kingsquest5-data:
+  kingsquest5-en-data:
+    provides: kingsquest5-data
     # new CD-ROM version
     version: '1.000.052'
     copyright: © 1992 Sierra Entertainment
@@ -15,6 +17,12 @@ packages:
       game: kings_quest_5_absence_makes_the_heart_go_yonder
     install:
     - assets
+
+  kingsquest5-ja-data:
+    provides: kingsquest5-data
+    longname: "キングズクエストV / キングスクエストV"
+    lang: ja
+    DISABLED: missing info
 
 files:
   setup_kings_quest_4_5_6.exe:

@@ -4,9 +4,11 @@ wiki: Loom
 gog:
   url: loom
   path: Loom
+missing_langs: [ja]
 
 packages:
-  loom-data:
+  loom-en-data:
+    provides: loom-data
     copyright: © 1992 Lucasfilm Games
     steam:
       id: 32340
@@ -24,6 +26,7 @@ packages:
     - manual.pdf
 
   loom-ega-data:
+    provides: loom-data
     longname: "Loom (EGA)"
     install:
     - 00.lfl
