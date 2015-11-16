@@ -1,0 +1,27 @@
+---
+longname: Jones in the Fast Lane
+copyright: © 1990 Sierra
+plugin: scummvm_common
+wiki: Jones_in_the_Fast_Lane
+genre: Simulation
+
+packages:
+  jones-in-the-fast-lane-data:
+    version: '1.000.060'
+    install:
+    - resource.001
+    - resource.002
+    - resource.map
+    - version
+
+groups:
+  assets: |
+    313476    56166eb58bc48f072cfd77e4aa1418d7 resource.001
+    719747    e6ce044e9924c646ee3b66502c49fe5a resource.002
+    1800      65cbe19b36fffc71c8e7b2686bd49ad7 resource.map
+    13        530f5d884d51fe488c630f1452baf595 version
+
+sha1sums: |
+  0ff7aa3e4ef4d5b7c49228c075f8db2cc78a075a  resource.001
+  a49d3bc69fe9e2ae22bc2dfc8082ef9a4e3ebfe8  resource.002
+...
