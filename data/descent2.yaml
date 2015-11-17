@@ -10,12 +10,7 @@ packages:
     demo_for: descent2-data
     install_to: usr/share/games/d2x-rebirth
     install:
-    - d2demo.pig
-    - d2demo.ham
-    - d2demo.hog
-    - d2demo.dem
-    doc:
-    - readme.txt?demo
+    - demo assets
 
   descent2-data:
     gog:
@@ -26,75 +21,36 @@ packages:
       id: 273580
       path: "common/Descent 2"
     debian:
-      provides: descent2-full-data
       replaces: descent2-full-data
     install_to: usr/share/games/d2x-rebirth
     install:
-    - alien1.pig
-    - alien2.pig
-    - demos/descent2.dem
-    - descent2.ham
-    - descent2.hog
-    - descent2.s11
-    - descent2.s22
-    - fire.pig
-    - groupa.pig
-    - ice.pig
-    - water.pig
+    - full game assets
     optional:
-    # movies
-    - intro-h.mvl
-    - other-h.mvl
-    - robots-h.mvl
-    - robots-l.mvl
-    - missions/d2-2plyr.hog
-    - missions/d2-2plyr.mn2
-    - missions/d2chaos.hog
-    - missions/d2chaos.mn2
+    - movies
+    - extra missions
     doc:
-    - manual.pdf
-    - readme.txt
-    - refcard.pdf
+    - gog documentation
 
 files:
+  readme.txt?demo:
+    install_to: $docdir
+
   d2shar10.tar.gz:
     download: http://icculus.org/d2x/data/d2shar10.tar.gz
     unpack:
       format: tar.gz
     provides:
-    - d2demo.pig
-    - d2demo.ham
-    - d2demo.hog
+    - demo assets
     - readme.txt?demo
-    - d2demo.dem
 
   setup_descent_1_2.exe:
     unpack:
       format: innoextract
     provides:
-    - alien1.pig
-    - alien2.pig
-    - demos/descent2.dem
-    - descent2.ham
-    - descent2.hog
-    - descent2.s11
-    - descent2.s22
-    - fire.pig
-    - groupa.pig
-    - ice.pig
-    - water.pig
-    # movies
-    - intro-h.mvl
-    - other-h.mvl
-    - robots-h.mvl
-    - robots-l.mvl
-    - missions/d2-2plyr.hog
-    - missions/d2-2plyr.mn2
-    - missions/d2chaos.hog
-    - missions/d2chaos.mn2
-    - manual.pdf
-    - readme.txt
-    - refcard.pdf
+    - full game assets
+    - movies
+    - extra missions
+    - gog documentation
 
   setup_descent2_2.1.0.10.exe:
     unpack:
@@ -105,95 +61,48 @@ files:
       # which is itself used in dosboxDescent2_client.conf
       # 'imgmount d "..\DESCENT_II.inst" -t iso -fs iso'
     provides:
-    - alien1.pig
-    - alien2.pig
-    - demos/descent2.dem
-    - descent2.ham
-    - descent2.hog
-    - descent2.s11
-    - descent2.s22
-    - fire.pig
-    - groupa.pig
-    - ice.pig
-    - water.pig
-    # movies
-    - intro-h.mvl
-    - other-h.mvl
-    - robots-h.mvl
-    - robots-l.mvl
-    - missions/d2-2plyr.hog
-    - missions/d2-2plyr.mn2
-    - missions/d2chaos.hog
-    - missions/d2chaos.mn2
-    - manual.pdf
-    - readme.txt
-    - refcard.pdf
+    - full game assets
+    - movies
+    - extra missions
+    - gog documentation
 
-cksums: |
-  _ 355173    d2demo.dem
-  _ 1961015   d2demo.ham
-  _ 2292566   d2demo.hog
-  _ 2800295   d2demo.pig
-  _ 88065     readme.txt?demo
-  _ 4311406   d2shar10.tar.gz
-
-  _ 5016232   alien1.pig
-  _ 4912053   alien2.pig
-  _ 1168217   demos/descent2.dem
-  _ 1307598   descent2.ham
-  _ 7595079   descent2.hog
-  _ 2602492   descent2.s11
-  _ 5160905   descent2.s22
-  _ 4973944   fire.pig
-  _ 4931752   groupa.pig
-  _ 4926111   ice.pig
-  _ 99782888  intro-h.mvl
-  _ 1723326   manual.pdf
-  _ 194870    missions/d2-2plyr.hog
-  _ 93        missions/d2-2plyr.mn2
-  _ 331847    missions/d2chaos.hog
-  _ 119       missions/d2chaos.mn2
-  _ 104199780 other-h.mvl
-  _ 39179     readme.txt
-  _ 51219     refcard.pdf
-  _ 16766970  robots-h.mvl
-  _ 5087804   robots-l.mvl
-  _ 4833463   water.pig
-  _ 578313965 setup_descent_1_2.exe
-  _ 554371624 setup_descent2_2.1.0.10.exe
-
-md5sums: |
-  221f42d8896ccef096bb32eccb295d36  d2demo.dem
-  2584a96d33ed6e78e2522001e71257a3  d2demo.ham
-  e14ea49e03f58622244a25c680e1b6dd  d2demo.hog
-  a68ed63e074468f38bfad88382741a5a  d2demo.pig
-  ab80e41750af684992cb2e066bb67856  readme.txt?demo
-  1b952cc4a4419e24d230589027d73490  d2shar10.tar.gz
-  b0619642eeb50ac4d5198499a26b7355  alien1.pig
-  a242d46dfd0f16454f6f5377cbb424a5  alien2.pig
-  6c0d51cd4ff04030e66423895f74be72  demos/descent2.dem
-  7f30c3d7d4087b8584b49012a53ce022  descent2.ham
-  1d4cd6418dd7adfc5d312c04c265e5e6  descent2.hog
-  cc802a0558775498748d301b86257e92  descent2.s11
-  9a96c651e3e68b5c4febae6e1f492897  descent2.s22
-  b40c8690c6a9467d76ef5732b9e10663  fire.pig
-  b18a27d1ef0dd04aebbbf818c430a578  groupa.pig
-  d2a2f49892935395592bb56ae1a0f21e  ice.pig
-  7853a531b3c2f0e20b3996f4cac14ae4  intro-h.mvl
-  d3d117ee6bd92f45d38622f66f6d9528  manual.pdf
-  de49d2cef498e744270a8fd48290cb44  missions/d2-2plyr.hog
-  02e864529ee9ea0d5003ca46c3766149  missions/d2-2plyr.mn2
-  e096dfef3276ba575309501f85f15f06  missions/d2chaos.hog
-  70624a8ef81f7278a7fef8be38aa2732  missions/d2chaos.mn2
-  1a366be61a37311b051ff1e38bc9156f  other-h.mvl
-  31dbbc0a3c7641036ee4d2adc2ed6f60  readme.txt
-  a4904596b63b147e74b302a913b5c4ad  refcard.pdf
-  2e10f1d66cf7ab69db05673a32a9ca72  robots-h.mvl
-  f4164b1db5b417aefa9558a0ccb4f6e1  robots-l.mvl
-  4722f02a4c5bfb3b17fe8da8d4141191  water.pig
-  a16f246783339962eb5bc0d6e630952b  setup_descent_1_2.exe
-  #61220cf9d83a8ef81e032461c1d02d8b  setup_descent_1_2.exe_old
-  a2509588c7ca74b31689aeab19b16173  setup_descent2_2.1.0.10.exe
+groups:
+  archives: |
+    4311406   1b952cc4a4419e24d230589027d73490 d2shar10.tar.gz
+    578313965 a16f246783339962eb5bc0d6e630952b setup_descent_1_2.exe
+    554371624 a2509588c7ca74b31689aeab19b16173 setup_descent2_2.1.0.10.exe
+  demo assets: |
+    355173    221f42d8896ccef096bb32eccb295d36 d2demo.dem
+    1961015   2584a96d33ed6e78e2522001e71257a3 d2demo.ham
+    2292566   e14ea49e03f58622244a25c680e1b6dd d2demo.hog
+    2800295   a68ed63e074468f38bfad88382741a5a d2demo.pig
+    88065     ab80e41750af684992cb2e066bb67856 readme.txt?demo
+  gog documentation: |
+    1723326   d3d117ee6bd92f45d38622f66f6d9528 manual.pdf
+    39179     31dbbc0a3c7641036ee4d2adc2ed6f60 readme.txt
+    51219     a4904596b63b147e74b302a913b5c4ad refcard.pdf
+  movies: |
+    99782888  7853a531b3c2f0e20b3996f4cac14ae4 intro-h.mvl
+    104199780 1a366be61a37311b051ff1e38bc9156f other-h.mvl
+    16766970  2e10f1d66cf7ab69db05673a32a9ca72 robots-h.mvl
+    5087804   f4164b1db5b417aefa9558a0ccb4f6e1 robots-l.mvl
+  extra missions: |
+    194870    de49d2cef498e744270a8fd48290cb44 missions/d2-2plyr.hog
+    93        02e864529ee9ea0d5003ca46c3766149 missions/d2-2plyr.mn2
+    331847    e096dfef3276ba575309501f85f15f06 missions/d2chaos.hog
+    119       70624a8ef81f7278a7fef8be38aa2732 missions/d2chaos.mn2
+  full game assets: |
+    5016232   b0619642eeb50ac4d5198499a26b7355 alien1.pig
+    4912053   a242d46dfd0f16454f6f5377cbb424a5 alien2.pig
+    1168217   6c0d51cd4ff04030e66423895f74be72 demos/descent2.dem
+    1307598   7f30c3d7d4087b8584b49012a53ce022 descent2.ham
+    7595079   1d4cd6418dd7adfc5d312c04c265e5e6 descent2.hog
+    2602492   cc802a0558775498748d301b86257e92 descent2.s11
+    5160905   9a96c651e3e68b5c4febae6e1f492897 descent2.s22
+    4973944   b40c8690c6a9467d76ef5732b9e10663 fire.pig
+    4931752   b18a27d1ef0dd04aebbbf818c430a578 groupa.pig
+    4926111   d2a2f49892935395592bb56ae1a0f21e ice.pig
+    4833463   4722f02a4c5bfb3b17fe8da8d4141191 water.pig
 
 sha1sums: |
   6274ebf0b9a6d8d5983fc094b75e4128fc1a349f  d2demo.dem
@@ -215,9 +124,7 @@ sha1sums: |
   9614aac967aa9f2efe10af553e506e27bb91e5ba  intro-h.mvl
   a96f3dcb8b0915c686430ff9c3def05d506ad9ff  manual.pdf
   15767e36f12ed8667249e19e948686c13dd5d90b  missions/d2-2plyr.hog
-  db13b038e5b3b8ccbc6f2418bbe49dc0bac87235  missions/d2-2plyr.mn2
   156f66ae7ae48fff582116bdf0e91e0f3386b3af  missions/d2chaos.hog
-  bf266256dc726852bad4896861a1dfad4022f8b1  missions/d2chaos.mn2
   e8f1a2d643feb2731fc05974ab202c4cd3aea0fd  other-h.mvl
   9be0238736785b59a5d7ef6077d5aca865df1135  readme.txt
   f986911bca2d2667ef179f1f8b73fc8162f8304b  refcard.pdf
@@ -247,9 +154,7 @@ sha256sums: |
   b40a60bccbb4e2eea5dad222f85fd63abd29f36a48b5bd60174e10820c174b84  intro-h.mvl
   8802bc9b977c80d20c0f0e76b8191f6c2e7137a19468091479326e44bab5ddf4  manual.pdf
   f56f833e1026a35e8a8755987a93d5a0eb5bb12b40b8f190b9e7621ff24cead8  missions/d2-2plyr.hog
-  cea8e7885330b09fadafc25c28c22149cf6403c0d687239ddf33d90c75e6f3e5  missions/d2-2plyr.mn2
   98acbdbc5d0180160337bac1ce28f3a30688378715fe89a45297b0ed6341b4cf  missions/d2chaos.hog
-  9f1166d1f0635f62a21b4bd3109b58e290566a9c907b63039e01f227b8e4aa57  missions/d2chaos.mn2
   e00a016f6064cbb96b791597d9bd1fe70b3cf2e573778cc3136e3814634fddd0  other-h.mvl
   0f357bed4ebc8977b8ba952148fac3447c4cff9eab8705d30b0bda639e706acd  readme.txt
   89e424847f0d07e7cf9bd07cd68736a6de5670458fc699bc4dc4a240b6fc430b  refcard.pdf
