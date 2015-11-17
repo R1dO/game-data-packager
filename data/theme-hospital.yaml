@@ -42,26 +42,6 @@ packages:
     - GE.pdf
     - IT.pdf
     - manual.pdf
-    optional:
-    # not present in the gog.com copy; judging by their names, they're
-    # probably unnecessary?
-    - levels/easy00.bak
-    - levels/hard00.bak
-    - levels/net20.bak
-    - levels/net21.bak
-    - levels/net22.bak
-    - levels/net23.bak
-    - levels/net24.bak
-    - levels/net30.bak
-    - levels/net31.bak
-    - levels/net32.bak
-    - levels/net33.bak
-    - levels/net34.bak
-    - levels/net40.bak
-    - levels/net41.bak
-    - levels/net42.bak
-    - levels/net43.bak
-    - levels/net44.bak
     install:
     - full game
     - levels/full00.sam
@@ -863,24 +843,7 @@ groups:
     12490     676f960b27fe8030f86db863fc936da8 sound/midi/steady.xmi
 
 cksums: |
-  _ 31797     levels/easy00.bak
   _ 31802     levels/full00.sam?cd
-  _ 31807     levels/hard00.bak
-  _ 11152     levels/net20.bak
-  _ 6592      levels/net21.bak
-  _ 7435      levels/net22.bak
-  _ 6214      levels/net23.bak
-  _ 3854      levels/net24.bak
-  _ 11493     levels/net30.bak
-  _ 6653      levels/net31.bak
-  _ 7515      levels/net32.bak
-  _ 6728      levels/net33.bak
-  _ 4380      levels/net34.bak
-  _ 11473     levels/net40.bak
-  _ 6648      levels/net41.bak
-  _ 7515      levels/net42.bak
-  _ 7178      levels/net43.bak
-  _ 4569      levels/net44.bak
 
   # gog.com
   2045673524 167653008 setup_theme_hospital_2.0.0.5.exe
@@ -893,24 +856,7 @@ cksums: |
   1616675884 224382 en_US_eula.rtf
 
 md5sums: |
-  7ca899f1db04c1ebd1ebc42783da6608  levels/easy00.bak
   6b5085e24a0edfc74e05ce461dd32848  levels/full00.sam?cd
-  d0a63bdc77827993fc8cc5f5fdd2e686  levels/hard00.bak
-  16358401fb7b69c7216506b8406b1a9a  levels/net20.bak
-  89b872c0822c7cb2377a30ab6dcfde9f  levels/net21.bak
-  82d771d41e397343e502101ff5174c8b  levels/net22.bak
-  37713d4ddad45a979cde7fccc7722295  levels/net23.bak
-  5112129cfded09d5d988ea8057224fb6  levels/net24.bak
-  cfe3d2b4f429c0d0b3e3ba74f89baac8  levels/net30.bak
-  adb6f9e5c25f1aa3b6f60032b199a9ec  levels/net31.bak
-  ac451ae47714805cce36c90b18ad0992  levels/net32.bak
-  b06b51b58aa7b9000c4760aa28e105aa  levels/net33.bak
-  62541379d5cd73921e191eec1be5eaa1  levels/net34.bak
-  668cb7e61b058ff26742a56bc86b3088  levels/net40.bak
-  edab37049226826c36f50f04bed28eda  levels/net41.bak
-  335ce3259b2a7c80f35b58706a2a5031  levels/net42.bak
-  be417ec54f997571d718d6121cb0e107  levels/net43.bak
-  cb824088cc5ee34bcd32b6fd0304c016  levels/net44.bak
 
   # gog.com
   a9aa90b9e9af4685a668f143f6462692  eula.txt
@@ -1008,7 +954,6 @@ sha1sums: |
   bd9206cd72a3b27525fc290816d3819bdda55d27  intro/attract.smk
   68722a9189bd85f9453a09ac9b6ecc34b5bd096e  intro/intro.sm2
   5b2f7186c2e0588150abfa739db90cf8c3d8ccb7  intro/intro.sm4
-  3b8a4cffbc6d20b6a7f6cd66875054b15316c86e  levels/easy00.bak
   bcf7b3e035c485705aceb42e920445b6f26def4b  levels/easy00.sam
   81682c06ebdfc0414ba69544b4dd8c67b3879650  levels/easy01.sam
   36a81ded26f68b70f939cc2c9999ac623bd617e2  levels/easy02.sam
@@ -1035,7 +980,6 @@ sha1sums: |
   a33811c1ac19141db0a9bc8963f67c4845fade9d  levels/full10.sam
   ffdf768b653bead4bf91f1b6e4c4b7adc26168f6  levels/full11.sam
   6b8e9f81e9a43a5e7448dc451908de0b267a6b23  levels/full12.sam
-  1ec361295ce9e9579cf06e8281072b12dcbb9714  levels/hard00.bak
   df0ec6264265a4e427e84ff398164097f55548c3  levels/hard00.sam
   4189eead6b3dac31fb19ca445710273ab4854f86  levels/hard01.sam
   68a3474cc9ae80d5d5a87cc18cf27dc900e12bd4  levels/hard02.sam
@@ -1080,37 +1024,22 @@ sha1sums: |
   9ff38d85b9942d1f7893e36250cdd422453224b6  levels/level.l9
   0b71e33bcf24f3413bfa4ea2a2344fc328ef16e8  levels/net00.sam
   6bef7d8cf4bda5869c8d83d182f0fab61aaa19b8  levels/net2.dat
-  7939a7204b03c83d63d3a8d8c658f045e62ac78b  levels/net20.bak
   7a20384c2011b1c349fb67fbf5b1c1646adcd5f0  levels/net20.sam
-  ece01b8d85579a10fcd468c734ebc7b7eb6373f0  levels/net21.bak
   b4bdfdb9931eb2925407769a2c80c8db2c1fb42b  levels/net21.sam
-  491df8b0cf1ae645a5139f628168902b1847035a  levels/net22.bak
   bb7e62d43b625b436bd51a38bfa0782545b5fdbb  levels/net22.sam
-  fba3ce22424600305532f8c846d7c4cdbb71af8e  levels/net23.bak
   9eb4594d6770709b874bfc4775fd74a6414ea439  levels/net23.sam
-  058299dfa5b3c3970b3ac236cbb68b736d5dce39  levels/net24.bak
   f755b004ed07271cb7ff43b0b7eb30f94b426aec  levels/net24.sam
   30e8516a821919abc031c2315d1f7cc927f705dd  levels/net3.dat
-  f79ec2bc9a0a65bc9bd47a6b70031c2da397b032  levels/net30.bak
   4d35ea4ca4b442a3703ac367cccaa1518426a1fb  levels/net30.sam
-  5bb905bf7111cc9e4f362757e45a8096e9d4ace0  levels/net31.bak
   8d7dd959c444a5b1e22fc66bc6264f29448423b9  levels/net31.sam
-  c5dff841f5896ff1e26da29167ace255bbb4ea6b  levels/net32.bak
   78061120330ef2cecf82670d60ca66b9bbb34ca4  levels/net32.sam
-  a14a2a13bc70dc57ae44bc1022148999cf2b9f11  levels/net33.bak
   96a33a1cff23512a51d94cf4f61add0c2a9620e5  levels/net33.sam
-  82d42575602a886aa3da3c6cd7ae6d5d2f121911  levels/net34.bak
   ecb835d68f5ba35e974080c024e4b64c6ba0777f  levels/net34.sam
   e8621f01c810127c2da73b527faf5e414f323f8b  levels/net4.dat
-  c5190855dddd72fce64d53df0acc5501a7996fc8  levels/net40.bak
   a115d11cfe47491705f1fda0dd0f034b7bdfae3c  levels/net40.sam
-  673353ddc7adf9ebd8fc41453cf887374b1869c0  levels/net41.bak
   83734676cc4de2259e6d121e72944a34cde4d337  levels/net41.sam
-  19b7fc248c011b90336a2d22df6f3c716938af00  levels/net42.bak
   ef3d7f27f1043dea73620e13639116acf19c9ed7  levels/net42.sam
-  1adee70c7d794d147e77382efcbd1e843a6240f3  levels/net43.bak
   9a6472694405737262c9b47c7b8c08e1d423bea7  levels/net43.sam
-  020dcf206214f8b507175135f60115e3ca7ad55b  levels/net44.bak
   445a41ec024865c1e997d1d6a4075085218e5ed2  levels/net44.sam
   d4c6967aa34fcf3bf38426c87a73e5acacaef8a9  qdata/area01v.dat
   47805cb2f8bcc3fe30172f71f9356fe7292959b1  qdata/area01v.pal
@@ -1439,7 +1368,6 @@ sha256sums: |
   a81a2f3d37e4c444b8379fa2f3db6a9e4d30fde22ab72ff5c9f91e7112012ad5  intro/attract.smk
   e22c4851d3321ef3bd679f918549dde69fb83b094952d91e9ce88e3b2e2c1b6d  intro/intro.sm2
   1c1d3ecae9d2af5fd8dc2656b96a8d8ad73369fe2aafbfa2a07ec05efb5fa839  intro/intro.sm4
-  7a98b912b04e9e32980cb0e354d6b1184f19531eb1f0b236b6d1ffc1d317704f  levels/easy00.bak
   c699f1b51435e18c0253667d35219f56b179dfff3121fa8695d5f7fe1dfa0c87  levels/easy00.sam
   91ee759e2c5439496d8f93bb2238fc486c52ae1ee3b08138d386299f9102c5b7  levels/easy01.sam
   a0d45a62f13887f8c3c61e8db8aa3cefcddb66a16ec71fa19e3d5eb8b32e6152  levels/easy02.sam
@@ -1466,7 +1394,6 @@ sha256sums: |
   f25440ed1e0cde42debffda6c996574fdb451bb33e79e35650bd37ead9cc0502  levels/full10.sam
   ad5d7f18ab4dfdb542bb2cae2e710fca2963e5b4c9e670d819d049fec7cb8a6d  levels/full11.sam
   38beafde190313e57034bc8295a07660921c4d7c67568850a57a3f6c4cc27f0b  levels/full12.sam
-  215e94a8ee50e2502d33bfea9e036fbf67c2fcac6e4e67135198dc889f5e52cd  levels/hard00.bak
   ee4dfc17365e5faf563cf4a0305bb420e26962273516ef09d486838165d583c5  levels/hard00.sam
   202cd582171f0f2ed06863275a965f115bc726cce037e3ee0983b6bf19c7beae  levels/hard01.sam
   6e3570807e59db42390a82d9f0be3611eae0755b2580cbfe8070ad5bcfd6d0b7  levels/hard02.sam
@@ -1511,37 +1438,22 @@ sha256sums: |
   e8e68db953072ad41e20794c013d48e76ab8a0aac5aab0a8877b9369613f9f00  levels/level.l9
   5062d1a9692bf391cf7faf01eea36026e3b047a8a3bb4f1d3ff5724ecfbc8e50  levels/net00.sam
   d702ef78b9149eea80d664029f6978b88450c6809404bb12d0187a59a0922671  levels/net2.dat
-  82e76b9eb3f47b6b20749050fe36debc02cb842a9f1b72c7558ae7d38f31d891  levels/net20.bak
   4b215a2f2d63672fc7719369e61ee332041fdc305d3cb974bfc222c573aee0ff  levels/net20.sam
-  da3f20cf7898538df2a558ccfb44edd34560cedeea04b623f0451e937478647c  levels/net21.bak
   bf471093fb1a12854b105339914c351572dc237a2e3bf8a5af8e7431af0b6a2e  levels/net21.sam
-  1af4e24ef95fa163a54cb4fd90a9b76810886c5ac32a70af6d58645672dca48b  levels/net22.bak
   c95f1eb3adaaf394d30794131ef47d1d82648b6a363a9253f333343254a1e152  levels/net22.sam
-  3f6bebf672fe9525c4ba050c42b833dd2cc97d41815cf407a09688a0e339789b  levels/net23.bak
   37b6817d37ba6d803b22f4085c44934d001ab09cceb5e7bd070714a3d554cc8d  levels/net23.sam
-  87eceee9dcdc2fa6b5908f4588c17beacf7f1bea4bf8ff07b58e3ababafec493  levels/net24.bak
   425fda672d44a22a9148d92d4d1aaa1eacbb8b50aa558b99b8294b1aeff39200  levels/net24.sam
   10a3e1c2e990373cc387b3aae5d716a92799b1fd10fa3d2ace059df807f46a74  levels/net3.dat
-  439c718ef8a7680c3e0ef2129b71135cf7aa02aa028016ecd0c635a83284ed82  levels/net30.bak
   49f261faaf738be64c62f0bd441cd445944a1d12dd4b7461edf32098ff069402  levels/net30.sam
-  eeebd551214477ef62d76d5a063179c16e079699349e9f162d9882f3626b00ba  levels/net31.bak
   bfa97de7df4bc9dc71f8d5eafa0463e8540c8afc63cc5e41ca4f62d240bd5127  levels/net31.sam
-  5f75d88abdade40394f14dd3ca33195d7d73d83fdd8c52ec1e91e8a82cebd844  levels/net32.bak
   3d6f4fa196351f321833af14988a905e2a95ad2648521508045046cb65c8cfc2  levels/net32.sam
-  8d505ae448b76473a12f942fb5c592be636f2b5494c2ea623906f502525c55d1  levels/net33.bak
   e93422c221ea831c5ebead76f0295a29e6975e9521587a0799a9cb201a20c5d4  levels/net33.sam
-  9cdf0d3253553e78ebd1c245b55f9353bcf120a2921d3cc8868479ab396b7da4  levels/net34.bak
   44bbda88123f9c6d4171f2906edb8748b2dd197bf6a5fca2483789f28b43c5f9  levels/net34.sam
   9a794b500efb76d015d957823f02efa3ffce2fec91282ee9b3c631e3f1be36bf  levels/net4.dat
-  0dc7b857ababe965964ba83d333b97b4b5dee1e278dcdf4bb1e7b05e9a93d511  levels/net40.bak
   715f62c3895e0abc0143020bf31641a71316bd6cfb5a32e6cdfe328f2587e89d  levels/net40.sam
-  a296f75101ae41ff53346d72a28843545440bc8c349f4b90c0c42aefddce7ff5  levels/net41.bak
   7db1151785873d06881f5376c84fd48614343e8d846b7e20c1f5b6fcc581a6eb  levels/net41.sam
-  2c60c2c8a5eb875029ff6334c45d66590b84495e666c639d347e4d1e9922a4b7  levels/net42.bak
   f0c2ee852ff7b56f83f8b19e5d22dbaa63d346c203d0918461459fd7a1e2f667  levels/net42.sam
-  f9f7ae521a7638559cf5098e17d9e7b250a10f437bb04419c2553cd6335653a3  levels/net43.bak
   e17ef4efdfa8154d3f04ff716240092d6c457d6526ee057b7c27aba3fb8954cf  levels/net43.sam
-  c09a6281617ad46689444e57a6b2bc92ae7cc98d95bf24807e70434cd3f932dc  levels/net44.bak
   254ec72d2de6dd858a0c834ac13ab0e4085c214f8902b375e63f6c737a825c1a  levels/net44.sam
   3dce68735802f56651ef346973303dce95a99c16760740f34bbea2963307a60c  qdata/area01v.dat
   33c4c88baf5ed39fc0a088d1bdee94cba5648367c25b26bc350cf2d7efa489f7  qdata/area01v.pal
