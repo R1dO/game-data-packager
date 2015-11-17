@@ -560,7 +560,7 @@ class GameData(object):
         print('  FIXME:')
         print('    group_members: |')
         for filename in print_order:
-            print('      %-9s %s %s' % (self.size[filename], self.md5[filename], filename))
+            print('    %-9s %s %s' % (self.size[filename], self.md5[filename], filename))
         print('\nsha1sums: |')
         for filename in print_order:
             if filename in self.sha1:
