@@ -1,0 +1,113 @@
+---
+longname: "Mixed-Up Mother Goose"
+copyright: © 1987-1992 Sierra On-Line
+plugin: scummvm_common
+wiki: Mixed-Up_Mother_Goose
+genre: Kids
+missing_langs: [ja]
+
+packages:
+  mixed-up-mother-goose-en-data:
+    longname: "Mixed-Up Mother Goose (VGA)"
+    provides: mixed-up-mother-goose-data
+    version: '2.000'
+    gameid: mothergoose256
+    install:
+    - 0.map
+    - 104.hep
+    - 104.scr
+    - 17.hep
+    - 17.scr
+    - 4.hep
+    - 4.scr
+    - 43.snd
+    - 614.p56
+    - 90.hep
+    - 90.scr
+    - 90.tex
+    - 94.hep
+    - 94.scr
+    - 94.tex
+    - mgsg.dir
+    - resource.000
+    - resource.aud
+    - resource.map
+    - version
+
+  mixed-up-mother-goose-sci-data:
+    longname: "Mixed-Up Mother Goose (SCI)"
+    provides: mixed-up-mother-goose-data
+    better_version: mixed-up-mother-goose-en-data
+    version: '1.011'
+    gameid: mothergoose
+    install:
+    - sci assets
+
+  mixed-up-mother-goose-agi-data:
+    longname: "Mixed-Up Mother Goose (AGI)"
+    provides: mixed-up-mother-goose-data
+    better_version: mixed-up-mother-goose-sci-data
+    gameid: mixedup
+    install:
+    - agi assets
+
+  mixed-up-mother-goose-ja-data:
+    provides: mixed-up-mother-goose-data
+    longname: "おかしなマザーグース"
+    lang: ja
+    DISABLED: missing info
+
+groups:
+  vga assets: |
+    506       bdb4bee90222df1d88e355ea0807a447 0.map
+    798       2672f4259440eb06e6ae748d53fbe11d 4.hep
+    1560      7e3f897c94923481ddc140e5a7f0b7b6 4.scr
+    386       f5fba0bd7fab42e90c2e0bea6d657c5d 17.hep
+    1802      18a683a7c844ed67ba877b37e4c71b6e 17.scr
+    140       078c77153b3f056396eba26f6d3dd8ce 43.snd
+    2228      82086b79ff950bad64832bfbf10d3565 90.hep
+    6134      540953b365464a5806155ed2dcc350a3 90.scr
+    659       52927fa871160eeee994e47d6878a01e 90.tex
+    1440      53bf3c4cbe1dc019fed935db5e793fb7 94.hep
+    1368      f84ff30ad8a59918b0aebc6074c126ab 94.scr
+    17        2a6788f5190c959839735fd1f9276832 94.tex
+    2678      e11348dab5c1833bf230ce9458c54a94 104.hep
+    5006      910c696d45bd7a4d0d3f356a3e38d11b 104.scr
+    9319      eb249d6092da9e1b16110e8d8718cd3e 614.p56
+    2         ab2a0d28de6b77ffdd6c72afead099ab mgsg.dir
+    2948975   073e39af055aa5890474942e7aa3fce2 resource.000
+    2743808   63f9fdfe5f24a93bf372720a4e5a5f8a resource.aud
+    7026      eecc3917a2c1e2b1bbdba3286f2bda86 resource.map
+    7         01869a900e47bcf330c4c17d5b7e5a4d version
+  sci assets: |
+    239906    62f29212ac02649b10d78ab6f6e40e31 resource.001
+    719398    71afcd607e2864e4015163769fd4dc52 resource.002
+    2598      3490f85dab47e504c41b7eb3312e285e resource.map?1.011
+    7         1e95e121e7a4e4757d19a41748f19ef5 version?1.011
+  agi assets: |
+    3072      f3d4c66e195491aa759b7c5ef996488b hgc_font
+    606       e524655abf9b96a3b179ffcd1d0f79af logdir
+    2690      2471e206927d94e35991e32079cd595a mgsg.1
+    8         dff350940274bf3192cde081ef5a4cf2 object
+    603       53811d8c315c37d79edc4fa3e92a76f3 picdir
+    198       ead21b3422a366903ef11ccc63f9df30 snddir
+    603       4d04f8e065f1d4974d717df6bc28cb6f viewdir
+    34929     6d01f4da718e0fd1906097768f80cea6 vol.0
+    47397     ff6f42a7861bb00d645e367190f43db6 vol.1
+    317869    0d619d450a90fbc085878d6f680cd151 vol.2
+    134       cca6f74ec023a85eeac0df322f372273 vs.vsn
+    235       17b9f2c7ea19173d0df7802c8b6ea9c8 words.tok
+
+sha1sums: |
+  c85f182e66c20f0a4c7ae7f9e08b79d171ea184c  104.scr
+  cb818b6fad987ee3b2c2dfc5a49b52566517b429  614.p56
+  9b35b5b64748a933447841078d0678a427115816  90.scr
+  c928eafa5a8b431a4eb70348a675e77c5f96de75  resource.000
+  f7ec76c47d884bf3b46162f8aa5e43b75513269b  resource.001
+  511ded6b55b38035d48a2bd0aadb19db4527c476  resource.002
+  68164267abedaf54694d96369e60f19e36f83802  resource.aud
+  be9ff16c59fa8bb8eace6569524af29c072ab97f  resource.map
+  b53bffdfe8dd2808b3d0ed923c42b45a50432d18  vol.0
+  7f9a5e7d17f63534def4881dd1c64641827612d5  vol.1
+  2e96dd9c9c8dc11e5e2fbab9c06cd138e154de94  vol.2
+...
