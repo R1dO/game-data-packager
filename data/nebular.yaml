@@ -15,8 +15,6 @@ packages:
   rex-nebular-and-the-cosmic-gender-bender-data:
     install:
     - assets
-    optional:
-    - dubious files
     doc:
     - gog documentation
 
@@ -26,7 +24,6 @@ files:
       format: innoextract
     provides:
     - assets
-    - dubious files
     - gog documentation
 
   gog_rex_nebular_and_the_cosmic_gender_bender_2.0.0.2.sh:
@@ -34,13 +31,9 @@ files:
       format: zip
     provides:
     - assets
-    - dubious files
     - gog documentation
 
 groups:
-  dubious files: |
-    30        7561f0315b1b199190fcbc2e3e8583f9 config.rex
-    44        f68c044f84708de6961a06431c6cc9b2 happy.rex
   assets: |
     2608      d7a1484128d0d1b663928674fcd5e62a digital.aga
 
