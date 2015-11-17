@@ -1,0 +1,54 @@
+---
+franchise: Ringworld
+longnane: "Ringworld: Revenge of the Patriarch"
+copyright: © 1992 Tsunami Games
+plugin: scummvm_common
+wiki: Ringworld
+try_repack_from: [~/.dosbox/RING]
+
+help_text: |
+  Files of the floppy version are only available after you have run
+  the original installation program with DOSBox.
+
+  game-data-packager will check '~/.dosbox/RING' for needed files.
+
+packages:
+  ringworld1-data:
+    gameid: ringworld
+    install:
+    - ring.rlb
+    - tsage.rlb
+
+files:
+  ring.rlb?floppy:
+    unsuitable: |
+      Files of the floppy version are only available after you have run
+      the original installation program with DOSBox.
+
+groups:
+  games assets: |
+    8438770   61f78f68a56832ae95fe06748c403234 ring.rlb
+    32235     205a6883ef64e32d5675398fd6adeeab tsage.rlb
+  unsuitable archives: |
+    9015      927f3b255253f319e279e26a4b38fa1c install.rlb
+    1457564   4451640d9d4e5ae1acace9e09bca0299 ring.#02
+    1457564   7cccb485c3ec5b793a80e9e05ef98e2f ring.#03
+    1457564   e42612a490a2ef2ba1f60c654f1238fb ring.#04
+    1457564   addb1f226885ad10f5de22f8300bda2f ring.#05
+    1457564   d86ce0de89af2020d1a6d717cf74c424 ring.#06
+    1117300   3ba6b695ea58eb4b895b0fed544cf5d1 ring.#07
+    33692     f4a7cfb2cc16eb51f6141389fd2facdb ring.rlb?floppy
+
+sha1sums: |
+  bd5595cd8b8e721fc7d3e8bdbf583c9c1c1000c4  ring.rlb
+  556d263981c15b6ea597d6b953d7ba049f55b495  tsage.rlb
+
+  49c67ade3620c6933b3355a1ecdba56fef620068  install.rlb
+  74cfc4ff7a61f7e7b3d269f98f3babfa9250bc38  ring.#02
+  1e65a60931dd9b581d7d77c32eb8a82f341e246e  ring.#03
+  c9c9d2c953ab2f25853e87a4dda9e7349996773a  ring.#04
+  6bb0ba3e8fe98df53fce246e5417ef8ba768c1ba  ring.#05
+  0d3173148761e89b1dbf61286b90f772a730960c  ring.#06
+  92a0f245bf4f51f5dd2ddaf6762a5e412ab975ef  ring.#07
+  aba9e14ced6ce62f82c9a915a2e76156f17bb11b  ring.rlb?floppy
+...

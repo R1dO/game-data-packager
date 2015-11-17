@@ -1,0 +1,27 @@
+---
+franchise: Ringworld
+longnane: "Return to Ringworld"
+copyright: © 1994 Tsunami Games
+plugin: scummvm_common
+wiki: Return_to_Ringworld
+engine: scummvm (>= 1.7.0)
+
+packages:
+  ringworld2-data:
+    install:
+    - r2rw.rlb
+    - snd4k.res
+    doc:
+    - readme
+
+groups:
+  default group: |
+    47586928  f5dd9ef0b5ceda876bb3d63ce06f7c13 r2rw.rlb
+    234516992 7fffc9a054195dc1fd6bc00a92372ef4 snd4k.res
+    9473      ef175ce285d607d76d15f51fde7a7a31 readme
+
+sha1sums: |
+  ae871b342f990100ee7df9cba803753c1d479381  r2rw.rlb
+  b5faf097c138eec1556ff8763a7398b42978133f  snd4k.res
+  27215676eac8af9db2c86951a0380b7f1f248d23  readme
+...
