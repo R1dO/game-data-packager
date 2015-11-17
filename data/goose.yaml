@@ -12,27 +12,9 @@ packages:
     provides: mixed-up-mother-goose-data
     version: '2.000'
     gameid: mothergoose256
+    copyright: © 1992 Sierra On-Line
     install:
-    - 0.map
-    - 104.hep
-    - 104.scr
-    - 17.hep
-    - 17.scr
-    - 4.hep
-    - 4.scr
-    - 43.snd
-    - 614.p56
-    - 90.hep
-    - 90.scr
-    - 90.tex
-    - 94.hep
-    - 94.scr
-    - 94.tex
-    - mgsg.dir
-    - resource.000
-    - resource.aud
-    - resource.map
-    - version
+    - vga assets
 
   mixed-up-mother-goose-sci-data:
     longname: "Mixed-Up Mother Goose (SCI)"
@@ -40,6 +22,7 @@ packages:
     better_version: mixed-up-mother-goose-en-data
     version: '1.011'
     gameid: mothergoose
+    copyright: © 1990 Sierra On-Line
     install:
     - sci assets
 
@@ -48,6 +31,7 @@ packages:
     provides: mixed-up-mother-goose-data
     better_version: mixed-up-mother-goose-sci-data
     gameid: mixedup
+    copyright: © 1987 Sierra On-Line
     install:
     - agi assets
 
