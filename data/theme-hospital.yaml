@@ -65,37 +65,17 @@ files:
     alternatives:
       - levels/full00.sam?cd
       - levels/full00.sam?gog
-  EN.pdf:
-    size: 4514818
-    md5: 61c5337dd5d371b57bdf9ccdc95b4960
-  FR.pdf:
-    size: 3192246
-    md5: 2df86ca7026808d8ddc0cf349796d0c3
-  GE.pdf:
-    size: 7656323
-    md5: 5c9ea61edc4334264f2f1aa52e28f3d7
-  IT.pdf:
-    size: 1028644
-    md5: 0a8b2534c4c6cfa31815ec75b3877996
 
   Demo.zip:
     download:
       theme-hospital-mirrors:
         path: .
-    size: 12878920
-    md5: d62f3be55a625b99b6a655e37bdb5df7
-    sha1: 38fe80a03a2425b44a988be8bdd5940c4cdef89d
-    sha256: d6b79b6f76e91413ecbf552a397e283e124a223263491cb08f803ae0b660f897
     unpack:
       format: zip
     provides:
     - demo version
 
   hospital.zip:
-    size: 12816405
-    md5: 1393a0676c0f6e3046cdc485b580fc68
-    sha1: 71e1718bfbd2fd10a26a4eb0825a1a5db40b0f05
-    sha256: 89ee9ea02437f4819d8a9c957656c2fcc279d665e3ad39fa0966075fd674ccfb
     unpack:
       format: zip
     provides:
@@ -112,6 +92,26 @@ files:
 groups:
   default group: |
     31801     9b2e0ebc8a38340e8717968db40504ac levels/full00.sam?gog
+    31802     6b5085e24a0edfc74e05ce461dd32848 levels/full00.sam?cd
+
+    # gog.com
+    23897     a9aa90b9e9af4685a668f143f6462692 eula.txt
+    7505      3ca819220a3269e314c601a2333501f7 gog_eula.txt
+    1123270   115f65922bb0e845a9f585b424bab45b manual.pdf
+
+    # Origin
+    224382    6f02a3dbdfed6e1938d4708ec046de38 en_US_eula.rtf
+
+    4514818   61c5337dd5d371b57bdf9ccdc95b4960 EN.pdf
+    3192246   2df86ca7026808d8ddc0cf349796d0c3 FR.pdf
+    7656323   5c9ea61edc4334264f2f1aa52e28f3d7 GE.pdf
+    1028644   0a8b2534c4c6cfa31815ec75b3877996 IT.pdf
+
+  archives: |
+    167653008 88806c2c2f9376b696dc282939afd8cf setup_theme_hospital_2.0.0.5.exe
+    12878920  d62f3be55a625b99b6a655e37bdb5df7 Demo.zip
+    12816405  1393a0676c0f6e3046cdc485b580fc68 hospital.zip
+
   full game: |
     872896    4d0c496b10b1b451e91775b11d836f75 anims/320x2401.smk
     1122228   2482104ac9d185994dc31ac4eecb1fb1 anims/320x2402.smk
@@ -842,31 +842,6 @@ groups:
     14402     4d927f3195922ca016a93574ab9350fc sound/midi/nightsh.xmi
     12490     676f960b27fe8030f86db863fc936da8 sound/midi/steady.xmi
 
-cksums: |
-  _ 31802     levels/full00.sam?cd
-
-  # gog.com
-  2045673524 167653008 setup_theme_hospital_2.0.0.5.exe
-  2696051171 23897 eula.txt
-  2094702119 7505 gog_eula.txt
-  1541739238 1123270 manual.pdf
-  2051011456 31801 levels/full00.sam?gog
-
-  # Origin
-  1616675884 224382 en_US_eula.rtf
-
-md5sums: |
-  6b5085e24a0edfc74e05ce461dd32848  levels/full00.sam?cd
-
-  # gog.com
-  a9aa90b9e9af4685a668f143f6462692  eula.txt
-  3ca819220a3269e314c601a2333501f7  gog_eula.txt
-  88806c2c2f9376b696dc282939afd8cf  setup_theme_hospital_2.0.0.5.exe
-  115f65922bb0e845a9f585b424bab45b  manual.pdf
-  9b2e0ebc8a38340e8717968db40504ac  levels/full00.sam?gog
-  # Origin
-  6f02a3dbdfed6e1938d4708ec046de38  en_US_eula.rtf
-
 sha1sums: |
   cdc8d8db5f52c95ba19efd04b3e5e28a40b53967  anims/320x2401.smk
   959bd1438315ae34ffd32c8cdf139a6adc46d1ba  anims/320x2402.smk
@@ -1273,6 +1248,9 @@ sha1sums: |
   aa9e33005a7a738b6de7483c20acd9d060c07bdf  sound/midi/readme.txt
   53027a040e8d9be18d581e7da8cd33700e7d3c90  sound/midi/sixseven.xmi
   580169ab5ec1a8e356ca16ce4f21f7ddff4c5805  sound/midi/steady.xmi
+  # demo
+  38fe80a03a2425b44a988be8bdd5940c4cdef89d  Demo.zip
+  71e1718bfbd2fd10a26a4eb0825a1a5db40b0f05  hospital.zip
   # gog.com
   ce7b2e51aa99aad66736732d35966db2f36a9ea4  eula.txt
   2acb1ec04139af2cc39d4253ca557c9571a4d15c  gog_eula.txt
@@ -1687,6 +1665,8 @@ sha256sums: |
   0df6026eec2dbecaafa69b956a59cf77a482311b5c9888ace6429b2e509cbada  sound/midi/readme.txt
   3c7131dd1b707b24f4a5b26bf969d0d365c40b6f9e689c3d7b6c0cf8d6eb2ed1  sound/midi/sixseven.xmi
   dd78cdf4ec2a80930d419376a03e805234fc2ec1eb13ee928293261072104c8e  sound/midi/steady.xmi
+  d6b79b6f76e91413ecbf552a397e283e124a223263491cb08f803ae0b660f897  Demo.zip
+  89ee9ea02437f4819d8a9c957656c2fcc279d665e3ad39fa0966075fd674ccfb  hospital.zip
   91216efce09b12a101149d6689c00a4c2afad8fd3c4c38bd8d70d2cf0ba29c6b  eula.txt
   17314b556b82b7b0378223324f53a94af343fe731ce93fc67ad750ff656cbcb7  gog_eula.txt
   c41a77632ca1c33389b57d7210936eb5151ceb6d540707420a4de2d55bd47497  setup_theme_hospital_2.0.0.5.exe
