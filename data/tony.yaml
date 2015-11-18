@@ -1,0 +1,218 @@
+---
+longname: Tony Tough and the Night of Roasted Moths
+copyright: © 1997 Nayma Software
+plugin: scummvm_common
+wiki: Tony
+missing_langs: [de,it,pl]
+
+steam:
+  id: 356210
+  path: common/TonyTough
+
+packages:
+  tony-tough-en-data:
+    provides: tony-tough-data
+    install:
+    - common assets
+    - english assets
+
+  tony-tough-fr-data:
+    provides: tony-tough-data
+    lang: fr
+    install:
+    - common assets
+    - french assets
+
+groups:
+  english assets: |
+    4350      ce82907242166bfb594d97bdb68f96d2 data1.cab?en
+    366773    5285010b6e9b69b122f8ccec1e9581db roasted.mpc?en
+    766963    d2eab65d6dcee4fbea0a2fca3a1fb533 roasted.mpu?en
+  french assets: |
+    4350      59c4c56ccc453ab2f589d34cfa81e584 data1.cab?fr
+    374135    40c7626863cd6b7ad23f88f46279a4d6 roasted.mpc?fr
+    821756    7bd196e49956d00550340559adb26770 roasted.mpu?fr
+  common assets: |
+    1616268   73701b441a7fe41750e98710619563cc music/00.adp
+    5260368   41edf570dfc9bc432a5d19bfdabe8527 music/01.adp
+    2710028   27aac6ca94a0ba95cd209ad4ec487b45 music/02.adp
+    5661052   710c22afa426dcab9b7dfe7ec2556aae music/03.adp
+    153848    7b896f1ef6efadd832e6817dfc6d1682 music/04.adp
+    280812    d6f6f36eae85cf4035366d10563b1498 music/05.adp
+    4149260   caf3aab89305e074e43e3924b7f6a9a9 music/06.adp
+    9186336   774996ad72b67cd39acbfd16b1da2a1d music/07.adp
+    1297969   7d6e75508f32ffe57ffd16afb9d1649b music/08.adp
+    161863    f43e679811da550077900d8332ed84f3 music/09.adp
+    2161017   3bcf721a2cb87aef150bdb576721265a music/10.adp
+    3050124   b5ccd69cf7ec2cd845cc8c60985be908 music/11.adp
+    2692539   2ad9154c8c4cca1d901fd2057d2312ec music/12.adp
+    1765388   643027afcc8528246926c85875f64923 music/13.adp
+    2932043   7088bfc5adabdb9e8f0b7e728d9abae0 music/14.adp
+    4228620   dcd9e6355eb5f3bbbee851790099ec5a music/15.adp
+    2168852   1ad5dfa776908898e5615b424d156969 music/16.adp
+    3782616   5883f6eda031efbc5b71ba8ebf596d92 music/17.adp
+    3497996   1be06462783bb0ec1ee6bcc697bc7428 music/18.adp
+    2216588   ffd3d256c04fbaff24810d67b237d91f music/19.adp
+    7981580   a8bfa5770d4d161f49733e85ed38f362 music/20.adp
+    5172144   d150fe91833d744a0b48d11db547faa1 music/21.adp
+    1694092   143b19657b122f24baf354056d057c19 music/22.adp
+    3940684   bd0b495b3fb3be39efe31b18949313b3 music/23.adp
+    5852944   cb55bd114017177f890414535a977e14 music/24.adp
+    507890    ffc2190d8a651feffcd5425a20589521 music/25.adp
+    3983780   3fbce52c0512955fb2180aa2c63e8731 music/26.adp
+    1742815   8f8eb69cb8a2099e2f5af55c1be94759 music/27.adp
+    147052    3f115f9fa7165d61cf1270a661b9a410 music/28.adp
+    110292    d1065eb0e1b05488fa19658d311a52ef music/29.adp
+    1505292   280da9ad4779c614bab1d80e78445871 music/30.adp
+    1469640   7c91705b320079a00752786829f0872e music/31.adp
+    630791    3afaeb864512a183e397b1d207eb5873 music/32.adp
+    168323    19d8ac953af4345ee8955366a9fa9e6c music/33.adp
+    265882    234798643e91b075f2dde123b569288f music/34.adp
+    3588824   3fa8a7777114a91c302c5cfc332bfd4c music/35.adp
+    4530188   ee8fcb6f0c7df99b9fc5baa0450f2069 music/36.adp
+    4341344   eb1480e90a10b00a13638068629c94a4 music/37.adp
+    2400268   7ad2ff0dbb4518f65eda552e9176195a music/38.adp
+    3162124   30e6c5f38010469814843cb3f0dc444c music/39.adp
+    2371032   ac1c0a50bc450353fd54b3579255789a music/40.adp
+    541708    ef369a23025b3fae39f356facfbd3209 music/41.adp
+    70476     9260720654560d29e291857f332bca09 music/42.adp
+    1355532   434cfc0fffb41771785095553bead4bf music/43.adp
+    2203916   fdba04b890bbc6c0421c99d7a11660d2 music/44.adp
+    784396    40601452bfc64a2dc25a4a4e09b22e65 music/45.adp
+    747156    50c97e0d2192eca0085ca13206164ce8 music/46.adp
+    347284    f072ae9dc02687c52016dd729af551a6 music/47.adp
+    147468    b2dfd489b2ab8d6bd8d6c55dfc9631cc music/48.adp
+    272908    cac8e05d0d0ea0f0210828eff5eb6a45 music/49.adp
+    216076    0fb0f59c481543d39f8adc39be5cf4e8 music/50.adp
+    454156    5982086d39628937c785f43432330850 music/51.adp
+    540384    8734cd7cf2e200324946735fdc799523 music/52.adp
+    991244    feff4549f62576254d3f1c120c36c16f music/53.adp
+    3152140   5fc3b9c745af4d5ebe9e9c06762f224a music/54.adp
+    3209228   1c72083c6de238078d6fa0da8aa7022b music/55.adp
+    542732    f3b31730151390fbf9d093e3764ebde9 music/56.adp
+    1863564   4f3f033df7fed5a56d3ccb07d41eb6fe music/57.adp
+    2723928   86bc79dced87b2211ed7d87323b328bf music/58.adp
+    1018780   7639f2a025aa356bcfcb60fd5a76ba85 music/59.adp
+    544780    43773bb0b9b8cff116c925c5ce9c2281 music/layer/1.adp
+    544778    4f24fd6ae41ebcf4c84ca66a4d12f668 music/layer/2.adp
+    773132    fb2e91fa160526014c19bda4e02db305 music/layer/3.adp
+    512012    ad71ef4f102f237e292da77c7fa7d0d3 music/layer/4.adp
+    935274    caeffe50598e4635192a3d4c82796eff music/layer/5.adp
+    512012    feb3e9d86c18a748b615a27c7a392517 music/layer/6.adp
+    680784    38b1201a9fa3b82061e6cd544fec4be8 music/s00.adp
+    606552    5795aeb85424f94301ebd95efcd0cedb music/s01.adp
+    1049690   079dd444f1b959571b98c80ffe40ef4d music/s02.adp
+    88084     5b1a96e6efed83d5edac5863213fdbff music/s03.adp
+    601352    5d8883d2a37c37a72c558470e00bf9de music/s04.adp
+    573708    8904754c25dad0ed47e2734e6416a806 music/s05.adp
+    4187148   ec4a206c4358575cde367272aef15b3d music/s06.adp
+    357968    e40e40c02daa835ef2218343b13e1930 music/s07.adp
+    441356    843ac94ab4d6d6bfc2297a60e3f35e3e music/s08.adp
+    2709516   458299b05a10219b3766f126f123476f music/s09.adp
+    1961191   03ea652f5f2e4121f549d5bf3944fecc music/s10.adp
+    1175676   2fc41a6c479638991318f7bfa50b741c music/s11.adp
+    583120    cf98ea157f5b6fac8893f84425618a2c music/s12.adp
+    427020    04bc5faa39615adf5f030454fca24456 music/s13.adp
+    2879481   a45db6db6eccec69e41e6c1a54f9fa63 music/s14.adp
+    263692    7ff0bc39db72ca8fe4635ba607b5c236 music/s15.adp
+    339980    94662680cae66a35a102c44ba6d9e057 music/s16.adp
+    2332733   38e7050209ddaa31e068a64f4fdd24f8 music/s17.adp
+    88236     c75895b1dd49226b5ca020064ef61e5f music/s18.adp
+    2176      43e8b624c5f8686baa1a83e7524777f9 music/utilsfx/u01.adp
+    1532      b8a9b38e41bc5d6d4315c5dc130e4add music/utilsfx/u02.adp
+    135911071 f369786a4691ea0613a54f18a7741ddc roasted.mpr
+    243003502 0a237c0bd2cededa6b772e897abd4e87 voices/voices.vdb
+
+sha1sums: |
+  4f02a07afd4f84dc2be959b8ea59e3ad3a7c8224  music/00.adp
+  a5d331a44fa6d32808b168c4d104d0fcd8b635ae  music/01.adp
+  6cf42c1c060c0da40b0f129fff30142b237bbe70  music/02.adp
+  868d2502f6a34e2b063068e196a1ab2969559ed5  music/03.adp
+  d043d51b22c2146068e0f6d420874cbf751aeae7  music/04.adp
+  a2adbc21407126e7c630af9b46e19871e7c43294  music/05.adp
+  09df8cd47d1c8e5c04c6c376694ac5bd6b1c48ba  music/06.adp
+  30bc7b51b54bf6d4d3cd190bf3a18a785c8c0fd4  music/07.adp
+  f08c999ec52511e45ad36444155db862a05ae5e1  music/08.adp
+  7d61e04f99b67fac2d48f9e3839ff96d47de5cee  music/09.adp
+  b2ac4c53590a4097f61538e77c927863b584324a  music/10.adp
+  9461a5014ddfb85c11381fd62deb68c4b8dc91d2  music/11.adp
+  4e27c67d702e57d096387e52a1b21604e2447f61  music/12.adp
+  8d11c47bc6091c37ea9706e9395fd41d3994a901  music/13.adp
+  c3e458ff1b293c93070b28e1468b3fa0fddfbe21  music/14.adp
+  e5c5c0bf09a80666f74b5be4e73d4f7446f758e5  music/15.adp
+  66f58be376e5e0328d5a6948a4558a4f1406828c  music/16.adp
+  cbd58d49c81823b22477c12c28e5aabcfe6435c5  music/17.adp
+  3e0cd95ca286c11d6df0b83411e5ac384351f14b  music/18.adp
+  a72347c97f9fe9c81b5a2ca6678b2ddebdacade3  music/19.adp
+  f0bd94e6523179585fee2766ac6ebd449cfa9561  music/20.adp
+  3b62c06eac5b3e33501dabe102019638e555603f  music/21.adp
+  27969b2cc7a57c71fd5395b5e1885aa203d7119a  music/22.adp
+  d2bd77b1810c8aa0665c8eb377029dc8bc66667f  music/23.adp
+  a8ed58f71b2b212b35dd2f441c4cc6080f150148  music/24.adp
+  8d7553a84124d86124b882a6f32474652d5816e3  music/25.adp
+  4e90e962b76e90fe67cd826eef315d6be795fb0a  music/26.adp
+  ee56a296323fef457e94179b55a5617c2d284c7a  music/27.adp
+  8b24000bfa71cd77949678dbdb82cedee154ada7  music/28.adp
+  fcc98558ab6b5b212f049973b46979b73360d568  music/29.adp
+  265568cdf7f3c066237d092f1e2e6acc1093f28b  music/30.adp
+  5324a5edff9e4dd9ce6743fad645685a5677c92e  music/31.adp
+  e4671b2ce2d23f2d386045ab61b8c3e4915c2bab  music/32.adp
+  6472b6ce74af9cf037ed8b10068e75158521f68f  music/33.adp
+  fb00425dc194a26bcb5c9f88be49f800a4a022d6  music/34.adp
+  6e9e3dda4a93a3f863930b3eb3d558796c9bec44  music/35.adp
+  69b94e1b3307b0a11d23fc9e94bdfa41524f1a0f  music/36.adp
+  1ce6f1da947a5aa49729697321573397fcb545a5  music/37.adp
+  2caa4840b19f37a1bb14e34e394c6e5e7b85bab2  music/38.adp
+  822714a9afc7b90991757c375aa21a377ca56cb4  music/39.adp
+  da3b160735b6de01f1f79edb2bd588d7d344ac93  music/40.adp
+  b445328167d6774991eb7650d1cc26c0820615b6  music/41.adp
+  eca17bd93dcb0f1bad59eb44410429158fe81635  music/42.adp
+  43c5e5f19e3d2bc6f2a7b7195cb6ab6a53422814  music/43.adp
+  30a8c00d0eeff40a2693e62bb73ddaa5c73e29bd  music/44.adp
+  62c19523c5d8cecd1e31bd99a57cff9d22ac851e  music/45.adp
+  df561b107a5a6e6c097e505d126a30495c75f20d  music/46.adp
+  ac65d0f99f9e99e794dd2f51078ffc670b8166a4  music/47.adp
+  0d8770d3320e082c34e44aea4865cc72d6f1ab3b  music/48.adp
+  be364fba318ac6b3c2f2c3da1b69eecfeb39dca7  music/49.adp
+  e200d2103895af554a5e35dc48998fce243abfa1  music/50.adp
+  1ec1eb7ad655115dc6287a30436a7f2092d447cc  music/51.adp
+  3625f388c81d91a126c79e5615b043f1d5fb5714  music/52.adp
+  73705b1517c48f046dfe9618ba494fc53d724a28  music/53.adp
+  d005aefdb7cfacad1fc91a10d70e94c75bbecd22  music/54.adp
+  2810702fea8d09012065efab99e899dd2a77442b  music/55.adp
+  46f93f698591911bcd0aedab13f48a9fad1289cc  music/56.adp
+  6e259eeb6ddf68db9a423b82299884907dd0e5e6  music/57.adp
+  4ee71894773b7e58b7771343b0d3234215f2b9a6  music/58.adp
+  8694e0aaab09e492ced229ca43cfe77d26dc9779  music/59.adp
+  13815aaa27d98f3185dd28489bd7fede17d81c0b  music/layer/1.adp
+  faa9388145a848742348e326ef1098b0ca95488d  music/layer/2.adp
+  ffe7532947d392c05242838e14fff2db48a59f6e  music/layer/3.adp
+  74a096751b1c9bde00e32be7fe6983b0e5b9d5a0  music/layer/4.adp
+  36893a7346f46437bb981e94f5bd5ac9d35c9cab  music/layer/5.adp
+  eacb7ce24ba7fa07c86afede8e581d75293383fe  music/layer/6.adp
+  7624bf60a512bac5ce102227910416713fecc826  music/s00.adp
+  13600d03775afcfbceef0a20a30b529cdbd015d3  music/s01.adp
+  a77092c4b8b7b6e4c59f821a83699344cd0a15cb  music/s02.adp
+  738c9bca5c4ca3472f70168c1d3798d74ee587f5  music/s03.adp
+  fa826efde14c8b564aac03628f99a9df6abc0919  music/s04.adp
+  b25f4fef2a4234c58f82d8b3068875fe3d033d8d  music/s05.adp
+  aa2b019ce59ac6332be3a2fc28f4fb57e77cac66  music/s06.adp
+  601665a4eb89d1646f6bd40dd9a971db9dd9f78d  music/s07.adp
+  097048b950f115906214bbdc7b69c38fe7c7cd7a  music/s08.adp
+  c91ffad1809e79898661bbefa71bf476ee38f4d7  music/s09.adp
+  e701a5768eca55172ba23df7d7c95b603cc1128a  music/s10.adp
+  1ae068fa259b9cdb2af3d9181ae43ca325041632  music/s11.adp
+  b0dd9f027cab9e15f6084c41da1091fca84270c2  music/s12.adp
+  0e595431fc9cdb87b2b866c5f19e9fa52f2ea842  music/s13.adp
+  8757de8fd1aa3f3187692f3d34d13fe83b17c60f  music/s14.adp
+  2ccbfa65d021106c5233d67d51cad44e8b7ffb67  music/s15.adp
+  4ff1b736c2d67125e769ece01a3c3cf31024b1d1  music/s16.adp
+  49eef6e26640159e4f15da8987bb19ed1615850c  music/s17.adp
+  b85acca5cd71c84448ced7462404df658d1dd0c9  music/s18.adp
+  d6ec131f74efdd0b7ba3dc22ae421f7cd834cac1  roasted.mpc?en
+  73c65d208609d482a5cb1c04b42f23d08ca9b984  roasted.mpc?fr
+  5423e9ba95409b793bf53c4fb56a18910d3b827f  roasted.mpr
+  1b537302e17edde0952c82af9b3cf21a5f3a45bb  roasted.mpu?en
+  221820e706c1ec50090936562b35519e51c2f718  roasted.mpu?fr
+  0f609a7e7182265fd08063147610c664d4fd193e  voices/voices.vdb
+...
