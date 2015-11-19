@@ -56,6 +56,7 @@ echo 'GAME_PACKAGE_VERSION = """%{version}"""' > game_data_packager/version.py
 echo 'FORMAT = "rpm"' >> game_data_packager/version.py
 echo 'BINDIR = "usr/bin"' >> game_data_packager/version.py
 echo 'ASSETS = "usr/share"' >> game_data_packager/version.py
+rm game_data_packager/util_arch.py
 rm game_data_packager/util_deb.py
 
 %install
