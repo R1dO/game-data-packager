@@ -1430,13 +1430,6 @@ class PackagingTask(object):
         pass
 
     def fill_dest_dir_arch(self, package, destdir, compress):
-        files = set()
-        for dirpath, dirnames, filenames in os.walk(destdir):
-                for fn in filenames:
-                    full = os.path.join(dirpath, fn)
-                    full = full[len(destdir)+1:]
-                    files.add(full)
-
         PKGINFO = os.path.join(destdir, '.PKGINFO')
         short_desc, _ = self.generate_description(package)
         size = check_output(['du','-bs','.'], cwd=destdir)
@@ -1446,7 +1439,7 @@ class PackagingTask(object):
             pkginfo.write('# using fakeroot version %s\n' % PACKAGE_CACHE.current_version('fakeroot'))
             pkginfo.write('# %s\n' % time.strftime("%a %b %d %H:%M:%S UTC %Y", time.gmtime()))
             pkginfo.write('pkgname = %s\n' % package.name)
-            pkginfo.write('pkgver = %s\n' % package.version)
+            pkginfo.write('pkgver = %s-1\n' % package.version)
             pkginfo.write('pkgdesc = %s\n' % short_desc)
             pkginfo.write('url = https://wiki.debian.org/Games/GameDataPackager\n')
             pkginfo.write('builddate = %i\n' % int(time.time()))
@@ -1462,8 +1455,15 @@ class PackagingTask(object):
                 if engine and len(engine.split()) == 1:
                     pkginfo.write('depend = %s\n' % engine)
 
+        files = set()
+        for dirpath, dirnames, filenames in os.walk(destdir):
+                for fn in filenames:
+                    full = os.path.join(dirpath, fn)
+                    full = full[len(destdir)+1:]
+                    files.add(full)
+
         MTREE = os.path.join(destdir, '.MTREE')
-        subprocess.check_call(['bsdtar', '-czf', MTREE, '--format=mtree',
+        subprocess.check_call(['fakeroot', 'bsdtar', '-czf', MTREE, '--format=mtree',
                  '--options=!all,use-set,type,uid,gid,mode,time,size,md5,sha256,link']
                  + sorted(files), env={'LANG':'C'}, cwd=destdir)
 
@@ -2577,13 +2577,19 @@ class PackagingTask(object):
         if arch == 'all':
             arch = 'any'
 
-        pkg_basename = '%s-%s-%s.pkg.tar.xz' % (package.name, package.version, arch)
+        pkg_basename = '%s-%s-1-%s.pkg.tar.xz' % (package.name, package.version, arch)
         outfile = os.path.join(os.path.abspath(destination), pkg_basename)
 
         try:
             logger.info('generating package %s', package.name)
-            check_output(['fakeroot', 'tar', 'cfJv', outfile, '.'],
-                         cwd=destdir)
+            files = set()
+            for dirpath, dirnames, filenames in os.walk(destdir):
+                for fn in filenames:
+                    full = os.path.join(dirpath, fn)
+                    full = full[len(destdir)+1:]
+                    files.add(full)
+            check_output(['fakeroot', 'bsdtar', 'cfJ', outfile] + sorted(files),
+                         cwd=destdir, env={'LANG':'C'})
         except subprocess.CalledProcessError as cpe:
             print(cpe.output)
             raise
