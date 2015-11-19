@@ -213,6 +213,7 @@ def recursive_utime(directory, orig_time):
             full = os.path.join(dirpath, fn)
             os.utime(full, orig_time)
 
+# https://wiki.archlinux.org/index.php/Pacman/Rosetta
 
 # loaded at the end to avoid failed cyclic loads
 if FORMAT == 'deb':
@@ -220,6 +221,10 @@ if FORMAT == 'deb':
                            install_packages,
                            lintian_license,
                            lintian_desktop)
+elif FORMAT == 'arch':
+    from .util_arch import (PACKAGE_CACHE, install_packages)
+    lintian_license = lambda a,b,c: None
+    lintian_desktop = lambda a,b,c: None
 else:
     from .util_rpm import (PACKAGE_CACHE, install_packages)
     lintian_license = lambda a,b,c: None

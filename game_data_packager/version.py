@@ -21,3 +21,11 @@ elif os.path.isfile('/etc/redhat-release'):
 
     cl = open('debian/changelog', encoding='utf-8').readline()
     GAME_PACKAGE_VERSION = cl.split('(')[1].split(')')[0]
+
+elif os.path.isfile('/etc/arch-release'):
+    FORMAT = 'arch'
+    BINDIR = 'usr/bin'
+    ASSETS = 'usr/share'
+
+    cl = open('debian/changelog', encoding='utf-8').readline()
+    GAME_PACKAGE_VERSION = cl.split('(')[1].split(')')[0]

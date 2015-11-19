@@ -1,6 +1,9 @@
 DIRS := ./out
 GDP_MIRROR ?= localhost
-PYFLAKES3 := $(shell test -x /usr/bin/pyflakes3 && echo pyflakes3 || echo python3-pyflakes)
+PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
+                   elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
+                                                     else echo python3-pyflakes ; \
+                    fi)
 
 # some cherry picked games that:
 # - are freely downloadable (either demo or full version)
