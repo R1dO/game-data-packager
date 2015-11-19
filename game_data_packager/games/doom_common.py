@@ -77,7 +77,10 @@ class DoomGameData(GameData):
         }
 
         for package in self.packages.values():
-            package.install_to = ASSETS + '/doom'
+            if FORMAT == 'arch':
+                package.install_to = 'usr/share/games/doom'
+            else:
+                package.install_to = ASSETS + '/doom'
             engine = package.engine or self.engine
             engine = engine.split('|')[-1].strip()
             package.program = package_map.get(engine, engine)
@@ -152,10 +155,10 @@ class DoomTask(PackagingTask):
             elif package.expansion_for:
                 iwad = self.game.packages[package.expansion_for].only_file
                 assert iwad is not None, "Couldn't find %s's IWAD" % main_wad
-                args = (  '-iwad /' + package.install_to + iwad
-                       + ' -file /' + package.install_to + main_wad)
+                args = (  '-iwad /' + package.install_to + '/' + iwad
+                       + ' -file /' + package.install_to + '/' + main_wad)
             else:
-                args = '-iwad /' + package.install_to + main_wad
+                args = '-iwad /' + package.install_to + '/' + main_wad
             entry['Exec'] = package.program + ' ' + args
             entry['Icon'] = desktop_file
             entry['Terminal'] = 'false'
