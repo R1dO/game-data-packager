@@ -65,22 +65,24 @@ install -D out/game-data-packager                  $RPM_BUILD_ROOT/usr/bin/game-
 install -D data/bash-completion/game-data-packager $RPM_BUILD_ROOT/usr/share/bash-completion/completions/game-data-packager
 
 mkdir -p                                           $RPM_BUILD_ROOT/etc/game-data-packager/
-install etc/game-data-packager.conf                $RPM_BUILD_ROOT/etc/
-install etc/*-mirrors                              $RPM_BUILD_ROOT/etc/game-data-packager/
+install -m0644 etc/game-data-packager.conf         $RPM_BUILD_ROOT/etc/
+install -m0644 etc/*-mirrors                       $RPM_BUILD_ROOT/etc/game-data-packager/
 
 mkdir -p                                           $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
 cp -Rv game_data_packager                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install out/*.copyright                            $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install out/*.png                                  $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install out/*.svgz                                 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install out/bash_completion                        $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install out/changelog.gz                           $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install out/copyright                              $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install out/vfs.zip                                $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
+chmod 755                                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/*.py
+chmod 755                                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/games/*.py
+install -m0644 out/*.copyright                     $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
+install -m0644 out/*.png                           $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
+install -m0644 out/*.svgz                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
+install -m0644 out/bash_completion                 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
+install -m0644 out/changelog.gz                    $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
+install -m0644 out/copyright                       $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
+install -m0644 out/vfs.zip                         $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
 
 mkdir -p                                           $RPM_BUILD_ROOT/usr/share/man/man6/
-install doc/game-data-packager.*                   $RPM_BUILD_ROOT/usr/share/man/man6/
-install doc/doom2-masterlevels.*                   $RPM_BUILD_ROOT/usr/share/man/man6/
+install -m0644 doc/game-data-packager.*            $RPM_BUILD_ROOT/usr/share/man/man6/
+install -m0644 doc/doom2-masterlevels.*            $RPM_BUILD_ROOT/usr/share/man/man6/
 
 install -D runtime/doom2-masterlevels.py           $RPM_BUILD_ROOT/usr/bin/doom2-masterlevels
 install -D runtime/doom2-masterlevels.desktop      $RPM_BUILD_ROOT/usr/share/applications/doom2-masterlevels.desktop
@@ -91,7 +93,8 @@ make clean
 %files
 %doc doc/adding_a_game.mdwn
 %{_mandir}/man6/game-data-packager.*
-/etc
+%config(noreplace) %attr(644, root, root) /etc/game-data-packager.conf
+%config(noreplace) %attr(644, root, root) /etc/game-data-packager/*
 /usr/bin/game-data-packager
 /usr/share/bash-completion/completions/game-data-packager
 /usr/share/games/game-data-packager
