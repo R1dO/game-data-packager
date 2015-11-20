@@ -52,40 +52,22 @@ show it's description.
 
 %build
 make %{?_smp_mflags}
-echo 'GAME_PACKAGE_VERSION = """%{version}"""' > game_data_packager/version.py
-echo 'FORMAT = "rpm"' >> game_data_packager/version.py
-echo 'BINDIR = "usr/bin"' >> game_data_packager/version.py
-echo 'ASSETS = "usr/share"' >> game_data_packager/version.py
-rm game_data_packager/util_arch.py
-rm game_data_packager/util_deb.py
 
 %install
-install -D out/game-data-packager                  $RPM_BUILD_ROOT/usr/bin/game-data-packager
-
-install -D data/bash-completion/game-data-packager $RPM_BUILD_ROOT/usr/share/bash-completion/completions/game-data-packager
-
-mkdir -p                                           $RPM_BUILD_ROOT/etc/game-data-packager/
-install -m0644 etc/game-data-packager.conf         $RPM_BUILD_ROOT/etc/
-install -m0644 etc/*-mirrors                       $RPM_BUILD_ROOT/etc/game-data-packager/
-
-mkdir -p                                           $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-cp -Rv game_data_packager                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-chmod 755                                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/*.py
-chmod 755                                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/games/*.py
-install -m0644 out/*.copyright                     $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install -m0644 out/*.png                           $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install -m0644 out/*.svgz                          $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install -m0644 out/bash_completion                 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install -m0644 out/changelog.gz                    $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install -m0644 out/copyright                       $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-install -m0644 out/vfs.zip                         $RPM_BUILD_ROOT/usr/share/games/game-data-packager/
-
-mkdir -p                                           $RPM_BUILD_ROOT/usr/share/man/man6/
-install -m0644 doc/game-data-packager.*            $RPM_BUILD_ROOT/usr/share/man/man6/
-install -m0644 doc/doom2-masterlevels.*            $RPM_BUILD_ROOT/usr/share/man/man6/
-
-install -D runtime/doom2-masterlevels.py           $RPM_BUILD_ROOT/usr/bin/doom2-masterlevels
-install -D runtime/doom2-masterlevels.desktop      $RPM_BUILD_ROOT/usr/share/applications/doom2-masterlevels.desktop
+make DESTDIR=$RPM_BUILD_ROOT bindir=/usr/bin install
+VERSION_PY=$RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/version.py
+echo '#!/usr/bin/python3' > $VERSION_PY
+echo 'GAME_PACKAGE_VERSION = """%{version}"""' >> $VERSION_PY
+echo 'FORMAT = "rpm"' >> $VERSION_PY
+echo 'BINDIR = "usr/bin"' >> $VERSION_PY
+echo 'ASSETS = "usr/share"' >> $VERSION_PY
+rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_arch.py
+rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_deb.py
+chmod 755 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/*.py
+chmod 755 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/games/*.py
+mkdir -p $RPM_BUILD_ROOT/usr/share/man/man6
+install -m0644 doc/game-data-packager.6 $RPM_BUILD_ROOT/usr/share/man/man6
+install -m0644 doc/doom2-masterlevels.6 $RPM_BUILD_ROOT/usr/share/man/man6
 
 %clean
 make clean

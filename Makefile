@@ -1,5 +1,6 @@
 DIRS := ./out
 GDP_MIRROR ?= localhost
+bindir := /usr/games
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
                                                      else echo python3-pyflakes ; \
@@ -112,6 +113,36 @@ check:
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_syntax.py
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_equivalence.py
 
+install: default
+	echo DESTDIR: $(DESTDIR)
+	mkdir -p $(DESTDIR)$(bindir)
+	install -m0755 out/game-data-packager                  $(DESTDIR)$(bindir)
+
+	# messing with "cp -r / chmod / find" is a bit overkill here
+	mkdir -p $(DESTDIR)/usr/share/games/game-data-packager/game_data_packager/games
+	install -m0644 game_data_packager/*.py                 $(DESTDIR)/usr/share/games/game-data-packager/game_data_packager
+	install -m0644 game_data_packager/games/*.py           $(DESTDIR)/usr/share/games/game-data-packager/game_data_packager/games
+
+	mkdir -p $(DESTDIR)/usr/share/games/game-data-packager
+	install -m0644 out/*.copyright                         $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 out/*.png                               $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 out/*.svgz                              $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 out/bash_completion                     $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 out/changelog.gz                        $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 out/copyright                           $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 out/vfs.zip                             $(DESTDIR)/usr/share/games/game-data-packager/
+
+	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
+	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/
+
+	mkdir -p $(DESTDIR)/etc/game-data-packager
+	install -m0644 etc/game-data-packager.conf             $(DESTDIR)/etc/
+	install -m0644 etc/*-mirrors                           $(DESTDIR)/etc/game-data-packager/
+
+	mkdir -p $(DESTDIR)/usr/share/applications
+	install -m0755 runtime/doom2-masterlevels.py           $(DESTDIR)$(bindir)/doom2-masterlevels
+	install -m0644 runtime/doom2-masterlevels.desktop      $(DESTDIR)/usr/share/applications/
+
 # Requires additional setup, so not part of "make check"
 manual-check:
 	install -d tmp/
@@ -125,4 +156,4 @@ html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
 	rsync out/index.html alioth.debian.org:/var/lib/gforge/chroot/home/groups/pkg-games/htdocs/game-data/ -e ssh -v
 
-.PHONY: default clean check manual-check html
+.PHONY: default clean check manual-check install html
