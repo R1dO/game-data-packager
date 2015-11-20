@@ -46,7 +46,7 @@ def main(f, out):
     if groups is not None:
         with open(offload + '.tmp', 'w', encoding='utf-8') as writer:
             assert isinstance(groups, dict)
-            for group_name, group_data in groups.items():
+            for group_name, group_data in sorted(groups.items()):
                 writer.write('[%s]\n' % group_name)
 
                 if isinstance(group_data, dict):
