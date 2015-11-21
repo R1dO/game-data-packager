@@ -8,10 +8,10 @@ Priority: optional
 Build-Depends:
  debhelper (>= 9),
  dh-systemd,
-Build-Depends-Indep: imagemagick,
-                     inkscape,
-                     xcftools,
-                     xmlstarlet
+ imagemagick,
+ inkscape,
+ xcftools,
+ xmlstarlet,
 Standards-Version: 3.9.6
 Vcs-Git: git://anonscm.debian.org/pkg-games/quake.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-games/quake.git

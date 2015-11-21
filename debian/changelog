@@ -1,3 +1,11 @@
+quake (16) UNRELEASED; urgency=medium
+
+  * Move Build-Depends-Indep to Build-Depends; they are needed
+    for the quake4 package, which is Architecture: i386 due to
+    its dependency on i386-only binaries.
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 21 Nov 2015 18:14:22 +0000
+
 quake (15+exp1) experimental; urgency=medium
 
   * Enable the quake4 packages unconditionally
