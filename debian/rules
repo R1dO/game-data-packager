@@ -30,6 +30,7 @@ override_dh_install:
 	dh_install
 	echo 'GAME_PACKAGE_VERSION = """$(DEB_VERSION)"""' > debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/version.py
 	echo 'FORMAT = "deb"' >> debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/version.py
+	echo 'DISTRO = "generic"' >> debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/version.py
 	echo 'BINDIR = "usr/games"' >> debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/version.py
 	echo 'ASSETS = "usr/share/games"' >> debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/version.py
 	if dpkg-vendor --derives-from Ubuntu; then \
@@ -37,7 +38,9 @@ override_dh_install:
 	fi
 	install -D -m755 runtime/doom2-masterlevels.py debian/game-data-packager/usr/games/doom2-masterlevels
 	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_arch.py
+	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_fedora.py
 	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_rpm.py
+	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_suse.py
 
 override_dh_installdocs:
 	dh_installdocs -XTODO

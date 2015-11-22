@@ -26,7 +26,7 @@ import subprocess
 import sys
 
 from .paths import DATADIR
-from .version import (GAME_PACKAGE_VERSION, FORMAT)
+from .version import (GAME_PACKAGE_VERSION, FORMAT, DISTRO)
 
 logger = logging.getLogger('game-data-packager.util')
 
@@ -225,8 +225,12 @@ elif FORMAT == 'arch':
     from .util_arch import (PACKAGE_CACHE, install_packages)
     lintian_license = lambda a,b,c: None
     lintian_desktop = lambda a,b,c: None
-else:
-    from .util_rpm import (PACKAGE_CACHE, install_packages)
+elif DISTRO == 'fedora':
+    from .util_fedora import (PACKAGE_CACHE, install_packages)
+    lintian_license = lambda a,b,c: None
+    lintian_desktop = lambda a,b,c: None
+elif DISTRO == 'suse':
+    from .util_suse import (PACKAGE_CACHE, install_packages)
     lintian_license = lambda a,b,c: None
     lintian_desktop = lambda a,b,c: None
 

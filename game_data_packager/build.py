@@ -56,7 +56,7 @@ from .util import (AGENT,
         rm_rf,
         recursive_utime,
         which)
-from .version import (FORMAT)
+from .version import (FORMAT, DISTRO)
 
 if FORMAT == 'deb':
     from debian.deb822 import Deb822
@@ -2668,12 +2668,20 @@ class PackagingTask(object):
                 '7z': 'p7zip-full',
                 'unrar-nonfree': 'unrar',
             }
-        elif FORMAT == 'rpm':
+        elif DISTRO == 'fedora':
             command = 'dnf install'
             package_map = {
                 'dpkg-deb': 'dpkg',
                 'id-shr-extract': None,
                 '7z': 'p7zip-plugins',
+                'unrar-nonfree': 'unrar',
+            }
+        elif DISTRO == 'suse':
+            command = 'zypper install'
+            package_map = {
+                'dpkg-deb': 'dpkg',
+                'id-shr-extract': None,
+                '7z': 'p7zip',
                 'unrar-nonfree': 'unrar',
             }
         elif FORMAT == 'arch':

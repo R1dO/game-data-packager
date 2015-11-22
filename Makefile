@@ -3,7 +3,8 @@ GDP_MIRROR ?= localhost
 bindir := /usr/games
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
-                                                     else echo python3-pyflakes ; \
+                   elif [ -x /usr/bin/python3-pyflakes ] ; then echo python3-pyflakes ; \
+                   else ls -1 /usr/bin/pyflakes-python3.* | tail -n 1 ; \
                     fi)
 
 # some cherry picked games that:

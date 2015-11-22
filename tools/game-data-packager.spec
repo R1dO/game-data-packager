@@ -59,10 +59,12 @@ VERSION_PY=$RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager
 echo '#!/usr/bin/python3' > $VERSION_PY
 echo 'GAME_PACKAGE_VERSION = """%{version}"""' >> $VERSION_PY
 echo 'FORMAT = "rpm"' >> $VERSION_PY
+echo 'DISTRO = "fedora"' >> $VERSION_PY
 echo 'BINDIR = "usr/bin"' >> $VERSION_PY
 echo 'ASSETS = "usr/share"' >> $VERSION_PY
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_arch.py
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_deb.py
+rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_suse.py
 chmod 755 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/*.py
 chmod 755 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/games/*.py
 mkdir -p $RPM_BUILD_ROOT/usr/share/man/man6
