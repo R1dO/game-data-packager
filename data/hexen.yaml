@@ -29,6 +29,8 @@ packages:
     steam:
       id: 2360
       path: "common/Hexen"
+    fedora:
+      engine: chocolate-doom
     suse:
       engine: chocolate-doom
     install:
@@ -40,6 +42,8 @@ packages:
     debian:
       breaks: chocolate-doom (<< 2)
       replaces: hexen-deathkings-data
+    fedora:
+      engine: chocolate-doom
     suse:
       engine: chocolate-doom
     steam:
@@ -54,6 +58,8 @@ packages:
     debian:
       replaces: hexen-demo-data
       breaks: chocolate-doom (<< 2.2.0)
+    fedora:
+      engine: chocolate-doom
     suse:
       engine: chocolate-doom
     demo_for: hexen-wad
