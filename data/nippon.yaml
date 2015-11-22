@@ -1,0 +1,97 @@
+---
+longname: "Nippon Safes Inc."
+copyright: © 1992 Dynabyte
+plugin: scummvm_common
+wiki: Nippon_Safes_Inc.
+
+packages:
+  nippon-safes-inc-data:
+    langs: [en,de,fr,it]
+    # an useless auto-detection script will be generated
+    # the "-q ##" argument is ignored and player has
+    # choose is language in-game
+    install:
+    - assets
+
+groups:
+  assets: |
+    1060142   d69dc923288e96a697c357f45b7ca611 disk1
+    907205    e02efdbcc2734c18af1c7a8ffa347cc9 disk2
+    1030721   02760d6d970820c7e467157430540667 disk3
+    1151403   ed186c0caa134737ac5ca2e13905b510 disk4
+
+    399360    68f4ba4b87600b97a73cc9acd6b79128 en
+    410624    d067f8299a1cbe2fd6762f7b4f31d7b0 fr
+    410624    3cc614568510ee5584d7e1b8525c42e6 ge
+    410624    10f0a3b1cb2171bc7563621c8271efdc it
+
+    533       cb250f0a239058c3d5a8a591312a58f7 dino.tab
+    320       00ab925cb944ad8dfd7f6ee59cd59410 donna.tab
+    320       00ab925cb944ad8dfd7f6ee59cd59410 donnatra.tab
+    504       1df1af63007ca2729ee98884dc1d63d2 dough.tab
+    95        4a6771cb3a2fec02aaf14fd0a7fb91e0 drki.tab
+    280       3905822d21e9ea897688ced679a6b7c3 global.tab
+
+    10083     13b388f9c7753b20062fe27d31d1ad3d comiccnv.cnv
+    7683      a21de202f54ff8c1cfe936ad27c8bd35 dinohead.cnv
+    48387     0ab535293a068f5314fa7d90b4985d30 dinoobj.cnv
+    48387     0ab535293a068f5314fa7d90b4985d30 dinorobj.cnv
+    62499     f0da2ea75a2202232d4351cd265cd137 dinotal.cnv
+    7683      57445f3cfb0460e9c974c58e04641a01 donnahea.cnv
+    33027     78e86501f0487fd9e5705c956f142de8 donnaobj.cnv
+    62499     320aae5d9ec23d42314187d1779cdbb5 donnatal.cnv
+    53571     803468fb58a2b46a1e49c56c9ff3a776 donnatta.cnv
+    7683      3592b0c57f1a21f5fb2c9adb14d0071a doughea.cnv
+    7683      3592b0c57f1a21f5fb2c9adb14d0071a doughhea.cnv
+    46083     a447244e9ffe91afdf6c828af50cefb9 doughobj.cnv
+    44643     47cc9d6d2b78dcb3a6d306497929627f doughtal.cnv
+    867       019aa7b3eb36d32890de26e7321a97d2 drkihead.cnv
+    9219      83068a44f2356b0afaa4add796875676 drkiobj.cnv
+    8931      836a72424d988734a0c6b2bc56028738 drkital.cnv
+    1027      42ddedf78a5d1fbf99cc0bbb7c7ad22d pointer.cnv
+    9467      80d4bfbedfa6145f93a7e2608ddc9a85 slidecnv.cnv
+    10083     d01c968cc5291791d06dd51ebda97b4d topazcnv.cnv
+
+    7507      a186b917efeadfb252f06e5d10949c34 boogie2.mid
+    5486      73e5a74398b0af5fc4c8726a053285e3 dino.mid
+    6195      a516d6db98faebaad726f9cb0a7a3147 donna.mid
+    18805     2ea8e5382872434a494bc0aea4757de2 intro.mid
+    13006     897e179e467853052ac6018378524675 nuts.mid
+    15818     06cd5a6951692467fe70ee9442c2ff8b soft.mid
+
+sha1sums: |
+  9fa099b69466e20d2d26207a778eabb542d990df  disk1
+  d26f61f3422a2eeae5232405a96f6a1ab9544f9b  disk2
+  5e749486f49f2d7c7428cad31537ae087fae5501  disk3
+  71337edcf1f84232be988896d97ba84b15fcd8c2  disk4
+
+  34678f641f66237846192d4701f3b92960f02e96  en
+  ca78300d0cbf29a7083bba7feec22781f178ae29  fr
+  bc49f358faa396ddc43d6af861fd584be0998c5b  ge
+  469861acc5caf46c6aa7724bf9358a9c057226b2  it
+
+  a115f2794313a3699a32913fe9cb3956da892fab  comiccnv.cnv
+  5a0ce17f535d331c6b5902ecc9913e66cf289bfa  dinohead.cnv
+  9ceb48fd9172b3ef153091e950f41f627b3929c3  dinoobj.cnv
+  9ceb48fd9172b3ef153091e950f41f627b3929c3  dinorobj.cnv
+  b731d888f810bff3436e3c1a0e158537c1203248  dinotal.cnv
+  3cb823dc24fc3097edc38403037ff1a1e35308ea  donnahea.cnv
+  6e2417943529af918a9f52cf3c9364509a04a2ad  donnaobj.cnv
+  ffd3b112420f84404806a6b461b4e70c9976eddc  donnatal.cnv
+  781f293a5b81d23be1db0effb8825e35d0ec31ae  donnatta.cnv
+  33f8614a2c64424c80a189e14a0752ead7db86c5  doughea.cnv
+  33f8614a2c64424c80a189e14a0752ead7db86c5  doughhea.cnv
+  dc05dbdd21d2bd490fe692c695327935b68c36ac  doughobj.cnv
+  c1fb7b592198f2719bb33beb9c5eef8b833482bc  doughtal.cnv
+  20a5809b820a5c220792aa1b77172d0210bcdbad  drkiobj.cnv
+  314306631589110a8a8a0490007516535da9c5bd  drkital.cnv
+  1f41b1f3ecde7f764b5b861930a861befe1bbd22  slidecnv.cnv
+  3ca400e51529d2301a67b55ff47d66d0872e48f2  topazcnv.cnv
+
+  d738e37dc0ff9108a1dafb7a14c57333e0f57719  boogie2.mid
+  a54bcf59137ded71885e9e20b5349e3c01504fca  dino.mid
+  bff9ba5a66bf37bff513ed4d7dd7b90df791306d  donna.mid
+  ccc515cb9643731079b60b99c43a18a2307fceec  intro.mid
+  b02ef4a651f243e3b7e1687635e8eb4272b33bca  nuts.mid
+  36d5d56dae0a3c5808846387260362aae67024f8  soft.mid
+...
