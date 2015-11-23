@@ -5,8 +5,11 @@ plugin: scummvm_common
 wiki: "Amazon:_Guardians_of_Eden"
 engine: scummvm (>= 1.8.0)
 
+missing_langs: [es]
+
 packages:
-  amazon-guardians-of-eden-data:
+  amazon-guardians-of-eden-en-data:
+    provides: amazon-guardians-of-eden-data
     install:
     - assets
     optional:
