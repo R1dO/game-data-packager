@@ -1,0 +1,27 @@
+---
+longname: "Ween: The Prophecy"
+copyright: © 1993 Coktel Vision
+plugin: scummvm_common
+wiki: The_Prophecy
+
+packages:
+  ween-the-prophecy-en-data:
+    provides: ween-the-prophecy-data
+    install:
+    - intro.stk
+
+  ween-the-prophecy-fr-data:
+    provides: ween-the-prophecy-data
+    lang: fr
+    install:
+    - intro.stk?fr
+
+groups:
+  default: |
+    7117568   da3964bdce938419354357f6c193c034 intro.stk
+    7029591   3ff06b7834918564f220f669c72de494 intro.stk?fr
+
+sha1sums: |
+  8e8fea84b146bc53e983f38089d5461b88b58e56  intro.stk
+  edb8c8bd2895983744117e34ec40a5c5138c9308  intro.stk?fr
+...
