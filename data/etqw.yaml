@@ -1,0 +1,318 @@
+---
+longname: "Enemy Territory: Quake Wars"
+franchise: Quake
+copyright: © 2007 id Software, Inc.
+engine: etqw | etqw-server
+genre: First-person shooter
+wikibase: http://quake.wikia.com/wiki/
+wiki: Enemy_Territory%3A_Quake_Wars
+compress_deb: false
+binary_executables: i386
+try_repack_from:
+- /usr/local/games/etqw
+- /usr/share/pixmaps
+
+packages:
+  etqw-pb-bin:
+    #DISABLED: mitigation for CVE-2007-5248 <http://aluigi.altervista.org/adv/d3engfspb-adv.txt>
+    longname: ETQW PunkBuster binaries
+    install_to: usr/lib/etqw
+    architecture: i386
+    version: "1.5"
+    debian:
+      depends:
+      - libc6 (>= 2.1)
+      - etqw-bin
+    install:
+    - patch 1.5 Punkbuster binaries
+    doc:
+    - patch 1.5 Punkbuster documentation
+    license:
+    - patch 1.5 Punkbuster licenses
+
+  etqw-bin:
+    longname: "Enemy Territory Quake Wars binaries"
+    install_to: usr/lib/etqw
+    architecture: i386
+    version: "1.5"
+    debian:
+      depends:
+      - libc6 (>= 2.2.4)
+      - libgcc1 (>= 4.1.2)
+      - libjpeg62-turbo
+      - libsdl1.2debian (>= 1.2.10)
+      - libstdc++6 (>= 4.1.2)
+      - etqw-data
+      - xdg-utils
+      suggests:
+      - etqw-pb-bin
+    install:
+    - patch 1.4 to 1.5 - binaries
+    optional:
+    - patch 1.4 to 1.5 - optional
+    doc:
+    - patch 1.4 to 1.5 - documentation
+    license:
+    - patch 1.4 to 1.5 - licenses
+    symlinks:
+      usr/lib/etqw/base: usr/share/games/etqw/base
+      # The bundled implementation isn't great, and xdg-open is
+      # binary-compatible
+      usr/lib/etqw/openurl.sh: usr/bin/xdg-open
+
+  etqw-data:
+    version: "1.5"
+    langs: [en,de,es,fr,ko,pl,ru]
+    install:
+    - only on DVD
+    - patch up to 1.4
+    - patch 1.4 to 1.5 - data
+    optional:
+    - only on DVD - optional
+
+files:
+  etqw_icon.png:
+    install_to: usr/share/pixmaps
+    install_as: etqw.png
+
+  etqw.x86:
+    executable: true
+  etqwded.x86:
+    executable: true
+  etqw-rthread.x86:
+    executable: true
+
+  ETQW-client-1.5-full.x86.run:
+    download:
+      gentoo-distfiles-mirrors:
+        path: .
+    unpack:
+      format: zip
+    provides:
+    - patch up to 1.4
+    - patch 1.4 to 1.5 - data
+    - patch 1.4 to 1.5 - binaries
+    - patch 1.4 to 1.5 - optional
+    - patch 1.4 to 1.5 - documentation
+    - patch 1.4 to 1.5 - licenses
+
+  ETQW-client-1.4-1.5-update.x86.run:
+    unpack:
+      format: zip
+    provides:
+    - patch 1.4 to 1.5 - data
+    - patch 1.4 to 1.5 - binaries
+    - patch 1.4 to 1.5 - optional
+    - patch 1.4 to 1.5 - documentation
+    - patch 1.4 to 1.5 - licenses
+
+groups:
+    #1711273   03a75abb587426609f3e4fe1b45da16e libSDL-1.2.id.so.0
+    #1711285   e10e2add44f9a75a439fa0901bc575ff libSDL-1.2.id.so.0?orig
+    #224402    957ca54cedbaf3b92e3d76bc6250d1ea libgcc_s.so.1
+    #140058    798616937efe482e49e3bd8d5289b4a7 libjpeg.so.62
+    #4387755   6eea38656d78c371fbf01cc0f78da6eb libstdc++.so.6
+    #556       9eb9ddb4c1bd1085d43b9891f9195b4a openurl.sh
+    #10286     e713b5c58bf3b6ff7b95ce935f1ad6e5 sdl.1.2.12.patch
+
+  archives: |
+    107992649 bacf44b3c8b927d7e57576f2e5e5dc54 ETQW-client-1.4-1.5-update.x86.run
+    556383725 28fd825fcd9f6227827230b319e481cf ETQW-client-1.5-full.x86.run
+
+  from DVD - original files replaced by patch: |
+    3925192   5f032168b206b4dc7429e0b5bb0d85de base/game000.pk4?orig
+    5063678   b001849089b2a4650be582861d81e4f4 base/game002.pk4?orig
+    1772      2f0003e13c72b04507b0a12c7fdfa32e base/bots/botnames.dat?orig
+    6862124   959303fc392c189ea31b93572604e462 etqw-rthread.x86?orig
+    6870820   5f24d1007573fc2720d27ea72237bcc7 etqw.x86?orig
+    6310852   5c00c497e1bca4487b88f2d7a7d8c383 etqwded.x86?orig
+    8217      aed9bce92d5824cb2293b015c081fab7 README.txt?orig
+
+  only on DVD: |
+    268735253 1e19cdbd2d5d3c928239908f31e7080c base/pak000.pk4
+    288207168 a1efbe9fe0926b05ca9ff8c44345a5a0 base/pak001.pk4
+    271361128 b224ae88778651573786171663af071d base/pak002.pk4
+    274335604 2415424906714b4c423d08eeefd82415 base/pak003.pk4
+    216846938 7c2a3a3feead0a3abfe4b3bac0554f18 base/pak004.pk4
+    17665456  25c6a65e90ece71209812ab05f2d08ba base/zpak_english000.pk4
+
+    414512165 0e2f8e4f3bed9f56c70e3522a4c07c29 base/megatextures/area22_lit.mega
+    274937613 da961d539c81a95b31aa2ea91d4b8547 base/megatextures/ark_lit.mega
+    275979848 2596971cf05eb16b04cc20d8e6bcee91 base/megatextures/canyon_lit.mega
+    147658521 362c7c75fdc1be377df119f59dc6f7f8 base/megatextures/island_lit.mega
+    371189021 4583ceb9575394c523d700bbf2e5c03b base/megatextures/outskirts_lit.mega
+    348162394 ab039fcd0cadb5f64007b69a1fa2aa95 base/megatextures/quarry_lit.mega
+    266699211 8743080ede4244e7811879429977dc3a base/megatextures/refinery_lit.mega
+    188027227 0975c9dd236b6773e55c1887607d8462 base/megatextures/salvage_lit.mega
+    377362309 3a82787e9f3b9d548598941fb02515a0 base/megatextures/sewer_lit.mega
+    251594094 5bce54224875f3c60680c4c1280f1e5b base/megatextures/slipgate_lit.mega
+    279873987 2f7428ba0bc34265e2770eeb86f7dfb2 base/megatextures/valley_lit.mega
+    193239635 839b23d5dccdb0cb763a662a68625cae base/megatextures/volcano_lit.mega
+
+  only on DVD - optional: |
+    99        9df3af8afad6da8473a1a81700781c05 base/server.cfg
+
+  patch up to 1.4: |
+    270034722 8bcfcf420c655f8db1f4ebef51ed77fe base/pak005.pk4
+    23272752  aadd90ac94e89bbb599a7206bffde847 base/pak006.pk4
+    124458888 74a53a3be25eac4da2dee269b3889f67 base/pak007.pk4
+    47660     7fbbf94c4341ebd2ed27d27595a177d9 base/zpak_english001.pk4
+    8855237   992b07654eab151352497d8723a3dd76 base/zpak_english002.pk4
+    62698     0a8909764ea6178d8802ce6293376b9b base/zpak_french001.pk4
+    6219316   22ce6ab913c8673aa11057e55dcf48d2 base/zpak_french002.pk4
+    62174     d89c20b165aa024831da1f89b5fa175e base/zpak_german001.pk4
+    7470133   549a7297673dd07ca9c7d73cb1cd08db base/zpak_german002.pk4
+    2435      80954ca771b12026b7ade3e142c7134e base/zpak_korean000.pk4
+    59700     d89ea28c7254741b21e4d41bb394b356 base/zpak_korean001.pk4
+    64595     9242d91975d44c08b2157921291ac308 base/zpak_korean002.pk4
+    66459     a45bf5262bb28386467b9553f44e6cd9 base/zpak_polish001.pk4
+    7853435   c23bc7f6a2c104c8a0e37dfd5978e045 base/zpak_polish002.pk4
+    69993     3c80ce29cb7ee4b93ecd3cb19ad97f17 base/zpak_russian001.pk4
+    6535268   5beccc9af3cf8be89df6751a08e74704 base/zpak_russian002.pk4
+    60390     a703a16a9d0d432c48bf249cd053cf92 base/zpak_spanish001.pk4
+    6345768   5cb4d9c6cb81bdfe28be444cb326fe09 base/zpak_spanish002.pk4
+
+  patch 1.4 to 1.5 - data: |
+    3974057   903e8e6bef98234bea4b40a4008843c6 base/game000.pk4
+    6334517   eb4bce7a3f4711008e04706e02b31927 base/game001.pk4
+    5130711   ddfcdcfe3aa7920270c9c8a6b7f89801 base/game002.pk4
+    79330800  5f417e4663ab0a698d09c7730368ae15 base/pak008.pk4
+    39454     427f1c98cde0820b66214dcac0b25df6 base/zpak_english003.pk4
+    224931    e5aa24dd06b0bc871067f054c217bad8 base/zpak_french003.pk4
+    18944     061a9d53d3f35083d441790d155314f6 base/zpak_german003.pk4
+    18370     64087e994c9443d32571052d525a9fde base/zpak_korean003.pk4
+    44084     d1b9c6079b5a245456c984fdd96bc918 base/zpak_polish003.pk4
+    20912     a40a80d3c7785ce4ee90ecd8c971359a base/zpak_russian003.pk4
+    39883     81c7f708bbe2f743ec33595d3bd918bf base/zpak_spanish003.pk4
+
+  patch 1.4 to 1.5 - binaries: |
+    6864248   b6d438f3e3a291750c3920bcfd4cc3b6 etqw-rthread.x86
+    6874536   458c0fa77a6dcfb41bba6cb4e3ee00ef etqw.x86
+    6314016   ab0bb2983e672abc324e5c88bbaad6d7 etqwded.x86
+    2176700   f6e7cfb2a9c0aa6c2dcc21ce604f7cc8 libCgx86.so
+
+    91        07f36d747d72a08275a436fa6b7cbb24 etqw
+    94        d8834b39d92a16b0e0ca64e73f246b23 etqw-dedicated
+    99        629a60187f7321794d0ec5f16fa12916 etqw-rthread
+    76348     599ce56453a560a3729a1e024030454d etqw_icon.png
+
+  patch 1.4 to 1.5 - optional: |  
+    353       47d3a0077de4c8e0fd1496a7b21d1162 base/match.cfg
+    296       632387083336134d48fa338463a896da base/public.cfg
+    1783      1d60ce32b4cbfadfc1244ee5e08ce15d base/bots/botnames.dat
+    2330      8226e443e6988b47260a3c49774edfe7 base/usergroups.dat
+    2330      8226e443e6988b47260a3c49774edfe7 base/usergroups.example
+
+  patch 1.4 to 1.5 - documentation: |
+    8353      7d22a5555b17d1fe6533bf9195217517 README.txt
+    15221     7421785bbd47ed081f583f48e726085f server_readme.txt
+    30396     c1253262db4f03f8c495cc9a70e226dd readme_1_5_patch.txt
+    7888      effcb44b5a273b3c18202ab1969057aa etqwtv.txt
+
+  patch 1.4 to 1.5 - licenses: |
+    4353      b089b58d837a2d963af73b9c47514c0e copyrights.txt
+    13813     83e4cafd265368b351e068afdcb39a46 EULA.txt
+
+  patch 1.5 Punkbuster binaries: |
+    29264     e94327dd4327905e06b8adfb5f707dde pb/pbag.so
+    29264     e94327dd4327905e06b8adfb5f707dde pb/pbags.so
+    1246820   8329ce42a59856769cbd8726c5a55c8b pb/pbcl.so
+    1246820   8329ce42a59856769cbd8726c5a55c8b pb/pbcls.so
+    2876036   be96368a12684abe9636a0d13db0d462 pb/pbsv.so
+  patch 1.5 Punkbuster documentation: |
+    25878     dc0544f5c6243aaf7dd41ada0bcad2cb pb/htm/la001313.htm
+    745964    0aa0825b3e6783ff76a56f66c51f17a9 pb/htm/lc001714.htm
+    17        74df4244adcd334c1c7a77d0142d4f2d pb/htm/ma001313.htm
+    17        74df4244adcd334c1c7a77d0142d4f2d pb/htm/mc001714.htm
+    50807     b5162d0cc530bee71be60612c14c03e4 pb/htm/wa001313.htm
+    566767    a39588de3c318800c3a9e1e31900153d pb/htm/wc001714.htm
+  patch 1.5 Punkbuster licenses: |
+    5527      313def0652ca2ec16caa016fb80799b2 PBEULA.txt
+
+sha1sums: |
+  4ef1bf12a38d83cac13b6d59f67f0208c29c0777  ETQW-client-1.4-1.5-update.x86.run
+  de70a06681f647671bfd18de84276276afc1db61  ETQW-client-1.5-full.x86.run
+
+  ff907be3ea929033ffeb804c8c588c6e412e861a  base/game000.pk4?orig
+  8685700a038fe6d9c93bab885eb22b6045c9f33f  base/game000.pk4
+  989bc6b507c8c2c73aa3bb48b41b25db077a90b9  base/game001.pk4
+  a60e1caa9cb9472643de4f71bb4efa8d4f5024ff  base/game002.pk4?orig
+  3c8cd5d428f7ede06d64d7099efee4c5a078e8f8  base/game002.pk4
+  accd7a816034849d74445a29bd00dd4fc80ab574  base/pak000.pk4
+  0a1bd76f42a6e42c990c9867a5878a39f866c356  base/pak001.pk4
+  b067776da417f618396291b24af7495d5550292a  base/pak002.pk4
+  7a0421d247fc0d0f18f63172ed397f0ed7f333d5  base/pak003.pk4
+  25d7d4bd1faa5fa20c46dad9f38b4fef40f67975  base/pak004.pk4
+  3e367ce07ef6e1c73ecce46a5a1c0ef95ce9c95d  base/pak005.pk4
+  f0d9c859a6822c1bdf1dbb49fe1cb497083d321d  base/pak006.pk4
+  db0496d6e8e234eba54e6af06c5b14838a3ca045  base/pak007.pk4
+  61c0de307c5e9fab6e3ad7882fc45bf05fe6474a  base/pak008.pk4
+  041dcfbec2c1242aeac319766b0cdc52aaed7fbb  base/zpak_english000.pk4
+  033011239cc6f888e9f55574062e03202fa9334c  base/zpak_english001.pk4
+  55b87d6f824a1388a23554e3cced50329a6bd96a  base/zpak_english002.pk4
+  f387272cd19d361ca3fa12b077d62fc7f55351a2  base/zpak_english003.pk4
+  542cce6c16e1a9afd50a859a8888df58476525e1  base/zpak_french001.pk4
+  f216d4d4e5a133fa8b9fc28dfe008e517f31b202  base/zpak_french002.pk4
+  dbded222a320390e281ee05140425f9498089a23  base/zpak_french003.pk4
+  e55517663f722bc01399f254af943f8f2815d1ec  base/zpak_german001.pk4
+  4b154df2b2f792afaa79bfc56899bbe1b62a6ca2  base/zpak_german002.pk4
+  787319eb726f960f38d8256cf4020892426497c1  base/zpak_german003.pk4
+  aac3acddec21eb5aff9eed448a2c44ba4c9e9acf  base/zpak_korean001.pk4
+  11d191b1247904950df93b657d50ac8b2272d42d  base/zpak_korean002.pk4
+  ea4ed796e42bacc35e9bb16cff578a2632eb35a8  base/zpak_korean003.pk4
+  bc70c44e17c2181ad83e49c5c47a06712761b646  base/zpak_polish001.pk4
+  2908e29fc93cefa8a9ab6e67c73a1427ab9e0333  base/zpak_polish002.pk4
+  ef67a57ff06aab10edb59147a7460f3ed1e7c6a0  base/zpak_polish003.pk4
+  1e5327699337b76e565250f2c074a6b7f6682bc5  base/zpak_russian001.pk4
+  272c7b2762681855177ea934ab1314a7c357234c  base/zpak_russian002.pk4
+  0f2f5e083c01ba9429054996949c1a057c0b532c  base/zpak_russian003.pk4
+  e9b4171a1fd3ff80484f724071b49bb8d1ca00a6  base/zpak_spanish001.pk4
+  3ec0fd5b56306a84dfb894b5646ef26443b53e43  base/zpak_spanish002.pk4
+  dc2cdeb12ef896247164814088be848697c4ac0f  base/zpak_spanish003.pk4
+
+  47a3be1726baeadd521ea43d54d8fe53f3420f7e  base/megatextures/area22_lit.mega
+  4e6e7a6ce439a68026cbfe9619ca4c462ba72d3e  base/megatextures/ark_lit.mega
+  4665fbe901135bb3745e986335a115d2ef2f7763  base/megatextures/canyon_lit.mega
+  41346fc117f780be0f925aa0f0e26dbe31af582c  base/megatextures/island_lit.mega
+  868d8bb29f2e6ad13cc0126fc2422c479441fada  base/megatextures/outskirts_lit.mega
+  cd3fabeddd41810970d8867ffa45dc41f41cb4b5  base/megatextures/quarry_lit.mega
+  0fe2ca64bef96b7aa8aa415abd074a781096399a  base/megatextures/refinery_lit.mega
+  9075ce2553272f345f1e071dc1263690df5027ae  base/megatextures/salvage_lit.mega
+  91e32d54189d96e9abca6d092eba9962e8dc1464  base/megatextures/sewer_lit.mega
+  3e18c9d9a0e9643c06eae7803ce8c411f6ea1163  base/megatextures/slipgate_lit.mega
+  32c872a2576c6647ee71a895c0b2ad060f7d08f6  base/megatextures/valley_lit.mega
+  c95da2b58abf1b4f01b0f7a1342add7db5c0a8c4  base/megatextures/volcano_lit.mega
+
+  d4eb0c3d15bc02c883827ab66c47a2f1e506a3b0  etqw-rthread.x86
+  6984fde51e436f9d60b54135e3159b7f5eee1e9c  etqw-rthread.x86?orig
+  0a8d4b71a1a679d7e15aeec485abb2a8d431086b  etqw.x86
+  ab2797de3c2f59be814e51f9f5318c1c0c0d5d1f  etqw.x86?orig
+  4a66668c0a73a6c3543bcbc30076cc3c99d452bc  etqw_icon.png
+  26d2f79550d749caea44f0c95739b73d32b86934  etqwded.x86
+  ebabf147aa2ceacc05c8f3a012779afe334e1ab4  etqwded.x86?orig
+  575202a348a281ebe5c24abdf1f9efafc271f42c  etqwtv.txt
+  73d2aa6a9d10aa3259e267afa6187393826c0cf1  libCgx86.so
+  e6458bd98a6e581b3f4f054a15e18d9dc87b95cd  README.txt?orig
+  71e623a0085cf8fbf62e0932d2ce30f3324a1c9b  README.txt
+  f7cb0617737910afc0845c1e03842853b5ffb337  EULA.txt
+  2b49fcb2818197fc6c537dec4d3eeadedad195cb  readme_1_5_patch.txt
+  3ac52d95dcf5b86de3008379b477c064cf907e0a  server_readme.txt
+
+  82153b71749d0dc13742262e1472a543cb9e7d51  pb/pbag.so
+  82153b71749d0dc13742262e1472a543cb9e7d51  pb/pbags.so
+  bbca0b7be48b3f217d6d6c15de46aa2c080f6c9d  pb/pbcl.so
+  bbca0b7be48b3f217d6d6c15de46aa2c080f6c9d  pb/pbcls.so
+  8ee6a9e38dfb8b2af6742031a115bb120a26e27d  pb/pbsv.so
+  2d936a3252890a14a4acbe255073f74dfbf632c5  pb/htm/la001313.htm
+  14e105433832dd83705a4d96aa98352904a655a5  pb/htm/lc001714.htm
+  af2673eea9de18dd6c65acbb5e60da4e8fb9c8b3  pb/htm/wa001313.htm
+  78be50df2717f777a2a04debd9ba9b0c38bbd893  pb/htm/wc001714.htm
+  e1e57ee4a8d2f34438627c9e9cb88286b81544c8  PBEULA.txt
+
+  #003304dfa6de6d92f03745378e725cd7e8c74a99  libSDL-1.2.id.so.0
+  #9fb270d5ffb7bae181f8e761833f5335748315e6  libSDL-1.2.id.so.0
+  #a892ae29ab9a64e8231ef23ba96083953d740b04  libgcc_s.so.1
+  #8b825b8d91820ca105e44e611b8e978e0d4dc071  libjpeg.so.62
+  #3eddb41550b9688a616af161700a7b263ba22ddc  libstdc++.so.6
+  #a286553bebb40e4a90903828b339026c1b7f073f  sdl.1.2.12.patch
+...
