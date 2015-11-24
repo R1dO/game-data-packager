@@ -990,6 +990,16 @@ class PackagingTask(object):
                 providers = [provider_name] + [p for p in providers if
                         p != provider_name]
 
+        # pick smallest possible provider to download
+        # example: this huge archive is a superset of the smaller one
+        # 103M /var/www/html/ETQW-client-1.4-1.5-update.x86.run
+        # 531M /var/www/html/ETQW-client-1.5-full.x86.run
+        if len(providers) > 1:
+            sizes = dict()
+            for provider_name in providers:
+                sizes[provider_name] = self.game.files[provider_name].size
+            providers = sorted(sizes, key=sizes.get)
+
         for provider_name in providers:
             provider = self.game.files[provider_name]
 
