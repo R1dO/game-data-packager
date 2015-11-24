@@ -14,7 +14,6 @@ try_repack_from:
 
 packages:
   etqw-pb-bin:
-    #DISABLED: mitigation for CVE-2007-5248 <http://aluigi.altervista.org/adv/d3engfspb-adv.txt>
     longname: ETQW PunkBuster binaries
     install_to: usr/lib/etqw
     architecture: i386
@@ -62,13 +61,23 @@ packages:
 
   etqw-data:
     version: "1.5"
-    langs: [en,de,es,fr,ko,pl,ru]
+    langs: [en,de,es,fr,pl,ru]
     install:
     - only on DVD
     - patch up to 1.4
     - patch 1.4 to 1.5 - data
     optional:
     - only on DVD - optional
+
+  etqw-ko-data:
+    longname: "Enemy Territory Quake Wars - Korean language pack"
+    version: "1.5"
+    expansion_for: etqw-data
+    lang: ko
+    install_to: usr/share/game/etqw
+    install:
+    - patch up to 1.4 - korean
+    - patch 1.4 to 1.5 - korean
 
 files:
   etqw_icon.png:
@@ -82,6 +91,15 @@ files:
   etqw-rthread.x86:
     executable: true
 
+  ETQW-client-1.0-1.5-update.exe:
+    unpack:
+      format: 7z
+      unpack: ['*.pk4']
+      flags: ['-r']
+    provides:
+    - patch up to 1.4
+    - patch 1.4 to 1.5 - data
+
   ETQW-client-1.5-full.x86.run:
     download:
       gentoo-distfiles-mirrors:
@@ -90,7 +108,9 @@ files:
       format: zip
     provides:
     - patch up to 1.4
+    - patch up to 1.4 - korean
     - patch 1.4 to 1.5 - data
+    - patch 1.4 to 1.5 - korean
     - patch 1.4 to 1.5 - binaries
     - patch 1.4 to 1.5 - optional
     - patch 1.4 to 1.5 - documentation
@@ -99,8 +119,10 @@ files:
   ETQW-client-1.4-1.5-update.x86.run:
     unpack:
       format: zip
+    download: ftp://62.8.228.162/pub/games/etqw/ETQW-client-1.4-1.5-update.x86.run
     provides:
     - patch 1.4 to 1.5 - data
+    - patch 1.4 to 1.5 - korean
     - patch 1.4 to 1.5 - binaries
     - patch 1.4 to 1.5 - optional
     - patch 1.4 to 1.5 - documentation
@@ -118,6 +140,7 @@ groups:
   archives: |
     107992649 bacf44b3c8b927d7e57576f2e5e5dc54 ETQW-client-1.4-1.5-update.x86.run
     556383725 28fd825fcd9f6227827230b319e481cf ETQW-client-1.5-full.x86.run
+    554538416 b34f88f704d05a025efae4abd6dbaa23 ETQW-client-1.0-1.5-update.exe
 
   from DVD - original files replaced by patch: |
     3925192   5f032168b206b4dc7429e0b5bb0d85de base/game000.pk4?orig
@@ -162,15 +185,16 @@ groups:
     6219316   22ce6ab913c8673aa11057e55dcf48d2 base/zpak_french002.pk4
     62174     d89c20b165aa024831da1f89b5fa175e base/zpak_german001.pk4
     7470133   549a7297673dd07ca9c7d73cb1cd08db base/zpak_german002.pk4
-    2435      80954ca771b12026b7ade3e142c7134e base/zpak_korean000.pk4
-    59700     d89ea28c7254741b21e4d41bb394b356 base/zpak_korean001.pk4
-    64595     9242d91975d44c08b2157921291ac308 base/zpak_korean002.pk4
     66459     a45bf5262bb28386467b9553f44e6cd9 base/zpak_polish001.pk4
     7853435   c23bc7f6a2c104c8a0e37dfd5978e045 base/zpak_polish002.pk4
     69993     3c80ce29cb7ee4b93ecd3cb19ad97f17 base/zpak_russian001.pk4
     6535268   5beccc9af3cf8be89df6751a08e74704 base/zpak_russian002.pk4
     60390     a703a16a9d0d432c48bf249cd053cf92 base/zpak_spanish001.pk4
     6345768   5cb4d9c6cb81bdfe28be444cb326fe09 base/zpak_spanish002.pk4
+  patch up to 1.4 - korean: |
+    2435      80954ca771b12026b7ade3e142c7134e base/zpak_korean000.pk4
+    59700     d89ea28c7254741b21e4d41bb394b356 base/zpak_korean001.pk4
+    64595     9242d91975d44c08b2157921291ac308 base/zpak_korean002.pk4
 
   patch 1.4 to 1.5 - data: |
     3974057   903e8e6bef98234bea4b40a4008843c6 base/game000.pk4
@@ -180,10 +204,11 @@ groups:
     39454     427f1c98cde0820b66214dcac0b25df6 base/zpak_english003.pk4
     224931    e5aa24dd06b0bc871067f054c217bad8 base/zpak_french003.pk4
     18944     061a9d53d3f35083d441790d155314f6 base/zpak_german003.pk4
-    18370     64087e994c9443d32571052d525a9fde base/zpak_korean003.pk4
     44084     d1b9c6079b5a245456c984fdd96bc918 base/zpak_polish003.pk4
     20912     a40a80d3c7785ce4ee90ecd8c971359a base/zpak_russian003.pk4
     39883     81c7f708bbe2f743ec33595d3bd918bf base/zpak_spanish003.pk4
+  patch 1.4 to 1.5 - korean: |
+    18370     64087e994c9443d32571052d525a9fde base/zpak_korean003.pk4
 
   patch 1.4 to 1.5 - binaries: |
     6864248   b6d438f3e3a291750c3920bcfd4cc3b6 etqw-rthread.x86
@@ -232,6 +257,7 @@ groups:
 sha1sums: |
   4ef1bf12a38d83cac13b6d59f67f0208c29c0777  ETQW-client-1.4-1.5-update.x86.run
   de70a06681f647671bfd18de84276276afc1db61  ETQW-client-1.5-full.x86.run
+  cfdea517cca5c34eda3100d6097f372e30484118  ETQW-client-1.0-1.5-update.exe
 
   ff907be3ea929033ffeb804c8c588c6e412e861a  base/game000.pk4?orig
   8685700a038fe6d9c93bab885eb22b6045c9f33f  base/game000.pk4
