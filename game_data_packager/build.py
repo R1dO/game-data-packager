@@ -1268,9 +1268,7 @@ class PackagingTask(object):
                         check_call(['arj', 'e', '-jya',
                                   os.path.join(os.path.dirname(found_name),p)] +
                                   list(to_unpack), cwd=tmpdir)
-                    for f in to_unpack:
-                        tmp = os.path.join(tmpdir, f)
-                        self.consider_file(tmp, True)
+                    self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
 
