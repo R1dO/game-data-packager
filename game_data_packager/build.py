@@ -997,7 +997,7 @@ class PackagingTask(object):
         if len(providers) > 1:
             sizes = dict()
             for provider_name in providers:
-                sizes[provider_name] = self.game.files[provider_name].size
+                sizes[provider_name] = self.game.files[provider_name].size or 0
             providers = sorted(sizes, key=sizes.get)
 
         for provider_name in providers:
