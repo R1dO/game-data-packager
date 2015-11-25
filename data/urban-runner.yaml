@@ -1,0 +1,66 @@
+---
+copyright: © 1996 Coktel Vision
+plugin: scummvm_common
+wiki: Urban_Runner
+gameid: urban
+
+missing_langs: [de,he]
+
+packages:
+  urban-runner-en-data:
+    provides: urban-runner-data
+    install:
+    - english assets
+    optional:
+    - urban.ico
+
+  urban-runner-fr-data:
+    provides: urban-runner-data
+    lang: fr
+    install:
+    - french assets
+    optional:
+    - urban.ico
+
+  urban-runner-he-data:
+    provides: urban-runner-data
+    longname: "Avudim BaIr"
+    lang: he
+    DISABLED: hashes not known
+
+groups:
+  default group: |
+    766       412757aa1a2a22e78d5f6a21af736446 urban.ico
+  english assets: |
+    512555008 63e3985897f370add4905e70ae540fa0 cd1.itk
+    8708636   35caccba47ce15c03137a7490979476c cd1.stk
+    484808704 d72832b0507a675c3d4e5d623f94a32c cd2.itk
+    554764288 abf6914419833dc3e6543a09c10f6ec1 cd3.itk
+    455847936 256652987de709640914f0a28da21832 cd4.itk
+    1252518   5c77a53b539097fe1f33ef814d5cff3a intro.stk
+    62015488  300e5ab6063fa1227142e5f9a75d0afa objet1.itk
+  french assets: |
+    510681088 3742f2b4fac32cd3c0ad136aa4118e5b cd1.itk?fr
+    8737432   c05510c979f8aab8da24d725cc2bfc4c cd1.stk?fr
+    487370752 644dad5bb10576c3435fbcea8ec2558e cd2.itk?fr
+    577959936 edf8668ad41a38ce594f60ab31207fc2 cd3.itk?fr
+    455217152 999d4c81ffef1db78ea3a07e3ceb3020 cd4.itk?fr
+    1276408   23b1ecf68e0400dad0e7795a5d3d8aad intro.stk?fr
+    61483008  3a1bb33b940b9ecca160f1ac0c56bf53 objet1.itk?fr
+
+sha1sums: |
+  5af8608044a060d79699f11a1a1941e60b03b3f5  cd1.itk
+  4c09b0baf101f28cbcef14e1f28606c6aa7e11ea  cd1.itk?fr
+  ea100935c947f8fba828ac258ef7dadc62bc1347  cd1.stk
+  f9d033dcffcad7ab7d78e9dd0d8a3884ec9cfb79  cd1.stk?fr
+  3289e0a83275a757a3c0669f8b1ac0501a429a52  cd2.itk
+  1e2d8c03196d6b7c960ca8f8142e6eb8db702b87  cd2.itk?fr
+  07901da1783ee326a11754610a3d247372b9fb6b  cd3.itk
+  1e1910ab98ba52dede6c0ccfab4067529243fa37  cd3.itk?fr
+  3b49feb145962c2800159fcfde3569dcdf71b0bf  cd4.itk
+  cd286fcc252e643898a4d962330924bc84c98ab3  cd4.itk?fr
+  92604e93f61eb9ee8a53aa4d44b9a0d16c24ae08  intro.stk
+  ecb1687d332c9db4da366ddc2fb04cfead6e67d9  intro.stk?fr
+  b5fb4d4c6714c04cc537dc391d54daa5b21c9efb  objet1.itk
+  9c55f6d1ea6775d2154ed555ec78ea4209fcffb9  objet1.itk?fr
+...
