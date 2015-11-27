@@ -1,0 +1,27 @@
+---
+longname: "Once Upon A Time: Little Red Riding Hood"
+copyright: © 1991 Coktel Vision
+plugin: scummvm_common
+gameid: littlered
+wiki: "Once_Upon_A_Time:_Little_Red_Riding_Hood"
+
+packages:
+  little-red-riding-hood-data:
+    langs: [en,de,es,fr,it]
+    install:
+    - assets
+
+groups:
+  assets: |
+    2878      50d3edaf27127f65bdae4aef2472b09b all.ask
+    256490    b3b0215ad6d4fbfddbc308faca71ea66 intro.stk
+    357538    05803dbc3ae2663634a1446e5a97a166 stk2.stk
+    19014     c098a3136694a82b0c5f15e643db28dc stk3.stk
+    312355    7a99b23dc8944c5de92f415f4653df8d langues.ext
+
+sha1sums: |
+  fef0c7fd8abaf06d9aa56dd0b5ac9e2d50dfd860  intro.stk
+  48b513b9e0e2874d3cff595e21c8c1e92574ff36  langues.ext
+  ec80485eae77b1c0e03985d00deb103416f36daa  stk2.stk
+  84be5b07d022d564a5bea76cdf0c126b10f82e4f  stk3.stk
+...
