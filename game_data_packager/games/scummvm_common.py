@@ -90,7 +90,7 @@ class ScummvmTask(PackagingTask):
 
     def fill_extra_files(self, package, destdir):
         super(ScummvmTask, self).fill_extra_files(package, destdir)
-        if package.type == 'expansion':
+        if package.type == 'expansion' and not package.gameid:
             return
 
         icon = package.name
