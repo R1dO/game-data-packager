@@ -12,6 +12,7 @@ packages:
   spacequest1-data:
     gog:
       url: space_quest_1_2_3
+      game: space_quest_1_the_sarien_encounter
     install:
     - assets
     doc:
@@ -22,6 +23,13 @@ files:
     unpack:
       format: innoextract
       prefix: "Space Quest 1"
+    provides:
+    - assets
+    - manual.pdf
+
+  setup_space_quest_2.1.0.16.exe:
+    unpack:
+      format: innoextract
     provides:
     - assets
     - manual.pdf
@@ -40,6 +48,7 @@ groups:
   gog archive: |
     1358148   6a0ecbaaab1fc5e43eb3d6fff6af9459 manual.pdf
     18505218  6ab36bf35f920828cdcb3f3b83156572 setup_space_quest_1_2_3.exe
+    17818936  31e8bf925921eb7061bf0aa2506ce9fe setup_space_quest_2.1.0.16.exe
 
 sha1sums: |
   7b82cc9bde99576bca00e7a56a2263765c431a07  object
@@ -53,4 +62,5 @@ sha1sums: |
   ab9a4dcc58e7cb92e40205e1931aac463fec7379  words.tok
   d640c1333caea003e915d387880b34d40ebcf858  manual.pdf
   d70598bc1145062b5e6d2d5a844a7959e17e11d3  setup_space_quest_1_2_3.exe
+  d76ca937dda53fb6304d7b596ef2b8fc905ff264  setup_space_quest_2.1.0.16.exe
 ...
