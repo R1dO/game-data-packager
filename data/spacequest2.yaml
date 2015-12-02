@@ -10,6 +10,7 @@ packages:
   spacequest2-data:
     gog:
       url: space_quest_1_2_3
+      game: space_quest_2_vohauls_revenge
     install:
     - assets
     optional:
@@ -26,12 +27,20 @@ files:
     - assets
     - manual.pdf
 
+  setup_space_quest2_2.1.0.16.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+    - manual.pdf
+
 groups:
   assets: |
     426       28add5125484302d213911df60d2aded logdir
     331       5024d50d42801aaea7170a756218a7e6 object
     444       514534df82237848dfcd760e476a766e picdir
     210       eab6a5f4cb071c906df674e98891a432 snddir
+    83        730535011acee0ece94e1a64fe6231e8 sq21589
     720       efb1f93513d57eeca9a539e019df7b89 viewdir
     70313     3e09c8580506212cd3494b5df8ea6cbc vol.0
     161225    fa5415f7cbc6e78c69d94ef3c92d000d vol.1
@@ -41,6 +50,7 @@ groups:
   gog archive: |
     5456095   91185d0d657338941a177cb5f6a7c2f3 manual.pdf
     18505218  6ab36bf35f920828cdcb3f3b83156572 setup_space_quest_1_2_3.exe
+    22222176  96eff8bcba39afb2b2d0154598ad961d setup_space_quest2_2.1.0.16.exe
 
 sha1sums: |
   698adf61f0d28d02d438536795cf07d75b7dfa7e  logdir
@@ -54,4 +64,5 @@ sha1sums: |
   4011fb5b691986f057baeda79c88d225355a59b4  words.tok
   1fe5b92e25729c60672afba30adc2aef8c0ee836  manual.pdf
   d70598bc1145062b5e6d2d5a844a7959e17e11d3  setup_space_quest_1_2_3.exe
+  3207cc4264d6842368bbf26ed1094564487f6dd8  setup_space_quest2_2.1.0.16.exe
 ...
