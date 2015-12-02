@@ -6,12 +6,15 @@ plugin: scummvm_common
 wiki: Space_Quest_III
 gameid: sq3
 
+missing_langs: [de]
+
 packages:
   spacequest3-en-data:
     provides: spacequest3-data
     version: '1.018'
     gog:
       url: space_quest_1_2_3
+      game: space_quest_3_the_pirates_of_pestulon
     install:
     - assets
     doc:
@@ -31,6 +34,13 @@ files:
     - assets
     - manual.pdf
 
+  setup_space_quest3_2.1.0.17.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+    - manual.pdf
+
 groups:
   assets: |
     490247    60118bdc3e57076dc2d3d909730ff4af resource.001
@@ -41,6 +51,7 @@ groups:
   gog package: |
     2342019   26afca0edb198da6064106b0c43a38a4 manual.pdf
     18505218  6ab36bf35f920828cdcb3f3b83156572 setup_space_quest_1_2_3.exe
+    20674728  ab6fe8c1b22b9c71ab1cb082ab9c36c4 setup_space_quest3_2.1.0.17.exe
 
 sha1sums: |
   6faba27a973bd435e1e59b67f3f126e1b581503f  resource.001
@@ -50,4 +61,5 @@ sha1sums: |
   cf2b709bec0f426bd36ba6d6dd5819c9cbce22c9  version
   2cdc09127c57f18887e9f35c9fd986aceb2f60a9  manual.pdf
   d70598bc1145062b5e6d2d5a844a7959e17e11d3  setup_space_quest_1_2_3.exe
+  b0b514cb85e02f479d02885740bc8287417befd8  setup_space_quest3_2.1.0.17.exe
 ...
