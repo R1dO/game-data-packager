@@ -98,6 +98,37 @@ packages:
     license:
     - license.txt?en
 
+  rtcw-censored-de-data:
+    lang: de
+    provides: rtcw-data
+    mutually_exclusive: True
+    better_version: rtcw-de-data
+    version: 1.42b
+    install_to: usr/share/games/rtcw
+    install:
+    - main/autoexec.cfg
+    - main/mp_pak0.pk3
+    - main/mp_pak1.pk3
+    - main/mp_pak2.pk3
+    - multiplayer patch
+    - main/pak0.pk3?de
+    - main/scripts/translation.cfg?141_unix
+    - main/sp_pak1.pk3?de
+    - main/sp_pak2.pk3?de
+    - main/sp_pak3.pk3?de
+    # From GOTY edition
+    - main/sp_pak4.pk3
+    # From iortcw
+    - main/hiquality.cfg
+    - main/mp_bin0.pk3
+    - main/mp_rend2_shaders0.pk3
+    - main/sp_rend2_shaders0.pk3
+    optional:
+    - main/autoexec.cfg
+    - main/rotate.cfg
+    license:
+    - license.txt?en
+
   rtcw-es-data:
     lang: es
     provides: rtcw-data
@@ -198,6 +229,11 @@ files:
       format: zip
 
   # as found on the "Edición especial"
+  main/sp_pak3.pk3?de:
+    download:
+      spear-of-destiny-mirrors:
+        path: .
+        name: sp_pak3.pk3.GM
   main/sp_pak3.pk3?es:
     download:
       spear-of-destiny-mirrors:
@@ -284,6 +320,9 @@ files:
 
 unknown_sizes:
   - main/sp_pak1.pk3?it
+  - main/pak0.pk3?de
+  - main/sp_pak1.pk3?de
+  - main/sp_pak2.pk3?de
 
 groups:
  multiplayer patch: |
@@ -304,13 +343,17 @@ groups:
   4449596   22b972974f499a237c96a2200b0d019e main/mp_pak1.pk3
   1118      30f29ffa81748a957e0441af8c14cb56 main/mp_pak2.pk3
   315823656 ce92b11df889cb0a045762bb5fd7cde5 main/pak0.pk3
+  _         7b9e0a1eb6c7412d542b330c686b232c main/pak0.pk3?de
   9559      f97ff15e4248a72567aaddfa15443d1e main/rotate.cfg
   293887431 a0d3fe956f85f40c8efd6babe0d09832 main/sp_pak1.pk3?en
+  _         df90d388fd11aa288b89ef7fd28a53f5 main/sp_pak1.pk3?de
   255164624 99a26bcd4b8511f8f43576a37a7ccbdb main/sp_pak1.pk3?es
   256811934 f19c389fe6310c24e664bc0fc84fdd95 main/sp_pak1.pk3?fr
   _         55da33452c65ef2ff62c25d0d1158bf2 main/sp_pak1.pk3?it
   11026123  330b272d5261fe19fcf3c3fbc943c7f3 main/sp_pak2.pk3
+  _         0b180bf8e4fbdd498769491bc7e45fb3 main/sp_pak2.pk3?de
   152544    cf25d6731ed29c80303febbb177aa585 main/sp_pak3.pk3
+  151839    8a8967fb6334c3be65e714ef55b5f424 main/sp_pak3.pk3?de
   152039    d26f576768793a046b4e03c7d0617fdf main/sp_pak3.pk3?es
   151931    00cee7ee80cdb2920322cf37a5f65a11 main/sp_pak3.pk3?fr
   151882    2e5e834ab69eacf96cc1141840adca08 main/sp_pak3.pk3?it
@@ -356,6 +399,7 @@ sha1sums: |
   0867395305426cc9374aa1d6e49b091f9b281cce  main/sp_pak1.pk3?fr
   feee8ecadb551a769dfb1ee97eff4c7ed7f93495  main/sp_pak2.pk3
   94539eded69eb99a86d752808c5e029d5915fde7  main/sp_pak3.pk3
+  3b79baa316d5658698eabd06a8502e02b83a696b  main/sp_pak3.pk3?de
   f5dbd82fb2e5d489cd90868472cd47afa5c4966d  main/sp_pak3.pk3?es
   4958f2172cb37cd11d49119ef4895f1e6fb6c428  main/sp_pak3.pk3?fr
   3823c4322c81f9ae2cf58b469275e807a326a8b8  main/sp_pak3.pk3?it
