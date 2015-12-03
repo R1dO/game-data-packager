@@ -5,7 +5,7 @@ copyright: © 1991 Sierra
 plugin: scummvm_common
 wiki: Space_Quest_IV
 gameid: sq4
-missing_langs: [ja]
+missing_langs: [de,es,it,ja]
 
 packages:
   spacequest4-dos-en-data:
@@ -14,25 +14,7 @@ packages:
     better_version: spacequest4-win-data
     provides: spacequest4-data
     install:
-    - resource.000?dos
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.005
-    - resource.map?dos
-    - script.000
-    - script.119
-    - script.120
-    - script.405
-    - script.410
-    - text.000
-    - text.405
-    - text.410
-    - version?dos
-    - view.992
-    - view.993
-    - view.994
+    - dos version
 
   spacequest4-win-data:
     copyright: © 1992 Sierra
@@ -40,24 +22,11 @@ packages:
     provides: spacequest4-data
     gog:
       url: space_quest_4_5_6
-      game: FIXME
+      game: space_quest_4_roger_wilco_and_the_time_rippers
     install:
-    - 335.hep
-    - 335.scr
-    - 390.hep
-    - 390.scr
-    - 410.hep
-    - 410.scr
-    - 555.hep
-    - 555.scr
-    - 610.hep
-    - 610.scr
-    - 701.hep
-    - 701.scr
-    - resource.000
-    - resource.aud
-    - resource.map
-    - version
+    - windows version
+    doc:
+    - manual.pdf
 
   spacequest4-de-data:
     provides: spacequest4-data
@@ -94,25 +63,17 @@ files:
       format: innoextract
       prefix: "Space Quest 4"
     provides:
-    - 335.hep
-    - 335.scr
-    - 390.hep
-    - 390.scr
-    - 410.hep
-    - 410.scr
-    - 555.hep
-    - 555.scr
-    - 610.hep
-    - 610.scr
-    - 701.hep
-    - 701.scr
-    - resource.000
-    - resource.aud
-    - resource.map
-    - version
+    - windows version
+
+  setup_space_quest4_2.1.0.15.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - windows version
+    - manual.pdf
 
 groups:
- default group: |
+ windows version: |
   2846      588ebf5e4572bf34d73b111bc39d621e 335.hep
   3160      94bdbc66efa2e4e25d9842dc3c8e232d 335.scr
   2314      1df0e5eeea41b23b7920bf5e576ff982 390.hep
@@ -125,28 +86,27 @@ groups:
   5954      1dfb97351c4cb473b4602d067911f30f 610.scr
   1704      e8a70e1551567f09d7127faf8d2afd3b 701.hep
   3884      0ae01f449de83438d3553388b25e20ba 701.scr
-  173330    b0fd6032e789321f5c3a60d8bf3d9431 resource.000?dos
   5157378   33a9e16a2bbe59ce52504e758e08082f resource.000
+  168882321 b983f06438b45297a2c8af534d47a1fa resource.aud
+  7054      bd29d3fb8ea4a8ee638edaf40aa5f5ed resource.map
+  5         07f863c37a2ce25df345667e0cfaf63a version
+ dos version: |
+  173330    b0fd6032e789321f5c3a60d8bf3d9431 resource.000?dos
   1247215   3739053944c2b9f921a86c22275ea3d7 resource.001
   1218373   23d4c18f693823f821fadb02e10ce061 resource.002
   1240130   4841fcc5643305b25da109bac17a5946 resource.003
   1200631   7ca0a3722b2a51686fbfe576a3415349 resource.004
   1053294   2bb5e789e9d18b5171c4acab6d9d2f49 resource.005
-  168882321 b983f06438b45297a2c8af534d47a1fa resource.aud
   5928      6ea4f337d8d9a5c306f343e86861e9d8 resource.map?dos
-  7054      bd29d3fb8ea4a8ee638edaf40aa5f5ed resource.map
-  140       9019f9cd6ab0d1b9ad3f7731ff88b6e0 resource.sq4
   13702     8ae526b127371cd7fcd60c1711d2b31f script.000
   762       b101aef83fa0deaec997e9b47413c7a1 script.119
   410       3a2f3311b5ac633e1769f28448c9d176 script.120
   10450     26b95a02d4db47e227096284ff8aeed5 script.405
   10334     fab1c7f2ad1537619759e7049ff11b34 script.410
-  9290      592361bf99f09101f07ef8ddd71159e4 sq4.uhs
   1668      ed1b5b427985d1e3b8c26d76fd14be3f text.000
   53        a6a2456ab79492026755e9529860aba0 text.405
   53        9d4805b0941eb48d7317ca15bc8927b9 text.410
   7         7233646488ab8085557a4b56de9b1bd9 version?dos
-  5         07f863c37a2ce25df345667e0cfaf63a version
   5613      de92a199b251f9b9cd261cebbf1e1458 view.992
   5482      2f704aaff9a616347fd4f03befd1ad49 view.993
   2245      0fefac7c1cf28c33b112522c982e5047 view.994
@@ -173,6 +133,8 @@ groups:
   7         fa5ccbff55174b9e9881db1aa6126c62 version?fr
  gog archives: |
   536147110 d1909145d2b4007b25c27c4afbb3feac setup_space_quest.exe
+  83374312  6196c966b24eefa7141ac8259a031868 setup_space_quest4_2.1.0.15.exe
+  5391542   4df81d35d77a2a2e153a32f29a470796 manual.pdf
 
 sha1sums: |
   eb63cfd2f02078ce2b26217e65b2df2eed27310d  resource.000?dos
@@ -187,10 +149,6 @@ sha1sums: |
   883324ce2f1ff2f8a4f0fe6e37602a5fa7a545fa  script.120
   f840ef9041ee8775809ccde290af122f2960f199  script.405
   2e7403d49ef37888c9945b5e626b2733fdd4ca84  script.410
-  7710d5eaf4f4a58c1ce9397543b7734c073627b1  text.000
-  81166d456ab7c75f76a32905aaffa639b960db56  text.405
-  001f4da8fc8653cd7b441a1b84283e9dc5dd1a96  text.410
-  2bf8784fb8d76c0c4ae58c2005c8da689df1c62c  version?dos
   a730007962867fe4449aa06a9e1aaf09ffed1790  view.992
   8fbad7e32391993383b2f86ed2522e4b36ff82f1  view.993
   fdd16e054a51a8fda492505074b0ca4ec0b122d0  view.994
@@ -204,6 +162,7 @@ sha1sums: |
   adf7d3030a72d61a31e148fde5eaf33dcbe7a09d  resource.map?fr
 
   2a2ce2807ad71675dd5c2d2fbcf87def8d54dfee  setup_space_quest.exe
+  001efda7f6508546e351df57349d558267b1a7b9  setup_space_quest4_2.1.0.15.exe
   55267358d2ac997af65914cafe6f312d19aa46c2  335.hep
   9996b4296687eb98c2649bfc50a297de100266d8  335.scr
   d2dfaba29fe3971b8fe2a792ea69f58cfbdb15de  390.hep
@@ -219,5 +178,4 @@ sha1sums: |
   2caecd07abd928bc9625b6efced020f35b76c6f2  resource.000
   5d688842e8286c79d6aa59401a20cfe4bec0820c  resource.aud
   5917d566075a5ab634cefb03801e90d3b196508e  resource.map
-  79c6f884e081a737ac73179c46a983b890b1a8da  version
 ...
