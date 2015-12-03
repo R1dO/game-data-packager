@@ -15,91 +15,12 @@ packages:
       url: space_quest_4_5_6
       game: space_quest_5_the_next_mutation
     install:
-    - 0.fon
-    - 10.fon
-    - 100.v56
-    - 1004.v56
-    - 1005.fon
-    - 1006.v56
-    - 1007.fon
-    - 1008.fon
-    - 101.v56
-    - 104.hep
-    - 104.scr
-    - 105.v56
-    - 114.v56
-    - 119.p56
-    - 127.p56
-    - 1307.fon
-    - 133.p56
-    - 137.hep
-    - 137.scr
-    - 142.v56
-    - 160.v56
-    - 1605.fon
-    - 167.v56
-    - 2003.v56
-    - 201.hep
-    - 201.scr
-    - 201.tex
-    - 204.hep
-    - 204.scr
-    - 205.v56
-    - 2099.v56
-    - 2106.fon
-    - 211.v56
-    - 2306.fon
-    - 24.p56
-    - 2407.fon
-    - 2510.fon
-    - 252.v56
-    - 264.v56
-    - 29.v56
-    - 31.p56
-    - 335.hep
+    - shared assets
+    - english version
     - 335.scr
-    - 4.fon
-    - 4115.fon
-    - 48.p56
-    - 5.p56
-    - 50.p56
-    - 537.v56
-    - 538.v56
-    - 550.v56
-    - 606.v56
-    - 613.v56
-    - 616.v56
-    - 625.v56
-    - 627.v56
-    - 65535.map
-    - 667.v56
-    - 674.v56
-    - 676.v56
-    - 7.p56
-    - 701.v56
-    - 8.p56
-    - 81.p56
-    - 900.v56
-    - 910.v56
-    - 916.v56
-    - 917.v56
-    - 96.v56
-    - 97.v56
-    - 98.v56
-    - 980.v56
-    - 986.v56
-    - 987.v56
-    - 988.v56
-    - 99.v56
-    - 992.v56
-    - 995.v56
-    - 999.fon
-    - message.map
-    - resource.000
-    - resource.aud
-    - resource.map
-    - resource.msg
     - version
+    doc:
+    - manual.pdf
 
   spacequest5-103-en-data:
     longname: "Space Quest V: The Next Mutation (v1.03)"
@@ -107,90 +28,9 @@ packages:
     version: '1.03'
     provides: spacequest5-data
     install:
-    - 0.fon
-    - 10.fon
-    - 100.v56
-    - 1004.v56
-    - 1005.fon
-    - 1006.v56
-    - 1007.fon
-    - 1008.fon
-    - 101.v56
-    - 104.hep
-    - 104.scr
-    - 105.v56
-    - 114.v56
-    - 119.p56
-    - 127.p56
-    - 1307.fon
-    - 133.p56
-    - 137.hep
-    - 137.scr
-    - 142.v56
-    - 160.v56
-    - 1605.fon
-    - 167.v56
-    - 2003.v56
-    - 201.hep
-    - 201.scr
-    - 201.tex
-    - 204.hep
-    - 204.scr
-    - 205.v56
-    - 2099.v56
-    - 2106.fon
-    - 211.v56
-    - 2306.fon
-    - 24.p56
-    - 2407.fon
-    - 2510.fon
-    - 252.v56
-    - 264.v56
-    - 29.v56
-    - 31.p56
-    - 335.hep
+    - shared assets
+    - english version
     - 335.scr?1.03
-    - 4.fon
-    - 4115.fon
-    - 48.p56
-    - 5.p56
-    - 50.p56
-    - 537.v56
-    - 538.v56
-    - 550.v56
-    - 606.v56
-    - 613.v56
-    - 616.v56
-    - 625.v56
-    - 627.v56
-    - 65535.map
-    - 667.v56
-    - 674.v56
-    - 676.v56
-    - 7.p56
-    - 701.v56
-    - 8.p56
-    - 81.p56
-    - 900.v56
-    - 910.v56
-    - 916.v56
-    - 917.v56
-    - 96.v56
-    - 97.v56
-    - 98.v56
-    - 980.v56
-    - 986.v56
-    - 987.v56
-    - 988.v56
-    - 99.v56
-    - 992.v56
-    - 995.v56
-    - 999.fon
-    - message.map
-    - resource.000
-    - resource.aud
-    - resource.map
-    - resource.msg
     - version?1.03
 
   spacequest5-fr-data:
@@ -200,23 +40,8 @@ packages:
     provides: spacequest5-data
     install:
     - french version
-    - 96.v56
-    - 119.p56
-    - 201.hep
-    - 201.scr
-    - 201.tex
-    - 204.hep
-    - 204.scr
-    - 335.hep
+    - shared assets
     - 335.scr
-    - 900.v56
-    - 910.v56
-    - 916.v56
-    - 917.v56
-    - 65535.map
-    - resource.000
-    - resource.aud
-    - resource.map
     - version
 
 files:
@@ -225,94 +50,45 @@ files:
       format: innoextract
       prefix: "Space Quest 5"
     provides:
-    - 0.fon
-    - 10.fon
-    - 100.v56
-    - 1004.v56
-    - 1005.fon
-    - 1006.v56
-    - 1007.fon
-    - 1008.fon
-    - 101.v56
-    - 104.hep
-    - 104.scr
-    - 105.v56
-    - 114.v56
-    - 119.p56
-    - 127.p56
-    - 1307.fon
-    - 133.p56
-    - 137.hep
-    - 137.scr
-    - 142.v56
-    - 160.v56
-    - 1605.fon
-    - 167.v56
-    - 2003.v56
-    - 201.hep
-    - 201.scr
-    - 201.tex
-    - 204.hep
-    - 204.scr
-    - 205.v56
-    - 2099.v56
-    - 2106.fon
-    - 211.v56
-    - 2306.fon
-    - 24.p56
-    - 2407.fon
-    - 2510.fon
-    - 252.v56
-    - 264.v56
-    - 29.v56
-    - 31.p56
-    - 335.hep
+    - shared assets
+    - english version
     - 335.scr
-    - 4.fon
-    - 4115.fon
-    - 48.p56
-    - 5.p56
-    - 50.p56
-    - 537.v56
-    - 538.v56
-    - 550.v56
-    - 606.v56
-    - 613.v56
-    - 616.v56
-    - 625.v56
-    - 627.v56
-    - 65535.map
-    - 667.v56
-    - 674.v56
-    - 676.v56
-    - 7.p56
-    - 701.v56
-    - 8.p56
-    - 81.p56
-    - 900.v56
-    - 910.v56
-    - 916.v56
-    - 917.v56
-    - 96.v56
-    - 97.v56
-    - 98.v56
-    - 980.v56
-    - 986.v56
-    - 987.v56
-    - 988.v56
-    - 99.v56
-    - 992.v56
-    - 995.v56
-    - 999.fon
-    - message.map
-    - resource.000
-    - resource.aud
-    - resource.map
-    - resource.msg
     - version
 
+  setup_space_quest5_2.1.0.15.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - shared assets
+    - english version
+    - 335.scr
+    - version
+    - manual.pdf
+
 groups:
+ shared assets: |
+  60820     463fd943cec71c1d8cc94e780ea5824f 96.v56
+  6376      b2b77be8b691c9e23ff272e614abdb24 119.p56
+  4770      9259685bee5a8b76770c3fc15e649d68 201.hep
+  13586     a35fa153b958101bce6550fd37bd9908 201.scr
+  13        0b37dae3ad4932a97288472b47a8bddd 201.tex
+  1318      5e7aae17631d53b96a07cafad43c1860 204.hep
+  2066      9105a591e12e454358c7b886e21f222b 204.scr
+  3514      0f18cde9cdface83baa442c4d29f5402 335.hep
+  908       84441c2804fec95f1403accc01efd494 900.v56
+  2179      ef04d534a3bb4e3789f4f9fef3ed3e6c 910.v56
+  2341      b085a15042a4c114559fa4c92512a537 916.v56
+  1840      0f05ddeeaafa7bd51ebe1da50c9ccc0a 917.v56
+  422       ff6d8f0130406c0947fda636fd50fb32 65535.map
+  5496486   192ad5d5a5d8af8d5d76e502a4292581 resource.000
+  888406    9cd69c7c22ff853d8090f17e1f04da00 resource.aud
+  6143      ea937aae231c4acdaeb249dea8f71060 resource.map
  default group: |
+  3054      09f4b3ad1ce4566d1b09ec5f36a12319 335.scr
+  3050      bdbf393f702e1de9db35667d4154bf80 335.scr?1.03
+  7         3dd2fe70870f9ca46d53d5dec17466fc version
+  6         f2b0054b79403596c4687dda393ba724 version?1.03
+ english version: |
   1782      4ff2dc339352972581da584cc0a8d2f1 0.fon
   1296      33027c81d10c98561510ecca2749cf81 10.fon
   52329     8d6a0376f1bfc5075bf9dcadcc57c159 100.v56
@@ -326,7 +102,6 @@ groups:
   5066      5259e9eeba67469e92f312348e2486f2 104.scr
   27448     8e77415577fcf962087bfa3c856e4c82 105.v56
   15745     bf0e068f78df3500ef4ff44641ab5f14 114.v56
-  6376      b2b77be8b691c9e23ff272e614abdb24 119.p56
   8902      6fbefbff4fcbc2bb3434fdb3f80c7543 127.p56
   1486      d6d5d65b5d6b30ff3ce4e2d218fd67be 1307.fon
   13866     0a6891fd10b8f0e528d7fa8366fb89bb 133.p56
@@ -337,11 +112,6 @@ groups:
   1494      57938b04a294a0881c920a358c0ccab9 1605.fon
   35177     cf08cacb90924d9596f618143241e551 167.v56
   23461     e9cfbdcf9684c356f69f4eb9368d1371 2003.v56
-  4770      9259685bee5a8b76770c3fc15e649d68 201.hep
-  13586     a35fa153b958101bce6550fd37bd9908 201.scr
-  13        0b37dae3ad4932a97288472b47a8bddd 201.tex
-  1318      5e7aae17631d53b96a07cafad43c1860 204.hep
-  2066      9105a591e12e454358c7b886e21f222b 204.scr
   16606     b2b1c4b35331f84bbfd52a330c25011e 205.v56
   3089      8eef67c7a39a440d368d669d098c2998 2099.v56
   1782      4ff2dc339352972581da584cc0a8d2f1 2106.fon
@@ -354,9 +124,6 @@ groups:
   10530     43b0bdb1a6a305305c91cefe420938fa 264.v56
   15250     e93c989d283c14b3ba03ff8e25e3db3f 29.v56
   43072     810779c5330dfc6741a277684014dc68 31.p56
-  3514      0f18cde9cdface83baa442c4d29f5402 335.hep
-  3054      09f4b3ad1ce4566d1b09ec5f36a12319 335.scr
-  3050      bdbf393f702e1de9db35667d4154bf80 335.scr?1.03
   1323      5b0d667b915abab96d23b636cf703b22 4.fon
   3479      ef5f9963c174f9b0201df1920e2d16b5 4115.fon
   31003     017e100468064e8f945b3287a5ea4df1 48.p56
@@ -370,7 +137,6 @@ groups:
   4394      34b228365150ddcf4411e088e00a19aa 616.v56
   20400     0e62453a2b4a0cd6dc8b6b5f8c895b72 625.v56
   17564     7eb8bde90afaa6ccf8b3bcd92a3ac810 627.v56
-  422       ff6d8f0130406c0947fda636fd50fb32 65535.map
   8820      5139cfbb6cdc795f87fae260462ed023 667.v56
   37046     1ee096de25dba5012cfa1b2a101170ad 674.v56
   21164     c6ed168ede17ffacf94e3a1239ca709a 676.v56
@@ -378,11 +144,6 @@ groups:
   5172      df6dc9e68ba37cf58d67601b740a8660 701.v56
   8664      c5d1f9cb7e79a7b74f625bfd303e37f3 8.p56
   50913     c4c6f4b088593026fe17d887fb1e5a43 81.p56
-  908       84441c2804fec95f1403accc01efd494 900.v56
-  2179      ef04d534a3bb4e3789f4f9fef3ed3e6c 910.v56
-  2341      b085a15042a4c114559fa4c92512a537 916.v56
-  1840      0f05ddeeaafa7bd51ebe1da50c9ccc0a 917.v56
-  60820     463fd943cec71c1d8cc94e780ea5824f 96.v56
   49463     a68997ac8f9eaa2852e159a89ec4c393 97.v56
   2488      5c7651f2aa70379255fee3d4c3cd52c7 98.v56
   2078      c475c307e517c8b3da707c22f8fb13e4 980.v56
@@ -394,15 +155,12 @@ groups:
   11138     d56424c519a4639fe8000b1d52276be0 995.v56
   1252      8fadda516df6e9da6e75b84e8b46909f 999.fon
   446       573d43b239a85ab06a96ccc6ba2624e1 message.map
-  5496486   192ad5d5a5d8af8d5d76e502a4292581 resource.000
-  888406    9cd69c7c22ff853d8090f17e1f04da00 resource.aud
-  6143      ea937aae231c4acdaeb249dea8f71060 resource.map
   125988    47fec20a4d5d973e4235bab8cea40676 resource.msg
-  7         3dd2fe70870f9ca46d53d5dec17466fc version
-  6         f2b0054b79403596c4687dda393ba724 version?1.03
 
  gog archives: |
   536147110 d1909145d2b4007b25c27c4afbb3feac setup_space_quest.exe
+  25912808  60a386865e46194fd4f917be819a91c7 setup_space_quest5_2.1.0.15.exe
+  5391542   4df81d35d77a2a2e153a32f29a470796 manual.pdf
 
  french version: |
   2791      ef62d5be51eaba4ee0d49fae99fd55e4 0.fon?fr
@@ -498,6 +256,7 @@ groups:
 
 sha1sums: |
   2a2ce2807ad71675dd5c2d2fbcf87def8d54dfee  setup_space_quest.exe
+  c1e24045f2818429adff50acb9a56cc32a856690  setup_space_quest5_2.1.0.15.exe
   3b21ba5410e75ddf25042d3873a9f12cfd9470ad  100.v56
   b0a9dfeba06ee810603d41d58ac2b608cde7ca40  1004.v56
   83a174f100879ce279d32f2cfb36133ee46de428  1006.v56
