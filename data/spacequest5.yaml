@@ -13,6 +13,7 @@ packages:
     provides: spacequest5-data
     gog:
       url: space_quest_4_5_6
+      game: space_quest_5_the_next_mutation
     install:
     - 0.fon
     - 10.fon
@@ -198,113 +199,24 @@ packages:
     lang: fr
     provides: spacequest5-data
     install:
-    - 0.fon?fr
-    - 10.fon?fr
-    - 100.v56?fr
-    - 1001.v56
-    - 1004.v56?fr
-    - 1005.fon?fr
-    - 1006.v56?fr
-    - 1007.fon?fr
-    - 1008.fon?fr
-    - 101.v56?fr
-    - 104.hep?fr
-    - 104.scr?fr
-    - 1040.hep
-    - 1040.scr
-    - 105.v56?fr
-    - 114.v56?fr
-    - 118.p56
-    - 119.hep
+    - french version
+    - 96.v56
     - 119.p56
-    - 119.scr
-    - 127.p56?fr
-    - 1307.fon?fr
-    - 133.hep
-    - 133.p56?fr
-    - 133.scr
-    - 137.hep?fr
-    - 137.scr?fr
-    - 142.v56?fr
-    - 160.v56?fr
-    - 1605.fon?fr
-    - 167.v56?fr
-    - 2003.v56?fr
     - 201.hep
     - 201.scr
     - 201.tex
-    - 201.v56
     - 204.hep
     - 204.scr
-    - 205.v56?fr
-    - 206.v56
-    - 2099.v56?fr
-    - 2106.fon?fr
-    - 211.v56?fr
-    - 2306.fon?fr
-    - 24.p56?fr
-    - 240.hep
-    - 240.scr
-    - 2407.fon?fr
-    - 2510.fon?fr
-    - 252.v56?fr
-    - 264.v56?fr
-    - 29.v56?fr
-    - 305.hep
-    - 305.scr
-    - 31.p56?fr
-    - 3270.v56
     - 335.hep
     - 335.scr
-    - 38.p56
-    - 4.fon?fr
-    - 4111.v56
-    - 4115.fon?fr
-    - 48.p56?fr
-    - 5.p56?fr
-    - 50.p56?fr
-    - 5220.fon
-    - 537.v56?fr
-    - 538.v56?fr
-    - 539.v56
-    - 550.v56?fr
-    - 606.v56?fr
-    - 613.v56?fr
-    - 616.v56?fr
-    - 625.v56?fr
-    - 627.v56?fr
-    - 65535.map
-    - 667.v56?fr
-    - 674.v56?fr
-    - 676.v56?fr
-    - 7.p56?fr
-    - 701.v56?fr
-    - 730.hep
-    - 730.scr
-    - 8.p56?fr
-    - 801.hep
-    - 801.scr
-    - 81.p56?fr
     - 900.v56
     - 910.v56
     - 916.v56
     - 917.v56
-    - 96.v56
-    - 97.v56?fr
-    - 98.v56?fr
-    - 980.v56?fr
-    - 986.v56?fr
-    - 987.v56?fr
-    - 988.v56?fr
-    - 99.v56?fr
-    - 992.v56?fr
-    - 995.v56?fr
-    - 999.fon?fr
-    - message.map?fr
+    - 65535.map
     - resource.000
     - resource.aud
     - resource.map
-    - resource.msg?fr
     - version
 
 files:
@@ -399,7 +311,8 @@ files:
     - resource.msg
     - version
 
-size_and_md5: |
+groups:
+ default group: |
   1782      4ff2dc339352972581da584cc0a8d2f1 0.fon
   1296      33027c81d10c98561510ecca2749cf81 10.fon
   52329     8d6a0376f1bfc5075bf9dcadcc57c159 100.v56
@@ -488,8 +401,10 @@ size_and_md5: |
   7         3dd2fe70870f9ca46d53d5dec17466fc version
   6         f2b0054b79403596c4687dda393ba724 version?1.03
 
+ gog archives: |
   536147110 d1909145d2b4007b25c27c4afbb3feac setup_space_quest.exe
 
+ french version: |
   2791      ef62d5be51eaba4ee0d49fae99fd55e4 0.fon?fr
   2701      927db5401f3f7c417645385e3ea582a6 4.fon?fr
   4654      5a4fe5fca55dec2aeae8bfbddba687a9 5.p56?fr
