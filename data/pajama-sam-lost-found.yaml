@@ -1,0 +1,265 @@
+---
+franchise: Pajama Sam
+longname: "Pajama Sam's Lost and Found"
+copyright: © 1998 Humongous Entertainment
+plugin: scummvm_common
+wiki: Pajama_Sam%27s_Lost_%26_Found
+gameid: lost
+genre: Kids
+missing_langs: [nl]
+
+gog:
+  url: pajama_sam_vol_1
+  game: pajama_sams_lost_found
+  path: "Pajama Sams Lost Found"
+
+steam:
+  id: 292860
+  path: FIXME
+
+packages:
+  pajama-sams-lost-found-en-data:
+    provides: pajama-sams-lost-found-data
+    install:
+    - assets
+
+  pajama-sams-lost-found-nl-data:
+    provides: pajama-sams-lost-found-data
+    lang: nl
+    longname: "Pajama Sam - Verloren"
+    DISABLED: not found
+
+files:
+  setup_pajama_sam_lost_and_found_2.0.0.3.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+
+  gog_pajama_sam_s_lost_found_2.0.0.3.sh:
+    unpack:
+      format: zip
+    provides:
+    - assets
+
+groups:
+  assets: |
+    1046      3334ac2b37ca65468b7d99d970016ec4 data/world-1/levels/level-1.ot1
+    476       373adf366047ca5425d4adf780acc0e1 data/world-1/levels/level-1.ot2
+    898       eb955575a856a7cd4a2e23259350e741 data/world-1/levels/level-2.ot1
+    588       dd04dbcfab496ba1d4dc90fee8e13977 data/world-1/levels/level-2.ot2
+    868       225943eb20a51f2a005b4a024252b96b data/world-1/levels/level-3.ot1
+    604       9dccc82bc6a8c6e847b203679caff645 data/world-1/levels/level-3.ot2
+    1078      8c09585037422b5318e681f530e44877 data/world-1/levels/level-4.ot1
+    908       a6f065d153460bd38692a30ee73cfd89 data/world-1/levels/level-4.ot2
+    1238      ba6207fe85cf53b15a51dbab3682231e data/world-1/levels/level-5.ot1
+    652       700afcdc3f68b124635f59fca703659c data/world-1/levels/level-5.ot2
+    1046      ae1cca43c46c1678dc8010b431e4ccdf data/world-1/levels/level-6.ot1
+    716       39672d5bf371146ebe9e0b508241393d data/world-1/levels/level-6.ot2
+    898       eb955575a856a7cd4a2e23259350e741 data/world-1/levels/level-7.ot1
+    956       a424c76b680efabe0b87a6924d45e6e0 data/world-1/levels/level-7.ot2
+    612       6dd2bf5e1ae4d6ea9d14f77672f8ba1b data/world-1/levels/level-8.ot1
+    780       553aa1d9eafa3d7e4cffd4adf189f3a3 data/world-1/levels/level-8.ot2
+    852       5fb656bb019a63f59df1e2bd3639a171 data/world-1/levels/level-9.ot1
+    428       695dee7b683723be097c758d448f00ae data/world-1/levels/level-9.ot2
+    1064      b4d5af1b24d248258f829b9dc7f2109d data/world-1/levels/level-10.ot1
+    844       7b01a086548bd894353cf365df7baeb9 data/world-1/levels/level-10.ot2
+    1062      713d433cfcb022361300bd9771b53939 data/world-1/levels/level-11.ot1
+    956       c9bc78233082e10377e423026c9d047c data/world-1/levels/level-11.ot2
+    1272      19db2c1c1dbf005564ef3e9f22fc4548 data/world-1/levels/level-12.ot1
+    892       a041bda2c489f0c53765e3564dff55cc data/world-1/levels/level-12.ot2
+    1088      5ffb56c299443f9932ac39bcf5481249 data/world-1/levels/level-13.ot1
+    1660      c19d05d3ff4f0895639e8e2c3f8add67 data/world-1/levels/level-13.ot2
+    1178      3798f3dd6bb4b5b94e592690c055d4c1 data/world-1/levels/level-14.ot1
+    1356      af7ec4af42fbd5ce86ee4524320b28d0 data/world-1/levels/level-14.ot2
+    1282      a14c074708c301a39df888ba262111ee data/world-1/levels/level-15.ot1
+    652       a740ff6f5b241b360b57a2301f1e4f5a data/world-1/levels/level-15.ot2
+    760       599532ec54528a0eda2e1125d85fe04e data/world-1/levels/level-16.ot1
+    1980      d2a2cd4d338bb2f852f3b09198c978e1 data/world-1/levels/level-16.ot2
+    832       4d775af027ef049fe18d6ef64d5ec30d data/world-1/levels/level-17.ot1
+    1020      a3cc6ffd8bd1c03942a624d6c7421fe5 data/world-1/levels/level-17.ot2
+    952       f585fe52eaa38f782b3d19bdbce705e2 data/world-1/levels/level-18.ot1
+    2172      149e84d1becddda614e4ff154d110c97 data/world-1/levels/level-18.ot2
+    1240      acfd6437eb549e7cc4be8738e3faae19 data/world-1/levels/level-19.ot1
+    3244      f4e3fc0a205cea8f393b4cc4ec03645b data/world-1/levels/level-19.ot2
+    1370      a1868658c949912df18bc02495b69c88 data/world-1/levels/level-20.ot1
+    2348      016321a0bc04aed55bfc2ca5e3c41d2e data/world-1/levels/level-20.ot2
+
+    338       30788a13ca4be2abf56be0f530e95266 data/world-2/levels/level-1.ot1
+    620       1c6ee986d06c36ccebf1f4f13bc74811 data/world-2/levels/level-1.ot2
+    374       07d2cd90bcc5681fdbbe6990a7418c2d data/world-2/levels/level-2.ot1
+    1276      6510b4a3725d808f53da071a33ee0fac data/world-2/levels/level-2.ot2
+    338       4fe7238d752e2b4dd713eb5298f8142b data/world-2/levels/level-3.ot1
+    716       5f31c20c87f425154394c773a4b8931e data/world-2/levels/level-3.ot2
+    308       7b273947dc1276a566ab3d7eff941eec data/world-2/levels/level-4.ot1
+    540       395714d201de552b420f9d67cdbdf521 data/world-2/levels/level-4.ot2
+    268       2cbe2df639bec8a2c06c8a0f18ddd6de data/world-2/levels/level-5.ot1
+    492       b713229052532117acc199b0e41ede7e data/world-2/levels/level-5.ot2
+    518       23cd85e79374d946bfa5ade11471b7d7 data/world-2/levels/level-6.ot1
+    716       bd038bb0086a98c15961c91155d09f16 data/world-2/levels/level-6.ot2
+    290       e9bdfe215c6928271097b91514fb5ef5 data/world-2/levels/level-7.ot1
+    1212      4e6868adbdd0699042b1896363cebb78 data/world-2/levels/level-7.ot2
+    534       c2273c8096506180f285469b4a55a2ab data/world-2/levels/level-8.ot1
+    1916      c513bba054f21b433fe083ca7a37e302 data/world-2/levels/level-8.ot2
+    290       c7ec288c22052c7865c8b068e783e23f data/world-2/levels/level-9.ot1
+    1388      7a53d6a55a3a8a122be96c5cf234fa4b data/world-2/levels/level-9.ot2
+    316       eb747dc4137ae6c6f763acb98a2f2214 data/world-2/levels/level-10.ot1
+    1676      8fe709290d16b94f67378a774b25f2b3 data/world-2/levels/level-10.ot2
+    268       1dba3d3b83d10d376bba5e2edea5dde5 data/world-2/levels/level-11.ot1
+    1116      e2ff2021481727a805cf4f4534a988b7 data/world-2/levels/level-11.ot2
+    366       0bf65ce4a493cb2864e3c5a33944fb41 data/world-2/levels/level-12.ot1
+    1148      0f8670ad6ed168203f408c71b7c7a5ff data/world-2/levels/level-12.ot2
+    334       1040e06218be3f8fc5a60e9edff7e956 data/world-2/levels/level-13.ot1
+    1612      b8a236816c81114005f6b423a28fd56d data/world-2/levels/level-13.ot2
+    426       a84e66a44ffa0e75d24053754bd62f8e data/world-2/levels/level-14.ot1
+    1452      43975fd8c64988d0510e23c86a52ee76 data/world-2/levels/level-14.ot2
+    516       479c4aa66636cb5ea6f60be364d63126 data/world-2/levels/level-15.ot1
+    1836      db677ce54673bb752634f3ae1e0b447f data/world-2/levels/level-15.ot2
+    268       cf6ec323d8fd835009b87a62fc1f306a data/world-2/levels/level-16.ot1
+    1820      4d059350e8ec5d5663de65da2c8153bb data/world-2/levels/level-16.ot2
+    376       e2eb6c4ad1066867e1420c5c266482b4 data/world-2/levels/level-17.ot1
+    1996      d6d494ae6c1f19128384c13c54c4800c data/world-2/levels/level-17.ot2
+    314       edcf16f5363367039fb5c6fa1280b712 data/world-2/levels/level-18.ot1
+    2220      4b2c4a4f0a378693b01713dcd9f3c823 data/world-2/levels/level-18.ot2
+    434       290d9e68fb5e3b5be92332b4d4ca2432 data/world-2/levels/level-19.ot1
+    2556      3c42b5a569c64f333e2864f38e6d02db data/world-2/levels/level-19.ot2
+    544       a1c5bbbbd4a97d597caa1d9febc9399f data/world-2/levels/level-20.ot1
+    2748      101bb1090fc6057957b3554fa98cefdf data/world-2/levels/level-20.ot2
+
+    474       ad331cb56f39b3cdbb121a16585ddcef data/world-3/levels/level-1.ot1
+    604       84fea9766ad453a3233f9dd93f27eecd data/world-3/levels/level-1.ot2
+    954       4e400091f5ae52896aeaa63ddda91fd4 data/world-3/levels/level-2.ot1
+    1132      6d9c7b1fd5ba59f68a1692427b8c2bec data/world-3/levels/level-2.ot2
+    486       c8e10b321feebf99520ccc91ca7fbc70 data/world-3/levels/level-3.ot1
+    572       15a64dcc04e0bb4caa97ee766a69ad07 data/world-3/levels/level-3.ot2
+    396       710a0ff51714b4d03508bbeabe8f2cf7 data/world-3/levels/level-4.ot1
+    556       3b68766c97cd7e573c127e34b5fe0576 data/world-3/levels/level-4.ot2
+    642       23e4f360d565d60485c45a6816caffc6 data/world-3/levels/level-5.ot1
+    1132      f67b289f13db654f5b9b86610552f995 data/world-3/levels/level-5.ot2
+    1414      99cdf90edd51b485a5ddb1d88e67eb71 data/world-3/levels/level-6.ot1
+    1116      ac0c4ed39196f29606fb9068f88752d7 data/world-3/levels/level-6.ot2
+    934       29b8ba58c71b02abdff754fa36cf9c8a data/world-3/levels/level-7.ot1
+    1420      ae224853025438823165d110dd55cf17 data/world-3/levels/level-7.ot2
+    400       b0043452870e4829ccb366c6758d0d38 data/world-3/levels/level-8.ot1
+    1964      a93e727fa06de4379574b8c7879934a5 data/world-3/levels/level-8.ot2
+    1154      d1d5ed341d601607a228163b4ad0623c data/world-3/levels/level-9.ot1
+    1596      07aac4ffe07a5086e59641136556bcc1 data/world-3/levels/level-9.ot2
+    834       acd4bf9ecd20cc276f457c7c00e02e28 data/world-3/levels/level-10.ot1
+    668       e9de95b03f34942ec0c823f416a09296 data/world-3/levels/level-10.ot2
+    1246      48bad928e955f01e02ef264034736e34 data/world-3/levels/level-11.ot1
+    924       41db447d782a72034be92e01395b8c26 data/world-3/levels/level-11.ot2
+    1360      2f6af812a9bac2e598b74df2c2b5d1d0 data/world-3/levels/level-12.ot1
+    1100      2ebc45a1bc564a6457b831f8951f7948 data/world-3/levels/level-12.ot2
+    1120      3e723eaba06fbcd32b36eca94b973859 data/world-3/levels/level-13.ot1
+    1212      5bf93b3028a62600994aa542a4cf98e0 data/world-3/levels/level-13.ot2
+    1170      27a208d23098cac0c24ae60ef112849e data/world-3/levels/level-14.ot1
+    3644      31eeb9eea40bb1662c59c1aeaafa5213 data/world-3/levels/level-14.ot2
+    722       ace607445a3c369a2738a7e22887c2f6 data/world-3/levels/level-15.ot1
+    2204      f35de5f63297a384272be708ba80f6b7 data/world-3/levels/level-15.ot2
+    932       526d63549d2e05ebc1554156590324df data/world-3/levels/level-16.ot1
+    1516      1a9da18f947ba70422d2d4bfe92c59e8 data/world-3/levels/level-16.ot2
+    1360      4d3fa2552cb010ec44570c567a340497 data/world-3/levels/level-17.ot1
+    2012      6f09655b727aff13894c3efbfe796308 data/world-3/levels/level-17.ot2
+    1120      3e723eaba06fbcd32b36eca94b973859 data/world-3/levels/level-18.ot1
+    2316      8ab20b843e866a62426ca9c8d4104455 data/world-3/levels/level-18.ot2
+    972       e459c37fc6c4ae702b03b401cc8a413d data/world-3/levels/level-19.ot1
+    2540      edabb90e290c313d31bd5effd81b4808 data/world-3/levels/level-19.ot2
+    722       9db0bfc789da5748ced477bc0a67fe2b data/world-3/levels/level-20.ot1
+    3788      f5adfadc4756a03924493a9977eecc25 data/world-3/levels/level-20.ot2
+
+    1712      c835cba771cd3b950d770c748d07340e data/world-4/levels/level-1.ot1
+    1036      d869c70fe8912f739e512dacc8001c08 data/world-4/levels/level-1.ot2
+    1792      b982b05314a5fd4bdcd6dc97409d7ade data/world-4/levels/level-2.ot1
+    668       dcaa15b84d680a1826f8b3c3338de1fe data/world-4/levels/level-2.ot2
+    2462      ddeecce3234c0f466373217ad859b217 data/world-4/levels/level-3.ot1
+    1212      6b5c44955ef354d71dc2ee15f83f772e data/world-4/levels/level-3.ot2
+    2032      e0b6012d7f49af3085a4db329843960e data/world-4/levels/level-4.ot1
+    1308      827883ea4ece2d28f46b87dcce99cf9e data/world-4/levels/level-4.ot2
+    2192      37238d5a0ff029303cf34928b0dd97c9 data/world-4/levels/level-5.ot1
+    1564      1f95ff37bd66f752369f159d0e6ce582 data/world-4/levels/level-5.ot2
+    1392      164c56b9ff0b085c186b8ce57ed917fa data/world-4/levels/level-6.ot1
+    1004      5aed885a41122afcde64e453db60ef17 data/world-4/levels/level-6.ot2
+    2122      a2bd58fd86b09d345274a74d977e8e51 data/world-4/levels/level-7.ot1
+    1196      56a21a3bb803adb3fd40814c7e8f128e data/world-4/levels/level-7.ot2
+    1562      fd610ff17df82555d6729758eb276da3 data/world-4/levels/level-8.ot1
+    860       055e80e34a2ba7f36dacc2a9ea807a2c data/world-4/levels/level-8.ot2
+    2352      26da5893627e6cd6208e2234c7b7efa2 data/world-4/levels/level-9.ot1
+    1196      9a6b1c6c42379d18a205d9d012545208 data/world-4/levels/level-9.ot2
+    3152      9c09d75af65913a825174572a13e1a57 data/world-4/levels/level-10.ot1
+    1324      81854d024cf96a1c59798169dcbc9e95 data/world-4/levels/level-10.ot2
+    2062      95607c12539b73319c65b89d1a8ada70 data/world-4/levels/level-11.ot1
+    940       fec78f6a80b804c5a311b6e0dbe1bd4d data/world-4/levels/level-11.ot2
+    2412      2d95c8daacdc7d1cf566f23ecf9aa903 data/world-4/levels/level-12.ot1
+    1212      8824363e851257d525c1cdba84784385 data/world-4/levels/level-12.ot2
+    972       38da5ee8f027a5f0e4ee31cb939ba9e4 data/world-4/levels/level-13.ot1
+    1052      4cdd456ac5985e8964d2ea912c9a3c07 data/world-4/levels/level-13.ot2
+    1032      c3527e55a0eab0939a4345f979d81348 data/world-4/levels/level-14.ot1
+    1324      dc26538ff819acc5f65b000a995437ac data/world-4/levels/level-14.ot2
+    1282      c9a0f0abd5f45f1be1a87c3f942e814c data/world-4/levels/level-15.ot1
+    1388      fee2341ebbdc4a6c2895ccfe3c8c957e data/world-4/levels/level-15.ot2
+    2062      600448a9e5b463b0b2ea7627269615e6 data/world-4/levels/level-16.ot1
+    1324      88c1596fb6c9159a233d9c23921e8b8b data/world-4/levels/level-16.ot2
+    2412      fa4cb50e9de337ec857f32db6e941838 data/world-4/levels/level-17.ot1
+    1868      d2b779cea7d87d89504d5d280b2faf09 data/world-4/levels/level-17.ot2
+    972       3882eacb5121c1d011d9d873a11fdb00 data/world-4/levels/level-18.ot1
+    2332      64527285f0b322764fd3390595d56dc4 data/world-4/levels/level-18.ot2
+    1022      0ef1b3a4b4791fb9553c99548988777d data/world-4/levels/level-19.ot1
+    2588      df9b5af7adca4fe59c7f22d81274298f data/world-4/levels/level-19.ot2
+    1272      3780a52d4fdbc9cb190dbe40ac602b3f data/world-4/levels/level-20.ot1
+    2812      acf0d92e02e84a500ce4e7347aee718c data/world-4/levels/level-20.ot2
+
+    1104      9529dc283350601d804396ff8ce71440 data/world-5/levels/level-1.ot1
+    620       e734bf3701ce3db1d6bb2787ec98e4c8 data/world-5/levels/level-1.ot2
+    1586      071f065611d975aca49e3c8fac2bd32e data/world-5/levels/level-2.ot1
+    972       17e27c294334b87a840d5a2580f631c7 data/world-5/levels/level-2.ot2
+    1766      ed12f3341b03cdc1abcc99ecb1287993 data/world-5/levels/level-3.ot1
+    972       682d905ba749544d5d6f700ed182c6e3 data/world-5/levels/level-3.ot2
+    1452      522b02b9ee6c380b73be0ebdde4e3c26 data/world-5/levels/level-4.ot1
+    684       453d7c407cdd1723cb50d4751bddbfe2 data/world-5/levels/level-4.ot2
+    2006      8dbb3cea5aa6f0f227c94773307974c4 data/world-5/levels/level-5.ot1
+    1068      47388ff9d056d6eaa989301bbfa500eb data/world-5/levels/level-5.ot2
+    2222      e997cb48c3787c7df5e62e811d89f15a data/world-5/levels/level-6.ot1
+    1932      a203472d76d6e74f05316778655ef3e1 data/world-5/levels/level-6.ot2
+    2432      bf54551543ed9b3cd9dfaaf2f84026cb data/world-5/levels/level-7.ot1
+    1420      132198c8d68685f7abfc8b7f1e532070 data/world-5/levels/level-7.ot2
+    1822      1ef55f65b89e66b25c3bf12491ffb124 data/world-5/levels/level-8.ot1
+    1644      6bddb74b3a8f7b1569ecfb9ba4f000aa data/world-5/levels/level-8.ot2
+    2012      302e7ac58885fcc488491b2a6d754fd9 data/world-5/levels/level-9.ot1
+    1420      469ce8fdb02f486bf607aeae3d47b7a5 data/world-5/levels/level-9.ot2
+
+    2632      200810f64a8c0d47db77cd36eeed5dd7 data/world-5/levels/level-10.ot1
+    1436      0a48eff9cda7db2ddf3e96763588fea1 data/world-5/levels/level-10.ot2
+    1264      66c484c0e15f402e9d9742089fd6532f data/world-5/levels/level-11.ot1
+    796       748086e142f8a678eb7a16377e038ad4 data/world-5/levels/level-11.ot2
+    1524      32fe352d2fb5d6637769586ddea45286 data/world-5/levels/level-12.ot1
+    1452      4eb3f81d448a2a4b38b2fe313d959e80 data/world-5/levels/level-12.ot2
+    1352      d2af74a0ac7d94a49f21472a71e91652 data/world-5/levels/level-13.ot1
+    716       b6607ec2b67e559899f5a2723ba98213 data/world-5/levels/level-13.ot2
+    1552      21bf7a5393728918a611ba9fa5b52cd3 data/world-5/levels/level-14.ot1
+    828       5a0bbb0c811474169ea8f5abd6e5d2a2 data/world-5/levels/level-14.ot2
+    1388      8c5018749c74dd69edfdf9c533253b0a data/world-5/levels/level-15.ot1
+    1084      c5e403a45fb8c76fde29dcf82c08ef4c data/world-5/levels/level-15.ot2
+    1236      cb2303e69753f188a0c489641409ece4 data/world-5/levels/level-16.ot1
+    1132      1fc59f3425f02e8d147d48781f1f26a4 data/world-5/levels/level-16.ot2
+    1376      547a5d438371a0737e81d2052c0b3896 data/world-5/levels/level-17.ot1
+    1340      8e8095e347653161817ff4be72179798 data/world-5/levels/level-17.ot2
+    1352      919cf18fd65b460c4364f3f3c3e7b926 data/world-5/levels/level-18.ot1
+    1004      51e619973eb15ddfc8cf1413f9408be7 data/world-5/levels/level-18.ot2
+    1524      e6573b634b5830febbe382e25cb2122f data/world-5/levels/level-19.ot1
+    1212      0e98e8b7be986214b512adc4bc50bbf0 data/world-5/levels/level-19.ot2
+    1388      aae640edc8e3eddb69c85e937aa4fe07 data/world-5/levels/level-20.ot1
+    1676      01c1797971348b47c6e30c67b6469adb data/world-5/levels/level-20.ot2
+    24482447  e0499c7a9aad75122c902934aaa98b62 lost.(a)
+    24788     ed361270102e355afe5236954216aba2 lost.he0
+    2468390   2f1636bf18a437092f7e3de9614c7c49 lost.he2
+  archives: |
+    35134381  6ebca40e3a80eb3376772731de1f5fff gog_pajama_sam_s_lost_found_2.0.0.3.sh
+    24367056  af41f108e24cb5a90a3240da3febb837 setup_pajama_sam_lost_and_found_2.0.0.3.exe
+
+sha1sums: |
+  071b985b5bfde3d14915b25b35fab8cda1c4251a  lost.(a)
+  6d53fa1bd37a57134d96bddf6e049053fbab6391  lost.he0
+  02a00cc6600a7364d1daa8007a53ef67e51245c0  lost.he2
+  56cfdf9b390d65d0db3ad88ce60d8610d46741de  gog_pajama_sam_s_lost_found_2.0.0.3.sh
+  7b31c3f4fe71daffe53a66449e2cc2f3b9b0b4fe  setup_pajama_sam_lost_and_found_2.0.0.3.exe
+...

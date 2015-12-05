@@ -1,0 +1,66 @@
+---
+franchise: Pajama Sam
+longname: "Pajama Sam - No Need to Hide When It's Dark Outside"
+copyright: © 1996 Humongous Entertainment
+plugin: scummvm_common
+wiki: "Pajama_Sam_1:_No_Need_to_Hide_When_It%27s_Dark_Outside"
+genre: Kids
+missing_langs: [de,fr]
+
+gog:
+  url: pajama_sam_vol_1
+  game: pajama_sam_1
+  path: "Pajama Sam No Need to Hide When Its Dark Outside"
+
+steam:
+  id: 283960
+  path: common/Pajama Sam 1
+
+packages:
+  pajama-sam-1-en-data:
+    provides: pajama-sam-1-data
+    gameid: pajama
+    install:
+    - assets
+    doc:
+    - manual.pdf
+
+files:
+  setup_pajama_sam1_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+    - manual.pdf
+
+  gog_pajama_sam_no_need_to_hide_when_its_dark_outside_2.0.0.4.sh:
+    unpack:
+      format: zip
+    provides:
+    - assets
+    - manual.pdf
+
+groups:
+  assets: |
+    66368     672dec94b82f7f0877ebb5b5cf7f4bc1 pajama.he0
+    124416431 2e83592ae635f53d1cc94c3d98da6335 pajama.he1
+    68233391  048a2cb8baad19ca90a4510783ab032b pajama.he2
+    36864     4417ea03a6d1b0b7522526f41d1097f6 pajama.he3
+    32410705  147be86929b5969224c72edac30896fd pajama.he4
+    413586    2546d42491fa61ac8e2d20d68d264fce pajama.he7
+  archives: |
+    404002    af85fb0b98cad5a550ef4d64c8e3f793 manual.pdf
+    156974377 eb6b1c02558f5e6311f0a0da459d50e9 gog_pajama_sam_no_need_to_hide_when_its_dark_outside_2.0.0.4.sh
+    120549368 e16b7a0cb481465c186cf16e79a23f79 setup_pajama_sam1_2.0.0.2.exe
+
+sha1sums: |
+  6d4d17cd5b01482482462ea309e8ea0b84d11fbd  pajama.he0
+  adf6c8db39c59df783c313e5105c2fb5bc32684f  pajama.he1
+  0326734eaad7d2208f01fa0977eba2946e3e1aa5  pajama.he2
+  7f183ee42bc94d3bbc240ace8e41cad460005b60  pajama.he3
+  e92ab5c3ef435f80f32f4d65ab1df6495cab1f87  pajama.he4
+  dd250c75eda56189e14d7982a71778adc64d53c1  pajama.he7
+  0598c09e76b053f7a268833fdc21833d5d02535b  manual.pdf
+  9a7f48415b436f146210cfbd3b754257158037fc  gog_pajama_sam_no_need_to_hide_when_its_dark_outside_2.0.0.4.sh
+  73df41dba1764b959c02bbc00aa4a2ea917d3545  setup_pajama_sam1_2.0.0.2.exe
+...

@@ -1,0 +1,62 @@
+---
+franchise: Pajama Sam
+longname: "Pajama Sam 2 - Thunder and Lightning aren't so Frightening"
+copyright: © 1998 Humongous Entertainment
+plugin: scummvm_common
+wiki: "Pajama_Sam_2:_Thunder_and_Lightning_Aren%27t_so_Frightening"
+genre: Kids
+missing_langs: [de,fr,he,nl]
+
+gog:
+  url: pajama_sam_vol_1
+  game: pajama_sam_2
+  path: "Pajama Sam Thunder and Lightning Arent so Frightening"
+
+steam:
+  id: 292780
+  path: common/Pajama Sam 2
+
+packages:
+  pajama-sam-2-en-data:
+    provides: pajama-sam-2-data
+    gameid: pajama2
+    install:
+    - assets
+    doc:
+    - manual.pdf
+
+files:
+  setup_pajama_sam2_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+    - manual.pdf
+
+  gog_pajama_sam_thunder_and_lightning_aren_t_so_frightening_2.0.0.3.sh:
+    unpack:
+      format: zip
+    provides:
+    - assets
+    - manual.pdf
+
+groups:
+  assets: |
+    60557     d4e79c3d8645b8266cd78c325bc35154 pajama2.he0
+    97612229  cf1e7394ae00c0c65fa5af486e752e5c pajama2.he1
+    79029771  53f95adc8f6727d26e3248fb1bad8180 pajama2.he2
+    22611842  297787a960f2b591bb98add9b0689e9f pajama2.he4
+  archives: |
+    447743    6fe0e912a7868f9fafe611924b72fc9d manual.pdf
+    133047649 dc7d181cf43b4f263613b93cb9876c11 gog_pajama_sam_thunder_and_lightning_aren_t_so_frightening_2.0.0.3.sh
+    101805272 9951a50ded0d2972e99809c0bed525cb setup_pajama_sam2_2.0.0.2.exe
+
+sha1sums: |
+  1c1770e58c42cb793e7ac8fc7c0476047db29759  pajama2.he0
+  b74a38c3e4b6dd8996e4d71bf20876d388026edb  pajama2.he1
+  5ede836703dee7fa65575184d1310883d5b54e7b  pajama2.he2
+  0a8eb44362cafcc92da117e17eb6353658f36ac6  pajama2.he4
+  0ea47b59269ed0e3943a71ceef6094ecfa0352d9  manual.pdf
+  ad90b642b9897327f3a4d608d01f079a54ecb9bd  gog_pajama_sam_thunder_and_lightning_aren_t_so_frightening_2.0.0.3.sh
+  91a60a014aa0169e1a9bfea2ad03efff95272583  setup_pajama_sam2_2.0.0.2.exe
+...

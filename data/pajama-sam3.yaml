@@ -1,0 +1,67 @@
+---
+franchise: Pajama Sam
+longname: Pajama Sam 3 - You Are What You Eat From Your Head To Your Feet
+copyright: © 1999 Humongous Entertainment
+plugin: scummvm_common
+wiki: Pajama_Sam_3:_You_Are_What_You_Eat_From_Your_Head_to_Your_Feet
+gameid: ps3
+genre: Kids
+missing_langs: [de,fr,it,ru]
+
+gog:
+  url: pajama_sam_vol_2
+  game: pajama_sam_3
+  path: "Pajama Sam You Are What You Eat From Your Head To Your Feet"
+
+steam:
+  id: 292800
+  path: common/Pajama Sam 3
+
+help_text: |
+  The game "Pajama Sam: Life is Rough When You Lose Your Stuff",
+  from the same GOG.com package is not supported by ScummVM.
+
+packages:
+  pajama-sam-3-en-data:
+    provides: pajama-sam-3-data
+    gameid: pajama3
+    install:
+    - assets
+    doc:
+    - manual.pdf
+
+files:
+  setup_pajama_sam3_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+    - manual.pdf
+
+  gog_pajama_sam_you_are_what_you_eat_from_your_head_to_your_feet_2.0.0.3.sh:
+    unpack:
+      format: zip
+    provides:
+    - assets
+    - manual.pdf
+
+groups:
+  assets: |
+    90301125  f7b0ad01b6a78bcd3854edd0ee9694df pajama3.(a)
+    79382     f7711f9264d4d43c2a1518ec7c10a607 pajama3.he0
+    101075336 978c86a8313b66d3b254c3b43e034460 pajama3.he2
+    55177145  87938c64ef72195231d58fec4f5add88 pajama3.he4
+  archives: |
+    423418    d5bc96c4d294d502f00c5b25109bcaac manual.pdf
+    168271856 448bcd43cb6c60853f527136afc3524f gog_pajama_sam_you_are_what_you_eat_from_your_head_to_your_feet_2.0.0.3.sh
+    133650704 31dcc64dcbf3f4e6eb4f4abf3a3d3f7b setup_pajama_sam3_2.0.0.2.exe
+
+sha1sums: |
+  910bd230f43166fdba6828ab0ddb72150bbfa98c  pajama3.(a)
+  3e33779b8929468a37d8647bf165a0dc6f6d48b6  pajama3.he0
+  ad4648f7be93a732e43d888f946c8a2c4b1feb42  pajama3.he2
+  4a4a6e0615072d05bfb2c9162117c3cef08f2ab0  pajama3.he4
+  6325f83bc0cd9b443fa9e526ff8b581c29c2816d  manual.pdf
+  010ce0d30819abc643e5d3fcc0debeb70cd399dd  gog_pajama_sam_you_are_what_you_eat_from_your_head_to_your_feet_2.0.0.3.sh
+  224e7f48bd945ea1fd0eff186a7d4bfef5710b36  setup_pajama_sam3_2.0.0.2.exe
+...

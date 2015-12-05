@@ -1,0 +1,68 @@
+---
+franchise: Pajama Sam
+longname: "Pajama Sam's SockWorks"
+copyright: © 1998 Humongous Entertainment
+plugin: scummvm_common
+wiki: Pajama_Sam%27s_Sock_Works
+gameid: socks
+genre: Kids
+missing-langs: [nl]
+
+gog:
+  url: pajama_sam_vol_2
+  game: pajama_sams_sock_works
+  path: "Pajama Sams Sock Works"
+
+steam:
+  id: 292860
+  path: common/Pajama Sams Sock Works
+
+help_text: |
+  The game "Pajama Sam: Life is Rough When You Lose Your Stuff",
+  from the same GOG.com package is not supported by ScummVM.
+
+packages:
+  pajama-sams-sock-works-en-data:
+    provides: pajama-sams-sock-works-data
+    install:
+    - assets
+
+  pajama-sams-sock-works-nl-data:
+    provides: pajama-sams-sock-works-data
+    lang: nl
+    longname: "Pajama Sam - Sokken Soep"
+    DISABLED: no info
+
+files:
+  setup_pajama_sam_sockworks_2.0.0.2.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+
+  gog_pajama_sam_s_sock_works_2.0.0.3.sh:
+    unpack:
+      format: zip
+    provides:
+    - assets
+
+groups:
+  assets: |
+    13393968  444a8ca9598d8960ea5cd5fc7005f9ff socks.(a)
+    13668     8de13897f0121c79d29a2377159f9ad0 socks.he0
+    4610807   70c23a4651349e957ac8996275fe66f3 socks.he2
+    5179292   14a5574aeae3187bbb71ce7f4a1b803b socks.he4
+    31877     c137e6e5d636c13df8ccb108523640cc socks.he7
+  archives: |
+    36011860  fda3a92e0cb0cd54f3712c1623632db3 gog_pajama_sam_s_sock_works_2.0.0.3.sh
+    25058224  e66b94ab00af75a39cdd5a8ddb08783f setup_pajama_sam_sockworks_2.0.0.2.exe
+
+sha1sums: |
+  19fafd4256ee93b26d111e276af184fd27d77c56  socks.(a)
+  e6eba1754bcdc6d91137e78a15f305cbe2f3e201  socks.he0
+  71fa456c8d3f147ba073bcda55a35c56b2ae96ff  socks.he2
+  2eaf7144739aa362a0ce21f011f146071a354147  socks.he4
+  497a0784dc1f688f980398ed43644b20c8032951  socks.he7
+  83d522900e50f16cfae07eaf1c3a026245e55c70  gog_pajama_sam_s_sock_works_2.0.0.3.sh
+  d4ff5b0eead0aa8cfe7b732a5ac4e395cca86b27  setup_pajama_sam_sockworks_2.0.0.2.exe
+...
