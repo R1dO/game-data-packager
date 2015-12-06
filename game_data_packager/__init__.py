@@ -770,14 +770,14 @@ class GameData(object):
                # 'or 0' is a workaround for the files without known size
                size_min += min(set(self.files[a].size or 0 for a in file.alternatives))
                size_max += max(set(self.files[a].size or 0 for a in file.alternatives))
-           else:
+           elif file.size:
                size_min += file.size
                size_max += file.size
         for filename in package._optional:
            file = self.files[filename]
            if file.alternatives:
                size_max += max(set(self.files[a].size for a in file.alternatives))
-           else:
+           elif file.size:
                size_max += file.size
         return (size_min, size_max)
 

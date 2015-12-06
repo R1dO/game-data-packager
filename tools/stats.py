@@ -34,13 +34,14 @@ for name, game in load_games().items():
              'fanmade': {True: 'Y'}.get(game.fanmade, 'N'),
              'package': package.name,
              'disks': package.disks or game.disks or 1,
+             'engine': package.engine or game.engine or '',
              'size_min': size_min,
              'size_max': size_max,
              })
 
 games = sorted(games, key=lambda k: (k['game'], order[k['type']], k['package']))
 
-print('GAME;YEAR;TYPE;FANMADE;PACKAGE;DISKS;SIZE_MIN;SIZE_MAX')
+print('GAME;YEAR;TYPE;FANMADE;PACKAGE;DISKS;ENGINE;SIZE_MIN;SIZE_MAX')
 for g in games:
-   print('%s;%d;%s;%s;%s;%d;%d;%d' % (g['game'], g['year'], g['type'], g['fanmade'],
-                                      g['package'], g['disks'], g['size_min'], g['size_max']))
+   print('%s;%d;%s;%s;%s;%d;%s;%d;%d' % (g['game'], g['year'], g['type'], g['fanmade'],
+                                      g['package'], g['disks'], g['engine'], g['size_min'], g['size_max']))
