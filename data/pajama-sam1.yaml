@@ -7,11 +7,6 @@ wiki: "Pajama_Sam_1:_No_Need_to_Hide_When_It%27s_Dark_Outside"
 genre: Kids
 missing_langs: [de,fr]
 
-gog:
-  url: pajama_sam_vol_1
-  game: pajama_sam_1
-  path: "Pajama Sam No Need to Hide When Its Dark Outside"
-
 steam:
   id: 283960
   path: common/Pajama Sam 1
@@ -19,11 +14,23 @@ steam:
 packages:
   pajama-sam-1-en-data:
     provides: pajama-sam-1-data
+    better_version: pajama-sam-1-updated-en-data
     gameid: pajama
+    gog:
+      url: pajama_sam_vol_1
+      game: pajama_sam_1
+      path: "Pajama Sam No Need to Hide When Its Dark Outside"
     install:
     - assets
     doc:
     - manual.pdf
+
+  pajama-sam-1-updated-en-data:
+    provides: pajama-sam-1-data
+    longname: "Pajama Sam - No Need to Hide When It's Dark Outside (Updated)"
+    gameid: pajama
+    install:
+    - assets updated
 
 files:
   setup_pajama_sam1_2.0.0.2.exe:
@@ -48,6 +55,13 @@ groups:
     36864     4417ea03a6d1b0b7522526f41d1097f6 pajama.he3
     32410705  147be86929b5969224c72edac30896fd pajama.he4
     413586    2546d42491fa61ac8e2d20d68d264fce pajama.he7
+  assets updated: |
+    141943944 701339423881b1a6792c9dd3cb82c095 pajamanhd.(a)
+    66599     37aed3f91c1ef959e0bd265f9b13781f pajamanhd.he0
+    68247166  5b8e11874ade336a7b9c7bbdf5355b3e pajamanhd.he2
+    36864     4417ea03a6d1b0b7522526f41d1097f6 pajamanhd.he3
+    32410705  147be86929b5969224c72edac30896fd pajamanhd.he4
+    413586    2546d42491fa61ac8e2d20d68d264fce pajamanhd.he7
   archives: |
     404002    af85fb0b98cad5a550ef4d64c8e3f793 manual.pdf
     156974377 eb6b1c02558f5e6311f0a0da459d50e9 gog_pajama_sam_no_need_to_hide_when_its_dark_outside_2.0.0.4.sh
@@ -63,4 +77,11 @@ sha1sums: |
   0598c09e76b053f7a268833fdc21833d5d02535b  manual.pdf
   9a7f48415b436f146210cfbd3b754257158037fc  gog_pajama_sam_no_need_to_hide_when_its_dark_outside_2.0.0.4.sh
   73df41dba1764b959c02bbc00aa4a2ea917d3545  setup_pajama_sam1_2.0.0.2.exe
+
+  d5ccd505974cf22c8f59149479796fbef2d71871  pajamanhd.(a)
+  5031e299c744041420a6c8d76aabc7977dc0c81b  pajamanhd.he0
+  6e51dcb3a30837f2e27cccc3ff65d61b9eb8e720  pajamanhd.he2
+  7f183ee42bc94d3bbc240ace8e41cad460005b60  pajamanhd.he3
+  e92ab5c3ef435f80f32f4d65ab1df6495cab1f87  pajamanhd.he4
+  dd250c75eda56189e14d7982a71778adc64d53c1  pajamanhd.he7
 ...
