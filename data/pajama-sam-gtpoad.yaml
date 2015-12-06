@@ -1,0 +1,43 @@
+---
+franchise: Pajama Sam
+longname: "Pajama Sam - Games to Play on Any Day"
+copyright: © 2001 Humongous Entertainment
+plugin: scummvm_common
+wiki: "Pajama_Sam:_Games_to_Play_on_Any_Day"
+genre: Kids
+gameid: pjgames
+
+steam:
+  id: 317020
+  path: common/Pajama Sam GTPOAD
+
+packages:
+  pajama-sam-games-to-play-on-any-day-data:
+    install:
+    - assets
+
+groups:
+  assets: |
+    57737720  622e28fb59222c5e923d86eccc7581d8 pjgames.(a)
+    29290     8a484262363a8e18be87112454f1456b pjgames.he0
+    82936440  3e0e85a630a389404532a1191c38eb7d pjgames.he2
+    104250    450ecdecc36d247636cacffcfad57372 pjgames.he3
+    74249947  d5550cb3ac53073783b48fdcc82c7d3a pjgames.he4
+    25712     10d511011deda5414e43ec1a2ce5e4a5 sounds/xylo1.wav
+    21616     74650972e635aa4ec842e7919a3a46f6 sounds/xylo2.wav
+    21618     80a2e7e3497cdcc8a042021e447c23cf sounds/xylo3.wav
+    19056     03f89483360145f274ec4da1b85560be sounds/xylo4.wav
+    18544     e9076378d9c5972eb04904bae1614114 sounds/xylo5.wav
+
+sha1sums: |
+  78802cdfbbcc2b8bc7f63d354d7e2d9c2cb9d0e2  pjgames.(a)
+  deb112de40e77219155b530930ad36a46461a563  pjgames.he0
+  a5c00232eed6864d8d95f0ec71a2c57ff480b439  pjgames.he2
+  71c8eca177cb222c08b51e19f94824e8135f96a8  pjgames.he3
+  3b70a769df642ba3ca8591912a14bea9dda7a65a  pjgames.he4
+  be20765a77627d071267d5687fce02bf98e4ffc1  sounds/xylo1.wav
+  5f6ee687bc1c205a2532141557bc1384ae6a6159  sounds/xylo2.wav
+  c20de354b4d058eea903646c1a1a2b602ecc67cc  sounds/xylo3.wav
+  a9c90895d3bcbfc935b93ccf78df37d31a9f7e3f  sounds/xylo4.wav
+  a86d56b56f3f5ef7dcf6f96af24958d88e493421  sounds/xylo5.wav
+...
