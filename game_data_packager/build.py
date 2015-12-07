@@ -1655,6 +1655,7 @@ class PackagingTask(object):
                     os.chmod(full, 0o755)
                 elif ((stat.S_IMODE(stat_res.st_mode) & 0o111) != 0
                        and (fn.endswith('.sh')
+                            or fn.endswith('.x86')
                             or dirpath.endswith('/usr/bin')
                             or dirpath.endswith('/usr/games')
                             or dirpath.endswith('/DEBIAN'))):
