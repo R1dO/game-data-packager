@@ -1,0 +1,34 @@
+Enemy Territory: Quake Wars dedicated server for Debian
+=======================================================
+
+The etqw-server systemd unit runs a dedicated server as
+the user "etqw-server". This is a simple setup suitable for running one
+server on a machine.
+
+The etqw-server user's home directory is /var/games/etqw-server,
+so game files can be found in /var/games/etqw-server/.etqw .
+For convenience, /var/games/etqw-server/etqw is a symlink to
+that directory.
+
+The /etc/etqw-server directory is symlinked into the game engine's
+search path as etc/etqw-server, so you can place files there and execute
+them with commands like "exec etc/etqw-server/ctf.cfg".
+By default, the init script will use etc/etqw-server/server.cfg.
+
+To set options that can only be configured via the command-line,
+such as net_port, set the variable DAEMON_OPTS
+in /etc/default/etqw-server.
+
+The server can be managed in the usual way, e.g. via service(8)
+and update-rc.d(8) commands like
+
+    service etqw-server stop
+    service etqw-server start
+    update-rc.d etqw-server disable
+    update-rc.d etqw-server enable
+
+Because ETQW is proprietary software and might have security flaws
+that Debian cannot fix, the dedicated server is disabled by default.
+To mitigate any security flaws that might exist in it, the systemd unit
+is configured with various security-hardening options, and a
+corresponding sysvinit script is not provided.

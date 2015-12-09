@@ -7,10 +7,12 @@ obj = \
 	build/quake2 \
 	build/quake3 \
 	build/quake4 \
+	build/etqw \
 	build/quake-server \
 	build/quake2-server \
 	build/quake3-server \
 	build/quake4-dedicated \
+	build/etqw-dedicated \
 	build/24/quake.png \
 	build/24/quake-armagon.png \
 	build/24/quake-dissolution.png \
@@ -76,6 +78,15 @@ build/quake4: quake4.in Makefile
 		< $< > $@
 	chmod +x $@
 
+build/etqw: etqw.in Makefile
+	install -d build
+	sed \
+		-e 's!@binary@!etqw.x86!' \
+		-e 's!@self@!etqw!' \
+		-e 's!@role@!client!' \
+		< $< > $@
+	chmod +x $@
+
 build/quake4-smp: quake4-smp.in Makefile
 	install -d build
 	sed \
@@ -117,6 +128,15 @@ build/quake4-dedicated: quake4.in Makefile
 	sed \
 		-e 's!@binary@!q4ded.x86!' \
 		-e 's!@self@!quake4-dedicated!' \
+		-e 's!@role@!server!' \
+		< $< > $@
+	chmod +x $@
+
+build/etqw-dedicated: etqw.in Makefile
+	install -d build
+	sed \
+		-e 's!@binary@!etqwded.x86!' \
+		-e 's!@self@!etqw-dedicated!' \
 		-e 's!@role@!server!' \
 		< $< > $@
 	chmod +x $@

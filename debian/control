@@ -200,3 +200,57 @@ Description: dedicated server for Quake 4
  quake4-censored-de-data (for the incompatible version sold in Germany).
  Creating those packages requires data files from a Quake 4 installation
  or DVD.
+
+Package: etqw
+Architecture: i386
+Depends:
+ ${misc:Depends},
+ etqw-bin | game-data-packager (>= 43),
+Suggests:
+ etqw-pb-bin,
+Description: science-fiction-themed multiplayer first person shooter
+ Enemy Territory: Quake Wars is a multiplayer first-person shooter game
+ by Splash Damage and id Software, released in 2007.
+ This package contains a launcher script and menu entry to play
+ ETQW using the proprietary x86 binaries provided by id Software.
+ .
+ Please note that the ETQW engine is not Free Software, and Debian
+ cannot fix any bugs or security flaws in the engine or game code.
+ .
+ To make this package useful, you will need to create and install some
+ non-distributable packages by using the game-data-packager package:
+ etqw-bin, and etqw-data.
+ Creating those packages requires data files from an "Enemy Territory:
+ Quake Wars" installation or DVD.
+
+Package: etqw-server
+Architecture: i386
+Depends:
+ ${misc:Depends},
+ adduser,
+ etqw-bin | game-data-packager (>= 43),
+ etqw-data | game-data-packager (>= 43),
+Recommends:
+ systemd-sysv,
+Suggests:
+ etqw-pb-bin,
+Description: dedicated server for Enemy Territory: Quake Wars
+ This package contains a launcher script and systemd unit to run a
+ Enemy Territory: Quake Wars server using the proprietary
+ x86 binaries provided by id Software.
+ .
+ Please note that the ETQW engine is not Free Software, and Debian
+ cannot fix any bugs or security flaws in the engine or game code.
+ .
+ To mitigate any security flaws that might exist in this server,
+ the systemd unit is not enabled by default, and must be enabled
+ with systemctl if it should start at boot time. The systemd unit
+ uses various security hardening options to prevent the server from
+ escalating its privileges. There is no sysvinit script,
+ since sysvinit does not provide similar security hardening.
+ .
+ To make this package useful, you will need to create and install some
+ non-distributable packages by using the game-data-packager package:
+ etqw-bin, and etqw-data.
+ Creating those packages requires data files from an "Enemy Territory:
+ Quake Wars" installation or DVD.

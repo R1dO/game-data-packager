@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# etqw or etqw-dedicated
+self=@self@
+# client or server
+role=@role@
+# etqw.x86, etqw-rthread.x86 or etqwded.x86
+binary=@binary@
+
+pkglibdir="/usr/lib/etqw"
+
+help() {
+  cat <<EOF
+Enemy Territory: Quake Wars ${role} wrapper for Debian
+
+Usage: ${self} [OPTION]...
+
+ -h, --help\t\tDisplay this help
+EOF
+
+  if [ "$role" = client ] && [ -x "$pkglibdir/quake4smp.x86" ]; then
+    cat <<EOF
+ --smp\t\tUse the multi-threaded version of the client
+EOF
+  fi
+
+  cat <<EOF
+ +<internal command>\tPass commands to the engine
+EOF
+}
+
+while [ "$1" != "" ]; do
+  case "$1" in
+    -h|--help)
+      help
+      exit 0
+      ;;
+    --smp)
+      if [ "$role" = client ] && [ -x "$pkglibdir/etqw-rthread.x86" ]; then
+        binary=etqw-rthread.x86
+      fi
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+# sanity check: the engine doesn't cope well with missing data
+for i in pak008 game000 pak000 zpak_english000; do
+  if [ -f $pkglibdir/base/$i.pk4 ]; then
+    :
+  else
+    if [ "$role" = client ]; then
+      $pkglibdir/need-data.sh "Enemy Territory: Quake Wars" "$(cat $pkglibdir/README.etqw-data)"
+    else
+      echo "ETQW data missing, see /usr/share/doc/etqw-server/README.etqw-data"
+    fi
+    exit 72     # EX_OSFILE
+  fi
+done
+
+cvars="+set com_allowconsole 1"
+
+# ETQW expects to run in its installation directory
+cd "$pkglibdir"
+# The SMP binary needs a modified bundled copy of SDL.
+export LD_LIBRARY_PATH="${pkglibdir}${LD_LIBRARY_PATH:+":${LD_LIBRARY_PATH}"}"
+
+if test -n "$QUAKE4_BACKTRACE"; then
+  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args "${pkglibdir}/${binary}" ${cvars} "$@"
+else
+  exec ${QUAKE4_DEBUGGER} "${pkglibdir}/${binary}" ${cvars} "$@"
+fi
+
+# vim:set sw=2 sts=2 et:
