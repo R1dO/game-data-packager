@@ -205,7 +205,7 @@ Package: etqw
 Architecture: i386
 Depends:
  ${misc:Depends},
- etqw-bin | game-data-packager (>= 43),
+ etqw-bin | game-data-packager (>= 44),
 Suggests:
  etqw-pb-bin,
 Description: science-fiction-themed multiplayer first person shooter
@@ -228,8 +228,8 @@ Architecture: i386
 Depends:
  ${misc:Depends},
  adduser,
- etqw-bin | game-data-packager (>= 43),
- etqw-data | game-data-packager (>= 43),
+ etqw-bin | game-data-packager (>= 44),
+ etqw-data | game-data-packager (>= 44),
 Recommends:
  systemd-sysv,
 Suggests:
