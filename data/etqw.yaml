@@ -138,8 +138,6 @@ files:
     - patch 1.4 to 1.5 - licenses
 
 groups:
-    #1711273   03a75abb587426609f3e4fe1b45da16e libSDL-1.2.id.so.0
-    #1711285   e10e2add44f9a75a439fa0901bc575ff libSDL-1.2.id.so.0?orig
     #224402    957ca54cedbaf3b92e3d76bc6250d1ea libgcc_s.so.1
     #140058    798616937efe482e49e3bd8d5289b4a7 libjpeg.so.62
     #4387755   6eea38656d78c371fbf01cc0f78da6eb libstdc++.so.6
@@ -157,6 +155,7 @@ groups:
     5063678   b001849089b2a4650be582861d81e4f4 base/game002.pk4?orig
     1772      2f0003e13c72b04507b0a12c7fdfa32e base/bots/botnames.dat?orig
     6862124   959303fc392c189ea31b93572604e462 etqw-rthread.x86?orig
+    1711285   e10e2add44f9a75a439fa0901bc575ff libSDL-1.2.id.so.0?orig
     6870820   5f24d1007573fc2720d27ea72237bcc7 etqw.x86?orig
     6310852   5c00c497e1bca4487b88f2d7a7d8c383 etqwded.x86?orig
     8217      aed9bce92d5824cb2293b015c081fab7 README.txt?orig
@@ -230,6 +229,7 @@ groups:
 
   patch 1.4 to 1.5 - binaries: |
     6864248   b6d438f3e3a291750c3920bcfd4cc3b6 etqw-rthread.x86
+    1711273   03a75abb587426609f3e4fe1b45da16e libSDL-1.2.id.so.0
     6874536   458c0fa77a6dcfb41bba6cb4e3ee00ef etqw.x86
     6314016   ab0bb2983e672abc324e5c88bbaad6d7 etqwded.x86
     2176700   f6e7cfb2a9c0aa6c2dcc21ce604f7cc8 libCgx86.so
@@ -353,8 +353,8 @@ sha1sums: |
   78be50df2717f777a2a04debd9ba9b0c38bbd893  pb/htm/wc001714.htm
   e1e57ee4a8d2f34438627c9e9cb88286b81544c8  PBEULA.txt
 
-  #003304dfa6de6d92f03745378e725cd7e8c74a99  libSDL-1.2.id.so.0
-  #9fb270d5ffb7bae181f8e761833f5335748315e6  libSDL-1.2.id.so.0
+  003304dfa6de6d92f03745378e725cd7e8c74a99  libSDL-1.2.id.so.0
+  9fb270d5ffb7bae181f8e761833f5335748315e6  libSDL-1.2.id.so.0?orig
   #a892ae29ab9a64e8231ef23ba96083953d740b04  libgcc_s.so.1
   #8b825b8d91820ca105e44e611b8e978e0d4dc071  libjpeg.so.62
   #3eddb41550b9688a616af161700a7b263ba22ddc  libstdc++.so.6
