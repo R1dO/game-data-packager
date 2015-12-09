@@ -47,8 +47,6 @@ packages:
       - etqw-pb-bin
     install:
     - patch 1.4 to 1.5 - binaries
-    optional:
-    - patch 1.4 to 1.5 - optional
     doc:
     - patch 1.4 to 1.5 - documentation
     license:
@@ -67,6 +65,7 @@ packages:
     - patch up to 1.4
     - patch 1.4 to 1.5 - data
     optional:
+    - patch 1.4 to 1.5 - optional
     - only on DVD - optional
 
   etqw-ko-data:
@@ -80,6 +79,16 @@ packages:
     - patch 1.4 to 1.5 - korean
 
 files:
+  # these have n(versions) * m(languages) versions possible...
+  README.txt:
+    distinctive_name: false
+  README.txt?orig:
+    distinctive_name: false
+  server_readme.txt:
+    distinctive_name: false
+  PBEULA.txt:
+    distinctive_name: false
+
   etqw_icon.png:
     install_to: usr/share/pixmaps
     install_as: etqw.png
@@ -143,6 +152,7 @@ groups:
     554538416 b34f88f704d05a025efae4abd6dbaa23 ETQW-client-1.0-1.5-update.exe
 
   from DVD - original files replaced by patch: |
+    3708175   0a8a8fedd5242a875a6bc51548914a5a base/game000.pk4?mycd
     3925192   5f032168b206b4dc7429e0b5bb0d85de base/game000.pk4?orig
     5063678   b001849089b2a4650be582861d81e4f4 base/game002.pk4?orig
     1772      2f0003e13c72b04507b0a12c7fdfa32e base/bots/botnames.dat?orig
@@ -150,6 +160,14 @@ groups:
     6870820   5f24d1007573fc2720d27ea72237bcc7 etqw.x86?orig
     6310852   5c00c497e1bca4487b88f2d7a7d8c383 etqwded.x86?orig
     8217      aed9bce92d5824cb2293b015c081fab7 README.txt?orig
+    # alternatives .pk4's found in (dvd)/Extras/LiteServer/Setup/Data/base/
+    82827099  56527250164dbfab3019b0260a9e2bb7 base/pak000.pk4?liteserver
+    83252162  e8ee7907bf5ffcc2d00a64a33a73c43b base/pak001.pk4?liteserver
+    81387637  9e538f5b83d7f6bb4697194d3d5b9abb base/pak002.pk4?liteserver
+    75103514  dce7da48abbf7e3bb492d92b0d8ddeb3 base/pak003.pk4?liteserver
+    105062424 5c0a954ce38a35e7c5c6cf9eb7613558 base/pak004.pk4?liteserver
+    2372      63a9ad654a78fab2ab3d53e54affb2c1 base/usergroups.dat?liteserver
+    2372      63a9ad654a78fab2ab3d53e54affb2c1 base/usergroups.example?liteserver
 
   only on DVD: |
     268735253 1e19cdbd2d5d3c928239908f31e7080c base/pak000.pk4
