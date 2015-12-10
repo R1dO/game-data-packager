@@ -18,7 +18,7 @@ Usage: ${self} [OPTION]...
  -h, --help\t\tDisplay this help
 EOF
 
-  if [ "$role" = client ] && [ -x "$pkglibdir/quake4smp.x86" ]; then
+  if [ "$role" = client ] && [ -x "$pkglibdir/etqw-rthread.x86" ]; then
     cat <<EOF
  --smp\t\tUse the multi-threaded version of the client
 EOF
