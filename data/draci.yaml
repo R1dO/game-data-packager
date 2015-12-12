@@ -34,49 +34,26 @@ packages:
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw
-    - init.dfw
     - mapy.dfw
-    - mist.dfw
-    - objekty.dfw
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw
     - rozh1.dfw
-    - rozh2.dfw
-    - rozh3.dfw
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw
-    - rozh10.dfw
-    - rozh11.dfw
-    - rozh12.dfw
     - rozh13.dfw
-    - rozh14.dfw
-    - rozh15.dfw
-    - rozh16.dfw
-    - rozh17.dfw
-    - rozh18.dfw
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw
     - rozh23.dfw
-    - rozh24.dfw
     - rozh25.dfw
-    - rozh26.dfw
     - rozh27.dfw
-    - rozh28.dfw
-    - rozh29.dfw
     - rozh30.dfw
-    - rozh31.dfw
     - rozh32.dfw
-    - rozh33.dfw
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -91,6 +68,7 @@ packages:
     - rozh45.dfw
     - midi files
     - bert.ico
+    - english dub
 
   draci-cz-data:
     # .zip file is missing a license
@@ -99,7 +77,6 @@ packages:
     # cs_CZ.UTF-8
     provides: draci-data
     install:
-    - dub-mp3.zzz
     - big.fon
     - small.fon
     - cd.sam
@@ -107,49 +84,26 @@ packages:
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw?cz
-    - init.dfw?cz
     - mapy.dfw
-    - mist.dfw?cz
-    - objekty.dfw?cz
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw?cz
     - rozh1.dfw
-    - rozh2.dfw?cz
-    - rozh3.dfw?cz
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw?cz
-    - rozh10.dfw?cz
-    - rozh11.dfw?cz
-    - rozh12.dfw?cz
     - rozh13.dfw
-    - rozh14.dfw?cz
-    - rozh15.dfw?cz
-    - rozh16.dfw?cz
-    - rozh17.dfw?cz
-    - rozh18.dfw?cz
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw?cz
     - rozh23.dfw
-    - rozh24.dfw?cz
     - rozh25.dfw
-    - rozh26.dfw?cz
     - rozh27.dfw
-    - rozh28.dfw?cz
-    - rozh29.dfw?cz
     - rozh30.dfw
-    - rozh31.dfw?cz
     - rozh32.dfw
-    - rozh33.dfw?cz
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -164,8 +118,9 @@ packages:
     - rozh45.dfw
     - midi files
     - bert.ico
-    optional:
-    - readme.txt
+    - czech original version
+    doc:
+    - readme.txt?cz
 
   draci-de-data:
     # .zip file is missing a license
@@ -174,56 +129,31 @@ packages:
     provides: draci-data
     install:
     # dub-mp3.zzz not avaible in German
-    - big.fon?de
-    - small.fon?de
     - cd.sam
     - cd2.sam
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw?de
-    - init.dfw?de
     - mapy.dfw
-    - mist.dfw?de
-    - objekty.dfw?de
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw?de
     - rozh1.dfw
-    - rozh2.dfw?de
-    - rozh3.dfw?de
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw?de
-    - rozh10.dfw?de
-    - rozh11.dfw?de
-    - rozh12.dfw?de
     - rozh13.dfw
-    - rozh14.dfw?de
-    - rozh15.dfw?de
-    - rozh16.dfw?de
-    - rozh17.dfw?de
-    - rozh18.dfw?de
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw?de
     - rozh23.dfw
-    - rozh24.dfw?de
     - rozh25.dfw
-    - rozh26.dfw?de
     - rozh27.dfw
-    - rozh28.dfw?de
-    - rozh29.dfw?de
     - rozh30.dfw
-    - rozh31.dfw?de
     - rozh32.dfw
-    - rozh33.dfw?de
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -238,6 +168,7 @@ packages:
     - rozh45.dfw
     - midi files
     - bert.ico
+    - german dub
 
   draci-pl-data:
     # .zip file is missing a license
@@ -245,57 +176,31 @@ packages:
     lang: pl
     provides: draci-data
     install:
-    - dub-mp3.zzz?pl
-    - big.fon?pl
-    - small.fon?pl
     - cd.sam
     - cd2.sam
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw?pl
-    - init.dfw?pl
     - mapy.dfw
-    - mist.dfw?pl
-    - objekty.dfw?pl
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw?pl
     - rozh1.dfw
-    - rozh2.dfw?pl
-    - rozh3.dfw?pl
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw?pl
-    - rozh10.dfw?pl
-    - rozh11.dfw?pl
-    - rozh12.dfw?pl
     - rozh13.dfw
-    - rozh14.dfw?pl
-    - rozh15.dfw?pl
-    - rozh16.dfw?pl
-    - rozh17.dfw?pl
-    - rozh18.dfw?pl
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw?pl
     - rozh23.dfw
-    - rozh24.dfw?pl
     - rozh25.dfw
-    - rozh26.dfw?pl
     - rozh27.dfw
-    - rozh28.dfw?pl
-    - rozh29.dfw?pl
     - rozh30.dfw
-    - rozh31.dfw?pl
     - rozh32.dfw
-    - rozh33.dfw?pl
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -310,6 +215,7 @@ packages:
     - rozh45.dfw
     - midi files
     - bert.ico
+    - polish dub
 
 files:
   dh-en-2012.zip:
@@ -324,49 +230,26 @@ files:
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw
-    - init.dfw
     - mapy.dfw
-    - mist.dfw
-    - objekty.dfw
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw
     - rozh1.dfw
-    - rozh2.dfw
-    - rozh3.dfw
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw
-    - rozh10.dfw
-    - rozh11.dfw
-    - rozh12.dfw
     - rozh13.dfw
-    - rozh14.dfw
-    - rozh15.dfw
-    - rozh16.dfw
-    - rozh17.dfw
-    - rozh18.dfw
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw
     - rozh23.dfw
-    - rozh24.dfw
     - rozh25.dfw
-    - rozh26.dfw
     - rozh27.dfw
-    - rozh28.dfw
-    - rozh29.dfw
     - rozh30.dfw
-    - rozh31.dfw
     - rozh32.dfw
-    - rozh33.dfw
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -381,13 +264,13 @@ files:
     - rozh45.dfw
     - midi files
     - bert.ico
+    - english dub
 
   dh-cz-2012.zip:
     download: http://www.ucw.cz/draci-historie/binary/dh-cz-2012.zip
     unpack:
       format: zip
     provides:
-    - dub-mp3.zzz
     - big.fon
     - small.fon
     - cd.sam
@@ -395,49 +278,26 @@ files:
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw?cz
-    - init.dfw?cz
     - mapy.dfw
-    - mist.dfw?cz
-    - objekty.dfw?cz
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw?cz
     - rozh1.dfw
-    - rozh2.dfw?cz
-    - rozh3.dfw?cz
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw?cz
-    - rozh10.dfw?cz
-    - rozh11.dfw?cz
-    - rozh12.dfw?cz
     - rozh13.dfw
-    - rozh14.dfw?cz
-    - rozh15.dfw?cz
-    - rozh16.dfw?cz
-    - rozh17.dfw?cz
-    - rozh18.dfw?cz
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw?cz
     - rozh23.dfw
-    - rozh24.dfw?cz
     - rozh25.dfw
-    - rozh26.dfw?cz
     - rozh27.dfw
-    - rozh28.dfw?cz
-    - rozh29.dfw?cz
     - rozh30.dfw
-    - rozh31.dfw?cz
     - rozh32.dfw
-    - rozh33.dfw?cz
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -452,65 +312,39 @@ files:
     - rozh45.dfw
     - midi files
     - bert.ico
-    - readme.txt
-  readme.txt:
-    install_to: $docdir
+    - czech original version
+    - readme.txt?cz
 
   dh-de-2012.zip:
     download: http://www.ucw.cz/draci-historie/binary/dh-de-2012.zip
     unpack:
       format: zip
     provides:
-    - big.fon?de
-    - small.fon?de
     - cd.sam
     - cd2.sam
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw?de
-    - init.dfw?de
     - mapy.dfw
-    - mist.dfw?de
-    - objekty.dfw?de
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw?de
     - rozh1.dfw
-    - rozh2.dfw?de
-    - rozh3.dfw?de
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw?de
-    - rozh10.dfw?de
-    - rozh11.dfw?de
-    - rozh12.dfw?de
     - rozh13.dfw
-    - rozh14.dfw?de
-    - rozh15.dfw?de
-    - rozh16.dfw?de
-    - rozh17.dfw?de
-    - rozh18.dfw?de
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw?de
     - rozh23.dfw
-    - rozh24.dfw?de
     - rozh25.dfw
-    - rozh26.dfw?de
     - rozh27.dfw
-    - rozh28.dfw?de
-    - rozh29.dfw?de
     - rozh30.dfw
-    - rozh31.dfw?de
     - rozh32.dfw
-    - rozh33.dfw?de
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -525,63 +359,38 @@ files:
     - rozh45.dfw
     - midi files
     - bert.ico
+    - german dub
 
   dh-pl-2012.zip:
     download: http://www.ucw.cz/draci-historie/binary/dh-pl-2012.zip
     unpack:
       format: zip
     provides:
-    - dub-mp3.zzz?pl
-    - big.fon?pl
-    - small.fon?pl
     - cd.sam
     - cd2.sam
     - cmf.ins
     - anim.dfw
     - hra.dfw
-    - ikony.dfw?pl
-    - init.dfw?pl
     - mapy.dfw
-    - mist.dfw?pl
-    - objekty.dfw?pl
     - obr_an.dfw
     - obr_ik.dfw
     - obr_mas.dfw
     - palety.dfw
-    - retezce.dfw?pl
     - rozh1.dfw
-    - rozh2.dfw?pl
-    - rozh3.dfw?pl
     - rozh4.dfw
     - rozh5.dfw
     - rozh6.dfw
     - rozh7.dfw
     - rozh8.dfw
-    - rozh9.dfw?pl
-    - rozh10.dfw?pl
-    - rozh11.dfw?pl
-    - rozh12.dfw?pl
     - rozh13.dfw
-    - rozh14.dfw?pl
-    - rozh15.dfw?pl
-    - rozh16.dfw?pl
-    - rozh17.dfw?pl
-    - rozh18.dfw?pl
     - rozh19.dfw
     - rozh20.dfw
     - rozh21.dfw
-    - rozh22.dfw?pl
     - rozh23.dfw
-    - rozh24.dfw?pl
     - rozh25.dfw
-    - rozh26.dfw?pl
     - rozh27.dfw
-    - rozh28.dfw?pl
-    - rozh29.dfw?pl
     - rozh30.dfw
-    - rozh31.dfw?pl
     - rozh32.dfw
-    - rozh33.dfw?pl
     - rozh34.dfw
     - rozh35.dfw
     - rozh36.dfw
@@ -596,9 +405,9 @@ files:
     - rozh45.dfw
     - midi files
     - bert.ico
+    - polish dub
 
 cksums: |
-  _ 3310860   dh-en-2012.zip
   _ 21392     big.fon
   _ 13802     small.fon
   _ 16384     cd.sam
@@ -606,49 +415,26 @@ cksums: |
   _ 2048      cmf.ins
   _ 126330    anim.dfw
   _ 58300     hra.dfw
-  _ 3845      ikony.dfw
-  _ 906       init.dfw
   _ 24642     mapy.dfw
-  _ 11425     mist.dfw
-  _ 45539     objekty.dfw
   _ 5728598   obr_an.dfw
   _ 31882     obr_ik.dfw
   _ 2463585   obr_mas.dfw
   _ 35802     palety.dfw
-  _ 127807    retezce.dfw
   _ 56        rozh1.dfw
-  _ 1337      rozh2.dfw
-  _ 2959      rozh3.dfw
   _ 506       rozh4.dfw
   _ 140       rozh5.dfw
   _ 144       rozh6.dfw
   _ 1554      rozh7.dfw
   _ 1050      rozh8.dfw
-  _ 1467      rozh9.dfw
-  _ 1714      rozh10.dfw
-  _ 3347      rozh11.dfw
-  _ 3013      rozh12.dfw
   _ 1670      rozh13.dfw
-  _ 2515      rozh14.dfw
-  _ 2400      rozh15.dfw
-  _ 3106      rozh16.dfw
-  _ 2753      rozh17.dfw
-  _ 684       rozh18.dfw
   _ 110       rozh19.dfw
   _ 88        rozh20.dfw
   _ 184       rozh21.dfw
-  _ 2435      rozh22.dfw
   _ 256       rozh23.dfw
-  _ 3468      rozh24.dfw
   _ 116       rozh25.dfw
-  _ 2530      rozh26.dfw
   _ 442       rozh27.dfw
-  _ 485       rozh28.dfw
-  _ 2869      rozh29.dfw
   _ 96        rozh30.dfw
-  _ 2240      rozh31.dfw
   _ 594       rozh32.dfw
-  _ 3533      rozh33.dfw
   _ 1024      rozh34.dfw
   _ 252       rozh35.dfw
   _ 272       rozh36.dfw
@@ -663,89 +449,7 @@ cksums: |
   _ 284       rozh45.dfw
   _ 3774      bert.ico
 
-  _ 29293879  dh-cz-2012.zip
-  _ 2818      readme.txt
-  _ 27215140  dub-mp3.zzz
-  _ 3719      ikony.dfw?cz
-  _ 906       init.dfw?cz
-  _ 11425     mist.dfw?cz
-  _ 44806     objekty.dfw?cz
-  _ 118916    retezce.dfw?cz
-  _ 1322      rozh2.dfw?cz
-  _ 2980      rozh3.dfw?cz
-  _ 1444      rozh9.dfw?cz
-  _ 1714      rozh10.dfw?cz
-  _ 3378      rozh11.dfw?cz
-  _ 2962      rozh12.dfw?cz
-  _ 2467      rozh14.dfw?cz
-  _ 2425      rozh15.dfw?cz
-  _ 3126      rozh16.dfw?cz
-  _ 2732      rozh17.dfw?cz
-  _ 682       rozh18.dfw?cz
-  _ 2419      rozh22.dfw?cz
-  _ 3398      rozh24.dfw?cz
-  _ 2530      rozh26.dfw?cz
-  _ 480       rozh28.dfw?cz
-  _ 2817      rozh29.dfw?cz
-  _ 2263      rozh31.dfw?cz
-  _ 3515      rozh33.dfw?cz
-
-  _ 3316443   dh-de-2012.zip
-  _ 21392     big.fon?de
-  _ 13802     small.fon?de
-  _ 3730      ikony.dfw?de
-  _ 906       init.dfw?de
-  _ 11425     mist.dfw?de
-  _ 45049     objekty.dfw?de
-  _ 139255    retezce.dfw?de
-  _ 1345      rozh2.dfw?de
-  _ 3054      rozh3.dfw?de
-  _ 1472      rozh9.dfw?de
-  _ 1719      rozh10.dfw?de
-  _ 3379      rozh11.dfw?de
-  _ 2985      rozh12.dfw?de
-  _ 2504      rozh14.dfw?de
-  _ 2420      rozh15.dfw?de
-  _ 3135      rozh16.dfw?de
-  _ 2733      rozh17.dfw?de
-  _ 687       rozh18.dfw?de
-  _ 2435      rozh22.dfw?de
-  _ 3471      rozh24.dfw?de
-  _ 2563      rozh26.dfw?de
-  _ 488       rozh28.dfw?de
-  _ 2868      rozh29.dfw?de
-  _ 2256      rozh31.dfw?de
-  _ 3545      rozh33.dfw?de
-
-  _ 36041498  dh-pl-2012.zip
-  _ 34112925  dub-mp3.zzz?pl
-  _ 21392     big.fon?pl
-  _ 13802     small.fon?pl
-  _ 3765      ikony.dfw?pl
-  _ 906       init.dfw?pl
-  _ 11425     mist.dfw?pl
-  _ 45221     objekty.dfw?pl
-  _ 123790    retezce.dfw?pl
-  _ 1321      rozh2.dfw?pl
-  _ 2943      rozh3.dfw?pl
-  _ 1464      rozh9.dfw?pl
-  _ 1682      rozh10.dfw?pl
-  _ 3322      rozh11.dfw?pl
-  _ 2956      rozh12.dfw?pl
-  _ 2449      rozh14.dfw?pl
-  _ 2399      rozh15.dfw?pl
-  _ 3099      rozh16.dfw?pl
-  _ 2722      rozh17.dfw?pl
-  _ 684       rozh18.dfw?pl
-  _ 2427      rozh22.dfw?pl
-  _ 3391      rozh24.dfw?pl
-  _ 2515      rozh26.dfw?pl
-  _ 482       rozh28.dfw?pl
-  _ 2805      rozh29.dfw?pl
-  _ 2253      rozh31.dfw?pl
-  _ 3529      rozh33.dfw?pl
 md5sums: |
-  b3f16d4e8a96739a4353617bdeb2c749  dh-en-2012.zip
   e80f22efad64761ac52fcb68935eb64b  big.fon
   9aede4daadcee9d25e278ffa33182469  small.fon
   ce338fe6899778aacfc28414f2d9498b  cd.sam
@@ -753,49 +457,26 @@ md5sums: |
   e69cc2c00db24ecd20c3bb7223fdf118  cmf.ins
   98c6c080833d56b1e62454e45bd0c3a4  anim.dfw
   be767044e7acb7b5bd6aea109891555b  hra.dfw
-  8d595f5495d28a6368a03ba1d9de244a  ikony.dfw
-  b890a5aeebaf16af39219cba2416b0a3  init.dfw
   42cd95a98c68ed820e2a130e2d44ee93  mapy.dfw
-  89f144328de399fe9e4ea79fede4f86b  mist.dfw
-  afb8f5e3a3ae665834c2d054a043f527  objekty.dfw
   35d658de2de220c67ab0985fa1691cb0  obr_an.dfw
   c9a7290e3c3e86fb2b0118c9989159d1  obr_ik.dfw
   6e796a9225a0692a8d8edbee2038edbb  obr_mas.dfw
   097a4765dd39f0de562a9383bcf79374  palety.dfw
-  ccabdfb7023d56dc65878a9bc845dffb  retezce.dfw
   f27eaff5e30a89116a17d43d95d068a2  rozh1.dfw
-  a3d81ad491244510542e111c28b97bf5  rozh2.dfw
-  f3e567176b1c54aee49b2639306da797  rozh3.dfw
   b11fd333bfe00e7037b516480046cb6d  rozh4.dfw
   9f2e3a94099b50a13cbee0d528ab0138  rozh5.dfw
   4110f5db28cc86660757426fccefe376  rozh6.dfw
   5ae72211274ffbbb4713116c95102805  rozh7.dfw
   9267be47621dd659528a13c4d53a6914  rozh8.dfw
-  61466dd3ac1ac8b7172fabc876c8b1de  rozh9.dfw
-  bcca7de0e2028b3990172b439af3389d  rozh10.dfw
-  9a46df1c17ea6edfc46aec6102fe1b17  rozh11.dfw
-  9fd34131843e849e68207c8ae0e0cab6  rozh12.dfw
   e660b548ae31436556dac45445a7718b  rozh13.dfw
-  f33f46229f0aad87957e26591f6dc0bf  rozh14.dfw
-  8622cce4582e4bd9c22c3cfc091ef553  rozh15.dfw
-  6956ee9cb8150748293e78c228087847  rozh16.dfw
-  2ea9ca32c1df243d1a2718bd05c39982  rozh17.dfw
-  9e6f9cd4568468c2206d1b64d6468f12  rozh18.dfw
   0dec4ffa38abdd92c1183202df8a273b  rozh19.dfw
   9ad951f9732429119207591275114af6  rozh20.dfw
   2477bf7c8236fed85dc83de82a1d7804  rozh21.dfw
-  2cb03319128e9346eb3659b617674e74  rozh22.dfw
   a1d9a93880b3a060941c6d1179bfd12d  rozh23.dfw
-  079ffddfded3b43a4b0315c45fdabe19  rozh24.dfw
   1b4b0bffe5281b60e1e38aba6778b4db  rozh25.dfw
-  3fbeaa37fd3ec55b255c683a2733fe9f  rozh26.dfw
   f7bcd11cd571565f179b68ed7f0cc58b  rozh27.dfw
-  f2f88644cf95984343c7db22963e00bd  rozh28.dfw
-  1b60a8645d741e0991ccc1851198220c  rozh29.dfw
   25f50441a2135844eb64fd16e6eeac3c  rozh30.dfw
-  1408cf2b862c85dcbadc75b44af73d5a  rozh31.dfw
   ef9d7b3009aab74b7a540bd9237d5a29  rozh32.dfw
-  9f4efeccbd64e5f3d1d3878778297612  rozh33.dfw
   6b10a82c7771ea6fa056ba6f5f84e215  rozh34.dfw
   28288b0166f90d2350e1fb7b59c13457  rozh35.dfw
   6f8474175ffc643321b578bbab2de715  rozh36.dfw
@@ -810,89 +491,116 @@ md5sums: |
   3983b27d78a7e04afaecb94f5daab71f  rozh45.dfw
   7feff36e180aadde660b8085b2b152f3  bert.ico
 
-  fec186b4e9e3465cdfee2ba956ed4415  dh-cz-2012.zip
-  2ec6d47094c78faa67d4e2ab78d8605d  readme.txt
-  734f68463a6f4a1e5bdf95377efcaa50  dub-mp3.zzz
-  67beacd5cf427c22e2d1d272f0214b83  ikony.dfw?cz
-  9921c8f0045679a8f37eca8d41c5ec02  init.dfw?cz
-  9a8e7f516e4f740a17eda3541a53ee94  mist.dfw?cz
-  4c2929f9b2d9434dfe4f73d7f615da58  objekty.dfw?cz
-  c96125c0db027b9ed1509dac696be420  retezce.dfw?cz
-  d41f03887f35a640b6e647bb7b96976b  rozh2.dfw?cz
-  5c46665c6ee8e365e95543966a1756de  rozh3.dfw?cz
-  72f7004113daf489166bb799307801d0  rozh9.dfw?cz
-  da185cd93340b39973b8fac3e90bc81f  rozh10.dfw?cz
-  419e64211b4d5c03990f3af40a56a71a  rozh11.dfw?cz
-  12761fae7c69e5a62212aec3364f40ef  rozh12.dfw?cz
-  b1ea725b3714ad3281a5506c4eb6d0b0  rozh14.dfw?cz
-  232f7cd16efa5f0e7d718dc5ac136e0d  rozh15.dfw?cz
-  d5bddab0ab1f875e6a742b7a968710a9  rozh16.dfw?cz
-  7b5148bbbaf98a2eef58c493301bf887  rozh17.dfw?cz
-  aaec2b4eb51bf943b14e754a13a88653  rozh18.dfw?cz
-  fcc8aa72b3085d8e54e32b3324fcc121  rozh22.dfw?cz
-  ec28d5548df869ca3d0c351c122a19ab  rozh24.dfw?cz
-  77df1d46aee8ab6c4799ff522c84ba35  rozh26.dfw?cz
-  2b9e671e00ef1caae0eb0f90a456fe89  rozh28.dfw?cz
-  255b34deaebd4a4546df5930eef5791c  rozh29.dfw?cz
-  c7bfd293a462d499a0b598b4b2135e65  rozh31.dfw?cz
-  9a044008e61fafa45e3241c7b3cb9306  rozh33.dfw?cz
-
-  f2fd923cefa2ab89d27d0dbacf5f4fc7  dh-de-2012.zip
-  c9dad7683140d87ac8236ff9ba9f2a64  big.fon?de
-  4553de374da5950736d15adc5f625917  small.fon?de
-  cecd2f3bb29e7a9ff26db996980e2505  ikony.dfw?de
-  9a7115b91cdea361bcaff3e046ac7ded  init.dfw?de
-  6e8b428a521564c32083bfbfc18fe62b  mist.dfw?de
-  14e96e7d52d4cb6361b14200c0828e19  objekty.dfw?de
-  ed2ff7befc86f44a003e7745e4268bdc  retezce.dfw?de
-  c4885ad8e0df8448b2edb57496980b63  rozh2.dfw?de
-  c2c223182a2e1f4d6c4a252e8b6c392a  rozh3.dfw?de
-  a5765c52d5eb940df68a0e792ed1a387  rozh9.dfw?de
-  40a983f892f3514f552ca232e5096acc  rozh10.dfw?de
-  15f62f1a9cf1dcde4b8cfddf4c4bdd6b  rozh11.dfw?de
-  b5c6d594cff8b4eafed65ce4dd6679c4  rozh12.dfw?de
-  b9d92ae83f5160b4474f6b7b8ea70b8f  rozh14.dfw?de
-  2be6f0807efbe5603d6734413bef3a0f  rozh15.dfw?de
-  dba9c090104513975f95b13c58d8bb92  rozh16.dfw?de
-  f6da9e5200bb40e0cd8c2ec8b1b0bec1  rozh17.dfw?de
-  40445a517086f38ba29113f2668b777e  rozh18.dfw?de
-  1e30313ceccef709e212875d2ea88602  rozh22.dfw?de
-  e5f154cc7b351b972bcdf58c17d1d5f3  rozh24.dfw?de
-  96ae4e29cca9ad0846e86a1a416c9f19  rozh26.dfw?de
-  fc27b28dc9656d79535f712fd1d99ed0  rozh28.dfw?de
-  c7122777a778d7bdea73017f8ec741d6  rozh29.dfw?de
-  6fb8e6132b774b2d7675f008e7f056fd  rozh31.dfw?de
-  ee8dfddd4199839a3aca216c78a1d89a  rozh33.dfw?de
-
-  a14c144eb30597d8e6d1af5af3217b04  dh-pl-2012.zip
-  1b407fc830d4158755e2ce9473d938ae  dub-mp3.zzz?pl
-  57cbb0227e536b3046b594792d6a75b8  big.fon?pl
-  f44746b3a58686caf43b2a5d96728210  small.fon?pl
-  276d6a64377ae3c6f49d971f089b5619  ikony.dfw?pl
-  76b9b78a8a8809a240acc395df4d0715  init.dfw?pl
-  865dc1b3df70ac0f2f4626f7a3063b8b  mist.dfw?pl
-  4931e72814f558245e80cf03f4031cfd  objekty.dfw?pl
-  fd0038001726c511280d244914d50629  retezce.dfw?pl
-  498b9fea785c82b65351eb8e2645a072  rozh2.dfw?pl
-  aa9be17a214e5dc6e2d180a8c84e923f  rozh3.dfw?pl
-  85711eae0784d9eecb8c4fd728565a98  rozh9.dfw?pl
-  ce3ab333c632bbbd01de0db4dda01427  rozh10.dfw?pl
-  44f78691574262f11c13a3d3fd98242b  rozh11.dfw?pl
-  007e53268d722812a6091ece8460e3b7  rozh12.dfw?pl
-  c7332920c8aed70201c9851bfada9c95  rozh14.dfw?pl
-  46e3d33e140aff6462afdf6cca134b98  rozh15.dfw?pl
-  2d58933057bb9875cb3ef3ab5bd22292  rozh16.dfw?pl
-  a742e2a14c64e063a406d49a925fd275  rozh17.dfw?pl
-  69cf40838649ef0cad3687ff34db0c79  rozh18.dfw?pl
-  bc187c1203094b9df9767208f2ce070b  rozh22.dfw?pl
-  d5d0a47c18d0d871f135042c5edfa654  rozh24.dfw?pl
-  e3a54fb29eb7562e42c259777f4989d5  rozh26.dfw?pl
-  70a2b1f480d04d9731df1c854559edf8  rozh28.dfw?pl
-  31ddcd9186a2b874724449d43e943fcd  rozh29.dfw?pl
-  111808d1e2bb68c2f03d1c8c4d4e49f1  rozh31.dfw?pl
-  0eafd528c68b390242689a9dbb8df28c  rozh33.dfw?pl
-
 groups:
+  archives: |
+    3310860   b3f16d4e8a96739a4353617bdeb2c749 dh-en-2012.zip
+    29293879  fec186b4e9e3465cdfee2ba956ed4415 dh-cz-2012.zip
+    3316443   f2fd923cefa2ab89d27d0dbacf5f4fc7 dh-de-2012.zip
+    36041498  a14c144eb30597d8e6d1af5af3217b04 dh-pl-2012.zip
+  default group: |
+    2818      2ec6d47094c78faa67d4e2ab78d8605d readme.txt?cz
+  english dub: |
+    3845      8d595f5495d28a6368a03ba1d9de244a ikony.dfw
+    906       b890a5aeebaf16af39219cba2416b0a3 init.dfw
+    11425     89f144328de399fe9e4ea79fede4f86b mist.dfw
+    45539     afb8f5e3a3ae665834c2d054a043f527 objekty.dfw
+    127807    ccabdfb7023d56dc65878a9bc845dffb retezce.dfw
+    1337      a3d81ad491244510542e111c28b97bf5 rozh2.dfw
+    2959      f3e567176b1c54aee49b2639306da797 rozh3.dfw
+    1467      61466dd3ac1ac8b7172fabc876c8b1de rozh9.dfw
+    1714      bcca7de0e2028b3990172b439af3389d rozh10.dfw
+    3347      9a46df1c17ea6edfc46aec6102fe1b17 rozh11.dfw
+    3013      9fd34131843e849e68207c8ae0e0cab6 rozh12.dfw
+    2515      f33f46229f0aad87957e26591f6dc0bf rozh14.dfw
+    2400      8622cce4582e4bd9c22c3cfc091ef553 rozh15.dfw
+    3106      6956ee9cb8150748293e78c228087847 rozh16.dfw
+    2753      2ea9ca32c1df243d1a2718bd05c39982 rozh17.dfw
+    684       9e6f9cd4568468c2206d1b64d6468f12 rozh18.dfw
+    2435      2cb03319128e9346eb3659b617674e74 rozh22.dfw
+    3468      079ffddfded3b43a4b0315c45fdabe19 rozh24.dfw
+    2530      3fbeaa37fd3ec55b255c683a2733fe9f rozh26.dfw
+    485       f2f88644cf95984343c7db22963e00bd rozh28.dfw
+    2869      1b60a8645d741e0991ccc1851198220c rozh29.dfw
+    2240      1408cf2b862c85dcbadc75b44af73d5a rozh31.dfw
+    3533      9f4efeccbd64e5f3d1d3878778297612 rozh33.dfw
+  czech original version: |
+    27215140  734f68463a6f4a1e5bdf95377efcaa50 dub-mp3.zzz?cz
+    3719      67beacd5cf427c22e2d1d272f0214b83 ikony.dfw?cz
+    906       9921c8f0045679a8f37eca8d41c5ec02 init.dfw?cz
+    11425     9a8e7f516e4f740a17eda3541a53ee94 mist.dfw?cz
+    44806     4c2929f9b2d9434dfe4f73d7f615da58 objekty.dfw?cz
+    118916    c96125c0db027b9ed1509dac696be420 retezce.dfw?cz
+    1322      d41f03887f35a640b6e647bb7b96976b rozh2.dfw?cz
+    2980      5c46665c6ee8e365e95543966a1756de rozh3.dfw?cz
+    1444      72f7004113daf489166bb799307801d0 rozh9.dfw?cz
+    1714      da185cd93340b39973b8fac3e90bc81f rozh10.dfw?cz
+    3378      419e64211b4d5c03990f3af40a56a71a rozh11.dfw?cz
+    2962      12761fae7c69e5a62212aec3364f40ef rozh12.dfw?cz
+    2467      b1ea725b3714ad3281a5506c4eb6d0b0 rozh14.dfw?cz
+    2425      232f7cd16efa5f0e7d718dc5ac136e0d rozh15.dfw?cz
+    3126      d5bddab0ab1f875e6a742b7a968710a9 rozh16.dfw?cz
+    2732      7b5148bbbaf98a2eef58c493301bf887 rozh17.dfw?cz
+    682       aaec2b4eb51bf943b14e754a13a88653 rozh18.dfw?cz
+    2419      fcc8aa72b3085d8e54e32b3324fcc121 rozh22.dfw?cz
+    3398      ec28d5548df869ca3d0c351c122a19ab rozh24.dfw?cz
+    2530      77df1d46aee8ab6c4799ff522c84ba35 rozh26.dfw?cz
+    480       2b9e671e00ef1caae0eb0f90a456fe89 rozh28.dfw?cz
+    2817      255b34deaebd4a4546df5930eef5791c rozh29.dfw?cz
+    2263      c7bfd293a462d499a0b598b4b2135e65 rozh31.dfw?cz
+    3515      9a044008e61fafa45e3241c7b3cb9306 rozh33.dfw?cz
+  german dub: |
+    21392     c9dad7683140d87ac8236ff9ba9f2a64 big.fon?de
+    13802     4553de374da5950736d15adc5f625917 small.fon?de
+    3730      cecd2f3bb29e7a9ff26db996980e2505 ikony.dfw?de
+    906       9a7115b91cdea361bcaff3e046ac7ded init.dfw?de
+    11425     6e8b428a521564c32083bfbfc18fe62b mist.dfw?de
+    45049     14e96e7d52d4cb6361b14200c0828e19 objekty.dfw?de
+    139255    ed2ff7befc86f44a003e7745e4268bdc retezce.dfw?de
+    1345      c4885ad8e0df8448b2edb57496980b63 rozh2.dfw?de
+    3054      c2c223182a2e1f4d6c4a252e8b6c392a rozh3.dfw?de
+    1472      a5765c52d5eb940df68a0e792ed1a387 rozh9.dfw?de
+    1719      40a983f892f3514f552ca232e5096acc rozh10.dfw?de
+    3379      15f62f1a9cf1dcde4b8cfddf4c4bdd6b rozh11.dfw?de
+    2985      b5c6d594cff8b4eafed65ce4dd6679c4 rozh12.dfw?de
+    2504      b9d92ae83f5160b4474f6b7b8ea70b8f rozh14.dfw?de
+    2420      2be6f0807efbe5603d6734413bef3a0f rozh15.dfw?de
+    3135      dba9c090104513975f95b13c58d8bb92 rozh16.dfw?de
+    2733      f6da9e5200bb40e0cd8c2ec8b1b0bec1 rozh17.dfw?de
+    687       40445a517086f38ba29113f2668b777e rozh18.dfw?de
+    2435      1e30313ceccef709e212875d2ea88602 rozh22.dfw?de
+    3471      e5f154cc7b351b972bcdf58c17d1d5f3 rozh24.dfw?de
+    2563      96ae4e29cca9ad0846e86a1a416c9f19 rozh26.dfw?de
+    488       fc27b28dc9656d79535f712fd1d99ed0 rozh28.dfw?de
+    2868      c7122777a778d7bdea73017f8ec741d6 rozh29.dfw?de
+    2256      6fb8e6132b774b2d7675f008e7f056fd rozh31.dfw?de
+    3545      ee8dfddd4199839a3aca216c78a1d89a rozh33.dfw?de
+  polish dub: |
+    34112925  1b407fc830d4158755e2ce9473d938ae dub-mp3.zzz?pl
+    21392     57cbb0227e536b3046b594792d6a75b8 big.fon?pl
+    13802     f44746b3a58686caf43b2a5d96728210 small.fon?pl
+    3765      276d6a64377ae3c6f49d971f089b5619 ikony.dfw?pl
+    906       76b9b78a8a8809a240acc395df4d0715 init.dfw?pl
+    11425     865dc1b3df70ac0f2f4626f7a3063b8b mist.dfw?pl
+    45221     4931e72814f558245e80cf03f4031cfd objekty.dfw?pl
+    123790    fd0038001726c511280d244914d50629 retezce.dfw?pl
+    1321      498b9fea785c82b65351eb8e2645a072 rozh2.dfw?pl
+    2943      aa9be17a214e5dc6e2d180a8c84e923f rozh3.dfw?pl
+    1464      85711eae0784d9eecb8c4fd728565a98 rozh9.dfw?pl
+    1682      ce3ab333c632bbbd01de0db4dda01427 rozh10.dfw?pl
+    3322      44f78691574262f11c13a3d3fd98242b rozh11.dfw?pl
+    2956      007e53268d722812a6091ece8460e3b7 rozh12.dfw?pl
+    2449      c7332920c8aed70201c9851bfada9c95 rozh14.dfw?pl
+    2399      46e3d33e140aff6462afdf6cca134b98 rozh15.dfw?pl
+    3099      2d58933057bb9875cb3ef3ab5bd22292 rozh16.dfw?pl
+    2722      a742e2a14c64e063a406d49a925fd275 rozh17.dfw?pl
+    684       69cf40838649ef0cad3687ff34db0c79 rozh18.dfw?pl
+    2427      bc187c1203094b9df9767208f2ce070b rozh22.dfw?pl
+    3391      d5d0a47c18d0d871f135042c5edfa654 rozh24.dfw?pl
+    2515      e3a54fb29eb7562e42c259777f4989d5 rozh26.dfw?pl
+    482       70a2b1f480d04d9731df1c854559edf8 rozh28.dfw?pl
+    2805      31ddcd9186a2b874724449d43e943fcd rozh29.dfw?pl
+    2253      111808d1e2bb68c2f03d1c8c4d4e49f1 rozh31.dfw?pl
+    3529      0eafd528c68b390242689a9dbb8df28c rozh33.dfw?pl
   midi files: |
     10379     884f755ec671ab1b14f76ab1bd5897b3 hudba1.mid
     11357     41941e6a01d715a45259ac7a72bc678f hudba2.mid
