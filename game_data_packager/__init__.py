@@ -1234,7 +1234,7 @@ class GameData(object):
 
 def load_games(game='*', use_vfs=USE_VFS, use_yaml=False):
     progress = (game == '*' and sys.stderr.isatty() and
-            not logging.getLogger().isEnabledFor(logging.DEBUG))
+            not logger.isEnabledFor(logging.DEBUG))
     games = {}
 
     if use_vfs:
@@ -1264,13 +1264,18 @@ def load_games(game='*', use_vfs=USE_VFS, use_yaml=False):
             load_game(progress, games, jsonfile, jsondata)
 
     if progress:
-        print('\r%s\r' % (' ' * len(games)), end='', flush=True, file=sys.stderr)
+        print('\r%s\r' % (' ' * (len(games) // 4 + 1)), end='', flush=True, file=sys.stderr)
 
     return games
 
 def load_game(progress, games, filename, content):
         if progress:
-            print('.', end='', flush=True, file=sys.stderr)
+            animation = ['.','-','*','#']
+            modulo = int(load_game.counter) % len(animation)
+            if modulo > 0:
+                print('\b', end='', flush=True, file=sys.stderr)
+            print(animation[modulo], end='', flush=True, file=sys.stderr)
+            load_game.counter += 1
         try:
             g = os.path.basename(filename)
             g = g[:len(g) - 5]
@@ -1296,6 +1301,8 @@ def load_game(progress, games, filename, content):
         except:
             print('Error loading %s:\n' % filename)
             raise
+
+load_game.counter = 0
 
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
