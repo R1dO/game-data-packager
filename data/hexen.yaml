@@ -69,42 +69,24 @@ packages:
 files:
   hexen.wad:
     alternatives:
-    - hexen.wad_1.1
+    - hexen.wad?1.1
 
   hexdd.wad:
     alternatives:
-    - hexdd.wad_1.1
-    - hexdd.wad_1.0
+    - hexdd.wad?1.1
+    - hexdd.wad?1.0
 
   hexendemo.wad:
-    size: 10644136
     look_for: [hexen.wad, hexendemo.wad]
 
-  hexen.wad_demo_beta:
-    size:  10615976
+  hexen.wad?demo_beta:
     look_for: [hexen.wad, hexendemo.wad]
     unsuitable: Hexen 1.0 (demo) is required
 
-  hexdd.wad_1.1:
-    size: 4440584
-    look_for: [hexdd.wad]
-
-  hexdd.wad_1.0:
-    size: 4429700
-    look_for: [hexdd.wad]
-
-  hexen.wad_1.1:
-    size: 20083672
-    look_for: [hexen.wad]
-
-  hexen.wad_1.0:
-    size:  20128392
-    look_for: [hexen.wad]
+  hexen.wad?1.0:
     unsuitable: Hexen 1.1 (registered) is required
 
-  hexen.wad_beta:
-    size: 20428208
-    look_for: [hexen.wad]
+  hexen.wad?beta:
     unsuitable: Hexen 1.1 (registered) is required
 
   hexndemo.zip:
@@ -119,20 +101,21 @@ files:
     unpack:
       format: zip
 
-md5sums: |
-  9178a32a496ff5befebfe6c47dac106c  hexen.wad_demo_beta
-  876a5a44c7b68f04b3bb9bc7a5bd69d6  hexendemo.wad
-  c88a2bb3d783e2ad7b599a8e301e099e  hexen.wad_beta
-  b2543a03521365261d0a0f74d5dd90f0  hexen.wad_1.0
-  abb033caf81e26f12a2103e1fa25453f  hexen.wad_1.1
-  1077432e2690d390c256ac908b5f4efa  hexdd.wad_1.0
-  78d5898e99e220e4de64edaa0e479593  hexdd.wad_1.1
+groups:
+  default: |
+    10615976  9178a32a496ff5befebfe6c47dac106c hexen.wad?demo_beta
+    10644136  876a5a44c7b68f04b3bb9bc7a5bd69d6 hexendemo.wad
+    20428208  c88a2bb3d783e2ad7b599a8e301e099e hexen.wad?beta
+    20128392  b2543a03521365261d0a0f74d5dd90f0 hexen.wad?1.0
+    20083672  abb033caf81e26f12a2103e1fa25453f hexen.wad?1.1
+    4429700   1077432e2690d390c256ac908b5f4efa hexdd.wad?1.0
+    4440584   78d5898e99e220e4de64edaa0e479593 hexdd.wad?1.1
 
 sha1sums: |
   fa89a2475855e43c7f7e3198d6e4c4bee23bfab9  hexendemo.wad
-  4b53832f0733c1e29e5f1de2428e5475e891af29  hexen.wad_1.1
-  c3065527d62b05a930fe75fe8181a64fb1982976  hexdd.wad_1.0
-  081f6a2024643b54ef4a436a85508539b6d20a1e  hexdd.wad_1.1
+  4b53832f0733c1e29e5f1de2428e5475e891af29  hexen.wad?1.1
+  c3065527d62b05a930fe75fe8181a64fb1982976  hexdd.wad?1.0
+  081f6a2024643b54ef4a436a85508539b6d20a1e  hexdd.wad?1.1
 
 ...
 # vim:set sw=2 sts=2 et:
