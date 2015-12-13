@@ -23,22 +23,7 @@ packages:
       url: the_feeble_files
     install:
     - shared assets
-    - game22
-    - tables01
-    - tables02
-    - tables03
-    - tables04
-    - tables14
-    - tables15
-    - tables21
-    - tables22
-    - tables23
-    - tables24
-    - tables25
-    - voices1.wav
-    - voices2.wav
-    - voices3.wav
-    - voices4.wav
+    - english version
     - 0011.vga
     - 0012.vga
     - 0022.vga
@@ -606,22 +591,7 @@ packages:
       url: the_feeble_files
     install:
     - shared assets
-    - game22?de
-    - tables01?de
-    - tables02?de
-    - tables03?de
-    - tables04?de
-    - tables14?de
-    - tables15?de
-    - tables21?de
-    - tables22?de
-    - tables23?de
-    - tables24?de
-    - tables25?de
-    - voices1.wav?de
-    - voices2.wav?de
-    - voices3.wav?de
-    - voices4.wav?de
+    - german version
     - 0011.vga?de
     - 0012.vga?de
     - 0022.vga?de_fr
@@ -944,22 +914,7 @@ packages:
     - startup.wav
     install:
     - shared assets
-    - game22?es
-    - tables01?es
-    - tables02?es
-    - tables03?es
-    - tables04?es
-    - tables14?es
-    - tables15?es
-    - tables21?es
-    - tables22?es
-    - tables23?es
-    - tables24?es
-    - tables25?es
-    - voices1.wav?es
-    - voices2.wav?es
-    - voices3.wav?es
-    - voices4.wav?es
+    - spanish version
     - 0011.vga
     - 0012.vga?es
     - 0022.vga?es
@@ -1278,22 +1233,7 @@ packages:
       url: the_feeble_files
     install:
     - shared assets
-    - game22?fr
-    - tables01?fr
-    - tables02?fr
-    - tables03?fr
-    - tables04?fr
-    - tables14?fr
-    - tables15?fr
-    - tables21?fr
-    - tables22?fr
-    - tables23?fr
-    - tables24?fr
-    - tables25?fr
-    - voices1.wav?fr
-    - voices2.wav?fr
-    - voices3.wav?fr
-    - voices4.wav?fr
+    - french version
     - 0011.vga?fr
     - 0012.vga?fr
     - 0022.vga?de_fr
@@ -1669,22 +1609,7 @@ files:
       other_parts: [setup_the_feeble_files_2.0.0.5-1.bin,setup_the_feeble_files_2.0.0.5-2.bin]
     provides:
     - shared assets
-    - game22
-    - tables01
-    - tables02
-    - tables03
-    - tables04
-    - tables14
-    - tables15
-    - tables21
-    - tables22
-    - tables23
-    - tables24
-    - tables25
-    - voices1.wav
-    - voices2.wav
-    - voices3.wav
-    - voices4.wav
+    - english version
     - 0011.vga
     - 0012.vga
     - 0022.vga
@@ -2241,22 +2166,7 @@ files:
       other_parts: [setup_the_feeble_files_german_2.0.0.5-1.bin,setup_the_feeble_files_german_2.0.0.5-2.bin]
     provides:
     - shared assets
-    - game22?de
-    - tables01?de
-    - tables02?de
-    - tables03?de
-    - tables04?de
-    - tables14?de
-    - tables15?de
-    - tables21?de
-    - tables22?de
-    - tables23?de
-    - tables24?de
-    - tables25?de
-    - voices1.wav?de
-    - voices2.wav?de
-    - voices3.wav?de
-    - voices4.wav?de
+    - german version
     - 0011.vga?de
     - 0012.vga?de
     - 0022.vga?de_fr
@@ -2567,22 +2477,7 @@ files:
       format: innoextract
     provides:
     - shared assets
-    - game22?fr
-    - tables01?fr
-    - tables02?fr
-    - tables03?fr
-    - tables04?fr
-    - tables14?fr
-    - tables15?fr
-    - tables21?fr
-    - tables22?fr
-    - tables23?fr
-    - tables24?fr
-    - tables25?fr
-    - voices1.wav?fr
-    - voices2.wav?fr
-    - voices3.wav?fr
-    - voices4.wav?fr
+    - french version
     - 0011.vga?fr
     - 0012.vga?fr
     - 0022.vga?de_fr
@@ -3885,10 +3780,9 @@ groups:
   150518    f3d7a735b9cff90e9ee0ae735e78221a 4403.vga
   1622      3befb832aac3afcb9632d2a86242da43 4421.vga
   824       10e8e938f4add8b4c63febdc8289c633 4431.vga
- default: |
-  2215216   2940fa2383609562c36366d20de9a7b1 manual.pdf
+
+ english version: |
   251647    e5d373089aca3b5ebf23cde591df9be5 game22
-  198954    e00cead9fb77c8a6b48b9a8fe98af527 startup.wav
   26946     53f50263525879df802c50ae08538c17 tables01
   1699      20eb39166e2f16e6c92c8e403e7877d4 tables02
   36868     a8e6aa20b874dee9576be203f7ac6d38 tables03
@@ -3904,6 +3798,64 @@ groups:
   231229088 30e21e0d1cf8b2f93d32bfd6aea90a6a voices2.wav
   223694972 44d2920d1d1519ab2d2875e97d344f6e voices3.wav
   211045694 2be50aeacff256c78e379dd6dea4e3e7 voices4.wav
+
+ german version: |
+  262517    bbbcad75a6c6b079e5ac6492ba4daa6b game22?de
+  25276     afb47952ab298c83927ed8646a3239fa tables01?de
+  1699      68dec609cf6a10e5a9871f84a604b800 tables02?de
+  36908     f160507b47110ee93d17a64683c84bb1 tables03?de
+  69068     f2cf34a114f732dd1cd2a0a362c6f80f tables04?de
+  11561     a5d9331d2cde2e1c885282a4fc919f0e tables14?de
+  42683     a95865f237cbf5f6cde6e41a37fe4f20 tables15?de
+  53848     6b7aae8c8de525dea11dba659b06b645 tables21?de
+  19583     765d540d9a5eb1027c3ac0b5c5a01ef4 tables22?de
+  75825     3781e7a62458b29b9648636714130486 tables23?de
+  17716     18322ecf674ffdcd706bce18a9f2ca82 tables24?de
+  67061     c6fcc2814f18ad12606c7e21b87d9f17 tables25?de
+  251120600 8b09290e383376e735c46c64a39c6fb5 voices1.wav?de
+  226373444 31be901c11a95f4e1b270f95087718cd voices2.wav?de
+  227329890 2157137ba979019f11d49cd786d19a68 voices3.wav?de
+  200507670 3588efa51301a69149f820aae8ee5239 voices4.wav?de
+
+ spanish version: |
+  265629    24fe7ba975369c272088aa3b0c5bf348 game22?es
+  27039     4157c16894c0413ca64e56a52aa46d50 tables01?es
+  1699      d71b7918c74a999fa4c539ee8ef63003 tables02?es
+  36942     ae33ef52caed416c1f29c2976736ac4f tables03?es
+  69068     7edccf6dda9b1007a039a04980d06d88 tables04?es
+  11561     4d7771240870c4a7e5b0f4b4a2e010f7 tables14?es
+  42683     3718ba2c338b75bebe4709b939de7542 tables15?es
+  53871     c521eb8fe621ddb1a1e112fc679ef1b4 tables21?es
+  21318     6fc3c61399faee65d26451132ff94b94 tables22?es
+  75844     41383b96f63ede313c7f698027a6fb5d tables23?es
+  17716     b50f2a67685e05b792afd5edf894ebeb tables24?es
+  67101     a7add5ae7548d332982c234a81bfb03f tables25?es
+  269257154 aedd905176a75cdf1a78dd779f1df7d4 voices1.wav?es
+  242565150 8a4a5b7bc91b8185b723754e0da18e7e voices2.wav?es
+  242273450 8843a0d1213ee8eceae7dd457c9fe425 voices3.wav?es
+  224241224 6cc2220cb60590fa026d1e4c6c2f459a voices4.wav?es
+
+ french version: |
+  259668    bc2234bf66a84f21c4f6ad52f43ace95 game22?fr
+  26674     89bdb00d6bbc1b538f717c5d7c085084 tables01?fr
+  1699      b30f5f2164565eb2005c46623beb9038 tables02?fr
+  36908     56e0239e2abbb155c12156f97ddc6d11 tables03?fr
+  69068     a5b41d48d7e2f79ff71e1037041d8376 tables04?fr
+  11561     90a9c234081f9bcd32150c9cfc662717 tables14?fr
+  42683     a6c8378369ff0647968f4263f0337a13 tables15?fr
+  53871     48de913ff664780db4a62681e52f5850 tables21?fr
+  20975     fbcbe8aa2ba90a62867c90a318250793 tables22?fr
+  75825     c708e6b6339a9e31aa9cd8ba8da0a742 tables23?fr
+  17716     44071de02f9f4779f5126425bfbce5cf tables24?fr
+  67101     a57b87e934a8d8c98e8edf1d7b24c974 tables25?fr
+  235945822 c1966e7087ed7ce4cc0bf279327a1fa7 voices1.wav?fr
+  220837998 3aaac956e263e8574f4853096f4e0d43 voices2.wav?fr
+  211316054 d14c4c03ffe7c7babfe3b78b4259dd32 voices3.wav?fr
+  197161234 90fbff5e87562fa747457a9eab73985d voices4.wav?fr
+
+ default: |
+  198954    e00cead9fb77c8a6b48b9a8fe98af527 startup.wav
+  2215216   2940fa2383609562c36366d20de9a7b1 manual.pdf
   824       f77a2f7632408752c29e0beab0ee3d66 0011.vga
   242620    0d39ee90e039ab1b478adb96e9f704d2 0012.vga
   52933     e6f334e6c96e7cb864eb455a36c004ba 0022.vga
@@ -4456,22 +4408,6 @@ groups:
   823317904 e44ace05f37979415565ebfeb19fc8a6 setup_the_feeble_files_2.0.0.5-2.bin
 
   # german
-  262517    bbbcad75a6c6b079e5ac6492ba4daa6b game22?de
-  25276     afb47952ab298c83927ed8646a3239fa tables01?de
-  1699      68dec609cf6a10e5a9871f84a604b800 tables02?de
-  36908     f160507b47110ee93d17a64683c84bb1 tables03?de
-  69068     f2cf34a114f732dd1cd2a0a362c6f80f tables04?de
-  11561     a5d9331d2cde2e1c885282a4fc919f0e tables14?de
-  42683     a95865f237cbf5f6cde6e41a37fe4f20 tables15?de
-  53848     6b7aae8c8de525dea11dba659b06b645 tables21?de
-  19583     765d540d9a5eb1027c3ac0b5c5a01ef4 tables22?de
-  75825     3781e7a62458b29b9648636714130486 tables23?de
-  17716     18322ecf674ffdcd706bce18a9f2ca82 tables24?de
-  67061     c6fcc2814f18ad12606c7e21b87d9f17 tables25?de
-  251120600 8b09290e383376e735c46c64a39c6fb5 voices1.wav?de
-  226373444 31be901c11a95f4e1b270f95087718cd voices2.wav?de
-  227329890 2157137ba979019f11d49cd786d19a68 voices3.wav?de
-  200507670 3588efa51301a69149f820aae8ee5239 voices4.wav?de
   824       16da52272a810b2cb9344c6bdd3711dd 0011.vga?de
   237332    b3a55883d04b40b2b0489a8dc9ba6e98 0012.vga?de
   56607     95957fbf58082af355dc045ecf33ce8b 0022.vga?de_fr
@@ -4678,22 +4614,6 @@ groups:
   335217804 234bbfbdd3455ef5b7d64f55f8bb7c52 setup_the_feeble_files_german_2.0.0.5-2.bin
 
   #spanish
-  265629    24fe7ba975369c272088aa3b0c5bf348 game22?es
-  27039     4157c16894c0413ca64e56a52aa46d50 tables01?es
-  1699      d71b7918c74a999fa4c539ee8ef63003 tables02?es
-  36942     ae33ef52caed416c1f29c2976736ac4f tables03?es
-  69068     7edccf6dda9b1007a039a04980d06d88 tables04?es
-  11561     4d7771240870c4a7e5b0f4b4a2e010f7 tables14?es
-  42683     3718ba2c338b75bebe4709b939de7542 tables15?es
-  53871     c521eb8fe621ddb1a1e112fc679ef1b4 tables21?es
-  21318     6fc3c61399faee65d26451132ff94b94 tables22?es
-  75844     41383b96f63ede313c7f698027a6fb5d tables23?es
-  17716     b50f2a67685e05b792afd5edf894ebeb tables24?es
-  67101     a7add5ae7548d332982c234a81bfb03f tables25?es
-  269257154 aedd905176a75cdf1a78dd779f1df7d4 voices1.wav?es
-  242565150 8a4a5b7bc91b8185b723754e0da18e7e voices2.wav?es
-  242273450 8843a0d1213ee8eceae7dd457c9fe425 voices3.wav?es
-  224241224 6cc2220cb60590fa026d1e4c6c2f459a voices4.wav?es
   244880    d92b95f8b41cadd2daa8fe98b0e66607 0012.vga?es
   56607     95e08584433213bbbe7715d03ed057d5 0022.vga?es
   829264    1753e079ef7d5988da6d4acbf32dae68 0212.vga?es
@@ -4817,22 +4737,6 @@ groups:
   1389120   db81c4b4b1d80e3030c26398ccdd742d wurbatak.smk?es
 
   # french
-  259668    bc2234bf66a84f21c4f6ad52f43ace95 game22?fr
-  26674     89bdb00d6bbc1b538f717c5d7c085084 tables01?fr
-  1699      b30f5f2164565eb2005c46623beb9038 tables02?fr
-  36908     56e0239e2abbb155c12156f97ddc6d11 tables03?fr
-  69068     a5b41d48d7e2f79ff71e1037041d8376 tables04?fr
-  11561     90a9c234081f9bcd32150c9cfc662717 tables14?fr
-  42683     a6c8378369ff0647968f4263f0337a13 tables15?fr
-  53871     48de913ff664780db4a62681e52f5850 tables21?fr
-  20975     fbcbe8aa2ba90a62867c90a318250793 tables22?fr
-  75825     c708e6b6339a9e31aa9cd8ba8da0a742 tables23?fr
-  17716     44071de02f9f4779f5126425bfbce5cf tables24?fr
-  67101     a57b87e934a8d8c98e8edf1d7b24c974 tables25?fr
-  235945822 c1966e7087ed7ce4cc0bf279327a1fa7 voices1.wav?fr
-  220837998 3aaac956e263e8574f4853096f4e0d43 voices2.wav?fr
-  211316054 d14c4c03ffe7c7babfe3b78b4259dd32 voices3.wav?fr
-  197161234 90fbff5e87562fa747457a9eab73985d voices4.wav?fr
   824       24c3189d85c8d43e5dcc93c5d3c24e14 0011.vga?fr
   241218    2db2664bda8d3b8b7b5e9bf7f06f0423 0012.vga?fr
   56607     95957fbf58082af355dc045ecf33ce8b 0022.vga?de_fr
