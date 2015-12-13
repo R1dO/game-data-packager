@@ -17,70 +17,8 @@ packages:
       id: 6040
       path: "common/The Dig"
     install:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san
-    - video/sq18a.san
-    - video/sq18b.san
-    - video/sq18sc15.san
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san
-    - video/sq3.san
-    - video/sq4.san
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san
-    - video/sq8a1.san
-    - video/sq8b.san
-    - video/sq8c.san
-    - video/sq9.san
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - english version
     optional:
     - manual.pdf
     - refcard.pdf
@@ -93,72 +31,8 @@ packages:
     gog:
       url: the_dig
     install:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?de
-    # file not in english version
-    - language.bnd?de
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?de
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?de
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?de
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?de
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?de
-    - video/sq18a.san
-    - video/sq18b.san?de
-    - video/sq18sc15.san?de
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?de
-    - video/sq3.san?de
-    - video/sq4.san?de
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?de
-    - video/sq8a1.san
-    - video/sq8b.san?de
-    - video/sq8c.san?de
-    - video/sq9.san?de
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - german dub
     optional:
     - manual.pdf
     - refcard.pdf
@@ -171,72 +45,8 @@ packages:
     gog:
       url: the_dig
     install:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?es
-    # file not in english version
-    - language.bnd?es
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?es
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?es
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?es
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?es
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?es
-    - video/sq18a.san
-    - video/sq18b.san?es
-    - video/sq18sc15.san?es
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?es
-    - video/sq3.san?es
-    - video/sq4.san?es
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?es
-    - video/sq8a1.san
-    - video/sq8b.san?es
-    - video/sq8c.san?es
-    - video/sq9.san?es
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - spanish dub
     optional:
     - manual.pdf?es
     - refcard.pdf
@@ -249,72 +59,8 @@ packages:
     gog:
       url: the_dig
     install:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?fr
-    # file not in english version
-    - language.bnd?fr
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?fr
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?fr
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?fr
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?fr
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?fr
-    - video/sq18a.san
-    - video/sq18b.san?fr
-    - video/sq18sc15.san?fr
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?fr
-    - video/sq3.san?fr
-    - video/sq4.san?fr
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?fr
-    - video/sq8a1.san
-    - video/sq8b.san?fr
-    - video/sq8c.san?fr
-    - video/sq9.san?fr
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - french dub
     optional:
     - manual.pdf?fr
     - refcard.pdf
@@ -327,72 +73,8 @@ packages:
     gog:
       url: the_dig
     install:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?it
-    # file not in english version
-    - language.bnd?it
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?it
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?it
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?it
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?it
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?it
-    - video/sq18a.san
-    - video/sq18b.san?it
-    - video/sq18sc15.san?it
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?it
-    - video/sq3.san?it
-    - video/sq4.san?it
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?it
-    - video/sq8a1.san
-    - video/sq8b.san?it
-    - video/sq8c.san?it
-    - video/sq9.san?it
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - italian dub
     optional:
     - manual.pdf?it
     - refcard.pdf
@@ -411,70 +93,8 @@ files:
     unpack:
       format: innoextract
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san
-    - video/sq18a.san
-    - video/sq18b.san
-    - video/sq18sc15.san
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san
-    - video/sq3.san
-    - video/sq4.san
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san
-    - video/sq8a1.san
-    - video/sq8b.san
-    - video/sq8c.san
-    - video/sq9.san
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - english version
     - manual.pdf
     - refcard.pdf
 
@@ -482,70 +102,8 @@ files:
     unpack:
       format: deb
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san
-    - video/sq18a.san
-    - video/sq18b.san
-    - video/sq18sc15.san
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san
-    - video/sq3.san
-    - video/sq4.san
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san
-    - video/sq8a1.san
-    - video/sq8b.san
-    - video/sq8c.san
-    - video/sq9.san
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - english version
     - manual.pdf
     - refcard.pdf
     - end user license agreement.txt
@@ -554,71 +112,8 @@ files:
     unpack:
       format: innoextract
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?de
-    - language.bnd?de
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?de
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?de
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?de
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?de
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?de
-    - video/sq18a.san
-    - video/sq18b.san?de
-    - video/sq18sc15.san?de
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?de
-    - video/sq3.san?de
-    - video/sq4.san?de
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?de
-    - video/sq8a1.san
-    - video/sq8b.san?de
-    - video/sq8c.san?de
-    - video/sq9.san?de
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - german dub
     - manual.pdf
     - refcard.pdf
 
@@ -626,71 +121,8 @@ files:
     unpack:
       format: deb
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?de
-    - language.bnd?de
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?de
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?de
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?de
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?de
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?de
-    - video/sq18a.san
-    - video/sq18b.san?de
-    - video/sq18sc15.san?de
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?de
-    - video/sq3.san?de
-    - video/sq4.san?de
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?de
-    - video/sq8a1.san
-    - video/sq8b.san?de
-    - video/sq8c.san?de
-    - video/sq9.san?de
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - german dub
     - manual.pdf
     - refcard.pdf
     - end user license agreement.txt
@@ -703,71 +135,8 @@ files:
     unpack:
       format: innoextract
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?es
-    - language.bnd?es
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?es
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?es
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?es
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?es
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?es
-    - video/sq18a.san
-    - video/sq18b.san?es
-    - video/sq18sc15.san?es
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?es
-    - video/sq3.san?es
-    - video/sq4.san?es
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?es
-    - video/sq8a1.san
-    - video/sq8b.san?es
-    - video/sq8c.san?es
-    - video/sq9.san?es
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - spanish dub
     - manual.pdf?es
     - refcard.pdf
 
@@ -775,71 +144,8 @@ files:
     unpack:
       format: deb
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?es
-    - language.bnd?es
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?es
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?es
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?es
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?es
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?es
-    - video/sq18a.san
-    - video/sq18b.san?es
-    - video/sq18sc15.san?es
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?es
-    - video/sq3.san?es
-    - video/sq4.san?es
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?es
-    - video/sq8a1.san
-    - video/sq8b.san?es
-    - video/sq8c.san?es
-    - video/sq9.san?es
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - spanish dub
     - manual.pdf?es
     - refcard.pdf
     - end user license agreement.txt
@@ -852,71 +158,8 @@ files:
     unpack:
       format: innoextract
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?fr
-    - language.bnd?fr
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?fr
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?fr
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?fr
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?fr
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?fr
-    - video/sq18a.san
-    - video/sq18b.san?fr
-    - video/sq18sc15.san?fr
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?fr
-    - video/sq3.san?fr
-    - video/sq4.san?fr
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?fr
-    - video/sq8a1.san
-    - video/sq8b.san?fr
-    - video/sq8c.san?fr
-    - video/sq9.san?fr
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - french dub
     - manual.pdf?fr
     - refcard.pdf
 
@@ -924,71 +167,8 @@ files:
     unpack:
       format: deb
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?fr
-    - language.bnd?fr
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?fr
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?fr
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?fr
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?fr
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?fr
-    - video/sq18a.san
-    - video/sq18b.san?fr
-    - video/sq18sc15.san?fr
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?fr
-    - video/sq3.san?fr
-    - video/sq4.san?fr
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?fr
-    - video/sq8a1.san
-    - video/sq8b.san?fr
-    - video/sq8c.san?fr
-    - video/sq9.san?fr
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - french dub
     - manual.pdf?fr
     - refcard.pdf
     - end user license agreement.txt
@@ -1001,71 +181,8 @@ files:
     unpack:
       format: innoextract
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?it
-    - language.bnd?it
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?it
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?it
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?it
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?it
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?it
-    - video/sq18a.san
-    - video/sq18b.san?it
-    - video/sq18sc15.san?it
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?it
-    - video/sq3.san?it
-    - video/sq4.san?it
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?it
-    - video/sq8a1.san
-    - video/sq8b.san?it
-    - video/sq8c.san?it
-    - video/sq9.san?it
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - italian dub
     - manual.pdf?it
     - refcard.pdf
 
@@ -1073,88 +190,82 @@ files:
     unpack:
       format: deb
     provides:
-    - dig.la0
-    - dig.la1
-    - digmusic.bun
-    - digvoice.bun?it
-    - language.bnd?it
-    - video/alcove.san
-    - video/asttun.san
-    - video/darkcave.san
-    - video/digtxt.trs?it
-    - video/font0.nut
-    - video/font1.nut
-    - video/font2.nut
-    - video/font3.nut
-    - video/m1.san
-    - video/m2.san
-    - video/nexuspan.san
-    - video/pigout.san
-    - video/rtram1.san
-    - video/rtram2.san
-    - video/rtram3.san
-    - video/rtram4.san
-    - video/rtram5.san
-    - video/sky.san
-    - video/sq1.san?it
-    - video/sq10.san
-    - video/sq11.san
-    - video/sq12a.san
-    - video/sq12b.san
-    - video/sq13.san
-    - video/sq14b.san
-    - video/sq14sc04.san
-    - video/sq14sc07.san
-    - video/sq14sc11.san
-    - video/sq14sc14.san?it
-    - video/sq14sc16.san
-    - video/sq14sc19.san
-    - video/sq14sc22.san?it
-    - video/sq15a.san
-    - video/sq15b.san
-    - video/sq17.san?it
-    - video/sq18a.san
-    - video/sq18b.san?it
-    - video/sq18sc15.san?it
-    - video/sq19a.san
-    - video/sq19b.san
-    - video/sq19c.san
-    - video/sq2.san?it
-    - video/sq3.san?it
-    - video/sq4.san?it
-    - video/sq5.san
-    - video/sq6.san
-    - video/sq6sc3.san
-    - video/sq7.san
-    - video/sq8a.san?it
-    - video/sq8a1.san
-    - video/sq8b.san?it
-    - video/sq8c.san?it
-    - video/sq9.san?it
-    - video/tombdwn1.san
-    - video/tombdwn2.san
-    - video/tram1.san
-    - video/tram2.san
-    - video/tram3.san
-    - video/tram4.san
-    - video/tram5.san
+    - shared assets
+    - italian dub
     - manual.pdf?it
     - refcard.pdf
     - end user license agreement.txt
 
-size_and_md5: |
+groups:
+ shared assets: |
   16304     d8323015ecb8b10bf53474f6e6b0ae33 dig.la0
   88673344  3f0c5483b0786391fa82231c51732448 dig.la1
   261585790 5491cdd68d792b4e3e335ecee80f9019 digmusic.bun
-  130123511 beb6d64ccf146f82a26a1ab65a4c4b13 digvoice.bun
+  1170698   3c0b6bc3af3b7f5c80ff0ed0bf6f6926 video/alcove.san
+  3666166   ef0992dad809d4fe2e69b4dd9c0f6bce video/asttun.san
+  4458916   158b3f10bcf51e7ec8eed118d171822b video/darkcave.san
+  34738     339268c9c839b4bb3094d3aaf34827d8 video/font0.nut
+  28302     48efaacc7be8886a0f13125477e04d98 video/font1.nut
+  28302     48efaacc7be8886a0f13125477e04d98 video/font2.nut
+  28302     48efaacc7be8886a0f13125477e04d98 video/font3.nut
+  1133070   c58ba44c2b76d9dc10a6ccfc73df4f2e video/m1.san
+  1048844   67835ca2d504370232281f77d6cf6d00 video/m2.san
+  1247242   ed56452de0059706ed30eb31d6874878 video/nexuspan.san
+  985958    c36c93bbeab7b6331f7df5730080cede video/pigout.san
+  3101990   9f81b110cc86b2f99dee2d33f22c93ac video/rtram1.san
+  2487412   2fbd479d6423119821fdbcdd511a2911 video/rtram2.san
+  2218278   43b891129e5749e2a1cb604fa16dcfe8 video/rtram3.san
+  2216398   695c6b34a365ed6612dcc75752f193e3 video/rtram4.san
+  2498222   99f0e2b676e2d57b221c38cb01952e5f video/rtram5.san
   743506    22354dcb3ed92af8df229a02e7386dcf video/sky.san
+  2488802   285dd8374a40748d82dc3d75f24287c4 video/sq5.san
+  571106    76ebd6d99d64f2d5f67f3c803339d6da video/sq6.san
+  134950    2e489540e9d6f98c7ecc05c2328d55f3 video/sq6sc3.san
+  1202256   991e2aa3582f5bc17fc17df36e0bd64a video/sq7.san
+  1451812   b71ca38a5c5f0bacbb6ba231bf687307 video/sq8a1.san
+  3329570   a560d040b291665e5cc3d063b7f4d421 video/sq10.san
+  1293120   e1764b1cad5408e4e374bd1078227978 video/sq11.san
+  597552    edf245a7bfaf1b9bf99068a3c85cfd5c video/sq12a.san
+  1278822   efb0947637d76b2bbc9fae9c5aaccd32 video/sq12b.san
+  2442166   99d5aef79f2a115dbbbc50864320319f video/sq13.san
+  2542932   727c6839335730577a02569c89f9c77f video/sq14b.san
+  250728    31955a152dc9fc8f4e94f8223c5860b2 video/sq14sc04.san
+  187908    b92ab83ca93022b3e668acf52e1b6be3 video/sq14sc07.san
+  145026    585eba90fbaf2964cdfb04859fbac0f1 video/sq14sc11.san
+  642050    e1c555da4048a3845d421ef1bbad50ed video/sq14sc16.san
+  709572    8f3f39b3c28847764ef708d8fbf2c46d video/sq14sc19.san
+  737334    c8caef32ef5fdd821a66bb8bbb11e34a video/sq15a.san
+  1258754   3bc026bfc00b3d5f9cbe655c05f6ff24 video/sq15b.san
+  1852134   ee8a37f13be13fda72d3facb26c9502d video/sq18a.san
+  792514    287e3b618f1041a780bf0d6bd3e15578 video/sq19a.san
+  3913630   75b4974a0586b60b9dd3419b51c79d93 video/sq19b.san
+  1116944   2d20922b302dd33a0019748e1f40be3c video/sq19c.san
+  1127536   3b06b1c0a78b2e055955ab984f092e5b video/tombdwn1.san
+  1141518   2ed1e0527b80570715235b2b1b67a394 video/tombdwn2.san
+  2179482   6b2a8b29e19e8f532e261ff76ea995e1 video/tram1.san
+  2287880   9f28496c33e124e5952e0d8d231d0b87 video/tram2.san
+  2842190   d8144ad6006994aceaffcd73928a2612 video/tram3.san
+  2254998   0611c4d4d2f1c30ee7d73b89bcbe5e40 video/tram4.san
+  3400792   053f6d8688b6d628f43b7b9a376a464a video/tram5.san
 
-  5753714   fb8fbc2a456ffee713fbc7acaeb0a9aa manual.pdf
-  1233682   333aa71eba077d563b002bfe609dc992 refcard.pdf
-  33854     f13cfbbe5ae7b4292a8a8b1950d4f24a end user license agreement.txt
-  485628672 22aa49f3373c9ed06d1f5ac5be999c61 gog_the_dig_1.0.0.5.deb
-  489276720 a36bda23af447deb5013780669a04a0c setup_the_dig_2.0.0.3.exe
+ english version: |
+  130123511 beb6d64ccf146f82a26a1ab65a4c4b13 digvoice.bun
+  10723     951c8cfc1089724c63e2433e8682a476 video/digtxt.trs
+  50124786  aeffce448ef3193110dab71d7cc27c15 video/sq1.san
+  17759462  2bd8d22069743c996281bd5aa4c33040 video/sq2.san
+  12073682  eca489a95b8ef9ef71073811d085fe9b video/sq3.san
+  2379498   5de97c5d489c378e9572156773705378 video/sq4.san
+  2066034   d32d9de026d0da5b74e59c59793d5b89 video/sq8a.san
+  339890    e5967aecb076d50b5c63cb5e9cc4edc2 video/sq8b.san
+  745084    f34166f263f8426d4ac7e8134293a3e5 video/sq8c.san
+  6196368   7839719fc9a961a5e7b52acfc716f589 video/sq9.san
+  127586    6507ed0fb01c1a979094d0823132a222 video/sq14sc14.san
+  2564832   d9bfa1bf1009e8cec0f9849a3e323552 video/sq14sc22.san
+  10069120  db18293e7c5994b4e455fe1ffe66ce7c video/sq17.san
+  2423836   d2ab8f569c3ac40bef15ea2ea3d9475b video/sq18b.san
+  558258    a4232741fe6367960477f6ecf66f592e video/sq18sc15.san
 
+ german dub: |
   110794618 d4ac3de7708c1b58aaf5702cc4fd0685 digvoice.bun?de
   248627    1fd585ac849d57305878c77b2f6c74ff language.bnd?de
   11511     5d6d398546ac89a300644e92c7acf202 video/digtxt.trs?de
@@ -1171,9 +282,8 @@ size_and_md5: |
   340072    e693f4369fbdf59aeca2a7bc85054375 video/sq8b.san?de
   737438    6f033c0f7c80a0981f42daff6b47347f video/sq8c.san?de
   6059438   f2b15303f839ff2bcaafbd529a0c14d4 video/sq9.san?de
-  476657032 9ccda57af1f03305a92598fcf59ae9e8 gog_the_dig_german_1.0.0.6.deb
-  479717400 b8d70800590ac81e3f985cff1ce01925 setup_the_dig_german_2.0.0.3.exe
 
+ spanish dub: |
   94637770  1d8799802fb6853afdcb219d43221618 digvoice.bun?es
   229884    d890074bc15c6135868403e73c5f4f36 language.bnd?es
   11046     51ce7ed9ecdbbc294893c1e8f107070d video/digtxt.trs?es
@@ -1191,10 +301,7 @@ size_and_md5: |
   817292    9ba005658577546826ccf1a4e12b016c video/sq8c.san?es
   6141172   6c23b592651cabb12399a35f48f9b17b video/sq9.san?es
 
-  243358    9d8a140cc98d1e0aaa6c96f222b9f851 manual.pdf?es
-  467311898 6907a8f5cdb2aecd0acbe92b0507c76d gog_the_dig_spanish_1.0.0.6.deb
-  464886280 caf8f3be20612f5677c066deadc18363 setup_the_dig_spanish_2.0.0.3.exe
-
+ french dub: |
   127279161 69d9e7123e247a6ea1e0ccfde17b941b digvoice.bun?fr
   257460    04cf6a6ba6f57e517bc40eb81862cfb0 language.bnd?fr
   12178     5e65fc9d8434ad97d32dfe93970ffcc0 video/digtxt.trs?fr
@@ -1212,10 +319,7 @@ size_and_md5: |
   735408    b21f9669e9712af4df9a9736ca769a09 video/sq8c.san?fr
   6242902   d6f1a4830a71de7d45e8f616276f0d8e video/sq9.san?fr
 
-  183204    b9b6185d3db341c6a10363d791f95353 manual.pdf?fr
-  494838374 36b64400960b7399a3617e9cf914bc42 gog_the_dig_french_1.0.0.6.deb
-  492359088 f4bd21d71ce3f0ffa0a8c633ba791aa7 setup_the_dig_french_2.0.0.3.exe
-
+ italian dub: |
   94870448  ae803bbbdaf963bd5b586082fd609c10 digvoice.bun?it
   231402    93d13fcede954c78e65435592182a4db language.bnd?it
   10092     08f1844abd2774752ce8bee15623088f video/digtxt.trs?it
@@ -1233,131 +337,23 @@ size_and_md5: |
   771114    d81b433c79523b2d561637aae448dfca video/sq8c.san?it
   6156884   c0636515e213eb67e55e938a3699f126 video/sq9.san?it
 
+ archives: |
+  5753714   fb8fbc2a456ffee713fbc7acaeb0a9aa manual.pdf
+  1233682   333aa71eba077d563b002bfe609dc992 refcard.pdf
+  33854     f13cfbbe5ae7b4292a8a8b1950d4f24a end user license agreement.txt
+  485628672 22aa49f3373c9ed06d1f5ac5be999c61 gog_the_dig_1.0.0.5.deb
+  489276720 a36bda23af447deb5013780669a04a0c setup_the_dig_2.0.0.3.exe
+  476657032 9ccda57af1f03305a92598fcf59ae9e8 gog_the_dig_german_1.0.0.6.deb
+  479717400 b8d70800590ac81e3f985cff1ce01925 setup_the_dig_german_2.0.0.3.exe
+  243358    9d8a140cc98d1e0aaa6c96f222b9f851 manual.pdf?es
+  467311898 6907a8f5cdb2aecd0acbe92b0507c76d gog_the_dig_spanish_1.0.0.6.deb
+  464886280 caf8f3be20612f5677c066deadc18363 setup_the_dig_spanish_2.0.0.3.exe
+  183204    b9b6185d3db341c6a10363d791f95353 manual.pdf?fr
+  494838374 36b64400960b7399a3617e9cf914bc42 gog_the_dig_french_1.0.0.6.deb
+  492359088 f4bd21d71ce3f0ffa0a8c633ba791aa7 setup_the_dig_french_2.0.0.3.exe
   267940    6a596212534a7f3ae52369a2ec4ed535 manual.pdf?it
   464917228 e47c5201b0c1d2eae14fbce2fc4a6ed2 gog_the_dig_italian_1.0.0.6.deb
   462469504 670dc30764b63e7b541e725f807d4743 setup_the_dig_italian_2.0.0.3.exe
-
-cksums: |
-  _ 1170698   video/alcove.san
-  _ 3666166   video/asttun.san
-  _ 4458916   video/darkcave.san
-  _ 10723     video/digtxt.trs
-  _ 34738     video/font0.nut
-  _ 28302     video/font1.nut
-  _ 28302     video/font2.nut
-  _ 28302     video/font3.nut
-  _ 1133070   video/m1.san
-  _ 1048844   video/m2.san
-  _ 1247242   video/nexuspan.san
-  _ 985958    video/pigout.san
-  _ 3101990   video/rtram1.san
-  _ 2487412   video/rtram2.san
-  _ 2218278   video/rtram3.san
-  _ 2216398   video/rtram4.san
-  _ 2498222   video/rtram5.san
-  _ 50124786  video/sq1.san
-  _ 3329570   video/sq10.san
-  _ 1293120   video/sq11.san
-  _ 597552    video/sq12a.san
-  _ 1278822   video/sq12b.san
-  _ 2442166   video/sq13.san
-  _ 2542932   video/sq14b.san
-  _ 250728    video/sq14sc04.san
-  _ 187908    video/sq14sc07.san
-  _ 145026    video/sq14sc11.san
-  _ 127586    video/sq14sc14.san
-  _ 642050    video/sq14sc16.san
-  _ 709572    video/sq14sc19.san
-  _ 2564832   video/sq14sc22.san
-  _ 737334    video/sq15a.san
-  _ 1258754   video/sq15b.san
-  _ 10069120  video/sq17.san
-  _ 1852134   video/sq18a.san
-  _ 2423836   video/sq18b.san
-  _ 558258    video/sq18sc15.san
-  _ 792514    video/sq19a.san
-  _ 3913630   video/sq19b.san
-  _ 1116944   video/sq19c.san
-  _ 17759462  video/sq2.san
-  _ 12073682  video/sq3.san
-  _ 2379498   video/sq4.san
-  _ 2488802   video/sq5.san
-  _ 571106    video/sq6.san
-  _ 134950    video/sq6sc3.san
-  _ 1202256   video/sq7.san
-  _ 2066034   video/sq8a.san
-  _ 1451812   video/sq8a1.san
-  _ 339890    video/sq8b.san
-  _ 745084    video/sq8c.san
-  _ 6196368   video/sq9.san
-  _ 1127536   video/tombdwn1.san
-  _ 1141518   video/tombdwn2.san
-  _ 2179482   video/tram1.san
-  _ 2287880   video/tram2.san
-  _ 2842190   video/tram3.san
-  _ 2254998   video/tram4.san
-  _ 3400792   video/tram5.san
-
-md5sums: |
-  3c0b6bc3af3b7f5c80ff0ed0bf6f6926  video/alcove.san
-  ef0992dad809d4fe2e69b4dd9c0f6bce  video/asttun.san
-  158b3f10bcf51e7ec8eed118d171822b  video/darkcave.san
-  951c8cfc1089724c63e2433e8682a476  video/digtxt.trs
-  339268c9c839b4bb3094d3aaf34827d8  video/font0.nut
-  48efaacc7be8886a0f13125477e04d98  video/font1.nut
-  48efaacc7be8886a0f13125477e04d98  video/font2.nut
-  48efaacc7be8886a0f13125477e04d98  video/font3.nut
-  c58ba44c2b76d9dc10a6ccfc73df4f2e  video/m1.san
-  67835ca2d504370232281f77d6cf6d00  video/m2.san
-  ed56452de0059706ed30eb31d6874878  video/nexuspan.san
-  c36c93bbeab7b6331f7df5730080cede  video/pigout.san
-  9f81b110cc86b2f99dee2d33f22c93ac  video/rtram1.san
-  2fbd479d6423119821fdbcdd511a2911  video/rtram2.san
-  43b891129e5749e2a1cb604fa16dcfe8  video/rtram3.san
-  695c6b34a365ed6612dcc75752f193e3  video/rtram4.san
-  99f0e2b676e2d57b221c38cb01952e5f  video/rtram5.san
-  aeffce448ef3193110dab71d7cc27c15  video/sq1.san
-  a560d040b291665e5cc3d063b7f4d421  video/sq10.san
-  e1764b1cad5408e4e374bd1078227978  video/sq11.san
-  edf245a7bfaf1b9bf99068a3c85cfd5c  video/sq12a.san
-  efb0947637d76b2bbc9fae9c5aaccd32  video/sq12b.san
-  99d5aef79f2a115dbbbc50864320319f  video/sq13.san
-  727c6839335730577a02569c89f9c77f  video/sq14b.san
-  31955a152dc9fc8f4e94f8223c5860b2  video/sq14sc04.san
-  b92ab83ca93022b3e668acf52e1b6be3  video/sq14sc07.san
-  585eba90fbaf2964cdfb04859fbac0f1  video/sq14sc11.san
-  6507ed0fb01c1a979094d0823132a222  video/sq14sc14.san
-  e1c555da4048a3845d421ef1bbad50ed  video/sq14sc16.san
-  8f3f39b3c28847764ef708d8fbf2c46d  video/sq14sc19.san
-  d9bfa1bf1009e8cec0f9849a3e323552  video/sq14sc22.san
-  c8caef32ef5fdd821a66bb8bbb11e34a  video/sq15a.san
-  3bc026bfc00b3d5f9cbe655c05f6ff24  video/sq15b.san
-  db18293e7c5994b4e455fe1ffe66ce7c  video/sq17.san
-  ee8a37f13be13fda72d3facb26c9502d  video/sq18a.san
-  d2ab8f569c3ac40bef15ea2ea3d9475b  video/sq18b.san
-  a4232741fe6367960477f6ecf66f592e  video/sq18sc15.san
-  287e3b618f1041a780bf0d6bd3e15578  video/sq19a.san
-  75b4974a0586b60b9dd3419b51c79d93  video/sq19b.san
-  2d20922b302dd33a0019748e1f40be3c  video/sq19c.san
-  2bd8d22069743c996281bd5aa4c33040  video/sq2.san
-  eca489a95b8ef9ef71073811d085fe9b  video/sq3.san
-  5de97c5d489c378e9572156773705378  video/sq4.san
-  285dd8374a40748d82dc3d75f24287c4  video/sq5.san
-  76ebd6d99d64f2d5f67f3c803339d6da  video/sq6.san
-  2e489540e9d6f98c7ecc05c2328d55f3  video/sq6sc3.san
-  991e2aa3582f5bc17fc17df36e0bd64a  video/sq7.san
-  d32d9de026d0da5b74e59c59793d5b89  video/sq8a.san
-  b71ca38a5c5f0bacbb6ba231bf687307  video/sq8a1.san
-  e5967aecb076d50b5c63cb5e9cc4edc2  video/sq8b.san
-  f34166f263f8426d4ac7e8134293a3e5  video/sq8c.san
-  7839719fc9a961a5e7b52acfc716f589  video/sq9.san
-  3b06b1c0a78b2e055955ab984f092e5b  video/tombdwn1.san
-  2ed1e0527b80570715235b2b1b67a394  video/tombdwn2.san
-  6b2a8b29e19e8f532e261ff76ea995e1  video/tram1.san
-  9f28496c33e124e5952e0d8d231d0b87  video/tram2.san
-  d8144ad6006994aceaffcd73928a2612  video/tram3.san
-  0611c4d4d2f1c30ee7d73b89bcbe5e40  video/tram4.san
-  053f6d8688b6d628f43b7b9a376a464a  video/tram5.san
 
 sha1sums: |
   29cc9da6aefb3941f21ac2bce9bd3e0f5af18ca8  gog_the_dig_1.0.0.5.deb
