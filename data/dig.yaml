@@ -19,7 +19,7 @@ packages:
     install:
     - shared assets
     - english version
-    optional:
+    doc:
     - manual.pdf
     - refcard.pdf
     license:
@@ -33,7 +33,7 @@ packages:
     install:
     - shared assets
     - german dub
-    optional:
+    doc:
     - manual.pdf
     - refcard.pdf
     license:
@@ -47,7 +47,7 @@ packages:
     install:
     - shared assets
     - spanish dub
-    optional:
+    doc:
     - manual.pdf?es
     - refcard.pdf
     license:
@@ -61,7 +61,7 @@ packages:
     install:
     - shared assets
     - french dub
-    optional:
+    doc:
     - manual.pdf?fr
     - refcard.pdf
     license:
@@ -75,7 +75,7 @@ packages:
     install:
     - shared assets
     - italian dub
-    optional:
+    doc:
     - manual.pdf?it
     - refcard.pdf
     license:
@@ -83,10 +83,8 @@ packages:
 
 files:
   manual.pdf:
-    install_to: $docdir
     look_for: [manual.pdf,the dig - manual.pdf]
   refcard.pdf:
-    install_to: $docdir
     look_for: [refcard.pdf,the dig - quick reference card.pdf]
 
   setup_the_dig_2.0.0.3.exe:
@@ -128,7 +126,6 @@ files:
     - end user license agreement.txt
 
   manual.pdf?es:
-    install_to: $docdir
     look_for: [manual.pdf,manual_spanish.pdf]
 
   setup_the_dig_spanish_2.0.0.3.exe:
@@ -151,7 +148,6 @@ files:
     - end user license agreement.txt
 
   manual.pdf?fr:
-    install_to: $docdir
     look_for: [manual.pdf,manual_french.pdf]
 
   setup_the_dig_french_2.0.0.3.exe:
@@ -174,7 +170,6 @@ files:
     - end user license agreement.txt
 
   manual.pdf?it:
-    install_to: $docdir
     look_for: [manual.pdf,manual_italian.pdf]
 
   setup_the_dig_italian_2.0.0.3.exe:
