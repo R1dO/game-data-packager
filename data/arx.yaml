@@ -30,48 +30,10 @@ packages:
     gog:
       url: arx_fatalis
     install:
-    - data2.pak
-    - graph/interface/misc/arkane.bmp
-    - graph/interface/misc/quit1.bmp
-    - graph/obj3d/textures/fixinter_barrel.jpg
-    - graph/obj3d/textures/fixinter_bell.bmp
-    - graph/obj3d/textures/fixinter_metal_door.jpg
-    - graph/obj3d/textures/fixinter_public_notice.bmp
-    - graph/obj3d/textures/item_bread.bmp
-    - graph/obj3d/textures/item_club.jpg
-    - graph/obj3d/textures/item_long_sword.jpg
-    - graph/obj3d/textures/item_mauld_sabre.jpg
-    - graph/obj3d/textures/item_mauldsword.jpg
-    - graph/obj3d/textures/item_mirror.jpg
-    - graph/obj3d/textures/item_ring_casting.bmp
-    - graph/obj3d/textures/item_rope.bmp
-    - graph/obj3d/textures/item_spell_sheet.jpg
-    - graph/obj3d/textures/item_torch.jpg
-    - graph/obj3d/textures/item_torch2.jpg
-    - graph/obj3d/textures/item_zohark.bmp
-    - graph/obj3d/textures/l7_dwarf_[wood]_board08.jpg
-    - graph/obj3d/textures/l7_dwarf_[wood]_board80.jpg
-    - graph/obj3d/textures/npc_dog.bmp
-    - graph/obj3d/textures/npc_pig.bmp
-    - graph/obj3d/textures/npc_pig_dirty.bmp
-    - graph/obj3d/textures/npc_rat_base.bmp
-    - graph/obj3d/textures/npc_rat_base_cm.bmp
-    - graph/obj3d/textures/npc_worm_body_part1.jpg
-    - graph/obj3d/textures/npc_worm_body_part2.bmp
-    - graph/obj3d/textures/[wood]_light_door.jpg
-    - misc/arx_russian.ttf
-    - misc/arx_taiwanese.ttf
-    - misc/logo.avi
-    - misc/logo.bmp
-    # localized files
-    - arx.ttf?latin
-    - sfx.pak
-    - data.pak
-    - loc.pak
-    - speech.pak
-    optional:
-    - map.pdf
-    - manual.pdf
+    - assets from disc
+    - patch 1.21
+    doc:
+    - documentation
 
   arx-fatalis-demo-en-data:
     install_to: usr/share/games/arx
@@ -85,9 +47,7 @@ packages:
     - data.pak?demo_latin
     - logo.bmp?demo
     - sfx.pak?demo
-    - data2.pak?demo_en
-    - loc.pak?demo_en
-    - speech.pak?demo_en
+    - demo en
 
   arx-fatalis-demo-fr-data:
     lang: fr
@@ -103,9 +63,7 @@ packages:
     - data.pak?demo_latin
     - logo.bmp?demo
     - sfx.pak?demo
-    - data2.pak?demo_fr
-    - loc.pak?demo_fr
-    - speech.pak?demo_fr
+    - demo fr
 
   arx-fatalis-demo-de-data:
     lang: de
@@ -121,9 +79,7 @@ packages:
     - data.pak?demo_latin
     - logo.bmp?demo
     - sfx.pak?demo
-    - data2.pak?demo_de
-    - loc.pak?demo_de
-    - speech.pak?demo_de
+    - demo de
 
   arx-fatalis-demo-ja-data:
     lang: ja
@@ -135,13 +91,10 @@ packages:
     provides: arx-fatalis-demo-data
     mutually_exclusive: True
     install:
-    - arx.ttf?ja
-    - data.pak?demo_ja
     - logo.bmp?demo
     - sfx.pak?demo
     - data2.pak?demo_en
-    - loc.pak?demo_ja
-    - speech.pak?demo_ja
+    - demo ja
 
 files:
   # FULL VERSION
@@ -153,96 +106,21 @@ files:
     install_as: misc/arx.ttf
   misc/logo.bmp:
     look_for: [logo.bmp]
-  manual.pdf:
-    install_to: $docdir
-  map.pdf:
-    install_to: $docdir
+
   setup_arx_fatalis.exe:
     unpack:
       format: innoextract
     provides:
-    - data2.pak
-    - graph/interface/misc/arkane.bmp
-    - graph/interface/misc/quit1.bmp
-    - graph/obj3d/textures/fixinter_barrel.jpg
-    - graph/obj3d/textures/fixinter_bell.bmp
-    - graph/obj3d/textures/fixinter_metal_door.jpg
-    - graph/obj3d/textures/fixinter_public_notice.bmp
-    - graph/obj3d/textures/item_bread.bmp
-    - graph/obj3d/textures/item_club.jpg
-    - graph/obj3d/textures/item_long_sword.jpg
-    - graph/obj3d/textures/item_mauld_sabre.jpg
-    - graph/obj3d/textures/item_mauldsword.jpg
-    - graph/obj3d/textures/item_mirror.jpg
-    - graph/obj3d/textures/item_ring_casting.bmp
-    - graph/obj3d/textures/item_rope.bmp
-    - graph/obj3d/textures/item_spell_sheet.jpg
-    - graph/obj3d/textures/item_torch.jpg
-    - graph/obj3d/textures/item_torch2.jpg
-    - graph/obj3d/textures/item_zohark.bmp
-    - graph/obj3d/textures/l7_dwarf_[wood]_board08.jpg
-    - graph/obj3d/textures/l7_dwarf_[wood]_board80.jpg
-    - graph/obj3d/textures/npc_dog.bmp
-    - graph/obj3d/textures/npc_pig.bmp
-    - graph/obj3d/textures/npc_pig_dirty.bmp
-    - graph/obj3d/textures/npc_rat_base.bmp
-    - graph/obj3d/textures/npc_rat_base_cm.bmp
-    - graph/obj3d/textures/npc_worm_body_part1.jpg
-    - graph/obj3d/textures/npc_worm_body_part2.bmp
-    - graph/obj3d/textures/[wood]_light_door.jpg
-    - arx.ttf?latin
-    - misc/arx_russian.ttf
-    - misc/arx_taiwanese.ttf
-    - misc/logo.avi
-    - misc/logo.bmp
-    - sfx.pak
-    - data.pak
-    - loc.pak
-    - speech.pak
-    - map.pdf
-    - manual.pdf
+    - assets from disc
+    - patch 1.21
+    - documentation
   ArxFatalis_1.21_MULTILANG.exe:
     download: http://arx.vg/ArxFatalis_1.21_MULTILANG.exe
     unpack:
       format: innoextract
     provides:
-    - data2.pak
-    - graph/interface/misc/arkane.bmp
-    - graph/interface/misc/quit1.bmp
-    - graph/obj3d/textures/[wood]_light_door.jpg
-    - graph/obj3d/textures/fixinter_barrel.jpg
-    - graph/obj3d/textures/fixinter_bell.bmp
-    - graph/obj3d/textures/fixinter_metal_door.jpg
-    - graph/obj3d/textures/fixinter_public_notice.bmp
-    - graph/obj3d/textures/item_bread.bmp
-    - graph/obj3d/textures/item_club.jpg
-    - graph/obj3d/textures/item_long_sword.jpg
-    - graph/obj3d/textures/item_mauld_sabre.jpg
-    - graph/obj3d/textures/item_mauldsword.jpg
-    - graph/obj3d/textures/item_mirror.jpg
-    - graph/obj3d/textures/item_ring_casting.bmp
-    - graph/obj3d/textures/item_rope.bmp
-    - graph/obj3d/textures/item_spell_sheet.jpg
-    - graph/obj3d/textures/item_torch.jpg
-    - graph/obj3d/textures/item_torch2.jpg
-    - graph/obj3d/textures/item_zohark.bmp
-    - graph/obj3d/textures/l7_dwarf_[wood]_board08.jpg
-    - graph/obj3d/textures/l7_dwarf_[wood]_board80.jpg
-    - graph/obj3d/textures/npc_dog.bmp
-    - graph/obj3d/textures/npc_pig.bmp
-    - graph/obj3d/textures/npc_pig_dirty.bmp
-    - graph/obj3d/textures/npc_rat_base.bmp
-    - graph/obj3d/textures/npc_rat_base_cm.bmp
-    - graph/obj3d/textures/npc_worm_body_part1.jpg
-    - graph/obj3d/textures/npc_worm_body_part2.bmp
-    - arx.ttf?latin
-    - misc/arx_russian.ttf
-    - misc/arx_taiwanese.ttf
-    - misc/logo.avi
-    - misc/logo.bmp
-    - loc.pak
-    - map.pdf
-    - manual.pdf
+    - patch 1.21
+    - documentation
 
   # DEMO
   logo.bmp?demo:
@@ -366,12 +244,10 @@ files:
       groups: ['PAK', 'misc']
     provides:
     - arx.ttf?ja
-    - data.pak?demo_ja
     - logo.bmp?demo
     - sfx.pak?demo
     - data2.pak?demo_en
-    - loc.pak?demo_ja
-    - speech.pak?demo_ja
+    - demo ja
   arx_jpn_demo.exe:
     # this is exactly the same setup in ja.yaml,
     # maybe there is a pattern here
@@ -382,175 +258,97 @@ files:
     - data1.cab
     - data1.hdr
     - data2.cab
+groups:
+  archives: |
+    547521812 0dd8ec13c10146db1a741258b624040a setup_arx_fatalis.exe
+    9064611   364c405b26d3c480d516724010c7ecac ArxFatalis_1.21_MULTILANG.exe
+    101581207 3e278f028612139446fd5465b98796a2 Setup1.cab?en
+    23103162  addfa902158c46e3510f42f3eea5274a Setup2.cab
+    28787575  63d2e7f1b6b8125175c25bd1474700bd Setup3.cab?en
+    160545354 3c59a5799e1237b1b181c96e8c09155a arx_demo_english.zip
+    161706042 fd03149f402b84d23145b39d12403dc8 arx_demo_english.exe
 
-cksums: |
-  # FULL VERSION
-  _ 36992     arx.ttf?latin
-  _ 4077060   arx.ttf?ja
-  _ 2215016   data2.pak
-  _ 921654    graph/interface/misc/arkane.bmp
-  _ 921658    graph/interface/misc/quit1.bmp
-  _ 8664      graph/obj3d/textures/fixinter_barrel.jpg
-  _ 98358     graph/obj3d/textures/fixinter_bell.bmp
-  _ 7576      graph/obj3d/textures/fixinter_metal_door.jpg
-  _ 49206     graph/obj3d/textures/fixinter_public_notice.bmp
-  _ 49206     graph/obj3d/textures/item_bread.bmp
-  _ 1842      graph/obj3d/textures/item_club.jpg
-  _ 2171      graph/obj3d/textures/item_long_sword.jpg
-  _ 9528      graph/obj3d/textures/item_mauld_sabre.jpg
-  _ 9223      graph/obj3d/textures/item_mauldsword.jpg
-  _ 2341      graph/obj3d/textures/item_mirror.jpg
-  _ 24630     graph/obj3d/textures/item_ring_casting.bmp
-  _ 49206     graph/obj3d/textures/item_rope.bmp
-  _ 4900      graph/obj3d/textures/item_spell_sheet.jpg
-  _ 1751      graph/obj3d/textures/item_torch.jpg
-  _ 2622      graph/obj3d/textures/item_torch2.jpg
-  _ 24630     graph/obj3d/textures/item_zohark.bmp
-  _ 1327      graph/obj3d/textures/l7_dwarf_[wood]_board08.jpg
-  _ 1695      graph/obj3d/textures/l7_dwarf_[wood]_board80.jpg
-  _ 196662    graph/obj3d/textures/npc_dog.bmp
-  _ 196662    graph/obj3d/textures/npc_pig.bmp
-  _ 196662    graph/obj3d/textures/npc_pig_dirty.bmp
-  _ 196662    graph/obj3d/textures/npc_rat_base.bmp
-  _ 196662    graph/obj3d/textures/npc_rat_base_cm.bmp
-  _ 16338     graph/obj3d/textures/npc_worm_body_part1.jpg
-  _ 196662    graph/obj3d/textures/npc_worm_body_part2.bmp
-  _ 13040     graph/obj3d/textures/[wood]_light_door.jpg
-  _ 58988     misc/arx_russian.ttf
-  _ 4279576   misc/arx_taiwanese.ttf
-  _ 2460050   misc/logo.avi
-  _ 921654    misc/logo.bmp
-  _ 45192372  sfx.pak
+    101581207 ffaac792590dac3400561d95d0abcc85 Setup1.cab?fr
+    29021613  6b7a1e89020d3ece8c42d0e5e234ebb4 Setup3.cab?fr
+    161860761 28338bb5810d4a585b86d947eb6a2b74 arx_fatalis_demo_fr.zip
 
-  _ 244011475 data.pak
-  _ 209865    loc.pak
-  _ 350412913 speech.pak
+    101581207 0c61679ff3315d13e6c300308ad09b2c Setup1.cab?de
+    23103162  8c15a78abcd9e1875fc658615c903c9a Setup2.cab?de
+    31150491  1269eb4a7edb54cbd15dd143fc5749e8 Setup3.cab?de
+    164018721 1a666170e1605310ca69204eae80e806 arx_demo_german.exe
 
-  _ 974519    manual.pdf
-  _ 175136    map.pdf
-  _ 547521812 setup_arx_fatalis.exe
-  _ 9064611   ArxFatalis_1.21_MULTILANG.exe
+    469156    03a13aebc5ceb90ddfcc02e8ec826229 data1.cab
+    13039     f888e19aac2c843adc8e777dacf7a402 data1.hdr
+    168439416 c7824fc2c9d63142c29e52f12741b777 data2.cab
+    167181063 00aa3aeccb54c885ccc3ef60644d697e arx_jpn_demo.exe
 
-  # DEMO
-  _ 110965070 data.pak?demo_latin
-  _ 110916288 data.pak?demo_ja
-  _ 921654    logo.bmp?demo
-  _ 31995270  sfx.pak?demo
+  assets from disc: |
+    244011475 a91a0b39a046233debbb10b4850e13eb data.pak
+    45192372  2efc9a74c517fd1ee9919900cf4091d2 sfx.pak
+    350412913 4e8f962d8204bcfd79ce6f3226d6d6de speech.pak
 
-  _ 1696636   data2.pak?demo_en
-  _ 195248    loc.pak?demo_en
-  _ 39758530  speech.pak?demo_en
-  _ 101581207 Setup1.cab?en
-  _ 23103162  Setup2.cab
-  _ 28787575  Setup3.cab?en
-  _ 160545354 arx_demo_english.zip
-  _ 161706042 arx_demo_english.exe
+  patch 1.21: |
+    2215016   f7e0ce700bf963429ac535ca86f8a7b4 data2.pak
+    209865    a47b192493afb5794e2161a62d35b69f loc.pak
+    36992     9a95ff96795c034524ba1c2e94ea12c7 arx.ttf?latin
+    58988     921561e83786efcd25f92147b60a13db misc/arx_russian.ttf
+    4279576   da59198061cef0761c6b2fca113f76f6 misc/arx_taiwanese.ttf
+    2460050   63ed31a4eb3d226c23e58cfaa974d484 misc/logo.avi
+    921654    afff1099c01ffeb03b9a351f7b5966b6 misc/logo.bmp
+    921654    afff1099c01ffeb03b9a351f7b5966b6 graph/interface/misc/arkane.bmp
+    921658    41445d3792a1f8818d950aca47254488 graph/interface/misc/quit1.bmp
+    8664      8419274acbff7346c3661b18d6aad6dc graph/obj3d/textures/fixinter_barrel.jpg
+    98358     5743b9047c9ad65540c318dfcc98123a graph/obj3d/textures/fixinter_bell.bmp
+    7576      f246eff6b19c9c710313b4a4dce96a69 graph/obj3d/textures/fixinter_metal_door.jpg
+    49206     f81394abbb9006ce0950843b7909db33 graph/obj3d/textures/fixinter_public_notice.bmp
+    49206     544448f8eedc912aa231a6a04fffb7c5 graph/obj3d/textures/item_bread.bmp
+    1842      7e26c4199ddaca494c8b369294306b0b graph/obj3d/textures/item_club.jpg
+    2171      3a6196fe9b7666c7d80d82be06f6de86 graph/obj3d/textures/item_long_sword.jpg
+    9528      18492c25ebac02f83e2f0ebda61ecb00 graph/obj3d/textures/item_mauld_sabre.jpg
+    9223      503a5c2f23668040c675aefdde6dbbe5 graph/obj3d/textures/item_mauldsword.jpg
+    2341      c0a22b4f7a7a6461da68206e94928637 graph/obj3d/textures/item_mirror.jpg
+    24630     348f9add709bacee08556d1f8cf10f3f graph/obj3d/textures/item_ring_casting.bmp
+    49206     ff05de281c8b380ee98f6e123d3d51cb graph/obj3d/textures/item_rope.bmp
+    4900      024ccbb520020f92fba5a5a4f0270cea graph/obj3d/textures/item_spell_sheet.jpg
+    1751      9ada166f23ddcb775ac20836e752187e graph/obj3d/textures/item_torch.jpg
+    2622      027951899b4829599ca611010ea3484f graph/obj3d/textures/item_torch2.jpg
+    24630     cd206a4027f86c6e57b7710c94049efa graph/obj3d/textures/item_zohark.bmp
+    1327      79ccc81adb7c37b98f40b478ef1fccd4 graph/obj3d/textures/l7_dwarf_[wood]_board08.jpg
+    1695      691611087b13d38ef02bb9dfd6a2518e graph/obj3d/textures/l7_dwarf_[wood]_board80.jpg
+    196662    116bd374c14ae8c387a4da1899e1dca7 graph/obj3d/textures/npc_dog.bmp
+    196662    b7a4d0d3d230b2d1470176909004e38b graph/obj3d/textures/npc_pig.bmp
+    196662    76034d8d74056c8a982479d36321c228 graph/obj3d/textures/npc_pig_dirty.bmp
+    196662    00c585ec9ebe8006d7ca72993de7b51b graph/obj3d/textures/npc_rat_base.bmp
+    196662    cae38facbf77db742180b9e58d0eb42f graph/obj3d/textures/npc_rat_base_cm.bmp
+    16338     0b220bffaedc89fa663f08d12630c342 graph/obj3d/textures/npc_worm_body_part1.jpg
+    196662    20797cb78f6393a0fb5405969ba9f805 graph/obj3d/textures/npc_worm_body_part2.bmp
+    13040     00d0b018e995e7d013d6e52e92126901 graph/obj3d/textures/[wood]_light_door.jpg
 
-  _ 1696259   data2.pak?demo_fr
-  _ 206236    loc.pak?demo_fr
-  _ 38909891  speech.pak?demo_fr
-  _ 101581207 Setup1.cab?fr
-  _ 29021613  Setup3.cab?fr
-  _ 161860761 arx_fatalis_demo_fr.zip
+  documentation: |
+    974519    7a6038e0397e2319aea5d8dc408d5da8 manual.pdf
+    175136    3502c76227df6bbd8637d5355e270cc2 map.pdf
 
-  _ 1634993   data2.pak?demo_de
-  _ 207687    loc.pak?demo_de
-  _ 41487810  speech.pak?demo_de
-  _ 101581207 Setup1.cab?de
-  _ 23103162  Setup2.cab?de
-  _ 31150491  Setup3.cab?de
-  _ 164018721 arx_demo_german.exe
-
-  _ 35627176  speech.pak?demo_ja
-  _ 150956    loc.pak?demo_ja
-  _ 469156    data1.cab
-  _ 13039     data1.hdr
-  _ 168439416 data2.cab
-  _ 167181063 arx_jpn_demo.exe
-
-md5sums: |
-  # FULL VERSION
-  9a95ff96795c034524ba1c2e94ea12c7  arx.ttf?latin
-  58eab00842d8adea8d553ae1f66b0c9b  arx.ttf?ja
-  f7e0ce700bf963429ac535ca86f8a7b4  data2.pak
-  afff1099c01ffeb03b9a351f7b5966b6  graph/interface/misc/arkane.bmp
-  41445d3792a1f8818d950aca47254488  graph/interface/misc/quit1.bmp
-  8419274acbff7346c3661b18d6aad6dc  graph/obj3d/textures/fixinter_barrel.jpg
-  5743b9047c9ad65540c318dfcc98123a  graph/obj3d/textures/fixinter_bell.bmp
-  f246eff6b19c9c710313b4a4dce96a69  graph/obj3d/textures/fixinter_metal_door.jpg
-  f81394abbb9006ce0950843b7909db33  graph/obj3d/textures/fixinter_public_notice.bmp
-  544448f8eedc912aa231a6a04fffb7c5  graph/obj3d/textures/item_bread.bmp
-  7e26c4199ddaca494c8b369294306b0b  graph/obj3d/textures/item_club.jpg
-  3a6196fe9b7666c7d80d82be06f6de86  graph/obj3d/textures/item_long_sword.jpg
-  18492c25ebac02f83e2f0ebda61ecb00  graph/obj3d/textures/item_mauld_sabre.jpg
-  503a5c2f23668040c675aefdde6dbbe5  graph/obj3d/textures/item_mauldsword.jpg
-  c0a22b4f7a7a6461da68206e94928637  graph/obj3d/textures/item_mirror.jpg
-  348f9add709bacee08556d1f8cf10f3f  graph/obj3d/textures/item_ring_casting.bmp
-  ff05de281c8b380ee98f6e123d3d51cb  graph/obj3d/textures/item_rope.bmp
-  024ccbb520020f92fba5a5a4f0270cea  graph/obj3d/textures/item_spell_sheet.jpg
-  9ada166f23ddcb775ac20836e752187e  graph/obj3d/textures/item_torch.jpg
-  027951899b4829599ca611010ea3484f  graph/obj3d/textures/item_torch2.jpg
-  cd206a4027f86c6e57b7710c94049efa  graph/obj3d/textures/item_zohark.bmp
-  79ccc81adb7c37b98f40b478ef1fccd4  graph/obj3d/textures/l7_dwarf_[wood]_board08.jpg
-  691611087b13d38ef02bb9dfd6a2518e  graph/obj3d/textures/l7_dwarf_[wood]_board80.jpg
-  116bd374c14ae8c387a4da1899e1dca7  graph/obj3d/textures/npc_dog.bmp
-  b7a4d0d3d230b2d1470176909004e38b  graph/obj3d/textures/npc_pig.bmp
-  76034d8d74056c8a982479d36321c228  graph/obj3d/textures/npc_pig_dirty.bmp
-  00c585ec9ebe8006d7ca72993de7b51b  graph/obj3d/textures/npc_rat_base.bmp
-  cae38facbf77db742180b9e58d0eb42f  graph/obj3d/textures/npc_rat_base_cm.bmp
-  0b220bffaedc89fa663f08d12630c342  graph/obj3d/textures/npc_worm_body_part1.jpg
-  20797cb78f6393a0fb5405969ba9f805  graph/obj3d/textures/npc_worm_body_part2.bmp
-  00d0b018e995e7d013d6e52e92126901  graph/obj3d/textures/[wood]_light_door.jpg
-  921561e83786efcd25f92147b60a13db  misc/arx_russian.ttf
-  da59198061cef0761c6b2fca113f76f6  misc/arx_taiwanese.ttf
-  63ed31a4eb3d226c23e58cfaa974d484  misc/logo.avi
-  afff1099c01ffeb03b9a351f7b5966b6  misc/logo.bmp
-  2efc9a74c517fd1ee9919900cf4091d2  sfx.pak
-
-  a91a0b39a046233debbb10b4850e13eb  data.pak
-  a47b192493afb5794e2161a62d35b69f  loc.pak
-  4e8f962d8204bcfd79ce6f3226d6d6de  speech.pak
-  7a6038e0397e2319aea5d8dc408d5da8  manual.pdf
-  3502c76227df6bbd8637d5355e270cc2  map.pdf
-  0dd8ec13c10146db1a741258b624040a  setup_arx_fatalis.exe
-  364c405b26d3c480d516724010c7ecac  ArxFatalis_1.21_MULTILANG.exe
-
-  # DEMO
-  5d7ba6e6c79ebf7fbb232eaced9e8ad9  data.pak?demo_latin
-  903dfe1878a0cedff3b941fd3aa22ba9  data.pak?demo_ja
-  aa3dfbd4bc9c863d10a0c5345ae5a4c9  logo.bmp?demo
-  ea1b3e6d6f4906905d4a34f07e9a59ac  sfx.pak?demo
-
-  958b78f8f370b06d769843137138c461  data2.pak?demo_en
-  2ae16d3925c597dca70f960f175def3a  loc.pak?demo_en
-  62ca7b1751c0615ee131a94f0856b389  speech.pak?demo_en
-  3e278f028612139446fd5465b98796a2  Setup1.cab?en
-  addfa902158c46e3510f42f3eea5274a  Setup2.cab
-  63d2e7f1b6b8125175c25bd1474700bd  Setup3.cab?en
-  3c59a5799e1237b1b181c96e8c09155a  arx_demo_english.zip
-  fd03149f402b84d23145b39d12403dc8  arx_demo_english.exe
-
-  8dc1d1b3e85d4a41ae320aa3fa9c649a  data2.pak?demo_fr
-  4a8ac68341d4758a32d9cd04955b115e  loc.pak?demo_fr
-  09038e43508232c44537c162f9e3ecde  speech.pak?demo_fr
-  ffaac792590dac3400561d95d0abcc85  Setup1.cab?fr
-  6b7a1e89020d3ece8c42d0e5e234ebb4  Setup3.cab?fr
-  28338bb5810d4a585b86d947eb6a2b74  arx_fatalis_demo_fr.zip
-
-  143ba491a357263a2dfad9936a66eeb6  data2.pak?demo_de
-  87accec0658aa109a3efa8b41aab61df  loc.pak?demo_de
-  a424fcfc46dd4f11b04030efac15a668  speech.pak?demo_de
-  0c61679ff3315d13e6c300308ad09b2c  Setup1.cab?de
-  8c15a78abcd9e1875fc658615c903c9a  Setup2.cab?de
-  1269eb4a7edb54cbd15dd143fc5749e8  Setup3.cab?de
-  1a666170e1605310ca69204eae80e806  arx_demo_german.exe
-
-  9d84cede805b13fdf7fce856ecc15b19  loc.pak?demo_ja
-  eeacbd9a845ecc00054934e82e9d7dd3  speech.pak?demo_ja
-  03a13aebc5ceb90ddfcc02e8ec826229  data1.cab
-  f888e19aac2c843adc8e777dacf7a402  data1.hdr
-  c7824fc2c9d63142c29e52f12741b777  data2.cab
-  00aa3aeccb54c885ccc3ef60644d697e  arx_jpn_demo.exe
+  demo shared: |
+    110965070 5d7ba6e6c79ebf7fbb232eaced9e8ad9 data.pak?demo_latin
+    921654    aa3dfbd4bc9c863d10a0c5345ae5a4c9 logo.bmp?demo
+    31995270  ea1b3e6d6f4906905d4a34f07e9a59ac sfx.pak?demo
+  demo en: |
+    1696636   958b78f8f370b06d769843137138c461 data2.pak?demo_en
+    195248    2ae16d3925c597dca70f960f175def3a loc.pak?demo_en
+    39758530  62ca7b1751c0615ee131a94f0856b389 speech.pak?demo_en
+  demo de: |
+    1634993   143ba491a357263a2dfad9936a66eeb6 data2.pak?demo_de
+    207687    87accec0658aa109a3efa8b41aab61df loc.pak?demo_de
+    41487810  a424fcfc46dd4f11b04030efac15a668 speech.pak?demo_de
+  demo fr: |
+    1696259   8dc1d1b3e85d4a41ae320aa3fa9c649a data2.pak?demo_fr
+    206236    4a8ac68341d4758a32d9cd04955b115e loc.pak?demo_fr
+    38909891  09038e43508232c44537c162f9e3ecde speech.pak?demo_fr
+  demo ja: |
+    110916288 903dfe1878a0cedff3b941fd3aa22ba9 data.pak?demo_ja
+    35627176  eeacbd9a845ecc00054934e82e9d7dd3 speech.pak?demo_ja
+    150956    9d84cede805b13fdf7fce856ecc15b19 loc.pak?demo_ja
+    4077060   58eab00842d8adea8d553ae1f66b0c9b arx.ttf?ja
 
 sha1sums: |
   3dd15c2c80fdd2b232d401b63dc7e99fbeb4430e  arx.ttf?latin
