@@ -1738,8 +1738,9 @@ class PackagingTask(object):
 
         # dependencies derived from *other* package's data
         for other_package in self.game.packages.values():
-            if other_package.expansion_for == package.name:
-                dep['suggests'].add(other_package.name)
+            if (other_package.expansion_for and
+             other_package.expansion_for in (package.name, package.provides)):
+                    dep['suggests'].add(other_package.name)
             if other_package.mutually_exclusive:
                 if other_package.better_version == package.name:
                     dep['replaces'].add(other_package.name)
@@ -1788,7 +1789,7 @@ class PackagingTask(object):
 
         if package.section == 'doc':
             long_desc += '  Documentation: ' + longname + '\n'
-        elif package.expansion_for:
+        elif package.expansion_for and package.expansion_for in self.game.packages:
             game_name = (self.game.packages[package.expansion_for].longname
                          or self.game.longname)
             long_desc += '  Game: ' + game_name + '\n'
@@ -2284,7 +2285,8 @@ class PackagingTask(object):
 
         for package in set(possible):
             if (package.expansion_for
-              and self.game.packages[package.expansion_for] not in possible
+              and (package.expansion_for not in self.game.packages
+                   or  self.game.packages[package.expansion_for] not in possible)
               and not PACKAGE_CACHE.is_installed(package.expansion_for)):
                 for fullgame in possible:
                     if fullgame.type == 'full':

@@ -1148,8 +1148,13 @@ class GameData(object):
             # check internal depedencies
             for demo_for_item in package.demo_for:
                 assert demo_for_item in self.packages, demo_for_item
-            assert (not package.expansion_for or
-              package.expansion_for in self.packages), package.expansion_for
+            if package.expansion_for:
+                if package.expansion_for not in self.packages:
+                    for p in self.packages.values():
+                        if package.expansion_for == p.provides:
+                            break
+                    else:
+                        raise Exception('virtual pkg %s not found' % package.expansion_for)
             assert (not package.better_version or
               package.better_version in self.packages), package.better_version
 
