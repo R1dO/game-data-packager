@@ -12,6 +12,7 @@ genre: Strategy
 packages:
   warcraft2-en-data:
     provides: warcraft2-data
+    mutually_exclusive: True
     install_to: usr/share/games/stratagus/wargus
     install:
     - shared assets
@@ -20,6 +21,7 @@ packages:
 
   warcraft2-fr-data:
     provides: warcraft2-data
+    mutually_exclusive: True
     lang: fr
     install_to: usr/share/games/stratagus/wargus
     install:
@@ -154,18 +156,6 @@ groups:
     3         0b0ec9f1cc28b3c19dc6c36dcd5af7cc extracted
   french version: |
     1356      f0dd0507b03882fe703c54ae96cdeec1 campaigns/credits.txt.gz
-    2256      8e04cca1778a747920df227a9597b974 campaigns/human-exp/levelx01h_c.sms
-    1312      666d382f1a01a3e885099f8a619cd699 campaigns/human-exp/levelx02h_c.sms
-    1190      f121c58c7599c5b5d8c713e92ef56594 campaigns/human-exp/levelx03h_c.sms
-    1010      50d19df8e27063dc3bbea13b0b10ff69 campaigns/human-exp/levelx04h_c.sms
-    1312      6182df1db18fd402e66904c7e56f58cf campaigns/human-exp/levelx05h_c.sms
-    1791      3dc620731addb4525d26d454a971bdd4 campaigns/human-exp/levelx06h_c.sms
-    2492      6048c2f30d39a00399147b36e89a420b campaigns/human-exp/levelx07h_c.sms
-    982       b1aa3c174f6e0aa7ec21320c7cef695c campaigns/human-exp/levelx08h_c.sms
-    972       9bb8bc94a448d0adcc70e24f95854797 campaigns/human-exp/levelx09h_c.sms
-    2292      e15355354c824f4a67445198a5fa47ee campaigns/human-exp/levelx10h_c.sms
-    1751      cd32822ec3e8c076724eba73231582fa campaigns/human-exp/levelx11h_c.sms
-    1286      409415082273f2f35d5de78a8e86883a campaigns/human-exp/levelx12h_c.sms
     79978     da93e90c617b1ed362c798d13313eb0b campaigns/human/interface/Act_III_-_The_Northlands.png
     81639     fee6b1da9519c30331080334c16eaf30 campaigns/human/interface/Act_II_-_Khaz_Modan.png
     100564    a7bde2f56c71cd7f989e2a728f6132fa campaigns/human/interface/Act_IV_-_Return_to_Azeroth.png
@@ -180,108 +170,82 @@ groups:
     181       787c8ab6347620ff71bf80adf20a71a9 campaigns/human/level01h.smp.gz
     4211      5f0f21dff6973ebf51e02a5188606b4c campaigns/human/level01h.sms.gz
     410       b647db5345aa14edcd361108c4538ac9 campaigns/human/level01h.txt.gz
-    1271      5a6ac4d07907d03ed7c96220fc3241c7 campaigns/human/level01h_c.sms
     99        87c7e3d6663c0158f0d8a8f405b9612b campaigns/human/level01h_c2.sms
     378589    cde8875abad2a50dfd4031dcb7cca65d campaigns/human/level02h-intro1.wav.gz
     325615    388f14655875558cf6624b515ba4f6ef campaigns/human/level02h-intro2.wav.gz
     208       0a13953cc3d3d4fe7bae43b05718bdf7 campaigns/human/level02h.smp.gz
     15891     6a1b9d5ce0d969a8ed6b4087d61f4621 campaigns/human/level02h.sms.gz
     466       99fbc2e3a09a9f174b4b3691a1873a03 campaigns/human/level02h.txt.gz
-    1431      e31fbc6765246de32f2654c43d45a383 campaigns/human/level02h_c.sms
     132       c0bb09cc703bee6903c2e4143e4b09e1 campaigns/human/level02h_c2.sms
     332110    adb0852052986b03df4db57a6da442b5 campaigns/human/level03h-intro1.wav.gz
     395176    fd88f4444bc931a8ba5cfb674492a30c campaigns/human/level03h-intro2.wav.gz
     187       f0b577fefe9aa400b5d2ab57a02b6007 campaigns/human/level03h.smp.gz
     15003     ea265470e2f307c845bbf3ea46f5de51 campaigns/human/level03h.sms.gz
     458       ac5f2f9b1e08ce446527eac5632ef9fb campaigns/human/level03h.txt.gz
-    1822      12b777cec66017c2eb219b08a706435f campaigns/human/level03h_c.sms
     122       a90cffef6d367c2fe180fe5250af5f26 campaigns/human/level03h_c2.sms
     331917    3993cf509257b8d9bb2dd1d100a387c4 campaigns/human/level04h-intro1.wav.gz
     291606    84ddd07da0ff3bffbe0bed1f67780d7c campaigns/human/level04h-intro2.wav.gz
     184       ee1174d117331abc0db06092f0879d85 campaigns/human/level04h.smp.gz
     36559     e5b74139f5ff65821b013bb22acaac64 campaigns/human/level04h.sms.gz
     397       b8763f17bcc1ce5876fa1589a382c447 campaigns/human/level04h.txt.gz
-    3681      849647d5d531ac829ff5cc83bfd06a30 campaigns/human/level04h_c.sms
     81        a6eea0ffec2e9f2f639b07b3c8ac7380 campaigns/human/level04h_c2.sms
     554348    580a98e23b55179603b426ef4d9e6c5a campaigns/human/level05h-intro1.wav.gz
     304716    b3af332ba70cc0e76a4410a7b8e328c6 campaigns/human/level05h-intro2.wav.gz
     205       949d8e24678083a71c0c96457d0ac85e campaigns/human/level05h.smp.gz
     65485     6886b2d12f05d2ea3549cb2ffd8583bb campaigns/human/level05h.sms.gz
     566       096eb22acfc2f9915ff05752505f0475 campaigns/human/level05h.txt.gz
-    4380      9e3e8fa1a37d23ad5ed6edd869c452ab campaigns/human/level05h_c.sms
     83        936f6e58f5aac612cf99610b04f73a4b campaigns/human/level05h_c2.sms
     463044    e1cf341bf62c710e515c28a5c25aa5cc campaigns/human/level06h-intro1.wav.gz
     197       b92592486bf3519bea278fe61f9d0756 campaigns/human/level06h.smp.gz
     36470     7565a67ebf623849594c646689b72409 campaigns/human/level06h.sms.gz
     305       6ef52a0602c931ecd3c4c80507d41637 campaigns/human/level06h.txt.gz
-    5727      9520c0797d84c93ef2f3668854bbafd0 campaigns/human/level06h_c.sms
     62        2894cea88ca9815b32e2d8e333c4d138 campaigns/human/level06h_c2.sms
     342092    fc3b50158a0810de936f725138bce36e campaigns/human/level07h-intro1.wav.gz
     249272    7c74eaa394548f7adf72e7e4f3cf92c2 campaigns/human/level07h-intro2.wav.gz
     208       33fae4759456b402d394ebeee3dcc118 campaigns/human/level07h.smp.gz
     38404     b73a1acf84b7c8367deb501d297d3a87 campaigns/human/level07h.sms.gz
     373       51a84aed6a6d96f2d9a0a877db67605d campaigns/human/level07h.txt.gz
-    3515      af396736e2091a3a7d38be51d2126bfa campaigns/human/level07h_c.sms
     84        ed3a9d0744517404a2c70247a76c8d58 campaigns/human/level07h_c2.sms
     332304    de0d3816b658ca39161214bdbb725019 campaigns/human/level08h-intro1.wav.gz
     342211    8394ae794638cfc32eb2275a9e187e54 campaigns/human/level08h-intro2.wav.gz
     206       cf0ce39e53d96adec2eb6171fd42f5bb campaigns/human/level08h.smp.gz
     36682     0f90b947f37b847c6e582f08602e1ac7 campaigns/human/level08h.sms.gz
     492       f46144758ced509b838d9e7b7775dd56 campaigns/human/level08h.txt.gz
-    6572      f8f5c352d1b6b6e9461e27c92cdf2f07 campaigns/human/level08h_c.sms
     137       bb25828733c1af10cb8ca9d0f7db4776 campaigns/human/level08h_c2.sms
     370594    135d62e4e9a4c386aba64db4b05b7349 campaigns/human/level09h-intro1.wav.gz
     208       9f112f617569eeaa243c50a5c0bb5574 campaigns/human/level09h.smp.gz
     35416     e6dcb1176c99ac2a2a837da7a5d5eb68 campaigns/human/level09h.sms.gz
     264       5b728ca649dff99fbbe925e8847304b1 campaigns/human/level09h.txt.gz
-    2870      73d262dbd75dc3de3beb68505a34c9a2 campaigns/human/level09h_c.sms
     122       482d5eea6827614268c7a539f5d62e80 campaigns/human/level09h_c2.sms
     360807    2ca4c520e1aa483fecb578aa6c056e5f campaigns/human/level10h-intro1.wav.gz
     207       5112686ce73d142440d739ee46113727 campaigns/human/level10h.smp.gz
     63937     247500ca460a3dad202c4d684d5039c7 campaigns/human/level10h.sms.gz
     286       d951400bbb3725246dadbcb7738196d6 campaigns/human/level10h.txt.gz
-    7010      6d32e7d8fa15e423eff5393e1cc6922e campaigns/human/level10h_c.sms
     169       829a88cc0efee3d09097c77bf2585860 campaigns/human/level10h_c2.sms
     428238    e81ee5f49a635dd6256baf692b9f6875 campaigns/human/level11h-intro1.wav.gz
     292448    cc642793174008a72933decf690fbe46 campaigns/human/level11h-intro2.wav.gz
     208       90fc6002e64b1f6f2f4f527db0600401 campaigns/human/level11h.smp.gz
     33902     7b53e873a0123eb1f2357a9cfd602600 campaigns/human/level11h.sms.gz
     478       1f3d5d9b931319e09135a7d8ff5b0357 campaigns/human/level11h.txt.gz
-    7195      70c004a9c586b46e3cccd24a73686bf0 campaigns/human/level11h_c.sms
     130       7778c80ac52d14042df3fe8dbe92ef6f campaigns/human/level11h_c2.sms
     444064    56fcc0a636f711677888f123fa66b380 campaigns/human/level12h-intro1.wav.gz
     184       f2ea4b85335ccacbd69a6c71bd7e9b50 campaigns/human/level12h.smp.gz
     65089     45289498d0f40adfb16bdc8388e4b1fd campaigns/human/level12h.sms.gz
     278       af265af44e3c287650f96638627975ec campaigns/human/level12h.txt.gz
-    8340      f8976a5ebe9deafda2be0e9443a002d7 campaigns/human/level12h_c.sms
     165       cd41a19c8576a83a9a55872d1512a192 campaigns/human/level12h_c2.sms
     398755    cdc13df072a11b00e6a324a83d509754 campaigns/human/level13h-intro1.wav.gz
     387052    a5e5db6e306a454d33967011ac2fc4d2 campaigns/human/level13h-intro2.wav.gz
     207       7624f1cfe572e7e871836c6b5e1d2573 campaigns/human/level13h.smp.gz
     66521     6fbfeb86ad707121b0c31fb5c8929f3e campaigns/human/level13h.sms.gz
     507       4106769a1b3738b79939c84035084ef5 campaigns/human/level13h.txt.gz
-    7330      8c92db9fccc0f7c8e3733908d8b614c3 campaigns/human/level13h_c.sms
     132       cfca33d882fbf11a22e1a7030a03e5bd campaigns/human/level13h_c2.sms
     471153    2eca3a7430de814ee84381b8f62628b6 campaigns/human/level14h-intro1.wav.gz
     200       4d6a7a057c261d1b3a261cc918391e00 campaigns/human/level14h.smp.gz
     66015     a19ce9c005c836dbd95d55e792756b80 campaigns/human/level14h.sms.gz
     367       7b10de9f25c594f80271eff3387a24df campaigns/human/level14h.txt.gz
-    9271      06e1f0fcf1c8f14a5cfff3b2d5120fad campaigns/human/level14h_c.sms
     76        6628980a0aec7282c6c205284fc64977 campaigns/human/level14h_c2.sms
     361       517227ad73af4ad53947e69d60a481f1 campaigns/human/victory.txt.gz
     539858    bc452de0e95bdad308f278e0b285a0a3 campaigns/human/victory.wav.gz
-    1357      be792bfbba552faf9d5b8cb909e33a9c campaigns/orc-exp/levelx01o_c.sms
-    1719      4c96bf625812a539f8a3a1ac6d166383 campaigns/orc-exp/levelx02o_c.sms
-    1017      18079cdb874b07d57b3daeac733deb28 campaigns/orc-exp/levelx03o_c.sms
-    1318      905376230a031a218130e58dd0915938 campaigns/orc-exp/levelx04o_c.sms
-    1054      5c85d5f5a46950b50f18681b2bd131c1 campaigns/orc-exp/levelx05o_c.sms
-    1218      a30748408b6a9e15f1680e260188e78a campaigns/orc-exp/levelx06o_c.sms
-    1421      84f40fc1a73756e34ce7617491093eff campaigns/orc-exp/levelx07o_c.sms
-    872       d8f2cc98745dd63f942f161110936f9b campaigns/orc-exp/levelx08o_c.sms
-    933       2b3afdcc132f6e1cd543cd6d511b9755 campaigns/orc-exp/levelx09o_c.sms
-    1041      340b92d68d6274bee3318713857f4157 campaigns/orc-exp/levelx10o_c.sms
-    984       8419c50acd2c16cba62457b092e5560a campaigns/orc-exp/levelx11o_c.sms
-    961       d95c85c7fafe17871786d84e36b74847 campaigns/orc-exp/levelx12o_c.sms
     79999     e52207df7dc17c60242822415c4e427e campaigns/orc/interface/Act_III_-_Quel'Thalas.png
     81278     764438e8c0ed5229c8f35428e4d89006 campaigns/orc/interface/Act_II_-_Khaz_Modan.png
     105037    ab528ec662282aa9a679fe5e87183f72 campaigns/orc/interface/Act_IV_-_Tides_of_Darkness.png
@@ -295,90 +259,76 @@ groups:
     179       6341bbf77aaa91744f916d96609ab18f campaigns/orc/level01o.smp.gz
     4192      841616e1dff5f8605298a4427461269e campaigns/orc/level01o.sms.gz
     357       d564e676371bf57ef41f22b60cb29a9d campaigns/orc/level01o.txt.gz
-    1390      3c64f091e012e03417fa25cf63f2bb64 campaigns/orc/level01o_c.sms
     99        06320415bdc08760535e53b55a25b51a campaigns/orc/level01o_c2.sms
     541588    2a32e2d66e690f00f5fc8dc871bf6264 campaigns/orc/level02o-intro1.wav.gz
     205       1f49d799719bb8266e0a129403bfaf1a campaigns/orc/level02o.smp.gz
     15824     671797c24fbba221775b8f0f4ebf62f8 campaigns/orc/level02o.sms.gz
     384       7f0803837cc5c5c4980ede884becda56 campaigns/orc/level02o.txt.gz
-    1935      2a693cb487afb734c3c17dcaf89c6d69 campaigns/orc/level02o_c.sms
     108       537952da8b315576dedf674eab16b178 campaigns/orc/level02o_c2.sms
     411096    a5e8ff74ed9360084c3b5593a32222e0 campaigns/orc/level03o-intro1.wav.gz
     237633    13c36aab822a2df449fbe21bc886d70e campaigns/orc/level03o-intro2.wav.gz
     182       4a769dea75d8f88d9f4d59814afef414 campaigns/orc/level03o.smp.gz
     13002     361c8399f0b8a64f7f5a23492ab1b6a9 campaigns/orc/level03o.sms.gz
     451       42d3ec836d43672ba16cb0b522ca2f9a campaigns/orc/level03o.txt.gz
-    1813      2bebed46c4806732f171b0e5147ad2ed campaigns/orc/level03o_c.sms
     122       a90cffef6d367c2fe180fe5250af5f26 campaigns/orc/level03o_c2.sms
     535120    c0be39df0243d19ba6b86f732e774654 campaigns/orc/level04o-intro1.wav.gz
     183       b475760d16c6a5567a5a73c559ad135a campaigns/orc/level04o.smp.gz
     35764     f7b3a8c51a242c93e4b5a4c6ae6b668b campaigns/orc/level04o.sms.gz
     378       4a5d94f42ebe452a99c665b7a1a9a199 campaigns/orc/level04o.txt.gz
-    4187      45a7d1e234cbd1e72ced46798e79d809 campaigns/orc/level04o_c.sms
     119       62d26457c7d09d211f10a33872cf5ea9 campaigns/orc/level04o_c2.sms
     622935    9d1ad451ecd38c78fc4dad3a6c5b77c2 campaigns/orc/level05o-intro1.wav.gz
     197       c95df5c9f76f4b29108284afcb8e2fbc campaigns/orc/level05o.smp.gz
     64798     5db4e2ef31bea4cdac84aaef5afffd5d campaigns/orc/level05o.sms.gz
     383       43113b1f32eda01b0265bffac5b69535 campaigns/orc/level05o.txt.gz
-    2607      0aed30821885bf17761f2c538756facc campaigns/orc/level05o_c.sms
     83        ec07b839b7192ec194af41c778d73be9 campaigns/orc/level05o_c2.sms
     477414    798b01bf924dd1915bddac942dff44d6 campaigns/orc/level06o-intro1.wav.gz
     206       dc4c8e6366393624a258577cbf2229d0 campaigns/orc/level06o.smp.gz
     34402     0f3a37cca4fa364b4a9df3bd90862e9f campaigns/orc/level06o.sms.gz
     325       c06fb55019f2d5201c2d57d8ac235a8b campaigns/orc/level06o.txt.gz
-    3141      79726154adf34abb32a57230755a2de4 campaigns/orc/level06o_c.sms
     104       6a31bddac16863de49c6459ccff9af06 campaigns/orc/level06o_c2.sms
     377972    6c1be6bd1b87e445d7dbf1e8fa100701 campaigns/orc/level07o-intro1.wav.gz
     189954    f36a7209f4f3e38cc3b6f476dcca5656 campaigns/orc/level07o-intro2.wav.gz
     206       086a272463b489ab4659398703415d7f campaigns/orc/level07o.smp.gz
     64326     87a7fb223d480d5fe8fbcf997df4a3ac campaigns/orc/level07o.sms.gz
     355       330fe81d5b69ca2fe0d88414d820c3a0 campaigns/orc/level07o.txt.gz
-    3085      f8b3aafe7a0da50851dc6381777a5f1c campaigns/orc/level07o_c.sms
     126       901cb5e73135229bf2dac7fc3e291a16 campaigns/orc/level07o_c2.sms
     599655    b6e2c9ca564adf9186ee8bb9e484e8d6 campaigns/orc/level08o-intro1.wav.gz
     203       e0da36f86fad4dc8dff19b45870283c1 campaigns/orc/level08o.smp.gz
     66393     7cf5717191577b36ad07b7215f5c0164 campaigns/orc/level08o.sms.gz
     380       84a1f7f52c52cda74aeb4b5f04469e03 campaigns/orc/level08o.txt.gz
-    3410      acceb7ea6751efe01b7092c6eeace4c7 campaigns/orc/level08o_c.sms
     142       c51bbfc6f7dab54825e8a0cd395296f5 campaigns/orc/level08o_c2.sms
     593087    240a795f965db799cb16e1d3ba4b4541 campaigns/orc/level09o-intro1.wav.gz
     193       6898b86dffef13d64fe07abc9c961cb0 campaigns/orc/level09o.smp.gz
     34642     4cf52378d94f4bdf0f23e3f67694373c campaigns/orc/level09o.sms.gz
     380       fa7c7b47abca650eabd707e8900931ac campaigns/orc/level09o.txt.gz
-    3236      d548529663544063a133e807227d8e4d campaigns/orc/level09o_c.sms
     144       9a6094715cdb7d98f2ded94bdad96e95 campaigns/orc/level09o_c2.sms
     423901    663f4c15688917d4953b576aecb0a315 campaigns/orc/level10o-intro1.wav.gz
     182       dd87a161ab5cd79a2ff152c57caf556c campaigns/orc/level10o.smp.gz
     35107     8c3613724f0f4a36db5330b61ef66bbe campaigns/orc/level10o.sms.gz
     327       611f2878e3302e679fced1e26e521e67 campaigns/orc/level10o.txt.gz
-    3317      6169486a41f005d10506c2ea7fadfdc9 campaigns/orc/level10o_c.sms
     164       3152954c4169aa3b9436160fc280f8ac campaigns/orc/level10o_c2.sms
     408666    7e5c3b02e8fd7c9b343b0deee717d2c6 campaigns/orc/level11o-intro1.wav.gz
     398474    85824f845ad67e01a15b6ba5f9173ce8 campaigns/orc/level11o-intro2.wav.gz
     187       96a9859536829f0380d66b3beeaeb1dc campaigns/orc/level11o.smp.gz
     60849     f2b20b0e720a040692417639b5424270 campaigns/orc/level11o.sms.gz
     504       9569551e20edbf0835d0cfb4b6727afa campaigns/orc/level11o.txt.gz
-    3641      0a4c17a60a8497adac7ecef42dda239e campaigns/orc/level11o_c.sms
     102       8a23c2d9bd6788dc805d19590dc8eba8 campaigns/orc/level11o_c2.sms
     310804    76731b5d9cb9398ac57f4c70fc813331 campaigns/orc/level12o-intro1.wav.gz
     603885    e5631df6768433c5dbf59325cc6f6fed campaigns/orc/level12o-intro2.wav.gz
     195       542723ae2e473fc26c4610b09d5f0cee campaigns/orc/level12o.smp.gz
     61243     73e89777ba0cb692e70594ed3820211d campaigns/orc/level12o.sms.gz
     509       282f1ddf62d0de19bba3abc85f886597 campaigns/orc/level12o.txt.gz
-    3831      c57acf56072e5b2c94ffb6807d56fb1b campaigns/orc/level12o_c.sms
     133       82ac65bbdf3596325a1aab1e44948e18 campaigns/orc/level12o_c2.sms
     688082    2005520f4aa48fdf0e0f420fe09fef36 campaigns/orc/level13o-intro1.wav.gz
     193107    990fc6523adedcfaa575523d20156187 campaigns/orc/level13o-intro2.wav.gz
     193       94e5c04c0336bff7267920ff9d3184ab campaigns/orc/level13o.smp.gz
     63195     f9275ae79677e3b5e2267f09481872b5 campaigns/orc/level13o.sms.gz
     450       ee792813344e8a73b0d4a55347fef2e6 campaigns/orc/level13o.txt.gz
-    3915      be227f36529674a1376106bcf454bd83 campaigns/orc/level13o_c.sms
     115       32e8aa19d432ced83f4f92f1e384a9f3 campaigns/orc/level13o_c2.sms
     388590    414a283984d70bbc0cb6594a00a22666 campaigns/orc/level14o-intro1.wav.gz
     198       a33575df3148b0f280eac30b59ead111 campaigns/orc/level14o.smp.gz
     58429     f532a0898b04e270887027787a7b6116 campaigns/orc/level14o.sms.gz
     246       56e5b9b2cc1e0fd054888bc46b5fb0ec campaigns/orc/level14o.txt.gz
-    3792      39f104a0c48d79224f8c594d224f26b6 campaigns/orc/level14o_c.sms
     105       b75d4355e54707de6acdb45ebb8cbd47 campaigns/orc/level14o_c2.sms
     26        8bce410767f70ea553c0968e58431392 campaigns/orc/victory.txt.gz
     682516    41ff001933b6e8f8b3a073580d45f33e campaigns/orc/victory.wav.gz
@@ -426,7 +376,6 @@ groups:
     2380      b75716759271b82415dbb0a75871808d graphics/missiles/heal_effect.png
     2773      c6f17b65039ce109a357c4568f1d6e2b graphics/missiles/lightning.png
     1443      ba8421b61ee0453f559d798cdb535b95 graphics/missiles/normal_spell.png
-    1691      e346ac9db963a6181244389bffc874b6 graphics/missiles/red_cross.png
     1399      612200bf6fa5e6ddf228cb1fbfaa1aa0 graphics/missiles/rune.png
     2976      974890fbb3d1c1bf31494b6208b10082 graphics/missiles/small_fire.png
     2943      a07700b521b40c32dbcfcbbd648cff89 graphics/missiles/submarine_missile.png
@@ -673,7 +622,6 @@ groups:
     1236      a419bb44543b3e96b46de8d2adb7862d graphics/ui/cursors/arrow_SW.png
     1221      f92a9da26d1ce4f08c99b3741f551564 graphics/ui/cursors/arrow_W.png
     1197      224662d1631427c8c480249fd47b5f95 graphics/ui/cursors/credits_arrow.png
-    1398      5b0be5b45b6e922473c1706b858df34a graphics/ui/cursors/cross.png
     1513      8d3c39ab6c9ade004841620217e91b79 graphics/ui/cursors/hourglass.png
     1364      66baa5223a8afe088781a5761468c4e9 graphics/ui/cursors/magnifying_glass.png
     1143      422cd76aeafc1641b05871b72ea35894 graphics/ui/cursors/small_green_cross.png
@@ -682,10 +630,7 @@ groups:
     23500     5ee8764451c018e78c4f96037f5df5be graphics/ui/fonts/large_episode_titles.png
     2095      e30468f049c9b2e669647d269a69c72e graphics/ui/fonts/small.png
     12256     c15aebfd4f38f60df6c6f595b23bc7dd graphics/ui/fonts/small_episode_titles.png
-    1023      b83377dc7165a70e1d1548363de7bc2c graphics/ui/food.png
     1452      73f45cd7a71e85f9f4a6e20f9d5a6bfe graphics/ui/gold,wood,oil,mana.png
-    1221      da580d05bd271f6764fd48e2dfa61279 graphics/ui/health.png
-    1020      b4c2916fcd9703c890e6fca98ab7c2ef graphics/ui/health2.png
     8440      afa33d30d85e0fb65cd575211a169a24 graphics/ui/human/1024x768/buttonpanel.png
     3755      e5ba3ec3d9d4cc97b81cd80138a798db graphics/ui/human/1024x768/filler-right.png
     3216      a1e80918b546379b7e74f726e483520f graphics/ui/human/1024x768/resource.png
@@ -792,8 +737,6 @@ groups:
     1253      1f9a67c8be565c9756a3456a8a485628 graphics/ui/human/widgets/up-arrow-pressed.png
     1801      12cbc425131f69806f1893d7ec781c4e graphics/ui/human/widgets/vslider-bar-grayed.png
     1977      2cd9242671fc379cf69fe05d5c0213a9 graphics/ui/human/widgets/vslider-bar-normal.png
-    1181      3f9342d596f07d98ebd61d37faabd267 graphics/ui/mana.png
-    1004      337456ec1e5e0ea4594d2a64c4b4db4f graphics/ui/mana2.png
     7942      d035e24e672b124b5f08b24be4893465 graphics/ui/orc/1024x768/buttonpanel.png
     3732      178ad21ebbf64aa8804bccb32178e2ea graphics/ui/orc/1024x768/filler-right.png
     2727      24fd99289fdcadb7d6a9be274ffa2a8f graphics/ui/orc/1024x768/resource.png
@@ -900,8 +843,6 @@ groups:
     1243      8a34ccecb69619a5398253133554a9e5 graphics/ui/orc/widgets/up-arrow-pressed.png
     1665      92aacb24bf080057809b86ad5cde133a graphics/ui/orc/widgets/vslider-bar-grayed.png
     1667      56222de720c21acb35db3f4a918275f7 graphics/ui/orc/widgets/vslider-bar-normal.png
-    1175      7e4faf06c0178794ccc9e2fa0e7916f8 graphics/ui/ore,stone,coal.png
-    978       9458811ce167bda34025a5f88fbcd77f graphics/ui/score.png
     133877    47b8dac00f766bda4de116d63bb85dbb graphics/ui/title.png
     154       742b65ef46621b6f2a4f3fba6b289bd3 maps/demo/demo01.smp.gz
     4593      8a484bc7cad8c9b877c8ede1841beaba maps/demo/demo01.sms.gz
@@ -913,91 +854,24 @@ groups:
     4734      a5857ff24d949e95684c2b346364c47b maps/demo/demo04.sms.gz
     157       87e02f1536be9fd18594f6a0fcee77a2 maps/multi/(2)2-players.smp.gz
     36011     a62b214a2bd4e81af3843fb290dde572 maps/multi/(2)2-players.sms.gz
-    150       0ad9375ee0c7913f796f123ca33bcf72 maps/multi/(2)blick-nach-oben.smp.gz
-    59501     4a3e8dd8a476acb523bd79b16642c422 maps/multi/(2)blick-nach-oben.sms.gz
-    1047      f7ccc1430f6e25ecd02ec973fcdc4ae8 maps/multi/(2)blick-nach-oben.txt
     154       e12dbf4767aeb0362cbc64abed6d839b maps/multi/(2)cross-the-streams.smp.gz
     15520     d99648ad95116a1384c612e52d4ff664 maps/multi/(2)cross-the-streams.sms.gz
-    158       6fd918069a5c835e3e1122ba36678b75 maps/multi/(2)east-west-conflict.smp.gz
-    55681     03e6e55589541e67fdf603c9bbbe9b2f maps/multi/(2)east-west-conflict.sms.gz
-    775       7abfe89596e3822530361d817648b909 maps/multi/(2)east-west-conflict.txt
-    172       2c7b1aed5c3a7d02f99fd090e577c506 maps/multi/(2)king-in-stone.smp.gz
-    60738     3018e0536252673fe58e666a83050be8 maps/multi/(2)king-in-stone.sms.gz
     166       7ca6553f14f1569cd1a17fec01f461b7 maps/multi/(2)mysterious-dragon-isle.smp.gz
     62480     8bf6b97eb796c4cfb55d2d2d04d67874 maps/multi/(2)mysterious-dragon-isle.sms.gz
-    172       2d8f9ae5d6976ad7ca5078641a72ee33 maps/multi/(2)no-mans-land.smp.gz
-    57737     74dcf6928676f1f0569b19f381c0fc4f maps/multi/(2)no-mans-land.sms.gz
-    150       0ad9375ee0c7913f796f123ca33bcf72 maps/multi/(2)nord-sued-konflikt.smp.gz
-    60700     61840252565dbd149d952f8bee1c79fc maps/multi/(2)nord-sued-konflikt.sms.gz
-    1050      d674186418102f967343519f06540f69 maps/multi/(2)nord-sued-konflikt.txt
-    150       0ad9375ee0c7913f796f123ca33bcf72 maps/multi/(2)nordische-seenplatte.smp.gz
-    61404     a1c98aa2aaa42b5f0f457814646aa9b5 maps/multi/(2)nordische-seenplatte.sms.gz
-    1052      f521d215e0f181e921d9f51637d36f80 maps/multi/(2)nordische-seenplatte.txt
-    150       0ad9375ee0c7913f796f123ca33bcf72 maps/multi/(2)oily-wars.smp.gz
-    60442     2d06e7630f1067ee7841804a54960636 maps/multi/(2)oily-wars.sms.gz
     154       390e1494fe9659501e35cd1f81982032 maps/multi/(2)one-way-in-one-way-out.smp.gz
     15457     65e60479404a86ca06dc86ea137489a7 maps/multi/(2)one-way-in-one-way-out.sms.gz
-    149       cdf0c205f2bf2d8abcdfff1369b2a267 maps/multi/(2)the-right-strategy.smp.gz
-    14126     66c8fd986c8bd49503caa85b0d6380b8 maps/multi/(2)the-right-strategy.sms.gz
     155       77533cf2785e25dc05f8168c0d7f01a5 maps/multi/(2)x-marks-the-spot.smp.gz
     16514     308bc5256a414416cfb474b387de2561 maps/multi/(2)x-marks-the-spot.sms.gz
-    150       0ad9375ee0c7913f796f123ca33bcf72 maps/multi/(2)zeit-fuer-entscheidungen.smp.gz
-    59460     1ad82c6bdb1caf6179bd19f4c6d4baab maps/multi/(2)zeit-fuer-entscheidungen.sms.gz
-    1065      17197c635d9af989a2eb3520eb92d856 maps/multi/(2)zeit-fuer-entscheidungen.txt
-    162       35e7c0648818d39e198bff9cbe76159f maps/multi/(3)calculate.smp.gz
-    51206     bd7d5a77908ad55775958352b6b520a2 maps/multi/(3)calculate.sms.gz
-    805       98def3347a797dadaeaf9ed5c9126fb9 maps/multi/(3)calculate.txt
     155       892446a1fdb24bbcaba27ba61b5c2489 maps/multi/(3)critter-attack.smp.gz
     34434     1b1d683cae3a0c420d93da8de2998d7e maps/multi/(3)critter-attack.sms.gz
-    162       01355515b5398fe1d2c3de739713b21b maps/multi/(3)frosty-rescue.smp.gz
-    57113     869a595dc4b0c68bf12868dabe9163e1 maps/multi/(3)frosty-rescue.sms.gz
-    1496      b2c0afe64680164409cd1ea101ad74d5 maps/multi/(3)frosty-rescue.txt
-    911       6c52986f4a957110d7d10d7fae0ae6d3 maps/multi/(3)little-ambush.txt
-    161       43a23e359e5501a3f07cdd86618d41f9 maps/multi/(3)man-on-the-moon.smp.gz
-    53591     6bc98e8d655439554a9ec4c0a33f4bfd maps/multi/(3)man-on-the-moon.sms.gz
-    152       8704665ac1f9ec278df49b7b40773e1e maps/multi/(3)no-mans-land.smp.gz
-    54786     1fe6eae1988f8cb6f9b1d153cce70219 maps/multi/(3)no-mans-land.sms.gz
-    1284      fca7f2b9a6cc894de73da7b3236fe0b5 maps/multi/(3)no-mans-land.txt
-    152       8704665ac1f9ec278df49b7b40773e1e maps/multi/(3)one-two-three.smp.gz
-    57925     814d61775376dd64547b6bf79071d078 maps/multi/(3)one-two-three.sms.gz
-    1222      04a06ef54efd37a8fa855b7a9aab330e maps/multi/(3)one-two-three.txt
     152       7456dcea7a692c20cbf626c259e4304d maps/multi/(3)river-fork.smp.gz
     36707     47bc70e335c3a2bacdb322d366748526 maps/multi/(3)river-fork.sms.gz
-    152       8704665ac1f9ec278df49b7b40773e1e maps/multi/(3)sea-wars.smp.gz
-    53325     75d0c79bb375cfb615b6cb03147c3313 maps/multi/(3)sea-wars.sms.gz
-    152       8704665ac1f9ec278df49b7b40773e1e maps/multi/(3)three-frontiers.smp.gz
-    57120     e17fe44067321b99830850cafbf6fd79 maps/multi/(3)three-frontiers.sms.gz
     170       2b961ad22861c95c7cfc9e41fcb86514 maps/multi/(3)three-ways-to-cross.smp.gz
     66038     17eaf213a09fa7c84906b04de9386dea maps/multi/(3)three-ways-to-cross.sms.gz
-    707       250bf230d48f24b2fceb4a8c174e2a7d maps/multi/(4)4-corners.txt
-    735       62a919e6148b3b3157a2680866ca8ef2 maps/multi/(4)4-isl.txt
-    165       3e95125794020604bcbf768c59356c03 maps/multi/(4)arctic-goldrush.smp.gz
-    60101     c771f355a3a29f7aa5098a7f37830f7e maps/multi/(4)arctic-goldrush.sms.gz
-    149       1aa4bec761d89882a3a8096331490423 maps/multi/(4)central-park.smp.gz
-    61358     b38e5c98fa1adf12bfba94687b15636a maps/multi/(4)central-park.sms.gz
-    1201      9e4eff8704fbc5c4d5f0f83e684e7671 maps/multi/(4)central-park.txt
-    772       06236aa64f38cdf130ae6f51eb6e6208 maps/multi/(4)chop-the-trees.txt
-    154       c6272360398fb8ec16b9ef27a81716b7 maps/multi/(4)circle-hill.smp.gz
-    60956     13cd926f921b95f5c3a24f554e79853d maps/multi/(4)circle-hill.sms.gz
-    934       2f5a14aff4642a4042e36c22f33a4ddb maps/multi/(4)criss_cross2.txt
     158       6b1991481868e92141aa18e8777bd982 maps/multi/(4)death-in-the-middle.smp.gz
     34636     7edfb293092df4db3c2bd3e8ebc6b16d maps/multi/(4)death-in-the-middle.sms.gz
-    607       98392db95000d7be12944e05322f9091 maps/multi/(4)east-lakes.txt
-    157       f35358e7a53e5f46876ae91924a2a06d maps/multi/(4)green-hell.smp.gz
-    58636     d519ae9e5627b75fc7176fd86a4763d5 maps/multi/(4)green-hell.sms.gz
-    1461      ece56fb7ccd0465874654927f66daf12 maps/multi/(4)green-hell.txt
-    166       67b50a507e26f6b9a2aac595251e618c maps/multi/(4)holy-forest.smp.gz
-    54958     b2821f8de364d5aa14e584155090e3bb maps/multi/(4)holy-forest.sms.gz
     160       759c4ee542bef426e1ff69c28c692ac8 maps/multi/(4)islands-in-the-stream.smp.gz
     65611     be5b78ec858d9f0a3c91d6112ba02143 maps/multi/(4)islands-in-the-stream.sms.gz
-    149       1aa4bec761d89882a3a8096331490423 maps/multi/(4)lake-in-the-middle.smp.gz
-    59554     67a32a75d128f59654a30580c8d2953e maps/multi/(4)lake-in-the-middle.sms.gz
-    1205      0212cfa2ee9d17faa1f62f46d1ccd882 maps/multi/(4)lake-in-the-middle.txt
-    154       c6272360398fb8ec16b9ef27a81716b7 maps/multi/(4)little-island.smp.gz
-    60078     321ea0d145bc429c0855fe9ae9422679 maps/multi/(4)little-island.sms.gz
-    1203      d06d6feb0cfb0e8fba6e8696b03b3d1c maps/multi/(4)little-island.txt
-    167       890ec0cb6e6549abd6e1b0e39adfc41b maps/multi/(4)look-around.smp.gz
-    58113     86cc16528d0d94d7293a1c560974d717 maps/multi/(4)look-around.sms.gz
     154       c1369dec7504ed6e0ab381b14320800b maps/multi/(4)mine-the-center.smp.gz
     33892     b7479f14baf94698e6445aa3dc712e93 maps/multi/(4)mine-the-center.sms.gz
     161       4faf9aefe2758608c4062ab4f5903f72 maps/multi/(4)nowhere-to-run.smp.gz
@@ -1006,100 +880,34 @@ groups:
     36664     1e06ec8447a7466d9ccd4aabacdfa5e3 maps/multi/(4)oil-is-the-key.sms.gz
     158       90ebb57acb298bbf888d8916ff918142 maps/multi/(4)opposing-city-states.smp.gz
     36887     0105bc5b0b5edeecf5a83044f99ea41b maps/multi/(4)opposing-city-states.sms.gz
-    165       bc7e9cd880863f6c584f49b79fb47aa5 maps/multi/(4)pathfinders.smp.gz
-    55668     020491c0c72aa0dec78ae45f5a01bea7 maps/multi/(4)pathfinders.sms.gz
-    881       7c6b264414de97bf8f679928c827451e maps/multi/(4)scandinavia.txt
-    161       3cff46ead4e245b4c84dbbe7ffcb953a maps/multi/(4)smile.smp.gz
-    56464     4fbe8ef1ab586a1dc34f977dafb8635c maps/multi/(4)smile.sms.gz
-    603       54fa778775f6ab37bd0c3df14d996fa7 maps/multi/(4)smile.txt
     157       ab4b90b258f04bfa8d8a303268f3a46f maps/multi/(4)the-four-corners.smp.gz
     53968     fabef78676795da882b16d402babc912 maps/multi/(4)the-four-corners.sms.gz
-    838       c7d9c1a4c902024a41c45f79f9e4f444 maps/multi/(4)think-like-your-enemy.txt
-    163       0d374718dd5507bbc036be3691cdf806 maps/multi/(4)tournament-continent.smp.gz
-    52420     499d76771804e90cd0a808f3cf2f2d4f maps/multi/(4)tournament-continent.sms.gz
-    169       74e8c90166b669cd47eeb42602a9f94d maps/multi/(4)tournament-forest.smp.gz
-    50683     351a9b839a49c46fe4a51a019dab9361 maps/multi/(4)tournament-forest.sms.gz
-    163       0d374718dd5507bbc036be3691cdf806 maps/multi/(4)tournament-islands.smp.gz
-    51655     66086754e564b810cb7adc9c6d9a9f1a maps/multi/(4)tournament-islands.sms.gz
-    171       2e31d16fdae66de7058a35a202a3c604 maps/multi/(4)what-can-you-do.smp.gz
-    60743     66b4fee68e3b4c17371b00b6c2d1cd14 maps/multi/(4)what-can-you-do.sms.gz
-    1011      c95417a133d8a7d99f2b7078dd707395 maps/multi/(4)what-can-you-do.txt
-    154       c6272360398fb8ec16b9ef27a81716b7 maps/multi/(4)woody-islands.smp.gz
-    58622     bbf72c39ad22717fb43cb5a0e19c24db maps/multi/(4)woody-islands.sms.gz
-    164       048dc5230c7e9bc0627479261a26fa7b maps/multi/(4)you-have-to-look-around.smp.gz
-    59882     b24ba9817ffbbaefe58d85a75e062dd9 maps/multi/(4)you-have-to-look-around.sms.gz
-    1189      6d2ebf8be1343c4c684751a5f8412b91 maps/multi/(4)you-have-to-look-around.txt
-    724       8aeba23f705ed0e925d8856fb0f9e0a8 maps/multi/(5)diablospiral.txt
     172       38dbc05332397427a492dd2dac1f9418 maps/multi/(5)how-much-can-you-mine.smp.gz
     36450     ebf54b9ad289e73da0acb810c9e6dd39 maps/multi/(5)how-much-can-you-mine.sms.gz
-    163       0fbbf53927cdaa8a4cff9a0b716fdc32 maps/multi/(5)many-ways-to-beat.smp.gz
-    60834     d44828fc728f3ac9f2f233b391be609b maps/multi/(5)many-ways-to-beat.sms.gz
-    855       a92aecc820a15823b27842d91417021d maps/multi/(5)many-ways-to-beat.txt
-    165       43c05a204f02cadac3c2031f2a5d0504 maps/multi/(5)speed-is-the-key.smp.gz
-    59048     645f200739c5d30575bee071f0d89b5b maps/multi/(5)speed-is-the-key.sms.gz
-    162       0ddb3bf09a11ba440d7175637a29f6e4 maps/multi/(5)the-pentagon.smp.gz
-    51249     89e908a779bf523fe426c44d8e20de31 maps/multi/(5)the-pentagon.sms.gz
-    827       f46d452897a7e434c43fa8d7ecdb9311 maps/multi/(5)the-pentagon.txt
     153       37d2c554d43e6da6d7c19fdf6b176bef maps/multi/(5)the-spiral.smp.gz
     36843     b121ac14e17ea0e66ffa168f8b96705a maps/multi/(5)the-spiral.sms.gz
-    166       1a968ffdd6c50ae1438a4fc6550e92f2 maps/multi/(5)venedig.smp.gz
-    60697     a5edad608e09220f00e6b4a72d48f875 maps/multi/(5)venedig.sms.gz
-    1576      8bd63944d7a59b2e531d007af482f910 maps/multi/(5)venedig.txt
-    164       3d7c88d804dcd150405bb2049f60b6b3 maps/multi/(6)all-against-the-floods.smp.gz
-    57191     c64673b93306b009188705c26c6cf4ad maps/multi/(6)all-against-the-floods.sms.gz
-    890       fbbd1fcf4ef372352631d9106276f6e1 maps/multi/(6)all-against-the-floods.txt
-    164       3d7c88d804dcd150405bb2049f60b6b3 maps/multi/(6)can-you-swim.smp.gz
-    56581     f6524786903d0b40ad9646eb36eb2b1d maps/multi/(6)can-you-swim.sms.gz
-    160       7077ddd6c52c57967654a5deb89b0177 maps/multi/(6)different-ways.smp.gz
-    59809     aa23451b92401cf92a2401b61276d8d8 maps/multi/(6)different-ways.sms.gz
     161       499f793a0088de0492dce2c02c218cff maps/multi/(6)gold-separates-east-west.smp.gz
     35418     f9145f6e718951bd7c6ac091df0c46a8 maps/multi/(6)gold-separates-east-west.sms.gz
-    156       ee58d1f78d9e1bf996798b267f4d6924 maps/multi/(6)many-ways-to-rome.smp.gz
-    57687     537a6c7ee927919d24ed732ba147d24d maps/multi/(6)many-ways-to-rome.sms.gz
     169       2bcc760927aa1953090a835be37e9b25 maps/multi/(6)no-way-out-of-this-maze.smp.gz
     60292     88efddc00cc504602cd2055d0dea0e19 maps/multi/(6)no-way-out-of-this-maze.sms.gz
     155       619826630952bbfb624502744d361c03 maps/multi/(6)skull-isle.smp.gz
     63828     7f06eb0fa3ec4e6475aa395fd5ae32f4 maps/multi/(6)skull-isle.sms.gz
     166       6024656c874f867da683095e4a8201da maps/multi/(7)and-the-rivers-ran-as-blood.smp.gz
     67305     b18f2fd38608d8a3db37635742ba68c8 maps/multi/(7)and-the-rivers-ran-as-blood.sms.gz
-    154       f5325a6229148fe38a01ef62edd3ca82 maps/multi/(7)many-frontiers.smp.gz
-    58753     55978cde10e940805015df8ab2311774 maps/multi/(7)many-frontiers.sms.gz
     159       3ceb711f9f3b4bfb439997c0472b2dc9 maps/multi/(8)a-continent-to-explore.smp.gz
     62232     60f984426f665a7e0a3ec9cb92b6cdd7 maps/multi/(8)a-continent-to-explore.sms.gz
-    696       fcbadfbdb2e174a574502b625bcf73c9 maps/multi/(8)altar-in-the-middle.txt
-    154       d54dc422b15ef6c41c281e4160c97a80 maps/multi/(8)are-you-lucky.smp.gz
-    58217     889efb8aa6916948b98ff13ad637586f maps/multi/(8)are-you-lucky.sms.gz
-    1724      f80469d743ad248eb3355c6eff49e628 maps/multi/(8)are-you-lucky.txt
     159       947f0be7372a7babc92b352675979133 maps/multi/(8)bridge-to-bridge-combat.smp.gz
     65518     47c840819de6b0d9efe801301f11aadd maps/multi/(8)bridge-to-bridge-combat.sms.gz
     152       48f18c086e9adc72a4acd6d088950057 maps/multi/(8)cross-over.smp.gz
     63417     1f43254c6f4313def4ad20267faeefbd maps/multi/(8)cross-over.sms.gz
-    153       97f733ada67c5ffc2f3e8dc292fe6e88 maps/multi/(8)death-in-the-rocks.smp.gz
-    58860     22cc285ee2f0d2372541438030817f20 maps/multi/(8)death-in-the-rocks.sms.gz
-    708       943e32f1cc6a2cb9e8b505bb5f2c12b0 maps/multi/(8)diabloarena.txt
-    763       d29ee1cad12a9a112a052e410009ef71 maps/multi/(8)diablodarkwood.txt
-    707       9e48816e2c2533be61be801a171812c7 maps/multi/(8)diablomaze.txt
-    1156      559a0d04c2064a85439a08a79a6ab61c maps/multi/(8)everywhere.txt
-    769       2195c079a2ceb6f926c04d82db1f47a9 maps/multi/(8)farscape2008.smp.gz
-    30120     d4561f6314e37b3fa8c3e07fb3f0c106 maps/multi/(8)farscape2008.sms.gz
-    445       a3d015050f5ec79f7b02ede3b0acc1d5 maps/multi/(8)farscape2008.txt
     157       dca1a114c660b150cffbd84161b3fcf3 maps/multi/(8)fierce-ocean-combat.smp.gz
     61988     9b6cae1fed6708280e4743f4e50d0d1a maps/multi/(8)fierce-ocean-combat.sms.gz
     154       90cd1a45718f9df16bd3d163ae4312a2 maps/multi/(8)garden-of-war.smp.gz
     63511     560c6d4d3494cc4e92b64f783a325122 maps/multi/(8)garden-of-war.sms.gz
     157       f5839db2b57380140212468196f2fb0c maps/multi/(8)high-seas-combat.smp.gz
     59544     2b12223e4da185839d5e035d3cae6f8f maps/multi/(8)high-seas-combat.sms.gz
-    153       97f733ada67c5ffc2f3e8dc292fe6e88 maps/multi/(8)oil-is-the-key.smp.gz
-    54123     f3b7d2ed81dd21a6542b5c8b54b9bba6 maps/multi/(8)oil-is-the-key.sms.gz
     154       1d8a03527f6bea3e99a16f4b09eded8b maps/multi/(8)plains-of-snow.smp.gz
     55625     56b08935bdc477dadc46f5d313c3a656 maps/multi/(8)plains-of-snow.sms.gz
-    153       97f733ada67c5ffc2f3e8dc292fe6e88 maps/multi/(8)roads-to-the-coasts.smp.gz
-    60882     2902c8c0147b45521060b63247f038f0 maps/multi/(8)roads-to-the-coasts.sms.gz
-    1370      5c4351a82b56ca4477ffbdcf5650ffea maps/multi/(8)roads-to-the-coasts.txt
-    153       97f733ada67c5ffc2f3e8dc292fe6e88 maps/multi/(8)tournament-continent.smp.gz
-    52563     622b5ff715bf649ce6eaf070ce61facf maps/multi/(8)tournament-continent.sms.gz
-    153       97f733ada67c5ffc2f3e8dc292fe6e88 maps/multi/(8)tournament-islands.smp.gz
-    51785     368668d6edca2a71908c76657b9d3045 maps/multi/(8)tournament-islands.sms.gz
     168       e4dba5c900d092956f8030487a215291 maps/multi/3vs3.smp.gz
     54389     a6b400f6285f8d35afe531071cdfb867 maps/multi/3vs3.sms.gz
     165       5ed6535019470b7c90265fbad6fb4a2b maps/multi/3vs5.smp.gz
