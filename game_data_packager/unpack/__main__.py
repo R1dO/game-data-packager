@@ -32,6 +32,9 @@ if __name__ == '__main__':
         unpacker = ZipUnpacker(args.archive)
     elif tarfile.is_tarfile(args.archive):
         unpacker = TarUnpacker(args.archive)
+    elif args.archive.endswith('.umod'):
+        from .umod import Umod
+        unpacker = Umod(args.archive)
     else:
         raise SystemExit('Cannot work out how to unpack %r' % args.archive)
 

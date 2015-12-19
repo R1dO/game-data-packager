@@ -42,6 +42,7 @@ except ImportError:
 from .gog import GOG
 from .paths import (DATADIR, ETCDIR)
 from .unpack import (TarUnpacker, ZipUnpacker)
+from .unpack.umod import (Umod)
 from .util import (AGENT,
         MEBIBYTE,
         PACKAGE_CACHE,
@@ -1234,6 +1235,10 @@ class PackagingTask(object):
                         orig_time = os.stat(found_name).st_mtime
                         os.utime(out_path, (orig_time, orig_time))
                         self.use_file(wanted, out_path)
+
+                elif fmt == 'umod':
+                    with Umod(found_name) as unpacker:
+                        self.consider_stream(found_name, unpacker, provider)
 
                 if wanted.name in self.found:
                     assert (self.file_status[wanted.name] ==
