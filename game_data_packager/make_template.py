@@ -46,11 +46,6 @@ from .util import (
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
 
-# I guess there is a minimum size under which a
-# MD5 collision is not possible and having
-# a SHA1 for these files is not useful
-MD5_SAFE_ENOUGH = 5000
-
 def guess_lang(string):
     string = string.lower()
     path = os.path.basename(string.rstrip('/'))
@@ -159,6 +154,7 @@ class GameData(object):
         self.size = {}
         self.md5 = {}
         self.sha1 = {}
+        self.sha256 = {}
 
     def is_scummvm(self,path):
         dir_l = path.lower()
@@ -186,8 +182,8 @@ class GameData(object):
         hf = HashedFile.from_file(name, open(name, 'rb'))
         self.size[out_name] = size = os.path.getsize(name)
         self.md5[out_name] = hf.md5
-        if size > MD5_SAFE_ENOUGH:
-            self.sha1[out_name] = hf.sha1
+        self.sha1[out_name] = hf.sha1
+        self.sha256[out_name] = hf.sha256
 
     def add_one_dir(self, destdir, lower, game=None, lang=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
@@ -300,8 +296,8 @@ class GameData(object):
 
                     self.size[out_name] = size
                     self.md5[out_name] = hf.md5
-                    if size > MD5_SAFE_ENOUGH:
-                        self.sha1[out_name] = hf.sha1
+                    self.sha1[out_name] = hf.sha1
+                    self.sha256[out_name] = hf.sha256
                 else:
                     logger.warning('ignoring unknown file type at %s' % path)
 
@@ -497,8 +493,8 @@ class GameData(object):
 
                         self.size[name] = entry.size
                         self.md5[name] = hf.md5
-                        if entry.size > MD5_SAFE_ENOUGH:
-                            self.sha1[name] = hf.sha1
+                        self.sha1[name] = hf.sha1
+                        self.sha256[name] = hf.sha256
                     elif entry.isdir():
                         pass
                     elif entry.issym():
@@ -566,6 +562,11 @@ class GameData(object):
             if filename in self.sha1:
                 print('  %s  %s' % (self.sha1[filename], filename))
 
+        print('\nsha256sums: |')
+        for filename in print_order:
+            if filename in self.sha256:
+                print('  %s  %s' % (self.sha256[filename], filename))
+
         print('...')
 
 def do_one_file(name,lower):
@@ -610,7 +611,7 @@ def do_one_file(name,lower):
 
     print('  %-9s %s %s' % (os.path.getsize(name), hf.md5, out_name))
     print('  %s  %s' % (hf.sha1, out_name))
-    #print('  %s  %s' % (hf.sha256, out_name))
+    print('  %s  %s' % (hf.sha256, out_name))
 
 def do_one_exec(pgm,lower):
     print('running:', pgm)
