@@ -150,7 +150,7 @@ class GameData(object):
         self.license = set()
         self.loose_file = set()
 
-        self.files = dict(files={})
+        self.file_data = {}
         self.size = {}
         self.md5 = {}
         self.sha1 = {}
@@ -175,7 +175,7 @@ class GameData(object):
             self.loose_file.add(out_name)
         elif is_doc(name):
             self.loose_file.add(out_name)
-            self.files['files'][out_name] = dict(install_to='$docdir')
+            self.file_data[out_name] = dict(install_to='$docdir')
         else:
             self.loose_file.add(out_name)
 
@@ -367,7 +367,7 @@ class GameData(object):
         os.system('rm -r ' + tmp)
 
         self.add_one_file(exe, lower=False, is_content=False)
-        self.files['files'][os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
+        self.file_data[os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
 
     def add_one_deb(self,deb,lower):
         if not ON_DEBIAN or not which('dpkg-deb'):
@@ -477,7 +477,7 @@ class GameData(object):
                             name = basename_l
                             self.optional.add(name)
                             self.package['optional'].append(name)
-                            self.files['files'][name] = dict(install_to='$docdir')
+                            self.file_data[name] = dict(install_to='$docdir')
                         elif (install_to is not None and
                             name.startswith(install_to + '/')):
                             name = name[len(install_to) + 1:]
@@ -489,7 +489,7 @@ class GameData(object):
                             self.package['install'].append(name)
                         else:
                             self.optional.add(name)
-                            self.files['files'][name] = dict(install_to='.')
+                            self.file_data[name] = dict(install_to='.')
 
                         self.size[name] = entry.size
                         self.md5[name] = hf.md5
@@ -545,8 +545,9 @@ class GameData(object):
             for file in sorted(self.loose_file):
                 print('    - %s' % file)
 
-        if self.files['files']:
-            yaml.safe_dump(self.files, stream=sys.stdout, default_flow_style=False)
+        if self.file_data:
+            yaml.safe_dump({ 'files': self.file_data }, stream=sys.stdout,
+                    default_flow_style=False)
 
         print_order = sorted(self.install | self.optional) + sorted(self.doc) + sorted(self.license)
         print_order += sorted(set(self.size.keys()) - set(print_order))
