@@ -186,7 +186,7 @@ class GameData(object):
             self.required.group_members.add(out_name)
 
         hf = HashedFile.from_file(name, open(name, 'rb'))
-        self.size[out_name] = size = os.path.getsize(name)
+        self.size[out_name] = os.path.getsize(name)
         self.md5[out_name] = hf.md5
         self.sha1[out_name] = hf.sha1
         self.sha256[out_name] = hf.sha256
