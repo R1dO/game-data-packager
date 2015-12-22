@@ -1272,6 +1272,22 @@ class PackagingTask(object):
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
 
+                elif fmt == 'xdelta':
+                    # provider (found_name) is the delta
+                    # other_parts contains only the base (unpatched) file
+                    # wanted is the patched file
+                    assert len(provider.unpack['other_parts']) == 1
+                    basis = self.game.files[provider.unpack['other_parts'][0]]
+                    if basis.name in self.found:
+                        out_path = os.path.join(self.get_workdir(), 'tmp',
+                                wanted.name)
+                        mkdir_p(os.path.dirname(out_path))
+                        check_call(['xdelta', 'patch', found_name,
+                            self.found[basis.name], out_path])
+                        orig_time = os.stat(found_name).st_mtime
+                        os.utime(out_path, (orig_time, orig_time))
+                        self.use_file(wanted, out_path)
+
                 if wanted.name in self.found:
                     assert (self.file_status[wanted.name] ==
                             FillResult.COMPLETE)
