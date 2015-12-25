@@ -27,7 +27,6 @@ import shutil
 import stat
 import subprocess
 import sys
-import tarfile
 import tempfile
 import time
 import urllib.request
@@ -586,8 +585,8 @@ class PackagingTask(object):
                            '  %-9s %s %s\n'
                            '  %s  %s\n' % (size, hashes.md5, basename, hashes.sha1, basename))
             if basename.startswith('gog_') and extension == '.sh':
-                with zipfile.ZipFile(path, 'r') as zf:
-                    self.consider_zip(path, zf)
+                with ZipUnpacker(path) as unpacker:
+                    self.consider_stream(path, unpacker)
             elif basename.startswith('setup_') and extension == '.exe':
                 version = check_output(['innoextract', '-v', '-s'],
                         universal_newlines=True)
@@ -613,8 +612,8 @@ class PackagingTask(object):
             # or the MojoSetup installers provided by GOG.com
             if (extension.lower() in ('.zip', '.apk')
                or (basename.startswith('gog_') and extension == '.sh')):
-                with zipfile.ZipFile(path, 'r') as zf:
-                    self.consider_zip(path, zf)
+                with ZipUnpacker(path) as unpacker:
+                    self.consider_stream(path, unpacker)
             elif extension.lower() == '.deb' and which('dpkg-deb'):
                 with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', path],
                             stdout=subprocess.PIPE) as fsys_process:
