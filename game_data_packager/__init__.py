@@ -1177,6 +1177,13 @@ class GameData(object):
                     assert len(wanted.provides) == 1, filename
                     assert isinstance(wanted.unpack['other_parts'],
                             list), filename
+                    for other_part in wanted.unpack['other_parts']:
+                        assert other_part in self.files, (filename, other_part)
+                elif wanted.unpack['format'] == 'xdelta':
+                    assert len(wanted.provides) == 1, filename
+                    assert len(wanted.unpack['other_parts']) == 1, filename
+                    assert isinstance(wanted.unpack['other_parts'][0], str), filename
+                    assert wanted.unpack['other_parts'][0] in self.files, filename
 
             if wanted.alternatives:
                 for alt_name in wanted.alternatives:

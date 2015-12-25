@@ -35,7 +35,7 @@ except ImportError:
     from distutils.version import LooseVersion as Version
     ON_DEBIAN = False
 
-from . import HashedFile
+from . import (HashedFile, WantedFile)
 from .gog import GOG
 from .steam import parse_acf
 from .util import (
@@ -45,11 +45,6 @@ from .util import (
 
 logging.basicConfig()
 logger = logging.getLogger('game_data_packager.make-template')
-
-# I guess there is a minimum size under which a
-# MD5 collision is not possible and having
-# a SHA1 for these files is not useful
-MD5_SAFE_ENOUGH = 5000
 
 def guess_lang(string):
     string = string.lower()
@@ -148,17 +143,25 @@ class GameData(object):
         self.gog = dict()
 
         self.data = dict()
-        # global list of files across packages
-        self.install = set()
-        self.optional = set()
-        self.doc = set()
-        self.license = set()
-        self.loose_file = set()
 
-        self.files = dict(files={})
+        self.required = WantedFile('probably required')
+        self.required.group_members = set()
+        self.optional = WantedFile('probably optional')
+        self.optional.group_members = set()
+        self.documentation = WantedFile('probably documentation')
+        self.documentation.group_members = set()
+        self.licenses = WantedFile('probably licenses')
+        self.licenses.group_members = set()
+        self.unwanted = WantedFile('probably unwanted')
+        self.unwanted.group_members = set()
+        self.archives = WantedFile('archives')
+        self.archives.group_members = set()
+
+        self.file_data = {}
         self.size = {}
         self.md5 = {}
         self.sha1 = {}
+        self.sha256 = {}
 
     def is_scummvm(self,path):
         dir_l = path.lower()
@@ -167,27 +170,26 @@ class GameData(object):
             return True
         return False
 
-    def add_one_file(self, name, lower, is_content=True):
+    def add_one_file(self, name, lower, group=None):
         out_name = os.path.basename(name)
         if lower:
             out_name = out_name.lower()
 
-        if not is_content:
-            pass
+        if group is not None:
+            group.group_members.add(out_name)
         elif is_license(name):
             out_name = os.path.basename(out_name)
-            self.loose_file.add(out_name)
+            self.licenses.group_members.add(out_name)
         elif is_doc(name):
-            self.loose_file.add(out_name)
-            self.files['files'][out_name] = dict(install_to='$docdir')
+            self.documentation.group_members.add(out_name)
         else:
-            self.loose_file.add(out_name)
+            self.required.group_members.add(out_name)
 
         hf = HashedFile.from_file(name, open(name, 'rb'))
-        self.size[out_name] = size = os.path.getsize(name)
+        self.size[out_name] = os.path.getsize(name)
         self.md5[out_name] = hf.md5
-        if size > MD5_SAFE_ENOUGH:
-            self.sha1[out_name] = hf.sha1
+        self.sha1[out_name] = hf.sha1
+        self.sha256[out_name] = hf.sha256
 
     def add_one_dir(self, destdir, lower, game=None, lang=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
@@ -223,10 +225,10 @@ class GameData(object):
                 self.package['lang'] = lang
             self.package['provides'] = virtual
 
-        self.package['install'] = []
-        self.package['optional'] = []
-        self.package['doc'] = []
-        self.package['license'] = []
+        self.package['install'] = [self.required.name]
+        self.package['optional'] = [self.optional.name]
+        self.package['doc'] = [self.documentation.name]
+        self.package['license'] = [self.licenses.name]
 
         if steam > 0:
             self.package['steam'] = steam_dict
@@ -248,17 +250,21 @@ class GameData(object):
 
                 if os.path.isdir(path):
                     continue
-                elif is_dosbox(path):
-                    has_dosbox = True
-                elif os.path.splitext(fn.lower())[1] in ('.exe', '.exe$0', '.ovl',
-                                                         '.dll', '.dll$0', '.bat', '.386'):
-                    logger.warning('ignoring dos/windows binary %s' % fn)
-                elif out_name.startswith('goggame-') or out_name in ('webcache.zip',
-                                                                 'gog.ico', 'gfw_high.ico'):
-                    logger.warning('ignoring GOG stuff %s' % fn)
                 elif os.path.islink(path):
                     self.package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
                 elif os.path.isfile(path):
+                    ignorable = False
+
+                    if is_dosbox(path):
+                        has_dosbox = True
+                        ignorable = True
+                    elif os.path.splitext(fn.lower())[1] in ('.exe', '.exe$0', '.ovl',
+                                                             '.dll', '.dll$0', '.bat', '.386'):
+                        ignorable = True
+                    elif out_name.startswith('goggame-') or out_name in ('webcache.zip',
+                                                                     'gog.ico', 'gfw_high.ico'):
+                        ignorable = True
+
                     size = os.path.getsize(path)
                     hf = HashedFile.from_file(name, open(path, 'rb'))
                     # avoid that look_for: overlaps in cases where
@@ -283,25 +289,23 @@ class GameData(object):
                             else:
                                 out_name += ('?' + hf.md5[1:6])
 
-                    if is_license(fn):
+                    if ignorable:
+                        self.unwanted.group_members.add(out_name)
+                    elif is_license(fn):
                         out_name = os.path.basename(out_name)
-                        self.license.add(out_name)
-                        self.package['license'].append(out_name)
+                        self.licenses.group_members.add(out_name)
                     elif is_doc(path):
-                        self.doc.add(out_name)
-                        self.package['doc'].append(out_name)
+                        self.documentation.group_members.add(out_name)
                     # most of the times these files are not needed
                     elif fn.lower().split('.')[-1] in ('cfg', 'cmd', 'com', 'drv', 'ico', 'ini'):
-                        self.optional.add(out_name)
-                        self.package['optional'].append(out_name)
+                        self.optional.group_members.add(out_name)
                     else:
-                        self.install.add(out_name)
-                        self.package['install'].append(out_name)
+                        self.required.group_members.add(out_name)
 
                     self.size[out_name] = size
                     self.md5[out_name] = hf.md5
-                    if size > MD5_SAFE_ENOUGH:
-                        self.sha1[out_name] = hf.sha1
+                    self.sha1[out_name] = hf.sha1
+                    self.sha256[out_name] = hf.sha256
                 else:
                     logger.warning('ignoring unknown file type at %s' % path)
 
@@ -326,7 +330,7 @@ class GameData(object):
             del self.package['license']
 
     def add_one_zip(self,archive):
-        self.add_one_file(archive, lower=False, is_content=False)
+        self.add_one_file(archive, lower=False, group=self.archives)
         # TODO
         return
 
@@ -370,8 +374,8 @@ class GameData(object):
         self.add_one_dir(os.path.join(tmp, 'app'), True, game=game, lang=guess_lang(exe))
         os.system('rm -r ' + tmp)
 
-        self.add_one_file(exe, lower=False, is_content=False)
-        self.files['files'][os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
+        self.add_one_file(exe, lower=False, group=self.archives)
+        self.file_data[os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
 
     def add_one_deb(self,deb,lower):
         if not ON_DEBIAN or not which('dpkg-deb'):
@@ -414,9 +418,12 @@ class GameData(object):
 
         self.data = dict(packages={ control['package']: {} })
         self.package = self.data['packages'][control['package']]
-        self.package['install'] = []
-        self.package['optional'] = []
-        self.package['license'] = []
+
+        self.package['install'] = [self.required.name]
+        self.package['optional'] = [self.optional.name]
+        self.package['doc'] = [self.documentation.name]
+        self.package['license'] = [self.licenses.name]
+
         if version:
             self.package['version'] = version
 
@@ -467,21 +474,16 @@ class GameData(object):
                         basename_l = os.path.basename(name_l)
 
                         if os.path.splitext(name_l)[1] in ('.exe', '.bat'):
-                            logger.warning('ignoring dos/windows binary %s' % name)
-                            continue
+                            self.unwanted.group_members.add(name_l)
                         elif 'support/gog' in name_l or os.path.basename(name_l) in (
                                                         'start.sh', 'uninstall.sh'):
-                            logger.warning('ignoring GOG stuff %s' % name)
-                            continue
+                            self.unwanted.group_members.add(name_l)
                         elif name.startswith('opt/') and is_license(name):
                             name = basename_l
-                            self.license.add(name)
-                            self.package['license'].append(name)
+                            self.licenses.group_members.add(name)
                         elif name.startswith('opt/') and is_doc(name):
                             name = basename_l
-                            self.optional.add(name)
-                            self.package['optional'].append(name)
-                            self.files['files'][name] = dict(install_to='$docdir')
+                            self.documentation.group_members.add(name)
                         elif (install_to is not None and
                             name.startswith(install_to + '/')):
                             name = name[len(install_to) + 1:]
@@ -489,16 +491,15 @@ class GameData(object):
                                 name = name.lower()
                             if self.gog and name.startswith('data/'):
                                 name = name[len('data/'):]
-                            self.install.add(name)
-                            self.package['install'].append(name)
+                            self.required.group_members.add(name)
                         else:
-                            self.optional.add(name)
-                            self.files['files'][name] = dict(install_to='.')
+                            self.optional.group_members.add(name)
+                            self.file_data[name] = dict(install_to='.')
 
                         self.size[name] = entry.size
                         self.md5[name] = hf.md5
-                        if entry.size > MD5_SAFE_ENOUGH:
-                            self.sha1[name] = hf.sha1
+                        self.sha1[name] = hf.sha1
+                        self.sha256[name] = hf.sha256
                     elif entry.isdir():
                         pass
                     elif entry.issym():
@@ -544,29 +545,46 @@ class GameData(object):
         print('')
         yaml.safe_dump(self.data, stream=sys.stdout, default_flow_style=False)
 
-        if self.loose_file:
-            print('    XXX:')
-            for file in sorted(self.loose_file):
-                print('    - %s' % file)
-
-        if self.files['files']:
-            yaml.safe_dump(self.files, stream=sys.stdout, default_flow_style=False)
-
-        print_order = sorted(self.install | self.optional) + sorted(self.doc) + sorted(self.license)
-        print_order += sorted(set(self.size.keys()) - set(print_order))
+        if self.file_data:
+            yaml.safe_dump({ 'files': self.file_data }, stream=sys.stdout,
+                    default_flow_style=False)
 
         print('\ngroups:')
 
-        print('  FIXME:')
-        print('    group_members: |')
-        for filename in print_order:
-            print('    %-9s %s %s' % (self.size[filename], self.md5[filename], filename))
-        print('\nsha1sums: |')
-        for filename in print_order:
-            if filename in self.sha1:
-                print('  %s  %s' % (self.sha1[filename], filename))
+        for group in (self.required, self.optional, self.documentation,
+                self.licenses, self.archives, self.unwanted):
+            if not group.group_members:
+                # skip empty group
+                continue
 
-        print('...')
+            print('  %s:' % group.name)
+
+            if group == self.documentation:
+                print('    doc: True')
+            elif group == self.licenses:
+                print('    license: True')
+
+            print('    group_members: |')
+            for f in sorted(group.group_members):
+                print('      %-9s %s %s' % (self.size[f], self.md5[f], f))
+
+        print('\nsha1sums: |')
+
+        for f in sorted(self.sha1.keys()):
+            if f in self.unwanted.group_members:
+                print('  #%s %s' % (self.sha1[f], f))
+            else:
+                print('  %s %s' % (self.sha1[f], f))
+
+        print('\nsha256sums: |')
+
+        for f in sorted(self.sha256.keys()):
+            if f in self.unwanted.group_members:
+                print('  #%s %s' % (self.sha256[f], f))
+            else:
+                print('  %s %s' % (self.sha256[f], f))
+
+        print('\n...')
 
 def do_one_file(name,lower):
     hf = HashedFile.from_file(name, open(name, 'rb'))
@@ -610,7 +628,7 @@ def do_one_file(name,lower):
 
     print('  %-9s %s %s' % (os.path.getsize(name), hf.md5, out_name))
     print('  %s  %s' % (hf.sha1, out_name))
-    #print('  %s  %s' % (hf.sha256, out_name))
+    print('  %s  %s' % (hf.sha256, out_name))
 
 def do_one_exec(pgm,lower):
     print('running:', pgm)

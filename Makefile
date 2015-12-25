@@ -1,6 +1,7 @@
 DIRS := ./out
 GDP_MIRROR ?= localhost
 bindir := /usr/games
+PYTHON := python3
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
                    elif [ -x /usr/bin/python3-pyflakes ] ; then echo python3-pyflakes ; \
@@ -35,7 +36,7 @@ out/%: data/%
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
 out/%.json: data/%.yaml
-	python3 tools/yaml2json.py $< $@
+	$(PYTHON) tools/yaml2json.py $< $@
 
 out/vfs.zip: $(json)
 	rm -f out/vfs.zip
@@ -50,7 +51,7 @@ out/vfs.zip: $(json)
 		env TZ=UTC zip ../vfs.zip -9 -X -q -@
 
 out/bash_completion: $(in_yaml)
-	python3 tools/bash_completion.py > ./out/bash_completion
+	$(PYTHON) tools/bash_completion.py > ./out/bash_completion
 	chmod 0644 ./out/bash_completion
 
 out/changelog.gz: debian/changelog
@@ -111,8 +112,9 @@ clean:
 
 check:
 	LC_ALL=C $(PYFLAKES3) game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tools/*.py || :
-	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_syntax.py
-	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 tools/check_equivalence.py
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tests/umod.py
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tools/check_syntax.py
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tools/check_equivalence.py
 
 install: default
 	echo DESTDIR: $(DESTDIR)

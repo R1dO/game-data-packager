@@ -41,6 +41,8 @@ except ImportError:
 
 from .gog import GOG
 from .paths import (DATADIR, ETCDIR)
+from .unpack import (TarUnpacker, ZipUnpacker)
+from .unpack.umod import (Umod)
 from .util import (AGENT,
         MEBIBYTE,
         PACKAGE_CACHE,
@@ -616,9 +618,9 @@ class PackagingTask(object):
             elif extension.lower() == '.deb' and which('dpkg-deb'):
                 with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', path],
                             stdout=subprocess.PIPE) as fsys_process:
-                    with tarfile.open(path + '//data.tar.*', mode='r|',
-                           fileobj=fsys_process.stdout) as tar:
-                        self.consider_tar_stream(path, tar)
+                    with TarUnpacker(path + '//data.tar.*',
+                           reader=fsys_process.stdout, compression='') as tar:
+                        self.consider_stream(path, tar)
 
     def _log_not_any_of(self, path, size, hashes, why, candidates):
         message = ('found %s but it is not one of the expected ' +
@@ -723,7 +725,7 @@ class PackagingTask(object):
         logger.debug('%s: %s', package.name, result)
         return result
 
-    def consider_zip(self, name, zf, provider=None):
+    def consider_stream(self, name, unpacker, provider=None):
         if provider is None:
             try_to_unpack = self.game.files
             should_provide = set()
@@ -733,8 +735,8 @@ class PackagingTask(object):
             should_provide = set(try_to_unpack)
             distinctive_dirs = provider.unpack.get('distinctive_dirs', True)
 
-        for entry in zf.infolist():
-            if not entry.file_size and entry.filename.endswith('/'):
+        for entry in unpacker:
+            if not entry.is_extractable or not entry.is_regular_file:
                 continue
 
             for filename in try_to_unpack:
@@ -746,10 +748,10 @@ class PackagingTask(object):
                 if wanted.alternatives:
                     continue
 
-                if wanted.size is not None and wanted.size != entry.file_size:
+                if wanted.size not in (None, entry.size):
                     continue
 
-                match_path = '/' + entry.filename.lower()
+                match_path = '/' + entry.name.lower()
 
                 for lf in wanted.look_for:
                     if not distinctive_dirs:
@@ -760,7 +762,7 @@ class PackagingTask(object):
                         if filename in self.found:
                             continue
 
-                        entryfile = zf.open(entry)
+                        entryfile = unpacker.open(entry)
 
                         tmp = os.path.join(self.get_workdir(),
                                 'tmp', wanted.name)
@@ -768,77 +770,28 @@ class PackagingTask(object):
                         mkdir_p(tmpdir)
 
                         wf = open(tmp, 'wb')
-                        if entry.file_size > QUITE_LARGE:
-                            logger.info('extracting %s from %s', entry.filename, name)
-                        else:
-                            logger.debug('extracting %s from %s', entry.filename, name)
-                        hf = HashedFile.from_file(
-                                name + '//' + entry.filename, entryfile, wf,
-                                size=entry.file_size,
-                                progress=(entry.file_size > QUITE_LARGE))
-                        wf.close()
-                        orig_time = time.mktime(entry.date_time + (0, 0, -1))
-                        os.utime(tmp, (orig_time, orig_time))
 
-                        if not self.use_file(wanted, tmp, hf):
-                            os.remove(tmp)
-
-        if should_provide:
-            for missing in sorted(should_provide):
-                logger.error('%s should have provided %s but did not',
-                        name, missing)
-
-    def consider_tar_stream(self, name, tar, provider=None):
-        if provider is None:
-            try_to_unpack = self.game.files
-            should_provide = set()
-        else:
-            try_to_unpack = set(f.name for f in provider.provides_files)
-            should_provide = set(try_to_unpack)
-
-        for entry in tar:
-            if not entry.isfile():
-                continue
-
-            for filename in try_to_unpack:
-                wanted = self.game.files.get(filename)
-
-                if wanted is None:
-                    continue
-
-                if wanted.alternatives:
-                    continue
-
-                if wanted.size is not None and wanted.size != entry.size:
-                    continue
-
-                match_path = '/' + entry.name.lower()
-
-                for lf in wanted.look_for:
-                    if match_path.endswith('/' + lf):
-                        should_provide.discard(filename)
-
-                        if filename in self.found:
-                            continue
-
-                        entryfile = tar.extractfile(entry)
-
-                        tmp = os.path.join(self.get_workdir(),
-                                'tmp', wanted.name)
-                        tmpdir = os.path.dirname(tmp)
-                        mkdir_p(tmpdir)
-
-                        wf = open(tmp, 'wb')
-                        if entry.size > QUITE_LARGE:
+                        if entry.size is not None and entry.size > QUITE_LARGE:
+                            large = True
                             logger.info('extracting %s from %s', entry.name, name)
                         else:
+                            large = False
                             logger.debug('extracting %s from %s', entry.name, name)
                         hf = HashedFile.from_file(
                                 name + '//' + entry.name, entryfile, wf,
-                                size=entry.size,
-                                progress=(entry.size > QUITE_LARGE))
+                                size=entry.size, progress=large)
                         wf.close()
-                        os.utime(tmp, (entry.mtime, entry.mtime))
+
+                        if entry.mtime is not None:
+                            orig_time = entry.mtime
+                        elif provider is not None:
+                            orig_name = self.found[provider.name]
+                            orig_time = os.stat(orig_name).st_mtime
+                        else:
+                            orig_time = None
+
+                        if orig_time is not None:
+                            os.utime(tmp, (orig_time, orig_time))
 
                         if not self.use_file(wanted, tmp, hf):
                             os.remove(tmp)
@@ -1071,26 +1024,21 @@ class PackagingTask(object):
                     os.utime(tmp, (orig_time, orig_time))
                     self.use_file(wanted, tmp, None)
                 elif fmt in ('tar.gz', 'tar.bz2', 'tar.xz'):
-                    rf = open(found_name, 'rb')
-                    if 'skip' in provider.unpack:
-                        skipped = rf.read(provider.unpack['skip'])
-                        assert len(skipped) == provider.unpack['skip']
-                    with tarfile.open(
-                            found_name,
-                            mode='r|' + fmt[4:],
-                            fileobj=rf) as tar:
-                        self.consider_tar_stream(found_name, tar, provider)
+                    reader = open(found_name, 'rb')
+                    with TarUnpacker(found_name, reader, compression=fmt[4:],
+                            skip=provider.unpack.get('skip', 0)) as tar:
+                        self.consider_stream(found_name, tar, provider)
                 elif fmt == 'deb':
                     with subprocess.Popen(['dpkg-deb', '--fsys-tarfile', found_name],
                                 stdout=subprocess.PIPE) as fsys_process:
-                        with tarfile.open(found_name + '//data.tar.*', mode='r|',
-                               fileobj=fsys_process.stdout) as tar:
-                            self.consider_tar_stream(found_name, tar, provider)
+                        with TarUnpacker(found_name + '//data.tar.*',
+                                fsys_process.stdout, compression='') as tar:
+                            self.consider_stream(found_name, tar, provider)
                 elif fmt == 'zip':
                     if provider.name.startswith('gog_'):
                         package.used_sources.add(provider.name)
-                    with zipfile.ZipFile(found_name, 'r') as zf:
-                        self.consider_zip(found_name, zf, provider)
+                    with ZipUnpacker(found_name) as unpacker:
+                        self.consider_stream(found_name, unpacker, provider)
                 elif fmt == 'lha':
                     to_unpack = provider.unpack.get('unpack',
                             [f.name for f in provider.provides_files])
@@ -1271,6 +1219,26 @@ class PackagingTask(object):
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'cat':
                     self.cat_files(package, provider, wanted)
+
+                elif fmt == 'xdelta':
+                    # provider (found_name) is the delta
+                    # other_parts contains only the base (unpatched) file
+                    # wanted is the patched file
+                    assert len(provider.unpack['other_parts']) == 1
+                    basis = self.game.files[provider.unpack['other_parts'][0]]
+                    if basis.name in self.found:
+                        out_path = os.path.join(self.get_workdir(), 'tmp',
+                                wanted.name)
+                        mkdir_p(os.path.dirname(out_path))
+                        check_call(['xdelta', 'patch', found_name,
+                            self.found[basis.name], out_path])
+                        orig_time = os.stat(found_name).st_mtime
+                        os.utime(out_path, (orig_time, orig_time))
+                        self.use_file(wanted, out_path)
+
+                elif fmt == 'umod':
+                    with Umod(found_name) as unpacker:
+                        self.consider_stream(found_name, unpacker, provider)
 
                 if wanted.name in self.found:
                     assert (self.file_status[wanted.name] ==
