@@ -58,6 +58,9 @@ def parse_acf(path):
             yield acf_struct
 
 def owned_steam_games(steam_id):
+    if owned_steam_games.STEAM_GAMES is not None:
+        return owned_steam_games.STEAM_GAMES
+    owned_steam_games.STEAM_GAMES = []
     url = "http://steamcommunity.com/profiles/" + steam_id + "/games?xml=1"
     html = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': AGENT}))
     tree = xml.etree.ElementTree.ElementTree()
@@ -67,7 +70,10 @@ def owned_steam_games(steam_id):
         appid = int(game.find('appID').text)
         name = game.find('name').text
         #print(appid, name)
-        yield (appid, name)
+        owned_steam_games.STEAM_GAMES.append((appid, name))
+    return owned_steam_games.STEAM_GAMES
+
+owned_steam_games.STEAM_GAMES = None
 
 def get_steam_id():
     path = os.path.expanduser('~/.steam/config/loginusers.vdf')
