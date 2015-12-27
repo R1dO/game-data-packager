@@ -76,18 +76,32 @@ build/quake3: quake3.in Makefile
 build/quake4: quake4.in Makefile
 	install -d build
 	sed \
+		-e 's!@id@!quake4!' \
+		-e 's!@longname@!Quake 4!' \
+		-e 's!@shortname@!Quake 4!' \
 		-e 's!@binary@!quake4.x86!' \
+		-e 's!@smpbinary@!quake4smp.x86!' \
 		-e 's!@self@!quake4!' \
 		-e 's!@role@!client!' \
+		-e 's!@pkglibdir@!/usr/lib/quake4!' \
+		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
+		-e 's!@basegame@!q4base!' \
 		< $< > $@
 	chmod +x $@
 
-build/etqw: etqw.in Makefile
+build/etqw: quake4.in Makefile
 	install -d build
 	sed \
+		-e 's!@id@!etqw!' \
+		-e 's!@longname@!Enemy Territory: Quake Wars!' \
+		-e 's!@shortname@!ETQW!' \
 		-e 's!@binary@!etqw.x86!' \
+		-e 's!@smpbinary@!etqw-rthread.x86!' \
 		-e 's!@self@!etqw!' \
 		-e 's!@role@!client!' \
+		-e 's!@pkglibdir@!/usr/lib/etqw!' \
+		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
+		-e 's!@basegame@!base!' \
 		< $< > $@
 	chmod +x $@
 
@@ -121,18 +135,32 @@ build/quake3-server: quake3.in Makefile
 build/quake4-dedicated: quake4.in Makefile
 	install -d build
 	sed \
+		-e 's!@id@!quake4!' \
+		-e 's!@longname@!Quake 4!' \
+		-e 's!@shortname@!Quake 4!' \
 		-e 's!@binary@!q4ded.x86!' \
+		-e 's!@smpbinary@!!' \
 		-e 's!@self@!quake4-dedicated!' \
 		-e 's!@role@!server!' \
+		-e 's!@pkglibdir@!/usr/lib/quake4!' \
+		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
+		-e 's!@basegame@!q4base!' \
 		< $< > $@
 	chmod +x $@
 
-build/etqw-dedicated: etqw.in Makefile
+build/etqw-dedicated: quake4.in Makefile
 	install -d build
 	sed \
+		-e 's!@id@!etqw!' \
+		-e 's!@longname@!Enemy Territory: Quake Wars!' \
+		-e 's!@shortname@!ETQW!' \
 		-e 's!@binary@!etqwded.x86!' \
+		-e 's!@smpbinary@!!' \
 		-e 's!@self@!etqw-dedicated!' \
 		-e 's!@role@!server!' \
+		-e 's!@pkglibdir@!/usr/lib/etqw!' \
+		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
+		-e 's!@basegame@!base!' \
 		< $< > $@
 	chmod +x $@
 
