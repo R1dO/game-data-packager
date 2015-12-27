@@ -87,15 +87,6 @@ build/etqw: etqw.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/quake4-smp: quake4-smp.in Makefile
-	install -d build
-	sed \
-		-e 's!@binary@!quake4smp.x86!' \
-		-e 's!@self@!quake4-smp!' \
-		-e 's!@role@!client!' \
-		< $< > $@
-	chmod +x $@
-
 build/quake2-server: quake2.in
 	install -d build
 	sed -e 's/@self@/quake2-server/g' \
