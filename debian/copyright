@@ -1,12 +1,20 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Quake, Quake II, Quake III Arena
+Upstream-Name:
+ Quake
+ Quake II
+ Quake III Arena
+ Quake IV
+ Enemy Territory: Quake Wars
 License: GPL-2+
 Comment:
   This package contains launcher scripts, man pages, etc. originating
   in Debian, so there is no upstream project.
   .
-  See the quakespasm, darkplaces, yquake2 and ioquake3 packages for the
-  actual game engines.
+  For Quake, Quake II and Quake III Arena, see the quakespasm, darkplaces,
+  yquake2, ioquake3 packages for the actual game engines.
+  .
+  For Quake IV and Enemy Territory: Quake Wars, the proprietary engine
+  binaries are included in the packages produced by game-data-packager.
 
 Files: *
 Copyright:
@@ -15,6 +23,7 @@ Copyright:
   © 2008 Peter Eisentraut
   © 2010-2015 Simon McVittie
   © 2011-2013 David Banks
+  © 2015 Alexandre Detiste
 License: GPL-2+
 
 Files: quake1+2.svg
