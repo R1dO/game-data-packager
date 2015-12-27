@@ -14,6 +14,8 @@ quake (17) UNRELEASED; urgency=medium
   * quake4.in: use the same source for ETQW
   * README.etqw-data: expand
   * d/copyright: mention the idTech4 games, and Alexandre's contributions
+  * d/control: remove Suggests on quake4-pb-bin, which is disabled in
+    game-data-packager to avoid CVE-2007-5248
 
  -- Simon McVittie <smcv@debian.org>  Thu, 10 Dec 2015 00:44:21 +0100
 

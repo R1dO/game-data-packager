@@ -151,8 +151,6 @@ Depends:
  ${misc:Depends},
  quake4-bin | game-data-packager (>= 43),
  x11-utils | zenity | kde-baseapps-bin,
-Suggests:
- quake4-pb-bin,
 Description: science-fiction-themed first person shooter
  Quake 4 is a first-person shooter game by Raven Software and id Software,
  released in 2005. This package contains a launcher script and menu
@@ -178,8 +176,6 @@ Depends:
  quake4-data | quake4-censored-de-data | game-data-packager (>= 43),
 Recommends:
  systemd-sysv,
-Suggests:
- quake4-pb-bin,
 Description: dedicated server for Quake 4
  This package contains a launcher script and systemd unit to run a
  Quake 4 server using the proprietary x86 binaries provided by id Software.
