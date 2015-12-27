@@ -87,6 +87,15 @@ def get_steam_id():
             if line not in ('users', '{'):
                 return line
 
+def get_steam_account():
+    path = os.path.expanduser('~/.steam/config/loginusers.vdf')
+    if not os.path.isfile(path):
+        return None
+    with open(path, 'r', ) as data:
+        for line in data.readlines():
+            if 'AccountName' in line:
+                return line.split('"')[-2]
+
 def run_steam_meta_mode(args, games):
     logger.info('Visit our community page: https://steamcommunity.com/groups/debian_gdp#curation')
     owned = set()

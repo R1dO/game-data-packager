@@ -1976,7 +1976,7 @@ class PackagingTask(object):
         try:
             ready = self.prepare_packages(packages,
                     build_demos=args.demo, download=args.download,
-                    log_immediately=bool(args.packages))
+                    search=args.search, log_immediately=bool(args.packages))
         except NoPackagesPossible:
             logger.error('Unable to complete any packages.')
             if self.missing_tools:
@@ -2107,12 +2107,13 @@ class PackagingTask(object):
         return self._architecture
 
     def prepare_packages(self, packages=None, build_demos=False, download=True,
-            log_immediately=True):
+            search=True, log_immediately=True):
         if packages is None:
             packages = self.game.packages.values()
 
         possible = set()
         possible_with_lgogdownloader = set()
+        possible_with_steamcmd = set()
 
         if self.cd_device is not None:
             rip_cd_packages = self.rip_cd_packages & packages
@@ -2128,6 +2129,7 @@ class PackagingTask(object):
 
         for package in packages:
             gog_id = self.game.gog_download_name(package)
+            steam_id = package.steam.get('id') or self.game.steam.get('id')
             if package.rip_cd and not self.cd_tracks.get(package.name):
                 logger.debug('no CD tracks found for %s', package.name)
             elif self.fill_gaps(package,
@@ -2146,6 +2148,17 @@ class PackagingTask(object):
                     possible_with_lgogdownloader.add(package.name)
                 else:
                     self.missing_tools.add('innoextract')
+            # don't download "http://steamcommunity.com/profiles/<steam_id>/games?xml=1"
+            # if downloads are disabled
+            elif steam_id and download and search and which('steamcmd'):
+                # avoid import loop
+                from .steam import (owned_steam_games,get_steam_account)
+                for g in owned_steam_games():
+                    if steam_id == g[0]:
+                        logger.info('%s can be downloaded with steamcmd', package.name)
+                        possible.add(package)
+                        possible_with_steamcmd.add(package.name)
+                        break
             else:
                 logger.debug('%s is impossible', package.name)
 
@@ -2281,12 +2294,14 @@ class PackagingTask(object):
 
         ready = set()
         lgogdownloaded = set()
+        steam_password = None
 
+        external_download = possible_with_lgogdownloader | possible_with_steamcmd
         for package in possible:
             logger.debug('will produce %s', package.name)
             result = self.fill_gaps(package=package, download=download,
-              log=package.name not in possible_with_lgogdownloader,
-              recheck=package.name in possible_with_lgogdownloader)
+              log=package.name not in external_download,
+              recheck=package.name in external_download)
             if result is FillResult.COMPLETE:
                 ready.add(package)
             elif download and package.name in possible_with_lgogdownloader:
@@ -2333,6 +2348,33 @@ class PackagingTask(object):
                                 pass
                 except subprocess.CalledProcessError:
                     pass
+            elif package.name in possible_with_steamcmd:
+                steam_id = package.steam.get('id') or self.game.steam.get('id')
+                steam_account = get_steam_account()
+                if not steam_password:
+                    import getpass
+                    steam_password = getpass.getpass("Please provided password"
+                                                     " for Steam account %s:" %
+                                                      steam_account)
+                # this should be guessed automatically like for GOG
+                # and not needed to be encoded in individual YAML files
+                if package.steam.get('native') or self.game.steam.get('native'):
+                    platform = []
+                else:
+                    platform = ['+@sSteamCmdForcePlatformType', 'windows']
+
+                try:
+                    check_call(['steamcmd'] + platform + [
+                                '+login', steam_account, steam_password,
+                                '+app_update', '%s' % steam_id, 'validate',
+                                '+quit'])
+                except subprocess.CalledProcessError:
+                    pass
+                for path in set(self.iter_steam_paths(packages=(package,))):
+                    self.consider_file_or_dir(path)
+                if self.fill_gaps(package, log=True, download=True,
+                    recheck=True) is not FillResult.IMPOSSIBLE:
+                    ready.add(package)
             elif (result is FillResult.DOWNLOAD_NEEDED or
                   package.name in possible_with_lgogdownloader) and not download:
                 logger.warning('As requested, not downloading necessary ' +

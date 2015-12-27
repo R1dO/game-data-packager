@@ -40,7 +40,7 @@ class LGeneralGameData(GameData):
 
 class LGeneralTask(PackagingTask):
     def prepare_packages(self, packages, build_demos=False, download=True,
-                    log_immediately=True):
+                    search=True, log_immediately=True):
         # don't bother even trying if it isn't going to work
         if which('lgc-pg') is None:
             logger.error('The "lgc-pg" tool is required for this package.')
