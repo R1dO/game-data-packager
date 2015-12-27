@@ -5,6 +5,16 @@ quake (17) UNRELEASED; urgency=medium
     propietary binaries (there is no open-source engine)
     and following the same patterns as used for Quake 4.
 
+  [ Simon McVittie ]
+  * Add a confirmation step before running binary-only executables
+  * etqw.desktop: add some more keywords
+  * etqw*.6: document QUAKE4_BACKTRACE, QUAKE4_DEBUGGER
+  * Remove unused (and not installed) quake4smp wrapper
+  * Check scripts for missing substitutions
+  * quake4.in: use the same source for ETQW
+  * README.etqw-data: expand
+  * d/copyright: mention the idTech4 games, and Alexandre's contributions
+
  -- Simon McVittie <smcv@debian.org>  Thu, 10 Dec 2015 00:44:21 +0100
 
 quake (16) unstable; urgency=medium
