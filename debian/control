@@ -150,6 +150,7 @@ Architecture: i386
 Depends:
  ${misc:Depends},
  quake4-bin | game-data-packager (>= 43),
+ x11-utils | zenity | kde-baseapps-bin,
 Suggests:
  quake4-pb-bin,
 Description: science-fiction-themed first person shooter
@@ -206,6 +207,7 @@ Architecture: i386
 Depends:
  ${misc:Depends},
  etqw-bin | game-data-packager (>= 44),
+ x11-utils | zenity | kde-baseapps-bin,
 Suggests:
  etqw-pb-bin,
 Description: science-fiction-themed multiplayer first person shooter

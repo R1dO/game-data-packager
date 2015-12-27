@@ -3,6 +3,9 @@
 %:
 	dh $@ --parallel --with=systemd
 
+override_dh_auto_build:
+	dh_auto_build -- distro=$(shell dpkg-vendor --query Vendor)
+
 override_dh_installinit:
 	dh_installinit -pquake4-server --noscripts
 	dh_installinit -petqw-server --noscripts

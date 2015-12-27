@@ -18,7 +18,10 @@ smpbinary="@smpbinary@"
 basegame="@basegame@"
 # required packages
 paks="@paks@"
+# absolute path to icon
+icon="@icon@"
 
+dotdir="${HOME}/.${id}"
 pkglibdir="/usr/lib/${id}"
 
 help() {
@@ -77,7 +80,9 @@ cvars="+set com_allowconsole 1"
 
 # Quake 4 expects to run in its installation directory
 cd "$pkglibdir"
-# The SMP binary needs a modified bundled copy of SDL.
+# The SMP binary needs a modified bundled copy of SDL. We don't set this
+# environment variable until after going through confirm-binary-only.sh,
+# so that we can't accidentally load sourceless binaries.
 set \
   env LD_LIBRARY_PATH="${pkglibdir}${LD_LIBRARY_PATH:+":${LD_LIBRARY_PATH}"}" \
   "$@"
@@ -94,6 +99,15 @@ else
   shift
 fi
 
-exec "$@"
+if [ "${role}" = "client" ]; then
+  exec "${pkglibdir}/confirm-binary-only.sh" \
+    --icon "${icon}" \
+    --dotdir "${dotdir}" \
+    --text-file "${pkglibdir}/README.${id}-bin" \
+    --title "${longname}" \
+    -- "$@"
+else
+  exec "$@"
+fi
 
 # vim:set sw=2 sts=2 et:
