@@ -57,7 +57,9 @@ def parse_acf(path):
                 acf_struct['name'] = acf_struct['installdir']
             yield acf_struct
 
-def owned_steam_games(steam_id):
+def owned_steam_games(steam_id=None):
+    if steam_id is None:
+        steam_id = get_steam_id()
     if owned_steam_games.STEAM_GAMES is not None:
         return owned_steam_games.STEAM_GAMES
     owned_steam_games.STEAM_GAMES = []
