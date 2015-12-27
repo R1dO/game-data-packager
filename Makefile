@@ -2,7 +2,7 @@
 
 layer_sizes = 16 22 32 48 256
 
-obj = \
+text = \
 	build/quake \
 	build/quake2 \
 	build/quake3 \
@@ -13,6 +13,10 @@ obj = \
 	build/quake3-server \
 	build/quake4-dedicated \
 	build/etqw-dedicated \
+	$(NULL)
+
+obj = \
+	$(text) \
 	build/24/quake.png \
 	build/24/quake-armagon.png \
 	build/24/quake-dissolution.png \
@@ -335,3 +339,15 @@ build/48/quake3.png: build/quake3.png Makefile
 build/48/quake3-teamarena.png: build/quake3-teamarena.png Makefile
 	install -d build/48
 	convert -resize 48x48 $< $@
+
+check:
+	set -e; \
+	failed=0; \
+	for x in $(text); do \
+		if grep -E "@[a-zA-Z]|[a-zA-Z]@" $$x; then \
+			echo "^ probably a missing substitution?"; \
+			failed=1; \
+		fi; \
+	done; exit $$failed
+
+.PHONY: check
