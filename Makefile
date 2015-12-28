@@ -91,6 +91,7 @@ build/quake4: quake4.in Makefile
 		-e 's!@pkglibdir@!/usr/lib/quake4!' \
 		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
 		-e 's!@basegame@!q4base!' \
+		-e 's!@dotdir@!quake4!' \
 		< $< > $@
 	chmod +x $@
 
@@ -116,6 +117,7 @@ build/etqw: quake4.in Makefile
 		-e 's!@pkglibdir@!/usr/lib/etqw!' \
 		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
 		-e 's!@basegame@!base!' \
+		-e 's!@dotdir@!etqwcl!' \
 		< $< > $@
 	chmod +x $@
 
@@ -168,6 +170,7 @@ build/quake4-dedicated: quake4.in Makefile
 		-e 's!@pkglibdir@!/usr/lib/quake4!' \
 		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
 		-e 's!@basegame@!q4base!' \
+		-e 's!@dotdir@!quake4!' \
 		< $< > $@
 	chmod +x $@
 
@@ -185,6 +188,7 @@ build/etqw-dedicated: quake4.in Makefile
 		-e 's!@pkglibdir@!/usr/lib/etqw!' \
 		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
 		-e 's!@basegame@!base!' \
+		-e 's!@dotdir@!etqw!' \
 		< $< > $@
 	chmod +x $@
 

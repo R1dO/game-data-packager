@@ -20,8 +20,9 @@ basegame="@basegame@"
 paks="@paks@"
 # absolute path to icon
 icon="@icon@"
+# ~/.quake4 or ~/.etqwcl or ~/.etqw
+dotdir="${HOME}/.@dotdir@"
 
-dotdir="${HOME}/.${id}"
 pkglibdir="/usr/lib/${id}"
 
 help() {
