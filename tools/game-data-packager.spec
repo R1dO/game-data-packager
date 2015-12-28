@@ -71,9 +71,6 @@ mkdir -p $RPM_BUILD_ROOT/usr/share/man/man6
 install -m0644 doc/game-data-packager.6 $RPM_BUILD_ROOT/usr/share/man/man6
 install -m0644 doc/doom2-masterlevels.6 $RPM_BUILD_ROOT/usr/share/man/man6
 
-%clean
-make clean
-
 %files
 %doc doc/adding_a_game.mdwn
 %{_mandir}/man6/game-data-packager.*
@@ -82,11 +79,13 @@ make clean
 /usr/bin/game-data-packager
 /usr/share/bash-completion/completions/game-data-packager
 /usr/share/games/game-data-packager
+%license COPYING
 
 %files -n doom2-masterlevels
 %{_mandir}/man6/doom2-masterlevels.*
 /usr/bin/doom2-masterlevels
 /usr/share/applications/doom2-masterlevels.desktop
+%license COPYING
 
 %changelog
 * Sun Nov 08 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 43-1
