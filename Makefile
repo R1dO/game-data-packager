@@ -121,12 +121,8 @@ install: default
 	mkdir -p $(DESTDIR)$(bindir)
 	install -m0755 out/game-data-packager                  $(DESTDIR)$(bindir)
 
-	# messing with "cp -r / chmod / find" is a bit overkill here
-	mkdir -p $(DESTDIR)/usr/share/games/game-data-packager/game_data_packager/games
-	install -m0644 game_data_packager/*.py                 $(DESTDIR)/usr/share/games/game-data-packager/game_data_packager
-	install -m0644 game_data_packager/games/*.py           $(DESTDIR)/usr/share/games/game-data-packager/game_data_packager/games
-
 	mkdir -p $(DESTDIR)/usr/share/games/game-data-packager
+	cp -ar game_data_packager/                             $(DESTDIR)/usr/share/games/game-data-packager/
 	install -m0644 out/*.copyright                         $(DESTDIR)/usr/share/games/game-data-packager/
 	install -m0644 out/*.png                               $(DESTDIR)/usr/share/games/game-data-packager/
 	install -m0644 out/*.svgz                              $(DESTDIR)/usr/share/games/game-data-packager/
