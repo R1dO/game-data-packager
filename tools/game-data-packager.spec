@@ -65,8 +65,7 @@ echo 'ASSETS = "usr/share"' >> $VERSION_PY
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_arch.py
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_deb.py
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_suse.py
-chmod 755 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/*.py
-chmod 755 $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/games/*.py
+find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
 mkdir -p $RPM_BUILD_ROOT/usr/share/man/man6
 install -m0644 doc/game-data-packager.6 $RPM_BUILD_ROOT/usr/share/man/man6
 install -m0644 doc/doom2-masterlevels.6 $RPM_BUILD_ROOT/usr/share/man/man6
