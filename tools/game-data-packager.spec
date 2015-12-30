@@ -1,12 +1,23 @@
+%define gitdate 20151230
+# git log --oneline -1
+%define gitversion 2cd9e32
+
+%if 0%{?gitdate}
+%define gver .git%{gitdate}%{gitversion}
+%endif
+
 Name:          game-data-packager
-Version:       43
-Release:       1
+Version:       44
+Release:       0.1%{?gver}
 Summary:       Installer for game data files
 License:       GPLv2 and GPLv2+
 Url:           https://wiki.debian.org/Games/GameDataPackager
-# git archive --prefix=game-data-packager/ --format tar.gz master > ../rpmbuild/SOURCES/game-data-packager.tar.gz
-Source:        game-data-packager.tar.gz
-#http://http.debian.net/debian/pool/contrib/g/game-data-packager/game-data-packager_${version}.tar.xz
+%if 0%{?gitdate}
+# git archive --prefix=game-data-packager/ --format tar.gz master > ../rpmbuild/SOURCES/game-data-packager-`date +%Y%m%d`.tar.gz
+Source:        game-data-packager-%{gitdate}.tar.gz
+%else
+Source:        http://http.debian.net/debian/pool/contrib/g/game-data-packager/game-data-packager_${version}.tar.xz
+%endif
 BuildArch:     noarch
 BuildRequires: ImageMagick
 BuildRequires: inkscape
@@ -26,6 +37,7 @@ Suggests: cabextract
 Recommends: innoextract
 Suggests: lha
 Suggests: p7zip-plugins
+Suggests: xdelta
 Suggests: unar
 Suggests: unrar
 Suggests: unshield
@@ -70,6 +82,7 @@ find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name
 %files
 %doc doc/adding_a_game.mdwn
 %{_mandir}/man6/game-data-packager.*
+%{_mandir}/fr/man6/game-data-packager.*
 %config(noreplace) %attr(644, root, root) /etc/game-data-packager.conf
 %config(noreplace) %attr(644, root, root) /etc/game-data-packager/*
 /usr/bin/game-data-packager
@@ -84,5 +97,9 @@ find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name
 %license COPYING
 
 %changelog
+* Tue Dec 29 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.1.git2015122906f1b80
+- Git Snapshot
+- Suggests xdelta
+
 * Sun Nov 08 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 43-1
 - Initial port to Fedora
