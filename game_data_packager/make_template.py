@@ -38,6 +38,7 @@ except ImportError:
 from . import (HashedFile, WantedFile)
 from .gog import GOG
 from .steam import parse_acf
+from .unpack.auto import automatic_unpacker
 from .util import (
         check_output,
         which,
@@ -178,6 +179,15 @@ class GameData(object):
             out_name = out_name.lower()
 
         self.add_file(name, out_name=out_name, group=self.archives)
+
+        unpacker = automatic_unpacker(name)
+
+        if unpacker is not None:
+            with unpacker:
+                for entry in unpacker:
+                    if entry.is_regular_file and entry.is_extractable:
+                        self.add_file(entry.name, opened=unpacker.open(entry),
+                                size=entry.size)
 
     def add_file(self, path, out_name=None, group=None, opened=None, size=None,
             lang=None):

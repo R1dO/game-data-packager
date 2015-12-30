@@ -230,6 +230,49 @@ class UmodRequirement(UmodSection):
             raise ValueError('Unexpected key in requirement: %r (value %r)' %
                     (k, v))
 
+class NotUmod(ValueError):
+    pass
+
+def _open(path_or_file):
+    if isinstance(path_or_file, (str, bytes, int)):
+        close_file = True
+        name = str(path_or_file)
+        reader = open(path_or_file, 'rb')
+    else:
+        close_file = False
+        reader = path_or_file
+
+        if hasattr(path_or_file, 'name'):
+            name = path_or_file.name
+        else:
+            name = repr(path_or_file)
+
+        if reader.read(0) != b'':
+            raise ValueError('%r is not open in binary mode' % reader)
+
+        if not isinstance(reader, io.BufferedIOBase):
+            reader = io.BufferedReader(reader)
+
+    reader.seek(-20, os.SEEK_END)
+    trailer_offset = reader.tell()
+    block = reader.read(20)
+
+    if len(block) != 20:
+        raise NotUmod('"%s" is not a .umod: unable to read 20 bytes at end' %
+                name)
+
+    magic, toc_offset, eof_offset, flags, checksum = struct.unpack('<IIIII',
+            block)
+
+    if magic != 0x9fe3c5a3:
+        raise NotUmod('"%s" is not a .umod: magic number does not match' % name)
+
+    if reader.tell() != eof_offset:
+        raise NotUmod('"%s" is not a .umod: length field does not match' % name)
+
+    return (reader, name, toc_offset, trailer_offset, flags, checksum, \
+            close_file)
+
 class Umod(StreamUnpackable):
     """Object representing an Unreal Tournament modification package,
     or an executable installer in a similar format.
@@ -255,31 +298,8 @@ class Umod(StreamUnpackable):
         self.entry_order = []
         self.unparsed = []
 
-        if isinstance(path_or_file, (str, bytes, int)):
-            self.__close_file = True
-            self.name = str(path_or_file)
-            self.reader = open(path_or_file, 'rb')
-        else:
-            self.__close_file = False
-            self.reader = path_or_file
-
-            if hasattr(path_or_file, 'name'):
-                self.name = path_or_file.name
-            else:
-                self.name = repr(path_or_file)
-
-            if self.reader.read(0) != b'':
-                raise ValueError('%r is not open in binary mode' % self.reader)
-
-            if not isinstance(self.reader, io.BufferedIOBase):
-                self.reader = io.BufferedReader(self.reader)
-
-        self.reader.seek(-20, os.SEEK_END)
-        trailer_offset = self.reader.tell()
-        magic, toc_offset, eof_offset, flags, checksum = struct.unpack(
-                '<IIIII', self.reader.read(20))
-        assert magic == 0x9fe3c5a3
-        assert self.reader.tell() == eof_offset
+        self.reader, self.name, toc_offset, trailer_offset, flags, \
+                checksum, self.__close_file = _open(path_or_file)
 
         self.reader.seek(toc_offset)
 
@@ -433,6 +453,13 @@ class Umod(StreamUnpackable):
         if negative:
             return -value
         return value
+
+def is_umod(path_or_file):
+    try:
+        _open(path_or_file)
+        return True
+    except:
+        return False
 
 if __name__ == '__main__':
     import argparse

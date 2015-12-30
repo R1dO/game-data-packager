@@ -15,24 +15,28 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-import argparse
+import tarfile
+import zipfile
 
-from .auto import automatic_unpacker
+from . import (TarUnpacker, ZipUnpacker)
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--output', '-o', help='extract to OUTPUT',
-            default=None)
-    parser.add_argument('archive')
-    args = parser.parse_args()
+def automatic_unpacker(archive, reader=None):
+    if reader is None:
+        is_plain_file = True
+        reader = open(archive, 'rb')
+    else:
+        is_plain_file = False
 
-    unpacker = automatic_unpacker(args.archive)
+    if reader.seekable():
+        if zipfile.is_zipfile(reader):
+            return ZipUnpacker(reader)
 
-    if unpacker is None:
-        raise ValueError('Cannot work out how to unpack %r' % args.archive)
+        if archive.endswith(('.umod', '.exe')):
+            from .umod import (Umod, is_umod)
+            if is_umod(reader):
+                return Umod(reader)
 
-    with unpacker:
-        if args.output:
-            unpacker.extractall(args.output)
-        else:
-            unpacker.printdir()
+    if is_plain_file and tarfile.is_tarfile(archive):
+        return TarUnpacker(archive)
+
+    return None
