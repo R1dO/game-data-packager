@@ -2650,7 +2650,7 @@ class PackagingTask(object):
         fmt = wanted.unpack['format']
 
         # builtins
-        if fmt in ('cat', 'dos2unix', 'tar.gz', 'tar.bz2', 'tar.xz', 'zip'):
+        if fmt in ('cat', 'dos2unix', 'tar.*', 'tar.gz', 'tar.bz2', 'tar.xz', 'umod', 'zip'):
             return True
 
         if fmt == 'deb':
