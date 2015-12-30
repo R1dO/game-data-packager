@@ -162,6 +162,7 @@ class GameData(object):
         self.md5 = {}
         self.sha1 = {}
         self.sha256 = {}
+        self.has_dosbox = False
 
     def is_scummvm(self,path):
         dir_l = path.lower()
@@ -170,26 +171,81 @@ class GameData(object):
             return True
         return False
 
-    def add_one_file(self, name, lower, group=None):
+    def add_archive(self, name, lower=False):
         out_name = os.path.basename(name)
+
         if lower:
             out_name = out_name.lower()
 
-        if group is not None:
-            group.group_members.add(out_name)
-        elif is_license(name):
-            out_name = os.path.basename(out_name)
-            self.licenses.group_members.add(out_name)
-        elif is_doc(name):
-            self.documentation.group_members.add(out_name)
-        else:
-            self.required.group_members.add(out_name)
+        self.add_file(name, out_name=out_name, group=self.archives)
 
-        hf = HashedFile.from_file(name, open(name, 'rb'))
-        self.size[out_name] = os.path.getsize(name)
+    def add_file(self, path, out_name=None, group=None, opened=None, size=None,
+            lang=None):
+        if out_name is None:
+            out_name = path
+
+        if group is not None:
+            # we already know what sort of file it is, probably an archive
+            pass
+        elif is_dosbox(path):
+            self.has_dosbox = True
+            group = self.unwanted
+        elif os.path.splitext(path.lower())[1] in ('.exe', '.exe$0', '.ovl',
+                '.dll', '.dll$0', '.bat', '.386'):
+            group = self.unwanted
+        elif out_name.startswith('goggame-') or out_name in ('webcache.zip',
+                                                         'gog.ico', 'gfw_high.ico'):
+            group = self.unwanted
+
+        if size is None:
+            size = os.path.getsize(path)
+
+        if opened is None:
+            opened = open(path, 'rb')
+
+        hf = HashedFile.from_file(path, opened)
+
+        # avoid that look_for: overlaps in cases where
+        # that leeds to looping during package build.
+        #
+        # e.g.:
+        #   md5 English = $A
+        #   md5 German = $B
+        #   md5 French = $B
+        for existing in self.size.keys():
+            if (size == self.size[existing] and
+                    hf.md5 == self.md5[existing] and
+                    existing.startswith(out_name)):
+                out_name = existing
+                break
+        else:
+            if out_name in self.size:
+                if (size == self.size[out_name] and
+                        hf.md5 == self.md5[out_name]):
+                    pass
+                elif lang:
+                    out_name += ('?' + lang)
+                else:
+                    out_name += ('?' + hf.md5[1:6])
+
+        self.size[out_name] = size
         self.md5[out_name] = hf.md5
         self.sha1[out_name] = hf.sha1
         self.sha256[out_name] = hf.sha256
+
+        if group is not None:
+            group.group_members.add(out_name)
+        elif is_license(path):
+            out_name = os.path.basename(out_name)
+            self.licenses.group_members.add(out_name)
+        elif is_doc(path):
+            self.documentation.group_members.add(out_name)
+        # most of the times these files are not needed
+        elif path.lower().split('.')[-1] in ('cfg', 'cmd', 'com', 'drv', 'ico',
+                'ini'):
+            self.optional.group_members.add(out_name)
+        else:
+            self.required.group_members.add(out_name)
 
     def add_one_dir(self, destdir, lower, game=None, lang=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
@@ -233,8 +289,6 @@ class GameData(object):
         if steam > 0:
             self.package['steam'] = steam_dict
 
-        has_dosbox = False
-
         for dirpath, dirnames, filenames in os.walk(destdir):
             if self.is_scummvm(dirpath) or is_runtime(dirpath):
                 continue
@@ -253,63 +307,11 @@ class GameData(object):
                 elif os.path.islink(path):
                     self.package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
                 elif os.path.isfile(path):
-                    ignorable = False
-
-                    if is_dosbox(path):
-                        has_dosbox = True
-                        ignorable = True
-                    elif os.path.splitext(fn.lower())[1] in ('.exe', '.exe$0', '.ovl',
-                                                             '.dll', '.dll$0', '.bat', '.386'):
-                        ignorable = True
-                    elif out_name.startswith('goggame-') or out_name in ('webcache.zip',
-                                                                     'gog.ico', 'gfw_high.ico'):
-                        ignorable = True
-
-                    size = os.path.getsize(path)
-                    hf = HashedFile.from_file(name, open(path, 'rb'))
-                    # avoid that look_for: overlaps in cases where
-                    # that leeds to looping during package build.
-                    #
-                    # e.g.:
-                    #   md5 English = $A
-                    #   md5 German = $B
-                    #   md5 French = $B
-                    for existing in self.size.keys():
-                        if (    size == self.size[existing]
-                            and hf.md5 == self.md5[existing]
-                            and existing.startswith(out_name)):
-                            out_name = existing
-                            break
-                    else:
-                        if out_name in self.size:
-                            if (size == self.size[out_name] and hf.md5 == self.md5[out_name]):
-                                pass
-                            elif lang:
-                                out_name += ('?' + lang)
-                            else:
-                                out_name += ('?' + hf.md5[1:6])
-
-                    if ignorable:
-                        self.unwanted.group_members.add(out_name)
-                    elif is_license(fn):
-                        out_name = os.path.basename(out_name)
-                        self.licenses.group_members.add(out_name)
-                    elif is_doc(path):
-                        self.documentation.group_members.add(out_name)
-                    # most of the times these files are not needed
-                    elif fn.lower().split('.')[-1] in ('cfg', 'cmd', 'com', 'drv', 'ico', 'ini'):
-                        self.optional.group_members.add(out_name)
-                    else:
-                        self.required.group_members.add(out_name)
-
-                    self.size[out_name] = size
-                    self.md5[out_name] = hf.md5
-                    self.sha1[out_name] = hf.sha1
-                    self.sha256[out_name] = hf.sha256
+                    self.add_file(path, out_name=out_name, lang=lang)
                 else:
                     logger.warning('ignoring unknown file type at %s' % path)
 
-            if has_dosbox:
+            if self.has_dosbox:
                 logger.warning('DOSBOX files detected, make sure not to include those in your package')
 
         if self.plugin != 'scummvm_common':
@@ -329,13 +331,9 @@ class GameData(object):
         else:
             del self.package['license']
 
-    def add_one_zip(self,archive):
-        self.add_one_file(archive, lower=False, group=self.archives)
-        # TODO
-        return
-
     def add_one_gog_sh(self,archive):
-        self.add_one_zip(archive)
+        self.add_archive(archive)
+
         with zipfile.ZipFile(archive, 'r') as zf:
             if 'scripts/config.lua' in zf.namelist():
                 with zf.open('scripts/config.lua') as metadata:
@@ -374,7 +372,7 @@ class GameData(object):
         self.add_one_dir(os.path.join(tmp, 'app'), True, game=game, lang=guess_lang(exe))
         os.system('rm -r ' + tmp)
 
-        self.add_one_file(exe, lower=False, group=self.archives)
+        self.add_archive(exe, lower=False)
         self.file_data[os.path.basename(exe)] = dict(unpack=dict(format='innoextract'),provides=['file1','file2'])
 
     def add_one_deb(self,deb,lower):
@@ -755,7 +753,7 @@ def main():
         elif arg.endswith('.deb'):
             gamedata.add_one_deb(arg,args.lower)
             if basename.startswith('gog_'):
-                gamedata.add_one_file(arg, lower=args.lower)
+                gamedata.add_archive(arg, lower=args.lower)
                 gamedata.files['files'][basename] = dict(unpack=dict(format='deb'),
                                                          provides=['<stuff>'])
         elif basename.startswith('setup_') and arg.endswith('.exe'):
@@ -768,7 +766,7 @@ def main():
             do_one_file(arg,args.lower)
             return
         else:
-            gamedata.add_one_file(arg, lower=args.lower)
+            gamedata.add_archive(arg, lower=args.lower)
     gamedata.to_yaml()
 
 
