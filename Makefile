@@ -137,6 +137,7 @@ install: default
 	mkdir -p $(DESTDIR)/usr/share/man/man6/
 	mkdir -p $(DESTDIR)/usr/share/man/fr/man6/
 	install -m0644 doc/game-data-packager.6                $(DESTDIR)/usr/share/man/man6/
+	install -m0644 doc/game-data-packager.fr.6             $(DESTDIR)/usr/share/man/fr/man6/
 
 	mkdir -p $(DESTDIR)/etc/game-data-packager
 	install -m0644 etc/game-data-packager.conf             $(DESTDIR)/etc/
@@ -146,7 +147,6 @@ install: default
 	install -m0755 runtime/doom2-masterlevels.py           $(DESTDIR)$(bindir)/doom2-masterlevels
 	install -m0644 runtime/doom2-masterlevels.desktop      $(DESTDIR)/usr/share/applications/
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
-	install -m0644 doc/doom2-masterlevels.fr.6             $(DESTDIR)/usr/share/man/fr/man6/
 
 # Requires additional setup, so not part of "make check"
 manual-check:
