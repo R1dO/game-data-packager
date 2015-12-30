@@ -257,7 +257,7 @@ class GameData(object):
         else:
             self.required.group_members.add(out_name)
 
-    def add_one_dir(self, destdir, lower, game=None, lang=None):
+    def add_one_dir(self, destdir, lower=False, game=None, lang=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
             self.try_repack_from.append(destdir)
 
@@ -379,7 +379,7 @@ class GameData(object):
                  universal_newlines=True,
                  cwd=tmp)
         self.longname = log.split('\n')[0].split('"')[1]
-        self.add_one_dir(os.path.join(tmp, 'app'), True, game=game, lang=guess_lang(exe))
+        self.add_one_dir(os.path.join(tmp, 'app'), game=game, lang=guess_lang(exe))
         os.system('rm -r ' + tmp)
 
         self.add_archive(exe, lower=False)
