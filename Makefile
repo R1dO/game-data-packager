@@ -137,7 +137,7 @@ install: default
 	mkdir -p $(DESTDIR)/usr/share/man/man6/
 	mkdir -p $(DESTDIR)/usr/share/man/fr/man6/
 	install -m0644 doc/game-data-packager.6                $(DESTDIR)/usr/share/man/man6/
-	install -m0644 doc/game-data-packager.fr.6             $(DESTDIR)/usr/share/man/fr/man6/
+	install -m0644 doc/game-data-packager.fr.6             $(DESTDIR)/usr/share/man/fr/man6/game-data-packager.6
 
 	mkdir -p $(DESTDIR)/etc/game-data-packager
 	install -m0644 etc/game-data-packager.conf             $(DESTDIR)/etc/
