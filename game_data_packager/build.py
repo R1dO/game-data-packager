@@ -1022,7 +1022,7 @@ class PackagingTask(object):
                     orig_time = os.stat(found_name).st_mtime
                     os.utime(tmp, (orig_time, orig_time))
                     self.use_file(wanted, tmp, None)
-                elif fmt in ('tar.gz', 'tar.bz2', 'tar.xz'):
+                elif fmt in ('tar.*', 'tar.gz', 'tar.bz2', 'tar.xz'):
                     reader = open(found_name, 'rb')
                     with TarUnpacker(found_name, reader, compression=fmt[4:],
                             skip=provider.unpack.get('skip', 0)) as tar:
