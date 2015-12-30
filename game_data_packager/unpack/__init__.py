@@ -199,10 +199,6 @@ class TarEntry(UnpackableEntry):
         self.impl = impl
 
     @property
-    def is_extractable(self):
-        return True
-
-    @property
     def is_directory(self):
         return self.impl.isdir()
 
@@ -251,10 +247,6 @@ class ZipEntry(UnpackableEntry):
 
     def __init__(self, impl):
         self.impl = impl
-
-    @property
-    def is_extractable(self):
-        return True
 
     @property
     def is_directory(self):
