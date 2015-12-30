@@ -104,8 +104,18 @@ class StreamUnpackable(metaclass=ABCMeta):
         """Extract the given member from the archive into the given
         directory.
         """
-        with self.open(member) as reader:
-            filename = reader.entry.name
+
+        if isinstance(member, (str, bytes)):
+            filename = member
+        else:
+            filename = member.name
+
+        reader = self.open(member)
+
+        if not reader:
+            raise ValueError('cannot open %s' % member)
+
+        with reader:
             filename = filename.lstrip('/')
 
             while filename.startswith('../'):
