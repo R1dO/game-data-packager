@@ -23,79 +23,12 @@ packages:
       id: 2788
     install:
     - at.gjd
-    - at.grv
-    - at.rl
-    - b.gjd
-    - b.grv
-    - b.rl
-    - ch.gjd
-    - ch.grv
-    - ch.rl
-    - cr.grv
-    - d.gjd
-    - d.grv
-    - d.rl
-    - demo.grv
-    - dr.gjd
-    - dr.grv
-    - dr.rl
-    - ek.grv
-    - f.grv
-    - fat.ad
-    - fat.mt
-    - fat.opl
-    - fh.gjd
-    - fh.rl
-    - ga.gjd
-    - ga.grv
-    - ga.rl
-    - gamwav.gjd
-    - gamwav.rl
-    - grate.grv
-    - h.grv
-    - hdisk.gjd
-    - hdisk.rl
-    - hm.grv
-    - htbd.gjd
-    - htbd.rl
-    - intro.gjd
-    - intro.rl
-    - jh.grv
-    - jhek.gjd
-    - jhek.rl
-    - k.gjd
-    - k.grv
-    - k.rl
-    - la.gjd
-    - la.grv
-    - la.rl
-    - li.gjd
-    - li.grv
-    - li.rl
-    - maze.grv
-    - mb.gjd
-    - mb.grv
-    - mb.rl
-    - mc.gjd
-    - mc.rl
-    - mu.gjd
-    - mu.grv
-    - mu.rl
-    - n.gjd
-    - n.grv
-    - n.rl
-    - p.gjd
-    - p.grv
-    - p.rl
-    - rob.gjd
-    - script.grv
-    - sphinx.fnt
-    - xmi.gjd
-    - xmi.rl
+    - assets
+    doc:
+    - manual.pdf
     optional:
     - track1.ogg
     - track2.ogg
-    - manual.pdf
     # either the Ogg or Flac files are supported,
     # but it's unlikely to have both
     - track1.flac
@@ -116,253 +49,103 @@ files:
   at.gjd?alt:
     look_for: [at.gjd]
 
-  manual.pdf:
-    install_to: $docdir
-
   setup_the_7th_guest_2.0.0.17.exe:
     unpack:
       format: innoextract
     provides:
     - at.gjd?gog
-    - at.grv
-    - at.rl
-    - b.gjd
-    - b.grv
-    - b.rl
-    - ch.gjd
-    - ch.grv
-    - ch.rl
-    - cr.grv
-    - d.gjd
-    - d.grv
-    - d.rl
-    - demo.grv
-    - dr.gjd
-    - dr.grv
-    - dr.rl
-    - ek.grv
-    - f.grv
-    - fat.ad
-    - fat.mt
-    - fat.opl
-    - fh.gjd
-    - fh.rl
-    - ga.gjd
-    - ga.grv
-    - ga.rl
-    - gamwav.gjd
-    - gamwav.rl
-    - grate.grv
-    - h.grv
-    - hdisk.gjd
-    - hdisk.rl
-    - hm.grv
-    - htbd.gjd
-    - htbd.rl
-    - intro.gjd
-    - intro.rl
-    - jh.grv
-    - jhek.gjd
-    - jhek.rl
-    - k.gjd
-    - k.grv
-    - k.rl
-    - la.gjd
-    - la.grv
-    - la.rl
-    - li.gjd
-    - li.grv
-    - li.rl
-    - maze.grv
-    - mb.gjd
-    - mb.grv
-    - mb.rl
-    - mc.gjd
-    - mc.rl
-    - mu.gjd
-    - mu.grv
-    - mu.rl
-    - n.gjd
-    - n.grv
-    - n.rl
-    - p.gjd
-    - p.grv
-    - p.rl
-    - rob.gjd
-    - script.grv
-    - sphinx.fnt
+    - assets
+    - manual.pdf
     - track1.ogg
     - track2.ogg
-    - xmi.gjd
-    - xmi.rl
-    - manual.pdf
-
-cksums: |
-  _ 45171574  at.gjd?gog
-  _ 45171574  at.gjd?alt
-  _ 6725      at.grv
-  _ 760       at.rl
-  _ 25672908  b.gjd
-  _ 2388      b.grv
-  _ 2800      b.rl
-  _ 16889832  ch.gjd
-  _ 7365      ch.grv
-  _ 1620      ch.rl
-  _ 1654      cr.grv
-  _ 31565570  d.gjd
-  _ 2100      d.grv
-  _ 7100      d.rl
-  _ 466       demo.grv
-  _ 23532001  dr.gjd
-  _ 5546      dr.grv
-  _ 2140      dr.rl
-  _ 3169      ek.grv
-  _ 1349      f.grv
-  _ 3622      fat.ad
-  _ 48770     fat.mt
-  _ 3622      fat.opl
-  _ 94315192  fh.gjd
-  _ 3960      fh.rl
-  _ 26905546  ga.gjd
-  _ 2442      ga.grv
-  _ 2860      ga.rl
-  _ 10709519  gamwav.gjd
-  _ 3700      gamwav.rl
-  _ 1086      grate.grv
-  _ 3140      h.grv
-  _ 4098309   hdisk.gjd
-  _ 160       hdisk.rl
-  _ 5153      hm.grv
-  _ 43211514  htbd.gjd
-  _ 3960      htbd.rl
-  _ 30611047  intro.gjd
-  _ 1960      intro.rl
-  _ 3224      jh.grv
-  _ 45053968  jhek.gjd
-  _ 4760      jhek.rl
-  _ 41165447  k.gjd
-  _ 1873      k.grv
-  _ 16360     k.rl
-  _ 31590902  la.gjd
-  _ 5939      la.grv
-  _ 2500      la.rl
-  _ 51284217  li.gjd
-  _ 2168      li.grv
-  _ 2000      li.rl
-  _ 3652      maze.grv
-  _ 28133514  mb.gjd
-  _ 3981      mb.grv
-  _ 1280      mb.rl
-  _ 38925255  mc.gjd
-  _ 2240      mc.rl
-  _ 16087706  mu.gjd
-  _ 1354      mu.grv
-  _ 860       mu.rl
-  _ 45452282  n.gjd
-  _ 842       n.grv
-  _ 10920     n.rl
-  _ 11897552  p.gjd
-  _ 1125      p.grv
-  _ 880       p.rl
-  _ 47668     rob.gjd
-  _ 16659     script.grv
-  _ 11112     sphinx.fnt
-  _ 257251    xmi.gjd
-  _ 1420      xmi.rl
-
-  _ 554267568 setup_the_7th_guest_2.0.0.17.exe
-  _ 73422     manual.pdf
-  _ 745582    track1.ogg
-  _ 18458626  track2.ogg
-
-  _ 5892243   track1.flac
-  _ 144008323 track2.flac
 
 flacsums: |
   5a8d98bb826366ebe10f481b3a879410  track1.flac
   d7325fb43db73a3e61d23026fd8aec6a  track2.flac
 
-md5sums: |
-  a24e6c5e22cfcf6d7653039e7256012a  at.gjd?gog
-  6e489e57e3aa06e5425a50956701757b  at.gjd?alt
-  1b96fe1e03d1f8014dbfae46d691d02a  at.grv
-  c0b257d351b4ad3780afad8797b1119a  at.rl
-  da9e17605e5beb385bc7f573f5e2e53d  b.gjd
-  bde8013625bd18c73f3d8b82291708ec  b.grv
-  44fabe6563455e70f8aa93d2078f7284  b.rl
-  9bcddb8e2acb2319584cd9f311342a9b  ch.gjd
-  9c72fc4fa4d21b7423c275647eda5813  ch.grv
-  dbd662d6b51d0c0c3c3ea74ee118e2be  ch.rl
-  06aa5392b0b81de082bcce65ee8b2798  cr.grv
-  e8115dcdf7f2f4778042b58f23018511  d.gjd
-  9830281686311904bf5ed3701ecea1cb  d.grv
-  2c5612c09a7cd92f3b8e5d5ca460a3d8  d.rl
-  b59ba1089a518fec63142b7233651b51  demo.grv
-  065d9f59999343aceeb30b664be883df  dr.gjd
-  0851ad80c1b734ae90376a3eeb66aeba  dr.grv
-  7201c6f2984ab0773afa0e5e42ae9fe5  dr.rl
-  14c05d8ed81ea6a8516decd828ec1bee  ek.grv
-  83bc5d0956a87b20ba802fd445c0341d  f.grv
-  9504bb5cb3292d29fc67186c01bcfdb4  fat.ad
-  c77379bd231d9ed7011162ac4e3e5816  fat.mt
-  9504bb5cb3292d29fc67186c01bcfdb4  fat.opl
-  2b3ad973e34cd239dfde309f0c08f847  fh.gjd
-  9c92b4f455eb62c905b6337a30a2dcf1  fh.rl
-  fb4579f2df810223f095f2a0f4769cf9  ga.gjd
-  c796d39a6897fb73ed10261897a78fab  ga.grv
-  f40bcfb8509a1ef3f47101aba3b65bf3  ga.rl
-  bab510145b2ff21f92511ddfb3d9e95f  gamwav.gjd
-  1627d8dd0edd4e4e2557ba32f89de958  gamwav.rl
-  c049041f30c6f8be6f691803879d006c  grate.grv
-  a499f1c9ecc6ff2adaaabd58e0a83ea7  h.grv
-  7a208817c5ae9e20073c50a89b183cbc  hdisk.gjd
-  988ee8007e52cc34dd33d53ac730c1e9  hdisk.rl
-  c752574c383a481a0031c51114a428fc  hm.grv
-  3b6e97b627840966ed9e1d2154da1ede  htbd.gjd
-  ad3d9afb7264dd2361d12d3742121441  htbd.rl
-  6e206a6729f63d1e115356a3a6a51618  intro.gjd
-  1827f9447c403d1e76aa1efa72cbb51f  intro.rl
-  2fe64b1354f5410e08ad42f01840255b  jh.grv
-  57eb8238a21ecce022bf4e8f77015296  jhek.gjd
-  8689b6fc964aae8032ef1ecfacb6c47a  jhek.rl
-  2ccc281078fdc95905700c1b7310ae2a  k.gjd
-  4198d8c2b6e2ae2f9deb85525ba2d0c9  k.grv
-  b4a667ff27742bc3038353c789ef1dd1  k.rl
-  ba35bbf44931282118bd2a60b4aa1344  la.gjd
-  a81d3015daa89edb408a288cf3753953  la.grv
-  1de5da049c7219487dd38d3a12ea1c1a  la.rl
-  bfeb51c7cb9931022106dde73ce0cfd4  li.gjd
-  f10f7ed3f27ecdae73329eb01c471783  li.grv
-  ae7a4484d859b505237b0184df2739d3  li.rl
-  d080b4f498370f97e7419c42058034f7  maze.grv
-  a2857ba5e7e2e1b0bbe8a2cc1861597a  mb.gjd
-  3aac0bfa248d63a5e51eeeff3dde3c77  mb.grv
-  5d5073876862873906c47492b0f8e862  mb.rl
-  f148c137f93bf196cce3e2f3fcb97695  mc.gjd
-  963e41e1d589bd4eeb0412ca6bea25f5  mc.rl
-  dde296b65a6599d7fba1a43688b70adc  mu.gjd
-  080a83407ac10111a52bc80e3a042dd8  mu.grv
-  5cb6382958eb3a0c3e2c55ad81ce4500  mu.rl
-  76a141f08b2dd5aab3c42c566fb62848  n.gjd
-  d1cedd3a901003f201a69197e6d9997f  n.grv
-  708e3d93aebd92175beb6d94e1693e32  n.rl
-  4a7372bf105ae2d3542c529931871383  p.gjd
-  1969728168c9145d22b1a58d337a8f58  p.grv
-  231208e544adbe891f8ec9bcb5fef901  p.rl
-  0de4f4056e2efb81226ef043624067e6  rob.gjd
-  846878336210a9d3b11995ea9cef35ca  script.grv
-  64d3d919b5d615e98b70991cdc925195  sphinx.fnt
-  566058e3fad1624c306c54f081cbb8fa  xmi.gjd
-  bcec2a30ece33bae04402b486b8f96b8  xmi.rl
+groups:
+  default: |
+    554267568 a7f0f3d634dfeca001ef10e5b468484b setup_the_7th_guest_2.0.0.17.exe
+    73422     6e1192307889e3e850d0c911cb617bf6 manual.pdf
+    45171574  a24e6c5e22cfcf6d7653039e7256012a at.gjd?gog
+    45171574  6e489e57e3aa06e5425a50956701757b at.gjd?alt
+    745582    0a687a8b0ac69c75fca81a5f93cccc58 track1.ogg
+    18458626  c63de4441da8b8df8f619ac3d000f11d track2.ogg
+    5892243   b8eddaa284726fe490ddfa345e228960 track1.flac
+    144008323 a71cccc18669771450b1425dfdb58a32 track2.flac
+  assets: |
+    25672908  da9e17605e5beb385bc7f573f5e2e53d b.gjd
+    16889832  9bcddb8e2acb2319584cd9f311342a9b ch.gjd
+    31565570  e8115dcdf7f2f4778042b58f23018511 d.gjd
+    23532001  065d9f59999343aceeb30b664be883df dr.gjd
+    94315192  2b3ad973e34cd239dfde309f0c08f847 fh.gjd
+    26905546  fb4579f2df810223f095f2a0f4769cf9 ga.gjd
+    10709519  bab510145b2ff21f92511ddfb3d9e95f gamwav.gjd
+    4098309   7a208817c5ae9e20073c50a89b183cbc hdisk.gjd
+    43211514  3b6e97b627840966ed9e1d2154da1ede htbd.gjd
+    30611047  6e206a6729f63d1e115356a3a6a51618 intro.gjd
+    45053968  57eb8238a21ecce022bf4e8f77015296 jhek.gjd
+    41165447  2ccc281078fdc95905700c1b7310ae2a k.gjd
+    31590902  ba35bbf44931282118bd2a60b4aa1344 la.gjd
+    51284217  bfeb51c7cb9931022106dde73ce0cfd4 li.gjd
+    28133514  a2857ba5e7e2e1b0bbe8a2cc1861597a mb.gjd
+    38925255  f148c137f93bf196cce3e2f3fcb97695 mc.gjd
+    16087706  dde296b65a6599d7fba1a43688b70adc mu.gjd
+    45452282  76a141f08b2dd5aab3c42c566fb62848 n.gjd
+    11897552  4a7372bf105ae2d3542c529931871383 p.gjd
+    47668     0de4f4056e2efb81226ef043624067e6 rob.gjd
+    257251    566058e3fad1624c306c54f081cbb8fa xmi.gjd
 
-  #cf3411f00413d9c21f71b1f3ca7d5def  setup_t7g.exe
-  a7f0f3d634dfeca001ef10e5b468484b  setup_the_7th_guest_2.0.0.17.exe
-  6e1192307889e3e850d0c911cb617bf6  manual.pdf
-  0a687a8b0ac69c75fca81a5f93cccc58  track1.ogg
-  c63de4441da8b8df8f619ac3d000f11d  track2.ogg
+    6725      1b96fe1e03d1f8014dbfae46d691d02a at.grv
+    2388      bde8013625bd18c73f3d8b82291708ec b.grv
+    7365      9c72fc4fa4d21b7423c275647eda5813 ch.grv
+    1654      06aa5392b0b81de082bcce65ee8b2798 cr.grv
+    2100      9830281686311904bf5ed3701ecea1cb d.grv
+    466       b59ba1089a518fec63142b7233651b51 demo.grv
+    5546      0851ad80c1b734ae90376a3eeb66aeba dr.grv
+    3169      14c05d8ed81ea6a8516decd828ec1bee ek.grv
+    1349      83bc5d0956a87b20ba802fd445c0341d f.grv
+    2442      c796d39a6897fb73ed10261897a78fab ga.grv
+    1086      c049041f30c6f8be6f691803879d006c grate.grv
+    3140      a499f1c9ecc6ff2adaaabd58e0a83ea7 h.grv
+    5153      c752574c383a481a0031c51114a428fc hm.grv
+    3224      2fe64b1354f5410e08ad42f01840255b jh.grv
+    1873      4198d8c2b6e2ae2f9deb85525ba2d0c9 k.grv
+    5939      a81d3015daa89edb408a288cf3753953 la.grv
+    2168      f10f7ed3f27ecdae73329eb01c471783 li.grv
+    3652      d080b4f498370f97e7419c42058034f7 maze.grv
+    3981      3aac0bfa248d63a5e51eeeff3dde3c77 mb.grv
+    1354      080a83407ac10111a52bc80e3a042dd8 mu.grv
+    842       d1cedd3a901003f201a69197e6d9997f n.grv
+    1125      1969728168c9145d22b1a58d337a8f58 p.grv
+    16659     846878336210a9d3b11995ea9cef35ca script.grv
 
-  b8eddaa284726fe490ddfa345e228960  track1.flac
-  a71cccc18669771450b1425dfdb58a32  track2.flac
+    760       c0b257d351b4ad3780afad8797b1119a at.rl
+    2800      44fabe6563455e70f8aa93d2078f7284 b.rl
+    1620      dbd662d6b51d0c0c3c3ea74ee118e2be ch.rl
+    7100      2c5612c09a7cd92f3b8e5d5ca460a3d8 d.rl
+    2140      7201c6f2984ab0773afa0e5e42ae9fe5 dr.rl
+    3960      9c92b4f455eb62c905b6337a30a2dcf1 fh.rl
+    2860      f40bcfb8509a1ef3f47101aba3b65bf3 ga.rl
+    3700      1627d8dd0edd4e4e2557ba32f89de958 gamwav.rl
+    160       988ee8007e52cc34dd33d53ac730c1e9 hdisk.rl
+    3960      ad3d9afb7264dd2361d12d3742121441 htbd.rl
+    1960      1827f9447c403d1e76aa1efa72cbb51f intro.rl
+    4760      8689b6fc964aae8032ef1ecfacb6c47a jhek.rl
+    16360     b4a667ff27742bc3038353c789ef1dd1 k.rl
+    2500      1de5da049c7219487dd38d3a12ea1c1a la.rl
+    2000      ae7a4484d859b505237b0184df2739d3 li.rl
+    1280      5d5073876862873906c47492b0f8e862 mb.rl
+    2240      963e41e1d589bd4eeb0412ca6bea25f5 mc.rl
+    860       5cb6382958eb3a0c3e2c55ad81ce4500 mu.rl
+    10920     708e3d93aebd92175beb6d94e1693e32 n.rl
+    880       231208e544adbe891f8ec9bcb5fef901 p.rl
+    1420      bcec2a30ece33bae04402b486b8f96b8 xmi.rl
+
+    3622      9504bb5cb3292d29fc67186c01bcfdb4 fat.ad
+    48770     c77379bd231d9ed7011162ac4e3e5816 fat.mt
+    3622      9504bb5cb3292d29fc67186c01bcfdb4 fat.opl
+    11112     64d3d919b5d615e98b70991cdc925195 sphinx.fnt
 
 sha1sums: |
   f0f5fec37fb4f86eba66b4c91bb1e99c98d80e13  at.gjd?gog
