@@ -94,6 +94,13 @@ class StreamUnpackable(metaclass=ABCMeta):
         """Iterate through UnpackableEntry objects."""
         raise NotImplementedError
 
+    @property
+    @abstractmethod
+    def format(self):
+        """Return the YAML "format" entry for this file.
+        """
+        raise NotImplementedError
+
     @abstractmethod
     def open(self, member):
         """Open a binary file-like entry for the name or entry.
@@ -162,6 +169,11 @@ class StreamUnpackable(metaclass=ABCMeta):
             print('%s %s %s %s' % (entry.type_indicator, size, mtime,
                 shlex.quote(entry.name)))
 
+    def seekable(self):
+        """Return True if the unpacker is able to seek.
+        """
+        return False
+
 class WrapperUnpacker(StreamUnpackable):
     """Base class for a StreamUnpackable that wraps a TarFile-like object."""
 
@@ -221,6 +233,8 @@ class TarEntry(UnpackableEntry):
 class TarUnpacker(WrapperUnpacker):
     def __init__(self, name, reader=None, compression='*', skip=0):
         super(TarUnpacker, self).__init__()
+        self.skip = skip
+        self.compression = compression
 
         if reader is None:
             reader = open(name, 'rb')
@@ -231,6 +245,10 @@ class TarUnpacker(WrapperUnpacker):
 
         self._impl = tarfile.open(name, mode='r|' + compression,
                 fileobj=reader)
+
+    @property
+    def format(self):
+        return 'tar.' + self.compression
 
     def open(self, entry):
         assert isinstance(entry, TarEntry)
@@ -271,6 +289,12 @@ class ZipEntry(UnpackableEntry):
 class ZipUnpacker(WrapperUnpacker):
     def __init__(self, file_or_name):
         super(ZipUnpacker, self).__init__()
+        if hasattr(file_or_name, 'seekable') and not file_or_name.seekable():
+            self.__seekable = False
+        else:
+            # zip files based on an on-disk file are seekable
+            self.__seekable = True
+
         self._impl = zipfile.ZipFile(file_or_name, 'r')
 
     def __iter__(self):
@@ -282,3 +306,10 @@ class ZipUnpacker(WrapperUnpacker):
 
     def _wrap_entry(self, entry):
         return ZipEntry(self)
+
+    @property
+    def format(self):
+        return 'zip'
+
+    def seekable(self):
+        return self.__seekable

@@ -454,6 +454,14 @@ class Umod(StreamUnpackable):
             return -value
         return value
 
+    @property
+    def format(self):
+        return 'umod'
+
+    def seekable(self):
+        # umods are always seekable
+        return True
+
 def is_umod(path_or_file):
     try:
         _open(path_or_file)
