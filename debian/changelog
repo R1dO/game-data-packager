@@ -41,12 +41,32 @@ game-data-packager (44) UNRELEASED; urgency=medium
   * fix autodownloading of GrimFandango Italian demo
   * fix 'gog', 'atlantis' & 'baldurs-gate-2' targets (Closes: #804804)
   * use steamcmd to download Linux & Windows game assets (Closes: #775365)
+  * steam: semi-automatically tag remaining native games
+  * steam: handle users without Steam account
+  * fedora: tweak the .spec file a bit
+  * fedora: make "chmod 755 *.py" more future-proof
+  * make install: fix inclusion game_data_packager/unpack in .deb
+  * man pages: install man pages in Makefile
+  * refactor packaging for various games
 
   [ Simon McVittie ]
   * quake, quake2: make aliases consistently strings
   * Always build vfs.zip, and optionally use it even when uninstalled
   * to_yaml: turn sets into sorted lists, and output more fields
   * Add a test that various forms of the game data are equivalent
+  * GameData: do not crash if _iter_expand_groups changes self.files
+  * build: allow tar.* as an unpacker format
+  * build: add support for xdelta version 1 patches
+  * Add an abstraction and limited auto-detection for archive unpacking
+  * Add library code to extract Unreal mods and installers
+  * make-template: always capture SHA1 and SHA256: we can edit them out
+    later if desired, but if the g-d-p owners don't own a particular game,
+    more information is better than less
+  * make-template: use groups
+  * make-template: refactor to support auto-detection and recursion into
+    (some) archives
+  * make-template: preserve case for files from InnoExtract
+  * make-template: preserve full name of license files
 
  -- Simon McVittie <smcv@debian.org>  Sun, 01 Nov 2015 11:10:56 +0100
 
