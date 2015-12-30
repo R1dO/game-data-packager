@@ -56,7 +56,7 @@ packages:
     install:
     - id1/pak0.pak?106
     - id1/pak1.pak
-    optional:
+    doc:
     - manual.txt?101_cd
     - quake manual.pdf
     license:
@@ -77,7 +77,7 @@ packages:
       path: "common/Quake/hipnotic"
     install:
     - hipnotic/pak0.pak
-    optional:
+    doc:
     - armagon/manual.htm
     - armagon/manual.txt
     license:
@@ -95,7 +95,7 @@ packages:
       path: "common/Quake/rogue"
     install:
     - rogue/pak0.pak
-    optional:
+    doc:
     - eternity/ctf.htm
     - eternity/ctf.txt
     - eternity/manual.htm
@@ -140,10 +140,8 @@ files:
 
   manual.txt?101_cd:
     distinctive_name: false
-    install_to: $docdir
 
   armagon/manual.htm:
-    install_to: $docdir
     install_as: manual.html
     alternatives:
     - manual.htm?mp1_cd
@@ -156,7 +154,6 @@ files:
     - manual.htm
 
   armagon/manual.txt:
-    install_to: $docdir
     install_as: manual.txt
     alternatives:
     - manual.txt?mp1_cd
@@ -166,14 +163,12 @@ files:
     distinctive_name: false
 
   eternity/manual.htm:
-    install_to: $docdir
     install_as: manual.html
     alternatives:
     - manual.htm?mp2_cd
     - eternity/manual.htm?mp12_cd
 
   eternity/ctf.htm:
-    install_to: $docdir
     install_as: ctf.html
     alternatives:
     - eternity/ctf.htm?mp12_cd
@@ -197,14 +192,12 @@ files:
     - manual.htm
 
   eternity/manual.txt:
-    install_to: $docdir
     install_as: manual.txt
     alternatives:
     - manual.txt?mp2_cd
     - eternity/manual.txt?mp12_cd
 
   eternity/ctf.txt:
-    install_to: $docdir
     install_as: ctf.txt
     alternatives:
     - eternity/ctf.txt?mp12_cd
@@ -287,7 +280,6 @@ files:
     alternatives:
     - quake manual.pdf?steam
     - quake manual.pdf?gog
-    install_to: $docdir
 
   setup_quake_the_offering_2.0.0.6.exe:
     unpack:
@@ -305,26 +297,28 @@ unknown_sizes:
   - hipnotic/pak0.pak?qdq_glquake_compat
   - resource.1?106_cd
 
-cksums: |
+groups:
+ default: |
   # Quake 1.01 CD (skitt@)
   # http://musicbrainz.org/release-group/ece43805-d8d4-4052-9cc7-806036633e32
-  326782693 15323555 q101_int.1
-  1346095307 9228516 q101_int.2
+  15323555   752f49131bb3ba832346e873c1bcfdc6 q101_int.1
+  09228516   9ed67b39020575771e29645d977c9216 q101_int.2
   # q101_int.[12] concatenate to...
-  3769782044 24552071 q101_int.exe
+  24552071   00ec83fe931371ddae30f9b7c83d414c q101_int.exe
   # which contains:
-  3351025396 25462 comexp.txt?101_cd
-  3946223549 4031 licinfo.txt?101_cd
-  1339070913 44326 manual.txt?101_cd
-  3769057337 10862 rlicnse.txt?101_cd
-  4232016217 18276119 id1/pak0.pak?101
-  3683309993 34257856 id1/pak1.pak
+  25462      0575bbd0df753f6e44b7a0f67ffc1413 comexp.txt?101_cd
+  4031       f1a3b7c5c163059345d7507ad1324e3d licinfo.txt?101_cd
+  44326      beaa9e3a9a8ef071d876d59fe35817ce manual.txt?101_cd
+  10862      c19fec3ec138ee39868a021acaa34d65 rlicnse.txt?101_cd
+  18276119   85fc9cee2035b66290da1e33be2ac86b id1/pak0.pak?101
+  34257856   d76b3e5678f0b64ac74ce5e340e6a685 id1/pak1.pak
 
   # Scourge of Armagon CD (skitt@)
   # http://musicbrainz.org/release/318a45be-5d92-4397-a157-7d052bf73824
-  345401104 40564 manual.htm?mp1_cd
-  2684027732 29551 manual.txt?mp1_cd
-  415120192 35527205 hipnotic/pak0.pak?orig
+  40564      d571f4e25c39a6ee1aa5e71dd7219838 manual.htm?mp1_cd
+  29551      9e5a6f56047e1b586be108c0598cbe5e manual.txt?mp1_cd
+  35527205   0ab83681aaf841c4320269e02941a14a hipnotic/pak0.pak?orig
+
   # The CD has eight audio tracks (2 to 9) with the following lengths:
   # track 2: 3m:10.840s
   # track 3: 3m:11.173s
@@ -337,9 +331,9 @@ cksums: |
 
   # Dissolution of Eternity CD (skitt@)
   # http://musicbrainz.org/release/7a7647e8-6eee-4f2e-9061-832cb5a64bd6
-  1111051062 43702 manual.htm?mp2_cd
-  27864436 30664 manual.txt?mp2_cd
-  4033998175 37875279 rogue/pak0.pak?mp2_cd
+  43702      6d258cb6d042c10b0f638b4dbf7b242d manual.htm?mp2_cd
+  30664      7d9d3fad75c0ee581a8265e59151ee2c manual.txt?mp2_cd
+  37875279   f8898a483b131de21581656c94f3c1a4 rogue/pak0.pak?mp2_cd
   # The CD has eight audio tracks as follows:
   # track 2: 3m:12.000s
   # track 3: 3m:09.680s
@@ -353,16 +347,16 @@ cksums: |
   # combined SoA/DoE CD (smcv@)
   # http://musicbrainz.org/release/eca51545-8548-4324-ac0b-2f8a7f8c8b7c
   # /dev/cdrom: UUID="1998-09-21-19-14-40-00" LABEL="QPACKS" TYPE="iso9660"
-  46825283 14554 license.txt?mp12_cd
-  415120192 35527205 hipnotic/pak0.pak?orig
-  3993845759 54994 armagon/manual.htm?mp12_cd
-  1659950884 44547 armagon/manual.txt?mp12_cd
-  434394072 21077 armagon/readme.htm?mp12_cd
-  1850939051 6089 eternity/ctf.htm?mp12_cd
-  2425680595 5951 eternity/ctf.txt?mp12_cd
-  1120740306 58113 eternity/manual.htm?mp12_cd
-  3929125575 44840 eternity/manual.txt?mp12_cd
-  1366046711 37875279 rogue/pak0.pak?mp12_cd
+  14554      be58e6beab67da309eabc3a4048e943f license.txt?mp12_cd
+  35527205   0ab83681aaf841c4320269e02941a14a hipnotic/pak0.pak?orig
+  54994      4cbb8fd26b83631eaa79f4e8e5161293 armagon/manual.htm?mp12_cd
+  44547      f0e5b60a8af31b40603faca2d831a5a2 armagon/manual.txt?mp12_cd
+  21077      _                                armagon/readme.htm?mp12_cd
+  6089       a82c063881a57f3ddeaccb2da285da19 eternity/ctf.htm?mp12_cd
+  5951       4b041f0feaa269e8c056e55673351a77 eternity/ctf.txt?mp12_cd
+  58113      29500c8bd2b0359eb258a4987319fadd eternity/manual.htm?mp12_cd
+  44840      9f9e2f2f14093d25f116a8a68c139251 eternity/manual.txt?mp12_cd
+  37875279   c38a4e04219c317cd1b02f386bdfe11f rogue/pak0.pak?mp12_cd
   # Track listing (MM:SS:FF where FF is a 1/75s CD audio frame):
   #  1      DATA    4      00:00:00(     0)     14:35:19( 65644)
   #  2      AUDIO   0      14:35:19( 65644)     03:10:63( 14313)
@@ -375,33 +369,11 @@ cksums: |
   #  9      AUDIO   0      36:27:37(164062)     03:02:01( 13651)
   # Leadout AUDIO   0      39:29:38(177713)
 
-md5sums: |
-  85fc9cee2035b66290da1e33be2ac86b  id1/pak0.pak?101
-  d76b3e5678f0b64ac74ce5e340e6a685  id1/pak1.pak
-  0ab83681aaf841c4320269e02941a14a  hipnotic/pak0.pak?orig
   # "MD5 sum for glQuake-compatible version (see
   # http://speeddemosarchive.com/quake/qdq/movies/sds.html for more info)"
-  f05b7452ae725e060fb3d14f7731fb00  hipnotic/pak0.pak?qdq_glquake_compat
-  959e4bd69d817ee0cbea6ddbf4f3af37  resource.1?106_cd
-  752f49131bb3ba832346e873c1bcfdc6  q101_int.1
-  9ed67b39020575771e29645d977c9216  q101_int.2
-  00ec83fe931371ddae30f9b7c83d414c  q101_int.exe
-  f1a3b7c5c163059345d7507ad1324e3d  licinfo.txt?101_cd
-  beaa9e3a9a8ef071d876d59fe35817ce  manual.txt?101_cd
-  c19fec3ec138ee39868a021acaa34d65  rlicnse.txt?101_cd
-  d571f4e25c39a6ee1aa5e71dd7219838  manual.htm?mp1_cd
-  9e5a6f56047e1b586be108c0598cbe5e  manual.txt?mp1_cd
-  6d258cb6d042c10b0f638b4dbf7b242d  manual.htm?mp2_cd
-  7d9d3fad75c0ee581a8265e59151ee2c  manual.txt?mp2_cd
-  be58e6beab67da309eabc3a4048e943f  license.txt?mp12_cd
-  4cbb8fd26b83631eaa79f4e8e5161293  armagon/manual.htm?mp12_cd
-  f0e5b60a8af31b40603faca2d831a5a2  armagon/manual.txt?mp12_cd
-  a82c063881a57f3ddeaccb2da285da19  eternity/ctf.htm?mp12_cd
-  4b041f0feaa269e8c056e55673351a77  eternity/ctf.txt?mp12_cd
-  29500c8bd2b0359eb258a4987319fadd  eternity/manual.htm?mp12_cd
-  9f9e2f2f14093d25f116a8a68c139251  eternity/manual.txt?mp12_cd
+  _          f05b7452ae725e060fb3d14f7731fb00 hipnotic/pak0.pak?qdq_glquake_compat
+  _          959e4bd69d817ee0cbea6ddbf4f3af37 resource.1?106_cd
 
-size_and_md5: |
   # demo, free to download
   9094045    8cee4d03ee092909fdb6a4f84f0c1357 quake106.zip
   # unpacks into:
@@ -411,14 +383,9 @@ size_and_md5: |
   9311       2b63fd0623b86b22ef915c7c0fca8ff2 licinfo.txt?shareware
   18689235   5906e5998fc3d896ddaf5e6a62e03abb id1/pak0.pak?106
 
-  34257856   d76b3e5678f0b64ac74ce5e340e6a685 id1/pak1.pak
-  25462      0575bbd0df753f6e44b7a0f67ffc1413 comexp.txt?101_cd
+  # GOG.com & Steam
   9308       0f77362a55b35e623d9f4710ed86cda7 licinfo.txt?gog
-
-  37875279   c38a4e04219c317cd1b02f386bdfe11f rogue/pak0.pak?mp12_cd
-  37875279   f8898a483b131de21581656c94f3c1a4 rogue/pak0.pak?mp2_cd
   37875279   f71428763229bdb373f00a547296efe3 rogue/pak0.pak?steam
-
   717202     785290e6e42c94934c3044851e380b64 quake manual.pdf?gog
   727612     0eb0ce3c6244dce91e68eec572cbd67e quake manual.pdf?steam
   1233689072 c8acba92fca95b8ba67111fa81730141 setup_quake_the_offering_2.0.0.6.exe
