@@ -269,9 +269,9 @@ class ZipEntry(UnpackableEntry):
         return self.impl.file_size
 
 class ZipUnpacker(WrapperUnpacker):
-    def __init__(self, name):
+    def __init__(self, file_or_name):
         super(ZipUnpacker, self).__init__()
-        self._impl = zipfile.ZipFile(name, 'r')
+        self._impl = zipfile.ZipFile(file_or_name, 'r')
 
     def __iter__(self):
         for entry in self._impl.infolist():
