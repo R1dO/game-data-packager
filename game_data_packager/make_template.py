@@ -246,7 +246,6 @@ class GameData(object):
         if group is not None:
             group.group_members.add(out_name)
         elif is_license(path):
-            out_name = os.path.basename(out_name)
             self.licenses.group_members.add(out_name)
         elif is_doc(path):
             self.documentation.group_members.add(out_name)
