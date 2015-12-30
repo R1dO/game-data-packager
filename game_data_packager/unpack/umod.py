@@ -16,11 +16,14 @@
 # /usr/share/common-licenses/GPL-2.
 
 import io
+import logging
 import os
 import struct
 import re
 
 from . import (StreamUnpackable, UnpackableEntry)
+
+logger = logging.getLogger(__name__)
 
 # Arbitrary limit to avoid reading too much binary data if something goes wrong
 MAX_LINE_LENGTH = 1024
@@ -351,9 +354,9 @@ class Umod(StreamUnpackable):
             line = line[1:-1]
 
             if line not in expected_sections:
-                raise ValueError('Unexpected section [%s]' % line)
+                logger.warning('Unexpected section [%s]' % line)
 
-            self.__parse_section(manifest, expected_sections.pop(line))
+            self.__parse_section(manifest, expected_sections.pop(line, None))
 
         for x in self:
             assert isinstance(x, UmodEntry)
@@ -367,7 +370,10 @@ class Umod(StreamUnpackable):
                 break
 
             k, v = line.split('=', 1)
-            section._consume_line(self, k, v)
+            if section is None:
+                logger.debug('%s=%s', k, v)
+            else:
+                section._consume_line(self, k, v)
 
     def __enter__(self):
         return self
