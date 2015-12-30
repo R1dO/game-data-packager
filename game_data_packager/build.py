@@ -401,12 +401,12 @@ class PackagingTask(object):
         self.game.load_file_data()
 
     def __del__(self):
-        self.__exit__()
+        self.__exit__(None, None, None)
 
     def __enter__(self):
         return self
 
-    def __exit__(self, *ignored):
+    def __exit__(self, _et, _ev, _tb):
         for d in self._cleanup_dirs:
             shutil.rmtree(d, onerror=lambda func, path, ei:
                 logger.warning('error removing "%s":' % path, exc_info=ei))

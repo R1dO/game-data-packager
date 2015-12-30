@@ -372,7 +372,7 @@ class Umod(StreamUnpackable):
     def __enter__(self):
         return self
 
-    def __exit__(self):
+    def __exit__(self, _et, _ev, _tb):
         if self.__close_file:
             self.reader.close()
 
