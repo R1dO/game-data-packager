@@ -38,6 +38,7 @@ except ImportError:
 from . import (HashedFile, WantedFile)
 from .gog import GOG
 from .steam import parse_acf
+from .unpack import TarUnpacker
 from .unpack.auto import automatic_unpacker
 from .util import (
         check_output,
@@ -177,7 +178,7 @@ class GameData(object):
             return True
         return False
 
-    def add_archive(self, name, lower=False):
+    def add_archive(self, name, lower=False, reader=None):
         out_name = os.path.basename(name)
 
         if lower:
@@ -189,13 +190,29 @@ class GameData(object):
 
         if unpacker is not None:
             with unpacker:
-                for entry in unpacker:
-                    if entry.is_regular_file and entry.is_extractable:
-                        self.add_file(entry.name, opened=unpacker.open(entry),
-                                size=entry.size)
+                self.add_unpacker(name, out_name, unpacker)
+
+    def add_unpacker(self, name, out_name, unpacker):
+        file_data = self.file_data.setdefault(out_name, {})
+        file_data['provides'] = ['contents of %s' % out_name]
+        unpack = file_data.setdefault('unpack', {})
+        unpack['format'] = unpacker.format
+
+        if isinstance(unpacker, TarUnpacker):
+            unpack['skip'] = unpacker.skip
+
+        group = WantedFile('contents of %s' % out_name)
+        group.group_members = set()
+        self.groups[group.name] = group
+
+        for entry in unpacker:
+            if entry.is_regular_file and entry.is_extractable:
+                self.add_file(entry.name, opened=unpacker.open(entry),
+                        size=entry.size, parent_unpacker=unpacker,
+                        group=group)
 
     def add_file(self, path, out_name=None, group=None, opened=None, size=None,
-            lang=None):
+            lang=None, parent_unpacker=None):
         if out_name is None:
             out_name = path
 
@@ -216,7 +233,10 @@ class GameData(object):
             size = os.path.getsize(path)
 
         if opened is None:
+            is_plain_file = True
             opened = open(path, 'rb')
+        else:
+            is_plain_file = False
 
         hf = HashedFile.from_file(path, opened)
 
@@ -248,6 +268,18 @@ class GameData(object):
         self.sha1[out_name] = hf.sha1
         self.sha256[out_name] = hf.sha256
 
+        unpacker = None
+
+        if parent_unpacker is None or parent_unpacker.seekable():
+            # skip PK3s: we don't normally want to recurse into them
+            if not path.endswith('.pk3'):
+                if is_plain_file:
+                    unpacker = automatic_unpacker(path)
+                else:
+                    unpacker = automatic_unpacker(path, opened)
+
+        ext = path.lower().split('.')[-1]
+
         if group is not None:
             group.group_members.add(out_name)
         elif is_license(path):
@@ -255,11 +287,16 @@ class GameData(object):
         elif is_doc(path):
             self.documentation.group_members.add(out_name)
         # most of the times these files are not needed
-        elif path.lower().split('.')[-1] in ('cfg', 'cmd', 'com', 'drv', 'ico',
-                'ini'):
+        elif ext in ('cfg', 'cmd', 'com', 'drv', 'ico', 'ini'):
             self.optional.group_members.add(out_name)
+        elif unpacker is not None or ext in ('umod', 'zip'):
+            self.archives.group_members.add(out_name)
         else:
             self.required.group_members.add(out_name)
+
+        if unpacker is not None:
+            with unpacker:
+                self.add_unpacker(path, out_name, unpacker)
 
     def add_one_dir(self, destdir, lower=False, game=None, lang=None):
         if destdir.startswith('/usr/local') or destdir.startswith('/opt/'):
