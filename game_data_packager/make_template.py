@@ -145,6 +145,7 @@ class GameData(object):
 
         self.data = dict()
 
+        self.groups = {}
         self.required = WantedFile('probably required')
         self.required.group_members = set()
         self.optional = WantedFile('probably optional')
@@ -157,6 +158,10 @@ class GameData(object):
         self.unwanted.group_members = set()
         self.archives = WantedFile('archives')
         self.archives.group_members = set()
+
+        for group in (self.required, self.optional, self.documentation,
+                self.licenses, self.archives, self.unwanted):
+            self.groups[group.name] = group
 
         self.file_data = {}
         self.size = {}
@@ -560,8 +565,7 @@ class GameData(object):
 
         print('\ngroups:')
 
-        for group in (self.required, self.optional, self.documentation,
-                self.licenses, self.archives, self.unwanted):
+        for group in self.groups.values():
             if not group.group_members:
                 # skip empty group
                 continue
