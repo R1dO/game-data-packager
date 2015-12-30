@@ -12,72 +12,7 @@ packages:
       url: kings_quest_4_5_6
       game: kings_quest_6_heir_today_gone_tomorrow
     install:
-    - 420.hep
-    - 420.scr
-    - 425.hep
-    - 425.scr
-    - 460.hep
-    - 460.scr
-    - 470.hep
-    - 470.scr
-    - 65535.map
-    - message.map
-    - resource.000
-    - resource.aud
-    - resource.map
-    - resource.msg
-    - resource.sfx
-    - version
-
-    - actors/alex.bin
-    - actors/allaria.bin
-    - actors/allariad.bin
-    - actors/beast.bin
-    - actors/beautess.bin
-    - actors/beautpea.bin
-    - actors/booksh.bin
-    - actors/bookworm.bin
-    - actors/caliphid.bin
-    - actors/caliphim.bin
-    - actors/cassima.bin
-    - actors/celeste.bin
-    - actors/ferrym.bin
-    - actors/gnomes.bin
-    - actors/graham.bin
-    - actors/headdru.bin
-    - actors/jollo.bin
-    - actors/lampsell.bin
-    - actors/pawnshop.bin
-    - actors/prince.bin
-    - actors/rosella.bin
-    - actors/saladin.bin
-    - actors/sight.bin
-    - actors/smell.bin
-    - actors/smellno.bin
-    - actors/sound.bin
-    - actors/soundno.bin
-    - actors/taste.bin
-    - actors/touch.bin
-    - actors/valanice.bin
-    - actors/vizier.bin
-    - actors/wingg.bin
-
-    - seq/birds.seq
-    - seq/boat.seq
-    - seq/cd1.seq
-    - seq/cd6.seq
-    - seq/close.seq
-    - seq/cloud.seq
-    - seq/fpan.seq
-    - seq/fs1.seq
-    - seq/fs2y.seq
-    - seq/fs2z.seq
-    - seq/land.seq
-    - seq/nshp.seq
-    - seq/open.seq
-    - seq/open2.seq
-    - seq/scan.seq
-    - seq/scop.seq
+    - assets
     optional:
     - disk2
     - kq6cd
@@ -89,300 +24,98 @@ files:
       format: innoextract
       prefix: "Kings Quest 6"
     provides:
-    - 420.hep
-    - 420.scr
-    - 425.hep
-    - 425.scr
-    - 460.hep
-    - 460.scr
-    - 470.hep
-    - 470.scr
-    - 65535.map
-    - message.map
-    - resource.000
-    - resource.aud
-    - resource.map
-    - resource.msg
-    - resource.sfx
-    - version
-
+    - assets
     - disk2
     - kq6cd
-
-    - actors/alex.bin
-    - actors/allaria.bin
-    - actors/allariad.bin
-    - actors/beast.bin
-    - actors/beautess.bin
-    - actors/beautpea.bin
-    - actors/booksh.bin
-    - actors/bookworm.bin
-    - actors/caliphid.bin
-    - actors/caliphim.bin
-    - actors/cassima.bin
-    - actors/celeste.bin
-    - actors/ferrym.bin
-    - actors/gnomes.bin
-    - actors/graham.bin
-    - actors/headdru.bin
-    - actors/jollo.bin
-    - actors/lampsell.bin
-    - actors/pawnshop.bin
-    - actors/prince.bin
-    - actors/rosella.bin
-    - actors/saladin.bin
-    - actors/sight.bin
-    - actors/smell.bin
-    - actors/smellno.bin
-    - actors/sound.bin
-    - actors/soundno.bin
-    - actors/taste.bin
-    - actors/touch.bin
-    - actors/valanice.bin
-    - actors/vizier.bin
-    - actors/wingg.bin
-
-    - seq/birds.seq
-    - seq/boat.seq
-    - seq/cd1.seq
-    - seq/cd6.seq
-    - seq/close.seq
-    - seq/cloud.seq
-    - seq/fpan.seq
-    - seq/fs1.seq
-    - seq/fs2y.seq
-    - seq/fs2z.seq
-    - seq/land.seq
-    - seq/nshp.seq
-    - seq/open.seq
-    - seq/open2.seq
-    - seq/scan.seq
-    - seq/scop.seq
-
     - manual.pdf
 
   setup_kings_quest6_2.1.0.18.exe:
     unpack:
       format: innoextract
     provides:
-    - 420.hep
-    - 420.scr
-    - 425.hep
-    - 425.scr
-    - 460.hep
-    - 460.scr
-    - 470.hep
-    - 470.scr
-    - 65535.map
-    - message.map
-    - resource.000
-    - resource.aud
-    - resource.map
-    - resource.msg
-    - resource.sfx
-    - version
+    - assets
     - disk2
     - kq6cd
-    - actors/alex.bin
-    - actors/allaria.bin
-    - actors/allariad.bin
-    - actors/beast.bin
-    - actors/beautess.bin
-    - actors/beautpea.bin
-    - actors/booksh.bin
-    - actors/bookworm.bin
-    - actors/caliphid.bin
-    - actors/caliphim.bin
-    - actors/cassima.bin
-    - actors/celeste.bin
-    - actors/ferrym.bin
-    - actors/gnomes.bin
-    - actors/graham.bin
-    - actors/headdru.bin
-    - actors/jollo.bin
-    - actors/lampsell.bin
-    - actors/pawnshop.bin
-    - actors/prince.bin
-    - actors/rosella.bin
-    - actors/saladin.bin
-    - actors/sight.bin
-    - actors/smell.bin
-    - actors/smellno.bin
-    - actors/sound.bin
-    - actors/soundno.bin
-    - actors/taste.bin
-    - actors/touch.bin
-    - actors/valanice.bin
-    - actors/vizier.bin
-    - actors/wingg.bin
-    - seq/birds.seq
-    - seq/boat.seq
-    - seq/cd1.seq
-    - seq/cd6.seq
-    - seq/close.seq
-    - seq/cloud.seq
-    - seq/fpan.seq
-    - seq/fs1.seq
-    - seq/fs2y.seq
-    - seq/fs2z.seq
-    - seq/land.seq
-    - seq/nshp.seq
-    - seq/open.seq
-    - seq/open2.seq
-    - seq/scan.seq
-    - seq/scop.seq
     - manual.pdf
 
   manual.pdf:
     install_to: $docdir
 
-cksums: |
-  _ 1472      420.hep
-  _ 5862      420.scr
-  _ 758       425.hep
-  _ 2320      425.scr
-  _ 3250      460.hep
-  _ 9308      460.scr
-  _ 3352      470.hep
-  _ 11578     470.scr
-  _ 622       65535.map
-  _ 7         disk2
-  _ 9         kq6cd
-  _ 440       message.map
-  _ 8376352   resource.000
-  _ 350789703 resource.aud
-  _ 9215      resource.map
-  _ 259510    resource.msg
-  _ 6574524   resource.sfx
-  _ 45        version
+groups:
+  default: |
+    305459671 00c153eb0f99d76b7778daf3cd0045c7 setup_kings_quest_4_5_6.exe
+    257288336 6da5e0cd12fd5f87fa1942c2b5d214ea setup_kings_quest6_2.1.0.18.exe
+    4841227   bd897ec43bf416ee08a4a8e9b4bd7ff4 manual.pdf
+    7         fd30617b81e46074ac3cfad1133eba2c disk2
+    9         a18b828becfb3d3436f417bad7ba1890 kq6cd
+  assets: |
+    1472      dde8709ca90893b3ac55cc7b3d008ef7 420.hep
+    5862      1c549b41410190bcfef7727bf8ca65b8 420.scr
+    758       9ea45b5dca54afa3be708aecdbb09bcc 425.hep
+    2320      52fdc1f1db366ad975a4038f6fa1d36f 425.scr
+    3250      aa3d125575ac76dd1843f6c627b060b3 460.hep
+    9308      03d4e8bc4741ce865dc000b56b8558f9 460.scr
+    3352      4b8ece6a491775af124ed2acae59301e 470.hep
+    11578     4f07d39caa7ae155bb12ea350e8a11f0 470.scr
+    622       82e4cc43b2773fcaa76970fef543aafa 65535.map
+    440       cb0f269d9d322c89c3d8f6ec002288c0 message.map
+    8376352   e5357240096ceab0909e817cad42105a resource.000
+    350789703 bdc8c58646fbfe1ef542c48a0db0e9e8 resource.aud
+    9215      8ac79732f6f759158cda43e0b8b1988e resource.map
+    259510    f0a3201d01313f10b61f7a7fe21d69a3 resource.msg
+    6574524   1da1077233d71b1137f28ff322e9b992 resource.sfx
+    45        c1c0a978082b41ee8fdea67f34896cd8 version
 
-  _ 134005    actors/alex.bin
-  _ 29889     actors/allaria.bin
-  _ 65241     actors/allariad.bin
-  _ 108765    actors/beast.bin
-  _ 28033     actors/beautess.bin
-  _ 29845     actors/beautpea.bin
-  _ 74269     actors/booksh.bin
-  _ 84937     actors/bookworm.bin
-  _ 71349     actors/caliphid.bin
-  _ 45377     actors/caliphim.bin
-  _ 51449     actors/cassima.bin
-  _ 35157     actors/celeste.bin
-  _ 79209     actors/ferrym.bin
-  _ 196241    actors/gnomes.bin
-  _ 36965     actors/graham.bin
-  _ 103917    actors/headdru.bin
-  _ 122523    actors/jollo.bin
-  _ 71025     actors/lampsell.bin
-  _ 70025     actors/pawnshop.bin
-  _ 39857     actors/prince.bin
-  _ 34929     actors/rosella.bin
-  _ 86039     actors/saladin.bin
-  _ 49531     actors/sight.bin
-  _ 67015     actors/smell.bin
-  _ 66355     actors/smellno.bin
-  _ 38773     actors/sound.bin
-  _ 38773     actors/soundno.bin
-  _ 136253    actors/taste.bin
-  _ 127783    actors/touch.bin
-  _ 34097     actors/valanice.bin
-  _ 50335     actors/vizier.bin
-  _ 61083     actors/wingg.bin
+    134005    cff22e12dc8d208e278de65cca4f9c74 actors/alex.bin
+    29889     5956d5ecca2a2f36bd4cd3c692fdce20 actors/allaria.bin
+    65241     9184ef85b2a33f3c1bdebc7c6818b96a actors/allariad.bin
+    108765    8ac1b442c3734d45c103e511260ea916 actors/beast.bin
+    28033     c86d4dded61ee9288ddea02685e2347d actors/beautess.bin
+    29845     2fef49f37b31eb6c6fe57bc338415f71 actors/beautpea.bin
+    74269     376ca9f64fa16b778dcb8f24e83cf069 actors/booksh.bin
+    84937     9a250f70004cdbb64ee163b60860a4f3 actors/bookworm.bin
+    71349     572c7c6321c9d811b9d2abdc533707a1 actors/caliphid.bin
+    45377     ab01c4ea40c5d94d11fbd147f7d12cb3 actors/caliphim.bin
+    51449     bc3cef71da4c2a3c65fb77861bf172d3 actors/cassima.bin
+    35157     e088c61a2112c7ecec1acfba2ffcdc97 actors/celeste.bin
+    79209     4fd5045a30c7d8f43d24b2d06c4f9063 actors/ferrym.bin
+    196241    cb6da6eb54094facd73e1da7a1414399 actors/gnomes.bin
+    36965     efa0ec61c86262fb57c9dde020d33702 actors/graham.bin
+    103917    734c5635f9299b3ed0510e88acfc87df actors/headdru.bin
+    122523    321d43bff4a993f5e4acf29680668059 actors/jollo.bin
+    71025     eb20dda0ec29ca9d11e6950ba7118409 actors/lampsell.bin
+    70025     331ad9c2dc18291a79d535ba9cde3cb7 actors/pawnshop.bin
+    39857     f7ed085cd9c00408e560829be704b4ff actors/prince.bin
+    34929     ea19b280eee9c4270d8a40943b3c5ae9 actors/rosella.bin
+    86039     63e9669e4ebe55fcc42a6c61e146d32b actors/saladin.bin
+    49531     32e84c020cdfafe19ddf776af365e3ae actors/sight.bin
+    67015     40f81e7b018c7d11e2242889b7f8f2bf actors/smell.bin
+    66355     3194693afea26344a253406e8094b28b actors/smellno.bin
+    38773     704b6e6e57526f5ad64b0a2a271a0a5b actors/sound.bin
+    38773     37daafa08fd61edf0c896218aba4cd57 actors/soundno.bin
+    136253    5b888081aab7a44e5e6e3457c6998fad actors/taste.bin
+    127783    68fc09f5281689f0788d9777fa86558a actors/touch.bin
+    34097     d575b41e7c18861ec7b926f3caeddd33 actors/valanice.bin
+    50335     749bfcb92dccb5bebe0758007b48d51b actors/vizier.bin
+    61083     30b9b3fcb23b7519b556805453d923dc actors/wingg.bin
 
-  _ 7511866   seq/birds.seq
-  _ 3217234   seq/boat.seq
-  _ 3344865   seq/cd1.seq
-  _ 3512028   seq/cd6.seq
-  _ 832262    seq/close.seq
-  _ 2030233   seq/cloud.seq
-  _ 1079442   seq/fpan.seq
-  _ 625866    seq/fs1.seq
-  _ 124440    seq/fs2y.seq
-  _ 333563    seq/fs2z.seq
-  _ 580742    seq/land.seq
-  _ 3139935   seq/nshp.seq
-  _ 2500543   seq/open.seq
-  _ 2114190   seq/open2.seq
-  _ 1207440   seq/scan.seq
-  _ 1023651   seq/scop.seq
+    7511866   deae62a6d43f9aeb200f6204d1492412 seq/birds.seq
+    3217234   94bddff322d2d44c15c0f7b0bfea6a8d seq/boat.seq
+    3344865   26b5bd74529720e4384147d23ada62d9 seq/cd1.seq
+    3512028   82e38ca050667597ccfa95b0a232c08a seq/cd6.seq
+    832262    d974262257ad979533e958f4d523e2ee seq/close.seq
+    2030233   8fc1418945f3fec037954b50e8d4e034 seq/cloud.seq
+    1079442   a4e3a5a1f3f31f94ee8c1c33de89d864 seq/fpan.seq
+    625866    752c9e1989daa92894de839223bbb407 seq/fs1.seq
+    124440    e0d066fec559eaf2388b069a6966267b seq/fs2y.seq
+    333563    70b7b6433bd1e5c77e05dbee40eed413 seq/fs2z.seq
+    580742    a0e11c05027f5f822fb5ec993077b830 seq/land.seq
+    3139935   1c9e8fc3299c0aa18234d9bd46afc925 seq/nshp.seq
+    2500543   b0742a814cf0da2cfa308718e9a853f5 seq/open.seq
+    2114190   ce7434f56b888693b59d3dd3442765c0 seq/open2.seq
+    1207440   d74c28703133a8511eda2c9802e45830 seq/scan.seq
+    1023651   d3b1da8793ae204285fb4b1ba5c43bec seq/scop.seq
 
-  _ 305459671 setup_kings_quest_4_5_6.exe
-  _ 257288336 setup_kings_quest6_2.1.0.18.exe
-  _ 4841227   manual.pdf
-md5sums: |
-  dde8709ca90893b3ac55cc7b3d008ef7  420.hep
-  1c549b41410190bcfef7727bf8ca65b8  420.scr
-  9ea45b5dca54afa3be708aecdbb09bcc  425.hep
-  52fdc1f1db366ad975a4038f6fa1d36f  425.scr
-  aa3d125575ac76dd1843f6c627b060b3  460.hep
-  03d4e8bc4741ce865dc000b56b8558f9  460.scr
-  4b8ece6a491775af124ed2acae59301e  470.hep
-  4f07d39caa7ae155bb12ea350e8a11f0  470.scr
-  82e4cc43b2773fcaa76970fef543aafa  65535.map
-  fd30617b81e46074ac3cfad1133eba2c  disk2
-  a18b828becfb3d3436f417bad7ba1890  kq6cd
-  cb0f269d9d322c89c3d8f6ec002288c0  message.map
-  e5357240096ceab0909e817cad42105a  resource.000
-
-  bdc8c58646fbfe1ef542c48a0db0e9e8  resource.aud
-  8ac79732f6f759158cda43e0b8b1988e  resource.map
-  f0a3201d01313f10b61f7a7fe21d69a3  resource.msg
-  1da1077233d71b1137f28ff322e9b992  resource.sfx
-  c1c0a978082b41ee8fdea67f34896cd8  version
-
-  cff22e12dc8d208e278de65cca4f9c74  actors/alex.bin
-  5956d5ecca2a2f36bd4cd3c692fdce20  actors/allaria.bin
-  9184ef85b2a33f3c1bdebc7c6818b96a  actors/allariad.bin
-  8ac1b442c3734d45c103e511260ea916  actors/beast.bin
-  c86d4dded61ee9288ddea02685e2347d  actors/beautess.bin
-  2fef49f37b31eb6c6fe57bc338415f71  actors/beautpea.bin
-  376ca9f64fa16b778dcb8f24e83cf069  actors/booksh.bin
-  9a250f70004cdbb64ee163b60860a4f3  actors/bookworm.bin
-  572c7c6321c9d811b9d2abdc533707a1  actors/caliphid.bin
-  ab01c4ea40c5d94d11fbd147f7d12cb3  actors/caliphim.bin
-  bc3cef71da4c2a3c65fb77861bf172d3  actors/cassima.bin
-  e088c61a2112c7ecec1acfba2ffcdc97  actors/celeste.bin
-  4fd5045a30c7d8f43d24b2d06c4f9063  actors/ferrym.bin
-  cb6da6eb54094facd73e1da7a1414399  actors/gnomes.bin
-  efa0ec61c86262fb57c9dde020d33702  actors/graham.bin
-  734c5635f9299b3ed0510e88acfc87df  actors/headdru.bin
-  321d43bff4a993f5e4acf29680668059  actors/jollo.bin
-  eb20dda0ec29ca9d11e6950ba7118409  actors/lampsell.bin
-  331ad9c2dc18291a79d535ba9cde3cb7  actors/pawnshop.bin
-  f7ed085cd9c00408e560829be704b4ff  actors/prince.bin
-  ea19b280eee9c4270d8a40943b3c5ae9  actors/rosella.bin
-  63e9669e4ebe55fcc42a6c61e146d32b  actors/saladin.bin
-  32e84c020cdfafe19ddf776af365e3ae  actors/sight.bin
-  40f81e7b018c7d11e2242889b7f8f2bf  actors/smell.bin
-  3194693afea26344a253406e8094b28b  actors/smellno.bin
-  704b6e6e57526f5ad64b0a2a271a0a5b  actors/sound.bin
-  37daafa08fd61edf0c896218aba4cd57  actors/soundno.bin
-  5b888081aab7a44e5e6e3457c6998fad  actors/taste.bin
-  68fc09f5281689f0788d9777fa86558a  actors/touch.bin
-  d575b41e7c18861ec7b926f3caeddd33  actors/valanice.bin
-  749bfcb92dccb5bebe0758007b48d51b  actors/vizier.bin
-  30b9b3fcb23b7519b556805453d923dc  actors/wingg.bin
-
-  deae62a6d43f9aeb200f6204d1492412  seq/birds.seq
-  94bddff322d2d44c15c0f7b0bfea6a8d  seq/boat.seq
-  26b5bd74529720e4384147d23ada62d9  seq/cd1.seq
-  82e38ca050667597ccfa95b0a232c08a  seq/cd6.seq
-  d974262257ad979533e958f4d523e2ee  seq/close.seq
-  8fc1418945f3fec037954b50e8d4e034  seq/cloud.seq
-  a4e3a5a1f3f31f94ee8c1c33de89d864  seq/fpan.seq
-  752c9e1989daa92894de839223bbb407  seq/fs1.seq
-  e0d066fec559eaf2388b069a6966267b  seq/fs2y.seq
-  70b7b6433bd1e5c77e05dbee40eed413  seq/fs2z.seq
-  a0e11c05027f5f822fb5ec993077b830  seq/land.seq
-  1c9e8fc3299c0aa18234d9bd46afc925  seq/nshp.seq
-  b0742a814cf0da2cfa308718e9a853f5  seq/open.seq
-  ce7434f56b888693b59d3dd3442765c0  seq/open2.seq
-  d74c28703133a8511eda2c9802e45830  seq/scan.seq
-  d3b1da8793ae204285fb4b1ba5c43bec  seq/scop.seq
-
-  bd897ec43bf416ee08a4a8e9b4bd7ff4  manual.pdf
-  00c153eb0f99d76b7778daf3cd0045c7  setup_kings_quest_4_5_6.exe
-  6da5e0cd12fd5f87fa1942c2b5d214ea  setup_kings_quest6_2.1.0.18.exe
 sha1sums: |
   87591b74ec985c21c09da8b0f2773448af07d86b  420.hep
   b207269ffea467eddbc5898edbdcaecebddaaf48  420.scr
