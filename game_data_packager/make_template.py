@@ -551,7 +551,9 @@ class GameData(object):
                     print('  %s: %s' % (k, self.gog[k]))
 
         print('')
-        yaml.safe_dump(self.data, stream=sys.stdout, default_flow_style=False)
+        if self.data:
+            yaml.safe_dump(self.data, stream=sys.stdout,
+                    default_flow_style=False)
 
         if self.file_data:
             yaml.safe_dump({ 'files': self.file_data }, stream=sys.stdout,
