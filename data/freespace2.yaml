@@ -54,22 +54,10 @@ packages:
     - FS2.bmp
     - mod.ini
 
-    # movies
-    - COLOSSUS.MVE
-    - INTRO.MVE
-    - MONO1.MVE
-    - BASTION.MVE
-    - ENDPART1.MVE
-    - ENDPRT2A.MVE
-    - ENDPRT2B.MVE
-    - MONO2.MVE
-    - MONO3.MVE
-    - MONO4.MVE
 
     TO_CHECK:
     - data3/a.vp
     - gog_freespace2.sdb
-    - gfw_high.ico
     - data/missions/Backup.001
     - data/missions/Backup.002
     - data/multi.cfg
@@ -80,9 +68,8 @@ packages:
 
     license:
     - GOG_EULA.txt
-
-    optional:
-    - MANUAL.PDF
+    doc:
+    - manual.pdf
     - ReadMe.txt
     - refcard.pdf
     - freddocs/3d-compass.gif
@@ -195,21 +182,20 @@ packages:
     - freddocs/wings-editor.gif
     - freddocs/zoom.gif
 
-  freespace2-video:
+  freespace2-orig-video:
+    expansion_for: freespace2-data
+    longname: "FreeSpace 2 - cutscenes in original format"
+    install_to: usr/share/games/freespace2-open/data/movies
+    install:
+    - INTRO.MVE
+    - original movies
+
+  freespace2-ogg-video:
     expansion_for: freespace2-data
     longname: "FreeSpace 2 - cutscenes in OGG format"
     install_to: usr/share/games/freespace2-open/data/movies
     install:
-    - bastion.ogg
-    - colossus.ogg
-    - endpart1.ogg
-    - endprt2a.ogg
-    - endprt2b.ogg
-    - intro.ogg
-    - mono1.ogg
-    - mono2.ogg
-    - mono3.ogg
-    - mono4.ogg
+    - ogg movies
 
 files:
   fs2_ogg.zip:
@@ -217,16 +203,7 @@ files:
     unpack:
       format: zip
     provides:
-    - bastion.ogg
-    - colossus.ogg
-    - endpart1.ogg
-    - endprt2a.ogg
-    - endprt2b.ogg
-    - intro.ogg
-    - mono1.ogg
-    - mono2.ogg
-    - mono3.ogg
-    - mono4.ogg
+    - ogg movies
 
   setup_freespace2_2.0.0.8.exe:
     distinctive_name: false
@@ -245,17 +222,9 @@ files:
     - sparky_fs2.vp
     - tangoa_fs2.vp
     - tangob_fs2.vp
-    - COLOSSUS.MVE
     - INTRO.MVE?gog
-    - MONO1.MVE
-    - BASTION.MVE
-    - ENDPART1.MVE
-    - ENDPRT2A.MVE
-    - ENDPRT2B.MVE
-    - MONO2.MVE
-    - MONO3.MVE
-    - MONO4.MVE
-    - MANUAL.PDF
+    - original movies
+    - manual.pdf
     - ReadMe.txt
     - refcard.pdf
     - freddocs/3d-compass.gif
@@ -383,17 +352,9 @@ files:
     - sparky_fs2.vp
     - tangoa_fs2.vp
     - tangob_fs2.vp
-    - COLOSSUS.MVE
     - INTRO.MVE?gog
-    - MONO1.MVE
-    - BASTION.MVE
-    - ENDPART1.MVE
-    - ENDPRT2A.MVE
-    - ENDPRT2B.MVE
-    - MONO2.MVE
-    - MONO3.MVE
-    - MONO4.MVE
-    - MANUAL.PDF
+    - original movies
+    - manual.pdf
     - ReadMe.txt
     - refcard.pdf
     - freddocs/3d-compass.gif
@@ -520,67 +481,19 @@ files:
     - stu_fs2.vp?steam
     - stu_fs2.vp?gog
 
-  MANUAL.PDF:
-    install_to: $docdir
-    install_as: manual.pdf
-    distinctive_name: false
-  ReadMe.txt:
-    install_to: $docdir
-    distinctive_name: false
-  refcard.pdf:
-    install_to: $docdir
-    distinctive_name: false
-  COLOSSUS.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
   INTRO.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
     alternatives:
     - INTRO.MVE?steam
     - INTRO.MVE?gog
 
-  MONO1.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-  BASTION.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-  ENDPART1.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-  ENDPRT2A.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-  ENDPRT2B.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-  MONO2.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-  MONO3.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-  MONO4.MVE:
-    install_to: usr/share/games/freespace2-open/data/movies
-
 cksums: |
-  _ 1649820744 setup_freespace2_2.0.0.8.exe
-  _ 1649724616 setup_freespace2_2.0.0.8.exe?smcv
-  _ 7505      GOG_EULA.txt
   _ 231       mod.ini
   _ 86070     FS2.bmp
-  _ 7371568   MANUAL.PDF
-  _ 11756     ReadMe.txt
   _ 6404494   root_fs2.vp
-  _ 83388218  COLOSSUS.MVE
-  _ 205252206 INTRO.MVE?steam
-  _ 205252206 INTRO.MVE?gog
-  _ 61605812  MONO1.MVE
   _ 25386260  tangoa_fs2.vp
-  _ 35637782  BASTION.MVE
-  _ 83254536  ENDPART1.MVE
-  _ 43984802  ENDPRT2A.MVE
-  _ 43963654  ENDPRT2B.MVE
-  _ 55612204  MONO2.MVE
-  _ 53939080  MONO3.MVE
-  _ 59796474  MONO4.MVE
   _ 23        data3/a.vp
   _ 85907413  tangob_fs2.vp
-  _ 118956    gfw_high.ico
   _ 564       gog_freespace2.sdb
-  _ 97109     refcard.pdf
   _ 123125814 smarty_fs2.vp
   _ 260563452 sparky_fs2.vp
   _ 265242014 sparky_hi_fs2.vp
@@ -706,29 +619,14 @@ cksums: |
   _ 10465     freddocs/wing-positions.gif
   _ 22847     freddocs/wings-editor.gif
   _ 1143      freddocs/zoom.gif
-  _ 262803688 fs2_ogg.zip
-  _ 17688477  bastion.ogg
-  _ 42419559  colossus.ogg
-  _ 38604423  endpart1.ogg
-  _ 10558108  endprt2a.ogg
-  _ 8375052   endprt2b.ogg
-  _ 73672930  intro.ogg
-  _ 21421535  mono1.ogg
-  _ 12121759  mono2.ogg
-  _ 15653411  mono3.ogg
-  _ 23125109  mono4.ogg
+
 md5sums: |
-  4713c27c02d4de4368c2ebde46e46c9f  setup_freespace2_2.0.0.8.exe
-  2870b98722a1e56a360e3a959019e678  setup_freespace2_2.0.0.8.exe?smcv
   #0f1387432717f9d4331e120de0ab8e7e  setup_freespace_2.exe?old
   #06341f1ccd8f70a1e02cc236712e7726  setup_freespace_2.exe?alt
   # https://www.playonlinux.com/en/changelog-1107-GOGcom__Freespace_2.html
 
-  3ca819220a3269e314c601a2333501f7  GOG_EULA.txt
   ae38dac595cff5f6a45a92dfe55e90f2  mod.ini
   faa4c82b1aa0d3cf5427207e10150711  FS2.bmp
-  788f2d89bfdad762318fe2611f745db1  MANUAL.PDF
-  254d1a6fcfb47faee8e106adfac18784  ReadMe.txt
   0d9fd69acfe8b29d616377b057d2fc04  root_fs2.vp
   1a6c4197ccf2b3a434b51c31e1a2dcbd  freddocs/3d-compass.gif
   6326906e749e407a18f7cd482404dcb7  freddocs/FRED2-opening.gif
@@ -846,23 +744,10 @@ md5sums: |
   504eeec3f2faa4730adccee9f4c81937  data/players/hud_1.hcf
   a2d7a6638eda4c9060cb7dd47f2de64b  data/players/hud_2.hcf
   9a01349a2adeacef564103ce6dc2be49  data/players/hud_3.hcf
-  d33f21ec6df7eb82d629b75125e3811a  COLOSSUS.MVE
-  81e32f5ab10c3da9e9ccfa0ee7f578b7  INTRO.MVE?steam
-  59d0085dcf98e50d2ca49a0a2304afb6  INTRO.MVE?gog
-  3d52c77261aca0144f5f2d25f0a0cbea  MONO1.MVE
   f7f346e4c0339ba38cff4d9d4dc663f3  tangoa_fs2.vp
-  5e451ef90831da3453696660fc4db066  BASTION.MVE
-  819c0ae94d9467409ee7ab530a4fc2ed  ENDPART1.MVE
-  08677efe8264a495db2d90cc7b1ce756  ENDPRT2A.MVE
-  ed0e8cd99ee7534141abdadeafb8c828  ENDPRT2B.MVE
-  efb555b01a54b138a52342ef23729305  MONO2.MVE
-  b76fa014c89a14d268b19b130c96be3d  MONO3.MVE
-  ea031404c39aff2973b80240178751a2  MONO4.MVE
   ede2896e36717d76e188ba060c84f978  data3/a.vp
   532fc3f8b68f19b062c18dafc67bc966  tangob_fs2.vp
-  96159029b1f65d679ad45ad75caea4c2  gfw_high.ico
   6cf4e4c642a0b96abd2fce175b83a4f3  gog_freespace2.sdb
-  e607f510b1227c6ee31b930d1875f54c  refcard.pdf
   0d662decc0b443ccb8e8aa2e3a0887ce  smarty_fs2.vp
   2a47bdf14860071cf0196d92e9ee7c2f  sparky_fs2.vp
   97661124cdc47c0a2f0678982b8cbd91  sparky_hi_fs2.vp
@@ -872,22 +757,46 @@ md5sums: |
   6fb6e9a36248980540155a9777c51c47  tango2_fs2.vp
   d42c20b6ffb4782e431899c211ae55c4  tango3_fs2.vp
   d1f3c39d4fe1bbd56b7b06fe66eef4a6  warble_fs2.vp
-  02c4cc4344071e7f7dd1aee6572ed461  fs2_ogg.zip
-  4672d8ade8005c9e1a9e7a0e5f785d27  bastion.ogg
-  d68034754040f7c804ac329ca48be27e  colossus.ogg
-  1af32200c8accbcda39475b84b6702b6  endpart1.ogg
-  1ff146fb13fa0af87777e655baee4903  endprt2a.ogg
-  f61894a3e0af768ee4f60f06bc04841e  endprt2b.ogg
-  7e3f28049a943f8eae8935b031a01548  intro.ogg
-  3757f267d6c7a53b2ef16401bb615931  mono1.ogg
-  dda2607dfaba617c5e69dd660fb098e5  mono2.ogg
-  1b087823769b86492f2d38e7dafc5e03  mono3.ogg
-  8c1370a3501ac7884c6a692d771091e8  mono4.ogg
+
+groups:
+  default: |
+    205252206 81e32f5ab10c3da9e9ccfa0ee7f578b7 INTRO.MVE?steam
+    205252206 59d0085dcf98e50d2ca49a0a2304afb6 INTRO.MVE?gog
+    7505      3ca819220a3269e314c601a2333501f7 GOG_EULA.txt
+    7371568   788f2d89bfdad762318fe2611f745db1 manual.pdf
+    11756     254d1a6fcfb47faee8e106adfac18784 ReadMe.txt
+    97109     e607f510b1227c6ee31b930d1875f54c refcard.pdf
+  archives: |
+    1649820744 4713c27c02d4de4368c2ebde46e46c9f setup_freespace2_2.0.0.8.exe
+    1649724616 2870b98722a1e56a360e3a959019e678 setup_freespace2_2.0.0.8.exe?smcv
+    262803688  02c4cc4344071e7f7dd1aee6572ed461 fs2_ogg.zip
+  original movies: |
+    35637782  5e451ef90831da3453696660fc4db066 BASTION.MVE
+    83388218  d33f21ec6df7eb82d629b75125e3811a COLOSSUS.MVE
+    83254536  819c0ae94d9467409ee7ab530a4fc2ed ENDPART1.MVE
+    43984802  08677efe8264a495db2d90cc7b1ce756 ENDPRT2A.MVE
+    43963654  ed0e8cd99ee7534141abdadeafb8c828 ENDPRT2B.MVE
+    61605812  3d52c77261aca0144f5f2d25f0a0cbea MONO1.MVE
+    55612204  efb555b01a54b138a52342ef23729305 MONO2.MVE
+    53939080  b76fa014c89a14d268b19b130c96be3d MONO3.MVE
+    59796474  ea031404c39aff2973b80240178751a2 MONO4.MVE
+  ogg movies: |
+    17688477  4672d8ade8005c9e1a9e7a0e5f785d27 bastion.ogg
+    42419559  d68034754040f7c804ac329ca48be27e colossus.ogg
+    38604423  1af32200c8accbcda39475b84b6702b6 endpart1.ogg
+    10558108  1ff146fb13fa0af87777e655baee4903 endprt2a.ogg
+    8375052   f61894a3e0af768ee4f60f06bc04841e endprt2b.ogg
+    73672930  7e3f28049a943f8eae8935b031a01548 intro.ogg
+    21421535  3757f267d6c7a53b2ef16401bb615931 mono1.ogg
+    12121759  dda2607dfaba617c5e69dd660fb098e5 mono2.ogg
+    15653411  1b087823769b86492f2d38e7dafc5e03 mono3.ogg
+    23125109  8c1370a3501ac7884c6a692d771091e8 mono4.ogg
+
 sha1sums: |
   f98af31596b7f4ef1c624775e6c37a2eb4f8ffd2  setup_freespace2_2.0.0.8.exe
   c14d18e7adb7c49112820e5e57a17bc5ca7efebc  setup_freespace2_2.0.0.8.exe?smcv
   2acb1ec04139af2cc39d4253ca557c9571a4d15c  GOG_EULA.txt
-  c146fe02bb04033bce8c297b33fb980ed2e98fc6  MANUAL.PDF
+  c146fe02bb04033bce8c297b33fb980ed2e98fc6  manual.pdf
   a407edf5c4595c610dbf3610359416168701ca24  ReadMe.txt
   15fb40bf74ad8850a1c317e2ce85c05ca4172257  root_fs2.vp
   3195b56bca15732b69facf145ee73ee9b6ddaff4  freddocs/3d-compass.gif
@@ -1020,7 +929,6 @@ sha1sums: |
   51c849295f95b276893f32833cc9a4bebae486c5  MONO4.MVE
   c5ca04633a5737f35b759e09d8fcf4ed9f53ef3b  data3/a.vp
   b884d92d7c4b6c6e62782108f7c99c688dc1f5a4  tangob_fs2.vp
-  f0dbb85ada6e950b5a9156ab51c2b60f8be99782  gfw_high.ico
   30159c8fc184fa58539e6a32fa59a2619884256d  gog_freespace2.sdb
   97a320ff6273187fc986c015372e9e0ca7e38618  refcard.pdf
   62e90f7af060dd57521a85a509f0faa8f27d3c3d  smarty_fs2.vp
@@ -1046,7 +954,7 @@ sha1sums: |
 sha256sums: |
   b6df573dfe01978513d34c06984929f6dc7b341c94554e97a646533371e609cb  setup_freespace2_2.0.0.8.exe
   4ce5de67ccaa9743fdfa58cc7bc418319095bf8cec07ec160efcea96d67025a1  setup_freespace2_2.0.0.8.exe?smcv
-  57b1686c07ab2ceca6e6e0e7a815f1d6b65780a2f7093f143484aaa3615a16d9  MANUAL.PDF
+  57b1686c07ab2ceca6e6e0e7a815f1d6b65780a2f7093f143484aaa3615a16d9  manual.pdf
   20a65e8ea7dcc61480fcff8508d6b0b26ce89946d36889829ddfb8009124195a  ReadMe.txt
   a796243434945af28f16331421bf472efbc86de86d47c39c1b399bcf7fe2bd6a  root_fs2.vp
   5d34af28bca958c8fc3c103fcc13d031074c501ca1d7e9eab47cacf952565f76  freddocs/3d-compass.gif
@@ -1179,7 +1087,6 @@ sha256sums: |
   c287d10f610a221ce717abf687f94c37ba84030b4636049d34800655d88df267  MONO4.MVE
   0ec9e3b09463330947c797fa7cbfdc66d93eca616ef5bb469ca1f66eb305998d  data3/a.vp
   13a2af6bce3643416ff46734d38b25a7836a0816aa065cc0bed4eef8efb3eba3  tangob_fs2.vp
-  66150cab7d6e30ed1f92a3e732591c6f79e45b404cc45e0311b87869597a373e  gfw_high.ico
   2a67396bab880465f22f32514229b4e6f8650dcc76c689573477eb99b1a023fd  gog_freespace2.sdb
   dc5ab8fa07366e3f0e5a5fa42a0ace680a2af63b07f5e1013277731405f420c1  refcard.pdf
   3307d19f06fba6ca57b3982aca077e23c1b8344791d2974ccfd54dc3cf16dd9a  smarty_fs2.vp
