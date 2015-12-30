@@ -1094,6 +1094,10 @@ class GameData(object):
                     if f not in package.optional_files:
                         package.install_files.add(f)
 
+        # _iter_expand_groups could change the contents of self.files
+        for filename, f in list(self.files.items()):
+            f.provides_files = set(self._iter_expand_groups(f.provides))
+
         for filename, f in self.files.items():
             f.provides_files = set(self._iter_expand_groups(f.provides))
 
