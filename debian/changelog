@@ -42,9 +42,7 @@ game-data-packager (44) UNRELEASED; urgency=medium
   * fix 'gog', 'atlantis' & 'baldurs-gate-2' targets (Closes: #804804)
   * use steamcmd to download Linux & Windows game assets (Closes: #775365)
   * steam: semi-automatically tag remaining native games
-  * steam: handle users without Steam account
-  * fedora: tweak the .spec file a bit
-  * fedora: make "chmod 755 *.py" more future-proof
+  * fedora: prepare initial release
   * make install: fix inclusion game_data_packager/unpack in .deb
   * man pages: install man pages in Makefile
   * refactor packaging for various games
