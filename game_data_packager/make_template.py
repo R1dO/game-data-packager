@@ -636,50 +636,6 @@ class GameData(object):
 
         print('\n...')
 
-def do_one_file(name,lower):
-    hf = HashedFile.from_file(name, open(name, 'rb'))
-    out_name = os.path.basename(name)
-    if lower:
-        out_name = out_name.lower()
-
-    # sniff Makeself archives
-    # http://megastep.org/makeself/
-    has_makeself = False
-    trailer = None
-    SHEBANG = bytes('/bin/sh', 'ascii')
-    HEADER_V1 = bytes('# This script was generated using Makeself 1.', 'ascii')
-    HEADER_V2 = bytes('# This script was generated using Makeself 2.', 'ascii')
-    TRAILER_V1 = bytes('END_OF_STUB', 'ascii')
-    TRAILER_V2 = bytes('eval $finish; exit $res', 'ascii')
-    with open(name, 'rb') as raw:
-        skip = 0
-        pos = 0
-        for line in raw:
-            pos += 1
-            skip += len(line)
-            if pos == 1 and SHEBANG not in line:
-                break
-            elif has_makeself:
-                if trailer in line:
-                    break
-            elif HEADER_V1 in line:
-                has_makeself = True
-                trailer = TRAILER_V1
-            elif HEADER_V2 in line:
-                has_makeself = True
-                trailer = TRAILER_V2
-            elif pos > 3:
-                break
-    if has_makeself:
-        print('  %s' % out_name)
-        print('    unpack: tar.gz')
-        print('    skip: %d' % skip)
-        print()
-
-    print('  %-9s %s %s' % (os.path.getsize(name), hf.md5, out_name))
-    print('  %s  %s' % (hf.sha1, out_name))
-    print('  %s  %s' % (hf.sha256, out_name))
-
 def do_one_exec(pgm,lower):
     print('running:', pgm)
     with subprocess.Popen(['strace', '-e', 'open',
@@ -814,9 +770,6 @@ def main():
             gamedata.add_one_innoextract(arg)
         elif basename.startswith('gog_') and arg.endswith('.sh'):
             gamedata.add_one_gog_sh(arg)
-        elif len(args.args) == 1:
-            do_one_file(arg,args.lower)
-            return
         else:
             gamedata.add_archive(arg, lower=args.lower)
     gamedata.to_yaml()
