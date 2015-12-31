@@ -1,6 +1,6 @@
-%define gitdate 20151230
+%define gitdate 20151231
 # git log --oneline -1
-%define gitversion 2cd9e32
+%define gitversion 50f64b6
 
 %if 0%{?gitdate}
 %define gver .git%{gitdate}%{gitversion}
@@ -8,7 +8,7 @@
 
 Name:          game-data-packager
 Version:       44
-Release:       0.1%{?gver}
+Release:       0.2%{?gver}
 Summary:       Installer for game data files
 License:       GPLv2 and GPLv2+
 Url:           https://wiki.debian.org/Games/GameDataPackager
@@ -23,6 +23,7 @@ BuildRequires: ImageMagick
 BuildRequires: inkscape
 BuildRequires: python3
 BuildRequires: python3-PyYAML
+BuildRequires: python3-pyflakes
 BuildRequires: zip
 Requires: python3-PyYAML
 # download
@@ -65,6 +66,9 @@ show it's description.
 %build
 make %{?_smp_mflags}
 
+%check
+make check
+
 %install
 make DESTDIR=$RPM_BUILD_ROOT bindir=/usr/bin install
 VERSION_PY=$RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/version.py
@@ -97,6 +101,10 @@ find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name
 %license COPYING
 
 %changelog
+* Thu Dec 31 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.2.git2015123150f64b6
+- Git Snapshot
+- Enable checks
+
 * Tue Dec 29 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.1.git2015122906f1b80
 - Git Snapshot
 - Suggests xdelta
