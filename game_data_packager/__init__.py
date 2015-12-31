@@ -556,8 +556,6 @@ class GameData(object):
 
         for binary, data in self.data['packages'].items():
             # these should only be at top level, since they are global
-            assert 'cksums' not in data, binary
-            assert 'md5sums' not in data, binary
             assert 'sha1sums' not in data, binary
             assert 'sha256sums' not in data, binary
 
@@ -605,7 +603,7 @@ class GameData(object):
             for line in self.data['size_and_md5'].splitlines():
                 self._add_hash(line, 'size_and_md5')
 
-        for alg in ('ck', 'md5', 'sha1', 'sha256'):
+        for alg in ('sha1', 'sha256'):
             if alg + 'sums' in self.data:
                 for line in self.data[alg + 'sums'].splitlines():
                     self._add_hash(line, alg)
@@ -970,10 +968,7 @@ class GameData(object):
         if stripped == '' or stripped.startswith('#'):
             return
 
-        if alg == 'ck':
-            _, size, filename = line.split(None, 2)
-            hexdigest = None
-        elif alg == 'size_and_md5':
+        if alg == 'size_and_md5':
             size, hexdigest, filename = line.split(None, 2)
             alg = 'md5'
         else:
@@ -1042,7 +1037,7 @@ class GameData(object):
                     stream = io.TextIOWrapper(zf.open(filename), encoding='utf-8')
                     self._populate_groups(stream)
 
-                for alg in ('ck', 'md5', 'sha1', 'sha256', 'size_and_md5'):
+                for alg in ('sha1', 'sha256', 'size_and_md5'):
                     filename = '%s.%s%s' % (self.shortname, alg,
                             '' if alg == 'size_and_md5' else 'sums')
                     if filename in files:
@@ -1063,7 +1058,7 @@ class GameData(object):
                 stream = open(filename, encoding='utf-8')
                 self._populate_groups(stream)
 
-            for alg in ('ck', 'md5', 'sha1', 'sha256', 'size_and_md5'):
+            for alg in ('sha1', 'sha256', 'size_and_md5'):
                 filename = os.path.join(DATADIR, '%s.%s%s' %
                         (self.shortname, alg,
                             '' if alg == 'size_and_md5' else 'sums'))

@@ -89,8 +89,7 @@ def main(f, out):
     elif os.path.isfile(offload):
         os.remove(offload)
 
-    for k in ('cksums', 'sha1sums', 'sha256sums', 'md5sums',
-            'size_and_md5'):
+    for k in ('sha1sums', 'sha256sums', 'size_and_md5'):
         v = data.pop(k, None)
         offload = os.path.splitext(out)[0] + '.' + k
 

@@ -84,7 +84,7 @@ a mapping from unique name to a mapping:
   these names (case-insensitively). The default is a list containing only
   the unique name.
 
-`md5sums`, `sha1sums`, `sha256sums` items at top level can be used to provide
+`sha1sums`, `sha256sums` items at top level can be used to provide
 the hashes for a bunch of files at the same time.
 
 The `install_files` item in a package (see below) can be used to flag
@@ -233,5 +233,6 @@ if you need to implement different command-line parsing or behaviour.
 Please don't do this unless you really need to.
 
 If you're adding a scummvm game, this list will help you find out
-which version you have, but it only includes md5sum of first data file:
+which version you have, but it only includes md5sum of
+the N-th first bytes of the main data file:
 https://github.com/scummvm/scummvm/blob/master/devtools/scumm-md5.txt
