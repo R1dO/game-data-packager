@@ -82,6 +82,7 @@ rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_ar
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_deb.py
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_suse.py
 find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
+find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need more mirrors' > {}" \;
 
 %files
 %doc doc/adding_a_game.mdwn
