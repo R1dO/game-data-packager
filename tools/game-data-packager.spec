@@ -99,6 +99,7 @@ find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need 
 %{_mandir}/man6/doom2-masterlevels.*
 /usr/bin/doom2-masterlevels
 /usr/share/applications/doom2-masterlevels.desktop
+/usr/share/pixmaps/doom2-masterlevels.png
 %license COPYING
 
 %changelog

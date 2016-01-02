@@ -142,9 +142,11 @@ install: default
 	install -m0644 etc/*-mirrors                           $(DESTDIR)/etc/game-data-packager/
 
 	mkdir -p $(DESTDIR)/usr/share/applications
+	mkdir -p $(DESTDIR)/usr/share/pixmaps
 	install -m0755 runtime/doom2-masterlevels.py           $(DESTDIR)$(bindir)/doom2-masterlevels
 	install -m0644 runtime/doom2-masterlevels.desktop      $(DESTDIR)/usr/share/applications/
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
+	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
 
 # Requires additional setup, so not part of "make check"
 manual-check:

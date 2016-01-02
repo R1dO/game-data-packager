@@ -32,6 +32,8 @@ def which(exe):
 
     return None
 
+CACODEMON = '/usr/share/pixmaps/doom2-masterlevels.png'
+
 if os.path.isdir('/usr/share/doom'):
     DIR = '/usr/share/doom'
 else:
@@ -116,8 +118,8 @@ class Launcher:
 
         self.window = Gtk.Window()
         self.window.set_default_size(1020, 650)
-        if os.path.isfile('/usr/share/pixmaps/doom2.png'):
-            self.window.set_icon_from_file('/usr/share/pixmaps/doom2.png')
+        if os.path.isfile(CACODEMON):
+            self.window.set_icon_from_file(CACODEMON)
         self.window.connect("delete_event", Gtk.main_quit)
 
         grid = Gtk.Grid()
@@ -156,7 +158,7 @@ class Launcher:
         grid.attach(label, 1, 0, 1, 1)
 
         logo = Gtk.Image()
-        logo.set_from_file('/usr/share/pixmaps/doom2.png')
+        logo.set_from_file(CACODEMON)
         grid.attach(logo, 2, 0, 1, 1)
 
         # description
