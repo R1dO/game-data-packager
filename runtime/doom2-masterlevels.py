@@ -37,16 +37,23 @@ if os.path.isdir('/usr/share/doom'):
 else:
     DIR = '/usr/share/games/doom'
 
+if os.path.isfile('/etc/redhat-release'):
+    depedencies = 'python3-gobject-base and gobject-introspection\n  (already pulled-in by this .rpm)'
+    command = 'dnf install prboom-plus'
+else:
+    depedencies = 'python3-gi and gir1.2-gtk-3.0'
+    command = 'apt-get install doom-engine python3-gi gir1.2-gtk-3.0'
+
 requirements='''
 --------------------------------------------------------
 
 You need those to make use this launcher:
 * the .wad files from DOOM 2 Master Levels
 * some Doom game engine
-* python3-gi and gir1.2-gtk-3.0
+* ''' + depedencies + '''
 
 The free parts can be obtained this way:
-  apt-get install doom-engine python3-gi gir1.2-gtk-3.0
+  ''' + command + '''
 
 The .wad files can be for example bought on Steam:
 http://store.steampowered.com/app/9160/ or found
@@ -65,7 +72,7 @@ try:
     gi.require_version('Gtk', '3.0')
     from gi.repository import Gtk, Pango
 except (ImportError,ValueError):
-    message = 'python3-gi or gir1.2-gtk-3.0 not found!\n' + requirements
+    message = 'Python3 Gtk+ libraries not found!\n' + requirements
     if which('zenity'):
        subprocess.call(['zenity', '--error', '--title=Doom 2 Master Levels', '--text', message])
     elif which('kdialog'):
