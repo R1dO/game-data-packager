@@ -106,6 +106,16 @@ files:
     - refcard.pdf
     - end user license agreement.txt
 
+  gog_the_dig_2.0.0.7.sh:
+    unpack:
+      format: zip
+    provides:
+    - shared assets
+    - english version
+    - manual.pdf
+    - refcard.pdf
+    - end user license agreement.txt
+
   setup_the_dig_german_2.0.0.3.exe:
     unpack:
       format: innoextract
@@ -338,6 +348,7 @@ groups:
   33854     f13cfbbe5ae7b4292a8a8b1950d4f24a end user license agreement.txt
   485628672 22aa49f3373c9ed06d1f5ac5be999c61 gog_the_dig_1.0.0.5.deb
   489276720 a36bda23af447deb5013780669a04a0c setup_the_dig_2.0.0.3.exe
+  547767766 02c04df6f81fb9b30c6622948e9f1c6e gog_the_dig_2.0.0.7.sh
   476657032 9ccda57af1f03305a92598fcf59ae9e8 gog_the_dig_german_1.0.0.6.deb
   479717400 b8d70800590ac81e3f985cff1ce01925 setup_the_dig_german_2.0.0.3.exe
   243358    9d8a140cc98d1e0aaa6c96f222b9f851 manual.pdf?es
@@ -353,6 +364,7 @@ groups:
 sha1sums: |
   29cc9da6aefb3941f21ac2bce9bd3e0f5af18ca8  gog_the_dig_1.0.0.5.deb
   063e4fd5a8a6527f5a7f0586ec5cefb78c160da5  setup_the_dig_2.0.0.3.exe
+  f983699686df02e9c822c71f8820b91b8c79fd39  gog_the_dig_2.0.0.7.sh
 
   57847ffd6cb6b9e6bd9e26754e86a97b28f460e5  gog_the_dig_german_1.0.0.6.deb
   e6037966f420e2783dcca67b6505ec12eff22ad8  setup_the_dig_german_2.0.0.3.exe
