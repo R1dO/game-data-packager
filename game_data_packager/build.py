@@ -1728,7 +1728,9 @@ class PackagingTask(object):
     def generate_description(self, package):
         longname = package.longname or self.game.longname
 
-        if package.section == 'games':
+        if package.short_description is not None:
+            short_desc = package.short_description
+        elif package.section == 'games':
             short_desc = package.data_type + ' for "' + longname + '" game'
         else:
             short_desc = longname

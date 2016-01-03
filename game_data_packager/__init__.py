@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # encoding=utf-8
 #
-# Copyright © 2014-2015 Simon McVittie <smcv@debian.org>
+# Copyright © 2014-2016 Simon McVittie <smcv@debian.org>
 # Copyright © 2015 Alexandre Detiste <alexandre@detiste.be>
 #
 # This program is free software; you can redistribute it and/or
@@ -215,6 +215,10 @@ class GameDataPackage(object):
         # extra blurb of text added to .deb long description
         self.description = None
 
+        # first line of .deb description, or None to construct one from
+        # longname
+        self.short_description = None
+
         # This optional value will overide the game global copyright
         self.copyright = None
 
@@ -408,6 +412,7 @@ class GameDataPackage(object):
                 'expansion_for',
                 'expansion_for_ext',
                 'longname',
+                'short_description',
                 'url_misc',
                 'wiki',
                 ):
@@ -784,7 +789,8 @@ class GameData(object):
                 'install_to_docdir', 'install_contents_of', 'debian', 'description',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
-                'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice'):
+                'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
+                'short_description'):
             if k in d:
                 setattr(package, k, d[k])
 
