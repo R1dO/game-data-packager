@@ -26,7 +26,7 @@ packages:
     - monster.sou
     - samnmax.000
     - samnmax.001
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf
     - manual.pdf?cd
@@ -40,7 +40,7 @@ packages:
     - monster.sou?de
     - samnmax.000?de
     - samnmax.001?de
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf?de
     license:
@@ -53,7 +53,7 @@ packages:
     - monster.sou
     - samnmax.000?es
     - samnmax.001?es
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf?es
     license:
@@ -66,7 +66,7 @@ packages:
     - monster.sog?fr
     - samnmax.000?fr
     - samnmax.001?fr
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf?fr
     license:
@@ -79,7 +79,7 @@ packages:
     - monster.sou?it
     - samnmax.000?it
     - samnmax.001?it
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf
     license:
@@ -87,14 +87,11 @@ packages:
 
 files:
   hintbook.pdf:
-    install_to: $docdir
     look_for: [hintbook.pdf,sam & max hit the road - hintbook.pdf]
   manual.pdf:
-    install_to: $docdir
     look_for: [manual.pdf,sam & max hit the road - english manual.pdf]
   manual.pdf?cd:
-    install_to: $docdir
-    look_for: [Sam & Max Manual.pdf]
+    look_for: [manual.pdf,Sam & Max Manual.pdf]
 
   gog_sam_and_max_hit_the_road_1.0.0.6.deb:
     unpack:
@@ -121,7 +118,6 @@ files:
   # GERMAN #
   ##########
   manual.pdf?de:
-    install_to: $docdir
     look_for: [manual.pdf,sam & max hit the road - german manual.pdf]
 
   gog_sam_and_max_hit_the_road_german_1.0.0.6.deb:
@@ -149,7 +145,6 @@ files:
   # SPANISH #
   ###########
   manual.pdf?es:
-    install_to: $docdir
     look_for: [manual.pdf,sam & max hit the road - spanish manual.pdf]
 
   gog_sam_and_max_hit_the_road_spanish_1.0.0.6.deb:
@@ -177,7 +172,6 @@ files:
   # FRENCH #
   ##########
   manual.pdf?fr:
-    install_to: $docdir
     look_for: [manual.pdf,sam & max hit the road - french manual.pdf]
 
   gog_sam_and_max_hit_the_road_french_1.0.0.6.deb:
