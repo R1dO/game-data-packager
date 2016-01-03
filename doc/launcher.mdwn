@@ -1,0 +1,103 @@
+game-data-packager's Gtk launcher stub
+======================================
+
+Here are some design notes about the Gtk game launcher.
+
+Requirements
+------------
+
+All of these are already implemented, and should be kept.
+
+* Written in a high-level language (not a shell script with Zenity or
+  xdialog)
+  - complex shell scripts are a pain to keep maintainable
+
+* All logic is in `game-data-packager.deb` or a future
+  `game-data-packager-runtime.deb`, not in the .deb that g-d-p produces
+  - the logic might have bugs which we want to fix
+  - we can rely on being able to update g-d-p itself via normal Debian
+    mechanisms
+  - we cannot rely on being able to update anything in a g-d-p-generated
+    .deb
+
+* Has a GUI
+  - games are often run from menu systems
+
+* Can check whether a representative sample of required files are present
+  - some games' data sets have non-obvious tangles of dependencies
+
+* Each user is prompted before running a binary-only game like Unreal
+  (or eventually Quake 4, but for now Quake 4 is handled by src:quake),
+  so they can choose to not run it
+  - this is per-user so that users can choose to run all binary-only
+    games as uid "jbloggs-games" or something, and protect their
+    (potentially root-equivalent) normal uid "jbloggs" from attacks
+    via compromised games
+
+* The launcher does not `chdir()` or manipulate `LD_LIBRARY_PATH` until the
+  binary-only game is actually run, and the `.desktop` file does not have
+  to use `WorkingDirectory=`
+  - again, this is to protect individual uids from being attacked via a
+    compromised game that they accidentally run from a menu, even if `.`
+    is already (unwisely) on a search path
+
+* Optionally constructs a symbolic link farm from one or more system-wide
+  search directories
+  - this is required for Unreal 1
+
+* If constructing a symlink farm, can copy selected files instead of
+  linking them
+  - this is required for `*.ini` in Unreal 1
+
+* Games can ship their own proprietary icons which will be used by our
+  .desktop files
+  - we don't have a Free reinterpretation of the logo for all games
+
+"Nice to have"
+--------------
+
+All of these are already implemented, and it would be nice to keep them.
+
+* Game metadata is also in `g-d-p.deb` or `g-d-p-runtime.deb`,
+  so we can fix its bugs
+  - As currently implemented, it's in an extra section in
+    /usr/share/games/g-d-p/unreal-gold.desktop
+    or similar. It isn't clear whether this is the right solution.
+
+* The game only installs proprietary files that we cannot fix anyway,
+  and symbolic links to stable paths provided by g-d-p or a separate
+  game engine like ioquake3
+  - `/usr/games/unreal-gold` -> `/usr/share/games/g-d-p/gdp-launcher`
+  - `/usr/share/applications/unreal-gold.desktop` ->
+    `/usr/share/games/g-d-p/unreal-gold.desktop`
+
+* Errors while launching the game are displayed in the GUI
+
+* Does not import from `game_data_packager` and does not rely
+  on the YAML/JSON, or only relies on a defined subset (tbd)
+  - this means we can consider splitting out
+    `game-data-packager-runtime.deb` in future
+
+* GUI is done with a modern toolkit that supports Wayland, etc.,
+  and has nice Python bindings
+  - implementation detail: it's currently Gtk 3
+
+* freedesktop.org basedir compliant
+  - uses `XDG_DATA_HOME`, etc., for games that do not already have a
+    well-established dot-directory
+
+* Implementation does not entirely rule out being able to install game data
+  "for just me" while unprivileged
+  - this may seem rather backwards, but there's some value in having
+    a tool like g-d-p shared between multiple games instead of each game
+    inventing its own
+
+TODO
+----
+
+* Ability to make e.g. `~/.loki/ut` a symlink to e.g. `$XDG_DATA_HOME/ut99`
+  if the former does not already exist?
+  - we would need to be prepared to fall back to `~/.loki/ut` being a real
+    directory, though
+
+* Maybe supersede the ad-hoc launchers in src:quake?
