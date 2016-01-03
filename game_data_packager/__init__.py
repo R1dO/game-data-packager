@@ -245,6 +245,9 @@ class GameDataPackage(object):
         # instead
         self.install_to_docdir = []
 
+        # If true, this package is allowed to be empty
+        self.empty = False
+
         # symlink => real file (the opposite way round that debhelper does it,
         # because the links must be unique but the real files are not
         # necessarily)
@@ -793,7 +796,7 @@ class GameData(object):
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
-                'short_description', 'link_doc'):
+                'short_description', 'link_doc', 'empty'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -1150,8 +1153,14 @@ class GameData(object):
                 assert package.rip_cd['encoding'] == 'vorbis', package.name
                 self.rip_cd_packages.add(package)
 
-            # there had better be something it wants to install
-            assert package.install_files or package.rip_cd, package.name
+            # there had better be something it wants to install, unless
+            # specifically marked as empty
+            if package.empty:
+                assert not package.install_files, package.name
+                assert not package.rip_cd, package.name
+            else:
+                assert package.install_files or package.rip_cd, \
+                    package.name
 
             # check internal depedencies
             for demo_for_item in package.demo_for:
