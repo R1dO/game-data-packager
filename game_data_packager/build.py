@@ -57,7 +57,7 @@ from .util import (AGENT,
         rm_rf,
         recursive_utime,
         which)
-from .version import (FORMAT, DISTRO)
+from .version import (ASSETS, BINDIR, FORMAT, DISTRO)
 
 if FORMAT == 'deb':
     from debian.deb822 import Deb822
@@ -1508,12 +1508,21 @@ class PackagingTask(object):
         if not self.check_complete(package, log=True):
             return False
 
-        docdir = os.path.join(destdir, 'usr/share/doc', package.name)
-        mkdir_p(docdir)
-        shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
-                os.path.join(docdir, 'changelog.gz'))
+        docdir = os.path.join('usr/share/doc', package.name)
+        dest_docdir = os.path.join(destdir, docdir)
 
-        self.fill_docs(package, destdir, docdir)
+        if package.link_doc is None:
+            mkdir_p(dest_docdir)
+            shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
+                    os.path.join(dest_docdir, 'changelog.gz'))
+
+            self.fill_docs(package, destdir, dest_docdir)
+        else:
+            orig_dest_docdir = dest_docdir
+            docdir = os.path.join('usr/share/doc', package.link_doc)
+            dest_docdir = os.path.join(destdir, docdir)
+            mkdir_p(dest_docdir)
+            os.symlink('../' + package.link_doc, orig_dest_docdir)
 
         for wanted in (package.install_files | package.optional_files):
             install_as = wanted.install_as
@@ -1546,12 +1555,11 @@ class PackagingTask(object):
                     install_to = package.install_to
 
                 if install_to.startswith('$docdir'):
-                    install_to = 'usr/share/doc/%s%s' % (package.name,
-                            install_to[7:])
+                    install_to = docdir + install_to[7:]
 
                 for prefix in package.install_to_docdir:
                     if wanted.name.startswith(prefix + '/'):
-                        install_to = 'usr/share/doc/%s' % package.name
+                        install_to = docdir
 
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
