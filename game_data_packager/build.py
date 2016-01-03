@@ -1574,6 +1574,8 @@ class PackagingTask(object):
 
                 if wanted.executable:
                     os.chmod(copy_to, 0o755)
+                else:
+                    os.chmod(copy_to, 0o644)
 
         for symlink, real_file in package.symlinks.items():
             symlink = symlink.lstrip('/')
@@ -1636,12 +1638,7 @@ class PackagingTask(object):
                 elif stat.S_ISDIR(stat_res.st_mode):
                     # make directories rwxr-xr-x
                     os.chmod(full, 0o755)
-                elif ((stat.S_IMODE(stat_res.st_mode) & 0o111) != 0
-                       and (fn.endswith('.sh')
-                            or fn.endswith('.x86')
-                            or dirpath.endswith('/usr/bin')
-                            or dirpath.endswith('/usr/games')
-                            or dirpath.endswith('/DEBIAN'))):
+                elif (stat.S_IMODE(stat_res.st_mode) & 0o111) != 0:
                     # make executable files rwxr-xr-x
                     os.chmod(full, 0o755)
                 else:
