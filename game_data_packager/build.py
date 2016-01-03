@@ -26,6 +26,7 @@ import random
 import shutil
 import stat
 import subprocess
+import string
 import sys
 import tempfile
 import time
@@ -1577,10 +1578,17 @@ class PackagingTask(object):
         for symlink, real_file in package.symlinks.items():
             symlink = symlink.lstrip('/')
             real_file = real_file.lstrip('/')
-            if symlink.startswith('$install_to'):
-                symlink = package.install_to + symlink[len('$install_to'):]
-            if real_file.startswith('$install_to'):
-                real_file = package.install_to + real_file[len('$install_to'):]
+
+            symlink = string.Template(symlink).safe_substitute(
+                    assets=ASSETS,
+                    bindir=BINDIR,
+                    docdir=docdir,
+                    install_to=package.install_to)
+            real_file = string.Template(real_file).safe_substitute(
+                    assets=ASSETS,
+                    bindir=BINDIR,
+                    docdir=docdir,
+                    install_to=package.install_to)
 
             toplevel, rest = symlink.split('/', 1)
             if real_file.startswith(toplevel + '/'):
