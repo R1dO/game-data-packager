@@ -29,6 +29,7 @@ packages:
     optional:
     - hintbook.pdf
     - manual.pdf
+    - manual.pdf?cd
     license:
     - end user license agreement.txt
 
@@ -91,6 +92,9 @@ files:
   manual.pdf:
     install_to: $docdir
     look_for: [manual.pdf,sam & max hit the road - english manual.pdf]
+  manual.pdf?cd:
+    install_to: $docdir
+    look_for: [Sam & Max Manual.pdf]
 
   gog_sam_and_max_hit_the_road_1.0.0.6.deb:
     unpack:
@@ -227,6 +231,7 @@ size_and_md5: |
   13790685  54f9df39a2387638516fac7dc0b44e2f samnmax.001
   19156919  ee6aec9c6090004d74b18b36c5eb2cd2 hintbook.pdf
   684082    08a3ba314fae9964e411883c997af776 manual.pdf
+  657355    4a6a8444524acc6ae127674098cb6e4a manual.pdf?cd
   39517     01dc5c6216071cf48313eb98439c7cd8 end user license agreement.txt
   120530380 f383ac0db144128a3cc8f8215337e2dd gog_sam_and_max_hit_the_road_1.0.0.6.deb
   119837464 8358505689fc06329cd9775874a57031 setup_sam_and_max_hit_the_road_2.0.0.7.exe
