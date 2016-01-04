@@ -2622,7 +2622,7 @@ class PackagingTask(object):
 
 
     def build_arch(self, package, destination, compress=True):
-        destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
+        destdir = os.path.join(self.get_workdir(), '%s.pkg.d' % package.name)
 
         if not self.fill_dest_dir(package, destdir):
             return None
@@ -2661,7 +2661,7 @@ class PackagingTask(object):
         return outfile
 
     def build_rpm(self, package, compress=True):
-        destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
+        destdir = os.path.join(self.get_workdir(), '%s.rpm.d' % package.name)
 
         if not self.fill_dest_dir(package, destdir):
             return None
