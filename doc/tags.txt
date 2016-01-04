@@ -44,7 +44,10 @@ packages:
       provides:
       recommends:
       replaces:
-    fedora:
+      engine: string
+      install_to: string
+      description: string
+    rpm|fedora|suse|arch: (fedora/suse takes priority over rpm)
       engine: string
       install_to: string
       description: string
