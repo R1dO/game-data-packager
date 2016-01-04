@@ -238,9 +238,6 @@ class GameDataPackage(object):
         else:
             self.install_to = ASSETS + '/' + name
 
-        # link documentation to this package, like dh_installdocs --link-doc
-        self.link_doc = None
-
         # If true, this package is allowed to be empty
         self.empty = False
 
@@ -791,7 +788,7 @@ class GameData(object):
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
-                'short_description', 'link_doc', 'empty'):
+                'short_description', 'empty'):
             if k in d:
                 setattr(package, k, d[k])
 
@@ -1169,11 +1166,6 @@ class GameData(object):
                         raise Exception('virtual pkg %s not found' % package.expansion_for)
             assert (not package.better_version or
               package.better_version in self.packages), package.better_version
-
-            if package.link_doc is not None:
-                assert package.link_doc in self.packages, package.name
-                assert self.packages[package.link_doc].version == \
-                        package.version, package.name
 
             # check for stale missing_langs
             if not package.demo_for:
