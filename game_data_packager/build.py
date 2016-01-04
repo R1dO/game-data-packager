@@ -853,6 +853,10 @@ class PackagingTask(object):
                 self.file_status[wanted.name] |= self.fill_gap(package,
                   self.game.files[alt], download=download, log=False,
                   recheck=recheck)
+                if alt in self.found:
+                    assert self.file_status[alt] is FillResult.COMPLETE
+                    assert self.file_status[wanted.name] is FillResult.COMPLETE
+                    return FillResult.COMPLETE
 
             if self.file_status[wanted.name] is FillResult.IMPOSSIBLE and log:
                 logger.error('could not find a suitable version of %s:',
