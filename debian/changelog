@@ -66,6 +66,14 @@ game-data-packager (44) UNRELEASED; urgency=medium
     (some) archives
   * make-template: preserve case for files from InnoExtract
   * make-template: preserve full name of license files
+  * Add support for forcing a package's short and long description
+  * Allow packages to be marked as deliberately empty
+  * Generalize support for $install_to in symlinks to cover $assets, etc.
+  * Allow any file to be made executable by the installation process
+  * Do not try to obtain non-preferred alternatives for files
+  * Accept $GDP_DEBUG as a synonym for $DEBUG
+  * runtime: add a generic Gtk launcher, initially for Unreal
+  * Add work-in-progress packaging for Unreal (not yet enabled)
 
   [ Stephen Kitt ]
   * Update the GOG installer for The Dig (English).
