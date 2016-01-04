@@ -42,8 +42,6 @@ packages:
     gog:
       url: quake_ii_quad_damage
     install_to: usr/share/games/quake2
-    install_to_docdir:
-      - quake2_manual
     install_contents_of:
     - q2-3.20-x86-full-ctf.exe
     install:
@@ -72,8 +70,6 @@ packages:
 
   quake2-demo-data:
     demo_for: quake2-full-data
-    install_to_docdir:
-      - quake2_manual
     install_contents_of:
     - q2-314-demo-x86.exe
     license:

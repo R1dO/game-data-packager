@@ -1558,10 +1558,6 @@ class PackagingTask(object):
                 if install_to.startswith('$docdir'):
                     install_to = docdir + install_to[7:]
 
-                for prefix in package.install_to_docdir:
-                    if wanted.name.startswith(prefix + '/'):
-                        install_to = docdir
-
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)

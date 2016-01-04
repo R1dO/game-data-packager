@@ -13,8 +13,6 @@ packages:
     better_version: dreamweb-en-data
     provides: dreamweb-data
     version: '1.1'
-    install_to_docdir:
-    - diary
     install:
     - shared assets
     - us assets
@@ -43,8 +41,6 @@ packages:
   dreamweb-en-data:
     provides: dreamweb-data
     version: '1.1'
-    install_to_docdir:
-    - diary
     install:
     - shared assets
     - uk assets

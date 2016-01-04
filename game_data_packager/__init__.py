@@ -241,10 +241,6 @@ class GameDataPackage(object):
         # link documentation to this package, like dh_installdocs --link-doc
         self.link_doc = None
 
-        # Prefixes of files that get installed to /usr/share/doc/PACKAGE
-        # instead
-        self.install_to_docdir = []
-
         # If true, this package is allowed to be empty
         self.empty = False
 
@@ -384,7 +380,6 @@ class GameDataPackage(object):
                 'demo_for',
                 'dotemu',
                 'gog',
-                'install_to_docdir',
                 'origin',
                 'rip_cd',
                 'steam',
@@ -792,7 +787,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'install_to_docdir', 'install_contents_of', 'debian', 'description',
+                'install_contents_of', 'debian', 'description',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',

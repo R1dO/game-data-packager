@@ -93,14 +93,11 @@ packages:
     install:
       - baseq3/pak0.pk3
       - patch pk3s
-    install_to_docdir:
-      - Help
     license:
       - Help/Q3A_CELA.txt
       - Help/Q3A_EULA.txt?loki
     doc:
-      - common documentation
-    optional:
+    - common documentation
     - Help/Readme.html
     - Help/Quake3World.html
     - Help/Manual/index.html
@@ -173,14 +170,11 @@ packages:
       usr/lib/quake3/demo/demoq3/gfx: $install_to/gfx
       usr/lib/quake3/demo/demoq3/scripts: $install_to/scripts
       usr/lib/quake3/demo/demoq3/vm: $install_to/vm
-    install_to_docdir:
-      - Help
     license:
     - Help/Q3A_EULA.html
     - Help/Q3A_EULA.txt
     doc:
-      - common documentation
-    optional:
+    - common documentation
     - Help/Readme.html
     - Help/Quake3World.html
     - Help/Manual/index.html
