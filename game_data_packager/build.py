@@ -1752,6 +1752,12 @@ class PackagingTask(object):
             long_desc += ' It contains free game data and may be redistributed.\n'
             long_desc += ' .\n'
 
+        if package.long_description is not None:
+            long_desc = package.long_description
+            long_desc = long_desc.rstrip('\n')
+            long_desc = ' ' + long_desc.replace('\n', '\n ')
+            return (short_desc, long_desc)
+
         if package.description:
             for line in package.description.splitlines():
                 line = line.rstrip() or '.'

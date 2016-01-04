@@ -32,9 +32,9 @@ packages:
 
   unreal-launcher-dependencies:
     short_description: dependencies for Unreal launcher
-    description: |
+    long_description: |
       game-data-packager provides a Gtk launcher for Unreal and Unreal Gold.
-      This package depends on that launcher and its runtime dependencies.
+      This empty package depends on that launcher and its runtime dependencies.
       It is a separate package so that the launcher can be installed for
       the native CPU architecture.
     depends:

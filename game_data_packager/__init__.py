@@ -212,6 +212,9 @@ class GameDataPackage(object):
         # 'data' / 'PWAD' / 'IWAD' / 'binaries'
         self.data_type = 'data'
 
+        # if not None, override the description completely
+        self.long_description = None
+
         # extra blurb of text added to .deb long description
         self.description = None
 
@@ -410,6 +413,7 @@ class GameDataPackage(object):
                 'expansion_for',
                 'expansion_for_ext',
                 'longname',
+                'long_description',
                 'short_description',
                 'url_misc',
                 'wiki',
@@ -790,7 +794,7 @@ class GameData(object):
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
-                'short_description', 'empty'):
+                'short_description', 'long_description', 'empty'):
             if k in d:
                 setattr(package, k, d[k])
 
