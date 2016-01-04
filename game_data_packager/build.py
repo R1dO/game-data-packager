@@ -1452,10 +1452,18 @@ class PackagingTask(object):
     def fill_dest_dir_rpm(self, package, destdir, compress):
         specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
         short_desc, long_desc = self.generate_description(package)
+        if self.game.wikibase:
+            url = self.game.wikibase + (self.game.wiki or '')
+        elif self.game.wikipedia:
+            url = self.game.wikipedia
+        else:
+            url = 'https://wiki.debian.org/Games/GameDataPackager'
+
         with open(specfile, 'w', encoding='utf-8') as spec:
             spec.write('Summary: %s\n' % short_desc)
             spec.write('Name: %s\n' % package.name)
             spec.write('Version: %s\n' % package.version)
+            spec.write('Url: %s\n' % url)
             spec.write('Release: 0\n')
             spec.write('License: Commercial\n')
             spec.write('Group: Amusements/Games\n')
