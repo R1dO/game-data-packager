@@ -25,10 +25,9 @@ import urllib.request
 from .build import (BinaryExecutablesNotAllowed,
         DownloadsFailed,
         NoPackagesPossible)
+from .packaging import (get_native_packaging_system)
 from .util import (AGENT,
-        PACKAGE_CACHE,
         ascii_safe,
-        install_packages,
         lang_score,
         rm_rf)
 
@@ -114,6 +113,8 @@ def run_steam_meta_mode(args, games):
     found_games = []
     found_packages = []
     tasks = {}
+    packaging = get_native_packaging_system()
+
     for game, gamedata in games.items():
         for package in gamedata.packages.values():
             id = package.steam.get('id') or gamedata.steam.get('id')
@@ -126,12 +127,12 @@ def run_steam_meta_mode(args, games):
             if lang_score(package.lang) == 0:
                 continue
 
-            installed = PACKAGE_CACHE.is_installed(package.name)
+            installed = packaging.is_installed(package.name)
             if args.new and installed:
                 continue
 
             if game not in tasks:
-                tasks[game] = gamedata.construct_task()
+                tasks[game] = gamedata.construct_task(packaging=packaging)
 
             paths = []
             for path in tasks[game].iter_steam_paths((package,)):
@@ -236,6 +237,6 @@ def run_steam_meta_mode(args, games):
         raise SystemExit(1)
 
     if install_debs:
-        install_packages(all_debs, args.install_method, args.gain_root_command)
+        packaging.install_packages(all_debs, args.install_method, args.gain_root_command)
     if workdir:
         rm_rf(workdir)

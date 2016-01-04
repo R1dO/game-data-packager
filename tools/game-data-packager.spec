@@ -79,9 +79,6 @@ echo 'DISTRO = "fedora"' >> $VERSION_PY
 echo 'BINDIR = "usr/bin"' >> $VERSION_PY
 echo 'LICENSEDIR = "usr/share/licenses"' >> $VERSION_PY
 echo 'ASSETS = "usr/share"' >> $VERSION_PY
-rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_arch.py
-rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_deb.py
-rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_suse.py
 find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
 find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need more mirrors' > {}" \;
 

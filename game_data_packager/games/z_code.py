@@ -23,7 +23,6 @@ import os
 from .. import GameData
 from ..build import (PackagingTask)
 from ..util import (TemporaryUmask,
-                    PACKAGE_CACHE,
                     mkdir_p,
                     lintian_desktop)
 from ..version import (BINDIR)
@@ -59,8 +58,8 @@ class ZCodeTask(PackagingTask):
             entry['Categories'] = 'Game;'
             entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
-            if (PACKAGE_CACHE.is_installed('frotz') and
-                    not PACKAGE_CACHE.is_installed('gargoyle-free')):
+            if (self.packaging.is_installed('frotz') and
+                    not self.packaging.is_installed('gargoyle-free')):
                 engine = 'frotz'
                 entry['Terminal'] = 'true'
             else:

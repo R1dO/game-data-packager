@@ -38,10 +38,6 @@ override_dh_install:
 		touch debian/game-data-packager/usr/share/games/game-data-packager/is-ubuntu-derived; \
 	fi
 	install -D -m755 runtime/doom2-masterlevels.py debian/game-data-packager/usr/games/doom2-masterlevels
-	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_arch.py
-	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_fedora.py
-	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_rpm.py
-	rm -f debian/game-data-packager/usr/share/games/game-data-packager/game_data_packager/util_suse.py
 
 override_dh_installdocs:
 	dh_installdocs -XTODO

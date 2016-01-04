@@ -20,8 +20,8 @@ import logging
 import os
 import subprocess
 
-from .util import (PACKAGE_CACHE,
-        ascii_safe,
+from .packaging import (get_native_packaging_system)
+from .util import (ascii_safe,
         check_output,
         lang_score,
         which)
@@ -132,6 +132,7 @@ def run_gog_meta_mode(parsed, games):
         owned = GOG.owned_games()
     logger.info("Found %d game(s) !" % len(owned))
 
+    packaging = get_native_packaging_system()
     found_games = set()
     found_packages = []
     for game, data in games.items():
@@ -144,7 +145,7 @@ def run_gog_meta_mode(parsed, games):
             if package.better_version:
                 if data.gog_download_name(data.packages[package.better_version]):
                     continue
-            installed = PACKAGE_CACHE.is_installed(package.name)
+            installed = packaging.is_installed(package.name)
             if parsed.new and installed:
                 continue
             found_games.add(game)

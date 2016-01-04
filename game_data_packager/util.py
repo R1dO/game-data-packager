@@ -217,25 +217,17 @@ def recursive_utime(directory, orig_time):
 
 # loaded at the end to avoid failed cyclic loads
 if FORMAT == 'deb':
-    from .util_deb import (PACKAGE_CACHE,
-                           install_packages,
-                           lintian_license,
-                           lintian_desktop)
+    from .util_deb import (lintian_license, lintian_desktop)
 elif FORMAT == 'arch':
-    from .util_arch import (PACKAGE_CACHE, install_packages)
     lintian_license = lambda a,b,c: None
     lintian_desktop = lambda a,b,c: None
 elif DISTRO == 'fedora':
-    from .util_fedora import (PACKAGE_CACHE, install_packages)
     lintian_license = lambda a,b,c: None
     lintian_desktop = lambda a,b,c: None
 elif DISTRO == 'suse':
-    from .util_suse import (PACKAGE_CACHE, install_packages)
     lintian_license = lambda a,b,c: None
     lintian_desktop = lambda a,b,c: None
 
 # pyflakes
-PACKAGE_CACHE
-install_packages
 lintian_license
 lintian_desktop

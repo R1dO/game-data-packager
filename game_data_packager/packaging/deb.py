@@ -1,0 +1,123 @@
+#!/usr/bin/python3
+# encoding=utf-8
+#
+# Copyright © 2014-2016 Simon McVittie <smcv@debian.org>
+#           © 2015 Alexandre Detiste <alexandre@detiste.be>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# You can find the GPL license text on a Debian system under
+# /usr/share/common-licenses/GPL-2.
+
+import logging
+import os
+import subprocess
+
+from debian.debian_support import Version
+
+from . import (PackagingSystem)
+from ..util import (check_output, run_as_root)
+
+logger = logging.getLogger(__name__)
+
+class DebPackaging(PackagingSystem):
+    def __init__(self):
+        self.__installed = None
+        self.__available = None
+
+    def is_installed(self, package):
+        # FIXME: this shouldn't be hard-coded
+        if package == 'doom-engine':
+            return (self.is_installed('chocolate-doom')
+                 or self.is_installed('prboom-plus')
+                 or self.is_installed('doomsday'))
+        if package == 'boom-engine':
+            return (self.is_installed('prboom-plus')
+                 or self.is_installed('doomsday'))
+        if package == 'heretic-engine':
+            return (self.is_installed('chocolate-heretic')
+                 or self.is_installed('doomsday'))
+        if package == 'hexen-engine':
+            return (self.is_installed('chocolate-hexen')
+                 or self.is_installed('doomsday'))
+
+        if os.path.isdir(os.path.join('/usr/share/doc', package)):
+            return True
+
+        if self.__installed is None:
+            cache = set()
+            proc = subprocess.Popen(['dpkg-query', '--show',
+                        '--showformat', '${Package}\\n'],
+                    universal_newlines=True,
+                    stdout=subprocess.PIPE)
+            for line in proc.stdout:
+                cache.add(line.rstrip())
+            self.__installed = cache
+
+        return package in self.__installed
+
+    def is_available(self, package):
+        if self.__available is None:
+            cache = set()
+            proc = subprocess.Popen(['apt-cache', 'pkgnames'],
+                    universal_newlines=True,
+                    stdout=subprocess.PIPE)
+            for line in proc.stdout:
+                cache.add(line.rstrip())
+            self.__available = cache
+
+        return package in self.__available
+
+    def current_version(self, package):
+        # 'dpkg-query: no packages found matching $package'
+        # will leak on stderr if called with an unknown package,
+        # but that should never happen
+        try:
+            return check_output(['dpkg-query', '--show',
+              '--showformat', '${Version}', package], universal_newlines=True)
+        except subprocess.CalledProcessError:
+            return None
+
+    def available_version(self, package):
+        current_ver = check_output(['apt-cache', 'madison', package],
+                                    universal_newlines=True)
+        current_ver = current_ver.splitlines()[0]
+        current_ver = current_ver.split('|')[1].strip()
+        return current_ver
+
+    def install_packages(self, debs, method=None, gain_root='su'):
+        if method and method not in (
+                'apt', 'dpkg',
+                'gdebi', 'gdebi-gtk', 'gdebi-kde',
+                ):
+            logger.warning(('Unknown installation method %r, using apt or ' +
+                'dpkg instead') % method)
+            method = None
+
+        if not method:
+            apt_ver = self.current_version('apt')
+            if Version(apt_ver.strip()) >= Version('1.1~0'):
+                method = 'apt'
+            else:
+                method = 'dpkg'
+
+        if method == 'apt':
+            run_as_root(['apt-get', 'install', '--install-recommends'] +
+                    list(debs), gain_root)
+        elif method == 'dpkg':
+            run_as_root(['dpkg', '-i'] + list(debs), gain_root)
+        elif method == 'gdebi':
+            run_as_root(['gdebi'] + list(debs), gain_root)
+        else:
+            # gdebi-gtk etc.
+            subprocess.call([method] + list(debs))
+
+def get_distro_packaging():
+    return DebPackaging()
