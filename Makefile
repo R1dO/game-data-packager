@@ -145,8 +145,8 @@ install: default
 	install -m0644 runtime/doom2-masterlevels.desktop      $(DESTDIR)/usr/share/applications/
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
-	install -m0644 data/confirm-binary-only.txt            $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 data/missing-data.txt                   $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 runtime/missing-data.txt                $(DESTDIR)/usr/share/games/game-data-packager/
 
 # Requires additional setup, so not part of "make check"
 manual-check:
