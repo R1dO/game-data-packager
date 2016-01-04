@@ -118,6 +118,7 @@ install: default
 	mkdir -p $(DESTDIR)/usr/share/games/game-data-packager
 	cp -ar game_data_packager/                             $(DESTDIR)/usr/share/games/game-data-packager/
 	install runtime/launcher.py                            $(DESTDIR)/usr/share/games/game-data-packager/gdp-launcher
+	install -m0644 runtime/*.desktop                       $(DESTDIR)/usr/share/games/game-data-packager/
 	install -m0644 out/*.copyright                         $(DESTDIR)/usr/share/games/game-data-packager/
 	install -m0644 out/*.png                               $(DESTDIR)/usr/share/games/game-data-packager/
 	install -m0644 out/*.svgz                              $(DESTDIR)/usr/share/games/game-data-packager/
