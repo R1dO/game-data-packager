@@ -1452,6 +1452,8 @@ class PackagingTask(object):
     def fill_dest_dir_rpm(self, package, destdir, compress):
         specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
         short_desc, long_desc = self.generate_description(package)
+        short_desc = short_desc[0].upper() + short_desc[1:]
+
         if self.game.wikibase:
             url = self.game.wikibase + (self.game.wiki or '')
         elif self.game.wikipedia:
