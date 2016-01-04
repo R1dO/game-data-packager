@@ -66,12 +66,12 @@ packages:
     - resource/font4.nut
 
 files:
-  resource/font1.nut:
-    distinctive_name: false
-  resource/font2.nut:
-    distinctive_name: false
-  resource/font3.nut:
-    distinctive_name: false
+  resource/font0.nut?demo:
+    look_for:
+    - resource/font0.nut
+    - resource/font1.nut
+    - resource/font2.nut
+    - resource/font3.nut
 
   cursmon1.zip:
     download: https://archive.org/download/cursmon1/cursmon1.zip
