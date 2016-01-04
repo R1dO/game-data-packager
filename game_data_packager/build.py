@@ -58,7 +58,7 @@ from .util import (AGENT,
         rm_rf,
         recursive_utime,
         which)
-from .version import (ASSETS, BINDIR, FORMAT, DISTRO)
+from .version import (ASSETS, BINDIR, LICENSEDIR, FORMAT, DISTRO)
 
 if FORMAT == 'deb':
     from debian.deb822 import Deb822
@@ -1329,7 +1329,7 @@ class PackagingTask(object):
                  if not f.license:
                      continue
                  license_file = f.install_as
-                 licenses.add("/usr/share/doc/%s/%s" % (package.name, license_file))
+                 licenses.add("/%s/%s/%s" % (LICENSEDIR, package.name, license_file))
                  if os.path.splitext(license_file)[0].lower() == 'license':
                      lintian_license(destdir, package.name, license_file)
 
@@ -1362,6 +1362,8 @@ class PackagingTask(object):
                  install_to = f.install_to
                  if install_to and install_to.startswith('$docdir'):
                      count_doc +=1
+                 elif install_to and install_to.startswith('$licensedir'):
+                     pass
                  else:
                      count_usr +=1
                      # doesn't have to be a .wad, ROTT's EXTREME.RTL
@@ -1515,6 +1517,8 @@ class PackagingTask(object):
 
         docdir = os.path.join(destdir, 'usr/share/doc', package.name)
         mkdir_p(docdir)
+        # only create licensedir if needed
+        licensedir = os.path.join(destdir, LICENSEDIR, package.name)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
 
@@ -1553,6 +1557,10 @@ class PackagingTask(object):
                 if install_to.startswith('$docdir'):
                     install_to = 'usr/share/doc/%s%s' % (package.name,
                             install_to[7:])
+                if install_to.startswith('$licensedir'):
+                    mkdir_p(licensedir)
+                    install_to = '%s/%s%s' % (LICENSEDIR, package.name,
+                            install_to[11:])
 
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
@@ -1577,11 +1585,15 @@ class PackagingTask(object):
                     assets=ASSETS,
                     bindir=BINDIR,
                     docdir=docdir,
+                    LICENSEDIR=LICENSEDIR,
+                    licensedir=licensedir,
                     install_to=package.install_to)
             real_file = string.Template(real_file).safe_substitute(
                     assets=ASSETS,
                     bindir=BINDIR,
                     docdir=docdir,
+                    LICENSEDIR=LICENSEDIR,
+                    licensedir=licensedir,
                     install_to=package.install_to)
 
             toplevel, rest = symlink.split('/', 1)

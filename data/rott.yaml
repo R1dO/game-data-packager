@@ -49,7 +49,7 @@ packages:
     debian:
       depends: rott-data
     url_misc: https://3drealms.com/catalog/rise-triad-dark-war_44/
-    install_to: usr/share/games/rott
+    install_to: $assets/rott
     install:
     - any_registered_rtc
     - DARKWAR.RTL
@@ -64,12 +64,12 @@ packages:
     longname: "Extreme Rise of the Triad"
     description: |
       Use the 'rott-commercial -filertl extreme.rtl' command to play this game.
-    install_to: usr/share/games/rott
+    install_to: $assets/rott
     install:
     - EXTREME.RTL
     symlinks:
-      usr/share/doc/rott-extreme-data/LICENSE.TXT:
-        usr/share/doc/rott-registered-data/LICENSE.TXT
+      $licensedir/LICENSE.TXT:
+        $LICENSEDIR/rott-registered-data/LICENSE.TXT
 
 files:
   any_registered_rtc:

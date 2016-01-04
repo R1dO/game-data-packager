@@ -81,14 +81,10 @@ packages:
       usr/lib/quake3/ta/missionpack/pak2.pk3: $install_to/missionpack/pak2.pk3
       usr/lib/quake3/ta/missionpack/pak3.pk3: $install_to/missionpack/pak3.pk3
       # let mix win & linux html documentation
-      usr/share/doc/quake3-data/Help/BotCommands.htm:
-        usr/share/doc/quake3-data/Help/BotCommands.html
-      usr/share/doc/quake3-data/Help/Dedicated Server.htm:
-        usr/share/doc/quake3-data/Help/DedicatedServer.html
-      usr/share/doc/quake3-data/Help/Index.htm:
-        usr/share/doc/quake3-data/Help/Index.html
-      usr/share/doc/quake3-data/Help/Readme.htm:
-        usr/share/doc/quake3-data/Help/Readme.html
+      $docdir/Help/BotCommands.htm: $docdir/Help/BotCommands.html
+      $docdir/Help/Dedicated Server.htm: $docdir/Help/DedicatedServer.html
+      $docdir/Help/Index.htm: $docdir/Help/Index.html
+      $docdir/Help/Readme.htm: $docdir/Help/Readme.html
     install_to: usr/share/games/quake3-data
     install:
       - baseq3/pak0.pk3

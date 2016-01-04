@@ -8,7 +8,7 @@
 
 Name:          game-data-packager
 Version:       44
-Release:       0.2%{?gver}
+Release:       0.3%{?gver}
 Summary:       Installer for game data files
 License:       GPLv2 and GPLv2+
 Url:           https://wiki.debian.org/Games/GameDataPackager
@@ -77,6 +77,7 @@ echo 'GAME_PACKAGE_VERSION = """%{version}"""' >> $VERSION_PY
 echo 'FORMAT = "rpm"' >> $VERSION_PY
 echo 'DISTRO = "fedora"' >> $VERSION_PY
 echo 'BINDIR = "usr/bin"' >> $VERSION_PY
+echo 'LICENSEDIR = "usr/share/licenses"' >> $VERSION_PY
 echo 'ASSETS = "usr/share"' >> $VERSION_PY
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_arch.py
 rm $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/util_deb.py
@@ -103,6 +104,12 @@ find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need 
 %license COPYING
 
 %changelog
+* Sat Jan 02 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.3.git2016 unreleased
+- Git Snapshot
+- Add Cacodemon icon to doom2-masterlevels subpackage
+- The (optional) licenses of generated .rpm goes now correctly to /usr/share/licenses
+  instead of /usr/share/doc
+
 * Thu Dec 31 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.2.git2015123150f64b6
 - Git Snapshot
 - Enable checks

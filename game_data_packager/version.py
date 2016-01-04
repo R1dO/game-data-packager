@@ -10,6 +10,7 @@ if os.path.isfile('/etc/debian_version'):
     DISTRO = 'generic'
     BINDIR = 'usr/games'
     ASSETS = 'usr/share/games'
+    LICENSEDIR = 'usr/share/doc'
 
     from debian.changelog import Changelog
     cl = Changelog(open('debian/changelog', encoding='utf-8'), strict=False)
@@ -20,6 +21,7 @@ elif os.path.isfile('/etc/redhat-release'):
     DISTRO = 'fedora'
     BINDIR = 'usr/bin'
     ASSETS = 'usr/share'
+    LICENSEDIR = 'usr/share/licenses'
 
     cl = open('debian/changelog', encoding='utf-8').readline()
     GAME_PACKAGE_VERSION = cl.split('(')[1].split(')')[0]
@@ -29,6 +31,7 @@ elif os.path.isfile('/etc/SuSE-release'):
     DISTRO = 'suse'
     BINDIR = 'usr/bin'
     ASSETS = 'usr/share'
+    LICENSEDIR = 'usr/share/licenses'
 
     cl = open('debian/changelog', encoding='utf-8').readline()
     GAME_PACKAGE_VERSION = cl.split('(')[1].split(')')[0]
@@ -38,6 +41,7 @@ elif os.path.isfile('/etc/arch-release'):
     DISTRO = 'arch'
     BINDIR = 'usr/bin'
     ASSETS = 'usr/share'
+    LICENSEDIR = 'usr/share/doc'
 
     cl = open('debian/changelog', encoding='utf-8').readline()
     GAME_PACKAGE_VERSION = cl.split('(')[1].split(')')[0]
