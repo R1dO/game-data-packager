@@ -1994,7 +1994,7 @@ class PackagingTask(object):
             # probably not enough files supplied?
             # print the help text, maybe that helps the user to determine
             # what they should have added
-            if not os.environ.get('DEBUG'):
+            if not os.environ.get('DEBUG') and not os.environ.get('GDP_DEBUG'):
                 self.game.argument_parser.print_help()
             raise SystemExit(1)
         except DownloadNotAllowed:

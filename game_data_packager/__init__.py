@@ -44,7 +44,7 @@ logger = logging.getLogger('game-data-packager')
 
 # For now, we're given these by the shell script wrapper.
 
-if os.environ.get('DEBUG'):
+if os.environ.get('DEBUG') or os.environ.get('GDP_DEBUG'):
     logging.getLogger().setLevel(logging.DEBUG)
 else:
     logging.getLogger().setLevel(logging.INFO)
@@ -562,7 +562,9 @@ class GameData(object):
             assert 'sha1sums' not in data, binary
             assert 'sha256sums' not in data, binary
 
-            if 'DISABLED' in data and not os.environ.get('DEBUG'):
+            if ('DISABLED' in data and
+                    not (os.environ.get('DEBUG') or
+                        os.environ.get('GDP_DEBUG'))):
                 continue
             package = self.construct_package(binary)
             self.packages[binary] = package
