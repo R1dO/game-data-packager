@@ -1,4 +1,3 @@
-DIRS := ./out
 GDP_MIRROR ?= localhost
 bindir := /usr/games
 PYTHON := python3
@@ -24,26 +23,25 @@ png       += $(patsubst ./data/%.svg,./out/%.png,$(wildcard ./data/*.svg))
 png       += out/memento-mori.png
 svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(filter-out ./data/memento-mori-2.svg,$(wildcard ./data/*.svg)))
 in_yaml   := $(wildcard ./data/*.yaml)
-json      := $(patsubst ./data/%.yaml,./out/%.json,$(in_yaml))
+json      := $(patsubst ./data/%.yaml,./out/vfs/%.json,$(in_yaml))
 copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright))
 dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
 
-default: $(DIRS) $(png) $(svgz) $(json) $(copyright) $(dot_in) \
+default: $(png) $(svgz) $(json) $(copyright) $(dot_in) \
       out/bash_completion out/changelog.gz out/copyright \
       out/game-data-packager out/vfs.zip
 
 out/%: data/%
+	mkdir -p out
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
-out/%.json: data/%.yaml
+out/vfs/%.json: data/%.yaml
+	mkdir -p out/vfs
 	$(PYTHON) tools/yaml2json.py $< $@
 
 out/vfs.zip: $(json)
+	mkdir -p out
 	rm -f out/vfs.zip
-	rm -fr out/vfs
-	mkdir out/vfs
-	cp out/*.json out/*.files out/*.size_and_md5 out/vfs/
-	cp out/*.sha1sums out/*.sha256sums out/*.groups out/vfs/
 	if [ -n "$(BUILD_DATE)" ]; then \
 		touch --date='$(BUILD_DATE)' out/vfs/*; \
 	fi
@@ -51,36 +49,40 @@ out/vfs.zip: $(json)
 		env TZ=UTC zip ../vfs.zip -9 -X -q -@
 
 out/bash_completion: $(in_yaml)
+	mkdir -p out
 	$(PYTHON) tools/bash_completion.py > ./out/bash_completion
 	chmod 0644 ./out/bash_completion
 
 out/changelog.gz: debian/changelog
+	mkdir -p out
 	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
 
 out/game-data-packager: run
+	mkdir -p out
 	install run out/game-data-packager
 
 out/%.svg: data/%.svg
+	mkdir -p out
 	inkscape --export-plain-svg=$@ $<
 
 out/memento-mori.svg: data/memento-mori-2.svg
+	mkdir -p out
 	inkscape --export-plain-svg=$@ --export-id=layer1 --export-id-only $<
 
 out/memento-mori.png: out/memento-mori.svg
 	inkscape --export-png=$@ -w96 -h96 $<
 
 out/%.png: data/%.xpm
+	mkdir -p out
 	convert $< $@
 
 out/%.png: data/%.svg
+	mkdir -p out
 	inkscape --export-png=$@ -w96 -h96 $<
 
 out/%.svgz: out/%.svg
 	gzip -nc $< > $@
-
-$(DIRS):
-	mkdir -p $@
 
 clean:
 	rm -f ./out/bash_completion
@@ -90,23 +92,17 @@ clean:
 	rm -f ./out/*.control.in
 	rm -f ./out/*.copyright
 	rm -f ./out/*.copyright.in
-	rm -f ./out/*.files
-	rm -f ./out/*.groups
 	rm -f ./out/*.preinst.in
 	rm -f ./out/*.png
-	rm -f ./out/*.sha1sums
-	rm -f ./out/*.sha256sums
-	rm -f ./out/*.size_and_md5
 	rm -f ./out/*.svgz
 	rm -f ./out/*.svg
-	rm -f ./out/*.json
 	rm -f ./out/vfs.zip
 	rm -f ./out/index.html
 	rm -fr out/vfs
 	rm -rf game_data_packager/__pycache__
 	rm -rf game_data_packager/games/__pycache__
 	rm -rf tools/__pycache__
-	for d in $(DIRS); do [ ! -d "$$d" ]  || rmdir "$$d"; done
+	test ! -d out || rmdir out
 
 check:
 	LC_ALL=C $(PYFLAKES3) game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tools/*.py || :

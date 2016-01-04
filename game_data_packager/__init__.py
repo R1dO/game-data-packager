@@ -34,7 +34,7 @@ from .build import (HashedFile,
         PackagingTask)
 from .config import read_config
 from .gog import run_gog_meta_mode
-from .paths import (DATADIR,USE_VFS)
+from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .steam import run_steam_meta_mode
 from .version import (GAME_PACKAGE_VERSION, DISTRO, ASSETS)
@@ -1050,20 +1050,26 @@ class GameData(object):
                         for line in rawdata.splitlines():
                             self._add_hash(line.rstrip('\n'), alg)
         else:
-            filename = os.path.join(DATADIR, '%s.files' % self.shortname)
+            vfs = os.path.join(DATADIR, 'vfs')
+
+            if not os.path.isdir(vfs):
+                vfs = DATADIR
+
+
+            filename = os.path.join(vfs, '%s.files' % self.shortname)
             if os.path.isfile(filename):
                 logger.debug('... %s', filename)
                 data = json.load(open(filename, encoding='utf-8'))
                 self._populate_files(data)
 
-            filename = os.path.join(DATADIR, '%s.groups' % self.shortname)
+            filename = os.path.join(vfs, '%s.groups' % self.shortname)
             if os.path.isfile(filename):
                 logger.debug('... %s', filename)
                 stream = open(filename, encoding='utf-8')
                 self._populate_groups(stream)
 
             for alg in ('sha1', 'sha256', 'size_and_md5'):
-                filename = os.path.join(DATADIR, '%s.%s%s' %
+                filename = os.path.join(vfs, '%s.%s%s' %
                         (self.shortname, alg,
                             '' if alg == 'size_and_md5' else 'sums'))
                 if os.path.isfile(filename):
@@ -1280,7 +1286,12 @@ def load_games(game='*', use_vfs=USE_VFS, use_yaml=False):
             yamldata = open(yamlfile, encoding='utf-8').read()
             load_game(progress, games, yamlfile, yamldata)
     else:
-        for jsonfile in glob.glob(os.path.join(DATADIR, game + '.json')):
+        vfs = os.path.join(DATADIR, 'vfs')
+
+        if not os.path.isdir(vfs):
+            vfs = DATADIR
+
+        for jsonfile in glob.glob(os.path.join(vfs, game + '.json')):
             jsondata = open(jsonfile, encoding='utf-8').read()
             load_game(progress, games, jsonfile, jsondata)
 
