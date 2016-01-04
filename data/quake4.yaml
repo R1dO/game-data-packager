@@ -15,7 +15,7 @@ binary_executables: i386
 packages:
   quake4-pb-bin:
     DISABLED: mitigation for CVE-2007-5248 <http://aluigi.altervista.org/adv/d3engfspb-adv.txt>
-    longname: Quake 4 PunkBuster binaries
+    short_description: Quake 4 PunkBuster binaries
     install_to: usr/lib/quake4
     architecture: i386
     version: "1.4.2"
@@ -32,7 +32,7 @@ packages:
       - PBEULA.txt?steam
 
   quake4-bin:
-    longname: Quake 4 binaries
+    data_type: binaries
     install_to: usr/lib/quake4
     architecture: i386
     version: "1.4.2"
@@ -63,7 +63,6 @@ packages:
 
   quake4-data:
     version: "1.4.2"
-    longname: Quake 4
     debian:
       provides: quake4-any-data
       replaces: quake4-any-data

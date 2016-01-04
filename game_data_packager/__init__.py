@@ -209,7 +209,7 @@ class GameDataPackage(object):
         self.longname = None
 
         # This word is used to build package description
-        # 'data' / 'PWAD' / 'IWAD'
+        # 'data' / 'PWAD' / 'IWAD' / 'binaries'
         self.data_type = 'data'
 
         # extra blurb of text added to .deb long description

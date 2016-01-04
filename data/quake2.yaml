@@ -79,6 +79,7 @@ packages:
       - demo documentation
 
   quake2-music:
+    data_type: music
     aliases: [music]
     expansion_for: quake2-full-data
     # http://musicbrainz.org/release/06727a29-435d-423e-90a8-1a4fed5edb54
@@ -92,6 +93,7 @@ packages:
       first_track: 2
 
   quake2-reckoning-data:
+    data_type: data and binaries
     aliases: [xatrix, q2xatrix, reckoning, mp1, "1"]
     copyright: © 1998 Xatrix Entertainment
     description: |
@@ -128,6 +130,7 @@ packages:
       - xatrix docs
 
   quake2-reckoning-music:
+    data_type: music
     aliases: [mp1music]
     copyright: © 1998 Xatrix Entertainment
     expansion_for: quake2-reckoning-data
@@ -142,6 +145,7 @@ packages:
       first_track: 2
 
   quake2-groundzero-data:
+    data_type: data and binaries
     symlinks:
       usr/share/games/quake2/quake2-groundzero: usr/games/quake2
     aliases: [rogue, q2rogue, groundzero, mp2, "2"]
@@ -180,6 +184,7 @@ packages:
       - rogue docs
 
   quake2-groundzero-music:
+    data_type: music
     expansion_for: quake2-groundzero-data
     copyright: © 1998 Rogue Entertainment
     aliases: [mp2music]

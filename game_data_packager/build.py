@@ -1740,7 +1740,7 @@ class PackagingTask(object):
         if package.short_description is not None:
             short_desc = package.short_description
         elif package.section == 'games':
-            short_desc = package.data_type + ' for "' + longname + '" game'
+            short_desc = 'game %s for %s' % (package.data_type, longname)
         else:
             short_desc = longname
 

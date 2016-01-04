@@ -14,7 +14,7 @@ try_repack_from:
 
 packages:
   etqw-pb-bin:
-    longname: ETQW PunkBuster binaries
+    short_description: ETQW PunkBuster binaries
     install_to: usr/lib/etqw
     architecture: i386
     version: "1.5"
@@ -30,7 +30,7 @@ packages:
     - patch 1.5 Punkbuster licenses
 
   etqw-bin:
-    longname: "Enemy Territory Quake Wars binaries"
+    data_type: binaries
     install_to: usr/lib/etqw
     architecture: i386
     version: "1.5"
@@ -69,7 +69,7 @@ packages:
     - only on DVD - optional
 
   etqw-ko-data:
-    longname: "Enemy Territory Quake Wars - Korean language pack"
+    longname: "Enemy Territory: Quake Wars (Korean language pack)"
     version: "1.5"
     expansion_for: etqw-data
     lang: ko
