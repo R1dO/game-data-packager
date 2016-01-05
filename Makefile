@@ -110,7 +110,7 @@ check:
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tools/check_syntax.py
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tools/check_equivalence.py
 
-install: default
+install:
 	echo DESTDIR: $(DESTDIR)
 	mkdir -p $(DESTDIR)$(bindir)
 	install -m0755 out/game-data-packager                  $(DESTDIR)$(bindir)
