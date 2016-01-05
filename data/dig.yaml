@@ -19,6 +19,10 @@ packages:
     install:
     - shared assets
     - english version
+    - video/digtxt.trs?en
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
     doc:
     - manual.pdf
     - refcard.pdf
@@ -33,6 +37,9 @@ packages:
     install:
     - shared assets
     - german dub
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
     doc:
     - manual.pdf
     - refcard.pdf
@@ -47,6 +54,9 @@ packages:
     install:
     - shared assets
     - spanish dub
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
     doc:
     - manual.pdf?es
     - refcard.pdf
@@ -61,6 +71,9 @@ packages:
     install:
     - shared assets
     - french dub
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
     doc:
     - manual.pdf?fr
     - refcard.pdf
@@ -75,6 +88,9 @@ packages:
     install:
     - shared assets
     - italian dub
+    - video/font1.nut
+    - video/font2.nut
+    - video/font3.nut
     doc:
     - manual.pdf?it
     - refcard.pdf
@@ -87,12 +103,31 @@ files:
   refcard.pdf:
     look_for: [refcard.pdf,the dig - quick reference card.pdf]
 
+  video/digtxt.trs?en:
+    alternatives:
+    - video/digtxt.trs?gogen
+    - video/digtxt.trs?cden
+  video/font1.nut:
+    alternatives:
+    - video/font1.nut?gog
+    - video/font1.nut?cd
+  video/font2.nut:
+    alternatives:
+    - video/font2.nut?gog
+    - video/font2.nut?cd
+  video/font3.nut:
+    alternatives:
+    - video/font3.nut?gog
+    - video/font3.nut?cd
+
   setup_the_dig_2.0.0.3.exe:
     unpack:
       format: innoextract
     provides:
     - shared assets
+    - gog fonts
     - english version
+    - video/digtxt.trs?gogen
     - manual.pdf
     - refcard.pdf
 
@@ -101,7 +136,9 @@ files:
       format: deb
     provides:
     - shared assets
+    - gog fonts
     - english version
+    - video/digtxt.trs?gogen
     - manual.pdf
     - refcard.pdf
     - end user license agreement.txt
@@ -111,7 +148,9 @@ files:
       format: zip
     provides:
     - shared assets
+    - gog fonts
     - english version
+    - video/digtxt.trs?gogen
     - manual.pdf
     - refcard.pdf
     - end user license agreement.txt
@@ -121,6 +160,7 @@ files:
       format: innoextract
     provides:
     - shared assets
+    - gog fonts
     - german dub
     - manual.pdf
     - refcard.pdf
@@ -130,6 +170,7 @@ files:
       format: deb
     provides:
     - shared assets
+    - gog fonts
     - german dub
     - manual.pdf
     - refcard.pdf
@@ -143,6 +184,7 @@ files:
       format: innoextract
     provides:
     - shared assets
+    - gog fonts
     - spanish dub
     - manual.pdf?es
     - refcard.pdf
@@ -152,6 +194,7 @@ files:
       format: deb
     provides:
     - shared assets
+    - gog fonts
     - spanish dub
     - manual.pdf?es
     - refcard.pdf
@@ -165,6 +208,7 @@ files:
       format: innoextract
     provides:
     - shared assets
+    - gog fonts
     - french dub
     - manual.pdf?fr
     - refcard.pdf
@@ -174,6 +218,7 @@ files:
       format: deb
     provides:
     - shared assets
+    - gog fonts
     - french dub
     - manual.pdf?fr
     - refcard.pdf
@@ -187,6 +232,7 @@ files:
       format: innoextract
     provides:
     - shared assets
+    - gog fonts
     - italian dub
     - manual.pdf?it
     - refcard.pdf
@@ -196,6 +242,7 @@ files:
       format: deb
     provides:
     - shared assets
+    - gog fonts
     - italian dub
     - manual.pdf?it
     - refcard.pdf
@@ -210,9 +257,6 @@ groups:
   3666166   ef0992dad809d4fe2e69b4dd9c0f6bce video/asttun.san
   4458916   158b3f10bcf51e7ec8eed118d171822b video/darkcave.san
   34738     339268c9c839b4bb3094d3aaf34827d8 video/font0.nut
-  28302     48efaacc7be8886a0f13125477e04d98 video/font1.nut
-  28302     48efaacc7be8886a0f13125477e04d98 video/font2.nut
-  28302     48efaacc7be8886a0f13125477e04d98 video/font3.nut
   1133070   c58ba44c2b76d9dc10a6ccfc73df4f2e video/m1.san
   1048844   67835ca2d504370232281f77d6cf6d00 video/m2.san
   1247242   ed56452de0059706ed30eb31d6874878 video/nexuspan.san
@@ -255,7 +299,6 @@ groups:
 
  english version: |
   130123511 beb6d64ccf146f82a26a1ab65a4c4b13 digvoice.bun
-  10723     951c8cfc1089724c63e2433e8682a476 video/digtxt.trs
   50124786  aeffce448ef3193110dab71d7cc27c15 video/sq1.san
   17759462  2bd8d22069743c996281bd5aa4c33040 video/sq2.san
   12073682  eca489a95b8ef9ef71073811d085fe9b video/sq3.san
@@ -360,6 +403,20 @@ groups:
   267940    6a596212534a7f3ae52369a2ec4ed535 manual.pdf?it
   464917228 e47c5201b0c1d2eae14fbce2fc4a6ed2 gog_the_dig_italian_1.0.0.6.deb
   462469504 670dc30764b63e7b541e725f807d4743 setup_the_dig_italian_2.0.0.3.exe
+
+ gog fonts: |
+  28302     48efaacc7be8886a0f13125477e04d98 video/font1.nut?gog
+  28302     48efaacc7be8886a0f13125477e04d98 video/font2.nut?gog
+  28302     48efaacc7be8886a0f13125477e04d98 video/font3.nut?gog
+
+ cd fonts: |
+  27366     9d9e5db06d1f3ed367515ad4c8e418f8 video/font1.nut?cd
+  22910     7d404c4e87586e27d7e671874573df68 video/font2.nut?cd
+  27388     5657ed9b9d3583ca5761cf024f53a3c7 video/font3.nut?cd
+
+ variants: |
+  10723     951c8cfc1089724c63e2433e8682a476 video/digtxt.trs?gogen
+  10816     42d43974ea0e352ca2347dd42032caec video/digtxt.trs?cden
 
 sha1sums: |
   29cc9da6aefb3941f21ac2bce9bd3e0f5af18ca8  gog_the_dig_1.0.0.5.deb
