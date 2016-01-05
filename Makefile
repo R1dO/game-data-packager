@@ -29,7 +29,7 @@ dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
 
 default: $(png) $(svgz) $(json) $(copyright) $(dot_in) \
       out/bash_completion out/changelog.gz out/copyright \
-      out/game-data-packager out/vfs.zip
+      out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
 out/%: data/%
 	mkdir -p out
