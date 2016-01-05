@@ -28,6 +28,9 @@ from ..util import (check_output, run_as_root)
 logger = logging.getLogger(__name__)
 
 class DebPackaging(PackagingSystem):
+    BINDIR = 'usr/games'
+    ASSETS = 'usr/share/games'
+
     def __init__(self):
         self.__installed = None
         self.__available = None

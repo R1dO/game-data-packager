@@ -25,7 +25,6 @@ from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import (mkdir_p, lintian_desktop)
-from ..version import (BINDIR)
 
 logger = logging.getLogger('game-data-packager.games.scummvm-common')
 
@@ -135,7 +134,7 @@ class ScummvmTask(PackagingTask):
         else:
             pgm = package.name[0:len(package.name)-len('-data')]
             entry['Exec'] = pgm
-            bindir = os.path.join(destdir, BINDIR)
+            bindir = os.path.join(destdir, self.packaging.BINDIR)
             mkdir_p(bindir)
             path = os.path.join(bindir, pgm)
             if 'en' not in package.langs:

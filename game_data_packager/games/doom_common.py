@@ -25,7 +25,7 @@ from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import (copy_with_substitutions, mkdir_p, lintian_desktop)
-from ..version import (FORMAT, ASSETS)
+from ..version import (FORMAT)
 
 logger = logging.getLogger('game-data-packager.games.doom-common')
 
@@ -80,7 +80,7 @@ class DoomGameData(GameData):
             if FORMAT == 'arch':
                 package.install_to = 'usr/share/games/doom'
             else:
-                package.install_to = ASSETS + '/doom'
+                package.install_to = '$assets/doom'
             engine = package.engine or self.engine
             engine = engine.split('|')[-1].strip()
             package.program = package_map.get(engine, engine)

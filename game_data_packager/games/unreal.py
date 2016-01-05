@@ -21,7 +21,6 @@ import os
 from .. import (GameData)
 from ..build import (PackagingTask)
 from ..util import (TemporaryUmask, mkdir_p)
-from ..version import (ASSETS)
 
 logger = logging.getLogger('game-data-packager.games.unreal')
 
@@ -34,7 +33,7 @@ class UnrealTask(PackagingTask):
                 self.__convert_logo(destdir)
 
     def __convert_logo(self, destdir):
-        skaarj_logo = os.path.join(destdir, ASSETS, 'unreal',
+        skaarj_logo = os.path.join(destdir, self.packaging.ASSETS, 'unreal',
                 'skaarj_logo.jpg')
 
         try:

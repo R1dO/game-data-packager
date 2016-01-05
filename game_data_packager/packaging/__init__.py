@@ -19,6 +19,9 @@
 from abc import (ABCMeta, abstractmethod)
 
 class PackagingSystem(metaclass=ABCMeta):
+    ASSETS = 'usr/share'
+    BINDIR = 'usr/bin'
+    LICENSEDIR = 'usr/share/doc'
 
     def is_installed(self, package):
         """Return boolean: is a package with the given name installed?"""

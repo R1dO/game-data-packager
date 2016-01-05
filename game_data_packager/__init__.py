@@ -37,7 +37,7 @@ from .gog import run_gog_meta_mode
 from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .steam import run_steam_meta_mode
-from .version import (ASSETS, DISTRO, FORMAT, GAME_PACKAGE_VERSION)
+from .version import (DISTRO, FORMAT, GAME_PACKAGE_VERSION)
 
 logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
@@ -239,9 +239,9 @@ class GameDataPackage(object):
         # put 'usr/share/games/quake3/baseq3/pak1.pk3' in the .deb.
         # The default is 'usr/share/games/' plus the binary package's name.
         if name.endswith('-data'):
-            self.install_to = ASSETS + '/' + name[:len(name) - 5]
+            self.install_to = '$assets/' + name[:len(name) - 5]
         else:
-            self.install_to = ASSETS + '/' + name
+            self.install_to = '$assets/' + name
 
         # If true, this package is allowed to be empty
         self.empty = False
@@ -838,9 +838,7 @@ class GameData(object):
                "A package shouldn't extraneously provide itself"
 
         if 'install_to' in d:
-            if package.install_to.startswith('$assets/'):
-                package.install_to = ASSETS + package.install_to[len('$assets'):]
-            assert 'usr/share/games/' + package.name != d['install_to'] + '-data', \
+            assert '$assets/' + package.name != d['install_to'] + '-data', \
                 "install_to %s is extraneous" % package.name
 
         if 'demo_for' in d:

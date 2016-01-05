@@ -26,6 +26,8 @@ from ..util import (check_output, run_as_root)
 logger = logging.getLogger(__name__)
 
 class RpmPackaging(PackagingSystem):
+    LICENSEDIR = 'usr/share/licenses'
+
     def is_installed(self, package):
         return 0 == subprocess.call(['rpm', '-q', package],
                                     stdout=subprocess.DEVNULL,

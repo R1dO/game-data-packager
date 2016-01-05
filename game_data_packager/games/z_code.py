@@ -25,7 +25,6 @@ from ..build import (PackagingTask)
 from ..util import (TemporaryUmask,
                     mkdir_p,
                     lintian_desktop)
-from ..version import (BINDIR)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
 
@@ -85,13 +84,14 @@ class ZCodeTask(PackagingTask):
             lintian_desktop(destdir, package.name, engine)
 
             if engine == 'frotz':
-                bindir = os.path.join(destdir, BINDIR)
+                bindir = os.path.join(destdir, self.packaging.BINDIR)
                 mkdir_p(bindir)
                 pgm = package.name[0:len(package.name)-len('-data')]
                 path = os.path.join(bindir, pgm)
                 with open(path, 'w') as f:
                      f.write('#!/bin/sh\n')
-                     f.write('test -x /%s/frotz && exec frotz $@ %s\n' % (BINDIR, arg))
+                     f.write('test -x /%s/frotz && exec frotz $@ %s\n' %
+                             (self.packaging.BINDIR, arg))
                      f.write('echo "You need to install some engine '
                                    'like frotz to play this game"\n')
                 os.chmod(path, 0o755)

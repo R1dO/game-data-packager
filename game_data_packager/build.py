@@ -57,7 +57,7 @@ from .util import (AGENT,
         rm_rf,
         recursive_utime,
         which)
-from .version import (ASSETS, BINDIR, LICENSEDIR, FORMAT, DISTRO)
+from .version import (FORMAT, DISTRO)
 
 if FORMAT == 'deb':
     from debian.deb822 import Deb822
@@ -1334,7 +1334,8 @@ class PackagingTask(object):
                  if not f.license:
                      continue
                  license_file = f.install_as
-                 licenses.add("/%s/%s/%s" % (LICENSEDIR, package.name, license_file))
+                 licenses.add("/%s/%s/%s" % (self.packaging.LICENSEDIR,
+                     package.name, license_file))
                  if os.path.splitext(license_file)[0].lower() == 'license':
                      lintian_license(destdir, package.name, license_file)
 
@@ -1376,16 +1377,20 @@ class PackagingTask(object):
                      main_wad = f.install_as
                      exts.add(os.path.splitext(main_wad.lower())[1])
 
+            install_to = package.install_to
+            if install_to.startswith('$assets'):
+                install_to = self.packaging.ASSETS + install_to[7:]
+
             if count_usr == 0 and count_doc == 1:
                 o.write('"/usr/share/doc/%s/%s"\n' % (package.name,
                                                       package.only_file))
             elif count_usr == 1:
-                o.write('"/%s/%s"\n' % (package.install_to, main_wad))
+                o.write('"/%s/%s"\n' % (install_to, main_wad))
             elif len(exts) == 1:
                 o.write('The %s files under "/%s/"\n' %
-                        (list(exts)[0] ,package.install_to))
+                        (list(exts)[0], install_to))
             else:
-                o.write('The files under "/%s/"\n' % package.install_to)
+                o.write('The files under "/%s/"\n' % install_to)
 
             if count_usr and count_doc:
                 if count_usr == 1:
@@ -1551,7 +1556,8 @@ class PackagingTask(object):
         docdir = os.path.join(destdir, 'usr/share/doc', package.name)
         mkdir_p(docdir)
         # only create licensedir if needed
-        licensedir = os.path.join(destdir, LICENSEDIR, package.name)
+        licensedir = os.path.join(destdir, self.packaging.LICENSEDIR,
+                package.name)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(docdir, 'changelog.gz'))
 
@@ -1587,13 +1593,15 @@ class PackagingTask(object):
                 if install_to is None:
                     install_to = package.install_to
 
-                if install_to.startswith('$docdir'):
+                if install_to.startswith('$assets'):
+                    install_to = self.packaging.ASSETS + install_to[7:]
+                elif install_to.startswith('$docdir'):
                     install_to = 'usr/share/doc/%s%s' % (package.name,
                             install_to[7:])
-                if install_to.startswith('$licensedir'):
+                elif install_to.startswith('$licensedir'):
                     mkdir_p(licensedir)
-                    install_to = '%s/%s%s' % (LICENSEDIR, package.name,
-                            install_to[11:])
+                    install_to = '%s/%s%s' % (self.packaging.LICENSEDIR,
+                            package.name, install_to[11:])
 
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
@@ -1615,17 +1623,17 @@ class PackagingTask(object):
             real_file = real_file.lstrip('/')
 
             symlink = string.Template(symlink).safe_substitute(
-                    assets=ASSETS,
-                    bindir=BINDIR,
+                    assets=self.packaging.ASSETS,
+                    bindir=self.packaging.BINDIR,
                     docdir=docdir,
-                    LICENSEDIR=LICENSEDIR,
+                    LICENSEDIR=self.packaging.LICENSEDIR,
                     licensedir=licensedir,
                     install_to=package.install_to)
             real_file = string.Template(real_file).safe_substitute(
-                    assets=ASSETS,
-                    bindir=BINDIR,
+                    assets=self.packaging.ASSETS,
+                    bindir=self.packaging.BINDIR,
                     docdir=docdir,
-                    LICENSEDIR=LICENSEDIR,
+                    LICENSEDIR=self.packaging.LICENSEDIR,
                     licensedir=licensedir,
                     install_to=package.install_to)
 
@@ -1653,6 +1661,8 @@ class PackagingTask(object):
             for i, copy_from in self.cd_tracks[package.name].items():
                 logger.debug('Found CD track %d at %s', i, copy_from)
                 install_to = package.install_to
+                if install_to.startswith('$assets'):
+                    install_to = self.packaging.ASSETS + install_to[7:]
                 install_as = package.rip_cd['filename_format'] % i
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)

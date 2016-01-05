@@ -17,27 +17,15 @@ with open('debian/changelog', encoding='utf-8') as cl:
 if os.path.isfile('/etc/debian_version'):
     FORMAT = 'deb'
     DISTRO = 'generic'
-    BINDIR = 'usr/games'
-    ASSETS = 'usr/share/games'
-    LICENSEDIR = 'usr/share/doc'
 
 elif os.path.isfile('/etc/redhat-release'):
     FORMAT = 'rpm'
     DISTRO = 'fedora'
-    BINDIR = 'usr/bin'
-    ASSETS = 'usr/share'
-    LICENSEDIR = 'usr/share/licenses'
 
 elif os.path.isfile('/etc/SuSE-release'):
     FORMAT = 'rpm'
     DISTRO = 'suse'
-    BINDIR = 'usr/bin'
-    ASSETS = 'usr/share'
-    LICENSEDIR = 'usr/share/licenses'
 
 elif os.path.isfile('/etc/arch-release'):
     FORMAT = 'arch'
     DISTRO = 'arch'
-    BINDIR = 'usr/bin'
-    ASSETS = 'usr/share'
-    LICENSEDIR = 'usr/share/doc'
