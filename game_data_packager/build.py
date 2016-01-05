@@ -1556,9 +1556,6 @@ class PackagingTask(object):
         pkgdocdir = os.path.join('usr/share/doc', package.name)
         dest_pkgdocdir = os.path.join(destdir, pkgdocdir)
         mkdir_p(dest_pkgdocdir)
-        # only create license directory if needed
-        pkglicensedir = os.path.join(self.packaging.LICENSEDIR, package.name)
-        dest_pkglicensedir = os.path.join(destdir, pkglicensedir)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(destdir, pkgdocdir, 'changelog.gz'))
 
