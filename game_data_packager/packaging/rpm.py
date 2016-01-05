@@ -63,7 +63,7 @@ class RpmPackaging(PackagingSystem):
 
 class DnfPackaging(RpmPackaging):
     def __init__(self):
-        self.__available = None
+        self.available = None
 
     def is_available(self, package):
         if self.available is None:
@@ -124,10 +124,10 @@ class ZypperPackaging(RpmPackaging):
 
 def get_distro_packaging():
     if os.path.isfile('/etc/redhat-release'):
-        return ZypperPackaging()
+        return DnfPackaging()
 
     if os.path.isfile('/etc/SuSE-release'):
-        return DnfPackaging()
+        return ZypperPackaging()
 
     try:
         maybe = DnfPackaging()
