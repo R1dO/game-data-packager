@@ -756,11 +756,11 @@ packages:
     - readme.txt
 files:
   ddrawfix/readme.html:
-    install_to: $docdir
+    doc: true
   manual.pdf:
-    install_to: $docdir
+    doc: true
   readme11.txt:
-    install_to: $docdir
+    doc: true
   setup_planescape_torment_2.0.0.8.exe:
     provides:
     - autonote.ini

@@ -60,7 +60,7 @@ packages:
     - DARKWAR.WAD
     license:
     - LICENSE.TXT
-    optional:
+    doc:
     - manual.pdf
 
   rott-extreme-data:
@@ -96,7 +96,6 @@ files:
     alternatives:
     - manual.pdf?steam
     - manual.pdf?gog
-    install_to: $docdir
   manual.pdf?gog:
     look_for: [manual.pdf,UserManual.pdf]
 

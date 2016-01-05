@@ -13,12 +13,10 @@ packages:
       game: space_quest_2_vohauls_revenge
     install:
     - assets
-    optional:
+    doc:
     - manual.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
   setup_space_quest_1_2_3.exe:
     unpack:
       format: innoextract

@@ -1883,13 +1883,10 @@ packages:
     - xtable04
     - xtable05
     - xtbllist
-    optional:
+    doc:
     - manual.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
-
   setup_waxworks.exe:
     unpack:
       format: innoextract

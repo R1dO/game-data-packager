@@ -97,7 +97,7 @@ packages:
     - atlantis.000?fr
     - atlantis.001?fr
     # floppy version, no dubbing known
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf
 
@@ -110,18 +110,16 @@ packages:
     - atlantis.000?it
     - atlantis.001?it
     # floppy version, no dubbing known
-    optional:
+    doc:
     - hintbook.pdf
     - manual.pdf
 
 files:
   hintbook.pdf:
-    install_to: $docdir
     look_for: [hintbook.pdf,Indiana Jones and the Fate of Atlantis - Hintbook.pdf]
     install_as: hintbook.pdf
 
   manual.pdf:
-    install_to: $docdir
     look_for: [manual.pdf,Indiana Jones and the Fate of Atlantis - Manual.pdf]
     install_as: manual.pdf
 

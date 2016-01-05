@@ -22,13 +22,10 @@ packages:
     - VIEWDIR
     - VOL.0
     - WORDS.TOK
-    optional:
+    doc:
     - Enclosure.txt
 
 files:
-  Enclosure.txt:
-    install_to: $docdir
-
   Enclosure.zip:
     download:
       spear-of-destiny-mirrors:

@@ -15,12 +15,11 @@ packages:
       game: quest_for_glory_3
     install:
     - assets
-    optional:
+    doc:
     - quest for glory 3 - manual.pdf
 
 files:
   quest for glory 3 - manual.pdf:
-    install_to: $docdir
     install_as: manual.pdf
     look_for: [quest for glory 3 - manual.pdf,manual.pdf]
 

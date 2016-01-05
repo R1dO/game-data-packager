@@ -31,7 +31,7 @@ packages:
       game: doom_ii_master_levels_game
     install:
     - doom2.wad
-    optional:
+    doc:
     - manual.pdf
 
   doom2-nerve-wad:
@@ -182,9 +182,6 @@ files:
     alternatives:
     - nerve.wad?pc
     - nerve.wad?xbox360_bfg
-
-  manual.pdf:
-    install_to: $docdir
 
   setup_doom2_2.0.0.6.exe:
     unpack:

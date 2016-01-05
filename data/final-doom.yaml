@@ -31,7 +31,7 @@ packages:
     install:
     - tnt.wad
     - tnt31.wad
-    optional:
+    doc:
     - manual.pdf
     main_wads:
       tnt.wad:
@@ -45,7 +45,7 @@ packages:
       conflicts: ["freedoom (<< 0.6.4-4)", "freedm (<< 0.6.4-4)"]
     install:
     - plutonia.wad
-    optional:
+    doc:
     - manual.pdf
 
 files:
@@ -116,7 +116,6 @@ files:
     md5: b77ca6a809c4fae086162dad8e7a1335
 
   manual.pdf:
-    install_to: $docdir
     size: 700050
     md5: 22d3082cdf145cafcfce9e5b1c08a203
 

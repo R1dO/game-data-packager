@@ -264,7 +264,6 @@ files:
     look_for: [sewer64.bsp]
 
   readme-dm64.txt:
-    install_to: $docdir
     download:
       idstuff-mirrors:
         path: quake2/maps
@@ -329,7 +328,6 @@ files:
     md5: 0de34a0bd6b888a31417b78cc265bfbe
 
   ctf/readme.txt:
-    install_to: $docdir
     install_as: ctf.txt
     look_for:
     - ctf.txt
@@ -337,7 +335,6 @@ files:
 
   quake2-xatrix-2.03/CHANGELOG:
     distinctive_name: false
-    install_to: $docdir
     # Contrary to normal Debian policy, we don't compress this. It would
     # make the checksum non-deterministic, and Quake II is large enough
     # that not compressing the changelog is really not a big deal.
@@ -348,7 +345,6 @@ files:
 
   quake2-xatrix-2.03/LICENSE:
     distinctive_name: false
-    install_to: $docdir
     install_as: game_code_license.txt
     look_for:
     - LICENSE
@@ -356,7 +352,6 @@ files:
 
   quake2-xatrix-2.03/README:
     distinctive_name: false
-    install_to: $docdir
     install_as: game_code_readme.txt
     look_for:
     - README
@@ -364,7 +359,6 @@ files:
 
   quake2-rogue-2.02/CHANGELOG:
     distinctive_name: false
-    install_to: $docdir
     # Contrary to normal Debian policy, we don't compress this, as above.
     install_as: game_code_changelog.txt
     look_for:
@@ -373,7 +367,6 @@ files:
 
   quake2-rogue-2.02/LICENSE:
     distinctive_name: false
-    install_to: $docdir
     install_as: game_code_license.txt
     license: true
     look_for:
@@ -382,7 +375,6 @@ files:
 
   quake2-rogue-2.02/README:
     distinctive_name: false
-    install_to: $docdir
     install_as: game_code_readme.txt
     look_for:
     - README

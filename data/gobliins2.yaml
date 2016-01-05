@@ -20,6 +20,7 @@ packages:
     - gobnew.lic
     optional:
     - track1.mp3
+    doc:
     - manual.pdf
 
   gobliins2-floppy-data:
@@ -30,9 +31,6 @@ packages:
     - disk3.stk
 
 files:
-  manual.pdf:
-    install_to: $docdir
-
   setup_gobliiins2_2.1.0.63.exe:
     unpack:
       format: innoextract

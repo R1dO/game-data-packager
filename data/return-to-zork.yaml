@@ -133,6 +133,7 @@ packages:
     - music/rtz_24.ogg
     - music/rtz_25.ogg
     - music/rtz_26.ogg
+    doc:
     - encyclopedia_frobozzica.pdf
     - manual.pdf
     license:
@@ -145,11 +146,6 @@ files:
       format: zip
     provides:
     - rtzcd.dat
-
-  encyclopedia_frobozzica.pdf:
-    install_to: $docdir
-  manual.pdf:
-    install_to: $docdir
 
   setup_return_to_zork_2.0.0.7.exe:
     unpack:

@@ -72,13 +72,10 @@ packages:
     - l2.out
     - night.dbm
     - night.txt
-    optional:
+    doc:
     - manual.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
-
   setup_personal_nightmare_2.0.0.22.exe:
     unpack:
       format: innoextract

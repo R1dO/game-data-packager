@@ -38,6 +38,7 @@ packages:
     - duke3d.grp
     optional:
     - duke.rts
+    doc:
     - manual.pdf
     license:
     - license.txt
@@ -56,9 +57,6 @@ files:
     - duke3d.grp?demo
     - duke.rts
     - license.txt?demo
-
-  manual.pdf:
-    install_to: $docdir
 
 size_and_md5: |
   5924374  04e4ca70b8a2d59ed56c451c5c1d5d39 3dduke13.zip

@@ -49,7 +49,7 @@ packages:
     - voices5.res
     - voices6.res
     - voicess.res
-    optional:
+    doc:
     - manual.pdf
     license:
     - end user license agreement.txt
@@ -71,7 +71,7 @@ packages:
     - voices5.res?de
     - voices6.res?de
     - voicess.res?de
-    optional:
+    doc:
     - manual.pdf
     license:
     - end user license agreement.txt
@@ -93,7 +93,7 @@ packages:
     - voices5.res?fr
     - voices6.res?fr
     - voicess.res?fr
-    optional:
+    doc:
     - manual.pdf
     license:
     - end user license agreement.txt
@@ -115,7 +115,7 @@ packages:
     - voices5.res?es
     - voices6.res?es
     - voicess.res?es
-    optional:
+    doc:
     - manual.pdf
     license:
     - end user license agreement.txt
@@ -137,7 +137,7 @@ packages:
     - voices5.res
     - voices6.res
     - voicess.res
-    optional:
+    doc:
     - manual.pdf
     license:
     - end user license agreement.txt
@@ -154,11 +154,10 @@ files:
   manual.pdf:
     alternatives:
     - i have no mouth and i must scream - manual.pdf
-    - manual.pdf_steam
-    install_to: $docdir
+    - manual.pdf?steam
   i have no mouth and i must scream - manual.pdf:
     look_for: [manual.pdf,i have no mouth and i must scream - manual.pdf]
-  manual.pdf_steam:
+  manual.pdf?steam:
     look_for: [manual.pdf]
 
   gog_i_have_no_mouth_and_i_must_scream_2.0.0.3.sh:
@@ -389,7 +388,7 @@ size_and_md5: |
   108977234 55a951d5ad40227b44a55753f531dc1c voices6.res
   77627568  d4da3081a739400d5894fe23aa0b6fbb voicess.res
 
-  417369    835556a1278fe363a5dbf8dff9cc1430 manual.pdf_steam
+  417369    835556a1278fe363a5dbf8dff9cc1430 manual.pdf?steam
   386080    e1440f7af2ea5f208b5198d6affe7dd1 i have no mouth and i must scream - manual.pdf
   19674     8d07b65626904a532bd83c1801b5149f end user license agreement.txt
 

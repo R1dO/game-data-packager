@@ -19,7 +19,7 @@ packages:
     - sounds.dat?hugo1
     - strings.dat?hugo1
     - uif.dat?hugo1
-    optional:
+    doc:
     - hw_hint1.txt
 
   hugo2-data:
@@ -33,7 +33,7 @@ packages:
     - sounds.dat?hugo2
     - strings.dat?hugo2
     - uif.dat?hugo2
-    optional:
+    doc:
     - hw_hint2.txt
 
   hugo3-data:
@@ -47,17 +47,10 @@ packages:
     - sounds.dat?hugo3
     - strings.dat?hugo3
     - uif.dat?hugo3
-    optional:
+    doc:
     - hw_hint3.txt
 
 files:
-  hw_hint1.txt:
-    install_to: $docdir
-  hw_hint2.txt:
-    install_to: $docdir
-  hw_hint3.txt:
-    install_to: $docdir
-
   gog_the_hugo_trilogy_2.0.0.10.sh:
     unpack:
       format: zip

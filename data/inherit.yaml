@@ -36,7 +36,7 @@ packages:
     - Inherit the Earth Voices
     - music.rsc
     - sounds.rsc
-    optional:
+    doc:
     - manual.pdf
 
   inherit-the-earth-de-data:
@@ -53,15 +53,12 @@ packages:
     - voices.rsc?de
     - music.rsc
     - sounds.rsc
-    optional:
+    doc:
     - manual.pdf
     - manual.pdf?de
 
 files:
-  manual.pdf:
-    install_to: $docdir
   manual.pdf?de:
-    install_to: $docdir
     install_as: manual-de.pdf
     look_for: [manual.pdf,manual-de.pdf]
 

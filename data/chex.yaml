@@ -17,7 +17,7 @@ packages:
     install:
     - chex.wad
     - chex.deh
-    optional:
+    doc:
     - chexdeh.txt
 
   chexquest2-data:
@@ -40,9 +40,6 @@ files:
     provides:
     - chex.deh
     - chexdeh.txt
-
-  chexdeh.txt:
-    install_to: $docdir
 
 size_and_md5: |
   12361532 25485721882b050afa96a56e5758dd52 chex.wad

@@ -133,16 +133,11 @@ packages:
     - volcano.pak
     - wharf.pak
     - wheel.pak
-    optional:
+    doc:
     - manual.pdf
     - manualde.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
-  manualde.pdf:
-    install_to: $docdir
-
   setup_legend_of_kyrandia2_2.1.0.7.exe:
     unpack:
       format: innoextract

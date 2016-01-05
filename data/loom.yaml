@@ -21,7 +21,7 @@ packages:
     - 904.lfl
     - cdda.sou
     - disk01.lec
-    optional:
+    doc:
     - book_of_patterns.pdf
     - manual.pdf
 
@@ -114,10 +114,8 @@ files:
     distinctive_name: false
 
   book_of_patterns.pdf:
-    install_to: $docdir
     look_for: [book_of_patterns.pdf,Loom_Book_of_Patterns.pdf]
   manual.pdf:
-    install_to: $docdir
     look_for: [manual.pdf,Loom_Manual.pdf]
   setup_loom_2.0.0.4.exe:
     unpack:

@@ -187,12 +187,10 @@ packages:
     - xtown.pak
     - yank1.aud
     - zan2.aud
-    optional:
+    doc:
     - manual.pdf
 
 files:
-  manual.pdf:
-    install_to: $docdir
   setup_legend_of_kyrandia3_2.1.0.6.exe:
     unpack:
       format: innoextract

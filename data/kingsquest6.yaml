@@ -16,7 +16,8 @@ packages:
     optional:
     - disk2
     - kq6cd
-    #- manual.pdf
+    doc:
+    - manual.pdf
 
 files:
   setup_kings_quest_4_5_6.exe:
@@ -37,9 +38,6 @@ files:
     - disk2
     - kq6cd
     - manual.pdf
-
-  manual.pdf:
-    install_to: $docdir
 
 groups:
   default: |
