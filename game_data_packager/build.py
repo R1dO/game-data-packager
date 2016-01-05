@@ -1461,26 +1461,21 @@ class PackagingTask(object):
         else:
             url = 'https://wiki.debian.org/Games/GameDataPackager'
 
-        # always include these two directories in %files
-        files = set(['/' + package.install_to,
-                     '/usr/share/doc/' + package.name])
-
-        # licenses too
-        if os.path.isdir(os.path.join(destdir, 'usr/share/licenses')):
-            files.add('/usr/share/licenses/' + package.name)
-
-        print('FILES:', files)
-        # extra misc files, in doubt add directory instead
+        SYSTEM_DIRS = set(['/usr/bin',
+                           '/usr/share/applications',
+                           '/usr/share/icons/hicolor/scalable/apps',
+                           '/usr/share/pixmaps'])
+        files = set()
         for dirpath, dirnames, filenames in os.walk(destdir):
              for fn in filenames:
                  full = os.path.join(dirpath, fn)
                  dir = dirpath[len(destdir):]
-                 file = full[len(destdir):]
-                 if dir in files:
+                 if dir in SYSTEM_DIRS:
+                     file = full[len(destdir):]
+                     files.add(file)
+                 else:
+                     files.add(dir)
                      break
-                 print(dir, file)
-
-        print('FILES:', files)
 
         with open(specfile, 'w', encoding='utf-8') as spec:
             spec.write('Summary: %s\n' % short_desc)
