@@ -26,7 +26,6 @@ import random
 import shutil
 import stat
 import subprocess
-import string
 import sys
 import tempfile
 import time
@@ -1377,9 +1376,8 @@ class PackagingTask(object):
                      main_wad = f.install_as
                      exts.add(os.path.splitext(main_wad.lower())[1])
 
-            install_to = package.install_to
-            if install_to.startswith('$assets'):
-                install_to = self.packaging.ASSETS + install_to[7:]
+            install_to = self.packaging.substitute(package.install_to,
+                    package.name)
 
             if count_usr == 0 and count_doc == 1:
                 o.write('"/usr/share/doc/%s/%s"\n' % (package.name,
@@ -1594,15 +1592,8 @@ class PackagingTask(object):
                 if install_to is None:
                     install_to = package.install_to
 
-                if install_to.startswith('$assets'):
-                    install_to = self.packaging.ASSETS + install_to[7:]
-                elif install_to.startswith('$pkgdocdir'):
-                    install_to = pkgdocdir + install_to[10:]
-                elif install_to.startswith('$pkglicensedir'):
-                    mkdir_p(dest_pkglicensedir)
-                    install_to = pkglicensedir + install_to[14:]
-
-                install_to = install_to.lstrip('/')
+                install_to = self.packaging.substitute(install_to,
+                        package.name).lstrip('/')
 
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
@@ -1620,19 +1611,9 @@ class PackagingTask(object):
                     os.chmod(copy_to, 0o644)
 
         for symlink, real_file in package.symlinks.items():
-            symlink = string.Template(symlink).safe_substitute(
-                    assets=self.packaging.ASSETS,
-                    bindir=self.packaging.BINDIR,
-                    licensedir=self.packaging.LICENSEDIR,
-                    pkgdocdir=pkgdocdir,
-                    pkglicensedir=pkglicensedir,
+            symlink = self.packaging.substitute(symlink, package.name,
                     install_to=package.install_to)
-            real_file = string.Template(real_file).safe_substitute(
-                    assets=self.packaging.ASSETS,
-                    bindir=self.packaging.BINDIR,
-                    pkgdocdir=pkgdocdir,
-                    licensedir=self.packaging.LICENSEDIR,
-                    pkglicensedir=pkglicensedir,
+            real_file = self.packaging.substitute(real_file, package.name,
                     install_to=package.install_to)
 
             symlink = symlink.lstrip('/')
@@ -1661,11 +1642,8 @@ class PackagingTask(object):
         if package.rip_cd and self.cd_tracks.get(package.name):
             for i, copy_from in self.cd_tracks[package.name].items():
                 logger.debug('Found CD track %d at %s', i, copy_from)
-                install_to = package.install_to
-                if install_to.startswith('$assets'):
-                    install_to = self.packaging.ASSETS + install_to[7:]
-
-                install_to = install_to.lstrip('/')
+                install_to = self.packaging.substitute(package.install_to,
+                        package.name).lstrip('/')
                 install_as = package.rip_cd['filename_format'] % i
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)

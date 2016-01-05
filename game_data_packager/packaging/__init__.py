@@ -17,6 +17,7 @@
 # /usr/share/common-licenses/GPL-2.
 
 from abc import (ABCMeta, abstractmethod)
+import string
 
 class PackagingSystem(metaclass=ABCMeta):
     ASSETS = 'usr/share'
@@ -56,6 +57,18 @@ class PackagingSystem(metaclass=ABCMeta):
     def install_packages(self, packages, method=None, gain_root='su'):
         """Install one or more packages (a list of filenames)."""
         raise NotImplementedError
+
+    def substitute(self, template, package, **kwargs):
+        if '$' not in template:
+            return template
+
+        return string.Template(template).substitute(kwargs,
+                assets=self.ASSETS,
+                bindir=self.BINDIR,
+                licensedir=self.LICENSEDIR,
+                pkgdocdir='usr/share/doc/' + package,
+                pkglicensedir=self.LICENSEDIR + '/' + package,
+                )
 
 def get_native_packaging_system():
     # lazy import when actually needed
