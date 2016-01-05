@@ -1476,6 +1476,7 @@ class PackagingTask(object):
                  else:
                      files.add(dir)
                      break
+        logger.debug('%%files in specfile:\n%s', '\n'.join(sorted(files)))
 
         with open(specfile, 'w', encoding='utf-8') as spec:
             spec.write('Summary: %s\n' % short_desc)
@@ -1600,7 +1601,7 @@ class PackagingTask(object):
                     mkdir_p(copy_to_dir)
                 # Use cp(1) so we can make a reflink if source and
                 # destination happen to be the same btrfs volume
-                check_call(['cp', '--reflink=auto',
+                subprocess.check_call(['cp', '--reflink=auto',
                     '--preserve=timestamps', copy_from, copy_to])
 
                 if wanted.executable:
