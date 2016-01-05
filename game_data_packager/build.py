@@ -1307,7 +1307,7 @@ class PackagingTask(object):
         return complete
 
     def fill_docs(self, package, destdir, docdir):
-        copy_to = os.path.join(docdir, 'copyright')
+        copy_to = os.path.join(destdir, docdir, 'copyright')
         for n in (package.name, self.game.shortname):
             copy_from = os.path.join(DATADIR, n + '.copyright')
             if os.path.exists(copy_from):
@@ -1553,13 +1553,14 @@ class PackagingTask(object):
         if not self.check_complete(package, log=True):
             return False
 
-        docdir = os.path.join(destdir, 'usr/share/doc', package.name)
-        mkdir_p(docdir)
+        docdir = os.path.join('usr/share/doc', package.name)
+        dest_docdir = os.path.join(destdir, docdir)
+        mkdir_p(dest_docdir)
         # only create licensedir if needed
-        licensedir = os.path.join(destdir, self.packaging.LICENSEDIR,
-                package.name)
+        licensedir = os.path.join(self.packaging.LICENSEDIR, package.name)
+        dest_licensedir = os.path.join(destdir, licensedir)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
-                os.path.join(docdir, 'changelog.gz'))
+                os.path.join(destdir, docdir, 'changelog.gz'))
 
         self.fill_docs(package, destdir, docdir)
 
@@ -1599,7 +1600,7 @@ class PackagingTask(object):
                     install_to = 'usr/share/doc/%s%s' % (package.name,
                             install_to[7:])
                 elif install_to.startswith('$licensedir'):
-                    mkdir_p(licensedir)
+                    mkdir_p(dest_licensedir)
                     install_to = '%s/%s%s' % (self.packaging.LICENSEDIR,
                             package.name, install_to[11:])
 
