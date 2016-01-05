@@ -32,6 +32,19 @@ packages:
     - system.fnt
     - vol.cnf?fr
 
+  cruise-for-a-corpse-cd-fr-data:
+    longname: "Cruise for a Corpse (Croisière pour un cadavre)"
+    provides: cruise-for-a-corpse-data
+    install:
+    - d1?frcd
+    - d2?frcd
+    - d3?frcd
+    - d4?frcd
+    - d5?frcd
+    - delphine.lng?frcd
+    - system.fnt
+    - vol.cnf
+
 size_and_md5: |
   612731    330cb6c19ee4feaed1023413bfb710a5 d1
   635629    e5832b08d7621a288e38b0a239fa33f2 d2
@@ -49,6 +62,13 @@ size_and_md5: |
   649375    3594fa7efe4ec1ed63d81c92bb2f7d5b d5?fr
   12370     9c578575468b356a11d4d1f9f2a3786a vol.cnf?fr
 
+  611387    00f096601c5c952c207f98ea291f6e01 d1?frcd
+  637687    03be87f0a2e075a700de1358c52df521 d2?frcd
+  699783    171f84df221d5f79ee86d3e0a840630b d3?frcd
+  787008    569fe41c1d753e3d83b9ccf589883a26 d4?frcd
+  729041    2d6349b91e9134a230a90c837ee642bb d5?frcd
+  620       d7ede0acdc2e9ec3350ae7229377d893 delphine.lng?frcd
+
 sha1sums: |
   562f4ab92883f01622f6ac342d61a18830e972a4  d1
   e9b91f5589854c1d3ea4de0634082feb59f48d52  d2
@@ -64,4 +84,11 @@ sha1sums: |
   578f640ed30a1aa94583750126c8c8682c547c62  d4?fr
   22938b410e232d463d31e4c64779892c54a6a7b1  d5?fr
   7aa203ade3bc99d0e7daae16b167ac6bbb4084fd  vol.cnf?fr
+
+  12babf516759a2a0f82efab16087f58531655b9a  d1?frcd
+  ee4c334684b64fcfa1af1b56f8731c0e04ea4ad6  d2?frcd
+  c743c758f6c177c3654660eec9ccc17b4065cf35  d3?frcd
+  a4f5086e25c19d480804cbe204e555c897100af0  d4?frcd
+  187fe4e75f7ba9002ce0ab34fb5464bc477ce08b  d5?frcd
+  cae812632772e8d221205f7e9fcfadfbd4838fa0  delphine.lng?frcd
 ...
