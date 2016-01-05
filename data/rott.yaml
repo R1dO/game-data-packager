@@ -74,8 +74,8 @@ packages:
     install:
     - EXTREME.RTL
     symlinks:
-      $licensedir/LICENSE.TXT:
-        $LICENSEDIR/rott-registered-data/LICENSE.TXT
+      $pkglicensedir/LICENSE.TXT:
+        $licensedir/rott-registered-data/LICENSE.TXT
 
 files:
   any_registered_rtc:

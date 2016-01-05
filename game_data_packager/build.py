@@ -1306,8 +1306,8 @@ class PackagingTask(object):
 
         return complete
 
-    def fill_docs(self, package, destdir, docdir):
-        copy_to = os.path.join(destdir, docdir, 'copyright')
+    def fill_docs(self, package, destdir, pkgdocdir):
+        copy_to = os.path.join(destdir, pkgdocdir, 'copyright')
         for n in (package.name, self.game.shortname):
             copy_from = os.path.join(DATADIR, n + '.copyright')
             if os.path.exists(copy_from):
@@ -1366,9 +1366,9 @@ class PackagingTask(object):
                  if self.file_status[f.name] is FillResult.IMPOSSIBLE:
                      continue
                  install_to = f.install_to
-                 if install_to and install_to.startswith('$docdir'):
+                 if install_to and install_to.startswith('$pkgdocdir'):
                      count_doc +=1
-                 elif install_to and install_to.startswith('$licensedir'):
+                 elif install_to and install_to.startswith('$pkglicensedir'):
                      pass
                  else:
                      count_usr +=1
@@ -1553,16 +1553,16 @@ class PackagingTask(object):
         if not self.check_complete(package, log=True):
             return False
 
-        docdir = os.path.join('usr/share/doc', package.name)
-        dest_docdir = os.path.join(destdir, docdir)
-        mkdir_p(dest_docdir)
-        # only create licensedir if needed
-        licensedir = os.path.join(self.packaging.LICENSEDIR, package.name)
-        dest_licensedir = os.path.join(destdir, licensedir)
+        pkgdocdir = os.path.join('usr/share/doc', package.name)
+        dest_pkgdocdir = os.path.join(destdir, pkgdocdir)
+        mkdir_p(dest_pkgdocdir)
+        # only create license directory if needed
+        pkglicensedir = os.path.join(self.packaging.LICENSEDIR, package.name)
+        dest_pkglicensedir = os.path.join(destdir, pkglicensedir)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
-                os.path.join(destdir, docdir, 'changelog.gz'))
+                os.path.join(destdir, pkgdocdir, 'changelog.gz'))
 
-        self.fill_docs(package, destdir, docdir)
+        self.fill_docs(package, destdir, pkgdocdir)
 
         for wanted in (package.install_files | package.optional_files):
             install_as = wanted.install_as
@@ -1596,13 +1596,11 @@ class PackagingTask(object):
 
                 if install_to.startswith('$assets'):
                     install_to = self.packaging.ASSETS + install_to[7:]
-                elif install_to.startswith('$docdir'):
-                    install_to = 'usr/share/doc/%s%s' % (package.name,
-                            install_to[7:])
-                elif install_to.startswith('$licensedir'):
-                    mkdir_p(dest_licensedir)
-                    install_to = '%s/%s%s' % (self.packaging.LICENSEDIR,
-                            package.name, install_to[11:])
+                elif install_to.startswith('$pkgdocdir'):
+                    install_to = pkgdocdir + install_to[10:]
+                elif install_to.startswith('$pkglicensedir'):
+                    mkdir_p(dest_pkglicensedir)
+                    install_to = pkglicensedir + install_to[14:]
 
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
@@ -1626,16 +1624,16 @@ class PackagingTask(object):
             symlink = string.Template(symlink).safe_substitute(
                     assets=self.packaging.ASSETS,
                     bindir=self.packaging.BINDIR,
-                    docdir=docdir,
-                    LICENSEDIR=self.packaging.LICENSEDIR,
-                    licensedir=licensedir,
+                    licensedir=self.packaging.LICENSEDIR,
+                    pkgdocdir=pkgdocdir,
+                    pkglicensedir=pkglicensedir,
                     install_to=package.install_to)
             real_file = string.Template(real_file).safe_substitute(
                     assets=self.packaging.ASSETS,
                     bindir=self.packaging.BINDIR,
-                    docdir=docdir,
-                    LICENSEDIR=self.packaging.LICENSEDIR,
-                    licensedir=licensedir,
+                    pkgdocdir=pkgdocdir,
+                    licensedir=self.packaging.LICENSEDIR,
+                    pkglicensedir=pkglicensedir,
                     install_to=package.install_to)
 
             toplevel, rest = symlink.split('/', 1)

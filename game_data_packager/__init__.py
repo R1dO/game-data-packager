@@ -91,9 +91,9 @@ class WantedFile(HashedFile):
         if self._install_to is not None:
             return self._install_to
         if self.doc:
-            return '$docdir'
+            return '$pkgdocdir'
         if self.license:
-            return '$licensedir'
+            return '$pkglicensedir'
         return None
     @install_to.setter
     def install_to(self, value):

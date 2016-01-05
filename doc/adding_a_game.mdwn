@@ -59,7 +59,7 @@ a mapping from unique name to a mapping:
   generic names like `README.TXT`.
 * `license`: boolean, default false: if true, it is listed as a license
   file in generated copyright file.
-  Per policy, license files should go in $docdir. (see `install_to`).
+  Per policy, license files should go in $pkglicensedir. (see `install_to`).
 * `download`: string or mapping: where to download this file. FIXME: explain
 * `provides`: list of strings: unique names of some known files that can be
   unpacked or extracted from this one
@@ -78,8 +78,11 @@ a mapping from unique name to a mapping:
   being installed under the name of the alternative set.
 * `install_as`: string: when installing this file in a package, use this name
   instead of its own.
-* `install_to`: string: overide location where to install this file,
-  the special value $docdir will be expanded to /usr/share/doc/<package_name/.
+* `install_to`: string: overide location where to install this file.
+  The special value $pkgdocdir will be expanded to
+  usr/share/doc/<package_name>, and $pkglicensedir will be expanded to
+  usr/share/doc/<package_name> or usr/share/licenses/<package_name>
+  depending on distribution.
 * `look_for`: list of strings: when searching for this file, look for
   these names (case-insensitively). The default is a list containing only
   the unique name.
