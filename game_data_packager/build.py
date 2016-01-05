@@ -1602,6 +1602,8 @@ class PackagingTask(object):
                     mkdir_p(dest_pkglicensedir)
                     install_to = pkglicensedir + install_to[14:]
 
+                install_to = install_to.lstrip('/')
+
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)
@@ -1618,9 +1620,6 @@ class PackagingTask(object):
                     os.chmod(copy_to, 0o644)
 
         for symlink, real_file in package.symlinks.items():
-            symlink = symlink.lstrip('/')
-            real_file = real_file.lstrip('/')
-
             symlink = string.Template(symlink).safe_substitute(
                     assets=self.packaging.ASSETS,
                     bindir=self.packaging.BINDIR,
@@ -1635,6 +1634,9 @@ class PackagingTask(object):
                     licensedir=self.packaging.LICENSEDIR,
                     pkglicensedir=pkglicensedir,
                     install_to=package.install_to)
+
+            symlink = symlink.lstrip('/')
+            real_file = real_file.lstrip('/')
 
             toplevel, rest = symlink.split('/', 1)
             if real_file.startswith(toplevel + '/'):
@@ -1662,6 +1664,8 @@ class PackagingTask(object):
                 install_to = package.install_to
                 if install_to.startswith('$assets'):
                     install_to = self.packaging.ASSETS + install_to[7:]
+
+                install_to = install_to.lstrip('/')
                 install_as = package.rip_cd['filename_format'] % i
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
