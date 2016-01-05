@@ -127,13 +127,14 @@ class DoomTask(PackagingTask):
             else:
                 raise AssertionError('doom-common.png should have existed')
 
-            from_ = os.path.splitext(from_)[0] + '.svgz'
-            if os.path.exists(from_):
-                svgdir = os.path.join(destdir,
+            for ext in ('.svgz', '.svg'):
+                from_ = os.path.splitext(from_)[0] + ext
+                if os.path.exists(from_):
+                    svgdir = os.path.join(destdir,
                                       'usr/share/icons/hicolor/scalable/apps')
-                mkdir_p(svgdir)
-                install_data(from_,
-                    os.path.join(svgdir, '%s.svgz' % desktop_file))
+                    mkdir_p(svgdir)
+                    install_data(from_,
+                        os.path.join(svgdir, desktop_file + ext))
 
             docdir = os.path.join(destdir, 'usr/share/doc/%s' % package.name)
             mkdir_p(docdir)
