@@ -23,8 +23,7 @@ import os
 from .. import GameData
 from ..build import (PackagingTask)
 from ..util import (TemporaryUmask,
-                    mkdir_p,
-                    lintian_desktop)
+                    mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
 
@@ -81,7 +80,9 @@ class ZCodeTask(PackagingTask):
                       'w', encoding='utf-8') as output:
                  desktop.write(output, space_around_delimiters=False)
 
-            lintian_desktop(destdir, package.name, engine)
+            self.packaging.override_lintian(destdir, package.name,
+                    'desktop-command-not-in-package',
+                    '%s/%s.desktop %s' % (appdir, package.name, engine))
 
             if engine == 'frotz':
                 bindir = os.path.join(destdir, self.packaging.BINDIR)

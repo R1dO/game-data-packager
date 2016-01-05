@@ -126,7 +126,7 @@ class DebPackaging(PackagingSystem):
         assert type(package) is str
         lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
         mkdir_p(lintiandir)
-        with open(os.path.join(lintian, package), 'a', encoding='utf-8') as l:
+        with open(os.path.join(lintiandir, package), 'a', encoding='utf-8') as l:
             l.write('%s: %s %s\n' % (package, tag, args))
 
 def get_distro_packaging():
