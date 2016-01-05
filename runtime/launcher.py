@@ -38,7 +38,7 @@ if 'GDP_UNINSTALLED' in os.environ:
 else:
     GDP_DIR = '/usr/share/games/game-data-packager'
 
-GDL_GROUP = 'game-data-launcher'
+GDL_GROUP = 'X-game-data-launcher'
 GDL_KEY_BINARY_ONLY = 'BinaryOnly'
 GDL_KEY_BASE_DIRECTORIES = 'BaseDirectories'
 GDL_KEY_REQUIRED_FILES = 'RequiredFiles'
