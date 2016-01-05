@@ -24,7 +24,7 @@ import subprocess
 from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
-from ..util import (mkdir_p, lintian_desktop)
+from ..util import (mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.residualvm-common')
 
@@ -114,6 +114,8 @@ class ResidualvmTask(PackagingTask):
                   'w', encoding='utf-8') as output:
              desktop.write(output, space_around_delimiters=False)
 
-        lintian_desktop(destdir, package.name, 'residualvm')
+        self.packaging.override_lintian(destdir, package.name,
+                'desktop-command-not-in-package',
+                '%s/%s.desktop %s' % (appdir, package.name, 'residualvm'))
 
 GAME_DATA_SUBCLASS = ResidualvmGameData

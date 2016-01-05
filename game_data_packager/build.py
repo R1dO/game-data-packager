@@ -51,7 +51,6 @@ from .util import (AGENT,
         copy_with_substitutions,
         human_size,
         lang_score,
-        lintian_license,
         mkdir_p,
         rm_rf,
         recursive_utime,
@@ -1336,7 +1335,10 @@ class PackagingTask(object):
                  licenses.add("/%s/%s/%s" % (self.packaging.LICENSEDIR,
                      package.name, license_file))
                  if os.path.splitext(license_file)[0].lower() == 'license':
-                     lintian_license(destdir, package.name, license_file)
+                     self.packaging.override_lintian(destdir, package.name,
+                             'extra-license-file',
+                             'usr/share/doc/%s/%s' % (package.name,
+                                 license_file))
 
             if package.component == 'local':
                 o.write('It contains proprietary game data '

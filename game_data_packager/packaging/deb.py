@@ -23,7 +23,7 @@ import subprocess
 from debian.debian_support import Version
 
 from . import (PackagingSystem)
-from ..util import (check_output, run_as_root)
+from ..util import (check_output, mkdir_p, run_as_root)
 
 logger = logging.getLogger(__name__)
 
@@ -121,6 +121,13 @@ class DebPackaging(PackagingSystem):
         else:
             # gdebi-gtk etc.
             subprocess.call([method] + list(debs))
+
+    def override_lintian(self, destdir, package, tag, args):
+        assert type(package) is str
+        lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
+        mkdir_p(lintiandir)
+        with open(os.path.join(lintian, package), 'a', encoding='utf-8') as l:
+            l.write('%s: %s %s\n' % (package, tag, args))
 
 def get_distro_packaging():
     return DebPackaging()

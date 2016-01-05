@@ -24,7 +24,7 @@ import subprocess
 from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
-from ..util import (copy_with_substitutions, mkdir_p, lintian_desktop)
+from ..util import (copy_with_substitutions, mkdir_p)
 from ..version import (FORMAT)
 
 logger = logging.getLogger('game-data-packager.games.doom-common')
@@ -171,7 +171,10 @@ class DoomTask(PackagingTask):
                       'w', encoding='utf-8') as output:
                  desktop.write(output, space_around_delimiters=False)
 
-            lintian_desktop(destdir, package.name, package.program)
+            self.packaging.override_lintian(destdir, package.name,
+                    'desktop-command-not-in-package',
+                    '%s/%s.desktop %s' % (appdir,
+                        desktop_file, package.program))
 
             if FORMAT == 'deb':
                 debdir = os.path.join(destdir, 'DEBIAN')

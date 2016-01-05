@@ -70,6 +70,9 @@ class PackagingSystem(metaclass=ABCMeta):
                 pkglicensedir=self.LICENSEDIR + '/' + package,
                 )
 
+    def override_lintian(self, destdir, package, tag, args):
+        pass
+
 def get_native_packaging_system():
     # lazy import when actually needed
     from ..version import (FORMAT)

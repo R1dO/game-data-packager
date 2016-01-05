@@ -212,22 +212,3 @@ def recursive_utime(directory, orig_time):
         for fn in filenames:
             full = os.path.join(dirpath, fn)
             os.utime(full, orig_time)
-
-# https://wiki.archlinux.org/index.php/Pacman/Rosetta
-
-# loaded at the end to avoid failed cyclic loads
-if FORMAT == 'deb':
-    from .util_deb import (lintian_license, lintian_desktop)
-elif FORMAT == 'arch':
-    lintian_license = lambda a,b,c: None
-    lintian_desktop = lambda a,b,c: None
-elif DISTRO == 'fedora':
-    lintian_license = lambda a,b,c: None
-    lintian_desktop = lambda a,b,c: None
-elif DISTRO == 'suse':
-    lintian_license = lambda a,b,c: None
-    lintian_desktop = lambda a,b,c: None
-
-# pyflakes
-lintian_license
-lintian_desktop
