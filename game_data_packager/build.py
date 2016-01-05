@@ -1520,11 +1520,6 @@ class PackagingTask(object):
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
 
-        for ms in ('preinst', 'postinst', 'prerm', 'postrm'):
-            maintscript = os.path.join(DATADIR, package.name + '.' + ms)
-            if os.path.isfile(maintscript):
-                shutil.copy(maintscript, os.path.join(debdir, ms))
-
         # adapted from dh_md5sums
         check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
                 "-printf '%P\\0' | LC_ALL=C sort -z | " +
