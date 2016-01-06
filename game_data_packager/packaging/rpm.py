@@ -61,6 +61,17 @@ class RpmPackaging(PackagingSystem):
         elif method == 'rpm':
             run_as_root(['rpm', '-U'] + list(rpms), gain_root)
 
+
+# XXX: dnf is written in python3 and has a stable public api,
+#      it is likely faster to use it instead of calling 'dnf' pgm.
+#
+#      I just can't make sense of it or of these "simple examples"
+#
+#      http://dnf.readthedocs.org/en/latest/api_base.html
+#      https://github.com/timlau/dnf-apiex
+#
+#      As install_packages() needs root, we need to use the 'dnf' pgm
+
 class DnfPackaging(RpmPackaging):
     install_cmd = 'dnf install'
     package_map = {
