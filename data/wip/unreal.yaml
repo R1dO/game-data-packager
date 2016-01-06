@@ -1,7 +1,7 @@
 ---
 longname: Unreal
 franchise: Unreal
-copyright: © 1998 Epic Games
+copyright: © 1998-1999 Epic Games
 genre: First-person shooter
 wikibase: http://liandri.beyondunreal.com/
 wiki: Unreal
@@ -30,6 +30,14 @@ packages:
     symlinks:
       usr/share/icons/hicolor/256x256/apps/unreal.jpg:
         $install_to/skaarj_logo.jpg
+
+  unreal-fusion-map-pack-data:
+    expansion_for: unreal-data
+    version: '0.19990116'
+    install:
+      - Fusion map pack
+    doc:
+      - Fusion map pack docs
 
   unreal-launcher-dependencies:
     short_description: dependencies for Unreal launcher
@@ -511,6 +519,13 @@ files:
       format: zip
 
   # download: http://www.unrealtexture.com/Unreal/Downloads/Patches/GamePatches/UnrealPatch226Final.exe
+
+  FUSION-MapPack.zip:
+    provides:
+      - Fusion map pack
+      - Fusion map pack docs
+    unpack:
+      format: zip
 
 groups:
 
@@ -2181,6 +2196,20 @@ groups:
       #8710      f7a2c81fe8bf92cdc241104a494cd607 SystemLocalized/UnrealGerman.ini?RtNPPatch
       1705122   63ea4c6b6e478d7df8eb584a16b4ea89 Textures/UGoldCredits.utx?RtNPPatch
 
+  Fusion map pack docs:
+    group_members: |
+      1369      2b77b719091679890cf906f16f7d5b4a FUSION-map pack.txt
+
+  Fusion map pack:
+    install_to: $assets/unreal/Maps
+    group_members: |
+      1463302   96bfc67d2b47ddb20888546f125a16d5 DM-Cybrosis.unr
+      979791    67ac976607f067d00f1d9200628303c7 DM-Letting.unr
+      951310    39056a0a4c449203465b985776848b15 DM-Loxi.unr
+      1681967   e0ad8580c6fb88a12639bebe0e898d07 DM-mojo.unr
+      1710479   6a3a853ffcde70a40f3ff010fbf45f3e DM-shrapnel.unr
+      3689711   4861382c7eea17129d961c530a5d2686 DM-twilight.unr
+
   ungrouped:
     group_members: |
       50432     620372d728cf22585129cbba4f928a83 System/UnrealLinux.ini?227i_classic
@@ -2189,6 +2218,7 @@ groups:
 
   archives:
     group_members: |
+      2809153   9446bc36480c72b2768254495975058d FUSION-MapPack.zip
       5130819   bf32c73052e510880b6aee36e1ba1a63 Help/lin_convenience_libs.tar.bz2
       79643033  3d3290ed1c5271b96b39ff72c28d0980 UnrealClassicPatch227i.7z
       222744817 65a90cc81f50ef69006df46173ed5598 UnrealClassicPatch227i.exe
@@ -2206,6 +2236,12 @@ groups:
       7339520   82fdf3a8e9194c859d47f5e7119fab4d unrealpatch225f.exe
 
 sha1sums: |
+  0f83fb302e8ae271191f7acc935bce80bd62c270 DM-Cybrosis.unr
+  fc5d911612a3e4dd3941d3d3112e01c5c18b2423 DM-Letting.unr
+  94dadbd2ad296026df7c4640823b65680f426caf DM-Loxi.unr
+  fd705569d96e61ccfade8bf4ec2f8add2fc562c4 DM-mojo.unr
+  6496e4d7f805ed6f78e4ce1055db0311db22e80c DM-shrapnel.unr
+  eb4d3ee2920e8a0557b7d5e36fd5bdab49c67da7 DM-twilight.unr
   #41f5dd131119d2677521ec38c044389bcfd8ff14 DirectX7/cfgmgr32.dll?RtNPPatch
   #6bf145013b13dd1cd1de0ebe6f0cb449c040817d DirectX7/directx.cab?RtNPPatch
   #8175435a871ce29556ba8e45fd0346620c3b1a74 DirectX7/directx.inf?RtNPPatch
@@ -2214,6 +2250,8 @@ sha1sums: |
   #9a626a87315d76bbca6afc95872d82a752123999 DirectX7/dxsetup.exe?RtNPPatch
   #b91e56d2fb8d03fcb59893a47ea73f9f3768ef23 DirectX7/setupapi.dll?RtNPPatch
   554bac781080918b878fd7626572471a7d14dbd2 EULA.txt?gog
+  3debaf0db5d604bbcd77e049443cb60ae5d38abc FUSION-MapPack.zip
+  6816a7f8f7676c8966ae29e9dddc102d7ed3bf42 FUSION-map pack.txt
   #e4d554e03ba91f6b53a2a80253b339f56e303c94 GameuxInstallHelper.dll
   6426df6e361160d63474b09213aaeeaee9111c29 Help/227ReleaseNotes.pdf
   e3ffadb370fc12d8919be07704e1d95f5ca1c233 Help/ArbitItem.txt
@@ -3736,6 +3774,12 @@ sha1sums: |
   f9eeab2bb865f2592b55b12329d0942a8ba7209c unrealpatch225f.exe
 
 sha256sums: |
+  79e923abf12bb4de0daa1df2a86460f5674e9b3100d94fabbfaf8b83a4069413 DM-Cybrosis.unr
+  d8daff2a2fd5d4110318d67f831c584af0cd4b28b0cf24371460d4782669783f DM-Letting.unr
+  b6815ee2f54e90db8d8e518142eb5a453cf8e08ba547f543943ac5112f40be4c DM-Loxi.unr
+  eebe4fb2d816a47de664d3c44488fdcd68acfeaaf5fa319e6567518883694b7b DM-mojo.unr
+  400ec2ea225149802a37f65d477861fd3d12d0217f0581f4716a32abe5986c39 DM-shrapnel.unr
+  15a589c2bbf061bc57c24c6c17e71c7021137e94bdfc7b0c3403ccb29409616f DM-twilight.unr
   #572387372791a7bc8d336fbbb6af6a9651a627124599f862ac2bd235145b7b80 DirectX7/cfgmgr32.dll?RtNPPatch
   #9c74f6c83cd1f10ff9afa346291177e96d102233a3f81dc5b1a8912b681244c8 DirectX7/directx.cab?RtNPPatch
   #23909dcc544720d0299ab4fdbda70d0f979847114b1b2e242eaf31ac08cedb7d DirectX7/directx.inf?RtNPPatch
@@ -3744,6 +3788,8 @@ sha256sums: |
   #82e3de93c68249b4f1ef54bcefe09da165437dde075726677913f8a33320d527 DirectX7/dxsetup.exe?RtNPPatch
   #51f2682279e28386aa9c0eb8ba4f8ac3000c9ff75cf7e2456e8cdd9f0c544159 DirectX7/setupapi.dll?RtNPPatch
   cf9b007fe671381115fdbd5ea757a2f78912a0d9bd2e1cb57e09c35e33b239d0 EULA.txt?gog
+  df6426590679bc2a4e54bbf48e9fb3171948227ab412585fb5f0fe8e09c48b9a FUSION-MapPack.zip
+  d0c8877c3fa0356062a4eeafb1eb0fe1a98f615b59ba77fa7a03e79e384dda06 FUSION-map pack.txt
   #b07ffcd0af80f6b9fba09abe816ba2f0ff0d336639f1768fc317291bc635ece6 GameuxInstallHelper.dll
   dbf883146b5935b0b5c042533162cf3de36ca64f66f3e72b3cf935b6207b4241 Help/227ReleaseNotes.pdf
   84876f9bce349cbbb3a823ba8b8e39df75719b4cc749d35c594ac8bf3838b12b Help/ArbitItem.txt
