@@ -1480,7 +1480,7 @@ class PackagingTask(object):
 
         return related
 
-    def fill_dest_dir_rpm(self, package, destdir, compress):
+    def fill_dest_dir_rpm(self, package, destdir, compress, architecture):
         specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
         short_desc, long_desc = self.generate_description(package)
         short_desc = short_desc[0].upper() + short_desc[1:]
@@ -1530,7 +1530,7 @@ class PackagingTask(object):
             spec.write('Release: 0\n')
             spec.write('License: Commercial\n')
             spec.write('Group: Amusements/Games\n')
-            spec.write('BuildArch: noarch\n')
+            spec.write('BuildArch: %s\n' % architecture)
             if package.provides:
                 spec.write('Provides: %s\n' % package.provides)
                 if package.mutually_exclusive:
@@ -2676,22 +2676,35 @@ class PackagingTask(object):
         if not self.fill_dest_dir(package, destdir):
             return None
 
-        specfile = self.fill_dest_dir_rpm(package, destdir, compress)
+        arch = package.architecture
+        if arch == 'all':
+            arch = 'noarch'
+            setarch = []
+        else:
+            arch = self.packaging.get_architecture(arch)
+            # translate back from Debian arch name
+            arch = {'amd64': 'x86_64',
+                    'i386': 'i686',
+                    }.get(arch, arch)
+            setarch = ['setarch', arch]
+
+        specfile = self.fill_dest_dir_rpm(package, destdir, compress, arch)
         self.our_dh_fixperms(destdir)
 
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
 
         try:
             logger.info('generating package %s', package.name)
-            check_output(['rpmbuild', '--buildroot', destdir,
-                                      '-bb', '-v', specfile],
-                                      cwd=self.get_workdir())
+            check_output(setarch  + ['rpmbuild',
+                         '--buildroot', destdir,
+                         '-bb', '-v', specfile],
+                         cwd=self.get_workdir())
         except subprocess.CalledProcessError as cpe:
             print(cpe.output)
             raise
 
-        return (os.path.expanduser('~/rpmbuild/RPMS/noarch/')
-                + package.name + '-' + package.version + '-0.noarch.rpm')
+        return(os.path.expanduser('~/rpmbuild/RPMS/') + arch + '/'
+                + package.name + '-' + package.version + '-0.' + arch + '.rpm')
 
     def check_unpacker(self, wanted):
         if not wanted.unpack:
