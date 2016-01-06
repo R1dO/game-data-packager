@@ -48,8 +48,7 @@ packages:
       This doesn't include the shareware episode "The HUNT Begins".
 
       Use the 'rott-commercial' command to play this game.
-    debian:
-      depends: rott-data
+    depends: rott-data
     fedora:
       engine: rott-registered
     url_misc: https://3drealms.com/catalog/rise-triad-dark-war_44/

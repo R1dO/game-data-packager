@@ -57,6 +57,7 @@ class WantedFile(HashedFile):
         self.alternatives = []
         self.doc = False
         self.group_members = None
+        self._depends = set()
         self._distinctive_name = None
         self.distinctive_size = False
         self.download = None
@@ -207,6 +208,11 @@ class GameDataPackage(object):
         # may be another GDP package or a package not made by GDP
         self.expansion_for_ext = None
 
+        # distro-agnostic depedencies inside the same .yaml file
+        # that can't be handled with expansion_for heuristics
+        # *) on Fedora this maps to 'Requires:'
+        self._depends = set()
+
         # The optional marketing name of this version
         self.longname = None
 
@@ -329,6 +335,16 @@ class GameDataPackage(object):
             return None
 
     @property
+    def depends(self):
+        return self._depends
+    @depends.setter
+    def depends(self, value):
+        if type(value) is str:
+            self._depends = set([value])
+        else:
+            self._depends = set(value)
+
+    @property
     def install_contents_of(self):
         return self._install_contents_of
     @install_contents_of.setter
@@ -409,6 +425,7 @@ class GameDataPackage(object):
                 'better_version',
                 'copyright',
                 'copyright_notice',
+                'depends',
                 'description',
                 'disks',
                 'engine',
@@ -792,7 +809,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'install_contents_of', 'debian', 'description',
+                'install_contents_of', 'debian', 'description', 'depends',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
@@ -802,15 +819,21 @@ class GameData(object):
 
         for port in ('debian', 'rpm'):
             if FORMAT == port and port in d:
-                for k in ('engine', 'install_to', 'description'):
+                for k in ('engine', 'install_to', 'description', 'depends', 'provides'):
                     if k in d[port]:
                         setattr(package, k, d[port][k])
 
         for port in ('arch', 'fedora', 'suse'):
             if DISTRO == port and port in d:
-                for k in ('engine', 'install_to', 'description'):
+                for k in ('engine', 'install_to', 'description', 'depends', 'provides'):
                     if k in d[port]:
                         setattr(package, k, d[port][k])
+
+        # Fedora doesn't handle alternatives, everything must be handled with
+        # virtual packages
+        if FORMAT == 'rpm':
+            for dep in package.depends:
+                assert '|' not in dep, (package.name, package.depends)
 
         assert self.copyright or package.copyright, package.name
         assert package.component in ('main', 'contrib', 'non-free', 'local')

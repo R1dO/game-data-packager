@@ -1508,6 +1508,8 @@ class PackagingTask(object):
                 engine = package.engine or self.game.engine
                 if engine and len(engine.split()) == 1:
                     spec.write('Requires: %s\n' % engine)
+            for p in package.depends:
+                spec.write('Requires: %s\n' % p)
             if not compress or not self.compress_deb or package.rip_cd:
                 spec.write('%define _binary_payload w0.gzdio\n')
             elif self.compress_deb == ['-Zgzip', '-z1']:
@@ -1712,9 +1714,11 @@ class PackagingTask(object):
             control['Architecture'] = self.get_architecture(package.architecture)
 
         dep = dict()
-        for field in ('breaks', 'conflicts', 'depends', 'provides',
+        for field in ('breaks', 'conflicts', 'provides',
                       'recommends', 'replaces', 'suggests'):
             dep[field] = set(package.debian.get(field,[]))
+
+        dep['depends'] = package.depends
 
         if package.mutually_exclusive:
             dep['conflicts'] |= package.demo_for
