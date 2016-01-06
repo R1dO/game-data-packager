@@ -113,6 +113,8 @@ packages:
       build-depends: [gcc, make, libc6-dev]
       provides: quake2-xatrix
       replaces: quake2-xatrix
+    fedora:
+      build-depends: [gcc, make, glibc-devel]
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64
@@ -167,6 +169,8 @@ packages:
       build-depends: [gcc, make, libc6-dev]
       provides: quake2-rogue
       replaces: quake2-rogue
+    fedora:
+      build-depends: [gcc, make, glibc-devel]
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64
