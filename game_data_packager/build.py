@@ -898,22 +898,29 @@ class PackagingTask(object):
                         continue
 
                     logger.debug('... %s', url)
-                    tmp = None
+
+                    if self.save_downloads is not None:
+                        tmp = os.path.join(self.save_downloads,
+                                wanted.name)
+                        tmpdir = os.path.dirname(tmp)
+                    else:
+                        tmp = os.path.join(self.get_workdir(),
+                                'tmp', wanted.name)
+                        tmpdir = os.path.dirname(tmp)
+                        mkdir_p(tmpdir)
+
+                    statvfs = os.statvfs(tmpdir)
+                    if wanted.size > statvfs.f_frsize * statvfs.f_bavail:
+                        logger.error("Out of space on %s, can't download %s.",
+                                      tmpdir, wanted.name)
+                        self.download_failed.add(url)
+                        return FillResult.IMPOSSIBLE
 
                     try:
                         rf = urllib.request.urlopen(urllib.request.Request(
                                          url,headers={'User-Agent': AGENT}))
                         if rf is None:
                             continue
-
-                        if self.save_downloads is not None:
-                            tmp = os.path.join(self.save_downloads,
-                                    wanted.name)
-                        else:
-                            tmp = os.path.join(self.get_workdir(),
-                                    'tmp', wanted.name)
-                            tmpdir = os.path.dirname(tmp)
-                            mkdir_p(tmpdir)
 
                         wf = open(tmp, 'wb')
                         logger.info('downloading %s', url)
@@ -933,8 +940,7 @@ class PackagingTask(object):
                         logger.warning('Failed to download "%s": %s', url,
                                 e)
                         self.download_failed.add(url)
-                        if tmp is not None:
-                            os.remove(tmp)
+                        os.remove(tmp)
 
         providers = list(self.game.providers.get(wanted.name, ()))
 
