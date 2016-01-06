@@ -13,6 +13,7 @@ wiki: Unreal
 # -Zgzip -z9: 183s, 317M
 # default xz: 411s, 253M
 compress_deb: [-Zgzip, -z4]
+binary_executables: i386
 
 packages:
   unreal-data:
