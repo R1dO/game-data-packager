@@ -345,11 +345,8 @@ class PackagingTask(object):
         # A GameData object.
         self.game = game
 
-        if packaging is None:
-            packaging = get_native_packaging_system()
-
         # A packaging system.
-        self.packaging = packaging
+        self.__packaging = packaging
 
         # A temporary directory.
         self.__workdir = None
@@ -412,6 +409,14 @@ class PackagingTask(object):
             shutil.rmtree(d, onerror=lambda func, path, ei:
                 logger.warning('error removing "%s":' % path, exc_info=ei))
         self._cleanup_dirs = set()
+
+    @property
+    def packaging(self):
+        """The PackagingSystem in use."""
+        if self.__packaging is None:
+            self.__packaging = get_native_packaging_system()
+
+        return self.__packaging
 
     def get_workdir(self):
         if self.__workdir is None:
