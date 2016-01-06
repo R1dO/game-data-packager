@@ -38,11 +38,18 @@ packages:
       This empty package depends on that launcher and its runtime dependencies.
       It is a separate package so that the launcher can be installed for
       the native CPU architecture.
-    depends:
-      - game-data-packager
-      - gir1.2-gtk-3.0
-      - python3
-      - python3-gi
+    debian:
+      depends:
+        - game-data-packager
+        - gir1.2-gtk-3.0
+        - python3
+        - python3-gi
+    rpm:
+      depends:
+        - game-data-packager
+        - gtk3
+        - python3
+        - python3-gobject
     empty: true
 
   unreal-de-data:
@@ -115,9 +122,8 @@ packages:
     version: 227i
     longname: Unreal Gold (Unreal with Return to Na Pali expansion)
     expansion_for: unreal-data
-    debian:
-      depends:
-        - unreal-data
+    depends:
+      - unreal-data
     install:
       - Return to Na Pali assets
       - Unreal Gold assets
@@ -135,9 +141,8 @@ packages:
 
   unreal-gold-de-data:
     expansion_for: unreal-gold-data
-    debian:
-      depends:
-        unreal-de-data
+    depends:
+      unreal-de-data
     lang: de
     version: 227i
     longname: Unreal Gold
@@ -148,9 +153,8 @@ packages:
 
   unreal-gold-es-data:
     expansion_for: unreal-gold-data
-    debian:
-      depends:
-        unreal-es-data
+    depends:
+      unreal-es-data
     lang: es
     version: 227i
     longname: Unreal Gold
@@ -161,9 +165,8 @@ packages:
 
   unreal-gold-fr-data:
     expansion_for: unreal-gold-data
-    debian:
-      depends:
-        unreal-fr-data
+    depends:
+      unreal-fr-data
     lang: fr
     version: 227i
     longname: Unreal Gold
@@ -174,9 +177,8 @@ packages:
 
   unreal-gold-it-data:
     expansion_for: unreal-gold-data
-    debian:
-      depends:
-        unreal-it-data
+    depends:
+      unreal-it-data
     lang: it
     version: 227i
     longname: Unreal Gold
@@ -187,9 +189,8 @@ packages:
 
   unreal-gold-pl-data:
     expansion_for: unreal-gold-data
-    debian:
-      depends:
-        unreal-pl-data
+    depends:
+      unreal-pl-data
     lang: pl
     version: 227i
     longname: Unreal Gold
@@ -200,9 +201,8 @@ packages:
 
   unreal-gold-ru-data:
     expansion_for: unreal-gold-data
-    debian:
-      depends:
-        unreal-ru-data
+    depends:
+      unreal-ru-data
     lang: ru
     version: 227i
     longname: Unreal Gold - Russian localization
@@ -235,8 +235,23 @@ packages:
         - unreal-libfmod
         - unreal-libmikmod2
       suggests:
-        # required by UnrealXLinux.bin which is not used by default
+        # required by UnrealXLinux.bin which is not the default
         - libxxf86dga1
+    rpm:
+      depends:
+        - libalut.so.0
+        - libc.so.6
+        - libgcc_s.so.1
+        - libopenal.so.1
+        - libSDL-1.2.so.0
+        - libstdc++.so.6
+        - unreal-data
+        - unreal-gold-data
+        - unreal-launcher-dependencies
+        - unreal-libfmod
+        - unreal-libmikmod2
+      suggests:
+        - libXxf86dga.so.1
     install:
       - Unreal 227i common binaries
       - Unreal 227i common executables
@@ -308,6 +323,19 @@ packages:
       suggests:
         # required by UnrealXLinux.bin which is not the default
         - libxxf86dga1
+    rpm:
+      depends:
+        - libalut.so.0
+        - libc.so.6
+        - libgcc_s.so.1
+        - libopenal.so.1
+        - libSDL-1.2.so.0
+        - libstdc++.so.6
+        - unreal-data
+        - unreal-libfmod
+        - unreal-libmikmod2
+      suggests:
+        - libXxf86dga.so.1
     install:
       # these are relatively small so we don't bother with a separate
       # unreal-classic-data package, and just put them in /usr/lib
