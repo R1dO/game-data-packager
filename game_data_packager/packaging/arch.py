@@ -25,6 +25,13 @@ from ..util import (run_as_root, check_output)
 logger = logging.getLogger(__name__)
 
 class ArchPackaging(PackagingSystem):
+    install_cmd = 'pacman -S'
+    package_map = {
+                  'id-shr-extract': None,
+                  '7z': 'p7zip',
+                  # XXX
+                  }
+
     def is_installed(self, package):
         return subprocess.call(['pacman', '-Q', package],
                                 stdout=subprocess.DEVNULL,

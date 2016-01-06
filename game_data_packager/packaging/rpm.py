@@ -62,6 +62,14 @@ class RpmPackaging(PackagingSystem):
             run_as_root(['rpm', '-U'] + list(rpms), gain_root)
 
 class DnfPackaging(RpmPackaging):
+    install_cmd = 'dnf install'
+    package_map = {
+                  'dpkg-deb': 'dpkg',
+                  'id-shr-extract': None,
+                  '7z': 'p7zip-plugins',
+                  'unrar-nonfree': 'unrar',
+                  }
+
     def __init__(self):
         self.available = None
 
@@ -98,6 +106,14 @@ class DnfPackaging(RpmPackaging):
                 gain_root=gain_root)
 
 class ZypperPackaging(RpmPackaging):
+    install_cmd = 'zypper install'
+    package_map = {
+                  'dpkg-deb': 'dpkg',
+                  'id-shr-extract': None,
+                  '7z': 'p7zip',
+                  'unrar-nonfree': 'unrar',
+                  }
+
     def is_available(self, package):
         proc = subprocess.Popen(['zypper', 'info', package],
                 universal_newlines=True,

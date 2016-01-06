@@ -2729,44 +2729,13 @@ class PackagingTask(object):
         if not self.missing_tools:
             return False
 
-        if FORMAT == 'deb':
-            command = 'apt-get install'
-            package_map = {
-                'id-shr-extract': 'dynamite',
-                'lha': 'lhasa',
-                '7z': 'p7zip-full',
-                'unrar-nonfree': 'unrar',
-            }
-        elif DISTRO == 'fedora':
-            command = 'dnf install'
-            package_map = {
-                'dpkg-deb': 'dpkg',
-                'id-shr-extract': None,
-                '7z': 'p7zip-plugins',
-                'unrar-nonfree': 'unrar',
-            }
-        elif DISTRO == 'suse':
-            command = 'zypper install'
-            package_map = {
-                'dpkg-deb': 'dpkg',
-                'id-shr-extract': None,
-                '7z': 'p7zip',
-                'unrar-nonfree': 'unrar',
-            }
-        elif FORMAT == 'arch':
-            command = 'pacman -S'
-            package_map = {
-                'id-shr-extract': None,
-                '7z': 'p7zip',
-                # XXX
-            }
-
         packages = set()
 
         for t in self.missing_tools:
-            p = package_map.get(t, t)
+            p = self.packaging.package_map.get(t, t)
             if p is not None:
                 packages.add(p)
 
-        logger.warning('installing these packages might help:\n' +
-                '%s %s', command, ' '.join(sorted(packages)))
+        if packages:
+            logger.warning('installing these packages might help:\n' +
+                '%s %s', self.packaging.install_cmd, ' '.join(sorted(packages)))

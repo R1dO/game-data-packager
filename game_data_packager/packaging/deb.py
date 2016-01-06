@@ -31,6 +31,14 @@ class DebPackaging(PackagingSystem):
     BINDIR = 'usr/games'
     ASSETS = 'usr/share/games'
 
+    install_cmd = 'apt-get install'
+    package_map = {
+                  'id-shr-extract': 'dynamite',
+                  'lha': 'lhasa',
+                  '7z': 'p7zip-full',
+                  'unrar-nonfree': 'unrar',
+                  }
+
     def __init__(self):
         self.__installed = None
         self.__available = None

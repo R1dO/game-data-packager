@@ -25,6 +25,9 @@ class PackagingSystem(metaclass=ABCMeta):
     BINDIR = 'usr/bin'
     LICENSEDIR = 'usr/share/doc'
 
+    install_cmd = None
+    package_map = dict()
+
     _architecture = None
     _foreign_architectures = set()
 
