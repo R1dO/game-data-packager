@@ -20,13 +20,11 @@
 
 from game_data_packager import (load_games)
 from game_data_packager.build import (FillResult)
-from game_data_packager.packaging import (get_native_packaging_system)
 
 games = []
 genres = dict()
 langs = dict()
 langs['total'] = 0
-packaging = get_native_packaging_system()
 
 for name, game in load_games().items():
     stats = dict()
@@ -46,7 +44,7 @@ for name, game in load_games().items():
             for m_lang in package.langs:
                 if m_lang not in stats:
                     stats[m_lang] = '*'
-        with game.construct_task(packaging=packaging) as task:
+        with game.construct_task() as task:
             if task.fill_gaps(package=package,
                      log=False) is FillResult.IMPOSSIBLE:
                  if package.better_version is None:
