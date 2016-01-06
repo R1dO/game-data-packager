@@ -28,8 +28,9 @@ class PackagingSystem(metaclass=ABCMeta):
     install_cmd = None
     package_map = dict()
 
-    _architecture = None
-    _foreign_architectures = set()
+    def __init__(self):
+        self._architecture = None
+        self._foreign_architectures = set()
 
     def read_architecture(self):
         arch = os.uname()[4]

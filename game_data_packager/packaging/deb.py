@@ -40,6 +40,7 @@ class DebPackaging(PackagingSystem):
                   }
 
     def __init__(self):
+        super(DebPackaging, self).__init__()
         self.__installed = None
         self.__available = None
 

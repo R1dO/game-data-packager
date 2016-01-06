@@ -71,6 +71,7 @@ class DnfPackaging(RpmPackaging):
                   }
 
     def __init__(self):
+        super(DnfPackaging, self).__init__()
         self.available = None
 
     def read_architecture(self):
