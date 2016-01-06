@@ -386,9 +386,6 @@ class PackagingTask(object):
         # e.g. { 'quake-music': { 2: '/usr/.../id1/music/track02.ogg' } }
         self.cd_tracks = {}
 
-        # Debian architecture
-        self._architecture = None
-
         # If true, be more verbose
         self.verbose = False
 
