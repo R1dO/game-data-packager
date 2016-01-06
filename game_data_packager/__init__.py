@@ -395,6 +395,7 @@ class GameDataPackage(object):
         for k in (
                 'aliases',
                 'demo_for',
+                'depends',
                 'dotemu',
                 'gog',
                 'origin',
@@ -425,7 +426,6 @@ class GameDataPackage(object):
                 'better_version',
                 'copyright',
                 'copyright_notice',
-                'depends',
                 'description',
                 'disks',
                 'engine',
