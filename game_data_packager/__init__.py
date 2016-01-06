@@ -818,7 +818,8 @@ class GameData(object):
                 setattr(package, k, d[k])
 
         for port in ('debian', 'rpm'):
-            if FORMAT == port and port in d:
+            if port in d and (FORMAT == port or
+                    (FORMAT == 'deb' and port == 'debian')):
                 for k in ('engine', 'install_to', 'description', 'depends', 'provides'):
                     if k in d[port]:
                         setattr(package, k, d[port][k])
