@@ -313,6 +313,7 @@ packages:
       # unreal-classic-data package, and just put them in /usr/lib
       - Unreal classic assets
       - Unreal 227i classic assets
+      - System/UnrealLinux.ini?classic
 
       - Unreal 227i common binaries
       - Unreal 227i common executables
@@ -404,6 +405,7 @@ files:
       - Unreal 227i common executables
       - Unreal 227i common documentation
       - Unreal 227i classic assets
+      - System/UnrealLinux.ini?227i_classic
       - Unreal 227i classic binaries
     unpack:
       format: umod
@@ -430,14 +432,29 @@ files:
     distinctive_name: false
   System/Unreal.ini?227i_gold:
     distinctive_name: false
+  System/UnrealLinux.ini?227i_classic:
+    distinctive_name: false
+  System/UnrealLinux.ini?227i_gold:
+    distinctive_name: false
   System/Default.ini?227i_classic:
     distinctive_name: false
   System/Default.ini?227i_gold:
+    distinctive_name: false
+  System/DefaultLinux.ini?227i_classic:
+    distinctive_name: false
+  System/DefaultLinux.ini?227i_gold:
     distinctive_name: false
   System/DefUser.ini?227i:
     distinctive_name: false
   System/User.ini?227i:
     distinctive_name: false
+
+  # The version shipped with the patch differs in trivial ways from the
+  # default, but either one is acceptable.
+  System/UnrealLinux.ini?classic:
+    alternatives:
+      - System/UnrealLinux.ini?227i_classic
+      - System/DefaultLinux.ini?227i_classic
 
   Textures/UGoldCredits.utx:
     alternatives:
@@ -1562,7 +1579,6 @@ groups:
       50398     286e150513bde1d58b5b89b98e89868d System/DefaultLinux.ini?227i_classic
       31581     75332f37716441a39ef6f306602f63f3 System/UMenu.int?227i_classic
       25194     33a6036a400c662f53633616bbe9bdea System/Unreal.ini?227i_classic
-      50432     620372d728cf22585129cbba4f928a83 System/UnrealLinux.ini?227i_classic
 
   Unreal 227i classic binaries:
     group_members: |
@@ -2143,8 +2159,9 @@ groups:
       #8710      f7a2c81fe8bf92cdc241104a494cd607 SystemLocalized/UnrealGerman.ini?RtNPPatch
       1705122   63ea4c6b6e478d7df8eb584a16b4ea89 Textures/UGoldCredits.utx?RtNPPatch
 
-  downloaded:
+  ungrouped:
     group_members: |
+      50432     620372d728cf22585129cbba4f928a83 System/UnrealLinux.ini?227i_classic
       19819     7cc7ae505c341ea3b5917ff989dacfee skaarj_logo.jpg
       5186      707503931fb6d016dd1304d76078b0fb skaarj_logo.png
 
