@@ -18,10 +18,11 @@ packages:
     install_to: usr/lib/etqw
     architecture: i386
     version: "1.5"
+    depends:
+    - etqw-bin
     debian:
       depends:
       - libc6 (>= 2.1)
-      - etqw-bin
     install:
     - patch 1.5 Punkbuster binaries
     doc:
@@ -34,6 +35,8 @@ packages:
     install_to: usr/lib/etqw
     architecture: i386
     version: "1.5"
+    depends:
+    - etqw-data
     debian:
       depends:
       - libc6 (>= 2.2.4)
@@ -41,7 +44,6 @@ packages:
       - libjpeg62-turbo
       - libsdl1.2debian (>= 1.2.10)
       - libstdc++6 (>= 4.1.2)
-      - etqw-data
       - xdg-utils
       suggests:
       - etqw-pb-bin

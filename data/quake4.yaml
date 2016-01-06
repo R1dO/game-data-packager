@@ -19,10 +19,11 @@ packages:
     install_to: usr/lib/quake4
     architecture: i386
     version: "1.4.2"
+    depends:
+      - quake4-bin
     debian:
       depends:
         - libc6 (>= 2.1)
-        - quake4-bin
     doc:
       - patch 1.4.2 Punkbuster documentation
     install:
