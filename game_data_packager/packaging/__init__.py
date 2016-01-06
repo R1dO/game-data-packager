@@ -2,7 +2,7 @@
 # encoding=utf-8
 #
 # Copyright © 2014-2016 Simon McVittie <smcv@debian.org>
-#           © 2015 Alexandre Detiste <alexandre@detiste.be>
+#           © 2015-2016 Alexandre Detiste <alexandre@detiste.be>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,12 +17,43 @@
 # /usr/share/common-licenses/GPL-2.
 
 from abc import (ABCMeta, abstractmethod)
+import os
 import string
 
 class PackagingSystem(metaclass=ABCMeta):
     ASSETS = 'usr/share'
     BINDIR = 'usr/bin'
     LICENSEDIR = 'usr/share/doc'
+
+    _architecture = None
+    _foreign_architectures = set()
+
+    def read_architecture(self):
+        arch = os.uname()[4]
+        self._architecture = { 'armv7l': 'armhf',
+                               'armhfp': 'armhf',
+                               'i586': 'i386',
+                               'i686': 'i386',
+                               'x86_64': 'amd64',
+                             }.get(arch, arch)
+
+    def get_architecture(self, archs=''):
+        if self._architecture is None:
+            self.read_architecture()
+
+        if archs:
+            # In theory this should deal with wildcards like linux-any,
+            # but it's unlikely to be relevant in practice.
+            archs = archs.split()
+
+            if self._architecture in archs or 'any' in archs:
+                return self._architecture
+
+            for arch in archs:
+                if arch in self._foreign_architectures:
+                    return arch
+
+        return self._architecture
 
     def is_installed(self, package):
         """Return boolean: is a package with the given name installed?"""

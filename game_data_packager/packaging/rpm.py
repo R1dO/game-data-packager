@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # encoding=utf-8
 #
-# Copyright © 2015 Alexandre Detiste <alexandre@detiste.be>
+# Copyright © 2015-2016 Alexandre Detiste <alexandre@detiste.be>
 # Copyright © 2016 Simon McVittie <smcv@debian.org>
 #
 # This program is free software; you can redistribute it and/or
@@ -64,6 +64,11 @@ class RpmPackaging(PackagingSystem):
 class DnfPackaging(RpmPackaging):
     def __init__(self):
         self.available = None
+
+    def read_architecture(self):
+        super(DnfPackaging, self).read_architecture()
+        if self._architecture == 'amd64':
+            self._foreign_architectures = set(['i386'])
 
     def is_available(self, package):
         if self.available is None:

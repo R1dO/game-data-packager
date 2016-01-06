@@ -2,7 +2,7 @@
 # encoding=utf-8
 #
 # Copyright © 2014-2016 Simon McVittie <smcv@debian.org>
-#           © 2015 Alexandre Detiste <alexandre@detiste.be>
+#           © 2015-2016 Alexandre Detiste <alexandre@detiste.be>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -34,6 +34,13 @@ class DebPackaging(PackagingSystem):
     def __init__(self):
         self.__installed = None
         self.__available = None
+
+    def read_architecture(self):
+        self._architecture = check_output(['dpkg',
+                '--print-architecture']).strip().decode('ascii')
+        self._foreign_architectures = set(check_output(['dpkg',
+                '--print-foreign-architectures']
+                    ).strip().decode('ascii').split())
 
     def is_installed(self, package):
         # FIXME: this shouldn't be hard-coded

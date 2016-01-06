@@ -2,7 +2,7 @@
 # encoding=utf-8
 #
 # Copyright © 2014-2016 Simon McVittie <smcv@debian.org>
-# Copyright © 2015 Alexandre Detiste <alexandre@detiste.be>
+# Copyright © 2015-2016 Alexandre Detiste <alexandre@detiste.be>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -1724,7 +1724,7 @@ class PackagingTask(object):
             control['Architecture'] = 'all'
             control['Multi-Arch'] = 'foreign'
         else:
-            control['Architecture'] = self.get_architecture(package.architecture)
+            control['Architecture'] = self.packaging.get_architecture(package.architecture)
 
         dep = dict()
         for field in ('breaks', 'conflicts', 'provides',
@@ -1930,7 +1930,7 @@ class PackagingTask(object):
                         'at your own risk')
                 raise BinaryExecutablesNotAllowed()
 
-            if self.get_architecture(self.game.binary_executables) not in \
+            if self.packaging.get_architecture(self.game.binary_executables) not in \
                     self.game.binary_executables.split():
                 logger.error('%s requires binary-only executables which are '
                         'only available for %s', self.game.longname,
@@ -2135,43 +2135,6 @@ class PackagingTask(object):
                     package.name)
             raise CDRipFailed()
 
-    def get_architecture(self, archs=''):
-        if self._architecture is None:
-            if FORMAT == 'deb':
-                self._architecture = check_output(['dpkg',
-                    '--print-architecture']).strip().decode('ascii')
-                self._foreign_architectures = set(check_output(['dpkg',
-                    '--print-foreign-architectures']
-                    ).strip().decode('ascii').split())
-            elif FORMAT == 'rpm':
-                arch = check_output(['rpm', '-q', '--qf', '%{ARCH}\n',
-                       'rpm']).strip().decode('ascii')
-                self._architecture = { 'armhfp': 'armhf',
-                                       'i686': 'i386',
-                                       'x86_64': 'amd64',
-                                     }.get(arch, arch)
-                self._foreign_architectures = set()
-            elif FORMAT == 'arch':
-                arch = check_output(['uname', '-m']).strip().decode('ascii')
-                self._architecture = { 'x86_64': 'amd64',
-                                       'i686': 'i386',
-                                     }.get(arch, arch)
-                self._foreign_architectures = set()
-
-        if archs:
-            # In theory this should deal with wildcards like linux-any,
-            # but it's unlikely to be relevant in practice.
-            archs = archs.split()
-
-            if self._architecture in archs or 'any' in archs:
-                return self._architecture
-
-            for arch in archs:
-                if arch in self._foreign_architectures:
-                    return arch
-
-        return self._architecture
-
     def prepare_packages(self, packages=None, build_demos=False, download=True,
             search=True, log_immediately=True):
         if packages is None:
@@ -2269,13 +2232,13 @@ class PackagingTask(object):
                 continue
             elif package.architecture == 'any':
                 # we'll need this later, cache it
-                self.get_architecture()
+                self.packaging.get_architecture()
             else:
                 archs = package.architecture.split()
-                arch = self.get_architecture(package.architecture)
+                arch = self.packaging.get_architecture(package.architecture)
                 if arch not in archs:
                     logger.warning('cannot produce "%s" on architecture %s',
-                            package.name, archs)
+                            package.name, arch)
                     possible.discard(package)
 
         for package in set(possible):
@@ -2612,7 +2575,7 @@ class PackagingTask(object):
 
         arch = package.architecture
         if arch != 'all':
-            arch = self.get_architecture(arch)
+            arch = self.packaging.get_architecture(arch)
 
         deb_basename = '%s_%s_%s.deb' % (package.name, package.version, arch)
 
@@ -2659,7 +2622,7 @@ class PackagingTask(object):
 
         arch = package.architecture
         if arch != 'all':
-            arch = self.get_architecture(arch)
+            arch = self.packaging.get_architecture(arch)
         if arch == 'all':
             arch = 'any'
 
