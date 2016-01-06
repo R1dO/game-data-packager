@@ -307,8 +307,11 @@ packages:
         # required by UnrealXLinux.bin which is not the default
         - libxxf86dga1
     install:
+      # these are relatively small so we don't bother with a separate
+      # unreal-classic-data package, and just put them in /usr/lib
       - Unreal classic assets
       - Unreal 227i classic assets
+
       - Unreal 227i common binaries
       - Unreal 227i common executables
       - Unreal 227i classic binaries
