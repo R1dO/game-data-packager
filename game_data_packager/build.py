@@ -1727,9 +1727,10 @@ class PackagingTask(object):
             control['Architecture'] = self.packaging.get_architecture(package.architecture)
 
         dep = dict()
+        debian = package.specifics.get('debian', {})
         for field in ('breaks', 'conflicts', 'provides',
                       'recommends', 'replaces', 'suggests'):
-            dep[field] = set(package.debian.get(field,[]))
+            dep[field] = set(debian.get(field,[]))
 
         dep['depends'] = package.depends
 
@@ -2242,8 +2243,9 @@ class PackagingTask(object):
                     possible.discard(package)
 
         for package in set(possible):
-            if 'build-depends' in package.debian:
-                for tool in package.debian['build-depends']:
+            debian = package.specifics.get('debian', {})
+            if 'build-depends' in debian:
+                for tool in debian['build-depends']:
                     tool = tool.strip()
                     if not which(tool) and not self.packaging.is_installed(tool):
                         logger.error('package "%s" is needed to build "%s"' %

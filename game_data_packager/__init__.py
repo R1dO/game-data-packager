@@ -270,8 +270,8 @@ class GameDataPackage(object):
         # expansion's dedicated Wiki page, appended to GameData.wikibase
         self.wiki = None
 
-        # depedency information needed to build the debian/control file
-        self.debian = {}
+        # format- and distribution-specific overrides
+        self.specifics = {}
 
         # set of names of WantedFile instances to be installed
         self._install = set()
@@ -394,12 +394,12 @@ class GameDataPackage(object):
 
         for k in (
                 'aliases',
-                'debian',
                 'demo_for',
                 'dotemu',
                 'gog',
                 'origin',
                 'rip_cd',
+                'specifics',
                 'steam',
                 'symlinks',
                 ):
@@ -809,7 +809,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'install_contents_of', 'debian', 'description', 'depends',
+                'install_contents_of', 'description', 'depends',
                 'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
@@ -817,15 +817,22 @@ class GameData(object):
             if k in d:
                 setattr(package, k, d[k])
 
-        for port in ('debian', 'rpm'):
-            if port in d and (FORMAT == port or
-                    (FORMAT == 'deb' and port == 'debian')):
-                for k in ('engine', 'install_to', 'description', 'depends', 'provides'):
-                    if k in d[port]:
-                        setattr(package, k, d[port][k])
+        for port in (
+                # packaging formats (we treat "debian" as "any dpkg-based"
+                # for historical reasons)
+                'debian', 'rpm',
+                # specific distributions
+                'arch', 'fedora', 'suse',
+                ):
+            if port in d:
+                package.specifics[port] = d[port]
 
-        for port in ('arch', 'fedora', 'suse'):
-            if DISTRO == port and port in d:
+            # FIXME: this object's contents should be 1:1 mapped from the
+            # YAML, and not format- or distribution-specific.
+            # Distribution-specific stuff should be done in the PackagingTask
+            # or PackagingSystem
+            if port in d and (FORMAT == port or DISTRO == port or
+                    (FORMAT == 'deb' and port == 'debian')):
                 for k in ('engine', 'install_to', 'description', 'depends', 'provides'):
                     if k in d[port]:
                         setattr(package, k, d[port][k])
@@ -844,15 +851,16 @@ class GameData(object):
         assert type(package.mutually_exclusive) is bool
 
         if 'debian' in d:
-            assert type(package.debian) is dict
-            for k, v in package.debian.items():
+            debian = d['debian']
+            assert type(debian) is dict
+            for k, v in debian.items():
                 assert k in ('breaks', 'conflicts', 'depends', 'provides',
                              'recommends', 'replaces', 'suggests',
-                             'build-depends'), (package.name, package.debian)
-                assert type(v) in (str, list), (package.name, package.debian)
+                             'build-depends'), (package.name, debian)
+                assert type(v) in (str, list), (package.name, debian)
                 if type(v) == str:
-                    assert ',' not in v, (package.name, package.debian)
-                    package.debian[k] = list([v])
+                    assert ',' not in v, (package.name, debian)
+                    package.specifics['debian'][k] = [v]
                 assert package.name not in v, \
                    "A package shouldn't extraneously %s itself" % k
 
