@@ -32,6 +32,41 @@ class UnrealTask(PackagingTask):
             with TemporaryUmask(0o022):
                 self.__convert_logo(destdir)
 
+        if package.name in ('unreal-gold', 'unreal-classic'):
+            with TemporaryUmask(0o022):
+                self.__add_manifest(package, destdir)
+
+    def __add_manifest(self, package, destdir):
+        # A real Manifest.ini is much larger than this, but this is
+        # enough to identify the version.
+        install_to = package.install_to.lstrip('/')
+        mkdir_p(os.path.join(destdir, install_to, 'System'))
+
+        with open(os.path.join(destdir, install_to, 'System',
+                'Manifest.ini'), 'w') as writer:
+            if package.name == 'unreal-gold':
+                groups = ('UnrealGold', 'Unreal Gold')
+            else:
+                groups = ('Unreal',)
+
+            lines = ['[Setup]', 'MasterProduct=' + groups[0]]
+
+            for g in groups:
+                lines.append('Group=' + g)
+
+            for g in groups:
+                lines.append('')
+                lines.append('[' + g + ']')
+                lines.append('Caption=' + package.longname)
+                lines.append('Version=227i')
+                lines.append('File=System\\UnrealLinux.ini')
+
+            lines += ['', '[RefCounts]',
+                    'File:System\\UnrealLinux.ini=%d' % len(groups), '']
+
+            for line in lines:
+                writer.write(line + '\r\n')
+
     def __convert_logo(self, destdir):
         skaarj_logo = os.path.join(destdir, self.packaging.ASSETS, 'unreal',
                 'skaarj_logo.jpg')
