@@ -221,6 +221,12 @@ packages:
       url: unreal_gold
     architecture: i386
     install_to: usr/lib/unreal-gold
+    depends:
+      - unreal-data
+      - unreal-gold-data
+      - unreal-launcher-dependencies
+      - unreal-libfmod
+      - unreal-libmikmod2
     debian:
       depends:
         - libalut0
@@ -229,11 +235,6 @@ packages:
         - libopenal1
         - libsdl1.2debian
         - libstdc++6
-        - unreal-data
-        - unreal-gold-data
-        - unreal-launcher-dependencies
-        - unreal-libfmod
-        - unreal-libmikmod2
       suggests:
         # required by UnrealXLinux.bin which is not the default
         - libxxf86dga1
@@ -245,11 +246,6 @@ packages:
         - libopenal.so.1
         - libSDL-1.2.so.0
         - libstdc++.so.6
-        - unreal-data
-        - unreal-gold-data
-        - unreal-launcher-dependencies
-        - unreal-libfmod
-        - unreal-libmikmod2
       suggests:
         - libXxf86dga.so.1
     install:
@@ -308,6 +304,11 @@ packages:
     data_type: binaries
     install_to: usr/lib/unreal-classic
     architecture: i386
+    depends:
+      - unreal-data
+      - unreal-launcher-dependencies
+      - unreal-libfmod
+      - unreal-libmikmod2
     debian:
       depends:
         - libalut0
@@ -316,10 +317,6 @@ packages:
         - libopenal1
         - libsdl1.2debian
         - libstdc++6
-        - unreal-data
-        - unreal-launcher-dependencies
-        - unreal-libfmod
-        - unreal-libmikmod2
       suggests:
         # required by UnrealXLinux.bin which is not the default
         - libxxf86dga1
@@ -331,9 +328,6 @@ packages:
         - libopenal.so.1
         - libSDL-1.2.so.0
         - libstdc++.so.6
-        - unreal-data
-        - unreal-libfmod
-        - unreal-libmikmod2
       suggests:
         - libXxf86dga.so.1
     install:

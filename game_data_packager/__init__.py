@@ -833,7 +833,7 @@ class GameData(object):
             # or PackagingSystem
             if port in d and (FORMAT == port or DISTRO == port or
                     (FORMAT == 'deb' and port == 'debian')):
-                for k in ('engine', 'install_to', 'description', 'depends', 'provides'):
+                for k in ('engine', 'install_to', 'description', 'provides'):
                     if k in d[port]:
                         setattr(package, k, d[port][k])
 

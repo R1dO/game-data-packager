@@ -1460,6 +1460,22 @@ class PackagingTask(object):
                  '--options=!all,use-set,type,uid,gid,mode,time,size,md5,sha256,link']
                  + sorted(files), env={'LANG':'C'}, cwd=destdir)
 
+    def __merge_relationships(self, package, related, key):
+        # copy it so we don't modify it in-place
+        related = set(related)
+
+        if FORMAT in package.specifics:
+            related |= set(package.specifics[FORMAT].get(key, ()))
+
+        if FORMAT == 'deb' and 'debian' in package.specifics:
+            # we treat "debian" as "any dpkg-based" for historical reasons
+            related |= set(package.specifics['debian'].get(key, ()))
+
+        if DISTRO in package.specifics:
+            related |= set(package.specifics[DISTRO].get(key, ()))
+
+        return related
+
     def fill_dest_dir_rpm(self, package, destdir, compress):
         specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
         short_desc, long_desc = self.generate_description(package)
@@ -1521,7 +1537,8 @@ class PackagingTask(object):
                 engine = package.engine or self.game.engine
                 if engine and len(engine.split()) == 1:
                     spec.write('Requires: %s\n' % engine)
-            for p in package.depends:
+            for p in self.__merge_relationships(package, package.depends,
+                    'depends'):
                 spec.write('Requires: %s\n' % p)
             if not compress or not self.compress_deb or package.rip_cd:
                 spec.write('%define _binary_payload w0.gzdio\n')
@@ -1732,7 +1749,8 @@ class PackagingTask(object):
                       'recommends', 'replaces', 'suggests'):
             dep[field] = set(debian.get(field,[]))
 
-        dep['depends'] = package.depends
+        dep['depends'] = self.__merge_relationships(package, package.depends,
+                'depends')
 
         if package.mutually_exclusive:
             dep['conflicts'] |= package.demo_for
