@@ -306,10 +306,7 @@ class Umod(StreamUnpackable):
         n_entries = self.__read_compact_index()
 
         for i in range(n_entries):
-            # FIXME: is this a compact index, or just a 1-byte value?
-            # We'll never know unless a filename needs more than 6 bits
-            # (64 bytes including \0). For now we assume a 1-byte value.
-            strlen = self.reader.read(1)[0]
+            strlen = self.__read_compact_index()
             name = self.reader.read(strlen).decode('windows-1252')
             assert name[-1] == '\0'
             name = name[:-1]
