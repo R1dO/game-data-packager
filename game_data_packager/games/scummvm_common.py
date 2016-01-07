@@ -128,8 +128,10 @@ class ScummvmTask(PackagingTask):
         entry['Type'] = 'Application'
         entry['Categories'] = 'Game;%sGame;' % self.game.genre.replace(' ','')
         gameid = package.gameid or self.game.gameid
+        install_to = self.packaging.substitute(package.install_to,
+                                               package.name).lstrip('/')
         if len(package.langs) == 1:
-            entry['Exec'] = 'scummvm -p /%s %s' % (package.install_to, gameid)
+            entry['Exec'] = 'scummvm -p /%s %s' % (install_to, gameid)
             self.packaging.override_lintian(destdir, package.name,
                     'desktop-command-not-in-package',
                     '%s/%s.desktop %s' % (appdir, package.name, 'scummvm'))
@@ -151,9 +153,9 @@ class ScummvmTask(PackagingTask):
                 f.write('done\n')
                 f.write(')\n')
                 f.write('if [ "$GAME_LANG" = "en" ]; then\n')
-                f.write('  scummvm -p /%s %s\n' % (package.install_to, gameid))
+                f.write('  scummvm -p /%s %s\n' % (install_to, gameid))
                 f.write('else\n')
-                f.write('  scummvm -q $GAME_LANG -p /%s %s\n' % (package.install_to, gameid))
+                f.write('  scummvm -q $GAME_LANG -p /%s %s\n' % (install_to, gameid))
                 f.write('fi\n')
             os.chmod(path, 0o755)
 
