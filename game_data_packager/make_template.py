@@ -261,7 +261,7 @@ class GameData(object):
                 elif lang:
                     out_name += ('?' + lang)
                 else:
-                    out_name += ('?' + hf.md5[1:6])
+                    out_name += ('?' + hf.md5[:6])
 
         self.size[out_name] = size
         self.md5[out_name] = hf.md5
