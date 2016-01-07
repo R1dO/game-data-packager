@@ -490,6 +490,17 @@ class PackagingTask(object):
         logger.debug('... yes, looks good')
         self.found[wanted.name] = path
         self.file_status[wanted.name] = FillResult.COMPLETE
+
+        # opportunistically use this same file to provide anything else that
+        # has the same hashes (a duplicate file with a different name)
+        for other_name in (self.game.known_md5s.get(hashes.md5, set()) |
+                self.game.known_sha1s.get(hashes.sha1, set()) |
+                self.game.known_sha256s.get(hashes.sha256, set())):
+            other = self.game.files[other_name]
+            if other.matches(hashes):
+                self.found[other_name] = path
+                self.file_status[other_name] = FillResult.COMPLETE
+
         return True
 
     def consider_file(self, path, really_should_match_something, trusted=False):
@@ -761,45 +772,52 @@ class PackagingTask(object):
                 for lf in wanted.look_for:
                     if not distinctive_dirs:
                         lf = os.path.basename(lf)
+
                     if match_path.endswith('/' + lf):
-                        should_provide.discard(filename)
+                        # use this one
+                        break
+                else:
+                    # proceed to next entry
+                    continue
 
-                        if filename in self.found:
-                            continue
+                should_provide.discard(filename)
 
-                        entryfile = unpacker.open(entry)
+                if filename in self.found:
+                    continue
 
-                        tmp = os.path.join(self.get_workdir(),
-                                'tmp', wanted.name)
-                        tmpdir = os.path.dirname(tmp)
-                        mkdir_p(tmpdir)
+                entryfile = unpacker.open(entry)
 
-                        wf = open(tmp, 'wb')
+                tmp = os.path.join(self.get_workdir(),
+                        'tmp', wanted.name)
+                tmpdir = os.path.dirname(tmp)
+                mkdir_p(tmpdir)
 
-                        if entry.size is not None and entry.size > QUITE_LARGE:
-                            large = True
-                            logger.info('extracting %s from %s', entry.name, name)
-                        else:
-                            large = False
-                            logger.debug('extracting %s from %s', entry.name, name)
-                        hf = HashedFile.from_file(
-                                name + '//' + entry.name, entryfile, wf,
-                                size=entry.size, progress=large)
-                        wf.close()
+                wf = open(tmp, 'wb')
 
-                        if entry.mtime is not None:
-                            orig_time = entry.mtime
-                        elif provider is not None:
-                            orig_name = self.found[provider.name]
-                            orig_time = os.stat(orig_name).st_mtime
-                        else:
-                            orig_time = None
+                if entry.size is not None and entry.size > QUITE_LARGE:
+                    large = True
+                    logger.info('extracting %s from %s', entry.name, name)
+                else:
+                    large = False
+                    logger.debug('extracting %s from %s', entry.name, name)
+                hf = HashedFile.from_file(
+                        name + '//' + entry.name, entryfile, wf,
+                        size=entry.size, progress=large)
+                wf.close()
 
-                        if orig_time is not None:
-                            os.utime(tmp, (orig_time, orig_time))
+                if entry.mtime is not None:
+                    orig_time = entry.mtime
+                elif provider is not None:
+                    orig_name = self.found[provider.name]
+                    orig_time = os.stat(orig_name).st_mtime
+                else:
+                    orig_time = None
 
-                        if not self.use_file(wanted, tmp, hf):
-                            os.remove(tmp)
+                if orig_time is not None:
+                    os.utime(tmp, (orig_time, orig_time))
+
+                if not self.use_file(wanted, tmp, hf):
+                    os.remove(tmp)
 
         if should_provide:
             for missing in sorted(should_provide):
