@@ -2454,12 +2454,16 @@ class PackagingTask(object):
         packages = set()
 
         for package in ready:
+            arch = package.architecture
+            if arch != 'all':
+                arch = self.packaging.get_architecture(arch)
+
             if FORMAT == 'deb':
-                pkg = self.build_deb(package, destination, compress=compress)
+                pkg = self.build_deb(package, arch, destination, compress=compress)
             elif FORMAT == 'rpm':
-                pkg = self.build_rpm(package, compress=compress)
+                pkg = self.build_rpm(package, arch, compress=compress)
             elif FORMAT == 'arch':
-                pkg = self.build_arch(package, destination, compress=compress)
+                pkg = self.build_arch(package, arch, destination, compress=compress)
 
             if pkg is None:
                 raise SystemExit(1)
@@ -2583,7 +2587,7 @@ class PackagingTask(object):
                  return
         return
 
-    def build_deb(self, package, destination, compress=True):
+    def build_deb(self, package, arch, destination, compress=True):
         """
         If we have all the necessary files for package, build the .deb
         and return the output filename in destination. Otherwise return None.
@@ -2602,10 +2606,6 @@ class PackagingTask(object):
         # something has gone very wrong
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
         assert os.path.isdir(os.path.join(destdir, 'DEBIAN')), destdir
-
-        arch = package.architecture
-        if arch != 'all':
-            arch = self.packaging.get_architecture(arch)
 
         deb_basename = '%s_%s_%s.deb' % (package.name, package.version, arch)
 
@@ -2637,20 +2637,16 @@ class PackagingTask(object):
         return outfile
 
 
-    def build_arch(self, package, destination, compress=True):
+    def build_arch(self, package, arch, destination, compress=True):
         destdir = os.path.join(self.get_workdir(), '%s.pkg.d' % package.name)
 
         if not self.fill_dest_dir(package, destdir):
             return None
 
-        arch = package.architecture
-        if arch == 'all':
-            arch = 'any'
-        else:
-            arch = self.packaging.get_architecture(arch)
-            arch = {'amd64': 'x86_64',
-                    'i386': 'i686',
-                    }.get(arch, arch)
+        arch = {'all': 'any',
+                'amd64': 'x86_64',
+                'i386': 'i686',
+                }.get(arch, arch)
 
         self.fill_dest_dir_arch(package, destdir, compress, arch)
         self.our_dh_fixperms(destdir)
@@ -2679,22 +2675,21 @@ class PackagingTask(object):
         rm_rf(destdir)
         return outfile
 
-    def build_rpm(self, package, compress=True):
+    def build_rpm(self, package, arch, compress=True):
         destdir = os.path.join(self.get_workdir(), '%s.rpm.d' % package.name)
 
         if not self.fill_dest_dir(package, destdir):
             return None
 
-        arch = package.architecture
-        if arch == 'all':
-            arch = 'noarch'
+        # translate back from Debian arch name
+        arch = {'all': 'noarch',
+                'amd64': 'x86_64',
+                'i386': 'i686',
+                 }.get(arch, arch)
+
+        if arch == 'noarch':
             setarch = []
         else:
-            arch = self.packaging.get_architecture(arch)
-            # translate back from Debian arch name
-            arch = {'amd64': 'x86_64',
-                    'i386': 'i686',
-                    }.get(arch, arch)
             setarch = ['setarch', arch]
 
         specfile = self.fill_dest_dir_rpm(package, destdir, compress, arch)
