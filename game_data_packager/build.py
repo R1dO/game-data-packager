@@ -2126,7 +2126,7 @@ class PackagingTask(object):
         if logger.isEnabledFor(logging.DEBUG) and which(self.packaging.CHECK_CMD):
             print('Now running %s...' % self.packaging.CHECK_CMD.title())
             for deb in debs:
-                subprocess.check_call([self.packaging.CHECK_CMD, deb])
+                subprocess.call([self.packaging.CHECK_CMD, deb])
 
     def rip_cd(self, package):
         cd_device = self.cd_device
