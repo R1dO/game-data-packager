@@ -90,11 +90,20 @@ class UmodEntryFile(io.BufferedIOBase):
 
 class UmodEntry(UnpackableEntry):
     """Base class for files and edit instructions in a umod."""
-    def __init__(self, name, size, offset, flags):
+    def __init__(self, name, size, offset, toc_flags, manifest_flags):
         self._name = name.replace('\\', '/')
         self._size = size
         self.offset = offset
-        self.flags = flags
+        self.toc_flags = toc_flags
+        self.manifest_flags = manifest_flags
+
+    def __repr__(self):
+        return '<%s "%s" size=%d offset=%d toc_flags=%d manifest_flags=%d>' % (
+                self.__class__.__name__, self.name, self.size, self.offset,
+                self.toc_flags, self.manifest_flags)
+
+    def __str__(self):
+        return repr(self)
 
     @property
     def is_directory(self):
@@ -114,8 +123,12 @@ class UmodEntry(UnpackableEntry):
 
     @property
     def type_indicator(self):
-        if self.flags:
-            return '-%d' % self.flags
+        if self.toc_flags or self.manifest_flags:
+            if self.toc_flags == self.manifest_flags:
+                return '-%d' % self.toc_flags
+            else:
+                return '-{toc=%d manifest=%d}' % (self.toc_flags,
+                        self.manifest_flags)
         else:
             return '-r'
 
@@ -132,23 +145,20 @@ class UmodEditEntry(UmodEntry):
 
     @property
     def type_indicator(self):
-        if self.flags:
-            return 'e%d' % self.flags
-        else:
-            return 'er'
+        return 'e' + super(UmodEditEntry, self).type_indicator[1:]
 
 _FILE_RE = re.compile(r'^[(]'
-        r'Src=([^,]+),'
-        r'(?:Master=[^,]+,)?'
+        r'Src="?([^,"]+)"?,'
+        r'(?:Master="?[^,"]+"?,)?'
         r'(?:Lang=[a-z][a-z]t,)?'
         r'Size=([0-9]+)'
         r'(?:,Flags=([0-9]+))?'
         r'[)]$')
 _COPY_RE = re.compile(r'^[(]'
-        r'Src=([^,]+),'
-        r'Master=([^,]+),'
-        r'Size=([^,]+),'
-        r'Flags=3'
+        r'Src="?([^,"]+)"?,'
+        r'(?:Master="?([^,"]+)"?)?,?'
+        r'(?:Size=([^,]+))?,?'
+        r'(?:Flags=([0-9]+))?,?'
         r'[)]$')
 
 class UmodGroup(UmodSection):
@@ -168,12 +178,15 @@ class UmodGroup(UmodSection):
             name = m.group(1).replace('\\', '/')
             entry = umod.entries[name]
             assert entry.size == int(m.group(2)), entry.size
-            if m.group(3):
-                assert entry.flags == int(m.group(3)), entry.flags
+
+            if m.group(3) is not None:
+                manifest_flags = int(m.group(3))
+            else:
+                manifest_flags = 0
 
             # replace placeholder
             umod.entries[name] = UmodFileEntry(name, entry.size,
-                    entry.offset, entry.flags)
+                    entry.offset, entry.toc_flags, manifest_flags)
             self.entries.append(umod.entries[name])
 
         elif k == 'Copy':
@@ -182,16 +195,22 @@ class UmodGroup(UmodSection):
             if not m:
                 raise ValueError('Unexpected value in Copy= line: %r' % v)
 
-            assert m.group(1) == m.group(2)
+            assert m.group(2) is None or m.group(1) == m.group(2)
             name = m.group(1).replace('\\', '/')
             entry = umod.entries[name]
-            assert (entry.size == int(m.group(3)) or
-                    name == 'System/Manifest.ini')
-            assert entry.flags == 3
+
+            if m.group(3) is not None:
+                assert (entry.size == int(m.group(3)) or
+                        name == 'System/Manifest.ini')
+
+            if m.group(4) is not None:
+                manifest_flags = int(m.group(4))
+            else:
+                manifest_flags = 0
 
             # replace placeholder
             umod.entries[name] = UmodEditEntry(name,
-                    entry.size, entry.offset, entry.flags)
+                    entry.size, entry.offset, entry.toc_flags, manifest_flags)
             self.entries.append(umod.entries[name])
 
         elif k in ('AddIni',
@@ -308,10 +327,10 @@ class Umod(StreamUnpackable):
         for i in range(n_entries):
             strlen = self.__read_compact_index()
             name = self.reader.read(strlen).decode('windows-1252')
-            assert name[-1] == '\0'
+            assert name[-1] == '\0', name
             name = name[:-1]
             offset, length, flags = struct.unpack('<III', self.reader.read(12))
-            entry = UmodEntry(name, length, offset, flags)
+            entry = UmodEntry(name, length, offset, flags, 0)
             self.entry_order.append(entry.name)
             self.entries[entry.name] = entry
 
