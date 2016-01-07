@@ -2024,7 +2024,8 @@ class PackagingTask(object):
                 args.shortname = package.name
                 break
 
-        if args.shortname in self.game.packages:
+        if (args.shortname != self.game.shortname and
+                args.shortname in self.game.packages):
             if args.packages and args.packages != [args.shortname]:
                 not_the_one = [p for p in args.packages if p != args.shortname]
                 logger.error('--package="%s" is not consistent with '
