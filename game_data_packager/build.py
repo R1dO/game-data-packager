@@ -2648,6 +2648,9 @@ class PackagingTask(object):
             arch = 'any'
         else:
             arch = self.packaging.get_architecture(arch)
+            arch = {'amd64': 'x86_64',
+                    'i386': 'i686',
+                    }.get(arch, arch)
 
         self.fill_dest_dir_arch(package, destdir, compress, arch)
         self.our_dh_fixperms(destdir)
