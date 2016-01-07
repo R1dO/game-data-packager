@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 
 class ArchPackaging(PackagingSystem):
     LICENSEDIR = 'usr/share/licenses'
+    CHECK_CMD = 'namcap'
     INSTALL_CMD = 'pacman -S'
     PACKAGE_MAP = {
                   'id-shr-extract': None,
