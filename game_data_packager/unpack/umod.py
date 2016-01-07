@@ -478,6 +478,23 @@ class Umod(StreamUnpackable):
         # umods are always seekable
         return True
 
+    def printdir(self):
+        print('# Product:', self.product)
+        print('# Version:', self.version)
+        print('# Requires:')
+
+        for k, r in sorted(self.requirements.items()):
+            print('# [%s] %r version %r' % (k, r.product, r.version))
+
+        if 'System/Manifest.int' in self.entries:
+            print('# Manifest text (international/English):')
+            reader = self.open('System/Manifest.int')
+
+            for line in reader:
+                print('#', line.decode('windows-1252').rstrip('\r\n'))
+
+        super(Umod, self).printdir()
+
 def is_umod(path_or_file):
     try:
         _open(path_or_file)
