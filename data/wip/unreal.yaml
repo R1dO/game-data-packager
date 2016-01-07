@@ -16,11 +16,22 @@ compress_deb: [-Zgzip, -z4]
 binary_executables: i386
 
 packages:
+  unreal-ut99-shared-data:
+    # This is deliberately the same version so we don't get one game
+    # unable to install over the other. The content is identical.
+    version: "200"
+    longname: Unreal, Unreal Tournament
+    short_description: game data shared by Unreal and Unreal Tournament
+    install:
+      - Unreal/UT99 shared data
+
   unreal-data:
     version: 227i
+    depends:
+      - unreal-ut99-shared-data
     install:
       - Unreal maps and music
-      - Unreal common assets
+      - Unreal 1 assets
       - Unreal 227i common assets
       - skaarj_logo.jpg
     doc:
@@ -728,7 +739,10 @@ groups:
       45128     2024ed68eac5d046d24895ca3f36c1a9 Help/ReadMe.htm?classic
       44474     d6f278999aa62228b9406fe14a122a75 Help/ReadMe.txt?classic
 
-  Unreal common assets:
+  # These are identical lists in both Unreal and UT99. Do not modify.
+  # One day g-d-p should have a way to share content between games
+  # so ut99.yaml can just refer to unreal.yaml...
+  Unreal/UT99 shared data:
     group_members: |
       906293    fa7e40da213112a68a8f8bae376e0bc0 Sounds/Activates.uax
       6773021   c787555abeb7d42d715943dec6a3eade Sounds/AmbAncient.uax
@@ -739,14 +753,12 @@ groups:
       2547363   0ede75d40fed4ab00519f9175f2cc3c4 Sounds/DoorsMod.uax
       2871719   82e065dbcc8f34cceca5f1c5bacc0e0d Sounds/Extro.uax
       819220    1670df4f96a65f67ffa3cad43e6b5b5c Sounds/VRikers.uax
-
       7980      2aa9a951613309c83ffbe0f90a08aea7 Textures/AlfaFX.utx
       10170681  88e8f9bfdfc51ae9db6a461efa82c599 Textures/Ancient.utx
       1774      d5a31197e37ed8a2077149aab061332e Textures/BluffFX.utx
       5523      3a80a819ad38804e31753ac27e39ce9e Textures/ChizraEFX.utx
       46517     2de54974aeb22a6a2aa2521a44e2349e Textures/Crypt.utx
       4169      d766feeb3709f7f9473950f624aaaf8b Textures/DMeffects.utx
-      11835011  232a4140cb6f5d163033c0bd1abb3c6b Textures/DecayedS.utx?unreal
       1729964   69f3a6fdfe51ac4fd6d3548afda41d92 Textures/Detail.utx
       886624    9ea260ed513869722f4aabf182871ae7 Textures/Female1Skins.utx
       709362    9585d884dc6c60fd10620a51cb75fe2a Textures/Female2Skins.utx
@@ -778,13 +790,17 @@ groups:
       584486    258dc9631626c81486546fdfddc08b1e Textures/ShaneSky.utx
       266196    0df48e690c761d5083ec917f532ba85d Textures/SkTrooperSkins.utx
       7371542   fb256cfca6c5e6334494d6c2a7d0b8e7 Textures/Skaarj.utx
-      929983    19ab7a07b286037d16dc8c05d1cef456 Textures/SkyBox.utx?unreal
       13270191  f0f11d943534d465d693a34936eba6f9 Textures/SkyCity.utx
       1124420   99bcf36884c0d06f03f90ca7a16a9fc5 Textures/SpaceFX.utx
       7590442   6de2214311abb8743c5a80d6ec0da598 Textures/Starship.utx
       158014    d7515dece155ec1393d166230a2e3c8e Textures/TCrystal.utx
       2291      0dea0ab3fc9d178c595dda1264789797 Textures/Terranius.utx
       198416    aadae4a106fc1e003489bda37dfb646f Textures/XFX.utx
+
+  Unreal 1 assets:
+    group_members: |
+      929983    19ab7a07b286037d16dc8c05d1cef456 Textures/SkyBox.utx?unreal
+      11835011  232a4140cb6f5d163033c0bd1abb3c6b Textures/DecayedS.utx?unreal
 
   Licenses:
     license: True
@@ -850,7 +866,7 @@ groups:
       405       dea92cac83831639a53966755891b0c3 System/Female2Skins.int
       32149     b959c4e9b6b44676ab9dd0e9ca90d115 System/Fire.u?227i
       325       2fe8271a9f2ba74853321753ee01b7b2 System/Galaxy.int?227i
-      450       7795ce2eaf430323247eed68b1032653 System/GlideDrv.int
+      450       7795ce2eaf430323247eed68b1032653 System/GlideDrv.int?unrealcd
       #221184    9e6710105063c374dc9ada1e55d05875 System/IpDrv.dll?227i
       1747      dfa67d7d8934f0a16a002bb4a7a1ba9b System/IpDrv.int?227i
       296488    02f2bda321052a55128ae8495ea89f9e System/IpDrv.so
@@ -1704,7 +1720,7 @@ groups:
       2238      79aa72d245d2231eaaeaee658593337e Help/Unreal.ico?gog
       3203      81e4a755812f677c862f996eefbeefbc System/Core.int?gold
       57336     4fdb506a93276ed1cf89e42dcc68cf80 System/Core.u?gog
-      374       351ecc8f84070e0a179660adb3cacfaa System/D3DDrv.int?gog
+      374       351ecc8f84070e0a179660adb3cacfaa System/D3DDrv.int?gold
       #5201      7259148d3481b40923b2a7e98cdb0af8 System/DefUser.ini?gold
       #8773      0f71880f5cc441e7cd9af34f8dc92706 System/Default.ini?gog
       1772      3b9cdb5fc4f0c0fb17fff5dd0a441d84 System/Editor.int?gog
@@ -1712,11 +1728,10 @@ groups:
       5006      1007fbf1917159ac3087207e3ea8d02a System/Engine.int?gog
       1033475   a5d51b4f86dc513124f6d7dcb874e133 System/Engine.u?gog
       15194     2eacfab9a9e60d9e880971bce4d280b0 System/Fire.u?gog
-      273       f028c82ea6426219a893a807b63a51cd System/Galaxy.int?cd
       446       48ddd35481cf82c52e62c298e6fc0073 System/GlideDrv.int?gog
       1153      34c1faae2d21af79a45a474479f25d0c System/IpDrv.int?gog
       19069     4e82569c1a9cd09d9fdf175052d09865 System/IpDrv.u?gog
-      301       d4c726ec842b95e4d4ba62ad81ec3526 System/IpServer.int?gog
+      301       d4c726ec842b95e4d4ba62ad81ec3526 System/IpServer.int?gold
       23773     be6f01437be0df38315f57a03fb7c0f8 System/IpServer.u?gog
       #19520     d1e474f577d5e19298a40f36f1445f7b System/Manifest.ini?gog
       7232      bc98399425f5e4a419aefb5c2e0d70aa System/Setup.int?gold
@@ -1732,13 +1747,18 @@ groups:
       11415303  a38a4f05f72aed0928f55b7821b06bac System/UPak.u?gog
       653125    91ef187b9e782afc7b2be2422c61804d System/UWindow.u?gold
       #8773      0f71880f5cc441e7cd9af34f8dc92706 System/Unreal.ini?gog
-      38        e5601bb9c2fb847ff36e35919ec8223c System/UnrealEd.int?gog
+      38        e5601bb9c2fb847ff36e35919ec8223c System/UnrealEd.int?gold
       28720     f0203e58a128205379f93197aa328382 System/UnrealI.int?gog
       18592658  957c15af6b340d9d0f63298c92eddb88 System/UnrealI.u?gog
       24479     28341e37c6332740a941c95b43a826d3 System/UnrealShare.int?gog
       22181012  10c5ed3800e7bb344d20b3bbbfb85613 System/UnrealShare.u?gog
       #5534      abcdebfb350757aba6fb4e6a823100f9 System/User.ini?gog
       1755486   a7ce948456445d6489277f81b5d756da Textures/UWindowFonts.utx?gold
+
+      # Using lower-case for this one because it's the same as a file in
+      # the Linux patch for UT. Probably not case-sensitive but let's
+      # not risk it
+      273       f028c82ea6426219a893a807b63a51cd System/galaxy.int?unrealcd
 
       # Windows DLLs etc.
   #   96264     4d3ac88054df63fc810427bdaa96c458 GameuxInstallHelper.dll
@@ -1796,7 +1816,8 @@ groups:
     group_members: |
       _         _                                Unreal maps and music
       _         _                                Unreal Gold assets
-      _         _                                Unreal common assets
+      _         _                                Unreal 1 assets
+      _         _                                Unreal/UT99 shared data
       _         _                                Return to Na Pali assets
       45806     4b5517110a6ec61aede4138e70e1cf45 Help/ReadMe.htm?gold
       45250     709a6fb77fd4a6ba62d44eede2af75f4 Help/ReadMe.txt?gog
@@ -1923,7 +1944,7 @@ groups:
       276       9abb3ce31f2a0d2bc9dfd51b554e03d3 System/Galaxy.det?cd
       279       3f1eef8e64bf2365b35165e9dfa01186 System/Galaxy.est?cd
       274       b8e623219d5c46556b6934073660c892 System/Galaxy.frt?cd
-      273       f028c82ea6426219a893a807b63a51cd System/Galaxy.int?cd
+      273       f028c82ea6426219a893a807b63a51cd System/galaxy.int?unrealcd
       274       985b84ae42525ae2fca770785e13be11 System/Galaxy.itt?cd
       460       e51791c472774a730a9e4b18ea1060e6 System/GlideDrv.det?cd
       473       8d00d49fe1ddc0f85fd104200a1bcc62 System/GlideDrv.est?cd
@@ -2049,14 +2070,15 @@ groups:
   "assets from smcv's Unreal CD":
     group_members: |
       _         _                                Unreal maps and music
-      _         _                                Unreal common assets
+      _         _                                Unreal 1 assets
+      _         _                                Unreal/UT99 shared data
       _         _                                Unreal classic assets
 
       # FIXME: is this file desirable for German installations?
       3927324   6737ebe1dcdeadf7101f53bd08343ab2 Maps/Vortex2Det.unr
       184340    8665db0ebef297cacc07133358235e54 Textures/MenuGr.utx?classic
       444       80bd6f5167709ff71792fe723b82d347 System/SglDrv.int
-      450       7795ce2eaf430323247eed68b1032653 System/GlideDrv.int
+      450       7795ce2eaf430323247eed68b1032653 System/GlideDrv.int?unrealcd
 
   UnrealRtNPPatch patches:
     # FIXME: these presumably patch original assets somehow, but how?
@@ -2639,7 +2661,7 @@ sha1sums: |
   7d3c25635df2108de5e439fe92e2262cac1a9289 System/D3DDrv.frt
   ed38ecefdb08ce692327506a96642add39f91c81 System/D3DDrv.int?227i
   93c96167613fb31fe206946a6a71d4ed7115124f System/D3DDrv.int?RtNPPatch
-  e3b685e84af1c895b964a4733ae4a52850d5000d System/D3DDrv.int?gog
+  e3b685e84af1c895b964a4733ae4a52850d5000d System/D3DDrv.int?gold
   644670581570276b17f3d44690ea94b836c774a9 System/D3DDrv.itt
   bb7cf475414c92f7e58c46e759ba2b1c3506e4b3 System/D3DDrv.plt
   da4d8623e5c27384f52d8d9c6adaf8d309772ffd System/D3DDrv.rut
@@ -2907,7 +2929,7 @@ sha1sums: |
   69fcc7aa4ddf61bd964c88f04f6969bc7d8f2a5b System/Galaxy.frt?cd
   adc5be165166e6ebbd3a901acc4c7dc6b49e72c6 System/Galaxy.int?227i
   9f9169322cd7793075ff4c6bcf249369d6405c78 System/Galaxy.int?RtNPPatch
-  5ed88a53a684d88adeae7f0817a5eb20c54df072 System/Galaxy.int?cd
+  5ed88a53a684d88adeae7f0817a5eb20c54df072 System/galaxy.int?unrealcd
   3c4ffe96ee26062f0af7bf8805293490547e1ba9 System/Galaxy.itt
   cbd3b92a1fb940f2c0632bcec4c80a28cd720490 System/Galaxy.itt?cd
   abc6b05c600cf2c54f85cd7ece8a777b1f695d66 System/Galaxy.plt
@@ -2933,7 +2955,7 @@ sha1sums: |
   ae65edb33739293ceeacc7f57394974d949286d4 System/GlideDrv.est?cd
   8d022bdda83573a14eeff3e9794cc395b1e8df4a System/GlideDrv.frt
   0d5329ab14f52367435c3b91e2cf13d9ea31ce89 System/GlideDrv.frt?cd
-  ec098f9ab1f0f817adce18c43c72f6e71bc6ef6a System/GlideDrv.int
+  ec098f9ab1f0f817adce18c43c72f6e71bc6ef6a System/GlideDrv.int?unrealcd
   a7741ea291a26b5513d5f01f877804a8c2141375 System/GlideDrv.int?RtNPPatch
   a3a1e4eb0d8b63745dfd08c33f11c554fb32357c System/GlideDrv.int?gog
   793230781252ebc2090f133d5ba3def27ea63078 System/GlideDrv.itt
@@ -3013,7 +3035,7 @@ sha1sums: |
   054350eb19bcc7f32e11b54865484916971cdab0 System/IpServer.frt
   ab98a2e80a57305910bf6edb9456c243b72d327f System/IpServer.int?227i
   9511509c591d1777c2b7ea3602463b24e8747c7e System/IpServer.int?RtNPPatch
-  eadf1edad310ed24d8bb49333a4cad75cc3d77b8 System/IpServer.int?gog
+  eadf1edad310ed24d8bb49333a4cad75cc3d77b8 System/IpServer.int?gold
   91d74d4b3384d553915305d0cd8b21d48e4bfe2b System/IpServer.itt
   a6a2f85a937530e2f2ff7a7e62af137ead846206 System/IpServer.plt
   d12ec3f2bf99747095b4c34fe528bb3b89a120af System/IpServer.rut
@@ -3483,7 +3505,7 @@ sha1sums: |
   0cb7554f9f71c58401cd05fe3d665df51be9d705 System/UnrealEd.frt
   fb4480b5dc78405ea38d0ce34a8a572462fde3c5 System/UnrealEd.ini
   84b416e6b8c5b1014a12d7d0157d0087cfac2eb0 System/UnrealEd.int?227i
-  a11d8789539aac59ae11046be061cc3dcee1827a System/UnrealEd.int?gog
+  a11d8789539aac59ae11046be061cc3dcee1827a System/UnrealEd.int?gold
   d968ea8ddc43f92730688143f84a21ad3f1e9a5a System/UnrealEd.itt
   18d6e3b00a0d32821805bfe953b4fa93784c24fa System/UnrealEd.plt
   7f35039db4f0add2a793777bc78b5b083c8d6720 System/UnrealEd.rut
@@ -4173,7 +4195,7 @@ sha256sums: |
   597bed30901c3df18cd8854320177fcef8eeb7b0dcbf296bc52d76ceeab42b77 System/D3DDrv.frt
   f5e39070351a10ea3f3be0f3355b4b3fdcd00521395b433338b70f3643b1ee14 System/D3DDrv.int?227i
   f651cfed0b5097dae13d146cf85f924d50a2b2c926e10c6f0b880d3798daea41 System/D3DDrv.int?RtNPPatch
-  f1472e84479d5fc86ad3efe2d7f9e822494da193d0706172626e482cabeecbb6 System/D3DDrv.int?gog
+  f1472e84479d5fc86ad3efe2d7f9e822494da193d0706172626e482cabeecbb6 System/D3DDrv.int?gold
   13a1e14d0fb58b2f864a0950cc1d70614ee75f8f24435488c7a51a57d264225a System/D3DDrv.itt
   8baf224cf37e919461d81f353bf7ee713b61d3a53a71433dbfca85219594beb3 System/D3DDrv.plt
   f488a249d67eb0b4c27908a6b149d9d357f3a3c5d12540758bc3a622e3cdc25e System/D3DDrv.rut
@@ -4441,7 +4463,7 @@ sha256sums: |
   435086506f4d88b2ab3e7158c4061874dfdeb4a63a6a9ddbb8645a9cee44dc6c System/Galaxy.frt?cd
   618219eb36fcbd7605bafb49397274a7dca7f453aeba62cc3816c343a5266190 System/Galaxy.int?227i
   fae59f978dd728a61cdd54ed960ec70d7f18c4d35feb526171ee79cd766f6f81 System/Galaxy.int?RtNPPatch
-  3b1ede84365c5412a8d68730c47d479f00a959b3e3e966fb48a291c1c5de51c9 System/Galaxy.int?cd
+  3b1ede84365c5412a8d68730c47d479f00a959b3e3e966fb48a291c1c5de51c9 System/galaxy.int?unrealcd
   6b77c77baa6b0cfd2dfbcbde556287785ce34a5b748725a935168b3491d59b28 System/Galaxy.itt
   8d2ebe754340cf2fc06548e4797d6887cc1cfbd0bbb290559f3d6e7ad33bca8a System/Galaxy.itt?cd
   d2e6e988030fdc8e45dcb940c695544c44f4f93d3f5f94dc2ade68c80b5757e6 System/Galaxy.plt
@@ -4467,7 +4489,7 @@ sha256sums: |
   7ff2029ecc4db0c3edbb12599aeecb937230dd7b4759cb52ff9555bb371a4a15 System/GlideDrv.est?cd
   fccc7beeed4c01454793f553e494611d635f32857b96a900a9fd56a95c4a5fff System/GlideDrv.frt
   6fe0bfede4e25767b7892e4912dfb97d8e1cc18d461300422a0f83e1341405a1 System/GlideDrv.frt?cd
-  154e91d840eb83ea6666f7e0de77214f5aeb74da76ebd8a8ced0b296fe502e88 System/GlideDrv.int
+  154e91d840eb83ea6666f7e0de77214f5aeb74da76ebd8a8ced0b296fe502e88 System/GlideDrv.int?unrealcd
   30da1e78010fed6c9592a9ef0a42c7bc6659f2630e416c09f58d83f5621496b5 System/GlideDrv.int?RtNPPatch
   54e8a404e5978b1c41e833e9b8f474f9ba155c5312482470bc755b6bda8a799c System/GlideDrv.int?gog
   929e4b476af7f1e163df795abaa72957840875f1632f1b016433cd4e9b995750 System/GlideDrv.itt
@@ -4547,7 +4569,7 @@ sha256sums: |
   5db4d39926ee22c8a88857646750d3e8a22f988475b3ebdd9701f7dce248c3fe System/IpServer.frt
   a2911774807abd34571760a8e5804360e347a037733e02b206cea440b86ffc82 System/IpServer.int?227i
   b8c8ddd4d4deb8baeb57e6aeee4d9154c7ce4489ee4e411911fffcbbab46dd9b System/IpServer.int?RtNPPatch
-  ee3ae6a5e272926ce3837e994278db064f6c9c9cad34f8e8aaeffe026d38e6fb System/IpServer.int?gog
+  ee3ae6a5e272926ce3837e994278db064f6c9c9cad34f8e8aaeffe026d38e6fb System/IpServer.int?gold
   99400d033ed7ae76272e0b60069b73ed0e3934eac976d5bee7c278df0bd29e76 System/IpServer.itt
   90b9bbd6f3141e4ea118d6e4162fefdad1b827aa024bde23f13244535b4148e2 System/IpServer.plt
   bc5cb49224fc27317d7947b073fd6db87f7b7612d191e3e06970ff38e0d8e1d4 System/IpServer.rut
@@ -5017,7 +5039,7 @@ sha256sums: |
   b98eb3329b563825da338722a51f0fe02f71a2f0806c57badabfebea4e794011 System/UnrealEd.frt
   f2ba36b63ab139febea4c09d6a917eb84f943124bb06f03a22313aee0362c929 System/UnrealEd.ini
   c75db8dc9076d1995fc72cefae134d1183f461815fc8ade594e8d384ecb52f8c System/UnrealEd.int?227i
-  a8c487557da4d558cb1f54924afac336cf1105f407268c6f8faaab221bd93e6f System/UnrealEd.int?gog
+  a8c487557da4d558cb1f54924afac336cf1105f407268c6f8faaab221bd93e6f System/UnrealEd.int?gold
   fb0c83c02cc9b09cb69baa5da293b02288b61ed3471e058bf97b5412cab6abf1 System/UnrealEd.itt
   f31d6f16e5d57b6e1b2dd1690a3f2913fe1a28dd26a2187f3383bb6cdf954597 System/UnrealEd.plt
   6d78f45e7b61da49fc4753df441f2e9a1569baa04d296bfd25fd520668cecfb6 System/UnrealEd.rut
