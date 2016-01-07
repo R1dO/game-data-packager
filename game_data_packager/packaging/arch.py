@@ -17,6 +17,7 @@
 # /usr/share/common-licenses/GPL-2.
 
 import logging
+import os
 import subprocess
 
 from . import (PackagingSystem)
@@ -25,12 +26,20 @@ from ..util import (run_as_root, check_output)
 logger = logging.getLogger(__name__)
 
 class ArchPackaging(PackagingSystem):
+    LICENSEDIR = 'usr/share/licenses'
+
     install_cmd = 'pacman -S'
     package_map = {
                   'id-shr-extract': None,
                   '7z': 'p7zip',
                   # XXX
                   }
+
+    def read_architecture(self):
+        super(ArchPackaging, self).read_architecture()
+        # https://wiki.archlinux.org/index.php/Multilib
+        if self._architecture == 'amd64' and os.path.exists('/usr/lib32/libc.so'):
+            self._foreign_architectures = set(['i386'])
 
     def is_installed(self, package):
         return subprocess.call(['pacman', '-Q', package],

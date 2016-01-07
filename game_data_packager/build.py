@@ -1425,7 +1425,7 @@ class PackagingTask(object):
     def fill_extra_files(self, package, destdir):
         pass
 
-    def fill_dest_dir_arch(self, package, destdir, compress):
+    def fill_dest_dir_arch(self, package, destdir, compress, arch):
         PKGINFO = os.path.join(destdir, '.PKGINFO')
         short_desc, _ = self.generate_description(package)
         size = check_output(['du','-bs','.'], cwd=destdir)
@@ -1442,7 +1442,7 @@ class PackagingTask(object):
             pkginfo.write('builddate = %i\n' % int(time.time()))
             pkginfo.write('packager = Alexandre Detiste <alexandre@detiste.be>\n')
             pkginfo.write('size = %i\n' % size)
-            pkginfo.write('arch = any\n')
+            pkginfo.write('arch = %s\n' % arch)
             pkginfo.write('license = Commercial\n')
             pkginfo.write('group = games\n')
             if package.expansion_for:
@@ -2637,18 +2637,18 @@ class PackagingTask(object):
         if not self.fill_dest_dir(package, destdir):
             return None
 
-        self.fill_dest_dir_arch(package, destdir, compress)
+        arch = package.architecture
+        if arch == 'all':
+            arch = 'any'
+        else:
+            arch = self.packaging.get_architecture(arch)
+
+        self.fill_dest_dir_arch(package, destdir, compress, arch)
         self.our_dh_fixperms(destdir)
 
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
         assert os.path.isfile(os.path.join(destdir, '.PKGINFO')), destdir
         assert os.path.isfile(os.path.join(destdir, '.MTREE')), destdir
-
-        arch = package.architecture
-        if arch != 'all':
-            arch = self.packaging.get_architecture(arch)
-        if arch == 'all':
-            arch = 'any'
 
         pkg_basename = '%s-%s-1-%s.pkg.tar.xz' % (package.name, package.version, arch)
         outfile = os.path.join(os.path.abspath(destination), pkg_basename)
