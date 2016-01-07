@@ -585,9 +585,7 @@ class GameData(object):
             assert 'sha1sums' not in data, binary
             assert 'sha256sums' not in data, binary
 
-            if ('DISABLED' in data and
-                    not (os.environ.get('DEBUG') or
-                        os.environ.get('GDP_DEBUG'))):
+            if 'DISABLED' in data:
                 continue
             package = self.construct_package(binary)
             self.packages[binary] = package
