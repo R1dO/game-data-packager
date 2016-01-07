@@ -1443,7 +1443,8 @@ class PackagingTask(object):
             pkginfo.write('packager = Alexandre Detiste <alexandre@detiste.be>\n')
             pkginfo.write('size = %i\n' % size)
             pkginfo.write('arch = %s\n' % arch)
-            pkginfo.write('license = Commercial\n')
+            if os.path.isdir(os.path.join(destdir, 'usr/share/licenses')):
+                pkginfo.write('license = custom\n')
             pkginfo.write('group = games\n')
             if package.expansion_for:
                 pkginfo.write('depend = %s\n' % package.expansion_for)
