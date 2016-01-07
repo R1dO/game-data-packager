@@ -27,9 +27,8 @@ logger = logging.getLogger(__name__)
 
 class ArchPackaging(PackagingSystem):
     LICENSEDIR = 'usr/share/licenses'
-
-    install_cmd = 'pacman -S'
-    package_map = {
+    INSTALL_CMD = 'pacman -S'
+    PACKAGE_MAP = {
                   'id-shr-extract': None,
                   '7z': 'p7zip',
                   # XXX

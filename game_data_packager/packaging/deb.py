@@ -30,9 +30,9 @@ logger = logging.getLogger(__name__)
 class DebPackaging(PackagingSystem):
     BINDIR = 'usr/games'
     ASSETS = 'usr/share/games'
-
-    install_cmd = 'apt-get install'
-    package_map = {
+    CHECK_CMD = 'lintian'
+    INSTALL_CMD = 'apt-get install'
+    PACKAGE_MAP = {
                   'id-shr-extract': 'dynamite',
                   'lha': 'lhasa',
                   '7z': 'p7zip-full',

@@ -24,9 +24,12 @@ class PackagingSystem(metaclass=ABCMeta):
     ASSETS = 'usr/share'
     BINDIR = 'usr/bin'
     LICENSEDIR = 'usr/share/doc'
-
-    install_cmd = None
-    package_map = dict()
+    CHECK_CMD = None
+    INSTALL_CMD = None
+    # by default pgm 'unzip' is provided by package 'unzip' etc...
+    # only exceptions needs to be listed
+    # 'None' means that this pgm is not packaged by $distro
+    PACKAGE_MAP = dict()
 
     def __init__(self):
         self._architecture = None

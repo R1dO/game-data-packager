@@ -2749,10 +2749,10 @@ class PackagingTask(object):
         packages = set()
 
         for t in self.missing_tools:
-            p = self.packaging.package_map.get(t, t)
+            p = self.packaging.PACKAGE_MAP.get(t, t)
             if p is not None:
                 packages.add(p)
 
         if packages:
             logger.warning('installing these packages might help:\n' +
-                '%s %s', self.packaging.install_cmd, ' '.join(sorted(packages)))
+                '%s %s', self.packaging.INSTALL_CMD, ' '.join(sorted(packages)))

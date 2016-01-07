@@ -26,6 +26,7 @@ from ..util import (check_output, run_as_root)
 logger = logging.getLogger(__name__)
 
 class RpmPackaging(PackagingSystem):
+    CHECK_CMD = 'rpmlint'
     LICENSEDIR = 'usr/share/licenses'
 
     def is_installed(self, package):
@@ -73,8 +74,8 @@ class RpmPackaging(PackagingSystem):
 #      As install_packages() needs root, we need to use the 'dnf' pgm
 
 class DnfPackaging(RpmPackaging):
-    install_cmd = 'dnf install'
-    package_map = {
+    INSTALL_CMD = 'dnf install'
+    PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
                   'id-shr-extract': None,
                   '7z': 'p7zip-plugins',
@@ -118,8 +119,8 @@ class DnfPackaging(RpmPackaging):
                 gain_root=gain_root)
 
 class ZypperPackaging(RpmPackaging):
-    install_cmd = 'zypper install'
-    package_map = {
+    INSTALL_CMD = 'zypper install'
+    PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
                   'id-shr-extract': None,
                   '7z': 'p7zip',
