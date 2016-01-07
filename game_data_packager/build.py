@@ -424,20 +424,28 @@ class PackagingTask(object):
             self._cleanup_dirs.add(self.__workdir)
         return self.__workdir
 
-    def use_file(self, wanted, path, hashes=None, log=True):
-        logger.debug('found possible %s at %s', wanted.name, path)
+    def use_file(self, found, candidates, path, hashes=None):
+        logger.debug('found %s at %s', found, path)
         size = os.stat(path).st_size
-        if wanted.size is not None and wanted.size != size:
-            if log:
-                logger.warning('found possible %s\n' +
-                        'but its size does not match:\n' +
-                        '  file: %s\n' +
-                        '  expected: %d bytes\n' +
-                        '  found   : %d bytes',
-                        wanted.name,
-                        path,
-                        wanted.size,
-                        size)
+
+        assert candidates
+
+        remaining = set()
+
+        for wanted in candidates:
+            if wanted.size is None or wanted.size == size:
+                remaining.add(wanted)
+            else:
+                logger.debug('... not the right size to be %s', wanted.name)
+
+        if not remaining:
+            for candidate in candidates:
+                if not candidate.distinctive_name:
+                    # silently ignore dissimilar file
+                    logger.debug('... not a distinctive name, ignoring')
+                    return False
+
+            self._log_not_any_of(path, size, hashes, found, candidates)
             return False
 
         if hashes is None:
@@ -446,69 +454,42 @@ class PackagingTask(object):
             hashes = HashedFile.from_file(path, open(path, 'rb'), size=size,
                     progress=(size > QUITE_LARGE))
 
-        if not wanted.skip_hash_matching and not hashes.matches(wanted):
-            # always silence warning if several files have same
-            # look_for & same size: e.g. wolf3d, spear, dune2, ...
-            if log:
-                sizes = []
-                for lf in wanted.look_for:
-                    for filename in self.game.known_filenames[lf]:
-                        size = self.game.files[filename].size
-                        if size in sizes:
-                            log = False
-                            break
-                        sizes.append(size)
+        for wanted in remaining:
+            if not wanted.skip_hash_matching and not hashes.matches(wanted):
+                logger.debug('... not the right hashes to be %s', wanted.name)
+                continue
 
-            if log:
-                logger.warning('found possible %s\n' +
-                    'but its checksums do not match:\n' +
-                    '  file: %s\n' +
-                    '  expected:\n' +
-                    '    md5:    %s\n' +
-                    '    sha1:   %s\n' +
-                    '    sha256: %s\n' +
-                    '  got:\n' +
-                    '    md5:    %s\n' +
-                    '    sha1:   %s\n' +
-                    '    sha256: %s',
-                    wanted.name,
-                    path,
-                    wanted.md5,
-                    wanted.sha1,
-                    wanted.sha256,
-                    hashes.md5,
-                    hashes.sha1,
-                    hashes.sha256)
-            return False
+            if wanted.unsuitable:
+                logger.warning('"%s" matches known file "%s" but cannot '
+                        'be used:\n%s', path, wanted.name, wanted.unsuitable)
+                # ... but do not continue processing
+                return True
 
-        if wanted.unsuitable:
-            logger.warning('"%s" matches known file "%s" but cannot '
-                    'be used:\n%s', path, wanted.name, wanted.unsuitable)
-            # ... but do not continue processing
+            logger.debug('... matches %s', wanted.name)
+            self.found[wanted.name] = path
+            self.file_status[wanted.name] = FillResult.COMPLETE
+
+            # opportunistically use this same file to provide anything else that
+            # has the same hashes (a duplicate file with a different name)
+            for other_name in (self.game.known_md5s.get(hashes.md5, set()) |
+                    self.game.known_sha1s.get(hashes.sha1, set()) |
+                    self.game.known_sha256s.get(hashes.sha256, set())):
+                other = self.game.files[other_name]
+                if other is not wanted and other.matches(hashes):
+                    logger.debug('... also matches %s', other_name)
+                    self.found[other_name] = path
+                    self.file_status[other_name] = FillResult.COMPLETE
+
+            # no point in continuing, we've identified everything that matches
+            # the hashes
             return True
 
-        logger.debug('... yes, looks good')
-        self.found[wanted.name] = path
-        self.file_status[wanted.name] = FillResult.COMPLETE
-
-        # opportunistically use this same file to provide anything else that
-        # has the same hashes (a duplicate file with a different name)
-        for other_name in (self.game.known_md5s.get(hashes.md5, set()) |
-                self.game.known_sha1s.get(hashes.sha1, set()) |
-                self.game.known_sha256s.get(hashes.sha256, set())):
-            other = self.game.files[other_name]
-            if other.matches(hashes):
-                self.found[other_name] = path
-                self.file_status[other_name] = FillResult.COMPLETE
-
-        return True
+        self._log_not_any_of(path, size, hashes, found, candidates)
 
     def consider_file(self, path, really_should_match_something, trusted=False):
         if not os.path.exists(path):
             # dangling symlink
             return
-
-        tried = set()
 
         match_path = '/' + path.lower()
         size = os.stat(path).st_size
@@ -548,49 +529,36 @@ class PackagingTask(object):
 
         for look_for, candidates in self.game.known_filenames.items():
             if match_path.endswith('/' + look_for):
-                hashes = _ensure_hashes(hashes, path, size)
-                for wanted_name in candidates:
-                    if wanted_name in tried:
-                        continue
-                    tried.add(wanted_name)
-                    if self.use_file(self.game.files[wanted_name], path, hashes,
-                            log=(self.game.files[wanted_name].distinctive_name
-                                and len(candidates) == 1)):
+                candidates = [self.game.files[c] for c in candidates]
+                if candidates:
+                    hashes = _ensure_hashes(hashes, path, size)
+                    if self.use_file('possible "%s"' % look_for, candidates,
+                            path, hashes):
                         return
-                else:
-                    if len(candidates) > 1:
-                        candidates = [self.game.files[c] for c in candidates]
-                        for candidate in candidates:
-                            if not candidate.distinctive_name:
-                                break
-                            else:
-                                self._log_not_any_of(path, size, hashes,
-                                        'possible "%s"' % look_for, candidates)
 
         if size in self.game.known_sizes:
-            hashes = _ensure_hashes(hashes, path, size)
             candidates = self.game.known_sizes[size]
-            for wanted_name in candidates:
-                if wanted_name in tried:
-                    continue
-                tried.add(wanted_name)
-                if self.use_file(self.game.files[wanted_name], path, hashes,
-                        log=(len(candidates) == 1)):
+            if candidates:
+                hashes = _ensure_hashes(hashes, path, size)
+                candidates = [self.game.files[c] for c in candidates]
+                if self.use_file('file of size %d' % size,
+                        candidates, path, hashes):
                     return
-                else:
-                    if len(candidates) > 1:
-                        self._log_not_any_of(path, size, hashes,
-                                'file of size %d' % size,
-                                [self.game.files[c] for c in candidates])
 
         if hashes is not None:
-            for wanted_name in (self.game.known_md5s.get(hashes.md5, set()) |
+            look_for = None
+            candidates = set()
+
+            for c in (self.game.known_md5s.get(hashes.md5, set()) |
                     self.game.known_sha1s.get(hashes.sha1, set()) |
                     self.game.known_sha256s.get(hashes.sha256, set())):
-                if wanted_name is not None and wanted_name not in tried:
-                    tried.add(wanted_name)
-                    if self.use_file(self.game.files[wanted_name], path, hashes):
-                        return
+                look_for = c
+                candidates.add(self.game.files[c])
+
+            if candidates and self.use_file('possible "%s"' % c,
+                    candidates, path, hashes):
+                return
+
             if not trusted:
                 trusted = GOG.verify_checksum(path, size, hashes.md5)
 
@@ -645,14 +613,17 @@ class PackagingTask(object):
                 '    size:   %d bytes\n' +
                 '    md5:    %s\n' +
                 '    sha1:   %s\n' +
-                '    sha256: %s\n' +
-                'expected one of:\n')
+                '    sha256: %s\n')
         args = (why, path, size, hashes.md5, hashes.sha1, hashes.sha256)
 
-        for candidate in candidates:
-            if candidate.unsuitable:
-                continue
+        candidates = [c for c in candidates if not c.unsuitable]
 
+        if len(candidates) == 1:
+            message += 'expected:\n'
+        elif len(candidates) > 1:
+            message += 'expected one of:\n'
+
+        for candidate in candidates:
             message = message + ('  %s:\n' +
                     '    size:   ' + (
                         '%s' if candidate.size is None else '%d bytes') +
@@ -816,7 +787,7 @@ class PackagingTask(object):
                 if orig_time is not None:
                     os.utime(tmp, (orig_time, orig_time))
 
-                if not self.use_file(wanted, tmp, hf):
+                if not self.use_file(wanted.name, (wanted,), tmp, hf):
                     os.remove(tmp)
 
         if should_provide:
@@ -846,7 +817,7 @@ class PackagingTask(object):
                         progress=(wanted.size > QUITE_LARGE))
             orig_time = os.stat(self.found[provider.name]).st_mtime
             os.utime(path, (orig_time, orig_time))
-            self.use_file(wanted, path, hasher)
+            self.use_file(wanted.name, (wanted,), path, hasher)
 
     def fill_gap(self, package, wanted, download=False, log=True, recheck=False):
         """Try to unpack, download or otherwise obtain wanted.
@@ -948,7 +919,7 @@ class PackagingTask(object):
                                 size=wanted.size, progress=True)
                         wf.close()
 
-                        if self.use_file(wanted, tmp, hf):
+                        if self.use_file(wanted.name, (wanted,), tmp, hf):
                             assert self.found[wanted.name] == tmp
                             assert (self.file_status[wanted.name] ==
                                     FillResult.COMPLETE)
@@ -1056,7 +1027,7 @@ class PackagingTask(object):
 
                     orig_time = os.stat(found_name).st_mtime
                     os.utime(tmp, (orig_time, orig_time))
-                    self.use_file(wanted, tmp, None)
+                    self.use_file(wanted.name, (wanted,), tmp, None)
                 elif fmt in ('tar.*', 'tar.gz', 'tar.bz2', 'tar.xz'):
                     reader = open(found_name, 'rb')
                     with TarUnpacker(found_name, reader, compression=fmt[4:],
@@ -1268,7 +1239,7 @@ class PackagingTask(object):
                             self.found[basis.name], out_path])
                         orig_time = os.stat(found_name).st_mtime
                         os.utime(out_path, (orig_time, orig_time))
-                        self.use_file(wanted, out_path)
+                        self.use_file(wanted.name, (wanted,), out_path)
 
                 elif fmt == 'umod':
                     with Umod(found_name) as unpacker:
@@ -1279,7 +1250,7 @@ class PackagingTask(object):
                             FillResult.COMPLETE)
                     return FillResult.COMPLETE
             elif wanted.size == 0:
-                self.use_file(wanted, '/dev/null')
+                self.use_file(wanted.name, (wanted,), '/dev/null')
             elif self.file_status[provider_name] is FillResult.DOWNLOAD_NEEDED:
                 # we don't have it, but we can get it
                 self.file_status[wanted.name] |= FillResult.DOWNLOAD_NEEDED
