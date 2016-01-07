@@ -2457,6 +2457,7 @@ class PackagingTask(object):
             arch = package.architecture
             if arch != 'all':
                 arch = self.packaging.get_architecture(arch)
+            arch = self.packaging.ARCH_DECODE.get(arch, arch)
 
             if FORMAT == 'deb':
                 pkg = self.build_deb(package, arch, destination, compress=compress)
@@ -2643,11 +2644,6 @@ class PackagingTask(object):
         if not self.fill_dest_dir(package, destdir):
             return None
 
-        arch = {'all': 'any',
-                'amd64': 'x86_64',
-                'i386': 'i686',
-                }.get(arch, arch)
-
         self.fill_dest_dir_arch(package, destdir, compress, arch)
         self.our_dh_fixperms(destdir)
 
@@ -2680,12 +2676,6 @@ class PackagingTask(object):
 
         if not self.fill_dest_dir(package, destdir):
             return None
-
-        # translate back from Debian arch name
-        arch = {'all': 'noarch',
-                'amd64': 'x86_64',
-                'i386': 'i686',
-                 }.get(arch, arch)
 
         if arch == 'noarch':
             setarch = []

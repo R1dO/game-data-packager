@@ -28,6 +28,11 @@ logger = logging.getLogger(__name__)
 class RpmPackaging(PackagingSystem):
     CHECK_CMD = 'rpmlint'
     LICENSEDIR = 'usr/share/licenses'
+    ARCH_DECODE = {
+                  'all': 'noarch',
+                  'i386': 'i686',
+                  'amd64': 'x86_64',
+                  }
 
     def is_installed(self, package):
         return 0 == subprocess.call(['rpm', '-q', package],

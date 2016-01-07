@@ -34,6 +34,11 @@ class ArchPackaging(PackagingSystem):
                   '7z': 'p7zip',
                   # XXX
                   }
+    ARCH_DECODE = {
+                  'all': 'any',
+                  'amd64': 'x86_64',
+                  'i386': 'i686',
+                  }
 
     def read_architecture(self):
         super(ArchPackaging, self).read_architecture()

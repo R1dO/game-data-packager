@@ -31,6 +31,12 @@ class PackagingSystem(metaclass=ABCMeta):
     # 'None' means that this pgm is not packaged by $distro
     PACKAGE_MAP = dict()
 
+    # we keep Debian codification as reference, as it
+    # - has the most architectures supported
+    # - differentiates 'any' from 'all'
+    # - is the most tested
+    ARCH_DECODE = dict()
+
     def __init__(self):
         self._architecture = None
         self._foreign_architectures = set()
