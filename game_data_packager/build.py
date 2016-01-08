@@ -1493,6 +1493,7 @@ class PackagingTask(object):
                            '/usr/share',
                            '/usr/share/applications',
                            '/usr/share/doc',
+                           '/usr/share/doc/packages',
                            '/usr/share/icons/hicolor/scalable/apps',
                            '/usr/share/licenses',
                            '/usr/share/pixmaps'])
@@ -1588,7 +1589,7 @@ class PackagingTask(object):
         if not self.check_complete(package, log=True):
             return False
 
-        pkgdocdir = os.path.join('usr/share/doc', package.name)
+        pkgdocdir = os.path.join(self.packaging.DOCDIR, package.name)
         dest_pkgdocdir = os.path.join(destdir, pkgdocdir)
         mkdir_p(dest_pkgdocdir)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
@@ -1980,7 +1981,7 @@ class PackagingTask(object):
 
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
-                path = '/usr/share/doc/' + package.name
+                path = '/' + self.packaging.DOCDIR + '/' + package.name
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
 

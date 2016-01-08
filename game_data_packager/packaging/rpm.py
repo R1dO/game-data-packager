@@ -27,7 +27,6 @@ logger = logging.getLogger(__name__)
 
 class RpmPackaging(PackagingSystem):
     CHECK_CMD = 'rpmlint'
-    LICENSEDIR = 'usr/share/licenses'
     ARCH_DECODE = {
                   'all': 'noarch',
                   'i386': 'i686',
@@ -79,6 +78,7 @@ class RpmPackaging(PackagingSystem):
 #      As install_packages() needs root, we need to use the 'dnf' pgm
 
 class DnfPackaging(RpmPackaging):
+    LICENSEDIR = 'usr/share/licenses'
     INSTALL_CMD = 'dnf install'
     PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
@@ -124,6 +124,8 @@ class DnfPackaging(RpmPackaging):
                 gain_root=gain_root)
 
 class ZypperPackaging(RpmPackaging):
+    DOCDIR = 'usr/share/doc/packages'
+    LICENSEDIR = 'usr/share/doc/packages'
     INSTALL_CMD = 'zypper install'
     PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
