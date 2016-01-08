@@ -110,8 +110,9 @@ class PackagingSystem(metaclass=ABCMeta):
         return string.Template(template).substitute(kwargs,
                 assets=self.ASSETS,
                 bindir=self.BINDIR,
+                docdir=self.DOCDIR,
                 licensedir=self.LICENSEDIR,
-                pkgdocdir='usr/share/doc/' + package,
+                pkgdocdir=self.DOCDIR + '/' + package,
                 pkglicensedir=self.LICENSEDIR + '/' + package,
                 )
 
