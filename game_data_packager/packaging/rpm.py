@@ -57,7 +57,7 @@ class RpmPackaging(PackagingSystem):
     def install_packages(self, rpms, method=None, gain_root='su'):
         """Install one or more packages (a list of filenames)."""
 
-        if method is None:
+        if not method:
             method = 'rpm'
 
         if method == 'dnf':
