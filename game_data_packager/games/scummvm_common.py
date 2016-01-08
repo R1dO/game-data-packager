@@ -134,7 +134,8 @@ class ScummvmTask(PackagingTask):
             entry['Exec'] = 'scummvm -p /%s %s' % (install_to, gameid)
             self.packaging.override_lintian(destdir, package.name,
                     'desktop-command-not-in-package',
-                    '%s/%s.desktop %s' % (appdir, package.name, 'scummvm'))
+                    'usr/share/applications/%s.desktop %s'
+                     % (package.name, 'scummvm'))
         else:
             pgm = package.name[0:len(package.name)-len('-data')]
             entry['Exec'] = pgm

@@ -85,7 +85,8 @@ class ZCodeTask(PackagingTask):
 
             self.packaging.override_lintian(destdir, package.name,
                     'desktop-command-not-in-package',
-                    '%s/%s.desktop %s' % (appdir, package.name, engine))
+                    'usr/share/applications/%s.desktop %s'
+                     % (package.name, engine))
 
             if engine == 'frotz':
                 bindir = os.path.join(destdir, self.packaging.BINDIR)

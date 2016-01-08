@@ -118,6 +118,7 @@ class ResidualvmTask(PackagingTask):
 
         self.packaging.override_lintian(destdir, package.name,
                 'desktop-command-not-in-package',
-                '%s/%s.desktop %s' % (appdir, package.name, 'residualvm'))
+                'usr/share/applications/%s.desktop %s' %
+                (package.name, 'residualvm'))
 
 GAME_DATA_SUBCLASS = ResidualvmGameData

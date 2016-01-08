@@ -177,8 +177,8 @@ class DoomTask(PackagingTask):
 
             self.packaging.override_lintian(destdir, package.name,
                     'desktop-command-not-in-package',
-                    '%s/%s.desktop %s' % (appdir,
-                        desktop_file, package.program))
+                    'usr/share/applications/%s.desktop %s' %
+                     (desktop_file, package.program))
 
             if FORMAT == 'deb':
                 debdir = os.path.join(destdir, 'DEBIAN')

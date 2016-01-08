@@ -105,6 +105,6 @@ class EcwolfTask(PackagingTask):
 
         self.packaging.override_lintian(destdir, package.name,
                 'desktop-command-not-in-package',
-                '%s/%s.desktop %s' % (appdir, package.name, 'ecwolf'))
+                'usr/share/applications/%s.desktop ecwolf' % package.name)
 
 GAME_DATA_SUBCLASS = EcwolfGameData
