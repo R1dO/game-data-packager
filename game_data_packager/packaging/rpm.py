@@ -26,6 +26,7 @@ from ..util import (check_output, run_as_root)
 logger = logging.getLogger(__name__)
 
 class RpmPackaging(PackagingSystem):
+    INSTALL_CMD = 'rpm -U'
     CHECK_CMD = 'rpmlint'
     ARCH_DECODE = {
                   'all': 'noarch',
@@ -163,7 +164,13 @@ class ZypperPackaging(RpmPackaging):
         super(ZypperPackaging, self).install_packages(rpms, method=method,
                 gain_root=gain_root)
 
+class UrpmiPackaging(RpmPackaging):
+    INSTALL_CMD = 'urpmi'
+
 def get_distro_packaging():
+    if os.path.isfile('/etc/mageia-release'):
+        return UrpmiPackaging()
+
     if os.path.isfile('/etc/redhat-release'):
         return DnfPackaging()
 

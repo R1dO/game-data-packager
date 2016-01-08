@@ -18,6 +18,11 @@ if os.path.isfile('/etc/debian_version'):
     FORMAT = 'deb'
     DISTRO = 'generic'
 
+# mageia also has a /etc/redhat-lease
+elif os.path.isfile('/etc/mageia-release'):
+    FORMAT = 'rpm'
+    DISTRO = 'mageia'
+
 elif os.path.isfile('/etc/redhat-release'):
     FORMAT = 'rpm'
     DISTRO = 'fedora'
