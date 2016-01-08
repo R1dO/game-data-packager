@@ -141,10 +141,7 @@ class ZypperPackaging(RpmPackaging):
                 stdout=subprocess.PIPE,
                 env={'LANG':'C'})
         for line in proc.stdout:
-            if ':' not in line:
-                continue
-            k, _, v = line.split(maxsplit=2)
-            if k == 'Version':
+            if line.startswith('Version:'):
                 return True
         return False
 
@@ -154,11 +151,8 @@ class ZypperPackaging(RpmPackaging):
                 stdout=subprocess.PIPE,
                 env={'LANG':'C'})
         for line in proc.stdout:
-            if ':' not in line:
-                continue
-            k, _, v = line.split(maxsplit=2)
-            if k == 'Version':
-                return v
+            if line.startswith('Version:'):
+                return line.split(':', maxsplit=1)[1]
 
     def install_packages(self, rpms, method='zypper', gain_root='su'):
         super(ZypperPackaging, self).install_packages(rpms, method=method,
