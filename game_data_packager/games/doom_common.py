@@ -136,9 +136,6 @@ class DoomTask(PackagingTask):
                     install_data(from_,
                         os.path.join(svgdir, desktop_file + ext))
 
-            docdir = os.path.join(destdir, 'usr/share/doc/%s' % package.name)
-            mkdir_p(docdir)
-
             appdir = os.path.join(destdir, 'usr/share/applications')
             mkdir_p(appdir)
 
