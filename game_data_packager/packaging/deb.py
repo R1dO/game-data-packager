@@ -31,7 +31,7 @@ class DebPackaging(PackagingSystem):
     BINDIR = 'usr/games'
     ASSETS = 'usr/share/games'
     CHECK_CMD = 'lintian'
-    INSTALL_CMD = 'apt-get install'
+    INSTALL_CMD = ['apt-get', 'install']
     PACKAGE_MAP = {
                   'id-shr-extract': 'dynamite',
                   'lha': 'lhasa',

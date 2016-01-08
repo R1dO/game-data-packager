@@ -26,7 +26,7 @@ from ..util import (check_output, run_as_root)
 logger = logging.getLogger(__name__)
 
 class RpmPackaging(PackagingSystem):
-    INSTALL_CMD = 'rpm -U'
+    INSTALL_CMD = ['rpm', '-U']
     CHECK_CMD = 'rpmlint'
     ARCH_DECODE = {
                   'all': 'noarch',
@@ -58,7 +58,7 @@ class RpmPackaging(PackagingSystem):
         """Install one or more packages (a list of filenames)."""
 
         if not method:
-            method = 'rpm'
+            method = self.INSTALL_CMD[0]
 
         if method == 'dnf':
             run_as_root(['dnf', 'install'] + list(rpms), gain_root)
@@ -80,7 +80,7 @@ class RpmPackaging(PackagingSystem):
 
 class DnfPackaging(RpmPackaging):
     LICENSEDIR = 'usr/share/licenses'
-    INSTALL_CMD = 'dnf install'
+    INSTALL_CMD = ['dnf', 'install']
     PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
                   'id-shr-extract': None,
@@ -127,7 +127,7 @@ class DnfPackaging(RpmPackaging):
 class ZypperPackaging(RpmPackaging):
     DOCDIR = 'usr/share/doc/packages'
     LICENSEDIR = 'usr/share/doc/packages'
-    INSTALL_CMD = 'zypper install'
+    INSTALL_CMD = ['zypper', 'install']
     PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
                   'id-shr-extract': None,
@@ -159,7 +159,7 @@ class ZypperPackaging(RpmPackaging):
                 gain_root=gain_root)
 
 class UrpmiPackaging(RpmPackaging):
-    INSTALL_CMD = 'urpmi'
+    INSTALL_CMD = ['urpmi']
 
 def get_distro_packaging():
     if os.path.isfile('/etc/mageia-release'):

@@ -2767,4 +2767,5 @@ class PackagingTask(object):
 
         if packages:
             logger.warning('installing these packages might help:\n' +
-                '%s %s', self.packaging.INSTALL_CMD, ' '.join(sorted(packages)))
+                '%s %s', ' '.join(self.packaging.INSTALL_CMD),
+                ' '.join(sorted(packages)))
