@@ -64,7 +64,12 @@ class RpmPackaging(PackagingSystem):
             run_as_root(['dnf', 'install'] + list(rpms), gain_root)
         elif method == 'zypper':
             run_as_root(['zypper', 'install'] + list(rpms), gain_root)
-        elif method == 'rpm':
+        elif method == 'urpmi':
+            run_as_root(['/usr/sbin/urpmi'] + list(rpms), gain_root)
+        else:
+            if method != 'rpm':
+                logger.warning(('Unknown installation method %r,'
+                                ' using rpm instead') % method)
             run_as_root(['rpm', '-U'] + list(rpms), gain_root)
 
 
@@ -160,6 +165,18 @@ class ZypperPackaging(RpmPackaging):
 
 class UrpmiPackaging(RpmPackaging):
     INSTALL_CMD = ['urpmi']
+
+    def is_available(self, package):
+        return 0 == subprocess.call(['urpmq', package],
+                                    stdout=subprocess.DEVNULL,
+                                    stderr=subprocess.DEVNULL)
+
+    def available_version(self, package):
+        try:
+            line = check_output(['urpmq', '-r', package]).decode('ascii')
+            return line.split('-')[-2]
+        except subprocess.CalledProcessError:
+            return None
 
 def get_distro_packaging():
     if os.path.isfile('/etc/mageia-release'):
