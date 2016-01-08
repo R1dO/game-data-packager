@@ -39,7 +39,9 @@ class UnrealTask(PackagingTask):
     def __add_manifest(self, package, destdir):
         # A real Manifest.ini is much larger than this, but this is
         # enough to identify the version.
-        install_to = package.install_to.lstrip('/')
+
+        install_to = self.packaging.substitute(package.install_to,
+                package.name).lstrip('/')
         mkdir_p(os.path.join(destdir, install_to, 'System'))
 
         with open(os.path.join(destdir, install_to, 'System',

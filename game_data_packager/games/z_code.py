@@ -45,6 +45,9 @@ class ZCodeTask(PackagingTask):
     def fill_extra_files(self, package, destdir):
         super(ZCodeTask, self).fill_extra_files(package, destdir)
 
+        install_to = self.packaging.substitute(package.install_to,
+                package.name).lstrip('/')
+
         with TemporaryUmask(0o022):
             appdir = os.path.join(destdir, 'usr/share/applications')
             mkdir_p(appdir)
@@ -64,7 +67,7 @@ class ZCodeTask(PackagingTask):
                 engine = 'gargoyle-free'
                 entry['Terminal'] = 'false'
             entry['TryExec'] = engine
-            arg = '/' + package.install_to + '/' + package.only_file
+            arg = '/' + install_to + '/' + package.only_file
             entry['Exec'] = engine + ' ' + arg
 
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')

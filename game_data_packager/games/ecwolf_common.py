@@ -80,6 +80,9 @@ class EcwolfTask(PackagingTask):
             mkdir_p(svgdir)
             install_data(from_, os.path.join(svgdir, '%s.svgz' % package.name))
 
+        install_to = self.packaging.substitute(package.install_to,
+                package.name).lstrip('/')
+
         desktop = configparser.RawConfigParser()
         desktop.optionxform = lambda option: option
         desktop['Desktop Entry'] = {}
@@ -88,7 +91,7 @@ class EcwolfTask(PackagingTask):
         entry['GenericName'] = self.game.genre + ' game'
         entry['TryExec'] = 'ecwolf'
         entry['Exec'] = 'ecwolf' + package.quirks
-        entry['Path'] = '/' + package.install_to
+        entry['Path'] = '/' + install_to
         entry['Icon'] = package.name
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
