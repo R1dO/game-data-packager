@@ -1494,6 +1494,9 @@ class PackagingTask(object):
                            '/usr/share/applications',
                            '/usr/share/doc',
                            '/usr/share/doc/packages',
+                           '/usr/share/icons',
+                           '/usr/share/icons/hicolor',
+                           '/usr/share/icons/hicolor/scalable',
                            '/usr/share/icons/hicolor/scalable/apps',
                            '/usr/share/licenses',
                            '/usr/share/pixmaps'])
