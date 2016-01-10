@@ -336,7 +336,6 @@ class Launcher:
 
         os.execve(self.argv[0], self.argv + self.args.arguments, environ)
 
-        raise AssertionError('nope')
         raise AssertionError('os.execve should never return')
 
     def load_text(self, filename, placeholder):
