@@ -38,7 +38,7 @@ out/%: data/%
 
 out/vfs/%.json: data/%.yaml
 	mkdir -p out/vfs
-	$(PYTHON) tools/yaml2json.py $< $@
+	$(PYTHON) tools/compile_yaml.py $< $@
 
 out/vfs.zip: $(json)
 	mkdir -p out
