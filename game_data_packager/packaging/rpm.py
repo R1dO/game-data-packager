@@ -164,7 +164,15 @@ class ZypperPackaging(RpmPackaging):
                 gain_root=gain_root)
 
 class UrpmiPackaging(RpmPackaging):
+    BINDIR = 'usr/games'
+    ASSETS = 'usr/share/games'
     INSTALL_CMD = ['urpmi']
+    PACKAGE_MAP = {
+                  'dpkg-deb': 'dpkg',
+                  'id-shr-extract': None,
+                  '7z': 'p7zip',
+                  'unrar-nonfree': 'unrar',
+                  }
 
     def is_available(self, package):
         return 0 == subprocess.call(['urpmq', package],
