@@ -1,0 +1,25 @@
+---
+longname: Plundered Hearts
+plugin: z_code
+copyright: © 1987 Infocom
+
+packages:
+  plundered-hearts-data:
+    install:
+    - plundere.z3
+
+files:
+  plundere.z3:
+    look_for:
+    - plundere.z3
+    - plundere.dat
+
+size_and_md5: |
+  # Release 26
+  128963    a18085862cc1c196367f5f5e785c06b1 plundere.z3
+
+sha1sums: |
+  # Release 26
+  958fbb3fdac3e90f39e6cc67a0c25ca8fc9bf79b  plundere.z3
+...
+

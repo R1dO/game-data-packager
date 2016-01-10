@@ -1,0 +1,25 @@
+---
+longname: "Suspended: Interlogic Science Fiction"
+plugin: z_code
+copyright: © 1983 Infocom
+
+packages:
+  suspended-data:
+    install:
+    - suspend.z3
+
+files:
+  suspend.z3:
+    look_for:
+    - suspend.z3
+    - suspend.dat
+
+size_and_md5: |
+  # Release 8
+  122880    0a7e9f0082e7c0b21ad3ad2dd1316732 suspend.z3
+
+sha1sums: |
+  # Release 8
+  d68a08e14eeba9c06d9b6b5dc0edf77f8461fad4  suspend.z3
+...
+

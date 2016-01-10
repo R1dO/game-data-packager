@@ -1,0 +1,25 @@
+---
+longname: "The Witness: An Interlogic Mystery"
+plugin: z_code
+copyright: © 1983 Infocom
+
+packages:
+  witness-data:
+    install:
+    - witness.z3
+
+files:
+  witness.z3:
+    look_for:
+    - witness.z3
+    - witness.dat
+
+size_and_md5: |
+  # Release 22
+  122880    0372fb18268062a98ed4e89635f1640e witness.z3
+
+sha1sums: |
+  # Release 22
+  a3689f840cb73a62089f24bbb82f9141a7c92512  witness.z3
+...
+

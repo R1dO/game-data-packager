@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1986 Infocom
+
+packages:
+  ballyhoo-data:
+    install:
+    - ballyhoo.z3
+
+files:
+  ballyhoo.z3:
+    look_for:
+    - ballyhoo.z3
+    - ballyhoo.dat
+
+size_and_md5: |
+  # Release 97
+  153600    feed2aa8b7eeac2f60c3f6ac536954d7 ballyhoo.z3
+
+sha1sums: |
+  # Release 97
+  b820df4b2e7f60383af961bbf8a967c429e560e7  ballyhoo.z3
+...
+

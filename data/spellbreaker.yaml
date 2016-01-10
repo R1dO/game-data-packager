@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1985 Infocom
+
+packages:
+  spellbreaker-data:
+    install:
+    - spellbre.z3
+
+files:
+  spellbre.z3:
+    look_for:
+    - spellbre.z3
+    - spellbre.dat
+
+size_and_md5: |
+  # Release 87
+  153600    abf472bdaad608913cfcfaff143582ad spellbre.z3
+
+sha1sums: |
+  # Release 87
+  2eca648690824cbb342cceb7e9ae147018c9a26e  spellbre.z3
+...
+

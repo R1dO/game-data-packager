@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1983, 1984, 1986 Infocom
+
+packages:
+  enchanter-data:
+    install:
+    - enchante.z3
+
+files:
+  enchante.z3:
+    look_for:
+    - enchante.z3
+    - enchante.dat
+
+size_and_md5: |
+  # Release 29
+  122880    c252e749c01dee90c268c032d87d767e enchante.z3
+
+sha1sums: |
+  # Release 29
+  7aca9f7704a337af60f65f0e9976ab30a60843bf  enchante.z3
+...
+

@@ -1,0 +1,25 @@
+---
+longname: "Deadline: An Interlogic Mystery"
+plugin: z_code
+copyright: © 1982 Infocom
+
+packages:
+  deadline-data:
+    install:
+    - deadline.z3
+
+files:
+  deadline.z3:
+    look_for:
+    - deadline.z3
+    - deadline.dat
+
+size_and_md5: |
+  # Release 27
+  122880    8070095106731ae18a4f2118a2d3a5af deadline.z3
+
+sha1sums: |
+  # Release 27
+  5376f5bff8f289d8e6ebd111464ea2a92b7d8edd  deadline.z3
+...
+

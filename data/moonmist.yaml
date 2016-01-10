@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1986 Infocom
+
+packages:
+  moonmist-data:
+    install:
+    - moonmist.z3
+
+files:
+  moonmist.z3:
+    look_for:
+    - moonmist.z3
+    - moonmist.dat
+
+size_and_md5: |
+  # Release 9
+  153600    4dc71e16857d0a9baa11b77fcaa46880 moonmist.z3
+
+sha1sums: |
+  # Release 9
+  09ac1df17a64cb2b6e537045f1c6ddba053a40de  moonmist.z3
+...
+

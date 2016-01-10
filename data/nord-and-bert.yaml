@@ -1,0 +1,25 @@
+---
+longname: "Nord and Bert Couldn't Make Head or Tail of It"
+plugin: z_code
+copyright: © 1987 Infocom
+
+packages:
+  nord-and-bert-data:
+    install:
+    - nordandb.z4
+
+files:
+  nordandb.z4:
+    look_for:
+    - nordandb.z4
+    - nordandb.dat
+
+size_and_md5: |
+  # Release 19
+  170285    cc5a8334a4fbb51166c625e52738c668 nordandb.z4
+
+sha1sums: |
+  # Release 19
+  145e2e438f05e140d299560ab977126693c35ed2  nordandb.z4
+...
+

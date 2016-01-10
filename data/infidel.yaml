@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1983 Infocom
+
+packages:
+  infidel-data:
+    install:
+    - infidel.z3
+
+files:
+  infidel.z3:
+    look_for:
+    - infidel.z3
+    - infidel.dat
+
+size_and_md5: |
+  # Release 22
+  122880    65815f4adf3ed3eba0ee93d161e3c10a infidel.z3
+
+sha1sums: |
+  # Release 22
+  3bc355a78f6bc261f934fcd78a0d72eddf12171d  infidel.z3
+...
+

@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1984 Infocom
+
+packages:
+  seastalker-data:
+    install:
+    - seastalk.z3
+
+files:
+  seastalk.z3:
+    look_for:
+    - seastalk.z3
+    - seastalk.dat
+
+size_and_md5: |
+  # Release 16
+  117763    9076a8eba9b056336cf4ba88096b7945 seastalk.z3
+
+sha1sums: |
+  # Release 16
+  eb3118800f5e025382168536f620e2e7c74576af  seastalk.z3
+...
+

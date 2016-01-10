@@ -1,0 +1,25 @@
+---
+longname: "Border Zone: A Game of Intrigue"
+plugin: z_code
+copyright: © 1987 Infocom
+
+packages:
+  border-zone-data:
+    install:
+    - borderzo.z5
+
+files:
+  borderzo.z5:
+    look_for:
+    - borderzo.z5
+    - borderzo.dat
+
+size_and_md5: |
+  # Release 9
+  178373    9ae7b2d14c2f3e2873adc71bcc35d663 borderzo.z5
+
+sha1sums: |
+  # Release 9
+  5f4052d55a88d11d8af6fc7b49289f4a949eff1f  borderzo.z5
+...
+

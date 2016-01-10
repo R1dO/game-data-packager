@@ -1,0 +1,25 @@
+---
+longname: Hollywood Hijinx
+plugin: z_code
+copyright: © 1986 Infocom
+
+packages:
+  hollywood-hijinx-data:
+    install:
+    - hollywoo.z3
+
+files:
+  hollywoo.z3:
+    look_for:
+    - hollywoo.z3
+    - hollywoo.dat
+
+size_and_md5: |
+  # Release 37
+  109651    07c73589a3257b79c459a4a3176a2d03 hollywoo.z3
+
+sha1sums: |
+  # Release 37
+  b81c4ea08952df1ee251eb8ecc3e9a4f36e41d9f  hollywoo.z3
+...
+

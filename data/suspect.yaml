@@ -1,0 +1,25 @@
+---
+longname: "Suspect: An Interactive Mystery"
+plugin: z_code
+copyright: © 1984 Infocom
+
+packages:
+  suspect-data:
+    install:
+    - suspect.z3
+
+files:
+  suspect.z3:
+    look_for:
+    - suspect.z3
+    - suspect.dat
+
+size_and_md5: |
+  # Release 14
+  122880    523399f4d9345c4b9b38a12e0fb01327 suspect.z3
+
+sha1sums: |
+  # Release 14
+  107f999d6a8e61f2b4727953b7743cd6be131d7d  suspect.z3
+...
+

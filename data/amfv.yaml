@@ -1,0 +1,25 @@
+---
+longname: A Mind Forever Voyaging
+plugin: z_code
+copyright: © 1985 Infocom
+
+packages:
+  amfv-data:
+    install:
+    - amfv.z4
+
+files:
+  amfv.z4:
+    look_for:
+    - amfv.z4
+    - amfv.dat
+
+size_and_md5: |
+  # Release 77
+  262018    7df2c4bf8f7c42b7daaa17d9af18ccb1 amfv.z4
+
+sha1sums: |
+  # Release 77
+  26236f7bbdc3cda73c411ad8dc9cd59cf5a021b4  amfv.z4
+...
+

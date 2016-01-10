@@ -1,0 +1,25 @@
+---
+longname: "Starcross: Interlogic Science Fiction"
+plugin: z_code
+copyright: © 1982 Infocom
+
+packages:
+  starcross-data:
+    install:
+    - starcros.z3
+
+files:
+  starcros.z3:
+    look_for:
+    - starcros.z3
+    - starcros.dat
+
+size_and_md5: |
+  # Release 17
+  92160    24ddb05b263c6511ebac3b95731cc00d starcros.z3
+
+sha1sums: |
+  # Release 17
+  ca95b5f2c1615a641abbae60f7bcbd2431119446  starcros.z3
+...
+

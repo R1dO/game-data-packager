@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1984 Infocom
+
+packages:
+  sorcerer-data:
+    install:
+    - sorcerer.z3
+
+files:
+  sorcerer.z3:
+    look_for:
+    - sorcerer.z3
+    - sorcerer.dat
+
+size_and_md5: |
+  # Release 15
+  122880    a631d43ba792ae9c0bc994bd837c98c2 sorcerer.z3
+
+sha1sums: |
+  # Release 15
+  503943a158ab0ec6042b7b9e8674198102875221  sorcerer.z3
+...
+

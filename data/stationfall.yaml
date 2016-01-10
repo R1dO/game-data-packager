@@ -1,0 +1,24 @@
+---
+plugin: z_code
+copyright: © 1987 Infocom
+
+packages:
+  stationfall-data:
+    install:
+    - stationf.z3
+
+files:
+  stationf.z3:
+    look_for:
+    - stationf.z3
+    - stationf.dat
+
+size_and_md5: |
+  # Release 107
+  153600    ceef599f4ff85f9ff6463187de156271 stationf.z3
+
+sha1sums: |
+  # Release 107
+  7dd3e7312455208c8ad70268670fdb87ea316ffa  stationf.z3
+...
+

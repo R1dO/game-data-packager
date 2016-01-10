@@ -1,0 +1,25 @@
+---
+longname: "Sherlock: The Riddle of the Crown Jewels"
+plugin: z_code
+copyright: © 1987 Infocom
+
+packages:
+  sherlock-data:
+    install:
+    - sherlock.z5
+
+files:
+  sherlock.z5:
+    look_for:
+    - sherlock.z5
+    - sherlock.dat
+
+size_and_md5: |
+  # Release 21
+  188445    b0497df9a736a1eb566e03df0b9b1362 sherlock.z5
+
+sha1sums: |
+  # Release 21
+  9c9bc104e79cc2097a1eacbaf6f8a3e46c682f84  sherlock.z5
+...
+

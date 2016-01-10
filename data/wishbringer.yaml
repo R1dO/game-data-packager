@@ -1,0 +1,25 @@
+---
+longname: "Wishbringer: The Magick Stone of Dreams"
+plugin: z_code
+copyright: © 1985 Infocom
+
+packages:
+  wishbringer-data:
+    install:
+    - wishbrin.z3
+
+files:
+  wishbrin.z3:
+    look_for:
+    - wishbrin.z3
+    - wishbrin.dat
+
+size_and_md5: |
+  # Release 69
+  128905    409127ef13098279462fcbd11dea5e61 wishbrin.z3
+
+sha1sums: |
+  # Release 69
+  3b035641846a6252c719af725f0be7c394a24585  wishbrin.z3
+...
+

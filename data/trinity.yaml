@@ -1,0 +1,26 @@
+---
+plugin: z_code
+copyright: © 1986 Infocom
+
+# This game doesn't work with Gargoyle
+
+packages:
+  trinity-data:
+    install:
+    - trinity.z4
+
+files:
+  trinity.z4:
+    look_for:
+    - trinity.z4
+    - trinity.dat
+
+size_and_md5: |
+  # Release 12
+  262065    04266c459f77d02a76375eb15c3c4779 trinity.z4
+
+sha1sums: |
+  # Release 12
+  c5416c4761244ccddf95c32e231912ffccdd1e0c  trinity.z4
+...
+

@@ -1,0 +1,25 @@
+---
+longname: The Lurking Horror
+plugin: z_code
+copyright: © 1987 Infocom
+
+packages:
+  lurking-horror-data:
+    install:
+    - lurking.z3
+
+files:
+  lurking.z3:
+    look_for:
+    - lurking.z3
+    - lurking.dat
+
+size_and_md5: |
+  # Release 203
+  153600    87a6fbfd422b1a097286c0c23c45015c lurking.z3
+
+sha1sums: |
+  # Release 203
+  c8f75b354195fd59fba77a992fc31ccf513b089c  lurking.z3
+...
+
