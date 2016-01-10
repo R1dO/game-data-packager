@@ -59,7 +59,7 @@ packages:
       game: beyond_zork_the_coconut_of_quendor
     install_to: $assets/zork
     install:
-    - beyondzo.z3
+    - beyondzo.z5
     doc:
     - manual.pdf?beyondzork
 
@@ -87,8 +87,8 @@ files:
     look_for: [zork2.dat,zork2.z3]
   zork3.z3:
     look_for: [zork3.dat,zork3.z3]
-  beyondzo.z3:
-    look_for: [beyondzo.dat,beyondzo.z3]
+  beyondzo.z5:
+    look_for: [beyondzo.dat,beyondzo.z3,beyondzo.z5]
   planetfa.z3:
     look_for: [planetfa.dat,planetfa.z3]
 
@@ -138,7 +138,7 @@ files:
     - zork1.z3_zip
     - zork2.z3
     - zork3.z3
-    - beyondzo.z3
+    - beyondzo.z5
     - planetfa.z3
     # Zero Zork
 
@@ -179,7 +179,7 @@ files:
       - beyondzo.dat
       - manual.pdf
     provides:
-    - beyondzo.z3
+    - beyondzo.z5
     - manual.pdf?beyondzork
 
   setup_planetfall_2.1.0.17.exe:
@@ -210,7 +210,7 @@ size_and_md5: |
   84992     4a0f76b9014a4c407520920710c42588 zork1.z3_alt
 
   # 3 extra games sold in the GOG bundle
-  276480    743c4a97b9c85d89d85d4f1e8e8bfe85 beyondzo.z3
+  276480    743c4a97b9c85d89d85d4f1e8e8bfe85 beyondzo.z5
   122880    d7bbc3de5ad590c3ab641c020a936c41 planetfa.z3
   # Zero Zork is not supported by a free engine
 
@@ -239,7 +239,7 @@ sha1sums: |
   008441c48b8ffa0c64d78cba5e9735a2045f359d  zork3.z3
   66fe2ac86b5b53406a272b75be3bb0e34c894fff  zork3.zip
   f51b2c8742817bcd9e7c7c3a208c1b43c06cfadc  setup_zork_anthology.exe
-  835145b092498eba5be24542a0a2aec8e3199557  beyondzo.z3
+  835145b092498eba5be24542a0a2aec8e3199557  beyondzo.z5
   77769447c4c77d100a3ed722f712110e8576bea4  planetfa.z3
 
   11db617ceb8620ce1672161e5f1cb7b590bb6085  manual.pdf?zork1
