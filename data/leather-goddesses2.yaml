@@ -1,0 +1,44 @@
+---
+franchise: Leather Goddesses of Phobos
+longname: "Leather Goddesses of Phobos 2: Gas Pump Girls Meet the Pulsating Inconvenience from Planet X!"
+copyright: © 1992 Infocom
+plugin: scummvm_common
+gameid: lgop2
+wiki: Leather_Goddesses_of_Phobos_2
+missing_langs: [de,es]
+
+packages:
+  leather-goddesses2-en-data:
+    provides: leather-goddesses-data
+    install:
+    - assets english
+
+  leather-goddesses2-fr-data:
+    provides: leather-goddesses-data
+    lang: fr
+    gameid: lgop2-fr
+    install:
+    - assets french
+
+groups:
+  assets english: |
+    280280    abcf043701ec480898829091a9efccd6 lgop2.dat
+    14353021  c9f0d259d76de19b8a75738f7a9b3d07 lgop2.prj
+  assets german: |
+    299466    _                                lgop2.dat?de
+  assets spanish: |
+    288984    _                                lgop2.dat?es
+  assets french: |
+    295366    72916dc8b7f3c66e6fb175407f44bade lgop2.dat?fr
+    14862536  565734cd7dd7cd57bef10d9accc5f462 lgop2.prj?fr
+
+sha1sums: |
+  ae7847f99d5cecaecc36b0a4663f85bfda0e0aa4 lgop2.dat
+  2526925ad7f4c8b354d9ceb1c4b4096eca982ecb lgop2.prj
+  f03ce6b719792f140c44071e52e646b86b77d0b4 lgop2.dat?fr
+  e7b7f6e5872b643a359de740d79cf63e672bb790 lgop2.prj?fr
+
+sha256sums: |
+  06e7a2fb1da68c2ce2de79c67c199eaec2f1fe56e1a96b4993f972ad7d714416 lgop2.dat?fr
+  f1ca15905fd87fc22ae772c41a17356be1b4f871adb827fb24da33a9f322d58c lgop2.prj?fr
+...
