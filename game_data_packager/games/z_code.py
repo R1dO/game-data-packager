@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # encoding=utf-8
 #
-# Copyright © 2015 Simon McVittie <smcv@debian.org>
-#             2015 Alexandre Detiste <alexandre@detiste.be>
+# Copyright © 2015-2016 Simon McVittie <smcv@debian.org>
+#             2015-2016 Alexandre Detiste <alexandre@detiste.be>
+#             2016 Stephen Kitt
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
