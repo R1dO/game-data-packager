@@ -11,6 +11,8 @@ help_text:
   The "Zork Anthology" also includes "Beyond Zork"
   and adds "Planetfall" as a bonus.
 
+  Zero Zork is not supported.
+
 packages:
   zork1-data:
     longname: "Zork I: The Great Underground Empire"
@@ -220,10 +222,13 @@ size_and_md5: |
   1885475   97b4e20b13f49e14309a5c99bbd1c2f3 manual.pdf?zork3
   364616    3442be09f8e997aa359d8a1872dd254c manual.pdf?beyondzork
   1857160   deae31370ff0dd13a3543ef41c409fd6 manual.pdf?planetfall
+
   # older archive
   # ?       f53b893a244737c63180993db4100190 setup_zork_anthology.exe
   # ?       f24d4c64e0b01d81beae7a5d788bbd9b setup_zork_anthology.exe
   9752528   86edb0fefd9c4fbe62f51b869e2a1bec setup_zork_anthology.exe
+
+  # new splitted archives
   17799208  6bd42788d696f154ce363830909259d3 setup_zork_2.1.0.17.exe
   18861008  2ea2cf45bb6cf76b0365567e81f27aab setup_zork2_2.1.0.17.exe
   18497752  1526e9be21bf47412dc053f4097e25bd setup_zork3_2.1.0.17.exe
