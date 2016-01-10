@@ -23,6 +23,7 @@ import os
 from .. import GameData
 from ..build import (PackagingTask)
 from ..util import (TemporaryUmask,
+                    which,
                     mkdir_p)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
@@ -59,13 +60,14 @@ class ZCodeTask(PackagingTask):
             entry['Categories'] = 'Game;'
             entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
-            if (self.packaging.is_installed('frotz') and
-                    not self.packaging.is_installed('gargoyle-free')):
-                engine = 'frotz'
-                entry['Terminal'] = 'true'
-            else:
-                engine = 'gargoyle-free'
-                entry['Terminal'] = 'false'
+            engine = 'gargoyle-free'
+            entry['Terminal'] = 'false'
+            if not self.packaging.is_installed('gargoyle-free'):
+                for try_engine in ('frotz', 'nfrotz', 'fizmo'):
+                    if which(try_engine):
+                        engine = try_engine
+                        entry['Terminal'] = 'true'
+                        break
             entry['TryExec'] = engine
             arg = '/' + install_to + '/' + package.only_file
             entry['Exec'] = engine + ' ' + arg
@@ -88,15 +90,16 @@ class ZCodeTask(PackagingTask):
                     'usr/share/applications/%s.desktop %s'
                      % (package.name, engine))
 
-            if engine == 'frotz':
+            if engine != 'gargoyle-free':
+                engine = which(engine)
                 bindir = os.path.join(destdir, self.packaging.BINDIR)
                 mkdir_p(bindir)
                 pgm = package.name[0:len(package.name)-len('-data')]
                 path = os.path.join(bindir, pgm)
                 with open(path, 'w') as f:
                      f.write('#!/bin/sh\n')
-                     f.write('test -x /%s/frotz && exec frotz $@ %s\n' %
-                             (self.packaging.BINDIR, arg))
+                     f.write('test -x %s && exec %s $@ %s\n' %
+                             (engine, engine, arg))
                      f.write('echo "You need to install some engine '
                                    'like frotz to play this game"\n')
                 os.chmod(path, 0o755)
