@@ -1576,15 +1576,28 @@ class PackagingTask(object):
         return specfile
 
     def fill_dest_dir_deb(self, package, destdir):
+        # same output as in dh_md5sums
+
+        # we only compute here the md5 we don't have yet,
+        # for the (small) GDP-generated files
+        for dirpath, dirnames, filenames in os.walk(destdir):
+            for fn in filenames:
+                full = os.path.join(dirpath, fn)
+                if os.path.islink(full):
+                    continue
+                file = full[len(destdir)+1:]
+                if file not in package.md5sums:
+                    with open(full, 'rb') as opened:
+                        hf = HashedFile.from_file(full, opened)
+                        package.md5sums[file] = hf.md5
+
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
-
-        # adapted from dh_md5sums
-        check_call("find . -type f ! -regex '\./DEBIAN/.*' " +
-                "-printf '%P\\0' | LC_ALL=C sort -z | " +
-                "xargs -r0 md5sum > DEBIAN/md5sums",
-                shell=True, cwd=destdir)
-        os.chmod(os.path.join(destdir, 'DEBIAN/md5sums'), 0o644)
+        md5sums = os.path.join(destdir, 'DEBIAN/md5sums')
+        with open(md5sums, 'w', encoding='utf8') as outfile:
+            for file in sorted(package.md5sums.keys()):
+                outfile.write('%s  %s\n' % (package.md5sums[file], file))
+        os.chmod(md5sums, 0o644)
 
         try:
             control_in = open(self.get_control_template(package),
@@ -1614,10 +1627,12 @@ class PackagingTask(object):
 
             if wanted.name in self.found:
                 copy_from = self.found[wanted.name]
+                md5 = wanted.md5
             else:
                 for alt in wanted.alternatives:
                     if alt in self.found:
                         copy_from = self.found[alt]
+                        md5 = self.game.files[alt].md5
                         if wanted.install_as == '$alternative':
                             install_as = self.game.files[alt].install_as
                         break
@@ -1656,6 +1671,9 @@ class PackagingTask(object):
                     os.chmod(copy_to, 0o755)
                 else:
                     os.chmod(copy_to, 0o644)
+
+                fullname = os.path.join(install_to, install_as)
+                package.md5sums[fullname] = md5
 
         install_to = self.packaging.substitute(package.install_to,
                 package.name).lstrip('/')

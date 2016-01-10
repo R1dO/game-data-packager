@@ -313,6 +313,10 @@ class GameDataPackage(object):
         # archives actually used to built a package
         self.used_sources = set()
 
+        # Remember the md5 of installed files
+        # that will end up in DEBIAN/md5sums
+        self.md5sums = dict()
+
     @property
     def aliases(self):
         return self._aliases
