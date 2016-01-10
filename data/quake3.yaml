@@ -42,6 +42,10 @@ packages:
     steam:
       id: 2200
       path: "common/Quake 3 Arena"
+    rpm:
+      engine: ioquake3
+    mageia:
+      install_to: usr/share/ioquake3
     gog:
       url: quake_iii_gold
     # We deliberately only put baseq3 in the search path, not

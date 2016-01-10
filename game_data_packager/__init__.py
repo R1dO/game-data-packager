@@ -820,7 +820,7 @@ class GameData(object):
                 # for historical reasons)
                 'debian', 'rpm',
                 # specific distributions
-                'arch', 'fedora', 'suse',
+                'arch', 'fedora', 'mageia', 'suse',
                 ):
             if port in d:
                 package.specifics[port] = d[port]
