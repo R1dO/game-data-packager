@@ -1487,19 +1487,24 @@ class PackagingTask(object):
         else:
             url = 'https://wiki.debian.org/Games/GameDataPackager'
 
+        # /usr/games & /usr/share/games should only
+        # be seen in rpm's built for Mageia
         SYSTEM_DIRS = set(['/usr',
                            '/usr/bin',
+                           '/usr/games',
                            '/usr/lib',
                            '/usr/share',
                            '/usr/share/applications',
                            '/usr/share/doc',
                            '/usr/share/doc/packages',
+                           '/usr/share/games',
                            '/usr/share/icons',
                            '/usr/share/icons/hicolor',
                            '/usr/share/icons/hicolor/scalable',
                            '/usr/share/icons/hicolor/scalable/apps',
                            '/usr/share/licenses',
                            '/usr/share/pixmaps'])
+
         files = set()
         for dirpath, dirnames, filenames in os.walk(destdir):
              dir = dirpath[len(destdir):]
