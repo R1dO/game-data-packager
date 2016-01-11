@@ -71,11 +71,6 @@ make check
 
 %install
 make DESTDIR=$RPM_BUILD_ROOT bindir=/usr/bin install
-VERSION_PY=$RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager/version.py
-echo '#!/usr/bin/python3' > $VERSION_PY
-echo 'GAME_PACKAGE_VERSION = """%{version}"""' >> $VERSION_PY
-echo 'FORMAT = "rpm"' >> $VERSION_PY
-echo 'DISTRO = "fedora"' >> $VERSION_PY
 find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
 find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need more mirrors' > {}" \;
 
