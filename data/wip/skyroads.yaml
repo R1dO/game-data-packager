@@ -1,0 +1,123 @@
+---
+longname: SkyRoads
+copyright: © 1993 Bluemoon
+plugin: dosbox
+genre: Flight simulator
+
+packages:
+  skyroads-data:
+    install:
+    - assets
+    # .exe is explicitely stated again
+    # so main_exe algorithm can see it
+    # before group expansion
+    - skyroads.exe
+    license:
+    - readme.txt
+
+files:
+  skyroads.zip:
+    download: http://www.bluemoon.ee/history/skyroads/skyroads.zip
+    unpack:
+     format: zip
+    provides:
+    - assets
+    - readme.txt
+
+groups:
+  archives: |
+    593740    e5918f9bdb604507d0434619ed7d9faa skyroads.zip
+    683       dc1034d32e560960018bf1104e8be6b8 readme.txt
+  assets: |
+    30472     fc59ede3b3015ddabbc5b7be52271df7 skyroads.exe
+    6398      86f74c07f370f79ed6ae0efb8ab7bae7 demo.rec
+    407       7b43fe96a98481e2d5d694a5d30eb528 ful_disp.dat
+    395       1a4ad8227cbce196bb2f1975d3d45e7b oxy_disp.dat
+    3903      591e7a22dc25044b4cf7b170ff160e60 speed.dat
+    32100     b0e0eb6c45c0269dfe05edf5fbf02213 intro.snd
+    25807     22fee57a5aa2bea2fcea6825f7617bf5 sfx.snd
+
+    44808     28664bdffbfae0c7a1ff40570a5327ff anim.lzs
+    8167      1eaa43e89d11e37c3e800a362635f73c cars.lzs
+    10860     c3cc104af58d1b9ad2c6f507fbafa928 dashbrd.lzs
+    26695     9e4455e78e36e9f92bc485d912d5f190 gomenu.lzs
+    60606     4ca283916522bf70e04982614aaa1e86 helpmenu.lzs
+    20874     2a484f6baca7bb20e7f58dffdb4b09b6 intro.lzs
+    1140      2dc7798dffb2d73cebd7070d4f9d2075 mainmenu.lzs
+    16821     39c82a6594b71507af96fcac83259c57 muzax.lzs
+    17102     80b0a02ae5a785c869cdd64edf0ae412 roads.lzs
+    24666     4cc0f839bb497d63de2ca8490d286eed setmenu.lzs
+    98148     a003196ae39c17dd339f8a5ded2e6be0 trekdat.lzs
+    26645     12fc0010f32cfb3389bcec6e3a2f289b world0.lzs
+    15696     660885a1aae50a01ea36c6f76c64c295 world1.lzs
+    27755     dac9802774eb98ac7b7ce327b97b4534 world2.lzs
+    24082     179a760941741a27dd73b2e7875cb65c world3.lzs
+    31341     83d1d3623a40a150d01b7dc7e5021e43 world4.lzs
+    20047     fe3d2195af01fadd5f4766cb1218bf7a world5.lzs
+    18642     6dd96d7c7a99017ffd767bd42c6aa76d world6.lzs
+    29960     72a16c456291f8782a60e5c290c47749 world7.lzs
+    14989     520076e4a113ffbf3e92848e3ebca73d world8.lzs
+    21312     7257c2fb813fba24156d47e13026381e world9.lzs
+
+sha1sums: |
+  978d2209a4c3979cde1bc54a6b533f797b09f754 skyroads.zip
+  1d920dfe68f13cf671f9c4d186af0996adedc1ac skyroads.exe
+
+  38953df85c8755b3679a5e15c3aefabe1802cf1e anim.lzs
+  b5ebc592f0bda84899cde427fed35d2bba082c57 cars.lzs
+  8087aa755d5b6f6f649da27814c031b4e0c964a3 dashbrd.lzs
+  ff083a36f9f3714f55e18d4e6f801f809f378412 demo.rec
+  0a8958fbd19da2169080b5d2b99b6caa3a68d14d ful_disp.dat
+  4a8828bb9b16abb9cfc8571d5a27a65db280b9f3 gomenu.lzs
+  79932a6659677325a1e5af3bfa0a93adb70b65d9 helpmenu.lzs
+  407cd731ae3f33d639ac69a6c0434e2d7e48d6a7 intro.lzs
+  0017117682d08ad7ef21910f2f56f4471b5f060d intro.snd
+  f64866866dd736f20e7b7701015813279d71f6bc mainmenu.lzs
+  4bd030b75b600ef1d15ed7d978d299215f30ace7 muzax.lzs
+  3d4ec42bae73ea66ad1489b8c42660910014d3b5 oxy_disp.dat
+  057c02b4b6f1074354e5d6e851a9c9fe210778a3 roads.lzs
+  5c26326eee221a973aea8cf199b133cd69364d49 setmenu.lzs
+  52305353866e52f99824f3425e96be0f6391fdf3 sfx.snd
+  2f932e199c52ae9f949d54729be0f235da2c6018 speed.dat
+  4138a729efb8ff3c1b8651c0113c87192eb13ad6 trekdat.lzs
+  1131f09c263601372f8ba7cfb1aff25966899d03 world0.lzs
+  74b4d88ee2c41c6d75a6436f1ee6ceff5ff2f941 world1.lzs
+  8a9d576ca1be66c49684179f8010ff1c88d7bd64 world2.lzs
+  47103f1e4a7fd9b7a5c5d2b26ebc8f3011df6375 world3.lzs
+  1839df885cf98bd379acaaa50218f41bd47d98f9 world4.lzs
+  642880b1b2c0d8e009343924e31c1f01c4ce3eb1 world5.lzs
+  b03a185fd0e54502d62d9262e156fae4c5c4fee6 world6.lzs
+  0ff352113ca5b85e95b7dd960eb7ad14dd6a91d7 world7.lzs
+  6fbc392cf90196bcae48e38faa4ce1cc97a5a47f world8.lzs
+  23eb55b0e84721261429b9fcb850a5274b561065 world9.lzs
+
+sha256sums: |
+  6630fcf84f568dd505303ab0dd5f8c79e576ee2c93c585f973c62956ef667afc anim.lzs
+  86b7832783bde0b67443104eba66196ed8ba31148339192db00c67eaddf9929e cars.lzs
+  c1ad75492f9d93fa9e40c17b39fbd4c21ee6d9188547fea09fbc41c9e719ea8c dashbrd.lzs
+  2bb53c6cd62f2cd2a8657cd05bf9e33054570c1e3e98dd89e18587156867016e demo.rec
+  a6f50b73abd0d2ebf97508cf12e2b9f7b29aeff29b794a2ab595ede9c93a12b5 ful_disp.dat
+  8852c378ecdb9165183924ca81b3b0ace9ed73b1cca5ac364fbfe18f6abc885f gomenu.lzs
+  f016e6eb479e163dca426b3111b796067eea62dbf9011ba99b65d0f0da1660a8 helpmenu.lzs
+  f37fa5819914e4f968a7b884fa8c827dcdf4be9e6a567e9b9da4fdd62bd276e5 intro.lzs
+  f2eff08cf5ed7986c89232d21468b53c7cce5826f519585d44d97eec58bb510c intro.snd
+  45b0dbb2866f8b84b0253ca002fab01fba0c53b1f8593b1fb18119e570ae3a07 mainmenu.lzs
+  be741b53f33a1d7a488b1a66d7df4a20ca44c4d7a252a2984e2325f7a8b0d8a4 muzax.lzs
+  a5d00c24e3b0d6cb14792926055445fa970e2109e8da2ff4ff2b72fe81ec3d6f oxy_disp.dat
+  eae3754bcbf9db20f076e330038d29401b2b5eb400bb148d772edb4ba23442ce roads.lzs
+  86fd9ad57ea787beda20f00b4dce1ed4d1ae0e4b2645cb529b65ae734f6df636 setmenu.lzs
+  7c17c601f5e58ef9c286cf9e6c19aa8fd287cfa6836be3920dbb78d904c3ea4e sfx.snd
+  c3a55223e359749555535e138ef4219bc94458639e44f70edf3cfcb2f28c26ac skyroads.exe
+  97bff2d41fdde4953d986cb2d9011718f302ff46bb8d21abbb267343b086b7fc speed.dat
+  513b572fc159f6e8219fd3b53f5f8e51df71ef0df7e4e6c72219b08755f3819b trekdat.lzs
+  e120ca2f8a9fb44c5f921b0f76bfa178ad79b19ba94c9e0627bebf0672b21358 world0.lzs
+  c1c41f5730010aa2b4051697ce02d381fdb4f6b4d4ab9cd4d3c80c19353aee91 world1.lzs
+  bd40edbe99818554749616dd248fa15aef76f4f2da932d5193d91f5fe254426b world2.lzs
+  cebeafebd64fab9e68c91aa4a8c1f68e07fe0cec0fa7070ae5c35b65f655b0bc world3.lzs
+  fc125d221b6a713cbce24b9a4fe39bfff2cef564980080e8a981a7c93bb217c1 world4.lzs
+  d64735b3565ece174976ff36f94b2d71cea2abf91be2bde35112f6e61d72f83a world5.lzs
+  f96b0ea6f2ddbedc2d4deeeb3b3cd24d457d55ad42a5b5a876d6d384a8410d59 world6.lzs
+  1e66a77e5594ab114e285ce4414ed27228c7fa38a398d60cf46527a3baf75b63 world7.lzs
+  696087230a90766d445c1d946bcc97980961595c837b792870e018c5ced234e2 world8.lzs
+  3ea0c840e723fe097d92f84e3747007f662a21eb3ef6e0f532624fc1f9c63178 world9.lzs
+...
