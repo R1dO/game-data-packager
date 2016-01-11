@@ -39,7 +39,7 @@ class ZCodeGameData(GameData):
                 if re.match('^.z[12345678]$', os.path.splitext(install)[1]):
                     assert package.z_file is None
                     package.z_file = install
-        assert package.z_file
+            assert package.z_file
 
         if self.engine is None:
             self.engine = 'gargoyle-free | frotz'
