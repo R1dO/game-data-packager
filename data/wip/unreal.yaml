@@ -2241,6 +2241,21 @@ groups:
       50432     620372d728cf22585129cbba4f928a83 System/UnrealLinux.ini?227i_classic
       19819     7cc7ae505c341ea3b5917ff989dacfee skaarj_logo.jpg
       5186      707503931fb6d016dd1304d76078b0fb skaarj_logo.png
+      57193     bd1dcbeb5b212df7ed1df9896ace48cf System/Core.u?225f
+      80639     6881cbd52fcf5dd18d9b593488e14028 System/Editor.u?225f
+      1032433   cd8562ff7eb392ea13909f29a8f634dd System/Engine.u?225f
+      15176     8466984749372836a70363f5b849be60 System/Fire.u?225f
+      19031     7292fa523235a586e897122ae889743c System/IpDrv.u?225f
+      23755     fb05df376c8931df8265e11819ca3175 System/IpServer.u?225f
+      143       c767b9390e434c1627867fdf4eeb36f5 System/UBrowser.int?225f
+      178934    336de3ec553b290dbc2f2a24c572512f System/UBrowser.u?225f
+      518150    8cdbf2d60da1b17c7b7e61e52e51bf8d System/UWindow.u?225f
+      79        ccc52295c2563b5affbe4f1a21f3fb64 System/Unreal.int?225f
+      18588345  6317581f5e5a6272e482daf3f6348cca System/UnrealI.u?225f
+      24400     7df46319978a98c89411b7a327721a59 System/UnrealShare.int?225f
+      22216341  e68d72e156998843121aaa49d3fc3387 System/UnrealShare.u?225f
+      595       f9d41f433d7d109c57ab7cd627c4ca01 System/opengldrv.int?225f
+      3038607   7631ce12375ab8a5ed2376840980134a Textures/UWindowFonts.utx?225f
 
   archives:
     group_members: |
@@ -2765,6 +2780,7 @@ sha1sums: |
   7c5a95d6249247d1dabc4a7015814d954a6e7b7c System/Editor.plt
   521f6c667308cb9d7f8f87c2d8b8c40c7ce4aebb System/Editor.rut
   a3a5cd173063e2c42584ccb17e1d294f6678a712 System/Editor.so
+  #162c2916891de1214a728fa9db573a980f72f479 System/Editor.u?225f
   8a0045596eb1d95ac9a3ac85e68338348f4842f4 System/Editor.u?227i
   fbc6496cd8683e065c63b5a71d971fd29a1fec97 System/Editor.u?RtNPPatch
   711fcdc5eb186b91422c86b62afca36677f1eea6 System/Editor.u?cd
@@ -2909,6 +2925,7 @@ sha1sums: |
   #204e963454b3bf6c8095e84498d6c34632530c26 System/Fire.dll?cd
   #cae9f5ca18d1504506eca09e01627b7f40b1c830 System/Fire.dll?gog
   10d0f4b05d92b0f1be4964cb99dedbaa7506afd9 System/Fire.so
+  #10537c48a552844f10acbc56b15fccad7e69c429 System/Fire.u?225f
   7ce56664375df7a6b66d600d60fdda11d3eb01d0 System/Fire.u?227i
   f76da0d0103f899108f0e2b49a50a880db0140ca System/Fire.u?RtNPPatch
   ee7d88a479937d8633ae608f3694375876b182a2 System/Fire.u?cd
@@ -3026,6 +3043,7 @@ sha1sums: |
   4fa58013317c5d369e9e658b1e555e6ab95c9671 System/IpDrv.plt
   36d174b222a793a4fabd0e06eabe0b9bb9153d68 System/IpDrv.rut
   263ebac1cd703d2ff5595233341c9f29b22078cd System/IpDrv.so
+  #f0380e8c22eeb0791c0e473b886321c0462e97be System/IpDrv.u?225f
   9c76f93e722fce5ba9b4213dfcaa718ca8b21530 System/IpDrv.u?227i
   69d42f9e027b3c64083bc83eef5fb448e77b6e9a System/IpDrv.u?RtNPPatch
   b8dfcf9002fb396df8683951d3116462522cd5fd System/IpDrv.u?cd
@@ -3039,6 +3057,7 @@ sha1sums: |
   91d74d4b3384d553915305d0cd8b21d48e4bfe2b System/IpServer.itt
   a6a2f85a937530e2f2ff7a7e62af137ead846206 System/IpServer.plt
   d12ec3f2bf99747095b4c34fe528bb3b89a120af System/IpServer.rut
+  #4ffecdf7d22ad546dfdf88a79b42879c56bce4a7 System/IpServer.u?225f
   fe78256e100d410709b1aa89c934cee20614cd84 System/IpServer.u?227i
   07e05503356bbfdd5e962d4f41fbe8a6d01ead02 System/IpServer.u?RtNPPatch
   4c4c4167cd765e58739568cff4079f6ce84d124b System/IpServer.u?gog
@@ -3400,6 +3419,7 @@ sha1sums: |
   f4941dab138a91c215d280efc86835d08da9d354 System/UBrowser.itt
   9e4adabf3ec023ed8a93951dcf94c53f9e436dd9 System/UBrowser.plt
   855ac2c297fc485456de1c6bbee1c27be2c2eb8b System/UBrowser.rut
+  #e868bdce1a53b7556ee0ab454d78e71656fb4181 System/UBrowser.u?225f
   57ed1e56baae3644cf6731f00fe87e0a4f812e8a System/UBrowser.u?227i
   e83a93a425ce69d2e1352b42c5520f5f5e2d3ea2 System/UBrowser.u?gold
   #1df3e0a5d7a6a6b95169c9f10f31e9ef66a313ed System/UCC.exe?...
@@ -3471,6 +3491,7 @@ sha1sums: |
   f5a50a47849b5b981fde1b3ede8ff9c2cf75cbdc System/UWindow.itt
   39a96f4c4f167fbda78df9b789de63989fa1eeed System/UWindow.plt
   602ccf47ea83c8d98021436fa238654f895e540e System/UWindow.rut
+  #6d5d960cbc2eb21d07a4f06f39c71d4c6bad377e System/UWindow.u?225f
   0a2a4dda2d7c76f6c866d1542ccdc4d79c58f66e System/UWindow.u?227i
   44e9277f1f59991fc0c69655f08a37ad836524c7 System/UWindow.u?gold
   116ac8bedfa3aa0cb3cd5b49065c03d7196e6156 System/Unreal.det
@@ -3491,6 +3512,7 @@ sha1sums: |
   #623070d1738d1309a2efad7d5114993fe648891d System/Unreal.ini?cd
   #476b3b7fbe1afb46352220c64eb8881cb4d9c967 System/Unreal.ini?gog
   f94f8200dd677011cdc12028b42ba8c86266eaed System/Unreal.int
+  #cb5589e9a134f886a126a21bfbf62a7d15e340df System/Unreal.int?225f
   ca71e5f09309e5f41be0417c4a35199f19913a1b System/Unreal.int?RtNPPatch
   99e97e9fbcf144dfb9229193a28ecaef0d3bf7ae System/Unreal.int?cd
   1845b665c43799e3c841bf28f808a28dd9889c0b System/Unreal.itt
@@ -3524,6 +3546,7 @@ sha1sums: |
   efebbf6c7367dc1c12cc4951874dddcc61292b42 System/UnrealI.itt?cd
   abc95be86af7e4c1bf79de6f5fd88eae9c7e79cd System/UnrealI.plt
   f4fb15a9996bf0e31b34cd2d110d93bbf608ecd6 System/UnrealI.rut
+  #2372677d79c7deb0b01245697bb258a9d0909124 System/UnrealI.u?225f
   7648b15eba9b96e9339dfb4db8a7f8ebf80b1ea0 System/UnrealI.u?227i
   465ccce413e66c4c35c8ca85c444fd8fb9e4f5e3 System/UnrealI.u?RtNPPatch
   a28cdd9d534888381195003ade42acdf797e8f95 System/UnrealI.u?cd
@@ -3546,12 +3569,14 @@ sha1sums: |
   c0e508b2947ca66836861c11264f2079b67e2ae4 System/UnrealShare.det
   e54c9f2e593e21ff496f6054edaad6d3283f60bb System/UnrealShare.est
   6004abf6f132195915adf155c880578119503297 System/UnrealShare.frt
+  #bb59a5ccb7a574981d39a0503ffbbc07dbb9dcc8 System/UnrealShare.int?225f
   2f5dfc668757b0cc3c42414d13e956bf3b708926 System/UnrealShare.int?227i
   0bb77c39095d8b127e9ccbc36dd0e08c4bb30422 System/UnrealShare.int?RtNPPatch
   741860dfb951353da80b3a60ef51fb0154127350 System/UnrealShare.int?gog
   18a5285eada4d4dd6f6e900eb47111c687068199 System/UnrealShare.itt
   d5e9e2f581a30c7e461580b609b391ee7817f40d System/UnrealShare.plt
   898d927214c4d8f9f82141b8afe3daa53d9ac7ac System/UnrealShare.rut
+  #b308eaabd2fdcb7f559324ccfd30e7655277cbba System/UnrealShare.u?225f
   e015d236a33fd54859ef778355ed0a9c20989846 System/UnrealShare.u?227i
   0a3a3717caa6fa53a46787d852c6c97f3e179d8b System/UnrealShare.u?RtNPPatch
   2bd91ab92544dab22d353d3b64e47581090e8c14 System/UnrealShare.u?gog
@@ -3680,6 +3705,7 @@ sha1sums: |
   #e699d6f4d79507a560a79b21981e8e9bd5935057 System/goggame.dll
   #8640fde81b80c7ff6bb0ef1d81cca5a0e5681657 System/nglide_config.exe
   #2eb9374ba59ec04de9ddcf6ba17641f9e228c679 System/nglide_readme.txt
+  #731261fc817af5fca7f4d551bb846469b2704d8f System/opengldrv.int?225f
   #4ae0053e1de1f314e6f583152deb24cc142bc50e SystemLocalized/DefaultGerman.ini?RtNPPatch
   #4ae0053e1de1f314e6f583152deb24cc142bc50e SystemLocalized/UnrealGerman.ini?RtNPPatch
   ea4aa58ae37f553cf2aa626170042f2f05150cd8 Textures/AlfaFX.utx
@@ -4155,6 +4181,7 @@ sha256sums: |
   c3692786805d9567ab0842b42863a8b2249b6eedc62697fa1f313a8966a64fc3 System/Core.rut
   ac3e415078dc441aea66d713d5993cc5740d41a4a4d3f26aa2b7196db0d6e14a System/Core.so?227i_classic
   a1cf1a2e9fb1ec185e48db26bebf781c6c524d2fde12fa139ff5d1071d344991 System/Core.so?227i_gold
+  #b38d43eea2fbcb6b6b6eeb0b0a17f50066e2a7a33b4193f8aa773769e7362a07 System/Core.u?225f
   bd42f3dff0a9ef5521623d45c29b51104b1ec366cf27b89bdeeb888b9ba3973b System/Core.u?227i
   420463d5795dd0854d1b13c02b8e4138a359e9ba15ddf12910e8397a5bd361f8 System/Core.u?RtNPPatch
   7c94b2a68d8f6fc0bfb5264c9e9aad4ce35ccf12a8b8057d456dacd33d74140c System/Core.u?cd
@@ -4299,6 +4326,7 @@ sha256sums: |
   0d46a44fe50743644a0f31d10372a2cd4c70846f1a32373fde1b93bfe282c1e6 System/Editor.plt
   983486df2be5822ce61778b44e859420c999cb7af295e81e5ae1019d296aa846 System/Editor.rut
   cd1a93152eb08c459244757c15023653144f95be3f4a76e1701e1a69d08c56ec System/Editor.so
+  #1115a271152269efe56f417da3e80bcd258880fb45d38339fa140df65a1b116f System/Editor.u?225f
   9c15a733dc146642b7a1bfe68044b18de49438428ccb3ac1db9843a87743f598 System/Editor.u?227i
   db21ef438ae7fec6d4d03f8da51e4203f52f8b85936104913b698d346df367f7 System/Editor.u?RtNPPatch
   c4f10c26dc21c87599d0e6b9f479e4bdd254207e3119220f45b939d1c0025a13 System/Editor.u?cd
@@ -4332,6 +4360,7 @@ sha256sums: |
   90554efcac384c2bf548488e90e02bfc68e281ce065e1a92a37e0d33c3b7c6b7 System/Engine.rut
   1733ed1e74ce185d4f1ff7b0f5631f5f91ffe5d67bc0d082cff692306610f625 System/Engine.so?227i_classic
   504e4b4e815d155658bb26d550fbaf5e0c126d3f58aa1b549fab21dfea57ea5b System/Engine.so?227i_gold
+  #56b3e4ab64fbbc6aabaef05e85879532d9bed533869b803b1e49c0cc72ffdcd1 System/Engine.u?225f
   931ffb4ddf3b9b608cbfd49bc6d5f86ddbcbe9e9148ac8c7769d6ac3b13d4ac7 System/Engine.u?227i
   960fff78443badc1fb46d6b385a811591cc08b234246458e613d64a82a2caf5c System/Engine.u?RtNPPatch
   bdccc8ee1557b758554714bcc676edb2cb4474239c70bedaaf81f07e9a419b7d System/Engine.u?cd
@@ -4443,6 +4472,7 @@ sha256sums: |
   #d142c9e7be6bfc908b84f75a88d4d35b9e6cd31af506f483edf0118af5e1dab7 System/Fire.dll?cd
   #5d44c904382e474bf28e67927e7ccad7ed7493f15a476ebca7ee9b4db00ddfe1 System/Fire.dll?gog
   c026633e82b72c8af1ac3b38074db0e029926a42f1a5021b4d248014f71d655b System/Fire.so
+  #4adb21a6c43833d9a8ab5634203d3a7da2f276fbb6f15d5a740a86944800a4ec System/Fire.u?225f
   49489ad60c8a8cc32b6b944f734b00de98ee8e94699f25d0f74eee3471441a0e System/Fire.u?227i
   a68a4058899700097e3b3c3d6028311a9a0c34afecd46a80c41f93fd33b2e324 System/Fire.u?RtNPPatch
   fd07151c681bd0ca013c77b599e8a454a1cc586e04fc3251ede7ef996b946681 System/Fire.u?cd
@@ -4560,6 +4590,7 @@ sha256sums: |
   e0e00bc5fdd6760ea1ff9d8ed762e1758367d2a83231cc45be6aace3a17b2c6b System/IpDrv.plt
   c3e530df13b3397f5456359a7a5b4bd17f719df24e593e61d974caa2168ca7b7 System/IpDrv.rut
   6b032c66e03a22e133beaca3425c8c460dc0133ac3d9b68b54d35947d6b21300 System/IpDrv.so
+  #6992626c571bb811ad87f44114e73d00f3389d195cbce975bcaa89bdd7cb4e55 System/IpDrv.u?225f
   b682c02b5e0de73629ed07ac9e334b834f56932473a2346d6fa5c43d46008082 System/IpDrv.u?227i
   274a4a81657947edcaca83faf3e1557838033fa70395b81075e8dfd9a7a6450e System/IpDrv.u?RtNPPatch
   671305015793fcf21d0fa55579ef2528d38d1253aaf974f13e5dfa5d63d616b6 System/IpDrv.u?cd
@@ -4573,6 +4604,7 @@ sha256sums: |
   99400d033ed7ae76272e0b60069b73ed0e3934eac976d5bee7c278df0bd29e76 System/IpServer.itt
   90b9bbd6f3141e4ea118d6e4162fefdad1b827aa024bde23f13244535b4148e2 System/IpServer.plt
   bc5cb49224fc27317d7947b073fd6db87f7b7612d191e3e06970ff38e0d8e1d4 System/IpServer.rut
+  #73645138905482652a7e949ec5eb62f2603c4c28f9c6f4c8d61d85bb87872915 System/IpServer.u?225f
   762c2d22ba8a250dc84a94b7403b5351fa49b3dcfabd76658958c2a494b2b6ed System/IpServer.u?227i
   1edc5bdee8c35834721bd134f74edef8cb3f4786ea74d3d3e80777abfb0f014c System/IpServer.u?RtNPPatch
   8d61a1150e2c7c3ed50b9b0c7c232aff3e12c3adf1c60733fd4ef1c7b6b4742c System/IpServer.u?gog
@@ -4929,11 +4961,13 @@ sha256sums: |
   07bcf2b90e2b6a6f65ec8451eaf6fa530714a1d27b5ccb5601b56cbf3cb0bad7 System/UBrowser.det
   312324fdc5d8af2e9a61dfc451481b387aba306807e5f929b00c0caa0c9dd153 System/UBrowser.est
   4c5fc1df32dc416a2455d76f4080a3b97691a9eb87dec0ecf30b6bfb5b76a216 System/UBrowser.frt
+  #6c68ca4f72b2a08da5239fdcbf08351d90f83f704bbdcccb35358c1726953136 System/UBrowser.int?225f
   45bd4c71d03a79bd148a4a1e6e005ebcbc0afc409a7b1ef0f993efacdcee6f0a System/UBrowser.int?227i
   9271d4e66cda67893781a0dbf288bbd24bf27f17abe6fccc29815cdf4e52939b System/UBrowser.int?gold
   66f79b90853c5fa7e075869e5ab443c12ff1b4f41a8878f8d129bf05dc3a1a1d System/UBrowser.itt
   2a7577632c6d678e8c6ecf81e6f4ac17344bd74b47326687b6686a5a8d53e3d8 System/UBrowser.plt
   e2ad6dce5d376e107a898d119c5c6438a03903122715782d0279b18d240ad1a9 System/UBrowser.rut
+  #1150df64e7a5e428567fe932f49dc8e78f9dcee91471b1f1a1de5f55800193c1 System/UBrowser.u?225f
   294c7dfefc694e8b9ec4947838e849e2c57506c31d670676b19fb0229ff739a7 System/UBrowser.u?227i
   2437fb2c6389f5474a5f8c98d5dd6d19a4bb94bd801c1ba4d714ea6355a239b7 System/UBrowser.u?gold
   #6276280f6aa3a90e5ef11390feef092603843f15c6f5a419cc45408dfe295177 System/UCC.exe?...
@@ -5005,6 +5039,7 @@ sha256sums: |
   1a8cf3290b310fe9e73b21a8b751bb0cec5b1ecaa47c78fc47b18fe0f954480d System/UWindow.itt
   6f3fbcd1442a3b01763435b83abbec8cca54596d8d125339527d8a93001cfc25 System/UWindow.plt
   4205a92d8368e1d49a79385f3559e49b511dbb51785f6827f59f05e80b20be2d System/UWindow.rut
+  #681677773420b81e88391010ab7dc4ef7ef0949649a63b1fb869810423dfc577 System/UWindow.u?225f
   549a408a0182cdf498997f299669b17b689786fe253149242d6ad30fee120888 System/UWindow.u?227i
   b4fdfc57192d0894bf880862fc7f0337df63f8268b5997d99728959b0b2eed9f System/UWindow.u?gold
   e16546618621b00cf3dbf8be138907376cc78d0c9611eca9912216abca758f55 System/Unreal.det
@@ -5025,6 +5060,7 @@ sha256sums: |
   #10bcdf535152b2452b55910dd72af30f303ed3a208333fbaa95d6e831b232cf4 System/Unreal.ini?cd
   #d3cc2d5a384850670c959e4abc38ff3368469ef40423af75ae4cf37f1a3d5684 System/Unreal.ini?gog
   80f2969bb2fb7736c8aece4a86c91d47d43466669d6454f214e6bc40a4c81ed8 System/Unreal.int
+  #029c8f10309ba25d36b6e1b68dd2c02aa191958d95895c342176d3bae3efe79b System/Unreal.int?225f
   dc095627f9fdf3d69598be76e83b5c6ae6205a0da85707b582cfac1eb7aa2aa9 System/Unreal.int?RtNPPatch
   0418e2917b8e6a3f3c6ef489946b282842b5aba1e2a3ddaca0dedeb5c5863b90 System/Unreal.int?cd
   93328c50e9f2a4277cd1557338825d6c945c9f71861aa85346888f74d3434e31 System/Unreal.itt
@@ -5058,6 +5094,7 @@ sha256sums: |
   11b86d5d0ada7c625b081ab8637da7a7921f5936d973a80ba46e44a3158de87c System/UnrealI.itt?cd
   fdc632a6a039cc9047e2bf8c0130de699c56ba03352b6ccfc1bcd83e46dbac4c System/UnrealI.plt
   131336f6e54f0c2aa6cf7ae36f013805ab2dc9f559d13c1de0cef106a83e42f8 System/UnrealI.rut
+  #0dfa4637762969a303a293c493c109b8579d99ad3977075f6b8c535b7ba3a223 System/UnrealI.u?225f
   9c05902d42efa909df27546a1eedebabe8c1b36a18275d72b20b0145f25afa3d System/UnrealI.u?227i
   9ba5f0ffa4ca0fbcc048bebb60b5077ac9322fe2c04a8e444adfac86b494ed30 System/UnrealI.u?RtNPPatch
   c13e63f468ff23296c9814f1330a444471d34ef5592515dbb80005a15275870c System/UnrealI.u?cd
@@ -5086,6 +5123,7 @@ sha256sums: |
   a947054f0f729a96abe9e85310cadb0455354e176df28b2fa0e340e54b06ae0c System/UnrealShare.itt
   f82af845a6a291a5a616d4d13d6ff5df983645c36be7008c6f3acb4375f56ba4 System/UnrealShare.plt
   08c5b97c5d920e388ba50fef3c32f9e70b722819e7128e4fea8c78d5c7f04efa System/UnrealShare.rut
+  #871ba31ad4acad6055571da855fb14ebd03e66da0eb8a103b87b859cf5f80b4d System/UnrealShare.u?225f
   c790d95b6b97bdf3253c9751ba6c659d2a04d7c91b4f94dd8f563b2aa7859fec System/UnrealShare.u?227i
   a16c6606516fd1109b5128c9dc2467fca468b2b2101d862fa95abbada8c18f6e System/UnrealShare.u?RtNPPatch
   10c688ad57c506d2582d91511be8aa2f79620385c5f04b778a9a71e97ed3c487 System/UnrealShare.u?gog
@@ -5209,11 +5247,13 @@ sha256sums: |
   b79971cfe37673e5ae7df54b7a917568559f31c69d7efec66213daef828269f4 System/edsplash.bmp
   bdbfcdff23d565bad9186f04674324000898ac78ba49408818da8051d180c3f4 System/eldora.rut
   9a73264430311156a449e7967e98bdb0076c9d5c22a59d30ede3036df91e6236 System/entryII.det
+  3b1ede84365c5412a8d68730c47d479f00a959b3e3e966fb48a291c1c5de51c9 System/galaxy.int?unrealcd
   #011ba0049753c83f5e85734391673930f32c5f95a66de46981450e9ca5f31cc3 System/gamespyinstaller220std.exe?RtNPPatch
   #9b835adce8feed98700be3870778a0e92fad786934a493d00fcf8ff15467dac1 System/glide2x.dll
   #7ed2a07d701a3f1f09ad8a953ca1cf2c96ddf03d37c3f10df816fb32f7652abb System/goggame.dll
   #1b1eeb0bf3d68fd0bf2c8de306b248639d41d4ab1a7f8eac6906dbc55ea2ae27 System/nglide_config.exe
   #41cd96e2c19de0e3ef308c8975e658adc3bb47e8e9103dcecde6b54312a78c58 System/nglide_readme.txt
+  #8d0803823e9055ba4e1e8e64753c997da0758d6432094c76efc0d8425bf6f101 System/opengldrv.int?225f
   #4543210eaad60456c76ba409d071392fd234cb4bf1724a02fd7f0f752dea1def SystemLocalized/DefaultGerman.ini?RtNPPatch
   #4543210eaad60456c76ba409d071392fd234cb4bf1724a02fd7f0f752dea1def SystemLocalized/UnrealGerman.ini?RtNPPatch
   50edfe60fcf99c61f369cf8100079351bd75eb0a23febc77aa891142086dbbc0 Textures/AlfaFX.utx
@@ -5274,6 +5314,7 @@ sha256sums: |
   77ec8e243ee1b59bbfde4541c270502d8dc99c34165a6a353c4f4ebec30dd0bc Textures/UGreenWindowFonts.utx
   9dee41d6698b63e215c2d47e556324e9d56215f337c6ad96b65dab5f5a92642f Textures/UPakFonts.utx
   81e1a17627149d0312beeff1d4214f9c156ca88cc3c289215167ef4d3776a240 Textures/URedWindowFonts.utx
+  #bf0fd667572e42c116c4072e750b9bd23699d72c30c2632a2102480228683172 Textures/UWindowFonts.utx?225f
   ed48b467fba76e51a7748ef639004ca2549c65ee00ab5e1cc3dc70999c800b4b Textures/UWindowFonts.utx?227i
   91ac2a325d361f46948ebbbda5cf5431add4930e7466667f0fa36819606642c7 Textures/UWindowFonts.utx?gold
   54fe1249f498f56e4f419ba298445e9728392f1b05050be4fdaa5ba9081d3bf0 Textures/XFX.utx
