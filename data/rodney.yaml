@@ -1,0 +1,27 @@
+---
+longname: "Rodney's Funscreen"
+copyright: © 1992 Activision
+plugin: scummvm_common
+wiki: Rodney%27s_Funscreen
+genre: Kids
+
+packages:
+  rodneys-funscreen-data:
+    install:
+    - assets
+
+groups:
+  assets: |
+    92990     7e1ab4f486cfb0f1ebb9e5d5c73f25fe rodneys.dat
+    1863954   2b57be24ebc184ae7a4a45fcadd85cf6 rodneys.prj
+    #146383   01f5d87a4e4f31ca6335316cca65e538 rodneys.exe
+    #159232   350c97bc818ab954db8eeb9f38c5d8a7 rodneysw.exe
+
+sha1sums: |
+  029b9e1e12e851bd50ae6d45d5bbba57c4de637e rodneys.dat
+  5cde8dc10f7e0907a295e98e13bab2f5463d30cb rodneys.prj
+
+sha256sums: |
+  9b2df35a7cf880aa66223b46682a5d16b7db4e2443e1b3b64d956c33b68e43de rodneys.dat
+  010fa8ac12cb13fd1ba83c0af6d81683c190439f2979181ece7e528b09a8446b rodneys.prj
+...
