@@ -33,12 +33,13 @@ logger = logging.getLogger('game-data-packager.games.z_code')
 class ZCodeGameData(GameData):
     def __init__(self, shortname, data):
         super(ZCodeGameData, self).__init__(shortname, data)
-        one_z_file = False
         for package in self.packages.values():
+            package.z_file = None
             for install in package.install:
                 if re.match('^.z[12345678]$', os.path.splitext(install)[1]):
-                    one_z_file = not one_z_file
-        assert one_z_file
+                    assert package.z_file is None
+                    package.z_file = install
+        assert package.z_file
 
         if self.engine is None:
             self.engine = 'gargoyle-free | frotz'
@@ -75,9 +76,7 @@ class ZCodeTask(PackagingTask):
                         entry['Terminal'] = 'true'
                         break
             entry['TryExec'] = engine
-            for wanted in package.install_files:
-                if re.match('^.z[12345678]$', os.path.splitext(wanted.name)[1]):
-                    arg = '/' + install_to + '/' + wanted.name
+            arg = '/' + install_to + '/' + package.z_file
             entry['Exec'] = engine + ' ' + arg
 
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')
