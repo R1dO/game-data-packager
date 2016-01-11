@@ -1828,6 +1828,11 @@ class PackagingTask(object):
         # Shortcut: if A Replaces B, A automatically Conflicts B
         dep['conflicts'] |= dep['replaces']
 
+        # keep only strongest depedency
+        dep['recommends'] -= dep['depends']
+        dep['suggests'] -= dep['recommends']
+        dep['suggests'] -= dep['depends']
+
         for k, v in dep.items():
             if v:
                 control[k.title()] = ', '.join(sorted(v))
