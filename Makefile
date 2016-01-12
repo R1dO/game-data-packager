@@ -119,8 +119,6 @@ install:
 	mkdir -p $(DESTDIR)$(datadir)/game-data-packager
 	cp -ar game_data_packager/                             $(DESTDIR)$(datadir)/game-data-packager/
 	python3 -m game_data_packager.version >                $(DESTDIR)$(datadir)/game-data-packager/game_data_packager/version.py
-	install runtime/launcher.py                            $(DESTDIR)$(datadir)/game-data-packager/gdp-launcher
-	install -m0644 runtime/*.desktop                       $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.copyright                         $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.png                               $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.svgz                              $(DESTDIR)$(datadir)/game-data-packager/
@@ -128,6 +126,11 @@ install:
 	install -m0644 out/changelog.gz                        $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/copyright                           $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/vfs.zip                             $(DESTDIR)$(datadir)/game-data-packager/
+
+	install runtime/launcher.py                            $(DESTDIR)$(datadir)/game-data-packager/gdp-launcher
+	install -m0644 runtime/*.desktop                       $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(datadir)/game-data-packager/
 
 	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
 	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/
@@ -147,8 +150,6 @@ install:
 	install -m0644 runtime/doom2-masterlevels.desktop      $(DESTDIR)/usr/share/applications/
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
-	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(datadir)/game-data-packager/
 
 # Requires additional setup, so not part of "make check"
 manual-check:
