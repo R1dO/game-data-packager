@@ -18,6 +18,7 @@
 # /usr/share/common-licenses/GPL-2.
 
 import argparse
+import glob
 import fnmatch
 import json
 import logging
@@ -136,13 +137,6 @@ class Launcher:
                     None))
         logger.debug('Working directory: %s', self.working_directory)
 
-        self.link_files = self.data.get('link_files', False)
-        logger.debug('Link files: %r', self.link_files)
-
-        if self.link_files:
-            self.copy_files = self.data.get('copy_files', [])
-            logger.debug('... but copy files matching: %r', self.copy_files)
-
         self.argv = list(map(expand, self.data.get('argv', False)))
         logger.debug('Arguments: %r', self.argv)
 
@@ -228,13 +222,37 @@ class Launcher:
     def exec_game(self, _unused=None):
         self.exit_status = 69   # EX_UNAVAILABLE
 
-        if self.link_files:
-            logger.debug('linking in files')
+        # Copy before linking, so that the copies will suppress symlink
+        # creation
+        for pattern in self.data.get('copy_into_dot_directory', ()):
+            # copy from all base directories, highest priority first
+            for base in self.base_directories:
+                for f in glob.glob(os.path.join(base, pattern)):
+                    assert f.startswith(base + '/')
+                    target = os.path.join(self.dot_directory,
+                            f[len(base) + 1:])
+                    d = os.path.dirname(target)
+
+                    if os.path.exists(target):
+                        logger.debug('Already exists: %s', target)
+                        continue
+
+                    if d:
+                        logger.info('Creating directory: %s', d)
+                        os.makedirs(d, exist_ok=True)
+
+                    logger.info('Copying %s -> %s', f, target)
+                    shutil.copyfile(f, target)
+
+        for subdir in self.data.get('symlink_into_dot_directory', ()):
+            dot_subdir = os.path.join(self.dot_directory, subdir)
+            logger.debug('symlinking ${each base directory}/%s/** as %s/**',
+                    subdir, dot_subdir)
             # prune dangling symbolic links
-            if os.path.exists(self.dot_directory):
+            if os.path.exists(dot_subdir):
                 logger.debug('checking %r for dangling symlinks',
-                        self.dot_directory)
-                for dirpath, dirnames, filenames in os.walk(self.dot_directory):
+                        dot_subdir)
+                for dirpath, dirnames, filenames in os.walk(dot_subdir):
                     logger.debug('walking: %r %r %r', dirpath, dirnames,
                             filenames)
                     for filename in filenames:
@@ -242,16 +260,15 @@ class Launcher:
                                 'symlink', filename)
                         f = os.path.join(dirpath, filename)
 
-                        if not os.path.exists(f):
-                            logger.info('Removing dangling symlink %s', f)
-                            os.remove(f)
-
-            logger.debug('%r', self.base_directories)
+                    if not os.path.exists(f):
+                        logger.info('Removing dangling symlink %s', f)
+                        os.remove(f)
 
             # symlink in all base directories, highest priority first
-            for p in self.base_directories:
-                logger.debug('Searching for files to link in %s', p)
-                for dirpath, dirnames, filenames in os.walk(p):
+            for base in self.base_directories:
+                base_subdir = os.path.join(base, subdir)
+                logger.debug('Searching for files to link in %s', base_subdir)
+                for dirpath, dirnames, filenames in os.walk(base_subdir):
                     logger.debug('walking: %r %r %r', dirpath, dirnames,
                             filenames)
                     for filename in filenames:
@@ -260,10 +277,10 @@ class Launcher:
 
                         f = os.path.join(dirpath, filename)
                         logger.debug('%s', f)
-                        assert f.startswith(p + '/')
+                        assert f.startswith(base_subdir + '/')
 
-                        target = os.path.join(self.dot_directory,
-                                f[len(p) + 1:])
+                        target = os.path.join(dot_subdir,
+                                f[len(base_subdir) + 1:])
                         d = os.path.dirname(target)
 
                         if os.path.exists(target):
@@ -278,16 +295,9 @@ class Launcher:
                             logger.info('Creating directory: %s', d)
                             os.makedirs(d, exist_ok=True)
 
-                        for pattern in self.copy_files:
-                            if fnmatch.fnmatch(f, pattern):
-                                logger.info('Copying %s -> %s', f, target)
-                                shutil.copyfile(f, target)
-                                break
-                        else:
-                            logger.info('Symlinking %s -> %s', f, target)
-                            os.symlink(f, target)
-        else:
-            logger.debug('not linking in files')
+                        logger.info('Symlinking %s -> %s', f, target)
+                        os.symlink(f, target)
+
 
         if self.working_directory is not None:
             os.chdir(self.working_directory)
