@@ -70,7 +70,7 @@ make %{?_smp_mflags}
 make check
 
 %install
-make DESTDIR=$RPM_BUILD_ROOT bindir=/usr/bin install
+make DESTDIR=$RPM_BUILD_ROOT bindir=/usr/bin datadir=/usr/share install
 find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
 find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need more mirrors' > {}" \;
 

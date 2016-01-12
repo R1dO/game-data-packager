@@ -1,5 +1,6 @@
 GDP_MIRROR ?= localhost
 bindir := /usr/games
+datadir := /usr/share/games
 PYTHON := python3
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
@@ -112,22 +113,21 @@ check:
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tools/check_equivalence.py
 
 install:
-	echo DESTDIR: $(DESTDIR)
 	mkdir -p $(DESTDIR)$(bindir)
 	install -m0755 out/game-data-packager                  $(DESTDIR)$(bindir)
 
-	mkdir -p $(DESTDIR)/usr/share/games/game-data-packager
-	cp -ar game_data_packager/                             $(DESTDIR)/usr/share/games/game-data-packager/
-	python3 -m game_data_packager.version > $(DESTDIR)/usr/share/games/game-data-packager/game_data_packager/version.py
-	install runtime/launcher.py                            $(DESTDIR)/usr/share/games/game-data-packager/gdp-launcher
-	install -m0644 runtime/*.desktop                       $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 out/*.copyright                         $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 out/*.png                               $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 out/*.svgz                              $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 out/bash_completion                     $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 out/changelog.gz                        $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 out/copyright                           $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 out/vfs.zip                             $(DESTDIR)/usr/share/games/game-data-packager/
+	mkdir -p $(DESTDIR)$(datadir)/game-data-packager
+	cp -ar game_data_packager/                             $(DESTDIR)$(datadir)/game-data-packager/
+	python3 -m game_data_packager.version >                $(DESTDIR)$(datadir)/game-data-packager/game_data_packager/version.py
+	install runtime/launcher.py                            $(DESTDIR)$(datadir)/game-data-packager/gdp-launcher
+	install -m0644 runtime/*.desktop                       $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/*.copyright                         $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/*.png                               $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/*.svgz                              $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/bash_completion                     $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/changelog.gz                        $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/copyright                           $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/vfs.zip                             $(DESTDIR)$(datadir)/game-data-packager/
 
 	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
 	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/
@@ -147,8 +147,8 @@ install:
 	install -m0644 runtime/doom2-masterlevels.desktop      $(DESTDIR)/usr/share/applications/
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
-	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)/usr/share/games/game-data-packager/
-	install -m0644 runtime/missing-data.txt                $(DESTDIR)/usr/share/games/game-data-packager/
+	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(datadir)/game-data-packager/
 
 # Requires additional setup, so not part of "make check"
 manual-check:

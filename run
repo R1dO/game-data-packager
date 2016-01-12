@@ -7,8 +7,10 @@ if [ "$0" = "./run" ]; then
 	GDP_UNINSTALLED=1
 	export GDP_UNINSTALLED
 	PYTHONPATH="$(pwd)"
-else
+elif [ -d /usr/share/games/game-data-packager ]; then
 	PYTHONPATH=/usr/share/games/game-data-packager
+else
+	PYTHONPATH=/usr/share/game-data-packager
 fi
 export PYTHONPATH
 
