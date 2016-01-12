@@ -134,6 +134,9 @@ install:
 
 	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
 	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/
+ifneq ($(datadir),/usr/share/games)
+	sed -i 's#/usr/share/games#$(datadir)#g' $(DESTDIR)/usr/share/bash-completion/completions/game-data-packager
+endif
 
 	mkdir -p $(DESTDIR)/usr/share/man/man6/
 	mkdir -p $(DESTDIR)/usr/share/man/fr/man6/
