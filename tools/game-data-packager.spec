@@ -1,4 +1,4 @@
-%define gitdate 20151231
+%define gitdate 20160112
 # git log --oneline -1
 %define gitversion 50f64b6
 
@@ -71,7 +71,7 @@ make check
 
 %install
 make DESTDIR=$RPM_BUILD_ROOT bindir=/usr/bin datadir=/usr/share install
-find $RPM_BUILD_ROOT/usr/share/games/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
+find $RPM_BUILD_ROOT/usr/share/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
 find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need more mirrors' > {}" \;
 
 %files
@@ -82,7 +82,7 @@ find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need 
 %config(noreplace) %attr(644, root, root) /etc/game-data-packager/*
 /usr/bin/game-data-packager
 /usr/share/bash-completion/completions/game-data-packager
-/usr/share/games/game-data-packager
+/usr/share/game-data-packager
 %license COPYING
 
 %files -n doom2-masterlevels
