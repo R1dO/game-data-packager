@@ -8,13 +8,3 @@ Terminal=false
 Type=Application
 Categories=Game;ActionGame;
 Keywords=first person shooter;fps;3d;epic megagames;epic games;digital extremes;return to na pali;
-
-[X-game-data-launcher]
-BinaryOnly=true
-RequiredFiles=System/Core.so;System/Core.u;System/UnrealLinux.bin;Maps/Entry.unr;
-BaseDirectories=/usr/lib/unreal-classic;/usr/lib/unreal;/usr/share/games/unreal;/usr/share/games/unreal-ut99-shared;
-LinkFiles=true
-CopyFiles=*.ini;
-WorkingDirectory=${XDG_DATA_HOME}/unreal/System
-LibraryPath=.;
-Exec=./UnrealLinux.bin

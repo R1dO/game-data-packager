@@ -85,6 +85,10 @@ out/%.png: data/%.svg
 out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
+out/launch-%.json: runtime/launch-%.yaml
+	mkdir -p out
+	$(PYTHON) tools/yaml2json.py $< $@
+
 clean:
 	rm -f ./out/bash_completion
 	rm -f ./out/changelog.gz
@@ -131,6 +135,7 @@ install:
 	install -m0644 runtime/*.desktop                       $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/launch-*.json                       $(DESTDIR)$(datadir)/game-data-packager/
 
 	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
 	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/

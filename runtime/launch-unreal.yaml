@@ -1,0 +1,18 @@
+---
+binary_only: true
+required_files:
+  - System/Core.so
+  - System/Core.u
+  - System/UnrealLinux.bin
+  - Maps/Entry.unr
+base_directories:
+  - /usr/lib/unreal-classic
+  - /usr/lib/unreal
+  - /usr/share/games/unreal
+  - /usr/share/games/unreal-ut99-shared
+link_files: true
+copy_files: ["*.ini"]
+working_directory: ${XDG_DATA_HOME}/unreal/System
+library_path: ["."]
+argv: [./UnrealLinux.bin]
+...

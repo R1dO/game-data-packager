@@ -19,9 +19,9 @@
 
 import argparse
 import fnmatch
+import json
 import logging
 import os
-import shlex
 import shutil
 import string
 import sys
@@ -37,17 +37,6 @@ if 'GDP_UNINSTALLED' in os.environ:
     GDP_DIR = './runtime'
 else:
     GDP_DIR = '/usr/share/games/game-data-packager'
-
-GDL_GROUP = 'X-game-data-launcher'
-GDL_KEY_BINARY_ONLY = 'BinaryOnly'
-GDL_KEY_BASE_DIRECTORIES = 'BaseDirectories'
-GDL_KEY_REQUIRED_FILES = 'RequiredFiles'
-GDL_KEY_DOT_DIRECTORY = 'DotDirectory'
-GDL_KEY_LIBRARY_PATH = 'LibraryPath'
-GDL_KEY_LINK_FILES = 'LinkFiles'
-GDL_KEY_COPY_FILES = 'CopyFiles'
-GDL_KEY_WORKING_DIRECTORY = 'WorkingDirectory'
-GDL_KEY_EXEC = 'Exec'
 
 # Normalize environment so we can use ${XDG_DATA_HOME} unconditionally.
 # Do this before we use GLib functions that might create worker threads,
@@ -118,63 +107,43 @@ class Launcher:
             GLib.KEY_FILE_DESKTOP_KEY_ICON)
         logger.debug('Icon: %s', self.icon_name)
 
-        self.binary_only = self.keyfile.get_boolean(GDL_GROUP,
-            GDL_KEY_BINARY_ONLY)
+        if 'GDP_UNINSTALLED' in os.environ:
+            import yaml
+            self.data = yaml.load(open('%s/launch-%s.yaml' % (GDP_DIR, self.id),
+                encoding='utf-8'), Loader=yaml.CSafeLoader)
+        else:
+            self.data = json.load(open('%s/launch-%s.json' % (GDP_DIR, self.id),
+                encoding='utf-8'))
+
+        self.binary_only = self.data['binary_only']
         logger.debug('Binary-only: %r', self.binary_only)
-        self.required_files = list(map(expand,
-                self.keyfile.get_string_list(GDL_GROUP,
-                    GDL_KEY_REQUIRED_FILES)))
+        self.required_files = list(map(expand, self.data['required_files']))
         logger.debug('Checked files: %r', sorted(self.required_files))
 
-        try:
-            self.dot_directory = expand(self.keyfile.get_string(GDL_GROUP,
-                GDL_KEY_DOT_DIRECTORY))
-        except:
-            self.dot_directory = expand('${XDG_DATA_HOME}/' + self.id)
+        self.dot_directory = expand(self.data.get('dot_directory',
+                    '${XDG_DATA_HOME}/' + self.id))
         logger.debug('Dot directory: %s', self.dot_directory)
 
-        try:
-            self.base_directories = list(map(expand,
-                    self.keyfile.get_string_list(GDL_GROUP,
-                        GDL_KEY_BASE_DIRECTORIES)))
-        except:
-            # this launcher is for binary-only games so assume /usr/lib
-            self.base_directories = ['/usr/lib/' + self.id]
+        self.base_directories = list(map(expand,
+                        self.data.get('base_directories',
+                            '/usr/lib/' + self.id)))
         logger.debug('Base directories: %r', self.base_directories)
 
-        try:
-            self.library_path = self.keyfile.get_string_list(GDL_GROUP,
-                GDL_KEY_LIBRARY_PATH)
-        except:
-            self.library_path = []
+        self.library_path = self.data.get('library_path', [])
         logger.debug('Library path: %r', self.library_path)
 
-        try:
-            self.working_directory = expand(self.keyfile.get_string(GDL_GROUP,
-                GDL_KEY_WORKING_DIRECTORY))
-        except:
-            self.working_directory = None
+        self.working_directory = expand(self.data.get('working_directory',
+                    None))
         logger.debug('Working directory: %s', self.working_directory)
 
-        try:
-            self.link_files = self.keyfile.get_boolean(GDL_GROUP,
-                GDL_KEY_LINK_FILES)
-        except:
-            self.link_files = False
+        self.link_files = self.data.get('link_files', False)
         logger.debug('Link files: %r', self.link_files)
 
         if self.link_files:
-            try:
-                self.copy_files = self.keyfile.get_string_list(GDL_GROUP,
-                    GDL_KEY_COPY_FILES)
-            except:
-                self.copy_files = []
+            self.copy_files = self.data.get('copy_files', [])
             logger.debug('... but copy files matching: %r', self.copy_files)
-        else:
-            self.copy_files = []
 
-        exec_ = self.keyfile.get_string(GDL_GROUP, GDL_KEY_EXEC)
-        self.argv = list(map(expand, shlex.split(exec_)))
+        self.argv = list(map(expand, self.data.get('argv', False)))
         logger.debug('Arguments: %r', self.argv)
 
         self.exit_status = 1
