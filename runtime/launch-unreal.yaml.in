@@ -14,13 +14,35 @@ working_directory: $${XDG_DATA_HOME}/unreal/System
 library_path: ["."]
 argv: [./UnrealLinux.bin]
 symlink_into_dot_directory:
-  - Help
-  - Maps
-  - Meshes
-  - Music
-  - Sounds
   - System
-  - Textures
 copy_into_dot_directory:
   - System/*.ini
+edit_unreal_ini:
+  System/UnrealLinux.ini:
+    once:
+      # Debian Games Team policy: games start windowed
+      - section: SDLDrv.SDL
+        replace: StartupFullscreen=False
+    always:
+      - section: Core.System
+        append_unique:
+          - Paths=/usr/lib/unreal-classic/System/*.u
+          - Paths=/$assets/unreal/System/*.u
+
+          - Paths=/usr/lib/unreal-classic/Maps/*.unr
+          - Paths=/$assets/unreal/Maps/*.unr
+
+          - Paths=/usr/lib/unreal-classic/Textures/*.utx
+          - Paths=/$assets/unreal/Textures/*.utx
+          - Paths=/$assets/unreal-ut99-shared/Textures/*.utx
+
+          - Paths=/usr/lib/unreal-classic/Sounds/*.uax
+          - Paths=/$assets/unreal/Sounds/*.uax
+          - Paths=/$assets/unreal-ut99-shared/Sounds/*.uax
+
+          - Paths=/usr/lib/unreal-classic/Music/*.umx
+          - Paths=/$assets/unreal/Music/*.umx
+
+          - Paths=/usr/lib/unreal-classic/Meshes/*.usm
+          - Paths=/$assets/unreal/Meshes/*.usm
 ...

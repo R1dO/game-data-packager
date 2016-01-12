@@ -15,13 +15,34 @@ working_directory: $${XDG_DATA_HOME}/unreal-gold/System
 library_path: ["."]
 argv: [./UnrealLinux.bin]
 symlink_into_dot_directory:
-  - Help
-  - Maps
-  - Meshes
-  - Music
-  - Sounds
   - System
-  - Textures
 copy_into_dot_directory:
   - System/*.ini
+edit_unreal_ini:
+  System/UnrealLinux.ini:
+    once:
+      # Debian Games Team policy: games start windowed
+      - section: SDLDrv.SDL
+        replace_key:
+          StartupFullscreen: "False"
+    always:
+      - section: Core.System
+        append_unique:
+          - Paths=/usr/lib/unreal-gold/Maps/*.unr
+          - Paths=/$assets/unreal-gold/Maps/*.unr
+          - Paths=/$assets/unreal/Maps/*.unr
+
+          - Paths=/usr/lib/unreal-gold/Textures/*.utx
+          - Paths=/$assets/unreal-gold/Textures/*.utx
+          - Paths=/$assets/unreal/Textures/*.utx
+          - Paths=/$assets/unreal-ut99-shared/Textures/*.utx
+
+          - Paths=/usr/lib/unreal-gold/Sounds/*.uax
+          - Paths=/$assets/unreal-gold/Sounds/*.uax
+          - Paths=/$assets/unreal/Sounds/*.uax
+          - Paths=/$assets/unreal-ut99-shared/Sounds/*.uax
+
+          - Paths=/usr/lib/unreal-gold/Music/*.umx
+          - Paths=/$assets/unreal-gold/Music/*.umx
+          - Paths=/$assets/unreal/Music/*.umx
 ...

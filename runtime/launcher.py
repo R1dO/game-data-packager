@@ -79,6 +79,91 @@ def expand(path):
 
     return os.path.expanduser(os.path.expandvars(path))
 
+class IniEditor:
+    def __init__(self, edits):
+        self.lines = []
+        self.edits = edits
+        self.__section = None
+        self.__section_lines = []
+        self.__sections = set()
+
+    def load(self, reader):
+        # Simple INI parser. Not using ConfigParser because Unreal
+        # uses duplicate keys within sections, and we want to preserve
+        # comments, blank lines etc.
+        self.__section = None
+        self.__section_lines = []
+        self.__sections = set()
+
+        for line in reader:
+            line = line.rstrip('\r\n')
+
+            if line.startswith('[') and line.endswith(']'):
+                self.__end_section()
+                self.__section = line[1:-1]
+
+            self.__section_lines.append(line)
+
+        self.__end_section()
+
+        for edit in self.edits:
+            if edit['section'] not in self.__sections:
+                self.__section = edit['section']
+                self.__section_lines = ['[%s]' % edit['section']]
+                self.__end_section()
+
+    def __end_section(self):
+        self.__sections.add(self.__section)
+
+        for edit in self.edits:
+            if edit['section'] != self.__section:
+                continue
+
+            extra_lines = []
+
+            for k, v in sorted(edit.get('replace_key', {}).items()):
+                self.__section_lines = [l for l in self.__section_lines
+                        if not l.startswith(k + '=')]
+                extra_lines.append('%s=%s' % (k, v))
+
+            for pattern in sorted(edit.get('delete_matched', [])):
+                self.__section_lines = [l for l in self.__section_lines
+                        if not fnmatch.fnmatchcase(l, pattern)]
+
+            for pattern in edit.get('comment_out_matched', []):
+                for i in range(len(self.__section_lines)):
+                    if fnmatch.fnmatchcase(self.__section_lines[i], pattern):
+                        self.__section_lines[i] = ';' + self.__section_lines[i]
+                        self.__section_lines.insert(i, '; ' +
+                                edit['comment_out_reason'])
+
+            for append in edit.get('append_unique', []):
+                for line in self.__section_lines:
+                    if line == append:
+                        break
+                else:
+                    extra_lines.append(append)
+
+            i = len(self.__section_lines) - 1
+
+            while i >= 0:
+                if self.__section_lines[i]:
+                    # _s_l[i] is the last non-empty line, insert after it
+                    self.__section_lines[i + 1:i + 1] = extra_lines
+                    break
+                i -= 1
+            else:
+                # no non-empty lines, insert after the section-opening heading
+                self.__section_lines[1:1] = extra_lines
+
+        self.lines.extend(self.__section_lines)
+        self.__section_lines = []
+        self.__section = None
+
+    def save(self, writer):
+        for line in self.lines:
+            print(line, file=writer)
+
 class Launcher:
     def __init__(self, argv=None):
         name = os.path.basename(sys.argv[0])
@@ -298,6 +383,54 @@ class Launcher:
                         logger.info('Symlinking %s -> %s', f, target)
                         os.symlink(f, target)
 
+        for ini, details in self.data.get('edit_unreal_ini', {}).items():
+            target = os.path.join(self.dot_directory, ini)
+            encoding = details.get('encoding', 'windows-1252')
+
+            if os.path.exists(target):
+                first_time = False
+                try:
+                    reader = open(target, encoding='utf-16')
+                    reader.readline()
+                except:
+                    reader = open(target, encoding=encoding)
+                else:
+                    reader.seek(0)
+            else:
+                first_time = True
+
+                if os.path.lexists(target):
+                    logger.info('Removing dangling symlink %s', target)
+                    os.remove(target)
+
+                for base in self.base_directories:
+                    source = os.path.join(base, ini)
+
+                    if os.path.exists(source):
+                        try:
+                            reader = open(target, encoding='utf-16')
+                            reader.readline()
+                        except:
+                            reader = open(target, encoding=encoding)
+                        else:
+                            reader.seek(0)
+                        break
+                else:
+                    raise AssertionError('Required file %s not found', ini)
+
+            if first_time and 'once' in details:
+                edits = details['once'] + details.get('always', [])
+            else:
+                edits = details.get('always', [])
+
+            editor = IniEditor(edits)
+
+            with reader:
+                editor.load(reader)
+
+            with open(target, 'w', encoding=encoding,
+                    newline=details.get('newline', '\n')) as writer:
+                editor.save(writer)
 
         if self.working_directory is not None:
             os.chdir(self.working_directory)
