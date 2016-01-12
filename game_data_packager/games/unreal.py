@@ -63,7 +63,7 @@ class UnrealTask(PackagingTask):
                             '100'))
                 sample_file = 'System\\UnrealTournament.ini'
             else:
-                groups = (('Unreal', package.name, package.version))
+                groups = (('Unreal', package.name, package.version),)
                 sample_file = 'System\\UnrealLinux.ini'
 
             lines = ['[Setup]', 'MasterProduct=' + groups[0][0]]
