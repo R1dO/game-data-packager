@@ -109,6 +109,7 @@ html.write('''<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "ht
 <head>
 <title>Game-Data-Packager</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="generator" content="http://anonscm.debian.org/cgit/pkg-games/game-data-packager.git/tree/tools/babel.py">
 <style type="text/css">
 '''
 )
