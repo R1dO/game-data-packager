@@ -104,6 +104,8 @@ clean:
 	rm -f ./out/*.control.in
 	rm -f ./out/*.copyright
 	rm -f ./out/*.copyright.in
+	rm -f ./out/*.desktop
+	rm -f ./out/*.json
 	rm -f ./out/*.preinst.in
 	rm -f ./out/*.png
 	rm -f ./out/*.svgz
