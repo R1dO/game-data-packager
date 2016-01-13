@@ -31,7 +31,6 @@ override_dh_install:
 	if dpkg-vendor --derives-from Ubuntu; then \
 		touch debian/game-data-packager/usr/share/games/game-data-packager/is-ubuntu-derived; \
 	fi
-	install -D -m755 runtime/doom2-masterlevels.py debian/game-data-packager/usr/games/doom2-masterlevels
 
 override_dh_installdocs:
 	dh_installdocs -XTODO
