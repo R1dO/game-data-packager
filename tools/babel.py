@@ -96,7 +96,13 @@ with open('debian/TODO', 'r', encoding='utf8') as missing:
                 stats['longname'] = line
             else:
                 longname, bug = line.split('#')
-                stats['longname'] = '%s <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=%s">#%s</a>' % (longname, bug, bug)
+                if ' ' in bug:
+                    bug, remainder = bug.split(maxsplit=1)
+                else:
+                    remainder = ''
+                stats['longname'] = ('%s <a href="https://bugs.debian.org/'
+                                   'cgi-bin/bugreport.cgi?bug=%s">#%s</a> %s'
+                                   % (longname, bug, bug, remainder))
             games.append(stats)
 
 games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
