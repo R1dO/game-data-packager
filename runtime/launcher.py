@@ -119,18 +119,22 @@ class IniEditor:
             if edit['section'] != self.__section:
                 continue
 
+            logger.debug('editing %s', self.__section)
             extra_lines = []
 
             for k, v in sorted(edit.get('replace_key', {}).items()):
+                logger.debug('replacing %s with %s', k, v)
                 self.__section_lines = [l for l in self.__section_lines
                         if not l.startswith(k + '=')]
                 extra_lines.append('%s=%s' % (k, v))
 
             for pattern in sorted(edit.get('delete_matched', [])):
+                logger.debug('deleting lines matching %s', pattern)
                 self.__section_lines = [l for l in self.__section_lines
                         if not fnmatch.fnmatchcase(l, pattern)]
 
             for pattern in edit.get('comment_out_matched', []):
+                logger.debug('commenting out lines matching %s', pattern)
                 for i in range(len(self.__section_lines)):
                     if fnmatch.fnmatchcase(self.__section_lines[i], pattern):
                         self.__section_lines[i] = ';' + self.__section_lines[i]
@@ -138,6 +142,7 @@ class IniEditor:
                                 edit['comment_out_reason'])
 
             for append in edit.get('append_unique', []):
+                logger.debug('appending unique line %s', append)
                 for line in self.__section_lines:
                     if line == append:
                         break
@@ -307,6 +312,64 @@ class Launcher:
     def exec_game(self, _unused=None):
         self.exit_status = 69   # EX_UNAVAILABLE
 
+        # Edit before copying, so that we can detect whether this is
+        # the first run or not
+        for ini, details in self.data.get('edit_unreal_ini', {}).items():
+            target = os.path.join(self.dot_directory, ini)
+            encoding = details.get('encoding', 'windows-1252')
+
+            if os.path.exists(target):
+                first_time = False
+                try:
+                    reader = open(target, encoding='utf-16')
+                    reader.readline()
+                except:
+                    reader = open(target, encoding=encoding)
+                else:
+                    reader.seek(0)
+            else:
+                first_time = True
+
+                if os.path.lexists(target):
+                    logger.info('Removing dangling symlink %s', target)
+                    os.remove(target)
+
+                for base in self.base_directories:
+                    source = os.path.join(base, ini)
+
+                    if os.path.exists(source):
+                        try:
+                            reader = open(source, encoding='utf-16')
+                            reader.readline()
+                        except:
+                            reader = open(source, encoding=encoding)
+                        else:
+                            reader.seek(0)
+                        break
+                else:
+                    raise AssertionError('Required file %s not found', ini)
+
+            if first_time:
+                edits = details.get('once', []) + details.get('always', [])
+            else:
+                edits = details.get('always', [])
+
+            logger.debug('%s', edits)
+            editor = IniEditor(edits)
+
+            with reader:
+                editor.load(reader)
+
+            d = os.path.dirname(target)
+
+            if d:
+                logger.info('Creating directory: %s', d)
+                os.makedirs(d, exist_ok=True)
+
+            with open(target, 'w', encoding=encoding,
+                    newline=details.get('newline', '\n')) as writer:
+                editor.save(writer)
+
         # Copy before linking, so that the copies will suppress symlink
         # creation
         for pattern in self.data.get('copy_into_dot_directory', ()):
@@ -382,55 +445,6 @@ class Launcher:
 
                         logger.info('Symlinking %s -> %s', f, target)
                         os.symlink(f, target)
-
-        for ini, details in self.data.get('edit_unreal_ini', {}).items():
-            target = os.path.join(self.dot_directory, ini)
-            encoding = details.get('encoding', 'windows-1252')
-
-            if os.path.exists(target):
-                first_time = False
-                try:
-                    reader = open(target, encoding='utf-16')
-                    reader.readline()
-                except:
-                    reader = open(target, encoding=encoding)
-                else:
-                    reader.seek(0)
-            else:
-                first_time = True
-
-                if os.path.lexists(target):
-                    logger.info('Removing dangling symlink %s', target)
-                    os.remove(target)
-
-                for base in self.base_directories:
-                    source = os.path.join(base, ini)
-
-                    if os.path.exists(source):
-                        try:
-                            reader = open(target, encoding='utf-16')
-                            reader.readline()
-                        except:
-                            reader = open(target, encoding=encoding)
-                        else:
-                            reader.seek(0)
-                        break
-                else:
-                    raise AssertionError('Required file %s not found', ini)
-
-            if first_time and 'once' in details:
-                edits = details['once'] + details.get('always', [])
-            else:
-                edits = details.get('always', [])
-
-            editor = IniEditor(edits)
-
-            with reader:
-                editor.load(reader)
-
-            with open(target, 'w', encoding=encoding,
-                    newline=details.get('newline', '\n')) as writer:
-                editor.save(writer)
 
         if self.working_directory is not None:
             os.chdir(self.working_directory)
