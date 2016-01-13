@@ -377,6 +377,8 @@ files:
       - EULA.txt?gog
     unpack:
       format: innoextract
+  Manual/Manual.pdf:
+    look_for: [Manual/Manual.pdf,unreal_manual.pdf]
 
   Help/lin_convenience_libs.tar.bz2:
     unpack:
