@@ -25,10 +25,13 @@ png       += out/memento-mori.png
 svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(filter-out ./data/memento-mori-2.svg,$(wildcard ./data/*.svg)))
 in_yaml   := $(wildcard ./data/*.yaml)
 json      := $(patsubst ./data/%.yaml,./out/vfs/%.json,$(in_yaml))
+json      += $(patsubst ./runtime/%.yaml.in,./out/%.json,$(wildcard ./runtime/*.yaml.in))
 copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright))
 dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
+desktop   := $(patsubst ./runtime/%.in,./out/%,$(wildcard ./runtime/*.desktop.in))
 
 default: $(png) $(svgz) $(json) $(copyright) $(dot_in) \
+      $(desktop) \
       out/bash_completion out/changelog.gz out/copyright \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
@@ -85,9 +88,13 @@ out/%.png: data/%.svg
 out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
-out/launch-%.json: runtime/launch-%.yaml
+out/launch-%.json: out/launch-%.yaml
 	mkdir -p out
 	$(PYTHON) tools/yaml2json.py $< $@
+
+out/%: runtime/%.in
+	mkdir -p out
+	PYTHONPATH=. $(PYTHON) tools/expand_vars.py $< $@
 
 clean:
 	rm -f ./out/bash_completion
@@ -132,7 +139,7 @@ install:
 	install -m0644 out/vfs.zip                             $(DESTDIR)$(datadir)/game-data-packager/
 
 	install runtime/launcher.py                            $(DESTDIR)$(datadir)/game-data-packager/gdp-launcher
-	install -m0644 runtime/*.desktop                       $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/*.desktop                           $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/launch-*.json                       $(DESTDIR)$(datadir)/game-data-packager/
@@ -155,7 +162,7 @@ endif
 	mkdir -p $(DESTDIR)/usr/share/applications
 	mkdir -p $(DESTDIR)/usr/share/pixmaps
 	install -m0755 runtime/doom2-masterlevels.py           $(DESTDIR)$(bindir)/doom2-masterlevels
-	install -m0644 runtime/doom2-masterlevels.desktop      $(DESTDIR)/usr/share/applications/
+	install -m0644 out/doom2-masterlevels.desktop          $(DESTDIR)/usr/share/applications/
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
 

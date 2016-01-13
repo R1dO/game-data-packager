@@ -77,10 +77,7 @@ class DoomGameData(GameData):
         }
 
         for package in self.packages.values():
-            if FORMAT == 'arch':
-                package.install_to = 'usr/share/games/doom'
-            else:
-                package.install_to = '$assets/doom'
+            package.install_to = '$assets/doom'
             engine = package.engine or self.engine
             engine = engine.split('|')[-1].strip()
             package.program = package_map.get(engine, engine)
