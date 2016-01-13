@@ -21,8 +21,9 @@ edit_unreal_ini:
   System/UnrealLinux.ini:
     once:
       # Debian Games Team policy: games start windowed
-      - section: SDLDrv.SDL
-        replace: StartupFullscreen=False
+      - section: SDLDrv.SDLClient
+        replace_key:
+          StartupFullscreen: False
     always:
       - section: Core.System
         append_unique:
