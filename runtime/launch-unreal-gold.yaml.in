@@ -29,7 +29,9 @@ edit_unreal_ini:
       - section: Core.System
         append_unique:
           - Paths=/usr/lib/unreal-gold/Maps/*.unr
+          - Paths=/usr/lib/unreal-gold/Maps/UPak/*.unr
           - Paths=/$assets/unreal-gold/Maps/*.unr
+          - Paths=/$assets/unreal-gold/Maps/UPak/*.unr
           - Paths=/$assets/unreal/Maps/*.unr
 
           - Paths=/usr/lib/unreal-gold/Textures/*.utx
