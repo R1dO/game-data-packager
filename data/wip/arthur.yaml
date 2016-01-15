@@ -1,0 +1,45 @@
+---
+longname: "Arthur: the Quest for Excalibur"
+plugin: z_code
+copyright: © 1985 Infocom
+engine: zoom
+
+# This needs zoom in the archive, and appropriate engine support in z_code.py
+
+packages:
+  arthur-data:
+    install:
+    - arthur.blb
+    - arthur.z6
+
+files:
+  arthur.blb:
+    download: http://www.ifarchive.org/if-archive/infocom/media/blorb/Arthur.blb
+
+  arthur.z6:
+    look_for:
+    - arthur.z6
+    - arthur.zip
+
+# CGA, EGA and MCGA resource files are listed below in case we ever
+# want to use them to rebuild the Blorb file
+
+size_and_md5: |
+  # Release 77
+  276538    09dc4d0267240b6af2fec4ccb6cfa118 arthur.blb
+  209359    d8da46b286cdd3e44ec749a5fb635618 arthur.cg1
+  223522    51b3a5081e5185767110943e41e33528 arthur.eg1
+  154137    52744f585651c78a6b8de5762db88cba arthur.eg2
+  292279    3c58e571f4d84f04f8d05e25768b980e arthur.mg1
+  269312    dc8416f4168b47b2e7694fccdaa13d56 arthur.z6
+
+sha1sums: |
+  # Release 77
+  685b38d84d25a6378eb98d2d3b8d621bd9f539f8  arthur.blb
+  234a9c616fc1bd13919402690e785c3bd393c85d  arthur.cg1
+  cdb7fcb12e5b82472aae26982f2fdb79711561be  arthur.eg1
+  612b44c0e5a06b8d133d11f7a9907cd3a3760269  arthur.eg2
+  ef332ae51c44967b66223ec079898f33f325c27a  arthur.mg1
+  9be914074d69a4e9423fa9ab7bb540e783db2218  arthur.z6
+...
+
