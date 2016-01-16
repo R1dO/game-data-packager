@@ -87,14 +87,12 @@ cd "$pkglibdir"
 set \
   env LD_LIBRARY_PATH="${pkglibdir}${LD_LIBRARY_PATH:+":${LD_LIBRARY_PATH}"}" \
   "$@"
-shift
 
 if test -n "$QUAKE4_BACKTRACE"; then
   set gdb -return-child-result -batch \
     -ex run -ex 'thread apply all bt full' -ex kill -ex quit \
     --args "${pkglibdir}/${binary}" ${cvars} \
     "$@"
-  shift
 else
   set _ ${QUAKE4_DEBUGGER} "${pkglibdir}/${binary}" ${cvars} "$@"
   shift
