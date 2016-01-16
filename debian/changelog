@@ -22,6 +22,8 @@ quake (17) UNRELEASED; urgency=medium
     pack via a different symbolic link. This is a workaround for Steam
     ignoring command-line options when adding a non-Steam shortcut
     (<https://github.com/ValveSoftware/steam-for-linux/issues/3855>)
+  * quake*.desktop: stop using Roman numerals, so they sort in
+    the correct order
 
  -- Simon McVittie <smcv@debian.org>  Thu, 10 Dec 2015 00:44:21 +0100
 
