@@ -13,6 +13,17 @@ no_data_msg="Missing data; see /usr/share/doc/${self}/README.Debian"
 use_data_location="$data_location"
 
 main() {
+    case "$(basename "$0")" in
+        (*reckoning*|*xatrix*)
+            set _ "$@" +set game xatrix
+            shift
+            ;;
+        (*groundzero*|*rogue*)
+            set _ "$@" +set game rogue
+            shift
+            ;;
+    esac
+
     while [ $# -gt 0 ]; do
         case "$1" in
             -h|--help)

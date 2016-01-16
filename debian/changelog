@@ -16,6 +16,12 @@ quake (17) UNRELEASED; urgency=medium
   * d/copyright: mention the idTech4 games, and Alexandre's contributions
   * d/control: remove Suggests on quake4-pb-bin, which is disabled in
     game-data-packager to avoid CVE-2007-5248
+  * quake, quake2, quake3: if launched via a symlink whose name
+    contains armagon, hipnotic, etc., run the appropriate expansion pack
+  * quake.desktop, quake2.desktop, quake3.desktop: run each expansion
+    pack via a different symbolic link. This is a workaround for Steam
+    ignoring command-line options when adding a non-Steam shortcut
+    (<https://github.com/ValveSoftware/steam-for-linux/issues/3855>)
 
  -- Simon McVittie <smcv@debian.org>  Thu, 10 Dec 2015 00:44:21 +0100
 

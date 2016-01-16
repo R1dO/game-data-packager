@@ -2,7 +2,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH QUAKE 6 "2011-06-22"
+.TH QUAKE 6 "2016-01-16"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -42,6 +42,13 @@ Consult the engine documentation for full details, but most engines support a
 syntax whereby engine switches are prefixed with a minus sign, and you can
 give console commands by prefixing with a plus sign.  See the examples section
 for some common cases.
+.PP
+Additionally, if \fBquake\fR is run via a symbolic link whose name contains
+\fBarmagon\fR, \fBhipnotic\fR, \fBdissolution\fR or \fBrogue\fR,
+it will play one of the Quake mission packs, \fBScourge of Armagon\fR
+(by Hipnotic Software) or \fBDissolution of Eternity\fR (by Rogue
+Entertainment). This requires that additional data files are
+installed.
 .SH OPTIONS
 These options are accepted for \fBWRAPPER-OPTIONS\fR in the
 synopsis.

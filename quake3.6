@@ -1,4 +1,4 @@
-.TH QUAKE3 6 2010-10-15
+.TH QUAKE3 6 2016-01-16
 
 .SH NAME
 quake3 \- Quake III Arena client
@@ -22,6 +22,15 @@ Display a short help summary
 .TP
 \fB\-q\fR, \fB\-\-quiet\fR
 Disable all console output
+.TP
+\fB\-\-demo\fR
+Run the demo version, even if the full game is installed
+.PP
+Additionally, if \fBquake3\fR is run via a symbolic link whose name
+contains \fBteam-arena\fR or \fBteamarena\fR, it will play the expansion pack,
+\fBQuake III Team Arena\fR. This requires that additional data files are
+installed. Similarly, a symbolic link containing \fBdemo\fR is equivalent
+to the \fB\-\-demo\fR option.
 .PP
 Any console command can also be prefixed with \fB+\fR and used as a
 command-line option (press Shift+Esc to access the in-game console), including:

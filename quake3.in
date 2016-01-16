@@ -29,7 +29,19 @@ Usage: ${IOQ3SELF} [OPTION]...\n\
 
 CVARS="+set com_standalone 0"
 
+case "$(basename "$0")" in
+  (*team-arena*|*teamarena*)
+    set _ "$@" +set fs_game missionpack
+    shift
+    ;;
+  (*demo*)
+    set _ --demo "$@"
+    shift
+    ;;
+esac
+
 while [ "$1" != "" ]; do
+
   case "$1" in
     -h|--help)
       echo ${EXCUSE}

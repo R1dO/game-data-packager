@@ -1,5 +1,5 @@
 .\"                                      Hey, EMACS: -*- nroff -*-
-.TH QUAKE2 6 "2013-09-25"
+.TH QUAKE2 6 "2016-01-16"
 .SH NAME
 quake2 \- classic first person shooter
 .SH SYNOPSIS
@@ -23,6 +23,13 @@ This wrapper script accepts a few GNU-style options.
 Any further arguments are passed to the engine unmodified.
 Consult the engine documentation for full details, but most engines support a
 syntax where you can give console commands by prefixing with a plus sign.
+.PP
+Additionally, if \fBquake2\fR is run via a symbolic link whose name
+contains \fBreckoning\fR, \fBxatrix\fR, \fBgroundzero\fR or \fBrogue\fR,
+it will play one of the Quake II mission packs, \fBThe Reckoning\fR
+(by Xatrix Entertainment) or \fBGround Zero\fR (by Rogue
+Entertainment). This requires that additional data files are
+installed.
 .SH OPTIONS
 These options are accepted for \fBWRAPPER-OPTIONS\fR in the
 synopsis.
