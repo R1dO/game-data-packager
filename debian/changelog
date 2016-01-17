@@ -71,20 +71,33 @@ game-data-packager (44) UNRELEASED; urgency=medium
   * Cruise for a Corpse: add French CD version
   * The Dig: add English CD version
 
-  Other changes:
+  Enhancements and bug fixes:
 
   [ Alexandre Detiste ]
   * fix en_GB auto-detection
   * fix autodownloading of GrimFandango Italian demo
   * fix 'gog', 'atlantis' & 'baldurs-gate-2' targets (Closes: #804804)
   * use steamcmd to download Linux & Windows game assets (Closes: #775365)
-  * steam: semi-automatically tag remaining native games
+  * re-add Doom 2 - MasterLevels launcher icon that got lost in v42 or v43
+
+  [ Simon McVittie ]
+  * runtime: add a generic Gtk launcher, initially for Unreal
+  * Add an experimental AppArmor profile for the non-free Unreal binaries,
+    to protect the rest of the system from any exploits
+
+  [ Stephen Kitt ]
+  * Update the GOG installer for The Dig (English).
+  * Add Sam & Max CD manual.
+
+  Internal changes:
+
+  [ Alexandre Detiste ]
   * fedora: prepare initial release
   * make install: fix inclusion game_data_packager/unpack in .deb
   * man pages: install man pages in Makefile
   * refactor packaging for various games
-  * re-add Doom 2 - MasterLevels launcher icon that got lost in v42 or v43
   * avoid computing known md5 again in our dh_md5sums implementation
+  * steam: semi-automatically tag remaining native games
 
   [ Simon McVittie ]
   * quake, quake2: make aliases consistently strings
@@ -110,12 +123,6 @@ game-data-packager (44) UNRELEASED; urgency=medium
   * Allow any file to be made executable by the installation process
   * Do not try to obtain non-preferred alternatives for files
   * Accept $GDP_DEBUG as a synonym for $DEBUG
-  * runtime: add a generic Gtk launcher, initially for Unreal
-  * Add an experimental AppArmor profile for the non-free Unreal binaries
-
-  [ Stephen Kitt ]
-  * Update the GOG installer for The Dig (English).
-  * Add Sam & Max CD manual.
 
  -- Simon McVittie <smcv@debian.org>  Sun, 01 Nov 2015 11:10:56 +0100
 
