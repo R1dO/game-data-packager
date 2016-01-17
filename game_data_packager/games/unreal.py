@@ -32,16 +32,10 @@ class UnrealTask(PackagingTask):
             with TemporaryUmask(0o022):
                 self.__convert_logo(destdir, package, 'skaarj_logo.jpg')
 
-        if package.name == 'ut99-data':
-            with TemporaryUmask(0o022):
-                self.__convert_logo(destdir, package, 'ut99.gif')
-
-        if package.name in ('unreal-gold', 'unreal-classic', 'ut99'):
+        if package.name in ('unreal-gold', 'unreal-classic'):
             with TemporaryUmask(0o022):
                 self.__add_manifest(package, destdir)
 
-        if package.name in ('unreal-gold', 'unreal-classic'):
-            with TemporaryUmask(0o022):
                 self.packaging.override_lintian(destdir, package.name,
                         'binary-has-unneeded-section',
                         'usr/lib/unreal*/System/* *')
@@ -93,14 +87,6 @@ class UnrealTask(PackagingTask):
                 groups = (('UnrealGold', package.name, package.version),
                         ('Unreal Gold', package.name, package.version))
                 sample_file = 'System\\UnrealLinux.ini'
-            elif package.name == 'ut99':
-                groups = (('UnrealTournament', package.name, package.version),
-                        ('UTBonusPack', 'Unreal Tournament Bonus Pack', '100'),
-                        ('DEMutators', 'DEMutators', '101'),
-                        ('UTInoxxPack', 'Unreal Tournament Inoxx Pack', '100'),
-                        ('UTBonusPack4', 'Unreal Tournament Bonus Pack 4',
-                            '100'))
-                sample_file = 'System\\UnrealTournament.ini'
             else:
                 groups = (('Unreal', package.name, package.version),)
                 sample_file = 'System\\UnrealLinux.ini'
