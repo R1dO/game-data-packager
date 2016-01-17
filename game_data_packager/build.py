@@ -1576,6 +1576,10 @@ class PackagingTask(object):
         return specfile
 
     def fill_dest_dir_deb(self, package, destdir):
+        if package.component == 'local':
+             self.packaging.override_lintian(destdir, package.name,
+                     'unknown-section', 'local/%s' % package.section)
+
         # same output as in dh_md5sums
 
         # we only compute here the md5 we don't have yet,
