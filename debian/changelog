@@ -58,6 +58,9 @@ game-data-packager (44) UNRELEASED; urgency=medium
     - Wishbringer
     - Witness
 
+  [ Simon McVittie ]
+  * Unreal (classic or Gold), using the proprietary x86 binaries
+
   Support for new languages and versions:
 
   [ Alexandre Detiste ]
@@ -108,7 +111,6 @@ game-data-packager (44) UNRELEASED; urgency=medium
   * Do not try to obtain non-preferred alternatives for files
   * Accept $GDP_DEBUG as a synonym for $DEBUG
   * runtime: add a generic Gtk launcher, initially for Unreal
-  * Add work-in-progress packaging for Unreal (not yet enabled)
   * Add an experimental AppArmor profile for the non-free Unreal binaries
 
   [ Stephen Kitt ]
