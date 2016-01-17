@@ -145,6 +145,8 @@ install:
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/launch-*.json                       $(DESTDIR)$(datadir)/game-data-packager/
+	install -d                                             $(DESTDIR)/etc/apparmor.d/
+	install -m0644 etc/apparmor.d/*                        $(DESTDIR)/etc/apparmor.d/
 
 	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
 	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/
