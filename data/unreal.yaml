@@ -60,13 +60,13 @@ packages:
       the native CPU architecture.
     debian:
       depends:
-        - game-data-packager
+        - "game-data-packager (>= 44)"
         - gir1.2-gtk-3.0
         - python3
         - python3-gi
     rpm:
       depends:
-        - game-data-packager
+        - "game-data-packager >= 44"
         - gtk3
         - python3
         - python3-gobject
