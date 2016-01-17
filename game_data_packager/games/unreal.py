@@ -40,6 +40,45 @@ class UnrealTask(PackagingTask):
             with TemporaryUmask(0o022):
                 self.__add_manifest(package, destdir)
 
+        if package.name in ('unreal-gold', 'unreal-classic'):
+            with TemporaryUmask(0o022):
+                self.packaging.override_lintian(destdir, package.name,
+                        'binary-has-unneeded-section',
+                        'usr/lib/unreal*/System/* *')
+                self.packaging.override_lintian(destdir, package.name,
+                        'binary-or-shlib-defines-rpath',
+                        'usr/lib/unreal*/System/* .')
+                self.packaging.override_lintian(destdir, package.name,
+                        'embedded-library',
+                        'usr/lib/unreal*/System/*.bin: zlib')
+                self.packaging.override_lintian(destdir, package.name,
+                        'hardening-no-fortify-functions',
+                        'usr/lib/unreal*/System/*')
+                self.packaging.override_lintian(destdir, package.name,
+                        'spelling-error-in-binary',
+                        'usr/lib/unreal*/System/* * *')
+                self.packaging.override_lintian(destdir, package.name,
+                        'shlib-with-non-pic-code',
+                        'usr/lib/unreal*/System/*.so')
+
+        if package.name == 'unreal-libmikmod2':
+            with TemporaryUmask(0o022):
+                self.packaging.override_lintian(destdir, package.name,
+                        'embedded-library',
+                        'usr/lib/unreal/libmikmod.so.2.0.4: libmikmod')
+
+        if package.name == 'unreal-libfmod':
+            with TemporaryUmask(0o022):
+                self.packaging.override_lintian(destdir, package.name,
+                        'hardening-no-relro',
+                        'usr/lib/unreal/libfmod-3.75.so')
+                self.packaging.override_lintian(destdir, package.name,
+                        'binary-has-unneeded-section',
+                        'usr/lib/unreal/libfmod-3.75.so .comment')
+                self.packaging.override_lintian(destdir, package.name,
+                        'hardening-no-fortify-functions',
+                        'usr/lib/unreal/libfmod-3.75.so')
+
     def __add_manifest(self, package, destdir):
         # A real Manifest.ini is much larger than this, but this is
         # enough to identify the version.
