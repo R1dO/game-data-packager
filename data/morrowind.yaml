@@ -8,8 +8,14 @@ try_repack_from:
 
 missing_langs: [en,de,es,it,pl,ru]
 
+steam:
+  id: 22320
+  path: common/Morrowind
+
 help_text: |
   Only the French version is currently supported.
+  .
+  Steam sells English, German & French versions
   .
   To let OpenMW know of this data package,
   you must run these commands in a shell.
