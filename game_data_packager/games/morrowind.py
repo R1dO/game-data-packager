@@ -41,6 +41,21 @@ class MorrowindTask(PackagingTask):
         os.symlink(datadir, subdir_expected_by_iniimporter)
 
         ini = os.path.join(datadir, 'Morrowind.ini')
+
+        initext = open(ini + '.orig', encoding='latin-1').read()
+
+        if package.name.startswith( # either of:
+                ('morrowind-tribunal', 'morrowind-complete')):
+            initext = initext + '\r\nGameFile1=Tribunal.esm\r\n'
+
+        if package.name.startswith('morrowind-bloodmoon'):
+            initext = initext + '\r\nGameFile1=Bloodmoon.esm\r\n'
+
+        if package.name.startswith('morrowind-complete'):
+            initext = initext + '\r\nGameFile2=Bloodmoon.esm\r\n'
+
+        open(ini, 'w', encoding='latin-1').write(initext)
+
         cfg = os.path.join(datadir, 'openmw.cfg')
 
         check_call(['openmw-iniimporter',
