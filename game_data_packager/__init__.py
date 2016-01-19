@@ -198,7 +198,7 @@ class GameDataPackage(object):
 
         # Names of relative packages
         self.demo_for = set()
-        self.better_version = None
+        self._better_versions = set()
         self.expansion_for = None
         # use this to group together dubs
         self.provides = None
@@ -363,6 +363,13 @@ class GameDataPackage(object):
         self._optional = set(value)
 
     @property
+    def better_versions(self):
+        return self._better_versions
+    @better_versions.setter
+    def better_versions(self, value):
+        self._better_versions = set(value)
+
+    @property
     def type(self):
         """type of package: full, demo or expansion
 
@@ -398,6 +405,7 @@ class GameDataPackage(object):
 
         for k in (
                 'aliases',
+                'better_versions',
                 'demo_for',
                 'depends',
                 'dotemu',
@@ -427,7 +435,6 @@ class GameDataPackage(object):
                 ret['optional'] = sorted(self.optional)
 
         for k in (
-                'better_version',
                 'copyright',
                 'copyright_notice',
                 'description',
@@ -812,12 +819,16 @@ class GameData(object):
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
                 'install_contents_of', 'description', 'depends',
-                'rip_cd', 'architecture', 'aliases', 'better_version', 'langs', 'mutually_exclusive',
+                'rip_cd', 'architecture', 'aliases', 'better_versions', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
                 'short_description', 'long_description', 'empty'):
             if k in d:
                 setattr(package, k, d[k])
+
+        if 'better_version' in d:
+            assert 'better_versions' not in d
+            package.better_versions = set([d['better_version']])
 
         for port in (
                 # packaging formats (we treat "debian" as "any dpkg-based"
@@ -892,7 +903,7 @@ class GameData(object):
                 package.longname = self.longname + ' (%s)' % package.lang
 
         if package.mutually_exclusive:
-            assert package.demo_for or package.better_version or package.provides
+            assert package.demo_for or package.better_versions or package.provides
 
         if 'expansion_for' in d:
             if package.disks is None:
@@ -1216,8 +1227,10 @@ class GameData(object):
                             break
                     else:
                         raise Exception('virtual pkg %s not found' % package.expansion_for)
-            assert (not package.better_version or
-              package.better_version in self.packages), package.better_version
+
+            if package.better_versions:
+                for v in package.better_versions:
+                    assert v in self.packages, v
 
             # check for stale missing_langs
             if not package.demo_for:

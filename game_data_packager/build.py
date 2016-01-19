@@ -1793,8 +1793,7 @@ class PackagingTask(object):
 
         if package.mutually_exclusive:
             dep['conflicts'] |= package.demo_for
-            if package.better_version:
-                dep['conflicts'].add(package.better_version)
+            dep['conflicts'] |= package.better_versions
 
         if package.provides:
             dep['provides'].add(package.provides)
@@ -1823,9 +1822,11 @@ class PackagingTask(object):
             if (other_package.expansion_for and
              other_package.expansion_for in (package.name, package.provides)):
                     dep['suggests'].add(other_package.name)
+
             if other_package.mutually_exclusive:
-                if other_package.better_version == package.name:
+                if package.name in other_package.better_versions:
                     dep['replaces'].add(other_package.name)
+
                 if package.name in other_package.demo_for:
                     dep['replaces'].add(other_package.name)
 
@@ -2332,13 +2333,13 @@ class PackagingTask(object):
             # this check is done before the language check to avoid to end up with
             # simon-the-sorcerer1-fr-data + simon-the-sorcerer1-dos-en-data
             for package in set(possible):
-                if (package.better_version
-                    and self.game.packages[package.better_version] in possible):
-                      logger.info('will not produce "%s" because better version '
-                         '"%s" is also available',
-                         package.name,
-                         package.better_version)
-                      possible.discard(package)
+                for v in package.better_versions:
+                    if self.game.packages[v] in possible:
+                        logger.info('will not produce "%s" because better '
+                                'version "%s" is also available',
+                                package.name, v)
+                        possible.discard(package)
+                        break
 
             for package in set(possible):
                 score = max(set(lang_score(l) for l in package.langs))

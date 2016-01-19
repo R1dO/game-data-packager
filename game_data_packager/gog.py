@@ -142,9 +142,17 @@ def run_gog_meta_mode(parsed, games):
                 continue
             if lang_score(package.lang) == 0:
                 continue
-            if package.better_version:
-                if data.gog_download_name(data.packages[package.better_version]):
-                    continue
+
+            can_do_better = False
+
+            for v in package.better_versions:
+                if data.gog_download_name(data.packages[v]):
+                    can_do_better = True
+                    break
+
+            if can_do_better:
+                continue
+
             installed = packaging.is_installed(package.name)
             if parsed.new and installed:
                 continue

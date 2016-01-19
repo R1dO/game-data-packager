@@ -47,8 +47,8 @@ for name, game in load_games().items():
         with game.construct_task() as task:
             if task.fill_gaps(package=package,
                      log=False) is FillResult.IMPOSSIBLE:
-                 if package.better_version is None:
-                     fullfree = False
+                if not package.better_versions:
+                    fullfree = False
             else:
                  somefree = True
     genre = game.genre or 'Unknown'
