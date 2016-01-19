@@ -36,15 +36,15 @@ default: $(png) $(svgz) $(json) $(copyright) $(dot_in) \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
 out/%: data/%
-	mkdir -p out
+	@mkdir -p out
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
 out/vfs/%.json: data/%.yaml
-	mkdir -p out/vfs
+	@mkdir -p out/vfs
 	$(PYTHON) tools/compile_yaml.py $< $@
 
 out/vfs.zip: $(json)
-	mkdir -p out
+	@mkdir -p out
 	rm -f out/vfs.zip
 	if [ -n "$(BUILD_DATE)" ]; then \
 		touch --date='$(BUILD_DATE)' out/vfs/*; \
@@ -53,47 +53,47 @@ out/vfs.zip: $(json)
 		env TZ=UTC zip ../vfs.zip -9 -X -q -@
 
 out/bash_completion: $(in_yaml)
-	mkdir -p out
+	@mkdir -p out
 	$(PYTHON) tools/bash_completion.py > ./out/bash_completion
 	chmod 0644 ./out/bash_completion
 
 out/changelog.gz: debian/changelog
-	mkdir -p out
+	@mkdir -p out
 	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
 
 out/game-data-packager: run
-	mkdir -p out
+	@mkdir -p out
 	install run out/game-data-packager
 
 out/%.svg: data/%.svg
-	mkdir -p out
+	@mkdir -p out
 	inkscape --export-plain-svg=$@ $<
 
 out/memento-mori.svg: data/memento-mori-2.svg
-	mkdir -p out
+	@mkdir -p out
 	inkscape --export-plain-svg=$@ --export-id=layer1 --export-id-only $<
 
 out/memento-mori.png: out/memento-mori.svg
 	inkscape --export-png=$@ -w96 -h96 $<
 
 out/%.png: data/%.xpm
-	mkdir -p out
+	@mkdir -p out
 	convert $< $@
 
 out/%.png: data/%.svg
-	mkdir -p out
+	@mkdir -p out
 	inkscape --export-png=$@ -w96 -h96 $<
 
 out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
 out/launch-%.json: out/launch-%.yaml
-	mkdir -p out
+	@mkdir -p out
 	$(PYTHON) tools/yaml2json.py $< $@
 
 out/%: runtime/%.in
-	mkdir -p out
+	@mkdir -p out
 	PYTHONPATH=. $(PYTHON) tools/expand_vars.py $< $@
 
 clean:
