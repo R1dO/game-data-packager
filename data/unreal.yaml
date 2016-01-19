@@ -15,6 +15,11 @@ wiki: Unreal
 compress_deb: [-Zgzip, -z4]
 binary_executables: i386
 
+help_text: |
+  The OldUnreal patch version 227i is required, but cannot be downloaded
+  automatically. Please download it using a web browser, from
+  <http://www.oldunreal.com/oldunrealpatches.html>.
+
 packages:
   unreal-ut99-shared-data:
     # This is deliberately the same version so we don't get one game
@@ -399,9 +404,6 @@ files:
     download: https://web.archive.org/web/20151228165838/https://forums.unrealtournament.com/attachment.php?attachmentid=21605&stc=1
 
   UnrealGoldPatch227i.7z:
-    download:
-      oldunreal-mirrors:
-        path: .
     provides:
       - UnrealGoldPatch227i.exe
     unpack:
@@ -427,9 +429,6 @@ files:
       format: umod
 
   UnrealClassicPatch227i.7z:
-    download:
-      oldunreal-mirrors:
-        path: .
     provides:
       - UnrealClassicPatch227i.exe
     unpack:
