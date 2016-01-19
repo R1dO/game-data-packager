@@ -1653,13 +1653,12 @@ class PackagingTask(object):
             with TemporaryUmask(0o22):
                 logger.debug('Found %s at %s', wanted.name, copy_from)
 
-                install_to = wanted.install_to
-
-                if install_to is None:
-                    install_to = package.install_to
-
-                install_to = self.packaging.substitute(install_to,
+                install_to = self.packaging.substitute(package.install_to,
                         package.name).lstrip('/')
+
+                if wanted.install_to is not None:
+                    install_to = self.packaging.substitute(wanted.install_to,
+                            package.name, install_to=install_to)
 
                 copy_to = os.path.join(destdir, install_to, install_as)
                 copy_to_dir = os.path.dirname(copy_to)
