@@ -1803,6 +1803,13 @@ class PackagingTask(object):
         if engine and '>=' in engine:
             dep['breaks'].add(engine.replace('>=', '<<'))
             engine = engine.split()[0]
+
+        # We only 'recommends' & not 'depends'; to avoid
+        # that GDP-generated packages get removed
+        # if engine goes through some gcc/png/ffmpeg/... migration
+        # and must be temporarily removed.
+        # It's not like 'apt-get install ...' can revert this removal;
+        # user may need to dig again for the original media....
         if package.engine:
             dep['recommends'].add(engine)
         elif not package.expansion_for and self.game.engine:
