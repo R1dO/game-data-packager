@@ -27,6 +27,7 @@ from ..build import (PackagingTask)
 from ..util import (TemporaryUmask,
                     which,
                     mkdir_p)
+from ..version import (FORMAT)
 
 logger = logging.getLogger('game-data-packager.games.z_code')
 
@@ -42,7 +43,8 @@ class ZCodeGameData(GameData):
             assert package.z_file
 
         if self.engine is None:
-            self.engine = 'gargoyle-free | frotz'
+            # RPM format can't handle alternatives and will ignore this
+            self.engine = 'gargoyle-free | zcode-interpreter'
         if self.genre is None:
             self.genre = 'Adventure'
 
@@ -67,14 +69,25 @@ class ZCodeTask(PackagingTask):
             entry['Categories'] = 'Game;'
             entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
-            engine = 'gargoyle-free'
+            engine = 'zcode-interpreter'
             entry['Terminal'] = 'false'
-            if not self.packaging.is_installed('gargoyle-free'):
-                for try_engine in ('frotz', 'nfrotz', 'fizmo'):
+            if FORMAT != 'deb':
+                # keep engines sorted by relevance
+                for try_engine, terminal in (('gargoyle', False),
+                                             ('gargoyle-free', False),
+                                             ('frotz', True),
+                                             ('nfrotz', True),
+                                             ('fizmo', True),
+                                             ('fizmo-cursenw', True),
+                                             ('fizmo-console', True),
+                                             ('zjip', True)):
                     if which(try_engine):
                         engine = try_engine
-                        entry['Terminal'] = 'true'
+                        if terminal:
+                            entry['Terminal'] = 'true'
                         break
+                else:
+                    engine = 'gargoyle'
             entry['TryExec'] = engine
             arg = '/' + install_to + '/' + package.z_file
             entry['Exec'] = engine + ' ' + arg
@@ -97,18 +110,17 @@ class ZCodeTask(PackagingTask):
                     'usr/share/applications/%s.desktop %s'
                      % (package.name, engine))
 
-            if engine != 'gargoyle-free':
-                engine = which(engine)
-                bindir = os.path.join(destdir, self.packaging.BINDIR)
-                mkdir_p(bindir)
-                pgm = package.name[0:len(package.name)-len('-data')]
-                path = os.path.join(bindir, pgm)
-                with open(path, 'w') as f:
-                     f.write('#!/bin/sh\n')
-                     f.write('test -x %s && exec %s $@ %s\n' %
-                             (engine, engine, arg))
-                     f.write('echo "You need to install some engine '
-                                   'like frotz to play this game"\n')
-                os.chmod(path, 0o755)
+            engine = which(engine)
+            bindir = os.path.join(destdir, self.packaging.BINDIR)
+            mkdir_p(bindir)
+            pgm = package.name[0:len(package.name)-len('-data')]
+            path = os.path.join(bindir, pgm)
+            with open(path, 'w') as f:
+                 f.write('#!/bin/sh\n')
+                 f.write('test -x %s && exec %s $@ %s\n' %
+                         (engine, engine, arg))
+                 f.write('echo "You need to install some Z-Code interpreter '
+                               'like Frotz or Gargoyle to play this game"\n')
+                 os.chmod(path, 0o755)
 
 GAME_DATA_SUBCLASS = ZCodeGameData
