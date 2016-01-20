@@ -6,6 +6,11 @@
 override_dh_auto_build:
 	dh_auto_build -- distro=$(shell dpkg-vendor --query Vendor)
 
+override_dh_install-arch:
+	dh_install -a
+	dh_apparmor -pquake4 --profile-name=usr.lib.quake4.quake4.x86
+	dh_apparmor -pquake4-server --profile-name=usr.lib.quake4.q4ded.x86
+
 override_dh_installinit:
 	dh_installinit -pquake4-server --noscripts
 	dh_installinit -petqw-server --noscripts

@@ -1,0 +1,23 @@
+# Quake 4 dedicated server AppArmor profile
+# Copyright © 2016 Simon McVittie
+# Redistribution and use in source and compiled forms, with or without
+# modification, are permitted under any circumstances. No warranty.
+
+#include <tunables/global>
+
+/usr/lib/quake4/q4ded.x86 flags=(complain) {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+
+  network inet dgram,
+  network inet stream,
+  network inet6 dgram,
+  network inet6 stream,
+
+  /etc/quake4-server/** r,
+  /usr/lib/quake4/q4ded.x86 mr,
+  /usr/lib/quake4/* r,
+  /usr/share/games/quake4/** r,
+  owner @{HOME}/.quake4/** rwk,
+  owner /var/games/quake4-server/** rwk,
+}
