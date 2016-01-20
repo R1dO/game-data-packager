@@ -2,6 +2,7 @@
 # encoding=utf-8
 #
 # Copyright © 2016 Alexandre Detiste <alexandre@detiste.be>
+#             2016 Simon McVittie <smcv@debian.org>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License version 2
