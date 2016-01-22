@@ -154,9 +154,9 @@ class ScummvmTask(PackagingTask):
                 f.write('done\n')
                 f.write(')\n')
                 f.write('if [ "$GAME_LANG" = "en" ]; then\n')
-                f.write('  scummvm -p /%s %s\n' % (install_to, gameid))
+                f.write('  exec scummvm -p /%s %s\n' % (install_to, gameid))
                 f.write('else\n')
-                f.write('  scummvm -q $GAME_LANG -p /%s %s\n' % (install_to, gameid))
+                f.write('  exec scummvm -q $GAME_LANG -p /%s %s\n' % (install_to, gameid))
                 f.write('fi\n')
             os.chmod(path, 0o755)
 
