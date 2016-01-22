@@ -3,6 +3,9 @@ longname: Ultima VII
 copyright: © 1992-1993 Origin Systems
 engine: exult
 genre: Role Playing
+try_repack_from:
+- ~/.exult/
+missing_langs: [de,es,fr]
 
 help_text: |
   A few extra manual steps are needed to set-up this game:
@@ -42,7 +45,8 @@ help_text: |
   </config>
 
 packages:
-  ultima7-data:
+  ultima7-en-data:
+    provides: ultima7-data
     longname: "Ultima VII - Part 1: The Black Gate"
     copyright: © 1992 Origin Systems
     install_to: $assets/exult/blackgate
@@ -54,7 +58,8 @@ packages:
     doc:
     - documentation part 1
 
-  ultima7-serpent-isle-data:
+  ultima7-serpent-isle-en-data:
+    provides: ultima7-serpent-isle-data
     longname: "Ultima VII - Part 2: Serpent Isle"
     copyright: © 1993 Origin Systems
     install_to: $assets/exult/serpentisle
