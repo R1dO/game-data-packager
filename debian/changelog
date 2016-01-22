@@ -95,7 +95,7 @@ game-data-packager (44) UNRELEASED; urgency=medium
 
   [ Alexandre Detiste ]
   * fedora: prepare initial release
-  * make install: fix inclusion game_data_packager/unpack in .deb
+  * make install: fix inclusion of game_data_packager/unpack in .deb
   * man pages: install man pages in Makefile
   * refactor packaging for various games
   * avoid computing known md5 again in our dh_md5sums implementation
@@ -112,8 +112,8 @@ game-data-packager (44) UNRELEASED; urgency=medium
   * Add an abstraction and limited auto-detection for archive unpacking
   * Add library code to extract Unreal mods and installers
   * make-template: always capture SHA1 and SHA256: we can edit them out
-    later if desired, but if the g-d-p owners don't own a particular game,
-    more information is better than less
+    later if desired, but if the g-d-p maintainers don't own a particular
+    game, more information is better than less
   * make-template: use groups
   * make-template: refactor to support auto-detection and recursion into
     (some) archives
