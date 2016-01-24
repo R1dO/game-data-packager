@@ -30,8 +30,8 @@ import zipfile
 
 import yaml
 
-from .build import (HashedFile,
-        PackagingTask)
+from .build import (PackagingTask)
+from .data import (WantedFile)
 from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .version import (DISTRO, FORMAT, GAME_PACKAGE_VERSION)
@@ -40,143 +40,6 @@ logging.basicConfig()
 logger = logging.getLogger('game-data-packager')
 
 MD5SUM_DIVIDER = re.compile(r' [ *]?')
-
-class WantedFile(HashedFile):
-    def __init__(self, name):
-        super(WantedFile, self).__init__(name)
-        self.alternatives = []
-        self.doc = False
-        self.group_members = None
-        self._depends = set()
-        self._distinctive_name = None
-        self.distinctive_size = False
-        self.download = None
-        self.executable = False
-        self.filename = name.split('?')[0]
-        self.install_as = self.filename
-        self._install_to = None
-        self.license = False
-        self._look_for = None
-        self._provides = set()
-        self.provides_files = None
-        self._size = None
-        self.unpack = None
-        self.unsuitable = None
-
-    def apply_group_attributes(self, attributes):
-        for k, v in attributes.items():
-            assert hasattr(self, k)
-            setattr(self, k, v)
-
-    @property
-    def distinctive_name(self):
-        if self._distinctive_name is not None:
-            return self._distinctive_name
-        return not self.license
-    @distinctive_name.setter
-    def distinctive_name(self, value):
-        self._distinctive_name = value
-
-    @property
-    def install_to(self):
-        if self._install_to is not None:
-            return self._install_to
-        if self.doc:
-            return '$pkgdocdir'
-        if self.license:
-            return '$pkglicensedir'
-        return None
-    @install_to.setter
-    def install_to(self, value):
-        self._install_to = value
-
-    @property
-    def look_for(self):
-        if self.alternatives:
-            return set([])
-        if self._look_for is not None:
-            return self._look_for
-        return set([self.filename.lower(), self.install_as.lower()])
-    @look_for.setter
-    def look_for(self, value):
-        self._look_for = set(x.lower() for x in value)
-
-    @property
-    def size(self):
-        return self._size
-    @size.setter
-    def size(self, value):
-        if self._size is not None and value != self._size:
-            raise AssertionError('trying to set size of "%s" to both %d '
-                    + 'and %d', self.name, self._size, value)
-        self._size = int(value)
-
-    @property
-    def provides(self):
-        return self._provides
-    @provides.setter
-    def provides(self, value):
-        self._provides = set(value)
-
-    def to_yaml(self, expand=True):
-        ret = {
-            'name': self.name,
-        }
-
-        for k in (
-                'alternatives',
-                'distinctive_size',
-                'executable',
-                'license',
-                'skip_hash_matching',
-                ):
-            v = getattr(self, k)
-            if v:
-                if isinstance(v, set):
-                    ret[k] = sorted(v)
-                else:
-                    ret[k] = v
-
-        if expand:
-            if self.provides_files:
-                ret['provides'] = sorted(f.name for f in self.provides_files)
-        else:
-            if self.provides:
-                ret['provides'] = sorted(self.provides)
-
-        for k in (
-                'download',
-                'group_members',
-                'install_as',
-                'size',
-                'unsuitable',
-                'unpack',
-                ):
-            v = getattr(self, k)
-            if v is not None:
-                if isinstance(v, set):
-                    ret[k] = sorted(v)
-                else:
-                    ret[k] = v
-
-        for k in (
-                'distinctive_name',
-                'install_to',
-                'look_for',
-                ):
-            if expand:
-                # use derived value
-                v = getattr(self, k)
-            else:
-                v = getattr(self, '_' + k)
-
-            if v is not None:
-                if isinstance(v, set):
-                    ret[k] = sorted(v)
-                else:
-                    ret[k] = v
-
-        return ret
 
 class GameDataPackage(object):
     def __init__(self, name):
