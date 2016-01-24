@@ -766,6 +766,16 @@ class PackagingTask(object):
                         if rf is None:
                             continue
 
+                        try:
+                            size = int(rf.info().get('Content-Length'))
+                        except:
+                            size = None
+                        if size and size != wanted.size:
+                            logger.warning("File doesn't have expected size"
+                                           " (%s vs %s), skipping %s",
+                                           size, wanted.size, url)
+                            continue
+
                         if self.save_downloads is not None:
                             tmp = os.path.join(self.save_downloads,
                                     wanted.name)
