@@ -936,18 +936,6 @@ class PackagingTask(object):
 
         providers = list(self.game.providers.get(wanted.name, ()))
 
-        # if we are installing everything from a downloadable file,
-        # prefer to fill any gaps from that one, not some other
-        # (e.g. don't download the Quake II demo if we're building
-        # a .deb for the full game, just because their files happen to
-        # overlap)
-        for provider_name in package.install_contents_of:
-            if provider_name in providers:
-                logger.debug('preferring "%s" to provide files for %s',
-                        provider_name, package.name)
-                providers = [provider_name] + [p for p in providers if
-                        p != provider_name]
-
         # pick smallest possible provider to download
         # example: this huge archive is a superset of the smaller one
         # 103M /var/www/html/ETQW-client-1.4-1.5-update.x86.run

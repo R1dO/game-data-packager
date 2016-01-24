@@ -287,10 +287,6 @@ class GameDataPackage(object):
 
         self.version = GAME_PACKAGE_VERSION
 
-        # if not None, install every file provided by the files with
-        # these names
-        self._install_contents_of = set()
-
         # CD audio stuff from YAML
         self.rip_cd = {}
 
@@ -347,13 +343,6 @@ class GameDataPackage(object):
             self._depends = set([value])
         else:
             self._depends = set(value)
-
-    @property
-    def install_contents_of(self):
-        return self._install_contents_of
-    @install_contents_of.setter
-    def install_contents_of(self, value):
-        self._install_contents_of = set(value)
 
     @property
     def optional(self):
@@ -818,7 +807,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'install_contents_of', 'description', 'depends',
+                'description', 'depends',
                 'rip_cd', 'architecture', 'aliases', 'better_versions', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
@@ -1151,11 +1140,6 @@ class GameData(object):
             package.install_files = set(self._iter_expand_groups(package.install))
             package.optional_files = set(self._iter_expand_groups(package.optional))
 
-            for provider in package.install_contents_of:
-                for f in self._iter_expand_groups(self.files[provider].provides):
-                    if f not in package.optional_files:
-                        package.install_files.add(f)
-
         # _iter_expand_groups could change the contents of self.files
         for filename, f in list(self.files.items()):
             f.provides_files = set(self._iter_expand_groups(f.provides))
@@ -1197,12 +1181,6 @@ class GameData(object):
 
         # consistency check
         for package in self.packages.values():
-            for provider in package.install_contents_of:
-                assert provider in self.files, (package.name, provider)
-                for f in self.files[provider].provides_files:
-                    assert (f in package.install_files or
-                            f in package.optional_files), (package.name, f.name)
-
             if package.rip_cd:
                 # we only support Ogg Vorbis for now
                 assert package.rip_cd['encoding'] == 'vorbis', package.name
