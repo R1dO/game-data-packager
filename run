@@ -15,7 +15,7 @@ fi
 export PYTHONPATH
 
 if [ $# -eq 0 ]; then
-	exec python3 -m game_data_packager
+	exec python3 -m game_data_packager.command_line
 fi
 
 case "$1" in
