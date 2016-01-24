@@ -743,6 +743,15 @@ class PackagingTask(object):
 
             if download:
                 logger.debug('trying to download %s...', wanted.name)
+
+                tmpdir = self.save_downloads or os.path.dirname(self.get_workdir())
+                statvfs = os.statvfs(tmpdir)
+                if wanted.size > statvfs.f_frsize * statvfs.f_bavail:
+                    logger.error("Out of space on %s, can't download %s.",
+                                  tmpdir, wanted.name)
+                    self.download_failed.add(url)
+                    return FillResult.IMPOSSIBLE
+
                 urls = choose_mirror(wanted)
                 for url in urls:
                     if url in self.download_failed:
@@ -750,14 +759,6 @@ class PackagingTask(object):
                         continue
 
                     logger.debug('... %s', url)
-
-                    tmpdir = self.save_downloads or os.path.dirname(self.get_workdir())
-                    statvfs = os.statvfs(tmpdir)
-                    if wanted.size > statvfs.f_frsize * statvfs.f_bavail:
-                        logger.error("Out of space on %s, can't download %s.",
-                                      tmpdir, wanted.name)
-                        self.download_failed.add(url)
-                        return FillResult.IMPOSSIBLE
 
                     tmp = None
                     try:
