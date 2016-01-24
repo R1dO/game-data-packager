@@ -27,7 +27,7 @@ from ..paths import DATADIR
 from ..util import (copy_with_substitutions, mkdir_p)
 from ..version import (FORMAT)
 
-logger = logging.getLogger('game-data-packager.games.doom-common')
+logger = logging.getLogger(__name__)
 
 def install_data(from_, to):
     subprocess.check_call(['cp', '--reflink=auto', from_, to])

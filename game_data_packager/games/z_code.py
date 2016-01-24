@@ -29,7 +29,7 @@ from ..util import (TemporaryUmask,
                     mkdir_p)
 from ..version import (FORMAT)
 
-logger = logging.getLogger('game-data-packager.games.z_code')
+logger = logging.getLogger(__name__)
 
 class ZCodeGameData(GameData):
     def __init__(self, shortname, data):

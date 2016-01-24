@@ -22,7 +22,7 @@ from .. import (GameData)
 from ..build import (PackagingTask)
 from ..util import (check_call)
 
-logger = logging.getLogger('game-data-packager.games.morrowind')
+logger = logging.getLogger(__name__)
 
 class MorrowindGameData(GameData):
     def construct_task(self, **kwargs):

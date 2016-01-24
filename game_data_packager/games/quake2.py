@@ -23,7 +23,7 @@ import tarfile
 from .. import (GameData)
 from ..build import (PackagingTask)
 
-logger = logging.getLogger('game-data-packager.games.quake2')
+logger = logging.getLogger(__name__)
 
 class Quake2GameData(GameData):
     def construct_task(self, **kwargs):

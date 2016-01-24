@@ -28,7 +28,7 @@ import sys
 from .paths import DATADIR
 from .version import (GAME_PACKAGE_VERSION)
 
-logger = logging.getLogger('game-data-packager.util')
+logger = logging.getLogger(__name__)
 
 KIBIBYTE = 1024
 MEBIBYTE = KIBIBYTE * KIBIBYTE

@@ -19,7 +19,7 @@ import logging
 
 from .. import GameData
 
-logger = logging.getLogger('game-data-packager.games.wolf3d')
+logger = logging.getLogger(__name__)
 
 class Wolf3DGameData(GameData):
     def add_parser(self, parsers, base_parser):

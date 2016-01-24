@@ -26,7 +26,7 @@ from .. import GameData
 from ..build import (PackagingTask)
 from ..util import (mkdir_p)
 
-logger = logging.getLogger('game-data-packager.games.dosbox')
+logger = logging.getLogger(__name__)
 
 class DosboxGameData(GameData):
     """Special subclass of GameData for DOS games.

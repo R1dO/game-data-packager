@@ -22,7 +22,7 @@ from .. import (GameData)
 from ..build import (PackagingTask)
 from ..util import (TemporaryUmask, mkdir_p)
 
-logger = logging.getLogger('game-data-packager.games.unreal')
+logger = logging.getLogger(__name__)
 
 class UnrealTask(PackagingTask):
     def fill_extra_files(self, package, destdir):

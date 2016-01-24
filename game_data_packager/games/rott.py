@@ -19,7 +19,7 @@ import logging
 
 from .. import GameData
 
-logger = logging.getLogger('game-data-packager.games.rott')
+logger = logging.getLogger(__name__)
 
 class ROTTGameData(GameData):
     def add_parser(self, parsers, base_parser):

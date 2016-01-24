@@ -20,7 +20,7 @@ import re
 
 from .paths import CONFIG
 
-logger = logging.getLogger('game-data-packager.config')
+logger = logging.getLogger(__name__)
 
 COMMENT = re.compile(r'#.*')
 OPTION = re.compile('^([A-Z_]+)=(["\']?)(.*)\\2$')

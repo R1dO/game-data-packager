@@ -58,7 +58,7 @@ if FORMAT == 'deb':
     from debian.deb822 import Deb822
 
 logging.basicConfig()
-logger = logging.getLogger('game-data-packager.build')
+logger = logging.getLogger(__name__)
 
 # arbitrary cutoff for providing progress bars
 QUITE_LARGE = 50 * MEBIBYTE

@@ -26,7 +26,7 @@ from .util import (ascii_safe,
         lang_score,
         which)
 
-logger = logging.getLogger('game-data-packager.gog')
+logger = logging.getLogger(__name__)
 
 class Gog:
     available = None

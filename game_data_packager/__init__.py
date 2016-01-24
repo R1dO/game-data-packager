@@ -37,7 +37,7 @@ from .util import ascii_safe
 from .version import (DISTRO, FORMAT, GAME_PACKAGE_VERSION)
 
 logging.basicConfig()
-logger = logging.getLogger('game-data-packager')
+logger = logging.getLogger(__name__)
 
 MD5SUM_DIVIDER = re.compile(r' [ *]?')
 

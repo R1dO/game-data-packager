@@ -46,7 +46,7 @@ from .util import (
         )
 
 logging.basicConfig()
-logger = logging.getLogger('game_data_packager.make-template')
+logger = logging.getLogger(__name__)
 
 def guess_lang(string):
     string = string.lower()

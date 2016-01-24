@@ -31,7 +31,7 @@ from .util import (AGENT,
         lang_score,
         rm_rf)
 
-logger = logging.getLogger('game-data-packager.steam')
+logger = logging.getLogger(__name__)
 
 def parse_acf(path):
     for manifest in glob.glob(path + '/*.acf'):

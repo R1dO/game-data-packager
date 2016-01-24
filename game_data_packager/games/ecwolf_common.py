@@ -26,7 +26,7 @@ from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import (mkdir_p)
 
-logger = logging.getLogger('game-data-packager.games.ecwolf-common')
+logger = logging.getLogger(__name__)
 
 def install_data(from_, to):
     subprocess.check_call(['cp', '--reflink=auto', from_, to])

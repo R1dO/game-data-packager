@@ -23,7 +23,7 @@ from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import TemporaryUmask, mkdir_p
 
-logger = logging.getLogger('game-data-packager.games.quake')
+logger = logging.getLogger(__name__)
 
 class QuakeTask(PackagingTask):
     """With hindsight, it would have been better to make the TryExec

@@ -23,7 +23,7 @@ from .. import (GameData)
 from ..build import (PackagingTask, NoPackagesPossible)
 from ..util import (mkdir_p, which)
 
-logger = logging.getLogger('game-data-packager.games.lgeneral')
+logger = logging.getLogger(__name__)
 
 class LGeneralGameData(GameData):
     def add_parser(self, parsers, base_parser):
