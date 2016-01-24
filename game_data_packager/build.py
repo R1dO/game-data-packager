@@ -121,15 +121,6 @@ class DownloadNotAllowed(Exception):
 class CDRipFailed(Exception):
     pass
 
-def _ensure_hashes(hashes, path, size):
-    if hashes is not None:
-        return hashes
-
-    if size > QUITE_LARGE:
-        logger.info('identifying %s', path)
-    return HashedFile.from_file(path, open(path, 'rb'), size=size,
-            progress=(size > QUITE_LARGE))
-
 def choose_mirror(wanted):
     mirrors = []
     mirror = os.environ.get('GDP_MIRROR')
@@ -252,6 +243,9 @@ class PackagingTask(object):
         # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
         self.compress_deb = game.compress_deb
 
+        # Factory for a progress report (or None).
+        self.progress_factory = lambda: None
+
         self.game.load_file_data()
 
     def __del__(self):
@@ -307,8 +301,12 @@ class PackagingTask(object):
         if hashes is None:
             if size > QUITE_LARGE:
                 logger.info('checking %s', path)
+                progress = self.progress_factory()
+            else:
+                progress = None
+
             hashes = HashedFile.from_file(path, open(path, 'rb'), size=size,
-                    progress=(size > QUITE_LARGE))
+                    progress=progress)
 
         for wanted in remaining:
             if not wanted.skip_hash_matching and not hashes.matches(wanted):
@@ -379,7 +377,7 @@ class PackagingTask(object):
         # if a file (as opposed to a directory) is specified on the
         # command-line, try harder to match it to something
         if really_should_match_something:
-            hashes = _ensure_hashes(None, path, size)
+            hashes = self.__ensure_hashes(None, path, size)
         else:
             hashes = None
 
@@ -387,7 +385,7 @@ class PackagingTask(object):
             if match_path.endswith('/' + look_for):
                 candidates = [self.game.files[c] for c in candidates]
                 if candidates:
-                    hashes = _ensure_hashes(hashes, path, size)
+                    hashes = self.__ensure_hashes(hashes, path, size)
                     if self.use_file('possible "%s"' % look_for, candidates,
                             path, hashes):
                         return
@@ -395,7 +393,7 @@ class PackagingTask(object):
         if size in self.game.known_sizes:
             candidates = self.game.known_sizes[size]
             if candidates:
-                hashes = _ensure_hashes(hashes, path, size)
+                hashes = self.__ensure_hashes(hashes, path, size)
                 candidates = [self.game.files[c] for c in candidates]
                 if self.use_file('file of size %d' % size,
                         candidates, path, hashes):
@@ -622,14 +620,15 @@ class PackagingTask(object):
                 wf = open(tmp, 'wb')
 
                 if entry.size is not None and entry.size > QUITE_LARGE:
-                    large = True
+                    progress = self.progress_factory()
                     logger.info('extracting %s from %s', entry.name, name)
                 else:
-                    large = False
+                    progress = None
                     logger.debug('extracting %s from %s', entry.name, name)
+
                 hf = HashedFile.from_file(
                         name + '//' + entry.name, entryfile, wf,
-                        size=entry.size, progress=large)
+                        size=entry.size, progress=progress)
                 wf.close()
 
                 if entry.mtime is not None:
@@ -668,9 +667,15 @@ class PackagingTask(object):
                     yield open(self.found[provider.name], 'rb')
                     for p in other_parts:
                         yield open(self.found[p], 'rb')
+
+                if wanted.size >= QUITE_LARGE:
+                    progress = self.progress_factory()
+                else:
+                    progress = None
+
                 hasher = HashedFile.from_concatenated_files(wanted.name,
                         open_files(), writer, size=wanted.size,
-                        progress=(wanted.size > QUITE_LARGE))
+                        progress=progress)
             orig_time = os.stat(self.found[provider.name]).st_mtime
             os.utime(path, (orig_time, orig_time))
             self.use_file(wanted.name, (wanted,), path, hasher)
@@ -772,7 +777,8 @@ class PackagingTask(object):
                         wf = open(tmp, 'wb')
                         logger.info('downloading %s', url)
                         hf = HashedFile.from_file(url, rf, wf,
-                                size=wanted.size, progress=True)
+                                size=wanted.size,
+                                progress=self.progress_factory())
                         wf.close()
 
                         if self.use_file(wanted.name, (wanted,), tmp, hf):
@@ -2659,3 +2665,16 @@ class PackagingTask(object):
             logger.warning('installing these packages might help:\n' +
                 '%s %s', ' '.join(self.packaging.INSTALL_CMD),
                 ' '.join(sorted(packages)))
+
+    def __ensure_hashes(self, hashes, path, size):
+        if hashes is not None:
+            return hashes
+
+        if size > QUITE_LARGE:
+            logger.info('identifying %s', path)
+            progress = self.progress_factory()
+        else:
+            progress = None
+
+        return HashedFile.from_file(path, open(path, 'rb'), size=size,
+                progress=progress)

@@ -17,9 +17,23 @@
 
 import hashlib
 import io
+import sys
 import unittest
 
-from game_data_packager.build import HashedFile
+from game_data_packager.command_line import (TerminalProgress)
+from game_data_packager.data import (HashedFile)
+
+class ZeroReader:
+    def __init__(self, total):
+        self.done = 0
+        self.total = total
+
+    def read(self, max_bytes):
+        ret = min(max_bytes, self.total - self.done)
+        self.total -= ret
+        return b'\x00' * ret
+
+SIZE = 30 * 1024 * 1024
 
 class HashedFileTestCase(unittest.TestCase):
     def setUp(self):
@@ -81,6 +95,37 @@ class HashedFileTestCase(unittest.TestCase):
         second.md5 = self.HELLO_WORLD_MD5
         self.assertIs(first.matches(second), False)
         self.assertIs(second.matches(first), False)
+
+    def test_progress(self):
+        print('', file=sys.stderr)
+        HashedFile.from_file('progress.bin', ZeroReader(SIZE),
+                size=SIZE,
+                progress=TerminalProgress(interval=0.1))
+        print('', file=sys.stderr)
+        HashedFile.from_file('progress.bin', ZeroReader(SIZE),
+                progress=TerminalProgress(interval=0.1))
+        print('', file=sys.stderr)
+
+        HashedFile.from_file('progress.bin', ZeroReader(SIZE),
+                size=SIZE)
+        HashedFile.from_file('progress.bin', ZeroReader(SIZE))
+
+        print('', file=sys.stderr)
+        HashedFile.from_concatenated_files('concatenated.bin',
+                [ZeroReader(SIZE), ZeroReader(SIZE)],
+                size=2 * SIZE,
+                progress=TerminalProgress(interval=0.1))
+        print('', file=sys.stderr)
+        HashedFile.from_concatenated_files('concatenated.bin',
+                [ZeroReader(SIZE), ZeroReader(SIZE)],
+                progress=TerminalProgress(interval=0.1))
+        print('', file=sys.stderr)
+
+        HashedFile.from_concatenated_files('concatenated.bin',
+                [ZeroReader(SIZE), ZeroReader(SIZE)],
+                size=2 * SIZE)
+        HashedFile.from_concatenated_files('concatenated.bin',
+                [ZeroReader(SIZE), ZeroReader(SIZE)])
 
     def tearDown(self):
         pass

@@ -20,13 +20,16 @@ import argparse
 import logging
 import os
 import sys
+import time
 import zipfile
 
 from . import (load_games)
 from .config import (read_config)
+from .data import (ProgressCallback)
 from .gog import (run_gog_meta_mode)
 from .paths import (DATADIR)
 from .steam import (run_steam_meta_mode)
+from .util import (human_size)
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -37,6 +40,45 @@ if os.environ.get('DEBUG') or os.environ.get('GDP_DEBUG'):
     logging.getLogger().setLevel(logging.DEBUG)
 else:
     logging.getLogger().setLevel(logging.INFO)
+
+class TerminalProgress(ProgressCallback):
+    def __init__(self, interval=0.2):
+        """Constructor.
+
+        Progress will update at most once per @interval seconds, unless we
+        are at a "checkpoint".
+        """
+        self.pad = ' '
+        self.interval = interval
+        self.ts = time.time()
+
+    def __call__(self, done=None, total=None, checkpoint=False):
+        ts = time.time()
+
+        if done is None or (ts < self.ts + self.interval and not checkpoint):
+            return
+
+        if done is None or total == 0:
+            s = ''
+        elif total is None or total == 0:
+            s = human_size(done)
+        else:
+            s = '%.0f%% %s/%s' % (100 * done / total,
+                    human_size(done),
+                    human_size(total))
+
+        self.ts = ts
+
+        if len(self.pad) <= len(s):
+            self.pad = ' ' * len(s)
+
+        print(' %s \r %s\r' % (self.pad, s), end='', file=sys.stderr)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, et=None, ev=None, tb=None):
+        self()
 
 def run_command_line():
     logger.debug('Arguments: %r', sys.argv)
@@ -244,6 +286,9 @@ def run_command_line():
             raise AssertionError('could not find %s' % parsed.shortname)
 
     with game.construct_task() as task:
+        if sys.stderr.isatty():
+            task.progress_factory = TerminalProgress()
+
         task.run_command_line(parsed)
 
 if __name__ == '__main__':

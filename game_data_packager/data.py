@@ -18,10 +18,24 @@
 
 import hashlib
 import io
-import sys
-import time
 
-from .util import (human_size)
+class ProgressCallback:
+    """API for a progress report."""
+
+    def __call__(self, done, total=None, checkpoint=False):
+        """Update progress: we have done @done bytes out of @total
+        (None if unknown).
+
+        If @checkpoint is True, it is a hint that this particular
+        update is important (for instance the end of a file).
+        """
+        pass
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, et=None, ev=None, tb=None):
+        pass
 
 class HashedFile:
     def __init__(self, name):
@@ -32,53 +46,35 @@ class HashedFile:
         self.skip_hash_matching = False
 
     @classmethod
-    def from_file(cls, name, f, write_to=None, size=None, progress=False):
+    def from_file(cls, name, f, write_to=None, size=None, progress=None):
         return cls.from_concatenated_files(name, [f], write_to, size, progress)
 
     @classmethod
     def from_concatenated_files(cls, name, fs, write_to=None, size=None,
-            progress=False):
+            progress=None):
         md5 = hashlib.new('md5')
         sha1 = hashlib.new('sha1')
         sha256 = hashlib.new('sha256')
         done = 0
 
-        if progress and sys.stderr.isatty():
-            pad = [' ']
-            def update_progress(s):
-                ts = time.time()
-                if ts < update_progress.ts + 0.2 and not s.startswith('100%'):
-                    return
-                update_progress.ts = ts
-                if len(pad[0]) <= len(s):
-                    pad[0] = ' ' * len(s)
-                print(' %s \r %s\r' % (pad[0], s), end='', file=sys.stderr)
-            update_progress.ts = time.time()
-        else:
-            update_progress = lambda s: None
+        with (progress or ProgressCallback()) as update_progress:
+            for f in fs:
+                while True:
+                    update_progress(done, size)
 
-        for f in fs:
-            while True:
-                if size is None:
-                    update_progress(human_size(done))
-                else:
-                    update_progress('%.0f%% %s/%s' % (
-                                100 * done / size if size != 0 else 100,
-                                human_size(done),
-                                human_size(size)))
+                    blob = f.read(io.DEFAULT_BUFFER_SIZE)
 
-                blob = f.read(io.DEFAULT_BUFFER_SIZE)
-                if not blob:
-                    update_progress('')
-                    break
+                    if not blob:
+                        update_progress(done, size, checkpoint=True)
+                        break
 
-                done += len(blob)
+                    done += len(blob)
 
-                md5.update(blob)
-                sha1.update(blob)
-                sha256.update(blob)
-                if write_to is not None:
-                    write_to.write(blob)
+                    md5.update(blob)
+                    sha1.update(blob)
+                    sha256.update(blob)
+                    if write_to is not None:
+                        write_to.write(blob)
 
         self = cls(name)
         self.md5 = md5.hexdigest()
