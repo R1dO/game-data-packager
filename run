@@ -24,6 +24,6 @@ case "$1" in
 		exec python3 -m game_data_packager.make_template "$@"
 		;;
 	*)
-		exec python3 -m game_data_packager "$@"
+		exec python3 -m game_data_packager.command_line "$@"
 		;;
 esac
