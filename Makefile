@@ -110,6 +110,7 @@ clean:
 	rm -f ./out/*.png
 	rm -f ./out/*.svgz
 	rm -f ./out/*.svg
+	rm -f ./out/*.txt
 	rm -f ./out/vfs.zip
 	rm -f ./out/index.html
 	rm -fr out/vfs

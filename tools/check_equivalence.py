@@ -114,4 +114,7 @@ if __name__ == '__main__':
                     '%s loaded from ref.zip' % name,
                     '%s loaded from vfs.zip' % name, n=50))
 
+        with open('out/%s-derived.txt' % name, 'w') as writer:
+            writer.write(vfs_to_json)
+
     raise SystemExit(fail)
