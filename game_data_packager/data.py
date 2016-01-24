@@ -166,7 +166,6 @@ class WantedFile(HashedFile):
         self.alternatives = []
         self.doc = False
         self.group_members = None
-        self._depends = set()
         self._distinctive_name = None
         self.distinctive_size = False
         self.download = None
