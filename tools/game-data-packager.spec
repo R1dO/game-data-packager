@@ -1,4 +1,4 @@
-%define gitdate 20160112
+#define gitdate 20160112
 # git log --oneline -1
 %define gitversion 50f64b6
 
@@ -8,15 +8,15 @@
 
 Name:          game-data-packager
 Version:       44
-Release:       0.3%{?gver}
+Release:       1%{?gver}
 Summary:       Installer for game data files
 License:       GPLv2 and GPLv2+
 Url:           https://wiki.debian.org/Games/GameDataPackager
 %if 0%{?gitdate}
-# git archive --prefix=game-data-packager/ --format tar.gz master > ../rpmbuild/SOURCES/game-data-packager-`date +%Y%m%d`.tar.gz
+# git archive --prefix=game-data-packager-44/ --format tar.gz master > ../rpmbuild/SOURCES/game-data-packager-`date +%Y%m%d`.tar.gz
 Source:        game-data-packager-%{gitdate}.tar.gz
 %else
-Source:        http://http.debian.net/debian/pool/contrib/g/game-data-packager/game-data-packager_${version}.tar.xz
+Source:        http://http.debian.net/debian/pool/contrib/g/game-data-packager/game-data-packager_%{version}.tar.xz
 %endif
 BuildArch:     noarch
 BuildRequires: ImageMagick
@@ -61,7 +61,7 @@ This GUI let you select a WAD to play &
 show it's description.
 
 %prep
-%autosetup -n game-data-packager
+%autosetup
 
 %build
 make %{?_smp_mflags}
@@ -72,7 +72,10 @@ make check
 %install
 make DESTDIR=$RPM_BUILD_ROOT bindir=/usr/bin datadir=/usr/share install
 find $RPM_BUILD_ROOT/usr/share/game-data-packager/game_data_packager -name '*.py' -exec chmod 755 {} \;
+#E: python-bytecode-inconsistent-mtime
+python3 -m compileall $RPM_BUILD_ROOT/usr/share/game-data-packager/game_data_packager/version.py
 find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need more mirrors' > {}" \;
+rm -rvf $RPM_BUILD_ROOT/etc/apparmor.d
 
 %files
 %doc doc/adding_a_game.mdwn
@@ -93,11 +96,12 @@ find $RPM_BUILD_ROOT/etc/game-data-packager -empty -exec sh -c "echo '# we need 
 %license COPYING
 
 %changelog
-* Sat Jan 02 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.3.git2016 unreleased
-- Git Snapshot
+* Sun Jan 24 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-1
+- First cross-distribution release
 - Add Cacodemon icon to doom2-masterlevels subpackage
 - The (optional) licenses of generated .rpm goes now correctly to /usr/share/licenses
   instead of /usr/share/doc
+- AppArmor support temporary disabled until figured out
 
 * Thu Dec 31 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.2.git2015123150f64b6
 - Git Snapshot
