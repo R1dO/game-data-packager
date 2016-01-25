@@ -50,7 +50,6 @@ os.environ.setdefault('XDG_DATA_HOME', os.path.expanduser('~/.local/share'))
 os.environ.setdefault('XDG_DATA_DIRS', '/usr/local/share:/usr/share')
 
 logger = logging.getLogger('game-data-packager.launcher')
-logging.basicConfig()
 
 if os.environ.get('GDP_DEBUG'):
     logger.setLevel(logging.DEBUG)

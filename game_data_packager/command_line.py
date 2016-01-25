@@ -31,7 +31,6 @@ from .paths import (DATADIR)
 from .steam import (run_steam_meta_mode)
 from .util import (human_size)
 
-logging.basicConfig()
 logger = logging.getLogger(__name__)
 
 class TerminalProgress(ProgressCallback):

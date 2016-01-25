@@ -36,7 +36,6 @@ from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .version import (GAME_PACKAGE_VERSION)
 
-logging.basicConfig()
 logger = logging.getLogger(__name__)
 
 if os.environ.get('DEBUG') or os.environ.get('GDP_DEBUG'):
