@@ -25,15 +25,7 @@ packages:
       url: leisure_suit_larry
       game: leisure_suit_larry_1_in_the_land_of_the_lounge_lizards
     install:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - ega english assets
     doc:
     - LSL1 Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
@@ -47,11 +39,7 @@ packages:
       url: leisure_suit_larry
       game: leisure_suit_larry_1_vga_in_the_land_of_the_lounge_lizards
     install:
-    - resource.000
-    - resource.001
-    - resource.002
-    - resource.map
-    - version
+    - vga english assets
     doc:
     - LSL1 VGA Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
@@ -62,7 +50,7 @@ packages:
     section: doc
     expansion_for: larry1-data
     depends:
-      deb: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
+      deb: larry1-data | larry2-data | larry3-data | larry5-data | larry6-data
     install:
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
@@ -71,15 +59,7 @@ files:
     unpack:
       format: innoextract
     provides:
-    - logdir
-    - object
-    - picdir
-    - snddir
-    - viewdir
-    - vol.0
-    - vol.1
-    - vol.2
-    - words.tok
+    - ega english assets
     - LSL1 Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
@@ -90,16 +70,13 @@ files:
     unpack:
       format: innoextract
     provides:
-    - resource.000
-    - resource.001
-    - resource.002
-    - resource.map
-    - version
+    - vga english assets
     - LSL1 VGA Answers.txt
     - Leisure Suit Larry 1 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
-size_and_md5: |
+groups:
+ ega english assets: |
   177       1fe764e66857e7f305a5f03ca3f4971d logdir
   311       aa7bce1ca83f181c92c1feea2c119eec object
   138       a22e109d14d5cff65be77dd1b12af6f3 picdir
@@ -110,19 +87,22 @@ size_and_md5: |
   237821    89103f5b48fa49c00eed42f4b19808e1 vol.2
   6597      988a1baaf3ee0d9cd678274dc2f219f2 words.tok
 
-  23768496  bd8e0429499febf5dc0bf1df5790c520 setup_leisure_suit_larry_2.2.0.18.exe
-  2187      3b6117888a79a82073ab33f6ecd8cb7d LSL1 Answers.txt
-  1140028   4aea404ebe88f93bc567bd169a8dffb8 Leisure Suit Larry 1 - Manual.pdf
-  8230209   bcc1974851f3d79ab57358a78d84c13c Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
-
+ vga english assets: |
   918242    142296b299e3fa2c016fc979a68ed0e7 resource.000
   1114688   0042e959102738fea0df78124ca008b2 resource.001
   1078443   e6d04ac43f58e25c1f3df317af464c5b resource.002
   3198      8606b083b011a0cc4a1fbfc2198a0a77 resource.map
   6         3fa20af2bc4731fff64a1884ba142940 version
 
+ archives: |
+  23768496  bd8e0429499febf5dc0bf1df5790c520 setup_leisure_suit_larry_2.2.0.18.exe
   26725608  22c1089852291ce42af2715c88f53e55 setup_leisure_suit_larry_vga_2.2.0.20.exe
+
+ documentation: |
   7211      9e7eb68fa7836217b2b000f09fa3e1d9 LSL1 VGA Answers.txt
+  2187      3b6117888a79a82073ab33f6ecd8cb7d LSL1 Answers.txt
+  1140028   4aea404ebe88f93bc567bd169a8dffb8 Leisure Suit Larry 1 - Manual.pdf
+  8230209   bcc1974851f3d79ab57358a78d84c13c Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
 sha1sums: |
   1e8a5282f477a895ef6c9e8d328a6292926b1000  logdir

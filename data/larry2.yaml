@@ -13,10 +13,7 @@ packages:
       url: leisure_suit_larry
       game: leisure_suit_larry_2_looking_for_love_in_several_wrong_places
     install:
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.map
+    - english assets
     doc:
     - LSL2 phone numbers.pdf
     - Leisure Suit Larry 2 - Manual.pdf
@@ -27,7 +24,7 @@ packages:
     section: doc
     expansion_for: larry2-data
     depends:
-      deb: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
+      deb: larry1-data | larry2-data | larry3-data | larry5-data | larry6-data
     install:
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
@@ -38,20 +35,18 @@ files:
     unpack:
       format: innoextract
     provides:
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.map
+    - english assets
     - LSL2 phone numbers.pdf
     - Leisure Suit Larry 2 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
-size_and_md5: |
+groups:
+ english assets: |
   477625    0719990515543cf424fa0b04baada4f3 resource.001
   406935    404bbbad534b525e69586fde3d17de8e resource.002
   592533    a71900f4dc4090e02c00a84ee7459d68 resource.003
   4758      2c9c3b0923e3764f5ab999bcb71c2d47 resource.map
-
+ gog archive: |
   25312072  383cd5482b83c97cdb51abf610fa34b9 setup_leisure_suit_larry2_2.2.0.18.exe
   1229890   d2b3be2c462d969d88c646c52a573a61 Leisure Suit Larry 2 - Manual.pdf
   8230209   bcc1974851f3d79ab57358a78d84c13c Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf

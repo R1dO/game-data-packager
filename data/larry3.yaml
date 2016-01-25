@@ -15,11 +15,7 @@ packages:
       url: leisure_suit_larry
       game: leisure_suit_larry_3_passionate_patti_in_pursuit_of_the_pulsating_pectorals
     install:
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map
+    - assets english
     optional:
     - Leisure Suit Larry 3 - Manual.pdf
     - lsl3 answers.txt
@@ -30,7 +26,7 @@ packages:
     section: doc
     expansion_for: larry3-en-data
     depends:
-      deb: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
+      deb: larry1-data | larry2-data | larry3-data | larry5-data | larry6-data
     install:
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 
@@ -41,22 +37,19 @@ files:
     unpack:
       format: innoextract
     provides:
-    - resource.001
-    - resource.002
-    - resource.003
-    - resource.004
-    - resource.map
+    - assets english
     - Leisure Suit Larry 3 - Manual.pdf
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
     - lsl3 answers.txt
 
-size_and_md5: |
+groups:
+ assets english: |
   456722    3437c56f0cb7f4a3df5f5bc21008a786 resource.001
   578024    bc85504bc658389d3a8847cea5a695f0 resource.002
   506807    fa9542cf8747fe4773ff7fd81dca9d8e resource.003
   513651    c10e480d37fdb59673ef242bf12c7e7c resource.004
   5916      b7a2fb642614dd76d10d1ad5e0625044 resource.map
-
+ gog archive: |
   31554032  50cf0a52dfa9b78d033ac67b90a16ef3 setup_leisure_suit_larry3_2.2.0.19.exe
   3982554   609d5c0936321757058e2c5593218c7d Leisure Suit Larry 3 - Manual.pdf
   8230209   bcc1974851f3d79ab57358a78d84c13c Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
