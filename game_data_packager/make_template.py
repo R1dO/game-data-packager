@@ -570,7 +570,7 @@ class GameData(object):
         else:
             del self.package['license']
 
-    def to_yaml(self):
+    def print_yaml(self):
         print('---')
         if self.longname:
             print('longname: %s' % self.longname)
@@ -772,7 +772,7 @@ def main():
             gamedata.add_one_gog_sh(arg)
         else:
             gamedata.add_archive(arg, lower=args.lower)
-    gamedata.to_yaml()
+    gamedata.print_yaml()
 
 
 if __name__ == '__main__':
