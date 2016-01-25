@@ -37,17 +37,13 @@ packages:
     lang: string
     provides: string
     mutually_exclusive: bool
-    debian:
-      breaks:
-      conflicts:
-      depends:
-      provides:
-      recommends:
-      replaces:
-      engine: string
-      install_to: string
-      description: string
-    rpm|fedora|suse|arch: (fedora/suse takes priority over rpm)
+    breaks:
+    conflicts:
+    depends:
+    provides:
+    recommends:
+    replaces:
+    debian|rpm|fedora|suse|arch: (fedora/suse takes priority over rpm)
       engine: string
       install_to: string
       description: string

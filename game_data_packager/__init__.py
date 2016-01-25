@@ -718,24 +718,6 @@ class GameData(object):
                     if port in d and (FORMAT == port or DISTRO == port or
                             (FORMAT == 'deb' and port == 'debian')):
                         setattr(package, k, d[port][k])
-                elif k in package.relations:
-                    related = d[port][k]
-
-                    if isinstance(related, str):
-                        related = [related]
-
-                    for r in related:
-                        if port == 'debian':
-                            # we treat "debian:" as meaning "any dpkg-based"
-                            pr = PackageRelation({'deb': r})
-                        else:
-                            pr = PackageRelation({port: r})
-                            assert not pr.alternatives, pr
-
-                        if pr.package == 'libjpeg.so.62':
-                            assert pr.version is None
-
-                        package.relations[k].append(pr)
                 else:
                     raise AssertionError('%s: unknown key %r in port %r' %
                             (package.name, k, port))
