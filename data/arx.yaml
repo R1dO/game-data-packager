@@ -20,8 +20,7 @@ missing_langs: [de,fr,ja]
 packages:
   arx-fatalis-en-data:
     install_to: usr/share/games/arx
-    debian:
-      replaces: arx-fatalis-demo-data
+    replaces: arx-fatalis-demo-data
     provides: arx-fatalis-data
     mutually_exclusive: True
     steam:
@@ -38,8 +37,7 @@ packages:
   arx-fatalis-demo-en-data:
     install_to: usr/share/games/arx
     demo_for: arx-fatalis-en-data
-    debian:
-      conflicts: arx-fatalis-data
+    conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
     mutually_exclusive: True
     install:
@@ -54,8 +52,7 @@ packages:
     install_to: usr/share/games/arx
     # XXX need to package arx-fatalis-fr-data
     demo_for: arx-fatalis-en-data
-    debian:
-      conflicts: arx-fatalis-data
+    conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
     mutually_exclusive: True
     install:
@@ -70,8 +67,7 @@ packages:
     install_to: usr/share/games/arx
     # XXX need to package arx-fatalis-de-data
     demo_for: arx-fatalis-en-data
-    debian:
-      conflicts: arx-fatalis-data
+    conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
     mutually_exclusive: True
     install:
@@ -86,8 +82,7 @@ packages:
     install_to: usr/share/games/arx
     # XXX need to package arx-fatalis-ja-data
     demo_for: arx-fatalis-en-data
-    debian:
-      conflicts: arx-fatalis-data
+    conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
     mutually_exclusive: True
     install:

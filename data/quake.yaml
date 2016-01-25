@@ -33,8 +33,7 @@ packages:
     mutually_exclusive: True
     longname: Quake (shareware)
     component: non-free
-    debian:
-      provides: quake-data
+    provides: quake-data
     install:
     - id1/pak0.pak?106
     license:
@@ -43,10 +42,7 @@ packages:
     install_to: usr/share/games/quake
 
   quake-registered:
-    debian:
-      provides: quake-data
-      # "replaces: quake-shareware" is implied by 'mutually_exclusive:'
-      # & 'demo_for:' tags on 'quake-shareware'
+    provides: quake-data
     steam:
       id: 2310
       path: common/Quake

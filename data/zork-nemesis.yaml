@@ -14,8 +14,8 @@ help_text:
 packages:
   zork-nemesis-data:
     engine: scummvm (>= 1.8.0)
-    debian:
-      depends: fonts-liberation
+    depends:
+      - deb: fonts-liberation
     gog:
       url: zork_nemesis_the_forbidden_lands
     symlinks:

@@ -19,8 +19,11 @@ packages:
   doom-compet-n-data:
     # mostly, for 5 of 6 PWADS
     expansion_for_ext: doom2-wad
-    debian:
-      recommends: ["doom2-wad | freedoom", "doom-wad | freedoom"]
+    recommends:
+      - deb: "doom2-wad | freedoom"
+        generic: doom2-wad
+      - deb: "doom-wad | freedoom"
+        generic: doom-wad
     main_wads:
       av.wad:
          name: Alien Vendetta (2nd Ed.)

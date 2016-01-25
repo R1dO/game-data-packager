@@ -34,8 +34,7 @@ help_text: |
 packages:
   quake2-full-data:
     longname: Quake II
-    debian:
-      replaces: quake2-data
+    replaces: quake2-data
     steam:
       id: 2320
       path: "common/Quake 2"
@@ -110,12 +109,13 @@ packages:
     steam:
       id: 2330
       path: "common/Quake 2/xatrix"
-    debian:
-      build_depends: [gcc, make, libc6-dev]
-      provides: quake2-xatrix
-      replaces: quake2-xatrix
-    fedora:
-      build_depends: [gcc, make, glibc-devel]
+    build_depends:
+      - gcc
+      - make
+      - deb: libc6-dev
+        rpm: glibc-devel
+    provides: quake2-xatrix
+    replaces: quake2-xatrix
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64
@@ -166,12 +166,13 @@ packages:
       path: "common/Quake 2/rogue"
     gog:
       url: quake_ii_quad_damage
-    debian:
-      build_depends: [gcc, make, libc6-dev]
-      provides: quake2-rogue
-      replaces: quake2-rogue
-    fedora:
-      build_depends: [gcc, make, glibc-devel]
+    build_depends:
+      - gcc
+      - make
+      - deb: libc6-dev
+        rpm: glibc-devel
+    provides: quake2-rogue
+    replaces: quake2-rogue
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64

@@ -22,8 +22,8 @@ help_text: |
 
 packages:
   heretic-wad:
-    debian:
-      breaks: chocolate-doom (<< 2)
+    breaks:
+      - deb: chocolate-doom (<< 2)
     steam:
       id: 2390
       path: "common/Heretic Shadow of the Serpent Riders"
@@ -38,8 +38,7 @@ packages:
     longname: "Heretic (shareware)"
     demo_for: heretic-wad
     component: non-free
-    debian:
-      replaces: heretic-shareware-data
+    replaces: heretic-shareware-data
     fedora:
       engine: chocolate-doom
     suse:

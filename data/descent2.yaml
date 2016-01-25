@@ -20,8 +20,7 @@ packages:
     steam:
       id: 273580
       path: "common/Descent 2"
-    debian:
-      replaces: descent2-full-data
+    replaces: descent2-full-data
     install_to: usr/share/games/d2x-rebirth
     install:
     - full game assets

@@ -24,8 +24,8 @@ engine: "chocolate-hexen | hexen-engine"
 
 packages:
   hexen-wad:
-    debian:
-      breaks: chocolate-doom (<< 2)
+    breaks:
+      - deb: chocolate-doom (<< 2)
     steam:
       id: 2360
       path: "common/Hexen"
@@ -39,9 +39,9 @@ packages:
   hexen-deathkings-wad:
     longname: "Hexen: Deathkings of the Dark Citadel"
     wiki: Hexen:_Deathkings_of_the_Dark_Citadel
-    debian:
-      breaks: chocolate-doom (<< 2)
-      replaces: hexen-deathkings-data
+    breaks:
+      - deb: chocolate-doom (<< 2)
+    replaces: hexen-deathkings-data
     fedora:
       engine: chocolate-doom
     suse:
@@ -55,9 +55,9 @@ packages:
 
   hexen-demo-wad:
     longname: "Hexen: Beyond Heretic (demo)"
-    debian:
-      replaces: hexen-demo-data
-      breaks: chocolate-doom (<< 2.2.0)
+    replaces: hexen-demo-data
+    breaks:
+      - deb: chocolate-doom (<< 2.2.0)
     fedora:
       engine: chocolate-doom
     suse:

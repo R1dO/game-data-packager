@@ -47,8 +47,8 @@ packages:
   zork-grand-inquisitor-data:
     engine: scummvm (>= 1.8.0)    
     gameid: zgi-win
-    debian:
-      depends: fonts-liberation
+    depends:
+      - deb: fonts-liberation
     gog:
       url: zork_grand_inquisitor
     symlinks:

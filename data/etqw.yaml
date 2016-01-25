@@ -19,10 +19,8 @@ packages:
     architecture: i386
     version: "1.5"
     depends:
-    - etqw-bin
-    debian:
-      depends:
-      - libc6 (>= 2.1)
+      - etqw-bin
+      - libc.so.6 (>= 2.1)
     install:
     - patch 1.5 Punkbuster binaries
     doc:
@@ -36,16 +34,14 @@ packages:
     architecture: i386
     version: "1.5"
     depends:
-    - etqw-data
-    debian:
-      depends:
-      - libc6 (>= 2.2.4)
-      - libgcc1 (>= 4.1.2)
-      - libjpeg62-turbo
-      - libsdl1.2debian (>= 1.2.10)
-      - libstdc++6 (>= 4.1.2)
-      - xdg-utils
-      suggests:
+      - etqw-data
+      - libc.so.6 (>= 2.2.4)
+      - libgcc_s.so.1 (>= 4.1.2)
+      - libjpeg.so.62
+      - libSDL-1.2.so.0 (>= 1.2.10)
+      - libstdc++.so.6 (>= 4.1.2)
+      - deb: xdg-utils
+    suggests:
       - etqw-pb-bin
     install:
     - patch 1.4 to 1.5 - binaries

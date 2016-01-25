@@ -19,9 +19,10 @@ help_text: |
 packages:
   doom2-wad:
     langs: [en,fr]
-    debian:
-      provides: doom-wad
-      conflicts: ["freedoom (<< 0.6.4-4)", "freedm (<< 0.6.4-4)"]
+    provides: doom-wad
+    conflicts:
+      - "freedoom (<< 0.6.4-4)"
+      - "freedm (<< 0.6.4-4)"
     steam:
       id: 2300
       path: "common/Doom 2"
@@ -59,9 +60,12 @@ packages:
     gog:
       url: doom_ii_final_doom
       game: doom_ii_master_levels_game
-    debian:
-      depends: doom2-wad | freedoom
-      recommends: game-data-packager
+    depends:
+      - deb: doom2-wad | freedoom
+        generic: doom2-wad
+    recommends:
+      - rpm: doom2-masterlevels
+        generic: game-data-packager
     symlinks:
       $install_to/doom2-masterlevels-tryexec: etc/alternatives/doom
     install:

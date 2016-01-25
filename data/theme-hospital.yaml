@@ -25,8 +25,7 @@ help_text: |
 packages:
   theme-hospital-data:
     langs: [en,da,de,es,fi,fr,it,nb,nl,pt,sv]
-    debian:
-      replaces: theme-hospital-full-data
+    replaces: theme-hospital-full-data
     gog:
       url: theme_hospital
     origin:
@@ -50,8 +49,7 @@ packages:
     install_to: usr/share/games/theme-hospital
     demo_for: theme-hospital-data
     mutually_exclusive: True
-    debian:
-      conflicts: theme-hospital-full-data
+    conflicts: theme-hospital-full-data
     install:
     - demo version
     symlinks:

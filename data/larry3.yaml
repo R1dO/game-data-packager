@@ -29,8 +29,8 @@ packages:
     copyright: © 1987-1994 Sierra On-Line
     section: doc
     expansion_for: larry3-en-data
-    debian:
-      depends: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
+    depends:
+      deb: larry1-data | larry1-vga-data | larry2-data | larry3-data | larry5-data | larry6-data
     install:
     - Leisure Suit Larrys Greatest Hits and Misses - Manual.pdf
 

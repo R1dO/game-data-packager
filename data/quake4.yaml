@@ -21,9 +21,7 @@ packages:
     version: "1.4.2"
     depends:
       - quake4-bin
-    debian:
-      depends:
-        - libc6 (>= 2.1)
+      - libc.so.6 (>= 2.1)
     doc:
       - patch 1.4.2 Punkbuster documentation
     install:
@@ -37,16 +35,16 @@ packages:
     install_to: usr/lib/quake4
     architecture: i386
     version: "1.4.2"
-    debian:
-      depends:
-        - libc6 (>= 2.2.4)
-        - libgcc1 (>= 4.1.2)
-        - libsdl1.2debian (>= 1.2.10)
-        - libstdc++6 (>= 4.1.2)
-        - quake4-data | quake4-censored-de-data
-        - xdg-utils
-      suggests:
-        - quake4-pb-bin
+    depends:
+      - libc.so.6 (>= 2.2.4)
+      - libgcc_s.so.1 (>= 4.1.2)
+      - libSDL-1.2.so.0 (>= 1.2.10)
+      - libstdc++.so.6 (>= 4.1.2)
+      - deb: quake4-data | quake4-censored-de-data
+        generic: quake4-any-data
+      - deb: xdg-utils
+    suggests:
+      - quake4-pb-bin
     install:
       - patch 1.4.2 binaries
     symlinks:
@@ -64,13 +62,8 @@ packages:
 
   quake4-data:
     version: "1.4.2"
-    debian:
-      provides: quake4-any-data
-      replaces: quake4-any-data
-      #conflicts: quake4-any-data
-      # This is extraneous because the 'replaces' set
-      # is always added to the 'conflicts' set.
-      #   dep['conflicts'] |= dep['replaces']
+    provides: quake4-any-data
+    replaces: quake4-any-data
     langs:
       - en
       - cs
@@ -98,9 +91,8 @@ packages:
   quake4-censored-de-data:
     longname: Quake 4 (censored German version)
     version: "1.4.2"
-    debian:
-      provides: quake4-any-data
-      replaces: quake4-any-data
+    provides: quake4-any-data
+    replaces: quake4-any-data
     install_to: usr/share/games/quake4
     # this is not actually dubbed, just censored
     langs:

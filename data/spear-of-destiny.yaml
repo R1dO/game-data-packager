@@ -60,13 +60,13 @@ packages:
     description: |
       This package provides the assets shared by the 3 mission packs
       of Spear of Destiny, the sequel of Wolfenstein 3D, but has no use alone.
-    debian:
-      depends: spear-of-destiny-mission1-data | spear-of-destiny-mission2-data | spear-of-destiny-mission3-data
+    depends:
+      deb: spear-of-destiny-mission1-data | spear-of-destiny-mission2-data | spear-of-destiny-mission3-data
+      generic: spear-of-destiny-mission-pack
     install_to: usr/share/games/wolf3d
     fedora:
       engine: wolf4sdl-spear
       install_to: usr/share/spear/full
-      depends: spear-of-destiny-mission-pack
     install:
     - audiohed.sod
     - audiot.sod
@@ -84,7 +84,7 @@ packages:
     install_to: usr/share/games/wolf3d
     fedora:
       install_to: usr/share/spear/full
-      provides: spear-of-destiny-mission-pack
+    provides: spear-of-destiny-mission-pack
     install:
     - gamemaps.sd1
     - maphead.sd1
@@ -102,7 +102,7 @@ packages:
     install_to: usr/share/games/wolf3d
     fedora:
       install_to: usr/share/spear/full
-      provides: spear-of-destiny-mission-pack
+    provides: spear-of-destiny-mission-pack
     install:
     - gamemaps.sd2
     - maphead.sd2
@@ -116,7 +116,7 @@ packages:
     install_to: usr/share/games/wolf3d
     fedora:
       install_to: usr/share/spear/full
-      provides: spear-of-destiny-mission-pack
+    provides: spear-of-destiny-mission-pack
     install:
     - gamemaps.sd3
     - maphead.sd3

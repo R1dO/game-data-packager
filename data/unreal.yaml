@@ -58,18 +58,13 @@ packages:
       This empty package depends on that launcher and its runtime dependencies.
       It is a separate package so that the launcher can be installed for
       the native CPU architecture.
-    debian:
-      depends:
-        - "game-data-packager (>= 44)"
-        - gir1.2-gtk-3.0
-        - python3
-        - python3-gi
-    rpm:
-      depends:
-        - "game-data-packager >= 44"
-        - gtk3
-        - python3
-        - python3-gobject
+    depends:
+      - "game-data-packager (>= 44)"
+      - python3
+      - deb: gir1.2-gtk-3.0
+        rpm: gtk3
+      - deb: python3-gi
+        rpm: python3-gobject
     empty: true
 
   unreal-de-data:
@@ -247,27 +242,15 @@ packages:
       - unreal-launcher-dependencies
       - unreal-libfmod
       - unreal-libmikmod2
-    debian:
-      depends:
-        - libalut0
-        - libc6
-        - libgcc1
-        - libopenal1
-        - libsdl1.2debian
-        - libstdc++6
-      suggests:
-        # required by UnrealXLinux.bin which is not the default
-        - libxxf86dga1
-    rpm:
-      depends:
-        - libalut.so.0
-        - libc.so.6
-        - libgcc_s.so.1
-        - libopenal.so.1
-        - libSDL-1.2.so.0
-        - libstdc++.so.6
-      suggests:
-        - libXxf86dga.so.1
+      - libalut.so.0
+      - libc.so.6
+      - libgcc_s.so.1
+      - libopenal.so.1
+      - libSDL-1.2.so.0
+      - libstdc++.so.6
+    suggests:
+      # required by UnrealXLinux.bin which is not the default
+      - libXxf86dga.so.1
     install:
       - Unreal 227i common binaries
       - Unreal 227i common executables
@@ -289,8 +272,7 @@ packages:
       This package contains the version used by Unreal and Unreal Gold,
       installed to a location where it will be used by those games.
     architecture: i386
-    debian:
-      depends: libc6
+    depends: libc.so.6
     install:
       - libfmod-3.75.so
     symlinks:
@@ -309,8 +291,7 @@ packages:
       Unreal Gold, installed to a location where it will be used by
       those games.
     architecture: i386
-    debian:
-      depends: libc6
+    depends: libc.so.6
     install:
       - libmikmod.so.2.0.4
     symlinks:
@@ -329,27 +310,15 @@ packages:
       - unreal-launcher-dependencies
       - unreal-libfmod
       - unreal-libmikmod2
-    debian:
-      depends:
-        - libalut0
-        - libc6
-        - libgcc1
-        - libopenal1
-        - libsdl1.2debian
-        - libstdc++6
-      suggests:
-        # required by UnrealXLinux.bin which is not the default
-        - libxxf86dga1
-    rpm:
-      depends:
-        - libalut.so.0
-        - libc.so.6
-        - libgcc_s.so.1
-        - libopenal.so.1
-        - libSDL-1.2.so.0
-        - libstdc++.so.6
-      suggests:
-        - libXxf86dga.so.1
+      - libalut.so.0
+      - libc.so.6
+      - libgcc_s.so.1
+      - libopenal.so.1
+      - libSDL-1.2.so.0
+      - libstdc++.so.6
+    suggests:
+      # required by UnrealXLinux.bin which is not the default
+      - libXxf86dga.so.1
     install:
       # these are relatively small so we don't bother with a separate
       # unreal-classic-data package, and just put them in /usr/lib

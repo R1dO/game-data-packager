@@ -18,8 +18,7 @@ packages:
     - wolf3d-v14-id-data
     - wolf3d-v14-alt-data
     - wolf3d-v14-apogee-data
-    debian:
-      replaces: wolf3d-data-wl1
+    replaces: wolf3d-data-wl1
     install_to: usr/share/games/wolf3d
     install:
     - audiohed.wl1
@@ -137,9 +136,8 @@ packages:
        * Episode 4: Dark Secret
        * Episode 5: Trail of the Madman
        * Episode 6: Confrontation
-    debian:
-      provides: wolf3d-data
-      conflicts: wolf3d-data
+    provides: wolf3d-data
+    conflicts: wolf3d-data
     fedora:
       engine: wolf4sdl-registered-apogee
       install_to: usr/share/wolf3d/registered-apogee

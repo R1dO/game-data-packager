@@ -140,8 +140,7 @@ packages:
     gog:
       url: quake_iii_gold
     expansion_for: quake3-data
-    debian:
-      depends: quake3-data (>= 38)
+    depends: quake3-data (>= 38)
     install:
     - missionpack/pak0.pk3
     symlinks:
