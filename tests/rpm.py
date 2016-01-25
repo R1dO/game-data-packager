@@ -20,7 +20,7 @@ import unittest
 from game_data_packager.data import (PackageRelation)
 from game_data_packager.packaging.rpm import (RpmPackaging)
 
-class DebTestCase(unittest.TestCase):
+class RpmTestCase(unittest.TestCase):
     def setUp(self):
         pass
 
