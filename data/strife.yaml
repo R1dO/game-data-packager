@@ -9,7 +9,9 @@ copyright: © 1996 Rogue Entertainment
 plugin: doom_common
 wiki: Strife
 genre: Role Playing
-engine: "chocolate-strife | strife-engine"
+engine:
+  deb: "chocolate-strife | strife-engine"
+  generic: chocolate-doom
 
 help_text: |
   Please provide the STRIFE1.WAD and VOICES.WAD from
@@ -27,10 +29,6 @@ packages:
       id: 317040
       path: common/Strife
       native: true
-    fedora:
-      engine: chocolate-doom
-    suse:
-      engine: chocolate-doom
     install:
     - strife1.wad
     - voices.wad

@@ -34,7 +34,7 @@ from .build import (PackagingTask)
 from .data import (PackageRelation, WantedFile)
 from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
-from .version import (DISTRO, FORMAT, GAME_PACKAGE_VERSION)
+from .version import (GAME_PACKAGE_VERSION)
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -102,9 +102,11 @@ class GameDataPackage(object):
         # put 'usr/share/games/quake3/baseq3/pak1.pk3' in the .deb.
         # The default is 'usr/share/games/' plus the binary package's name.
         if name.endswith('-data'):
-            self.install_to = '$assets/' + name[:len(name) - 5]
+            self.default_install_to = '$assets/' + name[:len(name) - 5]
         else:
-            self.install_to = '$assets/' + name
+            self.default_install_to = '$assets/' + name
+
+        self.install_to = self.default_install_to
 
         # If true, this package is allowed to be empty
         self.empty = False
@@ -388,6 +390,9 @@ class GameData(object):
             if k in self.data:
                 setattr(self, k, self.data[k])
 
+        if isinstance(self.engine, dict) and 'generic' not in self.engine:
+            self.engine['generic'] = None
+
         assert type(self.missing_langs) is list
 
         if 'aliases' in self.data:
@@ -669,6 +674,17 @@ class GameData(object):
             if k in d:
                 setattr(package, k, d[k])
 
+        if isinstance(package.engine, dict):
+            if isinstance(self.engine, dict):
+                for k in self.engine:
+                    package.engine.setdefault(k, self.engine[k])
+            else:
+                package.engine.setdefault('generic', self.engine)
+
+        if isinstance(package.install_to, dict):
+            package.install_to.setdefault('generic',
+                    package.default_install_to)
+
         if 'better_version' in d:
             assert 'better_versions' not in d
             package.better_versions = set([d['better_version']])
@@ -701,26 +717,8 @@ class GameData(object):
 
                     package.relations[rel].append(pr)
 
-        for port in (
-                # packaging formats (we treat "debian" as "any dpkg-based"
-                # for historical reasons)
-                'debian', 'rpm',
-                # specific distributions
-                'arch', 'fedora', 'mageia', 'suse',
-                ):
-
-            for k in d.get(port, {}):
-                if k in ('engine', 'install_to', 'description'):
-                    # FIXME: this object's contents should be 1:1 mapped
-                    # from the YAML, and not format- or distribution-specific.
-                    # Distribution-specific stuff should be done in the
-                    # PackagingTask or PackagingSystem
-                    if port in d and (FORMAT == port or DISTRO == port or
-                            (FORMAT == 'deb' and port == 'debian')):
-                        setattr(package, k, d[port][k])
-                else:
-                    raise AssertionError('%s: unknown key %r in port %r' %
-                            (package.name, k, port))
+        for port in ('debian', 'rpm', 'arch', 'fedora', 'mageia', 'suse'):
+            assert port not in d
 
         assert self.copyright or package.copyright, package.name
         assert package.component in ('main', 'contrib', 'non-free', 'local')
@@ -743,9 +741,9 @@ class GameData(object):
                 assert package.name not in packages, \
                    "%s should not be in its own %s set" % (package.name, rel)
 
-        if 'install_to' in d:
-            assert '$assets/' + package.name != d['install_to'] + '-data', \
-                "install_to %s is extraneous" % package.name
+        if 'install_to' in d and isinstance(d['install_to'], str):
+            assert d['install_to'] != package.default_install_to, \
+                "install_to for %s is extraneous" % package.name
 
         if 'demo_for' in d:
             if package.disks is None:

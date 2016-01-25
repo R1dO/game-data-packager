@@ -120,6 +120,17 @@ class PackagingSystem(metaclass=ABCMeta):
         raise NotImplementedError
 
     def substitute(self, template, package, **kwargs):
+        if isinstance(template, dict):
+            for c in self._contexts:
+                if c in template:
+                    template = template[c]
+                    break
+            else:
+                return None
+
+        if template is None:
+            return template
+
         if '$' not in template:
             return template
 

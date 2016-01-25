@@ -75,9 +75,11 @@ packages:
        * Episode 6: Confrontation
     provides: wolf3d-data
     mutually_exclusive: True
-    fedora:
-      engine: wolf4sdl-registered-id
-      install_to: usr/share/wolf3d/registered-id
+    engine:
+      fedora: wolf4sdl-registered-id
+    install_to:
+      fedora: usr/share/wolf3d/registered-id
+      generic: usr/share/games/wolf3d
     steam:
       id: 2270
       path: common/Wolfenstein 3D
@@ -85,7 +87,6 @@ packages:
       url: wolfenstein_3d_and_spear_of_destiny
       game: wolfenstein_3d
     url_misc: https://3drealms.com/catalog/wolfenstein-3d_25/
-    install_to: usr/share/games/wolf3d
     install:
     - audiohed.wl6
     - audiot.wl6
@@ -110,10 +111,12 @@ packages:
        * Episode 6: Confrontation
     provides: wolf3d-data
     mutually_exclusive: True
-    fedora:
-      engine: wolf4sdl-registered-id
-      install_to: usr/share/wolf3d/registered-id
-    install_to: usr/share/games/wolf3d
+    engine:
+      fedora:
+        wolf4sdl-registered-id
+    install_to:
+      fedora: usr/share/wolf3d/registered-id
+      generic: usr/share/games/wolf3d
     install:
     - audiohed.wl6
     - audiot.wl6
@@ -138,10 +141,11 @@ packages:
        * Episode 6: Confrontation
     provides: wolf3d-data
     conflicts: wolf3d-data
-    fedora:
-      engine: wolf4sdl-registered-apogee
-      install_to: usr/share/wolf3d/registered-apogee
-    install_to: usr/share/games/wolf3d
+    engine:
+      fedora: wolf4sdl-registered-apogee
+    install_to:
+      fedora: usr/share/wolf3d/registered-apogee
+      generic: usr/share/games/wolf3d
     install:
     - audiohed.wl6
     - audiot.wl6

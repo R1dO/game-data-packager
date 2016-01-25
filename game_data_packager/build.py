@@ -1304,7 +1304,10 @@ class PackagingTask(object):
             if package.expansion_for:
                 pkginfo.write('depend = %s\n' % package.expansion_for)
             else:
-                engine = package.engine or self.game.engine
+                engine = self.packaging.substitute(
+                        package.engine or self.game.engine,
+                        package.name)
+
                 if engine and len(engine.split()) == 1:
                     pkginfo.write('depend = %s\n' % engine)
 
@@ -1397,7 +1400,9 @@ class PackagingTask(object):
             if package.expansion_for:
                 spec.write('Requires: %s\n' % package.expansion_for)
             else:
-                engine = package.engine or self.game.engine
+                engine = self.packaging.substitute(
+                        package.engine or self.game.engine,
+                        package.name)
 
                 if engine and len(engine.split()) == 1:
                     spec.write('Requires: %s\n' % engine)
@@ -1665,7 +1670,10 @@ class PackagingTask(object):
         if package.mutually_exclusive:
             dep['replaces'] |= dep['provides']
 
-        engine = package.engine or self.game.engine
+        engine = self.packaging.substitute(
+                package.engine or self.game.engine,
+                package.name)
+
         if engine and '>=' in engine:
             dep['breaks'].add(engine.replace('>=', '<<'))
             engine = engine.split()[0]
@@ -1772,7 +1780,10 @@ class PackagingTask(object):
         copyright = package.copyright or self.game.copyright
         long_desc += '  Published by: ' + copyright.split(' ', 2)[2]
 
-        engine = package.engine or self.game.engine
+        engine = self.packaging.substitute(
+                package.engine or self.game.engine,
+                package.name)
+
         if engine and package.section == 'games':
             long_desc += '\n .\n'
             if '|' in engine:
@@ -1798,8 +1809,14 @@ class PackagingTask(object):
         return os.path.join(DATADIR, package.name + '.control.in')
 
     def look_for_engines(self, packages, force=False):
-        engines = set(p.engine or self.game.engine for p in packages)
+        engines = set()
+
+        for p in packages:
+            engines.add(self.packaging.substitute(p.engine or self.game.engine,
+                    p.name))
+
         engines.discard(None)
+
         if not engines:
             return
 
@@ -2029,9 +2046,16 @@ class PackagingTask(object):
             self.packaging.install_packages(debs, method=args.install_method,
                     gain_root=args.gain_root_command)
 
-        engines_alt = set((p.engine or self.game.engine) for p in ready)
+
+        engines_alt = set()
+
+        for p in ready:
+            engines_alt.add(self.packaging.substitute(p.engine or self.game.engine,
+                    p.name))
+
         engines_alt.discard(None)
         engines = set()
+
         for engine_alt in engines_alt:
             for engine in reversed(engine_alt.split('|')):
                 engine = engine.split('(')[0].strip()
@@ -2039,6 +2063,7 @@ class PackagingTask(object):
                     break
             else:
                 engines.add(engine)
+
         if engines:
             print('it is recommended to also install this game engine: %s' % ', '.join(engines))
 

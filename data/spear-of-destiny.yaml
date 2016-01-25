@@ -64,9 +64,10 @@ packages:
       deb: spear-of-destiny-mission1-data | spear-of-destiny-mission2-data | spear-of-destiny-mission3-data
       generic: spear-of-destiny-mission-pack
     install_to: usr/share/games/wolf3d
-    fedora:
-      engine: wolf4sdl-spear
-      install_to: usr/share/spear/full
+    engine:
+      fedora: wolf4sdl-spear
+    install_to:
+      fedora: usr/share/spear/full
     install:
     - audiohed.sod
     - audiot.sod
@@ -82,8 +83,8 @@ packages:
 
       Each mission consists of 21 levels.
     install_to: usr/share/games/wolf3d
-    fedora:
-      install_to: usr/share/spear/full
+    install_to:
+      fedora: usr/share/spear/full
     provides: spear-of-destiny-mission-pack
     install:
     - gamemaps.sd1
@@ -100,8 +101,8 @@ packages:
     description: "Each mission pack provides 21 levels."
     wiki: Return_to_Danger
     install_to: usr/share/games/wolf3d
-    fedora:
-      install_to: usr/share/spear/full
+    install_to:
+      fedora: usr/share/spear/full
     provides: spear-of-destiny-mission-pack
     install:
     - gamemaps.sd2
@@ -114,8 +115,8 @@ packages:
     description: "Each mission pack provides 21 levels."
     wiki: Ultimate_Challenge
     install_to: usr/share/games/wolf3d
-    fedora:
-      install_to: usr/share/spear/full
+    install_to:
+      fedora: usr/share/spear/full
     provides: spear-of-destiny-mission-pack
     install:
     - gamemaps.sd3

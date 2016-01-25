@@ -64,23 +64,17 @@ class DoomGameData(GameData):
         assert self.wiki
 
         if self.engine is None:
-            self.engine = "chocolate-doom | doom-engine"
+            self.engine = {
+                    'deb': "chocolate-doom | doom-engine",
+                    'generic': 'chocolate-doom'
+                    }
+
         if self.genre is None:
             self.genre = 'First-person shooter'
 
-        package_map = {
-                'doom-engine': 'doom',
-                'boom-engine': 'boom',
-                'heretic-engine': 'heretic',
-                'hexen-engine': 'hexen',
-                'doomsday': 'doomsday-compat',
-        }
-
         for package in self.packages.values():
             package.install_to = '$assets/doom'
-            engine = package.engine or self.engine
-            engine = engine.split('|')[-1].strip()
-            package.program = package_map.get(engine, engine)
+
             if 'main_wads' in self.data['packages'][package.name]:
                 package.main_wads = self.data['packages'][package.name]['main_wads']
             else:
@@ -104,6 +98,19 @@ class DoomTask(PackagingTask):
         super(DoomTask, self).fill_extra_files(package, destdir)
 
         for main_wad, quirks in package.main_wads.items():
+            package_map = {
+                    'doom-engine': 'doom',
+                    'boom-engine': 'boom',
+                    'heretic-engine': 'heretic',
+                    'hexen-engine': 'hexen',
+                    'doomsday': 'doomsday-compat',
+            }
+
+            engine = self.packaging.substitute(package.engine or self.game.engine,
+                    package.name)
+            engine = engine.split('|')[-1].strip()
+            program = package_map.get(engine, engine)
+
             wad_base = os.path.splitext(main_wad)[0]
 
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')
@@ -144,7 +151,7 @@ class DoomTask(PackagingTask):
             if 'name' in quirks:
                 entry['Name'] += ' - ' + quirks['name']
             entry['GenericName'] = self.game.genre + ' game'
-            entry['TryExec'] = package.program
+            entry['TryExec'] = program
 
             install_to = self.packaging.substitute(package.install_to,
                     package.name).lstrip('/')
@@ -158,7 +165,7 @@ class DoomTask(PackagingTask):
                        + ' -file /' + install_to + '/' + main_wad)
             else:
                 args = '-iwad /' + install_to + '/' + main_wad
-            entry['Exec'] = package.program + ' ' + args
+            entry['Exec'] = program + ' ' + args
             entry['Icon'] = desktop_file
             entry['Terminal'] = 'false'
             entry['Type'] = 'Application'
@@ -172,7 +179,7 @@ class DoomTask(PackagingTask):
             self.packaging.override_lintian(destdir, package.name,
                     'desktop-command-not-in-package',
                     'usr/share/applications/%s.desktop %s' %
-                     (desktop_file, package.program))
+                     (desktop_file, program))
 
             if FORMAT == 'deb':
                 debdir = os.path.join(destdir, 'DEBIAN')

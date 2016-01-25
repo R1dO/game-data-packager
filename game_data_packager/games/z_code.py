@@ -43,8 +43,8 @@ class ZCodeGameData(GameData):
             assert package.z_file
 
         if self.engine is None:
-            # RPM format can't handle alternatives and will ignore this
-            self.engine = 'gargoyle-free | zcode-interpreter'
+            self.engine = { 'deb': 'gargoyle-free | zcode-interpreter' }
+
         if self.genre is None:
             self.genre = 'Adventure'
 

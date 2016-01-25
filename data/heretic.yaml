@@ -8,7 +8,9 @@ copyright: © 1994 Raven Software
 
 plugin: doom_common
 wiki: Heretic
-engine: "chocolate-heretic | heretic-engine"
+engine:
+  deb: "chocolate-heretic | heretic-engine"
+  generic: chocolate-doom
 
 help_text: |
   Please provide HERETIC.WAD from Heretic v1.3, and/or HERETIC1.WAD
@@ -27,10 +29,6 @@ packages:
     steam:
       id: 2390
       path: "common/Heretic Shadow of the Serpent Riders"
-    fedora:
-      engine: chocolate-doom
-    suse:
-      engine: chocolate-doom
     install:
     - heretic.wad
 
@@ -39,10 +37,6 @@ packages:
     demo_for: heretic-wad
     component: non-free
     replaces: heretic-shareware-data
-    fedora:
-      engine: chocolate-doom
-    suse:
-      engine: chocolate-doom
     install:
     - heretic1.wad
     license:

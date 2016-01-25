@@ -2,7 +2,9 @@
 longname: Quake III Arena
 franchise: Quake
 copyright: © 1999 id Software
-engine: quake3 | quake3-server
+engine:
+  deb: quake3 | quake3-server
+  generic: ioquake3
 genre: First-person shooter
 wikibase: http://quake.wikia.com/wiki/
 wiki: Quake_III_Arena
@@ -42,10 +44,8 @@ packages:
     steam:
       id: 2200
       path: "common/Quake 3 Arena"
-    rpm:
-      engine: ioquake3
-    mageia:
-      install_to: usr/share/ioquake3
+    install_to:
+      mageia: usr/share/ioquake3
     gog:
       url: quake_iii_gold
     # We deliberately only put baseq3 in the search path, not

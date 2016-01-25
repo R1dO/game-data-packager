@@ -1,7 +1,9 @@
 ---
 longname: Rise of the Triad
 copyright: © 1995 Apogee Software
-engine: rott
+engine:
+  fedora: rott-registered
+  generic: rott
 genre: First-person shooter
 
 help_text: |
@@ -27,8 +29,9 @@ packages:
     description: |
       Use the 'rott-shareware' command to play this game.
     suggests: rott-registered-data
-    fedora:
-      engine: rott-shareware
+    engine:
+      fedora: rott-shareware
+      generic: rott
     install:
     - DEMO1_3.DMO
     - DEMO2_3.DMO
@@ -48,8 +51,6 @@ packages:
 
       Use the 'rott-commercial' command to play this game.
     depends: rott-data
-    fedora:
-      engine: rott-registered
     url_misc: https://3drealms.com/catalog/rise-triad-dark-war_44/
     install_to: $assets/rott
     install:
@@ -66,8 +67,6 @@ packages:
     longname: "Extreme Rise of the Triad"
     description: |
       Use the 'rott-commercial -filertl extreme.rtl' command to play this game.
-    fedora:
-      engine: rott-registered
     install_to: $assets/rott
     install:
     - EXTREME.RTL

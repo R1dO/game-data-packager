@@ -20,7 +20,9 @@ help_text: |
 
 plugin: doom_common
 wiki: Hexen
-engine: "chocolate-hexen | hexen-engine"
+engine:
+  deb: "chocolate-hexen | hexen-engine"
+  generic: chocolate-doom
 
 packages:
   hexen-wad:
@@ -29,10 +31,6 @@ packages:
     steam:
       id: 2360
       path: "common/Hexen"
-    fedora:
-      engine: chocolate-doom
-    suse:
-      engine: chocolate-doom
     install:
     - hexen.wad
 
@@ -42,10 +40,6 @@ packages:
     breaks:
       - deb: chocolate-doom (<< 2)
     replaces: hexen-deathkings-data
-    fedora:
-      engine: chocolate-doom
-    suse:
-      engine: chocolate-doom
     steam:
       id: 2370
       path: "common/Hexen Deathkings of the Dark Citadel"
@@ -58,10 +52,6 @@ packages:
     replaces: hexen-demo-data
     breaks:
       - deb: chocolate-doom (<< 2.2.0)
-    fedora:
-      engine: chocolate-doom
-    suse:
-      engine: chocolate-doom
     demo_for: hexen-wad
     install:
     - hexendemo.wad
