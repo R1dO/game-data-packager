@@ -1,7 +1,20 @@
 game-data-packager (45) UNRELEASED; urgency=medium
 
-  * Correct UnrealGoldPatch227i.7z's format.
-  * The Unreal patches provide lin_convenience_libs.
+  * New game support:
+    -  ...
+  * Support for new languages and versions:
+    - ...
+  * Enhancements and bug fixes:
+    - Correct UnrealGoldPatch227i.7z's format [skitt]
+    - The Unreal patches provide lin_convenience_libs [skitt]
+  * Internal changes:
+    - Refactor dependency relationships and other distro- and
+      format-dependent values. They now take a map or list of
+      maps like {'deb': 'foo-dfsg (>= 1)', 'generic': 'foo'}.
+      Versioned dependencies are translated from dpkg syntax
+      to RPM or Arch syntax as needed; and library dependencies
+      can be spelled like "libfoo0.so.1" which will be translated
+      to libfoo0-1 for dpkg distributions. [smcv]
 
  -- Stephen Kitt <skitt@debian.org>  Sat, 23 Jan 2016 22:38:20 +0100
 
