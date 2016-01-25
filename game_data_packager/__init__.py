@@ -796,17 +796,11 @@ class GameData(object):
         if 'version' in d:
             package.version = d['version'] + '+' + GAME_PACKAGE_VERSION
 
-        self._populate_files(d.get('install_files'), install_package=package)
-
-    def _populate_files(self, d, install_package=None,
-            **kwargs):
+    def _populate_files(self, d, **kwargs):
         if d is None:
             return
 
         for filename, data in d.items():
-            if install_package is not None:
-                install_package.install.add(filename)
-
             f = self._ensure_file(filename)
 
             for k in kwargs:
