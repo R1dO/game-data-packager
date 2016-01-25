@@ -165,7 +165,6 @@ class WantedFile(HashedFile):
         super(WantedFile, self).__init__(name)
         self.alternatives = []
         self.doc = False
-        self.group_members = None
         self._distinctive_name = None
         self.distinctive_size = False
         self.download = None
@@ -264,7 +263,6 @@ class WantedFile(HashedFile):
 
         for k in (
                 'download',
-                'group_members',
                 'install_as',
                 'size',
                 'unsuitable',
@@ -359,3 +357,35 @@ class PackageRelation:
 
     def __repr__(self):
         return 'PackageRelation(' + repr(self.to_data()) + ')'
+
+class FileGroup:
+    __APPLY_TO_ALL = ('doc', 'executable', 'install_to', 'license')
+
+    def __init__(self, name):
+        self.name = name
+        self.group_members = set()
+
+        # Attributes to apply to every member of this group.
+        for attr in self.__APPLY_TO_ALL:
+            setattr(self, attr, None)
+
+    def apply_group_attributes(self, other):
+        assert isinstance(other, WantedFile) or isinstance(other, FileGroup)
+
+        for attr in self.__APPLY_TO_ALL:
+            assert hasattr(other, attr)
+            value = getattr(self, attr)
+
+            if value is not None:
+                setattr(other, attr, value)
+
+    def to_data(self, expand=True):
+        ret = {}
+
+        for attr in self.__APPLY_TO_ALL:
+            value = getattr(self, attr)
+
+            if value is not None:
+                ret[attr] = value
+
+        return ret

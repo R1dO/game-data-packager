@@ -35,7 +35,7 @@ except ImportError:
     from distutils.version import LooseVersion as Version
     ON_DEBIAN = False
 
-from . import (HashedFile, WantedFile)
+from .data import (FileGroup, HashedFile)
 from .gog import GOG
 from .steam import parse_acf
 from .unpack import TarUnpacker
@@ -147,18 +147,12 @@ class GameData(object):
         self.data = dict()
 
         self.groups = {}
-        self.required = WantedFile('probably required')
-        self.required.group_members = set()
-        self.optional = WantedFile('probably optional')
-        self.optional.group_members = set()
-        self.documentation = WantedFile('probably documentation')
-        self.documentation.group_members = set()
-        self.licenses = WantedFile('probably licenses')
-        self.licenses.group_members = set()
-        self.unwanted = WantedFile('probably unwanted')
-        self.unwanted.group_members = set()
-        self.archives = WantedFile('archives')
-        self.archives.group_members = set()
+        self.required = FileGroup('probably required')
+        self.optional = FileGroup('probably optional')
+        self.documentation = FileGroup('probably documentation')
+        self.licenses = FileGroup('probably licenses')
+        self.unwanted = FileGroup('probably unwanted')
+        self.archives = FileGroup('archives')
 
         for group in (self.required, self.optional, self.documentation,
                 self.licenses, self.archives, self.unwanted):
@@ -201,8 +195,7 @@ class GameData(object):
         if isinstance(unpacker, TarUnpacker):
             unpack['skip'] = unpacker.skip
 
-        group = WantedFile('contents of %s' % out_name)
-        group.group_members = set()
+        group = FileGroup('contents of %s' % out_name)
         self.groups[group.name] = group
 
         for entry in unpacker:

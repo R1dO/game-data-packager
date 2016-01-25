@@ -31,7 +31,7 @@ import zipfile
 import yaml
 
 from .build import (PackagingTask)
-from .data import (PackageRelation, WantedFile)
+from .data import (FileGroup, PackageRelation, WantedFile)
 from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .version import (GAME_PACKAGE_VERSION)
@@ -414,6 +414,9 @@ class GameData(object):
         # { 'baseq3/pak1.pk3': WantedFile instance }
         self.files = {}
 
+        # Map from FileGroup name to instance.
+        self.groups = {}
+
         # Map from WantedFile name to a set of names of WantedFile instances
         # from which the file named in the key can be extracted or generated.
         # { 'baseq3/pak1.pk3': set(['linuxq3apoint-1.32b-3.x86.run']) }
@@ -453,34 +456,50 @@ class GameData(object):
         if 'groups' in self.data:
             groups = self.data['groups']
             assert isinstance(groups, dict), self.shortname
+
+            # Before doing anything else, we do one pass through the list
+            # of groups to record that each one is a group, so that when we
+            # encounter an entry that is not known to be a group in a
+            # group's members, it is definitely a file.
+            for group_name in groups:
+                self._ensure_group(group_name)
+
             for group_name, group_data in groups.items():
+                group = self.groups[group_name]
                 attrs = {}
+
                 if isinstance(group_data, dict):
                     members = group_data['group_members']
                     for k, v in group_data.items():
                         if k != 'group_members':
+                            assert hasattr(group, k), k
+                            setattr(group, k, v)
                             attrs[k] = v
                 elif isinstance(group_data, (str, list)):
                     members = group_data
                 else:
                     raise AssertionError('group %r should be dict, str or list' % group_name)
 
-                group = self._ensure_file(group_name)
-                if group.group_members is None:
-                    group.group_members = set()
-                group.apply_group_attributes(attrs)
-
                 if isinstance(members, str):
                     for line in members.splitlines():
                         f = self._add_hash(line.rstrip('\n'), 'size_and_md5')
                         if f is not None:
-                            f.apply_group_attributes(attrs)
+                            # f may be a WantedFile or a FileGroup,
+                            # this works for either
                             group.group_members.add(f.name)
+                            group.apply_group_attributes(f)
+
                 elif isinstance(members, list):
                     for member_name in members:
-                        f = self._ensure_file(member_name)
-                        f.apply_group_attributes(attrs)
-                        group.group_members.add(member_name)
+                        f = self.groups.get(member_name)
+
+                        if f is None:
+                            f = self._ensure_file(member_name)
+
+                        # f may be a WantedFile or a FileGroup,
+                        # this works for either
+                        group.group_members.add(f.name)
+                        group.apply_group_attributes(f)
                 else:
                     raise AssertionError('group %r members should be str or list' % group_name)
 
@@ -605,10 +624,10 @@ class GameData(object):
             return ret
 
         for filename, f in self.files.items():
-            if f.group_members is not None:
-                groups[filename] = f.to_data(expand=expand)
-            else:
-                files[filename] = f.to_data(expand=expand)
+            files[filename] = f.to_data(expand=expand)
+
+        for name, g in self.groups.items():
+            groups[name] = g.to_data(expand=expand)
 
         for name, package in self.packages.items():
             packages[name] = package.to_data(expand=expand)
@@ -647,8 +666,7 @@ class GameData(object):
     def size(self, package):
         size_min = 0
         size_max = 0
-        for filename in package._install:
-           file = self.files[filename]
+        for file in package.install_files:
            if file.alternatives:
                # 'or 0' is a workaround for the files without known size
                size_min += min(set(self.files[a].size or 0 for a in file.alternatives))
@@ -656,8 +674,7 @@ class GameData(object):
            elif file.size:
                size_min += file.size
                size_max += file.size
-        for filename in package._optional:
-           file = self.files[filename]
+        for file in package.optional_files:
            if file.alternatives:
                size_max += max(set(self.files[a].size for a in file.alternatives))
            elif file.size:
@@ -831,8 +848,20 @@ class GameData(object):
                 if k in data:
                     setattr(f, k, data[k])
 
+    def _ensure_group(self, name):
+        assert name not in self.files, (self.shortname, name)
+
+        if name not in self.groups:
+            logger.debug('Adding group: %s', name)
+            self.groups[name] = FileGroup(name)
+
+        return self.groups[name]
+
     def _ensure_file(self, name):
+        assert name not in self.groups, (self.shortname, name)
+
         if name not in self.files:
+            logger.debug('Adding file: %s', name)
             self.files[name] = WantedFile(name)
 
         return self.files[name]
@@ -889,6 +918,15 @@ class GameData(object):
             size = None
             hexdigest, filename = MD5SUM_DIVIDER.split(line, 1)
 
+        if filename in self.groups:
+            assert size in (None, '_'), \
+                    "%s group %s should not have size" % (
+                            self.shortname, filename)
+            assert hexdigest in (None, '_'), \
+                    "%s group %s should not have hexdigest" % (
+                            self.shortname, filename)
+            return self.groups[filename]
+
         f = self._ensure_file(filename)
 
         if size is not None and size != '_':
@@ -903,6 +941,22 @@ class GameData(object):
         current_group = None
         attributes = {}
 
+        # Before doing anything else, we do one pass through the list
+        # of groups to record that each one is a group, so that when we
+        # encounter an entry that is not known to be a group in a
+        # group's members, it is definitely a file.
+        stream.seek(0)
+
+        for line in stream:
+            stripped = line.strip()
+
+            if stripped.startswith('['):
+                assert stripped.endswith(']'), repr(stripped)
+                self._ensure_group(stripped[1:-1])
+
+        # Now go back and re-read them, with their members this time.
+        stream.seek(0)
+
         for line in stream:
             stripped = line.strip()
             if stripped == '' or stripped.startswith('#'):
@@ -910,19 +964,20 @@ class GameData(object):
 
             if stripped.startswith('['):
                 assert stripped.endswith(']'), repr(stripped)
-                current_group = self._ensure_file(stripped[1:-1])
-                if current_group.group_members is None:
-                    current_group.group_members = set()
+                current_group = self._ensure_group(stripped[1:-1])
                 attributes = {}
             elif stripped.startswith('{'):
-                attributes = {}
-                attributes = json.loads(stripped)
                 assert current_group is not None
-                current_group.apply_group_attributes(attributes)
+                attributes = json.loads(stripped)
+
+                for k, v in attributes.items():
+                    assert hasattr(current_group, k), k
+                    setattr(current_group, k, v)
             else:
                 f = self._add_hash(stripped, 'size_and_md5')
-                f.apply_group_attributes(attributes)
+                # f can either be a WantedFile or a FileGroup here
                 assert current_group is not None
+                current_group.apply_group_attributes(f)
                 current_group.group_members.add(f.name)
 
     def load_file_data(self, use_vfs=USE_VFS):
@@ -936,20 +991,22 @@ class GameData(object):
                 zip = use_vfs
             else:
                 zip = os.path.join(DATADIR, 'vfs.zip')
+
             with zipfile.ZipFile(zip, 'r') as zf:
                 files = zf.namelist()
-                filename = '%s.files' % self.shortname
-                if filename in files:
-                    logger.debug('... %s/%s', zip, filename)
-                    jsondata = zf.open(filename).read().decode('utf-8')
-                    data = json.loads(jsondata)
-                    self._populate_files(data)
 
                 filename = '%s.groups' % self.shortname
                 if filename in files:
                     logger.debug('... %s/%s', zip, filename)
                     stream = io.TextIOWrapper(zf.open(filename), encoding='utf-8')
                     self._populate_groups(stream)
+
+                filename = '%s.files' % self.shortname
+                if filename in files:
+                    logger.debug('... %s/%s', zip, filename)
+                    jsondata = zf.open(filename).read().decode('utf-8')
+                    data = json.loads(jsondata)
+                    self._populate_files(data)
 
                 for alg in ('sha1', 'sha256', 'size_and_md5'):
                     filename = '%s.%s%s' % (self.shortname, alg,
@@ -965,18 +1022,17 @@ class GameData(object):
             if not os.path.isdir(vfs):
                 vfs = DATADIR
 
+            filename = os.path.join(vfs, '%s.groups' % self.shortname)
+            if os.path.isfile(filename):
+                logger.debug('... %s', filename)
+                stream = open(filename, encoding='utf-8')
+                self._populate_groups(stream)
 
             filename = os.path.join(vfs, '%s.files' % self.shortname)
             if os.path.isfile(filename):
                 logger.debug('... %s', filename)
                 data = json.load(open(filename, encoding='utf-8'))
                 self._populate_files(data)
-
-            filename = os.path.join(vfs, '%s.groups' % self.shortname)
-            if os.path.isfile(filename):
-                logger.debug('... %s', filename)
-                stream = open(filename, encoding='utf-8')
-                self._populate_groups(stream)
 
             for alg in ('sha1', 'sha256', 'size_and_md5'):
                 filename = os.path.join(vfs, '%s.%s%s' %
@@ -994,11 +1050,23 @@ class GameData(object):
             d = self.data['packages'][package.name]
 
             for filename in d.get('doc', ()):
-                f = self._ensure_file(filename)
+                f = self.groups.get(filename)
+
+                if f is None:
+                    f = self._ensure_file(filename)
+
+                # WantedFile and FileGroup both have this
+                assert hasattr(f, 'doc')
                 f.doc = True
 
             for filename in d.get('license', ()):
-                f = self._ensure_file(filename)
+                f = self.groups.get(filename)
+
+                if f is None:
+                    f = self._ensure_file(filename)
+
+                # WantedFile and FileGroup both have this
+                assert hasattr(f, 'license')
                 f.license = True
 
             package.install_files = set(self._iter_expand_groups(package.install))
@@ -1009,12 +1077,10 @@ class GameData(object):
             f.provides_files = set(self._iter_expand_groups(f.provides))
 
         for filename, f in self.files.items():
-            f.provides_files = set(self._iter_expand_groups(f.provides))
-
             for provided in f.provides_files:
                 self.providers.setdefault(provided.name, set()).add(filename)
 
-            if f.alternatives or f.group_members is not None:
+            if f.alternatives:
                 continue
 
             if f.distinctive_size and f.size is not None:
@@ -1123,8 +1189,6 @@ class GameData(object):
                     alt = self.files[alt_name]
                     # an alternative can't be a placeholder for alternatives
                     assert not alt.alternatives, alt_name
-                    # an alternative can't be a placeholder for a group
-                    assert alt.group_members is None, alt_name
 
                 # if this is a placeholder for a bunch of alternatives, then
                 # it doesn't make sense for it to have a defined checksum
@@ -1133,23 +1197,14 @@ class GameData(object):
                 assert wanted.sha1 is None, wanted.name
                 assert wanted.sha256 is None, wanted.name
                 assert wanted.size is None, wanted.name
-
-                # a placeholder for alternatives can't also be a placeholder
-                # for a group
-                assert wanted.group_members is None, wanted.name
-            elif wanted.group_members is not None:
-                for member_name in wanted.group_members:
-                    assert member_name in self.files
-
-                assert wanted.md5 is None, wanted.name
-                assert wanted.sha1 is None, wanted.name
-                assert wanted.sha256 is None, wanted.name
-                assert wanted.size is None, wanted.name
-                assert not wanted.unpack, wanted.unpack
             else:
                 assert (wanted.size is not None or filename in
                         self.data.get('unknown_sizes', ())
                         ), (self.shortname, wanted.name)
+
+        for name, group in self.groups.items():
+            for member_name in group.group_members:
+                assert member_name in self.files or member_name in self.groups
 
     def _iter_expand_groups(self, grouped):
         """Given a set of strings that are either filenames or groups,
@@ -1157,12 +1212,13 @@ class GameData(object):
         those groups, recursively.
         """
         for filename in grouped:
-            wanted = self._ensure_file(filename)
-            if wanted.group_members is not None:
-                for x in self._iter_expand_groups(wanted.group_members):
+            group = self.groups.get(filename)
+
+            if group is not None:
+                for x in self._iter_expand_groups(group.group_members):
                     yield x
             else:
-                yield wanted
+                yield self._ensure_file(filename)
 
     def construct_task(self, **kwargs):
         self.load_file_data()
