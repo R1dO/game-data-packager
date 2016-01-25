@@ -749,7 +749,7 @@ class PackagingTask(object):
                 if wanted.size > statvfs.f_frsize * statvfs.f_bavail:
                     logger.error("Out of space on %s, can't download %s.",
                                   tmpdir, wanted.name)
-                    self.download_failed.add(url)
+                    self.download_failed |= set(choose_mirror(wanted))
                     return FillResult.IMPOSSIBLE
 
                 urls = choose_mirror(wanted)
