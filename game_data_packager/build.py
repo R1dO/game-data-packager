@@ -1458,6 +1458,8 @@ class PackagingTask(object):
         # we only compute here the md5 we don't have yet,
         # for the (small) GDP-generated files
         for dirpath, dirnames, filenames in os.walk(destdir):
+            if os.path.basename(dirpath) == 'DEBIAN':
+                continue
             for fn in filenames:
                 full = os.path.join(dirpath, fn)
                 if os.path.islink(full):
