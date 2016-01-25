@@ -718,7 +718,7 @@ class GameData(object):
                     package.relations[rel].append(pr)
 
         for port in ('debian', 'rpm', 'arch', 'fedora', 'mageia', 'suse'):
-            assert port not in d
+            assert port not in d, 'use {deb: foo-dfsg, generic: foo} syntax'
 
         assert self.copyright or package.copyright, package.name
         assert package.component in ('main', 'contrib', 'non-free', 'local')
