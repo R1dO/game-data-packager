@@ -113,7 +113,7 @@ class DnfPackaging(RpmPackaging):
                   }
 
     def __init__(self):
-        super(DnfPackaging, self).__init__()
+        super(DnfPackaging, self).__init__('fedora')
         self.available = None
 
     def read_architecture(self):
@@ -159,6 +159,9 @@ class ZypperPackaging(RpmPackaging):
                   'unrar-nonfree': 'unrar',
                   }
 
+    def __init__(self):
+        super(ZypperPackaging, self).__init__('suse')
+
     def is_available(self, package):
         proc = subprocess.Popen(['zypper', 'info', package],
                 universal_newlines=True,
@@ -192,6 +195,9 @@ class UrpmiPackaging(RpmPackaging):
                   '7z': 'p7zip',
                   'unrar-nonfree': 'unrar',
                   }
+
+    def __init__(self):
+        super(UrpmiPackaging, self).__init__('mageia')
 
     def is_available(self, package):
         return 0 == subprocess.call(['urpmq', package],
