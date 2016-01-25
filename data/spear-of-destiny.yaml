@@ -63,10 +63,10 @@ packages:
     depends:
       deb: spear-of-destiny-mission1-data | spear-of-destiny-mission2-data | spear-of-destiny-mission3-data
       generic: spear-of-destiny-mission-pack
-    install_to: usr/share/games/wolf3d
     engine:
       fedora: wolf4sdl-spear
     install_to:
+      deb: usr/share/games/wolf3d
       fedora: usr/share/spear/full
     install:
     - audiohed.sod
@@ -82,8 +82,8 @@ packages:
       Spear of Destiny is the sequel of Wolfenstein 3D.
 
       Each mission consists of 21 levels.
-    install_to: usr/share/games/wolf3d
     install_to:
+      deb: usr/share/games/wolf3d
       fedora: usr/share/spear/full
     provides: spear-of-destiny-mission-pack
     install:
@@ -100,8 +100,8 @@ packages:
     longname: "Spear of Destiny - Mission 2: Return to Danger"
     description: "Each mission pack provides 21 levels."
     wiki: Return_to_Danger
-    install_to: usr/share/games/wolf3d
     install_to:
+      deb: usr/share/games/wolf3d
       fedora: usr/share/spear/full
     provides: spear-of-destiny-mission-pack
     install:
@@ -114,8 +114,8 @@ packages:
     longname: "Spear of Destiny - Mission 3: Ultimate Challenge"
     description: "Each mission pack provides 21 levels."
     wiki: Ultimate_Challenge
-    install_to: usr/share/games/wolf3d
     install_to:
+      deb: usr/share/games/wolf3d
       fedora: usr/share/spear/full
     provides: spear-of-destiny-mission-pack
     install:
