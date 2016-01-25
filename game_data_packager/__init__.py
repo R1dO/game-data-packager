@@ -31,7 +31,7 @@ import zipfile
 import yaml
 
 from .build import (PackagingTask)
-from .data import (WantedFile)
+from .data import (PackageRelation, WantedFile)
 from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .version import (DISTRO, FORMAT, GAME_PACKAGE_VERSION)
@@ -53,18 +53,22 @@ class GameDataPackage(object):
         self.demo_for = set()
         self._better_versions = set()
         self.expansion_for = None
-        # use this to group together dubs
-        self.provides = None
         # use this for games with demo_for/better_version/provides
         self.mutually_exclusive = False
         # expansion for a package outside of this yaml file;
         # may be another GDP package or a package not made by GDP
         self.expansion_for_ext = None
 
-        # distro-agnostic depedencies inside the same .yaml file
-        # that can't be handled with expansion_for heuristics
-        # *) on Fedora this maps to 'Requires:'
-        self._depends = set()
+        self.relations = dict(
+            breaks=[],
+            build_depends=[],
+            conflicts=[],
+            depends=[],
+            provides=[],
+            recommends=[],
+            replaces=[],
+            suggests=[],
+        )
 
         # The optional marketing name of this version
         self.longname = None
@@ -188,16 +192,6 @@ class GameDataPackage(object):
             return None
 
     @property
-    def depends(self):
-        return self._depends
-    @depends.setter
-    def depends(self, value):
-        if type(value) is str:
-            self._depends = set([value])
-        else:
-            self._depends = set(value)
-
-    @property
     def optional(self):
         return self._optional
     @optional.setter
@@ -249,7 +243,6 @@ class GameDataPackage(object):
                 'aliases',
                 'better_versions',
                 'demo_for',
-                'depends',
                 'dotemu',
                 'gog',
                 'origin',
@@ -264,6 +257,14 @@ class GameDataPackage(object):
                     ret[k] = sorted(v)
                 else:
                     ret[k] = v
+
+        for relation, related in self.relations.items():
+            # The .to_data() of a PackageRelation doesn't have a defined
+            # sorting order, so do a Schwartzian transform to get a
+            # stable order
+            tmp = sorted([(str(x), x.to_data()) for x in related])
+            tmp = [x[1] for x in tmp]
+            ret[relation] = tmp
 
         if expand and self.install_files is not None:
             if self.install_files:
@@ -660,7 +661,7 @@ class GameData(object):
 
     def _populate_package(self, package, d):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'description', 'depends',
+                'description',
                 'rip_cd', 'architecture', 'aliases', 'better_versions', 'langs', 'mutually_exclusive',
                 'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
@@ -672,6 +673,34 @@ class GameData(object):
             assert 'better_versions' not in d
             package.better_versions = set([d['better_version']])
 
+        for rel in package.relations:
+            if rel in d:
+                related = d[rel]
+
+                if isinstance(related, (str, dict)):
+                    related = [related]
+                else:
+                    assert isinstance(related, list)
+
+                for x in related:
+                    pr = PackageRelation(x)
+                    # Fedora doesn't handle alternatives, everything must
+                    # be handled with virtual packages. Assume the same is
+                    # true for everything except dpkg.
+                    assert not pr.alternatives, pr
+
+                    if pr.contextual:
+                        for context, specific in pr.contextual.items():
+                            assert (context == 'deb' or
+                                    not specific.alternatives), pr
+
+                    if pr.package == 'libjpeg.so.62':
+                        # we can't really translate versions for libjpeg,
+                        # since it could be either libjpeg6b or libjpeg-turbo
+                        assert pr.version is None
+
+                    package.relations[rel].append(pr)
+
         for port in (
                 # packaging formats (we treat "debian" as "any dpkg-based"
                 # for historical reasons)
@@ -679,24 +708,37 @@ class GameData(object):
                 # specific distributions
                 'arch', 'fedora', 'mageia', 'suse',
                 ):
-            if port in d:
-                package.specifics[port] = d[port]
 
-            # FIXME: this object's contents should be 1:1 mapped from the
-            # YAML, and not format- or distribution-specific.
-            # Distribution-specific stuff should be done in the PackagingTask
-            # or PackagingSystem
-            if port in d and (FORMAT == port or DISTRO == port or
-                    (FORMAT == 'deb' and port == 'debian')):
-                for k in ('engine', 'install_to', 'description', 'provides'):
-                    if k in d[port]:
+            for k in d.get(port, {}):
+                if k in ('engine', 'install_to', 'description'):
+                    # FIXME: this object's contents should be 1:1 mapped
+                    # from the YAML, and not format- or distribution-specific.
+                    # Distribution-specific stuff should be done in the
+                    # PackagingTask or PackagingSystem
+                    if port in d and (FORMAT == port or DISTRO == port or
+                            (FORMAT == 'deb' and port == 'debian')):
                         setattr(package, k, d[port][k])
+                elif k in package.relations:
+                    related = d[port][k]
 
-        # Fedora doesn't handle alternatives, everything must be handled with
-        # virtual packages
-        if FORMAT == 'rpm':
-            for dep in package.depends:
-                assert '|' not in dep, (package.name, package.depends)
+                    if isinstance(related, str):
+                        related = [related]
+
+                    for r in related:
+                        if port == 'debian':
+                            # we treat "debian:" as meaning "any dpkg-based"
+                            pr = PackageRelation({'deb': r})
+                        else:
+                            pr = PackageRelation({port: r})
+                            assert not pr.alternatives, pr
+
+                        if pr.package == 'libjpeg.so.62':
+                            assert pr.version is None
+
+                        package.relations[k].append(pr)
+                else:
+                    raise AssertionError('%s: unknown key %r in port %r' %
+                            (package.name, k, port))
 
         assert self.copyright or package.copyright, package.name
         assert package.component in ('main', 'contrib', 'non-free', 'local')
@@ -705,24 +747,19 @@ class GameData(object):
         assert type(package.langs) is list
         assert type(package.mutually_exclusive) is bool
 
-        if 'debian' in d:
-            debian = d['debian']
-            assert type(debian) is dict
-            for k, v in debian.items():
-                assert k in ('breaks', 'conflicts', 'depends', 'provides',
-                             'recommends', 'replaces', 'suggests',
-                             'build-depends'), (package.name, debian)
-                assert type(v) in (str, list), (package.name, debian)
-                if type(v) == str:
-                    assert ',' not in v, (package.name, debian)
-                    package.specifics['debian'][k] = [v]
-                assert package.name not in v, \
-                   "A package shouldn't extraneously %s itself" % k
-
-        if 'provides' in d:
-            assert type(package.provides) is str
-            assert package.name != package.provides, \
-               "A package shouldn't extraneously provide itself"
+        for rel, related in package.relations.items():
+            for pr in related:
+                packages = set()
+                if pr.contextual:
+                    for p in pr.contextual.values():
+                        packages.add(p.package)
+                elif pr.alternatives:
+                    for p in pr.alternatives:
+                        packages.add(p.package)
+                else:
+                    packages.add(pr.package)
+                assert package.name not in packages, \
+                   "%s should not be in its own %s set" % (package.name, rel)
 
         if 'install_to' in d:
             assert '$assets/' + package.name != d['install_to'] + '-data', \
@@ -1051,13 +1088,30 @@ class GameData(object):
             # check internal depedencies
             for demo_for_item in package.demo_for:
                 assert demo_for_item in self.packages, demo_for_item
+
             if package.expansion_for:
                 if package.expansion_for not in self.packages:
-                    for p in self.packages.values():
-                        if package.expansion_for == p.provides:
+                    # It needs to be provided on all distributions,
+                    # so we can ignore contextual package relations,
+                    # which have package = None.
+                    #
+                    # We also already asserted that distro-independent
+                    # relations don't have alternatives (not that they
+                    # would be meaningful for provides).
+                    provider = None
+
+                    for other in self.packages.values():
+                        for provided in other.relations['provides']:
+                            if package.expansion_for == provided.package:
+                                provider = other
+                                break
+
+                        if provider is not None:
                             break
                     else:
-                        raise Exception('virtual pkg %s not found' % package.expansion_for)
+                        raise Exception('%s: %s: virtual package %s not found' %
+                                (self.shortname, package.name,
+                                    package.expansion_for))
 
             if package.better_versions:
                 for v in package.better_versions:

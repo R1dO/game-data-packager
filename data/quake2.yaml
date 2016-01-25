@@ -111,11 +111,11 @@ packages:
       id: 2330
       path: "common/Quake 2/xatrix"
     debian:
-      build-depends: [gcc, make, libc6-dev]
+      build_depends: [gcc, make, libc6-dev]
       provides: quake2-xatrix
       replaces: quake2-xatrix
     fedora:
-      build-depends: [gcc, make, glibc-devel]
+      build_depends: [gcc, make, glibc-devel]
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64
@@ -167,11 +167,11 @@ packages:
     gog:
       url: quake_ii_quad_damage
     debian:
-      build-depends: [gcc, make, libc6-dev]
+      build_depends: [gcc, make, libc6-dev]
       provides: quake2-rogue
       replaces: quake2-rogue
     fedora:
-      build-depends: [gcc, make, glibc-devel]
+      build_depends: [gcc, make, glibc-devel]
     expansion_for: quake2-full-data
     # this is what Makefile says has been tested
     architecture: amd64 i386 ia64 sparc64

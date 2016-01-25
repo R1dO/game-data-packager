@@ -34,6 +34,10 @@ class RpmPackaging(PackagingSystem):
                   'amd64': 'x86_64',
                   }
 
+    def __init__(self, distro):
+        super(RpmPackaging, self).__init__()
+        self._contexts = (distro, 'rpm', 'generic')
+
     def is_installed(self, package):
         return 0 == subprocess.call(['rpm', '-q', package],
                                     stdout=subprocess.DEVNULL,
@@ -72,6 +76,21 @@ class RpmPackaging(PackagingSystem):
                                 ' using rpm instead') % method)
             run_as_root(['rpm', '-U'] + list(rpms), gain_root)
 
+    def format_relation(self, pr):
+        assert not pr.contextual
+        assert not pr.alternatives
+
+        if pr.version is not None:
+            op = pr.version_operator
+
+            if op in ('<<', '>>'):
+                op = op[0]
+
+            # foo >= 1.0
+            return '%s %s %s' % (self.rename_package(pr.package), op,
+                    pr.version)
+
+        return self.rename_package(pr.package)
 
 # XXX: dnf is written in python3 and has a stable public api,
 #      it is likely faster to use it instead of calling 'dnf' pgm.

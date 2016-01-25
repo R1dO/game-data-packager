@@ -42,7 +42,7 @@ packages:
       - morrowind-complete-en-data
     provides: morrowind-data
     lang: en
-    build-depends: [openmw-launcher]
+    build_depends: [openmw-launcher]
     install:
       - Morrowind assets from unshield
       - Morrowind English GOTY assets from unshield
@@ -58,7 +58,7 @@ packages:
       - morrowind-complete-en-data
     provides: morrowind-data
     lang: en
-    build-depends: [openmw-launcher]
+    build_depends: [openmw-launcher]
     install:
       - Morrowind assets from unshield
       - Morrowind English GOTY assets from unshield
@@ -77,7 +77,7 @@ packages:
       - morrowind-complete-en-data
     provides: morrowind-data
     lang: en
-    build-depends: [openmw-launcher]
+    build_depends: [openmw-launcher]
     install:
       - Morrowind assets from unshield
       - Morrowind English GOTY assets from unshield
@@ -93,7 +93,7 @@ packages:
   morrowind-complete-en-data:
     provides: morrowind-data
     lang: en
-    build-depends: [openmw-launcher]
+    build_depends: [openmw-launcher]
     install:
       - Morrowind assets from unshield
       - Morrowind English GOTY assets from unshield
@@ -117,7 +117,7 @@ packages:
   morrowind-fr-data:
     provides: morrowind-data
     lang: fr
-    build-depends: [openmw-launcher]
+    build_depends: [openmw-launcher]
     install:
       - Morrowind assets from unshield
       - Morrowind French assets from unshield

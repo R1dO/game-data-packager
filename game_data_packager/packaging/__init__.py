@@ -27,10 +27,23 @@ class PackagingSystem(metaclass=ABCMeta):
     LICENSEDIR = 'usr/share/doc'
     CHECK_CMD = None
     INSTALL_CMD = None
-    # by default pgm 'unzip' is provided by package 'unzip' etc...
-    # only exceptions needs to be listed
-    # 'None' means that this pgm is not packaged by $distro
-    PACKAGE_MAP = dict()
+
+    # Exceptions to our normal heuristic for mapping a tool to a package:
+    # the executable tool 'unzip' is in the unzip package, etc.
+    #
+    # Only exceptions need to be listed.
+    #
+    # 'NotImplemented' means that this dependency is not packaged by
+    # the distro.
+    PACKAGE_MAP = {}
+
+    # Exceptions to our normal heuristic for mapping an abstract package name
+    # to a package:
+    #
+    # - the library 'libfoo.so.0' is in a package that Provides libfoo.so.0
+    #   (suitable for RPM)
+    # - anything else is in the obvious package name
+    RENAME_PACKAGES = {}
 
     # we keep Debian codification as reference, as it
     # - has the most architectures supported
@@ -41,6 +54,9 @@ class PackagingSystem(metaclass=ABCMeta):
     def __init__(self):
         self._architecture = None
         self._foreign_architectures = set()
+        # contexts to use when evaluating format- or distro-specific
+        # dependencies, in order by preference
+        self._contexts = ('generic',)
 
     def read_architecture(self):
         arch = os.uname()[4]
@@ -118,6 +134,44 @@ class PackagingSystem(metaclass=ABCMeta):
 
     def override_lintian(self, destdir, package, tag, args):
         pass
+
+    def format_relations(self, relations):
+        """Yield a native dependency representation for this packaging system
+        for each gdp.data.PackagingRelation in relations.
+        """
+        for pr in relations:
+            if pr.contextual:
+                for c in self._contexts:
+                    if c in pr.contextual:
+                        for x in self.format_relations([pr.contextual[c]]):
+                            yield x
+
+                        break
+            else:
+                yield self.format_relation(pr)
+
+    @abstractmethod
+    def format_relation(self, pr):
+        """Return a native dependency representation for this packaging system
+        and the given gdp.data.PackagingRelation. It is guaranteed
+        that pr.contextual is empty.
+        """
+        raise NotImplementedError
+
+    def rename_package(self, dependency):
+        """Given an abstract package name, return the corresponding
+        package name in this packaging system.
+
+        Abstract package names are mostly the same as for Debian,
+        except that libraries are represented as libfoo.so.0.
+        """
+        return self.RENAME_PACKAGES.get(dependency, dependency)
+
+    def package_for_tool(self, tool):
+        """Given an executable name, return the corresponding
+        package name in this packaging system.
+        """
+        return self.PACKAGE_MAP.get(tool, tool)
 
 def get_native_packaging_system():
     # lazy import when actually needed

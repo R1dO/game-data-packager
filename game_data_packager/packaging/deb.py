@@ -38,11 +38,17 @@ class DebPackaging(PackagingSystem):
                   '7z': 'p7zip-full',
                   'unrar-nonfree': 'unrar',
                   }
+    RENAME_PACKAGES = {
+            'libSDL-1.2.so.0': 'libsdl1.2debian',
+            'libgcc_s.so.1': 'libgcc1',
+            'libjpeg.so.62': 'libjpeg62-turbo | libjpeg62',
+    }
 
     def __init__(self):
         super(DebPackaging, self).__init__()
         self.__installed = None
         self.__available = None
+        self._contexts = ('deb', 'generic')
 
     def read_architecture(self):
         self._architecture = check_output(['dpkg',
@@ -138,12 +144,44 @@ class DebPackaging(PackagingSystem):
             # gdebi-gtk etc.
             subprocess.call([method] + list(debs))
 
+    def rename_package(self, p):
+        mapped = super(DebPackaging, self).rename_package(p)
+
+        if mapped != p:
+            return mapped
+
+        p = p.lower().replace('_', '-')
+
+        if '.so.' in p:
+            lib, version = p.split('.so.', 1)
+
+            if lib[-1] in '012345679':
+                lib += '-'
+
+            return lib + version
+
+        return p
+
     def override_lintian(self, destdir, package, tag, args):
         assert type(package) is str
         lintiandir = os.path.join(destdir, 'usr/share/lintian/overrides')
         mkdir_p(lintiandir)
         with open(os.path.join(lintiandir, package), 'a', encoding='utf-8') as l:
             l.write('%s: %s %s\n' % (package, tag, args))
+
+    def format_relation(self, pr):
+        assert not pr.contextual
+
+        if pr.alternatives:
+            return ' | '.join([self.format_relation(p)
+                for p in pr.alternatives])
+
+        if pr.version is not None:
+            # foo (>= 1.0)
+            return '%s (%s %s)' % (self.rename_package(pr.package),
+                    pr.version_operator, pr.version)
+
+        return self.rename_package(pr.package)
 
 def get_distro_packaging():
     return DebPackaging()

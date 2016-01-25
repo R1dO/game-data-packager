@@ -295,3 +295,67 @@ class WantedFile(HashedFile):
                     ret[k] = v
 
         return ret
+
+class PackageRelation:
+    def __init__(self, rel):
+        assert isinstance(rel, str) or isinstance(rel, dict)
+        assert ',' not in rel
+
+        self.package = None
+        self.version = None
+        self.version_operator = None
+        self.alternatives = []
+        self.contextual = {}
+
+        if isinstance(rel, dict):
+            for context, specific in rel.items():
+                assert isinstance(context, str), context
+                assert isinstance(specific, str), specific
+                self.contextual[context] = PackageRelation(specific)
+        elif '|' in rel:
+            self.alternatives = [PackageRelation(bit.strip())
+                    for bit in rel.split('|')]
+        else:
+            for operator in '>=', '>>', '<=', '<<', '=':
+                if operator in rel:
+                    package, version = rel.split(operator)
+                    package = package.rstrip('(')
+                    self.package = package.strip()
+                    version = version.rstrip(')')
+                    self.version = version.strip()
+                    self.version_operator = operator
+                    break
+            else:
+                self.package = rel
+
+                assert self.package.strip() == self.package, repr(self.package)
+
+    def to_data(self):
+        if self.contextual:
+            data = {}
+
+            for context, specific in self.contextual.items():
+                data[context] = specific.to_data()
+
+            return data
+
+        if self.alternatives:
+            return ' | '.join([alt.to_data() for alt in self.alternatives])
+
+        return str(self)
+
+    def __str__(self):
+        if self.contextual:
+            return repr(self)
+
+        if self.alternatives:
+            return ' | '.join([str(s) for s in self.alternatives])
+
+        if self.version is None:
+            return self.package
+
+        return '%s (%s %s)' % (self.package, self.version_operator,
+                self.version)
+
+    def __repr__(self):
+        return 'PackageRelation(' + repr(self.to_data()) + ')'

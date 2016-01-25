@@ -1320,21 +1320,8 @@ class PackagingTask(object):
                  '--options=!all,use-set,type,uid,gid,mode,time,size,md5,sha256,link']
                  + sorted(files), env={'LANG':'C'}, cwd=destdir)
 
-    def __merge_relationships(self, package, related, key):
-        # copy it so we don't modify it in-place
-        related = set(related)
-
-        if FORMAT in package.specifics:
-            related |= set(package.specifics[FORMAT].get(key, ()))
-
-        if FORMAT == 'deb' and 'debian' in package.specifics:
-            # we treat "debian" as "any dpkg-based" for historical reasons
-            related |= set(package.specifics['debian'].get(key, ()))
-
-        if DISTRO in package.specifics:
-            related |= set(package.specifics[DISTRO].get(key, ()))
-
-        return related
+    def __merge_relations(self, package, rel):
+        return set(self.packaging.format_relations(package.relations[rel]))
 
     def fill_dest_dir_rpm(self, package, destdir, compress, architecture, release):
         specfile = os.path.join(self.get_workdir(), '%s.spec' % package.name)
@@ -1400,19 +1387,39 @@ class PackagingTask(object):
             else:
                 spec.write('Group: Amusements/Games\n')
             spec.write('BuildArch: %s\n' % architecture)
-            if package.provides:
-                spec.write('Provides: %s\n' % package.provides)
+
+            for p in self.__merge_relations(package, 'provides'):
+                spec.write('Provides: %s\n' % p)
+
                 if package.mutually_exclusive:
-                    spec.write('Conflicts: %s\n' % package.provides)
+                    spec.write('Conflicts: %s\n' % p)
+
             if package.expansion_for:
                 spec.write('Requires: %s\n' % package.expansion_for)
             else:
                 engine = package.engine or self.game.engine
+
                 if engine and len(engine.split()) == 1:
                     spec.write('Requires: %s\n' % engine)
-            for p in self.__merge_relationships(package, package.depends,
-                    'depends'):
+
+            for p in self.__merge_relations(package, 'depends'):
                 spec.write('Requires: %s\n' % p)
+
+            for p in (self.__merge_relations(package, 'conflicts'),
+                    self.__merge_relations(package, 'breaks')):
+                spec.write('Conflicts: %s\n' % p)
+
+            for p in self.__merge_relations(package, 'recommends'):
+                # FIXME: some RPM distributions do have recommends;
+                # which ones?
+                pass
+
+            for p in self.__merge_relations(package, 'suggests'):
+                # FIXME: likewise
+                pass
+
+            # FIXME: replaces?
+
             if not compress or not self.compress_deb or package.rip_cd:
                 spec.write('%define _binary_payload w0.gzdio\n')
             elif self.compress_deb == ['-Zgzip', '-z1']:
@@ -1643,22 +1650,20 @@ class PackagingTask(object):
             control['Architecture'] = self.packaging.get_architecture(package.architecture)
 
         dep = dict()
-        debian = package.specifics.get('debian', {})
-        for field in ('breaks', 'conflicts', 'provides',
-                      'recommends', 'replaces', 'suggests'):
-            dep[field] = set(debian.get(field,[]))
 
-        dep['depends'] = self.__merge_relationships(package, package.depends,
-                'depends')
+        for rel in package.relations:
+            if rel == 'build_depends':
+                continue
+
+            dep[rel] = self.__merge_relations(package, rel)
+            logger.debug('%s %s %s', package.name, rel, ', '.join(dep[rel]))
 
         if package.mutually_exclusive:
             dep['conflicts'] |= package.demo_for
             dep['conflicts'] |= package.better_versions
 
-        if package.provides:
-            dep['provides'].add(package.provides)
-            if package.mutually_exclusive:
-                dep['replaces'].add(package.provides)
+        if package.mutually_exclusive:
+            dep['replaces'] |= dep['provides']
 
         engine = package.engine or self.game.engine
         if engine and '>=' in engine:
@@ -1686,9 +1691,13 @@ class PackagingTask(object):
 
         # dependencies derived from *other* package's data
         for other_package in self.game.packages.values():
-            if (other_package.expansion_for and
-             other_package.expansion_for in (package.name, package.provides)):
+            if other_package.expansion_for:
+                if package.name == other_package.expansion_for:
                     dep['suggests'].add(other_package.name)
+                else:
+                    for p in package.relations['provides']:
+                        if p.package == other_package.expansion_for:
+                            dep['suggests'].add(other_package.name)
 
             if other_package.mutually_exclusive:
                 if package.name in other_package.better_versions:
@@ -2181,15 +2190,15 @@ class PackagingTask(object):
                     possible.discard(package)
 
         for package in set(possible):
-            debian = package.specifics.get('debian', {})
-            if 'build-depends' in debian:
-                for tool in debian['build-depends']:
-                    tool = tool.strip()
-                    if not which(tool) and not self.packaging.is_installed(tool):
-                        logger.error('package "%s" is needed to build "%s"' %
-                                     (tool, package.name))
-                        possible.discard(package)
-                        self.missing_tools.add(tool)
+            build_depends = self.__merge_relations(package, 'build_depends')
+            for tool in build_depends:
+                tool = tool.strip()
+
+                if not which(tool) and not self.packaging.is_installed(tool):
+                    logger.error('package "%s" is needed to build "%s"' %
+                                 (tool, package.name))
+                    possible.discard(package)
+                    self.missing_tools.add(tool)
 
         logger.debug('possible packages: %r', set(p.name for p in possible))
         if not possible:
@@ -2216,12 +2225,18 @@ class PackagingTask(object):
                                 package.name, package.lang)
                     possible.discard(package)
                     continue
+
                 # keep only preferred language for this virtual package
-                if package.provides:
+                provides = self.__merge_relations(package, 'provides')
+
+                if provides:
                     for other_p in possible:
                         if other_p.name == package.name:
                             continue
-                        if other_p.provides != package.provides:
+                        other_provides = self.__merge_relations(other_p,
+                                'provides')
+                        if other_provides - provides:
+                            # it provides something this one doesn't
                             continue
                         if score < lang_score(other_p.lang):
                             logger.info('will not produce "%s" '
@@ -2668,7 +2683,7 @@ class PackagingTask(object):
         packages = set()
 
         for t in self.missing_tools:
-            p = self.packaging.PACKAGE_MAP.get(t, t)
+            p = self.packaging.package_for_tool(t)
             if p is not None:
                 packages.add(p)
 

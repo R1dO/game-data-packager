@@ -40,6 +40,10 @@ class ArchPackaging(PackagingSystem):
                   'i386': 'i686',
                   }
 
+    def __init__(self):
+        super(ArchPackaging, self).__init__()
+        self._contexts = ('arch', 'generic')
+
     def read_architecture(self):
         super(ArchPackaging, self).read_architecture()
         # https://wiki.archlinux.org/index.php/Multilib
@@ -79,6 +83,21 @@ class ArchPackaging(PackagingSystem):
 
     def install_packages(self, pkgs, method=None, gain_root='su'):
         run_as_root(['pacman', '-U'] + list(pkgs), gain_root)
+
+    def format_relation(self, pr):
+        assert not pr.contextual
+        assert not pr.alternatives
+
+        if pr.version is not None:
+            op = pr.version_operator
+
+            if op in ('<<', '>>'):
+                op = op[0]
+
+            # foo>=1.0
+            return '%s%s%s' % (self.rename_package(pr.package), op, pr.version)
+
+        return self.rename_package(pr.package)
 
 def get_distro_packaging():
     return ArchPackaging()
