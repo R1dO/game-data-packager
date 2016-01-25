@@ -15,17 +15,11 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-import logging
 import os
 import yaml
 
 from game_data_packager import load_games
 from game_data_packager.util import ascii_safe
-
-if os.environ.get('DEBUG') or os.environ.get('GDP_DEBUG'):
-    logging.getLogger().setLevel(logging.DEBUG)
-else:
-    logging.getLogger().setLevel(logging.INFO)
 
 if __name__ == '__main__':
     for name, game in load_games().items():

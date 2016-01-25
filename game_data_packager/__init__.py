@@ -39,6 +39,11 @@ from .version import (GAME_PACKAGE_VERSION)
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 
+if os.environ.get('DEBUG') or os.environ.get('GDP_DEBUG'):
+    logging.getLogger().setLevel(logging.DEBUG)
+else:
+    logging.getLogger().setLevel(logging.INFO)
+
 MD5SUM_DIVIDER = re.compile(r' [ *]?')
 
 class GameDataPackage(object):

@@ -34,13 +34,6 @@ from .util import (human_size)
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 
-# For now, we're given these by the shell script wrapper.
-
-if os.environ.get('DEBUG') or os.environ.get('GDP_DEBUG'):
-    logging.getLogger().setLevel(logging.DEBUG)
-else:
-    logging.getLogger().setLevel(logging.INFO)
-
 class TerminalProgress(ProgressCallback):
     def __init__(self, interval=0.2):
         """Constructor.
