@@ -236,7 +236,7 @@ class WantedFile(HashedFile):
     def provides(self, value):
         self._provides = set(value)
 
-    def to_yaml(self, expand=True):
+    def to_data(self, expand=True):
         ret = {
             'name': self.name,
         }

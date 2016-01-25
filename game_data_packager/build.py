@@ -1941,9 +1941,9 @@ class PackagingTask(object):
     def run_command_line(self, args):
         if logging.getLogger().isEnabledFor(logging.DEBUG):
             logger.debug('package description:\n%s',
-                    yaml.safe_dump(self.game.to_yaml(expand=False)))
+                    yaml.safe_dump(self.game.to_data(expand=False)))
             logger.debug('package description after expansion:\n%s',
-                    yaml.safe_dump(self.game.to_yaml(expand=True)))
+                    yaml.safe_dump(self.game.to_data(expand=True)))
 
         self.verbose = getattr(args, 'verbose', False)
 

@@ -230,7 +230,7 @@ class GameDataPackage(object):
         assert type(value) is str
         self.langs = [value]
 
-    def to_yaml(self, expand=True):
+    def to_data(self, expand=True):
         ret = {
             'architecture': self.architecture,
             'component': self.component,
@@ -591,7 +591,7 @@ class GameData(object):
 
         return help_text
 
-    def to_yaml(self, expand=True):
+    def to_data(self, expand=True):
         files = {}
         groups = {}
         packages = {}
@@ -606,12 +606,12 @@ class GameData(object):
 
         for filename, f in self.files.items():
             if f.group_members is not None:
-                groups[filename] = f.to_yaml(expand=expand)
+                groups[filename] = f.to_data(expand=expand)
             else:
-                files[filename] = f.to_yaml(expand=expand)
+                files[filename] = f.to_data(expand=expand)
 
         for name, package in self.packages.items():
-            packages[name] = package.to_yaml(expand=expand)
+            packages[name] = package.to_data(expand=expand)
 
         if files:
             ret['files'] = files

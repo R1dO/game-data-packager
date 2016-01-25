@@ -34,4 +34,4 @@ if __name__ == '__main__':
         ascii_safe(game.help_text, force=True).encode('ascii')
         if 'DEBUG' in os.environ or 'GDP_DEBUG' in os.environ:
             print('# %s -----------------------------------------' % name)
-            print(yaml.safe_dump(game.to_yaml()))
+            print(yaml.safe_dump(game.to_data()))

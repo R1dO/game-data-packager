@@ -76,15 +76,15 @@ if __name__ == '__main__':
         game.load_file_data()
         ascii_safe(game.longname, force=True).encode('ascii')
         ascii_safe(game.help_text, force=True).encode('ascii')
-        vfs_to_json = dump(game.to_yaml())
+        vfs_to_json = dump(game.to_data())
 
         json_game = from_json[name]
         json_game.load_file_data()
-        json_to_json = dump(json_game.to_yaml())
+        json_to_json = dump(json_game.to_data())
 
         yaml_game = from_yaml[name]
         yaml_game.load_file_data()
-        yaml_to_json = dump(yaml_game.to_yaml())
+        yaml_to_json = dump(yaml_game.to_data())
 
         if yaml_to_json != vfs_to_json:
             sys.stdout.writelines(difflib.unified_diff(
@@ -105,7 +105,7 @@ if __name__ == '__main__':
         if from_ref is not None:
             ref_game = from_ref[name]
             ref_game.load_file_data(use_vfs='ref.zip')
-            ref_to_json = dump(ref_game.to_yaml())
+            ref_to_json = dump(ref_game.to_data())
 
             if ref_to_json != vfs_to_json:
                 sys.stdout.writelines(difflib.unified_diff(
