@@ -20,7 +20,12 @@ import logging
 import os
 import subprocess
 
-from debian.debian_support import Version
+
+try:
+    from debian.debian_support import Version
+except ImportError:
+    # make check
+    from distutils.version import LooseVersion as Version
 
 from . import (PackagingSystem)
 from ..util import (check_output, mkdir_p, run_as_root)
