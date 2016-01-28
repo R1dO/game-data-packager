@@ -107,6 +107,12 @@ packages:
     - 98.lfl
     - 99.lfl
 
+files:
+  14.lfl:
+    alternatives:
+    - 14.lfl?floppy
+    - 14.lfl?cd
+
 size_and_md5: |
   6295      1875b90fade138c9253a8e967007031a 00.lfl
   93138     d4ad918ed2aabfd70a3ab45deed9cdf5 01.lfl
@@ -119,7 +125,8 @@ size_and_md5: |
   46955     9072925195b4afabbb3816d4bf5d8f86 09.lfl
   29367     c11a4c32f261a3767cfce594f947561e 12.lfl
   58867     b6531c9d0fd0c34803ad5b9c187eb566 13.lfl
-  32657     a6d56a1c2e4f5a60551a73b5da032889 14.lfl
+  32657     a6d56a1c2e4f5a60551a73b5da032889 14.lfl?floppy
+  32657     0f5e11086043a0bd816b399a911d1bc1 14.lfl?cd
   124004    c58b461b6d896c0add85dd8f2022fb0c 15.lfl
   40069     527219652515656caa5fdb8722f508fc 16.lfl
   43340     93bc0f9ea789908f8136c24120b743d3 17.lfl
@@ -211,7 +218,8 @@ sha1sums: |
   9d543450e81d9da6e1879ee39237db638c29c69c  09.lfl
   9e3b6c4648218e9e8d1ac4eecc77c227d61878d2  12.lfl
   f5ec41f45d84bb133060b6e9960c586fbfb6b6a7  13.lfl
-  3e0676bfa49e6ed9f259a45780dd3c7a9ebfa6e4  14.lfl
+  3e0676bfa49e6ed9f259a45780dd3c7a9ebfa6e4  14.lfl?floppy
+  fb590a20ad221d312157d5f97966ec1406557aae  14.lfl?cd
   4dfabb4c83fc79e11fa4d0d89ece1bf92566d3fa  15.lfl
   70361938397ec7be826355da2e1c50bc531f629e  16.lfl
   669c59f9352196f5e5f9ef1379db904c8c94521e  17.lfl
