@@ -1,0 +1,116 @@
+---
+franchise: Monkey Island
+longname: The Secret of Monkey IslandThe Secret of Monkey Island
+copyright: © 1990 Lucasfilm Games
+plugin: scummvm_common
+wiki: The_Secret_of_Monkey_Island
+
+help_text: |
+   The Special Edition as sold on Steam & GOG.com is not supported:
+
+   http://forums.scummvm.org/viewtopic.php?t=7671
+
+packages:
+  secret-of-monkey-island-en-data:
+    provides: secret-fo-monkey-island-data
+    install:
+    - assets english
+    optional:
+    - midi roms
+    - some flac rip
+
+  secret-of-monkey-island-de-data:
+    provides: secret-fo-monkey-island-data
+    lang: de
+    install:
+    - assets german
+    optional:
+    - midi roms
+    - some flac rip
+
+  secret-of-monkey-island-fr-data:
+    provides: secret-fo-monkey-island-data
+    lang: fr
+    install:
+    - assets french
+    optional:
+    - midi roms
+    - some flac rip
+
+  secret-of-monkey-island-it-data:
+    provides: secret-fo-monkey-island-data
+    lang: it
+    install:
+    - assets italian
+    optional:
+    - midi roms
+    - some flac rip
+
+groups:
+  # PC VGA versions
+  assets english:
+    group_members: |
+      8955      2d1e891fe52df707c30185e52c50cd92 monkey.000
+      4779713   d074150de681d49ff350e8ad60ee4abd monkey.001
+
+  assets german:
+    group_members: |
+      8955      305d3dd57c96c65b017bc70c8c7cfb5e monkey.000?de
+      4790965   9a70eb103fbd71d24a5d606d27fdc3b2 monkey.001?de
+
+  assets french:
+    group_members: |
+      8955      aa8a0cb65f3afbbe2c14c3f9f92775a3 monkey.000?fr
+      4794979   5b6d35c93e5eae9a2b8911a1bbf46990 monkey.001?fr
+
+  assets italian:
+    group_members: |
+      8955      da6269b18fcb08189c0aa9c95533cce2 monkey.000?it
+      4786822   11069aae43a6db6b3a6097d8eafaacc1 monkey.001?it
+
+  # these are shared by many games
+  midi roms:
+    group_members: |
+      65536     9513fec4f09a7d327748340ce3a2a59b mt32_control.rom
+      524288    89e42e386e82e0cacb4a2704a03706ca mt32_pcm.rom
+
+  # not reproducible
+  some flac rip:
+    group_members: |
+      9535864   d171e0c42652c625559b0da3fc4550f5 track1.fla
+      7472775   53390bfbe92b9aaf8a74e318a7f2d237 track2.fla
+      7289043   92e49914f475062ec18d31fb8b182244 track3.fla
+      11948882  94ded1727909330a29f192306ee726a6 track4.fla
+      11201475  efd1b21e5ce9657fbdb656acc09899ec track5.fla
+      787598    b039d8d287011cea7c3fe6eb553442d9 track6.fla
+      5564480   ca0229a5293c76651c0c289f25e273bf track7.fla
+      11411502  6f83326afce276486eb82cdd7962969a track8.fla
+      12166345  224bad30ac9878d633ae5c8781477dfd track9.fla
+      7163557   4e1000f52b082f5e312cf5bbc811ba3a track10.fla
+      12450379  c071b2807b77b8375c83aaf52b28510d track11.fla
+      9694598   72e51a24b6f19c33f6c14d8dfc15f77d track12.fla
+      1271485   37360951d1bd9c5f37934250ff63510c track13.fla
+      11325790  fd76cc9d790753b351ce8b6dde09853b track14.fla
+      11830642  a8f63ef699028952250abb5ed666b6c8 track15.fla
+      17328574  20b33da7e0a063c7101f176cc27b2d09 track16.fla
+      13090753  584d923448c34173657650850be9657f track17.fla
+      13859734  eeef0136323a14300cc38eb844ea9717 track18.fla
+      1313844   5c1ee4340157bc19e418529659930b11 track19.fla
+      1147254   e4cfd5e351661ab9cf4f87788c6b4396 track20.fla
+      12240786  7a59c27e9b587df5603982e9c077b2a2 track21.fla
+      11603219  374e6ac705ea9f816d3c4bbab02036ac track22.fla
+      6879737   055c9b50479e580a3bc469babda9fb1f track23.fla
+      9681311   021535a118b56e222b3497be79a73427 track24.fla
+
+sha1sums: |
+  3b523e5b3924823d847455ece204be13aee876e0 monkey.000
+  10c8d6ddd3dd68ad78b6bfe33e67d8ce9d1e7ecd monkey.000?de
+  cf0c6ae473d8ddcd1dd62c4abc77f0bfbd5217c5 monkey.000?fr
+  f4dd3c0793c5e250aaf9a937c5762f3d38433bad monkey.000?it
+  f17c92600894bf9b2e840e7adae03ef6966b5ca2 monkey.001
+  5005ffb054d80d9af652ee58f8fae48d76a5554e monkey.001?de
+  b6a761fc80108a3c85e0b9edbf0f90caf79ba2b3 monkey.001?fr
+  da5eca2c4fc3fc4d3cd22dd77e1d50db128f1c5e monkey.001?it
+  7b8c2a5ddb42fd0732e2f22b3340dcf5360edf92 mt32_control.rom
+  f6b1eebc4b2d200ec6d3d21d51325d5b48c60252 mt32_pcm.rom
+...
