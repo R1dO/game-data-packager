@@ -12,7 +12,7 @@ help_text: |
 
 packages:
   secret-of-monkey-island-en-data:
-    provides: secret-fo-monkey-island-data
+    provides: secret-of-monkey-island-data
     install:
     - assets english
     optional:
@@ -20,8 +20,9 @@ packages:
     - some flac rip
 
   secret-of-monkey-island-de-data:
-    provides: secret-fo-monkey-island-data
+    provides: secret-of-monkey-island-data
     lang: de
+    gameid: monkey-de
     install:
     - assets german
     optional:
@@ -29,8 +30,9 @@ packages:
     - some flac rip
 
   secret-of-monkey-island-fr-data:
-    provides: secret-fo-monkey-island-data
+    provides: secret-of-monkey-island-data
     lang: fr
+    gameid: monkey-fr
     install:
     - assets french
     optional:
@@ -38,8 +40,9 @@ packages:
     - some flac rip
 
   secret-of-monkey-island-it-data:
-    provides: secret-fo-monkey-island-data
+    provides: secret-of-monkey-island-data
     lang: it
+    gameid: monkey-it
     install:
     - assets italian
     optional:
