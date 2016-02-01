@@ -2533,10 +2533,10 @@ class PackagingTask(object):
         if package.component == 'local':
             return
         for f in package.optional_files:
-             if not self.game.files[f].license:
+             if not f.license:
                  continue
 
-             if self.file_status[f] is not FillResult.COMPLETE:
+             if self.file_status[f.name] is not FillResult.COMPLETE:
                  package.component = 'local'
                  return
         return
