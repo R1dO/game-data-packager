@@ -37,7 +37,7 @@ from game_data_packager.data import (HashedFile)
 
 archives = []
 
-os.environ.pop('GDP_MIRROR')
+os.environ.pop('GDP_MIRROR', None)
 
 print('loading game definitions...')
 
