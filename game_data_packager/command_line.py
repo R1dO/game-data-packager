@@ -34,7 +34,7 @@ from .util import (human_size)
 logger = logging.getLogger(__name__)
 
 class TerminalProgress(ProgressCallback):
-    def __init__(self, interval=0.2):
+    def __init__(self, interval=0.2, info=None):
         """Constructor.
 
         Progress will update at most once per @interval seconds, unless we
@@ -43,12 +43,17 @@ class TerminalProgress(ProgressCallback):
         self.pad = ' '
         self.interval = interval
         self.ts = time.time()
+        self.info = info
 
     def __call__(self, done=None, total=None, checkpoint=False):
         ts = time.time()
 
         if done is None or (ts < self.ts + self.interval and not checkpoint):
             return
+
+        if self.info is not None:
+            print(self.info, file=sys.stderr)
+            self.info = None
 
         if done is None or total == 0:
             s = ''

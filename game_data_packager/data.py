@@ -57,15 +57,18 @@ class HashedFile:
         sha256 = hashlib.new('sha256')
         done = 0
 
-        with (progress or ProgressCallback()) as update_progress:
+        if progress is None:
+            progress = ProgressCallback()
+
+        with progress:
             for f in fs:
                 while True:
-                    update_progress(done, size)
+                    progress(done, size)
 
                     blob = f.read(io.DEFAULT_BUFFER_SIZE)
 
                     if not blob:
-                        update_progress(done, size, checkpoint=True)
+                        progress(done, size, checkpoint=True)
                         break
 
                     done += len(blob)

@@ -60,12 +60,6 @@ if FORMAT == 'deb':
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 
-# arbitrary cutoff for providing progress bars
-if os.path.isfile('/etc/rpi-issue'):
-    QUITE_LARGE = 10 * MEBIBYTE
-else:
-    QUITE_LARGE = 50 * MEBIBYTE
-
 class FillResult(Enum):
     UNDETERMINED = 0
     IMPOSSIBLE = 1
@@ -247,7 +241,7 @@ class PackagingTask(object):
         self.compress_deb = game.compress_deb
 
         # Factory for a progress report (or None).
-        self.progress_factory = lambda: None
+        self.progress_factory = lambda info=None: None
 
         self.game.load_file_data()
 
@@ -302,14 +296,8 @@ class PackagingTask(object):
             return False
 
         if hashes is None:
-            if size > QUITE_LARGE:
-                logger.info('checking %s', path)
-                progress = self.progress_factory()
-            else:
-                progress = None
-
             hashes = HashedFile.from_file(path, open(path, 'rb'), size=size,
-                    progress=progress)
+                    progress=self.progress_factory(info='checking %s' % path))
 
         for wanted in remaining:
             if not wanted.skip_hash_matching and not hashes.matches(wanted):
@@ -622,16 +610,12 @@ class PackagingTask(object):
 
                 wf = open(tmp, 'wb')
 
-                if entry.size is not None and entry.size > QUITE_LARGE:
-                    progress = self.progress_factory()
-                    logger.info('extracting %s from %s', entry.name, name)
-                else:
-                    progress = None
-                    logger.debug('extracting %s from %s', entry.name, name)
-
                 hf = HashedFile.from_file(
                         name + '//' + entry.name, entryfile, wf,
-                        size=entry.size, progress=progress)
+                        size=entry.size,
+                        progress=self.progress_factory(
+                            info='extracting %s from %s' % (entry.name, name)),
+                        )
                 wf.close()
 
                 if entry.mtime is not None:
@@ -671,14 +655,11 @@ class PackagingTask(object):
                     for p in other_parts:
                         yield open(self.found[p], 'rb')
 
-                if wanted.size >= QUITE_LARGE:
-                    progress = self.progress_factory()
-                else:
-                    progress = None
-
                 hasher = HashedFile.from_concatenated_files(wanted.name,
                         open_files(), writer, size=wanted.size,
-                        progress=progress)
+                        progress=self.progress_factory(info='building %s' %
+                            wanted.name),
+                        )
             orig_time = os.stat(self.found[provider.name]).st_mtime
             os.utime(path, (orig_time, orig_time))
             self.use_file(wanted.name, (wanted,), path, hasher)
@@ -2727,11 +2708,5 @@ class PackagingTask(object):
         if hashes is not None:
             return hashes
 
-        if size > QUITE_LARGE:
-            logger.info('identifying %s', path)
-            progress = self.progress_factory()
-        else:
-            progress = None
-
         return HashedFile.from_file(path, open(path, 'rb'), size=size,
-                progress=progress)
+                progress=self.progress_factory(info='identifying %s' % path))
