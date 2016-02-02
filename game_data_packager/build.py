@@ -301,7 +301,7 @@ class PackagingTask(object):
         if hashes is None:
             if size > QUITE_LARGE:
                 logger.info('checking %s', path)
-                progress = self.progress_factory()
+                progress = self.progress_factory
             else:
                 progress = None
 
@@ -620,7 +620,7 @@ class PackagingTask(object):
                 wf = open(tmp, 'wb')
 
                 if entry.size is not None and entry.size > QUITE_LARGE:
-                    progress = self.progress_factory()
+                    progress = self.progress_factory
                     logger.info('extracting %s from %s', entry.name, name)
                 else:
                     progress = None
@@ -669,7 +669,7 @@ class PackagingTask(object):
                         yield open(self.found[p], 'rb')
 
                 if wanted.size >= QUITE_LARGE:
-                    progress = self.progress_factory()
+                    progress = self.progress_factory
                 else:
                     progress = None
 
@@ -789,7 +789,7 @@ class PackagingTask(object):
                         logger.info('downloading %s', url)
                         hf = HashedFile.from_file(url, rf, wf,
                                 size=wanted.size,
-                                progress=self.progress_factory())
+                                progress=self.progress_factory)
                         wf.close()
 
                         if self.use_file(wanted.name, (wanted,), tmp, hf):
@@ -2726,7 +2726,7 @@ class PackagingTask(object):
 
         if size > QUITE_LARGE:
             logger.info('identifying %s', path)
-            progress = self.progress_factory()
+            progress = self.progress_factory
         else:
             progress = None
 
