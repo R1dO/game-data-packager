@@ -71,8 +71,14 @@ class ScummvmTask(PackagingTask):
             return
 
         # http://wiki.scummvm.org/index.php/User_Manual/Configuring_ScummVM
-        rcfile = os.path.expanduser('~/.scummvmrc')
-        if not os.path.isfile(rcfile):
+        # https://github.com/scummvm/scummvm/pull/656
+        for rcfile in (os.path.join(os.environ.get('XDG_DATA_HOME',
+                                    os.path.expanduser('~/.local/share')),
+                                              'scummvm/scummvm.ini'),
+                       os.path.expanduser('~/.scummvmrc')):
+            if os.path.isfile(rcfile):
+                break
+        else:
             return
 
         config = configparser.ConfigParser(strict=False)
