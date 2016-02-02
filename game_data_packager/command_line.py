@@ -279,7 +279,7 @@ def run_command_line():
 
     with game.construct_task() as task:
         if sys.stderr.isatty():
-            task.progress_factory = TerminalProgress()
+            task.progress_factory = TerminalProgress
 
         task.run_command_line(parsed)
 
