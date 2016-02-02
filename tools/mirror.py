@@ -24,9 +24,9 @@
 # this tool will never remove any bad file,
 # you'll have to investigate by yourself
 
-WEBROOT = '/var/www/html'
 KEEP_FREE_SPACE = 250 * 1024 * 1024
 
+import argparse
 import os
 import subprocess
 
@@ -39,6 +39,10 @@ archives = []
 
 os.environ.pop('GDP_MIRROR', None)
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--destination', default='/var/www/html')
+args = parser.parse_args()
+
 print('loading game definitions...')
 
 for gamename, game in load_games().items():
@@ -46,7 +50,7 @@ for gamename, game in load_games().items():
     for filename, file in game.files.items():
         if file.unsuitable:
             # quake2-rogue-2.00.tar.xz could have been tagged this way
-            archive = os.path.join(WEBROOT, filename)
+            archive = os.path.join(args.destination, filename)
             if os.path.isfile(archive):
                 print('Obsolete archive: %s (%s)' % (archive, file.unsuitable))
         elif filename == 'tnt31fix.zip?repack':
@@ -73,17 +77,17 @@ for gamename, game in load_games().items():
 archives = sorted(archives, key=lambda k: (k['size']))
 
 for a in archives:
-   archive = os.path.join(WEBROOT, a['name'])
+   archive = os.path.join(args.destination, a['name'])
 
    if not os.path.isfile(archive):
-       statvfs = os.statvfs(WEBROOT)
+       statvfs = os.statvfs(args.destination)
        freespace = statvfs.f_frsize * statvfs.f_bavail
        if a['size'] > freespace - KEEP_FREE_SPACE:
            print('out of space, can not download %s' % a['name'])
            continue
        subprocess.check_call(['wget', a['download'],
                               '-O', a['name']],
-                              cwd=WEBROOT)
+                              cwd=args.destination)
 
    if os.path.getsize(archive) == 0:
        exit("%s is empty !!!" % archive)
