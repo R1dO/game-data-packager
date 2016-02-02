@@ -62,9 +62,9 @@ logger = logging.getLogger(__name__)
 
 # arbitrary cutoff for providing progress bars
 if os.path.isfile('/etc/rpi-issue'):
-    QUITE_LARGE = 50 * MEBIBYTE
-else:
     QUITE_LARGE = 10 * MEBIBYTE
+else:
+    QUITE_LARGE = 50 * MEBIBYTE
 
 class FillResult(Enum):
     UNDETERMINED = 0
