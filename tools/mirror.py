@@ -29,11 +29,13 @@ KEEP_FREE_SPACE = 250 * 1024 * 1024
 import argparse
 import os
 import subprocess
+import urllib
 
 from game_data_packager import (load_games)
 from game_data_packager.build import (choose_mirror)
 from game_data_packager.command_line import (TerminalProgress)
 from game_data_packager.data import (HashedFile)
+from game_data_packager.util import (AGENT)
 
 archives = []
 
@@ -85,17 +87,27 @@ for a in archives:
        if a['size'] > freespace - KEEP_FREE_SPACE:
            print('out of space, can not download %s' % a['name'])
            continue
-       subprocess.check_call(['wget', a['download'],
-                              '-O', a['name']],
-                              cwd=args.destination)
+
+       rf = urllib.request.urlopen(urllib.request.Request(a['download'],
+               headers={'User-Agent': AGENT}))
+       if rf is None:
+           continue
+
+       wf = open(archive, 'wb')
+       hf = HashedFile.from_file(a['download'], rf, wf, size=a['size'],
+               progress=TerminalProgress(info='downloading %s' %
+                   a['download']))
+       wf.close()
+       rf.close()
+   else:
+       print('checking %s ...' % archive)
+       hf = HashedFile.from_file(archive, open(archive, 'rb'),
+            size=a['size'], progress=TerminalProgress())
 
    if os.path.getsize(archive) == 0:
        exit("%s is empty !!!" % archive)
    if os.path.getsize(archive) != a['size']:
        exit("%s has the wrong size !!!" % archive)
-   print('checking %s ...' % archive)
-   hf = HashedFile.from_file(archive, open(archive, 'rb'),
-        size=a['size'], progress=TerminalProgress())
    if a['md5'] and a['md5'] != hf.md5:
        exit("md5 doesn't match for %s !!!" % archive)
    if a['sha1'] and a['sha1'] != hf.sha1:
