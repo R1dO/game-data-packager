@@ -2431,7 +2431,7 @@ class PackagingTask(object):
         dirnames = set()
         for p in list(packages) + [self.game]:
             if p.gog == False:
-                break
+                continue
             # some games seem to list more than one installation path :-(
             path = p.gog.get('path')
             if isinstance(path, list):

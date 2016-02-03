@@ -1,0 +1,114 @@
+---
+longname: Mortville Manor
+copyright: © 1987 Lankhor
+plugin: scummvm_common
+engine: scummvm (>= 1.7.0)
+wiki: Mortville_Manor
+missing_langs: [en,de]
+
+packages:
+  mortville-manoir-fr-data:
+    provides: mortville-manoir-data
+    gameid: mortevielle-fr
+    longname: Le Manoir de Mortevielle
+    lang: fr
+    install:
+    - assets french
+
+groups:
+  assets french:
+    group_members: |
+      15104     1bdb13fe5a86193ec5ee0bb36473f2bb axx.mor
+      1280      591811ee63458165c0ee38e81242fa58 azz.mor
+      1916      9fc35e6725eca9a62fc8cf78812a06c7 bmor.mor
+      8382      da36191241dc858f01d6743731b8c3cb bruit1
+      1890      2dee34c3c07999822c49b1dbdd7a9d37 bruit2
+      8790      5cb87ded3bb858aaa37dcd968a253a8d bruit3
+      32000     b94d2060524c43f4c98b24685ca7b711 bruit4
+      19014     37a3928a59e07266586dc3ad7ae2dde1 bruit5
+      19097     7f0b7de44298f4e0693e0a82ab5deb3c bruit6
+      105123    0e14f776fe60f2abf62c6e3285deb117 cfiec.mor
+      12760     6cf16d3c6beabfa099f9d6322244cba4 cfiph.mor
+      390       b1834f4e9b724ef739936bbd959fff88 chai.mor
+      7577      08cddb2917befe16ee504423113a3078 cxx.mor
+      1664      689e42c356a366ef35cc613587c32a77 dec.mor
+      3674      eff42847830d559f09e647a345a1ef98 don.mor
+      207744    36f886422fe0ff2799ae3c4d04a2064f dxx.mor
+      12288     02289b4456b8993713cd32d2f3cd5158 dzz.mor
+      216       f846fdbbcf964a411359f2e929734f98 fxx.mor
+      160       3fef0a3f8fca99fdcb6dbca8cbcef46f menu.mor
+      6656      9662a696dfa07269e6ba7bba75a455bc mort.000
+      2816      ef0f270b0bd6136da3ce5a6e82a73340 mort.001
+      2048      14b9f3c74d8185a83fb764d6ff3b1274 mort.002
+      8192      5ace9951ff6557b5aa3aaa711294f631 mort.003
+      4864      ef66452d8b8fe07da32024de5a5a37aa mort.004
+      5888      f3da862765ccab4f729aa1b35148e897 mort.005
+      18432     a80c7029b3a4f5af3b9c2733ed584910 mort.006
+      79744     425da0878990c13e0284939d83626048 mortp2
+      175       6df4bc3820b87a152b6bd1fb45bc1916 mxx.mor
+      334       c4409678a7ad68615d1ab88681bf6951 phbrui.mor
+      2912      b58c69cb760cad337c42bd2e69ed61fc plxx.mor
+      107       172fa72d762635d8ca82825ab035b662 sauv.mor
+      34944     bc91983561d141411cdbd35c6291e169 sonmus.mor
+      15946     00d4d91045934bd3c55e6c12e9db392b txx.inp
+      1761      c8ce0a2940f9ef40baecc63919ca09b1 txx.ntp
+
+      #3708      adcbfd476a2d8f456183a7700a738c08 mort.exe
+      #54694     20e9df65e21fa515e462b257b56e4ab0 mortevil.com
+
+sha1sums: |
+  782c9ce3c683786fe7fe3e8d2f3fda245ebc1d91 axx.mor
+  d58cc75318e28559789b18e963437f9fcb93baad azz.mor
+  389f3cafa5d1dcfc3f228450eecaf876b6573f4c bmor.mor
+  ac71537d50090b007188028afd7b27b5d85b49e6 bruit1
+  bb09b8e48e75978936cb6d9d0e18ba36aed9510e bruit2
+  105116138755af3c371e21601537a1a6a5797bc6 bruit3
+  16bc0301304a12299cefcc1b3d30b630678af2dc bruit4
+  5713aa649db6aa3a907a68c47119b36ebf6bf95f bruit5
+  3a3e788477c3c21cc61e87da1f77642e2a9235f5 bruit6
+  211a73ca3aad62ddd0cf2c3294868b37210cb113 cfiec.mor
+  0b6a9248cc11fa04bc3712af78866dad9353aa78 cfiph.mor
+  bb7cfd6960d7485b880747ea84a1c74d169a58ec chai.mor
+  87f191f1c3790a23f7f2b0521549db89167a3880 cxx.mor
+  25c40cb7b8ce2fa646f5404b05660bdf59f1575b dec.mor
+  6adeb8389962dec0e9974858ce9bc6b32f66ed0d don.mor
+  46508829c5b7f26336ad35ab737eed1c36934dab dxx.mor
+  5763a4db0597bffb63d66aa0ca771bd7874a3778 dzz.mor
+  9c9bc40b0f48676949365ee20adbbf0434ee9663 fxx.mor
+  95e9c9be9cd08fa897fe218ebf9eb533de66073d menu.mor
+  971783ff7b2a54cfde962c798b85912a41d07c00 mort.000
+  ca0141961d231f8add7dce4e4497b0fe13442783 mort.001
+  50aa72ffe141ce7fb499fd5f225cb0c6a41e14c0 mort.002
+  85c4c1d06e7dab8393c8f73983372d3e3f537fba mort.003
+  092576e1f7a3afcba5c7500d05f6b2d56d655f05 mort.004
+  de95c93326d6d14a2902627141f831be3b72383d mort.005
+  471933d9487410f4fc17bd9985a51479fed3b74f mort.006
+  028058613992d93f5db454d9403a4f8bde1885d5 mortp2
+  2dcfa262912de9a27604c1e444d86ecb19d7f304 mxx.mor
+  82a656d48aea6af2184f7afbd761e6d1008a60d4 phbrui.mor
+  9f3359af25bf4bc8369ed45bd6d00980c0ff6196 plxx.mor
+  f06bd144207a9e4b1884df1d1137d665ecdf8e18 sauv.mor
+  fc0e7ee351b1dd24a1ce370f7c17fb20398ad45d sonmus.mor
+  269faaa7a9298853712bcb7516b452949c11546c txx.inp
+  9fc77e4b7a5c16fa8ca67002c0275f13c34d0652 txx.ntp
+  #78aa9c9a37ec98ae1c14291879a64511b312e0e3 mort.exe
+  #f4e90e890e702f20ce12a4d928b0a02add2c9e87 mortevil.com
+
+sha256sums: |
+  2bad85d665fe08f69c7f0a19be868db9bc51fc9895473d9d34c3c90db2f6f1f3 axx.mor
+  088024784e90a6212536fc14b61b33a12b4ec70265a342da4e23b4866a0b8dac bruit4
+  a3eb419771f5bd903fe9558b8da93023a630af5c5c23107ade073ee5c8f18ae7 bruit5
+  d978dacd9e1ecac6ac89dec4387abb1d9a331cd1cf09eff9f5db10049ef4903b bruit6
+  5b5054560c8ab0212b3ba404e756a141a6371ec2f8f2b1eabd270bb75aa0e27a cfiec.mor
+  52f075037fb88e2a214586402bda82b8178dbda12593b69eb3b281c789aba8d6 cfiph.mor
+  fb880ef5e659546eb5312b04df07d1152e8a632bdf25835bcd0b56aa317f5e79 chai.mor
+  807ba21d6108e62be0c254b0ab2d4e59a2c407cb5a70baa756e8757848458ec7 cxx.mor
+  88d902a08b6dbe74029c408c4d78dfc8ffa6a426c292c22623a458b8d779bf30 dxx.mor
+  572d30d0ec58aa8ac8db79fdeb6342349bb3a820d861f10ea25c1a1b5b2028cd dzz.mor
+  2406419c55b642c89ca69c3bf834520bc49eb1800b86f2338201e299ac6dbb9a mortp2
+  ba3e9da22f06cf3c9141b38c18e1ff1096be42b296b17205f285296be6c337f5 mxx.mor
+  0da382e1db11994d1ff4b15f4124af96e1452a0e8f635324018afba0fcaf2a85 phbrui.mor
+  dddf15be6017f20dbfb60fc93c29d4a7c6b4de81749bbd7244cf388509d2856f plxx.mor
+  56e4b53ef4dee4c1790cd4dc1ba9698ea0d21f4caba3676d3959e2f3278c5eb6 sonmus.mor
+  d1c9dc83e37456bccd17411c71cbb76ff43041f5755c6557d57c8e1e0d015246 txx.inp
+...
