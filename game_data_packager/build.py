@@ -32,8 +32,10 @@ import zipfile
 import yaml
 try:
     from debian.debian_support import Version
+    BACKPORT_SUFFIX = '~'
 except ImportError:
     from distutils.version import LooseVersion as Version
+    BACKPORT_SUFFIX = ''
 
 from .data import (HashedFile)
 from .gog import GOG
@@ -1661,8 +1663,9 @@ class PackagingTask(object):
                 package.name)
 
         if engine and '>=' in engine:
-            dep['breaks'].add(engine.replace('>=', '<<'))
-            engine = engine.split()[0]
+            engine, ver = engine.split(maxsplit=1)
+            ver = ver.strip('(>=) ')
+            dep['breaks'].add('%s (<< %s~)' % (engine, ver))
 
         # We only 'recommends' & not 'depends'; to avoid
         # that GDP-generated packages get removed
@@ -1833,7 +1836,7 @@ class PackagingTask(object):
     def look_for_engine(self, engine):
         if '(' in engine:
             engine, ver = engine.split(maxsplit=1)
-            ver = ver.strip('(>=) ')
+            ver = ver.strip('(>=) ') + BACKPORT_SUFFIX
         else:
             ver = None
 
@@ -2427,6 +2430,8 @@ class PackagingTask(object):
 
         dirnames = set()
         for p in list(packages) + [self.game]:
+            if p.gog == False:
+                break
             # some games seem to list more than one installation path :-(
             path = p.gog.get('path')
             if isinstance(path, list):
