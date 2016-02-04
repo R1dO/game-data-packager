@@ -82,17 +82,17 @@ files:
     - zork1.z3_zip
     - zork1.z3_alt
   zork1.z3_zip:
-    look_for: [zork1.dat,zork1.z3]
+    look_for: [zork1.dat,zork1.z3,zork1.zip]
   zork1.z3_alt:
-    look_for: [zork1.dat,zork1.z3]
+    look_for: [zork1.dat,zork1.z3,zork1.zip]
   zork2.z3:
-    look_for: [zork2.dat,zork2.z3]
+    look_for: [zork2.dat,zork2.z3,zork2.zip]
   zork3.z3:
-    look_for: [zork3.dat,zork3.z3]
+    look_for: [zork3.dat,zork3.z3,zork3.zip]
   beyondzo.z5:
-    look_for: [beyondzo.dat,beyondzo.z3,beyondzo.z5]
+    look_for: [beyondzo.dat,beyondzo.z3,beyondzo.z5,beyondzo.zip]
   planetfa.z3:
-    look_for: [planetfa.dat,planetfa.z3]
+    look_for: [planetfa.dat,planetfa.z3,planetfa.zip]
 
   zork1.zip:
     download: http://www.infocom-if.org/downloads/zork1.zip
