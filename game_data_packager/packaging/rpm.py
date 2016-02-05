@@ -126,6 +126,7 @@ class DnfPackaging(RpmPackaging):
             cache = set()
             proc = subprocess.Popen(['dnf', 'list'],
                     universal_newlines=True,
+                    stderr=subprocess.DEVNULL,
                     stdout=subprocess.PIPE)
             for line in proc.stdout:
                 if '.' in line:
