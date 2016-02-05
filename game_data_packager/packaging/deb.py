@@ -43,6 +43,11 @@ class DebPackaging(PackagingSystem):
                   '7z': 'p7zip-full',
                   'unrar-nonfree': 'unrar',
                   'zoom': 'zoom-player',
+                  'doom': 'doom-engine',
+                  'boom': 'boom-engine',
+                  'heretic': 'heretic-engine',
+                  'hexen': 'hexen-engine',
+                  'doomsday-compat': 'doomsday',
                   }
     RENAME_PACKAGES = {
             'libSDL-1.2.so.0': 'libsdl1.2debian',

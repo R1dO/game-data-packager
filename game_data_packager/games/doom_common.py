@@ -98,18 +98,10 @@ class DoomTask(PackagingTask):
         super(DoomTask, self).fill_extra_files(package, destdir)
 
         for main_wad, quirks in package.main_wads.items():
-            package_map = {
-                    'doom-engine': 'doom',
-                    'boom-engine': 'boom',
-                    'heretic-engine': 'heretic',
-                    'hexen-engine': 'hexen',
-                    'doomsday': 'doomsday-compat',
-            }
-
             engine = self.packaging.substitute(package.engine or self.game.engine,
                     package.name)
             engine = engine.split('|')[-1].strip()
-            program = package_map.get(engine, engine)
+            program = self.packaging.tool_for_package(engine)
 
             wad_base = os.path.splitext(main_wad)[0]
 
