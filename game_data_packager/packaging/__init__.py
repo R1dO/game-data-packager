@@ -184,6 +184,15 @@ class PackagingSystem(metaclass=ABCMeta):
         """
         return self.PACKAGE_MAP.get(tool, tool)
 
+    def tool_for_package(self, package):
+        """Given a package name, return the corresponding
+        main/unique executable in this packaging system.
+        """
+        for k,v in self.PACKAGE_MAP.items():
+            if v == package:
+                return k
+        return package
+
 def get_native_packaging_system():
     # lazy import when actually needed
     from ..version import (FORMAT)

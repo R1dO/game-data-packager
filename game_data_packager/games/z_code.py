@@ -69,7 +69,8 @@ class ZCodeTask(PackagingTask):
             entry['Categories'] = 'Game;'
             entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
-            engine = 'zcode-interpreter'
+            engine = package.engine or 'zcode-interpreter'
+            engine = self.packaging.tool_for_package(engine)
             entry['Terminal'] = 'false'
             if FORMAT != 'deb':
                 # keep engines sorted by relevance
@@ -80,6 +81,7 @@ class ZCodeTask(PackagingTask):
                                              ('fizmo', True),
                                              ('fizmo-cursenw', True),
                                              ('fizmo-console', True),
+                                             ('zoom', False),
                                              ('zjip', True)):
                     if which(try_engine):
                         engine = try_engine
@@ -110,14 +112,13 @@ class ZCodeTask(PackagingTask):
                     'usr/share/applications/%s.desktop %s'
                      % (package.name, engine))
 
-            engine = which(engine)
             bindir = os.path.join(destdir, self.packaging.BINDIR)
             mkdir_p(bindir)
             pgm = package.name[0:len(package.name)-len('-data')]
             path = os.path.join(bindir, pgm)
             with open(path, 'w') as f:
                  f.write('#!/bin/sh\n')
-                 f.write('test -x %s && exec %s $@ %s\n' %
+                 f.write('command -v %s > /dev/null 2>&1 && exec %s $@ %s\n' %
                          (engine, engine, arg))
                  f.write('echo "You need to install some Z-Code interpreter '
                                'like Frotz or Gargoyle to play this game"\n')

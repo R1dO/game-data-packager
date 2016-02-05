@@ -11,9 +11,25 @@ help_text:
   The "Zork Anthology" also includes "Beyond Zork"
   and adds "Planetfall" as a bonus.
 
-  Zork Zero is not supported.
+  Zork Zero only works with the zoom-player engine.
 
 packages:
+  zork0-data:
+    engine: zoom-player
+            # (>= 1.1.5~dfsg-2)
+    longname: "Zork Zero: The Revenge of Megaboz"
+    copyright: © 1988 Infocom
+    gog:
+      url: the_zork_anthology
+      game: zork_zero_the_revenge_of_megaboz
+    install_to: $assets/zork
+    install:
+    # assert package.z_file happens before group expansion
+    - zork0.z6
+    - zork zero assets
+    doc:
+    - manual.pdf?zork0
+
   zork1-data:
     longname: "Zork I: The Great Underground Empire"
     copyright: © 1980 Infocom
@@ -77,6 +93,8 @@ packages:
     - manual.pdf?planetfall
 
 files:
+  zork0.z6:
+    look_for: [zork0.dat,zork0.z6,zork0.zip]
   zork1.z3:
     alternatives:
     - zork1.z3_zip
@@ -144,6 +162,19 @@ files:
     - planetfa.z3
     # Zork Zero
 
+  setup_zork_zero_2.1.0.16.exe:
+    unpack:
+      format: innoextract
+      unpack:
+      - zork0.zip
+      - zork0.cg1
+      - zork0.eg1
+      - zork0.mg1
+      - manual.pdf
+    provides:
+    - zork zero assets
+    - manual.pdf?zork0
+
   setup_zork_2.1.0.17.exe:
     unpack:
       format: innoextract
@@ -194,6 +225,20 @@ files:
     - planetfa.z3
     - manual.pdf?planetfall
 
+groups:
+  zork zero assets: |
+    244507    8693505c6363b319613a5711186bf179 zork0.cg1
+    333654    115f4f4e62a433f64ef7068899b182b4 zork0.eg1
+    226436    24eb829c3532f3f8d160777d8358fa07 zork0.mg1
+    300032    d83c343d71ac4c03661488148876b370 zork0.z6
+  archives: |
+    17856984  4b77b0618147cc9ffb1a0d382d4ea338 setup_zork_zero_2.1.0.16.exe
+    17799208  6bd42788d696f154ce363830909259d3 setup_zork_2.1.0.17.exe
+    18861008  2ea2cf45bb6cf76b0365567e81f27aab setup_zork2_2.1.0.17.exe
+    18497752  1526e9be21bf47412dc053f4097e25bd setup_zork3_2.1.0.17.exe
+    17162896  8a5168d7340af5b1b4df708f467785c0 setup_beyond_zork_2.1.0.17.exe
+    18511960  f359f4b824a7694817e852ada102f6e7 setup_planetfall_2.1.0.17.exe
+
 size_and_md5: |
   # version provided at http://www.infocom-if.org/
   92160     b732a93a6244ddd92a9b9a3e3a46c687 zork1.z3_zip
@@ -217,6 +262,7 @@ size_and_md5: |
   # Zork Zero is not supported by a free engine
 
   # GOG.com packaging
+  459328    b8dad88f4c336a3f633dc6419ed0f1a5 manual.pdf?zork0
   1129552   ca6103f50b9aa55e6f533ef3d48bff79 manual.pdf?zork1
   2213995   a46d98231c69c2b8e88f6e51dc432bed manual.pdf?zork2
   1885475   97b4e20b13f49e14309a5c99bbd1c2f3 manual.pdf?zork3
@@ -227,13 +273,6 @@ size_and_md5: |
   # ?       f53b893a244737c63180993db4100190 setup_zork_anthology.exe
   # ?       f24d4c64e0b01d81beae7a5d788bbd9b setup_zork_anthology.exe
   9752528   86edb0fefd9c4fbe62f51b869e2a1bec setup_zork_anthology.exe
-
-  # new splitted archives
-  17799208  6bd42788d696f154ce363830909259d3 setup_zork_2.1.0.17.exe
-  18861008  2ea2cf45bb6cf76b0365567e81f27aab setup_zork2_2.1.0.17.exe
-  18497752  1526e9be21bf47412dc053f4097e25bd setup_zork3_2.1.0.17.exe
-  17162896  8a5168d7340af5b1b4df708f467785c0 setup_beyond_zork_2.1.0.17.exe
-  18511960  f359f4b824a7694817e852ada102f6e7 setup_planetfall_2.1.0.17.exe
 
 sha1sums: |
   e05781fc76d87985ceb23a62c0c71843147a3099  zork1.z3_alt

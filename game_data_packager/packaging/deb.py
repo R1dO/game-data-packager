@@ -42,6 +42,7 @@ class DebPackaging(PackagingSystem):
                   'lha': 'lhasa',
                   '7z': 'p7zip-full',
                   'unrar-nonfree': 'unrar',
+                  'zoom': 'zoom-player',
                   }
     RENAME_PACKAGES = {
             'libSDL-1.2.so.0': 'libsdl1.2debian',
