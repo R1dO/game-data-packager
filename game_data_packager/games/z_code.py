@@ -69,7 +69,9 @@ class ZCodeTask(PackagingTask):
             entry['Categories'] = 'Game;'
             entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
-            engine = package.engine or 'zcode-interpreter'
+            engine = self.packaging.substitute(package.engine or self.game.engine,
+                    package.name)
+            engine = engine.split('|')[-1].strip()
             engine = self.packaging.tool_for_package(engine)
             entry['Terminal'] = 'false'
             if FORMAT != 'deb':
