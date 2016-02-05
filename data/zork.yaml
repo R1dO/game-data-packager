@@ -26,6 +26,7 @@ packages:
     install:
     # assert package.z_file happens before group expansion
     - zork0.z6
+    - zork0.blb
     - zork zero assets
     doc:
     - manual.pdf?zork0
@@ -111,6 +112,9 @@ files:
     look_for: [beyondzo.dat,beyondzo.z3,beyondzo.z5,beyondzo.zip]
   planetfa.z3:
     look_for: [planetfa.dat,planetfa.z3,planetfa.zip]
+
+  zork0.blb:
+    download: http://www.ifarchive.org/if-archive/infocom/media/blorb/ZorkZero.blb
 
   zork1.zip:
     download: http://www.infocom-if.org/downloads/zork1.zip
@@ -231,6 +235,8 @@ groups:
     333654    115f4f4e62a433f64ef7068899b182b4 zork0.eg1
     226436    24eb829c3532f3f8d160777d8358fa07 zork0.mg1
     300032    d83c343d71ac4c03661488148876b370 zork0.z6
+  patches: |
+    234316    7ea6700053ee24b5aae853c5bf2634ae zork0.blb
   archives: |
     17856984  4b77b0618147cc9ffb1a0d382d4ea338 setup_zork_zero_2.1.0.16.exe
     17799208  6bd42788d696f154ce363830909259d3 setup_zork_2.1.0.17.exe
@@ -275,6 +281,9 @@ size_and_md5: |
   9752528   86edb0fefd9c4fbe62f51b869e2a1bec setup_zork_anthology.exe
 
 sha1sums: |
+  9a1d7dff71e1a571295c81439ffe706460af03fb  zork0.z6
+  d4a8a4e15c22617b419cffb12b7e73c465e41472  zork0.blb
+
   e05781fc76d87985ceb23a62c0c71843147a3099  zork1.z3_alt
   70b9e127569a66ac8dc005395e9deccc52e84056  zork1.z3_zip
   c0792003a0f4f9ae5f7d058c95142ad2cb052e16  zork1.zip
