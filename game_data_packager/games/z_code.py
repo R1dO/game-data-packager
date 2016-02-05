@@ -69,12 +69,13 @@ class ZCodeTask(PackagingTask):
             entry['Categories'] = 'Game;'
             entry['GenericName'] = self.game.genre + ' Game'
             entry['Name'] = package.longname or self.game.longname
+            entry['Terminal'] = 'false'
             engine = self.packaging.substitute(package.engine or self.game.engine,
                     package.name)
-            engine = engine.split('|')[-1].strip()
-            engine = self.packaging.tool_for_package(engine)
-            entry['Terminal'] = 'false'
-            if FORMAT != 'deb':
+            if engine:
+                engine = engine.split('|')[-1].strip()
+                engine = self.packaging.tool_for_package(engine)
+            else:
                 # keep engines sorted by relevance
                 for try_engine, terminal in (('gargoyle', False),
                                              ('gargoyle-free', False),
