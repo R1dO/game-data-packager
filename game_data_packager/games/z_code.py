@@ -27,7 +27,6 @@ from ..build import (PackagingTask)
 from ..util import (TemporaryUmask,
                     which,
                     mkdir_p)
-from ..version import (FORMAT)
 
 logger = logging.getLogger(__name__)
 
