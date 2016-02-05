@@ -28,7 +28,6 @@ KEEP_FREE_SPACE = 250 * 1024 * 1024
 
 import argparse
 import os
-import subprocess
 import urllib
 
 from game_data_packager import (load_games)

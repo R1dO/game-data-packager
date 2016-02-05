@@ -44,7 +44,6 @@ from .paths import (DATADIR, ETCDIR)
 from .unpack import (TarUnpacker, ZipUnpacker)
 from .unpack.umod import (Umod)
 from .util import (AGENT,
-        MEBIBYTE,
         TemporaryUmask,
         check_call,
         check_output,
