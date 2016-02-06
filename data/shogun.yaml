@@ -1,0 +1,41 @@
+---
+longname: "James Clavell's Shōgun"
+plugin: z_code
+copyright: © 1988 Infocom
+engine: zoom-player
+
+packages:
+  shogun-data:
+    install:
+    - shogun.blb
+    - shogun.z6
+
+files:
+  shogun.blb:
+    download: http://www.ifarchive.org/if-archive/infocom/media/blorb/Shogun.blb
+
+  shogun.z6:
+    look_for:
+    - shogun.z6
+    - shogun.zip
+
+# CGA, EGA and MCGA resource files are listed below in case we ever
+# want to use them to rebuild the Blorb file
+
+size_and_md5: |
+  # Release 322
+  191084    8313be233a13ada47426da51d2d3449e shogun.blb
+  141450    9bb1c8aeab83a52c0fba7216e13e7dc0 shogun.cg1
+  278669    bf1c78f738181822e7a9f85d499e54ae shogun.eg1
+  213425    e4ad7bd19df764f16def1892fbe2a1f8 shogun.mg1
+  345088    8ee62b6dd81e05f54de707b9405d8ef9 shogun.z6
+
+sha1sums: |
+  # Release 322
+  3a2de89471deeff55301941bc88a9755bc1796a9  shogun.blb
+  de3f1c56da62faa1bf4c3527da110135ff9cc58a  shogun.cg1
+  bb725b45bd444752b2f5d2f1b57e0b6edbe42ba3  shogun.eg1
+  a5e8bf47d9e4a0ee0f6fc28bdb1c0febaf7cca6c  shogun.mg1
+  ef70d2aa0c18832f18436e6a7df4ee57d013a4c7  shogun.z6
+...
+
