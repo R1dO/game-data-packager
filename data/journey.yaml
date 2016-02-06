@@ -1,0 +1,43 @@
+---
+longname: "Journey: Part One of the Golden Age Trilogy"
+plugin: z_code
+copyright: © 1988, 1989 Infocom, Inc.
+engine: zoom-player
+
+packages:
+  journey-data:
+    install:
+    - journey.blb
+    - journey.z6
+
+files:
+  journey.blb:
+    download: http://www.ifarchive.org/if-archive/infocom/media/blorb/Journey.blb
+
+  journey.z6:
+    look_for:
+    - journey.z6
+    - journey.zip
+
+# CGA, EGA and MCGA resource files are listed below in case we ever
+# want to use them to rebuild the Blorb file
+
+size_and_md5: |
+  # Release 83
+  439206    917f5b925a157cce362cf2ee3f409db9 journey.blb
+  297105    1b6ce3352b7273bc793885155b8108c5 journey.cg1
+  360500    a600ef3473a5eae46254c788bada42b0 journey.eg1
+  249241    9869c6974cd69e386e3c2f9f54d313cb journey.eg2
+  465606    171676ddc1f2c6bee031a014fa44d71d journey.mg1
+  282624    5c47f7e1ee323077920e869da084fe34 journey.z6
+
+sha1sums: |
+  # Release 83
+  321417829ae3d61dcae0a38ffc0ca06e9d430762  journey.blb
+  43405bb08220f82653497661b6385a8d1138f652  journey.cg1
+  dc6ff74e1d61885d3945683e1fc7f827f7c104ee  journey.eg1
+  572127be6a7b88a77e60381f437c529e2cbb2898  journey.eg2
+  b534641e5f97c261467b87636e47eefc95d54c84  journey.mg1
+  7b11663e346091fee722c06c6d49436ce1d04b96  journey.z6
+...
+
