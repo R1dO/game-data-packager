@@ -92,6 +92,15 @@ packages:
     doc:
     - manual.pdf?planetfall
 
+  zork-tuu-data:
+    longname: "Zork: The Undiscovered Underground"
+    copyright: © 1997 Activision Inc.
+    install:
+    - ztuu.z5
+    doc:
+    - readme.txt?ztuu
+    - ztuu.pdf
+
 files:
   zork0.z6:
     look_for: [zork0.dat,zork0.z6,zork0.zip]
@@ -228,6 +237,20 @@ files:
     - planetfa.z3
     - manual.pdf?planetfall
 
+  ztuu.zip:
+    download: http://ifarchive.org/if-archive/infocom/demos/ztuu.zip
+    unpack:
+      format: zip
+      unpack:
+      - ztuu.z5
+      - readme.txt
+    provides:
+    - ztuu.z5
+    - readme.txt?ztuu
+
+  ztuu.pdf:
+    download: http://ifarchive.org/if-archive/infocom/demos/ztuu.pdf
+
 groups:
   zork zero assets: |
     244507    8693505c6363b319613a5711186bf179 zork0.cg1
@@ -279,6 +302,11 @@ size_and_md5: |
   # ?       f24d4c64e0b01d81beae7a5d788bbd9b setup_zork_anthology.exe
   9752528   86edb0fefd9c4fbe62f51b869e2a1bec setup_zork_anthology.exe
 
+  117833    a4bf9a6afbbf2cc89c4a24e425c0dd78 ztuu.pdf
+  102912    d8e1578470cbc676e013e03d72c93141 ztuu.z5
+  76788     52e614b1c77d1e20e0c8c93bf2c6d8b2 ztuu.zip
+  9681      93e9e730481a9161ba6704530b93d837 readme.txt?ztuu
+
 sha1sums: |
   9a1d7dff71e1a571295c81439ffe706460af03fb  zork0.z6
   d4a8a4e15c22617b419cffb12b7e73c465e41472  zork0.blb
@@ -304,6 +332,11 @@ sha1sums: |
   4f4625cf016938297a7dbd43795ac19aeb7a0ad8  setup_zork3_2.1.0.17.exe
   398ce287ba292bebe163ee651bac3658b7dee948  setup_beyond_zork_2.1.0.17.exe
   18377052c1c86fda51a6434ebc2b55a5f7f688b0  setup_planetfall_2.1.0.17.exe
+
+  a09618606bf28a800bc7d44b5ddd54c814e35de7  ztuu.pdf
+  f0b7d140af8db6db73d14477bd73a7c0193abf97  ztuu.z5
+  f0825eeff9527adc5b55846dc19a795e224b4ddc  ztuu.zip
+  68dc01693cb5d3d04c7f813c08389d3c91902932  readme.txt?ztuu
 
 sha256sums: |
   0ae5ac229e79094ff368b6669356444af0f35e21d862a1baaa546989085c15fd  zork1.z3_zip
