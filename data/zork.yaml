@@ -241,9 +241,6 @@ files:
     download: http://ifarchive.org/if-archive/infocom/demos/ztuu.zip
     unpack:
       format: zip
-      unpack:
-      - ztuu.z5
-      - readme.txt
     provides:
     - ztuu.z5
     - readme.txt?ztuu
