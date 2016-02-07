@@ -342,12 +342,6 @@ files:
   setup_quake3_2.0.0.2.exe:
     unpack:
       format: innoextract
-      unpack:
-      - $provides
-      - 'Help/BotCommands.htm'
-      - 'Help/Dedicated Server.htm'
-      - 'Help/Index.htm'
-      - 'Help/Readme.htm'
     provides:
     - common documentation
     - patch pk3s

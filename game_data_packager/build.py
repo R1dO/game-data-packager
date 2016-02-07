@@ -955,8 +955,17 @@ class PackagingTask(object):
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'innoextract':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
+                    if 'unpack' in provider.unpack:
+                        to_unpack = provider.unpack['unpack']
+                    else:
+                        # this will result in extraneous "-I <file>" parameters,
+                        # but innoextract doesn't care
+                        to_unpack = set()
+                        for f in provider.provides_files:
+                            to_unpack.add(f.name.split('?')[0])
+                            for l in f.look_for:
+                                to_unpack.add(l)
+                    to_unpack = sorted(to_unpack)
                     logger.debug('Extracting %r from %s', to_unpack, found_name)
                     package.used_sources.add(provider.name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -983,7 +992,6 @@ class PackagingTask(object):
                             cmdline.append('-I')
                             if prefix and i[0] != '/':
                                 i = prefix + i
-                            i = i.split('?')[0]
                             cmdline.append(i)
                     check_call(cmdline)
                     self.consider_file_or_dir(tmpdir, provider=provider)

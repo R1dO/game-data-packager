@@ -182,10 +182,6 @@ files:
   setup_i_have_no_mouth_and_i_must_scream_2.0.0.7.exe:
     unpack:
       format: innoextract
-      unpack:
-      - nomouth.dat
-      - patch.res
-      - i have no mouth and i must scream - manual.pdf
     provides:
     - nomouth.dat
     - patch.re_
@@ -233,10 +229,6 @@ files:
   setup_i_have_no_mouth_and_i_must_scream_german_2.0.0.7.exe:
     unpack:
       format: innoextract
-      unpack:
-      - nomouth.dat
-      - patch.res
-      - i have no mouth and i must scream - manual.pdf
     provides:
     - nomouth.dat?de
     - patch.re_
@@ -285,10 +277,6 @@ files:
   setup_i_have_no_mouth_and_i_must_scream_french_2.1.0.8.exe:
     unpack:
       format: innoextract
-      unpack:
-      - nomouth.dat
-      - patch.res
-      - i have no mouth and i must scream - manual.pdf
     provides:
     - nomouth.dat?fr
     - patch.re_

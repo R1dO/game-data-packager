@@ -178,12 +178,6 @@ files:
   setup_zork_zero_2.1.0.16.exe:
     unpack:
       format: innoextract
-      unpack:
-      - zork0.zip
-      - zork0.cg1
-      - zork0.eg1
-      - zork0.mg1
-      - manual.pdf
     provides:
     - zork zero assets
     - manual.pdf?zork0
@@ -221,9 +215,6 @@ files:
   setup_beyond_zork_2.1.0.17.exe:
     unpack:
       format: innoextract
-      unpack:
-      - beyondzo.dat
-      - manual.pdf
     provides:
     - beyondzo.z5
     - manual.pdf?beyondzork
@@ -231,9 +222,6 @@ files:
   setup_planetfall_2.1.0.17.exe:
     unpack:
       format: innoextract
-      unpack:
-      - planetfa.dat
-      - manual.pdf
     provides:
     - planetfa.z3
     - manual.pdf?planetfall
