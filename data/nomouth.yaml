@@ -153,9 +153,9 @@ files:
   # visually identical
   manual.pdf:
     alternatives:
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
     - manual.pdf?steam
-  i have no mouth and i must scream - manual.pdf:
+  manual.pdf?gog:
     look_for: [manual.pdf,i have no mouth and i must scream - manual.pdf]
   manual.pdf?steam:
     look_for: [manual.pdf]
@@ -166,7 +166,7 @@ files:
     provides:
     - nomouth.dat
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
     # no GOG license here, just an URL
     # + MojoSetup, make-self licenses
 
@@ -176,7 +176,7 @@ files:
     provides:
     - nomouth.dat
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
     - end user license agreement.txt
 
   setup_i_have_no_mouth_and_i_must_scream_2.0.0.7.exe:
@@ -185,7 +185,7 @@ files:
     provides:
     - nomouth.dat
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
 
   nomouth.dat:
     unpack:
@@ -215,7 +215,7 @@ files:
     provides:
     - nomouth.dat?de
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
 
   gog_i_have_no_mouth_and_i_must_scream_german_1.0.0.2.deb:
     unpack:
@@ -223,7 +223,7 @@ files:
     provides:
     - nomouth.dat?de
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
     - end user license agreement.txt
 
   setup_i_have_no_mouth_and_i_must_scream_german_2.0.0.7.exe:
@@ -232,7 +232,7 @@ files:
     provides:
     - nomouth.dat?de
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
 
   nomouth.dat?de:
     unpack:
@@ -261,7 +261,7 @@ files:
     provides:
     - nomouth.dat?fr
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
     # no GOG license here, just an URL
     # + MojoSetup, make-self licenses
 
@@ -271,7 +271,7 @@ files:
     provides:
     - nomouth.dat?fr
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
     - end user license agreement.txt
 
   setup_i_have_no_mouth_and_i_must_scream_french_2.1.0.8.exe:
@@ -280,7 +280,7 @@ files:
     provides:
     - nomouth.dat?fr
     - patch.re_
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
 
   nomouth.dat?fr:
     unpack:
@@ -320,7 +320,7 @@ files:
     - voices5.res?es
     - voices6.res?es
     - voicess.res?es
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
 
   gog_i_have_no_mouth_and_i_must_scream_spanish_1.0.0.2.deb:
     unpack:
@@ -340,7 +340,7 @@ files:
     - voices6.res?es
     - voicess.res?es
     - end user license agreement.txt
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
 
   setup_i_have_no_mouth_and_i_must_scream_spanish_2.0.0.7.exe:
     unpack:
@@ -359,7 +359,7 @@ files:
     - voices5.res?es
     - voices6.res?es
     - voicess.res?es
-    - i have no mouth and i must scream - manual.pdf
+    - manual.pdf?gog
 
 size_and_md5: |
   302676    fe63a88b8c49baa69a814fc15659b1df musicfm.res
@@ -377,7 +377,7 @@ size_and_md5: |
   77627568  d4da3081a739400d5894fe23aa0b6fbb voicess.res
 
   417369    835556a1278fe363a5dbf8dff9cc1430 manual.pdf?steam
-  386080    e1440f7af2ea5f208b5198d6affe7dd1 i have no mouth and i must scream - manual.pdf
+  386080    e1440f7af2ea5f208b5198d6affe7dd1 manual.pdf?gog
   19674     8d07b65626904a532bd83c1801b5149f end user license agreement.txt
 
   685090094 6fa051d7546f38a01d83ec4c2a25e87d gog_i_have_no_mouth_and_i_must_scream_2.0.0.3.sh
