@@ -24,8 +24,8 @@ help_text: |
 packages:
   doom-wad:
     conflicts:
-      - "freedoom (<< 0.6.4-4)"
-      - "freedm (<< 0.6.4-4)"
+      - deb: "freedoom (<< 0.6.4-4)"
+      - deb: "freedm (<< 0.6.4-4)"
     steam:
       id: 2280
       path: "common/Ultimate Doom"
