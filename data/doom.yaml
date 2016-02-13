@@ -46,7 +46,9 @@ packages:
     longname: "Doom: Tech Gone Bad"
     copyright: © 2016 John Romero
     wiki: Tech_Gone_Bad
-    engine: boom-engine
+    engine:
+      deb: boom-engine
+      fedora: prboom-plus
     main_wads:
       e1m8b.wad:
         args: -iwad doom.wad -file %s -warp 1 8
