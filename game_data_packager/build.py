@@ -1197,8 +1197,8 @@ class PackagingTask(object):
                         'and must not be redistributed.\n\n')
             elif package.component == 'non-free':
                 o.write('It contains proprietary game data '
-                        'that may be redistributed\nonly under'
-                        'conditions specified in\n')
+                        'that may be redistributed\n'
+                        'only under conditions specified in\n')
                 o.write(',\n'.join(licenses) + '.\n\n')
             else:
                 o.write('It contains free game data and may be\n'
