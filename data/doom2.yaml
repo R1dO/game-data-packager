@@ -39,7 +39,9 @@ packages:
     longname: "Doom 2: No Rest for the Living"
     wiki: No_Rest_for_the_Living
     expansion_for: doom2-wad
-    engine: prboom-plus | boom-engine
+    engine:
+      deb: prboom-plus | boom-engine
+      fedora: prboom-plus
     steam:
       id: 208200
       path: "common/DOOM 3 BFG Edition"
