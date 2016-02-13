@@ -1403,7 +1403,7 @@ class PackagingTask(object):
             for p in self.__merge_relations(package, 'depends'):
                 spec.write('Requires: %s\n' % p)
 
-            for p in (self.__merge_relations(package, 'conflicts'),
+            for p in (self.__merge_relations(package, 'conflicts') |
                     self.__merge_relations(package, 'breaks')):
                 spec.write('Conflicts: %s\n' % p)
 
