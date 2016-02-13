@@ -40,6 +40,21 @@ packages:
     - doom bible.pdf
     - manual.pdf
 
+  doom-e1m8b-wad:
+    expansion_for: doom-wad
+    component: non-free
+    longname: "Doom: Tech Gone Bad"
+    copyright: © 2016 John Romero
+    wiki: Tech_Gone_Bad
+    engine: boom-engine
+    main_wads:
+      e1m8b.wad:
+        args: -iwad doom.wad -file %s -warp 1 8
+    install:
+    - e1m8b.wad
+    license:
+    - e1m8b.txt
+
 files:
   # full version
   doom.wad:
@@ -144,7 +159,6 @@ files:
     look_for: [doombible.pdf, doom_bible.pdf, 'doom bible.pdf']
 
   setup_the_ultimate_doom_2.0.0.3.exe:
-    sha1: 923c77b2cb7b4a73abd62f62c26f614446c849ff
     unpack:
       format: innoextract
     provides:
@@ -152,10 +166,29 @@ files:
     - doom bible.pdf
     - manual.pdf
 
-size_and_md5: |
+  e1m8b.zip:
+    download: http://www.doomworld.com/e1m8b/e1m8b.zip
+    unpack:
+      format: zip
+    provides:
+    - e1m8b.wad
+    - e1m8b.txt
+
+groups:
+ documentation: |
   548488    c985db4e0aa6fa12dc650b04eaa041cc doom bible.pdf
   684939    a2cbc904d3ea7648b973aac7c53e9685 manual.pdf
+  2967      c9b317110305e81f47f64f4fc443d4a0 e1m8b.txt
+ archives: |
   20575712  98a065ca917fc5ac021621098a2f80cd setup_the_ultimate_doom_2.0.0.3.exe
+  220162    69084c43103c8f897a4993afded46b1b e1m8b.zip
+ maps: |
+  566157    86e94729257b94f982dbe3e3a81e2679 e1m8b.wad
 
+sha1sums: |
+  923c77b2cb7b4a73abd62f62c26f614446c849ff setup_the_ultimate_doom_2.0.0.3.exe
+  8693daabf58247c7d71a072430b31b4600f7a6c8 e1m8b.txt
+  516cf84fdc85d76e0e36c8d25770344967c5cbef e1m8b.wad
+  b66f68a15b8c8f02fd8d92a23040757eae706440 e1m8b.zip
 ...
 # vim:set sw=2 sts=2 et:
