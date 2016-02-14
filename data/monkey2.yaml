@@ -1,0 +1,110 @@
+---
+franchise: Monkey Island
+longname: "Monkey Island 2: LeChuck's Revenge"
+copyright: © 1991 Lucasfilm Games
+plugin: scummvm_common
+wiki: Monkey_Island_2%3A_LeChuck%27s_Revenge
+
+packages:
+  monkey-island2-en-data:
+    provides: monkey-island2-data
+    install:
+    - monkey2.000
+    - monkey2.001
+    optional:
+    - midi roms
+
+  monkey-island2-de-data:
+    provides: monkey-island2-data
+    lang: de
+    install:
+    - monkey2.000?de
+    - monkey2.001?de
+    optional:
+    - midi roms
+
+  monkey-island2-fr-data:
+    provides: monkey-island2-data
+    lang: fr
+    install:
+    - monkey2.000?fr
+    - monkey2.001?fr
+    optional:
+    - midi roms
+
+  monkey-island2-it-data:
+    provides: monkey-island2-data
+    lang: it
+    install:
+    - monkey2.000?it
+    - monkey2.001?it
+    optional:
+    - midi roms
+
+  monkey-island2-it-alt-data:
+    provides: monkey-island2-data
+    lang: it
+    install:
+    - monkey2.000?it2
+    - monkey2.001?it2
+    optional:
+    - midi roms
+
+  monkey-island2-es-data:
+    provides: monkey-island2-data
+    lang: es
+    install:
+    - monkey2.000?es
+    - monkey2.001?es
+    optional:
+    - midi roms
+
+groups:
+  assets: |
+    11135     3686cf8f89e102ececf4366e1d2c8126 monkey2.000
+    11135     6886e5d08cee329b1f2e743ae2e3ceed monkey2.000?de
+    11135     7974365d3dc0f43a2748c975f91ff042 monkey2.000?es
+    11135     8e4ee4db46954bfe2912e259a16fad82 monkey2.000?fr
+    # both md5's are in scummvm/engines/scumm/scumm-md5.h
+    11135     bd126753de619a495f9f22adc951c8d5 monkey2.000?it
+    11135     69ea626f1f87eecb78ea0d6c6b983a1d monkey2.000?it2
+    9080329   50993d719990d2e212c50a915f6c50da monkey2.001
+    9108377   30ca4b38eddd376dd79a90859f58ebe2 monkey2.001?de
+    9093581   d94451957ed859db5e206539c5d953ee monkey2.001?es
+    9115980   7ebfefdeb0da649e1d194ee340409a9f monkey2.001?fr
+    9097092   cc31937633f8f060b20ec095d50693cb monkey2.001?it
+    9097053   0531f3c2d4863f271b4adfd52fa4888d monkey2.001?it2
+  midi roms: |
+    65536     9513fec4f09a7d327748340ce3a2a59b mt32_control.rom
+    524288    89e42e386e82e0cacb4a2704a03706ca mt32_pcm.rom
+
+sha1sums: |
+  8c66f9f260b30ec66abb2eb80a8e7023fe0ce4ec monkey2.000
+  8d1d4f41cd8bba25b26e67fc7681e7ca80af6730 monkey2.000?de
+  e38d1d537e932250e3f90fd44d509c9728bfe24a monkey2.000?es
+  c73e1444ca501eab759acb9baa39a179afc0c565 monkey2.000?fr
+  2e150a390e1c10b3fd212f3dd5f3f0595e21d670 monkey2.000?it
+  c20e2b559e233d3123bd32ef9881cd1e53a7cbcd monkey2.000?it2
+  5b006d71326b476157cb0fe492bb54558c5c2248 monkey2.001
+  fc7a157e503e8730a444d4afb50b208e4e180f2d monkey2.001?de
+  1e77787648bb552638213181c1eb3dc9a1fa6ab7 monkey2.001?es
+  4e30e05fb3da6aea7f24e1fcd728c614d31afb90 monkey2.001?fr
+  d1e72e111758d2d619fde892799827ceda479988 monkey2.001?it
+  fdb1c19bffdb8b1646b332c867af483b3e9393b5 monkey2.001?it2
+  7b8c2a5ddb42fd0732e2f22b3340dcf5360edf92 mt32_control.rom
+  f6b1eebc4b2d200ec6d3d21d51325d5b48c60252 mt32_pcm.rom
+
+sha256sums: |
+  cde7aa8980317e3a750fbb3b49884cdddaf1ff3d4231a0c840b22cceed9033f1 monkey2.000
+  b043d9dcc8510e3565bb0152f7e35e686514837e97275aa08d3ca1fcd0924ccd monkey2.000?de
+  bdca6e56c3bb9a829cdf68bff5f87d177fa5d3595b0ea860bfa660c475188ac5 monkey2.000?es
+  11c3a5ae3397cda640b1eb15159854e35d84ec5d408e7c9e2a77a6d159145f77 monkey2.000?fr
+  0c79de9daf279f33a9e1cda5c5ab94eb98f6746fd1f7f8e0ee5e60b794191ff8 monkey2.000?it
+  bf6a511c0a46236a17460272591abb59e9613911783caf8be7bd27390e21f44c monkey2.000?it2
+  ad045372e0d49626503bb50fca29a687ec8e01ef75d9b8bca702a366d143819e monkey2.001
+  75243b465de863ee50b1748ef31b62f8a90a743c51b5ce720ce42e99c1d46e93 monkey2.001?de
+  f5cb9fc59336edbf0731372a2236f860fb7ed02c5466bcfb67902d00a38dc8b3 monkey2.001?es
+  e514ef5e26bad675282beff288e7f8a093d0944eae5578d176fce254fe93f8a1 monkey2.001?fr
+  1995a8f1dba08c045bde5b5a3866fdc221f5859667444cdba7e68ab86a2cafad monkey2.001?it
+  e6829bf241f3bf239c481c15048ffadaa8e293ff9cb75936668410123034802c monkey2.001?it2
+...
