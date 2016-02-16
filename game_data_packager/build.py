@@ -2481,6 +2481,7 @@ class PackagingTask(object):
                 os.path.expanduser('~/.steam'),
                 os.path.join(os.environ.get('XDG_DATA_HOME', os.path.expanduser('~/.local/share')),
                     'wineprefixes/steam/drive_c/Program Files/Steam'),
+                os.path.expanduser('~/Steam'),
                 os.path.expanduser('~/.wine/drive_c/Program Files/Steam'),
                 os.path.expanduser('~/.PlayOnLinux/wineprefix/Steam/drive_c/Program Files/Steam'),
                 ) + tuple(iter_fat_mounts('Steam')):
