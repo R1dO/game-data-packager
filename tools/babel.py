@@ -39,7 +39,13 @@ for name, game in load_games().items():
     # free-as-in-beer
     fullfree = True
     somefree = False
+    if game.copyright:
+        year = game.copyright[2:6]
+    else:
+        year = None
     for package in game.packages.values():
+        if not year and package.copyright:
+            year = package.copyright[2:6]
         if not package.demo_for:
             for m_lang in package.langs:
                 if m_lang not in stats:
@@ -54,6 +60,10 @@ for name, game in load_games().items():
     genre = game.genre or 'Unknown'
     genres[genre] = genres.get(genre, 0) + 1
     stats['genre'] = genre
+    if game.franchise:
+        stats['sort_key'] = game.franchise.lower() + ' ' + year
+    else:
+        stats['sort_key'] = game.shortname
     stats['shortname'] = name
     stats['longname'] = game.longname
     stats['url_wiki'] = game.wikibase + (game.wiki or '')
@@ -91,7 +101,7 @@ with open('debian/TODO', 'r', encoding='utf8') as missing:
             for char in line.lower():
                 if 'a' <= char <= 'z' or '0' <= char <= '9':
                    shortname += char
-            stats['shortname'] = shortname
+            stats['sort_key'] = shortname
             if '#' not in line:
                 stats['longname'] = line
             else:
@@ -105,7 +115,7 @@ with open('debian/TODO', 'r', encoding='utf8') as missing:
                                    % (longname, bug, bug, remainder))
             games.append(stats)
 
-games = sorted(games, key=lambda k: (k['genre'], k['shortname'], k['longname']))
+games = sorted(games, key=lambda k: (k['genre'], k['sort_key']))
 
 langs_order = [k for k, v in sorted(langs.items(), key=lambda kv: (-kv[1], kv[0]))]
 
