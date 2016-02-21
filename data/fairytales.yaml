@@ -1,0 +1,45 @@
+---
+franchise: Mixed-Up series
+longname: Mixed-Up Fairy Tales
+copyright: © 1991 Sierra
+plugin: scummvm_common
+wiki: Mixed-Up_Fairy_Tales
+genre: Kids
+
+packages:
+  mixed-up-fairy-tales-data:
+    version: '1.000'
+    install:
+    - game assets
+
+groups:
+  game assets: |
+    3164      cc9711fb56684aff07c2ad3f370b9ca7 190.scr
+    9228      b775a1ae2cb690107c919ea4742ac020 220.scr
+    6936      df78da50560627c5dfd3ddf7b72f6170 235.scr
+    923685    cc9b01758b1902da296fa0ef01e151bc resource.000
+    52324     66b349037d5bcabcdd1bac1d6fa387a8 resource.001
+    1032989   70a1f0d42ab486059206a6ac488abd56 resource.002
+    1047565   67508eabf92a7e55728de2fddc568737 resource.003
+    937580    074a925f334c41b5bfdeace4135bd0fe resource.004
+    3261      9ae5aecc1cb797b11ea5cf0caeea272c resource.map
+    8         4e572926b0d3797c3bfd48ab1ddd670a version
+
+sha1sums: |
+  99b443473e5e8d94c2498898eb62897decdeb3ac 190.scr
+  ccb42dcc3157992f07c5d75c233d94b6785a00f9 220.scr
+  332e74d2c89b8d1472c674362931aa448ebf6643 235.scr
+  45adb8bf0cedb41fb01cfe46bc70bf1c5807a689 resource.000
+  da6ff2d8c8850897fb344e0d75da5350ae039170 resource.001
+  f9393845bf92d660b668c677f4a5311adf60ff8b resource.002
+  33d360a76ca86b8c7ed84c9f65b72a78b5e2a7ee resource.003
+  c3b3e36f6582d1508a1de2668c6c5f31f2a9d3a6 resource.004
+  d2008c07e9fe77d7d01695f0056c2a07fc6378d7 resource.map
+
+sha256sums: |
+  7fdf1e074029ebe3da2fa0eb40fdc5a429fe3bdefca17f8d6ca0db77cf8a6f29 resource.000
+  b4a13132fb1017e7bdd5d986bc325a1d0d013ada29f6bb07395ec71f68be40da resource.001
+  ac38bb7f21c7cea9709f6bcf6cbcf5edd0da7fb97167dcad88ad9fe3c9c74320 resource.002
+  7351422ee4e0a53dc86bea38bd008eb08d41c87cf63faae93a0416d8a24d74e1 resource.003
+  9260334c1fe4d9d6839a876a2f02e738557e4a2da1e0b7ca7cc280c525ae143a resource.004
+...
