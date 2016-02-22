@@ -6,7 +6,7 @@ genre: Simulation
 
 help_text: |
   For the full version, provide a Theme Hospital installation,
-  or the gog.com installer setup_theme_hospital_2.0.0.5.exe.
+  or the gog.com installer setup_theme_hospital_2.1.0.8.exe.
 
   Run the game once and then edit your ~/.config/CorsixTH/config.txt
   to choose your language from [en,da,de,es,fi,fr,it,nb,nl,pt,sv].
@@ -79,6 +79,14 @@ files:
     provides:
     - demo version
 
+  setup_theme_hospital_2.1.0.8.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - full game
+    - levels/full00.sam?gog
+    - manual.pdf
+
   setup_theme_hospital_2.0.0.5.exe:
     unpack:
       format: innoextract
@@ -106,6 +114,7 @@ groups:
     1028644   0a8b2534c4c6cfa31815ec75b3877996 IT.pdf
 
   archives: |
+    172101616 c1dc6cd19a3e22f7f7b31a72957babf7 setup_theme_hospital_2.1.0.8.exe
     167653008 88806c2c2f9376b696dc282939afd8cf setup_theme_hospital_2.0.0.5.exe
     12878920  d62f3be55a625b99b6a655e37bdb5df7 Demo.zip
     12816405  1393a0676c0f6e3046cdc485b580fc68 hospital.zip
@@ -1252,6 +1261,7 @@ sha1sums: |
   # gog.com
   ce7b2e51aa99aad66736732d35966db2f36a9ea4  eula.txt
   2acb1ec04139af2cc39d4253ca557c9571a4d15c  gog_eula.txt
+  42abb8d01e1b79e683a8ea85c962e44838954f3e  setup_theme_hospital_2.1.0.8.exe
   9860016a76883c9a15dee8fac5b810c0eea601c9  setup_theme_hospital_2.0.0.5.exe
   c96d0b7a79dd4a2dde61f595f4d2fd5d238f28de  manual.pdf
   98e886f214951b3ba5cebe43621532325044d534  levels/full00.sam?gog
@@ -1667,6 +1677,7 @@ sha256sums: |
   89ee9ea02437f4819d8a9c957656c2fcc279d665e3ad39fa0966075fd674ccfb  hospital.zip
   91216efce09b12a101149d6689c00a4c2afad8fd3c4c38bd8d70d2cf0ba29c6b  eula.txt
   17314b556b82b7b0378223324f53a94af343fe731ce93fc67ad750ff656cbcb7  gog_eula.txt
+  8e4f35ca9751866f48a81cd53c54aeed85e1fb5f9212339b2a3e849a0022df65  setup_theme_hospital_2.1.0.8.exe
   c41a77632ca1c33389b57d7210936eb5151ceb6d540707420a4de2d55bd47497  setup_theme_hospital_2.0.0.5.exe
   fdf943a36ec066a8f0dcdd2f3a2d3f9573a0a367dbefabc18c28536dc41ecfde  manual.pdf
   03ef32ce27867196ac5991025de59d658254e3287cf4c9dd73a7c3824bddfd2b  levels/full00.sam?gog
