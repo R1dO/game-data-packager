@@ -75,7 +75,7 @@ def owned_steam_games(steam_id=None):
             name = game.find('name').text
             #print(appid, name)
             owned_steam_games.STEAM_GAMES.append((appid, name))
-    except urllib.error.URLError as e:
+    except urllib.error.URLError:
         # e="[Errno 111] Connection refused" but e.errno=None ?
         pass
 
