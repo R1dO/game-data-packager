@@ -39,7 +39,7 @@ out/%: data/%
 	@mkdir -p out
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
-out/vfs/%.json: data/%.yaml
+out/vfs/%.json: data/%.yaml tools/compile_yaml.py
 	@mkdir -p out/vfs
 	$(PYTHON) tools/compile_yaml.py $< $@
 

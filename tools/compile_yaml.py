@@ -46,6 +46,12 @@ def main(f, out):
     if groups is not None:
         with open(offload + '.tmp', 'w', encoding='utf-8') as writer:
             assert isinstance(groups, dict)
+            # The group data starts with a list of groups. This is necessary
+            # so we can know whether a group member, encountered later on in
+            # the data, is a group or a file.
+            for group_name in sorted(groups.keys()):
+                writer.write('*%s\n' % group_name)
+
             for group_name, group_data in sorted(groups.items()):
                 writer.write('[%s]\n' % group_name)
 

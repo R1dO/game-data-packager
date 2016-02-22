@@ -945,31 +945,24 @@ class GameData(object):
         current_group = None
         attributes = {}
 
-        # Before doing anything else, we do one pass through the list
-        # of groups to record that each one is a group, so that when we
-        # encounter an entry that is not known to be a group in a
-        # group's members, it is definitely a file.
-        stream.seek(0)
-
         for line in stream:
             stripped = line.strip()
 
-            if stripped.startswith('['):
-                assert stripped.endswith(']'), repr(stripped)
-                self._ensure_group(stripped[1:-1])
-
-        # Now go back and re-read them, with their members this time.
-        stream.seek(0)
-
-        for line in stream:
-            stripped = line.strip()
             if stripped == '' or stripped.startswith('#'):
                 continue
 
-            if stripped.startswith('['):
+            # The group data starts with a list of groups. This is necessary
+            # so we can know whether a group member, encountered later on in
+            # the data, is a group or a file.
+            if stripped.startswith('*'):
+                assert current_group is None
+                self._ensure_group(stripped[1:])
+            # After that, [Group] opens a section for each group
+            elif stripped.startswith('['):
                 assert stripped.endswith(']'), repr(stripped)
                 current_group = self._ensure_group(stripped[1:-1])
                 attributes = {}
+            # JSON metadata is on a line with {}
             elif stripped.startswith('{'):
                 assert current_group is not None
                 attributes = json.loads(stripped)
@@ -977,6 +970,7 @@ class GameData(object):
                 for k, v in attributes.items():
                     assert hasattr(current_group, k), k
                     setattr(current_group, k, v)
+            # Every other line is a member, either a file or a group
             else:
                 f = self._add_hash(stripped, 'size_and_md5')
                 # f can either be a WantedFile or a FileGroup here
