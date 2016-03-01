@@ -44,8 +44,8 @@ out/vfs/%.json: data/%.yaml tools/compile_yaml.py
 	$(PYTHON) tools/compile_yaml.py $< $@
 
 out/vfs.zip: $(json)
-	@mkdir -p out
 	rm -f out/vfs.zip
+	chmod 0644 out/vfs/*
 	if [ -n "$(BUILD_DATE)" ]; then \
 		touch --date='$(BUILD_DATE)' out/vfs/*; \
 	fi
