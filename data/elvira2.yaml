@@ -249,7 +249,7 @@ packages:
     - 982.vga
     - 991.vga
     - 992.vga
-    # patch that requires ScummVM 1.8.0git
+    # patch that requires ScummVM 1.8.0
     optional:
     - 013.vga
 
@@ -258,6 +258,8 @@ packages:
     provides: elvira2-data
     optional:
     - icon.ega
+    # patch that requires ScummVM 1.8.0
+    - 013.vga
     install:
     - music.drv
     - gamepc?fr
@@ -496,9 +498,6 @@ packages:
     - 982.vga
     - 991.vga?fr
     - 992.vga
-    # patch that requires ScummVM 1.8.0git
-    optional:
-    - 013.vga
 
 files:
   elvira2_pc_sfx.zip:

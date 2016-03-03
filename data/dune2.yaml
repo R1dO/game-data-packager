@@ -75,7 +75,6 @@ packages:
     provides: dune2-data
     mutually_exclusive: True
     install_to: usr/share/games/dunelegacy
-    langs: [en,de,fr]
     install:
     - ATRE.PAK
     - DUNE.PAK?eu_1.07
