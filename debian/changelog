@@ -19,6 +19,8 @@ game-data-packager (45) UNRELEASED; urgency=medium
     - The Unreal patches provide lin_convenience_libs [skitt]
     - Do not crash if there's no internet access and game
       is possibly owned by user's Steam account [adetiste]
+    - Abort early when running from a deleted directory and --destination
+      hasn't been specified [adetiste] (Closes: #783319)
   * Internal changes:
     - Refactor dependency relationships and other distro- and
       format-dependent values. They now take a map or list of

@@ -263,6 +263,12 @@ def run_command_line():
         elif not os.access(path, os.W_OK | os.X_OK):
             logger.error('argument "%s" to %s is not writable', path, arg)
             sys.exit(2)
+        elif path == '.':
+            try:
+                os.getcwd()
+            except FileNotFoundError:
+                logger.error('argument "%s" to %s has been delete', path, arg)
+                sys.exit(2)
 
     if parsed.shortname == 'steam':
         run_steam_meta_mode(parsed, games)
