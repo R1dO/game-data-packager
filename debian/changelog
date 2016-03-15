@@ -32,6 +32,8 @@ game-data-packager (45) UNRELEASED; urgency=medium
     - Smarter handling of InnoExtract archives that takes alternative
       look_for names into account; which reduces the need
       to explicitly list files to unpack. [adetiste]
+    - Build-Depends: on "pyflakes3 | pyflakes" to avoid to needlessly
+      pull in Python2 during the build on Stretch and later. [adetiste]
 
  -- Stephen Kitt <skitt@debian.org>  Sat, 23 Jan 2016 22:38:20 +0100
 
