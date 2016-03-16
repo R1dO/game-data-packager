@@ -37,6 +37,7 @@ class DosboxGameData(GameData):
 
     def __init__(self, shortname, data):
         super(DosboxGameData, self).__init__(shortname, data)
+        self.binary_executables = 'all'
 
         for p in self.packages.values():
             p.install_to = '$assets/dosbox/' + p.name[:len(p.name)-5]

@@ -1883,6 +1883,9 @@ class PackagingTask(object):
                         'at your own risk')
                 raise BinaryExecutablesNotAllowed()
 
+        if self.game.binary_executables and self.game.binary_executables != 'all':
+            # 'all' means that this is well a binary without source,
+            # but it can be emulated on any host architecture (e.g. DOSBox games)
             if self.packaging.get_architecture(self.game.binary_executables) not in \
                     self.game.binary_executables.split():
                 logger.error('%s requires binary-only executables which are '
