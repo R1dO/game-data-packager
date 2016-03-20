@@ -14,6 +14,13 @@ with open('debian/changelog', encoding='utf-8') as cl:
         cl = ChangeLog(cl, strict=False)
         GAME_PACKAGE_VERSION = str(cl.full_version)
 
+details = {}
+if os.path.isfile('/etc/os-release'):
+    with open('/etc/os-release', encoding='utf-8') as release:
+        for line in release:
+            key, value = line.strip().split('=', 1)
+            details[key]=value.strip('"')
+
 if os.path.isfile('/etc/debian_version'):
     FORMAT = 'deb'
     DISTRO = 'generic'
@@ -27,7 +34,7 @@ elif os.path.isfile('/etc/redhat-release'):
     FORMAT = 'rpm'
     DISTRO = 'fedora'
 
-elif os.path.isfile('/etc/SuSE-release'):
+elif os.path.isfile('/etc/SuSE-release') or details.get('ID_LIKE') == 'suse':
     FORMAT = 'rpm'
     DISTRO = 'suse'
 
