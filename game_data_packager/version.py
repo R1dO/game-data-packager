@@ -35,6 +35,9 @@ elif os.path.isfile('/etc/arch-release'):
     FORMAT = 'arch'
     DISTRO = 'arch'
 
+else:
+    exit('ERROR: Unknown distribution')
+
 if __name__ == '__main__':
     print('#!/usr/bin/python3')
     for const in ('GAME_PACKAGE_VERSION', 'FORMAT', 'DISTRO'):
