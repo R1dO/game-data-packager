@@ -18,6 +18,8 @@ details = {}
 if os.path.isfile('/etc/os-release'):
     with open('/etc/os-release', encoding='utf-8') as release:
         for line in release:
+            if '=' not in line:
+                continue
             key, value = line.strip().split('=', 1)
             details[key]=value.strip('"')
 
