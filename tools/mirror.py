@@ -58,26 +58,37 @@ for gamename, game in load_games().items():
         elif not file.download:
             continue
 
-        if filename == 'tnt31fix.zip?repack':
-            continue
+        url = choose_mirror(file)[0]
+        if '?' not in url:
+            destname = os.path.basename(url)
+        elif '?' not in filename:
+            destname = filename
+        elif url.endswith('?download'):
+            destname = os.path.basename(url)
+            destname = destname[0:len(destname)-len('?download')]
         else:
-            url = choose_mirror(file)[0]
-            if '?' not in url:
-                destname = os.path.basename(url)
-            elif '?' not in filename:
-                destname = filename
-            elif url.endswith('?download'):
-                destname = os.path.basename(url)
-                destname = destname[0:len(destname)-len('?download')]
-            else:
-                exit("Can't compute filename for %s = %s" % (filename, url))
-            archives.append({
+            exit("Can't compute filename for %s = %s" % (filename, url))
+        archives.append({
+             'filename': filename,
              'name': destname,
              'size': file.size,
              'md5': file.md5,
              'sha1': file.sha1,
              'download': url,
              })
+
+# avoid to download both "tnt31fix.zip" and "tnt31fix.zip?repack"
+# always prefer the one 'regular' file without the '?xxx' suffix
+names = dict()
+for archive in archives:
+    name = archive['name']
+    names[name] = names.get(name, 0) + 1
+
+for k, count in names.items():
+    if count > 1:
+        for archive in archives:
+            if archive['name'] == k and archive['filename'] != archive['name']:
+                archives.remove(archive)
 
 archives = sorted(archives, key=lambda k: (k['size']))
 
