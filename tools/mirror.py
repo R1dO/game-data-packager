@@ -54,9 +54,13 @@ for gamename, game in load_games().items():
             archive = os.path.join(args.destination, filename)
             if os.path.isfile(archive):
                 print('Obsolete archive: %s (%s)' % (archive, file.unsuitable))
-        elif filename == 'tnt31fix.zip?repack':
             continue
-        elif file.download:
+        elif not file.download:
+            continue
+
+        if filename == 'tnt31fix.zip?repack':
+            continue
+        else:
             url = choose_mirror(file)[0]
             if '?' not in url:
                 destname = os.path.basename(url)
