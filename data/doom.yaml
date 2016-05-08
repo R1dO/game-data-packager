@@ -40,6 +40,23 @@ packages:
     - doom bible.pdf
     - manual.pdf
 
+  doom-e1m4b-wad:
+    expansion_for: doom-wad
+    component: non-free
+    longname: "Doom: Phobos Mission Control"
+    copyright: © 2016 John Romero
+    wiki: Phobos_Mission_Control
+    engine:
+      deb: prboom-plus | boom-engine
+      fedora: prboom-plus
+    main_wads:
+      e1m4b.wad:
+        args: -iwad doom.wad -file %s -warp 1 4
+    install:
+    - e1m4b.wad
+    license:
+    - e1m4b.txt
+
   doom-e1m8b-wad:
     expansion_for: doom-wad
     component: non-free
@@ -168,6 +185,16 @@ files:
     - doom bible.pdf
     - manual.pdf
 
+  e1m4b.zip:
+    download:
+      idgames-mirrors:
+        path: levels/doom/Ports/d-f
+    unpack:
+      format: zip
+    provides:
+    - e1m4b.wad
+    - e1m4b.txt
+
   e1m8b.zip:
     download:
       idgames-mirrors:
@@ -182,15 +209,21 @@ groups:
  documentation: |
   548488    c985db4e0aa6fa12dc650b04eaa041cc doom bible.pdf
   684939    a2cbc904d3ea7648b973aac7c53e9685 manual.pdf
+  3060      bf5b785186a42db65ecaed2a4758ba31 e1m4b.txt
   2967      c9b317110305e81f47f64f4fc443d4a0 e1m8b.txt
  archives: |
   20575712  98a065ca917fc5ac021621098a2f80cd setup_the_ultimate_doom_2.0.0.3.exe
+  93472     863d59e8c3ef3b1e47740a08e429d9ea e1m4b.zip
   220162    69084c43103c8f897a4993afded46b1b e1m8b.zip
  maps: |
+  237271    ffce7f3a2e42ba779e211c4cf17fa591 e1m4b.wad
   566157    86e94729257b94f982dbe3e3a81e2679 e1m8b.wad
 
 sha1sums: |
   923c77b2cb7b4a73abd62f62c26f614446c849ff setup_the_ultimate_doom_2.0.0.3.exe
+  d6981fd46269d3bb22adf2a962e8b6c62179565e e1m4b.txt
+  46215ed8988e4fea8fdb458aa45e75a4c6f2d014 e1m4b.wad
+  562245983caf0d1f4efddda7b83e4b68e132f79e e1m4b.zip
   8693daabf58247c7d71a072430b31b4600f7a6c8 e1m8b.txt
   516cf84fdc85d76e0e36c8d25770344967c5cbef e1m8b.wad
   b66f68a15b8c8f02fd8d92a23040757eae706440 e1m8b.zip
