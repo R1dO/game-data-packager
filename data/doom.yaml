@@ -169,7 +169,9 @@ files:
     - manual.pdf
 
   e1m8b.zip:
-    download: http://www.doomworld.com/e1m8b/e1m8b.zip
+    download:
+      idgames-mirrors:
+        path: levels/doom/Ports/d-f
     unpack:
       format: zip
     provides:
