@@ -76,21 +76,23 @@ files:
     size: 282000
     md5: 7a77ee148fd9ee5bc599356218f6f6b5
 
-  tnt31fix.zip:
-    download: http://www.teamtnt.com/other/tnt31fix.zip
-    size: 119210
-    md5: 8b1dcb47723f41bd2729c9d04e64d1ce
-    sha1: c3e952560074fe47d1ba120f6f26b80cdadb13fe
+  tnt31fix.zip?doomedsda:
+    look_for: [tnt31fix.zip]
+    download: http://doomedsda.us/lmps/944/tnt31fix.zip
+    size: 110428
+    md5: 3c79c8ef45acffca184f84d7b5e74279
     unpack:
       format: zip
     provides:
     - tnt31.wad
 
-  tnt31fix.zip?repack:
+  tnt31fix.zip?idgames:
     look_for: [tnt31fix.zip]
-    download: http://doomedsda.us/lmps/944/tnt31fix.zip
-    size: 110428
-    md5: 3c79c8ef45acffca184f84d7b5e74279
+    download:
+      idgames-mirrors:
+        path: themes/TeamTNT/finaldoom
+    size: 121648
+    md5: 9678421e483fd5c313881d521793cc61
     unpack:
       format: zip
     provides:
