@@ -76,6 +76,18 @@ files:
     size: 282000
     md5: 7a77ee148fd9ee5bc599356218f6f6b5
 
+  # this archive was at http://www.teamtnt.com/other/tnt31fix.zip
+  # but teamtnt.com host has been offline for quite a while now.
+  tnt31fix.zip:
+    size: 119210
+    md5: 8b1dcb47723f41bd2729c9d04e64d1ce
+    sha1: c3e952560074fe47d1ba120f6f26b80cdadb13fe
+    unpack:
+      format: zip
+    provides:
+    - tnt31.wad
+
+  # various repackings:
   tnt31fix.zip?doomedsda:
     look_for: [tnt31fix.zip]
     download: http://doomedsda.us/lmps/944/tnt31fix.zip
