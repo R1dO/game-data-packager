@@ -77,22 +77,16 @@ for gamename, game in load_games().items():
              'download': url,
              })
 
-# avoid to download both "tnt31fix.zip" and "tnt31fix.zip?repack"
-# always prefer the one 'regular' file without the '?xxx' suffix
-names = dict()
-for archive in archives:
-    name = archive['name']
-    names[name] = names.get(name, 0) + 1
-
-for k, count in names.items():
-    if count > 1:
-        for archive in archives:
-            if archive['name'] == k and archive['filename'] != archive['name']:
-                archives.remove(archive)
-
 archives = sorted(archives, key=lambda k: (k['size']))
 
+seen = set()
+
 for a in archives:
+   # always prefer the smallest version of a file (e.g.: tnt31fix.zip)
+   if a['name'] in seen:
+       continue
+   seen.add(a['name'])
+
    archive = os.path.join(args.destination, a['name'])
 
    if not os.path.isfile(archive):
