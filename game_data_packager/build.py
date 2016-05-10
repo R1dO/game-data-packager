@@ -1724,7 +1724,7 @@ class PackagingTask(object):
 
         if 'Description' not in control:
             short_desc, long_desc = self.generate_description(package)
-            control['Description'] = short_desc + '\n' + long_desc
+            control['Description'] = short_desc + '\n ' + long_desc.replace('\n', '\n ')
 
     def generate_description(self, package):
         longname = package.longname or self.game.longname
@@ -1736,52 +1736,51 @@ class PackagingTask(object):
         else:
             short_desc = longname
 
-        long_desc =  ' This package was built using game-data-packager.\n'
+        long_desc =  'This package was built using game-data-packager.\n'
         if package.component == 'local':
-            long_desc += ' It contains proprietary game data and must not be redistributed.\n'
-            long_desc += ' .\n'
+            long_desc += 'It contains proprietary game data and must not be redistributed.\n'
+            long_desc += '.\n'
         elif package.component == 'non-free':
-            long_desc += ' It contains proprietary game data that may be redistributed\n'
-            long_desc += ' only under some conditions.\n'
-            long_desc += ' .\n'
+            long_desc += 'It contains proprietary game data that may be redistributed\n'
+            long_desc += 'only under some conditions.\n'
+            long_desc += '.\n'
         else:
-            long_desc += ' It contains free game data and may be redistributed.\n'
-            long_desc += ' .\n'
+            long_desc += 'It contains free game data and may be redistributed.\n'
+            long_desc += '.\n'
 
         if package.long_description is not None:
             long_desc = package.long_description
             long_desc = long_desc.rstrip('\n')
-            long_desc = ' ' + long_desc.replace('\n', '\n ')
             return (short_desc, long_desc)
 
         if package.description:
             for line in package.description.splitlines():
                 line = line.rstrip() or '.'
-                long_desc += (' ' + line + '\n')
-            long_desc += ' .\n'
+                long_desc += (line + '\n')
+            long_desc += '.\n'
 
         if self.game.genre:
-            long_desc += '  Genre: ' + self.game.genre + '\n'
+            long_desc += ' Genre: ' + self.game.genre + '\n'
 
         if package.section == 'doc':
-            long_desc += '  Documentation: ' + longname + '\n'
+            long_desc += ' Documentation: ' + longname + '\n'
         elif package.expansion_for and package.expansion_for in self.game.packages:
             game_name = (self.game.packages[package.expansion_for].longname
                          or self.game.longname)
-            long_desc += '  Game: ' + game_name + '\n'
-            long_desc += '  Expansion: ' + longname + '\n'
+            long_desc += ' Game: ' + game_name + '\n'
+            long_desc += ' Expansion: ' + longname + '\n'
         else:
-            long_desc += '  Game: ' + longname + '\n'
+            long_desc += ' Game: ' + longname + '\n'
 
         copyright = package.copyright or self.game.copyright
-        long_desc += '  Published by: ' + copyright.split(' ', 2)[2]
+        long_desc += ' Published by: ' + copyright.split(' ', 2)[2]
 
         engine = self.packaging.substitute(
                 package.engine or self.game.engine,
                 package.name)
 
         if engine and package.section == 'games':
-            long_desc += '\n .\n'
+            long_desc += '\n.\n'
             if '|' in engine:
                 virtual = engine.split('|')[-1].strip()
                 has_virtual = (virtual.split('-')[-1] == 'engine')
@@ -1791,13 +1790,13 @@ class PackagingTask(object):
             if engine.startswith('gemrb'):
                 engine = 'gemrb'
             if has_virtual:
-                long_desc += ' Intended for use with some ' + virtual + ',\n'
-                long_desc += ' such as for example: ' + engine
+                long_desc += 'Intended for use with some ' + virtual + ',\n'
+                long_desc += 'such as for example: ' + engine
             else:
-                long_desc += ' Intended for use with: ' + engine
+                long_desc += 'Intended for use with: ' + engine
 
         if package.used_sources:
-            long_desc += '\n Built from: ' + ', '.join(package.used_sources)
+            long_desc += '\nBuilt from: ' + ', '.join(package.used_sources)
 
         return (short_desc, long_desc)
 
