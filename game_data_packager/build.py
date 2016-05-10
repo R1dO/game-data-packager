@@ -1736,6 +1736,11 @@ class PackagingTask(object):
         else:
             short_desc = longname
 
+        if package.long_description is not None:
+            long_desc = package.long_description
+            long_desc = long_desc.rstrip('\n')
+            return (short_desc, long_desc)
+
         long_desc =  'This package was built using game-data-packager.\n'
         if package.component == 'local':
             long_desc += 'It contains proprietary game data and must not be redistributed.\n'
@@ -1747,11 +1752,6 @@ class PackagingTask(object):
         else:
             long_desc += 'It contains free game data and may be redistributed.\n'
             long_desc += '.\n'
-
-        if package.long_description is not None:
-            long_desc = package.long_description
-            long_desc = long_desc.rstrip('\n')
-            return (short_desc, long_desc)
 
         if package.description:
             for line in package.description.splitlines():
