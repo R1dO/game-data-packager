@@ -78,7 +78,7 @@ class GameDataPackage(object):
         self.longname = None
 
         # This word is used to build package description
-        # 'data' / 'PWAD' / 'IWAD' / 'binaries'
+        # 'data' / 'music' / 'documentation' / 'PWAD' / 'IWAD' / 'binaries'
         self.data_type = 'data'
 
         # if not None, override the description completely
@@ -816,6 +816,11 @@ class GameData(object):
 
         if 'version' in d:
             package.version = d['version'] + '+' + GAME_PACKAGE_VERSION
+
+        if 'rip_cd' in d:
+            package.data_type = 'music'
+        elif package.section == 'doc':
+            package.data_type = 'documentation'
 
     def _populate_files(self, d, **kwargs):
         if d is None:

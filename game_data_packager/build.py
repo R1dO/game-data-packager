@@ -1767,19 +1767,23 @@ class PackagingTask(object):
         elif package.expansion_for and package.expansion_for in self.game.packages:
             game_name = (self.game.packages[package.expansion_for].longname
                          or self.game.longname)
-            long_desc += ' Game: ' + game_name + '\n'
-            long_desc += ' Expansion: ' + longname + '\n'
+            if game_name not in long_desc:
+                long_desc += ' Game: ' + game_name + '\n'
+            if longname != game_name:
+                long_desc += ' Expansion: ' + longname + '\n'
         else:
             long_desc += ' Game: ' + longname + '\n'
 
         copyright = package.copyright or self.game.copyright
-        long_desc += ' Published by: ' + copyright.split(' ', 2)[2]
+        copyright = copyright.split(' ', 2)[2]
+        if copyright not in long_desc:
+            long_desc += ' Published by: ' + copyright
 
         engine = self.packaging.substitute(
                 package.engine or self.game.engine,
                 package.name)
 
-        if engine and package.section == 'games':
+        if engine and package.data_type not in ('music', 'documentation'):
             long_desc += '\n.\n'
             if '|' in engine:
                 virtual = engine.split('|')[-1].strip()
