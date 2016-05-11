@@ -1475,16 +1475,10 @@ class PackagingTask(object):
                 outfile.write('%s  %s\n' % (package.md5sums[file], file))
         os.chmod(md5sums, 0o644)
 
-        try:
-            control_in = open(self.get_control_template(package),
-                    encoding='utf-8')
-            control = Deb822(control_in)
-        except FileNotFoundError:
-            control = Deb822()
-        self.modify_control_template(control, package, destdir)
-        control.dump(fd=open(os.path.join(debdir, 'control'), 'wb'),
-                encoding='utf-8')
-        os.chmod(os.path.join(debdir, 'control'), 0o644)
+        control = os.path.join(destdir, 'DEBIAN/control')
+        self.generate_control(package, destdir).dump(fd=open(control, 'wb'),
+                                                encoding='utf-8')
+        os.chmod(control, 0o644)
 
     def fill_dest_dir(self, package, destdir):
         if not self.check_complete(package, log=True):
@@ -1614,9 +1608,16 @@ class PackagingTask(object):
                     # make other files rw-r--r--
                     os.chmod(full, 0o644)
 
-    def modify_control_template(self, control, package, destdir):
-        for key in control.keys():
-            assert key == 'Description', 'specify "%s" only in YAML' % key
+    def generate_control(self, package, destdir):
+        try:
+            control_in = open(os.path.join(DATADIR,
+                              package.name + '.control.in'), encoding='utf-8')
+            control = Deb822(control_in)
+            for key in control.keys():
+                assert key == 'Description', 'specify "%s" only in YAML' % key
+        except FileNotFoundError:
+            control = Deb822()
+
         control['Package'] = package.name
         control['Version'] = package.version
         control['Priority'] = 'optional'
@@ -1730,6 +1731,8 @@ class PackagingTask(object):
             short_desc, long_desc = self.generate_description(package)
             control['Description'] = short_desc + '\n ' + long_desc.replace('\n', '\n ')
 
+        return control
+
     def generate_description(self, package):
         longname = package.longname or self.game.longname
 
@@ -1807,9 +1810,6 @@ class PackagingTask(object):
             long_desc += '\nBuilt from: ' + ', '.join(package.used_sources)
 
         return (short_desc, long_desc)
-
-    def get_control_template(self, package):
-        return os.path.join(DATADIR, package.name + '.control.in')
 
     def look_for_engines(self, packages, force=False):
         engines = set()
