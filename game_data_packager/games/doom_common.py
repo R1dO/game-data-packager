@@ -25,7 +25,6 @@ from .. import GameData
 from ..build import (PackagingTask)
 from ..paths import DATADIR
 from ..util import (copy_with_substitutions, mkdir_p)
-from ..version import (FORMAT)
 
 logger = logging.getLogger(__name__)
 
@@ -173,7 +172,9 @@ class DoomTask(PackagingTask):
                     'usr/share/applications/%s.desktop %s' %
                      (desktop_file, program))
 
-            if FORMAT == 'deb':
+    def fill_dest_dir_deb(self, package, destdir):
+        for main_wad in package.main_wads:
+            if main_wad in ('doom.wad', 'doom2.wad', 'plutonia.wad', 'tnt.wad'):
                 debdir = os.path.join(destdir, 'DEBIAN')
                 mkdir_p(debdir)
                 copy_with_substitutions(
@@ -183,5 +184,7 @@ class DoomTask(PackagingTask):
                         encoding='utf-8'),
                     IWAD=main_wad)
                 os.chmod(os.path.join(debdir, 'preinst'), 0o755)
+
+        super(DoomTask, self).fill_dest_dir_deb(package, destdir)
 
 GAME_DATA_SUBCLASS = DoomGameData
