@@ -32,22 +32,6 @@ class QuakeTask(PackagingTask):
     not to be a shell script.
     """
 
-    def get_control_template(self, package):
-        for name in (package.name, 'quake-common'):
-            path = os.path.join(DATADIR, '%s.control.in' % name)
-            if os.path.exists(path):
-                return path
-        else:
-            raise AssertionError('quake-common.control.in should exist')
-
-    def modify_control_template(self, control, package, destdir):
-        super(QuakeTask, self).modify_control_template(control, package,
-                destdir)
-
-        desc = control['Description']
-        desc = desc.replace('LONG', (package.longname or self.game.longname))
-        control['Description'] = desc
-
     def fill_extra_files(self, package, destdir):
         super(QuakeTask, self).fill_extra_files(package, destdir)
 

@@ -105,6 +105,18 @@ packages:
     aliases: [music]
     expansion_for: quake-registered
     install_to: usr/share/games/quake
+    copyright_notice: |
+      This package contains the Quake soundtrack by Trent Reznor,
+      copied from the CD-ROM and encoded in Ogg Vorbis.
+    description: |
+      This package contains the Quake soundtrack by Trent Reznor,
+      copied from the CD-ROM and encoded in Ogg Vorbis.
+      Many modified Quake engines can play this version of the soundtrack
+      during gameplay without requiring the CD-ROM to be present.
+      The original game would play these tracks from the CD, but many modern
+      machines either do not have the necessary analogue pass-through cable
+      from the CD drive to the sound card, or do not have an optical drive
+      at all.
     rip_cd:
       encoding: vorbis
       filename_format: "id1/music/track%02d.ogg"
@@ -115,6 +127,22 @@ packages:
     aliases: [mp1-music]
     expansion_for: quake-armagon
     install_to: usr/share/games/quake
+    copyright_notice: |
+      This package contains the Quake - Scourge of Armagon (Mission Pack 1)
+      soundtrack by Jeehun Hwang and Rob Patterson, copied from the CD-ROM and
+      encoded in Ogg Vorbis.
+    short_description: Quake - Scourge of Armagon soundtrack
+    description: |
+      This package contains the Quake - Scourge of Armagon (Mission Pack 1)
+      soundtrack by Jeehun Hwang and Rob Patterson, copied from the CD-ROM and
+      encoded in Ogg Vorbis.
+      .
+      Many modified Quake engines can play this version of the soundtrack
+      during gameplay without requiring the CD-ROM to be present.
+      The original game would play these tracks from the CD, but many modern
+      machines either do not have the necessary analogue pass-through cable
+      from the CD drive to the sound card, or do not have an optical drive
+      at all.
     rip_cd:
       encoding: vorbis
       filename_format: "hipnotic/music/track%02d.ogg"
@@ -125,6 +153,22 @@ packages:
     aliases: [mp2-music]
     expansion_for: quake-dissolution
     install_to: usr/share/games/quake
+    copyright_notice: |
+      This package contains the Quake - Dissolution of Eternity (Mission Pack 2)
+      soundtrack by Jeehun Hwang and Rob Patterson, copied from the CD-ROM and
+      encoded in Ogg Vorbis.
+    short_description: Quake - Dissolution of Eternity soundtrack
+    description: |
+      This package contains the Quake - Dissolution of Eternity (Mission Pack 2)
+      soundtrack by Jeehun Hwang and Rob Patterson, copied from the CD-ROM and
+      encoded in Ogg Vorbis.
+      .
+      Many modified Quake engines can play this version of the soundtrack
+      during gameplay without requiring the CD-ROM to be present.
+      The original game would play these tracks from the CD, but many modern
+      machines either do not have the necessary analogue pass-through cable
+      from the CD drive to the sound card, or do not have an optical drive
+      at all.
     rip_cd:
       encoding: vorbis
       filename_format: "rogue/music/track%02d.ogg"
