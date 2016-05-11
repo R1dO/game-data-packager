@@ -1230,6 +1230,10 @@ class PackagingTask(object):
                      main_wad = f.install_as
                      exts.add(os.path.splitext(main_wad.lower())[1])
 
+            # XXX: this doesn't handle lgeneral or other externaly generated files
+            if package.rip_cd:
+                exts.add('.ogg')
+
             install_to = self.packaging.substitute(package.install_to,
                     package.name)
 
