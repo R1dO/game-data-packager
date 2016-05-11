@@ -78,6 +78,11 @@ class LGeneralTask(PackagingTask):
         subprocess.check_call(['lgc-pg', '-s', unpackdir + '/pg-data/',
             '-d', installdir + '/'])
 
+        # this file is timestamped but will never change (we have hashes)
+        self.packaging.override_lintian(destdir, package.name,
+                             'package-contains-timestamped-gzip',
+                             'usr/share/games/lgeneral/pg-data.tar.gz')
+
         return True
 
 GAME_DATA_SUBCLASS = LGeneralGameData
