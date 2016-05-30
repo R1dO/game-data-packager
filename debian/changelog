@@ -28,6 +28,7 @@ quake (17) UNRELEASED; urgency=medium
   * Switch Vcs-Git to https (see #810378)
   * Standards-Version: 3.9.7 (no further changes needed)
   * Normalize packaging via wrap-and-sort -abst
+  * quake4.in: don't run env under gdb, if using both
 
  -- Simon McVittie <smcv@debian.org>  Thu, 10 Dec 2015 00:44:21 +0100
 
