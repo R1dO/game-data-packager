@@ -22,6 +22,7 @@
   /usr/lib/quake4/* r,
   /usr/share/games/quake4/** r,
   owner @{HOME}/.quake4/** rwk,
+  owner @{HOME}/.quake4/*/gamex86.so rwkm,
 
   # used by PulseAudio
   /etc/machine-id r,
