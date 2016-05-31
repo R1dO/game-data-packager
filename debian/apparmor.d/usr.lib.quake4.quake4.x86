@@ -30,7 +30,12 @@
   # udev device enumeration
   /etc/udev/udev.conf r,
   /run/udev/data/+pci:* r,
+  /sys/bus/ r,
+  /sys/class/ r,
+  /sys/class/drm/ r,
   /sys/devices/pci[0-9]*/**/uevent r,
+  # character devices 226:x are DRI
+  /run/udev/data/c226:* r,
 
   /usr/bin/xdg-open Cxr -> xdgopen,
 
