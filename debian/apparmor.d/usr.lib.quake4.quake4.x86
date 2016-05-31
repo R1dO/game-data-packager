@@ -23,6 +23,9 @@
   /usr/share/games/quake4/** r,
   owner @{HOME}/.quake4/** rwk,
 
+  # used by PulseAudio
+  /etc/machine-id r,
+
   # the audio and X abstractions don't allow mmapping these
   /dev/dri/* m,
   owner /{run,dev}/shm/pulse-shm* m,
