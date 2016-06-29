@@ -349,7 +349,11 @@ class PackageRelation:
 
     def __str__(self):
         if self.contextual:
-            return repr(self)
+            ret = []
+            for context, specific in self.contextual.items():
+                ret.append(repr(context) + ': ' + repr(str(specific)))
+            ret.sort()
+            return '{' + ', '.join(ret) + '}'
 
         if self.alternatives:
             return ' | '.join([str(s) for s in self.alternatives])
