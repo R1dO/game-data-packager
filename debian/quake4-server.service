@@ -1,6 +1,7 @@
 [Unit]
 Description=Quake 4 game server
 After=network.target
+Documentation=man:quake4-dedicated(6)
 
 [Service]
 Type=simple

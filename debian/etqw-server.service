@@ -1,6 +1,7 @@
 [Unit]
 Description=Enemy Territory: Quake Wars game server
 After=network.target
+Documentation=man:etqw-dedicated(6)
 
 [Service]
 Type=simple

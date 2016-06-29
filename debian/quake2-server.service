@@ -1,6 +1,7 @@
 [Unit]
 Description=Quake II game server
 After=network.target
+Documentation=man:quake2-server(6)
 # This server and the @debian_server instance would try to use the same
 # configuration
 Conflicts=quake2-server@debian_server.service

@@ -1,6 +1,7 @@
 [Unit]
 Description=Quake game server (instance: "%i")
 After=network.target
+Documentation=man:quake-server(6)
 
 [Service]
 Type=simple

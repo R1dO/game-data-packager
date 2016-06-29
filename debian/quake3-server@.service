@@ -1,6 +1,7 @@
 [Unit]
 Description=Quake III Arena game server (instance: "%i")
 After=network.target
+Documentation=man:quake3-server(6)
 
 [Service]
 Type=simple
