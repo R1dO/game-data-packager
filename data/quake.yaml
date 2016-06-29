@@ -100,6 +100,21 @@ packages:
     - license.txt?mp12_cd
     install_to: usr/share/games/quake
 
+  quake-dopa:
+    aliases: [ep5]
+    # FIXME: or the demo? licensing is unclear
+    expansion_for: quake-registered
+    longname: "Quake Episode 5: Dimensions of the Past"
+    wiki: "Episode_5:_Dimensions_of_the_Past"
+    copyright: © 2016 MachineGames
+    install_to: usr/share/games/quake/dopa
+    install:
+    - pak0.pak?dopa
+    - AUTOEXEC.CFG?dopa
+    - config.cfg?dopa
+    doc:
+    - dopa_readme.txt
+
   quake-music:
     copyright: © 1996 id Software
     aliases: [music]
@@ -177,6 +192,10 @@ packages:
 files:
   id1/pak0.pak?101:
     unsuitable: version 1.01, should be replaced by v1.06 automatically
+
+  id1/pak0.pak?106:
+    look_for:
+    - pak0.pak
 
   manual.txt?101_cd:
     distinctive_name: false
@@ -258,11 +277,31 @@ files:
     - hipnotic/pak0.pak?orig
     - hipnotic/pak0.pak?qdq_glquake_compat
 
+  hipnotic/pak0.pak?orig:
+    look_for:
+    - pak0.pak
+
+  hipnotic/pak0.pak?qdq_glquake_compat:
+    look_for:
+    - pak0.pak
+
   rogue/pak0.pak:
     alternatives:
     - rogue/pak0.pak?mp12_cd
     - rogue/pak0.pak?mp2_cd
     - rogue/pak0.pak?steam
+
+  rogue/pak0.pak?mp12_cd:
+    look_for:
+    - pak0.pak
+
+  rogue/pak0.pak?mp2_cd:
+    look_for:
+    - pak0.pak
+
+  rogue/pak0.pak?steam:
+    look_for:
+    - pak0.pak
 
   quake106.zip:
     download:
@@ -332,6 +371,13 @@ files:
     - quake manual.pdf?gog
     - hipnotic/pak0.pak?orig
     - rogue/pak0.pak?mp12_cd
+
+  dopa.rar:
+    download: https://cdn.bethsoft.com/quake/dopa.rar
+    unpack:
+      format: unar
+    provides:
+      - DOPA content
 
 unknown_sizes:
   - hipnotic/pak0.pak?qdq_glquake_compat
@@ -430,6 +476,16 @@ groups:
   727612     0eb0ce3c6244dce91e68eec572cbd67e quake manual.pdf?steam
   1233689072 c8acba92fca95b8ba67111fa81730141 setup_quake_the_offering_2.0.0.6.exe
 
+  # happy 20th birthday, Quake
+  5596734    375e09b69b6d692e54dde23641a02436 dopa.rar
+
+ DOPA content: |
+  10         b0aa17c25f68b8cc3cb2f9f09d634781 AUTOEXEC.CFG?dopa
+  2225       f6395423d1a9dda35d5cd0cac109ac84 config.cfg?dopa
+  27         4073452b73b90708c8735ef0f7d5cbc8 dopa.bat
+  1209       c235f8d0cd09198e3d37e366fe1d68ba dopa_readme.txt
+  18556973   607a5d9f0fc778cad37889a093dc593e pak0.pak?dopa
+
 sha1sums: |
   36b42dc7b6313fd9cabc0be8b9e9864840929735  id1/pak0.pak?106
   6fd0d1643047612f41afb2001b972d830c792921  id1/pak1.pak
@@ -459,6 +515,11 @@ sha1sums: |
   03c040d7a296b726a5b088784c4fc0db608fd635  eternity/manual.htm?mp12_cd
   083f5c4e1dbdb8cc7c105aa9e2d145cd42f9b86c  eternity/manual.txt?mp12_cd
   482866072af20cd730b3ce7fc69606a63db83cad  setup_quake_the_offering_2.0.0.6.exe
+  43a87db1606714093e602abcf1f73857b03f0a4a  AUTOEXEC.CFG?dopa
+  4ce8711b032c14e957fe85017ecb60e0fa1d8474  config.cfg?dopa
+  5fb84d0c0c6fea897eafbdc2bb91f38403b0935a  dopa.bat
+  6ba7b53136ea4591875ded06f20d2cc0e2aafbf3  dopa_readme.txt
+  f519ae4935cf18a1f6fecb07b34f5cfbcdacc7fd  pak0.pak?dopa
 
 sha256sums: |
   35a9c55e5e5a284a159ad2a62e0e8def23d829561fe2f54eb402dbc0a9a946af  id1/pak0.pak?106
@@ -488,6 +549,11 @@ sha256sums: |
   06166db2b6eaacdb9757b922f8480a151873ccdc3a4cc80508d733708f4ba681  eternity/ctf.txt?mp12_cd
   439059faedded5a970ae30f4791a2939225f7934bb5c1a5e1ffbd7d273a4628d  eternity/manual.htm?mp12_cd
   4975e10d0088078aff29770f19499e657e9e71d15b4a36c4018cf02167605feb  eternity/manual.txt?mp12_cd
+  1c15074b28daf2c2929126152bb8c82da21a5f6bab79b7a1d27c34ebccfaa109  AUTOEXEC.CFG?dopa
+  92fbe7fde704ea13041d42bb0e4dc3475f54ceacda89384c3c5879844135b93e  config.cfg?dopa
+  742ae21deb9daa66337732c0e4bce4adba1590195031da7bae4d8cb46a6fbc80  dopa.bat
+  705058efe607f38f87a6f0bf0dbf8ebd7a6544b29bda6f6f42ea5d9a05ec138d  dopa_readme.txt
+  6a7762484eed059a431989e58ec774c819212ee8237edaa292b03ed0900c9f72  pak0.pak?dopa
 
 ...
 # vim:set sw=2 sts=2 et:
