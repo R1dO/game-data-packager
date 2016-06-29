@@ -20,6 +20,10 @@ main() {
             set _ "$@" -rogue
             shift
             ;;
+        (*dopa*)
+            set _ "$@" -game dopa
+            shift
+            ;;
     esac
 
     while [ $# -gt 0 ]; do
