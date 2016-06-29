@@ -860,6 +860,14 @@ class PackagingTask(object):
                             except UnicodeError:
                                 print(id_diz.encode('ascii', 'replace').decode('ascii'))
 
+                to_unpack = provider.unpack.get('unpack')
+
+                if to_unpack is None:
+                    to_unpack = []
+
+                    for f in provider.provides_files:
+                        to_unpack.append(f.name.split('?')[0])
+
                 if fmt == 'dos2unix':
                     tmp = os.path.join(self.get_workdir(),
                             'tmp', wanted.name)
@@ -891,8 +899,6 @@ class PackagingTask(object):
                     with ZipUnpacker(found_name) as unpacker:
                         self.consider_stream(found_name, unpacker, provider)
                 elif fmt == 'lha':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -904,8 +910,6 @@ class PackagingTask(object):
                             cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'id-shr-extract':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -918,8 +922,6 @@ class PackagingTask(object):
                     recursive_utime(tmpdir, os.stat(found_name).st_mtime)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'cabextract':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -930,8 +932,6 @@ class PackagingTask(object):
                             os.path.abspath(found_name)], cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unace-nonfree':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -942,8 +942,6 @@ class PackagingTask(object):
                              list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unrar-nonfree':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -996,8 +994,6 @@ class PackagingTask(object):
                     check_call(cmdline)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unzip' and which('unzip'):
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1011,8 +1007,6 @@ class PackagingTask(object):
                     # -C use case-insensitive matching
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt in ('7z', 'unzip'):
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                             to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
@@ -1026,8 +1020,6 @@ class PackagingTask(object):
                                 list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt in ('unar', 'unzip'):
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s', to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                             provider_name + '.d')
@@ -1038,8 +1030,6 @@ class PackagingTask(object):
                                list(to_unpack), cwd=tmpdir)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'unshield':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s', to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
                                           provider_name + '.d')
@@ -1061,8 +1051,6 @@ class PackagingTask(object):
                     recursive_utime(tmpdir, os.stat(found_name).st_mtime)
                     self.consider_file_or_dir(tmpdir, provider=provider)
                 elif fmt == 'arj':
-                    to_unpack = provider.unpack.get('unpack',
-                            [f.name for f in provider.provides_files])
                     logger.debug('Extracting %r from %s',
                                  to_unpack, found_name)
                     tmpdir = os.path.join(self.get_workdir(), 'tmp',
