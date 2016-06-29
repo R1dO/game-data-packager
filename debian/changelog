@@ -15,6 +15,9 @@ game-data-packager (45) UNRELEASED; urgency=medium
     - Doom 1: Tech Gone Bad, brand new map by Romero [adetiste]
       (Closes: #812513)
     - Doom 1: Phobos Mission Control, another new map [fabian]
+    - Quake Episode 5: Dimensions of the Past (20th anniversary
+      expansion by MachineGames) [smcv]
+    - Theme Hospital (GOG) 2.1.0.8 [Phil Morrell]
   * Enhancements and bug fixes:
     - Correct UnrealGoldPatch227i.7z's format [skitt]
     - The Unreal patches provide lin_convenience_libs [skitt]
@@ -22,6 +25,14 @@ game-data-packager (45) UNRELEASED; urgency=medium
       is possibly owned by user's Steam account [adetiste]
     - Abort early when running from a deleted directory and --destination
       hasn't been specified [adetiste] (Closes: #783319)
+    - Skip downloading files if their size on the server does not match
+      what was expected [adetiste]
+    - Use ScummVM's own hosting instead of SourceForge [adetiste]
+    - Adapt code dealing with ScummVM configuration to account for it now
+      following the XDG Base Directory spec [adetiste]
+    - Make progress bars time-based, with a progress bar appearing if
+      an operation has taken too long [adetiste, smcv]
+    - Add Shooter category for Doom 2 Master Levels [Matthias Mailänder]
   * Internal changes:
     - Refactor dependency relationships and other distro- and
       format-dependent values. They now take a map or list of
@@ -35,6 +46,14 @@ game-data-packager (45) UNRELEASED; urgency=medium
       to explicitly list files to unpack. [adetiste]
     - Build-Depends: on "pyflakes3 | pyflakes" to avoid to needlessly
       pull in Python2 during the build on Stretch and later. [adetiste]
+    - Remove support for install_contents_of keyword, better handled by
+      groups now [adetiste]
+    - Remove support for install_files in package stanzas, superseded
+      by groups [smcv]
+    - Break out command-line interface into its own module to reduce
+      circular imports [smcv]
+    - Break out file-loading into new g_d_p.data module [smcv]
+    - Distinguish between files and groups [smcv]
 
  -- Stephen Kitt <skitt@debian.org>  Sat, 23 Jan 2016 22:38:20 +0100
 
