@@ -115,7 +115,7 @@ packages:
     doc:
     - dopa_readme.txt
     symlinks:
-      usr/share/games/quake/quake-dopa: $bindir/quake
+      $install_to/tryexec: $bindir/quake
 
   quake-music:
     copyright: © 1996 id Software
