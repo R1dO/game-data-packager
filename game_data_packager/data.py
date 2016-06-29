@@ -219,6 +219,8 @@ class WantedFile(HashedFile):
         return set([self.filename.lower(), self.install_as.lower()])
     @look_for.setter
     def look_for(self, value):
+        if isinstance(value, str):
+            value = (value,)
         self._look_for = set(x.lower() for x in value)
 
     @property
