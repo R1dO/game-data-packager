@@ -50,7 +50,7 @@ for release in releases:
                            '-v', snapshot,
                            "Git snapshot"],
                           cwd = GDP)
-    subprocess.check_call(['debuild', '-S'],cwd = GDP)
+    subprocess.check_call(['debuild', '-S', '-i'],cwd = GDP)
     subprocess.check_call(['dput', 'my-ppa',
                            'game-data-packager_%s_source.changes' % snapshot],
                            cwd = BASE)
