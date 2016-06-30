@@ -383,6 +383,9 @@ files:
     provides:
       - DOPA content
 
+  config.cfg?dopa:
+    distinctive_name: false
+
 unknown_sizes:
   - hipnotic/pak0.pak?qdq_glquake_compat
   - resource.1?106_cd
