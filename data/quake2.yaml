@@ -128,15 +128,14 @@ packages:
     provides: quake2-xatrix
     replaces: quake2-xatrix
     expansion_for: quake2-full-data
-    # this is what Makefile says has been tested
-    architecture: amd64 i386 ia64 sparc64
+    architecture: any
     install_to: usr/share/games/quake2
-    version: "2.03"
+    version: "2.04"
     install:
-    - quake2-xatrix-2.03.tar.xz
-    - quake2-xatrix-2.03/CHANGELOG
-    - quake2-xatrix-2.03/LICENSE
-    - quake2-xatrix-2.03/README
+    - quake2-xatrix-2.04.tar.xz
+    - quake2-xatrix-2.04/CHANGELOG
+    - quake2-xatrix-2.04/LICENSE
+    - quake2-xatrix-2.04/README
     - xatrix data
     optional:
       - xatrix videos
@@ -185,15 +184,14 @@ packages:
     provides: quake2-rogue
     replaces: quake2-rogue
     expansion_for: quake2-full-data
-    # this is what Makefile says has been tested
-    architecture: amd64 i386 ia64 sparc64
+    architecture: any
     install_to: usr/share/games/quake2
-    version: "2.02"
+    version: "2.03"
     install:
-    - quake2-rogue-2.02.tar.xz
-    - quake2-rogue-2.02/CHANGELOG
-    - quake2-rogue-2.02/LICENSE
-    - quake2-rogue-2.02/README
+    - quake2-rogue-2.03.tar.xz
+    - quake2-rogue-2.03/CHANGELOG
+    - quake2-rogue-2.03/LICENSE
+    - quake2-rogue-2.03/README
     - rogue data
     optional:
       - rogue videos
@@ -350,7 +348,7 @@ files:
     - ctf.txt
     - readme.txt
 
-  quake2-xatrix-2.03/CHANGELOG:
+  quake2-xatrix-2.04/CHANGELOG:
     distinctive_name: false
     # Contrary to normal Debian policy, we don't compress this. It would
     # make the checksum non-deterministic, and Quake II is large enough
@@ -360,21 +358,21 @@ files:
     - CHANGELOG
     - game_code_changelog.txt
 
-  quake2-xatrix-2.03/LICENSE:
+  quake2-xatrix-2.04/LICENSE:
     distinctive_name: false
     install_as: game_code_license.txt
     look_for:
     - LICENSE
     - game_code_license.txt
 
-  quake2-xatrix-2.03/README:
+  quake2-xatrix-2.04/README:
     distinctive_name: false
     install_as: game_code_readme.txt
     look_for:
     - README
     - game_code_readme.txt
 
-  quake2-rogue-2.02/CHANGELOG:
+  quake2-rogue-2.03/CHANGELOG:
     distinctive_name: false
     # Contrary to normal Debian policy, we don't compress this, as above.
     install_as: game_code_changelog.txt
@@ -382,7 +380,7 @@ files:
     - CHANGELOG
     - game_code_changelog.txt
 
-  quake2-rogue-2.02/LICENSE:
+  quake2-rogue-2.03/LICENSE:
     distinctive_name: false
     install_as: game_code_license.txt
     license: true
@@ -390,7 +388,7 @@ files:
     - LICENSE
     - game_code_license.txt
 
-  quake2-rogue-2.02/README:
+  quake2-rogue-2.03/README:
     distinctive_name: false
     install_as: game_code_readme.txt
     look_for:
@@ -489,23 +487,23 @@ files:
     - release.txt
     - data_release.txt
 
-  quake2-xatrix-2.03.tar.xz:
-    download: http://deponie.yamagi.org/quake2/quake2-xatrix-2.03.tar.xz
+  quake2-xatrix-2.04.tar.xz:
+    download: http://deponie.yamagi.org/quake2/quake2-xatrix-2.04.tar.xz
     unpack:
       format: tar.xz
     provides:
-    - quake2-xatrix-2.03/CHANGELOG
-    - quake2-xatrix-2.03/LICENSE
-    - quake2-xatrix-2.03/README
+    - quake2-xatrix-2.04/CHANGELOG
+    - quake2-xatrix-2.04/LICENSE
+    - quake2-xatrix-2.04/README
 
-  quake2-rogue-2.02.tar.xz:
-    download: http://deponie.yamagi.org/quake2/quake2-rogue-2.02.tar.xz
+  quake2-rogue-2.03.tar.xz:
+    download: http://deponie.yamagi.org/quake2/quake2-rogue-2.03.tar.xz
     unpack:
       format: tar.xz
     provides:
-    - quake2-rogue-2.02/CHANGELOG
-    - quake2-rogue-2.02/LICENSE
-    - quake2-rogue-2.02/README
+    - quake2-rogue-2.03/CHANGELOG
+    - quake2-rogue-2.03/LICENSE
+    - quake2-rogue-2.03/README
 
   setup_quake2_quad_damage_2.0.0.3.exe:
     unpack:
@@ -1220,8 +1218,8 @@ groups:
       4327      a2a13d58e49c100c0488121918710e75 3.20_changes.txt
 
   misc: |
-    239924    _                                quake2-rogue-2.02.tar.xz
-    189144    _                                quake2-xatrix-2.03.tar.xz
+    240152    172ae099dedb509e06dde1510835c07d quake2-rogue-2.03.tar.xz
+    189340    a2290b32c608566d06c6e616a92fc8ef quake2-xatrix-2.04.tar.xz
     7325053   0c393439252e16942a4b1093c8fa6c4d dm_64.tar.gz
     337884    03ab8b183d8f6be62fce6fda5d71f93f match1.tar.gz
     789684    43a31cf52b7281ea263d1020a9aedca6 baseq2/pak3.pak
@@ -1235,16 +1233,16 @@ groups:
   misc licenses:
     license: true
     group_members: |
-      18874     _                                quake2-rogue-2.02/LICENSE
-      18875     _                                quake2-xatrix-2.03/LICENSE
+      18874     8ae2f31ea8b86131f13bfc9fab7095c7 quake2-rogue-2.03/LICENSE
+      18875     fc18eae0b6e132ba97715116a31e0264 quake2-xatrix-2.04/LICENSE
 
   misc docs:
     doc: true
     group_members: |
-      1421      _                                quake2-rogue-2.02/CHANGELOG
-      1830      _                                quake2-rogue-2.02/README
-      1462      _                                quake2-xatrix-2.03/CHANGELOG
-      2048      _                                quake2-xatrix-2.03/README
+      1583      71498ca1d00f06f1492d6b73ba120ea4 quake2-rogue-2.03/CHANGELOG
+      1830      2631caa043d0e1137d4aa6bce61a3aaa quake2-rogue-2.03/README
+      1627      3a0aeda0dbd11700c6f581fc02a10ece quake2-xatrix-2.04/CHANGELOG
+      2048      d33dbccc7a0a0d8484b508ab1e86b913 quake2-xatrix-2.04/README
       787       917611eec2f2f699b1b0ca149ac66244 readme-dm64.txt
 
       # Alternate files also shipped by Steam: the diff is small and only in
@@ -1641,15 +1639,15 @@ sha1sums: |
   95692ee89f3a4376ca447266044e114ed0c5339c  setup_quake2_quad_damage_2.0.0.3.exe
 
 sha256sums: |
-  54f95e0d37811c3ef7f7d3df8fe068453b58059c546015de7608aaabad646b81  quake2-rogue-2.02.tar.xz
-  df78bbc4030e4c975338aea2df23a1032c2e433d57aef4213fc6808aa5b52b27  quake2-rogue-2.02/CHANGELOG
-  fc5cb67a6031bb842748ecf60c0b05873684e6174458f0b73149512a410a2edd  quake2-rogue-2.02/LICENSE
-  504202a701f384416a5e2084e887574f0ac4d452501e4c7043fa3e919382e632  quake2-rogue-2.02/README
+  e7a045469d2034791e95be47cafd248693531e26a26171af4e22adecabd7a6b8  quake2-rogue-2.03.tar.xz
+  f31c7c472ff4b741433b870d8acd2bd5b62aba0254514c9322201eb884c2eaa4  quake2-rogue-2.03/CHANGELOG
+  fc5cb67a6031bb842748ecf60c0b05873684e6174458f0b73149512a410a2edd  quake2-rogue-2.03/LICENSE
+  504202a701f384416a5e2084e887574f0ac4d452501e4c7043fa3e919382e632  quake2-rogue-2.03/README
 
-  ababf31cf469d266669540ecfee265a0e3fc2f42b47e14b4f8fd389189b7bb2b  quake2-xatrix-2.03.tar.xz
-  ffe318f61e5906716f5819ff036408631c0859db2b24c03c9ad4d82914e0367d  quake2-xatrix-2.03/CHANGELOG
-  08b18fa33e26976e9e60e2ae87d35d19aeea263d80e5c30c07d3a55c3ae37797  quake2-xatrix-2.03/LICENSE
-  efcdc9fe0c8d183ce24cb8426ed686a0e3ca09eee7fe055652ac9e87009a1cc4  quake2-xatrix-2.03/README
+  43c445953d60735b722486d5f220059ec2d6da83d008b8134e69e57d9ac087cf  quake2-xatrix-2.04.tar.xz
+  7cfc98e0ed1ecca1ec0bdf57b94d4c9dabb5534d2958e8922e2a5ef06e91d86f  quake2-xatrix-2.04/CHANGELOG
+  08b18fa33e26976e9e60e2ae87d35d19aeea263d80e5c30c07d3a55c3ae37797  quake2-xatrix-2.04/LICENSE
+  efcdc9fe0c8d183ce24cb8426ed686a0e3ca09eee7fe055652ac9e87009a1cc4  quake2-xatrix-2.04/README
 
   e9011ba63be06b79c45000701ca6881c29a8a5bd49f56bf824988daac2e177a8  3.20_changes.txt
   3649016f324b334f1c4a55d7c20f4d30532f1727d9388bc1064fda191353f667  baseq2/maps.lst
