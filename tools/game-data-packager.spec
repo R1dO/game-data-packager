@@ -7,7 +7,7 @@
 %endif
 
 Name:          game-data-packager
-Version:       44
+Version:       45
 Release:       1%{?gver}
 Summary:       Installer for game data files
 License:       GPLv2 and GPLv2+
@@ -96,6 +96,9 @@ rm -rvf $RPM_BUILD_ROOT/etc/apparmor.d
 %license COPYING
 
 %changelog
+* Fri Jul 22 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 45-1
+- Finally upload to RPMFusion, skip v44
+
 * Sun Jan 24 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-1
 - First cross-distribution release
 - Add Cacodemon icon to doom2-masterlevels subpackage
