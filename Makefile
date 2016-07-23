@@ -110,6 +110,7 @@ clean:
 	rm -f ./out/*.png
 	rm -f ./out/*.svgz
 	rm -f ./out/*.svg
+	rm -f ./out/*.svg
 	rm -f ./out/*.txt
 	rm -f ./out/vfs.zip
 	rm -f ./out/index.html
@@ -138,6 +139,7 @@ install:
 	install -m0644 out/*.copyright                         $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.png                               $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.svgz                              $(DESTDIR)$(datadir)/game-data-packager/
+	install -m0644 out/*.svg                               $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/bash_completion                     $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/changelog.gz                        $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/copyright                           $(DESTDIR)$(datadir)/game-data-packager/
