@@ -1,3 +1,11 @@
+# Fedora/RPMFusion version now at:
+# https://pkgs.rpmfusion.org/cgit/free/game-data-packager.git/tree/game-data-packager.spec
+
+# SuSE version now at:
+# https://build.opensuse.org/package/view_file/games:tools/game-data-packager/game-data-packager.spec
+
+# This is a preliminary version for Mageia
+
 #define gitdate 20160112
 # git log --oneline -1
 %define gitversion 50f64b6
@@ -22,10 +30,10 @@ BuildArch:     noarch
 BuildRequires: ImageMagick
 BuildRequires: inkscape
 BuildRequires: python3
-BuildRequires: python3-PyYAML
+BuildRequires: python3-yaml
 BuildRequires: python3-pyflakes
 BuildRequires: zip
-Requires: python3-PyYAML
+Requires: python3-yaml
 # download
 Recommends: lgogdownloader
 Suggests: steam
@@ -62,6 +70,10 @@ show it's description.
 
 %prep
 %autosetup
+rm -v data/soltys.xpm
+#convert data/soltys.xpm out/soltys.png
+#convert: improper image header `data/soltys.xpm' @ error/xpm.c/ReadXPMImage/348.
+#convert: no images defined `out/soltys.png' @ error/convert.c/ConvertImageCommand/3257.
 
 %build
 make %{?_smp_mflags}
@@ -96,23 +108,5 @@ rm -rvf $RPM_BUILD_ROOT/etc/apparmor.d
 %license COPYING
 
 %changelog
-* Fri Jul 22 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 45-1
-- Finally upload to RPMFusion, skip v44
-
-* Sun Jan 24 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-1
-- First cross-distribution release
-- Add Cacodemon icon to doom2-masterlevels subpackage
-- The (optional) licenses of generated .rpm goes now correctly to /usr/share/licenses
-  instead of /usr/share/doc
-- AppArmor support temporary disabled until figured out
-
-* Thu Dec 31 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.2.git2015123150f64b6
-- Git Snapshot
-- Enable checks
-
-* Tue Dec 29 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 44-0.1.git2015122906f1b80
-- Git Snapshot
-- Suggests xdelta
-
-* Sun Nov 08 2015 Alexandre Detiste <alexandre.detiste@gmail.com> - 43-1
-- Initial port to Fedora
+* Sat Jul 23 2016 Alexandre Detiste <alexandre.detiste@gmail.com> - 45-1
+- Initial port to Mageia, skip one icon that makes ImageMagick choke
