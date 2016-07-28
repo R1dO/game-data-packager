@@ -27,7 +27,7 @@ if os.path.isfile('/etc/debian_version'):
     FORMAT = 'deb'
     DISTRO = 'generic'
 
-# mageia also has a /etc/redhat-lease
+# mageia also has a /etc/redhat-release
 elif os.path.isfile('/etc/mageia-release'):
     FORMAT = 'rpm'
     DISTRO = 'mageia'
