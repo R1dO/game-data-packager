@@ -2,7 +2,7 @@
 # encoding=utf-8
 #
 # Copyright © 2014-2015 Simon McVittie <smcv@debian.org>
-#           © 2015 Alexandre Detiste <alexandre@detiste.be>
+#           © 2015-2016 Alexandre Detiste <alexandre@detiste.be>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -26,16 +26,16 @@ import subprocess
 import sys
 
 from .paths import DATADIR
-from .version import (GAME_PACKAGE_VERSION)
+from .version import (GAME_PACKAGE_VERSION, GAME_PACKAGE_RELEASE)
 
 logger = logging.getLogger(__name__)
 
 KIBIBYTE = 1024
 MEBIBYTE = KIBIBYTE * KIBIBYTE
 
-AGENT = ('Debian Game-Data-Packager/%s (%s %s;'
+AGENT = ('Debian Game-Data-Packager/%s%s (%s %s;'
          ' +http://wiki.debian.org/Games/GameDataPackager)' %
-        (GAME_PACKAGE_VERSION, os.uname()[0], os.uname()[4]) )
+        (GAME_PACKAGE_VERSION, GAME_PACKAGE_RELEASE, os.uname()[0], os.uname()[4]) )
 
 class TemporaryUmask(object):
     """Context manager to set the umask. Not thread-safe.

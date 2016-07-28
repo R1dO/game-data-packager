@@ -4,6 +4,7 @@
 # with a generated version during installation.
 
 import os
+import sys
 
 with open('debian/changelog', encoding='utf-8') as cl:
     try:
@@ -13,6 +14,11 @@ with open('debian/changelog', encoding='utf-8') as cl:
     else:
         cl = ChangeLog(cl, strict=False)
         GAME_PACKAGE_VERSION = str(cl.full_version)
+
+if len(sys.argv) > 1:
+    GAME_PACKAGE_RELEASE = sys.argv[1]
+else:
+    GAME_PACKAGE_RELEASE = ''
 
 details = {}
 if os.path.isfile('/etc/os-release'):
@@ -49,5 +55,5 @@ else:
 
 if __name__ == '__main__':
     print('#!/usr/bin/python3')
-    for const in ('GAME_PACKAGE_VERSION', 'FORMAT', 'DISTRO'):
+    for const in ('GAME_PACKAGE_VERSION', 'GAME_PACKAGE_RELEASE', 'FORMAT', 'DISTRO'):
         print('%s = "%s"' % (const, eval(const)))

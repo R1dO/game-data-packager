@@ -135,7 +135,7 @@ install:
 
 	mkdir -p $(DESTDIR)$(datadir)/game-data-packager
 	cp -ar game_data_packager/                             $(DESTDIR)$(datadir)/game-data-packager/
-	python3 -m game_data_packager.version >                $(DESTDIR)$(datadir)/game-data-packager/game_data_packager/version.py
+	python3 -m game_data_packager.version $(RELEASE) >     $(DESTDIR)$(datadir)/game-data-packager/game_data_packager/version.py
 	install -m0644 out/*.copyright                         $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.png                               $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.svgz                              $(DESTDIR)$(datadir)/game-data-packager/
