@@ -22,6 +22,9 @@ TEST_SUITE += rott spear-of-destiny wolf3d heretic
 png       := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
 png       += $(patsubst ./data/%.svg,./out/%.png,$(wildcard ./data/*.svg))
 png       += out/memento-mori.png
+# We deliberately don't compress and install memento-mori{,-2}.svg because
+# they use features that aren't supported by librsvg, so they'd look wrong
+# in all GTK-based environments.
 svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(filter-out ./data/memento-mori-2.svg,$(wildcard ./data/*.svg)))
 in_yaml   := $(wildcard ./data/*.yaml)
 json      := $(patsubst ./data/%.yaml,./out/vfs/%.json,$(in_yaml))
@@ -138,7 +141,6 @@ install:
 	install -m0644 out/*.copyright                         $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.png                               $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/*.svgz                              $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/*.svg                               $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/bash_completion                     $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/changelog.gz                        $(DESTDIR)$(datadir)/game-data-packager/
 	install -m0644 out/copyright                           $(DESTDIR)$(datadir)/game-data-packager/
