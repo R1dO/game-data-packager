@@ -10,6 +10,8 @@ game-data-packager (46) UNRELEASED; urgency=medium
   * Internal changes:
     - switch to debhelper 10, no change needed
     - manual-check: move tmp/ to out/manual-check/ [smcv]
+    - mark the out/ directory with CACHEDIR.TAG to make it easy to avoid
+      backups [smcv]
 
  -- Simon McVittie <smcv@debian.org>  Fri, 01 Jul 2016 10:30:08 +0100
 

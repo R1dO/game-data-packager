@@ -38,11 +38,17 @@ default: $(png) $(svgz) $(json) $(copyright) $(dot_in) \
       out/bash_completion out/changelog.gz out/copyright \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
-out/%: data/%
+out/CACHEDIR.TAG:
 	@mkdir -p out
+	( echo "Signature: 8a477f597d28d17""2789f06886806bc55"; \
+	echo "# This file marks this directory to not be backed up."; \
+	echo "# For information about cache directory tags, see:"; \
+	echo "#	http://www.brynosaurus.com/cachedir/" ) > $@
+
+out/%: data/% out/CACHEDIR.tag
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
-out/vfs/%.json: data/%.yaml tools/compile_yaml.py
+out/vfs/%.json: data/%.yaml tools/compile_yaml.py out/CACHEDIR.tag
 	@mkdir -p out/vfs
 	$(PYTHON) tools/compile_yaml.py $< $@
 
@@ -55,48 +61,39 @@ out/vfs.zip: $(json)
 	cd out/vfs && ls -1 | LC_ALL=C sort | \
 		env TZ=UTC zip ../vfs.zip -9 -X -q -@
 
-out/bash_completion: $(in_yaml)
-	@mkdir -p out
+out/bash_completion: $(in_yaml) out/CACHEDIR.TAG
 	$(PYTHON) tools/bash_completion.py > ./out/bash_completion
 	chmod 0644 ./out/bash_completion
 
-out/changelog.gz: debian/changelog
-	@mkdir -p out
+out/changelog.gz: debian/changelog out/CACHEDIR.TAG
 	gzip -nc9 debian/changelog > ./out/changelog.gz
 	chmod 0644 ./out/changelog.gz
 
-out/game-data-packager: run
-	@mkdir -p out
+out/game-data-packager: run out/CACHEDIR.TAG
 	install run out/game-data-packager
 
-out/%.svg: data/%.svg
-	@mkdir -p out
+out/%.svg: data/%.svg out/CACHEDIR.TAG
 	inkscape --export-plain-svg=$@ $<
 
-out/memento-mori.svg: data/memento-mori-2.svg
-	@mkdir -p out
+out/memento-mori.svg: data/memento-mori-2.svg out/CACHEDIR.TAG
 	inkscape --export-plain-svg=$@ --export-id=layer1 --export-id-only $<
 
 out/memento-mori.png: out/memento-mori.svg
 	inkscape --export-png=$@ -w96 -h96 $<
 
-out/%.png: data/%.xpm
-	@mkdir -p out
+out/%.png: data/%.xpm out/CACHEDIR.TAG
 	convert $< $@
 
-out/%.png: data/%.svg
-	@mkdir -p out
+out/%.png: data/%.svg out/CACHEDIR.TAG
 	inkscape --export-png=$@ -w96 -h96 $<
 
 out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
 out/launch-%.json: out/launch-%.yaml
-	@mkdir -p out
 	$(PYTHON) tools/yaml2json.py $< $@
 
-out/%: runtime/%.in
-	@mkdir -p out
+out/%: runtime/%.in out/CACHEDIR.TAG
 	PYTHONPATH=. $(PYTHON) tools/expand_vars.py $< $@
 
 clean:
