@@ -178,12 +178,12 @@ endif
 
 # Requires additional setup, so not part of "make check"
 manual-check:
-	install -d tmp/
+	install -d out/manual-check/
 	for game in $(TEST_SUITE); do \
 	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=. \
-		python3 -m game_data_packager.command_line -d ./tmp --no-compress $$game --no-search || exit $$?; \
+		python3 -m game_data_packager.command_line -d ./out/manual-check --no-compress $$game --no-search || exit $$?; \
 	done
-	rm -fr tmp/
+	rm -fr out/manual-check/
 
 html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
