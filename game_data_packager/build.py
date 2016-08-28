@@ -178,6 +178,9 @@ def iter_fat_mounts(folder):
         for line in mounts.readlines():
             mount, vfstype = line.split(' ')[1:3]
             if vfstype in ('fat', 'vfat', 'ntfs'):
+                path = os.path.join(mount, 'Program Files (x86)', folder)
+                if os.path.isdir(path):
+                    yield path
                 path = os.path.join(mount, 'Program Files', folder)
                 if os.path.isdir(path):
                     yield path
@@ -2479,8 +2482,11 @@ class PackagingTask(object):
                 os.path.expanduser('~/.steam'),
                 os.path.join(os.environ.get('XDG_DATA_HOME', os.path.expanduser('~/.local/share')),
                     'wineprefixes/steam/drive_c/Program Files/Steam'),
+                os.path.join(os.environ.get('XDG_DATA_HOME', os.path.expanduser('~/.local/share')),
+                    'wineprefixes/steam/drive_c/Program Files (x86)/Steam'),
                 os.path.expanduser('~/Steam'),
                 os.path.expanduser('~/.wine/drive_c/Program Files/Steam'),
+                os.path.expanduser('~/.wine/drive_c/Program Files (x86)/Steam'),
                 os.path.expanduser('~/.PlayOnLinux/wineprefix/Steam/drive_c/Program Files/Steam'),
                 ) + tuple(iter_fat_mounts('Steam')):
             if not os.path.isdir(prefix):
