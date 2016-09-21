@@ -7,8 +7,9 @@ game-data-packager (46) UNRELEASED; urgency=medium
       architectures [smcv]
   * Enhancements and bug fixes:
     - also search for games assets in 'Program Files (x86)' directories
+      [adetiste]
   * Internal changes:
-    - switch to debhelper 10, no change needed
+    - switch to debhelper 10, no change needed [adetiste]
     - manual-check: move tmp/ to out/manual-check/ [smcv]
     - mark the out/ directory with CACHEDIR.TAG to make it easy to avoid
       backups [smcv]
