@@ -6,14 +6,14 @@ genre: Simulation
 
 packages:
   transport-tycoon-deluxe-data:
-    install_to: usr/share/games/openttd/baseset
+    install_to: $assets/openttd/baseset
     install:
     - assets
 
   transport-tycoon-deluxe-music:
     longname: Transport Tycoon Deluxe (music)
     expansion_for: transport-tycoon-deluxe-data
-    install_to: usr/share/games/openttd/baseset
+    install_to: $assets/openttd/baseset
     install:
     - musics
 

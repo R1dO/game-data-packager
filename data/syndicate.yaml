@@ -8,9 +8,9 @@ genre: Tactical
 
 packages:
   syndicate-data:
-    install_to: usr/share/games/freesynd/data
+    install_to: $assets/freesynd/data
     # this should be engine-agnostic:
-    #  usr/share/games/syndicate
+    #  $assets/syndicate
     origin:
       path: "Syndicate (1993)"
     url_misc: https://www.origin.com/en-be/store/buy/syndicate-plus-origin/pc-download/base-game/standard-edition

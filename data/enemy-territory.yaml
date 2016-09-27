@@ -14,7 +14,7 @@ help_text: |
 
 packages:
   enemy-territory-data:
-    install_to: usr/share/games/etlegacy
+    install_to: $assets/etlegacy
     install:
     - etmain/pak0.pk3
     - etmain/pak1.pk3

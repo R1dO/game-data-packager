@@ -10,7 +10,7 @@ packages:
     demo_for: descent1-data
     mutually_exclusive: True
     conflicts: descent1-full-data
-    install_to: usr/share/games/d1x-rebirth/
+    install_to: $assets/d1x-rebirth/
     copyright_notice: |
       DESCENT is a trademark of Interplay Productions, Inc.
       .
@@ -43,7 +43,7 @@ packages:
     steam:
       id: 273570
       path: common/Descent
-    install_to: usr/share/games/d1x-rebirth/
+    install_to: $assets/d1x-rebirth/
     install:
     - descent.hog
     - descent.pig

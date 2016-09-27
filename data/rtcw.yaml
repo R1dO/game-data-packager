@@ -36,7 +36,7 @@ packages:
       game: return_to_castle_wolfenstein_game
     # GDP version will be suffixed to this, e.g. : 1.42b+39
     version: 1.42b
-    install_to: usr/share/games/rtcw
+    install_to: $assets/rtcw
     install:
     - main/autoexec.cfg
     - main/mp_pak0.pk3
@@ -72,7 +72,7 @@ packages:
     symlinks:
       usr/lib/rtcw/main/sp_pakG.pk3:
         $install_to/main/sp_pakG.pk3
-    install_to: usr/share/games/rtcw
+    install_to: $assets/rtcw
     install:
     - main/autoexec.cfg
     - main/mp_pak0.pk3
@@ -104,7 +104,7 @@ packages:
     mutually_exclusive: True
     better_version: rtcw-de-data
     version: 1.42b
-    install_to: usr/share/games/rtcw
+    install_to: $assets/rtcw
     install:
     - main/autoexec.cfg
     - main/mp_pak0.pk3
@@ -134,7 +134,7 @@ packages:
     provides: rtcw-data
     mutually_exclusive: True
     version: 1.42b
-    install_to: usr/share/games/rtcw
+    install_to: $assets/rtcw
     install:
     - main/mp_pak0.pk3
     - main/mp_pak1.pk3
@@ -162,7 +162,7 @@ packages:
     provides: rtcw-data
     mutually_exclusive: True
     version: 1.42b
-    install_to: usr/share/games/rtcw
+    install_to: $assets/rtcw
     install:
     - main/mp_pak0.pk3
     - main/mp_pak1.pk3
@@ -192,7 +192,7 @@ packages:
     provides: rtcw-data
     mutually_exclusive: True
     version: 1.42b
-    install_to: usr/share/games/rtcw
+    install_to: $assets/rtcw
     install:
     - main/mp_pak0.pk3
     - main/mp_pak1.pk3

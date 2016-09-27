@@ -20,7 +20,7 @@ missing_langs: [de,fr,ja]
 
 packages:
   arx-fatalis-en-data:
-    install_to: usr/share/games/arx
+    install_to: $assets/arx
     replaces: arx-fatalis-demo-data
     provides: arx-fatalis-data
     mutually_exclusive: True
@@ -36,7 +36,7 @@ packages:
     - documentation
 
   arx-fatalis-demo-en-data:
-    install_to: usr/share/games/arx
+    install_to: $assets/arx
     demo_for: arx-fatalis-en-data
     conflicts: arx-fatalis-data
     provides: arx-fatalis-demo-data
@@ -50,7 +50,7 @@ packages:
 
   arx-fatalis-demo-fr-data:
     lang: fr
-    install_to: usr/share/games/arx
+    install_to: $assets/arx
     # XXX need to package arx-fatalis-fr-data
     demo_for: arx-fatalis-en-data
     conflicts: arx-fatalis-data
@@ -65,7 +65,7 @@ packages:
 
   arx-fatalis-demo-de-data:
     lang: de
-    install_to: usr/share/games/arx
+    install_to: $assets/arx
     # XXX need to package arx-fatalis-de-data
     demo_for: arx-fatalis-en-data
     conflicts: arx-fatalis-data
@@ -80,7 +80,7 @@ packages:
 
   arx-fatalis-demo-ja-data:
     lang: ja
-    install_to: usr/share/games/arx
+    install_to: $assets/arx
     # XXX need to package arx-fatalis-ja-data
     demo_for: arx-fatalis-en-data
     conflicts: arx-fatalis-data

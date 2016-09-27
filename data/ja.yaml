@@ -45,7 +45,7 @@ packages:
     DISABLED: https://github.com/JACoders/OpenJK/issues/618
     engine: openjk-academy
     demo_for: jedi-academy-data
-    install_to: usr/share/games/jedi-academy-demo/base
+    install_to: $assets/jedi-academy-demo/base
     install:
       - demo data
     license:
@@ -75,7 +75,7 @@ packages:
        * "Destroyer" vehicle combat map for Siege mode
       .
     expansion_for: jedi-academy-data
-    install_to: usr/share/games/jedi-academy
+    install_to: $assets/jedi-academy
     symlinks:
       usr/lib/openjk/JediAcademy/base/bonus.pk3: $install_to/base/bonus.pk3
       usr/lib/openjk/JediAcademy/base/siege_destroyer.pk3: $install_to/base/siege_destroyer.pk3

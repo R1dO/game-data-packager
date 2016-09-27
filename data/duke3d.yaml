@@ -12,7 +12,7 @@ help_text: |
 
 packages:
   duke3d-shareware:
-    install_to: usr/share/games/eduke32
+    install_to: $assets/eduke32
     demo_for: duke3d-data
     mutually_exclusive: True
     version: '1.3d'
@@ -24,7 +24,7 @@ packages:
     - license.txt?demo
 
   duke3d-data:
-    install_to: usr/share/games/eduke32
+    install_to: $assets/eduke32
     steam:
       id: 225140
       path: common/Duke Nukem 3D/gameroot/classic

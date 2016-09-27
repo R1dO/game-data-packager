@@ -19,7 +19,7 @@ packages:
     - dune2-v17-us-data
     - dune2-v17-eu-data
     - dune2-v17-hs-data
-    install_to: usr/share/games/dunelegacy
+    install_to: $assets/dunelegacy
     install:
     - ATRE.PAK?demo
     - DUNE.PAK?demo
@@ -33,7 +33,7 @@ packages:
     longname: "Dune II (v1.00/US)"
     provides: dune2-data
     conflicts: dune2-data
-    install_to: usr/share/games/dunelegacy
+    install_to: $assets/dunelegacy
     install:
     - ATRE.PAK
     - DUNE.PAK
@@ -53,7 +53,7 @@ packages:
     longname: "Dune II (v1.07/US)"
     provides: dune2-data
     mutually_exclusive: True
-    install_to: usr/share/games/dunelegacy
+    install_to: $assets/dunelegacy
     install:
     - ATRE.PAK
     - DUNE.PAK?us_1.07
@@ -74,7 +74,7 @@ packages:
     langs: [en,de,fr]
     provides: dune2-data
     mutually_exclusive: True
-    install_to: usr/share/games/dunelegacy
+    install_to: $assets/dunelegacy
     install:
     - ATRE.PAK
     - DUNE.PAK?eu_1.07
@@ -98,7 +98,7 @@ packages:
     langs: [en,de,fr]
     provides: dune2-data
     mutually_exclusive: True
-    install_to: usr/share/games/dunelegacy
+    install_to: $assets/dunelegacy
     install:
     - ATRE.PAK
     - DUNE.PAK?hs_1.07

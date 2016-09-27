@@ -27,7 +27,7 @@ packages:
     steam:
       id: 9070
       path: common/Doom 3
-    install_to: usr/share/games/doom3
+    install_to: $assets/doom3
     install:
       - d3xp data
       - d3xp patch
@@ -39,7 +39,7 @@ packages:
     longname: 'Classic Doom 3 (mod)'
     copyright: © 2007 id Software
     expansion_for: doom3-data
-    install_to: usr/share/games/doom3
+    install_to: $assets/doom3
     install:
       - Classic Doom data
     optional:
@@ -53,7 +53,7 @@ packages:
     longname: 'Classic Doom 3 (devkit)'
     copyright: © 2007 id Software
     expansion_for: doom3-classic-data
-    install_to: usr/share/games/doom3
+    install_to: $assets/doom3
     install:
       - Classic Doom source
 

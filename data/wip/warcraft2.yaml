@@ -13,7 +13,7 @@ packages:
   warcraft2-en-data:
     provides: warcraft2-data
     mutually_exclusive: True
-    install_to: usr/share/games/stratagus/wargus
+    install_to: $assets/stratagus/wargus
     install:
     - shared assets
     - english version
@@ -23,7 +23,7 @@ packages:
     provides: warcraft2-data
     mutually_exclusive: True
     lang: fr
-    install_to: usr/share/games/stratagus/wargus
+    install_to: $assets/stratagus/wargus
     install:
     - shared assets
     - french version
@@ -35,13 +35,13 @@ packages:
   # dirrectly with Fluidsynth
   warcraft2-music:
     expansion_for: warcraft2-data
-    install_to: usr/share/games/stratagus/wargus/music
+    install_to: $assets/stratagus/wargus/music
     install:
     - musics
 
   warcraft2-video:
     expansion_for: warcraft2-data
-    install_to: usr/share/games/stratagus/wargus/videos
+    install_to: $assets/stratagus/wargus/videos
     install:
     - videos
 

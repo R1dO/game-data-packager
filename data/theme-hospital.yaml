@@ -46,7 +46,7 @@ packages:
     - levels/full00.sam
 
   theme-hospital-demo-data:
-    install_to: usr/share/games/theme-hospital
+    install_to: $assets/theme-hospital
     demo_for: theme-hospital-data
     mutually_exclusive: True
     conflicts: theme-hospital-full-data

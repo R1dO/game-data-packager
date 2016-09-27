@@ -23,7 +23,7 @@ packages:
   hexen2-demo-data:
     demo_for: hexen2-data
     mutually_exclusive: True
-    install_to: usr/share/games/hexen2
+    install_to: $assets/hexen2
     install:
     - data1/pak0.pak_demo
     license:
@@ -41,14 +41,14 @@ packages:
   hexen2-portals-data:
     longname: "Hexen II Mission Pack: Portal of Praevus"
     expansion_for: hexen2-data
-    install_to: usr/share/games/hexen2
+    install_to: $assets/hexen2
     install:
     - portals/pak3.pak
 
   hexen2-hexenworld-data:
     longname: "Hexen II: HexenWorld"
     expansion_for: hexen2-data
-    install_to: usr/share/games/hexen2
+    install_to: $assets/hexen2
     install:
     - hw/pak4.pak
 

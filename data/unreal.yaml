@@ -257,10 +257,12 @@ packages:
       - Unreal 227i Gold binaries
       - Help/lin_convenience_libs.tar.bz2
     symlinks:
+      # FIXME: ideally $gbpdatadir/gdp-launcher or something, but that
+      # would require gdp to be aware of where it was going to be installed
       $bindir/unreal-gold:
-        usr/share/games/game-data-packager/gdp-launcher
+        $assets/game-data-packager/gdp-launcher
       usr/share/applications/unreal-gold.desktop:
-        usr/share/games/game-data-packager/unreal-gold.desktop
+        $assets/game-data-packager/unreal-gold.desktop
 
   unreal-libfmod:
     version: 3.75+227i
@@ -333,9 +335,9 @@ packages:
     doc:
       - Unreal classic documentation
     symlinks:
-      $bindir/unreal: usr/share/games/game-data-packager/gdp-launcher
+      $bindir/unreal: $assets/game-data-packager/gdp-launcher
       usr/share/applications/unreal.desktop:
-        usr/share/games/game-data-packager/unreal.desktop
+        $assets/game-data-packager/unreal.desktop
 
 files:
   setup_unreal_gold_2.0.0.6.exe:

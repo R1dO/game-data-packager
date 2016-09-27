@@ -39,7 +39,7 @@ packages:
     license:
     - licinfo.txt?shareware
     - slicnse.txt
-    install_to: usr/share/games/quake
+    install_to: $assets/quake
 
   quake-registered:
     provides: quake-data
@@ -60,7 +60,7 @@ packages:
     - licinfo.txt?101_cd
     - licinfo.txt?gog
     - rlicnse.txt?101_cd
-    install_to: usr/share/games/quake
+    install_to: $assets/quake
 
   quake-armagon:
     aliases: [armagon, hipnotic, mp1, "1"]
@@ -78,7 +78,7 @@ packages:
     - armagon/manual.txt
     license:
     - license.txt?mp12_cd
-    install_to: usr/share/games/quake
+    install_to: $assets/quake
 
   quake-dissolution:
     aliases: [dissolution, eternity, rogue, mp2, "2"]
@@ -98,7 +98,7 @@ packages:
     - eternity/manual.txt
     license:
     - license.txt?mp12_cd
-    install_to: usr/share/games/quake
+    install_to: $assets/quake
 
   quake-dopa:
     aliases: [ep5]
@@ -107,7 +107,7 @@ packages:
     longname: "Quake Episode 5: Dimensions of the Past"
     wiki: "Episode_5:_Dimensions_of_the_Past"
     copyright: © 2016 MachineGames
-    install_to: usr/share/games/quake/dopa
+    install_to: $assets/quake/dopa
     install:
     - pak0.pak?dopa
     - AUTOEXEC.CFG?dopa
@@ -121,7 +121,7 @@ packages:
     copyright: © 1996 id Software
     aliases: [music]
     expansion_for: quake-registered
-    install_to: usr/share/games/quake
+    install_to: $assets/quake
     copyright_notice: |
       This package contains the Quake soundtrack by Trent Reznor,
       copied from the CD-ROM and encoded in Ogg Vorbis.
@@ -143,7 +143,7 @@ packages:
     copyright: © 1997 Hipnotic Interactive
     aliases: [mp1-music]
     expansion_for: quake-armagon
-    install_to: usr/share/games/quake
+    install_to: $assets/quake
     copyright_notice: |
       This package contains the Quake - Scourge of Armagon (Mission Pack 1)
       soundtrack by Jeehun Hwang and Rob Patterson, copied from the CD-ROM and
@@ -169,7 +169,7 @@ packages:
     copyright: © 1997 Hipnotic Interactive
     aliases: [mp2-music]
     expansion_for: quake-dissolution
-    install_to: usr/share/games/quake
+    install_to: $assets/quake
     copyright_notice: |
       This package contains the Quake - Dissolution of Eternity (Mission Pack 2)
       soundtrack by Jeehun Hwang and Rob Patterson, copied from the CD-ROM and

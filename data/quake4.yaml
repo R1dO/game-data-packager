@@ -48,13 +48,13 @@ packages:
     install:
       - patch 1.4.2 binaries
     symlinks:
-      usr/lib/quake4/q4base: usr/share/games/quake4/q4base
-      usr/lib/quake4/q4mp: usr/share/games/quake4/q4mp
+      usr/lib/quake4/q4base: $assets/quake4/q4base
+      usr/lib/quake4/q4mp: $assets/quake4/q4mp
       # The bundled implementation isn't great, and xdg-open is
       # binary-compatible
       usr/lib/quake4/openurl.sh: usr/bin/xdg-open
-      usr/lib/quake4/version.info: usr/share/games/quake4/version.info
-      usr/lib/quake4/q4icon.bmp: usr/share/games/quake4/q4icon.bmp
+      usr/lib/quake4/version.info: $assets/quake4/version.info
+      usr/lib/quake4/q4icon.bmp: $assets/quake4/q4icon.bmp
 
     license:
       - EULA.txt?steam
@@ -93,7 +93,7 @@ packages:
     version: "1.4.2"
     provides: quake4-any-data
     replaces: quake4-any-data
-    install_to: usr/share/games/quake4
+    install_to: $assets/quake4
     # this is not actually dubbed, just censored
     langs:
       - en

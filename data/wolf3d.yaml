@@ -19,7 +19,7 @@ packages:
     - wolf3d-v14-alt-data
     - wolf3d-v14-apogee-data
     replaces: wolf3d-data-wl1
-    install_to: usr/share/games/wolf3d
+    install_to: $assets/wolf3d
     install:
     - audiohed.wl1
     - audiot.wl1
@@ -50,7 +50,7 @@ packages:
        * Episode 6: Confrontation
     provides: wolf3d-data
     mutually_exclusive: True
-    install_to: usr/share/games/wolf3d
+    install_to: $assets/wolf3d
     install:
     - audiohed.wl6?1.0
     - audiot.wl6?1.0
@@ -79,7 +79,7 @@ packages:
       fedora: wolf4sdl-registered-id
     install_to:
       fedora: usr/share/wolf3d/registered-id
-      generic: usr/share/games/wolf3d
+      generic: $assets/wolf3d
     steam:
       id: 2270
       path: common/Wolfenstein 3D
@@ -116,7 +116,7 @@ packages:
         wolf4sdl-registered-id
     install_to:
       fedora: usr/share/wolf3d/registered-id
-      generic: usr/share/games/wolf3d
+      generic: $assets/wolf3d
     install:
     - audiohed.wl6
     - audiot.wl6
@@ -145,7 +145,7 @@ packages:
       fedora: wolf4sdl-registered-apogee
     install_to:
       fedora: usr/share/wolf3d/registered-apogee
-      generic: usr/share/games/wolf3d
+      generic: $assets/wolf3d
     install:
     - audiohed.wl6
     - audiot.wl6

@@ -21,7 +21,7 @@ try_repack_from: [usr/share/games/freespace2-open/packages/freespace2-data-gog/d
 copyright: © 1999 Volition, Inc.
 packages:
   freespace2-data:
-    install_to: usr/share/games/freespace2-open
+    install_to: $assets/freespace2-open
     replaces:
       - freespace2-data-gog
       - freespace2-data-volition
@@ -53,7 +53,7 @@ packages:
   freespace2-orig-video:
     expansion_for: freespace2-data
     longname: "FreeSpace 2 - cutscenes in original format"
-    install_to: usr/share/games/freespace2-open/data/movies
+    install_to: $assets/freespace2-open/data/movies
     install:
     - INTRO.MVE
     - original movies
@@ -61,7 +61,7 @@ packages:
   freespace2-ogg-video:
     expansion_for: freespace2-data
     longname: "FreeSpace 2 - cutscenes in OGG format"
-    install_to: usr/share/games/freespace2-open/data/movies
+    install_to: $assets/freespace2-open/data/movies
     install:
     - ogg movies
 

@@ -50,7 +50,7 @@ packages:
     license:
     - patch 1.4 to 1.5 - licenses
     symlinks:
-      usr/lib/etqw/base: usr/share/games/etqw/base
+      usr/lib/etqw/base: $assets/etqw/base
       # The bundled implementation isn't great, and xdg-open is
       # binary-compatible
       usr/lib/etqw/openurl.sh: usr/bin/xdg-open

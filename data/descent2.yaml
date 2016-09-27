@@ -8,7 +8,7 @@ genre: Flight simulator
 packages:
   descent2-demo-data:
     demo_for: descent2-data
-    install_to: usr/share/games/d2x-rebirth
+    install_to: $assets/d2x-rebirth
     install:
     - demo assets
 
@@ -21,7 +21,7 @@ packages:
       id: 273580
       path: "common/Descent 2"
     replaces: descent2-full-data
-    install_to: usr/share/games/d2x-rebirth
+    install_to: $assets/d2x-rebirth
     install:
     - full game assets
     optional:
