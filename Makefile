@@ -117,6 +117,7 @@ clean:
 	rm -rf game_data_packager/__pycache__
 	rm -rf game_data_packager/games/__pycache__
 	rm -rf tools/__pycache__
+	rm -f out/CACHEDIR.TAG
 	test ! -d out || rmdir out
 
 check:
