@@ -45,10 +45,10 @@ out/CACHEDIR.TAG:
 	echo "# For information about cache directory tags, see:"; \
 	echo "#	http://www.brynosaurus.com/cachedir/" ) > $@
 
-out/%: data/% out/CACHEDIR.tag
+out/%: data/% out/CACHEDIR.TAG
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
-out/vfs/%.json: data/%.yaml tools/compile_yaml.py out/CACHEDIR.tag
+out/vfs/%.json: data/%.yaml tools/compile_yaml.py out/CACHEDIR.TAG
 	@mkdir -p out/vfs
 	$(PYTHON) tools/compile_yaml.py $< $@
 
