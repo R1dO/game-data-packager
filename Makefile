@@ -1,6 +1,7 @@
 GDP_MIRROR ?= localhost
 bindir := /usr/games
 datadir := /usr/share/games
+pkgdatadir := ${datadir}/game-data-packager
 PYTHON := python3
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
@@ -133,30 +134,28 @@ install:
 	mkdir -p $(DESTDIR)$(bindir)
 	install -m0755 out/game-data-packager                  $(DESTDIR)$(bindir)
 
-	mkdir -p $(DESTDIR)$(datadir)/game-data-packager
-	cp -ar game_data_packager/                             $(DESTDIR)$(datadir)/game-data-packager/
-	python3 -m game_data_packager.version $(RELEASE) >     $(DESTDIR)$(datadir)/game-data-packager/game_data_packager/version.py
-	install -m0644 out/*.copyright                         $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/*.png                               $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/*.svgz                              $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/bash_completion                     $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/changelog.gz                        $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/copyright                           $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/vfs.zip                             $(DESTDIR)$(datadir)/game-data-packager/
+	mkdir -p $(DESTDIR)$(pkgdatadir)
+	cp -ar game_data_packager/                             $(DESTDIR)$(pkgdatadir)/
+	python3 -m game_data_packager.version $(RELEASE) >     $(DESTDIR)$(pkgdatadir)/game_data_packager/version.py
+	install -m0644 out/*.copyright                         $(DESTDIR)$(pkgdatadir)/
+	install -m0644 out/*.png                               $(DESTDIR)$(pkgdatadir)/
+	install -m0644 out/*.svgz                              $(DESTDIR)$(pkgdatadir)/
+	install -m0644 out/bash_completion                     $(DESTDIR)$(pkgdatadir)/
+	install -m0644 out/changelog.gz                        $(DESTDIR)$(pkgdatadir)/
+	install -m0644 out/copyright                           $(DESTDIR)$(pkgdatadir)/
+	install -m0644 out/vfs.zip                             $(DESTDIR)$(pkgdatadir)/
 
-	install runtime/launcher.py                            $(DESTDIR)$(datadir)/game-data-packager/gdp-launcher
-	install -m0644 out/*.desktop                           $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(datadir)/game-data-packager/
-	install -m0644 out/launch-*.json                       $(DESTDIR)$(datadir)/game-data-packager/
+	install runtime/launcher.py                            $(DESTDIR)$(pkgdatadir)/gdp-launcher
+	install -m0644 out/*.desktop                           $(DESTDIR)$(pkgdatadir)/
+	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(pkgdatadir)/
+	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(pkgdatadir)/
+	install -m0644 out/launch-*.json                       $(DESTDIR)$(pkgdatadir)/
 	install -d                                             $(DESTDIR)/etc/apparmor.d/
 	install -m0644 etc/apparmor.d/*                        $(DESTDIR)/etc/apparmor.d/
 
 	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
 	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/
-ifneq ($(datadir),/usr/share/games)
-	sed -i 's#/usr/share/games#$(datadir)#g' $(DESTDIR)/usr/share/bash-completion/completions/game-data-packager
-endif
+	sed -i 's#pkgdatadir=.*#pkgdatadir=$(pkgdatadir)#g' $(DESTDIR)/usr/share/bash-completion/completions/game-data-packager
 
 	mkdir -p $(DESTDIR)/usr/share/man/man6/
 	mkdir -p $(DESTDIR)/usr/share/man/fr/man6/

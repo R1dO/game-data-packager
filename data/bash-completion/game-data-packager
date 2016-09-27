@@ -1,6 +1,10 @@
 _game_data_packager()
 {
-    [ -e /usr/share/games/game-data-packager ] || return
+    local pkgdatadir
+    # edited by Makefile
+    pkgdatadir=/usr/share/games/game-data-packager
+
+    [ -e "$pkgdatadir" ] || return
 
     # FIXME: currently only works 100% correctly when
     #        GAME is the first argument
@@ -22,7 +26,7 @@ _game_data_packager()
       COMPREPLY=( $( compgen -W "su sudo pkexec" -- $cur ) )
     elif [ "$prev" == '--package' ]
     then
-      [ -e /usr/share/games/game-data-packager/bash_completion ] || return
+      [ -e "$pkgdatadir"/bash_completion ] || return
       local line packages
       while read line
       do
@@ -31,7 +35,7 @@ _game_data_packager()
               read packages
               break
           fi
-      done < /usr/share/games/game-data-packager/bash_completion
+      done < "$pkgdatadir"/bash_completion
       COMPREPLY=( $( compgen -W "$packages" -- $cur ) )
     elif [ $COMP_CWORD -eq 1 ]
     then
@@ -40,7 +44,7 @@ _game_data_packager()
       do
           supported="$supported $line"
           read
-      done < /usr/share/games/game-data-packager/bash_completion
+      done < "$pkgdatadir"/bash_completion
       COMPREPLY=( $( compgen -W "make-template gog steam $supported" -- $cur ) )
     else
       COMPREPLY=()
