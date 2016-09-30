@@ -103,7 +103,7 @@ class RpmPackaging(PackagingSystem):
 #      As install_packages() needs root, we need to use the 'dnf' pgm
 
 class DnfPackaging(RpmPackaging):
-    LICENSEDIR = 'usr/share/licenses'
+    LICENSEDIR = '/usr/share/licenses'
     INSTALL_CMD = ['dnf', 'install']
     PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
@@ -150,8 +150,8 @@ class DnfPackaging(RpmPackaging):
                 gain_root=gain_root)
 
 class ZypperPackaging(RpmPackaging):
-    DOCDIR = 'usr/share/doc/packages'
-    LICENSEDIR = 'usr/share/doc/packages'
+    DOCDIR = '/usr/share/doc/packages'
+    LICENSEDIR = '/usr/share/doc/packages'
     INSTALL_CMD = ['zypper', 'install']
     PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',
@@ -187,8 +187,8 @@ class ZypperPackaging(RpmPackaging):
                 gain_root=gain_root)
 
 class UrpmiPackaging(RpmPackaging):
-    BINDIR = 'usr/games'
-    ASSETS = 'usr/share/games'
+    BINDIR = '/usr/games'
+    ASSETS = '/usr/share/games'
     INSTALL_CMD = ['urpmi']
     PACKAGE_MAP = {
                   'dpkg-deb': 'dpkg',

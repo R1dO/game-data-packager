@@ -8,8 +8,8 @@ required_files:
 base_directories:
   - /usr/lib/unreal-classic
   - /usr/lib/unreal
-  - /$assets/unreal
-  - /$assets/unreal-ut99-shared
+  - $assets/unreal
+  - $assets/unreal-ut99-shared
 working_directory: $${XDG_DATA_HOME}/unreal/System
 library_path: ["."]
 argv: [./UnrealLinux.bin]
@@ -28,22 +28,22 @@ edit_unreal_ini:
       - section: Core.System
         append_unique:
           - Paths=/usr/lib/unreal-classic/System/*.u
-          - Paths=/$assets/unreal/System/*.u
+          - Paths=$assets/unreal/System/*.u
 
           - Paths=/usr/lib/unreal-classic/Maps/*.unr
-          - Paths=/$assets/unreal/Maps/*.unr
+          - Paths=$assets/unreal/Maps/*.unr
 
           - Paths=/usr/lib/unreal-classic/Textures/*.utx
-          - Paths=/$assets/unreal/Textures/*.utx
-          - Paths=/$assets/unreal-ut99-shared/Textures/*.utx
+          - Paths=$assets/unreal/Textures/*.utx
+          - Paths=$assets/unreal-ut99-shared/Textures/*.utx
 
           - Paths=/usr/lib/unreal-classic/Sounds/*.uax
-          - Paths=/$assets/unreal/Sounds/*.uax
-          - Paths=/$assets/unreal-ut99-shared/Sounds/*.uax
+          - Paths=$assets/unreal/Sounds/*.uax
+          - Paths=$assets/unreal-ut99-shared/Sounds/*.uax
 
           - Paths=/usr/lib/unreal-classic/Music/*.umx
-          - Paths=/$assets/unreal/Music/*.umx
+          - Paths=$assets/unreal/Music/*.umx
 
           - Paths=/usr/lib/unreal-classic/Meshes/*.usm
-          - Paths=/$assets/unreal/Meshes/*.usm
+          - Paths=$assets/unreal/Meshes/*.usm
 ...

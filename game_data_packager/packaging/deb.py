@@ -33,8 +33,8 @@ from ..util import (check_output, mkdir_p, run_as_root)
 logger = logging.getLogger(__name__)
 
 class DebPackaging(PackagingSystem):
-    BINDIR = 'usr/games'
-    ASSETS = 'usr/share/games'
+    BINDIR = '/usr/games'
+    ASSETS = '/usr/share/games'
     CHECK_CMD = 'lintian'
     INSTALL_CMD = ['apt-get', 'install']
     PACKAGE_MAP = {

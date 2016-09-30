@@ -34,9 +34,10 @@ class MorrowindTask(PackagingTask):
             return False
 
         install_to = self.packaging.substitute(package.install_to,
-                                               package.name).lstrip('/')
+                                               package.name)
 
-        datadir = os.path.join(destdir, install_to)
+        datadir = os.path.join(destdir, install_to.strip('/'))
+        assert datadir.startswith(destdir + '/'), (datadir, destdir)
 
         subdir_expected_by_iniimporter = os.path.join(datadir, 'Data Files')
         os.symlink(datadir, subdir_expected_by_iniimporter)
@@ -68,7 +69,7 @@ class MorrowindTask(PackagingTask):
         os.unlink(subdir_expected_by_iniimporter)
 
         with open(cfg, 'a', encoding='utf-8') as f:
-            f.write('data=/%s\n' % install_to)
+            f.write('data=%s\n' % os.path.join('/', install_to))
 
         # then user needs to do this:
         #

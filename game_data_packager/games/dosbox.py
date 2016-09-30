@@ -62,9 +62,9 @@ class DosboxTask(PackagingTask):
         super(DosboxTask, self).fill_extra_files(package, destdir)
 
         pgm = package.name[:len(package.name)-5]
-        mkdir_p(os.path.join(destdir, self.packaging.BINDIR))
+        mkdir_p(os.path.join(destdir, self.packaging.BINDIR.strip('/')))
         os.symlink('dosgame',
-                   os.path.join(destdir, self.packaging.BINDIR, pgm))
+                   os.path.join(destdir, self.packaging.BINDIR.strip('/'), pgm))
 
         appdir = os.path.join(destdir, 'usr/share/applications')
         mkdir_p(appdir)
@@ -95,8 +95,8 @@ class DosboxTask(PackagingTask):
         entry['Exe'] = package.main_exe
 
         install_to = self.packaging.substitute(package.install_to,
-                       package.name).lstrip('/')
-        with open(os.path.join(destdir, install_to, 'dosgame.inf'),
+                       package.name)
+        with open(os.path.join(destdir, install_to.strip('/'), 'dosgame.inf'),
                   'w', encoding='utf-8') as output:
              dosgame.write(output, space_around_delimiters=False)
 

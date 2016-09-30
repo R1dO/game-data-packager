@@ -1148,7 +1148,7 @@ class PackagingTask(object):
         return complete
 
     def fill_docs(self, package, destdir, pkgdocdir):
-        copy_to = os.path.join(destdir, pkgdocdir, 'copyright')
+        copy_to = os.path.join(destdir, pkgdocdir.strip('/'), 'copyright')
         for n in (package.name, self.game.shortname):
             copy_from = os.path.join(DATADIR, n + '.copyright')
             if os.path.exists(copy_from):
@@ -1175,7 +1175,7 @@ class PackagingTask(object):
                  if not f.license:
                      continue
                  license_file = f.install_as
-                 licenses.add("/%s/%s/%s" % (self.packaging.LICENSEDIR,
+                 licenses.add(os.path.join('/', self.packaging.LICENSEDIR,
                      package.name, license_file))
                  if os.path.splitext(license_file)[0].lower() == 'license':
                      self.packaging.override_lintian(destdir, package.name,
@@ -1232,12 +1232,12 @@ class PackagingTask(object):
                 o.write('"/usr/share/doc/%s/%s"\n' % (package.name,
                                                       package.only_file))
             elif count_usr == 1:
-                o.write('"/%s/%s"\n' % (install_to, main_wad))
+                o.write('"%s"\n' % os.path.join('/', install_to, main_wad))
             elif len(exts) == 1:
-                o.write('The %s files under "/%s/"\n' %
-                        (list(exts)[0], install_to))
+                o.write('The %s files under "%s/"\n' %
+                        (list(exts)[0], os.path.join('/', install_to)))
             else:
-                o.write('The files under "/%s/"\n' % install_to)
+                o.write('The files under "%s/"\n' % os.path.join('/', install_to))
 
             if count_usr and count_doc:
                 if count_usr == 1:
@@ -1476,10 +1476,10 @@ class PackagingTask(object):
             return False
 
         pkgdocdir = os.path.join(self.packaging.DOCDIR, package.name)
-        dest_pkgdocdir = os.path.join(destdir, pkgdocdir)
+        dest_pkgdocdir = os.path.join(destdir, pkgdocdir.strip('/'))
         mkdir_p(dest_pkgdocdir)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
-                os.path.join(destdir, pkgdocdir, 'changelog.gz'))
+                os.path.join(dest_pkgdocdir, 'changelog.gz'))
 
         self.fill_docs(package, destdir, pkgdocdir)
 
@@ -1511,13 +1511,14 @@ class PackagingTask(object):
                 logger.debug('Found %s at %s', wanted.name, copy_from)
 
                 install_to = self.packaging.substitute(package.install_to,
-                        package.name).lstrip('/')
+                        package.name)
 
                 if wanted.install_to is not None:
                     install_to = self.packaging.substitute(wanted.install_to,
                             package.name, install_to=install_to)
 
-                copy_to = os.path.join(destdir, install_to, install_as)
+                copy_to = os.path.join(destdir, install_to.strip('/'), install_as)
+                assert copy_to.startswith(destdir + '/'), (copy_to, destdir)
                 copy_to_dir = os.path.dirname(copy_to)
                 logger.debug('Copying to %s', copy_to)
                 if not os.path.isdir(copy_to_dir):
@@ -1532,11 +1533,11 @@ class PackagingTask(object):
                 else:
                     os.chmod(copy_to, 0o644)
 
-                fullname = os.path.join(install_to, install_as)
+                fullname = os.path.join(install_to, install_as).strip('/')
                 package.md5sums[fullname] = md5
 
         install_to = self.packaging.substitute(package.install_to,
-                package.name).lstrip('/')
+                package.name)
 
         for symlink, real_file in package.symlinks.items():
             symlink = self.packaging.substitute(symlink, package.name,
@@ -1544,8 +1545,8 @@ class PackagingTask(object):
             real_file = self.packaging.substitute(real_file, package.name,
                     install_to=install_to)
 
-            symlink = symlink.lstrip('/')
-            real_file = real_file.lstrip('/')
+            symlink = symlink.strip('/')
+            real_file = real_file.strip('/')
 
             toplevel, rest = symlink.split('/', 1)
             if real_file.startswith(toplevel + '/'):
@@ -1571,7 +1572,8 @@ class PackagingTask(object):
             for i, copy_from in self.cd_tracks[package.name].items():
                 logger.debug('Found CD track %d at %s', i, copy_from)
                 install_as = package.rip_cd['filename_format'] % i
-                copy_to = os.path.join(destdir, install_to, install_as)
+                copy_to = os.path.join(destdir, install_to.strip('/'), install_as)
+                assert copy_to.startswith(destdir + '/'), (copy_to, destdir)
                 copy_to_dir = os.path.dirname(copy_to)
                 if not os.path.isdir(copy_to_dir):
                     mkdir_p(copy_to_dir)
@@ -1906,12 +1908,13 @@ class PackagingTask(object):
                     paths.append(path)
 
             for package in packages:
-                path = '/' + self.packaging.substitute(package.install_to,
-                        package.name).lstrip('/')
+                path = os.path.join('/',
+                        self.packaging.substitute(package.install_to,
+                            package.name).strip('/'))
 
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
-                path = '/' + self.packaging.DOCDIR + '/' + package.name
+                path = os.path.join('/', self.packaging.DOCDIR, package.name)
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
 

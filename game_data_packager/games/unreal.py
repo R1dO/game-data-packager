@@ -78,11 +78,12 @@ class UnrealTask(PackagingTask):
         # enough to identify the version.
 
         install_to = self.packaging.substitute(package.install_to,
-                package.name).lstrip('/')
-        mkdir_p(os.path.join(destdir, install_to, 'System'))
+                package.name)
+        system = os.path.join(destdir, install_to.strip('/'), 'System')
+        assert system.startswith(destdir + '/'), (system, destdir)
+        mkdir_p(system)
 
-        with open(os.path.join(destdir, install_to, 'System',
-                'Manifest.ini'), 'w') as writer:
+        with open(os.path.join(system, 'Manifest.ini'), 'w') as writer:
             if package.name == 'unreal-gold':
                 groups = (('UnrealGold', package.name, package.version),
                         ('Unreal Gold', package.name, package.version))
@@ -111,8 +112,9 @@ class UnrealTask(PackagingTask):
 
     def __convert_logo(self, destdir, package, logo_name):
         source_logo = os.path.join(destdir,
-                self.packaging.substitute(package.install_to, package.name),
+                self.packaging.substitute(package.install_to, package.name).strip('/'),
                 logo_name)
+        assert source_logo.startswith(destdir + '/'), (source_logo, destdir)
 
         try:
             import gi

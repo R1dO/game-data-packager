@@ -21,10 +21,10 @@ import os
 import string
 
 class PackagingSystem(metaclass=ABCMeta):
-    ASSETS = 'usr/share'
-    BINDIR = 'usr/bin'
-    DOCDIR = 'usr/share/doc'
-    LICENSEDIR = 'usr/share/doc'
+    ASSETS = '/usr/share'
+    BINDIR = '/usr/bin'
+    DOCDIR = '/usr/share/doc'
+    LICENSEDIR = '/usr/share/doc'
     CHECK_CMD = None
     INSTALL_CMD = None
 

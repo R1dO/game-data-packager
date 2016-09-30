@@ -55,7 +55,7 @@ class ZCodeTask(PackagingTask):
         super(ZCodeTask, self).fill_extra_files(package, destdir)
 
         install_to = self.packaging.substitute(package.install_to,
-                package.name).lstrip('/')
+                package.name)
 
         with TemporaryUmask(0o022):
             appdir = os.path.join(destdir, 'usr/share/applications')
@@ -93,7 +93,7 @@ class ZCodeTask(PackagingTask):
                 else:
                     engine = 'gargoyle'
             entry['TryExec'] = engine
-            arg = '/' + install_to + '/' + package.z_file
+            arg = os.path.join('/', install_to, package.z_file)
             entry['Exec'] = engine + ' ' + arg
 
             pixdir = os.path.join(destdir, 'usr/share/pixmaps')
@@ -114,7 +114,8 @@ class ZCodeTask(PackagingTask):
                     'usr/share/applications/%s.desktop %s'
                      % (package.name, engine))
 
-            bindir = os.path.join(destdir, self.packaging.BINDIR)
+            bindir = os.path.join(destdir, self.packaging.BINDIR.strip('/'))
+            assert bindir.startswith(destdir + '/'), (bindir, destdir)
             mkdir_p(bindir)
             pgm = package.name[0:len(package.name)-len('-data')]
             path = os.path.join(bindir, pgm)

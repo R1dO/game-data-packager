@@ -349,7 +349,7 @@ class GameData(object):
                 if os.path.isdir(path):
                     continue
                 elif os.path.islink(path):
-                    self.package.setdefault('symlinks', {})[name] = os.path.realpath(path).lstrip('/')
+                    self.package.setdefault('symlinks', {})[name] = os.path.realpath(path)
                 elif os.path.isfile(path):
                     self.add_file(path, out_name=out_name, lang=lang)
                 else:
@@ -359,7 +359,7 @@ class GameData(object):
                 logger.warning('DOSBOX files detected, make sure not to include those in your package')
 
         if self.plugin != 'scummvm_common':
-            self.package['install_to'] = 'usr/share/games/' + game
+            self.package['install_to'] = '$assets/' + game
 
         self.package['install'].sort()
         if self.package['optional']:
@@ -552,7 +552,8 @@ class GameData(object):
                             name, entry.type)
 
         if self.plugin != 'scummvm_common':
-            self.package['install_to'] = install_to
+            self.package['install_to'] = os.path.join('/',
+                    install_to).replace('/usr/share/games/', '$assets/')
         self.package['install'].sort()
         if self.package['optional']:
             self.package['optional'].sort()

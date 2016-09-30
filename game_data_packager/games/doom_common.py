@@ -145,17 +145,19 @@ class DoomTask(PackagingTask):
             entry['TryExec'] = program
 
             install_to = self.packaging.substitute(package.install_to,
-                    package.name).lstrip('/')
+                    package.name)
 
             if 'args' in quirks:
                 args = quirks['args'] % main_wad
             elif package.expansion_for:
                 iwad = self.game.packages[package.expansion_for].only_file
                 assert iwad is not None, "Couldn't find %s's IWAD" % main_wad
-                args = (  '-iwad /' + install_to + '/' + iwad
-                       + ' -file /' + install_to + '/' + main_wad)
+                iwad = os.path.join('/', install_to, iwad)
+                pwad = os.path.join('/', install_to, main_wad)
+                args = ' '.join(('-iwad', iwad, '-file', pwad))
             else:
-                args = '-iwad /' + install_to + '/' + main_wad
+                iwad = os.path.join('/', install_to, main_wad)
+                args = ' '.join(('-iwad', iwad))
             entry['Exec'] = program + ' ' + args
             entry['Icon'] = desktop_file
             entry['Terminal'] = 'false'

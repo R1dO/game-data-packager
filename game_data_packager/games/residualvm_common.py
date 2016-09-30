@@ -98,7 +98,7 @@ class ResidualvmTask(PackagingTask):
         mkdir_p(appdir)
 
         install_to = self.packaging.substitute(package.install_to,
-                package.name).lstrip('/')
+                package.name)
 
         desktop = configparser.RawConfigParser()
         desktop.optionxform = lambda option: option
@@ -111,7 +111,10 @@ class ResidualvmTask(PackagingTask):
         entry['Terminal'] = 'false'
         entry['Type'] = 'Application'
         entry['Categories'] = 'Game;'
-        entry['Exec'] = 'residualvm -p /%s %s' % (install_to, self.game.gameid)
+        entry['Exec'] = 'residualvm -p %s %s' % (
+                os.path.join('/', install_to),
+                self.game.gameid,
+                )
         with open(os.path.join(appdir, '%s.desktop' % package.name),
                   'w', encoding='utf-8') as output:
              desktop.write(output, space_around_delimiters=False)

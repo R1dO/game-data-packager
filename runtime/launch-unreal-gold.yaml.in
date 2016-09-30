@@ -8,9 +8,9 @@ required_files:
 base_directories:
   - /usr/lib/unreal-gold
   - /usr/lib/unreal
-  - /$assets/unreal-gold
-  - /$assets/unreal
-  - /$assets/unreal-ut99-shared
+  - $assets/unreal-gold
+  - $assets/unreal
+  - $assets/unreal-ut99-shared
 working_directory: $${XDG_DATA_HOME}/unreal-gold/System
 library_path: ["."]
 argv: [./UnrealLinux.bin]
@@ -30,21 +30,21 @@ edit_unreal_ini:
         append_unique:
           - Paths=/usr/lib/unreal-gold/Maps/*.unr
           - Paths=/usr/lib/unreal-gold/Maps/UPak/*.unr
-          - Paths=/$assets/unreal-gold/Maps/*.unr
-          - Paths=/$assets/unreal-gold/Maps/UPak/*.unr
-          - Paths=/$assets/unreal/Maps/*.unr
+          - Paths=$assets/unreal-gold/Maps/*.unr
+          - Paths=$assets/unreal-gold/Maps/UPak/*.unr
+          - Paths=$assets/unreal/Maps/*.unr
 
           - Paths=/usr/lib/unreal-gold/Textures/*.utx
-          - Paths=/$assets/unreal-gold/Textures/*.utx
-          - Paths=/$assets/unreal/Textures/*.utx
-          - Paths=/$assets/unreal-ut99-shared/Textures/*.utx
+          - Paths=$assets/unreal-gold/Textures/*.utx
+          - Paths=$assets/unreal/Textures/*.utx
+          - Paths=$assets/unreal-ut99-shared/Textures/*.utx
 
           - Paths=/usr/lib/unreal-gold/Sounds/*.uax
-          - Paths=/$assets/unreal-gold/Sounds/*.uax
-          - Paths=/$assets/unreal/Sounds/*.uax
-          - Paths=/$assets/unreal-ut99-shared/Sounds/*.uax
+          - Paths=$assets/unreal-gold/Sounds/*.uax
+          - Paths=$assets/unreal/Sounds/*.uax
+          - Paths=$assets/unreal-ut99-shared/Sounds/*.uax
 
           - Paths=/usr/lib/unreal-gold/Music/*.umx
-          - Paths=/$assets/unreal-gold/Music/*.umx
-          - Paths=/$assets/unreal/Music/*.umx
+          - Paths=$assets/unreal-gold/Music/*.umx
+          - Paths=$assets/unreal/Music/*.umx
 ...
