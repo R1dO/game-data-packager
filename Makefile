@@ -20,23 +20,24 @@ PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
 # - are not too big
 TEST_SUITE += rott spear-of-destiny wolf3d heretic
 
-png       := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
-png       += $(patsubst ./data/%.svg,./out/%.png,$(wildcard ./data/*.svg))
-png       += out/memento-mori.png
+png_from_xpm := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
+png_from_svg := $(patsubst ./data/%.svg,./out/%.png,$(wildcard ./data/*.svg))
+png       := $(png_from_xpm) $(png_from_svg) out/memento-mori.png
+simplified_svg := $(patsubst ./data/%.svg,./out/%.svg,$(wildcard ./data/*.svg))
 # We deliberately don't compress and install memento-mori{,-2}.svg because
 # they use features that aren't supported by librsvg, so they'd look wrong
 # in all GTK-based environments.
-svgz      := $(patsubst ./data/%.svg,./out/%.svgz,$(filter-out ./data/memento-mori-2.svg,$(wildcard ./data/*.svg)))
+svgz      := $(patsubst ./out/%.svg,./out/%.svgz,$(filter-out ./out/memento-mori-2.svg,$(simplified_svg)))
 in_yaml   := $(wildcard ./data/*.yaml)
-json      := $(patsubst ./data/%.yaml,./out/vfs/%.json,$(in_yaml))
-json      += $(patsubst ./runtime/%.yaml.in,./out/%.json,$(wildcard ./runtime/*.yaml.in))
-copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright))
+json_from_data := $(patsubst ./data/%.yaml,./out/vfs/%.json,$(in_yaml))
+json_from_runtime := $(patsubst ./runtime/%.yaml.in,./out/%.json,$(wildcard ./runtime/*.yaml.in))
+copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright) ./data/copyright)
 dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
 desktop   := $(patsubst ./runtime/%.in,./out/%,$(wildcard ./runtime/*.desktop.in))
 
-default: $(png) $(svgz) $(json) $(copyright) $(dot_in) \
-      $(desktop) \
-      out/bash_completion out/changelog.gz out/copyright \
+default: $(png) $(svgz) $(json_from_data) $(json_from_runtime) \
+      $(copyright) $(dot_in) $(desktop) \
+      out/bash_completion out/changelog.gz \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
 out/CACHEDIR.TAG:
@@ -46,14 +47,14 @@ out/CACHEDIR.TAG:
 	echo "# For information about cache directory tags, see:"; \
 	echo "#	http://www.brynosaurus.com/cachedir/" ) > $@
 
-out/%: data/% out/CACHEDIR.TAG
+$(copyright) $(dot_in): out/%: data/% out/CACHEDIR.TAG
 	if [ -L $< ]; then cp -a $< $@ ; else install -m644 $< $@ ; fi
 
-out/vfs/%.json: data/%.yaml tools/compile_yaml.py out/CACHEDIR.TAG
+$(json_from_data): out/vfs/%.json: data/%.yaml tools/compile_yaml.py out/CACHEDIR.TAG
 	@mkdir -p out/vfs
 	$(PYTHON) tools/compile_yaml.py $< $@
 
-out/vfs.zip: $(json)
+out/vfs.zip: $(json_from_data)
 	rm -f out/vfs.zip
 	chmod 0644 out/vfs/*
 	if [ -n "$(BUILD_DATE)" ]; then \
@@ -73,7 +74,7 @@ out/changelog.gz: debian/changelog out/CACHEDIR.TAG
 out/game-data-packager: run out/CACHEDIR.TAG
 	install run out/game-data-packager
 
-out/%.svg: data/%.svg out/CACHEDIR.TAG
+$(simplified_svg): out/%.svg: data/%.svg out/CACHEDIR.TAG
 	inkscape --export-plain-svg=$@ $<
 
 out/memento-mori.svg: data/memento-mori-2.svg out/CACHEDIR.TAG
@@ -82,19 +83,19 @@ out/memento-mori.svg: data/memento-mori-2.svg out/CACHEDIR.TAG
 out/memento-mori.png: out/memento-mori.svg
 	inkscape --export-png=$@ -w96 -h96 $<
 
-out/%.png: data/%.xpm out/CACHEDIR.TAG
+$(png_from_xpm): out/%.png: data/%.xpm out/CACHEDIR.TAG
 	convert $< $@
 
-out/%.png: data/%.svg out/CACHEDIR.TAG
+$(png_from_svg): out/%.png: data/%.svg out/CACHEDIR.TAG
 	inkscape --export-png=$@ -w96 -h96 $<
 
-out/%.svgz: out/%.svg
+$(svgz): out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
-out/launch-%.json: out/launch-%.yaml
+$(json_from_runtime): out/launch-%.json: out/launch-%.yaml
 	$(PYTHON) tools/yaml2json.py $< $@
 
-out/%: runtime/%.in out/CACHEDIR.TAG
+$(desktop) $(patsubst %.json,%.yaml,$(json_from_runtime)): out/%: runtime/%.in out/CACHEDIR.TAG
 	PYTHONPATH=. $(PYTHON) tools/expand_vars.py $< $@
 
 clean:
