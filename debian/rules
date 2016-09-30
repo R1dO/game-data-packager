@@ -4,7 +4,11 @@
 	dh $@ --parallel --with=systemd
 
 override_dh_auto_build:
-	dh_auto_build -- distro=$(shell dpkg-vendor --query Vendor)
+	dh_auto_build -- \
+		distro=$(shell dpkg-vendor --query Vendor) \
+		assets=/usr/share/games \
+		bindir=/usr/games \
+		$(NULL)
 
 override_dh_install-arch:
 	dh_install -a

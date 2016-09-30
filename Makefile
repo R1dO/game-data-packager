@@ -1,5 +1,7 @@
 # Makefile - used for building icon
 
+bindir ?= /usr/bin
+assets ?= /usr/share
 distro ?= $(shell lsb_release -si)
 
 layer_sizes = 16 22 32 48 256
@@ -19,7 +21,12 @@ text = \
 	build/README.quake4-bin \
 	$(NULL)
 
+desktop = \
+	$(patsubst runtime/%.in,build/%,$(wildcard runtime/*.desktop.in)) \
+	$(NULL)
+
 obj = \
+	$(desktop) \
 	$(text) \
 	build/24/quake.png \
 	build/24/quake-armagon.png \
@@ -396,6 +403,13 @@ build/48/quake3-teamarena.png: build/quake3-teamarena.png Makefile
 	install -d build/48
 	convert -resize 48x48 $< $@
 
+$(desktop): build/%: runtime/%.in
+	install -d build
+	sed \
+		-e 's#[$$]{assets}#${assets}#g' \
+		-e 's#[$$]{bindir}#${bindir}#g' \
+		< $< > $@
+
 check:
 	set -e; \
 	failed=0; \
@@ -404,6 +418,13 @@ check:
 			echo "^ probably a missing substitution?"; \
 			failed=1; \
 		fi; \
-	done; exit $$failed
+	done; \
+	for x in $(desktop); do \
+		if grep -E "[$$][{a-z]" $$x; then \
+			echo "^ probably a missing substitution?"; \
+			failed=1; \
+		fi; \
+	done; \
+	exit $$failed
 
 .PHONY: check
