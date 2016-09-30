@@ -99,28 +99,10 @@ $(desktop) $(patsubst %.json,%.yaml,$(json_from_runtime)): out/%: runtime/%.in o
 	PYTHONPATH=. $(PYTHON) tools/expand_vars.py $< $@
 
 clean:
-	rm -f ./out/bash_completion
-	rm -f ./out/changelog.gz
-	rm -f ./out/copyright
-	rm -f ./out/game-data-packager
-	rm -f ./out/*.control.in
-	rm -f ./out/*.copyright
-	rm -f ./out/*.copyright.in
-	rm -f ./out/*.desktop
-	rm -f ./out/*.json
-	rm -f ./out/*.preinst.in
-	rm -f ./out/*.png
-	rm -f ./out/*.svgz
-	rm -f ./out/*.svg
-	rm -f ./out/*.txt
-	rm -f ./out/vfs.zip
-	rm -f ./out/index.html
-	rm -fr out/vfs
+	rm -fr out
 	rm -rf game_data_packager/__pycache__
 	rm -rf game_data_packager/games/__pycache__
 	rm -rf tools/__pycache__
-	rm -f out/CACHEDIR.TAG
-	test ! -d out || rmdir out
 
 check:
 	LC_ALL=C $(PYFLAKES3) game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tools/*.py || :
