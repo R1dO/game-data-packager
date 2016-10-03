@@ -22,14 +22,7 @@ packages:
       native: true
     url_misc: http://wisdomtree.itch.io/s3dna
     install:
-    - audiohed.n3d
-    - audiot.n3d
-    - gamemaps.n3d
-    - maphead.n3d
-    - vgadict.n3d
-    - vgagraph.n3d
-    - vgahead.n3d
-    - vswap.n3d
+    - assets
     optional:
     - noah3d.wad
     - noah3d.png
@@ -51,14 +44,7 @@ files:
     unpack:
       format: 7z
     provides:
-    - audiohed.n3d
-    - audiot.n3d
-    - gamemaps.n3d
-    - maphead.n3d
-    - vgadict.n3d
-    - vgagraph.n3d
-    - vgahead.n3d
-    - vswap.n3d
+    - assets
 
   noah3d.png:
     install_as: super-3d-noahs-ark-data.png
@@ -68,14 +54,7 @@ files:
     unpack:
       format: deb
     provides:
-    - audiohed.n3d
-    - audiot.n3d
-    - gamemaps.n3d
-    - maphead.n3d
-    - vgadict.n3d
-    - vgagraph.n3d
-    - vgahead.n3d
-    - vswap.n3d
+    - assets
     - noah3d.wad?steam
     - noah3d.png
 
@@ -83,14 +62,7 @@ files:
     unpack:
       format: deb
     provides:
-    - audiohed.n3d
-    - audiot.n3d
-    - gamemaps.n3d
-    - maphead.n3d
-    - vgadict.n3d
-    - vgagraph.n3d
-    - vgahead.n3d
-    - vswap.n3d
+    - assets
     - noah3d.wad?steam
     - noah3d.png
 
@@ -99,14 +71,7 @@ files:
       format: 7z
       unpack: ['*.n3d', 'noah3d.wad']
     provides:
-    - audiohed.n3d
-    - audiot.n3d
-    - gamemaps.n3d
-    - maphead.n3d
-    - vgadict.n3d
-    - vgagraph.n3d
-    - vgahead.n3d
-    - vswap.n3d
+    - assets
     - noah3d.wad?steam
 
   noah3d-1.3.2_64bit.msi:
@@ -114,17 +79,11 @@ files:
       format: 7z
       unpack: ['*.n3d', 'noah3d.wad']
     provides:
-    - audiohed.n3d
-    - audiot.n3d
-    - gamemaps.n3d
-    - maphead.n3d
-    - vgadict.n3d
-    - vgagraph.n3d
-    - vgahead.n3d
-    - vswap.n3d
+    - assets
     - noah3d.wad?steam
 
-size_and_md5: |
+groups:
+ assets: |
   576       9c7e08401faf9c7d64e7ee7bceb6c9b8 audiohed.n3d
   45043     8b40a14de58cf8578bb3a783dcb4f7bb audiot.n3d
   60195     d35ce2257a4fb56f61529df5f7f77adb gamemaps.n3d
@@ -134,6 +93,7 @@ size_and_md5: |
   405       fe26baf052f03e92019e221bc106dfec vgahead.n3d
   1048708   8c61a9b3bb38a598990ccb743d2679fa vswap.n3d
 
+ default: |
   # patch that provides enhanced "Read This!", etc...
   14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad?steam
   128647    f8fef8c1bb84ee8700e25858a41c7156 noah3d.wad?1.3
