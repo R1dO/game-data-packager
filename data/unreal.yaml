@@ -235,7 +235,7 @@ packages:
       game: unreal_gold
       url: unreal_gold
     architecture: i386
-    install_to: usr/lib/unreal-gold
+    install_to: $prefix/lib/unreal-gold
     depends:
       - unreal-data
       - unreal-gold-data
@@ -261,13 +261,13 @@ packages:
       # would require gdp to be aware of where it was going to be installed
       $bindir/unreal-gold:
         $assets/game-data-packager/gdp-launcher
-      usr/share/applications/unreal-gold.desktop:
+      $prefix/share/applications/unreal-gold.desktop:
         $assets/game-data-packager/unreal-gold.desktop
 
   unreal-libfmod:
     version: 3.75+227i
     architecture: i386
-    install_to: usr/lib/unreal
+    install_to: $prefix/lib/unreal
     short_description: proprietary audio middleware for the Unreal game engine
     description: |
       libfmod is a proprietary cross-platform audio middleware library.
@@ -285,7 +285,7 @@ packages:
     # non-distributable because LGPL source code isn't included
     # probably version 3.1.something but we don't know for sure
     version: 0+227i
-    install_to: usr/lib/unreal
+    install_to: $prefix/lib/unreal
     short_description: legacy version of libmikmod for the Unreal game engine
     description: |
       Mikmod is a playback library for module files (sample-based audio).
@@ -305,7 +305,7 @@ packages:
     version: 227i
     longname: Unreal Classic
     data_type: binaries
-    install_to: usr/lib/unreal-classic
+    install_to: $prefix/lib/unreal-classic
     architecture: i386
     depends:
       - unreal-data

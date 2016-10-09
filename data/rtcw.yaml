@@ -70,7 +70,7 @@ packages:
       game: return_to_castle_wolfenstein_game
     version: 1.42b
     symlinks:
-      usr/lib/rtcw/main/sp_pakG.pk3:
+      $prefix/lib/rtcw/main/sp_pakG.pk3:
         $install_to/main/sp_pakG.pk3
     install_to: $assets/rtcw
     install:

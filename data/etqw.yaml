@@ -15,7 +15,7 @@ try_repack_from:
 packages:
   etqw-pb-bin:
     short_description: ETQW PunkBuster binaries
-    install_to: usr/lib/etqw
+    install_to: $prefix/lib/etqw
     architecture: i386
     version: "1.5"
     depends:
@@ -30,7 +30,7 @@ packages:
 
   etqw-bin:
     data_type: binaries
-    install_to: usr/lib/etqw
+    install_to: $prefix/lib/etqw
     architecture: i386
     version: "1.5"
     depends:
@@ -50,10 +50,10 @@ packages:
     license:
     - patch 1.4 to 1.5 - licenses
     symlinks:
-      usr/lib/etqw/base: $assets/etqw/base
+      $prefix/lib/etqw/base: $assets/etqw/base
       # The bundled implementation isn't great, and xdg-open is
       # binary-compatible
-      usr/lib/etqw/openurl.sh: usr/bin/xdg-open
+      $prefix/lib/etqw/openurl.sh: /usr/bin/xdg-open
 
   etqw-data:
     version: "1.5"

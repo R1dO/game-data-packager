@@ -16,7 +16,7 @@ packages:
   quake4-pb-bin:
     DISABLED: mitigation for CVE-2007-5248 <http://aluigi.altervista.org/adv/d3engfspb-adv.txt>
     short_description: Quake 4 PunkBuster binaries
-    install_to: usr/lib/quake4
+    install_to: $prefix/lib/quake4
     architecture: i386
     version: "1.4.2"
     depends:
@@ -32,7 +32,7 @@ packages:
 
   quake4-bin:
     data_type: binaries
-    install_to: usr/lib/quake4
+    install_to: $prefix/lib/quake4
     architecture: i386
     version: "1.4.2"
     depends:
@@ -48,13 +48,13 @@ packages:
     install:
       - patch 1.4.2 binaries
     symlinks:
-      usr/lib/quake4/q4base: $assets/quake4/q4base
-      usr/lib/quake4/q4mp: $assets/quake4/q4mp
+      $prefix/lib/quake4/q4base: $assets/quake4/q4base
+      $prefix/lib/quake4/q4mp: $assets/quake4/q4mp
       # The bundled implementation isn't great, and xdg-open is
       # binary-compatible
-      usr/lib/quake4/openurl.sh: usr/bin/xdg-open
-      usr/lib/quake4/version.info: $assets/quake4/version.info
-      usr/lib/quake4/q4icon.bmp: $assets/quake4/q4icon.bmp
+      $prefix/lib/quake4/openurl.sh: /usr/bin/xdg-open
+      $prefix/lib/quake4/version.info: $assets/quake4/version.info
+      $prefix/lib/quake4/q4icon.bmp: $assets/quake4/q4icon.bmp
 
     license:
       - EULA.txt?steam

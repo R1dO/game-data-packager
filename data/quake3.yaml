@@ -63,27 +63,27 @@ packages:
       $assets/quake3/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
       $assets/quake3/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
       # src:quake >= 10
-      usr/lib/quake3/base/baseq3/pak0.pk3: $install_to/baseq3/pak0.pk3
-      usr/lib/quake3/base/baseq3/pak1.pk3: $install_to/baseq3/pak1.pk3
-      usr/lib/quake3/base/baseq3/pak2.pk3: $install_to/baseq3/pak2.pk3
-      usr/lib/quake3/base/baseq3/pak3.pk3: $install_to/baseq3/pak3.pk3
-      usr/lib/quake3/base/baseq3/pak4.pk3: $install_to/baseq3/pak4.pk3
-      usr/lib/quake3/base/baseq3/pak5.pk3: $install_to/baseq3/pak5.pk3
-      usr/lib/quake3/base/baseq3/pak6.pk3: $install_to/baseq3/pak6.pk3
-      usr/lib/quake3/base/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
-      usr/lib/quake3/base/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
-      usr/lib/quake3/ta/baseq3/pak0.pk3: $install_to/baseq3/pak0.pk3
-      usr/lib/quake3/ta/baseq3/pak1.pk3: $install_to/baseq3/pak1.pk3
-      usr/lib/quake3/ta/baseq3/pak2.pk3: $install_to/baseq3/pak2.pk3
-      usr/lib/quake3/ta/baseq3/pak3.pk3: $install_to/baseq3/pak3.pk3
-      usr/lib/quake3/ta/baseq3/pak4.pk3: $install_to/baseq3/pak4.pk3
-      usr/lib/quake3/ta/baseq3/pak5.pk3: $install_to/baseq3/pak5.pk3
-      usr/lib/quake3/ta/baseq3/pak6.pk3: $install_to/baseq3/pak6.pk3
-      usr/lib/quake3/ta/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
-      usr/lib/quake3/ta/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
-      usr/lib/quake3/ta/missionpack/pak1.pk3: $install_to/missionpack/pak1.pk3
-      usr/lib/quake3/ta/missionpack/pak2.pk3: $install_to/missionpack/pak2.pk3
-      usr/lib/quake3/ta/missionpack/pak3.pk3: $install_to/missionpack/pak3.pk3
+      $prefix/lib/quake3/base/baseq3/pak0.pk3: $install_to/baseq3/pak0.pk3
+      $prefix/lib/quake3/base/baseq3/pak1.pk3: $install_to/baseq3/pak1.pk3
+      $prefix/lib/quake3/base/baseq3/pak2.pk3: $install_to/baseq3/pak2.pk3
+      $prefix/lib/quake3/base/baseq3/pak3.pk3: $install_to/baseq3/pak3.pk3
+      $prefix/lib/quake3/base/baseq3/pak4.pk3: $install_to/baseq3/pak4.pk3
+      $prefix/lib/quake3/base/baseq3/pak5.pk3: $install_to/baseq3/pak5.pk3
+      $prefix/lib/quake3/base/baseq3/pak6.pk3: $install_to/baseq3/pak6.pk3
+      $prefix/lib/quake3/base/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
+      $prefix/lib/quake3/base/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
+      $prefix/lib/quake3/ta/baseq3/pak0.pk3: $install_to/baseq3/pak0.pk3
+      $prefix/lib/quake3/ta/baseq3/pak1.pk3: $install_to/baseq3/pak1.pk3
+      $prefix/lib/quake3/ta/baseq3/pak2.pk3: $install_to/baseq3/pak2.pk3
+      $prefix/lib/quake3/ta/baseq3/pak3.pk3: $install_to/baseq3/pak3.pk3
+      $prefix/lib/quake3/ta/baseq3/pak4.pk3: $install_to/baseq3/pak4.pk3
+      $prefix/lib/quake3/ta/baseq3/pak5.pk3: $install_to/baseq3/pak5.pk3
+      $prefix/lib/quake3/ta/baseq3/pak6.pk3: $install_to/baseq3/pak6.pk3
+      $prefix/lib/quake3/ta/baseq3/pak7.pk3: $install_to/baseq3/pak7.pk3
+      $prefix/lib/quake3/ta/baseq3/pak8.pk3: $install_to/baseq3/pak8.pk3
+      $prefix/lib/quake3/ta/missionpack/pak1.pk3: $install_to/missionpack/pak1.pk3
+      $prefix/lib/quake3/ta/missionpack/pak2.pk3: $install_to/missionpack/pak2.pk3
+      $prefix/lib/quake3/ta/missionpack/pak3.pk3: $install_to/missionpack/pak3.pk3
       # let mix win & linux html documentation
       $pkgdocdir/Help/BotCommands.htm: $pkgdocdir/Help/BotCommands.html
       $pkgdocdir/Help/Dedicated Server.htm: $pkgdocdir/Help/DedicatedServer.html
@@ -151,7 +151,7 @@ packages:
       $assets/quake3/missionpack/pak2.pk3: $install_to/missionpack/pak2.pk3
       $assets/quake3/missionpack/pak3.pk3: $install_to/missionpack/pak3.pk3
       # quake >= 10
-      usr/lib/quake3/ta/missionpack/pak0.pk3: $install_to/missionpack/pak0.pk3
+      $prefix/lib/quake3/ta/missionpack/pak0.pk3: $install_to/missionpack/pak0.pk3
     install_to: $assets/quake3-team-arena-data
 
   quake3-demo-data:
@@ -164,11 +164,11 @@ packages:
     - demoq3/pak0.pk3
     - demo files from patches
     symlinks:
-      usr/lib/quake3/demo/demoq3/pak0.pk3: $install_to/pak0.pk3
-      usr/lib/quake3/demo/demoq3/botfiles: $install_to/botfiles
-      usr/lib/quake3/demo/demoq3/gfx: $install_to/gfx
-      usr/lib/quake3/demo/demoq3/scripts: $install_to/scripts
-      usr/lib/quake3/demo/demoq3/vm: $install_to/vm
+      $prefix/lib/quake3/demo/demoq3/pak0.pk3: $install_to/pak0.pk3
+      $prefix/lib/quake3/demo/demoq3/botfiles: $install_to/botfiles
+      $prefix/lib/quake3/demo/demoq3/gfx: $install_to/gfx
+      $prefix/lib/quake3/demo/demoq3/scripts: $install_to/scripts
+      $prefix/lib/quake3/demo/demoq3/vm: $install_to/vm
     license:
     - Help/Q3A_EULA.html
     - Help/Q3A_EULA.txt
