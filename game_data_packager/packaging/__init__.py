@@ -21,11 +21,18 @@ import importlib
 import os
 import string
 
+class RecursiveExpansionMap(dict):
+    def __getitem__(self, k):
+        v = super(RecursiveExpansionMap, self).__getitem__(k)
+        return string.Template(v).substitute(self)
+
 class PackagingSystem(metaclass=ABCMeta):
-    ASSETS = '/usr/share'
-    BINDIR = '/usr/bin'
-    DOCDIR = '/usr/share/doc'
-    LICENSEDIR = '/usr/share/doc'
+    ASSETS = '$datadir'
+    BINDIR = '$prefix/bin'
+    DATADIR = '$prefix/share'
+    DOCDIR = '$datadir/doc'
+    LICENSEDIR = '$datadir/doc'
+    PREFIX = '/usr'
     CHECK_CMD = None
     INSTALL_CMD = None
 
@@ -138,15 +145,19 @@ class PackagingSystem(metaclass=ABCMeta):
         if '$' not in template:
             return template
 
-        return string.Template(template).substitute(kwargs,
-                assets=self.ASSETS,
-                bindir=self.BINDIR,
-                docdir=self.DOCDIR,
-                licensedir=self.LICENSEDIR,
-                pkgdocdir=self._get_pkgdocdir(package),
-                pkglicensedir=self._get_pkglicensedir(package),
-                prefix=self.PREFIX,
-                )
+        return string.Template(template).substitute(
+                RecursiveExpansionMap(
+                    assets=self.ASSETS,
+                    bindir=self.BINDIR,
+                    datadir=self.DATADIR,
+                    docdir=self.DOCDIR,
+                    licensedir=self.LICENSEDIR,
+                    pkgdocdir=self._get_pkgdocdir(package),
+                    pkglicensedir=self._get_pkglicensedir(package),
+                    prefix=self.PREFIX,
+                    **kwargs))
+
+        return template
 
     def _get_pkgdocdir(self, package):
         return '/'.join((self.DOCDIR, package))
