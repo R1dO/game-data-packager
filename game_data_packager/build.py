@@ -50,6 +50,7 @@ from .util import (AGENT,
         copy_with_substitutions,
         lang_score,
         mkdir_p,
+        normalize_permissions,
         rm_rf,
         recursive_utime,
         which)
@@ -1587,23 +1588,6 @@ class PackagingTask(object):
 
         self.fill_extra_files(package, destdir)
 
-    def our_dh_fixperms(self, destdir):
-        for dirpath, dirnames, filenames in os.walk(destdir):
-            for fn in filenames + dirnames:
-                full = os.path.join(dirpath, fn)
-                stat_res = os.lstat(full)
-                if stat.S_ISLNK(stat_res.st_mode):
-                    continue
-                elif stat.S_ISDIR(stat_res.st_mode):
-                    # make directories rwxr-xr-x
-                    os.chmod(full, 0o755)
-                elif (stat.S_IMODE(stat_res.st_mode) & 0o111) != 0:
-                    # make executable files rwxr-xr-x
-                    os.chmod(full, 0o755)
-                else:
-                    # make other files rw-r--r--
-                    os.chmod(full, 0o644)
-
     def generate_control(self, package, destdir):
         # import lazily, it's only needed for Debian packages
         from debian.deb822 import Deb822
@@ -2587,7 +2571,7 @@ class PackagingTask(object):
         self.check_component(package)
         self.fill_dest_dir(package, destdir)
         self.fill_dest_dir_deb(package, destdir)
-        self.our_dh_fixperms(destdir)
+        normalize_permissions(destdir)
 
         # it had better have a /usr and a DEBIAN directory or
         # something has gone very wrong
@@ -2628,7 +2612,7 @@ class PackagingTask(object):
         destdir = os.path.join(self.get_workdir(), '%s.pkg.d' % package.name)
         self.fill_dest_dir(package, destdir)
         self.fill_dest_dir_arch(package, destdir, compress, arch)
-        self.our_dh_fixperms(destdir)
+        normalize_permissions(destdir)
 
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
         assert os.path.isfile(os.path.join(destdir, '.PKGINFO')), destdir
@@ -2685,7 +2669,7 @@ class PackagingTask(object):
 
         specfile = self.fill_dest_dir_rpm(package, destdir, compress,
                                           arch, release)
-        self.our_dh_fixperms(destdir)
+        normalize_permissions(destdir)
 
         assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
 

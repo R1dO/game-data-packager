@@ -212,3 +212,20 @@ def recursive_utime(directory, orig_time):
         for fn in filenames:
             full = os.path.join(dirpath, fn)
             os.utime(full, orig_time)
+
+def normalize_permissions(directory):
+    for dirpath, dirnames, filenames in os.walk(directory):
+        for fn in filenames + dirnames:
+            full = os.path.join(dirpath, fn)
+            stat_res = os.lstat(full)
+            if stat.S_ISLNK(stat_res.st_mode):
+                continue
+            elif stat.S_ISDIR(stat_res.st_mode):
+                # make directories rwxr-xr-x
+                os.chmod(full, 0o755)
+            elif (stat.S_IMODE(stat_res.st_mode) & 0o111) != 0:
+                # make executable files rwxr-xr-x
+                os.chmod(full, 0o755)
+            else:
+                # make other files rw-r--r--
+                os.chmod(full, 0o644)
