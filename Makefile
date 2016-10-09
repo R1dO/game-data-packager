@@ -1,4 +1,3 @@
-GDP_MIRROR ?= localhost
 bindir := /usr/games
 datadir := /usr/share/games
 pkgdatadir := ${datadir}/game-data-packager
@@ -9,17 +8,6 @@ PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/python3-pyflakes ] ; then echo python3-pyflakes ; \
                    else ls -1 /usr/bin/pyflakes-python3.* | tail -n 1 ; \
                     fi)
-
-# some cherry picked games that:
-# - are freely downloadable (either demo or full version)
-# - test various codepaths:
-#   - alternatives
-#   - archive recursion (zip in zip)
-#   - lha
-#   - id-shr-extract
-#   - doom_commo.py plugin
-# - are not too big
-TEST_SUITE += rott spear-of-destiny wolf3d heretic
 
 png_from_xpm := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
 png_from_svg := $(patsubst ./data/%.svg,./out/%.png,$(wildcard ./data/*.svg))
@@ -109,6 +97,7 @@ check:
 	LC_ALL=C $(PYFLAKES3) game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tests/*.py tools/*.py || :
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tests/deb.py
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tests/hashed_file.py
+	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tests/integration.py
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tests/rpm.py
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tests/umod.py
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tools/check_syntax.py
@@ -160,17 +149,8 @@ install:
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
 
-# Requires additional setup, so not part of "make check"
-manual-check:
-	install -d out/manual-check/
-	for game in $(TEST_SUITE); do \
-	        GDP_MIRROR=$(GDP_MIRROR) GDP_UNINSTALLED=1 PYTHONPATH=. \
-		python3 -m game_data_packager.command_line -d ./out/manual-check --no-compress $$game --no-search || exit $$?; \
-	done
-	rm -fr out/manual-check/
-
 html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
 	rsync out/index.html alioth.debian.org:/var/lib/gforge/chroot/home/groups/pkg-games/htdocs/game-data/ -e ssh -v
 
-.PHONY: default clean check manual-check install html
+.PHONY: default clean check install html
