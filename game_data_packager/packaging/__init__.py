@@ -140,9 +140,16 @@ class PackagingSystem(metaclass=ABCMeta):
                 bindir=self.BINDIR,
                 docdir=self.DOCDIR,
                 licensedir=self.LICENSEDIR,
-                pkgdocdir=self.DOCDIR + '/' + package,
-                pkglicensedir=self.LICENSEDIR + '/' + package,
+                pkgdocdir=self._get_pkgdocdir(package),
+                pkglicensedir=self._get_pkglicensedir(package),
+                prefix=self.PREFIX,
                 )
+
+    def _get_pkgdocdir(self, package):
+        return '/'.join((self.DOCDIR, package))
+
+    def _get_pkglicensedir(self, package):
+        return '/'.join((self.LICENSEDIR, package))
 
     def override_lintian(self, destdir, package, tag, args):
         pass

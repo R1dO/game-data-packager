@@ -1175,8 +1175,9 @@ class PackagingTask(object):
                  if not f.license:
                      continue
                  license_file = f.install_as
-                 licenses.add(os.path.join('/', self.packaging.LICENSEDIR,
-                     package.name, license_file))
+                 licenses.add(os.path.join('/',
+                     self.packaging.substitute('$pkglicensedir', package.name),
+                     license_file))
                  if os.path.splitext(license_file)[0].lower() == 'license':
                      self.packaging.override_lintian(destdir, package.name,
                              'extra-license-file',
@@ -1475,7 +1476,7 @@ class PackagingTask(object):
         if not self.check_complete(package, log=True):
             return False
 
-        pkgdocdir = os.path.join(self.packaging.DOCDIR, package.name)
+        pkgdocdir = self.packaging.substitute('$pkgdocdir', package.name)
         dest_pkgdocdir = os.path.join(destdir, pkgdocdir.strip('/'))
         mkdir_p(dest_pkgdocdir)
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
@@ -1914,7 +1915,7 @@ class PackagingTask(object):
 
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
-                path = os.path.join('/', self.packaging.DOCDIR, package.name)
+                path = self.packaging.substitute('$pkgdocdir', package.name)
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
 
