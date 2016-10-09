@@ -53,10 +53,6 @@ from .util import (AGENT,
         rm_rf,
         recursive_utime,
         which)
-from .version import (FORMAT, DISTRO)
-
-if FORMAT == 'deb':
-    from debian.deb822 import Deb822
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -1373,7 +1369,7 @@ class PackagingTask(object):
             spec.write('Url: %s\n' % url)
             spec.write('Release: %s\n' % release)
             spec.write('License: Commercial\n')
-            if DISTRO == 'mageia':
+            if self.packaging.derives_from('mageia'):
                 spec.write('Packager: game-data-packager\n')
                 spec.write('Group: Games/%s\n' % self.game.genre)
             else:
@@ -1603,6 +1599,9 @@ class PackagingTask(object):
                     os.chmod(full, 0o644)
 
     def generate_control(self, package, destdir):
+        # import lazily, it's only needed for Debian packages
+        from debian.deb822 import Deb822
+
         try:
             control_in = open(os.path.join(DATADIR,
                               package.name + '.control.in'), encoding='utf-8')
@@ -2410,11 +2409,11 @@ class PackagingTask(object):
                 arch = self.packaging.get_architecture(arch)
             arch = self.packaging.ARCH_DECODE.get(arch, arch)
 
-            if FORMAT == 'deb':
+            if self.packaging.derives_from('deb'):
                 pkg = self.build_deb(package, arch, destination, compress=compress)
-            elif FORMAT == 'rpm':
+            elif self.packaging.derives_from('rpm'):
                 pkg = self.build_rpm(package, arch, compress=compress)
-            elif FORMAT == 'arch':
+            elif self.packaging.derives_from('arch'):
                 pkg = self.build_arch(package, arch, destination, compress=compress)
 
             if pkg is None:
@@ -2687,10 +2686,7 @@ class PackagingTask(object):
             return True
 
         if fmt == 'deb':
-            if FORMAT == 'deb':
-                return True
-            else:
-                fmt = 'dpkg-deb'
+            fmt = 'dpkg-deb'
 
         if which(fmt) is not None:
             return True

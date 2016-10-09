@@ -59,6 +59,9 @@ class PackagingSystem(metaclass=ABCMeta):
         # dependencies, in order by preference
         self._contexts = ('generic',)
 
+    def derives_from(self, context):
+        return context in self._contexts
+
     def read_architecture(self):
         arch = os.uname()[4]
         self._architecture = { 'armv7l': 'armhf',
