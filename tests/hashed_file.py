@@ -16,7 +16,6 @@
 # /usr/share/common-licenses/GPL-2.
 
 import hashlib
-import io
 import sys
 import unittest
 
