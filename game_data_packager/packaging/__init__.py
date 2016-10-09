@@ -17,6 +17,7 @@
 # /usr/share/common-licenses/GPL-2.
 
 from abc import (ABCMeta, abstractmethod)
+import importlib
 import os
 import string
 
@@ -197,13 +198,5 @@ def get_native_packaging_system():
     # lazy import when actually needed
     from ..version import (FORMAT)
 
-    if FORMAT == 'deb':
-        from .deb import (get_distro_packaging)
-    elif FORMAT == 'arch':
-        from .arch import (get_distro_packaging)
-    elif FORMAT == 'rpm':
-        from .rpm import (get_distro_packaging)
-    else:
-        raise RuntimeError('Unable to determine native packaging system')
-
-    return get_distro_packaging()
+    mod = 'game_data_packager.packaging.{}'.format(FORMAT)
+    return importlib.import_module(mod).get_distro_packaging()
