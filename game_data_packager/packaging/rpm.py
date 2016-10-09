@@ -34,9 +34,12 @@ class RpmPackaging(PackagingSystem):
                   'amd64': 'x86_64',
                   }
 
-    def __init__(self, distro):
+    def __init__(self, distro=None):
         super(RpmPackaging, self).__init__()
-        self._contexts = (distro, 'rpm', 'generic')
+        if distro is None or distro == 'generic':
+            self._contexts = ('rpm', 'generic')
+        else:
+            self._contexts = (distro, 'rpm', 'generic')
 
     def is_installed(self, package):
         try:
@@ -117,8 +120,8 @@ class DnfPackaging(RpmPackaging):
                   'unrar-nonfree': 'unrar',
                   }
 
-    def __init__(self):
-        super(DnfPackaging, self).__init__('fedora')
+    def __init__(self, distro='fedora'):
+        super(DnfPackaging, self).__init__(distro)
         self.available = None
 
     def read_architecture(self):
@@ -171,8 +174,8 @@ class ZypperPackaging(RpmPackaging):
                   'unrar-nonfree': 'unrar',
                   }
 
-    def __init__(self):
-        super(ZypperPackaging, self).__init__('suse')
+    def __init__(self, distro='suse'):
+        super(ZypperPackaging, self).__init__(distro)
 
     def is_available(self, package):
         try:
@@ -214,8 +217,8 @@ class UrpmiPackaging(RpmPackaging):
                   'unrar-nonfree': 'unrar',
                   }
 
-    def __init__(self):
-        super(UrpmiPackaging, self).__init__('mageia')
+    def __init__(self, distro='mageia'):
+        super(UrpmiPackaging, self).__init__(distro)
 
     def is_available(self, package):
         try:
@@ -234,21 +237,34 @@ class UrpmiPackaging(RpmPackaging):
         except subprocess.CalledProcessError:
             return None
 
-def get_distro_packaging():
+def get_packaging_system(distro=None):
+    if distro is None:
+        distro = _get_distro()
+
+    if distro == 'mageia':
+        return UrpmiPackaging(distro)
+    elif distro == 'fedora':
+        return DnfPackaging(distro)
+    elif distro == 'suse':
+        return ZypperPackaging(distro)
+
+    return RpmPackaging(distro)
+
+def _get_distro():
     if os.path.isfile('/etc/mageia-release'):
-        return UrpmiPackaging()
+        return 'mageia'
 
     if os.path.isfile('/etc/redhat-release'):
-        return DnfPackaging()
+        return 'fedora'
 
     if os.path.isfile('/etc/SuSE-release'):
-        return ZypperPackaging()
+        return 'suse'
 
     try:
         maybe = DnfPackaging()
 
         if maybe.is_available('rpm'):
-            return maybe
+            return 'fedora'
     except:
         pass
 
@@ -256,8 +272,8 @@ def get_distro_packaging():
         maybe = ZypperPackaging()
 
         if maybe.is_available('rpm'):
-            return maybe
+            return 'suse'
     except:
         pass
 
-    return RpmPackaging()
+    return 'generic'

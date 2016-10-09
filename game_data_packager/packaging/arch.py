@@ -109,5 +109,5 @@ class ArchPackaging(PackagingSystem):
 
         return self.rename_package(pr.package)
 
-def get_distro_packaging():
+def get_packaging_system(distro=None):
     return ArchPackaging()

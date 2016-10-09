@@ -204,9 +204,11 @@ class PackagingSystem(metaclass=ABCMeta):
                 return k
         return package
 
+def get_packaging_system(format, distro=None):
+    mod = 'game_data_packager.packaging.{}'.format(format)
+    return importlib.import_module(mod).get_packaging_system(distro)
+
 def get_native_packaging_system():
     # lazy import when actually needed
-    from ..version import (FORMAT)
-
-    mod = 'game_data_packager.packaging.{}'.format(FORMAT)
-    return importlib.import_module(mod).get_distro_packaging()
+    from ..version import (FORMAT, DISTRO)
+    return get_packaging_system(FORMAT, DISTRO)
