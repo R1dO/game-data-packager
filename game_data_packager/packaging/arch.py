@@ -19,9 +19,15 @@
 import logging
 import os
 import subprocess
+import time
 
 from . import (PackagingSystem)
-from ..util import (run_as_root, check_output)
+from ..util import (
+        check_output,
+        normalize_permissions,
+        rm_rf,
+        run_as_root,
+        )
 
 logger = logging.getLogger(__name__)
 
@@ -109,7 +115,7 @@ class ArchPackaging(PackagingSystem):
 
         return self.rename_package(pr.package)
 
-    def fill_dest_dir_arch(self, game, package, destdir, compress, arch):
+    def __fill_dest_dir_arch(self, game, package, destdir, compress, arch):
         PKGINFO = os.path.join(destdir, '.PKGINFO')
         short_desc, _ = self.generate_description(game, package)
         size = check_output(['du','-bs','.'], cwd=destdir)
@@ -147,6 +153,38 @@ class ArchPackaging(PackagingSystem):
         subprocess.check_call(['fakeroot', 'bsdtar', '-czf', MTREE, '--format=mtree',
                  '--options=!all,use-set,type,uid,gid,mode,time,size,md5,sha256,link']
                  + sorted(files), env={'LANG':'C'}, cwd=destdir)
+
+    def build_package(self, per_package_dir, game, package, destination,
+            compress=True):
+        destdir = os.path.join(per_package_dir, 'DESTDIR')
+        arch = self.get_effective_architecture(package)
+
+        self.__fill_dest_dir_arch(game, package, destdir, compress, arch)
+        normalize_permissions(destdir)
+
+        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
+        assert os.path.isfile(os.path.join(destdir, '.PKGINFO')), destdir
+        assert os.path.isfile(os.path.join(destdir, '.MTREE')), destdir
+
+        pkg_basename = '%s-%s-1-%s.pkg.tar.xz' % (package.name, package.version, arch)
+        outfile = os.path.join(os.path.abspath(destination), pkg_basename)
+
+        try:
+            logger.info('generating package %s', package.name)
+            files = set()
+            for dirpath, dirnames, filenames in os.walk(destdir):
+                for fn in filenames:
+                    full = os.path.join(dirpath, fn)
+                    full = full[len(destdir)+1:]
+                    files.add(full)
+            check_output(['fakeroot', 'bsdtar', 'cfJ', outfile] + sorted(files),
+                         cwd=destdir, env={'LANG':'C'})
+        except subprocess.CalledProcessError as cpe:
+            print(cpe.output)
+            raise
+
+        rm_rf(destdir)
+        return outfile
 
 def get_packaging_system(distro=None):
     return ArchPackaging()

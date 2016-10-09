@@ -18,17 +18,27 @@
 
 import logging
 import os
+import stat
 import subprocess
 
 
 try:
+    from debian.deb822 import Deb822
     from debian.debian_support import Version
 except ImportError:
     # make check
     from distutils.version import LooseVersion as Version
+    Deb822 = None
 
 from . import (PackagingSystem)
-from ..util import (check_output, mkdir_p, run_as_root)
+from ..data import (HashedFile)
+from ..paths import (DATADIR)
+from ..util import (
+        check_output,
+        mkdir_p,
+        normalize_permissions,
+        rm_rf,
+        run_as_root)
 
 logger = logging.getLogger(__name__)
 
@@ -337,7 +347,7 @@ class DebPackaging(PackagingSystem):
 
         return control
 
-    def fill_dest_dir_deb(self, game, package, destdir):
+    def __fill_dest_dir_deb(self, game, package, destdir):
         if package.component == 'local':
              self.override_lintian(destdir, package.name,
                      'unknown-section', 'local/%s' % package.section)
@@ -371,6 +381,47 @@ class DebPackaging(PackagingSystem):
         self.__generate_control(game, package, destdir).dump(
                 fd=open(control, 'wb'), encoding='utf-8')
         os.chmod(control, 0o644)
+
+    def build_package(self, per_package_dir, game, package, destination,
+            compress=True):
+        destdir = os.path.join(per_package_dir, 'DESTDIR')
+        arch = self.get_effective_architecture(package)
+        self.__fill_dest_dir_deb(game, package, destdir)
+        normalize_permissions(destdir)
+
+        # it had better have a /usr and a DEBIAN directory or
+        # something has gone very wrong
+        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
+        assert os.path.isdir(os.path.join(destdir, 'DEBIAN')), destdir
+
+        deb_basename = '%s_%s_%s.deb' % (package.name, package.version, arch)
+
+        outfile = os.path.join(os.path.abspath(destination), deb_basename)
+
+        # only compress if the caller says we should, the YAML
+        # says it's worthwhile, and this isn't a ripped CD (Vorbis
+        # is already compressed)
+        if not compress or not game.compress_deb or package.rip_cd:
+            dpkg_deb_args = ['-Znone']
+        elif game.compress_deb is True:
+            dpkg_deb_args = []
+        elif isinstance(game.compress_deb, str):
+            dpkg_deb_args = ['-Z' + game.compress_deb]
+        elif isinstance(game.compress_deb, list):
+            dpkg_deb_args = game.compress_deb
+
+        try:
+            logger.info('generating package %s', package.name)
+            check_output(['fakeroot', 'dpkg-deb'] +
+                    dpkg_deb_args +
+                    ['-b', 'DESTDIR', outfile],
+                    cwd=per_package_dir)
+        except subprocess.CalledProcessError as cpe:
+            print(cpe.output)
+            raise
+
+        rm_rf(destdir)
+        return outfile
 
 def get_packaging_system(distro=None):
     return DebPackaging()

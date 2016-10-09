@@ -19,9 +19,15 @@
 import logging
 import os
 import subprocess
+import time
+from distutils.version import LooseVersion as Version
 
 from . import (PackagingSystem)
-from ..util import (check_output, run_as_root)
+from ..util import (
+        check_output,
+        normalize_permissions,
+        run_as_root,
+        )
 
 logger = logging.getLogger(__name__)
 
@@ -101,7 +107,7 @@ class RpmPackaging(PackagingSystem):
 
         return self.rename_package(pr.package)
 
-    def fill_dest_dir_rpm(self, game, package, workdir, destdir, compress,
+    def __fill_dest_dir_rpm(self, game, package, workdir, destdir, compress,
             architecture, release):
         specfile = os.path.join(workdir, '%s.spec' % package.name)
         short_desc, long_desc = self.generate_description(game, package)
@@ -223,6 +229,58 @@ class RpmPackaging(PackagingSystem):
                        ' for local use only\n')
 
         return specfile
+
+    def build_package(self, per_package_dir, game, package, destination,
+            compress=True):
+        destdir = os.path.join(per_package_dir, 'DESTDIR')
+        arch = self.get_effective_architecture(package)
+
+        if arch == 'noarch':
+            setarch = []
+        else:
+            setarch = ['setarch', arch]
+
+        # increase local 'release' number on repacking
+        if not self.is_installed(package.name):
+            release = '0'
+        elif Version(package.version) > Version(self.current_version(package.name)):
+            release = '0'
+        else:
+            try:
+                release = check_output(['rpm', '-q', '--qf' ,'%{RELEASE}',
+                                         package.name]).decode('ascii')
+                if (self.distro is not None and
+                        release.endswith('.' + self.distro)):
+                    release = release[:-(len(self.distro) + 1)]
+                release = str(int(release) + 1)
+            except (subprocess.CalledProcessError, ValueError):
+                release = '0'
+
+        if self.distro is not None:
+            release = release + '.' + self.distro
+
+        if compress:
+            compress = game.compress_deb
+
+        specfile = self.__fill_dest_dir_rpm(game, package,
+                per_package_dir, destdir, compress, arch, release)
+        normalize_permissions(destdir)
+
+        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
+
+        try:
+            logger.info('generating package %s', package.name)
+            check_output(setarch  + ['rpmbuild',
+                         '--buildroot', destdir,
+                         '-bb', '-v', specfile],
+                         cwd=per_package_dir)
+        except subprocess.CalledProcessError as cpe:
+            print(cpe.output)
+            raise
+
+        return(os.path.expanduser('~/rpmbuild/RPMS/') + arch + '/'
+                + package.name + '-'
+                + package.version + '-' + release + '.' + arch + '.rpm')
 
 # XXX: dnf is written in python3 and has a stable public api,
 #      it is likely faster to use it instead of calling 'dnf' pgm.

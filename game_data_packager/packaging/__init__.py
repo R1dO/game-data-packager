@@ -296,6 +296,26 @@ class PackagingSystem(metaclass=ABCMeta):
 
         return (short_desc, long_desc)
 
+    def get_effective_architecture(self, package):
+        arch = package.architecture
+        if arch != 'all':
+            arch = self.get_architecture(arch)
+        return self.ARCH_DECODE.get(arch, arch)
+
+    @abstractmethod
+    def build_package(self, per_package_dir, game, package,
+            destination, compress=True):
+        """Build the .deb or equivalent in destination, and return its
+        filename.
+
+        per_package_dir may be used as scratch space. It already contains
+        a subdirectory named DESTDIR which has been populated with the files
+        to be packaged (so it contains DESTDIR/usr, etc.)
+
+        game and package are a GameData and a GameDataPackage respectively.
+        """
+        raise NotImplementedError
+
 def get_packaging_system(format, distro=None):
     mod = 'game_data_packager.packaging.{}'.format(format)
     return importlib.import_module(mod).get_packaging_system(distro)

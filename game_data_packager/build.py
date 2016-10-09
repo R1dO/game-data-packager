@@ -25,7 +25,6 @@ import shutil
 import stat
 import subprocess
 import tempfile
-import time
 import urllib.request
 import zipfile
 
@@ -50,7 +49,6 @@ from .util import (AGENT,
         copy_with_substitutions,
         lang_score,
         mkdir_p,
-        normalize_permissions,
         rm_rf,
         recursive_utime,
         which)
@@ -236,13 +234,6 @@ class PackagingTask(object):
 
         # None or an existing directory in which to save downloaded files.
         self.save_downloads = None
-
-        # How to compress the .deb:
-        # True: dpkg-deb's default
-        # False: -Znone
-        # str: -Zstr (gzip, xz or none)
-        # list: arbitrary options (e.g. -z9 -Zgz -Sfixed)
-        self.compress_deb = game.compress_deb
 
         # Factory for a progress report (or None).
         self.progress_factory = lambda info=None: None
@@ -2008,30 +1999,18 @@ class PackagingTask(object):
         packages = set()
 
         for package in ready:
-            arch = package.architecture
-            if arch != 'all':
-                arch = self.packaging.get_architecture(arch)
-            arch = self.packaging.ARCH_DECODE.get(arch, arch)
-
             if not self.check_complete(package, log=True):
                 raise SystemExit(1)
 
-            destdir = os.path.join(self.get_workdir(),
-                    '%s.DESTDIR' % package.name)
+            per_package_dir = os.path.join(self.get_workdir(),
+                    '%s.d' % package.name)
+            destdir = os.path.join(per_package_dir, 'DESTDIR')
             self.fill_dest_dir(package, destdir)
 
-            if self.packaging.derives_from('deb'):
-                pkg = self.build_deb(destdir, package, arch, destination,
-                        compress=compress)
-            elif self.packaging.derives_from('rpm'):
-                pkg = self.build_rpm(destdir, package, arch, compress=compress)
-            elif self.packaging.derives_from('arch'):
-                pkg = self.build_arch(destdir, package, arch, destination,
-                        compress=compress)
-
-            if pkg is None:
-                raise SystemExit(1)
-
+            self.__check_component(package)
+            pkg = self.packaging.build_package(per_package_dir, self.game,
+                    package, destination, compress=compress)
+            assert pkg is not None
             packages.add(pkg)
 
         return packages
@@ -2144,9 +2123,11 @@ class PackagingTask(object):
                             self.game.shortname, path)
                     yield path
 
-    def check_component(self, package):
+    def __check_component(self, package):
         # redistributable packages are redistributable as long as their
         # optional license file is present
+        # FIXME: only do this for .deb?
+        # FIXME: shouldn't modify package.component in-place
         if package.component == 'local':
             return
         for f in package.optional_files:
@@ -2157,123 +2138,6 @@ class PackagingTask(object):
                  package.component = 'local'
                  return
         return
-
-    def build_deb(self, destdir, package, arch, destination, compress=True):
-        self.check_component(package)
-        self.packaging.fill_dest_dir_deb(game, package, destdir)
-        normalize_permissions(destdir)
-
-        # it had better have a /usr and a DEBIAN directory or
-        # something has gone very wrong
-        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
-        assert os.path.isdir(os.path.join(destdir, 'DEBIAN')), destdir
-
-        deb_basename = '%s_%s_%s.deb' % (package.name, package.version, arch)
-
-        outfile = os.path.join(os.path.abspath(destination), deb_basename)
-
-        # only compress if the caller says we should, the YAML
-        # says it's worthwhile, and this isn't a ripped CD (Vorbis
-        # is already compressed)
-        if not compress or not self.compress_deb or package.rip_cd:
-            dpkg_deb_args = ['-Znone']
-        elif self.compress_deb is True:
-            dpkg_deb_args = []
-        elif isinstance(self.compress_deb, str):
-            dpkg_deb_args = ['-Z' + self.compress_deb]
-        elif isinstance(self.compress_deb, list):
-            dpkg_deb_args = self.compress_deb
-
-        try:
-            logger.info('generating package %s', package.name)
-            check_output(['fakeroot', 'dpkg-deb'] +
-                    dpkg_deb_args +
-                    ['-b', '%s.deb.d' % package.name, outfile],
-                    cwd=self.get_workdir())
-        except subprocess.CalledProcessError as cpe:
-            print(cpe.output)
-            raise
-
-        rm_rf(destdir)
-        return outfile
-
-
-    def build_arch(self, destdir, package, arch, destination, compress=True):
-        self.packaging.fill_dest_dir_arch(game, package, destdir, compress,
-                arch)
-        normalize_permissions(destdir)
-
-        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
-        assert os.path.isfile(os.path.join(destdir, '.PKGINFO')), destdir
-        assert os.path.isfile(os.path.join(destdir, '.MTREE')), destdir
-
-        pkg_basename = '%s-%s-1-%s.pkg.tar.xz' % (package.name, package.version, arch)
-        outfile = os.path.join(os.path.abspath(destination), pkg_basename)
-
-        try:
-            logger.info('generating package %s', package.name)
-            files = set()
-            for dirpath, dirnames, filenames in os.walk(destdir):
-                for fn in filenames:
-                    full = os.path.join(dirpath, fn)
-                    full = full[len(destdir)+1:]
-                    files.add(full)
-            check_output(['fakeroot', 'bsdtar', 'cfJ', outfile] + sorted(files),
-                         cwd=destdir, env={'LANG':'C'})
-        except subprocess.CalledProcessError as cpe:
-            print(cpe.output)
-            raise
-
-        rm_rf(destdir)
-        return outfile
-
-    def build_rpm(self, destdir, package, arch, compress=True):
-        if arch == 'noarch':
-            setarch = []
-        else:
-            setarch = ['setarch', arch]
-
-        # increase local 'release' number on repacking
-        if not self.packaging.is_installed(package.name):
-            release = '0'
-        elif Version(package.version) > Version(self.packaging.current_version(package.name)):
-            release = '0'
-        else:
-            try:
-                release = check_output(['rpm', '-q', '--qf' ,'%{RELEASE}',
-                                         package.name]).decode('ascii')
-                if (self.packaging.distro is not None and
-                        release.endswith('.' + self.packaging.distro)):
-                    release = release[:-(len(self.packaging.distro) + 1)]
-                release = str(int(release) + 1)
-            except (subprocess.CalledProcessError, ValueError):
-                release = '0'
-
-        if self.packaging.distro is not None:
-            release = release + '.' + self.packaging.distro
-
-        if compress:
-            compress = self.compress_deb
-
-        specfile = self.packaging.fill_dest_dir_rpm(game, package,
-                self.get_workdir(), destdir, compress, arch, release)
-        normalize_permissions(destdir)
-
-        assert os.path.isdir(os.path.join(destdir, 'usr')), destdir
-
-        try:
-            logger.info('generating package %s', package.name)
-            check_output(setarch  + ['rpmbuild',
-                         '--buildroot', destdir,
-                         '-bb', '-v', specfile],
-                         cwd=self.get_workdir())
-        except subprocess.CalledProcessError as cpe:
-            print(cpe.output)
-            raise
-
-        return(os.path.expanduser('~/rpmbuild/RPMS/') + arch + '/'
-                + package.name + '-'
-                + package.version + '-' + release + '.' + arch + '.rpm')
 
     def check_unpacker(self, wanted):
         if not wanted.unpack:
