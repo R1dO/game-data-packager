@@ -2,6 +2,7 @@ GDP_MIRROR ?= localhost
 bindir := /usr/games
 datadir := /usr/share/games
 pkgdatadir := ${datadir}/game-data-packager
+runtimedir := ${datadir}/game-data-packager-runtime
 PYTHON := python3
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
@@ -128,11 +129,12 @@ install:
 	install -m0644 out/copyright                           $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/vfs.zip                             $(DESTDIR)$(pkgdatadir)/
 
-	install runtime/launcher.py                            $(DESTDIR)$(pkgdatadir)/gdp-launcher
-	install -m0644 out/*.desktop                           $(DESTDIR)$(pkgdatadir)/
-	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(pkgdatadir)/
-	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(pkgdatadir)/
-	install -m0644 out/launch-*.json                       $(DESTDIR)$(pkgdatadir)/
+	install -d                                             $(DESTDIR)$(runtimedir)/
+	install runtime/launcher.py                            $(DESTDIR)$(runtimedir)/gdp-launcher
+	install -m0644 out/*.desktop                           $(DESTDIR)$(runtimedir)/
+	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(runtimedir)/
+	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(runtimedir)/
+	install -m0644 out/launch-*.json                       $(DESTDIR)$(runtimedir)/
 	install -d                                             $(DESTDIR)/etc/apparmor.d/
 	install -m0644 etc/apparmor.d/*                        $(DESTDIR)/etc/apparmor.d/
 

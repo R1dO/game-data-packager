@@ -67,9 +67,9 @@ All of these are already implemented, and it would be nice to keep them.
 * The game only installs proprietary files that we cannot fix anyway,
   and symbolic links to stable paths provided by g-d-p or a separate
   game engine like ioquake3
-  - `/usr/games/unreal-gold` -> `/usr/share/games/g-d-p/gdp-launcher`
+  - `/usr/games/unreal-gold` -> `/usr/share/games/g-d-p-runtime/gdp-launcher`
   - `/usr/share/applications/unreal-gold.desktop` ->
-    `/usr/share/games/g-d-p/unreal-gold.desktop`
+    `/usr/share/games/g-d-p-runtime/unreal-gold.desktop`
 
 * Errors while launching the game are displayed in the GUI
 

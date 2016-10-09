@@ -15,8 +15,8 @@
 %endif
 
 Name:          game-data-packager
-Version:       45
-Release:       1%{?gver}
+Version:       46
+Release:       0%{?gver}
 Summary:       Installer for game data files
 License:       GPLv2 and GPLv2+
 Url:           https://wiki.debian.org/Games/GameDataPackager
@@ -60,13 +60,28 @@ Various games are divided into two logical parts: engine and data.
 game-data-packager is a tool which builds .rpm files for game
 data which cannot be distributed (such as commercial game data).
 
-%package -n doom2-masterlevels
-Summary: "Master Levels for Doom II" launcher
+%package -n runtime
+Summary: Launchers for games supported by game-data-packager
 Requires: python3-gobject-base
 Requires: gobject-introspection
-%description -n doom2-masterlevels
-This GUI let you select a WAD to play &
-show it's description.
+Requires: gtk
+Obsoletes: game-data-packager-doom2-masterlevels
+%description -n runtime
+Various games are divided into two logical parts: engine
+and data. Often the engine and data are licensed in
+different ways, such that the engine can be distributed
+in free operating systems but the data cannot.
+.
+Some of the games supported by game-data-packager need to be
+started by a special launcher script that will create symbolic
+links or do other setup. This package contains those launcher
+scripts.
+.
+The following games currently require this package:
+.
+ * Doom 2: The Master Levels
+ * Unreal
+ * Unreal Gold
 
 %prep
 %autosetup
@@ -100,11 +115,12 @@ rm -rvf $RPM_BUILD_ROOT/etc/apparmor.d
 /usr/share/game-data-packager
 %license COPYING
 
-%files -n doom2-masterlevels
+%files -n runtime
 %{_mandir}/man6/doom2-masterlevels.*
 /usr/bin/doom2-masterlevels
 /usr/share/applications/doom2-masterlevels.desktop
 /usr/share/pixmaps/doom2-masterlevels.png
+/usr/share/game-data-packager-runtime
 %license COPYING
 
 %changelog

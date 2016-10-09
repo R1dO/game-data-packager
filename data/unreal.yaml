@@ -51,22 +51,6 @@ packages:
     doc:
       - Fusion map pack docs
 
-  unreal-launcher-dependencies:
-    short_description: dependencies for Unreal launcher
-    long_description: |
-      game-data-packager provides a Gtk launcher for Unreal and Unreal Gold.
-      This empty package depends on that launcher and its runtime dependencies.
-      It is a separate package so that the launcher can be installed for
-      the native CPU architecture.
-    depends:
-      - "game-data-packager (>= 44)"
-      - python3
-      - deb: gir1.2-gtk-3.0
-        rpm: gtk3
-      - deb: python3-gi
-        rpm: python3-gobject
-    empty: true
-
   unreal-de-data:
     expansion_for: unreal-data
     lang: de
@@ -237,9 +221,9 @@ packages:
     architecture: i386
     install_to: $prefix/lib/unreal-gold
     depends:
+      - game-data-packager-runtime
       - unreal-data
       - unreal-gold-data
-      - unreal-launcher-dependencies
       - unreal-libfmod
       - unreal-libmikmod2
       - libalut.so.0
@@ -260,9 +244,9 @@ packages:
       # FIXME: ideally $gbpdatadir/gdp-launcher or something, but that
       # would require gdp to be aware of where it was going to be installed
       $bindir/unreal-gold:
-        $assets/game-data-packager/gdp-launcher
+        $assets/game-data-packager-runtime/gdp-launcher
       $prefix/share/applications/unreal-gold.desktop:
-        $assets/game-data-packager/unreal-gold.desktop
+        $assets/game-data-packager-runtime/unreal-gold.desktop
 
   unreal-libfmod:
     version: 3.75+227i
@@ -308,8 +292,8 @@ packages:
     install_to: $prefix/lib/unreal-classic
     architecture: i386
     depends:
+      - game-data-packager-runtime
       - unreal-data
-      - unreal-launcher-dependencies
       - unreal-libfmod
       - unreal-libmikmod2
       - libalut.so.0
@@ -335,9 +319,9 @@ packages:
     doc:
       - Unreal classic documentation
     symlinks:
-      $bindir/unreal: $assets/game-data-packager/gdp-launcher
+      $bindir/unreal: $assets/game-data-packager-runtime/gdp-launcher
       usr/share/applications/unreal.desktop:
-        $assets/game-data-packager/unreal.desktop
+        $assets/game-data-packager-runtime/unreal.desktop
 
 files:
   setup_unreal_gold_2.0.0.6.exe:

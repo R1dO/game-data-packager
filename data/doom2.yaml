@@ -63,11 +63,9 @@ packages:
       url: doom_ii_final_doom
       game: doom_ii_master_levels_game
     depends:
+      - game-data-packager-runtime
       - deb: doom2-wad | freedoom
         generic: doom2-wad
-    recommends:
-      - rpm: doom2-masterlevels
-        generic: game-data-packager
     symlinks:
       $install_to/doom2-masterlevels-tryexec: etc/alternatives/doom
     install:

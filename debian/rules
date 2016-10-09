@@ -31,7 +31,7 @@ override_dh_install:
 	if dpkg-vendor --derives-from Ubuntu; then \
 		touch debian/game-data-packager/usr/share/games/game-data-packager/is-ubuntu-derived; \
 	fi
-	dh_apparmor -pgame-data-packager --profile-name=usr.lib.unreal
+	dh_apparmor -pgame-data-packager-runtime --profile-name=usr.lib.unreal
 
 override_dh_installdocs:
 	dh_installdocs -XTODO

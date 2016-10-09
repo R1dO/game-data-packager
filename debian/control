@@ -27,7 +27,8 @@ Depends: fakeroot, ${misc:Depends},
 	python3-debian,
 	python3-yaml,
 	${python3:Depends},
-Breaks: lgogdownloader (<< 2.26-1~)
+Recommends:
+ game-data-packager-runtime,
 Suggests:
 # to install packages
 	gdebi | gdebi-kde,
@@ -63,19 +64,16 @@ Suggests:
         unar,
 # for Unreal Tournament and potentially other Loki Games releases
 	xdelta,
-# for Doom2 Master Levels launcher
-	python3-gi,
-	gir1.2-gtk-3.0,
-	gir1.2-pango-1.0,
 # for Unreal
 	gir1.2-gdkpixbuf-2.0,
+Breaks: lgogdownloader (<< 2.26-1~)
 Architecture: all
 Multi-Arch: foreign
 Description: Installer for game data files
  Various games are divided into two logical parts: engine
  and data. Often the engine and data are licensed in
- different ways, such that only one half can be distributed
- in Debian.
+ different ways, such that the engine can be distributed
+ in Debian but the data cannot.
  .
  game-data-packager is a tool which builds .deb files for game
  data which cannot be distributed in Debian (such as
@@ -222,3 +220,33 @@ Description: Installer for game data files
   * Zork 1, 2 and 3, Beyond Zork, Zork Zero, Return to Zork, Zork: The
     Undiscovered Underground
   * Zork Grand Inquisitor and Zork Nemesis
+
+Package: game-data-packager-runtime
+Depends:
+ ${misc:Depends},
+ python3,
+ python3-gi,
+ gir1.2-gtk-3.0,
+ gir1.2-pango-1.0,
+Breaks:
+ game-data-packager (<< 46~),
+Replaces:
+ game-data-packager (<< 46~),
+Architecture: all
+Multi-Arch: foreign
+Description: Launcher for proprietary games
+ Various games are divided into two logical parts: engine
+ and data. Often the engine and data are licensed in
+ different ways, such that the engine can be distributed
+ in Debian but the data cannot.
+ .
+ Some of the games supported by game-data-packager need to be
+ started by a special launcher script that will create symbolic
+ links or do other setup. This package contains those launcher
+ scripts.
+ .
+ The following games currently require this package:
+ .
+  * Doom 2: The Master Levels
+  * Unreal
+  * Unreal Gold
