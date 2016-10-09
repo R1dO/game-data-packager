@@ -29,8 +29,8 @@ class MorrowindGameData(GameData):
         return MorrowindTask(self, **kwargs)
 
 class MorrowindTask(PackagingTask):
-    def fill_dest_dir(self, package, destdir):
-        super(MorrowindTask, self).fill_dest_dir(package, destdir)
+    def fill_extra_files(self, package, destdir):
+        super(MorrowindTask, self).fill_extra_files(package, destdir)
 
         install_to = self.packaging.substitute(package.install_to,
                                                package.name)

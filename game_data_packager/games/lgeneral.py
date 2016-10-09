@@ -58,9 +58,9 @@ class LGeneralTask(PackagingTask):
         assert self.game.packages['lgeneral-data-nonfree'] in ready
         return ready
 
-    def fill_dest_dir(self, package, destdir):
+    def fill_extra_files(self, package, destdir):
         assert package.name == 'lgeneral-data-nonfree'
-        super(LGeneralTask, self).fill_dest_dir(package, destdir)
+        super(LGeneralTask, self).fill_extra_files(package, destdir)
 
         installdir = os.path.join(destdir, 'usr/share/games/lgeneral')
         unpackdir = os.path.join(self.get_workdir(), 'tmp', 'pg-data.tar.gz.d')

@@ -30,8 +30,8 @@ class Quake2GameData(GameData):
         return Quake2Task(self, **kwargs)
 
 class Quake2Task(PackagingTask):
-    def fill_dest_dir(self, package, destdir):
-        super(Quake2Task, self).fill_dest_dir(package, destdir)
+    def fill_extra_files(self, package, destdir):
+        super(Quake2Task, self).fill_extra_files(package, destdir)
 
         if package.name not in ('quake2-reckoning-data',
                                 'quake2-groundzero-data'):
