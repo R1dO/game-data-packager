@@ -8,11 +8,26 @@ game-data-packager (46) UNRELEASED; urgency=medium
   * Enhancements and bug fixes:
     - also search for games assets in 'Program Files (x86)' directories
       [adetiste]
+    - add experimental support for building packages for another system, for
+      example Fedora RPMs on Debian [smcv]
+    - append distribution to RPM release number, for example
+      many data packages are now version 46-0.fedora if built for Fedora
+      [smcv]
+    - split out game-data-packager-runtime into a separate binary
+      package so g-d-p doesn't have to remain installed alongside
+      the games [smcv]
   * Internal changes:
     - switch to debhelper 10, no change needed [adetiste]
-    - manual-check: move tmp/ to out/manual-check/ [smcv]
     - mark the out/ directory with CACHEDIR.TAG to make it easy to avoid
       backups [smcv]
+    - games can use more variables, which are expanded recursively
+      ($docdir -> $datadir/doc -> $prefix/share/doc -> /usr/share/doc)
+      [smcv]
+    - expand $assets etc. to absolute paths, to make the .desktop files
+      less weird [smcv]
+    - factor out most packaging-specifics into modules [smcv]
+    - convert 'make manual-check' into an ordinary test, which is
+      skipped if the necessary files are not in ~/Downloads [smcv]
 
  -- Simon McVittie <smcv@debian.org>  Fri, 01 Jul 2016 10:30:08 +0100
 
