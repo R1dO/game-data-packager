@@ -2016,12 +2016,18 @@ class PackagingTask(object):
             if not self.check_complete(package, log=True):
                 raise SystemExit(1)
 
+            destdir = os.path.join(self.get_workdir(),
+                    '%s.DESTDIR' % package.name)
+            self.fill_dest_dir(package, destdir)
+
             if self.packaging.derives_from('deb'):
-                pkg = self.build_deb(package, arch, destination, compress=compress)
+                pkg = self.build_deb(destdir, package, arch, destination,
+                        compress=compress)
             elif self.packaging.derives_from('rpm'):
-                pkg = self.build_rpm(package, arch, compress=compress)
+                pkg = self.build_rpm(destdir, package, arch, compress=compress)
             elif self.packaging.derives_from('arch'):
-                pkg = self.build_arch(package, arch, destination, compress=compress)
+                pkg = self.build_arch(destdir, package, arch, destination,
+                        compress=compress)
 
             if pkg is None:
                 raise SystemExit(1)
@@ -2152,15 +2158,8 @@ class PackagingTask(object):
                  return
         return
 
-    def build_deb(self, package, arch, destination, compress=True):
-        """
-        If we have all the necessary files for package, build the .deb
-        and return the output filename in destination. Otherwise return None.
-        """
-        destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
-
+    def build_deb(self, destdir, package, arch, destination, compress=True):
         self.check_component(package)
-        self.fill_dest_dir(package, destdir)
         self.packaging.fill_dest_dir_deb(game, package, destdir)
         normalize_permissions(destdir)
 
@@ -2199,9 +2198,7 @@ class PackagingTask(object):
         return outfile
 
 
-    def build_arch(self, package, arch, destination, compress=True):
-        destdir = os.path.join(self.get_workdir(), '%s.pkg.d' % package.name)
-        self.fill_dest_dir(package, destdir)
+    def build_arch(self, destdir, package, arch, destination, compress=True):
         self.packaging.fill_dest_dir_arch(game, package, destdir, compress,
                 arch)
         normalize_permissions(destdir)
@@ -2230,11 +2227,7 @@ class PackagingTask(object):
         rm_rf(destdir)
         return outfile
 
-    def build_rpm(self, package, arch, compress=True):
-        destdir = os.path.join(self.get_workdir(), '%s.rpm.d' % package.name)
-
-        self.fill_dest_dir(package, destdir)
-
+    def build_rpm(self, destdir, package, arch, compress=True):
         if arch == 'noarch':
             setarch = []
         else:
