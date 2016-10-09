@@ -174,19 +174,18 @@ class DoomTask(PackagingTask):
                     'usr/share/applications/%s.desktop %s' %
                      (desktop_file, program))
 
-    def fill_dest_dir_deb(self, package, destdir):
-        for main_wad in package.main_wads:
-            if main_wad in ('doom.wad', 'doom2.wad', 'plutonia.wad', 'tnt.wad'):
-                debdir = os.path.join(destdir, 'DEBIAN')
-                mkdir_p(debdir)
-                copy_with_substitutions(
-                    open(os.path.join(DATADIR, 'doom-common.preinst.in'),
-                        encoding='utf-8'),
-                    open(os.path.join(debdir, 'preinst'), 'w',
-                        encoding='utf-8'),
-                    IWAD=main_wad)
-                os.chmod(os.path.join(debdir, 'preinst'), 0o755)
-
-        super(DoomTask, self).fill_dest_dir_deb(package, destdir)
+        if self.packaging.derives_from('deb'):
+            for main_wad in package.main_wads:
+                if main_wad in ('doom.wad', 'doom2.wad', 'plutonia.wad',
+                        'tnt.wad'):
+                    debdir = os.path.join(destdir, 'DEBIAN')
+                    mkdir_p(debdir)
+                    copy_with_substitutions(
+                        open(os.path.join(DATADIR, 'doom-common.preinst.in'),
+                            encoding='utf-8'),
+                        open(os.path.join(debdir, 'preinst'), 'w',
+                            encoding='utf-8'),
+                        IWAD=main_wad)
+                    os.chmod(os.path.join(debdir, 'preinst'), 0o755)
 
 GAME_DATA_SUBCLASS = DoomGameData
