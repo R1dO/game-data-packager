@@ -36,13 +36,13 @@ packages:
     architecture: i386
     version: "1.4.2"
     depends:
+      - game-data-packager-runtime
       - libc.so.6 (>= 2.2.4)
       - libgcc_s.so.1 (>= 4.1.2)
       - libSDL-1.2.so.0 (>= 1.2.10)
       - libstdc++.so.6 (>= 4.1.2)
       - deb: quake4-data | quake4-censored-de-data
         generic: quake4-any-data
-      - deb: xdg-utils
     suggests:
       - quake4-pb-bin
     install:
@@ -50,9 +50,10 @@ packages:
     symlinks:
       $prefix/lib/quake4/q4base: $assets/quake4/q4base
       $prefix/lib/quake4/q4mp: $assets/quake4/q4mp
-      # The bundled implementation isn't great, and xdg-open is
-      # binary-compatible
-      $prefix/lib/quake4/openurl.sh: /usr/bin/xdg-open
+      # The bundled implementation is some horrible shell script, and the
+      # one provided by gdp-runtime can open URLs on the host system from
+      # inside a Flatpak.
+      $prefix/lib/quake4/openurl.sh: $assets/game-data-packager-runtime/gdp-openurl
       $prefix/lib/quake4/version.info: $assets/quake4/version.info
       $prefix/lib/quake4/q4icon.bmp: $assets/quake4/q4icon.bmp
 

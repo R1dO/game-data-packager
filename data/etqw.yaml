@@ -35,12 +35,12 @@ packages:
     version: "1.5"
     depends:
       - etqw-data
+      - game-data-packager-runtime
       - libc.so.6 (>= 2.2.4)
       - libgcc_s.so.1 (>= 4.1.2)
       - libjpeg.so.62
       - libSDL-1.2.so.0 (>= 1.2.10)
       - libstdc++.so.6 (>= 4.1.2)
-      - deb: xdg-utils
     suggests:
       - etqw-pb-bin
     install:
@@ -51,9 +51,10 @@ packages:
     - patch 1.4 to 1.5 - licenses
     symlinks:
       $prefix/lib/etqw/base: $assets/etqw/base
-      # The bundled implementation isn't great, and xdg-open is
-      # binary-compatible
-      $prefix/lib/etqw/openurl.sh: /usr/bin/xdg-open
+      # The bundled implementation is some horrible shell script, and the
+      # one provided by gdp-runtime can open URLs on the host system from
+      # inside a Flatpak.
+      $prefix/lib/etqw/openurl.sh: $assets/game-data-packager-runtime/gdp-openurl
 
   etqw-data:
     version: "1.5"

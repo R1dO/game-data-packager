@@ -122,6 +122,7 @@ install:
 
 	install -d                                             $(DESTDIR)$(runtimedir)/
 	install runtime/launcher.py                            $(DESTDIR)$(runtimedir)/gdp-launcher
+	install runtime/openurl.py                             $(DESTDIR)$(runtimedir)/gdp-openurl
 	install -m0644 out/*.desktop                           $(DESTDIR)$(runtimedir)/
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(runtimedir)/
 	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(runtimedir)/
