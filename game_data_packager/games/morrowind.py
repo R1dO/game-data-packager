@@ -30,8 +30,7 @@ class MorrowindGameData(GameData):
 
 class MorrowindTask(PackagingTask):
     def fill_dest_dir(self, package, destdir):
-        if not super(MorrowindTask, self).fill_dest_dir(package, destdir):
-            return False
+        super(MorrowindTask, self).fill_dest_dir(package, destdir)
 
         install_to = self.packaging.substitute(package.install_to,
                                                package.name)
@@ -75,8 +74,6 @@ class MorrowindTask(PackagingTask):
         #
         # $ mkdir -p ~/.config/openmw/
         # $ cp /usr/share/games/morrowind-fr/openmw.cfg ~/.config/openmw/
-
-        return True
 
 # 1) sample output of openmw-iniimporter without "Data Files"
 

@@ -1480,9 +1480,6 @@ class PackagingTask(object):
         os.chmod(control, 0o644)
 
     def fill_dest_dir(self, package, destdir):
-        if not self.check_complete(package, log=True):
-            return False
-
         pkgdocdir = self.packaging.substitute('$pkgdocdir', package.name)
         dest_pkgdocdir = os.path.join(destdir, pkgdocdir.strip('/'))
         mkdir_p(dest_pkgdocdir)
@@ -1589,8 +1586,6 @@ class PackagingTask(object):
                     '--preserve=timestamps', copy_from, copy_to])
 
         self.fill_extra_files(package, destdir)
-
-        return True
 
     def our_dh_fixperms(self, destdir):
         for dirpath, dirnames, filenames in os.walk(destdir):
@@ -2443,6 +2438,9 @@ class PackagingTask(object):
                 arch = self.packaging.get_architecture(arch)
             arch = self.packaging.ARCH_DECODE.get(arch, arch)
 
+            if not self.check_complete(package, log=True):
+                raise SystemExit(1)
+
             if self.packaging.derives_from('deb'):
                 pkg = self.build_deb(package, arch, destination, compress=compress)
             elif self.packaging.derives_from('rpm'):
@@ -2587,10 +2585,7 @@ class PackagingTask(object):
         destdir = os.path.join(self.get_workdir(), '%s.deb.d' % package.name)
 
         self.check_component(package)
-        if not self.fill_dest_dir(package, destdir):
-            # FIXME: probably better as an exception?
-            return None
-
+        self.fill_dest_dir(package, destdir)
         self.fill_dest_dir_deb(package, destdir)
         self.our_dh_fixperms(destdir)
 
@@ -2631,10 +2626,7 @@ class PackagingTask(object):
 
     def build_arch(self, package, arch, destination, compress=True):
         destdir = os.path.join(self.get_workdir(), '%s.pkg.d' % package.name)
-
-        if not self.fill_dest_dir(package, destdir):
-            return None
-
+        self.fill_dest_dir(package, destdir)
         self.fill_dest_dir_arch(package, destdir, compress, arch)
         self.our_dh_fixperms(destdir)
 
@@ -2665,8 +2657,7 @@ class PackagingTask(object):
     def build_rpm(self, package, arch, compress=True):
         destdir = os.path.join(self.get_workdir(), '%s.rpm.d' % package.name)
 
-        if not self.fill_dest_dir(package, destdir):
-            return None
+        self.fill_dest_dir(package, destdir)
 
         if arch == 'noarch':
             setarch = []

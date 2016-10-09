@@ -60,8 +60,7 @@ class LGeneralTask(PackagingTask):
 
     def fill_dest_dir(self, package, destdir):
         assert package.name == 'lgeneral-data-nonfree'
-        if not super(LGeneralTask, self).fill_dest_dir(package, destdir):
-            return False
+        super(LGeneralTask, self).fill_dest_dir(package, destdir)
 
         installdir = os.path.join(destdir, 'usr/share/games/lgeneral')
         unpackdir = os.path.join(self.get_workdir(), 'tmp', 'pg-data.tar.gz.d')
@@ -82,7 +81,5 @@ class LGeneralTask(PackagingTask):
         self.packaging.override_lintian(destdir, package.name,
                              'package-contains-timestamped-gzip',
                              'usr/share/games/lgeneral/pg-data.tar.gz')
-
-        return True
 
 GAME_DATA_SUBCLASS = LGeneralGameData

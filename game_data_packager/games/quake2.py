@@ -31,12 +31,11 @@ class Quake2GameData(GameData):
 
 class Quake2Task(PackagingTask):
     def fill_dest_dir(self, package, destdir):
-        if not super(Quake2Task, self).fill_dest_dir(package, destdir):
-            return False
+        super(Quake2Task, self).fill_dest_dir(package, destdir)
 
         if package.name not in ('quake2-reckoning-data',
                                 'quake2-groundzero-data'):
-            return True
+            return
 
         subdir = {
             'quake2-groundzero-data': 'rogue',
@@ -60,7 +59,5 @@ class Quake2Task(PackagingTask):
         subprocess.check_call(['install', '-s', '-m644',
             os.path.join(unpackdir, expect_dir, 'release', 'game.so'),
             os.path.join(installdir, subdir, 'game.so')])
-
-        return True
 
 GAME_DATA_SUBCLASS = Quake2GameData
