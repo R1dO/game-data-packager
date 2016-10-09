@@ -207,5 +207,170 @@ class DebPackaging(PackagingSystem):
 
         return self.rename_package(pr.package)
 
+    def __generate_control(self, game, package, destdir):
+        if Deb822 is None:
+            raise FileNotFoundError('Cannot generate .deb packages without '
+                    'python3-debian')
+
+        try:
+            control_in = open(os.path.join(DATADIR,
+                              package.name + '.control.in'), encoding='utf-8')
+            control = Deb822(control_in)
+            for key in control.keys():
+                assert key == 'Description', 'specify "%s" only in YAML' % key
+        except FileNotFoundError:
+            control = Deb822()
+
+        control['Package'] = package.name
+        control['Version'] = package.version
+        control['Priority'] = 'optional'
+        control['Maintainer'] = 'Debian Games Team <pkg-games-devel@lists.alioth.debian.org>'
+
+        installed_size = 0
+        # algorithm from https://bugs.debian.org/650077 designed to be
+        # filesystem-independent
+        for dirpath, dirnames, filenames in os.walk(destdir):
+            if dirpath == destdir and 'DEBIAN' in dirnames:
+                dirnames.remove('DEBIAN')
+            # estimate 1 KiB per directory
+            installed_size += len(dirnames)
+            for f in filenames:
+                stat_res = os.lstat(os.path.join(dirpath, f))
+                if (stat.S_ISLNK(stat_res.st_mode) or
+                        stat.S_ISREG(stat_res.st_mode)):
+                    # take the real size and round up to next 1 KiB
+                    installed_size += ((stat_res.st_size + 1023) // 1024)
+                else:
+                    # this will probably never happen in gdp, but assume
+                    # 1 KiB per non-regular, non-directory, non-symlink file
+                    installed_size += 1
+        control['Installed-Size'] = str(installed_size)
+
+        if package.component == 'main':
+            control['Section'] = package.section
+        else:
+            control['Section'] = package.component + '/' + package.section
+
+        if package.architecture == 'all':
+            control['Architecture'] = 'all'
+            control['Multi-Arch'] = 'foreign'
+        else:
+            control['Architecture'] = self.get_architecture(
+                    package.architecture)
+
+        dep = dict()
+
+        for rel in package.relations:
+            if rel == 'build_depends':
+                continue
+
+            dep[rel] = self.merge_relations(package, rel)
+            logger.debug('%s %s %s', package.name, rel, ', '.join(dep[rel]))
+
+        if package.mutually_exclusive:
+            dep['conflicts'] |= package.demo_for
+            dep['conflicts'] |= package.better_versions
+
+        if package.mutually_exclusive:
+            dep['replaces'] |= dep['provides']
+
+        engine = self.substitute(
+                package.engine or game.engine,
+                package.name)
+
+        if engine and '>=' in engine:
+            engine, ver = engine.split(maxsplit=1)
+            ver = ver.strip('(>=) ')
+            dep['breaks'].add('%s (<< %s~)' % (engine, ver))
+
+        # We only 'recommends' & not 'depends'; to avoid
+        # that GDP-generated packages get removed
+        # if engine goes through some gcc/png/ffmpeg/... migration
+        # and must be temporarily removed.
+        # It's not like 'apt-get install ...' can revert this removal;
+        # user may need to dig again for the original media....
+        if package.engine:
+            dep['recommends'].add(engine)
+        elif not package.expansion_for and game.engine:
+            dep['recommends'].add(engine)
+
+        if package.expansion_for:
+            # check if default heuristic has been overriden in yaml
+            for p in dep['depends']:
+                if package.expansion_for == p.split()[0]:
+                    break
+            else:
+                dep['depends'].add(package.expansion_for)
+
+        # dependencies derived from *other* package's data
+        for other_package in game.packages.values():
+            if other_package.expansion_for:
+                if package.name == other_package.expansion_for:
+                    dep['suggests'].add(other_package.name)
+                else:
+                    for p in package.relations['provides']:
+                        if p.package == other_package.expansion_for:
+                            dep['suggests'].add(other_package.name)
+
+            if other_package.mutually_exclusive:
+                if package.name in other_package.better_versions:
+                    dep['replaces'].add(other_package.name)
+
+                if package.name in other_package.demo_for:
+                    dep['replaces'].add(other_package.name)
+
+        # Shortcut: if A Replaces B, A automatically Conflicts B
+        dep['conflicts'] |= dep['replaces']
+
+        # keep only strongest depedency
+        dep['recommends'] -= dep['depends']
+        dep['suggests'] -= dep['recommends']
+        dep['suggests'] -= dep['depends']
+
+        for k, v in dep.items():
+            if v:
+                control[k.title()] = ', '.join(sorted(v))
+
+        if 'Description' not in control:
+            short_desc, long_desc = self.generate_description(game, package)
+            control['Description'] = short_desc + '\n ' + long_desc.replace('\n', '\n ')
+
+        return control
+
+    def fill_dest_dir_deb(self, game, package, destdir):
+        if package.component == 'local':
+             self.override_lintian(destdir, package.name,
+                     'unknown-section', 'local/%s' % package.section)
+
+        # same output as in dh_md5sums
+
+        # we only compute here the md5 we don't have yet,
+        # for the (small) GDP-generated files
+        for dirpath, dirnames, filenames in os.walk(destdir):
+            if os.path.basename(dirpath) == 'DEBIAN':
+                continue
+            for fn in filenames:
+                full = os.path.join(dirpath, fn)
+                if os.path.islink(full):
+                    continue
+                file = full[len(destdir)+1:]
+                if file not in package.md5sums:
+                    with open(full, 'rb') as opened:
+                        hf = HashedFile.from_file(full, opened)
+                        package.md5sums[file] = hf.md5
+
+        debdir = os.path.join(destdir, 'DEBIAN')
+        mkdir_p(debdir)
+        md5sums = os.path.join(destdir, 'DEBIAN/md5sums')
+        with open(md5sums, 'w', encoding='utf8') as outfile:
+            for file in sorted(package.md5sums.keys()):
+                outfile.write('%s  %s\n' % (package.md5sums[file], file))
+        os.chmod(md5sums, 0o644)
+
+        control = os.path.join(destdir, 'DEBIAN/control')
+        self.__generate_control(game, package, destdir).dump(
+                fd=open(control, 'wb'), encoding='utf-8')
+        os.chmod(control, 0o644)
+
 def get_packaging_system(distro=None):
     return DebPackaging()

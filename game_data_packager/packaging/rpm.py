@@ -101,6 +101,129 @@ class RpmPackaging(PackagingSystem):
 
         return self.rename_package(pr.package)
 
+    def fill_dest_dir_rpm(self, game, package, workdir, destdir, compress,
+            architecture, release):
+        specfile = os.path.join(workdir, '%s.spec' % package.name)
+        short_desc, long_desc = self.generate_description(game, package)
+        short_desc = short_desc[0].upper() + short_desc[1:]
+
+        if game.wikibase:
+            url = game.wikibase + (game.wiki or '')
+        elif game.wikipedia:
+            url = game.wikipedia
+        else:
+            url = 'https://wiki.debian.org/Games/GameDataPackager'
+
+        # /usr/games & /usr/share/games should only
+        # be seen in rpm's built for Mageia
+        SYSTEM_DIRS = set(['/usr',
+                           '/usr/bin',
+                           '/usr/games',
+                           '/usr/lib',
+                           '/usr/share',
+                           '/usr/share/applications',
+                           '/usr/share/doc',
+                           '/usr/share/doc/packages',
+                           '/usr/share/games',
+                           '/usr/share/icons',
+                           '/usr/share/icons/hicolor',
+                           '/usr/share/icons/hicolor/scalable',
+                           '/usr/share/icons/hicolor/scalable/apps',
+                           '/usr/share/licenses',
+                           '/usr/share/pixmaps'])
+
+        files = set()
+        for dirpath, dirnames, filenames in os.walk(destdir):
+             dir = dirpath[len(destdir):]
+             if not dir:
+                 # /
+                 continue
+             elif dir in SYSTEM_DIRS:
+                 for fn in filenames + dirnames:
+                     full = os.path.join(dirpath, fn)
+                     file = full[len(destdir):]
+                     if file not in SYSTEM_DIRS:
+                         files.add(file)
+             else:
+                 for file in files:
+                     if dir.startswith(file):
+                         break
+                 else:
+                     files.add(dir)
+
+        logger.debug('%%files in specfile:\n%s', '\n'.join(sorted(files)))
+
+        with open(specfile, 'w', encoding='utf-8') as spec:
+            spec.write('Summary: %s\n' % short_desc)
+            spec.write('Name: %s\n' % package.name)
+            spec.write('Version: %s\n' % package.version)
+            spec.write('Url: %s\n' % url)
+            spec.write('Release: %s\n' % release)
+            spec.write('License: Commercial\n')
+            if self.derives_from('mageia'):
+                spec.write('Packager: game-data-packager\n')
+                spec.write('Group: Games/%s\n' % game.genre)
+            else:
+                spec.write('Group: Amusements/Games\n')
+            spec.write('BuildArch: %s\n' % architecture)
+
+            for p in self.merge_relations(package, 'provides'):
+                spec.write('Provides: %s\n' % p)
+
+                if package.mutually_exclusive:
+                    spec.write('Conflicts: %s\n' % p)
+
+            if package.expansion_for:
+                spec.write('Requires: %s\n' % package.expansion_for)
+            else:
+                engine = self.substitute(
+                        package.engine or game.engine,
+                        package.name)
+
+                if engine and len(engine.split()) == 1:
+                    spec.write('Requires: %s\n' % engine)
+
+            for p in self.merge_relations(package, 'depends'):
+                spec.write('Requires: %s\n' % p)
+
+            for p in (self.merge_relations(package, 'conflicts') |
+                    self.merge_relations(package, 'breaks')):
+                spec.write('Conflicts: %s\n' % p)
+
+            for p in self.merge_relations(package, 'recommends'):
+                # FIXME: some RPM distributions do have recommends;
+                # which ones?
+                pass
+
+            for p in self.merge_relations(package, 'suggests'):
+                # FIXME: likewise
+                pass
+
+            # FIXME: replaces?
+
+            if not compress or package.rip_cd:
+                spec.write('%define _binary_payload w0.gzdio\n')
+            elif compress == ['-Zgzip', '-z1']:
+                spec.write('%define _binary_payload w1.gzdio\n')
+            spec.write('%description\n')
+            spec.write('%s\n' % long_desc)
+            spec.write('%files\n')
+            spec.write('\n'.join(files))
+            spec.write('\n\n')
+
+            spec.write('%changelog\n')
+            try:
+                login = os.getlogin()
+            except FileNotFoundError:
+                login = 'game-data-packager'
+            spec.write('* %s %s@%s - %s-%s\n' %
+                        (time.strftime("%a %b %d %Y", time.gmtime()),
+                         login, os.uname()[1], package.version, release))
+            spec.write('- Package generated by game-data-packager'
+                       ' for local use only\n')
+
+        return specfile
+
 # XXX: dnf is written in python3 and has a stable public api,
 #      it is likely faster to use it instead of calling 'dnf' pgm.
 #

@@ -215,6 +215,87 @@ class PackagingSystem(metaclass=ABCMeta):
                 return k
         return package
 
+    def merge_relations(self, package, rel):
+        return set(self.format_relations(package.relations[rel]))
+
+    def generate_description(self, game, package):
+        longname = package.longname or game.longname
+
+        if package.short_description is not None:
+            short_desc = package.short_description
+        elif package.section == 'games':
+            short_desc = 'game %s for %s' % (package.data_type, longname)
+        else:
+            short_desc = longname
+
+        if package.long_description is not None:
+            long_desc = package.long_description
+            long_desc = long_desc.rstrip('\n')
+            return (short_desc, long_desc)
+
+        long_desc =  'This package was built using game-data-packager.\n'
+        if package.component == 'local':
+            long_desc += 'It contains proprietary game data and must not be redistributed.\n'
+            long_desc += '.\n'
+        elif package.component == 'non-free':
+            long_desc += 'It contains proprietary game data that may be redistributed\n'
+            long_desc += 'only under some conditions.\n'
+            long_desc += '.\n'
+        else:
+            long_desc += 'It contains free game data and may be redistributed.\n'
+            long_desc += '.\n'
+
+        if package.description:
+            for line in package.description.splitlines():
+                line = line.rstrip() or '.'
+                long_desc += (line + '\n')
+            long_desc += '.\n'
+
+        if game.genre:
+            long_desc += ' Genre: ' + game.genre + '\n'
+
+        if package.section == 'doc':
+            long_desc += ' Documentation: ' + longname + '\n'
+        elif package.expansion_for and package.expansion_for in game.packages:
+            game_name = (game.packages[package.expansion_for].longname
+                         or game.longname)
+            if game_name not in long_desc:
+                long_desc += ' Game: ' + game_name + '\n'
+            if longname != game_name:
+                long_desc += ' Expansion: ' + longname + '\n'
+        else:
+            long_desc += ' Game: ' + longname + '\n'
+
+        copyright = package.copyright or game.copyright
+        copyright = copyright.split(' ', 2)[2]
+        if copyright not in long_desc:
+            long_desc += ' Published by: ' + copyright
+
+        engine = self.substitute(
+                package.engine or game.engine,
+                package.name)
+
+        if engine and package.data_type not in ('music', 'documentation'):
+            long_desc += '\n.\n'
+            if '|' in engine:
+                virtual = engine.split('|')[-1].strip()
+                has_virtual = (virtual.split('-')[-1] == 'engine')
+            else:
+                has_virtual = False
+            engine = engine.split('|')[0].split('(')[0].strip()
+            if engine.startswith('gemrb'):
+                engine = 'gemrb'
+            if has_virtual:
+                long_desc += 'Intended for use with some ' + virtual + ',\n'
+                long_desc += 'such as for example: ' + engine
+            else:
+                long_desc += 'Intended for use with: ' + engine
+
+        if package.used_sources:
+            long_desc += '\nBuilt from: ' + ', '.join(package.used_sources)
+
+        return (short_desc, long_desc)
+
 def get_packaging_system(format, distro=None):
     mod = 'game_data_packager.packaging.{}'.format(format)
     return importlib.import_module(mod).get_packaging_system(distro)

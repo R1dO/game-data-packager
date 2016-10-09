@@ -109,5 +109,44 @@ class ArchPackaging(PackagingSystem):
 
         return self.rename_package(pr.package)
 
+    def fill_dest_dir_arch(self, game, package, destdir, compress, arch):
+        PKGINFO = os.path.join(destdir, '.PKGINFO')
+        short_desc, _ = self.generate_description(game, package)
+        size = check_output(['du','-bs','.'], cwd=destdir)
+        size = int(size.split()[0])
+        with open(PKGINFO, 'w',  encoding='utf-8') as pkginfo:
+            pkginfo.write('pkgname = %s\n' % package.name)
+            pkginfo.write('pkgver = %s-1\n' % package.version)
+            pkginfo.write('pkgdesc = %s\n' % short_desc)
+            pkginfo.write('url = https://wiki.debian.org/Games/GameDataPackager\n')
+            pkginfo.write('builddate = %i\n' % int(time.time()))
+            pkginfo.write('packager = Alexandre Detiste <alexandre@detiste.be>\n')
+            pkginfo.write('size = %i\n' % size)
+            pkginfo.write('arch = %s\n' % arch)
+            if os.path.isdir(os.path.join(destdir, 'usr/share/licenses')):
+                pkginfo.write('license = custom\n')
+            pkginfo.write('group = games\n')
+            if package.expansion_for:
+                pkginfo.write('depend = %s\n' % package.expansion_for)
+            else:
+                engine = self.substitute(
+                        package.engine or game.engine,
+                        package.name)
+
+                if engine and len(engine.split()) == 1:
+                    pkginfo.write('depend = %s\n' % engine)
+
+        files = set()
+        for dirpath, dirnames, filenames in os.walk(destdir):
+                for fn in filenames:
+                    full = os.path.join(dirpath, fn)
+                    full = full[len(destdir)+1:]
+                    files.add(full)
+
+        MTREE = os.path.join(destdir, '.MTREE')
+        subprocess.check_call(['fakeroot', 'bsdtar', '-czf', MTREE, '--format=mtree',
+                 '--options=!all,use-set,type,uid,gid,mode,time,size,md5,sha256,link']
+                 + sorted(files), env={'LANG':'C'}, cwd=destdir)
+
 def get_packaging_system(distro=None):
     return ArchPackaging()
