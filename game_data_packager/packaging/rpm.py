@@ -39,14 +39,19 @@ class RpmPackaging(PackagingSystem):
         self._contexts = (distro, 'rpm', 'generic')
 
     def is_installed(self, package):
-        return 0 == subprocess.call(['rpm', '-q', package],
-                                    stdout=subprocess.DEVNULL,
-                                    stderr=subprocess.DEVNULL)
+        try:
+            return 0 == subprocess.call(['rpm', '-q', package],
+                                        stdout=subprocess.DEVNULL,
+                                        stderr=subprocess.DEVNULL)
+        except FileNotFoundError:
+            return False
 
     def current_version(self, package):
         try:
             return check_output(['rpm', '-q',
               '--qf', '%{VERSION}', package], universal_newlines=True)
+        except FileNotFoundError:
+            return None
         except subprocess.CalledProcessError:
             return None
 
@@ -123,11 +128,14 @@ class DnfPackaging(RpmPackaging):
 
     def is_available(self, package):
         if self.available is None:
+            try:
+                proc = subprocess.Popen(['dnf', 'list'],
+                        universal_newlines=True,
+                        stderr=subprocess.DEVNULL,
+                        stdout=subprocess.PIPE)
+            except FileNotFoundError:
+                return False
             cache = set()
-            proc = subprocess.Popen(['dnf', 'list'],
-                    universal_newlines=True,
-                    stderr=subprocess.DEVNULL,
-                    stdout=subprocess.PIPE)
             for line in proc.stdout:
                 if '.' in line:
                     cache.add(line.split('.')[0])
@@ -136,10 +144,13 @@ class DnfPackaging(RpmPackaging):
         return package in self.available
 
     def available_version(self, package):
-        proc = subprocess.Popen(['dnf', 'list', package],
-                                 universal_newlines=True,
-                                 stderr=subprocess.DEVNULL,
-                                 stdout=subprocess.PIPE)
+        try:
+            proc = subprocess.Popen(['dnf', 'list', package],
+                                     universal_newlines=True,
+                                     stderr=subprocess.DEVNULL,
+                                     stdout=subprocess.PIPE)
+        except FileNotFoundError:
+            return None
         # keep only last line
         for line in proc.stdout:
             pass
@@ -164,20 +175,26 @@ class ZypperPackaging(RpmPackaging):
         super(ZypperPackaging, self).__init__('suse')
 
     def is_available(self, package):
-        proc = subprocess.Popen(['zypper', 'info', package],
-                universal_newlines=True,
-                stdout=subprocess.PIPE,
-                env={'LANG':'C'})
+        try:
+            proc = subprocess.Popen(['zypper', 'info', package],
+                    universal_newlines=True,
+                    stdout=subprocess.PIPE,
+                    env={'LANG':'C'})
+        except FileNotFoundError:
+            return False
         for line in proc.stdout:
             if line.startswith('Version:'):
                 return True
         return False
 
     def available_version(self, package):
-        proc = subprocess.Popen(['zypper', 'info', package],
-                universal_newlines=True,
-                stdout=subprocess.PIPE,
-                env={'LANG':'C'})
+        try:
+            proc = subprocess.Popen(['zypper', 'info', package],
+                    universal_newlines=True,
+                    stdout=subprocess.PIPE,
+                    env={'LANG':'C'})
+        except FileNotFoundError:
+            return None
         for line in proc.stdout:
             if line.startswith('Version:'):
                 return line.split(':', maxsplit=1)[1]
@@ -201,14 +218,19 @@ class UrpmiPackaging(RpmPackaging):
         super(UrpmiPackaging, self).__init__('mageia')
 
     def is_available(self, package):
-        return 0 == subprocess.call(['urpmq', package],
-                                    stdout=subprocess.DEVNULL,
-                                    stderr=subprocess.DEVNULL)
+        try:
+            return 0 == subprocess.call(['urpmq', package],
+                                        stdout=subprocess.DEVNULL,
+                                        stderr=subprocess.DEVNULL)
+        except FileNotFoundError:
+            return False
 
     def available_version(self, package):
         try:
             line = check_output(['urpmq', '-r', package]).decode('ascii')
             return line.split('-')[-2]
+        except FileNotFoundError:
+            return None
         except subprocess.CalledProcessError:
             return None
 

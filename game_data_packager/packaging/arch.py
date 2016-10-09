@@ -51,22 +51,30 @@ class ArchPackaging(PackagingSystem):
             self._foreign_architectures = set(['i386'])
 
     def is_installed(self, package):
-        return subprocess.call(['pacman', '-Q', package],
-                                stdout=subprocess.DEVNULL,
-                                stderr=subprocess.DEVNULL) == 0
+        try:
+            return subprocess.call(['pacman', '-Q', package],
+                                    stdout=subprocess.DEVNULL,
+                                    stderr=subprocess.DEVNULL) == 0
+        except FileNotFoundError:
+            return False
 
     def current_version(self, package):
         try:
             return check_output(['pacman', '-Q', package],
                                 stderr=subprocess.DEVNULL,
                                 universal_newlines=True).split()[1]
+        except FileNotFoundError:
+            return None
         except subprocess.CalledProcessError:
             return None
 
     def is_available(self, package):
-        return subprocess.call(['pacman', '-Si', package],
-                                stdout=subprocess.DEVNULL,
-                                stderr=subprocess.DEVNULL) == 0
+        try:
+            return subprocess.call(['pacman', '-Si', package],
+                                    stdout=subprocess.DEVNULL,
+                                    stderr=subprocess.DEVNULL) == 0
+        except FileNotFoundError:
+            return False
 
     def available_version(self, package):
         try:
@@ -78,6 +86,8 @@ class ArchPackaging(PackagingSystem):
                 if k == 'Version':
                     return v
 
+        except FileNotFoundError:
+            return None
         except subprocess.CalledProcessError:
             return None
 

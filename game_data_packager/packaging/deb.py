@@ -88,11 +88,15 @@ class DebPackaging(PackagingSystem):
             return True
 
         if self.__installed is None:
+            try:
+                proc = subprocess.Popen(['dpkg-query', '--show',
+                            '--showformat', '${Package}\\n'],
+                        universal_newlines=True,
+                        stdout=subprocess.PIPE)
+            except FileNotFoundError:
+                return False
+
             cache = set()
-            proc = subprocess.Popen(['dpkg-query', '--show',
-                        '--showformat', '${Package}\\n'],
-                    universal_newlines=True,
-                    stdout=subprocess.PIPE)
             for line in proc.stdout:
                 cache.add(line.rstrip())
             self.__installed = cache
@@ -101,10 +105,14 @@ class DebPackaging(PackagingSystem):
 
     def is_available(self, package):
         if self.__available is None:
+            try:
+                proc = subprocess.Popen(['apt-cache', 'pkgnames'],
+                        universal_newlines=True,
+                        stdout=subprocess.PIPE)
+            except FileNotFoundError:
+                return False
+
             cache = set()
-            proc = subprocess.Popen(['apt-cache', 'pkgnames'],
-                    universal_newlines=True,
-                    stdout=subprocess.PIPE)
             for line in proc.stdout:
                 cache.add(line.rstrip())
             self.__available = cache
@@ -118,12 +126,17 @@ class DebPackaging(PackagingSystem):
         try:
             return check_output(['dpkg-query', '--show',
               '--showformat', '${Version}', package], universal_newlines=True)
+        except FileNotFoundError:
+            return None
         except subprocess.CalledProcessError:
             return None
 
     def available_version(self, package):
-        current_ver = check_output(['apt-cache', 'madison', package],
-                                    universal_newlines=True)
+        try:
+            current_ver = check_output(['apt-cache', 'madison', package],
+                                        universal_newlines=True)
+        except FileNotFoundError:
+            return None
         current_ver = current_ver.splitlines()[0]
         current_ver = current_ver.split('|')[1].strip()
         return current_ver
