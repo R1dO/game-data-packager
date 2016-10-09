@@ -27,9 +27,11 @@ from . import (load_games)
 from .config import (read_config)
 from .data import (ProgressCallback)
 from .gog import (run_gog_meta_mode)
+from .packaging import (get_packaging_system)
 from .paths import (DATADIR)
 from .steam import (run_steam_meta_mode)
 from .util import (human_size)
+from .version import (FORMAT, DISTRO)
 
 logger = logging.getLogger(__name__)
 
@@ -91,6 +93,12 @@ def run_command_line():
     base_parser.add_argument('--package', '-p', action='append',
             dest='packages', metavar='PACKAGE',
             help='Produce this data package (may be repeated)')
+
+    base_parser.add_argument('--target-format',
+            help='Produce packages for this packaging system',
+            choices='arch deb rpm'.split())
+    base_parser.add_argument('--target-distro',
+            help='Produce packages suitable for this distro')
 
     base_parser.add_argument('--install-method', metavar='METHOD',
             dest='install_method',
@@ -223,6 +231,8 @@ def run_command_line():
             packages=[],
             save_downloads=None,
             shortname=None,
+            target_format=FORMAT,
+            target_distro=DISTRO,
     )
     if config['install']:
         logger.debug('obeying INSTALL=yes in configuration')
@@ -288,7 +298,8 @@ def run_command_line():
         else:
             raise AssertionError('could not find %s' % parsed.shortname)
 
-    with game.construct_task() as task:
+    with game.construct_task(packaging=get_packaging_system(
+        parsed.target_format, parsed.target_distro)) as task:
         if sys.stderr.isatty():
             task.progress_factory = TerminalProgress
 
