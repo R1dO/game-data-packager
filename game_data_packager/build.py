@@ -1929,6 +1929,21 @@ class PackagingTask(object):
                 if os.path.isdir(path) and path not in paths:
                     paths.append(path)
 
+                if (self.packaging.__class__ is not
+                        self.builder_packaging.__class__):
+                    path = os.path.join('/',
+                        self.builder_packaging.substitute(package.install_to,
+                            package.name).strip('/'))
+                    logger.debug('Maybe %s', path)
+
+                    if os.path.isdir(path) and path not in paths:
+                        paths.append(path)
+                    path = self.builder_packaging.substitute('$pkgdocdir',
+                            package.name)
+                    logger.debug('Maybe %s', path)
+                    if os.path.isdir(path) and path not in paths:
+                        paths.append(path)
+
             for path in self.iter_steam_paths():
                 if path not in paths:
                     paths.append(path)
