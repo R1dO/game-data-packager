@@ -70,6 +70,7 @@
   /usr/lib/quake4/* r,
   /usr/share/games/quake4/** r,
   owner @{HOME}/.quake4/** rwk,
+  owner @{HOME}/.quake4/*/gamex86.so rwkm,
 
   # the audio and X abstractions don't allow mmapping these
   /dev/dri/* m,
@@ -78,7 +79,12 @@
   # udev device enumeration
   /etc/udev/udev.conf r,
   /run/udev/data/+pci:* r,
+  /sys/bus/ r,
+  /sys/class/ r,
+  /sys/class/drm/ r,
   /sys/devices/pci[0-9]*/**/uevent r,
+  # character devices 226:x are DRI
+  /run/udev/data/c226:* r,
 
   /usr/bin/xdg-open Cxr -> xdgopen,
 
