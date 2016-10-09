@@ -216,7 +216,7 @@ class Launcher:
 
         self.base_directories = list(map(expand,
                         self.data.get('base_directories',
-                            '/usr/lib/' + self.id)))
+                            ['/usr/lib/' + self.id])))
         logger.debug('Base directories: %r', self.base_directories)
 
         self.library_path = self.data.get('library_path', [])
