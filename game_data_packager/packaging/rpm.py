@@ -36,6 +36,7 @@ class RpmPackaging(PackagingSystem):
 
     def __init__(self, distro=None):
         super(RpmPackaging, self).__init__()
+        self.distro = distro
         if distro is None or distro == 'generic':
             self._contexts = ('rpm', 'generic')
         else:

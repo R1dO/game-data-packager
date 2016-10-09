@@ -2682,9 +2682,15 @@ class PackagingTask(object):
             try:
                 release = check_output(['rpm', '-q', '--qf' ,'%{RELEASE}',
                                          package.name]).decode('ascii')
+                if (self.packaging.distro is not None and
+                        release.endswith('.' + self.packaging.distro)):
+                    release = release[:-(len(self.packaging.distro) + 1)]
                 release = str(int(release) + 1)
             except (subprocess.CalledProcessError, ValueError):
                 release = '0'
+
+        if self.packaging.distro is not None:
+            release = release + '.' + self.packaging.distro
 
         specfile = self.fill_dest_dir_rpm(package, destdir, compress,
                                           arch, release)
