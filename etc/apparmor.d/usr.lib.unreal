@@ -1,6 +1,7 @@
 # Unreal (Classic/Gold) AppArmor profile
 # Copyright © 2016 Simon McVittie
-# SPDX-License-Identifier: GPL-2.0+
+# Redistribution and use in source and compiled forms, with or without
+# modification, are permitted under any circumstances. No warranty.
 
 #include <tunables/global>
 
@@ -10,6 +11,7 @@
   #include <abstractions/base>
   #include <abstractions/nameservice>
   #include <abstractions/nvidia>
+  #include <abstractions/private-files-strict>
 
   network inet dgram,
   network inet stream,
@@ -24,7 +26,12 @@
   # udev device enumeration
   /etc/udev/udev.conf r,
   /run/udev/data/+pci:* r,
+  /sys/bus/ r,
+  /sys/class/ r,
+  /sys/class/drm/ r,
   /sys/devices/pci[0-9]*/**/uevent r,
+  # character devices 226:x are DRI
+  /run/udev/data/c226:* r,
 
   /usr/lib/unreal-classic/System/*.bin mrix,
   /usr/lib/unreal-gold/System/*.bin mrix,
