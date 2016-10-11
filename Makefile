@@ -199,7 +199,7 @@ build/etqw-dedicated: quake4.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/tmp/recolour-dissolution.svg: quake1+2.svg Makefile
+build/tmp/recolour-dissolution.svg: data/quake1+2.svg Makefile
 	install -d build/tmp
 	sed -e 's/#c17d11/#999984/' \
 		-e 's/#d5b582/#dede95/' \
@@ -207,7 +207,7 @@ build/tmp/recolour-dissolution.svg: quake1+2.svg Makefile
 		-e 's/#e9b96e/#dede95/' \
 		< $< > $@
 
-build/tmp/recolour-armagon.svg: quake1+2.svg Makefile
+build/tmp/recolour-armagon.svg: data/quake1+2.svg Makefile
 	install -d build/tmp
 	sed -e 's/#c17d11/#565248/' \
 		-e 's/#d5b582/#aba390/' \
@@ -215,7 +215,7 @@ build/tmp/recolour-armagon.svg: quake1+2.svg Makefile
 		-e 's/#e9b96e/#aba390/' \
 		< $< > $@
 
-build/tmp/recolour-reckoning.svg: quake1+2.svg Makefile
+build/tmp/recolour-reckoning.svg: data/quake1+2.svg Makefile
 	install -d build/tmp
 	sed -e 's/#3a5a1e/#999984/' \
 		-e 's/#73ae3a/#eeeeec/' \
@@ -223,7 +223,7 @@ build/tmp/recolour-reckoning.svg: quake1+2.svg Makefile
 		-e 's/#132601/#233436/' \
 		< $< > $@
 
-build/tmp/recolour-groundzero.svg: quake1+2.svg Makefile
+build/tmp/recolour-groundzero.svg: data/quake1+2.svg Makefile
 	install -d build/tmp
 	sed -e 's/#3a5a1e/#ce5c00/' \
 		-e 's/#73ae3a/#fce94f/' \
@@ -251,7 +251,7 @@ build/24/quake2-%.png: build/22/quake2-%.png
 	install -d build/24
 	convert -bordercolor Transparent -border 1x1 $< $@
 
-$(patsubst %,build/%/quake.png,$(layer_sizes)): build/%/quake.png: quake1+2.svg
+$(patsubst %,build/%/quake.png,$(layer_sizes)): build/%/quake.png: data/quake1+2.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -284,7 +284,7 @@ $(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)): build/%/quake-dissol
 		--export-png=$@ \
 		$<
 
-$(patsubst %,build/%/quake2.png,$(layer_sizes)): build/%/quake2.png: quake1+2.svg
+$(patsubst %,build/%/quake2.png,$(layer_sizes)): build/%/quake2.png: data/quake1+2.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -295,7 +295,7 @@ $(patsubst %,build/%/quake2.png,$(layer_sizes)): build/%/quake2.png: quake1+2.sv
 		--export-png=$@ \
 		$<
 
-$(patsubst %,build/%/quake4.png,16 22 32): build/%/quake4.png: quake1+2.svg
+$(patsubst %,build/%/quake4.png,16 22 32): build/%/quake4.png: data/quake1+2.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:32:32 \
@@ -306,7 +306,7 @@ $(patsubst %,build/%/quake4.png,16 22 32): build/%/quake4.png: quake1+2.svg
 		--export-png=$@ \
 		$<
 
-$(patsubst %,build/%/quake4.png,48 256): build/%/quake4.png: quake1+2.svg
+$(patsubst %,build/%/quake4.png,48 256): build/%/quake4.png: data/quake1+2.svg
 	install -d build/$*
 	inkscape \
 		--export-area=0:0:$*:$* \
@@ -342,7 +342,7 @@ $(patsubst %,build/%/quake2-groundzero.png,$(layer_sizes)): build/%/quake2-groun
 clean:
 	rm -rf build
 
-build/quake.svg: quake1+2.svg Makefile
+build/quake.svg: data/quake1+2.svg Makefile
 	install -d build
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake-256']" < $< > build/tmp/quake.svg
 	inkscape \
@@ -360,7 +360,7 @@ build/quake-%.svg: build/tmp/recolour-%.svg Makefile
 		build/tmp/quake-$*.svg
 	rm -f build/tmp/quake-$*.svg
 
-build/quake2.svg: quake1+2.svg Makefile
+build/quake2.svg: data/quake1+2.svg Makefile
 	install -d build
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake2-256']" < $< > build/tmp/quake2.svg
 	inkscape \
@@ -369,7 +369,7 @@ build/quake2.svg: quake1+2.svg Makefile
 		build/tmp/quake2.svg
 	rm -f build/tmp/quake2.svg
 
-build/quake4.svg: quake1+2.svg Makefile
+build/quake4.svg: data/quake1+2.svg Makefile
 	install -d build
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake4-256']" < $< > build/tmp/quake4.svg
 	inkscape \
@@ -387,11 +387,11 @@ build/quake2-%.svg: build/tmp/recolour-%.svg Makefile
 		build/tmp/quake2-$*.svg
 	rm -f build/tmp/quake2-$*.svg
 
-build/quake3.png: quake3-tango.xcf
+build/quake3.png: data/quake3-tango.xcf
 	install -d build
 	xcf2png -o $@ $<
 
-build/quake3-teamarena.png: quake3-teamarena-tango.xcf
+build/quake3-teamarena.png: data/quake3-teamarena-tango.xcf
 	install -d build
 	xcf2png -o $@ $<
 
