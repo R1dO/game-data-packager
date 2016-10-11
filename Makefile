@@ -57,7 +57,7 @@ obj = \
 
 all: $(obj)
 
-build/quake: quake.in
+build/quake: runtime/quake.in
 	install -d build
 	sed -e 's/@self@/quake/g' \
 		-e 's/@role@/client/g' \
@@ -66,7 +66,7 @@ build/quake: quake.in
 		< $< > $@
 	chmod +x $@
 
-build/quake2: quake2.in
+build/quake2: runtime/quake2.in
 	install -d build
 	sed -e 's/@self@/quake2/g' \
 		-e 's/@role@/client/g' \
@@ -75,7 +75,7 @@ build/quake2: quake2.in
 		< $< > $@
 	chmod +x $@
 
-build/quake3: quake3.in Makefile
+build/quake3: runtime/quake3.in Makefile
 	install -d build
 	sed \
 		-e 's!@IOQ3BINARY@!ioquake3!' \
@@ -84,7 +84,7 @@ build/quake3: quake3.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/quake4: quake4.in Makefile
+build/quake4: runtime/quake4.in Makefile
 	install -d build
 	sed \
 		-e 's!@id@!quake4!' \
@@ -102,7 +102,7 @@ build/quake4: quake4.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/README.quake4-bin: README.binary.in Makefile
+build/README.quake4-bin: runtime/README.binary.in Makefile
 	install -d build
 	sed \
 		-e 's!@id@!quake4!' \
@@ -110,7 +110,7 @@ build/README.quake4-bin: README.binary.in Makefile
 		-e 's!@distro@!$(distro)!' \
 		< $< > $@
 
-build/etqw: quake4.in Makefile
+build/etqw: runtime/quake4.in Makefile
 	install -d build
 	sed \
 		-e 's!@id@!etqw!' \
@@ -128,7 +128,7 @@ build/etqw: quake4.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/README.etqw-bin: README.binary.in Makefile
+build/README.etqw-bin: runtime/README.binary.in Makefile
 	install -d build
 	sed \
 		-e 's!@id@!etqw!' \
@@ -136,7 +136,7 @@ build/README.etqw-bin: README.binary.in Makefile
 		-e 's!@distro@!$(distro)!' \
 		< $< > $@
 
-build/quake2-server: quake2.in
+build/quake2-server: runtime/quake2.in
 	install -d build
 	sed -e 's/@self@/quake2-server/g' \
 		-e 's/@role@/dedicated server/g' \
@@ -145,7 +145,7 @@ build/quake2-server: quake2.in
 		< $< > $@
 	chmod +x $@
 
-build/quake-server: quake.in
+build/quake-server: runtime/quake.in
 	install -d build
 	sed -e 's/@self@/quake-server/g' \
 		-e 's/@role@/server/g' \
@@ -154,7 +154,7 @@ build/quake-server: quake.in
 		< $< > $@
 	chmod +x $@
 
-build/quake3-server: quake3.in Makefile
+build/quake3-server: runtime/quake3.in Makefile
 	install -d build
 	sed \
 		-e 's!@IOQ3BINARY@!ioq3ded!' \
@@ -163,7 +163,7 @@ build/quake3-server: quake3.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/quake4-dedicated: quake4.in Makefile
+build/quake4-dedicated: runtime/quake4.in Makefile
 	install -d build
 	sed \
 		-e 's!@id@!quake4!' \
@@ -181,7 +181,7 @@ build/quake4-dedicated: quake4.in Makefile
 		< $< > $@
 	chmod +x $@
 
-build/etqw-dedicated: quake4.in Makefile
+build/etqw-dedicated: runtime/quake4.in Makefile
 	install -d build
 	sed \
 		-e 's!@id@!etqw!' \

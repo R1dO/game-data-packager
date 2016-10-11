@@ -1,4 +1,4 @@
-README.quake4-data                      usr/lib/quake4
+runtime/README.quake4-data              usr/lib/quake4
 build/16/quake4*.png                    usr/share/icons/hicolor/16x16/apps
 build/22/quake4*.png                    usr/share/icons/hicolor/22x22/apps
 build/24/quake4*.png                    usr/share/icons/hicolor/24x24/apps
@@ -9,6 +9,6 @@ build/README.quake4-bin                 usr/lib/quake4
 build/quake4                            usr/games
 build/quake4*.svg                       usr/share/icons/hicolor/scalable/apps
 build/quake4.desktop                    usr/share/applications
-confirm-binary-only.sh                  usr/lib/quake4
+runtime/confirm-binary-only.sh          usr/lib/quake4
 debian/apparmor.d/usr.lib.quake4.quake4.x86 etc/apparmor.d
-need-data.sh                            usr/lib/quake4
+runtime/need-data.sh                    usr/lib/quake4
