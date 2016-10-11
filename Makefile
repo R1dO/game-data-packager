@@ -19,12 +19,14 @@ simplified_svg := $(patsubst ./data/%.svg,./out/%.svg,$(wildcard ./data/*.svg))
 svgz      := $(patsubst ./out/%.svg,./out/%.svgz,$(filter-out ./out/memento-mori-2.svg,$(simplified_svg)))
 in_yaml   := $(wildcard ./data/*.yaml)
 json_from_data := $(patsubst ./data/%.yaml,./out/vfs/%.json,$(in_yaml))
-json_from_runtime := $(patsubst ./runtime/%.yaml.in,./out/%.json,$(wildcard ./runtime/*.yaml.in))
 copyright := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.copyright) ./data/copyright)
 dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
 desktop   := $(patsubst ./runtime/%.in,./out/%,$(wildcard ./runtime/*.desktop.in))
 
-default: $(png) $(svgz) $(json_from_data) $(json_from_runtime) \
+launcher_json := $(patsubst ./runtime/launch-%.yaml.in,./out/launch-%.json,$(wildcard ./runtime/launch-*.yaml.in))
+launcher_desktops := $(patsubst ./runtime/launch-%.yaml.in,./out/%.desktop,$(wildcard ./runtime/launch-*.yaml.in))
+
+default: $(png) $(svgz) $(json_from_data) $(launcher_json) \
       $(copyright) $(dot_in) $(desktop) \
       out/bash_completion out/changelog.gz \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
@@ -81,10 +83,10 @@ $(png_from_svg): out/%.png: data/%.svg out/CACHEDIR.TAG
 $(svgz): out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
-$(json_from_runtime): out/launch-%.json: out/launch-%.yaml
+$(launcher_json): out/launch-%.json: out/launch-%.yaml
 	$(PYTHON) tools/yaml2json.py $< $@
 
-$(desktop) $(patsubst %.json,%.yaml,$(json_from_runtime)): out/%: runtime/%.in out/CACHEDIR.TAG
+$(desktop) $(patsubst %.json,%.yaml,$(launcher_json)): out/%: runtime/%.in out/CACHEDIR.TAG
 	PYTHONPATH=. $(PYTHON) tools/expand_vars.py $< $@
 
 clean:
@@ -123,10 +125,10 @@ install:
 	install -d                                             $(DESTDIR)$(runtimedir)/
 	install runtime/launcher.py                            $(DESTDIR)$(runtimedir)/gdp-launcher
 	install runtime/openurl.py                             $(DESTDIR)$(runtimedir)/gdp-openurl
-	install -m0644 out/*.desktop                           $(DESTDIR)$(runtimedir)/
+	install -m0644 $(launcher_desktops)                    $(DESTDIR)$(runtimedir)/
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(runtimedir)/
 	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(runtimedir)/
-	install -m0644 out/launch-*.json                       $(DESTDIR)$(runtimedir)/
+	install -m0644 $(launcher_json)                        $(DESTDIR)$(runtimedir)/
 	install -d                                             $(DESTDIR)/etc/apparmor.d/
 	install -m0644 etc/apparmor.d/*                        $(DESTDIR)/etc/apparmor.d/
 
