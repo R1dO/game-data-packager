@@ -595,7 +595,7 @@ class Launcher:
         logger.debug('Executing: %r', self.argv + self.args.arguments)
         self.flush()
 
-        os.execve(self.argv[0], self.argv + self.args.arguments, environ)
+        os.execvpe(self.argv[0], self.argv + self.args.arguments, environ)
 
         raise AssertionError('os.execve should never return')
 
