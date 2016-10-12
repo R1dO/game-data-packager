@@ -1,0 +1,7 @@
+# verbatim quote
+quake-server binary: spelling-error-in-copyright ment meant
+# it's "update-rc.d disable" not "update-rc.d defaults"
+quake-server binary: preinst-calls-updaterc.d quake-server
+
+# "Quake, Quake II"
+quake-server binary: spelling-error-in-copyright Quake Quake (duplicate word) Quake

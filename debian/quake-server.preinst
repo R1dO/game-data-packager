@@ -1,0 +1,85 @@
+#!/bin/sh
+# vim:set sw=2 sts=2 et:
+
+set -e
+
+quake_atomic_write () {
+  ## quake_atomic_write DIR FILE CONTENTS
+  ## Create DIR/FILE with contents (CONTENTS + '\n').
+  install -d "$1"
+  echo "$3" > "$1/$2.$$.tmp"
+  chmod 0644 "$1/$2.$$.tmp"
+  mv "$1/$2.$$.tmp" "$1/$2"
+}
+
+quake_disable () {
+  update-rc.d quake-server disable
+
+  # Make deb-systemd-helper think the systemd unit was already installed
+  # and disabled, so that the disabledness sticks. Strictly speaking this
+  # is internal state, but it replicates what init-system-helpers/1.22
+  # would have done, so it should work as long as upgrades from jessie
+  # are supported.
+  quake_atomic_write /var/lib/systemd/deb-systemd-helper-enabled \
+    quake-server.service.dsh-also \
+    /etc/systemd/system/multi-user.target.wants/quake-server.service
+  if [ -L /etc/systemd/system/multi-user.target.wants/quake-server.service ]; then
+    rm /etc/systemd/system/multi-user.target.wants/quake-server.service
+  fi
+}
+
+quake_migrate_disabledness () {
+  echo "quake-server.preinst: migrating from START_DAEMON to init script enable/disable status..." >&2
+
+  e=0
+  # Do this in a subshell just in case /etc/default/quake3-server has been
+  # patched by the sysadmin to exit the init script.
+  (
+    set +e
+    START_DAEMON=1
+    [ -r /etc/default/quake-server ] && . /etc/default/quake-server
+
+    case "$START_DAEMON" in
+      (1)
+        echo "Preserving current status of quake-server init script (START_DAEMON=1 in /etc/default/quake-server)" >&2
+        exit 104
+        ;;
+      (*)
+        # 0 or unknown
+        echo "Disabling quake-server init script (previously disabled by START_DAEMON=$START_DAEMON in /etc/default/quake-server)" >&2
+        exit 101
+        ;;
+    esac
+  ) || e="$?"
+
+  case "$e" in
+    (101)
+      # we already printed a message
+      quake_disable
+      ;;
+    (104)
+      # nothing to do and we already printed a message
+      ;;
+    (*)
+      # maybe the sysadmin stubbed it out with "exit 0" or "exit 1"?
+      echo "Sourcing /etc/default/quake-server returned unexpected code, disabling init script" >&2
+      quake_disable
+      ;;
+  esac
+}
+
+case "$1" in
+  (upgrade)
+    if dpkg --compare-versions "$2" lt 10~; then
+      quake_migrate_disabledness "$@"
+    fi
+  ;;
+  (install|abort-upgrade)
+  ;;
+  *)
+    echo "preinst called with unknown argument '$1'" >&2
+    exit 1
+  ;;
+esac
+
+#DEBHELPER#

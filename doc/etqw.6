@@ -1,0 +1,60 @@
+.TH ETQW 6 2015-12-10
+
+.SH NAME
+etqw \- Enemy Territory: Quake Wars client
+
+.SH SYNOPSIS
+.B etqw
+.BR "" [ \-h | \-\-help ]
+.BR "" [ +set
+.IR option " " value ]...
+
+.SH DESCRIPTION
+.B etqw
+is the client for "Enemy Territory: Quake Wars", a multiplayer
+first-person shooter game.
+
+.SH OPTIONS
+The wrapper script used for ETQW in Debian accepts these options:
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display a short help summary
+.TP
+\fB\-\-smp\fR
+Use the multi-threaded version of the client and the modified
+copy of SDL that is bundled with it. The default is to use the
+single-threaded client and the system copy of SDL. Both versions
+are included in the etqw-bin package.
+.PP
+Any console command can also be prefixed with \fB+\fR and used as a
+command-line option (press Ctrl+Alt and the key above Tab to access the
+in-game console).
+
+.SH FILES
+.TP
+\fI~/.etqwcl\fR
+Configuration and state for ETQW
+
+.SH ENVIRONMENT
+The wrapper script used to launch ETQW allows it to be debugged
+by setting environment variables.
+.TP
+\fBQUAKE4_DEBUGGER=\fIcommand\fR
+A debugger or other prefix to prepend to the ETQW command line, such
+as \fBstrace\fR; overridden by \fBQUAKE4_BACKTRACE\fR
+.TP
+\fBQUAKE4_BACKTRACE=1\fR
+Use \fBgdb\fR(1) to get a backtrace if ETQW crashes (the \fBgdb\fR
+package must be installed)
+
+.SH AUTHOR
+ETQW was written by Splash Damage and originally published by Activision.
+It is proprietary software.
+.PP
+This manual page was written by Simon McVittie for the Debian project (but
+may be used by others). Permission is granted to copy, distribute and/or
+modify this document under the terms of the GNU General Public License,
+Version 2 or any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public License
+can be found in /usr/share/common-licenses/GPL-2.

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  configure)
+    if ! getent passwd Debian-quake3 >/dev/null; then
+      adduser --disabled-password --quiet --system \
+        --home /var/games/quake3-server --no-create-home \
+        --gecos "Quake III Arena dedicated server" \
+	--ingroup games --force-badname Debian-quake3
+    fi
+    # Unlock account, if it was locked by our postrm
+    if [ -f /etc/shadow ]; then
+      usermod -U -e '' Debian-quake3
+    else
+      usermod -U Debian-quake3
+    fi
+    install -d /var/games
+    install -d /var/games/quake3-server
+    chown Debian-quake3:games /var/games/quake3-server
+    if [ -d /var/games/quake3-server/.q3a ] && ! [ -e /var/games/quake3-server/server.q3a ]; then
+        # we use com_homepath to redirect server stuff to a non-hidden
+        # directory and be ready for multi-instance; migrate old configuration
+        ln -s .q3a /var/games/quake3-server/server.q3a
+    fi
+  ;;
+  abort-upgrade|abort-remove|abort-deconfigure)
+  ;;
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+esac
+
+#DEBHELPER#

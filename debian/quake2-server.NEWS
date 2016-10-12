@@ -1,0 +1,17 @@
+quake2-server (10) experimental; urgency=low
+
+  quake2-server configuration has changed significantly in this version.
+
+  The DAEMON_OPTS variable in /etc/default/quake2-server no longer
+  contains a configurable "+exec" command. Either
+  /etc/quake2-server/debian_server.cfg or
+  /etc/quake2-server/demo/debian_server.cfg
+  will always be executed in addition to whatever is specified in
+  DAEMON_OPTS, and the default DAEMON_OPTS is now empty.
+
+  systemd users can now enable additional instances of the server,
+  quake2-server@INSTANCE.service, which use /etc/default/quake2-server@INSTANCE
+  and /etc/quake2-server/INSTANCE.cfg instead.
+  See /usr/share/doc/quake2-server/README.Debian for details.
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 04 Feb 2015 10:18:27 +0000

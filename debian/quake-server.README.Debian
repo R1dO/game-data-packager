@@ -1,0 +1,82 @@
+Quake dedicated server for Debian
+=================================
+
+Game data
+---------
+
+The Quake engine requires game data to run.  The data is not freely
+redistributable.  You should use the 'game-data-packager' tool to install it.
+
+For the full game, you will need at least id1/pak1.pak
+from a Quake II installation or CD-ROM; game-data-packager can download
+the rest. See /usr/share/games/game-data-packager/quake.yaml for full details,
+including the sizes and checksums of the required files.
+
+The shareware episode of Quake is freely downloadable and can also be
+packaged using game-data-packager.
+
+Running one server instance
+---------------------------
+
+By default, quake-server adds a user under which to run the dedicated server
+(quake-server) and sets it up to be run by an init script in the conventional
+Debian way. This is a simple setup suitable for running one server on a
+machine; by default it will run a deathmatch game.
+
+The quake-server user's home directory is /var/games/quake-server, so you
+can find Quake files in /var/games/quake-server/.quakespasm,
+/var/games/quake-server/.darkplaces or whatever.
+
+The /etc/quake-server directory is symlinked into the game engine's
+search path as etc/quake-server, so you can place files there and execute
+them with commands like "exec etc/quake-server/ctf.cfg".
+By default, the init script will use etc/quake-server/server.cfg.
+
+For compatibility with older versions of the quake-server package,
+debian_server.cfg in the engine's search path is also a symlink to
+etc/quake-server/server.cfg.
+
+To set command-line options, such as the network port or the mission pack
+to play, set DAEMON_OPTS in /etc/default/quake-server.
+
+The server can be managed in the usual way, e.g. via service(8)
+and update-rc.d(8) commands like
+
+    service quake-server stop
+    service quake-server start
+    update-rc.d quake-server disable
+    update-rc.d quake-server enable
+
+which should work for all of Debian's supported init systems.
+
+Running multiple server instances with systemd
+----------------------------------------------
+
+Under systemd, quake-server supports additional instances of the server,
+so you can run servers with different game modes, mods or mission packs.
+
+Each instance quake-server@INSTANCE.service has configuration and state in
+/var/games/quake-server/INSTANCE.home/.quakespasm (or similar), and will
+execute /etc/quake-server/INSTANCE.cfg on startup.
+
+To set command-line options, such as the network port or the mission pack
+to play, you can create /etc/default/quake-server@INSTANCE
+or a systemd "drop-in" file, and set DAEMON_OPTS there. Setting a
+unique port for each server is required.
+
+The instance name "debian_server" cannot be used without disabling and
+stopping quake2-server.service, since it shares its configuration with that
+service.
+
+For instance, these shell commands (as root) would set up a Mission Pack 1
+server on port 26010:
+
+    cat > /etc/default/quake-server@hipnotic
+    DAEMON_OPTS="-port 26010 -hipnotic"
+    EOF
+    cat > /etc/quake-server/hipnotic.cfg <<EOF
+    map hipdm1
+    EOF
+    systemctl daemon-reload
+    systemctl enable quake-server@hipnotic.service
+    systemctl start quake-server@hipnotic.service

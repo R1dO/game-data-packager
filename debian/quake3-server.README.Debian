@@ -1,0 +1,95 @@
+Quake III Arena dedicated server for Debian
+===========================================
+
+Running one server instance
+---------------------------
+
+The quake3-server init script and systemd unit run a dedicated server as
+the user "Debian-quake3". This is a simple setup suitable for running one
+server on a machine; by default it will cycle through the standard
+Quake III Arena deathmatch maps.
+
+The Debian-quake3 user's home directory is /var/games/quake3-server,
+and the equivalent of ~/.q3a for the default server is
+/var/games/quake3-server/server.q3a.
+
+The /etc/quake3-server directory is symlinked into the game engine's
+search path as etc/quake3-server, so you can place files there and execute
+them with commands like "exec etc/quake3-server/ctf.cfg".
+By default, the init script will use etc/quake3-server/server.cfg.
+
+(For compatibility with older versions of the quake-server package,
+debian_server.cfg in the engine's search path is also a symlink to
+etc/quake3-server/server.cfg.)
+
+To set options that can only be configured via the command-line,
+such as fs_game and net_port, set the variable DAEMON_OPTS
+in /etc/default/quake3-server.
+
+The server can be managed in the usual way, e.g. via service(8)
+and update-rc.d(8) commands like
+
+    service quake3-server stop
+    service quake3-server start
+    update-rc.d quake3-server disable
+    update-rc.d quake3-server enable
+
+which should work for all of Debian's supported init systems.
+
+Quake III: Team Arena and third-party mods
+------------------------------------------
+
+If you have the Quake III: Team Arena addon pack (the quake3-team-arena-data
+package produced by game-data-packager), you can run a Team Arena server
+by adding "+set fs_game missionpack" to DAEMON_OPTS.
+
+Similarly, to run a third-party mod such as Threewave CTF, set fs_game to
+the name of the subdirectory it would use in ~/.q3a.
+
+Running multiple server instances with systemd
+----------------------------------------------
+
+Under systemd, quake3-server supports additional instances of the server,
+so you can run a deathmatch server and a Capture the Flag server, or
+a Quake III Arena server and a Quake III: Team Arena server.
+
+Each instance quake3-server@INSTANCE.service has configuration and state in
+/var/games/quake3-server/INSTANCE.q3a, and will execute
+/etc/quake3-server/INSTANCE.cfg on startup.
+
+To set a parameter that can only be given on the command line, such as
+fs_game or net_port, you can create /etc/default/quake3-server@INSTANCE
+or a systemd "drop-in" file, and set DAEMON_OPTS there. Setting a
+unique net_port for each server is recommended: if you do not, each
+server will try ports above its configured net_port until it finds one
+that is not in use, so the mapping between servers and ports will be arbitrary.
+
+The instance name "server" cannot be used without disabling and stopping
+quake3-server.service, since it shares its configuration with that
+service.
+
+For instance, these shell commands (as root) would set up a Capture the
+Flag server on port 27970 and a Team Arena server on port 27980:
+
+    cat > /etc/default/quake3-server@ctf
+    DAEMON_OPTS="+set net_port 27970"
+    EOF
+    cat > /etc/quake3-server/ctf.cfg <<EOF
+    sv_hostname "My Capture the Flag Server"
+    exec ctf.config
+    EOF
+    systemctl daemon-reload
+    systemctl enable quake3-server@ctf.service
+    systemctl start quake3-server@ctf.service
+
+    cat > /etc/default/quake3-server@ta
+    DAEMON_OPTS="+set net_port 27980 +set fs_game missionpack"
+    EOF
+    cat > /etc/quake3-server/ta.cfg <<EOF
+    sv_hostname "My Team Arena Server"
+    g_gametype 6
+    exec large_maps.cfg
+    EOF
+    systemctl daemon-reload
+    systemctl enable quake3-server@ta.service
+    systemctl start quake3-server@ta.service

@@ -1,7 +1,10 @@
 bindir := /usr/games
-datadir := /usr/share/games
-pkgdatadir := ${datadir}/game-data-packager
-runtimedir := ${datadir}/game-data-packager-runtime
+libdir := /usr/lib
+datadir := /usr/share
+gamedatadir := ${datadir}
+pkgdatadir := ${gamedatadir}/game-data-packager
+runtimedir := ${gamedatadir}/game-data-packager-runtime
+distro := $(shell lsb_release -si)
 PYTHON := python3
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
@@ -10,9 +13,9 @@ PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                     fi)
 
 png_from_xpm := $(patsubst ./data/%.xpm,./out/%.png,$(wildcard ./data/*.xpm))
-png_from_svg := $(patsubst ./data/%.svg,./out/%.png,$(wildcard ./data/*.svg))
+png_from_svg := $(patsubst ./data/%.svg,./out/%.png,$(filter-out ./data/quake1+2.svg,$(wildcard ./data/*.svg)))
 png       := $(png_from_xpm) $(png_from_svg) out/memento-mori.png
-simplified_svg := $(patsubst ./data/%.svg,./out/%.svg,$(wildcard ./data/*.svg))
+simplified_svg := $(patsubst ./data/%.svg,./out/%.svg,$(filter-out ./data/quake1+2.svg,$(wildcard ./data/*.svg)))
 # We deliberately don't compress and install memento-mori{,-2}.svg because
 # they use features that aren't supported by librsvg, so they'd look wrong
 # in all GTK-based environments.
@@ -26,8 +29,53 @@ desktop   := $(patsubst ./runtime/%.in,./out/%,$(wildcard ./runtime/*.desktop.in
 launcher_json := $(patsubst ./runtime/launch-%.yaml.in,./out/launch-%.json,$(wildcard ./runtime/launch-*.yaml.in))
 launcher_desktops := $(patsubst ./runtime/launch-%.yaml.in,./out/%.desktop,$(wildcard ./runtime/launch-*.yaml.in))
 
+quake_layer_sizes = 16 22 32 48 256
+
+quake_text = \
+	out/quake \
+	out/quake2 \
+	out/quake3 \
+	out/quake4 \
+	out/etqw \
+	out/quake-server \
+	out/quake2-server \
+	out/quake3-server \
+	out/quake4-dedicated \
+	out/etqw-dedicated \
+	out/README.etqw-bin \
+	out/README.quake4-bin \
+	$(NULL)
+
+quake_icons = \
+	out/24/quake.png \
+	out/24/quake-armagon.png \
+	out/24/quake-dissolution.png \
+	out/24/quake2.png \
+	out/24/quake2-reckoning.png \
+	out/24/quake2-groundzero.png \
+	out/24/quake4.png \
+	out/quake.svg \
+	out/quake-armagon.svg \
+	out/quake-dissolution.svg \
+	out/quake2.svg \
+	out/quake2-reckoning.svg \
+	out/quake2-groundzero.svg \
+	out/256/quake3.png \
+	out/256/quake3-team-arena.png \
+	out/quake4.svg \
+	out/48/quake3.png \
+	out/48/quake3-team-arena.png \
+	$(patsubst %,out/%/quake.png,$(quake_layer_sizes)) \
+	$(patsubst %,out/%/quake-armagon.png,$(quake_layer_sizes)) \
+	$(patsubst %,out/%/quake-dissolution.png,$(quake_layer_sizes)) \
+	$(patsubst %,out/%/quake2.png,$(quake_layer_sizes)) \
+	$(patsubst %,out/%/quake2-reckoning.png,$(quake_layer_sizes)) \
+	$(patsubst %,out/%/quake2-groundzero.png,$(quake_layer_sizes)) \
+	$(patsubst %,out/%/quake4.png,$(quake_layer_sizes)) \
+	$(NULL)
+
 default: $(png) $(svgz) $(json_from_data) $(launcher_json) \
-      $(copyright) $(dot_in) $(desktop) \
+      $(copyright) $(dot_in) $(desktop) $(quake_text) $(quake_icons) \
       out/bash_completion out/changelog.gz \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
@@ -82,6 +130,332 @@ $(png_from_svg): out/%.png: data/%.svg out/CACHEDIR.TAG
 
 $(svgz): out/%.svgz: out/%.svg
 	gzip -nc $< > $@
+
+out/quake.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake-256']" < $< > out/tmp/quake.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		out/tmp/quake.svg
+	rm -f out/tmp/quake.svg
+
+out/quake-%.svg: out/tmp/recolour-%.svg Makefile out/CACHEDIR.TAG
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake-256']" < $< > out/tmp/quake-$*.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		out/tmp/quake-$*.svg
+	rm -f out/tmp/quake-$*.svg
+
+out/quake2.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake2-256']" < $< > out/tmp/quake2.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		out/tmp/quake2.svg
+	rm -f out/tmp/quake2.svg
+
+out/quake4.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake4-256']" < $< > out/tmp/quake4.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		out/tmp/quake4.svg
+	rm -f out/tmp/quake4.svg
+
+out/quake2-%.svg: out/tmp/recolour-%.svg Makefile out/CACHEDIR.TAG
+	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake2-256']" < $< > out/tmp/quake2-$*.svg
+	inkscape \
+		--export-area-page \
+		--export-plain-svg=$@ \
+		out/tmp/quake2-$*.svg
+	rm -f out/tmp/quake2-$*.svg
+
+out/256/quake3.png: data/quake3-tango.xcf out/CACHEDIR.TAG
+	install -d out/256
+	xcf2png -o $@ $<
+
+out/256/quake3-team-arena.png: data/quake3-teamarena-tango.xcf out/CACHEDIR.TAG
+	install -d out/256
+	xcf2png -o $@ $<
+
+out/48/quake3.png: out/256/quake3.png Makefile out/CACHEDIR.TAG
+	install -d out/48
+	convert -resize 48x48 $< $@
+
+out/48/quake3-team-arena.png: out/256/quake3-team-arena.png Makefile out/CACHEDIR.TAG
+	install -d out/48
+	convert -resize 48x48 $< $@
+
+out/quake: runtime/quake.in out/CACHEDIR.TAG
+	sed -e 's/@self@/quake/g' \
+		-e 's/@role@/client/g' \
+		-e 's/@options@//g' \
+		-e 's/@alternative@/quake-engine/g' \
+		< $< > $@
+	chmod +x $@
+
+out/quake2: runtime/quake2.in out/CACHEDIR.TAG
+	sed -e 's/@self@/quake2/g' \
+		-e 's/@role@/client/g' \
+		-e 's/@options@//g' \
+		-e 's/@alternative@/quake2-engine/g' \
+		< $< > $@
+	chmod +x $@
+
+out/quake3: runtime/quake3.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@IOQ3BINARY@!ioquake3!' \
+		-e 's!@IOQ3SELF@!quake3!' \
+		-e 's!@IOQ3ROLE@!client!' \
+		< $< > $@
+	chmod +x $@
+
+out/quake4: runtime/quake4.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@id@!quake4!' \
+		-e 's!@icon@!/usr/share/icons/hicolor/48x48/apps/quake4.png!' \
+		-e 's!@longname@!Quake 4!' \
+		-e 's!@shortname@!Quake 4!' \
+		-e 's!@binary@!quake4.x86!' \
+		-e 's!@smpbinary@!quake4smp.x86!' \
+		-e 's!@self@!quake4!' \
+		-e 's!@role@!client!' \
+		-e 's!@pkglibdir@!/usr/lib/quake4!' \
+		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
+		-e 's!@basegame@!q4base!' \
+		-e 's!@dotdir@!quake4!' \
+		< $< > $@
+	chmod +x $@
+
+out/README.quake4-bin: runtime/README.binary.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@id@!quake4!' \
+		-e 's!@shortname@!Quake 4!' \
+		-e 's!@distro@!$(distro)!' \
+		< $< > $@
+
+out/etqw: runtime/quake4.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@id@!etqw!' \
+		-e 's!@icon@!/usr/share/pixmaps/etqw.png!' \
+		-e 's!@longname@!Enemy Territory: Quake Wars!' \
+		-e 's!@shortname@!ETQW!' \
+		-e 's!@binary@!etqw.x86!' \
+		-e 's!@smpbinary@!etqw-rthread.x86!' \
+		-e 's!@self@!etqw!' \
+		-e 's!@role@!client!' \
+		-e 's!@pkglibdir@!/usr/lib/etqw!' \
+		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
+		-e 's!@basegame@!base!' \
+		-e 's!@dotdir@!etqwcl!' \
+		< $< > $@
+	chmod +x $@
+
+out/README.etqw-bin: runtime/README.binary.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@id@!etqw!' \
+		-e 's!@shortname@!ETQW!' \
+		-e 's!@distro@!$(distro)!' \
+		< $< > $@
+
+out/quake2-server: runtime/quake2.in out/CACHEDIR.TAG
+	sed -e 's/@self@/quake2-server/g' \
+		-e 's/@role@/dedicated server/g' \
+		-e 's/@options@/+set dedicated 1/g' \
+		-e 's/@alternative@/quake2-engine-server/g' \
+		< $< > $@
+	chmod +x $@
+
+out/quake-server: runtime/quake.in out/CACHEDIR.TAG
+	sed -e 's/@self@/quake-server/g' \
+		-e 's/@role@/server/g' \
+		-e 's/@options@/-dedicated/g' \
+		-e 's/@alternative@/quake-engine-server/g' \
+		< $< > $@
+	chmod +x $@
+
+out/quake3-server: runtime/quake3.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@IOQ3BINARY@!ioq3ded!' \
+		-e 's!@IOQ3SELF@!quake3-server!' \
+		-e 's!@IOQ3ROLE@!server!' \
+		< $< > $@
+	chmod +x $@
+
+out/quake4-dedicated: runtime/quake4.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@id@!quake4!' \
+		-e 's!@icon@!/usr/share/icons/hicolor/48x48/apps/quake4.png!' \
+		-e 's!@longname@!Quake 4!' \
+		-e 's!@shortname@!Quake 4!' \
+		-e 's!@binary@!q4ded.x86!' \
+		-e 's!@smpbinary@!!' \
+		-e 's!@self@!quake4-dedicated!' \
+		-e 's!@role@!server!' \
+		-e 's!@pkglibdir@!/usr/lib/quake4!' \
+		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
+		-e 's!@basegame@!q4base!' \
+		-e 's!@dotdir@!quake4!' \
+		< $< > $@
+	chmod +x $@
+
+out/etqw-dedicated: runtime/quake4.in Makefile out/CACHEDIR.TAG
+	sed \
+		-e 's!@id@!etqw!' \
+		-e 's!@icon@!/usr/share/pixmaps/etqw.png!' \
+		-e 's!@longname@!Enemy Territory: Quake Wars!' \
+		-e 's!@shortname@!ETQW!' \
+		-e 's!@binary@!etqwded.x86!' \
+		-e 's!@smpbinary@!!' \
+		-e 's!@self@!etqw-dedicated!' \
+		-e 's!@role@!server!' \
+		-e 's!@pkglibdir@!/usr/lib/etqw!' \
+		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
+		-e 's!@basegame@!base!' \
+		-e 's!@dotdir@!etqw!' \
+		< $< > $@
+	chmod +x $@
+
+out/tmp/recolour-dissolution.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+	install -d out/tmp
+	sed -e 's/#c17d11/#999984/' \
+		-e 's/#d5b582/#dede95/' \
+		-e 's/#5f3b01/#403f31/' \
+		-e 's/#e9b96e/#dede95/' \
+		< $< > $@
+
+out/tmp/recolour-armagon.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+	install -d out/tmp
+	sed -e 's/#c17d11/#565248/' \
+		-e 's/#d5b582/#aba390/' \
+		-e 's/#5f3b01/#000000/' \
+		-e 's/#e9b96e/#aba390/' \
+		< $< > $@
+
+out/tmp/recolour-reckoning.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+	install -d out/tmp
+	sed -e 's/#3a5a1e/#999984/' \
+		-e 's/#73ae3a/#eeeeec/' \
+		-e 's/#8ae234/#eeeeec/' \
+		-e 's/#132601/#233436/' \
+		< $< > $@
+
+out/tmp/recolour-groundzero.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+	install -d out/tmp
+	sed -e 's/#3a5a1e/#ce5c00/' \
+		-e 's/#73ae3a/#fce94f/' \
+		-e 's/#8ae234/#fce94f/' \
+		-e 's/#132601/#cc0000/' \
+		< $< > $@
+
+out/24/quake.png: out/22/quake.png out/CACHEDIR.TAG
+	install -d out/24
+	convert -bordercolor Transparent -border 1x1 $< $@
+
+out/24/quake-%.png: out/22/quake-%.png out/CACHEDIR.TAG
+	install -d out/24
+	convert -bordercolor Transparent -border 1x1 $< $@
+
+out/24/quake2.png: out/22/quake2.png out/CACHEDIR.TAG
+	install -d out/24
+	convert -bordercolor Transparent -border 1x1 $< $@
+
+out/24/quake4.png: out/22/quake4.png out/CACHEDIR.TAG
+	install -d out/24
+	convert -bordercolor Transparent -border 1x1 $< $@
+
+out/24/quake2-%.png: out/22/quake2-%.png out/CACHEDIR.TAG
+	install -d out/24
+	convert -bordercolor Transparent -border 1x1 $< $@
+
+$(patsubst %,out/%/quake.png,$(quake_layer_sizes)): out/%/quake.png: data/quake1+2.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,out/%/quake-armagon.png,$(quake_layer_sizes)): out/%/quake-armagon.png: out/tmp/recolour-armagon.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,out/%/quake-dissolution.png,$(quake_layer_sizes)): out/%/quake-dissolution.png: out/tmp/recolour-dissolution.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,out/%/quake2.png,$(quake_layer_sizes)): out/%/quake2.png: data/quake1+2.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake2-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,out/%/quake4.png,16 22 32): out/%/quake4.png: data/quake1+2.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:32:32 \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake4-32 \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,out/%/quake4.png,48 256): out/%/quake4.png: data/quake1+2.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake4-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,out/%/quake2-reckoning.png,$(quake_layer_sizes)): out/%/quake2-reckoning.png: out/tmp/recolour-reckoning.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake2-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
+
+$(patsubst %,out/%/quake2-groundzero.png,$(quake_layer_sizes)): out/%/quake2-groundzero.png: out/tmp/recolour-groundzero.svg out/CACHEDIR.TAG
+	install -d out/$*
+	inkscape \
+		--export-area=0:0:$*:$* \
+		--export-width=$* \
+		--export-height=$* \
+		--export-id=layer-quake2-$* \
+		--export-id-only \
+		--export-png=$@ \
+		$<
 
 $(launcher_json): out/launch-%.json: out/launch-%.yaml
 	$(PYTHON) tools/yaml2json.py $< $@
@@ -151,6 +525,57 @@ install:
 	install -m0644 out/doom2-masterlevels.desktop          $(DESTDIR)/usr/share/applications/
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
+	install -d                                             $(DESTDIR)$(bindir)
+	install -m755 out/quake                                $(DESTDIR)$(bindir)
+	install -m755 out/quake-server                         $(DESTDIR)$(bindir)
+	install -m755 out/quake2                               $(DESTDIR)$(bindir)
+	install -m755 out/quake2-server                        $(DESTDIR)$(bindir)
+	install -m755 out/quake3                               $(DESTDIR)$(bindir)
+	install -m755 out/quake3-server                        $(DESTDIR)$(bindir)
+	install -m755 out/quake4                               $(DESTDIR)$(bindir)
+	install -m755 out/quake4-dedicated                     $(DESTDIR)$(bindir)
+	install -m755 out/etqw                                 $(DESTDIR)$(bindir)
+	install -m755 out/etqw-dedicated                       $(DESTDIR)$(bindir)
+	install -d                                             $(DESTDIR)$(datadir)/applications
+	install -m644 out/etqw.desktop                         $(DESTDIR)$(datadir)/applications
+	install -m644 out/quake*.desktop                       $(DESTDIR)$(datadir)/applications
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
+	install -m644 out/16/*.png                             $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/22x22/apps
+	install -m644 out/22/*.png                             $(DESTDIR)$(datadir)/icons/hicolor/22x22/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/24x24/apps
+	install -m644 out/24/*.png                             $(DESTDIR)$(datadir)/icons/hicolor/24x24/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps
+	install -m644 out/32/*.png                             $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps
+	install -m644 out/48/*.png                             $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/256x256/apps
+	install -m644 out/256/*.png                            $(DESTDIR)$(datadir)/icons/hicolor/256x256/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 out/quake*.svg                           $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 out/quake-*.svg                          $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 out/quake2*.svg                          $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 out/quake4*.svg                          $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -d                                             $(DESTDIR)$(datadir)/man/man6
+	install -m644 doc/etqw*.6                              $(DESTDIR)$(datadir)/man/man6
+	install -m644 doc/quake*.6                             $(DESTDIR)$(datadir)/man/man6
+	install -d                                             $(DESTDIR)$(gamedatadir)/quake
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(gamedatadir)/quake
+	install -d                                             $(DESTDIR)$(gamedatadir)/quake2
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(gamedatadir)/quake2
+	install -d                                             $(DESTDIR)$(gamedatadir)/quake3
+	install -m644 runtime/README.quake3-data               $(DESTDIR)$(gamedatadir)/quake3
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(gamedatadir)/quake3
+	install -d                                             $(DESTDIR)$(libdir)/quake4
+	install -m644 out/README.quake4-bin                    $(DESTDIR)$(libdir)/quake4
+	install -m644 runtime/README.quake4-data               $(DESTDIR)$(libdir)/quake4
+	install -m755 runtime/confirm-binary-only.sh           $(DESTDIR)$(libdir)/quake4
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(libdir)/quake4
+	install -d                                             $(DESTDIR)$(libdir)/etqw
+	install -m644 out/README.etqw-bin                      $(DESTDIR)$(libdir)/etqw
+	install -m644 runtime/README.etqw-data                 $(DESTDIR)$(libdir)/etqw
+	install -m755 runtime/confirm-binary-only.sh           $(DESTDIR)$(libdir)/etqw
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(libdir)/etqw
 
 html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel

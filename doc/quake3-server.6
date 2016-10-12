@@ -1,0 +1,134 @@
+.TH QUAKE3-SERVER 6 2010-10-15
+
+.SH NAME
+quake3-server \- Quake III Arena dedicated server
+
+.SH SYNOPSIS
+.BR quake3-server
+.BR "" [ \-h | \-\-help ]
+.BR "" [ \-q | \-\-quiet ]
+.BR "" [ +set
+.IR option " " value ]...
+
+.SH DESCRIPTION
+.B quake3-server
+is the dedicated server for Quake III Arena, a multiplayer network game.
+
+.SH OPTIONS
+The wrapper script used for Quake III Arena in Debian accepts these options:
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display a short help summary
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Disable all output
+.PP
+Any console command can also be prefixed with \fB+\fR and used as a
+command-line option (run the server in a terminal to use the console).
+The \fB+set\fR command is generally the most useful to use on the command line.
+.PP
+Options that can be set with \fB+set\fR
+(note that this is not a full list!) include:
+.PP
+\fBcapturelimit\fR <value>
+.PP
+\fBdedicated\fR <bool>
+.PP
+\fBfraglimit\fR <value>
+.PP
+\fBfs_basepath\fR <string>
+.PP
+\fBfs_game\fR <value>
+.PP
+\fBg_allowVote\fR <bool>
+.PP
+\fBg_banIPs\fR <IP address>
+.PP
+\fBg_doWarmup\fR <bool>
+.PP
+\fBg_friendlyFire\fR <bool>
+.PP
+\fBg_gametype\fR <bool>
+.PP
+\fBg_gravity\fR <value>
+.PP
+\fBg_inactivity\fR <value>
+.PP
+\fBg_maxGameClients\fR <value>
+.PP
+\fBg_motd\fR <string>
+.PP
+\fBg_needpass\fR <bool>
+.PP
+\fBg_password\fR <string>
+.PP
+\fBg_quadfactor\fR <value>
+.PP
+\fBg_weaponrespawn\fR <value>
+.PP
+\fBnet_ip\fR <IP adress>
+.PP
+\fBnet_port\fR <value>
+.PP
+\fBnet_qport\fR <value>
+.PP
+\fBnextmap\fR <string>
+.PP
+\fBsv_allowDownload\fR <bool>
+.PP
+\fBsv_floodProtect\fR <bool>
+.PP
+\fBsv_fps\fR <value>
+.PP
+\fBsv_hostname\fR <string>
+.PP
+\fBsv_maxclients\fR <value>
+.PP
+\fBsv_maxPing\fR <value>
+(Measurd in milliseconds)
+.PP
+\fBsv_minPing\fR <value>
+(Measurd in milliseconds)
+.PP
+\fBsv_pure\fR <bool>
+.PP
+\fBtimelimit\fR <value>
+(Measured in minutes)
+
+.SH FILES
+.TP
+\fI~/.q3a/baseq3\fR
+Configuration and state for Quake III Arena
+.TP
+\fI~/.q3a/missionpack\fR
+Configuration and state for Quake III: Team Arena, if installed
+
+.SH ENVIRONMENT
+The wrapper script used to launch Quake III Arena allows it to be debugged
+by setting environment variables.
+.TP
+\fBQUAKE3_DEBUGGER=\fIcommand\fR
+A debugger or other prefix to prepend to the Quake III command line, such
+as \fBstrace\fR; overridden by \fBQUAKE3_BACKTRACE\fR
+.TP
+\fBQUAKE3_BACKTRACE=1\fR
+Use \fBgdb\fR(1) to get a backtrace if Quake III crashes (the \fBgdb\fR
+package must be installed)
+
+.SH SEE ALSO
+.BR quake3 (6),
+.BR ioq3ded (6)
+
+.SH AUTHOR
+The Quake III server binary used is a modified ioQuake3; originally created by
+Id Software, now maintained by the ioQuake3 community.
+.PP
+This manual page was written by Jack "jscinoz" Coulter <jscinoz@gmail.com>,
+Bruno "Fuddl" Kleinert <fuddl@gmx.de> and Simon McVittie <smcv@debian.org>
+for the Debian project (but may be used by others).
+Permission is granted to copy, distribute and/or
+modify this document under the terms of the GNU General Public License,
+Version 2, or any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public
+License can be found in /usr/share/common-licenses/GPL-2.

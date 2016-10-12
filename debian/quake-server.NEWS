@@ -1,0 +1,20 @@
+quake-server (10) experimental; urgency=low
+
+  quake-server configuration has changed significantly in this version.
+
+  The DAEMON_OPTS variable in /etc/default/quake-server no longer
+  contains a configurable "+exec" command. /etc/quake-server/server.cfg
+  will always be executed in addition to whatever is specified in
+  DAEMON_OPTS, and the default DAEMON_OPTS is now empty.
+
+  The START_DAEMON variable in /etc/default/quake-server is no longer
+  supported. If quake-server was previously disabled via START_DAEMON,
+  upgrading to this version will run "update-rc.d quake-server disable"
+  to disable it in the correct way.
+
+  systemd users can now enable additional instances of the server,
+  quake-server@INSTANCE.service, which use /etc/default/quake-server@INSTANCE
+  and /etc/quake-server/INSTANCE.cfg instead.
+  See /usr/share/doc/quake-server/README.Debian for details.
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 04 Feb 2015 10:18:27 +0000

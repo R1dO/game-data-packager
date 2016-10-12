@@ -1,0 +1,113 @@
+#!/bin/sh
+
+# Quake 4 or Enemy Territory: Quake Wars
+longname="@longname@"
+# Quake 4 or ETQW
+shortname="@shortname@"
+# quake4 or etqw
+id="@id@"
+# quake4, etqw or *-dedicated
+self="@self@"
+# client or server
+role="@role@"
+# *.x86 (not SMP)
+binary="@binary@"
+# quake4smp.x86 or etqw-rthread.x86
+smpbinary="@smpbinary@"
+# q4base or base
+basegame="@basegame@"
+# required packages
+paks="@paks@"
+# absolute path to icon
+icon="@icon@"
+# ~/.quake4 or ~/.etqwcl or ~/.etqw
+dotdir="${HOME}/.@dotdir@"
+
+pkglibdir="/usr/lib/${id}"
+
+help() {
+  cat <<EOF
+${longname} ${role} wrapper for Debian
+
+Usage: ${self} [OPTION]...
+
+ -h, --help\t\tDisplay this help
+EOF
+
+  if [ -n "${smpbinary}" ] && [ -x "${pkglibdir}/${smpbinary}" ]; then
+    cat <<EOF
+ --smp\t\tUse the multi-threaded version of the client
+EOF
+  fi
+
+  cat <<EOF
+ +<internal command>\tPass idTech4 console commands to the engine
+EOF
+}
+
+while [ "$1" != "" ]; do
+  case "$1" in
+    -h|--help)
+      help
+      exit 0
+      ;;
+    --smp)
+      if [ -n "${smpbinary}" ] && [ -x "${pkglibdir}/${smpbinary}" ]; then
+        binary="${smpbinary}"
+      fi
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+# sanity check: the engine doesn't cope well with missing data
+for i in ${paks}; do
+  if [ -f $pkglibdir/$basegame/$i.pk4 ]; then
+    :
+  else
+    if [ "$role" = client ]; then
+      $pkglibdir/need-data.sh "${longname}" "$(cat $pkglibdir/README.${id}-data)"
+    else
+      echo "${shortname} data missing, see /usr/share/doc/${id}-server/README.${id}-data"
+    fi
+    exit 72     # EX_OSFILE
+  fi
+done
+
+cvars="+set com_allowconsole 1"
+
+# Quake 4 expects to run in its installation directory
+cd "$pkglibdir"
+
+if test -n "$QUAKE4_BACKTRACE"; then
+  set gdb -return-child-result -batch \
+    -ex run -ex 'thread apply all bt full' -ex kill -ex quit \
+    --args "${pkglibdir}/${binary}" ${cvars} \
+    "$@"
+else
+  set _ ${QUAKE4_DEBUGGER} "${pkglibdir}/${binary}" ${cvars} "$@"
+  shift
+fi
+
+# The SMP binary needs a modified bundled copy of SDL. We don't set this
+# environment variable until after going through confirm-binary-only.sh,
+# so that we can't accidentally load sourceless binaries.
+set \
+  env LD_LIBRARY_PATH="${pkglibdir}${LD_LIBRARY_PATH:+":${LD_LIBRARY_PATH}"}" \
+  "$@"
+
+if [ "${role}" = "client" ]; then
+  exec "${pkglibdir}/confirm-binary-only.sh" \
+    --icon "${icon}" \
+    --dotdir "${dotdir}" \
+    --text-file "${pkglibdir}/README.${id}-bin" \
+    --title "${longname}" \
+    -- "$@"
+else
+  exec "$@"
+fi
+
+# vim:set sw=2 sts=2 et:

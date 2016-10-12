@@ -1,0 +1,109 @@
+#!/bin/sh
+
+# quake3 or quake3-server or whatever
+IOQ3SELF=@IOQ3SELF@
+# "server" or "client"
+IOQ3ROLE=@IOQ3ROLE@
+# ioquake3 or ioq3ded
+IOQ3BINARY=@IOQ3BINARY@
+# q3a or openarena
+IOQ3DOTDIR=q3a
+
+ENGINE="/usr/lib/ioquake3/${IOQ3BINARY}"
+
+BASEGAME="baseq3"
+BASEPATH="/usr/share/games/quake3"
+DEBUGGER="$QUAKE3_DEBUGGER"
+DEMO=
+PAKS="0 1 2 3 4 5 6 7 8"
+QUIET=
+
+EXCUSE="\
+Quake III Arena ${IOQ3ROLE} wrapper for Debian\n\
+\n\
+Usage: ${IOQ3SELF} [OPTION]...\n\
+\n\
+ -h, --help\t\tDisplay this help\n\
+ -q, --quiet\t\tDisable console output\n\
+  +<internal command>\tPass commands to the engine\n"
+
+CVARS="+set com_standalone 0"
+
+case "$(basename "$0")" in
+  (*team-arena*|*teamarena*)
+    set _ "$@" +set fs_game missionpack
+    shift
+    ;;
+  (*demo*)
+    set _ --demo "$@"
+    shift
+    ;;
+esac
+
+while [ "$1" != "" ]; do
+
+  case "$1" in
+    -h|--help)
+      echo ${EXCUSE}
+      exit 0
+      ;;
+    -q|--quiet)
+      CVARS="$CVARS +set ttycon 0"
+      QUIET=1
+      ;;
+    --demo)
+      BASEPATH="/usr/lib/quake3/demo"
+      DEMO=1
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+if [ -n "$DEMO" ]; then
+  BASEPATH="/usr/lib/quake3/demo"
+elif [ -e "/usr/lib/quake3/ta/missionpack/pak0.pk3" ]; then
+  BASEPATH="/usr/lib/quake3/ta"
+elif [ -e "/usr/lib/quake3/base/baseq3/pak0.pk3" ]; then
+  BASEPATH="/usr/lib/quake3/base"
+elif [ -e "$BASEPATH/baseq3/pak0.pk3" ]; then
+  :
+elif [ -e "/usr/lib/quake3/demo/demoq3/pak0.pk3" ]; then
+  BASEPATH="/usr/lib/quake3/demo"
+  DEMO=1
+fi
+
+if [ -n "$DEMO" ]; then
+  CVARS="$CVARS +set com_homepath .q3ademo +set com_basegame demoq3"
+  CVARS="$CVARS +set sv_pure 0 +set vm_ui 0 +set vm_cgame 0 +set vm_game 0"
+  paks="0"
+  basegame=demoq3
+fi
+
+CVARS="$CVARS +set fs_basepath $BASEPATH"
+
+# sanity check: the engine doesn't cope well with missing data
+for i in $paks; do
+  if test -f $BASEPATH/$basegame/pak$i.pk3; then
+    :
+  else
+    if test "$IOQ3ROLE" = client; then
+      $BASEPATH/need-data.sh "Quake III Arena" "`cat $BASEPATH/README.quake3-data`"
+    else
+      echo "Quake III Arena data missing, see /usr/share/doc/quake3-server/README.quake3-data"
+    fi
+    exit 72     # EX_OSFILE
+  fi
+done
+
+if test "z$QUIET" = z1; then
+  exec >/dev/null 2>&1;
+fi
+
+if test -n "$QUAKE3_BACKTRACE"; then
+  exec gdb -return-child-result -batch -ex run -ex 'thread apply all bt full' -ex kill -ex quit --args ${ENGINE} ${CVARS} "$@"
+else
+  exec ${DEBUGGER} ${ENGINE} ${CVARS} "$@"
+fi

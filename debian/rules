@@ -9,12 +9,27 @@ include /usr/share/dpkg/pkg-info.mk
 %:
 	dh $@ --with python3,bash-completion
 
-override_dh_auto_build:
+options := \
 	BUILD_DATE="$$(dpkg-parsechangelog --show-field=Date)" \
-	dh_auto_build --parallel
+	bindir='/usr/games' \
+	distro=$(shell dpkg-vendor --query Vendor) \
+	gamedatadir='/usr/share/games' \
+	$(NULL)
+
+override_dh_auto_build:
+	dh_auto_build \
+		-- \
+		$(options) \
+		$(NULL)
+
+override_dh_auto_install:
+	dh_auto_install \
+		-- \
+		$(options) \
+		$(NULL)
 
 override_dh_auto_clean:
-	dh_auto_clean --parallel
+	dh_auto_clean
 	@if [ "`echo *.deb`" != "*.deb" ]; then \
 		echo; \
 		echo "*************************************************"; \
@@ -27,11 +42,24 @@ override_dh_auto_clean:
 	debian/copyright.py
 
 override_dh_install:
-	dh_install
+	dh_install --fail-missing
 	if dpkg-vendor --derives-from Ubuntu; then \
+		install -d debian/game-data-packager/usr/share/games/game-data-packager; \
 		touch debian/game-data-packager/usr/share/games/game-data-packager/is-ubuntu-derived; \
 	fi
 	dh_apparmor -pgame-data-packager-runtime --profile-name=usr.lib.unreal
+	dh_apparmor -pquake4 --profile-name=usr.lib.quake4.quake4.x86
+	dh_apparmor -pquake4-server --profile-name=usr.lib.quake4.q4ded.x86
 
 override_dh_installdocs:
 	dh_installdocs -XTODO
+
+override_dh_installinit:
+	dh_installinit -pquake4-server --noscripts
+	dh_installinit -petqw-server --noscripts
+	dh_installinit --remaining-packages
+
+override_dh_systemd_enable:
+	dh_systemd_enable -pquake4-server --no-enable
+	dh_systemd_enable -petqw-server --no-enable
+	dh_systemd_enable --remaining-packages

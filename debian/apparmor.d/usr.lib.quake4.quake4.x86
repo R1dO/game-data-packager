@@ -1,0 +1,115 @@
+# Quake 4 client AppArmor profile
+# Copyright © 2016 Simon McVittie
+# Redistribution and use in source and compiled forms, with or without
+# modification, are permitted under any circumstances. No warranty.
+
+#include <tunables/global>
+
+/usr/lib/quake4/quake4.x86 flags=(complain) {
+  #include <abstractions/X>
+  #include <abstractions/audio>
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/nvidia>
+  #include <abstractions/private-files-strict>
+
+  network inet dgram,
+  network inet stream,
+  network inet6 dgram,
+  network inet6 stream,
+
+  /usr/lib/quake4/quake4.x86 mr,
+  /usr/lib/quake4/* r,
+  /usr/share/games/quake4/** r,
+  owner @{HOME}/.quake4/** rwk,
+  owner @{HOME}/.quake4/*/gamex86.so rwkm,
+
+  # used by PulseAudio
+  /etc/machine-id r,
+
+  # the audio and X abstractions don't allow mmapping these
+  /dev/dri/* m,
+  owner /{run,dev}/shm/pulse-shm* m,
+
+  # udev device enumeration
+  /etc/udev/udev.conf r,
+  /run/udev/data/+pci:* r,
+  /sys/bus/ r,
+  /sys/class/ r,
+  /sys/class/drm/ r,
+  /sys/devices/pci[0-9]*/**/uevent r,
+  # character devices 226:x are DRI
+  /run/udev/data/c226:* r,
+
+  /usr/bin/xdg-open Cxr -> xdgopen,
+  /usr/share/games/game-data-packager-runtime/gdp-openurl Cxr -> xdgopen,
+
+  profile xdgopen flags=(complain) {
+    #include <abstractions/base>
+    #include <abstractions/dbus-session-strict>
+    #include <abstractions/ubuntu-browsers>
+    #include <abstractions/ubuntu-helpers>
+
+    /usr/bin/xdg-open rm,
+    /{usr/,}bin/dash rmix,
+
+    /usr/share/games/game-data-packager-runtime/gdp-openurl rm,
+    /usr/bin/python3 rmix,
+    dbus (send) bus=session peer=(name=org.freedesktop.portal.Desktop),
+  }
+}
+
+/usr/lib/quake4/quake4smp.x86 flags=(complain) {
+  #include <abstractions/X>
+  #include <abstractions/audio>
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/nvidia>
+  #include <abstractions/private-files-strict>
+
+  network inet dgram,
+  network inet stream,
+  network inet6 dgram,
+  network inet6 stream,
+
+  /usr/lib/quake4/quake4smp.x86 mr,
+  /usr/lib/quake4/libSDL-1.2.id.so.0 mr,
+  /usr/lib/quake4/* r,
+  /usr/share/games/quake4/** r,
+  owner @{HOME}/.quake4/** rwk,
+  owner @{HOME}/.quake4/*/gamex86.so rwkm,
+
+  # used by PulseAudio
+  /etc/machine-id r,
+
+  # the audio and X abstractions don't allow mmapping these
+  /dev/dri/* m,
+  owner /{run,dev}/shm/pulse-shm* m,
+
+  # udev device enumeration
+  /etc/udev/udev.conf r,
+  /run/udev/data/+pci:* r,
+  /sys/bus/ r,
+  /sys/class/ r,
+  /sys/class/drm/ r,
+  /sys/devices/pci[0-9]*/**/uevent r,
+  # character devices 226:x are DRI
+  /run/udev/data/c226:* r,
+
+  /usr/bin/xdg-open Cxr -> xdgopen,
+  /usr/share/games/game-data-packager-runtime/gdp-openurl Cxr -> xdgopen,
+
+  profile xdgopen flags=(complain) {
+    #include <abstractions/base>
+    #include <abstractions/dbus-session-strict>
+    #include <abstractions/ubuntu-browsers>
+    #include <abstractions/ubuntu-helpers>
+
+    /usr/bin/xdg-open rm,
+    /{usr/,}bin/dash rmix,
+
+    /usr/share/games/game-data-packager-runtime/gdp-openurl rm,
+    /usr/bin/python3 rmix,
+    dbus (send) bus=session peer=(name=org.freedesktop.portal.Desktop),
+  }
+}

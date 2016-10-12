@@ -1,0 +1,9 @@
+# Defaults for Quake 4 systemd unit
+
+# Options that are passed to the daemon.
+#
+# In addition to these options, the server will execute commands from
+# /etc/quake4-server/server.cfg using "+exec etc/quake4-server/server.cfg".
+# For most options it's better to edit server.cfg instead, but some options
+# only work on the command-line.
+DAEMON_OPTS=""

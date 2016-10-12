@@ -1,0 +1,139 @@
+.TH QUAKE3 6 2016-01-16
+
+.SH NAME
+quake3 \- Quake III Arena client
+
+.SH SYNOPSIS
+.B quake3
+.BR "" [ \-h | \-\-help ]
+.BR "" [ \-q | \-\-quiet ]
+.BR "" [ +set
+.IR option " " value ]...
+
+.SH DESCRIPTION
+.B quake3
+is the client for Quake III Arena, a multiplayer network game.
+
+.SH OPTIONS
+The wrapper script used for Quake III Arena in Debian accepts these options:
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display a short help summary
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Disable all console output
+.TP
+\fB\-\-demo\fR
+Run the demo version, even if the full game is installed
+.PP
+Additionally, if \fBquake3\fR is run via a symbolic link whose name
+contains \fBteam-arena\fR or \fBteamarena\fR, it will play the expansion pack,
+\fBQuake III Team Arena\fR. This requires that additional data files are
+installed. Similarly, a symbolic link containing \fBdemo\fR is equivalent
+to the \fB\-\-demo\fR option.
+.PP
+Any console command can also be prefixed with \fB+\fR and used as a
+command-line option (press Shift+Esc to access the in-game console), including:
+.TP
+\fB+set\fR \fIoption\fR \fIvalue\fR
+Set an option (see below for some options)
+.TP
+\fB+connect\fR \fIserver\fR[\fB:\fIport\fR]
+Connect to a server
+.PP
+Options that can be set with \fB+set\fR
+(note that this is not a full list!) include:
+.PP
+\fBcg_drawFPS\fR <bool>
+.PP
+\fBcg_drawTeamOverlay\fR <bool>
+.PP
+\fBcg_fov\fR <value>
+.PP
+\fBcg_lagometer\fR <bool>
+.PP
+\fBcg_shadows\fR <bool>
+.PP
+\fBcg_thirdPerson\fR <bool>
+.PP
+\fBcg_thirdPersonAngle\fR <value>
+.PP
+\fBcg_thirdPersonRange\fR <value>
+.PP
+\fBcg_zoomfov\fR <value>
+.PP
+\fBcl_mouseAccel\fR <bool>
+.PP
+\fBcom_blood\fR <bool>
+.PP
+\fBcom_hunkMegs\fR <value>
+.PP
+\fBcom_maxfps\fR <value>
+.PP
+\fBcom_soundMegs\fR <value>
+.PP
+\fBcom_zoneMegs\fR <value>
+.PP
+\fBfs_basepath\fR <string>
+.PP
+\fBfs_game\fR <string>
+.PP
+\fBr_allowExtensions\fR <bool>
+.PP
+\fBr_allowSoftwareGL\fR <bool>
+.TP
+\fBr_customheight\fR <value>
+(Requires +set r_mode \-1)
+.TP
+\fBr_customwidth\fR <value>
+(Requires +set r_mode \-1)
+.PP
+\fBr_dynamiclight\fR <bool>
+.PP
+\fBr_ext_compress_textures\fR <bool>
+.PP
+\fBr_ext_compressed_textures\fR <bool>
+.PP
+\fBr_fullscreen\fR <bool>
+.PP
+\fBr_ignoreGLErrors\fR <bool>
+.PP
+\fBr_mode\fR <value>
+
+.SH FILES
+.TP
+\fI~/.q3a/baseq3\fR
+Configuration and state for Quake III Arena
+.TP
+\fI~/.q3a/missionpack\fR
+Configuration and state for Quake III: Team Arena, if installed
+
+.SH ENVIRONMENT
+The wrapper script used to launch Quake III Arena allows it to be debugged
+by setting environment variables.
+.TP
+\fBQUAKE3_DEBUGGER=\fIcommand\fR
+A debugger or other prefix to prepend to the Quake III command line, such
+as \fBstrace\fR; overridden by \fBQUAKE3_BACKTRACE\fR
+.TP
+\fBQUAKE3_BACKTRACE=1\fR
+Use \fBgdb\fR(1) to get a backtrace if Quake III crashes (the \fBgdb\fR
+package must be installed)
+
+.SH SEE ALSO
+.BR quake3-server (6),
+.BR ioquake3 (6)
+
+.SH AUTHOR
+The Quake III Arena binary used is a modified ioQuake3; originally created by
+Id Software, now maintained by the ioQuake3 community.
+.PP
+This manual page was written by Jack "jscinoz" Coulter <jscinoz@gmail.com>,
+Bruno "Fuddl" Kleinert <fuddl@gmx.de> and Simon McVittie <smcv@debian.org>
+for the Debian project (but may be used by others).
+Permission is granted to copy, distribute and/or
+modify this document under the terms of the GNU General Public License,
+Version 2 any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public License
+can be found in /usr/share/common-licenses/GPL-2.

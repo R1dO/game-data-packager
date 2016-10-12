@@ -1,0 +1,25 @@
+[Unit]
+Description=Enemy Territory: Quake Wars game server
+After=network.target
+Documentation=man:etqw-dedicated(6)
+
+[Service]
+Type=simple
+User=etqw-server
+Environment=DAEMON_OPTS=
+EnvironmentFile=-/etc/default/etqw-server
+ExecStart=/usr/games/etqw-dedicated $DAEMON_OPTS +exec etc/etqw-server/server.cfg
+Restart=on-failure
+RestartPreventExitStatus=72
+# hardening
+CapabilityBoundingSet=
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+# this game uses proprietary x86-only binaries, even on amd64
+Personality=x86
+
+[Install]
+WantedBy=multi-user.target

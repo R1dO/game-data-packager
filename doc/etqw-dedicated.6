@@ -1,0 +1,54 @@
+.TH ETQW-DEDICATED 6 2015-12-09
+
+.SH NAME
+etqw-dedicated \- Enemy Territory: Quake Wars server
+
+.SH SYNOPSIS
+.B etqw-dedicated
+.BR "" [ \-h | \-\-help ]
+.BR "" [ +set
+.IR option " " value ]...
+
+.SH DESCRIPTION
+.B etqw-dedicated
+is the dedicated server for Enemy Territory: Quake Wars server,
+a first-person shooter game.
+
+.SH OPTIONS
+The wrapper script used for ETQW in Debian accepts one option:
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Display a short help summary
+.PP
+Any console command can also be prefixed with \fB+\fR and used as a
+command-line option (press Ctrl+Alt and the key above Tab to access the
+in-game console).
+
+.SH FILES
+.TP
+\fI~/.etqw\fR
+Configuration and state for ETQW
+
+.SH ENVIRONMENT
+The wrapper script used to launch ETQW allows it to be debugged
+by setting environment variables.
+.TP
+\fBQUAKE4_DEBUGGER=\fIcommand\fR
+A debugger or other prefix to prepend to the ETQW command line, such
+as \fBstrace\fR; overridden by \fBQUAKE4_BACKTRACE\fR
+.TP
+\fBQUAKE4_BACKTRACE=1\fR
+Use \fBgdb\fR(1) to get a backtrace if ETQW crashes (the \fBgdb\fR
+package must be installed)
+
+.SH AUTHOR
+ETQW was written by Splash Damage and originally published by Activision.
+It is proprietary software.
+.PP
+This manual page was written by Simon McVittie for the Debian project (but
+may be used by others). Permission is granted to copy, distribute and/or
+modify this document under the terms of the GNU General Public License,
+Version 2 or any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public License
+can be found in /usr/share/common-licenses/GPL-2.

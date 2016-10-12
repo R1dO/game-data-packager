@@ -1,0 +1,61 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.TH QUAKE2-SERVER 6 "2013-09-26"
+.SH NAME
+quake2-server \- classic first person shooter (dedicated server)
+.SH SYNOPSIS
+.B quake2-server
+.RI [ WRAPPER-OPTIONS ]
+.RI [ ENGINE-OPTIONS ]
+.RI [ ENGINE-COMMANDS ] ...
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B quake2-server
+command.
+.PP
+\fBQuake II\fP is a popular first-person shooter game, released in 1997
+by iD Software.  This wrapper script will launch the Quake II engine.  The
+game data needs to be installed independently using the 'game-data-packager'
+program, and by default it will be looked for at \fI/usr/share/games/quake2\fR
+and \fI/usr/share/games/quake2-demo\fR.
+.PP
+This wrapper script accepts a few GNU-style options.
+Any further arguments are passed to the engine unmodified.
+Consult the engine documentation for full details, but most engines support a
+syntax where you can give console commands by prefixing with a plus sign.
+.PP
+In addition to any arguments on the command line, the quake2-server script
+automatically passes the arguments "+set dedicated 1" to the engine.
+.SH OPTIONS
+These options are accepted for \fBWRAPPER-OPTIONS\fR in the
+synopsis.
+.TP
+.B \-h, \-\-help
+Show summary of options.
+.TP
+.B \-v, \-\-version
+Show version of program.
+.TP
+.B \-\-engine=\fBENGINE\fR
+Select a non-default Quake II engine binary
+.TP
+.B \-\-demo
+Use the demo data, even if you have both the demo and the full version
+installed
+.SH EXAMPLES
+Run a server to play the demo in cooperative mode:
+.B quake2-server --demo +map demo1 +set coop 1
+.TP
+Run a deathmatch server:
+.B quake2-server +map q2dm1 +set deathmatch 1
+.TP
+Use the default server configuration in /etc/quake2-server/debian_server.cfg:
+.B quake2-server +exec debian_server.cfg
+.SH SEE ALSO
+.BR quake2 (6),
+.BR game-data-packager (6).
+.SH AUTHOR
+This manual page, and the quake2-server wrapper script, were written by
+Simon McVittie <smcv@debian.org>, for the Debian project (and may be used
+by others). They are based on the Quake packaging by David Banks and
+Simon McVittie.

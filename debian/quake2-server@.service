@@ -1,0 +1,24 @@
+[Unit]
+Description=Quake II game server (instance: "%i")
+After=network.target
+Documentation=man:quake2-server(6)
+
+[Service]
+Type=simple
+User=quake2-server
+Environment=DAEMON_OPTS=
+Environment=HOME=/var/games/quake2-server/%i.home
+EnvironmentFile=-/etc/default/quake2-server
+ExecStart=/usr/games/quake2-server $DAEMON_OPTS +exec etc/quake2-server/%i.cfg
+Restart=on-failure
+RestartPreventExitStatus=72
+# hardening
+CapabilityBoundingSet=
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

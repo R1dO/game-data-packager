@@ -16,6 +16,12 @@ game-data-packager (46) UNRELEASED; urgency=medium
     - split out game-data-packager-runtime into a separate binary
       package so g-d-p doesn't have to remain installed alongside
       the games [smcv]
+    - quake4 AppArmor: update quake4smp profile to match quake4 [smcv]
+    - quake* AppArmor: allow gdp-openurl script as an alternative to xdg-open
+      [smcv]
+    - quake3: correct logic for letting the demo run without the full game
+      [smcv]
+    - quake*-server: add missing dependency on lsb-base 3.0-6 [smcv]
   * Internal changes:
     - switch to debhelper 10, no change needed [adetiste]
     - mark the out/ directory with CACHEDIR.TAG to make it easy to avoid
@@ -30,6 +36,332 @@ game-data-packager (46) UNRELEASED; urgency=medium
       skipped if the necessary files are not in ~/Downloads [smcv]
 
  -- Simon McVittie <smcv@debian.org>  Fri, 01 Jul 2016 10:30:08 +0100
+
+quake (18) unstable; urgency=medium
+
+  * quake4 AppArmor: allow additional video device enumeration
+  * quake4 AppArmor: allow reading /etc/machine-id, used by PulseAudio
+  * quake4 AppArmor: allow mmapping ~/.quake4/*/gamex86.so
+  * quake: add a shortcut for Quake Episode 5: Dimensions of the Past
+  * All systemd services: add Documentation key pointing to man pages
+  * Add lintian overrides for repeated words in d/copyright
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 29 Jun 2016 10:20:17 +0100
+
+quake (17) unstable; urgency=medium
+
+  [ Alexandre Detiste ]
+  * Add support for "Enemy Territory: Quake Wars" using the
+    propietary binaries (there is no open-source engine)
+    and following the same patterns as used for Quake 4.
+
+  [ Simon McVittie ]
+  * Add a confirmation step before running binary-only executables
+  * etqw.desktop: add some more keywords
+  * etqw*.6: document QUAKE4_BACKTRACE, QUAKE4_DEBUGGER
+  * Remove unused (and not installed) quake4smp wrapper
+  * Check scripts for missing substitutions
+  * quake4.in: use the same source for ETQW
+  * README.etqw-data: expand
+  * d/copyright: mention the idTech4 games, and Alexandre's contributions
+  * d/control: remove Suggests on quake4-pb-bin, which is disabled in
+    game-data-packager to avoid CVE-2007-5248
+  * quake, quake2, quake3: if launched via a symlink whose name
+    contains armagon, hipnotic, etc., run the appropriate expansion pack
+  * quake.desktop, quake2.desktop, quake3.desktop: run each expansion
+    pack via a different symbolic link. This is a workaround for Steam
+    ignoring command-line options when adding a non-Steam shortcut
+    (<https://github.com/ValveSoftware/steam-for-linux/issues/3855>)
+  * quake*.desktop: stop using Roman numerals, so they sort in
+    the correct order
+  * quake4*: add experimental AppArmor profiles
+  * Switch Vcs-Git to https (see #810378)
+  * Standards-Version: 3.9.8 (no further changes needed)
+  * Normalize packaging via wrap-and-sort -abst
+  * quake4.in: don't run env under gdb, if using both
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 30 May 2016 09:38:18 +0100
+
+quake (16) unstable; urgency=medium
+
+  * Move Build-Depends-Indep to Build-Depends; they are needed
+    for the quake4 package, which is Architecture: i386 due to
+    its dependency on i386-only binaries.
+  * Upload to unstable
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 21 Nov 2015 18:16:46 +0000
+
+quake (15+exp1) experimental; urgency=medium
+
+  * Enable the quake4 packages unconditionally
+  * Upload to experimental to wait for NEW processing
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 01 Nov 2015 00:06:05 +0000
+
+quake (15) unstable; urgency=medium
+
+  * quake3-server: correct help text
+  * quake3-server: lock the Debian-quake3 account on purge, and unlock
+    it on reinstallation, instead of deleting it on purge.
+    This matches what we do for quake-server and quake2-server,
+    and hardens the system against the possibility that files owned
+    by Debian-quake3 might become owned by an unrelated user that
+    is given the same numeric uid.
+  * Add support for Quake 4, using the proprietary binaries (there is
+    no open-source engine). These packages are currently skipped by
+    default: use DEB_BUILD_OPTIONS=quake4 to build them.
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 01 Nov 2015 00:05:29 +0000
+
+quake (14) unstable; urgency=medium
+
+  [ Alexandre Detiste ]
+  * Don't show "--text=" in kdialog prompt (Closes: #781943)
+  * Suggest new packages quake2-{groundzero,reckoning}-data
+    instead of their old names quake2-{groundzero,reckoning}
+
+  [ Simon McVittie ]
+  * Install a 48x48 version of the Quake III Arena icons in addition
+    to 256x256, as recommended by the XDG Icon Theme spec
+  * Stop installing traditional Debian menu files to comply with
+    CTTE decision #741573
+  * Stop installing XPM icons
+  * Use unique temporary filenames, so parallel builds can work
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 02 Oct 2015 10:03:28 +0100
+
+quake (13) unstable; urgency=medium
+
+  * Canonicalize Vcs-Browser, and use https
+  * Upload to unstable
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 29 Apr 2015 10:11:59 +0100
+
+quake (12) experimental; urgency=low
+
+  * quake3-server.init: set correct com_homepath for sysvinit servers
+    (server.q3a, not /var/games/.../server.q3a - it is meant to be relative
+    to $HOME)
+  * quake3-server: install extra symlinks so that server.cfg can be found
+    when using quake3*-data (>= 40)
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 05 Feb 2015 11:02:50 +0000
+
+quake (11) experimental; urgency=low
+
+  * quake3: fix installed-location detection by looking for pak0.pk3,
+    not pak0.pak
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 04 Feb 2015 11:17:00 +0000
+
+quake (10) experimental; urgency=low
+
+  * quake2: execute debian_server.cfg again, reverting a change from v9.
+    Unlike quake and quake3, quake2's default configuration file is named
+    debian_server.cfg, and the demo and full game have different versions.
+  * quake, quake3: remove support for START_DAEMON
+    - if the server was previously disabled via START_DAEMON,
+      do a one-time migration to "update-rc.d $SERVICE disable"
+  * Modify quake*-server configuration
+    - put default for DAEMON_OPTS in /etc/init.d/quake*-server so it can
+      operate without /etc/default/quake*-server
+    - "+exec etc/quake*-server/server.cfg" is no longer part of DAEMON_OPTS
+    - add native systemd units
+    - add optional instanced systemd units for multiple servers per machine
+  * quake3: prefer to load game data from /usr/lib/quake3/base
+    or /usr/lib/quake3/ta, where ioquake3 can provide native-code game modules
+    - this requires ioquake3 (>= 1.36+u20150114+dfsg1-1~) and
+      quake3*-data built by game-data-packager (>= 40)
+  * quake3: experimental support for loading the demo data
+    - the same requirements apply
+  * Standards-Version 3.9.6 (no changes)
+  * Simplify advice on obtaining game data, and point to
+    game-data-packager's new declarative data files for checksums and
+    exact sizes (Closes: #762823)
+  * quake-server, quake2-server: if no data, exit 72 like quake3-server does
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 04 Feb 2015 10:18:27 +0000
+
+quake (9) experimental; urgency=low
+
+  * quake3.desktop: describe Q3 as an ActionGame, not an ArcadeGame
+  * Install the Q3 icon to the freedesktop.org icon path
+  * Add recoloured icons and desktop files for the Quake II mission packs
+    (requires quake2-reckoning and/or quake2-groundzero from
+    game-data-packager 39)
+  * Add desktop file for Quake III: Team Arena (requires quake3-team-arena
+    from game-data-packager 39) and install its icon
+  * Partially sync server configuration from openjk and iortcw:
+    - deprecate START_DAEMON
+    - make /etc/quake*-server available as etc/quake*-server in the game
+      engine's search path so it's more obvious what is being exec'd (leave
+      the debian_server.cfg symlink in for compatibility)
+  * quake3-server: use a non-hidden home path,
+    /var/games/quake3-server/server.q3a, in preparation for multiple-instance
+    support
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 22 Jan 2015 12:32:19 +0000
+
+quake (8) unstable; urgency=medium
+
+  * Avoid ambiguous precedence of Makefile rules for 24px icons,
+    fixing FTBFS with recent make (Closes: #751039)
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 10 Jun 2014 22:56:23 +0100
+
+quake (7) unstable; urgency=low
+
+  [ Fabian Greffrath ]
+  * Sort Debian control files via "wrap-and-sort -ab".
+
+  [ Simon McVittie ]
+  * quake2-server: don't recommend x11-utils | etc., they are only used
+    in the clients
+  * Recommend kde-baseapps-bin instead of transitional kdebase-bin
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 09 Mar 2014 13:56:32 +0000
+
+quake (6) unstable; urgency=low
+
+  * Generate recoloured icons for Quake mission packs
+  * Put built files in build/
+  * Mention bug 728506 in the version 5 changelog
+  * Add some keywords to the .desktop files
+  * Add VCS fields to debian/control
+  * Standards-Version: 3.9.5 (no changes needed)
+  * Take over the quake3 and quake3-server binary packages from src:quake3
+  * Add a recoloured Team Arena icon
+  * Add Keywords to quake3.desktop
+  * Duplicate quake3 lintian overrides to quake, quake2 since they concern
+    the copyright file, which was merged
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 13 Jan 2014 11:03:16 +0000
+
+quake3 (1.4) unstable; urgency=low
+
+  * Add status action to init script
+  * Don't refuse to start a new quake3-server if there's a stale pid file
+    (similar to #678543)
+  * Report ioquake3, ioquake3-server information in quake3, quake3-server bugs
+  * Standards-Version: 3.9.3 (no changes)
+  * Update copyright dates
+  * Add a Description to the init script
+  * Run a server from the quake3-server package by default (as per Policy),
+    unless this is an upgrade from 1.3 or older
+  * During purge of quake3-server, delete files owned by Debian-quake3 before
+    deleting the user itself
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 23 Jun 2012 14:08:41 +0100
+
+quake3 (1.3) unstable; urgency=low
+
+  * Make the desktop file definitely run /usr/games/quake3, and not some
+    other quake3 on the user's $PATH
+  * Upload to unstable/contrib now that I've done the same with g-d-p 25
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 16 Mar 2011 15:49:39 +0000
+
+quake3 (1.2) experimental; urgency=low
+
+  * Make the QUAKE3_BACKTRACE option work properly
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 16 Jan 2011 22:27:07 +0000
+
+quake3 (1.1) experimental; urgency=low
+
+  * Allow game-data-packager to satisfy the quake3-data dependency
+  * If quake3-data is missing from quake3, don't allow the game to run (the
+    engine doesn't cope well with it); instead, use zenity, kdialog, xmessage
+    or (as a last resort) terminal output to tell the user about
+    game-data-packager
+  * If quake3-data is missing from quake3-server, just output to the console
+  * Add a simple init script (disabled by default, so you don't have to use
+    it if you prefer to run the server under screen or something), based on
+    the one in tremulous-server
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 12 Nov 2010 23:12:28 +0000
+
+quake3 (1.0) experimental; urgency=low
+
+  [ Jack Coulter ]
+  * Initial packaging (Closes: #487933), based on work by Marc Leeman and
+    Bruno Kleinert
+
+  [ Simon McVittie ]
+  * Adapt for the current version of ioquake3
+  * Upgrade to source format 3.0 (native), debhelper v8, machine-readable
+    copyright, and Policy version 3.9.1
+  * Include the GIMP source file for the logo (from ioquake3), and produce
+    lower-quality versions from it at build time
+  * Upload to experimental for now, until a version of game-data-packager
+    that can produce quake3-data reaches unstable
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 22 Oct 2010 23:29:21 +0100
+
+quake (5) experimental; urgency=low
+
+  * Team upload.
+  * Fix quake2 dependency to be quake2-engine, not quake-engine.
+    (Closes: #728506)
+
+ -- Jonathan Dowland <jmtd@debian.org>  Mon, 11 Nov 2013 15:03:41 +0000
+
+quake (4) experimental; urgency=low
+
+  * Add support for Quake II
+  * Upload to experimental
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 29 Sep 2013 14:51:56 +0100
+
+quake (3) unstable; urgency=low
+
+  [ David Banks ]
+  * Add LSB description field to init script.
+  * Add status action to init script (ported from quake3 package).
+  * Bump debhelper compat version to 9 to avoid python warning.
+  * Bump standards version to the latest version, 3.9.3.
+
+  [ Simon McVittie ]
+  * Apply patch from Stephan Springl to install successfully with
+    non-shadow passwords (Closes: #679642)
+  * Standards-Version: 3.9.4, no changes needed
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 26 Sep 2013 21:53:10 +0100
+
+quake (2) unstable; urgency=low
+
+  [ David Banks ]
+  * Suggest correct path to darkplaces
+
+  [ Simon McVittie ]
+  * Upload to unstable
+
+ -- Simon McVittie <smcv@debian.org>  Wed, 09 Nov 2011 18:16:05 +0000
+
+quake (1) experimental; urgency=low
+
+  [ David Banks ]
+  * Initial release.
+
+  [ Simon McVittie ]
+  * Move to contrib/games due to dependency on non-distributable data
+  * Allow game-data-packager to satisfy the quake-data dependency: if a
+    user installs this package before data, we want g-d-p to get installed,
+    and the launcher copes gracefully with being run with no data
+  * Change dependencies and re-word package description to talk about
+    quake-registered and quake-shareware specifically, since they're the
+    core packages
+  * Recommend something that can display the "need data" message
+  * Replace bitmapped icon with an independently-created SVG and scripts
+    to generate various sizes
+  * Add a Quake mini-policy in debian/policy.txt, describing a quake-engine
+    alternative, and use that
+  * Give the script a --engine switch to force a particular engine
+  * Include menu entries for the mission packs, which are automatically
+    hidden if the corresponding data files are not installed
+  * Add a quake-server binary package
+
+ -- Simon McVittie <smcv@debian.org>  Fri, 15 Jul 2011 17:35:56 +0100
 
 game-data-packager (45) unstable; urgency=medium
 
