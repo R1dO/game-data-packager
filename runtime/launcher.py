@@ -239,23 +239,29 @@ class Launcher:
         else:
             self.warning_stamp = None
 
-    def main(self):
-        have_all_data = True
-
-        for p in self.base_directories:
-            logger.debug('Searching: %s' % p)
-
-        # sanity check: game engines often don't cope well with missing data
-        for f in self.required_files:
+    def check_required_files(self, base_directories, required_files,
+            warn=True):
+        for f in required_files:
             logger.debug('looking for %s', f)
-            for p in self.base_directories:
+            for p in base_directories:
                 logger.debug('looking for %s in %s', f, p)
                 if os.path.exists(os.path.join(p, f)):
                     logger.debug('found %s in %s', f, p)
                     break
             else:
-                logger.warning('Data file is missing: %s' % f)
-                have_all_data = False
+                if warn:
+                    logger.warning('Data file is missing: %s' % f)
+                return False
+        else:
+            return True
+
+    def main(self):
+        for p in self.base_directories:
+            logger.debug('Searching: %s' % p)
+
+        # sanity check: game engines often don't cope well with missing data
+        have_all_data = self.check_required_files(self.base_directories,
+            self.required_files)
 
         if self.dot_directory is not None:
             os.makedirs(self.dot_directory, exist_ok=True)
