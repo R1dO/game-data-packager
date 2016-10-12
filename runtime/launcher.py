@@ -253,6 +253,18 @@ class Launcher:
         else:
             self.warning_stamp = None
 
+        self.symlink_into_dot_directory = self.data.get(
+                'symlink_into_dot_directory', [])
+        for expansion, data in self.data.get('expansions', {}).items():
+            base_directories = list(map(expand, data.get('base_directories',
+                []))) + self.base_directories
+
+            if self.check_required_files(base_directories,
+                    data.get('extra_required_files', [])):
+                self.symlink_into_dot_directory = (
+                        self.symlink_into_dot_directory +
+                        data.get('symlink_into_dot_directory', []))
+
         logger.debug('Arguments: %r', self.argv)
 
     def check_required_files(self, base_directories, required_files,
@@ -438,7 +450,7 @@ class Launcher:
                     logger.info('Copying %s -> %s', f, target)
                     shutil.copyfile(f, target)
 
-        for subdir in self.data.get('symlink_into_dot_directory', ()):
+        for subdir in self.symlink_into_dot_directory:
             assert self.dot_directory is not None
             dot_subdir = os.path.join(self.dot_directory, subdir)
             logger.debug('symlinking ${each base directory}/%s/** as %s/**',
