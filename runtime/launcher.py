@@ -188,6 +188,8 @@ class Launcher:
                 help='use the specified game engine, if supported')
         parser.add_argument('--expansion', default=None,
                 help='expansion to launch')
+        parser.add_argument('--smp', default=False, action='store_true',
+                help='use a multi-threaded game engine, if supported')
         parser.add_argument('arguments', nargs='*',
                 help='arguments for the launched game')
         self.args = parser.parse_args(argv)
@@ -241,6 +243,9 @@ class Launcher:
             self.engines = self.data['engines']
         else:
             self.engines = []
+
+        if self.args.smp and 'smp_engine' in self.data:
+            self.engines.insert(0, self.data['smp_engine'])
 
         self.engine = None
 
