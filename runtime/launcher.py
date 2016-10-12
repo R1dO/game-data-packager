@@ -228,10 +228,19 @@ class Launcher:
 
         self.exit_status = 1
 
+        if self.binary_only:
+            assert self.dot_directory is not None
+            if self.id in ('quake4', 'etqw'):
+                self.warning_stamp = os.path.join(self.dot_directory,
+                        'confirmed-binary-only')
+            else:
+                self.warning_stamp = os.path.join(self.dot_directory,
+                        'confirmed-binary-only.stamp')
+        else:
+            self.warning_stamp = None
+
     def main(self):
         have_all_data = True
-        warning_stamp = os.path.join(self.dot_directory,
-                'confirmed-binary-only.stamp')
 
         for p in self.base_directories:
             logger.debug('Searching: %s' % p)
@@ -248,7 +257,8 @@ class Launcher:
                 logger.warning('Data file is missing: %s' % f)
                 have_all_data = False
 
-        os.makedirs(self.dot_directory, exist_ok=True)
+        if self.dot_directory is not None:
+            os.makedirs(self.dot_directory, exist_ok=True)
 
         if not have_all_data:
             gui = Gui(self)
@@ -259,7 +269,7 @@ class Launcher:
             Gtk.main()
             sys.exit(72)    # EX_OSFILE
 
-        elif self.binary_only and not os.path.exists(warning_stamp):
+        elif self.binary_only and not os.path.exists(self.warning_stamp):
             self.exit_status = 77   # EX_NOPERM
             gui = Gui(self)
             gui.text_view.get_buffer().set_text(
@@ -294,11 +304,8 @@ class Launcher:
             f.flush()
 
     def _confirm_binary_only_cb(self, gui):
-        warning_stamp = os.path.join(self.dot_directory,
-                'confirmed-binary-only.stamp')
-
         try:
-            open(warning_stamp, 'a').close()
+            open(self.warning_stamp, 'a').close()
             self.exec_game()
         except:
             gui.text_view.get_buffer().set_text(traceback.format_exc())
@@ -311,6 +318,7 @@ class Launcher:
         # Edit before copying, so that we can detect whether this is
         # the first run or not
         for ini, details in self.data.get('edit_unreal_ini', {}).items():
+            assert self.dot_directory is not None
             target = os.path.join(self.dot_directory, ini)
             encoding = details.get('encoding', 'windows-1252')
 
@@ -369,6 +377,7 @@ class Launcher:
         # Copy before linking, so that the copies will suppress symlink
         # creation
         for pattern in self.data.get('copy_into_dot_directory', ()):
+            assert self.dot_directory is not None
             # copy from all base directories, highest priority first
             for base in self.base_directories:
                 for f in glob.glob(os.path.join(base, pattern)):
@@ -389,6 +398,7 @@ class Launcher:
                     shutil.copyfile(f, target)
 
         for subdir in self.data.get('symlink_into_dot_directory', ()):
+            assert self.dot_directory is not None
             dot_subdir = os.path.join(self.dot_directory, subdir)
             logger.debug('symlinking ${each base directory}/%s/** as %s/**',
                     subdir, dot_subdir)
