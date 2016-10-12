@@ -202,7 +202,7 @@ class Launcher:
         self.data = json.load(open('%s/launch-%s.json' % (RUNTIME_BUILT,
             self.id), encoding='utf-8'))
 
-        self.binary_only = self.data['binary_only']
+        self.binary_only = self.data.get('binary_only', False)
         logger.debug('Binary-only: %r', self.binary_only)
         self.required_files = list(map(expand, self.data['required_files']))
         logger.debug('Checked files: %r', sorted(self.required_files))
