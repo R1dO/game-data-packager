@@ -1,17 +1,25 @@
 #!/usr/bin/make -f
 
+options := \
+	distro=$(shell dpkg-vendor --query Vendor) \
+	assets=/usr/share/games \
+	bindir=/usr/games \
+	$(NULL)
+
 %:
 	dh $@ --parallel --with=systemd
 
 override_dh_auto_build:
-	dh_auto_build -- \
-		distro=$(shell dpkg-vendor --query Vendor) \
-		assets=/usr/share/games \
-		bindir=/usr/games \
-		$(NULL)
+	dh_auto_build -- $(options)
+
+override_dh_auto_install:
+	dh_auto_install -- $(options)
+
+override_dh_install-indep:
+	dh_install -i --fail-missing
 
 override_dh_install-arch:
-	dh_install -a
+	dh_install -a --fail-missing
 	dh_apparmor -pquake4 --profile-name=usr.lib.quake4.quake4.x86
 	dh_apparmor -pquake4-server --profile-name=usr.lib.quake4.q4ded.x86
 

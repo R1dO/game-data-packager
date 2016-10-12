@@ -1,20 +1,9 @@
-build/16/quake-*.png /usr/share/icons/hicolor/16x16/apps
-build/16/quake.png   /usr/share/icons/hicolor/16x16/apps
-build/22/quake-*.png /usr/share/icons/hicolor/22x22/apps
-build/22/quake.png   /usr/share/icons/hicolor/22x22/apps
-build/24/quake-*.png /usr/share/icons/hicolor/24x24/apps
-build/24/quake.png   /usr/share/icons/hicolor/24x24/apps
-build/256/quake-*.png /usr/share/icons/hicolor/256x256/apps
-build/256/quake.png  /usr/share/icons/hicolor/256x256/apps
-build/32/quake-*.png /usr/share/icons/hicolor/32x32/apps
-build/32/quake.png   /usr/share/icons/hicolor/32x32/apps
-build/48/quake-*.png /usr/share/icons/hicolor/48x48/apps
-build/48/quake.png   /usr/share/icons/hicolor/48x48/apps
-build/quake          /usr/games
-build/quake-*.svg    /usr/share/icons/hicolor/scalable/apps
-build/quake-armagon.desktop /usr/share/applications
-build/quake-dissolution.desktop /usr/share/applications
-build/quake-dopa.desktop /usr/share/applications
-build/quake.desktop  /usr/share/applications
-build/quake.svg      /usr/share/icons/hicolor/scalable/apps
-runtime/need-data.sh /usr/share/games/quake
+usr/games/quake
+usr/share/applications/quake-*.desktop
+usr/share/applications/quake.desktop
+usr/share/games/quake/need-data.sh
+usr/share/icons/hicolor/*/apps/quake-*.png
+usr/share/icons/hicolor/*/apps/quake-*.svg
+usr/share/icons/hicolor/*/apps/quake.png
+usr/share/icons/hicolor/*/apps/quake.svg
+usr/share/man/man6/quake.6

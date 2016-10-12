@@ -1,7 +1,9 @@
 # Makefile - used for building icon
 
 bindir ?= /usr/bin
-assets ?= /usr/share
+libdir ?= /usr/lib
+datadir ?= /usr/share
+assets ?= $(datadir)
 distro ?= $(shell lsb_release -si)
 
 layer_sizes = 16 22 32 48 256
@@ -41,11 +43,11 @@ obj = \
 	build/quake2.svg \
 	build/quake2-reckoning.svg \
 	build/quake2-groundzero.svg \
-	build/quake3.png \
-	build/quake3-teamarena.png \
+	build/256/quake3.png \
+	build/256/quake3-team-arena.png \
 	build/quake4.svg \
 	build/48/quake3.png \
-	build/48/quake3-teamarena.png \
+	build/48/quake3-team-arena.png \
 	$(patsubst %,build/%/quake.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake-armagon.png,$(layer_sizes)) \
 	$(patsubst %,build/%/quake-dissolution.png,$(layer_sizes)) \
@@ -387,19 +389,19 @@ build/quake2-%.svg: build/tmp/recolour-%.svg Makefile
 		build/tmp/quake2-$*.svg
 	rm -f build/tmp/quake2-$*.svg
 
-build/quake3.png: data/quake3-tango.xcf
-	install -d build
+build/256/quake3.png: data/quake3-tango.xcf
+	install -d build/256
 	xcf2png -o $@ $<
 
-build/quake3-teamarena.png: data/quake3-teamarena-tango.xcf
-	install -d build
+build/256/quake3-team-arena.png: data/quake3-teamarena-tango.xcf
+	install -d build/256
 	xcf2png -o $@ $<
 
-build/48/quake3.png: build/quake3.png Makefile
+build/48/quake3.png: build/256/quake3.png Makefile
 	install -d build/48
 	convert -resize 48x48 $< $@
 
-build/48/quake3-teamarena.png: build/quake3-teamarena.png Makefile
+build/48/quake3-team-arena.png: build/256/quake3-team-arena.png Makefile
 	install -d build/48
 	convert -resize 48x48 $< $@
 
@@ -428,3 +430,56 @@ check:
 	exit $$failed
 
 .PHONY: check
+
+install:
+	install -d                                             $(DESTDIR)$(bindir)
+	install -m755 build/quake                              $(DESTDIR)$(bindir)
+	install -m755 build/quake-server                       $(DESTDIR)$(bindir)
+	install -m755 build/quake2                             $(DESTDIR)$(bindir)
+	install -m755 build/quake2-server                      $(DESTDIR)$(bindir)
+	install -m755 build/quake3                             $(DESTDIR)$(bindir)
+	install -m755 build/quake3-server                      $(DESTDIR)$(bindir)
+	install -m755 build/quake4                             $(DESTDIR)$(bindir)
+	install -m755 build/quake4-dedicated                   $(DESTDIR)$(bindir)
+	install -m755 build/etqw                               $(DESTDIR)$(bindir)
+	install -m755 build/etqw-dedicated                     $(DESTDIR)$(bindir)
+	install -d                                             $(DESTDIR)$(datadir)/applications
+	install -m644 $(desktop)                               $(DESTDIR)$(datadir)/applications
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
+	install -m644 build/16/*.png                           $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/22x22/apps
+	install -m644 build/22/*.png                           $(DESTDIR)$(datadir)/icons/hicolor/22x22/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/24x24/apps
+	install -m644 build/24/*.png                           $(DESTDIR)$(datadir)/icons/hicolor/24x24/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps
+	install -m644 build/32/*.png                           $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps
+	install -m644 build/48/*.png                           $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/256x256/apps
+	install -m644 build/256/*.png                          $(DESTDIR)$(datadir)/icons/hicolor/256x256/apps
+	install -d                                             $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 build/quake*.svg                         $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 build/quake-*.svg                        $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 build/quake2*.svg                        $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -m644 build/quake4*.svg                        $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
+	install -d                                             $(DESTDIR)$(datadir)/man/man6
+	install -m644 doc/*.6                                  $(DESTDIR)$(datadir)/man/man6
+	install -d                                             $(DESTDIR)$(assets)/quake
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(assets)/quake
+	install -d                                             $(DESTDIR)$(assets)/quake2
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(assets)/quake2
+	install -d                                             $(DESTDIR)$(assets)/quake3
+	install -m644 runtime/README.quake3-data               $(DESTDIR)$(assets)/quake3
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(assets)/quake3
+	install -d                                             $(DESTDIR)$(libdir)/quake4
+	install -m644 build/README.quake4-bin                  $(DESTDIR)$(libdir)/quake4
+	install -m644 runtime/README.quake4-data               $(DESTDIR)$(libdir)/quake4
+	install -m755 runtime/confirm-binary-only.sh           $(DESTDIR)$(libdir)/quake4
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(libdir)/quake4
+	install -d                                             $(DESTDIR)$(libdir)/etqw
+	install -m644 build/README.etqw-bin                    $(DESTDIR)$(libdir)/etqw
+	install -m644 runtime/README.etqw-data                 $(DESTDIR)$(libdir)/etqw
+	install -m755 runtime/confirm-binary-only.sh           $(DESTDIR)$(libdir)/etqw
+	install -m755 runtime/need-data.sh                     $(DESTDIR)$(libdir)/etqw
+
+.PHONY: install
