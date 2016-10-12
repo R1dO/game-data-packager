@@ -184,6 +184,8 @@ class Launcher:
                 help='identity of launched game (default: from argv[0])')
         parser.add_argument('--engine', default=None,
                 help='use the specified game engine, if supported')
+        parser.add_argument('--expansion', default=None,
+                help='expansion to launch')
         parser.add_argument('arguments', nargs='*',
                 help='arguments for the launched game')
         self.args = parser.parse_args(argv)
@@ -202,6 +204,22 @@ class Launcher:
         self.icon_name = self.keyfile.get_string(GLib.KEY_FILE_DESKTOP_GROUP,
             GLib.KEY_FILE_DESKTOP_KEY_ICON)
         logger.debug('Icon: %s', self.icon_name)
+
+        self.expansion_name = self.args.expansion
+
+        try:
+            override_id = self.keyfile.get_string(GLib.KEY_FILE_DESKTOP_GROUP,
+                'X-GameDataPackager-ExpansionFor')
+        except GLib.Error:
+            pass
+        else:
+            if self.expansion_name is None:
+                self.expansion_name = self.id
+
+            if self.expansion_name.startswith(override_id + '-'):
+                self.expansion_name = self.expansion_name[len(override_id) + 1:]
+
+            self.id = override_id
 
         self.data = json.load(open('%s/launch-%s.json' % (RUNTIME_BUILT,
             self.id), encoding='utf-8'))
@@ -264,6 +282,26 @@ class Launcher:
                 self.symlink_into_dot_directory = (
                         self.symlink_into_dot_directory +
                         data.get('symlink_into_dot_directory', []))
+
+            aliases = data.get('aliases', [])
+            if isinstance(aliases, str):
+                aliases = aliases.split()
+
+            if (self.expansion_name == expansion or
+                    self.expansion_name in aliases):
+                extra_argv = data.get('extra_argv', [])
+                if isinstance(extra_argv, str):
+                    extra_argv = extra_argv.split()
+                self.argv = self.argv + extra_argv
+
+                extra_required_files = data.get('extra_required_files', [])
+                if isinstance(extra_required_files, str):
+                    extra_required_files = extra_required_files.split()
+                self.required_files = (self.required_files +
+                        extra_required_files)
+
+                self.base_directories = base_directories
+                break
 
         logger.debug('Arguments: %r', self.argv)
 
