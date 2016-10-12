@@ -1,0 +1,48 @@
+---
+dot_directory: ~/.q3a
+engines:
+  - $prefix/lib/ioquake3/ioquake3
+  - ioquake3
+argv: >
+  +set fs_basepath $assets/quake3
+base_directories:
+  - $assets/quake3-data
+required_files:
+  - baseq3/pak0.pk3
+  - baseq3/pak1.pk3
+  - baseq3/pak2.pk3
+  - baseq3/pak3.pk3
+  - baseq3/pak4.pk3
+  - baseq3/pak5.pk3
+  - baseq3/pak6.pk3
+  - baseq3/pak7.pk3
+  - baseq3/pak8.pk3
+expansions:
+  team-arena:
+    symlink_into_dot_directory:
+      - missionpack
+    aliases: teamarena
+    base_directories:
+      - $assets/quake3-data
+      - $assets/quake3-team-arena-data
+    extra_argv: >
+      +set fs_game missionpack +set fs_basepath /usr/lib/quake3/ta
+    extra_required_files:
+      - missionpack/pak0.pk3
+      - missionpack/pak1.pk3
+      - missionpack/pak2.pk3
+      - missionpack/pak3.pk3
+demo:
+  dot_directory: ~/.q3ademo
+  base_directories:
+    - $prefix/lib/quake3/demo
+  required_files:
+    - demoq3/pak0.pk3
+  argv: >
+    +set com_homepath .q3ademo
+    +set com_basegame demoq3
+    +set sv_pure 0
+    +set vm_ui 0
+    +set vm_cgame 0
+    +set vm_game 0
+    +set fs_basepath $${base_directory}

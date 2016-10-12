@@ -1,0 +1,15 @@
+---
+binary_only: true
+engine: $prefix/lib/quake4/quake4.x86
+smp_engine: $prefix/lib/quake4/quake4smp.x86
+required_files:
+  - q4base/pak001.pk4
+  - q4base/pak021.pk4
+  - q4base/pak022.pk4
+  - q4base/zpak_english
+dot_directory: ~/.quake4
+working_directory: $prefix/lib/quake4
+library_path:
+  - $prefix/lib/quake4
+argv: +set com_allowconsole 1
+...

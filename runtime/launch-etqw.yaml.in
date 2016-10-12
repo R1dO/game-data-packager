@@ -1,0 +1,15 @@
+---
+binary_only: true
+engine: $prefix/lib/etqw/etqw.x86
+smp_engine: $prefix/lib/etqw-rthread.x86
+required_files:
+  - base/pak008.pk4
+  - base/game000.pk4
+  - base/pak000.pk4
+  - base/zpak_english000.pk4
+dot_directory: ~/.etqwcl
+working_directory: $prefix/lib/etqw
+library_path:
+  - $prefix/lib/etqw
+argv: +set com_allowconsole 1
+...
