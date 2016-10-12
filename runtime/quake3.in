@@ -78,7 +78,7 @@ fi
 if [ -n "$DEMO" ]; then
   CVARS="$CVARS +set com_homepath .q3ademo +set com_basegame demoq3"
   CVARS="$CVARS +set sv_pure 0 +set vm_ui 0 +set vm_cgame 0 +set vm_game 0"
-  require="0"
+  paks="0"
   basegame=demoq3
 fi
 
