@@ -35,9 +35,11 @@ from gi.repository import (GLib, GObject)
 from gi.repository import Gtk
 
 if 'GDP_UNINSTALLED' in os.environ:
-    RUNTIME = './runtime'
+    RUNTIME_BUILT = './out'
+    RUNTIME_SOURCE = './runtime'
 else:
-    RUNTIME = '/usr/share/games/game-data-packager-runtime'
+    RUNTIME_BUILT = '/usr/share/games/game-data-packager-runtime'
+    RUNTIME_SOURCE = '/usr/share/games/game-data-packager-runtime'
 
 # Normalize environment so we can use ${XDG_DATA_HOME} unconditionally.
 # Do this before we use GLib functions that might create worker threads,
@@ -184,7 +186,7 @@ class Launcher:
 
         self.id = self.args.id
         self.keyfile = GLib.KeyFile()
-        self.keyfile.load_from_file(os.path.join(RUNTIME,
+        self.keyfile.load_from_file(os.path.join(RUNTIME_BUILT,
                     self.id + '.desktop'),
                 GLib.KeyFileFlags.NONE)
 
@@ -197,13 +199,8 @@ class Launcher:
             GLib.KEY_FILE_DESKTOP_KEY_ICON)
         logger.debug('Icon: %s', self.icon_name)
 
-        if 'GDP_UNINSTALLED' in os.environ:
-            import yaml
-            self.data = yaml.load(open('%s/launch-%s.yaml' % (RUNTIME, self.id),
-                encoding='utf-8'), Loader=yaml.CSafeLoader)
-        else:
-            self.data = json.load(open('%s/launch-%s.json' % (RUNTIME, self.id),
-                encoding='utf-8'))
+        self.data = json.load(open('%s/launch-%s.json' % (RUNTIME_BUILT,
+            self.id), encoding='utf-8'))
 
         self.binary_only = self.data['binary_only']
         logger.debug('Binary-only: %r', self.binary_only)
@@ -466,7 +463,7 @@ class Launcher:
     def load_text(self, filename, placeholder):
         for f in ('%s.%s' % (self.id, filename), filename):
             try:
-                path = os.path.join(RUNTIME, f)
+                path = os.path.join(RUNTIME_SOURCE, f)
                 text = open(path).read()
             except OSError:
                 pass
