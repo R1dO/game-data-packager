@@ -585,4 +585,5 @@ class Gui:
         self.window.show_all()
 
 if __name__ == '__main__':
+    logging.basicConfig()
     Launcher().main()
