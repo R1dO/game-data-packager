@@ -47,6 +47,7 @@ Depends:
  adduser,
  etqw-bin | game-data-packager (>= 44),
  etqw-data | game-data-packager (>= 44),
+ lsb-base (>= 3.0-6),
  ${misc:Depends},
 Recommends:
  systemd-sysv,
@@ -113,6 +114,7 @@ Package: quake-server
 Architecture: all
 Depends:
  adduser,
+ lsb-base (>= 3.0-6),
  quake-registered | quake-shareware | game-data-packager,
  quakespasm | quake-engine-server,
  ${misc:Depends},
@@ -156,6 +158,7 @@ Package: quake2-server
 Architecture: all
 Depends:
  adduser,
+ lsb-base (>= 3.0-6),
  quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
  yamagi-quake2-core | quake2-engine-server,
  ${misc:Depends},
@@ -202,6 +205,7 @@ Architecture: all
 Depends:
  adduser,
  ioquake3-server,
+ lsb-base (>= 3.0-6),
  quake3-data | game-data-packager (>= 23),
  ${misc:Depends},
 Recommends:
@@ -242,6 +246,7 @@ Package: quake4-server
 Architecture: i386
 Depends:
  adduser,
+ lsb-base (>= 3.0-6),
  quake4-bin | game-data-packager (>= 43),
  quake4-data | quake4-censored-de-data | game-data-packager (>= 43),
  ${misc:Depends},
