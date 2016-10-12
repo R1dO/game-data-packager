@@ -74,11 +74,12 @@ else:
                 line = line.strip("'")
             DISTRO = line
 
-def expand(path):
+def expand(path, **kwargs):
     if path is None:
         return None
 
-    return os.path.expanduser(os.path.expandvars(path))
+    return os.path.expanduser(string.Template(path).substitute(os.environ,
+        **kwargs))
 
 class IniEditor:
     def __init__(self, edits):
@@ -204,7 +205,7 @@ class Launcher:
 
         self.binary_only = self.data.get('binary_only', False)
         logger.debug('Binary-only: %r', self.binary_only)
-        self.required_files = list(map(expand, self.data['required_files']))
+        self.required_files = self.data['required_files']
         logger.debug('Checked files: %r', sorted(self.required_files))
 
         self.dot_directory = expand(self.data.get('dot_directory',
@@ -223,8 +224,9 @@ class Launcher:
                     None))
         logger.debug('Working directory: %s', self.working_directory)
 
-        self.argv = list(map(expand, self.data.get('argv', False)))
-        logger.debug('Arguments: %r', self.argv)
+        self.argv = self.data.get('argv', [])
+        if isinstance(self.argv, str):
+            self.argv = self.argv.split()
 
         self.exit_status = 1
 
@@ -239,9 +241,12 @@ class Launcher:
         else:
             self.warning_stamp = None
 
+        logger.debug('Arguments: %r', self.argv)
+
     def check_required_files(self, base_directories, required_files,
             warn=True):
         for f in required_files:
+            f = expand(f)
             logger.debug('looking for %s', f)
             for p in base_directories:
                 logger.debug('looking for %s in %s', f, p)
@@ -460,6 +465,16 @@ class Launcher:
 
         if self.working_directory is not None:
             os.chdir(self.working_directory)
+
+        for p in self.base_directories:
+            if os.path.isdir(p):
+                base_directory = p
+                break
+        else:
+            base_directory = None
+
+        self.argv = [expand(a, base_directory=base_directory)
+                for a in self.argv]
 
         self.flush()
 
