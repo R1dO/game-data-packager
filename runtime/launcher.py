@@ -182,6 +182,8 @@ class Launcher:
                 description="game-data-packager's game launcher")
         parser.add_argument('--id', default=name,
                 help='identity of launched game (default: from argv[0])')
+        parser.add_argument('--demo', default=False, action='store_true',
+                help='run a demo version even if the full version is available')
         parser.add_argument('--engine', default=None,
                 help='use the specified game engine, if supported')
         parser.add_argument('--expansion', default=None,
@@ -273,35 +275,59 @@ class Launcher:
 
         self.symlink_into_dot_directory = self.data.get(
                 'symlink_into_dot_directory', [])
-        for expansion, data in self.data.get('expansions', {}).items():
-            base_directories = list(map(expand, data.get('base_directories',
-                []))) + self.base_directories
 
-            if self.check_required_files(base_directories,
-                    data.get('extra_required_files', [])):
-                self.symlink_into_dot_directory = (
-                        self.symlink_into_dot_directory +
-                        data.get('symlink_into_dot_directory', []))
+        for p in self.base_directories:
+            logger.debug('Searching: %s' % p)
 
-            aliases = data.get('aliases', [])
-            if isinstance(aliases, str):
-                aliases = aliases.split()
+        # sanity check: game engines often don't cope well with missing data
+        self.have_all_data = self.check_required_files(self.base_directories,
+            self.required_files)
 
-            if (self.expansion_name == expansion or
-                    self.expansion_name in aliases):
-                extra_argv = data.get('extra_argv', [])
-                if isinstance(extra_argv, str):
-                    extra_argv = extra_argv.split()
-                self.argv = self.argv + extra_argv
+        if (self.args.demo or not self.have_all_data) and 'demo' in self.data:
+            demo_directories = list(map(expand,
+                            self.data['demo'].get('base_directories',
+                                self.data['base_directories'])))
+            if self.check_required_files(demo_directories,
+                    self.data['demo'].get('required_files',
+                        self.required_files)):
+                self.have_all_data = True
+                self.base_directories = demo_directories
 
-                extra_required_files = data.get('extra_required_files', [])
-                if isinstance(extra_required_files, str):
-                    extra_required_files = extra_required_files.split()
-                self.required_files = (self.required_files +
-                        extra_required_files)
+            if 'argv' in self.data['demo']:
+                self.argv = self.data['demo']['argv']
+                if isinstance(self.argv, str):
+                    self.argv = self.argv.split()
+        else:
+            # assume expansions only work with non-demo data
+            for expansion, data in self.data.get('expansions', {}).items():
+                base_directories = list(map(expand, data.get('base_directories',
+                    []))) + self.base_directories
 
-                self.base_directories = base_directories
-                break
+                if self.check_required_files(base_directories,
+                        data.get('extra_required_files', [])):
+                    self.symlink_into_dot_directory = (
+                            self.symlink_into_dot_directory +
+                            data.get('symlink_into_dot_directory', []))
+
+                aliases = data.get('aliases', [])
+                if isinstance(aliases, str):
+                    aliases = aliases.split()
+
+                if (self.expansion_name == expansion or
+                        self.expansion_name in aliases):
+                    extra_argv = data.get('extra_argv', [])
+                    if isinstance(extra_argv, str):
+                        extra_argv = extra_argv.split()
+                    self.argv = self.argv + extra_argv
+
+                    extra_required_files = data.get('extra_required_files', [])
+                    if isinstance(extra_required_files, str):
+                        extra_required_files = extra_required_files.split()
+                    self.required_files = (self.required_files +
+                            extra_required_files)
+
+                    self.base_directories = base_directories
+                    break
 
         logger.debug('Arguments: %r', self.argv)
 
@@ -341,17 +367,10 @@ class Launcher:
                 Gtk.main()
                 sys.exit(72)    # EX_OSFILE
 
-        for p in self.base_directories:
-            logger.debug('Searching: %s' % p)
-
-        # sanity check: game engines often don't cope well with missing data
-        have_all_data = self.check_required_files(self.base_directories,
-            self.required_files)
-
         if self.dot_directory is not None:
             os.makedirs(self.dot_directory, exist_ok=True)
 
-        if not have_all_data:
+        if not self.have_all_data:
             gui = Gui(self)
             gui.text_view.get_buffer().set_text(
                     self.load_text('missing-data.txt', 'Data files missing'))
@@ -559,8 +578,6 @@ class Launcher:
         if self.engine is not None:
             self.argv.insert(0, self.engine)
 
-        self.flush()
-
         environ = os.environ.copy()
 
         library_path = self.library_path[:]
@@ -569,6 +586,9 @@ class Launcher:
             library_path.append(environ['LD_LIBRARY_PATH'])
 
         environ['LD_LIBRARY_PATH'] = ':'.join(library_path)
+
+        logger.debug('Executing: %r', self.argv + self.args.arguments)
+        self.flush()
 
         os.execve(self.argv[0], self.argv + self.args.arguments, environ)
 
