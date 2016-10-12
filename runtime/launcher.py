@@ -178,9 +178,12 @@ class Launcher:
         if name.endswith('.py'):
             name = name[:-3]
 
-        parser = argparse.ArgumentParser()
+        parser = argparse.ArgumentParser(
+                description="game-data-packager's game launcher")
         parser.add_argument('--id', default=name,
-                help='identity of launched game (default: %s)' % name)
+                help='identity of launched game (default: from argv[0])')
+        parser.add_argument('--engine', default=None,
+                help='use the specified game engine, if supported')
         parser.add_argument('arguments', nargs='*',
                 help='arguments for the launched game')
         self.args = parser.parse_args(argv)
@@ -211,6 +214,15 @@ class Launcher:
         self.dot_directory = expand(self.data.get('dot_directory',
                     '${XDG_DATA_HOME}/' + self.id))
         logger.debug('Dot directory: %s', self.dot_directory)
+
+        if 'engine' in self.data:
+            self.engines = [self.data['engine']]
+        elif 'engines' in self.data:
+            self.engines = self.data['engines']
+        else:
+            self.engines = []
+
+        self.engine = None
 
         self.base_directories = list(map(expand,
                         self.data.get('base_directories',
@@ -261,6 +273,24 @@ class Launcher:
             return True
 
     def main(self):
+        if self.engines:
+            for e in self.engines:
+                e = expand(e)
+                if shutil.which(e) is not None:
+                    self.engine = e
+                    break
+            else:
+                gui = Gui(self)
+                gui.text_view.get_buffer().set_text(
+                        '\n'.join(
+                            [self.load_text('missing-engine.txt',
+                                'Game engine missing, tried:')] +
+                            [expand(e) for e in engines]))
+                gui.window.show_all()
+                gui.check_box.hide()
+                Gtk.main()
+                sys.exit(72)    # EX_OSFILE
+
         for p in self.base_directories:
             logger.debug('Searching: %s' % p)
 
@@ -475,6 +505,9 @@ class Launcher:
 
         self.argv = [expand(a, base_directory=base_directory)
                 for a in self.argv]
+
+        if self.engine is not None:
+            self.argv.insert(0, self.engine)
 
         self.flush()
 
