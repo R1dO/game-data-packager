@@ -489,6 +489,7 @@ install:
 	install -m0644 out/*.control.in                        $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/*.copyright                         $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/*.png                               $(DESTDIR)$(pkgdatadir)/
+	install -m0644 data/*.png                              $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/*.preinst.in                        $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/*.svgz                              $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/bash_completion                     $(DESTDIR)$(pkgdatadir)/

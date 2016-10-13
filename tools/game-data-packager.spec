@@ -85,10 +85,6 @@ The following games currently require this package:
 
 %prep
 %autosetup
-rm -v data/soltys.xpm
-#convert data/soltys.xpm out/soltys.png
-#convert: improper image header `data/soltys.xpm' @ error/xpm.c/ReadXPMImage/348.
-#convert: no images defined `out/soltys.png' @ error/convert.c/ConvertImageCommand/3257.
 
 %build
 make %{?_smp_mflags}
