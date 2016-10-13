@@ -231,7 +231,7 @@ Package: etqw
 Architecture: i386
 Depends:
  etqw-bin | game-data-packager (>= 44),
- x11-utils | zenity | kde-baseapps-bin,
+ game-data-packager-runtime,
  ${misc:Depends},
 Suggests:
  etqw-pb-bin,
@@ -316,11 +316,10 @@ Description: Launcher for proprietary games
 Package: quake
 Architecture: all
 Depends:
+ game-data-packager-runtime,
  quake-registered | quake-shareware | game-data-packager,
  quakespasm | quake-engine,
  ${misc:Depends},
-Recommends:
- x11-utils | zenity | kde-baseapps-bin,
 Suggests:
  quake-armagon (>= 29),
  quake-armagon-music,
@@ -368,6 +367,7 @@ Description: classic first person shooter - server and init script
 Package: quake2
 Architecture: all
 Depends:
+ game-data-packager-runtime,
  quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
  yamagi-quake2 | quake2-engine,
  ${misc:Depends},
@@ -377,7 +377,6 @@ Suggests:
  quake2-reckoning,
 Recommends:
  game-data-packager (>= 39),
- x11-utils | zenity | kde-baseapps-bin,
 Description: classic science-fiction-themed first person shooter
  Quake II is a classic first-person shooter game by id Software,
  released in 1997. This package contains a launcher script and menu
@@ -416,6 +415,7 @@ Description: dedicated server for Quake II
 Package: quake3
 Architecture: all
 Depends:
+ game-data-packager-runtime,
  ioquake3,
  quake3-data | quake3-demo-data (>= 40) | game-data-packager (>= 23),
  ${misc:Depends},
@@ -462,8 +462,8 @@ Description: Quake III Arena dedicated server launcher scripts
 Package: quake4
 Architecture: i386
 Depends:
+ game-data-packager-runtime,
  quake4-bin | game-data-packager (>= 43),
- x11-utils | zenity | kde-baseapps-bin,
  ${misc:Depends},
 Description: science-fiction-themed first person shooter
  Quake 4 is a first-person shooter game by Raven Software and id Software,

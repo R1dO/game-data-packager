@@ -38,18 +38,11 @@ launcher_desktops := \
 quake_layer_sizes = 16 22 32 48 256
 
 quake_text = \
-	out/quake \
-	out/quake2 \
-	out/quake3 \
-	out/quake4 \
-	out/etqw \
 	out/quake-server \
 	out/quake2-server \
 	out/quake3-server \
 	out/quake4-dedicated \
 	out/etqw-dedicated \
-	out/README.etqw-bin \
-	out/README.quake4-bin \
 	$(NULL)
 
 quake_icons = \
@@ -192,78 +185,6 @@ out/48/quake3.png: out/256/quake3.png Makefile out/CACHEDIR.TAG
 out/48/quake3-team-arena.png: out/256/quake3-team-arena.png Makefile out/CACHEDIR.TAG
 	install -d out/48
 	convert -resize 48x48 $< $@
-
-out/quake: runtime/quake.in out/CACHEDIR.TAG
-	sed -e 's/@self@/quake/g' \
-		-e 's/@role@/client/g' \
-		-e 's/@options@//g' \
-		-e 's/@alternative@/quake-engine/g' \
-		< $< > $@
-	chmod +x $@
-
-out/quake2: runtime/quake2.in out/CACHEDIR.TAG
-	sed -e 's/@self@/quake2/g' \
-		-e 's/@role@/client/g' \
-		-e 's/@options@//g' \
-		-e 's/@alternative@/quake2-engine/g' \
-		< $< > $@
-	chmod +x $@
-
-out/quake3: runtime/quake3.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@IOQ3BINARY@!ioquake3!' \
-		-e 's!@IOQ3SELF@!quake3!' \
-		-e 's!@IOQ3ROLE@!client!' \
-		< $< > $@
-	chmod +x $@
-
-out/quake4: runtime/quake4.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@id@!quake4!' \
-		-e 's!@icon@!/usr/share/icons/hicolor/48x48/apps/quake4.png!' \
-		-e 's!@longname@!Quake 4!' \
-		-e 's!@shortname@!Quake 4!' \
-		-e 's!@binary@!quake4.x86!' \
-		-e 's!@smpbinary@!quake4smp.x86!' \
-		-e 's!@self@!quake4!' \
-		-e 's!@role@!client!' \
-		-e 's!@pkglibdir@!/usr/lib/quake4!' \
-		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
-		-e 's!@basegame@!q4base!' \
-		-e 's!@dotdir@!quake4!' \
-		< $< > $@
-	chmod +x $@
-
-out/README.quake4-bin: runtime/README.binary.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@id@!quake4!' \
-		-e 's!@shortname@!Quake 4!' \
-		-e 's!@distro@!$(distro)!' \
-		< $< > $@
-
-out/etqw: runtime/quake4.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@id@!etqw!' \
-		-e 's!@icon@!/usr/share/pixmaps/etqw.png!' \
-		-e 's!@longname@!Enemy Territory: Quake Wars!' \
-		-e 's!@shortname@!ETQW!' \
-		-e 's!@binary@!etqw.x86!' \
-		-e 's!@smpbinary@!etqw-rthread.x86!' \
-		-e 's!@self@!etqw!' \
-		-e 's!@role@!client!' \
-		-e 's!@pkglibdir@!/usr/lib/etqw!' \
-		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
-		-e 's!@basegame@!base!' \
-		-e 's!@dotdir@!etqwcl!' \
-		< $< > $@
-	chmod +x $@
-
-out/README.etqw-bin: runtime/README.binary.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@id@!etqw!' \
-		-e 's!@shortname@!ETQW!' \
-		-e 's!@distro@!$(distro)!' \
-		< $< > $@
 
 out/quake2-server: runtime/quake2.in out/CACHEDIR.TAG
 	sed -e 's/@self@/quake2-server/g' \
@@ -533,15 +454,15 @@ install:
 	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
 	install -d                                             $(DESTDIR)$(bindir)
-	install -m755 out/quake                                $(DESTDIR)$(bindir)
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake
 	install -m755 out/quake-server                         $(DESTDIR)$(bindir)
-	install -m755 out/quake2                               $(DESTDIR)$(bindir)
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake2
 	install -m755 out/quake2-server                        $(DESTDIR)$(bindir)
-	install -m755 out/quake3                               $(DESTDIR)$(bindir)
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake3
 	install -m755 out/quake3-server                        $(DESTDIR)$(bindir)
-	install -m755 out/quake4                               $(DESTDIR)$(bindir)
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake4
 	install -m755 out/quake4-dedicated                     $(DESTDIR)$(bindir)
-	install -m755 out/etqw                                 $(DESTDIR)$(bindir)
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/etqw
 	install -m755 out/etqw-dedicated                       $(DESTDIR)$(bindir)
 	install -d                                             $(DESTDIR)$(datadir)/applications
 	install -m644 out/etqw.desktop                         $(DESTDIR)$(datadir)/applications
@@ -566,23 +487,6 @@ install:
 	install -d                                             $(DESTDIR)$(datadir)/man/man6
 	install -m644 doc/etqw*.6                              $(DESTDIR)$(datadir)/man/man6
 	install -m644 doc/quake*.6                             $(DESTDIR)$(datadir)/man/man6
-	install -d                                             $(DESTDIR)$(gamedatadir)/quake
-	install -m755 runtime/need-data.sh                     $(DESTDIR)$(gamedatadir)/quake
-	install -d                                             $(DESTDIR)$(gamedatadir)/quake2
-	install -m755 runtime/need-data.sh                     $(DESTDIR)$(gamedatadir)/quake2
-	install -d                                             $(DESTDIR)$(gamedatadir)/quake3
-	install -m644 runtime/README.quake3-data               $(DESTDIR)$(gamedatadir)/quake3
-	install -m755 runtime/need-data.sh                     $(DESTDIR)$(gamedatadir)/quake3
-	install -d                                             $(DESTDIR)$(libdir)/quake4
-	install -m644 out/README.quake4-bin                    $(DESTDIR)$(libdir)/quake4
-	install -m644 runtime/README.quake4-data               $(DESTDIR)$(libdir)/quake4
-	install -m755 runtime/confirm-binary-only.sh           $(DESTDIR)$(libdir)/quake4
-	install -m755 runtime/need-data.sh                     $(DESTDIR)$(libdir)/quake4
-	install -d                                             $(DESTDIR)$(libdir)/etqw
-	install -m644 out/README.etqw-bin                      $(DESTDIR)$(libdir)/etqw
-	install -m644 runtime/README.etqw-data                 $(DESTDIR)$(libdir)/etqw
-	install -m755 runtime/confirm-binary-only.sh           $(DESTDIR)$(libdir)/etqw
-	install -m755 runtime/need-data.sh                     $(DESTDIR)$(libdir)/etqw
 
 html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
