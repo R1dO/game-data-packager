@@ -1,11 +1,14 @@
-bindir := /usr/games
+bindir := /usr/bin
 libdir := /usr/lib
 datadir := /usr/share
 gamedatadir := ${datadir}
+
+PYTHON := python3
+$(eval $(shell PYTHONPATH=. ${PYTHON} tools/configure.py))
+
 pkgdatadir := ${gamedatadir}/game-data-packager
 runtimedir := ${gamedatadir}/game-data-packager-runtime
 distro := $(shell lsb_release -si)
-PYTHON := python3
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
                    elif [ -x /usr/bin/python3-pyflakes ] ; then echo python3-pyflakes ; \
