@@ -30,7 +30,10 @@ dot_in    := $(patsubst ./data/%,./out/%,$(wildcard ./data/*.in))
 desktop   := $(patsubst ./runtime/%.in,./out/%,$(wildcard ./runtime/*.desktop.in))
 
 launcher_json := $(patsubst ./runtime/launch-%.yaml.in,./out/launch-%.json,$(wildcard ./runtime/launch-*.yaml.in))
-launcher_desktops := $(patsubst ./runtime/launch-%.yaml.in,./out/%.desktop,$(wildcard ./runtime/launch-*.yaml.in))
+launcher_desktops := \
+	out/unreal.desktop \
+	out/unreal-gold.desktop \
+	$(NULL)
 
 quake_layer_sizes = 16 22 32 48 256
 

@@ -196,9 +196,13 @@ class Launcher:
 
         self.id = self.args.id
         self.keyfile = GLib.KeyFile()
-        self.keyfile.load_from_file(os.path.join(RUNTIME_BUILT,
-                    self.id + '.desktop'),
-                GLib.KeyFileFlags.NONE)
+        desktop = os.path.join(RUNTIME_BUILT, self.id + '.desktop')
+        if os.path.exists(desktop):
+            self.keyfile.load_from_file(desktop, GLib.KeyFileFlags.NONE)
+        else:
+            self.keyfile.load_from_data_dirs(
+                    'applications/%s.desktop' % self.id,
+                    GLib.KeyFileFlags.NONE)
 
         self.name = self.keyfile.get_string(GLib.KEY_FILE_DESKTOP_GROUP,
             GLib.KEY_FILE_DESKTOP_KEY_NAME)
