@@ -366,7 +366,7 @@ class Launcher:
                         '\n'.join(
                             [self.load_text('missing-engine.txt',
                                 'Game engine missing, tried:')] +
-                            [expand(e) for e in engines]))
+                            [expand(e) for e in self.engines]))
                 gui.window.show_all()
                 gui.check_box.hide()
                 Gtk.main()
