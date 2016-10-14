@@ -188,7 +188,7 @@ class Launcher:
                 help='expansion to launch')
         parser.add_argument('--smp', default=False, action='store_true',
                 help='use a multi-threaded game engine, if supported')
-        parser.add_argument('--quiet', default=False, action='store_true',
+        parser.add_argument('--quiet', '-q', default=False, action='store_true',
                 help='silence console logging')
         parser.add_argument('arguments', nargs=argparse.REMAINDER,
                 help='arguments for the launched game')
