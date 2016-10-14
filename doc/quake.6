@@ -43,12 +43,12 @@ syntax whereby engine switches are prefixed with a minus sign, and you can
 give console commands by prefixing with a plus sign.  See the examples section
 for some common cases.
 .PP
-Additionally, if \fBquake\fR is run via a symbolic link whose name contains
-\fBarmagon\fR, \fBhipnotic\fR, \fBdissolution\fR or \fBrogue\fR,
+Additionally, if \fBquake\fR is run via a symbolic link whose name is
+\fBquake-armagon\fR or \fBquake-dissolution\fR,
 it will play one of the Quake mission packs, \fBScourge of Armagon\fR
 (by Hipnotic Software) or \fBDissolution of Eternity\fR (by Rogue
-Entertainment). Similarly, if run via a symbolic link whose name contains
-\fBdopa\fR it will play Quake Episode 5: Dimensions of the Past (by
+Entertainment). Similarly, if run via a symbolic link whose name is
+\fBquake-dopa\fR it will play Quake Episode 5: Dimensions of the Past (by
 MachineGames). This requires that additional data files are installed.
 .SH OPTIONS
 These options are accepted for \fBWRAPPER-OPTIONS\fR in the
@@ -59,6 +59,14 @@ Show summary of options.
 .TP
 .B \-v, \-\-version
 Show version of program.
+.TP
+\fB\-\-debugger=\fIDEBUGGER\fR
+Prepend a debugger or other prefix (such as \fBstrace\fR) to the engine
+command line
+.TP
+\fB\-\-print\-backtrace\fR
+Use \fBgdb\fR(1) to get a backtrace if the engine crashes (the \fBgdb\fR
+package must be installed)
 .SH EXAMPLES
 These are all engine dependent.
 .TP

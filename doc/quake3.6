@@ -7,6 +7,7 @@ quake3 \- Quake III Arena client
 .B quake3
 .BR "" [ \-h | \-\-help ]
 .BR "" [ \-q | \-\-quiet ]
+.IR "" [ "debugging options" ]
 .BR "" [ +set
 .IR option " " value ]...
 
@@ -25,11 +26,19 @@ Disable all console output
 .TP
 \fB\-\-demo\fR
 Run the demo version, even if the full game is installed
+.TP
+\fB\-\-debugger=\fIDEBUGGER\fR
+Prepend a debugger or other prefix (such as \fBstrace\fR) to the engine
+command line
+.TP
+\fB\-\-print\-backtrace\fR
+Use \fBgdb\fR(1) to get a backtrace if the engine crashes (the \fBgdb\fR
+package must be installed)
 .PP
 Additionally, if \fBquake3\fR is run via a symbolic link whose name
-contains \fBteam-arena\fR or \fBteamarena\fR, it will play the expansion pack,
+is \fBquake3-team-arena\fR, it will play the expansion pack,
 \fBQuake III Team Arena\fR. This requires that additional data files are
-installed. Similarly, a symbolic link containing \fBdemo\fR is equivalent
+installed. Similarly, a symbolic link named \fBquake3-demo\fR is equivalent
 to the \fB\-\-demo\fR option.
 .PP
 Any console command can also be prefixed with \fB+\fR and used as a
@@ -107,18 +116,6 @@ Configuration and state for Quake III Arena
 .TP
 \fI~/.q3a/missionpack\fR
 Configuration and state for Quake III: Team Arena, if installed
-
-.SH ENVIRONMENT
-The wrapper script used to launch Quake III Arena allows it to be debugged
-by setting environment variables.
-.TP
-\fBQUAKE3_DEBUGGER=\fIcommand\fR
-A debugger or other prefix to prepend to the Quake III command line, such
-as \fBstrace\fR; overridden by \fBQUAKE3_BACKTRACE\fR
-.TP
-\fBQUAKE3_BACKTRACE=1\fR
-Use \fBgdb\fR(1) to get a backtrace if Quake III crashes (the \fBgdb\fR
-package must be installed)
 
 .SH SEE ALSO
 .BR quake3-server (6),

@@ -46,6 +46,17 @@ Select a non-default Quake II engine binary
 .B \-\-demo
 Use the demo data, even if you have both the demo and the full version
 installed
+.TP
+\fB\-q\fR, \fB\-\-quiet\fR
+Disable all console output
+.TP
+\fB\-\-debugger=\fIDEBUGGER\fR
+Prepend a debugger or other prefix (such as \fBstrace\fR) to the engine
+command line
+.TP
+\fB\-\-print\-backtrace\fR
+Use \fBgdb\fR(1) to get a backtrace if the engine crashes (the \fBgdb\fR
+package must be installed)
 .SH EXAMPLES
 Play the demo in cooperative mode:
 .B quake2 --demo +map demo1 +set coop 1

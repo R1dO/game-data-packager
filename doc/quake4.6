@@ -4,8 +4,11 @@
 quake4 \- Quake 4 client
 
 .SH SYNOPSIS
-.B quake3
+.B quake4
 .BR "" [ \-h | \-\-help ]
+.BR "" [ \-\-quiet ]
+.BR "" [ \-\-smp ]
+.IR "" [ "debugging options" ]
 .BR "" [ +set
 .IR option " " value ]...
 
@@ -19,11 +22,22 @@ The wrapper script used for Quake 4 in Debian accepts these options:
 \fB\-h\fR, \fB\-\-help\fR
 Display a short help summary
 .TP
+\fB\-\-quiet\fR
+Suppress console output
+.TP
 \fB\-\-smp\fR
 Use the multi-threaded version of the client and the modified
 copy of SDL that is bundled with it. The default is to use the
 single-threaded client and the system copy of SDL. Both versions
 are included in the quake4-bin package.
+.TP
+\fB\-\-debugger=\fIDEBUGGER\fR
+Prepend a debugger or other prefix (such as \fBstrace\fR) to the engine
+command line
+.TP
+\fB\-\-print\-backtrace\fR
+Use \fBgdb\fR(1) to get a backtrace if the engine crashes (the \fBgdb\fR
+package must be installed)
 .PP
 Any console command can also be prefixed with \fB+\fR and used as a
 command-line option (press Ctrl+Alt and the key above Tab to access the
@@ -33,18 +47,6 @@ in-game console).
 .TP
 \fI~/.quake4\fR
 Configuration and state for Quake 4
-
-.SH ENVIRONMENT
-The wrapper script used to launch Quake 4 allows it to be debugged
-by setting environment variables.
-.TP
-\fBQUAKE4_DEBUGGER=\fIcommand\fR
-A debugger or other prefix to prepend to the Quake 4 command line, such
-as \fBstrace\fR; overridden by \fBQUAKE4_BACKTRACE\fR
-.TP
-\fBQUAKE4_BACKTRACE=1\fR
-Use \fBgdb\fR(1) to get a backtrace if Quake 4 crashes (the \fBgdb\fR
-package must be installed)
 
 .SH AUTHOR
 Quake 4 was written by id Software and originally published by Activision.
