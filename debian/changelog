@@ -1,6 +1,5 @@
-game-data-packager (46) UNRELEASED; urgency=medium
+game-data-packager (46) experimental; urgency=medium
 
-  * New game support:
   * Support for new languages and versions:
     - Update quake2-reckoning-data to 2.03 and quake2-xatrix-data to 2.04,
       matching yamagi-quake2 5.34 and adding support for more
@@ -14,10 +13,10 @@ game-data-packager (46) UNRELEASED; urgency=medium
       many data packages are now version 46-0.fedora if built for Fedora
       [smcv]
     - use the Python/GTK gdp-launcher that was previously used for
-      Unreal to wrap the Quake series too, allowing several of their
+      Unreal to wrap the Quake series too, allowing all their
       shell scripts to be removed [smcv]
       * they now report missing expansions correctly (Closes: #829060)
-      * the help is no longer done with cat <<EOF (mostly addresses #807533)
+      * the help is no longer done with cat <<EOF (Closes: #807533)
     - split out game-data-packager-runtime into a separate binary
       package so g-d-p (and its archive-unpacking dependencies)
       doesn't have to remain installed alongside the games that use its
@@ -44,7 +43,7 @@ game-data-packager (46) UNRELEASED; urgency=medium
     - convert 'make manual-check' into an ordinary test, which is
       skipped if the necessary files are not in ~/Downloads [smcv]
 
- -- Simon McVittie <smcv@debian.org>  Fri, 01 Jul 2016 10:30:08 +0100
+ -- Simon McVittie <smcv@debian.org>  Fri, 14 Oct 2016 22:57:38 +0100
 
 quake (18) unstable; urgency=medium
 
