@@ -195,6 +195,10 @@ class Launcher:
         self.args, rest = parser.parse_known_args(argv)
         self.args.arguments.extend(rest)
 
+        if self.args.id == 'launcher':
+            parser.print_help()
+            sys.exit(2)
+
         self.id = self.args.id
         self.keyfile = GLib.KeyFile()
         desktop = os.path.join(RUNTIME_BUILT, self.id + '.desktop')
