@@ -189,7 +189,7 @@ class Launcher:
         parser.add_argument('--smp', default=False, action='store_true',
                 help='use a multi-threaded game engine, if supported')
         parser.add_argument('--quiet', default=False, action='store_true',
-                help='silence console logging, if supported')
+                help='silence console logging')
         parser.add_argument('arguments', nargs=argparse.REMAINDER,
                 help='arguments for the launched game')
         self.args, rest = parser.parse_known_args(argv)
@@ -584,6 +584,11 @@ class Launcher:
 
         logger.debug('Executing: %r', self.argv + self.args.arguments)
         self.flush()
+
+        if self.args.quiet:
+            os.dup2(os.open(os.devnull, os.O_RDONLY), 0)
+            os.dup2(os.open(os.devnull, os.O_WRONLY), 1)
+            os.dup2(os.open(os.devnull, os.O_WRONLY), 2)
 
         os.execvpe(self.argv[0], self.argv + self.args.arguments, environ)
 
