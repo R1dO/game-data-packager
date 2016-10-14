@@ -188,6 +188,10 @@ class Launcher:
                 help='expansion to launch')
         parser.add_argument('--smp', default=False, action='store_true',
                 help='use a multi-threaded game engine, if supported')
+        parser.add_argument('--print-backtrace', default=False,
+                action='store_true', help='print backtrace on crash')
+        parser.add_argument('--debugger', default=None,
+                help='run engine under a debugger')
         parser.add_argument('--quiet', '-q', default=False, action='store_true',
                 help='silence console logging')
         parser.add_argument('arguments', nargs=argparse.REMAINDER,
@@ -581,6 +585,13 @@ class Launcher:
             library_path.append(environ['LD_LIBRARY_PATH'])
 
         environ['LD_LIBRARY_PATH'] = ':'.join(library_path)
+
+        if self.args.print_backtrace:
+            self.argv[:0] = ['gdb', '-return-child-result', '-batch',
+                    '-ex', 'run', '-ex', 'thread apply all bt full',
+                    '-ex', 'kill', '-ex', 'quit', '--args']
+        elif self.args.debugger:
+            self.argv[:0] = shlex.split(self.args.debugger)
 
         logger.debug('Executing: %r', self.argv + self.args.arguments)
         self.flush()
