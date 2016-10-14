@@ -176,7 +176,8 @@ class Launcher:
             name = name[:-3]
 
         parser = argparse.ArgumentParser(
-                description="game-data-packager's game launcher")
+                description="game-data-packager's game launcher",
+                allow_abbrev=False)
         parser.add_argument('--id', default=name,
                 help='identity of launched game (default: from argv[0])')
         parser.add_argument('--demo', default=False, action='store_true',
@@ -189,9 +190,10 @@ class Launcher:
                 help='use a multi-threaded game engine, if supported')
         parser.add_argument('--quiet', default=False, action='store_true',
                 help='silence console logging, if supported')
-        parser.add_argument('arguments', nargs='*',
+        parser.add_argument('arguments', nargs=argparse.REMAINDER,
                 help='arguments for the launched game')
-        self.args = parser.parse_args(argv)
+        self.args, rest = parser.parse_known_args(argv)
+        self.args.arguments.extend(rest)
 
         self.id = self.args.id
         self.keyfile = GLib.KeyFile()
