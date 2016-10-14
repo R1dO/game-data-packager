@@ -253,6 +253,9 @@ class Launcher:
         if self.args.smp and 'smp_engine' in self.data:
             self.engines.insert(0, self.data['smp_engine'])
 
+        if self.engines and self.args.engine is not None:
+            self.engines.insert(0, self.args.engine)
+
         self.engine = None
 
         self.base_directories = list(map(expand,
