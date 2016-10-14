@@ -250,8 +250,12 @@ class Launcher:
         else:
             self.engines = []
 
-        if self.args.smp and 'smp_engine' in self.data:
-            self.engines.insert(0, self.data['smp_engine'])
+        if self.args.smp:
+            if 'smp_engine' in self.data:
+                self.engines.insert(0, self.data['smp_engine'])
+            else:
+                raise SystemExit('This game does not have a separate '
+                        'SMP/threaded engine')
 
         if self.engines and self.args.engine is not None:
             self.engines.insert(0, self.args.engine)
