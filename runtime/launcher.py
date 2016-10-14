@@ -190,6 +190,8 @@ class Launcher:
                 help='expansion to launch')
         parser.add_argument('--smp', default=False, action='store_true',
                 help='use a multi-threaded game engine, if supported')
+        parser.add_argument('--quiet', default=False, action='store_true',
+                help='silence console logging, if supported')
         parser.add_argument('arguments', nargs='*',
                 help='arguments for the launched game')
         self.args = parser.parse_args(argv)
