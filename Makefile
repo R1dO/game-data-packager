@@ -4,7 +4,8 @@ datadir := /usr/share
 gamedatadir := ${datadir}
 
 PYTHON := python3
-$(eval $(shell PYTHONPATH=. ${PYTHON} tools/configure.py))
+
+-include configure.mk
 
 pkgdatadir := ${gamedatadir}/game-data-packager
 runtimedir := ${gamedatadir}/game-data-packager-runtime
@@ -77,6 +78,9 @@ default: $(png) $(svgz) $(json_from_data) $(launcher_json) \
       $(copyright) $(dot_in) $(desktop) $(quake_text) $(quake_icons) \
       out/bash_completion out/changelog.gz \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
+
+configure.mk: tools/configure.py $(wildcard game_data_packager/*.py game_data_packager/*/*.py)
+	PYTHONPATH=. ${PYTHON} tools/configure.py > $@
 
 out/CACHEDIR.TAG:
 	@mkdir -p out

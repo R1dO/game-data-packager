@@ -17,15 +17,16 @@
 
 import os
 import sys
+import textwrap
 
 from game_data_packager.packaging import (get_native_packaging_system)
 
 def main():
-    print(get_native_packaging_system().substitute('''
+    print(get_native_packaging_system().substitute(textwrap.dedent('''
     bindir := ${bindir}
     datadir := ${datadir}
     gamedatadir := ${assets}
-    ''', 'unknown-package-name'))
+    '''), 'unknown-package-name'))
 
 if __name__ == '__main__':
     main()
