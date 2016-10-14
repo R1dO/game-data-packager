@@ -29,10 +29,7 @@ import sys
 import traceback
 
 import gi
-gi.require_version('Gtk', '3.0')
-
 from gi.repository import (GLib, GObject)
-from gi.repository import Gtk
 
 if 'GDP_UNINSTALLED' in os.environ:
     RUNTIME_BUILT = './out'
@@ -374,55 +371,31 @@ class Launcher:
                     self.engine = e
                     break
             else:
-                gui = Gui(self)
-                gui.text_view.get_buffer().set_text(
+                Gui.run_error(self,
                         '\n'.join(
                             [self.load_text('missing-engine.txt',
                                 'Game engine missing, tried:')] +
                             [expand(e) for e in self.engines]))
-                gui.window.show_all()
-                gui.check_box.hide()
-                Gtk.main()
                 sys.exit(72)    # EX_OSFILE
 
         if self.dot_directory is not None:
             os.makedirs(self.dot_directory, exist_ok=True)
 
         if not self.have_all_data:
-            gui = Gui(self)
-            gui.text_view.get_buffer().set_text(
+            Gui.run_error(self,
                     self.load_text('missing-data.txt', 'Data files missing'))
-            gui.window.show_all()
-            gui.check_box.hide()
-            Gtk.main()
             sys.exit(72)    # EX_OSFILE
 
         elif self.binary_only and not os.path.exists(self.warning_stamp):
             self.exit_status = 77   # EX_NOPERM
-            gui = Gui(self)
-            gui.text_view.get_buffer().set_text(
-                    self.load_text('confirm-binary-only.txt',
-                        'Binary-only game, we cannot fix bugs or security '
-                        'vulnerabilities!'))
-            gui.check_box.bind_property('active', gui.ok_button, 'sensitive',
-                    GObject.BindingFlags.SYNC_CREATE)
-            gui.ok_button.connect('clicked', lambda _:
-                    self._confirm_binary_only_cb(gui))
-
-            gui.window.show_all()
-            Gtk.main()
+            Gui.run_confirm_binary_only(self, self._confirm_binary_only_cb)
             sys.exit(self.exit_status)
 
         else:
             try:
                 self.exec_game()
             except:
-                gui = Gui(self)
-                gui.text_view.get_buffer().set_text(traceback.format_exc())
-                gui.ok_button.set_sensitive(False)
-                gui.window.show_all()
-                gui.check_box.hide()
-                Gtk.main()
+                Gui.run_error(self, traceback.format_exc())
                 sys.exit(self.exit_status)
             else:
                 raise AssertionError('exec_game should never return')
@@ -436,9 +409,7 @@ class Launcher:
             open(self.warning_stamp, 'a').close()
             self.exec_game()
         except:
-            gui.text_view.get_buffer().set_text(traceback.format_exc())
-            gui.check_box.hide()
-            gui.ok_button.set_sensitive(False)
+            gui.show_error(traceback.format_exc())
 
     def exec_game(self, _unused=None):
         self.exit_status = 69   # EX_UNAVAILABLE
@@ -633,6 +604,10 @@ class Launcher:
 
 class Gui:
     def __init__(self, launcher):
+        gi.require_version('Gtk', '3.0')
+        from gi.repository import Gtk
+        self.Gtk = Gtk
+
         self.window = Gtk.Window()
         self.window.set_default_size(600, 300)
         self.window.connect('delete-event', Gtk.main_quit)
@@ -671,6 +646,39 @@ class Gui:
         self.grid.attach(subgrid, 0, 2, 2, 1)
 
         self.window.show_all()
+
+    @classmethod
+    def run_error(cls, launcher, message):
+        try:
+            gui = cls(launcher)
+        except:
+            logger.error('Unable to show error in GUI:\n%s', message)
+        else:
+            gui.show_error(message)
+            gui.Gtk.main()
+
+    def show_error(self, message):
+        self.text_view.get_buffer().set_text(message)
+        self.ok_button.set_sensitive(False)
+        self.window.show_all()
+        self.check_box.hide()
+
+    @classmethod
+    def run_confirm_binary_only(cls, launcher, callback):
+        try:
+            gui = cls(launcher)
+        except:
+            logger.error('Unable to do binary-only confirmation in GUI')
+        else:
+            gui.text_view.get_buffer().set_text(
+                    launcher.load_text('confirm-binary-only.txt',
+                        'Binary-only game, we cannot fix bugs or security '
+                        'vulnerabilities!'))
+            gui.check_box.bind_property('active', gui.ok_button, 'sensitive',
+                    GObject.BindingFlags.SYNC_CREATE)
+            gui.ok_button.connect('clicked', lambda _: callback(gui))
+            gui.window.show_all()
+            gui.Gtk.main()
 
 if __name__ == '__main__':
     logging.basicConfig()
