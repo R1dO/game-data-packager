@@ -13,17 +13,24 @@ game-data-packager (46) UNRELEASED; urgency=medium
     - append distribution to RPM release number, for example
       many data packages are now version 46-0.fedora if built for Fedora
       [smcv]
+    - use the Python/GTK gdp-launcher that was previously used for
+      Unreal to wrap the Quake series too, allowing several of their
+      shell scripts to be removed [smcv]
     - split out game-data-packager-runtime into a separate binary
-      package so g-d-p doesn't have to remain installed alongside
-      the games [smcv]
+      package so g-d-p (and its archive-unpacking dependencies)
+      doesn't have to remain installed alongside the games that use its
+      launcher [smcv]
     - quake4 AppArmor: update quake4smp profile to match quake4 [smcv]
     - quake* AppArmor: allow gdp-openurl script as an alternative to xdg-open
       [smcv]
     - quake3: correct logic for letting the demo run without the full game
       [smcv]
     - quake*-server: add missing dependency on lsb-base 3.0-6 [smcv]
+    - convert soltys.xpm to PNG for compatibility with ImageMagick 6.8,
+      fixing FTBFS with that version [smcv]
   * Internal changes:
     - switch to debhelper 10, no change needed [adetiste]
+    - take over the quake family of binary packages from src:quake [smcv]
     - mark the out/ directory with CACHEDIR.TAG to make it easy to avoid
       backups [smcv]
     - games can use more variables, which are expanded recursively
