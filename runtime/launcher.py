@@ -31,6 +31,8 @@ import traceback
 import gi
 from gi.repository import (GLib, GObject)
 
+__version__ = '(uninstalled)'
+
 if 'GDP_UNINSTALLED' in os.environ:
     RUNTIME_BUILT = './out'
     RUNTIME_SOURCE = './runtime'
@@ -194,6 +196,8 @@ class Launcher:
                 help='run engine under a debugger')
         parser.add_argument('--quiet', '-q', default=False, action='store_true',
                 help='silence console logging')
+        parser.add_argument('--version', action='version',
+                version='game-data-packager launcher ' + __version__)
         parser.add_argument('arguments', nargs=argparse.REMAINDER,
                 help='arguments for the launched game')
         self.args, rest = parser.parse_known_args(argv)
