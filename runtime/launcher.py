@@ -31,7 +31,10 @@ import traceback
 import gi
 from gi.repository import (GLib, GObject)
 
-__version__ = '(uninstalled)'
+# edited automatically, be careful
+GAME_PACKAGE_VERSION = '(uninstalled)'
+GAME_PACKAGE_RELEASE = ''
+#__insert_version_here__
 
 if 'GDP_UNINSTALLED' in os.environ:
     RUNTIME_BUILT = './out'

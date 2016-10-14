@@ -416,7 +416,8 @@ install:
 
 	mkdir -p $(DESTDIR)$(pkgdatadir)
 	cp -ar game_data_packager/                             $(DESTDIR)$(pkgdatadir)/
-	python3 -m game_data_packager.version $(RELEASE) >     $(DESTDIR)$(pkgdatadir)/game_data_packager/version.py
+	python3 -m game_data_packager.version $(RELEASE) >     out/installed-version.py
+	install -m0644 out/installed-version.py                $(DESTDIR)$(pkgdatadir)/game_data_packager/version.py
 	install -m0644 out/*.control.in                        $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/*.copyright                         $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/*.png                               $(DESTDIR)$(pkgdatadir)/
@@ -429,7 +430,9 @@ install:
 	install -m0644 out/vfs.zip                             $(DESTDIR)$(pkgdatadir)/
 
 	install -d                                             $(DESTDIR)$(runtimedir)/
-	install runtime/launcher.py                            $(DESTDIR)$(runtimedir)/gdp-launcher
+	sed -e '/^#__insert_version_here__/ r out/installed-version.py' \
+	      < runtime/launcher.py                          > $(DESTDIR)$(runtimedir)/gdp-launcher
+	chmod 0755                                             $(DESTDIR)$(runtimedir)/gdp-launcher
 	install runtime/openurl.py                             $(DESTDIR)$(runtimedir)/gdp-openurl
 	install -m0644 $(launcher_desktops)                    $(DESTDIR)$(runtimedir)/
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(runtimedir)/
