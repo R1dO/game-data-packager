@@ -29,7 +29,6 @@ Homepage: https://wiki.debian.org/Games/GameDataPackager
 
 Package: game-data-packager
 Depends: fakeroot, ${misc:Depends},
-	python3,
 	python3-debian,
 	python3-yaml,
 	${python3:Depends},
@@ -285,8 +284,8 @@ Description: dedicated server for Enemy Territory: Quake Wars
 
 Package: game-data-packager-runtime
 Depends:
+ ${python3:Depends},
  ${misc:Depends},
- python3,
  python3-gi,
  gir1.2-gtk-3.0,
  gir1.2-pango-1.0,
