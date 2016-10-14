@@ -16,6 +16,8 @@ game-data-packager (46) UNRELEASED; urgency=medium
     - use the Python/GTK gdp-launcher that was previously used for
       Unreal to wrap the Quake series too, allowing several of their
       shell scripts to be removed [smcv]
+      * they now report missing expansions correctly (Closes: #829060)
+      * the help is no longer done with cat <<EOF (mostly addresses #807533)
     - split out game-data-packager-runtime into a separate binary
       package so g-d-p (and its archive-unpacking dependencies)
       doesn't have to remain installed alongside the games that use its
