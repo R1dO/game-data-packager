@@ -1,7 +1,7 @@
 ---
 binary_only: true
 engine: $prefix/lib/etqw/etqw.x86
-smp_engine: $prefix/lib/etqw-rthread.x86
+smp_engine: $prefix/lib/etqw/etqw-rthread.x86
 required_files:
   - base/pak008.pk4
   - base/game000.pk4
