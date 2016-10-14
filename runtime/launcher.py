@@ -23,6 +23,7 @@ import fnmatch
 import json
 import logging
 import os
+import shlex
 import shutil
 import string
 import sys
