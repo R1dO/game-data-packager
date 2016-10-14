@@ -15,8 +15,6 @@
 # You can find the GPL license text on a Debian system under
 # /usr/share/common-licenses/GPL-2.
 
-import os
-import sys
 import textwrap
 
 from game_data_packager.packaging import (get_native_packaging_system)
