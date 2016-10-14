@@ -1,0 +1,16 @@
+---
+binary_only: true
+engine: $prefix/lib/etqw/etqwded.x86
+required_files:
+  - base/pak008.pk4
+  - base/game000.pk4
+  - base/pak000.pk4
+  - base/zpak_english000.pk4
+dot_directory: ~/.etqw
+base_directories:
+  - $prefix/lib/etqw
+working_directory: $prefix/lib/etqw
+library_path:
+  - $prefix/lib/etqw
+argv: +set com_allowconsole 1
+...

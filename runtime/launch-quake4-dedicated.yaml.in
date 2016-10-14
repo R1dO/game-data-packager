@@ -1,0 +1,16 @@
+---
+binary_only: true
+engine: $prefix/lib/quake4/q4ded.x86
+required_files:
+  - q4base/pak001.pk4
+  - q4base/pak021.pk4
+  - q4base/pak022.pk4
+  - q4base/zpak_english.pk4
+dot_directory: ~/.quake4
+base_directories:
+  - $prefix/lib/quake4
+working_directory: $prefix/lib/quake4
+library_path:
+  - $prefix/lib/quake4
+argv: +set com_allowconsole 1
+...

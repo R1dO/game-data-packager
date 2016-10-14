@@ -1,0 +1,32 @@
+---
+dot_directory: null
+base_directories:
+  - /usr/share/games/quake
+required_files:
+  - id1/pak0.pak
+engines:
+  - $prefix/lib/quake/quake-engine-server
+  - quakespasm
+  - darkplaces
+argv: >
+  -dedicated
+  -basedir $${base_directory}
+expansions:
+  armagon:
+    aliases: hipnotic
+    extra_argv: >
+      -hipnotic
+    extra_required_files:
+      - hipnotic/pak0.pak
+  dissolution:
+    aliases: rogue
+    extra_argv: >
+      -rogue
+    extra_required_files:
+      - rogue/pak0.pak
+  dopa:
+    extra_argv: >
+      -game dopa
+    extra_required_files:
+      - dopa/pak0.pak
+...

@@ -1,0 +1,29 @@
+---
+dot_directory: null
+base_directories:
+  - /usr/share/games/quake2
+required_files:
+  - baseq2/pak0.pak
+engines:
+  - $prefix/lib/quake2/quake2-engine-server
+  - $prefix/lib/yamagi-quake2/quake2-server
+  - yquake2-server
+argv: >
+  +set dedicated 1
+  +set basedir $${base_directory}
+expansions:
+  reckoning:
+    aliases: xatrix
+    extra_argv: >
+      +set game xatrix
+    extra_required_files:
+      - xatrix/pak0.pak
+  groundzero:
+    aliases: rogue
+    extra_argv: >
+      +set game rogue
+    extra_required_files:
+      - rogue/pak0.pak
+demo:
+  base_directories:
+    - /usr/share/games/quake2-demo

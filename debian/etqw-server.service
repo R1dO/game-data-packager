@@ -8,7 +8,7 @@ Type=simple
 User=etqw-server
 Environment=DAEMON_OPTS=
 EnvironmentFile=-/etc/default/etqw-server
-ExecStart=/usr/games/etqw-dedicated $DAEMON_OPTS +exec etc/etqw-server/server.cfg
+ExecStart=/usr/games/etqw-dedicated --allow-binary-only $DAEMON_OPTS +exec etc/etqw-server/server.cfg
 Restart=on-failure
 RestartPreventExitStatus=72
 # hardening

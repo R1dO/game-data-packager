@@ -257,6 +257,7 @@ Depends:
  etqw-data | game-data-packager (>= 44),
  lsb-base (>= 3.0-6),
  ${misc:Depends},
+ ${python3:Depends},
 Recommends:
  systemd-sysv,
 Suggests:
@@ -355,6 +356,7 @@ Depends:
  quake-registered | quake-shareware | game-data-packager,
  quakespasm | quake-engine-server,
  ${misc:Depends},
+ ${python3:Depends},
 Description: classic first person shooter - server and init script
  This package contains a launcher script and init script to run a
  Quake 1 server automatically, with any suitable engine.
@@ -399,6 +401,7 @@ Depends:
  quake2-full-data | quake2-demo-data | game-data-packager (>= 34),
  yamagi-quake2-core | quake2-engine-server,
  ${misc:Depends},
+ ${python3:Depends},
 Suggests:
  quake2-groundzero-data,
  quake2-reckoning-data,
@@ -446,6 +449,7 @@ Depends:
  lsb-base (>= 3.0-6),
  quake3-data | game-data-packager (>= 23),
  ${misc:Depends},
+ ${python3:Depends},
 Recommends:
  game-data-packager (>= 39),
 Suggests:
@@ -488,6 +492,7 @@ Depends:
  quake4-bin | game-data-packager (>= 43),
  quake4-data | quake4-censored-de-data | game-data-packager (>= 43),
  ${misc:Depends},
+ ${python3:Depends},
 Recommends:
  systemd-sysv,
 Description: dedicated server for Quake 4

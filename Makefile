@@ -38,14 +38,6 @@ launcher_desktops := \
 
 quake_layer_sizes = 16 22 32 48 256
 
-quake_text = \
-	out/quake-server \
-	out/quake2-server \
-	out/quake3-server \
-	out/quake4-dedicated \
-	out/etqw-dedicated \
-	$(NULL)
-
 quake_icons = \
 	out/24/quake.png \
 	out/24/quake-armagon.png \
@@ -75,7 +67,7 @@ quake_icons = \
 	$(NULL)
 
 default: $(png) $(svgz) $(json_from_data) $(launcher_json) \
-      $(copyright) $(dot_in) $(desktop) $(quake_text) $(quake_icons) \
+      $(copyright) $(dot_in) $(desktop) $(quake_icons) \
       out/bash_completion out/changelog.gz \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
@@ -189,64 +181,6 @@ out/48/quake3.png: out/256/quake3.png Makefile out/CACHEDIR.TAG
 out/48/quake3-team-arena.png: out/256/quake3-team-arena.png Makefile out/CACHEDIR.TAG
 	install -d out/48
 	convert -resize 48x48 $< $@
-
-out/quake2-server: runtime/quake2.in out/CACHEDIR.TAG
-	sed -e 's/@self@/quake2-server/g' \
-		-e 's/@role@/dedicated server/g' \
-		-e 's/@options@/+set dedicated 1/g' \
-		-e 's/@alternative@/quake2-engine-server/g' \
-		< $< > $@
-	chmod +x $@
-
-out/quake-server: runtime/quake.in out/CACHEDIR.TAG
-	sed -e 's/@self@/quake-server/g' \
-		-e 's/@role@/server/g' \
-		-e 's/@options@/-dedicated/g' \
-		-e 's/@alternative@/quake-engine-server/g' \
-		< $< > $@
-	chmod +x $@
-
-out/quake3-server: runtime/quake3.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@IOQ3BINARY@!ioq3ded!' \
-		-e 's!@IOQ3SELF@!quake3-server!' \
-		-e 's!@IOQ3ROLE@!server!' \
-		< $< > $@
-	chmod +x $@
-
-out/quake4-dedicated: runtime/quake4.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@id@!quake4!' \
-		-e 's!@icon@!/usr/share/icons/hicolor/48x48/apps/quake4.png!' \
-		-e 's!@longname@!Quake 4!' \
-		-e 's!@shortname@!Quake 4!' \
-		-e 's!@binary@!q4ded.x86!' \
-		-e 's!@smpbinary@!!' \
-		-e 's!@self@!quake4-dedicated!' \
-		-e 's!@role@!server!' \
-		-e 's!@pkglibdir@!/usr/lib/quake4!' \
-		-e 's!@paks@!pak001 pak021 pak022 zpak_english!' \
-		-e 's!@basegame@!q4base!' \
-		-e 's!@dotdir@!quake4!' \
-		< $< > $@
-	chmod +x $@
-
-out/etqw-dedicated: runtime/quake4.in Makefile out/CACHEDIR.TAG
-	sed \
-		-e 's!@id@!etqw!' \
-		-e 's!@icon@!/usr/share/pixmaps/etqw.png!' \
-		-e 's!@longname@!Enemy Territory: Quake Wars!' \
-		-e 's!@shortname@!ETQW!' \
-		-e 's!@binary@!etqwded.x86!' \
-		-e 's!@smpbinary@!!' \
-		-e 's!@self@!etqw-dedicated!' \
-		-e 's!@role@!server!' \
-		-e 's!@pkglibdir@!/usr/lib/etqw!' \
-		-e 's!@paks@!pak008 game000 pak000 zpak_english000!' \
-		-e 's!@basegame@!base!' \
-		-e 's!@dotdir@!etqw!' \
-		< $< > $@
-	chmod +x $@
 
 out/tmp/recolour-dissolution.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 	install -d out/tmp
@@ -438,6 +372,21 @@ install:
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(runtimedir)/
 	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(runtimedir)/
 	install -m0644 $(launcher_json)                        $(DESTDIR)$(runtimedir)/
+	install -d                                             $(DESTDIR)${gamedatadir}/quake/
+	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake/gdp_launcher_version.py
+	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake/quake-server
+	install -d                                             $(DESTDIR)${gamedatadir}/quake2/
+	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake2/gdp_launcher_version.py
+	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake2/quake2-server
+	install -d                                             $(DESTDIR)${gamedatadir}/quake3/
+	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake3/gdp_launcher_version.py
+	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake3/quake3-server
+	install -d                                             $(DESTDIR)${gamedatadir}/quake4/
+	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake4/gdp_launcher_version.py
+	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake4/quake4-dedicated
+	install -d                                             $(DESTDIR)${libdir}/etqw/
+	install -m644 out/installed-version.py                 $(DESTDIR)${libdir}/etqw/gdp_launcher_version.py
+	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${libdir}/etqw/etqw-dedicated
 	install -d                                             $(DESTDIR)/etc/apparmor.d/
 	install -m0644 etc/apparmor.d/*                        $(DESTDIR)/etc/apparmor.d/
 
@@ -462,15 +411,15 @@ install:
 	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
 	install -d                                             $(DESTDIR)$(bindir)
 	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake
-	install -m755 out/quake-server                         $(DESTDIR)$(bindir)
+	ln -s ${gamedatadir}/quake/quake-server                $(DESTDIR)$(bindir)/
 	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake2
-	install -m755 out/quake2-server                        $(DESTDIR)$(bindir)
+	ln -s ${gamedatadir}/quake2/quake2-server              $(DESTDIR)$(bindir)/
 	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake3
-	install -m755 out/quake3-server                        $(DESTDIR)$(bindir)
+	ln -s ${gamedatadir}/quake3/quake3-server              $(DESTDIR)$(bindir)/
 	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake4
-	install -m755 out/quake4-dedicated                     $(DESTDIR)$(bindir)
+	ln -s ${gamedatadir}/quake4/quake4-dedicated           $(DESTDIR)$(bindir)/
 	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/etqw
-	install -m755 out/etqw-dedicated                       $(DESTDIR)$(bindir)
+	ln -s ${libdir}/etqw/etqw-dedicated                    $(DESTDIR)$(bindir)/
 	install -d                                             $(DESTDIR)$(datadir)/applications
 	install -m644 out/etqw.desktop                         $(DESTDIR)$(datadir)/applications
 	install -m644 out/quake*.desktop                       $(DESTDIR)$(datadir)/applications
