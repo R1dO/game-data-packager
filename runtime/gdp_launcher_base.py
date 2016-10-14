@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # encoding=utf-8
 
-# game-data-packager Gtk launcher stub. See doc/launcher.mdwn for design
+# game-data-packager command-line launcher stub
 
 # Copyright © 2015-2016 Simon McVittie <smcv@debian.org>
 #
@@ -18,9 +18,8 @@
 # /usr/share/common-licenses/GPL-2.
 
 import argparse
-import glob
-import fnmatch
 import json
+import glob
 import logging
 import os
 import shlex
@@ -29,13 +28,7 @@ import string
 import sys
 import traceback
 
-import gi
-from gi.repository import (GLib, GObject)
-
-# edited automatically, be careful
-GAME_PACKAGE_VERSION = '(uninstalled)'
-GAME_PACKAGE_RELEASE = ''
-#__insert_version_here__
+from gdp_launcher_version import GAME_PACKAGE_VERSION
 
 if 'GDP_UNINSTALLED' in os.environ:
     RUNTIME_BUILT = './out'
@@ -54,7 +47,7 @@ os.environ.setdefault('XDG_CONFIG_DIRS', '/etc/xdg')
 os.environ.setdefault('XDG_DATA_HOME', os.path.expanduser('~/.local/share'))
 os.environ.setdefault('XDG_DATA_DIRS', '/usr/local/share:/usr/share')
 
-logger = logging.getLogger('game-data-packager.launcher')
+logger = logging.getLogger('game-data-packager.launcher.base')
 
 if os.environ.get('GDP_DEBUG'):
     logger.setLevel(logging.DEBUG)
@@ -84,96 +77,6 @@ def expand(path, **kwargs):
     return os.path.expanduser(string.Template(path).substitute(os.environ,
         **kwargs))
 
-class IniEditor:
-    def __init__(self, edits):
-        self.lines = []
-        self.edits = edits
-        self.__section = None
-        self.__section_lines = []
-        self.__sections = set()
-
-    def load(self, reader):
-        # Simple INI parser. Not using ConfigParser because Unreal
-        # uses duplicate keys within sections, and we want to preserve
-        # comments, blank lines etc.
-        self.__section = None
-        self.__section_lines = []
-        self.__sections = set()
-
-        for line in reader:
-            line = line.rstrip('\r\n')
-
-            if line.startswith('[') and line.endswith(']'):
-                self.__end_section()
-                self.__section = line[1:-1]
-
-            self.__section_lines.append(line)
-
-        self.__end_section()
-
-        for edit in self.edits:
-            if edit['section'] not in self.__sections:
-                self.__section = edit['section']
-                self.__section_lines = ['[%s]' % edit['section']]
-                self.__end_section()
-
-    def __end_section(self):
-        self.__sections.add(self.__section)
-
-        for edit in self.edits:
-            if edit['section'] != self.__section:
-                continue
-
-            logger.debug('editing %s', self.__section)
-            extra_lines = []
-
-            for k, v in sorted(edit.get('replace_key', {}).items()):
-                logger.debug('replacing %s with %s', k, v)
-                self.__section_lines = [l for l in self.__section_lines
-                        if not l.startswith(k + '=')]
-                extra_lines.append('%s=%s' % (k, v))
-
-            for pattern in sorted(edit.get('delete_matched', [])):
-                logger.debug('deleting lines matching %s', pattern)
-                self.__section_lines = [l for l in self.__section_lines
-                        if not fnmatch.fnmatchcase(l, pattern)]
-
-            for pattern in edit.get('comment_out_matched', []):
-                logger.debug('commenting out lines matching %s', pattern)
-                for i in range(len(self.__section_lines)):
-                    if fnmatch.fnmatchcase(self.__section_lines[i], pattern):
-                        self.__section_lines[i] = ';' + self.__section_lines[i]
-                        self.__section_lines.insert(i, '; ' +
-                                edit['comment_out_reason'])
-
-            for append in edit.get('append_unique', []):
-                logger.debug('appending unique line %s', append)
-                for line in self.__section_lines:
-                    if line == append:
-                        break
-                else:
-                    extra_lines.append(append)
-
-            i = len(self.__section_lines) - 1
-
-            while i >= 0:
-                if self.__section_lines[i]:
-                    # _s_l[i] is the last non-empty line, insert after it
-                    self.__section_lines[i + 1:i + 1] = extra_lines
-                    break
-                i -= 1
-            else:
-                # no non-empty lines, insert after the section-opening heading
-                self.__section_lines[1:1] = extra_lines
-
-        self.lines.extend(self.__section_lines)
-        self.__section_lines = []
-        self.__section = None
-
-    def save(self, writer):
-        for line in self.lines:
-            print(line, file=writer)
-
 class Launcher:
     def __init__(self, argv=None):
         name = os.path.basename(sys.argv[0])
@@ -200,6 +103,9 @@ class Launcher:
                 help='run engine under a debugger')
         parser.add_argument('--quiet', '-q', default=False, action='store_true',
                 help='silence console logging')
+        parser.add_argument('--allow-binary-only', default=False,
+                action='store_true',
+                help='Allow running binary-only games')
         parser.add_argument('--version', action='version',
                 version='game-data-packager launcher ' + GAME_PACKAGE_VERSION)
         parser.add_argument('arguments', nargs=argparse.REMAINDER,
@@ -212,39 +118,10 @@ class Launcher:
             sys.exit(2)
 
         self.id = self.args.id
-        self.keyfile = GLib.KeyFile()
-        desktop = os.path.join(RUNTIME_BUILT, self.id + '.desktop')
-        if os.path.exists(desktop):
-            self.keyfile.load_from_file(desktop, GLib.KeyFileFlags.NONE)
-        else:
-            self.keyfile.load_from_data_dirs(
-                    'applications/%s.desktop' % self.id,
-                    GLib.KeyFileFlags.NONE)
+        self.name = self.id
+        self.expansion_name = None
 
-        self.name = self.keyfile.get_string(GLib.KEY_FILE_DESKTOP_GROUP,
-            GLib.KEY_FILE_DESKTOP_KEY_NAME)
-        logger.debug('Name: %s', self.name)
-        GLib.set_application_name(self.name)
-
-        self.icon_name = self.keyfile.get_string(GLib.KEY_FILE_DESKTOP_GROUP,
-            GLib.KEY_FILE_DESKTOP_KEY_ICON)
-        logger.debug('Icon: %s', self.icon_name)
-
-        self.expansion_name = self.args.expansion
-
-        try:
-            override_id = self.keyfile.get_string(GLib.KEY_FILE_DESKTOP_GROUP,
-                'X-GameDataPackager-ExpansionFor')
-        except GLib.Error:
-            pass
-        else:
-            if self.expansion_name is None:
-                self.expansion_name = self.id
-
-            if self.expansion_name.startswith(override_id + '-'):
-                self.expansion_name = self.expansion_name[len(override_id) + 1:]
-
-            self.id = override_id
+        self.set_id()
 
         self.data = json.load(open('%s/launch-%s.json' % (RUNTIME_BUILT,
             self.id), encoding='utf-8'))
@@ -364,6 +241,9 @@ class Launcher:
 
         logger.debug('Arguments: %r', self.argv)
 
+    def set_id(self):
+        pass
+
     def check_required_files(self, base_directories, required_files,
             warn=True):
         for f in required_files:
@@ -381,6 +261,9 @@ class Launcher:
         else:
             return True
 
+    def run_error(self, message):
+        logger.error(message)
+
     def main(self):
         if self.engines:
             for e in self.engines:
@@ -389,7 +272,7 @@ class Launcher:
                     self.engine = e
                     break
             else:
-                Gui.run_error(self,
+                self.run_error(
                         '\n'.join(
                             [self.load_text('missing-engine.txt',
                                 'Game engine missing, tried:')] +
@@ -400,96 +283,36 @@ class Launcher:
             os.makedirs(self.dot_directory, exist_ok=True)
 
         if not self.have_all_data:
-            Gui.run_error(self,
+            self.run_error(
                     self.load_text('missing-data.txt', 'Data files missing'))
             sys.exit(72)    # EX_OSFILE
 
-        elif self.binary_only and not os.path.exists(self.warning_stamp):
+        if (self.binary_only and not os.path.exists(self.warning_stamp) and
+                not self.args.allow_binary_only):
             self.exit_status = 77   # EX_NOPERM
-            Gui.run_confirm_binary_only(self, self._confirm_binary_only_cb)
+            self.run_confirm_binary_only()
             sys.exit(self.exit_status)
+            raise AssertionError('not reached')
 
+        try:
+            self.exec_game()
+        except:
+            self.run_error(traceback.format_exc())
+            sys.exit(self.exit_status)
         else:
-            try:
-                self.exec_game()
-            except:
-                Gui.run_error(self, traceback.format_exc())
-                sys.exit(self.exit_status)
-            else:
-                raise AssertionError('exec_game should never return')
+            raise AssertionError('exec_game should never return')
 
     def flush(self):
         for f in (sys.stdout, sys.stderr):
             f.flush()
 
-    def _confirm_binary_only_cb(self, gui):
-        try:
-            open(self.warning_stamp, 'a').close()
-            self.exec_game()
-        except:
-            gui.show_error(traceback.format_exc())
+    def run_confirm_binary_only(self):
+        # don't do anything, we have no GUI
+        self.run_error('Not running binary-only game without '
+                '--allow-binary-only')
 
     def exec_game(self, _unused=None):
         self.exit_status = 69   # EX_UNAVAILABLE
-
-        # Edit before copying, so that we can detect whether this is
-        # the first run or not
-        for ini, details in self.data.get('edit_unreal_ini', {}).items():
-            assert self.dot_directory is not None
-            target = os.path.join(self.dot_directory, ini)
-            encoding = details.get('encoding', 'windows-1252')
-
-            if os.path.exists(target):
-                first_time = False
-                try:
-                    reader = open(target, encoding='utf-16')
-                    reader.readline()
-                except:
-                    reader = open(target, encoding=encoding)
-                else:
-                    reader.seek(0)
-            else:
-                first_time = True
-
-                if os.path.lexists(target):
-                    logger.info('Removing dangling symlink %s', target)
-                    os.remove(target)
-
-                for base in self.base_directories:
-                    source = os.path.join(base, ini)
-
-                    if os.path.exists(source):
-                        try:
-                            reader = open(source, encoding='utf-16')
-                            reader.readline()
-                        except:
-                            reader = open(source, encoding=encoding)
-                        else:
-                            reader.seek(0)
-                        break
-                else:
-                    raise AssertionError('Required file %s not found', ini)
-
-            if first_time:
-                edits = details.get('once', []) + details.get('always', [])
-            else:
-                edits = details.get('always', [])
-
-            logger.debug('%s', edits)
-            editor = IniEditor(edits)
-
-            with reader:
-                editor.load(reader)
-
-            d = os.path.dirname(target)
-
-            if d:
-                logger.info('Creating directory: %s', d)
-                os.makedirs(d, exist_ok=True)
-
-            with open(target, 'w', encoding=encoding,
-                    newline=details.get('newline', '\n')) as writer:
-                editor.save(writer)
 
         # Copy before linking, so that the copies will suppress symlink
         # creation
@@ -631,84 +454,6 @@ class Launcher:
                 return text
         else:
             return placeholder
-
-class Gui:
-    def __init__(self, launcher):
-        gi.require_version('Gtk', '3.0')
-        from gi.repository import Gtk
-        self.Gtk = Gtk
-
-        self.window = Gtk.Window()
-        self.window.set_default_size(600, 300)
-        self.window.connect('delete-event', Gtk.main_quit)
-        self.window.set_title(launcher.name)
-        self.window.set_icon_name(launcher.icon_name)
-
-        self.grid = Gtk.Grid(row_spacing=6, column_spacing=6,
-                margin_top=12, margin_bottom=12, margin_start=12, margin_end=12)
-        self.window.add(self.grid)
-
-        image = Gtk.Image.new_from_icon_name(launcher.icon_name,
-                Gtk.IconSize.DIALOG)
-        image.set_valign(Gtk.Align.START)
-        self.grid.attach(image, 0, 0, 1, 1)
-
-        self.text_view = Gtk.TextView(editable=False, cursor_visible=False,
-            hexpand=True, vexpand=True, wrap_mode=Gtk.WrapMode.WORD,
-            top_margin=6, left_margin=6, right_margin=6, bottom_margin=6)
-        self.grid.attach(self.text_view, 1, 0, 1, 1)
-
-        subgrid = Gtk.Grid(column_spacing=6, column_homogeneous=True,
-                halign=Gtk.Align.END)
-
-        cancel_button = Gtk.Button.new_with_label('Cancel')
-        cancel_button.connect('clicked', Gtk.main_quit)
-        subgrid.attach(cancel_button, 0, 0, 1, 1)
-
-        self.check_box = Gtk.CheckButton.new_with_label("I'll be careful")
-        self.check_box.set_hexpand(True)
-        self.grid.attach(self.check_box, 0, 1, 2, 1)
-
-        self.ok_button = Gtk.Button.new_with_label('Run')
-        self.ok_button.set_sensitive(False)
-        subgrid.attach(self.ok_button, 1, 0, 1, 1)
-
-        self.grid.attach(subgrid, 0, 2, 2, 1)
-
-        self.window.show_all()
-
-    @classmethod
-    def run_error(cls, launcher, message):
-        try:
-            gui = cls(launcher)
-        except:
-            logger.error('Unable to show error in GUI:\n%s', message)
-        else:
-            gui.show_error(message)
-            gui.Gtk.main()
-
-    def show_error(self, message):
-        self.text_view.get_buffer().set_text(message)
-        self.ok_button.set_sensitive(False)
-        self.window.show_all()
-        self.check_box.hide()
-
-    @classmethod
-    def run_confirm_binary_only(cls, launcher, callback):
-        try:
-            gui = cls(launcher)
-        except:
-            logger.error('Unable to do binary-only confirmation in GUI')
-        else:
-            gui.text_view.get_buffer().set_text(
-                    launcher.load_text('confirm-binary-only.txt',
-                        'Binary-only game, we cannot fix bugs or security '
-                        'vulnerabilities!'))
-            gui.check_box.bind_property('active', gui.ok_button, 'sensitive',
-                    GObject.BindingFlags.SYNC_CREATE)
-            gui.ok_button.connect('clicked', lambda _: callback(gui))
-            gui.window.show_all()
-            gui.Gtk.main()
 
 if __name__ == '__main__':
     logging.basicConfig()

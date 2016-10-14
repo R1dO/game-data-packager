@@ -430,9 +430,9 @@ install:
 	install -m0644 out/vfs.zip                             $(DESTDIR)$(pkgdatadir)/
 
 	install -d                                             $(DESTDIR)$(runtimedir)/
-	sed -e '/^#__insert_version_here__/ r out/installed-version.py' \
-	      < runtime/launcher.py                          > $(DESTDIR)$(runtimedir)/gdp-launcher
-	chmod 0755                                             $(DESTDIR)$(runtimedir)/gdp-launcher
+	install runtime/gdp_launcher_base.py                   $(DESTDIR)$(runtimedir)/
+	install -m0644 out/installed-version.py                $(DESTDIR)$(runtimedir)/gdp_launcher_version.py
+	install runtime/gdp-launcher.py                        $(DESTDIR)$(runtimedir)/gdp-launcher
 	install runtime/openurl.py                             $(DESTDIR)$(runtimedir)/gdp-openurl
 	install -m0644 $(launcher_desktops)                    $(DESTDIR)$(runtimedir)/
 	install -m0644 runtime/confirm-binary-only.txt         $(DESTDIR)$(runtimedir)/
