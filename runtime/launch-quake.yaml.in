@@ -4,7 +4,6 @@ base_directories:
   - /usr/share/games/quake
 required_files:
   - id1/pak0.pak
-smp_engine: quakespasm
 engines:
   - $prefix/lib/quake/quake-engine
   - quakespasm
