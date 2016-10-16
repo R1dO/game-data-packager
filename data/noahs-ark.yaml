@@ -30,8 +30,8 @@ packages:
 files:
   noah3d.wad:
     alternatives:
-    - noah3d.wad?steam1.3.3
-    - noah3d.wad?steam
+    - noah3d.wad?1.3.3
+    - noah3d.wad?1.3.2
     - noah3d.wad?1.3
 
   noah3d-1.3_x86.zip:
@@ -56,7 +56,7 @@ files:
       format: deb
     provides:
     - assets
-    - noah3d.wad?steam
+    - noah3d.wad?1.3.2
     - noah3d.png
 
   noah3d-1.3.2_amd64.deb:
@@ -64,7 +64,7 @@ files:
       format: deb
     provides:
     - assets
-    - noah3d.wad?steam
+    - noah3d.wad?1.3.2
     - noah3d.png
 
   noah3d-1.3.2_32bit.msi:
@@ -73,7 +73,7 @@ files:
       unpack: ['*.n3d', 'noah3d.wad']
     provides:
     - assets
-    - noah3d.wad?steam
+    - noah3d.wad?1.3.2
 
   noah3d-1.3.2_64bit.msi:
     unpack:
@@ -81,7 +81,7 @@ files:
       unpack: ['*.n3d', 'noah3d.wad']
     provides:
     - assets
-    - noah3d.wad?steam
+    - noah3d.wad?1.3.2
 
 groups:
  assets: |
@@ -96,8 +96,8 @@ groups:
 
  default: |
   # patch that provides enhanced "Read This!", etc...
-  14627997  a59e49bc0da9dbd4e508811c9dea7c09 noah3d.wad?steam1.3.3
-  14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad?steam
+  14627997  a59e49bc0da9dbd4e508811c9dea7c09 noah3d.wad?1.3.3
+  14603355  e31d94215f1b7acee6c1d1114bdf9991 noah3d.wad?1.3.2
   128647    f8fef8c1bb84ee8700e25858a41c7156 noah3d.wad?1.3
   708058    d0a1bf332abc987ea561c7e748c9ca32 noah3d-1.3_x86.zip
 
