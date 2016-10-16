@@ -69,47 +69,9 @@ packages:
     symlinks:
       $install_to/doom2-masterlevels-tryexec: etc/alternatives/doom
     install:
-    - attack.wad
-    - blacktwr.wad
-    - bloodsea.wad
-    - canyon.wad
-    - catwalk.wad
-    - combine.wad
-    - fistula.wad
-    - garrison.wad
-    - geryon.wad
-    - manor.wad
-    - mephisto.wad
-    - minos.wad
-    - nessus.wad
-    - paradox.wad
-    - subspace.wad
-    - subterra.wad
-    - teeth.wad
-    - ttrap.wad
-    - vesperas.wad
-    - virgil.wad
+    - masterlevels wads
     doc:
-    - attack.txt
-    - blacktwr.txt
-    - bloodsea.txt
-    - canyon.txt
-    - catwalk.txt
-    - combine.txt
-    - fistula.txt
-    - garrison.txt
-    - geryon.txt
-    - manor.txt
-    - mephisto.txt
-    - minos.txt
-    - nessus.txt
-    - paradox.txt
-    - subspace.txt
-    - subterra.txt
-    - teeth.txt
-    - ttrap.txt
-    - vesperas.txt
-    - virgil.txt
+    - masterlevels doc
 
 files:
   doom2.wad:
@@ -141,46 +103,8 @@ files:
     unpack:
       format: lha
     provides:
-    - attack.wad
-    - blacktwr.wad
-    - bloodsea.wad
-    - canyon.wad
-    - catwalk.wad
-    - combine.wad
-    - fistula.wad
-    - garrison.wad
-    - geryon.wad
-    - manor.wad
-    - mephisto.wad
-    - minos.wad
-    - nessus.wad
-    - paradox.wad
-    - subspace.wad
-    - subterra.wad
-    - teeth.wad
-    - ttrap.wad
-    - vesperas.wad
-    - virgil.wad
-    - attack.txt
-    - blacktwr.txt
-    - bloodsea.txt
-    - canyon.txt
-    - catwalk.txt
-    - combine.txt
-    - fistula.txt
-    - garrison.txt
-    - geryon.txt
-    - manor.txt
-    - mephisto.txt
-    - minos.txt
-    - nessus.txt
-    - paradox.txt
-    - subspace.txt
-    - subterra.txt
-    - teeth.txt
-    - ttrap.txt
-    - vesperas.txt
-    - virgil.txt
+    - masterlevels wads
+    - masterlevels doc
 
   nerve.wad:
     alternatives:
@@ -192,49 +116,12 @@ files:
       format: innoextract
     provides:
     - doom2.wad?1.9
-    - attack.wad
-    - blacktwr.wad
-    - bloodsea.wad
-    - canyon.wad
-    - catwalk.wad
-    - combine.wad
-    - fistula.wad
-    - garrison.wad
-    - geryon.wad
-    - manor.wad
-    - mephisto.wad
-    - minos.wad
-    - nessus.wad
-    - paradox.wad
-    - subspace.wad
-    - subterra.wad
-    - teeth.wad
-    - ttrap.wad
-    - vesperas.wad
-    - virgil.wad
-    - attack.txt
-    - blacktwr.txt
-    - bloodsea.txt
-    - canyon.txt
-    - catwalk.txt
-    - combine.txt
-    - fistula.txt
-    - garrison.txt
-    - geryon.txt
-    - manor.txt
-    - mephisto.txt
-    - minos.txt
-    - nessus.txt
-    - paradox.txt
-    - subspace.txt
-    - subterra.txt
-    - teeth.txt
-    - ttrap.txt
-    - vesperas.txt
-    - virgil.txt
+    - masterlevels wads
+    - masterlevels doc
     - manual.pdf
 
-size_and_md5: |
+groups:
+ default: |
   14604584  25e1459ca71d321525f84628f45ca8cd doom2.wad?1.9
   14691821  c3bea40570c23e511a7ed3ebcd9865f7 doom2.wad?bfg
   14677988  f617591a6c5d07037eb716dc4863e26b doom2.wad?xbox360_bfg
@@ -254,49 +141,54 @@ size_and_md5: |
   3786293   4f47bb32bf5fd06bc1cc0b4a2e8e3910 nerve.wad?xbox360_bfg
   14824716  d4c3cb51899e8c399d0ea48cfcc87c53 nerve.wad?xboxla
 
-  1581      b5d81e4014b0e41a977ad837be62015a attack.txt
-  185135    cb03fd0cd84b10579c2b2b313199d4c1 attack.wad
-  4872      cd05ef340481c80dd866910fb61de078 blacktwr.txt
-  199534    a421ca18cea00a2696162f8d2a2beeca blacktwr.wad
-  5349      9f55a86718e7d3a9d5e84b7f90391fdd bloodsea.txt
-  258942    18eb4ffb3094ddb690e62211dc6169a1 bloodsea.wad
-  1585      62841b903a25efbbe07ba04629a472e1 canyon.txt
-  157529    33493942592d764e7787fb0ad7d03044 canyon.wad
-  1280      77464c420be047460fdf01a927679e18 catwalk.txt
-  151817    e7c273033376824edf95e1328261e7de catwalk.wad
-  1239      30e17b85fb58f45bfd54076bca1d6c4f combine.txt
-  141548    77c179948df47a7a613bd1181c959892 combine.wad
-  1280      055cb6078dc8c02d687a46cff0efdf99 fistula.txt
-  104654    cbf714b499ebdef2682990eaf93fdb5f fistula.wad
-  1193      c4804663d959554267e031f020f024a6 garrison.txt
-  116403    f000701a3ed1f49249ee08550c03dfa5 garrison.wad
-  2239      8b87125eef93282b724ebca5c2bf46b9 geryon.txt
-  221009    a1efff02df6d873762ebac6b12358bbc geryon.wad
-  2903      6f519312e20de7b6c16cab21c5b55fca manor.txt
-  245444    787fa80fe9665c322f853b74838e77cc manor.wad
-  4695      86c3aceb7990dea92923d42564503541 mephisto.txt
-  121406    b4eaf844b135cc2a0058c6e0149b4408 mephisto.wad
-  2631      61f54fe6c10b424e5238a0444c63306e minos.txt
-  351712    aea597159dee96bcc58f3f9e3e586182 minos.wad
-  3037      ddad20557f7c451253d6aaff9453814d nessus.txt
-  158514    46f58580e7792f486c747cf1117c4ca1 nessus.wad
-  3174      37f0c991d4e74a158c9f9e6f824913e6 paradox.txt
-  223555    d560abb6d5719d46ebb47b27d7813a4b paradox.wad
-  1278      802bd4428c58001439879b9b5d684bff subspace.txt
-  105780    b572d518d564c7d7b6b259a726538cbb subspace.wad
-  1215      3497bfd39788d106b37bdfe107003625 subterra.txt
-  127480    bb417f07804373415a6ed8e533242c3c subterra.wad
-  5190      d150006885a956f378b29a0fedde5dd7 teeth.txt
-  190531    65b4abcb74e7a386d5c024cf250d6336 teeth.wad
-  2734      7aa8fe8b34a8e1cc775c4510efba6dcd ttrap.txt
-  286220    8474f6d663f04630de05ecac36b574d1 ttrap.wad
-  1697      9a6328c52b2436c3dabd79248afe5960 vesperas.txt
-  235353    a49dccebb5f32307246b7f32da121cf7 vesperas.wad
-  2813      e767d645de816a9d5411075d0d002a78 virgil.txt
-  171232    3c0874f2df3c06a002ee2a18aba0f0e8 virgil.wad
   1436188   7c203b03cf052b6b731baec7c42d7ea9 master.exe
   616115    0bd88c082f76d6a03f0eed9a4150a51e manual.pdf
   21908760  5915beaf6b0947fc2ec8075e262b4096 setup_doom2_2.0.0.6.exe
+
+ masterlevels wads: |
+  185135    cb03fd0cd84b10579c2b2b313199d4c1 attack.wad
+  199534    a421ca18cea00a2696162f8d2a2beeca blacktwr.wad
+  258942    18eb4ffb3094ddb690e62211dc6169a1 bloodsea.wad
+  157529    33493942592d764e7787fb0ad7d03044 canyon.wad
+  151817    e7c273033376824edf95e1328261e7de catwalk.wad
+  141548    77c179948df47a7a613bd1181c959892 combine.wad
+  104654    cbf714b499ebdef2682990eaf93fdb5f fistula.wad
+  116403    f000701a3ed1f49249ee08550c03dfa5 garrison.wad
+  221009    a1efff02df6d873762ebac6b12358bbc geryon.wad
+  245444    787fa80fe9665c322f853b74838e77cc manor.wad
+  121406    b4eaf844b135cc2a0058c6e0149b4408 mephisto.wad
+  351712    aea597159dee96bcc58f3f9e3e586182 minos.wad
+  158514    46f58580e7792f486c747cf1117c4ca1 nessus.wad
+  223555    d560abb6d5719d46ebb47b27d7813a4b paradox.wad
+  105780    b572d518d564c7d7b6b259a726538cbb subspace.wad
+  127480    bb417f07804373415a6ed8e533242c3c subterra.wad
+  190531    65b4abcb74e7a386d5c024cf250d6336 teeth.wad
+  286220    8474f6d663f04630de05ecac36b574d1 ttrap.wad
+  235353    a49dccebb5f32307246b7f32da121cf7 vesperas.wad
+  171232    3c0874f2df3c06a002ee2a18aba0f0e8 virgil.wad
+ masterlevels doc:
+  doc: true
+  group_members: |
+   1581      b5d81e4014b0e41a977ad837be62015a attack.txt
+   4872      cd05ef340481c80dd866910fb61de078 blacktwr.txt
+   5349      9f55a86718e7d3a9d5e84b7f90391fdd bloodsea.txt
+   1585      62841b903a25efbbe07ba04629a472e1 canyon.txt
+   1280      77464c420be047460fdf01a927679e18 catwalk.txt
+   1239      30e17b85fb58f45bfd54076bca1d6c4f combine.txt
+   1280      055cb6078dc8c02d687a46cff0efdf99 fistula.txt
+   1193      c4804663d959554267e031f020f024a6 garrison.txt
+   2239      8b87125eef93282b724ebca5c2bf46b9 geryon.txt
+   2903      6f519312e20de7b6c16cab21c5b55fca manor.txt
+   4695      86c3aceb7990dea92923d42564503541 mephisto.txt
+   2631      61f54fe6c10b424e5238a0444c63306e minos.txt
+   3037      ddad20557f7c451253d6aaff9453814d nessus.txt
+   3174      37f0c991d4e74a158c9f9e6f824913e6 paradox.txt
+   1278      802bd4428c58001439879b9b5d684bff subspace.txt
+   1215      3497bfd39788d106b37bdfe107003625 subterra.txt
+   5190      d150006885a956f378b29a0fedde5dd7 teeth.txt
+   2734      7aa8fe8b34a8e1cc775c4510efba6dcd ttrap.txt
+   1697      9a6328c52b2436c3dabd79248afe5960 vesperas.txt
+   2813      e767d645de816a9d5411075d0d002a78 virgil.txt
 
 sha1sums: |
   7ec7652fcfce8ddc6e801839291f0e28ef1d5ae7  doom2.wad?1.9
