@@ -9,7 +9,6 @@ PYTHON := python3
 
 pkgdatadir := ${gamedatadir}/game-data-packager
 runtimedir := ${gamedatadir}/game-data-packager-runtime
-distro := $(shell lsb_release -si)
 PYFLAKES3 := $(shell if [ -x /usr/bin/pyflakes3 ] ;  then echo pyflakes3 ; \
                    elif [ -x /usr/bin/pyflakes3k ] ; then echo pyflakes3k ; \
                    elif [ -x /usr/bin/python3-pyflakes ] ; then echo python3-pyflakes ; \

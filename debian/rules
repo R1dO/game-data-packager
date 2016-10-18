@@ -12,7 +12,6 @@ include /usr/share/dpkg/pkg-info.mk
 options := \
 	BUILD_DATE="$$(dpkg-parsechangelog --show-field=Date)" \
 	bindir='/usr/games' \
-	distro=$(shell dpkg-vendor --query Vendor) \
 	gamedatadir='/usr/share/games' \
 	$(NULL)
 
