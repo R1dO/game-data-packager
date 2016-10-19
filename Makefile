@@ -125,7 +125,7 @@ $(png_from_svg): out/%.png: data/%.svg out/CACHEDIR.TAG
 $(svgz): out/%.svgz: out/%.svg
 	gzip -nc $< > $@
 
-out/quake.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+out/quake.svg: data/quake1+2.svg out/CACHEDIR.TAG
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake-256']" < $< > out/tmp/quake.svg
 	inkscape \
 		--export-area-page \
@@ -133,7 +133,7 @@ out/quake.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 		out/tmp/quake.svg
 	rm -f out/tmp/quake.svg
 
-out/quake-%.svg: out/tmp/recolour-%.svg Makefile out/CACHEDIR.TAG
+out/quake-%.svg: out/tmp/recolour-%.svg out/CACHEDIR.TAG
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake-256']" < $< > out/tmp/quake-$*.svg
 	inkscape \
 		--export-area-page \
@@ -141,7 +141,7 @@ out/quake-%.svg: out/tmp/recolour-%.svg Makefile out/CACHEDIR.TAG
 		out/tmp/quake-$*.svg
 	rm -f out/tmp/quake-$*.svg
 
-out/quake2.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+out/quake2.svg: data/quake1+2.svg out/CACHEDIR.TAG
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake2-256']" < $< > out/tmp/quake2.svg
 	inkscape \
 		--export-area-page \
@@ -149,7 +149,7 @@ out/quake2.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 		out/tmp/quake2.svg
 	rm -f out/tmp/quake2.svg
 
-out/quake4.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+out/quake4.svg: data/quake1+2.svg out/CACHEDIR.TAG
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake4-256']" < $< > out/tmp/quake4.svg
 	inkscape \
 		--export-area-page \
@@ -157,7 +157,7 @@ out/quake4.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 		out/tmp/quake4.svg
 	rm -f out/tmp/quake4.svg
 
-out/quake2-%.svg: out/tmp/recolour-%.svg Makefile out/CACHEDIR.TAG
+out/quake2-%.svg: out/tmp/recolour-%.svg out/CACHEDIR.TAG
 	xmlstarlet ed -d "//*[local-name() = 'g' and @inkscape:groupmode = 'layer' and @id != 'layer-quake2-256']" < $< > out/tmp/quake2-$*.svg
 	inkscape \
 		--export-area-page \
@@ -173,15 +173,15 @@ out/256/quake3-team-arena.png: data/quake3-teamarena-tango.xcf out/CACHEDIR.TAG
 	install -d out/256
 	xcf2png -o $@ $<
 
-out/48/quake3.png: out/256/quake3.png Makefile out/CACHEDIR.TAG
+out/48/quake3.png: out/256/quake3.png out/CACHEDIR.TAG
 	install -d out/48
 	convert -resize 48x48 $< $@
 
-out/48/quake3-team-arena.png: out/256/quake3-team-arena.png Makefile out/CACHEDIR.TAG
+out/48/quake3-team-arena.png: out/256/quake3-team-arena.png out/CACHEDIR.TAG
 	install -d out/48
 	convert -resize 48x48 $< $@
 
-out/tmp/recolour-dissolution.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+out/tmp/recolour-dissolution.svg: data/quake1+2.svg out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#c17d11/#999984/' \
 		-e 's/#d5b582/#dede95/' \
@@ -189,7 +189,7 @@ out/tmp/recolour-dissolution.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 		-e 's/#e9b96e/#dede95/' \
 		< $< > $@
 
-out/tmp/recolour-armagon.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+out/tmp/recolour-armagon.svg: data/quake1+2.svg out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#c17d11/#565248/' \
 		-e 's/#d5b582/#aba390/' \
@@ -197,7 +197,7 @@ out/tmp/recolour-armagon.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 		-e 's/#e9b96e/#aba390/' \
 		< $< > $@
 
-out/tmp/recolour-reckoning.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+out/tmp/recolour-reckoning.svg: data/quake1+2.svg out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#3a5a1e/#999984/' \
 		-e 's/#73ae3a/#eeeeec/' \
@@ -205,7 +205,7 @@ out/tmp/recolour-reckoning.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 		-e 's/#132601/#233436/' \
 		< $< > $@
 
-out/tmp/recolour-groundzero.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
+out/tmp/recolour-groundzero.svg: data/quake1+2.svg out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#3a5a1e/#ce5c00/' \
 		-e 's/#73ae3a/#fce94f/' \
