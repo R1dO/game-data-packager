@@ -181,7 +181,7 @@ out/48/quake3-team-arena.png: out/256/quake3-team-arena.png out/CACHEDIR.TAG
 	install -d out/48
 	convert -resize 48x48 $< $@
 
-out/tmp/recolour-dissolution.svg: data/quake1+2.svg out/CACHEDIR.TAG
+out/tmp/recolour-dissolution.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#c17d11/#999984/' \
 		-e 's/#d5b582/#dede95/' \
@@ -189,7 +189,7 @@ out/tmp/recolour-dissolution.svg: data/quake1+2.svg out/CACHEDIR.TAG
 		-e 's/#e9b96e/#dede95/' \
 		< $< > $@
 
-out/tmp/recolour-armagon.svg: data/quake1+2.svg out/CACHEDIR.TAG
+out/tmp/recolour-armagon.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#c17d11/#565248/' \
 		-e 's/#d5b582/#aba390/' \
@@ -197,7 +197,7 @@ out/tmp/recolour-armagon.svg: data/quake1+2.svg out/CACHEDIR.TAG
 		-e 's/#e9b96e/#aba390/' \
 		< $< > $@
 
-out/tmp/recolour-reckoning.svg: data/quake1+2.svg out/CACHEDIR.TAG
+out/tmp/recolour-reckoning.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#3a5a1e/#999984/' \
 		-e 's/#73ae3a/#eeeeec/' \
@@ -205,7 +205,7 @@ out/tmp/recolour-reckoning.svg: data/quake1+2.svg out/CACHEDIR.TAG
 		-e 's/#132601/#233436/' \
 		< $< > $@
 
-out/tmp/recolour-groundzero.svg: data/quake1+2.svg out/CACHEDIR.TAG
+out/tmp/recolour-groundzero.svg: data/quake1+2.svg Makefile out/CACHEDIR.TAG
 	install -d out/tmp
 	sed -e 's/#3a5a1e/#ce5c00/' \
 		-e 's/#73ae3a/#fce94f/' \
