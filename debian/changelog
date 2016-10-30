@@ -36,7 +36,7 @@ game-data-packager (46) experimental; urgency=medium
       [smcv]
     - quake*-server: add missing dependency on lsb-base 3.0-6 [smcv]
     - convert soltys.xpm to PNG for compatibility with ImageMagick 6.8,
-      fixing FTBFS with that version [smcv]
+      fixing FTBFS with that version (Closes: #842619) [smcv]
   * Internal changes:
     - switch to debhelper 10, no change needed [adetiste]
     - take over the quake family of binary packages from src:quake [smcv]
