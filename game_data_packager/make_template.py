@@ -551,7 +551,7 @@ class GameData(object):
                         logger.warning('unhandled data.tar entry type: %s: %s',
                             name, entry.type)
 
-        if self.plugin != 'scummvm_common':
+        if self.plugin != 'scummvm_common' and install_to is not None:
             self.package['install_to'] = os.path.join('/',
                     install_to).replace('/usr/share/games/', '$assets/')
         self.package['install'].sort()

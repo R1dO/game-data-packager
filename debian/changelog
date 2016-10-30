@@ -1,3 +1,11 @@
+game-data-packager (47) UNRELEASED; urgency=medium
+
+  * Enhancements and bug fixes:
+    - make-template: don't crash when unable to guess what $install_to
+      should have been. Regression in v46. (Closes: #841164)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 30 Oct 2016 22:19:21 +0000
+
 game-data-packager (46) experimental; urgency=medium
 
   * Support for new languages and versions:
