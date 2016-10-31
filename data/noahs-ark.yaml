@@ -83,6 +83,38 @@ files:
     - assets
     - noah3d.wad?1.3.2
 
+  noah3d-1.3.3_i386.deb:
+    unpack:
+      format: deb
+    provides:
+    - assets
+    - noah3d.wad?1.3.3
+    - noah3d.png
+
+  noah3d-1.3.3_amd64.deb:
+    unpack:
+      format: deb
+    provides:
+    - assets
+    - noah3d.wad?1.3.3
+    - noah3d.png
+
+  noah3d-1.3.3_32bit.msi:
+    unpack:
+      format: 7z
+      unpack: ['*.n3d', 'noah3d.wad']
+    provides:
+    - assets
+    - noah3d.wad?1.3.3
+
+  noah3d-1.3.3_64bit.msi:
+    unpack:
+      format: 7z
+      unpack: ['*.n3d', 'noah3d.wad']
+    provides:
+    - assets
+    - noah3d.wad?1.3.3
+
 groups:
  assets: |
   576       9c7e08401faf9c7d64e7ee7bceb6c9b8 audiohed.n3d
@@ -108,6 +140,11 @@ groups:
   16076800  66edb83e8ef78cfe3da58377e17ef695 noah3d-1.3.2_32bit.msi
   16490496  7303924c3a7e4620530a8a2588ae2706 noah3d-1.3.2_64bit.msi
 
+  15977556  037d825cdc42b7487d55f663b9d3baac noah3d-1.3.3_i386.deb
+  16030388  d7ba82eb7c4d3d7086660f743ca591ea noah3d-1.3.3_amd64.deb
+  16490496  a68b213629732c5fa973987a4002392e noah3d-1.3.3_32bit.msi
+  16519168  86d2d8d0d03bd4ba7a0348b5ff054a79 noah3d-1.3.3_64bit.msi
+
 sha1sums: |
   52b8724ffac3d575a92b6d7b0348db46231327ea  audiohed.n3d
   c52b0005bd0d3fc44b441b51184eb20497cd4d09  audiot.n3d
@@ -123,4 +160,9 @@ sha1sums: |
   84a70cbd02167843f13651540dcb248da1b436c6  noah3d-1.3.2_amd64.deb
   23504ae987b85e4e2cb0aab631216cd39a201a4f  noah3d-1.3.2_32bit.msi
   2b7419e3d3455febaaec2b1f464f07d338d7cd58  noah3d-1.3.2_64bit.msi
+
+  5861301df1bfb52fb4fb4cfe1f9161417a9238ee  noah3d-1.3.3_i386.deb
+  a173b0287dad0194184329e4016e5b85f31d8c60  noah3d-1.3.3_amd64.deb
+  54607bb1be6b8f85ba740c575f7ffa442501d072  noah3d-1.3.3_32bit.msi
+  43b3daec827333f3802ccbd80ac6919764f6fc7d  noah3d-1.3.3_64bit.msi
 ...
