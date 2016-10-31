@@ -1,0 +1,689 @@
+---
+franchise: Myst
+longname: Myst
+copyright: © 1993 Brøderbund
+plugin: scummvm_common
+engine: scummvm (>= 1.9.0)
+wiki: Myst
+
+packages:
+  myst-masterpiece-data:
+    longname: Myst Masterpiece Edition
+    copyright: © 2000 Brøderbund
+    gameid: myst-win
+    gog:
+      url: myst_masterpiece_edition
+    install:
+    - assets
+    doc:
+    - documentation
+
+files:
+  setup_myst_masterpiece_2.0.0.22.exe:
+    unpack:
+      format: innoextract
+    provides:
+    - assets
+    - documentation
+
+groups:
+  assets:
+    group_members: |
+      #451072    15dd90e12173d5b4ff114a99d480910b myst.exe
+      63780140  6e8e8bf36875eb11802305a9ca4d611e channel.dat
+      4870667   2a86351fb0356d4f27cc326691a64905 credits.dat
+      8796556   97abf592f1b0866f36d51ef7669a0d03 dunny.dat
+      1849077   975f25f52d9c8b8adc5670aeb6721fc2 help.dat
+      3161356   ff2970c658b610d308cab556d5dc40ee intro.dat
+      33073173  b30af8ec1b9146fa0f52a3307d2810b3 mechan.dat
+      74070233  519606400c9dd0c75515744e1685d282 myst.dat
+      69538999  206e00cc62565d24c186f5df4b60ce05 selen.dat
+      69459412  97b5aca390989c1337a4b3503f0705ef stone.dat
+
+      340234    9592f5fe58217846f7b66e48c64f9e5e qtw/channel/bridge.mov
+      892553    d95143337d5f0f2f1c2a5e3493561901 qtw/channel/holoalgh.mov
+      1594481   3c8a83e4e64042bb2dd776af79bb4b16 qtw/channel/holoamth.mov
+      734405    840200c290b4e31d6bc3ff6b2fa12aec qtw/channel/holoasir.mov
+      1923749   8ce5317fab7fb39b8ec3964b3f7ffe4c qtw/channel/holosmsg.mov
+      852981    6f169d7b6c96d54eda51439722dd4387 qtw/channel/monalgh.mov
+      1224725   c1e10ae5c388819ba87b707d7acb2cbe qtw/channel/monamth.mov
+      654941    dbc19d757d1f4cd1f29962e693aaf2cb qtw/channel/monasirs.mov
+      1827561   89283d04013f248b0be0ca834bd3aa9d qtw/channel/monsmsg.mov
+      213210    f4b5831c4510dfc0afc0b88a8e6de97a qtw/channel/mystlib.mov
+      31502     efe5678dc085408f1846982fb249aa4c qtw/channel/ph1naxl.mov
+      4658      8da5aa341cc28756a8273b1c768aae1f qtw/channel/ph1nup.mov
+      22741     ba5e5ae34e756d25708ccc51cc769b70 qtw/channel/ph1nupax.mov
+      59562     e041efa83987bb36162bd27c1a3373e4 qtw/channel/ph2naxl.mov
+      27582     2c023ea518d0456e07d2f7c1ecfdddb9 qtw/channel/ph4nwmil.mov
+      35790     5924289cd29bb8cfb83b92f1f68325c9 qtw/channel/ph5nup.mov
+      556566    e8b8d1a67b05cc3172e63f8faa2acdd8 qtw/channel/pipebrid.mov
+      21494     720a86c1cdd06095ba55c303312d6c99 qtw/channel/sirdskwm.mov
+      23950     7a2df7db922050e4f5783c279212b445 qtw/channel/sirwmill.mov
+      173245    ee4275c250486941c72cb22acbaf7bc4 qtw/channel/templalt.mov
+      59384     7e2a2db76f4a550a1c31d348a306db16 qtw/channel/v19ndoor.mov
+      12524     5d998eebf95da01c9e941b9a51feaa7b qtw/channel/v43ewmil.mov
+      3814      75f3218c5f047117a870105e08a54264 qtw/channel/v44ewmil.mov
+      33674     ec5e7c4927ceede7f6d08a7da4f5e193 qtw/channel/v45ewmil.mov
+      16942     f7483eda7be2e70794ec323bcc0b30cf qtw/channel/v8nwmil.mov
+      21774     0f56d11c4444a567195d86ac7c8072f1 qtw/channel/vh12nwm.mov
+      11330     1ac644375af5ae5a7fcc0e6be684b239 qtw/channel/vh8ewmil.mov
+      32046     7c8682fef7ac9def80fb0ec3a88ba218 qtw/channel/vs1dwmil.mov
+      258069    37089e8aac181e2ac51ace4459064d9e qtw/channel/welev1dn.mov
+      261209    2ab7f4e7e89fb15ba25c93afc3b0f056 qtw/channel/welev1up.mov
+      244973    d598bca99117596a392cc0067e701cea qtw/channel/welev2dn.mov
+      254113    02ed2d7eeb6dc00dd5d1dc7701f4ff32 qtw/channel/welev2up.mov
+      269493    96c8d1d0d4d710e08e0174ef93475938 qtw/channel/welev3dn.mov
+      261821    6a6303bb5bea77aace62e5b40bf74d8d qtw/channel/welev3up.mov
+      7912      1808d82ca74fbab6720587f2c73a958c qtw/channel2/wmill10n.mov
+      10598     7317fbe628481a754df1237fff831dd7 qtw/channel2/wmill11n.mov
+      9709      04b910e47e67d2e40a09e36c9807fb5b qtw/channel2/wmill14n.mov
+      6016      d9f117c1f4a5cde89b373168e6ab1543 qtw/channel2/wmill17n.mov
+      11600     25af7ba1e74cf73e95797056abb957ed qtw/channel2/wmill19n.mov
+      11825     67c011ef839f66151761f35a066e5644 qtw/channel2/wmill20n.mov
+      27486     7e67dfe5f0dbd2e9f90d2b80694360a7 qtw/channel2/wmill22n.mov
+      26066     3d87f007fd38ca1bc8a5b89a7a431e63 qtw/channel2/wmill24n.mov
+      23910     df4ff97c2be709f530f65675b5649be0 qtw/channel2/wmill28n.mov
+      27322     d18a8f59426a4c32fc484c197752270c qtw/channel2/wmill29n.mov
+      24090     14b3b0745ee5b27fc613e1abd1c3dfec qtw/channel2/wmill30n.mov
+      20286     28a2627fcec0ab5fafe219740fd91413 qtw/channel2/wmill31n.mov
+      10515     f67f52ea90db60ba9060dc8813bc593b qtw/channel2/wmill32n.mov
+      9828      9805f2a3ef0dc6959578e59a12958f77 qtw/channel2/wmill34n.mov
+      26610     1f9643ae35a3fe39149bc193163d95d4 qtw/channel2/wmill35n.mov
+      21390     50f0a09a2befbaf36fb335c9f84306a1 qtw/channel2/wmill36n.mov
+      21174     90d8b0bc03611d5ab86f4680a9913124 qtw/channel2/wmill38n.mov
+      24704     b6f88455b3a3d42ee23f7848aa16b40f qtw/channel2/wmill39n.mov
+      20858     565e0b6dadb7ffe89d837013a939626e qtw/channel2/wmill40n.mov
+      9173      1988ba2a02f54f5b40b9d4ecf5a6ad72 qtw/channel2/wmill45n.mov
+      19722     b5fd422f48d15394253d37d8f1e2fdc6 qtw/channel2/wmill47n.mov
+      6014      02f0db1c861670b92ab636676bb3cc1f qtw/channel2/wmill8n.mov
+      5393779   d5aaaba26993dbdafc60162e644333f5 qtw/channelwood flyby.mov
+      4041509   72f542dffd910b07aa318ff8bf8a21b0 qtw/dunny/atr1nopg.mov
+      3989677   0c34fbe8b9db632837c2b0d2b901e8b0 qtw/dunny/atr1page.mov
+      427063    8e75c6a3d4da162d61a9919d9eda15d8 qtw/dunny/atrleft.mov
+      871486    dbc89ae55f2835a246aa39ec0ade4f14 qtw/dunny/atrmid.mov
+      867494    d71adaf0fde56c129b1b3545be0edaad qtw/dunny/atrmidc.mov
+      1311709   741e6755457e529346ad6e7b5e679c10 qtw/dunny/atrmidc2.mov
+      361089    dd34eb4943d7ee75ab46272c0537ef09 qtw/dunny/atrmidfa.mov
+      1200906   2af04f3e24007920b2a849f8b80133ea qtw/dunny/atrrocks.mov
+      8847849   7ce153d16ae8a5e0b92030a00e32bf1b qtw/dunny/atrus2.mov
+      2489646   3514023acb6543be107b6b1514ef5e8a qtw/dunny/atrwrite.mov
+      213210    b30594658e2484e9b0b3b5ebbf0bbe58 qtw/dunny/mystlib.mov
+      2686559   899b1ecd0bddd73d5010ce359a5950fe qtw/intro/broder.mov
+      440533    69089e211e881298514fa2080a981edf qtw/intro/cyanlogo.mov
+      2184196   9653c6553df75a6568e30cba909e40fa qtw/intro/intro.mov
+      1443138   5ae73967dd1f7eb91cf0e31ddaf0b4b8 qtw/intro/intro2.mov
+      319366    8b362a20947c1a2bd46420123e216f27 qtw/mech/a_snake.mov
+      79749     e2a53c940e4c1d1218ccea07c6378e9b qtw/mech/birdcrnk.mov
+      316245    8efe78a3a896cccf33958c766605f80f qtw/mech/ewindow.mov
+      339962    6d671b6e329553766d71e96f8097b292 qtw/mech/hcelev.mov
+      183238    dc1fe1d98292dd67a3455ac2bafc745e qtw/mech/hcgears.mov
+      115242    0d58cba76611a3a75b023e027d65c176 qtw/mech/hhstairs.mov
+      651906    85883052ccac6331f2e60b3e94e4be4f qtw/mech/holo.mov
+      286838    7810112f8029e03c3c4db74671f864a8 qtw/mech/holoon.mov
+      216752    c0beac5e7acac7ee04e07a9953066a39 qtw/mech/lwrgear2.mov
+      18588     90d3a47551499200c80a0cba851d7ee5 qtw/mech/lwrgears.mov
+      213210    0b6254d85c0e98a954e6acb0dfcbe883 qtw/mech/mystlib.mov
+      146086    14224e8d5b0b809811575476ebd39740 qtw/mech/sstairs.mov
+      55818     4fe55f959059153a631340e1713007ec qtw/mech/s_bird.mov
+      1706729   13fa238a76df9c19f2da48eff04b12a2 qtw/myst/aextra.mov
+      9050521   7f0e33f669ea0822b4576bc8719f07c9 qtw/myst/alose.mov
+      1339901   2d3eebc844eeddf609ea72385af16e0d qtw/myst/apage0.mov
+      4207017   14b4d98e025f23c66823fb668ac9510e qtw/myst/apage1.mov
+      5574221   cf043cc29ecee547fdcf93d5eee87ad6 qtw/myst/apage2.mov
+      7422021   f2c17dc9f2d538931d34e85816011b52 qtw/myst/apage3.mov
+      7272317   b98c11695c5478087bde201329709024 qtw/myst/apage4.mov
+      15094509  42bb77b73374fa9f84e675f9cd0b2130 qtw/myst/apage5.mov
+      14816621  51d16a337e5e0f5e9ddb37ba8fa7eb90 qtw/myst/atrusbk1.mov
+      1231637   6ff08f0f3717705c19214f5c159bea0c qtw/myst/atrusbk2.mov
+      75094     e2cde0959ac61556066f1c4f60343d32 qtw/myst/birds1.mov
+      106410    18b8450e45b1713b01e08686717d6345 qtw/myst/birds2.mov
+      106184    abbeef70ed187f600f4b92bbbd262e57 qtw/myst/birds3.mov
+      20667     63cfd897a948c669c602809fc438469e qtw/myst/cabcgfar.mov
+      72190     ac0fb49d55ce0ccad81aed552c5c9798 qtw/myst/cabfire.mov
+      40578     9a6045a2d008820473241a7116871c9d qtw/myst/cabfirfr.mov
+      42219     d26f23bc6a9e7713b7ce387739aa4343 qtw/myst/cabingau.mov
+      38014     5ee68fc1e7b5ae49403b934b290fc856 qtw/myst/cl1wg1.mov
+      36714     31d24ac02f0ee76f09b9b6ae7d05dcc2 qtw/myst/cl1wg2.mov
+      35674     afc6ea49fc44585c91ac6fb3fc982469 qtw/myst/cl1wg3.mov
+      93094     625f488e3ea5a392ddf704011262c8df qtw/myst/cl1wggat.mov
+      107614    1f1c148270cc946919f8d2cb2388e707 qtw/myst/cl1wlfch.mov
+      1059086   ee8c5e40af39d7b369055cf1adc494d3 qtw/myst/flychan.mov
+      1330086   9a6a924d16ec817f39855e092fe37eb3 qtw/myst/flygear.mov
+      3131770   c024e837f62b0417b5dec5772dfefd30 qtw/myst/flystone.mov
+      456641    32b1dceb8d2ec9fef2c1a94907f3b92b qtw/myst/fpin.mov
+      438289    60b12b0ec182b2a0d462387dbf55a935 qtw/myst/fpout.mov
+      896238    1ecb46646e5add33fc06f4258d8b8b47 qtw/myst/gar4wbf1.mov
+      896366    7ac7139b0236bd8ce911249de70788a4 qtw/myst/gar4wbf2.mov
+      147722    ecc2e8b74af88b8b490488250cd1eb71 qtw/myst/gears.mov
+      919649    4651f08efb93e762035a2902034dd1cb qtw/myst/libdown.mov
+      473026    df293d102b803ece7aef691091e144e3 qtw/myst/libelev.mov
+      97326     15b8c35294a85ab764a1067a5282ac3c qtw/myst/libtwirl.mov
+      178409    2968813f46a437866600417fe244061c qtw/myst/libtwist.mov
+      722593    d9d558aabf9117e920b06be3de9e80d1 qtw/myst/libup.mov
+      176626    9f780611035b815804892fec96caadf3 qtw/myst/lstrsdwn.mov
+      178242    fdb2161a6be273097b0ee2f0bc6ae8f6 qtw/myst/lstrsup.mov
+      752370    daf89b1b558e76c739eb156e87dd2d27 qtw/myst/selenbok.mov
+      2258397   9a68d6697288da4a162452a1a46ebb92 qtw/myst/sextra.mov
+      8997605   8210c0d7dd140412889bfe1c315b8ad7 qtw/myst/slose.mov
+      768861    f35aaa4c5ee54a529f62a4e56234b9a3 qtw/myst/spage0.mov
+      4433161   b42c0f6b189e91bf9688efb234fc61f3 qtw/myst/spage1.mov
+      7236785   3e6f18d51accae2f4a74f6d5264c966c qtw/myst/spage2.mov
+      8464721   56aadd32b2bab8d3f56eb575688c1c1a qtw/myst/spage3.mov
+      9179537   1906387a60a0858f77c16c8e671123e9 qtw/myst/spage4.mov
+      18639397  f4ee87b18a1563065d70578411acf70b qtw/myst/spage5.mov
+      11641     5a481284e6cca78e1f3e4539dc695309 qtw/myst/vlt1watr.mov
+      14276     02df335de47c36fc539304d0d8bed896 qtw/myst/vlt2watr.mov
+      29186     b7fd9c30b88090cdf626a6d202e1de20 qtw/myst/vlt3watr.mov
+      66385     0420e61c0e6928293dde2ac464a1b129 qtw/myst/vlt4watr.mov
+      37628     f52e0fd38dcf3e05290ba21a7386557d qtw/myst/vlt5watr.mov
+      3548781   2393258c2d9a70accdd4216f5e8799b9 qtw/myst/vltatrus.mov
+      251898    263d26f6747ade9dd41c1c1de1872448 qtw/myst/vltblnk.mov
+      1590530   98b15afa1e2f5c6e740747f0255e0c7e qtw/myst/vltmntn.mov
+      623606    e8b1290904a1ca00c8f241d604afde28 qtw/myst/vltmrkr.mov
+      874570    c9be2374f1a6955087d0ff793ed59182 qtw/myst/vltwater.mov
+      4895951   2818e18598f1e3f114804fa91bcc2190 qtw/mech age flyby.mov
+      4847123   2126481e5e6c300ba467dbe3cfbeaf54 qtw/myst flyby.mov
+      1642181   54a52ea21b98964c759108fa84ea643c qtw/selen/backa1.mov
+      1772489   ab697cff005996845a814efafa9ffb73 qtw/selen/backe1.mov
+      819813    107fc2fc7136b3d377ebe7a63c86c18b qtw/selen/backf0.mov
+      979869    7dcdb1345eb349b23d357dd7448024e6 qtw/selen/backf1.mov
+      1809473   f5706033038440d7a5e2cadb27a87972 qtw/selen/backl0.mov
+      1805421   c6159e866cee99c00678dda73bd0c877 qtw/selen/backl1.mov
+      1316977   5699034c33bbfbefd9b16efde7934cb9 qtw/selen/backo0.mov
+      1310269   94846e72affe3e880164c48b1c757775 qtw/selen/backo1.mov
+      1312093   7a9da2ad86065b1286bfe5c76151a32b qtw/selen/backp0.mov
+      1303361   5607c4e31a734e68a91f52ca001a053c qtw/selen/backp1.mov
+      1810457   fd7066766950a837f816da2757928fba qtw/selen/backr0.mov
+      1806405   92798a2278b7d6232f8309efaccac2e7 qtw/selen/backr1.mov
+      1479661   a2bacf4b7a41ad18e46c1210a57a16f0 qtw/selen/backs0.mov
+      1475609   5c33daf884dcebafd7a85897e1c00b26 qtw/selen/backs1.mov
+      134078    aced04d05483301af810940b7be5a5f4 qtw/selen/calnorth.mov
+      123150    2f4b4ff58fddb6c561510a2efaa84d3d qtw/selen/calsouth.mov
+      1644473   d2799b924d6e6fd1410b89fb8e88d8b1 qtw/selen/forwa1.mov
+      1778133   80f3996c3a35c81cf098f6f664212f5a qtw/selen/forwe0.mov
+      819829    4f3810548557083128fde5d7eccaa32b qtw/selen/forwf0.mov
+      981497    b51efdf99b597cf07d4a919feed59dba qtw/selen/forwf1.mov
+      1810117   e849d8070be20fe1017eaae996007a0f qtw/selen/forwl0.mov
+      1802265   4966188eae2a8a0151b22888cee97b10 qtw/selen/forwl1.mov
+      1314277   8e31ee388ed11ebc0242c71c4ed88e01 qtw/selen/forwo0.mov
+      1310821   2ea88e5a5a8254eb47109f6db917fbf8 qtw/selen/forwo1.mov
+      1306757   f59b1d4211782d311cfe5d97f65b8280 qtw/selen/forwp0.mov
+      1303401   169b575852cd0d1ea695ae2b7527baee qtw/selen/forwp1.mov
+      1812649   c11888b366670e7194b5642dd7731a50 qtw/selen/forwr0.mov
+      1804797   d1b7b3400ec6b84b5eeed63d84330233 qtw/selen/forwr1.mov
+      1477449   8ec6529f961247842ca8a9e59ca0cf3e qtw/selen/forws0.mov
+      1474005   0512f045fadde8f7edd207d1b6771170 qtw/selen/forws1.mov
+      298678    4a2fbcd4d3752730e8de4e983536ad0b qtw/selen/fountn.mov
+      145517    0cc7cb3fe631e6c628f95b20730e624b qtw/selen/left00.mov
+      144109    e9504e1a3ce2ccd0d6d068a9fd51e8ae qtw/selen/left01.mov
+      148649    a0a69ee8665d827f58b8e519b7ce333d qtw/selen/left10.mov
+      154245    4b0cecabaf0debdaf2f93dcaa57aeeb0 qtw/selen/left11.mov
+      1601252   c0b10c4f4de0110c8ce3293b158d1f87 qtw/selen/mystlib.mov
+      150101    b484639d16f902c8f9cf5fb4159287c0 qtw/selen/right00.mov
+      148425    54b09422ef42201f04f9cc3b3214dcca qtw/selen/right01.mov
+      156193    020875e23394a62d0f4b16ca06f3ef92 qtw/selen/right10.mov
+      142305    c577eaccc0fb74d465b5af7a6e3e76c8 qtw/selen/right11.mov
+      254974    6b82288184fa9435f020562118a8a5f9 qtw/stone/achholo.mov
+      186410    1124da0f53af508f335e0e3dfc093e26 qtw/stone/acholocn.mov
+      683822    98b1c44ed475cab8756690a07c1b9d26 qtw/stone/bkroom.mov
+      55890     19bdeac82e4311dab5ad5775ec94653f qtw/stone/generatr.mov
+      59581     9949418ec43afc619998093cf47122e7 qtw/stone/key.mov
+      198932    f64347a58be6c4b27b18c8caa91d8549 qtw/stone/keychest.mov
+      60974     3b5ee6da31473dd69ab0821f61b7d695 qtw/stone/keydry.mov
+      34170     e8b89ef00c43eaa28fb1f4433f9bde64 qtw/stone/ligspig.mov
+      213210    e1822e911fc66b03a94fb2d82c0bf897 qtw/stone/mystlib.mov
+      50974     8651c3ebabde7d10e02074eb49e65da1 qtw/stone/openloc.mov
+      116706    b84b04d498d69a2bb98ef8292e5fec16 qtw/stone/sirsdsk.mov
+      146930    b5d269a7f390e3e72f0b6d2c12be5360 qtw/stone/sirsphee.mov
+      301638    e4c156aa666adaf8f911ba9a01d5f87f qtw/stone/sirsphww.mov
+      406637    c6838607202c1be7a581b853fa78b06f qtw/stone/tunadown.mov
+      320965    af19f0ff6becdd3d3baec5cf01702e7e qtw/stone/tunaup.mov
+      233121    a93347db9751ebba7f853ba28b21cf54 qtw/stone/tuncdown.mov
+      313397    b380bef8fb87c2d80dced7f2b8531236 qtw/stone/tuncup.mov
+      6168391   fe88ecf948d46d6f383f33c170d87ca1 qtw/selenitic flyby.mov
+      5366159   2ccc7043698c7624455c76cbfd0d2567 qtw/stoneship flyby.mov
+
+  documentation:
+    doc: true
+    group_members: |
+      592448    0976a2caa6375e0bb24b8468e62906fa manual.pdf
+
+  archives:
+    group_members: |
+      430463248 e7a979dc6ca044eaec2984877ac032c5 setup_myst_masterpiece_2.0.0.22.exe
+
+sha1sums: |
+  #2c3697678bfdbe655d2ad6c574044cde0ad6e977 myst.exe
+  73c6a0dda40de8781d371e26d5da440b8a934eae channel.dat
+  35827d484e692a51238107d6bf1515cf1843fb0e credits.dat
+  d139869e95fc7c3ccf13f3a5aa26bf357ac0a7bc dunny.dat
+  a84875186604e688e582b80dfbf6b6a25f2ae775 help.dat
+  e24227594b5dcb62b23d5fedbab182b02d1286aa intro.dat
+  66421eb1e5b167407d24afb35efc5864d1d341f1 mechan.dat
+  0e317fb947bbbc9b56555713be50396658791fc7 myst.dat
+  b37771ab14f2e83f87d5daf643f8f0381fd3aad1 selen.dat
+  b0636f5bd6ca40324dc5d7e77f2466ce1cbbb0bf stone.dat
+
+  ce44a5ef031367e7a7414cbf322ba6628629e026 qtw/channel/bridge.mov
+  4a7ebd9854016880ada71d47f41b387efca3f8f3 qtw/channel/holoalgh.mov
+  f72a4b0a2217e094c404352771d5e04b971ba33a qtw/channel/holoamth.mov
+  85afaeb936319579e827d6015099b5637b8f3fac qtw/channel/holoasir.mov
+  6d518f63b029c02411613f4b861871c64fb9222a qtw/channel/holosmsg.mov
+  41a1e92ddef544f5ff96d87d185687d4179892fd qtw/channel/monalgh.mov
+  149dbbc1be555a2e0c3d9117bd06a79b088cc776 qtw/channel/monamth.mov
+  ce30b0c722d24d0f444014be673d3e7be2043549 qtw/channel/monasirs.mov
+  0d240d81df3c6efa3e9280621fec6d32eec97c0c qtw/channel/monsmsg.mov
+  7a59c4f2a9858328a8071ecf2b50cc6b23529e31 qtw/channel/mystlib.mov
+  a8b3e5be75daa2565750d8417246ada23af1034c qtw/channel/ph1naxl.mov
+  08794cbf77ff42c715a974a57d2609d00b3ffe04 qtw/channel/ph1nup.mov
+  867ca03748793ef7252afc9f978acd690505d054 qtw/channel/ph1nupax.mov
+  22ab9afbf09a4aa1922d443a63e09f4e3a56521a qtw/channel/ph2naxl.mov
+  b27895633f5f5a44a6b3f8657f915ad1ae3d3078 qtw/channel/ph4nwmil.mov
+  b4b1ee5fb7acdcee7a2b917110122fbd08fff3ab qtw/channel/ph5nup.mov
+  574225aff579bd65337c64e99fd2712a1ef2518e qtw/channel/pipebrid.mov
+  e44d779eb534723473fa68a2d40dd0d24ccf064e qtw/channel/sirdskwm.mov
+  0ef66f02260b1dbe752f92b93fc7591eddc2067a qtw/channel/sirwmill.mov
+  26f8e01a84c3ba2b41d174ac983342911fc0400e qtw/channel/templalt.mov
+  305b470686eff378b6128b487d29f92080d9afec qtw/channel/v19ndoor.mov
+  e02c8d3bed8b5dd31da63b5cce99c38ba46b3063 qtw/channel/v43ewmil.mov
+  dfd42641828adeb6fa3a78b58d54729173d93ec2 qtw/channel/v44ewmil.mov
+  cf648bc47a1effef2b0352eb8bfe934a5152033d qtw/channel/v45ewmil.mov
+  f15e3a0be311a1aa257f522372563a64330e49e6 qtw/channel/v8nwmil.mov
+  22e529d157a644742b2a992de20a7427b7c537c1 qtw/channel/vh12nwm.mov
+  c2c0f6306d9c7a5e1cff866b82e058e13d21a401 qtw/channel/vh8ewmil.mov
+  bbe9f1b080a56d21c994949dc5f04882ae909f71 qtw/channel/vs1dwmil.mov
+  660cc36450eb68ac9cb96b3b8960c92b7c5dd224 qtw/channel/welev1dn.mov
+  e8924f273c766f7a75274e399c1ba04a0d902527 qtw/channel/welev1up.mov
+  c6f06d126c44181c17297fa9bfdcf982a05d3650 qtw/channel/welev2dn.mov
+  a152b0121667da451b0a3336dec143c1beab14cf qtw/channel/welev2up.mov
+  48c094f48260b975a88b056d3f470dbd3f9c19ea qtw/channel/welev3dn.mov
+  5c3b13079bc81ae1351c777a65a279fa151c9cec qtw/channel/welev3up.mov
+  8f95fa3e8b7a22a8d9bea7f4bf38e4321884a308 qtw/channel2/wmill10n.mov
+  7952f4ae399fc6716ca5f304cf84dc68135ce8ab qtw/channel2/wmill11n.mov
+  78fb0945a63124eb86d5f069c186a6e93c12a73a qtw/channel2/wmill14n.mov
+  f9c3606f0a0d613cba8e83ad0630295ca822f644 qtw/channel2/wmill17n.mov
+  33bd18596feaf3adbb45b449b8b83948b3b0693a qtw/channel2/wmill19n.mov
+  d23f2e4f93342a8ab40121d3dab49a10b7f5cc13 qtw/channel2/wmill20n.mov
+  303e76bf1e3d5c40b56f72eb7c4f03cf9f921259 qtw/channel2/wmill22n.mov
+  69fd841d89c579b3120665ad75d285506e2601c1 qtw/channel2/wmill24n.mov
+  0418ac627544adfefb122803250444ae8401ed0f qtw/channel2/wmill28n.mov
+  f96e449320f2d8fc4fb49284a9c6d6007ceb794a qtw/channel2/wmill29n.mov
+  ca9c456921b8884b5d5a46ed005d9a571d4869b0 qtw/channel2/wmill30n.mov
+  37a7f482e5abf43d193afa03b5b5116faf27bfea qtw/channel2/wmill31n.mov
+  28248e8028ec3869c059cfd29f8b14aceb2b6542 qtw/channel2/wmill32n.mov
+  9f9d8cb32f8895319a6193ec3293c1b3dd57f16d qtw/channel2/wmill34n.mov
+  a83b10346e0362a15ae366fb7b83a501619a1087 qtw/channel2/wmill35n.mov
+  6e6511e04c34ba0d1e52189f42d728eeaa75b9ce qtw/channel2/wmill36n.mov
+  1cc353aaa2c6126535d38267ae5c489382278b9c qtw/channel2/wmill38n.mov
+  965d6b7e0121d0e73abd73e115166e1d77cc0355 qtw/channel2/wmill39n.mov
+  0fd58eb52539655d9e2d86b6e35c02be402f09d7 qtw/channel2/wmill40n.mov
+  8f98df6e5568d417c7ae132ba8dce1e039902e16 qtw/channel2/wmill45n.mov
+  a70083a87145a1744fb6e2eccbae5453fec60939 qtw/channel2/wmill47n.mov
+  06b3f1e8bde480dda3eae37954181c3aa5a00b84 qtw/channel2/wmill8n.mov
+  e8f0068687e9aa6d31cc23d4c9b9777fc0744924 qtw/channelwood flyby.mov
+  75be1df8a3fea11c9a1c830e72e4de255018b1ca qtw/dunny/atr1nopg.mov
+  09b112e06fe54fe7171d1b0b33fd244556240785 qtw/dunny/atr1page.mov
+  6950441b6b3450c17ca2fe8e5d6458cc1d189236 qtw/dunny/atrleft.mov
+  35aeaa0d2d4f214dd056e99febbca5a1ba2788b8 qtw/dunny/atrmid.mov
+  979c431699d712b6356f15f2f60672029b671934 qtw/dunny/atrmidc.mov
+  d81727990429080b1eecc73ecec81a29793ca5e2 qtw/dunny/atrmidc2.mov
+  a05ca63e5ae634f08621a7a090c3c216d89f7017 qtw/dunny/atrmidfa.mov
+  5b4c9646476bdf32ff7fab44ea74077cc752ed35 qtw/dunny/atrrocks.mov
+  224893bfcb9d1650d09d2f844cf8db957803a2f7 qtw/dunny/atrus2.mov
+  d9a556c5f18b72a34e41a4ca5b7a1cd8e699c08b qtw/dunny/atrwrite.mov
+  a2a9df36cbc1a9f5d48568b33e13ea684fbcd4a5 qtw/dunny/mystlib.mov
+  919d970e60f6015a0db24957c3d4b1678fd2fad6 qtw/intro/broder.mov
+  44844a4f63f5367686010eb2f55a2962d2ab3af0 qtw/intro/cyanlogo.mov
+  021936574753be069dc7c110ce18506b16776994 qtw/intro/intro.mov
+  8f783fd685291053b7ceaae148ae24de7b1ed8ec qtw/intro/intro2.mov
+  7c863aa5667b1ad519e4fb712959da9ab733a310 qtw/mech/a_snake.mov
+  107849cd7d79e6bfe8196c68dd5d5a596ecb9988 qtw/mech/birdcrnk.mov
+  bac55640b70a2cd2f65ddacf3de6da9446ac0b35 qtw/mech/ewindow.mov
+  4e4f0afcca8a5882cc6b4d37d32dbbb5cbc3dbe6 qtw/mech/hcelev.mov
+  93770a393d43263d6058cc260809fa195d45d8fc qtw/mech/hcgears.mov
+  38ee35a56c54041e8038fdce9b69de8ad398a917 qtw/mech/hhstairs.mov
+  644df17c103b84d9938d8ced7f2e4cfc94207dc8 qtw/mech/holo.mov
+  ddc197cfa75a4f04361c413ee1d55e9f249686ac qtw/mech/holoon.mov
+  cbeee54e191864eea3c02cdd5206304c54e05be4 qtw/mech/lwrgear2.mov
+  ac61c1f1dc4d2bcb4e55ec9bbdfd8ad062339575 qtw/mech/lwrgears.mov
+  229182c9f7df92dd54b4201078004eb02bac6d1f qtw/mech/mystlib.mov
+  e9d4fc2fc0da2af7d71a190f0881c08f68a6fce6 qtw/mech/sstairs.mov
+  e7c9bd243aa195a6e11021f1c0ef0b0e7a12110f qtw/mech/s_bird.mov
+  9b314aeab1530a26f172ac9dea8794a732398151 qtw/myst/aextra.mov
+  dadb03390d83745272326ff6746da6f9685af1ac qtw/myst/alose.mov
+  4e46fd7b13b21bedf9ef02c140918a25c3d6c49a qtw/myst/apage0.mov
+  6bd7294f899e2bc578de985986fdd800160b5ab6 qtw/myst/apage1.mov
+  6e9f9c9cdd51edcbce7122749ebdb0934957fab5 qtw/myst/apage2.mov
+  b5aa04212dbf0281d3d9cb29d533dbed98898b90 qtw/myst/apage3.mov
+  58819aabce04b954a925e2182f657f4cfe503627 qtw/myst/apage4.mov
+  c1a7814aa44dae0e186ee0787ab959742135735a qtw/myst/apage5.mov
+  d119854bbdf1bc1abfb37b0cf2da42140f911058 qtw/myst/atrusbk1.mov
+  10bf9b4559b8a8609bfc410301afd818699c4f74 qtw/myst/atrusbk2.mov
+  79865cc22f6e0c6ba0db4f128fd760ce1fcac3f9 qtw/myst/birds1.mov
+  668347a822e77267e969acaf0c1333bc468dc7b1 qtw/myst/birds2.mov
+  62d9137dcb63c5593db7cf303dd5aed8d9b9c5bf qtw/myst/birds3.mov
+  61d46c5600ca6b20b646c95a4b69be4b15208429 qtw/myst/cabcgfar.mov
+  0a45bd31f1dcb68a54d72d7d453e8930974975fc qtw/myst/cabfire.mov
+  0083957c3b939c48663fcf4a08a471310241beac qtw/myst/cabfirfr.mov
+  c640ce6ab81c9b9e4cfa6cba77c1cb4e285ff4e0 qtw/myst/cabingau.mov
+  ffa3128ac330defcb0454cdf1f8d4f874825ab9f qtw/myst/cl1wg1.mov
+  9bf8aefc02be2aa5ac4f2b4d310748c5f776cbc8 qtw/myst/cl1wg2.mov
+  669fc55a013322500b906e56a3e6a2caa995a094 qtw/myst/cl1wg3.mov
+  2f6c03d9a810cb9ab45fd764059404e558337da3 qtw/myst/cl1wggat.mov
+  9dfbb711282a765dc97682562a9fbac4eb93836a qtw/myst/cl1wlfch.mov
+  2ad5c2acf2596fac95eccab662e79165bfd199ab qtw/myst/flychan.mov
+  8d89ed957b1ba177fa828e5c929f7501f43cc7ff qtw/myst/flygear.mov
+  2e00a8094e42e994a4c5b100e09449882b0a80ef qtw/myst/flystone.mov
+  763e499d2474530c51bbb910dccfacb73f6880e8 qtw/myst/fpin.mov
+  a787840baf7ec875d6c929a2411219a639e020b5 qtw/myst/fpout.mov
+  60caadcdc29c7c2b0694372a94abf1cda5036fe1 qtw/myst/gar4wbf1.mov
+  60e14806acae6092318e1d4e4e1dea59b1b56d1f qtw/myst/gar4wbf2.mov
+  600da32e885ca41ec0fc9b7ca400525bcd7332f8 qtw/myst/gears.mov
+  c603b61dda26984be808a3b79e9fc3fc010046ba qtw/myst/libdown.mov
+  faf486ec0259fa25b0a1a70a1a556e4fae08b5c8 qtw/myst/libelev.mov
+  637afc49513790d9ca38d1c1593e9678ffadb8ee qtw/myst/libtwirl.mov
+  b021ef126ca8590f77c4d26e3364198c9c92a505 qtw/myst/libtwist.mov
+  97c12871545ec62ac19984989d0f12120d1bdf28 qtw/myst/libup.mov
+  7ce3cb2e708297dd8edfb9b948d7e1720b012799 qtw/myst/lstrsdwn.mov
+  67c6cef33f531da231ccc88c7e386bba7cda308b qtw/myst/lstrsup.mov
+  a09ed814bfb1d954b5068b4e7c4e99f2825bf43d qtw/myst/selenbok.mov
+  25445c97ebffbce998f3e13658a74846f116cbac qtw/myst/sextra.mov
+  28409a323404ddcf861f3136c99489bcc6143c08 qtw/myst/slose.mov
+  cf62faedafbf0db1b73fee5f75e1e15d90b4643d qtw/myst/spage0.mov
+  c193ff25d5413d1965924153fd60221e20375e84 qtw/myst/spage1.mov
+  cd3b45bf818cf83192d27c86f4a99adecda6ab3c qtw/myst/spage2.mov
+  14c21c27cffd129253d28a8c2ea4abc7cd8cc882 qtw/myst/spage3.mov
+  fbfae288098351e132a9a070f7b2af606f173f6b qtw/myst/spage4.mov
+  32633ca735881410de2a04ef24b61ce110372ff1 qtw/myst/spage5.mov
+  1bb17c78f331ca55187fdab000858c09b645ca27 qtw/myst/vlt1watr.mov
+  b00b97e6ef21096c63fdb6f580ebe9e4b3dff8fb qtw/myst/vlt2watr.mov
+  9273f496fa946398935f16aff45b87e6f17ca380 qtw/myst/vlt3watr.mov
+  98a0a951e9c1e8cd879663d0a21dfbff585c207c qtw/myst/vlt4watr.mov
+  bac0aab64ff7634c7c4888a810211b103bb07259 qtw/myst/vlt5watr.mov
+  dae81aa8868710bf23b68f5c0be88fbfa87973fa qtw/myst/vltatrus.mov
+  c0e40dadcbadcfb2cda7263f294fc26e0cf101b1 qtw/myst/vltblnk.mov
+  4b251af28f6ae28190fb04c147f1338c51bfa262 qtw/myst/vltmntn.mov
+  f4cba7a5cb2bb35b05b1503ffdb5c8ef5e96b830 qtw/myst/vltmrkr.mov
+  ff45661625c6254036ea9ec9452f76921adf0b40 qtw/myst/vltwater.mov
+  c518af80a5e269fb3f78e493f2aa6cc754da21c7 qtw/mech age flyby.mov
+  10fbda945e2a36506ba415919cfb04a87ba5e31a qtw/myst flyby.mov
+  5c720f53dc9e614f806144adaa83c6e9473e33cf qtw/selen/backa1.mov
+  6c8dfa8fd63c54908401ee6b2024dfcaf88c31f4 qtw/selen/backe1.mov
+  e19b69992ae67a549fb636793894b6370b606a83 qtw/selen/backf0.mov
+  8ca8cc344ad54f9ff31e26822ce6a51a640569ed qtw/selen/backf1.mov
+  0f140e27532d1c1b4f53275f70246f13bdb757a1 qtw/selen/backl0.mov
+  6ed52dba891835c233fabfa03d1e8409a9c8a430 qtw/selen/backl1.mov
+  86dfd9eeaa0e08378e5a1239a6529bf91c55abaa qtw/selen/backo0.mov
+  2ded219e3da3e396dde51743b6ca25c4146f32e4 qtw/selen/backo1.mov
+  72119fbef68e2c7ac6e5d9443d530a34bce0e03c qtw/selen/backp0.mov
+  b1ad504740e264f0f68e57e61eae6038f027ac56 qtw/selen/backp1.mov
+  a2d0aa89e329031946ed1bdcd9d9ebe7183e05a0 qtw/selen/backr0.mov
+  8e82e68ee5d8d93f4eb9c5efd334bbc63b81ddb9 qtw/selen/backr1.mov
+  572c2f28f1753bb27bc70e2eb430416709d608e8 qtw/selen/backs0.mov
+  4a9873b9952267a2a229d1ec3a294dfb5364e8df qtw/selen/backs1.mov
+  a9ae47eaff1946d64395d7dbbc39282b15effb17 qtw/selen/calnorth.mov
+  4189f2304c3d90aa954645d4978b8651342f2f19 qtw/selen/calsouth.mov
+  5a029fc8d230d6e5e8b623f4846b0051b6daa62b qtw/selen/forwa1.mov
+  6e4eb1d925a8e1abb169cc759568ebd3daa38961 qtw/selen/forwe0.mov
+  fe383bf2056e78dcaf00bd5d9bc3ac925b963767 qtw/selen/forwf0.mov
+  847865cd87d1747f9589d596762ceba117654854 qtw/selen/forwf1.mov
+  d1b919be46933fe39adc689f6e2f9104e95d46c2 qtw/selen/forwl0.mov
+  84bf4eca262c191d8e169dc1e11bd5880aa51226 qtw/selen/forwl1.mov
+  191b8f12b55a71fba0a750cee93ed018447f531a qtw/selen/forwo0.mov
+  822f42bf27c5004519c6d3c922109890726b5b49 qtw/selen/forwo1.mov
+  5d6b3b94bd899865aa00971bf7fa1b07b661ee23 qtw/selen/forwp0.mov
+  2c3fefb9575d30f96a16090312a55bb37ed39085 qtw/selen/forwp1.mov
+  407c741868e3fdcb2ce0b52536437f2fe985a8ff qtw/selen/forwr0.mov
+  10cda62c99531389b058a87ad9d2828e4b311130 qtw/selen/forwr1.mov
+  44278542a2279634b3ea4fbacfffc07c1a15b65e qtw/selen/forws0.mov
+  4454cda2785f05c518f419120194c39897beb94b qtw/selen/forws1.mov
+  6095253868b3b5d8e30fe0324eed86a03be5471d qtw/selen/fountn.mov
+  e7222e22746a1b05d1978b1c7afca0510e9919d7 qtw/selen/left00.mov
+  fbb3e075636125ab70af2e43a9b37e3fa6ff0892 qtw/selen/left01.mov
+  04ff16154ac3d2476c0acd1c8d79b4e00cb2782b qtw/selen/left10.mov
+  0797c4b32a6c2c0501d94237d818d181e1833b95 qtw/selen/left11.mov
+  9c5b7583092b128b4a21db510708e8c1a357d8b2 qtw/selen/mystlib.mov
+  c01c6d31c9fe697f5947e250f39f5583b9fcf3ce qtw/selen/right00.mov
+  7a0959b5be4ec65a5080aa1593b0a920066bf5c4 qtw/selen/right01.mov
+  dd47459fdf77b0a9e1f1f71dbaef43d8c54757e0 qtw/selen/right10.mov
+  a029ff0eff17b3f853332c29d9864ecebed5ae1c qtw/selen/right11.mov
+  92a6a61348fe464ce7d51cd27fec1a524526426b qtw/stone/achholo.mov
+  e352873831d5da0fbcea34d7f1e9f4532a2e357a qtw/stone/acholocn.mov
+  4f3818fdcf36e645ecf34282b57490bd3cccb8d8 qtw/stone/bkroom.mov
+  e33653151d26f178ef9f447ddcbef533bc6bbaac qtw/stone/generatr.mov
+  9f003bb3daf5bbf4c700628e6c7946afdefda86d qtw/stone/key.mov
+  8eb29f56a68f4bb57df919cf06f62422c9043352 qtw/stone/keychest.mov
+  90a373b6e07e95e568be3b4a9fcd17dc884e6b18 qtw/stone/keydry.mov
+  a305ea86c8f2945f8ecda7c6d618e1aeeb9f3838 qtw/stone/ligspig.mov
+  1ff30d6bc95693409de539a28d7ba7149045a9a9 qtw/stone/mystlib.mov
+  5689e97a575e2c479b5551ca7374d8296fa6af8e qtw/stone/openloc.mov
+  173d3f719d775fdb87f4fd5c96a6c48544395d50 qtw/stone/sirsdsk.mov
+  7e35e4c832e840bf851e3425ca587418a71c353b qtw/stone/sirsphee.mov
+  23af156208e83e72c56c168bae6463f36d94a5fd qtw/stone/sirsphww.mov
+  debb5f17be126cfe50f5b61812bfaf66697b0749 qtw/stone/tunadown.mov
+  2b64e957deea7b3c5563db5cdebf1a6971c3f357 qtw/stone/tunaup.mov
+  1f077bc24ddbfb117b7537bb33c29fed934ac734 qtw/stone/tuncdown.mov
+  aa80285345217313c19ca3300788bc5821fb598c qtw/stone/tuncup.mov
+  b3e876c4f57c56964cfbc5b28f7a7e032b85640b qtw/selenitic flyby.mov
+  edb95b82e6131769372d368c3e11d661bcb5a8ad qtw/stoneship flyby.mov
+
+  d89d0f5aac6225b01a81a269024dcd845cd634f8 manual.pdf
+  c0abecc887b3a8c9590aa4252b6c50ffffb024f1 setup_myst_masterpiece_2.0.0.22.exe
+
+sha256sums: |
+  5fd6a1b024b96ca1cbe8edee5554c904b50b358184ac7823be8260918e73d1d1 channel.dat
+  49dac5cce0520cc2c5c9e98a813e4e763598ca28e0e8d9f7786a32dbf318e381 credits.dat
+  24af4eb4585aaeb0da10609d8fa2c892bc4e81bb7f9d6f7c2beb6920bec9fac3 dunny.dat
+  f412d5bfe350dd478d8843096e99b739ff363074cb890429b3beaffe1b37f1eb help.dat
+  6334abc0a150595b2c8264e6646ba29ebe61535c1de9708904ad592b2fa43992 intro.dat
+  808d74c031d7e1fac4a28f1c1dd4cd956565a057bae3f76f6e85c4777a043e20 mechan.dat
+  826f70c16982f2fb841ff4175fc34dca36736cdbbaa7682fc37b1dfc7c8254aa myst.dat
+  cabc04d3bfa84439f98cccc4c1958a961b3edb4d80a7ea2db6b67490e1118bb2 selen.dat
+  87d0d83a5ab10d36a112fe61d3d74840d6a8a34225d4c74d3f8ea3e05dc13f28 stone.dat
+
+  04643a3c6b4161a46c7455383be25b80183b3efd67fff64e7283ea407bfa18ae qtw/channel/bridge.mov
+  f40934f3f4cdd7efc252174dcf80c0896b9b64a02f726ef5ec01481022cd472a qtw/channel/holoalgh.mov
+  7812ee15bb3c9dad28f9fcbce89892d28bac043d1dc2ca06da9436ba1faa1238 qtw/channel/holoamth.mov
+  53bdfb36da721562089ce805447c218dbb339908b7d05ec1f88ea4c700d707e0 qtw/channel/holoasir.mov
+  683b2f606d82f87981a235632a9253a33e103621821073204e1c453a4c33de20 qtw/channel/holosmsg.mov
+  63f9344d58cac024fa15a719767280b2627ffcda2a4a10002aa0a11f59a4adde qtw/channel/monalgh.mov
+  6e9f2bf32580b8fc9e4616ad8b8c8677796acf5a0606c39ecc2f82c93c6dcf71 qtw/channel/monamth.mov
+  82f93d48208b01d03d02b5314c8e8686448444eacf5c1d8b5b9c9bd21ceae6f7 qtw/channel/monasirs.mov
+  597a5cba3568104c79bd7aad0b20d1c33fab3f74aeaca4325811b350002dc65d qtw/channel/monsmsg.mov
+  ddc5c81c59c8355ec14423ca79e7d13f18fc6dd3071e1955bcb9563617760bfc qtw/channel/mystlib.mov
+  917680b690c7386728e826d0217482cf4fa56e6dff5b649562bc03df04cb8556 qtw/channel/ph1naxl.mov
+  277e9c1d64b9c2b6831f084c5202a0e7ed9862ebb7f47aa42cdadb62b186ca1a qtw/channel/ph1nup.mov
+  76f391eeafc3fc300dc50b5b0b783dd8bbef5d3b5f506e4d2ae0dc31c9178998 qtw/channel/ph1nupax.mov
+  8ad755919f41ebe147183ebf6811ddd302acc187d407db38c86b345e31dcf1fa qtw/channel/ph2naxl.mov
+  b7847a92267b2c3f8ebd414ea7ddc4d2e5a3ad104fe79495d78c86d01e669088 qtw/channel/ph4nwmil.mov
+  c18e053e37d83eba67169fed41fa66a560743e4bed638cbca9249ff1f1ad54d9 qtw/channel/ph5nup.mov
+  2efd666ecd2d2b50b816fb27cbb299830f7a4f088fe8d36f5d8ce4dc0d96043c qtw/channel/pipebrid.mov
+  d0d1676324a14b77f6a36ac1d4305f0c24294039f29195be2b91ff096180e5dd qtw/channel/sirdskwm.mov
+  7326392c123f4a27d1f5c4f7377c410bc44b933f725e2695481e648361f1767d qtw/channel/sirwmill.mov
+  d9cb6d1dde99274f2f7c738e21cb509b3cf548bd4d083bdd0b0922804ee4d3de qtw/channel/templalt.mov
+  5ef4e350be64962f232570e6405f0fcdb059d3c0f3ca0c670b2153871a9658cf qtw/channel/v19ndoor.mov
+  7b95ffe82ee49af614feeefb5c29c0fad6cdae499920ff83c7caf737f805e29b qtw/channel/v43ewmil.mov
+  438d1058dff2d721ebb3a2d2d59ac913a3b5a0a74c6d2abbb7e310b6c05e75cd qtw/channel/v44ewmil.mov
+  05932f11624ab572eb1de1d7cd51effb41928228d505be690a71aba7c5b2285e qtw/channel/v45ewmil.mov
+  3071432dc7c8b5eae0f3b397b065adf0f4f31eaa3edff41ffd13599d89f7927b qtw/channel/v8nwmil.mov
+  b8db983dc015faa41846a21b07c384589b96a3ff01d4d044132847845b17e19b qtw/channel/vh12nwm.mov
+  4b4594f5098af2301917eba42e9581efe98946a73337e570a4908cdfa8d9479a qtw/channel/vh8ewmil.mov
+  7f86b6e09f74d040ce4c7bcdce287c1262d73ce6a53fd336a982b48e9940e802 qtw/channel/vs1dwmil.mov
+  3c6883edfd7383e4503c3d35e70e912a95160304048663db93d837a1c411c9c2 qtw/channel/welev1dn.mov
+  cdef7f17cbd6e623fff5c794338894fb47a11f71bf8d1412763cacc8f3103b43 qtw/channel/welev1up.mov
+  cd2323d220bc082e9b7c114e4c2405a8cafdeea1bb33be2d00074580a09a8e97 qtw/channel/welev2dn.mov
+  c9b16fa44c906742540ab6ce5c927107ce096e1ba3f1d13951e5825a7a56b35d qtw/channel/welev2up.mov
+  7d4d15113009dedfc455323a4cdf0820ee568b7d986c4920957a2755420bbf3a qtw/channel/welev3dn.mov
+  7cb461a08fd104791d0a2db86b14429e290001f1fdfb168a7f9b5b9813a787d7 qtw/channel/welev3up.mov
+  34e3049912b88c96c4ac2efbf83a2392b6c990807b36d92b82d3c8cb76a5c828 qtw/channel2/wmill10n.mov
+  2fe8d25a7038dce5c316fe82a2fd17b2985d5c45c4498e37615f75bbd37a42aa qtw/channel2/wmill11n.mov
+  f5a96f1aee4f2fc986d1ecc9f2bc16984006e37f7972564a4406c24d00cf06d8 qtw/channel2/wmill14n.mov
+  af2208aa4eb0bc4bc4947500a01b6b7f1755241a769ad50a33dac21ef0459b62 qtw/channel2/wmill17n.mov
+  082608ecaef3cce01a8e1866ae7b8fc348d02ca999b5b14b3cc66e5f0569c792 qtw/channel2/wmill19n.mov
+  3a089c408cafc696e39d932f770d48253abec5b047dbc28b26018138e752b968 qtw/channel2/wmill20n.mov
+  875eec422bc76bca319b6860f460c5c1a8d174d602c385c2e2d0cf238ed0be1e qtw/channel2/wmill22n.mov
+  cee34692ddef34b60c041a99b008619f7098042a2e7b3202f368a3a01ff0740a qtw/channel2/wmill24n.mov
+  b97b8394f9820d7d7c8dfecb94b151a172e50b4c573fe0cb9fe419ca6acebbc5 qtw/channel2/wmill28n.mov
+  c42d44fe3a191a083ab7a8bbccad636738bbc8185428d00db6cf28b9842ab223 qtw/channel2/wmill29n.mov
+  22718236892809e5471ee24b98b9f5578d580ce9be67ac463c6a9a08fcfe2096 qtw/channel2/wmill30n.mov
+  b7a9745d4d57ce5169820c18b5154257f817a00adefcce20ac926260177171a3 qtw/channel2/wmill31n.mov
+  40de1fb34c6f95d4580c17f092bd04c0de04ac586aed9c24474da168336184fb qtw/channel2/wmill32n.mov
+  abc97dbfbc5693ef64021d9b2e9a81d04fc06e14c1202a2a5ff368e78437709a qtw/channel2/wmill34n.mov
+  fcad62aa8562c02cdc488a5f99af561f7bbe6a03d2fae39b7c70560155104c51 qtw/channel2/wmill35n.mov
+  65bf648fe1ef21ff18cd67be8023cc41679cf9e272c882ebd3b324a4a52d9991 qtw/channel2/wmill36n.mov
+  ee88fdea9c08c4a2c68c1c6276c64f0cc444ad587ce2b87ec64311001c224f9b qtw/channel2/wmill38n.mov
+  c009b3895f22bf646f7d7c29afa8e465c60fce6f013604b6215f2a68b1f5ad4c qtw/channel2/wmill39n.mov
+  67fe746797f30f4b38ec88d63129dd3ecfa7e37462d824b8d0e9098e8b5d7d8e qtw/channel2/wmill40n.mov
+  704449f799802e346d1d6e74c2f7224b75c379174a3acd747ccba6e0c5126f39 qtw/channel2/wmill45n.mov
+  f236b0a39d43b75e1a780b11745ddd48ea6c446d481a37a5ae28590a53aa0daa qtw/channel2/wmill47n.mov
+  f71a3a101b88f4ac2d9b8413df80d3b15dc0b8c7c95f8f4ea1ea0dd49c1fda40 qtw/channel2/wmill8n.mov
+  daedba6e7f1368a3855128205e1ea2b7742a745f97404452e9cc974949532540 qtw/channelwood flyby.mov
+  d43f7ff277d45e5cb9a445eb66f64eb6c2c1666a4a8ddac3c855dbbf4313aac0 qtw/dunny/atr1nopg.mov
+  8dd2b81afda8b29f6e8916e30d7b5150afc180d095835fa95322a106b9e25e72 qtw/dunny/atr1page.mov
+  444fd847fd86ed4065c8851443fb35b5d0a176cf9c554ca25709729284089f79 qtw/dunny/atrleft.mov
+  d2b950c2be1ece99a12b2056bb3707eb739657a006742e269189e648dfef313f qtw/dunny/atrmid.mov
+  757e8efd194339b6ada671059c35bb130cd9169accf5a64ced0bdae8d3b8ec93 qtw/dunny/atrmidc.mov
+  86ccd893db2d98b18d7af77c6e1772a8b0d3f712f43887dd0dfbdc792824def9 qtw/dunny/atrmidc2.mov
+  c9b141362f84d32a2926e37edb35ffaa80431c105219d9eddecb71f32c416a93 qtw/dunny/atrmidfa.mov
+  9f1098eaa421146358fb5d30de2f313bbabf1e338932963c89d9e3647c3303c4 qtw/dunny/atrrocks.mov
+  91c918c784a76e0177cbbd62524be3221a5764b1b198e77b5018dd99e1bc0d05 qtw/dunny/atrus2.mov
+  b70438883f4c861d334467c97c24c497f650e2a09bfe3784f348aa5902be33e1 qtw/dunny/atrwrite.mov
+  cf8453316021029068d64ff01c279f600456b30ae5999c89c248c4e6ac1610f2 qtw/dunny/mystlib.mov
+  d915a92f1381fbb512816eb4630f7835239a759a95ae461f581df18a3b8e76f1 qtw/intro/broder.mov
+  57eab848313936eca35c5054cc4399fb726c28d21f96eadf2fa42a6dfb7da17b qtw/intro/cyanlogo.mov
+  99e596db6e34a55289c7e7bb40ae7162b85601b07d667ae7da570ca0a995dbc4 qtw/intro/intro.mov
+  d430455465f5751a6960b05b3e93e06c8d2085f72148e632808d3e0917f08ee6 qtw/intro/intro2.mov
+  3575ad4f9cef839878096fae4ec3963badb6c728a45f17917964fe7ca90ef82e qtw/mech/a_snake.mov
+  b7866fb8589d020107c204ca71ee59d721bc3aebca81ba853bcf7a74dace2e73 qtw/mech/birdcrnk.mov
+  cbae0f5400bae53bffebdb29d02ee1f7f2bc394701d6cdd67fdabc98f9aa9c58 qtw/mech/ewindow.mov
+  e6b2a03ea576a907064ae657a495d8a7386cb40a143ed7fa6525e512b242db18 qtw/mech/hcelev.mov
+  85286509b0b6a530ba125d5e859eee699057f1bd59fcaa586a5b9cc0be2b7878 qtw/mech/hcgears.mov
+  3c5e595c84bff684b2ec9c0beb1f91ff9bcd2646967094bac4f08d29532da5d6 qtw/mech/hhstairs.mov
+  1fbd6b7f0c05a871101f7ab2246da48d1d77a6fac407383252093a42e4e75789 qtw/mech/holo.mov
+  eaffc7e9ce7e7e69c6eab528aa821a15c7bc4494b315e09410b33df8c2f5d461 qtw/mech/holoon.mov
+  8e403d1f299538cc5d6b851162efaa4b06604530ebf686356aca7b4217df5640 qtw/mech/lwrgear2.mov
+  b3235011475d6564b5fbfa1b11fd7029f9102d14f5b689a5423a6447f28a2eec qtw/mech/lwrgears.mov
+  9b8d87a56a744259e9caac39ceef7bda5abca8980da772bf30426ab669fd30cd qtw/mech/mystlib.mov
+  9393c4ba68483989eb3a9fbcfd5470ef5d35f4e3ec7919a2bac80101ae207d02 qtw/mech/sstairs.mov
+  c53678415dbaf43da0fd8bbec4525a358987332759fdce01c091000dc6b90c56 qtw/mech/s_bird.mov
+  076007f128f5217145f82d50cccdee89b7e04007111238e78f1df3ff2682ef3d qtw/myst/aextra.mov
+  5135260bc0f499c4d8489f687da5d09a905e5249bb95da7328a3122b3f158020 qtw/myst/alose.mov
+  e943ae998fd2d42414a687619acd1aa5a219733e16b9dcae5da00b6927137978 qtw/myst/apage0.mov
+  d082c9791ffabe5a6142357ad1f6249389a77940fd195b27f7d6b28de00d6765 qtw/myst/apage1.mov
+  d3d72646b8234fea1845b754992fa0f12b1c8175b07828fdc50fd9abd0875a13 qtw/myst/apage2.mov
+  95c078c80c5daf52b0e9c0778cdf2202178770c59ea3435d442f56979b6d9763 qtw/myst/apage3.mov
+  bb575985406635990ee866b5fbb0ca7f789760a60621ae5f4fca5b2c690bbf45 qtw/myst/apage4.mov
+  fb4e2d23ff06222cb5e3145bea0836cad4b686b0f0b2c4f8dfb97ebfbdfdd933 qtw/myst/apage5.mov
+  4d425a3791801dab8add58d65a467180cb9b4f1ddc4eda5c9d907f26cad462d6 qtw/myst/atrusbk1.mov
+  4cc3e20868d86c69be8c0362c8b6905c1f5ab41608402c7e3ce38f98fc7c3b4c qtw/myst/atrusbk2.mov
+  0ea903a3ee66a8615f1431da052a2c283dd77200526d32e24166b4c5cdeae312 qtw/myst/birds1.mov
+  30dbfdb86a64eab2c6782aecaed4a775233574c2d47acc598d0220b6295ebdec qtw/myst/birds2.mov
+  32c89c5c3edde466e6b511c01ec818cd8b075cfc415b33ce5b50e0b919fa4352 qtw/myst/birds3.mov
+  9370b72afc06631743dc0612c0cb64ecc8aab56e50f4992fc37d4cfcfc9d03fa qtw/myst/cabcgfar.mov
+  5e169193db6e6082c221d2355f42d332fc5b10ab4daf65df099fe6dc0b051b47 qtw/myst/cabfire.mov
+  a78c12fe9e7c9c510ef4efc5edfdfa65260f8db3cf868ffc23a9a9dcf1e9d085 qtw/myst/cabfirfr.mov
+  95183448bcfc70cfde772c98966d6053b6accf76edc63cf586ee97a28f3d45fe qtw/myst/cabingau.mov
+  1dc519d59b39dbe38ec2c3ec64c0d2216f8d6fff8f7dcc2d2248bf61917da172 qtw/myst/cl1wg1.mov
+  5ab9893bb37fb14f6ea07f7bdd0881c686b443d27f63c277b69cf5acd5d7422b qtw/myst/cl1wg2.mov
+  c0a7ea9657f20ae8971e8291e7a049113ec5dd5e93ae31d5cce5ccc94a6108cf qtw/myst/cl1wg3.mov
+  ee6edafa738bf4563129c4aea5133688a553af285ba81e3ac2aa81be5a387850 qtw/myst/cl1wggat.mov
+  12a5e962770f778418817467d4bb7185fc7515249beeabdf5270a53e2bcfa7cc qtw/myst/cl1wlfch.mov
+  43fefcb4f267f290a6f5a2597f6c380ddb84a739bb8104840ae94277691a76e9 qtw/myst/flychan.mov
+  1da4f0dbd55a4b32d5f1d2a64a68f1164ce71a9c6d93686135ffad08f8aa07c2 qtw/myst/flygear.mov
+  dca4cf4e19590766580a100eda6e3ff811be5656a4202c42fe779781524e49a2 qtw/myst/flystone.mov
+  5e8526502a9d6c4a2c56e8cd22048cfa5dae0cf6ca6a9151333b85452da281eb qtw/myst/fpin.mov
+  a51eb678fa3bb09417d70b410c9d51523e11bd24d181e82637c4f44344269af3 qtw/myst/fpout.mov
+  4101f314be1cc1ea9861a52968fa4f2bcc7b3a59fd06a87acf144d377418e521 qtw/myst/gar4wbf1.mov
+  0e6b57ebb7bd0773f5aa986b55cfcc4013facd2bc8abffb1a71275708df2d673 qtw/myst/gar4wbf2.mov
+  a349fb2271ed3ef47a6154b6ed7d6da0ac136df06201c47359752fadc0e86d0a qtw/myst/gears.mov
+  a495bb89e79d1d3a4b6599001806852908519bf86347defc16fb41f32ea06742 qtw/myst/libdown.mov
+  d02f5c4d39c230c7fc45dea9323be847f3a0eddef0dac6f4a73b8aa8ca86c2fb qtw/myst/libelev.mov
+  dffd1b2bcc1394a3966cc7f1883ca8cdd1696a57db6cad8d744643550799b259 qtw/myst/libtwirl.mov
+  0387944f0df7854ab92fb785691505b3dd750479b05bdea68c21d1ca8f1a5b02 qtw/myst/libtwist.mov
+  d1744b15f39237dfd400c90d4eb538abc488826ea3b844b606567a4b35ead5d7 qtw/myst/libup.mov
+  297bb47bbd46534ed33304ebc29f644742e8ecf99d47d90d1c72e642209bed4b qtw/myst/lstrsdwn.mov
+  aa3938225d29796bee51396d5908d4f2d53815dbcb55db1c1ab8908c30043164 qtw/myst/lstrsup.mov
+  3b4ded3952fac36a26d58fa9e630c65aa5f7a5450ba132f1e9127cba7a557caa qtw/myst/selenbok.mov
+  d191818c6852bc36afe037357c200e1140807f1eb3cd9d4137db653eb5aa13da qtw/myst/sextra.mov
+  c9318f257e218457968539fada054ee241aa96aa2a6de9c3cef5651eaaab235d qtw/myst/slose.mov
+  c28bf0c2be623a20d3d965af7bb4d5ae068fe0dbee2f822db0031f8527a96d3a qtw/myst/spage0.mov
+  1b457af5e26fa752812e11b1764c56b19fd1086197fc4d317a410f96111f8cf1 qtw/myst/spage1.mov
+  fee99ebfa68b592f9729b3c842c296cd435a4ef893959602530bef20f37cf4a2 qtw/myst/spage2.mov
+  56518a8db6df99f774a27fcfda3a50d9e3b8e5d800e09a766e21d7449e46466b qtw/myst/spage3.mov
+  05b2ecb0edce2dafdf4d0effd85c18868c522e58df6b8b035e8dbf69834619a3 qtw/myst/spage4.mov
+  90e01d2e38164cf631d9b409f3a2def995ff5177814cbb1893dcaa6c3bb25423 qtw/myst/spage5.mov
+  b4a313c96714ba5767797071e945795273310c234f4e348334d30755e71f8849 qtw/myst/vlt1watr.mov
+  541b39ee9ccc13e64a5147da546f0c31b794417d9f82c0123e6b4bb20e57e636 qtw/myst/vlt2watr.mov
+  7147d8ed43611f7a7c308888e6e14b02865a85bbf80628e138d3b64ea931882f qtw/myst/vlt3watr.mov
+  c4bb6fc967cfc2e0322639f46b992dca6286f2ab73b53aa920e219a78bc78c3e qtw/myst/vlt4watr.mov
+  31a7a9f4ef760ea91bc4f06ddd89b084eed7fb89c9505f553653a0397b273486 qtw/myst/vlt5watr.mov
+  7a3148f97d21555952ed5848240bc7b98b966da88341c0056eff984898a1b9e1 qtw/myst/vltatrus.mov
+  2c3fb83e3cab2ffa96a06b6223d8264f326e18dc1bdbb8dc3d412459095c883b qtw/myst/vltblnk.mov
+  2e17428b5a6259f569762b67730ff9c3861e858e330057dbbb1b01ae46162897 qtw/myst/vltmntn.mov
+  63c222ec5d6b0e22d658861854407d88faf1dd8301df1483b07a0121edf09a51 qtw/myst/vltmrkr.mov
+  647557f9fb19fd081c10f15fb047772e00d7636424358058fde0e844d59d69f8 qtw/myst/vltwater.mov
+  4adbd135a3d1d015442ec7b0501f98ce6993efa76e2e7406dbe6cfeb5a7c55d8 qtw/mech age flyby.mov
+  558da7fa6da7d84acc18adcb3b7686f01ba877bebcd8ca4212643e51c2b85d87 qtw/myst flyby.mov
+  d6c5e203322063aca57d140798fabcc691d39fea5091957a0fc833d58038bb23 qtw/selen/backa1.mov
+  5d4a5394aeb778e72f83a0da609ea15d7bf6b3d1bf390e767f61af1d7a6e6a8e qtw/selen/backe1.mov
+  248bfa13a935e139a9a592d304dad17b10bba26831859e11464c9721e0f5f624 qtw/selen/backf0.mov
+  f2ba223cd520eae7a4dfa1b9295cf64a29966b5555bcb47f21b04acc747d1a28 qtw/selen/backf1.mov
+  20b31718f9c12b64fae6a525d54bd3a23cec61588c8a6ed72c4379bbb7dc0266 qtw/selen/backl0.mov
+  17bf387bba29e23376d769c8af2b3da7268b60a7dd9ce3f43d080645421592a1 qtw/selen/backl1.mov
+  85fb9f530358f3020f58729fbb8037332be04fc2b0d38a425329336a9daa4c66 qtw/selen/backo0.mov
+  2db8aeaf06e2b89f6748de4bfb7f3c145dd833b6e864f73ccf8f140ac5dc0afb qtw/selen/backo1.mov
+  f88db43b509d041486fbdb081dfaad1275fb7021b71a13c3243ec69626c43121 qtw/selen/backp0.mov
+  f5bd381abb2d46cbdb0dd35bf96a42a9c6b33ba987003a43647e1d4fca96c8f6 qtw/selen/backp1.mov
+  0023361a8fce5374ffb89e4929a08dc8ddc506796b3fed66445738306a03db10 qtw/selen/backr0.mov
+  3f3adb8e4862796536f26ff53747482ebe4df93e8cabc24bb992c1f1301e710d qtw/selen/backr1.mov
+  51585d1c46acd8b54d0edf2efc9d5aeb3347c921d7ec4fd8834dcc3b85aa6248 qtw/selen/backs0.mov
+  3b52872285b8ed76a1a3d89bdd4ba5d7a0f93dfe65c5bd824a23aaba3489bb2a qtw/selen/backs1.mov
+  cd53829b40e05a76868216cb84d45d6ec83744c2741f79a579d1c1a92ee43468 qtw/selen/calnorth.mov
+  09b95de14656c0ef8ee13864a091d1467c6acb21344ad603539bfbf738ec4136 qtw/selen/calsouth.mov
+  00a50423195398e8b7a1458619702eadf837a51e0636349210e4e3ed25525713 qtw/selen/forwa1.mov
+  08dff08a9d96a3b6eed5eba21e28734e84963b4a057aac77c2b1544d33dbc53a qtw/selen/forwe0.mov
+  d0efcd1e5a310c2e675ecae05e2df8fd547f336a87201d12c9abdf17e84f246d qtw/selen/forwf0.mov
+  29150f670a77e2b2a4914cc0ebf42ceeb0b727358124587f4b0fe663a60c03e8 qtw/selen/forwf1.mov
+  d2a4a1a5efcc52168525de913e4b83058adaac01026045838fe285ade786f314 qtw/selen/forwl0.mov
+  9be23423368a4acb50d0d027ad78f779286ff62537105215b82574ea325d65e5 qtw/selen/forwl1.mov
+  b2d52f7f7deb2b7eb5559a8135fefc5456316f88d811ba57a4bc34945b1e1184 qtw/selen/forwo0.mov
+  49ab7621a0a253ead0fa6012a4a85e802df97324f44f965a6359719a32556652 qtw/selen/forwo1.mov
+  6c2d911ef830b5e7b22e8a3b3f91a724e433cfeb377c0b6231dd0da2527d9fdc qtw/selen/forwp0.mov
+  5b1c0a23e32dd8009e1b2e0bd9940108f9f60914baefc115d612b20ca2d415bc qtw/selen/forwp1.mov
+  86f54385a6c2387b2890ed11ef3cc1eeb1f97f447252ae3501e6e83dc8585485 qtw/selen/forwr0.mov
+  d7a3076cfd538533aafae56f6f5a23c7a77db3e34e159f3cfb576136e0b9c970 qtw/selen/forwr1.mov
+  b1749f1e9650fbf49f417fec32548d572a66c14ef07e226d5f6e31c8eeab9bb4 qtw/selen/forws0.mov
+  4d89a23014d926ea47247909c0be22ff77737b89b944469acb68dfbebb8c30d8 qtw/selen/forws1.mov
+  8bdba3f1e5a0e66d7d32b90732e83032bf6824a47db5eb77e776489eca91a8ae qtw/selen/fountn.mov
+  c58e8e584ec285ac25ede85a51f59580147ff0f00ef21952aa86dc3f655d110e qtw/selen/left00.mov
+  f8683961ca5eb1b78fbe43e73ae638431be16ee9d1ac8ab6ffb7a2e9e8d2c457 qtw/selen/left01.mov
+  f473bd7aadf82820305606dc8af118e5672fe887653c85ca2b67175651b81f0c qtw/selen/left10.mov
+  2afcd0885df59703586520b8678c18f5e700765d910ceb8a66f72ccead19d432 qtw/selen/left11.mov
+  f6aece64696421acc7432d41f8bdf5899a2c986ac17af5e6b44159d33a50ecab qtw/selen/mystlib.mov
+  a5c47bc6692abec8cb7f427c63a725a4a793c4c44c76bc086d4c4a1344effc88 qtw/selen/right00.mov
+  79b77fc87c05d929fcc0425bb5d0cd3f9ebe33c46cbd4a854a301b75cecd64ea qtw/selen/right01.mov
+  f5b2fbd3bbee4f093a0ba79b1c97008de1a1fe9143a8109e70b09f5e97a1cd82 qtw/selen/right10.mov
+  408426e96791ab541b35386177fb5e00ed9e28264889f8cdafd9864ce741767e qtw/selen/right11.mov
+  04a5eb56665d1d9c8a7a02ef4ec181da907b31a2d116a012b6fa4cb367a0420e qtw/stone/achholo.mov
+  d5c19b653ca9b722f9ab301df87d4ea4e80b1895b0c3e3400fd20d1b630a2116 qtw/stone/acholocn.mov
+  5732918261b77a2b025b2908e5ecc47048e62cae4772a7e687812b47ebadfdd1 qtw/stone/bkroom.mov
+  23867c3e9e1f745e5e5eff30dc70e2fcf96f9e7561c9fb33bedb32d32c0cae2c qtw/stone/generatr.mov
+  f25aa48533ed232f07c9d3ad5a484634aa0a339f4b20e2d932e285ffa30e558b qtw/stone/key.mov
+  dbe4331d419631055b781169bb7c61783bf251f79149a374c2cd89d524fe1532 qtw/stone/keychest.mov
+  565249f6744201584cf194eeea28c2c63cffccb53de60291a0d0cc403236831f qtw/stone/keydry.mov
+  43749471a2fcd051e1d0ee7930f72c1a6bbce1952059526fe284b4fbd44a2afe qtw/stone/ligspig.mov
+  7bd42ab8f80040fe8dcd49dedb3796b0760f9858afbd05f445781f9c8fb70b58 qtw/stone/mystlib.mov
+  9e95d885ae907bcad11d0e973b61fba393d903416950adc27b20452d7743613b qtw/stone/openloc.mov
+  ccf29ec68626c26a33e85584f18fe71cd3e1a1348f4910bb41575631f98a6074 qtw/stone/sirsdsk.mov
+  bcd6c99a451a10bdd7a957b0f0c1ad0b3035b9015a64e0e97ef5de24cb93b83b qtw/stone/sirsphee.mov
+  ec73094a441b06e64f129c7f0ba0807762bdb493b56c28030b2d300c7ba60480 qtw/stone/sirsphww.mov
+  ea979d922349857c16d75c4ee293d2b4a461cbc51682f7e7b6418675af52cdf4 qtw/stone/tunadown.mov
+  a659596a6c24c24004f3a418f3982a6d46c859dba2c4c6048546dc12fa3363a5 qtw/stone/tunaup.mov
+  2ffa684720dba9a599b2933551539e4f0800e97c6c7bf3c63af649e41b1fb0f2 qtw/stone/tuncdown.mov
+  aea4e66df4c11c67fb626514a4abf13ba6ef7ba9899692903070c480880a72f0 qtw/stone/tuncup.mov
+  fdca89bca5a70b20c281726e860fbf52447dba175f786cd41cbf87d8a174e7b1 qtw/selenitic flyby.mov
+  66d640e5838bfccf506805349ae808fef5da04c6d808f0f8a0b3d961a782efa8 qtw/stoneship flyby.mov
+
+  6bc49b63fa1fc02c28a67ff3fbe9c2423a5e5b3824572719a3f8a578a87caa20 manual.pdf
+  b63d84d49e4a11138a6de9e8f582f44155096eb36198923cdbffb9dada30f47b setup_myst_masterpiece_2.0.0.22.exe
+...
