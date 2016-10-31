@@ -75,11 +75,11 @@ class EcwolfTask(PackagingTask):
             else:
                 raise AssertionError('wolf-common.png should have existed')
 
-        from_ = os.path.splitext(from_)[0] + '.svgz'
-        if os.path.exists(from_):
-            svgdir = os.path.join(destdir, 'usr/share/icons/hicolor/scalable/apps')
-            mkdir_p(svgdir)
-            install_data(from_, os.path.join(svgdir, '%s.svgz' % package.name))
+            from_ = os.path.splitext(from_)[0] + '.svgz'
+            if os.path.exists(from_):
+                svgdir = os.path.join(destdir, 'usr/share/icons/hicolor/scalable/apps')
+                mkdir_p(svgdir)
+                install_data(from_, os.path.join(svgdir, '%s.svgz' % package.name))
 
         install_to = self.packaging.substitute(package.install_to,
                 package.name)
