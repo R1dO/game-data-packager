@@ -2,9 +2,19 @@ game-data-packager (47) UNRELEASED; urgency=medium
 
   * New game support:
     - Myst: Masterpiece Edition [adetiste]
+  * Support for new languages and versions:
+    - Super Noah's Ark 3D v1.3.3, from Steam or itch.io [adetiste]
   * Enhancements and bug fixes:
     - make-template: don't crash when unable to guess what $install_to
-      should have been. Regression in v46. (Closes: #841164)
+      should have been. Regression in v46. (Closes: #841164) [smcv]
+    - This version of g-d-p was built against an apparmor package
+      where #828795 was fixed, so we no longer emit a misleading warning
+      from the postinst (Closes: #829035) [smcv]
+    - Fix a crash when packaging ecwolf games [adetiste]
+  * Internal changes:
+    - Stop using lsb-release [smcv]
+    - Do not modify GamePackage objects after they have been loaded [smcv]
+    - Restructure doom2-masterlevels data [adetiste]
 
  -- Simon McVittie <smcv@debian.org>  Sun, 30 Oct 2016 22:19:21 +0000
 
