@@ -225,6 +225,12 @@ class PackagingTask(object):
         # Block device from which to rip audio
         self.cd_device = None
 
+        # Remember the md5 of installed files that will end up in
+        # DEBIAN/md5sums
+        # e.g. { 'quake3-data': {
+        #           'usr/share/games/quake3-data/baseq3/pak0.pk3': '1197ca...' }
+        self.package_md5sums = {}
+
         # Found CD tracks
         # e.g. { 'quake-music': { 2: '/usr/.../id1/music/track02.ogg' } }
         self.cd_tracks = {}
@@ -1328,7 +1334,7 @@ class PackagingTask(object):
                     os.chmod(copy_to, 0o644)
 
                 fullname = os.path.join(install_to, install_as).strip('/')
-                package.md5sums[fullname] = md5
+                self.package_md5sums.setdefault(package.name, {})[fullname] = md5
 
         install_to = self.packaging.substitute(package.install_to,
                 package.name)
@@ -2009,7 +2015,8 @@ class PackagingTask(object):
 
             self.__check_component(package)
             pkg = self.packaging.build_package(per_package_dir, self.game,
-                    package, destination, compress=compress)
+                    package, destination, compress=compress,
+                    md5sums=self.package_md5sums.get(package.name))
             assert pkg is not None
             packages.add(pkg)
 

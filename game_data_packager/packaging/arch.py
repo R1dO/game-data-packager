@@ -155,7 +155,7 @@ class ArchPackaging(PackagingSystem):
                  + sorted(files), env={'LANG':'C'}, cwd=destdir)
 
     def build_package(self, per_package_dir, game, package, destination,
-            compress=True):
+            compress=True, md5sums=None):
         destdir = os.path.join(per_package_dir, 'DESTDIR')
         arch = self.get_effective_architecture(package)
 

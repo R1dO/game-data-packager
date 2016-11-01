@@ -304,7 +304,7 @@ class PackagingSystem(metaclass=ABCMeta):
 
     @abstractmethod
     def build_package(self, per_package_dir, game, package,
-            destination, compress=True):
+            destination, compress=True, md5sums=None):
         """Build the .deb or equivalent in destination, and return its
         filename.
 
@@ -313,6 +313,9 @@ class PackagingSystem(metaclass=ABCMeta):
         to be packaged (so it contains DESTDIR/usr, etc.)
 
         game and package are a GameData and a GameDataPackage respectively.
+
+        md5sums is either None, or a map like
+        { 'usr/share/games/quake3-data/baseq3/pak0.pk3': '1197ca...' }
         """
         raise NotImplementedError
 

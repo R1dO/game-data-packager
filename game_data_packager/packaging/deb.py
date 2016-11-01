@@ -347,12 +347,14 @@ class DebPackaging(PackagingSystem):
 
         return control
 
-    def __fill_dest_dir_deb(self, game, package, destdir):
+    def __fill_dest_dir_deb(self, game, package, destdir, md5sums=None):
         if package.component == 'local':
              self.override_lintian(destdir, package.name,
                      'unknown-section', 'local/%s' % package.section)
 
         # same output as in dh_md5sums
+        if md5sums is None:
+            md5sums = {}
 
         # we only compute here the md5 we don't have yet,
         # for the (small) GDP-generated files
@@ -364,18 +366,18 @@ class DebPackaging(PackagingSystem):
                 if os.path.islink(full):
                     continue
                 file = full[len(destdir)+1:]
-                if file not in package.md5sums:
+                if file not in md5sums:
                     with open(full, 'rb') as opened:
                         hf = HashedFile.from_file(full, opened)
-                        package.md5sums[file] = hf.md5
+                        md5sums[file] = hf.md5
 
         debdir = os.path.join(destdir, 'DEBIAN')
         mkdir_p(debdir)
-        md5sums = os.path.join(destdir, 'DEBIAN/md5sums')
-        with open(md5sums, 'w', encoding='utf8') as outfile:
-            for file in sorted(package.md5sums.keys()):
-                outfile.write('%s  %s\n' % (package.md5sums[file], file))
-        os.chmod(md5sums, 0o644)
+        md5sums_path = os.path.join(destdir, 'DEBIAN/md5sums')
+        with open(md5sums_path, 'w', encoding='utf8') as outfile:
+            for file in sorted(md5sums.keys()):
+                outfile.write('%s  %s\n' % (md5sums[file], file))
+        os.chmod(md5sums_path, 0o644)
 
         control = os.path.join(destdir, 'DEBIAN/control')
         self.__generate_control(game, package, destdir).dump(
@@ -383,10 +385,10 @@ class DebPackaging(PackagingSystem):
         os.chmod(control, 0o644)
 
     def build_package(self, per_package_dir, game, package, destination,
-            compress=True):
+            compress=True, md5sums=None):
         destdir = os.path.join(per_package_dir, 'DESTDIR')
         arch = self.get_effective_architecture(package)
-        self.__fill_dest_dir_deb(game, package, destdir)
+        self.__fill_dest_dir_deb(game, package, destdir, md5sums)
         normalize_permissions(destdir)
 
         # it had better have a /usr and a DEBIAN directory or
