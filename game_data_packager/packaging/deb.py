@@ -217,7 +217,7 @@ class DebPackaging(PackagingSystem):
 
         return self.rename_package(pr.package)
 
-    def __generate_control(self, game, package, destdir):
+    def __generate_control(self, game, package, destdir, component):
         if Deb822 is None:
             raise FileNotFoundError('Cannot generate .deb packages without '
                     'python3-debian')
@@ -256,10 +256,10 @@ class DebPackaging(PackagingSystem):
                     installed_size += 1
         control['Installed-Size'] = str(installed_size)
 
-        if package.component == 'main':
+        if component == 'main':
             control['Section'] = package.section
         else:
-            control['Section'] = package.component + '/' + package.section
+            control['Section'] = component + '/' + package.section
 
         if package.architecture == 'all':
             control['Architecture'] = 'all'
@@ -347,8 +347,12 @@ class DebPackaging(PackagingSystem):
 
         return control
 
-    def __fill_dest_dir_deb(self, game, package, destdir, md5sums=None):
-        if package.component == 'local':
+    def __fill_dest_dir_deb(self, game, package, destdir, md5sums=None,
+            component=None):
+        if component is None:
+            component = package.component
+
+        if component == 'local':
              self.override_lintian(destdir, package.name,
                      'unknown-section', 'local/%s' % package.section)
 
@@ -380,15 +384,16 @@ class DebPackaging(PackagingSystem):
         os.chmod(md5sums_path, 0o644)
 
         control = os.path.join(destdir, 'DEBIAN/control')
-        self.__generate_control(game, package, destdir).dump(
+        self.__generate_control(game, package, destdir, component).dump(
                 fd=open(control, 'wb'), encoding='utf-8')
         os.chmod(control, 0o644)
 
     def build_package(self, per_package_dir, game, package, destination,
-            compress=True, md5sums=None):
+            compress=True, md5sums=None, component=None):
         destdir = os.path.join(per_package_dir, 'DESTDIR')
         arch = self.get_effective_architecture(package)
-        self.__fill_dest_dir_deb(game, package, destdir, md5sums)
+        self.__fill_dest_dir_deb(game, package, destdir, md5sums,
+                component)
         normalize_permissions(destdir)
 
         # it had better have a /usr and a DEBIAN directory or

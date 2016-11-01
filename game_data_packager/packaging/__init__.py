@@ -218,8 +218,10 @@ class PackagingSystem(metaclass=ABCMeta):
     def merge_relations(self, package, rel):
         return set(self.format_relations(package.relations[rel]))
 
-    def generate_description(self, game, package):
+    def generate_description(self, game, package, component=None):
         longname = package.longname or game.longname
+        if component is None:
+            component = package.component
 
         if package.short_description is not None:
             short_desc = package.short_description
@@ -234,10 +236,10 @@ class PackagingSystem(metaclass=ABCMeta):
             return (short_desc, long_desc)
 
         long_desc =  'This package was built using game-data-packager.\n'
-        if package.component == 'local':
+        if component == 'local':
             long_desc += 'It contains proprietary game data and must not be redistributed.\n'
             long_desc += '.\n'
-        elif package.component == 'non-free':
+        elif component == 'non-free':
             long_desc += 'It contains proprietary game data that may be redistributed\n'
             long_desc += 'only under some conditions.\n'
             long_desc += '.\n'
@@ -304,7 +306,7 @@ class PackagingSystem(metaclass=ABCMeta):
 
     @abstractmethod
     def build_package(self, per_package_dir, game, package,
-            destination, compress=True, md5sums=None):
+            destination, compress=True, md5sums=None, component=None):
         """Build the .deb or equivalent in destination, and return its
         filename.
 

@@ -231,6 +231,11 @@ class PackagingTask(object):
         #           'usr/share/games/quake3-data/baseq3/pak0.pk3': '1197ca...' }
         self.package_md5sums = {}
 
+        # Components for packages, possibly modified: if the license
+        # for a freely redistributable game is missing, we demote it from
+        # main or non-free to local (i.e. non-distributable).
+        self.package_components = {}
+
         # Found CD tracks
         # e.g. { 'quake-music': { 2: '/usr/.../id1/music/track02.ogg' } }
         self.cd_tracks = {}
@@ -1189,10 +1194,10 @@ class PackagingTask(object):
                              'usr/share/doc/%s/%s' % (package.name,
                                  license_file))
 
-            if package.component == 'local':
+            if self.package_components[package.name] == 'local':
                 o.write('It contains proprietary game data '
                         'and must not be redistributed.\n\n')
-            elif package.component == 'non-free':
+            elif self.package_components[package.name] == 'non-free':
                 o.write('It contains proprietary game data '
                         'that may be redistributed\n'
                         'only under conditions specified in\n')
@@ -1260,7 +1265,7 @@ class PackagingTask(object):
             o.write(package.copyright or self.game.copyright)
             o.write(', with all rights reserved.\n')
 
-            if licenses and package.component == 'local':
+            if licenses and self.package_components[package.name] == 'local':
                 o.write('\nThe full license appears in ')
                 o.write(',\n'.join(licenses))
                 o.write('\n')
@@ -1281,6 +1286,7 @@ class PackagingTask(object):
         shutil.copyfile(os.path.join(DATADIR, 'changelog.gz'),
                 os.path.join(dest_pkgdocdir, 'changelog.gz'))
 
+        self.__check_component(package)
         self.fill_docs(package, destdir, pkgdocdir)
 
         for wanted in (package.install_files | package.optional_files):
@@ -2013,10 +2019,10 @@ class PackagingTask(object):
             destdir = os.path.join(per_package_dir, 'DESTDIR')
             self.fill_dest_dir(package, destdir)
 
-            self.__check_component(package)
             pkg = self.packaging.build_package(per_package_dir, self.game,
                     package, destination, compress=compress,
-                    md5sums=self.package_md5sums.get(package.name))
+                    md5sums=self.package_md5sums.get(package.name),
+                    component=self.package_components[package.name])
             assert pkg is not None
             packages.add(pkg)
 
@@ -2133,8 +2139,7 @@ class PackagingTask(object):
     def __check_component(self, package):
         # redistributable packages are redistributable as long as their
         # optional license file is present
-        # FIXME: only do this for .deb?
-        # FIXME: shouldn't modify package.component in-place
+        self.package_components[package.name] = package.component
         if package.component == 'local':
             return
         for f in package.optional_files:
@@ -2142,7 +2147,7 @@ class PackagingTask(object):
                  continue
 
              if self.file_status[f.name] is not FillResult.COMPLETE:
-                 package.component = 'local'
+                 self.package_components[package.name] = 'local'
                  return
         return
 

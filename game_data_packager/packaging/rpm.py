@@ -231,7 +231,7 @@ class RpmPackaging(PackagingSystem):
         return specfile
 
     def build_package(self, per_package_dir, game, package, destination,
-            compress=True, md5sums=None):
+            compress=True, md5sums=None, component=None):
         destdir = os.path.join(per_package_dir, 'DESTDIR')
         arch = self.get_effective_architecture(package)
 
