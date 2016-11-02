@@ -402,7 +402,7 @@ class FileGroup:
         return ret
 
 class Package(object):
-    def __init__(self, name):
+    def __init__(self, name, data):
         # The name of the binary package
         self.name = name
 

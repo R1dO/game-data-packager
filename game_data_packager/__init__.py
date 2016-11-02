@@ -195,7 +195,7 @@ class GameData(object):
 
             if 'DISABLED' in data:
                 continue
-            package = self.construct_package(binary)
+            package = self.construct_package(binary, data)
             self.packages[binary] = package
             self._populate_package(package, data)
 
@@ -969,8 +969,8 @@ class GameData(object):
         self.load_file_data()
         return PackagingTask(self, **kwargs)
 
-    def construct_package(self, binary):
-        return Package(binary)
+    def construct_package(self, binary, data):
+        return Package(binary, data)
 
     def gog_download_name(self, package):
         if package.gog == False:
