@@ -1201,11 +1201,11 @@ class PackagingTask(object):
                 o.write('It contains proprietary game data '
                         'that may be redistributed\n'
                         'only under conditions specified in\n')
-                o.write(',\n'.join(licenses) + '.\n\n')
+                o.write(',\n'.join(sorted(licenses)) + '.\n\n')
             else:
                 o.write('It contains free game data and may be\n'
                         'redistributed under conditions specified in\n')
-                o.write(',\n'.join(licenses) + '.\n\n')
+                o.write(',\n'.join(sorted(licenses)) + '.\n\n')
 
 
             notice = package.copyright_notice or self.game.copyright_notice
