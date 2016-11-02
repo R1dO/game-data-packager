@@ -170,6 +170,12 @@ files:
     - assets0.pk3?demo
     - license.txt
 
+  # avoid warnings that assets0.pk3 didn't match the demo version due to the
+  # name mismatch
+  base/assets0.pk3:
+    look_for:
+      - assets0.pk3
+
   assets0.pk3?demo:
     unpack:
       format: zip
