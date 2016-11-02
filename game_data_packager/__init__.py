@@ -431,7 +431,7 @@ class GameData(object):
         for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
                 'description',
                 'rip_cd', 'architecture', 'aliases', 'better_versions', 'langs', 'mutually_exclusive',
-                'copyright', 'engine', 'lang', 'component', 'section', 'disks', 'provides',
+                'copyright', 'engine', 'lang', 'component', 'section', 'disks',
                 'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
                 'short_description', 'long_description', 'empty'):
             if k in d:
@@ -525,7 +525,7 @@ class GameData(object):
                 package.longname = self.longname + ' (%s)' % package.lang
 
         if package.mutually_exclusive:
-            assert package.demo_for or package.better_versions or package.provides
+            assert package.demo_for or package.better_versions or package.relations['provides']
 
         if 'expansion_for' in d:
             if package.disks is None:
