@@ -314,7 +314,7 @@ class PackagingSystem(metaclass=ABCMeta):
         a subdirectory named DESTDIR which has been populated with the files
         to be packaged (so it contains DESTDIR/usr, etc.)
 
-        game and package are a GameData and a GameDataPackage respectively.
+        game and package are a GameData and a Package respectively.
 
         md5sums is either None, or a map like
         { 'usr/share/games/quake3-data/baseq3/pak0.pk3': '1197ca...' }

@@ -31,7 +31,7 @@ import zipfile
 import yaml
 
 from .build import (PackagingTask)
-from .data import (FileGroup, PackageRelation, WantedFile)
+from .data import (FileGroup, Package, PackageRelation, WantedFile)
 from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .version import (GAME_PACKAGE_VERSION)
@@ -44,260 +44,6 @@ else:
     logging.getLogger().setLevel(logging.INFO)
 
 MD5SUM_DIVIDER = re.compile(r' [ *]?')
-
-class GameDataPackage(object):
-    def __init__(self, name):
-        # The name of the binary package
-        self.name = name
-
-        # Other names for this binary package
-        self._aliases = set()
-
-        # Names of relative packages
-        self.demo_for = set()
-        self._better_versions = set()
-        self.expansion_for = None
-        # use this for games with demo_for/better_version/provides
-        self.mutually_exclusive = False
-        # expansion for a package outside of this yaml file;
-        # may be another GDP package or a package not made by GDP
-        self.expansion_for_ext = None
-
-        self.relations = dict(
-            breaks=[],
-            build_depends=[],
-            conflicts=[],
-            depends=[],
-            provides=[],
-            recommends=[],
-            replaces=[],
-            suggests=[],
-        )
-
-        # The optional marketing name of this version
-        self.longname = None
-
-        # This word is used to build package description
-        # 'data' / 'music' / 'documentation' / 'PWAD' / 'IWAD' / 'binaries'
-        self.data_type = 'data'
-
-        # if not None, override the description completely
-        self.long_description = None
-
-        # extra blurb of text added to .deb long description
-        self.description = None
-
-        # first line of .deb description, or None to construct one from
-        # longname
-        self.short_description = None
-
-        # This optional value will overide the game global copyright
-        self.copyright = None
-
-        # A blurb of text that is used to build debian/copyright
-        self.copyright_notice = None
-
-        # Languages, list of ISO-639 codes
-        self.langs = ['en']
-
-        # Where we install files.
-        # For instance, if this is 'usr/share/games/quake3' and we have
-        # a WantedFile with install_as='baseq3/pak1.pk3' then we would
-        # put 'usr/share/games/quake3/baseq3/pak1.pk3' in the .deb.
-        # The default is 'usr/share/games/' plus the binary package's name.
-        if name.endswith('-data'):
-            self.default_install_to = '$assets/' + name[:len(name) - 5]
-        else:
-            self.default_install_to = '$assets/' + name
-
-        self.install_to = self.default_install_to
-
-        # If true, this package is allowed to be empty
-        self.empty = False
-
-        # symlink => real file (the opposite way round that debhelper does it,
-        # because the links must be unique but the real files are not
-        # necessarily)
-        self.symlinks = {}
-
-        # online stores metadata
-        self.steam = {}
-        self.gog = {}
-        self.dotemu = {}
-        self.origin = {}
-        self.url_misc = None
-
-        # overide the game engine when needed
-        self.engine = None
-
-        # expansion's dedicated Wiki page, appended to GameData.wikibase
-        self.wiki = None
-
-        # format- and distribution-specific overrides
-        self.specifics = {}
-
-        # set of names of WantedFile instances to be installed
-        self._install = set()
-
-        # set of names of WantedFile instances to be optionally installed
-        self._optional = set()
-
-        # set of WantedFile instances for install, with groups expanded
-        # only available after load_file_data()
-        self.install_files = None
-        # set of WantedFile instances for optional, with groups expanded
-        self.optional_files = None
-
-        self.version = GAME_PACKAGE_VERSION
-
-        # CD audio stuff from YAML
-        self.rip_cd = {}
-
-        # possible override for disks: tag at top level
-        # e.g.: Feeble Files had 2-CD releases too
-        self.disks = None
-
-        # Debian architecture(s)
-        self.architecture = 'all'
-
-        # Component (archive area): main, contrib, non-free, local
-        # We use "local" to mean "not distributable"; the others correspond
-        # to components in the Debian archive
-        self.component = 'local'
-        self.section = 'games'
-
-        # show output of external tools?
-        self.verbose = False
-
-        # archives actually used to built a package
-        self.used_sources = set()
-
-    @property
-    def aliases(self):
-        return self._aliases
-    @aliases.setter
-    def aliases(self, value):
-        self._aliases = set(value)
-
-    @property
-    def install(self):
-        return self._install
-    @install.setter
-    def install(self, value):
-        self._install = set(value)
-
-    @property
-    def only_file(self):
-        if len(self._install) == 1:
-            return list(self._install)[0]
-        else:
-            return None
-
-    @property
-    def optional(self):
-        return self._optional
-    @optional.setter
-    def optional(self, value):
-        self._optional = set(value)
-
-    @property
-    def better_versions(self):
-        return self._better_versions
-    @better_versions.setter
-    def better_versions(self, value):
-        self._better_versions = set(value)
-
-    @property
-    def type(self):
-        """type of package: full, demo or expansion
-
-        full packages include quake-registered, quake2-full-data, quake3-data
-        demo packages include quake-shareware, quake2-demo-data
-        expansion packages include quake-armagon, quake-music, quake2-rogue
-        """
-        if self.demo_for:
-            return 'demo'
-        if self.expansion_for or self.expansion_for_ext:
-            return 'expansion'
-        return 'full'
-
-    @property
-    def lang(self):
-        return self.langs[0]
-
-    @lang.setter
-    def lang(self, value):
-        assert type(value) is str
-        self.langs = [value]
-
-    def to_data(self, expand=True):
-        ret = {
-            'architecture': self.architecture,
-            'component': self.component,
-            'install_to': self.install_to,
-            'name': self.name,
-            'section': self.section,
-            'type': self.type,
-            'version': self.version,
-        }
-
-        for k in (
-                'aliases',
-                'better_versions',
-                'demo_for',
-                'dotemu',
-                'gog',
-                'origin',
-                'rip_cd',
-                'specifics',
-                'steam',
-                'symlinks',
-                ):
-            v = getattr(self, k)
-            if v:
-                if isinstance(v, set):
-                    ret[k] = sorted(v)
-                else:
-                    ret[k] = v
-
-        for relation, related in self.relations.items():
-            # The .to_data() of a PackageRelation doesn't have a defined
-            # sorting order, so do a Schwartzian transform to get a
-            # stable order
-            tmp = sorted([(str(x), x.to_data()) for x in related])
-            tmp = [x[1] for x in tmp]
-            ret[relation] = tmp
-
-        if expand and self.install_files is not None:
-            if self.install_files:
-                ret['install'] = sorted(f.name for f in self.install_files)
-            if self.optional_files:
-                ret['optional'] = sorted(f.name for f in self.optional_files)
-        else:
-            if self.install:
-                ret['install'] = sorted(self.install)
-            if self.optional:
-                ret['optional'] = sorted(self.optional)
-
-        for k in (
-                'copyright',
-                'copyright_notice',
-                'description',
-                'disks',
-                'engine',
-                'expansion_for',
-                'expansion_for_ext',
-                'longname',
-                'long_description',
-                'short_description',
-                'url_misc',
-                'wiki',
-                ):
-            v = getattr(self, k)
-            if v is not None:
-                ret[k] = v
-
-        return ret
 
 class GameData(object):
     def __init__(self, shortname, data):
@@ -342,7 +88,7 @@ class GameData(object):
         # http://en.wikipedia.org/wiki/List_of_video_game_genres
         self.genre = None
 
-        # binary package name => GameDataPackage
+        # binary package name => Package
         self.packages = {}
 
         # Subset of packages.values() with nonempty rip_cd
@@ -1224,7 +970,7 @@ class GameData(object):
         return PackagingTask(self, **kwargs)
 
     def construct_package(self, binary):
-        return GameDataPackage(binary)
+        return Package(binary)
 
     def gog_download_name(self, package):
         if package.gog == False:

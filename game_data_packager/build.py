@@ -213,7 +213,7 @@ class PackagingTask(object):
         # Failed downloads
         self.download_failed = set()
 
-        # Map from GameDataPackage name to whether we can do it
+        # Map from Package name to whether we can do it
         self.package_status = defaultdict(lambda: FillResult.UNDETERMINED)
 
         # Set of executables we wanted but don't have
