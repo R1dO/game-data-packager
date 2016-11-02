@@ -31,7 +31,7 @@ import zipfile
 import yaml
 
 from .build import (PackagingTask)
-from .data import (FileGroup, Package, PackageRelation, WantedFile)
+from .data import (FileGroup, Package, WantedFile)
 from .paths import (DATADIR, USE_VFS)
 from .util import ascii_safe
 from .version import (GAME_PACKAGE_VERSION)
@@ -428,15 +428,6 @@ class GameData(object):
         return (size_min, size_max)
 
     def _populate_package(self, package, d):
-        for k in ('expansion_for', 'expansion_for_ext', 'longname', 'symlinks', 'install_to',
-                'description',
-                'rip_cd', 'architecture', 'aliases', 'better_versions', 'langs', 'mutually_exclusive',
-                'copyright', 'engine', 'lang', 'component', 'section', 'disks',
-                'steam', 'gog', 'dotemu', 'origin', 'url_misc', 'wiki', 'copyright_notice',
-                'short_description', 'long_description', 'empty'):
-            if k in d:
-                setattr(package, k, d[k])
-
         if isinstance(package.engine, dict):
             if isinstance(self.engine, dict):
                 for k in self.engine:
@@ -444,78 +435,9 @@ class GameData(object):
             else:
                 package.engine.setdefault('generic', self.engine)
 
-        if isinstance(package.install_to, dict):
-            package.install_to.setdefault('generic',
-                    package.default_install_to)
-
-        if 'better_version' in d:
-            assert 'better_versions' not in d
-            package.better_versions = set([d['better_version']])
-
-        for rel in package.relations:
-            if rel in d:
-                related = d[rel]
-
-                if isinstance(related, (str, dict)):
-                    related = [related]
-                else:
-                    assert isinstance(related, list)
-
-                for x in related:
-                    pr = PackageRelation(x)
-                    # Fedora doesn't handle alternatives, everything must
-                    # be handled with virtual packages. Assume the same is
-                    # true for everything except dpkg.
-                    assert not pr.alternatives, pr
-
-                    if pr.contextual:
-                        for context, specific in pr.contextual.items():
-                            assert (context == 'deb' or
-                                    not specific.alternatives), pr
-
-                    if pr.package == 'libjpeg.so.62':
-                        # we can't really translate versions for libjpeg,
-                        # since it could be either libjpeg6b or libjpeg-turbo
-                        assert pr.version is None
-
-                    package.relations[rel].append(pr)
-
-        for port in ('debian', 'rpm', 'arch', 'fedora', 'mageia', 'suse'):
-            assert port not in d, 'use {deb: foo-dfsg, generic: foo} syntax'
-
         assert self.copyright or package.copyright, package.name
-        assert package.component in ('main', 'contrib', 'non-free', 'local')
-        assert package.component == 'local' or 'license' in d
-        assert package.section in ('games', 'doc'), 'unsupported'
-        assert type(package.langs) is list
-        assert type(package.mutually_exclusive) is bool
-
-        for rel, related in package.relations.items():
-            for pr in related:
-                packages = set()
-                if pr.contextual:
-                    for p in pr.contextual.values():
-                        packages.add(p.package)
-                elif pr.alternatives:
-                    for p in pr.alternatives:
-                        packages.add(p.package)
-                else:
-                    packages.add(pr.package)
-                assert package.name not in packages, \
-                   "%s should not be in its own %s set" % (package.name, rel)
-
-        if 'install_to' in d and isinstance(d['install_to'], str):
-            assert d['install_to'] != package.default_install_to, \
-                "install_to for %s is extraneous" % package.name
 
         if 'demo_for' in d:
-            if package.disks is None:
-                package.disks = 1
-            if type(d['demo_for']) is str:
-                package.demo_for.add(d['demo_for'])
-            else:
-                package.demo_for |= set(d['demo_for'])
-            assert package.name != d['demo_for'], "a game can't be a demo for itself"
             if not package.longname:
                 package.longname = self.longname + ' (demo)'
         else:
@@ -526,43 +448,6 @@ class GameData(object):
 
         if package.mutually_exclusive:
             assert package.demo_for or package.better_versions or package.relations['provides']
-
-        if 'expansion_for' in d:
-            if package.disks is None:
-                package.disks = 1
-            assert package.name != d['expansion_for'], \
-                   "a game can't be an expansion for itself"
-            if 'demo_for' in d:
-                raise AssertionError("%r can't be both a demo of %r and an " +
-                        "expansion for %r" % (package.name, d.demo_for,
-                            d.expansion_for))
-
-        if 'install' in d:
-            for filename in d['install']:
-                package.install.add(filename)
-
-        if 'optional' in d:
-            assert isinstance(d['optional'], list), package.name
-            for filename in d['optional']:
-                package.optional.add(filename)
-
-        if 'doc' in d:
-            assert isinstance(d['doc'], list), package.name
-            for filename in d['doc']:
-                package.optional.add(filename)
-
-        if 'license' in d:
-            assert isinstance(d['license'], list), package.name
-            for filename in d['license']:
-                package.optional.add(filename)
-
-        if 'version' in d:
-            package.version = d['version'] + '+' + GAME_PACKAGE_VERSION
-
-        if 'rip_cd' in d:
-            package.data_type = 'music'
-        elif package.section == 'doc':
-            package.data_type = 'documentation'
 
     def _populate_files(self, d, **kwargs):
         if d is None:

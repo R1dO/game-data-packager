@@ -528,6 +528,151 @@ class Package(object):
         # archives actually used to built a package
         self.used_sources = set()
 
+        for k in (
+                'aliases',
+                'architecture',
+                'better_versions',
+                'component',
+                'copyright',
+                'copyright_notice',
+                'description',
+                'disks',
+                'dotemu',
+                'empty',
+                'engine',
+                'expansion_for',
+                'expansion_for_ext',
+                'gog',
+                'install_to',
+                'lang',
+                'langs',
+                'long_description',
+                'longname',
+                'mutually_exclusive',
+                'origin',
+                'rip_cd',
+                'section',
+                'short_description',
+                'steam',
+                'symlinks',
+                'url_misc',
+                'wiki',
+                ):
+            if k in data:
+                setattr(self, k, data[k])
+
+        if 'better_version' in data:
+            assert 'better_versions' not in data
+            self.better_versions = set([data['better_version']])
+
+        for rel in self.relations:
+            if rel in data:
+                related = data[rel]
+
+                if isinstance(related, (str, dict)):
+                    related = [related]
+                else:
+                    assert isinstance(related, list)
+
+                for x in related:
+                    pr = PackageRelation(x)
+                    # Fedora doesn't handle alternatives, everything must
+                    # be handled with virtual packages. Assume the same is
+                    # true for everything except dpkg.
+                    assert not pr.alternatives, pr
+
+                    if pr.contextual:
+                        for context, specific in pr.contextual.items():
+                            assert (context == 'deb' or
+                                    not specific.alternatives), pr
+
+                    if pr.package == 'libjpeg.so.62':
+                        # we can't really translate versions for libjpeg,
+                        # since it could be either libjpeg6b or libjpeg-turbo
+                        assert pr.version is None
+
+                    self.relations[rel].append(pr)
+
+        for port in ('debian', 'rpm', 'arch', 'fedora', 'mageia', 'suse'):
+            assert port not in data, 'use {deb: foo-dfsg, generic: foo} syntax'
+
+        assert self.component in ('main', 'contrib', 'non-free', 'local')
+        assert self.component == 'local' or 'license' in data
+        assert self.section in ('games', 'doc'), 'unsupported'
+        assert type(self.langs) is list
+        assert type(self.mutually_exclusive) is bool
+
+        for rel, related in self.relations.items():
+            for pr in related:
+                packages = set()
+                if pr.contextual:
+                    for p in pr.contextual.values():
+                        packages.add(p.package)
+                elif pr.alternatives:
+                    for p in pr.alternatives:
+                        packages.add(p.package)
+                else:
+                    packages.add(pr.package)
+                assert self.name not in packages, \
+                   "%s should not be in its own %s set" % (self.name, rel)
+
+        if isinstance(self.install_to, dict):
+            self.install_to.setdefault('generic',
+                    self.default_install_to)
+
+        if 'install_to' in data and isinstance(data['install_to'], str):
+            assert data['install_to'] != self.default_install_to, \
+                "install_to for %s is extraneous" % self.name
+
+        if 'demo_for' in data:
+            if self.disks is None:
+                self.disks = 1
+            if type(data['demo_for']) is str:
+                self.demo_for.add(data['demo_for'])
+            else:
+                self.demo_for |= set(data['demo_for'])
+            assert self.name != data['demo_for'], "a game can't be a demo for itself"
+
+        if self.mutually_exclusive:
+            assert self.demo_for or self.better_versions or self.relations['provides']
+
+        if 'expansion_for' in data:
+            if self.disks is None:
+                self.disks = 1
+            assert self.name != data['expansion_for'], \
+                   "a game can't be an expansion for itself"
+            if 'demo_for' in data:
+                raise AssertionError("%r can't be both a demo of %r and an " +
+                        "expansion for %r" % (self.name, data.demo_for,
+                            data.expansion_for))
+
+        if 'install' in data:
+            for filename in data['install']:
+                self.install.add(filename)
+
+        if 'optional' in data:
+            assert isinstance(data['optional'], list), self.name
+            for filename in data['optional']:
+                self.optional.add(filename)
+
+        if 'doc' in data:
+            assert isinstance(data['doc'], list), self.name
+            for filename in data['doc']:
+                self.optional.add(filename)
+
+        if 'license' in data:
+            assert isinstance(data['license'], list), self.name
+            for filename in data['license']:
+                self.optional.add(filename)
+
+        if 'version' in data:
+            self.version = data['version'] + '+' + GAME_PACKAGE_VERSION
+
+        if 'rip_cd' in data:
+            self.data_type = 'music'
+        elif self.section == 'doc':
+            self.data_type = 'documentation'
+
     @property
     def aliases(self):
         return self._aliases
