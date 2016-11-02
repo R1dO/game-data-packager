@@ -32,7 +32,6 @@ except ImportError:
 
 from . import (PackagingSystem)
 from ..data import (HashedFile)
-from ..paths import (DATADIR)
 from ..util import (
         check_output,
         mkdir_p,
@@ -222,15 +221,7 @@ class DebPackaging(PackagingSystem):
             raise FileNotFoundError('Cannot generate .deb packages without '
                     'python3-debian')
 
-        try:
-            control_in = open(os.path.join(DATADIR,
-                              package.name + '.control.in'), encoding='utf-8')
-            control = Deb822(control_in)
-            for key in control.keys():
-                assert key == 'Description', 'specify "%s" only in YAML' % key
-        except FileNotFoundError:
-            control = Deb822()
-
+        control = Deb822()
         control['Package'] = package.name
         control['Version'] = package.version
         control['Priority'] = 'optional'

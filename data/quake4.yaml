@@ -16,6 +16,9 @@ packages:
   quake4-pb-bin:
     DISABLED: mitigation for CVE-2007-5248 <http://aluigi.altervista.org/adv/d3engfspb-adv.txt>
     short_description: Quake 4 PunkBuster binaries
+    description: |
+      This package contains the optional PunkBuster component of the
+      proprietary binary-only executables for Quake 4.
     install_to: $prefix/lib/quake4
     architecture: i386
     version: "1.4.2"
@@ -35,6 +38,9 @@ packages:
     install_to: $prefix/lib/quake4
     architecture: i386
     version: "1.4.2"
+    description: |
+      This package contains the proprietary binary-only executables for
+      Quake 4.
     depends:
       - game-data-packager-runtime
       - libc.so.6 (>= 2.2.4)
@@ -73,6 +79,8 @@ packages:
       - it
       - pl
       - ru
+    description: |
+      This package contains the commercial data files for Quake 4.
     license:
       - EULA.txt?steam
       - patch 1.4.2 licenses
@@ -95,6 +103,10 @@ packages:
     provides: quake4-any-data
     replaces: quake4-any-data
     install_to: $assets/quake4
+    description: |
+      This package contains the commercial data files for the censored
+      German version of Quake 4. This version does not interoperate with
+      versions from other regions.
     # this is not actually dubbed, just censored
     langs:
       - en

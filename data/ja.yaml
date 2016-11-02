@@ -62,7 +62,7 @@ packages:
   jedi-academy-bonus-data:
     aliases: [bonus]
     longname: "Bonus maps for Jedi Academy"
-    copyright: |
+    copyright: >-
        © 2003-2004 Activision, Inc. / LucasArts,
        a division of Lucasfilm Entertainment Company Ltd. and/or Raven Software
     description: |
@@ -73,7 +73,6 @@ packages:
        * Rift of Shadows CTF map
        * Gas Mine, The Fortress, Conquest of Byss and Ord Mantell Canyon FFA maps
        * "Destroyer" vehicle combat map for Siege mode
-      .
     expansion_for: jedi-academy-data
     install_to: $assets/jedi-academy
     symlinks:
