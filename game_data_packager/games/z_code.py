@@ -24,6 +24,7 @@ import re
 
 from .. import GameData
 from ..build import (PackagingTask)
+from ..data import (Package)
 from ..util import (TemporaryUmask,
                     which,
                     mkdir_p)
@@ -33,13 +34,6 @@ logger = logging.getLogger(__name__)
 class ZCodeGameData(GameData):
     def __init__(self, shortname, data):
         super(ZCodeGameData, self).__init__(shortname, data)
-        for package in self.packages.values():
-            package.z_file = None
-            for install in package.install:
-                if re.match('^.z[12345678]$', os.path.splitext(install)[1]):
-                    assert package.z_file is None
-                    package.z_file = install
-            assert package.z_file
 
         if self.engine is None:
             self.engine = { 'deb': 'gargoyle-free | zcode-interpreter' }
@@ -47,8 +41,23 @@ class ZCodeGameData(GameData):
         if self.genre is None:
             self.genre = 'Adventure'
 
+    def construct_package(self, binary, data):
+        return ZCodePackage(binary, data)
+
     def construct_task(self, **kwargs):
         return ZCodeTask(self, **kwargs)
+
+class ZCodePackage(Package):
+    def __init__(self, binary, data):
+        super(ZCodePackage, self).__init__(binary, data)
+
+        self.z_file = None
+        for install in self.install:
+            if re.match('^.z[12345678]$', os.path.splitext(install)[1]):
+                assert self.z_file is None
+                self.z_file = install
+
+        assert self.z_file
 
 class ZCodeTask(PackagingTask):
     def fill_extra_files(self, package, destdir):

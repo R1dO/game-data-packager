@@ -24,6 +24,7 @@ import os
 
 from .. import GameData
 from ..build import (PackagingTask)
+from ..data import (Package)
 from ..util import (mkdir_p)
 
 logger = logging.getLogger(__name__)
@@ -39,23 +40,32 @@ class DosboxGameData(GameData):
         super(DosboxGameData, self).__init__(shortname, data)
         self.binary_executables = 'all'
 
-        for p in self.packages.values():
-            p.install_to = '$assets/dosbox/' + p.name[:len(p.name)-5]
-            p.depends = 'dosgame'
-            p.main_exe = None
-            if 'main_exe' in self.data['packages'][p.name]:
-                p.main_exe = self.data['packages'][p.name]['main_exe']
-            else:
-                for wanted in p.install:
-                    filename, ext = os.path.splitext(wanted)
-                    if (filename not in ('config', 'install', 'setup')
-                        and ext in ('.com','.exe')):
-                        assert p.main_exe is None
-                        p.main_exe = filename
-            assert p.main_exe
+    def construct_package(self, binary, data):
+        return DosboxPackage(binary, data)
 
     def construct_task(self, **kwargs):
         return DosboxTask(self, **kwargs)
+
+class DosboxPackage(Package):
+    def __init__(self, binary, data):
+        super(DosboxPackage, self).__init__(binary, data)
+
+        assert 'install_to' not in data
+        assert 'depends' not in data
+
+        self.install_to = '$assets/dosbox/' + self.name[:len(self.name)-5]
+        self.depends = 'dosgame'
+        self.main_exe = None
+        if 'main_exe' in data:
+            self.main_exe = data['main_exe']
+        else:
+            for wanted in self.install:
+                filename, ext = os.path.splitext(wanted)
+                if (filename not in ('config', 'install', 'setup')
+                    and ext in ('.com','.exe')):
+                    assert self.main_exe is None
+                    self.main_exe = filename
+        assert self.main_exe
 
 class DosboxTask(PackagingTask):
     def fill_extra_files(self, package, destdir):

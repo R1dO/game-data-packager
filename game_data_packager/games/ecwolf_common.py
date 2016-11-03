@@ -23,6 +23,7 @@ import subprocess
 
 from .. import GameData
 from ..build import (PackagingTask)
+from ..data import (Package)
 from ..paths import DATADIR
 from ..util import (mkdir_p)
 
@@ -46,14 +47,20 @@ class EcwolfGameData(GameData):
         if self.genre is None:
             self.genre = 'First-person shooter'
 
-        for package in self.packages.values():
-            if 'quirks' in self.data['packages'][package.name]:
-                package.quirks = ' ' + self.data['packages'][package.name]['quirks']
-            else:
-                package.quirks = ''
+    def construct_package(self, binary, data):
+        return EcwolfPackage(binary, data)
 
     def construct_task(self, **kwargs):
         return EcwolfTask(self, **kwargs)
+
+class EcwolfPackage(Package):
+    def __init__(self, binary, data):
+        super(EcwolfPackage, self).__init__(binary, data)
+
+        if 'quirks' in data:
+            self.quirks = ' ' + data['quirks']
+        else:
+            self.quirks = ''
 
 class EcwolfTask(PackagingTask):
     def fill_extra_files(self, package, destdir):

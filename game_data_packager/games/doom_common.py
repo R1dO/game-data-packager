@@ -23,6 +23,7 @@ import subprocess
 
 from .. import GameData
 from ..build import (PackagingTask)
+from ..data import (Package)
 from ..paths import DATADIR
 from ..util import (copy_with_substitutions, mkdir_p)
 
@@ -72,25 +73,42 @@ class DoomGameData(GameData):
             self.genre = 'First-person shooter'
 
         for package in self.packages.values():
-            package.install_to = '$assets/doom'
-
-            if 'main_wads' in self.data['packages'][package.name]:
-                package.main_wads = self.data['packages'][package.name]['main_wads']
-            else:
-                assert package.only_file
-                package.main_wads = {package.only_file: {}}
-            assert type(package.main_wads) == dict
             for main_wad in package.main_wads.values():
-                assert type(main_wad) == dict
-                if 'args' in main_wad:
-                    main_wad['args'] % 'deadbeef'
-                elif package.expansion_for:
+                if 'args' not in main_wad and package.expansion_for:
                     assert self.packages[package.expansion_for].only_file
-            package.data_type = 'PWAD' if (package.expansion_for
-                                or package.expansion_for_ext) else 'IWAD'
+
+    def construct_package(self, binary, data):
+        return DoomPackage(binary, data)
 
     def construct_task(self, **kwargs):
         return DoomTask(self, **kwargs)
+
+class DoomPackage(Package):
+    def __init__(self, binary, data):
+        super(DoomPackage, self).__init__(binary, data)
+
+        assert 'install_to' not in data, self.name
+        assert 'data_type' not in data, self.name
+
+        self.install_to = '$assets/doom'
+
+        if self.expansion_for or self.expansion_for_ext:
+            self.data_type = 'PWAD'
+        else:
+            self.data_type = 'IWAD'
+
+        if 'main_wads' in data:
+            self.main_wads = data['main_wads']
+        else:
+            assert self.only_file
+            self.main_wads = { self.only_file: {} }
+
+        assert type(self.main_wads) == dict
+        for main_wad in self.main_wads.values():
+            assert type(main_wad) == dict
+            if 'args' in main_wad:
+                # assert that it has one string placeholder
+                main_wad['args'] % 'deadbeef'
 
 class DoomTask(PackagingTask):
     def fill_extra_files(self, package, destdir):
