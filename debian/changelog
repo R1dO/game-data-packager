@@ -11,10 +11,14 @@ game-data-packager (47) UNRELEASED; urgency=medium
       where #828795 was fixed, so we no longer emit a misleading warning
       from the postinst (Closes: #829035) [smcv]
     - Fix a crash when packaging ecwolf games [adetiste]
+    - ja: Fix spurious warnings about assets0.pk3 [smcv]
   * Internal changes:
     - Stop using lsb-release [smcv]
-    - Do not modify GamePackage objects after they have been loaded [smcv]
+    - Refactor Package object creation [smcv]
+    - Do not modify Package objects after they have been loaded [smcv]
     - Restructure doom2-masterlevels data [adetiste]
+    - Simplify creation of DEBIAN/control [smcv]
+    - Sort license files if there are multiple [smcv]
 
  -- Simon McVittie <smcv@debian.org>  Sun, 30 Oct 2016 22:19:21 +0000
 
