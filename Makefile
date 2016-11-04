@@ -1,10 +1,3 @@
-bindir := /usr/bin
-libdir := /usr/lib
-datadir := /usr/share
-gamedatadir := ${datadir}
-
-PYTHON := python3
-
 -include configure.mk
 
 pkgdatadir := ${gamedatadir}/game-data-packager
@@ -70,8 +63,8 @@ default: $(png) $(svgz) $(json_from_data) $(launcher_json) \
       out/bash_completion out/changelog.gz \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
 
-configure.mk: tools/configure.py $(wildcard game_data_packager/*.py game_data_packager/*/*.py)
-	PYTHONPATH=. ${PYTHON} tools/configure.py > $@
+configure.mk: configure game_data_packager/version.py
+	./config.status
 
 out/CACHEDIR.TAG:
 	@mkdir -p out
@@ -349,8 +342,7 @@ install:
 
 	mkdir -p $(DESTDIR)$(pkgdatadir)
 	cp -ar game_data_packager/                             $(DESTDIR)$(pkgdatadir)/
-	python3 -m game_data_packager.version $(RELEASE) >     out/installed-version.py
-	install -m0644 out/installed-version.py                $(DESTDIR)$(pkgdatadir)/game_data_packager/version.py
+	install -m0644 out/version.py                          $(DESTDIR)$(pkgdatadir)/game_data_packager/
 	install -m0644 out/*.copyright                         $(DESTDIR)$(pkgdatadir)/
 	install -m0644 out/*.png                               $(DESTDIR)$(pkgdatadir)/
 	install -m0644 data/*.png                              $(DESTDIR)$(pkgdatadir)/
@@ -363,7 +355,7 @@ install:
 
 	install -d                                             $(DESTDIR)$(runtimedir)/
 	install runtime/gdp_launcher_base.py                   $(DESTDIR)$(runtimedir)/
-	install -m0644 out/installed-version.py                $(DESTDIR)$(runtimedir)/gdp_launcher_version.py
+	install -m0644 out/version.py                          $(DESTDIR)$(runtimedir)/gdp_launcher_version.py
 	install runtime/gdp-launcher.py                        $(DESTDIR)$(runtimedir)/gdp-launcher
 	install runtime/openurl.py                             $(DESTDIR)$(runtimedir)/gdp-openurl
 	install -m0644 $(launcher_desktops)                    $(DESTDIR)$(runtimedir)/
@@ -371,19 +363,19 @@ install:
 	install -m0644 runtime/missing-data.txt                $(DESTDIR)$(runtimedir)/
 	install -m0644 $(launcher_json)                        $(DESTDIR)$(runtimedir)/
 	install -d                                             $(DESTDIR)${gamedatadir}/quake/
-	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake/gdp_launcher_version.py
+	install -m644 out/version.py                           $(DESTDIR)${gamedatadir}/quake/gdp_launcher_version.py
 	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake/quake-server
 	install -d                                             $(DESTDIR)${gamedatadir}/quake2/
-	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake2/gdp_launcher_version.py
+	install -m644 out/version.py                           $(DESTDIR)${gamedatadir}/quake2/gdp_launcher_version.py
 	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake2/quake2-server
 	install -d                                             $(DESTDIR)${gamedatadir}/quake3/
-	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake3/gdp_launcher_version.py
+	install -m644 out/version.py                           $(DESTDIR)${gamedatadir}/quake3/gdp_launcher_version.py
 	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake3/quake3-server
 	install -d                                             $(DESTDIR)${gamedatadir}/quake4/
-	install -m644 out/installed-version.py                 $(DESTDIR)${gamedatadir}/quake4/gdp_launcher_version.py
+	install -m644 out/version.py                           $(DESTDIR)${gamedatadir}/quake4/gdp_launcher_version.py
 	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${gamedatadir}/quake4/quake4-dedicated
 	install -d                                             $(DESTDIR)${libdir}/etqw/
-	install -m644 out/installed-version.py                 $(DESTDIR)${libdir}/etqw/gdp_launcher_version.py
+	install -m644 out/version.py                           $(DESTDIR)${libdir}/etqw/gdp_launcher_version.py
 	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${libdir}/etqw/etqw-dedicated
 	install -d                                             $(DESTDIR)/etc/apparmor.d/
 	install -m0644 etc/apparmor.d/*                        $(DESTDIR)/etc/apparmor.d/

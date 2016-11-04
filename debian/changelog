@@ -19,6 +19,8 @@ game-data-packager (47) UNRELEASED; urgency=medium
     - Restructure doom2-masterlevels data [adetiste]
     - Simplify creation of DEBIAN/control [smcv]
     - Sort license files if there are multiple [smcv]
+    - Conform to https://github.com/cgwalters/build-api (vaguely imitating
+      Autoconf, but differently-implemented) [smcv]
 
  -- Simon McVittie <smcv@debian.org>  Sun, 30 Oct 2016 22:19:21 +0000
 

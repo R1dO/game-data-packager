@@ -11,9 +11,15 @@ include /usr/share/dpkg/pkg-info.mk
 
 options := \
 	BUILD_DATE="$$(dpkg-parsechangelog --show-field=Date)" \
-	bindir='/usr/games' \
-	gamedatadir='/usr/share/games' \
 	$(NULL)
+
+override_dh_auto_configure:
+	dh_auto_configure \
+		-- \
+		--bindir='$${exec_prefix}/games' \
+		--libdir='$${exec_prefix}/lib' \
+		--with-gamedatadir='$${datadir}/games' \
+		$(NULL)
 
 override_dh_auto_build:
 	dh_auto_build \

@@ -87,6 +87,7 @@ The following games currently require this package:
 %autosetup
 
 %build
+%configure
 make %{?_smp_mflags}
 
 %check
