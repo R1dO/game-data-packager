@@ -69,6 +69,7 @@ class Configure:
                 oldincludedir='/usr/include',
                 pdfdir='${docdir}',
                 prefix='/usr/local',
+                program_prefix='',
                 psdir='${docdir}',
                 runstatedir='${localstatedir}/run',
                 sbindir='${exec_prefix}/sbin',
@@ -89,7 +90,7 @@ class Configure:
                 )
 
         for k, v in self.dirs.items():
-            self.parser.add_argument('--' + k, default=v)
+            self.parser.add_argument('--' + k.replace('_','-'), default=v)
 
         for k, v in self.with_.items():
             self.parser.add_argument('--with-' + k, default=v, dest=k)
