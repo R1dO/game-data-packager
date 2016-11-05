@@ -338,7 +338,7 @@ check:
 
 install:
 	mkdir -p $(DESTDIR)$(bindir)
-	install -m0755 out/game-data-packager                  $(DESTDIR)$(bindir)
+	install -m0755 out/game-data-packager                  $(DESTDIR)$(bindir)/${program_prefix}game-data-packager
 
 	mkdir -p $(DESTDIR)$(pkgdatadir)
 	cp -ar game_data_packager/                             $(DESTDIR)$(pkgdatadir)/
@@ -377,39 +377,39 @@ install:
 	install -d                                             $(DESTDIR)${libdir}/etqw/
 	install -m644 out/version.py                           $(DESTDIR)${libdir}/etqw/gdp_launcher_version.py
 	install -m755 runtime/gdp_launcher_base.py             $(DESTDIR)${libdir}/etqw/etqw-dedicated
-	install -d                                             $(DESTDIR)/etc/apparmor.d/
-	install -m0644 etc/apparmor.d/*                        $(DESTDIR)/etc/apparmor.d/
+	install -d                                             $(DESTDIR)${sysconfdir}/apparmor.d/
+	install -m0644 etc/apparmor.d/*                        $(DESTDIR)${sysconfdir}/apparmor.d/
 
-	mkdir -p $(DESTDIR)/usr/share/bash-completion/completions
-	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)/usr/share/bash-completion/completions/
-	sed -i 's#pkgdatadir=.*#pkgdatadir=$(pkgdatadir)#g' $(DESTDIR)/usr/share/bash-completion/completions/game-data-packager
+	mkdir -p $(DESTDIR)${datadir}/bash-completion/completions
+	install -m0644 data/bash-completion/game-data-packager $(DESTDIR)${datadir}/bash-completion/completions/
+	sed -i 's#pkgdatadir=.*#pkgdatadir=$(pkgdatadir)#g' $(DESTDIR)${datadir}/bash-completion/completions/game-data-packager
 
-	mkdir -p $(DESTDIR)/usr/share/man/man6/
-	mkdir -p $(DESTDIR)/usr/share/man/fr/man6/
-	install -m0644 doc/game-data-packager.6                $(DESTDIR)/usr/share/man/man6/
-	install -m0644 doc/game-data-packager.fr.6             $(DESTDIR)/usr/share/man/fr/man6/game-data-packager.6
+	mkdir -p $(DESTDIR)${mandir}/man6/
+	mkdir -p $(DESTDIR)${mandir}/fr/man6/
+	install -m0644 doc/game-data-packager.6                $(DESTDIR)${mandir}/man6/
+	install -m0644 doc/game-data-packager.fr.6             $(DESTDIR)${mandir}/fr/man6/game-data-packager.6
 
 	mkdir -p $(DESTDIR)/etc/game-data-packager
-	install -m0644 etc/game-data-packager.conf             $(DESTDIR)/etc/
-	install -m0644 etc/*-mirrors                           $(DESTDIR)/etc/game-data-packager/
+	install -m0644 etc/game-data-packager.conf             $(DESTDIR)${sysconfdir}/
+	install -m0644 etc/*-mirrors                           $(DESTDIR)${sysconfdir}/game-data-packager/
 
-	mkdir -p $(DESTDIR)/usr/share/applications
-	mkdir -p $(DESTDIR)/usr/share/pixmaps
-	install -m0755 runtime/doom2-masterlevels.py           $(DESTDIR)$(bindir)/doom2-masterlevels
-	install -m0644 out/doom2-masterlevels.desktop          $(DESTDIR)/usr/share/applications/
-	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)/usr/share/man/man6/
-	install -m0644 out/doom-common.png                     $(DESTDIR)/usr/share/pixmaps/doom2-masterlevels.png
+	mkdir -p $(DESTDIR)${datadir}/applications
+	mkdir -p $(DESTDIR)${datadir}/pixmaps
+	install -m0755 runtime/doom2-masterlevels.py           $(DESTDIR)$(bindir)/${program_prefix}doom2-masterlevels
+	install -m0644 out/doom2-masterlevels.desktop          $(DESTDIR)${datadir}/applications/
+	install -m0644 doc/doom2-masterlevels.6                $(DESTDIR)${mandir}/man6/
+	install -m0644 out/doom-common.png                     $(DESTDIR)${datadir}/pixmaps/doom2-masterlevels.png
 	install -d                                             $(DESTDIR)$(bindir)
-	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake
-	ln -s ${gamedatadir}/quake/quake-server                $(DESTDIR)$(bindir)/
-	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake2
-	ln -s ${gamedatadir}/quake2/quake2-server              $(DESTDIR)$(bindir)/
-	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake3
-	ln -s ${gamedatadir}/quake3/quake3-server              $(DESTDIR)$(bindir)/
-	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/quake4
-	ln -s ${gamedatadir}/quake4/quake4-dedicated           $(DESTDIR)$(bindir)/
-	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/etqw
-	ln -s ${libdir}/etqw/etqw-dedicated                    $(DESTDIR)$(bindir)/
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/${program_prefix}quake
+	ln -s ${gamedatadir}/quake/quake-server                $(DESTDIR)$(bindir)/${program_prefix}quake-server
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/${program_prefix}quake2
+	ln -s ${gamedatadir}/quake2/quake2-server              $(DESTDIR)$(bindir)/${program_prefix}quake2-server
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/${program_prefix}quake3
+	ln -s ${gamedatadir}/quake3/quake3-server              $(DESTDIR)$(bindir)/${program_prefix}quake3-server
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/${program_prefix}quake4
+	ln -s ${gamedatadir}/quake4/quake4-dedicated           $(DESTDIR)$(bindir)/${program_prefix}quake4-dedicated
+	ln -s ${runtimedir}/gdp-launcher                       $(DESTDIR)$(bindir)/${program_prefix}etqw
+	ln -s ${libdir}/etqw/etqw-dedicated                    $(DESTDIR)$(bindir)/${program_prefix}etqw-dedicated
 	install -d                                             $(DESTDIR)$(datadir)/applications
 	install -m644 out/etqw.desktop                         $(DESTDIR)$(datadir)/applications
 	install -m644 out/quake*.desktop                       $(DESTDIR)$(datadir)/applications
@@ -430,9 +430,9 @@ install:
 	install -m644 out/quake-*.svg                          $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
 	install -m644 out/quake2*.svg                          $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
 	install -m644 out/quake4*.svg                          $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
-	install -d                                             $(DESTDIR)$(datadir)/man/man6
-	install -m644 doc/etqw*.6                              $(DESTDIR)$(datadir)/man/man6
-	install -m644 doc/quake*.6                             $(DESTDIR)$(datadir)/man/man6
+	install -d                                             $(DESTDIR)${mandir}/man6
+	install -m644 doc/etqw*.6                              $(DESTDIR)${mandir}/man6
+	install -m644 doc/quake*.6                             $(DESTDIR)${mandir}/man6
 
 html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
