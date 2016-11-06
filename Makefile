@@ -326,6 +326,9 @@ clean:
 	rm -rf game_data_packager/games/__pycache__
 	rm -rf tools/__pycache__
 
+distclean: clean
+	rm -f configure.mk config.status
+
 check:
 	LC_ALL=C $(PYFLAKES3) game_data_packager/*.py game_data_packager/*/*.py runtime/*.py tests/*.py tools/*.py || :
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. $(PYTHON) tests/deb.py
@@ -438,4 +441,4 @@ html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
 	rsync out/index.html alioth.debian.org:/var/lib/gforge/chroot/home/groups/pkg-games/htdocs/game-data/ -e ssh -v
 
-.PHONY: all clean check install html
+.PHONY: all clean distclean check install html
