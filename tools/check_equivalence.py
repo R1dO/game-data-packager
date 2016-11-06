@@ -43,19 +43,19 @@ if __name__ == '__main__':
         # make check
         from_ref = load_games(games, use_vfs='ref.zip')
         dt = time.process_time() - t
-        print('# loaded game data from ref.zip in %.3f seconds' % dt)
+        print('# loaded game data from ref.zip in %.3f seconds' % dt, flush=True)
     else:
         from_ref = None
 
     t = time.process_time()
     from_vfs = load_games(games, use_vfs=True)
     dt = time.process_time() - t
-    print('# loaded game data from vfs.zip in %.3f seconds' % dt)
+    print('# loaded game data from vfs.zip in %.3f seconds' % dt, flush=True)
 
     t = time.process_time()
     from_json = load_games(games, use_vfs=False)
     dt = time.process_time() - t
-    print('# loaded game data from JSON in %.3f seconds' % dt)
+    print('# loaded game data from JSON in %.3f seconds' % dt, flush=True)
 
     t = time.process_time()
     from_yaml = load_games(games, use_vfs=False, use_yaml=True)
