@@ -58,7 +58,7 @@ quake_icons = \
 	$(patsubst %,out/%/quake4.png,$(quake_layer_sizes)) \
 	$(NULL)
 
-default: $(png) $(svgz) $(json_from_data) $(launcher_json) \
+all: $(png) $(svgz) $(json_from_data) $(launcher_json) \
       $(copyright) $(dot_in) $(desktop) $(quake_icons) \
       out/bash_completion out/changelog.gz \
       out/game-data-packager out/vfs.zip out/memento-mori-2.svg
@@ -438,4 +438,4 @@ html: $(DIRS) $(json)
 	LC_ALL=C GDP_UNINSTALLED=1 PYTHONPATH=. python3 -m tools.babel
 	rsync out/index.html alioth.debian.org:/var/lib/gforge/chroot/home/groups/pkg-games/htdocs/game-data/ -e ssh -v
 
-.PHONY: default clean check install html
+.PHONY: all clean check install html
