@@ -240,9 +240,10 @@ class Launcher:
                 self.button_conf = Gtk.Button(label="Configure")
                 radiogrid.attach(self.button_conf,1, i, 1, 1)
                 self.button_conf.connect("clicked", self.chocolate_setup)
-            if os.path.isfile('/etc/debian_version'):
-                radiogrid.set_tooltip_text('Default can be changed with "update-alternatives --config doom"')
             i += 1
+
+        if i > 1 and os.path.isfile('/etc/debian_version'):
+            radiogrid.set_tooltip_text('Default can be changed with "update-alternatives --config doom"')
 
         grid.attach(radiogrid, 2, 4, 1, 1)
 
