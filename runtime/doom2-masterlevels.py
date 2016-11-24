@@ -239,7 +239,7 @@ class Launcher:
                 radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
                 radiobutton.connect('toggled', self.select_engine)
                 i += 1
-                radiogrid.attach(radiobutton, 0, i, i, 1)
+                radiogrid.attach(radiobutton, 0, i, 1, 1)
                 if os.path.isfile('/etc/debian_version'):
                     radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
 
