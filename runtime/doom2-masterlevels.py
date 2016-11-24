@@ -234,12 +234,21 @@ class Launcher:
         if default:
             radiobuttonDefault.set_label("%s (default)" % default)
             self.select_engine(radiobuttonDefault)
+            if default.split('/')[-1] == 'chocolate-doom' and which('chocolate-doom-setup'):
+                self.button_conf = Gtk.Button(label="Configure")
+                radiogrid.attach(self.button_conf,1, 0, 1, 1)
+                self.button_conf.connect("clicked", self.chocolate_setup)
+
             i = 1
             for alternative in alternatives:
                 radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
                 radiobutton.connect('toggled', self.select_engine)
                 i += 1
                 radiogrid.attach(radiobutton, 0, i, 1, 1)
+                if alternative.split('/')[-1] == 'chocolate-doom' and which('chocolate-doom-setup'):
+                    self.button_conf = Gtk.Button(label="Configure")
+                    radiogrid.attach(self.button_conf,1, i, 1, 1)
+                    self.button_conf.connect("clicked", self.chocolate_setup)
                 if os.path.isfile('/etc/debian_version'):
                     radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
 
@@ -300,6 +309,9 @@ class Launcher:
             ['-file', '%s/%s.wad' % (DIR, self.game),
             '-warp', '%d' % self.warp,
             '-skill', '%d' % self.difficulty])
+
+    def chocolate_setup(self, event):
+        subprocess.call('chocolate-doom-setup')
 
     def main(self):
         if not self.engine:
