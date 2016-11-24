@@ -207,50 +207,42 @@ class Launcher:
         radiobuttonDefault.connect('toggled', self.select_engine)
         radiogrid.attach(radiobuttonDefault, 0, 0, 1, 1)
 
-        default = None
         alternatives = []
         if os.path.islink('/etc/alternatives/doom'):
             # on Debian
-            default = os.readlink('/etc/alternatives/doom')
-            if default == '/usr/games/doomsday-compat':
-                default = '/usr/games/doomsday'
+            alternatives=[os.readlink('/etc/alternatives/doom')]
 
             proc = subprocess.check_output(['update-alternatives', '--list', 'doom'],
                                              universal_newlines=True)
             for alternative in proc.splitlines():
-                if alternative == '/usr/games/doomsday-compat':
-                    alternative = '/usr/games/doomsday'
-                if alternative != default:
+                if alternative not in alternatives:
                     alternatives.append(alternative)
         else:
             # not on Debian
             for alternative in ('prboom-plus', 'prboom', 'chocolate-doom'):
                 if which(alternative):
-                    if not default:
-                        default = alternative
-                    else:
-                        alternatives.append(alternative)
+                    alternatives.append(alternative)
 
-        if default:
-            radiobuttonDefault.set_label("%s (default)" % default)
-            self.select_engine(radiobuttonDefault)
-            if default.split('/')[-1] == 'chocolate-doom' and which('chocolate-doom-setup'):
-                self.button_conf = Gtk.Button(label="Configure")
-                radiogrid.attach(self.button_conf,1, 0, 1, 1)
-                self.button_conf.connect("clicked", self.chocolate_setup)
+        i = 0
+        for alternative in alternatives:
+            if alternative == '/usr/games/doomsday-compat':
+                alternative = '/usr/games/doomsday'
 
-            i = 1
-            for alternative in alternatives:
+            if i == 0:
+                radiobuttonDefault.set_label("%s (default)" % alternative)
+                self.select_engine(radiobuttonDefault)
+            else:
                 radiobutton = Gtk.RadioButton(group=radiobuttonDefault, label=alternative)
                 radiobutton.connect('toggled', self.select_engine)
-                i += 1
                 radiogrid.attach(radiobutton, 0, i, 1, 1)
-                if alternative.split('/')[-1] == 'chocolate-doom' and which('chocolate-doom-setup'):
-                    self.button_conf = Gtk.Button(label="Configure")
-                    radiogrid.attach(self.button_conf,1, i, 1, 1)
-                    self.button_conf.connect("clicked", self.chocolate_setup)
-                if os.path.isfile('/etc/debian_version'):
-                    radiogrid.set_tooltip_text('Default can be changed with update-alternatives(8)')
+
+            if alternative.split('/')[-1] == 'chocolate-doom' and which('chocolate-doom-setup'):
+                self.button_conf = Gtk.Button(label="Configure")
+                radiogrid.attach(self.button_conf,1, i, 1, 1)
+                self.button_conf.connect("clicked", self.chocolate_setup)
+            if os.path.isfile('/etc/debian_version'):
+                radiogrid.set_tooltip_text('Default can be changed with "update-alternatives --config doom"')
+            i += 1
 
         grid.attach(radiogrid, 2, 4, 1, 1)
 
