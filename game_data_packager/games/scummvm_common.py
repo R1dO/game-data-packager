@@ -146,7 +146,8 @@ class ScummvmTask(PackagingTask):
         else:
             pgm = package.name[0:len(package.name)-len('-data')]
             entry['Exec'] = pgm
-            bindir = os.path.join(destdir, self.packaging.BINDIR.strip('/'))
+            bindir = self.packaging.substitute(self.packaging.BINDIR, package.name)
+            bindir = os.path.join(destdir, bindir.strip('/'))
             assert bindir.startswith(destdir + '/'), (bindir, destdir)
             mkdir_p(bindir)
             path = os.path.join(bindir, pgm)

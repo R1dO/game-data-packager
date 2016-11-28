@@ -72,9 +72,9 @@ class DosboxTask(PackagingTask):
         super(DosboxTask, self).fill_extra_files(package, destdir)
 
         pgm = package.name[:len(package.name)-5]
-        mkdir_p(os.path.join(destdir, self.packaging.BINDIR.strip('/')))
-        os.symlink('dosgame',
-                   os.path.join(destdir, self.packaging.BINDIR.strip('/'), pgm))
+        bindir = self.packaging.substitute(self.packaging.BINDIR, package.name)
+        mkdir_p(os.path.join(destdir, bindir.strip('/')))
+        os.symlink('dosgame', os.path.join(destdir, bindir.strip('/'), pgm))
 
         appdir = os.path.join(destdir, 'usr/share/applications')
         mkdir_p(appdir)
