@@ -10,6 +10,8 @@ game-data-packager (48) UNRELEASED; urgency=medium
   * Internal changes:
     - Refactor doom2-masterlevels launcher [adetiste]
     - Add all and distclean Makefile targets [smcv]
+    - In Debian packaging, set a temporary home directory for Inkscape
+      to silence warnings and comply with proposed policy (#845715)
 
  -- Simon McVittie <smcv@debian.org>  Thu, 24 Nov 2016 08:15:30 +0100
 

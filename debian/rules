@@ -7,11 +7,18 @@ export DH_OPTIONS
 include /usr/share/dpkg/pkg-info.mk
 
 %:
+	mkdir -p $(HOME)
 	dh $@ --with python3,bash-completion
 
 options := \
 	BUILD_DATE="$$(dpkg-parsechangelog --show-field=Date)" \
 	$(NULL)
+
+# Redirect Inkscape log files, etc. to a temporary directory
+export HOME = $(CURDIR)/debian/temp-home
+export XDG_CACHE_HOME = $(CURDIR)/debian/temp-home/.cache
+export XDG_CONFIG_HOME = $(CURDIR)/debian/temp-home/.config
+export XDG_DATA_HOME = $(CURDIR)/debian/temp-home/.local/share
 
 override_dh_auto_configure:
 	dh_auto_configure \
