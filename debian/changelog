@@ -1,11 +1,15 @@
-game-data-packager (48) unstable; urgency=medium
+game-data-packager (48) UNRELEASED; urgency=medium
 
   * Enhancements and bug fixes:
     - Add a button to "Doom II Masterlevels" launcher to start
       chocolate-doom-setup from there. [adetiste]
-    - Fix launcher scripts generated in BINDIR,
-      impacted games: Z-code text-mode adventures (H2G2, Zork...)
-      and multilingual ScummVM games [adetiste]
+    - Fix launcher scripts generated without fully expanding $bindir,
+      resulting in files in '/$prefix'. This affected Z-code text
+      adventures (H2G2, Zork, etc.) and multilingual ScummVM games.
+      [adetiste]
+  * Internal changes:
+    - Refactor doom2-masterlevels launcher [adetiste]
+    - Add all and distclean Makefile targets [smcv]
 
  -- Simon McVittie <smcv@debian.org>  Thu, 24 Nov 2016 08:15:30 +0100
 
