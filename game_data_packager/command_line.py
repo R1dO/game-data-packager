@@ -145,6 +145,14 @@ def run_command_line():
             help='save downloaded files to DIR, and look for files there')
 
     group = base_parser.add_mutually_exclusive_group()
+    group.add_argument('--search', action='store_true', default=True,
+        help='look for installed files in Steam and other likely places ' +
+            '(default)')
+    group.add_argument('--no-search', action='store_false',
+        dest='search',
+        help='only look in paths provided on the command line')
+
+    group = base_parser.add_mutually_exclusive_group()
     group.add_argument('--verbose', action='store_true',
             help='show output from external tools')
     group.add_argument('--no-verbose', action='store_false',

@@ -515,14 +515,6 @@ class GameData(object):
                 parents=(base_parser,),
                 **kwargs)
 
-        group = parser.add_mutually_exclusive_group()
-        group.add_argument('--search', action='store_true', default=True,
-            help='look for installed files in Steam and other likely places ' +
-                '(default)')
-        group.add_argument('--no-search', action='store_false',
-            dest='search',
-            help='only look in paths provided on the command line')
-
         parser.add_argument('paths', nargs='*',
                 metavar='DIRECTORY|FILE',
                 help='Files to use in constructing the .deb')
