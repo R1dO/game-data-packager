@@ -25,95 +25,154 @@
 game\-data\-packager \- build a .deb of game data
 .
 .SH SYNOPSIS
-.B game\-data\-packager
-[
-.I -i
-]
-[
-.I -d
-out-directory [
-.I -n
-] ]
-[
-.I -z | --no-compress
-]
-.I game
-[
-.I game\-options
-]
+\fBgame\-data\-packager\fR [\fIOPTIONS\fR] \fIGAME\fR [\fIOPTIONS\fR] [\fIPER-GAME OPTIONS\fR]
 .SH DESCRIPTION
 Many open-source games require game data which is licensed
-incompatibly with the Debian Free Software Guidelines.
+incompatibly with the Debian Free Software Guidelines and other Linux
+distributions' licensing guidelines, or cannot be legally redistributed
+at all.
 .B game\-data\-packager
-is a tool designed to help you locally assemble Debian packages containing
-such game data from CD-ROMs, the Internet or elsewhere.
+is a tool designed to help you locally assemble packages for Debian
+or other packaging systems, containing such game data from CD-ROMs, the
+Internet or elsewhere.
 .SH OPTIONS
 .TP
-.B \-i
-attempt to install the generated Debian package via
-.BR dpkg (1)
-or
-.BR apt (8),
-using
-.BR pkexec (1),
-.BR sudo (1)
-or
-.BR su (1)
-to obtain suitable privileges.
-\.
+\fB\-\-package\fR \fIPACKAGE\fR, \fB-p\fR \fIPACKAGE\fR
+For games that produce more than one package, only produce the specified
+package. This option can be repeated. For example,
+.B game\-data\-packager quake2 \-i \-pquake2\-groundzero \-pquake2\-reckoning
+would update the two Quake II expansions (Ground Zero and The Reckoning),
+building new native-code game modules if necessary, without updating
+the packages for the base game or the music.
 .TP
-.B \-d out-directory
-writes the generated Debian package to the specified directory.
+.BR \-\-target\-format " " arch | deb | rpm
+Produce packages for the given packaging system. All packaging systems
+except for
+.B deb
+(which represents dpkg) are considered experimental.
+The default is to try to auto-detect what is appropriate for the system
+where
+.B game\-data\-packager
+is run.
 .TP
-.B \-n
-Do not attempt to install the generated Debian package. This option must be
+.BR \-\-target\-distro " " fedora | suse | ...
+For packaging systems where different Linux distributions need different
+content (currently this means
+.BR rpm ),
+produce packages suitable for the selected distribution.
+The default is to try to auto-detect what is appropriate for the system
+where
+.B game\-data\-packager
+is run.
+.TP
+.BR \-i | \-\-install
+Attempt to install the generated package using the
+.I \-\-install\-method
+and the
+.IR \-\-gain\-root\-command .
+.TP
+.BR \-\-install\-method " " apt | dpkg | gdebi | gdebi\-gtk | gdebi\-kde | dnf | zypper | urpmi | rpm
+Install the generated package using the requested command. Only methods
+that can install the selected
+.B \-\-target\-format
+are valid.
+.TP
+.BR \-\-gain\-root\-command " " pkexec | sudo | su | super | really | \fICOMMAND\fR
+Use the requested command prefix to run commands as root when needed.
+.B su
+uses the
+.B "su -c"
+syntax to run a one-line shell command; the rest (including user-specified
+commands) are assumed to work as an "adverb" command prefix, similar to
+.B "sudo dpkg -i ..."
+or
+.BR "pkexec rpm -U ..." .
+.TP
+\fB\-d\fR \fIOUT-DIRECTORY\fR | \fB\-\-destination\fR \fIOUT-DIRECTORY\fR
+Write the generated package to the specified directory, instead of or
+in addition to installing it.
+.TP
+.BR \-n | \-\-no\-install
+Do not attempt to install the generated package. This option must be
 used in conjunction with
-.B \-d.
+.BR \-d .
 .TP
-.B \-z | --compress
-Compress generated .deb (default unless \-i is used)
+.B \-\-binary\-executables
+Allow the creation of packages containing native executable code that
+was not built from publically-available source code. By default, such
+executables are not packaged to avoid creating a security risk. For
+example, this allows the proprietary Linux binaries for Quake 4 and
+Unreal to be packaged.
 .TP
-.B --no\-compress
-Do not compress generated .deb (default with \-i)
+.BR \-z | \-\-compress
+Compress the generated package. This is the default if \-i is not used.
 .TP
-.B game
+.B \-\-no\-compress
+Do not compress the generated package. This is the default if \-i is used
+(since it is not usually useful to compress the package if it will just be
+installed and then discarded).
+.TP
+.B \-\-download
+Automatically downloading any missing files from the Internet if possible.
+.TP
+.B \-\-no\-download
+Do not download missing files from the Internet. If the missing files are
+not very important (for example optional documentation),
+.B game\-data\-packager
+will produce a package that lacks those files; if the missing files are
+required,
+.B game\-data\-packager
+will not produce a package at all.
+.TP
+\fB\-\-save\-downloads\fR \fIDIRECTORY\fR
+If files are downloaded, save them to \fIDIRECTORY\fR.
+.TP
+.B \-\-verbose
+Be more verbose, and in particular show output from any external tools
+that are invoked during operation.
+.TP
+.B \-\-no\-verbose
+Do not show verbose output. This is the default.
+.TP
+.B \-\-debug
+Show output that is interesting to
+.B game\-data\-packager
+developers.
+.TP
+.I GAME
 The game being packaged. Running
 .B game\-data\-packager
-without arguments will display a list of valid games. Running
-.B game\-data\-packager game \-\-help
+without arguments will display a list of valid games.
+.SH PER-GAME OPTIONS
+Some games have additional options. Running
+\fBgame\-data\-packager\fR \fIGAME\fR \fB\-\-help\fR
 will display a list of valid options for that game.
 
-.SH ALTERNATIVE MODES
-.B game\-data\-packager steam
-[
-.I \-i
-]
-[
-.I \-d
-out-directory [
-.I \-n
-] ]
-[
-.I \-z | --no\-compress
-] [
-.I --new
-|
-.I --all
-]
+.SH NON-GAME MODES
+Some non-game-specific modes can be selected by specifying a special
+keyword instead of the name of a game.
+.P
+\fBgame\-data\-packager\fR [\fICOMMON OPTIONS\fR]
+\fBsteam\fR [\fICOMMON OPTIONS\fR] [\fB\-\-new\fR|\fB\-\-all\fR]
 .br
-will package all your Steam game at once.
-.br
-Most games can only be downloaded with Windows Steam
-running optionally through Wine.
+will package all your Steam games at once.
+.P
+Most games can only be downloaded with the Windows version of Steam,
+optionally running through Wine, or by using the
+.B steamcmd
+tool.
+This mode takes the same options as
+.BR game\-data\-packager ,
+and adds its own options:
 .TP
 .B --new
-only package new games
+Only package new games
 .TP
 .B --all
-package all games available
-
+Package all games available
 .PP
-.B game\-data\-packager gog
+\fBgame\-data\-packager\fR [\fICOMMON OPTIONS\fR]
+\fBgog\fR [\fICOMMON OPTIONS\fR]
 .br
 will match all the GOG.com games you own against the games supported by this tool.
 .br
