@@ -22,64 +22,119 @@
 game\-data\-packager \- contruit des fichiers .deb à partir des données de jeux
 .
 .SH SYNOPSIS
-.B game\-data\-packager
-[
-.I -i
-]
-[
-.I -d
-répertoire-de-destination [
-.I -n
-] ]
-[
-.I -z | --no-compress
-]
-.I jeu
-[
-.I options\-du\-jeu
-]
+\fBgame\-data\-packager\fR [\fIOPTIONS\fR] \fIJEU\fR [\fIOPTIONS\fR] [\fIOPTIONS LIÉES À CHAQUE JEU\fR]
 .SH DESCRIPTION
 De nombreux jeux open-source on besoin de données qui sont
 licensées en des termes incompatibles avec les
 Principes du logiciel libre selon Debian
 .I ("Debian Free Software Guidelines")
+ainsi que des bonnes pratiques d''autre distribution Linux,
+ou bien qui ne sont pas du tout redistribuable légalement.
 .
 .br
 .B game\-data\-packager
 est un outil qui vous aide a assembler localement des packages
-Debian contenant des données provenant de CD-ROMs, d'Internet
-ou d'ailleurs.
+contenant des données provenant de CD-ROMs, d'Internet ou d'ailleurs.
 .SH OPTIONS
 .TP
-.B \-i
-installer directement le package créé avec
-.BR dpkg (1)
-ou
-.BR apt (8),
-en utilisant
-.BR pkexec (1),
-.BR sudo (1)
-ou
-.BR su (1)
-pour obtenir les droits superutilisateur.
+\fB\-\-package\fR \fIPACKAGE\fR, \fB-p\fR \fIPACKAGE\fR
+Pour les jeux qui produise plusieurs packages,
+ne produire que celui qui est spécifié.
+Cette option peut être utilisée plusieurs fois. Par exemple,
+.B game\-data\-packager quake2 \-i \-pquake2\-groundzero \-pquake2\-reckoning
+permettra de mettre à jour les deux extensions de Quake II (Ground Zero et
+The Reckoning), qui contiennent des modules compilés,
+sans devoir mettre à jour les données de base ou le package de musique.
 .TP
-.B \-d répertoire-de-destination
+.BR \-\-target\-format " " arch | deb | rpm
+Produit des packages dans le format désiré.
+Tous les formats, mis à part
+.B deb
+sont actuellement considérés comme experimentaux.
+Le format par défaut est celui du système sur lequel
+.B game\-data\-packager
+est exécuté.
+.TP
+.BR \-\-target\-distro " " fedora | suse | ...
+Pour les formats partagés par plusieurs distributions
+(
+.BR rpm
+actuellement), suivre les particularités
+d'une distribution particulière. Ceci est aussi
+détecté automatiquement.
+.TP
+.BR \-i | \-\-install
+installer directement le package créé avec
+.I \-\-install\-method
+et
+.IR \-\-gain\-root\-command  .
+.TP
+.BR \-\-install\-method " " apt | dpkg | gdebi | gdebi\-gtk | gdebi\-kde | dnf | zypper | urpmi | rpm
+Installe les packages avec la commande désirée.
+Les commandes disponibles dépendent du format choisi avec
+.B \-\-target\-format .
+.TP
+.BR \-\-gain\-root\-command " " pkexec | sudo | su | super | really | \fICOMMAND\fR
+Utiliser la commande "préfixe" pour obtenir les droits superutilisateur.
+.B su
+correspond à la commande
+.B "su -c"
+les autres options correspondent à un adverbe ajouté devant la commande,
+de cette façon:
+.B "sudo dpkg -i ..."
+ou
+.BR "pkexec rpm -U ..." .
+.TP
+\fB\-d\fR \fIRÉPERTOIRE-DE-DESTINATION\fR | \fB\-\-destination\fR \fIRÉPERTOIRE-DE-DESTINATION\fR
 écrire les packages .deb générés dans le répertoire désigné.
 .TP
-.B \-n
+.B \-n | \-\-no\-install
 Ne pas installer les packages générés.
 .TP
 .B \-z | --compress
-Compresser les .deb (option par défaut si \-i n'est pas spécifié)
+Compresser les packages. (option par défaut si \-i n'est pas spécifié)
+.TP
+.B \-\-binary\-executables
+Autorisér la création de packages contenant du code binaire
+sans source disponible. Comme cela représente un risque de sécurité
+cela est désactivé par défaut. Ceci est par exemple nécessaire
+pour Quake 4 et Unreal.
 .TP
 .B --no\-compress
-Ne pas compresser les .deb (option par défaut quand on utilise \-i)
+Ne pas compresser les packages (option par défaut quand on utilise \-i)
 .TP
-.B jeu
+.B \-\-download
+Télécharge automatiquement les fichiers manquant à partir d'Internet
+si possible. C'est le paramètre par défaut.
+.B \-\-no\-download
+Ne rien télécharger d'Internet. Si les fichiers manquants ne sont
+pas vraiment importants (documentation par exemple),
+des packages seront générés sans ces fichiers.
+Si par contre ces fichiers/patches sont indispensables,
+aucun package ne sera généré.
+.TP
+\fB\-\-save\-downloads\fR \fIRÉPERTOIRE\fR
+S'il y a lieu de télécharger des fichiers, les conserver dans \fIRÉPERTOIRE\fR.
+.TP
+.B \-\-verbose
+Donner plus de détails sur le traitement effectuée,
+en particulier celui effectué par les outils externes (innoextract, unarj...).
+.TP
+.B \-\-no\-verbose
+Ne pas afficher de détails supplémentaires, paramètre par défaut.
+.TP
+.B \-\-debug
+Afficher des informations utiles aux dévelopeurs de
+.B game\-data\-packager
+.TP
+.I JEU
 Nom-code du jeu à packager. Executer
 .B game\-data\-packager
-sans aucun paramètre afficher une liste des jeux possible. Executer
-.B game\-data\-packager <jeu> \-\-help
+sans aucun paramètre afficher une liste des jeux possible.
+.SH OPTIONS LIÉES À CHAQUE JEU
+Certains jeux disposent d'options spécifiques.
+Executer
+\fBgame\-data\-packager\fR \fIJEU\fR \fB\-\-help\fR
 affichera les options spécifiques à ce jeu.
 
 .SH AUTRE FONCTIONNALITÉS
@@ -104,7 +159,8 @@ créera des packages pour tous vos jeux Steam compatibles en une fois.
 .br
 La plupart de ces jeux ne peuvent être téléchargés qu'avec
 la version 'Windows' de Steam qui aussi peux être exécutée
-via Wine.
+via Wine; ou en utilisant l'utilitaire
+.B steamcmd .
 .TP
 .B --new
 ne créer de package .deb que pour les nouveaux jeux pas encore installés
