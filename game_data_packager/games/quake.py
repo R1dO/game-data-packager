@@ -59,7 +59,7 @@ class QuakeGameData(GameData):
     def add_parser(self, parsers, base_parser):
         parser = super(QuakeGameData, self).add_parser(parsers, base_parser,
                 conflict_handler='resolve')
-        parser.add_argument('-m', '-d', dest='packages', action='append_const',
+        parser.add_argument('-m', dest='packages', action='append_const',
                 const='quake-registered',
                 help='Equivalent to --package=quake-registered')
         parser.add_argument('-s', dest='packages', action='append_const',
