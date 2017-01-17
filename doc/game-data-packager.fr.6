@@ -19,17 +19,17 @@
 .if \n[.g] .mso www.tmac
 .TH game-data-packager 6 2015-09-09
 .SH NOM
-game\-data\-packager \- contruit des packages (.deb|.rpm|...) à partir des données de jeux
+game\-data\-packager \- construit des packages (.deb|.rpm|...) à partir des données de jeux
 .
 .SH SYNOPSIS
 \fBgame\-data\-packager\fR [\fIOPTIONS\fR] \fIJEU\fR [\fIOPTIONS\fR] [\fIOPTIONS LIÉES À CHAQUE JEU\fR]
 .SH DESCRIPTION
-De nombreux jeux open-source on besoin de données qui sont
+De nombreux jeux open-source ont besoin de données qui sont
 licensées en des termes incompatibles avec les
 Principes du logiciel libre selon Debian
 .I ("Debian Free Software Guidelines")
 ainsi que des bonnes pratiques d''autre distribution Linux,
-ou bien qui ne sont pas du tout redistribuable légalement.
+ou bien qui ne sont pas du tout redistribuables légalement.
 .
 .br
 .B game\-data\-packager
@@ -38,7 +38,7 @@ contenant des données provenant de CD-ROMs, d'Internet ou d'ailleurs.
 .SH OPTIONS
 .TP
 \fB\-\-package\fR \fIPACKAGE\fR, \fB-p\fR \fIPACKAGE\fR
-Pour les jeux qui produise plusieurs packages,
+Pour les jeux qui produisent plusieurs packages,
 ne produire que celui qui est spécifié.
 Cette option peut être utilisée plusieurs fois. Par exemple,
 .B game\-data\-packager quake2 \-i \-pquake2\-groundzero \-pquake2\-reckoning
@@ -64,7 +64,7 @@ d'une distribution particulière. Ceci est aussi
 détecté automatiquement.
 .TP
 .BR \-i | \-\-install
-installer directement le package créé avec
+installer dirrectement le package créé avec
 .I \-\-install\-method
 et
 .IR \-\-gain\-root\-command  .
@@ -86,7 +86,7 @@ ou
 .BR "pkexec rpm -U ..." .
 .TP
 \fB\-d\fR \fIRÉPERTOIRE-DE-DESTINATION\fR | \fB\-\-destination\fR \fIRÉPERTOIRE-DE-DESTINATION\fR
-écrire les packages .deb générés dans le répertoire désigné.
+écrire les packages .deb|.rpm générés dans le répertoire désigné.
 .TP
 .B \-n | \-\-no\-install
 Ne pas installer les packages générés.
@@ -95,7 +95,7 @@ Ne pas installer les packages générés.
 Compresser les packages. (option par défaut si \-i n'est pas spécifié)
 .TP
 .B \-\-binary\-executables
-Autorisér la création de packages contenant du code binaire
+Autoriser la création de packages contenant du code binaire
 sans source disponible. Comme cela représente un risque de sécurité
 cela est désactivé par défaut. Ceci est par exemple nécessaire
 pour Quake 4 et Unreal.
